@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="status_bar_accessibility_recent_apps">
+        <item quantity="other">‏%d من الشاشات في النظرة عامة</item>
+        <item quantity="one">شاشة واحدة في النظرة عامة</item>
+    </plurals>
+    <plurals name="kg_password_wrong_pin_code">
+        <item quantity="other">‏رمز \"رقم التعريف الشخصي\" لبطاقة SIM غير صحيح، يتبقى لديك %d من المحاولات.</item>
+        <item quantity="one">رمز PIN لبطاقة SIM غير صحيح. بقي لديك %d محاولة قبل أن يتوجّب عليك إدخال رمز PUK لبطاقة SIM لإلغاء قفل الجهاز.</item>
+    </plurals>
+    <plurals name="kg_password_wrong_puk_code">
+        <item quantity="other">‏رمز PUK لبطاقة SIM غير صالح، ويتبقى لديك %d من المحاولات، تصبح بعدها بطاقة SIM غير صالحة للاستخدام بشكل دائم.</item>
+        <item quantity="one">‏رمز PUK لبطاقة SIM غير صالح، ويتبقى لديك محاولة واحدة (%d)، تصبح بعدها بطاقة SIM غير صالحة للاستخدام بشكل دائم.</item>
+    </plurals>
+</resources>

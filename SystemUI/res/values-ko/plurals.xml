@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="status_bar_accessibility_recent_apps">
+        <item quantity="other">최근 사용에 화면 %d개</item>
+        <item quantity="one">최근 사용에 화면 1개</item>
+    </plurals>
+    <plurals name="kg_password_wrong_pin_code">
+        <item quantity="other">USIM PIN 코드가 잘못되었습니다. %d번의 기회가 남았습니다.</item>
+        <item quantity="one">잘못된 USIM PIN 코드. %d회 더 실패하면 USIM PUK 코드를 입력하여 기기를 잠금 해제해야 합니다.</item>
+    </plurals>
+    <plurals name="kg_password_wrong_puk_code">
+        <item quantity="other">USIM PUK 코드가 잘못되었습니다. %d회 더 실패할 경우 USIM을 완전히 사용할 수 없습니다.</item>
+        <item quantity="one">USIM PUK 코드가 잘못되었습니다. %d회 더 실패할 경우 USIM을 완전히 사용할 수 없습니다.</item>
+    </plurals>
+</resources>

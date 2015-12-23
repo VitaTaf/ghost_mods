@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="150" android:drawable="@drawable/zz_moto_stat_sys_data_fully_in_animated_1_bar_wide" />
+    <item android:duration="150" android:drawable="@drawable/zz_moto_stat_sys_data_fully_in_animated_2_bars_wide" />
+    <item android:duration="150" android:drawable="@drawable/zz_moto_stat_sys_data_fully_in_animated_3_bars_wide" />
+</animation-list>

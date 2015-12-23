@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="read_gid_from_usim_for_ruim">true</bool>
+</resources>

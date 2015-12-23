@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="is_broker_home_mcc_mnc">true</bool>
+    <bool name="ftr39071_disable_clean_data_on_power_off">true</bool>
+</resources>

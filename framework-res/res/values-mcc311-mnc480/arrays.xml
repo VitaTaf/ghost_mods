@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="config_cdma_home_system">
+        <item>64</item>
+        <item>65</item>
+        <item>66</item>
+    </string-array>
+    <string-array name="dial_string_replace">
+        <item>*611:+19085594899,</item>
+        <item>*86:+1MDN,</item>
+    </string-array>
+    <string-array name="config_sms_convert_destination_number_support">
+        <item>true</item>
+    </string-array>
+    <string-array name="config_sim_operator_override_rules">
+        <item>gid:BA00010000000000;311440;SPN_FROM_SIM</item>
+        <item>gid:BA00020000000000;310360;SPN_FROM_SIM</item>
+        <item>gid:BA00030000000000;311140;SPN_FROM_SIM</item>
+        <item>gid:BA00040000000000;310600;SPN_FROM_SIM</item>
+        <item>gid:BA00050000000000;311050;SPN_FROM_SIM</item>
+        <item>gid:BA00060000000000;310130;SPN_FROM_SIM</item>
+        <item>gid:BA00070000000000;311920;SPN_FROM_SIM</item>
+        <item>gid:BA00090000000000;312040;SPN_FROM_SIM</item>
+        <item>gid:BA00100000000000;311610;SPN_FROM_SIM</item>
+        <item>gid:BA00110000000000;310960;SPN_FROM_SIM</item>
+        <item>gid:BA00120000000000;310750;SPN_FROM_SIM</item>
+        <item>gid:BA00130000000000;312160;SPN_FROM_SIM</item>
+        <item>gid:BA00140000000000;310040;SPN_FROM_SIM</item>
+        <item>gid:BA00150000000000;311420;SPN_FROM_SIM</item>
+        <item>gid:BA00160000000000;311350;SPN_FROM_SIM</item>
+        <item>gid:BA00170000000000;310930;SPN_FROM_SIM</item>
+        <item>gid:BA00180000000000;310900;SPN_FROM_SIM</item>
+    </string-array>
+</resources>

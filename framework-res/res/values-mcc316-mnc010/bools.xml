@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="enhancement_data_roaming_enabled">true</bool>
+    <bool name="config_api_setAKey_is_enabled">true</bool>
+    <bool name="config_start_sprint_extension_service">true</bool>
+    <bool name="config_spn_on_roamind_off">true</bool>
+    <bool name="config_f38104_subcriberid_enabled">true</bool>
+</resources>
