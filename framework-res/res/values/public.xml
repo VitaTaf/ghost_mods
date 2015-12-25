@@ -8993,7 +8993,6 @@
     <public type="^attr-private" name="primaryUserOnly" id="0x011600af" />
     <public type="^attr-private" name="popupEnterTransition" id="0x011600b0" />
     <public type="^attr-private" name="popupExitTransition" id="0x011600b1" />
-    <public type="^attr-private" name="centerClipBounds" id="0x011600b2" />
     <public type="^attr-private" name="interpolatorX" id="0x011600b3" />
     <public type="^attr-private" name="interpolatorY" id="0x011600b4" />
     <public type="^attr-private" name="interpolatorZ" id="0x011600b5" />

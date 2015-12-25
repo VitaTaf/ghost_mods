@@ -1265,21 +1265,13 @@
 
 .field public static final EditText:[I
 
-.field public static final EpicenterClipReveal:[I
+.field public static final EpicenterTranslateClipReveal:[I
 
-.field public static final EpicenterClipReveal_centerClipBounds:I = 0x0
+.field public static final EpicenterTranslateClipReveal_interpolatorX:I = 0x0
 
-.field public static final EpicenterClipReveal_interpolatorX:I = 0x1
+.field public static final EpicenterTranslateClipReveal_interpolatorY:I = 0x1
 
-.field public static final EpicenterClipReveal_interpolatorY:I = 0x2
-
-.field public static final EpicenterTranslate:[I
-
-.field public static final EpicenterTranslate_interpolatorX:I = 0x0
-
-.field public static final EpicenterTranslate_interpolatorY:I = 0x1
-
-.field public static final EpicenterTranslate_interpolatorZ:I = 0x2
+.field public static final EpicenterTranslateClipReveal_interpolatorZ:I = 0x2
 
 .field public static final ExpandableListChildIndicatorState:[I
 
@@ -5294,16 +5286,9 @@
     .line 35549
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_d0
-
-    sput-object v0, Lcom/android/internal/R$styleable;->EpicenterClipReveal:[I
-
-    .line 34588
-    new-array v0, v5, [I
-
     fill-array-data v0, :array_d1
 
-    sput-object v0, Lcom/android/internal/R$styleable;->EpicenterTranslate:[I
+    sput-object v0, Lcom/android/internal/R$styleable;->EpicenterTranslateClipReveal:[I
 
     .line 34619
     new-array v0, v3, [I
@@ -7639,14 +7624,6 @@
         0x1010368
         0x1010369
         0x1160069
-    .end array-data
-
-    .line 35581
-    :array_d0
-    .array-data 4
-        0x11600b2
-        0x11600b3
-        0x11600b4
     .end array-data
 
     .line 34588
