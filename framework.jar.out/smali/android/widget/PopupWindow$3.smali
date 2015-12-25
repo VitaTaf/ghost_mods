@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/widget/PopupWindow;->invokePopup(Landroid/view/WindowManager$LayoutParams;)V
+    value = Landroid/widget/PopupWindow;->dismiss()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,14 +17,26 @@
 # instance fields
 .field final synthetic this$0:Landroid/widget/PopupWindow;
 
+.field final synthetic val$contentHolder:Landroid/view/ViewGroup;
+
+.field final synthetic val$contentView:Landroid/view/View;
+
+.field final synthetic val$decorView:Landroid/widget/PopupWindow$PopupDecorView;
+
 
 # direct methods
-.method constructor <init>(Landroid/widget/PopupWindow;)V
+.method constructor <init>(Landroid/widget/PopupWindow;Landroid/widget/PopupWindow$PopupDecorView;Landroid/view/ViewGroup;Landroid/view/View;)V
     .locals 0
 
     .prologue
-    .line 1135
+    .line 1429
     iput-object p1, p0, Landroid/widget/PopupWindow$3;->this$0:Landroid/widget/PopupWindow;
+
+    iput-object p2, p0, Landroid/widget/PopupWindow$3;->val$decorView:Landroid/widget/PopupWindow$PopupDecorView;
+
+    iput-object p3, p0, Landroid/widget/PopupWindow$3;->val$contentHolder:Landroid/view/ViewGroup;
+
+    iput-object p4, p0, Landroid/widget/PopupWindow$3;->val$contentView:Landroid/view/View;
 
     invoke-direct {p0}, Landroid/transition/Transition$TransitionListenerAdapter;-><init>()V
 
@@ -34,23 +46,22 @@
 
 # virtual methods
 .method public onTransitionEnd(Landroid/transition/Transition;)V
-    .locals 1
+    .locals 4
     .param p1, "transition"    # Landroid/transition/Transition;
 
     .prologue
-    .line 1138
-    invoke-virtual {p1, p0}, Landroid/transition/Transition;->removeListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
-
-    .line 1139
+    .line 1432
     iget-object v0, p0, Landroid/widget/PopupWindow$3;->this$0:Landroid/widget/PopupWindow;
 
-    # getter for: Landroid/widget/PopupWindow;->mBackgroundView:Landroid/view/View;
-    invoke-static {v0}, Landroid/widget/PopupWindow;->access$800(Landroid/widget/PopupWindow;)Landroid/view/View;
+    iget-object v1, p0, Landroid/widget/PopupWindow$3;->val$decorView:Landroid/widget/PopupWindow$PopupDecorView;
 
-    move-result-object v0
+    iget-object v2, p0, Landroid/widget/PopupWindow$3;->val$contentHolder:Landroid/view/ViewGroup;
 
-    invoke-virtual {p1, v0}, Landroid/transition/Transition;->removeTarget(Landroid/view/View;)Landroid/transition/Transition;
+    iget-object v3, p0, Landroid/widget/PopupWindow$3;->val$contentView:Landroid/view/View;
 
-    .line 1140
+    # invokes: Landroid/widget/PopupWindow;->dismissImmediate(Landroid/view/View;Landroid/view/ViewGroup;Landroid/view/View;)V
+    invoke-static {v0, v1, v2, v3}, Landroid/widget/PopupWindow;->access$800(Landroid/widget/PopupWindow;Landroid/view/View;Landroid/view/ViewGroup;Landroid/view/View;)V
+
+    .line 1433
     return-void
 .end method

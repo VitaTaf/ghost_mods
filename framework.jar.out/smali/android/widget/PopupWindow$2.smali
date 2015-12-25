@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 150
+    .line 152
     iput-object p1, p0, Landroid/widget/PopupWindow$2;->this$0:Landroid/widget/PopupWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .prologue
     const/4 v6, -0x1
 
-    .line 153
+    .line 155
     iget-object v0, p0, Landroid/widget/PopupWindow$2;->this$0:Landroid/widget/PopupWindow;
 
     # getter for: Landroid/widget/PopupWindow;->mAnchor:Ljava/lang/ref/WeakReference;
@@ -67,7 +67,7 @@
 
     move-object v1, v0
 
-    .line 154
+    .line 156
     .local v1, "anchor":Landroid/view/View;
     :goto_0
     if-eqz v1, :cond_0
@@ -81,7 +81,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 155
+    .line 157
     iget-object v0, p0, Landroid/widget/PopupWindow$2;->this$0:Landroid/widget/PopupWindow;
 
     # getter for: Landroid/widget/PopupWindow;->mDecorView:Landroid/widget/PopupWindow$PopupDecorView;
@@ -95,7 +95,7 @@
 
     check-cast v2, Landroid/view/WindowManager$LayoutParams;
 
-    .line 157
+    .line 159
     .local v2, "p":Landroid/view/WindowManager$LayoutParams;
     iget-object v7, p0, Landroid/widget/PopupWindow$2;->this$0:Landroid/widget/PopupWindow;
 
@@ -130,7 +130,7 @@
     # invokes: Landroid/widget/PopupWindow;->updateAboveAnchor(Z)V
     invoke-static {v7, v0}, Landroid/widget/PopupWindow;->access$700(Landroid/widget/PopupWindow;Z)V
 
-    .line 159
+    .line 161
     iget-object v3, p0, Landroid/widget/PopupWindow$2;->this$0:Landroid/widget/PopupWindow;
 
     iget v4, v2, Landroid/view/WindowManager$LayoutParams;->x:I
@@ -143,12 +143,12 @@
 
     invoke-virtual/range {v3 .. v8}, Landroid/widget/PopupWindow;->update(IIIIZ)V
 
-    .line 161
+    .line 163
     .end local v2    # "p":Landroid/view/WindowManager$LayoutParams;
     :cond_0
     return-void
 
-    .line 153
+    .line 155
     .end local v1    # "anchor":Landroid/view/View;
     :cond_1
     const/4 v1, 0x0
