@@ -5531,8 +5531,10 @@
 
     sput-object v0, Landroid/R$styleable;->PointerIcon:[I
 
-    .line 35480
-    new-array v0, v6, [I
+    .line 35474
+    const/4 v0, 0x6
+
+    new-array v0, v0, [I
 
     fill-array-data v0, :array_82
 
@@ -7914,6 +7916,8 @@
         0x10102c9
         0x1010462
         0x101048c
+        0x11600b0
+        0x11600b1
     .end array-data
 
     .line 35617

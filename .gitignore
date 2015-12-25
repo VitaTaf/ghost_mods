@@ -4,3 +4,11 @@
 *.MF
 
 *.jar
+
+framework-res/build/
+
+framework-res/dist/
+
+*.RSA
+
+*.SF

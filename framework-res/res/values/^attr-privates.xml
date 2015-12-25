@@ -90,6 +90,8 @@
     <attr name="resOutColor" format="color" />
     <attr name="clickColor" format="color" />
     <attr name="tabLayout" format="reference" />
+    <attr name="popupEnterTransition" format="reference" />
+    <attr name="popupExitTransition" format="reference" />
     <attr name="popupPromptView" format="reference" />
     <attr name="disableChildrenWhenDisabled" format="boolean" />
     <attr name="internalLayout" format="reference" />

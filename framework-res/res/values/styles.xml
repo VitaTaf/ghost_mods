@@ -3878,8 +3878,10 @@
         <item name="dropDownWidth">wrap_content</item>
         <item name="dropDownHorizontalOffset">0.0dip</item>
         <item name="dropDownVerticalOffset">0.0dip</item>
-        <item name="popupAnimationStyle">@style/Animation.Material.Popup</item>
+        <item name="popupAnimationStyle">@null</item>
         <item name="popupElevation">@dimen/floating_window_z</item>
+        <item name="popupEnterTransition">@transition/popup_window_enter</item>
+        <item name="popupExitTransition">@transition/popup_window_exit</item>
     </style>
     <style name="Widget.Material.ListView" parent="@style/Widget.ListView">
         <item name="listSelector">?listChoiceBackgroundIndicator</item>
@@ -3974,8 +3976,11 @@
         <item name="dropDownWidth">wrap_content</item>
         <item name="dropDownHorizontalOffset">0.0dip</item>
         <item name="dropDownVerticalOffset">0.0dip</item>
+        <item name="popupAnimationStyle">@null</item>
         <item name="overlapAnchor">true</item>
         <item name="popupElevation">@dimen/floating_window_z</item>
+        <item name="popupEnterTransition">@transition/popup_window_enter</item>
+        <item name="popupExitTransition">@transition/popup_window_exit</item>
         <item name="popupPromptView">@layout/simple_dropdown_hint</item>
         <item name="disableChildrenWhenDisabled">true</item>
     </style>
@@ -5329,10 +5334,7 @@
     <style name="Widget.Material.ProgressBar.Small.Inverse" parent="@style/Widget.Material.ProgressBar.Small" />
     <style name="Widget.Material.ProgressBar.Large.Inverse" parent="@style/Widget.Material.ProgressBar.Large" />
     <style name="Widget.Material.Spinner.DropDown" parent="@style/Widget.Material.Spinner" />
-    <style name="Widget.Material.Spinner.DropDown.ActionBar" parent="@style/Widget.Material.Spinner.DropDown">
-        <item name="background">@drawable/spinner_background_material</item>
-        <item name="overlapAnchor">true</item>
-    </style>
+    <style name="Widget.Material.Spinner.DropDown.ActionBar" parent="@style/Widget.Material.Spinner.DropDown" />
     <style name="Widget.Material.TabText" parent="@style/Widget.Material.ActionBar.TabText">
         <item name="maxWidth">180.0dip</item>
     </style>

@@ -2197,6 +2197,10 @@
 
 .field public static final PopupWindow_popupElevation:I = 0x3
 
+.field public static final PopupWindow_popupEnterTransition:I = 0x4
+
+.field public static final PopupWindow_popupExitTransition:I = 0x5
+
 .field public static final Preference:[I
 
 .field public static final PreferenceActivity:[I
@@ -5915,8 +5919,10 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->PointerIcon:[I
 
-    .line 43741
-    new-array v0, v6, [I
+    .line 42756
+    const/4 v0, 0x6
+
+    new-array v0, v0, [I
 
     fill-array-data v0, :array_82
 
@@ -8298,6 +8304,8 @@
         0x10102c9
         0x1010462
         0x101048c
+        0x11600b0
+        0x11600b1
     .end array-data
 
     .line 43878

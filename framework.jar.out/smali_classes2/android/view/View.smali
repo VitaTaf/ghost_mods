@@ -35595,7 +35595,7 @@
     const/high16 v6, 0x3f800000    # 1.0f
 
     .line 14822
-    if-eqz p1, :cond_4
+    if-eqz p1, :cond_3
 
     .line 14823
     invoke-virtual {p0}, Landroid/view/View;->hasOverlappingRendering()Z
@@ -35609,18 +35609,18 @@
 
     instance-of v5, v5, Landroid/view/ViewGroup;
 
-    if-eqz v5, :cond_0
+    if-eqz v5, :cond_4
 
     .line 14825
     iget-object v5, p0, Landroid/view/View;->mParent:Landroid/view/ViewParent;
 
     check-cast v5, Landroid/view/ViewGroup;
 
-    iget v5, v5, Landroid/view/ViewGroup;->mGroupFlags:I
+    invoke-virtual {v5}, Landroid/view/ViewGroup;->getClipChildren()Z
 
-    and-int/lit8 v5, v5, 0x1
+    move-result v5
 
-    if-eqz v5, :cond_5
+    if-eqz v5, :cond_4
 
     const/4 v5, 0x1
 
@@ -35628,7 +35628,6 @@
     invoke-virtual {p1, v5}, Landroid/view/RenderNode;->setClipToBounds(Z)Z
 
     .line 14828
-    :cond_0
     const/high16 v0, 0x3f800000    # 1.0f
 
     .line 14829
@@ -35637,7 +35636,7 @@
 
     instance-of v5, v5, Landroid/view/ViewGroup;
 
-    if-eqz v5, :cond_2
+    if-eqz v5, :cond_1
 
     iget-object v5, p0, Landroid/view/View;->mParent:Landroid/view/ViewParent;
 
@@ -35647,7 +35646,7 @@
 
     and-int/lit16 v5, v5, 0x800
 
-    if-eqz v5, :cond_2
+    if-eqz v5, :cond_1
 
     .line 14831
     iget-object v2, p0, Landroid/view/View;->mParent:Landroid/view/ViewParent;
@@ -35666,7 +35665,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_2
+    if-eqz v5, :cond_1
 
     .line 14834
     invoke-virtual {v3}, Landroid/view/animation/Transformation;->getTransformationType()I
@@ -35675,12 +35674,12 @@
 
     .line 14835
     .local v4, "transformType":I
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_1
 
     .line 14836
     and-int/lit8 v5, v4, 0x1
 
-    if-eqz v5, :cond_1
+    if-eqz v5, :cond_0
 
     .line 14837
     invoke-virtual {v3}, Landroid/view/animation/Transformation;->getAlpha()F
@@ -35688,10 +35687,10 @@
     move-result v0
 
     .line 14839
-    :cond_1
+    :cond_0
     and-int/lit8 v5, v4, 0x2
 
-    if-eqz v5, :cond_2
+    if-eqz v5, :cond_1
 
     .line 14840
     invoke-virtual {v3}, Landroid/view/animation/Transformation;->getMatrix()Landroid/graphics/Matrix;
@@ -35704,10 +35703,10 @@
     .end local v2    # "parentVG":Landroid/view/ViewGroup;
     .end local v3    # "t":Landroid/view/animation/Transformation;
     .end local v4    # "transformType":I
-    :cond_2
+    :cond_1
     iget-object v5, p0, Landroid/view/View;->mTransformationInfo:Landroid/view/View$TransformationInfo;
 
-    if-eqz v5, :cond_6
+    if-eqz v5, :cond_5
 
     .line 14846
     invoke-direct {p0}, Landroid/view/View;->getFinalAlpha()F
@@ -35719,7 +35718,7 @@
     .line 14847
     cmpg-float v5, v0, v6
 
-    if-gez v5, :cond_3
+    if-gez v5, :cond_2
 
     .line 14848
     const/high16 v5, 0x437f0000    # 255.0f
@@ -35734,34 +35733,34 @@
 
     move-result v5
 
-    if-eqz v5, :cond_3
+    if-eqz v5, :cond_2
 
     .line 14850
     const/high16 v0, 0x3f800000    # 1.0f
 
     .line 14853
     .end local v1    # "multipliedAlpha":I
-    :cond_3
+    :cond_2
     invoke-virtual {p1, v0}, Landroid/view/RenderNode;->setAlpha(F)Z
 
     .line 14858
     .end local v0    # "alpha":F
-    :cond_4
+    :cond_3
     :goto_1
     return-void
 
     .line 14825
-    :cond_5
+    :cond_4
     const/4 v5, 0x0
 
     goto :goto_0
 
     .line 14854
     .restart local v0    # "alpha":F
-    :cond_6
+    :cond_5
     cmpg-float v5, v0, v6
 
-    if-gez v5, :cond_4
+    if-gez v5, :cond_3
 
     .line 14855
     invoke-virtual {p1, v0}, Landroid/view/RenderNode;->setAlpha(F)Z
