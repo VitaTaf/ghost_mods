@@ -27,7 +27,7 @@
     .locals 0
 
     .prologue
-    .line 258
+    .line 252
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,18 +40,18 @@
     .param p3, "trans"    # F
 
     .prologue
-    .line 260
+    .line 254
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 261
+    .line 255
     iput p1, p0, Lcom/android/internal/transition/EpicenterTranslateClipReveal$State;->lower:I
 
-    .line 262
+    .line 256
     iput p2, p0, Lcom/android/internal/transition/EpicenterTranslateClipReveal$State;->upper:I
 
-    .line 263
+    .line 257
     iput p3, p0, Lcom/android/internal/transition/EpicenterTranslateClipReveal$State;->trans:F
 
-    .line 264
+    .line 258
     return-void
 .end method

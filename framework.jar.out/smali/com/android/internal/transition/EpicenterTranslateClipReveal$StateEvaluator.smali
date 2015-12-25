@@ -36,10 +36,10 @@
     .locals 1
 
     .prologue
-    .line 267
+    .line 261
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 268
+    .line 262
     new-instance v0, Lcom/android/internal/transition/EpicenterTranslateClipReveal$State;
 
     invoke-direct {v0}, Lcom/android/internal/transition/EpicenterTranslateClipReveal$State;-><init>()V
@@ -54,7 +54,7 @@
     .param p1, "x0"    # Lcom/android/internal/transition/EpicenterTranslateClipReveal$1;
 
     .prologue
-    .line 267
+    .line 261
     invoke-direct {p0}, Lcom/android/internal/transition/EpicenterTranslateClipReveal$StateEvaluator;-><init>()V
 
     return-void
@@ -69,7 +69,7 @@
     .param p3, "endValue"    # Lcom/android/internal/transition/EpicenterTranslateClipReveal$State;
 
     .prologue
-    .line 272
+    .line 266
     iget-object v0, p0, Lcom/android/internal/transition/EpicenterTranslateClipReveal$StateEvaluator;->mTemp:Lcom/android/internal/transition/EpicenterTranslateClipReveal$State;
 
     iget v1, p2, Lcom/android/internal/transition/EpicenterTranslateClipReveal$State;->upper:I
@@ -90,7 +90,7 @@
 
     iput v1, v0, Lcom/android/internal/transition/EpicenterTranslateClipReveal$State;->upper:I
 
-    .line 273
+    .line 267
     iget-object v0, p0, Lcom/android/internal/transition/EpicenterTranslateClipReveal$StateEvaluator;->mTemp:Lcom/android/internal/transition/EpicenterTranslateClipReveal$State;
 
     iget v1, p2, Lcom/android/internal/transition/EpicenterTranslateClipReveal$State;->lower:I
@@ -111,7 +111,7 @@
 
     iput v1, v0, Lcom/android/internal/transition/EpicenterTranslateClipReveal$State;->lower:I
 
-    .line 274
+    .line 268
     iget-object v0, p0, Lcom/android/internal/transition/EpicenterTranslateClipReveal$StateEvaluator;->mTemp:Lcom/android/internal/transition/EpicenterTranslateClipReveal$State;
 
     iget v1, p2, Lcom/android/internal/transition/EpicenterTranslateClipReveal$State;->trans:F
@@ -132,7 +132,7 @@
 
     iput v1, v0, Lcom/android/internal/transition/EpicenterTranslateClipReveal$State;->trans:F
 
-    .line 275
+    .line 269
     iget-object v0, p0, Lcom/android/internal/transition/EpicenterTranslateClipReveal$StateEvaluator;->mTemp:Lcom/android/internal/transition/EpicenterTranslateClipReveal$State;
 
     return-object v0
@@ -145,7 +145,7 @@
     .param p3, "x2"    # Ljava/lang/Object;
 
     .prologue
-    .line 267
+    .line 261
     check-cast p2, Lcom/android/internal/transition/EpicenterTranslateClipReveal$State;
 
     .end local p2    # "x1":Ljava/lang/Object;

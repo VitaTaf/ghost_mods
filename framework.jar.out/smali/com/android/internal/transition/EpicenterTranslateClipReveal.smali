@@ -304,14 +304,14 @@
     .param p10, "interpolatorZ"    # Landroid/animation/TimeInterpolator;
 
     .prologue
-    .line 220
+    .line 214
     new-instance v6, Lcom/android/internal/transition/EpicenterTranslateClipReveal$StateEvaluator;
 
     const/4 v10, 0x0
 
     invoke-direct {v6, v10}, Lcom/android/internal/transition/EpicenterTranslateClipReveal$StateEvaluator;-><init>(Lcom/android/internal/transition/EpicenterTranslateClipReveal$1;)V
 
-    .line 222
+    .line 216
     .local v6, "evaluator":Lcom/android/internal/transition/EpicenterTranslateClipReveal$StateEvaluator;
     sget-object v10, Landroid/view/View;->TRANSLATION_Z:Landroid/util/Property;
 
@@ -331,16 +331,16 @@
 
     move-result-object v4
 
-    .line 223
+    .line 217
     .local v4, "animZ":Landroid/animation/ObjectAnimator;
     if-eqz p10, :cond_0
 
-    .line 224
+    .line 218
     move-object/from16 v0, p10
 
     invoke-virtual {v4, v0}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 227
+    .line 221
     :cond_0
     new-instance v7, Lcom/android/internal/transition/EpicenterTranslateClipReveal$StateProperty;
 
@@ -348,7 +348,7 @@
 
     invoke-direct {v7, v10}, Lcom/android/internal/transition/EpicenterTranslateClipReveal$StateProperty;-><init>(C)V
 
-    .line 228
+    .line 222
     .local v7, "propX":Lcom/android/internal/transition/EpicenterTranslateClipReveal$StateProperty;
     const/4 v10, 0x2
 
@@ -366,16 +366,16 @@
 
     move-result-object v2
 
-    .line 229
+    .line 223
     .local v2, "animX":Landroid/animation/ObjectAnimator;
     if-eqz p8, :cond_1
 
-    .line 230
+    .line 224
     move-object/from16 v0, p8
 
     invoke-virtual {v2, v0}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 233
+    .line 227
     :cond_1
     new-instance v8, Lcom/android/internal/transition/EpicenterTranslateClipReveal$StateProperty;
 
@@ -383,7 +383,7 @@
 
     invoke-direct {v8, v10}, Lcom/android/internal/transition/EpicenterTranslateClipReveal$StateProperty;-><init>(C)V
 
-    .line 234
+    .line 228
     .local v8, "propY":Lcom/android/internal/transition/EpicenterTranslateClipReveal$StateProperty;
     const/4 v10, 0x2
 
@@ -401,16 +401,16 @@
 
     move-result-object v3
 
-    .line 235
+    .line 229
     .local v3, "animY":Landroid/animation/ObjectAnimator;
     if-eqz p9, :cond_2
 
-    .line 236
+    .line 230
     move-object/from16 v0, p9
 
     invoke-virtual {v3, v0}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 239
+    .line 233
     :cond_2
     move-object/from16 v0, p7
 
@@ -424,19 +424,19 @@
 
     check-cast v9, Landroid/graphics/Rect;
 
-    .line 240
+    .line 234
     .local v9, "terminalClip":Landroid/graphics/Rect;
     new-instance v5, Lcom/android/internal/transition/EpicenterTranslateClipReveal$1;
 
     invoke-direct {v5, p0, v9}, Lcom/android/internal/transition/EpicenterTranslateClipReveal$1;-><init>(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 247
+    .line 241
     .local v5, "animatorListener":Landroid/animation/AnimatorListenerAdapter;
     new-instance v1, Landroid/animation/AnimatorSet;
 
     invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 248
+    .line 242
     .local v1, "animSet":Landroid/animation/AnimatorSet;
     const/4 v10, 0x3
 
@@ -456,10 +456,10 @@
 
     invoke-virtual {v1, v10}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 249
+    .line 243
     invoke-virtual {v1, v5}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 250
+    .line 244
     return-object v1
 .end method
 
@@ -468,7 +468,7 @@
     .param p1, "values"    # Landroid/transition/TransitionValues;
 
     .prologue
-    .line 209
+    .line 203
     iget-object v1, p1, Landroid/transition/TransitionValues;->values:Ljava/util/Map;
 
     const-string v2, "android:epicenterReveal:clip"
@@ -479,11 +479,11 @@
 
     check-cast v0, Landroid/graphics/Rect;
 
-    .line 210
+    .line 204
     .local v0, "clipRect":Landroid/graphics/Rect;
     if-nez v0, :cond_0
 
-    .line 211
+    .line 205
     iget-object v1, p1, Landroid/transition/TransitionValues;->values:Ljava/util/Map;
 
     const-string v2, "android:epicenterReveal:bounds"
@@ -494,7 +494,7 @@
 
     check-cast v1, Landroid/graphics/Rect;
 
-    .line 213
+    .line 207
     :goto_0
     return-object v1
 
@@ -518,25 +518,25 @@
     .local v2, "epicenter":Landroid/graphics/Rect;
     if-eqz v2, :cond_0
 
-    .line 205
+    .line 199
     .end local v2    # "epicenter":Landroid/graphics/Rect;
     :goto_0
     return-object v2
 
-    .line 203
+    .line 197
     .restart local v2    # "epicenter":Landroid/graphics/Rect;
     :cond_0
     invoke-virtual {p1}, Landroid/graphics/Rect;->centerX()I
 
     move-result v0
 
-    .line 204
+    .line 198
     .local v0, "centerX":I
     invoke-virtual {p1}, Landroid/graphics/Rect;->centerY()I
 
     move-result v1
 
-    .line 205
+    .line 199
     .local v1, "centerY":I
     new-instance v2, Landroid/graphics/Rect;
 
