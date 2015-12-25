@@ -14,7 +14,7 @@
     .locals 0
 
     .prologue
-    .line 38
+    .line 39
     invoke-direct {p0}, Landroid/transition/Visibility;-><init>()V
 
     return-void
@@ -26,10 +26,10 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 41
+    .line 42
     invoke-direct {p0, p1, p2}, Landroid/transition/Visibility;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 42
+    .line 43
     return-void
 .end method
 
@@ -40,10 +40,10 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 57
+    .line 58
     iget-object v2, p1, Landroid/transition/TransitionValues;->view:Landroid/view/View;
 
-    .line 58
+    .line 59
     .local v2, "view":Landroid/view/View;
     invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
 
@@ -53,18 +53,18 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 69
+    .line 70
     :cond_0
     :goto_0
     return-void
 
-    .line 62
+    .line 63
     :cond_1
     invoke-virtual {v2}, Landroid/view/View;->getClipBounds()Landroid/graphics/Rect;
 
     move-result-object v1
 
-    .line 63
+    .line 64
     .local v1, "clip":Landroid/graphics/Rect;
     iget-object v3, p1, Landroid/transition/TransitionValues;->values:Ljava/util/Map;
 
@@ -72,10 +72,10 @@
 
     invoke-interface {v3, v4, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 65
+    .line 66
     if-nez v1, :cond_0
 
-    .line 66
+    .line 67
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-virtual {v2}, Landroid/view/View;->getWidth()I
@@ -88,7 +88,7 @@
 
     invoke-direct {v0, v5, v5, v3, v4}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 67
+    .line 68
     .local v0, "bounds":Landroid/graphics/Rect;
     iget-object v3, p1, Landroid/transition/TransitionValues;->values:Ljava/util/Map;
 
@@ -99,43 +99,65 @@
     goto :goto_0
 .end method
 
-.method private createRectAnimator(Landroid/view/View;Landroid/graphics/Rect;Landroid/graphics/Rect;)Landroid/animation/Animator;
-    .locals 4
+.method private createRectAnimator(Landroid/view/View;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
+    .locals 6
     .param p1, "view"    # Landroid/view/View;
     .param p2, "start"    # Landroid/graphics/Rect;
     .param p3, "end"    # Landroid/graphics/Rect;
+    .param p4, "endValues"    # Landroid/transition/TransitionValues;
 
     .prologue
-    .line 112
-    new-instance v0, Landroid/animation/RectEvaluator;
+    .line 125
+    iget-object v3, p4, Landroid/transition/TransitionValues;->values:Ljava/util/Map;
 
-    new-instance v1, Landroid/graphics/Rect;
+    const-string v4, "android:epicenterReveal:clip"
 
-    invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
+    invoke-interface {v3, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct {v0, v1}, Landroid/animation/RectEvaluator;-><init>(Landroid/graphics/Rect;)V
+    move-result-object v2
 
-    .line 113
-    .local v0, "evaluator":Landroid/animation/RectEvaluator;
-    const-string v1, "clipBounds"
+    check-cast v2, Landroid/graphics/Rect;
 
-    const/4 v2, 0x2
+    .line 126
+    .local v2, "terminalClip":Landroid/graphics/Rect;
+    new-instance v1, Landroid/animation/RectEvaluator;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    new-instance v3, Landroid/graphics/Rect;
 
-    const/4 v3, 0x0
+    invoke-direct {v3}, Landroid/graphics/Rect;-><init>()V
 
-    aput-object p2, v2, v3
+    invoke-direct {v1, v3}, Landroid/animation/RectEvaluator;-><init>(Landroid/graphics/Rect;)V
 
-    const/4 v3, 0x1
+    .line 127
+    .local v1, "evaluator":Landroid/animation/RectEvaluator;
+    const-string v3, "clipBounds"
 
-    aput-object p3, v2, v3
+    const/4 v4, 0x2
 
-    invoke-static {p1, v1, v0, v2}, Landroid/animation/ObjectAnimator;->ofObject(Ljava/lang/Object;Ljava/lang/String;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;
+    new-array v4, v4, [Ljava/lang/Object;
 
-    move-result-object v1
+    const/4 v5, 0x0
 
-    return-object v1
+    aput-object p2, v4, v5
+
+    const/4 v5, 0x1
+
+    aput-object p3, v4, v5
+
+    invoke-static {p1, v3, v1, v4}, Landroid/animation/ObjectAnimator;->ofObject(Ljava/lang/Object;Ljava/lang/String;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;
+
+    move-result-object v0
+
+    .line 128
+    .local v0, "anim":Landroid/animation/ObjectAnimator;
+    new-instance v3, Lcom/android/internal/transition/EpicenterClipReveal$1;
+
+    invoke-direct {v3, p0, p1, v2}, Lcom/android/internal/transition/EpicenterClipReveal$1;-><init>(Lcom/android/internal/transition/EpicenterClipReveal;Landroid/view/View;Landroid/graphics/Rect;)V
+
+    invoke-virtual {v0, v3}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    .line 134
+    return-object v0
 .end method
 
 .method private getBestRect(Landroid/transition/TransitionValues;)Landroid/graphics/Rect;
@@ -143,7 +165,7 @@
     .param p1, "values"    # Landroid/transition/TransitionValues;
 
     .prologue
-    .line 104
+    .line 116
     iget-object v1, p1, Landroid/transition/TransitionValues;->values:Ljava/util/Map;
 
     const-string v2, "android:epicenterReveal:clip"
@@ -154,11 +176,11 @@
 
     check-cast v0, Landroid/graphics/Rect;
 
-    .line 105
+    .line 117
     .local v0, "clipRect":Landroid/graphics/Rect;
     if-nez v0, :cond_0
 
-    .line 106
+    .line 118
     iget-object v1, p1, Landroid/transition/TransitionValues;->values:Ljava/util/Map;
 
     const-string v2, "android:epicenterReveal:bounds"
@@ -169,12 +191,54 @@
 
     check-cast v1, Landroid/graphics/Rect;
 
-    .line 108
+    .line 120
     :goto_0
     return-object v1
 
     :cond_0
     move-object v1, v0
+
+    goto :goto_0
+.end method
+
+.method private getEpicenterOrCenter(Landroid/graphics/Rect;)Landroid/graphics/Rect;
+    .locals 3
+    .param p1, "bestRect"    # Landroid/graphics/Rect;
+
+    .prologue
+    .line 105
+    invoke-virtual {p0}, Lcom/android/internal/transition/EpicenterClipReveal;->getEpicenter()Landroid/graphics/Rect;
+
+    move-result-object v2
+
+    .line 106
+    .local v2, "epicenter":Landroid/graphics/Rect;
+    if-eqz v2, :cond_0
+
+    .line 112
+    .end local v2    # "epicenter":Landroid/graphics/Rect;
+    :goto_0
+    return-object v2
+
+    .line 110
+    .restart local v2    # "epicenter":Landroid/graphics/Rect;
+    :cond_0
+    invoke-virtual {p1}, Landroid/graphics/Rect;->centerX()I
+
+    move-result v0
+
+    .line 111
+    .local v0, "centerX":I
+    invoke-virtual {p1}, Landroid/graphics/Rect;->centerY()I
+
+    move-result v1
+
+    .line 112
+    .local v1, "centerY":I
+    new-instance v2, Landroid/graphics/Rect;
+
+    .end local v2    # "epicenter":Landroid/graphics/Rect;
+    invoke-direct {v2, v0, v1, v0, v1}, Landroid/graphics/Rect;-><init>(IIII)V
 
     goto :goto_0
 .end method
@@ -186,13 +250,13 @@
     .param p1, "transitionValues"    # Landroid/transition/TransitionValues;
 
     .prologue
-    .line 52
+    .line 53
     invoke-super {p0, p1}, Landroid/transition/Visibility;->captureEndValues(Landroid/transition/TransitionValues;)V
 
-    .line 53
+    .line 54
     invoke-direct {p0, p1}, Lcom/android/internal/transition/EpicenterClipReveal;->captureValues(Landroid/transition/TransitionValues;)V
 
-    .line 54
+    .line 55
     return-void
 .end method
 
@@ -201,13 +265,13 @@
     .param p1, "transitionValues"    # Landroid/transition/TransitionValues;
 
     .prologue
-    .line 46
+    .line 47
     invoke-super {p0, p1}, Landroid/transition/Visibility;->captureStartValues(Landroid/transition/TransitionValues;)V
 
-    .line 47
+    .line 48
     invoke-direct {p0, p1}, Lcom/android/internal/transition/EpicenterClipReveal;->captureValues(Landroid/transition/TransitionValues;)V
 
-    .line 48
+    .line 49
     return-void
 .end method
 
@@ -219,34 +283,34 @@
     .param p4, "endValues"    # Landroid/transition/TransitionValues;
 
     .prologue
-    .line 74
+    .line 75
     if-nez p4, :cond_0
 
-    .line 75
+    .line 76
     const/4 v2, 0x0
 
-    .line 84
+    .line 85
     :goto_0
     return-object v2
 
-    .line 78
-    :cond_0
-    invoke-virtual {p0}, Lcom/android/internal/transition/EpicenterClipReveal;->getEpicenter()Landroid/graphics/Rect;
-
-    move-result-object v1
-
     .line 79
-    .local v1, "start":Landroid/graphics/Rect;
+    :cond_0
     invoke-direct {p0, p4}, Lcom/android/internal/transition/EpicenterClipReveal;->getBestRect(Landroid/transition/TransitionValues;)Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 82
+    .line 80
     .local v0, "end":Landroid/graphics/Rect;
+    invoke-direct {p0, v0}, Lcom/android/internal/transition/EpicenterClipReveal;->getEpicenterOrCenter(Landroid/graphics/Rect;)Landroid/graphics/Rect;
+
+    move-result-object v1
+
+    .line 83
+    .local v1, "start":Landroid/graphics/Rect;
     invoke-virtual {p2, v1}, Landroid/view/View;->setClipBounds(Landroid/graphics/Rect;)V
 
-    .line 84
-    invoke-direct {p0, p2, v1, v0}, Lcom/android/internal/transition/EpicenterClipReveal;->createRectAnimator(Landroid/view/View;Landroid/graphics/Rect;Landroid/graphics/Rect;)Landroid/animation/Animator;
+    .line 85
+    invoke-direct {p0, p2, v1, v0, p4}, Lcom/android/internal/transition/EpicenterClipReveal;->createRectAnimator(Landroid/view/View;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
 
     move-result-object v2
 
@@ -261,34 +325,34 @@
     .param p4, "endValues"    # Landroid/transition/TransitionValues;
 
     .prologue
-    .line 90
+    .line 91
     if-nez p3, :cond_0
 
-    .line 91
+    .line 92
     const/4 v2, 0x0
 
-    .line 100
+    .line 101
     :goto_0
     return-object v2
 
-    .line 94
+    .line 95
     :cond_0
     invoke-direct {p0, p3}, Lcom/android/internal/transition/EpicenterClipReveal;->getBestRect(Landroid/transition/TransitionValues;)Landroid/graphics/Rect;
 
     move-result-object v1
 
-    .line 95
+    .line 96
     .local v1, "start":Landroid/graphics/Rect;
-    invoke-virtual {p0}, Lcom/android/internal/transition/EpicenterClipReveal;->getEpicenter()Landroid/graphics/Rect;
+    invoke-direct {p0, v1}, Lcom/android/internal/transition/EpicenterClipReveal;->getEpicenterOrCenter(Landroid/graphics/Rect;)Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 98
+    .line 99
     .local v0, "end":Landroid/graphics/Rect;
     invoke-virtual {p2, v1}, Landroid/view/View;->setClipBounds(Landroid/graphics/Rect;)V
 
-    .line 100
-    invoke-direct {p0, p2, v1, v0}, Lcom/android/internal/transition/EpicenterClipReveal;->createRectAnimator(Landroid/view/View;Landroid/graphics/Rect;Landroid/graphics/Rect;)Landroid/animation/Animator;
+    .line 101
+    invoke-direct {p0, p2, v1, v0, p4}, Lcom/android/internal/transition/EpicenterClipReveal;->createRectAnimator(Landroid/view/View;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
 
     move-result-object v2
 
