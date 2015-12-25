@@ -170,12 +170,12 @@
     .param p0, "sceneRoot"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 378
+    .line 383
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Landroid/transition/TransitionManager;->beginDelayedTransition(Landroid/view/ViewGroup;Landroid/transition/Transition;)V
 
-    .line 379
+    .line 384
     return-void
 .end method
 
@@ -185,7 +185,7 @@
     .param p1, "transition"    # Landroid/transition/Transition;
 
     .prologue
-    .line 405
+    .line 410
     sget-object v1, Landroid/transition/TransitionManager;->sPendingTransitions:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p0}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
@@ -200,36 +200,36 @@
 
     if-eqz v1, :cond_1
 
-    .line 410
+    .line 415
     sget-object v1, Landroid/transition/TransitionManager;->sPendingTransitions:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 411
+    .line 416
     if-nez p1, :cond_0
 
-    .line 412
+    .line 417
     sget-object p1, Landroid/transition/TransitionManager;->sDefaultTransition:Landroid/transition/Transition;
 
-    .line 414
+    .line 419
     :cond_0
     invoke-virtual {p1}, Landroid/transition/Transition;->clone()Landroid/transition/Transition;
 
     move-result-object v0
 
-    .line 415
+    .line 420
     .local v0, "transitionClone":Landroid/transition/Transition;
     invoke-static {p0, v0}, Landroid/transition/TransitionManager;->sceneChangeSetup(Landroid/view/ViewGroup;Landroid/transition/Transition;)V
 
-    .line 416
+    .line 421
     const/4 v1, 0x0
 
     invoke-static {p0, v1}, Landroid/transition/Scene;->setCurrentScene(Landroid/view/View;Landroid/transition/Scene;)V
 
-    .line 417
+    .line 422
     invoke-static {p0, v0}, Landroid/transition/TransitionManager;->sceneChangeRunTransition(Landroid/view/ViewGroup;Landroid/transition/Transition;)V
 
-    .line 419
+    .line 424
     .end local v0    # "transitionClone":Landroid/transition/Transition;
     :cond_1
     return-void
@@ -296,6 +296,68 @@
     invoke-static {v1, v2}, Landroid/transition/TransitionManager;->sceneChangeRunTransition(Landroid/view/ViewGroup;Landroid/transition/Transition;)V
 
     .line 202
+    return-void
+.end method
+
+.method public static endTransitions(Landroid/view/ViewGroup;)V
+    .locals 5
+    .param p0, "sceneRoot"    # Landroid/view/ViewGroup;
+
+    .prologue
+    .line 433
+    sget-object v4, Landroid/transition/TransitionManager;->sPendingTransitions:Ljava/util/ArrayList;
+
+    invoke-virtual {v4, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    .line 435
+    invoke-static {}, Landroid/transition/TransitionManager;->getRunningTransitions()Landroid/util/ArrayMap;
+
+    move-result-object v4
+
+    invoke-virtual {v4, p0}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/util/ArrayList;
+
+    .line 436
+    .local v2, "runningTransitions":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/transition/Transition;>;"
+    if-eqz v2, :cond_0
+
+    .line 437
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    .line 438
+    .local v0, "count":I
+    const/4 v1, 0x0
+
+    .local v1, "i":I
+    :goto_0
+    if-ge v1, v0, :cond_0
+
+    .line 439
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/transition/Transition;
+
+    .line 440
+    .local v3, "transition":Landroid/transition/Transition;
+    invoke-virtual {v3}, Landroid/transition/Transition;->end()V
+
+    .line 438
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 444
+    .end local v0    # "count":I
+    .end local v1    # "i":I
+    .end local v3    # "transition":Landroid/transition/Transition;
+    :cond_0
     return-void
 .end method
 
@@ -465,12 +527,12 @@
     .param p0, "scene"    # Landroid/transition/Scene;
 
     .prologue
-    .line 347
+    .line 352
     sget-object v0, Landroid/transition/TransitionManager;->sDefaultTransition:Landroid/transition/Transition;
 
     invoke-static {p0, v0}, Landroid/transition/TransitionManager;->changeScene(Landroid/transition/Scene;Landroid/transition/Transition;)V
 
-    .line 348
+    .line 353
     return-void
 .end method
 
@@ -480,10 +542,10 @@
     .param p1, "transition"    # Landroid/transition/Transition;
 
     .prologue
-    .line 365
+    .line 370
     invoke-static {p0, p1}, Landroid/transition/TransitionManager;->changeScene(Landroid/transition/Scene;Landroid/transition/Transition;)V
 
-    .line 366
+    .line 371
     return-void
 .end method
 
@@ -526,7 +588,7 @@
     .param p1, "transition"    # Landroid/transition/Transition;
 
     .prologue
-    .line 307
+    .line 312
     invoke-static {}, Landroid/transition/TransitionManager;->getRunningTransitions()Landroid/util/ArrayMap;
 
     move-result-object v4
@@ -537,7 +599,7 @@
 
     check-cast v3, Ljava/util/ArrayList;
 
-    .line 309
+    .line 314
     .local v3, "runningTransitions":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/transition/Transition;>;"
     if-eqz v3, :cond_0
 
@@ -547,7 +609,7 @@
 
     if-lez v4, :cond_0
 
-    .line 310
+    .line 315
     invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -566,37 +628,37 @@
 
     check-cast v2, Landroid/transition/Transition;
 
-    .line 311
+    .line 316
     .local v2, "runningTransition":Landroid/transition/Transition;
     invoke-virtual {v2, p0}, Landroid/transition/Transition;->pause(Landroid/view/View;)V
 
     goto :goto_0
 
-    .line 315
+    .line 320
     .end local v0    # "i$":Ljava/util/Iterator;
     .end local v2    # "runningTransition":Landroid/transition/Transition;
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 316
+    .line 321
     const/4 v4, 0x1
 
     invoke-virtual {p1, p0, v4}, Landroid/transition/Transition;->captureValues(Landroid/view/ViewGroup;Z)V
 
-    .line 320
+    .line 325
     :cond_1
     invoke-static {p0}, Landroid/transition/Scene;->getCurrentScene(Landroid/view/View;)Landroid/transition/Scene;
 
     move-result-object v1
 
-    .line 321
+    .line 326
     .local v1, "previousScene":Landroid/transition/Scene;
     if-eqz v1, :cond_2
 
-    .line 322
+    .line 327
     invoke-virtual {v1}, Landroid/transition/Scene;->exit()V
 
-    .line 324
+    .line 329
     :cond_2
     return-void
 .end method
@@ -675,13 +737,13 @@
     .param p1, "scene"    # Landroid/transition/Scene;
 
     .prologue
-    .line 337
+    .line 342
     invoke-direct {p0, p1}, Landroid/transition/TransitionManager;->getTransition(Landroid/transition/Scene;)Landroid/transition/Transition;
 
     move-result-object v0
 
     invoke-static {p1, v0}, Landroid/transition/TransitionManager;->changeScene(Landroid/transition/Scene;Landroid/transition/Transition;)V
 
-    .line 338
+    .line 343
     return-void
 .end method

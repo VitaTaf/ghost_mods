@@ -30,16 +30,16 @@
     .param p2, "transition"    # Landroid/transition/Transition;
 
     .prologue
-    .line 1889
+    .line 1900
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1890
+    .line 1901
     iput-object p1, p0, Landroid/widget/PopupWindow$PostLayoutTransitionListener;->mSceneRoot:Landroid/view/ViewGroup;
 
-    .line 1891
+    .line 1902
     iput-object p2, p0, Landroid/widget/PopupWindow$PostLayoutTransitionListener;->mTransition:Landroid/transition/Transition;
 
-    .line 1892
+    .line 1903
     return-void
 .end method
 
@@ -49,39 +49,39 @@
     .locals 6
 
     .prologue
-    .line 1896
+    .line 1907
     iget-object v4, p0, Landroid/widget/PopupWindow$PostLayoutTransitionListener;->mSceneRoot:Landroid/view/ViewGroup;
 
     invoke-virtual {v4}, Landroid/view/ViewGroup;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v2
 
-    .line 1897
+    .line 1908
     .local v2, "observer":Landroid/view/ViewTreeObserver;
     if-nez v2, :cond_1
 
-    .line 1917
+    .line 1928
     :cond_0
     return-void
 
-    .line 1902
+    .line 1913
     :cond_1
     invoke-virtual {v2, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 1905
+    .line 1916
     iget-object v4, p0, Landroid/widget/PopupWindow$PostLayoutTransitionListener;->mTransition:Landroid/transition/Transition;
 
     invoke-virtual {v4}, Landroid/transition/Transition;->getTargets()Ljava/util/List;
 
     move-result-object v3
 
-    .line 1906
+    .line 1917
     .local v3, "targets":Ljava/util/List;, "Ljava/util/List<Landroid/view/View;>;"
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v0
 
-    .line 1907
+    .line 1918
     .local v0, "N":I
     const/4 v1, 0x0
 
@@ -89,7 +89,7 @@
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 1908
+    .line 1919
     invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -100,12 +100,12 @@
 
     invoke-virtual {v4, v5}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1907
+    .line 1918
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1911
+    .line 1922
     :cond_2
     iget-object v4, p0, Landroid/widget/PopupWindow$PostLayoutTransitionListener;->mSceneRoot:Landroid/view/ViewGroup;
 
@@ -113,13 +113,13 @@
 
     invoke-static {v4, v5}, Landroid/transition/TransitionManager;->beginDelayedTransition(Landroid/view/ViewGroup;Landroid/transition/Transition;)V
 
-    .line 1914
+    .line 1925
     const/4 v1, 0x0
 
     :goto_1
     if-ge v1, v0, :cond_0
 
-    .line 1915
+    .line 1926
     invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -130,7 +130,7 @@
 
     invoke-virtual {v4, v5}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1914
+    .line 1925
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1

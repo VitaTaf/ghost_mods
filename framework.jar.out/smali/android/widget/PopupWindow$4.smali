@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 1579
+    .line 1594
     iput-object p1, p0, Landroid/widget/PopupWindow$4;->this$0:Landroid/widget/PopupWindow;
 
     invoke-direct {p0}, Landroid/transition/Transition$TransitionListenerAdapter;-><init>()V
@@ -38,10 +38,10 @@
     .param p1, "transition"    # Landroid/transition/Transition;
 
     .prologue
-    .line 1582
+    .line 1597
     invoke-virtual {p1, p0}, Landroid/transition/Transition;->removeListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
 
-    .line 1583
+    .line 1598
     iget-object v0, p0, Landroid/widget/PopupWindow$4;->this$0:Landroid/widget/PopupWindow;
 
     # getter for: Landroid/widget/PopupWindow;->mBackgroundView:Landroid/view/View;
@@ -51,12 +51,12 @@
 
     invoke-virtual {p1, v0}, Landroid/transition/Transition;->removeTarget(Landroid/view/View;)Landroid/transition/Transition;
 
-    .line 1585
+    .line 1600
     iget-object v0, p0, Landroid/widget/PopupWindow$4;->this$0:Landroid/widget/PopupWindow;
 
     # invokes: Landroid/widget/PopupWindow;->dismissImmediate()V
     invoke-static {v0}, Landroid/widget/PopupWindow;->access$900(Landroid/widget/PopupWindow;)V
 
-    .line 1586
+    .line 1601
     return-void
 .end method
