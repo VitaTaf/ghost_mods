@@ -188,6 +188,20 @@
     return-object v0
 .end method
 
+.method public getGravity()I
+    .locals 1
+
+    .prologue
+    .line 137
+    iget-object v0, p0, Landroid/widget/PopupMenu;->mPopup:Lcom/android/internal/view/menu/MenuPopupHelper;
+
+    invoke-virtual {v0}, Lcom/android/internal/view/menu/MenuPopupHelper;->getGravity()I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public getMenu()Landroid/view/Menu;
     .locals 1
 
@@ -334,6 +348,20 @@
     invoke-virtual {v1}, Lcom/android/internal/view/menu/MenuPopupHelper;->show()V
 
     goto :goto_0
+.end method
+
+.method public setGravity(I)V
+    .locals 1
+    .param p1, "gravity"    # I
+
+    .prologue
+    .line 128
+    iget-object v0, p0, Landroid/widget/PopupMenu;->mPopup:Lcom/android/internal/view/menu/MenuPopupHelper;
+
+    invoke-virtual {v0, p1}, Lcom/android/internal/view/menu/MenuPopupHelper;->setGravity(I)V
+
+    .line 129
+    return-void
 .end method
 
 .method public setOnDismissListener(Landroid/widget/PopupMenu$OnDismissListener;)V

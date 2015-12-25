@@ -449,6 +449,16 @@
     return v0
 .end method
 
+.method public getGravity()I
+    .locals 1
+
+    .prologue
+    .line 122
+    iget v0, p0, Lcom/android/internal/view/menu/MenuPopupHelper;->mDropDownGravity:I
+
+    return v0
+.end method
+
 .method public getId()I
     .locals 1
 
