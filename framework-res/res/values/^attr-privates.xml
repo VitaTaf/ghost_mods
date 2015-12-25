@@ -123,6 +123,10 @@
     <attr name="amPmSelectedBackgroundColor" format="color" />
     <attr name="frameDuration" format="integer" />
     <attr name="framesCount" format="integer" />
+    <attr name="centerClipBounds" format="boolean" />
+    <attr name="interpolatorX" format="reference" />
+    <attr name="interpolatorY" format="reference" />
+    <attr name="interpolatorZ" format="reference" />
     <attr name="state_accessibility_focused" format="boolean" />
     <attr name="initialActivityCount" format="string" />
     <attr name="expandActivityOverflowButtonDrawable" format="reference" />

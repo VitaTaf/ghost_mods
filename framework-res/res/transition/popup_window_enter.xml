@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <transitionSet android:transitionOrdering="together"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <transition android:interpolator="@interpolator/accelerate_cubic" android:duration="300" android:startDelay="50" class="com.android.internal.transition.EpicenterClipReveal" />
-    <fade android:interpolator="@interpolator/linear" android:duration="100" />
+    <transition android:duration="300" class="com.android.internal.transition.EpicenterTranslate" />
+    <transition android:duration="300" android:centerClipBounds="true" class="com.android.internal.transition.EpicenterClipReveal" />
+    <fade android:duration="100" />
 </transitionSet>

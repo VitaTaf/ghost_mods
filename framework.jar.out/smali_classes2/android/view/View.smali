@@ -19200,6 +19200,34 @@
     goto :goto_0
 .end method
 
+.method public getClipBounds(Landroid/graphics/Rect;)Z
+    .locals 1
+    .param p1, "outRect"    # Landroid/graphics/Rect;
+
+    .prologue
+    .line 14757
+    iget-object v0, p0, Landroid/view/View;->mClipBounds:Landroid/graphics/Rect;
+
+    if-eqz v0, :cond_0
+
+    .line 14758
+    iget-object v0, p0, Landroid/view/View;->mClipBounds:Landroid/graphics/Rect;
+
+    invoke-virtual {p1, v0}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+
+    .line 14759
+    const/4 v0, 0x1
+
+    .line 14761
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method public final getClipToOutline()Z
     .locals 1
 

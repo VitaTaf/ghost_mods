@@ -1,11 +1,11 @@
-.class Landroid/widget/PopupWindow$2;
+.class Landroid/widget/PopupWindow$PopupDecorView$1$1;
 .super Landroid/transition/Transition$EpicenterCallback;
 .source "PopupWindow.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/widget/PopupWindow;->dismiss()V
+    value = Landroid/widget/PopupWindow$PopupDecorView$1;->onGlobalLayout()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,20 +15,20 @@
 
 
 # instance fields
-.field final synthetic this$0:Landroid/widget/PopupWindow;
+.field final synthetic this$2:Landroid/widget/PopupWindow$PopupDecorView$1;
 
 .field final synthetic val$epicenter:Landroid/graphics/Rect;
 
 
 # direct methods
-.method constructor <init>(Landroid/widget/PopupWindow;Landroid/graphics/Rect;)V
+.method constructor <init>(Landroid/widget/PopupWindow$PopupDecorView$1;Landroid/graphics/Rect;)V
     .locals 0
 
     .prologue
-    .line 1412
-    iput-object p1, p0, Landroid/widget/PopupWindow$2;->this$0:Landroid/widget/PopupWindow;
+    .line 1767
+    iput-object p1, p0, Landroid/widget/PopupWindow$PopupDecorView$1$1;->this$2:Landroid/widget/PopupWindow$PopupDecorView$1;
 
-    iput-object p2, p0, Landroid/widget/PopupWindow$2;->val$epicenter:Landroid/graphics/Rect;
+    iput-object p2, p0, Landroid/widget/PopupWindow$PopupDecorView$1$1;->val$epicenter:Landroid/graphics/Rect;
 
     invoke-direct {p0}, Landroid/transition/Transition$EpicenterCallback;-><init>()V
 
@@ -42,8 +42,8 @@
     .param p1, "transition"    # Landroid/transition/Transition;
 
     .prologue
-    .line 1415
-    iget-object v0, p0, Landroid/widget/PopupWindow$2;->val$epicenter:Landroid/graphics/Rect;
+    .line 1770
+    iget-object v0, p0, Landroid/widget/PopupWindow$PopupDecorView$1$1;->val$epicenter:Landroid/graphics/Rect;
 
     return-object v0
 .end method

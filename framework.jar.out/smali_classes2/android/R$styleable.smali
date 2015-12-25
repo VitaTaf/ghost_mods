@@ -1219,6 +1219,10 @@
 
 .field public static final EditText:[I
 
+.field public static final EpicenterClipReveal:[I
+
+.field public static final EpicenterTranslate:[I
+
 .field public static final ExpandableListChildIndicatorState:[I
 
 .field public static final ExpandableListChildIndicatorState_state_last:I = 0x0
@@ -4887,7 +4891,21 @@
 
     sput-object v0, Landroid/R$styleable;->EditText:[I
 
-    .line 27930
+    .line 27921
+    new-array v0, v5, [I
+
+    fill-array-data v0, :array_d0
+
+    sput-object v0, Landroid/R$styleable;->EpicenterClipReveal:[I
+
+    .line 27932
+    new-array v0, v5, [I
+
+    fill-array-data v0, :array_d1
+
+    sput-object v0, Landroid/R$styleable;->EpicenterTranslate:[I
+
+    .line 27945
     new-array v0, v3, [I
 
     const v1, 0x10100a6
@@ -7221,6 +7239,22 @@
         0x1010368
         0x1010369
         0x1160069
+    .end array-data
+
+    .line 27921
+    :array_d0
+    .array-data 4
+        0x11600b2
+        0x11600b3
+        0x11600b4
+    .end array-data
+
+    .line 27932
+    :array_d1
+    .array-data 4
+        0x11600b3
+        0x11600b4
+        0x11600b5
     .end array-data
 
     .line 27962
