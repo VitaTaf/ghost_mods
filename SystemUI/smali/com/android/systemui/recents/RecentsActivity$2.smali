@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 159
+    .line 158
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$2;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +39,12 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 162
+    .line 161
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 163
+    .line 162
     .local v0, "action":Ljava/lang/String;
     const-string v1, "android.intent.action.SCREEN_OFF"
 
@@ -54,19 +54,19 @@
 
     if-eqz v1, :cond_1
 
-    .line 165
+    .line 164
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$2;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/recents/RecentsActivity;->dismissRecentsToHome(Z)Z
 
-    .line 170
+    .line 169
     :cond_0
     :goto_0
     return-void
 
-    .line 166
+    .line 165
     :cond_1
     const-string v1, "android.search.action.GLOBAL_SEARCH_ACTIVITY_CHANGED"
 
@@ -76,7 +76,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 168
+    .line 167
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$2;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-virtual {v1}, Lcom/android/systemui/recents/RecentsActivity;->refreshSearchWidget()V
