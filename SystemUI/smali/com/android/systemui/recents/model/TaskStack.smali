@@ -604,6 +604,68 @@
     return v0
 .end method
 
+.method public removeAllTasks()V
+    .locals 5
+
+    .prologue
+    .line 250
+    new-instance v3, Ljava/util/ArrayList;
+
+    iget-object v4, p0, Lcom/android/systemui/recents/model/TaskStack;->mTaskList:Lcom/android/systemui/recents/model/FilteredTaskList;
+
+    invoke-virtual {v4}, Lcom/android/systemui/recents/model/FilteredTaskList;->getTasks()Ljava/util/ArrayList;
+
+    move-result-object v4
+
+    invoke-direct {v3, v4}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    .line 251
+    .local v3, "taskList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/recents/model/Task;>;"
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    .line 252
+    .local v2, "taskCount":I
+    add-int/lit8 v0, v2, -0x1
+
+    .local v0, "i":I
+    :goto_0
+    if-ltz v0, :cond_0
+
+    .line 253
+    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/systemui/recents/model/Task;
+
+    .line 254
+    .local v1, "t":Lcom/android/systemui/recents/model/Task;
+    invoke-virtual {p0, v1}, Lcom/android/systemui/recents/model/TaskStack;->removeTaskImpl(Lcom/android/systemui/recents/model/Task;)V
+
+    .line 252
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_0
+
+    .line 256
+    .end local v1    # "t":Lcom/android/systemui/recents/model/Task;
+    :cond_0
+    iget-object v4, p0, Lcom/android/systemui/recents/model/TaskStack;->mCb:Lcom/android/systemui/recents/model/TaskStack$TaskStackCallbacks;
+
+    if-eqz v4, :cond_1
+
+    .line 258
+    iget-object v4, p0, Lcom/android/systemui/recents/model/TaskStack;->mCb:Lcom/android/systemui/recents/model/TaskStack$TaskStackCallbacks;
+
+    invoke-interface {v4, p0, v3}, Lcom/android/systemui/recents/model/TaskStack$TaskStackCallbacks;->onStackAllTasksRemoved(Lcom/android/systemui/recents/model/TaskStack;Ljava/util/ArrayList;)V
+
+    .line 260
+    :cond_1
+    return-void
+.end method
+
 .method public removeGroup(Lcom/android/systemui/recents/model/TaskGrouping;)V
     .locals 2
     .param p1, "group"    # Lcom/android/systemui/recents/model/TaskGrouping;

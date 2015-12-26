@@ -777,8 +777,45 @@
     .local v8, "pNavBarOffset":F
     const/4 v7, 0x0
 
-    .line 142
+    .line 137
     .local v7, "pDismissAllButtonOffset":F
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;->mStackVisibleRect:Landroid/graphics/Rect;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, v18
+
+    iget v0, v0, Landroid/graphics/Rect;->bottom:I
+
+    move/from16 v18, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
+
+    move-object/from16 v19, v0
+
+    move-object/from16 v0, v19
+
+    iget v0, v0, Lcom/android/systemui/recents/RecentsConfiguration;->dismissAllButtonSizePx:I
+
+    move/from16 v19, v0
+
+    sub-int v18, v18, v19
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;->screenYToCurveProgress(I)F
+
+    move-result v18
+
+    sub-float v7, v4, v18
+
+    .line 142
     const/high16 v3, 0x3f000000    # 0.5f
 
     .line 143

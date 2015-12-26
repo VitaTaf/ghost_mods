@@ -15,6 +15,19 @@
 
 
 # virtual methods
+.method public abstract onStackAllTasksRemoved(Lcom/android/systemui/recents/model/TaskStack;Ljava/util/ArrayList;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/android/systemui/recents/model/TaskStack;",
+            "Ljava/util/ArrayList",
+            "<",
+            "Lcom/android/systemui/recents/model/Task;",
+            ">;)V"
+        }
+    .end annotation
+.end method
+
 .method public abstract onStackTaskAdded(Lcom/android/systemui/recents/model/TaskStack;Lcom/android/systemui/recents/model/Task;)V
 .end method
 
