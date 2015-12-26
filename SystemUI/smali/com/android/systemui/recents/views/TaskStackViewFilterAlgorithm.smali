@@ -40,19 +40,19 @@
     .end annotation
 
     .prologue
-    .line 34
+    .line 35
     .local p3, "viewPool":Lcom/android/systemui/recents/views/ViewPool;, "Lcom/android/systemui/recents/views/ViewPool<Lcom/android/systemui/recents/views/TaskView;Lcom/android/systemui/recents/model/Task;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 35
+    .line 36
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackViewFilterAlgorithm;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
-    .line 36
+    .line 37
     iput-object p2, p0, Lcom/android/systemui/recents/views/TaskStackViewFilterAlgorithm;->mStackView:Lcom/android/systemui/recents/views/TaskStackView;
 
-    .line 37
+    .line 38
     iput-object p3, p0, Lcom/android/systemui/recents/views/TaskStackViewFilterAlgorithm;->mViewPool:Lcom/android/systemui/recents/views/ViewPool;
 
-    .line 38
+    .line 39
     return-void
 .end method

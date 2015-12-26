@@ -43,12 +43,12 @@
     .locals 1
 
     .prologue
-    .line 97
+    .line 85
     const-string v0, "TaskResourceLoader"
 
     sput-object v0, Lcom/android/systemui/recents/model/TaskResourceLoader;->TAG:Ljava/lang/String;
 
-    .line 98
+    .line 86
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/android/systemui/recents/model/TaskResourceLoader;->DEBUG:Z
@@ -65,32 +65,32 @@
     .param p5, "defaultApplicationIcon"    # Landroid/graphics/drawable/BitmapDrawable;
 
     .prologue
-    .line 118
+    .line 106
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 119
+    .line 107
     iput-object p1, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mLoadQueue:Lcom/android/systemui/recents/model/TaskResourceLoadQueue;
 
-    .line 120
+    .line 108
     iput-object p2, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mApplicationIconCache:Lcom/android/systemui/recents/model/DrawableLruCache;
 
-    .line 121
+    .line 109
     iput-object p3, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mThumbnailCache:Lcom/android/systemui/recents/model/BitmapLruCache;
 
-    .line 122
+    .line 110
     iput-object p4, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mDefaultThumbnail:Landroid/graphics/Bitmap;
 
-    .line 123
+    .line 111
     iput-object p5, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mDefaultApplicationIcon:Landroid/graphics/drawable/BitmapDrawable;
 
-    .line 124
+    .line 112
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mMainThreadHandler:Landroid/os/Handler;
 
-    .line 125
+    .line 113
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string v1, "Recents-TaskResourceLoader"
@@ -101,12 +101,12 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mLoadThread:Landroid/os/HandlerThread;
 
-    .line 127
+    .line 115
     iget-object v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mLoadThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    .line 128
+    .line 116
     new-instance v0, Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mLoadThread:Landroid/os/HandlerThread;
@@ -119,12 +119,12 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mLoadThreadHandler:Landroid/os/Handler;
 
-    .line 129
+    .line 117
     iget-object v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mLoadThreadHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, p0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 130
+    .line 118
     return-void
 .end method
 
@@ -139,17 +139,17 @@
     .param p5, "res"    # Landroid/content/res/Resources;
 
     .prologue
-    .line 253
+    .line 241
     if-eqz p2, :cond_0
 
     move-object v0, p2
 
-    .line 256
+    .line 244
     .local v0, "tdIcon":Landroid/graphics/Bitmap;
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 257
+    .line 245
     new-instance v1, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-direct {v1, p5, v0}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
@@ -160,11 +160,11 @@
 
     move-result-object v1
 
-    .line 259
+    .line 247
     :goto_1
     return-object v1
 
-    .line 253
+    .line 241
     .end local v0    # "tdIcon":Landroid/graphics/Bitmap;
     :cond_0
     invoke-static {p3}, Landroid/app/ActivityManager$TaskDescription;->loadTaskDescriptionIcon(Ljava/lang/String;)Landroid/graphics/Bitmap;
@@ -173,7 +173,7 @@
 
     goto :goto_0
 
-    .line 259
+    .line 247
     .restart local v0    # "tdIcon":Landroid/graphics/Bitmap;
     :cond_1
     const/4 v1, 0x0
@@ -185,24 +185,24 @@
     .locals 14
 
     .prologue
-    .line 158
+    .line 146
     :cond_0
     :goto_0
     iget-boolean v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mCancelled:Z
 
     if-eqz v0, :cond_1
 
-    .line 161
+    .line 149
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mContext:Landroid/content/Context;
 
-    .line 163
+    .line 151
     iget-object v1, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mLoadThread:Landroid/os/HandlerThread;
 
     monitor-enter v1
 
-    .line 165
+    .line 153
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mLoadThread:Landroid/os/HandlerThread;
 
@@ -211,7 +211,7 @@
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 169
+    .line 157
     :goto_1
     :try_start_1
     monitor-exit v1
@@ -227,11 +227,11 @@
 
     throw v0
 
-    .line 166
+    .line 154
     :catch_0
     move-exception v9
 
-    .line 167
+    .line 155
     .local v9, "ie":Ljava/lang/InterruptedException;
     :try_start_2
     invoke-virtual {v9}, Ljava/lang/InterruptedException;->printStackTrace()V
@@ -240,33 +240,33 @@
 
     goto :goto_1
 
-    .line 171
+    .line 159
     .end local v9    # "ie":Ljava/lang/InterruptedException;
     :cond_1
     invoke-static {}, Lcom/android/systemui/recents/RecentsConfiguration;->getInstance()Lcom/android/systemui/recents/RecentsConfiguration;
 
     move-result-object v8
 
-    .line 172
+    .line 160
     .local v8, "config":Lcom/android/systemui/recents/RecentsConfiguration;
     iget-object v4, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mSystemServicesProxy:Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
-    .line 175
+    .line 163
     .local v4, "ssp":Lcom/android/systemui/recents/misc/SystemServicesProxy;
     if-eqz v4, :cond_a
 
-    .line 177
+    .line 165
     iget-object v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mLoadQueue:Lcom/android/systemui/recents/model/TaskResourceLoadQueue;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/model/TaskResourceLoadQueue;->nextTask()Lcom/android/systemui/recents/model/Task;
 
     move-result-object v13
 
-    .line 178
+    .line 166
     .local v13, "t":Lcom/android/systemui/recents/model/Task;
     if-eqz v13, :cond_a
 
-    .line 179
+    .line 167
     iget-object v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mApplicationIconCache:Lcom/android/systemui/recents/model/DrawableLruCache;
 
     iget-object v1, v13, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
@@ -277,7 +277,7 @@
 
     check-cast v6, Landroid/graphics/drawable/Drawable;
 
-    .line 180
+    .line 168
     .local v6, "cachedIcon":Landroid/graphics/drawable/Drawable;
     iget-object v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mThumbnailCache:Lcom/android/systemui/recents/model/BitmapLruCache;
 
@@ -289,11 +289,11 @@
 
     check-cast v7, Landroid/graphics/Bitmap;
 
-    .line 183
+    .line 171
     .local v7, "cachedThumbnail":Landroid/graphics/Bitmap;
     if-nez v6, :cond_5
 
-    .line 184
+    .line 172
     iget-object v1, v13, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
 
     iget-object v2, v13, Lcom/android/systemui/recents/model/Task;->icon:Landroid/graphics/Bitmap;
@@ -312,10 +312,10 @@
 
     move-result-object v6
 
-    .line 187
+    .line 175
     if-nez v6, :cond_3
 
-    .line 188
+    .line 176
     iget-object v0, v13, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
 
     iget-object v0, v0, Lcom/android/systemui/recents/model/Task$TaskKey;->baseIntent:Landroid/content/Intent;
@@ -332,11 +332,11 @@
 
     move-result-object v10
 
-    .line 190
+    .line 178
     .local v10, "info":Landroid/content/pm/ActivityInfo;
     if-eqz v10, :cond_3
 
-    .line 191
+    .line 179
     sget-boolean v0, Lcom/android/systemui/recents/model/TaskResourceLoader;->DEBUG:Z
 
     if-eqz v0, :cond_2
@@ -365,7 +365,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 192
+    .line 180
     :cond_2
     iget-object v0, v13, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
 
@@ -375,15 +375,15 @@
 
     move-result-object v6
 
-    .line 196
+    .line 184
     .end local v10    # "info":Landroid/content/pm/ActivityInfo;
     :cond_3
     if-nez v6, :cond_4
 
-    .line 197
+    .line 185
     iget-object v6, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mDefaultApplicationIcon:Landroid/graphics/drawable/BitmapDrawable;
 
-    .line 202
+    .line 190
     :cond_4
     iget-object v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mApplicationIconCache:Lcom/android/systemui/recents/model/DrawableLruCache;
 
@@ -391,18 +391,18 @@
 
     invoke-virtual {v0, v1, v6}, Lcom/android/systemui/recents/model/DrawableLruCache;->put(Lcom/android/systemui/recents/model/Task$TaskKey;Ljava/lang/Object;)V
 
-    .line 205
+    .line 193
     :cond_5
     if-nez v7, :cond_9
 
-    .line 206
+    .line 194
     iget v0, v8, Lcom/android/systemui/recents/RecentsConfiguration;->svelteLevel:I
 
     const/4 v1, 0x3
 
     if-ge v0, v1, :cond_7
 
-    .line 207
+    .line 195
     sget-boolean v0, Lcom/android/systemui/recents/model/TaskResourceLoader;->DEBUG:Z
 
     if-eqz v0, :cond_6
@@ -431,7 +431,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 208
+    .line 196
     :cond_6
     iget-object v0, v13, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
 
@@ -441,14 +441,14 @@
 
     move-result-object v7
 
-    .line 210
+    .line 198
     :cond_7
     if-nez v7, :cond_8
 
-    .line 211
+    .line 199
     iget-object v7, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mDefaultThumbnail:Landroid/graphics/Bitmap;
 
-    .line 216
+    .line 204
     :cond_8
     iget v0, v8, Lcom/android/systemui/recents/RecentsConfiguration;->svelteLevel:I
 
@@ -456,23 +456,23 @@
 
     if-ge v0, v1, :cond_9
 
-    .line 217
+    .line 205
     iget-object v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mThumbnailCache:Lcom/android/systemui/recents/model/BitmapLruCache;
 
     iget-object v1, v13, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
 
     invoke-virtual {v0, v1, v7}, Lcom/android/systemui/recents/model/BitmapLruCache;->put(Lcom/android/systemui/recents/model/Task$TaskKey;Ljava/lang/Object;)V
 
-    .line 220
+    .line 208
     :cond_9
     iget-boolean v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mCancelled:Z
 
     if-nez v0, :cond_a
 
-    .line 222
+    .line 210
     move-object v11, v6
 
-    .line 223
+    .line 211
     .local v11, "newIcon":Landroid/graphics/drawable/Drawable;
     iget-object v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mDefaultThumbnail:Landroid/graphics/Bitmap;
 
@@ -480,7 +480,7 @@
 
     const/4 v12, 0x0
 
-    .line 225
+    .line 213
     .local v12, "newThumbnail":Landroid/graphics/Bitmap;
     :goto_2
     iget-object v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mMainThreadHandler:Landroid/os/Handler;
@@ -491,7 +491,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 236
+    .line 224
     .end local v6    # "cachedIcon":Landroid/graphics/drawable/Drawable;
     .end local v7    # "cachedThumbnail":Landroid/graphics/Bitmap;
     .end local v11    # "newIcon":Landroid/graphics/drawable/Drawable;
@@ -510,23 +510,23 @@
 
     if-eqz v0, :cond_0
 
-    .line 237
+    .line 225
     iget-object v1, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mLoadQueue:Lcom/android/systemui/recents/model/TaskResourceLoadQueue;
 
     monitor-enter v1
 
-    .line 239
+    .line 227
     const/4 v0, 0x1
 
     :try_start_3
     iput-boolean v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mWaitingOnLoadQueue:Z
 
-    .line 240
+    .line 228
     iget-object v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mLoadQueue:Lcom/android/systemui/recents/model/TaskResourceLoadQueue;
 
     invoke-virtual {v0}, Ljava/lang/Object;->wait()V
 
-    .line 241
+    .line 229
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mWaitingOnLoadQueue:Z
@@ -534,7 +534,7 @@
     .catch Ljava/lang/InterruptedException; {:try_start_3 .. :try_end_3} :catch_1
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 245
+    .line 233
     :goto_3
     :try_start_4
     monitor-exit v1
@@ -557,10 +557,10 @@
     :cond_b
     move-object v12, v7
 
-    .line 223
+    .line 211
     goto :goto_2
 
-    .line 242
+    .line 230
     .end local v6    # "cachedIcon":Landroid/graphics/drawable/Drawable;
     .end local v7    # "cachedThumbnail":Landroid/graphics/Bitmap;
     .end local v11    # "newIcon":Landroid/graphics/drawable/Drawable;
@@ -568,7 +568,7 @@
     :catch_1
     move-exception v9
 
-    .line 243
+    .line 231
     .restart local v9    # "ie":Ljava/lang/InterruptedException;
     :try_start_5
     invoke-virtual {v9}, Ljava/lang/InterruptedException;->printStackTrace()V
@@ -583,39 +583,39 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 134
+    .line 122
     iput-object p1, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mContext:Landroid/content/Context;
 
-    .line 135
+    .line 123
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mCancelled:Z
 
-    .line 136
+    .line 124
     new-instance v0, Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
     invoke-direct {v0, p1}, Lcom/android/systemui/recents/misc/SystemServicesProxy;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mSystemServicesProxy:Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
-    .line 138
+    .line 126
     iget-object v1, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mLoadThread:Landroid/os/HandlerThread;
 
     monitor-enter v1
 
-    .line 139
+    .line 127
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mLoadThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 140
+    .line 128
     monitor-exit v1
 
-    .line 141
+    .line 129
     return-void
 
-    .line 140
+    .line 128
     :catchall_0
     move-exception v0
 
@@ -632,23 +632,23 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 146
+    .line 134
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mCancelled:Z
 
-    .line 147
+    .line 135
     iput-object v1, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mSystemServicesProxy:Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
-    .line 150
+    .line 138
     iget-boolean v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mWaitingOnLoadQueue:Z
 
     if-eqz v0, :cond_0
 
-    .line 151
+    .line 139
     iput-object v1, p0, Lcom/android/systemui/recents/model/TaskResourceLoader;->mContext:Landroid/content/Context;
 
-    .line 153
+    .line 141
     :cond_0
     return-void
 .end method

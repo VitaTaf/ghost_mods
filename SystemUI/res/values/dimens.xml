@@ -102,7 +102,7 @@
     <item type="dimen" name="recents_stack_width_padding_percentage">0.03333</item>
     <item type="dimen" name="recents_stack_overscroll_percentage">0.0875</item>
     <dimen name="recents_stack_top_padding">16.0dip</dimen>
-    <dimen name="recents_animation_movement_in_dps_per_second">800.0dip</dimen>
+    <dimen name="recents_dismiss_all_button_size">48.0dip</dimen>
     <item type="dimen" name="recents_task_affiliation_color_min_alpha_percentage">0.6</item>
     <dimen name="recents_lock_to_app_size">56.0dip</dimen>
     <dimen name="recents_lock_to_app_icon_size">28.0dip</dimen>

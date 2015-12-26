@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 225
+    .line 213
     iput-object p1, p0, Lcom/android/systemui/recents/model/TaskResourceLoader$1;->this$0:Lcom/android/systemui/recents/model/TaskResourceLoader;
 
     iput-object p2, p0, Lcom/android/systemui/recents/model/TaskResourceLoader$1;->val$t:Lcom/android/systemui/recents/model/Task;
@@ -52,7 +52,7 @@
     .locals 3
 
     .prologue
-    .line 228
+    .line 216
     iget-object v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader$1;->val$t:Lcom/android/systemui/recents/model/Task;
 
     iget-object v1, p0, Lcom/android/systemui/recents/model/TaskResourceLoader$1;->val$newThumbnail:Landroid/graphics/Bitmap;
@@ -61,6 +61,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/recents/model/Task;->notifyTaskDataLoaded(Landroid/graphics/Bitmap;Landroid/graphics/drawable/Drawable;)V
 
-    .line 229
+    .line 217
     return-void
 .end method

@@ -41,7 +41,7 @@
     .param p1, "t"    # Lcom/android/systemui/recents/model/Task;
 
     .prologue
-    .line 63
+    .line 51
     iget-object v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoadQueue;->mQueue:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/ConcurrentLinkedQueue;->contains(Ljava/lang/Object;)Z
@@ -50,26 +50,26 @@
 
     if-nez v0, :cond_0
 
-    .line 64
+    .line 52
     iget-object v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoadQueue;->mQueue:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/ConcurrentLinkedQueue;->add(Ljava/lang/Object;)Z
 
-    .line 66
+    .line 54
     :cond_0
     monitor-enter p0
 
-    .line 67
+    .line 55
     :try_start_0
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 68
+    .line 56
     monitor-exit p0
 
-    .line 69
+    .line 57
     return-void
 
-    .line 68
+    .line 56
     :catchall_0
     move-exception v0
 
@@ -84,12 +84,12 @@
     .locals 1
 
     .prologue
-    .line 86
+    .line 74
     iget-object v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoadQueue;->mQueue:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
     invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentLinkedQueue;->clear()V
 
-    .line 87
+    .line 75
     return-void
 .end method
 
@@ -97,7 +97,7 @@
     .locals 1
 
     .prologue
-    .line 91
+    .line 79
     iget-object v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoadQueue;->mQueue:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
     invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentLinkedQueue;->isEmpty()Z
@@ -111,7 +111,7 @@
     .locals 1
 
     .prologue
-    .line 76
+    .line 64
     iget-object v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoadQueue;->mQueue:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
     invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentLinkedQueue;->poll()Ljava/lang/Object;
@@ -128,11 +128,11 @@
     .param p1, "t"    # Lcom/android/systemui/recents/model/Task;
 
     .prologue
-    .line 81
+    .line 69
     iget-object v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoadQueue;->mQueue:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/ConcurrentLinkedQueue;->remove(Ljava/lang/Object;)Z
 
-    .line 82
+    .line 70
     return-void
 .end method

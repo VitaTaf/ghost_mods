@@ -15,7 +15,16 @@
 
 
 # virtual methods
-.method public abstract onAllTaskViewsDismissed()V
+.method public abstract onAllTaskViewsDismissed(Ljava/util/ArrayList;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/ArrayList",
+            "<",
+            "Lcom/android/systemui/recents/model/Task;",
+            ">;)V"
+        }
+    .end annotation
 .end method
 
 .method public abstract onTaskViewAppInfoClicked(Lcom/android/systemui/recents/model/Task;)V

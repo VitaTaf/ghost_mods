@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 115
+    .line 122
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackView$2;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,44 +37,48 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .locals 5
 
     .prologue
-    .line 119
-    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskStackView$2;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
+    .line 126
+    iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackView$2;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
-    invoke-virtual {v3}, Lcom/android/systemui/recents/views/TaskStackView;->getChildCount()I
-
-    move-result v0
-
-    .line 120
-    .local v0, "childCount":I
-    const/4 v1, 0x0
-
-    .local v1, "i":I
-    :goto_0
-    if-ge v1, v0, :cond_0
-
-    .line 121
-    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskStackView$2;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
-
-    invoke-virtual {v3, v1}, Lcom/android/systemui/recents/views/TaskStackView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v4}, Lcom/android/systemui/recents/views/TaskStackView;->getTaskViews()Ljava/util/List;
 
     move-result-object v2
 
-    check-cast v2, Lcom/android/systemui/recents/views/TaskView;
+    .line 127
+    .local v2, "taskViews":Ljava/util/List;, "Ljava/util/List<Lcom/android/systemui/recents/views/TaskView;>;"
+    invoke-interface {v2}, Ljava/util/List;->size()I
 
-    .line 122
-    .local v2, "tv":Lcom/android/systemui/recents/views/TaskView;
-    invoke-virtual {v2}, Lcom/android/systemui/recents/views/TaskView;->startNoUserInteractionAnimation()V
+    move-result v1
 
-    .line 120
-    add-int/lit8 v1, v1, 0x1
+    .line 128
+    .local v1, "taskViewCount":I
+    const/4 v0, 0x0
+
+    .local v0, "i":I
+    :goto_0
+    if-ge v0, v1, :cond_0
+
+    .line 129
+    invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/android/systemui/recents/views/TaskView;
+
+    .line 130
+    .local v3, "tv":Lcom/android/systemui/recents/views/TaskView;
+    invoke-virtual {v3}, Lcom/android/systemui/recents/views/TaskView;->startNoUserInteractionAnimation()V
+
+    .line 128
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 124
-    .end local v2    # "tv":Lcom/android/systemui/recents/views/TaskView;
+    .line 132
+    .end local v3    # "tv":Lcom/android/systemui/recents/views/TaskView;
     :cond_0
     return-void
 .end method

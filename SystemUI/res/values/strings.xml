@@ -144,6 +144,7 @@ Use only the supplied charger."</string>
     <string name="accessibility_casting">@string/quick_settings_casting</string>
     <string name="accessibility_recents_item_will_be_dismissed">Dismiss %s.</string>
     <string name="accessibility_recents_item_dismissed">%s dismissed.</string>
+    <string name="accessibility_recents_all_items_dismissed">All recent applications dismissed.</string>
     <string name="accessibility_recents_item_launched">Starting %s.</string>
     <string name="accessibility_notification_dismissed">Notification dismissed.</string>
     <string name="accessibility_desc_notification_shade">Notification shade.</string>
@@ -266,6 +267,7 @@ Turning it back on may lead to charges from your carrier."</string>
     <string name="recents_lock_to_app_button_label">screen pinning</string>
     <string name="recents_search_bar_label">search</string>
     <string name="recents_launch_error_message">Could not start %s.</string>
+    <string name="recents_dismiss_all_message">Dismiss all applications</string>
     <string name="expanded_header_battery_charged">Charged</string>
     <string name="expanded_header_battery_charging">Charging</string>
     <string name="expanded_header_battery_charging_with_time">%s until full</string>

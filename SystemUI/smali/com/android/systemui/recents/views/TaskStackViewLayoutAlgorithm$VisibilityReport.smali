@@ -29,17 +29,17 @@
     .param p3, "thumbnails"    # I
 
     .prologue
-    .line 44
+    .line 45
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm$VisibilityReport;->this$0:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 45
+    .line 46
     iput p2, p0, Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm$VisibilityReport;->numVisibleTasks:I
 
-    .line 46
+    .line 47
     iput p3, p0, Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm$VisibilityReport;->numVisibleThumbnails:I
 
-    .line 47
+    .line 48
     return-void
 .end method

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/recents/views/TaskView;->startDeleteTaskAnimation(Ljava/lang/Runnable;)V
+    value = Lcom/android/systemui/recents/views/TaskView;->startDeleteTaskAnimation(Ljava/lang/Runnable;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 441
+    .line 446
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskView$7;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/TaskView$7;->val$r:Ljava/lang/Runnable;
@@ -47,15 +47,21 @@
     .line 449
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$7;->val$r:Ljava/lang/Runnable;
 
+    if-eqz v0, :cond_0
+
+    .line 450
+    iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$7;->val$r:Ljava/lang/Runnable;
+
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 452
+    .line 454
+    :cond_0
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$7;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/TaskView;->setClipViewInStack(Z)V
 
-    .line 453
+    .line 455
     return-void
 .end method

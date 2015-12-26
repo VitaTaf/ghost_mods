@@ -30,7 +30,7 @@
     .locals 0
 
     .prologue
-    .line 709
+    .line 711
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/TaskView$9;->val$v:Landroid/view/View;
@@ -48,7 +48,7 @@
     .locals 2
 
     .prologue
-    .line 716
+    .line 718
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$9;->val$v:Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
@@ -59,12 +59,12 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 717
+    .line 719
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskView;->dismissTask()V
 
-    .line 719
+    .line 721
     :cond_0
     return-void
 .end method

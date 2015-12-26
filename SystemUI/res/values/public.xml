@@ -1431,6 +1431,7 @@
     <public type="layout" name="zz_moto_system_icons" id="0x7f04005d" />
     <public type="layout" name="zz_moto_toast_plus_icon" id="0x7f04005e" />
     <public type="layout" name="keyguard_eca" id="0x7f04005f" />
+    <public type="layout" name="recents_dismiss_button" id="0x7f040060" />
     <public type="layout" name="keyguard_host_view" id="0x7f04000c" />
     <public type="layout" name="keyguard_widget_pager" id="0x7f040020" />
     <public type="anim" name="dismiss_all_shape_animation_1" id="0x7f050000" />
@@ -2440,6 +2441,8 @@
     <public type="string" name="lockscreen_emergency_text" id="0x7f0c0262" />
     <public type="string" name="keyguard_sim_error_message_short" id="0x7f0c0263" />
     <public type="string" name="moto_ds_skip" id="0x7f0c0264" />
+    <public type="string" name="accessibility_recents_all_items_dismissed" id="0x7f0c0268" />
+    <public type="string" name="recents_dismiss_all_message" id="0x7f0c0269" />
     <public type="string" name="status_bar_date_formatter" id="0x7f0c0006" />
     <public type="string" name="toast_rotation_locked" id="0x7f0c015b" />
     <public type="string" name="APKTOOL_DUMMY_015d" id="0x7f0c015d" />
@@ -2562,7 +2565,7 @@
     <public type="dimen" name="recents_stack_width_padding_percentage" id="0x7f0d0063" />
     <public type="dimen" name="recents_stack_overscroll_percentage" id="0x7f0d0064" />
     <public type="dimen" name="recents_stack_top_padding" id="0x7f0d0065" />
-    <public type="dimen" name="recents_animation_movement_in_dps_per_second" id="0x7f0d0066" />
+    <public type="dimen" name="recents_dismiss_all_button_size" id="0x7f0d0066" />
     <public type="dimen" name="recents_task_affiliation_color_min_alpha_percentage" id="0x7f0d0067" />
     <public type="dimen" name="recents_lock_to_app_size" id="0x7f0d0068" />
     <public type="dimen" name="recents_lock_to_app_icon_size" id="0x7f0d0069" />
