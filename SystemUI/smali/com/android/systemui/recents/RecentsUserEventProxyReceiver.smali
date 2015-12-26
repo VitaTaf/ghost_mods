@@ -8,7 +8,7 @@
     .locals 0
 
     .prologue
-    .line 28
+    .line 26
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -17,51 +17,45 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 8
+    .locals 7
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    const/4 v5, 0x1
-
     const/4 v4, 0x0
 
-    .line 42
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-static {v3, v5}, Lcom/android/systemui/recent/Recents;->getRecentsComponent(Landroid/content/Context;Z)Lcom/android/systemui/recents/AlternateRecentsComponent;
+    .line 40
+    invoke-static {p1}, Lcom/android/systemui/recents/Recents;->getInstanceAndStartIfNeeded(Landroid/content/Context;)Lcom/android/systemui/recents/Recents;
 
     move-result-object v0
 
-    .line 44
-    .local v0, "recents":Lcom/android/systemui/recents/AlternateRecentsComponent;
+    .line 41
+    .local v0, "recents":Lcom/android/systemui/recents/Recents;
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
     const/4 v3, -0x1
 
-    invoke-virtual {v6}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v5}, Ljava/lang/String;->hashCode()I
 
-    move-result v7
+    move-result v6
 
-    sparse-switch v7, :sswitch_data_0
+    sparse-switch v6, :sswitch_data_0
 
     :cond_0
     :goto_0
     packed-switch v3, :pswitch_data_0
 
-    .line 69
+    .line 66
     :goto_1
     return-void
 
-    .line 44
+    .line 41
     :sswitch_0
-    const-string v5, "com.android.systemui.recents.action.SHOW_RECENTS_FOR_USER"
+    const-string v6, "com.android.systemui.recents.action.SHOW_RECENTS_FOR_USER"
 
-    invoke-virtual {v6, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
@@ -72,22 +66,22 @@
     goto :goto_0
 
     :sswitch_1
-    const-string v7, "com.android.systemui.recents.action.HIDE_RECENTS_FOR_USER"
+    const-string v6, "com.android.systemui.recents.action.HIDE_RECENTS_FOR_USER"
 
-    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v5
 
-    if-eqz v6, :cond_0
+    if-eqz v5, :cond_0
 
-    move v3, v5
+    const/4 v3, 0x1
 
     goto :goto_0
 
     :sswitch_2
-    const-string v5, "com.android.systemui.recents.action.TOGGLE_RECENTS_FOR_USER"
+    const-string v6, "com.android.systemui.recents.action.TOGGLE_RECENTS_FOR_USER"
 
-    invoke-virtual {v6, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
@@ -98,9 +92,9 @@
     goto :goto_0
 
     :sswitch_3
-    const-string v5, "com.android.systemui.recents.action.PRELOAD_RECENTS_FOR_USER"
+    const-string v6, "com.android.systemui.recents.action.PRELOAD_RECENTS_FOR_USER"
 
-    invoke-virtual {v6, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
@@ -111,9 +105,9 @@
     goto :goto_0
 
     :sswitch_4
-    const-string v5, "com.android.systemui.recents.action.CONFIG_CHANGED_FOR_USER"
+    const-string v6, "com.android.systemui.recents.action.CONFIG_CHANGED_FOR_USER"
 
-    invoke-virtual {v6, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
@@ -123,7 +117,7 @@
 
     goto :goto_0
 
-    .line 46
+    .line 43
     :pswitch_0
     const-string v3, "triggeredFromAltTab"
 
@@ -131,13 +125,13 @@
 
     move-result v1
 
-    .line 48
+    .line 45
     .local v1, "triggeredFromAltTab":Z
-    invoke-virtual {v0, v1}, Lcom/android/systemui/recents/AlternateRecentsComponent;->showRecents(Z)V
+    invoke-virtual {v0, v1}, Lcom/android/systemui/recents/Recents;->showRecentsInternal(Z)V
 
     goto :goto_1
 
-    .line 52
+    .line 49
     .end local v1    # "triggeredFromAltTab":Z
     :pswitch_1
     const-string v3, "triggeredFromAltTab"
@@ -146,7 +140,7 @@
 
     move-result v1
 
-    .line 54
+    .line 51
     .restart local v1    # "triggeredFromAltTab":Z
     const-string v3, "triggeredFromHomeKey"
 
@@ -154,33 +148,35 @@
 
     move-result v2
 
-    .line 56
+    .line 53
     .local v2, "triggeredFromHome":Z
-    invoke-virtual {v0, v1, v2}, Lcom/android/systemui/recents/AlternateRecentsComponent;->hideRecents(ZZ)V
+    invoke-virtual {v0, v1, v2}, Lcom/android/systemui/recents/Recents;->hideRecentsInternal(ZZ)V
+
+    goto :goto_1
+
+    .line 57
+    .end local v1    # "triggeredFromAltTab":Z
+    .end local v2    # "triggeredFromHome":Z
+    :pswitch_2
+    invoke-virtual {v0}, Lcom/android/systemui/recents/Recents;->toggleRecentsInternal()V
 
     goto :goto_1
 
     .line 60
-    .end local v1    # "triggeredFromAltTab":Z
-    .end local v2    # "triggeredFromHome":Z
-    :pswitch_2
-    invoke-virtual {v0}, Lcom/android/systemui/recents/AlternateRecentsComponent;->toggleRecents()V
+    :pswitch_3
+    invoke-virtual {v0}, Lcom/android/systemui/recents/Recents;->preloadRecentsInternal()V
 
     goto :goto_1
 
     .line 63
-    :pswitch_3
-    invoke-virtual {v0}, Lcom/android/systemui/recents/AlternateRecentsComponent;->preloadRecents()V
-
-    goto :goto_1
-
-    .line 66
     :pswitch_4
-    invoke-virtual {v0}, Lcom/android/systemui/recents/AlternateRecentsComponent;->configurationChanged()V
+    invoke-virtual {v0}, Lcom/android/systemui/recents/Recents;->configurationChanged()V
 
     goto :goto_1
 
-    .line 44
+    .line 41
+    nop
+
     :sswitch_data_0
     .sparse-switch
         -0x74dce9f0 -> :sswitch_2

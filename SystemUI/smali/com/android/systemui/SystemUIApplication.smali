@@ -55,7 +55,7 @@
 
     const/4 v1, 0x1
 
-    const-class v2, Lcom/android/systemui/recent/Recents;
+    const-class v2, Lcom/android/systemui/recents/Recents;
 
     aput-object v2, v0, v1
 

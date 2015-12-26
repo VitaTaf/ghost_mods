@@ -12,3 +12,7 @@ framework-res/dist/
 *.RSA
 
 *.SF
+
+SystemUI/build/
+
+*.apk

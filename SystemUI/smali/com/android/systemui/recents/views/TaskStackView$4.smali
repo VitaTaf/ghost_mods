@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 774
+    .line 772
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackView$4;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,30 +42,30 @@
     .prologue
     const/4 v7, 0x1
 
-    .line 777
+    .line 775
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackView$4;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     iput-boolean v7, v4, Lcom/android/systemui/recents/views/TaskStackView;->mStartEnterAnimationCompleted:Z
 
-    .line 779
+    .line 777
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackView$4;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     iget-object v4, v4, Lcom/android/systemui/recents/views/TaskStackView;->mUIDozeTrigger:Lcom/android/systemui/recents/misc/DozeTrigger;
 
     invoke-virtual {v4}, Lcom/android/systemui/recents/misc/DozeTrigger;->poke()V
 
-    .line 781
+    .line 779
     invoke-static {}, Lcom/android/systemui/recents/model/RecentsTaskLoader;->getInstance()Lcom/android/systemui/recents/model/RecentsTaskLoader;
 
     move-result-object v1
 
-    .line 782
+    .line 780
     .local v1, "loader":Lcom/android/systemui/recents/model/RecentsTaskLoader;
     invoke-virtual {v1}, Lcom/android/systemui/recents/model/RecentsTaskLoader;->getSystemServicesProxy()Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
     move-result-object v2
 
-    .line 783
+    .line 781
     .local v2, "ssp":Lcom/android/systemui/recents/misc/SystemServicesProxy;
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackView$4;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
@@ -73,18 +73,18 @@
 
     move-result v0
 
-    .line 784
+    .line 782
     .local v0, "childCount":I
     if-lez v0, :cond_0
 
-    .line 786
+    .line 784
     invoke-virtual {v2}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->isTouchExplorationEnabled()Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 787
+    .line 785
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackView$4;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     add-int/lit8 v5, v0, -0x1
@@ -95,11 +95,11 @@
 
     check-cast v3, Lcom/android/systemui/recents/views/TaskView;
 
-    .line 788
+    .line 786
     .local v3, "tv":Lcom/android/systemui/recents/views/TaskView;
     invoke-virtual {v3}, Lcom/android/systemui/recents/views/TaskView;->requestAccessibilityFocus()Z
 
-    .line 789
+    .line 787
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackView$4;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     iget-object v5, p0, Lcom/android/systemui/recents/views/TaskStackView$4;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
@@ -116,7 +116,7 @@
 
     iput v5, v4, Lcom/android/systemui/recents/views/TaskStackView;->mPrevAccessibilityFocusedIndex:I
 
-    .line 794
+    .line 792
     .end local v3    # "tv":Lcom/android/systemui/recents/views/TaskView;
     :cond_0
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackView$4;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
@@ -135,7 +135,7 @@
 
     if-nez v4, :cond_1
 
-    .line 795
+    .line 793
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackView$4;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     iget-object v5, p0, Lcom/android/systemui/recents/views/TaskStackView$4;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
@@ -146,17 +146,17 @@
 
     move-result-object v3
 
-    .line 796
+    .line 794
     .local v3, "tv":Landroid/view/View;
     if-eqz v3, :cond_1
 
-    .line 797
+    .line 795
     check-cast v3, Lcom/android/systemui/recents/views/TaskView;
 
     .end local v3    # "tv":Landroid/view/View;
     invoke-virtual {v3, v7}, Lcom/android/systemui/recents/views/TaskView;->setFocusedTask(Z)V
 
-    .line 800
+    .line 798
     :cond_1
     return-void
 .end method

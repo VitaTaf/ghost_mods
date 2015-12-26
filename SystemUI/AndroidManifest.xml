@@ -98,11 +98,6 @@
         </receiver>
         <activity android:excludeFromRecents="true" android:label="@android:string/usb_storage_activity_title" android:name=".usb.UsbStorageActivity"/>
         <activity android:excludeFromRecents="true" android:name="com.android.internal.app.ExternalMediaFormatActivity" android:theme="@style/Theme.SystemUI.Dialog.Alert"/>
-        <activity android:excludeFromRecents="true" android:exported="true" android:label="@string/accessibility_desc_recent_apps" android:launchMode="singleInstance" android:name=".recent.RecentsActivity" android:resumeWhilePausing="true" android:theme="@style/RecentsStyle">
-            <intent-filter>
-                <action android:name="com.android.systemui.TOGGLE_RECENTS"/>
-            </intent-filter>
-        </activity>
         <receiver android:exported="false" android:name=".recent.RecentsPreloadReceiver">
             <intent-filter>
                 <action android:name="com.android.systemui.recent.action.PRELOAD"/>

@@ -1,11 +1,11 @@
-.class Lcom/android/systemui/recents/AlternateRecentsComponent$RecentsOwnerEventProxyReceiver;
+.class Lcom/android/systemui/recents/Recents$RecentsOwnerEventProxyReceiver;
 .super Landroid/content/BroadcastReceiver;
-.source "AlternateRecentsComponent.java"
+.source "Recents.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/systemui/recents/AlternateRecentsComponent;
+    value = Lcom/android/systemui/recents/Recents;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,16 +15,16 @@
 
 
 # instance fields
-.field final synthetic this$0:Lcom/android/systemui/recents/AlternateRecentsComponent;
+.field final synthetic this$0:Lcom/android/systemui/recents/Recents;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/recents/AlternateRecentsComponent;)V
+.method constructor <init>(Lcom/android/systemui/recents/Recents;)V
     .locals 0
 
     .prologue
     .line 142
-    iput-object p1, p0, Lcom/android/systemui/recents/AlternateRecentsComponent$RecentsOwnerEventProxyReceiver;->this$0:Lcom/android/systemui/recents/AlternateRecentsComponent;
+    iput-object p1, p0, Lcom/android/systemui/recents/Recents$RecentsOwnerEventProxyReceiver;->this$0:Lcom/android/systemui/recents/Recents;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -84,7 +84,7 @@
 
     move-result v0
 
-    invoke-static {v0}, Lcom/android/systemui/recents/AlternateRecentsComponent;->visibilityChanged(Z)V
+    invoke-static {v0}, Lcom/android/systemui/recents/Recents;->visibilityChanged(Z)V
 
     goto :goto_1
 

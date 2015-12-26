@@ -5292,8 +5292,8 @@
 
     iput-object v10, p0, Lcom/android/systemui/statusbar/BaseStatusBar;->mBarService:Lcom/android/internal/statusbar/IStatusBarService;
 
-    .line 542
-    const-class v10, Lcom/android/systemui/RecentsComponent;
+    .line 536
+    const-class v10, Lcom/android/systemui/recents/Recents;
 
     invoke-virtual {p0, v10}, Lcom/android/systemui/statusbar/BaseStatusBar;->getComponent(Ljava/lang/Class;)Ljava/lang/Object;
 
