@@ -931,7 +931,7 @@
     goto :goto_0
 .end method
 
-.method private getBackgroundColor()I
+.method private getBgColor()I
     .locals 1
 
     .prologue
@@ -1621,7 +1621,7 @@
     const/high16 v4, 0x3f800000    # 1.0f
 
     .line 655
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->getBackgroundColor()I
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->getBgColor()I
 
     move-result v0
 
@@ -1956,7 +1956,7 @@
 
     .prologue
     .line 391
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->getBackgroundColor()I
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->getBgColor()I
 
     move-result v0
 
