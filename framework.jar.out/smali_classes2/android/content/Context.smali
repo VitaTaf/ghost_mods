@@ -360,6 +360,48 @@
 .method public abstract getCodeCacheDir()Ljava/io/File;
 .end method
 
+.method public final getColor(I)I
+    .locals 2
+    .param p1, "id"    # I
+
+    .prologue
+    .line 407
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object v1
+
+    invoke-virtual {v0, p1, v1}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final getColorStateList(I)Landroid/content/res/ColorStateList;
+    .locals 2
+    .param p1, "id"    # I
+
+    .prologue
+    .line 441
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object v1
+
+    invoke-virtual {v0, p1, v1}, Landroid/content/res/Resources;->getColorStateList(ILandroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public abstract getContentResolver()Landroid/content/ContentResolver;
 .end method
 

@@ -1216,6 +1216,8 @@
 
 .field public static final Widget_Material_Button_Borderless_Small:I = 0x103025b
 
+.field public static final Widget_Material_Button_Colored:I = 0x10304c1
+
 .field public static final Widget_Material_Button_Inset:I = 0x103025c
 
 .field public static final Widget_Material_Button_Small:I = 0x103025d

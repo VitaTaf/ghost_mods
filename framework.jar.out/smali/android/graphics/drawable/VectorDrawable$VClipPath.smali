@@ -19,10 +19,10 @@
     .locals 0
 
     .prologue
-    .line 1302
+    .line 1315
     invoke-direct {p0}, Landroid/graphics/drawable/VectorDrawable$VPath;-><init>()V
 
-    .line 1304
+    .line 1317
     return-void
 .end method
 
@@ -31,10 +31,10 @@
     .param p1, "copy"    # Landroid/graphics/drawable/VectorDrawable$VClipPath;
 
     .prologue
-    .line 1307
+    .line 1320
     invoke-direct {p0, p1}, Landroid/graphics/drawable/VectorDrawable$VPath;-><init>(Landroid/graphics/drawable/VectorDrawable$VPath;)V
 
-    .line 1308
+    .line 1321
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .param p1, "a"    # Landroid/content/res/TypedArray;
 
     .prologue
-    .line 1319
+    .line 1332
     iget v2, p0, Landroid/graphics/drawable/VectorDrawable$VClipPath;->mChangingConfigurations:I
 
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->getChangingConfigurations()I
@@ -54,21 +54,21 @@
 
     iput v2, p0, Landroid/graphics/drawable/VectorDrawable$VClipPath;->mChangingConfigurations:I
 
-    .line 1321
+    .line 1334
     const/4 v2, 0x0
 
     invoke-virtual {p1, v2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1322
+    .line 1335
     .local v1, "pathName":Ljava/lang/String;
     if-eqz v1, :cond_0
 
-    .line 1323
+    .line 1336
     iput-object v1, p0, Landroid/graphics/drawable/VectorDrawable$VClipPath;->mPathName:Ljava/lang/String;
 
-    .line 1326
+    .line 1339
     :cond_0
     const/4 v2, 0x1
 
@@ -76,18 +76,18 @@
 
     move-result-object v0
 
-    .line 1327
+    .line 1340
     .local v0, "pathData":Ljava/lang/String;
     if-eqz v0, :cond_1
 
-    .line 1328
+    .line 1341
     invoke-static {v0}, Landroid/util/PathParser;->createNodesFromPathData(Ljava/lang/String;)[Landroid/util/PathParser$PathDataNode;
 
     move-result-object v2
 
     iput-object v2, p0, Landroid/graphics/drawable/VectorDrawable$VClipPath;->mNodes:[Landroid/util/PathParser$PathDataNode;
 
-    .line 1330
+    .line 1343
     :cond_1
     return-void
 .end method
@@ -101,21 +101,21 @@
     .param p3, "theme"    # Landroid/content/res/Resources$Theme;
 
     .prologue
-    .line 1311
+    .line 1324
     sget-object v1, Lcom/android/internal/R$styleable;->VectorDrawableClipPath:[I
 
     invoke-static {p1, p3, p2, v1}, Landroid/graphics/drawable/Drawable;->obtainAttributes(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 1313
+    .line 1326
     .local v0, "a":Landroid/content/res/TypedArray;
     invoke-direct {p0, v0}, Landroid/graphics/drawable/VectorDrawable$VClipPath;->updateStateFromTypedArray(Landroid/content/res/TypedArray;)V
 
-    .line 1314
+    .line 1327
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 1315
+    .line 1328
     return-void
 .end method
 
@@ -123,7 +123,7 @@
     .locals 1
 
     .prologue
-    .line 1334
+    .line 1347
     const/4 v0, 0x1
 
     return v0

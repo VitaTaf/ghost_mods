@@ -47,48 +47,48 @@
 
     const/4 v1, 0x0
 
-    .line 622
+    .line 612
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
 
-    .line 609
+    .line 599
     iput-object v1, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mThemeAttrs:[I
 
-    .line 610
+    .line 600
     iput-object v1, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mNinePatch:Landroid/graphics/NinePatch;
 
-    .line 611
+    .line 601
     iput-object v1, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mTint:Landroid/content/res/ColorStateList;
 
-    .line 612
+    .line 602
     sget-object v0, Landroid/graphics/drawable/Drawable;->DEFAULT_TINT_MODE:Landroid/graphics/PorterDuff$Mode;
 
     iput-object v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mTintMode:Landroid/graphics/PorterDuff$Mode;
 
-    .line 613
+    .line 603
     iput-object v1, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mPadding:Landroid/graphics/Rect;
 
-    .line 614
+    .line 604
     sget-object v0, Landroid/graphics/Insets;->NONE:Landroid/graphics/Insets;
 
     iput-object v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mOpticalInsets:Landroid/graphics/Insets;
 
-    .line 615
+    .line 605
     const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mBaseAlpha:F
 
-    .line 616
+    .line 606
     iput-boolean v2, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mDither:Z
 
-    .line 617
+    .line 607
     const/16 v0, 0xa0
 
     iput v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mTargetDensity:I
 
-    .line 618
+    .line 608
     iput-boolean v2, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mAutoMirrored:Z
 
-    .line 624
+    .line 614
     return-void
 .end method
 
@@ -100,7 +100,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 627
+    .line 617
     const/4 v3, 0x0
 
     move-object v0, p0
@@ -113,7 +113,7 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;-><init>(Landroid/graphics/NinePatch;Landroid/graphics/Rect;Landroid/graphics/Rect;ZZ)V
 
-    .line 628
+    .line 618
     return-void
 .end method
 
@@ -126,7 +126,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 632
+    .line 622
     move-object v0, p0
 
     move-object v1, p1
@@ -139,7 +139,7 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;-><init>(Landroid/graphics/NinePatch;Landroid/graphics/Rect;Landroid/graphics/Rect;ZZ)V
 
-    .line 633
+    .line 623
     return-void
 .end method
 
@@ -156,67 +156,67 @@
 
     const/4 v1, 0x0
 
-    .line 636
+    .line 626
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
 
-    .line 609
+    .line 599
     iput-object v1, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mThemeAttrs:[I
 
-    .line 610
+    .line 600
     iput-object v1, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mNinePatch:Landroid/graphics/NinePatch;
 
-    .line 611
+    .line 601
     iput-object v1, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mTint:Landroid/content/res/ColorStateList;
 
-    .line 612
+    .line 602
     sget-object v0, Landroid/graphics/drawable/Drawable;->DEFAULT_TINT_MODE:Landroid/graphics/PorterDuff$Mode;
 
     iput-object v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mTintMode:Landroid/graphics/PorterDuff$Mode;
 
-    .line 613
+    .line 603
     iput-object v1, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mPadding:Landroid/graphics/Rect;
 
-    .line 614
+    .line 604
     sget-object v0, Landroid/graphics/Insets;->NONE:Landroid/graphics/Insets;
 
     iput-object v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mOpticalInsets:Landroid/graphics/Insets;
 
-    .line 615
+    .line 605
     const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mBaseAlpha:F
 
-    .line 616
+    .line 606
     iput-boolean v2, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mDither:Z
 
-    .line 617
+    .line 607
     const/16 v0, 0xa0
 
     iput v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mTargetDensity:I
 
-    .line 618
+    .line 608
     iput-boolean v2, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mAutoMirrored:Z
 
-    .line 637
+    .line 627
     iput-object p1, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mNinePatch:Landroid/graphics/NinePatch;
 
-    .line 638
+    .line 628
     iput-object p2, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mPadding:Landroid/graphics/Rect;
 
-    .line 639
+    .line 629
     invoke-static {p3}, Landroid/graphics/Insets;->of(Landroid/graphics/Rect;)Landroid/graphics/Insets;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mOpticalInsets:Landroid/graphics/Insets;
 
-    .line 640
+    .line 630
     iput-boolean p4, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mDither:Z
 
-    .line 641
+    .line 631
     iput-boolean p5, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mAutoMirrored:Z
 
-    .line 642
+    .line 632
     return-void
 .end method
 
@@ -229,103 +229,103 @@
 
     const/4 v1, 0x0
 
-    .line 646
+    .line 636
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
 
-    .line 609
+    .line 599
     iput-object v1, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mThemeAttrs:[I
 
-    .line 610
+    .line 600
     iput-object v1, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mNinePatch:Landroid/graphics/NinePatch;
 
-    .line 611
+    .line 601
     iput-object v1, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mTint:Landroid/content/res/ColorStateList;
 
-    .line 612
+    .line 602
     sget-object v0, Landroid/graphics/drawable/Drawable;->DEFAULT_TINT_MODE:Landroid/graphics/PorterDuff$Mode;
 
     iput-object v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mTintMode:Landroid/graphics/PorterDuff$Mode;
 
-    .line 613
+    .line 603
     iput-object v1, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mPadding:Landroid/graphics/Rect;
 
-    .line 614
+    .line 604
     sget-object v0, Landroid/graphics/Insets;->NONE:Landroid/graphics/Insets;
 
     iput-object v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mOpticalInsets:Landroid/graphics/Insets;
 
-    .line 615
+    .line 605
     const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mBaseAlpha:F
 
-    .line 616
+    .line 606
     iput-boolean v2, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mDither:Z
 
-    .line 617
+    .line 607
     const/16 v0, 0xa0
 
     iput v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mTargetDensity:I
 
-    .line 618
+    .line 608
     iput-boolean v2, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mAutoMirrored:Z
 
-    .line 648
+    .line 638
     iget-object v0, p1, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mNinePatch:Landroid/graphics/NinePatch;
 
     iput-object v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mNinePatch:Landroid/graphics/NinePatch;
 
-    .line 649
+    .line 639
     iget-object v0, p1, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mTint:Landroid/content/res/ColorStateList;
 
     iput-object v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mTint:Landroid/content/res/ColorStateList;
 
-    .line 650
+    .line 640
     iget-object v0, p1, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mTintMode:Landroid/graphics/PorterDuff$Mode;
 
     iput-object v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mTintMode:Landroid/graphics/PorterDuff$Mode;
 
-    .line 651
+    .line 641
     iget-object v0, p1, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mThemeAttrs:[I
 
     iput-object v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mThemeAttrs:[I
 
-    .line 652
+    .line 642
     iget-object v0, p1, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mPadding:Landroid/graphics/Rect;
 
     iput-object v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mPadding:Landroid/graphics/Rect;
 
-    .line 653
+    .line 643
     iget-object v0, p1, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mOpticalInsets:Landroid/graphics/Insets;
 
     iput-object v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mOpticalInsets:Landroid/graphics/Insets;
 
-    .line 654
+    .line 644
     iget v0, p1, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mBaseAlpha:F
 
     iput v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mBaseAlpha:F
 
-    .line 655
+    .line 645
     iget-boolean v0, p1, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mDither:Z
 
     iput-boolean v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mDither:Z
 
-    .line 656
+    .line 646
     iget v0, p1, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mChangingConfigurations:I
 
     iput v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mChangingConfigurations:I
 
-    .line 657
+    .line 647
     iget v0, p1, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mTargetDensity:I
 
     iput v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mTargetDensity:I
 
-    .line 658
+    .line 648
     iget-boolean v0, p1, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mAutoMirrored:Z
 
     iput-boolean v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mAutoMirrored:Z
 
-    .line 659
+    .line 649
     return-void
 .end method
 
@@ -344,7 +344,7 @@
     .end annotation
 
     .prologue
-    .line 668
+    .line 659
     .local p1, "atlasList":Ljava/util/Collection;, "Ljava/util/Collection<Landroid/graphics/Bitmap;>;"
     iget-object v1, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mNinePatch:Landroid/graphics/NinePatch;
 
@@ -352,7 +352,7 @@
 
     move-result-object v0
 
-    .line 669
+    .line 660
     .local v0, "bitmap":Landroid/graphics/Bitmap;
     invoke-virtual {p0, v0}, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->isAtlasable(Landroid/graphics/Bitmap;)Z
 
@@ -366,7 +366,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 670
+    .line 661
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v1
@@ -377,7 +377,7 @@
 
     mul-int/2addr v1, v2
 
-    .line 672
+    .line 663
     :goto_0
     return v1
 
@@ -391,17 +391,30 @@
     .locals 1
 
     .prologue
-    .line 663
+    .line 653
     iget-object v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mThemeAttrs:[I
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
+    iget-object v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mTint:Landroid/content/res/ColorStateList;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mTint:Landroid/content/res/ColorStateList;
+
+    invoke-virtual {v0}, Landroid/content/res/ColorStateList;->canApplyTheme()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
     const/4 v0, 0x1
 
     :goto_0
     return v0
 
-    :cond_0
+    :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
@@ -411,7 +424,7 @@
     .locals 1
 
     .prologue
-    .line 687
+    .line 678
     iget v0, p0, Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;->mChangingConfigurations:I
 
     return v0
@@ -423,7 +436,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 677
+    .line 668
     new-instance v0, Landroid/graphics/drawable/NinePatchDrawable;
 
     invoke-direct {v0, p0, v1, v1}, Landroid/graphics/drawable/NinePatchDrawable;-><init>(Landroid/graphics/drawable/NinePatchDrawable$NinePatchState;Landroid/content/res/Resources;Landroid/graphics/drawable/NinePatchDrawable$1;)V
@@ -436,7 +449,7 @@
     .param p1, "res"    # Landroid/content/res/Resources;
 
     .prologue
-    .line 682
+    .line 673
     new-instance v0, Landroid/graphics/drawable/NinePatchDrawable;
 
     const/4 v1, 0x0

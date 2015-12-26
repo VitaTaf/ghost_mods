@@ -1099,6 +1099,12 @@
 
 .field public static final ColorDrawable_color:I = 0x0
 
+.field public static final ColorStateListItem:[I
+
+.field public static final ColorStateListItem_alpha:I = 0x1
+
+.field public static final ColorStateListItem_color:I = 0x0
+
 .field public static final CompoundButton:[I
 
 .field public static final CompoundButton_button:I = 0x1
@@ -5174,6 +5180,13 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->ColorDrawable:[I
 
+    .line 33086
+    new-array v0, v4, [I
+
+    fill-array-data v0, :array_d0
+
+    sput-object v0, Lcom/android/internal/R$styleable;->ColorStateListItem:[I
+
     .line 34087
     new-array v0, v6, [I
 
@@ -7527,6 +7540,13 @@
         0x10100af
         0x1010199
         0x101020a
+    .end array-data
+
+    .line 33086
+    :array_d0
+    .array-data 4
+        0x10101a5
+        0x101031f
     .end array-data
 
     .line 34087

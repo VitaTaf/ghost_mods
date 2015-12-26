@@ -4141,6 +4141,9 @@
     <style name="Theme.DeviceDefault.Light.Dialog.Alert" parent="@style/Theme.Material.Light.Dialog.Alert">
         <item name="windowTitleStyle">@style/DialogWindowTitle.DeviceDefault.Light</item>
     </style>
+    <style name="Widget.Material.Button.Colored" parent="@style/Widget.Material.Button">
+        <item name="backgroundTint">@color/btn_material_accent</item>
+    </style>
     <style name="WindowTitleBackground">
         <item name="background">@drawable/title_bar</item>
     </style>
