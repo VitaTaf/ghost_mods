@@ -572,52 +572,6 @@
     return v0
 .end method
 
-.method private createStackOnDisplay(II)I
-    .locals 3
-    .param p1, "stackId"    # I
-    .param p2, "displayId"    # I
-
-    .prologue
-    .line 2647
-    iget-object v2, p0, Lcom/android/server/am/ActivityStackSupervisor;->mActivityDisplays:Landroid/util/SparseArray;
-
-    invoke-virtual {v2, p2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;
-
-    .line 2648
-    .local v1, "activityDisplay":Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;
-    if-nez v1, :cond_0
-
-    .line 2649
-    const/4 p1, -0x1
-
-    .line 2655
-    .end local p1    # "stackId":I
-    :goto_0
-    return p1
-
-    .line 2652
-    .restart local p1    # "stackId":I
-    :cond_0
-    new-instance v0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;
-
-    invoke-direct {v0, p0, p1}, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;-><init>(Lcom/android/server/am/ActivityStackSupervisor;I)V
-
-    .line 2653
-    .local v0, "activityContainer":Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;
-    iget-object v2, p0, Lcom/android/server/am/ActivityStackSupervisor;->mActivityContainers:Landroid/util/SparseArray;
-
-    invoke-virtual {v2, p1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
-
-    .line 2654
-    invoke-virtual {v0, v1}, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->attachToDisplayLocked(Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;)V
-
-    goto :goto_0
-.end method
-
 .method static dumpHistoryList(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;ZZZLjava/lang/String;ZLjava/lang/String;Ljava/lang/String;)Z
     .locals 14
     .param p0, "fd"    # Ljava/io/FileDescriptor;
@@ -1350,13 +1304,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v2, v3}, Lcom/android/server/am/ActivityStackSupervisor;->createStackOnDisplay(II)I
-
-    move-result v2
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v2}, Lcom/android/server/am/ActivityStackSupervisor;->getStack(I)Lcom/android/server/am/ActivityStack;
+    invoke-virtual {v0, v2, v3}, Lcom/android/server/am/ActivityStackSupervisor;->createStackOnDisplay(II)Lcom/android/server/am/ActivityStack;
 
     move-result-object v18
 
@@ -2071,187 +2019,180 @@
 .end method
 
 .method adjustStackFocus(Lcom/android/server/am/ActivityRecord;Z)Lcom/android/server/am/ActivityStack;
-    .locals 9
+    .locals 8
     .param p1, "r"    # Lcom/android/server/am/ActivityRecord;
     .param p2, "newTask"    # Z
 
     .prologue
-    .line 1576
-    iget-object v5, p1, Lcom/android/server/am/ActivityRecord;->task:Lcom/android/server/am/TaskRecord;
+    .line 1544
+    iget-object v4, p1, Lcom/android/server/am/ActivityRecord;->task:Lcom/android/server/am/TaskRecord;
 
-    .line 1579
-    .local v5, "task":Lcom/android/server/am/TaskRecord;
-    iget-boolean v7, p0, Lcom/android/server/am/ActivityStackSupervisor;->mLeanbackOnlyDevice:Z
+    .line 1547
+    .local v4, "task":Lcom/android/server/am/TaskRecord;
+    iget-boolean v6, p0, Lcom/android/server/am/ActivityStackSupervisor;->mLeanbackOnlyDevice:Z
 
-    if-nez v7, :cond_8
+    if-nez v6, :cond_8
 
     invoke-virtual {p1}, Lcom/android/server/am/ActivityRecord;->isApplicationActivity()Z
 
-    move-result v7
+    move-result v6
 
-    if-nez v7, :cond_0
+    if-nez v6, :cond_0
 
-    if-eqz v5, :cond_8
+    if-eqz v4, :cond_8
 
-    invoke-virtual {v5}, Lcom/android/server/am/TaskRecord;->isApplicationTask()Z
+    invoke-virtual {v4}, Lcom/android/server/am/TaskRecord;->isApplicationTask()Z
 
-    move-result v7
+    move-result v6
 
-    if-eqz v7, :cond_8
+    if-eqz v6, :cond_8
 
-    .line 1581
+    .line 1549
     :cond_0
-    if-eqz v5, :cond_2
+    if-eqz v4, :cond_2
 
-    .line 1582
-    iget-object v6, v5, Lcom/android/server/am/TaskRecord;->stack:Lcom/android/server/am/ActivityStack;
+    .line 1550
+    iget-object v5, v4, Lcom/android/server/am/TaskRecord;->stack:Lcom/android/server/am/ActivityStack;
 
-    .line 1583
-    .local v6, "taskStack":Lcom/android/server/am/ActivityStack;
-    invoke-virtual {v6}, Lcom/android/server/am/ActivityStack;->isOnHomeDisplay()Z
+    .line 1551
+    .local v5, "taskStack":Lcom/android/server/am/ActivityStack;
+    invoke-virtual {v5}, Lcom/android/server/am/ActivityStack;->isOnHomeDisplay()Z
 
-    move-result v7
+    move-result v6
 
-    if-eqz v7, :cond_1
+    if-eqz v6, :cond_1
 
-    .line 1584
-    iget-object v7, p0, Lcom/android/server/am/ActivityStackSupervisor;->mFocusedStack:Lcom/android/server/am/ActivityStack;
+    .line 1552
+    iget-object v6, p0, Lcom/android/server/am/ActivityStackSupervisor;->mFocusedStack:Lcom/android/server/am/ActivityStack;
 
-    if-eq v7, v6, :cond_1
+    if-eq v6, v5, :cond_1
 
-    .line 1587
-    iput-object v6, p0, Lcom/android/server/am/ActivityStackSupervisor;->mFocusedStack:Lcom/android/server/am/ActivityStack;
+    .line 1555
+    iput-object v5, p0, Lcom/android/server/am/ActivityStackSupervisor;->mFocusedStack:Lcom/android/server/am/ActivityStack;
 
-    .line 1628
-    .end local v6    # "taskStack":Lcom/android/server/am/ActivityStack;
+    .line 1595
+    .end local v5    # "taskStack":Lcom/android/server/am/ActivityStack;
     :cond_1
     :goto_0
-    return-object v6
+    return-object v5
 
-    .line 1596
+    .line 1564
     :cond_2
     iget-object v0, p1, Lcom/android/server/am/ActivityRecord;->mInitialActivityContainer:Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;
 
-    .line 1597
+    .line 1565
     .local v0, "container":Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;
     if-eqz v0, :cond_3
 
-    .line 1599
-    const/4 v7, 0x0
+    .line 1567
+    const/4 v6, 0x0
 
-    iput-object v7, p1, Lcom/android/server/am/ActivityRecord;->mInitialActivityContainer:Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;
+    iput-object v6, p1, Lcom/android/server/am/ActivityRecord;->mInitialActivityContainer:Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;
 
-    .line 1600
-    iget-object v6, v0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mStack:Lcom/android/server/am/ActivityStack;
+    .line 1568
+    iget-object v5, v0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mStack:Lcom/android/server/am/ActivityStack;
 
     goto :goto_0
 
-    .line 1603
+    .line 1571
     :cond_3
-    iget-object v7, p0, Lcom/android/server/am/ActivityStackSupervisor;->mFocusedStack:Lcom/android/server/am/ActivityStack;
+    iget-object v6, p0, Lcom/android/server/am/ActivityStackSupervisor;->mFocusedStack:Lcom/android/server/am/ActivityStack;
 
-    iget-object v8, p0, Lcom/android/server/am/ActivityStackSupervisor;->mHomeStack:Lcom/android/server/am/ActivityStack;
+    iget-object v7, p0, Lcom/android/server/am/ActivityStackSupervisor;->mHomeStack:Lcom/android/server/am/ActivityStack;
 
-    if-eq v7, v8, :cond_5
+    if-eq v6, v7, :cond_5
 
     if-eqz p2, :cond_4
 
-    iget-object v7, p0, Lcom/android/server/am/ActivityStackSupervisor;->mFocusedStack:Lcom/android/server/am/ActivityStack;
-
-    iget-object v7, v7, Lcom/android/server/am/ActivityStack;->mActivityContainer:Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;
-
-    invoke-virtual {v7}, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->isEligibleForNewTasks()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_5
-
-    .line 1607
-    :cond_4
     iget-object v6, p0, Lcom/android/server/am/ActivityStackSupervisor;->mFocusedStack:Lcom/android/server/am/ActivityStack;
+
+    iget-object v6, v6, Lcom/android/server/am/ActivityStack;->mActivityContainer:Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;
+
+    invoke-virtual {v6}, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->isEligibleForNewTasks()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_5
+
+    .line 1575
+    :cond_4
+    iget-object v5, p0, Lcom/android/server/am/ActivityStackSupervisor;->mFocusedStack:Lcom/android/server/am/ActivityStack;
 
     goto :goto_0
 
-    .line 1610
+    .line 1578
     :cond_5
-    iget-object v7, p0, Lcom/android/server/am/ActivityStackSupervisor;->mHomeStack:Lcom/android/server/am/ActivityStack;
+    iget-object v6, p0, Lcom/android/server/am/ActivityStackSupervisor;->mHomeStack:Lcom/android/server/am/ActivityStack;
 
-    iget-object v1, v7, Lcom/android/server/am/ActivityStack;->mStacks:Ljava/util/ArrayList;
+    iget-object v1, v6, Lcom/android/server/am/ActivityStack;->mStacks:Ljava/util/ArrayList;
 
-    .line 1611
+    .line 1579
     .local v1, "homeDisplayStacks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/am/ActivityStack;>;"
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
-    move-result v7
+    move-result v6
 
-    add-int/lit8 v4, v7, -0x1
+    add-int/lit8 v3, v6, -0x1
 
-    .local v4, "stackNdx":I
+    .local v3, "stackNdx":I
     :goto_1
-    if-ltz v4, :cond_7
+    if-ltz v3, :cond_7
 
-    .line 1612
-    invoke-virtual {v1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 1580
+    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcom/android/server/am/ActivityStack;
 
-    .line 1613
+    .line 1581
     .local v2, "stack":Lcom/android/server/am/ActivityStack;
     invoke-virtual {v2}, Lcom/android/server/am/ActivityStack;->isHomeStack()Z
 
-    move-result v7
+    move-result v6
 
-    if-nez v7, :cond_6
+    if-nez v6, :cond_6
 
-    .line 1616
+    .line 1584
     iput-object v2, p0, Lcom/android/server/am/ActivityStackSupervisor;->mFocusedStack:Lcom/android/server/am/ActivityStack;
 
-    .line 1617
-    iget-object v6, p0, Lcom/android/server/am/ActivityStackSupervisor;->mFocusedStack:Lcom/android/server/am/ActivityStack;
+    .line 1585
+    iget-object v5, p0, Lcom/android/server/am/ActivityStackSupervisor;->mFocusedStack:Lcom/android/server/am/ActivityStack;
 
     goto :goto_0
 
-    .line 1611
+    .line 1579
     :cond_6
-    add-int/lit8 v4, v4, -0x1
+    add-int/lit8 v3, v3, -0x1
 
     goto :goto_1
 
-    .line 1622
+    .line 1590
     .end local v2    # "stack":Lcom/android/server/am/ActivityStack;
     :cond_7
     invoke-virtual {p0}, Lcom/android/server/am/ActivityStackSupervisor;->getNextStackId()I
 
-    move-result v7
+    move-result v6
 
-    const/4 v8, 0x0
+    const/4 v7, 0x0
 
-    invoke-direct {p0, v7, v8}, Lcom/android/server/am/ActivityStackSupervisor;->createStackOnDisplay(II)I
+    invoke-virtual {p0, v6, v7}, Lcom/android/server/am/ActivityStackSupervisor;->createStackOnDisplay(II)Lcom/android/server/am/ActivityStack;
 
-    move-result v3
+    move-result-object v6
 
-    .line 1625
-    .local v3, "stackId":I
-    invoke-virtual {p0, v3}, Lcom/android/server/am/ActivityStackSupervisor;->getStack(I)Lcom/android/server/am/ActivityStack;
+    iput-object v6, p0, Lcom/android/server/am/ActivityStackSupervisor;->mFocusedStack:Lcom/android/server/am/ActivityStack;
 
-    move-result-object v7
-
-    iput-object v7, p0, Lcom/android/server/am/ActivityStackSupervisor;->mFocusedStack:Lcom/android/server/am/ActivityStack;
-
-    .line 1626
-    iget-object v6, p0, Lcom/android/server/am/ActivityStackSupervisor;->mFocusedStack:Lcom/android/server/am/ActivityStack;
+    .line 1593
+    iget-object v5, p0, Lcom/android/server/am/ActivityStackSupervisor;->mFocusedStack:Lcom/android/server/am/ActivityStack;
 
     goto :goto_0
 
-    .line 1628
+    .line 1595
     .end local v0    # "container":Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;
     .end local v1    # "homeDisplayStacks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/am/ActivityStack;>;"
-    .end local v3    # "stackId":I
-    .end local v4    # "stackNdx":I
+    .end local v3    # "stackNdx":I
     :cond_8
-    iget-object v6, p0, Lcom/android/server/am/ActivityStackSupervisor;->mHomeStack:Lcom/android/server/am/ActivityStack;
+    iget-object v5, p0, Lcom/android/server/am/ActivityStackSupervisor;->mHomeStack:Lcom/android/server/am/ActivityStack;
 
     goto :goto_0
 .end method
@@ -3389,6 +3330,53 @@
 
     .line 2843
     return-void
+.end method
+
+.method createStackOnDisplay(II)Lcom/android/server/am/ActivityStack;
+    .locals 3
+    .param p1, "stackId"    # I
+    .param p2, "displayId"    # I
+
+    .prologue
+    .line 2616
+    iget-object v2, p0, Lcom/android/server/am/ActivityStackSupervisor;->mActivityDisplays:Landroid/util/SparseArray;
+
+    invoke-virtual {v2, p2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;
+
+    .line 2617
+    .local v1, "activityDisplay":Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;
+    if-nez v1, :cond_0
+
+    .line 2618
+    const/4 v2, 0x0
+
+    .line 2624
+    :goto_0
+    return-object v2
+
+    .line 2621
+    :cond_0
+    new-instance v0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;
+
+    invoke-direct {v0, p0, p1}, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;-><init>(Lcom/android/server/am/ActivityStackSupervisor;I)V
+
+    .line 2622
+    .local v0, "activityContainer":Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;
+    iget-object v2, p0, Lcom/android/server/am/ActivityStackSupervisor;->mActivityContainers:Landroid/util/SparseArray;
+
+    invoke-virtual {v2, p1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    .line 2623
+    invoke-virtual {v0, v1}, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->attachToDisplayLocked(Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;)V
+
+    .line 2624
+    iget-object v2, v0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mStack:Lcom/android/server/am/ActivityStack;
+
+    goto :goto_0
 .end method
 
 .method createVirtualActivityContainer(Lcom/android/server/am/ActivityRecord;Landroid/app/IActivityContainerCallback;)Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;
@@ -9990,7 +9978,7 @@
 
     const/4 v6, 0x0
 
-    invoke-direct {p0, v4, v6}, Lcom/android/server/am/ActivityStackSupervisor;->createStackOnDisplay(II)I
+    invoke-virtual {p0, v4, v6}, Lcom/android/server/am/ActivityStackSupervisor;->createStackOnDisplay(II)Lcom/android/server/am/ActivityStack;
 
     .line 381
     const/4 v4, 0x0

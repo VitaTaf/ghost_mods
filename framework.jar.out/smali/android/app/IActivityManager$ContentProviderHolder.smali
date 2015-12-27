@@ -45,7 +45,7 @@
     .locals 1
 
     .prologue
-    .line 521
+    .line 509
     new-instance v0, Landroid/app/IActivityManager$ContentProviderHolder$1;
 
     invoke-direct {v0}, Landroid/app/IActivityManager$ContentProviderHolder$1;-><init>()V
@@ -60,13 +60,13 @@
     .param p1, "_info"    # Landroid/content/pm/ProviderInfo;
 
     .prologue
-    .line 500
+    .line 488
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 501
+    .line 489
     iput-object p1, p0, Landroid/app/IActivityManager$ContentProviderHolder;->info:Landroid/content/pm/ProviderInfo;
 
-    .line 502
+    .line 490
     return-void
 .end method
 
@@ -75,10 +75,10 @@
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 534
+    .line 522
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 535
+    .line 523
     sget-object v0, Landroid/content/pm/ProviderInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -89,7 +89,7 @@
 
     iput-object v0, p0, Landroid/app/IActivityManager$ContentProviderHolder;->info:Landroid/content/pm/ProviderInfo;
 
-    .line 536
+    .line 524
     invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v0
@@ -100,14 +100,14 @@
 
     iput-object v0, p0, Landroid/app/IActivityManager$ContentProviderHolder;->provider:Landroid/content/IContentProvider;
 
-    .line 538
+    .line 526
     invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/IActivityManager$ContentProviderHolder;->connection:Landroid/os/IBinder;
 
-    .line 539
+    .line 527
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -119,10 +119,10 @@
     :goto_0
     iput-boolean v0, p0, Landroid/app/IActivityManager$ContentProviderHolder;->noReleaseNeeded:Z
 
-    .line 540
+    .line 528
     return-void
 
-    .line 539
+    .line 527
     :cond_0
     const/4 v0, 0x0
 
@@ -135,7 +135,7 @@
     .param p2, "x1"    # Landroid/app/IActivityManager$1;
 
     .prologue
-    .line 494
+    .line 482
     invoke-direct {p0, p1}, Landroid/app/IActivityManager$ContentProviderHolder;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -147,7 +147,7 @@
     .locals 1
 
     .prologue
-    .line 506
+    .line 494
     const/4 v0, 0x0
 
     return v0
@@ -161,17 +161,17 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 511
+    .line 499
     iget-object v1, p0, Landroid/app/IActivityManager$ContentProviderHolder;->info:Landroid/content/pm/ProviderInfo;
 
     invoke-virtual {v1, p1, v0}, Landroid/content/pm/ProviderInfo;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 512
+    .line 500
     iget-object v1, p0, Landroid/app/IActivityManager$ContentProviderHolder;->provider:Landroid/content/IContentProvider;
 
     if-eqz v1, :cond_1
 
-    .line 513
+    .line 501
     iget-object v1, p0, Landroid/app/IActivityManager$ContentProviderHolder;->provider:Landroid/content/IContentProvider;
 
     invoke-interface {v1}, Landroid/content/IContentProvider;->asBinder()Landroid/os/IBinder;
@@ -180,13 +180,13 @@
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 517
+    .line 505
     :goto_0
     iget-object v1, p0, Landroid/app/IActivityManager$ContentProviderHolder;->connection:Landroid/os/IBinder;
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 518
+    .line 506
     iget-boolean v1, p0, Landroid/app/IActivityManager$ContentProviderHolder;->noReleaseNeeded:Z
 
     if-eqz v1, :cond_0
@@ -196,10 +196,10 @@
     :cond_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 519
+    .line 507
     return-void
 
-    .line 515
+    .line 503
     :cond_1
     const/4 v1, 0x0
 

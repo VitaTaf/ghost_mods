@@ -42921,6 +42921,67 @@
     goto :goto_0
 .end method
 
+.method public createStackOnDisplay(I)Landroid/app/IActivityContainer;
+    .locals 4
+    .param p1, "displayId"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    const-string v2, "android.permission.MANAGE_ACTIVITY_STACKS"
+
+    const-string v3, "createStackOnDisplay()"
+
+    invoke-virtual {p0, v2, v3}, Lcom/android/server/am/ActivityManagerService;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v2, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+
+    invoke-virtual {v2}, Lcom/android/server/am/ActivityStackSupervisor;->getNextStackId()I
+
+    move-result v1
+
+    .local v1, "stackId":I
+    iget-object v2, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+
+    invoke-virtual {v2, v1, p1}, Lcom/android/server/am/ActivityStackSupervisor;->createStackOnDisplay(II)Lcom/android/server/am/ActivityStack;
+
+    move-result-object v0
+
+    .local v0, "stack":Lcom/android/server/am/ActivityStack;
+    if-nez v0, :cond_0
+
+    const/4 v2, 0x0
+
+    monitor-exit p0
+
+    :goto_0
+    return-object v2
+
+    :cond_0
+    iget-object v2, v0, Lcom/android/server/am/ActivityStack;->mActivityContainer:Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;
+
+    monitor-exit p0
+
+    goto :goto_0
+
+    .end local v0    # "stack":Lcom/android/server/am/ActivityStack;
+    .end local v1    # "stackId":I
+    :catchall_0
+    move-exception v2
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v2
+.end method
+
 .method public createVirtualActivityContainer(Landroid/os/IBinder;Landroid/app/IActivityContainerCallback;)Landroid/app/IActivityContainer;
     .locals 3
     .param p1, "parentActivityToken"    # Landroid/os/IBinder;

@@ -69,6 +69,8 @@
 
 .field public static final CRASH_APPLICATION_TRANSACTION:I = 0x72
 
+.field public static final CREATE_STACK_ON_DISPLAY:I = 0x11a
+
 .field public static final CREATE_VIRTUAL_ACTIVITY_CONTAINER_TRANSACTION:I = 0xa8
 
 .field public static final DELETE_ACTIVITY_CONTAINER_TRANSACTION:I = 0xba
@@ -656,6 +658,14 @@
 .end method
 
 .method public abstract crashApplication(IILjava/lang/String;Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract createStackOnDisplay(I)Landroid/app/IActivityContainer;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

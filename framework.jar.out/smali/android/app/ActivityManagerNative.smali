@@ -11457,6 +11457,61 @@
 
     invoke-virtual {v0, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v163
+
+    .local v163, "displayId":I
+    move-object/from16 v0, p0
+
+    move/from16 v1, v163
+
+    invoke-virtual {v0, v1}, Landroid/app/ActivityManagerNative;->createStackOnDisplay(I)Landroid/app/IActivityContainer;
+
+    move-result-object v141
+
+    .restart local v141    # "activityContainer":Landroid/app/IActivityContainer;
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    if-eqz v141, :cond_82
+
+    const/4 v6, 0x1
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v6}, Landroid/os/Parcel;->writeInt(I)V
+
+    invoke-interface/range {v141 .. v141}, Landroid/app/IActivityContainer;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v6
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v6}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+
+    :goto_7a
+    const/4 v6, 0x1
+
+    goto/16 :goto_0
+
+    :cond_82
+    const/4 v6, 0x0
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v6}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto :goto_7a
+
+    .end local v141    # "activityContainer":Landroid/app/IActivityContainer;
+    .end local v163    # "displayId":I
+    :pswitch_d5
+    const-string v6, "android.app.IActivityManager"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
     .line 2221
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
@@ -11473,7 +11528,7 @@
     move-result v163
 
     .line 2223
-    .local v163, "displayId":I
+    .restart local v163    # "displayId":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 2224
@@ -12419,7 +12474,7 @@
         :pswitch_5f
         :pswitch_3a
         :pswitch_c0
-        :pswitch_bf
+        :pswitch_d5
         :pswitch_be
         :pswitch_0
         :pswitch_0
@@ -12482,5 +12537,41 @@
         :pswitch_d1
         :pswitch_d2
         :pswitch_d3
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_bf
     .end packed-switch
 .end method
