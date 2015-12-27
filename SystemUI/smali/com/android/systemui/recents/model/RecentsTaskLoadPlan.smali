@@ -123,7 +123,7 @@
     .param p3, "loadQueue"    # Lcom/android/systemui/recents/model/TaskResourceLoadQueue;
 
     .prologue
-    .line 200
+    .line 201
     monitor-enter p0
 
     :try_start_0
@@ -185,7 +185,7 @@
 
     invoke-static {v2, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 204
+    .line 205
     :cond_0
     move-object/from16 v0, p0
 
@@ -195,7 +195,7 @@
 
     move-result-object v6
 
-    .line 207
+    .line 208
     .local v6, "res":Landroid/content/res/Resources;
     move-object/from16 v0, p0
 
@@ -205,7 +205,7 @@
 
     move-result v16
 
-    .line 208
+    .line 209
     .local v16, "stackCount":I
     const/4 v15, 0x0
 
@@ -215,7 +215,7 @@
 
     if-ge v15, v0, :cond_10
 
-    .line 209
+    .line 210
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->mStacks:Landroid/util/SparseArray;
@@ -230,13 +230,13 @@
 
     move-result-object v20
 
-    .line 210
+    .line 211
     .local v20, "tasks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/recents/model/Task;>;"
     invoke-virtual/range {v20 .. v20}, Ljava/util/ArrayList;->size()I
 
     move-result v19
 
-    .line 211
+    .line 212
     .local v19, "taskCount":I
     const/4 v11, 0x0
 
@@ -246,7 +246,7 @@
 
     if-ge v11, v0, :cond_f
 
-    .line 212
+    .line 213
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->mRawTasks:Ljava/util/List;
@@ -257,7 +257,7 @@
 
     check-cast v17, Landroid/app/ActivityManager$RecentTaskInfo;
 
-    .line 213
+    .line 214
     .local v17, "t":Landroid/app/ActivityManager$RecentTaskInfo;
     move-object/from16 v0, v20
 
@@ -267,23 +267,23 @@
 
     check-cast v18, Lcom/android/systemui/recents/model/Task;
 
-    .line 214
+    .line 215
     .local v18, "task":Lcom/android/systemui/recents/model/Task;
     move-object/from16 v0, v18
 
     iget-object v3, v0, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
 
-    .line 217
+    .line 218
     .local v3, "taskKey":Lcom/android/systemui/recents/model/Task$TaskKey;
     invoke-virtual {v3}, Lcom/android/systemui/recents/model/Task$TaskKey;->getComponentNameKey()Lcom/android/systemui/recents/model/Task$ComponentNameKey;
 
     move-result-object v9
 
-    .line 219
+    .line 220
     .local v9, "cnKey":Lcom/android/systemui/recents/model/Task$ComponentNameKey;
     const/4 v10, 0x0
 
-    .line 220
+    .line 221
     .local v10, "hadCachedActivityInfo":Z
     move-object/from16 v0, p0
 
@@ -295,7 +295,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 221
+    .line 222
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->mActivityInfoCache:Ljava/util/HashMap;
@@ -306,11 +306,11 @@
 
     check-cast v7, Lcom/android/systemui/recents/model/ActivityInfoHandle;
 
-    .line 222
+    .line 223
     .local v7, "infoHandle":Lcom/android/systemui/recents/model/ActivityInfoHandle;
     const/4 v10, 0x1
 
-    .line 227
+    .line 228
     :goto_2
     move-object/from16 v0, v18
 
@@ -326,7 +326,7 @@
 
     const/4 v12, 0x1
 
-    .line 228
+    .line 229
     .local v12, "isRunningTask":Z
     :goto_3
     move-object/from16 v0, p1
@@ -339,7 +339,7 @@
 
     const/4 v13, 0x1
 
-    .line 229
+    .line 230
     .local v13, "isVisibleTask":Z
     :goto_4
     move-object/from16 v0, p1
@@ -352,7 +352,7 @@
 
     const/4 v14, 0x1
 
-    .line 232
+    .line 233
     .local v14, "isVisibleThumbnail":Z
     :goto_5
     move-object/from16 v0, p1
@@ -363,14 +363,14 @@
 
     if-eqz v12, :cond_6
 
-    .line 211
+    .line 212
     :cond_1
     :goto_6
     add-int/lit8 v11, v11, 0x1
 
     goto :goto_1
 
-    .line 224
+    .line 225
     .end local v7    # "infoHandle":Lcom/android/systemui/recents/model/ActivityInfoHandle;
     .end local v12    # "isRunningTask":Z
     .end local v13    # "isVisibleTask":Z
@@ -383,27 +383,27 @@
     .restart local v7    # "infoHandle":Lcom/android/systemui/recents/model/ActivityInfoHandle;
     goto :goto_2
 
-    .line 227
+    .line 228
     :cond_3
     const/4 v12, 0x0
 
     goto :goto_3
 
-    .line 228
+    .line 229
     .restart local v12    # "isRunningTask":Z
     :cond_4
     const/4 v13, 0x0
 
     goto :goto_4
 
-    .line 229
+    .line 230
     .restart local v13    # "isVisibleTask":Z
     :cond_5
     const/4 v14, 0x0
 
     goto :goto_5
 
-    .line 236
+    .line 237
     .restart local v14    # "isVisibleThumbnail":Z
     :cond_6
     move-object/from16 v0, p1
@@ -416,7 +416,7 @@
 
     if-eqz v13, :cond_9
 
-    .line 237
+    .line 238
     :cond_7
     move-object/from16 v0, v18
 
@@ -424,7 +424,7 @@
 
     if-nez v2, :cond_9
 
-    .line 238
+    .line 239
     sget-boolean v2, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->DEBUG:Z
 
     if-eqz v2, :cond_8
@@ -451,7 +451,7 @@
 
     invoke-static {v2, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 239
+    .line 240
     :cond_8
     move-object/from16 v0, v17
 
@@ -473,7 +473,7 @@
 
     iput-object v2, v0, Lcom/android/systemui/recents/model/Task;->activityIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 243
+    .line 244
     :cond_9
     move-object/from16 v0, p1
 
@@ -485,7 +485,7 @@
 
     if-eqz v14, :cond_d
 
-    .line 244
+    .line 245
     :cond_a
     move-object/from16 v0, v18
 
@@ -495,7 +495,7 @@
 
     if-eqz v12, :cond_d
 
-    .line 245
+    .line 246
     :cond_b
     sget-boolean v2, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->DEBUG:Z
 
@@ -523,7 +523,7 @@
 
     invoke-static {v2, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 246
+    .line 247
     :cond_c
     move-object/from16 v0, p0
 
@@ -535,7 +535,7 @@
 
     if-gt v2, v4, :cond_e
 
-    .line 247
+    .line 248
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->mSystemServicesProxy:Lcom/android/systemui/recents/misc/SystemServicesProxy;
@@ -552,7 +552,7 @@
 
     iput-object v2, v0, Lcom/android/systemui/recents/model/Task;->thumbnail:Landroid/graphics/Bitmap;
 
-    .line 256
+    .line 257
     :cond_d
     :goto_7
     if-nez v10, :cond_1
@@ -561,7 +561,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 257
+    .line 258
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->mActivityInfoCache:Ljava/util/HashMap;
@@ -572,7 +572,7 @@
 
     goto/16 :goto_6
 
-    .line 200
+    .line 201
     .end local v3    # "taskKey":Lcom/android/systemui/recents/model/Task$TaskKey;
     .end local v6    # "res":Landroid/content/res/Resources;
     .end local v7    # "infoHandle":Lcom/android/systemui/recents/model/ActivityInfoHandle;
@@ -595,7 +595,7 @@
 
     throw v2
 
-    .line 249
+    .line 250
     .restart local v3    # "taskKey":Lcom/android/systemui/recents/model/Task$TaskKey;
     .restart local v6    # "res":Landroid/content/res/Resources;
     .restart local v7    # "infoHandle":Lcom/android/systemui/recents/model/ActivityInfoHandle;
@@ -623,7 +623,7 @@
 
     if-ne v2, v4, :cond_d
 
-    .line 250
+    .line 251
     move-object/from16 v0, p3
 
     move-object/from16 v1, v18
@@ -634,7 +634,7 @@
 
     goto :goto_7
 
-    .line 208
+    .line 209
     .end local v3    # "taskKey":Lcom/android/systemui/recents/model/Task$TaskKey;
     .end local v7    # "infoHandle":Lcom/android/systemui/recents/model/ActivityInfoHandle;
     .end local v9    # "cnKey":Lcom/android/systemui/recents/model/Task$ComponentNameKey;
@@ -649,7 +649,7 @@
 
     goto/16 :goto_0
 
-    .line 261
+    .line 262
     .end local v11    # "i":I
     .end local v19    # "taskCount":I
     .end local v20    # "tasks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/recents/model/Task;>;"
@@ -672,12 +672,12 @@
     .end annotation
 
     .prologue
-    .line 267
+    .line 268
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 268
+    .line 269
     .local v2, "stacks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/recents/model/TaskStack;>;"
     iget-object v3, p0, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->mStacks:Landroid/util/SparseArray;
 
@@ -685,7 +685,7 @@
 
     move-result v1
 
-    .line 269
+    .line 270
     .local v1, "stackCount":I
     const/4 v0, 0x0
 
@@ -693,7 +693,7 @@
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 270
+    .line 271
     iget-object v3, p0, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->mStacks:Landroid/util/SparseArray;
 
     invoke-virtual {v3, v0}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -702,12 +702,12 @@
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 269
+    .line 270
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 273
+    .line 274
     :cond_0
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -715,14 +715,14 @@
 
     if-eqz v3, :cond_1
 
-    .line 274
+    .line 275
     new-instance v3, Lcom/android/systemui/recents/model/TaskStack;
 
     invoke-direct {v3}, Lcom/android/systemui/recents/model/TaskStack;-><init>()V
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 276
+    .line 277
     :cond_1
     return-object v2
 .end method
@@ -732,7 +732,7 @@
     .param p1, "stackId"    # I
 
     .prologue
-    .line 283
+    .line 284
     iget-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->mStacks:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -748,14 +748,14 @@
     .locals 3
 
     .prologue
-    .line 288
+    .line 289
     iget-object v2, p0, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->mStacks:Landroid/util/SparseArray;
 
     invoke-virtual {v2}, Landroid/util/SparseArray;->size()I
 
     move-result v1
 
-    .line 289
+    .line 290
     .local v1, "stackCount":I
     const/4 v0, 0x0
 
@@ -763,7 +763,7 @@
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 290
+    .line 291
     iget-object v2, p0, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->mStacks:Landroid/util/SparseArray;
 
     invoke-virtual {v2, v0}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -778,20 +778,20 @@
 
     if-lez v2, :cond_0
 
-    .line 291
+    .line 292
     const/4 v2, 0x1
 
-    .line 294
+    .line 295
     :goto_1
     return v2
 
-    .line 289
+    .line 290
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 294
+    .line 295
     :cond_1
     const/4 v2, 0x0
 
@@ -1201,6 +1201,9 @@
 
     .line 159
     :cond_5
+    const/16 v24, 0x0
+
+    .line 160
     move-object/from16 v0, v34
 
     move/from16 v1, v24
@@ -1211,17 +1214,17 @@
 
     check-cast v33, Ljava/util/ArrayList;
 
-    .line 160
+    .line 161
     .local v33, "stackTasks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/recents/model/Task;>;"
     if-nez v33, :cond_6
 
-    .line 161
+    .line 162
     new-instance v33, Ljava/util/ArrayList;
 
     .end local v33    # "stackTasks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/recents/model/Task;>;"
     invoke-direct/range {v33 .. v33}, Ljava/util/ArrayList;-><init>()V
 
-    .line 162
+    .line 163
     .restart local v33    # "stackTasks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/recents/model/Task;>;"
     move-object/from16 v0, v34
 
@@ -1231,7 +1234,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 164
+    .line 165
     :cond_6
     move-object/from16 v0, v33
 
@@ -1285,9 +1288,9 @@
     :cond_b
     const/16 v18, 0x0
 
-    goto :goto_5
+    goto/16 :goto_5
 
-    .line 176
+    .line 177
     .end local v5    # "taskKey":Lcom/android/systemui/recents/model/Task$TaskKey;
     .end local v9    # "infoHandle":Lcom/android/systemui/recents/model/ActivityInfoHandle;
     .end local v15    # "activityLabel":Ljava/lang/String;
@@ -1307,7 +1310,7 @@
 
     move-result-object v32
 
-    .line 177
+    .line 178
     .local v32, "stackInfos":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Landroid/app/ActivityManager$StackInfo;>;"
     move-object/from16 v0, p0
 
@@ -1315,12 +1318,12 @@
 
     invoke-virtual {v4}, Landroid/util/SparseArray;->clear()V
 
-    .line 178
+    .line 179
     invoke-virtual/range {v34 .. v34}, Landroid/util/SparseArray;->size()I
 
     move-result v30
 
-    .line 179
+    .line 180
     .local v30, "stackCount":I
     const/16 v26, 0x0
 
@@ -1331,7 +1334,7 @@
 
     if-ge v0, v1, :cond_d
 
-    .line 180
+    .line 181
     move-object/from16 v0, v34
 
     move/from16 v1, v26
@@ -1340,7 +1343,7 @@
 
     move-result v31
 
-    .line 181
+    .line 182
     .local v31, "stackId":I
     move-object/from16 v0, v32
 
@@ -1352,7 +1355,7 @@
 
     check-cast v27, Landroid/app/ActivityManager$StackInfo;
 
-    .line 182
+    .line 183
     .local v27, "info":Landroid/app/ActivityManager$StackInfo;
     move-object/from16 v0, v34
 
@@ -1364,7 +1367,7 @@
 
     check-cast v33, Ljava/util/ArrayList;
 
-    .line 183
+    .line 184
     .restart local v33    # "stackTasks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/recents/model/Task;>;"
     new-instance v29, Lcom/android/systemui/recents/model/TaskStack;
 
@@ -1374,7 +1377,7 @@
 
     invoke-direct {v0, v1}, Lcom/android/systemui/recents/model/TaskStack;-><init>(I)V
 
-    .line 185
+    .line 186
     .local v29, "stack":Lcom/android/systemui/recents/model/TaskStack;
     move-object/from16 v0, v29
 
@@ -1384,14 +1387,14 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/recents/model/TaskStack;->setBounds(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
 
-    .line 189
+    .line 190
     move-object/from16 v0, v29
 
     move-object/from16 v1, v33
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/model/TaskStack;->setTasks(Ljava/util/List;)V
 
-    .line 190
+    .line 191
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
@@ -1400,7 +1403,7 @@
 
     invoke-virtual {v0, v4}, Lcom/android/systemui/recents/model/TaskStack;->createAffiliatedGroupings(Lcom/android/systemui/recents/RecentsConfiguration;)V
 
-    .line 191
+    .line 192
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->mStacks:Landroid/util/SparseArray;
@@ -1413,12 +1416,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 179
+    .line 180
     add-int/lit8 v26, v26, 0x1
 
     goto :goto_6
 
-    .line 193
+    .line 194
     .end local v27    # "info":Landroid/app/ActivityManager$StackInfo;
     .end local v29    # "stack":Lcom/android/systemui/recents/model/TaskStack;
     .end local v31    # "stackId":I
