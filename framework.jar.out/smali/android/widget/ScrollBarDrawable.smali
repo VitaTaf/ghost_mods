@@ -2,19 +2,26 @@
 .super Landroid/graphics/drawable/Drawable;
 .source "ScrollBarDrawable.java"
 
-
-# static fields
-.field private static final STATE_ENABLED:[I
+# interfaces
+.implements Landroid/graphics/drawable/Drawable$Callback;
 
 
 # instance fields
+.field private mAlpha:I
+
 .field private mAlwaysDrawHorizontalTrack:Z
 
 .field private mAlwaysDrawVerticalTrack:Z
 
-.field private mChanged:Z
+.field private mBoundsChanged:Z
+
+.field private mColorFilter:Landroid/graphics/ColorFilter;
 
 .field private mExtent:I
+
+.field private mHasSetAlpha:Z
+
+.field private mHasSetColorFilter:Z
 
 .field private mHorizontalThumb:Landroid/graphics/drawable/Drawable;
 
@@ -28,8 +35,6 @@
 
 .field private mRangeChanged:Z
 
-.field private final mTempBounds:Landroid/graphics/Rect;
-
 .field private mVertical:Z
 
 .field private mVerticalThumb:Landroid/graphics/drawable/Drawable;
@@ -38,41 +43,224 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    .prologue
-    .line 32
-    const/4 v0, 0x1
-
-    new-array v0, v0, [I
-
-    const/4 v1, 0x0
-
-    const v2, 0x101009e
-
-    aput v2, v0, v1
-
-    sput-object v0, Landroid/widget/ScrollBarDrawable;->STATE_ENABLED:[I
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 1
 
     .prologue
-    .line 49
+    .line 32
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 44
-    new-instance v0, Landroid/graphics/Rect;
+    .line 49
+    const/16 v0, 0xff
 
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+    iput v0, p0, Landroid/widget/ScrollBarDrawable;->mAlpha:I
 
-    iput-object v0, p0, Landroid/widget/ScrollBarDrawable;->mTempBounds:Landroid/graphics/Rect;
+    return-void
+.end method
 
-    .line 50
+.method private drawThumb(Landroid/graphics/Canvas;Landroid/graphics/Rect;IIZ)V
+    .locals 6
+    .param p1, "canvas"    # Landroid/graphics/Canvas;
+    .param p2, "bounds"    # Landroid/graphics/Rect;
+    .param p3, "offset"    # I
+    .param p4, "length"    # I
+    .param p5, "vertical"    # Z
+
+    .prologue
+    .line 208
+    iget-boolean v2, p0, Landroid/widget/ScrollBarDrawable;->mRangeChanged:Z
+
+    if-nez v2, :cond_0
+
+    iget-boolean v2, p0, Landroid/widget/ScrollBarDrawable;->mBoundsChanged:Z
+
+    if-eqz v2, :cond_3
+
+    :cond_0
+    const/4 v0, 0x1
+
+    .line 209
+    .local v0, "changed":Z
+    :goto_0
+    if-eqz p5, :cond_4
+
+    .line 210
+    iget-object v2, p0, Landroid/widget/ScrollBarDrawable;->mVerticalThumb:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v2, :cond_2
+
+    .line 211
+    iget-object v1, p0, Landroid/widget/ScrollBarDrawable;->mVerticalThumb:Landroid/graphics/drawable/Drawable;
+
+    .line 212
+    .local v1, "thumb":Landroid/graphics/drawable/Drawable;
+    if-eqz v0, :cond_1
+
+    .line 213
+    iget v2, p2, Landroid/graphics/Rect;->left:I
+
+    iget v3, p2, Landroid/graphics/Rect;->top:I
+
+    add-int/2addr v3, p3
+
+    iget v4, p2, Landroid/graphics/Rect;->right:I
+
+    iget v5, p2, Landroid/graphics/Rect;->top:I
+
+    add-int/2addr v5, p3
+
+    add-int/2addr v5, p4
+
+    invoke-virtual {v1, v2, v3, v4, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    .line 217
+    :cond_1
+    invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+
+    .line 230
+    .end local v1    # "thumb":Landroid/graphics/drawable/Drawable;
+    :cond_2
+    :goto_1
+    return-void
+
+    .line 208
+    .end local v0    # "changed":Z
+    :cond_3
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    .line 220
+    .restart local v0    # "changed":Z
+    :cond_4
+    iget-object v2, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalThumb:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v2, :cond_2
+
+    .line 221
+    iget-object v1, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalThumb:Landroid/graphics/drawable/Drawable;
+
+    .line 222
+    .restart local v1    # "thumb":Landroid/graphics/drawable/Drawable;
+    if-eqz v0, :cond_5
+
+    .line 223
+    iget v2, p2, Landroid/graphics/Rect;->left:I
+
+    add-int/2addr v2, p3
+
+    iget v3, p2, Landroid/graphics/Rect;->top:I
+
+    iget v4, p2, Landroid/graphics/Rect;->left:I
+
+    add-int/2addr v4, p3
+
+    add-int/2addr v4, p4
+
+    iget v5, p2, Landroid/graphics/Rect;->bottom:I
+
+    invoke-virtual {v1, v2, v3, v4, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    .line 227
+    :cond_5
+    invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+
+    goto :goto_1
+.end method
+
+.method private drawTrack(Landroid/graphics/Canvas;Landroid/graphics/Rect;Z)V
+    .locals 2
+    .param p1, "canvas"    # Landroid/graphics/Canvas;
+    .param p2, "bounds"    # Landroid/graphics/Rect;
+    .param p3, "vertical"    # Z
+
+    .prologue
+    .line 193
+    if-eqz p3, :cond_2
+
+    .line 194
+    iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mVerticalTrack:Landroid/graphics/drawable/Drawable;
+
+    .line 199
+    .local v0, "track":Landroid/graphics/drawable/Drawable;
+    :goto_0
+    if-eqz v0, :cond_1
+
+    .line 200
+    iget-boolean v1, p0, Landroid/widget/ScrollBarDrawable;->mBoundsChanged:Z
+
+    if-eqz v1, :cond_0
+
+    .line 201
+    invoke-virtual {v0, p2}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
+
+    .line 203
+    :cond_0
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+
+    .line 205
+    :cond_1
+    return-void
+
+    .line 196
+    .end local v0    # "track":Landroid/graphics/drawable/Drawable;
+    :cond_2
+    iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalTrack:Landroid/graphics/drawable/Drawable;
+
+    .restart local v0    # "track":Landroid/graphics/drawable/Drawable;
+    goto :goto_0
+.end method
+
+.method private propagateCurrentState(Landroid/graphics/drawable/Drawable;)V
+    .locals 1
+    .param p1, "d"    # Landroid/graphics/drawable/Drawable;
+
+    .prologue
+    .line 269
+    if-eqz p1, :cond_2
+
+    .line 270
+    iget-boolean v0, p0, Landroid/widget/ScrollBarDrawable;->mMutated:Z
+
+    if-eqz v0, :cond_0
+
+    .line 271
+    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+
+    .line 274
+    :cond_0
+    invoke-virtual {p0}, Landroid/widget/ScrollBarDrawable;->getState()[I
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
+
+    .line 275
+    invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+
+    .line 277
+    iget-boolean v0, p0, Landroid/widget/ScrollBarDrawable;->mHasSetAlpha:Z
+
+    if-eqz v0, :cond_1
+
+    .line 278
+    iget v0, p0, Landroid/widget/ScrollBarDrawable;->mAlpha:I
+
+    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
+
+    .line 281
+    :cond_1
+    iget-boolean v0, p0, Landroid/widget/ScrollBarDrawable;->mHasSetColorFilter:Z
+
+    if-eqz v0, :cond_2
+
+    .line 282
+    iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mColorFilter:Landroid/graphics/ColorFilter;
+
+    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+
+    .line 285
+    :cond_2
     return-void
 .end method
 
@@ -83,40 +271,40 @@
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 105
+    .line 117
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Landroid/widget/ScrollBarDrawable;->mVertical:Z
 
     move/from16 v17, v0
 
-    .line 106
+    .line 118
     .local v17, "vertical":Z
     move-object/from16 v0, p0
 
     iget v11, v0, Landroid/widget/ScrollBarDrawable;->mExtent:I
 
-    .line 107
+    .line 119
     .local v11, "extent":I
     move-object/from16 v0, p0
 
     iget v14, v0, Landroid/widget/ScrollBarDrawable;->mRange:I
 
-    .line 109
+    .line 121
     .local v14, "range":I
     const/4 v10, 0x1
 
-    .line 110
+    .line 122
     .local v10, "drawTrack":Z
     const/4 v9, 0x1
 
-    .line 111
+    .line 123
     .local v9, "drawThumb":Z
     if-lez v11, :cond_0
 
     if-gt v14, v11, :cond_1
 
-    .line 112
+    .line 124
     :cond_0
     if-eqz v17, :cond_3
 
@@ -124,17 +312,17 @@
 
     iget-boolean v10, v0, Landroid/widget/ScrollBarDrawable;->mAlwaysDrawVerticalTrack:Z
 
-    .line 113
+    .line 125
     :goto_0
     const/4 v9, 0x0
 
-    .line 116
+    .line 128
     :cond_1
     invoke-virtual/range {p0 .. p0}, Landroid/widget/ScrollBarDrawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v13
 
-    .line 117
+    .line 129
     .local v13, "r":Landroid/graphics/Rect;
     iget v3, v13, Landroid/graphics/Rect;->left:I
 
@@ -162,12 +350,12 @@
 
     if-eqz v3, :cond_4
 
-    .line 142
+    .line 156
     :cond_2
     :goto_1
     return-void
 
-    .line 112
+    .line 124
     .end local v13    # "r":Landroid/graphics/Rect;
     :cond_3
     move-object/from16 v0, p0
@@ -176,32 +364,32 @@
 
     goto :goto_0
 
-    .line 120
+    .line 133
     .restart local v13    # "r":Landroid/graphics/Rect;
     :cond_4
     if-eqz v10, :cond_5
 
-    .line 121
+    .line 134
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
 
     move/from16 v2, v17
 
-    invoke-virtual {v0, v1, v13, v2}, Landroid/widget/ScrollBarDrawable;->drawTrack(Landroid/graphics/Canvas;Landroid/graphics/Rect;Z)V
+    invoke-direct {v0, v1, v13, v2}, Landroid/widget/ScrollBarDrawable;->drawTrack(Landroid/graphics/Canvas;Landroid/graphics/Rect;Z)V
 
-    .line 124
+    .line 137
     :cond_5
     if-eqz v9, :cond_2
 
-    .line 125
+    .line 138
     if-eqz v17, :cond_8
 
     invoke-virtual {v13}, Landroid/graphics/Rect;->height()I
 
     move-result v15
 
-    .line 126
+    .line 139
     .local v15, "size":I
     :goto_2
     if-eqz v17, :cond_9
@@ -210,9 +398,13 @@
 
     move-result v16
 
-    .line 127
+    .line 140
     .local v16, "thickness":I
     :goto_3
+    mul-int/lit8 v12, v16, 0x2
+
+    .line 143
+    .local v12, "minLength":I
     int-to-float v3, v15
 
     int-to-float v4, v11
@@ -227,8 +419,15 @@
 
     move-result v7
 
-    .line 128
+    .line 144
     .local v7, "length":I
+    if-ge v7, v12, :cond_6
+
+    .line 145
+    move v7, v12
+
+    .line 149
+    :cond_6
     sub-int v3, v15, v7
 
     int-to-float v3, v3
@@ -251,24 +450,13 @@
 
     move-result v6
 
-    .line 131
+    .line 150
     .local v6, "offset":I
-    mul-int/lit8 v12, v16, 0x2
+    sub-int v3, v15, v7
 
-    .line 132
-    .local v12, "minLength":I
-    if-ge v7, v12, :cond_6
+    if-le v6, v3, :cond_7
 
-    .line 133
-    move v7, v12
-
-    .line 136
-    :cond_6
-    add-int v3, v6, v7
-
-    if-le v3, v15, :cond_7
-
-    .line 137
+    .line 151
     sub-int v6, v15, v7
 
     :cond_7
@@ -280,12 +468,12 @@
 
     move/from16 v8, v17
 
-    .line 140
-    invoke-virtual/range {v3 .. v8}, Landroid/widget/ScrollBarDrawable;->drawThumb(Landroid/graphics/Canvas;Landroid/graphics/Rect;IIZ)V
+    .line 154
+    invoke-direct/range {v3 .. v8}, Landroid/widget/ScrollBarDrawable;->drawThumb(Landroid/graphics/Canvas;Landroid/graphics/Rect;IIZ)V
 
     goto :goto_1
 
-    .line 125
+    .line 138
     .end local v6    # "offset":I
     .end local v7    # "length":I
     .end local v12    # "minLength":I
@@ -298,7 +486,7 @@
 
     goto :goto_2
 
-    .line 126
+    .line 139
     .restart local v15    # "size":I
     :cond_9
     invoke-virtual {v13}, Landroid/graphics/Rect;->height()I
@@ -308,188 +496,12 @@
     goto :goto_3
 .end method
 
-.method protected drawThumb(Landroid/graphics/Canvas;Landroid/graphics/Rect;IIZ)V
-    .locals 7
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
-    .param p2, "bounds"    # Landroid/graphics/Rect;
-    .param p3, "offset"    # I
-    .param p4, "length"    # I
-    .param p5, "vertical"    # Z
-
-    .prologue
-    .line 166
-    iget-object v2, p0, Landroid/widget/ScrollBarDrawable;->mTempBounds:Landroid/graphics/Rect;
-
-    .line 167
-    .local v2, "thumbRect":Landroid/graphics/Rect;
-    iget-boolean v3, p0, Landroid/widget/ScrollBarDrawable;->mRangeChanged:Z
-
-    if-nez v3, :cond_0
-
-    iget-boolean v3, p0, Landroid/widget/ScrollBarDrawable;->mChanged:Z
-
-    if-eqz v3, :cond_4
-
-    :cond_0
-    const/4 v0, 0x1
-
-    .line 168
-    .local v0, "changed":Z
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 169
-    if-eqz p5, :cond_5
-
-    .line 170
-    iget v3, p2, Landroid/graphics/Rect;->left:I
-
-    iget v4, p2, Landroid/graphics/Rect;->top:I
-
-    add-int/2addr v4, p3
-
-    iget v5, p2, Landroid/graphics/Rect;->right:I
-
-    iget v6, p2, Landroid/graphics/Rect;->top:I
-
-    add-int/2addr v6, p3
-
-    add-int/2addr v6, p4
-
-    invoke-virtual {v2, v3, v4, v5, v6}, Landroid/graphics/Rect;->set(IIII)V
-
-    .line 178
-    :cond_1
-    :goto_1
-    if-eqz p5, :cond_6
-
-    .line 179
-    iget-object v3, p0, Landroid/widget/ScrollBarDrawable;->mVerticalThumb:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v3, :cond_3
-
-    .line 180
-    iget-object v1, p0, Landroid/widget/ScrollBarDrawable;->mVerticalThumb:Landroid/graphics/drawable/Drawable;
-
-    .line 181
-    .local v1, "thumb":Landroid/graphics/drawable/Drawable;
-    if-eqz v0, :cond_2
-
-    invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
-
-    .line 182
-    :cond_2
-    invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    .line 191
-    .end local v1    # "thumb":Landroid/graphics/drawable/Drawable;
-    :cond_3
-    :goto_2
-    return-void
-
-    .line 167
-    .end local v0    # "changed":Z
-    :cond_4
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    .line 173
-    .restart local v0    # "changed":Z
-    :cond_5
-    iget v3, p2, Landroid/graphics/Rect;->left:I
-
-    add-int/2addr v3, p3
-
-    iget v4, p2, Landroid/graphics/Rect;->top:I
-
-    iget v5, p2, Landroid/graphics/Rect;->left:I
-
-    add-int/2addr v5, p3
-
-    add-int/2addr v5, p4
-
-    iget v6, p2, Landroid/graphics/Rect;->bottom:I
-
-    invoke-virtual {v2, v3, v4, v5, v6}, Landroid/graphics/Rect;->set(IIII)V
-
-    goto :goto_1
-
-    .line 185
-    :cond_6
-    iget-object v3, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalThumb:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v3, :cond_3
-
-    .line 186
-    iget-object v1, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalThumb:Landroid/graphics/drawable/Drawable;
-
-    .line 187
-    .restart local v1    # "thumb":Landroid/graphics/drawable/Drawable;
-    if-eqz v0, :cond_7
-
-    invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
-
-    .line 188
-    :cond_7
-    invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    goto :goto_2
-.end method
-
-.method protected drawTrack(Landroid/graphics/Canvas;Landroid/graphics/Rect;Z)V
-    .locals 2
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
-    .param p2, "bounds"    # Landroid/graphics/Rect;
-    .param p3, "vertical"    # Z
-
-    .prologue
-    .line 152
-    if-eqz p3, :cond_2
-
-    .line 153
-    iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mVerticalTrack:Landroid/graphics/drawable/Drawable;
-
-    .line 157
-    .local v0, "track":Landroid/graphics/drawable/Drawable;
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 158
-    iget-boolean v1, p0, Landroid/widget/ScrollBarDrawable;->mChanged:Z
-
-    if-eqz v1, :cond_0
-
-    .line 159
-    invoke-virtual {v0, p2}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
-
-    .line 161
-    :cond_0
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    .line 163
-    :cond_1
-    return-void
-
-    .line 155
-    .end local v0    # "track":Landroid/graphics/drawable/Drawable;
-    :cond_2
-    iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalTrack:Landroid/graphics/drawable/Drawable;
-
-    .restart local v0    # "track":Landroid/graphics/drawable/Drawable;
-    goto :goto_0
-.end method
-
 .method public getAlpha()I
     .locals 1
 
     .prologue
-    .line 282
-    iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mVerticalThumb:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getAlpha()I
-
-    move-result v0
+    .line 338
+    iget v0, p0, Landroid/widget/ScrollBarDrawable;->mAlpha:I
 
     return v0
 .end method
@@ -498,7 +510,7 @@
     .locals 1
 
     .prologue
-    .line 85
+    .line 96
     iget-boolean v0, p0, Landroid/widget/ScrollBarDrawable;->mAlwaysDrawHorizontalTrack:Z
 
     return v0
@@ -508,17 +520,27 @@
     .locals 1
 
     .prologue
-    .line 77
+    .line 86
     iget-boolean v0, p0, Landroid/widget/ScrollBarDrawable;->mAlwaysDrawVerticalTrack:Z
 
     return v0
+.end method
+
+.method public getColorFilter()Landroid/graphics/ColorFilter;
+    .locals 1
+
+    .prologue
+    .line 362
+    iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mColorFilter:Landroid/graphics/ColorFilter;
+
+    return-object v0
 .end method
 
 .method public getOpacity()I
     .locals 1
 
     .prologue
-    .line 303
+    .line 367
     const/4 v0, -0x3
 
     return v0
@@ -531,10 +553,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 234
+    .line 288
     if-eqz p1, :cond_2
 
-    .line 235
+    .line 289
     iget-object v1, p0, Landroid/widget/ScrollBarDrawable;->mVerticalTrack:Landroid/graphics/drawable/Drawable;
 
     if-eqz v1, :cond_1
@@ -545,12 +567,12 @@
 
     move-result v0
 
-    .line 238
+    .line 292
     :cond_0
     :goto_0
     return v0
 
-    .line 235
+    .line 289
     :cond_1
     iget-object v1, p0, Landroid/widget/ScrollBarDrawable;->mVerticalThumb:Landroid/graphics/drawable/Drawable;
 
@@ -564,7 +586,7 @@
 
     goto :goto_0
 
-    .line 238
+    .line 292
     :cond_2
     iget-object v1, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalTrack:Landroid/graphics/drawable/Drawable;
 
@@ -592,11 +614,98 @@
     goto :goto_0
 .end method
 
+.method public invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
+    .locals 0
+    .param p1, "who"    # Landroid/graphics/drawable/Drawable;
+
+    .prologue
+    .line 372
+    invoke-virtual {p0}, Landroid/widget/ScrollBarDrawable;->invalidateSelf()V
+
+    .line 373
+    return-void
+.end method
+
+.method public isStateful()Z
+    .locals 1
+
+    .prologue
+    .line 166
+    iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mVerticalTrack:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mVerticalTrack:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->isStateful()Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    :cond_0
+    iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mVerticalThumb:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mVerticalThumb:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->isStateful()Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    :cond_1
+    iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalTrack:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalTrack:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->isStateful()Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    :cond_2
+    iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalThumb:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalThumb:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->isStateful()Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    :cond_3
+    invoke-super {p0}, Landroid/graphics/drawable/Drawable;->isStateful()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    :cond_4
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_5
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method public bridge synthetic mutate()Landroid/graphics/drawable/Drawable;
     .locals 1
 
     .prologue
-    .line 31
+    .line 32
     invoke-virtual {p0}, Landroid/widget/ScrollBarDrawable;->mutate()Landroid/widget/ScrollBarDrawable;
 
     move-result-object v0
@@ -608,7 +717,7 @@
     .locals 1
 
     .prologue
-    .line 245
+    .line 299
     iget-boolean v0, p0, Landroid/widget/ScrollBarDrawable;->mMutated:Z
 
     if-nez v0, :cond_4
@@ -619,56 +728,56 @@
 
     if-ne v0, p0, :cond_4
 
-    .line 246
+    .line 300
     iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mVerticalTrack:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
-    .line 247
+    .line 301
     iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mVerticalTrack:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
-    .line 249
+    .line 303
     :cond_0
     iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mVerticalThumb:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_1
 
-    .line 250
+    .line 304
     iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mVerticalThumb:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
-    .line 252
+    .line 306
     :cond_1
     iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalTrack:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_2
 
-    .line 253
+    .line 307
     iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalTrack:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
-    .line 255
+    .line 309
     :cond_2
     iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalThumb:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_3
 
-    .line 256
+    .line 310
     iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalThumb:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
-    .line 258
+    .line 312
     :cond_3
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/ScrollBarDrawable;->mMutated:Z
 
-    .line 260
+    .line 314
     :cond_4
     return-object p0
 .end method
@@ -678,15 +787,104 @@
     .param p1, "bounds"    # Landroid/graphics/Rect;
 
     .prologue
-    .line 146
+    .line 160
     invoke-super {p0, p1}, Landroid/graphics/drawable/Drawable;->onBoundsChange(Landroid/graphics/Rect;)V
 
-    .line 147
+    .line 161
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/widget/ScrollBarDrawable;->mChanged:Z
+    iput-boolean v0, p0, Landroid/widget/ScrollBarDrawable;->mBoundsChanged:Z
 
-    .line 148
+    .line 162
+    return-void
+.end method
+
+.method protected onStateChange([I)Z
+    .locals 2
+    .param p1, "state"    # [I
+
+    .prologue
+    .line 175
+    invoke-super {p0, p1}, Landroid/graphics/drawable/Drawable;->onStateChange([I)Z
+
+    move-result v0
+
+    .line 176
+    .local v0, "changed":Z
+    iget-object v1, p0, Landroid/widget/ScrollBarDrawable;->mVerticalTrack:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v1, :cond_0
+
+    .line 177
+    iget-object v1, p0, Landroid/widget/ScrollBarDrawable;->mVerticalTrack:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
+
+    move-result v1
+
+    or-int/2addr v0, v1
+
+    .line 179
+    :cond_0
+    iget-object v1, p0, Landroid/widget/ScrollBarDrawable;->mVerticalThumb:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v1, :cond_1
+
+    .line 180
+    iget-object v1, p0, Landroid/widget/ScrollBarDrawable;->mVerticalThumb:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
+
+    move-result v1
+
+    or-int/2addr v0, v1
+
+    .line 182
+    :cond_1
+    iget-object v1, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalTrack:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v1, :cond_2
+
+    .line 183
+    iget-object v1, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalTrack:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
+
+    move-result v1
+
+    or-int/2addr v0, v1
+
+    .line 185
+    :cond_2
+    iget-object v1, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalThumb:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v1, :cond_3
+
+    .line 186
+    iget-object v1, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalThumb:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
+
+    move-result v1
+
+    or-int/2addr v0, v1
+
+    .line 188
+    :cond_3
+    return v0
+.end method
+
+.method public scheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V
+    .locals 1
+    .param p1, "who"    # Landroid/graphics/drawable/Drawable;
+    .param p2, "what"    # Ljava/lang/Runnable;
+    .param p3, "when"    # J
+
+    .prologue
+    .line 377
+    invoke-virtual {p0, p2, p3, p4}, Landroid/widget/ScrollBarDrawable;->scheduleSelf(Ljava/lang/Runnable;J)V
+
+    .line 378
     return-void
 .end method
 
@@ -695,50 +893,58 @@
     .param p1, "alpha"    # I
 
     .prologue
-    .line 265
+    .line 319
+    iput p1, p0, Landroid/widget/ScrollBarDrawable;->mAlpha:I
+
+    .line 320
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Landroid/widget/ScrollBarDrawable;->mHasSetAlpha:Z
+
+    .line 322
     iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mVerticalTrack:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
-    .line 266
+    .line 323
     iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mVerticalTrack:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 268
+    .line 325
     :cond_0
     iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mVerticalThumb:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_1
 
-    .line 269
+    .line 326
     iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mVerticalThumb:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 271
+    .line 328
     :cond_1
     iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalTrack:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_2
 
-    .line 272
+    .line 329
     iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalTrack:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 274
+    .line 331
     :cond_2
     iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalThumb:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_3
 
-    .line 275
+    .line 332
     iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalThumb:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 277
+    .line 334
     :cond_3
     return-void
 .end method
@@ -748,10 +954,10 @@
     .param p1, "alwaysDrawTrack"    # Z
 
     .prologue
-    .line 59
+    .line 64
     iput-boolean p1, p0, Landroid/widget/ScrollBarDrawable;->mAlwaysDrawHorizontalTrack:Z
 
-    .line 60
+    .line 65
     return-void
 .end method
 
@@ -760,10 +966,10 @@
     .param p1, "alwaysDrawTrack"    # Z
 
     .prologue
-    .line 69
+    .line 76
     iput-boolean p1, p0, Landroid/widget/ScrollBarDrawable;->mAlwaysDrawVerticalTrack:Z
 
-    .line 70
+    .line 77
     return-void
 .end method
 
@@ -772,111 +978,115 @@
     .param p1, "cf"    # Landroid/graphics/ColorFilter;
 
     .prologue
-    .line 287
+    .line 343
+    iput-object p1, p0, Landroid/widget/ScrollBarDrawable;->mColorFilter:Landroid/graphics/ColorFilter;
+
+    .line 344
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Landroid/widget/ScrollBarDrawable;->mHasSetColorFilter:Z
+
+    .line 346
     iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mVerticalTrack:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
-    .line 288
+    .line 347
     iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mVerticalTrack:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 290
+    .line 349
     :cond_0
     iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mVerticalThumb:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_1
 
-    .line 291
+    .line 350
     iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mVerticalThumb:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 293
+    .line 352
     :cond_1
     iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalTrack:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_2
 
-    .line 294
+    .line 353
     iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalTrack:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 296
+    .line 355
     :cond_2
     iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalThumb:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_3
 
-    .line 297
+    .line 356
     iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalThumb:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 299
+    .line 358
     :cond_3
     return-void
 .end method
 
 .method public setHorizontalThumbDrawable(Landroid/graphics/drawable/Drawable;)V
-    .locals 1
+    .locals 2
     .param p1, "thumb"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 214
-    if-eqz p1, :cond_1
-
-    .line 215
-    iget-boolean v0, p0, Landroid/widget/ScrollBarDrawable;->mMutated:Z
+    .line 251
+    iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalThumb:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
-    .line 216
-    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+    .line 252
+    iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalThumb:Landroid/graphics/drawable/Drawable;
 
-    .line 218
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+
+    .line 255
     :cond_0
-    sget-object v0, Landroid/widget/ScrollBarDrawable;->STATE_ENABLED:[I
+    invoke-direct {p0, p1}, Landroid/widget/ScrollBarDrawable;->propagateCurrentState(Landroid/graphics/drawable/Drawable;)V
 
-    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
-
-    .line 219
+    .line 256
     iput-object p1, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalThumb:Landroid/graphics/drawable/Drawable;
 
-    .line 221
-    :cond_1
+    .line 257
     return-void
 .end method
 
 .method public setHorizontalTrackDrawable(Landroid/graphics/drawable/Drawable;)V
-    .locals 1
+    .locals 2
     .param p1, "track"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 224
-    if-eqz p1, :cond_1
-
-    .line 225
-    iget-boolean v0, p0, Landroid/widget/ScrollBarDrawable;->mMutated:Z
+    .line 260
+    iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalTrack:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
-    .line 226
-    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+    .line 261
+    iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalTrack:Landroid/graphics/drawable/Drawable;
 
-    .line 228
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+
+    .line 264
     :cond_0
-    sget-object v0, Landroid/widget/ScrollBarDrawable;->STATE_ENABLED:[I
+    invoke-direct {p0, p1}, Landroid/widget/ScrollBarDrawable;->propagateCurrentState(Landroid/graphics/drawable/Drawable;)V
 
-    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
-
-    .line 230
-    :cond_1
+    .line 265
     iput-object p1, p0, Landroid/widget/ScrollBarDrawable;->mHorizontalTrack:Landroid/graphics/drawable/Drawable;
 
-    .line 231
+    .line 266
     return-void
 .end method
 
@@ -890,15 +1100,18 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 89
+    .line 100
     iget-boolean v0, p0, Landroid/widget/ScrollBarDrawable;->mVertical:Z
 
     if-eq v0, p4, :cond_0
 
-    .line 90
-    iput-boolean v1, p0, Landroid/widget/ScrollBarDrawable;->mChanged:Z
+    .line 101
+    iput-boolean p4, p0, Landroid/widget/ScrollBarDrawable;->mVertical:Z
 
-    .line 93
+    .line 103
+    iput-boolean v1, p0, Landroid/widget/ScrollBarDrawable;->mBoundsChanged:Z
+
+    .line 106
     :cond_0
     iget v0, p0, Landroid/widget/ScrollBarDrawable;->mRange:I
 
@@ -912,84 +1125,77 @@
 
     if-eq v0, p3, :cond_2
 
-    .line 94
+    .line 107
     :cond_1
-    iput-boolean v1, p0, Landroid/widget/ScrollBarDrawable;->mRangeChanged:Z
-
-    .line 97
-    :cond_2
     iput p1, p0, Landroid/widget/ScrollBarDrawable;->mRange:I
 
-    .line 98
+    .line 108
     iput p2, p0, Landroid/widget/ScrollBarDrawable;->mOffset:I
 
-    .line 99
+    .line 109
     iput p3, p0, Landroid/widget/ScrollBarDrawable;->mExtent:I
 
-    .line 100
-    iput-boolean p4, p0, Landroid/widget/ScrollBarDrawable;->mVertical:Z
+    .line 111
+    iput-boolean v1, p0, Landroid/widget/ScrollBarDrawable;->mRangeChanged:Z
 
-    .line 101
+    .line 113
+    :cond_2
     return-void
 .end method
 
 .method public setVerticalThumbDrawable(Landroid/graphics/drawable/Drawable;)V
-    .locals 1
+    .locals 2
     .param p1, "thumb"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 194
-    if-eqz p1, :cond_1
-
-    .line 195
-    iget-boolean v0, p0, Landroid/widget/ScrollBarDrawable;->mMutated:Z
+    .line 233
+    iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mVerticalThumb:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
-    .line 196
-    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+    .line 234
+    iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mVerticalThumb:Landroid/graphics/drawable/Drawable;
 
-    .line 198
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+
+    .line 237
     :cond_0
-    sget-object v0, Landroid/widget/ScrollBarDrawable;->STATE_ENABLED:[I
+    invoke-direct {p0, p1}, Landroid/widget/ScrollBarDrawable;->propagateCurrentState(Landroid/graphics/drawable/Drawable;)V
 
-    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
-
-    .line 199
+    .line 238
     iput-object p1, p0, Landroid/widget/ScrollBarDrawable;->mVerticalThumb:Landroid/graphics/drawable/Drawable;
 
-    .line 201
-    :cond_1
+    .line 239
     return-void
 .end method
 
 .method public setVerticalTrackDrawable(Landroid/graphics/drawable/Drawable;)V
-    .locals 1
+    .locals 2
     .param p1, "track"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 204
-    if-eqz p1, :cond_1
-
-    .line 205
-    iget-boolean v0, p0, Landroid/widget/ScrollBarDrawable;->mMutated:Z
+    .line 242
+    iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mVerticalTrack:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
-    .line 206
-    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+    .line 243
+    iget-object v0, p0, Landroid/widget/ScrollBarDrawable;->mVerticalTrack:Landroid/graphics/drawable/Drawable;
 
-    .line 208
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+
+    .line 246
     :cond_0
-    sget-object v0, Landroid/widget/ScrollBarDrawable;->STATE_ENABLED:[I
+    invoke-direct {p0, p1}, Landroid/widget/ScrollBarDrawable;->propagateCurrentState(Landroid/graphics/drawable/Drawable;)V
 
-    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
-
-    .line 210
-    :cond_1
+    .line 247
     iput-object p1, p0, Landroid/widget/ScrollBarDrawable;->mVerticalTrack:Landroid/graphics/drawable/Drawable;
 
-    .line 211
+    .line 248
     return-void
 .end method
 
@@ -997,7 +1203,7 @@
     .locals 2
 
     .prologue
-    .line 308
+    .line 387
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1059,4 +1265,17 @@
     const-string v0, " H"
 
     goto :goto_0
+.end method
+
+.method public unscheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V
+    .locals 0
+    .param p1, "who"    # Landroid/graphics/drawable/Drawable;
+    .param p2, "what"    # Ljava/lang/Runnable;
+
+    .prologue
+    .line 382
+    invoke-virtual {p0, p2}, Landroid/widget/ScrollBarDrawable;->unscheduleSelf(Ljava/lang/Runnable;)V
+
+    .line 383
+    return-void
 .end method

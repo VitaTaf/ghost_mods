@@ -10482,6 +10482,20 @@
 
     iput-object v6, v1, Landroid/view/View$ScrollabilityCache;->scrollBar:Landroid/widget/ScrollBarDrawable;
 
+    .line 11658
+    iget-object v6, v1, Landroid/view/View$ScrollabilityCache;->scrollBar:Landroid/widget/ScrollBarDrawable;
+
+    invoke-virtual {v6, p0}, Landroid/widget/ScrollBarDrawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+
+    .line 11659
+    iget-object v6, v1, Landroid/view/View$ScrollabilityCache;->scrollBar:Landroid/widget/ScrollBarDrawable;
+
+    invoke-virtual {p0}, Landroid/view/View;->getDrawableState()[I
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Landroid/widget/ScrollBarDrawable;->setState([I)Z
+
     .line 11662
     :cond_2
     invoke-virtual {p0}, Landroid/view/View;->isHorizontalScrollBarEnabled()Z
@@ -17660,46 +17674,69 @@
 .end method
 
 .method protected drawableStateChanged()V
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 16000
+    .line 16009
+    invoke-virtual {p0}, Landroid/view/View;->getDrawableState()[I
+
+    move-result-object v2
+
+    .line 16011
+    .local v2, "state":[I
     iget-object v0, p0, Landroid/view/View;->mBackground:Landroid/graphics/drawable/Drawable;
 
-    .line 16001
+    .line 16012
     .local v0, "d":Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->isStateful()Z
 
-    move-result v1
+    move-result v3
 
-    if-eqz v1, :cond_0
+    if-eqz v3, :cond_0
 
-    .line 16002
-    invoke-virtual {p0}, Landroid/view/View;->getDrawableState()[I
+    .line 16013
+    invoke-virtual {v0, v2}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
-
-    .line 16005
+    .line 16016
     :cond_0
-    iget-object v1, p0, Landroid/view/View;->mStateListAnimator:Landroid/animation/StateListAnimator;
+    iget-object v3, p0, Landroid/view/View;->mScrollCache:Landroid/view/View$ScrollabilityCache;
 
+    if-eqz v3, :cond_1
+
+    .line 16017
+    iget-object v3, p0, Landroid/view/View;->mScrollCache:Landroid/view/View$ScrollabilityCache;
+
+    iget-object v1, v3, Landroid/view/View$ScrollabilityCache;->scrollBar:Landroid/widget/ScrollBarDrawable;
+
+    .line 16018
+    .local v1, "scrollBar":Landroid/graphics/drawable/Drawable;
     if-eqz v1, :cond_1
 
-    .line 16006
-    iget-object v1, p0, Landroid/view/View;->mStateListAnimator:Landroid/animation/StateListAnimator;
+    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->isStateful()Z
 
-    invoke-virtual {p0}, Landroid/view/View;->getDrawableState()[I
+    move-result v3
 
-    move-result-object v2
+    if-eqz v3, :cond_1
 
-    invoke-virtual {v1, v2}, Landroid/animation/StateListAnimator;->setState([I)V
+    .line 16019
+    invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 16008
+    .line 16023
+    .end local v1    # "scrollBar":Landroid/graphics/drawable/Drawable;
     :cond_1
+    iget-object v3, p0, Landroid/view/View;->mStateListAnimator:Landroid/animation/StateListAnimator;
+
+    if-eqz v3, :cond_2
+
+    .line 16024
+    iget-object v3, p0, Landroid/view/View;->mStateListAnimator:Landroid/animation/StateListAnimator;
+
+    invoke-virtual {v3, v2}, Landroid/animation/StateListAnimator;->setState([I)V
+
+    .line 16026
+    :cond_2
     return-void
 .end method
 
@@ -23356,6 +23393,21 @@
     iput-object v6, v3, Landroid/view/View$ScrollabilityCache;->scrollBar:Landroid/widget/ScrollBarDrawable;
 
     .line 4518
+    .line 4512
+    iget-object v6, v3, Landroid/view/View$ScrollabilityCache;->scrollBar:Landroid/widget/ScrollBarDrawable;
+
+    invoke-virtual {v6, p0}, Landroid/widget/ScrollBarDrawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+
+    .line 4513
+    iget-object v6, v3, Landroid/view/View$ScrollabilityCache;->scrollBar:Landroid/widget/ScrollBarDrawable;
+
+    invoke-virtual {p0}, Landroid/view/View;->getDrawableState()[I
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Landroid/widget/ScrollBarDrawable;->setState([I)Z
+
+    .line 4516
     :cond_0
     const/16 v6, 0x2d
 
@@ -41840,14 +41892,25 @@
     .line 15985
     iget-object v0, p0, Landroid/view/View;->mBackground:Landroid/graphics/drawable/Drawable;
 
-    if-ne p1, v0, :cond_0
+    if-eq p1, v0, :cond_0
 
+    iget-object v0, p0, Landroid/view/View;->mScrollCache:Landroid/view/View$ScrollabilityCache;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Landroid/view/View;->mScrollCache:Landroid/view/View$ScrollabilityCache;
+
+    iget-object v0, v0, Landroid/view/View$ScrollabilityCache;->scrollBar:Landroid/widget/ScrollBarDrawable;
+
+    if-ne v0, p1, :cond_1
+
+    :cond_0
     const/4 v0, 0x1
 
     :goto_0
     return v0
 
-    :cond_0
+    :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
