@@ -27,6 +27,9 @@
     .end annotation
 .end method
 
+.method public abstract onMultiStackMoveTask(Lcom/android/systemui/recents/model/Task;)V
+.end method
+
 .method public abstract onTaskViewAppInfoClicked(Lcom/android/systemui/recents/model/Task;)V
 .end method
 

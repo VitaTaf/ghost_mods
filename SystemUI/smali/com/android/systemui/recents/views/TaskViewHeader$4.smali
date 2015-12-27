@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 330
+    .line 338
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskViewHeader$4;->this$0:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 333
+    .line 341
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -52,7 +52,7 @@
 
     move-result v0
 
-    .line 334
+    .line 342
     .local v0, "color":I
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskViewHeader$4;->this$0:Lcom/android/systemui/recents/views/TaskViewHeader;
 
@@ -60,11 +60,11 @@
 
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/GradientDrawable;->setColor(I)V
 
-    .line 335
+    .line 343
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskViewHeader$4;->this$0:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     iput v0, v1, Lcom/android/systemui/recents/views/TaskViewHeader;->mBackgroundColor:I
 
-    .line 336
+    .line 344
     return-void
 .end method

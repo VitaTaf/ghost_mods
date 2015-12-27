@@ -47,6 +47,14 @@
     .end annotation
 .end method
 
+.method public abstract getStackId()I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract injectEvent(Landroid/view/InputEvent;)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {

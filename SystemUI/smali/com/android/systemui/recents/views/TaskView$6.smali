@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 350
+    .line 352
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskView$6;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,11 +40,11 @@
     .locals 1
 
     .prologue
-    .line 353
+    .line 355
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$6;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskView;->enableFocusAnimations()V
 
-    .line 354
+    .line 356
     return-void
 .end method

@@ -3682,6 +3682,60 @@
     return-object v2
 .end method
 
+.method public getFocusedStackId()I
+    .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 3316
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 3317
+    .local v0, "data":Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v2
+
+    .line 3318
+    .local v2, "reply":Landroid/os/Parcel;
+    const-string v3, "android.app.IActivityManager"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 3319
+    iget-object v3, p0, Landroid/app/ActivityManagerProxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v4, 0x11b
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v0, v2, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 3320
+    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
+
+    .line 3321
+    invoke-virtual {v2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v1
+
+    .line 3322
+    .local v1, "focusedStackId":I
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 3323
+    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
+
+    .line 3324
+    return v1
+.end method
+
 .method public getFrontActivityScreenCompatMode()I
     .locals 6
     .annotation system Ldalvik/annotation/Throws;

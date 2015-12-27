@@ -62,6 +62,8 @@
 
 .field public maxNumTasksToLoad:I
 
+.field public multiStackEnabled:Z
+
 .field public navBarScrimEnterDuration:I
 
 .field public quintOutInterpolator:Landroid/view/animation/Interpolator;
@@ -137,7 +139,7 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 143
+    .line 144
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 63
@@ -159,7 +161,7 @@
 
     iput v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->searchBarAppWidgetId:I
 
-    .line 148
+    .line 149
     const v0, 0x10c000d
 
     invoke-static {p1, v0}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
@@ -168,7 +170,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->fastOutSlowInInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 150
+    .line 151
     const v0, 0x10c000f
 
     invoke-static {p1, v0}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
@@ -177,7 +179,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->fastOutLinearInInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 152
+    .line 153
     const v0, 0x10c000e
 
     invoke-static {p1, v0}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
@@ -186,7 +188,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->linearOutSlowInInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 154
+    .line 155
     const v0, 0x10c0005
 
     invoke-static {p1, v0}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
@@ -195,7 +197,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->quintOutInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 156
+    .line 157
     return-void
 .end method
 
@@ -203,7 +205,7 @@
     .locals 1
 
     .prologue
-    .line 174
+    .line 175
     sget-object v0, Lcom/android/systemui/recents/RecentsConfiguration;->sInstance:Lcom/android/systemui/recents/RecentsConfiguration;
 
     return-object v0
@@ -215,19 +217,19 @@
     .param p1, "ssp"    # Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
     .prologue
-    .line 160
+    .line 161
     sget-object v1, Lcom/android/systemui/recents/RecentsConfiguration;->sInstance:Lcom/android/systemui/recents/RecentsConfiguration;
 
     if-nez v1, :cond_0
 
-    .line 161
+    .line 162
     new-instance v1, Lcom/android/systemui/recents/RecentsConfiguration;
 
     invoke-direct {v1, p0}, Lcom/android/systemui/recents/RecentsConfiguration;-><init>(Landroid/content/Context;)V
 
     sput-object v1, Lcom/android/systemui/recents/RecentsConfiguration;->sInstance:Lcom/android/systemui/recents/RecentsConfiguration;
 
-    .line 163
+    .line 164
     :cond_0
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -241,27 +243,27 @@
 
     move-result v0
 
-    .line 164
+    .line 165
     .local v0, "configHashCode":I
     sget v1, Lcom/android/systemui/recents/RecentsConfiguration;->sPrevConfigurationHashCode:I
 
     if-eq v1, v0, :cond_1
 
-    .line 165
+    .line 166
     sget-object v1, Lcom/android/systemui/recents/RecentsConfiguration;->sInstance:Lcom/android/systemui/recents/RecentsConfiguration;
 
     invoke-virtual {v1, p0}, Lcom/android/systemui/recents/RecentsConfiguration;->update(Landroid/content/Context;)V
 
-    .line 166
+    .line 167
     sput v0, Lcom/android/systemui/recents/RecentsConfiguration;->sPrevConfigurationHashCode:I
 
-    .line 168
+    .line 169
     :cond_1
     sget-object v1, Lcom/android/systemui/recents/RecentsConfiguration;->sInstance:Lcom/android/systemui/recents/RecentsConfiguration;
 
     invoke-virtual {v1, p0, p1}, Lcom/android/systemui/recents/RecentsConfiguration;->updateOnReinitialize(Landroid/content/Context;Lcom/android/systemui/recents/misc/SystemServicesProxy;)V
 
-    .line 169
+    .line 170
     sget-object v1, Lcom/android/systemui/recents/RecentsConfiguration;->sInstance:Lcom/android/systemui/recents/RecentsConfiguration;
 
     return-object v1
@@ -269,57 +271,7 @@
 
 
 # virtual methods
-.method public getSearchBarBounds(IIILandroid/graphics/Rect;)V
-    .locals 3
-    .param p1, "windowWidth"    # I
-    .param p2, "windowHeight"    # I
-    .param p3, "topInset"    # I
-    .param p4, "searchBarSpaceBounds"    # Landroid/graphics/Rect;
-
-    .prologue
-    const/4 v2, 0x0
-
-    .line 358
-    iget v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->searchBarSpaceHeightPx:I
-
-    .line 359
-    .local v0, "searchBarSize":I
-    invoke-virtual {p0}, Lcom/android/systemui/recents/RecentsConfiguration;->hasSearchBarAppWidget()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    .line 360
-    const/4 v0, 0x0
-
-    .line 363
-    :cond_0
-    iget-boolean v1, p0, Lcom/android/systemui/recents/RecentsConfiguration;->isLandscape:Z
-
-    if-eqz v1, :cond_1
-
-    iget-boolean v1, p0, Lcom/android/systemui/recents/RecentsConfiguration;->hasTransposedSearchBar:Z
-
-    if-eqz v1, :cond_1
-
-    .line 365
-    invoke-virtual {p4, v2, p3, v0, p2}, Landroid/graphics/Rect;->set(IIII)V
-
-    .line 370
-    :goto_0
-    return-void
-
-    .line 368
-    :cond_1
-    add-int v1, p3, v0
-
-    invoke-virtual {p4, v2, p3, p1, v1}, Landroid/graphics/Rect;->set(IIII)V
-
-    goto :goto_0
-.end method
-
-.method public getTaskStackBounds(IIIILandroid/graphics/Rect;)V
+.method public getAvailableTaskStackBounds(IIIILandroid/graphics/Rect;)V
     .locals 3
     .param p1, "windowWidth"    # I
     .param p2, "windowHeight"    # I
@@ -330,16 +282,16 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 340
+    .line 342
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    .line 341
+    .line 343
     .local v0, "searchBarBounds":Landroid/graphics/Rect;
     invoke-virtual {p0, p1, p2, p3, v0}, Lcom/android/systemui/recents/RecentsConfiguration;->getSearchBarBounds(IIILandroid/graphics/Rect;)V
 
-    .line 342
+    .line 344
     iget-boolean v1, p0, Lcom/android/systemui/recents/RecentsConfiguration;->isLandscape:Z
 
     if-eqz v1, :cond_0
@@ -348,16 +300,16 @@
 
     if-eqz v1, :cond_0
 
-    .line 344
+    .line 346
     sub-int v1, p1, p4
 
     invoke-virtual {p5, v2, p3, v1, p2}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 349
+    .line 351
     :goto_0
     return-void
 
-    .line 347
+    .line 349
     :cond_0
     iget v1, v0, Landroid/graphics/Rect;->bottom:I
 
@@ -366,11 +318,61 @@
     goto :goto_0
 .end method
 
+.method public getSearchBarBounds(IIILandroid/graphics/Rect;)V
+    .locals 3
+    .param p1, "windowWidth"    # I
+    .param p2, "windowHeight"    # I
+    .param p3, "topInset"    # I
+    .param p4, "searchBarSpaceBounds"    # Landroid/graphics/Rect;
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 360
+    iget v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->searchBarSpaceHeightPx:I
+
+    .line 361
+    .local v0, "searchBarSize":I
+    invoke-virtual {p0}, Lcom/android/systemui/recents/RecentsConfiguration;->hasSearchBarAppWidget()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    .line 362
+    const/4 v0, 0x0
+
+    .line 365
+    :cond_0
+    iget-boolean v1, p0, Lcom/android/systemui/recents/RecentsConfiguration;->isLandscape:Z
+
+    if-eqz v1, :cond_1
+
+    iget-boolean v1, p0, Lcom/android/systemui/recents/RecentsConfiguration;->hasTransposedSearchBar:Z
+
+    if-eqz v1, :cond_1
+
+    .line 367
+    invoke-virtual {p4, v2, p3, v0, p2}, Landroid/graphics/Rect;->set(IIII)V
+
+    .line 372
+    :goto_0
+    return-void
+
+    .line 370
+    :cond_1
+    add-int v1, p3, v0
+
+    invoke-virtual {p4, v2, p3, p1, v1}, Landroid/graphics/Rect;->set(IIII)V
+
+    goto :goto_0
+.end method
+
 .method public hasNavBarScrim()Z
     .locals 1
 
     .prologue
-    .line 331
+    .line 333
     iget-boolean v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->launchedWithNoRecentTasks:Z
 
     if-nez v0, :cond_1
@@ -399,7 +401,7 @@
     .locals 1
 
     .prologue
-    .line 310
+    .line 312
     iget v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->searchBarAppWidgetId:I
 
     if-ltz v0, :cond_0
@@ -419,7 +421,7 @@
     .locals 1
 
     .prologue
-    .line 320
+    .line 322
     iget-boolean v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->launchedWithNoRecentTasks:Z
 
     if-nez v0, :cond_0
@@ -439,7 +441,7 @@
     .locals 1
 
     .prologue
-    .line 325
+    .line 327
     const/4 v0, 0x1
 
     return v0
@@ -449,7 +451,7 @@
     .locals 1
 
     .prologue
-    .line 315
+    .line 317
     iget-boolean v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->launchedFromHome:Z
 
     return v0
@@ -466,7 +468,7 @@
 
     const/4 v4, 0x0
 
-    .line 179
+    .line 180
     invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v5
@@ -475,19 +477,19 @@
 
     move-result-object v2
 
-    .line 180
+    .line 181
     .local v2, "settings":Landroid/content/SharedPreferences;
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    .line 181
+    .line 182
     .local v1, "res":Landroid/content/res/Resources;
     invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
     move-result-object v0
 
-    .line 184
+    .line 185
     .local v0, "dm":Landroid/util/DisplayMetrics;
     sget-object v5, Lcom/android/systemui/recents/Constants$Values$App;->Key_DebugModeEnabled:Ljava/lang/String;
 
@@ -497,15 +499,15 @@
 
     iput-boolean v5, p0, Lcom/android/systemui/recents/RecentsConfiguration;->debugModeEnabled:Z
 
-    .line 185
+    .line 186
     iget-boolean v5, p0, Lcom/android/systemui/recents/RecentsConfiguration;->debugModeEnabled:Z
 
     if-eqz v5, :cond_0
 
-    .line 186
+    .line 187
     sput-boolean v3, Lcom/android/systemui/recents/misc/Console;->Enabled:Z
 
-    .line 190
+    .line 191
     :cond_0
     invoke-virtual {v1}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
@@ -538,7 +540,7 @@
 
     iput-boolean v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->hasTransposedNavBar:Z
 
-    .line 195
+    .line 196
     iget-object v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->displayRect:Landroid/graphics/Rect;
 
     iget v5, v0, Landroid/util/DisplayMetrics;->widthPixels:I
@@ -565,14 +567,14 @@
 
     iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->filteringNewViewsAnimDuration:I
 
-    .line 204
+    .line 205
     invoke-static {}, Landroid/app/ActivityManager;->getMaxRecentTasksStatic()I
 
     move-result v3
 
     iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->maxNumTasksToLoad:I
 
-    .line 207
+    .line 208
     const v3, 0x7f0d0062
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -581,7 +583,7 @@
 
     iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->searchBarSpaceHeightPx:I
 
-    .line 208
+    .line 209
     sget-object v3, Lcom/android/systemui/recents/Constants$Values$App;->Key_SearchAppWidgetId:Ljava/lang/String;
 
     const/4 v4, -0x1
@@ -953,7 +955,22 @@
     :goto_1
     iput-boolean v1, p0, Lcom/android/systemui/recents/RecentsConfiguration;->lockToAppEnabled:Z
 
-    .line 297
+    .line 298
+    const-string v0, "1"
+
+    const-string v1, "overview.enableMultiStack"
+
+    invoke-virtual {p2, v1}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->getSystemProperty(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->multiStackEnabled:Z
+
+    .line 299
     return-void
 
     :cond_0

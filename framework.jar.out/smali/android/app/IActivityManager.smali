@@ -123,6 +123,8 @@
 
 .field public static final GET_DEVICE_CONFIGURATION_TRANSACTION:I = 0x54
 
+.field public static final GET_FOCUSED_STACK_ID_TRANSACTION:I = 0x11b
+
 .field public static final GET_FRONT_ACTIVITY_SCREEN_COMPAT_MODE_TRANSACTION:I = 0x7c
 
 .field public static final GET_HOME_ACTIVITY_TOKEN_TRANSACTION:I = 0xb8
@@ -896,6 +898,14 @@
 .end method
 
 .method public abstract getDeviceConfigurationInfo()Landroid/content/pm/ConfigurationInfo;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getFocusedStackId()I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

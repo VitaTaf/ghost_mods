@@ -1432,6 +1432,8 @@
     <public type="layout" name="zz_moto_toast_plus_icon" id="0x7f04005e" />
     <public type="layout" name="keyguard_eca" id="0x7f04005f" />
     <public type="layout" name="recents_dismiss_button" id="0x7f040060" />
+    <public type="layout" name="recents_multistack_debug" id="0x7f040061" />
+    <public type="layout" name="recents_multistack_stack_size_dialog" id="0x7f040062" />
     <public type="layout" name="keyguard_host_view" id="0x7f04000c" />
     <public type="layout" name="keyguard_widget_pager" id="0x7f040020" />
     <public type="anim" name="dismiss_all_shape_animation_1" id="0x7f050000" />
@@ -2443,6 +2445,12 @@
     <public type="string" name="moto_ds_skip" id="0x7f0c0264" />
     <public type="string" name="accessibility_recents_all_items_dismissed" id="0x7f0c0268" />
     <public type="string" name="recents_dismiss_all_message" id="0x7f0c0269" />
+    <public type="string" name="recents_multistack_add_stack" id="0x7f0c026a" />
+    <public type="string" name="recents_multistack_remove_stack" id="0x7f0c026b" />
+    <public type="string" name="recents_multistack_resize_stack" id="0x7f0c026c" />
+    <public type="string" name="recents_multistack_add_stack_dialog_split_horizontal" id="0x7f0c026d" />
+    <public type="string" name="recents_multistack_add_stack_dialog_split_vertical" id="0x7f0c026e" />
+    <public type="string" name="recents_multistack_add_stack_dialog_split_custom" id="0x7f0c026f" />
     <public type="string" name="status_bar_date_formatter" id="0x7f0c0006" />
     <public type="string" name="toast_rotation_locked" id="0x7f0c015b" />
     <public type="string" name="APKTOOL_DUMMY_015d" id="0x7f0c015d" />
@@ -3112,6 +3120,14 @@
     <public type="id" name="message" id="0x7f0f015b" />
     <public type="id" name="recent_remove_item" id="0x7f0f015c" />
     <public type="id" name="recent_inspect_item" id="0x7f0f015d" />
+    <public type="id" name="multistack_debug_view_stub" id="0x7f0f015e" />
+    <public type="id" name="add_stack" id="0x7f0f015f" />
+    <public type="id" name="resize_stack" id="0x7f0f0160" />
+    <public type="id" name="inset_left" id="0x7f0f0161" />
+    <public type="id" name="inset_top" id="0x7f0f0162" />
+    <public type="id" name="inset_right" id="0x7f0f0163" />
+    <public type="id" name="inset_bottom" id="0x7f0f0164" />
+    <public type="id" name="move_task" id="0x7f0f0165" />
     <public type="plurals" name="status_bar_accessibility_recent_apps" id="0x7f100000" />
     <public type="plurals" name="kg_password_wrong_pin_code" id="0x7f100001" />
     <public type="plurals" name="kg_password_wrong_puk_code" id="0x7f100002" />

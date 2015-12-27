@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 333
+    .line 340
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackView$3;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,13 +41,13 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 336
+    .line 343
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView$3;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/model/TaskStack;->removeAllTasks()V
 
-    .line 337
+    .line 344
     return-void
 .end method

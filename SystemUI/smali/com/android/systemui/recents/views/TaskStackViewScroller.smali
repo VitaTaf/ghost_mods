@@ -68,18 +68,18 @@
     .locals 3
 
     .prologue
-    .line 132
+    .line 122
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackViewScroller;->getStackScroll()F
 
     move-result v0
 
-    .line 133
+    .line 123
     .local v0, "curScroll":F
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskStackViewScroller;->getBoundedStackScroll(F)F
 
     move-result v1
 
-    .line 134
+    .line 124
     .local v1, "newScroll":F
     invoke-static {v1, v0}, Ljava/lang/Float;->compare(FF)I
 
@@ -87,12 +87,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 136
+    .line 126
     const/4 v2, 0x0
 
     invoke-virtual {p0, v0, v1, v2}, Lcom/android/systemui/recents/views/TaskStackViewScroller;->animateScroll(FFLjava/lang/Runnable;)V
 
-    .line 138
+    .line 128
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mScrollAnimator:Landroid/animation/ObjectAnimator;
 
@@ -108,7 +108,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 144
+    .line 134
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mScrollAnimator:Landroid/animation/ObjectAnimator;
 
     if-eqz v0, :cond_0
@@ -121,12 +121,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 145
+    .line 135
     iget v0, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mFinalAnimatedScroll:F
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskStackViewScroller;->setStackScroll(F)V
 
-    .line 146
+    .line 136
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mScroller:Landroid/widget/OverScroller;
 
     iget v2, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mFinalAnimatedScroll:F
@@ -143,17 +143,17 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/widget/OverScroller;->startScroll(IIIII)V
 
-    .line 148
+    .line 138
     :cond_0
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackViewScroller;->stopScroller()V
 
-    .line 149
+    .line 139
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackViewScroller;->stopBoundScrollAnimation()V
 
-    .line 151
+    .line 141
     iput p2, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mFinalAnimatedScroll:F
 
-    .line 152
+    .line 142
     const-string v0, "stackScroll"
 
     const/4 v2, 0x2
@@ -172,7 +172,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mScrollAnimator:Landroid/animation/ObjectAnimator;
 
-    .line 153
+    .line 143
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mScrollAnimator:Landroid/animation/ObjectAnimator;
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
@@ -183,7 +183,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 154
+    .line 144
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mScrollAnimator:Landroid/animation/ObjectAnimator;
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
@@ -192,7 +192,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 155
+    .line 145
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mScrollAnimator:Landroid/animation/ObjectAnimator;
 
     new-instance v1, Lcom/android/systemui/recents/views/TaskStackViewScroller$1;
@@ -201,7 +201,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 161
+    .line 151
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mScrollAnimator:Landroid/animation/ObjectAnimator;
 
     new-instance v1, Lcom/android/systemui/recents/views/TaskStackViewScroller$2;
@@ -210,12 +210,12 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 170
+    .line 160
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mScrollAnimator:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
 
-    .line 171
+    .line 161
     return-void
 .end method
 
@@ -262,7 +262,7 @@
     .locals 2
 
     .prologue
-    .line 190
+    .line 180
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mScroller:Landroid/widget/OverScroller;
 
     invoke-virtual {v1}, Landroid/widget/OverScroller;->computeScrollOffset()Z
@@ -271,7 +271,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 191
+    .line 181
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mScroller:Landroid/widget/OverScroller;
 
     invoke-virtual {v1}, Landroid/widget/OverScroller;->getCurrY()I
@@ -282,25 +282,25 @@
 
     move-result v0
 
-    .line 192
+    .line 182
     .local v0, "scroll":F
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskStackViewScroller;->setStackScrollRaw(F)V
 
-    .line 193
+    .line 183
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mCb:Lcom/android/systemui/recents/views/TaskStackViewScroller$TaskStackViewScrollerCallbacks;
 
     if-eqz v1, :cond_0
 
-    .line 194
+    .line 184
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mCb:Lcom/android/systemui/recents/views/TaskStackViewScroller$TaskStackViewScrollerCallbacks;
 
     invoke-interface {v1, v0}, Lcom/android/systemui/recents/views/TaskStackViewScroller$TaskStackViewScrollerCallbacks;->onScrollChanged(F)V
 
-    .line 196
+    .line 186
     :cond_0
     const/4 v1, 0x1
 
-    .line 198
+    .line 188
     .end local v0    # "scroll":F
     :goto_0
     return v1
@@ -316,7 +316,7 @@
     .param p1, "scroll"    # F
 
     .prologue
-    .line 112
+    .line 102
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
 
     iget v0, v0, Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;->mMinScrollP:F
@@ -341,7 +341,7 @@
     .param p1, "scroll"    # F
 
     .prologue
-    .line 117
+    .line 107
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
 
     iget v0, v0, Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;->mMinScrollP:F
@@ -350,7 +350,7 @@
 
     if-gez v0, :cond_0
 
-    .line 118
+    .line 108
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
 
     iget v0, v0, Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;->mMinScrollP:F
@@ -361,11 +361,11 @@
 
     move-result v0
 
-    .line 122
+    .line 112
     :goto_0
     return v0
 
-    .line 119
+    .line 109
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
 
@@ -375,7 +375,7 @@
 
     if-lez v0, :cond_1
 
-    .line 120
+    .line 110
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
 
     iget v0, v0, Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;->mMaxScrollP:F
@@ -388,7 +388,7 @@
 
     goto :goto_0
 
-    .line 122
+    .line 112
     :cond_1
     const/4 v0, 0x0
 
@@ -409,7 +409,7 @@
     .locals 2
 
     .prologue
-    .line 127
+    .line 117
     iget v0, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mStackScrollP:F
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskStackViewScroller;->getScrollAmountOutOfBounds(F)F
@@ -439,7 +439,7 @@
     .locals 1
 
     .prologue
-    .line 203
+    .line 193
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mScroller:Landroid/widget/OverScroller;
 
     invoke-virtual {v0}, Landroid/widget/OverScroller;->isFinished()Z
@@ -464,7 +464,7 @@
     .param p1, "p"    # F
 
     .prologue
-    .line 181
+    .line 171
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;->mStackVisibleRect:Landroid/graphics/Rect;
@@ -500,7 +500,7 @@
     .param p1, "s"    # I
 
     .prologue
-    .line 185
+    .line 175
     int-to-float v0, p1
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
@@ -610,12 +610,12 @@
     .locals 1
 
     .prologue
-    .line 175
+    .line 165
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mScrollAnimator:Landroid/animation/ObjectAnimator;
 
     invoke-static {v0}, Lcom/android/systemui/recents/misc/Utilities;->cancelAnimationWithoutCallbacks(Landroid/animation/Animator;)V
 
-    .line 176
+    .line 166
     return-void
 .end method
 
@@ -623,7 +623,7 @@
     .locals 1
 
     .prologue
-    .line 208
+    .line 198
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mScroller:Landroid/widget/OverScroller;
 
     invoke-virtual {v0}, Landroid/widget/OverScroller;->isFinished()Z
@@ -632,12 +632,12 @@
 
     if-nez v0, :cond_0
 
-    .line 209
+    .line 199
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mScroller:Landroid/widget/OverScroller;
 
     invoke-virtual {v0}, Landroid/widget/OverScroller;->abortAnimation()V
 
-    .line 211
+    .line 201
     :cond_0
     return-void
 .end method

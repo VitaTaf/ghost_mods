@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 336
+    .line 338
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskView$5;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/TaskView$5;->val$ctx:Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;
@@ -44,13 +44,13 @@
     .locals 1
 
     .prologue
-    .line 340
+    .line 342
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$5;->val$ctx:Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;->postAnimationTrigger:Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;->decrement()V
 
-    .line 341
+    .line 343
     return-void
 .end method

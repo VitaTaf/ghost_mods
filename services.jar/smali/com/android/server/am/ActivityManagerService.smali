@@ -60152,6 +60152,39 @@
     return-object v0
 .end method
 
+.method public getFocusedStackId()I
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 16748
+    invoke-virtual {p0}, Lcom/android/server/am/ActivityManagerService;->getFocusedStack()Lcom/android/server/am/ActivityStack;
+
+    move-result-object v0
+
+    .line 16749
+    .local v0, "focusedStack":Lcom/android/server/am/ActivityStack;
+    if-eqz v0, :cond_0
+
+    .line 16750
+    invoke-virtual {v0}, Lcom/android/server/am/ActivityStack;->getStackId()I
+
+    move-result v1
+
+    .line 16752
+    :goto_0
+    return v1
+
+    :cond_0
+    const/4 v1, -0x1
+
+    goto :goto_0
+.end method
+
 .method public getFrontActivityScreenCompatMode()I
     .locals 1
 

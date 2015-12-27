@@ -46,24 +46,24 @@
     .locals 1
 
     .prologue
-    .line 44
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     .line 45
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mTasks:Ljava/util/ArrayList;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 46
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mFilteredTasks:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mTasks:Ljava/util/ArrayList;
 
     .line 47
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mFilteredTasks:Ljava/util/ArrayList;
+
+    .line 48
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -77,19 +77,19 @@
     .locals 6
 
     .prologue
-    .line 138
+    .line 139
     iget-object v3, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mTaskIndices:Ljava/util/HashMap;
 
     invoke-virtual {v3}, Ljava/util/HashMap;->clear()V
 
-    .line 139
+    .line 140
     iget-object v3, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mFilteredTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    .line 140
+    .line 141
     .local v2, "taskCount":I
     const/4 v0, 0x0
 
@@ -97,7 +97,7 @@
     :goto_0
     if-ge v0, v2, :cond_0
 
-    .line 141
+    .line 142
     iget-object v3, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mFilteredTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -106,7 +106,7 @@
 
     check-cast v1, Lcom/android/systemui/recents/model/Task;
 
-    .line 142
+    .line 143
     .local v1, "t":Lcom/android/systemui/recents/model/Task;
     iget-object v3, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mTaskIndices:Ljava/util/HashMap;
 
@@ -118,12 +118,12 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 140
+    .line 141
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 144
+    .line 145
     .end local v1    # "t":Lcom/android/systemui/recents/model/Task;
     :cond_0
     return-void
@@ -133,24 +133,24 @@
     .locals 5
 
     .prologue
-    .line 121
+    .line 122
     iget-object v3, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mFilteredTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
-    .line 122
+    .line 123
     iget-object v3, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mFilter:Lcom/android/systemui/recents/model/TaskFilter;
 
     if-eqz v3, :cond_1
 
-    .line 123
+    .line 124
     iget-object v3, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    .line 124
+    .line 125
     .local v2, "taskCount":I
     const/4 v0, 0x0
 
@@ -158,7 +158,7 @@
     :goto_0
     if-ge v0, v2, :cond_2
 
-    .line 125
+    .line 126
     iget-object v3, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -167,7 +167,7 @@
 
     check-cast v1, Lcom/android/systemui/recents/model/Task;
 
-    .line 126
+    .line 127
     .local v1, "t":Lcom/android/systemui/recents/model/Task;
     iget-object v3, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mFilter:Lcom/android/systemui/recents/model/TaskFilter;
 
@@ -177,18 +177,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 127
+    .line 128
     iget-object v3, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mFilteredTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 124
+    .line 125
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 131
+    .line 132
     .end local v0    # "i":I
     .end local v1    # "t":Lcom/android/systemui/recents/model/Task;
     .end local v2    # "taskCount":I
@@ -199,11 +199,11 @@
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 133
+    .line 134
     :cond_2
     invoke-direct {p0}, Lcom/android/systemui/recents/model/FilteredTaskList;->updateFilteredTaskIndices()V
 
-    .line 134
+    .line 135
     return-void
 .end method
 
@@ -214,7 +214,7 @@
     .param p1, "t"    # Lcom/android/systemui/recents/model/Task;
 
     .prologue
-    .line 116
+    .line 117
     iget-object v0, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mTaskIndices:Ljava/util/HashMap;
 
     iget-object v1, p1, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
@@ -239,7 +239,7 @@
     .end annotation
 
     .prologue
-    .line 153
+    .line 154
     iget-object v0, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mFilteredTasks:Ljava/util/ArrayList;
 
     return-object v0
@@ -249,7 +249,7 @@
     .locals 1
 
     .prologue
-    .line 148
+    .line 149
     iget-object v0, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mFilter:Lcom/android/systemui/recents/model/TaskFilter;
 
     if-eqz v0, :cond_0
@@ -270,7 +270,7 @@
     .param p1, "t"    # Lcom/android/systemui/recents/model/Task;
 
     .prologue
-    .line 103
+    .line 104
     iget-object v0, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mTaskIndices:Ljava/util/HashMap;
 
     iget-object v1, p1, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
@@ -281,7 +281,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 104
+    .line 105
     iget-object v0, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mTaskIndices:Ljava/util/HashMap;
 
     iget-object v1, p1, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
@@ -296,7 +296,7 @@
 
     move-result v0
 
-    .line 106
+    .line 107
     :goto_0
     return v0
 
@@ -311,7 +311,7 @@
     .param p1, "t"    # Lcom/android/systemui/recents/model/Task;
 
     .prologue
-    .line 93
+    .line 94
     iget-object v1, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mFilteredTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
@@ -320,18 +320,18 @@
 
     if-eqz v1, :cond_0
 
-    .line 94
+    .line 95
     iget-object v1, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     move-result v0
 
-    .line 95
+    .line 96
     .local v0, "removed":Z
     invoke-direct {p0}, Lcom/android/systemui/recents/model/FilteredTaskList;->updateFilteredTasks()V
 
-    .line 98
+    .line 99
     .end local v0    # "removed":Z
     :goto_0
     return v0
@@ -346,15 +346,15 @@
     .locals 1
 
     .prologue
-    .line 74
+    .line 75
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mFilter:Lcom/android/systemui/recents/model/TaskFilter;
 
-    .line 75
+    .line 76
     invoke-direct {p0}, Lcom/android/systemui/recents/model/FilteredTaskList;->updateFilteredTasks()V
 
-    .line 76
+    .line 77
     return-void
 .end method
 
@@ -362,27 +362,27 @@
     .locals 1
 
     .prologue
-    .line 66
+    .line 67
     iget-object v0, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 67
+    .line 68
     iget-object v0, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mFilteredTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 68
+    .line 69
     iget-object v0, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mTaskIndices:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 69
+    .line 70
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mFilter:Lcom/android/systemui/recents/model/TaskFilter;
 
-    .line 70
+    .line 71
     return-void
 .end method
 
@@ -399,21 +399,21 @@
     .end annotation
 
     .prologue
-    .line 86
+    .line 87
     .local p1, "tasks":Ljava/util/List;, "Ljava/util/List<Lcom/android/systemui/recents/model/Task;>;"
     iget-object v0, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 87
+    .line 88
     iget-object v0, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 88
+    .line 89
     invoke-direct {p0}, Lcom/android/systemui/recents/model/FilteredTaskList;->updateFilteredTasks()V
 
-    .line 89
+    .line 90
     return-void
 .end method
 
@@ -421,7 +421,7 @@
     .locals 1
 
     .prologue
-    .line 111
+    .line 112
     iget-object v0, p0, Lcom/android/systemui/recents/model/FilteredTaskList;->mFilteredTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I

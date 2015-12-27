@@ -32,18 +32,18 @@
     .param p3, "opts"    # Landroid/app/ActivityOptions;
 
     .prologue
-    .line 103
+    .line 106
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 104
+    .line 107
     iput-object p2, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->mLaunchIntent:Landroid/content/Intent;
 
-    .line 105
+    .line 108
     iput-object p3, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->mLaunchOpts:Landroid/app/ActivityOptions;
 
-    .line 106
+    .line 109
     return-void
 .end method
 
@@ -53,17 +53,17 @@
     .locals 4
 
     .prologue
-    .line 111
+    .line 114
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->mLaunchIntent:Landroid/content/Intent;
 
     if-eqz v0, :cond_1
 
-    .line 112
+    .line 115
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->mLaunchOpts:Landroid/app/ActivityOptions;
 
     if-eqz v0, :cond_0
 
-    .line 113
+    .line 116
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->mLaunchIntent:Landroid/content/Intent;
@@ -78,11 +78,11 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/systemui/recents/RecentsActivity;->startActivityAsUser(Landroid/content/Intent;Landroid/os/Bundle;Landroid/os/UserHandle;)V
 
-    .line 122
+    .line 125
     :goto_0
     return-void
 
-    .line 115
+    .line 118
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
@@ -94,13 +94,13 @@
 
     goto :goto_0
 
-    .line 118
+    .line 121
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/RecentsActivity;->finish()V
 
-    .line 119
+    .line 122
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     const v1, 0x7f050061

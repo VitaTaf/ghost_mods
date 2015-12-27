@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 155
+    .line 145
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller$1;->this$0:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 158
+    .line 148
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller$1;->this$0:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -56,6 +56,6 @@
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/recents/views/TaskStackViewScroller;->setStackScroll(F)V
 
-    .line 159
+    .line 149
     return-void
 .end method

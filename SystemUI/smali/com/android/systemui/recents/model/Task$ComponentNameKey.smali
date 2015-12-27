@@ -27,16 +27,16 @@
     .param p2, "user"    # I
 
     .prologue
-    .line 47
+    .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 48
+    .line 51
     iput-object p1, p0, Lcom/android/systemui/recents/model/Task$ComponentNameKey;->component:Landroid/content/ComponentName;
 
-    .line 49
+    .line 52
     iput p2, p0, Lcom/android/systemui/recents/model/Task$ComponentNameKey;->userId:I
 
-    .line 50
+    .line 53
     return-void
 .end method
 
@@ -49,12 +49,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 59
+    .line 62
     instance-of v0, p1, Lcom/android/systemui/recents/model/Task$ComponentNameKey;
 
     if-nez v0, :cond_0
 
-    .line 62
+    .line 65
     .end local p1    # "o":Ljava/lang/Object;
     :goto_0
     return v1
@@ -101,7 +101,7 @@
     .locals 3
 
     .prologue
-    .line 54
+    .line 57
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;

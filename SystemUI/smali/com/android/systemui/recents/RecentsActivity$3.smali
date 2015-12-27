@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 175
+    .line 178
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$3;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,11 +40,11 @@
     .locals 1
 
     .prologue
-    .line 178
+    .line 181
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$3;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/RecentsActivity;->onDebugModeTriggered()V
 
-    .line 179
+    .line 182
     return-void
 .end method

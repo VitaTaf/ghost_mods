@@ -34,9 +34,11 @@
 
 .field static final TRANSACTION_getDisplayId:I = 0x7
 
-.field static final TRANSACTION_injectEvent:I = 0x8
+.field static final TRANSACTION_getStackId:I = 0x8
 
-.field static final TRANSACTION_release:I = 0x9
+.field static final TRANSACTION_injectEvent:I = 0x9
+
+.field static final TRANSACTION_release:I = 0xa
 
 .field static final TRANSACTION_setSurface:I = 0x2
 
@@ -136,7 +138,7 @@
     .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 154
+    .line 162
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v6
@@ -408,14 +410,35 @@
 
     invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 134
+    invoke-virtual {p0}, Landroid/app/IActivityContainer$Stub;->getStackId()I
+
+    move-result v4
+
     .line 135
+    .restart local v4    # "_result":I
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 136
+    invoke-virtual {p3, v4}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto/16 :goto_0
+
+    .line 141
+    .end local v4    # "_result":I
+    :sswitch_9
+    const-string v5, "android.app.IActivityContainer"
+
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 143
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
     if-eqz v5, :cond_3
 
-    .line 136
+    .line 144
     sget-object v5, Landroid/view/InputEvent;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v5, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -424,18 +447,18 @@
 
     check-cast v0, Landroid/view/InputEvent;
 
-    .line 141
+    .line 149
     .local v0, "_arg0":Landroid/view/InputEvent;
     :goto_4
     invoke-virtual {p0, v0}, Landroid/app/IActivityContainer$Stub;->injectEvent(Landroid/view/InputEvent;)Z
 
     move-result v4
 
-    .line 142
+    .line 150
     .local v4, "_result":Z
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 143
+    .line 151
     if-eqz v4, :cond_4
 
     move v5, v6
@@ -445,7 +468,7 @@
 
     goto/16 :goto_0
 
-    .line 139
+    .line 147
     .end local v0    # "_arg0":Landroid/view/InputEvent;
     .end local v4    # "_result":Z
     :cond_3
@@ -454,32 +477,30 @@
     .restart local v0    # "_arg0":Landroid/view/InputEvent;
     goto :goto_4
 
-    .line 143
+    .line 151
     .restart local v4    # "_result":Z
     :cond_4
     const/4 v5, 0x0
 
     goto :goto_5
 
-    .line 148
+    .line 156
     .end local v0    # "_arg0":Landroid/view/InputEvent;
     .end local v4    # "_result":Z
-    :sswitch_9
+    :sswitch_a
     const-string v5, "android.app.IActivityContainer"
 
     invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 149
+    .line 157
     invoke-virtual {p0}, Landroid/app/IActivityContainer$Stub;->release()V
 
-    .line 150
+    .line 158
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto/16 :goto_0
 
     .line 39
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -491,6 +512,7 @@
         0x7 -> :sswitch_7
         0x8 -> :sswitch_8
         0x9 -> :sswitch_9
+        0xa -> :sswitch_a
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

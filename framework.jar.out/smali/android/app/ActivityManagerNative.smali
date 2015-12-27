@@ -234,7 +234,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 258
+    .locals 259
     .param p1, "code"    # I
     .param p2, "data"    # Landroid/os/Parcel;
     .param p3, "reply"    # Landroid/os/Parcel;
@@ -4047,6 +4047,31 @@
     .line 785
     .end local v236    # "stackId":I
     :pswitch_33
+    const-string v6, "android.app.IActivityManager"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual/range {p0 .. p0}, Landroid/app/ActivityManagerNative;->getFocusedStackId()I
+
+    move-result v227
+
+    .local v227, "focusedStackId":I
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move-object/from16 v0, p3
+
+    move/from16 v1, v227
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/4 v6, 0x1
+
+    goto/16 :goto_0
+
+    .end local v227    # "focusedStackId":I
+    :pswitch_d4
     const-string v6, "android.app.IActivityManager"
 
     move-object/from16 v0, p2
@@ -12534,6 +12559,7 @@
         :pswitch_58
         :pswitch_33
         :pswitch_d0
+        :pswitch_d4
         :pswitch_d1
         :pswitch_d2
         :pswitch_d3

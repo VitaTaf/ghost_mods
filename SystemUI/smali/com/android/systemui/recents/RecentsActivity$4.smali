@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 494
+    .line 496
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$4;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     iput-object p2, p0, Lcom/android/systemui/recents/RecentsActivity$4;->val$cbRef:Ljava/lang/ref/WeakReference;
@@ -44,7 +44,7 @@
     .locals 2
 
     .prologue
-    .line 498
+    .line 500
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$4;->val$cbRef:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -53,18 +53,18 @@
 
     check-cast v0, Lcom/android/systemui/recents/RecentsAppWidgetHost$RecentsAppWidgetHostCallbacks;
 
-    .line 499
+    .line 501
     .local v0, "cb":Lcom/android/systemui/recents/RecentsAppWidgetHost$RecentsAppWidgetHostCallbacks;
     if-eqz v0, :cond_0
 
-    .line 500
+    .line 502
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$4;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     iget-object v1, v1, Lcom/android/systemui/recents/RecentsActivity;->mAppWidgetHost:Lcom/android/systemui/recents/RecentsAppWidgetHost;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/recents/RecentsAppWidgetHost;->startListening(Lcom/android/systemui/recents/RecentsAppWidgetHost$RecentsAppWidgetHostCallbacks;)V
 
-    .line 502
+    .line 504
     :cond_0
     return-void
 .end method

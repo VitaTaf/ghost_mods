@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 128
+    .line 131
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$1;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -43,12 +43,12 @@
 
     const/4 v2, 0x0
 
-    .line 131
+    .line 134
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 132
+    .line 135
     .local v0, "action":Ljava/lang/String;
     const-string v1, "action_hide_recents_activity"
 
@@ -58,7 +58,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 133
+    .line 136
     const-string v1, "triggeredFromAltTab"
 
     invoke-virtual {p2, v1, v2}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
@@ -67,17 +67,17 @@
 
     if-eqz v1, :cond_1
 
-    .line 135
+    .line 138
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$1;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/recents/RecentsActivity;->dismissRecentsToFocusedTaskOrHome(Z)Z
 
-    .line 152
+    .line 155
     :cond_0
     :goto_0
     return-void
 
-    .line 136
+    .line 139
     :cond_1
     const-string v1, "triggeredFromHomeKey"
 
@@ -87,14 +87,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 138
+    .line 141
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$1;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/recents/RecentsActivity;->dismissRecentsToHome(Z)Z
 
     goto :goto_0
 
-    .line 142
+    .line 145
     :cond_2
     const-string v1, "action_toggle_recents_activity"
 
@@ -104,14 +104,14 @@
 
     if-eqz v1, :cond_3
 
-    .line 144
+    .line 147
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$1;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/recents/RecentsActivity;->dismissRecentsToFocusedTaskOrHome(Z)Z
 
     goto :goto_0
 
-    .line 145
+    .line 148
     :cond_3
     const-string v1, "action_start_enter_animation"
 
@@ -121,12 +121,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 147
+    .line 150
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$1;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-virtual {v1}, Lcom/android/systemui/recents/RecentsActivity;->onEnterAnimationTriggered()V
 
-    .line 150
+    .line 153
     const/4 v1, -0x1
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/recents/RecentsActivity$1;->setResultCode(I)V

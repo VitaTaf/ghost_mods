@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 98
+    .line 99
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskViewHeader$1;->this$0:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
@@ -41,7 +41,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 101
+    .line 102
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskViewHeader$1;->this$0:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskViewHeader;->getMeasuredWidth()I
@@ -56,6 +56,6 @@
 
     invoke-virtual {p2, v2, v2, v0, v1}, Landroid/graphics/Outline;->setRect(IIII)V
 
-    .line 102
+    .line 103
     return-void
 .end method
