@@ -42871,7 +42871,57 @@
     goto :goto_3
 .end method
 
-.method public createActivityContainer(Landroid/os/IBinder;Landroid/app/IActivityContainerCallback;)Landroid/app/IActivityContainer;
+.method createAppErrorIntentLocked(Lcom/android/server/am/ProcessRecord;JLandroid/app/ApplicationErrorReport$CrashInfo;)Landroid/content/Intent;
+    .locals 4
+    .param p1, "r"    # Lcom/android/server/am/ProcessRecord;
+    .param p2, "timeMillis"    # J
+    .param p4, "crashInfo"    # Landroid/app/ApplicationErrorReport$CrashInfo;
+
+    .prologue
+    .line 12246
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/server/am/ActivityManagerService;->createAppErrorReportLocked(Lcom/android/server/am/ProcessRecord;JLandroid/app/ApplicationErrorReport$CrashInfo;)Landroid/app/ApplicationErrorReport;
+
+    move-result-object v0
+
+    .line 12247
+    .local v0, "report":Landroid/app/ApplicationErrorReport;
+    if-nez v0, :cond_0
+
+    .line 12248
+    const/4 v1, 0x0
+
+    .line 12254
+    :goto_0
+    return-object v1
+
+    .line 12250
+    :cond_0
+    new-instance v1, Landroid/content/Intent;
+
+    const-string v2, "android.intent.action.APP_ERROR"
+
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    .line 12251
+    .local v1, "result":Landroid/content/Intent;
+    iget-object v2, p1, Lcom/android/server/am/ProcessRecord;->errorReportReceiver:Landroid/content/ComponentName;
+
+    invoke-virtual {v1, v2}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
+
+    .line 12252
+    const-string v2, "android.intent.extra.BUG_REPORT"
+
+    invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+
+    .line 12253
+    const/high16 v2, 0x10000000
+
+    invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    goto :goto_0
+.end method
+
+.method public createVirtualActivityContainer(Landroid/os/IBinder;Landroid/app/IActivityContainerCallback;)Landroid/app/IActivityContainer;
     .locals 3
     .param p1, "parentActivityToken"    # Landroid/os/IBinder;
     .param p2, "callback"    # Landroid/app/IActivityContainerCallback;
@@ -42952,63 +43002,13 @@
     :cond_2
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
-    invoke-virtual {v1, v0, p2}, Lcom/android/server/am/ActivityStackSupervisor;->createActivityContainer(Lcom/android/server/am/ActivityRecord;Landroid/app/IActivityContainerCallback;)Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;
+    invoke-virtual {v1, v0, p2}, Lcom/android/server/am/ActivityStackSupervisor;->createVirtualActivityContainer(Lcom/android/server/am/ActivityRecord;Landroid/app/IActivityContainerCallback;)Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;
 
     move-result-object v1
 
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-.end method
-
-.method createAppErrorIntentLocked(Lcom/android/server/am/ProcessRecord;JLandroid/app/ApplicationErrorReport$CrashInfo;)Landroid/content/Intent;
-    .locals 4
-    .param p1, "r"    # Lcom/android/server/am/ProcessRecord;
-    .param p2, "timeMillis"    # J
-    .param p4, "crashInfo"    # Landroid/app/ApplicationErrorReport$CrashInfo;
-
-    .prologue
-    .line 12372
-    invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/server/am/ActivityManagerService;->createAppErrorReportLocked(Lcom/android/server/am/ProcessRecord;JLandroid/app/ApplicationErrorReport$CrashInfo;)Landroid/app/ApplicationErrorReport;
-
-    move-result-object v0
-
-    .line 12373
-    .local v0, "report":Landroid/app/ApplicationErrorReport;
-    if-nez v0, :cond_0
-
-    .line 12374
-    const/4 v1, 0x0
-
-    .line 12380
-    :goto_0
-    return-object v1
-
-    .line 12376
-    :cond_0
-    new-instance v1, Landroid/content/Intent;
-
-    const-string v2, "android.intent.action.APP_ERROR"
-
-    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    .line 12377
-    .local v1, "result":Landroid/content/Intent;
-    iget-object v2, p1, Lcom/android/server/am/ProcessRecord;->errorReportReceiver:Landroid/content/ComponentName;
-
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
-
-    .line 12378
-    const-string v2, "android.intent.extra.BUG_REPORT"
-
-    invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
-
-    .line 12379
-    const/high16 v2, 0x10000000
-
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     goto :goto_0
 .end method

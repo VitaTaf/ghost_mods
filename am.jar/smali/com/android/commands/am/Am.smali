@@ -5751,7 +5751,7 @@
 
     const/4 v6, 0x0
 
-    invoke-interface {v5, v3, v6}, Landroid/app/IActivityManager;->createActivityContainer(Landroid/os/IBinder;Landroid/app/IActivityContainerCallback;)Landroid/app/IActivityContainer;
+    invoke-interface {v5, v3, v6}, Landroid/app/IActivityManager;->createVirtualActivityContainer(Landroid/os/IBinder;Landroid/app/IActivityContainerCallback;)Landroid/app/IActivityContainer;
 
     move-result-object v0
 

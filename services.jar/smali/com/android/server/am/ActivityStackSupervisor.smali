@@ -3391,7 +3391,7 @@
     return-void
 .end method
 
-.method createActivityContainer(Lcom/android/server/am/ActivityRecord;Landroid/app/IActivityContainerCallback;)Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;
+.method createVirtualActivityContainer(Lcom/android/server/am/ActivityRecord;Landroid/app/IActivityContainerCallback;)Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;
     .locals 3
     .param p1, "parentActivity"    # Lcom/android/server/am/ActivityRecord;
     .param p2, "callback"    # Landroid/app/IActivityContainerCallback;

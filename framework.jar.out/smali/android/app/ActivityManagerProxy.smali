@@ -1861,7 +1861,7 @@
     return-void
 .end method
 
-.method public createActivityContainer(Landroid/os/IBinder;Landroid/app/IActivityContainerCallback;)Landroid/app/IActivityContainer;
+.method public createVirtualActivityContainer(Landroid/os/IBinder;Landroid/app/IActivityContainerCallback;)Landroid/app/IActivityContainer;
     .locals 7
     .param p1, "parentActivityToken"    # Landroid/os/IBinder;
     .param p2, "callback"    # Landroid/app/IActivityContainerCallback;

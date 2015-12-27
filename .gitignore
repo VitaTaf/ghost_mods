@@ -14,3 +14,15 @@ framework-res/dist/
 SystemUI/build/
 
 *.apk
+
+framework.jar.out/dist/framework.jar
+
+am.jar/dist/am.jar
+
+services.jar/build/*
+
+am.jar/build/*
+
+services.jar/build/apk/classes.dex
+
+services.jar/dist/services.jar
