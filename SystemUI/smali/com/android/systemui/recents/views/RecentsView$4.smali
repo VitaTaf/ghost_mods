@@ -34,7 +34,7 @@
     .locals 0
 
     .prologue
-    .line 535
+    .line 526
     iput-object p1, p0, Lcom/android/systemui/recents/views/RecentsView$4;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/RecentsView$4;->val$task:Lcom/android/systemui/recents/model/Task;
@@ -56,14 +56,14 @@
     .locals 5
 
     .prologue
-    .line 538
+    .line 529
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$4;->val$task:Lcom/android/systemui/recents/model/Task;
 
     iget-boolean v0, v0, Lcom/android/systemui/recents/model/Task;->isActive:Z
 
     if-eqz v0, :cond_1
 
-    .line 540
+    .line 531
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$4;->val$ssp:Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/RecentsView$4;->val$task:Lcom/android/systemui/recents/model/Task;
@@ -76,12 +76,12 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->moveTaskToFront(ILandroid/app/ActivityOptions;)V
 
-    .line 556
+    .line 547
     :cond_0
     :goto_0
     return-void
 
-    .line 542
+    .line 533
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$4;->val$ssp:Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
@@ -109,7 +109,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 544
+    .line 535
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$4;->val$launchOpts:Landroid/app/ActivityOptions;
 
     if-nez v0, :cond_0
@@ -118,7 +118,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 545
+    .line 536
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$4;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/RecentsView;->mCb:Lcom/android/systemui/recents/views/RecentsView$RecentsViewCallbacks;
@@ -127,7 +127,7 @@
 
     goto :goto_0
 
-    .line 550
+    .line 541
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$4;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
@@ -135,14 +135,14 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/RecentsView;->onTaskViewDismissed(Lcom/android/systemui/recents/model/Task;)V
 
-    .line 551
+    .line 542
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$4;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/RecentsView;->mCb:Lcom/android/systemui/recents/views/RecentsView$RecentsViewCallbacks;
 
     if-eqz v0, :cond_0
 
-    .line 552
+    .line 543
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$4;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/RecentsView;->mCb:Lcom/android/systemui/recents/views/RecentsView$RecentsViewCallbacks;

@@ -28,12 +28,12 @@
     .locals 1
 
     .prologue
-    .line 506
+    .line 497
     iput-object p1, p0, Lcom/android/systemui/recents/views/RecentsView$3;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 507
+    .line 498
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/views/RecentsView$3;->mTriggered:Z
@@ -47,12 +47,12 @@
     .locals 4
 
     .prologue
-    .line 510
+    .line 501
     iget-boolean v0, p0, Lcom/android/systemui/recents/views/RecentsView$3;->mTriggered:Z
 
     if-nez v0, :cond_0
 
-    .line 511
+    .line 502
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$3;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
     new-instance v1, Lcom/android/systemui/recents/views/RecentsView$3$1;
@@ -63,12 +63,12 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/systemui/recents/views/RecentsView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 517
+    .line 508
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/views/RecentsView$3;->mTriggered:Z
 
-    .line 519
+    .line 510
     :cond_0
     return-void
 .end method
