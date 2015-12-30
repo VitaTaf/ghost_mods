@@ -9001,4 +9001,6 @@
     <public type="^attr-private" name="interpolatorY" id="0x011600b4" />
     <public type="^attr-private" name="interpolatorZ" id="0x011600b5" />
     <public type="^attr-private" name="fraction" id="0x011600b6" />
+    <public type="^attr-private" name="start" id="0x011600b7" />
+    <public type="^attr-private" name="end" id="0x011600b8" />
 </resources>

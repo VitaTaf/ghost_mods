@@ -2145,6 +2145,8 @@
     <attr name="revisionCode" format="integer" />
     <attr name="fraction" format="float" />
     <attr name="resizeableActivity" format="boolean" />
+    <attr name="start" format="dimension" />
+    <attr name="end" format="dimension" />
     <item type="attr" name="APKTOOL_DUMMY_0267">false</item>
     <item type="attr" name="APKTOOL_DUMMY_03a8">false</item>
     <item type="attr" name="APKTOOL_DUMMY_03c3">false</item>

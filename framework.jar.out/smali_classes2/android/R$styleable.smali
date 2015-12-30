@@ -1741,17 +1741,27 @@
 
 .field public static final LayerDrawableItem:[I
 
-.field public static final LayerDrawableItem_bottom:I = 0x5
+.field public static final LayerDrawableItem_bottom:I = 0x8
 
-.field public static final LayerDrawableItem_drawable:I = 0x1
+.field public static final LayerDrawableItem_drawable:I = 0x4
 
-.field public static final LayerDrawableItem_id:I = 0x0
+.field public static final LayerDrawableItem_end:I = 0xa
 
-.field public static final LayerDrawableItem_left:I = 0x2
+.field public static final LayerDrawableItem_gravity:I = 0x0
 
-.field public static final LayerDrawableItem_right:I = 0x4
+.field public static final LayerDrawableItem_height:I = 0x2
 
-.field public static final LayerDrawableItem_top:I = 0x3
+.field public static final LayerDrawableItem_id:I = 0x1
+
+.field public static final LayerDrawableItem_left:I = 0x5
+
+.field public static final LayerDrawableItem_right:I = 0x7
+
+.field public static final LayerDrawableItem_start:I = 0x9
+
+.field public static final LayerDrawableItem_top:I = 0x6
+
+.field public static final LayerDrawableItem_width:I = 0x3
 
 .field public static final LayerDrawable_autoMirrored:I = 0x1
 
@@ -5317,7 +5327,7 @@
     sput-object v0, Landroid/R$styleable;->LayerDrawable:[I
 
     .line 32878
-    const/4 v0, 0x6
+    const/16 v0, 0xb
 
     new-array v0, v0, [I
 
@@ -7721,12 +7731,17 @@
     .line 32878
     :array_67
     .array-data 4
+    	0x10100af
         0x10100d0
+        0x1010155
+        0x1010159
         0x1010199
         0x10101ad
         0x10101ae
         0x10101af
         0x10101b0
+        0x11600b7
+        0x11600b8
     .end array-data
 
     .line 33003
