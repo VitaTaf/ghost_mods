@@ -228,7 +228,7 @@
 
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
     .locals 2
-    .param p1, "cf"    # Landroid/graphics/ColorFilter;
+    .param p1, "colorFilter"    # Landroid/graphics/ColorFilter;
 
     .prologue
     .line 191

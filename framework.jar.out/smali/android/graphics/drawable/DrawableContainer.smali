@@ -1671,7 +1671,7 @@
 
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
     .locals 2
-    .param p1, "cf"    # Landroid/graphics/ColorFilter;
+    .param p1, "colorFilter"    # Landroid/graphics/ColorFilter;
 
     .prologue
     .line 171
@@ -1885,7 +1885,7 @@
     .line 294
     new-instance v0, Landroid/graphics/Rect;
 
-    invoke-direct {v0, p1, p2, p4, p3}, Landroid/graphics/Rect;-><init>(IIII)V
+    invoke-direct {v0, p1, p2, p3, p4}, Landroid/graphics/Rect;-><init>(IIII)V
 
     iput-object v0, p0, Landroid/graphics/drawable/DrawableContainer;->mHotspotBounds:Landroid/graphics/Rect;
 
@@ -1908,7 +1908,7 @@
     :cond_1
     iget-object v0, p0, Landroid/graphics/drawable/DrawableContainer;->mHotspotBounds:Landroid/graphics/Rect;
 
-    invoke-virtual {v0, p1, p2, p4, p3}, Landroid/graphics/Rect;->set(IIII)V
+    invoke-virtual {v0, p1, p2, p3, p4}, Landroid/graphics/Rect;->set(IIII)V
 
     goto :goto_0
 .end method
