@@ -109,20 +109,12 @@
 
     move-object/from16 v22, v0
 
-    # getter for: Lcom/android/server/am/TaskPersister;->mService:Lcom/android/server/am/ActivityManagerService;
-    invoke-static/range {v22 .. v22}, Lcom/android/server/am/TaskPersister;->access$100(Lcom/android/server/am/TaskPersister;)Lcom/android/server/am/ActivityManagerService;
+    # getter for: Lcom/android/server/am/TaskPersister;->mRecentTasks:Lcom/android/server/am/RecentTasks;
+    invoke-static/range {v22 .. v22}, Lcom/android/server/am/TaskPersister;->access$700(Lcom/android/server/am/TaskPersister;)Lcom/android/server/am/RecentTasks;
 
     move-result-object v22
 
-    move-object/from16 v0, v22
-
-    iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mRecentTasks:Ljava/util/ArrayList;
-
-    move-object/from16 v21, v0
-
-    .line 946
-    .local v21, "tasks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/am/TaskRecord;>;"
-    invoke-virtual/range {v21 .. v21}, Ljava/util/ArrayList;->size()I
+    invoke-virtual/range {v22 .. v22}, Lcom/android/server/am/RecentTasks;->size()I
 
     move-result v22
 
@@ -133,11 +125,22 @@
     if-ltz v20, :cond_4
 
     .line 947
-    move-object/from16 v0, v21
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/am/TaskPersister$LazyTaskWriterThread;->this$0:Lcom/android/server/am/TaskPersister;
+
+    move-object/from16 v22, v0
+
+    # getter for: Lcom/android/server/am/TaskPersister;->mRecentTasks:Lcom/android/server/am/RecentTasks;
+    invoke-static/range {v22 .. v22}, Lcom/android/server/am/TaskPersister;->access$700(Lcom/android/server/am/TaskPersister;)Lcom/android/server/am/RecentTasks;
+
+    move-result-object v22
+
+    move-object/from16 v0, v22
 
     move/from16 v1, v20
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lcom/android/server/am/RecentTasks;->get(I)Ljava/lang/Object;
 
     move-result-object v19
 
@@ -212,7 +215,6 @@
     .end local v17    # "probablyDone":Z
     .end local v19    # "task":Lcom/android/server/am/TaskRecord;
     .end local v20    # "taskNdx":I
-    .end local v21    # "tasks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/am/TaskRecord;>;"
     :catchall_0
     move-exception v22
 
@@ -226,7 +228,6 @@
     .line 960
     .restart local v17    # "probablyDone":Z
     .restart local v20    # "taskNdx":I
-    .restart local v21    # "tasks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/am/TaskRecord;>;"
     :cond_4
     :try_start_3
     monitor-exit v23
@@ -249,7 +250,6 @@
 
     .line 966
     .end local v20    # "taskNdx":I
-    .end local v21    # "tasks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/am/TaskRecord;>;"
     :cond_5
     move-object/from16 v0, p0
 

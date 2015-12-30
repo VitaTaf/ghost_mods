@@ -99,6 +99,8 @@
 
 .field mPausingActivity:Lcom/android/server/am/ActivityRecord;
 
+.field private final mRecentTasks:Lcom/android/server/am/RecentTasks;
+
 .field mResumedActivity:Lcom/android/server/am/ActivityRecord;
 
 .field final mService:Lcom/android/server/am/ActivityManagerService;
@@ -171,9 +173,10 @@
     return-void
 .end method
 
-.method constructor <init>(Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;)V
+.method constructor <init>(Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;Lcom/android/server/am/RecentTasks;)V
     .locals 4
     .param p1, "activityContainer"    # Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;
+    .param p2, "recentTasks"    # Lcom/android/server/am/RecentTasks;
 
     .prologue
     const-wide/16 v2, 0x0
@@ -292,6 +295,8 @@
     iget v0, v0, Lcom/android/server/am/ActivityManagerService;->mCurrentUserId:I
 
     iput v0, p0, Lcom/android/server/am/ActivityStack;->mCurrentUser:I
+
+    iput-object p2, p0, Lcom/android/server/am/ActivityStack;->mRecentTasks:Lcom/android/server/am/RecentTasks;
 
     .line 352
     return-void
@@ -7971,11 +7976,11 @@
     invoke-virtual {v0}, Lcom/android/server/am/TaskRecord;->touchActiveTime()V
 
     .line 650
-    iget-object v0, p0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
+    iget-object v0, p0, Lcom/android/server/am/ActivityStack;->mRecentTasks:Lcom/android/server/am/RecentTasks;
 
     iget-object v1, p1, Lcom/android/server/am/ActivityRecord;->task:Lcom/android/server/am/TaskRecord;
 
-    invoke-virtual {v0, v1}, Lcom/android/server/am/ActivityManagerService;->addRecentTaskLocked(Lcom/android/server/am/TaskRecord;)V
+    invoke-virtual {v0, v1}, Lcom/android/server/am/RecentTasks;->addLocked(Lcom/android/server/am/TaskRecord;)V
 
     .line 651
     invoke-direct {p0, p1}, Lcom/android/server/am/ActivityStack;->completeResumeLocked(Lcom/android/server/am/ActivityRecord;)V
@@ -10231,11 +10236,9 @@
 
     .line 4098
     :cond_3
-    iget-object v7, p0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
+    iget-object v7, p0, Lcom/android/server/am/ActivityStack;->mRecentTasks:Lcom/android/server/am/RecentTasks;
 
-    iget-object v7, v7, Lcom/android/server/am/ActivityManagerService;->mRecentTasks:Ljava/util/ArrayList;
-
-    invoke-virtual {v7, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v7, p1}, Lcom/android/server/am/RecentTasks;->remove(Ljava/lang/Object;)Z
 
     .line 4099
     invoke-virtual {p1}, Lcom/android/server/am/TaskRecord;->removedFromRecents()V
@@ -12253,13 +12256,13 @@
     .line 1777
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
+    iget-object v3, v0, Lcom/android/server/am/ActivityStack;->mRecentTasks:Lcom/android/server/am/RecentTasks;
 
     move-object/from16 v0, v24
 
     iget-object v4, v0, Lcom/android/server/am/ActivityRecord;->task:Lcom/android/server/am/TaskRecord;
 
-    invoke-virtual {v3, v4}, Lcom/android/server/am/ActivityManagerService;->addRecentTaskLocked(Lcom/android/server/am/TaskRecord;)V
+    invoke-virtual {v3, v4}, Lcom/android/server/am/RecentTasks;->addLocked(Lcom/android/server/am/TaskRecord;)V
 
     .line 1778
     move-object/from16 v0, p0
