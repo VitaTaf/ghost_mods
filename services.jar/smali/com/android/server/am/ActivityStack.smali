@@ -432,8 +432,6 @@
     .prologue
     const/4 v10, 0x1
 
-    const/4 v8, 0x0
-
     const-wide/16 v12, 0x0
 
     const/4 v9, 0x0
@@ -457,6 +455,8 @@
 
     .line 970
     const/4 v7, 0x2
+
+    const/4 v8, 0x0
 
     invoke-virtual {p0, v1, v7, v8}, Lcom/android/server/am/ActivityStack;->finishCurrentActivityLocked(Lcom/android/server/am/ActivityRecord;IZ)Lcom/android/server/am/ActivityRecord;
 
@@ -610,20 +610,16 @@
 
     if-eqz v7, :cond_b
 
-    .line 973
-    iget-boolean v7, v1, Lcom/android/server/am/ActivityRecord;->waitingVisible:Z
-
-    if-eqz v7, :cond_7
-
-    .line 974
-    iput-boolean v8, v1, Lcom/android/server/am/ActivityRecord;->waitingVisible:Z
-
     .line 975
     iget-object v7, p0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v7, v7, Lcom/android/server/am/ActivityStackSupervisor;->mWaitingVisibleActivities:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_7
 
     .line 979
     :cond_7
@@ -636,7 +632,7 @@
 
     invoke-virtual {p0, v1, v10, v7}, Lcom/android/server/am/ActivityStack;->destroyActivityLocked(Lcom/android/server/am/ActivityRecord;ZLjava/lang/String;)Z
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 987
     :cond_8
@@ -12019,9 +12015,17 @@
     if-eq v0, v1, :cond_18
 
     .line 1661
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+
+    iget-object v3, v3, Lcom/android/server/am/ActivityStackSupervisor;->mWaitingVisibleActivities:Ljava/util/ArrayList;
+
     move-object/from16 v0, p1
 
-    iget-boolean v3, v0, Lcom/android/server/am/ActivityRecord;->waitingVisible:Z
+    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+
+    move-result v3
 
     if-nez v3, :cond_1d
 
@@ -12032,13 +12036,6 @@
     iget-boolean v3, v0, Lcom/android/server/am/ActivityRecord;->nowVisible:Z
 
     if-nez v3, :cond_1d
-
-    .line 1662
-    const/4 v3, 0x1
-
-    move-object/from16 v0, p1
-
-    iput-boolean v3, v0, Lcom/android/server/am/ActivityRecord;->waitingVisible:Z
 
     .line 1663
     move-object/from16 v0, p0

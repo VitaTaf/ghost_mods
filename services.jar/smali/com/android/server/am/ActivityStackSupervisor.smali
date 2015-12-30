@@ -2597,7 +2597,11 @@
 
     if-eqz v5, :cond_0
 
-    iget-boolean v5, v1, Lcom/android/server/am/ActivityRecord;->waitingVisible:Z
+    iget-object v5, p0, Lcom/android/server/am/ActivityStackSupervisor;->mWaitingVisibleActivities:Ljava/util/ArrayList;
+
+    invoke-virtual {v5, v1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+
+    move-result v5
 
     if-eqz v5, :cond_1
 
@@ -7071,85 +7075,74 @@
     .end annotation
 
     .prologue
-    const/4 v7, 0x0
+    .line 3094
+    const/4 v3, 0x0
 
-    .line 3119
+    .line 3096
+    .local v3, "stops":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/am/ActivityRecord;>;"
+    invoke-virtual {p0}, Lcom/android/server/am/ActivityStackSupervisor;->allResumedActivitiesVisible()Z
+
+    move-result v1
+
+    .line 3097
+    .local v1, "nowVisible":Z
     iget-object v5, p0, Lcom/android/server/am/ActivityStackSupervisor;->mStoppingActivities:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
-    move-result v0
+    move-result v5
 
-    .line 3120
-    .local v0, "N":I
-    if-gtz v0, :cond_1
+    add-int/lit8 v0, v5, -0x1
 
-    const/4 v4, 0x0
-
-    .line 3155
-    :cond_0
-    return-object v4
-
-    .line 3122
-    :cond_1
-    const/4 v4, 0x0
-
-    .line 3124
-    .local v4, "stops":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/am/ActivityRecord;>;"
-    invoke-virtual {p0}, Lcom/android/server/am/ActivityStackSupervisor;->allResumedActivitiesVisible()Z
-
-    move-result v2
-
-    .line 3125
-    .local v2, "nowVisible":Z
-    const/4 v1, 0x0
-
-    .local v1, "i":I
+    .local v0, "activityNdx":I
     :goto_0
-    if-ge v1, v0, :cond_0
+    if-ltz v0, :cond_4
 
-    .line 3126
+    .line 3098
     iget-object v5, p0, Lcom/android/server/am/ActivityStackSupervisor;->mStoppingActivities:Ljava/util/ArrayList;
 
-    invoke-virtual {v5, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v5, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Lcom/android/server/am/ActivityRecord;
+    check-cast v2, Lcom/android/server/am/ActivityRecord;
 
-    .line 3130
-    .local v3, "s":Lcom/android/server/am/ActivityRecord;
-    iget-boolean v5, v3, Lcom/android/server/am/ActivityRecord;->waitingVisible:Z
-
-    if-eqz v5, :cond_2
-
-    if-eqz v2, :cond_2
-
-    .line 3131
+    .line 3099
+    .local v2, "s":Lcom/android/server/am/ActivityRecord;
     iget-object v5, p0, Lcom/android/server/am/ActivityStackSupervisor;->mWaitingVisibleActivities:Ljava/util/ArrayList;
 
-    invoke-virtual {v5, v3}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v5, v2}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
-    .line 3132
-    iput-boolean v7, v3, Lcom/android/server/am/ActivityRecord;->waitingVisible:Z
+    move-result v4
 
-    .line 3133
-    iget-boolean v5, v3, Lcom/android/server/am/ActivityRecord;->finishing:Z
+    .line 3102
+    .local v4, "waitingVisible":Z
+    if-eqz v4, :cond_0
 
-    if-eqz v5, :cond_2
+    if-eqz v1, :cond_0
 
-    .line 3140
+    .line 3103
+    iget-object v5, p0, Lcom/android/server/am/ActivityStackSupervisor;->mWaitingVisibleActivities:Ljava/util/ArrayList;
+
+    invoke-virtual {v5, v2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    .line 3104
+    iget-boolean v5, v2, Lcom/android/server/am/ActivityRecord;->finishing:Z
+
+    if-eqz v5, :cond_0
+
+    .line 3111
     iget-object v5, p0, Lcom/android/server/am/ActivityStackSupervisor;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
 
-    iget-object v6, v3, Lcom/android/server/am/ActivityRecord;->appToken:Landroid/view/IApplicationToken$Stub;
+    iget-object v6, v2, Lcom/android/server/am/ActivityRecord;->appToken:Landroid/view/IApplicationToken$Stub;
+
+    const/4 v7, 0x0
 
     invoke-virtual {v5, v6, v7}, Lcom/android/server/wm/WindowManagerService;->setAppVisibility(Landroid/os/IBinder;Z)V
 
-    .line 3143
-    :cond_2
-    iget-boolean v5, v3, Lcom/android/server/am/ActivityRecord;->waitingVisible:Z
-
-    if-eqz v5, :cond_3
+    .line 3114
+    :cond_0
+    if-eqz v4, :cond_1
 
     iget-object v5, p0, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
 
@@ -7157,41 +7150,41 @@
 
     move-result v5
 
-    if-eqz v5, :cond_5
+    if-eqz v5, :cond_3
 
-    :cond_3
-    if-eqz p1, :cond_5
+    :cond_1
+    if-eqz p1, :cond_3
 
-    .line 3145
-    if-nez v4, :cond_4
+    .line 3116
+    if-nez v3, :cond_2
 
-    .line 3146
-    new-instance v4, Ljava/util/ArrayList;
+    .line 3117
+    new-instance v3, Ljava/util/ArrayList;
 
-    .end local v4    # "stops":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/am/ActivityRecord;>;"
-    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
+    .end local v3    # "stops":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/am/ActivityRecord;>;"
+    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 3148
-    .restart local v4    # "stops":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/am/ActivityRecord;>;"
-    :cond_4
-    invoke-virtual {v4, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    .line 3119
+    .restart local v3    # "stops":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/am/ActivityRecord;>;"
+    :cond_2
+    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3149
+    .line 3120
     iget-object v5, p0, Lcom/android/server/am/ActivityStackSupervisor;->mStoppingActivities:Ljava/util/ArrayList;
 
-    invoke-virtual {v5, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+    invoke-virtual {v5, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 3150
+    .line 3097
+    :cond_3
     add-int/lit8 v0, v0, -0x1
 
-    .line 3151
-    add-int/lit8 v1, v1, -0x1
-
-    .line 3125
-    :cond_5
-    add-int/lit8 v1, v1, 0x1
-
     goto :goto_0
+
+    .line 3124
+    .end local v2    # "s":Lcom/android/server/am/ActivityRecord;
+    .end local v4    # "waitingVisible":Z
+    :cond_4
+    return-object v3
 .end method
 
 .method final realStartActivityLocked(Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ProcessRecord;ZZ)Z
