@@ -5189,7 +5189,7 @@
     goto :goto_0
 .end method
 
-.method private createTask(IIILcom/android/server/wm/AppWindowToken;)Lcom/android/server/wm/Task;
+.method private createTaskLocked(IIILcom/android/server/wm/AppWindowToken;)Lcom/android/server/wm/Task;
     .locals 7
     .param p1, "taskId"    # I
     .param p2, "stackId"    # I
@@ -5264,7 +5264,7 @@
     .line 3651
     new-instance v1, Lcom/android/server/wm/Task;
 
-    invoke-direct {v1, p4, v0, p3, p0}, Lcom/android/server/wm/Task;-><init>(Lcom/android/server/wm/AppWindowToken;Lcom/android/server/wm/TaskStack;ILcom/android/server/wm/WindowManagerService;)V
+    invoke-direct {v1, p1, v0, p3, p0}, Lcom/android/server/wm/Task;-><init>(ILcom/android/server/wm/TaskStack;ILcom/android/server/wm/WindowManagerService;)V
 
     .line 3652
     .local v1, "task":Lcom/android/server/wm/Task;
@@ -15303,9 +15303,6 @@
     .restart local v2    # "atoken":Lcom/android/server/wm/AppWindowToken;
     iput-wide v4, v2, Lcom/android/server/wm/AppWindowToken;->inputDispatchingTimeoutNanos:J
 
-    .line 3688
-    iput p3, v2, Lcom/android/server/wm/AppWindowToken;->groupId:I
-
     .line 3689
     move/from16 v0, p6
 
@@ -15326,7 +15323,7 @@
 
     and-int/lit16 v7, v0, 0x480
 
-    if-eqz v7, :cond_2
+    if-eqz v7, :cond_3
 
     const/4 v7, 0x1
 
@@ -15404,17 +15401,21 @@
 
     .line 3699
     .local v6, "task":Lcom/android/server/wm/Task;
-    if-nez v6, :cond_3
+    if-nez v6, :cond_2
 
     .line 3700
     move/from16 v0, p4
 
     move/from16 v1, p8
 
-    invoke-direct {p0, p3, v0, v1, v2}, Lcom/android/server/wm/WindowManagerService;->createTask(IIILcom/android/server/wm/AppWindowToken;)Lcom/android/server/wm/Task;
+    invoke-direct {p0, p3, v0, v1, v2}, Lcom/android/server/wm/WindowManagerService;->createTaskLocked(IIILcom/android/server/wm/AppWindowToken;)Lcom/android/server/wm/Task;
 
     .line 3705
-    :goto_3
+    move-result-object v6
+
+    :cond_2
+    invoke-virtual {v6, p1, v2}, Lcom/android/server/wm/Task;->addAppToken(ILcom/android/server/wm/AppWindowToken;)V
+
     iget-object v7, p0, Lcom/android/server/wm/WindowManagerService;->mTokenMap:Ljava/util/HashMap;
 
     invoke-interface {p2}, Landroid/view/IApplicationToken;->asBinder()Landroid/os/IBinder;
@@ -15451,20 +15452,10 @@
 
     .line 3692
     .restart local v2    # "atoken":Lcom/android/server/wm/AppWindowToken;
-    :cond_2
+    :cond_3
     const/4 v7, 0x0
 
     goto :goto_2
-
-    .line 3702
-    .restart local v6    # "task":Lcom/android/server/wm/Task;
-    :cond_3
-    :try_start_3
-    invoke-virtual {v6, p1, v2}, Lcom/android/server/wm/Task;->addAppToken(ILcom/android/server/wm/AppWindowToken;)V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    goto :goto_3
 .end method
 
 .method public addFakeWindow(Landroid/os/Looper;Landroid/view/InputEventReceiver$Factory;Ljava/lang/String;IIIZZZ)Landroid/view/WindowManagerPolicy$FakeWindow;
@@ -22294,7 +22285,7 @@
 
     move-result-object v11
 
-    iget v12, v5, Lcom/android/server/wm/Task;->taskId:I
+    iget v12, v5, Lcom/android/server/wm/Task;->mTaskId:I
 
     invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -35394,15 +35385,7 @@
     .line 4845
     :cond_1
     :goto_0
-    iget-object v0, p0, Lcom/android/server/wm/WindowManagerService;->mTaskIdToTask:Landroid/util/SparseArray;
-
-    iget v2, v1, Lcom/android/server/wm/AppWindowToken;->groupId:I
-
-    invoke-virtual {v0, v2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/server/wm/Task;
+    iget-object v0, v1, Lcom/android/server/wm/AppWindowToken;->mTask:Lcom/android/server/wm/Task;
 
     iget-object v9, v0, Lcom/android/server/wm/Task;->mStack:Lcom/android/server/wm/TaskStack;
 
@@ -38857,154 +38840,6 @@
     throw v1
 .end method
 
-.method public setAppGroupId(Landroid/os/IBinder;I)V
-    .locals 7
-    .param p1, "token"    # Landroid/os/IBinder;
-    .param p2, "groupId"    # I
-
-    .prologue
-    .line 3717
-    const-string v3, "android.permission.MANAGE_APP_TOKENS"
-
-    const-string v4, "setAppGroupId()"
-
-    invoke-virtual {p0, v3, v4}, Lcom/android/server/wm/WindowManagerService;->checkCallingPermission(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_0
-
-    .line 3719
-    new-instance v3, Ljava/lang/SecurityException;
-
-    const-string v4, "Requires MANAGE_APP_TOKENS permission"
-
-    invoke-direct {v3, v4}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
-
-    throw v3
-
-    .line 3722
-    :cond_0
-    iget-object v4, p0, Lcom/android/server/wm/WindowManagerService;->mWindowMap:Ljava/util/HashMap;
-
-    monitor-enter v4
-
-    .line 3723
-    :try_start_0
-    invoke-virtual {p0, p1}, Lcom/android/server/wm/WindowManagerService;->findAppWindowToken(Landroid/os/IBinder;)Lcom/android/server/wm/AppWindowToken;
-
-    move-result-object v0
-
-    .line 3724
-    .local v0, "atoken":Lcom/android/server/wm/AppWindowToken;
-    if-nez v0, :cond_1
-
-    .line 3725
-    const-string v3, "WindowManager"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "Attempted to set group id of non-existing app token: "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v3, v5}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 3726
-    monitor-exit v4
-
-    .line 3739
-    :goto_0
-    return-void
-
-    .line 3728
-    :cond_1
-    iget-object v3, p0, Lcom/android/server/wm/WindowManagerService;->mTaskIdToTask:Landroid/util/SparseArray;
-
-    iget v5, v0, Lcom/android/server/wm/AppWindowToken;->groupId:I
-
-    invoke-virtual {v3, v5}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/android/server/wm/Task;
-
-    .line 3729
-    .local v2, "oldTask":Lcom/android/server/wm/Task;
-    invoke-virtual {v2, v0}, Lcom/android/server/wm/Task;->removeAppToken(Lcom/android/server/wm/AppWindowToken;)Z
-
-    .line 3731
-    iput p2, v0, Lcom/android/server/wm/AppWindowToken;->groupId:I
-
-    .line 3732
-    iget-object v3, p0, Lcom/android/server/wm/WindowManagerService;->mTaskIdToTask:Landroid/util/SparseArray;
-
-    invoke-virtual {v3, p2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/android/server/wm/Task;
-
-    .line 3733
-    .local v1, "newTask":Lcom/android/server/wm/Task;
-    if-nez v1, :cond_2
-
-    .line 3734
-    iget-object v3, v2, Lcom/android/server/wm/Task;->mStack:Lcom/android/server/wm/TaskStack;
-
-    iget v3, v3, Lcom/android/server/wm/TaskStack;->mStackId:I
-
-    iget v5, v2, Lcom/android/server/wm/Task;->mUserId:I
-
-    invoke-direct {p0, p2, v3, v5, v0}, Lcom/android/server/wm/WindowManagerService;->createTask(IIILcom/android/server/wm/AppWindowToken;)Lcom/android/server/wm/Task;
-
-    move-result-object v1
-
-    .line 3738
-    :goto_1
-    monitor-exit v4
-
-    goto :goto_0
-
-    .end local v0    # "atoken":Lcom/android/server/wm/AppWindowToken;
-    .end local v1    # "newTask":Lcom/android/server/wm/Task;
-    .end local v2    # "oldTask":Lcom/android/server/wm/Task;
-    :catchall_0
-    move-exception v3
-
-    monitor-exit v4
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v3
-
-    .line 3736
-    .restart local v0    # "atoken":Lcom/android/server/wm/AppWindowToken;
-    .restart local v1    # "newTask":Lcom/android/server/wm/Task;
-    .restart local v2    # "oldTask":Lcom/android/server/wm/Task;
-    :cond_2
-    :try_start_1
-    iget-object v3, v1, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
-
-    invoke-virtual {v3, v0}, Lcom/android/server/wm/AppTokenList;->add(Ljava/lang/Object;)Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_1
-.end method
-
 .method public setAppOrientation(Landroid/view/IApplicationToken;I)V
     .locals 5
     .param p1, "token"    # Landroid/view/IApplicationToken;
@@ -39935,6 +39770,134 @@
     goto/16 :goto_0
 .end method
 
+.method public setAppTask(Landroid/os/IBinder;I)V
+    .locals 7
+    .param p1, "token"    # Landroid/os/IBinder;
+    .param p2, "taskId"    # I
+
+    .prologue
+    .line 3713
+    const-string v3, "android.permission.MANAGE_APP_TOKENS"
+
+    const-string v4, "setAppTask()"
+
+    invoke-virtual {p0, v3, v4}, Lcom/android/server/wm/WindowManagerService;->checkCallingPermission(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    .line 3715
+    new-instance v3, Ljava/lang/SecurityException;
+
+    const-string v4, "Requires MANAGE_APP_TOKENS permission"
+
+    invoke-direct {v3, v4}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
+
+    throw v3
+
+    .line 3718
+    :cond_0
+    iget-object v4, p0, Lcom/android/server/wm/WindowManagerService;->mWindowMap:Ljava/util/HashMap;
+
+    monitor-enter v4
+
+    .line 3719
+    :try_start_0
+    invoke-virtual {p0, p1}, Lcom/android/server/wm/WindowManagerService;->findAppWindowToken(Landroid/os/IBinder;)Lcom/android/server/wm/AppWindowToken;
+
+    move-result-object v0
+
+    .line 3720
+    .local v0, "atoken":Lcom/android/server/wm/AppWindowToken;
+    if-nez v0, :cond_1
+
+    .line 3721
+    const-string v3, "WindowManager"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "Attempted to set task id of non-existing app token: "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v3, v5}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 3722
+    monitor-exit v4
+
+    .line 3734
+    :goto_0
+    return-void
+
+    .line 3724
+    :cond_1
+    iget-object v2, v0, Lcom/android/server/wm/AppWindowToken;->mTask:Lcom/android/server/wm/Task;
+
+    .line 3725
+    .local v2, "oldTask":Lcom/android/server/wm/Task;
+    invoke-virtual {v2, v0}, Lcom/android/server/wm/Task;->removeAppToken(Lcom/android/server/wm/AppWindowToken;)Z
+
+    .line 3727
+    iget-object v3, p0, Lcom/android/server/wm/WindowManagerService;->mTaskIdToTask:Landroid/util/SparseArray;
+
+    invoke-virtual {v3, p2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/server/wm/Task;
+
+    .line 3728
+    .local v1, "newTask":Lcom/android/server/wm/Task;
+    if-nez v1, :cond_2
+
+    .line 3729
+    iget-object v3, v2, Lcom/android/server/wm/Task;->mStack:Lcom/android/server/wm/TaskStack;
+
+    iget v3, v3, Lcom/android/server/wm/TaskStack;->mStackId:I
+
+    iget v5, v2, Lcom/android/server/wm/Task;->mUserId:I
+
+    invoke-direct {p0, p2, v3, v5, v0}, Lcom/android/server/wm/WindowManagerService;->createTaskLocked(IIILcom/android/server/wm/AppWindowToken;)Lcom/android/server/wm/Task;
+
+    move-result-object v1
+
+    .line 3732
+    :cond_2
+    const v3, 0x7fffffff
+
+    invoke-virtual {v1, v3, v0}, Lcom/android/server/wm/Task;->addAppToken(ILcom/android/server/wm/AppWindowToken;)V
+
+    .line 3733
+    monitor-exit v4
+
+    goto :goto_0
+
+    .end local v0    # "atoken":Lcom/android/server/wm/AppWindowToken;
+    .end local v1    # "newTask":Lcom/android/server/wm/Task;
+    .end local v2    # "oldTask":Lcom/android/server/wm/Task;
+    :catchall_0
+    move-exception v3
+
+    monitor-exit v4
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v3
+.end method
+
 .method public setAppVisibility(Landroid/os/IBinder;Z)V
     .locals 12
     .param p1, "token"    # Landroid/os/IBinder;
@@ -40683,17 +40646,9 @@
     if-eqz v4, :cond_1
 
     .line 4021
-    iget-object v4, p0, Lcom/android/server/wm/WindowManagerService;->mTaskIdToTask:Landroid/util/SparseArray;
+    iget-object v4, p0, Lcom/android/server/wm/WindowManagerService;->mFocusedApp:Lcom/android/server/wm/AppWindowToken;
 
-    iget-object v5, p0, Lcom/android/server/wm/WindowManagerService;->mFocusedApp:Lcom/android/server/wm/AppWindowToken;
-
-    iget v5, v5, Lcom/android/server/wm/AppWindowToken;->groupId:I
-
-    invoke-virtual {v4, v5}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcom/android/server/wm/Task;
+    iget-object v3, v4, Lcom/android/server/wm/AppWindowToken;->mTask:Lcom/android/server/wm/Task;
 
     .line 4022
     .local v3, "task":Lcom/android/server/wm/Task;

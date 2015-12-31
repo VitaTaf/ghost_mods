@@ -2053,7 +2053,7 @@
 
     move/from16 v0, v22
 
-    invoke-virtual {v2, v4, v0}, Lcom/android/server/wm/WindowManagerService;->setAppGroupId(Landroid/os/IBinder;I)V
+    invoke-virtual {v2, v4, v0}, Lcom/android/server/wm/WindowManagerService;->setAppTask(Landroid/os/IBinder;I)V
 
     .line 2372
     add-int/lit8 v16, v16, -0x1
@@ -10708,7 +10708,7 @@
 
     move/from16 v0, v26
 
-    invoke-virtual {v2, v4, v0}, Lcom/android/server/wm/WindowManagerService;->setAppGroupId(Landroid/os/IBinder;I)V
+    invoke-virtual {v2, v4, v0}, Lcom/android/server/wm/WindowManagerService;->setAppTask(Landroid/os/IBinder;I)V
 
     .line 2221
     move/from16 v18, v12
@@ -10860,7 +10860,7 @@
 
     move/from16 v0, v26
 
-    invoke-virtual {v2, v4, v0}, Lcom/android/server/wm/WindowManagerService;->setAppGroupId(Landroid/os/IBinder;I)V
+    invoke-virtual {v2, v4, v0}, Lcom/android/server/wm/WindowManagerService;->setAppTask(Landroid/os/IBinder;I)V
 
     goto :goto_9
 

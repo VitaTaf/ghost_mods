@@ -1061,7 +1061,7 @@
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget v14, v7, Lcom/android/server/wm/Task;->taskId:I
+    iget v14, v7, Lcom/android/server/wm/Task;->mTaskId:I
 
     move-object/from16 v0, p2
 

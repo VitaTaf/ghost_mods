@@ -439,14 +439,6 @@
     .end annotation
 .end method
 
-.method public abstract setAppGroupId(Landroid/os/IBinder;I)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract setAppOrientation(Landroid/view/IApplicationToken;I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -456,6 +448,14 @@
 .end method
 
 .method public abstract setAppStartingWindow(Landroid/os/IBinder;Ljava/lang/String;ILandroid/content/res/CompatibilityInfo;Ljava/lang/CharSequence;IIIILandroid/os/IBinder;Z)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract setAppTask(Landroid/os/IBinder;I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

@@ -4456,17 +4456,7 @@
     if-eqz v1, :cond_2
 
     .line 807
-    iget-object v2, p0, Lcom/android/server/wm/WindowState;->mService:Lcom/android/server/wm/WindowManagerService;
-
-    iget-object v2, v2, Lcom/android/server/wm/WindowManagerService;->mTaskIdToTask:Landroid/util/SparseArray;
-
-    iget v3, v1, Lcom/android/server/wm/AppWindowToken;->groupId:I
-
-    invoke-virtual {v2, v3}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/server/wm/Task;
+    iget-object v0, v1, Lcom/android/server/wm/AppWindowToken;->mTask:Lcom/android/server/wm/Task;
 
     .line 808
     .local v0, "task":Lcom/android/server/wm/Task;
@@ -4549,15 +4539,13 @@
 
     move-result-object v3
 
-    const-string v4, " couldn\'t find taskId="
+    const-string v4, " couldn\'t find task for "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    iget v4, v1, Lcom/android/server/wm/AppWindowToken;->groupId:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 

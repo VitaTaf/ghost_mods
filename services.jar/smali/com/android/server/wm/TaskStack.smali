@@ -174,12 +174,12 @@
     .param p1, "duration"    # J
 
     .prologue
-    .line 307
+    .line 306
     new-instance v0, Landroid/util/TypedValue;
 
     invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
-    .line 308
+    .line 307
     .local v0, "tv":Landroid/util/TypedValue;
     iget-object v1, p0, Lcom/android/server/wm/TaskStack;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -195,14 +195,14 @@
 
     invoke-virtual {v1, v2, v0, v3}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
 
-    .line 310
+    .line 309
     iget v1, v0, Landroid/util/TypedValue;->type:I
 
     const/4 v2, 0x6
 
     if-ne v1, v2, :cond_1
 
-    .line 311
+    .line 310
     long-to-float v1, p1
 
     long-to-float v2, p1
@@ -213,12 +213,12 @@
 
     float-to-long p1, v1
 
-    .line 315
+    .line 314
     :cond_0
     :goto_0
     return-wide p1
 
-    .line 312
+    .line 311
     :cond_1
     iget v1, v0, Landroid/util/TypedValue;->type:I
 
@@ -232,7 +232,7 @@
 
     if-gt v1, v2, :cond_0
 
-    .line 313
+    .line 312
     iget v1, v0, Landroid/util/TypedValue;->data:I
 
     int-to-long p1, v1
@@ -285,7 +285,7 @@
 
     new-array v5, v1, [Ljava/lang/Object;
 
-    iget v1, p1, Lcom/android/server/wm/Task;->taskId:I
+    iget v1, p1, Lcom/android/server/wm/Task;->mTaskId:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -382,23 +382,23 @@
     .prologue
     const-wide/16 v2, 0xc8
 
-    .line 321
+    .line 320
     iget-object v5, p0, Lcom/android/server/wm/TaskStack;->mDimWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
 
     if-nez v5, :cond_2
 
-    .line 322
+    .line 321
     iget-object v5, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
 
     invoke-virtual {v5}, Lcom/android/server/wm/DimLayer;->getLayer()I
 
     move-result v1
 
-    .line 323
+    .line 322
     .local v1, "dimLayer":I
     const/4 v0, 0x0
 
-    .line 328
+    .line 327
     .local v0, "dimAmount":F
     :goto_0
     iget-object v5, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
@@ -407,23 +407,23 @@
 
     move-result v4
 
-    .line 329
+    .line 328
     .local v4, "targetAlpha":F
     cmpl-float v5, v4, v0
 
     if-eqz v5, :cond_6
 
-    .line 330
+    .line 329
     iget-object v5, p0, Lcom/android/server/wm/TaskStack;->mDimWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
 
     if-nez v5, :cond_3
 
-    .line 331
+    .line 330
     iget-object v5, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
 
     invoke-virtual {v5, v2, v3}, Lcom/android/server/wm/DimLayer;->hide(J)V
 
-    .line 344
+    .line 343
     :cond_0
     :goto_1
     iget-object v5, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
@@ -434,7 +434,7 @@
 
     if-eqz v5, :cond_1
 
-    .line 345
+    .line 344
     iget-object v5, p0, Lcom/android/server/wm/TaskStack;->mService:Lcom/android/server/wm/WindowManagerService;
 
     invoke-virtual {v5}, Lcom/android/server/wm/WindowManagerService;->okToDisplay()Z
@@ -443,19 +443,19 @@
 
     if-nez v5, :cond_7
 
-    .line 347
+    .line 346
     iget-object v5, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
 
     invoke-virtual {v5}, Lcom/android/server/wm/DimLayer;->show()V
 
-    .line 352
+    .line 351
     :cond_1
     const/4 v5, 0x0
 
     :goto_2
     return v5
 
-    .line 325
+    .line 324
     .end local v0    # "dimAmount":F
     .end local v1    # "dimLayer":I
     .end local v4    # "targetAlpha":F
@@ -466,7 +466,7 @@
 
     add-int/lit8 v1, v5, -0x1
 
-    .line 326
+    .line 325
     .restart local v1    # "dimLayer":I
     iget-object v5, p0, Lcom/android/server/wm/TaskStack;->mDimWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
 
@@ -479,7 +479,7 @@
     .restart local v0    # "dimAmount":F
     goto :goto_0
 
-    .line 333
+    .line 332
     .restart local v4    # "targetAlpha":F
     :cond_3
     iget-object v5, p0, Lcom/android/server/wm/TaskStack;->mDimWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
@@ -502,19 +502,19 @@
 
     move-result-wide v2
 
-    .line 336
+    .line 335
     .local v2, "duration":J
     :cond_4
     cmpl-float v5, v4, v0
 
     if-lez v5, :cond_5
 
-    .line 337
+    .line 336
     invoke-direct {p0, v2, v3}, Lcom/android/server/wm/TaskStack;->getDimBehindFadeDuration(J)J
 
     move-result-wide v2
 
-    .line 339
+    .line 338
     :cond_5
     iget-object v5, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
 
@@ -522,7 +522,7 @@
 
     goto :goto_1
 
-    .line 341
+    .line 340
     .end local v2    # "duration":J
     :cond_6
     iget-object v5, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
@@ -533,14 +533,14 @@
 
     if-eq v5, v1, :cond_0
 
-    .line 342
+    .line 341
     iget-object v5, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
 
     invoke-virtual {v5, v1}, Lcom/android/server/wm/DimLayer;->setLayer(I)V
 
     goto :goto_1
 
-    .line 349
+    .line 348
     :cond_7
     iget-object v5, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
 
@@ -556,12 +556,12 @@
     .param p1, "displayContent"    # Lcom/android/server/wm/DisplayContent;
 
     .prologue
-    .line 266
+    .line 265
     iget-object v0, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
 
     if-eqz v0, :cond_0
 
-    .line 267
+    .line 266
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "attachDisplayContent: Already attached"
@@ -570,11 +570,11 @@
 
     throw v0
 
-    .line 270
+    .line 269
     :cond_0
     iput-object p1, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
 
-    .line 271
+    .line 270
     new-instance v0, Lcom/android/server/wm/DimLayer;
 
     iget-object v1, p0, Lcom/android/server/wm/TaskStack;->mService:Lcom/android/server/wm/WindowManagerService;
@@ -583,7 +583,7 @@
 
     iput-object v0, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
 
-    .line 272
+    .line 271
     new-instance v0, Lcom/android/server/wm/DimLayer;
 
     iget-object v1, p0, Lcom/android/server/wm/TaskStack;->mService:Lcom/android/server/wm/WindowManagerService;
@@ -592,10 +592,10 @@
 
     iput-object v0, p0, Lcom/android/server/wm/TaskStack;->mAnimationBackgroundSurface:Lcom/android/server/wm/DimLayer;
 
-    .line 273
+    .line 272
     invoke-virtual {p0}, Lcom/android/server/wm/TaskStack;->updateDisplayInfo()V
 
-    .line 274
+    .line 273
     return-void
 .end method
 
@@ -603,21 +603,21 @@
     .locals 1
 
     .prologue
-    .line 416
+    .line 415
     iget-object v0, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
 
     iget-object v0, v0, Lcom/android/server/wm/DimLayer;->mDimSurface:Landroid/view/SurfaceControl;
 
     invoke-virtual {v0}, Landroid/view/SurfaceControl;->destroy()V
 
-    .line 417
+    .line 416
     iget-object v0, p0, Lcom/android/server/wm/TaskStack;->mAnimationBackgroundSurface:Lcom/android/server/wm/DimLayer;
 
     iget-object v0, v0, Lcom/android/server/wm/DimLayer;->mDimSurface:Landroid/view/SurfaceControl;
 
     invoke-virtual {v0}, Landroid/view/SurfaceControl;->destroy()V
 
-    .line 418
+    .line 417
     return-void
 .end method
 
@@ -627,17 +627,17 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 277
+    .line 276
     const/16 v6, 0x791e
 
     iget v7, p0, Lcom/android/server/wm/TaskStack;->mStackId:I
 
     invoke-static {v6, v7}, Landroid/util/EventLog;->writeEvent(II)I
 
-    .line 279
+    .line 278
     const/4 v3, 0x0
 
-    .line 280
+    .line 279
     .local v3, "doAnotherLayoutPass":Z
     iget-object v6, p0, Lcom/android/server/wm/TaskStack;->mTasks:Ljava/util/ArrayList;
 
@@ -651,7 +651,7 @@
     :goto_0
     if-ltz v4, :cond_2
 
-    .line 281
+    .line 280
     iget-object v6, p0, Lcom/android/server/wm/TaskStack;->mTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -662,7 +662,7 @@
 
     iget-object v1, v6, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
-    .line 282
+    .line 281
     .local v1, "appWindowTokens":Lcom/android/server/wm/AppTokenList;
     invoke-virtual {v1}, Lcom/android/server/wm/AppTokenList;->size()I
 
@@ -674,7 +674,7 @@
     :goto_1
     if-ltz v0, :cond_1
 
-    .line 283
+    .line 282
     invoke-virtual {v1, v0}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -683,7 +683,7 @@
 
     iget-object v2, v6, Lcom/android/server/wm/AppWindowToken;->allAppWindows:Lcom/android/server/wm/WindowList;
 
-    .line 284
+    .line 283
     .local v2, "appWindows":Lcom/android/server/wm/WindowList;
     invoke-virtual {v2}, Lcom/android/server/wm/WindowList;->size()I
 
@@ -695,7 +695,7 @@
     :goto_2
     if-ltz v5, :cond_0
 
-    .line 285
+    .line 284
     iget-object v7, p0, Lcom/android/server/wm/TaskStack;->mService:Lcom/android/server/wm/WindowManagerService;
 
     invoke-virtual {v2, v5}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
@@ -706,21 +706,21 @@
 
     invoke-virtual {v7, v8, v6}, Lcom/android/server/wm/WindowManagerService;->removeWindowInnerLocked(Lcom/android/server/wm/Session;Lcom/android/server/wm/WindowState;)V
 
-    .line 286
+    .line 285
     const/4 v3, 0x1
 
-    .line 284
+    .line 283
     add-int/lit8 v5, v5, -0x1
 
     goto :goto_2
 
-    .line 282
+    .line 281
     :cond_0
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_1
 
-    .line 280
+    .line 279
     .end local v2    # "appWindows":Lcom/android/server/wm/WindowList;
     .end local v5    # "winNdx":I
     :cond_1
@@ -728,38 +728,38 @@
 
     goto :goto_0
 
-    .line 290
+    .line 289
     .end local v0    # "appNdx":I
     .end local v1    # "appWindowTokens":Lcom/android/server/wm/AppTokenList;
     :cond_2
     if-eqz v3, :cond_3
 
-    .line 291
+    .line 290
     iget-object v6, p0, Lcom/android/server/wm/TaskStack;->mService:Lcom/android/server/wm/WindowManagerService;
 
     invoke-virtual {v6}, Lcom/android/server/wm/WindowManagerService;->requestTraversalLocked()V
 
-    .line 294
+    .line 293
     :cond_3
     iget-object v6, p0, Lcom/android/server/wm/TaskStack;->mAnimationBackgroundSurface:Lcom/android/server/wm/DimLayer;
 
     invoke-virtual {v6}, Lcom/android/server/wm/DimLayer;->destroySurface()V
 
-    .line 295
+    .line 294
     iput-object v8, p0, Lcom/android/server/wm/TaskStack;->mAnimationBackgroundSurface:Lcom/android/server/wm/DimLayer;
 
-    .line 296
+    .line 295
     iget-object v6, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
 
     invoke-virtual {v6}, Lcom/android/server/wm/DimLayer;->destroySurface()V
 
-    .line 297
+    .line 296
     iput-object v8, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
 
-    .line 298
+    .line 297
     iput-object v8, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
 
-    .line 299
+    .line 298
     return-void
 .end method
 
@@ -769,7 +769,7 @@
     .param p2, "pw"    # Ljava/io/PrintWriter;
 
     .prologue
-    .line 421
+    .line 420
     invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v3, "mStackId="
@@ -780,7 +780,7 @@
 
     invoke-virtual {p2, v3}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 422
+    .line 421
     invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v3, "mDeferDetach="
@@ -791,7 +791,7 @@
 
     invoke-virtual {p2, v3}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 423
+    .line 422
     const/4 v1, 0x0
 
     .local v1, "taskNdx":I
@@ -804,7 +804,7 @@
 
     if-ge v1, v3, :cond_0
 
-    .line 424
+    .line 423
     invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mTasks:Ljava/util/ArrayList;
@@ -815,12 +815,12 @@
 
     invoke-virtual {p2, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 423
+    .line 422
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 426
+    .line 425
     :cond_0
     iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mAnimationBackgroundSurface:Lcom/android/server/wm/DimLayer;
 
@@ -830,14 +830,14 @@
 
     if-eqz v3, :cond_1
 
-    .line 427
+    .line 426
     invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v3, "mWindowAnimationBackgroundSurface:"
 
     invoke-virtual {p2, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 428
+    .line 427
     iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mAnimationBackgroundSurface:Lcom/android/server/wm/DimLayer;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -860,7 +860,7 @@
 
     invoke-virtual {v3, v4, p2}, Lcom/android/server/wm/DimLayer;->printTo(Ljava/lang/String;Ljava/io/PrintWriter;)V
 
-    .line 430
+    .line 429
     :cond_1
     iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
 
@@ -870,19 +870,19 @@
 
     if-eqz v3, :cond_2
 
-    .line 431
+    .line 430
     invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v3, "mDimLayer:"
 
     invoke-virtual {p2, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 432
+    .line 431
     iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
 
     invoke-virtual {v3, p1, p2}, Lcom/android/server/wm/DimLayer;->printTo(Ljava/lang/String;Ljava/io/PrintWriter;)V
 
-    .line 433
+    .line 432
     invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v3, "mDimWinAnimator="
@@ -893,7 +893,7 @@
 
     invoke-virtual {p2, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 435
+    .line 434
     :cond_2
     iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mExitingAppTokens:Lcom/android/server/wm/AppTokenList;
 
@@ -903,15 +903,15 @@
 
     if-nez v3, :cond_3
 
-    .line 436
+    .line 435
     invoke-virtual {p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 437
+    .line 436
     const-string v3, "  Exiting application tokens:"
 
     invoke-virtual {p2, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 438
+    .line 437
     iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mExitingAppTokens:Lcom/android/server/wm/AppTokenList;
 
     invoke-virtual {v3}, Lcom/android/server/wm/AppTokenList;->size()I
@@ -924,7 +924,7 @@
     :goto_1
     if-ltz v0, :cond_3
 
-    .line 439
+    .line 438
     iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mExitingAppTokens:Lcom/android/server/wm/AppTokenList;
 
     invoke-virtual {v3, v0}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
@@ -933,7 +933,7 @@
 
     check-cast v2, Lcom/android/server/wm/WindowToken;
 
-    .line 440
+    .line 439
     .local v2, "token":Lcom/android/server/wm/WindowToken;
     const-string v3, "  Exiting App #"
 
@@ -941,29 +941,29 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 441
+    .line 440
     const/16 v3, 0x20
 
     invoke-virtual {p2, v3}, Ljava/io/PrintWriter;->print(C)V
 
     invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
 
-    .line 442
+    .line 441
     const/16 v3, 0x3a
 
     invoke-virtual {p2, v3}, Ljava/io/PrintWriter;->println(C)V
 
-    .line 443
+    .line 442
     const-string v3, "    "
 
     invoke-virtual {v2, p2, v3}, Lcom/android/server/wm/WindowToken;->dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
 
-    .line 438
+    .line 437
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_1
 
-    .line 446
+    .line 445
     .end local v0    # "i":I
     .end local v2    # "token":Lcom/android/server/wm/WindowToken;
     :cond_3
@@ -1149,7 +1149,7 @@
     .locals 1
 
     .prologue
-    .line 368
+    .line 367
     iget-object v0, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
 
     invoke-virtual {v0}, Lcom/android/server/wm/DimLayer;->isDimming()Z
@@ -1164,7 +1164,7 @@
     .param p1, "winAnimator"    # Lcom/android/server/wm/WindowStateAnimator;
 
     .prologue
-    .line 372
+    .line 371
     iget-object v0, p0, Lcom/android/server/wm/TaskStack;->mDimWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
 
     if-ne v0, p1, :cond_0
@@ -1237,93 +1237,89 @@
 .end method
 
 .method removeTask(Lcom/android/server/wm/Task;)V
-    .locals 6
+    .locals 5
     .param p1, "task"    # Lcom/android/server/wm/Task;
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
     .line 248
-    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mTasks:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mTasks:Ljava/util/ArrayList;
 
-    invoke-virtual {v3, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v2, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     .line 249
-    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
 
-    if-eqz v3, :cond_1
+    if-eqz v2, :cond_1
 
     .line 250
-    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mTasks:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mTasks:Ljava/util/ArrayList;
 
-    invoke-virtual {v3}, Ljava/util/ArrayList;->isEmpty()Z
+    invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_0
+    if-eqz v2, :cond_0
 
     .line 251
-    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
 
-    invoke-virtual {v3, p0, v5}, Lcom/android/server/wm/DisplayContent;->moveStack(Lcom/android/server/wm/TaskStack;Z)V
+    invoke-virtual {v2, p0, v4}, Lcom/android/server/wm/DisplayContent;->moveStack(Lcom/android/server/wm/TaskStack;Z)V
 
     .line 253
     :cond_0
-    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
 
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    iput-boolean v4, v3, Lcom/android/server/wm/DisplayContent;->layoutNeeded:Z
+    iput-boolean v3, v2, Lcom/android/server/wm/DisplayContent;->layoutNeeded:Z
 
     .line 255
     :cond_1
-    iget v1, p1, Lcom/android/server/wm/Task;->taskId:I
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mExitingAppTokens:Lcom/android/server/wm/AppTokenList;
 
-    .line 256
-    .local v1, "taskId":I
-    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mExitingAppTokens:Lcom/android/server/wm/AppTokenList;
+    invoke-virtual {v2}, Lcom/android/server/wm/AppTokenList;->size()I
 
-    invoke-virtual {v3}, Lcom/android/server/wm/AppTokenList;->size()I
+    move-result v2
 
-    move-result v3
-
-    add-int/lit8 v0, v3, -0x1
+    add-int/lit8 v0, v2, -0x1
 
     .local v0, "appNdx":I
     :goto_0
     if-ltz v0, :cond_3
 
+    .line 256
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mExitingAppTokens:Lcom/android/server/wm/AppTokenList;
+
+    invoke-virtual {v2, v0}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/server/wm/AppWindowToken;
+
     .line 257
-    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mExitingAppTokens:Lcom/android/server/wm/AppTokenList;
+    .local v1, "wtoken":Lcom/android/server/wm/AppWindowToken;
+    iget-object v2, v1, Lcom/android/server/wm/AppWindowToken;->mTask:Lcom/android/server/wm/Task;
 
-    invoke-virtual {v3, v0}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/android/server/wm/AppWindowToken;
+    if-ne v2, p1, :cond_2
 
     .line 258
-    .local v2, "wtoken":Lcom/android/server/wm/AppWindowToken;
-    iget v3, v2, Lcom/android/server/wm/AppWindowToken;->groupId:I
-
-    if-ne v3, v1, :cond_2
+    iput-boolean v4, v1, Lcom/android/server/wm/AppWindowToken;->mIsExiting:Z
 
     .line 259
-    iput-boolean v5, v2, Lcom/android/server/wm/AppWindowToken;->mIsExiting:Z
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mExitingAppTokens:Lcom/android/server/wm/AppTokenList;
 
-    .line 260
-    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mExitingAppTokens:Lcom/android/server/wm/AppTokenList;
+    invoke-virtual {v2, v0}, Lcom/android/server/wm/AppTokenList;->remove(I)Ljava/lang/Object;
 
-    invoke-virtual {v3, v0}, Lcom/android/server/wm/AppTokenList;->remove(I)Ljava/lang/Object;
-
-    .line 256
+    .line 255
     :cond_2
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 263
-    .end local v2    # "wtoken":Lcom/android/server/wm/AppWindowToken;
+    .line 262
+    .end local v1    # "wtoken":Lcom/android/server/wm/AppWindowToken;
     :cond_3
     return-void
 .end method
@@ -1332,17 +1328,17 @@
     .locals 1
 
     .prologue
-    .line 302
+    .line 301
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/wm/TaskStack;->mAnimationBackgroundAnimator:Lcom/android/server/wm/WindowStateAnimator;
 
-    .line 303
+    .line 302
     iget-object v0, p0, Lcom/android/server/wm/TaskStack;->mAnimationBackgroundSurface:Lcom/android/server/wm/DimLayer;
 
     invoke-virtual {v0}, Lcom/android/server/wm/DimLayer;->hide()V
 
-    .line 304
+    .line 303
     return-void
 .end method
 
@@ -1350,12 +1346,12 @@
     .locals 1
 
     .prologue
-    .line 356
+    .line 355
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/wm/TaskStack;->mDimmingTag:Z
 
-    .line 357
+    .line 356
     return-void
 .end method
 
@@ -1512,10 +1508,10 @@
     .param p2, "color"    # I
 
     .prologue
-    .line 393
+    .line 392
     iget v0, p1, Lcom/android/server/wm/WindowStateAnimator;->mAnimLayer:I
 
-    .line 394
+    .line 393
     .local v0, "animLayer":I
     iget-object v1, p0, Lcom/android/server/wm/TaskStack;->mAnimationBackgroundAnimator:Lcom/android/server/wm/WindowStateAnimator;
 
@@ -1527,18 +1523,18 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 396
+    .line 395
     :cond_0
     iput-object p1, p0, Lcom/android/server/wm/TaskStack;->mAnimationBackgroundAnimator:Lcom/android/server/wm/WindowStateAnimator;
 
-    .line 397
+    .line 396
     iget-object v1, p0, Lcom/android/server/wm/TaskStack;->mService:Lcom/android/server/wm/WindowManagerService;
 
     invoke-virtual {v1, p1}, Lcom/android/server/wm/WindowManagerService;->adjustAnimationBackground(Lcom/android/server/wm/WindowStateAnimator;)I
 
     move-result v0
 
-    .line 398
+    .line 397
     iget-object v1, p0, Lcom/android/server/wm/TaskStack;->mAnimationBackgroundSurface:Lcom/android/server/wm/DimLayer;
 
     add-int/lit8 v2, v0, -0x1
@@ -1557,7 +1553,7 @@
 
     invoke-virtual {v1, v2, v3, v4, v5}, Lcom/android/server/wm/DimLayer;->show(IFJ)V
 
-    .line 401
+    .line 400
     :cond_1
     return-void
 .end method
@@ -1642,12 +1638,12 @@
     .locals 1
 
     .prologue
-    .line 360
+    .line 359
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/wm/TaskStack;->mDimmingTag:Z
 
-    .line 361
+    .line 360
     return-void
 .end method
 
@@ -1656,10 +1652,10 @@
     .param p1, "newWinAnimator"    # Lcom/android/server/wm/WindowStateAnimator;
 
     .prologue
-    .line 377
+    .line 376
     iget-object v0, p0, Lcom/android/server/wm/TaskStack;->mDimWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
 
-    .line 379
+    .line 378
     .local v0, "existingDimWinAnimator":Lcom/android/server/wm/WindowStateAnimator;
     iget-boolean v1, p1, Lcom/android/server/wm/WindowStateAnimator;->mSurfaceShown:Z
 
@@ -1677,11 +1673,11 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 382
+    .line 381
     :cond_0
     iput-object p1, p0, Lcom/android/server/wm/TaskStack;->mDimWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
 
-    .line 384
+    .line 383
     :cond_1
     return-void
 .end method
@@ -1690,7 +1686,7 @@
     .locals 1
 
     .prologue
-    .line 387
+    .line 386
     iget-boolean v0, p0, Lcom/android/server/wm/TaskStack;->mDimmingTag:Z
 
     if-nez v0, :cond_0
@@ -1701,12 +1697,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 388
+    .line 387
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/wm/TaskStack;->mDimWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
 
-    .line 390
+    .line 389
     :cond_0
     return-void
 .end method
@@ -1716,14 +1712,14 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 404
+    .line 403
     iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    .line 405
+    .line 404
     .local v2, "top":I
     const/4 v1, 0x0
 
@@ -1731,7 +1727,7 @@
     :goto_0
     if-ge v1, v2, :cond_1
 
-    .line 406
+    .line 405
     iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1740,7 +1736,7 @@
 
     check-cast v0, Lcom/android/server/wm/Task;
 
-    .line 407
+    .line 406
     .local v0, "task":Lcom/android/server/wm/Task;
     iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -1752,26 +1748,26 @@
 
     if-eqz v3, :cond_0
 
-    .line 408
+    .line 407
     iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 409
+    .line 408
     iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 410
+    .line 409
     add-int/lit8 v2, v2, -0x1
 
-    .line 405
+    .line 404
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 413
+    .line 412
     .end local v0    # "task":Lcom/android/server/wm/Task;
     :cond_1
     return-void
@@ -1781,7 +1777,7 @@
     .locals 1
 
     .prologue
-    .line 364
+    .line 363
     iget-boolean v0, p0, Lcom/android/server/wm/TaskStack;->mDimmingTag:Z
 
     return v0
@@ -1791,7 +1787,7 @@
     .locals 2
 
     .prologue
-    .line 450
+    .line 449
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

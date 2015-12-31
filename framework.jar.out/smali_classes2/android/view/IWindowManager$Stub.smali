@@ -132,11 +132,11 @@
 
 .field static final TRANSACTION_setAnimationScales:I = 0x37
 
-.field static final TRANSACTION_setAppGroupId:I = 0x15
-
 .field static final TRANSACTION_setAppOrientation:I = 0x16
 
 .field static final TRANSACTION_setAppStartingWindow:I = 0x21
+
+.field static final TRANSACTION_setAppTask:I = 0x15
 
 .field static final TRANSACTION_setAppVisibility:I = 0x23
 
@@ -1241,7 +1241,7 @@
 
     .line 298
     .local v3, "_arg1":I
-    invoke-virtual {p0, v2, v3}, Landroid/view/IWindowManager$Stub;->setAppGroupId(Landroid/os/IBinder;I)V
+    invoke-virtual {p0, v2, v3}, Landroid/view/IWindowManager$Stub;->setAppTask(Landroid/os/IBinder;I)V
 
     .line 299
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
