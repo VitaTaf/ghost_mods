@@ -225,10 +225,10 @@
     .locals 3
 
     .prologue
-    .line 270
+    .line 271
     const/4 v0, 0x0
 
-    .line 271
+    .line 272
     .local v0, "result":Z
     iget-object v2, p0, Lcom/android/server/wm/DisplayContent;->mStacks:Ljava/util/ArrayList;
 
@@ -242,7 +242,7 @@
     :goto_0
     if-ltz v1, :cond_0
 
-    .line 272
+    .line 273
     iget-object v2, p0, Lcom/android/server/wm/DisplayContent;->mStacks:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -257,12 +257,12 @@
 
     or-int/2addr v0, v2
 
-    .line 271
+    .line 272
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_0
 
-    .line 274
+    .line 275
     :cond_0
     return v0
 .end method
@@ -314,12 +314,10 @@
     .locals 11
 
     .prologue
-    const/4 v10, 0x0
-
-    .line 315
+    .line 316
     const/4 v0, 0x0
 
-    .line 316
+    .line 317
     .local v0, "animating":Z
     iget-object v9, p0, Lcom/android/server/wm/DisplayContent;->mStacks:Ljava/util/ArrayList;
 
@@ -331,9 +329,9 @@
 
     .local v2, "stackNdx":I
     :goto_0
-    if-ltz v2, :cond_6
+    if-ltz v2, :cond_5
 
-    .line 317
+    .line 318
     iget-object v9, p0, Lcom/android/server/wm/DisplayContent;->mStacks:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -342,7 +340,7 @@
 
     check-cast v1, Lcom/android/server/wm/TaskStack;
 
-    .line 318
+    .line 319
     .local v1, "stack":Lcom/android/server/wm/TaskStack;
     invoke-virtual {v1}, Lcom/android/server/wm/TaskStack;->isAnimating()Z
 
@@ -350,33 +348,33 @@
 
     if-eqz v9, :cond_1
 
-    .line 319
+    .line 320
     const/4 v0, 0x1
 
-    .line 316
+    .line 317
     :cond_0
     add-int/lit8 v2, v2, -0x1
 
     goto :goto_0
 
-    .line 321
+    .line 322
     :cond_1
     iget-boolean v9, v1, Lcom/android/server/wm/TaskStack;->mDeferDetach:Z
 
     if-eqz v9, :cond_2
 
-    .line 322
+    .line 323
     iget-object v9, p0, Lcom/android/server/wm/DisplayContent;->mService:Lcom/android/server/wm/WindowManagerService;
 
     invoke-virtual {v9, p0, v1}, Lcom/android/server/wm/WindowManagerService;->detachStackLocked(Lcom/android/server/wm/DisplayContent;Lcom/android/server/wm/TaskStack;)V
 
-    .line 324
+    .line 325
     :cond_2
     invoke-virtual {v1}, Lcom/android/server/wm/TaskStack;->getTasks()Ljava/util/ArrayList;
 
     move-result-object v5
 
-    .line 325
+    .line 326
     .local v5, "tasks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/wm/Task;>;"
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
@@ -388,18 +386,18 @@
     :goto_1
     if-ltz v4, :cond_0
 
-    .line 326
+    .line 327
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/android/server/wm/Task;
 
-    .line 327
+    .line 328
     .local v3, "task":Lcom/android/server/wm/Task;
     iget-object v7, v3, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
-    .line 328
+    .line 329
     .local v7, "tokens":Lcom/android/server/wm/AppTokenList;
     invoke-virtual {v7}, Lcom/android/server/wm/AppTokenList;->size()I
 
@@ -411,82 +409,58 @@
     :goto_2
     if-ltz v6, :cond_4
 
-    .line 329
+    .line 330
     invoke-virtual {v7, v6}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
     check-cast v8, Lcom/android/server/wm/AppWindowToken;
 
-    .line 330
+    .line 331
     .local v8, "wtoken":Lcom/android/server/wm/AppWindowToken;
-    iget-boolean v9, v8, Lcom/android/server/wm/AppWindowToken;->mDeferRemoval:Z
+    iget-boolean v9, v8, Lcom/android/server/wm/AppWindowToken;->mIsExiting:Z
 
     if-eqz v9, :cond_3
 
-    .line 331
-    iget-object v9, v1, Lcom/android/server/wm/TaskStack;->mExitingAppTokens:Lcom/android/server/wm/AppTokenList;
-
-    invoke-virtual {v9, v8}, Lcom/android/server/wm/AppTokenList;->remove(Ljava/lang/Object;)Z
-
     .line 332
-    iput-boolean v10, v8, Lcom/android/server/wm/AppWindowToken;->mDeferRemoval:Z
+    invoke-virtual {v8}, Lcom/android/server/wm/AppWindowToken;->removeAppFromTaskLocked()V
 
-    .line 333
-    iget-object v9, p0, Lcom/android/server/wm/DisplayContent;->mService:Lcom/android/server/wm/WindowManagerService;
-
-    invoke-virtual {v9, v8}, Lcom/android/server/wm/WindowManagerService;->removeAppFromTaskLocked(Lcom/android/server/wm/AppWindowToken;)V
-
-    .line 328
+    .line 329
     :cond_3
     add-int/lit8 v6, v6, -0x1
 
     goto :goto_2
 
-    .line 336
+    .line 326
     .end local v8    # "wtoken":Lcom/android/server/wm/AppWindowToken;
     :cond_4
-    iget-boolean v9, v3, Lcom/android/server/wm/Task;->mDeferRemoval:Z
-
-    if-eqz v9, :cond_5
-
-    .line 337
-    iput-boolean v10, v3, Lcom/android/server/wm/Task;->mDeferRemoval:Z
-
-    .line 338
-    iget-object v9, p0, Lcom/android/server/wm/DisplayContent;->mService:Lcom/android/server/wm/WindowManagerService;
-
-    invoke-virtual {v9, v3}, Lcom/android/server/wm/WindowManagerService;->removeTaskLocked(Lcom/android/server/wm/Task;)V
-
-    .line 325
-    :cond_5
     add-int/lit8 v4, v4, -0x1
 
     goto :goto_1
 
-    .line 343
+    .line 338
     .end local v1    # "stack":Lcom/android/server/wm/TaskStack;
     .end local v3    # "task":Lcom/android/server/wm/Task;
     .end local v4    # "taskNdx":I
     .end local v5    # "tasks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/wm/Task;>;"
     .end local v6    # "tokenNdx":I
     .end local v7    # "tokens":Lcom/android/server/wm/AppTokenList;
-    :cond_6
-    if-nez v0, :cond_7
+    :cond_5
+    if-nez v0, :cond_6
 
     iget-boolean v9, p0, Lcom/android/server/wm/DisplayContent;->mDeferredRemoval:Z
 
-    if-eqz v9, :cond_7
+    if-eqz v9, :cond_6
 
-    .line 344
+    .line 339
     iget-object v9, p0, Lcom/android/server/wm/DisplayContent;->mService:Lcom/android/server/wm/WindowManagerService;
 
     iget v10, p0, Lcom/android/server/wm/DisplayContent;->mDisplayId:I
 
     invoke-virtual {v9, v10}, Lcom/android/server/wm/WindowManagerService;->onDisplayRemoved(I)V
 
-    .line 346
-    :cond_7
+    .line 341
+    :cond_6
     return-void
 .end method
 
@@ -494,7 +468,7 @@
     .locals 2
 
     .prologue
-    .line 299
+    .line 300
     iget-object v1, p0, Lcom/android/server/wm/DisplayContent;->mStacks:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -507,7 +481,7 @@
     :goto_0
     if-ltz v0, :cond_0
 
-    .line 300
+    .line 301
     iget-object v1, p0, Lcom/android/server/wm/DisplayContent;->mStacks:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -518,12 +492,12 @@
 
     invoke-virtual {v1}, Lcom/android/server/wm/TaskStack;->close()V
 
-    .line 299
+    .line 300
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 302
+    .line 303
     :cond_0
     return-void
 .end method
@@ -548,7 +522,7 @@
     .param p2, "pw"    # Ljava/io/PrintWriter;
 
     .prologue
-    .line 349
+    .line 344
     move-object/from16 v0, p2
 
     move-object/from16 v1, p1
@@ -569,7 +543,7 @@
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 350
+    .line 345
     new-instance v14, Ljava/lang/StringBuilder;
 
     invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
@@ -590,7 +564,7 @@
 
     move-result-object v6
 
-    .line 351
+    .line 346
     .local v6, "subPrefix":Ljava/lang/String;
     move-object/from16 v0, p2
 
@@ -616,7 +590,7 @@
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 352
+    .line 347
     move-object/from16 v0, p0
 
     iget v14, v0, Lcom/android/server/wm/DisplayContent;->mInitialDisplayHeight:I
@@ -639,14 +613,14 @@
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 353
+    .line 348
     const-string v14, "dpi"
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 354
+    .line 349
     move-object/from16 v0, p0
 
     iget v14, v0, Lcom/android/server/wm/DisplayContent;->mInitialDisplayWidth:I
@@ -677,7 +651,7 @@
 
     if-eq v14, v15, :cond_1
 
-    .line 357
+    .line 352
     :cond_0
     const-string v14, " base="
 
@@ -685,7 +659,7 @@
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 358
+    .line 353
     move-object/from16 v0, p0
 
     iget v14, v0, Lcom/android/server/wm/DisplayContent;->mBaseDisplayWidth:I
@@ -708,7 +682,7 @@
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 359
+    .line 354
     const-string v14, " "
 
     move-object/from16 v0, p2
@@ -729,7 +703,7 @@
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 361
+    .line 356
     :cond_1
     const-string v14, " cur="
 
@@ -737,7 +711,7 @@
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 362
+    .line 357
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mDisplayInfo:Landroid/view/DisplayInfo;
@@ -748,7 +722,7 @@
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 363
+    .line 358
     const-string v14, "x"
 
     move-object/from16 v0, p2
@@ -765,14 +739,14 @@
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 364
+    .line 359
     const-string v14, " app="
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 365
+    .line 360
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mDisplayInfo:Landroid/view/DisplayInfo;
@@ -783,7 +757,7 @@
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 366
+    .line 361
     const-string v14, "x"
 
     move-object/from16 v0, p2
@@ -800,7 +774,7 @@
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 367
+    .line 362
     const-string v14, " rng="
 
     move-object/from16 v0, p2
@@ -817,7 +791,7 @@
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 368
+    .line 363
     const-string v14, "x"
 
     move-object/from16 v0, p2
@@ -834,7 +808,7 @@
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 369
+    .line 364
     const-string v14, "-"
 
     move-object/from16 v0, p2
@@ -851,7 +825,7 @@
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 370
+    .line 365
     const-string v14, "x"
 
     move-object/from16 v0, p2
@@ -868,7 +842,7 @@
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 371
+    .line 366
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v6}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -887,7 +861,7 @@
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 372
+    .line 367
     const-string v14, " layoutNeeded="
 
     move-object/from16 v0, p2
@@ -902,7 +876,7 @@
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 373
+    .line 368
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mStacks:Ljava/util/ArrayList;
@@ -917,7 +891,7 @@
     :goto_0
     if-ltz v5, :cond_2
 
-    .line 374
+    .line 369
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mStacks:Ljava/util/ArrayList;
@@ -928,7 +902,7 @@
 
     check-cast v4, Lcom/android/server/wm/TaskStack;
 
-    .line 375
+    .line 370
     .local v4, "stack":Lcom/android/server/wm/TaskStack;
     move-object/from16 v0, p2
 
@@ -970,7 +944,7 @@
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 376
+    .line 371
     new-instance v14, Ljava/lang/StringBuilder;
 
     invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
@@ -995,27 +969,27 @@
 
     invoke-virtual {v4, v14, v0}, Lcom/android/server/wm/TaskStack;->dump(Ljava/lang/String;Ljava/io/PrintWriter;)V
 
-    .line 373
+    .line 368
     add-int/lit8 v5, v5, -0x1
 
     goto :goto_0
 
-    .line 378
+    .line 373
     .end local v4    # "stack":Lcom/android/server/wm/TaskStack;
     :cond_2
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 379
+    .line 374
     const-string v14, "  Application tokens in top down Z order:"
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 380
+    .line 375
     const/4 v3, 0x0
 
-    .line 381
+    .line 376
     .local v3, "ndx":I
     move-object/from16 v0, p0
 
@@ -1030,7 +1004,7 @@
     :goto_1
     if-ltz v5, :cond_5
 
-    .line 382
+    .line 377
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mStacks:Ljava/util/ArrayList;
@@ -1041,7 +1015,7 @@
 
     check-cast v4, Lcom/android/server/wm/TaskStack;
 
-    .line 383
+    .line 378
     .restart local v4    # "stack":Lcom/android/server/wm/TaskStack;
     const-string v14, "  mStackId="
 
@@ -1055,12 +1029,12 @@
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 384
+    .line 379
     invoke-virtual {v4}, Lcom/android/server/wm/TaskStack;->getTasks()Ljava/util/ArrayList;
 
     move-result-object v9
 
-    .line 385
+    .line 380
     .local v9, "tasks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/wm/Task;>;"
     invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
 
@@ -1072,14 +1046,14 @@
     :goto_2
     if-ltz v8, :cond_4
 
-    .line 386
+    .line 381
     invoke-virtual {v9, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
     check-cast v7, Lcom/android/server/wm/Task;
 
-    .line 387
+    .line 382
     .local v7, "task":Lcom/android/server/wm/Task;
     const-string v14, "    mTaskId="
 
@@ -1093,10 +1067,10 @@
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 388
+    .line 383
     iget-object v12, v7, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
-    .line 389
+    .line 384
     .local v12, "tokens":Lcom/android/server/wm/AppTokenList;
     invoke-virtual {v12}, Lcom/android/server/wm/AppTokenList;->size()I
 
@@ -1108,14 +1082,14 @@
     :goto_3
     if-ltz v11, :cond_3
 
-    .line 390
+    .line 385
     invoke-virtual {v12, v11}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
 
     move-result-object v13
 
     check-cast v13, Lcom/android/server/wm/AppWindowToken;
 
-    .line 391
+    .line 386
     .local v13, "wtoken":Lcom/android/server/wm/AppWindowToken;
     const-string v14, "    Activity #"
 
@@ -1127,7 +1101,7 @@
 
     invoke-virtual {v0, v11}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 392
+    .line 387
     const/16 v14, 0x20
 
     move-object/from16 v0, p2
@@ -1144,28 +1118,28 @@
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 393
+    .line 388
     const-string v14, "      "
 
     move-object/from16 v0, p2
 
     invoke-virtual {v13, v0, v14}, Lcom/android/server/wm/AppWindowToken;->dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
 
-    .line 389
+    .line 384
     add-int/lit8 v11, v11, -0x1
 
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_3
 
-    .line 385
+    .line 380
     .end local v13    # "wtoken":Lcom/android/server/wm/AppWindowToken;
     :cond_3
     add-int/lit8 v8, v8, -0x1
 
     goto :goto_2
 
-    .line 381
+    .line 376
     .end local v7    # "task":Lcom/android/server/wm/Task;
     .end local v11    # "tokenNdx":I
     .end local v12    # "tokens":Lcom/android/server/wm/AppTokenList;
@@ -1174,25 +1148,25 @@
 
     goto :goto_1
 
-    .line 397
+    .line 392
     .end local v4    # "stack":Lcom/android/server/wm/TaskStack;
     .end local v8    # "taskNdx":I
     .end local v9    # "tasks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/wm/Task;>;"
     :cond_5
     if-nez v3, :cond_6
 
-    .line 398
+    .line 393
     const-string v14, "    None"
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 400
+    .line 395
     :cond_6
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 401
+    .line 396
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mExitingTokens:Ljava/util/ArrayList;
@@ -1203,17 +1177,17 @@
 
     if-nez v14, :cond_7
 
-    .line 402
+    .line 397
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 403
+    .line 398
     const-string v14, "  Exiting tokens:"
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 404
+    .line 399
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mExitingTokens:Ljava/util/ArrayList;
@@ -1228,7 +1202,7 @@
     :goto_4
     if-ltz v2, :cond_7
 
-    .line 405
+    .line 400
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mExitingTokens:Ljava/util/ArrayList;
@@ -1239,7 +1213,7 @@
 
     check-cast v10, Lcom/android/server/wm/WindowToken;
 
-    .line 406
+    .line 401
     .local v10, "token":Lcom/android/server/wm/WindowToken;
     const-string v14, "  Exiting #"
 
@@ -1251,7 +1225,7 @@
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 407
+    .line 402
     const/16 v14, 0x20
 
     move-object/from16 v0, p2
@@ -1262,32 +1236,32 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
 
-    .line 408
+    .line 403
     const/16 v14, 0x3a
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->println(C)V
 
-    .line 409
+    .line 404
     const-string v14, "    "
 
     move-object/from16 v0, p2
 
     invoke-virtual {v10, v0, v14}, Lcom/android/server/wm/WindowToken;->dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
 
-    .line 404
+    .line 399
     add-int/lit8 v2, v2, -0x1
 
     goto :goto_4
 
-    .line 412
+    .line 407
     .end local v2    # "i":I
     .end local v10    # "token":Lcom/android/server/wm/WindowToken;
     :cond_7
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 413
+    .line 408
     return-void
 .end method
 
@@ -1573,7 +1547,7 @@
     .locals 3
 
     .prologue
-    .line 305
+    .line 306
     iget-object v2, p0, Lcom/android/server/wm/DisplayContent;->mStacks:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -1586,7 +1560,7 @@
     :goto_0
     if-ltz v1, :cond_1
 
-    .line 306
+    .line 307
     iget-object v2, p0, Lcom/android/server/wm/DisplayContent;->mStacks:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1595,7 +1569,7 @@
 
     check-cast v0, Lcom/android/server/wm/TaskStack;
 
-    .line 307
+    .line 308
     .local v0, "stack":Lcom/android/server/wm/TaskStack;
     invoke-virtual {v0}, Lcom/android/server/wm/TaskStack;->isAnimating()Z
 
@@ -1603,22 +1577,22 @@
 
     if-eqz v2, :cond_0
 
-    .line 308
+    .line 309
     const/4 v2, 0x1
 
-    .line 311
+    .line 312
     .end local v0    # "stack":Lcom/android/server/wm/TaskStack;
     :goto_1
     return v2
 
-    .line 305
+    .line 306
     .restart local v0    # "stack":Lcom/android/server/wm/TaskStack;
     :cond_0
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_0
 
-    .line 311
+    .line 312
     .end local v0    # "stack":Lcom/android/server/wm/TaskStack;
     :cond_1
     const/4 v2, 0x0
@@ -1630,7 +1604,7 @@
     .locals 2
 
     .prologue
-    .line 284
+    .line 285
     iget-object v1, p0, Lcom/android/server/wm/DisplayContent;->mStacks:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1643,7 +1617,7 @@
     :goto_0
     if-ltz v0, :cond_1
 
-    .line 285
+    .line 286
     iget-object v1, p0, Lcom/android/server/wm/DisplayContent;->mStacks:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1658,20 +1632,20 @@
 
     if-eqz v1, :cond_0
 
-    .line 286
+    .line 287
     const/4 v1, 0x1
 
-    .line 289
+    .line 290
     :goto_1
     return v1
 
-    .line 284
+    .line 285
     :cond_0
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 289
+    .line 290
     :cond_1
     const/4 v1, 0x0
 
@@ -1743,7 +1717,7 @@
     .locals 2
 
     .prologue
-    .line 264
+    .line 265
     iget-object v1, p0, Lcom/android/server/wm/DisplayContent;->mStacks:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1756,7 +1730,7 @@
     :goto_0
     if-ltz v0, :cond_0
 
-    .line 265
+    .line 266
     iget-object v1, p0, Lcom/android/server/wm/DisplayContent;->mStacks:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1767,12 +1741,12 @@
 
     invoke-virtual {v1}, Lcom/android/server/wm/TaskStack;->resetAnimationBackgroundAnimator()V
 
-    .line 264
+    .line 265
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 267
+    .line 268
     :cond_0
     return-void
 .end method
@@ -1781,7 +1755,7 @@
     .locals 2
 
     .prologue
-    .line 278
+    .line 279
     iget-object v1, p0, Lcom/android/server/wm/DisplayContent;->mStacks:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1794,7 +1768,7 @@
     :goto_0
     if-ltz v0, :cond_0
 
-    .line 279
+    .line 280
     iget-object v1, p0, Lcom/android/server/wm/DisplayContent;->mStacks:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1805,12 +1779,12 @@
 
     invoke-virtual {v1}, Lcom/android/server/wm/TaskStack;->resetDimmingTag()V
 
-    .line 278
+    .line 279
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 281
+    .line 282
     :cond_0
     return-void
 .end method
@@ -1916,6 +1890,8 @@
     .end local v1    # "stack":Lcom/android/server/wm/TaskStack;
     .end local v2    # "win":Lcom/android/server/wm/WindowState;
     :cond_1
+
+    .line 245
     return-void
 .end method
 
@@ -1989,7 +1965,7 @@
     .locals 2
 
     .prologue
-    .line 293
+    .line 294
     iget-object v1, p0, Lcom/android/server/wm/DisplayContent;->mStacks:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -2002,7 +1978,7 @@
     :goto_0
     if-ltz v0, :cond_0
 
-    .line 294
+    .line 295
     iget-object v1, p0, Lcom/android/server/wm/DisplayContent;->mStacks:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2013,12 +1989,12 @@
 
     invoke-virtual {v1}, Lcom/android/server/wm/TaskStack;->stopDimmingIfNeeded()V
 
-    .line 293
+    .line 294
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 296
+    .line 297
     :cond_0
     return-void
 .end method
@@ -2028,12 +2004,12 @@
     .param p1, "newUserId"    # I
 
     .prologue
-    .line 247
+    .line 248
     invoke-virtual {p0}, Lcom/android/server/wm/DisplayContent;->getWindowList()Lcom/android/server/wm/WindowList;
 
     move-result-object v3
 
-    .line 248
+    .line 249
     .local v3, "windows":Lcom/android/server/wm/WindowList;
     const/4 v0, 0x0
 
@@ -2045,14 +2021,14 @@
 
     if-ge v0, v4, :cond_1
 
-    .line 249
+    .line 250
     invoke-virtual {v3, v0}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcom/android/server/wm/WindowState;
 
-    .line 250
+    .line 251
     .local v2, "win":Lcom/android/server/wm/WindowState;
     invoke-virtual {v2}, Lcom/android/server/wm/WindowState;->isHiddenFromUserLocked()Z
 
@@ -2060,18 +2036,18 @@
 
     if-eqz v4, :cond_0
 
-    .line 254
+    .line 255
     const/4 v4, 0x0
 
     invoke-virtual {v2, v4}, Lcom/android/server/wm/WindowState;->hideLw(Z)Z
 
-    .line 248
+    .line 249
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 258
+    .line 259
     .end local v2    # "win":Lcom/android/server/wm/WindowState;
     :cond_1
     iget-object v4, p0, Lcom/android/server/wm/DisplayContent;->mStacks:Ljava/util/ArrayList;
@@ -2086,7 +2062,7 @@
     :goto_1
     if-ltz v1, :cond_2
 
-    .line 259
+    .line 260
     iget-object v4, p0, Lcom/android/server/wm/DisplayContent;->mStacks:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2097,12 +2073,12 @@
 
     invoke-virtual {v4, p1}, Lcom/android/server/wm/TaskStack;->switchUser(I)V
 
-    .line 258
+    .line 259
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_1
 
-    .line 261
+    .line 262
     :cond_2
     return-void
 .end method
@@ -2111,7 +2087,7 @@
     .locals 2
 
     .prologue
-    .line 417
+    .line 412
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

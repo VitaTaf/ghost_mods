@@ -60,9 +60,9 @@
 
 .field private static final HEAP_FULL_COLUMN:Ljava/lang/String; = "%13s %8s %8s %8s %8s %8s %8s %8s %8s %8s %8s"
 
-.field private static final LOG_ON_PAUSE_CALLED:I = 0x7545
+.field private static final LOG_AM_ON_PAUSE_CALLED:I = 0x7545
 
-.field private static final LOG_ON_RESUME_CALLED:I = 0x7546
+.field private static final LOG_AM_ON_RESUME_CALLED:I = 0x7546
 
 .field private static final MIN_TIME_BETWEEN_GCS:J = 0x1388L
 
