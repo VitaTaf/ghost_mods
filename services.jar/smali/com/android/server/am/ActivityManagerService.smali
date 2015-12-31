@@ -40340,7 +40340,7 @@
 
     iget-object v4, v4, Lcom/android/server/am/TaskRecord;->stack:Lcom/android/server/am/ActivityStack;
 
-    invoke-virtual {v4}, Lcom/android/server/am/ActivityStack;->releaseBackgroundResources()V
+    invoke-virtual {v4, v2}, Lcom/android/server/am/ActivityStack;->releaseBackgroundResources(Lcom/android/server/am/ActivityRecord;)V
 
     .line 10753
     iget-object v4, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
@@ -40485,7 +40485,7 @@
 
     iget-object v6, v6, Lcom/android/server/am/TaskRecord;->stack:Lcom/android/server/am/ActivityStack;
 
-    invoke-virtual {v6, v1}, Lcom/android/server/am/ActivityStack;->convertToTranslucent(Lcom/android/server/am/ActivityRecord;)V
+    invoke-virtual {v6, v1}, Lcom/android/server/am/ActivityStack;->convertActivityToTranslucent(Lcom/android/server/am/ActivityRecord;)V
 
     .line 10781
     :cond_2
@@ -75377,7 +75377,7 @@
     .line 8260
     const-string v2, "android.permission.MANAGE_ACTIVITY_STACKS"
 
-    const-string v3, "resizeStackBox()"
+    const-string v3, "resizeStack()"
 
     invoke-virtual {p0, v2, v3}, Lcom/android/server/am/ActivityManagerService;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
