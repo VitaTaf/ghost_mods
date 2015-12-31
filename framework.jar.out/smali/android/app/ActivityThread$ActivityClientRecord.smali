@@ -45,6 +45,8 @@
 
 .field onlyLocalRequest:Z
 
+.field overrideConfig:Landroid/content/res/Configuration;
+
 .field packageInfo:Landroid/app/LoadedApk;
 
 .field parent:Landroid/app/Activity;
@@ -103,28 +105,28 @@
 
     const/4 v0, 0x0
 
-    .line 326
+    .line 319
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 327
+    .line 320
     iput-object v1, p0, Landroid/app/ActivityThread$ActivityClientRecord;->parent:Landroid/app/Activity;
 
-    .line 328
+    .line 321
     iput-object v1, p0, Landroid/app/ActivityThread$ActivityClientRecord;->embeddedID:Ljava/lang/String;
 
-    .line 329
+    .line 322
     iput-boolean v0, p0, Landroid/app/ActivityThread$ActivityClientRecord;->paused:Z
 
-    .line 330
+    .line 323
     iput-boolean v0, p0, Landroid/app/ActivityThread$ActivityClientRecord;->stopped:Z
 
-    .line 331
+    .line 324
     iput-boolean v0, p0, Landroid/app/ActivityThread$ActivityClientRecord;->hideForNow:Z
 
-    .line 332
+    .line 325
     iput-object v1, p0, Landroid/app/ActivityThread$ActivityClientRecord;->nextIdle:Landroid/app/ActivityThread$ActivityClientRecord;
 
-    .line 333
+    .line 326
     return-void
 .end method
 
@@ -134,7 +136,7 @@
     .locals 2
 
     .prologue
-    .line 344
+    .line 337
     iget-object v0, p0, Landroid/app/ActivityThread$ActivityClientRecord;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget v0, v0, Landroid/content/pm/ActivityInfo;->persistableMode:I
@@ -160,12 +162,12 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 336
+    .line 329
     iget-object v1, p0, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     if-eqz v1, :cond_0
 
-    .line 337
+    .line 330
     iget-object v1, p0, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v1}, Landroid/app/Activity;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
@@ -180,7 +182,7 @@
 
     const/4 v0, 0x1
 
-    .line 340
+    .line 333
     :cond_0
     return v0
 .end method
@@ -189,7 +191,7 @@
     .locals 3
 
     .prologue
-    .line 348
+    .line 341
     iget-object v1, p0, Landroid/app/ActivityThread$ActivityClientRecord;->intent:Landroid/content/Intent;
 
     if-eqz v1, :cond_0
@@ -200,7 +202,7 @@
 
     move-result-object v0
 
-    .line 349
+    .line 342
     .local v0, "componentName":Landroid/content/ComponentName;
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
@@ -264,14 +266,14 @@
 
     return-object v1
 
-    .line 348
+    .line 341
     .end local v0    # "componentName":Landroid/content/ComponentName;
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 349
+    .line 342
     .restart local v0    # "componentName":Landroid/content/ComponentName;
     :cond_1
     invoke-virtual {v0}, Landroid/content/ComponentName;->toShortString()Ljava/lang/String;

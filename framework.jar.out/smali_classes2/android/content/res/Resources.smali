@@ -162,17 +162,6 @@
 
 .field private mTmpValue:Landroid/util/TypedValue;
 
-.field private mToken:Ljava/lang/ref/WeakReference;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/lang/ref/WeakReference",
-            "<",
-            "Landroid/os/IBinder;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field final mTypedArrayPool:Landroid/util/Pools$SynchronizedPool;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -412,43 +401,32 @@
 .end method
 
 .method public constructor <init>(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;)V
-    .locals 6
+    .locals 1
     .param p1, "assets"    # Landroid/content/res/AssetManager;
     .param p2, "metrics"    # Landroid/util/DisplayMetrics;
     .param p3, "config"    # Landroid/content/res/Configuration;
 
     .prologue
-    .line 235
-    sget-object v4, Landroid/content/res/CompatibilityInfo;->DEFAULT_COMPATIBILITY_INFO:Landroid/content/res/CompatibilityInfo;
+    .line 232
+    sget-object v0, Landroid/content/res/CompatibilityInfo;->DEFAULT_COMPATIBILITY_INFO:Landroid/content/res/CompatibilityInfo;
 
-    const/4 v5, 0x0
+    invoke-direct {p0, p1, p2, p3, v0}, Landroid/content/res/Resources;-><init>(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;)V
 
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v3, p3
-
-    invoke-direct/range {v0 .. v5}, Landroid/content/res/Resources;-><init>(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;Landroid/os/IBinder;)V
-
-    .line 236
+    .line 233
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;Landroid/os/IBinder;)V
+.method public constructor <init>(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;)V
     .locals 3
     .param p1, "assets"    # Landroid/content/res/AssetManager;
     .param p2, "metrics"    # Landroid/util/DisplayMetrics;
     .param p3, "config"    # Landroid/content/res/Configuration;
     .param p4, "compatInfo"    # Landroid/content/res/CompatibilityInfo;
-    .param p5, "token"    # Landroid/os/IBinder;
 
     .prologue
     const/4 v2, 0x4
 
-    .line 251
+    .line 247
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 105
@@ -573,13 +551,6 @@
 
     .line 257
     :cond_0
-    new-instance v0, Ljava/lang/ref/WeakReference;
-
-    invoke-direct {v0, p5}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object v0, p0, Landroid/content/res/Resources;->mToken:Ljava/lang/ref/WeakReference;
-
-    .line 258
     invoke-virtual {p0, p3, p2}, Landroid/content/res/Resources;->updateConfiguration(Landroid/content/res/Configuration;Landroid/util/DisplayMetrics;)V
 
     .line 259
@@ -589,6 +560,8 @@
     return-void
 
     .line 133
+    nop
+
     :array_0
     .array-data 4
         0x0

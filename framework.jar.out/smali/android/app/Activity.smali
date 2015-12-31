@@ -7751,12 +7751,12 @@
 .end method
 
 .method public recreate()V
-    .locals 8
+    .locals 9
 
     .prologue
-    const/4 v2, 0x0
-
     const/4 v4, 0x0
+
+    const/4 v2, 0x0
 
     .line 4636
     iget-object v0, p0, Landroid/app/Activity;->mParent:Landroid/app/Activity;
@@ -7807,9 +7807,11 @@
 
     move-object v6, v2
 
-    move v7, v4
+    move-object v7, v2
 
-    invoke-virtual/range {v0 .. v7}, Landroid/app/ActivityThread;->requestRelaunchActivity(Landroid/os/IBinder;Ljava/util/List;Ljava/util/List;IZLandroid/content/res/Configuration;Z)V
+    move v8, v4
+
+    invoke-virtual/range {v0 .. v8}, Landroid/app/ActivityThread;->requestRelaunchActivity(Landroid/os/IBinder;Ljava/util/List;Ljava/util/List;IZLandroid/content/res/Configuration;Landroid/content/res/Configuration;Z)V
 
     .line 4643
     return-void

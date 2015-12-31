@@ -807,7 +807,7 @@
 .end method
 
 .method private constructor <init>(Landroid/app/ContextImpl;Landroid/app/ActivityThread;Landroid/app/LoadedApk;Landroid/os/IBinder;Landroid/os/UserHandle;ZLandroid/view/Display;Landroid/content/res/Configuration;)V
-    .locals 12
+    .locals 11
     .param p1, "container"    # Landroid/app/ContextImpl;
     .param p2, "mainThread"    # Landroid/app/ActivityThread;
     .param p3, "packageInfo"    # Landroid/app/LoadedApk;
@@ -818,109 +818,107 @@
     .param p8, "overrideConfiguration"    # Landroid/content/res/Configuration;
 
     .prologue
-    .line 2398
+    .line 2258
     invoke-direct {p0}, Landroid/content/Context;-><init>()V
 
-    .line 254
+    .line 233
     new-instance v1, Landroid/view/DisplayAdjustments;
 
     invoke-direct {v1}, Landroid/view/DisplayAdjustments;-><init>()V
 
     iput-object v1, p0, Landroid/app/ContextImpl;->mDisplayAdjustments:Landroid/view/DisplayAdjustments;
 
-    .line 260
+    .line 239
     const/4 v1, 0x0
 
     iput v1, p0, Landroid/app/ContextImpl;->mThemeResource:I
 
-    .line 261
+    .line 240
     const/4 v1, 0x0
 
     iput-object v1, p0, Landroid/app/ContextImpl;->mTheme:Landroid/content/res/Resources$Theme;
 
-    .line 263
+    .line 242
     const/4 v1, 0x0
 
     iput-object v1, p0, Landroid/app/ContextImpl;->mReceiverRestrictedContext:Landroid/content/Context;
 
-    .line 265
+    .line 244
     new-instance v1, Ljava/lang/Object;
 
     invoke-direct {v1}, Ljava/lang/Object;-><init>()V
 
     iput-object v1, p0, Landroid/app/ContextImpl;->mSync:Ljava/lang/Object;
 
-    .line 924
+    .line 785
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Landroid/app/ContextImpl;->mServiceCache:Ljava/util/ArrayList;
 
-    .line 2399
+    .line 2259
     iput-object p0, p0, Landroid/app/ContextImpl;->mOuterContext:Landroid/content/Context;
 
-    .line 2401
+    .line 2261
     iput-object p2, p0, Landroid/app/ContextImpl;->mMainThread:Landroid/app/ActivityThread;
 
-    .line 2402
-    move-object/from16 v0, p4
+    .line 2262
+    iput-object p4, p0, Landroid/app/ContextImpl;->mActivityToken:Landroid/os/IBinder;
 
-    iput-object v0, p0, Landroid/app/ContextImpl;->mActivityToken:Landroid/os/IBinder;
-
-    .line 2403
+    .line 2263
     move/from16 v0, p6
 
     iput-boolean v0, p0, Landroid/app/ContextImpl;->mRestricted:Z
 
-    .line 2405
+    .line 2265
     if-nez p5, :cond_0
 
-    .line 2406
+    .line 2266
     invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;
 
     move-result-object p5
 
-    .line 2408
+    .line 2268
     :cond_0
     move-object/from16 v0, p5
 
     iput-object v0, p0, Landroid/app/ContextImpl;->mUser:Landroid/os/UserHandle;
 
-    .line 2410
+    .line 2270
     iput-object p3, p0, Landroid/app/ContextImpl;->mPackageInfo:Landroid/app/LoadedApk;
 
-    .line 2411
+    .line 2271
     invoke-static {}, Landroid/app/ResourcesManager;->getInstance()Landroid/app/ResourcesManager;
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/app/ContextImpl;->mResourcesManager:Landroid/app/ResourcesManager;
 
-    .line 2412
+    .line 2272
     move-object/from16 v0, p7
 
     iput-object v0, p0, Landroid/app/ContextImpl;->mDisplay:Landroid/view/Display;
 
-    .line 2413
+    .line 2273
     move-object/from16 v0, p8
 
     iput-object v0, p0, Landroid/app/ContextImpl;->mOverrideConfiguration:Landroid/content/res/Configuration;
 
-    .line 2415
+    .line 2275
     invoke-direct {p0}, Landroid/app/ContextImpl;->getDisplayId()I
 
     move-result v6
 
-    .line 2416
+    .line 2276
     .local v6, "displayId":I
     const/4 v8, 0x0
 
-    .line 2417
+    .line 2277
     .local v8, "compatInfo":Landroid/content/res/CompatibilityInfo;
     if-eqz p1, :cond_1
 
-    .line 2418
+    .line 2278
     invoke-virtual {p1, v6}, Landroid/app/ContextImpl;->getDisplayAdjustments(I)Landroid/view/DisplayAdjustments;
 
     move-result-object v1
@@ -929,42 +927,38 @@
 
     move-result-object v8
 
-    .line 2420
+    .line 2280
     :cond_1
     if-nez v8, :cond_2
 
     if-nez v6, :cond_2
 
-    .line 2421
+    .line 2281
     invoke-virtual {p3}, Landroid/app/LoadedApk;->getCompatibilityInfo()Landroid/content/res/CompatibilityInfo;
 
     move-result-object v8
 
-    .line 2423
+    .line 2283
     :cond_2
     iget-object v1, p0, Landroid/app/ContextImpl;->mDisplayAdjustments:Landroid/view/DisplayAdjustments;
 
     invoke-virtual {v1, v8}, Landroid/view/DisplayAdjustments;->setCompatibilityInfo(Landroid/content/res/CompatibilityInfo;)V
 
-    .line 2424
+    .line 2284
     iget-object v1, p0, Landroid/app/ContextImpl;->mDisplayAdjustments:Landroid/view/DisplayAdjustments;
 
-    move-object/from16 v0, p4
+    invoke-virtual {v1, p4}, Landroid/view/DisplayAdjustments;->setActivityToken(Landroid/os/IBinder;)V
 
-    invoke-virtual {v1, v0}, Landroid/view/DisplayAdjustments;->setActivityToken(Landroid/os/IBinder;)V
-
-    .line 2426
+    .line 2286
     invoke-virtual {p3, p2}, Landroid/app/LoadedApk;->getResources(Landroid/app/ActivityThread;)Landroid/content/res/Resources;
 
-    move-result-object v11
+    move-result-object v10
 
-    .line 2427
-    .local v11, "resources":Landroid/content/res/Resources;
-    if-eqz v11, :cond_4
+    .line 2287
+    .local v10, "resources":Landroid/content/res/Resources;
+    if-eqz v10, :cond_4
 
-    .line 2428
-    if-nez p4, :cond_3
-
+    .line 2288
     if-nez v6, :cond_3
 
     if-nez p8, :cond_3
@@ -973,7 +967,7 @@
 
     iget v1, v8, Landroid/content/res/CompatibilityInfo;->applicationScale:F
 
-    invoke-virtual {v11}, Landroid/content/res/Resources;->getCompatibilityInfo()Landroid/content/res/CompatibilityInfo;
+    invoke-virtual {v10}, Landroid/content/res/Resources;->getCompatibilityInfo()Landroid/content/res/CompatibilityInfo;
 
     move-result-object v2
 
@@ -983,7 +977,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 2433
+    .line 2292
     :cond_3
     iget-object v1, p0, Landroid/app/ContextImpl;->mResourcesManager:Landroid/app/ResourcesManager;
 
@@ -1007,30 +1001,28 @@
 
     move-object/from16 v7, p8
 
-    move-object/from16 v9, p4
+    invoke-virtual/range {v1 .. v8}, Landroid/app/ResourcesManager;->getTopLevelResources(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;ILandroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;)Landroid/content/res/Resources;
 
-    invoke-virtual/range {v1 .. v9}, Landroid/app/ResourcesManager;->getTopLevelResources(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;ILandroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;Landroid/os/IBinder;)Landroid/content/res/Resources;
+    move-result-object v10
 
-    move-result-object v11
-
-    .line 2439
+    .line 2298
     :cond_4
-    iput-object v11, p0, Landroid/app/ContextImpl;->mResources:Landroid/content/res/Resources;
+    iput-object v10, p0, Landroid/app/ContextImpl;->mResources:Landroid/content/res/Resources;
 
-    .line 2441
+    .line 2300
     if-eqz p1, :cond_5
 
-    .line 2442
+    .line 2301
     iget-object v1, p1, Landroid/app/ContextImpl;->mBasePackageName:Ljava/lang/String;
 
     iput-object v1, p0, Landroid/app/ContextImpl;->mBasePackageName:Ljava/lang/String;
 
-    .line 2443
+    .line 2302
     iget-object v1, p1, Landroid/app/ContextImpl;->mOpPackageName:Ljava/lang/String;
 
     iput-object v1, p0, Landroid/app/ContextImpl;->mOpPackageName:Ljava/lang/String;
 
-    .line 2458
+    .line 2317
     :goto_0
     new-instance v1, Landroid/app/ContextImpl$ApplicationContentResolver;
 
@@ -1040,29 +1032,29 @@
 
     iput-object v1, p0, Landroid/app/ContextImpl;->mContentResolver:Landroid/app/ContextImpl$ApplicationContentResolver;
 
-    .line 2459
+    .line 2318
     return-void
 
-    .line 2445
+    .line 2304
     :cond_5
     iget-object v1, p3, Landroid/app/LoadedApk;->mPackageName:Ljava/lang/String;
 
     iput-object v1, p0, Landroid/app/ContextImpl;->mBasePackageName:Ljava/lang/String;
 
-    .line 2446
+    .line 2305
     invoke-virtual {p3}, Landroid/app/LoadedApk;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
-    move-result-object v10
+    move-result-object v9
 
-    .line 2447
-    .local v10, "ainfo":Landroid/content/pm/ApplicationInfo;
-    iget v1, v10, Landroid/content/pm/ApplicationInfo;->uid:I
+    .line 2306
+    .local v9, "ainfo":Landroid/content/pm/ApplicationInfo;
+    iget v1, v9, Landroid/content/pm/ApplicationInfo;->uid:I
 
     const/16 v2, 0x3e8
 
     if-ne v1, v2, :cond_6
 
-    iget v1, v10, Landroid/content/pm/ApplicationInfo;->uid:I
+    iget v1, v9, Landroid/content/pm/ApplicationInfo;->uid:I
 
     invoke-static {}, Landroid/os/Process;->myUid()I
 
@@ -1070,7 +1062,7 @@
 
     if-eq v1, v2, :cond_6
 
-    .line 2452
+    .line 2311
     invoke-static {}, Landroid/app/ActivityThread;->currentPackageName()Ljava/lang/String;
 
     move-result-object v1
@@ -1079,7 +1071,7 @@
 
     goto :goto_0
 
-    .line 2454
+    .line 2313
     :cond_6
     iget-object v1, p0, Landroid/app/ContextImpl;->mBasePackageName:Ljava/lang/String;
 
@@ -1301,11 +1293,11 @@
     goto :goto_0
 .end method
 
-.method static createActivityContext(Landroid/app/ActivityThread;Landroid/app/LoadedApk;Landroid/os/IBinder;)Landroid/app/ContextImpl;
+.method static createActivityContext(Landroid/app/ActivityThread;Landroid/app/LoadedApk;Landroid/content/res/Configuration;)Landroid/app/ContextImpl;
     .locals 9
     .param p0, "mainThread"    # Landroid/app/ActivityThread;
     .param p1, "packageInfo"    # Landroid/app/LoadedApk;
-    .param p2, "activityToken"    # Landroid/os/IBinder;
+    .param p2, "overrideConfiguration"    # Landroid/content/res/Configuration;
 
     .prologue
     const/4 v1, 0x0
@@ -1323,18 +1315,6 @@
 
     .line 2391
     :cond_0
-    if-nez p2, :cond_1
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "activityInfo"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 2392
-    :cond_1
     new-instance v0, Landroid/app/ContextImpl;
 
     const/4 v6, 0x0
@@ -1343,13 +1323,13 @@
 
     move-object v3, p1
 
-    move-object v4, p2
+    move-object v4, v1
 
     move-object v5, v1
 
     move-object v7, v1
 
-    move-object v8, v1
+    move-object v8, p2
 
     invoke-direct/range {v0 .. v8}, Landroid/app/ContextImpl;-><init>(Landroid/app/ContextImpl;Landroid/app/ActivityThread;Landroid/app/LoadedApk;Landroid/os/IBinder;Landroid/os/UserHandle;ZLandroid/view/Display;Landroid/content/res/Configuration;)V
 

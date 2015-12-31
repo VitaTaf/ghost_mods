@@ -370,7 +370,7 @@
     .end annotation
 .end method
 
-.method public abstract scheduleLaunchActivity(Landroid/content/Intent;Landroid/os/IBinder;ILandroid/content/pm/ActivityInfo;Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;Ljava/lang/String;Lcom/android/internal/app/IVoiceInteractor;ILandroid/os/Bundle;Landroid/os/PersistableBundle;Ljava/util/List;Ljava/util/List;ZZLandroid/app/ProfilerInfo;)V
+.method public abstract scheduleLaunchActivity(Landroid/content/Intent;Landroid/os/IBinder;ILandroid/content/pm/ActivityInfo;Landroid/content/res/Configuration;Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;Ljava/lang/String;Lcom/android/internal/app/IVoiceInteractor;ILandroid/os/Bundle;Landroid/os/PersistableBundle;Ljava/util/List;Ljava/util/List;ZZLandroid/app/ProfilerInfo;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -378,6 +378,7 @@
             "Landroid/os/IBinder;",
             "I",
             "Landroid/content/pm/ActivityInfo;",
+            "Landroid/content/res/Configuration;",
             "Landroid/content/res/Configuration;",
             "Landroid/content/res/CompatibilityInfo;",
             "Ljava/lang/String;",
@@ -465,7 +466,7 @@
     .end annotation
 .end method
 
-.method public abstract scheduleRelaunchActivity(Landroid/os/IBinder;Ljava/util/List;Ljava/util/List;IZLandroid/content/res/Configuration;)V
+.method public abstract scheduleRelaunchActivity(Landroid/os/IBinder;Ljava/util/List;Ljava/util/List;IZLandroid/content/res/Configuration;Landroid/content/res/Configuration;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -478,6 +479,7 @@
             "<",
             "Lcom/android/internal/content/ReferrerIntent;",
             ">;IZ",
+            "Landroid/content/res/Configuration;",
             "Landroid/content/res/Configuration;",
             ")V"
         }
