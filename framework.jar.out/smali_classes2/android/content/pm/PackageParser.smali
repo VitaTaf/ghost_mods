@@ -4494,6 +4494,29 @@
 
     .line 3132
     :cond_10
+    const/16 v2, 0x26
+
+    const/4 v3, 0x0
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_11
+
+    iget-object v2, v14, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
+
+    iget v3, v2, Landroid/content/pm/ActivityInfo;->flags:I
+
+    const/high16 v4, 0x20000000
+
+    or-int/2addr v3, v4
+
+    iput v3, v2, Landroid/content/pm/ActivityInfo;->flags:I
+
+    :cond_11
     if-nez p7, :cond_1d
 
     .line 3133
@@ -4507,7 +4530,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_12
 
     .line 3136
     iget-object v2, v14, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
@@ -4519,7 +4542,7 @@
     iput v3, v2, Landroid/content/pm/ActivityInfo;->flags:I
 
     .line 3139
-    :cond_11
+    :cond_12
     iget-object v2, v14, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
 
     const/16 v3, 0xe
@@ -4637,7 +4660,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_13
 
     .line 3165
     iget-object v2, v14, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
@@ -4651,31 +4674,8 @@
     iput v3, v2, Landroid/content/pm/ActivityInfo;->flags:I
 
     .line 3168
-    :cond_12
-    const/16 v2, 0x23
-
-    const/4 v3, 0x0
-
-    move-object/from16 v0, v18
-
-    invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_13
-
-    .line 3171
-    iget-object v2, v14, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
-
-    iget v3, v2, Landroid/content/pm/ActivityInfo;->flags:I
-
-    or-int/lit16 v3, v3, 0x2000
-
-    iput v3, v2, Landroid/content/pm/ActivityInfo;->flags:I
-
-    .line 3174
     :cond_13
-    const/16 v2, 0x24
+    const/16 v2, 0x23
 
     const/4 v3, 0x0
 
@@ -4687,18 +4687,18 @@
 
     if-eqz v2, :cond_14
 
-    .line 3177
+    .line 3171
     iget-object v2, v14, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
 
     iget v3, v2, Landroid/content/pm/ActivityInfo;->flags:I
 
-    or-int/lit16 v3, v3, 0x1000
+    or-int/lit16 v3, v3, 0x2000
 
     iput v3, v2, Landroid/content/pm/ActivityInfo;->flags:I
 
-    .line 3180
+    .line 3174
     :cond_14
-    const/16 v2, 0x25
+    const/16 v2, 0x24
 
     const/4 v3, 0x0
 
@@ -4710,6 +4710,29 @@
 
     if-eqz v2, :cond_15
 
+    .line 3177
+    iget-object v2, v14, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
+
+    iget v3, v2, Landroid/content/pm/ActivityInfo;->flags:I
+
+    or-int/lit16 v3, v3, 0x1000
+
+    iput v3, v2, Landroid/content/pm/ActivityInfo;->flags:I
+
+    .line 3180
+    :cond_15
+    const/16 v2, 0x25
+
+    const/4 v3, 0x0
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_16
+
     .line 3183
     iget-object v2, v14, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
 
@@ -4720,7 +4743,7 @@
     iput v3, v2, Landroid/content/pm/ActivityInfo;->flags:I
 
     .line 3190
-    :cond_15
+    :cond_16
     :goto_5
     if-eqz p7, :cond_17
 
@@ -4735,7 +4758,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_17
 
     .line 3194
     iget-object v2, v14, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
@@ -4753,13 +4776,13 @@
 
     iget-boolean v2, v2, Landroid/content/pm/ActivityInfo;->exported:Z
 
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_17
 
     move/from16 v0, p5
 
     and-int/lit16 v2, v0, 0x80
 
-    if-nez v2, :cond_16
+    if-nez v2, :cond_17
 
     .line 3196
     const-string v2, "PackageParser"
@@ -4823,31 +4846,6 @@
 
     .line 3200
     const/16 v19, 0x1
-
-    .line 3203
-    :cond_16
-    const/16 v2, 0x26
-
-    const/4 v3, 0x0
-
-    move-object/from16 v0, v18
-
-    invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_17
-
-    .line 3206
-    iget-object v2, v14, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
-
-    iget v3, v2, Landroid/content/pm/ActivityInfo;->flags:I
-
-    const/high16 v4, 0x20000000
-
-    or-int/2addr v3, v4
-
-    iput v3, v2, Landroid/content/pm/ActivityInfo;->flags:I
 
     .line 3210
     :cond_17

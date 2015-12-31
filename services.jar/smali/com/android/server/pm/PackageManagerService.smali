@@ -11581,6 +11581,66 @@
     return-void
 .end method
 
+.method private filterIfNotPrimaryUser(Ljava/util/List;I)Ljava/util/List;
+    .locals 4
+    .param p2, "userId"    # I
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Landroid/content/pm/ResolveInfo;",
+            ">;I)",
+            "Ljava/util/List",
+            "<",
+            "Landroid/content/pm/ResolveInfo;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .local p1, "resolveInfos":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
+    if-nez p2, :cond_1
+
+    :cond_0
+    return-object p1
+
+    :cond_1
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    add-int/lit8 v0, v2, -0x1
+
+    .local v0, "i":I
+    :goto_0
+    if-ltz v0, :cond_0
+
+    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/content/pm/ResolveInfo;
+
+    .local v1, "info":Landroid/content/pm/ResolveInfo;
+    iget-object v2, v1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+
+    iget v2, v2, Landroid/content/pm/ActivityInfo;->flags:I
+
+    const/high16 v3, 0x20000000
+
+    and-int/2addr v2, v3
+
+    if-eqz v2, :cond_2
+
+    invoke-interface {p1, v0}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+
+    :cond_2
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_0
+.end method
+
 .method private filterRecentlyUsedApps(Ljava/util/Collection;)V
     .locals 10
     .annotation system Ldalvik/annotation/Signature;
@@ -52525,18 +52585,19 @@
 
     move-result v4
 
-    if-nez v4, :cond_0
+    if-nez v4, :cond_1
 
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
-    move-result-object v18
+    move-result-object v14
 
     .line 3493
+    :cond_0
     :goto_0
-    return-object v18
+    return-object v14
 
     .line 3441
-    :cond_0
+    :cond_1
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v5
@@ -52560,14 +52621,14 @@
 
     .line 3443
     .local v13, "comp":Landroid/content/ComponentName;
-    if-nez v13, :cond_1
+    if-nez v13, :cond_2
 
     .line 3444
     invoke-virtual/range {p1 .. p1}, Landroid/content/Intent;->getSelector()Landroid/content/Intent;
 
     move-result-object v4
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_2
 
     .line 3445
     invoke-virtual/range {p1 .. p1}, Landroid/content/Intent;->getSelector()Landroid/content/Intent;
@@ -52580,7 +52641,7 @@
     move-result-object v13
 
     .line 3450
-    :cond_1
+    :cond_2
     if-eqz v13, :cond_3
 
     .line 3451
@@ -52604,7 +52665,7 @@
 
     .line 3453
     .local v12, "ai":Landroid/content/pm/ActivityInfo;
-    if-eqz v12, :cond_2
+    if-eqz v12, :cond_0
 
     .line 3454
     new-instance v19, Landroid/content/pm/ResolveInfo;
@@ -52622,16 +52683,13 @@
 
     invoke-interface {v14, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .end local v19    # "ri":Landroid/content/pm/ResolveInfo;
-    :cond_2
-    move-object/from16 v18, v14
-
     .line 3458
     goto :goto_0
 
     .line 3462
     .end local v12    # "ai":Landroid/content/pm/ActivityInfo;
     .end local v14    # "list":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
+    .end local v19    # "ri":Landroid/content/pm/ResolveInfo;
     :cond_3
     move-object/from16 v0, p0
 
@@ -52700,6 +52758,16 @@
     move-object/from16 v1, v17
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v18
+
+    move/from16 v2, p4
+
+    invoke-direct {v0, v1, v2}, Lcom/android/server/pm/PackageManagerService;->filterIfNotPrimaryUser(Ljava/util/List;I)Ljava/util/List;
+
+    move-result-object v14
 
     .line 3473
     monitor-exit v20
@@ -52777,6 +52845,16 @@
 
     .line 3486
     :cond_5
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v18
+
+    move/from16 v2, p4
+
+    invoke-direct {v0, v1, v2}, Lcom/android/server/pm/PackageManagerService;->filterIfNotPrimaryUser(Ljava/util/List;I)Ljava/util/List;
+
+    move-result-object v14
+
     monitor-exit v20
 
     goto/16 :goto_0
@@ -52819,7 +52897,15 @@
 
     invoke-virtual/range {v6 .. v11}, Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver;->queryIntentForPackage(Landroid/content/Intent;Ljava/lang/String;ILjava/util/ArrayList;I)Ljava/util/List;
 
-    move-result-object v18
+    move-result-object v4
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, p4
+
+    invoke-direct {v0, v4, v1}, Lcom/android/server/pm/PackageManagerService;->filterIfNotPrimaryUser(Ljava/util/List;I)Ljava/util/List;
+
+    move-result-object v14
 
     monitor-exit v20
 
@@ -52827,9 +52913,9 @@
 
     .line 3493
     :cond_7
-    new-instance v18, Ljava/util/ArrayList;
+    new-instance v14, Ljava/util/ArrayList;
 
-    invoke-direct/range {v18 .. v18}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v14}, Ljava/util/ArrayList;-><init>()V
 
     monitor-exit v20
     :try_end_1
