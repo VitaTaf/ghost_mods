@@ -5215,6 +5215,21 @@
 
     .line 1690
     :cond_4
+    const-string v1, "split"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_5
+
+    .line 1699
+    invoke-direct {p0}, Lcom/android/commands/am/Am;->runStackSplit()V
+
+    goto :goto_0
+
+    .line 1701
+    :cond_5
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -5709,6 +5724,370 @@
     move-exception v10
 
     goto :goto_0
+.end method
+
+.method private runStackSplit()V
+    .locals 17
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    .prologue
+    .line 1797
+    invoke-virtual/range {p0 .. p0}, Lcom/android/commands/am/Am;->nextArgRequired()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-static {v14}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v14
+
+    invoke-virtual {v14}, Ljava/lang/Integer;->intValue()I
+
+    move-result v12
+
+    .line 1798
+    .local v12, "stackId":I
+    invoke-virtual/range {p0 .. p0}, Lcom/android/commands/am/Am;->nextArgRequired()Ljava/lang/String;
+
+    move-result-object v11
+
+    .line 1799
+    .local v11, "splitDirection":Ljava/lang/String;
+    const/4 v6, 0x0
+
+    .line 1801
+    .local v6, "intent":Landroid/content/Intent;
+    const/4 v14, -0x2
+
+    :try_start_0
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v14}, Lcom/android/commands/am/Am;->makeIntent(I)Landroid/content/Intent;
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1
+
+    move-result-object v6
+
+    .line 1807
+    :goto_0
+    :try_start_1
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lcom/android/commands/am/Am;->mAm:Landroid/app/IActivityManager;
+
+    invoke-interface {v14, v12}, Landroid/app/IActivityManager;->getStackInfo(I)Landroid/app/ActivityManager$StackInfo;
+
+    move-result-object v4
+
+    .line 1809
+    .local v4, "currentStackInfo":Landroid/app/ActivityManager$StackInfo;
+    new-instance v3, Landroid/graphics/Rect;
+
+    iget-object v14, v4, Landroid/app/ActivityManager$StackInfo;->bounds:Landroid/graphics/Rect;
+
+    invoke-direct {v3, v14}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
+
+    .line 1810
+    .local v3, "currentStackBounds":Landroid/graphics/Rect;
+    new-instance v8, Landroid/graphics/Rect;
+
+    iget-object v14, v4, Landroid/app/ActivityManager$StackInfo;->bounds:Landroid/graphics/Rect;
+
+    invoke-direct {v8, v14}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
+
+    .line 1811
+    .local v8, "newStackBounds":Landroid/graphics/Rect;
+    const-string v14, "v"
+
+    invoke-virtual {v14, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v14
+
+    if-eqz v14, :cond_2
+
+    .line 1812
+    iget-object v14, v4, Landroid/app/ActivityManager$StackInfo;->bounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v14}, Landroid/graphics/Rect;->centerX()I
+
+    move-result v14
+
+    iput v14, v8, Landroid/graphics/Rect;->left:I
+
+    iput v14, v3, Landroid/graphics/Rect;->right:I
+
+    .line 1821
+    :goto_1
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lcom/android/commands/am/Am;->mAm:Landroid/app/IActivityManager;
+
+    iget v15, v4, Landroid/app/ActivityManager$StackInfo;->displayId:I
+
+    invoke-interface {v14, v15}, Landroid/app/IActivityManager;->createStackOnDisplay(I)Landroid/app/IActivityContainer;
+
+    move-result-object v2
+
+    .line 1822
+    .local v2, "container":Landroid/app/IActivityContainer;
+    if-nez v2, :cond_0
+
+    .line 1823
+    const-string v14, "Error: Unable to create new stack..."
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v14}, Lcom/android/commands/am/Am;->showError(Ljava/lang/String;)V
+
+    .line 1826
+    :cond_0
+    invoke-interface {v2}, Landroid/app/IActivityContainer;->getStackId()I
+
+    move-result v9
+
+    .line 1828
+    .local v9, "newStackId":I
+    if-eqz v6, :cond_4
+
+    .line 1829
+    invoke-interface {v2, v6}, Landroid/app/IActivityContainer;->startActivity(Landroid/content/Intent;)I
+
+    .line 1836
+    :cond_1
+    :goto_2
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lcom/android/commands/am/Am;->mAm:Landroid/app/IActivityManager;
+
+    invoke-interface {v14, v9}, Landroid/app/IActivityManager;->getStackInfo(I)Landroid/app/ActivityManager$StackInfo;
+
+    move-result-object v10
+
+    .line 1839
+    .local v10, "newStackInfo":Landroid/app/ActivityManager$StackInfo;
+    iget-object v1, v4, Landroid/app/ActivityManager$StackInfo;->taskIds:[I
+
+    .local v1, "arr$":[I
+    array-length v7, v1
+
+    .local v7, "len$":I
+    const/4 v5, 0x0
+
+    .local v5, "i$":I
+    :goto_3
+    if-ge v5, v7, :cond_5
+
+    aget v13, v1, v5
+
+    .line 1840
+    .local v13, "taskId":I
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lcom/android/commands/am/Am;->mAm:Landroid/app/IActivityManager;
+
+    const/4 v15, 0x1
+
+    invoke-interface {v14, v13, v15}, Landroid/app/IActivityManager;->setTaskResizeable(IZ)V
+
+    .line 1839
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_3
+
+    .line 1813
+    .end local v1    # "arr$":[I
+    .end local v2    # "container":Landroid/app/IActivityContainer;
+    .end local v5    # "i$":I
+    .end local v7    # "len$":I
+    .end local v9    # "newStackId":I
+    .end local v10    # "newStackInfo":Landroid/app/ActivityManager$StackInfo;
+    .end local v13    # "taskId":I
+    :cond_2
+    const-string v14, "h"
+
+    invoke-virtual {v14, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v14
+
+    if-eqz v14, :cond_3
+
+    .line 1814
+    iget-object v14, v4, Landroid/app/ActivityManager$StackInfo;->bounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v14}, Landroid/graphics/Rect;->centerY()I
+
+    move-result v14
+
+    iput v14, v8, Landroid/graphics/Rect;->top:I
+
+    iput v14, v3, Landroid/graphics/Rect;->bottom:I
+
+    goto :goto_1
+
+    .line 1850
+    .end local v3    # "currentStackBounds":Landroid/graphics/Rect;
+    .end local v4    # "currentStackInfo":Landroid/app/ActivityManager$StackInfo;
+    .end local v8    # "newStackBounds":Landroid/graphics/Rect;
+    :catch_0
+    move-exception v14
+
+    .line 1852
+    :goto_4
+    return-void
+
+    .line 1816
+    .restart local v3    # "currentStackBounds":Landroid/graphics/Rect;
+    .restart local v4    # "currentStackInfo":Landroid/app/ActivityManager$StackInfo;
+    .restart local v8    # "newStackBounds":Landroid/graphics/Rect;
+    :cond_3
+    new-instance v14, Ljava/lang/StringBuilder;
+
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v15, "Error: unknown split direction \'"
+
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    invoke-virtual {v14, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    const-string v15, "\'"
+
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v14
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v14}, Lcom/android/commands/am/Am;->showError(Ljava/lang/String;)V
+
+    goto :goto_4
+
+    .line 1830
+    .restart local v2    # "container":Landroid/app/IActivityContainer;
+    .restart local v9    # "newStackId":I
+    :cond_4
+    iget-object v14, v4, Landroid/app/ActivityManager$StackInfo;->taskIds:[I
+
+    if-eqz v14, :cond_1
+
+    iget-object v14, v4, Landroid/app/ActivityManager$StackInfo;->taskIds:[I
+
+    array-length v14, v14
+
+    const/4 v15, 0x1
+
+    if-le v14, v15, :cond_1
+
+    .line 1832
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lcom/android/commands/am/Am;->mAm:Landroid/app/IActivityManager;
+
+    iget-object v15, v4, Landroid/app/ActivityManager$StackInfo;->taskIds:[I
+
+    iget-object v0, v4, Landroid/app/ActivityManager$StackInfo;->taskIds:[I
+
+    move-object/from16 v16, v0
+
+    move-object/from16 v0, v16
+
+    array-length v0, v0
+
+    move/from16 v16, v0
+
+    add-int/lit8 v16, v16, -0x1
+
+    aget v15, v15, v16
+
+    const/16 v16, 0x1
+
+    move/from16 v0, v16
+
+    invoke-interface {v14, v15, v9, v0}, Landroid/app/IActivityManager;->moveTaskToStack(IIZ)V
+
+    goto :goto_2
+
+    .line 1843
+    .restart local v1    # "arr$":[I
+    .restart local v5    # "i$":I
+    .restart local v7    # "len$":I
+    .restart local v10    # "newStackInfo":Landroid/app/ActivityManager$StackInfo;
+    :cond_5
+    iget-object v1, v10, Landroid/app/ActivityManager$StackInfo;->taskIds:[I
+
+    array-length v7, v1
+
+    const/4 v5, 0x0
+
+    :goto_5
+    if-ge v5, v7, :cond_6
+
+    aget v13, v1, v5
+
+    .line 1844
+    .restart local v13    # "taskId":I
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lcom/android/commands/am/Am;->mAm:Landroid/app/IActivityManager;
+
+    const/4 v15, 0x1
+
+    invoke-interface {v14, v13, v15}, Landroid/app/IActivityManager;->setTaskResizeable(IZ)V
+
+    .line 1843
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_5
+
+    .line 1848
+    .end local v13    # "taskId":I
+    :cond_6
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lcom/android/commands/am/Am;->mAm:Landroid/app/IActivityManager;
+
+    iget v15, v4, Landroid/app/ActivityManager$StackInfo;->stackId:I
+
+    invoke-interface {v14, v15, v3}, Landroid/app/IActivityManager;->resizeStack(ILandroid/graphics/Rect;)V
+
+    .line 1849
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lcom/android/commands/am/Am;->mAm:Landroid/app/IActivityManager;
+
+    iget v15, v10, Landroid/app/ActivityManager$StackInfo;->stackId:I
+
+    invoke-interface {v14, v15, v8}, Landroid/app/IActivityManager;->resizeStack(ILandroid/graphics/Rect;)V
+    :try_end_1
+    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
+
+    goto :goto_4
+
+    .line 1802
+    .end local v1    # "arr$":[I
+    .end local v2    # "container":Landroid/app/IActivityContainer;
+    .end local v3    # "currentStackBounds":Landroid/graphics/Rect;
+    .end local v4    # "currentStackInfo":Landroid/app/ActivityManager$StackInfo;
+    .end local v5    # "i$":I
+    .end local v7    # "len$":I
+    .end local v8    # "newStackBounds":Landroid/graphics/Rect;
+    .end local v9    # "newStackId":I
+    .end local v10    # "newStackInfo":Landroid/app/ActivityManager$StackInfo;
+    :catch_1
+    move-exception v14
+
+    goto/16 :goto_0
 .end method
 
 .method private runStackStart()V
@@ -8145,8 +8524,8 @@
     .param p1, "out"    # Ljava/io/PrintStream;
 
     .prologue
-    .line 103
-    const-string v0, "usage: am [subcommand] [options]\nusage: am start [-D] [-W] [-P <FILE>] [--start-profiler <FILE>]\n               [--sampling INTERVAL] [-R COUNT] [-S] [--opengl-trace]\n               [--user <USER_ID> | current] <INTENT>\n       am startservice [--user <USER_ID> | current] <INTENT>\n       am stopservice [--user <USER_ID> | current] <INTENT>\n       am force-stop [--user <USER_ID> | all | current] <PACKAGE>\n       am kill [--user <USER_ID> | all | current] <PACKAGE>\n       am kill-all\n       am broadcast [--user <USER_ID> | all | current] <INTENT>\n       am instrument [-r] [-e <NAME> <VALUE>] [-p <FILE>] [-w]\n               [--user <USER_ID> | current]\n               [--no-window-animation] [--abi <ABI>] <COMPONENT>\n       am profile start [--user <USER_ID> current] <PROCESS> <FILE>\n       am profile stop [--user <USER_ID> current] [<PROCESS>]\n       am dumpheap [--user <USER_ID> current] [-n] <PROCESS> <FILE>\n       am set-debug-app [-w] [--persistent] <PACKAGE>\n       am clear-debug-app\n       am monitor [--gdb <port>]\n       am hang [--allow-restart]\n       am restart\n       am idle-maintenance\n       am screen-compat [on|off] <PACKAGE>\n       am to-uri [INTENT]\n       am to-intent-uri [INTENT]\n       am to-app-uri [INTENT]\n       am switch-user <USER_ID>\n       am start-user <USER_ID>\n       am stop-user <USER_ID>\n       am stack start <DISPLAY_ID> <INTENT>\n       am stack movetask <TASK_ID> <STACK_ID> [true|false]\n       am stack resize <STACK_ID> <LEFT,TOP,RIGHT,BOTTOM>\n       am stack list\n       am stack info <STACK_ID>\n       am task lock <TASK_ID>\n       am task lock stop\n       am task resizeable <TASK_ID> [true|false]\n       am get-config\n\nam start: start an Activity.  Options are:\n    -D: enable debugging\n    -W: wait for launch to complete\n    --start-profiler <FILE>: start profiler and send results to <FILE>\n    --sampling INTERVAL: use sample profiling with INTERVAL microseconds\n        between samples (use with --start-profiler)\n    -P <FILE>: like above, but profiling stops when app goes idle\n    -R: repeat the activity launch <COUNT> times.  Prior to each repeat,\n        the top activity will be finished.\n    -S: force stop the target app before starting the activity\n    --opengl-trace: enable tracing of OpenGL functions\n    --user <USER_ID> | current: Specify which user to run as; if not\n        specified then run as the current user.\n\nam startservice: start a Service.  Options are:\n    --user <USER_ID> | current: Specify which user to run as; if not\n        specified then run as the current user.\n\nam stopservice: stop a Service.  Options are:\n    --user <USER_ID> | current: Specify which user to run as; if not\n        specified then run as the current user.\n\nam force-stop: force stop everything associated with <PACKAGE>.\n    --user <USER_ID> | all | current: Specify user to force stop;\n        all users if not specified.\n\nam kill: Kill all processes associated with <PACKAGE>.  Only kills.\n  processes that are safe to kill -- that is, will not impact the user\n  experience.\n    --user <USER_ID> | all | current: Specify user whose processes to kill;\n        all users if not specified.\n\nam kill-all: Kill all background processes.\n\nam broadcast: send a broadcast Intent.  Options are:\n    --user <USER_ID> | all | current: Specify which user to send to; if not\n        specified then send to all users.\n    --receiver-permission <PERMISSION>: Require receiver to hold permission.\n    --sticky-broadcast : Send broadcast as a sticky broadcast.\n\nam instrument: start an Instrumentation.  Typically this target <COMPONENT>\n  is the form <TEST_PACKAGE>/<RUNNER_CLASS>.  Options are:\n    -r: print raw results (otherwise decode REPORT_KEY_STREAMRESULT).  Use with\n        [-e perf true] to generate raw output for performance measurements.\n    -e <NAME> <VALUE>: set argument <NAME> to <VALUE>.  For test runners a\n        common form is [-e <testrunner_flag> <value>[,<value>...]].\n    -p <FILE>: write profiling data to <FILE>\n    -w: wait for instrumentation to finish before returning.  Required for\n        test runners.\n    --user <USER_ID> | current: Specify user instrumentation runs in;\n        current user if not specified.\n    --no-window-animation: turn off window animations while running.\n    --abi <ABI>: Launch the instrumented process with the selected ABI.\n        This assumes that the process supports the selected ABI.\n\nam profile: start and stop profiler on a process.  The given <PROCESS> argument\n  may be either a process name or pid.  Options are:\n    --user <USER_ID> | current: When supplying a process name,\n        specify user of process to profile; uses current user if not specified.\n\nam dumpheap: dump the heap of a process.  The given <PROCESS> argument may\n  be either a process name or pid.  Options are:\n    -n: dump native heap instead of managed heap\n    --user <USER_ID> | current: When supplying a process name,\n        specify user of process to dump; uses current user if not specified.\n\nam set-debug-app: set application <PACKAGE> to debug.  Options are:\n    -w: wait for debugger when application starts\n    --persistent: retain this value\n\nam clear-debug-app: clear the previously set-debug-app.\n\nam bug-report: request bug report generation; will launch UI\n    when done to select where it should be delivered.\n\nam monitor: start monitoring for crashes or ANRs.\n    --gdb: start gdbserv on the given port at crash/ANR\n\nam hang: hang the system.\n    --allow-restart: allow watchdog to perform normal system restart\n\nam restart: restart the user-space system.\n\nam idle-maintenance: perform idle maintenance now.\n\nam screen-compat: control screen compatibility mode of <PACKAGE>.\n\nam to-uri: print the given Intent specification as a URI.\n\nam to-intent-uri: print the given Intent specification as an intent: URI.\n\nam to-app-uri: print the given Intent specification as an android-app: URI.\n\nam switch-user: switch to put USER_ID in the foreground, starting\n  execution of that user if it is currently stopped.\n\nam start-user: start USER_ID in background if it is currently stopped,\n  use switch-user if you want to start the user in foreground.\n\nam stop-user: stop execution of USER_ID, not allowing it to run any\n  code until a later explicit start or switch to it.\n\nam stack start: start a new activity on <DISPLAY_ID> using <INTENT>.\n\nam stack movetask: move <TASK_ID> from its current stack to the top (true) or   bottom (false) of <STACK_ID>.\n\nam stack resize: change <STACK_ID> size and position to <LEFT,TOP,RIGHT,BOTTOM>.\n\nam stack list: list all of the activity stacks and their sizes.\n\nam stack info: display the information about activity stack <STACK_ID>.\n\nam task lock: bring <TASK_ID> to the front and don\'t allow other tasks to run\n\nam task lock stop: end the current task lock\n\nam task resizeable: change if <TASK_ID> is resizeable (true) or not (false).\n\nam get-config: retrieve the configuration and any recent configurations\n  of the device\n\n<INTENT> specifications include these flags and arguments:\n    [-a <ACTION>] [-d <DATA_URI>] [-t <MIME_TYPE>]\n    [-c <CATEGORY> [-c <CATEGORY>] ...]\n    [-e|--es <EXTRA_KEY> <EXTRA_STRING_VALUE> ...]\n    [--esn <EXTRA_KEY> ...]\n    [--ez <EXTRA_KEY> <EXTRA_BOOLEAN_VALUE> ...]\n    [--ei <EXTRA_KEY> <EXTRA_INT_VALUE> ...]\n    [--el <EXTRA_KEY> <EXTRA_LONG_VALUE> ...]\n    [--ef <EXTRA_KEY> <EXTRA_FLOAT_VALUE> ...]\n    [--eu <EXTRA_KEY> <EXTRA_URI_VALUE> ...]\n    [--ecn <EXTRA_KEY> <EXTRA_COMPONENT_NAME_VALUE>]\n    [--eia <EXTRA_KEY> <EXTRA_INT_VALUE>[,<EXTRA_INT_VALUE...]]\n    [--ela <EXTRA_KEY> <EXTRA_LONG_VALUE>[,<EXTRA_LONG_VALUE...]]\n    [--efa <EXTRA_KEY> <EXTRA_FLOAT_VALUE>[,<EXTRA_FLOAT_VALUE...]]\n    [--esa <EXTRA_KEY> <EXTRA_STRING_VALUE>[,<EXTRA_STRING_VALUE...]]\n        (to embed a comma into a string escape it using \"\\,\")\n    [-n <COMPONENT>] [-p <PACKAGE>] [-f <FLAGS>]\n    [--grant-read-uri-permission] [--grant-write-uri-permission]\n    [--grant-persistable-uri-permission] [--grant-prefix-uri-permission]\n    [--debug-log-resolution] [--exclude-stopped-packages]\n    [--include-stopped-packages]\n    [--activity-brought-to-front] [--activity-clear-top]\n    [--activity-clear-when-task-reset] [--activity-exclude-from-recents]\n    [--activity-launched-from-history] [--activity-multiple-task]\n    [--activity-no-animation] [--activity-no-history]\n    [--activity-no-user-action] [--activity-previous-is-top]\n    [--activity-reorder-to-front] [--activity-reset-task-if-needed]\n    [--activity-single-top] [--activity-clear-task]\n    [--activity-task-on-home]\n    [--receiver-registered-only] [--receiver-replace-pending]\n    [--selector]\n    [<URI> | <PACKAGE> | <COMPONENT>]\n"
+    .line 102
+    const-string v0, "usage: am [subcommand] [options]\nusage: am start [-D] [-W] [-P <FILE>] [--start-profiler <FILE>]\n               [--sampling INTERVAL] [-R COUNT] [-S] [--opengl-trace]\n               [--user <USER_ID> | current] <INTENT>\n       am startservice [--user <USER_ID> | current] <INTENT>\n       am stopservice [--user <USER_ID> | current] <INTENT>\n       am force-stop [--user <USER_ID> | all | current] <PACKAGE>\n       am kill [--user <USER_ID> | all | current] <PACKAGE>\n       am kill-all\n       am broadcast [--user <USER_ID> | all | current] <INTENT>\n       am instrument [-r] [-e <NAME> <VALUE>] [-p <FILE>] [-w]\n               [--user <USER_ID> | current]\n               [--no-window-animation] [--abi <ABI>] <COMPONENT>\n       am profile start [--user <USER_ID> current] <PROCESS> <FILE>\n       am profile stop [--user <USER_ID> current] [<PROCESS>]\n       am dumpheap [--user <USER_ID> current] [-n] <PROCESS> <FILE>\n       am set-debug-app [-w] [--persistent] <PACKAGE>\n       am clear-debug-app\n       am monitor [--gdb <port>]\n       am hang [--allow-restart]\n       am restart\n       am idle-maintenance\n       am screen-compat [on|off] <PACKAGE>\n       am to-uri [INTENT]\n       am to-intent-uri [INTENT]\n       am to-app-uri [INTENT]\n       am switch-user <USER_ID>\n       am start-user <USER_ID>\n       am stop-user <USER_ID>\n       am stack start <DISPLAY_ID> <INTENT>\n       am stack movetask <TASK_ID> <STACK_ID> [true|false]\n       am stack resize <STACK_ID> <LEFT,TOP,RIGHT,BOTTOM>\n       am stack split <STACK_ID> <v|h> [INTENT]\n       am stack list\n       am stack info <STACK_ID>\n       am task lock <TASK_ID>\n       am task lock stop\n       am task resizeable <TASK_ID> [true|false]\n       am get-config\n\nam start: start an Activity.  Options are:\n    -D: enable debugging\n    -W: wait for launch to complete\n    --start-profiler <FILE>: start profiler and send results to <FILE>\n    --sampling INTERVAL: use sample profiling with INTERVAL microseconds\n        between samples (use with --start-profiler)\n    -P <FILE>: like above, but profiling stops when app goes idle\n    -R: repeat the activity launch <COUNT> times.  Prior to each repeat,\n        the top activity will be finished.\n    -S: force stop the target app before starting the activity\n    --opengl-trace: enable tracing of OpenGL functions\n    --user <USER_ID> | current: Specify which user to run as; if not\n        specified then run as the current user.\n\nam startservice: start a Service.  Options are:\n    --user <USER_ID> | current: Specify which user to run as; if not\n        specified then run as the current user.\n\nam stopservice: stop a Service.  Options are:\n    --user <USER_ID> | current: Specify which user to run as; if not\n        specified then run as the current user.\n\nam force-stop: force stop everything associated with <PACKAGE>.\n    --user <USER_ID> | all | current: Specify user to force stop;\n        all users if not specified.\n\nam kill: Kill all processes associated with <PACKAGE>.  Only kills.\n  processes that are safe to kill -- that is, will not impact the user\n  experience.\n    --user <USER_ID> | all | current: Specify user whose processes to kill;\n        all users if not specified.\n\nam kill-all: Kill all background processes.\n\nam broadcast: send a broadcast Intent.  Options are:\n    --user <USER_ID> | all | current: Specify which user to send to; if not\n        specified then send to all users.\n    --receiver-permission <PERMISSION>: Require receiver to hold permission.\n\nam instrument: start an Instrumentation.  Typically this target <COMPONENT>\n  is the form <TEST_PACKAGE>/<RUNNER_CLASS>.  Options are:\n    -r: print raw results (otherwise decode REPORT_KEY_STREAMRESULT).  Use with\n        [-e perf true] to generate raw output for performance measurements.\n    -e <NAME> <VALUE>: set argument <NAME> to <VALUE>.  For test runners a\n        common form is [-e <testrunner_flag> <value>[,<value>...]].\n    -p <FILE>: write profiling data to <FILE>\n    -w: wait for instrumentation to finish before returning.  Required for\n        test runners.\n    --user <USER_ID> | current: Specify user instrumentation runs in;\n        current user if not specified.\n    --no-window-animation: turn off window animations while running.\n    --abi <ABI>: Launch the instrumented process with the selected ABI.\n        This assumes that the process supports the selected ABI.\n\nam profile: start and stop profiler on a process.  The given <PROCESS> argument\n  may be either a process name or pid.  Options are:\n    --user <USER_ID> | current: When supplying a process name,\n        specify user of process to profile; uses current user if not specified.\n\nam dumpheap: dump the heap of a process.  The given <PROCESS> argument may\n  be either a process name or pid.  Options are:\n    -n: dump native heap instead of managed heap\n    --user <USER_ID> | current: When supplying a process name,\n        specify user of process to dump; uses current user if not specified.\n\nam set-debug-app: set application <PACKAGE> to debug.  Options are:\n    -w: wait for debugger when application starts\n    --persistent: retain this value\n\nam clear-debug-app: clear the previously set-debug-app.\n\nam bug-report: request bug report generation; will launch UI\n    when done to select where it should be delivered.\n\nam monitor: start monitoring for crashes or ANRs.\n    --gdb: start gdbserv on the given port at crash/ANR\n\nam hang: hang the system.\n    --allow-restart: allow watchdog to perform normal system restart\n\nam restart: restart the user-space system.\n\nam idle-maintenance: perform idle maintenance now.\n\nam screen-compat: control screen compatibility mode of <PACKAGE>.\n\nam to-uri: print the given Intent specification as a URI.\n\nam to-intent-uri: print the given Intent specification as an intent: URI.\n\nam to-app-uri: print the given Intent specification as an android-app: URI.\n\nam switch-user: switch to put USER_ID in the foreground, starting\n  execution of that user if it is currently stopped.\n\nam start-user: start USER_ID in background if it is currently stopped,\n  use switch-user if you want to start the user in foreground.\n\nam stop-user: stop execution of USER_ID, not allowing it to run any\n  code until a later explicit start or switch to it.\n\nam stack start: start a new activity on <DISPLAY_ID> using <INTENT>.\n\nam stack movetask: move <TASK_ID> from its current stack to the top (true) or   bottom (false) of <STACK_ID>.\n\nam stack resize: change <STACK_ID> size and position to <LEFT,TOP,RIGHT,BOTTOM>.\n\nam stack split: split <STACK_ID> into 2 stacks <v>ertically or <h>orizontally   starting the new stack with [INTENT] if specified. If [INTENT] isn\'t   specified and the current stack has more than one task, then the top task   of the current task will be moved to the new stack. Command will also force   all current tasks in both stacks to be resizeable.\nam stack list: list all of the activity stacks and their sizes.\n\nam stack info: display the information about activity stack <STACK_ID>.\n\nam task lock: bring <TASK_ID> to the front and don\'t allow other tasks to run\n\nam task lock stop: end the current task lock\n\nam task resizeable: change if <TASK_ID> is resizeable (true) or not (false).\n\nam get-config: retrieve the configuration and any recent configurations\n  of the device\n\n<INTENT> specifications include these flags and arguments:\n    [-a <ACTION>] [-d <DATA_URI>] [-t <MIME_TYPE>]\n    [-c <CATEGORY> [-c <CATEGORY>] ...]\n    [-e|--es <EXTRA_KEY> <EXTRA_STRING_VALUE> ...]\n    [--esn <EXTRA_KEY> ...]\n    [--ez <EXTRA_KEY> <EXTRA_BOOLEAN_VALUE> ...]\n    [--ei <EXTRA_KEY> <EXTRA_INT_VALUE> ...]\n    [--el <EXTRA_KEY> <EXTRA_LONG_VALUE> ...]\n    [--ef <EXTRA_KEY> <EXTRA_FLOAT_VALUE> ...]\n    [--eu <EXTRA_KEY> <EXTRA_URI_VALUE> ...]\n    [--ecn <EXTRA_KEY> <EXTRA_COMPONENT_NAME_VALUE>]\n    [--eia <EXTRA_KEY> <EXTRA_INT_VALUE>[,<EXTRA_INT_VALUE...]]\n    [--ela <EXTRA_KEY> <EXTRA_LONG_VALUE>[,<EXTRA_LONG_VALUE...]]\n    [--efa <EXTRA_KEY> <EXTRA_FLOAT_VALUE>[,<EXTRA_FLOAT_VALUE...]]\n    [--esa <EXTRA_KEY> <EXTRA_STRING_VALUE>[,<EXTRA_STRING_VALUE...]]\n        (to embed a comma into a string escape it using \"\\,\")\n    [-n <COMPONENT>] [-p <PACKAGE>] [-f <FLAGS>]\n    [--grant-read-uri-permission] [--grant-write-uri-permission]\n    [--grant-persistable-uri-permission] [--grant-prefix-uri-permission]\n    [--debug-log-resolution] [--exclude-stopped-packages]\n    [--include-stopped-packages]\n    [--activity-brought-to-front] [--activity-clear-top]\n    [--activity-clear-when-task-reset] [--activity-exclude-from-recents]\n    [--activity-launched-from-history] [--activity-multiple-task]\n    [--activity-no-animation] [--activity-no-history]\n    [--activity-no-user-action] [--activity-previous-is-top]\n    [--activity-reorder-to-front] [--activity-reset-task-if-needed]\n    [--activity-single-top] [--activity-clear-task]\n    [--activity-task-on-home]\n    [--receiver-registered-only] [--receiver-replace-pending]\n    [--selector]\n    [<URI> | <PACKAGE> | <COMPONENT>]\n"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 

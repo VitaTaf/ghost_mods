@@ -78239,8 +78239,25 @@
 
     .line 7898
     :cond_0
+    iget-boolean v1, v0, Lcom/android/server/am/TaskRecord;->mResizeable:Z
+
+    if-eq v1, p2, :cond_1
+
     iput-boolean p2, v0, Lcom/android/server/am/TaskRecord;->mResizeable:Z
 
+    iget-object v1, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v1, v2, v3}, Lcom/android/server/am/ActivityStackSupervisor;->ensureActivitiesVisibleLocked(Lcom/android/server/am/ActivityRecord;I)V
+
+    iget-object v1, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+
+    invoke-virtual {v1}, Lcom/android/server/am/ActivityStackSupervisor;->resumeTopActivitiesLocked()Z
+
+    :cond_1
     .line 7899
     monitor-exit p0
 
