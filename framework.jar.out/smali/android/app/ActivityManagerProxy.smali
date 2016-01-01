@@ -10147,6 +10147,64 @@
     return-void
 .end method
 
+.method public resizeTask(ILandroid/graphics/Rect;)V
+    .locals 5
+    .param p1, "taskId"    # I
+    .param p2, "r"    # Landroid/graphics/Rect;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 5447
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 5448
+    .local v0, "data":Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 5449
+    .local v1, "reply":Landroid/os/Parcel;
+    const-string v2, "android.app.IActivityManager"
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 5450
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 5451
+    const/4 v2, 0x0
+
+    invoke-virtual {p2, v0, v2}, Landroid/graphics/Rect;->writeToParcel(Landroid/os/Parcel;I)V
+
+    .line 5452
+    iget-object v2, p0, Landroid/app/ActivityManagerProxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v3, 0x11e
+
+    const/4 v4, 0x1
+
+    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 5453
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+
+    .line 5454
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 5455
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 5456
+    return-void
+.end method
+
 .method public restart()V
     .locals 5
     .annotation system Ldalvik/annotation/Throws;

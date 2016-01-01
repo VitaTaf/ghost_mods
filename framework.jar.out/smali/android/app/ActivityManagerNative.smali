@@ -11856,7 +11856,7 @@
 
     .line 2317
     .end local v244    # "taskId":I
-    :pswitch_c8
+    :pswitch_d7
     const-string v6, "android.app.IActivityManager"
 
     move-object/from16 v0, p2
@@ -11864,6 +11864,51 @@
     invoke-virtual {v0, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 2293
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v244
+
+    .line 2319
+    .restart local v244    # "taskId":I
+    sget-object v6, Landroid/graphics/Rect;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, p2
+
+    invoke-interface {v6, v0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v221
+
+    check-cast v221, Landroid/graphics/Rect;
+
+    .line 2320
+    .local v221, "r":Landroid/graphics/Rect;
+    move-object/from16 v0, p0
+
+    move/from16 v1, v244
+
+    move-object/from16 v2, v221
+
+    invoke-virtual {v0, v1, v2}, Landroid/app/ActivityManagerNative;->resizeTask(ILandroid/graphics/Rect;)V
+
+    .line 2321
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 2322
+    const/4 v6, 0x1
+
+    goto/16 :goto_0
+
+    .line 2326
+    .end local v221    # "r":Landroid/graphics/Rect;
+    .end local v244    # "taskId":I
+    :pswitch_c8
+    const-string v6, "android.app.IActivityManager"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 2327
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v170
@@ -12654,5 +12699,6 @@
         :pswitch_0
         :pswitch_bf
         :pswitch_d6
+        :pswitch_d7
     .end packed-switch
 .end method

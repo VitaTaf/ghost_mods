@@ -317,6 +317,8 @@
 
 .field public static final RESTART_PERSISTENT_APPLICATION_WITH_APPID_TRANSACTION:I = 0xf6
 
+.field public static final RESIZE_TASK_TRANSACTION:I = 0x11e
+
 .field public static final RESTART_TRANSACTION:I = 0xb2
 
 .field public static final RESUME_APP_SWITCHES_TRANSACTION:I = 0x59
@@ -1751,6 +1753,14 @@
 .end method
 
 .method public abstract resizeStack(ILandroid/graphics/Rect;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract resizeTask(ILandroid/graphics/Rect;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

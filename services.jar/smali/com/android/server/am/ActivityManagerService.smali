@@ -27039,72 +27039,74 @@
 .end method
 
 .method private removeTaskByIdLocked(IZ)Z
-    .locals 4
+    .locals 5
     .param p1, "taskId"    # I
     .param p2, "killProcess"    # Z
 
     .prologue
     const/4 v1, 0x1
 
-    .line 8647
-    iget-object v2, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+    const/4 v2, 0x0
 
-    invoke-virtual {v2, p1}, Lcom/android/server/am/ActivityStackSupervisor;->anyTaskForIdLocked(I)Lcom/android/server/am/TaskRecord;
+    .line 8060
+    iget-object v3, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+
+    invoke-virtual {v3, p1, v2}, Lcom/android/server/am/ActivityStackSupervisor;->anyTaskForIdLocked(IZ)Lcom/android/server/am/TaskRecord;
 
     move-result-object v0
 
-    .line 8648
+    .line 8061
     .local v0, "tr":Lcom/android/server/am/TaskRecord;
     if-eqz v0, :cond_1
 
-    .line 8649
+    .line 8062
     invoke-virtual {v0}, Lcom/android/server/am/TaskRecord;->removeTaskActivitiesLocked()V
 
-    .line 8650
+    .line 8063
     invoke-direct {p0, v0, p2}, Lcom/android/server/am/ActivityManagerService;->cleanUpRemovedTaskLocked(Lcom/android/server/am/TaskRecord;Z)V
 
-    .line 8651
+    .line 8064
     iget-boolean v2, v0, Lcom/android/server/am/TaskRecord;->isPersistable:Z
 
     if-eqz v2, :cond_0
 
-    .line 8652
+    .line 8065
     const/4 v2, 0x0
 
     invoke-virtual {p0, v2, v1}, Lcom/android/server/am/ActivityManagerService;->notifyTaskPersisterLocked(Lcom/android/server/am/TaskRecord;Z)V
 
-    .line 8657
+    .line 8070
     :cond_0
     :goto_0
     return v1
 
-    .line 8656
+    .line 8069
     :cond_1
     const-string v1, "ActivityManager"
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "Request to remove task ignored for non-existent task "
+    const-string v4, "Request to remove task ignored for non-existent task "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 8657
-    const/4 v1, 0x0
+    move v1, v2
 
+    .line 8070
     goto :goto_0
 .end method
 
@@ -62429,7 +62431,9 @@
     .line 8402
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
-    invoke-virtual {v1, p1}, Lcom/android/server/am/ActivityStackSupervisor;->anyTaskForIdLocked(I)Lcom/android/server/am/TaskRecord;
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, p1, v2}, Lcom/android/server/am/ActivityStackSupervisor;->anyTaskForIdLocked(IZ)Lcom/android/server/am/TaskRecord;
 
     move-result-object v0
 
@@ -65309,72 +65313,70 @@
 .end method
 
 .method public isInHomeStack(I)Z
-    .locals 5
+    .locals 6
     .param p1, "taskId"    # I
 
     .prologue
-    .line 8909
-    const-string v3, "android.permission.MANAGE_ACTIVITY_STACKS"
+    const/4 v3, 0x0
 
-    const-string v4, "getStackInfo()"
+    .line 8338
+    const-string v4, "android.permission.MANAGE_ACTIVITY_STACKS"
 
-    invoke-virtual {p0, v3, v4}, Lcom/android/server/am/ActivityManagerService;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
+    const-string v5, "getStackInfo()"
 
-    .line 8911
+    invoke-virtual {p0, v4, v5}, Lcom/android/server/am/ActivityManagerService;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 8340
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 8913
+    .line 8342
     .local v0, "ident":J
     :try_start_0
     monitor-enter p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 8914
+    .line 8343
     :try_start_1
-    iget-object v3, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+    iget-object v4, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
-    invoke-virtual {v3, p1}, Lcom/android/server/am/ActivityStackSupervisor;->anyTaskForIdLocked(I)Lcom/android/server/am/TaskRecord;
+    const/4 v5, 0x0
+
+    invoke-virtual {v4, p1, v5}, Lcom/android/server/am/ActivityStackSupervisor;->anyTaskForIdLocked(IZ)Lcom/android/server/am/TaskRecord;
 
     move-result-object v2
 
-    .line 8915
+    .line 8344
     .local v2, "tr":Lcom/android/server/am/TaskRecord;
     if-eqz v2, :cond_0
 
-    iget-object v3, v2, Lcom/android/server/am/TaskRecord;->stack:Lcom/android/server/am/ActivityStack;
+    iget-object v4, v2, Lcom/android/server/am/TaskRecord;->stack:Lcom/android/server/am/ActivityStack;
 
-    if-eqz v3, :cond_0
+    if-eqz v4, :cond_0
 
-    iget-object v3, v2, Lcom/android/server/am/TaskRecord;->stack:Lcom/android/server/am/ActivityStack;
+    iget-object v4, v2, Lcom/android/server/am/TaskRecord;->stack:Lcom/android/server/am/ActivityStack;
 
-    invoke-virtual {v3}, Lcom/android/server/am/ActivityStack;->isHomeStack()Z
+    invoke-virtual {v4}, Lcom/android/server/am/ActivityStack;->isHomeStack()Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_0
+    if-eqz v4, :cond_0
 
     const/4 v3, 0x1
 
-    :goto_0
+    :cond_0
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 8918
+    .line 8347
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     return v3
 
-    .line 8915
-    :cond_0
-    const/4 v3, 0x0
-
-    goto :goto_0
-
-    .line 8916
+    .line 8345
     .end local v2    # "tr":Lcom/android/server/am/TaskRecord;
     :catchall_0
     move-exception v3
@@ -65389,7 +65391,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 8918
+    .line 8347
     :catchall_1
     move-exception v3
 
@@ -75433,6 +75435,127 @@
     throw v2
 .end method
 
+.method public resizeTask(ILandroid/graphics/Rect;)V
+    .locals 6
+    .param p1, "taskId"    # I
+    .param p2, "bounds"    # Landroid/graphics/Rect;
+
+    .prologue
+    .line 7908
+    const-string v3, "android.permission.MANAGE_ACTIVITY_STACKS"
+
+    const-string v4, "resizeTask()"
+
+    invoke-virtual {p0, v3, v4}, Lcom/android/server/am/ActivityManagerService;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 7910
+    invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
+
+    move-result-wide v0
+
+    .line 7912
+    .local v0, "ident":J
+    :try_start_0
+    monitor-enter p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    .line 7913
+    :try_start_1
+    iget-object v3, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+
+    const/4 v4, 0x1
+
+    invoke-virtual {v3, p1, v4}, Lcom/android/server/am/ActivityStackSupervisor;->anyTaskForIdLocked(IZ)Lcom/android/server/am/TaskRecord;
+
+    move-result-object v2
+
+    .line 7914
+    .local v2, "task":Lcom/android/server/am/TaskRecord;
+    if-nez v2, :cond_0
+
+    .line 7915
+    const-string v3, "ActivityManager"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "resizeTask: taskId="
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, " not found"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 7916
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 7921
+    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    .line 7923
+    :goto_0
+    return-void
+
+    .line 7918
+    :cond_0
+    :try_start_2
+    iget-object v3, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+
+    invoke-virtual {v3, v2, p2}, Lcom/android/server/am/ActivityStackSupervisor;->resizeTaskLocked(Lcom/android/server/am/TaskRecord;Landroid/graphics/Rect;)V
+
+    .line 7919
+    monitor-exit p0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    .line 7921
+    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    goto :goto_0
+
+    .line 7919
+    .end local v2    # "task":Lcom/android/server/am/TaskRecord;
+    :catchall_0
+    move-exception v3
+
+    :try_start_3
+    monitor-exit p0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    :try_start_4
+    throw v3
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+
+    .line 7921
+    :catchall_1
+    move-exception v3
+
+    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    throw v3
+.end method
+
 .method public restart()V
     .locals 4
 
@@ -78193,7 +78316,9 @@
     :try_start_0
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
-    invoke-virtual {v1, p1}, Lcom/android/server/am/ActivityStackSupervisor;->anyTaskForIdLocked(I)Lcom/android/server/am/TaskRecord;
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, p1, v2}, Lcom/android/server/am/ActivityStackSupervisor;->anyTaskForIdLocked(IZ)Lcom/android/server/am/TaskRecord;
 
     move-result-object v0
 

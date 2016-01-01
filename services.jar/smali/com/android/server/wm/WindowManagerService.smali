@@ -26882,6 +26882,100 @@
     goto :goto_0
 .end method
 
+.method public getStackIdWithBounds(Landroid/graphics/Rect;)I
+    .locals 5
+    .param p1, "bounds"    # Landroid/graphics/Rect;
+
+    .prologue
+    .line 5233
+    new-instance v2, Landroid/graphics/Rect;
+
+    invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
+
+    .line 5234
+    .local v2, "stackBounds":Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/android/server/wm/WindowManagerService;->mWindowMap:Ljava/util/HashMap;
+
+    monitor-enter v4
+
+    .line 5235
+    :try_start_0
+    iget-object v3, p0, Lcom/android/server/wm/WindowManagerService;->mStackIdToStack:Landroid/util/SparseArray;
+
+    invoke-virtual {v3}, Landroid/util/SparseArray;->size()I
+
+    move-result v3
+
+    add-int/lit8 v0, v3, -0x1
+
+    .local v0, "i":I
+    :goto_0
+    if-ltz v0, :cond_1
+
+    .line 5236
+    iget-object v3, p0, Lcom/android/server/wm/WindowManagerService;->mStackIdToStack:Landroid/util/SparseArray;
+
+    invoke-virtual {v3, v0}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/server/wm/TaskStack;
+
+    .line 5237
+    .local v1, "stack":Lcom/android/server/wm/TaskStack;
+    iget v3, v1, Lcom/android/server/wm/TaskStack;->mStackId:I
+
+    if-eqz v3, :cond_0
+
+    .line 5238
+    invoke-virtual {v1, v2}, Lcom/android/server/wm/TaskStack;->getBounds(Landroid/graphics/Rect;)V
+
+    .line 5239
+    invoke-virtual {v2, p1}, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    .line 5240
+    iget v3, v1, Lcom/android/server/wm/TaskStack;->mStackId:I
+
+    monitor-exit v4
+
+    .line 5245
+    .end local v1    # "stack":Lcom/android/server/wm/TaskStack;
+    :goto_1
+    return v3
+
+    .line 5235
+    .restart local v1    # "stack":Lcom/android/server/wm/TaskStack;
+    :cond_0
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_0
+
+    .line 5244
+    .end local v1    # "stack":Lcom/android/server/wm/TaskStack;
+    :cond_1
+    monitor-exit v4
+
+    .line 5245
+    const/4 v3, -0x1
+
+    goto :goto_1
+
+    .line 5244
+    .end local v0    # "i":I
+    :catchall_0
+    move-exception v3
+
+    monitor-exit v4
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v3
+.end method
+
 .method getTokenWindowsOnDisplay(Lcom/android/server/wm/WindowToken;Lcom/android/server/wm/DisplayContent;)Lcom/android/server/wm/WindowList;
     .locals 5
     .param p1, "token"    # Lcom/android/server/wm/WindowToken;
@@ -30614,6 +30708,99 @@
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     throw v4
+.end method
+
+.method public moveTaskToStack(IIZ)V
+    .locals 5
+    .param p1, "taskId"    # I
+    .param p2, "stackId"    # I
+    .param p3, "toTop"    # Z
+
+    .prologue
+    .line 5180
+    iget-object v4, p0, Lcom/android/server/wm/WindowManagerService;->mWindowMap:Ljava/util/HashMap;
+
+    monitor-enter v4
+
+    .line 5183
+    :try_start_0
+    iget-object v3, p0, Lcom/android/server/wm/WindowManagerService;->mTaskIdToTask:Landroid/util/SparseArray;
+
+    invoke-virtual {v3, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/android/server/wm/Task;
+
+    .line 5184
+    .local v2, "task":Lcom/android/server/wm/Task;
+    if-nez v2, :cond_0
+
+    .line 5186
+    monitor-exit v4
+
+    .line 5198
+    :goto_0
+    return-void
+
+    .line 5188
+    :cond_0
+    iget-object v3, p0, Lcom/android/server/wm/WindowManagerService;->mStackIdToStack:Landroid/util/SparseArray;
+
+    invoke-virtual {v3, p2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/server/wm/TaskStack;
+
+    .line 5189
+    .local v1, "stack":Lcom/android/server/wm/TaskStack;
+    if-nez v1, :cond_1
+
+    .line 5191
+    monitor-exit v4
+
+    goto :goto_0
+
+    .line 5197
+    .end local v1    # "stack":Lcom/android/server/wm/TaskStack;
+    .end local v2    # "task":Lcom/android/server/wm/Task;
+    :catchall_0
+    move-exception v3
+
+    monitor-exit v4
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v3
+
+    .line 5193
+    .restart local v1    # "stack":Lcom/android/server/wm/TaskStack;
+    .restart local v2    # "task":Lcom/android/server/wm/Task;
+    :cond_1
+    :try_start_1
+    invoke-virtual {v2, v1, p3}, Lcom/android/server/wm/Task;->moveTaskToStack(Lcom/android/server/wm/TaskStack;Z)V
+
+    .line 5194
+    invoke-virtual {v1}, Lcom/android/server/wm/TaskStack;->getDisplayContent()Lcom/android/server/wm/DisplayContent;
+
+    move-result-object v0
+
+    .line 5195
+    .local v0, "displayContent":Lcom/android/server/wm/DisplayContent;
+    const/4 v3, 0x1
+
+    iput-boolean v3, v0, Lcom/android/server/wm/DisplayContent;->layoutNeeded:Z
+
+    .line 5196
+    invoke-direct {p0}, Lcom/android/server/wm/WindowManagerService;->performLayoutAndPlaceSurfacesLocked()V
+
+    .line 5197
+    monitor-exit v4
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
 .end method
 
 .method public moveTaskToTop(I)V
