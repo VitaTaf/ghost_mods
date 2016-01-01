@@ -78180,6 +78180,83 @@
     throw v1
 .end method
 
+.method public setTaskResizeable(IZ)V
+    .locals 4
+    .param p1, "taskId"    # I
+    .param p2, "resizeable"    # Z
+
+    .prologue
+    .line 7892
+    monitor-enter p0
+
+    .line 7893
+    :try_start_0
+    iget-object v1, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+
+    invoke-virtual {v1, p1}, Lcom/android/server/am/ActivityStackSupervisor;->anyTaskForIdLocked(I)Lcom/android/server/am/TaskRecord;
+
+    move-result-object v0
+
+    .line 7894
+    .local v0, "task":Lcom/android/server/am/TaskRecord;
+    if-nez v0, :cond_0
+
+    .line 7895
+    const-string v1, "ActivityManager"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "setTaskResizeable: taskId="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " not found"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 7896
+    monitor-exit p0
+
+    .line 7900
+    :goto_0
+    return-void
+
+    .line 7898
+    :cond_0
+    iput-boolean p2, v0, Lcom/android/server/am/TaskRecord;->mResizeable:Z
+
+    .line 7899
+    monitor-exit p0
+
+    goto :goto_0
+
+    .end local v0    # "task":Lcom/android/server/am/TaskRecord;
+    :catchall_0
+    move-exception v1
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
 .method public setTestPssMode(Z)V
     .locals 4
     .param p1, "enabled"    # Z

@@ -1640,6 +1640,8 @@
 
 .field public static final resizeable:I = 0x101028d
 
+.field public static final resizeableActivity:I = 0x11600b2
+
 .field public static final resource:I = 0x1010025
 
 .field public static final restoreAnyVersion:I = 0x10102ba

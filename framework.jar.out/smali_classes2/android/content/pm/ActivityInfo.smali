@@ -162,6 +162,8 @@
 
 .field public persistableMode:I
 
+.field public resizeable:Z
+
 .field public screenOrientation:I
 
 .field public softInputMode:I
@@ -325,116 +327,134 @@
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
-    .locals 1
+    .locals 3
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 757
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    .line 754
     invoke-direct {p0, p1}, Landroid/content/pm/ComponentInfo;-><init>(Landroid/os/Parcel;)V
 
     .line 441
-    const/4 v0, -0x1
+    const/4 v2, -0x1
 
-    iput v0, p0, Landroid/content/pm/ActivityInfo;->screenOrientation:I
+    iput v2, p0, Landroid/content/pm/ActivityInfo;->screenOrientation:I
 
-    .line 639
-    const/4 v0, 0x0
+    .line 628
+    iput v1, p0, Landroid/content/pm/ActivityInfo;->uiOptions:I
 
-    iput v0, p0, Landroid/content/pm/ActivityInfo;->uiOptions:I
+    .line 755
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    iput v2, p0, Landroid/content/pm/ActivityInfo;->theme:I
+
+    .line 756
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    iput v2, p0, Landroid/content/pm/ActivityInfo;->launchMode:I
+
+    .line 757
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v2
+
+    iput-object v2, p0, Landroid/content/pm/ActivityInfo;->permission:Ljava/lang/String;
 
     .line 758
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result v0
+    move-result-object v2
 
-    iput v0, p0, Landroid/content/pm/ActivityInfo;->theme:I
+    iput-object v2, p0, Landroid/content/pm/ActivityInfo;->taskAffinity:Ljava/lang/String;
 
     .line 759
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result v0
+    move-result-object v2
 
-    iput v0, p0, Landroid/content/pm/ActivityInfo;->launchMode:I
+    iput-object v2, p0, Landroid/content/pm/ActivityInfo;->targetActivity:Ljava/lang/String;
 
     .line 760
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    move-result-object v0
+    move-result v2
 
-    iput-object v0, p0, Landroid/content/pm/ActivityInfo;->permission:Ljava/lang/String;
+    iput v2, p0, Landroid/content/pm/ActivityInfo;->flags:I
 
     .line 761
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    move-result-object v0
+    move-result v2
 
-    iput-object v0, p0, Landroid/content/pm/ActivityInfo;->taskAffinity:Ljava/lang/String;
+    iput v2, p0, Landroid/content/pm/ActivityInfo;->screenOrientation:I
 
     .line 762
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    move-result-object v0
+    move-result v2
 
-    iput-object v0, p0, Landroid/content/pm/ActivityInfo;->targetActivity:Ljava/lang/String;
+    iput v2, p0, Landroid/content/pm/ActivityInfo;->configChanges:I
 
     .line 763
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    move-result v0
+    move-result v2
 
-    iput v0, p0, Landroid/content/pm/ActivityInfo;->flags:I
+    iput v2, p0, Landroid/content/pm/ActivityInfo;->softInputMode:I
 
     .line 764
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    move-result v0
+    move-result v2
 
-    iput v0, p0, Landroid/content/pm/ActivityInfo;->screenOrientation:I
+    iput v2, p0, Landroid/content/pm/ActivityInfo;->uiOptions:I
 
     .line 765
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result v0
+    move-result-object v2
 
-    iput v0, p0, Landroid/content/pm/ActivityInfo;->configChanges:I
+    iput-object v2, p0, Landroid/content/pm/ActivityInfo;->parentActivityName:Ljava/lang/String;
 
     .line 766
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    move-result v0
+    move-result v2
 
-    iput v0, p0, Landroid/content/pm/ActivityInfo;->softInputMode:I
+    iput v2, p0, Landroid/content/pm/ActivityInfo;->persistableMode:I
 
     .line 767
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    move-result v0
+    move-result v2
 
-    iput v0, p0, Landroid/content/pm/ActivityInfo;->uiOptions:I
+    iput v2, p0, Landroid/content/pm/ActivityInfo;->maxRecents:I
 
     .line 768
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    move-result-object v0
+    move-result v2
 
-    iput-object v0, p0, Landroid/content/pm/ActivityInfo;->parentActivityName:Ljava/lang/String;
+    if-ne v2, v0, :cond_0
+
+    :goto_0
+    iput-boolean v0, p0, Landroid/content/pm/ActivityInfo;->resizeable:Z
 
     .line 769
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Landroid/content/pm/ActivityInfo;->persistableMode:I
-
-    .line 770
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Landroid/content/pm/ActivityInfo;->maxRecents:I
-
-    .line 771
     return-void
+
+    :cond_0
+    move v0, v1
+
+    .line 768
+    goto :goto_0
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/content/pm/ActivityInfo$1;)V
@@ -851,6 +871,33 @@
 
     .line 716
     :cond_5
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "resizeable="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-boolean v1, p0, Landroid/content/pm/ActivityInfo;->resizeable:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {p1, v0}, Landroid/util/Printer;->println(Ljava/lang/String;)V
+
+    .line 712
     invoke-super {p0, p1, p2}, Landroid/content/pm/ComponentInfo;->dumpBack(Landroid/util/Printer;Ljava/lang/String;)V
 
     .line 717
@@ -1034,5 +1081,21 @@
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 744
+    iget-boolean v0, p0, Landroid/content/pm/ActivityInfo;->resizeable:Z
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 741
     return-void
+
+    .line 740
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

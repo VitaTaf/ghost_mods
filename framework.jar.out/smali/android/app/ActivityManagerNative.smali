@@ -234,7 +234,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 259
+    .locals 260
     .param p1, "code"    # I
     .param p2, "data"    # Landroid/os/Parcel;
     .param p3, "reply"    # Landroid/os/Parcel;
@@ -11802,6 +11802,60 @@
     .line 2292
     .end local v60    # "token":Landroid/os/IBinder;
     .end local v252    # "values":Landroid/app/ActivityManager$TaskDescription;
+    :pswitch_d6
+    const-string v6, "android.app.IActivityManager"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 2309
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v244
+
+    .line 2310
+    .restart local v244    # "taskId":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v6
+
+    const/16 v174, 0x1
+
+    move/from16 v0, v174
+
+    if-ne v6, v0, :cond_83
+
+    const/16 v252, 0x1
+
+    .line 2311
+    .local v252, "resizeable":Z
+    :goto_7b
+    move-object/from16 v0, p0
+
+    move/from16 v1, v244
+
+    move/from16 v2, v252
+
+    invoke-virtual {v0, v1, v2}, Landroid/app/ActivityManagerNative;->setTaskResizeable(IZ)V
+
+    .line 2312
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 2313
+    const/4 v6, 0x1
+
+    goto/16 :goto_0
+
+    .line 2310
+    .end local v252    # "resizeable":Z
+    :cond_83
+    const/16 v252, 0x0
+
+    goto :goto_7b
+
+    .line 2317
+    .end local v244    # "taskId":I
     :pswitch_c8
     const-string v6, "android.app.IActivityManager"
 
@@ -12599,5 +12653,6 @@
         :pswitch_0
         :pswitch_0
         :pswitch_bf
+        :pswitch_d6
     .end packed-switch
 .end method

@@ -4494,7 +4494,7 @@
 
     .line 3132
     :cond_10
-    const/16 v2, 0x26
+    const/16 v2, 0x27
 
     const/4 v3, 0x0
 
@@ -4744,111 +4744,34 @@
 
     .line 3190
     :cond_16
+    iget-object v3, v14, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
+
+    const/16 v4, 0x26
+
+    move-object/from16 v0, p1
+
+    iget-object v2, v0, Landroid/content/pm/PackageParser$Package;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+
+    iget v2, v2, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
+
+    const/16 v5, 0x2710
+
+    if-lt v2, v5, :cond_2e
+
+    const/4 v2, 0x1
+
     :goto_5
-    if-eqz p7, :cond_17
-
-    .line 3191
-    const/16 v2, 0x1c
-
-    const/4 v3, 0x0
-
     move-object/from16 v0, v18
 
-    invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {v0, v4, v2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v2
 
-    if-eqz v2, :cond_17
-
-    .line 3194
-    iget-object v2, v14, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
-
-    iget v3, v2, Landroid/content/pm/ActivityInfo;->flags:I
-
-    const/high16 v4, 0x40000000    # 2.0f
-
-    or-int/2addr v3, v4
-
-    iput v3, v2, Landroid/content/pm/ActivityInfo;->flags:I
-
-    .line 3195
-    iget-object v2, v14, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
-
-    iget-boolean v2, v2, Landroid/content/pm/ActivityInfo;->exported:Z
-
-    if-eqz v2, :cond_17
-
-    move/from16 v0, p5
-
-    and-int/lit16 v2, v0, 0x80
-
-    if-nez v2, :cond_17
-
-    .line 3196
-    const-string v2, "PackageParser"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Activity exported request ignored due to singleUser: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, v14, Landroid/content/pm/PackageParser$Activity;->className:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, " at "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Landroid/content/pm/PackageParser;->mArchiveSourcePath:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, " "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-interface/range {p3 .. p3}, Lorg/xmlpull/v1/XmlPullParser;->getPositionDescription()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 3199
-    iget-object v2, v14, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
-
-    const/4 v3, 0x0
-
-    iput-boolean v3, v2, Landroid/content/pm/ActivityInfo;->exported:Z
-
-    .line 3200
-    const/16 v19, 0x1
+    iput-boolean v2, v3, Landroid/content/pm/ActivityInfo;->resizeable:Z
 
     .line 3210
     :cond_17
+    :goto_b
     invoke-virtual/range {v18 .. v18}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 3212
@@ -4985,6 +4908,11 @@
     goto/16 :goto_4
 
     .line 3186
+    :cond_2e
+    const/4 v2, 0x0
+
+    goto :goto_5
+
     :cond_1d
     iget-object v2, v14, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
 
@@ -4999,9 +4927,102 @@
 
     iput v3, v2, Landroid/content/pm/ActivityInfo;->configChanges:I
 
-    goto/16 :goto_5
+    const/16 v2, 0x1c
 
-    .line 3224
+    const/4 v3, 0x0
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_17
+
+    iget-object v2, v14, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
+
+    iget v3, v2, Landroid/content/pm/ActivityInfo;->flags:I
+
+    const/high16 v4, 0x40000000    # 2.0f
+
+    or-int/2addr v3, v4
+
+    iput v3, v2, Landroid/content/pm/ActivityInfo;->flags:I
+
+    iget-object v2, v14, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
+
+    iget-boolean v2, v2, Landroid/content/pm/ActivityInfo;->exported:Z
+
+    if-eqz v2, :cond_17
+
+    move/from16 v0, p5
+
+    and-int/lit16 v2, v0, 0x80
+
+    if-nez v2, :cond_17
+
+    const-string v2, "PackageParser"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Activity exported request ignored due to singleUser: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v14, Landroid/content/pm/PackageParser$Activity;->className:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " at "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Landroid/content/pm/PackageParser;->mArchiveSourcePath:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-interface/range {p3 .. p3}, Lorg/xmlpull/v1/XmlPullParser;->getPositionDescription()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v2, v14, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
+
+    const/4 v3, 0x0
+
+    iput-boolean v3, v2, Landroid/content/pm/ActivityInfo;->exported:Z
+
+    const/16 v19, 0x1
+
+    goto/16 :goto_b
+
     :cond_1e
     invoke-interface/range {p3 .. p3}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
 

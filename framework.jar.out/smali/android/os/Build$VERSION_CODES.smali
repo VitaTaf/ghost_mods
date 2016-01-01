@@ -63,6 +63,8 @@
 
 .field public static final LOLLIPOP_MR1:I = 0x16
 
+.field public static final MNC:I = 0x2710
+
 
 # direct methods
 .method public constructor <init>()V

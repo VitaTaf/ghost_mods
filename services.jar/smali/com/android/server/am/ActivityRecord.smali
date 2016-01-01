@@ -38,8 +38,6 @@
 
 .field static final TAG:Ljava/lang/String; = "ActivityManager"
 
-.field private static final TAG_ACTIVITY:Ljava/lang/String; = "activity"
-
 .field private static final TAG_INTENT:Ljava/lang/String; = "intent"
 
 .field private static final TAG_PERSISTABLEBUNDLE:Ljava/lang/String; = "persistable_bundle"

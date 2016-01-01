@@ -329,6 +329,8 @@
 
 .field public static final AndroidManifestActivity_relinquishTaskIdentity:I = 0x24
 
+.field public static final AndroidManifestActivity_resizeableActivity:I = 0x26
+
 .field public static final AndroidManifestActivity_resumeWhilePausing:I = 0x25
 
 .field public static final AndroidManifestActivity_screenOrientation:I = 0xf
@@ -4291,7 +4293,7 @@
     sput-object v0, Landroid/R$styleable;->AndroidManifestAction:[I
 
     .line 17203
-    const/16 v0, 0x27
+    const/16 v0, 0x28
 
     new-array v0, v0, [I
 
@@ -6631,6 +6633,7 @@
         0x1010447
         0x1010476
         0x10104b2
+        0x11600b2
         0x11600af
     .end array-data
 

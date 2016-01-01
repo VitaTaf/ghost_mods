@@ -355,6 +355,8 @@
 
 .field public static final SET_TASK_DESCRIPTION_TRANSACTION:I = 0xda
 
+.field public static final SET_TASK_RESIZEABLE_TRANSACTION:I = 0x11c
+
 .field public static final SET_USER_IS_MONKEY_TRANSACTION:I = 0xa6
 
 .field public static final SHOULD_UP_RECREATE_TASK_TRANSACTION:I = 0x92
@@ -1909,6 +1911,14 @@
 .end method
 
 .method public abstract setTaskDescription(Landroid/os/IBinder;Landroid/app/ActivityManager$TaskDescription;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract setTaskResizeable(IZ)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
