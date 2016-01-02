@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 968
+    .line 972
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackView$7;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,13 +40,13 @@
     .locals 2
 
     .prologue
-    .line 971
+    .line 975
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView$7;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lcom/android/systemui/recents/views/TaskStackView;->mDismissAllButtonAnimating:Z
 
-    .line 972
+    .line 976
     return-void
 .end method

@@ -74,6 +74,8 @@
 
 .field mInflater:Landroid/view/LayoutInflater;
 
+.field mLayersDisabled:Z
+
 .field mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
 
 .field mPrevAccessibilityFocusedIndex:I
@@ -184,61 +186,61 @@
     .line 83
     iput v2, p0, Lcom/android/systemui/recents/views/TaskStackView;->mPrevAccessibilityFocusedIndex:I
 
-    .line 87
+    .line 86
     iput-boolean v1, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStackViewsDirty:Z
 
-    .line 88
+    .line 87
     iput-boolean v1, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStackViewsClipDirty:Z
 
-    .line 89
+    .line 88
     iput-boolean v1, p0, Lcom/android/systemui/recents/views/TaskStackView;->mAwaitingFirstLayout:Z
 
-    .line 93
+    .line 92
     new-array v0, v3, [I
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTmpVisibleRange:[I
 
-    .line 94
+    .line 93
     new-array v0, v3, [F
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTmpCoord:[F
 
-    .line 95
+    .line 94
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTmpMatrix:Landroid/graphics/Matrix;
 
-    .line 96
+    .line 95
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTmpRect:Landroid/graphics/Rect;
 
-    .line 97
+    .line 96
     new-instance v0, Lcom/android/systemui/recents/views/TaskViewTransform;
 
     invoke-direct {v0}, Lcom/android/systemui/recents/views/TaskViewTransform;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTmpTransform:Lcom/android/systemui/recents/views/TaskViewTransform;
 
-    .line 98
+    .line 97
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTmpTaskViewMap:Ljava/util/HashMap;
 
-    .line 99
+    .line 98
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTaskViews:Ljava/util/ArrayList;
 
-    .line 100
+    .line 99
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -561,18 +563,18 @@
 
     const/4 v11, 0x0
 
-    .line 427
+    .line 429
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->getTaskViews()Ljava/util/List;
 
     move-result-object v5
 
-    .line 428
+    .line 430
     .local v5, "taskViews":Ljava/util/List;, "Ljava/util/List<Lcom/android/systemui/recents/views/TaskView;>;"
     invoke-interface {v5}, Ljava/util/List;->size()I
 
     move-result v4
 
-    .line 429
+    .line 431
     .local v4, "taskViewCount":I
     const/4 v1, 0x0
 
@@ -582,26 +584,26 @@
 
     if-ge v1, v8, :cond_3
 
-    .line 430
+    .line 432
     invoke-interface {v5, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
     check-cast v7, Lcom/android/systemui/recents/views/TaskView;
 
-    .line 431
+    .line 433
     .local v7, "tv":Lcom/android/systemui/recents/views/TaskView;
     const/4 v3, 0x0
 
-    .line 432
+    .line 434
     .local v3, "nextTv":Lcom/android/systemui/recents/views/TaskView;
     const/4 v6, 0x0
 
-    .line 433
+    .line 435
     .local v6, "tmpTv":Lcom/android/systemui/recents/views/TaskView;
     const/4 v0, 0x0
 
-    .line 434
+    .line 436
     .local v0, "clipBottom":I
     invoke-virtual {v7}, Lcom/android/systemui/recents/views/TaskView;->shouldClipViewInStack()Z
 
@@ -609,17 +611,17 @@
 
     if-eqz v8, :cond_2
 
-    .line 436
+    .line 438
     move v2, v1
 
-    .line 437
+    .line 439
     .local v2, "nextIndex":I
     :cond_0
     add-int/lit8 v8, v4, -0x1
 
     if-ge v2, v8, :cond_1
 
-    .line 438
+    .line 440
     add-int/lit8 v2, v2, 0x1
 
     invoke-interface {v5, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -629,7 +631,7 @@
     .end local v6    # "tmpTv":Lcom/android/systemui/recents/views/TaskView;
     check-cast v6, Lcom/android/systemui/recents/views/TaskView;
 
-    .line 439
+    .line 441
     .restart local v6    # "tmpTv":Lcom/android/systemui/recents/views/TaskView;
     if-eqz v6, :cond_0
 
@@ -639,14 +641,14 @@
 
     if-eqz v8, :cond_0
 
-    .line 440
+    .line 442
     move-object v3, v6
 
-    .line 448
+    .line 450
     :cond_1
     if-eqz v3, :cond_2
 
-    .line 451
+    .line 453
     iget-object v8, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTmpCoord:[F
 
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTmpCoord:[F
@@ -657,19 +659,19 @@
 
     aput v10, v8, v11
 
-    .line 452
+    .line 454
     iget-object v8, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTmpCoord:[F
 
     invoke-static {v3, p0, v8, v11}, Lcom/android/systemui/recents/misc/Utilities;->mapCoordInDescendentToSelf(Landroid/view/View;Landroid/view/View;[FZ)F
 
-    .line 453
+    .line 455
     iget-object v8, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTmpCoord:[F
 
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTmpMatrix:Landroid/graphics/Matrix;
 
     invoke-static {v7, p0, v8, v9}, Lcom/android/systemui/recents/misc/Utilities;->mapCoordInSelfToDescendent(Landroid/view/View;Landroid/view/View;[FLandroid/graphics/Matrix;)F
 
-    .line 454
+    .line 456
     invoke-virtual {v7}, Lcom/android/systemui/recents/views/TaskView;->getMeasuredHeight()I
 
     move-result v8
@@ -702,7 +704,7 @@
 
     double-to-int v0, v8
 
-    .line 458
+    .line 460
     .end local v2    # "nextIndex":I
     :cond_2
     invoke-virtual {v7}, Lcom/android/systemui/recents/views/TaskView;->getViewBounds()Lcom/android/systemui/recents/views/AnimateableViewBounds;
@@ -711,12 +713,12 @@
 
     invoke-virtual {v8, v0}, Lcom/android/systemui/recents/views/AnimateableViewBounds;->setClipBottom(I)V
 
-    .line 429
+    .line 431
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 460
+    .line 462
     .end local v0    # "clipBottom":I
     .end local v3    # "nextTv":Lcom/android/systemui/recents/views/TaskView;
     .end local v6    # "tmpTv":Lcom/android/systemui/recents/views/TaskView;
@@ -724,7 +726,7 @@
     :cond_3
     if-lez v4, :cond_4
 
-    .line 462
+    .line 464
     add-int/lit8 v8, v4, -0x1
 
     invoke-interface {v5, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -733,7 +735,7 @@
 
     check-cast v7, Lcom/android/systemui/recents/views/TaskView;
 
-    .line 463
+    .line 465
     .restart local v7    # "tv":Lcom/android/systemui/recents/views/TaskView;
     invoke-virtual {v7}, Lcom/android/systemui/recents/views/TaskView;->getViewBounds()Lcom/android/systemui/recents/views/AnimateableViewBounds;
 
@@ -741,12 +743,12 @@
 
     invoke-virtual {v8, v11}, Lcom/android/systemui/recents/views/AnimateableViewBounds;->setClipBottom(I)V
 
-    .line 465
+    .line 467
     .end local v7    # "tv":Lcom/android/systemui/recents/views/TaskView;
     :cond_4
     iput-boolean v11, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStackViewsClipDirty:Z
 
-    .line 466
+    .line 468
     return-void
 .end method
 
@@ -759,17 +761,17 @@
     .param p5, "launchedFromHome"    # Z
 
     .prologue
-    .line 655
+    .line 657
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;->computeRects(IILandroid/graphics/Rect;)V
 
-    .line 658
+    .line 660
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0, p4, p5}, Lcom/android/systemui/recents/views/TaskStackView;->updateMinMaxScroll(ZZZ)V
 
-    .line 659
+    .line 661
     return-void
 .end method
 
@@ -777,26 +779,26 @@
     .locals 1
 
     .prologue
-    .line 642
+    .line 644
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStackScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskStackViewScroller;->computeScroll()Z
 
-    .line 644
+    .line 646
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->synchronizeStackViewsWithModel()Z
 
-    .line 645
+    .line 647
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->clipTaskViews()V
 
-    .line 646
+    .line 648
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->updateDismissButtonPosition()V
 
-    .line 648
+    .line 650
     const/16 v0, 0x1000
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskStackView;->sendAccessibilityEvent(I)V
 
-    .line 649
+    .line 651
     return-void
 .end method
 
@@ -804,7 +806,7 @@
     .locals 2
 
     .prologue
-    .line 676
+    .line 678
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
@@ -825,7 +827,7 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 1184
+    .line 1202
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mInflater:Landroid/view/LayoutInflater;
 
     const v1, 0x7f040035
@@ -846,7 +848,7 @@
     .param p1, "x0"    # Landroid/content/Context;
 
     .prologue
-    .line 50
+    .line 51
     invoke-virtual {p0, p1}, Lcom/android/systemui/recents/views/TaskStackView;->createView(Landroid/content/Context;)Lcom/android/systemui/recents/views/TaskView;
 
     move-result-object v0
@@ -854,11 +856,56 @@
     return-object v0
 .end method
 
+.method public disableLayersForOneFrame()V
+    .locals 3
+
+    .prologue
+    .line 1043
+    const/4 v2, 0x1
+
+    iput-boolean v2, p0, Lcom/android/systemui/recents/views/TaskStackView;->mLayersDisabled:Z
+
+    .line 1044
+    invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->getTaskViews()Ljava/util/List;
+
+    move-result-object v1
+
+    .line 1045
+    .local v1, "taskViews":Ljava/util/List;, "Ljava/util/List<Lcom/android/systemui/recents/views/TaskView;>;"
+    const/4 v0, 0x0
+
+    .local v0, "i":I
+    :goto_0
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    if-ge v0, v2, :cond_0
+
+    .line 1046
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/android/systemui/recents/views/TaskView;
+
+    invoke-virtual {v2}, Lcom/android/systemui/recents/views/TaskView;->disableLayersForOneFrame()V
+
+    .line 1045
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 1048
+    :cond_0
+    return-void
+.end method
+
 .method public dismissFocusedTask()V
     .locals 4
 
     .prologue
-    .line 581
+    .line 583
     iget v2, p0, Lcom/android/systemui/recents/views/TaskStackView;->mFocusedTaskIndex:I
 
     if-ltz v2, :cond_0
@@ -873,17 +920,17 @@
 
     if-lt v2, v3, :cond_1
 
-    .line 582
+    .line 584
     :cond_0
     const/4 v2, -0x1
 
     iput v2, p0, Lcom/android/systemui/recents/views/TaskStackView;->mFocusedTaskIndex:I
 
-    .line 589
+    .line 591
     :goto_0
     return-void
 
-    .line 586
+    .line 588
     :cond_1
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
@@ -899,29 +946,46 @@
 
     check-cast v0, Lcom/android/systemui/recents/model/Task;
 
-    .line 587
+    .line 589
     .local v0, "t":Lcom/android/systemui/recents/model/Task;
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskStackView;->getChildViewForTask(Lcom/android/systemui/recents/model/Task;)Lcom/android/systemui/recents/views/TaskView;
 
     move-result-object v1
 
-    .line 588
+    .line 590
     .local v1, "tv":Lcom/android/systemui/recents/views/TaskView;
     invoke-virtual {v1}, Lcom/android/systemui/recents/views/TaskView;->dismissTask()V
 
     goto :goto_0
 .end method
 
+.method protected dispatchDraw(Landroid/graphics/Canvas;)V
+    .locals 1
+    .param p1, "canvas"    # Landroid/graphics/Canvas;
+
+    .prologue
+    .line 1038
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mLayersDisabled:Z
+
+    .line 1039
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
+
+    .line 1040
+    return-void
+.end method
+
 .method public ensureFocusedTask()Z
     .locals 8
 
     .prologue
-    .line 536
+    .line 538
     iget v6, p0, Lcom/android/systemui/recents/views/TaskStackView;->mFocusedTaskIndex:I
 
     if-gez v6, :cond_1
 
-    .line 539
+    .line 541
     iget-object v6, p0, Lcom/android/systemui/recents/views/TaskStackView;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
 
     iget-object v6, v6, Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;->mStackVisibleRect:Landroid/graphics/Rect;
@@ -930,7 +994,7 @@
 
     move-result v4
 
-    .line 540
+    .line 542
     .local v4, "x":I
     iget-object v6, p0, Lcom/android/systemui/recents/views/TaskStackView;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
 
@@ -940,19 +1004,19 @@
 
     move-result v5
 
-    .line 541
+    .line 543
     .local v5, "y":I
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->getTaskViews()Ljava/util/List;
 
     move-result-object v2
 
-    .line 542
+    .line 544
     .local v2, "taskViews":Ljava/util/List;, "Ljava/util/List<Lcom/android/systemui/recents/views/TaskView;>;"
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v1
 
-    .line 543
+    .line 545
     .local v1, "taskViewCount":I
     add-int/lit8 v0, v1, -0x1
 
@@ -960,20 +1024,20 @@
     :goto_0
     if-ltz v0, :cond_0
 
-    .line 544
+    .line 546
     invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/android/systemui/recents/views/TaskView;
 
-    .line 545
+    .line 547
     .local v3, "tv":Lcom/android/systemui/recents/views/TaskView;
     iget-object v6, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTmpRect:Landroid/graphics/Rect;
 
     invoke-virtual {v3, v6}, Lcom/android/systemui/recents/views/TaskView;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 546
+    .line 548
     iget-object v6, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTmpRect:Landroid/graphics/Rect;
 
     invoke-virtual {v6, v4, v5}, Landroid/graphics/Rect;->contains(II)Z
@@ -982,7 +1046,7 @@
 
     if-eqz v6, :cond_2
 
-    .line 547
+    .line 549
     iget-object v6, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
     invoke-virtual {v3}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
@@ -995,7 +1059,7 @@
 
     iput v6, p0, Lcom/android/systemui/recents/views/TaskStackView;->mFocusedTaskIndex:I
 
-    .line 552
+    .line 554
     .end local v3    # "tv":Lcom/android/systemui/recents/views/TaskView;
     :cond_0
     iget v6, p0, Lcom/android/systemui/recents/views/TaskStackView;->mFocusedTaskIndex:I
@@ -1004,12 +1068,12 @@
 
     if-lez v1, :cond_1
 
-    .line 553
+    .line 555
     add-int/lit8 v6, v1, -0x1
 
     iput v6, p0, Lcom/android/systemui/recents/views/TaskStackView;->mFocusedTaskIndex:I
 
-    .line 556
+    .line 558
     .end local v0    # "i":I
     .end local v1    # "taskViewCount":I
     .end local v2    # "taskViews":Ljava/util/List;, "Ljava/util/List<Lcom/android/systemui/recents/views/TaskView;>;"
@@ -1025,7 +1089,7 @@
     :goto_1
     return v6
 
-    .line 543
+    .line 545
     .restart local v0    # "i":I
     .restart local v1    # "taskViewCount":I
     .restart local v2    # "taskViews":Ljava/util/List;, "Ljava/util/List<Lcom/android/systemui/recents/views/TaskView;>;"
@@ -1037,7 +1101,7 @@
 
     goto :goto_0
 
-    .line 556
+    .line 558
     .end local v0    # "i":I
     .end local v1    # "taskViewCount":I
     .end local v2    # "taskViews":Ljava/util/List;, "Ljava/util/List<Lcom/android/systemui/recents/views/TaskView;>;"
@@ -1058,36 +1122,36 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 567
+    .line 569
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
     invoke-virtual {v4}, Lcom/android/systemui/recents/model/TaskStack;->getTaskCount()I
 
     move-result v2
 
-    .line 568
+    .line 570
     .local v2, "numTasks":I
     if-nez v2, :cond_1
 
-    .line 576
+    .line 578
     :cond_0
     :goto_0
     return-void
 
-    .line 570
+    .line 572
     :cond_1
     if-eqz p1, :cond_2
 
     const/4 v0, -0x1
 
-    .line 571
+    .line 573
     .local v0, "direction":I
     :goto_1
     iget v4, p0, Lcom/android/systemui/recents/views/TaskStackView;->mFocusedTaskIndex:I
 
     add-int v1, v4, v0
 
-    .line 572
+    .line 574
     .local v1, "newIndex":I
     if-ltz v1, :cond_0
 
@@ -1095,7 +1159,7 @@
 
     if-gt v1, v4, :cond_0
 
-    .line 573
+    .line 575
     const/4 v4, 0x0
 
     add-int/lit8 v5, v2, -0x1
@@ -1108,7 +1172,7 @@
 
     move-result v1
 
-    .line 574
+    .line 576
     invoke-virtual {p0, v1, v3, p2}, Lcom/android/systemui/recents/views/TaskStackView;->focusTask(IZZ)V
 
     goto :goto_0
@@ -1118,7 +1182,7 @@
     :cond_2
     move v0, v3
 
-    .line 570
+    .line 572
     goto :goto_1
 .end method
 
@@ -1129,17 +1193,17 @@
     .param p3, "animateFocusedState"    # Z
 
     .prologue
-    .line 493
+    .line 495
     iget v4, p0, Lcom/android/systemui/recents/views/TaskStackView;->mFocusedTaskIndex:I
 
     if-ne p1, v4, :cond_1
 
-    .line 529
+    .line 531
     :cond_0
     :goto_0
     return-void
 
-    .line 495
+    .line 497
     :cond_1
     if-ltz p1, :cond_0
 
@@ -1151,10 +1215,10 @@
 
     if-ge p1, v4, :cond_0
 
-    .line 496
+    .line 498
     iput p1, p0, Lcom/android/systemui/recents/views/TaskStackView;->mFocusedTaskIndex:I
 
-    .line 499
+    .line 501
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
     invoke-virtual {v4}, Lcom/android/systemui/recents/model/TaskStack;->getTasks()Ljava/util/ArrayList;
@@ -1167,28 +1231,28 @@
 
     check-cast v2, Lcom/android/systemui/recents/model/Task;
 
-    .line 500
+    .line 502
     .local v2, "t":Lcom/android/systemui/recents/model/Task;
     invoke-virtual {p0, v2}, Lcom/android/systemui/recents/views/TaskStackView;->getChildViewForTask(Lcom/android/systemui/recents/model/Task;)Lcom/android/systemui/recents/views/TaskView;
 
     move-result-object v3
 
-    .line 501
+    .line 503
     .local v3, "tv":Lcom/android/systemui/recents/views/TaskView;
     const/4 v1, 0x0
 
-    .line 502
+    .line 504
     .local v1, "postScrollRunnable":Ljava/lang/Runnable;
     if-eqz v3, :cond_2
 
-    .line 503
+    .line 505
     invoke-virtual {v3, p3}, Lcom/android/systemui/recents/views/TaskView;->setFocusedTask(Z)V
 
-    .line 518
+    .line 520
     :goto_1
     if-eqz p2, :cond_3
 
-    .line 519
+    .line 521
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackView;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
 
     invoke-virtual {v4, v2}, Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;->getStackScrollForTask(Lcom/android/systemui/recents/model/Task;)F
@@ -1199,7 +1263,7 @@
 
     sub-float v0, v4, v5
 
-    .line 520
+    .line 522
     .local v0, "newScroll":F
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStackScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
@@ -1207,7 +1271,7 @@
 
     move-result v0
 
-    .line 521
+    .line 523
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStackScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
     iget-object v5, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStackScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
@@ -1220,7 +1284,7 @@
 
     goto :goto_0
 
-    .line 505
+    .line 507
     .end local v0    # "newScroll":F
     :cond_2
     new-instance v1, Lcom/android/systemui/recents/views/TaskStackView$4;
@@ -1231,11 +1295,11 @@
     .restart local v1    # "postScrollRunnable":Ljava/lang/Runnable;
     goto :goto_1
 
-    .line 523
+    .line 525
     :cond_3
     if-eqz v1, :cond_0
 
-    .line 524
+    .line 526
     invoke-interface {v1}, Ljava/lang/Runnable;->run()V
 
     goto :goto_0
@@ -1304,7 +1368,7 @@
     .locals 1
 
     .prologue
-    .line 487
+    .line 489
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStackScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
     return-object v0
@@ -1353,7 +1417,7 @@
     .locals 1
 
     .prologue
-    .line 637
+    .line 639
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTaskStackBounds:Landroid/graphics/Rect;
 
     return-object v0
@@ -1365,7 +1429,7 @@
     .param p2, "preferredData"    # Lcom/android/systemui/recents/model/Task;
 
     .prologue
-    .line 1270
+    .line 1288
     invoke-virtual {p1}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
 
     move-result-object v0
@@ -1389,7 +1453,7 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 50
+    .line 51
     check-cast p1, Lcom/android/systemui/recents/views/TaskView;
 
     .end local p1    # "x0":Ljava/lang/Object;
@@ -1408,22 +1472,22 @@
     .param p1, "postAnimRunnable"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 980
+    .line 984
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mDismissAllButton:Lcom/android/systemui/statusbar/DismissView;
 
     if-nez v0, :cond_0
 
-    .line 997
+    .line 1001
     :goto_0
     return-void
 
-    .line 982
+    .line 986
     :cond_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mDismissAllButtonAnimating:Z
 
-    .line 983
+    .line 987
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mDismissAllButton:Lcom/android/systemui/statusbar/DismissView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/DismissView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1462,7 +1526,7 @@
     .param p3, "child"    # Landroid/view/View;
 
     .prologue
-    .line 1023
+    .line 1027
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, p3, v0}, Lcom/android/systemui/recents/views/TaskStackView;->isTransformedTouchPointInView(FFLandroid/view/View;Landroid/graphics/PointF;)Z
@@ -1478,7 +1542,7 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 772
+    .line 774
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackView;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
 
     iget-object v9, v9, Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;->mViewRect:Landroid/graphics/Rect;
@@ -1501,23 +1565,23 @@
 
     sub-int v3, v9, v10
 
-    .line 776
+    .line 778
     .local v3, "offscreenY":I
     const/4 v1, 0x0
 
-    .line 777
+    .line 779
     .local v1, "launchTargetTask":Lcom/android/systemui/recents/model/Task;
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->getTaskViews()Ljava/util/List;
 
     move-result-object v6
 
-    .line 778
+    .line 780
     .local v6, "taskViews":Ljava/util/List;, "Ljava/util/List<Lcom/android/systemui/recents/views/TaskView;>;"
     invoke-interface {v6}, Ljava/util/List;->size()I
 
     move-result v5
 
-    .line 779
+    .line 781
     .local v5, "taskViewCount":I
     add-int/lit8 v0, v5, -0x1
 
@@ -1525,29 +1589,29 @@
     :goto_0
     if-ltz v0, :cond_0
 
-    .line 780
+    .line 782
     invoke-interface {v6, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
     check-cast v7, Lcom/android/systemui/recents/views/TaskView;
 
-    .line 781
+    .line 783
     .local v7, "tv":Lcom/android/systemui/recents/views/TaskView;
     invoke-virtual {v7}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
 
     move-result-object v4
 
-    .line 782
+    .line 784
     .local v4, "task":Lcom/android/systemui/recents/model/Task;
     iget-boolean v9, v4, Lcom/android/systemui/recents/model/Task;->isLaunchTarget:Z
 
     if-eqz v9, :cond_1
 
-    .line 783
+    .line 785
     move-object v1, v4
 
-    .line 789
+    .line 791
     .end local v4    # "task":Lcom/android/systemui/recents/model/Task;
     .end local v7    # "tv":Lcom/android/systemui/recents/views/TaskView;
     :cond_0
@@ -1556,20 +1620,20 @@
     :goto_1
     if-ltz v0, :cond_3
 
-    .line 790
+    .line 792
     invoke-interface {v6, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
     check-cast v7, Lcom/android/systemui/recents/views/TaskView;
 
-    .line 791
+    .line 793
     .restart local v7    # "tv":Lcom/android/systemui/recents/views/TaskView;
     invoke-virtual {v7}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
 
     move-result-object v4
 
-    .line 792
+    .line 794
     .restart local v4    # "task":Lcom/android/systemui/recents/model/Task;
     if-eqz v1, :cond_2
 
@@ -1583,19 +1647,19 @@
 
     const/4 v2, 0x1
 
-    .line 794
+    .line 796
     .local v2, "occludesLaunchTarget":Z
     :goto_2
     iget-boolean v9, v4, Lcom/android/systemui/recents/model/Task;->isLaunchTarget:Z
 
     invoke-virtual {v7, v9, v2, v3}, Lcom/android/systemui/recents/views/TaskView;->prepareEnterRecentsAnimation(ZZI)V
 
-    .line 789
+    .line 791
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_1
 
-    .line 779
+    .line 781
     .end local v2    # "occludesLaunchTarget":Z
     :cond_1
     add-int/lit8 v0, v0, -0x1
@@ -1605,10 +1669,10 @@
     :cond_2
     move v2, v8
 
-    .line 792
+    .line 794
     goto :goto_2
 
-    .line 799
+    .line 801
     .end local v4    # "task":Lcom/android/systemui/recents/model/Task;
     .end local v7    # "tv":Lcom/android/systemui/recents/views/TaskView;
     :cond_3
@@ -1616,20 +1680,20 @@
 
     if-eqz v9, :cond_4
 
-    .line 800
+    .line 802
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStartEnterAnimationContext:Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;
 
     invoke-virtual {p0, v9}, Lcom/android/systemui/recents/views/TaskStackView;->startEnterRecentsAnimation(Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;)V
 
-    .line 801
+    .line 803
     iput-boolean v8, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStartEnterAnimationRequestedAfterLayout:Z
 
-    .line 802
+    .line 804
     const/4 v9, 0x0
 
     iput-object v9, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStartEnterAnimationContext:Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;
 
-    .line 807
+    .line 809
     :cond_4
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
@@ -1637,14 +1701,14 @@
 
     if-eqz v9, :cond_5
 
-    .line 808
+    .line 810
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget-boolean v9, v9, Lcom/android/systemui/recents/RecentsConfiguration;->launchedFromAppWithThumbnail:Z
 
     if-eqz v9, :cond_7
 
-    .line 809
+    .line 811
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
     invoke-virtual {v9}, Lcom/android/systemui/recents/model/TaskStack;->getTaskCount()I
@@ -1663,7 +1727,7 @@
 
     invoke-virtual {p0, v9, v8, v10}, Lcom/android/systemui/recents/views/TaskStackView;->focusTask(IZZ)V
 
-    .line 818
+    .line 820
     :cond_5
     :goto_3
     iget-object v8, p0, Lcom/android/systemui/recents/views/TaskStackView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
@@ -1672,16 +1736,16 @@
 
     if-nez v8, :cond_6
 
-    .line 819
+    .line 821
     iget-object v8, p0, Lcom/android/systemui/recents/views/TaskStackView;->mUIDozeTrigger:Lcom/android/systemui/recents/misc/DozeTrigger;
 
     invoke-virtual {v8}, Lcom/android/systemui/recents/misc/DozeTrigger;->startDozing()V
 
-    .line 821
+    .line 823
     :cond_6
     return-void
 
-    .line 812
+    .line 814
     :cond_7
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
@@ -1709,7 +1773,7 @@
     .param p1, "ev"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 632
+    .line 634
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTouchHandler:Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->onGenericMotionEvent(Landroid/view/MotionEvent;)Z
@@ -1724,25 +1788,25 @@
     .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
     .prologue
-    .line 605
+    .line 607
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 606
+    .line 608
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->getTaskViews()Ljava/util/List;
 
     move-result-object v3
 
-    .line 607
+    .line 609
     .local v3, "taskViews":Ljava/util/List;, "Ljava/util/List<Lcom/android/systemui/recents/views/TaskView;>;"
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v2
 
-    .line 608
+    .line 610
     .local v2, "taskViewCount":I
     if-lez v2, :cond_0
 
-    .line 609
+    .line 611
     const/4 v4, 0x0
 
     invoke-interface {v3, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1751,7 +1815,7 @@
 
     check-cast v0, Lcom/android/systemui/recents/views/TaskView;
 
-    .line 610
+    .line 612
     .local v0, "backMostTask":Lcom/android/systemui/recents/views/TaskView;
     add-int/lit8 v4, v2, -0x1
 
@@ -1761,7 +1825,7 @@
 
     check-cast v1, Lcom/android/systemui/recents/views/TaskView;
 
-    .line 611
+    .line 613
     .local v1, "frontMostTask":Lcom/android/systemui/recents/views/TaskView;
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
@@ -1775,7 +1839,7 @@
 
     invoke-virtual {p1, v4}, Landroid/view/accessibility/AccessibilityEvent;->setFromIndex(I)V
 
-    .line 612
+    .line 614
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
     invoke-virtual {v1}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
@@ -1788,7 +1852,7 @@
 
     invoke-virtual {p1, v4}, Landroid/view/accessibility/AccessibilityEvent;->setToIndex(I)V
 
-    .line 613
+    .line 615
     invoke-virtual {v1}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
 
     move-result-object v4
@@ -1797,7 +1861,7 @@
 
     invoke-virtual {p1, v4}, Landroid/view/accessibility/AccessibilityEvent;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 615
+    .line 617
     .end local v0    # "backMostTask":Lcom/android/systemui/recents/views/TaskView;
     .end local v1    # "frontMostTask":Lcom/android/systemui/recents/views/TaskView;
     :cond_0
@@ -1809,7 +1873,7 @@
 
     invoke-virtual {p1, v4}, Landroid/view/accessibility/AccessibilityEvent;->setItemCount(I)V
 
-    .line 616
+    .line 618
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStackScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
     iget-object v4, v4, Lcom/android/systemui/recents/views/TaskStackViewScroller;->mScroller:Landroid/widget/OverScroller;
@@ -1820,7 +1884,7 @@
 
     invoke-virtual {p1, v4}, Landroid/view/accessibility/AccessibilityEvent;->setScrollY(I)V
 
-    .line 617
+    .line 619
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStackScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
     iget-object v5, p0, Lcom/android/systemui/recents/views/TaskStackView;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
@@ -1833,7 +1897,7 @@
 
     invoke-virtual {p1, v4}, Landroid/view/accessibility/AccessibilityEvent;->setMaxScrollY(I)V
 
-    .line 618
+    .line 620
     return-void
 .end method
 
@@ -1842,7 +1906,7 @@
     .param p1, "ev"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 622
+    .line 624
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTouchHandler:Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
@@ -1863,18 +1927,18 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 740
+    .line 742
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->getTaskViews()Ljava/util/List;
 
     move-result-object v2
 
-    .line 741
+    .line 743
     .local v2, "taskViews":Ljava/util/List;, "Ljava/util/List<Lcom/android/systemui/recents/views/TaskView;>;"
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v1
 
-    .line 742
+    .line 744
     .local v1, "taskViewCount":I
     const/4 v0, 0x0
 
@@ -1882,14 +1946,14 @@
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 743
+    .line 745
     invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/android/systemui/recents/views/TaskView;
 
-    .line 744
+    .line 746
     .local v3, "tv":Lcom/android/systemui/recents/views/TaskView;
     invoke-virtual {v3}, Lcom/android/systemui/recents/views/TaskView;->getBackground()Landroid/graphics/drawable/Drawable;
 
@@ -1897,7 +1961,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 745
+    .line 747
     invoke-virtual {v3}, Lcom/android/systemui/recents/views/TaskView;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v4
@@ -1906,7 +1970,7 @@
 
     invoke-virtual {v4, v5}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
 
-    .line 749
+    .line 751
     :goto_1
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackView;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
 
@@ -1958,12 +2022,12 @@
 
     invoke-virtual {v3, v4, v5, v6, v7}, Lcom/android/systemui/recents/views/TaskView;->layout(IIII)V
 
-    .line 742
+    .line 744
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 747
+    .line 749
     :cond_0
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTmpRect:Landroid/graphics/Rect;
 
@@ -1971,14 +2035,14 @@
 
     goto :goto_1
 
-    .line 758
+    .line 760
     .end local v3    # "tv":Lcom/android/systemui/recents/views/TaskView;
     :cond_1
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackView;->mDismissAllButton:Lcom/android/systemui/statusbar/DismissView;
 
     if-eqz v4, :cond_2
 
-    .line 759
+    .line 761
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackView;->mDismissAllButton:Lcom/android/systemui/statusbar/DismissView;
 
     iget-object v5, p0, Lcom/android/systemui/recents/views/TaskStackView;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
@@ -2009,19 +2073,19 @@
 
     invoke-virtual {v4, v5, v9, v6, v7}, Lcom/android/systemui/statusbar/DismissView;->layout(IIII)V
 
-    .line 764
+    .line 766
     :cond_2
     iget-boolean v4, p0, Lcom/android/systemui/recents/views/TaskStackView;->mAwaitingFirstLayout:Z
 
     if-eqz v4, :cond_3
 
-    .line 765
+    .line 767
     iput-boolean v9, p0, Lcom/android/systemui/recents/views/TaskStackView;->mAwaitingFirstLayout:Z
 
-    .line 766
+    .line 768
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->onFirstLayout()V
 
-    .line 768
+    .line 770
     :cond_3
     return-void
 .end method
@@ -2034,18 +2098,18 @@
     .prologue
     const/high16 v11, 0x40000000    # 2.0f
 
-    .line 685
+    .line 687
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v1
 
-    .line 686
+    .line 688
     .local v1, "width":I
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v2
 
-    .line 689
+    .line 691
     .local v2, "height":I
     new-instance v3, Landroid/graphics/Rect;
 
@@ -2053,7 +2117,7 @@
 
     invoke-direct {v3, v0}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
 
-    .line 690
+    .line 692
     .local v3, "taskStackBounds":Landroid/graphics/Rect;
     iget v0, v3, Landroid/graphics/Rect;->bottom:I
 
@@ -2067,7 +2131,7 @@
 
     iput v0, v3, Landroid/graphics/Rect;->bottom:I
 
-    .line 691
+    .line 693
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget-boolean v4, v0, Lcom/android/systemui/recents/RecentsConfiguration;->launchedWithAltTab:Z
@@ -2080,35 +2144,35 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/systemui/recents/views/TaskStackView;->computeRects(IILandroid/graphics/Rect;ZZ)V
 
-    .line 696
+    .line 698
     iget-boolean v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mAwaitingFirstLayout:Z
 
     if-eqz v0, :cond_0
 
-    .line 697
+    .line 699
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStackScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskStackViewScroller;->setStackScrollToInitialState()Z
 
-    .line 698
+    .line 700
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->requestSynchronizeStackViewsWithModel()V
 
-    .line 699
+    .line 701
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->synchronizeStackViewsWithModel()Z
 
-    .line 703
+    .line 705
     :cond_0
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->getTaskViews()Ljava/util/List;
 
     move-result-object v9
 
-    .line 704
+    .line 706
     .local v9, "taskViews":Ljava/util/List;, "Ljava/util/List<Lcom/android/systemui/recents/views/TaskView;>;"
     invoke-interface {v9}, Ljava/util/List;->size()I
 
     move-result v8
 
-    .line 705
+    .line 707
     .local v8, "taskViewCount":I
     const/4 v6, 0x0
 
@@ -2116,14 +2180,14 @@
     :goto_0
     if-ge v6, v8, :cond_2
 
-    .line 706
+    .line 708
     invoke-interface {v9, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v10
 
     check-cast v10, Lcom/android/systemui/recents/views/TaskView;
 
-    .line 707
+    .line 709
     .local v10, "tv":Lcom/android/systemui/recents/views/TaskView;
     invoke-virtual {v10}, Lcom/android/systemui/recents/views/TaskView;->getBackground()Landroid/graphics/drawable/Drawable;
 
@@ -2131,7 +2195,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 708
+    .line 710
     invoke-virtual {v10}, Lcom/android/systemui/recents/views/TaskView;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -2140,7 +2204,7 @@
 
     invoke-virtual {v0, v4}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
 
-    .line 712
+    .line 714
     :goto_1
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
 
@@ -2192,12 +2256,12 @@
 
     invoke-virtual {v10, v0, v4}, Lcom/android/systemui/recents/views/TaskView;->measure(II)V
 
-    .line 705
+    .line 707
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    .line 710
+    .line 712
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTmpRect:Landroid/graphics/Rect;
 
@@ -2205,14 +2269,14 @@
 
     goto :goto_1
 
-    .line 722
+    .line 724
     .end local v10    # "tv":Lcom/android/systemui/recents/views/TaskView;
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mDismissAllButton:Lcom/android/systemui/statusbar/DismissView;
 
     if-eqz v0, :cond_3
 
-    .line 723
+    .line 725
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;->mTaskRect:Landroid/graphics/Rect;
@@ -2221,7 +2285,7 @@
 
     move-result v7
 
-    .line 724
+    .line 726
     .local v7, "taskRectWidth":I
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mDismissAllButton:Lcom/android/systemui/statusbar/DismissView;
 
@@ -2239,12 +2303,12 @@
 
     invoke-virtual {v0, v4, v5}, Lcom/android/systemui/statusbar/DismissView;->measure(II)V
 
-    .line 729
+    .line 731
     .end local v7    # "taskRectWidth":I
     :cond_3
     invoke-virtual {p0, v1, v2}, Lcom/android/systemui/recents/views/TaskStackView;->setMeasuredDimension(II)V
 
-    .line 730
+    .line 732
     return-void
 .end method
 
@@ -2255,7 +2319,7 @@
     .param p3, "userId"    # I
 
     .prologue
-    .line 1364
+    .line 1382
     iget-object v5, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
     invoke-virtual {v5}, Lcom/android/systemui/recents/model/TaskStack;->getTaskKeys()Ljava/util/ArrayList;
@@ -2266,7 +2330,7 @@
 
     move-result-object v1
 
-    .line 1368
+    .line 1386
     .local v1, "removedComponents":Ljava/util/HashSet;, "Ljava/util/HashSet<Landroid/content/ComponentName;>;"
     iget-object v5, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
@@ -2274,7 +2338,7 @@
 
     move-result-object v3
 
-    .line 1369
+    .line 1387
     .local v3, "tasks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/recents/model/Task;>;"
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
@@ -2286,14 +2350,14 @@
     :goto_0
     if-ltz v0, :cond_2
 
-    .line 1370
+    .line 1388
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcom/android/systemui/recents/model/Task;
 
-    .line 1371
+    .line 1389
     .local v2, "t":Lcom/android/systemui/recents/model/Task;
     iget-object v5, v2, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
 
@@ -2309,16 +2373,16 @@
 
     if-eqz v5, :cond_0
 
-    .line 1372
+    .line 1390
     invoke-virtual {p0, v2}, Lcom/android/systemui/recents/views/TaskStackView;->getChildViewForTask(Lcom/android/systemui/recents/model/Task;)Lcom/android/systemui/recents/views/TaskView;
 
     move-result-object v4
 
-    .line 1373
+    .line 1391
     .local v4, "tv":Lcom/android/systemui/recents/views/TaskView;
     if-eqz v4, :cond_1
 
-    .line 1375
+    .line 1393
     new-instance v5, Lcom/android/systemui/recents/views/TaskStackView$10;
 
     invoke-direct {v5, p0, v2}, Lcom/android/systemui/recents/views/TaskStackView$10;-><init>(Lcom/android/systemui/recents/views/TaskStackView;Lcom/android/systemui/recents/model/Task;)V
@@ -2327,7 +2391,7 @@
 
     invoke-virtual {v4, v5, v6}, Lcom/android/systemui/recents/views/TaskView;->startDeleteTaskAnimation(Ljava/lang/Runnable;I)V
 
-    .line 1369
+    .line 1387
     .end local v4    # "tv":Lcom/android/systemui/recents/views/TaskView;
     :cond_0
     :goto_1
@@ -2335,7 +2399,7 @@
 
     goto :goto_0
 
-    .line 1383
+    .line 1401
     .restart local v4    # "tv":Lcom/android/systemui/recents/views/TaskView;
     :cond_1
     iget-object v5, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
@@ -2344,7 +2408,7 @@
 
     goto :goto_1
 
-    .line 1387
+    .line 1405
     .end local v2    # "t":Lcom/android/systemui/recents/model/Task;
     .end local v4    # "tv":Lcom/android/systemui/recents/views/TaskView;
     :cond_2
@@ -2355,10 +2419,10 @@
     .locals 0
 
     .prologue
-    .line 1019
+    .line 1023
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->reset()V
 
-    .line 1020
+    .line 1024
     return-void
 .end method
 
@@ -2367,18 +2431,18 @@
     .param p1, "p"    # F
 
     .prologue
-    .line 1354
+    .line 1372
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mUIDozeTrigger:Lcom/android/systemui/recents/misc/DozeTrigger;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/misc/DozeTrigger;->poke()V
 
-    .line 1355
+    .line 1373
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->requestSynchronizeStackViewsWithModel()V
 
-    .line 1356
+    .line 1374
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->postInvalidateOnAnimation()V
 
-    .line 1357
+    .line 1375
     return-void
 .end method
 
@@ -2397,7 +2461,7 @@
     .end annotation
 
     .prologue
-    .line 1104
+    .line 1122
     .local p2, "removedTasks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/recents/model/Task;>;"
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->getContext()Landroid/content/Context;
 
@@ -2409,18 +2473,18 @@
 
     move-result-object v0
 
-    .line 1105
+    .line 1123
     .local v0, "msg":Ljava/lang/String;
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskStackView;->announceForAccessibility(Ljava/lang/CharSequence;)V
 
-    .line 1107
+    .line 1125
     new-instance v1, Lcom/android/systemui/recents/views/TaskStackView$9;
 
     invoke-direct {v1, p0, p2}, Lcom/android/systemui/recents/views/TaskStackView$9;-><init>(Lcom/android/systemui/recents/views/TaskStackView;Ljava/util/ArrayList;)V
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/recents/views/TaskStackView;->startDismissAllAnimation(Ljava/lang/Runnable;)V
 
-    .line 1114
+    .line 1132
     return-void
 .end method
 
@@ -2430,10 +2494,10 @@
     .param p2, "t"    # Lcom/android/systemui/recents/model/Task;
 
     .prologue
-    .line 1036
+    .line 1054
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->requestSynchronizeStackViewsWithModel()V
 
-    .line 1037
+    .line 1055
     return-void
 .end method
 
@@ -2448,34 +2512,34 @@
 
     const/4 v8, 0x0
 
-    .line 1043
+    .line 1061
     invoke-virtual {p0, p2}, Lcom/android/systemui/recents/views/TaskStackView;->getChildViewForTask(Lcom/android/systemui/recents/model/Task;)Lcom/android/systemui/recents/views/TaskView;
 
     move-result-object v6
 
-    .line 1044
+    .line 1062
     .local v6, "tv":Lcom/android/systemui/recents/views/TaskView;
     if-eqz v6, :cond_0
 
-    .line 1045
+    .line 1063
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackView;->mViewPool:Lcom/android/systemui/recents/views/ViewPool;
 
     invoke-virtual {v9, v6}, Lcom/android/systemui/recents/views/ViewPool;->returnViewToPool(Ljava/lang/Object;)V
 
-    .line 1049
+    .line 1067
     :cond_0
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackView;->mCb:Lcom/android/systemui/recents/views/TaskStackView$TaskStackViewCallbacks;
 
     invoke-interface {v9, p2}, Lcom/android/systemui/recents/views/TaskStackView$TaskStackViewCallbacks;->onTaskViewDismissed(Lcom/android/systemui/recents/model/Task;)V
 
-    .line 1053
+    .line 1071
     const/4 v0, 0x0
 
-    .line 1054
+    .line 1072
     .local v0, "anchorTask":Lcom/android/systemui/recents/model/Task;
     const/4 v3, 0x0
 
-    .line 1055
+    .line 1073
     .local v3, "prevAnchorTaskScroll":F
     invoke-virtual {p1}, Lcom/android/systemui/recents/model/TaskStack;->getTaskCount()I
 
@@ -2485,26 +2549,26 @@
 
     move v4, v7
 
-    .line 1056
+    .line 1074
     .local v4, "pullStackForward":Z
     :goto_0
     if-eqz v4, :cond_1
 
-    .line 1057
+    .line 1075
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
     invoke-virtual {v9}, Lcom/android/systemui/recents/model/TaskStack;->getFrontMostTask()Lcom/android/systemui/recents/model/Task;
 
     move-result-object v0
 
-    .line 1058
+    .line 1076
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackView;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
 
     invoke-virtual {v9, v0}, Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;->getStackScrollForTask(Lcom/android/systemui/recents/model/Task;)F
 
     move-result v3
 
-    .line 1062
+    .line 1080
     :cond_1
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
@@ -2516,17 +2580,17 @@
 
     invoke-virtual {p0, v7, v9, v10}, Lcom/android/systemui/recents/views/TaskStackView;->updateMinMaxScroll(ZZZ)V
 
-    .line 1065
+    .line 1083
     if-eqz v4, :cond_2
 
-    .line 1066
+    .line 1084
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackView;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
 
     invoke-virtual {v9, v0}, Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;->getStackScrollForTask(Lcom/android/systemui/recents/model/Task;)F
 
     move-result v1
 
-    .line 1067
+    .line 1085
     .local v1, "anchorTaskScroll":F
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStackScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
@@ -2542,41 +2606,41 @@
 
     invoke-virtual {v9, v10}, Lcom/android/systemui/recents/views/TaskStackViewScroller;->setStackScroll(F)V
 
-    .line 1069
+    .line 1087
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStackScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
     invoke-virtual {v9}, Lcom/android/systemui/recents/views/TaskStackViewScroller;->boundScroll()Z
 
-    .line 1073
+    .line 1091
     .end local v1    # "anchorTaskScroll":F
     :cond_2
     const/16 v9, 0xc8
 
     invoke-virtual {p0, v9}, Lcom/android/systemui/recents/views/TaskStackView;->requestSynchronizeStackViewsWithModel(I)V
 
-    .line 1076
+    .line 1094
     if-eqz p3, :cond_3
 
-    .line 1077
+    .line 1095
     invoke-virtual {p0, p3}, Lcom/android/systemui/recents/views/TaskStackView;->getChildViewForTask(Lcom/android/systemui/recents/model/Task;)Lcom/android/systemui/recents/views/TaskView;
 
     move-result-object v2
 
-    .line 1078
+    .line 1096
     .local v2, "frontTv":Lcom/android/systemui/recents/views/TaskView;
     if-eqz v2, :cond_3
 
-    .line 1079
+    .line 1097
     invoke-virtual {v2, p3}, Lcom/android/systemui/recents/views/TaskView;->onTaskBound(Lcom/android/systemui/recents/model/Task;)V
 
-    .line 1080
+    .line 1098
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget v9, v9, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewEnterFromAppDuration:I
 
     invoke-virtual {v2, v8, v9}, Lcom/android/systemui/recents/views/TaskView;->fadeInActionButton(II)V
 
-    .line 1086
+    .line 1104
     .end local v2    # "frontTv":Lcom/android/systemui/recents/views/TaskView;
     :cond_3
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
@@ -2587,10 +2651,10 @@
 
     if-nez v9, :cond_8
 
-    .line 1087
+    .line 1105
     const/4 v5, 0x1
 
-    .line 1088
+    .line 1106
     .local v5, "shouldFinishActivity":Z
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
@@ -2600,12 +2664,12 @@
 
     if-eqz v9, :cond_4
 
-    .line 1089
+    .line 1107
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
     invoke-virtual {v9}, Lcom/android/systemui/recents/model/TaskStack;->unfilterTasks()V
 
-    .line 1090
+    .line 1108
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
     invoke-virtual {v9}, Lcom/android/systemui/recents/model/TaskStack;->getTaskCount()I
@@ -2616,19 +2680,19 @@
 
     move v5, v7
 
-    .line 1092
+    .line 1110
     :cond_4
     :goto_1
     if-eqz v5, :cond_5
 
-    .line 1093
+    .line 1111
     iget-object v7, p0, Lcom/android/systemui/recents/views/TaskStackView;->mCb:Lcom/android/systemui/recents/views/TaskStackView$TaskStackViewCallbacks;
 
     const/4 v8, 0x0
 
     invoke-interface {v7, v8}, Lcom/android/systemui/recents/views/TaskStackView$TaskStackViewCallbacks;->onAllTaskViewsDismissed(Ljava/util/ArrayList;)V
 
-    .line 1099
+    .line 1117
     .end local v5    # "shouldFinishActivity":Z
     :cond_5
     :goto_2
@@ -2638,7 +2702,7 @@
     :cond_6
     move v4, v8
 
-    .line 1055
+    .line 1073
     goto :goto_0
 
     .restart local v4    # "pullStackForward":Z
@@ -2646,10 +2710,10 @@
     :cond_7
     move v5, v8
 
-    .line 1090
+    .line 1108
     goto :goto_1
 
-    .line 1097
+    .line 1115
     .end local v5    # "shouldFinishActivity":Z
     :cond_8
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->showDismissAllButton()V
@@ -2672,7 +2736,7 @@
     .end annotation
 
     .prologue
-    .line 1178
+    .line 1196
     .local p2, "curTasks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/recents/model/Task;>;"
     return-void
 .end method
@@ -2682,12 +2746,12 @@
     .param p1, "tv"    # Lcom/android/systemui/recents/views/TaskView;
 
     .prologue
-    .line 1345
+    .line 1363
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mCb:Lcom/android/systemui/recents/views/TaskStackView$TaskStackViewCallbacks;
 
     if-eqz v0, :cond_0
 
-    .line 1346
+    .line 1364
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mCb:Lcom/android/systemui/recents/views/TaskStackView$TaskStackViewCallbacks;
 
     invoke-virtual {p1}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
@@ -2696,7 +2760,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/recents/views/TaskStackView$TaskStackViewCallbacks;->onTaskResize(Lcom/android/systemui/recents/model/Task;)V
 
-    .line 1348
+    .line 1366
     :cond_0
     return-void
 .end method
@@ -2706,12 +2770,12 @@
     .param p1, "tv"    # Lcom/android/systemui/recents/views/TaskView;
 
     .prologue
-    .line 1288
+    .line 1306
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mCb:Lcom/android/systemui/recents/views/TaskStackView$TaskStackViewCallbacks;
 
     if-eqz v0, :cond_0
 
-    .line 1289
+    .line 1307
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mCb:Lcom/android/systemui/recents/views/TaskStackView$TaskStackViewCallbacks;
 
     invoke-virtual {p1}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
@@ -2720,7 +2784,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/recents/views/TaskStackView$TaskStackViewCallbacks;->onTaskViewAppInfoClicked(Lcom/android/systemui/recents/model/Task;)V
 
-    .line 1291
+    .line 1309
     :cond_0
     return-void
 .end method
@@ -2732,17 +2796,17 @@
     .param p3, "lockToTask"    # Z
 
     .prologue
-    .line 1296
+    .line 1314
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mUIDozeTrigger:Lcom/android/systemui/recents/misc/DozeTrigger;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/misc/DozeTrigger;->stopDozing()V
 
-    .line 1298
+    .line 1316
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mCb:Lcom/android/systemui/recents/views/TaskStackView$TaskStackViewCallbacks;
 
     if-eqz v0, :cond_0
 
-    .line 1299
+    .line 1317
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mCb:Lcom/android/systemui/recents/views/TaskStackView$TaskStackViewCallbacks;
 
     iget-object v3, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
@@ -2757,7 +2821,7 @@
 
     invoke-interface/range {v0 .. v5}, Lcom/android/systemui/recents/views/TaskStackView$TaskStackViewCallbacks;->onTaskViewClicked(Lcom/android/systemui/recents/views/TaskStackView;Lcom/android/systemui/recents/views/TaskView;Lcom/android/systemui/recents/model/TaskStack;Lcom/android/systemui/recents/model/Task;Z)V
 
-    .line 1301
+    .line 1319
     :cond_0
     return-void
 .end method
@@ -2767,15 +2831,15 @@
     .param p1, "tv"    # Lcom/android/systemui/recents/views/TaskView;
 
     .prologue
-    .line 1331
+    .line 1349
     iget-boolean v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStackViewsDirty:Z
 
     if-nez v0, :cond_0
 
-    .line 1332
+    .line 1350
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->invalidate()V
 
-    .line 1334
+    .line 1352
     :cond_0
     return-void
 .end method
@@ -2785,12 +2849,12 @@
     .param p1, "tv"    # Lcom/android/systemui/recents/views/TaskView;
 
     .prologue
-    .line 1305
+    .line 1323
     invoke-virtual {p1}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
 
     move-result-object v3
 
-    .line 1306
+    .line 1324
     .local v3, "task":Lcom/android/systemui/recents/model/Task;
     iget-object v7, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
@@ -2798,13 +2862,13 @@
 
     move-result v4
 
-    .line 1307
+    .line 1325
     .local v4, "taskIndex":I
     invoke-virtual {p1}, Lcom/android/systemui/recents/views/TaskView;->isFocusedTask()Z
 
     move-result v5
 
-    .line 1309
+    .line 1327
     .local v5, "taskWasFocused":Z
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->getContext()Landroid/content/Context;
 
@@ -2832,22 +2896,22 @@
 
     invoke-virtual {p1, v7}, Lcom/android/systemui/recents/views/TaskView;->announceForAccessibility(Ljava/lang/CharSequence;)V
 
-    .line 1312
+    .line 1330
     iget-object v7, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
     invoke-virtual {v7, v3}, Lcom/android/systemui/recents/model/TaskStack;->removeTask(Lcom/android/systemui/recents/model/Task;)V
 
-    .line 1314
+    .line 1332
     if-eqz v5, :cond_0
 
-    .line 1315
+    .line 1333
     iget-object v7, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
     invoke-virtual {v7}, Lcom/android/systemui/recents/model/TaskStack;->getTasks()Ljava/util/ArrayList;
 
     move-result-object v6
 
-    .line 1316
+    .line 1334
     .local v6, "tasks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/recents/model/Task;>;"
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
@@ -2861,35 +2925,35 @@
 
     move-result v1
 
-    .line 1317
+    .line 1335
     .local v1, "nextTaskIndex":I
     if-ltz v1, :cond_0
 
-    .line 1318
+    .line 1336
     invoke-virtual {v6, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/systemui/recents/model/Task;
 
-    .line 1319
+    .line 1337
     .local v0, "nextTask":Lcom/android/systemui/recents/model/Task;
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskStackView;->getChildViewForTask(Lcom/android/systemui/recents/model/Task;)Lcom/android/systemui/recents/views/TaskView;
 
     move-result-object v2
 
-    .line 1320
+    .line 1338
     .local v2, "nextTv":Lcom/android/systemui/recents/views/TaskView;
     if-eqz v2, :cond_0
 
-    .line 1323
+    .line 1341
     iget-object v7, p0, Lcom/android/systemui/recents/views/TaskStackView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget-boolean v7, v7, Lcom/android/systemui/recents/RecentsConfiguration;->launchedWithAltTab:Z
 
     invoke-virtual {v2, v7}, Lcom/android/systemui/recents/views/TaskView;->setFocusedTask(Z)V
 
-    .line 1327
+    .line 1345
     .end local v0    # "nextTask":Lcom/android/systemui/recents/model/Task;
     .end local v1    # "nextTaskIndex":I
     .end local v2    # "nextTv":Lcom/android/systemui/recents/views/TaskView;
@@ -2904,10 +2968,10 @@
     .param p2, "focused"    # Z
 
     .prologue
-    .line 1338
+    .line 1356
     if-eqz p2, :cond_0
 
-    .line 1339
+    .line 1357
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
     invoke-virtual {p1}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
@@ -2920,7 +2984,7 @@
 
     iput v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mFocusedTaskIndex:I
 
-    .line 1341
+    .line 1359
     :cond_0
     return-void
 .end method
@@ -2930,7 +2994,7 @@
     .param p1, "ev"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 627
+    .line 629
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTouchHandler:Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->onTouchEvent(Landroid/view/MotionEvent;)Z
@@ -2944,12 +3008,12 @@
     .locals 1
 
     .prologue
-    .line 1029
+    .line 1033
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mUIDozeTrigger:Lcom/android/systemui/recents/misc/DozeTrigger;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/misc/DozeTrigger;->poke()V
 
-    .line 1030
+    .line 1034
     return-void
 .end method
 
@@ -2958,12 +3022,12 @@
     .param p1, "tv"    # Lcom/android/systemui/recents/views/TaskView;
 
     .prologue
-    .line 1189
+    .line 1207
     invoke-virtual {p1}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
 
     move-result-object v0
 
-    .line 1192
+    .line 1210
     .local v0, "task":Lcom/android/systemui/recents/model/Task;
     invoke-virtual {p1}, Lcom/android/systemui/recents/views/TaskView;->isAccessibilityFocused()Z
 
@@ -2971,10 +3035,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 1193
+    .line 1211
     invoke-virtual {p1}, Lcom/android/systemui/recents/views/TaskView;->clearAccessibilityFocus()V
 
-    .line 1197
+    .line 1215
     :cond_0
     invoke-static {}, Lcom/android/systemui/recents/model/RecentsTaskLoader;->getInstance()Lcom/android/systemui/recents/model/RecentsTaskLoader;
 
@@ -2982,21 +3046,21 @@
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/recents/model/RecentsTaskLoader;->unloadTaskData(Lcom/android/systemui/recents/model/Task;)V
 
-    .line 1200
+    .line 1218
     invoke-virtual {p0, p1}, Lcom/android/systemui/recents/views/TaskStackView;->detachViewFromParent(Landroid/view/View;)V
 
-    .line 1202
+    .line 1220
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->updateTaskViewsList()V
 
-    .line 1205
+    .line 1223
     invoke-virtual {p1}, Lcom/android/systemui/recents/views/TaskView;->resetViewProperties()V
 
-    .line 1208
+    .line 1226
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1}, Lcom/android/systemui/recents/views/TaskView;->setClipViewInStack(Z)V
 
-    .line 1209
+    .line 1227
     return-void
 .end method
 
@@ -3005,7 +3069,7 @@
     .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
-    .line 50
+    .line 51
     check-cast p1, Lcom/android/systemui/recents/views/TaskView;
 
     .end local p1    # "x0":Ljava/lang/Object;
@@ -3023,7 +3087,7 @@
     .prologue
     const/4 v8, 0x1
 
-    .line 1215
+    .line 1233
     invoke-virtual {p1}, Lcom/android/systemui/recents/views/TaskView;->getWidth()I
 
     move-result v7
@@ -3034,19 +3098,19 @@
 
     move v2, v8
 
-    .line 1218
+    .line 1236
     .local v2, "requiresRelayout":Z
     :goto_0
     invoke-virtual {p1, p2}, Lcom/android/systemui/recents/views/TaskView;->onTaskBound(Lcom/android/systemui/recents/model/Task;)V
 
-    .line 1221
+    .line 1239
     invoke-static {}, Lcom/android/systemui/recents/model/RecentsTaskLoader;->getInstance()Lcom/android/systemui/recents/model/RecentsTaskLoader;
 
     move-result-object v7
 
     invoke-virtual {v7, p2}, Lcom/android/systemui/recents/model/RecentsTaskLoader;->loadTaskData(Lcom/android/systemui/recents/model/Task;)V
 
-    .line 1224
+    .line 1242
     iget-object v7, p0, Lcom/android/systemui/recents/views/TaskStackView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget-boolean v7, v7, Lcom/android/systemui/recents/RecentsConfiguration;->multiStackEnabled:Z
@@ -3061,24 +3125,24 @@
 
     if-eqz v7, :cond_1
 
-    .line 1225
+    .line 1243
     :cond_0
     invoke-virtual {p1}, Lcom/android/systemui/recents/views/TaskView;->setNoUserInteractionState()V
 
-    .line 1229
+    .line 1247
     :cond_1
     iget-boolean v7, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStartEnterAnimationCompleted:Z
 
     if-eqz v7, :cond_2
 
-    .line 1230
+    .line 1248
     invoke-virtual {p1}, Lcom/android/systemui/recents/views/TaskView;->enableFocusAnimations()V
 
-    .line 1234
+    .line 1252
     :cond_2
     const/4 v1, -0x1
 
-    .line 1235
+    .line 1253
     .local v1, "insertIndex":I
     iget-object v7, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
@@ -3086,24 +3150,24 @@
 
     move-result v3
 
-    .line 1236
+    .line 1254
     .local v3, "taskIndex":I
     const/4 v7, -0x1
 
     if-eq v3, v7, :cond_3
 
-    .line 1238
+    .line 1256
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->getTaskViews()Ljava/util/List;
 
     move-result-object v5
 
-    .line 1239
+    .line 1257
     .local v5, "taskViews":Ljava/util/List;, "Ljava/util/List<Lcom/android/systemui/recents/views/TaskView;>;"
     invoke-interface {v5}, Ljava/util/List;->size()I
 
     move-result v4
 
-    .line 1240
+    .line 1258
     .local v4, "taskViewCount":I
     const/4 v0, 0x0
 
@@ -3111,7 +3175,7 @@
     :goto_1
     if-ge v0, v4, :cond_3
 
-    .line 1241
+    .line 1259
     invoke-interface {v5, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v7
@@ -3122,7 +3186,7 @@
 
     move-result-object v6
 
-    .line 1242
+    .line 1260
     .local v6, "tvTask":Lcom/android/systemui/recents/model/Task;
     iget-object v7, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
@@ -3132,10 +3196,10 @@
 
     if-ge v3, v7, :cond_6
 
-    .line 1244
+    .line 1262
     add-int/lit8 v1, v0, 0x1
 
-    .line 1251
+    .line 1269
     .end local v0    # "i":I
     .end local v4    # "taskViewCount":I
     .end local v5    # "taskViews":Ljava/util/List;, "Ljava/util/List<Lcom/android/systemui/recents/views/TaskView;>;"
@@ -3143,27 +3207,27 @@
     :cond_3
     if-eqz p3, :cond_7
 
-    .line 1252
+    .line 1270
     invoke-virtual {p0, p1, v1}, Lcom/android/systemui/recents/views/TaskStackView;->addView(Landroid/view/View;I)V
 
-    .line 1260
+    .line 1278
     :cond_4
     :goto_2
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->updateTaskViewsList()V
 
-    .line 1263
+    .line 1281
     invoke-virtual {p1, p0}, Lcom/android/systemui/recents/views/TaskView;->setCallbacks(Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;)V
 
-    .line 1264
+    .line 1282
     invoke-virtual {p1, v8}, Lcom/android/systemui/recents/views/TaskView;->setTouchEnabled(Z)V
 
-    .line 1265
+    .line 1283
     invoke-virtual {p1, v8}, Lcom/android/systemui/recents/views/TaskView;->setClipViewInStack(Z)V
 
-    .line 1266
+    .line 1284
     return-void
 
-    .line 1215
+    .line 1233
     .end local v1    # "insertIndex":I
     .end local v2    # "requiresRelayout":Z
     .end local v3    # "taskIndex":I
@@ -3172,7 +3236,7 @@
 
     goto :goto_0
 
-    .line 1240
+    .line 1258
     .restart local v0    # "i":I
     .restart local v1    # "insertIndex":I
     .restart local v2    # "requiresRelayout":Z
@@ -3185,7 +3249,7 @@
 
     goto :goto_1
 
-    .line 1254
+    .line 1272
     .end local v0    # "i":I
     .end local v4    # "taskViewCount":I
     .end local v5    # "taskViews":Ljava/util/List;, "Ljava/util/List<Lcom/android/systemui/recents/views/TaskView;>;"
@@ -3197,10 +3261,10 @@
 
     invoke-virtual {p0, p1, v1, v7}, Lcom/android/systemui/recents/views/TaskStackView;->attachViewToParent(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1255
+    .line 1273
     if-eqz v2, :cond_4
 
-    .line 1256
+    .line 1274
     invoke-virtual {p1}, Lcom/android/systemui/recents/views/TaskView;->requestLayout()V
 
     goto :goto_2
@@ -3213,7 +3277,7 @@
     .param p3, "x2"    # Z
 
     .prologue
-    .line 50
+    .line 51
     check-cast p1, Lcom/android/systemui/recents/views/TaskView;
 
     .end local p1    # "x0":Ljava/lang/Object;
@@ -3437,7 +3501,7 @@
     .locals 4
 
     .prologue
-    .line 593
+    .line 595
     iget v2, p0, Lcom/android/systemui/recents/views/TaskStackView;->mFocusedTaskIndex:I
 
     if-ltz v2, :cond_0
@@ -3452,7 +3516,7 @@
 
     if-ge v2, v3, :cond_0
 
-    .line 594
+    .line 596
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
     invoke-virtual {v2}, Lcom/android/systemui/recents/model/TaskStack;->getTasks()Ljava/util/ArrayList;
@@ -3467,20 +3531,20 @@
 
     check-cast v0, Lcom/android/systemui/recents/model/Task;
 
-    .line 595
+    .line 597
     .local v0, "t":Lcom/android/systemui/recents/model/Task;
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskStackView;->getChildViewForTask(Lcom/android/systemui/recents/model/Task;)Lcom/android/systemui/recents/views/TaskView;
 
     move-result-object v1
 
-    .line 596
+    .line 598
     .local v1, "tv":Lcom/android/systemui/recents/views/TaskView;
     if-eqz v1, :cond_0
 
-    .line 597
+    .line 599
     invoke-virtual {v1}, Lcom/android/systemui/recents/views/TaskView;->unsetFocusedTask()V
 
-    .line 600
+    .line 602
     .end local v0    # "t":Lcom/android/systemui/recents/model/Task;
     .end local v1    # "tv":Lcom/android/systemui/recents/views/TaskView;
     :cond_0
@@ -3488,7 +3552,7 @@
 
     iput v2, p0, Lcom/android/systemui/recents/views/TaskStackView;->mFocusedTaskIndex:I
 
-    .line 601
+    .line 603
     return-void
 .end method
 
@@ -3547,12 +3611,12 @@
     .param p1, "r"    # Landroid/graphics/Rect;
 
     .prologue
-    .line 470
+    .line 472
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTaskStackBounds:Landroid/graphics/Rect;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 471
+    .line 473
     return-void
 .end method
 
@@ -3564,17 +3628,17 @@
 
     const/4 v2, 0x0
 
-    .line 956
+    .line 960
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mDismissAllButton:Lcom/android/systemui/statusbar/DismissView;
 
     if-nez v0, :cond_1
 
-    .line 976
+    .line 980
     :cond_0
     :goto_0
     return-void
 
-    .line 958
+    .line 962
     :cond_1
     iget-boolean v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mDismissAllButtonAnimating:Z
 
@@ -3600,25 +3664,25 @@
 
     if-nez v0, :cond_0
 
-    .line 960
+    .line 964
     :cond_2
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mDismissAllButtonAnimating:Z
 
-    .line 961
+    .line 965
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mDismissAllButton:Lcom/android/systemui/statusbar/DismissView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/DismissView;->setVisibility(I)V
 
-    .line 962
+    .line 966
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mDismissAllButton:Lcom/android/systemui/statusbar/DismissView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/DismissView;->showClearButton()V
 
-    .line 963
+    .line 967
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mDismissAllButton:Lcom/android/systemui/statusbar/DismissView;
 
     const v1, 0x7f0f0105
@@ -3629,12 +3693,12 @@
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setAlpha(F)V
 
-    .line 964
+    .line 968
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mDismissAllButton:Lcom/android/systemui/statusbar/DismissView;
 
     invoke-virtual {v0, v2}, Lcom/android/systemui/statusbar/DismissView;->setAlpha(F)V
 
-    .line 965
+    .line 969
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mDismissAllButton:Lcom/android/systemui/statusbar/DismissView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/DismissView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -3669,17 +3733,17 @@
     .param p1, "postAnimationRunnable"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 919
+    .line 923
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->resetFocusedTask()V
 
-    .line 921
+    .line 925
     new-instance v0, Lcom/android/systemui/recents/views/TaskStackView$6;
 
     invoke-direct {v0, p0, p1}, Lcom/android/systemui/recents/views/TaskStackView$6;-><init>(Lcom/android/systemui/recents/views/TaskStackView;Ljava/lang/Runnable;)V
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskStackView;->hideDismissAllButton(Ljava/lang/Runnable;)V
 
-    .line 934
+    .line 938
     return-void
 .end method
 
@@ -3690,23 +3754,23 @@
     .prologue
     const/4 v7, 0x1
 
-    .line 826
+    .line 828
     iget-boolean v6, p0, Lcom/android/systemui/recents/views/TaskStackView;->mAwaitingFirstLayout:Z
 
     if-eqz v6, :cond_1
 
-    .line 827
+    .line 829
     iput-boolean v7, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStartEnterAnimationRequestedAfterLayout:Z
 
-    .line 828
+    .line 830
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStartEnterAnimationContext:Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;
 
-    .line 895
+    .line 899
     :cond_0
     :goto_0
     return-void
 
-    .line 832
+    .line 834
     :cond_1
     iget-object v6, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
@@ -3716,22 +3780,22 @@
 
     if-lez v6, :cond_0
 
-    .line 834
+    .line 836
     const/4 v1, 0x0
 
-    .line 835
+    .line 837
     .local v1, "launchTargetTask":Lcom/android/systemui/recents/model/Task;
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->getTaskViews()Ljava/util/List;
 
     move-result-object v4
 
-    .line 836
+    .line 838
     .local v4, "taskViews":Ljava/util/List;, "Ljava/util/List<Lcom/android/systemui/recents/views/TaskView;>;"
     invoke-interface {v4}, Ljava/util/List;->size()I
 
     move-result v3
 
-    .line 837
+    .line 839
     .local v3, "taskViewCount":I
     add-int/lit8 v0, v3, -0x1
 
@@ -3739,29 +3803,29 @@
     :goto_1
     if-ltz v0, :cond_2
 
-    .line 838
+    .line 840
     invoke-interface {v4, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Lcom/android/systemui/recents/views/TaskView;
 
-    .line 839
+    .line 841
     .local v5, "tv":Lcom/android/systemui/recents/views/TaskView;
     invoke-virtual {v5}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
 
     move-result-object v2
 
-    .line 840
+    .line 842
     .local v2, "task":Lcom/android/systemui/recents/model/Task;
     iget-boolean v6, v2, Lcom/android/systemui/recents/model/Task;->isLaunchTarget:Z
 
     if-eqz v6, :cond_3
 
-    .line 841
+    .line 843
     move-object v1, v2
 
-    .line 847
+    .line 849
     .end local v2    # "task":Lcom/android/systemui/recents/model/Task;
     .end local v5    # "tv":Lcom/android/systemui/recents/views/TaskView;
     :cond_2
@@ -3770,20 +3834,20 @@
     :goto_2
     if-ltz v0, :cond_5
 
-    .line 848
+    .line 850
     invoke-interface {v4, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Lcom/android/systemui/recents/views/TaskView;
 
-    .line 849
+    .line 851
     .restart local v5    # "tv":Lcom/android/systemui/recents/views/TaskView;
     invoke-virtual {v5}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
 
     move-result-object v2
 
-    .line 850
+    .line 852
     .restart local v2    # "task":Lcom/android/systemui/recents/model/Task;
     new-instance v6, Lcom/android/systemui/recents/views/TaskViewTransform;
 
@@ -3791,20 +3855,20 @@
 
     iput-object v6, p1, Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;->currentTaskTransform:Lcom/android/systemui/recents/views/TaskViewTransform;
 
-    .line 851
+    .line 853
     iput v0, p1, Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;->currentStackViewIndex:I
 
-    .line 852
+    .line 854
     iput v3, p1, Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;->currentStackViewCount:I
 
-    .line 853
+    .line 855
     iget-object v6, p0, Lcom/android/systemui/recents/views/TaskStackView;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
 
     iget-object v6, v6, Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;->mTaskRect:Landroid/graphics/Rect;
 
     iput-object v6, p1, Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;->currentTaskRect:Landroid/graphics/Rect;
 
-    .line 854
+    .line 856
     if-eqz v1, :cond_4
 
     iget-object v6, v1, Lcom/android/systemui/recents/model/Task;->group:Lcom/android/systemui/recents/model/TaskGrouping;
@@ -3820,12 +3884,12 @@
     :goto_3
     iput-boolean v6, p1, Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;->currentTaskOccludesLaunchTarget:Z
 
-    .line 856
+    .line 858
     iget-object v6, p0, Lcom/android/systemui/recents/views/TaskStackView;->mRequestUpdateClippingListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     iput-object v6, p1, Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;->updateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
-    .line 857
+    .line 859
     iget-object v6, p0, Lcom/android/systemui/recents/views/TaskStackView;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
 
     iget-object v8, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStackScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
@@ -3840,27 +3904,27 @@
 
     invoke-virtual {v6, v2, v8, v9, v10}, Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;->getStackTransform(Lcom/android/systemui/recents/model/Task;FLcom/android/systemui/recents/views/TaskViewTransform;Lcom/android/systemui/recents/views/TaskViewTransform;)Lcom/android/systemui/recents/views/TaskViewTransform;
 
-    .line 858
+    .line 860
     invoke-virtual {v5, p1}, Lcom/android/systemui/recents/views/TaskView;->startEnterRecentsAnimation(Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;)V
 
-    .line 847
+    .line 849
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_2
 
-    .line 837
+    .line 839
     :cond_3
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_1
 
-    .line 854
+    .line 856
     :cond_4
     const/4 v6, 0x0
 
     goto :goto_3
 
-    .line 862
+    .line 864
     .end local v2    # "task":Lcom/android/systemui/recents/model/Task;
     .end local v5    # "tv":Lcom/android/systemui/recents/views/TaskView;
     :cond_5
@@ -3880,17 +3944,17 @@
     .param p1, "ctx"    # Lcom/android/systemui/recents/views/ViewAnimation$TaskViewExitContext;
 
     .prologue
-    .line 900
+    .line 904
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStackScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
     invoke-virtual {v4}, Lcom/android/systemui/recents/views/TaskStackViewScroller;->stopScroller()V
 
-    .line 901
+    .line 905
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStackScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
     invoke-virtual {v4}, Lcom/android/systemui/recents/views/TaskStackViewScroller;->stopBoundScrollAnimation()V
 
-    .line 903
+    .line 907
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackView;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
 
     iget-object v4, v4, Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;->mViewRect:Landroid/graphics/Rect;
@@ -3915,23 +3979,23 @@
 
     iput v4, p1, Lcom/android/systemui/recents/views/ViewAnimation$TaskViewExitContext;->offscreenTranslationY:I
 
-    .line 906
+    .line 910
     const/4 v4, 0x0
 
     invoke-virtual {p0, v4}, Lcom/android/systemui/recents/views/TaskStackView;->hideDismissAllButton(Ljava/lang/Runnable;)V
 
-    .line 908
+    .line 912
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->getTaskViews()Ljava/util/List;
 
     move-result-object v2
 
-    .line 909
+    .line 913
     .local v2, "taskViews":Ljava/util/List;, "Ljava/util/List<Lcom/android/systemui/recents/views/TaskView;>;"
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v1
 
-    .line 910
+    .line 914
     .local v1, "taskViewCount":I
     const/4 v0, 0x0
 
@@ -3939,23 +4003,23 @@
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 911
+    .line 915
     invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/android/systemui/recents/views/TaskView;
 
-    .line 912
+    .line 916
     .local v3, "tv":Lcom/android/systemui/recents/views/TaskView;
     invoke-virtual {v3, p1}, Lcom/android/systemui/recents/views/TaskView;->startExitToHomeAnimation(Lcom/android/systemui/recents/views/ViewAnimation$TaskViewExitContext;)V
 
-    .line 910
+    .line 914
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 914
+    .line 918
     .end local v3    # "tv":Lcom/android/systemui/recents/views/TaskView;
     :cond_0
     return-void
@@ -3972,24 +4036,24 @@
 
     const/4 v8, 0x0
 
-    .line 938
+    .line 942
     invoke-virtual {p1}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
 
     move-result-object v1
 
-    .line 939
+    .line 943
     .local v1, "launchTargetTask":Lcom/android/systemui/recents/model/Task;
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->getTaskViews()Ljava/util/List;
 
     move-result-object v5
 
-    .line 940
+    .line 944
     .local v5, "taskViews":Ljava/util/List;, "Ljava/util/List<Lcom/android/systemui/recents/views/TaskView;>;"
     invoke-interface {v5}, Ljava/util/List;->size()I
 
     move-result v4
 
-    .line 941
+    .line 945
     .local v4, "taskViewCount":I
     const/4 v0, 0x0
 
@@ -3997,30 +4061,30 @@
     :goto_0
     if-ge v0, v4, :cond_1
 
-    .line 942
+    .line 946
     invoke-interface {v5, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/android/systemui/recents/views/TaskView;
 
-    .line 943
+    .line 947
     .local v3, "t":Lcom/android/systemui/recents/views/TaskView;
     if-ne v3, p1, :cond_0
 
-    .line 944
+    .line 948
     invoke-virtual {v3, v8}, Lcom/android/systemui/recents/views/TaskView;->setClipViewInStack(Z)V
 
-    .line 945
+    .line 949
     invoke-virtual {v3, p2, v9, v9, p3}, Lcom/android/systemui/recents/views/TaskView;->startLaunchTaskAnimation(Ljava/lang/Runnable;ZZZ)V
 
-    .line 941
+    .line 945
     :goto_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 947
+    .line 951
     :cond_0
     iget-object v6, v1, Lcom/android/systemui/recents/model/Task;->group:Lcom/android/systemui/recents/model/TaskGrouping;
 
@@ -4032,7 +4096,7 @@
 
     move-result v2
 
-    .line 949
+    .line 953
     .local v2, "occludesLaunchTarget":Z
     const/4 v6, 0x0
 
@@ -4040,7 +4104,7 @@
 
     goto :goto_1
 
-    .line 952
+    .line 956
     .end local v2    # "occludesLaunchTarget":Z
     .end local v3    # "t":Lcom/android/systemui/recents/views/TaskView;
     :cond_1
@@ -4056,7 +4120,7 @@
 
     iget-boolean v2, v0, Lcom/android/systemui/recents/views/TaskStackView;->mStackViewsDirty:Z
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_b
 
     .line 323
     invoke-static {}, Lcom/android/systemui/recents/model/RecentsTaskLoader;->getInstance()Lcom/android/systemui/recents/model/RecentsTaskLoader;
@@ -4341,13 +4405,13 @@
     aget v9, v6, v2
 
     :goto_2
-    if-eqz v11, :cond_9
+    if-eqz v11, :cond_a
 
     const/4 v2, 0x1
 
     aget v2, v6, v2
 
-    if-lt v9, v2, :cond_9
+    if-lt v9, v2, :cond_a
 
     .line 371
     invoke-virtual {v4, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4392,7 +4456,7 @@
 
     .line 376
     .restart local v15    # "taskIndex":I
-    if-nez v19, :cond_6
+    if-nez v19, :cond_7
 
     .line 377
     move-object/from16 v0, p0
@@ -4406,15 +4470,26 @@
     .end local v19    # "tv":Lcom/android/systemui/recents/views/TaskView;
     check-cast v19, Lcom/android/systemui/recents/views/TaskView;
 
-    .line 379
+    .line 378
     .restart local v19    # "tv":Lcom/android/systemui/recents/views/TaskView;
+    move-object/from16 v0, p0
+
+    iget-boolean v2, v0, Lcom/android/systemui/recents/views/TaskStackView;->mLayersDisabled:Z
+
+    if-eqz v2, :cond_5
+
+    .line 379
+    invoke-virtual/range {v19 .. v19}, Lcom/android/systemui/recents/views/TaskView;->disableLayersForOneFrame()V
+
+    .line 381
+    :cond_5
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/systemui/recents/views/TaskStackView;->mStackViewsAnimationDuration:I
 
-    if-lez v2, :cond_5
+    if-lez v2, :cond_6
 
-    .line 382
+    .line 384
     move-object/from16 v0, v18
 
     iget v2, v0, Lcom/android/systemui/recents/views/TaskViewTransform;->p:F
@@ -4425,9 +4500,9 @@
 
     move-result v2
 
-    if-gtz v2, :cond_8
+    if-gtz v2, :cond_9
 
-    .line 383
+    .line 385
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackView;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
@@ -4450,7 +4525,7 @@
 
     invoke-virtual {v2, v3, v7, v0, v1}, Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;->getStackTransform(FFLcom/android/systemui/recents/views/TaskViewTransform;Lcom/android/systemui/recents/views/TaskViewTransform;)Lcom/android/systemui/recents/views/TaskViewTransform;
 
-    .line 387
+    .line 389
     :goto_3
     move-object/from16 v0, p0
 
@@ -4462,13 +4537,13 @@
 
     invoke-virtual {v0, v2, v3}, Lcom/android/systemui/recents/views/TaskView;->updateViewPropertiesToTaskTransform(Lcom/android/systemui/recents/views/TaskViewTransform;I)V
 
-    .line 392
-    :cond_5
+    .line 394
+    :cond_6
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/android/systemui/recents/views/TaskStackView;->mAwaitingFirstLayout:Z
 
-    if-nez v2, :cond_6
+    if-nez v2, :cond_7
 
     move-object/from16 v0, p0
 
@@ -4478,13 +4553,13 @@
 
     move-result-object v2
 
-    if-ne v14, v2, :cond_6
+    if-ne v14, v2, :cond_7
 
-    .line 393
+    .line 395
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/recents/views/TaskStackView;->showDismissAllButton()V
 
-    .line 398
-    :cond_6
+    .line 400
+    :cond_7
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackView;->mCurrentTaskTransforms:Ljava/util/ArrayList;
@@ -4507,26 +4582,26 @@
 
     invoke-virtual {v0, v2, v3, v7}, Lcom/android/systemui/recents/views/TaskView;->updateViewPropertiesToTaskTransform(Lcom/android/systemui/recents/views/TaskViewTransform;ILandroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 403
+    .line 405
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/recents/views/TaskStackView;->getTaskViews()Ljava/util/List;
 
     move-result-object v17
 
-    .line 404
+    .line 406
     invoke-interface/range {v17 .. v17}, Ljava/util/List;->size()I
 
     move-result v16
 
-    .line 405
-    if-lez v16, :cond_7
+    .line 407
+    if-lez v16, :cond_8
 
     invoke-virtual {v13}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->isTouchExplorationEnabled()Z
 
     move-result v2
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_8
 
-    .line 406
+    .line 408
     add-int/lit8 v2, v16, -0x1
 
     move-object/from16 v0, v17
@@ -4537,7 +4612,7 @@
 
     check-cast v8, Lcom/android/systemui/recents/views/TaskView;
 
-    .line 407
+    .line 409
     .local v8, "atv":Lcom/android/systemui/recents/views/TaskView;
     move-object/from16 v0, p0
 
@@ -4551,18 +4626,18 @@
 
     move-result v10
 
-    .line 408
+    .line 410
     .local v10, "indexOfTask":I
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/systemui/recents/views/TaskStackView;->mPrevAccessibilityFocusedIndex:I
 
-    if-eq v2, v10, :cond_7
+    if-eq v2, v10, :cond_8
 
-    .line 409
+    .line 411
     invoke-virtual/range {v19 .. v19}, Lcom/android/systemui/recents/views/TaskView;->requestAccessibilityFocus()Z
 
-    .line 410
+    .line 412
     move-object/from16 v0, p0
 
     iput v10, v0, Lcom/android/systemui/recents/views/TaskStackView;->mPrevAccessibilityFocusedIndex:I
@@ -4570,13 +4645,13 @@
     .line 370
     .end local v8    # "atv":Lcom/android/systemui/recents/views/TaskView;
     .end local v10    # "indexOfTask":I
-    :cond_7
+    :cond_8
     add-int/lit8 v9, v9, -0x1
 
     goto/16 :goto_2
 
-    .line 385
-    :cond_8
+    .line 387
+    :cond_9
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackView;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
@@ -4601,36 +4676,36 @@
 
     goto/16 :goto_3
 
-    .line 416
+    .line 418
     .end local v14    # "task":Lcom/android/systemui/recents/model/Task;
     .end local v15    # "taskIndex":I
     .end local v18    # "transform":Lcom/android/systemui/recents/views/TaskViewTransform;
     .end local v19    # "tv":Lcom/android/systemui/recents/views/TaskView;
-    :cond_9
+    :cond_a
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
 
     iput v2, v0, Lcom/android/systemui/recents/views/TaskStackView;->mStackViewsAnimationDuration:I
 
-    .line 417
+    .line 419
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
 
     iput-boolean v2, v0, Lcom/android/systemui/recents/views/TaskStackView;->mStackViewsDirty:Z
 
-    .line 418
+    .line 420
     const/4 v2, 0x1
 
     move-object/from16 v0, p0
 
     iput-boolean v2, v0, Lcom/android/systemui/recents/views/TaskStackView;->mStackViewsClipDirty:Z
 
-    .line 419
+    .line 421
     const/4 v2, 0x1
 
-    .line 421
+    .line 423
     .end local v4    # "tasks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/recents/model/Task;>;"
     .end local v5    # "stackScroll":F
     .end local v6    # "visibleRange":[I
@@ -4643,7 +4718,7 @@
     :goto_4
     return v2
 
-    :cond_a
+    :cond_b
     const/4 v2, 0x0
 
     goto :goto_4
@@ -4657,17 +4732,17 @@
 
     const/4 v5, 0x0
 
-    .line 1001
+    .line 1005
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskStackView;->mDismissAllButton:Lcom/android/systemui/statusbar/DismissView;
 
     if-nez v2, :cond_1
 
-    .line 1015
+    .line 1019
     :cond_0
     :goto_0
     return-void
 
-    .line 1004
+    .line 1008
     :cond_1
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
@@ -4677,7 +4752,7 @@
 
     if-lez v2, :cond_0
 
-    .line 1005
+    .line 1009
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTmpCoord:[F
 
     iget-object v3, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTmpCoord:[F
@@ -4688,7 +4763,7 @@
 
     aput v4, v2, v5
 
-    .line 1006
+    .line 1010
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
     invoke-virtual {v2}, Lcom/android/systemui/recents/model/TaskStack;->getFrontMostTask()Lcom/android/systemui/recents/model/Task;
@@ -4699,7 +4774,7 @@
 
     move-result-object v1
 
-    .line 1007
+    .line 1011
     .local v1, "tv":Lcom/android/systemui/recents/views/TaskView;
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskStackView;->mCurrentTaskTransforms:Ljava/util/ArrayList;
 
@@ -4717,7 +4792,7 @@
 
     check-cast v0, Lcom/android/systemui/recents/views/TaskViewTransform;
 
-    .line 1008
+    .line 1012
     .local v0, "transform":Lcom/android/systemui/recents/views/TaskViewTransform;
     if-eqz v1, :cond_0
 
@@ -4725,12 +4800,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 1009
+    .line 1013
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTmpCoord:[F
 
     invoke-static {v1, p0, v2, v5}, Lcom/android/systemui/recents/misc/Utilities;->mapCoordInDescendentToSelf(Landroid/view/View;Landroid/view/View;[FZ)F
 
-    .line 1010
+    .line 1014
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskStackView;->mDismissAllButton:Lcom/android/systemui/statusbar/DismissView;
 
     iget-object v3, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTmpCoord:[F
@@ -4753,7 +4828,7 @@
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/statusbar/DismissView;->setTranslationY(F)V
 
-    .line 1011
+    .line 1015
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskStackView;->mDismissAllButton:Lcom/android/systemui/statusbar/DismissView;
 
     iget-object v3, p0, Lcom/android/systemui/recents/views/TaskStackView;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
@@ -4792,7 +4867,7 @@
     .param p3, "launchedFromHome"    # Z
 
     .prologue
-    .line 477
+    .line 479
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
@@ -4803,15 +4878,15 @@
 
     invoke-virtual {v0, v1, p2, p3}, Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;->computeMinMaxScroll(Ljava/util/ArrayList;ZZ)V
 
-    .line 480
+    .line 482
     if-eqz p1, :cond_0
 
-    .line 481
+    .line 483
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStackScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskStackViewScroller;->boundScroll()Z
 
-    .line 483
+    .line 485
     :cond_0
     return-void
 .end method
@@ -4823,15 +4898,15 @@
     .param p3, "launchedFromHome"    # Z
 
     .prologue
-    .line 667
+    .line 669
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
-    .line 668
+    .line 670
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0, p2, p3}, Lcom/android/systemui/recents/views/TaskStackView;->updateMinMaxScroll(ZZZ)V
 
-    .line 669
+    .line 671
     return-void
 .end method
 

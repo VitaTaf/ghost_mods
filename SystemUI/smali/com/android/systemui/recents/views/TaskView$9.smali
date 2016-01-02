@@ -30,7 +30,7 @@
     .locals 0
 
     .prologue
-    .line 724
+    .line 722
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/TaskView$9;->val$v:Landroid/view/View;
@@ -48,7 +48,7 @@
     .locals 2
 
     .prologue
-    .line 731
+    .line 729
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$9;->val$v:Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
@@ -59,17 +59,17 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 732
+    .line 730
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskView;->dismissTask()V
 
-    .line 738
+    .line 736
     :cond_0
     :goto_0
     return-void
 
-    .line 733
+    .line 731
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$9;->val$v:Landroid/view/View;
 
@@ -81,14 +81,14 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 734
+    .line 732
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
 
     if-eqz v0, :cond_0
 
-    .line 735
+    .line 733
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;

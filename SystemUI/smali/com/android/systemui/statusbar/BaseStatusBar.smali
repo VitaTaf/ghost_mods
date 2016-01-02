@@ -5731,22 +5731,11 @@
 .end method
 
 .method public toggleRecentApps()V
-    .locals 2
+    .locals 0
 
     .prologue
     .line 1008
-    const/16 v0, 0x3fd
-
-    .line 1009
-    .local v0, "msg":I
-    iget-object v1, p0, Lcom/android/systemui/statusbar/BaseStatusBar;->mHandler:Lcom/android/systemui/statusbar/BaseStatusBar$H;
-
-    invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/BaseStatusBar$H;->removeMessages(I)V
-
-    .line 1010
-    iget-object v1, p0, Lcom/android/systemui/statusbar/BaseStatusBar;->mHandler:Lcom/android/systemui/statusbar/BaseStatusBar$H;
-
-    invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/BaseStatusBar$H;->sendEmptyMessage(I)Z
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/BaseStatusBar;->toggleRecents()V
 
     .line 1011
     return-void

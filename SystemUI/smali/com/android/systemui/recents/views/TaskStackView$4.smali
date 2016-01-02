@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 505
+    .line 507
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackView$4;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     iput-boolean p2, p0, Lcom/android/systemui/recents/views/TaskStackView$4;->val$animateFocusedState:Z
@@ -44,7 +44,7 @@
     .locals 4
 
     .prologue
-    .line 508
+    .line 510
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskStackView$4;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     iget-object v2, v2, Lcom/android/systemui/recents/views/TaskStackView;->mStack:Lcom/android/systemui/recents/model/TaskStack;
@@ -63,7 +63,7 @@
 
     check-cast v0, Lcom/android/systemui/recents/model/Task;
 
-    .line 509
+    .line 511
     .local v0, "t":Lcom/android/systemui/recents/model/Task;
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskStackView$4;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
@@ -71,16 +71,16 @@
 
     move-result-object v1
 
-    .line 510
+    .line 512
     .local v1, "tv":Lcom/android/systemui/recents/views/TaskView;
     if-eqz v1, :cond_0
 
-    .line 511
+    .line 513
     iget-boolean v2, p0, Lcom/android/systemui/recents/views/TaskStackView$4;->val$animateFocusedState:Z
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/recents/views/TaskView;->setFocusedTask(Z)V
 
-    .line 513
+    .line 515
     :cond_0
     return-void
 .end method
