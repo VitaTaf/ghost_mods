@@ -234,7 +234,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 260
+    .locals 261
     .param p1, "code"    # I
     .param p2, "data"    # Landroid/os/Parcel;
     .param p3, "reply"    # Landroid/os/Parcel;
@@ -11757,6 +11757,31 @@
 
     .line 2282
     .end local v184    # "isInLockTaskMode":Z
+    :pswitch_d8
+    const-string v6, "android.app.IActivityManager"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual/range {p0 .. p0}, Landroid/app/ActivityManagerNative;->getLockTaskModeState()I
+
+    move-result v201
+
+    .local v201, "lockTaskModeState":I
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move-object/from16 v0, p3
+
+    move/from16 v1, v201
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/4 v6, 0x1
+
+    goto/16 :goto_0
+
+    .end local v201    # "lockTaskModeState":I
     :pswitch_c7
     const-string v6, "android.app.IActivityManager"
 
@@ -12700,5 +12725,6 @@
         :pswitch_bf
         :pswitch_d6
         :pswitch_d7
+        :pswitch_d8
     .end packed-switch
 .end method

@@ -32,13 +32,13 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 40
+    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 41
+    .line 42
     iput-object p1, p0, Lcom/android/server/am/LockTaskNotify;->mContext:Landroid/content/Context;
 
-    .line 42
+    .line 43
     iget-object v0, p0, Lcom/android/server/am/LockTaskNotify;->mContext:Landroid/content/Context;
 
     const-string v1, "accessibility"
@@ -51,7 +51,7 @@
 
     iput-object v0, p0, Lcom/android/server/am/LockTaskNotify;->mAccessibilityManager:Landroid/view/accessibility/AccessibilityManager;
 
-    .line 44
+    .line 45
     new-instance v0, Lcom/android/server/am/LockTaskNotify$H;
 
     const/4 v1, 0x0
@@ -60,7 +60,7 @@
 
     iput-object v0, p0, Lcom/android/server/am/LockTaskNotify;->mHandler:Lcom/android/server/am/LockTaskNotify$H;
 
-    .line 45
+    .line 46
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .param p1, "text"    # Ljava/lang/String;
 
     .prologue
-    .line 72
+    .line 78
     iget-object v1, p0, Lcom/android/server/am/LockTaskNotify;->mContext:Landroid/content/Context;
 
     const/4 v2, 0x1
@@ -78,7 +78,7 @@
 
     move-result-object v0
 
-    .line 73
+    .line 79
     .local v0, "toast":Landroid/widget/Toast;
     invoke-virtual {v0}, Landroid/widget/Toast;->getWindowParams()Landroid/view/WindowManager$LayoutParams;
 
@@ -90,35 +90,55 @@
 
     iput v2, v1, Landroid/view/WindowManager$LayoutParams;->privateFlags:I
 
-    .line 75
+    .line 81
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 76
+    .line 82
     return-object v0
 .end method
 
 
 # virtual methods
-.method public handleShowToast(Z)V
+.method public handleShowToast(I)V
     .locals 3
-    .param p1, "isLocked"    # Z
+    .param p1, "lockTaskModeState"    # I
 
     .prologue
-    .line 52
-    iget-object v2, p0, Lcom/android/server/am/LockTaskNotify;->mContext:Landroid/content/Context;
-
-    if-eqz p1, :cond_2
-
-    const v1, 0x104068a
-
-    :goto_0
-    invoke-virtual {v2, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
+    .line 53
+    const/4 v0, 0x0
 
     .line 54
     .local v0, "text":Ljava/lang/String;
-    if-nez p1, :cond_0
+    const/4 v1, 0x1
+
+    if-ne p1, v1, :cond_1
+
+    .line 55
+    iget-object v1, p0, Lcom/android/server/am/LockTaskNotify;->mContext:Landroid/content/Context;
+
+    const v2, 0x104068a
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 60
+    :cond_0
+    :goto_0
+    if-nez v0, :cond_3
+
+    .line 67
+    :goto_1
+    return-void
+
+    .line 56
+    :cond_1
+    const/4 v1, 0x2
+
+    if-ne p1, v1, :cond_0
+
+    .line 57
+    iget-object v2, p0, Lcom/android/server/am/LockTaskNotify;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/server/am/LockTaskNotify;->mAccessibilityManager:Landroid/view/accessibility/AccessibilityManager;
 
@@ -126,45 +146,42 @@
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_2
 
-    .line 55
-    iget-object v1, p0, Lcom/android/server/am/LockTaskNotify;->mContext:Landroid/content/Context;
+    const v1, 0x1040689
 
-    const v2, 0x1040689
-
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    :goto_2
+    invoke-virtual {v2, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 57
-    :cond_0
+    goto :goto_0
+
+    :cond_2
+    const v1, 0x1040688
+
+    goto :goto_2
+
+    .line 63
+    :cond_3
     iget-object v1, p0, Lcom/android/server/am/LockTaskNotify;->mLastToast:Landroid/widget/Toast;
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_4
 
-    .line 58
+    .line 64
     iget-object v1, p0, Lcom/android/server/am/LockTaskNotify;->mLastToast:Landroid/widget/Toast;
 
     invoke-virtual {v1}, Landroid/widget/Toast;->cancel()V
 
-    .line 60
-    :cond_1
+    .line 66
+    :cond_4
     invoke-direct {p0, v0}, Lcom/android/server/am/LockTaskNotify;->makeAllUserToastAndShow(Ljava/lang/String;)Landroid/widget/Toast;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/server/am/LockTaskNotify;->mLastToast:Landroid/widget/Toast;
 
-    .line 61
-    return-void
-
-    .line 52
-    .end local v0    # "text":Ljava/lang/String;
-    :cond_2
-    const v1, 0x1040688
-
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method public show(Z)V
@@ -172,17 +189,17 @@
     .param p1, "starting"    # Z
 
     .prologue
-    .line 64
+    .line 70
     const v0, 0x104068c
 
-    .line 65
+    .line 71
     .local v0, "showString":I
     if-eqz p1, :cond_0
 
-    .line 66
+    .line 72
     const v0, 0x104068b
 
-    .line 68
+    .line 74
     :cond_0
     iget-object v1, p0, Lcom/android/server/am/LockTaskNotify;->mContext:Landroid/content/Context;
 
@@ -192,39 +209,28 @@
 
     invoke-direct {p0, v1}, Lcom/android/server/am/LockTaskNotify;->makeAllUserToastAndShow(Ljava/lang/String;)Landroid/widget/Toast;
 
-    .line 69
+    .line 75
     return-void
 .end method
 
-.method public showToast(Z)V
-    .locals 4
-    .param p1, "isLocked"    # Z
+.method public showToast(I)V
+    .locals 3
+    .param p1, "lockTaskModeState"    # I
 
     .prologue
-    const/4 v1, 0x0
+    .line 49
+    iget-object v0, p0, Lcom/android/server/am/LockTaskNotify;->mHandler:Lcom/android/server/am/LockTaskNotify$H;
 
-    .line 48
-    iget-object v2, p0, Lcom/android/server/am/LockTaskNotify;->mHandler:Lcom/android/server/am/LockTaskNotify$H;
+    const/4 v1, 0x3
 
-    const/4 v3, 0x3
+    const/4 v2, 0x0
 
-    if-eqz p1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    invoke-virtual {v2, v3, v0, v1}, Lcom/android/server/am/LockTaskNotify$H;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {v0, v1, p1, v2}, Lcom/android/server/am/LockTaskNotify$H;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 49
+    .line 50
     return-void
-
-    :cond_0
-    move v0, v1
-
-    .line 48
-    goto :goto_0
 .end method

@@ -27,7 +27,7 @@
     .locals 0
 
     .prologue
-    .line 79
+    .line 85
     iput-object p1, p0, Lcom/android/server/am/LockTaskNotify$H;->this$0:Lcom/android/server/am/LockTaskNotify;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -41,7 +41,7 @@
     .param p2, "x1"    # Lcom/android/server/am/LockTaskNotify$1;
 
     .prologue
-    .line 79
+    .line 85
     invoke-direct {p0, p1}, Lcom/android/server/am/LockTaskNotify$H;-><init>(Lcom/android/server/am/LockTaskNotify;)V
 
     return-void
@@ -54,38 +54,26 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 84
+    .line 90
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 89
+    .line 95
     :goto_0
     return-void
 
-    .line 86
+    .line 92
     :pswitch_0
-    iget-object v1, p0, Lcom/android/server/am/LockTaskNotify$H;->this$0:Lcom/android/server/am/LockTaskNotify;
+    iget-object v0, p0, Lcom/android/server/am/LockTaskNotify$H;->this$0:Lcom/android/server/am/LockTaskNotify;
 
-    iget v0, p1, Landroid/os/Message;->arg1:I
+    iget v1, p1, Landroid/os/Message;->arg1:I
 
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_1
-    invoke-virtual {v1, v0}, Lcom/android/server/am/LockTaskNotify;->handleShowToast(Z)V
+    invoke-virtual {v0, v1}, Lcom/android/server/am/LockTaskNotify;->handleShowToast(I)V
 
     goto :goto_0
 
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_1
-
-    .line 84
-    nop
-
+    .line 90
     :pswitch_data_0
     .packed-switch 0x3
         :pswitch_0

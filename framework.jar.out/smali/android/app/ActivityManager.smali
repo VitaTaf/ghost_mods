@@ -48,6 +48,12 @@
 
 .field public static final INTENT_SENDER_SERVICE:I = 0x4
 
+.field public static final LOCK_TASK_MODE_LOCKED:I = 0x1
+
+.field public static final LOCK_TASK_MODE_NONE:I = 0x0
+
+.field public static final LOCK_TASK_MODE_PINNED:I = 0x2
+
 .field public static final META_HOME_ALTERNATE:Ljava/lang/String; = "android.app.home.alternate"
 
 .field public static final MOVE_TASK_NO_USER_ACTION:I = 0x2
@@ -1825,6 +1831,37 @@
     return v0
 .end method
 
+.method public getLockTaskModeState()I
+    .locals 2
+
+    .prologue
+    .line 2718
+    :try_start_0
+    invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/app/IActivityManager;->getLockTaskModeState()I
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    .line 2720
+    :goto_0
+    return v1
+
+    .line 2719
+    :catch_0
+    move-exception v0
+
+    .line 2720
+    .local v0, "e":Landroid/os/RemoteException;
+    const/4 v1, 0x0
+
+    goto :goto_0
+.end method
+
 .method public getMemoryClass()I
     .locals 1
 
@@ -2391,32 +2428,23 @@
 .end method
 
 .method public isInLockTaskMode()Z
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 2691
-    :try_start_0
-    invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
+    .line 2706
+    invoke-virtual {p0}, Landroid/app/ActivityManager;->getLockTaskModeState()I
 
-    move-result-object v1
+    move-result v0
 
-    invoke-interface {v1}, Landroid/app/IActivityManager;->isInLockTaskMode()Z
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    if-eqz v0, :cond_0
 
-    move-result v1
+    const/4 v0, 0x1
 
-    .line 2693
     :goto_0
-    return v1
+    return v0
 
-    .line 2692
-    :catch_0
-    move-exception v0
-
-    .line 2693
-    .local v0, "e":Landroid/os/RemoteException;
-    const/4 v1, 0x0
+    :cond_0
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method

@@ -30153,7 +30153,7 @@
 
     const-string v8, "startUser"
 
-    invoke-virtual {v4, v5, v6, v8}, Lcom/android/server/am/ActivityStackSupervisor;->setLockTaskModeLocked(Lcom/android/server/am/TaskRecord;ZLjava/lang/String;)V
+    invoke-virtual {v4, v5, v6, v8}, Lcom/android/server/am/ActivityStackSupervisor;->setLockTaskModeLocked(Lcom/android/server/am/TaskRecord;ILjava/lang/String;)V
 
     .line 19208
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/am/ActivityManagerService;->getUserManagerLocked()Lcom/android/server/pm/UserManagerService;
@@ -59172,6 +59172,36 @@
     goto :goto_0
 .end method
 
+.method public getLockTaskModeState()I
+    .locals 1
+
+    .prologue
+    .line 8513
+    monitor-enter p0
+
+    .line 8514
+    :try_start_0
+    iget-object v0, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+
+    invoke-virtual {v0}, Lcom/android/server/am/ActivityStackSupervisor;->getLockTaskModeState()I
+
+    move-result v0
+
+    monitor-exit p0
+
+    return v0
+
+    .line 8515
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
 .method public getMemoryInfo(Landroid/app/ActivityManager$MemoryInfo;)V
     .locals 14
     .param p1, "outInfo"    # Landroid/app/ActivityManager$MemoryInfo;
@@ -65404,30 +65434,22 @@
     .locals 1
 
     .prologue
-    .line 9073
-    monitor-enter p0
-
-    .line 9074
-    :try_start_0
-    iget-object v0, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
-
-    invoke-virtual {v0}, Lcom/android/server/am/ActivityStackSupervisor;->isInLockTaskMode()Z
+    .line 8508
+    invoke-virtual {p0}, Lcom/android/server/am/ActivityManagerService;->getLockTaskModeState()I
 
     move-result v0
 
-    monitor-exit p0
+    if-eqz v0, :cond_0
 
+    const/4 v0, 0x1
+
+    :goto_0
     return v0
 
-    .line 9075
-    :catchall_0
-    move-exception v0
+    :cond_0
+    const/4 v0, 0x0
 
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
+    goto :goto_0
 .end method
 
 .method public isIntentSenderAnActivity(Landroid/content/IIntentSender;)Z
@@ -81600,58 +81622,56 @@
 .end method
 
 .method startLockTaskMode(Lcom/android/server/am/TaskRecord;)V
-    .locals 9
+    .locals 8
     .param p1, "task"    # Lcom/android/server/am/TaskRecord;
 
     .prologue
     const/4 v5, 0x1
 
-    const/4 v6, 0x0
-
-    .line 8943
+    .line 8372
     monitor-enter p0
 
-    .line 8944
+    .line 8373
     :try_start_0
-    iget-object v7, p1, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
+    iget-object v6, p1, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
 
-    invoke-virtual {v7}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
+    invoke-virtual {v6}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-virtual {v7}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+    invoke-virtual {v6}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 8945
+    .line 8374
     .local v3, "pkg":Ljava/lang/String;
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 8946
+    .line 8378
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
-    move-result v7
+    move-result v6
 
-    const/16 v8, 0x3e8
+    const/16 v7, 0x3e8
 
-    if-ne v7, v8, :cond_1
+    if-ne v6, v7, :cond_1
 
     move v2, v5
 
-    .line 8947
+    .line 8379
     .local v2, "isSystemInitiated":Z
     :goto_0
     if-nez v2, :cond_2
 
     invoke-direct {p0, v3}, Lcom/android/server/am/ActivityManagerService;->isLockTaskAuthorized(Ljava/lang/String;)Z
 
-    move-result v7
+    move-result v6
 
-    if-nez v7, :cond_2
+    if-nez v6, :cond_2
 
-    .line 8948
+    .line 8380
     const-class v5, Lcom/android/server/statusbar/StatusBarManagerInternal;
 
     invoke-static {v5}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -81660,20 +81680,20 @@
 
     check-cast v4, Lcom/android/server/statusbar/StatusBarManagerInternal;
 
-    .line 8950
+    .line 8382
     .local v4, "statusBarManager":Lcom/android/server/statusbar/StatusBarManagerInternal;
     if-eqz v4, :cond_0
 
-    .line 8951
+    .line 8383
     invoke-interface {v4}, Lcom/android/server/statusbar/StatusBarManagerInternal;->showScreenPinningRequest()V
 
-    .line 8973
+    .line 8407
     .end local v4    # "statusBarManager":Lcom/android/server/statusbar/StatusBarManagerInternal;
     :cond_0
     :goto_1
     return-void
 
-    .line 8945
+    .line 8374
     .end local v2    # "isSystemInitiated":Z
     .end local v3    # "pkg":Ljava/lang/String;
     :catchall_0
@@ -81686,64 +81706,64 @@
 
     throw v5
 
+    .line 8378
     .restart local v3    # "pkg":Ljava/lang/String;
     :cond_1
-    move v2, v6
+    const/4 v2, 0x0
 
-    .line 8946
     goto :goto_0
 
-    .line 8955
+    .line 8387
     .restart local v2    # "isSystemInitiated":Z
     :cond_2
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 8957
+    .line 8389
     .local v0, "ident":J
     :try_start_2
     monitor-enter p0
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
-    .line 8959
+    .line 8391
     :try_start_3
-    iget-object v7, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+    iget-object v6, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
-    iget v8, p1, Lcom/android/server/am/TaskRecord;->taskId:I
+    iget v7, p1, Lcom/android/server/am/TaskRecord;->taskId:I
 
-    invoke-virtual {v7, v8}, Lcom/android/server/am/ActivityStackSupervisor;->anyTaskForIdLocked(I)Lcom/android/server/am/TaskRecord;
+    invoke-virtual {v6, v7}, Lcom/android/server/am/ActivityStackSupervisor;->anyTaskForIdLocked(I)Lcom/android/server/am/TaskRecord;
 
     move-result-object p1
 
-    .line 8960
-    if-eqz p1, :cond_5
+    .line 8392
+    if-eqz p1, :cond_6
 
-    .line 8961
+    .line 8393
     if-nez v2, :cond_4
 
-    iget-object v7, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+    iget-object v6, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
-    invoke-virtual {v7}, Lcom/android/server/am/ActivityStackSupervisor;->getFocusedStack()Lcom/android/server/am/ActivityStack;
+    invoke-virtual {v6}, Lcom/android/server/am/ActivityStackSupervisor;->getFocusedStack()Lcom/android/server/am/ActivityStack;
 
-    move-result-object v7
+    move-result-object v6
 
-    if-eqz v7, :cond_3
+    if-eqz v6, :cond_3
 
-    iget-object v7, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+    iget-object v6, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
-    invoke-virtual {v7}, Lcom/android/server/am/ActivityStackSupervisor;->getFocusedStack()Lcom/android/server/am/ActivityStack;
+    invoke-virtual {v6}, Lcom/android/server/am/ActivityStackSupervisor;->getFocusedStack()Lcom/android/server/am/ActivityStack;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-virtual {v7}, Lcom/android/server/am/ActivityStack;->topTask()Lcom/android/server/am/TaskRecord;
+    invoke-virtual {v6}, Lcom/android/server/am/ActivityStack;->topTask()Lcom/android/server/am/TaskRecord;
 
-    move-result-object v7
+    move-result-object v6
 
-    if-eq p1, v7, :cond_4
+    if-eq p1, v6, :cond_4
 
-    .line 8964
+    .line 8396
     :cond_3
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
@@ -81753,7 +81773,7 @@
 
     throw v5
 
-    .line 8969
+    .line 8403
     :catchall_1
     move-exception v5
 
@@ -81766,7 +81786,7 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
-    .line 8971
+    .line 8405
     :catchall_2
     move-exception v5
 
@@ -81774,34 +81794,30 @@
 
     throw v5
 
-    .line 8966
+    .line 8398
     :cond_4
     :try_start_5
-    iget-object v7, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+    iget-object v6, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
-    if-nez v2, :cond_6
+    if-eqz v2, :cond_5
 
-    :goto_2
-    const-string v6, "startLockTask"
+    const/4 v5, 0x2
 
-    invoke-virtual {v7, p1, v5, v6}, Lcom/android/server/am/ActivityStackSupervisor;->setLockTaskModeLocked(Lcom/android/server/am/TaskRecord;ZLjava/lang/String;)V
-
-    .line 8969
     :cond_5
+    const-string v7, "startLockTask"
+
+    invoke-virtual {v6, p1, v5, v7}, Lcom/android/server/am/ActivityStackSupervisor;->setLockTaskModeLocked(Lcom/android/server/am/TaskRecord;ILjava/lang/String;)V
+
+    .line 8403
+    :cond_6
     monitor-exit p0
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 8971
+    .line 8405
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     goto :goto_1
-
-    :cond_6
-    move v5, v6
-
-    .line 8966
-    goto :goto_2
 .end method
 
 .method public startLockTaskModeOnCurrent()V
@@ -84167,7 +84183,7 @@
 
     const-string v9, "stopLockTask"
 
-    invoke-virtual {v6, v7, v8, v9}, Lcom/android/server/am/ActivityStackSupervisor;->setLockTaskModeLocked(Lcom/android/server/am/TaskRecord;ZLjava/lang/String;)V
+    invoke-virtual {v6, v7, v8, v9}, Lcom/android/server/am/ActivityStackSupervisor;->setLockTaskModeLocked(Lcom/android/server/am/TaskRecord;ILjava/lang/String;)V
 
     .line 9053
     monitor-exit p0

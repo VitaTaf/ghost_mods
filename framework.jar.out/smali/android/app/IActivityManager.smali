@@ -137,6 +137,8 @@
 
 .field public static final GET_LAUNCHED_FROM_UID_TRANSACTION:I = 0x96
 
+.field public static final GET_LOCK_TASK_MODE_STATE_TRANSACTION:I = 0x11f
+
 .field public static final GET_MEMORY_INFO_TRANSACTION:I = 0x4c
 
 .field public static final GET_MY_MEMORY_STATE_TRANSACTION:I = 0x8f
@@ -958,6 +960,14 @@
 .end method
 
 .method public abstract getLaunchedFromUid(Landroid/os/IBinder;)I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getLockTaskModeState()I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

@@ -4183,6 +4183,60 @@
     return v2
 .end method
 
+.method public getLockTaskModeState()I
+    .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 5427
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 5428
+    .local v0, "data":Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v2
+
+    .line 5429
+    .local v2, "reply":Landroid/os/Parcel;
+    const-string v3, "android.app.IActivityManager"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 5430
+    iget-object v3, p0, Landroid/app/ActivityManagerProxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v4, 0x11f
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v0, v2, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 5431
+    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
+
+    .line 5432
+    invoke-virtual {v2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v1
+
+    .line 5433
+    .local v1, "lockTaskModeState":I
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 5434
+    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
+
+    .line 5435
+    return v1
+.end method
+
 .method public getMemoryInfo(Landroid/app/ActivityManager$MemoryInfo;)V
     .locals 5
     .param p1, "outInfo"    # Landroid/app/ActivityManager$MemoryInfo;

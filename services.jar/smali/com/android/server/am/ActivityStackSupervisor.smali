@@ -158,7 +158,7 @@
 
 .field private mLeanbackOnlyDevice:Z
 
-.field private mLockTaskIsLocked:Z
+.field private mLockTaskModeState:I
 
 .field mLockTaskModeTask:Lcom/android/server/am/TaskRecord;
 
@@ -440,25 +440,25 @@
     return-object p1
 .end method
 
-.method static synthetic access$100(Lcom/android/server/am/ActivityStackSupervisor;)Z
+.method static synthetic access$100(Lcom/android/server/am/ActivityStackSupervisor;)I
     .locals 1
     .param p0, "x0"    # Lcom/android/server/am/ActivityStackSupervisor;
 
     .prologue
     .line 128
-    iget-boolean v0, p0, Lcom/android/server/am/ActivityStackSupervisor;->mLockTaskIsLocked:Z
+    iget v0, p0, Lcom/android/server/am/ActivityStackSupervisor;->mLockTaskModeState:I
 
     return v0
 .end method
 
-.method static synthetic access$102(Lcom/android/server/am/ActivityStackSupervisor;Z)Z
+.method static synthetic access$102(Lcom/android/server/am/ActivityStackSupervisor;I)I
     .locals 0
     .param p0, "x0"    # Lcom/android/server/am/ActivityStackSupervisor;
-    .param p1, "x1"    # Z
+    .param p1, "x1"    # I
 
     .prologue
     .line 128
-    iput-boolean p1, p0, Lcom/android/server/am/ActivityStackSupervisor;->mLockTaskIsLocked:Z
+    iput p1, p0, Lcom/android/server/am/ActivityStackSupervisor;->mLockTaskModeState:I
 
     return p1
 .end method
@@ -5084,6 +5084,16 @@
     return-object v0
 .end method
 
+.method getLockTaskModeState()I
+    .locals 1
+
+    .prologue
+    .line 3607
+    iget v0, p0, Lcom/android/server/am/ActivityStackSupervisor;->mLockTaskModeState:I
+
+    return v0
+.end method
+
 .method getNextStackId()I
     .locals 1
 
@@ -6317,26 +6327,6 @@
     const/4 v2, 0x0
 
     goto :goto_2
-.end method
-
-.method isInLockTaskMode()Z
-    .locals 1
-
-    .prologue
-    .line 3548
-    iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor;->mLockTaskModeTask:Lcom/android/server/am/TaskRecord;
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
 .method isLockTaskModeViolation(Lcom/android/server/am/TaskRecord;)Z
@@ -10053,31 +10043,29 @@
     goto :goto_2
 .end method
 
-.method setLockTaskModeLocked(Lcom/android/server/am/TaskRecord;ZLjava/lang/String;)V
-    .locals 4
+.method setLockTaskModeLocked(Lcom/android/server/am/TaskRecord;ILjava/lang/String;)V
+    .locals 3
     .param p1, "task"    # Lcom/android/server/am/TaskRecord;
-    .param p2, "isLocked"    # Z
+    .param p2, "lockTaskModeState"    # I
     .param p3, "reason"    # Ljava/lang/String;
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    const/4 v1, 0x0
-
-    .line 3506
+    .line 3565
     if-nez p1, :cond_1
 
-    .line 3508
+    .line 3567
     iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor;->mLockTaskModeTask:Lcom/android/server/am/TaskRecord;
 
     if-eqz v1, :cond_0
 
-    .line 3509
+    .line 3568
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 3510
+    .line 3569
     .local v0, "lockTaskMsg":Landroid/os/Message;
     iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor;->mLockTaskModeTask:Lcom/android/server/am/TaskRecord;
 
@@ -10085,34 +10073,34 @@
 
     iput v1, v0, Landroid/os/Message;->arg1:I
 
-    .line 3511
+    .line 3570
     const/16 v1, 0x6e
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 3512
-    iput-object v3, p0, Lcom/android/server/am/ActivityStackSupervisor;->mLockTaskModeTask:Lcom/android/server/am/TaskRecord;
+    .line 3571
+    iput-object v2, p0, Lcom/android/server/am/ActivityStackSupervisor;->mLockTaskModeTask:Lcom/android/server/am/TaskRecord;
 
-    .line 3513
+    .line 3572
     iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor;->mHandler:Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;
 
     invoke-virtual {v1, v0}, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 3531
+    .line 3590
     .end local v0    # "lockTaskMsg":Landroid/os/Message;
     :cond_0
     :goto_0
     return-void
 
-    .line 3517
+    .line 3576
     :cond_1
     invoke-virtual {p0, p1}, Lcom/android/server/am/ActivityStackSupervisor;->isLockTaskModeViolation(Lcom/android/server/am/TaskRecord;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_2
+    if-eqz v1, :cond_2
 
-    .line 3518
+    .line 3577
     const-string v1, "ActivityManager"
 
     const-string v2, "setLockTaskMode: Attempt to start a second Lock Task Mode task."
@@ -10121,58 +10109,55 @@
 
     goto :goto_0
 
-    .line 3521
+    .line 3580
     :cond_2
     iput-object p1, p0, Lcom/android/server/am/ActivityStackSupervisor;->mLockTaskModeTask:Lcom/android/server/am/TaskRecord;
 
-    .line 3522
-    invoke-virtual {p0, p1, v1, v3, p3}, Lcom/android/server/am/ActivityStackSupervisor;->findTaskToMoveToFrontLocked(Lcom/android/server/am/TaskRecord;ILandroid/os/Bundle;Ljava/lang/String;)V
+    .line 3581
+    const/4 v1, 0x0
 
-    .line 3523
+    invoke-virtual {p0, p1, v1, v2, p3}, Lcom/android/server/am/ActivityStackSupervisor;->findTaskToMoveToFrontLocked(Lcom/android/server/am/TaskRecord;ILandroid/os/Bundle;Ljava/lang/String;)V
+
+    .line 3582
     invoke-virtual {p0}, Lcom/android/server/am/ActivityStackSupervisor;->resumeTopActivitiesLocked()Z
 
-    .line 3525
+    .line 3584
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 3526
+    .line 3585
     .restart local v0    # "lockTaskMsg":Landroid/os/Message;
-    iget-object v2, p0, Lcom/android/server/am/ActivityStackSupervisor;->mLockTaskModeTask:Lcom/android/server/am/TaskRecord;
+    iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor;->mLockTaskModeTask:Lcom/android/server/am/TaskRecord;
 
-    iget-object v2, v2, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
+    iget-object v1, v1, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
 
-    invoke-virtual {v2}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
+    invoke-virtual {v1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+    invoke-virtual {v1}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    iput-object v2, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
+    iput-object v1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 3527
-    iget-object v2, p0, Lcom/android/server/am/ActivityStackSupervisor;->mLockTaskModeTask:Lcom/android/server/am/TaskRecord;
+    .line 3586
+    iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor;->mLockTaskModeTask:Lcom/android/server/am/TaskRecord;
 
-    iget v2, v2, Lcom/android/server/am/TaskRecord;->userId:I
+    iget v1, v1, Lcom/android/server/am/TaskRecord;->userId:I
 
-    iput v2, v0, Landroid/os/Message;->arg1:I
+    iput v1, v0, Landroid/os/Message;->arg1:I
 
-    .line 3528
-    const/16 v2, 0x6d
+    .line 3587
+    const/16 v1, 0x6d
 
-    iput v2, v0, Landroid/os/Message;->what:I
+    iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 3529
-    if-nez p2, :cond_3
+    .line 3588
+    iput p2, v0, Landroid/os/Message;->arg2:I
 
-    const/4 v1, 0x1
-
-    :cond_3
-    iput v1, v0, Landroid/os/Message;->arg2:I
-
-    .line 3530
+    .line 3589
     iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor;->mHandler:Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;
 
     invoke-virtual {v1, v0}, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->sendMessage(Landroid/os/Message;)Z
@@ -10366,9 +10351,9 @@
     .line 3502
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor;->mLockTaskNotify:Lcom/android/server/am/LockTaskNotify;
 
-    iget-boolean v1, p0, Lcom/android/server/am/ActivityStackSupervisor;->mLockTaskIsLocked:Z
+    iget v1, p0, Lcom/android/server/am/ActivityStackSupervisor;->mLockTaskModeState:I
 
-    invoke-virtual {v0, v1}, Lcom/android/server/am/LockTaskNotify;->showToast(Z)V
+    invoke-virtual {v0, v1}, Lcom/android/server/am/LockTaskNotify;->showToast(I)V
 
     .line 3503
     return-void
