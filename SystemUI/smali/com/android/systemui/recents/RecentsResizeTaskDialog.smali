@@ -1080,19 +1080,27 @@
 
     .line 213
     :cond_3
+    invoke-virtual {p0}, Lcom/android/systemui/recents/RecentsResizeTaskDialog;->dismiss()V
+
+    .line 214
+    iget-object v3, p0, Lcom/android/systemui/recents/RecentsResizeTaskDialog;->mRecentsActivity:Lcom/android/systemui/recents/RecentsActivity;
+
+    invoke-virtual {v3}, Lcom/android/systemui/recents/RecentsActivity;->dismissRecentsToHomeWithoutTransitionAnimation()V
+
+    .line 217
     move v1, v0
 
     :goto_3
     if-ltz v1, :cond_5
 
-    .line 214
+    .line 218
     iget-object v3, p0, Lcom/android/systemui/recents/RecentsResizeTaskDialog;->mTasks:[Lcom/android/systemui/recents/model/Task;
 
     aget-object v3, v3, v1
 
     if-eqz v3, :cond_4
 
-    .line 215
+    .line 219
     iget-object v3, p0, Lcom/android/systemui/recents/RecentsResizeTaskDialog;->mSsp:Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
     iget-object v4, p0, Lcom/android/systemui/recents/RecentsResizeTaskDialog;->mTasks:[Lcom/android/systemui/recents/model/Task;
@@ -1109,22 +1117,14 @@
 
     invoke-virtual {v3, v4, v5}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->resizeTask(ILandroid/graphics/Rect;)V
 
-    .line 213
+    .line 217
     :cond_4
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_3
 
-    .line 220
-    :cond_5
-    invoke-virtual {p0}, Lcom/android/systemui/recents/RecentsResizeTaskDialog;->dismiss()V
-
-    .line 221
-    iget-object v3, p0, Lcom/android/systemui/recents/RecentsResizeTaskDialog;->mRecentsActivity:Lcom/android/systemui/recents/RecentsActivity;
-
-    invoke-virtual {v3, v7}, Lcom/android/systemui/recents/RecentsActivity;->dismissRecentsToHomeRaw(Z)V
-
     .line 225
+    :cond_5
     move v1, v0
 
     :goto_4
