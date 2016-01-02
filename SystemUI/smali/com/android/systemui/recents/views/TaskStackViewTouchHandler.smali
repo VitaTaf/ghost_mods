@@ -617,7 +617,7 @@
     .line 399
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSv:Lcom/android/systemui/recents/views/TaskStackView;
 
-    invoke-virtual {v4}, Lcom/android/systemui/recents/views/TaskStackView;->ensureFocusedTask()Z
+    invoke-virtual {v4, v2}, Lcom/android/systemui/recents/views/TaskStackView;->ensureFocusedTask(Z)Z
 
     move-result v4
 
@@ -634,7 +634,7 @@
     :cond_2
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSv:Lcom/android/systemui/recents/views/TaskStackView;
 
-    invoke-virtual {v4}, Lcom/android/systemui/recents/views/TaskStackView;->ensureFocusedTask()Z
+    invoke-virtual {v4, v2}, Lcom/android/systemui/recents/views/TaskStackView;->ensureFocusedTask(Z)Z
 
     move-result v4
 

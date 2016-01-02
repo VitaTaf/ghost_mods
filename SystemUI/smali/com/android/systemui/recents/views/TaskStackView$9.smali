@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 1125
+    .line 1180
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackView$9;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/TaskStackView$9;->val$removedTasks:Ljava/util/ArrayList;
@@ -44,7 +44,7 @@
     .locals 2
 
     .prologue
-    .line 1129
+    .line 1184
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView$9;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskStackView;->mCb:Lcom/android/systemui/recents/views/TaskStackView$TaskStackViewCallbacks;
@@ -53,6 +53,6 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/recents/views/TaskStackView$TaskStackViewCallbacks;->onAllTaskViewsDismissed(Ljava/util/ArrayList;)V
 
-    .line 1130
+    .line 1185
     return-void
 .end method

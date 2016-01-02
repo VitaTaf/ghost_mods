@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 925
+    .line 980
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackView$6;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/TaskStackView$6;->val$postAnimationRunnable:Ljava/lang/Runnable;
@@ -44,24 +44,24 @@
     .locals 7
 
     .prologue
-    .line 928
+    .line 983
     iget-object v5, p0, Lcom/android/systemui/recents/views/TaskStackView$6;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     invoke-virtual {v5}, Lcom/android/systemui/recents/views/TaskStackView;->getTaskViews()Ljava/util/List;
 
     move-result-object v3
 
-    .line 929
+    .line 984
     .local v3, "taskViews":Ljava/util/List;, "Ljava/util/List<Lcom/android/systemui/recents/views/TaskView;>;"
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v2
 
-    .line 930
+    .line 985
     .local v2, "taskViewCount":I
     const/4 v0, 0x0
 
-    .line 931
+    .line 986
     .local v0, "count":I
     add-int/lit8 v1, v2, -0x1
 
@@ -69,14 +69,14 @@
     :goto_0
     if-ltz v1, :cond_1
 
-    .line 932
+    .line 987
     invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lcom/android/systemui/recents/views/TaskView;
 
-    .line 933
+    .line 988
     .local v4, "tv":Lcom/android/systemui/recents/views/TaskView;
     if-lez v1, :cond_0
 
@@ -87,21 +87,21 @@
 
     invoke-virtual {v4, v5, v6}, Lcom/android/systemui/recents/views/TaskView;->startDeleteTaskAnimation(Ljava/lang/Runnable;I)V
 
-    .line 934
+    .line 989
     add-int/lit8 v0, v0, 0x1
 
-    .line 931
+    .line 986
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_0
 
-    .line 933
+    .line 988
     :cond_0
     iget-object v5, p0, Lcom/android/systemui/recents/views/TaskStackView$6;->val$postAnimationRunnable:Ljava/lang/Runnable;
 
     goto :goto_1
 
-    .line 936
+    .line 991
     .end local v4    # "tv":Lcom/android/systemui/recents/views/TaskView;
     :cond_1
     return-void

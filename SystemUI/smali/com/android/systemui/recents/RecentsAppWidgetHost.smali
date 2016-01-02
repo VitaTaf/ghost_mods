@@ -75,13 +75,18 @@
 
     if-nez v1, :cond_1
 
-    .line 82
+    .line 83
     :cond_0
     :goto_0
     return-void
 
-    .line 74
+    .line 73
     :cond_1
+    iget-object v1, p0, Lcom/android/systemui/recents/RecentsAppWidgetHost;->mContext:Landroid/content/Context;
+
+    if-eqz v1, :cond_0
+
+    .line 75
     invoke-static {}, Lcom/android/systemui/recents/model/RecentsTaskLoader;->getInstance()Lcom/android/systemui/recents/model/RecentsTaskLoader;
 
     move-result-object v1
@@ -90,7 +95,7 @@
 
     move-result-object v0
 
-    .line 75
+    .line 76
     .local v0, "ssp":Lcom/android/systemui/recents/misc/SystemServicesProxy;
     if-le p1, v3, :cond_0
 
@@ -100,17 +105,17 @@
 
     if-ne p1, v1, :cond_0
 
-    .line 77
+    .line 78
     invoke-virtual {v0, p0, p1}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->unbindSearchAppWidget(Landroid/appwidget/AppWidgetHost;I)V
 
-    .line 79
+    .line 80
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsAppWidgetHost;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget-object v2, p0, Lcom/android/systemui/recents/RecentsAppWidgetHost;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v2, v3}, Lcom/android/systemui/recents/RecentsConfiguration;->updateSearchBarAppWidgetId(Landroid/content/Context;I)V
 
-    .line 80
+    .line 81
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsAppWidgetHost;->mCb:Lcom/android/systemui/recents/RecentsAppWidgetHost$RecentsAppWidgetHostCallbacks;
 
     invoke-interface {v1}, Lcom/android/systemui/recents/RecentsAppWidgetHost$RecentsAppWidgetHostCallbacks;->refreshSearchWidget()V
