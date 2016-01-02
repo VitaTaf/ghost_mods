@@ -2455,6 +2455,7 @@
     <public type="string" name="recents_dismiss_all_message" id="0x7f0c0269" />
     <public type="string" name="recents_caption_resize" id="0x7f0c026a" />
     <public type="string" name="cancel" id="0x7f0c026b" />
+    <public type="string" name="accessibility_recents_task_header" id="0x7f0c026c" />
     <public type="string" name="recents_multistack_add_stack_dialog_split_horizontal" id="0x7f0c026d" />
     <public type="string" name="recents_multistack_add_stack_dialog_split_vertical" id="0x7f0c026e" />
     <public type="string" name="recents_multistack_add_stack_dialog_split_custom" id="0x7f0c026f" />

@@ -363,43 +363,43 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 517
+    .line 554
     iget-object v4, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mAwm:Landroid/appwidget/AppWidgetManager;
 
     if-nez v4, :cond_1
 
-    .line 535
+    .line 572
     :cond_0
     :goto_0
     return-object v3
 
-    .line 518
+    .line 555
     :cond_1
     iget-object v4, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mAssistComponent:Landroid/content/ComponentName;
 
     if-eqz v4, :cond_0
 
-    .line 521
+    .line 558
     invoke-virtual {p0}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->resolveSearchAppWidget()Landroid/appwidget/AppWidgetProviderInfo;
 
     move-result-object v2
 
-    .line 524
+    .line 561
     .local v2, "searchWidgetInfo":Landroid/appwidget/AppWidgetProviderInfo;
     if-eqz v2, :cond_0
 
-    .line 527
+    .line 564
     invoke-virtual {p1}, Landroid/appwidget/AppWidgetHost;->allocateAppWidgetId()I
 
     move-result v1
 
-    .line 528
+    .line 565
     .local v1, "searchWidgetId":I
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 529
+    .line 566
     .local v0, "opts":Landroid/os/Bundle;
     const-string v4, "appWidgetCategory"
 
@@ -407,7 +407,7 @@
 
     invoke-virtual {v0, v4, v5}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 531
+    .line 568
     iget-object v4, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mAwm:Landroid/appwidget/AppWidgetManager;
 
     iget-object v5, v2, Landroid/appwidget/AppWidgetProviderInfo;->provider:Landroid/content/ComponentName;
@@ -418,12 +418,12 @@
 
     if-nez v4, :cond_2
 
-    .line 532
+    .line 569
     invoke-virtual {p1, v1}, Landroid/appwidget/AppWidgetHost;->deleteAppWidgetId(I)V
 
     goto :goto_0
 
-    .line 535
+    .line 572
     :cond_2
     new-instance v3, Landroid/util/Pair;
 
@@ -442,18 +442,18 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 446
+    .line 473
     iget-object v1, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mPm:Landroid/content/pm/PackageManager;
 
     if-nez v1, :cond_0
 
     const/4 v1, 0x0
 
-    .line 454
+    .line 481
     :goto_0
     return-object v1
 
-    .line 453
+    .line 480
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mPm:Landroid/content/pm/PackageManager;
 
@@ -461,7 +461,7 @@
 
     move-result-object v0
 
-    .line 454
+    .line 481
     .local v0, "icon":Landroid/graphics/drawable/Drawable;
     invoke-virtual {p0, v0, p2}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->getBadgedIcon(Landroid/graphics/drawable/Drawable;I)Landroid/graphics/drawable/Drawable;
 
@@ -645,14 +645,14 @@
     .param p1, "appWidgetId"    # I
 
     .prologue
-    .line 542
+    .line 579
     iget-object v0, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mAwm:Landroid/appwidget/AppWidgetManager;
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 544
+    .line 581
     :goto_0
     return-object v0
 
@@ -666,20 +666,77 @@
     goto :goto_0
 .end method
 
+.method public getApplicationLabel(Landroid/content/Intent;I)Ljava/lang/String;
+    .locals 5
+    .param p1, "baseIntent"    # Landroid/content/Intent;
+    .param p2, "userId"    # I
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 443
+    iget-object v3, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mPm:Landroid/content/pm/PackageManager;
+
+    if-nez v3, :cond_1
+
+    .line 452
+    :cond_0
+    :goto_0
+    return-object v2
+
+    .line 450
+    :cond_1
+    iget-object v3, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mPm:Landroid/content/pm/PackageManager;
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v3, p1, v4, p2}, Landroid/content/pm/PackageManager;->resolveActivityAsUser(Landroid/content/Intent;II)Landroid/content/pm/ResolveInfo;
+
+    move-result-object v1
+
+    .line 451
+    .local v1, "ri":Landroid/content/pm/ResolveInfo;
+    if-eqz v1, :cond_2
+
+    iget-object v3, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mPm:Landroid/content/pm/PackageManager;
+
+    invoke-virtual {v1, v3}, Landroid/content/pm/ResolveInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    .line 452
+    .local v0, "label":Ljava/lang/CharSequence;
+    :goto_1
+    if-eqz v0, :cond_0
+
+    invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    goto :goto_0
+
+    .end local v0    # "label":Ljava/lang/CharSequence;
+    :cond_2
+    move-object v0, v2
+
+    .line 451
+    goto :goto_1
+.end method
+
 .method public getBadgedIcon(Landroid/graphics/drawable/Drawable;I)Landroid/graphics/drawable/Drawable;
     .locals 2
     .param p1, "icon"    # Landroid/graphics/drawable/Drawable;
     .param p2, "userId"    # I
 
     .prologue
-    .line 461
+    .line 488
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
 
     if-eq p2, v0, :cond_0
 
-    .line 462
+    .line 489
     iget-object v0, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mPm:Landroid/content/pm/PackageManager;
 
     new-instance v1, Landroid/os/UserHandle;
@@ -690,9 +747,104 @@
 
     move-result-object p1
 
-    .line 464
+    .line 491
     :cond_0
     return-object p1
+.end method
+
+.method public getBadgedLabel(Ljava/lang/String;I)Ljava/lang/String;
+    .locals 2
+    .param p1, "label"    # Ljava/lang/String;
+    .param p2, "userId"    # I
+
+    .prologue
+    .line 498
+    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
+
+    move-result v0
+
+    if-eq p2, v0, :cond_0
+
+    .line 499
+    iget-object v0, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mPm:Landroid/content/pm/PackageManager;
+
+    new-instance v1, Landroid/os/UserHandle;
+
+    invoke-direct {v1, p2}, Landroid/os/UserHandle;-><init>(I)V
+
+    invoke-virtual {v0, p1, v1}, Landroid/content/pm/PackageManager;->getUserBadgedLabel(Ljava/lang/CharSequence;Landroid/os/UserHandle;)Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 501
+    :cond_0
+    return-object p1
+.end method
+
+.method public getContentDescription(Landroid/content/Intent;ILjava/lang/String;Landroid/content/res/Resources;)Ljava/lang/String;
+    .locals 5
+    .param p1, "baseIntent"    # Landroid/content/Intent;
+    .param p2, "userId"    # I
+    .param p3, "activityLabel"    # Ljava/lang/String;
+    .param p4, "res"    # Landroid/content/res/Resources;
+
+    .prologue
+    .line 458
+    invoke-virtual {p0, p1, p2}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->getApplicationLabel(Landroid/content/Intent;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 459
+    .local v0, "applicationLabel":Ljava/lang/String;
+    if-nez v0, :cond_1
+
+    .line 460
+    invoke-virtual {p0, p3, p2}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->getBadgedLabel(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 463
+    :cond_0
+    :goto_0
+    return-object v1
+
+    .line 462
+    :cond_1
+    invoke-virtual {p0, v0, p2}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->getBadgedLabel(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 463
+    .local v1, "badgedApplicationLabel":Ljava/lang/String;
+    invoke-virtual {v0, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    const v2, 0x7f0c026c
+
+    const/4 v3, 0x2
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v4, 0x0
+
+    aput-object v1, v3, v4
+
+    const/4 v4, 0x1
+
+    aput-object p3, v3, v4
+
+    invoke-virtual {p4, v2, v3}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    goto :goto_0
 .end method
 
 .method public getFocusedStack()I
@@ -740,12 +892,12 @@
     .param p2, "setting"    # Ljava/lang/String;
 
     .prologue
-    .line 570
+    .line 607
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 571
+    .line 608
     .local v0, "cr":Landroid/content/ContentResolver;
     const/4 v1, 0x0
 
@@ -762,23 +914,23 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 469
+    .line 506
     iget-object v4, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mPm:Landroid/content/pm/PackageManager;
 
     if-nez v4, :cond_1
 
-    .line 482
+    .line 519
     :cond_0
     :goto_0
     return-object v3
 
-    .line 472
+    .line 509
     :cond_1
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 473
+    .line 510
     .local v1, "homeActivities":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/pm/ResolveInfo;>;"
     iget-object v4, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mPm:Landroid/content/pm/PackageManager;
 
@@ -786,18 +938,18 @@
 
     move-result-object v0
 
-    .line 474
+    .line 511
     .local v0, "defaultHomeActivity":Landroid/content/ComponentName;
     if-eqz v0, :cond_2
 
-    .line 475
+    .line 512
     invoke-virtual {v0}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v3
 
     goto :goto_0
 
-    .line 476
+    .line 513
     :cond_2
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -807,7 +959,7 @@
 
     if-ne v4, v5, :cond_0
 
-    .line 477
+    .line 514
     const/4 v4, 0x0
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -816,13 +968,13 @@
 
     check-cast v2, Landroid/content/pm/ResolveInfo;
 
-    .line 478
+    .line 515
     .local v2, "info":Landroid/content/pm/ResolveInfo;
     iget-object v4, v2, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     if-eqz v4, :cond_0
 
-    .line 479
+    .line 516
     iget-object v3, v2, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v3, v3, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
@@ -986,7 +1138,7 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 586
+    .line 623
     invoke-static {p1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -1000,12 +1152,12 @@
     .param p2, "setting"    # Ljava/lang/String;
 
     .prologue
-    .line 578
+    .line 615
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 579
+    .line 616
     .local v0, "cr":Landroid/content/ContentResolver;
     const/4 v1, 0x0
 
@@ -1185,28 +1337,28 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 593
+    .line 630
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
-    .line 594
+    .line 631
     .local v1, "windowRect":Landroid/graphics/Rect;
     iget-object v2, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mWm:Landroid/view/WindowManager;
 
     if-nez v2, :cond_0
 
-    .line 599
+    .line 636
     :goto_0
     return-object v1
 
-    .line 596
+    .line 633
     :cond_0
     new-instance v0, Landroid/graphics/Point;
 
     invoke-direct {v0}, Landroid/graphics/Point;-><init>()V
 
-    .line 597
+    .line 634
     .local v0, "p":Landroid/graphics/Point;
     iget-object v2, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mWm:Landroid/view/WindowManager;
 
@@ -1216,7 +1368,7 @@
 
     invoke-virtual {v2, v0}, Landroid/view/Display;->getRealSize(Landroid/graphics/Point;)V
 
-    .line 598
+    .line 635
     iget v2, v0, Landroid/graphics/Point;->x:I
 
     iget v3, v0, Landroid/graphics/Point;->y:I
@@ -1232,12 +1384,12 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 489
+    .line 526
     iget-object v1, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mAm:Landroid/app/ActivityManager;
 
     if-nez v1, :cond_1
 
-    .line 491
+    .line 528
     :cond_0
     :goto_0
     return v0
@@ -1361,12 +1513,12 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 561
+    .line 598
     iget-object v1, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mAccm:Landroid/view/accessibility/AccessibilityManager;
 
     if-nez v1, :cond_1
 
-    .line 563
+    .line 600
     :cond_0
     :goto_0
     return v0
@@ -1439,16 +1591,16 @@
     .param p1, "listener"    # Landroid/app/ITaskStackListener;
 
     .prologue
-    .line 646
+    .line 683
     iget-object v1, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mIam:Landroid/app/IActivityManager;
 
     if-nez v1, :cond_0
 
-    .line 653
+    .line 690
     :goto_0
     return-void
 
-    .line 649
+    .line 686
     :cond_0
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mIam:Landroid/app/IActivityManager;
@@ -1459,11 +1611,11 @@
 
     goto :goto_0
 
-    .line 650
+    .line 687
     :catch_0
     move-exception v0
 
-    .line 651
+    .line 688
     .local v0, "e":Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
@@ -1536,18 +1688,18 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 499
+    .line 536
     iget-object v4, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mAwm:Landroid/appwidget/AppWidgetManager;
 
     if-nez v4, :cond_0
 
     move-object v1, v3
 
-    .line 510
+    .line 547
     :goto_0
     return-object v1
 
-    .line 500
+    .line 537
     :cond_0
     iget-object v4, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mAssistComponent:Landroid/content/ComponentName;
 
@@ -1557,7 +1709,7 @@
 
     goto :goto_0
 
-    .line 503
+    .line 540
     :cond_1
     iget-object v4, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mAwm:Landroid/appwidget/AppWidgetManager;
 
@@ -1567,7 +1719,7 @@
 
     move-result-object v2
 
-    .line 505
+    .line 542
     .local v2, "widgets":Ljava/util/List;, "Ljava/util/List<Landroid/appwidget/AppWidgetProviderInfo;>;"
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -1587,7 +1739,7 @@
 
     check-cast v1, Landroid/appwidget/AppWidgetProviderInfo;
 
-    .line 506
+    .line 543
     .local v1, "info":Landroid/appwidget/AppWidgetProviderInfo;
     iget-object v4, v1, Landroid/appwidget/AppWidgetProviderInfo;->provider:Landroid/content/ComponentName;
 
@@ -1613,7 +1765,7 @@
     :cond_3
     move-object v1, v3
 
-    .line 510
+    .line 547
     goto :goto_0
 .end method
 
@@ -1629,12 +1781,12 @@
 
     const/4 v2, 0x0
 
-    .line 621
+    .line 658
     iget-object v3, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mIam:Landroid/app/IActivityManager;
 
     if-eqz v3, :cond_1
 
-    .line 623
+    .line 660
     :try_start_0
     iget-object v4, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mIam:Landroid/app/IActivityManager;
 
@@ -1645,11 +1797,11 @@
     :goto_0
     invoke-interface {v4, p2, v3}, Landroid/app/IActivityManager;->startActivityFromRecents(ILandroid/os/Bundle;)I
 
-    .line 630
+    .line 667
     :goto_1
     return v1
 
-    .line 623
+    .line 660
     :cond_0
     invoke-virtual {p4}, Landroid/app/ActivityOptions;->toBundle()Landroid/os/Bundle;
     :try_end_0
@@ -1659,11 +1811,11 @@
 
     goto :goto_0
 
-    .line 625
+    .line 662
     :catch_0
     move-exception v0
 
-    .line 626
+    .line 663
     .local v0, "e":Ljava/lang/Exception;
     const v3, 0x7f0c0106
 
@@ -1681,7 +1833,7 @@
     :cond_1
     move v1, v2
 
-    .line 630
+    .line 667
     goto :goto_1
 .end method
 
@@ -1690,16 +1842,16 @@
     .param p1, "opts"    # Landroid/app/ActivityOptions;
 
     .prologue
-    .line 635
+    .line 672
     iget-object v1, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mIam:Landroid/app/IActivityManager;
 
     if-nez v1, :cond_0
 
-    .line 642
+    .line 679
     :goto_0
     return-void
 
-    .line 638
+    .line 675
     :cond_0
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mIam:Landroid/app/IActivityManager;
@@ -1710,11 +1862,11 @@
 
     goto :goto_0
 
-    .line 639
+    .line 676
     :catch_0
     move-exception v0
 
-    .line 640
+    .line 677
     .local v0, "e":Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
@@ -1727,16 +1879,16 @@
     .param p2, "appWidgetId"    # I
 
     .prologue
-    .line 551
+    .line 588
     iget-object v0, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mAwm:Landroid/appwidget/AppWidgetManager;
 
     if-nez v0, :cond_0
 
-    .line 555
+    .line 592
     :goto_0
     return-void
 
-    .line 554
+    .line 591
     :cond_0
     invoke-virtual {p1, p2}, Landroid/appwidget/AppWidgetHost;->deleteAppWidgetId(I)V
 

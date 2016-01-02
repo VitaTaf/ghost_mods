@@ -148,6 +148,7 @@ Use only the supplied charger."</string>
     <string name="accessibility_recents_item_dismissed">%s dismissed.</string>
     <string name="accessibility_recents_all_items_dismissed">All recent applications dismissed.</string>
     <string name="accessibility_recents_item_launched">Starting %s.</string>
+    <string name="accessibility_recents_task_header">%1$s %2$s</string>
     <string name="accessibility_notification_dismissed">Notification dismissed.</string>
     <string name="accessibility_desc_notification_shade">Notification shade.</string>
     <string name="accessibility_desc_quick_settings">Quick settings.</string>
