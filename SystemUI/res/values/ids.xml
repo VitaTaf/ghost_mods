@@ -174,10 +174,11 @@
     <item type="id" name="nav_bar_scrim">false</item>
     <item type="id" name="debug_seek_bar_1">false</item>
     <item type="id" name="debug_seek_bar_2">false</item>
-    <item type="id" name="inset_left">false</item>
-    <item type="id" name="inset_top">false</item>
-    <item type="id" name="inset_right">false</item>
-    <item type="id" name="inset_bottom">false</item>
+    <item type="id" name="place_left">false</item>
+    <item type="id" name="place_right">false</item>
+    <item type="id" name="place_top">false</item>
+    <item type="id" name="place_bottom">false</item>
+    <item type="id" name="place_full">false</item>
     <item type="id" name="task_view_content">false</item>
     <item type="id" name="task_view_thumbnail">false</item>
     <item type="id" name="lock_to_app_fab">false</item>

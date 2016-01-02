@@ -75,6 +75,8 @@ Use only the supplied charger."</string>
     <string name="unlock_label">unlock</string>
     <string name="phone_label">open phone</string>
     <string name="camera_label">open camera</string>
+    <string name="recents_caption_resize">Select new task layout</string>
+    <string name="cancel">Cancel</string>
     <string name="accessibility_compatibility_zoom_button">Compatibility zoom button.</string>
     <string name="accessibility_compatibility_zoom_example">Zoom smaller to larger screen.</string>
     <string name="accessibility_bluetooth_connected">Bluetooth connected.</string>

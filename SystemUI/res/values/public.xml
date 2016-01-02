@@ -748,6 +748,11 @@
     <public type="drawable" name="ic_media_pause" id="0x7f02050e" />
     <public type="drawable" name="ic_media_stop" id="0x7f02050f" />
     <public type="drawable" name="ic_contact_picture" id="0x7f020510" />
+    <public type="drawable" name="vector_drawable_place_bottom" id="0x7f020511" />
+    <public type="drawable" name="vector_drawable_place_fullscreen" id="0x7f020512" />
+    <public type="drawable" name="vector_drawable_place_left" id="0x7f020513" />
+    <public type="drawable" name="vector_drawable_place_right" id="0x7f020514" />
+    <public type="drawable" name="vector_drawable_place_top" id="0x7f020515" />
     <public type="drawable" name="ic_input_delete" id="0x7f020035" />
     <public type="drawable" name="ic_lockscreen_search_activated" id="0x7f020052" />
     <public type="drawable" name="ic_lockscreen_search_normal" id="0x7f020053" />
@@ -1432,7 +1437,7 @@
     <public type="layout" name="zz_moto_toast_plus_icon" id="0x7f04005e" />
     <public type="layout" name="keyguard_eca" id="0x7f04005f" />
     <public type="layout" name="recents_dismiss_button" id="0x7f040060" />
-    <public type="layout" name="recents_multistack_stack_size_dialog" id="0x7f040062" />
+    <public type="layout" name="recents_task_resize_dialog" id="0x7f040061" />
     <public type="layout" name="keyguard_host_view" id="0x7f04000c" />
     <public type="layout" name="keyguard_widget_pager" id="0x7f040020" />
     <public type="anim" name="dismiss_all_shape_animation_1" id="0x7f050000" />
@@ -2444,6 +2449,8 @@
     <public type="string" name="moto_ds_skip" id="0x7f0c0264" />
     <public type="string" name="accessibility_recents_all_items_dismissed" id="0x7f0c0268" />
     <public type="string" name="recents_dismiss_all_message" id="0x7f0c0269" />
+    <public type="string" name="recents_caption_resize" id="0x7f0c026a" />
+    <public type="string" name="cancel" id="0x7f0c026b" />
     <public type="string" name="recents_multistack_add_stack_dialog_split_horizontal" id="0x7f0c026d" />
     <public type="string" name="recents_multistack_add_stack_dialog_split_vertical" id="0x7f0c026e" />
     <public type="string" name="recents_multistack_add_stack_dialog_split_custom" id="0x7f0c026f" />
@@ -3116,10 +3123,11 @@
     <public type="id" name="message" id="0x7f0f015b" />
     <public type="id" name="recent_remove_item" id="0x7f0f015c" />
     <public type="id" name="recent_inspect_item" id="0x7f0f015d" />
-    <public type="id" name="inset_left" id="0x7f0f0161" />
-    <public type="id" name="inset_top" id="0x7f0f0162" />
-    <public type="id" name="inset_right" id="0x7f0f0163" />
-    <public type="id" name="inset_bottom" id="0x7f0f0164" />
+    <public type="id" name="place_left" id="0x7f0f015e" />
+    <public type="id" name="place_right" id="0x7f0f015f" />
+    <public type="id" name="place_top" id="0x7f0f0160" />
+    <public type="id" name="place_bottom" id="0x7f0f0161" />
+    <public type="id" name="place_full" id="0x7f0f0162" />
     <public type="id" name="move_task" id="0x7f0f0165" />
     <public type="plurals" name="status_bar_accessibility_recent_apps" id="0x7f100000" />
     <public type="plurals" name="kg_password_wrong_pin_code" id="0x7f100001" />

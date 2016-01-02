@@ -102,7 +102,7 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lcom/android/systemui/recents/RecentsResizeTaskDialog;-><init>(Landroid/app/FragmentManager;)V
+    invoke-direct {v0, v1, p0}, Lcom/android/systemui/recents/RecentsResizeTaskDialog;-><init>(Landroid/app/FragmentManager;Lcom/android/systemui/recents/RecentsActivity;)V
 
     iput-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mResizeTaskDebugDialog:Lcom/android/systemui/recents/RecentsResizeTaskDialog;
 
@@ -1245,7 +1245,7 @@
 .end method
 
 .method public onTaskResize(Lcom/android/systemui/recents/model/Task;)V
-    .locals 1
+    .locals 2
     .param p1, "t"    # Lcom/android/systemui/recents/model/Task;
 
     .prologue
@@ -1254,7 +1254,9 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lcom/android/systemui/recents/RecentsResizeTaskDialog;->showResizeTaskDialog(Lcom/android/systemui/recents/model/Task;)V
+    iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity;->mRecentsView:Lcom/android/systemui/recents/views/RecentsView;
+
+    invoke-virtual {v0, p1, v1}, Lcom/android/systemui/recents/RecentsResizeTaskDialog;->showResizeTaskDialog(Lcom/android/systemui/recents/model/Task;Lcom/android/systemui/recents/views/RecentsView;)V
 
     .line 604
     return-void

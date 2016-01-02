@@ -1556,6 +1556,8 @@
 
     .line 388
     :goto_1
+    if-eqz v4, :cond_0
+
     invoke-virtual {v4}, Lcom/android/systemui/recents/model/TaskStack;->getTaskCount()I
 
     move-result v18

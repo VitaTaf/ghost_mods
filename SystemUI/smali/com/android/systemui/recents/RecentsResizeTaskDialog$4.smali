@@ -1,4 +1,4 @@
-.class Lcom/android/systemui/recents/RecentsResizeTaskDialog$2;
+.class Lcom/android/systemui/recents/RecentsResizeTaskDialog$4;
 .super Ljava/lang/Object;
 .source "RecentsResizeTaskDialog.java"
 
@@ -26,8 +26,8 @@
     .locals 0
 
     .prologue
-    .line 89
-    iput-object p1, p0, Lcom/android/systemui/recents/RecentsResizeTaskDialog$2;->this$0:Lcom/android/systemui/recents/RecentsResizeTaskDialog;
+    .line 101
+    iput-object p1, p0, Lcom/android/systemui/recents/RecentsResizeTaskDialog$4;->this$0:Lcom/android/systemui/recents/RecentsResizeTaskDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,14 +41,14 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 91
-    iget-object v0, p0, Lcom/android/systemui/recents/RecentsResizeTaskDialog$2;->this$0:Lcom/android/systemui/recents/RecentsResizeTaskDialog;
+    .line 103
+    iget-object v0, p0, Lcom/android/systemui/recents/RecentsResizeTaskDialog$4;->this$0:Lcom/android/systemui/recents/RecentsResizeTaskDialog;
 
-    const/4 v1, 0x2
+    const/4 v1, 0x4
 
     # invokes: Lcom/android/systemui/recents/RecentsResizeTaskDialog;->placeTasks(I)V
     invoke-static {v0, v1}, Lcom/android/systemui/recents/RecentsResizeTaskDialog;->access$000(Lcom/android/systemui/recents/RecentsResizeTaskDialog;I)V
 
-    .line 92
+    .line 104
     return-void
 .end method
