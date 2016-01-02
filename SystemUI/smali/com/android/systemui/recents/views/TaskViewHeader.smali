@@ -246,19 +246,19 @@
     .locals 2
 
     .prologue
-    .line 329
+    .line 327
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mLayersDisabled:Z
 
-    .line 332
+    .line 330
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
     invoke-virtual {p0, v0, v1}, Lcom/android/systemui/recents/views/TaskViewHeader;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 333
+    .line 331
     return-void
 .end method
 
@@ -267,27 +267,27 @@
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 315
+    .line 313
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 316
+    .line 314
     iget-boolean v0, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mLayersDisabled:Z
 
     if-eqz v0, :cond_0
 
-    .line 317
+    .line 315
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mLayersDisabled:Z
 
-    .line 318
+    .line 316
     new-instance v0, Lcom/android/systemui/recents/views/TaskViewHeader$2;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/recents/views/TaskViewHeader$2;-><init>(Lcom/android/systemui/recents/views/TaskViewHeader;)V
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskViewHeader;->postOnAnimation(Ljava/lang/Runnable;)V
 
-    .line 326
+    .line 324
     :cond_0
     return-void
 .end method
@@ -337,7 +337,7 @@
     .param p1, "extraSpace"    # I
 
     .prologue
-    .line 310
+    .line 308
     const/4 v0, 0x0
 
     new-array v0, v0, [I
@@ -590,43 +590,43 @@
     .param p2, "animateFocusedState"    # Z
 
     .prologue
-    .line 338
+    .line 336
     if-nez p2, :cond_0
 
-    .line 422
+    .line 420
     :goto_0
     return-void
 
-    .line 340
+    .line 338
     :cond_0
     const/4 v3, 0x0
 
-    .line 341
+    .line 339
     .local v3, "isRunning":Z
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mFocusAnimator:Landroid/animation/AnimatorSet;
 
     if-eqz v9, :cond_1
 
-    .line 342
+    .line 340
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mFocusAnimator:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v9}, Landroid/animation/AnimatorSet;->isRunning()Z
 
     move-result v3
 
-    .line 343
+    .line 341
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mFocusAnimator:Landroid/animation/AnimatorSet;
 
     invoke-static {v9}, Lcom/android/systemui/recents/misc/Utilities;->cancelAnimationWithoutCallbacks(Landroid/animation/Animator;)V
 
-    .line 346
+    .line 344
     :cond_1
     if-eqz p1, :cond_2
 
-    .line 347
+    .line 345
     iget v2, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mBackgroundColor:I
 
-    .line 348
+    .line 346
     .local v2, "currentColor":I
     iget v9, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mCurrentPrimaryColor:I
 
@@ -636,7 +636,7 @@
 
     move-result v6
 
-    .line 349
+    .line 347
     .local v6, "secondaryColor":I
     const/4 v9, 0x3
 
@@ -678,7 +678,7 @@
 
     aput-object v10, v7, v9
 
-    .line 354
+    .line 352
     .local v7, "states":[[I
     const/4 v9, 0x3
 
@@ -686,7 +686,7 @@
 
     fill-array-data v5, :array_0
 
-    .line 359
+    .line 357
     .local v5, "newStates":[I
     const/4 v9, 0x3
 
@@ -704,7 +704,7 @@
 
     aput v6, v1, v9
 
-    .line 364
+    .line 362
     .local v1, "colors":[I
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mBackground:Landroid/graphics/drawable/RippleDrawable;
 
@@ -714,12 +714,12 @@
 
     invoke-virtual {v9, v10}, Landroid/graphics/drawable/RippleDrawable;->setColor(Landroid/content/res/ColorStateList;)V
 
-    .line 365
+    .line 363
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mBackground:Landroid/graphics/drawable/RippleDrawable;
 
     invoke-virtual {v9, v5}, Landroid/graphics/drawable/RippleDrawable;->setState([I)Z
 
-    .line 367
+    .line 365
     iget v9, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mCurrentPrimaryColor:I
 
     iget-boolean v10, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mCurrentPrimaryColorIsDark:Z
@@ -728,7 +728,7 @@
 
     move-result v4
 
-    .line 368
+    .line 366
     .local v4, "lightPrimaryColor":I
     new-instance v9, Landroid/animation/ArgbEvaluator;
 
@@ -758,7 +758,7 @@
 
     move-result-object v0
 
-    .line 370
+    .line 368
     .local v0, "backgroundColor":Landroid/animation/ValueAnimator;
     new-instance v9, Lcom/android/systemui/recents/views/TaskViewHeader$3;
 
@@ -766,24 +766,24 @@
 
     invoke-virtual {v0, v9}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 376
+    .line 374
     new-instance v9, Lcom/android/systemui/recents/views/TaskViewHeader$4;
 
     invoke-direct {v9, p0}, Lcom/android/systemui/recents/views/TaskViewHeader$4;-><init>(Lcom/android/systemui/recents/views/TaskViewHeader;)V
 
     invoke-virtual {v0, v9}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 384
+    .line 382
     const/4 v9, -0x1
 
     invoke-virtual {v0, v9}, Landroid/animation/ValueAnimator;->setRepeatCount(I)V
 
-    .line 385
+    .line 383
     const/4 v9, 0x2
 
     invoke-virtual {v0, v9}, Landroid/animation/ValueAnimator;->setRepeatMode(I)V
 
-    .line 387
+    .line 385
     const-string v9, "translationZ"
 
     const/4 v10, 0x1
@@ -800,25 +800,25 @@
 
     move-result-object v8
 
-    .line 388
+    .line 386
     .local v8, "translation":Landroid/animation/ObjectAnimator;
     const/4 v9, -0x1
 
     invoke-virtual {v8, v9}, Landroid/animation/ObjectAnimator;->setRepeatCount(I)V
 
-    .line 389
+    .line 387
     const/4 v9, 0x2
 
     invoke-virtual {v8, v9}, Landroid/animation/ObjectAnimator;->setRepeatMode(I)V
 
-    .line 391
+    .line 389
     new-instance v9, Landroid/animation/AnimatorSet;
 
     invoke-direct {v9}, Landroid/animation/AnimatorSet;-><init>()V
 
     iput-object v9, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mFocusAnimator:Landroid/animation/AnimatorSet;
 
-    .line 392
+    .line 390
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mFocusAnimator:Landroid/animation/AnimatorSet;
 
     const/4 v10, 0x2
@@ -835,28 +835,28 @@
 
     invoke-virtual {v9, v10}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 393
+    .line 391
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mFocusAnimator:Landroid/animation/AnimatorSet;
 
     const-wide/16 v10, 0x96
 
     invoke-virtual {v9, v10, v11}, Landroid/animation/AnimatorSet;->setStartDelay(J)V
 
-    .line 394
+    .line 392
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mFocusAnimator:Landroid/animation/AnimatorSet;
 
     const-wide/16 v10, 0x2ee
 
     invoke-virtual {v9, v10, v11}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 395
+    .line 393
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mFocusAnimator:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v9}, Landroid/animation/AnimatorSet;->start()V
 
     goto/16 :goto_0
 
-    .line 397
+    .line 395
     .end local v0    # "backgroundColor":Landroid/animation/ValueAnimator;
     .end local v1    # "colors":[I
     .end local v2    # "currentColor":I
@@ -868,10 +868,10 @@
     :cond_2
     if-eqz v3, :cond_3
 
-    .line 399
+    .line 397
     iget v2, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mBackgroundColor:I
 
-    .line 400
+    .line 398
     .restart local v2    # "currentColor":I
     new-instance v9, Landroid/animation/ArgbEvaluator;
 
@@ -903,7 +903,7 @@
 
     move-result-object v0
 
-    .line 402
+    .line 400
     .restart local v0    # "backgroundColor":Landroid/animation/ValueAnimator;
     new-instance v9, Lcom/android/systemui/recents/views/TaskViewHeader$5;
 
@@ -911,7 +911,7 @@
 
     invoke-virtual {v0, v9}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 411
+    .line 409
     const-string v9, "translationZ"
 
     const/4 v10, 0x1
@@ -928,7 +928,7 @@
 
     move-result-object v8
 
-    .line 413
+    .line 411
     .restart local v8    # "translation":Landroid/animation/ObjectAnimator;
     new-instance v9, Landroid/animation/AnimatorSet;
 
@@ -936,7 +936,7 @@
 
     iput-object v9, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mFocusAnimator:Landroid/animation/AnimatorSet;
 
-    .line 414
+    .line 412
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mFocusAnimator:Landroid/animation/AnimatorSet;
 
     const/4 v10, 0x2
@@ -953,21 +953,21 @@
 
     invoke-virtual {v9, v10}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 415
+    .line 413
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mFocusAnimator:Landroid/animation/AnimatorSet;
 
     const-wide/16 v10, 0x96
 
     invoke-virtual {v9, v10, v11}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 416
+    .line 414
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mFocusAnimator:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v9}, Landroid/animation/AnimatorSet;->start()V
 
     goto/16 :goto_0
 
-    .line 418
+    .line 416
     .end local v0    # "backgroundColor":Landroid/animation/ValueAnimator;
     .end local v2    # "currentColor":I
     .end local v8    # "translation":Landroid/animation/ObjectAnimator;
@@ -980,14 +980,14 @@
 
     invoke-virtual {v9, v10}, Landroid/graphics/drawable/RippleDrawable;->setState([I)Z
 
-    .line 419
+    .line 417
     const/4 v9, 0x0
 
     invoke-virtual {p0, v9}, Lcom/android/systemui/recents/views/TaskViewHeader;->setTranslationZ(F)V
 
     goto/16 :goto_0
 
-    .line 354
+    .line 352
     nop
 
     :array_0
@@ -1209,14 +1209,14 @@
     .locals 2
 
     .prologue
-    .line 302
+    .line 300
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mDismissButton:Landroid/widget/ImageView;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 303
+    .line 301
     return-void
 .end method
 
@@ -1264,7 +1264,7 @@
     .locals 2
 
     .prologue
-    .line 293
+    .line 291
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mDismissButton:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->getVisibility()I
@@ -1273,7 +1273,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 294
+    .line 292
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mDismissButton:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1282,21 +1282,21 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 295
+    .line 293
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mDismissButton:Landroid/widget/ImageView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 296
+    .line 294
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mDismissButton:Landroid/widget/ImageView;
 
     const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 298
+    .line 296
     :cond_0
     return-void
 .end method
@@ -1360,13 +1360,9 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->withLayer()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 274
+    .line 273
     :cond_0
     return-void
 .end method
@@ -1375,7 +1371,7 @@
     .locals 4
 
     .prologue
-    .line 278
+    .line 277
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mDismissButton:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->getVisibility()I
@@ -1384,21 +1380,21 @@
 
     if-eqz v0, :cond_0
 
-    .line 279
+    .line 278
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mDismissButton:Landroid/widget/ImageView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 280
+    .line 279
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mDismissButton:Landroid/widget/ImageView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 281
+    .line 280
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mDismissButton:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1435,13 +1431,9 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->withLayer()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 289
+    .line 287
     :cond_0
     return-void
 .end method
