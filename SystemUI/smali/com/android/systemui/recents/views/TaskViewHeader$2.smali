@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 316
+    .line 315
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskViewHeader$2;->this$0:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,14 +40,14 @@
     .locals 3
 
     .prologue
-    .line 319
+    .line 318
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskViewHeader$2;->this$0:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lcom/android/systemui/recents/views/TaskViewHeader;->mLayersDisabled:Z
 
-    .line 320
+    .line 319
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskViewHeader$2;->this$0:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     const/4 v1, 0x2
@@ -58,6 +58,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/recents/views/TaskViewHeader;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 321
+    .line 320
     return-void
 .end method

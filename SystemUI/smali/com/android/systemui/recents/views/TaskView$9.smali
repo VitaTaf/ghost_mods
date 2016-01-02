@@ -30,7 +30,7 @@
     .locals 0
 
     .prologue
-    .line 720
+    .line 725
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/TaskView$9;->val$v:Landroid/view/View;
@@ -45,57 +45,113 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 3
 
     .prologue
-    .line 727
-    iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$9;->val$v:Landroid/view/View;
-
-    iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
-
-    iget-object v1, v1, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
-
-    iget-object v1, v1, Lcom/android/systemui/recents/views/TaskViewHeader;->mDismissButton:Landroid/widget/ImageView;
-
-    if-ne v0, v1, :cond_1
-
     .line 728
-    iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
+    iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView$9;->val$v:Landroid/view/View;
 
-    invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskView;->dismissTask()V
+    iget-object v2, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
+
+    iget-object v2, v2, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
+
+    iget-object v2, v2, Lcom/android/systemui/recents/views/TaskViewHeader;->mApplicationIcon:Landroid/widget/ImageView;
+
+    if-ne v1, v2, :cond_1
 
     .line 734
+    iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
+
+    invoke-virtual {v1}, Lcom/android/systemui/recents/views/TaskView;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    const-string v2, "accessibility"
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/accessibility/AccessibilityManager;
+
+    .line 736
+    .local v0, "am":Landroid/view/accessibility/AccessibilityManager;
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Landroid/view/accessibility/AccessibilityManager;->isEnabled()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 737
+    iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
+
+    iget-object v1, v1, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
+
+    if-eqz v1, :cond_0
+
+    .line 738
+    iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
+
+    iget-object v1, v1, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
+
+    iget-object v2, p0, Lcom/android/systemui/recents/views/TaskView$9;->val$tv:Lcom/android/systemui/recents/views/TaskView;
+
+    invoke-interface {v1, v2}, Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;->onTaskViewAppInfoClicked(Lcom/android/systemui/recents/views/TaskView;)V
+
+    .line 749
+    .end local v0    # "am":Landroid/view/accessibility/AccessibilityManager;
     :cond_0
     :goto_0
     return-void
 
-    .line 729
+    .line 742
     :cond_1
-    iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$9;->val$v:Landroid/view/View;
+    iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView$9;->val$v:Landroid/view/View;
 
+    iget-object v2, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
+
+    iget-object v2, v2, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
+
+    iget-object v2, v2, Lcom/android/systemui/recents/views/TaskViewHeader;->mDismissButton:Landroid/widget/ImageView;
+
+    if-ne v1, v2, :cond_2
+
+    .line 743
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
-    iget-object v1, v1, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
+    invoke-virtual {v1}, Lcom/android/systemui/recents/views/TaskView;->dismissTask()V
 
-    iget-object v1, v1, Lcom/android/systemui/recents/views/TaskViewHeader;->mMoveTaskButton:Landroid/widget/ImageView;
+    goto :goto_0
 
-    if-ne v0, v1, :cond_0
+    .line 744
+    :cond_2
+    iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView$9;->val$v:Landroid/view/View;
 
-    .line 730
-    iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
+    iget-object v2, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
-    iget-object v0, v0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
+    iget-object v2, v2, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
-    if-eqz v0, :cond_0
+    iget-object v2, v2, Lcom/android/systemui/recents/views/TaskViewHeader;->mMoveTaskButton:Landroid/widget/ImageView;
 
-    .line 731
-    iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
+    if-ne v1, v2, :cond_0
 
-    iget-object v0, v0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
+    .line 745
+    iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
-    iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView$9;->val$tv:Lcom/android/systemui/recents/views/TaskView;
+    iget-object v1, v1, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
 
-    invoke-interface {v0, v1}, Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;->onTaskResize(Lcom/android/systemui/recents/views/TaskView;)V
+    if-eqz v1, :cond_0
+
+    .line 746
+    iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
+
+    iget-object v1, v1, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
+
+    iget-object v2, p0, Lcom/android/systemui/recents/views/TaskView$9;->val$tv:Lcom/android/systemui/recents/views/TaskView;
+
+    invoke-interface {v1, v2}, Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;->onTaskResize(Lcom/android/systemui/recents/views/TaskView;)V
 
     goto :goto_0
 .end method

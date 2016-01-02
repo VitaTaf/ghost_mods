@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 446
+    .line 447
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskView$7;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/TaskView$7;->val$r:Ljava/lang/Runnable;
@@ -44,17 +44,17 @@
     .locals 2
 
     .prologue
-    .line 449
+    .line 450
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$7;->val$r:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 450
+    .line 451
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$7;->val$r:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 454
+    .line 455
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$7;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
@@ -62,6 +62,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/TaskView;->setClipViewInStack(Z)V
 
-    .line 455
+    .line 456
     return-void
 .end method
