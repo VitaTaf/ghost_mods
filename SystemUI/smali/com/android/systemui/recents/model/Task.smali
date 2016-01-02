@@ -380,31 +380,6 @@
     return-void
 .end method
 
-.method public setStackId(I)V
-    .locals 1
-    .param p1, "stackId"    # I
-
-    .prologue
-    .line 192
-    iget-object v0, p0, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
-
-    iput p1, v0, Lcom/android/systemui/recents/model/Task$TaskKey;->stackId:I
-
-    .line 193
-    iget-object v0, p0, Lcom/android/systemui/recents/model/Task;->mCb:Lcom/android/systemui/recents/model/Task$TaskCallbacks;
-
-    if-eqz v0, :cond_0
-
-    .line 194
-    iget-object v0, p0, Lcom/android/systemui/recents/model/Task;->mCb:Lcom/android/systemui/recents/model/Task$TaskCallbacks;
-
-    invoke-interface {v0}, Lcom/android/systemui/recents/model/Task$TaskCallbacks;->onMultiStackDebugTaskStackIdChanged()V
-
-    .line 196
-    :cond_0
-    return-void
-.end method
-
 .method public toString()Ljava/lang/String;
     .locals 3
 

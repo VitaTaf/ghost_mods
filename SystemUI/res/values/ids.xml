@@ -169,14 +169,11 @@
     <item type="id" name="footer_icon">false</item>
     <item type="id" name="status_bar_scrim">false</item>
     <item type="id" name="recents_view">false</item>
-    <item type="id" name="multistack_debug_view_stub">false</item>
     <item type="id" name="empty_view_stub">false</item>
     <item type="id" name="debug_overlay_stub">false</item>
     <item type="id" name="nav_bar_scrim">false</item>
     <item type="id" name="debug_seek_bar_1">false</item>
     <item type="id" name="debug_seek_bar_2">false</item>
-    <item type="id" name="add_stack">false</item>
-    <item type="id" name="resize_stack">false</item>
     <item type="id" name="inset_left">false</item>
     <item type="id" name="inset_top">false</item>
     <item type="id" name="inset_right">false</item>

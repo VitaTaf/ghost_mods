@@ -826,21 +826,6 @@
     return-void
 .end method
 
-.method public onMultiStackDebugTaskStackIdChanged()V
-    .locals 2
-
-    .prologue
-    .line 713
-    iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
-
-    iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mTask:Lcom/android/systemui/recents/model/Task;
-
-    invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/TaskViewHeader;->rebindToTask(Lcom/android/systemui/recents/model/Task;)V
-
-    .line 714
-    return-void
-.end method
-
 .method public onTaskBound(Lcom/android/systemui/recents/model/Task;)V
     .locals 2
     .param p1, "t"    # Lcom/android/systemui/recents/model/Task;

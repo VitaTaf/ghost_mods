@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract onMultiStackMoveTask(Lcom/android/systemui/recents/views/TaskView;)V
+.method public abstract onTaskResize(Lcom/android/systemui/recents/views/TaskView;)V
 .end method
 
 .method public abstract onTaskViewAppInfoClicked(Lcom/android/systemui/recents/views/TaskView;)V

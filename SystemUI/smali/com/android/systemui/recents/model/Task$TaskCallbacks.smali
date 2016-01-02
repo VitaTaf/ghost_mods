@@ -15,9 +15,6 @@
 
 
 # virtual methods
-.method public abstract onMultiStackDebugTaskStackIdChanged()V
-.end method
-
 .method public abstract onTaskDataLoaded()V
 .end method
 

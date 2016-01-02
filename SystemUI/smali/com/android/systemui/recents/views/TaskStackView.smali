@@ -2240,30 +2240,6 @@
     return-void
 .end method
 
-.method public onMultiStackMoveTask(Lcom/android/systemui/recents/views/TaskView;)V
-    .locals 2
-    .param p1, "tv"    # Lcom/android/systemui/recents/views/TaskView;
-
-    .prologue
-    .line 1343
-    iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mCb:Lcom/android/systemui/recents/views/TaskStackView$TaskStackViewCallbacks;
-
-    if-eqz v0, :cond_0
-
-    .line 1344
-    iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mCb:Lcom/android/systemui/recents/views/TaskStackView$TaskStackViewCallbacks;
-
-    invoke-virtual {p1}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lcom/android/systemui/recents/views/TaskStackView$TaskStackViewCallbacks;->onMultiStackMoveTask(Lcom/android/systemui/recents/model/Task;)V
-
-    .line 1346
-    :cond_0
-    return-void
-.end method
-
 .method public onPackagesChanged(Lcom/android/systemui/recents/model/RecentsPackageMonitor;Ljava/lang/String;I)V
     .locals 7
     .param p1, "monitor"    # Lcom/android/systemui/recents/model/RecentsPackageMonitor;
@@ -2690,6 +2666,30 @@
     .prologue
     .line 1176
     .local p2, "curTasks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/recents/model/Task;>;"
+    return-void
+.end method
+
+.method public onTaskResize(Lcom/android/systemui/recents/views/TaskView;)V
+    .locals 2
+    .param p1, "tv"    # Lcom/android/systemui/recents/views/TaskView;
+
+    .prologue
+    .line 1343
+    iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mCb:Lcom/android/systemui/recents/views/TaskStackView$TaskStackViewCallbacks;
+
+    if-eqz v0, :cond_0
+
+    .line 1344
+    iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mCb:Lcom/android/systemui/recents/views/TaskStackView$TaskStackViewCallbacks;
+
+    invoke-virtual {p1}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lcom/android/systemui/recents/views/TaskStackView$TaskStackViewCallbacks;->onTaskResize(Lcom/android/systemui/recents/model/Task;)V
+
+    .line 1346
+    :cond_0
     return-void
 .end method
 

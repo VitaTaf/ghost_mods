@@ -35,9 +35,9 @@
 
 .field mLastTabKeyEventTime:J
 
-.field mMultiStackDebugDialog:Lcom/android/systemui/recents/RecentsMultiStackDialog;
-
 .field mRecentsView:Lcom/android/systemui/recents/views/RecentsView;
+
+.field mResizeTaskDebugDialog:Lcom/android/systemui/recents/RecentsResizeTaskDialog;
 
 .field mScrimViews:Lcom/android/systemui/recents/views/SystemBarScrimViews;
 
@@ -88,29 +88,29 @@
     return-void
 .end method
 
-.method private getMultiStackDebugDialog()Lcom/android/systemui/recents/RecentsMultiStackDialog;
+.method private getResizeTaskDebugDialog()Lcom/android/systemui/recents/RecentsResizeTaskDialog;
     .locals 2
 
     .prologue
     .line 599
-    iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mMultiStackDebugDialog:Lcom/android/systemui/recents/RecentsMultiStackDialog;
+    iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mResizeTaskDebugDialog:Lcom/android/systemui/recents/RecentsResizeTaskDialog;
 
     if-nez v0, :cond_0
 
     .line 600
-    new-instance v0, Lcom/android/systemui/recents/RecentsMultiStackDialog;
+    new-instance v0, Lcom/android/systemui/recents/RecentsResizeTaskDialog;
 
     invoke-virtual {p0}, Lcom/android/systemui/recents/RecentsActivity;->getFragmentManager()Landroid/app/FragmentManager;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lcom/android/systemui/recents/RecentsMultiStackDialog;-><init>(Landroid/app/FragmentManager;)V
+    invoke-direct {v0, v1}, Lcom/android/systemui/recents/RecentsResizeTaskDialog;-><init>(Landroid/app/FragmentManager;)V
 
-    iput-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mMultiStackDebugDialog:Lcom/android/systemui/recents/RecentsMultiStackDialog;
+    iput-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mResizeTaskDebugDialog:Lcom/android/systemui/recents/RecentsResizeTaskDialog;
 
     .line 602
     :cond_0
-    iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mMultiStackDebugDialog:Lcom/android/systemui/recents/RecentsMultiStackDialog;
+    iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mResizeTaskDebugDialog:Lcom/android/systemui/recents/RecentsResizeTaskDialog;
 
     return-object v0
 .end method
@@ -468,12 +468,12 @@
     .locals 1
 
     .prologue
-    .line 649
+    .line 630
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mFinishLaunchHomeRunnable:Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->run()V
 
-    .line 650
+    .line 631
     return-void
 .end method
 
@@ -929,12 +929,12 @@
     .locals 1
 
     .prologue
-    .line 634
+    .line 615
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mScrimViews:Lcom/android/systemui/recents/views/SystemBarScrimViews;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/SystemBarScrimViews;->startExitRecentsAnimation()V
 
-    .line 635
+    .line 616
     return-void
 .end method
 
@@ -1069,58 +1069,6 @@
     .end sparse-switch
 .end method
 
-.method public onMultiStackAddStack()V
-    .locals 1
-
-    .prologue
-    .line 607
-    invoke-direct {p0}, Lcom/android/systemui/recents/RecentsActivity;->getMultiStackDebugDialog()Lcom/android/systemui/recents/RecentsMultiStackDialog;
-
-    move-result-object v0
-
-    .line 608
-    .local v0, "dialog":Lcom/android/systemui/recents/RecentsMultiStackDialog;
-    invoke-virtual {v0}, Lcom/android/systemui/recents/RecentsMultiStackDialog;->showAddStackDialog()V
-
-    .line 609
-    return-void
-.end method
-
-.method public onMultiStackMoveTask(Lcom/android/systemui/recents/model/Task;)V
-    .locals 1
-    .param p1, "t"    # Lcom/android/systemui/recents/model/Task;
-
-    .prologue
-    .line 625
-    invoke-direct {p0}, Lcom/android/systemui/recents/RecentsActivity;->getMultiStackDebugDialog()Lcom/android/systemui/recents/RecentsMultiStackDialog;
-
-    move-result-object v0
-
-    .line 626
-    .local v0, "dialog":Lcom/android/systemui/recents/RecentsMultiStackDialog;
-    invoke-virtual {v0, p1}, Lcom/android/systemui/recents/RecentsMultiStackDialog;->showMoveTaskDialog(Lcom/android/systemui/recents/model/Task;)V
-
-    .line 627
-    return-void
-.end method
-
-.method public onMultiStackResizeStack()V
-    .locals 1
-
-    .prologue
-    .line 613
-    invoke-direct {p0}, Lcom/android/systemui/recents/RecentsActivity;->getMultiStackDebugDialog()Lcom/android/systemui/recents/RecentsMultiStackDialog;
-
-    move-result-object v0
-
-    .line 614
-    .local v0, "dialog":Lcom/android/systemui/recents/RecentsMultiStackDialog;
-    invoke-virtual {v0}, Lcom/android/systemui/recents/RecentsMultiStackDialog;->showResizeStackDialog()V
-
-    .line 615
-    return-void
-.end method
-
 .method protected onNewIntent(Landroid/content/Intent;)V
     .locals 1
     .param p1, "intent"    # Landroid/content/Intent;
@@ -1152,7 +1100,7 @@
     .param p1, "progress"    # F
 
     .prologue
-    .line 672
+    .line 653
     return-void
 .end method
 
@@ -1160,19 +1108,19 @@
     .locals 2
 
     .prologue
-    .line 654
+    .line 635
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     if-eqz v0, :cond_0
 
-    .line 655
+    .line 636
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->showScreenPinningRequest(Z)V
 
-    .line 657
+    .line 638
     :cond_0
     return-void
 .end method
@@ -1182,7 +1130,7 @@
     .param p1, "progress"    # F
 
     .prologue
-    .line 677
+    .line 658
     return-void
 .end method
 
@@ -1304,12 +1252,28 @@
     .locals 1
 
     .prologue
-    .line 644
+    .line 625
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/RecentsActivity;->dismissRecentsToHomeRaw(Z)V
 
-    .line 645
+    .line 626
+    return-void
+.end method
+
+.method public onTaskResize(Lcom/android/systemui/recents/model/Task;)V
+    .locals 1
+    .param p1, "t"    # Lcom/android/systemui/recents/model/Task;
+
+    .prologue
+    .line 607
+    invoke-direct {p0}, Lcom/android/systemui/recents/RecentsActivity;->getResizeTaskDebugDialog()Lcom/android/systemui/recents/RecentsResizeTaskDialog;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lcom/android/systemui/recents/RecentsResizeTaskDialog;->showResizeTaskDialog(Lcom/android/systemui/recents/model/Task;)V
+
+    .line 608
     return-void
 .end method
 
@@ -1317,7 +1281,7 @@
     .locals 0
 
     .prologue
-    .line 639
+    .line 620
     return-void
 .end method
 
@@ -1360,13 +1324,13 @@
     .locals 0
 
     .prologue
-    .line 663
+    .line 644
     invoke-virtual {p0}, Lcom/android/systemui/recents/RecentsActivity;->bindSearchBarAppWidget()V
 
-    .line 664
+    .line 645
     invoke-virtual {p0}, Lcom/android/systemui/recents/RecentsActivity;->addSearchBarAppWidgetView()V
 
-    .line 665
+    .line 646
     return-void
 .end method
 

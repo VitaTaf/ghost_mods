@@ -268,9 +268,6 @@ Turning it back on may lead to charges from your carrier."</string>
     <string name="recents_search_bar_label">search</string>
     <string name="recents_launch_error_message">Could not start %s.</string>
     <string name="recents_dismiss_all_message">Dismiss all applications</string>
-    <string name="recents_multistack_add_stack">+</string>
-    <string name="recents_multistack_remove_stack">-</string>
-    <string name="recents_multistack_resize_stack">[]</string>
     <string name="recents_multistack_add_stack_dialog_split_horizontal">Split Horizontal</string>
     <string name="recents_multistack_add_stack_dialog_split_vertical">Split Vertical</string>
     <string name="recents_multistack_add_stack_dialog_split_custom">Split Custom</string>
