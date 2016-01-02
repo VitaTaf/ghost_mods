@@ -6,6 +6,10 @@
         <Button android:id="@id/place_right" android:background="@drawable/vector_drawable_place_right" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_margin="10.0dip" android:layout_weight="1.0" />
         <Button android:id="@id/place_top" android:background="@drawable/vector_drawable_place_top" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_margin="10.0dip" android:layout_weight="1.0" />
         <Button android:id="@id/place_bottom" android:background="@drawable/vector_drawable_place_bottom" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_margin="10.0dip" android:layout_weight="1.0" />
+        <Button android:id="@id/place_top_left" android:background="@drawable/vector_drawable_place_top_left" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_margin="10.0dip" android:layout_weight="1.0" />
+        <Button android:id="@id/place_top_right" android:background="@drawable/vector_drawable_place_top_right" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_margin="10.0dip" android:layout_weight="1.0" />
+        <Button android:id="@id/place_bottom_left" android:background="@drawable/vector_drawable_place_bottom_left" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_margin="10.0dip" android:layout_weight="1.0" />
+        <Button android:id="@id/place_bottom_right" android:background="@drawable/vector_drawable_place_bottom_right" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_margin="10.0dip" android:layout_weight="1.0" />
         <Button android:id="@id/place_full" android:background="@drawable/vector_drawable_place_fullscreen" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_margin="10.0dip" android:layout_weight="1.0" />
     </LinearLayout>
 </LinearLayout>

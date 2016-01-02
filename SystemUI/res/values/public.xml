@@ -753,6 +753,10 @@
     <public type="drawable" name="vector_drawable_place_left" id="0x7f020513" />
     <public type="drawable" name="vector_drawable_place_right" id="0x7f020514" />
     <public type="drawable" name="vector_drawable_place_top" id="0x7f020515" />
+    <public type="drawable" name="vector_drawable_place_bottom_left" id="0x7f020516" />
+    <public type="drawable" name="vector_drawable_place_bottom_right" id="0x7f020517" />
+    <public type="drawable" name="vector_drawable_place_top_left" id="0x7f020518" />
+    <public type="drawable" name="vector_drawable_place_top_right" id="0x7f020519" />
     <public type="drawable" name="ic_input_delete" id="0x7f020035" />
     <public type="drawable" name="ic_lockscreen_search_activated" id="0x7f020052" />
     <public type="drawable" name="ic_lockscreen_search_normal" id="0x7f020053" />
@@ -3128,7 +3132,11 @@
     <public type="id" name="place_top" id="0x7f0f0160" />
     <public type="id" name="place_bottom" id="0x7f0f0161" />
     <public type="id" name="place_full" id="0x7f0f0162" />
+    <public type="id" name="place_top_left" id="0x7f0f0163" />
+    <public type="id" name="place_top_right" id="0x7f0f0164" />
     <public type="id" name="move_task" id="0x7f0f0165" />
+    <public type="id" name="place_bottom_left" id="0x7f0f0166" />
+    <public type="id" name="place_bottom_right" id="0x7f0f0167" />
     <public type="plurals" name="status_bar_accessibility_recent_apps" id="0x7f100000" />
     <public type="plurals" name="kg_password_wrong_pin_code" id="0x7f100001" />
     <public type="plurals" name="kg_password_wrong_puk_code" id="0x7f100002" />

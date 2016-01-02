@@ -68,33 +68,40 @@
 .end method
 
 .method public static reset(Landroid/view/View;)V
-    .locals 2
+    .locals 3
     .param p0, "v"    # Landroid/view/View;
 
     .prologue
-    const/high16 v1, 0x3f800000    # 1.0f
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    const/4 v0, 0x0
-
-    .line 136
-    invoke-virtual {p0, v0}, Landroid/view/View;->setTranslationX(F)V
+    const/4 v1, 0x0
 
     .line 137
-    invoke-virtual {p0, v0}, Landroid/view/View;->setTranslationY(F)V
+    invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
     .line 138
-    invoke-virtual {p0, v0}, Landroid/view/View;->setTranslationZ(F)V
+    invoke-virtual {p0, v1}, Landroid/view/View;->setTranslationX(F)V
 
     .line 139
-    invoke-virtual {p0, v1}, Landroid/view/View;->setScaleX(F)V
+    invoke-virtual {p0, v1}, Landroid/view/View;->setTranslationY(F)V
 
     .line 140
-    invoke-virtual {p0, v1}, Landroid/view/View;->setScaleY(F)V
+    invoke-virtual {p0, v1}, Landroid/view/View;->setTranslationZ(F)V
 
     .line 141
-    invoke-virtual {p0, v1}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {p0, v2}, Landroid/view/View;->setScaleX(F)V
 
     .line 142
+    invoke-virtual {p0, v2}, Landroid/view/View;->setScaleY(F)V
+
+    .line 143
+    invoke-virtual {p0, v2}, Landroid/view/View;->setAlpha(F)V
+
+    .line 144
     return-void
 .end method
 
@@ -489,7 +496,7 @@
     .locals 2
 
     .prologue
-    .line 146
+    .line 148
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

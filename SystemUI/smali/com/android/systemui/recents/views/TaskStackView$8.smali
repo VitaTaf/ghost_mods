@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 984
+    .line 986
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackView$8;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/TaskStackView$8;->val$postAnimRunnable:Ljava/lang/Runnable;
@@ -44,14 +44,14 @@
     .locals 2
 
     .prologue
-    .line 987
+    .line 989
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView$8;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lcom/android/systemui/recents/views/TaskStackView;->mDismissAllButtonAnimating:Z
 
-    .line 988
+    .line 990
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView$8;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskStackView;->mDismissAllButton:Lcom/android/systemui/statusbar/DismissView;
@@ -60,17 +60,17 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/DismissView;->setVisibility(I)V
 
-    .line 989
+    .line 991
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView$8;->val$postAnimRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 990
+    .line 992
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView$8;->val$postAnimRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 992
+    .line 994
     :cond_0
     return-void
 .end method

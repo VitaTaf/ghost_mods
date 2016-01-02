@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 334
+    .line 342
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskViewHeader$2;->this$0:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -38,7 +38,7 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 337
+    .line 345
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskViewHeader$2;->this$0:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskViewHeader;->mBackground:Landroid/graphics/drawable/RippleDrawable;
@@ -49,6 +49,6 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/RippleDrawable;->setState([I)Z
 
-    .line 338
+    .line 346
     return-void
 .end method

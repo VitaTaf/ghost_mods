@@ -20,14 +20,18 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/recents/RecentsResizeTaskDialog;
 
+.field final synthetic val$action:I
+
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/recents/RecentsResizeTaskDialog;)V
+.method constructor <init>(Lcom/android/systemui/recents/RecentsResizeTaskDialog;I)V
     .locals 0
 
     .prologue
-    .line 83
+    .line 105
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsResizeTaskDialog$1;->this$0:Lcom/android/systemui/recents/RecentsResizeTaskDialog;
+
+    iput p2, p0, Lcom/android/systemui/recents/RecentsResizeTaskDialog$1;->val$action:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,14 +45,14 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 85
+    .line 107
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsResizeTaskDialog$1;->this$0:Lcom/android/systemui/recents/RecentsResizeTaskDialog;
 
-    const/4 v1, 0x1
+    iget v1, p0, Lcom/android/systemui/recents/RecentsResizeTaskDialog$1;->val$action:I
 
     # invokes: Lcom/android/systemui/recents/RecentsResizeTaskDialog;->placeTasks(I)V
     invoke-static {v0, v1}, Lcom/android/systemui/recents/RecentsResizeTaskDialog;->access$000(Lcom/android/systemui/recents/RecentsResizeTaskDialog;I)V
 
-    .line 86
+    .line 108
     return-void
 .end method

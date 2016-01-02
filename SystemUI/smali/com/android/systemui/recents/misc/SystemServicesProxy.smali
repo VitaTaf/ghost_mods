@@ -1016,6 +1016,41 @@
     return v1
 .end method
 
+.method public getTaskBounds(I)Landroid/graphics/Rect;
+    .locals 2
+    .param p1, "stackId"    # I
+
+    .prologue
+    .line 260
+    invoke-virtual {p0}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->getAllStackInfos()Landroid/util/SparseArray;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/ActivityManager$StackInfo;
+
+    .line 261
+    .local v0, "info":Landroid/app/ActivityManager$StackInfo;
+    if-eqz v0, :cond_0
+
+    .line 262
+    iget-object v1, v0, Landroid/app/ActivityManager$StackInfo;->bounds:Landroid/graphics/Rect;
+
+    .line 263
+    :goto_0
+    return-object v1
+
+    :cond_0
+    new-instance v1, Landroid/graphics/Rect;
+
+    invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
+
+    goto :goto_0
+.end method
+
 .method public getTaskThumbnail(I)Landroid/graphics/Bitmap;
     .locals 8
     .param p1, "taskId"    # I
