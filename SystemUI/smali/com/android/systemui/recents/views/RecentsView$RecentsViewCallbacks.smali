@@ -21,19 +21,13 @@
 .method public abstract onExitToHomeAnimationTriggered()V
 .end method
 
-.method public abstract onMultiStackAddStack()V
-.end method
-
-.method public abstract onMultiStackMoveTask(Lcom/android/systemui/recents/model/Task;)V
-.end method
-
-.method public abstract onMultiStackResizeStack()V
-.end method
-
 .method public abstract onScreenPinningRequest()V
 .end method
 
 .method public abstract onTaskLaunchFailed()V
+.end method
+
+.method public abstract onTaskResize(Lcom/android/systemui/recents/model/Task;)V
 .end method
 
 .method public abstract onTaskViewClicked()V

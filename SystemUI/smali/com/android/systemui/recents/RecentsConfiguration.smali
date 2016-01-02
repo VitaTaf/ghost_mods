@@ -956,9 +956,9 @@
     iput-boolean v1, p0, Lcom/android/systemui/recents/RecentsConfiguration;->lockToAppEnabled:Z
 
     .line 298
-    const-string v0, "1"
+    const-string v0, "true"
 
-    const-string v1, "overview.enableMultiStack"
+    const-string v1, "persist.sys.debug.multi_window"
 
     invoke-virtual {p2, v1}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->getSystemProperty(Ljava/lang/String;)Ljava/lang/String;
 

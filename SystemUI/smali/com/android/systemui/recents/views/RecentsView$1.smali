@@ -3,12 +3,12 @@
 .source "RecentsView.java"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/app/ActivityOptions$OnAnimationStartedListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/recents/views/RecentsView;->onFinishInflate()V
+    value = Lcom/android/systemui/recents/views/RecentsView;->onTaskViewClicked(Lcom/android/systemui/recents/views/TaskStackView;Lcom/android/systemui/recents/views/TaskView;Lcom/android/systemui/recents/model/TaskStack;Lcom/android/systemui/recents/model/Task;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,36 +18,57 @@
 
 
 # instance fields
+.field mTriggered:Z
+
 .field final synthetic this$0:Lcom/android/systemui/recents/views/RecentsView;
 
 
 # direct methods
 .method constructor <init>(Lcom/android/systemui/recents/views/RecentsView;)V
-    .locals 0
+    .locals 1
 
     .prologue
-    .line 107
+    .line 448
     iput-object p1, p0, Lcom/android/systemui/recents/views/RecentsView$1;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 449
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/android/systemui/recents/views/RecentsView$1;->mTriggered:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 1
-    .param p1, "v"    # Landroid/view/View;
+.method public onAnimationStarted()V
+    .locals 4
 
     .prologue
-    .line 110
+    .line 452
+    iget-boolean v0, p0, Lcom/android/systemui/recents/views/RecentsView$1;->mTriggered:Z
+
+    if-nez v0, :cond_0
+
+    .line 453
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$1;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
-    iget-object v0, v0, Lcom/android/systemui/recents/views/RecentsView;->mCb:Lcom/android/systemui/recents/views/RecentsView$RecentsViewCallbacks;
+    new-instance v1, Lcom/android/systemui/recents/views/RecentsView$1$1;
 
-    invoke-interface {v0}, Lcom/android/systemui/recents/views/RecentsView$RecentsViewCallbacks;->onMultiStackAddStack()V
+    invoke-direct {v1, p0}, Lcom/android/systemui/recents/views/RecentsView$1$1;-><init>(Lcom/android/systemui/recents/views/RecentsView$1;)V
 
-    .line 111
+    const-wide/16 v2, 0x15e
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/android/systemui/recents/views/RecentsView;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    .line 459
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/systemui/recents/views/RecentsView$1;->mTriggered:Z
+
+    .line 461
+    :cond_0
     return-void
 .end method

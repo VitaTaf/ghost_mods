@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 144
+    .line 148
     iput-object p1, p0, Lcom/android/systemui/recents/Recents$RecentsOwnerEventProxyReceiver;->this$0:Lcom/android/systemui/recents/Recents;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -41,7 +41,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 147
+    .line 151
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v2
@@ -52,18 +52,18 @@
 
     move-result v3
 
-    packed-switch v3, :pswitch_data_0
+    sparse-switch v3, :sswitch_data_0
 
     :cond_0
     :goto_0
-    packed-switch v0, :pswitch_data_1
+    packed-switch v0, :pswitch_data_0
 
-    .line 152
+    .line 159
     :goto_1
     return-void
 
-    .line 147
-    :pswitch_0
+    .line 151
+    :sswitch_0
     const-string v3, "action_notify_recents_visibility_change"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -76,8 +76,21 @@
 
     goto :goto_0
 
-    .line 149
-    :pswitch_1
+    :sswitch_1
+    const-string v3, "action_screen_pinning_request"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    .line 153
+    :pswitch_0
     const-string v0, "recentsVisibility"
 
     invoke-virtual {p2, v0, v1}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
@@ -88,16 +101,24 @@
 
     goto :goto_1
 
-    .line 147
+    .line 156
+    :pswitch_1
+    invoke-static {p1}, Lcom/android/systemui/recents/Recents;->onStartScreenPinning(Landroid/content/Context;)V
+
+    goto :goto_1
+
+    .line 151
     nop
 
-    :pswitch_data_0
-    .packed-switch 0x9b351e9
-        :pswitch_0
-    .end packed-switch
+    :sswitch_data_0
+    .sparse-switch
+        0x9b351e9 -> :sswitch_0
+        0x658aba6f -> :sswitch_1
+    .end sparse-switch
 
-    :pswitch_data_1
+    :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_0
         :pswitch_1
     .end packed-switch
 .end method

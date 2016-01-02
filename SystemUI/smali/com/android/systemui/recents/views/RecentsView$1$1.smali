@@ -1,4 +1,4 @@
-.class Lcom/android/systemui/recents/views/RecentsView$3$1;
+.class Lcom/android/systemui/recents/views/RecentsView$1$1;
 .super Ljava/lang/Object;
 .source "RecentsView.java"
 
@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/recents/views/RecentsView$3;->onAnimationStarted()V
+    value = Lcom/android/systemui/recents/views/RecentsView$1;->onAnimationStarted()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,16 +18,16 @@
 
 
 # instance fields
-.field final synthetic this$1:Lcom/android/systemui/recents/views/RecentsView$3;
+.field final synthetic this$1:Lcom/android/systemui/recents/views/RecentsView$1;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/recents/views/RecentsView$3;)V
+.method constructor <init>(Lcom/android/systemui/recents/views/RecentsView$1;)V
     .locals 0
 
     .prologue
-    .line 502
-    iput-object p1, p0, Lcom/android/systemui/recents/views/RecentsView$3$1;->this$1:Lcom/android/systemui/recents/views/RecentsView$3;
+    .line 453
+    iput-object p1, p0, Lcom/android/systemui/recents/views/RecentsView$1$1;->this$1:Lcom/android/systemui/recents/views/RecentsView$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,15 +40,15 @@
     .locals 1
 
     .prologue
-    .line 505
-    iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$3$1;->this$1:Lcom/android/systemui/recents/views/RecentsView$3;
+    .line 456
+    iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$1$1;->this$1:Lcom/android/systemui/recents/views/RecentsView$1;
 
-    iget-object v0, v0, Lcom/android/systemui/recents/views/RecentsView$3;->this$0:Lcom/android/systemui/recents/views/RecentsView;
+    iget-object v0, v0, Lcom/android/systemui/recents/views/RecentsView$1;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/RecentsView;->mCb:Lcom/android/systemui/recents/views/RecentsView$RecentsViewCallbacks;
 
     invoke-interface {v0}, Lcom/android/systemui/recents/views/RecentsView$RecentsViewCallbacks;->onScreenPinningRequest()V
 
-    .line 506
+    .line 457
     return-void
 .end method
