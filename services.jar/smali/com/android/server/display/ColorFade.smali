@@ -2225,248 +2225,260 @@
 .end method
 
 .method public draw(F)Z
-    .locals 11
+    .locals 14
     .param p1, "level"    # F
 
     .prologue
+    .line 357
+    iget-boolean v10, p0, Lcom/android/server/display/ColorFade;->mPrepared:Z
+
+    if-nez v10, :cond_0
+
     .line 358
-    iget-boolean v7, p0, Lcom/android/server/display/ColorFade;->mPrepared:Z
+    const/4 v10, 0x0
 
-    if-nez v7, :cond_0
-
-    .line 359
-    const/4 v7, 0x0
-
-    .line 391
+    .line 390
     :goto_0
-    return v7
+    return v10
+
+    .line 361
+    :cond_0
+    iget v10, p0, Lcom/android/server/display/ColorFade;->mMode:I
+
+    const/4 v11, 0x2
+
+    if-ne v10, v11, :cond_1
 
     .line 362
-    :cond_0
-    iget v7, p0, Lcom/android/server/display/ColorFade;->mMode:I
+    const/high16 v10, 0x3f800000    # 1.0f
 
-    const/4 v8, 0x2
+    sub-float/2addr v10, p1
 
-    if-ne v7, v8, :cond_1
+    invoke-direct {p0, v10}, Lcom/android/server/display/ColorFade;->showSurface(F)Z
 
-    .line 363
-    const/high16 v7, 0x3f800000    # 1.0f
-
-    sub-float/2addr v7, p1
-
-    invoke-direct {p0, v7}, Lcom/android/server/display/ColorFade;->showSurface(F)Z
-
-    move-result v7
+    move-result v10
 
     goto :goto_0
 
-    .line 366
+    .line 365
     :cond_1
     invoke-direct {p0}, Lcom/android/server/display/ColorFade;->attachEglContext()Z
 
-    move-result v7
+    move-result v10
 
-    if-nez v7, :cond_2
+    if-nez v10, :cond_2
 
-    .line 367
-    const/4 v7, 0x0
+    .line 366
+    const/4 v10, 0x0
 
     goto :goto_0
 
-    .line 371
+    .line 370
     :cond_2
-    const/4 v7, 0x0
+    const/4 v10, 0x0
 
-    const/4 v8, 0x0
+    const/4 v11, 0x0
 
-    const/4 v9, 0x0
+    const/4 v12, 0x0
 
-    const/high16 v10, 0x3f800000    # 1.0f
+    const/high16 v13, 0x3f800000    # 1.0f
 
     :try_start_0
-    invoke-static {v7, v8, v9, v10}, Landroid/opengl/GLES20;->glClearColor(FFFF)V
+    invoke-static {v10, v11, v12, v13}, Landroid/opengl/GLES20;->glClearColor(FFFF)V
 
-    .line 372
-    const/16 v7, 0x4000
+    .line 371
+    const/16 v10, 0x4000
 
-    invoke-static {v7}, Landroid/opengl/GLES20;->glClear(I)V
+    invoke-static {v10}, Landroid/opengl/GLES20;->glClear(I)V
+
+    .line 374
+    const/high16 v10, 0x3f800000    # 1.0f
+
+    sub-float/2addr v10, p1
+
+    float-to-double v4, v10
 
     .line 375
-    const/high16 v7, 0x3f800000    # 1.0f
+    .local v4, "one_minus_level":D
+    const-wide v10, 0x400921fb54442d18L    # Math.PI
 
-    sub-float v2, v7, p1
+    mul-double/2addr v10, v4
+
+    invoke-static {v10, v11}, Ljava/lang/Math;->cos(D)D
+
+    move-result-wide v0
 
     .line 376
-    .local v2, "one_minus_level":F
-    const v7, 0x40490fdb    # (float)Math.PI
+    .local v0, "cos":D
+    const-wide/16 v10, 0x0
 
-    mul-float/2addr v7, v2
+    cmpg-double v10, v0, v10
 
-    invoke-static {v7}, Landroid/util/FloatMath;->cos(F)F
+    if-gez v10, :cond_3
 
-    move-result v0
+    const-wide/high16 v8, -0x4010000000000000L    # -1.0
 
     .line 377
-    .local v0, "cos":F
-    const/4 v7, 0x0
+    .local v8, "sign":D
+    :goto_1
+    const-wide/high16 v10, 0x4000000000000000L    # 2.0
 
-    cmpg-float v7, v0, v7
+    invoke-static {v4, v5, v10, v11}, Ljava/lang/Math;->pow(DD)D
 
-    if-gez v7, :cond_3
+    move-result-wide v10
 
-    const/high16 v6, -0x40800000    # -1.0f
+    neg-double v10, v10
+
+    double-to-float v10, v10
+
+    const/high16 v11, 0x3f800000    # 1.0f
+
+    add-float v3, v10, v11
 
     .line 378
-    .local v6, "sign":F
-    :goto_1
-    const/high16 v7, 0x40000000    # 2.0f
+    .local v3, "opacity":F
+    float-to-double v10, p1
 
-    invoke-static {v2, v7}, Landroid/util/FloatMath;->pow(FF)F
+    const-wide/high16 v12, 0x4010000000000000L    # 4.0
 
-    move-result v7
+    invoke-static {v10, v11, v12, v13}, Ljava/lang/Math;->pow(DD)D
 
-    neg-float v7, v7
+    move-result-wide v10
 
-    const/high16 v8, 0x3f800000    # 1.0f
-
-    add-float v3, v7, v8
+    double-to-float v6, v10
 
     .line 379
-    .local v3, "opacity":F
-    const/high16 v7, 0x40800000    # 4.0f
+    .local v6, "saturation":F
+    const-wide/high16 v10, 0x4000000000000000L    # 2.0
 
-    invoke-static {p1, v7}, Landroid/util/FloatMath;->pow(FF)F
+    invoke-static {v4, v5, v10, v11}, Ljava/lang/Math;->pow(DD)D
 
-    move-result v4
+    move-result-wide v10
+
+    neg-double v10, v10
+
+    const-wide/high16 v12, 0x3ff0000000000000L    # 1.0
+
+    add-double/2addr v10, v12
+
+    const-wide v12, 0x3fb999999999999aL    # 0.1
+
+    mul-double/2addr v10, v12
+
+    const-wide v12, 0x3feccccccccccccdL    # 0.9
+
+    add-double/2addr v10, v12
+
+    double-to-float v7, v10
 
     .line 380
-    .local v4, "saturation":F
-    const/high16 v7, 0x40000000    # 2.0f
+    .local v7, "scale":F
+    const-wide/high16 v10, 0x3fe0000000000000L    # 0.5
 
-    invoke-static {v2, v7}, Landroid/util/FloatMath;->pow(FF)F
+    mul-double/2addr v10, v8
 
-    move-result v7
+    const-wide/high16 v12, 0x4000000000000000L    # 2.0
 
-    neg-float v7, v7
+    invoke-static {v0, v1, v12, v13}, Ljava/lang/Math;->pow(DD)D
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    move-result-wide v12
 
-    add-float/2addr v7, v8
+    mul-double/2addr v10, v12
 
-    const v8, 0x3dcccccd    # 0.1f
+    const-wide/high16 v12, 0x3fe0000000000000L    # 0.5
 
-    mul-float/2addr v7, v8
+    add-double/2addr v10, v12
 
-    const v8, 0x3f666666    # 0.9f
+    const-wide v12, 0x3feccccccccccccdL    # 0.9
 
-    add-float v5, v7, v8
+    mul-double/2addr v10, v12
+
+    const-wide v12, 0x3fb999999999999aL    # 0.1
+
+    add-double/2addr v10, v12
+
+    double-to-float v2, v10
 
     .line 381
-    .local v5, "scale":F
-    const/high16 v7, 0x3f000000    # 0.5f
+    .local v2, "gamma":F
+    const/high16 v10, 0x3f800000    # 1.0f
 
-    mul-float/2addr v7, v6
+    div-float/2addr v10, v2
 
-    const/high16 v8, 0x40000000    # 2.0f
-
-    invoke-static {v0, v8}, Landroid/util/FloatMath;->pow(FF)F
-
-    move-result v8
-
-    mul-float/2addr v7, v8
-
-    const/high16 v8, 0x3f000000    # 0.5f
-
-    add-float/2addr v7, v8
-
-    const v8, 0x3f666666    # 0.9f
-
-    mul-float/2addr v7, v8
-
-    const v8, 0x3dcccccd    # 0.1f
-
-    add-float v1, v7, v8
+    invoke-direct {p0, v3, v10, v6, v7}, Lcom/android/server/display/ColorFade;->drawFaded(FFFF)V
 
     .line 382
-    .local v1, "gamma":F
-    const/high16 v7, 0x3f800000    # 1.0f
+    const-string v10, "drawFrame"
 
-    div-float/2addr v7, v1
-
-    invoke-direct {p0, v3, v7, v4, v5}, Lcom/android/server/display/ColorFade;->drawFaded(FFFF)V
-
-    .line 383
-    const-string v7, "drawFrame"
-
-    invoke-static {v7}, Lcom/android/server/display/ColorFade;->checkGlErrors(Ljava/lang/String;)Z
+    invoke-static {v10}, Lcom/android/server/display/ColorFade;->checkGlErrors(Ljava/lang/String;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result v7
+    move-result v10
 
-    if-eqz v7, :cond_4
+    if-eqz v10, :cond_4
 
-    .line 384
-    const/4 v7, 0x0
+    .line 383
+    const/4 v10, 0x0
 
-    .line 389
+    .line 388
     invoke-direct {p0}, Lcom/android/server/display/ColorFade;->detachEglContext()V
 
     goto/16 :goto_0
 
-    .line 377
-    .end local v1    # "gamma":F
+    .line 376
+    .end local v2    # "gamma":F
     .end local v3    # "opacity":F
-    .end local v4    # "saturation":F
-    .end local v5    # "scale":F
-    .end local v6    # "sign":F
+    .end local v6    # "saturation":F
+    .end local v7    # "scale":F
+    .end local v8    # "sign":D
     :cond_3
-    const/high16 v6, 0x3f800000    # 1.0f
+    const-wide/high16 v8, 0x3ff0000000000000L    # 1.0
 
     goto :goto_1
 
-    .line 387
-    .restart local v1    # "gamma":F
+    .line 386
+    .restart local v2    # "gamma":F
     .restart local v3    # "opacity":F
-    .restart local v4    # "saturation":F
-    .restart local v5    # "scale":F
-    .restart local v6    # "sign":F
+    .restart local v6    # "saturation":F
+    .restart local v7    # "scale":F
+    .restart local v8    # "sign":D
     :cond_4
     :try_start_1
-    iget-object v7, p0, Lcom/android/server/display/ColorFade;->mEglDisplay:Landroid/opengl/EGLDisplay;
+    iget-object v10, p0, Lcom/android/server/display/ColorFade;->mEglDisplay:Landroid/opengl/EGLDisplay;
 
-    iget-object v8, p0, Lcom/android/server/display/ColorFade;->mEglSurface:Landroid/opengl/EGLSurface;
+    iget-object v11, p0, Lcom/android/server/display/ColorFade;->mEglSurface:Landroid/opengl/EGLSurface;
 
-    invoke-static {v7, v8}, Landroid/opengl/EGL14;->eglSwapBuffers(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)Z
+    invoke-static {v10, v11}, Landroid/opengl/EGL14;->eglSwapBuffers(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 389
+    .line 388
     invoke-direct {p0}, Lcom/android/server/display/ColorFade;->detachEglContext()V
 
-    .line 391
-    const/high16 v7, 0x3f800000    # 1.0f
+    .line 390
+    const/high16 v10, 0x3f800000    # 1.0f
 
-    invoke-direct {p0, v7}, Lcom/android/server/display/ColorFade;->showSurface(F)Z
+    invoke-direct {p0, v10}, Lcom/android/server/display/ColorFade;->showSurface(F)Z
 
-    move-result v7
+    move-result v10
 
     goto/16 :goto_0
 
-    .line 389
-    .end local v0    # "cos":F
-    .end local v1    # "gamma":F
-    .end local v2    # "one_minus_level":F
+    .line 388
+    .end local v0    # "cos":D
+    .end local v2    # "gamma":F
     .end local v3    # "opacity":F
-    .end local v4    # "saturation":F
-    .end local v5    # "scale":F
-    .end local v6    # "sign":F
+    .end local v4    # "one_minus_level":D
+    .end local v6    # "saturation":F
+    .end local v7    # "scale":F
+    .end local v8    # "sign":D
     :catchall_0
-    move-exception v7
+    move-exception v10
 
     invoke-direct {p0}, Lcom/android/server/display/ColorFade;->detachEglContext()V
 
-    throw v7
+    throw v10
 .end method
 
 .method public dump(Ljava/io/PrintWriter;)V

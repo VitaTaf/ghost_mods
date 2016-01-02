@@ -24,14 +24,14 @@
 
 # direct methods
 .method public constructor <init>([F[F)V
-    .locals 12
+    .locals 13
     .param p1, "x"    # [F
     .param p2, "y"    # [F
 
     .prologue
     const/4 v10, 0x0
 
-    const/4 v11, 0x0
+    const/4 v12, 0x0
 
     .line 129
     invoke-direct {p0}, Landroid/util/Spline;-><init>()V
@@ -98,7 +98,7 @@
 
     .line 142
     .local v3, "h":F
-    cmpg-float v8, v3, v11
+    cmpg-float v8, v3, v12
 
     if-gtz v8, :cond_2
 
@@ -186,17 +186,17 @@
     .line 158
     aget v8, v2, v4
 
-    cmpl-float v8, v8, v11
+    cmpl-float v8, v8, v12
 
     if-nez v8, :cond_6
 
     .line 159
-    aput v11, v5, v4
+    aput v12, v5, v4
 
     .line 160
     add-int/lit8 v8, v4, 0x1
 
-    aput v11, v5, v8
+    aput v12, v5, v8
 
     .line 157
     :cond_5
@@ -225,11 +225,11 @@
 
     .line 164
     .local v1, "b":F
-    cmpg-float v8, v0, v11
+    cmpg-float v8, v0, v12
 
     if-ltz v8, :cond_7
 
-    cmpg-float v8, v1, v11
+    cmpg-float v8, v1, v12
 
     if-gez v8, :cond_8
 
@@ -245,9 +245,15 @@
 
     .line 168
     :cond_8
-    invoke-static {v0, v1}, Landroid/util/FloatMath;->hypot(FF)F
+    float-to-double v8, v0
 
-    move-result v3
+    float-to-double v10, v1
+
+    invoke-static {v8, v9, v10, v11}, Ljava/lang/Math;->hypot(DD)D
+
+    move-result-wide v8
+
+    double-to-float v3, v8
 
     .line 169
     .restart local v3    # "h":F
