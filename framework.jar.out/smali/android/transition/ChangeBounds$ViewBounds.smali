@@ -36,13 +36,13 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 477
+    .line 478
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 478
+    .line 479
     iput-object p1, p0, Landroid/transition/ChangeBounds$ViewBounds;->mView:Landroid/view/View;
 
-    .line 479
+    .line 480
     return-void
 .end method
 
@@ -52,7 +52,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 500
+    .line 501
     iget-object v0, p0, Landroid/transition/ChangeBounds$ViewBounds;->mView:Landroid/view/View;
 
     iget v1, p0, Landroid/transition/ChangeBounds$ViewBounds;->mLeft:I
@@ -65,13 +65,13 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/View;->setLeftTopRightBottom(IIII)V
 
-    .line 501
+    .line 502
     iput-boolean v5, p0, Landroid/transition/ChangeBounds$ViewBounds;->mIsTopLeftSet:Z
 
-    .line 502
+    .line 503
     iput-boolean v5, p0, Landroid/transition/ChangeBounds$ViewBounds;->mIsBottomRightSet:Z
 
-    .line 503
+    .line 504
     return-void
 .end method
 
@@ -82,7 +82,7 @@
     .param p1, "bottomRight"    # Landroid/graphics/PointF;
 
     .prologue
-    .line 491
+    .line 492
     iget v0, p1, Landroid/graphics/PointF;->x:F
 
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
@@ -91,7 +91,7 @@
 
     iput v0, p0, Landroid/transition/ChangeBounds$ViewBounds;->mRight:I
 
-    .line 492
+    .line 493
     iget v0, p1, Landroid/graphics/PointF;->y:F
 
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
@@ -100,20 +100,20 @@
 
     iput v0, p0, Landroid/transition/ChangeBounds$ViewBounds;->mBottom:I
 
-    .line 493
+    .line 494
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/transition/ChangeBounds$ViewBounds;->mIsBottomRightSet:Z
 
-    .line 494
+    .line 495
     iget-boolean v0, p0, Landroid/transition/ChangeBounds$ViewBounds;->mIsTopLeftSet:Z
 
     if-eqz v0, :cond_0
 
-    .line 495
+    .line 496
     invoke-direct {p0}, Landroid/transition/ChangeBounds$ViewBounds;->setLeftTopRightBottom()V
 
-    .line 497
+    .line 498
     :cond_0
     return-void
 .end method
@@ -123,7 +123,7 @@
     .param p1, "topLeft"    # Landroid/graphics/PointF;
 
     .prologue
-    .line 482
+    .line 483
     iget v0, p1, Landroid/graphics/PointF;->x:F
 
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
@@ -132,7 +132,7 @@
 
     iput v0, p0, Landroid/transition/ChangeBounds$ViewBounds;->mLeft:I
 
-    .line 483
+    .line 484
     iget v0, p1, Landroid/graphics/PointF;->y:F
 
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
@@ -141,20 +141,20 @@
 
     iput v0, p0, Landroid/transition/ChangeBounds$ViewBounds;->mTop:I
 
-    .line 484
+    .line 485
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/transition/ChangeBounds$ViewBounds;->mIsTopLeftSet:Z
 
-    .line 485
+    .line 486
     iget-boolean v0, p0, Landroid/transition/ChangeBounds$ViewBounds;->mIsBottomRightSet:Z
 
     if-eqz v0, :cond_0
 
-    .line 486
+    .line 487
     invoke-direct {p0}, Landroid/transition/ChangeBounds$ViewBounds;->setLeftTopRightBottom()V
 
-    .line 488
+    .line 489
     :cond_0
     return-void
 .end method

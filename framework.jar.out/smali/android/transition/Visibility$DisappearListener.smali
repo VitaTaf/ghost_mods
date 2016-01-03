@@ -23,7 +23,13 @@
 
 .field private final mFinalVisibility:I
 
+.field private mFinalVisibilitySet:Z
+
 .field private final mIsForcedVisibility:Z
+
+.field private mLayoutSuppressed:Z
+
+.field private final mParent:Landroid/view/ViewGroup;
 
 .field private final mView:Landroid/view/View;
 
@@ -36,24 +42,41 @@
     .param p3, "isForcedVisibility"    # Z
 
     .prologue
-    .line 513
+    const/4 v0, 0x0
+
+    .line 514
     invoke-direct {p0}, Landroid/transition/Transition$TransitionListenerAdapter;-><init>()V
 
     .line 511
-    const/4 v0, 0x0
+    iput-boolean v0, p0, Landroid/transition/Visibility$DisappearListener;->mFinalVisibilitySet:Z
 
+    .line 512
     iput-boolean v0, p0, Landroid/transition/Visibility$DisappearListener;->mCanceled:Z
 
-    .line 514
+    .line 515
     iput-object p1, p0, Landroid/transition/Visibility$DisappearListener;->mView:Landroid/view/View;
 
-    .line 515
+    .line 516
     iput-boolean p3, p0, Landroid/transition/Visibility$DisappearListener;->mIsForcedVisibility:Z
 
-    .line 516
+    .line 517
     iput p2, p0, Landroid/transition/Visibility$DisappearListener;->mFinalVisibility:I
 
-    .line 517
+    .line 518
+    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/ViewGroup;
+
+    iput-object v0, p0, Landroid/transition/Visibility$DisappearListener;->mParent:Landroid/view/ViewGroup;
+
+    .line 520
+    const/4 v0, 0x1
+
+    invoke-direct {p0, v0}, Landroid/transition/Visibility$DisappearListener;->suppressLayout(Z)V
+
+    .line 521
     return-void
 .end method
 
@@ -61,37 +84,94 @@
     .locals 2
 
     .prologue
-    .line 559
+    .line 571
     iget-boolean v0, p0, Landroid/transition/Visibility$DisappearListener;->mCanceled:Z
 
     if-nez v0, :cond_0
 
-    .line 560
+    .line 572
     iget-boolean v0, p0, Landroid/transition/Visibility$DisappearListener;->mIsForcedVisibility:Z
 
     if-eqz v0, :cond_1
 
-    .line 561
+    .line 573
     iget-object v0, p0, Landroid/transition/Visibility$DisappearListener;->mView:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTransitionAlpha(F)V
 
-    .line 566
+    .line 584
     :cond_0
     :goto_0
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Landroid/transition/Visibility$DisappearListener;->suppressLayout(Z)V
+
+    .line 585
     return-void
 
-    .line 563
+    .line 574
     :cond_1
+    iget-boolean v0, p0, Landroid/transition/Visibility$DisappearListener;->mFinalVisibilitySet:Z
+
+    if-nez v0, :cond_0
+
+    .line 576
     iget-object v0, p0, Landroid/transition/Visibility$DisappearListener;->mView:Landroid/view/View;
 
     iget v1, p0, Landroid/transition/Visibility$DisappearListener;->mFinalVisibility:I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTransitionVisibility(I)V
 
+    .line 577
+    iget-object v0, p0, Landroid/transition/Visibility$DisappearListener;->mParent:Landroid/view/ViewGroup;
+
+    if-eqz v0, :cond_2
+
+    .line 578
+    iget-object v0, p0, Landroid/transition/Visibility$DisappearListener;->mParent:Landroid/view/ViewGroup;
+
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->invalidate()V
+
+    .line 580
+    :cond_2
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Landroid/transition/Visibility$DisappearListener;->mFinalVisibilitySet:Z
+
     goto :goto_0
+.end method
+
+.method private suppressLayout(Z)V
+    .locals 1
+    .param p1, "suppress"    # Z
+
+    .prologue
+    .line 588
+    iget-boolean v0, p0, Landroid/transition/Visibility$DisappearListener;->mLayoutSuppressed:Z
+
+    if-eq v0, p1, :cond_0
+
+    iget-object v0, p0, Landroid/transition/Visibility$DisappearListener;->mParent:Landroid/view/ViewGroup;
+
+    if-eqz v0, :cond_0
+
+    iget-boolean v0, p0, Landroid/transition/Visibility$DisappearListener;->mIsForcedVisibility:Z
+
+    if-nez v0, :cond_0
+
+    .line 589
+    iput-boolean p1, p0, Landroid/transition/Visibility$DisappearListener;->mLayoutSuppressed:Z
+
+    .line 590
+    iget-object v0, p0, Landroid/transition/Visibility$DisappearListener;->mParent:Landroid/view/ViewGroup;
+
+    invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->suppressLayout(Z)V
+
+    .line 592
+    :cond_0
+    return-void
 .end method
 
 
@@ -101,12 +181,12 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 535
+    .line 539
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/transition/Visibility$DisappearListener;->mCanceled:Z
 
-    .line 536
+    .line 540
     return-void
 .end method
 
@@ -115,10 +195,10 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 550
+    .line 552
     invoke-direct {p0}, Landroid/transition/Visibility$DisappearListener;->hideViewWhenNotCanceled()V
 
-    .line 551
+    .line 553
     return-void
 .end method
 
@@ -127,7 +207,7 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 521
+    .line 525
     iget-boolean v0, p0, Landroid/transition/Visibility$DisappearListener;->mCanceled:Z
 
     if-nez v0, :cond_0
@@ -136,14 +216,14 @@
 
     if-nez v0, :cond_0
 
-    .line 522
+    .line 526
     iget-object v0, p0, Landroid/transition/Visibility$DisappearListener;->mView:Landroid/view/View;
 
     iget v1, p0, Landroid/transition/Visibility$DisappearListener;->mFinalVisibility:I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTransitionVisibility(I)V
 
-    .line 524
+    .line 528
     :cond_0
     return-void
 .end method
@@ -153,7 +233,7 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 541
+    .line 544
     return-void
 .end method
 
@@ -162,7 +242,7 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 528
+    .line 532
     iget-boolean v0, p0, Landroid/transition/Visibility$DisappearListener;->mCanceled:Z
 
     if-nez v0, :cond_0
@@ -171,14 +251,14 @@
 
     if-nez v0, :cond_0
 
-    .line 529
+    .line 533
     iget-object v0, p0, Landroid/transition/Visibility$DisappearListener;->mView:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTransitionVisibility(I)V
 
-    .line 531
+    .line 535
     :cond_0
     return-void
 .end method
@@ -188,7 +268,7 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 546
+    .line 548
     return-void
 .end method
 
@@ -197,9 +277,37 @@
     .param p1, "transition"    # Landroid/transition/Transition;
 
     .prologue
-    .line 555
+    .line 557
     invoke-direct {p0}, Landroid/transition/Visibility$DisappearListener;->hideViewWhenNotCanceled()V
 
-    .line 556
+    .line 558
+    return-void
+.end method
+
+.method public onTransitionPause(Landroid/transition/Transition;)V
+    .locals 1
+    .param p1, "transition"    # Landroid/transition/Transition;
+
+    .prologue
+    .line 562
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Landroid/transition/Visibility$DisappearListener;->suppressLayout(Z)V
+
+    .line 563
+    return-void
+.end method
+
+.method public onTransitionResume(Landroid/transition/Transition;)V
+    .locals 1
+    .param p1, "transition"    # Landroid/transition/Transition;
+
+    .prologue
+    .line 567
+    const/4 v0, 0x1
+
+    invoke-direct {p0, v0}, Landroid/transition/Visibility$DisappearListener;->suppressLayout(Z)V
+
+    .line 568
     return-void
 .end method

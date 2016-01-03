@@ -341,37 +341,47 @@
     .local v2, "runningTransitions":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/transition/Transition;>;"
     if-eqz v2, :cond_0
 
-    .line 439
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
-    move-result v0
+    move-result v4
+
+    if-nez v4, :cond_0
 
     .line 440
-    .local v0, "count":I
-    const/4 v1, 0x0
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    .line 441
+    .local v0, "copy":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/transition/Transition;>;"
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v4
+
+    add-int/lit8 v1, v4, -0x1
 
     .local v1, "i":I
     :goto_0
-    if-ge v1, v0, :cond_0
+    if-ltz v1, :cond_0
 
-    .line 441
-    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 442
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Landroid/transition/Transition;
 
-    .line 442
+    .line 443
     .local v3, "transition":Landroid/transition/Transition;
     invoke-virtual {v3}, Landroid/transition/Transition;->end()V
 
-    .line 440
-    add-int/lit8 v1, v1, 0x1
+    .line 441
+    add-int/lit8 v1, v1, -0x1
 
     goto :goto_0
 
-    .line 446
-    .end local v0    # "count":I
+    .line 447
+    .end local v0    # "copy":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/transition/Transition;>;"
     .end local v1    # "i":I
     .end local v3    # "transition":Landroid/transition/Transition;
     :cond_0
