@@ -16,24 +16,30 @@
 
 
 # instance fields
+.field private mDrawable:Landroid/graphics/drawable/Drawable;
+
 .field private mMutated:Z
 
-.field private final mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
+.field private mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
 
 .field private final mTmpRect:Landroid/graphics/Rect;
 
 
 # direct methods
 .method constructor <init>()V
-    .locals 1
+    .locals 2
 
     .prologue
-    const/4 v0, 0x0
+    .line 71
+    new-instance v0, Landroid/graphics/drawable/InsetDrawable$InsetState;
 
-    .line 68
-    invoke-direct {p0, v0, v0}, Landroid/graphics/drawable/InsetDrawable;-><init>(Landroid/graphics/drawable/InsetDrawable$InsetState;Landroid/content/res/Resources;)V
+    invoke-direct {v0}, Landroid/graphics/drawable/InsetDrawable$InsetState;-><init>()V
 
-    .line 69
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v0, v1}, Landroid/graphics/drawable/InsetDrawable;-><init>(Landroid/graphics/drawable/InsetDrawable$InsetState;Landroid/content/res/Resources;)V
+
+    .line 72
     return-void
 .end method
 
@@ -43,7 +49,7 @@
     .param p2, "inset"    # I
 
     .prologue
-    .line 72
+    .line 81
     move-object v0, p0
 
     move-object v1, p1
@@ -58,12 +64,12 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/graphics/drawable/InsetDrawable;-><init>(Landroid/graphics/drawable/Drawable;IIII)V
 
-    .line 73
+    .line 82
     return-void
 .end method
 
 .method public constructor <init>(Landroid/graphics/drawable/Drawable;IIII)V
-    .locals 1
+    .locals 2
     .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
     .param p2, "insetLeft"    # I
     .param p3, "insetTop"    # I
@@ -73,43 +79,61 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 77
-    invoke-direct {p0, v0, v0}, Landroid/graphics/drawable/InsetDrawable;-><init>(Landroid/graphics/drawable/InsetDrawable$InsetState;Landroid/content/res/Resources;)V
+    .line 95
+    new-instance v1, Landroid/graphics/drawable/InsetDrawable$InsetState;
 
-    .line 79
-    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
+    invoke-direct {v1}, Landroid/graphics/drawable/InsetDrawable$InsetState;-><init>()V
 
-    iput-object p1, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    invoke-direct {p0, v1, v0}, Landroid/graphics/drawable/InsetDrawable;-><init>(Landroid/graphics/drawable/InsetDrawable$InsetState;Landroid/content/res/Resources;)V
 
-    .line 80
+    .line 97
+    iget-object v1, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
+
+    if-nez p1, :cond_1
+
+    :goto_0
+    iput-object v0, v1, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawableState:Landroid/graphics/drawable/Drawable$ConstantState;
+
+    .line 98
     iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
 
     iput p2, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetLeft:I
 
-    .line 81
+    .line 99
     iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
 
     iput p3, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetTop:I
 
-    .line 82
+    .line 100
     iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
 
     iput p4, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetRight:I
 
-    .line 83
+    .line 101
     iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
 
     iput p5, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetBottom:I
 
-    .line 85
+    .line 103
+    iput-object p1, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
+
+    .line 105
     if-eqz p1, :cond_0
 
-    .line 86
+    .line 106
     invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 88
+    .line 108
     :cond_0
     return-void
+
+    .line 97
+    :cond_1
+    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
+
+    move-result-object v0
+
+    goto :goto_0
 .end method
 
 .method private constructor <init>(Landroid/graphics/drawable/InsetDrawable$InsetState;Landroid/content/res/Resources;)V
@@ -118,24 +142,23 @@
     .param p2, "res"    # Landroid/content/res/Resources;
 
     .prologue
-    .line 490
+    .line 517
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 61
+    .line 60
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mTmpRect:Landroid/graphics/Rect;
 
-    .line 491
-    new-instance v0, Landroid/graphics/drawable/InsetDrawable$InsetState;
+    .line 518
+    iput-object p1, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
 
-    invoke-direct {v0, p1, p0, p2}, Landroid/graphics/drawable/InsetDrawable$InsetState;-><init>(Landroid/graphics/drawable/InsetDrawable$InsetState;Landroid/graphics/drawable/InsetDrawable;Landroid/content/res/Resources;)V
+    .line 520
+    invoke-direct {p0, p2}, Landroid/graphics/drawable/InsetDrawable;->updateLocalState(Landroid/content/res/Resources;)V
 
-    iput-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    .line 492
+    .line 521
     return-void
 .end method
 
@@ -146,7 +169,7 @@
     .param p3, "x2"    # Landroid/graphics/drawable/InsetDrawable$1;
 
     .prologue
-    .line 60
+    .line 59
     invoke-direct {p0, p1, p2}, Landroid/graphics/drawable/InsetDrawable;-><init>(Landroid/graphics/drawable/InsetDrawable$InsetState;Landroid/content/res/Resources;)V
 
     return-void
@@ -166,14 +189,12 @@
     .end annotation
 
     .prologue
-    .line 109
-    iget-object v2, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    iget-object v2, v2, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    .line 142
+    iget-object v2, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     if-nez v2, :cond_2
 
-    .line 111
+    .line 144
     :cond_0
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
@@ -184,12 +205,12 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 113
+    .line 146
     const/4 v2, 0x2
 
     if-eq v1, v2, :cond_1
 
-    .line 114
+    .line 147
     new-instance v2, Lorg/xmlpull/v1/XmlPullParserException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -224,25 +245,132 @@
 
     throw v2
 
-    .line 119
+    .line 152
     :cond_1
     invoke-static {p1, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->createFromXmlInner(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 120
+    .line 153
     .local v0, "dr":Landroid/graphics/drawable/Drawable;
+    if-eqz v0, :cond_2
+
+    .line 154
     iget-object v2, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
 
-    iput-object v0, v2, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
 
-    .line 121
-    invoke-virtual {v0, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+    move-result-object v3
 
-    .line 123
+    iput-object v3, v2, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawableState:Landroid/graphics/drawable/Drawable$ConstantState;
+
+    .line 155
+    invoke-direct {p0, v0}, Landroid/graphics/drawable/InsetDrawable;->setDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 158
     .end local v0    # "dr":Landroid/graphics/drawable/Drawable;
     .end local v1    # "type":I
     :cond_2
+    return-void
+.end method
+
+.method private setDrawable(Landroid/graphics/drawable/Drawable;)V
+    .locals 2
+    .param p1, "dr"    # Landroid/graphics/drawable/Drawable;
+
+    .prologue
+    .line 123
+    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_0
+
+    .line 124
+    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+
+    .line 127
+    :cond_0
+    iput-object p1, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
+
+    .line 129
+    if-eqz p1, :cond_1
+
+    .line 130
+    invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+
+    .line 131
+    invoke-virtual {p0}, Landroid/graphics/drawable/InsetDrawable;->isVisible()Z
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
+
+    .line 132
+    invoke-virtual {p0}, Landroid/graphics/drawable/InsetDrawable;->getState()[I
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
+
+    .line 133
+    invoke-virtual {p0}, Landroid/graphics/drawable/InsetDrawable;->getLevel()I
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setLevel(I)Z
+
+    .line 134
+    invoke-virtual {p0}, Landroid/graphics/drawable/InsetDrawable;->getBounds()Landroid/graphics/Rect;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
+
+    .line 135
+    invoke-virtual {p0}, Landroid/graphics/drawable/InsetDrawable;->getLayoutDirection()I
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
+
+    .line 137
+    :cond_1
+    return-void
+.end method
+
+.method private updateLocalState(Landroid/content/res/Resources;)V
+    .locals 2
+    .param p1, "res"    # Landroid/content/res/Resources;
+
+    .prologue
+    .line 529
+    iget-object v1, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
+
+    iget-object v1, v1, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawableState:Landroid/graphics/drawable/Drawable$ConstantState;
+
+    if-eqz v1, :cond_0
+
+    .line 530
+    iget-object v1, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
+
+    iget-object v1, v1, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawableState:Landroid/graphics/drawable/Drawable$ConstantState;
+
+    invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    .line 531
+    .local v0, "dr":Landroid/graphics/drawable/Drawable;
+    invoke-direct {p0, v0}, Landroid/graphics/drawable/InsetDrawable;->setDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 533
+    .end local v0    # "dr":Landroid/graphics/drawable/Drawable;
+    :cond_0
     return-void
 .end method
 
@@ -258,10 +386,10 @@
     .prologue
     const/high16 v8, -0x80000000
 
-    .line 136
+    .line 171
     iget-object v5, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
 
-    .line 139
+    .line 174
     .local v5, "state":Landroid/graphics/drawable/InsetDrawable$InsetState;
     iget v6, v5, Landroid/graphics/drawable/InsetDrawable$InsetState;->mChangingConfigurations:I
 
@@ -273,19 +401,19 @@
 
     iput v6, v5, Landroid/graphics/drawable/InsetDrawable$InsetState;->mChangingConfigurations:I
 
-    .line 142
+    .line 177
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->extractThemeAttrs()[I
 
     move-result-object v6
 
     iput-object v6, v5, Landroid/graphics/drawable/InsetDrawable$InsetState;->mThemeAttrs:[I
 
-    .line 144
+    .line 179
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->getIndexCount()I
 
     move-result v0
 
-    .line 145
+    .line 180
     .local v0, "N":I
     const/4 v3, 0x0
 
@@ -293,66 +421,72 @@
     :goto_0
     if-ge v3, v0, :cond_1
 
-    .line 146
+    .line 181
     invoke-virtual {p1, v3}, Landroid/content/res/TypedArray;->getIndex(I)I
 
     move-result v1
 
-    .line 147
+    .line 182
     .local v1, "attr":I
     packed-switch v1, :pswitch_data_0
 
-    .line 145
+    .line 180
     :cond_0
     :goto_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 149
+    .line 184
     :pswitch_0
     invoke-virtual {p1, v1}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
-    .line 150
+    .line 185
     .local v2, "dr":Landroid/graphics/drawable/Drawable;
     if-eqz v2, :cond_0
 
-    .line 151
-    iput-object v2, v5, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    .line 186
+    iget-object v6, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
 
-    .line 152
-    invoke-virtual {v2, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+    invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
+
+    move-result-object v7
+
+    iput-object v7, v6, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawableState:Landroid/graphics/drawable/Drawable$ConstantState;
+
+    .line 187
+    invoke-direct {p0, v2}, Landroid/graphics/drawable/InsetDrawable;->setDrawable(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_1
 
-    .line 156
+    .line 191
     .end local v2    # "dr":Landroid/graphics/drawable/Drawable;
     :pswitch_1
     invoke-virtual {p1, v1, v8}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
 
     move-result v4
 
-    .line 157
+    .line 192
     .local v4, "inset":I
     if-eq v4, v8, :cond_0
 
-    .line 158
+    .line 193
     iput v4, v5, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetLeft:I
 
-    .line 159
+    .line 194
     iput v4, v5, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetTop:I
 
-    .line 160
+    .line 195
     iput v4, v5, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetRight:I
 
-    .line 161
+    .line 196
     iput v4, v5, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetBottom:I
 
     goto :goto_1
 
-    .line 165
+    .line 200
     .end local v4    # "inset":I
     :pswitch_2
     iget v6, v5, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetLeft:I
@@ -365,7 +499,7 @@
 
     goto :goto_1
 
-    .line 168
+    .line 203
     :pswitch_3
     iget v6, v5, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetTop:I
 
@@ -377,7 +511,7 @@
 
     goto :goto_1
 
-    .line 171
+    .line 206
     :pswitch_4
     iget v6, v5, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetRight:I
 
@@ -389,7 +523,7 @@
 
     goto :goto_1
 
-    .line 174
+    .line 209
     :pswitch_5
     iget v6, v5, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetBottom:I
 
@@ -401,12 +535,12 @@
 
     goto :goto_1
 
-    .line 178
+    .line 213
     .end local v1    # "attr":I
     :cond_1
     return-void
 
-    .line 147
+    .line 182
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -428,10 +562,8 @@
     .end annotation
 
     .prologue
-    .line 127
-    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    iget-object v0, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    .line 162
+    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     if-nez v0, :cond_1
 
@@ -451,7 +583,7 @@
 
     if-nez v0, :cond_1
 
-    .line 129
+    .line 164
     :cond_0
     new-instance v0, Lorg/xmlpull/v1/XmlPullParserException;
 
@@ -487,7 +619,7 @@
 
     throw v0
 
-    .line 133
+    .line 168
     :cond_1
     return-void
 .end method
@@ -499,28 +631,28 @@
     .param p1, "t"    # Landroid/content/res/Resources$Theme;
 
     .prologue
-    .line 182
+    .line 217
     invoke-super {p0, p1}, Landroid/graphics/drawable/Drawable;->applyTheme(Landroid/content/res/Resources$Theme;)V
 
-    .line 184
+    .line 219
     iget-object v2, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
 
-    .line 185
+    .line 220
     .local v2, "state":Landroid/graphics/drawable/InsetDrawable$InsetState;
     if-nez v2, :cond_1
 
-    .line 204
+    .line 239
     :cond_0
     :goto_0
     return-void
 
-    .line 189
+    .line 224
     :cond_1
     iget-object v3, v2, Landroid/graphics/drawable/InsetDrawable$InsetState;->mThemeAttrs:[I
 
     if-eqz v3, :cond_2
 
-    .line 190
+    .line 225
     iget-object v3, v2, Landroid/graphics/drawable/InsetDrawable$InsetState;->mThemeAttrs:[I
 
     sget-object v4, Lcom/android/internal/R$styleable;->InsetDrawable:[I
@@ -529,28 +661,28 @@
 
     move-result-object v0
 
-    .line 192
+    .line 227
     .local v0, "a":Landroid/content/res/TypedArray;
     :try_start_0
     invoke-direct {p0, v0}, Landroid/graphics/drawable/InsetDrawable;->updateStateFromTypedArray(Landroid/content/res/TypedArray;)V
 
-    .line 193
+    .line 228
     invoke-direct {p0, v0}, Landroid/graphics/drawable/InsetDrawable;->verifyRequiredAttributes(Landroid/content/res/TypedArray;)V
     :try_end_0
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 197
+    .line 232
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 201
+    .line 236
     .end local v0    # "a":Landroid/content/res/TypedArray;
     :cond_2
-    iget-object v3, v2, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v3, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v3, :cond_0
 
-    iget-object v3, v2, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v3, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->canApplyTheme()Z
 
@@ -558,19 +690,19 @@
 
     if-eqz v3, :cond_0
 
-    .line 202
-    iget-object v3, v2, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    .line 237
+    iget-object v3, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3, p1}, Landroid/graphics/drawable/Drawable;->applyTheme(Landroid/content/res/Resources$Theme;)V
 
     goto :goto_0
 
-    .line 194
+    .line 229
     .restart local v0    # "a":Landroid/content/res/TypedArray;
     :catch_0
     move-exception v1
 
-    .line 195
+    .line 230
     .local v1, "e":Lorg/xmlpull/v1/XmlPullParserException;
     :try_start_1
     new-instance v3, Ljava/lang/RuntimeException;
@@ -581,7 +713,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 197
+    .line 232
     .end local v1    # "e":Lorg/xmlpull/v1/XmlPullParserException;
     :catchall_0
     move-exception v3
@@ -595,7 +727,7 @@
     .locals 1
 
     .prologue
-    .line 208
+    .line 243
     iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
 
     if-eqz v0, :cond_0
@@ -631,22 +763,20 @@
     .locals 1
 
     .prologue
-    .line 403
+    .line 438
     invoke-super {p0}, Landroid/graphics/drawable/Drawable;->clearMutated()V
 
-    .line 404
-    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    iget-object v0, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    .line 439
+    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->clearMutated()V
 
-    .line 405
+    .line 440
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/graphics/drawable/InsetDrawable;->mMutated:Z
 
-    .line 406
+    .line 441
     return-void
 .end method
 
@@ -655,14 +785,12 @@
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 237
-    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    iget-object v0, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    .line 272
+    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 238
+    .line 273
     return-void
 .end method
 
@@ -670,10 +798,8 @@
     .locals 1
 
     .prologue
-    .line 299
-    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    iget-object v0, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    .line 334
+    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getAlpha()I
 
@@ -686,7 +812,7 @@
     .locals 2
 
     .prologue
-    .line 242
+    .line 277
     invoke-super {p0}, Landroid/graphics/drawable/Drawable;->getChangingConfigurations()I
 
     move-result v0
@@ -697,9 +823,7 @@
 
     or-int/2addr v0, v1
 
-    iget-object v1, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    iget-object v1, v1, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v1, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getChangingConfigurations()I
 
@@ -714,7 +838,7 @@
     .locals 2
 
     .prologue
-    .line 383
+    .line 416
     iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/InsetDrawable$InsetState;->canConstantState()Z
@@ -723,7 +847,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 384
+    .line 417
     iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
 
     invoke-virtual {p0}, Landroid/graphics/drawable/InsetDrawable;->getChangingConfigurations()I
@@ -732,10 +856,10 @@
 
     iput v1, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mChangingConfigurations:I
 
-    .line 385
+    .line 418
     iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
 
-    .line 387
+    .line 420
     :goto_0
     return-object v0
 
@@ -749,10 +873,8 @@
     .locals 1
 
     .prologue
-    .line 412
-    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    iget-object v0, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    .line 447
+    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object v0
 .end method
@@ -762,14 +884,12 @@
     .param p1, "outRect"    # Landroid/graphics/Rect;
 
     .prologue
-    .line 283
-    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    iget-object v0, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    .line 318
+    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->getHotspotBounds(Landroid/graphics/Rect;)V
 
-    .line 284
+    .line 319
     return-void
 .end method
 
@@ -777,10 +897,8 @@
     .locals 2
 
     .prologue
-    .line 372
-    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    iget-object v0, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    .line 406
+    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
@@ -805,10 +923,8 @@
     .locals 2
 
     .prologue
-    .line 366
-    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    iget-object v0, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    .line 401
+    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
@@ -833,18 +949,18 @@
     .locals 3
 
     .prologue
-    .line 325
+    .line 360
     iget-object v1, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
 
-    .line 326
+    .line 361
     .local v1, "state":Landroid/graphics/drawable/InsetDrawable$InsetState;
-    iget-object v2, v1, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v2, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getOpacity()I
 
     move-result v0
 
-    .line 327
+    .line 362
     .local v0, "opacity":I
     const/4 v2, -0x1
 
@@ -866,11 +982,11 @@
 
     if-lez v2, :cond_1
 
-    .line 329
+    .line 364
     :cond_0
     const/4 v0, -0x3
 
-    .line 331
+    .line 366
     .end local v0    # "opacity":I
     :cond_1
     return v0
@@ -880,12 +996,12 @@
     .locals 6
 
     .prologue
-    .line 263
+    .line 298
     invoke-super {p0}, Landroid/graphics/drawable/Drawable;->getOpticalInsets()Landroid/graphics/Insets;
 
     move-result-object v0
 
-    .line 264
+    .line 299
     .local v0, "contentInsets":Landroid/graphics/Insets;
     iget v1, v0, Landroid/graphics/Insets;->left:I
 
@@ -931,14 +1047,12 @@
     .param p1, "outline"    # Landroid/graphics/Outline;
 
     .prologue
-    .line 378
-    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    iget-object v0, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    .line 411
+    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->getOutline(Landroid/graphics/Outline;)V
 
-    .line 379
+    .line 412
     return-void
 .end method
 
@@ -947,16 +1061,14 @@
     .param p1, "padding"    # Landroid/graphics/Rect;
 
     .prologue
-    .line 249
-    iget-object v1, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    iget-object v1, v1, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    .line 284
+    iget-object v1, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
 
     move-result v0
 
-    .line 251
+    .line 286
     .local v0, "pad":Z
     iget v1, p1, Landroid/graphics/Rect;->left:I
 
@@ -968,7 +1080,7 @@
 
     iput v1, p1, Landroid/graphics/Rect;->left:I
 
-    .line 252
+    .line 287
     iget v1, p1, Landroid/graphics/Rect;->right:I
 
     iget-object v2, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
@@ -979,7 +1091,7 @@
 
     iput v1, p1, Landroid/graphics/Rect;->right:I
 
-    .line 253
+    .line 288
     iget v1, p1, Landroid/graphics/Rect;->top:I
 
     iget-object v2, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
@@ -990,7 +1102,7 @@
 
     iput v1, p1, Landroid/graphics/Rect;->top:I
 
-    .line 254
+    .line 289
     iget v1, p1, Landroid/graphics/Rect;->bottom:I
 
     iget-object v2, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
@@ -1001,7 +1113,7 @@
 
     iput v1, p1, Landroid/graphics/Rect;->bottom:I
 
-    .line 256
+    .line 291
     if-nez v0, :cond_0
 
     iget-object v1, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
@@ -1041,7 +1153,7 @@
 .end method
 
 .method public inflate(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V
-    .locals 3
+    .locals 2
     .param p1, "r"    # Landroid/content/res/Resources;
     .param p2, "parser"    # Lorg/xmlpull/v1/XmlPullParser;
     .param p3, "attrs"    # Landroid/util/AttributeSet;
@@ -1054,39 +1166,32 @@
     .end annotation
 
     .prologue
-    .line 93
+    .line 113
     sget-object v1, Lcom/android/internal/R$styleable;->InsetDrawable:[I
 
     invoke-static {p1, p4, p3, v1}, Landroid/graphics/drawable/InsetDrawable;->obtainAttributes(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 94
+    .line 114
     .local v0, "a":Landroid/content/res/TypedArray;
     const/4 v1, 0x0
 
     invoke-super {p0, p1, p2, v0, v1}, Landroid/graphics/drawable/Drawable;->inflateWithAttributes(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/content/res/TypedArray;I)V
 
-    .line 98
-    iget-object v1, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    const/4 v2, 0x0
-
-    iput-object v2, v1, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    .line 100
+    .line 116
     invoke-direct {p0, v0}, Landroid/graphics/drawable/InsetDrawable;->updateStateFromTypedArray(Landroid/content/res/TypedArray;)V
 
-    .line 101
+    .line 117
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/graphics/drawable/InsetDrawable;->inflateChildElements(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V
 
-    .line 102
+    .line 118
     invoke-direct {p0, v0}, Landroid/graphics/drawable/InsetDrawable;->verifyRequiredAttributes(Landroid/content/res/TypedArray;)V
 
-    .line 103
+    .line 119
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 104
+    .line 120
     return-void
 .end method
 
@@ -1095,19 +1200,19 @@
     .param p1, "who"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 213
+    .line 248
     invoke-virtual {p0}, Landroid/graphics/drawable/InsetDrawable;->getCallback()Landroid/graphics/drawable/Drawable$Callback;
 
     move-result-object v0
 
-    .line 214
+    .line 249
     .local v0, "callback":Landroid/graphics/drawable/Drawable$Callback;
     if-eqz v0, :cond_0
 
-    .line 215
+    .line 250
     invoke-interface {v0, p0}, Landroid/graphics/drawable/Drawable$Callback;->invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 217
+    .line 252
     :cond_0
     return-void
 .end method
@@ -1116,10 +1221,8 @@
     .locals 1
 
     .prologue
-    .line 336
-    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    iget-object v0, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    .line 371
+    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->isStateful()Z
 
@@ -1129,10 +1232,10 @@
 .end method
 
 .method public mutate()Landroid/graphics/drawable/Drawable;
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 392
+    .line 425
     iget-boolean v0, p0, Landroid/graphics/drawable/InsetDrawable;->mMutated:Z
 
     if-nez v0, :cond_0
@@ -1143,19 +1246,37 @@
 
     if-ne v0, p0, :cond_0
 
-    .line 393
-    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
+    .line 426
+    new-instance v0, Landroid/graphics/drawable/InsetDrawable$InsetState;
 
-    iget-object v0, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v1, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
+
+    invoke-direct {v0, v1}, Landroid/graphics/drawable/InsetDrawable$InsetState;-><init>(Landroid/graphics/drawable/InsetDrawable$InsetState;)V
+
+    iput-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
+
+    .line 427
+    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
-    .line 394
+    .line 428
+    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
+
+    iget-object v1, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
+
+    move-result-object v1
+
+    iput-object v1, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawableState:Landroid/graphics/drawable/Drawable$ConstantState;
+
+    .line 429
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/graphics/drawable/InsetDrawable;->mMutated:Z
 
-    .line 396
+    .line 431
     :cond_0
     return-object p0
 .end method
@@ -1165,14 +1286,14 @@
     .param p1, "bounds"    # Landroid/graphics/Rect;
 
     .prologue
-    .line 353
+    .line 388
     iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mTmpRect:Landroid/graphics/Rect;
 
-    .line 354
+    .line 389
     .local v0, "r":Landroid/graphics/Rect;
     invoke-virtual {v0, p1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 356
+    .line 391
     iget v1, v0, Landroid/graphics/Rect;->left:I
 
     iget-object v2, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
@@ -1183,7 +1304,7 @@
 
     iput v1, v0, Landroid/graphics/Rect;->left:I
 
-    .line 357
+    .line 392
     iget v1, v0, Landroid/graphics/Rect;->top:I
 
     iget-object v2, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
@@ -1194,7 +1315,7 @@
 
     iput v1, v0, Landroid/graphics/Rect;->top:I
 
-    .line 358
+    .line 393
     iget v1, v0, Landroid/graphics/Rect;->right:I
 
     iget-object v2, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
@@ -1205,7 +1326,7 @@
 
     iput v1, v0, Landroid/graphics/Rect;->right:I
 
-    .line 359
+    .line 394
     iget v1, v0, Landroid/graphics/Rect;->bottom:I
 
     iget-object v2, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
@@ -1216,10 +1337,8 @@
 
     iput v1, v0, Landroid/graphics/Rect;->bottom:I
 
-    .line 361
-    iget-object v1, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    iget-object v1, v1, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    .line 396
+    iget-object v1, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     iget v2, v0, Landroid/graphics/Rect;->left:I
 
@@ -1231,7 +1350,7 @@
 
     invoke-virtual {v1, v2, v3, v4, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 362
+    .line 397
     return-void
 .end method
 
@@ -1240,10 +1359,8 @@
     .param p1, "level"    # I
 
     .prologue
-    .line 348
-    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    iget-object v0, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    .line 383
+    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setLevel(I)Z
 
@@ -1257,16 +1374,14 @@
     .param p1, "state"    # [I
 
     .prologue
-    .line 341
-    iget-object v1, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    iget-object v1, v1, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    .line 376
+    iget-object v1, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
     move-result v0
 
-    .line 342
+    .line 377
     .local v0, "changed":Z
     invoke-virtual {p0}, Landroid/graphics/drawable/InsetDrawable;->getBounds()Landroid/graphics/Rect;
 
@@ -1274,7 +1389,7 @@
 
     invoke-virtual {p0, v1}, Landroid/graphics/drawable/InsetDrawable;->onBoundsChange(Landroid/graphics/Rect;)V
 
-    .line 343
+    .line 378
     return v0
 .end method
 
@@ -1285,19 +1400,19 @@
     .param p3, "when"    # J
 
     .prologue
-    .line 221
+    .line 256
     invoke-virtual {p0}, Landroid/graphics/drawable/InsetDrawable;->getCallback()Landroid/graphics/drawable/Drawable$Callback;
 
     move-result-object v0
 
-    .line 222
+    .line 257
     .local v0, "callback":Landroid/graphics/drawable/Drawable$Callback;
     if-eqz v0, :cond_0
 
-    .line 223
+    .line 258
     invoke-interface {v0, p0, p2, p3, p4}, Landroid/graphics/drawable/Drawable$Callback;->scheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V
 
-    .line 225
+    .line 260
     :cond_0
     return-void
 .end method
@@ -1307,14 +1422,12 @@
     .param p1, "alpha"    # I
 
     .prologue
-    .line 294
-    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    iget-object v0, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    .line 329
+    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 295
+    .line 330
     return-void
 .end method
 
@@ -1323,14 +1436,12 @@
     .param p1, "cf"    # Landroid/graphics/ColorFilter;
 
     .prologue
-    .line 304
-    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    iget-object v0, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    .line 339
+    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 305
+    .line 340
     return-void
 .end method
 
@@ -1340,14 +1451,12 @@
     .param p2, "y"    # F
 
     .prologue
-    .line 272
-    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    iget-object v0, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    .line 307
+    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1, p2}, Landroid/graphics/drawable/Drawable;->setHotspot(FF)V
 
-    .line 273
+    .line 308
     return-void
 .end method
 
@@ -1359,14 +1468,12 @@
     .param p4, "bottom"    # I
 
     .prologue
-    .line 277
-    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    iget-object v0, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    .line 312
+    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->setHotspotBounds(IIII)V
 
-    .line 278
+    .line 313
     return-void
 .end method
 
@@ -1375,14 +1482,12 @@
     .param p1, "layoutDirection"    # I
 
     .prologue
-    .line 320
-    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    iget-object v0, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    .line 355
+    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
 
-    .line 321
+    .line 356
     return-void
 .end method
 
@@ -1391,14 +1496,12 @@
     .param p1, "tint"    # Landroid/content/res/ColorStateList;
 
     .prologue
-    .line 309
-    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    iget-object v0, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    .line 344
+    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setTintList(Landroid/content/res/ColorStateList;)V
 
-    .line 310
+    .line 345
     return-void
 .end method
 
@@ -1407,14 +1510,12 @@
     .param p1, "tintMode"    # Landroid/graphics/PorterDuff$Mode;
 
     .prologue
-    .line 314
-    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    iget-object v0, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    .line 349
+    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setTintMode(Landroid/graphics/PorterDuff$Mode;)V
 
-    .line 315
+    .line 350
     return-void
 .end method
 
@@ -1424,14 +1525,12 @@
     .param p2, "restart"    # Z
 
     .prologue
-    .line 288
-    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    iget-object v0, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawable:Landroid/graphics/drawable/Drawable;
+    .line 323
+    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1, p2}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
 
-    .line 289
+    .line 324
     invoke-super {p0, p1, p2}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
 
     move-result v0
@@ -1445,19 +1544,19 @@
     .param p2, "what"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 229
+    .line 264
     invoke-virtual {p0}, Landroid/graphics/drawable/InsetDrawable;->getCallback()Landroid/graphics/drawable/Drawable$Callback;
 
     move-result-object v0
 
-    .line 230
+    .line 265
     .local v0, "callback":Landroid/graphics/drawable/Drawable$Callback;
     if-eqz v0, :cond_0
 
-    .line 231
+    .line 266
     invoke-interface {v0, p0, p2}, Landroid/graphics/drawable/Drawable$Callback;->unscheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V
 
-    .line 233
+    .line 268
     :cond_0
     return-void
 .end method
