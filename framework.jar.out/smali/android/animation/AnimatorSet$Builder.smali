@@ -26,18 +26,18 @@
     .param p2, "anim"    # Landroid/animation/Animator;
 
     .prologue
-    .line 1172
+    .line 1174
     iput-object p1, p0, Landroid/animation/AnimatorSet$Builder;->this$0:Landroid/animation/AnimatorSet;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1173
-    # getter for: Landroid/animation/AnimatorSet;->mNodeMap:Ljava/util/HashMap;
-    invoke-static {p1}, Landroid/animation/AnimatorSet;->access$300(Landroid/animation/AnimatorSet;)Ljava/util/HashMap;
+    .line 1175
+    # getter for: Landroid/animation/AnimatorSet;->mNodeMap:Landroid/util/ArrayMap;
+    invoke-static {p1}, Landroid/animation/AnimatorSet;->access$300(Landroid/animation/AnimatorSet;)Landroid/util/ArrayMap;
 
     move-result-object v0
 
-    invoke-virtual {v0, p2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p2}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -45,29 +45,29 @@
 
     iput-object v0, p0, Landroid/animation/AnimatorSet$Builder;->mCurrentNode:Landroid/animation/AnimatorSet$Node;
 
-    .line 1174
+    .line 1176
     iget-object v0, p0, Landroid/animation/AnimatorSet$Builder;->mCurrentNode:Landroid/animation/AnimatorSet$Node;
 
     if-nez v0, :cond_0
 
-    .line 1175
+    .line 1177
     new-instance v0, Landroid/animation/AnimatorSet$Node;
 
     invoke-direct {v0, p2}, Landroid/animation/AnimatorSet$Node;-><init>(Landroid/animation/Animator;)V
 
     iput-object v0, p0, Landroid/animation/AnimatorSet$Builder;->mCurrentNode:Landroid/animation/AnimatorSet$Node;
 
-    .line 1176
-    # getter for: Landroid/animation/AnimatorSet;->mNodeMap:Ljava/util/HashMap;
-    invoke-static {p1}, Landroid/animation/AnimatorSet;->access$300(Landroid/animation/AnimatorSet;)Ljava/util/HashMap;
+    .line 1178
+    # getter for: Landroid/animation/AnimatorSet;->mNodeMap:Landroid/util/ArrayMap;
+    invoke-static {p1}, Landroid/animation/AnimatorSet;->access$300(Landroid/animation/AnimatorSet;)Landroid/util/ArrayMap;
 
     move-result-object v0
 
     iget-object v1, p0, Landroid/animation/AnimatorSet$Builder;->mCurrentNode:Landroid/animation/AnimatorSet$Node;
 
-    invoke-virtual {v0, p2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p2, v1}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1177
+    .line 1179
     # getter for: Landroid/animation/AnimatorSet;->mNodes:Ljava/util/ArrayList;
     invoke-static {p1}, Landroid/animation/AnimatorSet;->access$600(Landroid/animation/AnimatorSet;)Ljava/util/ArrayList;
 
@@ -77,7 +77,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1179
+    .line 1181
     :cond_0
     return-void
 .end method
@@ -89,7 +89,7 @@
     .param p1, "delay"    # J
 
     .prologue
-    .line 1252
+    .line 1254
     const/4 v1, 0x2
 
     new-array v1, v1, [F
@@ -100,17 +100,17 @@
 
     move-result-object v0
 
-    .line 1253
+    .line 1255
     .local v0, "anim":Landroid/animation/ValueAnimator;
     invoke-virtual {v0, p1, p2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1254
+    .line 1256
     invoke-virtual {p0, v0}, Landroid/animation/AnimatorSet$Builder;->after(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
-    .line 1255
+    .line 1257
     return-object p0
 
-    .line 1252
+    .line 1254
     nop
 
     :array_0
@@ -125,7 +125,7 @@
     .param p1, "anim"    # Landroid/animation/Animator;
 
     .prologue
-    .line 1230
+    .line 1232
     iget-object v2, p0, Landroid/animation/AnimatorSet$Builder;->this$0:Landroid/animation/AnimatorSet;
 
     const/4 v3, 0x0
@@ -133,42 +133,42 @@
     # setter for: Landroid/animation/AnimatorSet;->mReversible:Z
     invoke-static {v2, v3}, Landroid/animation/AnimatorSet;->access$702(Landroid/animation/AnimatorSet;Z)Z
 
-    .line 1231
+    .line 1233
     iget-object v2, p0, Landroid/animation/AnimatorSet$Builder;->this$0:Landroid/animation/AnimatorSet;
 
-    # getter for: Landroid/animation/AnimatorSet;->mNodeMap:Ljava/util/HashMap;
-    invoke-static {v2}, Landroid/animation/AnimatorSet;->access$300(Landroid/animation/AnimatorSet;)Ljava/util/HashMap;
+    # getter for: Landroid/animation/AnimatorSet;->mNodeMap:Landroid/util/ArrayMap;
+    invoke-static {v2}, Landroid/animation/AnimatorSet;->access$300(Landroid/animation/AnimatorSet;)Landroid/util/ArrayMap;
 
     move-result-object v2
 
-    invoke-virtual {v2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/animation/AnimatorSet$Node;
 
-    .line 1232
+    .line 1234
     .local v1, "node":Landroid/animation/AnimatorSet$Node;
     if-nez v1, :cond_0
 
-    .line 1233
+    .line 1235
     new-instance v1, Landroid/animation/AnimatorSet$Node;
 
     .end local v1    # "node":Landroid/animation/AnimatorSet$Node;
     invoke-direct {v1, p1}, Landroid/animation/AnimatorSet$Node;-><init>(Landroid/animation/Animator;)V
 
-    .line 1234
+    .line 1236
     .restart local v1    # "node":Landroid/animation/AnimatorSet$Node;
     iget-object v2, p0, Landroid/animation/AnimatorSet$Builder;->this$0:Landroid/animation/AnimatorSet;
 
-    # getter for: Landroid/animation/AnimatorSet;->mNodeMap:Ljava/util/HashMap;
-    invoke-static {v2}, Landroid/animation/AnimatorSet;->access$300(Landroid/animation/AnimatorSet;)Ljava/util/HashMap;
+    # getter for: Landroid/animation/AnimatorSet;->mNodeMap:Landroid/util/ArrayMap;
+    invoke-static {v2}, Landroid/animation/AnimatorSet;->access$300(Landroid/animation/AnimatorSet;)Landroid/util/ArrayMap;
 
     move-result-object v2
 
-    invoke-virtual {v2, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, p1, v1}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1235
+    .line 1237
     iget-object v2, p0, Landroid/animation/AnimatorSet$Builder;->this$0:Landroid/animation/AnimatorSet;
 
     # getter for: Landroid/animation/AnimatorSet;->mNodes:Ljava/util/ArrayList;
@@ -178,7 +178,7 @@
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1237
+    .line 1239
     :cond_0
     new-instance v0, Landroid/animation/AnimatorSet$Dependency;
 
@@ -186,13 +186,13 @@
 
     invoke-direct {v0, v1, v2}, Landroid/animation/AnimatorSet$Dependency;-><init>(Landroid/animation/AnimatorSet$Node;I)V
 
-    .line 1238
+    .line 1240
     .local v0, "dependency":Landroid/animation/AnimatorSet$Dependency;
     iget-object v2, p0, Landroid/animation/AnimatorSet$Builder;->mCurrentNode:Landroid/animation/AnimatorSet$Node;
 
     invoke-virtual {v2, v0}, Landroid/animation/AnimatorSet$Node;->addDependency(Landroid/animation/AnimatorSet$Dependency;)V
 
-    .line 1239
+    .line 1241
     return-object p0
 .end method
 
@@ -201,7 +201,7 @@
     .param p1, "anim"    # Landroid/animation/Animator;
 
     .prologue
-    .line 1209
+    .line 1211
     iget-object v2, p0, Landroid/animation/AnimatorSet$Builder;->this$0:Landroid/animation/AnimatorSet;
 
     const/4 v3, 0x0
@@ -209,42 +209,42 @@
     # setter for: Landroid/animation/AnimatorSet;->mReversible:Z
     invoke-static {v2, v3}, Landroid/animation/AnimatorSet;->access$702(Landroid/animation/AnimatorSet;Z)Z
 
-    .line 1210
+    .line 1212
     iget-object v2, p0, Landroid/animation/AnimatorSet$Builder;->this$0:Landroid/animation/AnimatorSet;
 
-    # getter for: Landroid/animation/AnimatorSet;->mNodeMap:Ljava/util/HashMap;
-    invoke-static {v2}, Landroid/animation/AnimatorSet;->access$300(Landroid/animation/AnimatorSet;)Ljava/util/HashMap;
+    # getter for: Landroid/animation/AnimatorSet;->mNodeMap:Landroid/util/ArrayMap;
+    invoke-static {v2}, Landroid/animation/AnimatorSet;->access$300(Landroid/animation/AnimatorSet;)Landroid/util/ArrayMap;
 
     move-result-object v2
 
-    invoke-virtual {v2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/animation/AnimatorSet$Node;
 
-    .line 1211
+    .line 1213
     .local v1, "node":Landroid/animation/AnimatorSet$Node;
     if-nez v1, :cond_0
 
-    .line 1212
+    .line 1214
     new-instance v1, Landroid/animation/AnimatorSet$Node;
 
     .end local v1    # "node":Landroid/animation/AnimatorSet$Node;
     invoke-direct {v1, p1}, Landroid/animation/AnimatorSet$Node;-><init>(Landroid/animation/Animator;)V
 
-    .line 1213
+    .line 1215
     .restart local v1    # "node":Landroid/animation/AnimatorSet$Node;
     iget-object v2, p0, Landroid/animation/AnimatorSet$Builder;->this$0:Landroid/animation/AnimatorSet;
 
-    # getter for: Landroid/animation/AnimatorSet;->mNodeMap:Ljava/util/HashMap;
-    invoke-static {v2}, Landroid/animation/AnimatorSet;->access$300(Landroid/animation/AnimatorSet;)Ljava/util/HashMap;
+    # getter for: Landroid/animation/AnimatorSet;->mNodeMap:Landroid/util/ArrayMap;
+    invoke-static {v2}, Landroid/animation/AnimatorSet;->access$300(Landroid/animation/AnimatorSet;)Landroid/util/ArrayMap;
 
     move-result-object v2
 
-    invoke-virtual {v2, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, p1, v1}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1214
+    .line 1216
     iget-object v2, p0, Landroid/animation/AnimatorSet$Builder;->this$0:Landroid/animation/AnimatorSet;
 
     # getter for: Landroid/animation/AnimatorSet;->mNodes:Ljava/util/ArrayList;
@@ -254,7 +254,7 @@
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1216
+    .line 1218
     :cond_0
     new-instance v0, Landroid/animation/AnimatorSet$Dependency;
 
@@ -264,11 +264,11 @@
 
     invoke-direct {v0, v2, v3}, Landroid/animation/AnimatorSet$Dependency;-><init>(Landroid/animation/AnimatorSet$Node;I)V
 
-    .line 1217
+    .line 1219
     .local v0, "dependency":Landroid/animation/AnimatorSet$Dependency;
     invoke-virtual {v1, v0}, Landroid/animation/AnimatorSet$Node;->addDependency(Landroid/animation/AnimatorSet$Dependency;)V
 
-    .line 1218
+    .line 1220
     return-object p0
 .end method
 
@@ -277,42 +277,42 @@
     .param p1, "anim"    # Landroid/animation/Animator;
 
     .prologue
-    .line 1189
+    .line 1191
     iget-object v2, p0, Landroid/animation/AnimatorSet$Builder;->this$0:Landroid/animation/AnimatorSet;
 
-    # getter for: Landroid/animation/AnimatorSet;->mNodeMap:Ljava/util/HashMap;
-    invoke-static {v2}, Landroid/animation/AnimatorSet;->access$300(Landroid/animation/AnimatorSet;)Ljava/util/HashMap;
+    # getter for: Landroid/animation/AnimatorSet;->mNodeMap:Landroid/util/ArrayMap;
+    invoke-static {v2}, Landroid/animation/AnimatorSet;->access$300(Landroid/animation/AnimatorSet;)Landroid/util/ArrayMap;
 
     move-result-object v2
 
-    invoke-virtual {v2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/animation/AnimatorSet$Node;
 
-    .line 1190
+    .line 1192
     .local v1, "node":Landroid/animation/AnimatorSet$Node;
     if-nez v1, :cond_0
 
-    .line 1191
+    .line 1193
     new-instance v1, Landroid/animation/AnimatorSet$Node;
 
     .end local v1    # "node":Landroid/animation/AnimatorSet$Node;
     invoke-direct {v1, p1}, Landroid/animation/AnimatorSet$Node;-><init>(Landroid/animation/Animator;)V
 
-    .line 1192
+    .line 1194
     .restart local v1    # "node":Landroid/animation/AnimatorSet$Node;
     iget-object v2, p0, Landroid/animation/AnimatorSet$Builder;->this$0:Landroid/animation/AnimatorSet;
 
-    # getter for: Landroid/animation/AnimatorSet;->mNodeMap:Ljava/util/HashMap;
-    invoke-static {v2}, Landroid/animation/AnimatorSet;->access$300(Landroid/animation/AnimatorSet;)Ljava/util/HashMap;
+    # getter for: Landroid/animation/AnimatorSet;->mNodeMap:Landroid/util/ArrayMap;
+    invoke-static {v2}, Landroid/animation/AnimatorSet;->access$300(Landroid/animation/AnimatorSet;)Landroid/util/ArrayMap;
 
     move-result-object v2
 
-    invoke-virtual {v2, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, p1, v1}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1193
+    .line 1195
     iget-object v2, p0, Landroid/animation/AnimatorSet$Builder;->this$0:Landroid/animation/AnimatorSet;
 
     # getter for: Landroid/animation/AnimatorSet;->mNodes:Ljava/util/ArrayList;
@@ -322,7 +322,7 @@
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1195
+    .line 1197
     :cond_0
     new-instance v0, Landroid/animation/AnimatorSet$Dependency;
 
@@ -332,10 +332,10 @@
 
     invoke-direct {v0, v2, v3}, Landroid/animation/AnimatorSet$Dependency;-><init>(Landroid/animation/AnimatorSet$Node;I)V
 
-    .line 1196
+    .line 1198
     .local v0, "dependency":Landroid/animation/AnimatorSet$Dependency;
     invoke-virtual {v1, v0}, Landroid/animation/AnimatorSet$Node;->addDependency(Landroid/animation/AnimatorSet$Dependency;)V
 
-    .line 1197
+    .line 1199
     return-object p0
 .end method

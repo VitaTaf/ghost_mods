@@ -70,7 +70,7 @@
     .line 49
     iput v0, p0, Landroid/animation/Animator;->mChangingConfigurations:I
 
-    .line 539
+    .line 543
     return-void
 .end method
 
@@ -93,25 +93,25 @@
     .param p1, "listener"    # Landroid/animation/Animator$AnimatorListener;
 
     .prologue
-    .line 235
+    .line 239
     iget-object v0, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     if-nez v0, :cond_0
 
-    .line 236
+    .line 240
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
-    .line 238
+    .line 242
     :cond_0
     iget-object v0, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 239
+    .line 243
     return-void
 .end method
 
@@ -120,25 +120,25 @@
     .param p1, "listener"    # Landroid/animation/Animator$AnimatorPauseListener;
 
     .prologue
-    .line 274
+    .line 278
     iget-object v0, p0, Landroid/animation/Animator;->mPauseListeners:Ljava/util/ArrayList;
 
     if-nez v0, :cond_0
 
-    .line 275
+    .line 279
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/animation/Animator;->mPauseListeners:Ljava/util/ArrayList;
 
-    .line 277
+    .line 281
     :cond_0
     iget-object v0, p0, Landroid/animation/Animator;->mPauseListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 278
+    .line 282
     return-void
 .end method
 
@@ -147,14 +147,14 @@
     .param p1, "configs"    # I
 
     .prologue
-    .line 347
+    .line 351
     iget v0, p0, Landroid/animation/Animator;->mChangingConfigurations:I
 
     or-int/2addr v0, p1
 
     iput v0, p0, Landroid/animation/Animator;->mChangingConfigurations:I
 
-    .line 348
+    .line 352
     return-void
 .end method
 
@@ -162,7 +162,7 @@
     .locals 1
 
     .prologue
-    .line 426
+    .line 430
     const/4 v0, 0x0
 
     return v0
@@ -180,7 +180,7 @@
     .locals 4
 
     .prologue
-    .line 371
+    .line 375
     :try_start_0
     invoke-super {p0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
@@ -188,13 +188,13 @@
 
     check-cast v0, Landroid/animation/Animator;
 
-    .line 372
+    .line 376
     .local v0, "anim":Landroid/animation/Animator;
     iget-object v2, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     if-eqz v2, :cond_0
 
-    .line 373
+    .line 377
     new-instance v2, Ljava/util/ArrayList;
 
     iget-object v3, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
@@ -203,13 +203,13 @@
 
     iput-object v2, v0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
-    .line 375
+    .line 379
     :cond_0
     iget-object v2, p0, Landroid/animation/Animator;->mPauseListeners:Ljava/util/ArrayList;
 
     if-eqz v2, :cond_1
 
-    .line 376
+    .line 380
     new-instance v2, Ljava/util/ArrayList;
 
     iget-object v3, p0, Landroid/animation/Animator;->mPauseListeners:Ljava/util/ArrayList;
@@ -220,16 +220,16 @@
     :try_end_0
     .catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 378
+    .line 382
     :cond_1
     return-object v0
 
-    .line 379
+    .line 383
     .end local v0    # "anim":Landroid/animation/Animator;
     :catch_0
     move-exception v1
 
-    .line 380
+    .line 384
     .local v1, "e":Ljava/lang/CloneNotSupportedException;
     new-instance v2, Ljava/lang/AssertionError;
 
@@ -268,7 +268,7 @@
     .end annotation
 
     .prologue
-    .line 365
+    .line 369
     new-instance v0, Landroid/animation/Animator$AnimatorConstantState;
 
     invoke-direct {v0, p0}, Landroid/animation/Animator$AnimatorConstantState;-><init>(Landroid/animation/Animator;)V
@@ -288,7 +288,7 @@
     .locals 1
 
     .prologue
-    .line 323
+    .line 327
     iget v0, p0, Landroid/animation/Animator;->mChangingConfigurations:I
 
     return v0
@@ -320,7 +320,7 @@
     .end annotation
 
     .prologue
-    .line 264
+    .line 268
     iget-object v0, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     return-object v0
@@ -346,7 +346,7 @@
     .locals 1
 
     .prologue
-    .line 225
+    .line 229
     invoke-virtual {p0}, Landroid/animation/Animator;->isRunning()Z
 
     move-result v0
@@ -430,34 +430,34 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 302
+    .line 306
     iget-object v0, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_0
 
-    .line 303
+    .line 307
     iget-object v0, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 304
+    .line 308
     iput-object v1, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
-    .line 306
+    .line 310
     :cond_0
     iget-object v0, p0, Landroid/animation/Animator;->mPauseListeners:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_1
 
-    .line 307
+    .line 311
     iget-object v0, p0, Landroid/animation/Animator;->mPauseListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 308
+    .line 312
     iput-object v1, p0, Landroid/animation/Animator;->mPauseListeners:Ljava/util/ArrayList;
 
-    .line 310
+    .line 314
     :cond_1
     return-void
 .end method
@@ -467,23 +467,23 @@
     .param p1, "listener"    # Landroid/animation/Animator$AnimatorListener;
 
     .prologue
-    .line 248
+    .line 252
     iget-object v0, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     if-nez v0, :cond_1
 
-    .line 255
+    .line 259
     :cond_0
     :goto_0
     return-void
 
-    .line 251
+    .line 255
     :cond_1
     iget-object v0, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 252
+    .line 256
     iget-object v0, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -492,7 +492,7 @@
 
     if-nez v0, :cond_0
 
-    .line 253
+    .line 257
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
@@ -505,23 +505,23 @@
     .param p1, "listener"    # Landroid/animation/Animator$AnimatorPauseListener;
 
     .prologue
-    .line 287
+    .line 291
     iget-object v0, p0, Landroid/animation/Animator;->mPauseListeners:Ljava/util/ArrayList;
 
     if-nez v0, :cond_1
 
-    .line 294
+    .line 298
     :cond_0
     :goto_0
     return-void
 
-    .line 290
+    .line 294
     :cond_1
     iget-object v0, p0, Landroid/animation/Animator;->mPauseListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 291
+    .line 295
     iget-object v0, p0, Landroid/animation/Animator;->mPauseListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -530,7 +530,7 @@
 
     if-nez v0, :cond_0
 
-    .line 292
+    .line 296
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/animation/Animator;->mPauseListeners:Ljava/util/ArrayList;
@@ -606,7 +606,7 @@
     .locals 2
 
     .prologue
-    .line 433
+    .line 437
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Reverse is not supported"
@@ -621,7 +621,7 @@
     .param p1, "mayRunAsync"    # Z
 
     .prologue
-    .line 531
+    .line 535
     return-void
 .end method
 
@@ -630,10 +630,10 @@
     .param p1, "configs"    # I
 
     .prologue
-    .line 337
+    .line 341
     iput p1, p0, Landroid/animation/Animator;->mChangingConfigurations:I
 
-    .line 338
+    .line 342
     return-void
 .end method
 
@@ -651,7 +651,7 @@
     .param p1, "target"    # Ljava/lang/Object;
 
     .prologue
-    .line 417
+    .line 421
     return-void
 .end method
 
@@ -659,7 +659,7 @@
     .locals 0
 
     .prologue
-    .line 406
+    .line 410
     return-void
 .end method
 
@@ -667,7 +667,7 @@
     .locals 0
 
     .prologue
-    .line 394
+    .line 398
     return-void
 .end method
 

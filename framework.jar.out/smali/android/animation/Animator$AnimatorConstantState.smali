@@ -35,19 +35,19 @@
     .param p1, "animator"    # Landroid/animation/Animator;
 
     .prologue
-    .line 544
+    .line 548
     invoke-direct {p0}, Landroid/content/res/ConstantState;-><init>()V
 
-    .line 545
+    .line 549
     iput-object p1, p0, Landroid/animation/Animator$AnimatorConstantState;->mAnimator:Landroid/animation/Animator;
 
-    .line 547
+    .line 551
     iget-object v0, p0, Landroid/animation/Animator$AnimatorConstantState;->mAnimator:Landroid/animation/Animator;
 
     # setter for: Landroid/animation/Animator;->mConstantState:Landroid/animation/Animator$AnimatorConstantState;
     invoke-static {v0, p0}, Landroid/animation/Animator;->access$002(Landroid/animation/Animator;Landroid/animation/Animator$AnimatorConstantState;)Landroid/animation/Animator$AnimatorConstantState;
 
-    .line 548
+    .line 552
     iget-object v0, p0, Landroid/animation/Animator$AnimatorConstantState;->mAnimator:Landroid/animation/Animator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->getChangingConfigurations()I
@@ -56,7 +56,7 @@
 
     iput v0, p0, Landroid/animation/Animator$AnimatorConstantState;->mChangingConf:I
 
-    .line 549
+    .line 553
     return-void
 .end method
 
@@ -66,7 +66,7 @@
     .locals 1
 
     .prologue
-    .line 553
+    .line 557
     iget v0, p0, Landroid/animation/Animator$AnimatorConstantState;->mChangingConf:I
 
     return v0
@@ -76,19 +76,19 @@
     .locals 2
 
     .prologue
-    .line 558
+    .line 562
     iget-object v1, p0, Landroid/animation/Animator$AnimatorConstantState;->mAnimator:Landroid/animation/Animator;
 
     invoke-virtual {v1}, Landroid/animation/Animator;->clone()Landroid/animation/Animator;
 
     move-result-object v0
 
-    .line 559
+    .line 563
     .local v0, "clone":Landroid/animation/Animator;
     # setter for: Landroid/animation/Animator;->mConstantState:Landroid/animation/Animator$AnimatorConstantState;
     invoke-static {v0, p0}, Landroid/animation/Animator;->access$002(Landroid/animation/Animator;Landroid/animation/Animator$AnimatorConstantState;)Landroid/animation/Animator$AnimatorConstantState;
 
-    .line 560
+    .line 564
     return-object v0
 .end method
 
@@ -96,7 +96,7 @@
     .locals 1
 
     .prologue
-    .line 539
+    .line 543
     invoke-virtual {p0}, Landroid/animation/Animator$AnimatorConstantState;->newInstance()Landroid/animation/Animator;
 
     move-result-object v0
