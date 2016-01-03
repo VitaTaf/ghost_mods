@@ -472,74 +472,6 @@
 
 
 # virtual methods
-.method protected areValuesChanged(Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Z
-    .locals 5
-    .param p1, "oldValues"    # Landroid/transition/TransitionValues;
-    .param p2, "newValues"    # Landroid/transition/TransitionValues;
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 469
-    if-nez p1, :cond_1
-
-    if-nez p2, :cond_1
-
-    .line 480
-    :cond_0
-    :goto_0
-    return v1
-
-    .line 472
-    :cond_1
-    if-eqz p1, :cond_2
-
-    if-eqz p2, :cond_2
-
-    iget-object v2, p2, Landroid/transition/TransitionValues;->values:Ljava/util/Map;
-
-    const-string v3, "android:visibility:visibility"
-
-    invoke-interface {v2, v3}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    iget-object v3, p1, Landroid/transition/TransitionValues;->values:Ljava/util/Map;
-
-    const-string v4, "android:visibility:visibility"
-
-    invoke-interface {v3, v4}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-ne v2, v3, :cond_0
-
-    .line 479
-    :cond_2
-    invoke-static {p1, p2}, Landroid/transition/Visibility;->getVisibilityChangeInfo(Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/transition/Visibility$VisibilityInfo;
-
-    move-result-object v0
-
-    .line 480
-    .local v0, "changeInfo":Landroid/transition/Visibility$VisibilityInfo;
-    iget-boolean v2, v0, Landroid/transition/Visibility$VisibilityInfo;->visibilityChange:Z
-
-    if-eqz v2, :cond_0
-
-    iget v2, v0, Landroid/transition/Visibility$VisibilityInfo;->startVisibility:I
-
-    if-eqz v2, :cond_3
-
-    iget v2, v0, Landroid/transition/Visibility$VisibilityInfo;->endVisibility:I
-
-    if-nez v2, :cond_0
-
-    :cond_3
-    const/4 v1, 0x1
-
-    goto :goto_0
-.end method
-
 .method public captureEndValues(Landroid/transition/TransitionValues;)V
     .locals 1
     .param p1, "transitionValues"    # Landroid/transition/TransitionValues;
@@ -689,6 +621,74 @@
     sget-object v0, Landroid/transition/Visibility;->sTransitionProperties:[Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method public isTransitionRequired(Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Z
+    .locals 5
+    .param p1, "startValues"    # Landroid/transition/TransitionValues;
+    .param p2, "newValues"    # Landroid/transition/TransitionValues;
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 469
+    if-nez p1, :cond_1
+
+    if-nez p2, :cond_1
+
+    .line 480
+    :cond_0
+    :goto_0
+    return v1
+
+    .line 472
+    :cond_1
+    if-eqz p1, :cond_2
+
+    if-eqz p2, :cond_2
+
+    iget-object v2, p2, Landroid/transition/TransitionValues;->values:Ljava/util/Map;
+
+    const-string v3, "android:visibility:visibility"
+
+    invoke-interface {v2, v3}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    iget-object v3, p1, Landroid/transition/TransitionValues;->values:Ljava/util/Map;
+
+    const-string v4, "android:visibility:visibility"
+
+    invoke-interface {v3, v4}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-ne v2, v3, :cond_0
+
+    .line 479
+    :cond_2
+    invoke-static {p1, p2}, Landroid/transition/Visibility;->getVisibilityChangeInfo(Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/transition/Visibility$VisibilityInfo;
+
+    move-result-object v0
+
+    .line 480
+    .local v0, "changeInfo":Landroid/transition/Visibility$VisibilityInfo;
+    iget-boolean v2, v0, Landroid/transition/Visibility$VisibilityInfo;->visibilityChange:Z
+
+    if-eqz v2, :cond_0
+
+    iget v2, v0, Landroid/transition/Visibility$VisibilityInfo;->startVisibility:I
+
+    if-eqz v2, :cond_3
+
+    iget v2, v0, Landroid/transition/Visibility$VisibilityInfo;->endVisibility:I
+
+    if-nez v2, :cond_0
+
+    :cond_3
+    const/4 v1, 0x1
+
+    goto :goto_0
 .end method
 
 .method public isVisible(Landroid/transition/TransitionValues;)Z
