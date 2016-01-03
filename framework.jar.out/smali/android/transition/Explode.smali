@@ -467,7 +467,7 @@
 .end method
 
 .method public onAppear(Landroid/view/ViewGroup;Landroid/view/View;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
-    .locals 10
+    .locals 11
     .param p1, "sceneRoot"    # Landroid/view/ViewGroup;
     .param p2, "view"    # Landroid/view/View;
     .param p3, "startValues"    # Landroid/transition/TransitionValues;
@@ -492,12 +492,12 @@
 
     invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v9
+    move-result-object v10
 
-    check-cast v9, Landroid/graphics/Rect;
+    check-cast v10, Landroid/graphics/Rect;
 
     .line 86
-    .local v9, "bounds":Landroid/graphics/Rect;
+    .local v10, "bounds":Landroid/graphics/Rect;
     invoke-virtual {p2}, Landroid/view/View;->getTranslationX()F
 
     move-result v6
@@ -512,7 +512,7 @@
     .local v7, "endY":F
     iget-object v0, p0, Landroid/transition/Explode;->mTempLoc:[I
 
-    invoke-direct {p0, p1, v9, v0}, Landroid/transition/Explode;->calculateOut(Landroid/view/View;Landroid/graphics/Rect;[I)V
+    invoke-direct {p0, p1, v10, v0}, Landroid/transition/Explode;->calculateOut(Landroid/view/View;Landroid/graphics/Rect;[I)V
 
     .line 89
     iget-object v0, p0, Landroid/transition/Explode;->mTempLoc:[I
@@ -539,9 +539,9 @@
 
     .line 92
     .local v5, "startY":F
-    iget v2, v9, Landroid/graphics/Rect;->left:I
+    iget v2, v10, Landroid/graphics/Rect;->left:I
 
-    iget v3, v9, Landroid/graphics/Rect;->top:I
+    iget v3, v10, Landroid/graphics/Rect;->top:I
 
     sget-object v8, Landroid/transition/Explode;->sDecelerate:Landroid/animation/TimeInterpolator;
 
@@ -549,7 +549,9 @@
 
     move-object v1, p4
 
-    invoke-static/range {v0 .. v8}, Landroid/transition/TranslationAnimationCreator;->createAnimation(Landroid/view/View;Landroid/transition/TransitionValues;IIFFFFLandroid/animation/TimeInterpolator;)Landroid/animation/Animator;
+    move-object v9, p0
+
+    invoke-static/range {v0 .. v9}, Landroid/transition/TranslationAnimationCreator;->createAnimation(Landroid/view/View;Landroid/transition/TransitionValues;IIFFFFLandroid/animation/TimeInterpolator;Landroid/transition/Transition;)Landroid/animation/Animator;
 
     move-result-object v0
 
@@ -557,7 +559,7 @@
 .end method
 
 .method public onDisappear(Landroid/view/ViewGroup;Landroid/view/View;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
-    .locals 11
+    .locals 12
     .param p1, "sceneRoot"    # Landroid/view/ViewGroup;
     .param p2, "view"    # Landroid/view/View;
     .param p3, "startValues"    # Landroid/transition/TransitionValues;
@@ -582,17 +584,17 @@
 
     invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v9
+    move-result-object v10
 
-    check-cast v9, Landroid/graphics/Rect;
+    check-cast v10, Landroid/graphics/Rect;
 
     .line 103
-    .local v9, "bounds":Landroid/graphics/Rect;
-    iget v2, v9, Landroid/graphics/Rect;->left:I
+    .local v10, "bounds":Landroid/graphics/Rect;
+    iget v2, v10, Landroid/graphics/Rect;->left:I
 
     .line 104
     .local v2, "viewPosX":I
-    iget v3, v9, Landroid/graphics/Rect;->top:I
+    iget v3, v10, Landroid/graphics/Rect;->top:I
 
     .line 105
     .local v3, "viewPosY":I
@@ -626,20 +628,20 @@
 
     check-cast v0, [I
 
-    move-object v10, v0
+    move-object v11, v0
 
-    check-cast v10, [I
+    check-cast v11, [I
 
     .line 110
-    .local v10, "interruptedPosition":[I
-    if-eqz v10, :cond_1
+    .local v11, "interruptedPosition":[I
+    if-eqz v11, :cond_1
 
     .line 113
     const/4 v0, 0x0
 
-    aget v0, v10, v0
+    aget v0, v11, v0
 
-    iget v1, v9, Landroid/graphics/Rect;->left:I
+    iget v1, v10, Landroid/graphics/Rect;->left:I
 
     sub-int/2addr v0, v1
 
@@ -650,9 +652,9 @@
     .line 114
     const/4 v0, 0x1
 
-    aget v0, v10, v0
+    aget v0, v11, v0
 
-    iget v1, v9, Landroid/graphics/Rect;->top:I
+    iget v1, v10, Landroid/graphics/Rect;->top:I
 
     sub-int/2addr v0, v1
 
@@ -663,19 +665,19 @@
     .line 115
     const/4 v0, 0x0
 
-    aget v0, v10, v0
+    aget v0, v11, v0
 
     const/4 v1, 0x1
 
-    aget v1, v10, v1
+    aget v1, v11, v1
 
-    invoke-virtual {v9, v0, v1}, Landroid/graphics/Rect;->offsetTo(II)V
+    invoke-virtual {v10, v0, v1}, Landroid/graphics/Rect;->offsetTo(II)V
 
     .line 117
     :cond_1
     iget-object v0, p0, Landroid/transition/Explode;->mTempLoc:[I
 
-    invoke-direct {p0, p1, v9, v0}, Landroid/transition/Explode;->calculateOut(Landroid/view/View;Landroid/graphics/Rect;[I)V
+    invoke-direct {p0, p1, v10, v0}, Landroid/transition/Explode;->calculateOut(Landroid/view/View;Landroid/graphics/Rect;[I)V
 
     .line 118
     iget-object v0, p0, Landroid/transition/Explode;->mTempLoc:[I
@@ -706,7 +708,9 @@
 
     move-object v1, p3
 
-    invoke-static/range {v0 .. v8}, Landroid/transition/TranslationAnimationCreator;->createAnimation(Landroid/view/View;Landroid/transition/TransitionValues;IIFFFFLandroid/animation/TimeInterpolator;)Landroid/animation/Animator;
+    move-object v9, p0
+
+    invoke-static/range {v0 .. v9}, Landroid/transition/TranslationAnimationCreator;->createAnimation(Landroid/view/View;Landroid/transition/TransitionValues;IIFFFFLandroid/animation/TimeInterpolator;Landroid/transition/Transition;)Landroid/animation/Animator;
 
     move-result-object v0
 

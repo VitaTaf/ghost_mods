@@ -271,7 +271,7 @@
 .end method
 
 .method public onAppear(Landroid/view/ViewGroup;Landroid/view/View;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
-    .locals 10
+    .locals 11
     .param p1, "sceneRoot"    # Landroid/view/ViewGroup;
     .param p2, "view"    # Landroid/view/View;
     .param p3, "startValues"    # Landroid/transition/TransitionValues;
@@ -300,12 +300,12 @@
 
     check-cast v0, [I
 
-    move-object v9, v0
+    move-object v10, v0
 
-    check-cast v9, [I
+    check-cast v10, [I
 
     .line 228
-    .local v9, "position":[I
+    .local v10, "position":[I
     invoke-virtual {p2}, Landroid/view/View;->getTranslationX()F
 
     move-result v6
@@ -336,11 +336,11 @@
     .local v5, "startY":F
     const/4 v0, 0x0
 
-    aget v2, v9, v0
+    aget v2, v10, v0
 
     const/4 v0, 0x1
 
-    aget v3, v9, v0
+    aget v3, v10, v0
 
     sget-object v8, Landroid/transition/Slide;->sDecelerate:Landroid/animation/TimeInterpolator;
 
@@ -348,7 +348,9 @@
 
     move-object v1, p4
 
-    invoke-static/range {v0 .. v8}, Landroid/transition/TranslationAnimationCreator;->createAnimation(Landroid/view/View;Landroid/transition/TransitionValues;IIFFFFLandroid/animation/TimeInterpolator;)Landroid/animation/Animator;
+    move-object v9, p0
+
+    invoke-static/range {v0 .. v9}, Landroid/transition/TranslationAnimationCreator;->createAnimation(Landroid/view/View;Landroid/transition/TransitionValues;IIFFFFLandroid/animation/TimeInterpolator;Landroid/transition/Transition;)Landroid/animation/Animator;
 
     move-result-object v0
 
@@ -356,7 +358,7 @@
 .end method
 
 .method public onDisappear(Landroid/view/ViewGroup;Landroid/view/View;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
-    .locals 10
+    .locals 11
     .param p1, "sceneRoot"    # Landroid/view/ViewGroup;
     .param p2, "view"    # Landroid/view/View;
     .param p3, "startValues"    # Landroid/transition/TransitionValues;
@@ -385,12 +387,12 @@
 
     check-cast v0, [I
 
-    move-object v9, v0
+    move-object v10, v0
 
-    check-cast v9, [I
+    check-cast v10, [I
 
     .line 244
-    .local v9, "position":[I
+    .local v10, "position":[I
     invoke-virtual {p2}, Landroid/view/View;->getTranslationX()F
 
     move-result v4
@@ -421,11 +423,11 @@
     .local v7, "endY":F
     const/4 v0, 0x0
 
-    aget v2, v9, v0
+    aget v2, v10, v0
 
     const/4 v0, 0x1
 
-    aget v3, v9, v0
+    aget v3, v10, v0
 
     sget-object v8, Landroid/transition/Slide;->sAccelerate:Landroid/animation/TimeInterpolator;
 
@@ -433,7 +435,9 @@
 
     move-object v1, p3
 
-    invoke-static/range {v0 .. v8}, Landroid/transition/TranslationAnimationCreator;->createAnimation(Landroid/view/View;Landroid/transition/TransitionValues;IIFFFFLandroid/animation/TimeInterpolator;)Landroid/animation/Animator;
+    move-object v9, p0
+
+    invoke-static/range {v0 .. v9}, Landroid/transition/TranslationAnimationCreator;->createAnimation(Landroid/view/View;Landroid/transition/TransitionValues;IIFFFFLandroid/animation/TimeInterpolator;Landroid/transition/Transition;)Landroid/animation/Animator;
 
     move-result-object v0
 
