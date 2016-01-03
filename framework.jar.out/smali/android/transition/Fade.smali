@@ -111,7 +111,7 @@
     .line 113
     const/4 v0, 0x0
 
-    .line 123
+    .line 129
     :goto_0
     return-object v0
 
@@ -176,6 +176,13 @@
     .line 122
     invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->addPauseListener(Landroid/animation/Animator$AnimatorPauseListener;)V
 
+    .line 123
+    new-instance v2, Landroid/transition/Fade$1;
+
+    invoke-direct {v2, p0, p1}, Landroid/transition/Fade$1;-><init>(Landroid/transition/Fade;Landroid/view/View;)V
+
+    invoke-virtual {p0, v2}, Landroid/transition/Fade;->addListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
+
     goto :goto_0
 .end method
 
@@ -189,17 +196,17 @@
     .param p4, "endValues"    # Landroid/transition/TransitionValues;
 
     .prologue
-    .line 130
+    .line 136
     sget-boolean v1, Landroid/transition/Fade;->DBG:Z
 
     if-eqz v1, :cond_0
 
-    .line 131
+    .line 137
     if-eqz p3, :cond_1
 
     iget-object v0, p3, Landroid/transition/TransitionValues;->view:Landroid/view/View;
 
-    .line 132
+    .line 138
     .local v0, "startView":Landroid/view/View;
     :goto_0
     const-string v1, "Fade"
@@ -234,7 +241,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 135
+    .line 141
     .end local v0    # "startView":Landroid/view/View;
     :cond_0
     const/4 v1, 0x0
@@ -247,7 +254,7 @@
 
     return-object v1
 
-    .line 131
+    .line 137
     :cond_1
     const/4 v0, 0x0
 
@@ -262,7 +269,7 @@
     .param p4, "endValues"    # Landroid/transition/TransitionValues;
 
     .prologue
-    .line 141
+    .line 147
     const/high16 v0, 0x3f800000    # 1.0f
 
     const/4 v1, 0x0
