@@ -30,7 +30,7 @@
 
     iput-wide v0, p0, Landroid/animation/TimeAnimator;->mPreviousTime:J
 
-    .line 86
+    .line 87
     return-void
 .end method
 
@@ -41,7 +41,7 @@
     .param p1, "fraction"    # F
 
     .prologue
-    .line 70
+    .line 71
     return-void
 .end method
 
@@ -104,7 +104,7 @@
     .locals 0
 
     .prologue
-    .line 75
+    .line 76
     return-void
 .end method
 
@@ -131,9 +131,14 @@
     iput-wide v2, p0, Landroid/animation/TimeAnimator;->mStartTime:J
 
     .line 54
-    invoke-virtual {p0, v0, v1}, Landroid/animation/TimeAnimator;->animationFrame(J)Z
+    const/4 v2, 0x1
+
+    iput-boolean v2, p0, Landroid/animation/TimeAnimator;->mStartTimeCommitted:Z
 
     .line 55
+    invoke-virtual {p0, v0, v1}, Landroid/animation/TimeAnimator;->animationFrame(J)Z
+
+    .line 56
     return-void
 .end method
 
@@ -142,10 +147,10 @@
     .param p1, "listener"    # Landroid/animation/TimeAnimator$TimeListener;
 
     .prologue
-    .line 64
+    .line 65
     iput-object p1, p0, Landroid/animation/TimeAnimator;->mListener:Landroid/animation/TimeAnimator$TimeListener;
 
-    .line 65
+    .line 66
     return-void
 .end method
 
