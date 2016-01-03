@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 1759
+    .line 1762
     iput-object p1, p0, Landroid/widget/PopupWindow$PopupDecorView$1;->this$1:Landroid/widget/PopupWindow$PopupDecorView;
 
     iput-object p2, p0, Landroid/widget/PopupWindow$PopupDecorView$1;->val$enterTransition:Landroid/transition/Transition;
@@ -44,21 +44,21 @@
     .locals 4
 
     .prologue
-    .line 1762
+    .line 1765
     iget-object v2, p0, Landroid/widget/PopupWindow$PopupDecorView$1;->this$1:Landroid/widget/PopupWindow$PopupDecorView;
 
     invoke-virtual {v2}, Landroid/widget/PopupWindow$PopupDecorView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v1
 
-    .line 1763
+    .line 1766
     .local v1, "observer":Landroid/view/ViewTreeObserver;
     if-eqz v1, :cond_0
 
-    .line 1764
+    .line 1767
     invoke-virtual {v1, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 1766
+    .line 1769
     :cond_0
     iget-object v2, p0, Landroid/widget/PopupWindow$PopupDecorView$1;->this$1:Landroid/widget/PopupWindow$PopupDecorView;
 
@@ -69,7 +69,7 @@
 
     move-result-object v0
 
-    .line 1767
+    .line 1770
     .local v0, "epicenter":Landroid/graphics/Rect;
     iget-object v2, p0, Landroid/widget/PopupWindow$PopupDecorView$1;->val$enterTransition:Landroid/transition/Transition;
 
@@ -79,7 +79,7 @@
 
     invoke-virtual {v2, v3}, Landroid/transition/Transition;->setEpicenterCallback(Landroid/transition/Transition$EpicenterCallback;)V
 
-    .line 1773
+    .line 1776
     iget-object v2, p0, Landroid/widget/PopupWindow$PopupDecorView$1;->this$1:Landroid/widget/PopupWindow$PopupDecorView;
 
     iget-object v3, p0, Landroid/widget/PopupWindow$PopupDecorView$1;->val$enterTransition:Landroid/transition/Transition;
@@ -87,6 +87,6 @@
     # invokes: Landroid/widget/PopupWindow$PopupDecorView;->startEnterTransition(Landroid/transition/Transition;)V
     invoke-static {v2, v3}, Landroid/widget/PopupWindow$PopupDecorView;->access$1000(Landroid/widget/PopupWindow$PopupDecorView;Landroid/transition/Transition;)V
 
-    .line 1774
+    .line 1777
     return-void
 .end method
