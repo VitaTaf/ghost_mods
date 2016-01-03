@@ -39997,6 +39997,24 @@
     return-void
 .end method
 
+.method public setTransitionVisibility(I)V
+    .locals 1
+    .param p1, "visibility"    # I
+
+    .prologue
+    .line 8032
+    iget v0, p0, Landroid/view/View;->mViewFlags:I
+
+    and-int/lit8 v0, v0, -0xd
+
+    or-int/2addr v0, p1
+
+    iput v0, p0, Landroid/view/View;->mViewFlags:I
+
+    .line 8033
+    return-void
+.end method
+
 .method public setTranslationX(F)V
     .locals 3
     .param p1, "translationX"    # F

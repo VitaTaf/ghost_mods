@@ -13,7 +13,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/view/View;)V
-    .locals 2
+    .locals 3
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
@@ -43,9 +43,11 @@
 
     .line 42
     .local v0, "parent":Landroid/view/ViewGroup;
-    const/4 v1, 0x4
+    iget-object v1, p0, Landroid/view/GhostView;->mView:Landroid/view/View;
 
-    invoke-direct {p0, v1}, Landroid/view/GhostView;->setGhostedVisibility(I)V
+    const/4 v2, 0x4
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setTransitionVisibility(I)V
 
     .line 43
     const/4 v1, 0x1
@@ -1099,28 +1101,6 @@
     return-void
 .end method
 
-.method private setGhostedVisibility(I)V
-    .locals 2
-    .param p1, "visibility"    # I
-
-    .prologue
-    .line 75
-    iget-object v0, p0, Landroid/view/GhostView;->mView:Landroid/view/View;
-
-    iget-object v1, p0, Landroid/view/GhostView;->mView:Landroid/view/View;
-
-    iget v1, v1, Landroid/view/View;->mViewFlags:I
-
-    and-int/lit8 v1, v1, -0xd
-
-    or-int/2addr v1, p1
-
-    iput v1, v0, Landroid/view/View;->mViewFlags:I
-
-    .line 76
-    return-void
-.end method
-
 
 # virtual methods
 .method protected onDetachedFromWindow()V
@@ -1136,9 +1116,11 @@
     if-nez v1, :cond_0
 
     .line 82
-    const/4 v1, 0x0
+    iget-object v1, p0, Landroid/view/GhostView;->mView:Landroid/view/View;
 
-    invoke-direct {p0, v1}, Landroid/view/GhostView;->setGhostedVisibility(I)V
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setTransitionVisibility(I)V
 
     .line 83
     iget-object v1, p0, Landroid/view/GhostView;->mView:Landroid/view/View;
@@ -1265,7 +1247,9 @@
     .line 70
     .local v0, "inverseVisibility":I
     :goto_0
-    invoke-direct {p0, v0}, Landroid/view/GhostView;->setGhostedVisibility(I)V
+    iget-object v1, p0, Landroid/view/GhostView;->mView:Landroid/view/View;
+
+    invoke-virtual {v1, v0}, Landroid/view/View;->setTransitionVisibility(I)V
 
     .line 72
     .end local v0    # "inverseVisibility":I

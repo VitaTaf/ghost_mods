@@ -1385,7 +1385,7 @@
     .line 451
     const/16 v25, 0x0
 
-    invoke-virtual/range {v24 .. v25}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual/range {v24 .. v25}, Landroid/view/View;->setTransitionVisibility(I)V
 
     .line 453
     :cond_f
@@ -1443,7 +1443,7 @@
     .line 460
     move-object/from16 v0, v24
 
-    invoke-virtual {v0, v15}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v15}, Landroid/view/View;->setTransitionVisibility(I)V
 
     goto/16 :goto_0
 

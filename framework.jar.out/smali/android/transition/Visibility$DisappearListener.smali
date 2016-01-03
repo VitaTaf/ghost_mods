@@ -89,7 +89,7 @@
 
     iget v1, p0, Landroid/transition/Visibility$DisappearListener;->mFinalVisibility:I
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setTransitionVisibility(I)V
 
     goto :goto_0
 .end method
@@ -141,7 +141,7 @@
 
     iget v1, p0, Landroid/transition/Visibility$DisappearListener;->mFinalVisibility:I
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setTransitionVisibility(I)V
 
     .line 524
     :cond_0
@@ -176,7 +176,7 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setTransitionVisibility(I)V
 
     .line 531
     :cond_0
