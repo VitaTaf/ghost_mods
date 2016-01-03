@@ -1827,6 +1827,14 @@
 
 .field public static final Keyboard_verticalGap:I = 0x3
 
+.field public static final Keyframe:[I
+
+.field public static final Keyframe_fraction:I = 0x2
+
+.field public static final Keyframe_value:I = 0x0
+
+.field public static final Keyframe_valueType:I = 0x1
+
 .field public static final KeyguardGlowStripView:[I
 
 .field public static final KeyguardGlowStripView_dotSize:I = 0x0
@@ -2369,6 +2377,16 @@
 .field public static final PropertyAnimator_propertyXName:I = 0x2
 
 .field public static final PropertyAnimator_propertyYName:I = 0x3
+
+.field public static final PropertyValuesHolder:[I
+
+.field public static final PropertyValuesHolder_propertyName:I = 0x3
+
+.field public static final PropertyValuesHolder_valueFrom:I = 0x0
+
+.field public static final PropertyValuesHolder_valueTo:I = 0x1
+
+.field public static final PropertyValuesHolder_valueType:I = 0x2
 
 .field public static final QuickContactBadge:[I
 
@@ -5663,6 +5681,13 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->Keyboard_Row:[I
 
+    .line 39782
+    new-array v0, v6, [I
+
+    fill-array-data v0, :array_d2
+
+    sput-object v0, Lcom/android/internal/R$styleable;->Keyframe:[I
+
     .line 40650
     new-array v0, v6, [I
 
@@ -6048,6 +6073,13 @@
     fill-array-data v0, :array_89
 
     sput-object v0, Lcom/android/internal/R$styleable;->PropertyAnimator:[I
+
+    .line 44452
+    new-array v0, v6, [I
+
+    fill-array-data v0, :array_d3
+
+    sput-object v0, Lcom/android/internal/R$styleable;->PropertyValuesHolder:[I
 
     .line 45206
     new-array v0, v3, [I
@@ -8048,6 +8080,15 @@
         0x101024d
     .end array-data
 
+    .line 39784
+    :array_d2
+    .array-data 4
+        0x1010024
+        0x1010141
+        0x10102e0
+        0x11600b6
+    .end array-data
+
     .line 40650
     :array_64
     .array-data 4
@@ -8449,6 +8490,15 @@
         0x1010405
         0x1010474
         0x1010475
+    .end array-data
+
+    .line 44468
+    :array_d3
+    .array-data 4
+        0x10102de
+        0x10102df
+        0x10102e0
+        0x10102e1
     .end array-data
 
     .line 45229

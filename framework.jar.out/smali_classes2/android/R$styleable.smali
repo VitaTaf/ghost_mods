@@ -1725,11 +1725,13 @@
 
 .field public static final Keyframe:[I
 
-.field public static final Keyframe_fraction:I = 0x2
+.field public static final Keyframe_fraction:I = 0x3
+
+.field public static final Keyframe_interpolator:I = 0x1
 
 .field public static final Keyframe_value:I = 0x0
 
-.field public static final Keyframe_valueType:I = 0x1
+.field public static final Keyframe_valueType:I = 0x2
 
 .field public static final KeyguardGlowStripView:[I
 
@@ -5287,7 +5289,7 @@
 
     sput-object v0, Landroid/R$styleable;->Keyboard_Row:[I
 
-    new-array v0, v5, [I
+    new-array v0, v6, [I
 
     fill-array-data v0, :array_d2
 
@@ -7687,6 +7689,7 @@
     :array_d2
     .array-data 4
         0x1010024
+        0x1010141
         0x10102e0
         0x11600b6
     .end array-data

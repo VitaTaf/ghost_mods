@@ -950,12 +950,12 @@
     .param p1, "id"    # I
 
     .prologue
-    .line 1021
+    .line 1026
     sget-object v1, Landroid/animation/AnimatorInflater;->sTmpTypedValue:Landroid/util/TypedValue;
 
     monitor-enter v1
 
-    .line 1022
+    .line 1027
     :try_start_0
     sget-object v0, Landroid/animation/AnimatorInflater;->sTmpTypedValue:Landroid/util/TypedValue;
 
@@ -963,7 +963,7 @@
 
     invoke-virtual {p0, p1, v0, v2}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
 
-    .line 1023
+    .line 1028
     sget-object v0, Landroid/animation/AnimatorInflater;->sTmpTypedValue:Landroid/util/TypedValue;
 
     iget v0, v0, Landroid/util/TypedValue;->changingConfigurations:I
@@ -972,7 +972,7 @@
 
     return v0
 
-    .line 1024
+    .line 1029
     :catchall_0
     move-exception v0
 
@@ -2185,39 +2185,39 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 976
+    .line 981
     const/4 v0, 0x0
 
-    .line 977
+    .line 982
     .local v0, "arrayAnimator":Landroid/content/res/TypedArray;
     const/4 v1, 0x0
 
-    .line 979
+    .line 984
     .local v1, "arrayObjectAnimator":Landroid/content/res/TypedArray;
     if-eqz p1, :cond_5
 
-    .line 980
+    .line 985
     sget-object v4, Lcom/android/internal/R$styleable;->Animator:[I
 
     invoke-virtual {p1, p2, v4, v5, v5}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 986
+    .line 991
     :goto_0
     if-eqz p3, :cond_0
 
-    .line 987
+    .line 992
     if-eqz p1, :cond_6
 
-    .line 988
+    .line 993
     sget-object v4, Lcom/android/internal/R$styleable;->PropertyAnimator:[I
 
     invoke-virtual {p1, p2, v4, v5, v5}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v1
 
-    .line 993
+    .line 998
     :goto_1
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->getChangingConfigurations()I
 
@@ -2225,17 +2225,17 @@
 
     invoke-virtual {p3, v4}, Landroid/animation/ValueAnimator;->appendChangingConfigurations(I)V
 
-    .line 996
+    .line 1001
     :cond_0
     if-nez p3, :cond_1
 
-    .line 997
+    .line 1002
     new-instance p3, Landroid/animation/ValueAnimator;
 
     .end local p3    # "anim":Landroid/animation/ValueAnimator;
     invoke-direct {p3}, Landroid/animation/ValueAnimator;-><init>()V
 
-    .line 999
+    .line 1004
     .restart local p3    # "anim":Landroid/animation/ValueAnimator;
     :cond_1
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->getChangingConfigurations()I
@@ -2244,24 +2244,24 @@
 
     invoke-virtual {p3, v4}, Landroid/animation/ValueAnimator;->appendChangingConfigurations(I)V
 
-    .line 1001
+    .line 1006
     invoke-static {p3, v0, v1, p4}, Landroid/animation/AnimatorInflater;->parseAnimatorFromTypeArray(Landroid/animation/ValueAnimator;Landroid/content/res/TypedArray;Landroid/content/res/TypedArray;F)V
 
-    .line 1003
+    .line 1008
     invoke-virtual {v0, v5, v5}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v3
 
-    .line 1004
+    .line 1009
     .local v3, "resID":I
     if-lez v3, :cond_3
 
-    .line 1005
+    .line 1010
     invoke-static {p0, p1, v3}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;I)Landroid/view/animation/Interpolator;
 
     move-result-object v2
 
-    .line 1006
+    .line 1011
     .local v2, "interpolator":Landroid/view/animation/Interpolator;
     instance-of v4, v2, Landroid/view/animation/BaseInterpolator;
 
@@ -2269,7 +2269,7 @@
 
     move-object v4, v2
 
-    .line 1007
+    .line 1012
     check-cast v4, Landroid/view/animation/BaseInterpolator;
 
     invoke-virtual {v4}, Landroid/view/animation/BaseInterpolator;->getChangingConfiguration()I
@@ -2278,26 +2278,26 @@
 
     invoke-virtual {p3, v4}, Landroid/animation/ValueAnimator;->appendChangingConfigurations(I)V
 
-    .line 1010
+    .line 1015
     :cond_2
     invoke-virtual {p3, v2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1013
+    .line 1018
     .end local v2    # "interpolator":Landroid/view/animation/Interpolator;
     :cond_3
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 1014
+    .line 1019
     if-eqz v1, :cond_4
 
-    .line 1015
+    .line 1020
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 1017
+    .line 1022
     :cond_4
     return-object p3
 
-    .line 982
+    .line 987
     .end local v3    # "resID":I
     :cond_5
     sget-object v4, Lcom/android/internal/R$styleable;->Animator:[I
@@ -2308,7 +2308,7 @@
 
     goto :goto_0
 
-    .line 991
+    .line 996
     :cond_6
     sget-object v4, Lcom/android/internal/R$styleable;->PropertyAnimator:[I
 
@@ -2320,7 +2320,7 @@
 .end method
 
 .method private static loadKeyframe(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;I)Landroid/animation/Keyframe;
-    .locals 9
+    .locals 12
     .param p0, "res"    # Landroid/content/res/Resources;
     .param p1, "theme"    # Landroid/content/res/Resources$Theme;
     .param p2, "attrs"    # Landroid/util/AttributeSet;
@@ -2333,47 +2333,49 @@
     .end annotation
 
     .prologue
-    const/4 v6, 0x0
+    const/4 v8, 0x1
+
+    const/4 v9, 0x0
 
     .line 921
-    if-eqz p1, :cond_0
+    if-eqz p1, :cond_1
 
     .line 922
-    sget-object v7, Lcom/android/internal/R$styleable;->Keyframe:[I
+    sget-object v10, Lcom/android/internal/R$styleable;->Keyframe:[I
 
-    invoke-virtual {p1, p2, v7, v6, v6}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, p2, v10, v9, v9}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
     .line 927
     .local v0, "a":Landroid/content/res/TypedArray;
     :goto_0
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
     .line 929
-    .local v4, "keyframe":Landroid/animation/Keyframe;
-    const/4 v7, 0x2
+    .local v5, "keyframe":Landroid/animation/Keyframe;
+    const/4 v10, 0x3
 
-    const/high16 v8, -0x40800000    # -1.0f
+    const/high16 v11, -0x40800000    # -1.0f
 
-    invoke-virtual {v0, v7, v8}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-virtual {v0, v10, v11}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
     move-result v1
 
     .line 931
     .local v1, "fraction":F
-    invoke-virtual {v0, v6}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
+    invoke-virtual {v0, v9}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
 
-    move-result-object v7
+    move-result-object v10
 
-    if-eqz v7, :cond_1
+    if-eqz v10, :cond_2
 
-    const/4 v2, 0x1
+    move v2, v8
 
     .line 933
     .local v2, "hasValue":Z
     :goto_1
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_3
 
     .line 934
     packed-switch p3, :pswitch_data_0
@@ -2381,20 +2383,41 @@
     .line 950
     :goto_2
     :pswitch_0
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v0, v8, v9}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result v6
+
+    .line 951
+    .local v6, "resID":I
+    if-lez v6, :cond_0
 
     .line 952
-    return-object v4
+    invoke-static {p0, p1, v6}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;I)Landroid/view/animation/Interpolator;
+
+    move-result-object v4
+
+    .line 953
+    .local v4, "interpolator":Landroid/view/animation/Interpolator;
+    invoke-virtual {v5, v4}, Landroid/animation/Keyframe;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    .line 955
+    .end local v4    # "interpolator":Landroid/view/animation/Interpolator;
+    :cond_0
+    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+
+    .line 957
+    return-object v5
 
     .line 924
     .end local v0    # "a":Landroid/content/res/TypedArray;
     .end local v1    # "fraction":F
     .end local v2    # "hasValue":Z
-    .end local v4    # "keyframe":Landroid/animation/Keyframe;
-    :cond_0
-    sget-object v7, Lcom/android/internal/R$styleable;->Keyframe:[I
+    .end local v5    # "keyframe":Landroid/animation/Keyframe;
+    .end local v6    # "resID":I
+    :cond_1
+    sget-object v10, Lcom/android/internal/R$styleable;->Keyframe:[I
 
-    invoke-virtual {p0, p2, v7}, Landroid/content/res/Resources;->obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    invoke-virtual {p0, p2, v10}, Landroid/content/res/Resources;->obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
@@ -2402,9 +2425,9 @@
     goto :goto_0
 
     .restart local v1    # "fraction":F
-    .restart local v4    # "keyframe":Landroid/animation/Keyframe;
-    :cond_1
-    move v2, v6
+    .restart local v5    # "keyframe":Landroid/animation/Keyframe;
+    :cond_2
+    move v2, v9
 
     .line 931
     goto :goto_1
@@ -2412,25 +2435,25 @@
     .line 936
     .restart local v2    # "hasValue":Z
     :pswitch_1
-    const/4 v7, 0x0
+    const/4 v10, 0x0
 
-    invoke-virtual {v0, v6, v7}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-virtual {v0, v9, v10}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
-    move-result v5
+    move-result v7
 
     .line 937
-    .local v5, "value":F
-    invoke-static {v1, v5}, Landroid/animation/Keyframe;->ofFloat(FF)Landroid/animation/Keyframe;
+    .local v7, "value":F
+    invoke-static {v1, v7}, Landroid/animation/Keyframe;->ofFloat(FF)Landroid/animation/Keyframe;
 
-    move-result-object v4
+    move-result-object v5
 
     .line 938
     goto :goto_2
 
     .line 941
-    .end local v5    # "value":F
+    .end local v7    # "value":F
     :pswitch_2
-    invoke-virtual {v0, v6, v6}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {v0, v9, v9}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v3
 
@@ -2438,26 +2461,26 @@
     .local v3, "intValue":I
     invoke-static {v1, v3}, Landroid/animation/Keyframe;->ofInt(FI)Landroid/animation/Keyframe;
 
-    move-result-object v4
+    move-result-object v5
 
     goto :goto_2
 
     .line 946
     .end local v3    # "intValue":I
-    :cond_2
-    if-nez p3, :cond_3
+    :cond_3
+    if-nez p3, :cond_4
 
     invoke-static {v1}, Landroid/animation/Keyframe;->ofFloat(F)Landroid/animation/Keyframe;
 
-    move-result-object v4
+    move-result-object v5
 
     :goto_3
     goto :goto_2
 
-    :cond_3
+    :cond_4
     invoke-static {v1}, Landroid/animation/Keyframe;->ofInt(F)Landroid/animation/Keyframe;
 
-    move-result-object v4
+    move-result-object v5
 
     goto :goto_3
 
@@ -2486,16 +2509,16 @@
     .end annotation
 
     .prologue
-    .line 957
+    .line 962
     new-instance v0, Landroid/animation/ObjectAnimator;
 
     invoke-direct {v0}, Landroid/animation/ObjectAnimator;-><init>()V
 
-    .line 959
+    .line 964
     .local v0, "anim":Landroid/animation/ObjectAnimator;
     invoke-static {p0, p1, p2, v0, p3}, Landroid/animation/AnimatorInflater;->loadAnimator(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;Landroid/animation/ValueAnimator;F)Landroid/animation/ValueAnimator;
 
-    .line 961
+    .line 966
     return-object v0
 .end method
 
