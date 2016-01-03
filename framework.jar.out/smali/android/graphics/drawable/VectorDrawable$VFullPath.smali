@@ -53,49 +53,49 @@
 
     const/4 v0, 0x0
 
-    .line 1374
+    .line 1377
     invoke-direct {p0}, Landroid/graphics/drawable/VectorDrawable$VPath;-><init>()V
 
-    .line 1359
+    .line 1362
     iput v2, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeColor:I
 
-    .line 1360
+    .line 1363
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeWidth:F
 
-    .line 1362
+    .line 1365
     iput v2, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mFillColor:I
 
-    .line 1363
+    .line 1366
     iput v1, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeAlpha:F
 
-    .line 1365
+    .line 1368
     iput v1, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mFillAlpha:F
 
-    .line 1366
+    .line 1369
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathStart:F
 
-    .line 1367
+    .line 1370
     iput v1, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathEnd:F
 
-    .line 1368
+    .line 1371
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathOffset:F
 
-    .line 1370
+    .line 1373
     sget-object v0, Landroid/graphics/Paint$Cap;->BUTT:Landroid/graphics/Paint$Cap;
 
     iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeLineCap:Landroid/graphics/Paint$Cap;
 
-    .line 1371
+    .line 1374
     sget-object v0, Landroid/graphics/Paint$Join;->MITER:Landroid/graphics/Paint$Join;
 
     iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeLineJoin:Landroid/graphics/Paint$Join;
 
-    .line 1372
+    .line 1375
     const/high16 v0, 0x40800000    # 4.0f
 
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeMiterlimit:F
 
-    .line 1376
+    .line 1379
     return-void
 .end method
 
@@ -110,114 +110,114 @@
 
     const/4 v0, 0x0
 
-    .line 1379
+    .line 1382
     invoke-direct {p0, p1}, Landroid/graphics/drawable/VectorDrawable$VPath;-><init>(Landroid/graphics/drawable/VectorDrawable$VPath;)V
 
-    .line 1359
+    .line 1362
     iput v2, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeColor:I
 
-    .line 1360
+    .line 1363
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeWidth:F
 
-    .line 1362
+    .line 1365
     iput v2, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mFillColor:I
 
-    .line 1363
+    .line 1366
     iput v1, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeAlpha:F
 
-    .line 1365
+    .line 1368
     iput v1, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mFillAlpha:F
 
-    .line 1366
+    .line 1369
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathStart:F
 
-    .line 1367
+    .line 1370
     iput v1, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathEnd:F
 
-    .line 1368
+    .line 1371
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathOffset:F
 
-    .line 1370
+    .line 1373
     sget-object v0, Landroid/graphics/Paint$Cap;->BUTT:Landroid/graphics/Paint$Cap;
 
     iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeLineCap:Landroid/graphics/Paint$Cap;
 
-    .line 1371
+    .line 1374
     sget-object v0, Landroid/graphics/Paint$Join;->MITER:Landroid/graphics/Paint$Join;
 
     iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeLineJoin:Landroid/graphics/Paint$Join;
 
-    .line 1372
+    .line 1375
     const/high16 v0, 0x40800000    # 4.0f
 
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeMiterlimit:F
 
-    .line 1380
+    .line 1383
     iget-object v0, p1, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mThemeAttrs:[I
 
     iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mThemeAttrs:[I
 
-    .line 1382
+    .line 1385
     iget v0, p1, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeColor:I
 
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeColor:I
 
-    .line 1383
+    .line 1386
     iget v0, p1, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeWidth:F
 
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeWidth:F
 
-    .line 1384
+    .line 1387
     iget v0, p1, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeAlpha:F
 
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeAlpha:F
 
-    .line 1385
+    .line 1388
     iget v0, p1, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mFillColor:I
 
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mFillColor:I
 
-    .line 1386
+    .line 1389
     iget v0, p1, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mFillRule:I
 
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mFillRule:I
 
-    .line 1387
+    .line 1390
     iget v0, p1, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mFillAlpha:F
 
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mFillAlpha:F
 
-    .line 1388
+    .line 1391
     iget v0, p1, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathStart:F
 
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathStart:F
 
-    .line 1389
+    .line 1392
     iget v0, p1, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathEnd:F
 
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathEnd:F
 
-    .line 1390
+    .line 1393
     iget v0, p1, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathOffset:F
 
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathOffset:F
 
-    .line 1392
+    .line 1395
     iget-object v0, p1, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeLineCap:Landroid/graphics/Paint$Cap;
 
     iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeLineCap:Landroid/graphics/Paint$Cap;
 
-    .line 1393
+    .line 1396
     iget-object v0, p1, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeLineJoin:Landroid/graphics/Paint$Join;
 
     iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeLineJoin:Landroid/graphics/Paint$Join;
 
-    .line 1394
+    .line 1397
     iget v0, p1, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeMiterlimit:F
 
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeMiterlimit:F
 
-    .line 1395
+    .line 1398
     return-void
 .end method
 
@@ -227,34 +227,34 @@
     .param p2, "defValue"    # Landroid/graphics/Paint$Cap;
 
     .prologue
-    .line 1398
+    .line 1401
     packed-switch p1, :pswitch_data_0
 
-    .line 1406
+    .line 1409
     .end local p2    # "defValue":Landroid/graphics/Paint$Cap;
     :goto_0
     return-object p2
 
-    .line 1400
+    .line 1403
     .restart local p2    # "defValue":Landroid/graphics/Paint$Cap;
     :pswitch_0
     sget-object p2, Landroid/graphics/Paint$Cap;->BUTT:Landroid/graphics/Paint$Cap;
 
     goto :goto_0
 
-    .line 1402
+    .line 1405
     :pswitch_1
     sget-object p2, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
 
     goto :goto_0
 
-    .line 1404
+    .line 1407
     :pswitch_2
     sget-object p2, Landroid/graphics/Paint$Cap;->SQUARE:Landroid/graphics/Paint$Cap;
 
     goto :goto_0
 
-    .line 1398
+    .line 1401
     nop
 
     :pswitch_data_0
@@ -271,34 +271,34 @@
     .param p2, "defValue"    # Landroid/graphics/Paint$Join;
 
     .prologue
-    .line 1411
+    .line 1414
     packed-switch p1, :pswitch_data_0
 
-    .line 1419
+    .line 1422
     .end local p2    # "defValue":Landroid/graphics/Paint$Join;
     :goto_0
     return-object p2
 
-    .line 1413
+    .line 1416
     .restart local p2    # "defValue":Landroid/graphics/Paint$Join;
     :pswitch_0
     sget-object p2, Landroid/graphics/Paint$Join;->MITER:Landroid/graphics/Paint$Join;
 
     goto :goto_0
 
-    .line 1415
+    .line 1418
     :pswitch_1
     sget-object p2, Landroid/graphics/Paint$Join;->ROUND:Landroid/graphics/Paint$Join;
 
     goto :goto_0
 
-    .line 1417
+    .line 1420
     :pswitch_2
     sget-object p2, Landroid/graphics/Paint$Join;->BEVEL:Landroid/graphics/Paint$Join;
 
     goto :goto_0
 
-    .line 1411
+    .line 1414
     nop
 
     :pswitch_data_0
@@ -316,7 +316,7 @@
     .prologue
     const/4 v4, -0x1
 
-    .line 1437
+    .line 1440
     iget v2, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mChangingConfigurations:I
 
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->getChangingConfigurations()I
@@ -327,28 +327,28 @@
 
     iput v2, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mChangingConfigurations:I
 
-    .line 1440
+    .line 1443
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->extractThemeAttrs()[I
 
     move-result-object v2
 
     iput-object v2, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mThemeAttrs:[I
 
-    .line 1442
+    .line 1445
     const/4 v2, 0x0
 
     invoke-virtual {p1, v2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1443
+    .line 1446
     .local v1, "pathName":Ljava/lang/String;
     if-eqz v1, :cond_0
 
-    .line 1444
+    .line 1447
     iput-object v1, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mPathName:Ljava/lang/String;
 
-    .line 1447
+    .line 1450
     :cond_0
     const/4 v2, 0x2
 
@@ -356,18 +356,18 @@
 
     move-result-object v0
 
-    .line 1448
+    .line 1451
     .local v0, "pathData":Ljava/lang/String;
     if-eqz v0, :cond_1
 
-    .line 1449
+    .line 1452
     invoke-static {v0}, Landroid/util/PathParser;->createNodesFromPathData(Ljava/lang/String;)[Landroid/util/PathParser$PathDataNode;
 
     move-result-object v2
 
     iput-object v2, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mNodes:[Landroid/util/PathParser$PathDataNode;
 
-    .line 1452
+    .line 1455
     :cond_1
     const/4 v2, 0x1
 
@@ -379,7 +379,7 @@
 
     iput v2, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mFillColor:I
 
-    .line 1454
+    .line 1457
     const/16 v2, 0xc
 
     iget v3, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mFillAlpha:F
@@ -390,7 +390,7 @@
 
     iput v2, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mFillAlpha:F
 
-    .line 1456
+    .line 1459
     const/16 v2, 0x8
 
     invoke-virtual {p1, v2, v4}, Landroid/content/res/TypedArray;->getInt(II)I
@@ -405,7 +405,7 @@
 
     iput-object v2, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeLineCap:Landroid/graphics/Paint$Cap;
 
-    .line 1458
+    .line 1461
     const/16 v2, 0x9
 
     invoke-virtual {p1, v2, v4}, Landroid/content/res/TypedArray;->getInt(II)I
@@ -420,7 +420,7 @@
 
     iput-object v2, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeLineJoin:Landroid/graphics/Paint$Join;
 
-    .line 1460
+    .line 1463
     const/16 v2, 0xa
 
     iget v3, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeMiterlimit:F
@@ -431,7 +431,7 @@
 
     iput v2, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeMiterlimit:F
 
-    .line 1462
+    .line 1465
     const/4 v2, 0x3
 
     iget v3, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeColor:I
@@ -442,7 +442,7 @@
 
     iput v2, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeColor:I
 
-    .line 1464
+    .line 1467
     const/16 v2, 0xb
 
     iget v3, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeAlpha:F
@@ -453,7 +453,7 @@
 
     iput v2, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeAlpha:F
 
-    .line 1466
+    .line 1469
     const/4 v2, 0x4
 
     iget v3, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeWidth:F
@@ -464,7 +464,7 @@
 
     iput v2, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeWidth:F
 
-    .line 1468
+    .line 1471
     const/4 v2, 0x6
 
     iget v3, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathEnd:F
@@ -475,7 +475,7 @@
 
     iput v2, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathEnd:F
 
-    .line 1470
+    .line 1473
     const/4 v2, 0x7
 
     iget v3, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathOffset:F
@@ -486,7 +486,7 @@
 
     iput v2, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathOffset:F
 
-    .line 1472
+    .line 1475
     const/4 v2, 0x5
 
     iget v3, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathStart:F
@@ -497,7 +497,7 @@
 
     iput v2, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathStart:F
 
-    .line 1474
+    .line 1477
     return-void
 .end method
 
@@ -508,16 +508,16 @@
     .param p1, "t"    # Landroid/content/res/Resources$Theme;
 
     .prologue
-    .line 1478
+    .line 1481
     iget-object v1, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mThemeAttrs:[I
 
     if-nez v1, :cond_0
 
-    .line 1485
+    .line 1488
     :goto_0
     return-void
 
-    .line 1482
+    .line 1485
     :cond_0
     iget-object v1, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mThemeAttrs:[I
 
@@ -527,11 +527,11 @@
 
     move-result-object v0
 
-    .line 1483
+    .line 1486
     .local v0, "a":Landroid/content/res/TypedArray;
     invoke-direct {p0, v0}, Landroid/graphics/drawable/VectorDrawable$VFullPath;->updateStateFromTypedArray(Landroid/content/res/TypedArray;)V
 
-    .line 1484
+    .line 1487
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
     goto :goto_0
@@ -541,7 +541,7 @@
     .locals 1
 
     .prologue
-    .line 1425
+    .line 1428
     iget-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mThemeAttrs:[I
 
     if-eqz v0, :cond_0
@@ -561,7 +561,7 @@
     .locals 1
 
     .prologue
-    .line 1530
+    .line 1533
     iget v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mFillAlpha:F
 
     return v0
@@ -571,7 +571,7 @@
     .locals 1
 
     .prologue
-    .line 1520
+    .line 1523
     iget v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mFillColor:I
 
     return v0
@@ -581,7 +581,7 @@
     .locals 1
 
     .prologue
-    .line 1510
+    .line 1513
     iget v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeAlpha:F
 
     return v0
@@ -591,7 +591,7 @@
     .locals 1
 
     .prologue
-    .line 1490
+    .line 1493
     iget v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeColor:I
 
     return v0
@@ -601,7 +601,7 @@
     .locals 1
 
     .prologue
-    .line 1500
+    .line 1503
     iget v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeWidth:F
 
     return v0
@@ -611,7 +611,7 @@
     .locals 1
 
     .prologue
-    .line 1550
+    .line 1553
     iget v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathEnd:F
 
     return v0
@@ -621,7 +621,7 @@
     .locals 1
 
     .prologue
-    .line 1560
+    .line 1563
     iget v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathOffset:F
 
     return v0
@@ -631,7 +631,7 @@
     .locals 1
 
     .prologue
-    .line 1540
+    .line 1543
     iget v0, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathStart:F
 
     return v0
@@ -644,21 +644,21 @@
     .param p3, "theme"    # Landroid/content/res/Resources$Theme;
 
     .prologue
-    .line 1429
+    .line 1432
     sget-object v1, Lcom/android/internal/R$styleable;->VectorDrawablePath:[I
 
     invoke-static {p1, p3, p2, v1}, Landroid/graphics/drawable/Drawable;->obtainAttributes(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 1431
+    .line 1434
     .local v0, "a":Landroid/content/res/TypedArray;
     invoke-direct {p0, v0}, Landroid/graphics/drawable/VectorDrawable$VFullPath;->updateStateFromTypedArray(Landroid/content/res/TypedArray;)V
 
-    .line 1432
+    .line 1435
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 1433
+    .line 1436
     return-void
 .end method
 
@@ -667,10 +667,10 @@
     .param p1, "fillAlpha"    # F
 
     .prologue
-    .line 1535
+    .line 1538
     iput p1, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mFillAlpha:F
 
-    .line 1536
+    .line 1539
     return-void
 .end method
 
@@ -679,10 +679,10 @@
     .param p1, "fillColor"    # I
 
     .prologue
-    .line 1525
+    .line 1528
     iput p1, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mFillColor:I
 
-    .line 1526
+    .line 1529
     return-void
 .end method
 
@@ -691,10 +691,10 @@
     .param p1, "strokeAlpha"    # F
 
     .prologue
-    .line 1515
+    .line 1518
     iput p1, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeAlpha:F
 
-    .line 1516
+    .line 1519
     return-void
 .end method
 
@@ -703,10 +703,10 @@
     .param p1, "strokeColor"    # I
 
     .prologue
-    .line 1495
+    .line 1498
     iput p1, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeColor:I
 
-    .line 1496
+    .line 1499
     return-void
 .end method
 
@@ -715,10 +715,10 @@
     .param p1, "strokeWidth"    # F
 
     .prologue
-    .line 1505
+    .line 1508
     iput p1, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeWidth:F
 
-    .line 1506
+    .line 1509
     return-void
 .end method
 
@@ -727,10 +727,10 @@
     .param p1, "trimPathEnd"    # F
 
     .prologue
-    .line 1555
+    .line 1558
     iput p1, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathEnd:F
 
-    .line 1556
+    .line 1559
     return-void
 .end method
 
@@ -739,10 +739,10 @@
     .param p1, "trimPathOffset"    # F
 
     .prologue
-    .line 1565
+    .line 1568
     iput p1, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathOffset:F
 
-    .line 1566
+    .line 1569
     return-void
 .end method
 
@@ -751,9 +751,9 @@
     .param p1, "trimPathStart"    # F
 
     .prologue
-    .line 1545
+    .line 1548
     iput p1, p0, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathStart:F
 
-    .line 1546
+    .line 1549
     return-void
 .end method

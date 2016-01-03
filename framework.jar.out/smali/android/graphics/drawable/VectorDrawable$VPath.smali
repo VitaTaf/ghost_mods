@@ -27,15 +27,15 @@
     .locals 1
 
     .prologue
-    .line 1262
+    .line 1265
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1258
+    .line 1261
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPath;->mNodes:[Landroid/util/PathParser$PathDataNode;
 
-    .line 1264
+    .line 1267
     return-void
 .end method
 
@@ -44,25 +44,25 @@
     .param p1, "copy"    # Landroid/graphics/drawable/VectorDrawable$VPath;
 
     .prologue
-    .line 1266
+    .line 1269
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1258
+    .line 1261
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPath;->mNodes:[Landroid/util/PathParser$PathDataNode;
 
-    .line 1267
+    .line 1270
     iget-object v0, p1, Landroid/graphics/drawable/VectorDrawable$VPath;->mPathName:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPath;->mPathName:Ljava/lang/String;
 
-    .line 1268
+    .line 1271
     iget v0, p1, Landroid/graphics/drawable/VectorDrawable$VPath;->mChangingConfigurations:I
 
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VPath;->mChangingConfigurations:I
 
-    .line 1269
+    .line 1272
     iget-object v0, p1, Landroid/graphics/drawable/VectorDrawable$VPath;->mNodes:[Landroid/util/PathParser$PathDataNode;
 
     invoke-static {v0}, Landroid/util/PathParser;->deepCopyNodes([Landroid/util/PathParser$PathDataNode;)[Landroid/util/PathParser$PathDataNode;
@@ -71,7 +71,7 @@
 
     iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPath;->mNodes:[Landroid/util/PathParser$PathDataNode;
 
-    .line 1270
+    .line 1273
     return-void
 .end method
 
@@ -82,7 +82,7 @@
     .param p1, "t"    # Landroid/content/res/Resources$Theme;
 
     .prologue
-    .line 1288
+    .line 1291
     return-void
 .end method
 
@@ -90,7 +90,7 @@
     .locals 1
 
     .prologue
-    .line 1284
+    .line 1287
     const/4 v0, 0x0
 
     return v0
@@ -100,7 +100,7 @@
     .locals 1
 
     .prologue
-    .line 1297
+    .line 1300
     iget-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPath;->mNodes:[Landroid/util/PathParser$PathDataNode;
 
     return-object v0
@@ -110,7 +110,7 @@
     .locals 1
 
     .prologue
-    .line 1280
+    .line 1283
     iget-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPath;->mPathName:Ljava/lang/String;
 
     return-object v0
@@ -120,7 +120,7 @@
     .locals 1
 
     .prologue
-    .line 1291
+    .line 1294
     const/4 v0, 0x0
 
     return v0
@@ -131,7 +131,7 @@
     .param p1, "nodes"    # [Landroid/util/PathParser$PathDataNode;
 
     .prologue
-    .line 1302
+    .line 1305
     iget-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPath;->mNodes:[Landroid/util/PathParser$PathDataNode;
 
     invoke-static {v0, p1}, Landroid/util/PathParser;->canMorph([Landroid/util/PathParser$PathDataNode;[Landroid/util/PathParser$PathDataNode;)Z
@@ -140,18 +140,18 @@
 
     if-nez v0, :cond_0
 
-    .line 1304
+    .line 1307
     invoke-static {p1}, Landroid/util/PathParser;->deepCopyNodes([Landroid/util/PathParser$PathDataNode;)[Landroid/util/PathParser$PathDataNode;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPath;->mNodes:[Landroid/util/PathParser$PathDataNode;
 
-    .line 1308
+    .line 1311
     :goto_0
     return-void
 
-    .line 1306
+    .line 1309
     :cond_0
     iget-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPath;->mNodes:[Landroid/util/PathParser$PathDataNode;
 
@@ -165,20 +165,20 @@
     .param p1, "path"    # Landroid/graphics/Path;
 
     .prologue
-    .line 1273
+    .line 1276
     invoke-virtual {p1}, Landroid/graphics/Path;->reset()V
 
-    .line 1274
+    .line 1277
     iget-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPath;->mNodes:[Landroid/util/PathParser$PathDataNode;
 
     if-eqz v0, :cond_0
 
-    .line 1275
+    .line 1278
     iget-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPath;->mNodes:[Landroid/util/PathParser$PathDataNode;
 
     invoke-static {v0, p1}, Landroid/util/PathParser$PathDataNode;->nodesToPath([Landroid/util/PathParser$PathDataNode;Landroid/graphics/Path;)V
 
-    .line 1277
+    .line 1280
     :cond_0
     return-void
 .end method

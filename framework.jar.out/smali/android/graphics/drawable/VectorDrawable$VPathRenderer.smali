@@ -65,7 +65,7 @@
     .locals 1
 
     .prologue
-    .line 807
+    .line 808
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
@@ -81,67 +81,67 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 827
+    .line 828
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 808
+    .line 809
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mFinalPathMatrix:Landroid/graphics/Matrix;
 
-    .line 818
+    .line 819
     iput v1, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mBaseWidth:F
 
-    .line 819
+    .line 820
     iput v1, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mBaseHeight:F
 
-    .line 820
+    .line 821
     iput v1, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mViewportWidth:F
 
-    .line 821
+    .line 822
     iput v1, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mViewportHeight:F
 
-    .line 822
+    .line 823
     const/16 v0, 0xff
 
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRootAlpha:I
 
-    .line 823
+    .line 824
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRootName:Ljava/lang/String;
 
-    .line 825
+    .line 826
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mVGTargetsMap:Landroid/util/ArrayMap;
 
-    .line 828
+    .line 829
     new-instance v0, Landroid/graphics/drawable/VectorDrawable$VGroup;
 
     invoke-direct {v0}, Landroid/graphics/drawable/VectorDrawable$VGroup;-><init>()V
 
     iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRootGroup:Landroid/graphics/drawable/VectorDrawable$VGroup;
 
-    .line 829
+    .line 830
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
     iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mPath:Landroid/graphics/Path;
 
-    .line 830
+    .line 831
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
     iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRenderPath:Landroid/graphics/Path;
 
-    .line 831
+    .line 832
     return-void
 .end method
 
@@ -152,46 +152,46 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 852
+    .line 853
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 808
+    .line 809
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mFinalPathMatrix:Landroid/graphics/Matrix;
 
-    .line 818
+    .line 819
     iput v1, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mBaseWidth:F
 
-    .line 819
+    .line 820
     iput v1, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mBaseHeight:F
 
-    .line 820
+    .line 821
     iput v1, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mViewportWidth:F
 
-    .line 821
+    .line 822
     iput v1, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mViewportHeight:F
 
-    .line 822
+    .line 823
     const/16 v0, 0xff
 
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRootAlpha:I
 
-    .line 823
+    .line 824
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRootName:Ljava/lang/String;
 
-    .line 825
+    .line 826
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mVGTargetsMap:Landroid/util/ArrayMap;
 
-    .line 853
+    .line 854
     new-instance v0, Landroid/graphics/drawable/VectorDrawable$VGroup;
 
     iget-object v1, p1, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRootGroup:Landroid/graphics/drawable/VectorDrawable$VGroup;
@@ -202,7 +202,7 @@
 
     iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRootGroup:Landroid/graphics/drawable/VectorDrawable$VGroup;
 
-    .line 854
+    .line 855
     new-instance v0, Landroid/graphics/Path;
 
     iget-object v1, p1, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mPath:Landroid/graphics/Path;
@@ -211,7 +211,7 @@
 
     iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mPath:Landroid/graphics/Path;
 
-    .line 855
+    .line 856
     new-instance v0, Landroid/graphics/Path;
 
     iget-object v1, p1, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRenderPath:Landroid/graphics/Path;
@@ -220,54 +220,54 @@
 
     iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRenderPath:Landroid/graphics/Path;
 
-    .line 856
+    .line 857
     iget v0, p1, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mBaseWidth:F
 
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mBaseWidth:F
 
-    .line 857
+    .line 858
     iget v0, p1, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mBaseHeight:F
 
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mBaseHeight:F
 
-    .line 858
+    .line 859
     iget v0, p1, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mViewportWidth:F
 
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mViewportWidth:F
 
-    .line 859
+    .line 860
     iget v0, p1, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mViewportHeight:F
 
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mViewportHeight:F
 
-    .line 860
+    .line 861
     iget v0, p1, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mChangingConfigurations:I
 
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mChangingConfigurations:I
 
-    .line 861
+    .line 862
     iget v0, p1, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRootAlpha:I
 
     iput v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRootAlpha:I
 
-    .line 862
+    .line 863
     iget-object v0, p1, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRootName:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRootName:Ljava/lang/String;
 
-    .line 863
+    .line 864
     iget-object v0, p1, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRootName:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    .line 864
+    .line 865
     iget-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mVGTargetsMap:Landroid/util/ArrayMap;
 
     iget-object v1, p1, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRootName:Ljava/lang/String;
 
     invoke-virtual {v0, v1, p0}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 866
+    .line 867
     :cond_0
     return-void
 .end method
@@ -277,7 +277,7 @@
     .param p0, "x0"    # Landroid/graphics/drawable/VectorDrawable$VPathRenderer;
 
     .prologue
-    .line 790
+    .line 791
     iget-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRootGroup:Landroid/graphics/drawable/VectorDrawable$VGroup;
 
     return-object v0
@@ -288,7 +288,7 @@
     .param p0, "x0"    # Landroid/graphics/drawable/VectorDrawable$VPathRenderer;
 
     .prologue
-    .line 790
+    .line 791
     iget-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mFillPaint:Landroid/graphics/Paint;
 
     return-object v0
@@ -300,7 +300,7 @@
     .param p1, "x1"    # Landroid/graphics/Paint;
 
     .prologue
-    .line 790
+    .line 791
     iput-object p1, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mFillPaint:Landroid/graphics/Paint;
 
     return-object p1
@@ -311,7 +311,7 @@
     .param p0, "x0"    # Landroid/graphics/drawable/VectorDrawable$VPathRenderer;
 
     .prologue
-    .line 790
+    .line 791
     iget-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mStrokePaint:Landroid/graphics/Paint;
 
     return-object v0
@@ -323,7 +323,7 @@
     .param p1, "x1"    # Landroid/graphics/Paint;
 
     .prologue
-    .line 790
+    .line 791
     iput-object p1, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mStrokePaint:Landroid/graphics/Paint;
 
     return-object p1
@@ -339,7 +339,7 @@
     .param p6, "filter"    # Landroid/graphics/ColorFilter;
 
     .prologue
-    .line 928
+    .line 929
     # getter for: Landroid/graphics/drawable/VectorDrawable$VGroup;->mStackedMatrix:Landroid/graphics/Matrix;
     invoke-static {p1}, Landroid/graphics/drawable/VectorDrawable$VGroup;->access$600(Landroid/graphics/drawable/VectorDrawable$VGroup;)Landroid/graphics/Matrix;
 
@@ -361,6 +361,9 @@
     invoke-virtual {v0, v2}, Landroid/graphics/Matrix;->preConcat(Landroid/graphics/Matrix;)Z
 
     .line 933
+    invoke-virtual {p3}, Landroid/graphics/Canvas;->save()I
+
+    .line 935
     const/4 v10, 0x0
 
     .local v10, "i":I
@@ -373,14 +376,14 @@
 
     if-ge v10, v0, :cond_2
 
-    .line 934
+    .line 936
     iget-object v0, p1, Landroid/graphics/drawable/VectorDrawable$VGroup;->mChildren:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v9
 
-    .line 935
+    .line 937
     .local v9, "child":Ljava/lang/Object;
     instance-of v0, v9, Landroid/graphics/drawable/VectorDrawable$VGroup;
 
@@ -388,10 +391,10 @@
 
     move-object v1, v9
 
-    .line 936
+    .line 938
     check-cast v1, Landroid/graphics/drawable/VectorDrawable$VGroup;
 
-    .line 937
+    .line 939
     .local v1, "childGroup":Landroid/graphics/drawable/VectorDrawable$VGroup;
     # getter for: Landroid/graphics/drawable/VectorDrawable$VGroup;->mStackedMatrix:Landroid/graphics/Matrix;
     invoke-static {p1}, Landroid/graphics/drawable/VectorDrawable$VGroup;->access$600(Landroid/graphics/drawable/VectorDrawable$VGroup;)Landroid/graphics/Matrix;
@@ -410,7 +413,7 @@
 
     invoke-direct/range {v0 .. v6}, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->drawGroupTree(Landroid/graphics/drawable/VectorDrawable$VGroup;Landroid/graphics/Matrix;Landroid/graphics/Canvas;IILandroid/graphics/ColorFilter;)V
 
-    .line 933
+    .line 935
     .end local v1    # "childGroup":Landroid/graphics/drawable/VectorDrawable$VGroup;
     :cond_0
     :goto_1
@@ -418,7 +421,7 @@
 
     goto :goto_0
 
-    .line 939
+    .line 941
     :cond_1
     instance-of v0, v9, Landroid/graphics/drawable/VectorDrawable$VPath;
 
@@ -426,7 +429,7 @@
 
     move-object v4, v9
 
-    .line 940
+    .line 942
     check-cast v4, Landroid/graphics/drawable/VectorDrawable$VPath;
 
     .local v4, "childPath":Landroid/graphics/drawable/VectorDrawable$VPath;
@@ -442,15 +445,18 @@
 
     move-object/from16 v8, p6
 
-    .line 941
+    .line 943
     invoke-direct/range {v2 .. v8}, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->drawPath(Landroid/graphics/drawable/VectorDrawable$VGroup;Landroid/graphics/drawable/VectorDrawable$VPath;Landroid/graphics/Canvas;IILandroid/graphics/ColorFilter;)V
 
     goto :goto_1
 
-    .line 944
+    .line 946
     .end local v4    # "childPath":Landroid/graphics/drawable/VectorDrawable$VPath;
     .end local v9    # "child":Ljava/lang/Object;
     :cond_2
+    invoke-virtual {p3}, Landroid/graphics/Canvas;->restore()V
+
+    .line 947
     return-void
 .end method
 
@@ -464,7 +470,7 @@
     .param p6, "filter"    # Landroid/graphics/ColorFilter;
 
     .prologue
-    .line 953
+    .line 956
     move/from16 v0, p4
 
     int-to-float v11, v0
@@ -473,7 +479,7 @@
 
     div-float v7, v11, v12
 
-    .line 954
+    .line 957
     .local v7, "scaleX":F
     move/from16 v0, p5
 
@@ -483,13 +489,13 @@
 
     div-float v8, v11, v12
 
-    .line 955
+    .line 958
     .local v8, "scaleY":F
     invoke-static {v7, v8}, Ljava/lang/Math;->min(FF)F
 
     move-result v5
 
-    .line 957
+    .line 960
     .local v5, "minScale":F
     iget-object v11, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mFinalPathMatrix:Landroid/graphics/Matrix;
 
@@ -500,42 +506,42 @@
 
     invoke-virtual {v11, v12}, Landroid/graphics/Matrix;->set(Landroid/graphics/Matrix;)V
 
-    .line 958
+    .line 961
     iget-object v11, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mFinalPathMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v11, v7, v8}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    .line 960
+    .line 963
     iget-object v11, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mPath:Landroid/graphics/Path;
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v11}, Landroid/graphics/drawable/VectorDrawable$VPath;->toPath(Landroid/graphics/Path;)V
 
-    .line 961
+    .line 964
     iget-object v6, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mPath:Landroid/graphics/Path;
 
-    .line 963
+    .line 966
     .local v6, "path":Landroid/graphics/Path;
     iget-object v11, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRenderPath:Landroid/graphics/Path;
 
     invoke-virtual {v11}, Landroid/graphics/Path;->reset()V
 
-    .line 965
+    .line 968
     invoke-virtual/range {p2 .. p2}, Landroid/graphics/drawable/VectorDrawable$VPath;->isClipPath()Z
 
     move-result v11
 
     if-eqz v11, :cond_1
 
-    .line 966
+    .line 969
     iget-object v11, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRenderPath:Landroid/graphics/Path;
 
     iget-object v12, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mFinalPathMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v11, v6, v12}, Landroid/graphics/Path;->addPath(Landroid/graphics/Path;Landroid/graphics/Matrix;)V
 
-    .line 967
+    .line 970
     iget-object v11, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRenderPath:Landroid/graphics/Path;
 
     sget-object v12, Landroid/graphics/Region$Op;->REPLACE:Landroid/graphics/Region$Op;
@@ -544,7 +550,7 @@
 
     invoke-virtual {v0, v11, v12}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;Landroid/graphics/Region$Op;)Z
 
-    .line 1029
+    .line 1032
     :cond_0
     :goto_0
     return-void
@@ -552,10 +558,10 @@
     :cond_1
     move-object/from16 v3, p2
 
-    .line 969
+    .line 972
     check-cast v3, Landroid/graphics/drawable/VectorDrawable$VFullPath;
 
-    .line 970
+    .line 973
     .local v3, "fullPath":Landroid/graphics/drawable/VectorDrawable$VFullPath;
     iget v11, v3, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathStart:F
 
@@ -573,7 +579,7 @@
 
     if-eqz v11, :cond_4
 
-    .line 971
+    .line 974
     :cond_2
     iget v11, v3, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathStart:F
 
@@ -585,7 +591,7 @@
 
     rem-float v9, v11, v12
 
-    .line 972
+    .line 975
     .local v9, "start":F
     iget v11, v3, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mTrimPathEnd:F
 
@@ -597,20 +603,20 @@
 
     rem-float v1, v11, v12
 
-    .line 974
+    .line 977
     .local v1, "end":F
     iget-object v11, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mPathMeasure:Landroid/graphics/PathMeasure;
 
     if-nez v11, :cond_3
 
-    .line 975
+    .line 978
     new-instance v11, Landroid/graphics/PathMeasure;
 
     invoke-direct {v11}, Landroid/graphics/PathMeasure;-><init>()V
 
     iput-object v11, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mPathMeasure:Landroid/graphics/PathMeasure;
 
-    .line 977
+    .line 980
     :cond_3
     iget-object v11, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mPathMeasure:Landroid/graphics/PathMeasure;
 
@@ -620,36 +626,36 @@
 
     invoke-virtual {v11, v12, v13}, Landroid/graphics/PathMeasure;->setPath(Landroid/graphics/Path;Z)V
 
-    .line 979
+    .line 982
     iget-object v11, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mPathMeasure:Landroid/graphics/PathMeasure;
 
     invoke-virtual {v11}, Landroid/graphics/PathMeasure;->getLength()F
 
     move-result v4
 
-    .line 980
+    .line 983
     .local v4, "len":F
     mul-float/2addr v9, v4
 
-    .line 981
+    .line 984
     mul-float/2addr v1, v4
 
-    .line 982
+    .line 985
     invoke-virtual {v6}, Landroid/graphics/Path;->reset()V
 
-    .line 983
+    .line 986
     cmpl-float v11, v9, v1
 
     if-lez v11, :cond_a
 
-    .line 984
+    .line 987
     iget-object v11, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mPathMeasure:Landroid/graphics/PathMeasure;
 
     const/4 v12, 0x1
 
     invoke-virtual {v11, v9, v4, v6, v12}, Landroid/graphics/PathMeasure;->getSegment(FFLandroid/graphics/Path;Z)Z
 
-    .line 985
+    .line 988
     iget-object v11, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mPathMeasure:Landroid/graphics/PathMeasure;
 
     const/4 v12, 0x0
@@ -658,7 +664,7 @@
 
     invoke-virtual {v11, v12, v1, v6, v13}, Landroid/graphics/PathMeasure;->getSegment(FFLandroid/graphics/Path;Z)Z
 
-    .line 989
+    .line 992
     :goto_1
     const/4 v11, 0x0
 
@@ -666,7 +672,7 @@
 
     invoke-virtual {v6, v11, v12}, Landroid/graphics/Path;->rLineTo(FF)V
 
-    .line 991
+    .line 994
     .end local v1    # "end":F
     .end local v4    # "len":F
     .end local v9    # "start":F
@@ -677,42 +683,42 @@
 
     invoke-virtual {v11, v6, v12}, Landroid/graphics/Path;->addPath(Landroid/graphics/Path;Landroid/graphics/Matrix;)V
 
-    .line 993
+    .line 996
     iget v11, v3, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mFillColor:I
 
     if-eqz v11, :cond_6
 
-    .line 994
+    .line 997
     iget-object v11, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mFillPaint:Landroid/graphics/Paint;
 
     if-nez v11, :cond_5
 
-    .line 995
+    .line 998
     new-instance v11, Landroid/graphics/Paint;
 
     invoke-direct {v11}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v11, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mFillPaint:Landroid/graphics/Paint;
 
-    .line 996
+    .line 999
     iget-object v11, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mFillPaint:Landroid/graphics/Paint;
 
     sget-object v12, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v11, v12}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 997
+    .line 1000
     iget-object v11, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mFillPaint:Landroid/graphics/Paint;
 
     const/4 v12, 0x1
 
     invoke-virtual {v11, v12}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 1000
+    .line 1003
     :cond_5
     iget-object v2, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mFillPaint:Landroid/graphics/Paint;
 
-    .line 1001
+    .line 1004
     .local v2, "fillPaint":Landroid/graphics/Paint;
     iget v11, v3, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mFillColor:I
 
@@ -725,84 +731,84 @@
 
     invoke-virtual {v2, v11}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1002
+    .line 1005
     move-object/from16 v0, p6
 
     invoke-virtual {v2, v0}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
-    .line 1003
+    .line 1006
     iget-object v11, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRenderPath:Landroid/graphics/Path;
 
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v11, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 1006
+    .line 1009
     .end local v2    # "fillPaint":Landroid/graphics/Paint;
     :cond_6
     iget v11, v3, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeColor:I
 
     if-eqz v11, :cond_0
 
-    .line 1007
+    .line 1010
     iget-object v11, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mStrokePaint:Landroid/graphics/Paint;
 
     if-nez v11, :cond_7
 
-    .line 1008
+    .line 1011
     new-instance v11, Landroid/graphics/Paint;
 
     invoke-direct {v11}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v11, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mStrokePaint:Landroid/graphics/Paint;
 
-    .line 1009
+    .line 1012
     iget-object v11, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mStrokePaint:Landroid/graphics/Paint;
 
     sget-object v12, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v11, v12}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 1010
+    .line 1013
     iget-object v11, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mStrokePaint:Landroid/graphics/Paint;
 
     const/4 v12, 0x1
 
     invoke-virtual {v11, v12}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 1013
+    .line 1016
     :cond_7
     iget-object v10, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mStrokePaint:Landroid/graphics/Paint;
 
-    .line 1014
+    .line 1017
     .local v10, "strokePaint":Landroid/graphics/Paint;
     iget-object v11, v3, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeLineJoin:Landroid/graphics/Paint$Join;
 
     if-eqz v11, :cond_8
 
-    .line 1015
+    .line 1018
     iget-object v11, v3, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeLineJoin:Landroid/graphics/Paint$Join;
 
     invoke-virtual {v10, v11}, Landroid/graphics/Paint;->setStrokeJoin(Landroid/graphics/Paint$Join;)V
 
-    .line 1018
+    .line 1021
     :cond_8
     iget-object v11, v3, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeLineCap:Landroid/graphics/Paint$Cap;
 
     if-eqz v11, :cond_9
 
-    .line 1019
+    .line 1022
     iget-object v11, v3, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeLineCap:Landroid/graphics/Paint$Cap;
 
     invoke-virtual {v10, v11}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    .line 1022
+    .line 1025
     :cond_9
     iget v11, v3, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeMiterlimit:F
 
     invoke-virtual {v10, v11}, Landroid/graphics/Paint;->setStrokeMiter(F)V
 
-    .line 1023
+    .line 1026
     iget v11, v3, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeColor:I
 
     iget v12, v3, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeAlpha:F
@@ -814,19 +820,19 @@
 
     invoke-virtual {v10, v11}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1024
+    .line 1027
     move-object/from16 v0, p6
 
     invoke-virtual {v10, v0}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
-    .line 1025
+    .line 1028
     iget v11, v3, Landroid/graphics/drawable/VectorDrawable$VFullPath;->mStrokeWidth:F
 
     mul-float/2addr v11, v5
 
     invoke-virtual {v10, v11}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 1026
+    .line 1029
     iget-object v11, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRenderPath:Landroid/graphics/Path;
 
     move-object/from16 v0, p3
@@ -835,7 +841,7 @@
 
     goto/16 :goto_0
 
-    .line 987
+    .line 990
     .end local v10    # "strokePaint":Landroid/graphics/Paint;
     .restart local v1    # "end":F
     .restart local v4    # "len":F
@@ -856,10 +862,10 @@
     .param p2, "t"    # Landroid/content/res/Resources$Theme;
 
     .prologue
-    .line 904
+    .line 905
     iget-object v3, p1, Landroid/graphics/drawable/VectorDrawable$VGroup;->mChildren:Ljava/util/ArrayList;
 
-    .line 905
+    .line 906
     .local v3, "children":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Object;>;"
     const/4 v4, 0x0
 
@@ -871,12 +877,12 @@
 
     if-ge v4, v5, :cond_3
 
-    .line 906
+    .line 907
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 907
+    .line 908
     .local v0, "child":Ljava/lang/Object;
     instance-of v5, v0, Landroid/graphics/drawable/VectorDrawable$VGroup;
 
@@ -884,10 +890,10 @@
 
     move-object v1, v0
 
-    .line 908
+    .line 909
     check-cast v1, Landroid/graphics/drawable/VectorDrawable$VGroup;
 
-    .line 909
+    .line 910
     .local v1, "childGroup":Landroid/graphics/drawable/VectorDrawable$VGroup;
     invoke-virtual {v1}, Landroid/graphics/drawable/VectorDrawable$VGroup;->canApplyTheme()Z
 
@@ -895,14 +901,14 @@
 
     if-eqz v5, :cond_0
 
-    .line 910
+    .line 911
     invoke-virtual {v1, p2}, Landroid/graphics/drawable/VectorDrawable$VGroup;->applyTheme(Landroid/content/res/Resources$Theme;)V
 
-    .line 912
+    .line 913
     :cond_0
     invoke-direct {p0, v1, p2}, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->recursiveApplyTheme(Landroid/graphics/drawable/VectorDrawable$VGroup;Landroid/content/res/Resources$Theme;)V
 
-    .line 905
+    .line 906
     .end local v1    # "childGroup":Landroid/graphics/drawable/VectorDrawable$VGroup;
     :cond_1
     :goto_1
@@ -910,7 +916,7 @@
 
     goto :goto_0
 
-    .line 913
+    .line 914
     :cond_2
     instance-of v5, v0, Landroid/graphics/drawable/VectorDrawable$VPath;
 
@@ -918,10 +924,10 @@
 
     move-object v2, v0
 
-    .line 914
+    .line 915
     check-cast v2, Landroid/graphics/drawable/VectorDrawable$VPath;
 
-    .line 915
+    .line 916
     .local v2, "childPath":Landroid/graphics/drawable/VectorDrawable$VPath;
     invoke-virtual {v2}, Landroid/graphics/drawable/VectorDrawable$VPath;->canApplyTheme()Z
 
@@ -929,12 +935,12 @@
 
     if-eqz v5, :cond_1
 
-    .line 916
+    .line 917
     invoke-virtual {v2, p2}, Landroid/graphics/drawable/VectorDrawable$VPath;->applyTheme(Landroid/content/res/Resources$Theme;)V
 
     goto :goto_1
 
-    .line 920
+    .line 921
     .end local v0    # "child":Ljava/lang/Object;
     .end local v2    # "childPath":Landroid/graphics/drawable/VectorDrawable$VPath;
     :cond_3
@@ -948,10 +954,10 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 876
+    .line 877
     iget-object v3, p1, Landroid/graphics/drawable/VectorDrawable$VGroup;->mChildren:Ljava/util/ArrayList;
 
-    .line 878
+    .line 879
     .local v3, "children":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Object;>;"
     const/4 v4, 0x0
 
@@ -963,12 +969,12 @@
 
     if-ge v4, v6, :cond_3
 
-    .line 879
+    .line 880
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 880
+    .line 881
     .local v0, "child":Ljava/lang/Object;
     instance-of v6, v0, Landroid/graphics/drawable/VectorDrawable$VGroup;
 
@@ -976,10 +982,10 @@
 
     move-object v1, v0
 
-    .line 881
+    .line 882
     check-cast v1, Landroid/graphics/drawable/VectorDrawable$VGroup;
 
-    .line 882
+    .line 883
     .local v1, "childGroup":Landroid/graphics/drawable/VectorDrawable$VGroup;
     invoke-virtual {v1}, Landroid/graphics/drawable/VectorDrawable$VGroup;->canApplyTheme()Z
 
@@ -993,14 +999,14 @@
 
     if-eqz v6, :cond_2
 
-    .line 893
+    .line 894
     .end local v0    # "child":Ljava/lang/Object;
     .end local v1    # "childGroup":Landroid/graphics/drawable/VectorDrawable$VGroup;
     :cond_0
     :goto_1
     return v5
 
-    .line 886
+    .line 887
     .restart local v0    # "child":Ljava/lang/Object;
     :cond_1
     instance-of v6, v0, Landroid/graphics/drawable/VectorDrawable$VPath;
@@ -1009,10 +1015,10 @@
 
     move-object v2, v0
 
-    .line 887
+    .line 888
     check-cast v2, Landroid/graphics/drawable/VectorDrawable$VPath;
 
-    .line 888
+    .line 889
     .local v2, "childPath":Landroid/graphics/drawable/VectorDrawable$VPath;
     invoke-virtual {v2}, Landroid/graphics/drawable/VectorDrawable$VPath;->canApplyTheme()Z
 
@@ -1020,14 +1026,14 @@
 
     if-nez v6, :cond_0
 
-    .line 878
+    .line 879
     .end local v2    # "childPath":Landroid/graphics/drawable/VectorDrawable$VPath;
     :cond_2
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 893
+    .line 894
     .end local v0    # "child":Ljava/lang/Object;
     :cond_3
     const/4 v5, 0x0
@@ -1042,12 +1048,12 @@
     .param p1, "t"    # Landroid/content/res/Resources$Theme;
 
     .prologue
-    .line 898
+    .line 899
     iget-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRootGroup:Landroid/graphics/drawable/VectorDrawable$VGroup;
 
     invoke-direct {p0, v0, p1}, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->recursiveApplyTheme(Landroid/graphics/drawable/VectorDrawable$VGroup;Landroid/content/res/Resources$Theme;)V
 
-    .line 899
+    .line 900
     return-void
 .end method
 
@@ -1055,7 +1061,7 @@
     .locals 1
 
     .prologue
-    .line 870
+    .line 871
     iget-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRootGroup:Landroid/graphics/drawable/VectorDrawable$VGroup;
 
     invoke-direct {p0, v0}, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->recursiveCanApplyTheme(Landroid/graphics/drawable/VectorDrawable$VGroup;)Z
@@ -1073,7 +1079,7 @@
     .param p4, "filter"    # Landroid/graphics/ColorFilter;
 
     .prologue
-    .line 948
+    .line 951
     iget-object v1, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRootGroup:Landroid/graphics/drawable/VectorDrawable$VGroup;
 
     sget-object v2, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->IDENTITY_MATRIX:Landroid/graphics/Matrix;
@@ -1090,7 +1096,7 @@
 
     invoke-direct/range {v0 .. v6}, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->drawGroupTree(Landroid/graphics/drawable/VectorDrawable$VGroup;Landroid/graphics/Matrix;Landroid/graphics/Canvas;IILandroid/graphics/ColorFilter;)V
 
-    .line 949
+    .line 952
     return-void
 .end method
 
@@ -1098,7 +1104,7 @@
     .locals 2
 
     .prologue
-    .line 849
+    .line 850
     invoke-virtual {p0}, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->getRootAlpha()I
 
     move-result v0
@@ -1116,7 +1122,7 @@
     .locals 1
 
     .prologue
-    .line 838
+    .line 839
     iget v0, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRootAlpha:I
 
     return v0
@@ -1127,7 +1133,7 @@
     .param p1, "alpha"    # F
 
     .prologue
-    .line 844
+    .line 845
     const/high16 v0, 0x437f0000    # 255.0f
 
     mul-float/2addr v0, p1
@@ -1136,7 +1142,7 @@
 
     invoke-virtual {p0, v0}, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->setRootAlpha(I)V
 
-    .line 845
+    .line 846
     return-void
 .end method
 
@@ -1145,9 +1151,9 @@
     .param p1, "alpha"    # I
 
     .prologue
-    .line 834
+    .line 835
     iput p1, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRootAlpha:I
 
-    .line 835
+    .line 836
     return-void
 .end method
