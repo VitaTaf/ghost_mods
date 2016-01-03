@@ -2312,7 +2312,7 @@
 
     move-result v4
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/server/wm/WindowManagerService;->overridePendingAppTransitionScaleUp(IIII)V
+    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/server/wm/WindowManagerService;->overridePendingAppTransitionClipReveal(IIII)V
 
     .line 718
     iget-object v0, p0, Lcom/android/server/am/ActivityRecord;->intent:Landroid/content/Intent;
@@ -2376,6 +2376,98 @@
 
     .line 727
     :pswitch_3
+    iget-object v0, p0, Lcom/android/server/am/ActivityRecord;->service:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
+
+    iget-object v1, p0, Lcom/android/server/am/ActivityRecord;->pendingOptions:Landroid/app/ActivityOptions;
+
+    invoke-virtual {v1}, Landroid/app/ActivityOptions;->getStartX()I
+
+    move-result v1
+
+    iget-object v2, p0, Lcom/android/server/am/ActivityRecord;->pendingOptions:Landroid/app/ActivityOptions;
+
+    invoke-virtual {v2}, Landroid/app/ActivityOptions;->getStartY()I
+
+    move-result v2
+
+    iget-object v3, p0, Lcom/android/server/am/ActivityRecord;->pendingOptions:Landroid/app/ActivityOptions;
+
+    invoke-virtual {v3}, Landroid/app/ActivityOptions;->getWidth()I
+
+    move-result v3
+
+    iget-object v4, p0, Lcom/android/server/am/ActivityRecord;->pendingOptions:Landroid/app/ActivityOptions;
+
+    invoke-virtual {v4}, Landroid/app/ActivityOptions;->getHeight()I
+
+    move-result v4
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/server/wm/WindowManagerService;->overridePendingAppTransitionScaleUp(IIII)V
+
+    .line 733
+    iget-object v0, p0, Lcom/android/server/am/ActivityRecord;->intent:Landroid/content/Intent;
+
+    invoke-virtual {v0}, Landroid/content/Intent;->getSourceBounds()Landroid/graphics/Rect;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    .line 734
+    iget-object v0, p0, Lcom/android/server/am/ActivityRecord;->intent:Landroid/content/Intent;
+
+    new-instance v1, Landroid/graphics/Rect;
+
+    iget-object v2, p0, Lcom/android/server/am/ActivityRecord;->pendingOptions:Landroid/app/ActivityOptions;
+
+    invoke-virtual {v2}, Landroid/app/ActivityOptions;->getStartX()I
+
+    move-result v2
+
+    iget-object v3, p0, Lcom/android/server/am/ActivityRecord;->pendingOptions:Landroid/app/ActivityOptions;
+
+    invoke-virtual {v3}, Landroid/app/ActivityOptions;->getStartY()I
+
+    move-result v3
+
+    iget-object v4, p0, Lcom/android/server/am/ActivityRecord;->pendingOptions:Landroid/app/ActivityOptions;
+
+    invoke-virtual {v4}, Landroid/app/ActivityOptions;->getStartX()I
+
+    move-result v4
+
+    iget-object v6, p0, Lcom/android/server/am/ActivityRecord;->pendingOptions:Landroid/app/ActivityOptions;
+
+    invoke-virtual {v6}, Landroid/app/ActivityOptions;->getWidth()I
+
+    move-result v6
+
+    add-int/2addr v4, v6
+
+    iget-object v6, p0, Lcom/android/server/am/ActivityRecord;->pendingOptions:Landroid/app/ActivityOptions;
+
+    invoke-virtual {v6}, Landroid/app/ActivityOptions;->getStartY()I
+
+    move-result v6
+
+    iget-object v7, p0, Lcom/android/server/am/ActivityRecord;->pendingOptions:Landroid/app/ActivityOptions;
+
+    invoke-virtual {v7}, Landroid/app/ActivityOptions;->getHeight()I
+
+    move-result v7
+
+    add-int/2addr v6, v7
+
+    invoke-direct {v1, v2, v3, v4, v6}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setSourceBounds(Landroid/graphics/Rect;)V
+
+    goto/16 :goto_0
+
+    .line 742
+    :pswitch_4
     const/4 v1, 0x3
 
     if-ne v14, v1, :cond_2
@@ -2488,8 +2580,8 @@
     .line 727
     goto :goto_1
 
-    .line 744
-    :pswitch_4
+    .line 759
+    :pswitch_5
     iget-object v1, p0, Lcom/android/server/am/ActivityRecord;->service:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v6, v1, Lcom/android/server/am/ActivityManagerService;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
@@ -2606,17 +2698,21 @@
     goto :goto_2
 
     .line 706
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
+        :pswitch_3
+        :pswitch_4
+        :pswitch_4
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_5
+        :pswitch_5
+        :pswitch_0
         :pswitch_2
-        :pswitch_3
-        :pswitch_3
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_4
-        :pswitch_4
     .end packed-switch
 .end method
 

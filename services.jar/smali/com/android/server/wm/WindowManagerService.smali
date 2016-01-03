@@ -31463,6 +31463,42 @@
     throw v0
 .end method
 
+.method public overridePendingAppTransitionClipReveal(IIII)V
+    .locals 2
+    .param p1, "startX"    # I
+    .param p2, "startY"    # I
+    .param p3, "startWidth"    # I
+    .param p4, "startHeight"    # I
+
+    .prologue
+    .line 4172
+    iget-object v1, p0, Lcom/android/server/wm/WindowManagerService;->mWindowMap:Ljava/util/HashMap;
+
+    monitor-enter v1
+
+    .line 4173
+    :try_start_0
+    iget-object v0, p0, Lcom/android/server/wm/WindowManagerService;->mAppTransition:Lcom/android/server/wm/AppTransition;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lcom/android/server/wm/AppTransition;->overridePendingAppTransitionClipReveal(IIII)V
+
+    .line 4175
+    monitor-exit v1
+
+    .line 4176
+    return-void
+
+    .line 4175
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
 .method public overridePendingAppTransitionInPlace(Ljava/lang/String;I)V
     .locals 2
     .param p1, "packageName"    # Ljava/lang/String;

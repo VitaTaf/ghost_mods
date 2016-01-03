@@ -102,6 +102,8 @@
 
 .field static final TRANSACTION_overridePendingAppTransitionAspectScaledThumb:I = 0x1e
 
+.field static final TRANSACTION_overridePendingAppTransitionClipReveal:I = 0x50
+
 .field static final TRANSACTION_overridePendingAppTransitionInPlace:I = 0x1f
 
 .field static final TRANSACTION_overridePendingAppTransitionScaleUp:I = 0x1c
@@ -3658,6 +3660,55 @@
 
     goto/16 :goto_0
 
+    :sswitch_50
+    const-string v1, "android.view.IWindowManager"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 387
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    .line 389
+    .restart local v2    # "_arg0":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v3
+
+    .line 391
+    .restart local v3    # "_arg1":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v4
+
+    .line 393
+    .restart local v4    # "_arg2":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v5
+
+    .line 394
+    .restart local v5    # "_arg3":I
+    invoke-virtual {p0, v2, v3, v4, v5}, Landroid/view/IWindowManager$Stub;->overridePendingAppTransitionClipReveal(IIII)V
+
+    .line 395
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 396
+    const/4 v1, 0x1
+
+    goto/16 :goto_0
+
+    .line 400
+    .end local v2    # "_arg0":I
+    .end local v3    # "_arg1":I
+    .end local v4    # "_arg2":I
+    .end local v5    # "_arg3":I
+
+
     .line 43
     nop
 
@@ -3742,6 +3793,7 @@
         0x4d -> :sswitch_4d
         0x4e -> :sswitch_4e
         0x4f -> :sswitch_4f
+        0x50 -> :sswitch_50
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

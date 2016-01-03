@@ -319,6 +319,14 @@
     .end annotation
 .end method
 
+.method public abstract overridePendingAppTransitionClipReveal(IIII)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract overridePendingAppTransitionInPlace(Ljava/lang/String;I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
