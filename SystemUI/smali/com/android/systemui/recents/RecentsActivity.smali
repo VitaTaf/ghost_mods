@@ -90,12 +90,12 @@
     .locals 2
 
     .prologue
-    .line 615
+    .line 619
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mResizeTaskDebugDialog:Lcom/android/systemui/recents/RecentsResizeTaskDialog;
 
     if-nez v0, :cond_0
 
-    .line 616
+    .line 620
     new-instance v0, Lcom/android/systemui/recents/RecentsResizeTaskDialog;
 
     invoke-virtual {p0}, Lcom/android/systemui/recents/RecentsActivity;->getFragmentManager()Landroid/app/FragmentManager;
@@ -106,7 +106,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mResizeTaskDebugDialog:Lcom/android/systemui/recents/RecentsResizeTaskDialog;
 
-    .line 618
+    .line 622
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mResizeTaskDebugDialog:Lcom/android/systemui/recents/RecentsResizeTaskDialog;
 
@@ -484,12 +484,12 @@
     .locals 1
 
     .prologue
-    .line 646
+    .line 650
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mFinishLaunchHomeRunnable:Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->run()V
 
-    .line 647
+    .line 651
     return-void
 .end method
 
@@ -497,18 +497,18 @@
     .locals 1
 
     .prologue
-    .line 578
+    .line 582
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget-boolean v0, v0, Lcom/android/systemui/recents/RecentsConfiguration;->debugModeEnabled:Z
 
     if-eqz v0, :cond_0
 
-    .line 582
+    .line 586
     :goto_0
     return-void
 
-    .line 581
+    .line 585
     :cond_0
     const/4 v0, 0x1
 
@@ -689,14 +689,14 @@
 
     const/4 v3, 0x0
 
-    .line 586
+    .line 590
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget-boolean v1, v1, Lcom/android/systemui/recents/RecentsConfiguration;->developerOptionsEnabled:Z
 
     if-eqz v1, :cond_1
 
-    .line 587
+    .line 591
     invoke-virtual {p0}, Lcom/android/systemui/recents/RecentsActivity;->getPackageName()Ljava/lang/String;
 
     move-result-object v1
@@ -705,7 +705,7 @@
 
     move-result-object v0
 
-    .line 588
+    .line 592
     .local v0, "settings":Landroid/content/SharedPreferences;
     sget-object v1, Lcom/android/systemui/recents/Constants$Values$App;->Key_DebugModeEnabled:Ljava/lang/String;
 
@@ -715,7 +715,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 590
+    .line 594
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v1
@@ -728,25 +728,25 @@
 
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 591
+    .line 595
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iput-boolean v3, v1, Lcom/android/systemui/recents/RecentsConfiguration;->debugModeEnabled:Z
 
-    .line 592
+    .line 596
     invoke-virtual {p0}, Lcom/android/systemui/recents/RecentsActivity;->inflateDebugOverlay()V
 
-    .line 593
+    .line 597
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity;->mDebugOverlay:Lcom/android/systemui/recents/views/DebugOverlayView;
 
     if-eqz v1, :cond_0
 
-    .line 594
+    .line 598
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity;->mDebugOverlay:Lcom/android/systemui/recents/views/DebugOverlayView;
 
     invoke-virtual {v1}, Lcom/android/systemui/recents/views/DebugOverlayView;->disable()V
 
-    .line 605
+    .line 609
     :cond_0
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
@@ -800,12 +800,12 @@
 
     invoke-virtual {v1}, Landroid/widget/Toast;->show()V
 
-    .line 609
+    .line 613
     .end local v0    # "settings":Landroid/content/SharedPreferences;
     :cond_1
     return-void
 
-    .line 598
+    .line 602
     .restart local v0    # "settings":Landroid/content/SharedPreferences;
     :cond_2
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -820,27 +820,27 @@
 
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 599
+    .line 603
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iput-boolean v4, v1, Lcom/android/systemui/recents/RecentsConfiguration;->debugModeEnabled:Z
 
-    .line 600
+    .line 604
     invoke-virtual {p0}, Lcom/android/systemui/recents/RecentsActivity;->inflateDebugOverlay()V
 
-    .line 601
+    .line 605
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity;->mDebugOverlay:Lcom/android/systemui/recents/views/DebugOverlayView;
 
     if-eqz v1, :cond_0
 
-    .line 602
+    .line 606
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity;->mDebugOverlay:Lcom/android/systemui/recents/views/DebugOverlayView;
 
     invoke-virtual {v1}, Lcom/android/systemui/recents/views/DebugOverlayView;->enable()V
 
     goto :goto_0
 
-    .line 605
+    .line 609
     :cond_3
     const-string v1, "Disabled"
 
@@ -851,20 +851,20 @@
     .locals 1
 
     .prologue
-    .line 493
+    .line 497
     invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
 
-    .line 496
+    .line 500
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mSystemBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/RecentsActivity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 499
+    .line 503
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mAppWidgetHost:Lcom/android/systemui/recents/RecentsAppWidgetHost;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/RecentsAppWidgetHost;->stopListening()V
 
-    .line 500
+    .line 504
     return-void
 .end method
 
@@ -874,36 +874,36 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 504
+    .line 508
     new-instance v2, Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
 
     invoke-direct {v2, p0, v3, v3, v3}, Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;-><init>(Landroid/content/Context;Ljava/lang/Runnable;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 
-    .line 505
+    .line 509
     .local v2, "t":Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
     new-instance v1, Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;
 
     invoke-direct {v1, v2}, Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;-><init>(Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;)V
 
-    .line 506
+    .line 510
     .local v1, "ctx":Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;
     iget-object v3, p0, Lcom/android/systemui/recents/RecentsActivity;->mRecentsView:Lcom/android/systemui/recents/views/RecentsView;
 
     invoke-virtual {v3, v1}, Lcom/android/systemui/recents/views/RecentsView;->startEnterRecentsAnimation(Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;)V
 
-    .line 507
+    .line 511
     iget-object v3, p0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget v3, v3, Lcom/android/systemui/recents/RecentsConfiguration;->searchBarAppWidgetId:I
 
     if-ltz v3, :cond_0
 
-    .line 508
+    .line 512
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    .line 511
+    .line 515
     .local v0, "cbRef":Ljava/lang/ref/WeakReference;, "Ljava/lang/ref/WeakReference<Lcom/android/systemui/recents/RecentsAppWidgetHost$RecentsAppWidgetHostCallbacks;>;"
     iget-object v3, v1, Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;->postAnimationTrigger:Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
 
@@ -913,14 +913,14 @@
 
     invoke-virtual {v3, v4}, Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;->addLastDecrementRunnable(Ljava/lang/Runnable;)V
 
-    .line 524
+    .line 528
     .end local v0    # "cbRef":Ljava/lang/ref/WeakReference;, "Ljava/lang/ref/WeakReference<Lcom/android/systemui/recents/RecentsAppWidgetHost$RecentsAppWidgetHostCallbacks;>;"
     :cond_0
     iget-object v3, p0, Lcom/android/systemui/recents/RecentsActivity;->mScrimViews:Lcom/android/systemui/recents/views/SystemBarScrimViews;
 
     invoke-virtual {v3}, Lcom/android/systemui/recents/views/SystemBarScrimViews;->startEnterRecentsAnimation()V
 
-    .line 525
+    .line 529
     return-void
 .end method
 
@@ -928,12 +928,12 @@
     .locals 1
 
     .prologue
-    .line 631
+    .line 635
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mScrimViews:Lcom/android/systemui/recents/views/SystemBarScrimViews;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/SystemBarScrimViews;->startExitRecentsAnimation()V
 
-    .line 632
+    .line 636
     return-void
 .end method
 
@@ -947,15 +947,15 @@
 
     const/4 v2, 0x1
 
-    .line 537
+    .line 541
     sparse-switch p1, :sswitch_data_0
 
-    .line 566
+    .line 570
     iget-object v2, p0, Lcom/android/systemui/recents/RecentsActivity;->mDebugTrigger:Lcom/android/systemui/recents/misc/DebugTrigger;
 
     invoke-virtual {v2, p1}, Lcom/android/systemui/recents/misc/DebugTrigger;->onKeyEvent(I)V
 
-    .line 567
+    .line 571
     invoke-super {p0, p1, p2}, Landroid/app/Activity;->onKeyDown(ILandroid/view/KeyEvent;)Z
 
     move-result v2
@@ -964,7 +964,7 @@
     :goto_0
     return v2
 
-    .line 539
+    .line 543
     :sswitch_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -986,7 +986,7 @@
 
     move v1, v2
 
-    .line 541
+    .line 545
     .local v1, "hasRepKeyTimeElapsed":Z
     :goto_1
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getRepeatCount()I
@@ -997,13 +997,13 @@
 
     if-eqz v1, :cond_0
 
-    .line 543
+    .line 547
     :cond_1
     invoke-virtual {p2}, Landroid/view/KeyEvent;->isShiftPressed()Z
 
     move-result v0
 
-    .line 544
+    .line 548
     .local v0, "backward":Z
     iget-object v4, p0, Lcom/android/systemui/recents/RecentsActivity;->mRecentsView:Lcom/android/systemui/recents/views/RecentsView;
 
@@ -1014,7 +1014,7 @@
     :cond_2
     invoke-virtual {v4, v3}, Lcom/android/systemui/recents/views/RecentsView;->focusNextTask(Z)V
 
-    .line 545
+    .line 549
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v4
@@ -1028,10 +1028,10 @@
     :cond_3
     move v1, v3
 
-    .line 539
+    .line 543
     goto :goto_1
 
-    .line 550
+    .line 554
     :sswitch_1
     iget-object v3, p0, Lcom/android/systemui/recents/RecentsActivity;->mRecentsView:Lcom/android/systemui/recents/views/RecentsView;
 
@@ -1039,7 +1039,7 @@
 
     goto :goto_0
 
-    .line 554
+    .line 558
     :sswitch_2
     iget-object v4, p0, Lcom/android/systemui/recents/RecentsActivity;->mRecentsView:Lcom/android/systemui/recents/views/RecentsView;
 
@@ -1047,7 +1047,7 @@
 
     goto :goto_0
 
-    .line 559
+    .line 563
     :sswitch_3
     iget-object v3, p0, Lcom/android/systemui/recents/RecentsActivity;->mRecentsView:Lcom/android/systemui/recents/views/RecentsView;
 
@@ -1055,7 +1055,7 @@
 
     goto :goto_0
 
-    .line 537
+    .line 541
     nop
 
     :sswitch_data_0
@@ -1099,7 +1099,7 @@
     .param p1, "progress"    # F
 
     .prologue
-    .line 669
+    .line 673
     return-void
 .end method
 
@@ -1107,22 +1107,22 @@
     .locals 2
 
     .prologue
-    .line 651
+    .line 655
     invoke-static {}, Lcom/android/systemui/recents/model/RecentsTaskLoader;->getInstance()Lcom/android/systemui/recents/model/RecentsTaskLoader;
 
     move-result-object v0
 
-    .line 652
+    .line 656
     .local v0, "loader":Lcom/android/systemui/recents/model/RecentsTaskLoader;
     invoke-virtual {v0}, Lcom/android/systemui/recents/model/RecentsTaskLoader;->getSystemServicesProxy()Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
     move-result-object v1
 
-    .line 653
+    .line 657
     .local v1, "ssp":Lcom/android/systemui/recents/misc/SystemServicesProxy;
     invoke-static {p0, v1}, Lcom/android/systemui/recents/Recents;->startScreenPinning(Landroid/content/Context;Lcom/android/systemui/recents/misc/SystemServicesProxy;)V
 
-    .line 654
+    .line 658
     return-void
 .end method
 
@@ -1131,7 +1131,7 @@
     .param p1, "progress"    # F
 
     .prologue
-    .line 674
+    .line 678
     return-void
 .end method
 
@@ -1198,13 +1198,13 @@
 
     iget-boolean v4, v4, Lcom/android/systemui/recents/RecentsConfiguration;->launchedFromHome:Z
 
-    if-nez v4, :cond_2
+    if-nez v4, :cond_3
 
     iget-object v4, p0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget-boolean v4, v4, Lcom/android/systemui/recents/RecentsConfiguration;->launchedFromAppWithThumbnail:Z
 
-    if-nez v4, :cond_2
+    if-nez v4, :cond_3
 
     .line 459
     .local v3, "wasLaunchedByAm":Z
@@ -1221,13 +1221,26 @@
     :cond_0
     invoke-virtual {p0}, Lcom/android/systemui/recents/RecentsActivity;->onEnterAnimationTriggered()V
 
-    .line 462
+    .line 463
     :cond_1
+    iget-object v4, p0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
+
+    iget-boolean v4, v4, Lcom/android/systemui/recents/RecentsConfiguration;->launchedHasConfigurationChanged:Z
+
+    if-nez v4, :cond_2
+
+    .line 464
+    iget-object v4, p0, Lcom/android/systemui/recents/RecentsActivity;->mRecentsView:Lcom/android/systemui/recents/views/RecentsView;
+
+    invoke-virtual {v4}, Lcom/android/systemui/recents/views/RecentsView;->disableLayersForOneFrame()V
+
+    .line 466
+    :cond_2
     return-void
 
     .line 458
     .end local v3    # "wasLaunchedByAm":Z
-    :cond_2
+    :cond_3
     const/4 v3, 0x0
 
     goto :goto_0
@@ -1239,70 +1252,70 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 466
+    .line 470
     invoke-super {p0}, Landroid/app/Activity;->onStop()V
 
-    .line 467
+    .line 471
     invoke-static {}, Lcom/android/systemui/recents/model/RecentsTaskLoader;->getInstance()Lcom/android/systemui/recents/model/RecentsTaskLoader;
 
     move-result-object v0
 
-    .line 468
+    .line 472
     .local v0, "loader":Lcom/android/systemui/recents/model/RecentsTaskLoader;
     invoke-virtual {v0}, Lcom/android/systemui/recents/model/RecentsTaskLoader;->getSystemServicesProxy()Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
     move-result-object v1
 
-    .line 469
+    .line 473
     .local v1, "ssp":Lcom/android/systemui/recents/misc/SystemServicesProxy;
     invoke-static {p0, v1, v4}, Lcom/android/systemui/recents/Recents;->notifyVisibilityChanged(Landroid/content/Context;Lcom/android/systemui/recents/misc/SystemServicesProxy;Z)V
 
-    .line 472
+    .line 476
     iget-object v2, p0, Lcom/android/systemui/recents/RecentsActivity;->mRecentsView:Lcom/android/systemui/recents/views/RecentsView;
 
     invoke-virtual {v2}, Lcom/android/systemui/recents/views/RecentsView;->onRecentsHidden()V
 
-    .line 475
+    .line 479
     iget-object v2, p0, Lcom/android/systemui/recents/RecentsActivity;->mServiceBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/recents/RecentsActivity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 478
+    .line 482
     invoke-virtual {v0}, Lcom/android/systemui/recents/model/RecentsTaskLoader;->unregisterReceivers()V
 
-    .line 483
+    .line 487
     iget-object v2, p0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iput-boolean v4, v2, Lcom/android/systemui/recents/RecentsConfiguration;->launchedFromHome:Z
 
-    .line 484
+    .line 488
     iget-object v2, p0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iput-boolean v4, v2, Lcom/android/systemui/recents/RecentsConfiguration;->launchedFromSearchHome:Z
 
-    .line 485
+    .line 489
     iget-object v2, p0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iput-boolean v4, v2, Lcom/android/systemui/recents/RecentsConfiguration;->launchedFromAppWithThumbnail:Z
 
-    .line 486
+    .line 490
     iget-object v2, p0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     const/4 v3, -0x1
 
     iput v3, v2, Lcom/android/systemui/recents/RecentsConfiguration;->launchedToTaskId:I
 
-    .line 487
+    .line 491
     iget-object v2, p0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iput-boolean v4, v2, Lcom/android/systemui/recents/RecentsConfiguration;->launchedWithAltTab:Z
 
-    .line 488
+    .line 492
     iget-object v2, p0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iput-boolean v4, v2, Lcom/android/systemui/recents/RecentsConfiguration;->launchedHasConfigurationChanged:Z
 
-    .line 489
+    .line 493
     return-void
 .end method
 
@@ -1310,12 +1323,12 @@
     .locals 1
 
     .prologue
-    .line 641
+    .line 645
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/RecentsActivity;->dismissRecentsToHomeRaw(Z)V
 
-    .line 642
+    .line 646
     return-void
 .end method
 
@@ -1324,7 +1337,7 @@
     .param p1, "t"    # Lcom/android/systemui/recents/model/Task;
 
     .prologue
-    .line 623
+    .line 627
     invoke-direct {p0}, Lcom/android/systemui/recents/RecentsActivity;->getResizeTaskDebugDialog()Lcom/android/systemui/recents/RecentsResizeTaskDialog;
 
     move-result-object v0
@@ -1333,7 +1346,7 @@
 
     invoke-virtual {v0, p1, v1}, Lcom/android/systemui/recents/RecentsResizeTaskDialog;->showResizeTaskDialog(Lcom/android/systemui/recents/model/Task;Lcom/android/systemui/recents/views/RecentsView;)V
 
-    .line 624
+    .line 628
     return-void
 .end method
 
@@ -1341,7 +1354,7 @@
     .locals 0
 
     .prologue
-    .line 636
+    .line 640
     return-void
 .end method
 
@@ -1350,19 +1363,19 @@
     .param p1, "level"    # I
 
     .prologue
-    .line 529
+    .line 533
     invoke-static {}, Lcom/android/systemui/recents/model/RecentsTaskLoader;->getInstance()Lcom/android/systemui/recents/model/RecentsTaskLoader;
 
     move-result-object v0
 
-    .line 530
+    .line 534
     .local v0, "loader":Lcom/android/systemui/recents/model/RecentsTaskLoader;
     if-eqz v0, :cond_0
 
-    .line 531
+    .line 535
     invoke-virtual {v0, p1}, Lcom/android/systemui/recents/model/RecentsTaskLoader;->onTrimMemory(I)V
 
-    .line 533
+    .line 537
     :cond_0
     return-void
 .end method
@@ -1371,12 +1384,12 @@
     .locals 1
 
     .prologue
-    .line 572
+    .line 576
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mRecentsView:Lcom/android/systemui/recents/views/RecentsView;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/RecentsView;->onUserInteraction()V
 
-    .line 573
+    .line 577
     return-void
 .end method
 
@@ -1384,13 +1397,13 @@
     .locals 0
 
     .prologue
-    .line 660
+    .line 664
     invoke-virtual {p0}, Lcom/android/systemui/recents/RecentsActivity;->bindSearchBarAppWidget()V
 
-    .line 661
+    .line 665
     invoke-virtual {p0}, Lcom/android/systemui/recents/RecentsActivity;->addSearchBarAppWidgetView()V
 
-    .line 662
+    .line 666
     return-void
 .end method
 

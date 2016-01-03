@@ -30,7 +30,7 @@
     .locals 0
 
     .prologue
-    .line 723
+    .line 727
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/TaskView$9;->val$v:Landroid/view/View;
@@ -48,7 +48,7 @@
     .locals 3
 
     .prologue
-    .line 726
+    .line 730
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView$9;->val$v:Landroid/view/View;
 
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
@@ -59,7 +59,7 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 732
+    .line 736
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     invoke-virtual {v1}, Lcom/android/systemui/recents/views/TaskView;->getContext()Landroid/content/Context;
@@ -74,7 +74,7 @@
 
     check-cast v0, Landroid/view/accessibility/AccessibilityManager;
 
-    .line 734
+    .line 738
     .local v0, "am":Landroid/view/accessibility/AccessibilityManager;
     if-eqz v0, :cond_0
 
@@ -84,14 +84,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 735
+    .line 739
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iget-object v1, v1, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
 
     if-eqz v1, :cond_0
 
-    .line 736
+    .line 740
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iget-object v1, v1, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
@@ -100,13 +100,13 @@
 
     invoke-interface {v1, v2}, Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;->onTaskViewAppInfoClicked(Lcom/android/systemui/recents/views/TaskView;)V
 
-    .line 747
+    .line 751
     .end local v0    # "am":Landroid/view/accessibility/AccessibilityManager;
     :cond_0
     :goto_0
     return-void
 
-    .line 740
+    .line 744
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView$9;->val$v:Landroid/view/View;
 
@@ -118,14 +118,14 @@
 
     if-ne v1, v2, :cond_2
 
-    .line 741
+    .line 745
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     invoke-virtual {v1}, Lcom/android/systemui/recents/views/TaskView;->dismissTask()V
 
     goto :goto_0
 
-    .line 742
+    .line 746
     :cond_2
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView$9;->val$v:Landroid/view/View;
 
@@ -137,14 +137,14 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 743
+    .line 747
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iget-object v1, v1, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
 
     if-eqz v1, :cond_0
 
-    .line 744
+    .line 748
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iget-object v1, v1, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;

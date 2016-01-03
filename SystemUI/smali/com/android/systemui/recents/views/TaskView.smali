@@ -295,6 +295,19 @@
     return-void
 .end method
 
+.method public disableLayersForOneFrame()V
+    .locals 1
+
+    .prologue
+    .line 655
+    iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
+
+    invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskViewHeader;->disableLayersForOneFrame()V
+
+    .line 656
+    return-void
+.end method
+
 .method dismissTask()V
     .locals 3
 
@@ -508,10 +521,10 @@
 
     const/4 v3, 0x0
 
-    .line 719
+    .line 723
     move-object v1, p0
 
-    .line 720
+    .line 724
     .local v1, "tv":Lcom/android/systemui/recents/views/TaskView;
     if-eq p1, p0, :cond_1
 
@@ -521,12 +534,12 @@
 
     move v0, v2
 
-    .line 721
+    .line 725
     .local v0, "delayViewClick":Z
     :goto_0
     if-eqz v0, :cond_2
 
-    .line 723
+    .line 727
     new-instance v2, Lcom/android/systemui/recents/views/TaskView$9;
 
     invoke-direct {v2, p0, p1, v1}, Lcom/android/systemui/recents/views/TaskView$9;-><init>(Lcom/android/systemui/recents/views/TaskView;Landroid/view/View;Lcom/android/systemui/recents/views/TaskView;)V
@@ -535,7 +548,7 @@
 
     invoke-virtual {p0, v2, v4, v5}, Lcom/android/systemui/recents/views/TaskView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 758
+    .line 762
     :cond_0
     :goto_1
     return-void
@@ -544,30 +557,30 @@
     :cond_1
     move v0, v3
 
-    .line 720
+    .line 724
     goto :goto_0
 
-    .line 750
+    .line 754
     .restart local v0    # "delayViewClick":Z
     :cond_2
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
 
     if-ne p1, v4, :cond_3
 
-    .line 752
+    .line 756
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
 
     const/4 v5, 0x0
 
     invoke-virtual {v4, v5}, Landroid/view/View;->setTranslationZ(F)V
 
-    .line 754
+    .line 758
     :cond_3
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
 
     if-eqz v4, :cond_0
 
-    .line 755
+    .line 759
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
 
     invoke-virtual {v1}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
@@ -688,27 +701,27 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 764
+    .line 768
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskViewHeader;->mApplicationIcon:Landroid/widget/ImageView;
 
     if-ne p1, v0, :cond_0
 
-    .line 765
+    .line 769
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
 
     if-eqz v0, :cond_0
 
-    .line 766
+    .line 770
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
 
     invoke-interface {v0, p0}, Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;->onTaskViewAppInfoClicked(Lcom/android/systemui/recents/views/TaskView;)V
 
-    .line 767
+    .line 771
     const/4 v0, 0x1
 
-    .line 770
+    .line 774
     :goto_0
     return v0
 
@@ -831,15 +844,15 @@
     .param p1, "t"    # Lcom/android/systemui/recents/model/Task;
 
     .prologue
-    .line 658
+    .line 662
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskView;->mTask:Lcom/android/systemui/recents/model/Task;
 
-    .line 659
+    .line 663
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mTask:Lcom/android/systemui/recents/model/Task;
 
     invoke-virtual {v1, p0}, Lcom/android/systemui/recents/model/Task;->setCallbacks(Lcom/android/systemui/recents/model/Task$TaskCallbacks;)V
 
-    .line 662
+    .line 666
     iget-boolean v1, p1, Lcom/android/systemui/recents/model/Task;->lockToTaskEnabled:Z
 
     if-eqz v1, :cond_0
@@ -851,7 +864,7 @@
     :cond_0
     const/16 v0, 0x8
 
-    .line 663
+    .line 667
     .local v0, "lockButtonVisibility":I
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
@@ -862,19 +875,19 @@
 
     if-eq v1, v0, :cond_1
 
-    .line 664
+    .line 668
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 665
+    .line 669
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->requestLayout()V
 
-    .line 667
+    .line 671
     :cond_1
     return-void
 
-    .line 662
+    .line 666
     .end local v0    # "lockButtonVisibility":I
     :cond_2
     const/4 v0, 0x0
@@ -886,7 +899,7 @@
     .locals 3
 
     .prologue
-    .line 671
+    .line 675
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mThumbnailView:Lcom/android/systemui/recents/views/TaskViewThumbnail;
 
     if-eqz v1, :cond_2
@@ -895,21 +908,21 @@
 
     if-eqz v1, :cond_2
 
-    .line 673
+    .line 677
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mThumbnailView:Lcom/android/systemui/recents/views/TaskViewThumbnail;
 
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskView;->mTask:Lcom/android/systemui/recents/model/Task;
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/recents/views/TaskViewThumbnail;->rebindToTask(Lcom/android/systemui/recents/model/Task;)V
 
-    .line 674
+    .line 678
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskView;->mTask:Lcom/android/systemui/recents/model/Task;
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/recents/views/TaskViewHeader;->rebindToTask(Lcom/android/systemui/recents/model/Task;)V
 
-    .line 676
+    .line 680
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -922,7 +935,7 @@
 
     check-cast v0, Landroid/view/accessibility/AccessibilityManager;
 
-    .line 678
+    .line 682
     .local v0, "am":Landroid/view/accessibility/AccessibilityManager;
     if-eqz v0, :cond_0
 
@@ -932,14 +945,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 679
+    .line 683
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     iget-object v1, v1, Lcom/android/systemui/recents/views/TaskViewHeader;->mApplicationIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v1, p0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 681
+    .line 685
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
@@ -947,41 +960,41 @@
 
     invoke-virtual {v1, p0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 682
+    .line 686
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget-boolean v1, v1, Lcom/android/systemui/recents/RecentsConfiguration;->multiStackEnabled:Z
 
     if-eqz v1, :cond_1
 
-    .line 683
+    .line 687
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     iget-object v1, v1, Lcom/android/systemui/recents/views/TaskViewHeader;->mMoveTaskButton:Landroid/widget/ImageView;
 
     invoke-virtual {v1, p0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 685
+    .line 689
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
 
     invoke-virtual {v1, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 686
+    .line 690
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     iget-object v1, v1, Lcom/android/systemui/recents/views/TaskViewHeader;->mApplicationIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v1, p0}, Landroid/widget/ImageView;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    .line 688
+    .line 692
     .end local v0    # "am":Landroid/view/accessibility/AccessibilityManager;
     :cond_2
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/systemui/recents/views/TaskView;->mTaskDataLoaded:Z
 
-    .line 689
+    .line 693
     return-void
 .end method
 
@@ -991,7 +1004,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 693
+    .line 697
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mThumbnailView:Lcom/android/systemui/recents/views/TaskViewThumbnail;
 
     if-eqz v0, :cond_1
@@ -1000,69 +1013,69 @@
 
     if-eqz v0, :cond_1
 
-    .line 695
+    .line 699
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mTask:Lcom/android/systemui/recents/model/Task;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/model/Task;->setCallbacks(Lcom/android/systemui/recents/model/Task$TaskCallbacks;)V
 
-    .line 696
+    .line 700
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mThumbnailView:Lcom/android/systemui/recents/views/TaskViewThumbnail;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskViewThumbnail;->unbindFromTask()V
 
-    .line 697
+    .line 701
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskViewHeader;->unbindFromTask()V
 
-    .line 699
+    .line 703
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskViewHeader;->mApplicationIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 700
+    .line 704
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskViewHeader;->mDismissButton:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 701
+    .line 705
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget-boolean v0, v0, Lcom/android/systemui/recents/RecentsConfiguration;->multiStackEnabled:Z
 
     if-eqz v0, :cond_0
 
-    .line 702
+    .line 706
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskViewHeader;->mMoveTaskButton:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 704
+    .line 708
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 705
+    .line 709
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskViewHeader;->mApplicationIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    .line 707
+    .line 711
     :cond_1
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/views/TaskView;->mTaskDataLoaded:Z
 
-    .line 708
+    .line 712
     return-void
 .end method
 

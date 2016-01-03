@@ -115,16 +115,16 @@
     .locals 2
 
     .prologue
-    .line 841
+    .line 843
     sget-object v0, Lcom/android/systemui/recents/Recents;->sInstanceLoadPlan:Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;
 
-    .line 842
+    .line 844
     .local v0, "plan":Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;
     const/4 v1, 0x0
 
     sput-object v1, Lcom/android/systemui/recents/Recents;->sInstanceLoadPlan:Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;
 
-    .line 843
+    .line 845
     return-object v0
 .end method
 
@@ -204,21 +204,21 @@
     .end annotation
 
     .prologue
-    .line 801
+    .line 803
     invoke-virtual {p1}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->isForegroundUserOwner()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 802
+    .line 804
     invoke-static {p2}, Lcom/android/systemui/recents/Recents;->visibilityChanged(Z)V
 
-    .line 809
+    .line 811
     :goto_0
     return-void
 
-    .line 804
+    .line 806
     :cond_0
     const-string v1, "action_notify_recents_visibility_change"
 
@@ -226,13 +226,13 @@
 
     move-result-object v0
 
-    .line 806
+    .line 808
     .local v0, "intent":Landroid/content/Intent;
     const-string v1, "recentsVisibility"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 807
+    .line 809
     sget-object v1, Landroid/os/UserHandle;->OWNER:Landroid/os/UserHandle;
 
     invoke-virtual {p0, v0, v1}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
@@ -245,7 +245,7 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 829
+    .line 831
     invoke-static {p0}, Lcom/android/systemui/recents/Recents;->getInstanceAndStartIfNeeded(Landroid/content/Context;)Lcom/android/systemui/recents/Recents;
 
     move-result-object v2
@@ -254,7 +254,7 @@
 
     check-cast v0, Lcom/android/systemui/SystemUIApplication;
 
-    .line 831
+    .line 833
     .local v0, "app":Lcom/android/systemui/SystemUIApplication;
     const-class v2, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -264,16 +264,16 @@
 
     check-cast v1, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
-    .line 832
+    .line 834
     .local v1, "statusBar":Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
     if-eqz v1, :cond_0
 
-    .line 833
+    .line 835
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->showScreenPinningRequest(Z)V
 
-    .line 835
+    .line 837
     :cond_0
     return-void
 .end method
@@ -286,21 +286,21 @@
     .end annotation
 
     .prologue
-    .line 819
+    .line 821
     invoke-virtual {p1}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->isForegroundUserOwner()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 820
+    .line 822
     invoke-static {p0}, Lcom/android/systemui/recents/Recents;->onStartScreenPinning(Landroid/content/Context;)V
 
-    .line 826
+    .line 828
     :goto_0
     return-void
 
-    .line 822
+    .line 824
     :cond_0
     const-string v1, "action_screen_pinning_request"
 
@@ -308,7 +308,7 @@
 
     move-result-object v0
 
-    .line 824
+    .line 826
     .local v0, "intent":Landroid/content/Intent;
     sget-object v1, Landroid/os/UserHandle;->OWNER:Landroid/os/UserHandle;
 
@@ -322,17 +322,17 @@
     .param p0, "visible"    # Z
 
     .prologue
-    .line 811
+    .line 813
     sget-object v0, Lcom/android/systemui/recents/Recents;->sRecentsComponentCallbacks:Lcom/android/systemui/RecentsComponent$Callbacks;
 
     if-eqz v0, :cond_0
 
-    .line 812
+    .line 814
     sget-object v0, Lcom/android/systemui/recents/Recents;->sRecentsComponentCallbacks:Lcom/android/systemui/RecentsComponent$Callbacks;
 
     invoke-interface {v0, p0}, Lcom/android/systemui/RecentsComponent$Callbacks;->onVisibilityChanged(Z)V
 
-    .line 814
+    .line 816
     :cond_0
     return-void
 .end method
@@ -844,17 +844,17 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 851
+    .line 853
     iget-boolean v0, p0, Lcom/android/systemui/recents/Recents;->mStartAnimationTriggered:Z
 
     if-nez v0, :cond_0
 
-    .line 856
+    .line 858
     new-instance v4, Lcom/android/systemui/recents/Recents$1;
 
     invoke-direct {v4, p0}, Lcom/android/systemui/recents/Recents$1;-><init>(Lcom/android/systemui/recents/Recents;)V
 
-    .line 875
+    .line 877
     .local v4, "fallbackReceiver":Landroid/content/BroadcastReceiver;
     iget-object v0, p0, Lcom/android/systemui/recents/Recents;->mContext:Landroid/content/Context;
 
@@ -864,7 +864,7 @@
 
     move-result-object v1
 
-    .line 876
+    .line 878
     .local v1, "intent":Landroid/content/Intent;
     iget-object v0, p0, Lcom/android/systemui/recents/Recents;->mContext:Landroid/content/Context;
 
@@ -880,7 +880,7 @@
 
     invoke-virtual/range {v0 .. v8}, Landroid/content/Context;->sendOrderedBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;Ljava/lang/String;Landroid/content/BroadcastReceiver;Landroid/os/Handler;ILjava/lang/String;Landroid/os/Bundle;)V
 
-    .line 879
+    .line 881
     .end local v1    # "intent":Landroid/content/Intent;
     .end local v4    # "fallbackReceiver":Landroid/content/BroadcastReceiver;
     :cond_0
@@ -1372,10 +1372,10 @@
     .param p1, "cb"    # Lcom/android/systemui/RecentsComponent$Callbacks;
 
     .prologue
-    .line 794
+    .line 796
     sput-object p1, Lcom/android/systemui/recents/Recents;->sRecentsComponentCallbacks:Lcom/android/systemui/RecentsComponent$Callbacks;
 
-    .line 795
+    .line 797
     return-void
 .end method
 
@@ -2120,7 +2120,7 @@
 
     const/4 v2, 0x0
 
-    .line 768
+    .line 770
     iget-object v4, p0, Lcom/android/systemui/recents/Recents;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     if-nez p4, :cond_0
@@ -2133,17 +2133,17 @@
     :goto_0
     iput-boolean v1, v4, Lcom/android/systemui/recents/RecentsConfiguration;->launchedFromHome:Z
 
-    .line 769
+    .line 771
     iget-object v1, p0, Lcom/android/systemui/recents/Recents;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iput-boolean p4, v1, Lcom/android/systemui/recents/RecentsConfiguration;->launchedFromSearchHome:Z
 
-    .line 770
+    .line 772
     iget-object v1, p0, Lcom/android/systemui/recents/Recents;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iput-boolean p5, v1, Lcom/android/systemui/recents/RecentsConfiguration;->launchedFromAppWithThumbnail:Z
 
-    .line 771
+    .line 773
     iget-object v4, p0, Lcom/android/systemui/recents/Recents;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     if-eqz p1, :cond_2
@@ -2153,47 +2153,47 @@
     :goto_1
     iput v1, v4, Lcom/android/systemui/recents/RecentsConfiguration;->launchedToTaskId:I
 
-    .line 772
+    .line 774
     iget-object v1, p0, Lcom/android/systemui/recents/Recents;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget-boolean v4, p0, Lcom/android/systemui/recents/Recents;->mTriggeredFromAltTab:Z
 
     iput-boolean v4, v1, Lcom/android/systemui/recents/RecentsConfiguration;->launchedWithAltTab:Z
 
-    .line 773
+    .line 775
     iget-object v1, p0, Lcom/android/systemui/recents/Recents;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget-boolean v4, p0, Lcom/android/systemui/recents/Recents;->mCanReuseTaskStackViews:Z
 
     iput-boolean v4, v1, Lcom/android/systemui/recents/RecentsConfiguration;->launchedReuseTaskStackViews:Z
 
-    .line 774
+    .line 776
     iget-object v1, p0, Lcom/android/systemui/recents/Recents;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget v4, p6, Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm$VisibilityReport;->numVisibleTasks:I
 
     iput v4, v1, Lcom/android/systemui/recents/RecentsConfiguration;->launchedNumVisibleTasks:I
 
-    .line 775
+    .line 777
     iget-object v1, p0, Lcom/android/systemui/recents/Recents;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget v4, p6, Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm$VisibilityReport;->numVisibleThumbnails:I
 
     iput v4, v1, Lcom/android/systemui/recents/RecentsConfiguration;->launchedNumVisibleThumbnails:I
 
-    .line 776
+    .line 778
     iget-object v1, p0, Lcom/android/systemui/recents/Recents;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iput-boolean v2, v1, Lcom/android/systemui/recents/RecentsConfiguration;->launchedHasConfigurationChanged:Z
 
-    .line 778
+    .line 780
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.android.systemui.recents.SHOW_RECENTS"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 779
+    .line 781
     .local v0, "intent":Landroid/content/Intent;
     const-string v1, "com.android.systemui"
 
@@ -2201,15 +2201,15 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 780
+    .line 782
     const v1, 0x10804000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 783
+    .line 785
     if-eqz p2, :cond_3
 
-    .line 784
+    .line 786
     iget-object v1, p0, Lcom/android/systemui/recents/Recents;->mContext:Landroid/content/Context;
 
     invoke-virtual {p2}, Landroid/app/ActivityOptions;->toBundle()Landroid/os/Bundle;
@@ -2220,27 +2220,27 @@
 
     invoke-virtual {v1, v0, v2, v4}, Landroid/content/Context;->startActivityAsUser(Landroid/content/Intent;Landroid/os/Bundle;Landroid/os/UserHandle;)V
 
-    .line 788
+    .line 790
     :goto_2
     iput-boolean v3, p0, Lcom/android/systemui/recents/Recents;->mCanReuseTaskStackViews:Z
 
-    .line 789
+    .line 791
     return-void
 
     .end local v0    # "intent":Landroid/content/Intent;
     :cond_1
     move v1, v2
 
-    .line 768
+    .line 770
     goto :goto_0
 
-    .line 771
+    .line 773
     :cond_2
     const/4 v1, -0x1
 
     goto :goto_1
 
-    .line 786
+    .line 788
     .restart local v0    # "intent":Landroid/content/Intent;
     :cond_3
     iget-object v1, p0, Lcom/android/systemui/recents/Recents;->mContext:Landroid/content/Context;
@@ -2418,7 +2418,7 @@
 
     invoke-virtual/range {v4 .. v10}, Lcom/android/systemui/recents/Recents;->startAlternateRecentsActivity(Landroid/app/ActivityManager$RunningTaskInfo;Landroid/app/ActivityOptions;ZZZLcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm$VisibilityReport;)V
 
-    .line 761
+    .line 763
     .end local v6    # "opts":Landroid/app/ActivityOptions;
     :goto_0
     return-void
@@ -2430,20 +2430,30 @@
     :cond_1
     sget-object v4, Lcom/android/systemui/recents/Recents;->sInstanceLoadPlan:Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;
 
+    invoke-virtual {v4}, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->hasTasks()Z
+
+    move-result v4
+
+    if-nez v4, :cond_2
+
+    .line 695
+    sget-object v4, Lcom/android/systemui/recents/Recents;->sInstanceLoadPlan:Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;
+
     move-object/from16 v0, v21
 
     move/from16 v1, p2
 
     invoke-virtual {v0, v4, v1}, Lcom/android/systemui/recents/model/RecentsTaskLoader;->preloadTasks(Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;Z)V
 
-    .line 695
+    .line 697
+    :cond_2
     sget-object v4, Lcom/android/systemui/recents/Recents;->sInstanceLoadPlan:Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;
 
     invoke-virtual {v4}, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->getAllTaskStacks()Ljava/util/ArrayList;
 
     move-result-object v25
 
-    .line 696
+    .line 698
     .restart local v25    # "stacks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/recents/model/TaskStack;>;"
     const/4 v4, 0x0
 
@@ -2455,7 +2465,7 @@
 
     check-cast v24, Lcom/android/systemui/recents/model/TaskStack;
 
-    .line 699
+    .line 701
     .restart local v24    # "stack":Lcom/android/systemui/recents/model/TaskStack;
     move-object/from16 v0, p0
 
@@ -2471,7 +2481,7 @@
 
     invoke-virtual {v4, v0, v5, v1}, Lcom/android/systemui/recents/views/TaskStackView;->updateMinMaxScrollForStack(Lcom/android/systemui/recents/model/TaskStack;ZZ)V
 
-    .line 700
+    .line 702
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/systemui/recents/Recents;->mDummyStackView:Lcom/android/systemui/recents/views/TaskStackView;
@@ -2480,38 +2490,38 @@
 
     move-result-object v10
 
-    .line 702
+    .line 704
     .restart local v10    # "stackVr":Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm$VisibilityReport;
     invoke-virtual/range {v24 .. v24}, Lcom/android/systemui/recents/model/TaskStack;->getTaskCount()I
 
     move-result v4
 
-    if-lez v4, :cond_6
+    if-lez v4, :cond_7
 
     const/16 v18, 0x1
 
-    .line 703
+    .line 705
     .local v18, "hasRecentTasks":Z
     :goto_1
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_8
 
-    if-nez p2, :cond_7
+    if-nez p2, :cond_8
 
-    if-eqz v18, :cond_7
+    if-eqz v18, :cond_8
 
     const/16 v26, 0x1
 
-    .line 705
+    .line 707
     .local v26, "useThumbnailTransition":Z
     :goto_2
-    if-eqz v26, :cond_2
+    if-eqz v26, :cond_3
 
-    .line 707
+    .line 709
     new-instance v20, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan$Options;
 
     invoke-direct/range {v20 .. v20}, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan$Options;-><init>()V
 
-    .line 708
+    .line 710
     .local v20, "launchOpts":Lcom/android/systemui/recents/model/RecentsTaskLoadPlan$Options;
     move-object/from16 v0, p1
 
@@ -2521,21 +2531,21 @@
 
     iput v4, v0, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan$Options;->runningTaskId:I
 
-    .line 709
+    .line 711
     const/4 v4, 0x0
 
     move-object/from16 v0, v20
 
     iput-boolean v4, v0, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan$Options;->loadThumbnails:Z
 
-    .line 710
+    .line 712
     const/4 v4, 0x1
 
     move-object/from16 v0, v20
 
     iput-boolean v4, v0, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan$Options;->onlyLoadForCache:Z
 
-    .line 711
+    .line 713
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/systemui/recents/Recents;->mContext:Landroid/content/Context;
@@ -2548,7 +2558,7 @@
 
     invoke-virtual {v0, v4, v5, v1}, Lcom/android/systemui/recents/model/RecentsTaskLoader;->loadTasks(Landroid/content/Context;Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;Lcom/android/systemui/recents/model/RecentsTaskLoadPlan$Options;)V
 
-    .line 714
+    .line 716
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/systemui/recents/Recents;->mDummyStackView:Lcom/android/systemui/recents/views/TaskStackView;
@@ -2563,11 +2573,11 @@
 
     move-result-object v6
 
-    .line 716
+    .line 718
     .restart local v6    # "opts":Landroid/app/ActivityOptions;
-    if-eqz v6, :cond_8
+    if-eqz v6, :cond_9
 
-    .line 717
+    .line 719
     const/4 v7, 0x0
 
     const/4 v8, 0x0
@@ -2580,17 +2590,17 @@
 
     invoke-virtual/range {v4 .. v10}, Lcom/android/systemui/recents/Recents;->startAlternateRecentsActivity(Landroid/app/ActivityManager$RunningTaskInfo;Landroid/app/ActivityOptions;ZZZLcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm$VisibilityReport;)V
 
-    .line 725
+    .line 727
     .end local v6    # "opts":Landroid/app/ActivityOptions;
     .end local v20    # "launchOpts":Lcom/android/systemui/recents/model/RecentsTaskLoadPlan$Options;
-    :cond_2
+    :cond_3
     :goto_3
-    if-nez v26, :cond_5
-
-    .line 728
-    if-eqz v18, :cond_a
+    if-nez v26, :cond_6
 
     .line 730
+    if-eqz v18, :cond_b
+
+    .line 732
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/systemui/recents/Recents;->mSystemServicesProxy:Lcom/android/systemui/recents/misc/SystemServicesProxy;
@@ -2599,15 +2609,15 @@
 
     move-result-object v19
 
-    .line 732
+    .line 734
     .local v19, "homeActivityPackage":Ljava/lang/String;
     const/16 v22, 0x0
 
-    .line 733
+    .line 735
     .local v22, "searchWidget":Landroid/appwidget/AppWidgetProviderInfo;
     const/16 v23, 0x0
 
-    .line 734
+    .line 736
     .local v23, "searchWidgetPackage":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -2617,9 +2627,9 @@
 
     move-result v4
 
-    if-eqz v4, :cond_9
+    if-eqz v4, :cond_a
 
-    .line 735
+    .line 737
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/systemui/recents/Recents;->mSystemServicesProxy:Lcom/android/systemui/recents/misc/SystemServicesProxy;
@@ -2634,17 +2644,17 @@
 
     move-result-object v22
 
-    .line 740
+    .line 742
     :goto_4
-    if-eqz v22, :cond_3
+    if-eqz v22, :cond_4
 
     move-object/from16 v0, v22
 
     iget-object v4, v0, Landroid/appwidget/AppWidgetProviderInfo;->provider:Landroid/content/ComponentName;
 
-    if-eqz v4, :cond_3
+    if-eqz v4, :cond_4
 
-    .line 741
+    .line 743
     move-object/from16 v0, v22
 
     iget-object v4, v0, Landroid/appwidget/AppWidgetProviderInfo;->provider:Landroid/content/ComponentName;
@@ -2653,15 +2663,15 @@
 
     move-result-object v23
 
-    .line 744
-    :cond_3
+    .line 746
+    :cond_4
     const/4 v8, 0x0
 
-    .line 745
+    .line 747
     .local v8, "fromSearchHome":Z
-    if-eqz v19, :cond_4
+    if-eqz v19, :cond_5
 
-    if-eqz v23, :cond_4
+    if-eqz v23, :cond_5
 
     move-object/from16 v0, v19
 
@@ -2671,20 +2681,20 @@
 
     move-result v4
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_5
 
-    .line 747
+    .line 749
     const/4 v8, 0x1
 
-    .line 750
-    :cond_4
+    .line 752
+    :cond_5
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v8}, Lcom/android/systemui/recents/Recents;->getHomeTransitionActivityOptions(Z)Landroid/app/ActivityOptions;
 
     move-result-object v6
 
-    .line 751
+    .line 753
     .restart local v6    # "opts":Landroid/app/ActivityOptions;
     const/4 v7, 0x1
 
@@ -2696,13 +2706,13 @@
 
     invoke-virtual/range {v4 .. v10}, Lcom/android/systemui/recents/Recents;->startAlternateRecentsActivity(Landroid/app/ActivityManager$RunningTaskInfo;Landroid/app/ActivityOptions;ZZZLcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm$VisibilityReport;)V
 
-    .line 760
+    .line 762
     .end local v6    # "opts":Landroid/app/ActivityOptions;
     .end local v8    # "fromSearchHome":Z
     .end local v19    # "homeActivityPackage":Ljava/lang/String;
     .end local v22    # "searchWidget":Landroid/appwidget/AppWidgetProviderInfo;
     .end local v23    # "searchWidgetPackage":Ljava/lang/String;
-    :cond_5
+    :cond_6
     :goto_5
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -2714,37 +2724,37 @@
 
     goto/16 :goto_0
 
-    .line 702
+    .line 704
     .end local v18    # "hasRecentTasks":Z
     .end local v26    # "useThumbnailTransition":Z
-    :cond_6
+    :cond_7
     const/16 v18, 0x0
 
     goto/16 :goto_1
 
-    .line 703
+    .line 705
     .restart local v18    # "hasRecentTasks":Z
-    :cond_7
+    :cond_8
     const/16 v26, 0x0
 
     goto/16 :goto_2
 
-    .line 721
+    .line 723
     .restart local v6    # "opts":Landroid/app/ActivityOptions;
     .restart local v20    # "launchOpts":Lcom/android/systemui/recents/model/RecentsTaskLoadPlan$Options;
     .restart local v26    # "useThumbnailTransition":Z
-    :cond_8
+    :cond_9
     const/16 v26, 0x0
 
     goto :goto_3
 
-    .line 738
+    .line 740
     .end local v6    # "opts":Landroid/app/ActivityOptions;
     .end local v20    # "launchOpts":Lcom/android/systemui/recents/model/RecentsTaskLoadPlan$Options;
     .restart local v19    # "homeActivityPackage":Ljava/lang/String;
     .restart local v22    # "searchWidget":Landroid/appwidget/AppWidgetProviderInfo;
     .restart local v23    # "searchWidgetPackage":Ljava/lang/String;
-    :cond_9
+    :cond_a
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/systemui/recents/Recents;->mSystemServicesProxy:Lcom/android/systemui/recents/misc/SystemServicesProxy;
@@ -2755,16 +2765,16 @@
 
     goto :goto_4
 
-    .line 755
+    .line 757
     .end local v19    # "homeActivityPackage":Ljava/lang/String;
     .end local v22    # "searchWidget":Landroid/appwidget/AppWidgetProviderInfo;
     .end local v23    # "searchWidgetPackage":Ljava/lang/String;
-    :cond_a
+    :cond_b
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/recents/Recents;->getUnknownTransitionActivityOptions()Landroid/app/ActivityOptions;
 
     move-result-object v6
 
-    .line 756
+    .line 758
     .restart local v6    # "opts":Landroid/app/ActivityOptions;
     const/4 v14, 0x1
 
