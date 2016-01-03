@@ -1,14 +1,11 @@
 .class Lcom/android/systemui/recents/views/TaskViewHeader$2;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "TaskViewHeader.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/recents/views/TaskViewHeader;->dispatchDraw(Landroid/graphics/Canvas;)V
+    value = Lcom/android/systemui/recents/views/TaskViewHeader;->onTaskViewFocusChanged(ZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,38 +23,32 @@
     .locals 0
 
     .prologue
-    .line 317
+    .line 345
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskViewHeader$2;->this$0:Lcom/android/systemui/recents/views/TaskViewHeader;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 3
+.method public onAnimationStart(Landroid/animation/Animator;)V
+    .locals 2
+    .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 320
+    .line 348
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskViewHeader$2;->this$0:Lcom/android/systemui/recents/views/TaskViewHeader;
+
+    iget-object v0, v0, Lcom/android/systemui/recents/views/TaskViewHeader;->mBackground:Landroid/graphics/drawable/RippleDrawable;
 
     const/4 v1, 0x0
 
-    iput-boolean v1, v0, Lcom/android/systemui/recents/views/TaskViewHeader;->mLayersDisabled:Z
+    new-array v1, v1, [I
 
-    .line 321
-    iget-object v0, p0, Lcom/android/systemui/recents/views/TaskViewHeader$2;->this$0:Lcom/android/systemui/recents/views/TaskViewHeader;
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/RippleDrawable;->setState([I)Z
 
-    const/4 v1, 0x2
-
-    iget-object v2, p0, Lcom/android/systemui/recents/views/TaskViewHeader$2;->this$0:Lcom/android/systemui/recents/views/TaskViewHeader;
-
-    iget-object v2, v2, Lcom/android/systemui/recents/views/TaskViewHeader;->mDimLayerPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {v0, v1, v2}, Lcom/android/systemui/recents/views/TaskViewHeader;->setLayerType(ILandroid/graphics/Paint;)V
-
-    .line 322
+    .line 349
     return-void
 .end method

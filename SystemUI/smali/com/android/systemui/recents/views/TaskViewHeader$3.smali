@@ -1,6 +1,9 @@
 .class Lcom/android/systemui/recents/views/TaskViewHeader$3;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 .source "TaskViewHeader.java"
+
+# interfaces
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # annotations
@@ -23,32 +26,45 @@
     .locals 0
 
     .prologue
-    .line 369
+    .line 351
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskViewHeader$3;->this$0:Lcom/android/systemui/recents/views/TaskViewHeader;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationStart(Landroid/animation/Animator;)V
+.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
+    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 372
-    iget-object v0, p0, Lcom/android/systemui/recents/views/TaskViewHeader$3;->this$0:Lcom/android/systemui/recents/views/TaskViewHeader;
+    .line 354
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
-    iget-object v0, v0, Lcom/android/systemui/recents/views/TaskViewHeader;->mBackground:Landroid/graphics/drawable/RippleDrawable;
+    move-result-object v1
 
-    const/4 v1, 0x0
+    check-cast v1, Ljava/lang/Integer;
 
-    new-array v1, v1, [I
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/RippleDrawable;->setState([I)Z
+    move-result v0
 
-    .line 373
+    .line 355
+    .local v0, "color":I
+    iget-object v1, p0, Lcom/android/systemui/recents/views/TaskViewHeader$3;->this$0:Lcom/android/systemui/recents/views/TaskViewHeader;
+
+    iget-object v1, v1, Lcom/android/systemui/recents/views/TaskViewHeader;->mBackgroundColorDrawable:Landroid/graphics/drawable/GradientDrawable;
+
+    invoke-virtual {v1, v0}, Landroid/graphics/drawable/GradientDrawable;->setColor(I)V
+
+    .line 356
+    iget-object v1, p0, Lcom/android/systemui/recents/views/TaskViewHeader$3;->this$0:Lcom/android/systemui/recents/views/TaskViewHeader;
+
+    iput v0, v1, Lcom/android/systemui/recents/views/TaskViewHeader;->mBackgroundColor:I
+
+    .line 357
     return-void
 .end method
