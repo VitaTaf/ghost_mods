@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 1852
+    .line 1859
     iput-object p1, p0, Landroid/transition/Transition$3;->this$0:Landroid/transition/Transition;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -38,14 +38,14 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 1855
+    .line 1862
     iget-object v0, p0, Landroid/transition/Transition$3;->this$0:Landroid/transition/Transition;
 
     invoke-virtual {v0}, Landroid/transition/Transition;->end()V
 
-    .line 1856
+    .line 1863
     invoke-virtual {p1, p0}, Landroid/animation/Animator;->removeListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1857
+    .line 1864
     return-void
 .end method

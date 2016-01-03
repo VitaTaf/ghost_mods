@@ -1,5 +1,5 @@
 .class Landroid/transition/Visibility$1;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Landroid/transition/Transition$TransitionListenerAdapter;
 .source "Visibility.java"
 
 
@@ -27,26 +27,26 @@
     .locals 0
 
     .prologue
-    .line 424
+    .line 435
     iput-object p1, p0, Landroid/transition/Visibility$1;->this$0:Landroid/transition/Visibility;
 
     iput-object p2, p0, Landroid/transition/Visibility$1;->val$finalSceneRoot:Landroid/view/ViewGroup;
 
     iput-object p3, p0, Landroid/transition/Visibility$1;->val$finalOverlayView:Landroid/view/View;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Landroid/transition/Transition$TransitionListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
+.method public onTransitionEnd(Landroid/transition/Transition;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
+    .param p1, "transition"    # Landroid/transition/Transition;
 
     .prologue
-    .line 427
+    .line 438
     iget-object v0, p0, Landroid/transition/Visibility$1;->val$finalSceneRoot:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getOverlay()Landroid/view/ViewGroupOverlay;
@@ -57,6 +57,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroupOverlay;->remove(Landroid/view/View;)V
 
-    .line 428
+    .line 439
     return-void
 .end method
