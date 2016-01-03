@@ -1410,6 +1410,7 @@
     <attr name="valueFrom" format="string|integer|color|float|dimension" />
     <attr name="valueTo" format="string|integer|color|float|dimension" />
     <attr name="valueType">
+        <enum name="colorType" value="3" />
         <enum name="floatType" value="0" />
         <enum name="intType" value="1" />
         <enum name="pathType" value="2" />
@@ -2142,6 +2143,7 @@
     <attr name="dialogPreferredPadding" format="dimension" />
     <attr name="searchHintIcon" format="reference" />
     <attr name="revisionCode" format="integer" />
+    <attr name="fraction" format="float" />
     <attr name="resizeableActivity" format="boolean" />
     <item type="attr" name="APKTOOL_DUMMY_0267">false</item>
     <item type="attr" name="APKTOOL_DUMMY_03a8">false</item>

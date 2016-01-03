@@ -2237,6 +2237,7 @@
     <public type="id" name="websearch" id="0x010203e4" />
     <public type="id" name="find_prev" id="0x010203e5" />
     <public type="id" name="find_next" id="0x010203e6" />
+    <public type="id" name="colorType" id="0x010203e7" />
     <public type="style" name="Animation" id="0x01030000" />
     <public type="style" name="Animation.Activity" id="0x01030001" />
     <public type="style" name="Animation.Dialog" id="0x01030002" />
@@ -8999,4 +9000,5 @@
     <public type="^attr-private" name="interpolatorX" id="0x011600b3" />
     <public type="^attr-private" name="interpolatorY" id="0x011600b4" />
     <public type="^attr-private" name="interpolatorZ" id="0x011600b5" />
+    <public type="^attr-private" name="fraction" id="0x011600b6" />
 </resources>

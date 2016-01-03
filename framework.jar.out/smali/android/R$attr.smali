@@ -744,6 +744,8 @@
 
 .field public static final format24Hour:I = 0x10103cb
 
+.field public static final fraction:I = 0x11600b6
+
 .field public static final fragment:I = 0x10102e3
 
 .field public static final fragmentAllowEnterTransitionOverlap:I = 0x10104c8
