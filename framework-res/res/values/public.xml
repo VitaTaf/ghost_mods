@@ -1238,6 +1238,10 @@
     <public type="attr" name="dialogPreferredPadding" id="0x010104d3" />
     <public type="attr" name="searchHintIcon" id="0x010104d4" />
     <public type="attr" name="revisionCode" id="0x010104d5" />
+    <public type="attr" name="fraction" id="0x010104d6" />
+    <public type="attr" name="resizeableActivity" id="0x010104d7" />
+    <public type="attr" name="start" id="0x010104d8" />
+    <public type="attr" name="end" id="0x010104d9" />
     <public type="id" name="background" id="0x01020000" />
     <public type="id" name="checkbox" id="0x01020001" />
     <public type="id" name="content" id="0x01020002" />
@@ -8996,11 +9000,7 @@
     <public type="^attr-private" name="primaryUserOnly" id="0x011600af" />
     <public type="^attr-private" name="popupEnterTransition" id="0x011600b0" />
     <public type="^attr-private" name="popupExitTransition" id="0x011600b1" />
-    <public type="^attr-private" name="resizeableActivity" id="0x011600b2" />
     <public type="^attr-private" name="interpolatorX" id="0x011600b3" />
     <public type="^attr-private" name="interpolatorY" id="0x011600b4" />
     <public type="^attr-private" name="interpolatorZ" id="0x011600b5" />
-    <public type="^attr-private" name="fraction" id="0x011600b6" />
-    <public type="^attr-private" name="start" id="0x011600b7" />
-    <public type="^attr-private" name="end" id="0x011600b8" />
 </resources>

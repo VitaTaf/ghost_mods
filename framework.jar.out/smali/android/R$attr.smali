@@ -613,7 +613,7 @@
 
 .field public static final enabled:I = 0x101000e
 
-.field public static final end:I = 0x11600b8
+.field public static final end:I = 0x10104d9
 
 .field public static final endColor:I = 0x101019e
 
@@ -746,7 +746,7 @@
 
 .field public static final format24Hour:I = 0x10103cb
 
-.field public static final fraction:I = 0x11600b6
+.field public static final fraction:I = 0x10104d6
 
 .field public static final fragment:I = 0x10102e3
 
@@ -1600,7 +1600,7 @@
 
 .field public static final resizeable:I = 0x101028d
 
-.field public static final resizeableActivity:I = 0x11600b2
+.field public static final resizeableActivity:I = 0x10104d7
 
 .field public static final resource:I = 0x1010025
 
@@ -1847,7 +1847,7 @@
 
 .field public static final starStyle:I = 0x1010082
 
-.field public static final start:I = 0x11600b7
+.field public static final start:I = 0x10104d8
 
 .field public static final startColor:I = 0x101019d
 
