@@ -337,6 +337,176 @@
     goto :goto_2
 .end method
 
+.method private applyDecorRect(Landroid/graphics/Rect;)V
+    .locals 12
+    .param p1, "decorRect"    # Landroid/graphics/Rect;
+
+    .prologue
+    const/4 v8, 0x0
+
+    const/high16 v11, 0x3f000000    # 0.5f
+
+    .line 1281
+    iget-object v4, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
+
+    .line 1282
+    .local v4, "w":Lcom/android/server/wm/WindowState;
+    iget-object v6, v4, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
+
+    invoke-virtual {v6}, Landroid/graphics/Rect;->width()I
+
+    move-result v5
+
+    .line 1283
+    .local v5, "width":I
+    iget-object v6, v4, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
+
+    invoke-virtual {v6}, Landroid/graphics/Rect;->height()I
+
+    move-result v0
+
+    .line 1286
+    .local v0, "height":I
+    iget v6, v4, Lcom/android/server/wm/WindowState;->mXOffset:I
+
+    iget-object v7, v4, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
+
+    iget v7, v7, Landroid/graphics/Rect;->left:I
+
+    add-int v1, v6, v7
+
+    .line 1287
+    .local v1, "left":I
+    iget v6, v4, Lcom/android/server/wm/WindowState;->mYOffset:I
+
+    iget-object v7, v4, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
+
+    iget v7, v7, Landroid/graphics/Rect;->top:I
+
+    add-int v3, v6, v7
+
+    .line 1290
+    .local v3, "top":I
+    iget-object v6, v4, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
+
+    invoke-virtual {v6, v8, v8, v5, v0}, Landroid/graphics/Rect;->set(IIII)V
+
+    .line 1293
+    iget-object v6, v4, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
+
+    iget v7, p1, Landroid/graphics/Rect;->left:I
+
+    sub-int/2addr v7, v1
+
+    iget v8, p1, Landroid/graphics/Rect;->top:I
+
+    sub-int/2addr v8, v3
+
+    iget v9, p1, Landroid/graphics/Rect;->right:I
+
+    sub-int/2addr v9, v1
+
+    iget v10, p1, Landroid/graphics/Rect;->bottom:I
+
+    sub-int/2addr v10, v3
+
+    invoke-virtual {v6, v7, v8, v9, v10}, Landroid/graphics/Rect;->intersect(IIII)Z
+
+    .line 1302
+    iget-boolean v6, v4, Lcom/android/server/wm/WindowState;->mEnforceSizeCompat:Z
+
+    if-eqz v6, :cond_0
+
+    iget v6, v4, Lcom/android/server/wm/WindowState;->mInvGlobalScale:F
+
+    const/high16 v7, 0x3f800000    # 1.0f
+
+    cmpl-float v6, v6, v7
+
+    if-eqz v6, :cond_0
+
+    .line 1303
+    iget v2, v4, Lcom/android/server/wm/WindowState;->mInvGlobalScale:F
+
+    .line 1304
+    .local v2, "scale":F
+    iget-object v6, v4, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
+
+    iget-object v7, v4, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
+
+    iget v7, v7, Landroid/graphics/Rect;->left:I
+
+    int-to-float v7, v7
+
+    mul-float/2addr v7, v2
+
+    sub-float/2addr v7, v11
+
+    float-to-int v7, v7
+
+    iput v7, v6, Landroid/graphics/Rect;->left:I
+
+    .line 1305
+    iget-object v6, v4, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
+
+    iget-object v7, v4, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
+
+    iget v7, v7, Landroid/graphics/Rect;->top:I
+
+    int-to-float v7, v7
+
+    mul-float/2addr v7, v2
+
+    sub-float/2addr v7, v11
+
+    float-to-int v7, v7
+
+    iput v7, v6, Landroid/graphics/Rect;->top:I
+
+    .line 1306
+    iget-object v6, v4, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
+
+    iget-object v7, v4, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
+
+    iget v7, v7, Landroid/graphics/Rect;->right:I
+
+    add-int/lit8 v7, v7, 0x1
+
+    int-to-float v7, v7
+
+    mul-float/2addr v7, v2
+
+    sub-float/2addr v7, v11
+
+    float-to-int v7, v7
+
+    iput v7, v6, Landroid/graphics/Rect;->right:I
+
+    .line 1307
+    iget-object v6, v4, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
+
+    iget-object v7, v4, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
+
+    iget v7, v7, Landroid/graphics/Rect;->bottom:I
+
+    add-int/lit8 v7, v7, 0x1
+
+    int-to-float v7, v7
+
+    mul-float/2addr v7, v2
+
+    sub-float/2addr v7, v11
+
+    float-to-int v7, v7
+
+    iput v7, v6, Landroid/graphics/Rect;->bottom:I
+
+    .line 1309
+    .end local v2    # "scale":F
+    :cond_0
+    return-void
+.end method
+
 .method private applyFadeoutDuringKeyguardExitAnimation()V
     .locals 14
 
@@ -677,176 +847,6 @@
         :pswitch_2
         :pswitch_3
     .end packed-switch
-.end method
-
-.method applyDecorRect(Landroid/graphics/Rect;)V
-    .locals 12
-    .param p1, "decorRect"    # Landroid/graphics/Rect;
-
-    .prologue
-    const/4 v8, 0x0
-
-    const/high16 v11, 0x3f000000    # 0.5f
-
-    .line 1266
-    iget-object v4, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
-
-    .line 1267
-    .local v4, "w":Lcom/android/server/wm/WindowState;
-    iget-object v6, v4, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
-
-    invoke-virtual {v6}, Landroid/graphics/Rect;->width()I
-
-    move-result v5
-
-    .line 1268
-    .local v5, "width":I
-    iget-object v6, v4, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
-
-    invoke-virtual {v6}, Landroid/graphics/Rect;->height()I
-
-    move-result v0
-
-    .line 1271
-    .local v0, "height":I
-    iget v6, v4, Lcom/android/server/wm/WindowState;->mXOffset:I
-
-    iget-object v7, v4, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
-
-    iget v7, v7, Landroid/graphics/Rect;->left:I
-
-    add-int v1, v6, v7
-
-    .line 1272
-    .local v1, "left":I
-    iget v6, v4, Lcom/android/server/wm/WindowState;->mYOffset:I
-
-    iget-object v7, v4, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
-
-    iget v7, v7, Landroid/graphics/Rect;->top:I
-
-    add-int v3, v6, v7
-
-    .line 1275
-    .local v3, "top":I
-    iget-object v6, v4, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
-
-    invoke-virtual {v6, v8, v8, v5, v0}, Landroid/graphics/Rect;->set(IIII)V
-
-    .line 1278
-    iget-object v6, v4, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
-
-    iget v7, p1, Landroid/graphics/Rect;->left:I
-
-    sub-int/2addr v7, v1
-
-    iget v8, p1, Landroid/graphics/Rect;->top:I
-
-    sub-int/2addr v8, v3
-
-    iget v9, p1, Landroid/graphics/Rect;->right:I
-
-    sub-int/2addr v9, v1
-
-    iget v10, p1, Landroid/graphics/Rect;->bottom:I
-
-    sub-int/2addr v10, v3
-
-    invoke-virtual {v6, v7, v8, v9, v10}, Landroid/graphics/Rect;->intersect(IIII)Z
-
-    .line 1287
-    iget-boolean v6, v4, Lcom/android/server/wm/WindowState;->mEnforceSizeCompat:Z
-
-    if-eqz v6, :cond_0
-
-    iget v6, v4, Lcom/android/server/wm/WindowState;->mInvGlobalScale:F
-
-    const/high16 v7, 0x3f800000    # 1.0f
-
-    cmpl-float v6, v6, v7
-
-    if-eqz v6, :cond_0
-
-    .line 1288
-    iget v2, v4, Lcom/android/server/wm/WindowState;->mInvGlobalScale:F
-
-    .line 1289
-    .local v2, "scale":F
-    iget-object v6, v4, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
-
-    iget-object v7, v4, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
-
-    iget v7, v7, Landroid/graphics/Rect;->left:I
-
-    int-to-float v7, v7
-
-    mul-float/2addr v7, v2
-
-    sub-float/2addr v7, v11
-
-    float-to-int v7, v7
-
-    iput v7, v6, Landroid/graphics/Rect;->left:I
-
-    .line 1290
-    iget-object v6, v4, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
-
-    iget-object v7, v4, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
-
-    iget v7, v7, Landroid/graphics/Rect;->top:I
-
-    int-to-float v7, v7
-
-    mul-float/2addr v7, v2
-
-    sub-float/2addr v7, v11
-
-    float-to-int v7, v7
-
-    iput v7, v6, Landroid/graphics/Rect;->top:I
-
-    .line 1291
-    iget-object v6, v4, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
-
-    iget-object v7, v4, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
-
-    iget v7, v7, Landroid/graphics/Rect;->right:I
-
-    add-int/lit8 v7, v7, 0x1
-
-    int-to-float v7, v7
-
-    mul-float/2addr v7, v2
-
-    sub-float/2addr v7, v11
-
-    float-to-int v7, v7
-
-    iput v7, v6, Landroid/graphics/Rect;->right:I
-
-    .line 1292
-    iget-object v6, v4, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
-
-    iget-object v7, v4, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
-
-    iget v7, v7, Landroid/graphics/Rect;->bottom:I
-
-    add-int/lit8 v7, v7, 0x1
-
-    int-to-float v7, v7
-
-    mul-float/2addr v7, v2
-
-    sub-float/2addr v7, v11
-
-    float-to-int v7, v7
-
-    iput v7, v6, Landroid/graphics/Rect;->bottom:I
-
-    .line 1294
-    .end local v2    # "scale":F
-    :cond_0
-    return-void
 .end method
 
 .method applyEnterAnimationLocked()V
@@ -7568,7 +7568,7 @@
 
     iget-object v7, v7, Lcom/android/server/wm/WindowManagerService;->mScreenRect:Landroid/graphics/Rect;
 
-    invoke-virtual {p0, v7}, Lcom/android/server/wm/WindowStateAnimator;->applyDecorRect(Landroid/graphics/Rect;)V
+    invoke-direct {p0, v7}, Lcom/android/server/wm/WindowStateAnimator;->applyDecorRect(Landroid/graphics/Rect;)V
 
     goto/16 :goto_1
 
@@ -7636,7 +7636,7 @@
     .line 1334
     iget-object v7, v6, Lcom/android/server/wm/WindowState;->mDecorFrame:Landroid/graphics/Rect;
 
-    invoke-virtual {p0, v7}, Lcom/android/server/wm/WindowStateAnimator;->applyDecorRect(Landroid/graphics/Rect;)V
+    invoke-direct {p0, v7}, Lcom/android/server/wm/WindowStateAnimator;->applyDecorRect(Landroid/graphics/Rect;)V
 
     .line 1335
     iget-object v7, v6, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
@@ -7651,7 +7651,7 @@
     :cond_a
     iget-object v7, v6, Lcom/android/server/wm/WindowState;->mDecorFrame:Landroid/graphics/Rect;
 
-    invoke-virtual {p0, v7}, Lcom/android/server/wm/WindowStateAnimator;->applyDecorRect(Landroid/graphics/Rect;)V
+    invoke-direct {p0, v7}, Lcom/android/server/wm/WindowStateAnimator;->applyDecorRect(Landroid/graphics/Rect;)V
 
     goto/16 :goto_1
 

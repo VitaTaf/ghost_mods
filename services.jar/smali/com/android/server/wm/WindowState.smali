@@ -2894,7 +2894,7 @@
 
     const/high16 v4, -0x40800000    # -1.0f
 
-    .line 1476
+    .line 1481
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "mDisplayId="
@@ -2907,7 +2907,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 1477
+    .line 1482
     const-string v1, " mSession="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -2916,7 +2916,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
 
-    .line 1478
+    .line 1483
     const-string v1, " mClient="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -2929,7 +2929,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 1479
+    .line 1484
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "mOwnerUid="
@@ -2940,7 +2940,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 1480
+    .line 1485
     const-string v1, " mShowToOwnerOnly="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -2949,7 +2949,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 1481
+    .line 1486
     const-string v1, " package="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -2960,7 +2960,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 1482
+    .line 1487
     const-string v1, " appop="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -2973,7 +2973,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1483
+    .line 1488
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "mAttrs="
@@ -2984,7 +2984,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 1484
+    .line 1489
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "Requested w="
@@ -2995,7 +2995,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 1485
+    .line 1490
     const-string v1, " h="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3004,7 +3004,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 1486
+    .line 1491
     const-string v1, " mLayoutSeq="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3013,7 +3013,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 1487
+    .line 1492
     iget v1, p0, Lcom/android/server/wm/WindowState;->mRequestedWidth:I
 
     iget v2, p0, Lcom/android/server/wm/WindowState;->mLastRequestedWidth:I
@@ -3026,7 +3026,7 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 1488
+    .line 1493
     :cond_0
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -3038,7 +3038,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 1489
+    .line 1494
     const-string v1, " h="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3047,7 +3047,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 1491
+    .line 1496
     :cond_1
     iget-object v1, p0, Lcom/android/server/wm/WindowState;->mAttachedWindow:Lcom/android/server/wm/WindowState;
 
@@ -3057,7 +3057,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 1492
+    .line 1497
     :cond_2
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -3069,7 +3069,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
 
-    .line 1493
+    .line 1498
     const-string v1, " mLayoutAttached="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3078,7 +3078,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 1495
+    .line 1500
     :cond_3
     iget-boolean v1, p0, Lcom/android/server/wm/WindowState;->mIsImWindow:Z
 
@@ -3092,7 +3092,7 @@
 
     if-eqz v1, :cond_5
 
-    .line 1496
+    .line 1501
     :cond_4
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -3104,7 +3104,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 1497
+    .line 1502
     const-string v1, " mIsWallpaper="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3113,7 +3113,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 1498
+    .line 1503
     const-string v1, " mIsFloatingLayer="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3122,7 +3122,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 1499
+    .line 1504
     const-string v1, " mWallpaperVisible="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3131,11 +3131,11 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 1501
+    .line 1506
     :cond_5
     if-eqz p3, :cond_6
 
-    .line 1502
+    .line 1507
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "mBaseLayer="
@@ -3146,7 +3146,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 1503
+    .line 1508
     const-string v1, " mSubLayer="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3155,7 +3155,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 1504
+    .line 1509
     const-string v1, " mAnimLayer="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3168,10 +3168,10 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 1505
+    .line 1510
     iget-object v1, p0, Lcom/android/server/wm/WindowState;->mTargetAppToken:Lcom/android/server/wm/AppWindowToken;
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_24
 
     iget-object v1, p0, Lcom/android/server/wm/WindowState;->mTargetAppToken:Lcom/android/server/wm/AppWindowToken;
 
@@ -3182,7 +3182,7 @@
     :goto_0
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 1508
+    .line 1513
     const-string v1, "="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3193,7 +3193,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 1509
+    .line 1514
     const-string v1, " mLastLayer="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3204,11 +3204,11 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 1511
+    .line 1516
     :cond_6
     if-eqz p3, :cond_9
 
-    .line 1512
+    .line 1517
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "mToken="
@@ -3219,7 +3219,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 1513
+    .line 1518
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "mRootToken="
@@ -3230,12 +3230,12 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 1514
+    .line 1519
     iget-object v1, p0, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
 
     if-eqz v1, :cond_7
 
-    .line 1515
+    .line 1520
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "mAppToken="
@@ -3246,13 +3246,13 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 1517
+    .line 1522
     :cond_7
     iget-object v1, p0, Lcom/android/server/wm/WindowState;->mTargetAppToken:Lcom/android/server/wm/AppWindowToken;
 
     if-eqz v1, :cond_8
 
-    .line 1518
+    .line 1523
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "mTargetAppToken="
@@ -3263,7 +3263,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 1520
+    .line 1525
     :cond_8
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -3271,7 +3271,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 1521
+    .line 1526
     iget v1, p0, Lcom/android/server/wm/WindowState;->mViewVisibility:I
 
     invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
@@ -3280,7 +3280,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 1522
+    .line 1527
     const-string v1, " mHaveFrame="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3289,7 +3289,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 1523
+    .line 1528
     const-string v1, " mObscured="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3298,7 +3298,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 1524
+    .line 1529
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "mSeq="
@@ -3309,12 +3309,12 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 1525
+    .line 1530
     const-string v1, " mSystemUiVisibility=0x"
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 1526
+    .line 1531
     iget v1, p0, Lcom/android/server/wm/WindowState;->mSystemUiVisibility:I
 
     invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
@@ -3323,7 +3323,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1528
+    .line 1533
     :cond_9
     iget-boolean v1, p0, Lcom/android/server/wm/WindowState;->mPolicyVisibility:Z
 
@@ -3341,7 +3341,7 @@
 
     if-eqz v1, :cond_b
 
-    .line 1530
+    .line 1535
     :cond_a
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -3349,32 +3349,32 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 1531
+    .line 1536
     iget-boolean v1, p0, Lcom/android/server/wm/WindowState;->mPolicyVisibility:Z
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 1532
+    .line 1537
     const-string v1, " mPolicyVisibilityAfterAnim="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 1533
+    .line 1538
     iget-boolean v1, p0, Lcom/android/server/wm/WindowState;->mPolicyVisibilityAfterAnim:Z
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 1534
+    .line 1539
     const-string v1, " mAppOpVisibility="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 1535
+    .line 1540
     iget-boolean v1, p0, Lcom/android/server/wm/WindowState;->mAppOpVisibility:Z
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 1536
+    .line 1541
     const-string v1, " mAttachedHidden="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3383,7 +3383,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 1538
+    .line 1543
     :cond_b
     iget-boolean v1, p0, Lcom/android/server/wm/WindowState;->mRelayoutCalled:Z
 
@@ -3393,7 +3393,7 @@
 
     if-eqz v1, :cond_d
 
-    .line 1539
+    .line 1544
     :cond_c
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -3405,7 +3405,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 1540
+    .line 1545
     const-string v1, " mLayoutNeeded="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3414,7 +3414,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 1542
+    .line 1547
     :cond_d
     iget v1, p0, Lcom/android/server/wm/WindowState;->mXOffset:I
 
@@ -3424,7 +3424,7 @@
 
     if-eqz v1, :cond_f
 
-    .line 1543
+    .line 1548
     :cond_e
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -3436,7 +3436,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 1544
+    .line 1549
     const-string v1, " y="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3445,36 +3445,36 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 1546
+    .line 1551
     :cond_f
     if-eqz p3, :cond_12
 
-    .line 1547
+    .line 1552
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "mGivenContentInsets="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 1548
+    .line 1553
     iget-object v1, p0, Lcom/android/server/wm/WindowState;->mGivenContentInsets:Landroid/graphics/Rect;
 
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->printShortString(Ljava/io/PrintWriter;)V
 
-    .line 1549
+    .line 1554
     const-string v1, " mGivenVisibleInsets="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 1550
+    .line 1555
     iget-object v1, p0, Lcom/android/server/wm/WindowState;->mGivenVisibleInsets:Landroid/graphics/Rect;
 
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->printShortString(Ljava/io/PrintWriter;)V
 
-    .line 1551
+    .line 1556
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 1552
+    .line 1557
     iget v1, p0, Lcom/android/server/wm/WindowState;->mTouchableInsets:I
 
     if-nez v1, :cond_10
@@ -3483,7 +3483,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 1553
+    .line 1558
     :cond_10
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -3495,7 +3495,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 1554
+    .line 1559
     const-string v1, " mGivenInsetsPending="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3504,16 +3504,16 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 1555
+    .line 1560
     new-instance v0, Landroid/graphics/Region;
 
     invoke-direct {v0}, Landroid/graphics/Region;-><init>()V
 
-    .line 1556
+    .line 1561
     .local v0, "region":Landroid/graphics/Region;
     invoke-virtual {p0, v0}, Lcom/android/server/wm/WindowState;->getTouchableRegion(Landroid/graphics/Region;)V
 
-    .line 1557
+    .line 1562
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "touchable region="
@@ -3522,7 +3522,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 1559
+    .line 1564
     .end local v0    # "region":Landroid/graphics/Region;
     :cond_11
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3535,7 +3535,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 1561
+    .line 1566
     :cond_12
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -3547,7 +3547,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 1562
+    .line 1567
     const-string v1, " mShownFrame="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3556,7 +3556,7 @@
 
     invoke-virtual {v1, p1}, Landroid/graphics/RectF;->printShortString(Ljava/io/PrintWriter;)V
 
-    .line 1563
+    .line 1568
     const-string v1, " isReadyForDisplay()="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3567,10 +3567,10 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 1564
-    if-eqz p3, :cond_13
+    .line 1569
+    if-eqz p3, :cond_14
 
-    .line 1565
+    .line 1570
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "mFrame="
@@ -3581,7 +3581,7 @@
 
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->printShortString(Ljava/io/PrintWriter;)V
 
-    .line 1566
+    .line 1571
     const-string v1, " last="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3590,10 +3590,10 @@
 
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->printShortString(Ljava/io/PrintWriter;)V
 
-    .line 1567
+    .line 1572
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 1568
+    .line 1573
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "mSystemDecorRect="
@@ -3604,7 +3604,7 @@
 
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->printShortString(Ljava/io/PrintWriter;)V
 
-    .line 1569
+    .line 1574
     const-string v1, " last="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3613,16 +3613,36 @@
 
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->printShortString(Ljava/io/PrintWriter;)V
 
-    .line 1570
+    .line 1575
+    iget-object v1, p0, Lcom/android/server/wm/WindowState;->mWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
+
+    iget-boolean v1, v1, Lcom/android/server/wm/WindowStateAnimator;->mHasClipRect:Z
+
+    if-eqz v1, :cond_13
+
+    .line 1576
+    const-string v1, " mLastClipRect="
+
+    invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+
+    .line 1577
+    iget-object v1, p0, Lcom/android/server/wm/WindowState;->mWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
+
+    iget-object v1, v1, Lcom/android/server/wm/WindowStateAnimator;->mLastClipRect:Landroid/graphics/Rect;
+
+    invoke-virtual {v1, p1}, Landroid/graphics/Rect;->printShortString(Ljava/io/PrintWriter;)V
+
+    .line 1579
+    :cond_13
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 1572
-    :cond_13
+    .line 1581
+    :cond_14
     iget-boolean v1, p0, Lcom/android/server/wm/WindowState;->mEnforceSizeCompat:Z
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_15
 
-    .line 1573
+    .line 1582
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "mCompatFrame="
@@ -3633,26 +3653,26 @@
 
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->printShortString(Ljava/io/PrintWriter;)V
 
-    .line 1574
+    .line 1583
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 1576
-    :cond_14
-    if-eqz p3, :cond_15
+    .line 1585
+    :cond_15
+    if-eqz p3, :cond_16
 
-    .line 1577
+    .line 1586
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "Frames: containing="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 1578
+    .line 1587
     iget-object v1, p0, Lcom/android/server/wm/WindowState;->mContainingFrame:Landroid/graphics/Rect;
 
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->printShortString(Ljava/io/PrintWriter;)V
 
-    .line 1579
+    .line 1588
     const-string v1, " parent="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3661,10 +3681,10 @@
 
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->printShortString(Ljava/io/PrintWriter;)V
 
-    .line 1580
+    .line 1589
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 1581
+    .line 1590
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "    display="
@@ -3675,7 +3695,7 @@
 
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->printShortString(Ljava/io/PrintWriter;)V
 
-    .line 1582
+    .line 1591
     const-string v1, " overscan="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3684,10 +3704,10 @@
 
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->printShortString(Ljava/io/PrintWriter;)V
 
-    .line 1583
+    .line 1592
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 1584
+    .line 1593
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "    content="
@@ -3698,7 +3718,7 @@
 
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->printShortString(Ljava/io/PrintWriter;)V
 
-    .line 1585
+    .line 1594
     const-string v1, " visible="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3707,10 +3727,10 @@
 
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->printShortString(Ljava/io/PrintWriter;)V
 
-    .line 1586
+    .line 1595
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 1587
+    .line 1596
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "    decor="
@@ -3721,22 +3741,22 @@
 
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->printShortString(Ljava/io/PrintWriter;)V
 
-    .line 1588
+    .line 1597
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 1589
+    .line 1598
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "Cur insets: overscan="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 1590
+    .line 1599
     iget-object v1, p0, Lcom/android/server/wm/WindowState;->mOverscanInsets:Landroid/graphics/Rect;
 
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->printShortString(Ljava/io/PrintWriter;)V
 
-    .line 1591
+    .line 1600
     const-string v1, " content="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3745,7 +3765,7 @@
 
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->printShortString(Ljava/io/PrintWriter;)V
 
-    .line 1592
+    .line 1601
     const-string v1, " visible="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3754,7 +3774,7 @@
 
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->printShortString(Ljava/io/PrintWriter;)V
 
-    .line 1593
+    .line 1602
     const-string v1, " stable="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3763,22 +3783,22 @@
 
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->printShortString(Ljava/io/PrintWriter;)V
 
-    .line 1594
+    .line 1603
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 1595
+    .line 1604
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "Lst insets: overscan="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 1596
+    .line 1605
     iget-object v1, p0, Lcom/android/server/wm/WindowState;->mLastOverscanInsets:Landroid/graphics/Rect;
 
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->printShortString(Ljava/io/PrintWriter;)V
 
-    .line 1597
+    .line 1606
     const-string v1, " content="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3787,7 +3807,7 @@
 
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->printShortString(Ljava/io/PrintWriter;)V
 
-    .line 1598
+    .line 1607
     const-string v1, " visible="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3796,7 +3816,7 @@
 
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->printShortString(Ljava/io/PrintWriter;)V
 
-    .line 1599
+    .line 1608
     const-string v1, " stable="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3805,11 +3825,11 @@
 
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->printShortString(Ljava/io/PrintWriter;)V
 
-    .line 1600
+    .line 1609
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 1602
-    :cond_15
+    .line 1611
+    :cond_16
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     iget-object v1, p0, Lcom/android/server/wm/WindowState;->mWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
@@ -3820,7 +3840,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1603
+    .line 1612
     iget-object v1, p0, Lcom/android/server/wm/WindowState;->mWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3843,25 +3863,25 @@
 
     invoke-virtual {v1, p1, v2, p3}, Lcom/android/server/wm/WindowStateAnimator;->dump(Ljava/io/PrintWriter;Ljava/lang/String;Z)V
 
-    .line 1604
+    .line 1613
     iget-boolean v1, p0, Lcom/android/server/wm/WindowState;->mExiting:Z
 
-    if-nez v1, :cond_16
+    if-nez v1, :cond_17
 
     iget-boolean v1, p0, Lcom/android/server/wm/WindowState;->mRemoveOnExit:Z
 
-    if-nez v1, :cond_16
+    if-nez v1, :cond_17
 
     iget-boolean v1, p0, Lcom/android/server/wm/WindowState;->mDestroying:Z
 
-    if-nez v1, :cond_16
+    if-nez v1, :cond_17
 
     iget-boolean v1, p0, Lcom/android/server/wm/WindowState;->mRemoved:Z
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_18
 
-    .line 1605
-    :cond_16
+    .line 1614
+    :cond_17
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "mExiting="
@@ -3872,7 +3892,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 1606
+    .line 1615
     const-string v1, " mRemoveOnExit="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3881,7 +3901,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 1607
+    .line 1616
     const-string v1, " mDestroying="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3890,7 +3910,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 1608
+    .line 1617
     const-string v1, " mRemoved="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3899,34 +3919,34 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 1610
-    :cond_17
+    .line 1619
+    :cond_18
     iget-boolean v1, p0, Lcom/android/server/wm/WindowState;->mOrientationChanging:Z
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_19
 
     iget-boolean v1, p0, Lcom/android/server/wm/WindowState;->mAppFreezing:Z
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_19
 
     iget-boolean v1, p0, Lcom/android/server/wm/WindowState;->mTurnOnScreen:Z
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_1a
 
-    .line 1611
-    :cond_18
+    .line 1620
+    :cond_19
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "mOrientationChanging="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 1612
+    .line 1621
     iget-boolean v1, p0, Lcom/android/server/wm/WindowState;->mOrientationChanging:Z
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 1613
+    .line 1622
     const-string v1, " mAppFreezing="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3935,7 +3955,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 1614
+    .line 1623
     const-string v1, " mTurnOnScreen="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3944,20 +3964,20 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 1616
-    :cond_19
+    .line 1625
+    :cond_1a
     iget v1, p0, Lcom/android/server/wm/WindowState;->mLastFreezeDuration:I
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_1b
 
-    .line 1617
+    .line 1626
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "mLastFreezeDuration="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 1618
+    .line 1627
     iget v1, p0, Lcom/android/server/wm/WindowState;->mLastFreezeDuration:I
 
     int-to-long v2, v1
@@ -3966,22 +3986,22 @@
 
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 1620
-    :cond_1a
+    .line 1629
+    :cond_1b
     iget v1, p0, Lcom/android/server/wm/WindowState;->mHScale:F
 
     cmpl-float v1, v1, v5
 
-    if-nez v1, :cond_1b
+    if-nez v1, :cond_1c
 
     iget v1, p0, Lcom/android/server/wm/WindowState;->mVScale:F
 
     cmpl-float v1, v1, v5
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_1d
 
-    .line 1621
-    :cond_1b
+    .line 1630
+    :cond_1c
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "mHScale="
@@ -3992,7 +4012,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(F)V
 
-    .line 1622
+    .line 1631
     const-string v1, " mVScale="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -4001,22 +4021,22 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(F)V
 
-    .line 1624
-    :cond_1c
+    .line 1633
+    :cond_1d
     iget v1, p0, Lcom/android/server/wm/WindowState;->mWallpaperX:F
 
     cmpl-float v1, v1, v4
 
-    if-nez v1, :cond_1d
+    if-nez v1, :cond_1e
 
     iget v1, p0, Lcom/android/server/wm/WindowState;->mWallpaperY:F
 
     cmpl-float v1, v1, v4
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_1f
 
-    .line 1625
-    :cond_1d
+    .line 1634
+    :cond_1e
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "mWallpaperX="
@@ -4027,7 +4047,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(F)V
 
-    .line 1626
+    .line 1635
     const-string v1, " mWallpaperY="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -4036,22 +4056,22 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(F)V
 
-    .line 1628
-    :cond_1e
+    .line 1637
+    :cond_1f
     iget v1, p0, Lcom/android/server/wm/WindowState;->mWallpaperXStep:F
 
     cmpl-float v1, v1, v4
 
-    if-nez v1, :cond_1f
+    if-nez v1, :cond_20
 
     iget v1, p0, Lcom/android/server/wm/WindowState;->mWallpaperYStep:F
 
     cmpl-float v1, v1, v4
 
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_21
 
-    .line 1629
-    :cond_1f
+    .line 1638
+    :cond_20
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "mWallpaperXStep="
@@ -4062,7 +4082,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(F)V
 
-    .line 1630
+    .line 1639
     const-string v1, " mWallpaperYStep="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -4071,48 +4091,48 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(F)V
 
-    .line 1632
-    :cond_20
+    .line 1641
+    :cond_21
     iget v1, p0, Lcom/android/server/wm/WindowState;->mWallpaperDisplayOffsetX:I
 
-    if-ne v1, v6, :cond_21
+    if-ne v1, v6, :cond_22
 
     iget v1, p0, Lcom/android/server/wm/WindowState;->mWallpaperDisplayOffsetY:I
 
-    if-eq v1, v6, :cond_22
+    if-eq v1, v6, :cond_23
 
-    .line 1634
-    :cond_21
+    .line 1643
+    :cond_22
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "mWallpaperDisplayOffsetX="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 1635
+    .line 1644
     iget v1, p0, Lcom/android/server/wm/WindowState;->mWallpaperDisplayOffsetX:I
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 1636
+    .line 1645
     const-string v1, " mWallpaperDisplayOffsetY="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 1637
+    .line 1646
     iget v1, p0, Lcom/android/server/wm/WindowState;->mWallpaperDisplayOffsetY:I
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 1639
-    :cond_22
+    .line 1648
+    :cond_23
     return-void
 
-    .line 1505
-    :cond_23
+    .line 1510
+    :cond_24
     iget-object v1, p0, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
 
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_25
 
     iget-object v1, p0, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
 
@@ -4122,7 +4142,7 @@
 
     goto/16 :goto_0
 
-    :cond_24
+    :cond_25
     const/4 v1, 0x0
 
     goto/16 :goto_0
