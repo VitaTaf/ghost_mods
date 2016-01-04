@@ -1,116 +1,95 @@
-.class Landroid/graphics/drawable/RippleBackground$1;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class final Landroid/graphics/drawable/RippleBackground$1;
+.super Landroid/graphics/drawable/RippleBackground$BackgroundProperty;
 .source "RippleBackground.java"
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/graphics/drawable/RippleBackground;->exitSoftware(III)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/graphics/drawable/RippleBackground;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x8
     name = null
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Landroid/graphics/drawable/RippleBackground;
-
-.field final synthetic val$outerDuration:I
-
-
 # direct methods
-.method constructor <init>(Landroid/graphics/drawable/RippleBackground;I)V
+.method constructor <init>(Ljava/lang/String;)V
     .locals 0
+    .param p1, "x0"    # Ljava/lang/String;
 
     .prologue
-    .line 360
-    iput-object p1, p0, Landroid/graphics/drawable/RippleBackground$1;->this$0:Landroid/graphics/drawable/RippleBackground;
-
-    iput p2, p0, Landroid/graphics/drawable/RippleBackground$1;->val$outerDuration:I
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    .line 166
+    invoke-direct {p0, p1}, Landroid/graphics/drawable/RippleBackground$BackgroundProperty;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 0
-    .param p1, "animation"    # Landroid/animation/Animator;
+.method public get(Landroid/graphics/drawable/RippleBackground;)Ljava/lang/Float;
+    .locals 1
+    .param p1, "object"    # Landroid/graphics/drawable/RippleBackground;
 
     .prologue
-    .line 377
-    invoke-virtual {p1, p0}, Landroid/animation/Animator;->removeListener(Landroid/animation/Animator$AnimatorListener;)V
+    .line 175
+    # getter for: Landroid/graphics/drawable/RippleBackground;->mOpacity:F
+    invoke-static {p1}, Landroid/graphics/drawable/RippleBackground;->access$000(Landroid/graphics/drawable/RippleBackground;)F
 
-    .line 378
-    return-void
-.end method
+    move-result v0
 
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 7
-    .param p1, "animation"    # Landroid/animation/Animator;
-
-    .prologue
-    const/4 v6, 0x1
-
-    .line 363
-    iget-object v1, p0, Landroid/graphics/drawable/RippleBackground$1;->this$0:Landroid/graphics/drawable/RippleBackground;
-
-    const-string/jumbo v2, "outerOpacity"
-
-    new-array v3, v6, [F
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    aput v5, v3, v4
-
-    invoke-static {v1, v2, v3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v0
 
-    .line 365
-    .local v0, "outerFadeOutAnim":Landroid/animation/ObjectAnimator;
-    invoke-virtual {v0, v6}, Landroid/animation/ObjectAnimator;->setAutoCancel(Z)V
+    return-object v0
+.end method
 
-    .line 366
-    iget v1, p0, Landroid/graphics/drawable/RippleBackground$1;->val$outerDuration:I
+.method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+    .param p1, "x0"    # Ljava/lang/Object;
 
-    int-to-long v2, v1
+    .prologue
+    .line 166
+    check-cast p1, Landroid/graphics/drawable/RippleBackground;
 
-    invoke-virtual {v0, v2, v3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+    .end local p1    # "x0":Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Landroid/graphics/drawable/RippleBackground$1;->get(Landroid/graphics/drawable/RippleBackground;)Ljava/lang/Float;
 
-    .line 367
-    # getter for: Landroid/graphics/drawable/RippleBackground;->LINEAR_INTERPOLATOR:Landroid/animation/TimeInterpolator;
-    invoke-static {}, Landroid/graphics/drawable/RippleBackground;->access$000()Landroid/animation/TimeInterpolator;
+    move-result-object v0
 
-    move-result-object v1
+    return-object v0
+.end method
 
-    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+.method public setValue(Landroid/graphics/drawable/RippleBackground;F)V
+    .locals 0
+    .param p1, "object"    # Landroid/graphics/drawable/RippleBackground;
+    .param p2, "value"    # F
 
-    .line 368
-    iget-object v1, p0, Landroid/graphics/drawable/RippleBackground$1;->this$0:Landroid/graphics/drawable/RippleBackground;
+    .prologue
+    .line 169
+    # setter for: Landroid/graphics/drawable/RippleBackground;->mOpacity:F
+    invoke-static {p1, p2}, Landroid/graphics/drawable/RippleBackground;->access$002(Landroid/graphics/drawable/RippleBackground;F)F
 
-    # getter for: Landroid/graphics/drawable/RippleBackground;->mAnimationListener:Landroid/animation/AnimatorListenerAdapter;
-    invoke-static {v1}, Landroid/graphics/drawable/RippleBackground;->access$100(Landroid/graphics/drawable/RippleBackground;)Landroid/animation/AnimatorListenerAdapter;
+    .line 170
+    invoke-virtual {p1}, Landroid/graphics/drawable/RippleBackground;->invalidateSelf()V
 
-    move-result-object v1
+    .line 171
+    return-void
+.end method
 
-    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+.method public bridge synthetic setValue(Ljava/lang/Object;F)V
+    .locals 0
+    .param p1, "x0"    # Ljava/lang/Object;
+    .param p2, "x1"    # F
 
-    .line 370
-    iget-object v1, p0, Landroid/graphics/drawable/RippleBackground$1;->this$0:Landroid/graphics/drawable/RippleBackground;
+    .prologue
+    .line 166
+    check-cast p1, Landroid/graphics/drawable/RippleBackground;
 
-    # setter for: Landroid/graphics/drawable/RippleBackground;->mAnimOuterOpacity:Landroid/animation/ObjectAnimator;
-    invoke-static {v1, v0}, Landroid/graphics/drawable/RippleBackground;->access$202(Landroid/graphics/drawable/RippleBackground;Landroid/animation/ObjectAnimator;)Landroid/animation/ObjectAnimator;
+    .end local p1    # "x0":Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Landroid/graphics/drawable/RippleBackground$1;->setValue(Landroid/graphics/drawable/RippleBackground;F)V
 
-    .line 372
-    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
-
-    .line 373
     return-void
 .end method

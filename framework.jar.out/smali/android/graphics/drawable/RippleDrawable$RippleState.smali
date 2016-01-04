@@ -30,10 +30,10 @@
     .param p3, "res"    # Landroid/content/res/Resources;
 
     .prologue
-    .line 959
+    .line 956
     invoke-direct {p0, p1, p2, p3}, Landroid/graphics/drawable/LayerDrawable$LayerState;-><init>(Landroid/graphics/drawable/LayerDrawable$LayerState;Landroid/graphics/drawable/LayerDrawable;Landroid/content/res/Resources;)V
 
-    .line 955
+    .line 952
     const v1, -0xff01
 
     invoke-static {v1}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
@@ -42,12 +42,12 @@
 
     iput-object v1, p0, Landroid/graphics/drawable/RippleDrawable$RippleState;->mColor:Landroid/content/res/ColorStateList;
 
-    .line 956
+    .line 953
     const/4 v1, -0x1
 
     iput v1, p0, Landroid/graphics/drawable/RippleDrawable$RippleState;->mMaxRadius:I
 
-    .line 961
+    .line 958
     if-eqz p1, :cond_0
 
     instance-of v1, p1, Landroid/graphics/drawable/RippleDrawable$RippleState;
@@ -56,26 +56,26 @@
 
     move-object v0, p1
 
-    .line 962
+    .line 959
     check-cast v0, Landroid/graphics/drawable/RippleDrawable$RippleState;
 
-    .line 963
+    .line 960
     .local v0, "origs":Landroid/graphics/drawable/RippleDrawable$RippleState;
     iget-object v1, v0, Landroid/graphics/drawable/RippleDrawable$RippleState;->mTouchThemeAttrs:[I
 
     iput-object v1, p0, Landroid/graphics/drawable/RippleDrawable$RippleState;->mTouchThemeAttrs:[I
 
-    .line 964
+    .line 961
     iget-object v1, v0, Landroid/graphics/drawable/RippleDrawable$RippleState;->mColor:Landroid/content/res/ColorStateList;
 
     iput-object v1, p0, Landroid/graphics/drawable/RippleDrawable$RippleState;->mColor:Landroid/content/res/ColorStateList;
 
-    .line 965
+    .line 962
     iget v1, v0, Landroid/graphics/drawable/RippleDrawable$RippleState;->mMaxRadius:I
 
     iput v1, p0, Landroid/graphics/drawable/RippleDrawable$RippleState;->mMaxRadius:I
 
-    .line 967
+    .line 964
     .end local v0    # "origs":Landroid/graphics/drawable/RippleDrawable$RippleState;
     :cond_0
     return-void
@@ -87,7 +87,7 @@
     .locals 1
 
     .prologue
-    .line 971
+    .line 968
     iget-object v0, p0, Landroid/graphics/drawable/RippleDrawable$RippleState;->mTouchThemeAttrs:[I
 
     if-nez v0, :cond_1
@@ -129,7 +129,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 978
+    .line 975
     new-instance v0, Landroid/graphics/drawable/RippleDrawable;
 
     invoke-direct {v0, p0, v1, v1}, Landroid/graphics/drawable/RippleDrawable;-><init>(Landroid/graphics/drawable/RippleDrawable$RippleState;Landroid/content/res/Resources;Landroid/graphics/drawable/RippleDrawable$1;)V
@@ -142,7 +142,7 @@
     .param p1, "res"    # Landroid/content/res/Resources;
 
     .prologue
-    .line 983
+    .line 980
     new-instance v0, Landroid/graphics/drawable/RippleDrawable;
 
     const/4 v1, 0x0
