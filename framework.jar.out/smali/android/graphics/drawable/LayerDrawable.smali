@@ -40,6 +40,10 @@
 
 .field private mPaddingT:[I
 
+.field private final mTmpContainer:Landroid/graphics/Rect;
+
+.field private final mTmpOutRect:Landroid/graphics/Rect;
+
 .field private final mTmpRect:Landroid/graphics/Rect;
 
 
@@ -50,14 +54,14 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 132
+    .line 134
     move-object v0, v1
 
     check-cast v0, Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     invoke-direct {p0, v0, v1}, Landroid/graphics/drawable/LayerDrawable;-><init>(Landroid/graphics/drawable/LayerDrawable$LayerState;Landroid/content/res/Resources;)V
 
-    .line 133
+    .line 135
     return-void
 .end method
 
@@ -67,7 +71,7 @@
     .param p2, "res"    # Landroid/content/res/Resources;
 
     .prologue
-    .line 135
+    .line 137
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
     .line 88
@@ -82,24 +86,38 @@
 
     iput-object v0, p0, Landroid/graphics/drawable/LayerDrawable;->mTmpRect:Landroid/graphics/Rect;
 
-    .line 136
+    .line 95
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object v0, p0, Landroid/graphics/drawable/LayerDrawable;->mTmpOutRect:Landroid/graphics/Rect;
+
+    .line 96
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object v0, p0, Landroid/graphics/drawable/LayerDrawable;->mTmpContainer:Landroid/graphics/Rect;
+
+    .line 138
     invoke-virtual {p0, p1, p2}, Landroid/graphics/drawable/LayerDrawable;->createConstantState(Landroid/graphics/drawable/LayerDrawable$LayerState;Landroid/content/res/Resources;)Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
-    .line 137
+    .line 139
     iget-object v0, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
     if-lez v0, :cond_0
 
-    .line 138
+    .line 140
     invoke-virtual {p0}, Landroid/graphics/drawable/LayerDrawable;->ensurePadding()V
 
-    .line 140
+    .line 142
     :cond_0
     return-void
 .end method
@@ -109,12 +127,12 @@
     .param p1, "layers"    # [Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 104
+    .line 106
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Landroid/graphics/drawable/LayerDrawable;-><init>([Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/LayerDrawable$LayerState;)V
 
-    .line 105
+    .line 107
     return-void
 .end method
 
@@ -124,19 +142,19 @@
     .param p2, "state"    # Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     .prologue
-    .line 115
+    .line 117
     const/4 v3, 0x0
 
     invoke-direct {p0, p2, v3}, Landroid/graphics/drawable/LayerDrawable;-><init>(Landroid/graphics/drawable/LayerDrawable$LayerState;Landroid/content/res/Resources;)V
 
-    .line 117
+    .line 119
     array-length v1, p1
 
-    .line 118
+    .line 120
     .local v1, "length":I
     new-array v2, v1, [Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 119
+    .line 121
     .local v2, "r":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     const/4 v0, 0x0
 
@@ -144,26 +162,26 @@
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 120
+    .line 122
     new-instance v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
     invoke-direct {v3}, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;-><init>()V
 
     aput-object v3, v2, v0
 
-    .line 121
+    .line 123
     aget-object v3, v2, v0
 
     aget-object v4, p1, v0
 
     iput-object v4, v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 122
+    .line 124
     aget-object v3, p1, v0
 
     invoke-virtual {v3, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 123
+    .line 125
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v4, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildrenChangingConfigurations:I
@@ -178,26 +196,26 @@
 
     iput v4, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildrenChangingConfigurations:I
 
-    .line 119
+    .line 121
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 125
+    .line 127
     :cond_0
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iput v1, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 126
+    .line 128
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iput-object v2, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 128
+    .line 130
     invoke-virtual {p0}, Landroid/graphics/drawable/LayerDrawable;->ensurePadding()V
 
-    .line 129
+    .line 131
     return-void
 .end method
 
@@ -208,30 +226,30 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 673
+    .line 675
     iput v3, p1, Landroid/graphics/Rect;->left:I
 
-    .line 674
+    .line 676
     iput v3, p1, Landroid/graphics/Rect;->top:I
 
-    .line 675
+    .line 677
     iput v3, p1, Landroid/graphics/Rect;->right:I
 
-    .line 676
+    .line 678
     iput v3, p1, Landroid/graphics/Rect;->bottom:I
 
-    .line 679
+    .line 681
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 680
+    .line 682
     .local v1, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 681
+    .line 683
     .local v0, "N":I
     const/4 v2, 0x0
 
@@ -239,12 +257,12 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 682
+    .line 684
     aget-object v3, v1, v2
 
     invoke-direct {p0, v2, v3}, Landroid/graphics/drawable/LayerDrawable;->refreshChildPadding(ILandroid/graphics/drawable/LayerDrawable$ChildDrawable;)Z
 
-    .line 684
+    .line 686
     iget v3, p1, Landroid/graphics/Rect;->left:I
 
     iget-object v4, p0, Landroid/graphics/drawable/LayerDrawable;->mPaddingL:[I
@@ -255,7 +273,7 @@
 
     iput v3, p1, Landroid/graphics/Rect;->left:I
 
-    .line 685
+    .line 687
     iget v3, p1, Landroid/graphics/Rect;->top:I
 
     iget-object v4, p0, Landroid/graphics/drawable/LayerDrawable;->mPaddingT:[I
@@ -266,7 +284,7 @@
 
     iput v3, p1, Landroid/graphics/Rect;->top:I
 
-    .line 686
+    .line 688
     iget v3, p1, Landroid/graphics/Rect;->right:I
 
     iget-object v4, p0, Landroid/graphics/drawable/LayerDrawable;->mPaddingR:[I
@@ -277,7 +295,7 @@
 
     iput v3, p1, Landroid/graphics/Rect;->right:I
 
-    .line 687
+    .line 689
     iget v3, p1, Landroid/graphics/Rect;->bottom:I
 
     iget-object v4, p0, Landroid/graphics/drawable/LayerDrawable;->mPaddingB:[I
@@ -288,12 +306,12 @@
 
     iput v3, p1, Landroid/graphics/Rect;->bottom:I
 
-    .line 681
+    .line 683
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 689
+    .line 691
     :cond_0
     return-void
 .end method
@@ -305,30 +323,30 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 692
+    .line 694
     iput v3, p1, Landroid/graphics/Rect;->left:I
 
-    .line 693
+    .line 695
     iput v3, p1, Landroid/graphics/Rect;->top:I
 
-    .line 694
+    .line 696
     iput v3, p1, Landroid/graphics/Rect;->right:I
 
-    .line 695
+    .line 697
     iput v3, p1, Landroid/graphics/Rect;->bottom:I
 
-    .line 698
+    .line 700
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 699
+    .line 701
     .local v1, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 700
+    .line 702
     .local v0, "N":I
     const/4 v2, 0x0
 
@@ -336,12 +354,12 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 701
+    .line 703
     aget-object v3, v1, v2
 
     invoke-direct {p0, v2, v3}, Landroid/graphics/drawable/LayerDrawable;->refreshChildPadding(ILandroid/graphics/drawable/LayerDrawable$ChildDrawable;)Z
 
-    .line 703
+    .line 705
     iget v3, p1, Landroid/graphics/Rect;->left:I
 
     iget-object v4, p0, Landroid/graphics/drawable/LayerDrawable;->mPaddingL:[I
@@ -354,7 +372,7 @@
 
     iput v3, p1, Landroid/graphics/Rect;->left:I
 
-    .line 704
+    .line 706
     iget v3, p1, Landroid/graphics/Rect;->top:I
 
     iget-object v4, p0, Landroid/graphics/drawable/LayerDrawable;->mPaddingT:[I
@@ -367,7 +385,7 @@
 
     iput v3, p1, Landroid/graphics/Rect;->top:I
 
-    .line 705
+    .line 707
     iget v3, p1, Landroid/graphics/Rect;->right:I
 
     iget-object v4, p0, Landroid/graphics/drawable/LayerDrawable;->mPaddingR:[I
@@ -380,7 +398,7 @@
 
     iput v3, p1, Landroid/graphics/Rect;->right:I
 
-    .line 706
+    .line 708
     iget v3, p1, Landroid/graphics/Rect;->bottom:I
 
     iget-object v4, p0, Landroid/graphics/drawable/LayerDrawable;->mPaddingB:[I
@@ -393,12 +411,12 @@
 
     iput v3, p1, Landroid/graphics/Rect;->bottom:I
 
-    .line 700
+    .line 702
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 708
+    .line 710
     :cond_0
     return-void
 .end method
@@ -419,10 +437,10 @@
     .prologue
     const/4 v8, 0x2
 
-    .line 186
+    .line 188
     iget-object v4, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
-    .line 188
+    .line 190
     .local v4, "state":Landroid/graphics/drawable/LayerDrawable$LayerState;
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
 
@@ -430,7 +448,7 @@
 
     add-int/lit8 v2, v6, 0x1
 
-    .line 192
+    .line 194
     .local v2, "innerDepth":I
     :cond_0
     :goto_0
@@ -454,11 +472,11 @@
 
     if-eq v5, v6, :cond_6
 
-    .line 193
+    .line 195
     :cond_1
     if-ne v5, v8, :cond_0
 
-    .line 197
+    .line 199
     if-gt v1, v2, :cond_0
 
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
@@ -473,12 +491,12 @@
 
     if-eqz v6, :cond_0
 
-    .line 201
+    .line 203
     new-instance v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
     invoke-direct {v3}, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;-><init>()V
 
-    .line 202
+    .line 204
     .local v3, "layer":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     sget-object v6, Lcom/android/internal/R$styleable;->LayerDrawableItem:[I
 
@@ -486,19 +504,19 @@
 
     move-result-object v0
 
-    .line 203
+    .line 205
     .local v0, "a":Landroid/content/res/TypedArray;
     invoke-direct {p0, v3, v0}, Landroid/graphics/drawable/LayerDrawable;->updateLayerFromTypedArray(Landroid/graphics/drawable/LayerDrawable$ChildDrawable;Landroid/content/res/TypedArray;)V
 
-    .line 204
+    .line 206
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 206
+    .line 208
     iget-object v6, v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     if-nez v6, :cond_4
 
-    .line 207
+    .line 209
     :cond_2
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
@@ -508,10 +526,10 @@
 
     if-eq v5, v6, :cond_2
 
-    .line 209
+    .line 211
     if-eq v5, v8, :cond_3
 
-    .line 210
+    .line 212
     new-instance v6, Lorg/xmlpull/v1/XmlPullParserException;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -546,7 +564,7 @@
 
     throw v6
 
-    .line 214
+    .line 216
     :cond_3
     invoke-static {p1, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->createFromXmlInner(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
@@ -554,13 +572,13 @@
 
     iput-object v6, v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 217
+    .line 219
     :cond_4
     iget-object v6, v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v6, :cond_5
 
-    .line 218
+    .line 220
     iget v6, v4, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildrenChangingConfigurations:I
 
     iget-object v7, v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -573,18 +591,18 @@
 
     iput v6, v4, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildrenChangingConfigurations:I
 
-    .line 220
+    .line 222
     iget-object v6, v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v6, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 223
+    .line 225
     :cond_5
     invoke-virtual {p0, v3}, Landroid/graphics/drawable/LayerDrawable;->addLayer(Landroid/graphics/drawable/LayerDrawable$ChildDrawable;)V
 
     goto :goto_0
 
-    .line 225
+    .line 227
     .end local v0    # "a":Landroid/content/res/TypedArray;
     .end local v1    # "depth":I
     .end local v3    # "layer":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
@@ -598,16 +616,16 @@
     .param p2, "r"    # Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
     .prologue
-    .line 1071
+    .line 1074
     iget-object v0, p0, Landroid/graphics/drawable/LayerDrawable;->mTmpRect:Landroid/graphics/Rect;
 
-    .line 1072
+    .line 1075
     .local v0, "rect":Landroid/graphics/Rect;
     iget-object v1, p2, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
 
-    .line 1073
+    .line 1076
     iget v1, v0, Landroid/graphics/Rect;->left:I
 
     iget-object v2, p0, Landroid/graphics/drawable/LayerDrawable;->mPaddingL:[I
@@ -640,7 +658,7 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 1075
+    .line 1078
     :cond_0
     iget-object v1, p0, Landroid/graphics/drawable/LayerDrawable;->mPaddingL:[I
 
@@ -648,31 +666,31 @@
 
     aput v2, v1, p1
 
-    .line 1076
+    .line 1079
     iget-object v1, p0, Landroid/graphics/drawable/LayerDrawable;->mPaddingT:[I
 
     iget v2, v0, Landroid/graphics/Rect;->top:I
 
     aput v2, v1, p1
 
-    .line 1077
+    .line 1080
     iget-object v1, p0, Landroid/graphics/drawable/LayerDrawable;->mPaddingR:[I
 
     iget v2, v0, Landroid/graphics/Rect;->right:I
 
     aput v2, v1, p1
 
-    .line 1078
+    .line 1081
     iget-object v1, p0, Landroid/graphics/drawable/LayerDrawable;->mPaddingB:[I
 
     iget v2, v0, Landroid/graphics/Rect;->bottom:I
 
     aput v2, v1, p1
 
-    .line 1079
+    .line 1082
     const/4 v1, 0x1
 
-    .line 1081
+    .line 1084
     :goto_0
     return v1
 
@@ -689,20 +707,20 @@
     .param p3, "height"    # I
 
     .prologue
-    .line 994
+    .line 997
     invoke-static {p1}, Landroid/view/Gravity;->isHorizontal(I)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 995
+    .line 998
     if-gez p2, :cond_2
 
-    .line 996
+    .line 999
     or-int/lit8 p1, p1, 0x7
 
-    .line 1002
+    .line 1005
     :cond_0
     :goto_0
     invoke-static {p1}, Landroid/view/Gravity;->isVertical(I)Z
@@ -711,18 +729,18 @@
 
     if-nez v0, :cond_1
 
-    .line 1003
+    .line 1006
     if-gez p3, :cond_3
 
-    .line 1004
+    .line 1007
     or-int/lit8 p1, p1, 0x70
 
-    .line 1010
+    .line 1013
     :cond_1
     :goto_1
     return p1
 
-    .line 998
+    .line 1001
     :cond_2
     const v0, 0x800003
 
@@ -730,7 +748,7 @@
 
     goto :goto_0
 
-    .line 1006
+    .line 1009
     :cond_3
     or-int/lit8 p1, p1, 0x30
 
@@ -748,33 +766,33 @@
     .param p7, "e"    # I
 
     .prologue
-    .line 590
+    .line 592
     iget-object v1, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
     aget-object v0, v1, p1
 
-    .line 591
+    .line 593
     .local v0, "childDrawable":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iput p2, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetL:I
 
-    .line 592
+    .line 594
     iput p3, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetT:I
 
-    .line 593
+    .line 595
     iput p4, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetR:I
 
-    .line 594
+    .line 596
     iput p5, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetB:I
 
-    .line 595
+    .line 597
     iput p6, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetS:I
 
-    .line 596
+    .line 598
     iput p7, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetE:I
 
-    .line 597
+    .line 599
     return-void
 .end method
 
@@ -783,34 +801,34 @@
     .param p1, "bounds"    # Landroid/graphics/Rect;
 
     .prologue
-    .line 931
+    .line 933
     const/16 v18, 0x0
 
-    .line 932
+    .line 934
     .local v18, "padL":I
     const/16 v20, 0x0
 
-    .line 933
+    .line 935
     .local v20, "padT":I
     const/16 v19, 0x0
 
-    .line 934
+    .line 936
     .local v19, "padR":I
     const/16 v17, 0x0
 
-    .line 936
+    .line 938
     .local v17, "padB":I
     move-object/from16 v0, p0
 
-    iget-object v8, v0, Landroid/graphics/drawable/LayerDrawable;->mTmpRect:Landroid/graphics/Rect;
+    iget-object v8, v0, Landroid/graphics/drawable/LayerDrawable;->mTmpOutRect:Landroid/graphics/Rect;
 
-    .line 937
+    .line 939
     .local v8, "outRect":Landroid/graphics/Rect;
     invoke-virtual/range {p0 .. p0}, Landroid/graphics/drawable/LayerDrawable;->getLayoutDirection()I
 
     move-result v9
 
-    .line 938
+    .line 940
     .local v9, "layoutDirection":I
     move-object/from16 v0, p0
 
@@ -827,7 +845,7 @@
 
     const/16 v16, 0x1
 
-    .line 939
+    .line 941
     .local v16, "nest":Z
     :goto_0
     move-object/from16 v0, p0
@@ -840,7 +858,7 @@
 
     iget-object v11, v0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 940
+    .line 942
     .local v11, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     move-object/from16 v0, p0
 
@@ -852,7 +870,7 @@
 
     iget v10, v0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 941
+    .line 943
     .local v10, "N":I
     const/4 v13, 0x0
 
@@ -860,30 +878,39 @@
     :goto_1
     if-ge v13, v10, :cond_9
 
-    .line 942
+    .line 944
     aget-object v21, v11, v13
 
-    .line 943
+    .line 945
     .local v21, "r":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     move-object/from16 v0, v21
 
     iget-object v12, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 944
+    .line 946
     .local v12, "d":Landroid/graphics/drawable/Drawable;
+    move-object/from16 v0, p0
+
+    iget-object v7, v0, Landroid/graphics/drawable/LayerDrawable;->mTmpContainer:Landroid/graphics/Rect;
+
+    .line 947
+    .local v7, "container":Landroid/graphics/Rect;
     invoke-virtual {v12}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
-    move-result-object v7
+    move-result-object v22
 
-    .line 952
-    .local v7, "container":Landroid/graphics/Rect;
+    move-object/from16 v0, v22
+
+    invoke-virtual {v7, v0}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+
+    .line 955
     const/16 v22, 0x1
 
     move/from16 v0, v22
 
     if-ne v9, v0, :cond_4
 
-    .line 953
+    .line 956
     move-object/from16 v0, v21
 
     iget v0, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetE:I
@@ -902,7 +929,7 @@
 
     iget v14, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetL:I
 
-    .line 954
+    .line 957
     .local v14, "insetL":I
     :goto_2
     move-object/from16 v0, v21
@@ -923,7 +950,7 @@
 
     iget v15, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetR:I
 
-    .line 962
+    .line 965
     .local v15, "insetR":I
     :goto_3
     move-object/from16 v0, p1
@@ -988,7 +1015,7 @@
 
     invoke-virtual {v7, v0, v1, v2, v3}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 966
+    .line 969
     move-object/from16 v0, v21
 
     iget v0, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mGravity:I
@@ -1019,7 +1046,7 @@
 
     move-result v4
 
-    .line 967
+    .line 970
     .local v4, "gravity":I
     move-object/from16 v0, v21
 
@@ -1033,7 +1060,7 @@
 
     move-result v5
 
-    .line 968
+    .line 971
     .local v5, "w":I
     :goto_4
     move-object/from16 v0, v21
@@ -1048,18 +1075,18 @@
 
     move-result v6
 
-    .line 969
+    .line 972
     .local v6, "h":I
     :goto_5
     invoke-static/range {v4 .. v9}, Landroid/view/Gravity;->apply(IIILandroid/graphics/Rect;Landroid/graphics/Rect;I)V
 
-    .line 970
+    .line 973
     invoke-virtual {v12, v8}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 972
+    .line 975
     if-eqz v16, :cond_0
 
-    .line 973
+    .line 976
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/graphics/drawable/LayerDrawable;->mPaddingL:[I
@@ -1070,7 +1097,7 @@
 
     add-int v18, v18, v22
 
-    .line 974
+    .line 977
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/graphics/drawable/LayerDrawable;->mPaddingR:[I
@@ -1081,7 +1108,7 @@
 
     add-int v19, v19, v22
 
-    .line 975
+    .line 978
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/graphics/drawable/LayerDrawable;->mPaddingT:[I
@@ -1092,7 +1119,7 @@
 
     add-int v20, v20, v22
 
-    .line 976
+    .line 979
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/graphics/drawable/LayerDrawable;->mPaddingB:[I
@@ -1103,13 +1130,13 @@
 
     add-int v17, v17, v22
 
-    .line 941
+    .line 943
     :cond_0
     add-int/lit8 v13, v13, 0x1
 
     goto/16 :goto_1
 
-    .line 938
+    .line 940
     .end local v4    # "gravity":I
     .end local v5    # "w":I
     .end local v6    # "h":I
@@ -1127,7 +1154,7 @@
 
     goto/16 :goto_0
 
-    .line 953
+    .line 956
     .restart local v7    # "container":Landroid/graphics/Rect;
     .restart local v10    # "N":I
     .restart local v11    # "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
@@ -1142,7 +1169,7 @@
 
     goto/16 :goto_2
 
-    .line 954
+    .line 957
     .restart local v14    # "insetL":I
     :cond_3
     move-object/from16 v0, v21
@@ -1151,7 +1178,7 @@
 
     goto/16 :goto_3
 
-    .line 956
+    .line 959
     .end local v14    # "insetL":I
     :cond_4
     move-object/from16 v0, v21
@@ -1172,7 +1199,7 @@
 
     iget v14, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetL:I
 
-    .line 957
+    .line 960
     .restart local v14    # "insetL":I
     :goto_6
     move-object/from16 v0, v21
@@ -1197,7 +1224,7 @@
     :goto_7
     goto/16 :goto_3
 
-    .line 956
+    .line 959
     .end local v14    # "insetL":I
     .end local v15    # "insetR":I
     :cond_5
@@ -1207,7 +1234,7 @@
 
     goto :goto_6
 
-    .line 957
+    .line 960
     .restart local v14    # "insetL":I
     :cond_6
     move-object/from16 v0, v21
@@ -1216,7 +1243,7 @@
 
     goto :goto_7
 
-    .line 967
+    .line 970
     .restart local v4    # "gravity":I
     .restart local v15    # "insetR":I
     :cond_7
@@ -1226,7 +1253,7 @@
 
     goto/16 :goto_4
 
-    .line 968
+    .line 971
     .restart local v5    # "w":I
     :cond_8
     move-object/from16 v0, v21
@@ -1235,7 +1262,7 @@
 
     goto :goto_5
 
-    .line 979
+    .line 982
     .end local v4    # "gravity":I
     .end local v5    # "w":I
     .end local v7    # "container":Landroid/graphics/Rect;
@@ -1253,10 +1280,10 @@
     .param p2, "a"    # Landroid/content/res/TypedArray;
 
     .prologue
-    .line 228
+    .line 230
     iget-object v1, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
-    .line 231
+    .line 233
     .local v1, "state":Landroid/graphics/drawable/LayerDrawable$LayerState;
     iget v2, v1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildrenChangingConfigurations:I
 
@@ -1268,14 +1295,14 @@
 
     iput v2, v1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildrenChangingConfigurations:I
 
-    .line 234
+    .line 236
     invoke-virtual {p2}, Landroid/content/res/TypedArray;->extractThemeAttrs()[I
 
     move-result-object v2
 
     iput-object v2, p1, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mThemeAttrs:[I
 
-    .line 236
+    .line 238
     const/4 v2, 0x5
 
     iget v3, p1, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetL:I
@@ -1286,7 +1313,7 @@
 
     iput v2, p1, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetL:I
 
-    .line 238
+    .line 240
     const/4 v2, 0x6
 
     iget v3, p1, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetT:I
@@ -1297,7 +1324,7 @@
 
     iput v2, p1, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetT:I
 
-    .line 240
+    .line 242
     const/4 v2, 0x7
 
     iget v3, p1, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetR:I
@@ -1308,7 +1335,7 @@
 
     iput v2, p1, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetR:I
 
-    .line 242
+    .line 244
     const/16 v2, 0x8
 
     iget v3, p1, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetB:I
@@ -1319,7 +1346,7 @@
 
     iput v2, p1, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetB:I
 
-    .line 244
+    .line 246
     const/16 v2, 0x9
 
     iget v3, p1, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetS:I
@@ -1330,7 +1357,7 @@
 
     iput v2, p1, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetS:I
 
-    .line 246
+    .line 248
     const/16 v2, 0xa
 
     iget v3, p1, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetE:I
@@ -1341,7 +1368,7 @@
 
     iput v2, p1, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetE:I
 
-    .line 248
+    .line 250
     const/4 v2, 0x3
 
     iget v3, p1, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mWidth:I
@@ -1352,7 +1379,7 @@
 
     iput v2, p1, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mWidth:I
 
-    .line 250
+    .line 252
     const/4 v2, 0x2
 
     iget v3, p1, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mHeight:I
@@ -1363,7 +1390,7 @@
 
     iput v2, p1, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mHeight:I
 
-    .line 252
+    .line 254
     const/4 v2, 0x0
 
     iget v3, p1, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mGravity:I
@@ -1374,7 +1401,7 @@
 
     iput v2, p1, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mGravity:I
 
-    .line 254
+    .line 256
     const/4 v2, 0x1
 
     iget v3, p1, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mId:I
@@ -1385,21 +1412,21 @@
 
     iput v2, p1, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mId:I
 
-    .line 256
+    .line 258
     const/4 v2, 0x4
 
     invoke-virtual {p2, v2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 257
+    .line 259
     .local v0, "dr":Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_0
 
-    .line 258
+    .line 260
     iput-object v0, p1, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 260
+    .line 262
     :cond_0
     return-void
 .end method
@@ -1409,10 +1436,10 @@
     .param p1, "a"    # Landroid/content/res/TypedArray;
 
     .prologue
-    .line 165
+    .line 167
     iget-object v0, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
-    .line 168
+    .line 170
     .local v0, "state":Landroid/graphics/drawable/LayerDrawable$LayerState;
     iget v1, v0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChangingConfigurations:I
 
@@ -1424,14 +1451,14 @@
 
     iput v1, v0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChangingConfigurations:I
 
-    .line 171
+    .line 173
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->extractThemeAttrs()[I
 
     move-result-object v1
 
     iput-object v1, v0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mThemeAttrs:[I
 
-    .line 173
+    .line 175
     const/4 v1, 0x0
 
     iget v2, p0, Landroid/graphics/drawable/LayerDrawable;->mOpacityOverride:I
@@ -1442,7 +1469,7 @@
 
     iput v1, p0, Landroid/graphics/drawable/LayerDrawable;->mOpacityOverride:I
 
-    .line 175
+    .line 177
     const/4 v1, 0x1
 
     # getter for: Landroid/graphics/drawable/LayerDrawable$LayerState;->mAutoMirrored:Z
@@ -1457,7 +1484,7 @@
     # setter for: Landroid/graphics/drawable/LayerDrawable$LayerState;->mAutoMirrored:Z
     invoke-static {v0, v1}, Landroid/graphics/drawable/LayerDrawable$LayerState;->access$002(Landroid/graphics/drawable/LayerDrawable$LayerState;Z)Z
 
-    .line 177
+    .line 179
     const/4 v1, 0x2
 
     # getter for: Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingMode:I
@@ -1472,7 +1499,7 @@
     # setter for: Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingMode:I
     invoke-static {v0, v1}, Landroid/graphics/drawable/LayerDrawable$LayerState;->access$102(Landroid/graphics/drawable/LayerDrawable$LayerState;I)I
 
-    .line 179
+    .line 181
     return-void
 .end method
 
@@ -1489,22 +1516,22 @@
     .param p7, "bottom"    # I
 
     .prologue
-    .line 354
+    .line 356
     new-instance v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
     invoke-direct {v0}, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;-><init>()V
 
-    .line 355
+    .line 357
     .local v0, "childDrawable":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iput p3, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mId:I
 
-    .line 356
+    .line 358
     iput-object p2, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mThemeAttrs:[I
 
-    .line 357
+    .line 359
     iput-object p1, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 358
+    .line 360
     iget-object v1, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0}, Landroid/graphics/drawable/LayerDrawable;->isAutoMirrored()Z
@@ -1513,22 +1540,22 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setAutoMirrored(Z)V
 
-    .line 359
+    .line 361
     iput p4, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetL:I
 
-    .line 360
+    .line 362
     iput p5, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetT:I
 
-    .line 361
+    .line 363
     iput p6, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetR:I
 
-    .line 362
+    .line 364
     iput p7, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetB:I
 
-    .line 364
+    .line 366
     invoke-virtual {p0, v0}, Landroid/graphics/drawable/LayerDrawable;->addLayer(Landroid/graphics/drawable/LayerDrawable$ChildDrawable;)V
 
-    .line 366
+    .line 368
     iget-object v1, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v2, v1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildrenChangingConfigurations:I
@@ -1541,10 +1568,10 @@
 
     iput v2, v1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildrenChangingConfigurations:I
 
-    .line 367
+    .line 369
     invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 369
+    .line 371
     return-object v0
 .end method
 
@@ -1555,10 +1582,10 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 324
+    .line 326
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
-    .line 325
+    .line 327
     .local v3, "st":Landroid/graphics/drawable/LayerDrawable$LayerState;
     iget-object v5, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
@@ -1568,51 +1595,51 @@
 
     array-length v0, v5
 
-    .line 326
+    .line 328
     .local v0, "N":I
     :goto_0
     iget v1, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 327
+    .line 329
     .local v1, "i":I
     if-lt v1, v0, :cond_1
 
-    .line 328
+    .line 330
     add-int/lit8 v5, v0, 0xa
 
     new-array v2, v5, [Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 329
+    .line 331
     .local v2, "nu":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     if-lez v1, :cond_0
 
-    .line 330
+    .line 332
     iget-object v5, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
     invoke-static {v5, v4, v2, v4, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 333
+    .line 335
     :cond_0
     iput-object v2, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 336
+    .line 338
     .end local v2    # "nu":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     :cond_1
     iget-object v4, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
     aput-object p1, v4, v1
 
-    .line 337
+    .line 339
     iget v4, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
     add-int/lit8 v4, v4, 0x1
 
     iput v4, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 338
+    .line 340
     invoke-virtual {v3}, Landroid/graphics/drawable/LayerDrawable$LayerState;->invalidateCache()V
 
-    .line 339
+    .line 341
     return-void
 
     .end local v0    # "N":I
@@ -1620,7 +1647,7 @@
     :cond_2
     move v0, v4
 
-    .line 325
+    .line 327
     goto :goto_0
 .end method
 
@@ -1629,27 +1656,27 @@
     .param p1, "t"    # Landroid/content/res/Resources$Theme;
 
     .prologue
-    .line 264
+    .line 266
     invoke-super {p0, p1}, Landroid/graphics/drawable/Drawable;->applyTheme(Landroid/content/res/Resources$Theme;)V
 
-    .line 266
+    .line 268
     iget-object v6, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
-    .line 267
+    .line 269
     .local v6, "state":Landroid/graphics/drawable/LayerDrawable$LayerState;
     if-nez v6, :cond_0
 
-    .line 296
+    .line 298
     :goto_0
     return-void
 
-    .line 271
+    .line 273
     :cond_0
     iget-object v7, v6, Landroid/graphics/drawable/LayerDrawable$LayerState;->mThemeAttrs:[I
 
     if-eqz v7, :cond_1
 
-    .line 272
+    .line 274
     iget-object v7, v6, Landroid/graphics/drawable/LayerDrawable$LayerState;->mThemeAttrs:[I
 
     sget-object v8, Lcom/android/internal/R$styleable;->LayerDrawable:[I
@@ -1658,23 +1685,23 @@
 
     move-result-object v1
 
-    .line 273
+    .line 275
     .local v1, "a":Landroid/content/res/TypedArray;
     invoke-direct {p0, v1}, Landroid/graphics/drawable/LayerDrawable;->updateStateFromTypedArray(Landroid/content/res/TypedArray;)V
 
-    .line 274
+    .line 276
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 277
+    .line 279
     .end local v1    # "a":Landroid/content/res/TypedArray;
     :cond_1
     iget-object v2, v6, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 278
+    .line 280
     .local v2, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget v0, v6, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 279
+    .line 281
     .local v0, "N":I
     const/4 v4, 0x0
 
@@ -1682,16 +1709,16 @@
     :goto_1
     if-ge v4, v0, :cond_4
 
-    .line 280
+    .line 282
     aget-object v5, v2, v4
 
-    .line 281
+    .line 283
     .local v5, "layer":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v7, v5, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mThemeAttrs:[I
 
     if-eqz v7, :cond_2
 
-    .line 282
+    .line 284
     iget-object v7, v5, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mThemeAttrs:[I
 
     sget-object v8, Lcom/android/internal/R$styleable;->LayerDrawableItem:[I
@@ -1700,19 +1727,19 @@
 
     move-result-object v1
 
-    .line 284
+    .line 286
     .restart local v1    # "a":Landroid/content/res/TypedArray;
     invoke-direct {p0, v5, v1}, Landroid/graphics/drawable/LayerDrawable;->updateLayerFromTypedArray(Landroid/graphics/drawable/LayerDrawable$ChildDrawable;Landroid/content/res/TypedArray;)V
 
-    .line 285
+    .line 287
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 288
+    .line 290
     .end local v1    # "a":Landroid/content/res/TypedArray;
     :cond_2
     iget-object v3, v5, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 289
+    .line 291
     .local v3, "d":Landroid/graphics/drawable/Drawable;
     invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->canApplyTheme()Z
 
@@ -1720,22 +1747,22 @@
 
     if-eqz v7, :cond_3
 
-    .line 290
+    .line 292
     invoke-virtual {v3, p1}, Landroid/graphics/drawable/Drawable;->applyTheme(Landroid/content/res/Resources$Theme;)V
 
-    .line 279
+    .line 281
     :cond_3
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_1
 
-    .line 294
+    .line 296
     .end local v3    # "d":Landroid/graphics/drawable/Drawable;
     .end local v5    # "layer":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     :cond_4
     invoke-virtual {p0}, Landroid/graphics/drawable/LayerDrawable;->ensurePadding()V
 
-    .line 295
+    .line 297
     invoke-virtual {p0}, Landroid/graphics/drawable/LayerDrawable;->getState()[I
 
     move-result-object v7
@@ -1749,7 +1776,7 @@
     .locals 1
 
     .prologue
-    .line 300
+    .line 302
     iget-object v0, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     if-eqz v0, :cond_0
@@ -1785,21 +1812,21 @@
     .locals 4
 
     .prologue
-    .line 1126
+    .line 1129
     invoke-super {p0}, Landroid/graphics/drawable/Drawable;->clearMutated()V
 
-    .line 1127
+    .line 1130
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 1128
+    .line 1131
     .local v1, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 1129
+    .line 1132
     .local v0, "N":I
     const/4 v2, 0x0
 
@@ -1807,25 +1834,25 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 1130
+    .line 1133
     aget-object v3, v1, v2
 
     iget-object v3, v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->clearMutated()V
 
-    .line 1129
+    .line 1132
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1132
+    .line 1135
     :cond_0
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Landroid/graphics/drawable/LayerDrawable;->mMutated:Z
 
-    .line 1133
+    .line 1136
     return-void
 .end method
 
@@ -1835,7 +1862,7 @@
     .param p2, "res"    # Landroid/content/res/Resources;
 
     .prologue
-    .line 143
+    .line 145
     new-instance v0, Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     invoke-direct {v0, p1, p0, p2}, Landroid/graphics/drawable/LayerDrawable$LayerState;-><init>(Landroid/graphics/drawable/LayerDrawable$LayerState;Landroid/graphics/drawable/LayerDrawable;Landroid/content/res/Resources;)V
@@ -1848,18 +1875,18 @@
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 647
+    .line 649
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 648
+    .line 650
     .local v1, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 649
+    .line 651
     .local v0, "N":I
     const/4 v2, 0x0
 
@@ -1867,19 +1894,19 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 650
+    .line 652
     aget-object v3, v1, v2
 
     iget-object v3, v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 649
+    .line 651
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 652
+    .line 654
     :cond_0
     return-void
 .end method
@@ -1888,12 +1915,12 @@
     .locals 2
 
     .prologue
-    .line 1088
+    .line 1091
     iget-object v1, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 1089
+    .line 1092
     .local v0, "N":I
     iget-object v1, p0, Landroid/graphics/drawable/LayerDrawable;->mPaddingL:[I
 
@@ -1905,27 +1932,27 @@
 
     if-lt v1, v0, :cond_0
 
-    .line 1097
+    .line 1100
     :goto_0
     return-void
 
-    .line 1093
+    .line 1096
     :cond_0
     new-array v1, v0, [I
 
     iput-object v1, p0, Landroid/graphics/drawable/LayerDrawable;->mPaddingL:[I
 
-    .line 1094
+    .line 1097
     new-array v1, v0, [I
 
     iput-object v1, p0, Landroid/graphics/drawable/LayerDrawable;->mPaddingT:[I
 
-    .line 1095
+    .line 1098
     new-array v1, v0, [I
 
     iput-object v1, p0, Landroid/graphics/drawable/LayerDrawable;->mPaddingR:[I
 
-    .line 1096
+    .line 1099
     new-array v1, v0, [I
 
     iput-object v1, p0, Landroid/graphics/drawable/LayerDrawable;->mPaddingB:[I
@@ -1938,12 +1965,12 @@
     .param p1, "id"    # I
 
     .prologue
-    .line 383
+    .line 385
     iget-object v2, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v2, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 384
+    .line 386
     .local v1, "layers":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v2, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
@@ -1955,29 +1982,29 @@
     :goto_0
     if-ltz v0, :cond_1
 
-    .line 385
+    .line 387
     aget-object v2, v1, v0
 
     iget v2, v2, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mId:I
 
     if-ne v2, p1, :cond_0
 
-    .line 386
+    .line 388
     aget-object v2, v1, v0
 
     iget-object v2, v2, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 390
+    .line 392
     :goto_1
     return-object v2
 
-    .line 384
+    .line 386
     :cond_0
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 390
+    .line 392
     :cond_1
     const/4 v2, 0x0
 
@@ -1988,12 +2015,12 @@
     .locals 2
 
     .prologue
-    .line 794
+    .line 796
     iget-object v1, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v0, v1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 795
+    .line 797
     .local v0, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v1, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
@@ -2001,7 +2028,7 @@
 
     if-lez v1, :cond_0
 
-    .line 798
+    .line 800
     const/4 v1, 0x0
 
     aget-object v1, v0, v1
@@ -2012,7 +2039,7 @@
 
     move-result v1
 
-    .line 800
+    .line 802
     :goto_0
     return v1
 
@@ -2028,7 +2055,7 @@
     .locals 2
 
     .prologue
-    .line 656
+    .line 658
     invoke-super {p0}, Landroid/graphics/drawable/Drawable;->getChangingConfigurations()I
 
     move-result v0
@@ -2052,7 +2079,7 @@
     .locals 2
 
     .prologue
-    .line 1101
+    .line 1104
     iget-object v0, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/LayerDrawable$LayerState;->canConstantState()Z
@@ -2061,7 +2088,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1102
+    .line 1105
     iget-object v0, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     invoke-virtual {p0}, Landroid/graphics/drawable/LayerDrawable;->getChangingConfigurations()I
@@ -2070,10 +2097,10 @@
 
     iput v1, v0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChangingConfigurations:I
 
-    .line 1103
+    .line 1106
     iget-object v0, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
-    .line 1105
+    .line 1108
     :goto_0
     return-object v0
 
@@ -2088,7 +2115,7 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 419
+    .line 421
     iget-object v0, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v0, v0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
@@ -2105,21 +2132,21 @@
     .param p1, "outRect"    # Landroid/graphics/Rect;
 
     .prologue
-    .line 755
+    .line 757
     iget-object v0, p0, Landroid/graphics/drawable/LayerDrawable;->mHotspotBounds:Landroid/graphics/Rect;
 
     if-eqz v0, :cond_0
 
-    .line 756
+    .line 758
     iget-object v0, p0, Landroid/graphics/drawable/LayerDrawable;->mHotspotBounds:Landroid/graphics/Rect;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 760
+    .line 762
     :goto_0
     return-void
 
-    .line 758
+    .line 760
     :cond_0
     invoke-super {p0, p1}, Landroid/graphics/drawable/Drawable;->getHotspotBounds(Landroid/graphics/Rect;)V
 
@@ -2131,7 +2158,7 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 430
+    .line 432
     iget-object v0, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v0, v0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
@@ -2147,18 +2174,18 @@
     .locals 12
 
     .prologue
-    .line 1041
+    .line 1044
     const/4 v3, -0x1
 
-    .line 1042
+    .line 1045
     .local v3, "height":I
     const/4 v8, 0x0
 
-    .line 1043
+    .line 1046
     .local v8, "padT":I
     const/4 v7, 0x0
 
-    .line 1045
+    .line 1048
     .local v7, "padB":I
     iget-object v10, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
@@ -2171,20 +2198,20 @@
 
     const/4 v6, 0x1
 
-    .line 1046
+    .line 1049
     .local v6, "nest":Z
     :goto_0
     iget-object v10, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v10, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 1047
+    .line 1050
     .local v1, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v10, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v10, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 1048
+    .line 1051
     .local v0, "N":I
     const/4 v4, 0x0
 
@@ -2192,10 +2219,10 @@
     :goto_1
     if-ge v4, v0, :cond_4
 
-    .line 1049
+    .line 1052
     aget-object v9, v1, v4
 
-    .line 1050
+    .line 1053
     .local v9, "r":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget v10, v9, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mHeight:I
 
@@ -2207,7 +2234,7 @@
 
     move-result v5
 
-    .line 1051
+    .line 1054
     .local v5, "minHeight":I
     :goto_2
     iget v10, v9, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetT:I
@@ -2222,38 +2249,38 @@
 
     add-int v2, v10, v7
 
-    .line 1052
+    .line 1055
     .local v2, "h":I
     if-le v2, v3, :cond_0
 
-    .line 1053
+    .line 1056
     move v3, v2
 
-    .line 1056
+    .line 1059
     :cond_0
     if-eqz v6, :cond_1
 
-    .line 1057
+    .line 1060
     iget-object v10, p0, Landroid/graphics/drawable/LayerDrawable;->mPaddingT:[I
 
     aget v10, v10, v4
 
     add-int/2addr v8, v10
 
-    .line 1058
+    .line 1061
     iget-object v10, p0, Landroid/graphics/drawable/LayerDrawable;->mPaddingB:[I
 
     aget v10, v10, v4
 
     add-int/2addr v7, v10
 
-    .line 1048
+    .line 1051
     :cond_1
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_1
 
-    .line 1045
+    .line 1048
     .end local v0    # "N":I
     .end local v1    # "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     .end local v2    # "h":I
@@ -2266,7 +2293,7 @@
 
     goto :goto_0
 
-    .line 1050
+    .line 1053
     .restart local v0    # "N":I
     .restart local v1    # "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     .restart local v4    # "i":I
@@ -2277,7 +2304,7 @@
 
     goto :goto_2
 
-    .line 1062
+    .line 1065
     .end local v9    # "r":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     :cond_4
     return v3
@@ -2287,18 +2314,18 @@
     .locals 12
 
     .prologue
-    .line 1015
+    .line 1018
     const/4 v9, -0x1
 
-    .line 1016
+    .line 1019
     .local v9, "width":I
     const/4 v5, 0x0
 
-    .line 1017
+    .line 1020
     .local v5, "padL":I
     const/4 v6, 0x0
 
-    .line 1019
+    .line 1022
     .local v6, "padR":I
     iget-object v10, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
@@ -2311,20 +2338,20 @@
 
     const/4 v4, 0x1
 
-    .line 1020
+    .line 1023
     .local v4, "nest":Z
     :goto_0
     iget-object v10, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v10, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 1021
+    .line 1024
     .local v1, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v10, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v10, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 1022
+    .line 1025
     .local v0, "N":I
     const/4 v2, 0x0
 
@@ -2332,10 +2359,10 @@
     :goto_1
     if-ge v2, v0, :cond_4
 
-    .line 1023
+    .line 1026
     aget-object v7, v1, v2
 
-    .line 1024
+    .line 1027
     .local v7, "r":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget v10, v7, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mWidth:I
 
@@ -2347,7 +2374,7 @@
 
     move-result v3
 
-    .line 1025
+    .line 1028
     .local v3, "minWidth":I
     :goto_2
     iget v10, v7, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetL:I
@@ -2362,38 +2389,38 @@
 
     add-int v8, v10, v6
 
-    .line 1026
+    .line 1029
     .local v8, "w":I
     if-le v8, v9, :cond_0
 
-    .line 1027
+    .line 1030
     move v9, v8
 
-    .line 1030
+    .line 1033
     :cond_0
     if-eqz v4, :cond_1
 
-    .line 1031
+    .line 1034
     iget-object v10, p0, Landroid/graphics/drawable/LayerDrawable;->mPaddingL:[I
 
     aget v10, v10, v2
 
     add-int/2addr v5, v10
 
-    .line 1032
+    .line 1035
     iget-object v10, p0, Landroid/graphics/drawable/LayerDrawable;->mPaddingR:[I
 
     aget v10, v10, v2
 
     add-int/2addr v6, v10
 
-    .line 1022
+    .line 1025
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 1019
+    .line 1022
     .end local v0    # "N":I
     .end local v1    # "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     .end local v2    # "i":I
@@ -2406,7 +2433,7 @@
 
     goto :goto_0
 
-    .line 1024
+    .line 1027
     .restart local v0    # "N":I
     .restart local v1    # "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     .restart local v2    # "i":I
@@ -2417,7 +2444,7 @@
 
     goto :goto_2
 
-    .line 1036
+    .line 1039
     .end local v7    # "r":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     :cond_4
     return v9
@@ -2428,14 +2455,14 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 548
+    .line 550
     iget-object v1, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
     aget-object v0, v1, p1
 
-    .line 549
+    .line 551
     .local v0, "childDrawable":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget v1, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mGravity:I
 
@@ -2447,14 +2474,14 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 511
+    .line 513
     iget-object v1, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
     aget-object v0, v1, p1
 
-    .line 512
+    .line 514
     .local v0, "childDrawable":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget v1, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mHeight:I
 
@@ -2466,14 +2493,14 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 499
+    .line 501
     iget-object v1, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
     aget-object v0, v1, p1
 
-    .line 500
+    .line 502
     .local v0, "childDrawable":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget v1, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mWidth:I
 
@@ -2484,7 +2511,7 @@
     .locals 1
 
     .prologue
-    .line 408
+    .line 410
     iget-object v0, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
@@ -2496,15 +2523,15 @@
     .locals 1
 
     .prologue
-    .line 848
+    .line 850
     iget v0, p0, Landroid/graphics/drawable/LayerDrawable;->mOpacityOverride:I
 
     if-eqz v0, :cond_0
 
-    .line 849
+    .line 851
     iget v0, p0, Landroid/graphics/drawable/LayerDrawable;->mOpacityOverride:I
 
-    .line 851
+    .line 853
     :goto_0
     return v0
 
@@ -2523,18 +2550,18 @@
     .param p1, "outline"    # Landroid/graphics/Outline;
 
     .prologue
-    .line 717
+    .line 719
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
-    .line 718
+    .line 720
     .local v3, "state":Landroid/graphics/drawable/LayerDrawable$LayerState;
     iget-object v1, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 719
+    .line 721
     .local v1, "children":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget v0, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 720
+    .line 722
     .local v0, "N":I
     const/4 v2, 0x0
 
@@ -2542,25 +2569,25 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 721
+    .line 723
     aget-object v4, v1, v2
 
     iget-object v4, v4, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v4, p1}, Landroid/graphics/drawable/Drawable;->getOutline(Landroid/graphics/Outline;)V
 
-    .line 722
+    .line 724
     invoke-virtual {p1}, Landroid/graphics/Outline;->isEmpty()Z
 
     move-result v4
 
     if-nez v4, :cond_1
 
-    .line 726
+    .line 728
     :cond_0
     return-void
 
-    .line 720
+    .line 722
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
@@ -2572,7 +2599,7 @@
     .param p1, "padding"    # Landroid/graphics/Rect;
 
     .prologue
-    .line 663
+    .line 665
     iget-object v0, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     # getter for: Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingMode:I
@@ -2582,10 +2609,10 @@
 
     if-nez v0, :cond_1
 
-    .line 664
+    .line 666
     invoke-direct {p0, p1}, Landroid/graphics/drawable/LayerDrawable;->computeNestedPadding(Landroid/graphics/Rect;)V
 
-    .line 669
+    .line 671
     :goto_0
     iget v0, p1, Landroid/graphics/Rect;->left:I
 
@@ -2609,13 +2636,13 @@
     :goto_1
     return v0
 
-    .line 666
+    .line 668
     :cond_1
     invoke-direct {p0, p1}, Landroid/graphics/drawable/LayerDrawable;->computeStackedPadding(Landroid/graphics/Rect;)V
 
     goto :goto_0
 
-    .line 669
+    .line 671
     :cond_2
     const/4 v0, 0x0
 
@@ -2626,7 +2653,7 @@
     .locals 1
 
     .prologue
-    .line 627
+    .line 629
     iget-object v0, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     # getter for: Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingMode:I
@@ -2651,37 +2678,37 @@
     .end annotation
 
     .prologue
-    .line 149
+    .line 151
     invoke-super {p0, p1, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->inflate(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V
 
-    .line 151
+    .line 153
     sget-object v1, Lcom/android/internal/R$styleable;->LayerDrawable:[I
 
     invoke-static {p1, p4, p3, v1}, Landroid/graphics/drawable/LayerDrawable;->obtainAttributes(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 152
+    .line 154
     .local v0, "a":Landroid/content/res/TypedArray;
     invoke-direct {p0, v0}, Landroid/graphics/drawable/LayerDrawable;->updateStateFromTypedArray(Landroid/content/res/TypedArray;)V
 
-    .line 153
+    .line 155
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 155
+    .line 157
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/graphics/drawable/LayerDrawable;->inflateLayers(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V
 
-    .line 157
+    .line 159
     invoke-virtual {p0}, Landroid/graphics/drawable/LayerDrawable;->ensurePadding()V
 
-    .line 158
+    .line 160
     invoke-virtual {p0}, Landroid/graphics/drawable/LayerDrawable;->getState()[I
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Landroid/graphics/drawable/LayerDrawable;->onStateChange([I)Z
 
-    .line 159
+    .line 161
     return-void
 .end method
 
@@ -2690,10 +2717,10 @@
     .param p1, "who"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 632
+    .line 634
     invoke-virtual {p0}, Landroid/graphics/drawable/LayerDrawable;->invalidateSelf()V
 
-    .line 633
+    .line 635
     return-void
 .end method
 
@@ -2701,7 +2728,7 @@
     .locals 1
 
     .prologue
-    .line 867
+    .line 869
     iget-object v0, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     # getter for: Landroid/graphics/drawable/LayerDrawable$LayerState;->mAutoMirrored:Z
@@ -2718,31 +2745,31 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 308
+    .line 310
     invoke-super {p0}, Landroid/graphics/drawable/Drawable;->isProjected()Z
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    .line 320
+    .line 322
     :cond_0
     :goto_0
     return v3
 
-    .line 312
+    .line 314
     :cond_1
     iget-object v4, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v2, v4, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 313
+    .line 315
     .local v2, "layers":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v4, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v4, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 314
+    .line 316
     .local v0, "N":I
     const/4 v1, 0x0
 
@@ -2750,7 +2777,7 @@
     :goto_1
     if-ge v1, v0, :cond_2
 
-    .line 315
+    .line 317
     aget-object v4, v2, v1
 
     iget-object v4, v4, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -2761,12 +2788,12 @@
 
     if-nez v4, :cond_0
 
-    .line 314
+    .line 316
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 320
+    .line 322
     :cond_2
     const/4 v3, 0x0
 
@@ -2777,7 +2804,7 @@
     .locals 1
 
     .prologue
-    .line 872
+    .line 874
     iget-object v0, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/LayerDrawable$LayerState;->isStateful()Z
@@ -2791,7 +2818,7 @@
     .locals 5
 
     .prologue
-    .line 1110
+    .line 1113
     iget-boolean v3, p0, Landroid/graphics/drawable/LayerDrawable;->mMutated:Z
 
     if-nez v3, :cond_1
@@ -2802,7 +2829,7 @@
 
     if-ne v3, p0, :cond_1
 
-    .line 1111
+    .line 1114
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     const/4 v4, 0x0
@@ -2813,18 +2840,18 @@
 
     iput-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
-    .line 1112
+    .line 1115
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 1113
+    .line 1116
     .local v1, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 1114
+    .line 1117
     .local v0, "N":I
     const/4 v2, 0x0
 
@@ -2832,25 +2859,25 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 1115
+    .line 1118
     aget-object v3, v1, v2
 
     iget-object v3, v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
-    .line 1114
+    .line 1117
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1117
+    .line 1120
     :cond_0
     const/4 v3, 0x1
 
     iput-boolean v3, p0, Landroid/graphics/drawable/LayerDrawable;->mMutated:Z
 
-    .line 1119
+    .line 1122
     .end local v0    # "N":I
     .end local v1    # "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     .end local v2    # "i":I
@@ -2863,10 +2890,10 @@
     .param p1, "bounds"    # Landroid/graphics/Rect;
 
     .prologue
-    .line 927
+    .line 929
     invoke-direct {p0, p1}, Landroid/graphics/drawable/LayerDrawable;->updateLayerBounds(Landroid/graphics/Rect;)V
 
-    .line 928
+    .line 930
     return-void
 .end method
 
@@ -2875,26 +2902,26 @@
     .param p1, "level"    # I
 
     .prologue
-    .line 902
+    .line 904
     const/4 v4, 0x0
 
-    .line 903
+    .line 905
     .local v4, "paddingChanged":Z
     const/4 v2, 0x0
 
-    .line 905
+    .line 907
     .local v2, "changed":Z
     iget-object v6, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v6, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 906
+    .line 908
     .local v1, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v6, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v6, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 907
+    .line 909
     .local v0, "N":I
     const/4 v3, 0x0
 
@@ -2902,10 +2929,10 @@
     :goto_0
     if-ge v3, v0, :cond_2
 
-    .line 908
+    .line 910
     aget-object v5, v1, v3
 
-    .line 909
+    .line 911
     .local v5, "r":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v6, v5, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -2915,10 +2942,10 @@
 
     if-eqz v6, :cond_0
 
-    .line 910
+    .line 912
     const/4 v2, 0x1
 
-    .line 913
+    .line 915
     :cond_0
     invoke-direct {p0, v3, v5}, Landroid/graphics/drawable/LayerDrawable;->refreshChildPadding(ILandroid/graphics/drawable/LayerDrawable$ChildDrawable;)Z
 
@@ -2926,28 +2953,28 @@
 
     if-eqz v6, :cond_1
 
-    .line 914
+    .line 916
     const/4 v4, 0x1
 
-    .line 907
+    .line 909
     :cond_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 918
+    .line 920
     .end local v5    # "r":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     :cond_2
     if-eqz v4, :cond_3
 
-    .line 919
+    .line 921
     invoke-virtual {p0}, Landroid/graphics/drawable/LayerDrawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v6
 
     invoke-direct {p0, v6}, Landroid/graphics/drawable/LayerDrawable;->updateLayerBounds(Landroid/graphics/Rect;)V
 
-    .line 922
+    .line 924
     :cond_3
     return v2
 .end method
@@ -2957,26 +2984,26 @@
     .param p1, "state"    # [I
 
     .prologue
-    .line 877
+    .line 879
     const/4 v4, 0x0
 
-    .line 878
+    .line 880
     .local v4, "paddingChanged":Z
     const/4 v2, 0x0
 
-    .line 880
+    .line 882
     .local v2, "changed":Z
     iget-object v6, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v6, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 881
+    .line 883
     .local v1, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v6, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v6, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 882
+    .line 884
     .local v0, "N":I
     const/4 v3, 0x0
 
@@ -2984,10 +3011,10 @@
     :goto_0
     if-ge v3, v0, :cond_2
 
-    .line 883
+    .line 885
     aget-object v5, v1, v3
 
-    .line 884
+    .line 886
     .local v5, "r":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v6, v5, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -3005,10 +3032,10 @@
 
     if-eqz v6, :cond_0
 
-    .line 885
+    .line 887
     const/4 v2, 0x1
 
-    .line 888
+    .line 890
     :cond_0
     invoke-direct {p0, v3, v5}, Landroid/graphics/drawable/LayerDrawable;->refreshChildPadding(ILandroid/graphics/drawable/LayerDrawable$ChildDrawable;)Z
 
@@ -3016,28 +3043,28 @@
 
     if-eqz v6, :cond_1
 
-    .line 889
+    .line 891
     const/4 v4, 0x1
 
-    .line 882
+    .line 884
     :cond_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 893
+    .line 895
     .end local v5    # "r":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     :cond_2
     if-eqz v4, :cond_3
 
-    .line 894
+    .line 896
     invoke-virtual {p0}, Landroid/graphics/drawable/LayerDrawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v6
 
     invoke-direct {p0, v6}, Landroid/graphics/drawable/LayerDrawable;->updateLayerBounds(Landroid/graphics/Rect;)V
 
-    .line 897
+    .line 899
     :cond_3
     return v2
 .end method
@@ -3049,10 +3076,10 @@
     .param p3, "when"    # J
 
     .prologue
-    .line 637
+    .line 639
     invoke-virtual {p0, p2, p3, p4}, Landroid/graphics/drawable/LayerDrawable;->scheduleSelf(Ljava/lang/Runnable;J)V
 
-    .line 638
+    .line 640
     return-void
 .end method
 
@@ -3061,18 +3088,18 @@
     .param p1, "alpha"    # I
 
     .prologue
-    .line 785
+    .line 787
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 786
+    .line 788
     .local v1, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 787
+    .line 789
     .local v0, "N":I
     const/4 v2, 0x0
 
@@ -3080,19 +3107,19 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 788
+    .line 790
     aget-object v3, v1, v2
 
     iget-object v3, v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3, p1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 787
+    .line 789
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 790
+    .line 792
     :cond_0
     return-void
 .end method
@@ -3102,24 +3129,24 @@
     .param p1, "mirrored"    # Z
 
     .prologue
-    .line 856
+    .line 858
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     # setter for: Landroid/graphics/drawable/LayerDrawable$LayerState;->mAutoMirrored:Z
     invoke-static {v3, p1}, Landroid/graphics/drawable/LayerDrawable$LayerState;->access$002(Landroid/graphics/drawable/LayerDrawable$LayerState;Z)Z
 
-    .line 858
+    .line 860
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 859
+    .line 861
     .local v1, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 860
+    .line 862
     .local v0, "N":I
     const/4 v2, 0x0
 
@@ -3127,19 +3154,19 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 861
+    .line 863
     aget-object v3, v1, v2
 
     iget-object v3, v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3, p1}, Landroid/graphics/drawable/Drawable;->setAutoMirrored(Z)V
 
-    .line 860
+    .line 862
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 863
+    .line 865
     :cond_0
     return-void
 .end method
@@ -3149,18 +3176,18 @@
     .param p1, "colorFilter"    # Landroid/graphics/ColorFilter;
 
     .prologue
-    .line 806
+    .line 808
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 807
+    .line 809
     .local v1, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 808
+    .line 810
     .local v0, "N":I
     const/4 v2, 0x0
 
@@ -3168,19 +3195,19 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 809
+    .line 811
     aget-object v3, v1, v2
 
     iget-object v3, v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3, p1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 808
+    .line 810
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 811
+    .line 813
     :cond_0
     return-void
 .end method
@@ -3190,18 +3217,18 @@
     .param p1, "dither"    # Z
 
     .prologue
-    .line 776
+    .line 778
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 777
+    .line 779
     .local v1, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 778
+    .line 780
     .local v0, "N":I
     const/4 v2, 0x0
 
@@ -3209,19 +3236,19 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 779
+    .line 781
     aget-object v3, v1, v2
 
     iget-object v3, v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3, p1}, Landroid/graphics/drawable/Drawable;->setDither(Z)V
 
-    .line 778
+    .line 780
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 781
+    .line 783
     :cond_0
     return-void
 .end method
@@ -3232,18 +3259,18 @@
     .param p2, "drawable"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 442
+    .line 444
     iget-object v5, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v4, v5, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 443
+    .line 445
     .local v4, "layers":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v5, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v5, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 444
+    .line 446
     .local v0, "N":I
     const/4 v3, 0x0
 
@@ -3251,35 +3278,35 @@
     :goto_0
     if-ge v3, v0, :cond_4
 
-    .line 445
+    .line 447
     aget-object v2, v4, v3
 
-    .line 446
+    .line 448
     .local v2, "childDrawable":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget v5, v2, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mId:I
 
     if-ne v5, p1, :cond_3
 
-    .line 447
+    .line 449
     iget-object v5, v2, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v5, :cond_1
 
-    .line 448
+    .line 450
     if-eqz p2, :cond_0
 
-    .line 449
+    .line 451
     iget-object v5, v2, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v5}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v1
 
-    .line 450
+    .line 452
     .local v1, "bounds":Landroid/graphics/Rect;
     invoke-virtual {p2, v1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 453
+    .line 455
     .end local v1    # "bounds":Landroid/graphics/Rect;
     :cond_0
     iget-object v5, v2, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -3288,38 +3315,38 @@
 
     invoke-virtual {v5, v6}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 456
+    .line 458
     :cond_1
     if-eqz p2, :cond_2
 
-    .line 457
+    .line 459
     invoke-virtual {p2, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 460
+    .line 462
     :cond_2
     iput-object p2, v2, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 461
+    .line 463
     iget-object v5, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     invoke-virtual {v5}, Landroid/graphics/drawable/LayerDrawable$LayerState;->invalidateCache()V
 
-    .line 462
+    .line 464
     const/4 v5, 0x1
 
-    .line 466
+    .line 468
     .end local v2    # "childDrawable":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     :goto_1
     return v5
 
-    .line 444
+    .line 446
     .restart local v2    # "childDrawable":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     :cond_3
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 466
+    .line 468
     .end local v2    # "childDrawable":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     :cond_4
     const/4 v5, 0x0
@@ -3333,18 +3360,18 @@
     .param p2, "y"    # F
 
     .prologue
-    .line 730
+    .line 732
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 731
+    .line 733
     .local v1, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 732
+    .line 734
     .local v0, "N":I
     const/4 v2, 0x0
 
@@ -3352,19 +3379,19 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 733
+    .line 735
     aget-object v3, v1, v2
 
     iget-object v3, v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3, p1, p2}, Landroid/graphics/drawable/Drawable;->setHotspot(FF)V
 
-    .line 732
+    .line 734
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 735
+    .line 737
     :cond_0
     return-void
 .end method
@@ -3377,18 +3404,18 @@
     .param p4, "bottom"    # I
 
     .prologue
-    .line 739
+    .line 741
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 740
+    .line 742
     .local v1, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 741
+    .line 743
     .local v0, "N":I
     const/4 v2, 0x0
 
@@ -3396,36 +3423,36 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 742
+    .line 744
     aget-object v3, v1, v2
 
     iget-object v3, v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3, p1, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->setHotspotBounds(IIII)V
 
-    .line 741
+    .line 743
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 745
+    .line 747
     :cond_0
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mHotspotBounds:Landroid/graphics/Rect;
 
     if-nez v3, :cond_1
 
-    .line 746
+    .line 748
     new-instance v3, Landroid/graphics/Rect;
 
     invoke-direct {v3, p1, p2, p3, p4}, Landroid/graphics/Rect;-><init>(IIII)V
 
     iput-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mHotspotBounds:Landroid/graphics/Rect;
 
-    .line 750
+    .line 752
     :goto_1
     return-void
 
-    .line 748
+    .line 750
     :cond_1
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mHotspotBounds:Landroid/graphics/Rect;
 
@@ -3440,7 +3467,7 @@
     .param p2, "id"    # I
 
     .prologue
-    .line 400
+    .line 402
     iget-object v0, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v0, v0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
@@ -3449,7 +3476,7 @@
 
     iput p2, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mId:I
 
-    .line 401
+    .line 403
     return-void
 .end method
 
@@ -3459,18 +3486,18 @@
     .param p2, "gravity"    # I
 
     .prologue
-    .line 535
+    .line 537
     iget-object v1, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
     aget-object v0, v1, p1
 
-    .line 536
+    .line 538
     .local v0, "childDrawable":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iput p2, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mGravity:I
 
-    .line 537
+    .line 539
     return-void
 .end method
 
@@ -3485,7 +3512,7 @@
     .prologue
     const/high16 v6, -0x80000000
 
-    .line 567
+    .line 569
     move-object v0, p0
 
     move v1, p1
@@ -3502,7 +3529,7 @@
 
     invoke-direct/range {v0 .. v7}, Landroid/graphics/drawable/LayerDrawable;->setLayerInsetInternal(IIIIIII)V
 
-    .line 568
+    .line 570
     return-void
 .end method
 
@@ -3517,7 +3544,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 586
+    .line 588
     move-object v0, p0
 
     move v1, p1
@@ -3534,7 +3561,7 @@
 
     invoke-direct/range {v0 .. v7}, Landroid/graphics/drawable/LayerDrawable;->setLayerInsetInternal(IIIIIII)V
 
-    .line 587
+    .line 589
     return-void
 .end method
 
@@ -3545,21 +3572,21 @@
     .param p3, "h"    # I
 
     .prologue
-    .line 486
+    .line 488
     iget-object v1, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
     aget-object v0, v1, p1
 
-    .line 487
+    .line 489
     .local v0, "childDrawable":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iput p2, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mWidth:I
 
-    .line 488
+    .line 490
     iput p3, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mHeight:I
 
-    .line 489
+    .line 491
     return-void
 .end method
 
@@ -3568,21 +3595,21 @@
     .param p1, "layoutDirection"    # I
 
     .prologue
-    .line 1138
+    .line 1141
     invoke-super {p0, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
 
-    .line 1139
+    .line 1142
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 1140
+    .line 1143
     .local v1, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 1141
+    .line 1144
     .local v0, "N":I
     const/4 v2, 0x0
 
@@ -3590,19 +3617,19 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 1142
+    .line 1145
     aget-object v3, v1, v2
 
     iget-object v3, v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
 
-    .line 1141
+    .line 1144
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1144
+    .line 1147
     :cond_0
     invoke-virtual {p0}, Landroid/graphics/drawable/LayerDrawable;->getBounds()Landroid/graphics/Rect;
 
@@ -3610,7 +3637,7 @@
 
     invoke-direct {p0, v3}, Landroid/graphics/drawable/LayerDrawable;->updateLayerBounds(Landroid/graphics/Rect;)V
 
-    .line 1145
+    .line 1148
     return-void
 .end method
 
@@ -3619,10 +3646,10 @@
     .param p1, "opacity"    # I
 
     .prologue
-    .line 843
+    .line 845
     iput p1, p0, Landroid/graphics/drawable/LayerDrawable;->mOpacityOverride:I
 
-    .line 844
+    .line 846
     return-void
 .end method
 
@@ -3631,7 +3658,7 @@
     .param p1, "mode"    # I
 
     .prologue
-    .line 615
+    .line 617
     iget-object v0, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     # getter for: Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingMode:I
@@ -3641,13 +3668,13 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 616
+    .line 618
     iget-object v0, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     # setter for: Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingMode:I
     invoke-static {v0, p1}, Landroid/graphics/drawable/LayerDrawable$LayerState;->access$102(Landroid/graphics/drawable/LayerDrawable$LayerState;I)I
 
-    .line 618
+    .line 620
     :cond_0
     return-void
 .end method
@@ -3657,18 +3684,18 @@
     .param p1, "tint"    # Landroid/content/res/ColorStateList;
 
     .prologue
-    .line 815
+    .line 817
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 816
+    .line 818
     .local v1, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 817
+    .line 819
     .local v0, "N":I
     const/4 v2, 0x0
 
@@ -3676,19 +3703,19 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 818
+    .line 820
     aget-object v3, v1, v2
 
     iget-object v3, v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3, p1}, Landroid/graphics/drawable/Drawable;->setTintList(Landroid/content/res/ColorStateList;)V
 
-    .line 817
+    .line 819
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 820
+    .line 822
     :cond_0
     return-void
 .end method
@@ -3698,18 +3725,18 @@
     .param p1, "tintMode"    # Landroid/graphics/PorterDuff$Mode;
 
     .prologue
-    .line 824
+    .line 826
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 825
+    .line 827
     .local v1, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 826
+    .line 828
     .local v0, "N":I
     const/4 v2, 0x0
 
@@ -3717,19 +3744,19 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 827
+    .line 829
     aget-object v3, v1, v2
 
     iget-object v3, v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3, p1}, Landroid/graphics/drawable/Drawable;->setTintMode(Landroid/graphics/PorterDuff$Mode;)V
 
-    .line 826
+    .line 828
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 829
+    .line 831
     :cond_0
     return-void
 .end method
@@ -3740,24 +3767,24 @@
     .param p2, "restart"    # Z
 
     .prologue
-    .line 764
+    .line 766
     invoke-super {p0, p1, p2}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
 
     move-result v2
 
-    .line 765
+    .line 767
     .local v2, "changed":Z
     iget-object v4, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v4, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 766
+    .line 768
     .local v1, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v4, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v4, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 767
+    .line 769
     .local v0, "N":I
     const/4 v3, 0x0
 
@@ -3765,19 +3792,19 @@
     :goto_0
     if-ge v3, v0, :cond_0
 
-    .line 768
+    .line 770
     aget-object v4, v1, v3
 
     iget-object v4, v4, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v4, p1, p2}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
 
-    .line 767
+    .line 769
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 771
+    .line 773
     :cond_0
     return v2
 .end method
@@ -3788,9 +3815,9 @@
     .param p2, "what"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 642
+    .line 644
     invoke-virtual {p0, p2}, Landroid/graphics/drawable/LayerDrawable;->unscheduleSelf(Ljava/lang/Runnable;)V
 
-    .line 643
+    .line 645
     return-void
 .end method
