@@ -2330,6 +2330,8 @@
 
 .field public static final RippleDrawable_color:I = 0x0
 
+.field public static final RippleDrawable_radius:I = 0x1
+
 .field public static final RotarySelector:[I
 
 .field public static final RotarySelector_orientation:I = 0x0
@@ -5789,12 +5791,10 @@
 
     sput-object v0, Landroid/R$styleable;->RingtonePreference:[I
 
-    .line 38029
-    new-array v0, v3, [I
+    .line 38516
+    new-array v0, v4, [I
 
-    const v1, 0x10101a5
-
-    aput v1, v0, v2
+    fill-array-data v0, :array_d4
 
     sput-object v0, Landroid/R$styleable;->RippleDrawable:[I
 
@@ -6155,7 +6155,7 @@
     sput-object v0, Landroid/R$styleable;->TextViewMultiLineBackgroundState:[I
 
     .line 45205
-    const/16 v0, 0x137
+    const/16 v0, 0x138
 
     new-array v0, v0, [I
 
@@ -8225,6 +8225,12 @@
         0x10101fb
     .end array-data
 
+    :array_d4
+    .array-data 4
+        0x10101a5
+        0x10101a8
+    .end array-data
+
     .line 38100
     :array_94
     .array-data 4
@@ -8950,6 +8956,7 @@
         0x116002a
         0x116002b
         0x116002c
+        0x11600b2
         0x116002d
         0x116002e
         0x116002f

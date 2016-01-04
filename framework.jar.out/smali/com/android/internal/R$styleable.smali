@@ -2542,6 +2542,8 @@
 
 .field public static final RippleDrawable_color:I = 0x0
 
+.field public static final RippleDrawable_radius:I = 0x1
+
 .field public static final RotarySelector:[I
 
 .field public static final RotarySelector_orientation:I = 0x0
@@ -3349,6 +3351,8 @@
 
 .field public static final Theme_colorSwitchThumbNormal:I = 0x133
 
+.field public static final Theme_controlBackground:I = 0x134
+
 .field public static final Theme_datePickerDialogTheme:I = 0xfc
 
 .field public static final Theme_datePickerStyle:I = 0xb7
@@ -3445,11 +3449,11 @@
 
 .field public static final Theme_imageWellStyle:I = 0x3c
 
-.field public static final Theme_lightRadius:I = 0x136
+.field public static final Theme_lightRadius:I = 0x137
 
-.field public static final Theme_lightY:I = 0x134
+.field public static final Theme_lightY:I = 0x135
 
-.field public static final Theme_lightZ:I = 0x135
+.field public static final Theme_lightZ:I = 0x136
 
 .field public static final Theme_listChoiceBackgroundIndicator:I = 0x8c
 
@@ -6186,11 +6190,9 @@
     sput-object v0, Lcom/android/internal/R$styleable;->RingtonePreference:[I
 
     .line 46402
-    new-array v0, v3, [I
+    new-array v0, v4, [I
 
-    const v1, 0x10101a5
-
-    aput v1, v0, v2
+    fill-array-data v0, :array_d4
 
     sput-object v0, Lcom/android/internal/R$styleable;->RippleDrawable:[I
 
@@ -6551,7 +6553,7 @@
     sput-object v0, Lcom/android/internal/R$styleable;->TextViewMultiLineBackgroundState:[I
 
     .line 53864
-    const/16 v0, 0x137
+    const/16 v0, 0x138
 
     new-array v0, v0, [I
 
@@ -8623,6 +8625,12 @@
         0x10101fb
     .end array-data
 
+    :array_d4
+    .array-data 4
+        0x10101a5
+        0x10101a8
+    .end array-data
+
     .line 46473
     :array_94
     .array-data 4
@@ -9348,6 +9356,7 @@
         0x116002a
         0x116002b
         0x116002c
+        0x11600b2
         0x116002d
         0x116002e
         0x116002f

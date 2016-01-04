@@ -3136,7 +3136,7 @@
         <item name="listPreferredItemHeightSmall">48.0dip</item>
         <item name="actionModeStyle">@style/Widget.Material.ActionMode</item>
         <item name="actionBarWidgetTheme">@null</item>
-        <item name="actionBarItemBackground">?selectableItemBackgroundBorderless</item>
+        <item name="actionBarItemBackground">@drawable/action_bar_item_background_material</item>
         <item name="actionModeSplitBackground">@drawable/cab_background_bottom_material</item>
         <item name="textAppearanceListItem">@style/TextAppearance.Material.Subhead</item>
         <item name="textAppearanceListItemSmall">@style/TextAppearance.Material.Subhead</item>
@@ -3484,7 +3484,7 @@
         <item name="listPreferredItemHeightSmall">48.0dip</item>
         <item name="actionModeStyle">@style/Widget.Material.Light.ActionMode</item>
         <item name="actionBarWidgetTheme">@null</item>
-        <item name="actionBarItemBackground">?selectableItemBackgroundBorderless</item>
+        <item name="actionBarItemBackground">@drawable/action_bar_item_background_material</item>
         <item name="actionModeSplitBackground">@drawable/cab_background_bottom_material</item>
         <item name="textAppearanceListItem">@style/TextAppearance.Material.Subhead</item>
         <item name="textAppearanceListItemSmall">@style/TextAppearance.Material.Subhead</item>
