@@ -5888,6 +5888,7 @@
     <public type="color" name="tertiary_text_holo_dark" id="0x0106013a" />
     <public type="color" name="tertiary_text_holo_light" id="0x0106013b" />
     <public type="color" name="btn_material_accent" id="0x0106013c" />
+    <public type="color" name="control_highlight_material" id="0x0106013d" />
     <public type="array" name="emailAddressTypes" id="0x01070000" />
     <public type="array" name="imProtocols" id="0x01070001" />
     <public type="array" name="organizationTypes" id="0x01070002" />
@@ -6360,6 +6361,7 @@
     <public type="drawable" name="input_method_fullscreen_background_holo" id="0x01080762" />
     <public type="drawable" name="screen_background_holo_light" id="0x01080763" />
     <public type="drawable" name="screen_background_holo_dark" id="0x01080764" />
+    <public type="drawable" name="control_background_material" id="0x01080765" />
     <public type="drawable" name="ic_jog_dial_sound_off" id="0x0108036a" />
     <public type="drawable" name="ic_jog_dial_sound_on" id="0x0108036b" />
     <public type="drawable" name="ic_jog_dial_unlock" id="0x0108036c" />
@@ -9000,6 +9002,7 @@
     <public type="^attr-private" name="primaryUserOnly" id="0x011600af" />
     <public type="^attr-private" name="popupEnterTransition" id="0x011600b0" />
     <public type="^attr-private" name="popupExitTransition" id="0x011600b1" />
+    <public type="^attr-private" name="controlBackground" id="0x011600b2" />
     <public type="^attr-private" name="interpolatorX" id="0x011600b3" />
     <public type="^attr-private" name="interpolatorY" id="0x011600b4" />
     <public type="^attr-private" name="interpolatorZ" id="0x011600b5" />

@@ -45,6 +45,7 @@
     <attr name="findOnPageNextDrawable" format="reference" />
     <attr name="findOnPagePreviousDrawable" format="reference" />
     <attr name="colorSwitchThumbNormal" format="color" />
+    <attr name="controlBackground" format="color" />
     <attr name="lightY" format="dimension" />
     <attr name="lightZ" format="dimension" />
     <attr name="lightRadius" format="dimension" />

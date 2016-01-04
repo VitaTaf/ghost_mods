@@ -3217,6 +3217,7 @@
         <item name="findOnPageNextDrawable">@drawable/ic_find_next_material</item>
         <item name="findOnPagePreviousDrawable">@drawable/ic_find_previous_material</item>
         <item name="colorSwitchThumbNormal">@color/switch_thumb_material_dark</item>
+        <item name="controlBackground">@drawable/control_background_material</item>
         <item name="keyboardViewStyle">@style/Widget.Material.KeyboardView</item>
     </style>
     <style name="Theme.Material.Dialog" parent="@style/Theme.Material.BaseDialog" />
@@ -3563,6 +3564,7 @@
         <item name="findOnPageNextDrawable">@drawable/ic_find_next_material</item>
         <item name="findOnPagePreviousDrawable">@drawable/ic_find_previous_material</item>
         <item name="colorSwitchThumbNormal">@color/switch_thumb_material_light</item>
+        <item name="controlBackground">@drawable/control_background_material</item>
         <item name="keyboardViewStyle">@style/Widget.Material.KeyboardView</item>
     </style>
     <style name="Theme.Material.Light.DarkActionBar" parent="@style/Theme.Material.Light">
@@ -3745,7 +3747,7 @@
         <item name="paddingEnd">12.0dip</item>
     </style>
     <style name="Widget.Material.ActionButton.CloseMode" parent="@style/Widget.Material.ActionButton">
-        <item name="background">?selectableItemBackgroundBorderless</item>
+        <item name="background">?^attr-private/controlBackground</item>
     </style>
     <style name="Widget.Material.ActionButton.Overflow" parent="@style/Widget.Material.ActionButton">
         <item name="background">?actionBarItemBackground</item>
@@ -3818,13 +3820,13 @@
     </style>
     <style name="Widget.Material.CheckedTextView" parent="@style/Widget.CheckedTextView" />
     <style name="Widget.Material.CompoundButton.CheckBox" parent="@style/Widget.CompoundButton.CheckBox">
-        <item name="background">?selectableItemBackgroundBorderless</item>
+        <item name="background">?^attr-private/controlBackground</item>
     </style>
     <style name="Widget.Material.CompoundButton.RadioButton" parent="@style/Widget.CompoundButton.RadioButton">
-        <item name="background">?selectableItemBackgroundBorderless</item>
+        <item name="background">?^attr-private/controlBackground</item>
     </style>
     <style name="Widget.Material.CompoundButton.Star" parent="@style/Widget.CompoundButton.Star">
-        <item name="background">?selectableItemBackgroundBorderless</item>
+        <item name="background">?^attr-private/controlBackground</item>
         <item name="button">@drawable/btn_star_material</item>
     </style>
     <style name="Widget.Material.DatePicker" parent="@style/Widget.DatePicker">
@@ -3891,7 +3893,7 @@
         <item name="divider">@null</item>
     </style>
     <style name="Widget.Material.MediaRouteButton" parent="@style/Widget.Material">
-        <item name="background">?selectableItemBackgroundBorderless</item>
+        <item name="background">?^attr-private/controlBackground</item>
         <item name="focusable">true</item>
         <item name="minWidth">56.0dip</item>
         <item name="minHeight">48.0dip</item>
@@ -3950,7 +3952,7 @@
         <item name="searchHintIcon">@drawable/ic_search_api_material</item>
     </style>
     <style name="Widget.Material.SeekBar" parent="@style/Widget.Material">
-        <item name="background">?selectableItemBackgroundBorderless</item>
+        <item name="background">?^attr-private/controlBackground</item>
         <item name="focusable">true</item>
         <item name="indeterminateOnly">false</item>
         <item name="indeterminateDrawable">@drawable/scrubber_progress_horizontal_material</item>
@@ -4030,7 +4032,7 @@
         <item name="navigationButtonStyle">@style/Widget.Material.Toolbar.Button.Navigation</item>
     </style>
     <style name="Widget.Material.Toolbar.Button.Navigation" parent="@style/Widget.Toolbar.Button.Navigation">
-        <item name="background">?selectableItemBackgroundBorderless</item>
+        <item name="background">?^attr-private/controlBackground</item>
         <item name="paddingStart">@dimen/action_bar_navigation_padding_start_material</item>
     </style>
     <style name="Widget.Material.WebTextView" parent="@style/Widget.WebTextView" />
@@ -5298,7 +5300,7 @@
     <style name="Widget.Material.AbsListView" parent="@style/Widget.AbsListView" />
     <style name="Widget.Material.CompoundButton" parent="@style/Widget.CompoundButton" />
     <style name="Widget.Material.CompoundButton.Switch" parent="@style/Widget.Material.CompoundButton">
-        <item name="background">?selectableItemBackgroundBorderless</item>
+        <item name="background">?^attr-private/controlBackground</item>
         <item name="textOn">@string/capital_on</item>
         <item name="textOff">@string/capital_off</item>
         <item name="thumb">@drawable/switch_thumb_material_anim</item>
