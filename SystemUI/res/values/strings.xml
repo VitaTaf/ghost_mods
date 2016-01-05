@@ -239,8 +239,8 @@ Turning it back on may lead to charges from your carrier."</string>
     <string name="quick_settings_wifi_not_connected">Not Connected</string>
     <string name="quick_settings_wifi_no_network">No Network</string>
     <string name="quick_settings_wifi_off_label">Wi-Fi Off</string>
-    <string name="quick_settings_wifi_detail_empty_text">No saved networks available</string>
-    <string name="quick_settings_cast_title">Cast screen</string>
+    <string name="quick_settings_wifi_detail_empty_text">No Wi-Fi networks available</string>
+    <string name="quick_settings_cast_title">Cast</string>
     <string name="quick_settings_casting">Casting</string>
     <string name="quick_settings_cast_device_default_name">Unnamed device</string>
     <string name="quick_settings_cast_device_default_description">Ready to cast</string>
