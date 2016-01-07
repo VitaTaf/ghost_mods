@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/view/WindowManagerInternal$AppTransitionListener;,
         Landroid/view/WindowManagerInternal$MagnificationCallbacks;,
         Landroid/view/WindowManagerInternal$WindowsForAccessibilityCallback;
     }
@@ -20,7 +21,7 @@
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 52
+    .line 91
     return-void
 .end method
 
