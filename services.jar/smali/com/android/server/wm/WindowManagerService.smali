@@ -8926,6 +8926,12 @@
 
     iput v4, v0, Lcom/android/server/wm/WindowStateAnimator;->mAnimDh:I
 
+    const/4 v4, 0x1
+
+    move-object/from16 v0, v47
+
+    iput-boolean v4, v0, Lcom/android/server/wm/WindowStateAnimator;->mAnimateMove:Z
+
     .line 9858
     move-object/from16 v0, p0
 
@@ -11319,6 +11325,14 @@
     move/from16 v18, v0
 
     if-nez v18, :cond_8
+
+    move-object/from16 v0, v16
+
+    iget-boolean v0, v0, Lcom/android/server/wm/WindowState;->mHasSurface:Z
+
+    move/from16 v18, v0
+
+    if-eqz v18, :cond_7
 
     move-object/from16 v0, v16
 
@@ -46196,109 +46210,137 @@
 
     const/4 v11, 0x0
 
-    .line 2186
+    .line 2179
     invoke-virtual {p1}, Lcom/android/server/wm/WindowState;->getDisplayContent()Lcom/android/server/wm/DisplayContent;
 
     move-result-object v3
 
-    .line 2187
+    .line 2180
     .local v3, "displayContent":Lcom/android/server/wm/DisplayContent;
     if-nez v3, :cond_1
 
-    .line 2237
+    .line 2240
     :cond_0
     return-void
 
-    .line 2190
+    .line 2183
     :cond_1
     invoke-virtual {v3}, Lcom/android/server/wm/DisplayContent;->getDisplayInfo()Landroid/view/DisplayInfo;
 
     move-result-object v4
 
-    .line 2191
+    .line 2184
     .local v4, "displayInfo":Landroid/view/DisplayInfo;
     iget v5, v4, Landroid/view/DisplayInfo;->logicalWidth:I
 
-    .line 2192
+    .line 2185
     .local v5, "dw":I
     iget v2, v4, Landroid/view/DisplayInfo;->logicalHeight:I
 
-    .line 2194
+    .line 2187
     .local v2, "dh":I
     iget-object v6, p0, Lcom/android/server/wm/WindowManagerService;->mWallpaperTarget:Lcom/android/server/wm/WindowState;
 
-    .line 2195
+    .line 2188
     .local v6, "target":Lcom/android/server/wm/WindowState;
-    if-eqz v6, :cond_5
+    if-eqz v6, :cond_7
 
-    .line 2196
+    .line 2189
     iget v10, v6, Lcom/android/server/wm/WindowState;->mWallpaperX:F
 
     cmpl-float v10, v10, v11
 
-    if-ltz v10, :cond_8
+    if-ltz v10, :cond_a
 
-    .line 2197
+    .line 2190
     iget v10, v6, Lcom/android/server/wm/WindowState;->mWallpaperX:F
 
     iput v10, p0, Lcom/android/server/wm/WindowManagerService;->mLastWallpaperX:F
 
-    .line 2201
+    .line 2194
     :cond_2
     :goto_0
     iget v10, v6, Lcom/android/server/wm/WindowState;->mWallpaperY:F
 
     cmpl-float v10, v10, v11
 
-    if-ltz v10, :cond_9
+    if-ltz v10, :cond_b
 
-    .line 2202
+    .line 2195
     iget v10, v6, Lcom/android/server/wm/WindowState;->mWallpaperY:F
 
     iput v10, p0, Lcom/android/server/wm/WindowManagerService;->mLastWallpaperY:F
 
-    .line 2206
+    .line 2199
     :cond_3
     :goto_1
     iget v10, v6, Lcom/android/server/wm/WindowState;->mWallpaperDisplayOffsetX:I
 
-    if-eq v10, v12, :cond_a
+    if-eq v10, v12, :cond_c
 
-    .line 2207
+    .line 2200
     iget v10, v6, Lcom/android/server/wm/WindowState;->mWallpaperDisplayOffsetX:I
 
     iput v10, p0, Lcom/android/server/wm/WindowManagerService;->mLastWallpaperDisplayOffsetX:I
 
-    .line 2211
+    .line 2204
     :cond_4
     :goto_2
     iget v10, v6, Lcom/android/server/wm/WindowState;->mWallpaperDisplayOffsetY:I
 
-    if-eq v10, v12, :cond_b
+    if-eq v10, v12, :cond_d
 
-    .line 2212
+    .line 2205
     iget v10, v6, Lcom/android/server/wm/WindowState;->mWallpaperDisplayOffsetY:I
 
     iput v10, p0, Lcom/android/server/wm/WindowManagerService;->mLastWallpaperDisplayOffsetY:I
 
-    .line 2218
+    .line 2209
     :cond_5
     :goto_3
+    iget v10, v6, Lcom/android/server/wm/WindowState;->mWallpaperXStep:F
+
+    cmpl-float v10, v10, v11
+
+    if-ltz v10, :cond_e
+
+    .line 2210
+    iget v10, v6, Lcom/android/server/wm/WindowState;->mWallpaperXStep:F
+
+    iput v10, p0, Lcom/android/server/wm/WindowManagerService;->mLastWallpaperXStep:F
+
+    .line 2214
+    :cond_6
+    :goto_4
+    iget v10, v6, Lcom/android/server/wm/WindowState;->mWallpaperYStep:F
+
+    cmpl-float v10, v10, v11
+
+    if-ltz v10, :cond_f
+
+    .line 2215
+    iget v10, v6, Lcom/android/server/wm/WindowState;->mWallpaperYStep:F
+
+    iput v10, p0, Lcom/android/server/wm/WindowManagerService;->mLastWallpaperYStep:F
+
+    .line 2221
+    :cond_7
+    :goto_5
     iget-object v10, p0, Lcom/android/server/wm/WindowManagerService;->mWallpaperTokens:Ljava/util/ArrayList;
 
     invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 2219
+    .line 2222
     .local v0, "curTokenIndex":I
-    :cond_6
+    :cond_8
     if-lez v0, :cond_0
 
-    .line 2220
+    .line 2223
     add-int/lit8 v0, v0, -0x1
 
-    .line 2221
+    .line 2224
     iget-object v10, p0, Lcom/android/server/wm/WindowManagerService;->mWallpaperTokens:Ljava/util/ArrayList;
 
     invoke-virtual {v10, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -46307,7 +46349,7 @@
 
     check-cast v7, Lcom/android/server/wm/WindowToken;
 
-    .line 2222
+    .line 2225
     .local v7, "token":Lcom/android/server/wm/WindowToken;
     iget-object v10, v7, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
@@ -46315,16 +46357,16 @@
 
     move-result v1
 
-    .line 2223
+    .line 2226
     .local v1, "curWallpaperIndex":I
-    :cond_7
-    :goto_4
-    if-lez v1, :cond_6
+    :cond_9
+    :goto_6
+    if-lez v1, :cond_8
 
-    .line 2224
+    .line 2227
     add-int/lit8 v1, v1, -0x1
 
-    .line 2225
+    .line 2228
     iget-object v10, v7, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
 
     invoke-virtual {v10, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
@@ -46333,91 +46375,121 @@
 
     check-cast v8, Lcom/android/server/wm/WindowState;
 
-    .line 2226
+    .line 2229
     .local v8, "wallpaper":Lcom/android/server/wm/WindowState;
     invoke-virtual {p0, v8, v5, v2, p2}, Lcom/android/server/wm/WindowManagerService;->updateWallpaperOffsetLocked(Lcom/android/server/wm/WindowState;IIZ)Z
 
     move-result v10
 
-    if-eqz v10, :cond_7
+    if-eqz v10, :cond_9
 
-    .line 2227
+    .line 2230
     iget-object v9, v8, Lcom/android/server/wm/WindowState;->mWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
 
-    .line 2228
+    .line 2231
     .local v9, "winAnimator":Lcom/android/server/wm/WindowStateAnimator;
     invoke-virtual {v9}, Lcom/android/server/wm/WindowStateAnimator;->computeShownFrameLocked()V
 
-    .line 2231
+    .line 2234
     iget-object v10, v8, Lcom/android/server/wm/WindowState;->mShownFrame:Landroid/graphics/RectF;
 
     invoke-virtual {v9, v10}, Lcom/android/server/wm/WindowStateAnimator;->setWallpaperOffset(Landroid/graphics/RectF;)V
 
-    .line 2233
+    .line 2236
     const/4 p2, 0x0
 
-    goto :goto_4
+    goto :goto_6
 
-    .line 2198
+    .line 2191
     .end local v0    # "curTokenIndex":I
     .end local v1    # "curWallpaperIndex":I
     .end local v7    # "token":Lcom/android/server/wm/WindowToken;
     .end local v8    # "wallpaper":Lcom/android/server/wm/WindowState;
     .end local v9    # "winAnimator":Lcom/android/server/wm/WindowStateAnimator;
-    :cond_8
+    :cond_a
     iget v10, p1, Lcom/android/server/wm/WindowState;->mWallpaperX:F
 
     cmpl-float v10, v10, v11
 
     if-ltz v10, :cond_2
 
-    .line 2199
+    .line 2192
     iget v10, p1, Lcom/android/server/wm/WindowState;->mWallpaperX:F
 
     iput v10, p0, Lcom/android/server/wm/WindowManagerService;->mLastWallpaperX:F
 
     goto :goto_0
 
-    .line 2203
-    :cond_9
+    .line 2196
+    :cond_b
     iget v10, p1, Lcom/android/server/wm/WindowState;->mWallpaperY:F
 
     cmpl-float v10, v10, v11
 
     if-ltz v10, :cond_3
 
-    .line 2204
+    .line 2197
     iget v10, p1, Lcom/android/server/wm/WindowState;->mWallpaperY:F
 
     iput v10, p0, Lcom/android/server/wm/WindowManagerService;->mLastWallpaperY:F
 
     goto :goto_1
 
-    .line 2208
-    :cond_a
+    .line 2201
+    :cond_c
     iget v10, p1, Lcom/android/server/wm/WindowState;->mWallpaperDisplayOffsetX:I
 
     if-eq v10, v12, :cond_4
 
-    .line 2209
+    .line 2202
     iget v10, p1, Lcom/android/server/wm/WindowState;->mWallpaperDisplayOffsetX:I
 
     iput v10, p0, Lcom/android/server/wm/WindowManagerService;->mLastWallpaperDisplayOffsetX:I
 
     goto :goto_2
 
-    .line 2213
-    :cond_b
+    .line 2206
+    :cond_d
     iget v10, p1, Lcom/android/server/wm/WindowState;->mWallpaperDisplayOffsetY:I
 
     if-eq v10, v12, :cond_5
 
-    .line 2214
+    .line 2207
     iget v10, p1, Lcom/android/server/wm/WindowState;->mWallpaperDisplayOffsetY:I
 
     iput v10, p0, Lcom/android/server/wm/WindowManagerService;->mLastWallpaperDisplayOffsetY:I
 
     goto :goto_3
+
+    .line 2211
+    :cond_e
+    iget v10, p1, Lcom/android/server/wm/WindowState;->mWallpaperXStep:F
+
+    cmpl-float v10, v10, v11
+
+    if-ltz v10, :cond_6
+
+    .line 2212
+    iget v10, p1, Lcom/android/server/wm/WindowState;->mWallpaperXStep:F
+
+    iput v10, p0, Lcom/android/server/wm/WindowManagerService;->mLastWallpaperXStep:F
+
+    goto :goto_4
+
+    .line 2216
+    :cond_f
+    iget v10, p1, Lcom/android/server/wm/WindowState;->mWallpaperYStep:F
+
+    cmpl-float v10, v10, v11
+
+    if-ltz v10, :cond_7
+
+    .line 2217
+    iget v10, p1, Lcom/android/server/wm/WindowState;->mWallpaperYStep:F
+
+    iput v10, p0, Lcom/android/server/wm/WindowManagerService;->mLastWallpaperYStep:F
+
+    goto :goto_5
 .end method
 
 .method updateWallpaperOffsetLocked(Lcom/android/server/wm/WindowState;IIZ)Z
