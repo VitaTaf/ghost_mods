@@ -3648,6 +3648,8 @@
     .line 778
     :cond_1
     :goto_2
+    invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
+
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
@@ -3845,137 +3847,6 @@
     iget-object v0, v0, Lcom/android/server/wm/WindowAnimator$DisplayContentsAnimator;->mScreenRotationAnimation:Lcom/android/server/wm/ScreenRotationAnimation;
 
     goto :goto_0
-.end method
-
-.method hideWallpapersLocked(Lcom/android/server/wm/WindowState;)V
-    .locals 12
-    .param p1, "w"    # Lcom/android/server/wm/WindowState;
-
-    .prologue
-    const/4 v11, 0x0
-
-    .line 153
-    iget-object v10, p0, Lcom/android/server/wm/WindowAnimator;->mService:Lcom/android/server/wm/WindowManagerService;
-
-    iget-object v7, v10, Lcom/android/server/wm/WindowManagerService;->mWallpaperTarget:Lcom/android/server/wm/WindowState;
-
-    .line 154
-    .local v7, "wallpaperTarget":Lcom/android/server/wm/WindowState;
-    iget-object v10, p0, Lcom/android/server/wm/WindowAnimator;->mService:Lcom/android/server/wm/WindowManagerService;
-
-    iget-object v2, v10, Lcom/android/server/wm/WindowManagerService;->mLowerWallpaperTarget:Lcom/android/server/wm/WindowState;
-
-    .line 155
-    .local v2, "lowerWallpaperTarget":Lcom/android/server/wm/WindowState;
-    iget-object v10, p0, Lcom/android/server/wm/WindowAnimator;->mService:Lcom/android/server/wm/WindowManagerService;
-
-    iget-object v8, v10, Lcom/android/server/wm/WindowManagerService;->mWallpaperTokens:Ljava/util/ArrayList;
-
-    .line 157
-    .local v8, "wallpaperTokens":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/wm/WindowToken;>;"
-    if-ne v7, p1, :cond_0
-
-    if-eqz v2, :cond_1
-
-    :cond_0
-    if-nez v7, :cond_4
-
-    .line 158
-    :cond_1
-    invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
-
-    move-result v3
-
-    .line 159
-    .local v3, "numTokens":I
-    add-int/lit8 v0, v3, -0x1
-
-    .local v0, "i":I
-    :goto_0
-    if-ltz v0, :cond_4
-
-    .line 160
-    invoke-virtual {v8, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lcom/android/server/wm/WindowToken;
-
-    .line 161
-    .local v5, "token":Lcom/android/server/wm/WindowToken;
-    iget-object v10, v5, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
-
-    invoke-virtual {v10}, Lcom/android/server/wm/WindowList;->size()I
-
-    move-result v4
-
-    .line 162
-    .local v4, "numWindows":I
-    add-int/lit8 v1, v4, -0x1
-
-    .local v1, "j":I
-    :goto_1
-    if-ltz v1, :cond_3
-
-    .line 163
-    iget-object v10, v5, Lcom/android/server/wm/WindowToken;->windows:Lcom/android/server/wm/WindowList;
-
-    invoke-virtual {v10, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lcom/android/server/wm/WindowState;
-
-    .line 164
-    .local v6, "wallpaper":Lcom/android/server/wm/WindowState;
-    iget-object v9, v6, Lcom/android/server/wm/WindowState;->mWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
-
-    .line 165
-    .local v9, "winAnimator":Lcom/android/server/wm/WindowStateAnimator;
-    iget-boolean v10, v9, Lcom/android/server/wm/WindowStateAnimator;->mLastHidden:Z
-
-    if-nez v10, :cond_2
-
-    .line 166
-    invoke-virtual {v9}, Lcom/android/server/wm/WindowStateAnimator;->hide()V
-
-    .line 167
-    iget-object v10, p0, Lcom/android/server/wm/WindowAnimator;->mService:Lcom/android/server/wm/WindowManagerService;
-
-    invoke-virtual {v10, v6, v11}, Lcom/android/server/wm/WindowManagerService;->dispatchWallpaperVisibility(Lcom/android/server/wm/WindowState;Z)V
-
-    .line 168
-    const/4 v10, 0x4
-
-    invoke-virtual {p0, v11, v10}, Lcom/android/server/wm/WindowAnimator;->setPendingLayoutChanges(II)V
-
-    .line 162
-    :cond_2
-    add-int/lit8 v1, v1, -0x1
-
-    goto :goto_1
-
-    .line 176
-    .end local v6    # "wallpaper":Lcom/android/server/wm/WindowState;
-    .end local v9    # "winAnimator":Lcom/android/server/wm/WindowStateAnimator;
-    :cond_3
-    const/4 v10, 0x1
-
-    iput-boolean v10, v5, Lcom/android/server/wm/WindowToken;->hidden:Z
-
-    .line 159
-    add-int/lit8 v0, v0, -0x1
-
-    goto :goto_0
-
-    .line 179
-    .end local v0    # "i":I
-    .end local v1    # "j":I
-    .end local v3    # "numTokens":I
-    .end local v4    # "numWindows":I
-    .end local v5    # "token":Lcom/android/server/wm/WindowToken;
-    :cond_4
-    return-void
 .end method
 
 .method removeDisplayLocked(I)V
