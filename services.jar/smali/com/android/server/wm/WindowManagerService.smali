@@ -41365,6 +41365,20 @@
 
     invoke-virtual {v4, v1}, Lcom/android/server/wm/InputMonitor;->setFocusedAppLw(Lcom/android/server/wm/AppWindowToken;)V
 
+    invoke-virtual {p0}, Lcom/android/server/wm/WindowManagerService;->setFocusedStackFrame()V
+
+    invoke-static {}, Landroid/view/SurfaceControl;->openTransaction()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :try_start_1
+    invoke-virtual {p0}, Lcom/android/server/wm/WindowManagerService;->setFocusedStackLayer()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    :try_start_2
+    invoke-static {}, Landroid/view/SurfaceControl;->closeTransaction()V
+
     .line 4073
     :cond_2
     if-eqz p2, :cond_3
@@ -41438,8 +41452,8 @@
     move-exception v4
 
     monitor-exit v5
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     throw v4
 
@@ -41449,6 +41463,17 @@
 
     .line 4067
     goto :goto_1
+
+    .restart local v0    # "changed":Z
+    :catchall_1
+    move-exception v4
+
+    :try_start_3
+    invoke-static {}, Landroid/view/SurfaceControl;->closeTransaction()V
+
+    throw v4
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 .end method
 
 .method setFocusedStackFrame()V
