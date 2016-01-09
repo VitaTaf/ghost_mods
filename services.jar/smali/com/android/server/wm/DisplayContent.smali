@@ -1999,9 +1999,8 @@
     return-void
 .end method
 
-.method switchUserStacks(I)V
+.method switchUserStacks()V
     .locals 5
-    .param p1, "newUserId"    # I
 
     .prologue
     .line 248
@@ -2071,7 +2070,7 @@
 
     check-cast v4, Lcom/android/server/wm/TaskStack;
 
-    invoke-virtual {v4, p1}, Lcom/android/server/wm/TaskStack;->switchUser(I)V
+    invoke-virtual {v4}, Lcom/android/server/wm/TaskStack;->switchUser()V
 
     .line 259
     add-int/lit8 v1, v1, -0x1
