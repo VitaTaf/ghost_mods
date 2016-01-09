@@ -4258,6 +4258,16 @@
 
     invoke-virtual {v3, v9, v4}, Landroid/hardware/display/DisplayManagerInternal;->setDisplayInfoOverrideFromWindowManager(ILandroid/view/DisplayInfo;)V
 
+    iget-object v3, v14, Lcom/android/server/wm/DisplayContent;->mBaseDisplayRect:Landroid/graphics/Rect;
+
+    const/4 v9, 0x0
+
+    const/16 v27, 0x0
+
+    move/from16 v0, v27
+
+    invoke-virtual {v3, v9, v0, v6, v7}, Landroid/graphics/Rect;->set(IIII)V
+
     .line 7293
     monitor-exit v8
     :try_end_0
