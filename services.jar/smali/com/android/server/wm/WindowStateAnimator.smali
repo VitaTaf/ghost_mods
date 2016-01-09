@@ -4939,15 +4939,9 @@
 
     iget-object v0, p0, Lcom/android/server/wm/WindowStateAnimator;->mAppAnimator:Lcom/android/server/wm/AppWindowAnimator;
 
-    iget-object v0, v0, Lcom/android/server/wm/AppWindowAnimator;->animation:Landroid/view/animation/Animation;
+    invoke-virtual {v0}, Lcom/android/server/wm/AppWindowAnimator;->isAnimating()Z
 
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lcom/android/server/wm/WindowStateAnimator;->mAppAnimator:Lcom/android/server/wm/AppWindowAnimator;
-
-    iget-object v0, v0, Lcom/android/server/wm/AppWindowAnimator;->mAppToken:Lcom/android/server/wm/AppWindowToken;
-
-    iget-boolean v0, v0, Lcom/android/server/wm/AppWindowToken;->inPendingTransaction:Z
+    move-result v0
 
     if-eqz v0, :cond_2
 

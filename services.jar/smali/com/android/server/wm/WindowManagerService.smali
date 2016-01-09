@@ -159,13 +159,19 @@
 
 .field static final WALLPAPER_DRAW_PENDING:I = 0x1
 
-.field static final WALLPAPER_DRAW_PENDING_TIMEOUT_DURATION:J = 0x3e8L
+.field static final WALLPAPER_DRAW_PENDING_TIMEOUT_DURATION:J = 0x1f4L
 
 .field static final WALLPAPER_DRAW_TIMEOUT:I = 0x2
 
 .field static final WALLPAPER_TIMEOUT:J = 0x96L
 
 .field static final WALLPAPER_TIMEOUT_RECOVERY:J = 0x2710L
+
+.field static final WINDOWS_FREEZING_SCREENS_ACTIVE:I = 0x1
+
+.field static final WINDOWS_FREEZING_SCREENS_NONE:I = 0x0
+
+.field static final WINDOWS_FREEZING_SCREENS_TIMEOUT:I = 0x2
 
 .field static final WINDOW_FREEZE_TIMEOUT_DURATION:I = 0x7d0
 
@@ -695,7 +701,7 @@
 
 .field private mWindowsChanged:Z
 
-.field mWindowsFreezingScreen:Z
+.field private mWindowsFreezingScreen:I
 
 
 # direct methods
@@ -969,7 +975,7 @@
     .line 474
     const/4 v6, 0x0
 
-    iput-boolean v6, p0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:Z
+    iput v6, p0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:I
 
     .line 475
     const/4 v6, 0x0
@@ -1768,6 +1774,17 @@
     return-void
 .end method
 
+.method static synthetic access$2100(Lcom/android/server/wm/WindowManagerService;I)V
+    .locals 0
+    .param p0, "x0"    # Lcom/android/server/wm/WindowManagerService;
+    .param p1, "x1"    # I
+
+    .prologue
+    invoke-direct {p0, p1}, Lcom/android/server/wm/WindowManagerService;->handleDisplayRemovedLocked(I)V
+
+    return-void
+.end method
+
 .method static synthetic access$1100(Lcom/android/server/wm/WindowManagerService;)Z
     .locals 1
     .param p0, "x0"    # Lcom/android/server/wm/WindowManagerService;
@@ -1827,6 +1844,17 @@
     return-void
 .end method
 
+.method static synthetic access$502(Lcom/android/server/wm/WindowManagerService;I)I
+    .locals 0
+    .param p0, "x0"    # Lcom/android/server/wm/WindowManagerService;
+    .param p1, "x1"    # I
+
+    .prologue
+    iput p1, p0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:I
+
+    return p1
+.end method
+
 .method static synthetic access$600(Lcom/android/server/wm/WindowManagerService;)Z
     .locals 1
     .param p0, "x0"    # Lcom/android/server/wm/WindowManagerService;
@@ -1870,18 +1898,6 @@
     .prologue
     .line 170
     invoke-direct {p0, p1, p2}, Lcom/android/server/wm/WindowManagerService;->showStrictModeViolation(II)V
-
-    return-void
-.end method
-
-.method static synthetic access$900(Lcom/android/server/wm/WindowManagerService;I)V
-    .locals 0
-    .param p0, "x0"    # Lcom/android/server/wm/WindowManagerService;
-    .param p1, "x1"    # I
-
-    .prologue
-    .line 170
-    invoke-direct {p0, p1}, Lcom/android/server/wm/WindowManagerService;->handleDisplayRemovedLocked(I)V
 
     return-void
 .end method
@@ -7533,7 +7549,7 @@
 
     iget-object v4, v0, Lcom/android/server/wm/WindowManagerService;->mAnimator:Lcom/android/server/wm/WindowAnimator;
 
-    iget-boolean v4, v4, Lcom/android/server/wm/WindowAnimator;->mAnimating:Z
+    iget-boolean v4, v4, Lcom/android/server/wm/WindowAnimator;->mAppWindowAnimating:Z
 
     if-nez v4, :cond_13
 
@@ -8579,7 +8595,7 @@
     .line 10064
     move-object/from16 v0, p0
 
-    iget-boolean v4, v0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:Z
+    iget v4, v0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:I
 
     if-eqz v4, :cond_31
 
@@ -8588,7 +8604,7 @@
 
     move-object/from16 v0, p0
 
-    iput-boolean v4, v0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:Z
+    iput v4, v0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:I
 
     .line 10066
     move-object/from16 v0, p0
@@ -12827,7 +12843,7 @@
     .line 4745
     iget-object v3, p0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
 
-    const-wide/16 v4, 0x1388
+    const-wide/16 v4, 0x7d0
 
     invoke-virtual {v3, v7, v4, v5}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessageDelayed(IJ)Z
 
@@ -13104,9 +13120,11 @@
 
     move-object/from16 v0, p0
 
-    iget-boolean v3, v0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:Z
+    iget v3, v0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:I
 
-    if-nez v3, :cond_0
+    const/4 v4, 0x1
+
+    if-eq v3, v4, :cond_0
 
     move-object/from16 v0, p0
 
@@ -19852,7 +19870,7 @@
     iput-object v3, v2, Lcom/android/server/wm/WindowManagerService$LayoutFields;->mLastWindowFreezeSource:Ljava/lang/Object;
 
     .line 10361
-    iget-boolean v2, p0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:Z
+    iget v2, p0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:I
 
     if-eqz v2, :cond_3
 
@@ -24171,9 +24189,9 @@
 
     invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:Z
+    iget v8, p0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:I
 
-    invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->print(Z)V
+    invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->print(I)V
 
     .line 11298
     const-string v8, " client="
@@ -27423,7 +27441,7 @@
 
     const/16 v5, 0x27
 
-    const-wide/16 v10, 0x3e8
+    const-wide/16 v10, 0x1f4
 
     invoke-virtual {v2, v5, v10, v11}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessageDelayed(IJ)Z
 
@@ -28090,6 +28108,20 @@
 
     iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mAnimator:Lcom/android/server/wm/WindowAnimator;
 
+    iget-boolean v5, v2, Lcom/android/server/wm/WindowAnimator;->mAppWindowAnimating:Z
+
+    invoke-virtual/range {v20 .. v20}, Lcom/android/server/wm/AppWindowAnimator;->isAnimating()Z
+
+    move-result v7
+
+    or-int/2addr v5, v7
+
+    iput-boolean v5, v2, Lcom/android/server/wm/WindowAnimator;->mAppWindowAnimating:Z
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mAnimator:Lcom/android/server/wm/WindowAnimator;
+
     iget-boolean v5, v2, Lcom/android/server/wm/WindowAnimator;->mAnimating:Z
 
     invoke-virtual/range {v20 .. v20}, Lcom/android/server/wm/AppWindowAnimator;->showAllWindowsLocked()Z
@@ -28256,6 +28288,20 @@
     or-int/2addr v5, v7
 
     iput-boolean v5, v2, Lcom/android/server/wm/WindowAnimator;->mAnimating:Z
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mAnimator:Lcom/android/server/wm/WindowAnimator;
+
+    iget-boolean v5, v2, Lcom/android/server/wm/WindowAnimator;->mAppWindowAnimating:Z
+
+    invoke-virtual/range {v20 .. v20}, Lcom/android/server/wm/AppWindowAnimator;->isAnimating()Z
+
+    move-result v7
+
+    or-int/2addr v5, v7
+
+    iput-boolean v5, v2, Lcom/android/server/wm/WindowAnimator;->mAppWindowAnimating:Z
 
     .line 9306
     if-eqz v4, :cond_1c
@@ -28445,6 +28491,20 @@
 
     .line 9342
     :cond_1e
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mAnimator:Lcom/android/server/wm/WindowAnimator;
+
+    iget-boolean v5, v2, Lcom/android/server/wm/WindowAnimator;->mAppWindowAnimating:Z
+
+    invoke-virtual/range {v20 .. v20}, Lcom/android/server/wm/AppWindowAnimator;->isAnimating()Z
+
+    move-result v7
+
+    or-int/2addr v5, v7
+
+    iput-boolean v5, v2, Lcom/android/server/wm/WindowAnimator;->mAppWindowAnimating:Z
+
     if-eqz v4, :cond_22
 
     .line 9343
@@ -28528,7 +28588,7 @@
     :cond_22
     add-int/lit8 v36, v36, 0x1
 
-    goto :goto_d
+    goto/16 :goto_d
 
     .line 9357
     .end local v3    # "wtoken":Lcom/android/server/wm/AppWindowToken;
@@ -29999,12 +30059,12 @@
     iput-boolean v1, v0, Lcom/android/server/wm/WindowManagerService$LayoutFields;->mOrientationChangeComplete:Z
 
     .line 9056
-    iget-boolean v0, p0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:Z
+    iget v0, p0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:I
 
     if-nez v0, :cond_0
 
     .line 9057
-    iput-boolean v2, p0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:Z
+    iput v2, p0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:I
 
     .line 9060
     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
@@ -37878,31 +37938,29 @@
 .end method
 
 .method scheduleAnimationLocked()V
-    .locals 4
+    .locals 2
 
     .prologue
-    const/4 v3, 0x1
-
-    .line 10322
+    .line 10339
     iget-boolean v0, p0, Lcom/android/server/wm/WindowManagerService;->mAnimationScheduled:Z
 
     if-nez v0, :cond_0
 
-    .line 10323
-    iput-boolean v3, p0, Lcom/android/server/wm/WindowManagerService;->mAnimationScheduled:Z
+    .line 10340
+    const/4 v0, 0x1
 
-    .line 10324
+    iput-boolean v0, p0, Lcom/android/server/wm/WindowManagerService;->mAnimationScheduled:Z
+
+    .line 10341
     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService;->mChoreographer:Landroid/view/Choreographer;
 
     iget-object v1, p0, Lcom/android/server/wm/WindowManagerService;->mAnimator:Lcom/android/server/wm/WindowAnimator;
 
-    iget-object v1, v1, Lcom/android/server/wm/WindowAnimator;->mAnimationRunnable:Ljava/lang/Runnable;
+    iget-object v1, v1, Lcom/android/server/wm/WindowAnimator;->mAnimationFrameCallback:Landroid/view/Choreographer$FrameCallback;
 
-    const/4 v2, 0x0
+    invoke-virtual {v0, v1}, Landroid/view/Choreographer;->postFrameCallback(Landroid/view/Choreographer$FrameCallback;)V
 
-    invoke-virtual {v0, v3, v1, v2}, Landroid/view/Choreographer;->postCallback(ILjava/lang/Runnable;Ljava/lang/Object;)V
-
-    .line 10327
+    .line 10343
     :cond_0
     return-void
 .end method
@@ -45551,7 +45609,7 @@
 
     move-object/from16 v0, p0
 
-    iput-boolean v5, v0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:Z
+    iput v5, v0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:I
 
     .line 6522
     move-object/from16 v0, p0

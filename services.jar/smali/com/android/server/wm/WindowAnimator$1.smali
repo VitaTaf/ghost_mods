@@ -3,7 +3,7 @@
 .source "WindowAnimator.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/Choreographer$FrameCallback;
 
 
 # annotations
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 121
+    .line 126
     iput-object p1, p0, Lcom/android/server/wm/WindowAnimator$1;->this$0:Lcom/android/server/wm/WindowAnimator;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,11 +36,12 @@
 
 
 # virtual methods
-.method public run()V
+.method public doFrame(J)V
     .locals 3
+    .param p1, "frameTimeNs"    # J
 
     .prologue
-    .line 124
+    .line 128
     iget-object v0, p0, Lcom/android/server/wm/WindowAnimator$1;->this$0:Lcom/android/server/wm/WindowAnimator;
 
     iget-object v0, v0, Lcom/android/server/wm/WindowAnimator;->mService:Lcom/android/server/wm/WindowManagerService;
@@ -49,7 +50,7 @@
 
     monitor-enter v1
 
-    .line 125
+    .line 129
     :try_start_0
     iget-object v0, p0, Lcom/android/server/wm/WindowAnimator$1;->this$0:Lcom/android/server/wm/WindowAnimator;
 
@@ -59,19 +60,19 @@
 
     iput-boolean v2, v0, Lcom/android/server/wm/WindowManagerService;->mAnimationScheduled:Z
 
-    .line 126
+    .line 130
     iget-object v0, p0, Lcom/android/server/wm/WindowAnimator$1;->this$0:Lcom/android/server/wm/WindowAnimator;
 
-    # invokes: Lcom/android/server/wm/WindowAnimator;->animateLocked()V
-    invoke-static {v0}, Lcom/android/server/wm/WindowAnimator;->access$000(Lcom/android/server/wm/WindowAnimator;)V
+    # invokes: Lcom/android/server/wm/WindowAnimator;->animateLocked(J)V
+    invoke-static {v0, p1, p2}, Lcom/android/server/wm/WindowAnimator;->access$000(Lcom/android/server/wm/WindowAnimator;J)V
 
-    .line 127
+    .line 131
     monitor-exit v1
 
-    .line 128
+    .line 132
     return-void
 
-    .line 127
+    .line 131
     :catchall_0
     move-exception v0
 
