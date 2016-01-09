@@ -398,6 +398,8 @@
 
 .field mLastFocus:Lcom/android/server/wm/WindowState;
 
+.field mLastKeyguardForcedOrientation:I
+
 .field mLastStatusBarVisibility:I
 
 .field mLastWallpaperDisplayOffsetX:I
@@ -983,6 +985,10 @@
     const/4 v6, -0x1
 
     iput v6, p0, Lcom/android/server/wm/WindowManagerService;->mLastWindowForcedOrientation:I
+
+    const/4 v6, 0x5
+
+    iput v6, p0, Lcom/android/server/wm/WindowManagerService;->mLastKeyguardForcedOrientation:I
 
     .line 480
     const/4 v6, 0x0
@@ -26453,309 +26459,462 @@
     goto :goto_0
 .end method
 
-.method public getOrientationFromAppTokensLocked()I
-    .locals 14
+.method public getOrientationLocked()I
+    .locals 21
 
     .prologue
-    const/4 v12, -0x1
+    .line 3732
+    move-object/from16 v0, p0
 
-    const/4 v13, 0x3
+    iget-boolean v0, v0, Lcom/android/server/wm/WindowManagerService;->mDisplayFrozen:Z
 
-    .line 3778
-    const/4 v5, -0x1
+    move/from16 v19, v0
 
-    .line 3779
-    .local v5, "lastOrientation":I
+    if-eqz v19, :cond_1
+
+    .line 3733
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/server/wm/WindowManagerService;->mLastWindowForcedOrientation:I
+
+    move/from16 v19, v0
+
+    const/16 v20, -0x1
+
+    move/from16 v0, v19
+
+    move/from16 v1, v20
+
+    if-eq v0, v1, :cond_8
+
+    .line 3741
+    move-object/from16 v0, p0
+
+    iget v11, v0, Lcom/android/server/wm/WindowManagerService;->mLastWindowForcedOrientation:I
+
+    .line 3870
+    :cond_0
+    :goto_0
+    return v11
+
+    .line 3745
+    :cond_1
+    invoke-virtual/range {p0 .. p0}, Lcom/android/server/wm/WindowManagerService;->getDefaultWindowListLocked()Lcom/android/server/wm/WindowList;
+
+    move-result-object v18
+
+    .line 3746
+    .local v18, "windows":Lcom/android/server/wm/WindowList;
+    invoke-virtual/range {v18 .. v18}, Lcom/android/server/wm/WindowList;->size()I
+
+    move-result v19
+
+    add-int/lit8 v10, v19, -0x1
+
+    .line 3747
+    .local v10, "pos":I
+    :cond_2
+    if-ltz v10, :cond_3
+
+    .line 3748
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v10}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+
+    move-result-object v16
+
+    check-cast v16, Lcom/android/server/wm/WindowState;
+
+    .line 3749
+    .local v16, "win":Lcom/android/server/wm/WindowState;
+    add-int/lit8 v10, v10, -0x1
+
+    .line 3750
+    move-object/from16 v0, v16
+
+    iget-object v0, v0, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
+
+    move-object/from16 v19, v0
+
+    if-eqz v19, :cond_4
+
+    .line 3770
+    .end local v16    # "win":Lcom/android/server/wm/WindowState;
+    :cond_3
+    const/16 v19, -0x1
+
+    move/from16 v0, v19
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/android/server/wm/WindowManagerService;->mLastWindowForcedOrientation:I
+
+    .line 3772
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/WindowManagerService;->mPolicy:Landroid/view/WindowManagerPolicy;
+
+    move-object/from16 v19, v0
+
+    invoke-interface/range {v19 .. v19}, Landroid/view/WindowManagerPolicy;->isKeyguardLocked()Z
+
+    move-result v19
+
+    if-eqz v19, :cond_8
+
+    .line 3776
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/WindowManagerService;->mPolicy:Landroid/view/WindowManagerPolicy;
+
+    move-object/from16 v19, v0
+
+    invoke-interface/range {v19 .. v19}, Landroid/view/WindowManagerPolicy;->getWinShowWhenLockedLw()Landroid/view/WindowManagerPolicy$WindowState;
+
+    move-result-object v17
+
+    check-cast v17, Lcom/android/server/wm/WindowState;
+
+    .line 3777
+    .local v17, "winShowWhenLocked":Lcom/android/server/wm/WindowState;
+    if-nez v17, :cond_6
+
     const/4 v2, 0x0
 
+    .line 3779
+    .local v2, "appShowWhenLocked":Lcom/android/server/wm/AppWindowToken;
+    :goto_1
+    if-eqz v2, :cond_7
+
     .line 3780
-    .local v2, "findingBehind":Z
-    const/4 v4, 0x0
+    iget v11, v2, Lcom/android/server/wm/AppWindowToken;->requestedOrientation:I
+
+    .line 3781
+    .local v11, "req":I
+    const/16 v19, 0x3
+
+    move/from16 v0, v19
+
+    if-ne v11, v0, :cond_0
 
     .line 3782
-    .local v4, "lastFullscreen":Z
-    invoke-virtual {p0}, Lcom/android/server/wm/WindowManagerService;->getDefaultDisplayContentLocked()Lcom/android/server/wm/DisplayContent;
+    move-object/from16 v0, p0
 
-    move-result-object v1
+    iget v11, v0, Lcom/android/server/wm/WindowManagerService;->mLastKeyguardForcedOrientation:I
 
-    .line 3783
-    .local v1, "displayContent":Lcom/android/server/wm/DisplayContent;
-    invoke-virtual {v1}, Lcom/android/server/wm/DisplayContent;->getTasks()Ljava/util/ArrayList;
+    goto :goto_0
 
-    move-result-object v8
+    .line 3755
+    .end local v2    # "appShowWhenLocked":Lcom/android/server/wm/AppWindowToken;
+    .end local v11    # "req":I
+    .end local v17    # "winShowWhenLocked":Lcom/android/server/wm/WindowState;
+    .restart local v16    # "win":Lcom/android/server/wm/WindowState;
+    :cond_4
+    invoke-virtual/range {v16 .. v16}, Lcom/android/server/wm/WindowState;->isVisibleLw()Z
 
-    .line 3784
-    .local v8, "tasks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/wm/Task;>;"
-    invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
+    move-result v19
 
-    move-result v11
+    if-eqz v19, :cond_2
 
-    add-int/lit8 v7, v11, -0x1
+    move-object/from16 v0, v16
 
-    .local v7, "taskNdx":I
-    :goto_0
-    if-ltz v7, :cond_9
+    iget-boolean v0, v0, Lcom/android/server/wm/WindowState;->mPolicyVisibilityAfterAnim:Z
 
-    .line 3785
-    invoke-virtual {v8, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    move/from16 v19, v0
 
-    move-result-object v11
+    if-eqz v19, :cond_2
 
-    check-cast v11, Lcom/android/server/wm/Task;
+    .line 3758
+    move-object/from16 v0, v16
 
-    iget-object v10, v11, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
+    iget-object v0, v0, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
 
-    .line 3786
-    .local v10, "tokens":Lcom/android/server/wm/AppTokenList;
-    invoke-virtual {v10}, Lcom/android/server/wm/AppTokenList;->size()I
+    move-object/from16 v19, v0
 
-    move-result v11
+    move-object/from16 v0, v19
 
-    add-int/lit8 v3, v11, -0x1
+    iget v11, v0, Landroid/view/WindowManager$LayoutParams;->screenOrientation:I
 
-    .line 3787
-    .local v3, "firstToken":I
-    move v9, v3
+    .line 3759
+    .restart local v11    # "req":I
+    const/16 v19, -0x1
 
-    .local v9, "tokenNdx":I
-    :goto_1
-    if-ltz v9, :cond_8
+    move/from16 v0, v19
 
-    .line 3788
-    invoke-virtual {v10, v9}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
+    if-eq v11, v0, :cond_2
 
-    move-result-object v0
+    const/16 v19, 0x3
 
-    check-cast v0, Lcom/android/server/wm/AppWindowToken;
+    move/from16 v0, v19
 
-    .line 3794
-    .local v0, "atoken":Lcom/android/server/wm/AppWindowToken;
-    if-nez v2, :cond_1
+    if-eq v11, v0, :cond_2
 
-    iget-boolean v11, v0, Lcom/android/server/wm/AppWindowToken;->hidden:Z
+    .line 3765
+    move-object/from16 v0, p0
 
-    if-nez v11, :cond_1
+    iget-object v0, v0, Lcom/android/server/wm/WindowManagerService;->mPolicy:Landroid/view/WindowManagerPolicy;
 
-    iget-boolean v11, v0, Lcom/android/server/wm/AppWindowToken;->hiddenRequested:Z
+    move-object/from16 v19, v0
 
-    if-eqz v11, :cond_1
+    move-object/from16 v0, v16
 
-    .line 3787
-    :cond_0
-    :goto_2
-    add-int/lit8 v9, v9, -0x1
+    iget-object v0, v0, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
+
+    move-object/from16 v20, v0
+
+    invoke-interface/range {v19 .. v20}, Landroid/view/WindowManagerPolicy;->isKeyguardHostWindow(Landroid/view/WindowManager$LayoutParams;)Z
+
+    move-result v19
+
+    if-eqz v19, :cond_5
+
+    .line 3766
+    move-object/from16 v0, p0
+
+    iput v11, v0, Lcom/android/server/wm/WindowManagerService;->mLastKeyguardForcedOrientation:I
+
+    .line 3768
+    :cond_5
+    move-object/from16 v0, p0
+
+    iput v11, v0, Lcom/android/server/wm/WindowManagerService;->mLastWindowForcedOrientation:I
+
+    goto/16 :goto_0
+
+    .line 3777
+    .end local v11    # "req":I
+    .end local v16    # "win":Lcom/android/server/wm/WindowState;
+    .restart local v17    # "winShowWhenLocked":Lcom/android/server/wm/WindowState;
+    :cond_6
+    move-object/from16 v0, v17
+
+    iget-object v2, v0, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
 
     goto :goto_1
 
-    .line 3801
-    :cond_1
-    if-ne v9, v3, :cond_3
-
-    .line 3807
-    if-eq v5, v13, :cond_3
-
-    if-eqz v4, :cond_3
-
-    move v6, v5
-
-    .line 3850
-    .end local v0    # "atoken":Lcom/android/server/wm/AppWindowToken;
-    .end local v3    # "firstToken":I
-    .end local v9    # "tokenNdx":I
-    .end local v10    # "tokens":Lcom/android/server/wm/AppTokenList;
-    :cond_2
-    :goto_3
-    return v6
-
-    .line 3816
-    .restart local v0    # "atoken":Lcom/android/server/wm/AppWindowToken;
-    .restart local v3    # "firstToken":I
-    .restart local v9    # "tokenNdx":I
-    .restart local v10    # "tokens":Lcom/android/server/wm/AppTokenList;
-    :cond_3
-    iget-boolean v11, v0, Lcom/android/server/wm/AppWindowToken;->hiddenRequested:Z
-
-    if-nez v11, :cond_0
-
-    iget-boolean v11, v0, Lcom/android/server/wm/AppWindowToken;->willBeHidden:Z
-
-    if-nez v11, :cond_0
-
-    .line 3822
-    if-nez v9, :cond_4
-
-    .line 3824
-    iget v5, v0, Lcom/android/server/wm/AppWindowToken;->requestedOrientation:I
-
-    .line 3827
-    :cond_4
-    iget v6, v0, Lcom/android/server/wm/AppWindowToken;->requestedOrientation:I
-
-    .line 3831
-    .local v6, "or":I
-    iget-boolean v4, v0, Lcom/android/server/wm/AppWindowToken;->appFullscreen:Z
-
-    .line 3832
-    if-eqz v4, :cond_5
-
-    if-ne v6, v13, :cond_2
-
-    .line 3840
-    :cond_5
-    if-eq v6, v12, :cond_6
-
-    if-ne v6, v13, :cond_2
-
-    .line 3846
-    :cond_6
-    if-ne v6, v13, :cond_7
-
-    const/4 v11, 0x1
-
-    :goto_4
-    or-int/2addr v2, v11
-
-    goto :goto_2
-
+    .line 3790
+    .restart local v2    # "appShowWhenLocked":Lcom/android/server/wm/AppWindowToken;
     :cond_7
-    const/4 v11, 0x0
+    move-object/from16 v0, p0
 
-    goto :goto_4
+    iget v11, v0, Lcom/android/server/wm/WindowManagerService;->mLastKeyguardForcedOrientation:I
 
-    .line 3784
-    .end local v0    # "atoken":Lcom/android/server/wm/AppWindowToken;
-    .end local v6    # "or":I
+    goto/16 :goto_0
+
+    .line 3795
+    .end local v2    # "appShowWhenLocked":Lcom/android/server/wm/AppWindowToken;
+    .end local v10    # "pos":I
+    .end local v17    # "winShowWhenLocked":Lcom/android/server/wm/WindowState;
+    .end local v18    # "windows":Lcom/android/server/wm/WindowList;
     :cond_8
-    add-int/lit8 v7, v7, -0x1
+    const/4 v8, -0x1
 
-    goto :goto_0
+    .line 3796
+    .local v8, "lastOrientation":I
+    const/4 v5, 0x0
 
-    .end local v3    # "firstToken":I
-    .end local v9    # "tokenNdx":I
-    .end local v10    # "tokens":Lcom/android/server/wm/AppTokenList;
-    :cond_9
-    move v6, v12
+    .line 3797
+    .local v5, "findingBehind":Z
+    const/4 v7, 0x0
 
-    .line 3850
-    goto :goto_3
-.end method
+    .line 3799
+    .local v7, "lastFullscreen":Z
+    invoke-virtual/range {p0 .. p0}, Lcom/android/server/wm/WindowManagerService;->getDefaultDisplayContentLocked()Lcom/android/server/wm/DisplayContent;
 
-.method public getOrientationFromWindowsLocked()I
-    .locals 6
+    move-result-object v4
 
-    .prologue
-    const/4 v4, -0x1
+    .line 3800
+    .local v4, "displayContent":Lcom/android/server/wm/DisplayContent;
+    invoke-virtual {v4}, Lcom/android/server/wm/DisplayContent;->getTasks()Ljava/util/ArrayList;
 
-    .line 3742
-    iget-boolean v5, p0, Lcom/android/server/wm/WindowManagerService;->mDisplayFrozen:Z
+    move-result-object v13
 
-    if-nez v5, :cond_0
+    .line 3801
+    .local v13, "tasks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/wm/Task;>;"
+    invoke-virtual {v13}, Ljava/util/ArrayList;->size()I
 
-    iget-object v5, p0, Lcom/android/server/wm/WindowManagerService;->mOpeningApps:Landroid/util/ArraySet;
+    move-result v19
 
-    invoke-virtual {v5}, Landroid/util/ArraySet;->size()I
+    add-int/lit8 v12, v19, -0x1
 
-    move-result v5
+    .local v12, "taskNdx":I
+    :goto_2
+    if-ltz v12, :cond_11
 
-    if-gtz v5, :cond_0
+    .line 3802
+    invoke-virtual {v13, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    iget-object v5, p0, Lcom/android/server/wm/WindowManagerService;->mClosingApps:Landroid/util/ArraySet;
+    move-result-object v19
 
-    invoke-virtual {v5}, Landroid/util/ArraySet;->size()I
+    check-cast v19, Lcom/android/server/wm/Task;
 
-    move-result v5
+    move-object/from16 v0, v19
 
-    if-lez v5, :cond_1
+    iget-object v15, v0, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
-    .line 3748
-    :cond_0
-    iget v1, p0, Lcom/android/server/wm/WindowManagerService;->mLastWindowForcedOrientation:I
+    .line 3803
+    .local v15, "tokens":Lcom/android/server/wm/AppTokenList;
+    invoke-virtual {v15}, Lcom/android/server/wm/AppTokenList;->size()I
 
-    .line 3774
-    :goto_0
-    return v1
+    move-result v19
 
-    .line 3752
-    :cond_1
-    invoke-virtual {p0}, Lcom/android/server/wm/WindowManagerService;->getDefaultWindowListLocked()Lcom/android/server/wm/WindowList;
+    add-int/lit8 v6, v19, -0x1
+
+    .line 3804
+    .local v6, "firstToken":I
+    move v14, v6
+
+    .local v14, "tokenNdx":I
+    :goto_3
+    if-ltz v14, :cond_10
+
+    .line 3805
+    invoke-virtual {v15, v14}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 3753
-    .local v3, "windows":Lcom/android/server/wm/WindowList;
-    invoke-virtual {v3}, Lcom/android/server/wm/WindowList;->size()I
+    check-cast v3, Lcom/android/server/wm/AppWindowToken;
 
-    move-result v5
+    .line 3811
+    .local v3, "atoken":Lcom/android/server/wm/AppWindowToken;
+    if-nez v5, :cond_a
 
-    add-int/lit8 v0, v5, -0x1
+    iget-boolean v0, v3, Lcom/android/server/wm/AppWindowToken;->hidden:Z
 
-    .line 3754
-    .local v0, "pos":I
-    :cond_2
-    if-ltz v0, :cond_4
+    move/from16 v19, v0
 
-    .line 3755
-    invoke-virtual {v3, v0}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    if-nez v19, :cond_a
 
-    move-result-object v2
+    iget-boolean v0, v3, Lcom/android/server/wm/AppWindowToken;->hiddenRequested:Z
 
-    check-cast v2, Lcom/android/server/wm/WindowState;
+    move/from16 v19, v0
 
-    .line 3756
-    .local v2, "win":Lcom/android/server/wm/WindowState;
-    add-int/lit8 v0, v0, -0x1
+    if-eqz v19, :cond_a
 
-    .line 3757
-    iget-object v5, v2, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
+    .line 3804
+    :cond_9
+    :goto_4
+    add-int/lit8 v14, v14, -0x1
 
-    if-eqz v5, :cond_3
+    goto :goto_3
 
-    .line 3760
-    iput v4, p0, Lcom/android/server/wm/WindowManagerService;->mLastWindowForcedOrientation:I
+    .line 3818
+    :cond_a
+    if-ne v14, v6, :cond_b
 
-    move v1, v4
+    .line 3824
+    const/16 v19, 0x3
 
-    goto :goto_0
+    move/from16 v0, v19
 
-    .line 3762
-    :cond_3
-    invoke-virtual {v2}, Lcom/android/server/wm/WindowState;->isVisibleLw()Z
+    if-eq v8, v0, :cond_b
 
-    move-result v5
+    if-eqz v7, :cond_b
 
-    if-eqz v5, :cond_2
+    move v11, v8
 
-    iget-boolean v5, v2, Lcom/android/server/wm/WindowState;->mPolicyVisibilityAfterAnim:Z
+    .line 3828
+    goto/16 :goto_0
 
-    if-eqz v5, :cond_2
+    .line 3833
+    :cond_b
+    iget-boolean v0, v3, Lcom/android/server/wm/AppWindowToken;->hiddenRequested:Z
 
-    .line 3765
-    iget-object v5, v2, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
+    move/from16 v19, v0
 
-    iget v1, v5, Landroid/view/WindowManager$LayoutParams;->screenOrientation:I
+    if-nez v19, :cond_9
 
-    .line 3766
-    .local v1, "req":I
-    if-eq v1, v4, :cond_2
+    iget-boolean v0, v3, Lcom/android/server/wm/AppWindowToken;->willBeHidden:Z
 
-    const/4 v5, 0x3
+    move/from16 v19, v0
 
-    if-eq v1, v5, :cond_2
+    if-nez v19, :cond_9
 
-    .line 3772
-    iput v1, p0, Lcom/android/server/wm/WindowManagerService;->mLastWindowForcedOrientation:I
+    .line 3839
+    if-nez v14, :cond_c
 
-    goto :goto_0
+    .line 3841
+    iget v8, v3, Lcom/android/server/wm/AppWindowToken;->requestedOrientation:I
 
-    .line 3774
-    .end local v1    # "req":I
-    .end local v2    # "win":Lcom/android/server/wm/WindowState;
-    :cond_4
-    iput v4, p0, Lcom/android/server/wm/WindowManagerService;->mLastWindowForcedOrientation:I
+    .line 3844
+    :cond_c
+    iget v9, v3, Lcom/android/server/wm/AppWindowToken;->requestedOrientation:I
 
-    move v1, v4
+    .line 3848
+    .local v9, "or":I
+    iget-boolean v7, v3, Lcom/android/server/wm/AppWindowToken;->appFullscreen:Z
 
-    goto :goto_0
+    .line 3849
+    if-eqz v7, :cond_d
+
+    const/16 v19, 0x3
+
+    move/from16 v0, v19
+
+    if-eq v9, v0, :cond_d
+
+    move v11, v9
+
+    .line 3853
+    goto/16 :goto_0
+
+    .line 3857
+    :cond_d
+    const/16 v19, -0x1
+
+    move/from16 v0, v19
+
+    if-eq v9, v0, :cond_e
+
+    const/16 v19, 0x3
+
+    move/from16 v0, v19
+
+    if-eq v9, v0, :cond_e
+
+    move v11, v9
+
+    .line 3861
+    goto/16 :goto_0
+
+    .line 3863
+    :cond_e
+    const/16 v19, 0x3
+
+    move/from16 v0, v19
+
+    if-ne v9, v0, :cond_f
+
+    const/16 v19, 0x1
+
+    :goto_5
+    or-int v5, v5, v19
+
+    goto :goto_4
+
+    :cond_f
+    const/16 v19, 0x0
+
+    goto :goto_5
+
+    .line 3801
+    .end local v3    # "atoken":Lcom/android/server/wm/AppWindowToken;
+    .end local v9    # "or":I
+    :cond_10
+    add-int/lit8 v12, v12, -0x1
+
+    goto :goto_2
+
+    .line 3870
+    .end local v6    # "firstToken":I
+    .end local v14    # "tokenNdx":I
+    .end local v15    # "tokens":Lcom/android/server/wm/AppTokenList;
+    :cond_11
+    move-object/from16 v0, p0
+
+    iget v11, v0, Lcom/android/server/wm/WindowManagerService;->mForcedAppOrientation:I
+
+    goto/16 :goto_0
 .end method
 
 .method public getPendingAppTransition()I
@@ -45043,26 +45202,15 @@
     .line 3930
     .local v0, "ident":J
     :try_start_0
-    invoke-virtual {p0}, Lcom/android/server/wm/WindowManagerService;->getOrientationFromWindowsLocked()I
+    invoke-virtual {p0}, Lcom/android/server/wm/WindowManagerService;->getOrientationLocked()I
 
     move-result v2
 
     .line 3931
     .local v2, "req":I
-    const/4 v3, -0x1
-
-    if-ne v2, v3, :cond_0
-
-    .line 3932
-    invoke-virtual {p0}, Lcom/android/server/wm/WindowManagerService;->getOrientationFromAppTokensLocked()I
-
-    move-result v2
-
-    .line 3935
-    :cond_0
     iget v3, p0, Lcom/android/server/wm/WindowManagerService;->mForcedAppOrientation:I
 
-    if-eq v2, v3, :cond_1
+    if-eq v2, v3, :cond_0
 
     .line 3936
     iput v2, p0, Lcom/android/server/wm/WindowManagerService;->mForcedAppOrientation:I
@@ -45079,7 +45227,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_0
 
     .line 3942
     const/4 v3, 0x1
@@ -45091,7 +45239,7 @@
     return v3
 
     .line 3946
-    :cond_1
+    :cond_0
     const/4 v3, 0x0
 
     .line 3948
