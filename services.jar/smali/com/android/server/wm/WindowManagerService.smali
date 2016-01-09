@@ -14123,6 +14123,16 @@
 
     if-nez v3, :cond_0
 
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/server/wm/WindowManagerService;->mOpeningApps:Landroid/util/ArraySet;
+
+    invoke-virtual {v3}, Landroid/util/ArraySet;->isEmpty()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
     .line 10716
     const/4 v3, 0x0
 
@@ -27407,12 +27417,6 @@
     .local v35, "goodToGo":Z
     move-object/from16 v0, p0
 
-    iget-boolean v2, v0, Lcom/android/server/wm/WindowManagerService;->mDisplayFrozen:Z
-
-    if-nez v2, :cond_1
-
-    move-object/from16 v0, p0
-
     iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mAppTransition:Lcom/android/server/wm/AppTransition;
 
     invoke-virtual {v2}, Lcom/android/server/wm/AppTransition;->isTimeout()Z
@@ -32362,7 +32366,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     .line 4095
     :cond_1
@@ -32394,6 +32398,15 @@
 
     iput-boolean v0, p0, Lcom/android/server/wm/WindowManagerService;->mSkipAppTransitionAnimation:Z
 
+    :cond_3
+    iget-object v0, p0, Lcom/android/server/wm/WindowManagerService;->mAppTransition:Lcom/android/server/wm/AppTransition;
+
+    invoke-virtual {v0}, Lcom/android/server/wm/AppTransition;->isTransitionSet()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
     .line 4113
     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
 
@@ -32411,20 +32424,20 @@
     invoke-virtual {v0, v2, v4, v5}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessageDelayed(IJ)Z
 
     .line 4116
-    :cond_3
+    :cond_4
     monitor-exit v1
 
     .line 4117
     return-void
 
     .line 4096
-    :cond_4
+    :cond_5
     if-nez p2, :cond_2
 
     .line 4097
     const/16 v0, 0x8
 
-    if-ne p1, v0, :cond_5
+    if-ne p1, v0, :cond_6
 
     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService;->mAppTransition:Lcom/android/server/wm/AppTransition;
 
@@ -32434,7 +32447,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     .line 4101
     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService;->mAppTransition:Lcom/android/server/wm/AppTransition;
@@ -32454,7 +32467,7 @@
     throw v0
 
     .line 4102
-    :cond_5
+    :cond_6
     const/4 v0, 0x6
 
     if-ne p1, v0, :cond_2
