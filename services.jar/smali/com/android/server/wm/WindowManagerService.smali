@@ -30036,49 +30036,55 @@
     .prologue
     const/16 v4, 0xb
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    .line 9051
+    .line 9040
     invoke-virtual {p0}, Lcom/android/server/wm/WindowManagerService;->okToDisplay()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 9053
-    iput-boolean v2, p1, Lcom/android/server/wm/WindowState;->mOrientationChanging:Z
+    iget v0, p0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:I
 
-    .line 9054
-    iput v1, p1, Lcom/android/server/wm/WindowState;->mLastFreezeDuration:I
+    const/4 v1, 0x2
 
-    .line 9055
+    if-eq v0, v1, :cond_0
+
+    .line 9042
+    iput-boolean v3, p1, Lcom/android/server/wm/WindowState;->mOrientationChanging:Z
+
+    .line 9043
+    iput v2, p1, Lcom/android/server/wm/WindowState;->mLastFreezeDuration:I
+
+    .line 9044
     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
 
-    iput-boolean v1, v0, Lcom/android/server/wm/WindowManagerService$LayoutFields;->mOrientationChangeComplete:Z
+    iput-boolean v2, v0, Lcom/android/server/wm/WindowManagerService$LayoutFields;->mOrientationChangeComplete:Z
 
-    .line 9056
+    .line 9045
     iget v0, p0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:I
 
     if-nez v0, :cond_0
 
-    .line 9057
-    iput v2, p0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:I
+    .line 9046
+    iput v3, p0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:I
 
-    .line 9060
+    .line 9049
     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
 
     invoke-virtual {v0, v4}, Lcom/android/server/wm/WindowManagerService$H;->removeMessages(I)V
 
-    .line 9061
+    .line 9050
     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
 
     const-wide/16 v2, 0x7d0
 
     invoke-virtual {v0, v4, v2, v3}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 9065
+    .line 9054
     :cond_0
     return-void
 .end method
