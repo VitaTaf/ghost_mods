@@ -13836,6 +13836,55 @@
     .end packed-switch
 .end method
 
+.method pokeDrawLockIfNeeded()V
+    .locals 3
+
+    .prologue
+    iget-object v1, p0, Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo;
+
+    iget v0, v1, Landroid/view/View$AttachInfo;->mDisplayState:I
+
+    .local v0, "displayState":I
+    iget-object v1, p0, Landroid/view/ViewRootImpl;->mView:Landroid/view/View;
+
+    if-eqz v1, :cond_1
+
+    iget-boolean v1, p0, Landroid/view/ViewRootImpl;->mAdded:Z
+
+    if-eqz v1, :cond_1
+
+    iget-boolean v1, p0, Landroid/view/ViewRootImpl;->mTraversalScheduled:Z
+
+    if-eqz v1, :cond_1
+
+    const/4 v1, 0x3
+
+    if-eq v0, v1, :cond_0
+
+    const/4 v1, 0x4
+
+    if-ne v0, v1, :cond_1
+
+    :cond_0
+    :try_start_0
+    iget-object v1, p0, Landroid/view/ViewRootImpl;->mWindowSession:Landroid/view/IWindowSession;
+
+    iget-object v2, p0, Landroid/view/ViewRootImpl;->mWindow:Landroid/view/ViewRootImpl$W;
+
+    invoke-interface {v1, v2}, Landroid/view/IWindowSession;->pokeDrawLock(Landroid/os/IBinder;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_1
+    :goto_0
+    return-void
+
+    :catch_0
+    move-exception v1
+
+    goto :goto_0
+.end method
+
 .method public profile()V
     .locals 1
 
@@ -14626,6 +14675,8 @@
     .line 1060
     :cond_0
     invoke-virtual {p0}, Landroid/view/ViewRootImpl;->notifyRendererOfFramePending()V
+
+    invoke-virtual {p0}, Landroid/view/ViewRootImpl;->pokeDrawLockIfNeeded()V
 
     .line 1062
     :cond_1
