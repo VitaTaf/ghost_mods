@@ -197,11 +197,9 @@
     .local v0, "win":Lcom/android/server/wm/WindowState;
     iget-object v2, v0, Lcom/android/server/wm/WindowState;->mService:Lcom/android/server/wm/WindowManagerService;
 
-    iget-object v3, v0, Lcom/android/server/wm/WindowState;->mSession:Lcom/android/server/wm/Session;
-
     const/4 v4, 0x0
 
-    invoke-virtual {v2, v3, v0, v4}, Lcom/android/server/wm/WindowManagerService;->removeWindowLocked(Lcom/android/server/wm/Session;Lcom/android/server/wm/WindowState;Z)V
+    invoke-virtual {v2, v0, v4}, Lcom/android/server/wm/WindowManagerService;->removeWindowLocked(Lcom/android/server/wm/WindowState;Z)V
 
     .line 82
     add-int/lit8 v1, v1, -0x1

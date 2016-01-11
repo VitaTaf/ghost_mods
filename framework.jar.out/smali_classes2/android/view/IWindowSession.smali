@@ -199,14 +199,6 @@
     .end annotation
 .end method
 
-.method public abstract setUniverseTransform(Landroid/os/IBinder;FFFFFFF)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract setWallpaperDisplayOffset(Landroid/os/IBinder;II)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

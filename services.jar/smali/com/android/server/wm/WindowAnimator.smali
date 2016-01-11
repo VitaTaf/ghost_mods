@@ -26,8 +26,6 @@
 
 
 # instance fields
-.field mAboveUniverseLayer:I
-
 .field private mAnimTransactionSequence:I
 
 .field mAnimating:Z
@@ -71,8 +69,6 @@
 
 .field final mService:Lcom/android/server/wm/WindowManagerService;
 
-.field mUniverseBackground:Lcom/android/server/wm/WindowStateAnimator;
-
 .field mWindowDetachedWallpaper:Lcom/android/server/wm/WindowState;
 
 
@@ -82,26 +78,20 @@
     .param p1, "service"    # Lcom/android/server/wm/WindowManagerService;
 
     .prologue
-    const/4 v0, 0x0
-
     const/4 v2, 0x0
 
-    .line 116
+    .line 118
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 79
+    .line 84
+    const/4 v0, 0x0
+
     iput-object v0, p0, Lcom/android/server/wm/WindowAnimator;->mWindowDetachedWallpaper:Lcom/android/server/wm/WindowState;
 
-    .line 81
-    iput-object v0, p0, Lcom/android/server/wm/WindowAnimator;->mUniverseBackground:Lcom/android/server/wm/WindowStateAnimator;
-
-    .line 82
-    iput v2, p0, Lcom/android/server/wm/WindowAnimator;->mAboveUniverseLayer:I
-
-    .line 84
+    .line 86
     iput v2, p0, Lcom/android/server/wm/WindowAnimator;->mBulkUpdateParams:I
 
-    .line 87
+    .line 89
     new-instance v0, Landroid/util/SparseArray;
 
     const/4 v1, 0x2
@@ -110,33 +100,33 @@
 
     iput-object v0, p0, Lcom/android/server/wm/WindowAnimator;->mDisplayContentsAnimators:Landroid/util/SparseArray;
 
-    .line 90
+    .line 92
     iput-boolean v2, p0, Lcom/android/server/wm/WindowAnimator;->mInitialized:Z
 
-    .line 104
+    .line 106
     iput v2, p0, Lcom/android/server/wm/WindowAnimator;->mForceHiding:I
 
-    .line 117
+    .line 119
     iput-object p1, p0, Lcom/android/server/wm/WindowAnimator;->mService:Lcom/android/server/wm/WindowManagerService;
 
-    .line 118
+    .line 120
     iget-object v0, p1, Lcom/android/server/wm/WindowManagerService;->mContext:Landroid/content/Context;
 
     iput-object v0, p0, Lcom/android/server/wm/WindowAnimator;->mContext:Landroid/content/Context;
 
-    .line 119
+    .line 121
     iget-object v0, p1, Lcom/android/server/wm/WindowManagerService;->mPolicy:Landroid/view/WindowManagerPolicy;
 
     iput-object v0, p0, Lcom/android/server/wm/WindowAnimator;->mPolicy:Landroid/view/WindowManagerPolicy;
 
-    .line 121
+    .line 123
     new-instance v0, Lcom/android/server/wm/WindowAnimator$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/wm/WindowAnimator$1;-><init>(Lcom/android/server/wm/WindowAnimator;)V
 
     iput-object v0, p0, Lcom/android/server/wm/WindowAnimator;->mAnimationFrameCallback:Landroid/view/Choreographer$FrameCallback;
 
-    .line 130
+    .line 131
     return-void
 .end method
 
@@ -3505,7 +3495,7 @@
     .param p3, "dumpAll"    # Z
 
     .prologue
-    .line 775
+    .line 748
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -3524,7 +3514,7 @@
 
     move-result-object v4
 
-    .line 776
+    .line 749
     .local v4, "subPrefix":Ljava/lang/String;
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -3544,7 +3534,7 @@
 
     move-result-object v5
 
-    .line 778
+    .line 751
     .local v5, "subSubPrefix":Ljava/lang/String;
     const/4 v2, 0x0
 
@@ -3558,14 +3548,14 @@
 
     if-ge v2, v8, :cond_3
 
-    .line 779
+    .line 752
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v8, "DisplayContentsAnimator #"
 
     invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 780
+    .line 753
     iget-object v8, p0, Lcom/android/server/wm/WindowAnimator;->mDisplayContentsAnimators:Landroid/util/SparseArray;
 
     invoke-virtual {v8, v2}, Landroid/util/SparseArray;->keyAt(I)I
@@ -3574,12 +3564,12 @@
 
     invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 781
+    .line 754
     const-string v8, ":"
 
     invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 782
+    .line 755
     iget-object v8, p0, Lcom/android/server/wm/WindowAnimator;->mDisplayContentsAnimators:Landroid/util/SparseArray;
 
     invoke-virtual {v8, v2}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -3588,7 +3578,7 @@
 
     check-cast v1, Lcom/android/server/wm/WindowAnimator$DisplayContentsAnimator;
 
-    .line 783
+    .line 756
     .local v1, "displayAnimator":Lcom/android/server/wm/WindowAnimator$DisplayContentsAnimator;
     iget-object v8, p0, Lcom/android/server/wm/WindowAnimator;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -3602,13 +3592,13 @@
 
     move-result-object v7
 
-    .line 785
+    .line 758
     .local v7, "windows":Lcom/android/server/wm/WindowList;
     invoke-virtual {v7}, Lcom/android/server/wm/WindowList;->size()I
 
     move-result v0
 
-    .line 786
+    .line 759
     .local v0, "N":I
     const/4 v3, 0x0
 
@@ -3616,7 +3606,7 @@
     :goto_1
     if-ge v3, v0, :cond_0
 
-    .line 787
+    .line 760
     invoke-virtual {v7, v3}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
@@ -3625,7 +3615,7 @@
 
     iget-object v6, v8, Lcom/android/server/wm/WindowState;->mWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
 
-    .line 788
+    .line 761
     .local v6, "wanim":Lcom/android/server/wm/WindowStateAnimator;
     invoke-virtual {p1, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -3635,51 +3625,52 @@
 
     invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 789
+    .line 762
     const-string v8, ": "
 
     invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     invoke-virtual {p1, v6}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 786
+    .line 759
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 791
+    .line 764
     .end local v6    # "wanim":Lcom/android/server/wm/WindowStateAnimator;
     :cond_0
     iget-object v8, v1, Lcom/android/server/wm/WindowAnimator$DisplayContentsAnimator;->mScreenRotationAnimation:Lcom/android/server/wm/ScreenRotationAnimation;
 
     if-eqz v8, :cond_2
 
-    .line 792
+    .line 765
     invoke-virtual {p1, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v8, "mScreenRotationAnimation:"
 
     invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 793
+    .line 766
     iget-object v8, v1, Lcom/android/server/wm/WindowAnimator$DisplayContentsAnimator;->mScreenRotationAnimation:Lcom/android/server/wm/ScreenRotationAnimation;
 
     invoke-virtual {v8, v5, p1}, Lcom/android/server/wm/ScreenRotationAnimation;->printTo(Ljava/lang/String;Ljava/io/PrintWriter;)V
 
-    .line 778
+    .line 770
     :cond_1
     :goto_2
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
+    .line 751
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 794
+    .line 767
     :cond_2
     if-eqz p3, :cond_1
 
-    .line 795
+    .line 768
     invoke-virtual {p1, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v8, "no ScreenRotationAnimation "
@@ -3688,7 +3679,7 @@
 
     goto :goto_2
 
-    .line 799
+    .line 773
     .end local v0    # "N":I
     .end local v1    # "displayAnimator":Lcom/android/server/wm/WindowAnimator$DisplayContentsAnimator;
     .end local v3    # "j":I
@@ -3696,22 +3687,22 @@
     :cond_3
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 801
+    .line 775
     if-eqz p3, :cond_4
 
-    .line 802
+    .line 776
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v8, "mAnimTransactionSequence="
 
     invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 803
+    .line 777
     iget v8, p0, Lcom/android/server/wm/WindowAnimator;->mAnimTransactionSequence:I
 
     invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 804
+    .line 778
     const-string v8, " mForceHiding="
 
     invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -3722,14 +3713,14 @@
 
     invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 805
+    .line 779
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v8, "mCurrentTime="
 
     invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 806
+    .line 780
     iget-wide v8, p0, Lcom/android/server/wm/WindowAnimator;->mCurrentTime:J
 
     invoke-static {v8, v9}, Landroid/util/TimeUtils;->formatUptime(J)Ljava/lang/String;
@@ -3738,20 +3729,20 @@
 
     invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 808
+    .line 782
     :cond_4
     iget v8, p0, Lcom/android/server/wm/WindowAnimator;->mBulkUpdateParams:I
 
     if-eqz v8, :cond_5
 
-    .line 809
+    .line 783
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v8, "mBulkUpdateParams=0x"
 
     invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 810
+    .line 784
     iget v8, p0, Lcom/android/server/wm/WindowAnimator;->mBulkUpdateParams:I
 
     invoke-static {v8}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
@@ -3760,7 +3751,7 @@
 
     invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 811
+    .line 785
     iget v8, p0, Lcom/android/server/wm/WindowAnimator;->mBulkUpdateParams:I
 
     invoke-static {v8}, Lcom/android/server/wm/WindowAnimator;->bulkUpdateParamsToString(I)Ljava/lang/String;
@@ -3769,52 +3760,26 @@
 
     invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 813
+    .line 787
     :cond_5
     iget-object v8, p0, Lcom/android/server/wm/WindowAnimator;->mWindowDetachedWallpaper:Lcom/android/server/wm/WindowState;
 
     if-eqz v8, :cond_6
 
-    .line 814
+    .line 788
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v8, "mWindowDetachedWallpaper="
 
     invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 815
+    .line 789
     iget-object v8, p0, Lcom/android/server/wm/WindowAnimator;->mWindowDetachedWallpaper:Lcom/android/server/wm/WindowState;
 
     invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 817
+    .line 791
     :cond_6
-    iget-object v8, p0, Lcom/android/server/wm/WindowAnimator;->mUniverseBackground:Lcom/android/server/wm/WindowStateAnimator;
-
-    if-eqz v8, :cond_7
-
-    .line 818
-    invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-
-    const-string v8, "mUniverseBackground="
-
-    invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-
-    iget-object v8, p0, Lcom/android/server/wm/WindowAnimator;->mUniverseBackground:Lcom/android/server/wm/WindowStateAnimator;
-
-    invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
-
-    .line 819
-    const-string v8, " mAboveUniverseLayer="
-
-    invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-
-    iget v8, p0, Lcom/android/server/wm/WindowAnimator;->mAboveUniverseLayer:I
-
-    invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->println(I)V
-
-    .line 821
-    :cond_7
     return-void
 .end method
 

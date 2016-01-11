@@ -834,7 +834,7 @@
 
     check-cast v6, Lcom/android/server/wm/WindowState;
 
-    invoke-virtual {v7, v8, v6}, Lcom/android/server/wm/WindowManagerService;->removeWindowInnerLocked(Lcom/android/server/wm/Session;Lcom/android/server/wm/WindowState;)V
+    invoke-virtual {v7, v6}, Lcom/android/server/wm/WindowManagerService;->removeWindowInnerLocked(Lcom/android/server/wm/WindowState;)V
 
     .line 326
     const/4 v3, 0x1

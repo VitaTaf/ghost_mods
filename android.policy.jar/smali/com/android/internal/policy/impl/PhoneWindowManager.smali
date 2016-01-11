@@ -10571,7 +10571,6 @@
         0x7dd -> :sswitch_0
         0x7e3 -> :sswitch_0
         0x7e7 -> :sswitch_0
-        0x7e9 -> :sswitch_0
         0x7ed -> :sswitch_0
     .end sparse-switch
 .end method
@@ -10803,7 +10802,6 @@
         0x7e5 -> :sswitch_0
         0x7e6 -> :sswitch_0
         0x7e8 -> :sswitch_0
-        0x7e9 -> :sswitch_0
         0x7ea -> :sswitch_0
         0x7eb -> :sswitch_0
         0x7ed -> :sswitch_0
@@ -13436,20 +13434,6 @@
     const/4 v0, 0x0
 
     goto :goto_0
-.end method
-
-.method public getAboveUniverseLayer()I
-    .locals 1
-
-    .prologue
-    .line 2164
-    const/16 v0, 0x7da
-
-    invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->windowTypeToLayerLw(I)I
-
-    move-result v0
-
-    return v0
 .end method
 
 .method public getConfigDisplayHeight(III)I
@@ -21993,16 +21977,9 @@
 
     const/16 v3, 0x7e5
 
-    if-eq v2, v3, :cond_2e
-
-    iget v2, v15, Landroid/view/WindowManager$LayoutParams;->type:I
-
-    const/16 v3, 0x7e9
-
     if-ne v2, v3, :cond_2f
 
     .line 4430
-    :cond_2e
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mOverscanScreenLeft:I
@@ -27098,16 +27075,16 @@
     .param p1, "type"    # I
 
     .prologue
-    const/4 v1, 0x1
-
     const/4 v0, 0x2
+
+    const/4 v1, 0x1
 
     .line 2031
     if-lt p1, v1, :cond_1
 
-    const/16 v2, 0x63
+    const/16 v1, 0x63
 
-    if-gt p1, v2, :cond_1
+    if-gt p1, v1, :cond_1
 
     .line 2136
     :cond_0
@@ -27142,12 +27119,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
-
-    :sswitch_1
-    move v0, v1
-
-    .line 2036
     goto :goto_0
 
     .line 2043
@@ -27358,7 +27329,6 @@
         0x7e6 -> :sswitch_1d
         0x7e7 -> :sswitch_8
         0x7e8 -> :sswitch_14
-        0x7e9 -> :sswitch_1
         0x7ea -> :sswitch_17
         0x7eb -> :sswitch_16
         0x7ed -> :sswitch_c
