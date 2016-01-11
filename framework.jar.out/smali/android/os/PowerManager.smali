@@ -34,8 +34,6 @@
 
 .field public static final DOZE_WAKE_LOCK:I = 0x40
 
-.field public static final DRAW_WAKE_LOCK:I = 0x80
-
 .field public static final EXTRA_POWER_SAVE_MODE:Ljava/lang/String; = "mode"
 
 .field public static final EXTRA_SCREEN_OFF_REASON:Ljava/lang/String; = "com.motorola.server.power.EXTRA_SCREEN_OFF_REASON"
@@ -192,7 +190,6 @@
         0x1a -> :sswitch_0
         0x20 -> :sswitch_0
         0x40 -> :sswitch_0
-        0x80 -> :sswitch_0
     .end sparse-switch
 .end method
 

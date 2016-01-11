@@ -63,8 +63,6 @@
 
 .field public static final config_downtime_condition_lookahead_threshold_hrs:I = 0x10e007e
 
-.field public static final config_drawLockTimeoutMillis:I = 0x10e00ea
-
 .field public static final config_dreamsBatteryLevelDrainCutoff:I = 0x10e006f
 
 .field public static final config_dreamsBatteryLevelMinimumWhenNotPowered:I = 0x10e006e

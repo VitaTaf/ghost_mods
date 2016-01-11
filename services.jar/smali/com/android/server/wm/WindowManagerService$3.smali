@@ -66,6 +66,25 @@
 
     invoke-interface {v0, v1, v2, v3}, Landroid/view/WindowManagerPolicy;->init(Landroid/content/Context;Landroid/view/IWindowManager;Landroid/view/WindowManagerPolicy$WindowManagerFuncs;)V
 
+    .line 831
+    iget-object v0, p0, Lcom/android/server/wm/WindowManagerService$3;->this$0:Lcom/android/server/wm/WindowManagerService;
+
+    iget-object v0, v0, Lcom/android/server/wm/WindowManagerService;->mAnimator:Lcom/android/server/wm/WindowAnimator;
+
+    iget-object v1, p0, Lcom/android/server/wm/WindowManagerService$3;->this$0:Lcom/android/server/wm/WindowManagerService;
+
+    iget-object v1, v1, Lcom/android/server/wm/WindowManagerService;->mPolicy:Landroid/view/WindowManagerPolicy;
+
+    invoke-interface {v1}, Landroid/view/WindowManagerPolicy;->getAboveUniverseLayer()I
+
+    move-result v1
+
+    mul-int/lit16 v1, v1, 0x2710
+
+    add-int/lit16 v1, v1, 0x3e8
+
+    iput v1, v0, Lcom/android/server/wm/WindowAnimator;->mAboveUniverseLayer:I
+
     .line 834
     return-void
 .end method

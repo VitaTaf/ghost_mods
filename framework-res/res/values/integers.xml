@@ -124,7 +124,6 @@
     <integer name="config_immersive_mode_confirmation_panic">5000</integer>
     <integer name="config_valid_wappush_index">-1</integer>
     <integer name="config_overrideHasPermanentMenuKey">0</integer>
-    <integer name="config_drawLockTimeoutMillis">120</integer>
     <integer name="config_LTE_RSRP_threshold_type">1</integer>
     <integer name="config_next_alarm_condition_lookahead_threshold_hrs">12</integer>
     <integer name="config_downtime_condition_lookahead_threshold_hrs">4</integer>

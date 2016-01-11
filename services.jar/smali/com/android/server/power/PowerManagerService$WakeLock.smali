@@ -220,14 +220,6 @@
     goto :goto_0
 
     .line 2943
-    :sswitch_6
-    const-string v0, "DRAW_WAKE_LOCK                "
-
-    goto :goto_0
-
-    .line 2804
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_3
@@ -236,7 +228,6 @@
         0x1a -> :sswitch_0
         0x20 -> :sswitch_4
         0x40 -> :sswitch_5
-        0x80 -> :sswitch_6
     .end sparse-switch
 .end method
 

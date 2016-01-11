@@ -338,7 +338,7 @@
 .end method
 
 .method private populateWindowsOnScreenLocked(Landroid/util/SparseArray;)V
-    .locals 6
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -350,7 +350,7 @@
     .end annotation
 
     .prologue
-    .line 617
+    .line 647
     .local p1, "outWindows":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/server/wm/WindowState;>;"
     iget-object v5, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;->this$0:Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;
 
@@ -363,61 +363,70 @@
 
     move-result-object v0
 
-    .line 619
+    .line 649
     .local v0, "displayContent":Lcom/android/server/wm/DisplayContent;
     invoke-virtual {v0}, Lcom/android/server/wm/DisplayContent;->getWindowList()Lcom/android/server/wm/WindowList;
 
     move-result-object v3
 
-    .line 620
+    .line 650
     .local v3, "windowList":Lcom/android/server/wm/WindowList;
     invoke-virtual {v3}, Lcom/android/server/wm/WindowList;->size()I
 
     move-result v2
 
-    .line 621
+    .line 651
     .local v2, "windowCount":I
     const/4 v1, 0x0
 
     .local v1, "i":I
     :goto_0
-    if-ge v1, v2, :cond_1
+    if-ge v1, v2, :cond_2
 
-    .line 622
+    .line 652
     invoke-virtual {v3, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lcom/android/server/wm/WindowState;
 
-    .line 623
+    .line 653
     .local v4, "windowState":Lcom/android/server/wm/WindowState;
     invoke-virtual {v4}, Lcom/android/server/wm/WindowState;->isOnScreen()Z
 
     move-result v5
 
-    if-eqz v5, :cond_0
+    if-nez v5, :cond_0
 
+    iget-object v5, v4, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
+
+    iget v5, v5, Landroid/view/WindowManager$LayoutParams;->type:I
+
+    const/16 v6, 0x7e9
+
+    if-ne v5, v6, :cond_1
+
+    :cond_0
     iget-object v5, v4, Lcom/android/server/wm/WindowState;->mWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
 
     iget-boolean v5, v5, Lcom/android/server/wm/WindowStateAnimator;->mEnterAnimationPending:Z
 
-    if-nez v5, :cond_0
+    if-nez v5, :cond_1
 
-    .line 625
+    .line 656
     iget v5, v4, Lcom/android/server/wm/WindowState;->mLayer:I
 
     invoke-virtual {p1, v5, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 621
-    :cond_0
+    .line 651
+    :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 628
+    .line 659
     .end local v4    # "windowState":Lcom/android/server/wm/WindowState;
-    :cond_1
+    :cond_2
     return-void
 .end method
 

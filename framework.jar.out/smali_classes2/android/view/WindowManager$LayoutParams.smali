@@ -340,6 +340,8 @@
 
 .field public static final TYPE_TOUCH_SYSTEM_OVERLAY:I = 0x834
 
+.field public static final TYPE_UNIVERSE_BACKGROUND:I = 0x7e9
+
 .field public static final TYPE_VOICE_INTERACTION:I = 0x7ef
 
 .field public static final TYPE_VOLUME_OVERLAY:I = 0x7e4
