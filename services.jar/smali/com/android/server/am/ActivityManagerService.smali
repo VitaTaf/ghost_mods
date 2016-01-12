@@ -23332,6 +23332,8 @@
     :cond_2
     if-nez p2, :cond_3
 
+    if-eqz v0, :cond_3
+
     .line 4708
     iget-object v4, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
@@ -23340,9 +23342,6 @@
     move-result v4
 
     if-nez v4, :cond_3
-
-    .line 4714
-    if-eqz v0, :cond_3
 
     .line 4715
     iget-object v4, p0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
