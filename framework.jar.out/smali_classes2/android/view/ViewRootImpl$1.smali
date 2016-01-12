@@ -113,7 +113,10 @@
 
     iput v0, v4, Landroid/view/View$AttachInfo;->mDisplayState:I
 
-    .line 857
+    iget-object v4, p0, Landroid/view/ViewRootImpl$1;->this$0:Landroid/view/ViewRootImpl;
+
+    invoke-virtual {v4}, Landroid/view/ViewRootImpl;->pokeDrawLockIfNeeded()V
+
     if-eqz v2, :cond_1
 
     .line 858

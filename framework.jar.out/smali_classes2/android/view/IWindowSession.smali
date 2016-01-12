@@ -135,6 +135,14 @@
     .end annotation
 .end method
 
+.method public abstract pokeDrawLock(Landroid/os/IBinder;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract prepareDrag(Landroid/view/IWindow;IIILandroid/view/Surface;)Landroid/os/IBinder;
     .annotation system Ldalvik/annotation/Throws;
         value = {

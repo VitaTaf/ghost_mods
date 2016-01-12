@@ -97,6 +97,8 @@
 
 .field private static final WAKE_LOCK_DOZE:I = 0x40
 
+.field private static final WAKE_LOCK_DRAW:I = 0x80
+
 .field private static final WAKE_LOCK_PROXIMITY_SCREEN_OFF:I = 0x10
 
 .field private static final WAKE_LOCK_SCREEN_BRIGHT:I = 0x2
@@ -8342,6 +8344,27 @@
     .line 2007
     iget-object v9, p0, Lcom/android/server/power/PowerManagerService;->mDisplayPowerRequest:Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;
 
+    iget v9, v9, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->dozeScreenState:I
+
+    const/4 v10, 0x4
+
+    if-ne v9, v10, :cond_10
+
+    iget v9, p0, Lcom/android/server/power/PowerManagerService;->mWakeLockSummary:I
+
+    and-int/lit16 v9, v9, 0x80
+
+    if-eqz v9, :cond_10
+
+    iget-object v9, p0, Lcom/android/server/power/PowerManagerService;->mDisplayPowerRequest:Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;
+
+    const/4 v10, 0x3
+
+    iput v10, v9, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->dozeScreenState:I
+
+    :cond_10
+    iget-object v9, p0, Lcom/android/server/power/PowerManagerService;->mDisplayPowerRequest:Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;
+
     iget v10, p0, Lcom/android/server/power/PowerManagerService;->mDozeScreenBrightnessOverrideFromDreamManager:I
 
     iput v10, v9, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->dozeScreenBrightness:I
@@ -10203,7 +10226,7 @@
     .line 1503
     and-int/lit8 v3, p1, 0x3
 
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_6
 
     .line 1504
     const/4 v3, 0x0
@@ -10310,6 +10333,15 @@
 
     goto :goto_1
 
+    :sswitch_6
+    iget v3, p0, Lcom/android/server/power/PowerManagerService;->mWakeLockSummary:I
+
+    or-int/lit16 v3, v3, 0x80
+
+    iput v3, p0, Lcom/android/server/power/PowerManagerService;->mWakeLockSummary:I
+
+    goto :goto_1
+
     .line 1532
     .end local v2    # "wakeLock":Lcom/android/server/power/PowerManagerService$WakeLock;
     :cond_0
@@ -10322,7 +10354,7 @@
     .line 1533
     iget v3, p0, Lcom/android/server/power/PowerManagerService;->mWakeLockSummary:I
 
-    and-int/lit8 v3, v3, -0x41
+    and-int/lit16 v3, v3, -0xc1
 
     iput v3, p0, Lcom/android/server/power/PowerManagerService;->mWakeLockSummary:I
 
@@ -10371,7 +10403,7 @@
 
     const/4 v4, 0x1
 
-    if-ne v3, v4, :cond_6
+    if-ne v3, v4, :cond_7
 
     .line 1547
     iget v3, p0, Lcom/android/server/power/PowerManagerService;->mWakeLockSummary:I
@@ -10383,9 +10415,21 @@
     .line 1553
     :cond_4
     :goto_2
+    iget v3, p0, Lcom/android/server/power/PowerManagerService;->mWakeLockSummary:I
+
+    and-int/lit16 v3, v3, 0x80
+
+    if-eqz v3, :cond_6
+
+    iget v3, p0, Lcom/android/server/power/PowerManagerService;->mWakeLockSummary:I
+
+    or-int/lit8 v3, v3, 0x1
+
+    iput v3, p0, Lcom/android/server/power/PowerManagerService;->mWakeLockSummary:I
+
     sget-boolean v3, Lcom/android/server/power/PowerManagerService;->DEBUG_SPEW:Z
 
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_6
 
     .line 1554
     const-string v3, "PowerManagerService"
@@ -10435,13 +10479,13 @@
     .line 1559
     .end local v0    # "i":I
     .end local v1    # "numWakeLocks":I
-    :cond_5
+    :cond_6
     return-void
 
     .line 1548
     .restart local v0    # "i":I
     .restart local v1    # "numWakeLocks":I
-    :cond_6
+    :cond_7
     iget v3, p0, Lcom/android/server/power/PowerManagerService;->mWakefulness:I
 
     const/4 v4, 0x2
@@ -10457,9 +10501,6 @@
 
     goto :goto_2
 
-    .line 1509
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_0
@@ -10468,6 +10509,7 @@
         0x1a -> :sswitch_1
         0x20 -> :sswitch_4
         0x40 -> :sswitch_5
+        0x80 -> :sswitch_6
     .end sparse-switch
 .end method
 

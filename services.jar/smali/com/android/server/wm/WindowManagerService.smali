@@ -69,6 +69,8 @@
 
 .field static final DEBUG_ORIENTATION:Z = false
 
+.field static final DEBUG_POWER:Z = false
+
 .field static final DEBUG_REORDER:Z = false
 
 .field static final DEBUG_RESIZE:Z = false
@@ -287,6 +289,8 @@
 .field final mDisplays:[Landroid/view/Display;
 
 .field mDragState:Lcom/android/server/wm/DragState;
+
+.field final mDrawLockTimeoutMillis:J
 
 .field mEmulatorDisplayOverlay:Lcom/android/server/wm/EmulatorDisplayOverlay;
 
@@ -1324,6 +1328,20 @@
     move-result v6
 
     iput-boolean v6, p0, Lcom/android/server/wm/WindowManagerService;->mInTouchMode:Z
+
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v6
+
+    const v7, 0x10e00ea
+
+    invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getInteger(I)I
+
+    move-result v6
+
+    int-to-long v6, v6
+
+    iput-wide v6, p0, Lcom/android/server/wm/WindowManagerService;->mDrawLockTimeoutMillis:J
 
     .line 842
     iput-object p2, p0, Lcom/android/server/wm/WindowManagerService;->mInputManager:Lcom/android/server/input/InputManagerService;
@@ -32553,6 +32571,53 @@
     move-exception v3
 
     goto :goto_2
+.end method
+
+.method public pokeDrawLock(Lcom/android/server/wm/Session;Landroid/os/IBinder;)V
+    .locals 6
+    .param p1, "session"    # Lcom/android/server/wm/Session;
+    .param p2, "token"    # Landroid/os/IBinder;
+
+    .prologue
+    .line 2990
+    iget-object v2, p0, Lcom/android/server/wm/WindowManagerService;->mWindowMap:Ljava/util/HashMap;
+
+    monitor-enter v2
+
+    .line 2991
+    const/4 v1, 0x0
+
+    :try_start_0
+    invoke-virtual {p0, p1, p2, v1}, Lcom/android/server/wm/WindowManagerService;->windowForClientLocked(Lcom/android/server/wm/Session;Landroid/os/IBinder;Z)Lcom/android/server/wm/WindowState;
+
+    move-result-object v0
+
+    .line 2992
+    .local v0, "window":Lcom/android/server/wm/WindowState;
+    if-eqz v0, :cond_0
+
+    .line 2993
+    iget-wide v4, p0, Lcom/android/server/wm/WindowManagerService;->mDrawLockTimeoutMillis:J
+
+    invoke-virtual {v0, v4, v5}, Lcom/android/server/wm/WindowState;->pokeDrawLockLw(J)V
+
+    .line 2995
+    :cond_0
+    monitor-exit v2
+
+    .line 2996
+    return-void
+
+    .line 2995
+    .end local v0    # "window":Lcom/android/server/wm/WindowState;
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method
 
 .method public prepareAppTransition(IZ)V
