@@ -6414,6 +6414,105 @@
     return-object v0
 .end method
 
+.method public pokeDrawLockLw(J)V
+    .locals 5
+    .param p1, "timeout"    # J
+
+    .prologue
+    .line 1295
+    invoke-virtual {p0}, Lcom/android/server/wm/WindowState;->isVisibleOrAdding()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    .line 1296
+    iget-object v1, p0, Lcom/android/server/wm/WindowState;->mDrawLock:Landroid/os/PowerManager$WakeLock;
+
+    if-nez v1, :cond_1
+
+    .line 1300
+    iget-object v1, p0, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
+
+    invoke-virtual {v1}, Landroid/view/WindowManager$LayoutParams;->getTitle()Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    .line 1301
+    .local v0, "tag":Ljava/lang/CharSequence;
+    if-nez v0, :cond_0
+
+    .line 1302
+    iget-object v1, p0, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
+
+    iget-object v0, v1, Landroid/view/WindowManager$LayoutParams;->packageName:Ljava/lang/String;
+
+    .line 1304
+    :cond_0
+    iget-object v1, p0, Lcom/android/server/wm/WindowState;->mService:Lcom/android/server/wm/WindowManagerService;
+
+    iget-object v1, v1, Lcom/android/server/wm/WindowManagerService;->mPowerManager:Landroid/os/PowerManager;
+
+    const/16 v2, 0x80
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Window:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v2, v3}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/android/server/wm/WindowState;->mDrawLock:Landroid/os/PowerManager$WakeLock;
+
+    .line 1306
+    iget-object v1, p0, Lcom/android/server/wm/WindowState;->mDrawLock:Landroid/os/PowerManager$WakeLock;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Landroid/os/PowerManager$WakeLock;->setReferenceCounted(Z)V
+
+    .line 1307
+    iget-object v1, p0, Lcom/android/server/wm/WindowState;->mDrawLock:Landroid/os/PowerManager$WakeLock;
+
+    new-instance v2, Landroid/os/WorkSource;
+
+    iget v3, p0, Lcom/android/server/wm/WindowState;->mOwnerUid:I
+
+    iget-object v4, p0, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
+
+    iget-object v4, v4, Landroid/view/WindowManager$LayoutParams;->packageName:Ljava/lang/String;
+
+    invoke-direct {v2, v3, v4}, Landroid/os/WorkSource;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v1, v2}, Landroid/os/PowerManager$WakeLock;->setWorkSource(Landroid/os/WorkSource;)V
+
+    .line 1314
+    .end local v0    # "tag":Ljava/lang/CharSequence;
+    :cond_1
+    iget-object v1, p0, Lcom/android/server/wm/WindowState;->mDrawLock:Landroid/os/PowerManager$WakeLock;
+
+    invoke-virtual {v1, p1, p2}, Landroid/os/PowerManager$WakeLock;->acquire(J)V
+
+    .line 1319
+    :cond_2
+    return-void
+.end method
+
 .method prelayout()V
     .locals 2
 
