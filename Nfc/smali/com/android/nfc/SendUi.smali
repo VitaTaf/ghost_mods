@@ -1115,13 +1115,15 @@
     invoke-virtual {v2, v3}, Landroid/content/Context;->setTheme(I)V
 
     .line 297
+    new-instance v20, Landroid/view/PhoneWindow;
+
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/nfc/SendUi;->mContext:Landroid/content/Context;
 
-    invoke-static {v2}, Lcom/android/internal/policy/PolicyManager;->makeNewWindow(Landroid/content/Context;)Landroid/view/Window;
+    move-object/from16 v0, v20
 
-    move-result-object v20
+    invoke-direct {v0, v2}, Landroid/view/PhoneWindow;-><init>(Landroid/content/Context;)V
 
     .line 298
     .local v20, "window":Landroid/view/Window;
