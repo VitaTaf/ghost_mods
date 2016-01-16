@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Υπηρεσία NFC</string>
+    <string name="nfcUserLabel">NFC</string>
+    <string name="inbound_me_profile_title">Λήψη επαφής μέσω NFC</string>
+    <string name="inbound_me_profile_text">Αγγίξτε για να προσθέσετε αυτό το άτομο ως επαφή.</string>
+    <string name="outbound_me_profile_title">Η αλληλεπίδραση NFC ολοκληρώθηκε</string>
+    <string name="outbound_me_profile_text">"Αγγίξτε  για να δώσετε σε αυτό το άτομο τα στοιχεία επικοινωνίας σας."</string>
+    <string name="accessibility_nfc_enabled">Ενεργοποίηση NFC.</string>
+    <string name="touch">Αγγίξτε για μετάδοση</string>
+    <string name="beam_progress">Εισερχόμενη μετάδοση…</string>
+    <string name="beam_outgoing">Μετάδοση…</string>
+    <string name="beam_complete">Η μετάδοση ολοκληρώθηκε</string>
+    <string name="beam_failed">Η μετάδοση δεν ολοκληρώθηκε</string>
+    <string name="beam_canceled">Η μετάδοση ακυρώθηκε</string>
+    <string name="cancel">Άκυρο</string>
+    <string name="beam_touch_to_view">Αγγίξτε για προβολή</string>
+    <string name="beam_handover_not_supported">Η συσκευή του παραλήπτη δεν υποστηρίζει τη μεταφορά μεγάλων αρχείων μέσω μετάδοσης.</string>
+    <string name="beam_try_again">Φέρτε ξανά τις συσκευές σας σε επαφή</string>
+    <string name="connecting_peripheral">Σύνδεση</string>
+    <string name="connected_peripheral">Συνδέθηκε</string>
+    <string name="connect_peripheral_failed">Δεν ήταν δυνατή η σύνδεση</string>
+    <string name="disconnecting_peripheral">Αποσύνδεση</string>
+    <string name="disconnected_peripheral">Αποσυνδέθηκε</string>
+    <string name="pairing_peripheral">Σύζευξη</string>
+    <string name="pairing_peripheral_failed">Δεν ήταν δυνατή η σύζευξη</string>
+    <string name="failed_to_enable_bt">Δεν ήταν δυνατή η ενεργοποίηση του Bluetooth</string>
+    <string name="confirm_pairing">Είστε βέβαιοι ότι θέλετε να γίνει σύζευξη της συσκευής Bluetooth %1$s;</string>
+    <string name="pair_yes">Ναι</string>
+    <string name="pair_no">Όχι</string>
+    <string name="tap_again_to_pay">Πατήστε ξανά για να πληρώσετε με την εφαρμογή %1$s</string>
+    <string name="tap_again_to_complete">Πατήστε ξανά για να ολοκληρώσετε αυτήν τη συναλλαγή με την εφαρμογή %1$s</string>
+    <string name="transaction_failure">Δεν ήταν δυνατή η ολοκλήρωση αυτής της συναλλαγής με την εφαρμογή %1$s.</string>
+    <string name="could_not_use_app">Δεν ήταν δυνατή η χρήση της εφαρμογής %1$s.</string>
+    <string name="pay_with">Πληρωμή με</string>
+    <string name="complete_with">Ολοκλήρωση συναλλαγής με</string>
+    <string name="default_pay_app_removed">Η προτιμώμενη υπηρεσία σας για τη λειτουργία \"Πατήστε και πληρώστε\" καταργήθηκε. Επιλογή άλλης;</string>
+    <string name="ask_nfc_tap">Πατήστε μια άλλη συσκευή για ολοκλήρωση</string>
+    <string name="wifi_connect">Σύνδεση</string>
+    <string name="status_unable_to_connect">Δεν είναι δυνατή η σύνδεση στο δίκτυο</string>
+    <string name="status_wifi_connected">Συνδέθηκε</string>
+    <string name="title_connect_to_network">Σύνδεση στο δίκτυο</string>
+    <string name="prompt_connect_to_network">Σύνδεση στο δίκτυο %1$s;</string>
+    <string name="beam_requires_nfc_enabled">Το Android Beam απαιτεί την ενεργοποίηση της ΕΚΠ (Επικοινωνία κοντινού πεδίου). Θέλετε να την ενεργοποιήσετε;</string>
+    <string name="android_beam">Android Beam</string>
+</resources>

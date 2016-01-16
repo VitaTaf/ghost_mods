@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Nfc-palvelu</string>
+    <string name="nfcUserLabel">NFC</string>
+    <string name="inbound_me_profile_title">Yhteystieto saatu NFC:n välityksellä</string>
+    <string name="inbound_me_profile_text">Lisää tämä henkilö yhteystietoihin koskettamalla.</string>
+    <string name="outbound_me_profile_title">NFC-vuorovaikutus suoritettu</string>
+    <string name="outbound_me_profile_text">Anna tälle henkilölle yhteystietosi koskettamalla.</string>
+    <string name="accessibility_nfc_enabled">NFC otettu käyttöön.</string>
+    <string name="touch">Muodosta yhteys</string>
+    <string name="beam_progress">Saapuva sisällönjakopyyntö...</string>
+    <string name="beam_outgoing">Jaetaan sisältöä…</string>
+    <string name="beam_complete">Sisältö jaettu</string>
+    <string name="beam_failed">Jakoa ei suoritettu valmiiksi</string>
+    <string name="beam_canceled">Jako peruutettu</string>
+    <string name="cancel">Peruuta</string>
+    <string name="beam_touch_to_view">Kosketa ja näytä</string>
+    <string name="beam_handover_not_supported">Vastaanottajan laite ei tue suurten tiedostojen siirtoa sisällön jakamisen kautta.</string>
+    <string name="beam_try_again">Yhdistä laitteet uudelleen</string>
+    <string name="connecting_peripheral">Muodostetaan yhteyttä</string>
+    <string name="connected_peripheral">Yhdistetty</string>
+    <string name="connect_peripheral_failed">Yhteyttä ei voitu muodostaa</string>
+    <string name="disconnecting_peripheral">Katkaistaan yhteyttä</string>
+    <string name="disconnected_peripheral">Yhteys katkaistu</string>
+    <string name="pairing_peripheral">Laiteparia muodostetaan</string>
+    <string name="pairing_peripheral_failed">Laiteparia ei voitu muodostaa</string>
+    <string name="failed_to_enable_bt">Bluetooth-yhteyttä ei voi ottaa käyttöön</string>
+    <string name="confirm_pairing">Oletko varma, että haluat muodostaa laiteparin Bluetooth-laitteeseen %1$s?</string>
+    <string name="pair_yes">Kyllä</string>
+    <string name="pair_no">Ei</string>
+    <string name="tap_again_to_pay">Maksa sovelluksella %1$s napauttamalla uudelleen.</string>
+    <string name="tap_again_to_complete">Maksa sovelluksella %1$s napauttamalla uudelleen.</string>
+    <string name="transaction_failure">Tapahtuman suorittaminen sovelluksella %1$s epäonnistui.</string>
+    <string name="could_not_use_app">Sovelluksen %1$s käyttö epäonnistui.</string>
+    <string name="pay_with">Maksusovellus:</string>
+    <string name="complete_with">Käytettävä sovellus:</string>
+    <string name="default_pay_app_removed">Napauttamalla maksamiseen valitsemasi palvelu poistettiin. Haluatko valita toisen?</string>
+    <string name="ask_nfc_tap">Suorita toiminto loppuun napauttamalla toista laitetta</string>
+    <string name="wifi_connect">Yhdistä</string>
+    <string name="status_unable_to_connect">Verkkoyhteyttä ei voi muodostaa</string>
+    <string name="status_wifi_connected">Yhdistetty</string>
+    <string name="title_connect_to_network">Yhdistä verkkoon</string>
+    <string name="prompt_connect_to_network">Yhdistetäänkö verkkoon %1$s?</string>
+    <string name="beam_requires_nfc_enabled">Android Beam edellyttää, että NFC on käytössä. Haluatko ottaa sen käyttöön?</string>
+    <string name="android_beam">Android Beam</string>
+</resources>
