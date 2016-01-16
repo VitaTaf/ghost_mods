@@ -495,9 +495,9 @@
     if-nez v2, :cond_6
 
     .line 948
-    invoke-static {p0}, Lcom/android/internal/policy/PolicyManager;->makeNewWindow(Landroid/content/Context;)Landroid/view/Window;
+    new-instance v2, Landroid/view/PhoneWindow;
 
-    move-result-object v2
+    invoke-direct {v2, p0}, Landroid/view/PhoneWindow;-><init>(Landroid/content/Context;)V
 
     iput-object v2, p0, Landroid/service/dreams/DreamService;->mWindow:Landroid/view/Window;
 

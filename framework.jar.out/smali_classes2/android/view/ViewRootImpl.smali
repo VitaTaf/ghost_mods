@@ -976,9 +976,9 @@
     iput v0, p0, Landroid/view/ViewRootImpl;->mNoncompatDensity:I
 
     .line 401
-    invoke-static {p1}, Lcom/android/internal/policy/PolicyManager;->makeNewFallbackEventHandler(Landroid/content/Context;)Landroid/view/FallbackEventHandler;
+    new-instance v0, Landroid/view/PhoneFallbackEventHandler;
 
-    move-result-object v0
+    invoke-direct {v0, p1}, Landroid/view/PhoneFallbackEventHandler;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Landroid/view/ViewRootImpl;->mFallbackEventHandler:Landroid/view/FallbackEventHandler;
 

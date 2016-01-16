@@ -860,11 +860,11 @@
     iput-object v0, p0, Landroid/widget/MediaController;->mWindowManager:Landroid/view/WindowManager;
 
     .line 131
-    iget-object v0, p0, Landroid/widget/MediaController;->mContext:Landroid/content/Context;
+    new-instance v0, Landroid/view/PhoneWindow;
 
-    invoke-static {v0}, Lcom/android/internal/policy/PolicyManager;->makeNewWindow(Landroid/content/Context;)Landroid/view/Window;
+    iget-object v1, p0, Landroid/widget/MediaController;->mContext:Landroid/content/Context;
 
-    move-result-object v0
+    invoke-direct {v0, v1}, Landroid/view/PhoneWindow;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Landroid/widget/MediaController;->mWindow:Landroid/view/Window;
 
