@@ -938,39 +938,6 @@
     goto :goto_0
 .end method
 
-.method private isUserSetupComplete()Z
-    .locals 4
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 1020
-    iget-object v1, p0, Lcom/android/server/media/MediaSessionService$SessionManagerImpl;->this$0:Lcom/android/server/media/MediaSessionService;
-
-    invoke-virtual {v1}, Lcom/android/server/media/MediaSessionService;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    const-string v2, "user_setup_complete"
-
-    const/4 v3, -0x2
-
-    invoke-static {v1, v2, v0, v3}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :cond_0
-    return v0
-.end method
-
 .method private isValidLocalStreamType(I)Z
     .locals 1
     .param p1, "streamType"    # I
@@ -1772,29 +1739,6 @@
 
     .line 724
     .local v2, "token":J
-    :try_start_0
-    invoke-direct {p0}, Lcom/android/server/media/MediaSessionService$SessionManagerImpl;->isUserSetupComplete()Z
-
-    move-result v7
-
-    if-nez v7, :cond_2
-
-    .line 727
-    const-string v7, "MediaSessionService"
-
-    const-string v8, "Not dispatching media key event because user setup is in progress."
-
-    invoke-static {v7, v8}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    .line 747
-    invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
-
-    goto :goto_0
-
-    .line 731
-    :cond_2
     :try_start_1
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
