@@ -1012,9 +1012,10 @@
     return v2
 .end method
 
-.method stepAnimationLocked(J)Z
+.method stepAnimationLocked(JI)Z
     .locals 11
     .param p1, "currentTime"    # J
+    .param p3, "displayId"    # I
 
     .prologue
     const/4 v4, 0x1
@@ -1168,7 +1169,7 @@
 
     const-string v8, "AppWindowToken"
 
-    invoke-virtual {v6, p0, v7, v8}, Lcom/android/server/wm/WindowAnimator;->setAppLayoutChanges(Lcom/android/server/wm/AppWindowAnimator;ILjava/lang/String;)V
+    invoke-virtual {v6, p0, v7, v8, p3}, Lcom/android/server/wm/WindowAnimator;->setAppLayoutChanges(Lcom/android/server/wm/AppWindowAnimator;ILjava/lang/String;I)V
 
     .line 316
     invoke-virtual {p0}, Lcom/android/server/wm/AppWindowAnimator;->clearAnimation()V

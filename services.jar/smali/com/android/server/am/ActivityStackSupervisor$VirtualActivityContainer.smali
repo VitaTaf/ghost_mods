@@ -29,33 +29,33 @@
     .param p3, "callback"    # Landroid/app/IActivityContainerCallback;
 
     .prologue
-    .line 3959
+    .line 4017
     iput-object p1, p0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
-    .line 3960
+    .line 4018
     invoke-virtual {p1}, Lcom/android/server/am/ActivityStackSupervisor;->getNextStackId()I
 
     move-result v0
 
     invoke-direct {p0, p1, v0}, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;-><init>(Lcom/android/server/am/ActivityStackSupervisor;I)V
 
-    .line 3957
+    .line 4015
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->mDrawn:Z
 
-    .line 3961
+    .line 4019
     iput-object p2, p0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->mParentActivity:Lcom/android/server/am/ActivityRecord;
 
-    .line 3962
+    .line 4020
     iput-object p3, p0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->mCallback:Landroid/app/IActivityContainerCallback;
 
-    .line 3963
+    .line 4021
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->mContainerState:I
 
-    .line 3964
+    .line 4022
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -96,7 +96,7 @@
 
     iput-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->mIdString:Ljava/lang/String;
 
-    .line 3965
+    .line 4023
     return-void
 .end method
 
@@ -104,7 +104,7 @@
     .locals 2
 
     .prologue
-    .line 4045
+    .line 4096
     iget-boolean v0, p0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->mDrawn:Z
 
     if-eqz v0, :cond_0
@@ -119,7 +119,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 4046
+    .line 4097
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->mActivityDisplay:Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;
 
     check-cast v0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityDisplay;
@@ -128,12 +128,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityDisplay;->setSurface(Landroid/view/Surface;)V
 
-    .line 4047
+    .line 4098
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->mContainerState:I
 
-    .line 4049
+    .line 4100
     :cond_0
     return-void
 .end method
@@ -152,28 +152,28 @@
 
     const/4 v3, 0x0
 
-    .line 3982
+    .line 4040
     iget v1, p0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->mContainerState:I
 
     const/4 v2, 0x2
 
     if-ne v1, v2, :cond_0
 
-    .line 4014
+    .line 4072
     :goto_0
     return-void
 
-    .line 3985
+    .line 4043
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->mActivityDisplay:Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;
 
     check-cast v0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityDisplay;
 
-    .line 3987
+    .line 4045
     .local v0, "virtualActivityDisplay":Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityDisplay;
     if-nez v0, :cond_1
 
-    .line 3988
+    .line 4046
     new-instance v0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityDisplay;
 
     .end local v0    # "virtualActivityDisplay":Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityDisplay;
@@ -181,15 +181,15 @@
 
     invoke-direct {v0, v1, p2, p3, p4}, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityDisplay;-><init>(Lcom/android/server/am/ActivityStackSupervisor;III)V
 
-    .line 3990
+    .line 4048
     .restart local v0    # "virtualActivityDisplay":Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityDisplay;
     iput-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->mActivityDisplay:Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;
 
-    .line 3991
+    .line 4049
     iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     # getter for: Lcom/android/server/am/ActivityStackSupervisor;->mActivityDisplays:Landroid/util/SparseArray;
-    invoke-static {v1}, Lcom/android/server/am/ActivityStackSupervisor;->access$500(Lcom/android/server/am/ActivityStackSupervisor;)Landroid/util/SparseArray;
+    invoke-static {v1}, Lcom/android/server/am/ActivityStackSupervisor;->access$900(Lcom/android/server/am/ActivityStackSupervisor;)Landroid/util/SparseArray;
 
     move-result-object v1
 
@@ -197,51 +197,51 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 3992
+    .line 4050
     invoke-virtual {p0, v0}, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->attachToDisplayLocked(Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;)V
 
-    .line 3995
+    .line 4053
     :cond_1
     iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->mSurface:Landroid/view/Surface;
 
     if-eqz v1, :cond_2
 
-    .line 3996
+    .line 4054
     iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->mSurface:Landroid/view/Surface;
 
     invoke-virtual {v1}, Landroid/view/Surface;->release()V
 
-    .line 3999
+    .line 4057
     :cond_2
     iput-object p1, p0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->mSurface:Landroid/view/Surface;
 
-    .line 4000
+    .line 4058
     if-eqz p1, :cond_4
 
-    .line 4001
+    .line 4059
     iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->mStack:Lcom/android/server/am/ActivityStack;
 
     invoke-virtual {v1, v5}, Lcom/android/server/am/ActivityStack;->resumeTopActivityLocked(Lcom/android/server/am/ActivityRecord;)Z
 
-    .line 4010
+    .line 4068
     :cond_3
     :goto_1
     invoke-direct {p0}, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->setSurfaceIfReadyLocked()V
 
     goto :goto_0
 
-    .line 4003
+    .line 4061
     :cond_4
     iput v4, p0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->mContainerState:I
 
-    .line 4004
+    .line 4062
     iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->mActivityDisplay:Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;
 
     check-cast v1, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityDisplay;
 
     invoke-virtual {v1, v5}, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityDisplay;->setSurface(Landroid/view/Surface;)V
 
-    .line 4005
+    .line 4063
     iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->mStack:Lcom/android/server/am/ActivityStack;
 
     iget-object v1, v1, Lcom/android/server/am/ActivityStack;->mPausingActivity:Lcom/android/server/am/ActivityRecord;
@@ -254,7 +254,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 4006
+    .line 4064
     iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->mStack:Lcom/android/server/am/ActivityStack;
 
     invoke-virtual {v1, v3, v4, v3, v3}, Lcom/android/server/am/ActivityStack;->startPausingLocked(ZZZZ)Z
@@ -268,7 +268,7 @@
     .locals 1
 
     .prologue
-    .line 4018
+    .line 4076
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->mSurface:Landroid/view/Surface;
 
     if-eqz v0, :cond_0
@@ -294,7 +294,7 @@
     .locals 1
 
     .prologue
-    .line 4032
+    .line 4090
     const/4 v0, 0x0
 
     return v0
@@ -304,29 +304,29 @@
     .locals 2
 
     .prologue
-    .line 4023
+    .line 4081
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v1, v0, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v1
 
-    .line 4024
+    .line 4082
     const/4 v0, 0x1
 
     :try_start_0
     iput-boolean v0, p0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->mDrawn:Z
 
-    .line 4025
+    .line 4083
     invoke-direct {p0}, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->setSurfaceIfReadyLocked()V
 
-    .line 4026
+    .line 4084
     monitor-exit v1
 
-    .line 4027
+    .line 4085
     return-void
 
-    .line 4026
+    .line 4084
     :catchall_0
     move-exception v0
 
@@ -345,17 +345,17 @@
     .param p4, "density"    # I
 
     .prologue
-    .line 3969
+    .line 4027
     invoke-super {p0, p1, p2, p3, p4}, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->setSurface(Landroid/view/Surface;III)V
 
-    .line 3971
+    .line 4029
     iget-object v2, p0, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v3, v2, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v3
 
-    .line 3972
+    .line 4030
     :try_start_0
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
     :try_end_0
@@ -363,24 +363,24 @@
 
     move-result-wide v0
 
-    .line 3974
+    .line 4032
     .local v0, "origId":J
     :try_start_1
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;->setSurfaceLocked(Landroid/view/Surface;III)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 3976
+    .line 4034
     :try_start_2
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3978
+    .line 4036
     monitor-exit v3
 
-    .line 3979
+    .line 4037
     return-void
 
-    .line 3976
+    .line 4034
     :catchall_0
     move-exception v2
 
@@ -388,7 +388,7 @@
 
     throw v2
 
-    .line 3978
+    .line 4036
     .end local v0    # "origId":J
     :catchall_1
     move-exception v2
