@@ -25536,6 +25536,12 @@
 
     .line 1591
     .local v3, "longSizeDp":I
+    move/from16 v0, p2
+
+    move/from16 v1, p3
+
+    if-eq v0, v1, :cond_6
+
     const/16 v8, 0x258
 
     if-ge v7, v8, :cond_6
