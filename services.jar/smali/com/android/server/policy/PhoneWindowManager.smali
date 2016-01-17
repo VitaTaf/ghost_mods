@@ -26711,15 +26711,27 @@
     :cond_7
     iput v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mTaskButtonBehavior:I
 
-    .line 1736
-    iget-object v10, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
-
-    invoke-static {v10}, Lcom/android/server/policy/PolicyControl;->reloadFromSetting(Landroid/content/Context;)V
-
     .line 1737
     monitor-exit v11
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v10, p0, Lcom/android/server/policy/PhoneWindowManager;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
+
+    invoke-interface {v10}, Landroid/view/WindowManagerPolicy$WindowManagerFuncs;->getWindowManagerLock()Ljava/lang/Object;
+
+    move-result-object v10
+
+    monitor-enter v10
+
+    :try_start_1
+    iget-object v11, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-static {v11}, Lcom/android/server/policy/PolicyControl;->reloadFromSetting(Landroid/content/Context;)V
+
+    monitor-exit v10
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 1738
     if-eqz v5, :cond_8
@@ -26756,10 +26768,25 @@
     :catchall_0
     move-exception v9
 
-    :try_start_1
+    :try_start_2
     monitor-exit v11
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    throw v9
+
+    .restart local v1    # "hasSoftInput":Z
+    .restart local v2    # "imId":Ljava/lang/String;
+    .restart local v6    # "userRotation":I
+    .restart local v7    # "userRotationMode":I
+    .restart local v8    # "wakeGestureEnabledSetting":Z
+    :catchall_1
+    move-exception v9
+
+    :try_start_3
+    monitor-exit v10
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     throw v9
 .end method
