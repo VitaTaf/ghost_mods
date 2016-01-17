@@ -46,40 +46,29 @@
     .param p7, "hideWindowFlag"    # I
 
     .prologue
-    .line 4749
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4736
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/view/PhoneWindow$ColorViewState;->view:Landroid/view/View;
 
-    .line 4737
     const/4 v0, 0x4
 
     iput v0, p0, Landroid/view/PhoneWindow$ColorViewState;->targetVisibility:I
 
-    .line 4750
     iput p6, p0, Landroid/view/PhoneWindow$ColorViewState;->id:I
 
-    .line 4751
     iput p1, p0, Landroid/view/PhoneWindow$ColorViewState;->systemUiHideFlag:I
 
-    .line 4752
     iput p2, p0, Landroid/view/PhoneWindow$ColorViewState;->translucentFlag:I
 
-    .line 4753
     iput p3, p0, Landroid/view/PhoneWindow$ColorViewState;->verticalGravity:I
 
-    .line 4754
     iput p4, p0, Landroid/view/PhoneWindow$ColorViewState;->horizontalGravity:I
 
-    .line 4755
     iput-object p5, p0, Landroid/view/PhoneWindow$ColorViewState;->transitionName:Ljava/lang/String;
 
-    .line 4756
     iput p7, p0, Landroid/view/PhoneWindow$ColorViewState;->hideWindowFlag:I
 
-    .line 4757
     return-void
 .end method

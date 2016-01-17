@@ -42,18 +42,13 @@
     .prologue
     const/16 v0, 0xff
 
-    .line 4297
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4315
     iput v0, p0, Landroid/view/PhoneWindow$DrawableFeatureState;->alpha:I
 
-    .line 4317
     iput v0, p0, Landroid/view/PhoneWindow$DrawableFeatureState;->curAlpha:I
 
-    .line 4298
     iput p1, p0, Landroid/view/PhoneWindow$DrawableFeatureState;->featureId:I
 
-    .line 4299
     return-void
 .end method

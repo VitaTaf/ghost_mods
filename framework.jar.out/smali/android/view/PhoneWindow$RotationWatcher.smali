@@ -40,17 +40,14 @@
     .locals 1
 
     .prologue
-    .line 4592
     invoke-direct {p0}, Landroid/view/IRotationWatcher$Stub;-><init>()V
 
-    .line 4594
     new-instance v0, Landroid/view/PhoneWindow$RotationWatcher$1;
 
     invoke-direct {v0, p0}, Landroid/view/PhoneWindow$RotationWatcher$1;-><init>(Landroid/view/PhoneWindow$RotationWatcher;)V
 
     iput-object v0, p0, Landroid/view/PhoneWindow$RotationWatcher;->mRotationChanged:Ljava/lang/Runnable;
 
-    .line 4599
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -67,12 +64,10 @@
     .param p1, "phoneWindow"    # Landroid/view/PhoneWindow;
 
     .prologue
-    .line 4609
     iget-object v2, p0, Landroid/view/PhoneWindow$RotationWatcher;->mWindows:Ljava/util/ArrayList;
 
     monitor-enter v2
 
-    .line 4610
     :try_start_0
     iget-boolean v1, p0, Landroid/view/PhoneWindow$RotationWatcher;->mIsWatching:Z
     :try_end_0
@@ -80,20 +75,17 @@
 
     if-nez v1, :cond_0
 
-    .line 4612
     :try_start_1
     sget-object v1, Landroid/view/PhoneWindow$WindowManagerHolder;->sWindowManager:Landroid/view/IWindowManager;
 
     invoke-interface {v1, p0}, Landroid/view/IWindowManager;->watchRotation(Landroid/view/IRotationWatcher;)I
 
-    .line 4613
     new-instance v1, Landroid/os/Handler;
 
     invoke-direct {v1}, Landroid/os/Handler;-><init>()V
 
     iput-object v1, p0, Landroid/view/PhoneWindow$RotationWatcher;->mHandler:Landroid/os/Handler;
 
-    .line 4614
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Landroid/view/PhoneWindow$RotationWatcher;->mIsWatching:Z
@@ -101,7 +93,6 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 4619
     :cond_0
     :goto_0
     :try_start_2
@@ -113,17 +104,13 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4620
     monitor-exit v2
 
-    .line 4621
     return-void
 
-    .line 4615
     :catch_0
     move-exception v0
 
-    .line 4616
     .local v0, "ex":Landroid/os/RemoteException;
     const-string v1, "PhoneWindow"
 
@@ -133,7 +120,6 @@
 
     goto :goto_0
 
-    .line 4620
     .end local v0    # "ex":Landroid/os/RemoteException;
     :catchall_0
     move-exception v1
@@ -149,15 +135,12 @@
     .locals 5
 
     .prologue
-    .line 4639
     iget-object v4, p0, Landroid/view/PhoneWindow$RotationWatcher;->mWindows:Ljava/util/ArrayList;
 
     monitor-enter v4
 
-    .line 4640
     const/4 v0, 0x0
 
-    .line 4641
     .local v0, "i":I
     :goto_0
     :try_start_0
@@ -169,7 +152,6 @@
 
     if-ge v0, v3, :cond_1
 
-    .line 4642
     iget-object v3, p0, Landroid/view/PhoneWindow$RotationWatcher;->mWindows:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -178,7 +160,6 @@
 
     check-cast v1, Ljava/lang/ref/WeakReference;
 
-    .line 4643
     .local v1, "ref":Ljava/lang/ref/WeakReference;, "Ljava/lang/ref/WeakReference<Landroid/view/PhoneWindow;>;"
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -186,19 +167,15 @@
 
     check-cast v2, Landroid/view/PhoneWindow;
 
-    .line 4644
     .local v2, "win":Landroid/view/PhoneWindow;
     if-eqz v2, :cond_0
 
-    .line 4645
     invoke-virtual {v2}, Landroid/view/PhoneWindow;->onOptionsPanelRotationChanged()V
 
-    .line 4646
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 4648
     :cond_0
     iget-object v3, p0, Landroid/view/PhoneWindow$RotationWatcher;->mWindows:Ljava/util/ArrayList;
 
@@ -206,7 +183,6 @@
 
     goto :goto_0
 
-    .line 4651
     .end local v1    # "ref":Ljava/lang/ref/WeakReference;, "Ljava/lang/ref/WeakReference<Landroid/view/PhoneWindow;>;"
     .end local v2    # "win":Landroid/view/PhoneWindow;
     :catchall_0
@@ -224,7 +200,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 4652
     return-void
 .end method
 
@@ -238,14 +213,12 @@
     .end annotation
 
     .prologue
-    .line 4605
     iget-object v0, p0, Landroid/view/PhoneWindow$RotationWatcher;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Landroid/view/PhoneWindow$RotationWatcher;->mRotationChanged:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 4606
     return-void
 .end method
 
@@ -254,15 +227,12 @@
     .param p1, "phoneWindow"    # Landroid/view/PhoneWindow;
 
     .prologue
-    .line 4624
     iget-object v4, p0, Landroid/view/PhoneWindow$RotationWatcher;->mWindows:Ljava/util/ArrayList;
 
     monitor-enter v4
 
-    .line 4625
     const/4 v0, 0x0
 
-    .line 4626
     .local v0, "i":I
     :goto_0
     :try_start_0
@@ -274,7 +244,6 @@
 
     if-ge v0, v3, :cond_2
 
-    .line 4627
     iget-object v3, p0, Landroid/view/PhoneWindow$RotationWatcher;->mWindows:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -283,7 +252,6 @@
 
     check-cast v1, Ljava/lang/ref/WeakReference;
 
-    .line 4628
     .local v1, "ref":Ljava/lang/ref/WeakReference;, "Ljava/lang/ref/WeakReference<Landroid/view/PhoneWindow;>;"
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -291,13 +259,11 @@
 
     check-cast v2, Landroid/view/PhoneWindow;
 
-    .line 4629
     .local v2, "win":Landroid/view/PhoneWindow;
     if-eqz v2, :cond_0
 
     if-ne v2, p1, :cond_1
 
-    .line 4630
     :cond_0
     iget-object v3, p0, Landroid/view/PhoneWindow$RotationWatcher;->mWindows:Ljava/util/ArrayList;
 
@@ -305,7 +271,6 @@
 
     goto :goto_0
 
-    .line 4635
     .end local v1    # "ref":Ljava/lang/ref/WeakReference;, "Ljava/lang/ref/WeakReference<Landroid/view/PhoneWindow;>;"
     .end local v2    # "win":Landroid/view/PhoneWindow;
     :catchall_0
@@ -317,7 +282,6 @@
 
     throw v3
 
-    .line 4632
     .restart local v1    # "ref":Ljava/lang/ref/WeakReference;, "Ljava/lang/ref/WeakReference<Landroid/view/PhoneWindow;>;"
     .restart local v2    # "win":Landroid/view/PhoneWindow;
     :cond_1
@@ -325,7 +289,6 @@
 
     goto :goto_0
 
-    .line 4635
     .end local v1    # "ref":Ljava/lang/ref/WeakReference;, "Ljava/lang/ref/WeakReference<Landroid/view/PhoneWindow;>;"
     .end local v2    # "win":Landroid/view/PhoneWindow;
     :cond_2
@@ -334,6 +297,5 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 4636
     return-void
 .end method

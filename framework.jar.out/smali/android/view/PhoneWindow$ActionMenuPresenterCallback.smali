@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 2149
     iput-object p1, p0, Landroid/view/PhoneWindow$ActionMenuPresenterCallback;->this$0:Landroid/view/PhoneWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .param p2, "x1"    # Landroid/view/PhoneWindow$1;
 
     .prologue
-    .line 2149
     invoke-direct {p0, p1}, Landroid/view/PhoneWindow$ActionMenuPresenterCallback;-><init>(Landroid/view/PhoneWindow;)V
 
     return-void
@@ -54,12 +52,10 @@
     .param p2, "allMenusAreClosing"    # Z
 
     .prologue
-    .line 2162
     iget-object v0, p0, Landroid/view/PhoneWindow$ActionMenuPresenterCallback;->this$0:Landroid/view/PhoneWindow;
 
     invoke-virtual {v0, p1}, Landroid/view/PhoneWindow;->checkCloseActionMenu(Landroid/view/Menu;)V
 
-    .line 2163
     return-void
 .end method
 
@@ -68,26 +64,21 @@
     .param p1, "subMenu"    # Lcom/android/internal/view/menu/MenuBuilder;
 
     .prologue
-    .line 2152
     iget-object v1, p0, Landroid/view/PhoneWindow$ActionMenuPresenterCallback;->this$0:Landroid/view/PhoneWindow;
 
     invoke-virtual {v1}, Landroid/view/PhoneWindow;->getCallback()Landroid/view/Window$Callback;
 
     move-result-object v0
 
-    .line 2153
     .local v0, "cb":Landroid/view/Window$Callback;
     if-eqz v0, :cond_0
 
-    .line 2154
     const/16 v1, 0x8
 
     invoke-interface {v0, v1, p1}, Landroid/view/Window$Callback;->onMenuOpened(ILandroid/view/Menu;)Z
 
-    .line 2155
     const/4 v1, 0x1
 
-    .line 2157
     :goto_0
     return v1
 

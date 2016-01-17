@@ -32,12 +32,10 @@
     .locals 1
 
     .prologue
-    .line 4047
     iput-object p1, p0, Landroid/view/PhoneWindow$3;->this$0:Landroid/view/PhoneWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4049
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/view/PhoneWindow$3;->mIsTranslucent:Z
@@ -52,30 +50,25 @@
     .param p1, "layout"    # Lcom/android/internal/widget/SwipeDismissLayout;
 
     .prologue
-    .line 4069
     iget-object v1, p0, Landroid/view/PhoneWindow$3;->this$0:Landroid/view/PhoneWindow;
 
     invoke-virtual {v1}, Landroid/view/PhoneWindow;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v0
 
-    .line 4070
     .local v0, "newParams":Landroid/view/WindowManager$LayoutParams;
     const/4 v1, 0x0
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->x:I
 
-    .line 4071
     const/high16 v1, 0x3f800000    # 1.0f
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->alpha:F
 
-    .line 4072
     iget-object v1, p0, Landroid/view/PhoneWindow$3;->this$0:Landroid/view/PhoneWindow;
 
     invoke-virtual {v1, v0}, Landroid/view/PhoneWindow;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
-    .line 4073
     iget-object v1, p0, Landroid/view/PhoneWindow$3;->this$0:Landroid/view/PhoneWindow;
 
     const/16 v2, 0x400
@@ -84,7 +77,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/view/PhoneWindow;->setFlags(II)V
 
-    .line 4074
     return-void
 .end method
 
@@ -95,20 +87,17 @@
     .param p3, "translate"    # F
 
     .prologue
-    .line 4053
     iget-object v2, p0, Landroid/view/PhoneWindow$3;->this$0:Landroid/view/PhoneWindow;
 
     invoke-virtual {v2}, Landroid/view/PhoneWindow;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v1
 
-    .line 4054
     .local v1, "newParams":Landroid/view/WindowManager$LayoutParams;
     float-to-int v2, p3
 
     iput v2, v1, Landroid/view/WindowManager$LayoutParams;->x:I
 
-    .line 4055
     const/high16 v2, 0x3f800000    # 1.0f
 
     const/high16 v3, 0x3f000000    # 0.5f
@@ -119,24 +108,19 @@
 
     iput v2, v1, Landroid/view/WindowManager$LayoutParams;->alpha:F
 
-    .line 4056
     iget-object v2, p0, Landroid/view/PhoneWindow$3;->this$0:Landroid/view/PhoneWindow;
 
     invoke-virtual {v2, v1}, Landroid/view/PhoneWindow;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
-    .line 4058
     const/4 v0, 0x0
 
-    .line 4059
     .local v0, "flags":I
     iget v2, v1, Landroid/view/WindowManager$LayoutParams;->x:I
 
     if-nez v2, :cond_0
 
-    .line 4060
     const/16 v0, 0x400
 
-    .line 4064
     :goto_0
     iget-object v2, p0, Landroid/view/PhoneWindow$3;->this$0:Landroid/view/PhoneWindow;
 
@@ -144,10 +128,8 @@
 
     invoke-virtual {v2, v0, v3}, Landroid/view/PhoneWindow;->setFlags(II)V
 
-    .line 4065
     return-void
 
-    .line 4062
     :cond_0
     const/16 v0, 0x200
 

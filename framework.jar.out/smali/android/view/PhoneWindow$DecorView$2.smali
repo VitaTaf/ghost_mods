@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 2989
     iput-object p1, p0, Landroid/view/PhoneWindow$DecorView$2;->this$1:Landroid/view/PhoneWindow$DecorView;
 
     iput-object p2, p0, Landroid/view/PhoneWindow$DecorView$2;->val$state:Landroid/view/PhoneWindow$ColorViewState;
@@ -44,7 +43,6 @@
     .locals 2
 
     .prologue
-    .line 2992
     iget-object v0, p0, Landroid/view/PhoneWindow$DecorView$2;->val$state:Landroid/view/PhoneWindow$ColorViewState;
 
     iget-object v0, v0, Landroid/view/PhoneWindow$ColorViewState;->view:Landroid/view/View;
@@ -53,7 +51,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2993
     iget-object v0, p0, Landroid/view/PhoneWindow$DecorView$2;->val$state:Landroid/view/PhoneWindow$ColorViewState;
 
     iget-object v0, v0, Landroid/view/PhoneWindow$ColorViewState;->view:Landroid/view/View;
@@ -62,6 +59,5 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2994
     return-void
 .end method

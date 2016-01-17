@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 4594
     iput-object p1, p0, Landroid/view/PhoneWindow$RotationWatcher$1;->this$0:Landroid/view/PhoneWindow$RotationWatcher;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,11 +39,9 @@
     .locals 1
 
     .prologue
-    .line 4596
     iget-object v0, p0, Landroid/view/PhoneWindow$RotationWatcher$1;->this$0:Landroid/view/PhoneWindow$RotationWatcher;
 
     invoke-virtual {v0}, Landroid/view/PhoneWindow$RotationWatcher;->dispatchRotationChanged()V
 
-    .line 4597
     return-void
 .end method

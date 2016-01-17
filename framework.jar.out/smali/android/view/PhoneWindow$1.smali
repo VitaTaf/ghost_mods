@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 255
     iput-object p1, p0, Landroid/view/PhoneWindow$1;->this$0:Landroid/view/PhoneWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 257
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -51,7 +49,6 @@
 
     if-gt v0, v1, :cond_1
 
-    .line 258
     iget-object v1, p0, Landroid/view/PhoneWindow$1;->this$0:Landroid/view/PhoneWindow;
 
     # getter for: Landroid/view/PhoneWindow;->mInvalidatePanelMenuFeatures:I
@@ -67,30 +64,25 @@
 
     if-eqz v1, :cond_0
 
-    .line 259
     iget-object v1, p0, Landroid/view/PhoneWindow$1;->this$0:Landroid/view/PhoneWindow;
 
     invoke-virtual {v1, v0}, Landroid/view/PhoneWindow;->doInvalidatePanelMenu(I)V
 
-    .line 257
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 262
     :cond_1
     iget-object v1, p0, Landroid/view/PhoneWindow$1;->this$0:Landroid/view/PhoneWindow;
 
     # setter for: Landroid/view/PhoneWindow;->mInvalidatePanelMenuPosted:Z
     invoke-static {v1, v3}, Landroid/view/PhoneWindow;->access$102(Landroid/view/PhoneWindow;Z)Z
 
-    .line 263
     iget-object v1, p0, Landroid/view/PhoneWindow$1;->this$0:Landroid/view/PhoneWindow;
 
     # setter for: Landroid/view/PhoneWindow;->mInvalidatePanelMenuFeatures:I
     invoke-static {v1, v3}, Landroid/view/PhoneWindow;->access$002(Landroid/view/PhoneWindow;I)I
 
-    .line 264
     return-void
 .end method

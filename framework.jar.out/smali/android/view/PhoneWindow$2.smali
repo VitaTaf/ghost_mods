@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 4040
     iput-object p1, p0, Landroid/view/PhoneWindow$2;->this$0:Landroid/view/PhoneWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +40,9 @@
     .param p1, "layout"    # Lcom/android/internal/widget/SwipeDismissLayout;
 
     .prologue
-    .line 4043
     iget-object v0, p0, Landroid/view/PhoneWindow$2;->this$0:Landroid/view/PhoneWindow;
 
     invoke-virtual {v0}, Landroid/view/PhoneWindow;->dispatchOnWindowDismissed()V
 
-    .line 4044
     return-void
 .end method
