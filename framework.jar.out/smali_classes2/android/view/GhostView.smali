@@ -1162,17 +1162,17 @@
 
     .prologue
     .line 49
-    instance-of v2, p1, Landroid/view/HardwareCanvas;
+    instance-of v2, p1, Landroid/view/GLES20Canvas;
 
     if-eqz v2, :cond_0
 
     move-object v0, p1
 
     .line 50
-    check-cast v0, Landroid/view/HardwareCanvas;
+    check-cast v0, Landroid/view/GLES20Canvas;
 
     .line 51
-    .local v0, "hwCanvas":Landroid/view/HardwareCanvas;
+    .local v0, "dlCanvas":Landroid/view/GLES20Canvas;
     iget-object v2, p0, Landroid/view/GhostView;->mView:Landroid/view/View;
 
     const/4 v3, 0x1
@@ -1195,16 +1195,16 @@
     if-eqz v2, :cond_0
 
     .line 54
-    invoke-virtual {v0}, Landroid/view/HardwareCanvas;->insertReorderBarrier()V
+    invoke-virtual {v0}, Landroid/view/GLES20Canvas;->insertReorderBarrier()V
 
     .line 55
-    invoke-virtual {v0, v1}, Landroid/view/HardwareCanvas;->drawRenderNode(Landroid/view/RenderNode;)V
+    invoke-virtual {v0, v1}, Landroid/view/GLES20Canvas;->drawRenderNode(Landroid/view/RenderNode;)V
 
     .line 56
-    invoke-virtual {v0}, Landroid/view/HardwareCanvas;->insertInorderBarrier()V
+    invoke-virtual {v0}, Landroid/view/GLES20Canvas;->insertInorderBarrier()V
 
     .line 59
-    .end local v0    # "hwCanvas":Landroid/view/HardwareCanvas;
+    .end local v0    # "dlCanvas":Landroid/view/GLES20Canvas;
     .end local v1    # "renderNode":Landroid/view/RenderNode;
     :cond_0
     return-void

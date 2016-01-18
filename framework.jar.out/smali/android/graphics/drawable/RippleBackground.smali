@@ -444,9 +444,9 @@
     return-object v4
 .end method
 
-.method protected drawHardware(Landroid/view/HardwareCanvas;)Z
+.method protected drawHardware(Landroid/view/GLES20Canvas;)Z
     .locals 4
-    .param p1, "c"    # Landroid/view/HardwareCanvas;
+    .param p1, "c"    # Landroid/view/GLES20Canvas;
 
     .prologue
     .line 77
@@ -458,7 +458,7 @@
 
     iget-object v3, p0, Landroid/graphics/drawable/RippleBackground;->mPropPaint:Landroid/graphics/CanvasProperty;
 
-    invoke-virtual {p1, v0, v1, v2, v3}, Landroid/view/HardwareCanvas;->drawCircle(Landroid/graphics/CanvasProperty;Landroid/graphics/CanvasProperty;Landroid/graphics/CanvasProperty;Landroid/graphics/CanvasProperty;)V
+    invoke-virtual {p1, v0, v1, v2, v3}, Landroid/view/GLES20Canvas;->drawCircle(Landroid/graphics/CanvasProperty;Landroid/graphics/CanvasProperty;Landroid/graphics/CanvasProperty;Landroid/graphics/CanvasProperty;)V
 
     .line 78
     const/4 v0, 0x1

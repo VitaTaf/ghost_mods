@@ -72,7 +72,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Landroid/view/HardwareCanvas;->setProperty(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Landroid/view/GLES20Canvas;->setProperty(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1325
     const-string v0, "extraRasterBucket"
@@ -113,7 +113,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Landroid/view/HardwareCanvas;->setProperty(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Landroid/view/GLES20Canvas;->setProperty(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1331
     :cond_0

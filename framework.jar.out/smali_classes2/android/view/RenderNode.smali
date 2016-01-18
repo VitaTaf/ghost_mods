@@ -363,9 +363,9 @@
     goto :goto_0
 .end method
 
-.method public end(Landroid/view/HardwareCanvas;)V
+.method public end(Landroid/view/GLES20Canvas;)V
     .locals 6
-    .param p1, "endCanvas"    # Landroid/view/HardwareCanvas;
+    .param p1, "endCanvas"    # Landroid/view/GLES20Canvas;
 
     .prologue
     .line 244
@@ -1440,7 +1440,7 @@
     return v0
 .end method
 
-.method public start(II)Landroid/view/HardwareCanvas;
+.method public start(II)Landroid/view/GLES20Canvas;
     .locals 2
     .param p1, "width"    # I
     .param p2, "height"    # I
@@ -1452,13 +1452,13 @@
     move-result-object v0
 
     .line 229
-    .local v0, "canvas":Landroid/view/HardwareCanvas;
-    invoke-virtual {v0, p1, p2}, Landroid/view/HardwareCanvas;->setViewport(II)V
+    .local v0, "canvas":Landroid/view/GLES20Canvas;
+    invoke-virtual {v0, p1, p2}, Landroid/view/GLES20Canvas;->setViewport(II)V
 
     .line 231
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/view/HardwareCanvas;->onPreDraw(Landroid/graphics/Rect;)I
+    invoke-virtual {v0, v1}, Landroid/view/GLES20Canvas;->onPreDraw(Landroid/graphics/Rect;)I
 
     .line 232
     return-object v0

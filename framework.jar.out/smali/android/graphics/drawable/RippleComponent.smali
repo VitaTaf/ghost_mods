@@ -18,7 +18,7 @@
 
 .field private mHardwareAnimator:Landroid/graphics/drawable/RippleComponent$RenderNodeAnimatorSet;
 
-.field private mHasHardwareCanvas:Z
+.field private mHasGLES20Canvas:Z
 
 .field private mHasMaxRadius:Z
 
@@ -182,9 +182,9 @@
     return v2
 .end method
 
-.method private startPendingAnimation(Landroid/view/HardwareCanvas;Landroid/graphics/Paint;)V
+.method private startPendingAnimation(Landroid/view/GLES20Canvas;Landroid/graphics/Paint;)V
     .locals 1
-    .param p1, "hw"    # Landroid/view/HardwareCanvas;
+    .param p1, "hw"    # Landroid/view/GLES20Canvas;
     .param p2, "p"    # Landroid/graphics/Paint;
 
     .prologue
@@ -212,7 +212,7 @@
     .line 192
     iget-object v0, p0, Landroid/graphics/drawable/RippleComponent;->mHardwareAnimator:Landroid/graphics/drawable/RippleComponent$RenderNodeAnimatorSet;
 
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/RippleComponent$RenderNodeAnimatorSet;->start(Landroid/view/HardwareCanvas;)V
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/RippleComponent$RenderNodeAnimatorSet;->start(Landroid/view/GLES20Canvas;)V
 
     .line 196
     invoke-virtual {p0}, Landroid/graphics/drawable/RippleComponent;->jumpValuesToExit()V
@@ -260,21 +260,21 @@
 
     if-eqz v2, :cond_1
 
-    instance-of v2, p1, Landroid/view/HardwareCanvas;
+    instance-of v2, p1, Landroid/view/GLES20Canvas;
 
     if-eqz v2, :cond_1
 
     const/4 v0, 0x1
 
     .line 148
-    .local v0, "hasHardwareCanvas":Z
+    .local v0, "hasGLES20Canvas":Z
     :goto_0
-    iget-boolean v2, p0, Landroid/graphics/drawable/RippleComponent;->mHasHardwareCanvas:Z
+    iget-boolean v2, p0, Landroid/graphics/drawable/RippleComponent;->mHasGLES20Canvas:Z
 
     if-eq v2, v0, :cond_0
 
     .line 149
-    iput-boolean v0, p0, Landroid/graphics/drawable/RippleComponent;->mHasHardwareCanvas:Z
+    iput-boolean v0, p0, Landroid/graphics/drawable/RippleComponent;->mHasGLES20Canvas:Z
 
     .line 151
     if-nez v0, :cond_0
@@ -289,11 +289,11 @@
     move-object v1, p1
 
     .line 158
-    check-cast v1, Landroid/view/HardwareCanvas;
+    check-cast v1, Landroid/view/GLES20Canvas;
 
     .line 159
-    .local v1, "hw":Landroid/view/HardwareCanvas;
-    invoke-direct {p0, v1, p2}, Landroid/graphics/drawable/RippleComponent;->startPendingAnimation(Landroid/view/HardwareCanvas;Landroid/graphics/Paint;)V
+    .local v1, "hw":Landroid/view/GLES20Canvas;
+    invoke-direct {p0, v1, p2}, Landroid/graphics/drawable/RippleComponent;->startPendingAnimation(Landroid/view/GLES20Canvas;Landroid/graphics/Paint;)V
 
     .line 161
     iget-object v2, p0, Landroid/graphics/drawable/RippleComponent;->mHardwareAnimator:Landroid/graphics/drawable/RippleComponent$RenderNodeAnimatorSet;
@@ -301,24 +301,24 @@
     if-eqz v2, :cond_2
 
     .line 162
-    invoke-virtual {p0, v1}, Landroid/graphics/drawable/RippleComponent;->drawHardware(Landroid/view/HardwareCanvas;)Z
+    invoke-virtual {p0, v1}, Landroid/graphics/drawable/RippleComponent;->drawHardware(Landroid/view/GLES20Canvas;)Z
 
     move-result v2
 
     .line 166
-    .end local v1    # "hw":Landroid/view/HardwareCanvas;
+    .end local v1    # "hw":Landroid/view/GLES20Canvas;
     :goto_1
     return v2
 
     .line 146
-    .end local v0    # "hasHardwareCanvas":Z
+    .end local v0    # "hasGLES20Canvas":Z
     :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
 
     .line 166
-    .restart local v0    # "hasHardwareCanvas":Z
+    .restart local v0    # "hasGLES20Canvas":Z
     :cond_2
     invoke-virtual {p0, p1, p2}, Landroid/graphics/drawable/RippleComponent;->drawSoftware(Landroid/graphics/Canvas;Landroid/graphics/Paint;)Z
 
@@ -327,7 +327,7 @@
     goto :goto_1
 .end method
 
-.method protected abstract drawHardware(Landroid/view/HardwareCanvas;)Z
+.method protected abstract drawHardware(Landroid/view/GLES20Canvas;)Z
 .end method
 
 .method protected abstract drawSoftware(Landroid/graphics/Canvas;Landroid/graphics/Paint;)Z
@@ -385,7 +385,7 @@
     invoke-virtual {p0}, Landroid/graphics/drawable/RippleComponent;->cancel()V
 
     .line 107
-    iget-boolean v0, p0, Landroid/graphics/drawable/RippleComponent;->mHasHardwareCanvas:Z
+    iget-boolean v0, p0, Landroid/graphics/drawable/RippleComponent;->mHasGLES20Canvas:Z
 
     if-eqz v0, :cond_0
 

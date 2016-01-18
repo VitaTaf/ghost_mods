@@ -219,9 +219,9 @@
     goto :goto_1
 .end method
 
-.method public start(Landroid/view/HardwareCanvas;)V
+.method public start(Landroid/view/GLES20Canvas;)V
     .locals 6
-    .param p1, "target"    # Landroid/view/HardwareCanvas;
+    .param p1, "target"    # Landroid/view/GLES20Canvas;
 
     .prologue
     .line 300

@@ -73,7 +73,7 @@
 
     const/4 v1, 0x0
 
-    const-string v2, "visual_bars"
+    const-string/jumbo v2, "visual_bars"
 
     aput-object v2, v0, v1
 
@@ -555,14 +555,14 @@
 
     iget v4, p0, Landroid/view/ThreadedRenderer;->mSurfaceHeight:I
 
-    invoke-virtual {v2, v3, v4}, Landroid/view/RenderNode;->start(II)Landroid/view/HardwareCanvas;
+    invoke-virtual {v2, v3, v4}, Landroid/view/RenderNode;->start(II)Landroid/view/GLES20Canvas;
 
     move-result-object v0
 
     .line 284
-    .local v0, "canvas":Landroid/view/HardwareCanvas;
+    .local v0, "canvas":Landroid/view/GLES20Canvas;
     :try_start_0
-    invoke-virtual {v0}, Landroid/view/HardwareCanvas;->save()I
+    invoke-virtual {v0}, Landroid/view/GLES20Canvas;->save()I
 
     move-result v1
 
@@ -576,29 +576,29 @@
 
     int-to-float v3, v3
 
-    invoke-virtual {v0, v2, v3}, Landroid/view/HardwareCanvas;->translate(FF)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/GLES20Canvas;->translate(FF)V
 
     .line 286
-    invoke-interface {p2, v0}, Landroid/view/HardwareRenderer$HardwareDrawCallbacks;->onHardwarePreDraw(Landroid/view/HardwareCanvas;)V
+    invoke-interface {p2, v0}, Landroid/view/HardwareRenderer$HardwareDrawCallbacks;->onHardwarePreDraw(Landroid/view/GLES20Canvas;)V
 
     .line 288
-    invoke-virtual {v0}, Landroid/view/HardwareCanvas;->insertReorderBarrier()V
+    invoke-virtual {v0}, Landroid/view/GLES20Canvas;->insertReorderBarrier()V
 
     .line 289
     invoke-virtual {p1}, Landroid/view/View;->getDisplayList()Landroid/view/RenderNode;
 
     move-result-object v2
 
-    invoke-virtual {v0, v2}, Landroid/view/HardwareCanvas;->drawRenderNode(Landroid/view/RenderNode;)V
+    invoke-virtual {v0, v2}, Landroid/view/GLES20Canvas;->drawRenderNode(Landroid/view/RenderNode;)V
 
     .line 290
-    invoke-virtual {v0}, Landroid/view/HardwareCanvas;->insertInorderBarrier()V
+    invoke-virtual {v0}, Landroid/view/GLES20Canvas;->insertInorderBarrier()V
 
     .line 292
-    invoke-interface {p2, v0}, Landroid/view/HardwareRenderer$HardwareDrawCallbacks;->onHardwarePostDraw(Landroid/view/HardwareCanvas;)V
+    invoke-interface {p2, v0}, Landroid/view/HardwareRenderer$HardwareDrawCallbacks;->onHardwarePostDraw(Landroid/view/GLES20Canvas;)V
 
     .line 293
-    invoke-virtual {v0, v1}, Landroid/view/HardwareCanvas;->restoreToCount(I)V
+    invoke-virtual {v0, v1}, Landroid/view/GLES20Canvas;->restoreToCount(I)V
 
     .line 294
     const/4 v2, 0x0
@@ -610,10 +610,10 @@
     .line 296
     iget-object v2, p0, Landroid/view/ThreadedRenderer;->mRootNode:Landroid/view/RenderNode;
 
-    invoke-virtual {v2, v0}, Landroid/view/RenderNode;->end(Landroid/view/HardwareCanvas;)V
+    invoke-virtual {v2, v0}, Landroid/view/RenderNode;->end(Landroid/view/GLES20Canvas;)V
 
     .line 299
-    .end local v0    # "canvas":Landroid/view/HardwareCanvas;
+    .end local v0    # "canvas":Landroid/view/GLES20Canvas;
     .end local v1    # "saveCount":I
     :cond_1
     invoke-static {v6, v7}, Landroid/os/Trace;->traceEnd(J)V
@@ -622,13 +622,13 @@
     return-void
 
     .line 296
-    .restart local v0    # "canvas":Landroid/view/HardwareCanvas;
+    .restart local v0    # "canvas":Landroid/view/GLES20Canvas;
     :catchall_0
     move-exception v2
 
     iget-object v3, p0, Landroid/view/ThreadedRenderer;->mRootNode:Landroid/view/RenderNode;
 
-    invoke-virtual {v3, v0}, Landroid/view/RenderNode;->end(Landroid/view/HardwareCanvas;)V
+    invoke-virtual {v3, v0}, Landroid/view/RenderNode;->end(Landroid/view/GLES20Canvas;)V
 
     throw v2
 .end method

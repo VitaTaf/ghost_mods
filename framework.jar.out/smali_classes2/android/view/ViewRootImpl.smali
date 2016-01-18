@@ -13458,9 +13458,9 @@
     return-void
 .end method
 
-.method public onHardwarePostDraw(Landroid/view/HardwareCanvas;)V
+.method public onHardwarePostDraw(Landroid/view/GLES20Canvas;)V
     .locals 4
-    .param p1, "canvas"    # Landroid/view/HardwareCanvas;
+    .param p1, "canvas"    # Landroid/view/GLES20Canvas;
 
     .prologue
     .line 2297
@@ -13488,7 +13488,7 @@
 
     iget-object v3, p0, Landroid/view/ViewRootImpl;->mResizePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v0, v1, v2, v3}, Landroid/view/HardwareCanvas;->drawHardwareLayer(Landroid/view/HardwareLayer;FFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v0, v1, v2, v3}, Landroid/view/GLES20Canvas;->drawHardwareLayer(Landroid/view/HardwareLayer;FFLandroid/graphics/Paint;)V
 
     .line 2302
     :cond_0
@@ -13498,9 +13498,9 @@
     return-void
 .end method
 
-.method public onHardwarePreDraw(Landroid/view/HardwareCanvas;)V
+.method public onHardwarePreDraw(Landroid/view/GLES20Canvas;)V
     .locals 2
-    .param p1, "canvas"    # Landroid/view/HardwareCanvas;
+    .param p1, "canvas"    # Landroid/view/GLES20Canvas;
 
     .prologue
     .line 2292
@@ -13516,7 +13516,7 @@
 
     int-to-float v1, v1
 
-    invoke-virtual {p1, v0, v1}, Landroid/view/HardwareCanvas;->translate(FF)V
+    invoke-virtual {p1, v0, v1}, Landroid/view/GLES20Canvas;->translate(FF)V
 
     .line 2293
     return-void

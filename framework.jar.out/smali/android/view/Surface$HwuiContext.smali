@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field private mCanvas:Landroid/view/HardwareCanvas;
+.field private mCanvas:Landroid/view/GLES20Canvas;
 
 .field private mHwuiRenderer:J
 
@@ -29,12 +29,12 @@
     .locals 4
 
     .prologue
-    .line 578
+    .line 589
     iput-object p1, p0, Landroid/view/Surface$HwuiContext;->this$0:Landroid/view/Surface;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 579
+    .line 590
     const-string v0, "HwuiCanvas"
 
     const/4 v1, 0x0
@@ -45,14 +45,14 @@
 
     iput-object v0, p0, Landroid/view/Surface$HwuiContext;->mRenderNode:Landroid/view/RenderNode;
 
-    .line 580
+    .line 591
     iget-object v0, p0, Landroid/view/Surface$HwuiContext;->mRenderNode:Landroid/view/RenderNode;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/RenderNode;->setClipToBounds(Z)Z
 
-    .line 581
+    .line 592
     iget-object v0, p0, Landroid/view/Surface$HwuiContext;->mRenderNode:Landroid/view/RenderNode;
 
     iget-wide v0, v0, Landroid/view/RenderNode;->mNativeRenderNode:J
@@ -66,7 +66,7 @@
 
     iput-wide v0, p0, Landroid/view/Surface$HwuiContext;->mHwuiRenderer:J
 
-    .line 582
+    .line 593
     return-void
 .end method
 
@@ -78,23 +78,23 @@
     .prologue
     const-wide/16 v2, 0x0
 
-    .line 607
+    .line 618
     iget-wide v0, p0, Landroid/view/Surface$HwuiContext;->mHwuiRenderer:J
 
     cmp-long v0, v0, v2
 
     if-eqz v0, :cond_0
 
-    .line 608
+    .line 619
     iget-wide v0, p0, Landroid/view/Surface$HwuiContext;->mHwuiRenderer:J
 
     # invokes: Landroid/view/Surface;->nHwuiDestroy(J)V
     invoke-static {v0, v1}, Landroid/view/Surface;->access$500(J)V
 
-    .line 609
+    .line 620
     iput-wide v2, p0, Landroid/view/Surface$HwuiContext;->mHwuiRenderer:J
 
-    .line 611
+    .line 622
     :cond_0
     return-void
 .end method
@@ -105,12 +105,12 @@
     .param p2, "height"    # I
 
     .prologue
-    .line 585
-    iget-object v0, p0, Landroid/view/Surface$HwuiContext;->mCanvas:Landroid/view/HardwareCanvas;
+    .line 596
+    iget-object v0, p0, Landroid/view/Surface$HwuiContext;->mCanvas:Landroid/view/GLES20Canvas;
 
     if-eqz v0, :cond_0
 
-    .line 586
+    .line 597
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Surface was already locked!"
@@ -119,18 +119,18 @@
 
     throw v0
 
-    .line 588
+    .line 599
     :cond_0
     iget-object v0, p0, Landroid/view/Surface$HwuiContext;->mRenderNode:Landroid/view/RenderNode;
 
-    invoke-virtual {v0, p1, p2}, Landroid/view/RenderNode;->start(II)Landroid/view/HardwareCanvas;
+    invoke-virtual {v0, p1, p2}, Landroid/view/RenderNode;->start(II)Landroid/view/GLES20Canvas;
 
     move-result-object v0
 
-    iput-object v0, p0, Landroid/view/Surface$HwuiContext;->mCanvas:Landroid/view/HardwareCanvas;
+    iput-object v0, p0, Landroid/view/Surface$HwuiContext;->mCanvas:Landroid/view/GLES20Canvas;
 
-    .line 589
-    iget-object v0, p0, Landroid/view/Surface$HwuiContext;->mCanvas:Landroid/view/HardwareCanvas;
+    .line 600
+    iget-object v0, p0, Landroid/view/Surface$HwuiContext;->mCanvas:Landroid/view/GLES20Canvas;
 
     return-object v0
 .end method
@@ -140,12 +140,12 @@
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 593
-    iget-object v0, p0, Landroid/view/Surface$HwuiContext;->mCanvas:Landroid/view/HardwareCanvas;
+    .line 604
+    iget-object v0, p0, Landroid/view/Surface$HwuiContext;->mCanvas:Landroid/view/GLES20Canvas;
 
     if-eq p1, v0, :cond_0
 
-    .line 594
+    .line 605
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "canvas object must be the same instance that was previously returned by lockCanvas"
@@ -154,26 +154,26 @@
 
     throw v0
 
-    .line 597
+    .line 608
     :cond_0
     iget-object v0, p0, Landroid/view/Surface$HwuiContext;->mRenderNode:Landroid/view/RenderNode;
 
-    iget-object v1, p0, Landroid/view/Surface$HwuiContext;->mCanvas:Landroid/view/HardwareCanvas;
+    iget-object v1, p0, Landroid/view/Surface$HwuiContext;->mCanvas:Landroid/view/GLES20Canvas;
 
-    invoke-virtual {v0, v1}, Landroid/view/RenderNode;->end(Landroid/view/HardwareCanvas;)V
+    invoke-virtual {v0, v1}, Landroid/view/RenderNode;->end(Landroid/view/GLES20Canvas;)V
 
-    .line 598
+    .line 609
     const/4 v0, 0x0
 
-    iput-object v0, p0, Landroid/view/Surface$HwuiContext;->mCanvas:Landroid/view/HardwareCanvas;
+    iput-object v0, p0, Landroid/view/Surface$HwuiContext;->mCanvas:Landroid/view/GLES20Canvas;
 
-    .line 599
+    .line 610
     iget-wide v0, p0, Landroid/view/Surface$HwuiContext;->mHwuiRenderer:J
 
     # invokes: Landroid/view/Surface;->nHwuiDraw(J)V
     invoke-static {v0, v1}, Landroid/view/Surface;->access$300(J)V
 
-    .line 600
+    .line 611
     return-void
 .end method
 
@@ -181,7 +181,7 @@
     .locals 4
 
     .prologue
-    .line 603
+    .line 614
     iget-wide v0, p0, Landroid/view/Surface$HwuiContext;->mHwuiRenderer:J
 
     iget-object v2, p0, Landroid/view/Surface$HwuiContext;->this$0:Landroid/view/Surface;
@@ -191,6 +191,6 @@
     # invokes: Landroid/view/Surface;->nHwuiSetSurface(JJ)V
     invoke-static {v0, v1, v2, v3}, Landroid/view/Surface;->access$400(JJ)V
 
-    .line 604
+    .line 615
     return-void
 .end method

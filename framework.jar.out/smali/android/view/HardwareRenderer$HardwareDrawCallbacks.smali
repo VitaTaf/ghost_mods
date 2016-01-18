@@ -15,8 +15,8 @@
 
 
 # virtual methods
-.method public abstract onHardwarePostDraw(Landroid/view/HardwareCanvas;)V
+.method public abstract onHardwarePostDraw(Landroid/view/GLES20Canvas;)V
 .end method
 
-.method public abstract onHardwarePreDraw(Landroid/view/HardwareCanvas;)V
+.method public abstract onHardwarePreDraw(Landroid/view/GLES20Canvas;)V
 .end method

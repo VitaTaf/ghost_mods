@@ -55,7 +55,7 @@
 
     .prologue
     .line 105
-    instance-of v0, p1, Landroid/view/HardwareCanvas;
+    instance-of v0, p1, Landroid/view/GLES20Canvas;
 
     if-nez v0, :cond_0
 
@@ -78,7 +78,7 @@
 
     move-result-object v1
 
-    const-string v2, " is not hardware accelerated"
+    const-string v2, " is not a DisplayList canvas"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -94,10 +94,10 @@
 
     .line 110
     :cond_0
-    check-cast p1, Landroid/view/HardwareCanvas;
+    check-cast p1, Landroid/view/GLES20Canvas;
 
     .end local p1    # "canvas":Landroid/graphics/Canvas;
-    invoke-virtual {p1, p2, p3}, Landroid/view/HardwareCanvas;->callDrawGLFunction2(J)I
+    invoke-virtual {p1, p2, p3}, Landroid/view/GLES20Canvas;->callDrawGLFunction2(J)I
 
     .line 111
     return-void

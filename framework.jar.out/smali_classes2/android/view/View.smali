@@ -6352,10 +6352,10 @@
     invoke-direct {p0, v1}, Landroid/view/View;->setBackgroundRenderNodeProperties(Landroid/view/RenderNode;)V
 
     .line 15435
-    check-cast p1, Landroid/view/HardwareCanvas;
+    check-cast p1, Landroid/view/GLES20Canvas;
 
     .end local p1    # "canvas":Landroid/graphics/Canvas;
-    invoke-virtual {p1, v1}, Landroid/view/HardwareCanvas;->drawRenderNode(Landroid/view/RenderNode;)V
+    invoke-virtual {p1, v1}, Landroid/view/GLES20Canvas;->drawRenderNode(Landroid/view/RenderNode;)V
 
     goto :goto_0
 
@@ -7129,12 +7129,12 @@
 
     .line 15472
     .local v2, "height":I
-    invoke-virtual {p2, v3, v2}, Landroid/view/RenderNode;->start(II)Landroid/view/HardwareCanvas;
+    invoke-virtual {p2, v3, v2}, Landroid/view/RenderNode;->start(II)Landroid/view/GLES20Canvas;
 
     move-result-object v1
 
     .line 15478
-    .local v1, "canvas":Landroid/view/HardwareCanvas;
+    .local v1, "canvas":Landroid/view/GLES20Canvas;
     iget v4, v0, Landroid/graphics/Rect;->left:I
 
     neg-int v4, v4
@@ -7147,7 +7147,7 @@
 
     int-to-float v5, v5
 
-    invoke-virtual {v1, v4, v5}, Landroid/view/HardwareCanvas;->translate(FF)V
+    invoke-virtual {v1, v4, v5}, Landroid/view/GLES20Canvas;->translate(FF)V
 
     .line 15481
     :try_start_0
@@ -7156,7 +7156,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 15483
-    invoke-virtual {p2, v1}, Landroid/view/RenderNode;->end(Landroid/view/HardwareCanvas;)V
+    invoke-virtual {p2, v1}, Landroid/view/RenderNode;->end(Landroid/view/GLES20Canvas;)V
 
     .line 15487
     iget v4, v0, Landroid/graphics/Rect;->left:I
@@ -7193,7 +7193,7 @@
     :catchall_0
     move-exception v4
 
-    invoke-virtual {p2, v1}, Landroid/view/RenderNode;->end(Landroid/view/HardwareCanvas;)V
+    invoke-virtual {p2, v1}, Landroid/view/RenderNode;->end(Landroid/view/GLES20Canvas;)V
 
     throw v4
 .end method
@@ -9627,17 +9627,17 @@
 
     .line 14158
     .local v4, "layerType":I
-    invoke-virtual {v5, v6, v2}, Landroid/view/RenderNode;->start(II)Landroid/view/HardwareCanvas;
+    invoke-virtual {v5, v6, v2}, Landroid/view/RenderNode;->start(II)Landroid/view/GLES20Canvas;
 
     move-result-object v1
 
     .line 14159
-    .local v1, "canvas":Landroid/view/HardwareCanvas;
+    .local v1, "canvas":Landroid/view/GLES20Canvas;
     iget-object v7, p0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
 
     iget-boolean v7, v7, Landroid/view/View$AttachInfo;->mHighContrastText:Z
 
-    invoke-virtual {v1, v7}, Landroid/view/HardwareCanvas;->setHighContrastText(Z)V
+    invoke-virtual {v1, v7}, Landroid/view/GLES20Canvas;->setHighContrastText(Z)V
 
     .line 14162
     :try_start_0
@@ -9662,14 +9662,14 @@
 
     iget-object v9, p0, Landroid/view/View;->mLayerPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v1, v3, v7, v8, v9}, Landroid/view/HardwareCanvas;->drawHardwareLayer(Landroid/view/HardwareLayer;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v1, v3, v7, v8, v9}, Landroid/view/GLES20Canvas;->drawHardwareLayer(Landroid/view/HardwareLayer;FFLandroid/graphics/Paint;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 14189
     :cond_3
     :goto_1
-    invoke-virtual {v5, v1}, Landroid/view/RenderNode;->end(Landroid/view/HardwareCanvas;)V
+    invoke-virtual {v5, v1}, Landroid/view/RenderNode;->end(Landroid/view/GLES20Canvas;)V
 
     .line 14190
     invoke-virtual {p0, v5}, Landroid/view/View;->setDisplayListProperties(Landroid/view/RenderNode;)V
@@ -9704,7 +9704,7 @@
 
     iget-object v9, p0, Landroid/view/View;->mLayerPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v1, v0, v7, v8, v9}, Landroid/view/HardwareCanvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v1, v0, v7, v8, v9}, Landroid/view/GLES20Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -9716,7 +9716,7 @@
     :catchall_0
     move-exception v7
 
-    invoke-virtual {v5, v1}, Landroid/view/RenderNode;->end(Landroid/view/HardwareCanvas;)V
+    invoke-virtual {v5, v1}, Landroid/view/RenderNode;->end(Landroid/view/GLES20Canvas;)V
 
     .line 14190
     invoke-virtual {p0, v5}, Landroid/view/View;->setDisplayListProperties(Landroid/view/RenderNode;)V
@@ -9742,7 +9742,7 @@
 
     int-to-float v8, v8
 
-    invoke-virtual {v1, v7, v8}, Landroid/view/HardwareCanvas;->translate(FF)V
+    invoke-virtual {v1, v7, v8}, Landroid/view/GLES20Canvas;->translate(FF)V
 
     .line 14175
     iget v7, p0, Landroid/view/View;->mPrivateFlags:I
@@ -9803,7 +9803,7 @@
     goto :goto_1
 
     .line 14193
-    .end local v1    # "canvas":Landroid/view/HardwareCanvas;
+    .end local v1    # "canvas":Landroid/view/GLES20Canvas;
     .end local v2    # "height":I
     .end local v3    # "layer":Landroid/view/HardwareLayer;
     .end local v4    # "layerType":I
@@ -16834,7 +16834,7 @@
     move-object/from16 v4, p1
 
     .line 15139
-    check-cast v4, Landroid/view/HardwareCanvas;
+    check-cast v4, Landroid/view/GLES20Canvas;
 
     const/4 v5, 0x0
 
@@ -16846,7 +16846,7 @@
 
     move-object/from16 v0, v35
 
-    invoke-virtual {v4, v0, v5, v6, v7}, Landroid/view/HardwareCanvas;->drawHardwareLayer(Landroid/view/HardwareLayer;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v4, v0, v5, v6, v7}, Landroid/view/GLES20Canvas;->drawHardwareLayer(Landroid/view/HardwareLayer;FFLandroid/graphics/Paint;)V
 
     .line 15140
     move-object/from16 v0, p0
@@ -17513,7 +17513,7 @@
     move-object/from16 v4, p1
 
     .line 15162
-    check-cast v4, Landroid/view/HardwareCanvas;
+    check-cast v4, Landroid/view/GLES20Canvas;
 
     const/4 v5, 0x0
 
@@ -17521,7 +17521,7 @@
 
     move/from16 v1, v30
 
-    invoke-virtual {v4, v0, v5, v1}, Landroid/view/HardwareCanvas;->drawRenderNode(Landroid/view/RenderNode;Landroid/graphics/Rect;I)I
+    invoke-virtual {v4, v0, v5, v1}, Landroid/view/GLES20Canvas;->drawRenderNode(Landroid/view/RenderNode;Landroid/graphics/Rect;I)I
 
     goto/16 :goto_13
 

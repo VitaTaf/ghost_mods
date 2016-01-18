@@ -303,9 +303,9 @@
     return-void
 .end method
 
-.method private drawHardware(Landroid/view/HardwareCanvas;)V
+.method private drawHardware(Landroid/view/GLES20Canvas;)V
     .locals 8
-    .param p1, "c"    # Landroid/view/HardwareCanvas;
+    .param p1, "c"    # Landroid/view/GLES20Canvas;
 
     .prologue
     .line 135
@@ -330,7 +330,7 @@
 
     move-object v0, p1
 
-    invoke-virtual/range {v0 .. v7}, Landroid/view/HardwareCanvas;->drawRoundRect(Landroid/graphics/CanvasProperty;Landroid/graphics/CanvasProperty;Landroid/graphics/CanvasProperty;Landroid/graphics/CanvasProperty;Landroid/graphics/CanvasProperty;Landroid/graphics/CanvasProperty;Landroid/graphics/CanvasProperty;)V
+    invoke-virtual/range {v0 .. v7}, Landroid/view/GLES20Canvas;->drawRoundRect(Landroid/graphics/CanvasProperty;Landroid/graphics/CanvasProperty;Landroid/graphics/CanvasProperty;Landroid/graphics/CanvasProperty;Landroid/graphics/CanvasProperty;Landroid/graphics/CanvasProperty;Landroid/graphics/CanvasProperty;)V
 
     .line 139
     :cond_0
@@ -1388,10 +1388,10 @@
     if-eqz v0, :cond_0
 
     .line 109
-    check-cast p1, Landroid/view/HardwareCanvas;
+    check-cast p1, Landroid/view/GLES20Canvas;
 
     .end local p1    # "canvas":Landroid/graphics/Canvas;
-    invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/policy/KeyButtonRipple;->drawHardware(Landroid/view/HardwareCanvas;)V
+    invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/policy/KeyButtonRipple;->drawHardware(Landroid/view/GLES20Canvas;)V
 
     .line 113
     :goto_0
