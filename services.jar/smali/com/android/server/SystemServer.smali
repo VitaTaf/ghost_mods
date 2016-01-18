@@ -1249,7 +1249,7 @@
     const/16 v36, 0x0
 
     .line 455
-    .local v36, "audioService":Landroid/media/AudioService;
+    .local v36, "audioService":Lcom/android/server/audio/AudioService;
     const/16 v73, 0x0
 
     .line 457
@@ -2829,17 +2829,17 @@
     invoke-static {v4, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 895
-    new-instance v37, Landroid/media/AudioService;
+    new-instance v37, Lcom/android/server/audio/AudioService;
 
     move-object/from16 v0, v37
 
-    invoke-direct {v0, v3}, Landroid/media/AudioService;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v3}, Lcom/android/server/audio/AudioService;-><init>(Landroid/content/Context;)V
     :try_end_2f
     .catch Ljava/lang/Throwable; {:try_start_2f .. :try_end_2f} :catch_1c
 
     .line 896
-    .end local v36    # "audioService":Landroid/media/AudioService;
-    .local v37, "audioService":Landroid/media/AudioService;
+    .end local v36    # "audioService":Lcom/android/server/audio/AudioService;
+    .local v37, "audioService":Lcom/android/server/audio/AudioService;
     :try_start_30
     const-string v4, "audio"
 
@@ -2852,8 +2852,8 @@
     move-object/from16 v36, v37
 
     .line 902
-    .end local v37    # "audioService":Landroid/media/AudioService;
-    .restart local v36    # "audioService":Landroid/media/AudioService;
+    .end local v37    # "audioService":Lcom/android/server/audio/AudioService;
+    .restart local v36    # "audioService":Lcom/android/server/audio/AudioService;
     :cond_13
     :goto_20
     if-nez v55, :cond_14
@@ -3731,7 +3731,7 @@
     move-object/from16 v17, v36
 
     .line 1168
-    .local v17, "audioServiceF":Landroid/media/AudioService;
+    .local v17, "audioServiceF":Lcom/android/server/audio/AudioService;
     move-object/from16 v30, v73
 
     .line 1175
@@ -3746,7 +3746,7 @@
 
     move-object v10, v3
 
-    invoke-direct/range {v8 .. v30}, Lcom/android/server/SystemServer$2;-><init>(Lcom/android/server/SystemServer;Landroid/content/Context;Lcom/android/server/MountService;Lcom/android/server/NetworkScoreService;Lcom/android/server/NetworkManagementService;Lcom/android/server/net/NetworkStatsService;Lcom/android/server/net/NetworkPolicyManagerService;Lcom/android/server/ConnectivityService;Landroid/media/AudioService;Lcom/android/server/wallpaper/WallpaperManagerService;Lcom/android/server/InputMethodManagerService;Lcom/android/server/statusbar/StatusBarManagerService;Lcom/android/server/LocationManagerService;Lcom/android/server/CountryDetectorService;Lcom/android/server/NetworkTimeUpdateService;Lcom/android/server/CommonTimeManagementService;Lcom/android/server/TextServicesManagerService;Lcom/android/server/AssetAtlasService;Lcom/android/server/input/InputManagerService;Lcom/android/server/TelephonyRegistry;Lcom/android/server/media/MediaRouterService;Lcom/android/server/MmsServiceBroker;)V
+    invoke-direct/range {v8 .. v30}, Lcom/android/server/SystemServer$2;-><init>(Lcom/android/server/SystemServer;Landroid/content/Context;Lcom/android/server/MountService;Lcom/android/server/NetworkScoreService;Lcom/android/server/NetworkManagementService;Lcom/android/server/net/NetworkStatsService;Lcom/android/server/net/NetworkPolicyManagerService;Lcom/android/server/ConnectivityService;Lcom/android/server/audio/AudioService;Lcom/android/server/wallpaper/WallpaperManagerService;Lcom/android/server/InputMethodManagerService;Lcom/android/server/statusbar/StatusBarManagerService;Lcom/android/server/LocationManagerService;Lcom/android/server/CountryDetectorService;Lcom/android/server/NetworkTimeUpdateService;Lcom/android/server/CommonTimeManagementService;Lcom/android/server/TextServicesManagerService;Lcom/android/server/AssetAtlasService;Lcom/android/server/input/InputManagerService;Lcom/android/server/TelephonyRegistry;Lcom/android/server/media/MediaRouterService;Lcom/android/server/MmsServiceBroker;)V
 
     invoke-virtual {v4, v8}, Lcom/android/server/am/ActivityManagerService;->systemReady(Ljava/lang/Runnable;)V
 
@@ -3761,7 +3761,7 @@
     .end local v14    # "networkStatsF":Lcom/android/server/net/NetworkStatsService;
     .end local v15    # "networkPolicyF":Lcom/android/server/net/NetworkPolicyManagerService;
     .end local v16    # "connectivityF":Lcom/android/server/ConnectivityService;
-    .end local v17    # "audioServiceF":Landroid/media/AudioService;
+    .end local v17    # "audioServiceF":Lcom/android/server/audio/AudioService;
     .end local v18    # "wallpaperF":Lcom/android/server/wallpaper/WallpaperManagerService;
     .end local v19    # "immF":Lcom/android/server/InputMethodManagerService;
     .end local v20    # "statusBarF":Lcom/android/server/statusbar/StatusBarManagerService;
@@ -4818,15 +4818,15 @@
     goto/16 :goto_43
 
     .line 897
-    .end local v36    # "audioService":Landroid/media/AudioService;
-    .restart local v37    # "audioService":Landroid/media/AudioService;
+    .end local v36    # "audioService":Lcom/android/server/audio/AudioService;
+    .restart local v37    # "audioService":Lcom/android/server/audio/AudioService;
     :catch_31
     move-exception v59
 
     move-object/from16 v36, v37
 
-    .end local v37    # "audioService":Landroid/media/AudioService;
-    .restart local v36    # "audioService":Landroid/media/AudioService;
+    .end local v37    # "audioService":Lcom/android/server/audio/AudioService;
+    .restart local v36    # "audioService":Lcom/android/server/audio/AudioService;
     goto/16 :goto_42
 
     .line 887

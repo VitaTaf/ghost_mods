@@ -38,6 +38,10 @@
 
 .field public static final DEAD_OBJECT:I = -0x6
 
+.field public static final DEFAULT_MUTE_STREAMS_AFFECTED:I = 0x2e
+
+.field public static DEFAULT_STREAM_VOLUME:[I = null
+
 .field public static final DEVICE_ALL_HDMI_SYSTEM_AUDIO_AND_SPEAKER:I = 0x2c0002
 
 .field public static final DEVICE_BIT_DEFAULT:I = 0x40000000
@@ -308,6 +312,8 @@
 
 .field public static final INVALID_OPERATION:I = -0x3
 
+.field public static final IN_VOICE_COMM_FOCUS_ID:Ljava/lang/String; = "AudioFocus_For_Phone_Ring_And_Calls"
+
 .field public static final MODE_CURRENT:I = -0x1
 
 .field public static final MODE_INVALID:I = -0x2
@@ -341,6 +347,14 @@
 .field public static final PHONE_STATE_OFFCALL:I = 0x0
 
 .field public static final PHONE_STATE_RINGING:I = 0x1
+
+.field public static final PLATFORM_DEFAULT:I = 0x0
+
+.field public static final PLATFORM_TELEVISION:I = 0x2
+
+.field public static final PLATFORM_VOICE:I = 0x1
+
+.field public static final PLAY_SOUND_DELAY:I = 0x12c
 
 .field public static final ROUTE_ALL:I = -0x1
     .annotation runtime Ljava/lang/Deprecated;
@@ -387,6 +401,8 @@
 
 .field public static final STREAM_MUSIC:I = 0x3
 
+.field public static final STREAM_NAMES:[Ljava/lang/String;
+
 .field public static final STREAM_NOTIFICATION:I = 0x5
 
 .field public static final STREAM_RING:I = 0x2
@@ -411,6 +427,101 @@
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 4
+
+    .prologue
+    const/16 v3, 0xa
+
+    .line 71
+    new-array v0, v3, [Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    const-string v2, "STREAM_VOICE_CALL"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x1
+
+    const-string v2, "STREAM_SYSTEM"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x2
+
+    const-string v2, "STREAM_RING"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x3
+
+    const-string v2, "STREAM_MUSIC"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x4
+
+    const-string v2, "STREAM_ALARM"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x5
+
+    const-string v2, "STREAM_NOTIFICATION"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x6
+
+    const-string v2, "STREAM_BLUETOOTH_SCO"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x7
+
+    const-string v2, "STREAM_SYSTEM_ENFORCED"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x8
+
+    const-string v2, "STREAM_DTMF"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x9
+
+    const-string v2, "STREAM_TTS"
+
+    aput-object v2, v0, v1
+
+    sput-object v0, Landroid/media/AudioSystem;->STREAM_NAMES:[Ljava/lang/String;
+
+    .line 660
+    new-array v0, v3, [I
+
+    fill-array-data v0, :array_0
+
+    sput-object v0, Landroid/media/AudioSystem;->DEFAULT_STREAM_VOLUME:[I
+
+    return-void
+
+    :array_0
+    .array-data 4
+        0x4
+        0x7
+        0x5
+        0xb
+        0x6
+        0x5
+        0x7
+        0x7
+        0xb
+        0xb
+    .end array-data
+.end method
+
 .method public constructor <init>()V
     .locals 0
 
@@ -480,6 +591,19 @@
 .end method
 
 .method public static native getAudioHwSyncForSession(I)I
+.end method
+
+.method public static getDefaultStreamVolume(I)I
+    .locals 1
+    .param p0, "streamType"    # I
+
+    .prologue
+    .line 657
+    sget-object v0, Landroid/media/AudioSystem;->DEFAULT_STREAM_VOLUME:[I
+
+    aget v0, v0, p0
+
+    return v0
 .end method
 
 .method public static native getDeviceConnectionState(ILjava/lang/String;)I
@@ -867,6 +991,57 @@
 .method public static native getParameters(Ljava/lang/String;)Ljava/lang/String;
 .end method
 
+.method public static getPlatformType(Landroid/content/Context;)I
+    .locals 2
+    .param p0, "context"    # Landroid/content/Context;
+
+    .prologue
+    .line 695
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x112004e
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 696
+    const/4 v0, 0x1
+
+    .line 700
+    :goto_0
+    return v0
+
+    .line 697
+    :cond_0
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v0
+
+    const-string v1, "android.software.leanback"
+
+    invoke-virtual {v0, v1}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 698
+    const/4 v0, 0x2
+
+    goto :goto_0
+
+    .line 700
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method public static native getPrimaryOutputFrameCount()I
 .end method
 
@@ -874,6 +1049,37 @@
 .end method
 
 .method public static native getStreamVolumeIndex(II)I
+.end method
+
+.method public static getValueForVibrateSetting(III)I
+    .locals 2
+    .param p0, "existingValue"    # I
+    .param p1, "vibrateType"    # I
+    .param p2, "vibrateSetting"    # I
+
+    .prologue
+    .line 648
+    const/4 v0, 0x3
+
+    mul-int/lit8 v1, p1, 0x2
+
+    shl-int/2addr v0, v1
+
+    xor-int/lit8 v0, v0, -0x1
+
+    and-int/2addr p0, v0
+
+    .line 651
+    and-int/lit8 v0, p2, 0x3
+
+    mul-int/lit8 v1, p1, 0x2
+
+    shl-int/2addr v0, v1
+
+    or-int/2addr p0, v0
+
+    .line 653
+    return p0
 .end method
 
 .method public static native initStreamVolume(III)I
@@ -1003,4 +1209,59 @@
 .end method
 
 .method public static native setStreamVolumeIndex(III)I
+.end method
+
+.method public static streamToString(I)Ljava/lang/String;
+    .locals 2
+    .param p0, "stream"    # I
+
+    .prologue
+    .line 674
+    if-ltz p0, :cond_0
+
+    sget-object v0, Landroid/media/AudioSystem;->STREAM_NAMES:[Ljava/lang/String;
+
+    array-length v0, v0
+
+    if-ge p0, v0, :cond_0
+
+    sget-object v0, Landroid/media/AudioSystem;->STREAM_NAMES:[Ljava/lang/String;
+
+    aget-object v0, v0, p0
+
+    .line 676
+    :goto_0
+    return-object v0
+
+    .line 675
+    :cond_0
+    const/high16 v0, -0x80000000
+
+    if-ne p0, v0, :cond_1
+
+    const-string v0, "USE_DEFAULT_STREAM_TYPE"
+
+    goto :goto_0
+
+    .line 676
+    :cond_1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "UNKNOWN_STREAM_"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
 .end method

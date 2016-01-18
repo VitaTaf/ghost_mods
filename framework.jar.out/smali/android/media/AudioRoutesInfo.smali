@@ -18,21 +18,21 @@
     .end annotation
 .end field
 
-.field static final MAIN_DOCK_SPEAKERS:I = 0x4
+.field public static final MAIN_DOCK_SPEAKERS:I = 0x4
 
-.field static final MAIN_HDMI:I = 0x8
+.field public static final MAIN_HDMI:I = 0x8
 
-.field static final MAIN_HEADPHONES:I = 0x2
+.field public static final MAIN_HEADPHONES:I = 0x2
 
-.field static final MAIN_HEADSET:I = 0x1
+.field public static final MAIN_HEADSET:I = 0x1
 
-.field static final MAIN_SPEAKER:I
+.field public static final MAIN_SPEAKER:I
 
 
 # instance fields
-.field mBluetoothName:Ljava/lang/CharSequence;
+.field public bluetoothName:Ljava/lang/CharSequence;
 
-.field mMainType:I
+.field public mainType:I
 
 
 # direct methods
@@ -60,7 +60,7 @@
     .line 35
     const/4 v0, 0x0
 
-    iput v0, p0, Landroid/media/AudioRoutesInfo;->mMainType:I
+    iput v0, p0, Landroid/media/AudioRoutesInfo;->mainType:I
 
     .line 38
     return-void
@@ -77,17 +77,17 @@
     .line 35
     const/4 v0, 0x0
 
-    iput v0, p0, Landroid/media/AudioRoutesInfo;->mMainType:I
+    iput v0, p0, Landroid/media/AudioRoutesInfo;->mainType:I
 
     .line 41
-    iget-object v0, p1, Landroid/media/AudioRoutesInfo;->mBluetoothName:Ljava/lang/CharSequence;
+    iget-object v0, p1, Landroid/media/AudioRoutesInfo;->bluetoothName:Ljava/lang/CharSequence;
 
-    iput-object v0, p0, Landroid/media/AudioRoutesInfo;->mBluetoothName:Ljava/lang/CharSequence;
+    iput-object v0, p0, Landroid/media/AudioRoutesInfo;->bluetoothName:Ljava/lang/CharSequence;
 
     .line 42
-    iget v0, p1, Landroid/media/AudioRoutesInfo;->mMainType:I
+    iget v0, p1, Landroid/media/AudioRoutesInfo;->mainType:I
 
-    iput v0, p0, Landroid/media/AudioRoutesInfo;->mMainType:I
+    iput v0, p0, Landroid/media/AudioRoutesInfo;->mainType:I
 
     .line 43
     return-void
@@ -104,7 +104,7 @@
     .line 35
     const/4 v0, 0x0
 
-    iput v0, p0, Landroid/media/AudioRoutesInfo;->mMainType:I
+    iput v0, p0, Landroid/media/AudioRoutesInfo;->mainType:I
 
     .line 46
     sget-object v0, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
@@ -115,14 +115,14 @@
 
     check-cast v0, Ljava/lang/CharSequence;
 
-    iput-object v0, p0, Landroid/media/AudioRoutesInfo;->mBluetoothName:Ljava/lang/CharSequence;
+    iput-object v0, p0, Landroid/media/AudioRoutesInfo;->bluetoothName:Ljava/lang/CharSequence;
 
     .line 47
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    iput v0, p0, Landroid/media/AudioRoutesInfo;->mMainType:I
+    iput v0, p0, Landroid/media/AudioRoutesInfo;->mainType:I
 
     .line 48
     return-void
@@ -147,12 +147,12 @@
 
     .prologue
     .line 57
-    iget-object v0, p0, Landroid/media/AudioRoutesInfo;->mBluetoothName:Ljava/lang/CharSequence;
+    iget-object v0, p0, Landroid/media/AudioRoutesInfo;->bluetoothName:Ljava/lang/CharSequence;
 
     invoke-static {v0, p1, p2}, Landroid/text/TextUtils;->writeToParcel(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V
 
     .line 58
-    iget v0, p0, Landroid/media/AudioRoutesInfo;->mMainType:I
+    iget v0, p0, Landroid/media/AudioRoutesInfo;->mainType:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 

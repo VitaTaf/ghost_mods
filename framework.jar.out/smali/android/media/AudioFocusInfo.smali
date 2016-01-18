@@ -48,7 +48,7 @@
     return-void
 .end method
 
-.method constructor <init>(Landroid/media/AudioAttributes;Ljava/lang/String;Ljava/lang/String;III)V
+.method public constructor <init>(Landroid/media/AudioAttributes;Ljava/lang/String;Ljava/lang/String;III)V
     .locals 1
     .param p1, "aa"    # Landroid/media/AudioAttributes;
     .param p2, "clientId"    # Ljava/lang/String;
@@ -109,7 +109,7 @@
 
 
 # virtual methods
-.method clearLossReceived()V
+.method public clearLossReceived()V
     .locals 1
 
     .prologue

@@ -1015,29 +1015,29 @@
     const/4 v6, 0x1
 
     .line 174
-    iget v4, p1, Landroid/media/AudioRoutesInfo;->mMainType:I
+    iget v4, p1, Landroid/media/AudioRoutesInfo;->mainType:I
 
     iget-object v5, p0, Landroid/media/MediaRouter$Static;->mCurAudioRoutesInfo:Landroid/media/AudioRoutesInfo;
 
-    iget v5, v5, Landroid/media/AudioRoutesInfo;->mMainType:I
+    iget v5, v5, Landroid/media/AudioRoutesInfo;->mainType:I
 
     if-eq v4, v5, :cond_1
 
     .line 175
     iget-object v4, p0, Landroid/media/MediaRouter$Static;->mCurAudioRoutesInfo:Landroid/media/AudioRoutesInfo;
 
-    iget v5, p1, Landroid/media/AudioRoutesInfo;->mMainType:I
+    iget v5, p1, Landroid/media/AudioRoutesInfo;->mainType:I
 
-    iput v5, v4, Landroid/media/AudioRoutesInfo;->mMainType:I
+    iput v5, v4, Landroid/media/AudioRoutesInfo;->mainType:I
 
     .line 177
-    iget v4, p1, Landroid/media/AudioRoutesInfo;->mMainType:I
+    iget v4, p1, Landroid/media/AudioRoutesInfo;->mainType:I
 
     and-int/lit8 v4, v4, 0x2
 
     if-nez v4, :cond_0
 
-    iget v4, p1, Landroid/media/AudioRoutesInfo;->mMainType:I
+    iget v4, p1, Landroid/media/AudioRoutesInfo;->mainType:I
 
     and-int/lit8 v4, v4, 0x1
 
@@ -1068,15 +1068,15 @@
     :cond_1
     iget-object v4, p0, Landroid/media/MediaRouter$Static;->mCurAudioRoutesInfo:Landroid/media/AudioRoutesInfo;
 
-    iget v2, v4, Landroid/media/AudioRoutesInfo;->mMainType:I
+    iget v2, v4, Landroid/media/AudioRoutesInfo;->mainType:I
 
     .line 193
     .local v2, "mainType":I
-    iget-object v4, p1, Landroid/media/AudioRoutesInfo;->mBluetoothName:Ljava/lang/CharSequence;
+    iget-object v4, p1, Landroid/media/AudioRoutesInfo;->bluetoothName:Ljava/lang/CharSequence;
 
     iget-object v5, p0, Landroid/media/MediaRouter$Static;->mCurAudioRoutesInfo:Landroid/media/AudioRoutesInfo;
 
-    iget-object v5, v5, Landroid/media/AudioRoutesInfo;->mBluetoothName:Ljava/lang/CharSequence;
+    iget-object v5, v5, Landroid/media/AudioRoutesInfo;->bluetoothName:Ljava/lang/CharSequence;
 
     invoke-static {v4, v5}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -1087,14 +1087,14 @@
     .line 194
     iget-object v4, p0, Landroid/media/MediaRouter$Static;->mCurAudioRoutesInfo:Landroid/media/AudioRoutesInfo;
 
-    iget-object v5, p1, Landroid/media/AudioRoutesInfo;->mBluetoothName:Ljava/lang/CharSequence;
+    iget-object v5, p1, Landroid/media/AudioRoutesInfo;->bluetoothName:Ljava/lang/CharSequence;
 
-    iput-object v5, v4, Landroid/media/AudioRoutesInfo;->mBluetoothName:Ljava/lang/CharSequence;
+    iput-object v5, v4, Landroid/media/AudioRoutesInfo;->bluetoothName:Ljava/lang/CharSequence;
 
     .line 195
     iget-object v4, p0, Landroid/media/MediaRouter$Static;->mCurAudioRoutesInfo:Landroid/media/AudioRoutesInfo;
 
-    iget-object v4, v4, Landroid/media/AudioRoutesInfo;->mBluetoothName:Ljava/lang/CharSequence;
+    iget-object v4, v4, Landroid/media/AudioRoutesInfo;->bluetoothName:Ljava/lang/CharSequence;
 
     if-eqz v4, :cond_8
 
@@ -1118,7 +1118,7 @@
     .local v1, "info":Landroid/media/MediaRouter$RouteInfo;
     iget-object v4, p0, Landroid/media/MediaRouter$Static;->mCurAudioRoutesInfo:Landroid/media/AudioRoutesInfo;
 
-    iget-object v4, v4, Landroid/media/AudioRoutesInfo;->mBluetoothName:Ljava/lang/CharSequence;
+    iget-object v4, v4, Landroid/media/AudioRoutesInfo;->bluetoothName:Ljava/lang/CharSequence;
 
     iput-object v4, v1, Landroid/media/MediaRouter$RouteInfo;->mName:Ljava/lang/CharSequence;
 
@@ -1189,7 +1189,7 @@
     .line 180
     .end local v2    # "mainType":I
     :cond_4
-    iget v4, p1, Landroid/media/AudioRoutesInfo;->mMainType:I
+    iget v4, p1, Landroid/media/AudioRoutesInfo;->mainType:I
 
     and-int/lit8 v4, v4, 0x4
 
@@ -1204,7 +1204,7 @@
     .line 182
     .end local v3    # "name":I
     :cond_5
-    iget v4, p1, Landroid/media/AudioRoutesInfo;->mMainType:I
+    iget v4, p1, Landroid/media/AudioRoutesInfo;->mainType:I
 
     and-int/lit8 v4, v4, 0x8
 
@@ -1234,7 +1234,7 @@
 
     iget-object v5, p0, Landroid/media/MediaRouter$Static;->mCurAudioRoutesInfo:Landroid/media/AudioRoutesInfo;
 
-    iget-object v5, v5, Landroid/media/AudioRoutesInfo;->mBluetoothName:Ljava/lang/CharSequence;
+    iget-object v5, v5, Landroid/media/AudioRoutesInfo;->bluetoothName:Ljava/lang/CharSequence;
 
     iput-object v5, v4, Landroid/media/MediaRouter$RouteInfo;->mName:Ljava/lang/CharSequence;
 

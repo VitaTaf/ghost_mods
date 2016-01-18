@@ -73,7 +73,7 @@
     .end annotation
 .end field
 
-.field private mUsbAudioManager:Lcom/android/server/usb/UsbAudioManager;
+.field private mUsbAlsaManager:Lcom/android/server/usb/UsbAlsaManager;
 
 
 # direct methods
@@ -132,11 +132,11 @@
     iput-object v0, p0, Lcom/android/server/usb/UsbHostManager;->mHostBlacklist:[Ljava/lang/String;
 
     .line 72
-    new-instance v0, Lcom/android/server/usb/UsbAudioManager;
+    new-instance v0, Lcom/android/server/usb/UsbAlsaManager;
 
-    invoke-direct {v0, p1}, Lcom/android/server/usb/UsbAudioManager;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, p1}, Lcom/android/server/usb/UsbAlsaManager;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/android/server/usb/UsbHostManager;->mUsbAudioManager:Lcom/android/server/usb/UsbAudioManager;
+    iput-object v0, p0, Lcom/android/server/usb/UsbHostManager;->mUsbAlsaManager:Lcom/android/server/usb/UsbAlsaManager;
 
     .line 73
     return-void
@@ -617,11 +617,11 @@
     invoke-virtual {v0, v2}, Lcom/android/server/usb/UsbSettingsManager;->deviceAttached(Landroid/hardware/usb/UsbDevice;)V
 
     .line 225
-    iget-object v0, p0, Lcom/android/server/usb/UsbHostManager;->mUsbAudioManager:Lcom/android/server/usb/UsbAudioManager;
+    iget-object v0, p0, Lcom/android/server/usb/UsbHostManager;->mUsbAlsaManager:Lcom/android/server/usb/UsbAlsaManager;
 
     iget-object v2, p0, Lcom/android/server/usb/UsbHostManager;->mNewDevice:Landroid/hardware/usb/UsbDevice;
 
-    invoke-virtual {v0, v2}, Lcom/android/server/usb/UsbAudioManager;->deviceAdded(Landroid/hardware/usb/UsbDevice;)V
+    invoke-virtual {v0, v2}, Lcom/android/server/usb/UsbAlsaManager;->deviceAdded(Landroid/hardware/usb/UsbDevice;)V
 
     .line 229
     :goto_0
@@ -812,10 +812,10 @@
     .local v0, "device":Landroid/hardware/usb/UsbDevice;
     if-eqz v0, :cond_0
 
-    .line 241
-    iget-object v1, p0, Lcom/android/server/usb/UsbHostManager;->mUsbAudioManager:Lcom/android/server/usb/UsbAudioManager;
+    .line 243
+    iget-object v1, p0, Lcom/android/server/usb/UsbHostManager;->mUsbAlsaManager:Lcom/android/server/usb/UsbAlsaManager;
 
-    invoke-virtual {v1, v0}, Lcom/android/server/usb/UsbAudioManager;->deviceRemoved(Landroid/hardware/usb/UsbDevice;)V
+    invoke-virtual {v1, v0}, Lcom/android/server/usb/UsbAlsaManager;->deviceRemoved(Landroid/hardware/usb/UsbDevice;)V
 
     .line 242
     invoke-direct {p0}, Lcom/android/server/usb/UsbHostManager;->getCurrentSettings()Lcom/android/server/usb/UsbSettingsManager;
@@ -946,10 +946,10 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 293
-    iget-object v2, p0, Lcom/android/server/usb/UsbHostManager;->mUsbAudioManager:Lcom/android/server/usb/UsbAudioManager;
+    .line 297
+    iget-object v2, p0, Lcom/android/server/usb/UsbHostManager;->mUsbAlsaManager:Lcom/android/server/usb/UsbAlsaManager;
 
-    invoke-virtual {v2, p1, p2}, Lcom/android/server/usb/UsbAudioManager;->dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;)V
+    invoke-virtual {v2, p1, p2}, Lcom/android/server/usb/UsbAlsaManager;->dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;)V
 
     .line 294
     return-void
@@ -1167,6 +1167,11 @@
 
     .prologue
     .line 248
+    iget-object v1, p0, Lcom/android/server/usb/UsbHostManager;->mUsbAlsaManager:Lcom/android/server/usb/UsbAlsaManager;
+
+    invoke-virtual {v1}, Lcom/android/server/usb/UsbAlsaManager;->systemReady()V
+
+    .line 252
     iget-object v2, p0, Lcom/android/server/usb/UsbHostManager;->mLock:Ljava/lang/Object;
 
     monitor-enter v2

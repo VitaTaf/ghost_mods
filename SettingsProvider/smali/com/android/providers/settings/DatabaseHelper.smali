@@ -2585,7 +2585,7 @@
 
     const/4 v3, 0x2
 
-    invoke-static {v1, v2, v3}, Landroid/media/AudioService;->getValueForVibrateSetting(III)I
+    invoke-static {v1, v2, v3}, Landroid/media/AudioSystem;->getValueForVibrateSetting(III)I
 
     move-result v1
 
@@ -2594,7 +2594,7 @@
 
     const/4 v3, 0x2
 
-    invoke-static {v1, v2, v3}, Landroid/media/AudioService;->getValueForVibrateSetting(III)I
+    invoke-static {v1, v2, v3}, Landroid/media/AudioSystem;->getValueForVibrateSetting(III)I
 
     move-result v2
 
@@ -2744,7 +2744,7 @@
 
     const/4 v3, 0x3
 
-    invoke-static {v3}, Landroid/media/AudioService;->getDefaultStreamVolume(I)I
+    invoke-static {v3}, Landroid/media/AudioSystem;->getDefaultStreamVolume(I)I
 
     move-result v3
 
@@ -2759,7 +2759,7 @@
 
     const/4 v3, 0x2
 
-    invoke-static {v3}, Landroid/media/AudioService;->getDefaultStreamVolume(I)I
+    invoke-static {v3}, Landroid/media/AudioSystem;->getDefaultStreamVolume(I)I
 
     move-result v3
 
@@ -2774,7 +2774,7 @@
 
     const/4 v3, 0x1
 
-    invoke-static {v3}, Landroid/media/AudioService;->getDefaultStreamVolume(I)I
+    invoke-static {v3}, Landroid/media/AudioSystem;->getDefaultStreamVolume(I)I
 
     move-result v3
 
@@ -2789,7 +2789,7 @@
 
     const/4 v3, 0x0
 
-    invoke-static {v3}, Landroid/media/AudioService;->getDefaultStreamVolume(I)I
+    invoke-static {v3}, Landroid/media/AudioSystem;->getDefaultStreamVolume(I)I
 
     move-result v3
 
@@ -2804,7 +2804,7 @@
 
     const/4 v3, 0x4
 
-    invoke-static {v3}, Landroid/media/AudioService;->getDefaultStreamVolume(I)I
+    invoke-static {v3}, Landroid/media/AudioSystem;->getDefaultStreamVolume(I)I
 
     move-result v3
 
@@ -2819,7 +2819,7 @@
 
     const/4 v3, 0x5
 
-    invoke-static {v3}, Landroid/media/AudioService;->getDefaultStreamVolume(I)I
+    invoke-static {v3}, Landroid/media/AudioSystem;->getDefaultStreamVolume(I)I
 
     move-result v3
 
@@ -2834,7 +2834,7 @@
 
     const/4 v3, 0x6
 
-    invoke-static {v3}, Landroid/media/AudioService;->getDefaultStreamVolume(I)I
+    invoke-static {v3}, Landroid/media/AudioSystem;->getDefaultStreamVolume(I)I
 
     move-result v3
 
@@ -3661,7 +3661,7 @@
     .line 2061
     const/4 v2, 0x2
 
-    invoke-static {v3, v3, v2}, Landroid/media/AudioService;->getValueForVibrateSetting(III)I
+    invoke-static {v3, v3, v2}, Landroid/media/AudioSystem;->getValueForVibrateSetting(III)I
 
     move-result v1
 
@@ -3669,7 +3669,7 @@
     :cond_0
     const/4 v2, 0x1
 
-    invoke-static {v1, v2, v1}, Landroid/media/AudioService;->getValueForVibrateSetting(III)I
+    invoke-static {v1, v2, v1}, Landroid/media/AudioSystem;->getValueForVibrateSetting(III)I
 
     move-result v1
 
@@ -5043,7 +5043,7 @@
 
     const/4 v4, 0x6
 
-    invoke-static {v4}, Landroid/media/AudioService;->getDefaultStreamVolume(I)I
+    invoke-static {v4}, Landroid/media/AudioSystem;->getDefaultStreamVolume(I)I
 
     move-result v4
 

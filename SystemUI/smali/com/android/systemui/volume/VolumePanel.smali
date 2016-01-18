@@ -2695,8 +2695,8 @@
     .param p0, "stream"    # I
 
     .prologue
-    .line 1016
-    invoke-static {p0}, Landroid/media/AudioService;->streamToString(I)Ljava/lang/String;
+    .line 1014
+    invoke-static {p0}, Landroid/media/AudioSystem;->streamToString(I)Ljava/lang/String;
 
     move-result-object v0
 

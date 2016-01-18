@@ -14971,7 +14971,7 @@
     .line 1308
     iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
 
-    invoke-static {v2}, Landroid/media/AudioService;->getPlatformType(Landroid/content/Context;)I
+    invoke-static {v2}, Landroid/media/AudioSystem;->getPlatformType(Landroid/content/Context;)I
 
     move-result v2
 
