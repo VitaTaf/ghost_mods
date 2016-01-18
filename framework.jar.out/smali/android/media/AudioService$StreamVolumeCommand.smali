@@ -35,24 +35,24 @@
     .param p5, "device"    # I
 
     .prologue
-    .line 1241
+    .line 1265
     iput-object p1, p0, Landroid/media/AudioService$StreamVolumeCommand;->this$0:Landroid/media/AudioService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1242
+    .line 1266
     iput p2, p0, Landroid/media/AudioService$StreamVolumeCommand;->mStreamType:I
 
-    .line 1243
+    .line 1267
     iput p3, p0, Landroid/media/AudioService$StreamVolumeCommand;->mIndex:I
 
-    .line 1244
+    .line 1268
     iput p4, p0, Landroid/media/AudioService$StreamVolumeCommand;->mFlags:I
 
-    .line 1245
+    .line 1269
     iput p5, p0, Landroid/media/AudioService$StreamVolumeCommand;->mDevice:I
 
-    .line 1246
+    .line 1270
     return-void
 .end method
 
@@ -62,7 +62,7 @@
     .locals 2
 
     .prologue
-    .line 1250
+    .line 1274
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

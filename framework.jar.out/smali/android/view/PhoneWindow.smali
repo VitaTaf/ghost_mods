@@ -7698,14 +7698,14 @@
     .param p3, "event"    # Landroid/view/KeyEvent;
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    .line 1754
+    .line 1732
     iget-object v4, p0, Landroid/view/PhoneWindow;->mDecor:Landroid/view/PhoneWindow$DecorView;
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_1
 
     iget-object v4, p0, Landroid/view/PhoneWindow;->mDecor:Landroid/view/PhoneWindow$DecorView;
 
@@ -7713,164 +7713,178 @@
 
     move-result-object v1
 
-    .line 1759
+    .line 1737
     .local v1, "dispatcher":Landroid/view/KeyEvent$DispatcherState;
     :goto_0
     sparse-switch p2, :sswitch_data_0
 
-    :cond_0
-    move v2, v3
-
-    .line 1817
+    .line 1802
     .end local p1    # "featureId":I
-    :cond_1
+    :cond_0
     :goto_1
     return v2
 
-    .line 1754
+    .line 1732
     .end local v1    # "dispatcher":Landroid/view/KeyEvent$DispatcherState;
     .restart local p1    # "featureId":I
-    :cond_2
+    :cond_1
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 1762
+    .line 1741
     .restart local v1    # "dispatcher":Landroid/view/KeyEvent$DispatcherState;
     :sswitch_0
-    const/16 v3, 0x18
+    const/4 v0, 0x0
 
-    if-ne p2, v3, :cond_3
-
-    move v0, v2
-
-    .line 1766
+    .line 1742
     .local v0, "direction":I
+    sparse-switch p2, :sswitch_data_1
+
+    .line 1755
     :goto_2
-    iget-object v3, p0, Landroid/view/PhoneWindow;->mMediaController:Landroid/media/session/MediaController;
+    iget-object v2, p0, Landroid/view/PhoneWindow;->mMediaController:Landroid/media/session/MediaController;
 
-    if-eqz v3, :cond_4
+    if-eqz v2, :cond_2
 
-    .line 1767
-    iget-object v3, p0, Landroid/view/PhoneWindow;->mMediaController:Landroid/media/session/MediaController;
+    .line 1756
+    iget-object v2, p0, Landroid/view/PhoneWindow;->mMediaController:Landroid/media/session/MediaController;
 
-    invoke-virtual {v3, v0, v2}, Landroid/media/session/MediaController;->adjustVolume(II)V
+    invoke-virtual {v2, v0, v3}, Landroid/media/session/MediaController;->adjustVolume(II)V
 
-    goto :goto_1
+    :goto_3
+    move v2, v3
 
     .line 1762
-    .end local v0    # "direction":I
-    :cond_3
+    goto :goto_1
+
+    .line 1744
+    :sswitch_1
+    const/4 v0, 0x1
+
+    .line 1745
+    goto :goto_2
+
+    .line 1747
+    :sswitch_2
     const/4 v0, -0x1
+
+    .line 1748
+    goto :goto_2
+
+    .line 1750
+    :sswitch_3
+    const/16 v0, 0x65
 
     goto :goto_2
 
-    .line 1769
-    .restart local v0    # "direction":I
-    :cond_4
+    .line 1758
+    :cond_2
     invoke-virtual {p0}, Landroid/view/PhoneWindow;->getContext()Landroid/content/Context;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-static {v3}, Landroid/media/session/MediaSessionLegacyHelper;->getHelper(Landroid/content/Context;)Landroid/media/session/MediaSessionLegacyHelper;
+    invoke-static {v2}, Landroid/media/session/MediaSessionLegacyHelper;->getHelper(Landroid/content/Context;)Landroid/media/session/MediaSessionLegacyHelper;
 
-    move-result-object v3
+    move-result-object v2
 
     iget v4, p0, Landroid/view/PhoneWindow;->mVolumeControlStreamType:I
 
     const/16 v5, 0x11
 
-    invoke-virtual {v3, v4, v0, v5}, Landroid/media/session/MediaSessionLegacyHelper;->sendAdjustVolumeBy(III)V
+    invoke-virtual {v2, v4, v0, v5}, Landroid/media/session/MediaSessionLegacyHelper;->sendAdjustVolumeBy(III)V
 
-    goto :goto_1
+    goto :goto_3
 
-    .line 1776
+    .line 1777
     .end local v0    # "direction":I
-    :sswitch_1
-    invoke-virtual {p0}, Landroid/view/PhoneWindow;->getAudioManager()Landroid/media/AudioManager;
-
-    move-result-object v3
-
-    iget v4, p0, Landroid/view/PhoneWindow;->mVolumeControlStreamType:I
-
-    invoke-virtual {v3, p3, v4}, Landroid/media/AudioManager;->handleKeyDown(Landroid/view/KeyEvent;I)V
-
-    goto :goto_1
-
-    .line 1792
-    :sswitch_2
+    :sswitch_4
     iget-object v4, p0, Landroid/view/PhoneWindow;->mMediaController:Landroid/media/session/MediaController;
 
-    if-eqz v4, :cond_5
+    if-eqz v4, :cond_0
 
-    .line 1793
+    .line 1778
     iget-object v4, p0, Landroid/view/PhoneWindow;->mMediaController:Landroid/media/session/MediaController;
 
     invoke-virtual {v4, p3}, Landroid/media/session/MediaController;->dispatchMediaButtonEvent(Landroid/view/KeyEvent;)Z
 
     move-result v4
 
-    if-nez v4, :cond_1
+    if-eqz v4, :cond_0
 
-    :cond_5
     move v2, v3
 
-    .line 1797
+    .line 1779
     goto :goto_1
 
-    .line 1801
-    :sswitch_3
-    if-gez p1, :cond_6
+    .line 1786
+    :sswitch_5
+    if-gez p1, :cond_3
 
-    move p1, v3
+    move p1, v2
 
     .end local p1    # "featureId":I
-    :cond_6
+    :cond_3
     invoke-virtual {p0, p1, p3}, Landroid/view/PhoneWindow;->onKeyDownPanel(ILandroid/view/KeyEvent;)Z
 
+    move v2, v3
+
+    .line 1787
     goto :goto_1
 
-    .line 1806
+    .line 1791
     .restart local p1    # "featureId":I
-    :sswitch_4
+    :sswitch_6
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getRepeatCount()I
 
     move-result v4
 
     if-gtz v4, :cond_0
 
-    .line 1807
+    .line 1792
     if-ltz p1, :cond_0
 
-    .line 1809
-    if-eqz v1, :cond_1
+    .line 1794
+    if-eqz v1, :cond_4
 
-    .line 1810
+    .line 1795
     invoke-virtual {v1, p3, p0}, Landroid/view/KeyEvent$DispatcherState;->startTracking(Landroid/view/KeyEvent;Ljava/lang/Object;)V
 
+    :cond_4
+    move v2, v3
+
+    .line 1797
     goto :goto_1
 
-    .line 1759
+    .line 1737
     nop
 
     :sswitch_data_0
     .sparse-switch
-        0x4 -> :sswitch_4
+        0x4 -> :sswitch_6
         0x18 -> :sswitch_0
         0x19 -> :sswitch_0
-        0x4f -> :sswitch_2
-        0x52 -> :sswitch_3
-        0x55 -> :sswitch_2
-        0x56 -> :sswitch_2
-        0x57 -> :sswitch_2
-        0x58 -> :sswitch_2
-        0x59 -> :sswitch_2
-        0x5a -> :sswitch_2
-        0x5b -> :sswitch_2
-        0x7e -> :sswitch_2
-        0x7f -> :sswitch_2
-        0x82 -> :sswitch_2
-        0xa4 -> :sswitch_1
+        0x4f -> :sswitch_4
+        0x52 -> :sswitch_5
+        0x55 -> :sswitch_4
+        0x56 -> :sswitch_4
+        0x57 -> :sswitch_4
+        0x58 -> :sswitch_4
+        0x59 -> :sswitch_4
+        0x5a -> :sswitch_4
+        0x5b -> :sswitch_4
+        0x7e -> :sswitch_4
+        0x7f -> :sswitch_4
+        0x82 -> :sswitch_4
+        0xa4 -> :sswitch_0
+    .end sparse-switch
+
+    .line 1742
+    :sswitch_data_1
+    .sparse-switch
+        0x18 -> :sswitch_1
+        0x19 -> :sswitch_2
+        0xa4 -> :sswitch_3
     .end sparse-switch
 .end method
 

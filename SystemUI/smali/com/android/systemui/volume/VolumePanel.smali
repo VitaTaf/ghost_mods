@@ -1881,7 +1881,7 @@
     .line 606
     iget-object v2, p0, Lcom/android/systemui/volume/VolumePanel;->mAudioManager:Landroid/media/AudioManager;
 
-    invoke-virtual {v2}, Landroid/media/AudioManager;->getMasterVolume()I
+    invoke-virtual {v2}, Landroid/media/AudioManager;->getLastAudibleMasterVolume()I
 
     move-result v2
 
@@ -1944,7 +1944,7 @@
     :cond_2
     iget-object v2, p0, Lcom/android/systemui/volume/VolumePanel;->mAudioManager:Landroid/media/AudioManager;
 
-    invoke-virtual {v2, p1}, Landroid/media/AudioManager;->getStreamVolume(I)I
+    invoke-virtual {v2, p1}, Landroid/media/AudioManager;->getLastAudibleStreamVolume(I)I
 
     move-result v2
 

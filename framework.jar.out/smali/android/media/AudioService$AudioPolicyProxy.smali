@@ -41,18 +41,18 @@
     .param p4, "hasFocusListener"    # Z
 
     .prologue
-    .line 5859
+    .line 5907
     iput-object p1, p0, Landroid/media/AudioService$AudioPolicyProxy;->this$0:Landroid/media/AudioService;
 
-    .line 5860
+    .line 5908
     invoke-direct {p0, p2}, Landroid/media/audiopolicy/AudioPolicyConfig;-><init>(Landroid/media/audiopolicy/AudioPolicyConfig;)V
 
-    .line 5856
+    .line 5904
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/media/AudioService$AudioPolicyProxy;->mFocusDuckBehavior:I
 
-    .line 5861
+    .line 5909
     new-instance v0, Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -74,7 +74,7 @@
     move-result-object v1
 
     # operator++ for: Landroid/media/AudioService;->mAudioPolicyCounter:I
-    invoke-static {p1}, Landroid/media/AudioService;->access$10008(Landroid/media/AudioService;)I
+    invoke-static {p1}, Landroid/media/AudioService;->access$10108(Landroid/media/AudioService;)I
 
     move-result v2
 
@@ -90,20 +90,20 @@
 
     invoke-virtual {p0, v0}, Landroid/media/AudioService$AudioPolicyProxy;->setRegistration(Ljava/lang/String;)V
 
-    .line 5862
+    .line 5910
     iput-object p3, p0, Landroid/media/AudioService$AudioPolicyProxy;->mPolicyToken:Landroid/media/audiopolicy/IAudioPolicyCallback;
 
-    .line 5863
+    .line 5911
     iput-boolean p4, p0, Landroid/media/AudioService$AudioPolicyProxy;->mHasFocusListener:Z
 
-    .line 5864
+    .line 5912
     iget-boolean v0, p0, Landroid/media/AudioService$AudioPolicyProxy;->mHasFocusListener:Z
 
     if-eqz v0, :cond_0
 
-    .line 5865
+    .line 5913
     # getter for: Landroid/media/AudioService;->mMediaFocusControl:Landroid/media/MediaFocusControl;
-    invoke-static {p1}, Landroid/media/AudioService;->access$9000(Landroid/media/AudioService;)Landroid/media/MediaFocusControl;
+    invoke-static {p1}, Landroid/media/AudioService;->access$9100(Landroid/media/AudioService;)Landroid/media/MediaFocusControl;
 
     move-result-object v0
 
@@ -111,11 +111,11 @@
 
     invoke-virtual {v0, v1}, Landroid/media/MediaFocusControl;->addFocusFollower(Landroid/media/audiopolicy/IAudioPolicyCallback;)V
 
-    .line 5867
+    .line 5915
     :cond_0
     invoke-virtual {p0}, Landroid/media/AudioService$AudioPolicyProxy;->connectMixes()V
 
-    .line 5868
+    .line 5916
     return-void
 .end method
 
@@ -125,7 +125,7 @@
     .locals 4
 
     .prologue
-    .line 5871
+    .line 5919
     iget-object v0, p0, Landroid/media/AudioService$AudioPolicyProxy;->this$0:Landroid/media/AudioService;
 
     # getter for: Landroid/media/AudioService;->mAudioPolicies:Ljava/util/HashMap;
@@ -135,7 +135,7 @@
 
     monitor-enter v1
 
-    .line 5872
+    .line 5920
     :try_start_0
     const-string v0, "AudioPolicyProxy"
 
@@ -167,10 +167,10 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5873
+    .line 5921
     invoke-virtual {p0}, Landroid/media/AudioService$AudioPolicyProxy;->release()V
 
-    .line 5874
+    .line 5922
     iget-object v0, p0, Landroid/media/AudioService$AudioPolicyProxy;->this$0:Landroid/media/AudioService;
 
     # getter for: Landroid/media/AudioService;->mAudioPolicies:Ljava/util/HashMap;
@@ -186,13 +186,13 @@
 
     invoke-virtual {v0, v2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 5875
+    .line 5923
     monitor-exit v1
 
-    .line 5876
+    .line 5924
     return-void
 
-    .line 5875
+    .line 5923
     :catchall_0
     move-exception v0
 
@@ -207,14 +207,14 @@
     .locals 2
 
     .prologue
-    .line 5893
+    .line 5941
     iget-object v0, p0, Landroid/media/AudioService$AudioPolicyProxy;->mMixes:Ljava/util/ArrayList;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Landroid/media/AudioSystem;->registerPolicyMixes(Ljava/util/ArrayList;Z)I
 
-    .line 5894
+    .line 5942
     return-void
 .end method
 
@@ -222,7 +222,7 @@
     .locals 1
 
     .prologue
-    .line 5879
+    .line 5927
     invoke-virtual {p0}, Landroid/media/AudioService$AudioPolicyProxy;->getRegistration()Ljava/lang/String;
 
     move-result-object v0
@@ -236,34 +236,34 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 5883
+    .line 5931
     iget v0, p0, Landroid/media/AudioService$AudioPolicyProxy;->mFocusDuckBehavior:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 5884
+    .line 5932
     iget-object v0, p0, Landroid/media/AudioService$AudioPolicyProxy;->this$0:Landroid/media/AudioService;
 
     # getter for: Landroid/media/AudioService;->mMediaFocusControl:Landroid/media/MediaFocusControl;
-    invoke-static {v0}, Landroid/media/AudioService;->access$9000(Landroid/media/AudioService;)Landroid/media/MediaFocusControl;
+    invoke-static {v0}, Landroid/media/AudioService;->access$9100(Landroid/media/AudioService;)Landroid/media/MediaFocusControl;
 
     move-result-object v0
 
     invoke-virtual {v0, v2}, Landroid/media/MediaFocusControl;->setDuckingInExtPolicyAvailable(Z)V
 
-    .line 5886
+    .line 5934
     :cond_0
     iget-boolean v0, p0, Landroid/media/AudioService$AudioPolicyProxy;->mHasFocusListener:Z
 
     if-eqz v0, :cond_1
 
-    .line 5887
+    .line 5935
     iget-object v0, p0, Landroid/media/AudioService$AudioPolicyProxy;->this$0:Landroid/media/AudioService;
 
     # getter for: Landroid/media/AudioService;->mMediaFocusControl:Landroid/media/MediaFocusControl;
-    invoke-static {v0}, Landroid/media/AudioService;->access$9000(Landroid/media/AudioService;)Landroid/media/MediaFocusControl;
+    invoke-static {v0}, Landroid/media/AudioService;->access$9100(Landroid/media/AudioService;)Landroid/media/MediaFocusControl;
 
     move-result-object v0
 
@@ -271,12 +271,12 @@
 
     invoke-virtual {v0, v1}, Landroid/media/MediaFocusControl;->removeFocusFollower(Landroid/media/audiopolicy/IAudioPolicyCallback;)V
 
-    .line 5889
+    .line 5937
     :cond_1
     iget-object v0, p0, Landroid/media/AudioService$AudioPolicyProxy;->mMixes:Ljava/util/ArrayList;
 
     invoke-static {v0, v2}, Landroid/media/AudioSystem;->registerPolicyMixes(Ljava/util/ArrayList;Z)I
 
-    .line 5890
+    .line 5938
     return-void
 .end method
