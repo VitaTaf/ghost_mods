@@ -5348,6 +5348,40 @@
     goto :goto_0
 .end method
 
+.method public setVolumePolicy(Landroid/media/VolumePolicy;)V
+    .locals 3
+    .param p1, "policy"    # Landroid/media/VolumePolicy;
+
+    .prologue
+    .line 3271
+    :try_start_0
+    invoke-static {}, Landroid/media/AudioManager;->getService()Landroid/media/IAudioService;
+
+    move-result-object v1
+
+    invoke-interface {v1, p1}, Landroid/media/IAudioService;->setVolumePolicy(Landroid/media/VolumePolicy;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 3275
+    :goto_0
+    return-void
+
+    .line 3272
+    :catch_0
+    move-exception v0
+
+    .line 3273
+    .local v0, "e":Landroid/os/RemoteException;
+    sget-object v1, Landroid/media/AudioManager;->TAG:Ljava/lang/String;
+
+    const-string v2, "Error calling setVolumePolicy"
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_0
+.end method
+
 .method public setWiredDeviceConnectionState(IILjava/lang/String;)V
     .locals 5
     .param p1, "device"    # I

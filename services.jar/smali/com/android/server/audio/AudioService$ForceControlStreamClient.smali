@@ -29,15 +29,15 @@
     .param p2, "cb"    # Landroid/os/IBinder;
 
     .prologue
-    .line 1314
+    .line 1312
     iput-object p1, p0, Lcom/android/server/audio/AudioService$ForceControlStreamClient;->this$0:Lcom/android/server/audio/AudioService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1315
+    .line 1313
     if-eqz p2, :cond_0
 
-    .line 1317
+    .line 1315
     const/4 v1, 0x0
 
     :try_start_0
@@ -45,19 +45,19 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1324
+    .line 1322
     :cond_0
     :goto_0
     iput-object p2, p0, Lcom/android/server/audio/AudioService$ForceControlStreamClient;->mCb:Landroid/os/IBinder;
 
-    .line 1325
+    .line 1323
     return-void
 
-    .line 1318
+    .line 1316
     :catch_0
     move-exception v0
 
-    .line 1320
+    .line 1318
     .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "AudioService"
 
@@ -87,7 +87,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1321
+    .line 1319
     const/4 p2, 0x0
 
     goto :goto_0
@@ -99,7 +99,7 @@
     .locals 3
 
     .prologue
-    .line 1328
+    .line 1326
     iget-object v0, p0, Lcom/android/server/audio/AudioService$ForceControlStreamClient;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mForceControlStreamLock:Ljava/lang/Object;
@@ -109,7 +109,7 @@
 
     monitor-enter v1
 
-    .line 1329
+    .line 1327
     :try_start_0
     const-string v0, "AudioService"
 
@@ -117,7 +117,7 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1330
+    .line 1328
     iget-object v0, p0, Lcom/android/server/audio/AudioService$ForceControlStreamClient;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mForceControlStreamClient:Lcom/android/server/audio/AudioService$ForceControlStreamClient;
@@ -127,21 +127,21 @@
 
     if-eq v0, p0, :cond_0
 
-    .line 1331
+    .line 1329
     const-string v0, "AudioService"
 
     const-string v2, "unregistered control stream client died"
 
     invoke-static {v0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1336
+    .line 1334
     :goto_0
     monitor-exit v1
 
-    .line 1337
+    .line 1335
     return-void
 
-    .line 1333
+    .line 1331
     :cond_0
     iget-object v0, p0, Lcom/android/server/audio/AudioService$ForceControlStreamClient;->this$0:Lcom/android/server/audio/AudioService;
 
@@ -150,7 +150,7 @@
     # setter for: Lcom/android/server/audio/AudioService;->mForceControlStreamClient:Lcom/android/server/audio/AudioService$ForceControlStreamClient;
     invoke-static {v0, v2}, Lcom/android/server/audio/AudioService;->access$1002(Lcom/android/server/audio/AudioService;Lcom/android/server/audio/AudioService$ForceControlStreamClient;)Lcom/android/server/audio/AudioService$ForceControlStreamClient;
 
-    .line 1334
+    .line 1332
     iget-object v0, p0, Lcom/android/server/audio/AudioService$ForceControlStreamClient;->this$0:Lcom/android/server/audio/AudioService;
 
     const/4 v2, -0x1
@@ -160,7 +160,7 @@
 
     goto :goto_0
 
-    .line 1336
+    .line 1334
     :catchall_0
     move-exception v0
 
@@ -175,24 +175,24 @@
     .locals 2
 
     .prologue
-    .line 1340
+    .line 1338
     iget-object v0, p0, Lcom/android/server/audio/AudioService$ForceControlStreamClient;->mCb:Landroid/os/IBinder;
 
     if-eqz v0, :cond_0
 
-    .line 1341
+    .line 1339
     iget-object v0, p0, Lcom/android/server/audio/AudioService$ForceControlStreamClient;->mCb:Landroid/os/IBinder;
 
     const/4 v1, 0x0
 
     invoke-interface {v0, p0, v1}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
-    .line 1342
+    .line 1340
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/audio/AudioService$ForceControlStreamClient;->mCb:Landroid/os/IBinder;
 
-    .line 1344
+    .line 1342
     :cond_0
     return-void
 .end method

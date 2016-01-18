@@ -439,6 +439,14 @@
     .end annotation
 .end method
 
+.method public abstract setVolumePolicy(Landroid/media/VolumePolicy;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract setWiredDeviceConnectionState(IILjava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

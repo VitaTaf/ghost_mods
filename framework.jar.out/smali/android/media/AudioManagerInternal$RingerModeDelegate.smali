@@ -15,8 +15,8 @@
 
 
 # virtual methods
-.method public abstract onSetRingerModeExternal(IILjava/lang/String;I)I
+.method public abstract onSetRingerModeExternal(IILjava/lang/String;ILandroid/media/VolumePolicy;)I
 .end method
 
-.method public abstract onSetRingerModeInternal(IILjava/lang/String;I)I
+.method public abstract onSetRingerModeInternal(IILjava/lang/String;ILandroid/media/VolumePolicy;)I
 .end method

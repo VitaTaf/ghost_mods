@@ -1040,26 +1040,30 @@
     .line 299
     :cond_0
     :goto_1
-    iget v9, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mZen:I
+    iget-object v9, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mContext:Landroid/content/Context;
 
-    if-eq v9, v11, :cond_1
+    invoke-static {v9}, Lcom/android/systemui/qs/tiles/DndTile;->isVisible(Landroid/content/Context;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_9
 
     invoke-virtual {v0}, Landroid/media/AudioManager;->getRingerModeInternal()I
 
     move-result v9
 
-    if-ne v9, v7, :cond_1
+    if-nez v9, :cond_9
 
     .line 301
     const/4 v3, 0x1
 
     .line 302
-    const v2, 0x7f020133
+    const v2, 0x7f02051d
 
     .line 303
     iget-object v7, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mContext:Landroid/content/Context;
 
-    const v9, 0x7f0c008a
+    const v9, 0x7f0c008b
 
     invoke-virtual {v7, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1067,6 +1071,7 @@
 
     .line 306
     :cond_1
+    :goto_2
     if-eqz v6, :cond_2
 
     .line 307
@@ -1174,6 +1179,35 @@
     move-result-object v4
 
     goto :goto_1
+
+    .line 304
+    :cond_9
+    iget v9, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mZen:I
+
+    if-eq v9, v11, :cond_1
+
+    invoke-virtual {v0}, Landroid/media/AudioManager;->getRingerMode()I
+
+    move-result v9
+
+    if-ne v9, v7, :cond_1
+
+    .line 306
+    const/4 v3, 0x1
+
+    .line 307
+    const v2, 0x7f0201c5
+
+    .line 308
+    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mContext:Landroid/content/Context;
+
+    const v9, 0x7f0c008d
+
+    invoke-virtual {v7, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    goto :goto_2
 .end method
 
 

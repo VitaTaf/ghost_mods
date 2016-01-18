@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 5503
+    .line 5493
     iput-object p1, p0, Lcom/android/server/audio/AudioService$AudioServiceInternal;->this$0:Lcom/android/server/audio/AudioService;
 
     invoke-direct {p0}, Landroid/media/AudioManagerInternal;-><init>()V
@@ -42,7 +42,7 @@
     .param p5, "uid"    # I
 
     .prologue
-    .line 5523
+    .line 5513
     iget-object v0, p0, Lcom/android/server/audio/AudioService$AudioServiceInternal;->this$0:Lcom/android/server/audio/AudioService;
 
     move v1, p1
@@ -58,7 +58,7 @@
     # invokes: Lcom/android/server/audio/AudioService;->adjustStreamVolume(IIILjava/lang/String;I)V
     invoke-static/range {v0 .. v5}, Lcom/android/server/audio/AudioService;->access$9700(Lcom/android/server/audio/AudioService;IIILjava/lang/String;I)V
 
-    .line 5524
+    .line 5514
     return-void
 .end method
 
@@ -71,7 +71,7 @@
     .param p5, "uid"    # I
 
     .prologue
-    .line 5517
+    .line 5507
     iget-object v0, p0, Lcom/android/server/audio/AudioService$AudioServiceInternal;->this$0:Lcom/android/server/audio/AudioService;
 
     move v1, p2
@@ -87,7 +87,7 @@
     # invokes: Lcom/android/server/audio/AudioService;->adjustSuggestedStreamVolume(IIILjava/lang/String;I)V
     invoke-static/range {v0 .. v5}, Lcom/android/server/audio/AudioService;->access$9600(Lcom/android/server/audio/AudioService;IIILjava/lang/String;I)V
 
-    .line 5518
+    .line 5508
     return-void
 .end method
 
@@ -95,7 +95,7 @@
     .locals 1
 
     .prologue
-    .line 5534
+    .line 5524
     iget-object v0, p0, Lcom/android/server/audio/AudioService$AudioServiceInternal;->this$0:Lcom/android/server/audio/AudioService;
 
     invoke-virtual {v0}, Lcom/android/server/audio/AudioService;->getRingerModeInternal()I
@@ -109,7 +109,7 @@
     .locals 1
 
     .prologue
-    .line 5544
+    .line 5534
     iget-object v0, p0, Lcom/android/server/audio/AudioService$AudioServiceInternal;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mControllerService:Lcom/android/server/audio/AudioService$ControllerService;
@@ -130,13 +130,13 @@
     .param p1, "delegate"    # Landroid/media/AudioManagerInternal$RingerModeDelegate;
 
     .prologue
-    .line 5506
+    .line 5496
     iget-object v0, p0, Lcom/android/server/audio/AudioService$AudioServiceInternal;->this$0:Lcom/android/server/audio/AudioService;
 
     # setter for: Lcom/android/server/audio/AudioService;->mRingerModeDelegate:Landroid/media/AudioManagerInternal$RingerModeDelegate;
     invoke-static {v0, p1}, Lcom/android/server/audio/AudioService;->access$9502(Lcom/android/server/audio/AudioService;Landroid/media/AudioManagerInternal$RingerModeDelegate;)Landroid/media/AudioManagerInternal$RingerModeDelegate;
 
-    .line 5507
+    .line 5497
     iget-object v0, p0, Lcom/android/server/audio/AudioService$AudioServiceInternal;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mRingerModeDelegate:Landroid/media/AudioManagerInternal$RingerModeDelegate;
@@ -146,7 +146,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 5508
+    .line 5498
     invoke-virtual {p0}, Lcom/android/server/audio/AudioService$AudioServiceInternal;->getRingerModeInternal()I
 
     move-result v0
@@ -155,7 +155,7 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/audio/AudioService$AudioServiceInternal;->setRingerModeInternal(ILjava/lang/String;)V
 
-    .line 5510
+    .line 5500
     :cond_0
     return-void
 .end method
@@ -166,12 +166,12 @@
     .param p2, "caller"    # Ljava/lang/String;
 
     .prologue
-    .line 5539
+    .line 5529
     iget-object v0, p0, Lcom/android/server/audio/AudioService$AudioServiceInternal;->this$0:Lcom/android/server/audio/AudioService;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/audio/AudioService;->setRingerModeInternal(ILjava/lang/String;)V
 
-    .line 5540
+    .line 5530
     return-void
 .end method
 
@@ -184,7 +184,7 @@
     .param p5, "uid"    # I
 
     .prologue
-    .line 5529
+    .line 5519
     iget-object v0, p0, Lcom/android/server/audio/AudioService$AudioServiceInternal;->this$0:Lcom/android/server/audio/AudioService;
 
     move v1, p1
@@ -200,6 +200,6 @@
     # invokes: Lcom/android/server/audio/AudioService;->setStreamVolume(IIILjava/lang/String;I)V
     invoke-static/range {v0 .. v5}, Lcom/android/server/audio/AudioService;->access$9800(Lcom/android/server/audio/AudioService;IIILjava/lang/String;I)V
 
-    .line 5530
+    .line 5520
     return-void
 .end method

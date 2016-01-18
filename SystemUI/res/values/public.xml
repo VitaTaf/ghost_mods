@@ -760,6 +760,7 @@
     <public type="drawable" name="ic_qs_dnd_off" id="0x7f02051a" />
     <public type="drawable" name="ic_qs_dnd_on" id="0x7f02051b" />
     <public type="drawable" name="stat_sys_dnd" id="0x7f02051c" />
+    <public type="drawable" name="stat_sys_ringer_silent" id="0x7f02051d" />
     <public type="drawable" name="ic_input_delete" id="0x7f020035" />
     <public type="drawable" name="ic_lockscreen_search_activated" id="0x7f020052" />
     <public type="drawable" name="ic_lockscreen_search_normal" id="0x7f020053" />

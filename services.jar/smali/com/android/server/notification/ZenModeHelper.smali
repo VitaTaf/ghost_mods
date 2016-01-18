@@ -1321,12 +1321,13 @@
     goto :goto_0
 .end method
 
-.method public onSetRingerModeExternal(IILjava/lang/String;I)I
+.method public onSetRingerModeExternal(IILjava/lang/String;ILandroid/media/VolumePolicy;)I
     .locals 7
     .param p1, "ringerModeOld"    # I
     .param p2, "ringerModeNew"    # I
     .param p3, "caller"    # Ljava/lang/String;
     .param p4, "ringerModeInternal"    # I
+    .param p5, "policy"    # Landroid/media/VolumePolicy;
 
     .prologue
     const/4 v5, 0x0
@@ -1448,12 +1449,13 @@
     .end packed-switch
 .end method
 
-.method public onSetRingerModeInternal(IILjava/lang/String;I)I
+.method public onSetRingerModeInternal(IILjava/lang/String;ILandroid/media/VolumePolicy;)I
     .locals 7
     .param p1, "ringerModeOld"    # I
     .param p2, "ringerModeNew"    # I
     .param p3, "caller"    # Ljava/lang/String;
     .param p4, "ringerModeExternal"    # I
+    .param p5, "policy"    # Landroid/media/VolumePolicy;
 
     .prologue
     const/4 v6, 0x2
@@ -1521,6 +1523,10 @@
     .restart local v2    # "ringerModeExternalOut":I
     :pswitch_0
     if-eqz v0, :cond_0
+
+    iget-boolean v4, p5, Landroid/media/VolumePolicy;->doNotDisturbWhenSilent:Z
+
+    if-eqz v4, :cond_0
 
     .line 346
     iget v4, p0, Lcom/android/server/notification/ZenModeHelper;->mZenMode:I

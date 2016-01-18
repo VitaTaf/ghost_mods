@@ -132,6 +132,8 @@
 
 .field static final TRANSACTION_setVolumeController:I = 0x37
 
+.field static final TRANSACTION_setVolumePolicy:I = 0x40
+
 .field static final TRANSACTION_setWiredDeviceConnectionState:I = 0x33
 
 .field static final TRANSACTION_shouldVibrate:I = 0x14
@@ -242,7 +244,7 @@
     .line 41
     sparse-switch p1, :sswitch_data_0
 
-    .line 727
+    .line 741
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v0
@@ -2622,6 +2624,52 @@
 
     goto/16 :goto_0
 
+    .line 728
+    .end local v1    # "_arg0":I
+    .end local v2    # "_arg1":Landroid/media/audiopolicy/IAudioPolicyCallback;
+    .end local v9    # "_result":I
+    :sswitch_40
+    const-string v0, "android.media.IAudioService"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 730
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    if-eqz v0, :cond_1f
+
+    .line 731
+    sget-object v0, Landroid/media/VolumePolicy;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-interface {v0, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/media/VolumePolicy;
+
+    .line 736
+    .local v1, "_arg0":Landroid/media/VolumePolicy;
+    :goto_20
+    invoke-virtual {p0, v1}, Landroid/media/IAudioService$Stub;->setVolumePolicy(Landroid/media/VolumePolicy;)V
+
+    .line 737
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 738
+    const/4 v0, 0x1
+
+    goto/16 :goto_0
+
+    .line 734
+    .end local v1    # "_arg0":Landroid/media/VolumePolicy;
+    :cond_1f
+    const/4 v1, 0x0
+
+    .restart local v1    # "_arg0":Landroid/media/VolumePolicy;
+    goto :goto_20
+
     .line 41
     :sswitch_data_0
     .sparse-switch
@@ -2688,6 +2736,7 @@
         0x3d -> :sswitch_3d
         0x3e -> :sswitch_3e
         0x3f -> :sswitch_3f
+        0x40 -> :sswitch_40
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method
