@@ -30,7 +30,7 @@
     .locals 0
 
     .prologue
-    .line 5619
+    .line 5399
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .param p0, "ctxt"    # Landroid/content/Context;
 
     .prologue
-    .line 5632
+    .line 5412
     const-string v1, "accessibility"
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -50,7 +50,7 @@
 
     check-cast v0, Landroid/view/accessibility/AccessibilityManager;
 
-    .line 5634
+    .line 5414
     .local v0, "accessibilityManager":Landroid/view/accessibility/AccessibilityManager;
     invoke-virtual {v0}, Landroid/view/accessibility/AccessibilityManager;->isTouchExplorationEnabled()Z
 
@@ -58,14 +58,14 @@
 
     invoke-static {v1}, Landroid/media/AudioService$StreamOverride;->updateDefaultStreamOverrideDelay(Z)V
 
-    .line 5636
+    .line 5416
     new-instance v1, Landroid/media/AudioService$StreamOverride;
 
     invoke-direct {v1}, Landroid/media/AudioService$StreamOverride;-><init>()V
 
     invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityManager;->addTouchExplorationStateChangeListener(Landroid/view/accessibility/AccessibilityManager$TouchExplorationStateChangeListener;)Z
 
-    .line 5638
+    .line 5418
     return-void
 .end method
 
@@ -74,15 +74,15 @@
     .param p0, "touchExploreEnabled"    # Z
 
     .prologue
-    .line 5646
+    .line 5426
     if-eqz p0, :cond_1
 
-    .line 5647
+    .line 5427
     const/16 v0, 0x3e8
 
     sput v0, Landroid/media/AudioService$StreamOverride;->sDelayMs:I
 
-    .line 5651
+    .line 5431
     :goto_0
     sget-boolean v0, Landroid/media/AudioService;->DEBUG_VOL:Z
 
@@ -128,11 +128,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5653
+    .line 5433
     :cond_0
     return-void
 
-    .line 5649
+    .line 5429
     :cond_1
     const/16 v0, 0x1388
 
@@ -148,9 +148,9 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 5642
+    .line 5422
     invoke-static {p1}, Landroid/media/AudioService$StreamOverride;->updateDefaultStreamOverrideDelay(Z)V
 
-    .line 5643
+    .line 5423
     return-void
 .end method

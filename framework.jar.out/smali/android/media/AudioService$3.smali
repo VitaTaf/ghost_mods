@@ -3,12 +3,12 @@
 .source "AudioService.java"
 
 # interfaces
-.implements Landroid/media/MediaPlayer$OnErrorListener;
+.implements Landroid/os/IBinder$DeathRecipient;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/media/AudioService;->doNxpHack()V
+    value = Landroid/media/AudioService;->setVolumeController(Landroid/media/IVolumeController;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,14 +20,18 @@
 # instance fields
 .field final synthetic this$0:Landroid/media/AudioService;
 
+.field final synthetic val$controller:Landroid/media/IVolumeController;
+
 
 # direct methods
-.method constructor <init>(Landroid/media/AudioService;)V
+.method constructor <init>(Landroid/media/AudioService;Landroid/media/IVolumeController;)V
     .locals 0
 
     .prologue
-    .line 742
+    .line 5532
     iput-object p1, p0, Landroid/media/AudioService$3;->this$0:Landroid/media/AudioService;
+
+    iput-object p2, p0, Landroid/media/AudioService$3;->val$controller:Landroid/media/IVolumeController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,31 +40,41 @@
 
 
 # virtual methods
-.method public onError(Landroid/media/MediaPlayer;II)Z
-    .locals 1
-    .param p1, "mp"    # Landroid/media/MediaPlayer;
-    .param p2, "what"    # I
-    .param p3, "extra"    # I
+.method public binderDied()V
+    .locals 2
 
     .prologue
-    .line 745
-    :try_start_0
-    invoke-virtual {p1}, Landroid/media/MediaPlayer;->stop()V
+    .line 5535
+    iget-object v0, p0, Landroid/media/AudioService$3;->this$0:Landroid/media/AudioService;
 
-    .line 746
-    invoke-virtual {p1}, Landroid/media/MediaPlayer;->release()V
-    :try_end_0
-    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
+    # getter for: Landroid/media/AudioService;->mVolumeController:Landroid/media/AudioService$VolumeController;
+    invoke-static {v0}, Landroid/media/AudioService;->access$9500(Landroid/media/AudioService;)Landroid/media/AudioService$VolumeController;
 
-    .line 748
-    :goto_0
-    const/4 v0, 0x1
+    move-result-object v0
 
-    return v0
+    iget-object v1, p0, Landroid/media/AudioService$3;->val$controller:Landroid/media/IVolumeController;
 
-    .line 747
-    :catch_0
-    move-exception v0
+    invoke-virtual {v0, v1}, Landroid/media/AudioService$VolumeController;->isSameBinder(Landroid/media/IVolumeController;)Z
 
-    goto :goto_0
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 5536
+    const-string v0, "AudioService"
+
+    const-string v1, "Current remote volume controller died, unregistering"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 5537
+    iget-object v0, p0, Landroid/media/AudioService$3;->this$0:Landroid/media/AudioService;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/media/AudioService;->setVolumeController(Landroid/media/IVolumeController;)V
+
+    .line 5539
+    :cond_0
+    return-void
 .end method

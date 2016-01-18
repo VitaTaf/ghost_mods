@@ -31,25 +31,25 @@
     .param p3, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 333
+    .line 325
     iput-object p1, p0, Landroid/media/session/MediaSessionManager$SessionsChangedWrapper;->this$0:Landroid/media/session/MediaSessionManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 338
+    .line 330
     new-instance v0, Landroid/media/session/MediaSessionManager$SessionsChangedWrapper$1;
 
     invoke-direct {v0, p0}, Landroid/media/session/MediaSessionManager$SessionsChangedWrapper$1;-><init>(Landroid/media/session/MediaSessionManager$SessionsChangedWrapper;)V
 
     iput-object v0, p0, Landroid/media/session/MediaSessionManager$SessionsChangedWrapper;->mStub:Landroid/media/session/IActiveSessionsListener$Stub;
 
-    .line 334
+    .line 326
     iput-object p2, p0, Landroid/media/session/MediaSessionManager$SessionsChangedWrapper;->mListener:Landroid/media/session/MediaSessionManager$OnActiveSessionsChangedListener;
 
-    .line 335
+    .line 327
     iput-object p3, p0, Landroid/media/session/MediaSessionManager$SessionsChangedWrapper;->mHandler:Landroid/os/Handler;
 
-    .line 336
+    .line 328
     return-void
 .end method
 
@@ -58,7 +58,7 @@
     .param p0, "x0"    # Landroid/media/session/MediaSessionManager$SessionsChangedWrapper;
 
     .prologue
-    .line 329
+    .line 321
     iget-object v0, p0, Landroid/media/session/MediaSessionManager$SessionsChangedWrapper;->mStub:Landroid/media/session/IActiveSessionsListener$Stub;
 
     return-object v0
@@ -69,7 +69,7 @@
     .param p0, "x0"    # Landroid/media/session/MediaSessionManager$SessionsChangedWrapper;
 
     .prologue
-    .line 329
+    .line 321
     iget-object v0, p0, Landroid/media/session/MediaSessionManager$SessionsChangedWrapper;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -80,7 +80,7 @@
     .param p0, "x0"    # Landroid/media/session/MediaSessionManager$SessionsChangedWrapper;
 
     .prologue
-    .line 329
+    .line 321
     iget-object v0, p0, Landroid/media/session/MediaSessionManager$SessionsChangedWrapper;->mListener:Landroid/media/session/MediaSessionManager$OnActiveSessionsChangedListener;
 
     return-object v0

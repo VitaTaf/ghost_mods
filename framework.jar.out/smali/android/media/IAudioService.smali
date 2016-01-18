@@ -383,14 +383,6 @@
     .end annotation
 .end method
 
-.method public abstract setMasterMute(ZILjava/lang/String;Landroid/os/IBinder;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract setMasterVolume(IILjava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -448,22 +440,6 @@
 .end method
 
 .method public abstract setSpeakerphoneOn(Z)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setStreamMute(IZLandroid/os/IBinder;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setStreamSolo(IZLandroid/os/IBinder;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

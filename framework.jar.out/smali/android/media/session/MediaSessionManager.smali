@@ -13,8 +13,6 @@
 
 
 # static fields
-.field public static final DIRECTION_MUTE:I = -0x63
-
 .field private static final TAG:Ljava/lang/String; = "SessionManager"
 
 
@@ -44,7 +42,7 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 72
+    .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 54
@@ -61,17 +59,17 @@
 
     iput-object v1, p0, Landroid/media/session/MediaSessionManager;->mLock:Ljava/lang/Object;
 
-    .line 75
+    .line 67
     iput-object p1, p0, Landroid/media/session/MediaSessionManager;->mContext:Landroid/content/Context;
 
-    .line 76
+    .line 68
     const-string/jumbo v1, "media_session"
 
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 77
+    .line 69
     .local v0, "b":Landroid/os/IBinder;
     invoke-static {v0}, Landroid/media/session/ISessionManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/media/session/ISessionManager;
 
@@ -79,7 +77,7 @@
 
     iput-object v1, p0, Landroid/media/session/MediaSessionManager;->mService:Landroid/media/session/ISessionManager;
 
-    .line 78
+    .line 70
     return-void
 .end method
 
@@ -102,12 +100,12 @@
     .param p2, "notificationListener"    # Landroid/content/ComponentName;
 
     .prologue
-    .line 159
+    .line 151
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, v0}, Landroid/media/session/MediaSessionManager;->addOnActiveSessionsChangedListener(Landroid/media/session/MediaSessionManager$OnActiveSessionsChangedListener;Landroid/content/ComponentName;Landroid/os/Handler;)V
 
-    .line 160
+    .line 152
     return-void
 .end method
 
@@ -119,10 +117,10 @@
     .param p4, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 203
+    .line 195
     if-nez p1, :cond_0
 
-    .line 204
+    .line 196
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string v3, "listener may not be null"
@@ -131,24 +129,24 @@
 
     throw v2
 
-    .line 206
+    .line 198
     :cond_0
     if-nez p4, :cond_1
 
-    .line 207
+    .line 199
     new-instance p4, Landroid/os/Handler;
 
     .end local p4    # "handler":Landroid/os/Handler;
     invoke-direct {p4}, Landroid/os/Handler;-><init>()V
 
-    .line 209
+    .line 201
     .restart local p4    # "handler":Landroid/os/Handler;
     :cond_1
     iget-object v3, p0, Landroid/media/session/MediaSessionManager;->mLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 210
+    .line 202
     :try_start_0
     iget-object v2, p0, Landroid/media/session/MediaSessionManager;->mListeners:Landroid/util/ArrayMap;
 
@@ -158,21 +156,21 @@
 
     if-eqz v2, :cond_2
 
-    .line 211
+    .line 203
     const-string v2, "SessionManager"
 
     const-string v4, "Attempted to add session listener twice, ignoring."
 
     invoke-static {v2, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 212
+    .line 204
     monitor-exit v3
 
-    .line 222
+    .line 214
     :goto_0
     return-void
 
-    .line 214
+    .line 206
     :cond_2
     new-instance v1, Landroid/media/session/MediaSessionManager$SessionsChangedWrapper;
 
@@ -180,7 +178,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 216
+    .line 208
     .local v1, "wrapper":Landroid/media/session/MediaSessionManager$SessionsChangedWrapper;
     :try_start_1
     iget-object v2, p0, Landroid/media/session/MediaSessionManager;->mService:Landroid/media/session/ISessionManager;
@@ -192,7 +190,7 @@
 
     invoke-interface {v2, v4, p2, p3}, Landroid/media/session/ISessionManager;->addSessionsListener(Landroid/media/session/IActiveSessionsListener;Landroid/content/ComponentName;I)V
 
-    .line 217
+    .line 209
     iget-object v2, p0, Landroid/media/session/MediaSessionManager;->mListeners:Landroid/util/ArrayMap;
 
     invoke-virtual {v2, p1, v1}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -200,7 +198,7 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 221
+    .line 213
     :goto_1
     :try_start_2
     monitor-exit v3
@@ -217,12 +215,12 @@
 
     throw v2
 
-    .line 218
+    .line 210
     .restart local v1    # "wrapper":Landroid/media/session/MediaSessionManager$SessionsChangedWrapper;
     :catch_0
     move-exception v0
 
-    .line 219
+    .line 211
     .local v0, "e":Landroid/os/RemoteException;
     :try_start_3
     const-string v2, "SessionManager"
@@ -243,14 +241,14 @@
     .param p3, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 180
+    .line 172
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
 
     invoke-virtual {p0, p1, p2, v0, p3}, Landroid/media/session/MediaSessionManager;->addOnActiveSessionsChangedListener(Landroid/media/session/MediaSessionManager$OnActiveSessionsChangedListener;Landroid/content/ComponentName;ILandroid/os/Handler;)V
 
-    .line 182
+    .line 174
     return-void
 .end method
 
@@ -266,7 +264,7 @@
     .end annotation
 
     .prologue
-    .line 89
+    .line 81
     iget-object v0, p0, Landroid/media/session/MediaSessionManager;->mService:Landroid/media/session/ISessionManager;
 
     iget-object v1, p0, Landroid/media/session/MediaSessionManager;->mContext:Landroid/content/Context;
@@ -289,7 +287,7 @@
     .param p3, "flags"    # I
 
     .prologue
-    .line 300
+    .line 292
     :try_start_0
     iget-object v1, p0, Landroid/media/session/MediaSessionManager;->mService:Landroid/media/session/ISessionManager;
 
@@ -297,15 +295,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 304
+    .line 296
     :goto_0
     return-void
 
-    .line 301
+    .line 293
     :catch_0
     move-exception v0
 
-    .line 302
+    .line 294
     .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "SessionManager"
 
@@ -321,12 +319,12 @@
     .param p1, "keyEvent"    # Landroid/view/KeyEvent;
 
     .prologue
-    .line 268
+    .line 260
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Landroid/media/session/MediaSessionManager;->dispatchMediaKeyEvent(Landroid/view/KeyEvent;Z)V
 
-    .line 269
+    .line 261
     return-void
 .end method
 
@@ -336,7 +334,7 @@
     .param p2, "needWakeLock"    # Z
 
     .prologue
-    .line 280
+    .line 272
     :try_start_0
     iget-object v1, p0, Landroid/media/session/MediaSessionManager;->mService:Landroid/media/session/ISessionManager;
 
@@ -344,15 +342,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 284
+    .line 276
     :goto_0
     return-void
 
-    .line 281
+    .line 273
     :catch_0
     move-exception v0
 
-    .line 282
+    .line 274
     .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "SessionManager"
 
@@ -379,7 +377,7 @@
     .end annotation
 
     .prologue
-    .line 109
+    .line 101
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -408,12 +406,12 @@
     .end annotation
 
     .prologue
-    .line 127
+    .line 119
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 129
+    .line 121
     .local v2, "controllers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/media/session/MediaController;>;"
     :try_start_0
     iget-object v6, p0, Landroid/media/session/MediaSessionManager;->mService:Landroid/media/session/ISessionManager;
@@ -422,13 +420,13 @@
 
     move-result-object v0
 
-    .line 130
+    .line 122
     .local v0, "binders":Ljava/util/List;, "Ljava/util/List<Landroid/os/IBinder;>;"
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v5
 
-    .line 131
+    .line 123
     .local v5, "size":I
     const/4 v4, 0x0
 
@@ -436,7 +434,7 @@
     :goto_0
     if-ge v4, v5, :cond_0
 
-    .line 132
+    .line 124
     new-instance v1, Landroid/media/session/MediaController;
 
     iget-object v7, p0, Landroid/media/session/MediaSessionManager;->mContext:Landroid/content/Context;
@@ -453,18 +451,18 @@
 
     invoke-direct {v1, v7, v6}, Landroid/media/session/MediaController;-><init>(Landroid/content/Context;Landroid/media/session/ISessionController;)V
 
-    .line 134
+    .line 126
     .local v1, "controller":Landroid/media/session/MediaController;
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 131
+    .line 123
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 136
+    .line 128
     .end local v0    # "binders":Ljava/util/List;, "Ljava/util/List<Landroid/os/IBinder;>;"
     .end local v1    # "controller":Landroid/media/session/MediaController;
     .end local v4    # "i":I
@@ -472,7 +470,7 @@
     :catch_0
     move-exception v3
 
-    .line 137
+    .line 129
     .local v3, "e":Landroid/os/RemoteException;
     const-string v6, "SessionManager"
 
@@ -480,7 +478,7 @@
 
     invoke-static {v6, v7, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 139
+    .line 131
     .end local v3    # "e":Landroid/os/RemoteException;
     :cond_0
     return-object v2
@@ -490,7 +488,7 @@
     .locals 3
 
     .prologue
-    .line 314
+    .line 306
     :try_start_0
     iget-object v1, p0, Landroid/media/session/MediaSessionManager;->mService:Landroid/media/session/ISessionManager;
 
@@ -500,15 +498,15 @@
 
     move-result v1
 
-    .line 318
+    .line 310
     :goto_0
     return v1
 
-    .line 315
+    .line 307
     :catch_0
     move-exception v0
 
-    .line 316
+    .line 308
     .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "SessionManager"
 
@@ -516,7 +514,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 318
+    .line 310
     const/4 v1, 0x0
 
     goto :goto_0
@@ -527,10 +525,10 @@
     .param p1, "listener"    # Landroid/media/session/MediaSessionManager$OnActiveSessionsChangedListener;
 
     .prologue
-    .line 231
+    .line 223
     if-nez p1, :cond_0
 
-    .line 232
+    .line 224
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string v3, "listener may not be null"
@@ -539,13 +537,13 @@
 
     throw v2
 
-    .line 234
+    .line 226
     :cond_0
     iget-object v3, p0, Landroid/media/session/MediaSessionManager;->mLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 235
+    .line 227
     :try_start_0
     iget-object v2, p0, Landroid/media/session/MediaSessionManager;->mListeners:Landroid/util/ArrayMap;
 
@@ -557,11 +555,11 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 236
+    .line 228
     .local v1, "wrapper":Landroid/media/session/MediaSessionManager$SessionsChangedWrapper;
     if-eqz v1, :cond_1
 
-    .line 238
+    .line 230
     :try_start_1
     iget-object v2, p0, Landroid/media/session/MediaSessionManager;->mService:Landroid/media/session/ISessionManager;
 
@@ -575,20 +573,20 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 243
+    .line 235
     :cond_1
     :goto_0
     :try_start_2
     monitor-exit v3
 
-    .line 244
+    .line 236
     return-void
 
-    .line 239
+    .line 231
     :catch_0
     move-exception v0
 
-    .line 240
+    .line 232
     .local v0, "e":Landroid/os/RemoteException;
     const-string v2, "SessionManager"
 
@@ -598,7 +596,7 @@
 
     goto :goto_0
 
-    .line 243
+    .line 235
     .end local v0    # "e":Landroid/os/RemoteException;
     .end local v1    # "wrapper":Landroid/media/session/MediaSessionManager$SessionsChangedWrapper;
     :catchall_0
@@ -616,7 +614,7 @@
     .param p1, "rvc"    # Landroid/media/IRemoteVolumeController;
 
     .prologue
-    .line 255
+    .line 247
     :try_start_0
     iget-object v1, p0, Landroid/media/session/MediaSessionManager;->mService:Landroid/media/session/ISessionManager;
 
@@ -624,15 +622,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 259
+    .line 251
     :goto_0
     return-void
 
-    .line 256
+    .line 248
     :catch_0
     move-exception v0
 
-    .line 257
+    .line 249
     .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "SessionManager"
 

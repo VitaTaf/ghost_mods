@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 5909
+    .line 5692
     iput-object p1, p0, Landroid/media/AudioService$AudioServiceInternal;->this$0:Landroid/media/AudioService;
 
     invoke-direct {p0}, Landroid/media/AudioManagerInternal;-><init>()V
@@ -41,12 +41,12 @@
     .param p4, "uid"    # I
 
     .prologue
-    .line 5941
+    .line 5724
     iget-object v0, p0, Landroid/media/AudioService$AudioServiceInternal;->this$0:Landroid/media/AudioService;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/media/AudioService;->adjustMasterVolume(IILjava/lang/String;I)V
 
-    .line 5942
+    .line 5725
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .param p5, "uid"    # I
 
     .prologue
-    .line 5929
+    .line 5712
     iget-object v0, p0, Landroid/media/AudioService$AudioServiceInternal;->this$0:Landroid/media/AudioService;
 
     move v1, p1
@@ -73,9 +73,9 @@
     move v5, p5
 
     # invokes: Landroid/media/AudioService;->adjustStreamVolume(IIILjava/lang/String;I)V
-    invoke-static/range {v0 .. v5}, Landroid/media/AudioService;->access$10100(Landroid/media/AudioService;IIILjava/lang/String;I)V
+    invoke-static/range {v0 .. v5}, Landroid/media/AudioService;->access$9800(Landroid/media/AudioService;IIILjava/lang/String;I)V
 
-    .line 5930
+    .line 5713
     return-void
 .end method
 
@@ -88,7 +88,7 @@
     .param p5, "uid"    # I
 
     .prologue
-    .line 5923
+    .line 5706
     iget-object v0, p0, Landroid/media/AudioService$AudioServiceInternal;->this$0:Landroid/media/AudioService;
 
     move v1, p2
@@ -102,9 +102,9 @@
     move v5, p5
 
     # invokes: Landroid/media/AudioService;->adjustSuggestedStreamVolume(IIILjava/lang/String;I)V
-    invoke-static/range {v0 .. v5}, Landroid/media/AudioService;->access$10000(Landroid/media/AudioService;IIILjava/lang/String;I)V
+    invoke-static/range {v0 .. v5}, Landroid/media/AudioService;->access$9700(Landroid/media/AudioService;IIILjava/lang/String;I)V
 
-    .line 5924
+    .line 5707
     return-void
 .end method
 
@@ -112,7 +112,7 @@
     .locals 1
 
     .prologue
-    .line 5946
+    .line 5729
     iget-object v0, p0, Landroid/media/AudioService$AudioServiceInternal;->this$0:Landroid/media/AudioService;
 
     invoke-virtual {v0}, Landroid/media/AudioService;->getRingerModeInternal()I
@@ -122,57 +122,28 @@
     return v0
 .end method
 
-.method public setMasterMuteForUid(ZILjava/lang/String;Landroid/os/IBinder;I)V
-    .locals 6
-    .param p1, "state"    # Z
-    .param p2, "flags"    # I
-    .param p3, "callingPackage"    # Ljava/lang/String;
-    .param p4, "cb"    # Landroid/os/IBinder;
-    .param p5, "uid"    # I
-
-    .prologue
-    .line 5957
-    iget-object v0, p0, Landroid/media/AudioService$AudioServiceInternal;->this$0:Landroid/media/AudioService;
-
-    move v1, p1
-
-    move v2, p2
-
-    move-object v3, p3
-
-    move-object v4, p4
-
-    move v5, p5
-
-    # invokes: Landroid/media/AudioService;->setMasterMuteInternal(ZILjava/lang/String;Landroid/os/IBinder;I)V
-    invoke-static/range {v0 .. v5}, Landroid/media/AudioService;->access$10300(Landroid/media/AudioService;ZILjava/lang/String;Landroid/os/IBinder;I)V
-
-    .line 5958
-    return-void
-.end method
-
 .method public setRingerModeDelegate(Landroid/media/AudioManagerInternal$RingerModeDelegate;)V
     .locals 2
     .param p1, "delegate"    # Landroid/media/AudioManagerInternal$RingerModeDelegate;
 
     .prologue
-    .line 5912
+    .line 5695
     iget-object v0, p0, Landroid/media/AudioService$AudioServiceInternal;->this$0:Landroid/media/AudioService;
 
     # setter for: Landroid/media/AudioService;->mRingerModeDelegate:Landroid/media/AudioManagerInternal$RingerModeDelegate;
-    invoke-static {v0, p1}, Landroid/media/AudioService;->access$9902(Landroid/media/AudioService;Landroid/media/AudioManagerInternal$RingerModeDelegate;)Landroid/media/AudioManagerInternal$RingerModeDelegate;
+    invoke-static {v0, p1}, Landroid/media/AudioService;->access$9602(Landroid/media/AudioService;Landroid/media/AudioManagerInternal$RingerModeDelegate;)Landroid/media/AudioManagerInternal$RingerModeDelegate;
 
-    .line 5913
+    .line 5696
     iget-object v0, p0, Landroid/media/AudioService$AudioServiceInternal;->this$0:Landroid/media/AudioService;
 
     # getter for: Landroid/media/AudioService;->mRingerModeDelegate:Landroid/media/AudioManagerInternal$RingerModeDelegate;
-    invoke-static {v0}, Landroid/media/AudioService;->access$9900(Landroid/media/AudioService;)Landroid/media/AudioManagerInternal$RingerModeDelegate;
+    invoke-static {v0}, Landroid/media/AudioService;->access$9600(Landroid/media/AudioService;)Landroid/media/AudioManagerInternal$RingerModeDelegate;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 5914
+    .line 5697
     invoke-virtual {p0}, Landroid/media/AudioService$AudioServiceInternal;->getRingerModeInternal()I
 
     move-result v0
@@ -181,7 +152,7 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/media/AudioService$AudioServiceInternal;->setRingerModeInternal(ILjava/lang/String;)V
 
-    .line 5916
+    .line 5699
     :cond_0
     return-void
 .end method
@@ -192,12 +163,12 @@
     .param p2, "caller"    # Ljava/lang/String;
 
     .prologue
-    .line 5951
+    .line 5734
     iget-object v0, p0, Landroid/media/AudioService$AudioServiceInternal;->this$0:Landroid/media/AudioService;
 
     invoke-virtual {v0, p1, p2}, Landroid/media/AudioService;->setRingerModeInternal(ILjava/lang/String;)V
 
-    .line 5952
+    .line 5735
     return-void
 .end method
 
@@ -210,7 +181,7 @@
     .param p5, "uid"    # I
 
     .prologue
-    .line 5935
+    .line 5718
     iget-object v0, p0, Landroid/media/AudioService$AudioServiceInternal;->this$0:Landroid/media/AudioService;
 
     move v1, p1
@@ -224,8 +195,8 @@
     move v5, p5
 
     # invokes: Landroid/media/AudioService;->setStreamVolume(IIILjava/lang/String;I)V
-    invoke-static/range {v0 .. v5}, Landroid/media/AudioService;->access$10200(Landroid/media/AudioService;IIILjava/lang/String;I)V
+    invoke-static/range {v0 .. v5}, Landroid/media/AudioService;->access$9900(Landroid/media/AudioService;IIILjava/lang/String;I)V
 
-    .line 5936
+    .line 5719
     return-void
 .end method

@@ -1244,7 +1244,9 @@
     if-eqz v2, :cond_0
 
     .line 4043
-    invoke-virtual {v0, v4}, Landroid/media/AudioManager;->setMasterMute(Z)V
+    const/16 v2, 0x64
+
+    invoke-virtual {v0, v2, v4}, Landroid/media/AudioManager;->adjustMasterVolume(II)V
 
     .line 4045
     :cond_0
@@ -19232,21 +19234,21 @@
     .param p2, "on"    # Z
 
     .prologue
-    .line 5496
+    .line 5402
     iget-object v3, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 5498
+    .line 5404
     .local v0, "contentResolver":Landroid/content/ContentResolver;
     monitor-enter p0
 
-    .line 5499
+    .line 5405
     if-nez p1, :cond_0
 
-    .line 5500
+    .line 5406
     :try_start_0
     new-instance v3, Ljava/lang/NullPointerException;
 
@@ -19256,7 +19258,7 @@
 
     throw v3
 
-    .line 5511
+    .line 5419
     :catchall_0
     move-exception v3
 
@@ -19266,14 +19268,14 @@
 
     throw v3
 
-    .line 5502
+    .line 5408
     :cond_0
     const/4 v3, -0x1
 
     :try_start_1
     invoke-virtual {p0, p1, v3}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->getActiveAdminForCallerLocked(Landroid/content/ComponentName;I)Lcom/android/server/devicepolicy/DevicePolicyManagerService$ActiveAdmin;
 
-    .line 5504
+    .line 5410
     const-string v3, "audio"
 
     invoke-static {v3}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -19286,35 +19288,44 @@
 
     move-result-object v1
 
-    .line 5507
+    .line 5413
     .local v1, "iAudioService":Landroid/media/IAudioService;
-    const/4 v3, 0x0
+    if-eqz p2, :cond_1
+
+    const/16 v3, -0x64
+
+    :goto_0
+    const/4 v4, 0x0
 
     :try_start_2
     invoke-virtual {p1}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    const/4 v5, 0x0
-
-    invoke-interface {v1, p2, v3, v4, v5}, Landroid/media/IAudioService;->setMasterMute(ZILjava/lang/String;Landroid/os/IBinder;)V
+    invoke-interface {v1, v3, v4, v5}, Landroid/media/IAudioService;->adjustMasterVolume(IILjava/lang/String;)V
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 5511
-    :goto_0
+    .line 5419
+    :goto_1
     :try_start_3
     monitor-exit p0
 
-    .line 5512
+    .line 5420
     return-void
 
-    .line 5508
+    .line 5413
+    :cond_1
+    const/16 v3, 0x64
+
+    goto :goto_0
+
+    .line 5416
     :catch_0
     move-exception v2
 
-    .line 5509
+    .line 5417
     .local v2, "re":Landroid/os/RemoteException;
     const-string v3, "DevicePolicyManagerService"
 
@@ -19324,7 +19335,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method public setMaximumFailedPasswordsForWipe(Landroid/content/ComponentName;II)V
@@ -21988,241 +21999,215 @@
 .end method
 
 .method public setUserRestriction(Landroid/content/ComponentName;Ljava/lang/String;Z)V
-    .locals 24
+    .locals 22
     .param p1, "who"    # Landroid/content/ComponentName;
     .param p2, "key"    # Ljava/lang/String;
     .param p3, "enabled"    # Z
 
     .prologue
-    .line 4949
-    new-instance v15, Landroid/os/UserHandle;
+    .line 4853
+    new-instance v13, Landroid/os/UserHandle;
 
     invoke-static {}, Landroid/os/UserHandle;->getCallingUserId()I
 
-    move-result v17
+    move-result v15
 
-    move/from16 v0, v17
+    invoke-direct {v13, v15}, Landroid/os/UserHandle;-><init>(I)V
 
-    invoke-direct {v15, v0}, Landroid/os/UserHandle;-><init>(I)V
+    .line 4854
+    .local v13, "user":Landroid/os/UserHandle;
+    invoke-virtual {v13}, Landroid/os/UserHandle;->getIdentifier()I
 
-    .line 4950
-    .local v15, "user":Landroid/os/UserHandle;
-    invoke-virtual {v15}, Landroid/os/UserHandle;->getIdentifier()I
+    move-result v14
 
-    move-result v16
-
-    .line 4951
-    .local v16, "userHandle":I
+    .line 4855
+    .local v14, "userHandle":I
     monitor-enter p0
 
-    .line 4952
+    .line 4856
     if-nez p1, :cond_0
 
-    .line 4953
+    .line 4857
     :try_start_0
-    new-instance v17, Ljava/lang/NullPointerException;
+    new-instance v15, Ljava/lang/NullPointerException;
 
-    const-string v20, "ComponentName is null"
+    const-string v18, "ComponentName is null"
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
-    move-object/from16 v1, v20
+    invoke-direct {v15, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    throw v15
 
-    throw v17
-
-    .line 5048
+    .line 4954
     :catchall_0
-    move-exception v17
+    move-exception v15
 
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v17
+    throw v15
 
-    .line 4955
+    .line 4859
     :cond_0
-    const/16 v17, -0x1
+    const/4 v15, -0x1
 
     :try_start_1
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
 
-    move/from16 v2, v17
+    invoke-virtual {v0, v1, v15}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->getActiveAdminForCallerLocked(Landroid/content/ComponentName;I)Lcom/android/server/devicepolicy/DevicePolicyManagerService$ActiveAdmin;
 
-    invoke-virtual {v0, v1, v2}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->getActiveAdminForCallerLocked(Landroid/content/ComponentName;I)Lcom/android/server/devicepolicy/DevicePolicyManagerService$ActiveAdmin;
+    move-result-object v2
 
-    move-result-object v4
+    .line 4861
+    .local v2, "activeAdmin":Lcom/android/server/devicepolicy/DevicePolicyManagerService$ActiveAdmin;
+    iget-object v15, v2, Lcom/android/server/devicepolicy/DevicePolicyManagerService$ActiveAdmin;->info:Landroid/app/admin/DeviceAdminInfo;
 
-    .line 4957
-    .local v4, "activeAdmin":Lcom/android/server/devicepolicy/DevicePolicyManagerService$ActiveAdmin;
-    iget-object v0, v4, Lcom/android/server/devicepolicy/DevicePolicyManagerService$ActiveAdmin;->info:Landroid/app/admin/DeviceAdminInfo;
+    invoke-virtual {v15}, Landroid/app/admin/DeviceAdminInfo;->getPackageName()Ljava/lang/String;
 
-    move-object/from16 v17, v0
-
-    invoke-virtual/range {v17 .. v17}, Landroid/app/admin/DeviceAdminInfo;->getPackageName()Ljava/lang/String;
-
-    move-result-object v17
+    move-result-object v15
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v17
+    invoke-virtual {v0, v15}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->isDeviceOwner(Ljava/lang/String;)Z
 
-    invoke-virtual {v0, v1}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->isDeviceOwner(Ljava/lang/String;)Z
+    move-result v5
 
-    move-result v7
+    .line 4862
+    .local v5, "isDeviceOwner":Z
+    if-nez v5, :cond_1
 
-    .line 4958
-    .local v7, "isDeviceOwner":Z
-    if-nez v7, :cond_1
+    if-eqz v14, :cond_1
 
-    if-eqz v16, :cond_1
+    sget-object v15, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->DEVICE_OWNER_USER_RESTRICTIONS:Ljava/util/Set;
 
-    sget-object v17, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->DEVICE_OWNER_USER_RESTRICTIONS:Ljava/util/Set;
+    move-object/from16 v0, p2
 
-    move-object/from16 v0, v17
+    invoke-interface {v15, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, p2
+    move-result v15
 
-    invoke-interface {v0, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    if-eqz v15, :cond_1
 
-    move-result v17
+    .line 4864
+    new-instance v15, Ljava/lang/SecurityException;
 
-    if-eqz v17, :cond_1
+    new-instance v18, Ljava/lang/StringBuilder;
 
-    .line 4960
-    new-instance v17, Ljava/lang/SecurityException;
+    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
 
-    new-instance v20, Ljava/lang/StringBuilder;
+    const-string v19, "Profile owners cannot set user restriction "
 
-    invoke-direct/range {v20 .. v20}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v21, "Profile owners cannot set user restriction "
+    move-result-object v18
 
-    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v20
-
-    move-object/from16 v0, v20
+    move-object/from16 v0, v18
 
     move-object/from16 v1, p2
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v20
+    move-result-object v18
 
-    invoke-virtual/range {v20 .. v20}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v20
+    move-result-object v18
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
-    move-object/from16 v1, v20
+    invoke-direct {v15, v0}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v0, v1}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
+    throw v15
 
-    throw v17
-
-    .line 4962
+    .line 4866
     :cond_1
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mUserManager:Landroid/os/UserManager;
+    iget-object v15, v0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mUserManager:Landroid/os/UserManager;
 
-    move-object/from16 v17, v0
+    move-object/from16 v0, p2
 
-    move-object/from16 v0, v17
+    invoke-virtual {v15, v0, v13}, Landroid/os/UserManager;->hasUserRestriction(Ljava/lang/String;Landroid/os/UserHandle;)Z
 
-    move-object/from16 v1, p2
+    move-result v3
 
-    invoke-virtual {v0, v1, v15}, Landroid/os/UserManager;->hasUserRestriction(Ljava/lang/String;Landroid/os/UserHandle;)Z
+    .line 4868
+    .local v3, "alreadyRestricted":Z
+    const/4 v4, 0x0
 
-    move-result v5
+    .line 4869
+    .local v4, "iAudioService":Landroid/media/IAudioService;
+    const-string v15, "no_unmute_microphone"
 
-    .line 4964
-    .local v5, "alreadyRestricted":Z
-    const/4 v6, 0x0
+    move-object/from16 v0, p2
 
-    .line 4965
-    .local v6, "iAudioService":Landroid/media/IAudioService;
-    const-string v17, "no_unmute_microphone"
+    invoke-virtual {v15, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v0, v17
+    move-result v15
 
-    move-object/from16 v1, p2
+    if-nez v15, :cond_2
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string v15, "no_adjust_volume"
 
-    move-result v17
+    move-object/from16 v0, p2
 
-    if-nez v17, :cond_2
+    invoke-virtual {v15, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const-string v17, "no_adjust_volume"
+    move-result v15
 
-    move-object/from16 v0, v17
+    if-eqz v15, :cond_3
 
-    move-object/from16 v1, p2
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v17
-
-    if-eqz v17, :cond_3
-
-    .line 4967
+    .line 4871
     :cond_2
-    const-string v17, "audio"
+    const-string v15, "audio"
 
-    invoke-static/range {v17 .. v17}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+    invoke-static {v15}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
-    move-result-object v17
+    move-result-object v15
 
-    invoke-static/range {v17 .. v17}, Landroid/media/IAudioService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/media/IAudioService;
+    invoke-static {v15}, Landroid/media/IAudioService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/media/IAudioService;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result-object v6
+    move-result-object v4
 
-    .line 4971
+    .line 4875
     :cond_3
     if-eqz p3, :cond_4
 
-    if-nez v5, :cond_4
+    if-nez v3, :cond_4
 
-    .line 4973
+    .line 4877
     :try_start_2
-    const-string v17, "no_unmute_microphone"
+    const-string v15, "no_unmute_microphone"
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, p2
 
-    move-object/from16 v1, p2
+    invoke-virtual {v15, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v15
 
-    move-result v17
+    if-eqz v15, :cond_8
 
-    if-eqz v17, :cond_8
-
-    .line 4974
-    const/16 v17, 0x1
+    .line 4878
+    const/4 v15, 0x1
 
     invoke-virtual/range {p1 .. p1}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
-    move-result-object v20
+    move-result-object v18
 
-    move/from16 v0, v17
+    move-object/from16 v0, v18
 
-    move-object/from16 v1, v20
-
-    invoke-interface {v6, v0, v1}, Landroid/media/IAudioService;->setMicrophoneMute(ZLjava/lang/String;)V
+    invoke-interface {v4, v15, v0}, Landroid/media/IAudioService;->setMicrophoneMute(ZLjava/lang/String;)V
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 4982
+    .line 4887
     :cond_4
     :goto_0
     :try_start_3
@@ -22230,636 +22215,532 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    move-result-wide v8
+    move-result-wide v6
 
-    .line 4984
-    .local v8, "id":J
+    .line 4889
+    .local v6, "id":J
     if-eqz p3, :cond_5
 
-    if-nez v5, :cond_5
+    if-nez v3, :cond_5
 
-    .line 4985
+    .line 4890
     :try_start_4
-    const-string v17, "no_config_wifi"
+    const-string v15, "no_config_wifi"
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, p2
 
-    move-object/from16 v1, p2
+    invoke-virtual {v15, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v15
 
-    move-result v17
+    if-eqz v15, :cond_9
 
-    if-eqz v17, :cond_9
-
-    .line 4986
+    .line 4891
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
+    iget-object v15, v0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v17, v0
+    invoke-virtual {v15}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    invoke-virtual/range {v17 .. v17}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    move-result-object v15
 
-    move-result-object v17
+    const-string v18, "wifi_networks_available_notification_on"
 
-    const-string v20, "wifi_networks_available_notification_on"
+    const/16 v19, 0x0
 
-    const/16 v21, 0x0
+    move-object/from16 v0, v18
 
-    move-object/from16 v0, v17
+    move/from16 v1, v19
 
-    move-object/from16 v1, v20
+    invoke-static {v15, v0, v1, v14}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    move/from16 v2, v21
-
-    move/from16 v3, v16
-
-    invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
-
-    .line 5019
+    .line 4924
     :cond_5
     :goto_1
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mUserManager:Landroid/os/UserManager;
+    iget-object v15, v0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mUserManager:Landroid/os/UserManager;
 
-    move-object/from16 v17, v0
+    move-object/from16 v0, p2
 
-    move-object/from16 v0, v17
+    move/from16 v1, p3
 
-    move-object/from16 v1, p2
+    invoke-virtual {v15, v0, v1, v13}, Landroid/os/UserManager;->setUserRestriction(Ljava/lang/String;ZLandroid/os/UserHandle;)V
 
-    move/from16 v2, p3
-
-    invoke-virtual {v0, v1, v2, v15}, Landroid/os/UserManager;->setUserRestriction(Ljava/lang/String;ZLandroid/os/UserHandle;)V
-
-    .line 5020
+    .line 4925
     move/from16 v0, p3
 
-    if-eq v0, v5, :cond_6
+    if-eq v0, v3, :cond_6
 
-    .line 5021
-    const-string v17, "no_share_location"
+    .line 4926
+    const-string v15, "no_share_location"
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, p2
 
-    move-object/from16 v1, p2
+    invoke-virtual {v15, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v15
 
-    move-result v17
+    if-eqz v15, :cond_6
 
-    if-eqz v17, :cond_6
+    .line 4929
+    const-string v10, "sys.settings_secure_version"
 
-    .line 5024
-    const-string v12, "sys.settings_secure_version"
+    .line 4930
+    .local v10, "property":Ljava/lang/String;
+    const-string v15, "sys.settings_secure_version"
 
-    .line 5025
-    .local v12, "property":Ljava/lang/String;
-    const-string v17, "sys.settings_secure_version"
+    const-wide/16 v18, 0x0
 
-    const-wide/16 v20, 0x0
+    move-wide/from16 v0, v18
 
-    move-object/from16 v0, v17
+    invoke-static {v15, v0, v1}, Landroid/os/SystemProperties;->getLong(Ljava/lang/String;J)J
 
-    move-wide/from16 v1, v20
+    move-result-wide v18
 
-    invoke-static {v0, v1, v2}, Landroid/os/SystemProperties;->getLong(Ljava/lang/String;J)J
+    const-wide/16 v20, 0x1
 
-    move-result-wide v20
+    add-long v16, v18, v20
 
-    const-wide/16 v22, 0x1
+    .line 4931
+    .local v16, "version":J
+    const-string v15, "sys.settings_secure_version"
 
-    add-long v18, v20, v22
+    invoke-static/range {v16 .. v17}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
-    .line 5026
-    .local v18, "version":J
-    const-string v17, "sys.settings_secure_version"
+    move-result-object v18
 
-    invoke-static/range {v18 .. v19}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+    move-object/from16 v0, v18
 
-    move-result-object v20
+    invoke-static {v15, v0}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-object/from16 v0, v17
+    .line 4933
+    const-string v9, "location_providers_allowed"
 
-    move-object/from16 v1, v20
+    .line 4934
+    .local v9, "name":Ljava/lang/String;
+    sget-object v15, Landroid/provider/Settings$Secure;->CONTENT_URI:Landroid/net/Uri;
 
-    invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+    const-string v18, "location_providers_allowed"
 
-    .line 5028
-    const-string v11, "location_providers_allowed"
+    move-object/from16 v0, v18
 
-    .line 5029
-    .local v11, "name":Ljava/lang/String;
-    sget-object v17, Landroid/provider/Settings$Secure;->CONTENT_URI:Landroid/net/Uri;
+    invoke-static {v15, v0}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
 
-    const-string v20, "location_providers_allowed"
+    move-result-object v12
 
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, v20
-
-    invoke-static {v0, v1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v14
-
-    .line 5030
-    .local v14, "url":Landroid/net/Uri;
+    .line 4935
+    .local v12, "url":Landroid/net/Uri;
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
+    iget-object v15, v0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v17, v0
+    invoke-virtual {v15}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    invoke-virtual/range {v17 .. v17}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    move-result-object v15
 
-    move-result-object v17
+    const/16 v18, 0x0
 
-    const/16 v20, 0x0
+    const/16 v19, 0x1
 
-    const/16 v21, 0x1
+    move-object/from16 v0, v18
 
-    move-object/from16 v0, v17
+    move/from16 v1, v19
 
-    move-object/from16 v1, v20
-
-    move/from16 v2, v21
-
-    move/from16 v3, v16
-
-    invoke-virtual {v0, v14, v1, v2, v3}, Landroid/content/ContentResolver;->notifyChange(Landroid/net/Uri;Landroid/database/ContentObserver;ZI)V
+    invoke-virtual {v15, v12, v0, v1, v14}, Landroid/content/ContentResolver;->notifyChange(Landroid/net/Uri;Landroid/database/ContentObserver;ZI)V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 5034
-    .end local v11    # "name":Ljava/lang/String;
-    .end local v12    # "property":Ljava/lang/String;
-    .end local v14    # "url":Landroid/net/Uri;
-    .end local v18    # "version":J
+    .line 4939
+    .end local v9    # "name":Ljava/lang/String;
+    .end local v10    # "property":Ljava/lang/String;
+    .end local v12    # "url":Landroid/net/Uri;
+    .end local v16    # "version":J
     :cond_6
     :try_start_5
-    invoke-static {v8, v9}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->restoreCallingIdentity(J)V
+    invoke-static {v6, v7}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->restoreCallingIdentity(J)V
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    .line 5036
+    .line 4941
     if-nez p3, :cond_7
 
-    if-eqz v5, :cond_7
+    if-eqz v3, :cond_7
 
-    .line 5038
+    .line 4943
     :try_start_6
-    const-string v17, "no_unmute_microphone"
+    const-string v15, "no_unmute_microphone"
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, p2
 
-    move-object/from16 v1, p2
+    invoke-virtual {v15, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v15
 
-    move-result v17
+    if-eqz v15, :cond_e
 
-    if-eqz v17, :cond_e
-
-    .line 5039
-    const/16 v17, 0x0
+    .line 4944
+    const/4 v15, 0x0
 
     invoke-virtual/range {p1 .. p1}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
-    move-result-object v20
+    move-result-object v18
 
-    move/from16 v0, v17
+    move-object/from16 v0, v18
 
-    move-object/from16 v1, v20
-
-    invoke-interface {v6, v0, v1}, Landroid/media/IAudioService;->setMicrophoneMute(ZLjava/lang/String;)V
+    invoke-interface {v4, v15, v0}, Landroid/media/IAudioService;->setMicrophoneMute(ZLjava/lang/String;)V
     :try_end_6
     .catch Landroid/os/RemoteException; {:try_start_6 .. :try_end_6} :catch_1
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
-    .line 5047
+    .line 4953
     :cond_7
     :goto_2
     :try_start_7
     move-object/from16 v0, p0
 
-    move/from16 v1, v16
+    invoke-direct {v0, v14}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->sendChangedNotification(I)V
 
-    invoke-direct {v0, v1}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->sendChangedNotification(I)V
-
-    .line 5048
+    .line 4954
     monitor-exit p0
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
-    .line 5049
+    .line 4955
     return-void
 
-    .line 4975
-    .end local v8    # "id":J
+    .line 4879
+    .end local v6    # "id":J
     :cond_8
     :try_start_8
-    const-string v17, "no_adjust_volume"
+    const-string v15, "no_adjust_volume"
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, p2
 
-    move-object/from16 v1, p2
+    invoke-virtual {v15, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v15
 
-    move-result v17
+    if-eqz v15, :cond_4
 
-    if-eqz v17, :cond_4
+    .line 4880
+    const/16 v15, -0x64
 
-    .line 4976
-    const/16 v17, 0x1
-
-    const/16 v20, 0x0
+    const/16 v18, 0x0
 
     invoke-virtual/range {p1 .. p1}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
-    move-result-object v21
+    move-result-object v19
 
-    const/16 v22, 0x0
+    move/from16 v0, v18
 
-    move/from16 v0, v17
+    move-object/from16 v1, v19
 
-    move/from16 v1, v20
-
-    move-object/from16 v2, v21
-
-    move-object/from16 v3, v22
-
-    invoke-interface {v6, v0, v1, v2, v3}, Landroid/media/IAudioService;->setMasterMute(ZILjava/lang/String;Landroid/os/IBinder;)V
+    invoke-interface {v4, v15, v0, v1}, Landroid/media/IAudioService;->adjustMasterVolume(IILjava/lang/String;)V
     :try_end_8
     .catch Landroid/os/RemoteException; {:try_start_8 .. :try_end_8} :catch_0
     .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
     goto/16 :goto_0
 
-    .line 4978
+    .line 4883
     :catch_0
-    move-exception v13
+    move-exception v11
 
-    .line 4979
-    .local v13, "re":Landroid/os/RemoteException;
+    .line 4884
+    .local v11, "re":Landroid/os/RemoteException;
     :try_start_9
-    const-string v17, "DevicePolicyManagerService"
+    const-string v15, "DevicePolicyManagerService"
 
-    const-string v20, "Failed to talk to AudioService."
+    const-string v18, "Failed to talk to AudioService."
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
-    move-object/from16 v1, v20
-
-    invoke-static {v0, v1, v13}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v15, v0, v11}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_0
 
     goto/16 :goto_0
 
-    .line 4989
-    .end local v13    # "re":Landroid/os/RemoteException;
-    .restart local v8    # "id":J
+    .line 4894
+    .end local v11    # "re":Landroid/os/RemoteException;
+    .restart local v6    # "id":J
     :cond_9
     :try_start_a
-    const-string v17, "no_usb_file_transfer"
+    const-string v15, "no_usb_file_transfer"
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, p2
 
-    move-object/from16 v1, p2
+    invoke-virtual {v15, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v15
 
-    move-result v17
+    if-eqz v15, :cond_a
 
-    if-eqz v17, :cond_a
-
-    .line 4990
+    .line 4895
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
+    iget-object v15, v0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v17, v0
+    const-string v18, "usb"
 
-    const-string v20, "usb"
+    move-object/from16 v0, v18
 
-    move-object/from16 v0, v17
+    invoke-virtual {v15, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-object/from16 v1, v20
+    move-result-object v8
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    check-cast v8, Landroid/hardware/usb/UsbManager;
 
-    move-result-object v10
+    .line 4897
+    .local v8, "manager":Landroid/hardware/usb/UsbManager;
+    const-string v15, "none"
 
-    check-cast v10, Landroid/hardware/usb/UsbManager;
+    const/16 v18, 0x0
 
-    .line 4992
-    .local v10, "manager":Landroid/hardware/usb/UsbManager;
-    const-string v17, "none"
+    move/from16 v0, v18
 
-    const/16 v20, 0x0
-
-    move-object/from16 v0, v17
-
-    move/from16 v1, v20
-
-    invoke-virtual {v10, v0, v1}, Landroid/hardware/usb/UsbManager;->setCurrentFunction(Ljava/lang/String;Z)V
+    invoke-virtual {v8, v15, v0}, Landroid/hardware/usb/UsbManager;->setCurrentFunction(Ljava/lang/String;Z)V
     :try_end_a
     .catchall {:try_start_a .. :try_end_a} :catchall_1
 
     goto/16 :goto_1
 
-    .line 5034
-    .end local v10    # "manager":Landroid/hardware/usb/UsbManager;
+    .line 4939
+    .end local v8    # "manager":Landroid/hardware/usb/UsbManager;
     :catchall_1
-    move-exception v17
+    move-exception v15
 
     :try_start_b
-    invoke-static {v8, v9}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->restoreCallingIdentity(J)V
+    invoke-static {v6, v7}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->restoreCallingIdentity(J)V
 
-    throw v17
+    throw v15
     :try_end_b
     .catchall {:try_start_b .. :try_end_b} :catchall_0
 
-    .line 4993
+    .line 4898
     :cond_a
     :try_start_c
-    const-string v17, "no_share_location"
+    const-string v15, "no_share_location"
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, p2
 
-    move-object/from16 v1, p2
+    invoke-virtual {v15, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v15
 
-    move-result v17
+    if-eqz v15, :cond_b
 
-    if-eqz v17, :cond_b
-
-    .line 4994
+    .line 4899
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
+    iget-object v15, v0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v17, v0
+    invoke-virtual {v15}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    invoke-virtual/range {v17 .. v17}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    move-result-object v15
 
-    move-result-object v17
+    const-string v18, "location_mode"
 
-    const-string v20, "location_mode"
+    const/16 v19, 0x0
 
-    const/16 v21, 0x0
+    move-object/from16 v0, v18
 
-    move-object/from16 v0, v17
+    move/from16 v1, v19
 
-    move-object/from16 v1, v20
+    invoke-static {v15, v0, v1, v14}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    move/from16 v2, v21
-
-    move/from16 v3, v16
-
-    invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
-
-    .line 4997
+    .line 4902
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
+    iget-object v15, v0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v17, v0
+    invoke-virtual {v15}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    invoke-virtual/range {v17 .. v17}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    move-result-object v15
 
-    move-result-object v17
+    const-string v18, "location_providers_allowed"
 
-    const-string v20, "location_providers_allowed"
+    const-string v19, ""
 
-    const-string v21, ""
+    move-object/from16 v0, v18
 
-    move-object/from16 v0, v17
+    move-object/from16 v1, v19
 
-    move-object/from16 v1, v20
-
-    move-object/from16 v2, v21
-
-    move/from16 v3, v16
-
-    invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$Secure;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
+    invoke-static {v15, v0, v1, v14}, Landroid/provider/Settings$Secure;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
 
     goto/16 :goto_1
 
-    .line 5000
+    .line 4905
     :cond_b
-    const-string v17, "no_debugging_features"
+    const-string v15, "no_debugging_features"
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, p2
 
-    move-object/from16 v1, p2
+    invoke-virtual {v15, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v15
 
-    move-result v17
+    if-eqz v15, :cond_c
 
-    if-eqz v17, :cond_c
+    .line 4907
+    if-nez v14, :cond_5
 
-    .line 5002
-    if-nez v16, :cond_5
-
-    .line 5003
+    .line 4908
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
+    iget-object v15, v0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v17, v0
+    invoke-virtual {v15}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    invoke-virtual/range {v17 .. v17}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    move-result-object v15
 
-    move-result-object v17
+    const-string v18, "adb_enabled"
 
-    const-string v20, "adb_enabled"
+    const-string v19, "0"
 
-    const-string v21, "0"
+    move-object/from16 v0, v18
 
-    move-object/from16 v0, v17
+    move-object/from16 v1, v19
 
-    move-object/from16 v1, v20
-
-    move-object/from16 v2, v21
-
-    move/from16 v3, v16
-
-    invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$Global;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
+    invoke-static {v15, v0, v1, v14}, Landroid/provider/Settings$Global;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
 
     goto/16 :goto_1
 
-    .line 5006
+    .line 4911
     :cond_c
-    const-string v17, "ensure_verify_apps"
+    const-string v15, "ensure_verify_apps"
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, p2
 
-    move-object/from16 v1, p2
+    invoke-virtual {v15, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v15
 
-    move-result v17
+    if-eqz v15, :cond_d
 
-    if-eqz v17, :cond_d
-
-    .line 5007
+    .line 4912
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
+    iget-object v15, v0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v17, v0
+    invoke-virtual {v15}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    invoke-virtual/range {v17 .. v17}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    move-result-object v15
 
-    move-result-object v17
+    const-string v18, "package_verifier_enable"
 
-    const-string v20, "package_verifier_enable"
+    const-string v19, "1"
 
-    const-string v21, "1"
+    move-object/from16 v0, v18
 
-    move-object/from16 v0, v17
+    move-object/from16 v1, v19
 
-    move-object/from16 v1, v20
+    invoke-static {v15, v0, v1, v14}, Landroid/provider/Settings$Global;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
 
-    move-object/from16 v2, v21
-
-    move/from16 v3, v16
-
-    invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$Global;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
-
-    .line 5010
+    .line 4915
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
+    iget-object v15, v0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v17, v0
+    invoke-virtual {v15}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    invoke-virtual/range {v17 .. v17}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    move-result-object v15
 
-    move-result-object v17
+    const-string v18, "verifier_verify_adb_installs"
 
-    const-string v20, "verifier_verify_adb_installs"
+    const-string v19, "1"
 
-    const-string v21, "1"
+    move-object/from16 v0, v18
 
-    move-object/from16 v0, v17
+    move-object/from16 v1, v19
 
-    move-object/from16 v1, v20
-
-    move-object/from16 v2, v21
-
-    move/from16 v3, v16
-
-    invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$Global;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
+    invoke-static {v15, v0, v1, v14}, Landroid/provider/Settings$Global;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
 
     goto/16 :goto_1
 
-    .line 5013
+    .line 4918
     :cond_d
-    const-string v17, "no_install_unknown_sources"
+    const-string v15, "no_install_unknown_sources"
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, p2
 
-    move-object/from16 v1, p2
+    invoke-virtual {v15, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v15
 
-    move-result v17
+    if-eqz v15, :cond_5
 
-    if-eqz v17, :cond_5
-
-    .line 5014
+    .line 4919
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
+    iget-object v15, v0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v17, v0
+    invoke-virtual {v15}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    invoke-virtual/range {v17 .. v17}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    move-result-object v15
 
-    move-result-object v17
+    const-string v18, "install_non_market_apps"
 
-    const-string v20, "install_non_market_apps"
+    const/16 v19, 0x0
 
-    const/16 v21, 0x0
+    move-object/from16 v0, v18
 
-    move-object/from16 v0, v17
+    move/from16 v1, v19
 
-    move-object/from16 v1, v20
-
-    move/from16 v2, v21
-
-    move/from16 v3, v16
-
-    invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
+    invoke-static {v15, v0, v1, v14}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
     :try_end_c
     .catchall {:try_start_c .. :try_end_c} :catchall_1
 
     goto/16 :goto_1
 
-    .line 5040
+    .line 4945
     :cond_e
     :try_start_d
-    const-string v17, "no_adjust_volume"
+    const-string v15, "no_adjust_volume"
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, p2
 
-    move-object/from16 v1, p2
+    invoke-virtual {v15, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v15
 
-    move-result v17
+    if-eqz v15, :cond_7
 
-    if-eqz v17, :cond_7
+    .line 4946
+    const/16 v15, 0x64
 
-    .line 5041
-    const/16 v17, 0x0
-
-    const/16 v20, 0x0
+    const/16 v18, 0x0
 
     invoke-virtual/range {p1 .. p1}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
-    move-result-object v21
+    move-result-object v19
 
-    const/16 v22, 0x0
+    move/from16 v0, v18
 
-    move/from16 v0, v17
+    move-object/from16 v1, v19
 
-    move/from16 v1, v20
-
-    move-object/from16 v2, v21
-
-    move-object/from16 v3, v22
-
-    invoke-interface {v6, v0, v1, v2, v3}, Landroid/media/IAudioService;->setMasterMute(ZILjava/lang/String;Landroid/os/IBinder;)V
+    invoke-interface {v4, v15, v0, v1}, Landroid/media/IAudioService;->adjustMasterVolume(IILjava/lang/String;)V
     :try_end_d
     .catch Landroid/os/RemoteException; {:try_start_d .. :try_end_d} :catch_1
     .catchall {:try_start_d .. :try_end_d} :catchall_0
 
     goto/16 :goto_2
 
-    .line 5043
+    .line 4949
     :catch_1
-    move-exception v13
+    move-exception v11
 
-    .line 5044
-    .restart local v13    # "re":Landroid/os/RemoteException;
+    .line 4950
+    .restart local v11    # "re":Landroid/os/RemoteException;
     :try_start_e
-    const-string v17, "DevicePolicyManagerService"
+    const-string v15, "DevicePolicyManagerService"
 
-    const-string v20, "Failed to talk to AudioService."
+    const-string v18, "Failed to talk to AudioService."
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
-    move-object/from16 v1, v20
-
-    invoke-static {v0, v1, v13}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v15, v0, v11}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     :try_end_e
     .catchall {:try_start_e .. :try_end_e} :catchall_0
 

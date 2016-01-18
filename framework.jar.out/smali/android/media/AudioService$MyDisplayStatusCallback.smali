@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 5557
+    .line 5337
     iput-object p1, p0, Landroid/media/AudioService$MyDisplayStatusCallback;->this$0:Landroid/media/AudioService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .param p2, "x1"    # Landroid/media/AudioService$1;
 
     .prologue
-    .line 5557
+    .line 5337
     invoke-direct {p0, p1}, Landroid/media/AudioService$MyDisplayStatusCallback;-><init>(Landroid/media/AudioService;)V
 
     return-void
@@ -53,27 +53,27 @@
     .param p1, "status"    # I
 
     .prologue
-    .line 5559
+    .line 5339
     iget-object v0, p0, Landroid/media/AudioService$MyDisplayStatusCallback;->this$0:Landroid/media/AudioService;
 
     # getter for: Landroid/media/AudioService;->mHdmiManager:Landroid/hardware/hdmi/HdmiControlManager;
-    invoke-static {v0}, Landroid/media/AudioService;->access$7300(Landroid/media/AudioService;)Landroid/hardware/hdmi/HdmiControlManager;
+    invoke-static {v0}, Landroid/media/AudioService;->access$7100(Landroid/media/AudioService;)Landroid/hardware/hdmi/HdmiControlManager;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    .line 5560
+    .line 5340
     iget-object v0, p0, Landroid/media/AudioService$MyDisplayStatusCallback;->this$0:Landroid/media/AudioService;
 
     # getter for: Landroid/media/AudioService;->mHdmiManager:Landroid/hardware/hdmi/HdmiControlManager;
-    invoke-static {v0}, Landroid/media/AudioService;->access$7300(Landroid/media/AudioService;)Landroid/hardware/hdmi/HdmiControlManager;
+    invoke-static {v0}, Landroid/media/AudioService;->access$7100(Landroid/media/AudioService;)Landroid/hardware/hdmi/HdmiControlManager;
 
     move-result-object v1
 
     monitor-enter v1
 
-    .line 5561
+    .line 5341
     :try_start_0
     iget-object v2, p0, Landroid/media/AudioService$MyDisplayStatusCallback;->this$0:Landroid/media/AudioService;
 
@@ -85,13 +85,13 @@
 
     :goto_0
     # setter for: Landroid/media/AudioService;->mHdmiCecSink:Z
-    invoke-static {v2, v0}, Landroid/media/AudioService;->access$9502(Landroid/media/AudioService;Z)Z
+    invoke-static {v2, v0}, Landroid/media/AudioService;->access$9202(Landroid/media/AudioService;Z)Z
 
-    .line 5563
+    .line 5343
     iget-object v0, p0, Landroid/media/AudioService$MyDisplayStatusCallback;->this$0:Landroid/media/AudioService;
 
     # invokes: Landroid/media/AudioService;->isPlatformTelevision()Z
-    invoke-static {v0}, Landroid/media/AudioService;->access$5300(Landroid/media/AudioService;)Z
+    invoke-static {v0}, Landroid/media/AudioService;->access$5000(Landroid/media/AudioService;)Z
 
     move-result v0
 
@@ -100,13 +100,13 @@
     iget-object v0, p0, Landroid/media/AudioService$MyDisplayStatusCallback;->this$0:Landroid/media/AudioService;
 
     # getter for: Landroid/media/AudioService;->mHdmiCecSink:Z
-    invoke-static {v0}, Landroid/media/AudioService;->access$9500(Landroid/media/AudioService;)Z
+    invoke-static {v0}, Landroid/media/AudioService;->access$9200(Landroid/media/AudioService;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 5564
+    .line 5344
     iget-object v0, p0, Landroid/media/AudioService$MyDisplayStatusCallback;->this$0:Landroid/media/AudioService;
 
     iget v2, v0, Landroid/media/AudioService;->mFixedVolumeDevices:I
@@ -115,27 +115,27 @@
 
     iput v2, v0, Landroid/media/AudioService;->mFixedVolumeDevices:I
 
-    .line 5566
+    .line 5346
     :cond_0
     iget-object v0, p0, Landroid/media/AudioService$MyDisplayStatusCallback;->this$0:Landroid/media/AudioService;
 
     # invokes: Landroid/media/AudioService;->checkAllFixedVolumeDevices()V
-    invoke-static {v0}, Landroid/media/AudioService;->access$9600(Landroid/media/AudioService;)V
+    invoke-static {v0}, Landroid/media/AudioService;->access$9300(Landroid/media/AudioService;)V
 
-    .line 5567
+    .line 5347
     monitor-exit v1
 
-    .line 5569
+    .line 5349
     :cond_1
     return-void
 
-    .line 5561
+    .line 5341
     :cond_2
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 5567
+    .line 5347
     :catchall_0
     move-exception v0
 

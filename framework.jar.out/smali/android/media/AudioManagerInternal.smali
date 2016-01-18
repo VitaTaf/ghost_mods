@@ -19,7 +19,7 @@
     .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 53
+    .line 50
     return-void
 .end method
 
@@ -35,9 +35,6 @@
 .end method
 
 .method public abstract getRingerModeInternal()I
-.end method
-
-.method public abstract setMasterMuteForUid(ZILjava/lang/String;Landroid/os/IBinder;I)V
 .end method
 
 .method public abstract setRingerModeDelegate(Landroid/media/AudioManagerInternal$RingerModeDelegate;)V
