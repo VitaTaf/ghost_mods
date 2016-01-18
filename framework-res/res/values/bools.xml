@@ -16,7 +16,6 @@
     <bool name="config_sf_limitedAlpha">false</bool>
     <bool name="ImsConnectedDefaultValue">false</bool>
     <bool name="config_sf_slowBlur">true</bool>
-    <bool name="config_useMasterVolume">false</bool>
     <bool name="config_useVolumeKeySounds">true</bool>
     <bool name="config_sendAudioBecomingNoisy">true</bool>
     <bool name="config_ui_enableFadingMarquee">false</bool>

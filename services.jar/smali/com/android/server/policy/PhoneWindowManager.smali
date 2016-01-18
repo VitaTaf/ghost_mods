@@ -711,8 +711,6 @@
 
 .field mUpsideDownRotation:I
 
-.field mUseMasterVolume:Z
-
 .field mUseTvRouting:Z
 
 .field mUserRotation:I
@@ -2079,29 +2077,29 @@
     .param p1, "event"    # Landroid/view/KeyEvent;
 
     .prologue
-    .line 4959
+    .line 4956
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    .line 5009
+    .line 4991
     :cond_0
     :goto_0
     return-void
 
-    .line 4962
+    .line 4959
     :cond_1
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result v2
 
-    .line 4963
+    .line 4960
     .local v2, "keyCode":I
     const/4 v1, 0x5
 
-    .line 4964
+    .line 4961
     .local v1, "flags":I
     iget-object v4, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
 
@@ -2109,37 +2107,34 @@
 
     move-result-object v3
 
-    .line 4965
+    .line 4962
     .local v3, "pkgName":Ljava/lang/String;
     sparse-switch v2, :sswitch_data_0
 
     goto :goto_0
 
-    .line 4968
+    .line 4965
     :sswitch_0
     :try_start_0
-    iget-boolean v4, p0, Lcom/android/server/policy/PhoneWindowManager;->mUseMasterVolume:Z
-
-    if-eqz v4, :cond_2
-
-    .line 4969
     invoke-static {}, Lcom/android/server/policy/PhoneWindowManager;->getAudioService()Landroid/media/IAudioService;
 
     move-result-object v4
 
     const/4 v5, 0x1
 
-    invoke-interface {v4, v5, v1, v3}, Landroid/media/IAudioService;->adjustMasterVolume(IILjava/lang/String;)V
+    const/high16 v6, -0x80000000
+
+    invoke-interface {v4, v5, v6, v1, v3}, Landroid/media/IAudioService;->adjustSuggestedStreamVolume(IIILjava/lang/String;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 4975
+    .line 4967
     :catch_0
     move-exception v0
 
-    .line 4976
+    .line 4968
     .local v0, "e":Landroid/os/RemoteException;
     const-string v4, "WindowManager"
 
@@ -2149,49 +2144,29 @@
 
     goto :goto_0
 
-    .line 4972
+    .line 4973
     .end local v0    # "e":Landroid/os/RemoteException;
-    :cond_2
-    :try_start_1
-    invoke-static {}, Lcom/android/server/policy/PhoneWindowManager;->getAudioService()Landroid/media/IAudioService;
-
-    move-result-object v4
-
-    const/4 v5, 0x1
-
-    const/high16 v6, -0x80000000
-
-    invoke-interface {v4, v5, v6, v1, v3}, Landroid/media/IAudioService;->adjustSuggestedStreamVolume(IIILjava/lang/String;)V
-    :try_end_1
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
-
-    goto :goto_0
-
-    .line 4981
     :sswitch_1
-    :try_start_2
-    iget-boolean v4, p0, Lcom/android/server/policy/PhoneWindowManager;->mUseMasterVolume:Z
-
-    if-eqz v4, :cond_3
-
-    .line 4982
+    :try_start_1
     invoke-static {}, Lcom/android/server/policy/PhoneWindowManager;->getAudioService()Landroid/media/IAudioService;
 
     move-result-object v4
 
     const/4 v5, -0x1
 
-    invoke-interface {v4, v5, v1, v3}, Landroid/media/IAudioService;->adjustMasterVolume(IILjava/lang/String;)V
-    :try_end_2
-    .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_1
+    const/high16 v6, -0x80000000
+
+    invoke-interface {v4, v5, v6, v1, v3}, Landroid/media/IAudioService;->adjustSuggestedStreamVolume(IIILjava/lang/String;)V
+    :try_end_1
+    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
 
     goto :goto_0
 
-    .line 4988
+    .line 4975
     :catch_1
     move-exception v0
 
-    .line 4989
+    .line 4976
     .restart local v0    # "e":Landroid/os/RemoteException;
     const-string v4, "WindowManager"
 
@@ -2201,56 +2176,36 @@
 
     goto :goto_0
 
-    .line 4985
+    .line 4981
     .end local v0    # "e":Landroid/os/RemoteException;
-    :cond_3
-    :try_start_3
-    invoke-static {}, Lcom/android/server/policy/PhoneWindowManager;->getAudioService()Landroid/media/IAudioService;
-
-    move-result-object v4
-
-    const/4 v5, -0x1
-
-    const/high16 v6, -0x80000000
-
-    invoke-interface {v4, v5, v6, v1, v3}, Landroid/media/IAudioService;->adjustSuggestedStreamVolume(IIILjava/lang/String;)V
-    :try_end_3
-    .catch Landroid/os/RemoteException; {:try_start_3 .. :try_end_3} :catch_1
-
-    goto :goto_0
-
-    .line 4994
     :sswitch_2
-    :try_start_4
+    :try_start_2
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getRepeatCount()I
 
     move-result v4
 
     if-nez v4, :cond_0
 
-    .line 4995
-    iget-boolean v4, p0, Lcom/android/server/policy/PhoneWindowManager;->mUseMasterVolume:Z
-
-    if-eqz v4, :cond_4
-
-    .line 4996
+    .line 4982
     invoke-static {}, Lcom/android/server/policy/PhoneWindowManager;->getAudioService()Landroid/media/IAudioService;
 
     move-result-object v4
 
     const/16 v5, 0x65
 
-    invoke-interface {v4, v5, v1, v3}, Landroid/media/IAudioService;->adjustMasterVolume(IILjava/lang/String;)V
-    :try_end_4
-    .catch Landroid/os/RemoteException; {:try_start_4 .. :try_end_4} :catch_2
+    const/high16 v6, -0x80000000
+
+    invoke-interface {v4, v5, v6, v1, v3}, Landroid/media/IAudioService;->adjustSuggestedStreamVolume(IIILjava/lang/String;)V
+    :try_end_2
+    .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_2
 
     goto :goto_0
 
-    .line 5004
+    .line 4986
     :catch_2
     move-exception v0
 
-    .line 5005
+    .line 4987
     .restart local v0    # "e":Landroid/os/RemoteException;
     const-string v4, "WindowManager"
 
@@ -2260,25 +2215,7 @@
 
     goto :goto_0
 
-    .line 4999
-    .end local v0    # "e":Landroid/os/RemoteException;
-    :cond_4
-    :try_start_5
-    invoke-static {}, Lcom/android/server/policy/PhoneWindowManager;->getAudioService()Landroid/media/IAudioService;
-
-    move-result-object v4
-
-    const/16 v5, 0x65
-
-    const/high16 v6, -0x80000000
-
-    invoke-interface {v4, v5, v6, v1, v3}, Landroid/media/IAudioService;->adjustSuggestedStreamVolume(IIILjava/lang/String;)V
-    :try_end_5
-    .catch Landroid/os/RemoteException; {:try_start_5 .. :try_end_5} :catch_2
-
-    goto :goto_0
-
-    .line 4965
+    .line 4962
     nop
 
     :sswitch_data_0
@@ -14979,21 +14916,6 @@
 
     :goto_2
     iput-boolean v4, p0, Lcom/android/server/policy/PhoneWindowManager;->mUseTvRouting:Z
-
-    .line 1309
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    const v4, 0x1120013
-
-    invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getBoolean(I)Z
-
-    move-result v2
-
-    iput-boolean v2, p0, Lcom/android/server/policy/PhoneWindowManager;->mUseMasterVolume:Z
 
     .line 1312
     invoke-direct {p0}, Lcom/android/server/policy/PhoneWindowManager;->readConfigurationDependentBehaviors()V

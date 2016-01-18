@@ -1244,9 +1244,7 @@
     if-eqz v2, :cond_0
 
     .line 4043
-    const/16 v2, 0x64
-
-    invoke-virtual {v0, v2, v4}, Landroid/media/AudioManager;->adjustMasterVolume(II)V
+    invoke-virtual {v0, v4, v4}, Landroid/media/AudioManager;->setMasterMute(ZI)V
 
     .line 4045
     :cond_0
@@ -19229,26 +19227,26 @@
 .end method
 
 .method public setMasterVolumeMuted(Landroid/content/ComponentName;Z)V
-    .locals 6
+    .locals 5
     .param p1, "who"    # Landroid/content/ComponentName;
     .param p2, "on"    # Z
 
     .prologue
-    .line 5402
+    .line 5400
     iget-object v3, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 5404
+    .line 5402
     .local v0, "contentResolver":Landroid/content/ContentResolver;
     monitor-enter p0
 
-    .line 5405
+    .line 5403
     if-nez p1, :cond_0
 
-    .line 5406
+    .line 5404
     :try_start_0
     new-instance v3, Ljava/lang/NullPointerException;
 
@@ -19258,7 +19256,7 @@
 
     throw v3
 
-    .line 5419
+    .line 5415
     :catchall_0
     move-exception v3
 
@@ -19268,14 +19266,14 @@
 
     throw v3
 
-    .line 5408
+    .line 5406
     :cond_0
     const/4 v3, -0x1
 
     :try_start_1
     invoke-virtual {p0, p1, v3}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->getActiveAdminForCallerLocked(Landroid/content/ComponentName;I)Lcom/android/server/devicepolicy/DevicePolicyManagerService$ActiveAdmin;
 
-    .line 5410
+    .line 5408
     const-string v3, "audio"
 
     invoke-static {v3}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -19288,44 +19286,33 @@
 
     move-result-object v1
 
-    .line 5413
+    .line 5411
     .local v1, "iAudioService":Landroid/media/IAudioService;
-    if-eqz p2, :cond_1
-
-    const/16 v3, -0x64
-
-    :goto_0
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     :try_start_2
     invoke-virtual {p1}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-interface {v1, v3, v4, v5}, Landroid/media/IAudioService;->adjustMasterVolume(IILjava/lang/String;)V
+    invoke-interface {v1, p2, v3, v4}, Landroid/media/IAudioService;->setMasterMute(ZILjava/lang/String;)V
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 5419
-    :goto_1
+    .line 5415
+    :goto_0
     :try_start_3
     monitor-exit p0
 
-    .line 5420
+    .line 5416
     return-void
 
-    .line 5413
-    :cond_1
-    const/16 v3, 0x64
-
-    goto :goto_0
-
-    .line 5416
+    .line 5412
     :catch_0
     move-exception v2
 
-    .line 5417
+    .line 5413
     .local v2, "re":Landroid/os/RemoteException;
     const-string v3, "DevicePolicyManagerService"
 
@@ -19335,7 +19322,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
 .method public setMaximumFailedPasswordsForWipe(Landroid/content/ComponentName;II)V
@@ -22424,7 +22411,7 @@
     if-eqz v15, :cond_4
 
     .line 4880
-    const/16 v15, -0x64
+    const/4 v15, 0x1
 
     const/16 v18, 0x0
 
@@ -22436,7 +22423,7 @@
 
     move-object/from16 v1, v19
 
-    invoke-interface {v4, v15, v0, v1}, Landroid/media/IAudioService;->adjustMasterVolume(IILjava/lang/String;)V
+    invoke-interface {v4, v15, v0, v1}, Landroid/media/IAudioService;->setMasterMute(ZILjava/lang/String;)V
     :try_end_8
     .catch Landroid/os/RemoteException; {:try_start_8 .. :try_end_8} :catch_0
     .catchall {:try_start_8 .. :try_end_8} :catchall_0
@@ -22708,7 +22695,7 @@
     if-eqz v15, :cond_7
 
     .line 4946
-    const/16 v15, 0x64
+    const/4 v15, 0x0
 
     const/16 v18, 0x0
 
@@ -22720,7 +22707,7 @@
 
     move-object/from16 v1, v19
 
-    invoke-interface {v4, v15, v0, v1}, Landroid/media/IAudioService;->adjustMasterVolume(IILjava/lang/String;)V
+    invoke-interface {v4, v15, v0, v1}, Landroid/media/IAudioService;->setMasterMute(ZILjava/lang/String;)V
     :try_end_d
     .catch Landroid/os/RemoteException; {:try_start_d .. :try_end_d} :catch_1
     .catchall {:try_start_d .. :try_end_d} :catchall_0

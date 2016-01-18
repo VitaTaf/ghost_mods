@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 4048
+    .line 3887
     iput-object p1, p0, Lcom/android/server/audio/AudioService$AudioHandler$2;->this$1:Lcom/android/server/audio/AudioService$AudioHandler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,13 +43,13 @@
     .param p3, "extra"    # I
 
     .prologue
-    .line 4050
+    .line 3889
     iget-object v0, p0, Lcom/android/server/audio/AudioService$AudioHandler$2;->this$1:Lcom/android/server/audio/AudioService$AudioHandler;
 
     # invokes: Lcom/android/server/audio/AudioService$AudioHandler;->cleanupPlayer(Landroid/media/MediaPlayer;)V
-    invoke-static {v0, p1}, Lcom/android/server/audio/AudioService$AudioHandler;->access$5600(Lcom/android/server/audio/AudioService$AudioHandler;Landroid/media/MediaPlayer;)V
+    invoke-static {v0, p1}, Lcom/android/server/audio/AudioService$AudioHandler;->access$5500(Lcom/android/server/audio/AudioService$AudioHandler;Landroid/media/MediaPlayer;)V
 
-    .line 4051
+    .line 3890
     const/4 v0, 0x1
 
     return v0

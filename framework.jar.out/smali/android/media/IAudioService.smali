@@ -23,14 +23,6 @@
     .end annotation
 .end method
 
-.method public abstract adjustMasterVolume(IILjava/lang/String;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract adjustStreamVolume(IIILjava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -87,39 +79,7 @@
     .end annotation
 .end method
 
-.method public abstract getLastAudibleMasterVolume()I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getLastAudibleStreamVolume(I)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getMasterMaxVolume()I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getMasterStreamType()I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getMasterVolume()I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -168,6 +128,14 @@
 .end method
 
 .method public abstract getStreamVolume(I)I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getUiSoundsStreamType()I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -383,7 +351,7 @@
     .end annotation
 .end method
 
-.method public abstract setMasterVolume(IILjava/lang/String;)V
+.method public abstract setMasterMute(ZILjava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

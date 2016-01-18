@@ -30,8 +30,6 @@
 
 .field public static final enum BluetoothSCOStream:Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
-.field public static final enum MasterStream:Lcom/android/systemui/volume/VolumePanel$StreamResources;
-
 .field public static final enum MediaStream:Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
 .field public static final enum NotificationStream:Lcom/android/systemui/volume/VolumePanel$StreamResources;
@@ -194,33 +192,12 @@
 
     sput-object v3, Lcom/android/systemui/volume/VolumePanel$StreamResources;->NotificationStream:Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
-    .line 219
-    new-instance v3, Lcom/android/systemui/volume/VolumePanel$StreamResources;
-
-    const-string v4, "MasterStream"
-
-    const/4 v5, 0x6
-
-    const/16 v6, -0x64
-
-    const v7, 0x10404b4
-
-    const v8, 0x7f020026
-
-    const v9, 0x7f020027
-
-    move v10, v2
-
-    invoke-direct/range {v3 .. v10}, Lcom/android/systemui/volume/VolumePanel$StreamResources;-><init>(Ljava/lang/String;IIIIIZ)V
-
-    sput-object v3, Lcom/android/systemui/volume/VolumePanel$StreamResources;->MasterStream:Lcom/android/systemui/volume/VolumePanel$StreamResources;
-
     .line 224
     new-instance v3, Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
     const-string v4, "RemoteStream"
 
-    const/4 v5, 0x7
+    const/4 v5, 0x6
 
     const/16 v6, -0xc8
 
@@ -236,8 +213,8 @@
 
     sput-object v3, Lcom/android/systemui/volume/VolumePanel$StreamResources;->RemoteStream:Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
-    .line 187
-    const/16 v0, 0x8
+    .line 179
+    const/4 v0, 0x7
 
     new-array v0, v0, [Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
@@ -268,12 +245,6 @@
     aput-object v2, v0, v1
 
     const/4 v1, 0x6
-
-    sget-object v2, Lcom/android/systemui/volume/VolumePanel$StreamResources;->MasterStream:Lcom/android/systemui/volume/VolumePanel$StreamResources;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x7
 
     sget-object v2, Lcom/android/systemui/volume/VolumePanel$StreamResources;->RemoteStream:Lcom/android/systemui/volume/VolumePanel$StreamResources;
 

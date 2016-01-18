@@ -468,10 +468,6 @@
         <item>secure</item>
         <item>clock</item>
     </string-array>
-    <integer-array name="config_masterVolumeRamp">
-        <item>0</item>
-        <item>5</item>
-    </integer-array>
     <string-array name="networkAttributes">
         <item>wifi,1,1,2,-1,true</item>
         <item>mobile,0,0,0,-1,true</item>

@@ -26,15 +26,13 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.media.IVolumeController"
 
-.field static final TRANSACTION_dismiss:I = 0x6
+.field static final TRANSACTION_dismiss:I = 0x5
 
 .field static final TRANSACTION_displaySafeVolumeWarning:I = 0x1
 
-.field static final TRANSACTION_masterMuteChanged:I = 0x4
+.field static final TRANSACTION_masterMuteChanged:I = 0x3
 
-.field static final TRANSACTION_masterVolumeChanged:I = 0x3
-
-.field static final TRANSACTION_setLayoutDirection:I = 0x5
+.field static final TRANSACTION_setLayoutDirection:I = 0x4
 
 .field static final TRANSACTION_volumeChanged:I = 0x2
 
@@ -130,7 +128,7 @@
     .line 43
     sparse-switch p1, :sswitch_data_0
 
-    .line 99
+    .line 91
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v2
@@ -202,7 +200,7 @@
 
     .line 73
     .restart local v0    # "_arg0":I
-    invoke-virtual {p0, v0}, Landroid/media/IVolumeController$Stub;->masterVolumeChanged(I)V
+    invoke-virtual {p0, v0}, Landroid/media/IVolumeController$Stub;->masterMuteChanged(I)V
 
     goto :goto_0
 
@@ -220,7 +218,7 @@
 
     .line 81
     .restart local v0    # "_arg0":I
-    invoke-virtual {p0, v0}, Landroid/media/IVolumeController$Stub;->masterMuteChanged(I)V
+    invoke-virtual {p0, v0}, Landroid/media/IVolumeController$Stub;->setLayoutDirection(I)V
 
     goto :goto_0
 
@@ -231,32 +229,12 @@
 
     invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 88
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    .line 89
-    .restart local v0    # "_arg0":I
-    invoke-virtual {p0, v0}, Landroid/media/IVolumeController$Stub;->setLayoutDirection(I)V
-
-    goto :goto_0
-
-    .line 94
-    .end local v0    # "_arg0":I
-    :sswitch_6
-    const-string v3, "android.media.IVolumeController"
-
-    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 95
+    .line 87
     invoke-virtual {p0}, Landroid/media/IVolumeController$Stub;->dismiss()V
 
     goto :goto_0
 
     .line 43
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -264,7 +242,6 @@
         0x3 -> :sswitch_3
         0x4 -> :sswitch_4
         0x5 -> :sswitch_5
-        0x6 -> :sswitch_6
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

@@ -96,7 +96,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 333
+    .line 334
     :goto_0
     return-void
 
@@ -196,7 +196,9 @@
 
     iget-object v5, v5, Lcom/android/systemui/volume/VolumeUI;->mContext:Landroid/content/Context;
 
-    invoke-static {v5, v9, v1, v9}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+    const/high16 v6, 0x8000000
+
+    invoke-static {v5, v9, v1, v6}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v5
 

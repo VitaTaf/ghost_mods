@@ -25,9 +25,6 @@
 
 
 # virtual methods
-.method public abstract adjustMasterVolumeForUid(IILjava/lang/String;I)V
-.end method
-
 .method public abstract adjustStreamVolumeForUid(IIILjava/lang/String;I)V
 .end method
 

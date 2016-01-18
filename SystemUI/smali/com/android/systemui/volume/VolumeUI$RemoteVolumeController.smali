@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 240
+    .line 235
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeUI$RemoteVolumeController;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     invoke-direct {p0}, Landroid/media/IRemoteVolumeController$Stub;-><init>()V
@@ -37,7 +37,7 @@
     .param p2, "x1"    # Lcom/android/systemui/volume/VolumeUI$1;
 
     .prologue
-    .line 240
+    .line 235
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeUI$RemoteVolumeController;-><init>(Lcom/android/systemui/volume/VolumeUI;)V
 
     return-void
@@ -56,7 +56,7 @@
     .end annotation
 
     .prologue
-    .line 245
+    .line 240
     new-instance v0, Landroid/media/session/MediaController;
 
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeUI$RemoteVolumeController;->this$0:Lcom/android/systemui/volume/VolumeUI;
@@ -65,7 +65,7 @@
 
     invoke-direct {v0, v1, p1}, Landroid/media/session/MediaController;-><init>(Landroid/content/Context;Landroid/media/session/ISessionController;)V
 
-    .line 246
+    .line 241
     .local v0, "controller":Landroid/media/session/MediaController;
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeUI$RemoteVolumeController;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
@@ -76,7 +76,7 @@
 
     invoke-virtual {v1, v0, p2}, Lcom/android/systemui/volume/VolumePanel;->postRemoteVolumeChanged(Landroid/media/session/MediaController;I)V
 
-    .line 247
+    .line 242
     return-void
 .end method
 
@@ -90,7 +90,7 @@
     .end annotation
 
     .prologue
-    .line 251
+    .line 246
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$RemoteVolumeController;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mPanel:Lcom/android/systemui/volume/VolumePanel;
@@ -105,10 +105,10 @@
     :goto_0
     invoke-virtual {v1, v0}, Lcom/android/systemui/volume/VolumePanel;->postRemoteSliderVisibility(Z)V
 
-    .line 254
+    .line 249
     return-void
 
-    .line 251
+    .line 246
     :cond_0
     const/4 v0, 0x0
 

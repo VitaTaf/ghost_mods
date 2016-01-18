@@ -57,10 +57,10 @@
     .end annotation
 
     .prologue
-    .line 221
+    .line 216
     invoke-virtual {p0}, Lcom/android/systemui/volume/VolumeUI$VolumeController;->dismissNow()V
 
-    .line 222
+    .line 217
     return-void
 .end method
 
@@ -68,7 +68,7 @@
     .locals 4
 
     .prologue
-    .line 236
+    .line 231
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$VolumeController;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mPanel:Lcom/android/systemui/volume/VolumePanel;
@@ -80,7 +80,7 @@
 
     invoke-virtual {v0, v2, v3}, Lcom/android/systemui/volume/VolumePanel;->postDismiss(J)V
 
-    .line 237
+    .line 232
     return-void
 .end method
 
@@ -90,7 +90,7 @@
     .param p2, "args"    # Landroid/os/Bundle;
 
     .prologue
-    .line 231
+    .line 226
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$VolumeController;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mPanel:Lcom/android/systemui/volume/VolumePanel;
@@ -100,7 +100,7 @@
 
     invoke-virtual {v0, p1, p2}, Lcom/android/systemui/volume/VolumePanel;->dispatchDemoCommand(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 232
+    .line 227
     return-void
 .end method
 
@@ -132,7 +132,7 @@
     .locals 1
 
     .prologue
-    .line 226
+    .line 221
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$VolumeController;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mPanel:Lcom/android/systemui/volume/VolumePanel;
@@ -148,7 +148,7 @@
 .end method
 
 .method public masterMuteChanged(I)V
-    .locals 1
+    .locals 0
     .param p1, "flags"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -157,40 +157,6 @@
     .end annotation
 
     .prologue
-    .line 210
-    iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$VolumeController;->this$0:Lcom/android/systemui/volume/VolumeUI;
-
-    # getter for: Lcom/android/systemui/volume/VolumeUI;->mPanel:Lcom/android/systemui/volume/VolumePanel;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$1100(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/volume/VolumePanel;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lcom/android/systemui/volume/VolumePanel;->postMasterMuteChanged(I)V
-
-    .line 211
-    return-void
-.end method
-
-.method public masterVolumeChanged(I)V
-    .locals 1
-    .param p1, "flags"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 205
-    iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$VolumeController;->this$0:Lcom/android/systemui/volume/VolumeUI;
-
-    # getter for: Lcom/android/systemui/volume/VolumeUI;->mPanel:Lcom/android/systemui/volume/VolumePanel;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$1100(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/volume/VolumePanel;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lcom/android/systemui/volume/VolumePanel;->postMasterVolumeChanged(I)V
-
     .line 206
     return-void
 .end method
@@ -205,7 +171,7 @@
     .end annotation
 
     .prologue
-    .line 216
+    .line 211
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$VolumeController;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mPanel:Lcom/android/systemui/volume/VolumePanel;
@@ -215,7 +181,7 @@
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/volume/VolumePanel;->postLayoutDirection(I)V
 
-    .line 217
+    .line 212
     return-void
 .end method
 

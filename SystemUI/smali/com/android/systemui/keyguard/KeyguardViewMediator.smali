@@ -72,8 +72,6 @@
 
 .field private mLockSounds:Landroid/media/SoundPool;
 
-.field private mMasterStreamType:I
-
 .field private mNeedToReshowWhenReenabled:Z
 
 .field private mOccluded:Z
@@ -103,6 +101,8 @@
 .field private mTrustManager:Landroid/app/trust/TrustManager;
 
 .field private mTrustedSoundId:I
+
+.field private mUiSoundsStreamType:I
 
 .field private mUnlockSoundId:I
 
@@ -2188,17 +2188,17 @@
     .line 1394
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mAudioManager:Landroid/media/AudioManager;
 
-    invoke-virtual {v0}, Landroid/media/AudioManager;->getMasterStreamType()I
+    invoke-virtual {v0}, Landroid/media/AudioManager;->getUiSoundsStreamType()I
 
     move-result v0
 
-    iput v0, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mMasterStreamType:I
+    iput v0, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mUiSoundsStreamType:I
 
     .line 1397
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mAudioManager:Landroid/media/AudioManager;
 
-    iget v1, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mMasterStreamType:I
+    iget v1, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mUiSoundsStreamType:I
 
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->isStreamMute(I)Z
 

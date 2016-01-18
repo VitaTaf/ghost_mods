@@ -397,7 +397,7 @@
 
     const-string v0, "VolumeUI"
 
-    const-string v1, "Registering volume controller"
+    const-string v1, "Registering default volume controller"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -435,7 +435,7 @@
 
     const-string v0, "VolumeUI"
 
-    const-string v1, "Unregistering volume controller"
+    const-string v1, "Unregistering default volume controller"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
