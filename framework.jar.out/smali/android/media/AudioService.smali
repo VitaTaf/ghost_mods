@@ -52,6 +52,8 @@
 
 .field protected static final DEBUG_VOL:Z
 
+.field public static final DEFAULT_MUTE_STREAMS_AFFECTED:I = 0x2e
+
 .field private static DEFAULT_STREAM_VOLUME:[I = null
 
 .field private static final FLAG_ADJUST_VOLUME:I = 0x1
@@ -9632,7 +9634,7 @@
     .line 908
     const-string/jumbo v7, "mute_streams_affected"
 
-    const/16 v8, 0xe
+    const/16 v8, 0x2e
 
     invoke-static {v0, v7, v8, v12}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
