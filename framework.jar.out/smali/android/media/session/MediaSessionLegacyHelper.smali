@@ -1703,6 +1703,12 @@
     .line 224
     if-eqz v1, :cond_0
 
+    invoke-virtual {p1}, Landroid/view/KeyEvent;->getRepeatCount()I
+
+    move-result v5
+
+    if-nez v5, :cond_0
+
     .line 225
     iget-object v5, p0, Landroid/media/session/MediaSessionLegacyHelper;->mSessionManager:Landroid/media/session/MediaSessionManager;
 
