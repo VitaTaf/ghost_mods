@@ -29,6 +29,8 @@
 
 .field iconSuppressedRes:I
 
+.field minVolume:I
+
 .field secondaryIcon:Landroid/widget/ImageView;
 
 .field seekbarView:Landroid/widget/SeekBar;

@@ -2429,6 +2429,47 @@
     goto :goto_0
 .end method
 
+.method public getStreamMinVolume(I)I
+    .locals 4
+    .param p1, "streamType"    # I
+
+    .prologue
+    .line 938
+    invoke-static {}, Landroid/media/AudioManager;->getService()Landroid/media/IAudioService;
+
+    move-result-object v1
+
+    .line 940
+    .local v1, "service":Landroid/media/IAudioService;
+    :try_start_0
+    invoke-interface {v1, p1}, Landroid/media/IAudioService;->getStreamMinVolume(I)I
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v2
+
+    .line 943
+    :goto_0
+    return v2
+
+    .line 941
+    :catch_0
+    move-exception v0
+
+    .line 942
+    .local v0, "e":Landroid/os/RemoteException;
+    sget-object v2, Landroid/media/AudioManager;->TAG:Ljava/lang/String;
+
+    const-string v3, "Dead object in getStreamMinVolume"
+
+    invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 943
+    const/4 v2, 0x0
+
+    goto :goto_0
+.end method
+
 .method public getStreamVolume(I)I
     .locals 4
     .param p1, "streamType"    # I

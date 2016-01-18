@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 4582
+    .line 4618
     iput-object p1, p0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -37,7 +37,7 @@
     .param p2, "x1"    # Lcom/android/server/audio/AudioService$1;
 
     .prologue
-    .line 4582
+    .line 4618
     invoke-direct {p0, p1}, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;-><init>(Lcom/android/server/audio/AudioService;)V
 
     return-void
@@ -51,12 +51,12 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 4585
+    .line 4621
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v10
 
-    .line 4590
+    .line 4626
     .local v10, "action":Ljava/lang/String;
     const-string v3, "android.intent.action.DOCK_EVENT"
 
@@ -66,7 +66,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 4591
+    .line 4627
     const-string v3, "android.intent.extra.DOCK_STATE"
 
     const/4 v4, 0x0
@@ -77,14 +77,14 @@
 
     move-result v20
 
-    .line 4594
+    .line 4630
     .local v20, "dockState":I
     packed-switch v20, :pswitch_data_0
 
-    .line 4609
+    .line 4645
     const/16 v18, 0x0
 
-    .line 4613
+    .line 4649
     .local v18, "config":I
     :goto_0
     const/4 v3, 0x3
@@ -100,7 +100,7 @@
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mDockState:I
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$8300(Lcom/android/server/audio/AudioService;)I
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$8500(Lcom/android/server/audio/AudioService;)I
 
     move-result v3
 
@@ -108,7 +108,7 @@
 
     if-eq v3, v4, :cond_1
 
-    .line 4616
+    .line 4652
     :cond_0
     const/4 v3, 0x3
 
@@ -116,7 +116,7 @@
 
     invoke-static {v3, v0}, Landroid/media/AudioSystem;->setForceUse(II)I
 
-    .line 4618
+    .line 4654
     :cond_1
     move-object/from16 v0, p0
 
@@ -125,52 +125,52 @@
     move/from16 v0, v20
 
     # setter for: Lcom/android/server/audio/AudioService;->mDockState:I
-    invoke-static {v3, v0}, Lcom/android/server/audio/AudioService;->access$8302(Lcom/android/server/audio/AudioService;I)I
+    invoke-static {v3, v0}, Lcom/android/server/audio/AudioService;->access$8502(Lcom/android/server/audio/AudioService;I)I
 
-    .line 4790
+    .line 4826
     .end local v18    # "config":I
     .end local v20    # "dockState":I
     :cond_2
     :goto_1
     return-void
 
-    .line 4596
+    .line 4632
     .restart local v20    # "dockState":I
     :pswitch_0
     const/16 v18, 0x7
 
-    .line 4597
+    .line 4633
     .restart local v18    # "config":I
     goto :goto_0
 
-    .line 4599
+    .line 4635
     .end local v18    # "config":I
     :pswitch_1
     const/16 v18, 0x6
 
-    .line 4600
+    .line 4636
     .restart local v18    # "config":I
     goto :goto_0
 
-    .line 4602
+    .line 4638
     .end local v18    # "config":I
     :pswitch_2
     const/16 v18, 0x8
 
-    .line 4603
+    .line 4639
     .restart local v18    # "config":I
     goto :goto_0
 
-    .line 4605
+    .line 4641
     .end local v18    # "config":I
     :pswitch_3
     const/16 v18, 0x9
 
-    .line 4606
+    .line 4642
     .restart local v18    # "config":I
     goto :goto_0
 
-    .line 4619
+    .line 4655
     .end local v18    # "config":I
     .end local v20    # "dockState":I
     :cond_3
@@ -182,7 +182,7 @@
 
     if-eqz v3, :cond_9
 
-    .line 4620
+    .line 4656
     const-string v3, "android.bluetooth.profile.extra.STATE"
 
     const/4 v4, 0x0
@@ -193,19 +193,19 @@
 
     move-result v30
 
-    .line 4622
+    .line 4658
     .local v30, "state":I
     const/16 v27, 0x10
 
-    .line 4623
+    .line 4659
     .local v27, "outDevice":I
     const v24, -0x7ffffff8
 
-    .line 4624
+    .line 4660
     .local v24, "inDevice":I
     const/4 v11, 0x0
 
-    .line 4626
+    .line 4662
     .local v11, "address":Ljava/lang/String;
     const-string v3, "android.bluetooth.device.extra.DEVICE"
 
@@ -217,32 +217,32 @@
 
     check-cast v16, Landroid/bluetooth/BluetoothDevice;
 
-    .line 4627
+    .line 4663
     .local v16, "btDevice":Landroid/bluetooth/BluetoothDevice;
     if-eqz v16, :cond_2
 
-    .line 4631
+    .line 4667
     invoke-virtual/range {v16 .. v16}, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
 
     move-result-object v11
 
-    .line 4632
+    .line 4668
     invoke-virtual/range {v16 .. v16}, Landroid/bluetooth/BluetoothDevice;->getBluetoothClass()Landroid/bluetooth/BluetoothClass;
 
     move-result-object v15
 
-    .line 4633
+    .line 4669
     .local v15, "btClass":Landroid/bluetooth/BluetoothClass;
     if-eqz v15, :cond_4
 
-    .line 4634
+    .line 4670
     invoke-virtual {v15}, Landroid/bluetooth/BluetoothClass;->getDeviceClass()I
 
     move-result v3
 
     sparse-switch v3, :sswitch_data_0
 
-    .line 4645
+    .line 4681
     :cond_4
     :goto_2
     invoke-static {v11}, Landroid/bluetooth/BluetoothAdapter;->checkBluetoothAddress(Ljava/lang/String;)Z
@@ -251,10 +251,10 @@
 
     if-nez v3, :cond_5
 
-    .line 4646
+    .line 4682
     const-string v11, ""
 
-    .line 4649
+    .line 4685
     :cond_5
     const/4 v3, 0x2
 
@@ -264,7 +264,7 @@
 
     const/16 v19, 0x1
 
-    .line 4650
+    .line 4686
     .local v19, "connected":Z
     :goto_3
     move-object/from16 v0, p0
@@ -276,7 +276,7 @@
     move/from16 v1, v27
 
     # invokes: Lcom/android/server/audio/AudioService;->handleDeviceConnection(ZILjava/lang/String;)Z
-    invoke-static {v3, v0, v1, v11}, Lcom/android/server/audio/AudioService;->access$8400(Lcom/android/server/audio/AudioService;ZILjava/lang/String;)Z
+    invoke-static {v3, v0, v1, v11}, Lcom/android/server/audio/AudioService;->access$8600(Lcom/android/server/audio/AudioService;ZILjava/lang/String;)Z
 
     move-result v3
 
@@ -291,7 +291,7 @@
     move/from16 v1, v24
 
     # invokes: Lcom/android/server/audio/AudioService;->handleDeviceConnection(ZILjava/lang/String;)Z
-    invoke-static {v3, v0, v1, v11}, Lcom/android/server/audio/AudioService;->access$8400(Lcom/android/server/audio/AudioService;ZILjava/lang/String;)Z
+    invoke-static {v3, v0, v1, v11}, Lcom/android/server/audio/AudioService;->access$8600(Lcom/android/server/audio/AudioService;ZILjava/lang/String;)Z
 
     move-result v3
 
@@ -299,27 +299,27 @@
 
     const/16 v31, 0x1
 
-    .line 4652
+    .line 4688
     .local v31, "success":Z
     :goto_4
     if-eqz v31, :cond_2
 
-    .line 4653
+    .line 4689
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mScoClients:Ljava/util/ArrayList;
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$2200(Lcom/android/server/audio/AudioService;)Ljava/util/ArrayList;
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$2400(Lcom/android/server/audio/AudioService;)Ljava/util/ArrayList;
 
     move-result-object v4
 
     monitor-enter v4
 
-    .line 4654
+    .line 4690
     if-eqz v19, :cond_8
 
-    .line 4655
+    .line 4691
     :try_start_0
     move-object/from16 v0, p0
 
@@ -328,9 +328,9 @@
     move-object/from16 v0, v16
 
     # setter for: Lcom/android/server/audio/AudioService;->mBluetoothHeadsetDevice:Landroid/bluetooth/BluetoothDevice;
-    invoke-static {v3, v0}, Lcom/android/server/audio/AudioService;->access$2702(Lcom/android/server/audio/AudioService;Landroid/bluetooth/BluetoothDevice;)Landroid/bluetooth/BluetoothDevice;
+    invoke-static {v3, v0}, Lcom/android/server/audio/AudioService;->access$2902(Lcom/android/server/audio/AudioService;Landroid/bluetooth/BluetoothDevice;)Landroid/bluetooth/BluetoothDevice;
 
-    .line 4660
+    .line 4696
     :goto_5
     monitor-exit v4
 
@@ -345,35 +345,35 @@
 
     throw v3
 
-    .line 4637
+    .line 4673
     .end local v19    # "connected":Z
     .end local v31    # "success":Z
     :sswitch_0
     const/16 v27, 0x20
 
-    .line 4638
+    .line 4674
     goto :goto_2
 
-    .line 4640
+    .line 4676
     :sswitch_1
     const/16 v27, 0x40
 
     goto :goto_2
 
-    .line 4649
+    .line 4685
     :cond_6
     const/16 v19, 0x0
 
     goto :goto_3
 
-    .line 4650
+    .line 4686
     .restart local v19    # "connected":Z
     :cond_7
     const/16 v31, 0x0
 
     goto :goto_4
 
-    .line 4657
+    .line 4693
     .restart local v31    # "success":Z
     :cond_8
     :try_start_1
@@ -384,21 +384,21 @@
     const/4 v5, 0x0
 
     # setter for: Lcom/android/server/audio/AudioService;->mBluetoothHeadsetDevice:Landroid/bluetooth/BluetoothDevice;
-    invoke-static {v3, v5}, Lcom/android/server/audio/AudioService;->access$2702(Lcom/android/server/audio/AudioService;Landroid/bluetooth/BluetoothDevice;)Landroid/bluetooth/BluetoothDevice;
+    invoke-static {v3, v5}, Lcom/android/server/audio/AudioService;->access$2902(Lcom/android/server/audio/AudioService;Landroid/bluetooth/BluetoothDevice;)Landroid/bluetooth/BluetoothDevice;
 
-    .line 4658
+    .line 4694
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # invokes: Lcom/android/server/audio/AudioService;->resetBluetoothSco()V
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$7200(Lcom/android/server/audio/AudioService;)V
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$7400(Lcom/android/server/audio/AudioService;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_5
 
-    .line 4662
+    .line 4698
     .end local v11    # "address":Ljava/lang/String;
     .end local v15    # "btClass":Landroid/bluetooth/BluetoothClass;
     .end local v16    # "btDevice":Landroid/bluetooth/BluetoothDevice;
@@ -416,7 +416,7 @@
 
     if-eqz v3, :cond_b
 
-    .line 4663
+    .line 4699
     const-string v3, "state"
 
     const/4 v4, 0x0
@@ -427,7 +427,7 @@
 
     move-result v30
 
-    .line 4665
+    .line 4701
     .restart local v30    # "state":I
     const-string v3, "card"
 
@@ -439,7 +439,7 @@
 
     move-result v12
 
-    .line 4666
+    .line 4702
     .local v12, "alsaCard":I
     const-string v3, "device"
 
@@ -451,7 +451,7 @@
 
     move-result v13
 
-    .line 4668
+    .line 4704
     .local v13, "alsaDevice":I
     const/4 v3, -0x1
 
@@ -463,12 +463,12 @@
 
     const-string v28, ""
 
-    .line 4672
+    .line 4708
     .local v28, "params":Ljava/lang/String;
     :goto_6
     const/16 v27, 0x2000
 
-    .line 4673
+    .line 4709
     .restart local v27    # "outDevice":I
     move-object/from16 v0, p0
 
@@ -484,7 +484,7 @@
 
     goto/16 :goto_1
 
-    .line 4668
+    .line 4704
     .end local v27    # "outDevice":I
     .end local v28    # "params":Ljava/lang/String;
     :cond_a
@@ -518,7 +518,7 @@
 
     goto :goto_6
 
-    .line 4674
+    .line 4710
     .end local v12    # "alsaCard":I
     .end local v13    # "alsaDevice":I
     .end local v30    # "state":I
@@ -531,13 +531,13 @@
 
     if-eqz v3, :cond_e
 
-    .line 4680
+    .line 4716
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mContentResolver:Landroid/content/ContentResolver;
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$2800(Lcom/android/server/audio/AudioService;)Landroid/content/ContentResolver;
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$3000(Lcom/android/server/audio/AudioService;)Landroid/content/ContentResolver;
 
     move-result-object v3
 
@@ -549,11 +549,11 @@
 
     move-result v25
 
-    .line 4682
+    .line 4718
     .local v25, "isDisabled":I
     if-nez v25, :cond_2
 
-    .line 4686
+    .line 4722
     const-string v3, "state"
 
     const/4 v4, 0x0
@@ -564,7 +564,7 @@
 
     move-result v30
 
-    .line 4688
+    .line 4724
     .restart local v30    # "state":I
     const-string v3, "card"
 
@@ -576,7 +576,7 @@
 
     move-result v12
 
-    .line 4689
+    .line 4725
     .restart local v12    # "alsaCard":I
     const-string v3, "device"
 
@@ -588,7 +588,7 @@
 
     move-result v13
 
-    .line 4690
+    .line 4726
     .restart local v13    # "alsaDevice":I
     const-string v3, "hasPlayback"
 
@@ -600,7 +600,7 @@
 
     move-result v23
 
-    .line 4691
+    .line 4727
     .local v23, "hasPlayback":Z
     const-string v3, "hasCapture"
 
@@ -612,7 +612,7 @@
 
     move-result v21
 
-    .line 4692
+    .line 4728
     .local v21, "hasCapture":Z
     const-string v3, "hasMIDI"
 
@@ -624,7 +624,7 @@
 
     move-result v22
 
-    .line 4694
+    .line 4730
     .local v22, "hasMIDI":Z
     const/4 v3, -0x1
 
@@ -636,15 +636,15 @@
 
     const-string v28, ""
 
-    .line 4698
+    .line 4734
     .restart local v28    # "params":Ljava/lang/String;
     :goto_7
     if-eqz v23, :cond_c
 
-    .line 4699
+    .line 4735
     const/16 v27, 0x4000
 
-    .line 4700
+    .line 4736
     .restart local v27    # "outDevice":I
     move-object/from16 v0, p0
 
@@ -658,15 +658,15 @@
 
     invoke-virtual {v3, v0, v1, v2}, Lcom/android/server/audio/AudioService;->setWiredDeviceConnectionState(IILjava/lang/String;)V
 
-    .line 4704
+    .line 4740
     .end local v27    # "outDevice":I
     :cond_c
     if-eqz v21, :cond_2
 
-    .line 4705
+    .line 4741
     const v24, -0x7ffff000
 
-    .line 4706
+    .line 4742
     .restart local v24    # "inDevice":I
     move-object/from16 v0, p0
 
@@ -682,7 +682,7 @@
 
     goto/16 :goto_1
 
-    .line 4694
+    .line 4730
     .end local v24    # "inDevice":I
     .end local v28    # "params":Ljava/lang/String;
     :cond_d
@@ -716,7 +716,7 @@
 
     goto :goto_7
 
-    .line 4708
+    .line 4744
     .end local v12    # "alsaCard":I
     .end local v13    # "alsaDevice":I
     .end local v21    # "hasCapture":Z
@@ -733,27 +733,27 @@
 
     if-eqz v3, :cond_13
 
-    .line 4709
+    .line 4745
     const/4 v14, 0x0
 
-    .line 4710
+    .line 4746
     .local v14, "broadcast":Z
     const/16 v29, -0x1
 
-    .line 4711
+    .line 4747
     .local v29, "scoAudioState":I
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mScoClients:Ljava/util/ArrayList;
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$2200(Lcom/android/server/audio/AudioService;)Ljava/util/ArrayList;
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$2400(Lcom/android/server/audio/AudioService;)Ljava/util/ArrayList;
 
     move-result-object v4
 
     monitor-enter v4
 
-    .line 4712
+    .line 4748
     :try_start_2
     const-string v3, "android.bluetooth.profile.extra.STATE"
 
@@ -765,14 +765,14 @@
 
     move-result v17
 
-    .line 4714
+    .line 4750
     .local v17, "btState":I
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mScoClients:Ljava/util/ArrayList;
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$2200(Lcom/android/server/audio/AudioService;)Ljava/util/ArrayList;
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$2400(Lcom/android/server/audio/AudioService;)Ljava/util/ArrayList;
 
     move-result-object v3
 
@@ -787,7 +787,7 @@
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mScoAudioState:I
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$2500(Lcom/android/server/audio/AudioService;)I
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$2700(Lcom/android/server/audio/AudioService;)I
 
     move-result v3
 
@@ -800,7 +800,7 @@
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mScoAudioState:I
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$2500(Lcom/android/server/audio/AudioService;)I
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$2700(Lcom/android/server/audio/AudioService;)I
 
     move-result v3
 
@@ -813,7 +813,7 @@
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mScoAudioState:I
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$2500(Lcom/android/server/audio/AudioService;)I
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$2700(Lcom/android/server/audio/AudioService;)I
 
     move-result v3
 
@@ -821,30 +821,30 @@
 
     if-ne v3, v5, :cond_10
 
-    .line 4718
+    .line 4754
     :cond_f
     const/4 v14, 0x1
 
-    .line 4720
+    .line 4756
     :cond_10
     packed-switch v17, :pswitch_data_1
 
-    .line 4742
+    .line 4778
     :cond_11
     :goto_8
     const/4 v14, 0x0
 
-    .line 4745
+    .line 4781
     :cond_12
     :goto_9
     monitor-exit v4
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 4746
+    .line 4782
     if-eqz v14, :cond_2
 
-    .line 4747
+    .line 4783
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
@@ -852,9 +852,9 @@
     move/from16 v0, v29
 
     # invokes: Lcom/android/server/audio/AudioService;->broadcastScoConnectionState(I)V
-    invoke-static {v3, v0}, Lcom/android/server/audio/AudioService;->access$2400(Lcom/android/server/audio/AudioService;I)V
+    invoke-static {v3, v0}, Lcom/android/server/audio/AudioService;->access$2600(Lcom/android/server/audio/AudioService;I)V
 
-    .line 4750
+    .line 4786
     new-instance v26, Landroid/content/Intent;
 
     const-string v3, "android.media.SCO_AUDIO_STATE_CHANGED"
@@ -863,7 +863,7 @@
 
     invoke-direct {v0, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 4751
+    .line 4787
     .local v26, "newIntent":Landroid/content/Intent;
     const-string v3, "android.media.extra.SCO_AUDIO_STATE"
 
@@ -873,7 +873,7 @@
 
     invoke-virtual {v0, v3, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 4752
+    .line 4788
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
@@ -881,23 +881,23 @@
     move-object/from16 v0, v26
 
     # invokes: Lcom/android/server/audio/AudioService;->sendStickyBroadcastToAll(Landroid/content/Intent;)V
-    invoke-static {v3, v0}, Lcom/android/server/audio/AudioService;->access$8500(Lcom/android/server/audio/AudioService;Landroid/content/Intent;)V
+    invoke-static {v3, v0}, Lcom/android/server/audio/AudioService;->access$8700(Lcom/android/server/audio/AudioService;Landroid/content/Intent;)V
 
     goto/16 :goto_1
 
-    .line 4722
+    .line 4758
     .end local v26    # "newIntent":Landroid/content/Intent;
     :pswitch_4
     const/16 v29, 0x1
 
-    .line 4723
+    .line 4759
     :try_start_3
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mScoAudioState:I
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$2500(Lcom/android/server/audio/AudioService;)I
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$2700(Lcom/android/server/audio/AudioService;)I
 
     move-result v3
 
@@ -910,7 +910,7 @@
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mScoAudioState:I
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$2500(Lcom/android/server/audio/AudioService;)I
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$2700(Lcom/android/server/audio/AudioService;)I
 
     move-result v3
 
@@ -923,7 +923,7 @@
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mScoAudioState:I
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$2500(Lcom/android/server/audio/AudioService;)I
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$2700(Lcom/android/server/audio/AudioService;)I
 
     move-result v3
 
@@ -931,7 +931,7 @@
 
     if-eq v3, v5, :cond_12
 
-    .line 4726
+    .line 4762
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
@@ -939,11 +939,11 @@
     const/4 v5, 0x2
 
     # setter for: Lcom/android/server/audio/AudioService;->mScoAudioState:I
-    invoke-static {v3, v5}, Lcom/android/server/audio/AudioService;->access$2502(Lcom/android/server/audio/AudioService;I)I
+    invoke-static {v3, v5}, Lcom/android/server/audio/AudioService;->access$2702(Lcom/android/server/audio/AudioService;I)I
 
     goto :goto_9
 
-    .line 4745
+    .line 4781
     .end local v17    # "btState":I
     :catchall_1
     move-exception v3
@@ -954,12 +954,12 @@
 
     throw v3
 
-    .line 4730
+    .line 4766
     .restart local v17    # "btState":I
     :pswitch_5
     const/16 v29, 0x0
 
-    .line 4731
+    .line 4767
     :try_start_4
     move-object/from16 v0, p0
 
@@ -968,9 +968,9 @@
     const/4 v5, 0x0
 
     # setter for: Lcom/android/server/audio/AudioService;->mScoAudioState:I
-    invoke-static {v3, v5}, Lcom/android/server/audio/AudioService;->access$2502(Lcom/android/server/audio/AudioService;I)I
+    invoke-static {v3, v5}, Lcom/android/server/audio/AudioService;->access$2702(Lcom/android/server/audio/AudioService;I)I
 
-    .line 4732
+    .line 4768
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
@@ -983,14 +983,14 @@
 
     goto :goto_9
 
-    .line 4735
+    .line 4771
     :pswitch_6
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mScoAudioState:I
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$2500(Lcom/android/server/audio/AudioService;)I
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$2700(Lcom/android/server/audio/AudioService;)I
 
     move-result v3
 
@@ -1003,7 +1003,7 @@
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mScoAudioState:I
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$2500(Lcom/android/server/audio/AudioService;)I
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$2700(Lcom/android/server/audio/AudioService;)I
 
     move-result v3
 
@@ -1016,7 +1016,7 @@
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mScoAudioState:I
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$2500(Lcom/android/server/audio/AudioService;)I
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$2700(Lcom/android/server/audio/AudioService;)I
 
     move-result v3
 
@@ -1024,7 +1024,7 @@
 
     if-eq v3, v5, :cond_11
 
-    .line 4738
+    .line 4774
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
@@ -1032,13 +1032,13 @@
     const/4 v5, 0x2
 
     # setter for: Lcom/android/server/audio/AudioService;->mScoAudioState:I
-    invoke-static {v3, v5}, Lcom/android/server/audio/AudioService;->access$2502(Lcom/android/server/audio/AudioService;I)I
+    invoke-static {v3, v5}, Lcom/android/server/audio/AudioService;->access$2702(Lcom/android/server/audio/AudioService;I)I
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     goto/16 :goto_8
 
-    .line 4754
+    .line 4790
     .end local v14    # "broadcast":Z
     .end local v17    # "btState":I
     .end local v29    # "scoAudioState":I
@@ -1051,25 +1051,25 @@
 
     if-eqz v3, :cond_15
 
-    .line 4755
+    .line 4791
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mMonitorRotation:Z
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$6300(Lcom/android/server/audio/AudioService;)Z
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$6500(Lcom/android/server/audio/AudioService;)Z
 
     move-result v3
 
     if-eqz v3, :cond_14
 
-    .line 4756
+    .line 4792
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mOrientationListener:Lcom/android/server/audio/AudioService$AudioOrientationEventListener;
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$8600(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$AudioOrientationEventListener;
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$8800(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$AudioOrientationEventListener;
 
     move-result-object v3
 
@@ -1077,19 +1077,19 @@
 
     invoke-virtual {v3, v4}, Lcom/android/server/audio/AudioService$AudioOrientationEventListener;->onOrientationChanged(I)V
 
-    .line 4757
+    .line 4793
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mOrientationListener:Lcom/android/server/audio/AudioService$AudioOrientationEventListener;
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$8600(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$AudioOrientationEventListener;
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$8800(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$AudioOrientationEventListener;
 
     move-result-object v3
 
     invoke-virtual {v3}, Lcom/android/server/audio/AudioService$AudioOrientationEventListener;->enable()V
 
-    .line 4759
+    .line 4795
     :cond_14
     const-string v3, "screen_state=on"
 
@@ -1097,7 +1097,7 @@
 
     goto/16 :goto_1
 
-    .line 4760
+    .line 4796
     :cond_15
     const-string v3, "android.intent.action.SCREEN_OFF"
 
@@ -1107,31 +1107,31 @@
 
     if-eqz v3, :cond_17
 
-    .line 4761
+    .line 4797
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mMonitorRotation:Z
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$6300(Lcom/android/server/audio/AudioService;)Z
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$6500(Lcom/android/server/audio/AudioService;)Z
 
     move-result v3
 
     if-eqz v3, :cond_16
 
-    .line 4763
+    .line 4799
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mOrientationListener:Lcom/android/server/audio/AudioService$AudioOrientationEventListener;
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$8600(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$AudioOrientationEventListener;
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$8800(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$AudioOrientationEventListener;
 
     move-result-object v3
 
     invoke-virtual {v3}, Lcom/android/server/audio/AudioService$AudioOrientationEventListener;->disable()V
 
-    .line 4765
+    .line 4801
     :cond_16
     const-string v3, "screen_state=off"
 
@@ -1139,7 +1139,7 @@
 
     goto/16 :goto_1
 
-    .line 4766
+    .line 4802
     :cond_17
     const-string v3, "android.intent.action.CONFIGURATION_CHANGED"
 
@@ -1149,7 +1149,7 @@
 
     if-eqz v3, :cond_18
 
-    .line 4767
+    .line 4803
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
@@ -1157,11 +1157,11 @@
     move-object/from16 v0, p1
 
     # invokes: Lcom/android/server/audio/AudioService;->handleConfigurationChanged(Landroid/content/Context;)V
-    invoke-static {v3, v0}, Lcom/android/server/audio/AudioService;->access$8700(Lcom/android/server/audio/AudioService;Landroid/content/Context;)V
+    invoke-static {v3, v0}, Lcom/android/server/audio/AudioService;->access$8900(Lcom/android/server/audio/AudioService;Landroid/content/Context;)V
 
     goto/16 :goto_1
 
-    .line 4768
+    .line 4804
     :cond_18
     const-string v3, "android.intent.action.USER_SWITCHED"
 
@@ -1171,7 +1171,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 4770
+    .line 4806
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
@@ -1196,19 +1196,19 @@
     # invokes: Lcom/android/server/audio/AudioService;->sendMsg(Landroid/os/Handler;IIIILjava/lang/Object;I)V
     invoke-static/range {v3 .. v9}, Lcom/android/server/audio/AudioService;->access$100(Landroid/os/Handler;IIIILjava/lang/Object;I)V
 
-    .line 4778
+    .line 4814
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mMediaFocusControl:Lcom/android/server/audio/MediaFocusControl;
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$8800(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/MediaFocusControl;
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$9000(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/MediaFocusControl;
 
     move-result-object v3
 
     invoke-virtual {v3}, Lcom/android/server/audio/MediaFocusControl;->discardAudioFocusOwner()V
 
-    .line 4781
+    .line 4817
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
@@ -1216,9 +1216,9 @@
     const/4 v4, 0x1
 
     # invokes: Lcom/android/server/audio/AudioService;->readAudioSettings(Z)V
-    invoke-static {v3, v4}, Lcom/android/server/audio/AudioService;->access$8900(Lcom/android/server/audio/AudioService;Z)V
+    invoke-static {v3, v4}, Lcom/android/server/audio/AudioService;->access$9100(Lcom/android/server/audio/AudioService;Z)V
 
-    .line 4783
+    .line 4819
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
@@ -1241,7 +1241,7 @@
     iget-object v8, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mStreamStates:[Lcom/android/server/audio/AudioService$VolumeStreamState;
-    invoke-static {v8}, Lcom/android/server/audio/AudioService;->access$4500(Lcom/android/server/audio/AudioService;)[Lcom/android/server/audio/AudioService$VolumeStreamState;
+    invoke-static {v8}, Lcom/android/server/audio/AudioService;->access$4800(Lcom/android/server/audio/AudioService;)[Lcom/android/server/audio/AudioService$VolumeStreamState;
 
     move-result-object v8
 
@@ -1256,7 +1256,7 @@
 
     goto/16 :goto_1
 
-    .line 4594
+    .line 4630
     nop
 
     :pswitch_data_0
@@ -1267,7 +1267,7 @@
         :pswitch_3
     .end packed-switch
 
-    .line 4634
+    .line 4670
     :sswitch_data_0
     .sparse-switch
         0x404 -> :sswitch_0
@@ -1275,7 +1275,7 @@
         0x420 -> :sswitch_1
     .end sparse-switch
 
-    .line 4720
+    .line 4756
     :pswitch_data_1
     .packed-switch 0xa
         :pswitch_5

@@ -127,6 +127,14 @@
     .end annotation
 .end method
 
+.method public abstract getStreamMinVolume(I)I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getStreamVolume(I)I
     .annotation system Ldalvik/annotation/Throws;
         value = {

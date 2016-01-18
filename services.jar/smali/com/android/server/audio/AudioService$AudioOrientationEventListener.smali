@@ -24,13 +24,13 @@
     .param p2, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 897
+    .line 922
     iput-object p1, p0, Lcom/android/server/audio/AudioService$AudioOrientationEventListener;->this$0:Lcom/android/server/audio/AudioService;
 
-    .line 898
+    .line 923
     invoke-direct {p0, p2}, Landroid/view/OrientationEventListener;-><init>(Landroid/content/Context;)V
 
-    .line 899
+    .line 924
     return-void
 .end method
 
@@ -41,11 +41,11 @@
     .param p1, "orientation"    # I
 
     .prologue
-    .line 905
+    .line 930
     iget-object v1, p0, Lcom/android/server/audio/AudioService$AudioOrientationEventListener;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mContext:Landroid/content/Context;
-    invoke-static {v1}, Lcom/android/server/audio/AudioService;->access$600(Lcom/android/server/audio/AudioService;)Landroid/content/Context;
+    invoke-static {v1}, Lcom/android/server/audio/AudioService;->access$800(Lcom/android/server/audio/AudioService;)Landroid/content/Context;
 
     move-result-object v1
 
@@ -65,30 +65,30 @@
 
     move-result v0
 
-    .line 907
+    .line 932
     .local v0, "newRotation":I
     iget-object v1, p0, Lcom/android/server/audio/AudioService$AudioOrientationEventListener;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mDeviceRotation:I
-    invoke-static {v1}, Lcom/android/server/audio/AudioService;->access$700(Lcom/android/server/audio/AudioService;)I
+    invoke-static {v1}, Lcom/android/server/audio/AudioService;->access$900(Lcom/android/server/audio/AudioService;)I
 
     move-result v1
 
     if-eq v0, v1, :cond_0
 
-    .line 908
+    .line 933
     iget-object v1, p0, Lcom/android/server/audio/AudioService$AudioOrientationEventListener;->this$0:Lcom/android/server/audio/AudioService;
 
     # setter for: Lcom/android/server/audio/AudioService;->mDeviceRotation:I
-    invoke-static {v1, v0}, Lcom/android/server/audio/AudioService;->access$702(Lcom/android/server/audio/AudioService;I)I
+    invoke-static {v1, v0}, Lcom/android/server/audio/AudioService;->access$902(Lcom/android/server/audio/AudioService;I)I
 
-    .line 909
+    .line 934
     iget-object v1, p0, Lcom/android/server/audio/AudioService$AudioOrientationEventListener;->this$0:Lcom/android/server/audio/AudioService;
 
     # invokes: Lcom/android/server/audio/AudioService;->setRotationForAudioSystem()V
-    invoke-static {v1}, Lcom/android/server/audio/AudioService;->access$800(Lcom/android/server/audio/AudioService;)V
+    invoke-static {v1}, Lcom/android/server/audio/AudioService;->access$1000(Lcom/android/server/audio/AudioService;)V
 
-    .line 911
+    .line 936
     :cond_0
     return-void
 .end method

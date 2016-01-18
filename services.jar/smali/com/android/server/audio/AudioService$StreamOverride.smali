@@ -30,7 +30,7 @@
     .locals 0
 
     .prologue
-    .line 5197
+    .line 5233
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .param p0, "ctxt"    # Landroid/content/Context;
 
     .prologue
-    .line 5210
+    .line 5246
     const-string v1, "accessibility"
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -50,7 +50,7 @@
 
     check-cast v0, Landroid/view/accessibility/AccessibilityManager;
 
-    .line 5212
+    .line 5248
     .local v0, "accessibilityManager":Landroid/view/accessibility/AccessibilityManager;
     invoke-virtual {v0}, Landroid/view/accessibility/AccessibilityManager;->isTouchExplorationEnabled()Z
 
@@ -58,14 +58,14 @@
 
     invoke-static {v1}, Lcom/android/server/audio/AudioService$StreamOverride;->updateDefaultStreamOverrideDelay(Z)V
 
-    .line 5214
+    .line 5250
     new-instance v1, Lcom/android/server/audio/AudioService$StreamOverride;
 
     invoke-direct {v1}, Lcom/android/server/audio/AudioService$StreamOverride;-><init>()V
 
     invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityManager;->addTouchExplorationStateChangeListener(Landroid/view/accessibility/AccessibilityManager$TouchExplorationStateChangeListener;)Z
 
-    .line 5216
+    .line 5252
     return-void
 .end method
 
@@ -74,15 +74,15 @@
     .param p0, "touchExploreEnabled"    # Z
 
     .prologue
-    .line 5224
+    .line 5260
     if-eqz p0, :cond_1
 
-    .line 5225
+    .line 5261
     const/16 v0, 0x3e8
 
     sput v0, Lcom/android/server/audio/AudioService$StreamOverride;->sDelayMs:I
 
-    .line 5229
+    .line 5265
     :goto_0
     sget-boolean v0, Lcom/android/server/audio/AudioService;->DEBUG_VOL:Z
 
@@ -128,11 +128,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5231
+    .line 5267
     :cond_0
     return-void
 
-    .line 5227
+    .line 5263
     :cond_1
     const/16 v0, 0x1388
 
@@ -148,9 +148,9 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 5220
+    .line 5256
     invoke-static {p1}, Lcom/android/server/audio/AudioService$StreamOverride;->updateDefaultStreamOverrideDelay(Z)V
 
-    .line 5221
+    .line 5257
     return-void
 .end method
