@@ -405,6 +405,8 @@
 
 .field public static final VOICE_RECOGNITION_SERVICE:Ljava/lang/String; = "voice_recognition_service"
 
+.field public static final VOLUME_CONTROLLER_SERVICE_COMPONENT:Ljava/lang/String; = "volume_controller_service_component"
+
 .field public static final WAKE_GESTURE_ENABLED:Ljava/lang/String; = "wake_gesture_enabled"
 
 .field public static final WIFI_IDLE_MS:Ljava/lang/String; = "wifi_idle_ms"

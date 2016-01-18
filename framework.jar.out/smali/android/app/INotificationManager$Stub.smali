@@ -46,7 +46,7 @@
 
 .field static final TRANSACTION_getActiveNotificationsFromListener:I = 0x12
 
-.field static final TRANSACTION_getAutomaticZenModeConditions:I = 0x21
+.field static final TRANSACTION_getAutomaticZenModeConditions:I = 0x22
 
 .field static final TRANSACTION_getEffectsSuppressor:I = 0x18
 
@@ -66,7 +66,7 @@
 
 .field static final TRANSACTION_matchesCallFilter:I = 0x19
 
-.field static final TRANSACTION_notifyConditions:I = 0x1d
+.field static final TRANSACTION_notifyConditions:I = 0x1e
 
 .field static final TRANSACTION_registerListener:I = 0xe
 
@@ -74,9 +74,9 @@
 
 .field static final TRANSACTION_requestInterruptionFilterFromListener:I = 0x15
 
-.field static final TRANSACTION_requestZenModeConditions:I = 0x1e
+.field static final TRANSACTION_requestZenModeConditions:I = 0x1f
 
-.field static final TRANSACTION_setAutomaticZenModeConditions:I = 0x20
+.field static final TRANSACTION_setAutomaticZenModeConditions:I = 0x21
 
 .field static final TRANSACTION_setNotificationsEnabledForPackage:I = 0x6
 
@@ -86,7 +86,9 @@
 
 .field static final TRANSACTION_setPackageVisibilityOverride:I = 0xa
 
-.field static final TRANSACTION_setZenModeCondition:I = 0x1f
+.field static final TRANSACTION_setZenMode:I = 0x1d
+
+.field static final TRANSACTION_setZenModeCondition:I = 0x20
 
 .field static final TRANSACTION_setZenModeConfig:I = 0x1c
 
@@ -186,7 +188,7 @@
     .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 468
+    .line 476
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v9
@@ -1319,11 +1321,29 @@
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 420
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v1
+
+    .line 421
+    .local v1, "_arg0":I
+    invoke-virtual {p0, v1}, Landroid/app/INotificationManager$Stub;->setZenMode(I)V
+
+    goto/16 :goto_0
+
+    .line 426
+    .end local v1    # "_arg0":I
+    :sswitch_1e
+    const-string v0, "android.app.INotificationManager"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 428
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 422
+    .line 430
     .local v1, "_arg0":Ljava/lang/String;
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
@@ -1333,7 +1353,7 @@
 
     move-result-object v2
 
-    .line 424
+    .line 432
     .local v2, "_arg1":Landroid/service/notification/IConditionProvider;
     sget-object v0, Landroid/service/notification/Condition;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -1343,22 +1363,22 @@
 
     check-cast v3, [Landroid/service/notification/Condition;
 
-    .line 425
+    .line 433
     .local v3, "_arg2":[Landroid/service/notification/Condition;
     invoke-virtual {p0, v1, v2, v3}, Landroid/app/INotificationManager$Stub;->notifyConditions(Ljava/lang/String;Landroid/service/notification/IConditionProvider;[Landroid/service/notification/Condition;)V
 
     goto/16 :goto_0
 
-    .line 430
+    .line 438
     .end local v1    # "_arg0":Ljava/lang/String;
     .end local v2    # "_arg1":Landroid/service/notification/IConditionProvider;
     .end local v3    # "_arg2":[Landroid/service/notification/Condition;
-    :sswitch_1e
+    :sswitch_1f
     const-string v0, "android.app.INotificationManager"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 432
+    .line 440
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v0
@@ -1367,34 +1387,34 @@
 
     move-result-object v1
 
-    .line 434
+    .line 442
     .local v1, "_arg0":Landroid/service/notification/IConditionListener;
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 435
+    .line 443
     .local v2, "_arg1":I
     invoke-virtual {p0, v1, v2}, Landroid/app/INotificationManager$Stub;->requestZenModeConditions(Landroid/service/notification/IConditionListener;I)V
 
     goto/16 :goto_0
 
-    .line 440
+    .line 448
     .end local v1    # "_arg0":Landroid/service/notification/IConditionListener;
     .end local v2    # "_arg1":I
-    :sswitch_1f
+    :sswitch_20
     const-string v0, "android.app.INotificationManager"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 442
+    .line 450
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     if-eqz v0, :cond_c
 
-    .line 443
+    .line 451
     sget-object v0, Landroid/service/notification/Condition;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -1403,14 +1423,14 @@
 
     check-cast v1, Landroid/service/notification/Condition;
 
-    .line 448
+    .line 456
     .local v1, "_arg0":Landroid/service/notification/Condition;
     :goto_6
     invoke-virtual {p0, v1}, Landroid/app/INotificationManager$Stub;->setZenModeCondition(Landroid/service/notification/Condition;)V
 
     goto/16 :goto_0
 
-    .line 446
+    .line 454
     .end local v1    # "_arg0":Landroid/service/notification/Condition;
     :cond_c
     const/4 v1, 0x0
@@ -1418,14 +1438,14 @@
     .restart local v1    # "_arg0":Landroid/service/notification/Condition;
     goto :goto_6
 
-    .line 453
+    .line 461
     .end local v1    # "_arg0":Landroid/service/notification/Condition;
-    :sswitch_20
+    :sswitch_21
     const-string v0, "android.app.INotificationManager"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 455
+    .line 463
     sget-object v0, Landroid/net/Uri;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->createTypedArray(Landroid/os/Parcelable$Creator;)[Ljava/lang/Object;
@@ -1434,29 +1454,29 @@
 
     check-cast v1, [Landroid/net/Uri;
 
-    .line 456
+    .line 464
     .local v1, "_arg0":[Landroid/net/Uri;
     invoke-virtual {p0, v1}, Landroid/app/INotificationManager$Stub;->setAutomaticZenModeConditions([Landroid/net/Uri;)V
 
     goto/16 :goto_0
 
-    .line 461
+    .line 469
     .end local v1    # "_arg0":[Landroid/net/Uri;
-    :sswitch_21
+    :sswitch_22
     const-string v0, "android.app.INotificationManager"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 462
+    .line 470
     invoke-virtual {p0}, Landroid/app/INotificationManager$Stub;->getAutomaticZenModeConditions()[Landroid/service/notification/Condition;
 
     move-result-object v8
 
-    .line 463
+    .line 471
     .local v8, "_result":[Landroid/service/notification/Condition;
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 464
+    .line 472
     invoke-virtual {p3, v8, v9}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
 
     goto/16 :goto_0
@@ -1499,6 +1519,7 @@
         0x1f -> :sswitch_1f
         0x20 -> :sswitch_20
         0x21 -> :sswitch_21
+        0x22 -> :sswitch_22
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

@@ -185,6 +185,49 @@
     goto :goto_0
 .end method
 
+.method private enforceSystemOrSystemUIOrVolume(Ljava/lang/String;)V
+    .locals 2
+    .param p1, "message"    # Ljava/lang/String;
+
+    .prologue
+    .line 1540
+    iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService$6;->this$0:Lcom/android/server/notification/NotificationManagerService;
+
+    iget-object v1, v1, Lcom/android/server/notification/NotificationManagerService;->mAudioManagerInternal:Landroid/media/AudioManagerInternal;
+
+    if-eqz v1, :cond_0
+
+    .line 1541
+    iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService$6;->this$0:Lcom/android/server/notification/NotificationManagerService;
+
+    iget-object v1, v1, Lcom/android/server/notification/NotificationManagerService;->mAudioManagerInternal:Landroid/media/AudioManagerInternal;
+
+    invoke-virtual {v1}, Landroid/media/AudioManagerInternal;->getVolumeControllerUid()I
+
+    move-result v0
+
+    .line 1542
+    .local v0, "vcuid":I
+    if-lez v0, :cond_0
+
+    invoke-static {}, Landroid/os/Binder;->getCallingUid()I
+
+    move-result v1
+
+    if-ne v1, v0, :cond_0
+
+    .line 1547
+    .end local v0    # "vcuid":I
+    :goto_0
+    return-void
+
+    .line 1546
+    :cond_0
+    invoke-direct {p0, p1}, Lcom/android/server/notification/NotificationManagerService$6;->enforceSystemOrSystemUI(Ljava/lang/String;)V
+
+    goto :goto_0
+.end method
+
 
 # virtual methods
 .method public areNotificationsEnabledForPackage(Ljava/lang/String;I)Z
@@ -1949,7 +1992,7 @@
     .line 1574
     const-string v0, "INotificationManager.getEffectsSuppressor"
 
-    invoke-direct {p0, v0}, Lcom/android/server/notification/NotificationManagerService$6;->enforceSystemOrSystemUI(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/android/server/notification/NotificationManagerService$6;->enforceSystemOrSystemUIOrVolume(Ljava/lang/String;)V
 
     .line 1575
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$6;->this$0:Lcom/android/server/notification/NotificationManagerService;
@@ -2185,7 +2228,7 @@
     .line 1476
     const-string v0, "INotificationManager.getZenModeConfig"
 
-    invoke-direct {p0, v0}, Lcom/android/server/notification/NotificationManagerService$6;->enforceSystemOrSystemUIForGetZenModeConfig(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/android/server/notification/NotificationManagerService$6;->enforceSystemOrSystemUIOrVolume(Ljava/lang/String;)V
 
     .line 1478
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$6;->this$0:Lcom/android/server/notification/NotificationManagerService;
@@ -2210,7 +2253,7 @@
     .line 1591
     const-string v0, "INotificationManager.isSystemConditionProviderEnabled"
 
-    invoke-direct {p0, v0}, Lcom/android/server/notification/NotificationManagerService$6;->enforceSystemOrSystemUI(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/android/server/notification/NotificationManagerService$6;->enforceSystemOrSystemUIOrVolume(Ljava/lang/String;)V
 
     .line 1592
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$6;->this$0:Lcom/android/server/notification/NotificationManagerService;
@@ -2592,7 +2635,7 @@
     .line 1506
     const-string v0, "INotificationManager.requestZenModeConditions"
 
-    invoke-direct {p0, v0}, Lcom/android/server/notification/NotificationManagerService$6;->enforceSystemOrSystemUI(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/android/server/notification/NotificationManagerService$6;->enforceSystemOrSystemUIOrVolume(Ljava/lang/String;)V
 
     .line 1507
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$6;->this$0:Lcom/android/server/notification/NotificationManagerService;
@@ -2780,6 +2823,57 @@
     return-void
 .end method
 
+.method public setZenMode(I)V
+    .locals 4
+    .param p1, "mode"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 1488
+    const-string v2, "INotificationManager.setZenMode"
+
+    invoke-direct {p0, v2}, Lcom/android/server/notification/NotificationManagerService$6;->enforceSystemOrSystemUIOrVolume(Ljava/lang/String;)V
+
+    .line 1489
+    invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
+
+    move-result-wide v0
+
+    .line 1491
+    .local v0, "identity":J
+    :try_start_0
+    iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService$6;->this$0:Lcom/android/server/notification/NotificationManagerService;
+
+    # getter for: Lcom/android/server/notification/NotificationManagerService;->mZenModeHelper:Lcom/android/server/notification/ZenModeHelper;
+    invoke-static {v2}, Lcom/android/server/notification/NotificationManagerService;->access$2900(Lcom/android/server/notification/NotificationManagerService;)Lcom/android/server/notification/ZenModeHelper;
+
+    move-result-object v2
+
+    const-string v3, "NotificationManager"
+
+    invoke-virtual {v2, p1, v3}, Lcom/android/server/notification/ZenModeHelper;->setZenMode(ILjava/lang/String;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 1493
+    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    .line 1495
+    return-void
+
+    .line 1493
+    :catchall_0
+    move-exception v2
+
+    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    throw v2
+.end method
+
 .method public setZenModeCondition(Landroid/service/notification/Condition;)V
     .locals 4
     .param p1, "condition"    # Landroid/service/notification/Condition;
@@ -2788,7 +2882,7 @@
     .line 1512
     const-string v2, "INotificationManager.setZenModeCondition"
 
-    invoke-direct {p0, v2}, Lcom/android/server/notification/NotificationManagerService$6;->enforceSystemOrSystemUI(Ljava/lang/String;)V
+    invoke-direct {p0, v2}, Lcom/android/server/notification/NotificationManagerService$6;->enforceSystemOrSystemUIOrVolume(Ljava/lang/String;)V
 
     .line 1513
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J

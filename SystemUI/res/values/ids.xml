@@ -20,6 +20,7 @@
     <item type="id" name="height_animator_start_value_tag" />
     <item type="id" name="doze_saved_filter_tag" />
     <item type="id" name="qs_icon_tag" />
+    <item type="id" name="notification_volumeui" />
     <item type="id" name="carrier_label_group">false</item>
     <item type="id" name="carrier_label">false</item>
     <item type="id" name="cell_broadcast_message">false</item>
@@ -298,6 +299,7 @@
     <item type="id" name="zen_mode_panel">false</item>
     <item type="id" name="zen_buttons_container">false</item>
     <item type="id" name="zen_buttons">false</item>
+    <item type="id" name="zen_embedded_divider">false</item>
     <item type="id" name="zen_subhead">false</item>
     <item type="id" name="zen_subhead_collapsed">false</item>
     <item type="id" name="zen_subhead_expanded">false</item>

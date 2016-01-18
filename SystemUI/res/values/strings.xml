@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="config_statusBarComponent">com.android.systemui.statusbar.phone.PhoneStatusBar</string>
-    <string name="quick_settings_tiles_default">wifi,bt,inversion,cell,airplane,rotation,flashlight,location,cast,hotspot</string>
+    <string name="quick_settings_tiles_default">wifi,bt,inversion,dnd,cell,airplane,rotation,flashlight,location,cast,hotspot</string>
     <string name="quick_settings_tiles">default</string>
     <string name="velocity_tracker_impl">platform</string>
     <string name="doze_pulse_schedule">1s,10s,30s,60s</string>
@@ -165,6 +165,11 @@ Use only the supplied charger."</string>
     <string name="accessibility_quick_settings_airplane_on">Airplane mode on.</string>
     <string name="accessibility_quick_settings_airplane_changed_off">Airplane mode turned off.</string>
     <string name="accessibility_quick_settings_airplane_changed_on">Airplane mode turned on.</string>
+    <string name="accessibility_quick_settings_dnd_priority_on">Do not disturb on, priority only.</string>
+    <string name="accessibility_quick_settings_dnd_none_on">Do not disturb on, no interruptions.</string>
+    <string name="accessibility_quick_settings_dnd_off">Do not disturb off.</string>
+    <string name="accessibility_quick_settings_dnd_changed_off">Do not disturb turned off.</string>
+    <string name="accessibility_quick_settings_dnd_changed_on">Do not disturb turned on.</string>
     <string name="accessibility_quick_settings_bluetooth_off">Bluetooth off.</string>
     <string name="accessibility_quick_settings_bluetooth_on">Bluetooth on.</string>
     <string name="accessibility_quick_settings_bluetooth_connecting">Bluetooth connecting.</string>
@@ -215,6 +220,9 @@ Turning it back on may lead to charges from your carrier."</string>
     <string name="start_dreams">Daydream</string>
     <string name="ethernet_label">Ethernet</string>
     <string name="quick_settings_airplane_mode_label">Airplane mode</string>
+    <string name="quick_settings_dnd_label">Do not disturb</string>
+    <string name="quick_settings_dnd_priority_label">Priority only</string>
+    <string name="quick_settings_dnd_none_label">No interruptions</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
     <string name="quick_settings_bluetooth_multiple_devices_label">Bluetooth (%d Devices)</string>
     <string name="quick_settings_bluetooth_off_label">Bluetooth Off</string>
@@ -416,6 +424,11 @@ Also, you're connected to a VPN (\"%3$s\"). Your VPN service provider can monito
     <string name="quick_settings_reset_confirmation_title">Hide %1$s?</string>
     <string name="quick_settings_reset_confirmation_message">It will reappear the next time you turn it on in settings.</string>
     <string name="quick_settings_reset_confirmation_button">Hide</string>
+    <string name="volumeui_prompt_message">%1$s wants to be the volume dialog.</string>
+    <string name="volumeui_prompt_allow">Allow</string>
+    <string name="volumeui_prompt_deny">Deny</string>
+    <string name="volumeui_notification_title">%1$s is the volume dialog</string>
+    <string name="volumeui_notification_text">Touch to restore the original.</string>
     <string name="accessibility_ime_switch_button">Switch input method button.</string>
     <string name="quick_settings_tiles_default_2">wifi,bt,inversion,cell1,cell2,airplane,rotation,flashlight,location,cast,hotspot</string>
     <string name="quick_settings_tiles_default_3">wifi,bt,inversion,cell1,cell2,cell3,airplane,rotation,flashlight,location,cast,hotspot</string>

@@ -45,12 +45,12 @@
     .param p1, "announcement"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 285
+    .line 279
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$2;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/qs/QSPanel;->announceForAccessibility(Ljava/lang/CharSequence;)V
 
-    .line 286
+    .line 280
     return-void
 .end method
 
@@ -59,16 +59,16 @@
     .param p1, "state"    # Z
 
     .prologue
-    .line 277
+    .line 271
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$2;->val$r:Lcom/android/systemui/qs/QSPanel$TileRecord;
 
     iput-boolean p1, v0, Lcom/android/systemui/qs/QSPanel$TileRecord;->scanState:Z
 
-    .line 278
+    .line 272
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$2;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     # getter for: Lcom/android/systemui/qs/QSPanel;->mDetailRecord:Lcom/android/systemui/qs/QSPanel$Record;
-    invoke-static {v0}, Lcom/android/systemui/qs/QSPanel;->access$600(Lcom/android/systemui/qs/QSPanel;)Lcom/android/systemui/qs/QSPanel$Record;
+    invoke-static {v0}, Lcom/android/systemui/qs/QSPanel;->access$500(Lcom/android/systemui/qs/QSPanel;)Lcom/android/systemui/qs/QSPanel$Record;
 
     move-result-object v0
 
@@ -76,7 +76,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 279
+    .line 273
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$2;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel$2;->val$r:Lcom/android/systemui/qs/QSPanel$TileRecord;
@@ -84,9 +84,9 @@
     iget-boolean v1, v1, Lcom/android/systemui/qs/QSPanel$TileRecord;->scanState:Z
 
     # invokes: Lcom/android/systemui/qs/QSPanel;->fireScanStateChanged(Z)V
-    invoke-static {v0, v1}, Lcom/android/systemui/qs/QSPanel;->access$800(Lcom/android/systemui/qs/QSPanel;Z)V
+    invoke-static {v0, v1}, Lcom/android/systemui/qs/QSPanel;->access$700(Lcom/android/systemui/qs/QSPanel;Z)V
 
-    .line 281
+    .line 275
     :cond_0
     return-void
 .end method
@@ -96,15 +96,15 @@
     .param p1, "show"    # Z
 
     .prologue
-    .line 267
+    .line 261
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$2;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel$2;->val$r:Lcom/android/systemui/qs/QSPanel$TileRecord;
 
     # invokes: Lcom/android/systemui/qs/QSPanel;->showDetail(ZLcom/android/systemui/qs/QSPanel$Record;)V
-    invoke-static {v0, p1, v1}, Lcom/android/systemui/qs/QSPanel;->access$500(Lcom/android/systemui/qs/QSPanel;ZLcom/android/systemui/qs/QSPanel$Record;)V
+    invoke-static {v0, p1, v1}, Lcom/android/systemui/qs/QSPanel;->access$400(Lcom/android/systemui/qs/QSPanel;ZLcom/android/systemui/qs/QSPanel$Record;)V
 
-    .line 268
+    .line 262
     return-void
 .end method
 
@@ -116,31 +116,13 @@
     .line 255
     iget-boolean v1, p1, Lcom/android/systemui/qs/QSTile$State;->visible:Z
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
     const/4 v0, 0x0
 
     .line 256
     .local v0, "visibility":I
     :goto_0
-    iget-boolean v1, p1, Lcom/android/systemui/qs/QSTile$State;->visible:Z
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Lcom/android/systemui/qs/QSPanel$2;->this$0:Lcom/android/systemui/qs/QSPanel;
-
-    # getter for: Lcom/android/systemui/qs/QSPanel;->mGridContentVisible:Z
-    invoke-static {v1}, Lcom/android/systemui/qs/QSPanel;->access$300(Lcom/android/systemui/qs/QSPanel;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    .line 260
-    const/4 v0, 0x4
-
-    .line 262
-    :cond_0
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel$2;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     iget-object v2, p0, Lcom/android/systemui/qs/QSPanel$2;->val$r:Lcom/android/systemui/qs/QSPanel$TileRecord;
@@ -148,21 +130,21 @@
     iget-object v2, v2, Lcom/android/systemui/qs/QSPanel$TileRecord;->tileView:Lcom/android/systemui/qs/QSTileView;
 
     # invokes: Lcom/android/systemui/qs/QSPanel;->setTileVisibility(Landroid/view/View;I)V
-    invoke-static {v1, v2, v0}, Lcom/android/systemui/qs/QSPanel;->access$400(Lcom/android/systemui/qs/QSPanel;Landroid/view/View;I)V
+    invoke-static {v1, v2, v0}, Lcom/android/systemui/qs/QSPanel;->access$300(Lcom/android/systemui/qs/QSPanel;Landroid/view/View;I)V
 
-    .line 263
+    .line 257
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel$2;->val$r:Lcom/android/systemui/qs/QSPanel$TileRecord;
 
     iget-object v1, v1, Lcom/android/systemui/qs/QSPanel$TileRecord;->tileView:Lcom/android/systemui/qs/QSTileView;
 
     invoke-virtual {v1, p1}, Lcom/android/systemui/qs/QSTileView;->onStateChanged(Lcom/android/systemui/qs/QSTile$State;)V
 
-    .line 264
+    .line 258
     return-void
 
     .line 255
     .end local v0    # "visibility":I
-    :cond_1
+    :cond_0
     const/16 v0, 0x8
 
     goto :goto_0
@@ -173,11 +155,11 @@
     .param p1, "state"    # Z
 
     .prologue
-    .line 271
+    .line 265
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$2;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     # getter for: Lcom/android/systemui/qs/QSPanel;->mDetailRecord:Lcom/android/systemui/qs/QSPanel$Record;
-    invoke-static {v0}, Lcom/android/systemui/qs/QSPanel;->access$600(Lcom/android/systemui/qs/QSPanel;)Lcom/android/systemui/qs/QSPanel$Record;
+    invoke-static {v0}, Lcom/android/systemui/qs/QSPanel;->access$500(Lcom/android/systemui/qs/QSPanel;)Lcom/android/systemui/qs/QSPanel$Record;
 
     move-result-object v0
 
@@ -185,13 +167,13 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 272
+    .line 266
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$2;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     # invokes: Lcom/android/systemui/qs/QSPanel;->fireToggleStateChanged(Z)V
-    invoke-static {v0, p1}, Lcom/android/systemui/qs/QSPanel;->access$700(Lcom/android/systemui/qs/QSPanel;Z)V
+    invoke-static {v0, p1}, Lcom/android/systemui/qs/QSPanel;->access$600(Lcom/android/systemui/qs/QSPanel;Z)V
 
-    .line 274
+    .line 268
     :cond_0
     return-void
 .end method

@@ -982,6 +982,56 @@
 
 
 # virtual methods
+.method public getComponent()Landroid/content/ComponentName;
+    .locals 1
+
+    .prologue
+    .line 284
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/ServiceMonitor;->getComponentNameFromSetting()Landroid/content/ComponentName;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public setComponent(Landroid/content/ComponentName;)V
+    .locals 4
+    .param p1, "component"    # Landroid/content/ComponentName;
+
+    .prologue
+    .line 288
+    if-nez p1, :cond_0
+
+    const/4 v0, 0x0
+
+    .line 289
+    .local v0, "setting":Ljava/lang/String;
+    :goto_0
+    iget-object v1, p0, Lcom/android/systemui/statusbar/ServiceMonitor;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/ServiceMonitor;->mSettingKey:Ljava/lang/String;
+
+    const/4 v3, -0x2
+
+    invoke-static {v1, v2, v0, v3}, Landroid/provider/Settings$Secure;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
+
+    .line 291
+    return-void
+
+    .line 288
+    .end local v0    # "setting":Ljava/lang/String;
+    :cond_0
+    invoke-virtual {p1}, Landroid/content/ComponentName;->flattenToShortString()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+.end method
+
 .method public start()V
     .locals 6
 

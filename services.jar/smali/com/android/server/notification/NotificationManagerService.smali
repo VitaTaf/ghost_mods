@@ -127,6 +127,8 @@
 
 .field mAudioManager:Landroid/media/AudioManager;
 
+.field mAudioManagerInternal:Landroid/media/AudioManagerInternal;
+
 .field private mBlockedPackages:Ljava/util/HashSet;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -7747,6 +7749,17 @@
     iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mAudioManager:Landroid/media/AudioManager;
 
     .line 1000
+    const-class v0, Landroid/media/AudioManagerInternal;
+
+    invoke-virtual {p0, v0}, Lcom/android/server/notification/NotificationManagerService;->getLocalService(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/media/AudioManagerInternal;
+
+    iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mAudioManagerInternal:Landroid/media/AudioManagerInternal;
+
+    .line 1004
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mZenModeHelper:Lcom/android/server/notification/ZenModeHelper;
 
     invoke-virtual {v0}, Lcom/android/server/notification/ZenModeHelper;->onSystemReady()V

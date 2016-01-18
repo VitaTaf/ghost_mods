@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 200
+    .line 240
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeUI$RemoteVolumeController;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     invoke-direct {p0}, Landroid/media/IRemoteVolumeController$Stub;-><init>()V
@@ -37,7 +37,7 @@
     .param p2, "x1"    # Lcom/android/systemui/volume/VolumeUI$1;
 
     .prologue
-    .line 200
+    .line 240
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeUI$RemoteVolumeController;-><init>(Lcom/android/systemui/volume/VolumeUI;)V
 
     return-void
@@ -56,7 +56,7 @@
     .end annotation
 
     .prologue
-    .line 205
+    .line 245
     new-instance v0, Landroid/media/session/MediaController;
 
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeUI$RemoteVolumeController;->this$0:Lcom/android/systemui/volume/VolumeUI;
@@ -65,18 +65,18 @@
 
     invoke-direct {v0, v1, p1}, Landroid/media/session/MediaController;-><init>(Landroid/content/Context;Landroid/media/session/ISessionController;)V
 
-    .line 206
+    .line 246
     .local v0, "controller":Landroid/media/session/MediaController;
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeUI$RemoteVolumeController;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mPanel:Lcom/android/systemui/volume/VolumePanel;
-    invoke-static {v1}, Lcom/android/systemui/volume/VolumeUI;->access$900(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/volume/VolumePanel;
+    invoke-static {v1}, Lcom/android/systemui/volume/VolumeUI;->access$1100(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/volume/VolumePanel;
 
     move-result-object v1
 
     invoke-virtual {v1, v0, p2}, Lcom/android/systemui/volume/VolumePanel;->postRemoteVolumeChanged(Landroid/media/session/MediaController;I)V
 
-    .line 207
+    .line 247
     return-void
 .end method
 
@@ -90,11 +90,11 @@
     .end annotation
 
     .prologue
-    .line 211
+    .line 251
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$RemoteVolumeController;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mPanel:Lcom/android/systemui/volume/VolumePanel;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$900(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/volume/VolumePanel;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$1100(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/volume/VolumePanel;
 
     move-result-object v1
 
@@ -105,10 +105,10 @@
     :goto_0
     invoke-virtual {v1, v0}, Lcom/android/systemui/volume/VolumePanel;->postRemoteSliderVisibility(Z)V
 
-    .line 214
+    .line 254
     return-void
 
-    .line 211
+    .line 251
     :cond_0
     const/4 v0, 0x0
 

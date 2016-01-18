@@ -1,11 +1,14 @@
 .class Lcom/android/systemui/volume/VolumeUI$2;
-.super Landroid/database/ContentObserver;
+.super Ljava/lang/Object;
 .source "VolumeUI.java"
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/systemui/volume/VolumeUI;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/systemui/volume/VolumeUI;->showServiceActivationDialog(Landroid/content/ComponentName;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,48 +20,44 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/volume/VolumeUI;
 
+.field final synthetic val$component:Landroid/content/ComponentName;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/volume/VolumeUI;Landroid/os/Handler;)V
+.method constructor <init>(Lcom/android/systemui/volume/VolumeUI;Landroid/content/ComponentName;)V
     .locals 0
-    .param p2, "x0"    # Landroid/os/Handler;
 
     .prologue
-    .line 132
+    .line 170
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeUI$2;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
-    invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
+    iput-object p2, p0, Lcom/android/systemui/volume/VolumeUI$2;->val$component:Landroid/content/ComponentName;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onChange(ZLandroid/net/Uri;)V
-    .locals 1
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .locals 2
+    .param p1, "dialog"    # Landroid/content/DialogInterface;
+    .param p2, "which"    # I
 
     .prologue
-    .line 134
-    # getter for: Lcom/android/systemui/volume/VolumeUI;->SETTING_URI:Landroid/net/Uri;
-    invoke-static {}, Lcom/android/systemui/volume/VolumeUI;->access$600()Landroid/net/Uri;
+    .line 173
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$2;->this$0:Lcom/android/systemui/volume/VolumeUI;
+
+    # getter for: Lcom/android/systemui/volume/VolumeUI;->mVolumeControllerService:Lcom/android/systemui/statusbar/ServiceMonitor;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$900(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/statusbar/ServiceMonitor;
 
     move-result-object v0
 
-    invoke-virtual {v0, p2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+    iget-object v1, p0, Lcom/android/systemui/volume/VolumeUI$2;->val$component:Landroid/content/ComponentName;
 
-    move-result v0
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/ServiceMonitor;->setComponent(Landroid/content/ComponentName;)V
 
-    if-eqz v0, :cond_0
-
-    .line 135
-    iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$2;->this$0:Lcom/android/systemui/volume/VolumeUI;
-
-    # invokes: Lcom/android/systemui/volume/VolumeUI;->updateController()V
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$700(Lcom/android/systemui/volume/VolumeUI;)V
-
-    .line 137
-    :cond_0
+    .line 174
     return-void
 .end method

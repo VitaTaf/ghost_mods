@@ -757,6 +757,9 @@
     <public type="drawable" name="vector_drawable_place_bottom_right" id="0x7f020517" />
     <public type="drawable" name="vector_drawable_place_top_left" id="0x7f020518" />
     <public type="drawable" name="vector_drawable_place_top_right" id="0x7f020519" />
+    <public type="drawable" name="ic_qs_dnd_off" id="0x7f02051a" />
+    <public type="drawable" name="ic_qs_dnd_on" id="0x7f02051b" />
+    <public type="drawable" name="stat_sys_dnd" id="0x7f02051c" />
     <public type="drawable" name="ic_input_delete" id="0x7f020035" />
     <public type="drawable" name="ic_lockscreen_search_activated" id="0x7f020052" />
     <public type="drawable" name="ic_lockscreen_search_normal" id="0x7f020053" />
@@ -2459,6 +2462,19 @@
     <public type="string" name="recents_multistack_add_stack_dialog_split_horizontal" id="0x7f0c026d" />
     <public type="string" name="recents_multistack_add_stack_dialog_split_vertical" id="0x7f0c026e" />
     <public type="string" name="recents_multistack_add_stack_dialog_split_custom" id="0x7f0c026f" />
+    <public type="string" name="accessibility_quick_settings_dnd_priority_on" id="0x7f0c0270" />
+    <public type="string" name="accessibility_quick_settings_dnd_none_on" id="0x7f0c0271" />
+    <public type="string" name="accessibility_quick_settings_dnd_off" id="0x7f0c0272" />
+    <public type="string" name="accessibility_quick_settings_dnd_changed_off" id="0x7f0c0273" />
+    <public type="string" name="accessibility_quick_settings_dnd_changed_on" id="0x7f0c0274" />
+    <public type="string" name="quick_settings_dnd_label" id="0x7f0c0275" />
+    <public type="string" name="quick_settings_dnd_priority_label" id="0x7f0c0276" />
+    <public type="string" name="quick_settings_dnd_none_label" id="0x7f0c0277" />
+    <public type="string" name="volumeui_prompt_message" id="0x7f0c0278" />
+    <public type="string" name="volumeui_prompt_allow" id="0x7f0c0279" />
+    <public type="string" name="volumeui_prompt_deny" id="0x7f0c027a" />
+    <public type="string" name="volumeui_notification_title" id="0x7f0c027b" />
+    <public type="string" name="volumeui_notification_text" id="0x7f0c027c" />
     <public type="string" name="status_bar_date_formatter" id="0x7f0c0006" />
     <public type="string" name="toast_rotation_locked" id="0x7f0c015b" />
     <public type="string" name="APKTOOL_DUMMY_015d" id="0x7f0c015d" />
@@ -3138,6 +3154,8 @@
     <public type="id" name="move_task" id="0x7f0f0165" />
     <public type="id" name="place_bottom_left" id="0x7f0f0166" />
     <public type="id" name="place_bottom_right" id="0x7f0f0167" />
+    <public type="id" name="notification_volumeui" id="0x7f0f0168" />
+    <public type="id" name="zen_embedded_divider" id="0x7f0f0169" />
     <public type="plurals" name="status_bar_accessibility_recent_apps" id="0x7f100000" />
     <public type="plurals" name="kg_password_wrong_pin_code" id="0x7f100001" />
     <public type="plurals" name="kg_password_wrong_puk_code" id="0x7f100002" />

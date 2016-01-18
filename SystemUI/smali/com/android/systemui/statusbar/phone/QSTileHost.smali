@@ -443,11 +443,26 @@
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_e
 
     new-instance v0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/AirplaneModeTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto :goto_0
+
+    :cond_e
+    const-string v0, "dnd"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_7
+
+    new-instance v0, Lcom/android/systemui/qs/tiles/DndTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/DndTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
     goto :goto_0
 
@@ -1319,6 +1334,16 @@
     .prologue
     .line 242
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mUserSwitcherController:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
+
+    return-object v0
+.end method
+
+.method public getZenModeController()Lcom/android/systemui/statusbar/policy/ZenModeController;
+    .locals 1
+
+    .prologue
+    .line 205
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mZen:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     return-object v0
 .end method

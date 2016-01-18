@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 108
+    .line 129
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeUI$1;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 3
 
     .prologue
-    .line 117
+    .line 138
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeUI$1;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     const-class v2, Lcom/android/systemui/keyguard/KeyguardViewMediator;
@@ -51,14 +51,14 @@
 
     check-cast v0, Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
-    .line 118
+    .line 139
     .local v0, "kvm":Lcom/android/systemui/keyguard/KeyguardViewMediator;
     if-eqz v0, :cond_0
 
-    .line 119
+    .line 140
     invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->userActivity()V
 
-    .line 121
+    .line 142
     :cond_0
     return-void
 .end method
@@ -68,11 +68,11 @@
     .param p1, "visible"    # Z
 
     .prologue
-    .line 125
+    .line 146
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$1;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mAudioManager:Landroid/media/AudioManager;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$400(Lcom/android/systemui/volume/VolumeUI;)Landroid/media/AudioManager;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$700(Lcom/android/systemui/volume/VolumeUI;)Landroid/media/AudioManager;
 
     move-result-object v0
 
@@ -81,30 +81,30 @@
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$1;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mVolumeController:Lcom/android/systemui/volume/VolumeUI$VolumeController;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$500(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/volume/VolumeUI$VolumeController;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$800(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/volume/VolumeUI$VolumeController;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 126
+    .line 147
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$1;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mAudioManager:Landroid/media/AudioManager;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$400(Lcom/android/systemui/volume/VolumeUI;)Landroid/media/AudioManager;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$700(Lcom/android/systemui/volume/VolumeUI;)Landroid/media/AudioManager;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeUI$1;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mVolumeController:Lcom/android/systemui/volume/VolumeUI$VolumeController;
-    invoke-static {v1}, Lcom/android/systemui/volume/VolumeUI;->access$500(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/volume/VolumeUI$VolumeController;
+    invoke-static {v1}, Lcom/android/systemui/volume/VolumeUI;->access$800(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/volume/VolumeUI$VolumeController;
 
     move-result-object v1
 
     invoke-virtual {v0, v1, p1}, Landroid/media/AudioManager;->notifyVolumeControllerVisible(Landroid/media/IVolumeController;Z)V
 
-    .line 128
+    .line 149
     :cond_0
     return-void
 .end method
@@ -113,40 +113,40 @@
     .locals 2
 
     .prologue
-    .line 111
+    .line 132
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$1;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$300(Lcom/android/systemui/volume/VolumeUI;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$600(Lcom/android/systemui/volume/VolumeUI;)Landroid/os/Handler;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeUI$1;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mStartZenSettings:Ljava/lang/Runnable;
-    invoke-static {v1}, Lcom/android/systemui/volume/VolumeUI;->access$200(Lcom/android/systemui/volume/VolumeUI;)Ljava/lang/Runnable;
+    invoke-static {v1}, Lcom/android/systemui/volume/VolumeUI;->access$500(Lcom/android/systemui/volume/VolumeUI;)Ljava/lang/Runnable;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 112
+    .line 133
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$1;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$300(Lcom/android/systemui/volume/VolumeUI;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$600(Lcom/android/systemui/volume/VolumeUI;)Landroid/os/Handler;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeUI$1;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mStartZenSettings:Ljava/lang/Runnable;
-    invoke-static {v1}, Lcom/android/systemui/volume/VolumeUI;->access$200(Lcom/android/systemui/volume/VolumeUI;)Ljava/lang/Runnable;
+    invoke-static {v1}, Lcom/android/systemui/volume/VolumeUI;->access$500(Lcom/android/systemui/volume/VolumeUI;)Ljava/lang/Runnable;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 113
+    .line 134
     return-void
 .end method

@@ -37,6 +37,9 @@
 .method public abstract getRingerModeInternal()I
 .end method
 
+.method public abstract getVolumeControllerUid()I
+.end method
+
 .method public abstract setRingerModeDelegate(Landroid/media/AudioManagerInternal$RingerModeDelegate;)V
 .end method
 

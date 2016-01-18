@@ -255,6 +255,14 @@
     .end annotation
 .end method
 
+.method public abstract setZenMode(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract setZenModeCondition(Landroid/service/notification/Condition;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
