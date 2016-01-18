@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bookmarks>
+    <bookmark category="android.intent.category.APP_CALCULATOR" shortcut="a" />
+    <bookmark package="com.android.chrome" class="com.google.android.apps.chrome.Main" shortcut="b" />
+    <bookmark category="android.intent.category.APP_CONTACTS" shortcut="c" />
+    <bookmark package="com.android.email" class="com.android.email.activity.Welcome" shortcut="e" />
+    <bookmark package="com.google.android.gm" class="com.google.android.gm.ConversationListActivityGmail" shortcut="g" />
+    <bookmark category="android.intent.category.APP_CALENDAR" shortcut="l" />
+    <bookmark category="android.intent.category.APP_MAPS" shortcut="m" />
+    <bookmark category="android.intent.category.APP_MUSIC" shortcut="p" />
+    <bookmark category="android.intent.category.APP_MESSAGING" shortcut="s" />
+    <bookmark package="com.google.android.talk" class="com.google.android.talk.SigningInActivity" shortcut="t" />
+    <bookmark package="com.google.android.youtube" class="com.google.android.youtube.HomeActivity" shortcut="y" />
+</bookmarks>
