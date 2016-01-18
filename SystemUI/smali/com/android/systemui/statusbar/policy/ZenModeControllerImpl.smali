@@ -743,6 +743,26 @@
     return v0
 .end method
 
+.method public isCountdownConditionSupported()Z
+    .locals 2
+
+    .prologue
+    .line 174
+    iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->mContext:Landroid/content/Context;
+
+    invoke-static {v0}, Landroid/app/NotificationManager;->from(Landroid/content/Context;)Landroid/app/NotificationManager;
+
+    move-result-object v0
+
+    const-string v1, "countdown"
+
+    invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->isSystemConditionProviderEnabled(Ljava/lang/String;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public isZenAvailable()Z
     .locals 1
 

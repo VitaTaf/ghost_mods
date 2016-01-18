@@ -24,6 +24,9 @@
 .method public abstract getZen()I
 .end method
 
+.method public abstract isCountdownConditionSupported()Z
+.end method
+
 .method public abstract isZenAvailable()Z
 .end method
 
