@@ -10,5 +10,14 @@
 .method public abstract dismissNow()V
 .end method
 
+.method public abstract dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
+.end method
+
 .method public abstract getZenController()Lcom/android/systemui/statusbar/policy/ZenModeController;
+.end method
+
+.method public abstract onConfigurationChanged(Landroid/content/res/Configuration;)V
+.end method
+
+.method public abstract register()V
 .end method

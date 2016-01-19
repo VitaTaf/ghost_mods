@@ -761,6 +761,28 @@
     <public type="drawable" name="ic_qs_dnd_on" id="0x7f02051b" />
     <public type="drawable" name="stat_sys_dnd" id="0x7f02051c" />
     <public type="drawable" name="stat_sys_ringer_silent" id="0x7f02051d" />
+    <public type="drawable" name="ic_dnd" id="0x7f02051e" />
+    <public type="drawable" name="ic_volume_alarm" id="0x7f02051f" />
+    <public type="drawable" name="ic_volume_alarm_mute" id="0x7f020520" />
+    <public type="drawable" name="ic_volume_bt" id="0x7f020521" />
+    <public type="drawable" name="ic_volume_bt_mute" id="0x7f020522" />
+    <public type="drawable" name="ic_volume_bt_sco" id="0x7f020523" />
+    <public type="drawable" name="ic_volume_collapse" id="0x7f020524" />
+    <public type="drawable" name="ic_volume_collapse_animation" id="0x7f020525" />
+    <public type="drawable" name="ic_volume_expand" id="0x7f020526" />
+    <public type="drawable" name="ic_volume_expand_animation" id="0x7f020527" />
+    <public type="drawable" name="ic_volume_media" id="0x7f020528" />
+    <public type="drawable" name="ic_volume_media_mute" id="0x7f020529" />
+    <public type="drawable" name="ic_volume_remote" id="0x7f02052a" />
+    <public type="drawable" name="ic_volume_remote_mute" id="0x7f02052b" />
+    <public type="drawable" name="ic_volume_ringer" id="0x7f02052c" />
+    <public type="drawable" name="ic_volume_ringer_mute" id="0x7f02052d" />
+    <public type="drawable" name="ic_volume_ringer_vibrate" id="0x7f02052e" />
+    <public type="drawable" name="ic_volume_settings" id="0x7f02052f" />
+    <public type="drawable" name="ic_volume_system" id="0x7f020530" />
+    <public type="drawable" name="ic_volume_system_mute" id="0x7f020531" />
+    <public type="drawable" name="ic_volume_voice" id="0x7f020532" />
+    <public type="drawable" name="volume_dialog_background" id="0x7f020533" />
     <public type="drawable" name="ic_input_delete" id="0x7f020035" />
     <public type="drawable" name="ic_lockscreen_search_activated" id="0x7f020052" />
     <public type="drawable" name="ic_lockscreen_search_normal" id="0x7f020053" />
@@ -1445,6 +1467,10 @@
     <public type="layout" name="zz_moto_toast_plus_icon" id="0x7f04005e" />
     <public type="layout" name="keyguard_eca" id="0x7f04005f" />
     <public type="layout" name="recents_dismiss_button" id="0x7f040060" />
+    <public type="layout" name="volume_dialog_row" id="0x7f040062" />
+    <public type="layout" name="volume_panel_dialog" id="0x7f040063" />
+    <public type="layout" name="volume_text_footer" id="0x7f040064" />
+    <public type="layout" name="volume_zen_footer" id="0x7f040065" />
     <public type="layout" name="recents_task_resize_dialog" id="0x7f040061" />
     <public type="layout" name="keyguard_host_view" id="0x7f04000c" />
     <public type="layout" name="keyguard_widget_pager" id="0x7f040020" />
@@ -1555,6 +1581,12 @@
     <public type="anim" name="system_out" id="0x7f050068" />
     <public type="anim" name="wallpaper_recents_launch_from_launcher_enter" id="0x7f050069" />
     <public type="anim" name="wallpaper_recents_launch_from_launcher_exit" id="0x7f05006a" />
+    <public type="anim" name="ic_volume_collapse_chevron_02_animation" id="0x7f05006b" />
+    <public type="anim" name="ic_volume_collapse_rectangle_1_animation" id="0x7f05006c" />
+    <public type="anim" name="ic_volume_collapse_rectangle_2_animation" id="0x7f05006d" />
+    <public type="anim" name="ic_volume_expand_chevron_01_animation" id="0x7f05006e" />
+    <public type="anim" name="ic_volume_expand_rectangle_3_animation" id="0x7f05006f" />
+    <public type="anim" name="ic_volume_expand_rectangle_4_animation" id="0x7f050070" />
     <public type="interpolator" name="ic_hotspot_disable_cross_1_pathdata_interpolator" id="0x7f060000" />
     <public type="interpolator" name="ic_hotspot_disable_ic_hotspot_alpha_interpolator" id="0x7f060001" />
     <public type="interpolator" name="ic_hotspot_disable_mask_pathdata_interpolator_1" id="0x7f060002" />
@@ -1576,6 +1608,8 @@
     <public type="interpolator" name="ic_signal_location_enable_mask_pathdata_interpolator" id="0x7f060012" />
     <public type="interpolator" name="recents_launch_next_affiliated_task_bounce_scale" id="0x7f060013" />
     <public type="interpolator" name="recents_launch_prev_affiliated_task_bounce_ydelta" id="0x7f060014" />
+    <public type="interpolator" name="ic_volume_collapse_animation_interpolator_0" id="0x7f060015" />
+    <public type="interpolator" name="ic_volume_expand_animation_interpolator_0" id="0x7f060016" />
     <public type="array" name="batterymeter_color_levels" id="0x7f070000" />
     <public type="array" name="batterymeter_color_values" id="0x7f070001" />
     <public type="array" name="batterymeter_bolt_points" id="0x7f070002" />
@@ -1584,6 +1618,7 @@
     <public type="array" name="carrier_mcc_mnc_home_override" id="0x7f070005" />
     <public type="array" name="carrier_mcc_mnc_roam_override" id="0x7f070006" />
     <public type="array" name="lockscreen_num_pad_klondike" id="0x7f070007" />
+    <public type="array" name="volume_stream_titles" id="0x7f070008" />
     <public type="color" name="system_bar_background_opaque" id="0x7f080000" />
     <public type="color" name="system_bar_background_semi_transparent" id="0x7f080001" />
     <public type="color" name="system_bar_background_transparent" id="0x7f080002" />
@@ -1658,6 +1693,8 @@
     <public type="color" name="clock_gray" id="0x7f080047" />
     <public type="color" name="qs_user_detail_name" id="0x7f080048" />
     <public type="color" name="segmented_button_text_selector" id="0x7f080049" />
+    <public type="color" name="volume_icon_color" id="0x7f08004a" />
+    <public type="color" name="volume_settings_icon_color" id="0x7f08004b" />
     <public type="bool" name="config_recents_interface_for_tablets" id="0x7f090000" />
     <public type="bool" name="config_recents_thumbnail_image_fits_to_xy" id="0x7f090001" />
     <public type="bool" name="config_recents_use_hardware_layers" id="0x7f090002" />
@@ -1793,6 +1830,7 @@
     <public type="integer" name="config_activityDefaultDur" id="0x7f0a0038" />
     <public type="integer" name="kg_carousel_angle" id="0x7f0a0039" />
     <public type="integer" name="kg_glowpad_rotation_offset" id="0x7f0a003a" />
+    <public type="integer" name="volume_expand_animation_duration" id="0x7f0a003e" />
     <public type="integer" name="status_bar_config_maxNotificationIcons" id="0x7f0a0035" />
     <public type="integer" name="kg_selector_gravity" id="0x7f0a003b" />
     <public type="integer" name="kg_widget_region_weight" id="0x7f0a003c" />
@@ -1859,6 +1897,12 @@
     <public type="style" name="Widget.TransportControl.SeekBar" id="0x7f0b003b" />
     <public type="style" name="BouncerSecurityContainer" id="0x7f0b003c" />
     <public type="style" name="PasswordTheme" id="0x7f0b003d" />
+    <public type="style" name="VolumeDialogAnimations" id="0x7f0b003e" />
+    <public type="style" name="VolumeButtons" id="0x7f0b003f" />
+    <public type="style" name="TextAppearance.Volume" id="0x7f0b0040" />
+    <public type="style" name="TextAppearance.Volume.ZenSwitch" id="0x7f0b0041" />
+    <public type="style" name="TextAppearance.Volume.ZenSwitchSummary" id="0x7f0b0042" />
+    <public type="style" name="TextAppearance.Volume.ZenSwitchDetail" id="0x7f0b0043" />
     <public type="string" name="config_statusBarComponent" id="0x7f0c0000" />
     <public type="string" name="quick_settings_tiles_default" id="0x7f0c0001" />
     <public type="string" name="quick_settings_tiles" id="0x7f0c0002" />
@@ -2476,6 +2520,18 @@
     <public type="string" name="volumeui_prompt_deny" id="0x7f0c027a" />
     <public type="string" name="volumeui_notification_title" id="0x7f0c027b" />
     <public type="string" name="volumeui_notification_text" id="0x7f0c027c" />
+    <public type="string" name="volume_zen_switch_text" id="0x7f0c027d" />
+    <public type="string" name="volume_dnd_is_on" id="0x7f0c027e" />
+    <public type="string" name="volume_turn_off" id="0x7f0c027f" />
+    <public type="string" name="volume_stream_muted" id="0x7f0c0280" />
+    <public type="string" name="volume_stream_vibrate" id="0x7f0c0281" />
+    <public type="string" name="volume_stream_suppressed" id="0x7f0c0282" />
+    <public type="string" name="volume_stream_muted_dnd" id="0x7f0c0283" />
+    <public type="string" name="volume_stream_limited_dnd" id="0x7f0c0284" />
+    <public type="string" name="volume_stream_vibrate_dnd" id="0x7f0c0285" />
+    <public type="string" name="volume_dnd_ends_in" id="0x7f0c0286" />
+    <public type="string" name="volume_dnd_ends_at" id="0x7f0c0287" />
+    <public type="string" name="volume_end_now" id="0x7f0c0288" />
     <public type="string" name="status_bar_date_formatter" id="0x7f0c0006" />
     <public type="string" name="toast_rotation_locked" id="0x7f0c015b" />
     <public type="string" name="APKTOOL_DUMMY_015d" id="0x7f0c015d" />
@@ -2779,6 +2835,10 @@
     <public type="dimen" name="password_char_padding" id="0x7f0d011d" />
     <public type="dimen" name="date_owner_info_margin" id="0x7f0d011e" />
     <public type="dimen" name="disappear_y_translation" id="0x7f0d011f" />
+    <public type="dimen" name="volume_slider_interspacing" id="0x7f0d0126" />
+    <public type="dimen" name="volume_offset_top" id="0x7f0d0127" />
+    <public type="dimen" name="volume_button_size" id="0x7f0d0128" />
+    <public type="dimen" name="volume_secondary_alpha" id="0x7f0d0129" />
     <public type="dimen" name="peek_height" id="0x7f0d00cd" />
     <public type="dimen" name="keyguard_pattern_unlock_status_line_font_size" id="0x7f0d0125" />
     <public type="dimen" name="notification_panel_min_height" id="0x7f0d00ce" />
@@ -3157,6 +3217,27 @@
     <public type="id" name="place_bottom_right" id="0x7f0f0167" />
     <public type="id" name="notification_volumeui" id="0x7f0f0168" />
     <public type="id" name="zen_embedded_divider" id="0x7f0f0169" />
+    <public type="id" name="volume_dialog" id="0x7f0f016a" />
+    <public type="id" name="volume_expand_button" id="0x7f0f016b" />
+    <public type="id" name="volume_dialog_content" id="0x7f0f016c" />
+    <public type="id" name="volume_footer" id="0x7f0f016d" />
+    <public type="id" name="volume_row_header" id="0x7f0f016e" />
+    <public type="id" name="volume_row_icon" id="0x7f0f016f" />
+    <public type="id" name="volume_row_slider" id="0x7f0f0170" />
+    <public type="id" name="volume_settings_button" id="0x7f0f0171" />
+    <public type="id" name="volume_text_footer" id="0x7f0f0172" />
+    <public type="id" name="volume_footline_text" id="0x7f0f0173" />
+    <public type="id" name="volume_footline_action_button" id="0x7f0f0174" />
+    <public type="id" name="volume_zen_footer" id="0x7f0f0175" />
+    <public type="id" name="volume_zen_switch_bar" id="0x7f0f0176" />
+    <public type="id" name="volume_zen_switch_bar_icon" id="0x7f0f0177" />
+    <public type="id" name="volume_zen_switch" id="0x7f0f0178" />
+    <public type="id" name="volume_zen_panel_summary" id="0x7f0f0179" />
+    <public type="id" name="volume_zen_panel_summary_line_1" id="0x7f0f017a" />
+    <public type="id" name="volume_zen_panel_summary_line_2" id="0x7f0f017b" />
+    <public type="id" name="volume_zen_mode_panel_buttons" id="0x7f0f017c" />
+    <public type="id" name="volume_zen_mode_panel_more" id="0x7f0f017d" />
+    <public type="id" name="volume_zen_mode_panel_done" id="0x7f0f017e" />
     <public type="plurals" name="status_bar_accessibility_recent_apps" id="0x7f100000" />
     <public type="plurals" name="kg_password_wrong_pin_code" id="0x7f100001" />
     <public type="plurals" name="kg_password_wrong_puk_code" id="0x7f100002" />
