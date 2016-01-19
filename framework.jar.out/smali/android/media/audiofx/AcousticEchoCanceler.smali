@@ -20,7 +20,7 @@
     .end annotation
 
     .prologue
-    .line 95
+    .line 94
     sget-object v0, Landroid/media/audiofx/AcousticEchoCanceler;->EFFECT_TYPE_AEC:Ljava/util/UUID;
 
     sget-object v1, Landroid/media/audiofx/AcousticEchoCanceler;->EFFECT_TYPE_NULL:Ljava/util/UUID;
@@ -29,7 +29,7 @@
 
     invoke-direct {p0, v0, v1, v2, p1}, Landroid/media/audiofx/AudioEffect;-><init>(Ljava/util/UUID;Ljava/util/UUID;II)V
 
-    .line 96
+    .line 95
     return-void
 .end method
 
@@ -51,7 +51,6 @@
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_2
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .end local v0    # "aec":Landroid/media/audiofx/AcousticEchoCanceler;
     .local v1, "aec":Landroid/media/audiofx/AcousticEchoCanceler;
@@ -59,17 +58,16 @@
 
     .line 72
     .end local v1    # "aec":Landroid/media/audiofx/AcousticEchoCanceler;
+    .restart local v0    # "aec":Landroid/media/audiofx/AcousticEchoCanceler;
     :goto_0
-    return-object v1
+    return-object v0
 
     .line 65
-    .restart local v0    # "aec":Landroid/media/audiofx/AcousticEchoCanceler;
     :catch_0
     move-exception v2
 
     .line 66
     .local v2, "e":Ljava/lang/IllegalArgumentException;
-    :try_start_1
     const-string v3, "AcousticEchoCanceler"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -92,17 +90,10 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-object v1, v0
-
-    .line 72
-    .end local v0    # "aec":Landroid/media/audiofx/AcousticEchoCanceler;
-    .restart local v1    # "aec":Landroid/media/audiofx/AcousticEchoCanceler;
     goto :goto_0
 
     .line 67
-    .end local v1    # "aec":Landroid/media/audiofx/AcousticEchoCanceler;
     .end local v2    # "e":Ljava/lang/IllegalArgumentException;
-    .restart local v0    # "aec":Landroid/media/audiofx/AcousticEchoCanceler;
     :catch_1
     move-exception v2
 
@@ -114,17 +105,10 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-object v1, v0
-
-    .line 72
-    .end local v0    # "aec":Landroid/media/audiofx/AcousticEchoCanceler;
-    .restart local v1    # "aec":Landroid/media/audiofx/AcousticEchoCanceler;
     goto :goto_0
 
     .line 69
-    .end local v1    # "aec":Landroid/media/audiofx/AcousticEchoCanceler;
     .end local v2    # "e":Ljava/lang/UnsupportedOperationException;
-    .restart local v0    # "aec":Landroid/media/audiofx/AcousticEchoCanceler;
     :catch_2
     move-exception v2
 
@@ -135,26 +119,7 @@
     const-string/jumbo v4, "not enough memory"
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-object v1, v0
-
-    .line 72
-    .end local v0    # "aec":Landroid/media/audiofx/AcousticEchoCanceler;
-    .restart local v1    # "aec":Landroid/media/audiofx/AcousticEchoCanceler;
-    goto :goto_0
-
-    .end local v1    # "aec":Landroid/media/audiofx/AcousticEchoCanceler;
-    .end local v2    # "e":Ljava/lang/RuntimeException;
-    .restart local v0    # "aec":Landroid/media/audiofx/AcousticEchoCanceler;
-    :catchall_0
-    move-exception v3
-
-    move-object v1, v0
-
-    .end local v0    # "aec":Landroid/media/audiofx/AcousticEchoCanceler;
-    .restart local v1    # "aec":Landroid/media/audiofx/AcousticEchoCanceler;
     goto :goto_0
 .end method
 

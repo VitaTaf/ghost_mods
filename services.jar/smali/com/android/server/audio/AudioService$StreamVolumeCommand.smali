@@ -35,24 +35,24 @@
     .param p5, "device"    # I
 
     .prologue
-    .line 1207
+    .line 1205
     iput-object p1, p0, Lcom/android/server/audio/AudioService$StreamVolumeCommand;->this$0:Lcom/android/server/audio/AudioService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1208
+    .line 1206
     iput p2, p0, Lcom/android/server/audio/AudioService$StreamVolumeCommand;->mStreamType:I
 
-    .line 1209
+    .line 1207
     iput p3, p0, Lcom/android/server/audio/AudioService$StreamVolumeCommand;->mIndex:I
 
-    .line 1210
+    .line 1208
     iput p4, p0, Lcom/android/server/audio/AudioService$StreamVolumeCommand;->mFlags:I
 
-    .line 1211
+    .line 1209
     iput p5, p0, Lcom/android/server/audio/AudioService$StreamVolumeCommand;->mDevice:I
 
-    .line 1212
+    .line 1210
     return-void
 .end method
 
@@ -62,7 +62,7 @@
     .locals 2
 
     .prologue
-    .line 1216
+    .line 1214
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
