@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 5376
+    .line 5437
     iput-object p1, p0, Lcom/android/server/audio/AudioService$3;->this$0:Lcom/android/server/audio/AudioService;
 
     iput-object p2, p0, Lcom/android/server/audio/AudioService$3;->val$controller:Landroid/media/IVolumeController;
@@ -44,11 +44,11 @@
     .locals 2
 
     .prologue
-    .line 5379
+    .line 5440
     iget-object v0, p0, Lcom/android/server/audio/AudioService$3;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mVolumeController:Lcom/android/server/audio/AudioService$VolumeController;
-    invoke-static {v0}, Lcom/android/server/audio/AudioService;->access$9700(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$VolumeController;
+    invoke-static {v0}, Lcom/android/server/audio/AudioService;->access$9900(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$VolumeController;
 
     move-result-object v0
 
@@ -60,21 +60,21 @@
 
     if-eqz v0, :cond_0
 
-    .line 5380
+    .line 5441
     const-string v0, "AudioService"
 
     const-string v1, "Current remote volume controller died, unregistering"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5381
+    .line 5442
     iget-object v0, p0, Lcom/android/server/audio/AudioService$3;->this$0:Lcom/android/server/audio/AudioService;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/server/audio/AudioService;->setVolumeController(Landroid/media/IVolumeController;)V
 
-    .line 5383
+    .line 5444
     :cond_0
     return-void
 .end method
