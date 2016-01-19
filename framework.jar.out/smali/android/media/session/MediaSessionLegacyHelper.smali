@@ -1611,15 +1611,18 @@
 
     if-eqz v4, :cond_0
 
-    .line 204
+    .line 203
     :cond_2
+    const/16 v2, 0x1000
+
+    .line 204
+    .local v2, "flags":I
     if-eqz p2, :cond_6
 
     .line 207
-    const/16 v2, 0x200
+    or-int/lit16 v2, v2, 0x200
 
     .line 216
-    .local v2, "flags":I
     :goto_4
     if-eqz v0, :cond_8
 
@@ -1679,21 +1682,19 @@
     goto :goto_3
 
     .line 210
+    .restart local v2    # "flags":I
     :cond_6
     if-eqz v4, :cond_7
 
     .line 211
-    const/16 v2, 0x14
+    or-int/lit8 v2, v2, 0x14
 
-    .restart local v2    # "flags":I
     goto :goto_4
 
     .line 213
-    .end local v2    # "flags":I
     :cond_7
-    const/16 v2, 0x11
+    or-int/lit8 v2, v2, 0x11
 
-    .restart local v2    # "flags":I
     goto :goto_4
 
     .line 223

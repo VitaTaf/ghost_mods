@@ -207,6 +207,8 @@
 
 .field public static final FLAG_FIXED_VOLUME:I = 0x20
 
+.field public static final FLAG_FROM_KEY:I = 0x1000
+
 .field public static final FLAG_HDMI_SYSTEM_AUDIO_VOLUME:I = 0x100
 
 .field private static final FLAG_NAMES:[Ljava/lang/String;
@@ -445,8 +447,8 @@
 
     sput-object v0, Landroid/media/AudioManager;->sAudioPortEventHandler:Landroid/media/AudioPortEventHandler;
 
-    .line 504
-    const/16 v0, 0xc
+    .line 510
+    const/16 v0, 0xd
 
     new-array v0, v0, [Ljava/lang/String;
 
@@ -517,6 +519,12 @@
     const/16 v1, 0xb
 
     const-string v2, "FLAG_SHOW_VIBRATE_HINT"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xc
+
+    const-string v2, "FLAG_FROM_KEY"
 
     aput-object v2, v0, v1
 
@@ -3048,6 +3056,45 @@
 
     .line 1245
     const/4 v2, 0x0
+
+    goto :goto_0
+.end method
+
+.method public isStreamAffectedByMute(I)Z
+    .locals 3
+    .param p1, "streamType"    # I
+
+    .prologue
+    .line 3259
+    :try_start_0
+    invoke-static {}, Landroid/media/AudioManager;->getService()Landroid/media/IAudioService;
+
+    move-result-object v1
+
+    invoke-interface {v1, p1}, Landroid/media/IAudioService;->isStreamAffectedByMute(I)Z
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    .line 3262
+    :goto_0
+    return v1
+
+    .line 3260
+    :catch_0
+    move-exception v0
+
+    .line 3261
+    .local v0, "e":Landroid/os/RemoteException;
+    sget-object v1, Landroid/media/AudioManager;->TAG:Ljava/lang/String;
+
+    const-string v2, "Error calling isStreamAffectedByMute"
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 3262
+    const/4 v1, 0x0
 
     goto :goto_0
 .end method

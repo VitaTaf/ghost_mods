@@ -7790,7 +7790,7 @@
 
     iget v4, p0, Landroid/view/PhoneWindow;->mVolumeControlStreamType:I
 
-    const/16 v5, 0x11
+    const/16 v5, 0x1011
 
     invoke-virtual {v2, v4, v0, v5}, Landroid/media/session/MediaSessionLegacyHelper;->sendAdjustVolumeBy(III)V
 
@@ -7937,48 +7937,48 @@
 .end method
 
 .method protected onKeyUp(IILandroid/view/KeyEvent;)Z
-    .locals 7
+    .locals 8
     .param p1, "featureId"    # I
     .param p2, "keyCode"    # I
     .param p3, "event"    # Landroid/view/KeyEvent;
 
     .prologue
-    const/16 v6, 0x14
+    const/16 v7, 0x1014
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    .line 1842
-    iget-object v4, p0, Landroid/view/PhoneWindow;->mDecor:Landroid/view/PhoneWindow$DecorView;
+    .line 1828
+    iget-object v5, p0, Landroid/view/PhoneWindow;->mDecor:Landroid/view/PhoneWindow$DecorView;
 
-    if-eqz v4, :cond_2
+    if-eqz v5, :cond_2
 
-    iget-object v4, p0, Landroid/view/PhoneWindow;->mDecor:Landroid/view/PhoneWindow$DecorView;
+    iget-object v5, p0, Landroid/view/PhoneWindow;->mDecor:Landroid/view/PhoneWindow$DecorView;
 
-    invoke-virtual {v4}, Landroid/view/PhoneWindow$DecorView;->getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
+    invoke-virtual {v5}, Landroid/view/PhoneWindow$DecorView;->getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
 
     move-result-object v0
 
-    .line 1844
+    .line 1830
     .local v0, "dispatcher":Landroid/view/KeyEvent$DispatcherState;
     :goto_0
     if-eqz v0, :cond_0
 
-    .line 1845
+    .line 1831
     invoke-virtual {v0, p3}, Landroid/view/KeyEvent$DispatcherState;->handleUpEvent(Landroid/view/KeyEvent;)V
 
-    .line 1850
+    .line 1836
     :cond_0
     sparse-switch p2, :sswitch_data_0
 
-    .line 1933
+    .line 1919
     .end local p1    # "featureId":I
     :cond_1
     :goto_1
-    return v2
+    return v3
 
-    .line 1842
+    .line 1828
     .end local v0    # "dispatcher":Landroid/view/KeyEvent$DispatcherState;
     .restart local p1    # "featureId":I
     :cond_2
@@ -7986,177 +7986,182 @@
 
     goto :goto_0
 
-    .line 1855
+    .line 1839
     .restart local v0    # "dispatcher":Landroid/view/KeyEvent$DispatcherState;
     :sswitch_0
-    iget-object v4, p0, Landroid/view/PhoneWindow;->mMediaController:Landroid/media/session/MediaController;
+    const/16 v1, 0x1014
 
-    if-eqz v4, :cond_3
+    .line 1843
+    .local v1, "flags":I
+    iget-object v5, p0, Landroid/view/PhoneWindow;->mMediaController:Landroid/media/session/MediaController;
 
-    .line 1856
-    iget-object v4, p0, Landroid/view/PhoneWindow;->mMediaController:Landroid/media/session/MediaController;
+    if-eqz v5, :cond_3
 
-    invoke-virtual {v4, v2, v6}, Landroid/media/session/MediaController;->adjustVolume(II)V
+    .line 1844
+    iget-object v5, p0, Landroid/view/PhoneWindow;->mMediaController:Landroid/media/session/MediaController;
+
+    invoke-virtual {v5, v3, v7}, Landroid/media/session/MediaController;->adjustVolume(II)V
 
     :goto_2
-    move v2, v3
+    move v3, v4
 
-    .line 1863
+    .line 1849
     goto :goto_1
 
-    .line 1859
+    .line 1846
     :cond_3
     invoke-virtual {p0}, Landroid/view/PhoneWindow;->getContext()Landroid/content/Context;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-static {v4}, Landroid/media/session/MediaSessionLegacyHelper;->getHelper(Landroid/content/Context;)Landroid/media/session/MediaSessionLegacyHelper;
+    invoke-static {v5}, Landroid/media/session/MediaSessionLegacyHelper;->getHelper(Landroid/content/Context;)Landroid/media/session/MediaSessionLegacyHelper;
 
-    move-result-object v4
+    move-result-object v5
 
-    iget v5, p0, Landroid/view/PhoneWindow;->mVolumeControlStreamType:I
+    iget v6, p0, Landroid/view/PhoneWindow;->mVolumeControlStreamType:I
 
-    invoke-virtual {v4, v5, v2, v6}, Landroid/media/session/MediaSessionLegacyHelper;->sendAdjustVolumeBy(III)V
+    invoke-virtual {v5, v6, v3, v7}, Landroid/media/session/MediaSessionLegacyHelper;->sendAdjustVolumeBy(III)V
 
     goto :goto_2
 
-    .line 1870
+    .line 1856
+    .end local v1    # "flags":I
     :sswitch_1
     invoke-virtual {p0}, Landroid/view/PhoneWindow;->getAudioManager()Landroid/media/AudioManager;
 
-    move-result-object v2
+    move-result-object v3
 
-    iget v4, p0, Landroid/view/PhoneWindow;->mVolumeControlStreamType:I
+    iget v5, p0, Landroid/view/PhoneWindow;->mVolumeControlStreamType:I
 
-    invoke-virtual {v2, p3, v4}, Landroid/media/AudioManager;->handleKeyUp(Landroid/view/KeyEvent;I)V
+    invoke-virtual {v3, p3, v5}, Landroid/media/AudioManager;->handleKeyUp(Landroid/view/KeyEvent;I)V
 
-    move v2, v3
+    move v3, v4
 
-    .line 1871
+    .line 1857
     goto :goto_1
 
-    .line 1886
+    .line 1872
     :sswitch_2
-    iget-object v4, p0, Landroid/view/PhoneWindow;->mMediaController:Landroid/media/session/MediaController;
+    iget-object v5, p0, Landroid/view/PhoneWindow;->mMediaController:Landroid/media/session/MediaController;
 
-    if-eqz v4, :cond_1
+    if-eqz v5, :cond_1
 
-    .line 1887
-    iget-object v4, p0, Landroid/view/PhoneWindow;->mMediaController:Landroid/media/session/MediaController;
+    .line 1873
+    iget-object v5, p0, Landroid/view/PhoneWindow;->mMediaController:Landroid/media/session/MediaController;
 
-    invoke-virtual {v4, p3}, Landroid/media/session/MediaController;->dispatchMediaButtonEvent(Landroid/view/KeyEvent;)Z
+    invoke-virtual {v5, p3}, Landroid/media/session/MediaController;->dispatchMediaButtonEvent(Landroid/view/KeyEvent;)Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_1
+    if-eqz v5, :cond_1
 
-    move v2, v3
+    move v3, v4
 
-    .line 1888
+    .line 1874
     goto :goto_1
 
-    .line 1895
+    .line 1881
     :sswitch_3
     if-gez p1, :cond_4
 
-    move p1, v2
+    move p1, v3
 
     .end local p1    # "featureId":I
     :cond_4
     invoke-virtual {p0, p1, p3}, Landroid/view/PhoneWindow;->onKeyUpPanel(ILandroid/view/KeyEvent;)V
 
-    move v2, v3
+    move v3, v4
 
-    .line 1897
+    .line 1883
     goto :goto_1
 
-    .line 1901
+    .line 1887
     .restart local p1    # "featureId":I
     :sswitch_4
     if-ltz p1, :cond_1
 
-    .line 1902
+    .line 1888
     invoke-virtual {p3}, Landroid/view/KeyEvent;->isTracking()Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_1
+    if-eqz v5, :cond_1
 
     invoke-virtual {p3}, Landroid/view/KeyEvent;->isCanceled()Z
 
-    move-result v4
+    move-result v5
 
-    if-nez v4, :cond_1
+    if-nez v5, :cond_1
 
-    .line 1903
+    .line 1889
     if-nez p1, :cond_5
 
-    .line 1904
-    invoke-direct {p0, p1, v2}, Landroid/view/PhoneWindow;->getPanelState(IZ)Landroid/view/PhoneWindow$PanelFeatureState;
+    .line 1890
+    invoke-direct {p0, p1, v3}, Landroid/view/PhoneWindow;->getPanelState(IZ)Landroid/view/PhoneWindow$PanelFeatureState;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 1905
-    .local v1, "st":Landroid/view/PhoneWindow$PanelFeatureState;
-    if-eqz v1, :cond_5
-
-    iget-boolean v2, v1, Landroid/view/PhoneWindow$PanelFeatureState;->isInExpandedMode:Z
-
+    .line 1891
+    .local v2, "st":Landroid/view/PhoneWindow$PanelFeatureState;
     if-eqz v2, :cond_5
 
-    .line 1908
-    invoke-direct {p0, v3}, Landroid/view/PhoneWindow;->reopenMenu(Z)V
+    iget-boolean v3, v2, Landroid/view/PhoneWindow$PanelFeatureState;->isInExpandedMode:Z
 
-    move v2, v3
+    if-eqz v3, :cond_5
 
-    .line 1909
+    .line 1894
+    invoke-direct {p0, v4}, Landroid/view/PhoneWindow;->reopenMenu(Z)V
+
+    move v3, v4
+
+    .line 1895
     goto :goto_1
 
-    .line 1912
-    .end local v1    # "st":Landroid/view/PhoneWindow$PanelFeatureState;
+    .line 1898
+    .end local v2    # "st":Landroid/view/PhoneWindow$PanelFeatureState;
     :cond_5
     invoke-virtual {p0, p1}, Landroid/view/PhoneWindow;->closePanel(I)V
 
-    move v2, v3
+    move v3, v4
 
-    .line 1913
+    .line 1899
     goto :goto_1
 
-    .line 1923
+    .line 1909
     :sswitch_5
     invoke-direct {p0}, Landroid/view/PhoneWindow;->getKeyguardManager()Landroid/app/KeyguardManager;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v4}, Landroid/app/KeyguardManager;->inKeyguardRestrictedInputMode()Z
+    invoke-virtual {v5}, Landroid/app/KeyguardManager;->inKeyguardRestrictedInputMode()Z
 
-    move-result v4
+    move-result v5
 
-    if-nez v4, :cond_1
+    if-nez v5, :cond_1
 
-    .line 1926
+    .line 1912
     invoke-virtual {p3}, Landroid/view/KeyEvent;->isTracking()Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_6
+    if-eqz v3, :cond_6
 
     invoke-virtual {p3}, Landroid/view/KeyEvent;->isCanceled()Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_6
+    if-nez v3, :cond_6
 
-    .line 1927
+    .line 1913
     invoke-direct {p0}, Landroid/view/PhoneWindow;->launchDefaultSearch()Z
 
     :cond_6
-    move v2, v3
+    move v3, v4
 
-    .line 1929
+    .line 1915
     goto :goto_1
 
-    .line 1850
+    .line 1836
     :sswitch_data_0
     .sparse-switch
         0x4 -> :sswitch_4

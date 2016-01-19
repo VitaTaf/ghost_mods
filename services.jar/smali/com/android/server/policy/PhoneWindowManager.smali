@@ -2097,7 +2097,7 @@
 
     .line 4960
     .local v2, "keyCode":I
-    const/4 v1, 0x5
+    const/16 v1, 0x1005
 
     .line 4961
     .local v1, "flags":I
@@ -2214,9 +2214,6 @@
     invoke-static {v4, v5, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
-
-    .line 4962
-    nop
 
     :sswitch_data_0
     .sparse-switch

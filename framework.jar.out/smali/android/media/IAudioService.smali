@@ -207,6 +207,14 @@
     .end annotation
 .end method
 
+.method public abstract isStreamAffectedByMute(I)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract isStreamAffectedByRingerMode(I)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
