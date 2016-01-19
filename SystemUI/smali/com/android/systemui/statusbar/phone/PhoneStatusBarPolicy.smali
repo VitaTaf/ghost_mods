@@ -1015,12 +1015,21 @@
 
     move-result v9
 
-    if-eqz v9, :cond_7
+    if-nez v9, :cond_0
+
+    iget-object v9, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mContext:Landroid/content/Context;
+
+    invoke-static {v9}, Lcom/android/systemui/qs/tiles/DndTile;->isCombinedIcon(Landroid/content/Context;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_8
 
     .line 286
+    :cond_0
     iget v9, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mZen:I
 
-    if-eqz v9, :cond_6
+    if-eqz v9, :cond_7
 
     move v6, v7
 
@@ -1038,7 +1047,7 @@
     move-result-object v4
 
     .line 299
-    :cond_0
+    :cond_1
     :goto_1
     iget-object v9, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mContext:Landroid/content/Context;
 
@@ -1046,13 +1055,13 @@
 
     move-result v9
 
-    if-eqz v9, :cond_9
+    if-eqz v9, :cond_a
 
     invoke-virtual {v0}, Landroid/media/AudioManager;->getRingerModeInternal()I
 
     move-result v9
 
-    if-nez v9, :cond_9
+    if-nez v9, :cond_a
 
     .line 301
     const/4 v3, 0x1
@@ -1069,76 +1078,76 @@
 
     move-result-object v1
 
-    .line 306
-    :cond_1
+    .line 311
+    :cond_2
     :goto_2
-    if-eqz v6, :cond_2
+    if-eqz v6, :cond_3
 
-    .line 307
+    .line 312
     iget-object v7, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mService:Landroid/app/StatusBarManager;
 
     const-string v9, "zen"
 
     invoke-virtual {v7, v9, v5, v8, v4}, Landroid/app/StatusBarManager;->setIcon(Ljava/lang/String;IILjava/lang/String;)V
 
-    .line 309
-    :cond_2
+    .line 314
+    :cond_3
     iget-boolean v7, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mZenVisible:Z
 
-    if-eq v6, v7, :cond_3
+    if-eq v6, v7, :cond_4
 
-    .line 310
+    .line 315
     iget-object v7, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mService:Landroid/app/StatusBarManager;
 
     const-string v9, "zen"
 
     invoke-virtual {v7, v9, v6}, Landroid/app/StatusBarManager;->setIconVisibility(Ljava/lang/String;Z)V
 
-    .line 311
+    .line 316
     iput-boolean v6, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mZenVisible:Z
 
-    .line 314
-    :cond_3
-    if-eqz v3, :cond_4
+    .line 319
+    :cond_4
+    if-eqz v3, :cond_5
 
-    .line 315
+    .line 320
     iget-object v7, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mService:Landroid/app/StatusBarManager;
 
     const-string v9, "volume"
 
     invoke-virtual {v7, v9, v2, v8, v1}, Landroid/app/StatusBarManager;->setIcon(Ljava/lang/String;IILjava/lang/String;)V
 
-    .line 317
-    :cond_4
+    .line 322
+    :cond_5
     iget-boolean v7, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mVolumeVisible:Z
 
-    if-eq v3, v7, :cond_5
+    if-eq v3, v7, :cond_6
 
-    .line 318
+    .line 323
     iget-object v7, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mService:Landroid/app/StatusBarManager;
 
     const-string v8, "volume"
 
     invoke-virtual {v7, v8, v3}, Landroid/app/StatusBarManager;->setIconVisibility(Ljava/lang/String;Z)V
 
-    .line 319
+    .line 324
     iput-boolean v3, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mVolumeVisible:Z
 
-    .line 321
-    :cond_5
+    .line 326
+    :cond_6
     return-void
 
-    :cond_6
+    :cond_7
     move v6, v8
 
     .line 286
     goto :goto_0
 
     .line 289
-    :cond_7
+    :cond_8
     iget v9, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mZen:I
 
-    if-ne v9, v11, :cond_8
+    if-ne v9, v11, :cond_9
 
     .line 290
     const/4 v6, 0x1
@@ -1158,10 +1167,10 @@
     goto :goto_1
 
     .line 293
-    :cond_8
+    :cond_9
     iget v9, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mZen:I
 
-    if-ne v9, v7, :cond_0
+    if-ne v9, v7, :cond_1
 
     .line 294
     const/4 v6, 0x1
@@ -1181,16 +1190,16 @@
     goto :goto_1
 
     .line 304
-    :cond_9
+    :cond_a
     iget v9, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mZen:I
 
-    if-eq v9, v11, :cond_1
+    if-eq v9, v11, :cond_2
 
     invoke-virtual {v0}, Landroid/media/AudioManager;->getRingerMode()I
 
     move-result v9
 
-    if-ne v9, v7, :cond_1
+    if-ne v9, v7, :cond_2
 
     .line 306
     const/4 v3, 0x1

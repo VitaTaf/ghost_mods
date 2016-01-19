@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 252
+    .line 147
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeUI$ServiceMonitorCallbacks;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .param p2, "x1"    # Lcom/android/systemui/volume/VolumeUI$1;
 
     .prologue
-    .line 252
+    .line 147
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeUI$ServiceMonitorCallbacks;-><init>(Lcom/android/systemui/volume/VolumeUI;)V
 
     return-void
@@ -52,9 +52,9 @@
     .locals 2
 
     .prologue
-    .line 255
+    .line 150
     # getter for: Lcom/android/systemui/volume/VolumeUI;->LOGD:Z
-    invoke-static {}, Lcom/android/systemui/volume/VolumeUI;->access$1200()Z
+    invoke-static {}, Lcom/android/systemui/volume/VolumeUI;->access$400()Z
 
     move-result v0
 
@@ -66,30 +66,30 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 256
+    .line 151
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$ServiceMonitorCallbacks;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     const/4 v1, 0x1
 
-    # invokes: Lcom/android/systemui/volume/VolumeUI;->setVolumeController(Z)V
-    invoke-static {v0, v1}, Lcom/android/systemui/volume/VolumeUI;->access$1300(Lcom/android/systemui/volume/VolumeUI;Z)V
+    # invokes: Lcom/android/systemui/volume/VolumeUI;->setDefaultVolumeController(Z)V
+    invoke-static {v0, v1}, Lcom/android/systemui/volume/VolumeUI;->access$500(Lcom/android/systemui/volume/VolumeUI;Z)V
 
-    .line 257
+    .line 152
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$ServiceMonitorCallbacks;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mRestorationNotification:Lcom/android/systemui/volume/VolumeUI$RestorationNotification;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$1400(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/volume/VolumeUI$RestorationNotification;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$600(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/volume/VolumeUI$RestorationNotification;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/android/systemui/volume/VolumeUI$RestorationNotification;->hide()V
 
-    .line 258
+    .line 153
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$ServiceMonitorCallbacks;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mVolumeControllerService:Lcom/android/systemui/statusbar/ServiceMonitor;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$900(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/statusbar/ServiceMonitor;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$300(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/statusbar/ServiceMonitor;
 
     move-result-object v0
 
@@ -99,11 +99,11 @@
 
     if-nez v0, :cond_1
 
-    .line 259
+    .line 154
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$ServiceMonitorCallbacks;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mVolumeControllerService:Lcom/android/systemui/statusbar/ServiceMonitor;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$900(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/statusbar/ServiceMonitor;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$300(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/statusbar/ServiceMonitor;
 
     move-result-object v0
 
@@ -111,7 +111,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/ServiceMonitor;->setComponent(Landroid/content/ComponentName;)V
 
-    .line 261
+    .line 156
     :cond_1
     return-void
 .end method
@@ -120,9 +120,9 @@
     .locals 2
 
     .prologue
-    .line 265
+    .line 160
     # getter for: Lcom/android/systemui/volume/VolumeUI;->LOGD:Z
-    invoke-static {}, Lcom/android/systemui/volume/VolumeUI;->access$1200()Z
+    invoke-static {}, Lcom/android/systemui/volume/VolumeUI;->access$400()Z
 
     move-result v0
 
@@ -134,19 +134,19 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 267
+    .line 162
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$ServiceMonitorCallbacks;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mVolumeControllerService:Lcom/android/systemui/statusbar/ServiceMonitor;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$900(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/statusbar/ServiceMonitor;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$300(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/statusbar/ServiceMonitor;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeUI$ServiceMonitorCallbacks;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mVolumeControllerService:Lcom/android/systemui/statusbar/ServiceMonitor;
-    invoke-static {v1}, Lcom/android/systemui/volume/VolumeUI;->access$900(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/statusbar/ServiceMonitor;
+    invoke-static {v1}, Lcom/android/systemui/volume/VolumeUI;->access$300(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/statusbar/ServiceMonitor;
 
     move-result-object v1
 
@@ -156,35 +156,35 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/ServiceMonitor;->setComponent(Landroid/content/ComponentName;)V
 
-    .line 268
+    .line 163
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$ServiceMonitorCallbacks;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     const/4 v1, 0x0
 
-    # invokes: Lcom/android/systemui/volume/VolumeUI;->setVolumeController(Z)V
-    invoke-static {v0, v1}, Lcom/android/systemui/volume/VolumeUI;->access$1300(Lcom/android/systemui/volume/VolumeUI;Z)V
+    # invokes: Lcom/android/systemui/volume/VolumeUI;->setDefaultVolumeController(Z)V
+    invoke-static {v0, v1}, Lcom/android/systemui/volume/VolumeUI;->access$500(Lcom/android/systemui/volume/VolumeUI;Z)V
 
-    .line 269
+    .line 164
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$ServiceMonitorCallbacks;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
-    # getter for: Lcom/android/systemui/volume/VolumeUI;->mVolumeController:Lcom/android/systemui/volume/VolumeUI$VolumeController;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$800(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/volume/VolumeUI$VolumeController;
+    # invokes: Lcom/android/systemui/volume/VolumeUI;->getVolumeComponent()Lcom/android/systemui/volume/VolumeComponent;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$700(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/volume/VolumeComponent;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/android/systemui/volume/VolumeUI$VolumeController;->dismissNow()V
+    invoke-interface {v0}, Lcom/android/systemui/volume/VolumeComponent;->dismissNow()V
 
-    .line 270
+    .line 165
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$ServiceMonitorCallbacks;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mRestorationNotification:Lcom/android/systemui/volume/VolumeUI$RestorationNotification;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$1400(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/volume/VolumeUI$RestorationNotification;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$600(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/volume/VolumeUI$RestorationNotification;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/android/systemui/volume/VolumeUI$RestorationNotification;->show()V
 
-    .line 271
+    .line 166
     const-wide/16 v0, 0x0
 
     return-wide v0

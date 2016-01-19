@@ -31,6 +31,18 @@
     <array name="carrier_mcc_mnc_both_override" />
     <array name="carrier_mcc_mnc_home_override" />
     <array name="carrier_mcc_mnc_roam_override" />
+    <string-array name="volume_stream_titles">
+        <item>Voice calls</item>
+        <item>System</item>
+        <item>Notifications</item>
+        <item>Media</item>
+        <item>Alarms</item>
+        <item></item>
+        <item>Bluetooth calls</item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
     <string-array name="lockscreen_num_pad_klondike">
         <item>+</item>
         <item></item>
