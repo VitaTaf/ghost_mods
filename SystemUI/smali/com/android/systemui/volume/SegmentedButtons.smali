@@ -33,7 +33,7 @@
     .line 41
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 107
+    .line 110
     new-instance v0, Lcom/android/systemui/volume/SegmentedButtons$2;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/volume/SegmentedButtons$2;-><init>(Lcom/android/systemui/volume/SegmentedButtons;)V
@@ -76,17 +76,17 @@
     .locals 1
 
     .prologue
-    .line 102
+    .line 105
     iget-object v0, p0, Lcom/android/systemui/volume/SegmentedButtons;->mCallback:Lcom/android/systemui/volume/SegmentedButtons$Callback;
 
     if-eqz v0, :cond_0
 
-    .line 103
+    .line 106
     iget-object v0, p0, Lcom/android/systemui/volume/SegmentedButtons;->mCallback:Lcom/android/systemui/volume/SegmentedButtons$Callback;
 
     invoke-interface {v0}, Lcom/android/systemui/volume/SegmentedButtons$Callback;->onInteraction()V
 
-    .line 105
+    .line 108
     :cond_0
     return-void
 .end method
@@ -95,34 +95,35 @@
     .locals 2
 
     .prologue
-    .line 96
+    .line 99
     iget-object v0, p0, Lcom/android/systemui/volume/SegmentedButtons;->mCallback:Lcom/android/systemui/volume/SegmentedButtons$Callback;
 
     if-eqz v0, :cond_0
 
-    .line 97
+    .line 100
     iget-object v0, p0, Lcom/android/systemui/volume/SegmentedButtons;->mCallback:Lcom/android/systemui/volume/SegmentedButtons$Callback;
 
     iget-object v1, p0, Lcom/android/systemui/volume/SegmentedButtons;->mSelectedValue:Ljava/lang/Object;
 
     invoke-interface {v0, v1}, Lcom/android/systemui/volume/SegmentedButtons$Callback;->onSelected(Ljava/lang/Object;)V
 
-    .line 99
+    .line 102
     :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public addButton(ILjava/lang/Object;)V
+.method public addButton(IILjava/lang/Object;)V
     .locals 5
     .param p1, "labelResId"    # I
-    .param p2, "value"    # Ljava/lang/Object;
+    .param p2, "iconResId"    # I
+    .param p3, "value"    # Ljava/lang/Object;
 
     .prologue
     const/4 v4, 0x0
 
-    .line 68
+    .line 70
     iget-object v2, p0, Lcom/android/systemui/volume/SegmentedButtons;->mInflater:Landroid/view/LayoutInflater;
 
     const v3, 0x7f04003d
@@ -133,7 +134,7 @@
 
     check-cast v0, Landroid/widget/Button;
 
-    .line 69
+    .line 71
     .local v0, "b":Landroid/widget/Button;
     const v2, 0x7f0f0126
 
@@ -143,17 +144,20 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/widget/Button;->setTag(ILjava/lang/Object;)V
 
-    .line 70
+    .line 72
     invoke-virtual {v0, p1}, Landroid/widget/Button;->setText(I)V
 
-    .line 71
+    .line 73
+    invoke-virtual {v0, v4, p2, v4, v4}, Landroid/widget/Button;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
+
+    .line 74
     invoke-virtual {v0}, Landroid/widget/Button;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
     check-cast v1, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 72
+    .line 75
     .local v1, "lp":Landroid/widget/LinearLayout$LayoutParams;
     invoke-virtual {p0}, Lcom/android/systemui/volume/SegmentedButtons;->getChildCount()I
 
@@ -161,34 +165,34 @@
 
     if-nez v2, :cond_0
 
-    .line 73
+    .line 76
     iput v4, v1, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
     iput v4, v1, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
-    .line 75
+    .line 78
     :cond_0
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 76
+    .line 79
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/SegmentedButtons;->addView(Landroid/view/View;)V
 
-    .line 77
-    invoke-virtual {v0, p2}, Landroid/widget/Button;->setTag(Ljava/lang/Object;)V
+    .line 80
+    invoke-virtual {v0, p3}, Landroid/widget/Button;->setTag(Ljava/lang/Object;)V
 
-    .line 78
+    .line 81
     iget-object v2, p0, Lcom/android/systemui/volume/SegmentedButtons;->mClick:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 79
+    .line 82
     new-instance v2, Lcom/android/systemui/volume/SegmentedButtons$1;
 
     invoke-direct {v2, p0}, Lcom/android/systemui/volume/SegmentedButtons$1;-><init>(Lcom/android/systemui/volume/SegmentedButtons;)V
 
     invoke-static {v0, v2}, Lcom/android/systemui/volume/Interaction;->register(Landroid/view/View;Lcom/android/systemui/volume/Interaction$Callback;)V
 
-    .line 85
+    .line 88
     return-void
 .end method
 
@@ -215,7 +219,7 @@
 .end method
 
 .method public setSelectedValue(Ljava/lang/Object;)V
-    .locals 5
+    .locals 7
     .param p1, "value"    # Ljava/lang/Object;
 
     .prologue
@@ -228,7 +232,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 65
+    .line 67
     :goto_0
     return-void
 
@@ -245,7 +249,7 @@
 
     move-result v4
 
-    if-ge v1, v4, :cond_1
+    if-ge v1, v4, :cond_2
 
     .line 59
     invoke-virtual {p0, v1}, Lcom/android/systemui/volume/SegmentedButtons;->getChildAt(I)Landroid/view/View;
@@ -272,16 +276,48 @@
     .local v2, "selected":Z
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setSelected(Z)V
 
+    .line 63
+    invoke-virtual {v0}, Landroid/widget/TextView;->getCompoundDrawables()[Landroid/graphics/drawable/Drawable;
+
+    move-result-object v4
+
+    const/4 v5, 0x1
+
+    aget-object v5, v4, v5
+
+    iget-object v4, p0, Lcom/android/systemui/volume/SegmentedButtons;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v6
+
+    if-eqz v2, :cond_1
+
+    const v4, 0x7f08003b
+
+    :goto_2
+    invoke-virtual {v6, v4}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v4
+
+    invoke-virtual {v5, v4}, Landroid/graphics/drawable/Drawable;->setTint(I)V
+
     .line 58
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 64
+    .line 63
+    :cond_1
+    const v4, 0x7f08003c
+
+    goto :goto_2
+
+    .line 66
     .end local v0    # "c":Landroid/widget/TextView;
     .end local v2    # "selected":Z
     .end local v3    # "tag":Ljava/lang/Object;
-    :cond_1
+    :cond_2
     invoke-direct {p0}, Lcom/android/systemui/volume/SegmentedButtons;->fireOnSelected()V
 
     goto :goto_0
@@ -291,7 +327,7 @@
     .locals 4
 
     .prologue
-    .line 88
+    .line 91
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -302,14 +338,14 @@
 
     if-ge v1, v3, :cond_0
 
-    .line 89
+    .line 92
     invoke-virtual {p0, v1}, Lcom/android/systemui/volume/SegmentedButtons;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/Button;
 
-    .line 90
+    .line 93
     .local v0, "b":Landroid/widget/Button;
     const v3, 0x7f0f0126
 
@@ -323,16 +359,16 @@
 
     move-result v2
 
-    .line 91
+    .line 94
     .local v2, "labelResId":I
     invoke-virtual {v0, v2}, Landroid/widget/Button;->setText(I)V
 
-    .line 88
+    .line 91
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 93
+    .line 96
     .end local v0    # "b":Landroid/widget/Button;
     .end local v2    # "labelResId":I
     :cond_0

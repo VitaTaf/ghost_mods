@@ -55,7 +55,6 @@
     <integer name="zen_mode_max_conditions">5</integer>
     <integer name="standard_notification_panel_layout_gravity">0x31</integer>
     <integer name="notification_panel_layout_gravity">0x37</integer>
-    <integer name="volume_expand_animation_duration">300</integer>
     <item type="integer" name="config_activityDefaultDur">@android:integer/config_activityDefaultDur</item>
     <integer name="kg_carousel_angle">75</integer>
     <integer name="kg_glowpad_rotation_offset">0</integer>

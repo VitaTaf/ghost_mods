@@ -402,7 +402,7 @@
     .line 386
     iget-object v3, p0, Lcom/android/systemui/volume/VolumePanel;->mDialog:Landroid/app/Dialog;
 
-    const v6, 0x7f040063
+    const v6, 0x7f040050
 
     invoke-virtual {v3, v6}, Landroid/app/Dialog;->setContentView(I)V
 

@@ -95,12 +95,18 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mDetailAdapter:Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;
 
-    .line 56
-    invoke-interface {p1}, Lcom/android/systemui/qs/QSTile$Host;->getContext()Landroid/content/Context;
+    .line 55
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mContext:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/android/systemui/qs/tiles/DndTile;->getSharedPrefs(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/android/systemui/qs/tiles/DndTile;->isVisible(Landroid/content/Context;)Z
+    const-string v1, "DndTileVisible"
+
+    const/4 v2, 0x0
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
 
@@ -256,27 +262,6 @@
     return-object v0
 .end method
 
-.method public static isCombinedIcon(Landroid/content/Context;)Z
-    .locals 3
-    .param p0, "context"    # Landroid/content/Context;
-
-    .prologue
-    .line 74
-    invoke-static {p0}, Lcom/android/systemui/qs/tiles/DndTile;->getSharedPrefs(Landroid/content/Context;)Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    const-string v1, "DndTileCombinedIcon"
-
-    const/4 v2, 0x0
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public static isVisible(Landroid/content/Context;)Z
     .locals 3
     .param p0, "context"    # Landroid/content/Context;
@@ -296,33 +281,6 @@
     move-result v0
 
     return v0
-.end method
-
-.method public static setCombinedIcon(Landroid/content/Context;Z)V
-    .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "combined"    # Z
-
-    .prologue
-    .line 70
-    invoke-static {p0}, Lcom/android/systemui/qs/tiles/DndTile;->getSharedPrefs(Landroid/content/Context;)Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    const-string v1, "DndTileCombinedIcon"
-
-    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    .line 71
-    return-void
 .end method
 
 .method public static setVisible(Landroid/content/Context;Z)V

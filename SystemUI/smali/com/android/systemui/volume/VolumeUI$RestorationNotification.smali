@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 200
+    .line 305
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeUI$RestorationNotification;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
     .param p2, "x1"    # Lcom/android/systemui/volume/VolumeUI$1;
 
     .prologue
-    .line 200
+    .line 305
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeUI$RestorationNotification;-><init>(Lcom/android/systemui/volume/VolumeUI;)V
 
     return-void
@@ -49,11 +49,11 @@
     .locals 2
 
     .prologue
-    .line 202
+    .line 307
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$RestorationNotification;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mNotificationManager:Landroid/app/NotificationManager;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$1000(Lcom/android/systemui/volume/VolumeUI;)Landroid/app/NotificationManager;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeUI;->access$1600(Lcom/android/systemui/volume/VolumeUI;)Landroid/app/NotificationManager;
 
     move-result-object v0
 
@@ -61,7 +61,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->cancel(I)V
 
-    .line 203
+    .line 308
     return-void
 .end method
 
@@ -73,11 +73,11 @@
 
     const/4 v9, 0x0
 
-    .line 206
+    .line 311
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeUI$RestorationNotification;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mVolumeControllerService:Lcom/android/systemui/statusbar/ServiceMonitor;
-    invoke-static {v2}, Lcom/android/systemui/volume/VolumeUI;->access$300(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/statusbar/ServiceMonitor;
+    invoke-static {v2}, Lcom/android/systemui/volume/VolumeUI;->access$900(Lcom/android/systemui/volume/VolumeUI;)Lcom/android/systemui/statusbar/ServiceMonitor;
 
     move-result-object v2
 
@@ -85,22 +85,22 @@
 
     move-result-object v0
 
-    .line 207
+    .line 312
     .local v0, "component":Landroid/content/ComponentName;
     if-nez v0, :cond_0
 
-    .line 208
+    .line 313
     const-string v2, "VolumeUI"
 
     const-string v3, "Not showing restoration notification, component not active"
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 229
+    .line 334
     :goto_0
     return-void
 
-    .line 211
+    .line 316
     :cond_0
     new-instance v2, Landroid/content/Intent;
 
@@ -114,12 +114,12 @@
 
     move-result-object v1
 
-    .line 213
+    .line 318
     .local v1, "intent":Landroid/content/Intent;
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeUI$RestorationNotification;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mNotificationManager:Landroid/app/NotificationManager;
-    invoke-static {v2}, Lcom/android/systemui/volume/VolumeUI;->access$1000(Lcom/android/systemui/volume/VolumeUI;)Landroid/app/NotificationManager;
+    invoke-static {v2}, Lcom/android/systemui/volume/VolumeUI;->access$1600(Lcom/android/systemui/volume/VolumeUI;)Landroid/app/NotificationManager;
 
     move-result-object v2
 
@@ -164,7 +164,7 @@
     iget-object v8, p0, Lcom/android/systemui/volume/VolumeUI$RestorationNotification;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # invokes: Lcom/android/systemui/volume/VolumeUI;->getAppLabel(Landroid/content/ComponentName;)Ljava/lang/String;
-    invoke-static {v8, v0}, Lcom/android/systemui/volume/VolumeUI;->access$1100(Lcom/android/systemui/volume/VolumeUI;Landroid/content/ComponentName;)Ljava/lang/String;
+    invoke-static {v8, v0}, Lcom/android/systemui/volume/VolumeUI;->access$1700(Lcom/android/systemui/volume/VolumeUI;Landroid/content/ComponentName;)Ljava/lang/String;
 
     move-result-object v8
 
