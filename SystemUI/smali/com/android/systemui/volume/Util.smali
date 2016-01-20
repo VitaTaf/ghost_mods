@@ -16,7 +16,7 @@
     .locals 4
 
     .prologue
-    const/16 v3, 0x8
+    const/16 v3, 0x9
 
     .line 39
     new-instance v0, Ljava/text/SimpleDateFormat;
@@ -36,7 +36,7 @@
 
     sput-object v0, Lcom/android/systemui/volume/Util;->AUDIO_MANAGER_FLAGS:[I
 
-    .line 52
+    .line 53
     new-array v0, v3, [Ljava/lang/String;
 
     const/4 v1, 0x0
@@ -87,6 +87,12 @@
 
     aput-object v2, v0, v1
 
+    const/16 v1, 0x8
+
+    const-string v2, "SHOW_UI_WARNINGS"
+
+    aput-object v2, v0, v1
+
     sput-object v0, Lcom/android/systemui/volume/Util;->AUDIO_MANAGER_FLAG_NAMES:[Ljava/lang/String;
 
     return-void
@@ -104,6 +110,7 @@
         0x800
         0x80
         0x1000
+        0x400
     .end array-data
 .end method
 

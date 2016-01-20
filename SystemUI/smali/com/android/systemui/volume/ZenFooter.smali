@@ -255,11 +255,33 @@
     return v1
 .end method
 
-.method private isZenNone()Z
+.method private isZenAlarms()Z
     .locals 2
 
     .prologue
     .line 150
+    iget v0, p0, Lcom/android/systemui/volume/ZenFooter;->mZen:I
+
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method private isZenNone()Z
+    .locals 2
+
+    .prologue
+    .line 154
     iget v0, p0, Lcom/android/systemui/volume/ZenFooter;->mZen:I
 
     const/4 v1, 0x2
@@ -462,6 +484,12 @@
     .prologue
     .line 142
     invoke-direct {p0}, Lcom/android/systemui/volume/ZenFooter;->isZenPriority()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-direct {p0}, Lcom/android/systemui/volume/ZenFooter;->isZenAlarms()Z
 
     move-result v0
 
@@ -778,6 +806,23 @@
 
     .line 189
     :cond_5
+    invoke-direct {p0}, Lcom/android/systemui/volume/ZenFooter;->isZenAlarms()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_6
+
+    iget-object v2, p0, Lcom/android/systemui/volume/ZenFooter;->mContext:Landroid/content/Context;
+
+    const v3, 0x7f0c028c
+
+    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    goto :goto_4
+
+    :cond_6
     invoke-direct {p0}, Lcom/android/systemui/volume/ZenFooter;->isZenNone()Z
 
     move-result v2

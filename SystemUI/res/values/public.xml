@@ -2532,6 +2532,13 @@
     <public type="string" name="volume_dnd_ends_in" id="0x7f0c0286" />
     <public type="string" name="volume_dnd_ends_at" id="0x7f0c0287" />
     <public type="string" name="volume_end_now" id="0x7f0c0288" />
+    <public type="string" name="accessibility_quick_settings_dnd_alarms_on" id="0x7f0c0289" />
+    <public type="string" name="quick_settings_dnd_alarms_label" id="0x7f0c028a" />
+    <public type="string" name="zen_alarms" id="0x7f0c028b" />
+    <public type="string" name="interruption_level_alarms" id="0x7f0c028c" />
+    <public type="string" name="interruption_level_none_twoline" id="0x7f0c028d" />
+    <public type="string" name="interruption_level_priority_twoline" id="0x7f0c028e" />
+    <public type="string" name="interruption_level_alarms_twoline" id="0x7f0c028f" />
     <public type="string" name="status_bar_date_formatter" id="0x7f0c0006" />
     <public type="string" name="toast_rotation_locked" id="0x7f0c015b" />
     <public type="string" name="APKTOOL_DUMMY_015d" id="0x7f0c015d" />

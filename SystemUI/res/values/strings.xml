@@ -167,6 +167,7 @@ Use only the supplied charger."</string>
     <string name="accessibility_quick_settings_airplane_changed_on">Airplane mode turned on.</string>
     <string name="accessibility_quick_settings_dnd_priority_on">Do not disturb on, priority only.</string>
     <string name="accessibility_quick_settings_dnd_none_on">Do not disturb on, no interruptions.</string>
+    <string name="accessibility_quick_settings_dnd_alarms_on">Do not disturb on, alarms only.</string>
     <string name="accessibility_quick_settings_dnd_off">Do not disturb off.</string>
     <string name="accessibility_quick_settings_dnd_changed_off">Do not disturb turned off.</string>
     <string name="accessibility_quick_settings_dnd_changed_on">Do not disturb turned on.</string>
@@ -222,6 +223,7 @@ Turning it back on may lead to charges from your carrier."</string>
     <string name="quick_settings_airplane_mode_label">Airplane mode</string>
     <string name="quick_settings_dnd_label">Do not disturb</string>
     <string name="quick_settings_dnd_priority_label">Priority only</string>
+    <string name="quick_settings_dnd_alarms_label">Alarms only</string>
     <string name="quick_settings_dnd_none_label">No interruptions</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
     <string name="quick_settings_bluetooth_multiple_devices_label">Bluetooth (%d Devices)</string>
@@ -295,6 +297,7 @@ be monitored"</string>
     <string name="zen_no_interruptions_with_warning">No interruptions. Not even alarms.</string>
     <string name="zen_no_interruptions">No interruptions</string>
     <string name="zen_important_interruptions">Priority interruptions only</string>
+    <string name="zen_alarms">Alarms only</string>
     <string name="zen_alarm_information_time">Your next alarm is at %s</string>
     <string name="zen_alarm_information_day_time">Your next alarm is %s</string>
     <string name="zen_alarm_warning">"You won't hear your alarm at %s"</string>
@@ -306,7 +309,14 @@ be monitored"</string>
     <string name="camera_hint">Swipe left for camera</string>
     <string name="interruption_level_none">No interruptions</string>
     <string name="interruption_level_priority">Priority only</string>
+    <string name="interruption_level_alarms">Alarms only</string>
     <string name="interruption_level_all">All</string>
+    <string name="interruption_level_none_twoline">"No
+interruptions"</string>
+    <string name="interruption_level_priority_twoline">"Priority
+only"</string>
+    <string name="interruption_level_alarms_twoline">"Alarms
+only"</string>
     <string name="keyguard_indication_charging_time">Charging (%s until full)</string>
     <string name="accessibility_multi_user_switch_switcher">Switch user</string>
     <string name="accessibility_multi_user_switch_switcher_with_current">Switch user, current user %s</string>

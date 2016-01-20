@@ -3,7 +3,7 @@
 .source "VolumeDialog.java"
 
 # interfaces
-.implements Lcom/android/systemui/volume/ZenFooter$Callback;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 884
+    .line 902
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$9;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,57 +36,27 @@
 
 
 # virtual methods
-.method public onDoneClicked()V
-    .locals 2
+.method public onClick(Landroid/view/View;)V
+    .locals 4
+    .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 898
+    .line 905
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$9;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
-    const/4 v1, 0x6
-
-    invoke-virtual {v0, v1}, Lcom/android/systemui/volume/VolumeDialog;->dismiss(I)V
-
-    .line 899
-    return-void
-.end method
-
-.method public onFooterExpanded()V
-    .locals 2
-
-    .prologue
-    .line 887
-    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$9;->this$0:Lcom/android/systemui/volume/VolumeDialog;
-
-    # getter for: Lcom/android/systemui/volume/VolumeDialog;->mHandler:Lcom/android/systemui/volume/VolumeDialog$H;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$3900(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialog$H;
+    # getter for: Lcom/android/systemui/volume/VolumeDialog;->mSettingsButton:Landroid/view/View;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$4200(Lcom/android/systemui/volume/VolumeDialog;)Landroid/view/View;
 
     move-result-object v0
 
-    const/4 v1, 0x6
+    new-instance v1, Lcom/android/systemui/volume/VolumeDialog$9$1;
 
-    invoke-virtual {v0, v1}, Lcom/android/systemui/volume/VolumeDialog$H;->sendEmptyMessage(I)Z
+    invoke-direct {v1, p0}, Lcom/android/systemui/volume/VolumeDialog$9$1;-><init>(Lcom/android/systemui/volume/VolumeDialog$9;)V
 
-    .line 888
-    return-void
-.end method
+    const-wide/16 v2, 0xc8
 
-.method public onSettingsClicked()V
-    .locals 2
+    invoke-virtual {v0, v1, v2, v3}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .prologue
-    .line 892
-    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$9;->this$0:Lcom/android/systemui/volume/VolumeDialog;
-
-    const/4 v1, 0x5
-
-    invoke-virtual {v0, v1}, Lcom/android/systemui/volume/VolumeDialog;->dismiss(I)V
-
-    .line 893
-    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$9;->this$0:Lcom/android/systemui/volume/VolumeDialog;
-
-    invoke-virtual {v0}, Lcom/android/systemui/volume/VolumeDialog;->onZenSettingsClickedH()V
-
-    .line 894
+    .line 911
     return-void
 .end method

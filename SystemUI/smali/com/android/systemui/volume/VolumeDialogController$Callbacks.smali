@@ -30,6 +30,9 @@
 .method public abstract onShowRequested(I)V
 .end method
 
+.method public abstract onShowSafetyWarning(I)V
+.end method
+
 .method public abstract onShowSilentHint()V
 .end method
 

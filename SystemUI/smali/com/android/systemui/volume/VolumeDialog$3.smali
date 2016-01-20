@@ -30,7 +30,7 @@
     .locals 0
 
     .prologue
-    .line 369
+    .line 371
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     iput-object p2, p0, Lcom/android/systemui/volume/VolumeDialog$3;->val$row:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
@@ -55,7 +55,7 @@
 
     const/4 v4, 0x0
 
-    .line 372
+    .line 374
     const/4 v5, 0x7
 
     new-array v6, v8, [Ljava/lang/Object;
@@ -88,7 +88,7 @@
 
     invoke-static {v5, v6}, Lcom/android/systemui/volume/Events;->writeEvent(I[Ljava/lang/Object;)V
 
-    .line 373
+    .line 375
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mController:Lcom/android/systemui/volume/VolumeDialogController;
@@ -105,7 +105,7 @@
 
     invoke-virtual {v5, v6}, Lcom/android/systemui/volume/VolumeDialogController;->setActiveStream(I)V
 
-    .line 374
+    .line 376
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog$3;->val$row:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->stream:I
@@ -115,7 +115,7 @@
 
     if-ne v5, v8, :cond_5
 
-    .line 375
+    .line 377
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mController:Lcom/android/systemui/volume/VolumeDialogController;
@@ -127,7 +127,7 @@
 
     move-result v0
 
-    .line 376
+    .line 378
     .local v0, "hasVibrator":Z
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
@@ -140,10 +140,10 @@
 
     if-ne v5, v8, :cond_4
 
-    .line 377
+    .line 379
     if-eqz v0, :cond_1
 
-    .line 378
+    .line 380
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mController:Lcom/android/systemui/volume/VolumeDialogController;
@@ -153,7 +153,7 @@
 
     invoke-virtual {v5, v3, v4}, Lcom/android/systemui/volume/VolumeDialogController;->setRingerMode(IZ)V
 
-    .line 403
+    .line 405
     .end local v0    # "hasVibrator":Z
     :cond_0
     :goto_0
@@ -164,10 +164,10 @@
     # setter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->userAttempt:J
     invoke-static {v4, v6, v7}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$2102(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;J)J
 
-    .line 404
+    .line 406
     return-void
 
-    .line 380
+    .line 382
     .restart local v0    # "hasVibrator":Z
     :cond_1
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog$3;->val$row:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
@@ -181,7 +181,7 @@
 
     if-nez v5, :cond_3
 
-    .line 381
+    .line 383
     .local v3, "wasZero":Z
     :goto_1
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
@@ -211,10 +211,10 @@
     :cond_3
     move v3, v4
 
-    .line 380
+    .line 382
     goto :goto_1
 
-    .line 384
+    .line 386
     :cond_4
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
@@ -225,7 +225,7 @@
 
     invoke-virtual {v5, v8, v4}, Lcom/android/systemui/volume/VolumeDialogController;->setRingerMode(IZ)V
 
-    .line 385
+    .line 387
     iget-object v4, p0, Lcom/android/systemui/volume/VolumeDialog$3;->val$row:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->ss:Lcom/android/systemui/volume/VolumeDialogController$StreamState;
@@ -237,7 +237,7 @@
 
     if-nez v4, :cond_0
 
-    .line 386
+    .line 388
     iget-object v4, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mController:Lcom/android/systemui/volume/VolumeDialogController;
@@ -251,7 +251,7 @@
 
     goto :goto_0
 
-    .line 390
+    .line 392
     .end local v0    # "hasVibrator":Z
     :cond_5
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
@@ -274,7 +274,7 @@
 
     if-nez v5, :cond_8
 
-    .line 391
+    .line 393
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog$3;->val$row:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->ss:Lcom/android/systemui/volume/VolumeDialogController$StreamState;
@@ -288,7 +288,7 @@
 
     move v2, v3
 
-    .line 392
+    .line 394
     .local v2, "vmute":Z
     :goto_2
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
@@ -318,10 +318,10 @@
     :cond_7
     move v2, v4
 
-    .line 391
+    .line 393
     goto :goto_2
 
-    .line 394
+    .line 396
     :cond_8
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog$3;->val$row:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
@@ -336,7 +336,7 @@
 
     move v1, v3
 
-    .line 395
+    .line 397
     .local v1, "mute":Z
     :goto_3
     iget-object v4, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
@@ -350,7 +350,7 @@
 
     invoke-virtual {v4, v5, v1}, Lcom/android/systemui/volume/VolumeDialogController;->setStreamMute(IZ)V
 
-    .line 396
+    .line 398
     iget-object v4, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mAutomute:Z
@@ -360,7 +360,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 397
+    .line 399
     if-nez v1, :cond_0
 
     iget-object v4, p0, Lcom/android/systemui/volume/VolumeDialog$3;->val$row:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
@@ -374,7 +374,7 @@
 
     if-nez v4, :cond_0
 
-    .line 398
+    .line 400
     iget-object v4, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mController:Lcom/android/systemui/volume/VolumeDialogController;
@@ -392,6 +392,6 @@
     :cond_9
     move v1, v4
 
-    .line 394
+    .line 396
     goto :goto_3
 .end method

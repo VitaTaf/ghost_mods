@@ -27,7 +27,7 @@
     .locals 0
 
     .prologue
-    .line 157
+    .line 182
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .param p2, "x1"    # Lcom/android/systemui/qs/tiles/DndTile$1;
 
     .prologue
-    .line 157
+    .line 182
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;-><init>(Lcom/android/systemui/qs/tiles/DndTile;)V
 
     return-void
@@ -56,7 +56,7 @@
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 184
+    .line 209
     if-eqz p2, :cond_1
 
     move-object v1, p2
@@ -65,41 +65,41 @@
 
     move-object v0, v1
 
-    .line 187
+    .line 212
     .local v0, "zmp":Lcom/android/systemui/volume/ZenModePanel;
     :goto_0
     if-nez p2, :cond_0
 
-    .line 188
+    .line 213
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DndTile;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
-    invoke-static {v1}, Lcom/android/systemui/qs/tiles/DndTile;->access$800(Lcom/android/systemui/qs/tiles/DndTile;)Lcom/android/systemui/statusbar/policy/ZenModeController;
+    invoke-static {v1}, Lcom/android/systemui/qs/tiles/DndTile;->access$700(Lcom/android/systemui/qs/tiles/DndTile;)Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/ZenModePanel;->init(Lcom/android/systemui/statusbar/policy/ZenModeController;)V
 
-    .line 189
+    .line 214
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/ZenModePanel;->setEmbedded(Z)V
 
-    .line 190
+    .line 215
     invoke-virtual {v0, p0}, Lcom/android/systemui/volume/ZenModePanel;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
-    .line 192
+    .line 217
     :cond_0
     return-object v0
 
-    .line 184
+    .line 209
     .end local v0    # "zmp":Lcom/android/systemui/volume/ZenModePanel;
     :cond_1
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v1
 
-    const v2, 0x7f0f0138
+    const v2, 0x7f040054
 
     const/4 v3, 0x0
 
@@ -118,9 +118,9 @@
     .locals 1
 
     .prologue
-    .line 171
+    .line 196
     # getter for: Lcom/android/systemui/qs/tiles/DndTile;->ZEN_SETTINGS:Landroid/content/Intent;
-    invoke-static {}, Lcom/android/systemui/qs/tiles/DndTile;->access$700()Landroid/content/Intent;
+    invoke-static {}, Lcom/android/systemui/qs/tiles/DndTile;->access$600()Landroid/content/Intent;
 
     move-result-object v0
 
@@ -131,7 +131,7 @@
     .locals 1
 
     .prologue
-    .line 161
+    .line 186
     const v0, 0x7f0c0275
 
     return v0
@@ -141,11 +141,11 @@
     .locals 1
 
     .prologue
-    .line 166
+    .line 191
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DndTile;->mState:Lcom/android/systemui/qs/QSTile$State;
-    invoke-static {v0}, Lcom/android/systemui/qs/tiles/DndTile;->access$600(Lcom/android/systemui/qs/tiles/DndTile;)Lcom/android/systemui/qs/QSTile$State;
+    invoke-static {v0}, Lcom/android/systemui/qs/tiles/DndTile;->access$500(Lcom/android/systemui/qs/tiles/DndTile;)Lcom/android/systemui/qs/QSTile$State;
 
     move-result-object v0
 
@@ -165,15 +165,15 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 197
+    .line 222
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
     const/4 v1, 0x1
 
     # setter for: Lcom/android/systemui/qs/tiles/DndTile;->mShowingDetail:Z
-    invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/DndTile;->access$902(Lcom/android/systemui/qs/tiles/DndTile;Z)Z
+    invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/DndTile;->access$802(Lcom/android/systemui/qs/tiles/DndTile;Z)Z
 
-    .line 198
+    .line 223
     return-void
 .end method
 
@@ -182,15 +182,15 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 202
+    .line 227
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
     const/4 v1, 0x0
 
     # setter for: Lcom/android/systemui/qs/tiles/DndTile;->mShowingDetail:Z
-    invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/DndTile;->access$902(Lcom/android/systemui/qs/tiles/DndTile;Z)Z
+    invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/DndTile;->access$802(Lcom/android/systemui/qs/tiles/DndTile;Z)Z
 
-    .line 203
+    .line 228
     return-void
 .end method
 
@@ -201,25 +201,25 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 176
+    .line 201
     if-nez p1, :cond_0
 
-    .line 177
+    .line 202
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DndTile;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
-    invoke-static {v0}, Lcom/android/systemui/qs/tiles/DndTile;->access$800(Lcom/android/systemui/qs/tiles/DndTile;)Lcom/android/systemui/statusbar/policy/ZenModeController;
+    invoke-static {v0}, Lcom/android/systemui/qs/tiles/DndTile;->access$700(Lcom/android/systemui/qs/tiles/DndTile;)Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     move-result-object v0
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/ZenModeController;->setZen(I)V
 
-    .line 178
+    .line 203
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/tiles/DndTile;->showDetail(Z)V
 
-    .line 180
+    .line 205
     :cond_0
     return-void
 .end method

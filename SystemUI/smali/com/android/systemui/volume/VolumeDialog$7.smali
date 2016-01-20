@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 859
+    .line 879
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$7;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,22 +41,60 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 862
-    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$7;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+    const/4 v1, 0x1
 
-    # getter for: Lcom/android/systemui/volume/VolumeDialog;->mSettingsButton:Landroid/view/View;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$3800(Lcom/android/systemui/volume/VolumeDialog;)Landroid/view/View;
+    const/4 v2, 0x0
 
-    move-result-object v0
+    .line 882
+    iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialog$7;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
-    new-instance v1, Lcom/android/systemui/volume/VolumeDialog$7$1;
+    # getter for: Lcom/android/systemui/volume/VolumeDialog;->mExpanding:Z
+    invoke-static {v3}, Lcom/android/systemui/volume/VolumeDialog;->access$2200(Lcom/android/systemui/volume/VolumeDialog;)Z
 
-    invoke-direct {v1, p0}, Lcom/android/systemui/volume/VolumeDialog$7$1;-><init>(Lcom/android/systemui/volume/VolumeDialog$7;)V
+    move-result v3
 
-    const-wide/16 v2, 0xc8
+    if-eqz v3, :cond_0
 
-    invoke-virtual {v0, v1, v2, v3}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    .line 869
+    .line 886
+    :goto_0
     return-void
+
+    .line 883
+    :cond_0
+    iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialog$7;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+
+    # getter for: Lcom/android/systemui/volume/VolumeDialog;->mExpanded:Z
+    invoke-static {v3}, Lcom/android/systemui/volume/VolumeDialog;->access$4000(Lcom/android/systemui/volume/VolumeDialog;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_1
+
+    move v0, v1
+
+    .line 884
+    .local v0, "newExpand":Z
+    :goto_1
+    const/4 v3, 0x3
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    aput-object p1, v1, v2
+
+    invoke-static {v3, v1}, Lcom/android/systemui/volume/Events;->writeEvent(I[Ljava/lang/Object;)V
+
+    .line 885
+    iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialog$7;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+
+    # invokes: Lcom/android/systemui/volume/VolumeDialog;->setExpandedH(Z)V
+    invoke-static {v1, v0}, Lcom/android/systemui/volume/VolumeDialog;->access$4100(Lcom/android/systemui/volume/VolumeDialog;Z)V
+
+    goto :goto_0
+
+    .end local v0    # "newExpand":Z
+    :cond_1
+    move v0, v2
+
+    .line 883
+    goto :goto_1
 .end method

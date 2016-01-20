@@ -206,7 +206,7 @@
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 185
+    .line 186
     return-void
 .end method
 
@@ -637,7 +637,7 @@
     .line 177
     packed-switch p0, :pswitch_data_0
 
-    .line 181
+    .line 182
     const-string v0, "unknown"
 
     :goto_0
@@ -657,17 +657,22 @@
 
     .line 180
     :pswitch_2
+    const-string v0, "alarms"
+
+    goto :goto_0
+
+    .line 181
+    :pswitch_3
     const-string v0, "no_interruptions"
 
     goto :goto_0
 
     .line 177
-    nop
-
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
         :pswitch_1
+        :pswitch_3
         :pswitch_2
     .end packed-switch
 .end method

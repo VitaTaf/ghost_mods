@@ -1,4 +1,4 @@
-.class Lcom/android/systemui/volume/VolumeDialogController$C$2;
+.class Lcom/android/systemui/volume/VolumeDialogController$C$9;
 .super Ljava/lang/Object;
 .source "VolumeDialogController.java"
 
@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/volume/VolumeDialogController$C;->onDismissRequested(I)V
+    value = Lcom/android/systemui/volume/VolumeDialogController$C;->onShowSafetyWarning(I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,7 +22,7 @@
 
 .field final synthetic val$entry:Ljava/util/Map$Entry;
 
-.field final synthetic val$reason:I
+.field final synthetic val$flags:I
 
 
 # direct methods
@@ -30,12 +30,12 @@
     .locals 0
 
     .prologue
-    .line 605
-    iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialogController$C$2;->this$1:Lcom/android/systemui/volume/VolumeDialogController$C;
+    .line 692
+    iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialogController$C$9;->this$1:Lcom/android/systemui/volume/VolumeDialogController$C;
 
-    iput-object p2, p0, Lcom/android/systemui/volume/VolumeDialogController$C$2;->val$entry:Ljava/util/Map$Entry;
+    iput-object p2, p0, Lcom/android/systemui/volume/VolumeDialogController$C$9;->val$entry:Ljava/util/Map$Entry;
 
-    iput p3, p0, Lcom/android/systemui/volume/VolumeDialogController$C$2;->val$reason:I
+    iput p3, p0, Lcom/android/systemui/volume/VolumeDialogController$C$9;->val$flags:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -48,8 +48,8 @@
     .locals 2
 
     .prologue
-    .line 608
-    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController$C$2;->val$entry:Ljava/util/Map$Entry;
+    .line 695
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController$C$9;->val$entry:Ljava/util/Map$Entry;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -57,10 +57,10 @@
 
     check-cast v0, Lcom/android/systemui/volume/VolumeDialogController$Callbacks;
 
-    iget v1, p0, Lcom/android/systemui/volume/VolumeDialogController$C$2;->val$reason:I
+    iget v1, p0, Lcom/android/systemui/volume/VolumeDialogController$C$9;->val$flags:I
 
-    invoke-interface {v0, v1}, Lcom/android/systemui/volume/VolumeDialogController$Callbacks;->onDismissRequested(I)V
+    invoke-interface {v0, v1}, Lcom/android/systemui/volume/VolumeDialogController$Callbacks;->onShowSafetyWarning(I)V
 
-    .line 609
+    .line 696
     return-void
 .end method

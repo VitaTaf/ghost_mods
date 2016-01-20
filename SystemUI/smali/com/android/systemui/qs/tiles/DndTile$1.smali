@@ -1,6 +1,9 @@
 .class Lcom/android/systemui/qs/tiles/DndTile$1;
-.super Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;
+.super Ljava/lang/Object;
 .source "DndTile.java"
+
+# interfaces
+.implements Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
 
 
 # annotations
@@ -23,31 +26,47 @@
     .locals 0
 
     .prologue
-    .line 138
+    .line 158
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/DndTile$1;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onZenChanged(I)V
-    .locals 2
-    .param p1, "zen"    # I
+.method public onSharedPreferenceChanged(Landroid/content/SharedPreferences;Ljava/lang/String;)V
+    .locals 1
+    .param p1, "sharedPreferences"    # Landroid/content/SharedPreferences;
+    .param p2, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 140
+    .line 161
+    const-string v0, "DndTileCombinedIcon"
+
+    invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-string v0, "DndTileVisible"
+
+    invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 162
+    :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile$1;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    # invokes: Lcom/android/systemui/qs/tiles/DndTile;->refreshState()V
+    invoke-static {v0}, Lcom/android/systemui/qs/tiles/DndTile;->access$100(Lcom/android/systemui/qs/tiles/DndTile;)V
 
-    move-result-object v1
-
-    # invokes: Lcom/android/systemui/qs/tiles/DndTile;->refreshState(Ljava/lang/Object;)V
-    invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/DndTile;->access$100(Lcom/android/systemui/qs/tiles/DndTile;Ljava/lang/Object;)V
-
-    .line 141
+    .line 164
+    :cond_1
     return-void
 .end method

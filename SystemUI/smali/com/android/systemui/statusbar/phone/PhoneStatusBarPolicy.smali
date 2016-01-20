@@ -1195,6 +1195,12 @@
 
     if-eq v9, v11, :cond_2
 
+    iget v9, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mZen:I
+
+    const/4 v10, 0x3
+
+    if-eq v9, v10, :cond_2
+
     invoke-virtual {v0}, Landroid/media/AudioManager;->getRingerMode()I
 
     move-result v9

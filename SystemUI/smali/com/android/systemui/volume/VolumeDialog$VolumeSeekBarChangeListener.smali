@@ -29,15 +29,15 @@
     .param p2, "row"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     .prologue
-    .line 959
+    .line 989
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeSeekBarChangeListener;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 960
+    .line 990
     iput-object p2, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeSeekBarChangeListener;->mRow:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
-    .line 961
+    .line 991
     return-void
 .end method
 
@@ -48,7 +48,7 @@
     .param p3, "x2"    # Lcom/android/systemui/volume/VolumeDialog$1;
 
     .prologue
-    .line 956
+    .line 986
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/volume/VolumeDialog$VolumeSeekBarChangeListener;-><init>(Lcom/android/systemui/volume/VolumeDialog;Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)V
 
     return-void
@@ -69,7 +69,7 @@
 
     const/4 v6, 0x0
 
-    .line 965
+    .line 995
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeSeekBarChangeListener;->mRow:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->ss:Lcom/android/systemui/volume/VolumeDialogController$StreamState;
@@ -79,12 +79,12 @@
 
     if-nez v2, :cond_1
 
-    .line 994
+    .line 1024
     :cond_0
     :goto_0
     return-void
 
-    .line 966
+    .line 996
     :cond_1
     sget-boolean v2, Lcom/android/systemui/volume/D;->BUG:Z
 
@@ -140,11 +140,11 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 968
+    .line 998
     :cond_2
     if-eqz p3, :cond_0
 
-    .line 969
+    .line 999
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeSeekBarChangeListener;->mRow:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->ss:Lcom/android/systemui/volume/VolumeDialogController$StreamState;
@@ -156,7 +156,7 @@
 
     if-lez v2, :cond_3
 
-    .line 970
+    .line 1000
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeSeekBarChangeListener;->mRow:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->ss:Lcom/android/systemui/volume/VolumeDialogController$StreamState;
@@ -168,22 +168,22 @@
 
     mul-int/lit8 v0, v2, 0x64
 
-    .line 971
+    .line 1001
     .local v0, "minProgress":I
     if-ge p2, v0, :cond_3
 
-    .line 972
+    .line 1002
     invoke-virtual {p1, v0}, Landroid/widget/SeekBar;->setProgress(I)V
 
-    .line 975
+    .line 1005
     .end local v0    # "minProgress":I
     :cond_3
     # invokes: Lcom/android/systemui/volume/VolumeDialog;->getImpliedLevel(Landroid/widget/SeekBar;I)I
-    invoke-static {p1, p2}, Lcom/android/systemui/volume/VolumeDialog;->access$4200(Landroid/widget/SeekBar;I)I
+    invoke-static {p1, p2}, Lcom/android/systemui/volume/VolumeDialog;->access$4500(Landroid/widget/SeekBar;I)I
 
     move-result v1
 
-    .line 976
+    .line 1006
     .local v1, "userLevel":I
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeSeekBarChangeListener;->mRow:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
@@ -209,7 +209,7 @@
 
     if-lez v1, :cond_0
 
-    .line 977
+    .line 1007
     :cond_4
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeSeekBarChangeListener;->mRow:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
@@ -220,7 +220,7 @@
     # setter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->userAttempt:J
     invoke-static {v2, v4, v5}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$2102(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;J)J
 
-    .line 978
+    .line 1008
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeSeekBarChangeListener;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mAutomute:Z
@@ -230,7 +230,7 @@
 
     if-eqz v2, :cond_6
 
-    .line 979
+    .line 1009
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeSeekBarChangeListener;->mRow:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->stream:I
@@ -240,7 +240,7 @@
 
     if-eq v2, v8, :cond_6
 
-    .line 980
+    .line 1010
     if-lez v1, :cond_5
 
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeSeekBarChangeListener;->mRow:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
@@ -254,7 +254,7 @@
 
     if-eqz v2, :cond_5
 
-    .line 981
+    .line 1011
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeSeekBarChangeListener;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mController:Lcom/android/systemui/volume/VolumeDialogController;
@@ -271,7 +271,7 @@
 
     invoke-virtual {v2, v3, v6}, Lcom/android/systemui/volume/VolumeDialogController;->setStreamMute(IZ)V
 
-    .line 983
+    .line 1013
     :cond_5
     if-nez v1, :cond_6
 
@@ -297,7 +297,7 @@
 
     if-nez v2, :cond_6
 
-    .line 984
+    .line 1014
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeSeekBarChangeListener;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mController:Lcom/android/systemui/volume/VolumeDialogController;
@@ -314,18 +314,18 @@
 
     invoke-virtual {v2, v3, v7}, Lcom/android/systemui/volume/VolumeDialogController;->setStreamMute(IZ)V
 
-    .line 988
+    .line 1018
     :cond_6
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeSeekBarChangeListener;->mRow:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->requestedLevel:I
-    invoke-static {v2}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$4300(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)I
+    invoke-static {v2}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$4600(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)I
 
     move-result v2
 
     if-eq v2, v1, :cond_0
 
-    .line 989
+    .line 1019
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeSeekBarChangeListener;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mController:Lcom/android/systemui/volume/VolumeDialogController;
@@ -342,13 +342,13 @@
 
     invoke-virtual {v2, v3, v1}, Lcom/android/systemui/volume/VolumeDialogController;->setStreamVolume(II)V
 
-    .line 990
+    .line 1020
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeSeekBarChangeListener;->mRow:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     # setter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->requestedLevel:I
-    invoke-static {v2, v1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$4302(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;I)I
+    invoke-static {v2, v1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$4602(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;I)I
 
-    .line 991
+    .line 1021
     const/16 v2, 0x9
 
     new-array v3, v8, [Ljava/lang/Object;
@@ -382,7 +382,7 @@
     .param p1, "seekBar"    # Landroid/widget/SeekBar;
 
     .prologue
-    .line 998
+    .line 1028
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_0
@@ -419,7 +419,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 999
+    .line 1029
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeSeekBarChangeListener;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
@@ -437,7 +437,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/VolumeDialogController;->setActiveStream(I)V
 
-    .line 1000
+    .line 1030
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeSeekBarChangeListener;->mRow:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     const/4 v1, 0x1
@@ -445,7 +445,7 @@
     # setter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->tracking:Z
     invoke-static {v0, v1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$2702(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;Z)Z
 
-    .line 1001
+    .line 1031
     return-void
 .end method
 
@@ -454,7 +454,7 @@
     .param p1, "seekBar"    # Landroid/widget/SeekBar;
 
     .prologue
-    .line 1005
+    .line 1035
     sget-boolean v1, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v1, :cond_0
@@ -491,7 +491,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1006
+    .line 1036
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeSeekBarChangeListener;->mRow:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
@@ -500,7 +500,7 @@
     # setter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->tracking:Z
     invoke-static {v1, v2}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$2702(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;Z)Z
 
-    .line 1007
+    .line 1037
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeSeekBarChangeListener;->mRow:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -510,17 +510,17 @@
     # setter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->userAttempt:J
     invoke-static {v1, v2, v3}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$2102(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;J)J
 
-    .line 1008
+    .line 1038
     invoke-virtual {p1}, Landroid/widget/SeekBar;->getProgress()I
 
     move-result v1
 
     # invokes: Lcom/android/systemui/volume/VolumeDialog;->getImpliedLevel(Landroid/widget/SeekBar;I)I
-    invoke-static {p1, v1}, Lcom/android/systemui/volume/VolumeDialog;->access$4200(Landroid/widget/SeekBar;I)I
+    invoke-static {p1, v1}, Lcom/android/systemui/volume/VolumeDialog;->access$4500(Landroid/widget/SeekBar;I)I
 
     move-result v0
 
-    .line 1009
+    .line 1039
     .local v0, "userLevel":I
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeSeekBarChangeListener;->mRow:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
@@ -533,18 +533,18 @@
 
     if-eq v1, v0, :cond_1
 
-    .line 1010
+    .line 1040
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeSeekBarChangeListener;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mHandler:Lcom/android/systemui/volume/VolumeDialog$H;
-    invoke-static {v1}, Lcom/android/systemui/volume/VolumeDialog;->access$3900(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialog$H;
+    invoke-static {v1}, Lcom/android/systemui/volume/VolumeDialog;->access$4300(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialog$H;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeSeekBarChangeListener;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mHandler:Lcom/android/systemui/volume/VolumeDialog$H;
-    invoke-static {v2}, Lcom/android/systemui/volume/VolumeDialog;->access$3900(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialog$H;
+    invoke-static {v2}, Lcom/android/systemui/volume/VolumeDialog;->access$4300(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialog$H;
 
     move-result-object v2
 
@@ -560,7 +560,7 @@
 
     invoke-virtual {v1, v2, v4, v5}, Lcom/android/systemui/volume/VolumeDialog$H;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 1013
+    .line 1043
     :cond_1
     return-void
 .end method

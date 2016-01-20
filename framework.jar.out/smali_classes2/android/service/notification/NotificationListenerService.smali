@@ -17,6 +17,8 @@
 # static fields
 .field public static final HINT_HOST_DISABLE_EFFECTS:I = 0x1
 
+.field public static final INTERRUPTION_FILTER_ALARMS:I = 0x4
+
 .field public static final INTERRUPTION_FILTER_ALL:I = 0x1
 
 .field public static final INTERRUPTION_FILTER_NONE:I = 0x3

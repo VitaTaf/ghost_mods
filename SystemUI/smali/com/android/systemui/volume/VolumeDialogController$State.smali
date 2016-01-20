@@ -50,7 +50,7 @@
     .locals 1
 
     .prologue
-    .line 903
+    .line 928
     const/4 v0, -0x1
 
     sput v0, Lcom/android/systemui/volume/VolumeDialogController$State;->NO_ACTIVE_STREAM:I
@@ -62,17 +62,17 @@
     .locals 1
 
     .prologue
-    .line 902
+    .line 927
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 905
+    .line 930
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController$State;->states:Landroid/util/SparseArray;
 
-    .line 913
+    .line 938
     sget v0, Lcom/android/systemui/volume/VolumeDialogController$State;->NO_ACTIVE_STREAM:I
 
     iput v0, p0, Lcom/android/systemui/volume/VolumeDialogController$State;->activeStream:I
@@ -86,12 +86,12 @@
     .locals 5
 
     .prologue
-    .line 916
+    .line 941
     new-instance v1, Lcom/android/systemui/volume/VolumeDialogController$State;
 
     invoke-direct {v1}, Lcom/android/systemui/volume/VolumeDialogController$State;-><init>()V
 
-    .line 917
+    .line 942
     .local v1, "rt":Lcom/android/systemui/volume/VolumeDialogController$State;
     const/4 v0, 0x0
 
@@ -105,7 +105,7 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 918
+    .line 943
     iget-object v3, v1, Lcom/android/systemui/volume/VolumeDialogController$State;->states:Landroid/util/SparseArray;
 
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialogController$State;->states:Landroid/util/SparseArray;
@@ -128,28 +128,28 @@
 
     invoke-virtual {v3, v4, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 917
+    .line 942
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 920
+    .line 945
     :cond_0
     iget v2, p0, Lcom/android/systemui/volume/VolumeDialogController$State;->ringerModeExternal:I
 
     iput v2, v1, Lcom/android/systemui/volume/VolumeDialogController$State;->ringerModeExternal:I
 
-    .line 921
+    .line 946
     iget v2, p0, Lcom/android/systemui/volume/VolumeDialogController$State;->ringerModeInternal:I
 
     iput v2, v1, Lcom/android/systemui/volume/VolumeDialogController$State;->ringerModeInternal:I
 
-    .line 922
+    .line 947
     iget v2, p0, Lcom/android/systemui/volume/VolumeDialogController$State;->zenMode:I
 
     iput v2, v1, Lcom/android/systemui/volume/VolumeDialogController$State;->zenMode:I
 
-    .line 923
+    .line 948
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialogController$State;->effectsSuppressor:Landroid/content/ComponentName;
 
     if-eqz v2, :cond_1
@@ -162,13 +162,13 @@
 
     iput-object v2, v1, Lcom/android/systemui/volume/VolumeDialogController$State;->effectsSuppressor:Landroid/content/ComponentName;
 
-    .line 924
+    .line 949
     :cond_1
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialogController$State;->effectsSuppressorName:Ljava/lang/String;
 
     iput-object v2, v1, Lcom/android/systemui/volume/VolumeDialogController$State;->effectsSuppressorName:Ljava/lang/String;
 
-    .line 925
+    .line 950
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialogController$State;->exitCondition:Landroid/service/notification/Condition;
 
     if-eqz v2, :cond_2
@@ -181,13 +181,13 @@
 
     iput-object v2, v1, Lcom/android/systemui/volume/VolumeDialogController$State;->exitCondition:Landroid/service/notification/Condition;
 
-    .line 926
+    .line 951
     :cond_2
     iget v2, p0, Lcom/android/systemui/volume/VolumeDialogController$State;->activeStream:I
 
     iput v2, v1, Lcom/android/systemui/volume/VolumeDialogController$State;->activeStream:I
 
-    .line 927
+    .line 952
     return-object v1
 .end method
 
@@ -195,14 +195,14 @@
     .locals 6
 
     .prologue
-    .line 932
+    .line 957
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v4, "{"
 
     invoke-direct {v1, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 933
+    .line 958
     .local v1, "sb":Ljava/lang/StringBuilder;
     const/4 v0, 0x0
 
@@ -216,14 +216,14 @@
 
     if-ge v0, v4, :cond_2
 
-    .line 934
+    .line 959
     if-lez v0, :cond_0
 
     const/16 v4, 0x2c
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 935
+    .line 960
     :cond_0
     iget-object v4, p0, Lcom/android/systemui/volume/VolumeDialogController$State;->states:Landroid/util/SparseArray;
 
@@ -231,7 +231,7 @@
 
     move-result v3
 
-    .line 936
+    .line 961
     .local v3, "stream":I
     iget-object v4, p0, Lcom/android/systemui/volume/VolumeDialogController$State;->states:Landroid/util/SparseArray;
 
@@ -241,7 +241,7 @@
 
     check-cast v2, Lcom/android/systemui/volume/VolumeDialogController$StreamState;
 
-    .line 937
+    .line 962
     .local v2, "ss":Lcom/android/systemui/volume/VolumeDialogController$StreamState;
     invoke-static {v3}, Landroid/media/AudioSystem;->streamToString(I)Ljava/lang/String;
 
@@ -285,7 +285,7 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 939
+    .line 964
     iget-boolean v4, v2, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->muted:Z
 
     if-eqz v4, :cond_1
@@ -294,13 +294,13 @@
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 933
+    .line 958
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 941
+    .line 966
     .end local v2    # "ss":Lcom/android/systemui/volume/VolumeDialogController$StreamState;
     .end local v3    # "stream":I
     :cond_2
@@ -314,7 +314,7 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 942
+    .line 967
     const-string v4, ",ringerModeInternal:"
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -325,7 +325,7 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 943
+    .line 968
     const-string v4, ",zenMode:"
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -336,7 +336,7 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 944
+    .line 969
     const-string v4, ",effectsSuppressor:"
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -347,7 +347,7 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 945
+    .line 970
     const-string v4, ",effectsSuppressorName:"
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -358,7 +358,7 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 946
+    .line 971
     const-string v4, ",exitCondition:"
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -369,7 +369,7 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 947
+    .line 972
     const-string v4, ",activeStream:"
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -380,7 +380,7 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 948
+    .line 973
     const/16 v4, 0x7d
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;

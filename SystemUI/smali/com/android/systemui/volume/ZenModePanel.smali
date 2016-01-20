@@ -726,12 +726,28 @@
     goto :goto_1
 
     .line 716
+    .end local v0    # "modeText":Ljava/lang/String;
+    :pswitch_2
+    iget-object v2, p0, Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
+
+    const v3, 0x7f0c028b
+
+    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 728
+    .restart local v0    # "modeText":Ljava/lang/String;
+    goto :goto_1
+
+    .line 719
     nop
 
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
         :pswitch_1
+        :pswitch_2
     .end packed-switch
 .end method
 
@@ -4616,7 +4632,7 @@
     .line 171
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mZenButtons:Lcom/android/systemui/volume/SegmentedButtons;
 
-    const v1, 0x7f0c011c
+    const v1, 0x7f0c028d
 
     const/4 v2, 0x2
 
@@ -4629,7 +4645,20 @@
     .line 172
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mZenButtons:Lcom/android/systemui/volume/SegmentedButtons;
 
-    const v1, 0x7f0c011d
+    const v1, 0x7f0c028f
+
+    const/4 v2, 0x3
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/systemui/volume/SegmentedButtons;->addButton(ILjava/lang/Object;)V
+
+    .line 175
+    iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mZenButtons:Lcom/android/systemui/volume/SegmentedButtons;
+
+    const v1, 0x7f0c028e
 
     const/4 v2, 0x1
 
@@ -4865,7 +4894,7 @@
     :goto_3
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mZenButtons:Lcom/android/systemui/volume/SegmentedButtons;
 
-    const/4 v1, 0x2
+    const/4 v1, 0x3
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/SegmentedButtons;->getChildAt(I)Landroid/view/View;
 

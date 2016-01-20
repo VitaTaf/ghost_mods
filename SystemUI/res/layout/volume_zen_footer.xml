@@ -13,6 +13,6 @@
     <include layout="@layout/zen_mode_panel" />
     <LinearLayout android:gravity="end" android:id="@id/volume_zen_mode_panel_buttons" android:layout_width="fill_parent" android:layout_height="wrap_content">
         <TextView android:textAppearance="@style/TextAppearance.QS.DetailButton" android:id="@id/volume_zen_mode_panel_more" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="132.0dip" android:text="@string/quick_settings_more_settings" android:layout_marginEnd="8.0dip" style="@style/QSBorderlessButton" />
-        <TextView android:textAppearance="@style/TextAppearance.QS.DetailButton" android:id="@id/volume_zen_mode_panel_done" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="84.0dip" android:text="@string/quick_settings_done" style="@style/QSBorderlessButton" />
+        <TextView android:textAppearance="@style/TextAppearance.QS.DetailButton" android:id="@id/volume_zen_mode_panel_done" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="66.0dip" android:text="@string/quick_settings_done" style="@style/QSBorderlessButton" />
     </LinearLayout>
 </com.android.systemui.volume.ZenFooter>

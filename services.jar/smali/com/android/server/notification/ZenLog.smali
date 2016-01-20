@@ -1173,17 +1173,22 @@
 
     .line 160
     :pswitch_2
+    const-string v0, "alarms"
+
+    goto :goto_0
+
+    .line 161
+    :pswitch_3
     const-string v0, "no_interruptions"
 
     goto :goto_0
 
     .line 157
-    nop
-
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
         :pswitch_1
+        :pswitch_3
         :pswitch_2
     .end packed-switch
 .end method

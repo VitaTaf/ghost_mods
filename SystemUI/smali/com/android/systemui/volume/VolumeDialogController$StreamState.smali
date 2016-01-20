@@ -37,7 +37,7 @@
     .locals 0
 
     .prologue
-    .line 878
+    .line 903
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,52 +49,52 @@
     .locals 2
 
     .prologue
-    .line 889
+    .line 914
     new-instance v0, Lcom/android/systemui/volume/VolumeDialogController$StreamState;
 
     invoke-direct {v0}, Lcom/android/systemui/volume/VolumeDialogController$StreamState;-><init>()V
 
-    .line 890
+    .line 915
     .local v0, "rt":Lcom/android/systemui/volume/VolumeDialogController$StreamState;
     iget-boolean v1, p0, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->dynamic:Z
 
     iput-boolean v1, v0, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->dynamic:Z
 
-    .line 891
+    .line 916
     iget v1, p0, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->level:I
 
     iput v1, v0, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->level:I
 
-    .line 892
+    .line 917
     iget v1, p0, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->levelMin:I
 
     iput v1, v0, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->levelMin:I
 
-    .line 893
+    .line 918
     iget v1, p0, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->levelMax:I
 
     iput v1, v0, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->levelMax:I
 
-    .line 894
+    .line 919
     iget-boolean v1, p0, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->muted:Z
 
     iput-boolean v1, v0, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->muted:Z
 
-    .line 895
+    .line 920
     iget-boolean v1, p0, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->muteSupported:Z
 
     iput-boolean v1, v0, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->muteSupported:Z
 
-    .line 896
+    .line 921
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->name:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->name:Ljava/lang/String;
 
-    .line 897
+    .line 922
     iget-boolean v1, p0, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->routedToBluetooth:Z
 
     iput-boolean v1, v0, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->routedToBluetooth:Z
 
-    .line 898
+    .line 923
     return-object v0
 .end method

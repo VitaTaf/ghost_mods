@@ -3,7 +3,7 @@
 .source "VolumeDialog.java"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lcom/android/systemui/volume/VolumeDialogController$Callbacks;
 
 
 # annotations
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 849
+    .line 827
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$6;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,65 +36,183 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 4
-    .param p1, "v"    # Landroid/view/View;
+.method public onConfigurationChanged()V
+    .locals 1
 
     .prologue
-    const/4 v1, 0x1
+    .line 855
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$6;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+
+    # invokes: Lcom/android/systemui/volume/VolumeDialog;->updateWindowWidthH()V
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$3600(Lcom/android/systemui/volume/VolumeDialog;)V
+
+    .line 856
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$6;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+
+    # getter for: Lcom/android/systemui/volume/VolumeDialog;->mSpTexts:Lcom/android/systemui/volume/SpTexts;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$3700(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/SpTexts;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/systemui/volume/SpTexts;->update()V
+
+    .line 857
+    return-void
+.end method
+
+.method public onDismissRequested(I)V
+    .locals 1
+    .param p1, "reason"    # I
+
+    .prologue
+    .line 835
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$6;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+
+    invoke-virtual {v0, p1}, Lcom/android/systemui/volume/VolumeDialog;->dismissH(I)V
+
+    .line 836
+    return-void
+.end method
+
+.method public onLayoutDirectionChanged(I)V
+    .locals 1
+    .param p1, "layoutDirection"    # I
+
+    .prologue
+    .line 850
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$6;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+
+    # getter for: Lcom/android/systemui/volume/VolumeDialog;->mDialogView:Landroid/view/ViewGroup;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$3500(Lcom/android/systemui/volume/VolumeDialog;)Landroid/view/ViewGroup;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->setLayoutDirection(I)V
+
+    .line 851
+    return-void
+.end method
+
+.method public onScreenOff()V
+    .locals 2
+
+    .prologue
+    .line 840
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$6;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+
+    const/4 v1, 0x4
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/volume/VolumeDialog;->dismissH(I)V
+
+    .line 841
+    return-void
+.end method
+
+.method public onShowRequested(I)V
+    .locals 1
+    .param p1, "reason"    # I
+
+    .prologue
+    .line 830
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$6;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+
+    # invokes: Lcom/android/systemui/volume/VolumeDialog;->showH(I)V
+    invoke-static {v0, p1}, Lcom/android/systemui/volume/VolumeDialog;->access$3300(Lcom/android/systemui/volume/VolumeDialog;I)V
+
+    .line 831
+    return-void
+.end method
+
+.method public onShowSafetyWarning(I)V
+    .locals 1
+    .param p1, "flags"    # I
+
+    .prologue
+    .line 875
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$6;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+
+    # invokes: Lcom/android/systemui/volume/VolumeDialog;->showSafetyWarningH(I)V
+    invoke-static {v0, p1}, Lcom/android/systemui/volume/VolumeDialog;->access$3900(Lcom/android/systemui/volume/VolumeDialog;I)V
+
+    .line 876
+    return-void
+.end method
+
+.method public onShowSilentHint()V
+    .locals 3
+
+    .prologue
+    .line 868
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$6;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+
+    # getter for: Lcom/android/systemui/volume/VolumeDialog;->mSilentMode:Z
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$3800(Lcom/android/systemui/volume/VolumeDialog;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 869
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$6;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+
+    # getter for: Lcom/android/systemui/volume/VolumeDialog;->mController:Lcom/android/systemui/volume/VolumeDialogController;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$1600(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogController;
+
+    move-result-object v0
+
+    const/4 v1, 0x2
 
     const/4 v2, 0x0
 
-    .line 852
-    iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialog$6;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+    invoke-virtual {v0, v1, v2}, Lcom/android/systemui/volume/VolumeDialogController;->setRingerMode(IZ)V
 
-    # getter for: Lcom/android/systemui/volume/VolumeDialog;->mExpanding:Z
-    invoke-static {v3}, Lcom/android/systemui/volume/VolumeDialog;->access$2200(Lcom/android/systemui/volume/VolumeDialog;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    .line 856
-    :goto_0
-    return-void
-
-    .line 853
+    .line 871
     :cond_0
-    iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialog$6;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+    return-void
+.end method
 
-    # getter for: Lcom/android/systemui/volume/VolumeDialog;->mExpanded:Z
-    invoke-static {v3}, Lcom/android/systemui/volume/VolumeDialog;->access$3600(Lcom/android/systemui/volume/VolumeDialog;)Z
+.method public onShowVibrateHint()V
+    .locals 2
 
-    move-result v3
+    .prologue
+    const/4 v1, 0x0
 
-    if-nez v3, :cond_1
+    .line 861
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$6;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
-    move v0, v1
+    # getter for: Lcom/android/systemui/volume/VolumeDialog;->mSilentMode:Z
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$3800(Lcom/android/systemui/volume/VolumeDialog;)Z
 
-    .line 854
-    .local v0, "newExpand":Z
-    :goto_1
-    const/4 v3, 0x3
+    move-result v0
 
-    new-array v1, v1, [Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    aput-object p1, v1, v2
+    .line 862
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$6;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
-    invoke-static {v3, v1}, Lcom/android/systemui/volume/Events;->writeEvent(I[Ljava/lang/Object;)V
+    # getter for: Lcom/android/systemui/volume/VolumeDialog;->mController:Lcom/android/systemui/volume/VolumeDialogController;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$1600(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogController;
 
-    .line 855
-    iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialog$6;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+    move-result-object v0
 
-    # invokes: Lcom/android/systemui/volume/VolumeDialog;->setExpandedH(Z)V
-    invoke-static {v1, v0}, Lcom/android/systemui/volume/VolumeDialog;->access$3700(Lcom/android/systemui/volume/VolumeDialog;Z)V
+    invoke-virtual {v0, v1, v1}, Lcom/android/systemui/volume/VolumeDialogController;->setRingerMode(IZ)V
 
-    goto :goto_0
+    .line 864
+    :cond_0
+    return-void
+.end method
 
-    .end local v0    # "newExpand":Z
-    :cond_1
-    move v0, v2
+.method public onStateChanged(Lcom/android/systemui/volume/VolumeDialogController$State;)V
+    .locals 1
+    .param p1, "state"    # Lcom/android/systemui/volume/VolumeDialogController$State;
 
-    .line 853
-    goto :goto_1
+    .prologue
+    .line 845
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$6;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+
+    # invokes: Lcom/android/systemui/volume/VolumeDialog;->onStateChangedH(Lcom/android/systemui/volume/VolumeDialogController$State;)V
+    invoke-static {v0, p1}, Lcom/android/systemui/volume/VolumeDialog;->access$3400(Lcom/android/systemui/volume/VolumeDialog;Lcom/android/systemui/volume/VolumeDialogController$State;)V
+
+    .line 846
+    return-void
 .end method

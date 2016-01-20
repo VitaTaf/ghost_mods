@@ -485,6 +485,8 @@
 
 .field public static final ZEN_MODE:Ljava/lang/String; = "zen_mode"
 
+.field public static final ZEN_MODE_ALARMS:I = 0x3
+
 .field public static final ZEN_MODE_CONFIG_ETAG:Ljava/lang/String; = "zen_mode_config_etag"
 
 .field public static final ZEN_MODE_IMPORTANT_INTERRUPTIONS:I = 0x1
@@ -1328,16 +1330,26 @@
 
     .line 6570
     :cond_0
-    const/4 v0, 0x2
+    const/4 v0, 0x3
 
     if-ne p0, v0, :cond_1
 
-    const-string v0, "ZEN_MODE_NO_INTERRUPTIONS"
+    const-string v0, "ZEN_MODE_ALARMS"
 
     goto :goto_0
 
     .line 6571
     :cond_1
+    const/4 v0, 0x2
+
+    if-ne p0, v0, :cond_2
+
+    const-string v0, "ZEN_MODE_NO_INTERRUPTIONS"
+
+    goto :goto_0
+
+    .line 6661
+    :cond_2
     const-string v0, "ZEN_MODE_OFF"
 
     goto :goto_0
