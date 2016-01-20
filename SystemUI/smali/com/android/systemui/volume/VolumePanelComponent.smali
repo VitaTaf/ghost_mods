@@ -39,19 +39,19 @@
 
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/SystemUI;Landroid/content/Context;Landroid/os/Handler;Lcom/android/systemui/statusbar/policy/ZenModeController;)V
-    .locals 2
+    .locals 3
     .param p1, "sysui"    # Lcom/android/systemui/SystemUI;
     .param p2, "context"    # Landroid/content/Context;
     .param p3, "handler"    # Landroid/os/Handler;
     .param p4, "controller"    # Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 129
+    .line 130
     new-instance v0, Lcom/android/systemui/volume/VolumePanelComponent$2;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/volume/VolumePanelComponent$2;-><init>(Lcom/android/systemui/volume/VolumePanelComponent;)V
@@ -79,9 +79,11 @@
     iput-object v0, p0, Lcom/android/systemui/volume/VolumePanelComponent;->mAudioManager:Landroid/media/AudioManager;
 
     .line 64
-    const-string v0, "media_session"
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumePanelComponent;->mContext:Landroid/content/Context;
 
-    invoke-virtual {p2, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    const-string v1, "media_session"
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -89,21 +91,21 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumePanelComponent;->mMediaSessionManager:Landroid/media/session/MediaSessionManager;
 
-    .line 65
+    .line 66
     new-instance v0, Lcom/android/systemui/volume/VolumePanelComponent$VolumeController;
 
-    invoke-direct {v0, p0, v1}, Lcom/android/systemui/volume/VolumePanelComponent$VolumeController;-><init>(Lcom/android/systemui/volume/VolumePanelComponent;Lcom/android/systemui/volume/VolumePanelComponent$1;)V
+    invoke-direct {v0, p0, v2}, Lcom/android/systemui/volume/VolumePanelComponent$VolumeController;-><init>(Lcom/android/systemui/volume/VolumePanelComponent;Lcom/android/systemui/volume/VolumePanelComponent$1;)V
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumePanelComponent;->mVolumeController:Lcom/android/systemui/volume/VolumePanelComponent$VolumeController;
 
-    .line 66
+    .line 67
     new-instance v0, Lcom/android/systemui/volume/VolumePanelComponent$RemoteVolumeController;
 
-    invoke-direct {v0, p0, v1}, Lcom/android/systemui/volume/VolumePanelComponent$RemoteVolumeController;-><init>(Lcom/android/systemui/volume/VolumePanelComponent;Lcom/android/systemui/volume/VolumePanelComponent$1;)V
+    invoke-direct {v0, p0, v2}, Lcom/android/systemui/volume/VolumePanelComponent$RemoteVolumeController;-><init>(Lcom/android/systemui/volume/VolumePanelComponent;Lcom/android/systemui/volume/VolumePanelComponent$1;)V
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumePanelComponent;->mRemoteVolumeController:Lcom/android/systemui/volume/VolumePanelComponent$RemoteVolumeController;
 
-    .line 67
+    .line 68
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanelComponent;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -118,7 +120,7 @@
 
     iput v0, p0, Lcom/android/systemui/volume/VolumePanelComponent;->mDismissDelay:I
 
-    .line 68
+    .line 69
     new-instance v0, Lcom/android/systemui/volume/VolumePanel;
 
     iget-object v1, p0, Lcom/android/systemui/volume/VolumePanelComponent;->mContext:Landroid/content/Context;
@@ -127,7 +129,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumePanelComponent;->mPanel:Lcom/android/systemui/volume/VolumePanel;
 
-    .line 69
+    .line 70
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanelComponent;->mPanel:Lcom/android/systemui/volume/VolumePanel;
 
     new-instance v1, Lcom/android/systemui/volume/VolumePanelComponent$1;
@@ -136,7 +138,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/VolumePanel;->setCallback(Lcom/android/systemui/volume/VolumePanel$Callback;)V
 
-    .line 91
+    .line 92
     return-void
 .end method
 
@@ -234,7 +236,7 @@
     .locals 4
 
     .prologue
-    .line 126
+    .line 127
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanelComponent;->mPanel:Lcom/android/systemui/volume/VolumePanel;
 
     const-wide/16 v2, 0x0
