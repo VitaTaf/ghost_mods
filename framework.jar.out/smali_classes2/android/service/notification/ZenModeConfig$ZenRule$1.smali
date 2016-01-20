@@ -1,4 +1,4 @@
-.class final Landroid/service/notification/ZenModeConfig$1;
+.class final Landroid/service/notification/ZenModeConfig$ZenRule$1;
 .super Ljava/lang/Object;
 .source "ZenModeConfig.java"
 
@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/service/notification/ZenModeConfig;
+    value = Landroid/service/notification/ZenModeConfig$ZenRule;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -21,7 +21,7 @@
         "Ljava/lang/Object;",
         "Landroid/os/Parcelable$Creator",
         "<",
-        "Landroid/service/notification/ZenModeConfig;",
+        "Landroid/service/notification/ZenModeConfig$ZenRule;",
         ">;"
     }
 .end annotation
@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 451
+    .line 744
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,15 +40,15 @@
 
 
 # virtual methods
-.method public createFromParcel(Landroid/os/Parcel;)Landroid/service/notification/ZenModeConfig;
+.method public createFromParcel(Landroid/os/Parcel;)Landroid/service/notification/ZenModeConfig$ZenRule;
     .locals 1
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 454
-    new-instance v0, Landroid/service/notification/ZenModeConfig;
+    .line 747
+    new-instance v0, Landroid/service/notification/ZenModeConfig$ZenRule;
 
-    invoke-direct {v0, p1}, Landroid/service/notification/ZenModeConfig;-><init>(Landroid/os/Parcel;)V
+    invoke-direct {v0, p1}, Landroid/service/notification/ZenModeConfig$ZenRule;-><init>(Landroid/os/Parcel;)V
 
     return-object v0
 .end method
@@ -58,21 +58,21 @@
     .param p1, "x0"    # Landroid/os/Parcel;
 
     .prologue
-    .line 451
-    invoke-virtual {p0, p1}, Landroid/service/notification/ZenModeConfig$1;->createFromParcel(Landroid/os/Parcel;)Landroid/service/notification/ZenModeConfig;
+    .line 744
+    invoke-virtual {p0, p1}, Landroid/service/notification/ZenModeConfig$ZenRule$1;->createFromParcel(Landroid/os/Parcel;)Landroid/service/notification/ZenModeConfig$ZenRule;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public newArray(I)[Landroid/service/notification/ZenModeConfig;
+.method public newArray(I)[Landroid/service/notification/ZenModeConfig$ZenRule;
     .locals 1
     .param p1, "size"    # I
 
     .prologue
-    .line 459
-    new-array v0, p1, [Landroid/service/notification/ZenModeConfig;
+    .line 751
+    new-array v0, p1, [Landroid/service/notification/ZenModeConfig$ZenRule;
 
     return-object v0
 .end method
@@ -82,8 +82,8 @@
     .param p1, "x0"    # I
 
     .prologue
-    .line 451
-    invoke-virtual {p0, p1}, Landroid/service/notification/ZenModeConfig$1;->newArray(I)[Landroid/service/notification/ZenModeConfig;
+    .line 744
+    invoke-virtual {p0, p1}, Landroid/service/notification/ZenModeConfig$ZenRule$1;->newArray(I)[Landroid/service/notification/ZenModeConfig$ZenRule;
 
     move-result-object v0
 

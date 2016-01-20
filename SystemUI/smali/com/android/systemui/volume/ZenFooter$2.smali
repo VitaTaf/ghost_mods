@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 109
+    .line 113
     iput-object p1, p0, Lcom/android/systemui/volume/ZenFooter$2;->this$0:Lcom/android/systemui/volume/ZenFooter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,18 +41,18 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 112
+    .line 116
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter$2;->this$0:Lcom/android/systemui/volume/ZenFooter;
 
     # getter for: Lcom/android/systemui/volume/ZenFooter;->mSwitch:Landroid/widget/Switch;
-    invoke-static {v0}, Lcom/android/systemui/volume/ZenFooter;->access$100(Lcom/android/systemui/volume/ZenFooter;)Landroid/widget/Switch;
+    invoke-static {v0}, Lcom/android/systemui/volume/ZenFooter;->access$200(Lcom/android/systemui/volume/ZenFooter;)Landroid/widget/Switch;
 
     move-result-object v1
 
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter$2;->this$0:Lcom/android/systemui/volume/ZenFooter;
 
     # getter for: Lcom/android/systemui/volume/ZenFooter;->mSwitch:Landroid/widget/Switch;
-    invoke-static {v0}, Lcom/android/systemui/volume/ZenFooter;->access$100(Lcom/android/systemui/volume/ZenFooter;)Landroid/widget/Switch;
+    invoke-static {v0}, Lcom/android/systemui/volume/ZenFooter;->access$200(Lcom/android/systemui/volume/ZenFooter;)Landroid/widget/Switch;
 
     move-result-object v0
 
@@ -67,10 +67,10 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/widget/Switch;->setChecked(Z)V
 
-    .line 113
+    .line 117
     return-void
 
-    .line 112
+    .line 116
     :cond_0
     const/4 v0, 0x0
 

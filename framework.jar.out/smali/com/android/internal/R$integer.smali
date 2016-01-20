@@ -61,8 +61,6 @@
 
 .field public static final config_downloadDataDirSize:I = 0x10e0063
 
-.field public static final config_downtime_condition_lookahead_threshold_hrs:I = 0x10e007e
-
 .field public static final config_drawLockTimeoutMillis:I = 0x10e00ea
 
 .field public static final config_dreamsBatteryLevelDrainCutoff:I = 0x10e006f
@@ -124,8 +122,6 @@
 .field public static final config_networkPolicyDefaultWarning:I = 0x10e006c
 
 .field public static final config_networkTransitionTimeout:I = 0x10e000d
-
-.field public static final config_next_alarm_condition_lookahead_threshold_hrs:I = 0x10e007d
 
 .field public static final config_notificationServiceArchiveSize:I = 0x10e004e
 

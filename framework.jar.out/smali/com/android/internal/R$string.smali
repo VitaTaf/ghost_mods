@@ -567,6 +567,10 @@
 
 .field public static final double_tap_toast:I = 0x10403e5
 
+.field public static final downtime_condition_line_one:I = 0x1040694
+
+.field public static final downtime_condition_summary:I = 0x1040693
+
 .field public static final downtime_condition_line_one:I = 0x1040692
 
 .field public static final downtime_condition_summary:I = 0x1040691
@@ -1867,11 +1871,17 @@
 
 .field public static final yes:I = 0x1040013
 
+.field public static final zen_mode_default_weekends_name:I = 0x1040741
+
+.field public static final zen_mode_default_weeknights_name:I = 0x1040740
+
+.field public static final zen_mode_downtime_feature_name:I = 0x104073f
+
+.field public static final zen_mode_feature_name:I = 0x104073e
+
 .field public static final zen_mode_forever:I = 0x1040694
 
-.field public static final zen_mode_next_alarm_line_one:I = 0x1040697
-
-.field public static final zen_mode_next_alarm_summary:I = 0x1040696
+.field public static final zen_mode_rule_name_combination:I = 0x104073d
 
 .field public static final zen_mode_until:I = 0x1040693
 

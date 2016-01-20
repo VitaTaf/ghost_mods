@@ -44,12 +44,12 @@
     .locals 1
 
     .prologue
-    .line 929
+    .line 967
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 930
+    .line 968
     new-instance v0, Landroid/util/ArraySet;
 
     invoke-direct {v0}, Landroid/util/ArraySet;-><init>()V
@@ -65,7 +65,7 @@
     .param p2, "x1"    # Lcom/android/systemui/volume/ZenModePanel$1;
 
     .prologue
-    .line 929
+    .line 967
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;-><init>(Lcom/android/systemui/volume/ZenModePanel;)V
 
     return-void
@@ -75,27 +75,27 @@
     .locals 4
 
     .prologue
-    .line 990
+    .line 1028
     invoke-virtual {p0}, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->isTransitioning()Z
 
     move-result v0
 
-    .line 991
+    .line 1029
     .local v0, "transitioning":Z
     iget-boolean v1, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mTransitioning:Z
 
     if-ne v1, v0, :cond_1
 
-    .line 1001
+    .line 1039
     :cond_0
     :goto_0
     return-void
 
-    .line 992
+    .line 1030
     :cond_1
     iput-boolean v0, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mTransitioning:Z
 
-    .line 993
+    .line 1031
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$800()Z
 
@@ -132,13 +132,13 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 994
+    .line 1032
     :cond_2
     iget-boolean v1, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mTransitioning:Z
 
     if-nez v1, :cond_0
 
-    .line 995
+    .line 1033
     iget-boolean v1, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mPendingUpdateConditions:Z
 
     if-nez v1, :cond_3
@@ -147,12 +147,12 @@
 
     if-eqz v1, :cond_4
 
-    .line 996
+    .line 1034
     :cond_3
     iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mHandler:Lcom/android/systemui/volume/ZenModePanel$H;
-    invoke-static {v1}, Lcom/android/systemui/volume/ZenModePanel;->access$1500(Lcom/android/systemui/volume/ZenModePanel;)Lcom/android/systemui/volume/ZenModePanel$H;
+    invoke-static {v1}, Lcom/android/systemui/volume/ZenModePanel;->access$1600(Lcom/android/systemui/volume/ZenModePanel;)Lcom/android/systemui/volume/ZenModePanel$H;
 
     move-result-object v1
 
@@ -160,7 +160,7 @@
 
     goto :goto_0
 
-    .line 998
+    .line 1036
     :cond_4
     const/4 v1, 0x0
 
@@ -177,19 +177,19 @@
     .locals 1
 
     .prologue
-    .line 937
+    .line 975
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mTransitioningViews:Landroid/util/ArraySet;
 
     invoke-virtual {v0}, Landroid/util/ArraySet;->clear()V
 
-    .line 938
+    .line 976
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mPendingUpdateWidgets:Z
 
     iput-boolean v0, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mPendingUpdateConditions:Z
 
-    .line 939
+    .line 977
     return-void
 .end method
 
@@ -200,12 +200,12 @@
     .param p3, "args"    # [Ljava/lang/String;
 
     .prologue
-    .line 942
+    .line 980
     const-string v0, "  TransitionHelper state:"
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 943
+    .line 981
     const-string v0, "    mPendingUpdateConditions="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -214,7 +214,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 944
+    .line 982
     const-string v0, "    mPendingUpdateWidgets="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -223,7 +223,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 945
+    .line 983
     const-string v0, "    mTransitioning="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -232,7 +232,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 946
+    .line 984
     const-string v0, "    mTransitioningViews="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -241,7 +241,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 947
+    .line 985
     return-void
 .end method
 
@@ -253,15 +253,15 @@
     .param p4, "transitionType"    # I
 
     .prologue
-    .line 971
+    .line 1009
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mTransitioningViews:Landroid/util/ArraySet;
 
     invoke-virtual {v0, p3}, Landroid/util/ArraySet;->remove(Ljava/lang/Object;)Z
 
-    .line 972
+    .line 1010
     invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->updateTransitioning()V
 
-    .line 973
+    .line 1011
     return-void
 .end method
 
@@ -269,7 +269,7 @@
     .locals 1
 
     .prologue
-    .line 958
+    .line 996
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mTransitioningViews:Landroid/util/ArraySet;
 
     invoke-virtual {v0}, Landroid/util/ArraySet;->isEmpty()Z
@@ -293,12 +293,12 @@
     .locals 1
 
     .prologue
-    .line 950
+    .line 988
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mPendingUpdateConditions:Z
 
-    .line 951
+    .line 989
     return-void
 .end method
 
@@ -306,12 +306,12 @@
     .locals 1
 
     .prologue
-    .line 954
+    .line 992
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mPendingUpdateWidgets:Z
 
-    .line 955
+    .line 993
     return-void
 .end method
 
@@ -319,7 +319,7 @@
     .locals 3
 
     .prologue
-    .line 977
+    .line 1015
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$800()Z
 
@@ -368,31 +368,31 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 980
+    .line 1018
     :cond_0
     iget-boolean v0, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mPendingUpdateWidgets:Z
 
     if-eqz v0, :cond_1
 
-    .line 981
+    .line 1019
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # invokes: Lcom/android/systemui/volume/ZenModePanel;->updateWidgets()V
-    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$2400(Lcom/android/systemui/volume/ZenModePanel;)V
+    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$2600(Lcom/android/systemui/volume/ZenModePanel;)V
 
-    .line 983
+    .line 1021
     :cond_1
     iget-boolean v0, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mPendingUpdateConditions:Z
 
     if-eqz v0, :cond_2
 
-    .line 984
+    .line 1022
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # invokes: Lcom/android/systemui/volume/ZenModePanel;->handleUpdateConditions()V
-    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$2500(Lcom/android/systemui/volume/ZenModePanel;)V
+    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$2700(Lcom/android/systemui/volume/ZenModePanel;)V
 
-    .line 986
+    .line 1024
     :cond_2
     const/4 v0, 0x0
 
@@ -400,7 +400,7 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mPendingUpdateWidgets:Z
 
-    .line 987
+    .line 1025
     return-void
 .end method
 
@@ -412,14 +412,14 @@
     .param p4, "transitionType"    # I
 
     .prologue
-    .line 964
+    .line 1002
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mTransitioningViews:Landroid/util/ArraySet;
 
     invoke-virtual {v0, p3}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 965
+    .line 1003
     invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->updateTransitioning()V
 
-    .line 966
+    .line 1004
     return-void
 .end method

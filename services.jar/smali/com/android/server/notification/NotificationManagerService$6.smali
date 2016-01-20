@@ -1961,30 +1961,6 @@
     return-object v8
 .end method
 
-.method public getAutomaticZenModeConditions()[Landroid/service/notification/Condition;
-    .locals 1
-
-    .prologue
-    .line 1529
-    const-string v0, "INotificationManager.getAutomaticZenModeConditions"
-
-    invoke-direct {p0, v0}, Lcom/android/server/notification/NotificationManagerService$6;->enforceSystemOrSystemUI(Ljava/lang/String;)V
-
-    .line 1530
-    iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$6;->this$0:Lcom/android/server/notification/NotificationManagerService;
-
-    # getter for: Lcom/android/server/notification/NotificationManagerService;->mConditionProviders:Lcom/android/server/notification/ConditionProviders;
-    invoke-static {v0}, Lcom/android/server/notification/NotificationManagerService;->access$700(Lcom/android/server/notification/NotificationManagerService;)Lcom/android/server/notification/ConditionProviders;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/server/notification/ConditionProviders;->getAutomaticZenModeConditions()[Landroid/service/notification/Condition;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method public getEffectsSuppressor()Landroid/content/ComponentName;
     .locals 1
 
@@ -2221,6 +2197,25 @@
     return v0
 .end method
 
+.method public getZenMode()I
+    .locals 1
+
+    .prologue
+    .line 1475
+    iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$6;->this$0:Lcom/android/server/notification/NotificationManagerService;
+
+    # getter for: Lcom/android/server/notification/NotificationManagerService;->mZenModeHelper:Lcom/android/server/notification/ZenModeHelper;
+    invoke-static {v0}, Lcom/android/server/notification/NotificationManagerService;->access$2900(Lcom/android/server/notification/NotificationManagerService;)Lcom/android/server/notification/ZenModeHelper;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/server/notification/ZenModeHelper;->getZenMode()I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public getZenModeConfig()Landroid/service/notification/ZenModeConfig;
     .locals 1
 
@@ -2263,7 +2258,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lcom/android/server/notification/ConditionProviders;->isSystemConditionProviderEnabled(Ljava/lang/String;)Z
+    invoke-virtual {v0, p1}, Lcom/android/server/notification/ConditionProviders;->isSystemProviderEnabled(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -2637,39 +2632,15 @@
 
     invoke-direct {p0, v0}, Lcom/android/server/notification/NotificationManagerService$6;->enforceSystemOrSystemUIOrVolume(Ljava/lang/String;)V
 
-    .line 1507
-    iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$6;->this$0:Lcom/android/server/notification/NotificationManagerService;
-
-    # getter for: Lcom/android/server/notification/NotificationManagerService;->mConditionProviders:Lcom/android/server/notification/ConditionProviders;
-    invoke-static {v0}, Lcom/android/server/notification/NotificationManagerService;->access$700(Lcom/android/server/notification/NotificationManagerService;)Lcom/android/server/notification/ConditionProviders;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1, p2}, Lcom/android/server/notification/ConditionProviders;->requestZenModeConditions(Landroid/service/notification/IConditionListener;I)V
-
-    .line 1508
-    return-void
-.end method
-
-.method public setAutomaticZenModeConditions([Landroid/net/Uri;)V
-    .locals 1
-    .param p1, "conditionIds"    # [Landroid/net/Uri;
-
-    .prologue
-    .line 1523
-    const-string v0, "INotificationManager.setAutomaticZenModeConditions"
-
-    invoke-direct {p0, v0}, Lcom/android/server/notification/NotificationManagerService$6;->enforceSystemOrSystemUI(Ljava/lang/String;)V
-
     .line 1524
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$6;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
-    # getter for: Lcom/android/server/notification/NotificationManagerService;->mConditionProviders:Lcom/android/server/notification/ConditionProviders;
-    invoke-static {v0}, Lcom/android/server/notification/NotificationManagerService;->access$700(Lcom/android/server/notification/NotificationManagerService;)Lcom/android/server/notification/ConditionProviders;
+    # getter for: Lcom/android/server/notification/NotificationManagerService;->mZenModeHelper:Lcom/android/server/notification/ZenModeHelper;
+    invoke-static {v0}, Lcom/android/server/notification/NotificationManagerService;->access$2900(Lcom/android/server/notification/NotificationManagerService;)Lcom/android/server/notification/ZenModeHelper;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lcom/android/server/notification/ConditionProviders;->setAutomaticZenModeConditions([Landroid/net/Uri;)V
+    invoke-virtual {v0, p1, p2}, Lcom/android/server/notification/ZenModeHelper;->requestZenModeConditions(Landroid/service/notification/IConditionListener;I)V
 
     .line 1525
     return-void
@@ -2823,9 +2794,11 @@
     return-void
 .end method
 
-.method public setZenMode(I)V
-    .locals 4
+.method public setZenMode(ILandroid/net/Uri;Ljava/lang/String;)V
+    .locals 3
     .param p1, "mode"    # I
+    .param p2, "conditionId"    # Landroid/net/Uri;
+    .param p3, "reason"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -2853,55 +2826,7 @@
 
     move-result-object v2
 
-    const-string v3, "NotificationManager"
-
-    invoke-virtual {v2, p1, v3}, Lcom/android/server/notification/ZenModeHelper;->setZenMode(ILjava/lang/String;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 1493
-    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
-
-    .line 1495
-    return-void
-
-    .line 1493
-    :catchall_0
-    move-exception v2
-
-    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
-
-    throw v2
-.end method
-
-.method public setZenModeCondition(Landroid/service/notification/Condition;)V
-    .locals 4
-    .param p1, "condition"    # Landroid/service/notification/Condition;
-
-    .prologue
-    .line 1512
-    const-string v2, "INotificationManager.setZenModeCondition"
-
-    invoke-direct {p0, v2}, Lcom/android/server/notification/NotificationManagerService$6;->enforceSystemOrSystemUIOrVolume(Ljava/lang/String;)V
-
-    .line 1513
-    invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
-
-    move-result-wide v0
-
-    .line 1515
-    .local v0, "identity":J
-    :try_start_0
-    iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService$6;->this$0:Lcom/android/server/notification/NotificationManagerService;
-
-    # getter for: Lcom/android/server/notification/NotificationManagerService;->mConditionProviders:Lcom/android/server/notification/ConditionProviders;
-    invoke-static {v2}, Lcom/android/server/notification/NotificationManagerService;->access$700(Lcom/android/server/notification/NotificationManagerService;)Lcom/android/server/notification/ConditionProviders;
-
-    move-result-object v2
-
-    const-string v3, "binderCall"
-
-    invoke-virtual {v2, p1, v3}, Lcom/android/server/notification/ConditionProviders;->setZenModeCondition(Landroid/service/notification/Condition;Ljava/lang/String;)V
+    invoke-virtual {v2, p1, p2, p3}, Lcom/android/server/notification/ZenModeHelper;->setManualZenMode(ILandroid/net/Uri;Ljava/lang/String;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -2920,9 +2845,10 @@
     throw v2
 .end method
 
-.method public setZenModeConfig(Landroid/service/notification/ZenModeConfig;)Z
+.method public setZenModeConfig(Landroid/service/notification/ZenModeConfig;Ljava/lang/String;)Z
     .locals 1
     .param p1, "config"    # Landroid/service/notification/ZenModeConfig;
+    .param p2, "reason"    # Ljava/lang/String;
 
     .prologue
     .line 1486
@@ -2938,7 +2864,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lcom/android/server/notification/ZenModeHelper;->setConfig(Landroid/service/notification/ZenModeConfig;)Z
+    invoke-virtual {v0, p1, p2}, Lcom/android/server/notification/ZenModeHelper;->setConfig(Landroid/service/notification/ZenModeConfig;Ljava/lang/String;)Z
 
     move-result v0
 

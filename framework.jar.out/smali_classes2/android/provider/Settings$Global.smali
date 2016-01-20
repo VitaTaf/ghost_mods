@@ -1165,6 +1165,38 @@
     return-object v0
 .end method
 
+.method public static isValidZenMode(I)Z
+    .locals 1
+    .param p0, "value"    # I
+
+    .prologue
+    .line 6683
+    packed-switch p0, :pswitch_data_0
+
+    .line 6690
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+
+    .line 6688
+    :pswitch_0
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    .line 6683
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+    .end packed-switch
+.end method
+
 .method public static putFloat(Landroid/content/ContentResolver;Ljava/lang/String;F)Z
     .locals 1
     .param p0, "cr"    # Landroid/content/ContentResolver;

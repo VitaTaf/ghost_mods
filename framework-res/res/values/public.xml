@@ -5141,13 +5141,9 @@
     <public type="string" name="lock_to_app_unlock_pattern" id="0x0104068e" />
     <public type="string" name="lock_to_app_unlock_password" id="0x0104068f" />
     <public type="string" name="battery_saver_description" id="0x01040690" />
-    <public type="string" name="downtime_condition_summary" id="0x01040691" />
-    <public type="string" name="downtime_condition_line_one" id="0x01040692" />
     <public type="string" name="zen_mode_until" id="0x01040693" />
     <public type="string" name="zen_mode_forever" id="0x01040694" />
     <public type="string" name="toolbar_collapse_description" id="0x01040695" />
-    <public type="string" name="zen_mode_next_alarm_summary" id="0x01040696" />
-    <public type="string" name="zen_mode_next_alarm_line_one" id="0x01040697" />
     <public type="string" name="permdesc_userpreferredsim" id="0x01040698" />
     <public type="string" name="permlab_userpreferredsim" id="0x01040699" />
     <public type="string" name="muted_by" id="0x0104069a" />
@@ -5239,6 +5235,15 @@
     <public type="string" name="nfc_lock_intimation_title" id="0x0104073a" />
     <public type="string" name="nfc_lock_intimation_text" id="0x0104073b" />
     <public type="string" name="def_sim_card_name_prefix" id="0x0104073c" />
+    <public type="string" name="zen_mode_rule_name_combination" id="0x0104073d" />
+    <public type="string" name="zen_mode_feature_name" id="0x0104073e" />
+    <public type="string" name="zen_mode_downtime_feature_name" id="0x0104073f" />
+    <public type="string" name="zen_mode_default_weeknights_name" id="0x01040740" />
+    <public type="string" name="zen_mode_default_weekends_name" id="0x01040741" />
+    <public type="string" name="downtime_condition_summary" id="0x01040691" />
+    <public type="string" name="downtime_condition_line_one" id="0x01040692" />
+    <public type="string" name="zen_mode_next_alarm_summary" id="0x01040696" />
+    <public type="string" name="zen_mode_next_alarm_line_one" id="0x01040697" />
     <public type="string" name="APKTOOL_DUMMY_06a3" id="0x010406a3" />
     <public type="string" name="APKTOOL_DUMMY_06a4" id="0x010406a4" />
     <public type="string" name="APKTOOL_DUMMY_06a5" id="0x010406a5" />
@@ -5973,6 +5978,7 @@
     <public type="array" name="config_lmk_minfreehigh" id="0x01070052" />
     <public type="array" name="config_erase_recovery_blacklist" id="0x01070053" />
     <public type="array" name="config_erase_recovery_prefix" id="0x01070054" />
+    <public type="array" name="APKTOOL_DUMMY_000c" id="0x0107000c" />
     <public type="drawable" name="blank_tile" id="0x010800d0" />
     <public type="drawable" name="default_wallpaper" id="0x0108028b" />
     <public type="drawable" name="loading_tile" id="0x010804ca" />
@@ -8411,8 +8417,6 @@
     <public type="integer" name="config_valid_wappush_index" id="0x010e0079" />
     <public type="integer" name="config_overrideHasPermanentMenuKey" id="0x010e007a" />
     <public type="integer" name="config_LTE_RSRP_threshold_type" id="0x010e007c" />
-    <public type="integer" name="config_next_alarm_condition_lookahead_threshold_hrs" id="0x010e007d" />
-    <public type="integer" name="config_downtime_condition_lookahead_threshold_hrs" id="0x010e007e" />
     <public type="integer" name="max_action_buttons" id="0x010e007f" />
     <public type="integer" name="preferences_left_pane_weight" id="0x010e0080" />
     <public type="integer" name="preferences_right_pane_weight" id="0x010e0081" />
@@ -8521,6 +8525,8 @@
     <public type="integer" name="kg_selector_gravity" id="0x010e009d" />
     <public type="integer" name="kg_widget_region_weight" id="0x010e009e" />
     <public type="integer" name="kg_security_flipper_weight" id="0x010e009f" />
+    <public type="integer" name="APKTOOL_DUMMY_007d" id="0x010e007d" />
+    <public type="integer" name="APKTOOL_DUMMY_007e" id="0x010e007e" />
     <public type="transition" name="no_transition" id="0x010f0000" />
     <public type="transition" name="move" id="0x010f0001" />
     <public type="transition" name="fade" id="0x010f0002" />
@@ -8790,6 +8796,7 @@
     <public type="bool" name="config_persist_pnt_with_simslot" id="0x011200e7" />
     <public type="bool" name="kg_share_status_area" id="0x0112000a" />
     <public type="bool" name="kg_sim_puk_account_full_screen" id="0x0112000b" />
+    <public type="bool" name="APKTOOL_DUMMY_000f" id="0x0112000f" />
     <public type="fraction" name="config_dimBehindFadeDuration" id="0x01130000" />
     <public type="fraction" name="config_screenAutoBrightnessDozeScaleFactor" id="0x01130001" />
     <public type="fraction" name="config_maximumScreenDimRatio" id="0x01130002" />

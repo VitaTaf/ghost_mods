@@ -20,18 +20,22 @@
 # instance fields
 .field final synthetic this$1:Lcom/android/systemui/volume/ZenModePanel$10;
 
+.field final synthetic val$realConditionId:Landroid/net/Uri;
+
 .field final synthetic val$value:Ljava/lang/Object;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/volume/ZenModePanel$10;Ljava/lang/Object;)V
+.method constructor <init>(Lcom/android/systemui/volume/ZenModePanel$10;Ljava/lang/Object;Landroid/net/Uri;)V
     .locals 0
 
     .prologue
-    .line 907
+    .line 945
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel$10$1;->this$1:Lcom/android/systemui/volume/ZenModePanel$10;
 
     iput-object p2, p0, Lcom/android/systemui/volume/ZenModePanel$10$1;->val$value:Ljava/lang/Object;
+
+    iput-object p3, p0, Lcom/android/systemui/volume/ZenModePanel$10$1;->val$realConditionId:Landroid/net/Uri;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,10 +45,10 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 4
 
     .prologue
-    .line 910
+    .line 948
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$10$1;->this$1:Lcom/android/systemui/volume/ZenModePanel$10;
 
     iget-object v0, v0, Lcom/android/systemui/volume/ZenModePanel$10;->this$0:Lcom/android/systemui/volume/ZenModePanel;
@@ -62,8 +66,12 @@
 
     move-result v0
 
-    invoke-interface {v1, v0}, Lcom/android/systemui/statusbar/policy/ZenModeController;->setZen(I)V
+    iget-object v2, p0, Lcom/android/systemui/volume/ZenModePanel$10$1;->val$realConditionId:Landroid/net/Uri;
 
-    .line 911
+    const-string v3, "ZenModePanel.selectZen"
+
+    invoke-interface {v1, v0, v2, v3}, Lcom/android/systemui/statusbar/policy/ZenModeController;->setZen(ILandroid/net/Uri;Ljava/lang/String;)V
+
+    .line 949
     return-void
 .end method

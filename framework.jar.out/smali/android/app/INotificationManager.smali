@@ -95,14 +95,6 @@
     .end annotation
 .end method
 
-.method public abstract getAutomaticZenModeConditions()[Landroid/service/notification/Condition;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getEffectsSuppressor()Landroid/content/ComponentName;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -144,6 +136,14 @@
 .end method
 
 .method public abstract getPackageVisibilityOverride(Ljava/lang/String;I)I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getZenMode()I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -215,14 +215,6 @@
     .end annotation
 .end method
 
-.method public abstract setAutomaticZenModeConditions([Landroid/net/Uri;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract setNotificationsEnabledForPackage(Ljava/lang/String;IZ)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -255,7 +247,7 @@
     .end annotation
 .end method
 
-.method public abstract setZenMode(I)V
+.method public abstract setZenMode(ILandroid/net/Uri;Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -263,15 +255,7 @@
     .end annotation
 .end method
 
-.method public abstract setZenModeCondition(Landroid/service/notification/Condition;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setZenModeConfig(Landroid/service/notification/ZenModeConfig;)Z
+.method public abstract setZenModeConfig(Landroid/service/notification/ZenModeConfig;Ljava/lang/String;)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

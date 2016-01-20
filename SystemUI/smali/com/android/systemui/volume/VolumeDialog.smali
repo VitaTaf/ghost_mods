@@ -2773,257 +2773,213 @@
 .end method
 
 .method private updateTextFooterH()V
-    .locals 14
+    .locals 11
 
     .prologue
-    const v13, 0x7f0c0288
+    const/4 v6, 0x1
 
-    const v12, 0x7f0c0287
+    const/4 v7, 0x0
 
-    const/4 v7, 0x1
+    .line 595
+    iget-object v8, p0, Lcom/android/systemui/volume/VolumeDialog;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
 
-    const/4 v8, 0x0
+    iget v8, v8, Lcom/android/systemui/volume/VolumeDialogController$State;->zenMode:I
+
+    if-eqz v8, :cond_5
+
+    move v5, v6
 
     .line 596
-    iget-object v9, p0, Lcom/android/systemui/volume/VolumeDialog;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
+    .local v5, "zen":Z
+    :goto_0
+    iget-object v8, p0, Lcom/android/systemui/volume/VolumeDialog;->mFooter:Landroid/view/View;
 
-    iget v9, v9, Lcom/android/systemui/volume/VolumeDialogController$State;->zenMode:I
+    invoke-virtual {v8}, Landroid/view/View;->getVisibility()I
 
-    if-eqz v9, :cond_5
+    move-result v8
 
-    move v6, v7
+    if-nez v8, :cond_6
+
+    move v4, v6
 
     .line 597
-    .local v6, "zen":Z
-    :goto_0
-    iget-object v9, p0, Lcom/android/systemui/volume/VolumeDialog;->mFooter:Landroid/view/View;
-
-    invoke-virtual {v9}, Landroid/view/View;->getVisibility()I
-
-    move-result v9
-
-    if-nez v9, :cond_6
-
-    move v5, v7
-
-    .line 598
-    .local v5, "wasVisible":Z
+    .local v4, "wasVisible":Z
     :goto_1
-    iget-object v10, p0, Lcom/android/systemui/volume/VolumeDialog;->mTextFooter:Landroid/view/View;
-
-    iget-boolean v9, p0, Lcom/android/systemui/volume/VolumeDialog;->mExpanded:Z
-
-    if-eqz v9, :cond_7
-
-    iget-boolean v9, p0, Lcom/android/systemui/volume/VolumeDialog;->mShowFooter:Z
-
-    if-eqz v9, :cond_7
-
-    if-nez v6, :cond_0
-
-    iget-boolean v9, p0, Lcom/android/systemui/volume/VolumeDialog;->mShowing:Z
-
-    if-eqz v9, :cond_7
-
-    if-eqz v5, :cond_7
-
-    :cond_0
-    move v9, v7
-
-    :goto_2
-    invoke-static {v10, v9}, Lcom/android/systemui/volume/Util;->setVisOrGone(Landroid/view/View;Z)V
-
-    .line 599
     iget-object v9, p0, Lcom/android/systemui/volume/VolumeDialog;->mTextFooter:Landroid/view/View;
 
-    invoke-virtual {v9}, Landroid/view/View;->getVisibility()I
+    iget-boolean v8, p0, Lcom/android/systemui/volume/VolumeDialog;->mExpanded:Z
 
-    move-result v9
+    if-eqz v8, :cond_7
 
-    if-nez v9, :cond_4
+    iget-boolean v8, p0, Lcom/android/systemui/volume/VolumeDialog;->mShowFooter:Z
+
+    if-eqz v8, :cond_7
+
+    if-nez v5, :cond_0
+
+    iget-boolean v8, p0, Lcom/android/systemui/volume/VolumeDialog;->mShowing:Z
+
+    if-eqz v8, :cond_7
+
+    if-eqz v4, :cond_7
+
+    :cond_0
+    move v8, v6
+
+    :goto_2
+    invoke-static {v9, v8}, Lcom/android/systemui/volume/Util;->setVisOrGone(Landroid/view/View;Z)V
+
+    .line 598
+    iget-object v8, p0, Lcom/android/systemui/volume/VolumeDialog;->mTextFooter:Landroid/view/View;
+
+    invoke-virtual {v8}, Landroid/view/View;->getVisibility()I
+
+    move-result v8
+
+    if-nez v8, :cond_4
+
+    .line 599
+    const/4 v1, 0x0
 
     .line 600
-    const/4 v4, 0x0
-
-    .line 601
-    .local v4, "text":Ljava/lang/String;
+    .local v1, "text":Ljava/lang/String;
     const/4 v0, 0x0
 
-    .line 602
+    .line 601
     .local v0, "action":Ljava/lang/String;
-    iget-object v9, p0, Lcom/android/systemui/volume/VolumeDialog;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
+    iget-object v8, p0, Lcom/android/systemui/volume/VolumeDialog;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
 
-    iget-object v9, v9, Lcom/android/systemui/volume/VolumeDialogController$State;->exitCondition:Landroid/service/notification/Condition;
+    iget-object v8, v8, Lcom/android/systemui/volume/VolumeDialogController$State;->exitCondition:Landroid/service/notification/Condition;
 
-    if-eqz v9, :cond_1
+    if-eqz v8, :cond_1
 
-    .line 603
-    iget-object v9, p0, Lcom/android/systemui/volume/VolumeDialog;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
+    .line 602
+    iget-object v8, p0, Lcom/android/systemui/volume/VolumeDialog;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
 
-    iget-object v9, v9, Lcom/android/systemui/volume/VolumeDialogController$State;->exitCondition:Landroid/service/notification/Condition;
+    iget-object v8, v8, Lcom/android/systemui/volume/VolumeDialogController$State;->exitCondition:Landroid/service/notification/Condition;
 
-    iget-object v9, v9, Landroid/service/notification/Condition;->id:Landroid/net/Uri;
+    iget-object v8, v8, Landroid/service/notification/Condition;->id:Landroid/net/Uri;
 
-    invoke-static {v9}, Landroid/service/notification/ZenModeConfig;->tryParseCountdownConditionId(Landroid/net/Uri;)J
+    invoke-static {v8}, Landroid/service/notification/ZenModeConfig;->tryParseCountdownConditionId(Landroid/net/Uri;)J
 
     move-result-wide v2
 
-    .line 605
+    .line 604
     .local v2, "countdown":J
-    const-wide/16 v10, 0x0
+    const-wide/16 v8, 0x0
 
-    cmp-long v9, v2, v10
+    cmp-long v8, v2, v8
 
-    if-eqz v9, :cond_8
+    if-eqz v8, :cond_1
 
-    .line 606
-    iget-object v9, p0, Lcom/android/systemui/volume/VolumeDialog;->mContext:Landroid/content/Context;
+    .line 605
+    iget-object v8, p0, Lcom/android/systemui/volume/VolumeDialog;->mContext:Landroid/content/Context;
 
-    new-array v7, v7, [Ljava/lang/Object;
+    const v9, 0x7f0c0287
+
+    new-array v6, v6, [Ljava/lang/Object;
 
     invoke-static {v2, v3}, Lcom/android/systemui/volume/Util;->getShortTime(J)Ljava/lang/String;
 
     move-result-object v10
 
-    aput-object v10, v7, v8
+    aput-object v10, v6, v7
 
-    invoke-virtual {v9, v12, v7}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 608
-    iget-object v7, p0, Lcom/android/systemui/volume/VolumeDialog;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v7, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 619
-    .end local v2    # "countdown":J
-    :cond_1
-    :goto_3
-    if-nez v4, :cond_2
-
-    .line 620
-    iget-object v7, p0, Lcom/android/systemui/volume/VolumeDialog;->mContext:Landroid/content/Context;
-
-    const v8, 0x7f0c027e
-
-    invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 622
-    :cond_2
-    if-nez v0, :cond_3
-
-    .line 623
-    iget-object v7, p0, Lcom/android/systemui/volume/VolumeDialog;->mContext:Landroid/content/Context;
-
-    const v8, 0x7f0c027f
-
-    invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 625
-    :cond_3
-    iget-object v7, p0, Lcom/android/systemui/volume/VolumeDialog;->mFootlineText:Landroid/widget/TextView;
-
-    invoke-static {v7, v4}, Lcom/android/systemui/volume/Util;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
-
-    .line 626
-    iget-object v7, p0, Lcom/android/systemui/volume/VolumeDialog;->mFootlineAction:Landroid/widget/Button;
-
-    invoke-static {v7, v0}, Lcom/android/systemui/volume/Util;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
-
-    .line 627
-    iget-object v7, p0, Lcom/android/systemui/volume/VolumeDialog;->mFootlineAction:Landroid/widget/Button;
-
-    iget-object v8, p0, Lcom/android/systemui/volume/VolumeDialog;->mTurnOffDnd:Landroid/view/View$OnClickListener;
-
-    invoke-virtual {v7, v8}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 629
-    .end local v0    # "action":Ljava/lang/String;
-    .end local v4    # "text":Ljava/lang/String;
-    :cond_4
-    iget-object v7, p0, Lcom/android/systemui/volume/VolumeDialog;->mFootlineText:Landroid/widget/TextView;
-
-    invoke-static {v7, v6}, Lcom/android/systemui/volume/Util;->setVisOrGone(Landroid/view/View;Z)V
-
-    .line 630
-    iget-object v7, p0, Lcom/android/systemui/volume/VolumeDialog;->mFootlineAction:Landroid/widget/Button;
-
-    invoke-static {v7, v6}, Lcom/android/systemui/volume/Util;->setVisOrGone(Landroid/view/View;Z)V
-
-    .line 631
-    return-void
-
-    .end local v5    # "wasVisible":Z
-    .end local v6    # "zen":Z
-    :cond_5
-    move v6, v8
-
-    .line 596
-    goto/16 :goto_0
-
-    .restart local v6    # "zen":Z
-    :cond_6
-    move v5, v8
-
-    .line 597
-    goto :goto_1
-
-    .restart local v5    # "wasVisible":Z
-    :cond_7
-    move v9, v8
-
-    .line 598
-    goto :goto_2
-
-    .line 610
-    .restart local v0    # "action":Ljava/lang/String;
-    .restart local v2    # "countdown":J
-    .restart local v4    # "text":Ljava/lang/String;
-    :cond_8
-    iget-object v9, p0, Lcom/android/systemui/volume/VolumeDialog;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
-
-    iget-object v9, v9, Lcom/android/systemui/volume/VolumeDialogController$State;->exitCondition:Landroid/service/notification/Condition;
-
-    iget-object v9, v9, Landroid/service/notification/Condition;->id:Landroid/net/Uri;
-
-    invoke-static {v9}, Landroid/service/notification/ZenModeConfig;->tryParseDowntimeConditionId(Landroid/net/Uri;)Landroid/service/notification/ZenModeConfig$DowntimeInfo;
+    invoke-virtual {v8, v9, v6}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 612
-    .local v1, "info":Landroid/service/notification/ZenModeConfig$DowntimeInfo;
-    if-eqz v1, :cond_1
+    .line 607
+    iget-object v6, p0, Lcom/android/systemui/volume/VolumeDialog;->mContext:Landroid/content/Context;
 
-    .line 613
-    iget-object v9, p0, Lcom/android/systemui/volume/VolumeDialog;->mContext:Landroid/content/Context;
+    const v7, 0x7f0c0288
 
-    new-array v7, v7, [Ljava/lang/Object;
-
-    invoke-static {v1}, Lcom/android/systemui/volume/Util;->getShortTime(Landroid/service/notification/ZenModeConfig$DowntimeInfo;)Ljava/lang/String;
-
-    move-result-object v10
-
-    aput-object v10, v7, v8
-
-    invoke-virtual {v9, v12, v7}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 615
-    iget-object v7, p0, Lcom/android/systemui/volume/VolumeDialog;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v7, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_3
+    .line 610
+    .end local v2    # "countdown":J
+    :cond_1
+    if-nez v1, :cond_2
+
+    .line 611
+    iget-object v6, p0, Lcom/android/systemui/volume/VolumeDialog;->mContext:Landroid/content/Context;
+
+    const v7, 0x7f0c027e
+
+    invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 613
+    :cond_2
+    if-nez v0, :cond_3
+
+    .line 614
+    iget-object v6, p0, Lcom/android/systemui/volume/VolumeDialog;->mContext:Landroid/content/Context;
+
+    const v7, 0x7f0c027f
+
+    invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 616
+    :cond_3
+    iget-object v6, p0, Lcom/android/systemui/volume/VolumeDialog;->mFootlineText:Landroid/widget/TextView;
+
+    invoke-static {v6, v1}, Lcom/android/systemui/volume/Util;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+
+    .line 617
+    iget-object v6, p0, Lcom/android/systemui/volume/VolumeDialog;->mFootlineAction:Landroid/widget/Button;
+
+    invoke-static {v6, v0}, Lcom/android/systemui/volume/Util;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+
+    .line 618
+    iget-object v6, p0, Lcom/android/systemui/volume/VolumeDialog;->mFootlineAction:Landroid/widget/Button;
+
+    iget-object v7, p0, Lcom/android/systemui/volume/VolumeDialog;->mTurnOffDnd:Landroid/view/View$OnClickListener;
+
+    invoke-virtual {v6, v7}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 620
+    .end local v0    # "action":Ljava/lang/String;
+    .end local v1    # "text":Ljava/lang/String;
+    :cond_4
+    iget-object v6, p0, Lcom/android/systemui/volume/VolumeDialog;->mFootlineText:Landroid/widget/TextView;
+
+    invoke-static {v6, v5}, Lcom/android/systemui/volume/Util;->setVisOrGone(Landroid/view/View;Z)V
+
+    .line 621
+    iget-object v6, p0, Lcom/android/systemui/volume/VolumeDialog;->mFootlineAction:Landroid/widget/Button;
+
+    invoke-static {v6, v5}, Lcom/android/systemui/volume/Util;->setVisOrGone(Landroid/view/View;Z)V
+
+    .line 622
+    return-void
+
+    .end local v4    # "wasVisible":Z
+    .end local v5    # "zen":Z
+    :cond_5
+    move v5, v7
+
+    .line 595
+    goto/16 :goto_0
+
+    .restart local v5    # "zen":Z
+    :cond_6
+    move v4, v7
+
+    .line 596
+    goto/16 :goto_1
+
+    .restart local v4    # "wasVisible":Z
+    :cond_7
+    move v8, v7
+
+    .line 597
+    goto :goto_2
 .end method
 
 .method private updateVolumeRowH(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)V

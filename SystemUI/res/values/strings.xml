@@ -439,7 +439,7 @@ Also, you're connected to a VPN (\"%3$s\"). Your VPN service provider can monito
     <string name="volumeui_prompt_deny">Deny</string>
     <string name="volumeui_notification_title">%1$s is the volume dialog</string>
     <string name="volumeui_notification_text">Touch to restore the original.</string>
-    <string name="volume_zen_switch_text">Block interruptions</string>
+    <string name="volume_zen_switch_text">@android:string/zen_mode_feature_name</string>
     <string name="volume_dnd_is_on">Do not disturb is on</string>
     <string name="volume_turn_off">Turn off</string>
     <string name="volume_stream_muted">%s silent</string>

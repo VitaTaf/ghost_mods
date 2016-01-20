@@ -20,6 +20,8 @@
 
 .field private final mCheckedListener:Landroid/widget/CompoundButton$OnCheckedChangeListener;
 
+.field private mConfig:Landroid/service/notification/ZenModeConfig;
+
 .field private final mContext:Landroid/content/Context;
 
 .field private mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
@@ -58,7 +60,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 44
     const-class v0, Lcom/android/systemui/volume/ZenFooter;
 
     invoke-static {v0}, Lcom/android/systemui/volume/Util;->logTag(Ljava/lang/Class;)Ljava/lang/String;
@@ -76,25 +78,25 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 63
+    .line 67
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 59
+    .line 62
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/systemui/volume/ZenFooter;->mZen:I
 
-    .line 197
+    .line 215
     new-instance v0, Lcom/android/systemui/volume/ZenFooter$5;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/volume/ZenFooter$5;-><init>(Lcom/android/systemui/volume/ZenFooter;)V
 
     iput-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mCheckedListener:Landroid/widget/CompoundButton$OnCheckedChangeListener;
 
-    .line 64
+    .line 68
     iput-object p1, p0, Lcom/android/systemui/volume/ZenFooter;->mContext:Landroid/content/Context;
 
-    .line 65
+    .line 69
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -107,14 +109,14 @@
 
     iput v0, p0, Lcom/android/systemui/volume/ZenFooter;->mSecondaryAlpha:F
 
-    .line 66
+    .line 70
     new-instance v0, Landroid/animation/LayoutTransition;
 
     invoke-direct {v0}, Landroid/animation/LayoutTransition;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mLayoutTransition:Landroid/animation/LayoutTransition;
 
-    .line 67
+    .line 71
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mLayoutTransition:Landroid/animation/LayoutTransition;
 
     new-instance v1, Landroid/animation/ValueAnimator;
@@ -131,21 +133,21 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/LayoutTransition;->setDuration(J)V
 
-    .line 68
+    .line 72
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mLayoutTransition:Landroid/animation/LayoutTransition;
 
     const/4 v1, 0x3
 
     invoke-virtual {v0, v1}, Landroid/animation/LayoutTransition;->disableTransitionType(I)V
 
-    .line 69
+    .line 73
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mLayoutTransition:Landroid/animation/LayoutTransition;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/animation/LayoutTransition;->disableTransitionType(I)V
 
-    .line 70
+    .line 74
     return-void
 .end method
 
@@ -155,63 +157,75 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 40
+    .line 43
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/ZenFooter;->setZen(I)V
 
     return-void
 .end method
 
-.method static synthetic access$100(Lcom/android/systemui/volume/ZenFooter;)Landroid/widget/Switch;
+.method static synthetic access$100(Lcom/android/systemui/volume/ZenFooter;Landroid/service/notification/ZenModeConfig;)V
+    .locals 0
+    .param p0, "x0"    # Lcom/android/systemui/volume/ZenFooter;
+    .param p1, "x1"    # Landroid/service/notification/ZenModeConfig;
+
+    .prologue
+    .line 43
+    invoke-direct {p0, p1}, Lcom/android/systemui/volume/ZenFooter;->setConfig(Landroid/service/notification/ZenModeConfig;)V
+
+    return-void
+.end method
+
+.method static synthetic access$200(Lcom/android/systemui/volume/ZenFooter;)Landroid/widget/Switch;
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/ZenFooter;
 
     .prologue
-    .line 40
+    .line 43
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mSwitch:Landroid/widget/Switch;
 
     return-object v0
 .end method
 
-.method static synthetic access$200(Lcom/android/systemui/volume/ZenFooter;)Lcom/android/systemui/volume/ZenFooter$Callback;
+.method static synthetic access$300(Lcom/android/systemui/volume/ZenFooter;)Lcom/android/systemui/volume/ZenFooter$Callback;
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/ZenFooter;
 
     .prologue
-    .line 40
+    .line 43
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mCallback:Lcom/android/systemui/volume/ZenFooter$Callback;
 
     return-object v0
 .end method
 
-.method static synthetic access$300()Ljava/lang/String;
+.method static synthetic access$400()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 40
+    .line 43
     sget-object v0, Lcom/android/systemui/volume/ZenFooter;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method static synthetic access$402(Lcom/android/systemui/volume/ZenFooter;I)I
+.method static synthetic access$502(Lcom/android/systemui/volume/ZenFooter;I)I
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/volume/ZenFooter;
     .param p1, "x1"    # I
 
     .prologue
-    .line 40
+    .line 43
     iput p1, p0, Lcom/android/systemui/volume/ZenFooter;->mZen:I
 
     return p1
 .end method
 
-.method static synthetic access$500(Lcom/android/systemui/volume/ZenFooter;Z)Z
+.method static synthetic access$600(Lcom/android/systemui/volume/ZenFooter;Z)Z
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/ZenFooter;
     .param p1, "x1"    # Z
 
     .prologue
-    .line 40
+    .line 43
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/ZenFooter;->setFooterExpanded(Z)Z
 
     move-result v0
@@ -219,12 +233,12 @@
     return v0
 .end method
 
-.method static synthetic access$600(Lcom/android/systemui/volume/ZenFooter;)Lcom/android/systemui/statusbar/policy/ZenModeController;
+.method static synthetic access$700(Lcom/android/systemui/volume/ZenFooter;)Lcom/android/systemui/statusbar/policy/ZenModeController;
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/ZenFooter;
 
     .prologue
-    .line 40
+    .line 43
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     return-object v0
@@ -236,18 +250,18 @@
     .param p1, "resId"    # I
 
     .prologue
-    .line 73
+    .line 77
     new-instance v0, Landroid/util/TypedValue;
 
     invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
-    .line 74
+    .line 78
     .local v0, "tv":Landroid/util/TypedValue;
     const/4 v1, 0x1
 
     invoke-virtual {p0, p1, v0, v1}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
 
-    .line 75
+    .line 79
     invoke-virtual {v0}, Landroid/util/TypedValue;->getFloat()F
 
     move-result v1
@@ -259,7 +273,7 @@
     .locals 2
 
     .prologue
-    .line 150
+    .line 161
     iget v0, p0, Lcom/android/systemui/volume/ZenFooter;->mZen:I
 
     const/4 v1, 0x3
@@ -281,7 +295,7 @@
     .locals 2
 
     .prologue
-    .line 154
+    .line 165
     iget v0, p0, Lcom/android/systemui/volume/ZenFooter;->mZen:I
 
     const/4 v1, 0x2
@@ -305,7 +319,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 146
+    .line 157
     iget v1, p0, Lcom/android/systemui/volume/ZenFooter;->mZen:I
 
     if-ne v1, v0, :cond_0
@@ -319,40 +333,68 @@
     goto :goto_0
 .end method
 
+.method private setConfig(Landroid/service/notification/ZenModeConfig;)V
+    .locals 1
+    .param p1, "config"    # Landroid/service/notification/ZenModeConfig;
+
+    .prologue
+    .line 147
+    iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mConfig:Landroid/service/notification/ZenModeConfig;
+
+    invoke-static {v0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 150
+    :goto_0
+    return-void
+
+    .line 148
+    :cond_0
+    iput-object p1, p0, Lcom/android/systemui/volume/ZenFooter;->mConfig:Landroid/service/notification/ZenModeConfig;
+
+    .line 149
+    invoke-virtual {p0}, Lcom/android/systemui/volume/ZenFooter;->update()V
+
+    goto :goto_0
+.end method
+
 .method private setFooterExpanded(Z)Z
     .locals 1
     .param p1, "expanded"    # Z
 
     .prologue
-    .line 167
+    .line 182
     iget-boolean v0, p0, Lcom/android/systemui/volume/ZenFooter;->mFooterExpanded:Z
 
     if-ne v0, p1, :cond_0
 
     const/4 v0, 0x0
 
-    .line 173
+    .line 188
     :goto_0
     return v0
 
-    .line 168
+    .line 183
     :cond_0
     iput-boolean p1, p0, Lcom/android/systemui/volume/ZenFooter;->mFooterExpanded:Z
 
-    .line 169
+    .line 184
     invoke-virtual {p0}, Lcom/android/systemui/volume/ZenFooter;->update()V
 
-    .line 170
+    .line 185
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mCallback:Lcom/android/systemui/volume/ZenFooter$Callback;
 
     if-eqz v0, :cond_1
 
-    .line 171
+    .line 186
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mCallback:Lcom/android/systemui/volume/ZenFooter$Callback;
 
     invoke-interface {v0}, Lcom/android/systemui/volume/ZenFooter$Callback;->onFooterExpanded()V
 
-    .line 173
+    .line 188
     :cond_1
     const/4 v0, 0x1
 
@@ -364,20 +406,20 @@
     .param p1, "zen"    # I
 
     .prologue
-    .line 136
+    .line 141
     iget v0, p0, Lcom/android/systemui/volume/ZenFooter;->mZen:I
 
     if-ne v0, p1, :cond_0
 
-    .line 139
+    .line 144
     :goto_0
     return-void
 
-    .line 137
+    .line 142
     :cond_0
     iput p1, p0, Lcom/android/systemui/volume/ZenFooter;->mZen:I
 
-    .line 138
+    .line 143
     invoke-virtual {p0}, Lcom/android/systemui/volume/ZenFooter;->update()V
 
     goto :goto_0
@@ -391,32 +433,32 @@
     .param p2, "callback"    # Lcom/android/systemui/volume/ZenFooter$Callback;
 
     .prologue
-    .line 94
+    .line 98
     iput-object p2, p0, Lcom/android/systemui/volume/ZenFooter;->mCallback:Lcom/android/systemui/volume/ZenFooter$Callback;
 
-    .line 95
+    .line 99
     iput-object p1, p0, Lcom/android/systemui/volume/ZenFooter;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
-    .line 96
+    .line 100
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mZenModePanel:Lcom/android/systemui/volume/ZenModePanel;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/volume/ZenModePanel;->init(Lcom/android/systemui/statusbar/policy/ZenModeController;)V
 
-    .line 97
+    .line 101
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mZenModePanel:Lcom/android/systemui/volume/ZenModePanel;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/ZenModePanel;->setEmbedded(Z)V
 
-    .line 98
+    .line 102
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mSwitch:Landroid/widget/Switch;
 
     iget-object v1, p0, Lcom/android/systemui/volume/ZenFooter;->mCheckedListener:Landroid/widget/CompoundButton$OnCheckedChangeListener;
 
     invoke-virtual {v0, v1}, Landroid/widget/Switch;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    .line 99
+    .line 103
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     new-instance v1, Lcom/android/systemui/volume/ZenFooter$1;
@@ -425,7 +467,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/ZenModeController;->addCallback(Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;)V
 
-    .line 109
+    .line 113
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mSwitchBar:Landroid/view/View;
 
     new-instance v1, Lcom/android/systemui/volume/ZenFooter$2;
@@ -434,7 +476,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 115
+    .line 119
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mZenModePanelMoreButton:Landroid/view/View;
 
     new-instance v1, Lcom/android/systemui/volume/ZenFooter$3;
@@ -443,7 +485,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 123
+    .line 127
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mZenModePanelDoneButton:Landroid/view/View;
 
     new-instance v1, Lcom/android/systemui/volume/ZenFooter$4;
@@ -452,7 +494,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 131
+    .line 135
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/ZenModeController;->getZen()I
@@ -461,10 +503,19 @@
 
     iput v0, p0, Lcom/android/systemui/volume/ZenFooter;->mZen:I
 
-    .line 132
+    .line 136
+    iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
+
+    invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/ZenModeController;->getConfig()Landroid/service/notification/ZenModeConfig;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mConfig:Landroid/service/notification/ZenModeConfig;
+
+    .line 137
     invoke-virtual {p0}, Lcom/android/systemui/volume/ZenFooter;->update()V
 
-    .line 133
+    .line 138
     return-void
 .end method
 
@@ -472,7 +523,7 @@
     .locals 1
 
     .prologue
-    .line 177
+    .line 192
     iget-boolean v0, p0, Lcom/android/systemui/volume/ZenFooter;->mFooterExpanded:Z
 
     return v0
@@ -482,7 +533,7 @@
     .locals 1
 
     .prologue
-    .line 142
+    .line 153
     invoke-direct {p0}, Lcom/android/systemui/volume/ZenFooter;->isZenPriority()Z
 
     move-result v0
@@ -517,15 +568,15 @@
     .locals 1
 
     .prologue
-    .line 162
+    .line 177
     invoke-super {p0}, Landroid/widget/LinearLayout;->onAttachedToWindow()V
 
-    .line 163
+    .line 178
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mLayoutTransition:Landroid/animation/LayoutTransition;
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenFooter;->setLayoutTransition(Landroid/animation/LayoutTransition;)V
 
-    .line 164
+    .line 179
     return-void
 .end method
 
@@ -533,20 +584,20 @@
     .locals 1
 
     .prologue
-    .line 155
+    .line 170
     invoke-super {p0}, Landroid/widget/LinearLayout;->onDetachedFromWindow()V
 
-    .line 156
+    .line 171
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenFooter;->setLayoutTransition(Landroid/animation/LayoutTransition;)V
 
-    .line 157
+    .line 172
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/systemui/volume/ZenFooter;->setFooterExpanded(Z)Z
 
-    .line 158
+    .line 173
     return-void
 .end method
 
@@ -554,10 +605,10 @@
     .locals 1
 
     .prologue
-    .line 80
+    .line 84
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
-    .line 81
+    .line 85
     const v0, 0x7f0f0176
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenFooter;->findViewById(I)Landroid/view/View;
@@ -566,7 +617,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mSwitchBar:Landroid/view/View;
 
-    .line 82
+    .line 86
     const v0, 0x7f0f0177
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenFooter;->findViewById(I)Landroid/view/View;
@@ -575,7 +626,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mSwitchBarIcon:Landroid/view/View;
 
-    .line 83
+    .line 87
     const v0, 0x7f0f0178
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenFooter;->findViewById(I)Landroid/view/View;
@@ -586,7 +637,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mSwitch:Landroid/widget/Switch;
 
-    .line 84
+    .line 88
     const v0, 0x7f0f0138
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenFooter;->findViewById(I)Landroid/view/View;
@@ -597,7 +648,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mZenModePanel:Lcom/android/systemui/volume/ZenModePanel;
 
-    .line 85
+    .line 89
     const v0, 0x7f0f017c
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenFooter;->findViewById(I)Landroid/view/View;
@@ -606,7 +657,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mZenModePanelButtons:Landroid/view/View;
 
-    .line 86
+    .line 90
     const v0, 0x7f0f017d
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenFooter;->findViewById(I)Landroid/view/View;
@@ -615,7 +666,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mZenModePanelMoreButton:Landroid/view/View;
 
-    .line 87
+    .line 91
     const v0, 0x7f0f017e
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenFooter;->findViewById(I)Landroid/view/View;
@@ -624,7 +675,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mZenModePanelDoneButton:Landroid/view/View;
 
-    .line 88
+    .line 92
     const v0, 0x7f0f0179
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenFooter;->findViewById(I)Landroid/view/View;
@@ -633,7 +684,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mSummary:Landroid/view/View;
 
-    .line 89
+    .line 93
     const v0, 0x7f0f017a
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenFooter;->findViewById(I)Landroid/view/View;
@@ -644,7 +695,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mSummaryLine1:Landroid/widget/TextView;
 
-    .line 90
+    .line 94
     const v0, 0x7f0f017b
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenFooter;->findViewById(I)Landroid/view/View;
@@ -655,168 +706,177 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mSummaryLine2:Landroid/widget/TextView;
 
-    .line 91
+    .line 95
     return-void
 .end method
 
 .method public update()V
-    .locals 6
+    .locals 7
 
     .prologue
     const/4 v1, 0x0
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    .line 181
+    .line 196
     invoke-virtual {p0}, Lcom/android/systemui/volume/ZenFooter;->isZen()Z
 
     move-result v0
 
-    .line 182
+    .line 197
     .local v0, "isZen":Z
-    iget-object v2, p0, Lcom/android/systemui/volume/ZenFooter;->mSwitch:Landroid/widget/Switch;
+    iget-object v3, p0, Lcom/android/systemui/volume/ZenFooter;->mSwitch:Landroid/widget/Switch;
 
-    invoke-virtual {v2, v1}, Landroid/widget/Switch;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
+    invoke-virtual {v3, v1}, Landroid/widget/Switch;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    .line 183
-    iget-object v2, p0, Lcom/android/systemui/volume/ZenFooter;->mSwitch:Landroid/widget/Switch;
+    .line 198
+    iget-object v3, p0, Lcom/android/systemui/volume/ZenFooter;->mSwitch:Landroid/widget/Switch;
 
-    invoke-virtual {v2, v0}, Landroid/widget/Switch;->setChecked(Z)V
+    invoke-virtual {v3, v0}, Landroid/widget/Switch;->setChecked(Z)V
 
-    .line 184
-    iget-object v2, p0, Lcom/android/systemui/volume/ZenFooter;->mSwitch:Landroid/widget/Switch;
+    .line 199
+    iget-object v3, p0, Lcom/android/systemui/volume/ZenFooter;->mSwitch:Landroid/widget/Switch;
 
-    iget-object v5, p0, Lcom/android/systemui/volume/ZenFooter;->mCheckedListener:Landroid/widget/CompoundButton$OnCheckedChangeListener;
+    iget-object v6, p0, Lcom/android/systemui/volume/ZenFooter;->mCheckedListener:Landroid/widget/CompoundButton$OnCheckedChangeListener;
 
-    invoke-virtual {v2, v5}, Landroid/widget/Switch;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
+    invoke-virtual {v3, v6}, Landroid/widget/Switch;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    .line 185
-    iget-object v5, p0, Lcom/android/systemui/volume/ZenFooter;->mZenModePanel:Lcom/android/systemui/volume/ZenModePanel;
+    .line 200
+    iget-object v6, p0, Lcom/android/systemui/volume/ZenFooter;->mZenModePanel:Lcom/android/systemui/volume/ZenModePanel;
 
     if-eqz v0, :cond_1
 
-    iget-boolean v2, p0, Lcom/android/systemui/volume/ZenFooter;->mFooterExpanded:Z
+    iget-boolean v3, p0, Lcom/android/systemui/volume/ZenFooter;->mFooterExpanded:Z
 
-    if-eqz v2, :cond_1
+    if-eqz v3, :cond_1
 
-    move v2, v3
+    move v3, v4
 
     :goto_0
-    invoke-static {v5, v2}, Lcom/android/systemui/volume/Util;->setVisOrGone(Landroid/view/View;Z)V
+    invoke-static {v6, v3}, Lcom/android/systemui/volume/Util;->setVisOrGone(Landroid/view/View;Z)V
 
-    .line 186
-    iget-object v5, p0, Lcom/android/systemui/volume/ZenFooter;->mZenModePanelButtons:Landroid/view/View;
+    .line 201
+    iget-object v6, p0, Lcom/android/systemui/volume/ZenFooter;->mZenModePanelButtons:Landroid/view/View;
 
     if-eqz v0, :cond_2
 
-    iget-boolean v2, p0, Lcom/android/systemui/volume/ZenFooter;->mFooterExpanded:Z
+    iget-boolean v3, p0, Lcom/android/systemui/volume/ZenFooter;->mFooterExpanded:Z
 
-    if-eqz v2, :cond_2
+    if-eqz v3, :cond_2
 
-    move v2, v3
+    move v3, v4
 
     :goto_1
-    invoke-static {v5, v2}, Lcom/android/systemui/volume/Util;->setVisOrGone(Landroid/view/View;Z)V
+    invoke-static {v6, v3}, Lcom/android/systemui/volume/Util;->setVisOrGone(Landroid/view/View;Z)V
 
-    .line 187
-    iget-object v2, p0, Lcom/android/systemui/volume/ZenFooter;->mSummary:Landroid/view/View;
+    .line 202
+    iget-object v3, p0, Lcom/android/systemui/volume/ZenFooter;->mSummary:Landroid/view/View;
 
     if-eqz v0, :cond_3
 
-    iget-boolean v5, p0, Lcom/android/systemui/volume/ZenFooter;->mFooterExpanded:Z
+    iget-boolean v6, p0, Lcom/android/systemui/volume/ZenFooter;->mFooterExpanded:Z
 
-    if-nez v5, :cond_3
+    if-nez v6, :cond_3
 
     :goto_2
-    invoke-static {v2, v3}, Lcom/android/systemui/volume/Util;->setVisOrGone(Landroid/view/View;Z)V
+    invoke-static {v3, v4}, Lcom/android/systemui/volume/Util;->setVisOrGone(Landroid/view/View;Z)V
 
-    .line 188
-    iget-object v3, p0, Lcom/android/systemui/volume/ZenFooter;->mSwitchBarIcon:Landroid/view/View;
+    .line 203
+    iget-object v4, p0, Lcom/android/systemui/volume/ZenFooter;->mSwitchBarIcon:Landroid/view/View;
 
     if-eqz v0, :cond_4
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    const/high16 v3, 0x3f800000    # 1.0f
 
     :goto_3
-    invoke-virtual {v3, v2}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {v4, v3}, Landroid/view/View;->setAlpha(F)V
 
-    .line 189
+    .line 204
     invoke-direct {p0}, Lcom/android/systemui/volume/ZenFooter;->isZenPriority()Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_5
+    if-eqz v3, :cond_5
 
-    iget-object v2, p0, Lcom/android/systemui/volume/ZenFooter;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Lcom/android/systemui/volume/ZenFooter;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0c011d
+    const v4, 0x7f0c011d
 
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 193
+    .line 209
     .local v1, "line1":Ljava/lang/String;
     :cond_0
     :goto_4
-    iget-object v2, p0, Lcom/android/systemui/volume/ZenFooter;->mSummaryLine1:Landroid/widget/TextView;
+    iget-object v3, p0, Lcom/android/systemui/volume/ZenFooter;->mSummaryLine1:Landroid/widget/TextView;
 
-    invoke-static {v2, v1}, Lcom/android/systemui/volume/Util;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v3, v1}, Lcom/android/systemui/volume/Util;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
-    .line 194
-    iget-object v2, p0, Lcom/android/systemui/volume/ZenFooter;->mSummaryLine2:Landroid/widget/TextView;
+    .line 210
+    iget-object v3, p0, Lcom/android/systemui/volume/ZenFooter;->mContext:Landroid/content/Context;
 
-    iget-object v3, p0, Lcom/android/systemui/volume/ZenFooter;->mZenModePanel:Lcom/android/systemui/volume/ZenModePanel;
+    iget-object v4, p0, Lcom/android/systemui/volume/ZenFooter;->mConfig:Landroid/service/notification/ZenModeConfig;
 
-    invoke-virtual {v3}, Lcom/android/systemui/volume/ZenModePanel;->getExitConditionText()Ljava/lang/String;
+    invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
-    move-result-object v3
+    move-result v5
 
-    invoke-static {v2, v3}, Lcom/android/systemui/volume/Util;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v3, v4, v5}, Landroid/service/notification/ZenModeConfig;->getConditionSummary(Landroid/content/Context;Landroid/service/notification/ZenModeConfig;I)Ljava/lang/String;
 
-    .line 195
+    move-result-object v2
+
+    .line 212
+    .local v2, "line2":Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/systemui/volume/ZenFooter;->mSummaryLine2:Landroid/widget/TextView;
+
+    invoke-static {v3, v2}, Lcom/android/systemui/volume/Util;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+
+    .line 213
     return-void
 
     .end local v1    # "line1":Ljava/lang/String;
+    .end local v2    # "line2":Ljava/lang/String;
     :cond_1
-    move v2, v4
+    move v3, v5
 
-    .line 185
+    .line 200
     goto :goto_0
 
     :cond_2
-    move v2, v4
+    move v3, v5
 
-    .line 186
+    .line 201
     goto :goto_1
 
     :cond_3
-    move v3, v4
+    move v4, v5
 
-    .line 187
+    .line 202
     goto :goto_2
 
-    .line 188
+    .line 203
     :cond_4
-    iget v2, p0, Lcom/android/systemui/volume/ZenFooter;->mSecondaryAlpha:F
+    iget v3, p0, Lcom/android/systemui/volume/ZenFooter;->mSecondaryAlpha:F
 
     goto :goto_3
 
-    .line 189
+    .line 204
     :cond_5
     invoke-direct {p0}, Lcom/android/systemui/volume/ZenFooter;->isZenAlarms()Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_6
+    if-eqz v3, :cond_6
 
-    iget-object v2, p0, Lcom/android/systemui/volume/ZenFooter;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Lcom/android/systemui/volume/ZenFooter;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0c028c
+    const v4, 0x7f0c028c
 
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -825,15 +885,15 @@
     :cond_6
     invoke-direct {p0}, Lcom/android/systemui/volume/ZenFooter;->isZenNone()Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_0
+    if-eqz v3, :cond_0
 
-    iget-object v2, p0, Lcom/android/systemui/volume/ZenFooter;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Lcom/android/systemui/volume/ZenFooter;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0c011c
+    const v4, 0x7f0c011c
 
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 

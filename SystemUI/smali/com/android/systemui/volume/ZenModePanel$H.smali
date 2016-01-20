@@ -23,17 +23,17 @@
     .locals 1
 
     .prologue
-    .line 802
+    .line 841
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel$H;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
-    .line 803
+    .line 842
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 804
+    .line 843
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .param p2, "x1"    # Lcom/android/systemui/volume/ZenModePanel$1;
 
     .prologue
-    .line 797
+    .line 837
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/ZenModePanel$H;-><init>(Lcom/android/systemui/volume/ZenModePanel;)V
 
     return-void
@@ -56,14 +56,14 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 808
+    .line 847
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_1
 
-    .line 809
+    .line 848
     iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel$H;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -73,48 +73,30 @@
     check-cast v0, [Landroid/service/notification/Condition;
 
     # invokes: Lcom/android/systemui/volume/ZenModePanel;->handleUpdateConditions([Landroid/service/notification/Condition;)V
-    invoke-static {v1, v0}, Lcom/android/systemui/volume/ZenModePanel;->access$1600(Lcom/android/systemui/volume/ZenModePanel;[Landroid/service/notification/Condition;)V
+    invoke-static {v1, v0}, Lcom/android/systemui/volume/ZenModePanel;->access$1700(Lcom/android/systemui/volume/ZenModePanel;[Landroid/service/notification/Condition;)V
 
-    .line 815
+    .line 852
     :cond_0
     :goto_0
     return-void
 
-    .line 810
+    .line 849
     :cond_1
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_2
+    if-ne v0, v1, :cond_0
 
-    .line 811
+    .line 850
     iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel$H;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    check-cast v0, Landroid/service/notification/Condition;
+    check-cast v0, Landroid/service/notification/ZenModeConfig$ZenRule;
 
-    # invokes: Lcom/android/systemui/volume/ZenModePanel;->handleExitConditionChanged(Landroid/service/notification/Condition;)V
-    invoke-static {v1, v0}, Lcom/android/systemui/volume/ZenModePanel;->access$1700(Lcom/android/systemui/volume/ZenModePanel;Landroid/service/notification/Condition;)V
-
-    goto :goto_0
-
-    .line 812
-    :cond_2
-    iget v0, p1, Landroid/os/Message;->what:I
-
-    const/4 v1, 0x3
-
-    if-ne v0, v1, :cond_0
-
-    .line 813
-    iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$H;->this$0:Lcom/android/systemui/volume/ZenModePanel;
-
-    iget v1, p1, Landroid/os/Message;->arg1:I
-
-    # invokes: Lcom/android/systemui/volume/ZenModePanel;->handleUpdateZen(I)V
-    invoke-static {v0, v1}, Lcom/android/systemui/volume/ZenModePanel;->access$1800(Lcom/android/systemui/volume/ZenModePanel;I)V
+    # invokes: Lcom/android/systemui/volume/ZenModePanel;->handleUpdateManualRule(Landroid/service/notification/ZenModeConfig$ZenRule;)V
+    invoke-static {v1, v0}, Lcom/android/systemui/volume/ZenModePanel;->access$1800(Lcom/android/systemui/volume/ZenModePanel;Landroid/service/notification/ZenModeConfig$ZenRule;)V
 
     goto :goto_0
 .end method

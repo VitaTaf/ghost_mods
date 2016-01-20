@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 99
+    .line 103
     iput-object p1, p0, Lcom/android/systemui/volume/ZenFooter$1;->this$0:Lcom/android/systemui/volume/ZenFooter;
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;-><init>()V
@@ -33,17 +33,18 @@
 
 
 # virtual methods
-.method public onExitConditionChanged(Landroid/service/notification/Condition;)V
+.method public onConfigChanged(Landroid/service/notification/ZenModeConfig;)V
     .locals 1
-    .param p1, "exitCondition"    # Landroid/service/notification/Condition;
+    .param p1, "config"    # Landroid/service/notification/ZenModeConfig;
 
     .prologue
-    .line 106
+    .line 110
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter$1;->this$0:Lcom/android/systemui/volume/ZenFooter;
 
-    invoke-virtual {v0}, Lcom/android/systemui/volume/ZenFooter;->update()V
+    # invokes: Lcom/android/systemui/volume/ZenFooter;->setConfig(Landroid/service/notification/ZenModeConfig;)V
+    invoke-static {v0, p1}, Lcom/android/systemui/volume/ZenFooter;->access$100(Lcom/android/systemui/volume/ZenFooter;Landroid/service/notification/ZenModeConfig;)V
 
-    .line 107
+    .line 111
     return-void
 .end method
 
@@ -52,12 +53,12 @@
     .param p1, "zen"    # I
 
     .prologue
-    .line 102
+    .line 106
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter$1;->this$0:Lcom/android/systemui/volume/ZenFooter;
 
     # invokes: Lcom/android/systemui/volume/ZenFooter;->setZen(I)V
     invoke-static {v0, p1}, Lcom/android/systemui/volume/ZenFooter;->access$000(Lcom/android/systemui/volume/ZenFooter;I)V
 
-    .line 103
+    .line 107
     return-void
 .end method

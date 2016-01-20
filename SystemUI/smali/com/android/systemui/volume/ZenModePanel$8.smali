@@ -20,22 +20,18 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/volume/ZenModePanel;
 
-.field final synthetic val$condition:Landroid/service/notification/Condition;
-
-.field final synthetic val$isForever:Z
+.field final synthetic val$realConditionId:Landroid/net/Uri;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/volume/ZenModePanel;ZLandroid/service/notification/Condition;)V
+.method constructor <init>(Lcom/android/systemui/volume/ZenModePanel;Landroid/net/Uri;)V
     .locals 0
 
     .prologue
-    .line 747
+    .line 791
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel$8;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
-    iput-boolean p2, p0, Lcom/android/systemui/volume/ZenModePanel$8;->val$isForever:Z
-
-    iput-object p3, p0, Lcom/android/systemui/volume/ZenModePanel$8;->val$condition:Landroid/service/notification/Condition;
+    iput-object p2, p0, Lcom/android/systemui/volume/ZenModePanel$8;->val$realConditionId:Landroid/net/Uri;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -45,32 +41,30 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 4
 
     .prologue
-    .line 750
+    .line 794
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$8;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
     invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$500(Lcom/android/systemui/volume/ZenModePanel;)Lcom/android/systemui/statusbar/policy/ZenModeController;
 
-    move-result-object v1
+    move-result-object v0
 
-    iget-boolean v0, p0, Lcom/android/systemui/volume/ZenModePanel$8;->val$isForever:Z
+    iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel$8;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
-    if-eqz v0, :cond_0
+    # getter for: Lcom/android/systemui/volume/ZenModePanel;->mSessionZen:I
+    invoke-static {v1}, Lcom/android/systemui/volume/ZenModePanel;->access$1500(Lcom/android/systemui/volume/ZenModePanel;)I
 
-    const/4 v0, 0x0
+    move-result v1
 
-    :goto_0
-    invoke-interface {v1, v0}, Lcom/android/systemui/statusbar/policy/ZenModeController;->setExitCondition(Landroid/service/notification/Condition;)V
+    iget-object v2, p0, Lcom/android/systemui/volume/ZenModePanel$8;->val$realConditionId:Landroid/net/Uri;
 
-    .line 751
+    const-string v3, "ZenModePanel.selectCondition"
+
+    invoke-interface {v0, v1, v2, v3}, Lcom/android/systemui/statusbar/policy/ZenModeController;->setZen(ILandroid/net/Uri;Ljava/lang/String;)V
+
+    .line 795
     return-void
-
-    .line 750
-    :cond_0
-    iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$8;->val$condition:Landroid/service/notification/Condition;
-
-    goto :goto_0
 .end method

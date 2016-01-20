@@ -23,9 +23,7 @@
 
 .field public info:Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
 
-.field public isAutomatic:Z
-
-.field public isManual:Z
+.field public subscribed:Z
 
 
 # direct methods
@@ -35,16 +33,16 @@
     .param p2, "component"    # Landroid/content/ComponentName;
 
     .prologue
-    .line 607
+    .line 365
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 608
+    .line 366
     iput-object p1, p0, Lcom/android/server/notification/ConditionProviders$ConditionRecord;->id:Landroid/net/Uri;
 
-    .line 609
+    .line 367
     iput-object p2, p0, Lcom/android/server/notification/ConditionProviders$ConditionRecord;->component:Landroid/content/ComponentName;
 
-    .line 610
+    .line 368
     return-void
 .end method
 
@@ -55,7 +53,7 @@
     .param p3, "x2"    # Lcom/android/server/notification/ConditionProviders$1;
 
     .prologue
-    .line 599
+    .line 358
     invoke-direct {p0, p1, p2}, Lcom/android/server/notification/ConditionProviders$ConditionRecord;-><init>(Landroid/net/Uri;Landroid/content/ComponentName;)V
 
     return-void
@@ -67,7 +65,7 @@
     .locals 3
 
     .prologue
-    .line 614
+    .line 372
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "ConditionRecord[id="
@@ -90,30 +88,22 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
+    move-result-object v1
+
+    const-string v2, ",subscribed="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-boolean v2, p0, Lcom/android/server/notification/ConditionProviders$ConditionRecord;->subscribed:Z
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
     move-result-object v0
 
-    .line 616
+    .line 375
     .local v0, "sb":Ljava/lang/StringBuilder;
-    iget-boolean v1, p0, Lcom/android/server/notification/ConditionProviders$ConditionRecord;->isAutomatic:Z
-
-    if-eqz v1, :cond_0
-
-    const-string v1, ",automatic"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 617
-    :cond_0
-    iget-boolean v1, p0, Lcom/android/server/notification/ConditionProviders$ConditionRecord;->isManual:Z
-
-    if-eqz v1, :cond_1
-
-    const-string v1, ",manual"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 618
-    :cond_1
     const/16 v1, 0x5d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;

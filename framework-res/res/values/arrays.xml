@@ -720,8 +720,7 @@
     </string-array>
     <string-array name="config_system_condition_providers">
         <item>countdown</item>
-        <item>downtime</item>
-        <item>next_alarm</item>
+        <item>schedule</item>
     </string-array>
     <string-array name="config_sms_convert_destination_number_support">
         <item>false</item>

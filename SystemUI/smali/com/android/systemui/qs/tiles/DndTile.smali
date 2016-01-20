@@ -185,7 +185,18 @@
     return-object v0
 .end method
 
-.method static synthetic access$700(Lcom/android/systemui/qs/tiles/DndTile;)Lcom/android/systemui/statusbar/policy/ZenModeController;
+.method static synthetic access$700(Lcom/android/systemui/qs/tiles/DndTile;)Ljava/lang/String;
+    .locals 1
+    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DndTile;
+
+    .prologue
+    .line 38
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->TAG:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic access$800(Lcom/android/systemui/qs/tiles/DndTile;)Lcom/android/systemui/statusbar/policy/ZenModeController;
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DndTile;
 
@@ -196,7 +207,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$802(Lcom/android/systemui/qs/tiles/DndTile;Z)Z
+.method static synthetic access$902(Lcom/android/systemui/qs/tiles/DndTile;Z)Z
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DndTile;
     .param p1, "x1"    # Z
@@ -374,10 +385,12 @@
 .end method
 
 .method public handleClick()V
-    .locals 2
+    .locals 4
 
     .prologue
-    const/4 v1, 0x1
+    const/4 v3, 0x0
+
+    const/4 v2, 0x1
 
     .line 87
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mState:Lcom/android/systemui/qs/QSTile$State;
@@ -393,7 +406,9 @@
 
     const/4 v1, 0x0
 
-    invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/ZenModeController;->setZen(I)V
+    iget-object v2, p0, Lcom/android/systemui/qs/tiles/DndTile;->TAG:Ljava/lang/String;
+
+    invoke-interface {v0, v1, v3, v2}, Lcom/android/systemui/statusbar/policy/ZenModeController;->setZen(ILandroid/net/Uri;Ljava/lang/String;)V
 
     .line 93
     :goto_0
@@ -403,10 +418,12 @@
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
-    invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/ZenModeController;->setZen(I)V
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/DndTile;->TAG:Ljava/lang/String;
+
+    invoke-interface {v0, v2, v3, v1}, Lcom/android/systemui/statusbar/policy/ZenModeController;->setZen(ILandroid/net/Uri;Ljava/lang/String;)V
 
     .line 91
-    invoke-virtual {p0, v1}, Lcom/android/systemui/qs/tiles/DndTile;->showDetail(Z)V
+    invoke-virtual {p0, v2}, Lcom/android/systemui/qs/tiles/DndTile;->showDetail(Z)V
 
     goto :goto_0
 .end method

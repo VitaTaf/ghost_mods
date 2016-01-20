@@ -44,7 +44,7 @@
     .line 76
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl$2;->this$0:Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;
 
-    # invokes: Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->fireExitConditionChanged()V
+    # invokes: Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->updateZenModeConfig()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->access$100(Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;)V
 
     .line 77

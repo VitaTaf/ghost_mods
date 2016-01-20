@@ -74,7 +74,7 @@
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DndTile;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
-    invoke-static {v1}, Lcom/android/systemui/qs/tiles/DndTile;->access$700(Lcom/android/systemui/qs/tiles/DndTile;)Lcom/android/systemui/statusbar/policy/ZenModeController;
+    invoke-static {v1}, Lcom/android/systemui/qs/tiles/DndTile;->access$800(Lcom/android/systemui/qs/tiles/DndTile;)Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     move-result-object v1
 
@@ -171,7 +171,7 @@
     const/4 v1, 0x1
 
     # setter for: Lcom/android/systemui/qs/tiles/DndTile;->mShowingDetail:Z
-    invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/DndTile;->access$802(Lcom/android/systemui/qs/tiles/DndTile;Z)Z
+    invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/DndTile;->access$902(Lcom/android/systemui/qs/tiles/DndTile;Z)Z
 
     .line 223
     return-void
@@ -188,18 +188,18 @@
     const/4 v1, 0x0
 
     # setter for: Lcom/android/systemui/qs/tiles/DndTile;->mShowingDetail:Z
-    invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/DndTile;->access$802(Lcom/android/systemui/qs/tiles/DndTile;Z)Z
+    invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/DndTile;->access$902(Lcom/android/systemui/qs/tiles/DndTile;Z)Z
 
     .line 228
     return-void
 .end method
 
 .method public setToggleState(Z)V
-    .locals 2
+    .locals 4
     .param p1, "state"    # Z
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v3, 0x0
 
     .line 201
     if-nez p1, :cond_0
@@ -208,16 +208,25 @@
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DndTile;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
-    invoke-static {v0}, Lcom/android/systemui/qs/tiles/DndTile;->access$700(Lcom/android/systemui/qs/tiles/DndTile;)Lcom/android/systemui/statusbar/policy/ZenModeController;
+    invoke-static {v0}, Lcom/android/systemui/qs/tiles/DndTile;->access$800(Lcom/android/systemui/qs/tiles/DndTile;)Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     move-result-object v0
 
-    invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/ZenModeController;->setZen(I)V
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
+
+    # getter for: Lcom/android/systemui/qs/tiles/DndTile;->TAG:Ljava/lang/String;
+    invoke-static {v2}, Lcom/android/systemui/qs/tiles/DndTile;->access$700(Lcom/android/systemui/qs/tiles/DndTile;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v0, v3, v1, v2}, Lcom/android/systemui/statusbar/policy/ZenModeController;->setZen(ILandroid/net/Uri;Ljava/lang/String;)V
 
     .line 203
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
-    invoke-virtual {v0, v1}, Lcom/android/systemui/qs/tiles/DndTile;->showDetail(Z)V
+    invoke-virtual {v0, v3}, Lcom/android/systemui/qs/tiles/DndTile;->showDetail(Z)V
 
     .line 205
     :cond_0

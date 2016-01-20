@@ -15,10 +15,13 @@
 .method public abstract addCallback(Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;)V
 .end method
 
+.method public abstract getConfig()Landroid/service/notification/ZenModeConfig;
+.end method
+
 .method public abstract getEffectsSuppressor()Landroid/content/ComponentName;
 .end method
 
-.method public abstract getExitCondition()Landroid/service/notification/Condition;
+.method public abstract getManualRule()Landroid/service/notification/ZenModeConfig$ZenRule;
 .end method
 
 .method public abstract getZen()I
@@ -36,11 +39,8 @@
 .method public abstract requestConditions(Z)V
 .end method
 
-.method public abstract setExitCondition(Landroid/service/notification/Condition;)V
-.end method
-
 .method public abstract setUserId(I)V
 .end method
 
-.method public abstract setZen(I)V
+.method public abstract setZen(ILandroid/net/Uri;Ljava/lang/String;)V
 .end method

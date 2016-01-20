@@ -117,23 +117,3 @@
 
     goto :goto_0
 .end method
-
-.method public setValue(I)V
-    .locals 2
-    .param p1, "value"    # I
-
-    .prologue
-    .line 44
-    iget-object v0, p0, Lcom/android/systemui/qs/GlobalSetting;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/systemui/qs/GlobalSetting;->mSettingName:Ljava/lang/String;
-
-    invoke-static {v0, v1, p1}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
-
-    .line 45
-    return-void
-.end method
