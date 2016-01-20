@@ -206,7 +206,7 @@
 
     .prologue
     .line 74
-    invoke-direct {p0}, Landroid/media/session/MediaSession;->dispatchStop()V
+    invoke-direct {p0}, Landroid/media/session/MediaSession;->dispatchPause()V
 
     return-void
 .end method
@@ -217,7 +217,7 @@
 
     .prologue
     .line 74
-    invoke-direct {p0}, Landroid/media/session/MediaSession;->dispatchNext()V
+    invoke-direct {p0}, Landroid/media/session/MediaSession;->dispatchStop()V
 
     return-void
 .end method
@@ -228,7 +228,7 @@
 
     .prologue
     .line 74
-    invoke-direct {p0}, Landroid/media/session/MediaSession;->dispatchPrevious()V
+    invoke-direct {p0}, Landroid/media/session/MediaSession;->dispatchNext()V
 
     return-void
 .end method
@@ -239,7 +239,7 @@
 
     .prologue
     .line 74
-    invoke-direct {p0}, Landroid/media/session/MediaSession;->dispatchFastForward()V
+    invoke-direct {p0}, Landroid/media/session/MediaSession;->dispatchPrevious()V
 
     return-void
 .end method
@@ -250,12 +250,23 @@
 
     .prologue
     .line 74
+    invoke-direct {p0}, Landroid/media/session/MediaSession;->dispatchFastForward()V
+
+    return-void
+.end method
+
+.method static synthetic access$1500(Landroid/media/session/MediaSession;)V
+    .locals 0
+    .param p0, "x0"    # Landroid/media/session/MediaSession;
+
+    .prologue
+    .line 74
     invoke-direct {p0}, Landroid/media/session/MediaSession;->dispatchRewind()V
 
     return-void
 .end method
 
-.method static synthetic access$1500(Landroid/media/session/MediaSession;J)V
+.method static synthetic access$1600(Landroid/media/session/MediaSession;J)V
     .locals 1
     .param p0, "x0"    # Landroid/media/session/MediaSession;
     .param p1, "x1"    # J
@@ -267,7 +278,7 @@
     return-void
 .end method
 
-.method static synthetic access$1600(Landroid/media/session/MediaSession;Landroid/media/Rating;)V
+.method static synthetic access$1700(Landroid/media/session/MediaSession;Landroid/media/Rating;)V
     .locals 0
     .param p0, "x0"    # Landroid/media/session/MediaSession;
     .param p1, "x1"    # Landroid/media/Rating;
@@ -279,7 +290,7 @@
     return-void
 .end method
 
-.method static synthetic access$1700(Landroid/media/session/MediaSession;Ljava/lang/String;Landroid/os/Bundle;)V
+.method static synthetic access$1800(Landroid/media/session/MediaSession;Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 0
     .param p0, "x0"    # Landroid/media/session/MediaSession;
     .param p1, "x1"    # Ljava/lang/String;
@@ -292,18 +303,6 @@
     return-void
 .end method
 
-.method static synthetic access$1800(Landroid/media/session/MediaSession;I)V
-    .locals 0
-    .param p0, "x0"    # Landroid/media/session/MediaSession;
-    .param p1, "x1"    # I
-
-    .prologue
-    .line 74
-    invoke-direct {p0, p1}, Landroid/media/session/MediaSession;->dispatchAdjustVolume(I)V
-
-    return-void
-.end method
-
 .method static synthetic access$1900(Landroid/media/session/MediaSession;I)V
     .locals 0
     .param p0, "x0"    # Landroid/media/session/MediaSession;
@@ -311,7 +310,7 @@
 
     .prologue
     .line 74
-    invoke-direct {p0, p1}, Landroid/media/session/MediaSession;->dispatchSetVolumeTo(I)V
+    invoke-direct {p0, p1}, Landroid/media/session/MediaSession;->dispatchAdjustVolume(I)V
 
     return-void
 .end method
@@ -327,7 +326,19 @@
     return-object v0
 .end method
 
-.method static synthetic access$2100(Landroid/media/session/MediaSession;)Ljava/lang/Object;
+.method static synthetic access$2000(Landroid/media/session/MediaSession;I)V
+    .locals 0
+    .param p0, "x0"    # Landroid/media/session/MediaSession;
+    .param p1, "x1"    # I
+
+    .prologue
+    .line 74
+    invoke-direct {p0, p1}, Landroid/media/session/MediaSession;->dispatchSetVolumeTo(I)V
+
+    return-void
+.end method
+
+.method static synthetic access$2200(Landroid/media/session/MediaSession;)Ljava/lang/Object;
     .locals 1
     .param p0, "x0"    # Landroid/media/session/MediaSession;
 
@@ -338,7 +349,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2200(Landroid/media/session/MediaSession;)Landroid/media/VolumeProvider;
+.method static synthetic access$2300(Landroid/media/session/MediaSession;)Landroid/media/VolumeProvider;
     .locals 1
     .param p0, "x0"    # Landroid/media/session/MediaSession;
 
@@ -412,7 +423,20 @@
     return-void
 .end method
 
-.method static synthetic access$800(Landroid/media/session/MediaSession;J)V
+.method static synthetic access$800(Landroid/media/session/MediaSession;Landroid/net/Uri;Landroid/os/Bundle;)V
+    .locals 0
+    .param p0, "x0"    # Landroid/media/session/MediaSession;
+    .param p1, "x1"    # Landroid/net/Uri;
+    .param p2, "x2"    # Landroid/os/Bundle;
+
+    .prologue
+    .line 74
+    invoke-direct {p0, p1, p2}, Landroid/media/session/MediaSession;->dispatchPlayFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
+
+    return-void
+.end method
+
+.method static synthetic access$900(Landroid/media/session/MediaSession;J)V
     .locals 1
     .param p0, "x0"    # Landroid/media/session/MediaSession;
     .param p1, "x1"    # J
@@ -424,23 +448,12 @@
     return-void
 .end method
 
-.method static synthetic access$900(Landroid/media/session/MediaSession;)V
-    .locals 0
-    .param p0, "x0"    # Landroid/media/session/MediaSession;
-
-    .prologue
-    .line 74
-    invoke-direct {p0}, Landroid/media/session/MediaSession;->dispatchPause()V
-
-    return-void
-.end method
-
 .method private dispatchAdjustVolume(I)V
     .locals 2
     .param p1, "direction"    # I
 
     .prologue
-    .line 572
+    .line 576
     const/16 v0, 0x10
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -449,7 +462,7 @@
 
     invoke-direct {p0, v0, v1}, Landroid/media/session/MediaSession;->postToCallback(ILjava/lang/Object;)V
 
-    .line 573
+    .line 577
     return-void
 .end method
 
@@ -459,12 +472,12 @@
     .param p2, "args"    # Landroid/os/Bundle;
 
     .prologue
-    .line 564
+    .line 568
     const/16 v0, 0xd
 
     invoke-direct {p0, v0, p1, p2}, Landroid/media/session/MediaSession;->postToCallback(ILjava/lang/Object;Landroid/os/Bundle;)V
 
-    .line 565
+    .line 569
     return-void
 .end method
 
@@ -472,12 +485,12 @@
     .locals 1
 
     .prologue
-    .line 548
+    .line 552
     const/16 v0, 0x9
 
     invoke-direct {p0, v0}, Landroid/media/session/MediaSession;->postToCallback(I)V
 
-    .line 549
+    .line 553
     return-void
 .end method
 
@@ -486,12 +499,12 @@
     .param p1, "mediaButtonIntent"    # Landroid/content/Intent;
 
     .prologue
-    .line 568
+    .line 572
     const/16 v0, 0xe
 
     invoke-direct {p0, v0, p1}, Landroid/media/session/MediaSession;->postToCallback(ILjava/lang/Object;)V
 
-    .line 569
+    .line 573
     return-void
 .end method
 
@@ -499,12 +512,12 @@
     .locals 1
 
     .prologue
-    .line 540
+    .line 544
     const/4 v0, 0x7
 
     invoke-direct {p0, v0}, Landroid/media/session/MediaSession;->postToCallback(I)V
 
-    .line 541
+    .line 545
     return-void
 .end method
 
@@ -512,12 +525,12 @@
     .locals 1
 
     .prologue
-    .line 532
+    .line 536
     const/4 v0, 0x5
 
     invoke-direct {p0, v0}, Landroid/media/session/MediaSession;->postToCallback(I)V
 
-    .line 533
+    .line 537
     return-void
 .end method
 
@@ -564,16 +577,31 @@
     return-void
 .end method
 
+.method private dispatchPlayFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
+    .locals 1
+    .param p1, "uri"    # Landroid/net/Uri;
+    .param p2, "extras"    # Landroid/os/Bundle;
+
+    .prologue
+    .line 528
+    const/16 v0, 0x12
+
+    invoke-direct {p0, v0, p1, p2}, Landroid/media/session/MediaSession;->postToCallback(ILjava/lang/Object;Landroid/os/Bundle;)V
+
+    .line 529
+    return-void
+.end method
+
 .method private dispatchPrevious()V
     .locals 1
 
     .prologue
-    .line 544
+    .line 548
     const/16 v0, 0x8
 
     invoke-direct {p0, v0}, Landroid/media/session/MediaSession;->postToCallback(I)V
 
-    .line 545
+    .line 549
     return-void
 .end method
 
@@ -582,12 +610,12 @@
     .param p1, "rating"    # Landroid/media/Rating;
 
     .prologue
-    .line 560
+    .line 564
     const/16 v0, 0xc
 
     invoke-direct {p0, v0, p1}, Landroid/media/session/MediaSession;->postToCallback(ILjava/lang/Object;)V
 
-    .line 561
+    .line 565
     return-void
 .end method
 
@@ -595,12 +623,12 @@
     .locals 1
 
     .prologue
-    .line 552
+    .line 556
     const/16 v0, 0xa
 
     invoke-direct {p0, v0}, Landroid/media/session/MediaSession;->postToCallback(I)V
 
-    .line 553
+    .line 557
     return-void
 .end method
 
@@ -609,7 +637,7 @@
     .param p1, "pos"    # J
 
     .prologue
-    .line 556
+    .line 560
     const/16 v0, 0xb
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -618,7 +646,7 @@
 
     invoke-direct {p0, v0, v1}, Landroid/media/session/MediaSession;->postToCallback(ILjava/lang/Object;)V
 
-    .line 557
+    .line 561
     return-void
 .end method
 
@@ -627,7 +655,7 @@
     .param p1, "volume"    # I
 
     .prologue
-    .line 576
+    .line 580
     const/16 v0, 0x11
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -636,7 +664,7 @@
 
     invoke-direct {p0, v0, v1}, Landroid/media/session/MediaSession;->postToCallback(ILjava/lang/Object;)V
 
-    .line 577
+    .line 581
     return-void
 .end method
 
@@ -645,7 +673,7 @@
     .param p1, "id"    # J
 
     .prologue
-    .line 528
+    .line 532
     const/4 v0, 0x4
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -654,7 +682,7 @@
 
     invoke-direct {p0, v0, v1}, Landroid/media/session/MediaSession;->postToCallback(ILjava/lang/Object;)V
 
-    .line 529
+    .line 533
     return-void
 .end method
 
@@ -662,12 +690,12 @@
     .locals 1
 
     .prologue
-    .line 536
+    .line 540
     const/4 v0, 0x6
 
     invoke-direct {p0, v0}, Landroid/media/session/MediaSession;->postToCallback(I)V
 
-    .line 537
+    .line 541
     return-void
 .end method
 
@@ -676,23 +704,23 @@
     .param p0, "state"    # I
 
     .prologue
-    .line 606
+    .line 610
     packed-switch p0, :pswitch_data_0
 
-    .line 616
+    .line 620
     :pswitch_0
     const/4 v0, 0x0
 
     :goto_0
     return v0
 
-    .line 614
+    .line 618
     :pswitch_1
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 606
+    .line 610
     nop
 
     :pswitch_data_0
@@ -715,18 +743,18 @@
     .param p3, "resultCb"    # Landroid/os/ResultReceiver;
 
     .prologue
-    .line 584
+    .line 588
     new-instance v0, Landroid/media/session/MediaSession$Command;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/media/session/MediaSession$Command;-><init>(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/ResultReceiver;)V
 
-    .line 585
+    .line 589
     .local v0, "cmd":Landroid/media/session/MediaSession$Command;
     const/16 v1, 0xf
 
     invoke-direct {p0, v1, v0}, Landroid/media/session/MediaSession;->postToCallback(ILjava/lang/Object;)V
 
-    .line 586
+    .line 590
     return-void
 .end method
 
@@ -735,12 +763,12 @@
     .param p1, "what"    # I
 
     .prologue
-    .line 580
+    .line 584
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Landroid/media/session/MediaSession;->postToCallback(ILjava/lang/Object;)V
 
-    .line 581
+    .line 585
     return-void
 .end method
 
@@ -750,12 +778,12 @@
     .param p2, "obj"    # Ljava/lang/Object;
 
     .prologue
-    .line 589
+    .line 593
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Landroid/media/session/MediaSession;->postToCallback(ILjava/lang/Object;Landroid/os/Bundle;)V
 
-    .line 590
+    .line 594
     return-void
 .end method
 
@@ -766,30 +794,30 @@
     .param p3, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 593
+    .line 597
     iget-object v1, p0, Landroid/media/session/MediaSession;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 594
+    .line 598
     :try_start_0
     iget-object v0, p0, Landroid/media/session/MediaSession;->mCallback:Landroid/media/session/MediaSession$CallbackMessageHandler;
 
     if-eqz v0, :cond_0
 
-    .line 595
+    .line 599
     iget-object v0, p0, Landroid/media/session/MediaSession;->mCallback:Landroid/media/session/MediaSession$CallbackMessageHandler;
 
     invoke-virtual {v0, p1, p2, p3}, Landroid/media/session/MediaSession$CallbackMessageHandler;->post(ILjava/lang/Object;Landroid/os/Bundle;)V
 
-    .line 597
+    .line 601
     :cond_0
     monitor-exit v1
 
-    .line 598
+    .line 602
     return-void
 
-    .line 597
+    .line 601
     :catchall_0
     move-exception v0
 

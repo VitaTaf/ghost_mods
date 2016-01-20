@@ -1018,7 +1018,11 @@
     :cond_3
     if-eqz v2, :cond_1
 
-    if-eq v1, v2, :cond_1
+    invoke-virtual {v1, v2}, Ljava/lang/Integer;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-nez v8, :cond_1
 
     .line 1978
     new-instance v8, Ljava/lang/IllegalArgumentException;
@@ -1036,7 +1040,11 @@
     :cond_4
     if-eqz v0, :cond_2
 
-    if-eq v0, v6, :cond_2
+    invoke-virtual {v0, v6}, Ljava/lang/Integer;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-nez v8, :cond_2
 
     .line 1991
     new-instance v8, Ljava/lang/IllegalArgumentException;

@@ -64,7 +64,7 @@
 
     iput-object v0, p0, Landroid/media/tv/TvInputService;->mCallbacks:Landroid/os/RemoteCallbackList;
 
-    .line 1301
+    .line 1310
     return-void
 .end method
 
@@ -109,22 +109,22 @@
     .param p0, "keyCode"    # I
 
     .prologue
-    .line 1283
+    .line 1292
     sparse-switch p0, :sswitch_data_0
 
-    .line 1298
+    .line 1307
     const/4 v0, 0x0
 
     :goto_0
     return v0
 
-    .line 1296
+    .line 1305
     :sswitch_0
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 1283
+    .line 1292
     nop
 
     :sswitch_data_0

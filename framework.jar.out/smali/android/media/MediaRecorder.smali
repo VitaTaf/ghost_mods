@@ -608,51 +608,37 @@
 .end method
 
 .method public setCaptureRate(D)V
-    .locals 7
+    .locals 3
     .param p1, "fps"    # D
 
     .prologue
-    .line 458
-    const-string/jumbo v4, "time-lapse-enable=1"
-
-    invoke-direct {p0, v4}, Landroid/media/MediaRecorder;->setParameter(Ljava/lang/String;)V
-
-    .line 460
-    const-wide/high16 v4, 0x3ff0000000000000L    # 1.0
-
-    div-double v0, v4, p1
-
-    .line 461
-    .local v0, "timeBetweenFrameCapture":D
-    const-wide v4, 0x412e848000000000L    # 1000000.0
-
-    mul-double/2addr v4, v0
-
-    double-to-long v2, v4
-
-    .line 462
-    .local v2, "timeBetweenFrameCaptureUs":J
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v5, "time-between-time-lapse-frame-capture="
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-direct {p0, v4}, Landroid/media/MediaRecorder;->setParameter(Ljava/lang/String;)V
-
     .line 463
+    const-string/jumbo v0, "time-lapse-enable=1"
+
+    invoke-direct {p0, v0}, Landroid/media/MediaRecorder;->setParameter(Ljava/lang/String;)V
+
+    .line 464
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v1, "time-lapse-fps="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1, p2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Landroid/media/MediaRecorder;->setParameter(Ljava/lang/String;)V
+
+    .line 465
     return-void
 .end method
 

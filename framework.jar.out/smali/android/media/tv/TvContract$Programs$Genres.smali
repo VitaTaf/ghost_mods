@@ -66,133 +66,133 @@
     .locals 2
 
     .prologue
-    .line 1079
+    .line 1167
     new-instance v0, Landroid/util/ArraySet;
 
     invoke-direct {v0}, Landroid/util/ArraySet;-><init>()V
 
     sput-object v0, Landroid/media/tv/TvContract$Programs$Genres;->CANONICAL_GENRES:Landroid/util/ArraySet;
 
-    .line 1081
+    .line 1169
     sget-object v0, Landroid/media/tv/TvContract$Programs$Genres;->CANONICAL_GENRES:Landroid/util/ArraySet;
 
     const-string v1, "FAMILY_KIDS"
 
     invoke-virtual {v0, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1082
+    .line 1170
     sget-object v0, Landroid/media/tv/TvContract$Programs$Genres;->CANONICAL_GENRES:Landroid/util/ArraySet;
 
     const-string v1, "SPORTS"
 
     invoke-virtual {v0, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1083
+    .line 1171
     sget-object v0, Landroid/media/tv/TvContract$Programs$Genres;->CANONICAL_GENRES:Landroid/util/ArraySet;
 
     const-string v1, "SHOPPING"
 
     invoke-virtual {v0, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1084
+    .line 1172
     sget-object v0, Landroid/media/tv/TvContract$Programs$Genres;->CANONICAL_GENRES:Landroid/util/ArraySet;
 
     const-string v1, "MOVIES"
 
     invoke-virtual {v0, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1085
+    .line 1173
     sget-object v0, Landroid/media/tv/TvContract$Programs$Genres;->CANONICAL_GENRES:Landroid/util/ArraySet;
 
     const-string v1, "COMEDY"
 
     invoke-virtual {v0, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1086
+    .line 1174
     sget-object v0, Landroid/media/tv/TvContract$Programs$Genres;->CANONICAL_GENRES:Landroid/util/ArraySet;
 
     const-string v1, "TRAVEL"
 
     invoke-virtual {v0, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1087
+    .line 1175
     sget-object v0, Landroid/media/tv/TvContract$Programs$Genres;->CANONICAL_GENRES:Landroid/util/ArraySet;
 
     const-string v1, "DRAMA"
 
     invoke-virtual {v0, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1088
+    .line 1176
     sget-object v0, Landroid/media/tv/TvContract$Programs$Genres;->CANONICAL_GENRES:Landroid/util/ArraySet;
 
     const-string v1, "EDUCATION"
 
     invoke-virtual {v0, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1089
+    .line 1177
     sget-object v0, Landroid/media/tv/TvContract$Programs$Genres;->CANONICAL_GENRES:Landroid/util/ArraySet;
 
     const-string v1, "ANIMAL_WILDLIFE"
 
     invoke-virtual {v0, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1090
+    .line 1178
     sget-object v0, Landroid/media/tv/TvContract$Programs$Genres;->CANONICAL_GENRES:Landroid/util/ArraySet;
 
     const-string v1, "NEWS"
 
     invoke-virtual {v0, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1091
+    .line 1179
     sget-object v0, Landroid/media/tv/TvContract$Programs$Genres;->CANONICAL_GENRES:Landroid/util/ArraySet;
 
     const-string v1, "GAMING"
 
     invoke-virtual {v0, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1092
+    .line 1180
     sget-object v0, Landroid/media/tv/TvContract$Programs$Genres;->CANONICAL_GENRES:Landroid/util/ArraySet;
 
     const-string v1, "ARTS"
 
     invoke-virtual {v0, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1093
+    .line 1181
     sget-object v0, Landroid/media/tv/TvContract$Programs$Genres;->CANONICAL_GENRES:Landroid/util/ArraySet;
 
     const-string v1, "ENTERTAINMENT"
 
     invoke-virtual {v0, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1094
+    .line 1182
     sget-object v0, Landroid/media/tv/TvContract$Programs$Genres;->CANONICAL_GENRES:Landroid/util/ArraySet;
 
     const-string v1, "LIFE_STYLE"
 
     invoke-virtual {v0, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1095
+    .line 1183
     sget-object v0, Landroid/media/tv/TvContract$Programs$Genres;->CANONICAL_GENRES:Landroid/util/ArraySet;
 
     const-string v1, "MUSIC"
 
     invoke-virtual {v0, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1096
+    .line 1184
     sget-object v0, Landroid/media/tv/TvContract$Programs$Genres;->CANONICAL_GENRES:Landroid/util/ArraySet;
 
     const-string v1, "PREMIER"
 
     invoke-virtual {v0, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1097
+    .line 1185
     sget-object v0, Landroid/media/tv/TvContract$Programs$Genres;->CANONICAL_GENRES:Landroid/util/ArraySet;
 
     const-string v1, "TECH_SCIENCE"
 
     invoke-virtual {v0, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1098
+    .line 1186
     return-void
 .end method
 
@@ -200,7 +200,7 @@
     .locals 0
 
     .prologue
-    .line 1100
+    .line 1188
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -211,7 +211,7 @@
     .param p0, "genres"    # Ljava/lang/String;
 
     .prologue
-    .line 1127
+    .line 1215
     const-string v0, "\\s*,\\s*"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
@@ -226,16 +226,16 @@
     .param p0, "genres"    # [Ljava/lang/String;
 
     .prologue
-    .line 1110
+    .line 1198
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1111
+    .line 1199
     .local v4, "sb":Ljava/lang/StringBuilder;
     const-string v5, ""
 
-    .line 1112
+    .line 1200
     .local v5, "separator":Ljava/lang/String;
     move-object v0, p0
 
@@ -251,7 +251,7 @@
 
     aget-object v1, v0, v2
 
-    .line 1113
+    .line 1201
     .local v1, "genre":Ljava/lang/String;
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -259,15 +259,15 @@
 
     invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1114
+    .line 1202
     const-string v5, ","
 
-    .line 1112
+    .line 1200
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1116
+    .line 1204
     .end local v1    # "genre":Ljava/lang/String;
     :cond_0
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -282,7 +282,7 @@
     .param p0, "genre"    # Ljava/lang/String;
 
     .prologue
-    .line 1139
+    .line 1227
     sget-object v0, Landroid/media/tv/TvContract$Programs$Genres;->CANONICAL_GENRES:Landroid/util/ArraySet;
 
     invoke-virtual {v0, p0}, Landroid/util/ArraySet;->contains(Ljava/lang/Object;)Z

@@ -200,30 +200,30 @@
     .param p1, "action"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 1130
+    .line 1138
     iget-object v1, p0, Landroid/media/tv/TvInputService$Session;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1131
+    .line 1139
     :try_start_0
     iget-object v0, p0, Landroid/media/tv/TvInputService$Session;->mSessionCallback:Landroid/media/tv/ITvInputSessionCallback;
 
     if-nez v0, :cond_0
 
-    .line 1133
+    .line 1141
     iget-object v0, p0, Landroid/media/tv/TvInputService$Session;->mPendingActions:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1142
+    .line 1150
     :goto_0
     monitor-exit v1
 
-    .line 1143
+    .line 1151
     return-void
 
-    .line 1135
+    .line 1143
     :cond_0
     iget-object v0, p0, Landroid/media/tv/TvInputService$Session;->mHandler:Landroid/os/Handler;
 
@@ -237,12 +237,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 1136
+    .line 1144
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     goto :goto_0
 
-    .line 1142
+    .line 1150
     :catchall_0
     move-exception v0
 
@@ -252,7 +252,7 @@
 
     throw v0
 
-    .line 1139
+    .line 1147
     :cond_1
     :try_start_1
     iget-object v0, p0, Landroid/media/tv/TvInputService$Session;->mHandler:Landroid/os/Handler;
@@ -269,16 +269,16 @@
     .param p1, "callback"    # Landroid/media/tv/ITvInputSessionCallback;
 
     .prologue
-    .line 1120
+    .line 1128
     iget-object v3, p0, Landroid/media/tv/TvInputService$Session;->mLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 1121
+    .line 1129
     :try_start_0
     iput-object p1, p0, Landroid/media/tv/TvInputService$Session;->mSessionCallback:Landroid/media/tv/ITvInputSessionCallback;
 
-    .line 1122
+    .line 1130
     iget-object v2, p0, Landroid/media/tv/TvInputService$Session;->mPendingActions:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -299,13 +299,13 @@
 
     check-cast v1, Ljava/lang/Runnable;
 
-    .line 1123
+    .line 1131
     .local v1, "runnable":Ljava/lang/Runnable;
     invoke-interface {v1}, Ljava/lang/Runnable;->run()V
 
     goto :goto_0
 
-    .line 1126
+    .line 1134
     .end local v0    # "i$":Ljava/util/Iterator;
     .end local v1    # "runnable":Ljava/lang/Runnable;
     :catchall_0
@@ -317,7 +317,7 @@
 
     throw v2
 
-    .line 1125
+    .line 1133
     .restart local v0    # "i$":Ljava/util/Iterator;
     :cond_0
     :try_start_1
@@ -325,12 +325,12 @@
 
     invoke-interface {v2}, Ljava/util/List;->clear()V
 
-    .line 1126
+    .line 1134
     monitor-exit v3
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1127
+    .line 1135
     return-void
 .end method
 
@@ -511,157 +511,196 @@
 .end method
 
 .method dispatchInputEvent(Landroid/view/InputEvent;Landroid/view/InputEventReceiver;)I
-    .locals 6
+    .locals 9
     .param p1, "event"    # Landroid/view/InputEvent;
     .param p2, "receiver"    # Landroid/view/InputEventReceiver;
 
     .prologue
-    const/4 v4, 0x1
+    const/4 v5, 0x0
+
+    const/4 v6, 0x1
 
     .line 1075
     const/4 v0, 0x0
 
     .line 1076
     .local v0, "isNavigationKey":Z
-    instance-of v5, p1, Landroid/view/KeyEvent;
+    const/4 v3, 0x0
 
-    if-eqz v5, :cond_1
+    .line 1077
+    .local v3, "skipDispatchToOverlayView":Z
+    instance-of v7, p1, Landroid/view/KeyEvent;
+
+    if-eqz v7, :cond_5
 
     move-object v1, p1
 
-    .line 1077
+    .line 1078
     check-cast v1, Landroid/view/KeyEvent;
 
-    .line 1078
+    .line 1079
     .local v1, "keyEvent":Landroid/view/KeyEvent;
+    iget-object v7, p0, Landroid/media/tv/TvInputService$Session;->mDispatcherState:Landroid/view/KeyEvent$DispatcherState;
+
+    invoke-virtual {v1, p0, v7, p0}, Landroid/view/KeyEvent;->dispatch(Landroid/view/KeyEvent$Callback;Landroid/view/KeyEvent$DispatcherState;Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_0
+
+    .line 1123
+    .end local v1    # "keyEvent":Landroid/view/KeyEvent;
+    :goto_0
+    return v6
+
+    .line 1082
+    .restart local v1    # "keyEvent":Landroid/view/KeyEvent;
+    :cond_0
     invoke-virtual {v1}, Landroid/view/KeyEvent;->getKeyCode()I
 
-    move-result v5
+    move-result v7
 
-    invoke-static {v5}, Landroid/media/tv/TvInputService;->isNavigationKey(I)Z
+    invoke-static {v7}, Landroid/media/tv/TvInputService;->isNavigationKey(I)Z
 
     move-result v0
 
-    .line 1079
-    iget-object v5, p0, Landroid/media/tv/TvInputService$Session;->mDispatcherState:Landroid/view/KeyEvent$DispatcherState;
+    .line 1087
+    invoke-virtual {v1}, Landroid/view/KeyEvent;->getKeyCode()I
 
-    invoke-virtual {v1, p0, v5, p0}, Landroid/view/KeyEvent;->dispatch(Landroid/view/KeyEvent$Callback;Landroid/view/KeyEvent$DispatcherState;Ljava/lang/Object;)Z
+    move-result v7
 
-    move-result v5
+    invoke-static {v7}, Landroid/view/KeyEvent;->isMediaKey(I)Z
 
-    if-eqz v5, :cond_2
+    move-result v7
 
-    .line 1115
-    .end local v1    # "keyEvent":Landroid/view/KeyEvent;
-    :cond_0
-    :goto_0
-    return v4
+    if-nez v7, :cond_1
 
-    .line 1082
+    invoke-virtual {v1}, Landroid/view/KeyEvent;->getKeyCode()I
+
+    move-result v7
+
+    const/16 v8, 0xde
+
+    if-ne v7, v8, :cond_4
+
     :cond_1
-    instance-of v5, p1, Landroid/view/MotionEvent;
+    move v3, v6
 
-    if-eqz v5, :cond_2
+    .line 1106
+    .end local v1    # "keyEvent":Landroid/view/KeyEvent;
+    :cond_2
+    :goto_1
+    iget-object v7, p0, Landroid/media/tv/TvInputService$Session;->mOverlayViewContainer:Landroid/widget/FrameLayout;
+
+    if-eqz v7, :cond_3
+
+    iget-object v7, p0, Landroid/media/tv/TvInputService$Session;->mOverlayViewContainer:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v7}, Landroid/widget/FrameLayout;->isAttachedToWindow()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_3
+
+    if-eqz v3, :cond_8
+
+    :cond_3
+    move v6, v5
+
+    .line 1108
+    goto :goto_0
+
+    .restart local v1    # "keyEvent":Landroid/view/KeyEvent;
+    :cond_4
+    move v3, v5
+
+    .line 1087
+    goto :goto_1
+
+    .line 1089
+    .end local v1    # "keyEvent":Landroid/view/KeyEvent;
+    :cond_5
+    instance-of v7, p1, Landroid/view/MotionEvent;
+
+    if-eqz v7, :cond_2
 
     move-object v2, p1
 
-    .line 1083
+    .line 1090
     check-cast v2, Landroid/view/MotionEvent;
 
-    .line 1084
+    .line 1091
     .local v2, "motionEvent":Landroid/view/MotionEvent;
     invoke-virtual {v2}, Landroid/view/MotionEvent;->getSource()I
 
-    move-result v3
+    move-result v4
 
-    .line 1085
-    .local v3, "source":I
+    .line 1092
+    .local v4, "source":I
     invoke-virtual {v2}, Landroid/view/MotionEvent;->isTouchEvent()Z
 
-    move-result v5
+    move-result v7
 
-    if-eqz v5, :cond_4
+    if-eqz v7, :cond_6
 
-    .line 1086
+    .line 1093
     invoke-virtual {p0, v2}, Landroid/media/tv/TvInputService$Session;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    move-result v5
+    move-result v7
 
-    if-nez v5, :cond_0
-
-    .line 1099
-    .end local v2    # "motionEvent":Landroid/view/MotionEvent;
-    .end local v3    # "source":I
-    :cond_2
-    iget-object v5, p0, Landroid/media/tv/TvInputService$Session;->mOverlayViewContainer:Landroid/widget/FrameLayout;
-
-    if-eqz v5, :cond_3
-
-    iget-object v5, p0, Landroid/media/tv/TvInputService$Session;->mOverlayViewContainer:Landroid/widget/FrameLayout;
-
-    invoke-virtual {v5}, Landroid/widget/FrameLayout;->isAttachedToWindow()Z
-
-    move-result v5
-
-    if-nez v5, :cond_6
-
-    .line 1100
-    :cond_3
-    const/4 v4, 0x0
+    if-eqz v7, :cond_2
 
     goto :goto_0
 
-    .line 1089
-    .restart local v2    # "motionEvent":Landroid/view/MotionEvent;
-    .restart local v3    # "source":I
-    :cond_4
-    and-int/lit8 v5, v3, 0x4
+    .line 1096
+    :cond_6
+    and-int/lit8 v7, v4, 0x4
 
-    if-eqz v5, :cond_5
+    if-eqz v7, :cond_7
 
-    .line 1090
+    .line 1097
     invoke-virtual {p0, v2}, Landroid/media/tv/TvInputService$Session;->onTrackballEvent(Landroid/view/MotionEvent;)Z
 
-    move-result v5
+    move-result v7
 
-    if-eqz v5, :cond_2
+    if-eqz v7, :cond_2
 
     goto :goto_0
 
-    .line 1094
-    :cond_5
+    .line 1101
+    :cond_7
     invoke-virtual {p0, v2}, Landroid/media/tv/TvInputService$Session;->onGenericMotionEvent(Landroid/view/MotionEvent;)Z
 
-    move-result v5
+    move-result v7
 
-    if-eqz v5, :cond_2
+    if-eqz v7, :cond_2
 
     goto :goto_0
 
-    .line 1102
+    .line 1110
     .end local v2    # "motionEvent":Landroid/view/MotionEvent;
-    .end local v3    # "source":I
-    :cond_6
+    .end local v4    # "source":I
+    :cond_8
     iget-object v5, p0, Landroid/media/tv/TvInputService$Session;->mOverlayViewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v5}, Landroid/widget/FrameLayout;->hasWindowFocus()Z
 
     move-result v5
 
-    if-nez v5, :cond_7
+    if-nez v5, :cond_9
 
-    .line 1103
+    .line 1111
     iget-object v5, p0, Landroid/media/tv/TvInputService$Session;->mOverlayViewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v5}, Landroid/widget/FrameLayout;->getViewRootImpl()Landroid/view/ViewRootImpl;
 
     move-result-object v5
 
-    invoke-virtual {v5, v4, v4}, Landroid/view/ViewRootImpl;->windowFocusChanged(ZZ)V
+    invoke-virtual {v5, v6, v6}, Landroid/view/ViewRootImpl;->windowFocusChanged(ZZ)V
 
-    .line 1105
-    :cond_7
-    if-eqz v0, :cond_8
+    .line 1113
+    :cond_9
+    if-eqz v0, :cond_a
 
     iget-object v5, p0, Landroid/media/tv/TvInputService$Session;->mOverlayViewContainer:Landroid/widget/FrameLayout;
 
@@ -669,9 +708,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_8
+    if-eqz v5, :cond_a
 
-    .line 1111
+    .line 1119
     iget-object v5, p0, Landroid/media/tv/TvInputService$Session;->mOverlayViewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v5}, Landroid/widget/FrameLayout;->getViewRootImpl()Landroid/view/ViewRootImpl;
@@ -682,20 +721,20 @@
 
     goto :goto_0
 
-    .line 1114
-    :cond_8
-    iget-object v4, p0, Landroid/media/tv/TvInputService$Session;->mOverlayViewContainer:Landroid/widget/FrameLayout;
+    .line 1122
+    :cond_a
+    iget-object v5, p0, Landroid/media/tv/TvInputService$Session;->mOverlayViewContainer:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v4}, Landroid/widget/FrameLayout;->getViewRootImpl()Landroid/view/ViewRootImpl;
+    invoke-virtual {v5}, Landroid/widget/FrameLayout;->getViewRootImpl()Landroid/view/ViewRootImpl;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v4, p1, p2}, Landroid/view/ViewRootImpl;->dispatchInputEvent(Landroid/view/InputEvent;Landroid/view/InputEventReceiver;)V
+    invoke-virtual {v5, p1, p2}, Landroid/view/ViewRootImpl;->dispatchInputEvent(Landroid/view/InputEvent;Landroid/view/InputEventReceiver;)V
 
-    .line 1115
-    const/4 v4, -0x1
+    .line 1123
+    const/4 v6, -0x1
 
-    goto :goto_0
+    goto/16 :goto_0
 .end method
 
 .method dispatchSurfaceChanged(III)V

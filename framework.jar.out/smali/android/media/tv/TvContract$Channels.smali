@@ -36,6 +36,14 @@
 
 .field public static final COLUMN_INTERNAL_PROVIDER_DATA:Ljava/lang/String; = "internal_provider_data"
 
+.field public static final COLUMN_INTERNAL_PROVIDER_FLAG1:Ljava/lang/String; = "internal_provider_flag1"
+
+.field public static final COLUMN_INTERNAL_PROVIDER_FLAG2:Ljava/lang/String; = "internal_provider_flag2"
+
+.field public static final COLUMN_INTERNAL_PROVIDER_FLAG3:Ljava/lang/String; = "internal_provider_flag3"
+
+.field public static final COLUMN_INTERNAL_PROVIDER_FLAG4:Ljava/lang/String; = "internal_provider_flag4"
+
 .field public static final COLUMN_LOCKED:Ljava/lang/String; = "locked"
 
 .field public static final COLUMN_NETWORK_AFFILIATION:Ljava/lang/String; = "network_affiliation"
@@ -271,7 +279,7 @@
     .locals 0
 
     .prologue
-    .line 748
+    .line 792
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -32,17 +32,17 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 1192
+    .line 1200
     invoke-direct {p0, p1}, Landroid/media/tv/TvInputService$Session;-><init>(Landroid/content/Context;)V
 
-    .line 1211
+    .line 1219
     new-instance v0, Landroid/media/tv/TvInputService$HardwareSession$1;
 
     invoke-direct {v0, p0}, Landroid/media/tv/TvInputService$HardwareSession$1;-><init>(Landroid/media/tv/TvInputService$HardwareSession;)V
 
     iput-object v0, p0, Landroid/media/tv/TvInputService$HardwareSession;->mHardwareSessionCallback:Landroid/media/tv/TvInputManager$SessionCallback;
 
-    .line 1193
+    .line 1201
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .param p0, "x0"    # Landroid/media/tv/TvInputService$HardwareSession;
 
     .prologue
-    .line 1184
+    .line 1192
     iget-object v0, p0, Landroid/media/tv/TvInputService$HardwareSession;->mProxySessionCallback:Landroid/media/tv/ITvInputSessionCallback;
 
     return-object v0
@@ -63,7 +63,7 @@
     .param p1, "x1"    # Landroid/media/tv/ITvInputSessionCallback;
 
     .prologue
-    .line 1184
+    .line 1192
     iput-object p1, p0, Landroid/media/tv/TvInputService$HardwareSession;->mProxySessionCallback:Landroid/media/tv/ITvInputSessionCallback;
 
     return-object p1
@@ -74,7 +74,7 @@
     .param p0, "x0"    # Landroid/media/tv/TvInputService$HardwareSession;
 
     .prologue
-    .line 1184
+    .line 1192
     iget-object v0, p0, Landroid/media/tv/TvInputService$HardwareSession;->mServiceHandler:Landroid/os/Handler;
 
     return-object v0
@@ -86,7 +86,7 @@
     .param p1, "x1"    # Landroid/os/Handler;
 
     .prologue
-    .line 1184
+    .line 1192
     iput-object p1, p0, Landroid/media/tv/TvInputService$HardwareSession;->mServiceHandler:Landroid/os/Handler;
 
     return-object p1
@@ -97,7 +97,7 @@
     .param p0, "x0"    # Landroid/media/tv/TvInputService$HardwareSession;
 
     .prologue
-    .line 1184
+    .line 1192
     iget-object v0, p0, Landroid/media/tv/TvInputService$HardwareSession;->mHardwareSessionCallback:Landroid/media/tv/TvInputManager$SessionCallback;
 
     return-object v0
@@ -108,7 +108,7 @@
     .param p0, "x0"    # Landroid/media/tv/TvInputService$HardwareSession;
 
     .prologue
-    .line 1184
+    .line 1192
     iget-object v0, p0, Landroid/media/tv/TvInputService$HardwareSession;->mHardwareSession:Landroid/media/tv/TvInputManager$Session;
 
     return-object v0
@@ -120,7 +120,7 @@
     .param p1, "x1"    # Landroid/media/tv/TvInputManager$Session;
 
     .prologue
-    .line 1184
+    .line 1192
     iput-object p1, p0, Landroid/media/tv/TvInputService$HardwareSession;->mHardwareSession:Landroid/media/tv/TvInputManager$Session;
 
     return-object p1
@@ -131,7 +131,7 @@
     .param p0, "x0"    # Landroid/media/tv/TvInputService$HardwareSession;
 
     .prologue
-    .line 1184
+    .line 1192
     iget-object v0, p0, Landroid/media/tv/TvInputService$HardwareSession;->mProxySession:Landroid/media/tv/ITvInputSession;
 
     return-object v0
@@ -143,7 +143,7 @@
     .param p1, "x1"    # Landroid/media/tv/ITvInputSession;
 
     .prologue
-    .line 1184
+    .line 1192
     iput-object p1, p0, Landroid/media/tv/TvInputService$HardwareSession;->mProxySession:Landroid/media/tv/ITvInputSession;
 
     return-object p1
@@ -158,7 +158,7 @@
     .locals 0
 
     .prologue
-    .line 1264
+    .line 1273
     return-void
 .end method
 
@@ -167,7 +167,7 @@
     .param p1, "reason"    # I
 
     .prologue
-    .line 1278
+    .line 1287
     return-void
 .end method
 
@@ -176,14 +176,14 @@
     .param p1, "surface"    # Landroid/view/Surface;
 
     .prologue
-    .line 1256
+    .line 1265
     const-string v0, "TvInputService"
 
     const-string/jumbo v1, "onSetSurface() should not be called in HardwareProxySession."
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1257
+    .line 1266
     const/4 v0, 0x0
 
     return v0

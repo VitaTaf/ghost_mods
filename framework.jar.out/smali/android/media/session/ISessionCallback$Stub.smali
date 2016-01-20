@@ -26,19 +26,19 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.media.session.ISessionCallback"
 
-.field static final TRANSACTION_onAdjustVolume:I = 0x10
+.field static final TRANSACTION_onAdjustVolume:I = 0x11
 
 .field static final TRANSACTION_onCommand:I = 0x1
 
-.field static final TRANSACTION_onCustomAction:I = 0xf
+.field static final TRANSACTION_onCustomAction:I = 0x10
 
-.field static final TRANSACTION_onFastForward:I = 0xb
+.field static final TRANSACTION_onFastForward:I = 0xc
 
 .field static final TRANSACTION_onMediaButton:I = 0x2
 
-.field static final TRANSACTION_onNext:I = 0x9
+.field static final TRANSACTION_onNext:I = 0xa
 
-.field static final TRANSACTION_onPause:I = 0x7
+.field static final TRANSACTION_onPause:I = 0x8
 
 .field static final TRANSACTION_onPlay:I = 0x3
 
@@ -46,19 +46,21 @@
 
 .field static final TRANSACTION_onPlayFromSearch:I = 0x5
 
-.field static final TRANSACTION_onPrevious:I = 0xa
+.field static final TRANSACTION_onPlayFromUri:I = 0x6
 
-.field static final TRANSACTION_onRate:I = 0xe
+.field static final TRANSACTION_onPrevious:I = 0xb
 
-.field static final TRANSACTION_onRewind:I = 0xc
+.field static final TRANSACTION_onRate:I = 0xf
 
-.field static final TRANSACTION_onSeekTo:I = 0xd
+.field static final TRANSACTION_onRewind:I = 0xd
 
-.field static final TRANSACTION_onSetVolumeTo:I = 0x11
+.field static final TRANSACTION_onSeekTo:I = 0xe
 
-.field static final TRANSACTION_onSkipToTrack:I = 0x6
+.field static final TRANSACTION_onSetVolumeTo:I = 0x12
 
-.field static final TRANSACTION_onStop:I = 0x8
+.field static final TRANSACTION_onSkipToTrack:I = 0x7
+
+.field static final TRANSACTION_onStop:I = 0x9
 
 
 # direct methods
@@ -152,7 +154,7 @@
     .line 41
     sparse-switch p1, :sswitch_data_0
 
-    .line 225
+    .line 245
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v4
@@ -422,159 +424,31 @@
     invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 132
-    invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v0
-
-    .line 133
-    .local v0, "_arg0":J
-    invoke-virtual {p0, v0, v1}, Landroid/media/session/ISessionCallback$Stub;->onSkipToTrack(J)V
-
-    goto/16 :goto_0
-
-    .line 138
-    .end local v0    # "_arg0":J
-    :sswitch_7
-    const-string v5, "android.media.session.ISessionCallback"
-
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 139
-    invoke-virtual {p0}, Landroid/media/session/ISessionCallback$Stub;->onPause()V
-
-    goto/16 :goto_0
-
-    .line 144
-    :sswitch_8
-    const-string v5, "android.media.session.ISessionCallback"
-
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 145
-    invoke-virtual {p0}, Landroid/media/session/ISessionCallback$Stub;->onStop()V
-
-    goto/16 :goto_0
-
-    .line 150
-    :sswitch_9
-    const-string v5, "android.media.session.ISessionCallback"
-
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 151
-    invoke-virtual {p0}, Landroid/media/session/ISessionCallback$Stub;->onNext()V
-
-    goto/16 :goto_0
-
-    .line 156
-    :sswitch_a
-    const-string v5, "android.media.session.ISessionCallback"
-
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 157
-    invoke-virtual {p0}, Landroid/media/session/ISessionCallback$Stub;->onPrevious()V
-
-    goto/16 :goto_0
-
-    .line 162
-    :sswitch_b
-    const-string v5, "android.media.session.ISessionCallback"
-
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 163
-    invoke-virtual {p0}, Landroid/media/session/ISessionCallback$Stub;->onFastForward()V
-
-    goto/16 :goto_0
-
-    .line 168
-    :sswitch_c
-    const-string v5, "android.media.session.ISessionCallback"
-
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 169
-    invoke-virtual {p0}, Landroid/media/session/ISessionCallback$Stub;->onRewind()V
-
-    goto/16 :goto_0
-
-    .line 174
-    :sswitch_d
-    const-string v5, "android.media.session.ISessionCallback"
-
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 176
-    invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v0
-
-    .line 177
-    .restart local v0    # "_arg0":J
-    invoke-virtual {p0, v0, v1}, Landroid/media/session/ISessionCallback$Stub;->onSeekTo(J)V
-
-    goto/16 :goto_0
-
-    .line 182
-    .end local v0    # "_arg0":J
-    :sswitch_e
-    const-string v5, "android.media.session.ISessionCallback"
-
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 184
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
     if-eqz v5, :cond_6
 
-    .line 185
-    sget-object v5, Landroid/media/Rating;->CREATOR:Landroid/os/Parcelable$Creator;
+    .line 133
+    sget-object v5, Landroid/net/Uri;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v5, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Landroid/media/Rating;
+    check-cast v0, Landroid/net/Uri;
 
-    .line 190
-    .local v0, "_arg0":Landroid/media/Rating;
+    .line 139
+    .local v0, "_arg0":Landroid/net/Uri;
     :goto_7
-    invoke-virtual {p0, v0}, Landroid/media/session/ISessionCallback$Stub;->onRate(Landroid/media/Rating;)V
-
-    goto/16 :goto_0
-
-    .line 188
-    .end local v0    # "_arg0":Landroid/media/Rating;
-    :cond_6
-    const/4 v0, 0x0
-
-    .restart local v0    # "_arg0":Landroid/media/Rating;
-    goto :goto_7
-
-    .line 195
-    .end local v0    # "_arg0":Landroid/media/Rating;
-    :sswitch_f
-    const-string v5, "android.media.session.ISessionCallback"
-
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 197
-    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 199
-    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
     if-eqz v5, :cond_7
 
-    .line 200
+    .line 140
     sget-object v5, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v5, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -583,53 +457,246 @@
 
     check-cast v2, Landroid/os/Bundle;
 
-    .line 205
+    .line 145
     .restart local v2    # "_arg1":Landroid/os/Bundle;
     :goto_8
-    invoke-virtual {p0, v0, v2}, Landroid/media/session/ISessionCallback$Stub;->onCustomAction(Ljava/lang/String;Landroid/os/Bundle;)V
+    invoke-virtual {p0, v0, v2}, Landroid/media/session/ISessionCallback$Stub;->onPlayFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
 
     goto/16 :goto_0
 
-    .line 203
+    .line 136
+    .end local v0    # "_arg0":Landroid/net/Uri;
     .end local v2    # "_arg1":Landroid/os/Bundle;
+    :cond_6
+    const/4 v0, 0x0
+
+    .restart local v0    # "_arg0":Landroid/net/Uri;
+    goto :goto_7
+
+    .line 143
     :cond_7
     const/4 v2, 0x0
 
     .restart local v2    # "_arg1":Landroid/os/Bundle;
     goto :goto_8
 
-    .line 210
-    .end local v0    # "_arg0":Ljava/lang/String;
+    .line 150
+    .end local v0    # "_arg0":Landroid/net/Uri;
     .end local v2    # "_arg1":Landroid/os/Bundle;
+    :sswitch_7
+    const-string v5, "android.media.session.ISessionCallback"
+
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 152
+    invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
+
+    move-result-wide v0
+
+    .line 153
+    .local v0, "_arg0":J
+    invoke-virtual {p0, v0, v1}, Landroid/media/session/ISessionCallback$Stub;->onSkipToTrack(J)V
+
+    goto/16 :goto_0
+
+    .line 158
+    .end local v0    # "_arg0":J
+    :sswitch_8
+    const-string v5, "android.media.session.ISessionCallback"
+
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 159
+    invoke-virtual {p0}, Landroid/media/session/ISessionCallback$Stub;->onPause()V
+
+    goto/16 :goto_0
+
+    .line 164
+    :sswitch_9
+    const-string v5, "android.media.session.ISessionCallback"
+
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 165
+    invoke-virtual {p0}, Landroid/media/session/ISessionCallback$Stub;->onStop()V
+
+    goto/16 :goto_0
+
+    .line 170
+    :sswitch_a
+    const-string v5, "android.media.session.ISessionCallback"
+
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 171
+    invoke-virtual {p0}, Landroid/media/session/ISessionCallback$Stub;->onNext()V
+
+    goto/16 :goto_0
+
+    .line 176
+    :sswitch_b
+    const-string v5, "android.media.session.ISessionCallback"
+
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 177
+    invoke-virtual {p0}, Landroid/media/session/ISessionCallback$Stub;->onPrevious()V
+
+    goto/16 :goto_0
+
+    .line 182
+    :sswitch_c
+    const-string v5, "android.media.session.ISessionCallback"
+
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 183
+    invoke-virtual {p0}, Landroid/media/session/ISessionCallback$Stub;->onFastForward()V
+
+    goto/16 :goto_0
+
+    .line 188
+    :sswitch_d
+    const-string v5, "android.media.session.ISessionCallback"
+
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 189
+    invoke-virtual {p0}, Landroid/media/session/ISessionCallback$Stub;->onRewind()V
+
+    goto/16 :goto_0
+
+    .line 194
+    :sswitch_e
+    const-string v5, "android.media.session.ISessionCallback"
+
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 196
+    invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
+
+    move-result-wide v0
+
+    .line 197
+    .restart local v0    # "_arg0":J
+    invoke-virtual {p0, v0, v1}, Landroid/media/session/ISessionCallback$Stub;->onSeekTo(J)V
+
+    goto/16 :goto_0
+
+    .line 202
+    .end local v0    # "_arg0":J
+    :sswitch_f
+    const-string v5, "android.media.session.ISessionCallback"
+
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 204
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v5
+
+    if-eqz v5, :cond_8
+
+    .line 205
+    sget-object v5, Landroid/media/Rating;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-interface {v5, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/media/Rating;
+
+    .line 210
+    .local v0, "_arg0":Landroid/media/Rating;
+    :goto_9
+    invoke-virtual {p0, v0}, Landroid/media/session/ISessionCallback$Stub;->onRate(Landroid/media/Rating;)V
+
+    goto/16 :goto_0
+
+    .line 208
+    .end local v0    # "_arg0":Landroid/media/Rating;
+    :cond_8
+    const/4 v0, 0x0
+
+    .restart local v0    # "_arg0":Landroid/media/Rating;
+    goto :goto_9
+
+    .line 215
+    .end local v0    # "_arg0":Landroid/media/Rating;
     :sswitch_10
     const-string v5, "android.media.session.ISessionCallback"
 
     invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 212
+    .line 217
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 219
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v0
+    move-result v5
 
-    .line 213
-    .local v0, "_arg0":I
-    invoke-virtual {p0, v0}, Landroid/media/session/ISessionCallback$Stub;->onAdjustVolume(I)V
+    if-eqz v5, :cond_9
+
+    .line 220
+    sget-object v5, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-interface {v5, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/os/Bundle;
+
+    .line 225
+    .restart local v2    # "_arg1":Landroid/os/Bundle;
+    :goto_a
+    invoke-virtual {p0, v0, v2}, Landroid/media/session/ISessionCallback$Stub;->onCustomAction(Ljava/lang/String;Landroid/os/Bundle;)V
 
     goto/16 :goto_0
 
-    .line 218
-    .end local v0    # "_arg0":I
+    .line 223
+    .end local v2    # "_arg1":Landroid/os/Bundle;
+    :cond_9
+    const/4 v2, 0x0
+
+    .restart local v2    # "_arg1":Landroid/os/Bundle;
+    goto :goto_a
+
+    .line 230
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v2    # "_arg1":Landroid/os/Bundle;
     :sswitch_11
     const-string v5, "android.media.session.ISessionCallback"
 
     invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 220
+    .line 232
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 221
+    .line 233
+    .local v0, "_arg0":I
+    invoke-virtual {p0, v0}, Landroid/media/session/ISessionCallback$Stub;->onAdjustVolume(I)V
+
+    goto/16 :goto_0
+
+    .line 238
+    .end local v0    # "_arg0":I
+    :sswitch_12
+    const-string v5, "android.media.session.ISessionCallback"
+
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 240
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    .line 241
     .restart local v0    # "_arg0":I
     invoke-virtual {p0, v0}, Landroid/media/session/ISessionCallback$Stub;->onSetVolumeTo(I)V
 
@@ -655,6 +722,7 @@
         0xf -> :sswitch_f
         0x10 -> :sswitch_10
         0x11 -> :sswitch_11
+        0x12 -> :sswitch_12
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

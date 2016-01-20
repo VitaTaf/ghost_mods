@@ -26,6 +26,8 @@
 
 .field public static final ACTION_PLAY_FROM_SEARCH:J = 0x800L
 
+.field public static final ACTION_PLAY_FROM_URI:J = 0x2000L
+
 .field public static final ACTION_PLAY_PAUSE:J = 0x200L
 
 .field public static final ACTION_REWIND:J = 0x8L
@@ -118,7 +120,7 @@
     .locals 1
 
     .prologue
-    .line 565
+    .line 577
     new-instance v0, Landroid/media/session/PlaybackState$1;
 
     invoke-direct {v0}, Landroid/media/session/PlaybackState$1;-><init>()V
@@ -153,49 +155,49 @@
     .end annotation
 
     .prologue
-    .line 241
+    .line 248
     .local p11, "customActions":Ljava/util/List;, "Ljava/util/List<Landroid/media/session/PlaybackState$CustomAction;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 242
+    .line 249
     iput p1, p0, Landroid/media/session/PlaybackState;->mState:I
 
-    .line 243
+    .line 250
     iput-wide p2, p0, Landroid/media/session/PlaybackState;->mPosition:J
 
-    .line 244
+    .line 251
     iput p6, p0, Landroid/media/session/PlaybackState;->mSpeed:F
 
-    .line 245
+    .line 252
     iput-wide p4, p0, Landroid/media/session/PlaybackState;->mUpdateTime:J
 
-    .line 246
+    .line 253
     iput-wide p7, p0, Landroid/media/session/PlaybackState;->mBufferedPosition:J
 
-    .line 247
+    .line 254
     iput-wide p9, p0, Landroid/media/session/PlaybackState;->mActions:J
 
-    .line 248
+    .line 255
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1, p11}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
     iput-object v1, p0, Landroid/media/session/PlaybackState;->mCustomActions:Ljava/util/List;
 
-    .line 249
+    .line 256
     iput-wide p12, p0, Landroid/media/session/PlaybackState;->mActiveItemId:J
 
-    .line 250
+    .line 257
     move-object/from16 v0, p14
 
     iput-object v0, p0, Landroid/media/session/PlaybackState;->mErrorMessage:Ljava/lang/CharSequence;
 
-    .line 251
+    .line 258
     move-object/from16 v0, p15
 
     iput-object v0, p0, Landroid/media/session/PlaybackState;->mExtras:Landroid/os/Bundle;
 
-    .line 252
+    .line 259
     return-void
 .end method
 
@@ -225,52 +227,52 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 254
+    .line 261
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 255
+    .line 262
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/media/session/PlaybackState;->mState:I
 
-    .line 256
+    .line 263
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/media/session/PlaybackState;->mPosition:J
 
-    .line 257
+    .line 264
     invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
 
     move-result v0
 
     iput v0, p0, Landroid/media/session/PlaybackState;->mSpeed:F
 
-    .line 258
+    .line 265
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/media/session/PlaybackState;->mUpdateTime:J
 
-    .line 259
+    .line 266
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/media/session/PlaybackState;->mBufferedPosition:J
 
-    .line 260
+    .line 267
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/media/session/PlaybackState;->mActions:J
 
-    .line 261
+    .line 268
     sget-object v0, Landroid/media/session/PlaybackState$CustomAction;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->createTypedArrayList(Landroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
@@ -279,28 +281,28 @@
 
     iput-object v0, p0, Landroid/media/session/PlaybackState;->mCustomActions:Ljava/util/List;
 
-    .line 262
+    .line 269
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/media/session/PlaybackState;->mActiveItemId:J
 
-    .line 263
+    .line 270
     invoke-virtual {p1}, Landroid/os/Parcel;->readCharSequence()Ljava/lang/CharSequence;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/media/session/PlaybackState;->mErrorMessage:Ljava/lang/CharSequence;
 
-    .line 264
+    .line 271
     invoke-virtual {p1}, Landroid/os/Parcel;->readBundle()Landroid/os/Bundle;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/media/session/PlaybackState;->mExtras:Landroid/os/Bundle;
 
-    .line 265
+    .line 272
     return-void
 .end method
 
@@ -431,76 +433,76 @@
     .param p0, "flag"    # I
 
     .prologue
-    .line 511
+    .line 523
     sparse-switch p0, :sswitch_data_0
 
-    .line 533
+    .line 545
     const-wide/16 v0, 0x0
 
     :goto_0
     return-wide v0
 
-    .line 513
+    .line 525
     :sswitch_0
     const-wide/16 v0, 0x10
 
     goto :goto_0
 
-    .line 515
+    .line 527
     :sswitch_1
     const-wide/16 v0, 0x8
 
     goto :goto_0
 
-    .line 517
+    .line 529
     :sswitch_2
     const-wide/16 v0, 0x4
 
     goto :goto_0
 
-    .line 519
+    .line 531
     :sswitch_3
     const-wide/16 v0, 0x200
 
     goto :goto_0
 
-    .line 521
+    .line 533
     :sswitch_4
     const-wide/16 v0, 0x2
 
     goto :goto_0
 
-    .line 523
+    .line 535
     :sswitch_5
     const-wide/16 v0, 0x1
 
     goto :goto_0
 
-    .line 525
+    .line 537
     :sswitch_6
     const-wide/16 v0, 0x40
 
     goto :goto_0
 
-    .line 527
+    .line 539
     :sswitch_7
     const-wide/16 v0, 0x20
 
     goto :goto_0
 
-    .line 529
+    .line 541
     :sswitch_8
     const-wide/16 v0, 0x100
 
     goto :goto_0
 
-    .line 531
+    .line 543
     :sswitch_9
     const-wide/16 v0, 0x80
 
     goto :goto_0
 
-    .line 511
+    .line 523
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_0
@@ -521,14 +523,14 @@
     .param p0, "rccFlags"    # I
 
     .prologue
-    .line 484
+    .line 496
     const-wide/16 v0, 0x0
 
-    .line 485
+    .line 497
     .local v0, "actions":J
     const-wide/16 v2, 0x1
 
-    .line 486
+    .line 498
     .local v2, "flag":J
     :goto_0
     int-to-long v4, p0
@@ -537,7 +539,7 @@
 
     if-gtz v4, :cond_1
 
-    .line 487
+    .line 499
     int-to-long v4, p0
 
     and-long/2addr v4, v2
@@ -548,7 +550,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 488
+    .line 500
     long-to-int v4, v2
 
     invoke-static {v4}, Landroid/media/session/PlaybackState;->getActionForRccFlag(I)J
@@ -557,7 +559,7 @@
 
     or-long/2addr v0, v4
 
-    .line 490
+    .line 502
     :cond_0
     const/4 v4, 0x1
 
@@ -565,7 +567,7 @@
 
     goto :goto_0
 
-    .line 492
+    .line 504
     :cond_1
     return-wide v0
 .end method
@@ -575,14 +577,14 @@
     .param p0, "actions"    # J
 
     .prologue
-    .line 499
+    .line 511
     const/4 v2, 0x0
 
-    .line 500
+    .line 512
     .local v2, "rccFlags":I
     const-wide/16 v0, 0x1
 
-    .line 501
+    .line 513
     .local v0, "action":J
     :goto_0
     cmp-long v3, v0, p0
@@ -595,7 +597,7 @@
 
     if-gez v3, :cond_1
 
-    .line 502
+    .line 514
     and-long v4, v0, p0
 
     const-wide/16 v6, 0x0
@@ -604,14 +606,14 @@
 
     if-eqz v3, :cond_0
 
-    .line 503
+    .line 515
     invoke-static {v0, v1}, Landroid/media/session/PlaybackState;->getRccFlagForAction(J)I
 
     move-result v3
 
     or-int/2addr v2, v3
 
-    .line 505
+    .line 517
     :cond_0
     const/4 v3, 0x1
 
@@ -619,7 +621,7 @@
 
     goto :goto_0
 
-    .line 507
+    .line 519
     :cond_1
     return v2
 .end method
@@ -631,7 +633,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 539
+    .line 551
     const-wide/32 v2, 0x7fffffff
 
     cmp-long v2, p0, v2
@@ -640,12 +642,12 @@
 
     long-to-int v0, p0
 
-    .line 540
+    .line 552
     .local v0, "testAction":I
     :goto_0
     sparse-switch v0, :sswitch_data_0
 
-    .line 562
+    .line 574
     :goto_1
     return v1
 
@@ -653,71 +655,71 @@
     :cond_0
     move v0, v1
 
-    .line 539
+    .line 551
     goto :goto_0
 
-    .line 542
+    .line 554
     .restart local v0    # "testAction":I
     :sswitch_0
     const/4 v1, 0x1
 
     goto :goto_1
 
-    .line 544
+    .line 556
     :sswitch_1
     const/4 v1, 0x2
 
     goto :goto_1
 
-    .line 546
+    .line 558
     :sswitch_2
     const/4 v1, 0x4
 
     goto :goto_1
 
-    .line 548
+    .line 560
     :sswitch_3
     const/16 v1, 0x8
 
     goto :goto_1
 
-    .line 550
+    .line 562
     :sswitch_4
     const/16 v1, 0x10
 
     goto :goto_1
 
-    .line 552
+    .line 564
     :sswitch_5
     const/16 v1, 0x20
 
     goto :goto_1
 
-    .line 554
+    .line 566
     :sswitch_6
     const/16 v1, 0x40
 
     goto :goto_1
 
-    .line 556
+    .line 568
     :sswitch_7
     const/16 v1, 0x80
 
     goto :goto_1
 
-    .line 558
+    .line 570
     :sswitch_8
     const/16 v1, 0x100
 
     goto :goto_1
 
-    .line 560
+    .line 572
     :sswitch_9
     const/16 v1, 0x200
 
     goto :goto_1
 
-    .line 540
+    .line 552
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_5
@@ -738,77 +740,77 @@
     .param p0, "state"    # I
 
     .prologue
-    .line 454
+    .line 466
     packed-switch p0, :pswitch_data_0
 
-    .line 476
+    .line 488
     :pswitch_0
     const/4 v0, -0x1
 
     :goto_0
     return v0
 
-    .line 456
+    .line 468
     :pswitch_1
     const/16 v0, 0x8
 
     goto :goto_0
 
-    .line 458
+    .line 470
     :pswitch_2
     const/16 v0, 0x9
 
     goto :goto_0
 
-    .line 460
+    .line 472
     :pswitch_3
     const/4 v0, 0x4
 
     goto :goto_0
 
-    .line 462
+    .line 474
     :pswitch_4
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 464
+    .line 476
     :pswitch_5
     const/4 v0, 0x2
 
     goto :goto_0
 
-    .line 466
+    .line 478
     :pswitch_6
     const/4 v0, 0x3
 
     goto :goto_0
 
-    .line 468
+    .line 480
     :pswitch_7
     const/4 v0, 0x5
 
     goto :goto_0
 
-    .line 470
+    .line 482
     :pswitch_8
     const/4 v0, 0x7
 
     goto :goto_0
 
-    .line 472
+    .line 484
     :pswitch_9
     const/4 v0, 0x6
 
     goto :goto_0
 
-    .line 474
+    .line 486
     :pswitch_a
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 454
+    .line 466
     nop
 
     :pswitch_data_0
@@ -832,76 +834,76 @@
     .param p0, "rccState"    # I
 
     .prologue
-    .line 419
+    .line 431
     packed-switch p0, :pswitch_data_0
 
-    .line 441
+    .line 453
     const/4 v0, -0x1
 
     :goto_0
     return v0
 
-    .line 421
+    .line 433
     :pswitch_0
     const/4 v0, 0x6
 
     goto :goto_0
 
-    .line 423
+    .line 435
     :pswitch_1
     const/4 v0, 0x7
 
     goto :goto_0
 
-    .line 425
+    .line 437
     :pswitch_2
     const/4 v0, 0x4
 
     goto :goto_0
 
-    .line 427
+    .line 439
     :pswitch_3
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 429
+    .line 441
     :pswitch_4
     const/4 v0, 0x2
 
     goto :goto_0
 
-    .line 431
+    .line 443
     :pswitch_5
     const/4 v0, 0x3
 
     goto :goto_0
 
-    .line 433
+    .line 445
     :pswitch_6
     const/4 v0, 0x5
 
     goto :goto_0
 
-    .line 435
+    .line 447
     :pswitch_7
     const/16 v0, 0x9
 
     goto :goto_0
 
-    .line 437
+    .line 449
     :pswitch_8
     const/16 v0, 0xa
 
     goto :goto_0
 
-    .line 439
+    .line 451
     :pswitch_9
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 419
+    .line 431
     nop
 
     :pswitch_data_0
@@ -925,7 +927,7 @@
     .locals 1
 
     .prologue
-    .line 285
+    .line 292
     const/4 v0, 0x0
 
     return v0
@@ -935,7 +937,7 @@
     .locals 2
 
     .prologue
-    .line 361
+    .line 373
     iget-wide v0, p0, Landroid/media/session/PlaybackState;->mActions:J
 
     return-wide v0
@@ -945,7 +947,7 @@
     .locals 2
 
     .prologue
-    .line 398
+    .line 410
     iget-wide v0, p0, Landroid/media/session/PlaybackState;->mActiveItemId:J
 
     return-wide v0
@@ -955,7 +957,7 @@
     .locals 2
 
     .prologue
-    .line 331
+    .line 338
     iget-wide v0, p0, Landroid/media/session/PlaybackState;->mBufferedPosition:J
 
     return-wide v0
@@ -974,7 +976,7 @@
     .end annotation
 
     .prologue
-    .line 368
+    .line 380
     iget-object v0, p0, Landroid/media/session/PlaybackState;->mCustomActions:Ljava/util/List;
 
     return-object v0
@@ -984,7 +986,7 @@
     .locals 1
 
     .prologue
-    .line 376
+    .line 388
     iget-object v0, p0, Landroid/media/session/PlaybackState;->mErrorMessage:Ljava/lang/CharSequence;
 
     return-object v0
@@ -994,7 +996,7 @@
     .locals 1
 
     .prologue
-    .line 407
+    .line 419
     iget-object v0, p0, Landroid/media/session/PlaybackState;->mExtras:Landroid/os/Bundle;
 
     return-object v0
@@ -1004,7 +1006,7 @@
     .locals 2
 
     .prologue
-    .line 386
+    .line 398
     iget-wide v0, p0, Landroid/media/session/PlaybackState;->mUpdateTime:J
 
     return-wide v0
@@ -1014,7 +1016,7 @@
     .locals 1
 
     .prologue
-    .line 342
+    .line 349
     iget v0, p0, Landroid/media/session/PlaybackState;->mSpeed:F
 
     return v0
@@ -1024,7 +1026,7 @@
     .locals 2
 
     .prologue
-    .line 322
+    .line 329
     iget-wide v0, p0, Landroid/media/session/PlaybackState;->mPosition:J
 
     return-wide v0
@@ -1034,7 +1036,7 @@
     .locals 1
 
     .prologue
-    .line 316
+    .line 323
     iget v0, p0, Landroid/media/session/PlaybackState;->mState:I
 
     return v0
@@ -1044,14 +1046,14 @@
     .locals 4
 
     .prologue
-    .line 269
+    .line 276
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "PlaybackState {"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 270
+    .line 277
     .local v0, "bob":Ljava/lang/StringBuilder;
     const-string/jumbo v1, "state="
 
@@ -1063,7 +1065,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 271
+    .line 278
     const-string v1, ", position="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1074,7 +1076,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 272
+    .line 279
     const-string v1, ", buffered position="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1085,7 +1087,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 273
+    .line 280
     const-string v1, ", speed="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1096,7 +1098,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    .line 274
+    .line 281
     const-string v1, ", updated="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1107,7 +1109,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 275
+    .line 282
     const-string v1, ", actions="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1118,7 +1120,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 276
+    .line 283
     const-string v1, ", custom actions="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1129,7 +1131,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 277
+    .line 284
     const-string v1, ", active item id="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1140,7 +1142,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 278
+    .line 285
     const-string v1, ", error="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1151,12 +1153,12 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 279
+    .line 286
     const-string/jumbo v1, "}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 280
+    .line 287
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -1170,56 +1172,56 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 290
+    .line 297
     iget v0, p0, Landroid/media/session/PlaybackState;->mState:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 291
+    .line 298
     iget-wide v0, p0, Landroid/media/session/PlaybackState;->mPosition:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 292
+    .line 299
     iget v0, p0, Landroid/media/session/PlaybackState;->mSpeed:F
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeFloat(F)V
 
-    .line 293
+    .line 300
     iget-wide v0, p0, Landroid/media/session/PlaybackState;->mUpdateTime:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 294
+    .line 301
     iget-wide v0, p0, Landroid/media/session/PlaybackState;->mBufferedPosition:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 295
+    .line 302
     iget-wide v0, p0, Landroid/media/session/PlaybackState;->mActions:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 296
+    .line 303
     iget-object v0, p0, Landroid/media/session/PlaybackState;->mCustomActions:Ljava/util/List;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
 
-    .line 297
+    .line 304
     iget-wide v0, p0, Landroid/media/session/PlaybackState;->mActiveItemId:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 298
+    .line 305
     iget-object v0, p0, Landroid/media/session/PlaybackState;->mErrorMessage:Ljava/lang/CharSequence;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeCharSequence(Ljava/lang/CharSequence;)V
 
-    .line 299
+    .line 306
     iget-object v0, p0, Landroid/media/session/PlaybackState;->mExtras:Landroid/os/Bundle;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
 
-    .line 300
+    .line 307
     return-void
 .end method

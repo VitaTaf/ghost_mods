@@ -56,7 +56,7 @@
     .param p1, "direction"    # I
 
     .prologue
-    .line 958
+    .line 966
     :try_start_0
     iget-object v1, p0, Lcom/android/server/media/MediaSessionRecord$SessionCb;->mCb:Landroid/media/session/ISessionCallback;
 
@@ -64,15 +64,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 962
+    .line 970
     :goto_0
     return-void
 
-    .line 959
+    .line 967
     :catch_0
     move-exception v0
 
-    .line 960
+    .line 968
     .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "MediaSessionRecord"
 
@@ -87,7 +87,7 @@
     .locals 3
 
     .prologue
-    .line 926
+    .line 934
     :try_start_0
     iget-object v1, p0, Lcom/android/server/media/MediaSessionRecord$SessionCb;->mCb:Landroid/media/session/ISessionCallback;
 
@@ -95,15 +95,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 930
+    .line 938
     :goto_0
     return-void
 
-    .line 927
+    .line 935
     :catch_0
     move-exception v0
 
-    .line 928
+    .line 936
     .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "MediaSessionRecord"
 
@@ -118,7 +118,7 @@
     .locals 3
 
     .prologue
-    .line 910
+    .line 918
     :try_start_0
     iget-object v1, p0, Lcom/android/server/media/MediaSessionRecord$SessionCb;->mCb:Landroid/media/session/ISessionCallback;
 
@@ -126,15 +126,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 914
+    .line 922
     :goto_0
     return-void
 
-    .line 911
+    .line 919
     :catch_0
     move-exception v0
 
-    .line 912
+    .line 920
     .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "MediaSessionRecord"
 
@@ -149,7 +149,7 @@
     .locals 3
 
     .prologue
-    .line 894
+    .line 902
     :try_start_0
     iget-object v1, p0, Lcom/android/server/media/MediaSessionRecord$SessionCb;->mCb:Landroid/media/session/ISessionCallback;
 
@@ -157,15 +157,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 898
+    .line 906
     :goto_0
     return-void
 
-    .line 895
+    .line 903
     :catch_0
     move-exception v0
 
-    .line 896
+    .line 904
     .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "MediaSessionRecord"
 
@@ -273,11 +273,44 @@
     goto :goto_0
 .end method
 
+.method public playFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
+    .locals 3
+    .param p1, "uri"    # Landroid/net/Uri;
+    .param p2, "extras"    # Landroid/os/Bundle;
+
+    .prologue
+    .line 886
+    :try_start_0
+    iget-object v1, p0, Lcom/android/server/media/MediaSessionRecord$SessionCb;->mCb:Landroid/media/session/ISessionCallback;
+
+    invoke-interface {v1, p1, p2}, Landroid/media/session/ISessionCallback;->onPlayFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 890
+    :goto_0
+    return-void
+
+    .line 887
+    :catch_0
+    move-exception v0
+
+    .line 888
+    .local v0, "e":Landroid/os/RemoteException;
+    const-string v1, "MediaSessionRecord"
+
+    const-string v2, "Remote failure in playFromUri."
+
+    invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_0
+.end method
+
 .method public previous()V
     .locals 3
 
     .prologue
-    .line 918
+    .line 926
     :try_start_0
     iget-object v1, p0, Lcom/android/server/media/MediaSessionRecord$SessionCb;->mCb:Landroid/media/session/ISessionCallback;
 
@@ -285,15 +318,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 922
+    .line 930
     :goto_0
     return-void
 
-    .line 919
+    .line 927
     :catch_0
     move-exception v0
 
-    .line 920
+    .line 928
     .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "MediaSessionRecord"
 
@@ -309,7 +342,7 @@
     .param p1, "rating"    # Landroid/media/Rating;
 
     .prologue
-    .line 950
+    .line 958
     :try_start_0
     iget-object v1, p0, Lcom/android/server/media/MediaSessionRecord$SessionCb;->mCb:Landroid/media/session/ISessionCallback;
 
@@ -317,15 +350,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 954
+    .line 962
     :goto_0
     return-void
 
-    .line 951
+    .line 959
     :catch_0
     move-exception v0
 
-    .line 952
+    .line 960
     .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "MediaSessionRecord"
 
@@ -340,7 +373,7 @@
     .locals 3
 
     .prologue
-    .line 934
+    .line 942
     :try_start_0
     iget-object v1, p0, Lcom/android/server/media/MediaSessionRecord$SessionCb;->mCb:Landroid/media/session/ISessionCallback;
 
@@ -348,15 +381,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 938
+    .line 946
     :goto_0
     return-void
 
-    .line 935
+    .line 943
     :catch_0
     move-exception v0
 
-    .line 936
+    .line 944
     .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "MediaSessionRecord"
 
@@ -372,7 +405,7 @@
     .param p1, "pos"    # J
 
     .prologue
-    .line 942
+    .line 950
     :try_start_0
     iget-object v1, p0, Lcom/android/server/media/MediaSessionRecord$SessionCb;->mCb:Landroid/media/session/ISessionCallback;
 
@@ -380,15 +413,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 946
+    .line 954
     :goto_0
     return-void
 
-    .line 943
+    .line 951
     :catch_0
     move-exception v0
 
-    .line 944
+    .line 952
     .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "MediaSessionRecord"
 
@@ -524,7 +557,7 @@
     .param p1, "value"    # I
 
     .prologue
-    .line 966
+    .line 974
     :try_start_0
     iget-object v1, p0, Lcom/android/server/media/MediaSessionRecord$SessionCb;->mCb:Landroid/media/session/ISessionCallback;
 
@@ -532,15 +565,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 970
+    .line 978
     :goto_0
     return-void
 
-    .line 967
+    .line 975
     :catch_0
     move-exception v0
 
-    .line 968
+    .line 976
     .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "MediaSessionRecord"
 
@@ -556,7 +589,7 @@
     .param p1, "id"    # J
 
     .prologue
-    .line 886
+    .line 894
     :try_start_0
     iget-object v1, p0, Lcom/android/server/media/MediaSessionRecord$SessionCb;->mCb:Landroid/media/session/ISessionCallback;
 
@@ -564,15 +597,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 890
+    .line 898
     :goto_0
     return-void
 
-    .line 887
+    .line 895
     :catch_0
     move-exception v0
 
-    .line 888
+    .line 896
     .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "MediaSessionRecord"
 
@@ -587,7 +620,7 @@
     .locals 3
 
     .prologue
-    .line 902
+    .line 910
     :try_start_0
     iget-object v1, p0, Lcom/android/server/media/MediaSessionRecord$SessionCb;->mCb:Landroid/media/session/ISessionCallback;
 
@@ -595,15 +628,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 906
+    .line 914
     :goto_0
     return-void
 
-    .line 903
+    .line 911
     :catch_0
     move-exception v0
 
-    .line 904
+    .line 912
     .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "MediaSessionRecord"
 

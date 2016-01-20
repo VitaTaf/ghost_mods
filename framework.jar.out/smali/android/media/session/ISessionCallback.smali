@@ -95,6 +95,14 @@
     .end annotation
 .end method
 
+.method public abstract onPlayFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract onPrevious()V
     .annotation system Ldalvik/annotation/Throws;
         value = {

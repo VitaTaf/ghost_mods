@@ -42,6 +42,14 @@
 
 .field public static final COLUMN_INTERNAL_PROVIDER_DATA:Ljava/lang/String; = "internal_provider_data"
 
+.field public static final COLUMN_INTERNAL_PROVIDER_FLAG1:Ljava/lang/String; = "internal_provider_flag1"
+
+.field public static final COLUMN_INTERNAL_PROVIDER_FLAG2:Ljava/lang/String; = "internal_provider_flag2"
+
+.field public static final COLUMN_INTERNAL_PROVIDER_FLAG3:Ljava/lang/String; = "internal_provider_flag3"
+
+.field public static final COLUMN_INTERNAL_PROVIDER_FLAG4:Ljava/lang/String; = "internal_provider_flag4"
+
 .field public static final COLUMN_LONG_DESCRIPTION:Ljava/lang/String; = "long_description"
 
 .field public static final COLUMN_POSTER_ART_URI:Ljava/lang/String; = "poster_art_uri"
@@ -74,7 +82,7 @@
     .locals 1
 
     .prologue
-    .line 795
+    .line 839
     const-string v0, "content://android.media.tv/program"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -90,7 +98,7 @@
     .locals 0
 
     .prologue
-    .line 1024
+    .line 1112
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
