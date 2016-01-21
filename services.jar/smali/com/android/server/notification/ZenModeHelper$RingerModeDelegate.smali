@@ -299,7 +299,7 @@
     if-eq v4, v6, :cond_0
 
     .line 504
-    const/4 v1, 0x2
+    const/4 v1, 0x3
 
     goto :goto_1
 

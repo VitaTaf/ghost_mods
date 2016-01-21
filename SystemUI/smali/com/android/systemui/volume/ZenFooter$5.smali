@@ -85,7 +85,7 @@
     .line 220
     if-eqz p2, :cond_2
 
-    const/4 v0, 0x1
+    const/4 v0, 0x3
 
     .line 222
     .local v0, "newZen":I

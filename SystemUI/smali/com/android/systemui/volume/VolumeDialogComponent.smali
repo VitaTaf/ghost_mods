@@ -15,22 +15,35 @@
 
 .field private final mSysui:Lcom/android/systemui/SystemUI;
 
+.field private final mVolumePolicy:Landroid/media/VolumePolicy;
+
 .field private final mZenModeController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
 
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/SystemUI;Landroid/content/Context;Landroid/os/Handler;Lcom/android/systemui/statusbar/policy/ZenModeController;)V
-    .locals 2
+    .locals 3
     .param p1, "sysui"    # Lcom/android/systemui/SystemUI;
     .param p2, "context"    # Landroid/content/Context;
     .param p3, "handler"    # Landroid/os/Handler;
     .param p4, "zen"    # Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     .prologue
+    const/4 v2, 0x1
+
     .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 47
+    new-instance v0, Landroid/media/VolumePolicy;
+
+    const/16 v1, 0x190
+
+    invoke-direct {v0, v2, v2, v2, v1}, Landroid/media/VolumePolicy;-><init>(ZZZI)V
+
+    iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogComponent;->mVolumePolicy:Landroid/media/VolumePolicy;
+
+    .line 53
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialogComponent;->mSysui:Lcom/android/systemui/SystemUI;
 
     .line 48
@@ -134,7 +147,7 @@
     .line 80
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogComponent;->mController:Lcom/android/systemui/volume/VolumeDialogController;
 
-    sget-object v1, Landroid/media/VolumePolicy;->DEFAULT:Landroid/media/VolumePolicy;
+    iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogComponent;->mVolumePolicy:Landroid/media/VolumePolicy;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/VolumeDialogController;->setVolumePolicy(Landroid/media/VolumePolicy;)V
 
