@@ -18,7 +18,9 @@
 
 
 # instance fields
-.field private mConfirmedIntroduction:Z
+.field private mConfirmedPriorityIntroduction:Z
+
+.field private mConfirmedSilenceIntroduction:Z
 
 .field private mMinuteIndex:I
 
@@ -34,14 +36,14 @@
     .locals 2
 
     .prologue
-    .line 914
+    .line 830
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 915
+    .line 831
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
-    invoke-static {p1}, Lcom/android/systemui/volume/ZenModePanel;->access$2300(Lcom/android/systemui/volume/ZenModePanel;)Landroid/content/Context;
+    invoke-static {p1}, Lcom/android/systemui/volume/ZenModePanel;->access$2200(Lcom/android/systemui/volume/ZenModePanel;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -57,24 +59,27 @@
 
     iput v0, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->mNoneDangerousThreshold:I
 
-    .line 917
+    .line 833
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
-    invoke-static {p1}, Lcom/android/systemui/volume/ZenModePanel;->access$2300(Lcom/android/systemui/volume/ZenModePanel;)Landroid/content/Context;
+    invoke-static {p1}, Lcom/android/systemui/volume/ZenModePanel;->access$2200(Lcom/android/systemui/volume/ZenModePanel;)Landroid/content/Context;
 
     move-result-object v0
 
     invoke-static {v0, p0}, Lcom/android/systemui/Prefs;->registerListener(Landroid/content/Context;Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;)V
 
-    .line 918
+    .line 834
     invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->updateMinuteIndex()V
 
-    .line 919
+    .line 835
     invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->updateNoneSelected()V
 
-    .line 920
-    invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->updateConfirmedIntroduction()V
+    .line 836
+    invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->updateConfirmedPriorityIntroduction()V
 
-    .line 921
+    .line 837
+    invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->updateConfirmedSilenceIntroduction()V
+
+    .line 838
     return-void
 .end method
 
@@ -84,19 +89,30 @@
     .param p2, "x1"    # Lcom/android/systemui/volume/ZenModePanel$1;
 
     .prologue
-    .line 907
+    .line 822
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;-><init>(Lcom/android/systemui/volume/ZenModePanel;)V
 
     return-void
 .end method
 
-.method static synthetic access$800(Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;)Z
+.method static synthetic access$300(Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;)Z
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;
 
     .prologue
-    .line 907
-    iget-boolean v0, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->mConfirmedIntroduction:Z
+    .line 822
+    iget-boolean v0, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->mConfirmedPriorityIntroduction:Z
+
+    return v0
+.end method
+
+.method static synthetic access$400(Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;)Z
+    .locals 1
+    .param p0, "x0"    # Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;
+
+    .prologue
+    .line 822
+    iget-boolean v0, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->mConfirmedSilenceIntroduction:Z
 
     return v0
 .end method
@@ -106,11 +122,11 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 960
+    .line 874
     const/4 v0, -0x1
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->MINUTE_BUCKETS:[I
-    invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$2500()[I
+    invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$2400()[I
 
     move-result-object v1
 
@@ -130,7 +146,7 @@
     .param p1, "noneSelected"    # I
 
     .prologue
-    .line 970
+    .line 884
     const/4 v0, 0x0
 
     const v1, 0x7fffffff
@@ -142,15 +158,15 @@
     return v0
 .end method
 
-.method private updateConfirmedIntroduction()V
+.method private updateConfirmedPriorityIntroduction()V
     .locals 4
 
     .prologue
-    .line 974
+    .line 888
     iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
-    invoke-static {v1}, Lcom/android/systemui/volume/ZenModePanel;->access$2300(Lcom/android/systemui/volume/ZenModePanel;)Landroid/content/Context;
+    invoke-static {v1}, Lcom/android/systemui/volume/ZenModePanel;->access$2200(Lcom/android/systemui/volume/ZenModePanel;)Landroid/content/Context;
 
     move-result-object v1
 
@@ -162,24 +178,24 @@
 
     move-result v0
 
-    .line 976
+    .line 890
     .local v0, "confirmed":Z
-    iget-boolean v1, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->mConfirmedIntroduction:Z
+    iget-boolean v1, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->mConfirmedPriorityIntroduction:Z
 
     if-ne v0, v1, :cond_1
 
-    .line 979
+    .line 894
     :cond_0
     :goto_0
     return-void
 
-    .line 977
+    .line 891
     :cond_1
-    iput-boolean v0, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->mConfirmedIntroduction:Z
+    iput-boolean v0, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->mConfirmedPriorityIntroduction:Z
 
-    .line 978
+    .line 892
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
-    invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$1100()Z
+    invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$1000()Z
 
     move-result v1
 
@@ -188,7 +204,7 @@
     iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mTag:Ljava/lang/String;
-    invoke-static {v1}, Lcom/android/systemui/volume/ZenModePanel;->access$1200(Lcom/android/systemui/volume/ZenModePanel;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/android/systemui/volume/ZenModePanel;->access$1100(Lcom/android/systemui/volume/ZenModePanel;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -196,13 +212,88 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "Confirmed introduction: "
+    const-string v3, "Confirmed priority introduction: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    iget-boolean v3, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->mConfirmedIntroduction:Z
+    iget-boolean v3, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->mConfirmedPriorityIntroduction:Z
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+.end method
+
+.method private updateConfirmedSilenceIntroduction()V
+    .locals 4
+
+    .prologue
+    .line 897
+    iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->this$0:Lcom/android/systemui/volume/ZenModePanel;
+
+    # getter for: Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
+    invoke-static {v1}, Lcom/android/systemui/volume/ZenModePanel;->access$2200(Lcom/android/systemui/volume/ZenModePanel;)Landroid/content/Context;
+
+    move-result-object v1
+
+    const-string v2, "DndConfirmedSilenceIntroduction"
+
+    const/4 v3, 0x0
+
+    invoke-static {v1, v2, v3}, Lcom/android/systemui/Prefs;->getBoolean(Landroid/content/Context;Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    .line 899
+    .local v0, "confirmed":Z
+    iget-boolean v1, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->mConfirmedSilenceIntroduction:Z
+
+    if-ne v0, v1, :cond_1
+
+    .line 903
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 900
+    :cond_1
+    iput-boolean v0, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->mConfirmedSilenceIntroduction:Z
+
+    .line 901
+    # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
+    invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$1000()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->this$0:Lcom/android/systemui/volume/ZenModePanel;
+
+    # getter for: Lcom/android/systemui/volume/ZenModePanel;->mTag:Ljava/lang/String;
+    invoke-static {v1}, Lcom/android/systemui/volume/ZenModePanel;->access$1100(Lcom/android/systemui/volume/ZenModePanel;)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Confirmed silence introduction: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-boolean v3, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->mConfirmedSilenceIntroduction:Z
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
@@ -221,18 +312,18 @@
     .locals 3
 
     .prologue
-    .line 954
+    .line 868
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
-    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$2300(Lcom/android/systemui/volume/ZenModePanel;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$2200(Lcom/android/systemui/volume/ZenModePanel;)Landroid/content/Context;
 
     move-result-object v0
 
     const-string v1, "DndCountdownMinuteIndex"
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEFAULT_BUCKET_INDEX:I
-    invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$2400()I
+    invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$2300()I
 
     move-result v2
 
@@ -246,9 +337,9 @@
 
     iput v0, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->mMinuteIndex:I
 
-    .line 956
+    .line 870
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
-    invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$1100()Z
+    invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$1000()Z
 
     move-result v0
 
@@ -257,7 +348,7 @@
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mTag:Ljava/lang/String;
-    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$1200(Lcom/android/systemui/volume/ZenModePanel;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$1100(Lcom/android/systemui/volume/ZenModePanel;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -283,7 +374,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 957
+    .line 871
     :cond_0
     return-void
 .end method
@@ -292,11 +383,11 @@
     .locals 3
 
     .prologue
-    .line 964
+    .line 878
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
-    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$2300(Lcom/android/systemui/volume/ZenModePanel;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$2200(Lcom/android/systemui/volume/ZenModePanel;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -314,9 +405,9 @@
 
     iput v0, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->mNoneSelected:I
 
-    .line 966
+    .line 880
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
-    invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$1100()Z
+    invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$1000()Z
 
     move-result v0
 
@@ -325,7 +416,7 @@
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mTag:Ljava/lang/String;
-    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$1200(Lcom/android/systemui/volume/ZenModePanel;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$1100(Lcom/android/systemui/volume/ZenModePanel;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -351,7 +442,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 967
+    .line 881
     :cond_0
     return-void
 .end method
@@ -362,32 +453,10 @@
     .locals 1
 
     .prologue
-    .line 935
+    .line 848
     iget v0, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->mMinuteIndex:I
 
     return v0
-.end method
-
-.method public isNoneDangerous()Z
-    .locals 2
-
-    .prologue
-    .line 924
-    iget v0, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->mNoneSelected:I
-
-    iget v1, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->mNoneDangerousThreshold:I
-
-    if-ge v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
 .method public onSharedPreferenceChanged(Landroid/content/SharedPreferences;Ljava/lang/String;)V
@@ -396,16 +465,19 @@
     .param p2, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 948
+    .line 861
     invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->updateMinuteIndex()V
 
-    .line 949
+    .line 862
     invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->updateNoneSelected()V
 
-    .line 950
-    invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->updateConfirmedIntroduction()V
+    .line 863
+    invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->updateConfirmedPriorityIntroduction()V
 
-    .line 951
+    .line 864
+    invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->updateConfirmedSilenceIntroduction()V
+
+    .line 865
     return-void
 .end method
 
@@ -414,21 +486,21 @@
     .param p1, "minuteIndex"    # I
 
     .prologue
-    .line 939
+    .line 852
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->clampIndex(I)I
 
     move-result p1
 
-    .line 940
+    .line 853
     iget v0, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->mMinuteIndex:I
 
     if-ne p1, v0, :cond_0
 
-    .line 944
+    .line 857
     :goto_0
     return-void
 
-    .line 941
+    .line 854
     :cond_0
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->clampIndex(I)I
 
@@ -436,9 +508,9 @@
 
     iput v0, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->mMinuteIndex:I
 
-    .line 942
+    .line 855
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
-    invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$1100()Z
+    invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$1000()Z
 
     move-result v0
 
@@ -447,7 +519,7 @@
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mTag:Ljava/lang/String;
-    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$1200(Lcom/android/systemui/volume/ZenModePanel;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$1100(Lcom/android/systemui/volume/ZenModePanel;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -473,12 +545,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 943
+    .line 856
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
-    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$2300(Lcom/android/systemui/volume/ZenModePanel;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$2200(Lcom/android/systemui/volume/ZenModePanel;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -495,7 +567,7 @@
     .locals 3
 
     .prologue
-    .line 928
+    .line 841
     iget v0, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->mNoneSelected:I
 
     add-int/lit8 v0, v0, 0x1
@@ -506,9 +578,9 @@
 
     iput v0, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->mNoneSelected:I
 
-    .line 929
+    .line 842
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
-    invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$1100()Z
+    invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$1000()Z
 
     move-result v0
 
@@ -517,7 +589,7 @@
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mTag:Ljava/lang/String;
-    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$1200(Lcom/android/systemui/volume/ZenModePanel;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$1100(Lcom/android/systemui/volume/ZenModePanel;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -555,12 +627,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 931
+    .line 844
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
-    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$2300(Lcom/android/systemui/volume/ZenModePanel;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$2200(Lcom/android/systemui/volume/ZenModePanel;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -570,6 +642,6 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/systemui/Prefs;->putInt(Landroid/content/Context;Ljava/lang/String;I)V
 
-    .line 932
+    .line 845
     return-void
 .end method

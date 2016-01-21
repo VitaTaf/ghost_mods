@@ -449,14 +449,28 @@
     goto :goto_0
 .end method
 
-.method public static traceConfig(Landroid/service/notification/ZenModeConfig;Landroid/service/notification/ZenModeConfig;)V
-    .locals 2
-    .param p0, "oldConfig"    # Landroid/service/notification/ZenModeConfig;
+.method public static traceConfig(Ljava/lang/String;Landroid/service/notification/ZenModeConfig;)V
+    .locals 3
+    .param p0, "reason"    # Ljava/lang/String;
     .param p1, "newConfig"    # Landroid/service/notification/ZenModeConfig;
 
     .prologue
     .line 117
     const/16 v1, 0xb
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, ","
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     if-eqz p1, :cond_0
 
@@ -465,6 +479,14 @@
     move-result-object v0
 
     :goto_0
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
     invoke-static {v1, v0}, Lcom/android/server/notification/ZenLog;->append(ILjava/lang/String;)V
 
     .line 118

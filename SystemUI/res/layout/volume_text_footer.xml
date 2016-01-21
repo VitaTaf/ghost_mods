@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/volume_text_footer" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textColor="?android:textColorPrimary" android:id="@id/volume_footline_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignBaseline="@id/volume_footline_action_button" android:alpha="@dimen/volume_secondary_alpha" android:fontFamily="sans-serif" android:paddingStart="13.0dip" android:paddingEnd="8.0dip" />
-    <Button android:id="@id/volume_footline_action_button" android:layout_width="wrap_content" android:layout_height="@dimen/volume_button_size" android:alpha="@dimen/volume_secondary_alpha" android:paddingStart="0.0dip" android:paddingEnd="0.0dip" android:layout_toStartOf="@id/volume_settings_button" android:layout_toEndOf="@id/volume_footline_text" style="@android:style/Widget.Material.Button.Borderless" />
-    <com.android.keyguard.AlphaOptimizedImageButton android:id="@id/volume_settings_button" android:layout_width="@dimen/volume_button_size" android:layout_height="@dimen/volume_button_size" android:src="@drawable/ic_volume_settings" android:layout_alignParentEnd="true" style="@style/VolumeButtons" />
-</RelativeLayout>

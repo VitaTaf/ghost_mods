@@ -55,35 +55,3 @@
     .line 128
     return-void
 .end method
-
-.method public onZenPrioritySettingsClicked()V
-    .locals 2
-
-    .prologue
-    .line 137
-    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogComponent$2;->this$0:Lcom/android/systemui/volume/VolumeDialogComponent;
-
-    sget-object v1, Lcom/android/systemui/volume/ZenModePanel;->ZEN_PRIORITY_SETTINGS:Landroid/content/Intent;
-
-    # invokes: Lcom/android/systemui/volume/VolumeDialogComponent;->startSettings(Landroid/content/Intent;)V
-    invoke-static {v0, v1}, Lcom/android/systemui/volume/VolumeDialogComponent;->access$100(Lcom/android/systemui/volume/VolumeDialogComponent;Landroid/content/Intent;)V
-
-    .line 138
-    return-void
-.end method
-
-.method public onZenSettingsClicked()V
-    .locals 2
-
-    .prologue
-    .line 132
-    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogComponent$2;->this$0:Lcom/android/systemui/volume/VolumeDialogComponent;
-
-    sget-object v1, Lcom/android/systemui/volume/ZenModePanel;->ZEN_SETTINGS:Landroid/content/Intent;
-
-    # invokes: Lcom/android/systemui/volume/VolumeDialogComponent;->startSettings(Landroid/content/Intent;)V
-    invoke-static {v0, v1}, Lcom/android/systemui/volume/VolumeDialogComponent;->access$100(Lcom/android/systemui/volume/VolumeDialogComponent;Landroid/content/Intent;)V
-
-    .line 133
-    return-void
-.end method

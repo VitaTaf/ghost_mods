@@ -295,7 +295,7 @@
     .line 106
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI;->mContext:Landroid/content/Context;
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/DndTile;->setVisible(Landroid/content/Context;Z)V
 

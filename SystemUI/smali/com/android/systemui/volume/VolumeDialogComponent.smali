@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/SystemUI;Landroid/content/Context;Landroid/os/Handler;Lcom/android/systemui/statusbar/policy/ZenModeController;)V
-    .locals 3
+    .locals 6
     .param p1, "sysui"    # Lcom/android/systemui/SystemUI;
     .param p2, "context"    # Landroid/content/Context;
     .param p3, "handler"    # Landroid/os/Handler;
@@ -33,10 +33,10 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 54
+    .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
+    .line 47
     new-instance v0, Landroid/media/VolumePolicy;
 
     const/16 v1, 0x190
@@ -52,13 +52,13 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogComponent;->mVolumeDialogCallback:Lcom/android/systemui/volume/VolumeDialog$Callback;
 
-    .line 55
+    .line 56
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialogComponent;->mSysui:Lcom/android/systemui/SystemUI;
 
-    .line 56
+    .line 57
     iput-object p2, p0, Lcom/android/systemui/volume/VolumeDialogComponent;->mContext:Landroid/content/Context;
 
-    .line 57
+    .line 58
     new-instance v0, Lcom/android/systemui/volume/VolumeDialogComponent$1;
 
     const/4 v1, 0x0
@@ -67,24 +67,30 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogComponent;->mController:Lcom/android/systemui/volume/VolumeDialogController;
 
-    .line 63
+    .line 64
     iput-object p4, p0, Lcom/android/systemui/volume/VolumeDialogComponent;->mZenModeController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
-    .line 64
+    .line 65
     new-instance v0, Lcom/android/systemui/volume/VolumeDialog;
 
-    iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogComponent;->mController:Lcom/android/systemui/volume/VolumeDialogController;
+    const/16 v2, 0x7e4
 
-    iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialogComponent;->mVolumeDialogCallback:Lcom/android/systemui/volume/VolumeDialog$Callback;
+    iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialogComponent;->mController:Lcom/android/systemui/volume/VolumeDialogController;
 
-    invoke-direct {v0, p2, v1, p4, v2}, Lcom/android/systemui/volume/VolumeDialog;-><init>(Landroid/content/Context;Lcom/android/systemui/volume/VolumeDialogController;Lcom/android/systemui/statusbar/policy/ZenModeController;Lcom/android/systemui/volume/VolumeDialog$Callback;)V
+    iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialogComponent;->mVolumeDialogCallback:Lcom/android/systemui/volume/VolumeDialog$Callback;
+
+    move-object v1, p2
+
+    move-object v4, p4
+
+    invoke-direct/range {v0 .. v5}, Lcom/android/systemui/volume/VolumeDialog;-><init>(Landroid/content/Context;ILcom/android/systemui/volume/VolumeDialogController;Lcom/android/systemui/statusbar/policy/ZenModeController;Lcom/android/systemui/volume/VolumeDialog$Callback;)V
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogComponent;->mDialog:Lcom/android/systemui/volume/VolumeDialog;
 
-    .line 65
+    .line 67
     invoke-direct {p0}, Lcom/android/systemui/volume/VolumeDialogComponent;->applyConfiguration()V
 
-    .line 66
+    .line 68
     return-void
 .end method
 
@@ -93,7 +99,7 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialogComponent;
 
     .prologue
-    .line 40
+    .line 41
     invoke-direct {p0}, Lcom/android/systemui/volume/VolumeDialogComponent;->sendUserActivity()V
 
     return-void
@@ -105,7 +111,7 @@
     .param p1, "x1"    # Landroid/content/Intent;
 
     .prologue
-    .line 40
+    .line 41
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialogComponent;->startSettings(Landroid/content/Intent;)V
 
     return-void
@@ -119,32 +125,22 @@
 
     const/4 v2, 0x1
 
-    .line 76
+    .line 78
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogComponent;->mDialog:Lcom/android/systemui/volume/VolumeDialog;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/volume/VolumeDialog;->setStreamImportant(IZ)V
 
-    .line 77
+    .line 79
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogComponent;->mDialog:Lcom/android/systemui/volume/VolumeDialog;
 
     invoke-virtual {v0, v2, v3}, Lcom/android/systemui/volume/VolumeDialog;->setStreamImportant(IZ)V
 
-    .line 78
-    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogComponent;->mDialog:Lcom/android/systemui/volume/VolumeDialog;
-
-    invoke-virtual {v0, v3}, Lcom/android/systemui/volume/VolumeDialog;->setShowHeaders(Z)V
-
-    .line 79
-    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogComponent;->mDialog:Lcom/android/systemui/volume/VolumeDialog;
-
-    invoke-virtual {v0, v2}, Lcom/android/systemui/volume/VolumeDialog;->setShowFooter(Z)V
-
     .line 80
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogComponent;->mDialog:Lcom/android/systemui/volume/VolumeDialog;
 
-    invoke-virtual {v0, v2}, Lcom/android/systemui/volume/VolumeDialog;->setZenFooter(Z)V
+    invoke-virtual {v0, v3}, Lcom/android/systemui/volume/VolumeDialog;->setShowHeaders(Z)V
 
     .line 81
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogComponent;->mDialog:Lcom/android/systemui/volume/VolumeDialog;
@@ -166,7 +162,7 @@
     .line 84
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogComponent;->mController:Lcom/android/systemui/volume/VolumeDialogController;
 
-    invoke-virtual {v0, v3}, Lcom/android/systemui/volume/VolumeDialogController;->showDndTile(Z)V
+    invoke-virtual {v0, v2}, Lcom/android/systemui/volume/VolumeDialogController;->showDndTile(Z)V
 
     .line 85
     return-void
@@ -176,7 +172,7 @@
     .locals 3
 
     .prologue
-    .line 69
+    .line 71
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogComponent;->mSysui:Lcom/android/systemui/SystemUI;
 
     const-class v2, Lcom/android/systemui/keyguard/KeyguardViewMediator;
@@ -187,14 +183,14 @@
 
     check-cast v0, Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
-    .line 70
+    .line 72
     .local v0, "kvm":Lcom/android/systemui/keyguard/KeyguardViewMediator;
     if-eqz v0, :cond_0
 
-    .line 71
+    .line 73
     invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->userActivity()V
 
-    .line 73
+    .line 75
     :cond_0
     return-void
 .end method

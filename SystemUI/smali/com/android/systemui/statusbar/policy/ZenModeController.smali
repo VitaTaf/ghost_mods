@@ -18,6 +18,9 @@
 .method public abstract getConfig()Landroid/service/notification/ZenModeConfig;
 .end method
 
+.method public abstract getCurrentUser()I
+.end method
+
 .method public abstract getManualRule()Landroid/service/notification/ZenModeConfig$ZenRule;
 .end method
 

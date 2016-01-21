@@ -1057,6 +1057,14 @@
 
     if-eqz v9, :cond_a
 
+    iget-object v9, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mContext:Landroid/content/Context;
+
+    invoke-static {v9}, Lcom/android/systemui/qs/tiles/DndTile;->isCombinedIcon(Landroid/content/Context;)Z
+
+    move-result v9
+
+    if-nez v9, :cond_a
+
     invoke-virtual {v0}, Landroid/media/AudioManager;->getRingerModeInternal()I
 
     move-result v9
@@ -1211,12 +1219,12 @@
     const/4 v3, 0x1
 
     .line 307
-    const v2, 0x7f0201c5
+    const v2, 0x7f020133
 
     .line 308
     iget-object v7, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mContext:Landroid/content/Context;
 
-    const v9, 0x7f0c008d
+    const v9, 0x7f0c008a
 
     invoke-virtual {v7, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

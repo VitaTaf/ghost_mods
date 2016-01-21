@@ -114,7 +114,7 @@
         <item name="android:textColor">@color/qs_subhead</item>
     </style>
     <style name="TextAppearance.QS.SegmentedButton" parent="@style/TextAppearance.QS">
-        <item name="android:textSize">14.0sp</item>
+        <item name="android:textSize">16.0sp</item>
     </style>
     <style name="TextAppearance.QS.DataUsage" parent="@style/TextAppearance.QS">
         <item name="android:textSize">@dimen/qs_data_usage_text_size</item>
@@ -196,30 +196,26 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">#ffffffff</item>
     </style>
+    <style name="TextAppearance.Volume" parent="@style/TextAppearance">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+    <style name="TextAppearance.Volume.ZenSummary" parent="@style/TextAppearance.Volume">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    <style name="TextAppearance.Volume.ZenDetail" parent="@style/TextAppearance.Volume">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">#ffb0b3c5</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
     <style name="VolumeDialogAnimations">
         <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
         <item name="android:windowExitAnimation">@android:anim/fade_out</item>
     </style>
     <style name="VolumeButtons" parent="@android:style/Widget.Material.Button.Borderless">
         <item name="android:background">@drawable/btn_borderless_rect</item>
-    </style>
-    <style name="TextAppearance.Volume" parent="@style/TextAppearance">
-        <item name="android:textStyle">normal</item>
-        <item name="android:textColor">#ffffffff</item>
-        <item name="android:fontFamily">sans-serif</item>
-    </style>
-    <style name="TextAppearance.Volume.ZenSwitch" parent="@style/TextAppearance.Volume">
-        <item name="android:textSize">16.0sp</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
-    </style>
-    <style name="TextAppearance.Volume.ZenSwitchSummary" parent="@style/TextAppearance.Volume">
-        <item name="android:textSize">14.0sp</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
-    </style>
-    <style name="TextAppearance.Volume.ZenSwitchDetail" parent="@style/TextAppearance.Volume">
-        <item name="android:textSize">14.0sp</item>
-        <item name="android:textColor">#ffb0b3c5</item>
-        <item name="android:fontFamily">sans-serif</item>
     </style>
     <style name="Widget.TextView.NumPadKey" parent="@android:style/Widget.TextView">
         <item name="android:textSize">36.0sp</item>

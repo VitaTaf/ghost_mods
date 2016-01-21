@@ -21,8 +21,5 @@
 .method public abstract onInteraction()V
 .end method
 
-.method public abstract onMoreSettings()V
-.end method
-
 .method public abstract onPrioritySettings()V
 .end method

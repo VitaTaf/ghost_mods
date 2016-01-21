@@ -167,7 +167,7 @@ Use only the supplied charger."</string>
     <string name="accessibility_quick_settings_airplane_changed_off">Airplane mode turned off.</string>
     <string name="accessibility_quick_settings_airplane_changed_on">Airplane mode turned on.</string>
     <string name="accessibility_quick_settings_dnd_priority_on">Do not disturb on, priority only.</string>
-    <string name="accessibility_quick_settings_dnd_none_on">Do not disturb on, no interruptions.</string>
+    <string name="accessibility_quick_settings_dnd_none_on">Do not disturb on, total silence.</string>
     <string name="accessibility_quick_settings_dnd_alarms_on">Do not disturb on, alarms only.</string>
     <string name="accessibility_quick_settings_dnd_off">Do not disturb off.</string>
     <string name="accessibility_quick_settings_dnd_changed_off">Do not disturb turned off.</string>
@@ -225,7 +225,7 @@ Turning it back on may lead to charges from your carrier."</string>
     <string name="quick_settings_dnd_label">Do not disturb</string>
     <string name="quick_settings_dnd_priority_label">Priority only</string>
     <string name="quick_settings_dnd_alarms_label">Alarms only</string>
-    <string name="quick_settings_dnd_none_label">No interruptions</string>
+    <string name="quick_settings_dnd_none_label">Total silence</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
     <string name="quick_settings_bluetooth_multiple_devices_label">Bluetooth (%d Devices)</string>
     <string name="quick_settings_bluetooth_off_label">Bluetooth Off</string>
@@ -295,27 +295,20 @@ be monitored"</string>
     <string name="description_target_search">Search</string>
     <string name="description_direction_up">Slide up for %s.</string>
     <string name="description_direction_left">Slide left for %s.</string>
-    <string name="zen_no_interruptions_with_warning">No interruptions. Not even alarms.</string>
-    <string name="zen_priority_introduction">"You won't be disturbed by sounds and vibrations, except from alarms, reminders, events, and callers you specify."</string>
+    <string name="zen_priority_introduction">You won’t be disturbed by sounds and vibrations, except from alarms, reminders, events, and callers you specify.</string>
     <string name="zen_priority_customize_button">Customize</string>
-    <string name="zen_no_interruptions">No interruptions</string>
-    <string name="zen_important_interruptions">Priority interruptions only</string>
-    <string name="zen_alarms">Alarms only</string>
-    <string name="zen_alarm_information_time">Your next alarm is at %s</string>
-    <string name="zen_alarm_information_day_time">Your next alarm is %s</string>
-    <string name="zen_alarm_warning">"You won't hear your alarm at %s"</string>
+    <string name="zen_silence_introduction">This blocks ALL sounds and vibrations, including from alarms, music, videos, and games. You’ll still be able to make phone calls.</string>
     <string name="keyguard_more_overflow_text">+%d</string>
     <string name="speed_bump_explanation">Less urgent notifications below</string>
     <string name="notification_tap_again">Touch again to open</string>
     <string name="keyguard_unlock">Swipe up to unlock</string>
     <string name="phone_hint">Swipe right for phone</string>
     <string name="camera_hint">Swipe left for camera</string>
-    <string name="interruption_level_none">No interruptions</string>
+    <string name="interruption_level_none">Total silence</string>
     <string name="interruption_level_priority">Priority only</string>
     <string name="interruption_level_alarms">Alarms only</string>
-    <string name="interruption_level_all">All</string>
-    <string name="interruption_level_none_twoline">"No
-interruptions"</string>
+    <string name="interruption_level_none_twoline">"Total
+silence"</string>
     <string name="interruption_level_priority_twoline">"Priority
 only"</string>
     <string name="interruption_level_alarms_twoline">"Alarms
@@ -429,6 +422,7 @@ Also, you're connected to a VPN (\"%3$s\"). Your VPN service provider can monito
     <string name="hidden_notifications_cancel">No thanks</string>
     <string name="hidden_notifications_setup">Set up</string>
     <string name="zen_mode_and_condition">%1$s. %2$s</string>
+    <string name="volume_zen_end_now">End now</string>
     <string name="screen_pinning_title">Screen is pinned</string>
     <string name="screen_pinning_description">This keeps it in view until you unpin. Touch and hold Back and Overview at the same time to unpin.</string>
     <string name="screen_pinning_description_accessible">This keeps it in view until you unpin. Touch and hold Overview to unpin.</string>
@@ -442,18 +436,12 @@ Also, you're connected to a VPN (\"%3$s\"). Your VPN service provider can monito
     <string name="volumeui_prompt_deny">Deny</string>
     <string name="volumeui_notification_title">%1$s is the volume dialog</string>
     <string name="volumeui_notification_text">Touch to restore the original.</string>
-    <string name="volume_zen_switch_text">@android:string/zen_mode_feature_name</string>
-    <string name="volume_dnd_is_on">Do not disturb is on</string>
-    <string name="volume_turn_off">Turn off</string>
     <string name="volume_stream_muted">%s silent</string>
     <string name="volume_stream_vibrate">%s vibrate</string>
     <string name="volume_stream_suppressed">%1$s silent — %2$s</string>
-    <string name="volume_stream_muted_dnd">%s silent — No interruptions</string>
+    <string name="volume_stream_muted_dnd">%s silent — Total silence</string>
     <string name="volume_stream_limited_dnd">%s — Priority only</string>
     <string name="volume_stream_vibrate_dnd">%s vibrate — Priority only</string>
-    <string name="volume_dnd_ends_in">Do not disturb ends in %s</string>
-    <string name="volume_dnd_ends_at">Do not disturb ends at %s</string>
-    <string name="volume_end_now">End now</string>
     <string name="accessibility_ime_switch_button">Switch input method button.</string>
     <string name="quick_settings_tiles_default_2">wifi,bt,inversion,cell1,cell2,airplane,rotation,flashlight,location,cast,hotspot</string>
     <string name="quick_settings_tiles_default_3">wifi,bt,inversion,cell1,cell2,cell3,airplane,rotation,flashlight,location,cast,hotspot</string>

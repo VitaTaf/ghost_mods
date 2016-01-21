@@ -293,32 +293,18 @@
     <item type="id" name="volume_dialog">false</item>
     <item type="id" name="volume_expand_button">false</item>
     <item type="id" name="volume_dialog_content">false</item>
-    <item type="id" name="volume_footer">false</item>
     <item type="id" name="volume_row_header">false</item>
     <item type="id" name="volume_row_icon">false</item>
     <item type="id" name="volume_row_slider">false</item>
     <item type="id" name="volume_settings_button">false</item>
-    <item type="id" name="volume_text_footer">false</item>
-    <item type="id" name="volume_footline_text">false</item>
-    <item type="id" name="volume_footline_action_button">false</item>
     <item type="id" name="volume_zen_footer">false</item>
-    <item type="id" name="volume_zen_switch_bar">false</item>
-    <item type="id" name="volume_zen_switch_bar_icon">false</item>
-    <item type="id" name="volume_zen_switch">false</item>
-    <item type="id" name="volume_zen_panel_summary">false</item>
-    <item type="id" name="volume_zen_panel_summary_line_1">false</item>
-    <item type="id" name="volume_zen_panel_summary_line_2">false</item>
-    <item type="id" name="volume_zen_mode_panel_buttons">false</item>
-    <item type="id" name="volume_zen_mode_panel_more">false</item>
-    <item type="id" name="volume_zen_mode_panel_done">false</item>
-    <item type="id" name="zen_mode_panel">false</item>
-    <item type="id" name="zen_buttons_container">false</item>
-    <item type="id" name="zen_buttons">false</item>
     <item type="id" name="zen_embedded_divider">false</item>
-    <item type="id" name="zen_subhead">false</item>
-    <item type="id" name="zen_subhead_collapsed">false</item>
-    <item type="id" name="zen_subhead_expanded">false</item>
-    <item type="id" name="zen_more_settings">false</item>
+    <item type="id" name="volume_zen_icon">false</item>
+    <item type="id" name="volume_zen_summary_line_1">false</item>
+    <item type="id" name="volume_zen_summary_line_2">false</item>
+    <item type="id" name="volume_zen_end_now">false</item>
+    <item type="id" name="zen_mode_panel">false</item>
+    <item type="id" name="zen_buttons">false</item>
     <item type="id" name="zen_introduction">false</item>
     <item type="id" name="zen_introduction_confirm">false</item>
     <item type="id" name="zen_introduction_message">false</item>

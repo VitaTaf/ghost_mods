@@ -17,9 +17,3 @@
 # virtual methods
 .method public abstract onSettingsClicked()V
 .end method
-
-.method public abstract onZenPrioritySettingsClicked()V
-.end method
-
-.method public abstract onZenSettingsClicked()V
-.end method

@@ -48,6 +48,31 @@
 
 
 # virtual methods
+.method public canVolumeDownEnterSilent()Z
+    .locals 1
+
+    .prologue
+    .line 570
+    iget-object v0, p0, Lcom/android/server/notification/ZenModeHelper$RingerModeDelegate;->this$0:Lcom/android/server/notification/ZenModeHelper;
+
+    # getter for: Lcom/android/server/notification/ZenModeHelper;->mZenMode:I
+    invoke-static {v0}, Lcom/android/server/notification/ZenModeHelper;->access$500(Lcom/android/server/notification/ZenModeHelper;)I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method public onSetRingerModeExternal(IILjava/lang/String;ILandroid/media/VolumePolicy;)I
     .locals 8
     .param p1, "ringerModeOld"    # I

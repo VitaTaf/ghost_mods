@@ -30,13 +30,13 @@
     .param p2, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 711
+    .line 717
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialogController$SettingObserver;->this$0:Lcom/android/systemui/volume/VolumeDialogController;
 
-    .line 712
+    .line 718
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 704
+    .line 710
     const-string v0, "volume_controller_service_component"
 
     invoke-static {v0}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -45,7 +45,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController$SettingObserver;->SERVICE_URI:Landroid/net/Uri;
 
-    .line 706
+    .line 712
     const-string v0, "zen_mode"
 
     invoke-static {v0}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -54,7 +54,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController$SettingObserver;->ZEN_MODE_URI:Landroid/net/Uri;
 
-    .line 708
+    .line 714
     const-string v0, "zen_mode_config_etag"
 
     invoke-static {v0}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -63,7 +63,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController$SettingObserver;->ZEN_MODE_CONFIG_URI:Landroid/net/Uri;
 
-    .line 713
+    .line 719
     return-void
 .end method
 
@@ -75,7 +75,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 716
+    .line 722
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController$SettingObserver;->this$0:Lcom/android/systemui/volume/VolumeDialogController;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialogController;->mContext:Landroid/content/Context;
@@ -91,7 +91,7 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 717
+    .line 723
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController$SettingObserver;->this$0:Lcom/android/systemui/volume/VolumeDialogController;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialogController;->mContext:Landroid/content/Context;
@@ -107,7 +107,7 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 718
+    .line 724
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController$SettingObserver;->this$0:Lcom/android/systemui/volume/VolumeDialogController;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialogController;->mContext:Landroid/content/Context;
@@ -123,14 +123,14 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 719
+    .line 725
     const/4 v0, 0x1
 
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogController$SettingObserver;->SERVICE_URI:Landroid/net/Uri;
 
     invoke-virtual {p0, v0, v1}, Lcom/android/systemui/volume/VolumeDialogController$SettingObserver;->onChange(ZLandroid/net/Uri;)V
 
-    .line 720
+    .line 726
     return-void
 .end method
 
@@ -140,10 +140,10 @@
     .param p2, "uri"    # Landroid/net/Uri;
 
     .prologue
-    .line 728
+    .line 734
     const/4 v0, 0x0
 
-    .line 729
+    .line 735
     .local v0, "changed":Z
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialogController$SettingObserver;->SERVICE_URI:Landroid/net/Uri;
 
@@ -153,7 +153,7 @@
 
     if-eqz v3, :cond_4
 
-    .line 730
+    .line 736
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialogController$SettingObserver;->this$0:Lcom/android/systemui/volume/VolumeDialogController;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialogController;->mContext:Landroid/content/Context;
@@ -171,7 +171,7 @@
 
     move-result-object v2
 
-    .line 732
+    .line 738
     .local v2, "setting":Ljava/lang/String;
     if-eqz v2, :cond_1
 
@@ -203,7 +203,7 @@
 
     const/4 v1, 0x1
 
-    .line 734
+    .line 740
     .local v1, "enabled":Z
     :goto_0
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialogController$SettingObserver;->this$0:Lcom/android/systemui/volume/VolumeDialogController;
@@ -215,38 +215,38 @@
 
     if-ne v1, v3, :cond_2
 
-    .line 749
+    .line 755
     .end local v1    # "enabled":Z
     .end local v2    # "setting":Ljava/lang/String;
     :cond_0
     :goto_1
     return-void
 
-    .line 732
+    .line 738
     .restart local v2    # "setting":Ljava/lang/String;
     :cond_1
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 735
+    .line 741
     .restart local v1    # "enabled":Z
     :cond_2
     if-eqz v1, :cond_3
 
-    .line 736
+    .line 742
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialogController$SettingObserver;->this$0:Lcom/android/systemui/volume/VolumeDialogController;
 
     invoke-virtual {v3}, Lcom/android/systemui/volume/VolumeDialogController;->register()V
 
-    .line 738
+    .line 744
     :cond_3
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialogController$SettingObserver;->this$0:Lcom/android/systemui/volume/VolumeDialogController;
 
     # setter for: Lcom/android/systemui/volume/VolumeDialogController;->mEnabled:Z
     invoke-static {v3, v1}, Lcom/android/systemui/volume/VolumeDialogController;->access$2202(Lcom/android/systemui/volume/VolumeDialogController;Z)Z
 
-    .line 740
+    .line 746
     .end local v1    # "enabled":Z
     .end local v2    # "setting":Ljava/lang/String;
     :cond_4
@@ -258,7 +258,7 @@
 
     if-eqz v3, :cond_5
 
-    .line 741
+    .line 747
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialogController$SettingObserver;->this$0:Lcom/android/systemui/volume/VolumeDialogController;
 
     # invokes: Lcom/android/systemui/volume/VolumeDialogController;->updateZenModeW()Z
@@ -266,7 +266,7 @@
 
     move-result v0
 
-    .line 743
+    .line 749
     :cond_5
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialogController$SettingObserver;->ZEN_MODE_CONFIG_URI:Landroid/net/Uri;
 
@@ -276,19 +276,19 @@
 
     if-eqz v3, :cond_6
 
-    .line 744
+    .line 750
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialogController$SettingObserver;->this$0:Lcom/android/systemui/volume/VolumeDialogController;
 
-    # invokes: Lcom/android/systemui/volume/VolumeDialogController;->updateExitConditionW()Z
+    # invokes: Lcom/android/systemui/volume/VolumeDialogController;->updateZenModeConfigW()Z
     invoke-static {v3}, Lcom/android/systemui/volume/VolumeDialogController;->access$2400(Lcom/android/systemui/volume/VolumeDialogController;)Z
 
     move-result v0
 
-    .line 746
+    .line 752
     :cond_6
     if-eqz v0, :cond_0
 
-    .line 747
+    .line 753
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialogController$SettingObserver;->this$0:Lcom/android/systemui/volume/VolumeDialogController;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialogController;->mCallbacks:Lcom/android/systemui/volume/VolumeDialogController$C;

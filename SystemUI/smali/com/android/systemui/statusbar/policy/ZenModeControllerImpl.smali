@@ -779,6 +779,18 @@
     return-object v0
 .end method
 
+.method public getCurrentUser()I
+    .locals 1
+
+    .prologue
+    .line 165
+    invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public getManualRule()Landroid/service/notification/ZenModeConfig$ZenRule;
     .locals 1
 

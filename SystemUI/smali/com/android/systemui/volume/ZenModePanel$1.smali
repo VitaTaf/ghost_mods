@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 194
+    .line 160
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel$1;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,18 +37,16 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .locals 2
+    .locals 1
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 197
+    .line 163
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$1;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
-    const/4 v1, 0x1
+    # invokes: Lcom/android/systemui/volume/ZenModePanel;->confirmZenIntroduction()V
+    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$500(Lcom/android/systemui/volume/ZenModePanel;)V
 
-    # invokes: Lcom/android/systemui/volume/ZenModePanel;->setExpanded(Z)V
-    invoke-static {v0, v1}, Lcom/android/systemui/volume/ZenModePanel;->access$300(Lcom/android/systemui/volume/ZenModePanel;Z)V
-
-    .line 198
+    .line 164
     return-void
 .end method

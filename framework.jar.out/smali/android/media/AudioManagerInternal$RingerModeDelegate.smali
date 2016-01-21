@@ -15,6 +15,9 @@
 
 
 # virtual methods
+.method public abstract canVolumeDownEnterSilent()Z
+.end method
+
 .method public abstract onSetRingerModeExternal(IILjava/lang/String;ILandroid/media/VolumePolicy;)I
 .end method
 

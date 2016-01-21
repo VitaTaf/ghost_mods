@@ -232,23 +232,25 @@
     goto :goto_0
 .end method
 
-.method public static getShortTime(J)Ljava/lang/String;
-    .locals 2
-    .param p0, "millis"    # J
+.method private static emptyToNull(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    .locals 1
+    .param p0, "str"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 144
-    sget-object v0, Lcom/android/systemui/volume/Util;->HMMAA:Ljava/text/SimpleDateFormat;
+    .line 148
+    if-eqz p0, :cond_0
 
-    new-instance v1, Ljava/util/Date;
+    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
-    invoke-direct {v1, p0, p1}, Ljava/util/Date;-><init>(J)V
+    move-result v0
 
-    invoke-virtual {v0, v1}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    if-nez v0, :cond_1
 
-    move-result-object v0
+    :cond_0
+    const/4 p0, 0x0
 
-    return-object v0
+    :cond_1
+    return-object p0
 .end method
 
 .method public static logTag(Ljava/lang/Class;)Ljava/lang/String;
@@ -641,83 +643,48 @@
     .end packed-switch
 .end method
 
-.method public static setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
-    .locals 1
+.method public static setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)Z
+    .locals 2
     .param p0, "tv"    # Landroid/widget/TextView;
     .param p1, "text"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 148
+    .line 152
     invoke-virtual {p0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0}, Lcom/android/systemui/volume/Util;->emptyToNull(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    invoke-static {p1}, Lcom/android/systemui/volume/Util;->emptyToNull(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 150
-    :goto_0
-    return-void
+    const/4 v0, 0x0
 
-    .line 149
+    .line 154
+    :goto_0
+    return v0
+
+    .line 153
     :cond_0
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 154
+    const/4 v0, 0x1
 
     goto :goto_0
 .end method
 
 .method public static final setVisOrGone(Landroid/view/View;Z)V
-    .locals 2
-    .param p0, "v"    # Landroid/view/View;
-    .param p1, "vis"    # Z
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 153
-    if-eqz p0, :cond_0
-
-    invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    const/4 v1, 0x1
-
-    :goto_0
-    if-ne v1, p1, :cond_2
-
-    .line 155
-    :cond_0
-    :goto_1
-    return-void
-
-    :cond_1
-    move v1, v0
-
-    .line 153
-    goto :goto_0
-
-    .line 154
-    :cond_2
-    if-eqz p1, :cond_3
-
-    :goto_2
-    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
-
-    goto :goto_1
-
-    :cond_3
-    const/16 v0, 0x8
-
-    goto :goto_2
-.end method
-
-.method public static final setVisOrInvis(Landroid/view/View;Z)V
     .locals 2
     .param p0, "v"    # Landroid/view/View;
     .param p1, "vis"    # Z
@@ -751,6 +718,54 @@
     goto :goto_0
 
     .line 159
+    :cond_2
+    if-eqz p1, :cond_3
+
+    :goto_2
+    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
+
+    goto :goto_1
+
+    :cond_3
+    const/16 v0, 0x8
+
+    goto :goto_2
+.end method
+
+.method public static final setVisOrInvis(Landroid/view/View;Z)V
+    .locals 2
+    .param p0, "v"    # Landroid/view/View;
+    .param p1, "vis"    # Z
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 163
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    const/4 v1, 0x1
+
+    :goto_0
+    if-ne v1, p1, :cond_2
+
+    .line 165
+    :cond_0
+    :goto_1
+    return-void
+
+    :cond_1
+    move v1, v0
+
+    .line 163
+    goto :goto_0
+
+    .line 164
     :cond_2
     if-eqz p1, :cond_3
 

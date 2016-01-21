@@ -1,6 +1,9 @@
 .class Lcom/android/systemui/volume/ZenModePanel$11;
-.super Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;
+.super Ljava/lang/Object;
 .source "ZenModePanel.java"
+
+# interfaces
+.implements Lcom/android/systemui/volume/Interaction$Callback;
 
 
 # annotations
@@ -23,62 +26,26 @@
     .locals 0
 
     .prologue
-    .line 860
+    .line 931
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel$11;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onConditionsChanged([Landroid/service/notification/Condition;)V
-    .locals 2
-    .param p1, "conditions"    # [Landroid/service/notification/Condition;
+.method public onInteraction()V
+    .locals 1
 
     .prologue
-    .line 863
+    .line 934
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$11;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
-    # getter for: Lcom/android/systemui/volume/ZenModePanel;->mHandler:Lcom/android/systemui/volume/ZenModePanel$H;
-    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$1900(Lcom/android/systemui/volume/ZenModePanel;)Lcom/android/systemui/volume/ZenModePanel$H;
+    # invokes: Lcom/android/systemui/volume/ZenModePanel;->fireInteraction()V
+    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$2800(Lcom/android/systemui/volume/ZenModePanel;)V
 
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1, p1}, Lcom/android/systemui/volume/ZenModePanel$H;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
-
-    .line 864
-    return-void
-.end method
-
-.method public onManualRuleChanged(Landroid/service/notification/ZenModeConfig$ZenRule;)V
-    .locals 2
-    .param p1, "rule"    # Landroid/service/notification/ZenModeConfig$ZenRule;
-
-    .prologue
-    .line 868
-    iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$11;->this$0:Lcom/android/systemui/volume/ZenModePanel;
-
-    # getter for: Lcom/android/systemui/volume/ZenModePanel;->mHandler:Lcom/android/systemui/volume/ZenModePanel$H;
-    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$1900(Lcom/android/systemui/volume/ZenModePanel;)Lcom/android/systemui/volume/ZenModePanel$H;
-
-    move-result-object v0
-
-    const/4 v1, 0x2
-
-    invoke-virtual {v0, v1, p1}, Lcom/android/systemui/volume/ZenModePanel$H;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
-
-    .line 869
+    .line 935
     return-void
 .end method
