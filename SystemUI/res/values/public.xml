@@ -764,8 +764,8 @@
     <public type="drawable" name="ic_dnd" id="0x7f02051e" />
     <public type="drawable" name="ic_volume_alarm" id="0x7f02051f" />
     <public type="drawable" name="ic_volume_alarm_mute" id="0x7f020520" />
-    <public type="drawable" name="ic_volume_bt" id="0x7f020521" />
-    <public type="drawable" name="ic_volume_bt_mute" id="0x7f020522" />
+    <public type="drawable" name="ic_volume_media_bt" id="0x7f020521" />
+    <public type="drawable" name="ic_volume_media_bt_mute" id="0x7f020522" />
     <public type="drawable" name="ic_volume_bt_sco" id="0x7f020523" />
     <public type="drawable" name="ic_volume_collapse" id="0x7f020524" />
     <public type="drawable" name="ic_volume_collapse_animation" id="0x7f020525" />
