@@ -18,9 +18,6 @@
 .method public abstract getConfig()Landroid/service/notification/ZenModeConfig;
 .end method
 
-.method public abstract getEffectsSuppressor()Landroid/content/ComponentName;
-.end method
-
 .method public abstract getManualRule()Landroid/service/notification/ZenModeConfig$ZenRule;
 .end method
 
@@ -28,9 +25,6 @@
 .end method
 
 .method public abstract isCountdownConditionSupported()Z
-.end method
-
-.method public abstract isZenAvailable()Z
 .end method
 
 .method public abstract removeCallback(Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;)V

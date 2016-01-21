@@ -71,14 +71,6 @@
     <public type="drawable" name="ic_access_alarms_small" id="0x7f02001d" />
     <public type="drawable" name="ic_add_circle_qs" id="0x7f02001e" />
     <public type="drawable" name="ic_android" id="0x7f02001f" />
-    <public type="drawable" name="ic_audio_alarm" id="0x7f020020" />
-    <public type="drawable" name="ic_audio_alarm_mute" id="0x7f020021" />
-    <public type="drawable" name="ic_audio_bt" id="0x7f020022" />
-    <public type="drawable" name="ic_audio_bt_mute" id="0x7f020023" />
-    <public type="drawable" name="ic_audio_phone" id="0x7f020024" />
-    <public type="drawable" name="ic_audio_remote" id="0x7f020025" />
-    <public type="drawable" name="ic_audio_vol" id="0x7f020026" />
-    <public type="drawable" name="ic_audio_vol_mute" id="0x7f020027" />
     <public type="drawable" name="ic_backspace_24dp" id="0x7f020028" />
     <public type="drawable" name="ic_brightness_thumb" id="0x7f020029" />
     <public type="drawable" name="ic_chevron_left" id="0x7f02002b" />
@@ -169,9 +161,6 @@
     <public type="drawable" name="ic_qs_wifi_full_3" id="0x7f0200a9" />
     <public type="drawable" name="ic_qs_wifi_full_4" id="0x7f0200aa" />
     <public type="drawable" name="ic_qs_wifi_no_network" id="0x7f0200ab" />
-    <public type="drawable" name="ic_ringer_audible" id="0x7f0200ac" />
-    <public type="drawable" name="ic_ringer_mute" id="0x7f0200ad" />
-    <public type="drawable" name="ic_ringer_vibrate" id="0x7f0200ae" />
     <public type="drawable" name="ic_settings" id="0x7f0200af" />
     <public type="drawable" name="ic_signal_airplane_disable" id="0x7f0200b0" />
     <public type="drawable" name="ic_signal_airplane_disable_animation" id="0x7f0200b1" />
@@ -1451,8 +1440,6 @@
     <public type="layout" name="super_status_bar" id="0x7f04004e" />
     <public type="layout" name="system_icons" id="0x7f04004f" />
     <public type="layout" name="volume_dialog" id="0x7f040050" />
-    <public type="layout" name="volume_panel" id="0x7f040051" />
-    <public type="layout" name="volume_panel_item" id="0x7f040052" />
     <public type="layout" name="zen_mode_condition" id="0x7f040053" />
     <public type="layout" name="zen_mode_panel" id="0x7f040054" />
     <public type="layout" name="zz_moto_carrier_label" id="0x7f040055" />
@@ -1468,7 +1455,6 @@
     <public type="layout" name="keyguard_eca" id="0x7f04005f" />
     <public type="layout" name="recents_dismiss_button" id="0x7f040060" />
     <public type="layout" name="volume_dialog_row" id="0x7f040062" />
-    <public type="layout" name="volume_panel_dialog" id="0x7f040063" />
     <public type="layout" name="volume_text_footer" id="0x7f040064" />
     <public type="layout" name="volume_zen_footer" id="0x7f040065" />
     <public type="layout" name="recents_task_resize_dialog" id="0x7f040061" />
@@ -1680,7 +1666,6 @@
     <public type="color" name="screen_pinning_request_window_bg" id="0x7f08003a" />
     <public type="color" name="segmented_button_selected" id="0x7f08003b" />
     <public type="color" name="segmented_button_unselected" id="0x7f08003c" />
-    <public type="color" name="volume_panel_divider" id="0x7f08003d" />
     <public type="color" name="screen_pinning_primary_text" id="0x7f08003e" />
     <public type="color" name="transparent" id="0x7f08003f" />
     <public type="color" name="keyguard_avatar_frame_color" id="0x7f080040" />
@@ -1822,7 +1807,6 @@
     <public type="integer" name="doze_pulse_duration_visible" id="0x7f0a002d" />
     <public type="integer" name="doze_pulse_duration_out" id="0x7f0a002e" />
     <public type="integer" name="doze_small_icon_alpha" id="0x7f0a002f" />
-    <public type="integer" name="volume_panel_dismiss_delay" id="0x7f0a0030" />
     <public type="integer" name="days_to_show_hotspot_tile" id="0x7f0a0031" />
     <public type="integer" name="days_to_show_color_inversion_tile" id="0x7f0a0032" />
     <public type="integer" name="zen_mode_alarm_warning_threshold" id="0x7f0a0033" />
@@ -1862,7 +1846,6 @@
     <public type="style" name="TextAppearance.QS.DetailHeader" id="0x7f0b0016" />
     <public type="style" name="TextAppearance.QS.DetailItemPrimary" id="0x7f0b0017" />
     <public type="style" name="TextAppearance.QS.DetailItemSecondary" id="0x7f0b0018" />
-    <public type="style" name="TextAppearance.QS.VolumeSuppressor" id="0x7f0b0019" />
     <public type="style" name="TextAppearance.QS.DetailButton" id="0x7f0b001a" />
     <public type="style" name="TextAppearance.QS.DetailEmpty" id="0x7f0b001b" />
     <public type="style" name="TextAppearance.QS.Subhead" id="0x7f0b001c" />
@@ -1882,7 +1865,6 @@
     <public type="style" name="Theme.SystemUI.Dialog" id="0x7f0b002a" />
     <public type="style" name="Theme.SystemUI.Dialog.Alert" id="0x7f0b002b" />
     <public type="style" name="QSBorderlessButton" id="0x7f0b002c" />
-    <public type="style" name="VolumePanelAnimation" id="0x7f0b002d" />
     <public type="style" name="TextAppearance.Material.Notification.Parenthetical" id="0x7f0b002e" />
     <public type="style" name="SearchPanelCircle" id="0x7f0b002f" />
     <public type="style" name="SearchPanelScrim" id="0x7f0b0030" />
@@ -2695,9 +2677,6 @@
     <public type="dimen" name="keyguard_affordance_min_background_radius" id="0x7f0d007f" />
     <public type="dimen" name="hint_grow_amount_sideways" id="0x7f0d0080" />
     <public type="dimen" name="hint_chevron_circle_padding" id="0x7f0d0081" />
-    <public type="dimen" name="volume_panel_top" id="0x7f0d0082" />
-    <public type="dimen" name="volume_panel_width" id="0x7f0d0083" />
-    <public type="dimen" name="volume_panel_z" id="0x7f0d0084" />
     <public type="dimen" name="header_notifications_collide_distance" id="0x7f0d0085" />
     <public type="dimen" name="unlock_move_distance" id="0x7f0d0086" />
     <public type="dimen" name="notification_scrim_wait_distance" id="0x7f0d0087" />
@@ -3174,12 +3153,6 @@
     <public type="id" name="statusIcons" id="0x7f0f012f" />
     <public type="id" name="signal_cluster" id="0x7f0f0130" />
     <public type="id" name="battery" id="0x7f0f0131" />
-    <public type="id" name="visible_panel" id="0x7f0f0132" />
-    <public type="id" name="slider_panel" id="0x7f0f0133" />
-    <public type="id" name="stream_icon" id="0x7f0f0134" />
-    <public type="id" name="suppressor" id="0x7f0f0135" />
-    <public type="id" name="seekbar" id="0x7f0f0136" />
-    <public type="id" name="secondary_icon" id="0x7f0f0137" />
     <public type="id" name="zen_mode_panel" id="0x7f0f0138" />
     <public type="id" name="zen_buttons_container" id="0x7f0f0139" />
     <public type="id" name="zen_buttons" id="0x7f0f013a" />

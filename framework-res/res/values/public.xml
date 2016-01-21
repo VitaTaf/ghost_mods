@@ -5978,7 +5978,6 @@
     <public type="array" name="config_lmk_minfreehigh" id="0x01070052" />
     <public type="array" name="config_erase_recovery_blacklist" id="0x01070053" />
     <public type="array" name="config_erase_recovery_prefix" id="0x01070054" />
-    <public type="array" name="APKTOOL_DUMMY_000c" id="0x0107000c" />
     <public type="drawable" name="blank_tile" id="0x010800d0" />
     <public type="drawable" name="default_wallpaper" id="0x0108028b" />
     <public type="drawable" name="loading_tile" id="0x010804ca" />
@@ -6117,11 +6116,8 @@
     <public type="drawable" name="ic_account_circle" id="0x0108030f" />
     <public type="drawable" name="ic_audio_alarm" id="0x01080312" />
     <public type="drawable" name="ic_audio_alarm_mute" id="0x01080313" />
-    <public type="drawable" name="ic_audio_bt" id="0x01080314" />
-    <public type="drawable" name="ic_audio_bt_mute" id="0x01080316" />
     <public type="drawable" name="ic_audio_notification" id="0x01080318" />
     <public type="drawable" name="ic_audio_notification_mute" id="0x0108031a" />
-    <public type="drawable" name="ic_audio_phone" id="0x0108031c" />
     <public type="drawable" name="ic_audio_ring_notif" id="0x0108031e" />
     <public type="drawable" name="ic_audio_ring_notif_mute" id="0x0108031f" />
     <public type="drawable" name="ic_audio_ring_notif_vibrate" id="0x01080320" />
@@ -7087,11 +7083,8 @@
     <public type="drawable" name="ic_ab_back_holo_dark_am" id="0x0108030b" />
     <public type="drawable" name="ic_ab_back_holo_light_am" id="0x0108030d" />
     <public type="drawable" name="ic_aggregated" id="0x01080311" />
-    <public type="drawable" name="ic_audio_bt_alpha" id="0x01080315" />
-    <public type="drawable" name="ic_audio_bt_mute_alpha" id="0x01080317" />
     <public type="drawable" name="ic_audio_notification_am_alpha" id="0x01080319" />
     <public type="drawable" name="ic_audio_notification_mute_am_alpha" id="0x0108031b" />
-    <public type="drawable" name="ic_audio_phone_am_alpha" id="0x0108031d" />
     <public type="drawable" name="ic_btn_round_more_disabled" id="0x01080324" />
     <public type="drawable" name="ic_btn_round_more_normal" id="0x01080325" />
     <public type="drawable" name="ic_btn_search_go" id="0x01080326" />
@@ -8525,8 +8518,6 @@
     <public type="integer" name="kg_selector_gravity" id="0x010e009d" />
     <public type="integer" name="kg_widget_region_weight" id="0x010e009e" />
     <public type="integer" name="kg_security_flipper_weight" id="0x010e009f" />
-    <public type="integer" name="APKTOOL_DUMMY_007d" id="0x010e007d" />
-    <public type="integer" name="APKTOOL_DUMMY_007e" id="0x010e007e" />
     <public type="transition" name="no_transition" id="0x010f0000" />
     <public type="transition" name="move" id="0x010f0001" />
     <public type="transition" name="fade" id="0x010f0002" />
@@ -8796,7 +8787,6 @@
     <public type="bool" name="config_persist_pnt_with_simslot" id="0x011200e7" />
     <public type="bool" name="kg_share_status_area" id="0x0112000a" />
     <public type="bool" name="kg_sim_puk_account_full_screen" id="0x0112000b" />
-    <public type="bool" name="APKTOOL_DUMMY_000f" id="0x0112000f" />
     <public type="fraction" name="config_dimBehindFadeDuration" id="0x01130000" />
     <public type="fraction" name="config_screenAutoBrightnessDozeScaleFactor" id="0x01130001" />
     <public type="fraction" name="config_maximumScreenDimRatio" id="0x01130002" />

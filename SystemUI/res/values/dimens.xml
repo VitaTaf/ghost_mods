@@ -130,9 +130,6 @@
     <dimen name="keyguard_affordance_min_background_radius">30.0dip</dimen>
     <dimen name="hint_grow_amount_sideways">60.0dip</dimen>
     <dimen name="hint_chevron_circle_padding">16.0dip</dimen>
-    <dimen name="volume_panel_top">0.0dip</dimen>
-    <dimen name="volume_panel_width">344.0dip</dimen>
-    <dimen name="volume_panel_z">3.0dip</dimen>
     <dimen name="header_notifications_collide_distance">48.0dip</dimen>
     <dimen name="unlock_move_distance">75.0dip</dimen>
     <dimen name="notification_scrim_wait_distance">100.0dip</dimen>

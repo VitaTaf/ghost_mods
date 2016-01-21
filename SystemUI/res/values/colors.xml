@@ -62,7 +62,6 @@
     <color name="screen_pinning_request_window_bg">#80000000</color>
     <color name="segmented_button_selected">#ffffffff</color>
     <color name="segmented_button_unselected">#b3b0bec5</color>
-    <color name="volume_panel_divider">#1fffffff</color>
     <color name="zen_introduction_message_background">#ff009688</color>
     <color name="screen_pinning_primary_text">@android:color/primary_text_default_material_light</color>
     <color name="volume_icon_color">#ffffffff</color>

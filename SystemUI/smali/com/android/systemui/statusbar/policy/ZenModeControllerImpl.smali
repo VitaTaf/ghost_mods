@@ -779,24 +779,6 @@
     return-object v0
 .end method
 
-.method public getEffectsSuppressor()Landroid/content/ComponentName;
-    .locals 1
-
-    .prologue
-    .line 153
-    iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->mContext:Landroid/content/Context;
-
-    invoke-static {v0}, Landroid/app/NotificationManager;->from(Landroid/content/Context;)Landroid/app/NotificationManager;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/app/NotificationManager;->getEffectsSuppressor()Landroid/content/ComponentName;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method public getManualRule()Landroid/service/notification/ZenModeConfig$ZenRule;
     .locals 1
 
