@@ -46,11 +46,11 @@
 
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/qs/QSTile$Host;)V
-    .locals 5
+    .locals 6
     .param p1, "host"    # Lcom/android/systemui/qs/QSTile$Host;
 
     .prologue
-    const/4 v4, 0x1
+    const/4 v5, 0x1
 
     .line 39
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
@@ -93,11 +93,13 @@
 
     move-result-object v1
 
-    const-class v2, Lcom/android/systemui/qs/tiles/ColorInversionTile;
+    const-string v2, "ColorInversionTileLastUsed"
 
-    const v3, 0x7f0a0032
+    const-class v3, Lcom/android/systemui/qs/tiles/ColorInversionTile;
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/android/systemui/qs/UsageTracker;-><init>(Landroid/content/Context;Ljava/lang/Class;I)V
+    const v4, 0x7f0a0032
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lcom/android/systemui/qs/UsageTracker;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/Class;I)V
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mUsageTracker:Lcom/android/systemui/qs/UsageTracker;
 
@@ -127,12 +129,12 @@
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mUsageTracker:Lcom/android/systemui/qs/UsageTracker;
 
-    invoke-virtual {v0, v4}, Lcom/android/systemui/qs/UsageTracker;->setListening(Z)V
+    invoke-virtual {v0, v5}, Lcom/android/systemui/qs/UsageTracker;->setListening(Z)V
 
     .line 59
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mSetting:Lcom/android/systemui/qs/SecureSetting;
 
-    invoke-virtual {v0, v4}, Lcom/android/systemui/qs/SecureSetting;->setListening(Z)V
+    invoke-virtual {v0, v5}, Lcom/android/systemui/qs/SecureSetting;->setListening(Z)V
 
     .line 60
     return-void

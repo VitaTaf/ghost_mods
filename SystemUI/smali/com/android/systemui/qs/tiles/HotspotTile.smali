@@ -161,18 +161,20 @@
 .end method
 
 .method private static newUsageTracker(Landroid/content/Context;)Lcom/android/systemui/qs/UsageTracker;
-    .locals 3
+    .locals 4
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
     .line 108
     new-instance v0, Lcom/android/systemui/qs/UsageTracker;
 
-    const-class v1, Lcom/android/systemui/qs/tiles/HotspotTile;
+    const-string v1, "HotspotTileLastUsed"
 
-    const v2, 0x7f0a0031
+    const-class v2, Lcom/android/systemui/qs/tiles/HotspotTile;
 
-    invoke-direct {v0, p0, v1, v2}, Lcom/android/systemui/qs/UsageTracker;-><init>(Landroid/content/Context;Ljava/lang/Class;I)V
+    const v3, 0x7f0a0031
+
+    invoke-direct {v0, p0, v1, v2, v3}, Lcom/android/systemui/qs/UsageTracker;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/Class;I)V
 
     return-object v0
 .end method

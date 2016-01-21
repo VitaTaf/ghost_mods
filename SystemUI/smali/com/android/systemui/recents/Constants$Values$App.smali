@@ -19,10 +19,6 @@
 
 .field public static DebugModeVersion:Ljava/lang/String;
 
-.field public static Key_DebugModeEnabled:Ljava/lang/String;
-
-.field public static Key_SearchAppWidgetId:Ljava/lang/String;
-
 
 # direct methods
 .method static constructor <clinit>()V
@@ -35,16 +31,6 @@
     sput v0, Lcom/android/systemui/recents/Constants$Values$App;->AppWidgetHostId:I
 
     .line 60
-    const-string v0, "searchAppWidgetId"
-
-    sput-object v0, Lcom/android/systemui/recents/Constants$Values$App;->Key_SearchAppWidgetId:Ljava/lang/String;
-
-    .line 61
-    const-string v0, "debugModeEnabled"
-
-    sput-object v0, Lcom/android/systemui/recents/Constants$Values$App;->Key_DebugModeEnabled:Ljava/lang/String;
-
-    .line 62
     const-string v0, "A"
 
     sput-object v0, Lcom/android/systemui/recents/Constants$Values$App;->DebugModeVersion:Ljava/lang/String;

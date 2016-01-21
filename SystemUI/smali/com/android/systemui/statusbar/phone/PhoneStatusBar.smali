@@ -8714,19 +8714,7 @@
     .line 3470
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mContext:Landroid/content/Context;
 
-    iget-object v6, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v6}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v6
-
-    const/4 v7, 0x0
-
-    invoke-virtual {v5, v6, v7}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v5
-
-    invoke-interface {v5}, Landroid/content/SharedPreferences;->getAll()Ljava/util/Map;
+    invoke-static {v5}, Lcom/android/systemui/Prefs;->getAll(Landroid/content/Context;)Ljava/util/Map;
 
     move-result-object v5
 

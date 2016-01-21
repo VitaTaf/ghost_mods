@@ -139,29 +139,29 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 144
+    .line 145
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 63
-    new-instance v0, Landroid/graphics/Rect;
-
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
-
-    iput-object v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->systemInsets:Landroid/graphics/Rect;
 
     .line 64
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
+    iput-object v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->systemInsets:Landroid/graphics/Rect;
+
+    .line 65
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
     iput-object v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->displayRect:Landroid/graphics/Rect;
 
-    .line 75
+    .line 76
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->searchBarAppWidgetId:I
 
-    .line 149
+    .line 150
     const v0, 0x10c000d
 
     invoke-static {p1, v0}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
@@ -170,7 +170,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->fastOutSlowInInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 151
+    .line 152
     const v0, 0x10c000f
 
     invoke-static {p1, v0}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
@@ -179,7 +179,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->fastOutLinearInInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 153
+    .line 154
     const v0, 0x10c000e
 
     invoke-static {p1, v0}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
@@ -188,7 +188,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->linearOutSlowInInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 155
+    .line 156
     const v0, 0x10c0005
 
     invoke-static {p1, v0}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
@@ -197,7 +197,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->quintOutInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 157
+    .line 158
     return-void
 .end method
 
@@ -205,7 +205,7 @@
     .locals 1
 
     .prologue
-    .line 175
+    .line 176
     sget-object v0, Lcom/android/systemui/recents/RecentsConfiguration;->sInstance:Lcom/android/systemui/recents/RecentsConfiguration;
 
     return-object v0
@@ -217,19 +217,19 @@
     .param p1, "ssp"    # Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
     .prologue
-    .line 161
+    .line 162
     sget-object v1, Lcom/android/systemui/recents/RecentsConfiguration;->sInstance:Lcom/android/systemui/recents/RecentsConfiguration;
 
     if-nez v1, :cond_0
 
-    .line 162
+    .line 163
     new-instance v1, Lcom/android/systemui/recents/RecentsConfiguration;
 
     invoke-direct {v1, p0}, Lcom/android/systemui/recents/RecentsConfiguration;-><init>(Landroid/content/Context;)V
 
     sput-object v1, Lcom/android/systemui/recents/RecentsConfiguration;->sInstance:Lcom/android/systemui/recents/RecentsConfiguration;
 
-    .line 164
+    .line 165
     :cond_0
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -243,27 +243,27 @@
 
     move-result v0
 
-    .line 165
+    .line 166
     .local v0, "configHashCode":I
     sget v1, Lcom/android/systemui/recents/RecentsConfiguration;->sPrevConfigurationHashCode:I
 
     if-eq v1, v0, :cond_1
 
-    .line 166
+    .line 167
     sget-object v1, Lcom/android/systemui/recents/RecentsConfiguration;->sInstance:Lcom/android/systemui/recents/RecentsConfiguration;
 
     invoke-virtual {v1, p0}, Lcom/android/systemui/recents/RecentsConfiguration;->update(Landroid/content/Context;)V
 
-    .line 167
+    .line 168
     sput v0, Lcom/android/systemui/recents/RecentsConfiguration;->sPrevConfigurationHashCode:I
 
-    .line 169
+    .line 170
     :cond_1
     sget-object v1, Lcom/android/systemui/recents/RecentsConfiguration;->sInstance:Lcom/android/systemui/recents/RecentsConfiguration;
 
     invoke-virtual {v1, p0, p1}, Lcom/android/systemui/recents/RecentsConfiguration;->updateOnReinitialize(Landroid/content/Context;Lcom/android/systemui/recents/misc/SystemServicesProxy;)V
 
-    .line 170
+    .line 171
     sget-object v1, Lcom/android/systemui/recents/RecentsConfiguration;->sInstance:Lcom/android/systemui/recents/RecentsConfiguration;
 
     return-object v1
@@ -458,27 +458,17 @@
 .end method
 
 .method update(Landroid/content/Context;)V
-    .locals 8
+    .locals 7
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
-    const/4 v4, 0x0
-
-    .line 180
-    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {p1, v5, v4}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v2
+    const/4 v3, 0x0
 
     .line 181
-    .local v2, "settings":Landroid/content/SharedPreferences;
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -491,413 +481,413 @@
 
     .line 185
     .local v0, "dm":Landroid/util/DisplayMetrics;
-    sget-object v5, Lcom/android/systemui/recents/Constants$Values$App;->Key_DebugModeEnabled:Ljava/lang/String;
+    const-string v4, "debugModeEnabled"
 
-    invoke-interface {v2, v5, v4}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-static {p1, v4, v3}, Lcom/android/systemui/Prefs;->getBoolean(Landroid/content/Context;Ljava/lang/String;Z)Z
 
-    move-result v5
+    move-result v4
 
-    iput-boolean v5, p0, Lcom/android/systemui/recents/RecentsConfiguration;->debugModeEnabled:Z
-
-    .line 186
-    iget-boolean v5, p0, Lcom/android/systemui/recents/RecentsConfiguration;->debugModeEnabled:Z
-
-    if-eqz v5, :cond_0
+    iput-boolean v4, p0, Lcom/android/systemui/recents/RecentsConfiguration;->debugModeEnabled:Z
 
     .line 187
-    sput-boolean v3, Lcom/android/systemui/recents/misc/Console;->Enabled:Z
+    iget-boolean v4, p0, Lcom/android/systemui/recents/RecentsConfiguration;->debugModeEnabled:Z
 
-    .line 191
+    if-eqz v4, :cond_0
+
+    .line 188
+    sput-boolean v2, Lcom/android/systemui/recents/misc/Console;->Enabled:Z
+
+    .line 192
     :cond_0
     invoke-virtual {v1}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
-    move-result-object v5
+    move-result-object v4
 
-    iget v5, v5, Landroid/content/res/Configuration;->orientation:I
+    iget v4, v4, Landroid/content/res/Configuration;->orientation:I
 
-    const/4 v6, 0x2
+    const/4 v5, 0x2
 
-    if-ne v5, v6, :cond_1
+    if-ne v4, v5, :cond_1
 
     :goto_0
-    iput-boolean v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->isLandscape:Z
+    iput-boolean v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->isLandscape:Z
 
-    .line 191
-    const v3, 0x7f09000e
+    .line 193
+    const v2, 0x7f09000e
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
-    move-result v3
+    move-result v2
 
-    iput-boolean v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->hasTransposedSearchBar:Z
+    iput-boolean v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->hasTransposedSearchBar:Z
 
-    .line 192
-    const v3, 0x7f09000f
+    .line 194
+    const v2, 0x7f09000f
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
-    move-result v3
+    move-result v2
 
-    iput-boolean v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->hasTransposedNavBar:Z
+    iput-boolean v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->hasTransposedNavBar:Z
 
-    .line 196
-    iget-object v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->displayRect:Landroid/graphics/Rect;
+    .line 197
+    iget-object v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->displayRect:Landroid/graphics/Rect;
 
-    iget v5, v0, Landroid/util/DisplayMetrics;->widthPixels:I
+    iget v4, v0, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    iget v6, v0, Landroid/util/DisplayMetrics;->heightPixels:I
+    iget v5, v0, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    invoke-virtual {v3, v4, v4, v5, v6}, Landroid/graphics/Rect;->set(IIII)V
-
-    .line 198
-    const v3, 0x7f0a0017
-
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v3
-
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->filteringCurrentViewsAnimDuration:I
+    invoke-virtual {v2, v3, v3, v4, v5}, Landroid/graphics/Rect;->set(IIII)V
 
     .line 200
-    const v3, 0x7f0a0018
+    const v2, 0x7f0a0017
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->filteringNewViewsAnimDuration:I
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->filteringCurrentViewsAnimDuration:I
 
-    .line 205
+    .line 202
+    const v2, 0x7f0a0018
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
+
+    move-result v2
+
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->filteringNewViewsAnimDuration:I
+
+    .line 206
     invoke-static {}, Landroid/app/ActivityManager;->getMaxRecentTasksStatic()I
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->maxNumTasksToLoad:I
-
-    .line 208
-    const v3, 0x7f0d0062
-
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v3
-
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->searchBarSpaceHeightPx:I
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->maxNumTasksToLoad:I
 
     .line 209
-    sget-object v3, Lcom/android/systemui/recents/Constants$Values$App;->Key_SearchAppWidgetId:Ljava/lang/String;
+    const v2, 0x7f0d0062
 
-    const/4 v4, -0x1
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    invoke-interface {v2, v3, v4}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+    move-result v2
 
-    move-result v3
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->searchBarSpaceHeightPx:I
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->searchBarAppWidgetId:I
+    .line 210
+    const-string v2, "searchAppWidgetId"
 
-    .line 211
-    const v3, 0x7f0a0022
+    const/4 v3, -0x1
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-static {p1, v2, v3}, Lcom/android/systemui/Prefs;->getInt(Landroid/content/Context;Ljava/lang/String;I)I
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskStackScrollDuration:I
-
-    .line 213
-    const v3, 0x7f0d0063
-
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getFloat(I)F
-
-    move-result v3
-
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskStackWidthPaddingPct:F
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->searchBarAppWidgetId:I
 
     .line 214
-    const v3, 0x7f0d0064
+    const v2, 0x7f0a0022
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getFloat(I)F
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskStackOverscrollPct:F
-
-    .line 215
-    const v3, 0x7f0a0023
-
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v3
-
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskStackMaxDim:I
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskStackScrollDuration:I
 
     .line 216
-    const v3, 0x7f0d0065
+    const v2, 0x7f0d0063
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getFloat(I)F
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskStackTopPaddingPx:I
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskStackWidthPaddingPct:F
 
     .line 217
-    const v3, 0x7f0d0066
+    const v2, 0x7f0d0064
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getFloat(I)F
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->dismissAllButtonSizePx:I
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskStackOverscrollPct:F
+
+    .line 218
+    const v2, 0x7f0a0023
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
+
+    move-result v2
+
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskStackMaxDim:I
+
+    .line 219
+    const v2, 0x7f0d0065
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v2
+
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskStackTopPaddingPx:I
 
     .line 220
-    const v3, 0x7f0a0019
+    const v2, 0x7f0d0066
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->transitionEnterFromAppDelay:I
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->dismissAllButtonSizePx:I
 
-    .line 222
-    const v3, 0x7f0a001c
+    .line 223
+    const v2, 0x7f0a0019
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->transitionEnterFromHomeDelay:I
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->transitionEnterFromAppDelay:I
 
-    .line 226
-    const v3, 0x7f0a001a
+    .line 225
+    const v2, 0x7f0a001c
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewEnterFromAppDuration:I
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->transitionEnterFromHomeDelay:I
 
-    .line 228
-    const v3, 0x7f0a001d
+    .line 229
+    const v2, 0x7f0a001a
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewEnterFromHomeDuration:I
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewEnterFromAppDuration:I
 
-    .line 230
-    const v3, 0x7f0a001e
+    .line 231
+    const v2, 0x7f0a001d
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewEnterFromHomeStaggerDelay:I
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewEnterFromHomeDuration:I
 
-    .line 232
-    const v3, 0x7f0a001b
+    .line 233
+    const v2, 0x7f0a001e
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewExitToAppDuration:I
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewEnterFromHomeStaggerDelay:I
 
-    .line 234
-    const v3, 0x7f0a001f
+    .line 235
+    const v2, 0x7f0a001b
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewExitToHomeDuration:I
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewExitToAppDuration:I
 
-    .line 236
-    const v3, 0x7f0a0021
+    .line 237
+    const v2, 0x7f0a001f
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewRemoveAnimDuration:I
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewExitToHomeDuration:I
 
-    .line 238
-    const v3, 0x7f0d005d
+    .line 239
+    const v2, 0x7f0a0021
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewRemoveAnimTranslationXPx:I
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewRemoveAnimDuration:I
 
-    .line 240
-    const v3, 0x7f0d005a
+    .line 241
+    const v2, 0x7f0d005d
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewRoundedCornerRadiusPx:I
-
-    .line 242
-    const v3, 0x7f0d005e
-
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v3
-
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewHighlightPx:I
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewRemoveAnimTranslationXPx:I
 
     .line 243
-    const v3, 0x7f0d005b
+    const v2, 0x7f0d005a
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewTranslationZMinPx:I
-
-    .line 244
-    const v3, 0x7f0d005c
-
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v3
-
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewTranslationZMaxPx:I
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewRoundedCornerRadiusPx:I
 
     .line 245
-    const v3, 0x7f0d005f
+    const v2, 0x7f0d005e
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewAffiliateGroupEnterOffsetPx:I
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewHighlightPx:I
+
+    .line 246
+    const v2, 0x7f0d005b
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v2
+
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewTranslationZMinPx:I
 
     .line 247
-    const v3, 0x7f0d0060
+    const v2, 0x7f0d005c
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getFloat(I)F
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewThumbnailAlpha:F
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewTranslationZMaxPx:I
+
+    .line 248
+    const v2, 0x7f0d005f
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v2
+
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewAffiliateGroupEnterOffsetPx:I
 
     .line 250
-    const v3, 0x7f08001b
+    const v2, 0x7f0d0060
 
-    invoke-virtual {v1, v3, v7}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getFloat(I)F
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskBarViewDefaultBackgroundColor:I
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewThumbnailAlpha:F
 
-    .line 252
-    const v3, 0x7f08001c
+    .line 253
+    const v2, 0x7f08001b
 
-    invoke-virtual {v1, v3, v7}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
+    invoke-virtual {v1, v2, v6}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskBarViewLightTextColor:I
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskBarViewDefaultBackgroundColor:I
 
-    .line 254
-    const v3, 0x7f08001d
+    .line 255
+    const v2, 0x7f08001c
 
-    invoke-virtual {v1, v3, v7}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
+    invoke-virtual {v1, v2, v6}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskBarViewDarkTextColor:I
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskBarViewLightTextColor:I
 
-    .line 256
-    const v3, 0x7f080020
+    .line 257
+    const v2, 0x7f08001d
 
-    invoke-virtual {v1, v3, v7}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
+    invoke-virtual {v1, v2, v6}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskBarViewHighlightColor:I
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskBarViewDarkTextColor:I
 
-    .line 258
-    const v3, 0x7f0d0067
+    .line 259
+    const v2, 0x7f080020
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getFloat(I)F
+    invoke-virtual {v1, v2, v6}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskBarViewAffiliationColorMinAlpha:F
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskBarViewHighlightColor:I
 
-    .line 262
-    const v3, 0x7f0d0061
+    .line 261
+    const v2, 0x7f0d0067
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getFloat(I)F
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskBarHeight:I
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskBarViewAffiliationColorMinAlpha:F
 
-    .line 263
-    const v3, 0x7f0a0016
+    .line 265
+    const v2, 0x7f0d0061
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskBarDismissDozeDelaySeconds:I
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskBarHeight:I
 
-    .line 267
-    const v3, 0x7f0a0020
+    .line 266
+    const v2, 0x7f0a0016
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->navBarScrimEnterDuration:I
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->taskBarDismissDozeDelaySeconds:I
 
-    .line 271
-    const v3, 0x7f090002
+    .line 270
+    const v2, 0x7f0a0020
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
-    move-result v3
+    move-result v2
 
-    iput-boolean v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->useHardwareLayers:Z
-
-    .line 272
-    const v3, 0x7f0a0024
-
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v3
-
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->altTabKeyDelay:I
-
-    .line 273
-    const v3, 0x7f090003
-
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
-
-    move-result v3
-
-    iput-boolean v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->fakeShadows:Z
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->navBarScrimEnterDuration:I
 
     .line 274
-    const v3, 0x7f0a0025
+    const v2, 0x7f090002
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
-    move-result v3
+    move-result v2
 
-    iput v3, p0, Lcom/android/systemui/recents/RecentsConfiguration;->svelteLevel:I
+    iput-boolean v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->useHardwareLayers:Z
 
     .line 275
+    const v2, 0x7f0a0024
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
+
+    move-result v2
+
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->altTabKeyDelay:I
+
+    .line 276
+    const v2, 0x7f090003
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
+
+    move-result v2
+
+    iput-boolean v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->fakeShadows:Z
+
+    .line 277
+    const v2, 0x7f0a0025
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
+
+    move-result v2
+
+    iput v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->svelteLevel:I
+
+    .line 278
     return-void
 
     :cond_1
-    move v3, v4
+    move v2, v3
 
-    .line 190
+    .line 192
     goto/16 :goto_0
 .end method
 
@@ -905,17 +895,17 @@
     .locals 1
 
     .prologue
-    .line 303
+    .line 305
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->launchedReuseTaskStackViews:Z
 
-    .line 305
+    .line 307
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->launchedHasConfigurationChanged:Z
 
-    .line 306
+    .line 308
     return-void
 .end method
 
@@ -929,7 +919,7 @@
 
     const/4 v2, 0x0
 
-    .line 293
+    .line 294
     const-string v0, "development_settings_enabled"
 
     invoke-virtual {p2, p1, v0}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->getGlobalSetting(Landroid/content/Context;Ljava/lang/String;)I
@@ -943,7 +933,7 @@
     :goto_0
     iput-boolean v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->developerOptionsEnabled:Z
 
-    .line 295
+    .line 296
     const-string v0, "lock_to_app_enabled"
 
     invoke-virtual {p2, p1, v0}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->getSystemSetting(Landroid/content/Context;Ljava/lang/String;)I
@@ -976,51 +966,31 @@
     :cond_0
     move v0, v2
 
-    .line 293
+    .line 294
     goto :goto_0
 
     :cond_1
     move v1, v2
 
-    .line 295
+    .line 296
     goto :goto_1
 .end method
 
 .method public updateSearchBarAppWidgetId(Landroid/content/Context;I)V
-    .locals 3
+    .locals 1
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "appWidgetId"    # I
 
     .prologue
-    .line 284
+    .line 287
     iput p2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->searchBarAppWidgetId:I
 
-    .line 285
-    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p1, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    .line 286
-    .local v0, "settings":Landroid/content/SharedPreferences;
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v1
-
-    sget-object v2, Lcom/android/systemui/recents/Constants$Values$App;->Key_SearchAppWidgetId:Ljava/lang/String;
-
-    invoke-interface {v1, v2, p2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
-
     .line 288
+    const-string v0, "searchAppWidgetId"
+
+    invoke-static {p1, v0, p2}, Lcom/android/systemui/Prefs;->putInt(Landroid/content/Context;Ljava/lang/String;I)V
+
+    .line 289
     return-void
 .end method
 
@@ -1029,11 +999,11 @@
     .param p1, "insets"    # Landroid/graphics/Rect;
 
     .prologue
-    .line 279
+    .line 282
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->systemInsets:Landroid/graphics/Rect;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 280
+    .line 283
     return-void
 .end method
