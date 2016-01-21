@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 879
+    .line 865
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$7;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
 
     const/4 v2, 0x0
 
-    .line 882
+    .line 868
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialog$7;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mExpanding:Z
@@ -55,11 +55,11 @@
 
     if-eqz v3, :cond_0
 
-    .line 886
+    .line 872
     :goto_0
     return-void
 
-    .line 883
+    .line 869
     :cond_0
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialog$7;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
@@ -72,7 +72,7 @@
 
     move v0, v1
 
-    .line 884
+    .line 870
     .local v0, "newExpand":Z
     :goto_1
     const/4 v3, 0x3
@@ -83,7 +83,7 @@
 
     invoke-static {v3, v1}, Lcom/android/systemui/volume/Events;->writeEvent(I[Ljava/lang/Object;)V
 
-    .line 885
+    .line 871
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialog$7;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # invokes: Lcom/android/systemui/volume/VolumeDialog;->setExpandedH(Z)V
@@ -95,6 +95,6 @@
     :cond_1
     move v0, v2
 
-    .line 883
+    .line 869
     goto :goto_1
 .end method

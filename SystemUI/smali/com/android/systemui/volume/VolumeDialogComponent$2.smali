@@ -1,11 +1,14 @@
 .class Lcom/android/systemui/volume/VolumeDialogComponent$2;
-.super Lcom/android/systemui/volume/VolumeDialog;
+.super Ljava/lang/Object;
 .source "VolumeDialogComponent.java"
+
+# interfaces
+.implements Lcom/android/systemui/volume/VolumeDialog$Callback;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/volume/VolumeDialogComponent;-><init>(Lcom/android/systemui/SystemUI;Landroid/content/Context;Landroid/os/Handler;Lcom/android/systemui/statusbar/policy/ZenModeController;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/systemui/volume/VolumeDialogComponent;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,33 +22,68 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/volume/VolumeDialogComponent;Landroid/content/Context;Lcom/android/systemui/volume/VolumeDialogController;Lcom/android/systemui/statusbar/policy/ZenModeController;)V
+.method constructor <init>(Lcom/android/systemui/volume/VolumeDialogComponent;)V
     .locals 0
-    .param p2, "x0"    # Landroid/content/Context;
-    .param p3, "x1"    # Lcom/android/systemui/volume/VolumeDialogController;
-    .param p4, "x2"    # Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     .prologue
-    .line 56
+    .line 124
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialogComponent$2;->this$0:Lcom/android/systemui/volume/VolumeDialogComponent;
 
-    invoke-direct {p0, p2, p3, p4}, Lcom/android/systemui/volume/VolumeDialog;-><init>(Landroid/content/Context;Lcom/android/systemui/volume/VolumeDialogController;Lcom/android/systemui/statusbar/policy/ZenModeController;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected onZenSettingsClickedH()V
-    .locals 1
+.method public onSettingsClicked()V
+    .locals 3
 
     .prologue
-    .line 59
+    .line 127
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogComponent$2;->this$0:Lcom/android/systemui/volume/VolumeDialogComponent;
 
-    # invokes: Lcom/android/systemui/volume/VolumeDialogComponent;->startZenSettings()V
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialogComponent;->access$100(Lcom/android/systemui/volume/VolumeDialogComponent;)V
+    new-instance v1, Landroid/content/Intent;
 
-    .line 60
+    const-string v2, "android.settings.NOTIFICATION_SETTINGS"
+
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    # invokes: Lcom/android/systemui/volume/VolumeDialogComponent;->startSettings(Landroid/content/Intent;)V
+    invoke-static {v0, v1}, Lcom/android/systemui/volume/VolumeDialogComponent;->access$100(Lcom/android/systemui/volume/VolumeDialogComponent;Landroid/content/Intent;)V
+
+    .line 128
+    return-void
+.end method
+
+.method public onZenPrioritySettingsClicked()V
+    .locals 2
+
+    .prologue
+    .line 137
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogComponent$2;->this$0:Lcom/android/systemui/volume/VolumeDialogComponent;
+
+    sget-object v1, Lcom/android/systemui/volume/ZenModePanel;->ZEN_PRIORITY_SETTINGS:Landroid/content/Intent;
+
+    # invokes: Lcom/android/systemui/volume/VolumeDialogComponent;->startSettings(Landroid/content/Intent;)V
+    invoke-static {v0, v1}, Lcom/android/systemui/volume/VolumeDialogComponent;->access$100(Lcom/android/systemui/volume/VolumeDialogComponent;Landroid/content/Intent;)V
+
+    .line 138
+    return-void
+.end method
+
+.method public onZenSettingsClicked()V
+    .locals 2
+
+    .prologue
+    .line 132
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogComponent$2;->this$0:Lcom/android/systemui/volume/VolumeDialogComponent;
+
+    sget-object v1, Lcom/android/systemui/volume/ZenModePanel;->ZEN_SETTINGS:Landroid/content/Intent;
+
+    # invokes: Lcom/android/systemui/volume/VolumeDialogComponent;->startSettings(Landroid/content/Intent;)V
+    invoke-static {v0, v1}, Lcom/android/systemui/volume/VolumeDialogComponent;->access$100(Lcom/android/systemui/volume/VolumeDialogComponent;Landroid/content/Intent;)V
+
+    .line 133
     return-void
 .end method

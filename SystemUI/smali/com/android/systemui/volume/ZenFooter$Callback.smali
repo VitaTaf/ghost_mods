@@ -21,5 +21,8 @@
 .method public abstract onFooterExpanded()V
 .end method
 
+.method public abstract onPrioritySettingsClicked()V
+.end method
+
 .method public abstract onSettingsClicked()V
 .end method

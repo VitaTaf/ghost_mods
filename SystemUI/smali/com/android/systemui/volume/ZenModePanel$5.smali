@@ -3,12 +3,12 @@
 .source "ZenModePanel.java"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/volume/ZenModePanel;->bind(Landroid/service/notification/Condition;Landroid/view/View;)V
+    value = Lcom/android/systemui/volume/ZenModePanel;->setRequestingConditions(Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,22 +20,18 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/volume/ZenModePanel;
 
-.field final synthetic val$row:Landroid/view/View;
-
-.field final synthetic val$tag:Lcom/android/systemui/volume/ZenModePanel$ConditionTag;
+.field final synthetic val$requesting:Z
 
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/volume/ZenModePanel;Landroid/view/View;Lcom/android/systemui/volume/ZenModePanel$ConditionTag;)V
+.method constructor <init>(Lcom/android/systemui/volume/ZenModePanel;Z)V
     .locals 0
 
     .prologue
-    .line 674
+    .line 328
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel$5;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
-    iput-object p2, p0, Lcom/android/systemui/volume/ZenModePanel$5;->val$row:Landroid/view/View;
-
-    iput-object p3, p0, Lcom/android/systemui/volume/ZenModePanel$5;->val$tag:Lcom/android/systemui/volume/ZenModePanel$ConditionTag;
+    iput-boolean p2, p0, Lcom/android/systemui/volume/ZenModePanel$5;->val$requesting:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,23 +40,22 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 4
-    .param p1, "v"    # Landroid/view/View;
+.method public run()V
+    .locals 2
 
     .prologue
-    .line 677
+    .line 331
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$5;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
-    iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel$5;->val$row:Landroid/view/View;
+    # getter for: Lcom/android/systemui/volume/ZenModePanel;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
+    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$700(Lcom/android/systemui/volume/ZenModePanel;)Lcom/android/systemui/statusbar/policy/ZenModeController;
 
-    iget-object v2, p0, Lcom/android/systemui/volume/ZenModePanel$5;->val$tag:Lcom/android/systemui/volume/ZenModePanel$ConditionTag;
+    move-result-object v0
 
-    const/4 v3, 0x0
+    iget-boolean v1, p0, Lcom/android/systemui/volume/ZenModePanel$5;->val$requesting:Z
 
-    # invokes: Lcom/android/systemui/volume/ZenModePanel;->onClickTimeButton(Landroid/view/View;Lcom/android/systemui/volume/ZenModePanel$ConditionTag;Z)V
-    invoke-static {v0, v1, v2, v3}, Lcom/android/systemui/volume/ZenModePanel;->access$1400(Lcom/android/systemui/volume/ZenModePanel;Landroid/view/View;Lcom/android/systemui/volume/ZenModePanel$ConditionTag;Z)V
+    invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/ZenModeController;->requestConditions(Z)V
 
-    .line 678
+    .line 332
     return-void
 .end method

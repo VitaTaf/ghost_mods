@@ -50,6 +50,8 @@
 
 .field private mZenModePanelButtons:Landroid/view/View;
 
+.field private final mZenModePanelCallback:Lcom/android/systemui/volume/ZenModePanel$Callback;
+
 .field private mZenModePanelDoneButton:Landroid/view/View;
 
 .field private mZenModePanelMoreButton:Landroid/view/View;
@@ -90,6 +92,13 @@
     new-instance v0, Lcom/android/systemui/volume/ZenFooter$5;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/volume/ZenFooter$5;-><init>(Lcom/android/systemui/volume/ZenFooter;)V
+
+    iput-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mZenModePanelCallback:Lcom/android/systemui/volume/ZenModePanel$Callback;
+
+    .line 242
+    new-instance v0, Lcom/android/systemui/volume/ZenFooter$6;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/volume/ZenFooter$6;-><init>(Lcom/android/systemui/volume/ZenFooter;)V
 
     iput-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mCheckedListener:Landroid/widget/CompoundButton$OnCheckedChangeListener;
 
@@ -452,6 +461,13 @@
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/ZenModePanel;->setEmbedded(Z)V
 
     .line 102
+    iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mZenModePanel:Lcom/android/systemui/volume/ZenModePanel;
+
+    iget-object v1, p0, Lcom/android/systemui/volume/ZenFooter;->mZenModePanelCallback:Lcom/android/systemui/volume/ZenModePanel$Callback;
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/volume/ZenModePanel;->setCallback(Lcom/android/systemui/volume/ZenModePanel$Callback;)V
+
+    .line 103
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mSwitch:Landroid/widget/Switch;
 
     iget-object v1, p0, Lcom/android/systemui/volume/ZenFooter;->mCheckedListener:Landroid/widget/CompoundButton$OnCheckedChangeListener;

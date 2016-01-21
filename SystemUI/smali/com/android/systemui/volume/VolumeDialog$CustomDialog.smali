@@ -24,13 +24,13 @@
     .param p2, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 958
+    .line 956
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$CustomDialog;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
-    .line 959
+    .line 957
     invoke-direct {p0, p2}, Landroid/app/Dialog;-><init>(Landroid/content/Context;)V
 
-    .line 960
+    .line 958
     return-void
 .end method
 
@@ -41,12 +41,12 @@
     .param p1, "ev"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 964
+    .line 962
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$CustomDialog;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     invoke-virtual {v0}, Lcom/android/systemui/volume/VolumeDialog;->rescheduleTimeoutH()V
 
-    .line 965
+    .line 963
     invoke-super {p0, p1}, Landroid/app/Dialog;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
@@ -58,14 +58,14 @@
     .locals 2
 
     .prologue
-    .line 970
+    .line 968
     invoke-super {p0}, Landroid/app/Dialog;->onStop()V
 
-    .line 971
+    .line 969
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$CustomDialog;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mHandler:Lcom/android/systemui/volume/VolumeDialog$H;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$4300(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialog$H;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$4400(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialog$H;
 
     move-result-object v0
 
@@ -73,7 +73,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/VolumeDialog$H;->sendEmptyMessage(I)Z
 
-    .line 972
+    .line 970
     return-void
 .end method
 
@@ -84,14 +84,14 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 976
+    .line 974
     invoke-virtual {p0}, Lcom/android/systemui/volume/VolumeDialog$CustomDialog;->isShowing()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 977
+    .line 975
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v1
@@ -100,12 +100,12 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 978
+    .line 976
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialog$CustomDialog;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/volume/VolumeDialog;->dismissH(I)V
 
-    .line 982
+    .line 980
     :goto_0
     return v0
 

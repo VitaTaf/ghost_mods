@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/systemui/volume/VolumeDialog$Callback;,
         Lcom/android/systemui/volume/VolumeDialog$VolumeRow;,
         Lcom/android/systemui/volume/VolumeDialog$VolumeSeekBarChangeListener;,
         Lcom/android/systemui/volume/VolumeDialog$CustomDialog;,
@@ -22,6 +23,8 @@
 .field private mActiveStream:I
 
 .field private mAutomute:Z
+
+.field private mCallback:Lcom/android/systemui/volume/VolumeDialog$Callback;
 
 .field private final mClickExpand:Landroid/view/View$OnClickListener;
 
@@ -120,11 +123,12 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lcom/android/systemui/volume/VolumeDialogController;Lcom/android/systemui/statusbar/policy/ZenModeController;)V
+.method public constructor <init>(Landroid/content/Context;Lcom/android/systemui/volume/VolumeDialogController;Lcom/android/systemui/statusbar/policy/ZenModeController;Lcom/android/systemui/volume/VolumeDialog$Callback;)V
     .locals 8
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "controller"    # Lcom/android/systemui/volume/VolumeDialogController;
     .param p3, "zenModeController"    # Lcom/android/systemui/statusbar/policy/ZenModeController;
+    .param p4, "callback"    # Lcom/android/systemui/volume/VolumeDialog$Callback;
 
     .prologue
     .line 122
@@ -225,6 +229,9 @@
     iput-object p2, p0, Lcom/android/systemui/volume/VolumeDialog;->mController:Lcom/android/systemui/volume/VolumeDialogController;
 
     .line 125
+    iput-object p4, p0, Lcom/android/systemui/volume/VolumeDialog;->mCallback:Lcom/android/systemui/volume/VolumeDialog$Callback;
+
+    .line 126
     new-instance v3, Lcom/android/systemui/volume/SpTexts;
 
     iget-object v4, p0, Lcom/android/systemui/volume/VolumeDialog;->mContext:Landroid/content/Context;
@@ -883,18 +890,29 @@
     return-void
 .end method
 
-.method static synthetic access$4200(Lcom/android/systemui/volume/VolumeDialog;)Landroid/view/View;
+.method static synthetic access$4200(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialog$Callback;
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog;
 
     .prologue
     .line 79
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog;->mCallback:Lcom/android/systemui/volume/VolumeDialog$Callback;
+
+    return-object v0
+.end method
+
+.method static synthetic access$4300(Lcom/android/systemui/volume/VolumeDialog;)Landroid/view/View;
+    .locals 1
+    .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog;
+
+    .prologue
+    .line 78
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog;->mSettingsButton:Landroid/view/View;
 
     return-object v0
 .end method
 
-.method static synthetic access$4300(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialog$H;
+.method static synthetic access$4400(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialog$H;
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog;
 
@@ -905,7 +923,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$4400(Lcom/android/systemui/volume/VolumeDialog;IZ)V
+.method static synthetic access$4500(Lcom/android/systemui/volume/VolumeDialog;IZ)V
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog;
     .param p1, "x1"    # I
@@ -918,7 +936,7 @@
     return-void
 .end method
 
-.method static synthetic access$4500(Landroid/widget/SeekBar;I)I
+.method static synthetic access$4600(Landroid/widget/SeekBar;I)I
     .locals 1
     .param p0, "x0"    # Landroid/widget/SeekBar;
     .param p1, "x1"    # I
@@ -4365,22 +4383,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 320
-    return-void
-.end method
-
-.method protected onSettingsClickedH()V
-    .locals 0
-
-    .prologue
-    .line 427
-    return-void
-.end method
-
-.method protected onZenSettingsClickedH()V
-    .locals 0
-
-    .prologue
     .line 431
     return-void
 .end method

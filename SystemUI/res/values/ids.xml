@@ -325,6 +325,10 @@
     <item type="id" name="zen_subhead_collapsed">false</item>
     <item type="id" name="zen_subhead_expanded">false</item>
     <item type="id" name="zen_more_settings">false</item>
+    <item type="id" name="zen_introduction">false</item>
+    <item type="id" name="zen_introduction_confirm">false</item>
+    <item type="id" name="zen_introduction_message">false</item>
+    <item type="id" name="zen_introduction_customize">false</item>
     <item type="id" name="zen_conditions">false</item>
     <item type="id" name="carrier_label_groups">false</item>
     <item type="id" name="carrier_label_group_row_upper">false</item>

@@ -19,6 +19,7 @@
     <color name="qs_tile_text">#b3ffffff</color>
     <color name="qs_subhead">#99ffffff</color>
     <color name="qs_detail_empty">#24b0bec5</color>
+    <color name="qs_detail_button_white">#b3ffffff</color>
     <color name="qs_detail_transition">#66ffffff</color>
     <color name="qs_detail_progress_track">#99009688</color>
     <color name="data_usage_secondary">#99ffffff</color>
@@ -62,6 +63,7 @@
     <color name="segmented_button_selected">#ffffffff</color>
     <color name="segmented_button_unselected">#b3b0bec5</color>
     <color name="volume_panel_divider">#1fffffff</color>
+    <color name="zen_introduction_message_background">#ff009688</color>
     <color name="screen_pinning_primary_text">@android:color/primary_text_default_material_light</color>
     <color name="volume_icon_color">#ffffffff</color>
     <color name="volume_settings_icon_color">#7fffffff</color>

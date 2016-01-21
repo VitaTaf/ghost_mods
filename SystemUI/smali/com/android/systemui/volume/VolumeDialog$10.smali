@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 914
+    .line 902
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$10;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,14 +40,14 @@
     .locals 2
 
     .prologue
-    .line 928
+    .line 918
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$10;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     const/4 v1, 0x6
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/VolumeDialog;->dismiss(I)V
 
-    .line 929
+    .line 919
     return-void
 .end method
 
@@ -55,11 +55,11 @@
     .locals 2
 
     .prologue
-    .line 917
+    .line 905
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$10;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mHandler:Lcom/android/systemui/volume/VolumeDialog$H;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$4300(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialog$H;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$4400(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialog$H;
 
     move-result-object v0
 
@@ -67,7 +67,43 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/VolumeDialog$H;->sendEmptyMessage(I)Z
 
-    .line 918
+    .line 906
+    return-void
+.end method
+
+.method public onPrioritySettingsClicked()V
+    .locals 2
+
+    .prologue
+    .line 923
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$10;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+
+    const/4 v1, 0x5
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/volume/VolumeDialog;->dismiss(I)V
+
+    .line 924
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$10;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+
+    # getter for: Lcom/android/systemui/volume/VolumeDialog;->mCallback:Lcom/android/systemui/volume/VolumeDialog$Callback;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$4200(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialog$Callback;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 925
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$10;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+
+    # getter for: Lcom/android/systemui/volume/VolumeDialog;->mCallback:Lcom/android/systemui/volume/VolumeDialog$Callback;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$4200(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialog$Callback;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/android/systemui/volume/VolumeDialog$Callback;->onZenPrioritySettingsClicked()V
+
+    .line 927
+    :cond_0
     return-void
 .end method
 
@@ -75,18 +111,34 @@
     .locals 2
 
     .prologue
-    .line 922
+    .line 910
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$10;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     const/4 v1, 0x5
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/VolumeDialog;->dismiss(I)V
 
-    .line 923
+    .line 911
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$10;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
-    invoke-virtual {v0}, Lcom/android/systemui/volume/VolumeDialog;->onZenSettingsClickedH()V
+    # getter for: Lcom/android/systemui/volume/VolumeDialog;->mCallback:Lcom/android/systemui/volume/VolumeDialog$Callback;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$4200(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialog$Callback;
 
-    .line 924
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 912
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$10;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+
+    # getter for: Lcom/android/systemui/volume/VolumeDialog;->mCallback:Lcom/android/systemui/volume/VolumeDialog$Callback;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$4200(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialog$Callback;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/android/systemui/volume/VolumeDialog$Callback;->onZenSettingsClicked()V
+
+    .line 914
+    :cond_0
     return-void
 .end method

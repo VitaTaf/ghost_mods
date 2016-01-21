@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 892
+    .line 878
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$8$1;->this$1:Lcom/android/systemui/volume/VolumeDialog$8;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 2
 
     .prologue
-    .line 895
+    .line 881
     const/16 v0, 0x8
 
     const/4 v1, 0x0
@@ -49,13 +49,31 @@
 
     invoke-static {v0, v1}, Lcom/android/systemui/volume/Events;->writeEvent(I[Ljava/lang/Object;)V
 
-    .line 896
+    .line 882
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$8$1;->this$1:Lcom/android/systemui/volume/VolumeDialog$8;
 
     iget-object v0, v0, Lcom/android/systemui/volume/VolumeDialog$8;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
-    invoke-virtual {v0}, Lcom/android/systemui/volume/VolumeDialog;->onSettingsClickedH()V
+    # getter for: Lcom/android/systemui/volume/VolumeDialog;->mCallback:Lcom/android/systemui/volume/VolumeDialog$Callback;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$4200(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialog$Callback;
 
-    .line 897
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 883
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$8$1;->this$1:Lcom/android/systemui/volume/VolumeDialog$8;
+
+    iget-object v0, v0, Lcom/android/systemui/volume/VolumeDialog$8;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+
+    # getter for: Lcom/android/systemui/volume/VolumeDialog;->mCallback:Lcom/android/systemui/volume/VolumeDialog$Callback;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$4200(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialog$Callback;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/android/systemui/volume/VolumeDialog$Callback;->onSettingsClicked()V
+
+    .line 885
+    :cond_0
     return-void
 .end method

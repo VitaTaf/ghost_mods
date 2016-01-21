@@ -3,12 +3,12 @@
 .source "ZenModePanel.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/volume/ZenModePanel;->setRequestingConditions(Z)V
+    value = Lcom/android/systemui/volume/ZenModePanel;->onFinishInflate()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,18 +20,14 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/volume/ZenModePanel;
 
-.field final synthetic val$requesting:Z
-
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/volume/ZenModePanel;Z)V
+.method constructor <init>(Lcom/android/systemui/volume/ZenModePanel;)V
     .locals 0
 
     .prologue
-    .line 296
+    .line 216
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel$3;->this$0:Lcom/android/systemui/volume/ZenModePanel;
-
-    iput-boolean p2, p0, Lcom/android/systemui/volume/ZenModePanel$3;->val$requesting:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,22 +36,17 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 2
+.method public onClick(Landroid/view/View;)V
+    .locals 1
+    .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 299
+    .line 219
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$3;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
-    # getter for: Lcom/android/systemui/volume/ZenModePanel;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
-    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$500(Lcom/android/systemui/volume/ZenModePanel;)Lcom/android/systemui/statusbar/policy/ZenModeController;
+    # invokes: Lcom/android/systemui/volume/ZenModePanel;->confirmZenIntroduction()V
+    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$500(Lcom/android/systemui/volume/ZenModePanel;)V
 
-    move-result-object v0
-
-    iget-boolean v1, p0, Lcom/android/systemui/volume/ZenModePanel$3;->val$requesting:Z
-
-    invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/ZenModeController;->requestConditions(Z)V
-
-    .line 300
+    .line 220
     return-void
 .end method

@@ -1695,6 +1695,8 @@
     <public type="color" name="segmented_button_text_selector" id="0x7f080049" />
     <public type="color" name="volume_icon_color" id="0x7f08004a" />
     <public type="color" name="volume_settings_icon_color" id="0x7f08004b" />
+    <public type="color" name="qs_detail_button_white" id="0x7f08004c" />
+    <public type="color" name="zen_introduction_message_background" id="0x7f08004d" />
     <public type="bool" name="config_recents_interface_for_tablets" id="0x7f090000" />
     <public type="bool" name="config_recents_thumbnail_image_fits_to_xy" id="0x7f090001" />
     <public type="bool" name="config_recents_use_hardware_layers" id="0x7f090002" />
@@ -1903,6 +1905,7 @@
     <public type="style" name="TextAppearance.Volume.ZenSwitch" id="0x7f0b0041" />
     <public type="style" name="TextAppearance.Volume.ZenSwitchSummary" id="0x7f0b0042" />
     <public type="style" name="TextAppearance.Volume.ZenSwitchDetail" id="0x7f0b0043" />
+    <public type="style" name="TextAppearance.QS.DetailButton.White" id="0x7f0b0044" />
     <public type="string" name="config_statusBarComponent" id="0x7f0c0000" />
     <public type="string" name="quick_settings_tiles_default" id="0x7f0c0001" />
     <public type="string" name="quick_settings_tiles" id="0x7f0c0002" />
@@ -2539,6 +2542,9 @@
     <public type="string" name="interruption_level_none_twoline" id="0x7f0c028d" />
     <public type="string" name="interruption_level_priority_twoline" id="0x7f0c028e" />
     <public type="string" name="interruption_level_alarms_twoline" id="0x7f0c028f" />
+    <public type="string" name="accessibility_desc_confirm" id="0x7f0c0290" />
+    <public type="string" name="zen_priority_introduction" id="0x7f0c0291" />
+    <public type="string" name="zen_priority_customize_button" id="0x7f0c0292" />
     <public type="string" name="status_bar_date_formatter" id="0x7f0c0006" />
     <public type="string" name="toast_rotation_locked" id="0x7f0c015b" />
     <public type="string" name="APKTOOL_DUMMY_015d" id="0x7f0c015d" />
@@ -3245,6 +3251,10 @@
     <public type="id" name="volume_zen_mode_panel_buttons" id="0x7f0f017c" />
     <public type="id" name="volume_zen_mode_panel_more" id="0x7f0f017d" />
     <public type="id" name="volume_zen_mode_panel_done" id="0x7f0f017e" />
+    <public type="id" name="zen_introduction" id="0x7f0f017f" />
+    <public type="id" name="zen_introduction_confirm" id="0x7f0f0180" />
+    <public type="id" name="zen_introduction_message" id="0x7f0f0181" />
+    <public type="id" name="zen_introduction_customize" id="0x7f0f0182" />
     <public type="plurals" name="status_bar_accessibility_recent_apps" id="0x7f100000" />
     <public type="plurals" name="kg_password_wrong_pin_code" id="0x7f100001" />
     <public type="plurals" name="kg_password_wrong_puk_code" id="0x7f100002" />

@@ -155,6 +155,7 @@ Use only the supplied charger."</string>
     <string name="accessibility_desc_lock_screen">Lock screen.</string>
     <string name="accessibility_desc_settings">Settings</string>
     <string name="accessibility_desc_recent_apps">Overview.</string>
+    <string name="accessibility_desc_confirm">Confirm</string>
     <string name="accessibility_quick_settings_user">User %s.</string>
     <string name="accessibility_quick_settings_wifi">%1$s.</string>
     <string name="accessibility_quick_settings_wifi_changed_off">Wifi turned off.</string>
@@ -295,6 +296,8 @@ be monitored"</string>
     <string name="description_direction_up">Slide up for %s.</string>
     <string name="description_direction_left">Slide left for %s.</string>
     <string name="zen_no_interruptions_with_warning">No interruptions. Not even alarms.</string>
+    <string name="zen_priority_introduction">"You won't be disturbed by sounds and vibrations, except from alarms, reminders, events, and callers you specify."</string>
+    <string name="zen_priority_customize_button">Customize</string>
     <string name="zen_no_interruptions">No interruptions</string>
     <string name="zen_important_interruptions">Priority interruptions only</string>
     <string name="zen_alarms">Alarms only</string>

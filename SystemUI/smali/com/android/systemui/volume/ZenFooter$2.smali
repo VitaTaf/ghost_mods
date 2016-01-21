@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 113
+    .line 114
     iput-object p1, p0, Lcom/android/systemui/volume/ZenFooter$2;->this$0:Lcom/android/systemui/volume/ZenFooter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 116
+    .line 117
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter$2;->this$0:Lcom/android/systemui/volume/ZenFooter;
 
     # getter for: Lcom/android/systemui/volume/ZenFooter;->mSwitch:Landroid/widget/Switch;
@@ -67,10 +67,10 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/widget/Switch;->setChecked(Z)V
 
-    .line 117
+    .line 118
     return-void
 
-    .line 116
+    .line 117
     :cond_0
     const/4 v0, 0x0
 
