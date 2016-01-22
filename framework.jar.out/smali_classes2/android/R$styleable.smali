@@ -2645,7 +2645,7 @@
 
 .field public static final SwitchPreference_switchTextOn:I = 0x3
 
-.field public static final Switch_showText:I = 0x9
+.field public static final Switch_showText:I = 0xb
 
 .field public static final Switch_splitTrack:I = 0x8
 
@@ -2663,7 +2663,15 @@
 
 .field public static final Switch_thumbTextPadding:I = 0x7
 
+.field public static final Switch_thumbTint:I = 0x9
+
+.field public static final Switch_thumbTintMode:I = 0xa
+
 .field public static final Switch_track:I = 0x4
+
+.field public static final Switch_trackTint:I = 0xc
+
+.field public static final Switch_trackTintMode:I = 0xd
 
 .field public static final SyncAdapter:[I
 
@@ -6043,7 +6051,7 @@
     sput-object v0, Landroid/R$styleable;->SuggestionSpan:[I
 
     .line 41558
-    const/16 v0, 0xa
+    const/16 v0, 0xe
 
     new-array v0, v0, [I
 
@@ -6675,7 +6683,7 @@
         0x1010447
         0x1010476
         0x10104b2
-        0x10104d7
+        0x10104d9
         0x11600af
     .end array-data
 
@@ -7740,8 +7748,8 @@
         0x10101ae
         0x10101af
         0x10101b0
-        0x10104d8
-        0x10104d9
+        0x10104da
+        0x10104db
     .end array-data
 
     .line 33003
@@ -8482,7 +8490,11 @@
         0x1010371
         0x1010372
         0x101044c
+        0x1010471
+        0x1010472
         0x10104ad
+        0x10104d7
+        0x10104d8
     .end array-data
 
     .line 41747

@@ -2144,6 +2144,15 @@
     <attr name="searchHintIcon" format="reference" />
     <attr name="revisionCode" format="integer" />
     <attr name="fraction" format="float" />
+    <attr name="trackTint" format="color" />
+    <attr name="trackTintMode">
+        <enum name="add" value="16" />
+        <enum name="multiply" value="14" />
+        <enum name="screen" value="15" />
+        <enum name="src_atop" value="9" />
+        <enum name="src_in" value="5" />
+        <enum name="src_over" value="3" />
+    </attr>
     <attr name="resizeableActivity" format="boolean" />
     <attr name="start" format="dimension" />
     <attr name="end" format="dimension" />

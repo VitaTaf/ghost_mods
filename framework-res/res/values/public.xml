@@ -1239,9 +1239,11 @@
     <public type="attr" name="searchHintIcon" id="0x010104d4" />
     <public type="attr" name="revisionCode" id="0x010104d5" />
     <public type="attr" name="fraction" id="0x010104d6" />
-    <public type="attr" name="resizeableActivity" id="0x010104d7" />
-    <public type="attr" name="start" id="0x010104d8" />
-    <public type="attr" name="end" id="0x010104d9" />
+    <public type="attr" name="trackTint" id="0x010104d7" />
+    <public type="attr" name="trackTintMode" id="0x010104d8" />
+    <public type="attr" name="resizeableActivity" id="0x010104d9" />
+    <public type="attr" name="start" id="0x010104da" />
+    <public type="attr" name="end" id="0x010104db" />
     <public type="id" name="background" id="0x01020000" />
     <public type="id" name="checkbox" id="0x01020001" />
     <public type="id" name="content" id="0x01020002" />

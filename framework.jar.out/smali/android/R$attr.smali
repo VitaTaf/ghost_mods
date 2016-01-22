@@ -613,7 +613,7 @@
 
 .field public static final enabled:I = 0x101000e
 
-.field public static final end:I = 0x10104d9
+.field public static final end:I = 0x10104db
 
 .field public static final endColor:I = 0x101019e
 
@@ -1600,7 +1600,7 @@
 
 .field public static final resizeable:I = 0x101028d
 
-.field public static final resizeableActivity:I = 0x10104d7
+.field public static final resizeableActivity:I = 0x10104d9
 
 .field public static final resource:I = 0x1010025
 
@@ -1847,7 +1847,7 @@
 
 .field public static final starStyle:I = 0x1010082
 
-.field public static final start:I = 0x10104d8
+.field public static final start:I = 0x10104da
 
 .field public static final startColor:I = 0x101019d
 
@@ -2229,6 +2229,10 @@
 .field public static final touchscreenBlocksFocus:I = 0x101048f
 
 .field public static final track:I = 0x101036f
+
+.field public static final trackTint:I = 0x10104d7
+
+.field public static final trackTintMode:I = 0x10104d8
 
 .field public static final transcriptMode:I = 0x1010100
 
