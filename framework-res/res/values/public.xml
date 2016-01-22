@@ -5571,6 +5571,8 @@
     <public type="dimen" name="dialog_padding_material" id="0x010500ff" />
     <public type="dimen" name="dialog_padding_top_material" id="0x01050100" />
     <public type="dimen" name="dialog_list_padding_vertical_material" id="0x01050101" />
+    <public type="dimen" name="scrubber_track_height_material" id="0x01050102" />
+    <public type="dimen" name="progress_bar_height_material" id="0x01050103" />
     <public type="dimen" name="keyguard_pattern_unlock_clock_font_size" id="0x010500ab" />
     <public type="dimen" name="glowpadview_target_placement_radius" id="0x010500ac" />
     <public type="dimen" name="keyguard_pattern_unlock_status_line_font_size" id="0x010500ad" />
@@ -5896,6 +5898,11 @@
     <public type="color" name="tertiary_text_holo_light" id="0x0106013b" />
     <public type="color" name="btn_material_accent" id="0x0106013c" />
     <public type="color" name="control_highlight_material" id="0x0106013d" />
+    <public type="color" name="control_checkable_material" id="0x0106013e" />
+    <public type="color" name="control_default_material" id="0x0106013f" />
+    <public type="color" name="switch_track_material" id="0x01060140" />
+    <public type="color" name="tab_indicator_material" id="0x01060141" />
+    <public type="color" name="white_disabled_material" id="0x01060142" />
     <public type="array" name="emailAddressTypes" id="0x01070000" />
     <public type="array" name="imProtocols" id="0x01070001" />
     <public type="array" name="organizationTypes" id="0x01070002" />
@@ -6593,6 +6600,7 @@
     <public type="drawable" name="btn_cab_done_default_holo_light" id="0x010800d6" />
     <public type="drawable" name="btn_cab_done_focused_holo_dark" id="0x010800d7" />
     <public type="drawable" name="btn_cab_done_focused_holo_light" id="0x010800d8" />
+    <public type="drawable" name="ic_audio_phone_am_alpha" id="0x010800db" />
     <public type="drawable" name="btn_cab_done_pressed_holo_dark" id="0x010800dd" />
     <public type="drawable" name="btn_cab_done_pressed_holo_light" id="0x010800de" />
     <public type="drawable" name="btn_check_buttonless_off" id="0x010800e0" />
@@ -7421,7 +7429,6 @@
     <public type="drawable" name="pressed_application_background_static" id="0x01080561" />
     <public type="drawable" name="progress_bg_holo_dark" id="0x01080562" />
     <public type="drawable" name="progress_bg_holo_light" id="0x01080563" />
-    <public type="drawable" name="progress_mtrl_alpha" id="0x01080571" />
     <public type="drawable" name="progress_primary_holo_dark" id="0x01080572" />
     <public type="drawable" name="progress_primary_holo_light" id="0x01080573" />
     <public type="drawable" name="progress_secondary_holo_dark" id="0x01080574" />

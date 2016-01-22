@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@id/background">
-        <nine-patch android:src="@drawable/progress_mtrl_alpha" android:tint="?colorControlNormal" android:alpha="?disabledAlpha" />
+    <item android:gravity="fill_horizontal|center" android:id="@id/background">
+        <shape android:tint="?colorControlNormal" android:shape="rectangle">
+            <size android:height="@dimen/progress_bar_height_material" />
+            <solid android:color="@color/white_disabled_material" />
+        </shape>
     </item>
-    <item android:id="@id/secondaryProgress">
+    <item android:gravity="fill_horizontal|center" android:id="@id/secondaryProgress">
         <scale android:scaleWidth="100%">
-            <nine-patch android:src="@drawable/progress_mtrl_alpha" android:tint="?colorControlActivated" android:alpha="?disabledAlpha" />
+            <shape android:tint="?colorControlActivated" android:shape="rectangle">
+                <size android:height="@dimen/progress_bar_height_material" />
+                <solid android:color="@color/white_disabled_material" />
+            </shape>
         </scale>
     </item>
-    <item android:id="@id/progress">
+    <item android:gravity="fill_horizontal|center" android:id="@id/progress">
         <scale android:scaleWidth="100%">
-            <nine-patch android:src="@drawable/progress_mtrl_alpha" android:tint="?colorControlActivated" />
+            <shape android:tint="?colorControlActivated" android:shape="rectangle">
+                <size android:height="@dimen/progress_bar_height_material" />
+                <solid android:color="@color/white" />
+            </shape>
         </scale>
     </item>
 </layer-list>

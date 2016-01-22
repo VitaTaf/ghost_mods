@@ -1,29 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@id/background">
-        <nine-patch android:src="@drawable/scrubber_track_mtrl_alpha" android:tint="?colorControlNormal" />
+    <item android:gravity="fill_horizontal|center" android:id="@id/background">
+        <shape android:tint="?colorControlNormal" android:shape="rectangle">
+            <size android:height="@dimen/scrubber_track_height_material" />
+            <solid android:color="@color/white_disabled_material" />
+        </shape>
     </item>
-    <item android:id="@id/secondaryProgress">
+    <item android:gravity="fill_horizontal|center" android:id="@id/secondaryProgress">
         <scale android:scaleWidth="100%">
             <selector>
-                <item android:state_enabled="false">
-                    <color android:color="@color/transparent" />
-                </item>
+                <item android:state_enabled="false" android:drawable="@color/transparent" />
                 <item>
-                    <nine-patch android:src="@drawable/scrubber_primary_mtrl_alpha" android:tint="?colorControlNormal" />
+                    <shape android:tint="?colorControlActivated" android:shape="rectangle">
+                        <size android:height="@dimen/scrubber_track_height_material" />
+                        <solid android:color="@color/white_disabled_material" />
+                    </shape>
                 </item>
             </selector>
         </scale>
     </item>
-    <item android:id="@id/progress">
+    <item android:gravity="fill_horizontal|center" android:id="@id/progress">
         <scale android:scaleWidth="100%">
             <selector>
-                <item android:state_enabled="false">
-                    <color android:color="@color/transparent" />
-                </item>
+                <item android:state_enabled="false" android:drawable="@color/transparent" />
                 <item>
-                    <nine-patch android:src="@drawable/scrubber_primary_mtrl_alpha" android:tint="?colorControlActivated" />
+                    <shape android:tint="?colorControlActivated" android:shape="rectangle">
+                        <size android:height="@dimen/progress_bar_height_material" />
+                        <solid android:color="@color/white" />
+                    </shape>
                 </item>
             </selector>
         </scale>
