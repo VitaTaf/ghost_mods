@@ -1611,14 +1611,15 @@
     throw v4
 .end method
 
-.method onProgressRefresh(FZ)V
+.method onProgressRefresh(FZI)V
     .locals 3
     .param p1, "scale"    # F
     .param p2, "fromUser"    # Z
+    .param p3, "progress"    # I
 
     .prologue
     .line 385
-    invoke-super {p0, p1, p2}, Landroid/widget/ProgressBar;->onProgressRefresh(FZ)V
+    invoke-super {p0, p1, p2, p3}, Landroid/widget/ProgressBar;->onProgressRefresh(FZI)V
 
     .line 387
     iget-object v0, p0, Landroid/widget/AbsSeekBar;->mThumb:Landroid/graphics/drawable/Drawable;

@@ -1236,7 +1236,7 @@
     if-ne p1, v5, :cond_1
 
     .line 1271
-    invoke-virtual {p0, v4, p3}, Landroid/widget/ProgressBar;->onProgressRefresh(FZ)V
+    invoke-virtual {p0, v4, p3, p2}, Landroid/widget/ProgressBar;->onProgressRefresh(FZI)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -3460,10 +3460,11 @@
     throw v3
 .end method
 
-.method onProgressRefresh(FZ)V
+.method onProgressRefresh(FZI)V
     .locals 1
     .param p1, "scale"    # F
     .param p2, "fromUser"    # Z
+    .param p3, "progress"    # I
 
     .prologue
     .line 1276

@@ -501,21 +501,18 @@
     throw v1
 .end method
 
-.method onProgressRefresh(FZ)V
+.method onProgressRefresh(FZI)V
     .locals 1
     .param p1, "scale"    # F
     .param p2, "fromUser"    # Z
+    .param p3, "progress"    # I
 
     .prologue
     .line 255
-    invoke-super {p0, p1, p2}, Landroid/widget/AbsSeekBar;->onProgressRefresh(FZ)V
+    invoke-super {p0, p1, p2, p3}, Landroid/widget/AbsSeekBar;->onProgressRefresh(FZI)V
 
     .line 258
-    invoke-virtual {p0}, Landroid/widget/RatingBar;->getProgress()I
-
-    move-result v0
-
-    invoke-direct {p0, v0}, Landroid/widget/RatingBar;->updateSecondaryProgress(I)V
+    invoke-direct {p0, p3}, Landroid/widget/RatingBar;->updateSecondaryProgress(I)V
 
     .line 260
     if-nez p2, :cond_0
