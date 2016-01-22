@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector android:autoMirrored="true"
+<layer-list android:paddingMode="stack"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_enabled="false">
-        <nine-patch android:src="@drawable/spinner_mtrl_am_alpha" android:tint="?colorControlNormal" android:alpha="?disabledAlpha" />
+    <item android:gravity="end|center" android:height="24.0dip" android:width="24.0dip" android:drawable="@drawable/item_background_borderless_material" />
+    <item android:gravity="end|center">
+        <vector android:tint="?colorControlNormal" android:height="24.0dip" android:width="24.0dip" android:viewportWidth="24.0" android:viewportHeight="24.0">
+            <path android:fillColor="@color/white" android:pathData="M7,10l5,5,5-5z" />
+        </vector>
     </item>
-    <item android:state_focused="false" android:state_pressed="false">
-        <nine-patch android:src="@drawable/spinner_mtrl_am_alpha" android:tint="?colorControlNormal" />
-    </item>
-    <item>
-        <nine-patch android:src="@drawable/spinner_mtrl_am_alpha" android:tint="?colorControlActivated" />
-    </item>
-</selector>
+    <item android:drawable="@color/transparent" android:end="48.0dip" />
+</layer-list>

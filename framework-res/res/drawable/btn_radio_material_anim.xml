@@ -2,7 +2,7 @@
 <animated-selector
   xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_enabled="false" android:state_checked="true">
-        <bitmap android:src="@drawable/btn_radio_to_on_mtrl_015" android:tint="?colorControlActivated" android:alpha="?disabledAlpha" />
+        <bitmap android:src="@drawable/btn_radio_to_on_mtrl_015" android:tint="?colorControlNormal" android:alpha="?disabledAlpha" />
     </item>
     <item android:state_enabled="false">
         <bitmap android:src="@drawable/btn_radio_to_on_mtrl_000" android:tint="?colorControlNormal" android:alpha="?disabledAlpha" />

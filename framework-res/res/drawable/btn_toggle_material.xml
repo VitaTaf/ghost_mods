@@ -5,25 +5,19 @@
         <item>
             <ripple android:color="?colorControlHighlight">
                 <item>
-                    <shape android:shape="rectangle"
-                      xmlns:android="http://schemas.android.com/apk/res/android">
+                    <shape android:tint="?colorButtonNormal" android:shape="rectangle">
                         <corners android:topLeftRadius="@dimen/control_corner_material" android:topRightRadius="@dimen/control_corner_material" />
-                        <solid android:color="?colorButtonNormal" />
+                        <solid android:color="@color/white" />
                         <padding android:left="@dimen/button_padding_horizontal_material" android:top="@dimen/button_padding_vertical_material" android:right="@dimen/button_padding_horizontal_material" android:bottom="@dimen/button_padding_vertical_material" />
                     </shape>
                 </item>
             </ripple>
         </item>
-        <item>
-            <selector
-              xmlns:android="http://schemas.android.com/apk/res/android">
-                <item android:state_checked="false">
-                    <nine-patch android:src="@drawable/btn_toggle_indicator_mtrl_alpha" android:tint="?colorControlNormal" />
-                </item>
-                <item android:state_checked="true">
-                    <nine-patch android:src="@drawable/btn_toggle_indicator_mtrl_alpha" android:tint="?colorControlActivated" />
-                </item>
-            </selector>
+        <item android:gravity="fill_horizontal|bottom|center">
+            <shape android:shape="rectangle">
+                <size android:height="2.0dip" />
+                <solid android:color="@color/control_checkable_material" />
+            </shape>
         </item>
     </layer-list>
 </inset>

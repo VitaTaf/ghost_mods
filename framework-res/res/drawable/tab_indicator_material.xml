@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector
+<layer-list
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_selected="true">
-        <nine-patch android:src="@drawable/tab_indicator_mtrl_alpha" android:tint="?colorControlActivated" />
+    <item android:gravity="bottom">
+        <shape android:tint="?colorControlActivated" android:shape="rectangle">
+            <size android:height="2.0dip" />
+            <solid android:color="@color/tab_indicator_material" />
+        </shape>
     </item>
-    <item android:drawable="@color/transparent" />
-</selector>
+    <item android:drawable="@color/transparent" android:bottom="2.0dip" />
+</layer-list>
