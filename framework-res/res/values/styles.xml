@@ -3173,9 +3173,10 @@
         <item name="actionModeFindDrawable">@drawable/ic_menu_find_material</item>
         <item name="actionModeWebSearchDrawable">@drawable/ic_menu_search_material</item>
         <item name="searchViewStyle">@style/Widget.Material.SearchView</item>
-        <item name="actionBarPopupTheme">@null</item>
+        <item name="actionBarPopupTheme">?popupTheme</item>
         <item name="timePickerStyle">@style/Widget.Material.TimePicker</item>
         <item name="timePickerDialogTheme">?dialogTheme</item>
+        <item name="popupTheme">@null</item>
         <item name="toolbarStyle">@style/Widget.Material.Toolbar</item>
         <item name="windowClipToOutline">true</item>
         <item name="datePickerDialogTheme">?dialogTheme</item>
@@ -3521,7 +3522,6 @@
         <item name="actionModeFindDrawable">@drawable/ic_menu_find_material</item>
         <item name="actionModeWebSearchDrawable">@drawable/ic_menu_search_material</item>
         <item name="searchViewStyle">@style/Widget.Material.Light.SearchView</item>
-        <item name="actionBarPopupTheme">@null</item>
         <item name="timePickerStyle">@style/Widget.Material.Light.TimePicker</item>
         <item name="timePickerDialogTheme">?dialogTheme</item>
         <item name="toolbarStyle">@style/Widget.Material.Toolbar</item>
@@ -3572,7 +3572,7 @@
         <item name="actionBarTheme">@style/ThemeOverlay.Material.Dark.ActionBar</item>
         <item name="colorPrimary">@color/primary_material_dark</item>
         <item name="colorPrimaryDark">@color/primary_dark_material_dark</item>
-        <item name="actionBarPopupTheme">@style/ThemeOverlay.Material.Light</item>
+        <item name="popupTheme">@style/ThemeOverlay.Material.Light</item>
     </style>
     <style name="Theme.Material.Light.Dialog" parent="@style/Theme.Material.Light.BaseDialog" />
     <style name="Theme.Material.Light.Dialog.Alert" parent="@style/Theme.Material.Light.Dialog.BaseAlert" />

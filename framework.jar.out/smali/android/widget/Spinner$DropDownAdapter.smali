@@ -25,30 +25,57 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/widget/SpinnerAdapter;)V
-    .locals 1
+.method public constructor <init>(Landroid/widget/SpinnerAdapter;Landroid/content/res/Resources$Theme;)V
+    .locals 2
     .param p1, "adapter"    # Landroid/widget/SpinnerAdapter;
+    .param p2, "dropDownTheme"    # Landroid/content/res/Resources$Theme;
 
     .prologue
-    .line 854
+    .line 904
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 855
+    .line 905
     iput-object p1, p0, Landroid/widget/Spinner$DropDownAdapter;->mAdapter:Landroid/widget/SpinnerAdapter;
 
-    .line 856
-    instance-of v0, p1, Landroid/widget/ListAdapter;
+    .line 907
+    instance-of v1, p1, Landroid/widget/ListAdapter;
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
-    .line 857
-    check-cast p1, Landroid/widget/ListAdapter;
+    move-object v1, p1
 
-    .end local p1    # "adapter":Landroid/widget/SpinnerAdapter;
-    iput-object p1, p0, Landroid/widget/Spinner$DropDownAdapter;->mListAdapter:Landroid/widget/ListAdapter;
+    .line 908
+    check-cast v1, Landroid/widget/ListAdapter;
 
-    .line 859
+    iput-object v1, p0, Landroid/widget/Spinner$DropDownAdapter;->mListAdapter:Landroid/widget/ListAdapter;
+
+    .line 911
     :cond_0
+    if-eqz p2, :cond_1
+
+    instance-of v1, p1, Landroid/widget/Spinner$ThemedSpinnerAdapter;
+
+    if-eqz v1, :cond_1
+
+    move-object v0, p1
+
+    .line 912
+    check-cast v0, Landroid/widget/Spinner$ThemedSpinnerAdapter;
+
+    .line 914
+    .local v0, "themedAdapter":Landroid/widget/Spinner$ThemedSpinnerAdapter;
+    invoke-interface {v0}, Landroid/widget/Spinner$ThemedSpinnerAdapter;->getDropDownViewTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object v1
+
+    if-nez v1, :cond_1
+
+    .line 915
+    invoke-interface {v0, p2}, Landroid/widget/Spinner$ThemedSpinnerAdapter;->setDropDownViewTheme(Landroid/content/res/Resources$Theme;)V
+
+    .line 918
+    .end local v0    # "themedAdapter":Landroid/widget/Spinner$ThemedSpinnerAdapter;
+    :cond_1
     return-void
 .end method
 
@@ -58,19 +85,19 @@
     .locals 2
 
     .prologue
-    .line 902
+    .line 961
     iget-object v0, p0, Landroid/widget/Spinner$DropDownAdapter;->mListAdapter:Landroid/widget/ListAdapter;
 
-    .line 903
+    .line 962
     .local v0, "adapter":Landroid/widget/ListAdapter;
     if-eqz v0, :cond_0
 
-    .line 904
+    .line 963
     invoke-interface {v0}, Landroid/widget/ListAdapter;->areAllItemsEnabled()Z
 
     move-result v1
 
-    .line 906
+    .line 965
     :goto_0
     return v1
 
@@ -84,7 +111,7 @@
     .locals 1
 
     .prologue
-    .line 862
+    .line 921
     iget-object v0, p0, Landroid/widget/Spinner$DropDownAdapter;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     if-nez v0, :cond_0
@@ -111,7 +138,7 @@
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 878
+    .line 937
     iget-object v0, p0, Landroid/widget/Spinner$DropDownAdapter;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     if-nez v0, :cond_0
@@ -136,7 +163,7 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 866
+    .line 925
     iget-object v0, p0, Landroid/widget/Spinner$DropDownAdapter;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     if-nez v0, :cond_0
@@ -161,7 +188,7 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 870
+    .line 929
     iget-object v0, p0, Landroid/widget/Spinner$DropDownAdapter;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     if-nez v0, :cond_0
@@ -186,7 +213,7 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 924
+    .line 983
     const/4 v0, 0x0
 
     return v0
@@ -199,7 +226,7 @@
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 874
+    .line 933
     invoke-virtual {p0, p1, p2, p3}, Landroid/widget/Spinner$DropDownAdapter;->getDropDownView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v0
@@ -211,7 +238,7 @@
     .locals 1
 
     .prologue
-    .line 928
+    .line 987
     const/4 v0, 0x1
 
     return v0
@@ -221,7 +248,7 @@
     .locals 1
 
     .prologue
-    .line 882
+    .line 941
     iget-object v0, p0, Landroid/widget/Spinner$DropDownAdapter;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     if-eqz v0, :cond_0
@@ -249,7 +276,7 @@
     .locals 1
 
     .prologue
-    .line 932
+    .line 991
     invoke-virtual {p0}, Landroid/widget/Spinner$DropDownAdapter;->getCount()I
 
     move-result v0
@@ -272,19 +299,19 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 915
+    .line 974
     iget-object v0, p0, Landroid/widget/Spinner$DropDownAdapter;->mListAdapter:Landroid/widget/ListAdapter;
 
-    .line 916
+    .line 975
     .local v0, "adapter":Landroid/widget/ListAdapter;
     if-eqz v0, :cond_0
 
-    .line 917
+    .line 976
     invoke-interface {v0, p1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
 
     move-result v1
 
-    .line 919
+    .line 978
     :goto_0
     return v1
 
@@ -299,17 +326,17 @@
     .param p1, "observer"    # Landroid/database/DataSetObserver;
 
     .prologue
-    .line 886
+    .line 945
     iget-object v0, p0, Landroid/widget/Spinner$DropDownAdapter;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     if-eqz v0, :cond_0
 
-    .line 887
+    .line 946
     iget-object v0, p0, Landroid/widget/Spinner$DropDownAdapter;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     invoke-interface {v0, p1}, Landroid/widget/SpinnerAdapter;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
 
-    .line 889
+    .line 948
     :cond_0
     return-void
 .end method
@@ -319,17 +346,17 @@
     .param p1, "observer"    # Landroid/database/DataSetObserver;
 
     .prologue
-    .line 892
+    .line 951
     iget-object v0, p0, Landroid/widget/Spinner$DropDownAdapter;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     if-eqz v0, :cond_0
 
-    .line 893
+    .line 952
     iget-object v0, p0, Landroid/widget/Spinner$DropDownAdapter;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     invoke-interface {v0, p1}, Landroid/widget/SpinnerAdapter;->unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
 
-    .line 895
+    .line 954
     :cond_0
     return-void
 .end method
