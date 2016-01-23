@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/custom_list_layout_marginLeft" android:layout_marginTop="@dimen/custom_list_layout_marginTop" android:layout_marginRight="@dimen/custom_list_layout_marginRight"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:textColor="?android:textColorAlertDialogListItem" android:id="@id/view1" android:paddingTop="@dimen/custom_list_paddingTop" android:paddingBottom="@dimen/custom_list_paddingBottom" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?android:listPreferredItemHeight" android:paddingStart="@dimen/custom_list_paddingStart" android:paddingEnd="@dimen/custom_list_paddingEnd"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <RadioButton android:id="@id/radio1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="false" />
+        <LinearLayout android:orientation="vertical" android:id="@id/layout1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/radio1">
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/title1" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:textColor="?android:textColorSecondary" android:id="@id/summary1" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+    <View android:background="?android:listDivider" android:layout_width="fill_parent" android:layout_height="@dimen/custom_list_divider_height" />
+    <RelativeLayout android:textColor="?android:textColorAlertDialogListItem" android:id="@id/view2" android:paddingTop="@dimen/custom_list_paddingTop" android:paddingBottom="@dimen/custom_list_paddingBottom" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?android:listPreferredItemHeight" android:paddingStart="@dimen/custom_list_paddingStart" android:paddingEnd="@dimen/custom_list_paddingEnd"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <RadioButton android:id="@id/radio2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="false" />
+        <LinearLayout android:orientation="vertical" android:id="@id/layout2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/radio2">
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/title2" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:textColor="?android:textColorSecondary" android:id="@id/summary2" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

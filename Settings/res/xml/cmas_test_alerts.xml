@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/testing_cmas_test_alerts" android:key="cmas_test_alerts"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference android:persistent="true" android:title="@string/title_cmas_test_alerts" android:key="pref_cmas_test_alerts_subscribe" android:summary="@string/summary_cmas_test_alerts" android:defaultValue="false" />
+</PreferenceScreen>

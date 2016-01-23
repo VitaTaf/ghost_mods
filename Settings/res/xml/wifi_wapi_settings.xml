@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dynamic-category-preference key="wapi_settings" dataAuthority="com.motorola.settings.wifi.wifiadvancedsettingswapi" title="@string/wifi_wapi_cert_mgmt_titlebar">
+    <dynamic-preference android:persistent="false" key="wapi_cert_install" title="@string/wifi_wapi_cert_install" dataAuthority="com.motorola.settings.wifi.wifiadvancedsettingswapi"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <intent android:action="com.android.settings.wifi.WapiCertMgmtDialog.CERT_INSTALL" />
+    </dynamic-preference>
+    <dynamic-preference android:persistent="false" key="wapi_cert_uninstall" title="@string/wifi_wapi_cert_uninstall" dataAuthority="com.motorola.settings.wifi.wifiadvancedsettingswapi"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <intent android:action="com.android.settings.wifi.WapiCertMgmtDialog.CERT_UNINSTALL" />
+    </dynamic-preference>
+</dynamic-category-preference>

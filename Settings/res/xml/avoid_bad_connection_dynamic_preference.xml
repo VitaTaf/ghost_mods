@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dynamic-checkbox-preference key="wifi_poor_network_test_pref" title="@string/avoid_bad_conn" summary="@string/avoid_bad_conn_summary" orderAbove="sleep_policy" dataAuthority="com.motorola.settings.extensions.dynamicprefprovider" />

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/frame" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/background" android:background="#d8000000" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip">
+            <TextView android:textSize="36.0sp" android:textColor="#ff33b5e5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/sim_lock_warning_title" />
+            <TextView android:textSize="16.0sp" android:textColor="#ffffffff" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="1.0dip" android:text="@string/sim_lock_warning_summary" />
+            <TextView android:textSize="23.0sp" android:textColor="@drawable/text_color" android:gravity="center_vertical" android:layout_gravity="right" android:id="@id/sim_lock_warning_accept" android:background="@drawable/text_highlight" android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:clickable="true" android:layout_width="wrap_content" android:layout_height="48.0dip" android:layout_marginTop="2.0dip" android:text="@string/sim_lock_warning_accept" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

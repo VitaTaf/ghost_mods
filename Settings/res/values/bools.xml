@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="has_dock_settings">false</bool>
+    <bool name="has_silent_mode">true</bool>
+    <bool name="has_powercontrol_widget">false</bool>
+    <bool name="config_additional_system_update_setting_enable">false</bool>
+    <bool name="auto_confirm_bluetooth_activation_dialog">false</bool>
+    <bool name="config_show_regulatory_info">false</bool>
+    <bool name="config_show_mobile_plan">false</bool>
+    <bool name="cmas_test_alerts_enable">true</bool>
+    <bool name="config_carrier_legal_enable">false</bool>
+    <bool name="allow_secret_code">true</bool>
+    <bool name="append_serialno_to_model">false</bool>
+    <bool name="mvno_type_as_gid">false</bool>
+    <bool name="config_enable_usagemanager">false</bool>
+    <bool name="enable_mvno_apn_filter">true</bool>
+    <bool name="config_msid_enable">false</bool>
+    <bool name="config_allow_edit_carrier_enabled">false</bool>
+    <bool name="verizon_wipe_bp">false</bool>
+    <bool name="display_tether_warning">true</bool>
+    <bool name="allow_create_new_apn">true</bool>
+    <bool name="feature_4384_display_total_memory">false</bool>
+    <bool name="feature_4262_vzw_prepay_mobile_plan">false</bool>
+    <bool name="auto_connection_menu">true</bool>
+    <bool name="hide_hardware_sku_menu">false</bool>
+    <bool name="ftr_4232_data_usage">false</bool>
+    <bool name="internet_preference_setting_enabled">false</bool>
+    <bool name="feature_3856_sprint_device_management">false</bool>
+    <bool name="hide_nfc_payment">false</bool>
+    <bool name="persisted_networkmode_settings_by_hiddenmenu">false</bool>
+</resources>

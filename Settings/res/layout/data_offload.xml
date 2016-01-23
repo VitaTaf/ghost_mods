@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/MainLayout" android:layout_width="wrap_content" android:layout_height="350.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/divider" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <LinearLayout android:orientation="vertical" android:id="@id/divider" android:layout_width="fill_parent" android:layout_height="wrap_content" android:divider="?android:dividerVertical" android:layout_alignParentBottom="true" android:showDividers="beginning">
+        <Button android:id="@id/offload_reminder" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/wifi_offload_not_now" android:layout_weight="1.0" />
+        <Button android:id="@id/offload_off" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/do_not_use_wifi" android:layout_weight="1.0" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="300.0sp" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:id="@id/info" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <LinearLayout android:orientation="vertical" android:id="@id/type" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/wifi_p2p_menu_rename" style="?android:attr/textAppearanceSmall" />
+            <EditText android:id="@id/deviceName" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:maxLength="22" android:inputType="textNoSuggestions" />
+            <TextView android:id="@id/wifi_p2p_ago_band_txt" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/wifi_p2p_ago_band" style="?android:attr/textAppearanceSmall" />
+            <Spinner android:persistent="true" android:entries="@array/wifi_p2p_frequency_band_entries" android:id="@id/device_band" android:layout_width="fill_parent" android:layout_height="wrap_content" android:entryValues="@array/wifi_p2p_frequency_band_values" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/wifi_p2p_device_limit" style="?android:attr/textAppearanceSmall" />
+            <Spinner android:persistent="true" android:entries="@array/wifi_p2p_device_limit" android:id="@id/device_limit" android:layout_width="fill_parent" android:layout_height="wrap_content" android:entryValues="@array/wifi_p2p_device_limit_values" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/wifi_p2p_inactivity_timeout" style="?android:attr/textAppearanceSmall" />
+            <Spinner android:persistent="true" android:entries="@array/wifi_p2p_device_inactivity_timeout" android:id="@id/device_timeout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:entryValues="@array/wifi_p2p_device_inactivity_timeout_values" />
+            <CheckBox android:id="@id/auto_connect" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/wifi_p2p_auto_connect" />
+            <TextView android:id="@id/auto_connect_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/wifi_p2p_auto_connect_text" style="?android:attr/textAppearanceSmall" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

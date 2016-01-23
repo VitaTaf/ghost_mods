@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dynamic-category-preference>
+    <dynamic-checkbox-preference key="wifi_hotspot_autoconnect" title="@string/wifi_hotspot_autoconnect" dataAuthority="com.motorola.settings.wifi.wifiadvancedsettingswispr" summary="@string/wifi_hotspot_autoconnect_summary" />
+</dynamic-category-preference>

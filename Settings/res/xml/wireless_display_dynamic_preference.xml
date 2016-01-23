@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dynamic-preference key="wireless_display" title="@string/wireless_display_settings_title" replace="wifi_display" autoRefresh="true" dataAuthority="com.motorola.settings.extensions.dynamicprefprovider"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <intent android:action="com.motorola.wirelessdisplay.client.WirelessDisplaySettings.Launch" />
+</dynamic-preference>

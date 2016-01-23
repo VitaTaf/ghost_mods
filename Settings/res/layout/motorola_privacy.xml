@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/root" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <WebView android:id="@id/webview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/done_button_layout" />
+    <RelativeLayout android:id="@id/done_button_layout" android:layout_width="fill_parent" android:layout_height="@dimen/privacy_policy_done_button_height" android:layout_alignParentBottom="true">
+        <Button android:id="@id/done_button" android:layout_width="@dimen/privacy_policy_done_button_width" android:layout_height="wrap_content" android:text="@string/done" android:layout_centerInParent="true" android:onClick="onDoneButtonClick" />
+    </RelativeLayout>
+</RelativeLayout>
