@@ -1575,6 +1575,14 @@
 
 .field public static final ImageView_tintMode:I = 0x9
 
+.field public static final Include:[I
+
+.field public static final Include_id:I = 0x0
+
+.field public static final Include_layout:I = 0x2
+
+.field public static final Include_visibility:I = 0x1
+
 .field public static final InputExtras:[I
 
 .field public static final InputMethod:[I
@@ -5206,6 +5214,12 @@
 
     sput-object v0, Landroid/R$styleable;->ImageView:[I
 
+    new-array v0, v5, [I
+
+    fill-array-data v0, :array_d5
+
+    sput-object v0, Landroid/R$styleable;->Include:[I
+
     .line 31385
     new-array v0, v2, [I
 
@@ -7592,6 +7606,13 @@
         0x101031c
         0x10103fb
         0x1160046
+    .end array-data
+
+    :array_d5
+    .array-data 4
+        0x10100d0
+        0x10100dc
+        0x10100f2
     .end array-data
 
     .line 31411
