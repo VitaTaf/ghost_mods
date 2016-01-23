@@ -30192,38 +30192,79 @@
 .end method
 
 .method protected onVisibilityChanged(Landroid/view/View;I)V
-    .locals 2
+    .locals 5
     .param p1, "changedView"    # Landroid/view/View;
     .param p2, "visibility"    # I
 
     .prologue
-    .line 8747
-    if-nez p2, :cond_0
+    const/4 v2, 0x0
 
-    .line 8748
-    iget-object v0, p0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
+    .line 8759
+    if-nez p2, :cond_2
 
-    if-eqz v0, :cond_1
+    invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
-    .line 8749
+    move-result v3
+
+    if-nez v3, :cond_2
+
+    const/4 v1, 0x1
+
+    .line 8760
+    .local v1, "visible":Z
+    :goto_0
+    if-eqz v1, :cond_0
+
+    .line 8761
+    iget-object v3, p0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
+
+    if-eqz v3, :cond_3
+
+    .line 8762
     invoke-direct {p0}, Landroid/view/View;->initialAwakenScrollBars()Z
 
-    .line 8754
+    .line 8768
     :cond_0
-    :goto_0
+    :goto_1
+    iget-object v0, p0, Landroid/view/View;->mBackground:Landroid/graphics/drawable/Drawable;
+
+    .line 8769
+    .local v0, "dr":Landroid/graphics/drawable/Drawable;
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->isVisible()Z
+
+    move-result v3
+
+    if-eq v1, v3, :cond_1
+
+    .line 8770
+    invoke-virtual {v0, v1, v2}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
+
+    .line 8772
+    :cond_1
     return-void
 
-    .line 8751
-    :cond_1
-    iget v0, p0, Landroid/view/View;->mPrivateFlags:I
+    .end local v0    # "dr":Landroid/graphics/drawable/Drawable;
+    .end local v1    # "visible":Z
+    :cond_2
+    move v1, v2
 
-    const/high16 v1, 0x8000000
-
-    or-int/2addr v0, v1
-
-    iput v0, p0, Landroid/view/View;->mPrivateFlags:I
-
+    .line 8759
     goto :goto_0
+
+    .line 8764
+    .restart local v1    # "visible":Z
+    :cond_3
+    iget v3, p0, Landroid/view/View;->mPrivateFlags:I
+
+    const/high16 v4, 0x8000000
+
+    or-int/2addr v3, v4
+
+    iput v3, p0, Landroid/view/View;->mPrivateFlags:I
+
+    goto :goto_1
 .end method
 
 .method public onWindowFocusChanged(Z)V
@@ -40215,42 +40256,19 @@
 .end method
 
 .method public setVisibility(I)V
-    .locals 3
+    .locals 1
     .param p1, "visibility"    # I
     .annotation runtime Landroid/view/RemotableViewMethod;
     .end annotation
 
     .prologue
-    const/4 v1, 0x0
-
-    .line 6698
+    .line 6695
     const/16 v0, 0xc
 
     invoke-virtual {p0, p1, v0}, Landroid/view/View;->setFlags(II)V
 
-    .line 6699
-    iget-object v0, p0, Landroid/view/View;->mBackground:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v0, :cond_0
-
-    iget-object v2, p0, Landroid/view/View;->mBackground:Landroid/graphics/drawable/Drawable;
-
-    if-nez p1, :cond_1
-
-    const/4 v0, 0x1
-
-    :goto_0
-    invoke-virtual {v2, v0, v1}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
-
-    .line 6700
-    :cond_0
+    .line 6696
     return-void
-
-    :cond_1
-    move v0, v1
-
-    .line 6699
-    goto :goto_0
 .end method
 
 .method public setWillNotCacheDrawing(Z)V
