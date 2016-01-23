@@ -64,8 +64,6 @@
 
 .field private mOnlyIndeterminate:Z
 
-.field private mPM:Landroid/os/PowerManager;
-
 .field private mProgress:I
 
 .field private mProgressDrawable:Landroid/graphics/drawable/Drawable;
@@ -104,12 +102,12 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 251
+    .line 246
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Landroid/widget/ProgressBar;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 252
+    .line 247
     return-void
 .end method
 
@@ -119,12 +117,12 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 255
+    .line 250
     const v0, 0x1010077
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/ProgressBar;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 256
+    .line 251
     return-void
 .end method
 
@@ -135,12 +133,12 @@
     .param p3, "defStyleAttr"    # I
 
     .prologue
-    .line 259
+    .line 254
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, p3, v0}, Landroid/widget/ProgressBar;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    .line 260
+    .line 255
     return-void
 .end method
 
@@ -162,20 +160,20 @@
 
     const/4 v5, 0x1
 
-    .line 263
+    .line 258
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    .line 237
+    .line 235
     iput-boolean v4, p0, Landroid/widget/ProgressBar;->mMirrorForRtl:Z
 
-    .line 239
+    .line 237
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v6, p0, Landroid/widget/ProgressBar;->mRefreshData:Ljava/util/ArrayList;
 
-    .line 265
+    .line 260
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v6
@@ -186,35 +184,35 @@
 
     iput-wide v6, p0, Landroid/widget/ProgressBar;->mUiThreadId:J
 
-    .line 266
+    .line 261
     invoke-direct {p0}, Landroid/widget/ProgressBar;->initProgressBar()V
 
-    .line 268
+    .line 263
     sget-object v6, Lcom/android/internal/R$styleable;->ProgressBar:[I
 
     invoke-virtual {p1, p2, v6, p3, p4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 271
+    .line 266
     .local v0, "a":Landroid/content/res/TypedArray;
     iput-boolean v5, p0, Landroid/widget/ProgressBar;->mNoInvalidate:Z
 
-    .line 273
+    .line 268
     const/16 v6, 0x8
 
     invoke-virtual {v0, v6}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
-    .line 274
+    .line 269
     .local v2, "progressDrawable":Landroid/graphics/drawable/Drawable;
     if-eqz v2, :cond_0
 
-    .line 277
+    .line 272
     invoke-virtual {p0, v2}, Landroid/widget/ProgressBar;->setProgressDrawableTiled(Landroid/graphics/drawable/Drawable;)V
 
-    .line 281
+    .line 276
     :cond_0
     const/16 v6, 0x9
 
@@ -226,7 +224,7 @@
 
     iput v6, p0, Landroid/widget/ProgressBar;->mDuration:I
 
-    .line 283
+    .line 278
     const/16 v6, 0xb
 
     iget v7, p0, Landroid/widget/ProgressBar;->mMinWidth:I
@@ -237,7 +235,7 @@
 
     iput v6, p0, Landroid/widget/ProgressBar;->mMinWidth:I
 
-    .line 284
+    .line 279
     iget v6, p0, Landroid/widget/ProgressBar;->mMaxWidth:I
 
     invoke-virtual {v0, v4, v6}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
@@ -246,7 +244,7 @@
 
     iput v6, p0, Landroid/widget/ProgressBar;->mMaxWidth:I
 
-    .line 285
+    .line 280
     const/16 v6, 0xc
 
     iget v7, p0, Landroid/widget/ProgressBar;->mMinHeight:I
@@ -257,7 +255,7 @@
 
     iput v6, p0, Landroid/widget/ProgressBar;->mMinHeight:I
 
-    .line 286
+    .line 281
     iget v6, p0, Landroid/widget/ProgressBar;->mMaxHeight:I
 
     invoke-virtual {v0, v5, v6}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
@@ -266,7 +264,7 @@
 
     iput v6, p0, Landroid/widget/ProgressBar;->mMaxHeight:I
 
-    .line 288
+    .line 283
     const/16 v6, 0xa
 
     iget v7, p0, Landroid/widget/ProgressBar;->mBehavior:I
@@ -277,7 +275,7 @@
 
     iput v6, p0, Landroid/widget/ProgressBar;->mBehavior:I
 
-    .line 290
+    .line 285
     const/16 v6, 0xd
 
     const v7, 0x10a000b
@@ -286,14 +284,14 @@
 
     move-result v3
 
-    .line 293
+    .line 288
     .local v3, "resID":I
     if-lez v3, :cond_1
 
-    .line 294
+    .line 289
     invoke-virtual {p0, p1, v3}, Landroid/widget/ProgressBar;->setInterpolator(Landroid/content/Context;I)V
 
-    .line 297
+    .line 292
     :cond_1
     const/4 v6, 0x2
 
@@ -305,7 +303,7 @@
 
     invoke-virtual {p0, v6}, Landroid/widget/ProgressBar;->setMax(I)V
 
-    .line 299
+    .line 294
     const/4 v6, 0x3
 
     iget v7, p0, Landroid/widget/ProgressBar;->mProgress:I
@@ -316,7 +314,7 @@
 
     invoke-virtual {p0, v6}, Landroid/widget/ProgressBar;->setProgress(I)V
 
-    .line 301
+    .line 296
     const/4 v6, 0x4
 
     iget v7, p0, Landroid/widget/ProgressBar;->mSecondaryProgress:I
@@ -327,21 +325,21 @@
 
     invoke-virtual {p0, v6}, Landroid/widget/ProgressBar;->setSecondaryProgress(I)V
 
-    .line 304
+    .line 299
     const/4 v6, 0x7
 
     invoke-virtual {v0, v6}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    .line 306
+    .line 301
     .local v1, "indeterminateDrawable":Landroid/graphics/drawable/Drawable;
     if-eqz v1, :cond_2
 
-    .line 307
+    .line 302
     invoke-virtual {p0, v1}, Landroid/widget/ProgressBar;->setIndeterminateDrawableTiled(Landroid/graphics/drawable/Drawable;)V
 
-    .line 310
+    .line 305
     :cond_2
     const/4 v6, 0x6
 
@@ -353,10 +351,10 @@
 
     iput-boolean v6, p0, Landroid/widget/ProgressBar;->mOnlyIndeterminate:Z
 
-    .line 313
+    .line 308
     iput-boolean v4, p0, Landroid/widget/ProgressBar;->mNoInvalidate:Z
 
-    .line 315
+    .line 310
     iget-boolean v6, p0, Landroid/widget/ProgressBar;->mOnlyIndeterminate:Z
 
     if-nez v6, :cond_3
@@ -377,7 +375,7 @@
     :cond_4
     invoke-virtual {p0, v4}, Landroid/widget/ProgressBar;->setIndeterminate(Z)V
 
-    .line 318
+    .line 313
     const/16 v4, 0xf
 
     iget-boolean v6, p0, Landroid/widget/ProgressBar;->mMirrorForRtl:Z
@@ -388,7 +386,7 @@
 
     iput-boolean v4, p0, Landroid/widget/ProgressBar;->mMirrorForRtl:Z
 
-    .line 320
+    .line 315
     const/16 v4, 0x11
 
     invoke-virtual {v0, v4}, Landroid/content/res/TypedArray;->hasValue(I)Z
@@ -397,19 +395,19 @@
 
     if-eqz v4, :cond_6
 
-    .line 321
+    .line 316
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     if-nez v4, :cond_5
 
-    .line 322
+    .line 317
     new-instance v4, Landroid/widget/ProgressBar$ProgressTintInfo;
 
     invoke-direct {v4, v8}, Landroid/widget/ProgressBar$ProgressTintInfo;-><init>(Landroid/widget/ProgressBar$1;)V
 
     iput-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
-    .line 324
+    .line 319
     :cond_5
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
@@ -425,12 +423,12 @@
 
     iput-object v6, v4, Landroid/widget/ProgressBar$ProgressTintInfo;->mProgressTintMode:Landroid/graphics/PorterDuff$Mode;
 
-    .line 326
+    .line 321
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iput-boolean v5, v4, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasProgressTintMode:Z
 
-    .line 329
+    .line 324
     :cond_6
     const/16 v4, 0x10
 
@@ -440,19 +438,19 @@
 
     if-eqz v4, :cond_8
 
-    .line 330
+    .line 325
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     if-nez v4, :cond_7
 
-    .line 331
+    .line 326
     new-instance v4, Landroid/widget/ProgressBar$ProgressTintInfo;
 
     invoke-direct {v4, v8}, Landroid/widget/ProgressBar$ProgressTintInfo;-><init>(Landroid/widget/ProgressBar$1;)V
 
     iput-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
-    .line 333
+    .line 328
     :cond_7
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
@@ -464,12 +462,12 @@
 
     iput-object v6, v4, Landroid/widget/ProgressBar$ProgressTintInfo;->mProgressTintList:Landroid/content/res/ColorStateList;
 
-    .line 335
+    .line 330
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iput-boolean v5, v4, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasProgressTint:Z
 
-    .line 338
+    .line 333
     :cond_8
     const/16 v4, 0x13
 
@@ -479,19 +477,19 @@
 
     if-eqz v4, :cond_a
 
-    .line 339
+    .line 334
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     if-nez v4, :cond_9
 
-    .line 340
+    .line 335
     new-instance v4, Landroid/widget/ProgressBar$ProgressTintInfo;
 
     invoke-direct {v4, v8}, Landroid/widget/ProgressBar$ProgressTintInfo;-><init>(Landroid/widget/ProgressBar$1;)V
 
     iput-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
-    .line 342
+    .line 337
     :cond_9
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
@@ -507,12 +505,12 @@
 
     iput-object v6, v4, Landroid/widget/ProgressBar$ProgressTintInfo;->mProgressBackgroundTintMode:Landroid/graphics/PorterDuff$Mode;
 
-    .line 344
+    .line 339
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iput-boolean v5, v4, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasProgressBackgroundTintMode:Z
 
-    .line 347
+    .line 342
     :cond_a
     const/16 v4, 0x12
 
@@ -522,19 +520,19 @@
 
     if-eqz v4, :cond_c
 
-    .line 348
+    .line 343
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     if-nez v4, :cond_b
 
-    .line 349
+    .line 344
     new-instance v4, Landroid/widget/ProgressBar$ProgressTintInfo;
 
     invoke-direct {v4, v8}, Landroid/widget/ProgressBar$ProgressTintInfo;-><init>(Landroid/widget/ProgressBar$1;)V
 
     iput-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
-    .line 351
+    .line 346
     :cond_b
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
@@ -546,12 +544,12 @@
 
     iput-object v6, v4, Landroid/widget/ProgressBar$ProgressTintInfo;->mProgressBackgroundTintList:Landroid/content/res/ColorStateList;
 
-    .line 353
+    .line 348
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iput-boolean v5, v4, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasProgressBackgroundTint:Z
 
-    .line 356
+    .line 351
     :cond_c
     const/16 v4, 0x15
 
@@ -561,19 +559,19 @@
 
     if-eqz v4, :cond_e
 
-    .line 357
+    .line 352
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     if-nez v4, :cond_d
 
-    .line 358
+    .line 353
     new-instance v4, Landroid/widget/ProgressBar$ProgressTintInfo;
 
     invoke-direct {v4, v8}, Landroid/widget/ProgressBar$ProgressTintInfo;-><init>(Landroid/widget/ProgressBar$1;)V
 
     iput-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
-    .line 360
+    .line 355
     :cond_d
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
@@ -589,12 +587,12 @@
 
     iput-object v6, v4, Landroid/widget/ProgressBar$ProgressTintInfo;->mSecondaryProgressTintMode:Landroid/graphics/PorterDuff$Mode;
 
-    .line 362
+    .line 357
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iput-boolean v5, v4, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasSecondaryProgressTintMode:Z
 
-    .line 365
+    .line 360
     :cond_e
     const/16 v4, 0x14
 
@@ -604,19 +602,19 @@
 
     if-eqz v4, :cond_10
 
-    .line 366
+    .line 361
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     if-nez v4, :cond_f
 
-    .line 367
+    .line 362
     new-instance v4, Landroid/widget/ProgressBar$ProgressTintInfo;
 
     invoke-direct {v4, v8}, Landroid/widget/ProgressBar$ProgressTintInfo;-><init>(Landroid/widget/ProgressBar$1;)V
 
     iput-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
-    .line 369
+    .line 364
     :cond_f
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
@@ -628,12 +626,12 @@
 
     iput-object v6, v4, Landroid/widget/ProgressBar$ProgressTintInfo;->mSecondaryProgressTintList:Landroid/content/res/ColorStateList;
 
-    .line 371
+    .line 366
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iput-boolean v5, v4, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasSecondaryProgressTint:Z
 
-    .line 374
+    .line 369
     :cond_10
     invoke-virtual {v0, v10}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
@@ -641,19 +639,19 @@
 
     if-eqz v4, :cond_12
 
-    .line 375
+    .line 370
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     if-nez v4, :cond_11
 
-    .line 376
+    .line 371
     new-instance v4, Landroid/widget/ProgressBar$ProgressTintInfo;
 
     invoke-direct {v4, v8}, Landroid/widget/ProgressBar$ProgressTintInfo;-><init>(Landroid/widget/ProgressBar$1;)V
 
     iput-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
-    .line 378
+    .line 373
     :cond_11
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
@@ -669,12 +667,12 @@
 
     iput-object v6, v4, Landroid/widget/ProgressBar$ProgressTintInfo;->mIndeterminateTintMode:Landroid/graphics/PorterDuff$Mode;
 
-    .line 380
+    .line 375
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iput-boolean v5, v4, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasIndeterminateTintMode:Z
 
-    .line 383
+    .line 378
     :cond_12
     invoke-virtual {v0, v10}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
@@ -682,19 +680,19 @@
 
     if-eqz v4, :cond_14
 
-    .line 384
+    .line 379
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     if-nez v4, :cond_13
 
-    .line 385
+    .line 380
     new-instance v4, Landroid/widget/ProgressBar$ProgressTintInfo;
 
     invoke-direct {v4, v8}, Landroid/widget/ProgressBar$ProgressTintInfo;-><init>(Landroid/widget/ProgressBar$1;)V
 
     iput-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
-    .line 387
+    .line 382
     :cond_13
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
@@ -704,45 +702,32 @@
 
     iput-object v6, v4, Landroid/widget/ProgressBar$ProgressTintInfo;->mIndeterminateTintList:Landroid/content/res/ColorStateList;
 
-    .line 389
+    .line 384
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iput-boolean v5, v4, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasIndeterminateTint:Z
 
-    .line 392
+    .line 387
     :cond_14
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 394
-    iget-object v4, p0, Landroid/widget/ProgressBar;->mContext:Landroid/content/Context;
-
-    const-string/jumbo v6, "power"
-
-    invoke-virtual {v4, v6}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/os/PowerManager;
-
-    iput-object v4, p0, Landroid/widget/ProgressBar;->mPM:Landroid/os/PowerManager;
-
-    .line 397
+    .line 389
     invoke-direct {p0}, Landroid/widget/ProgressBar;->applyProgressTints()V
 
-    .line 398
+    .line 390
     invoke-direct {p0}, Landroid/widget/ProgressBar;->applyIndeterminateTint()V
 
-    .line 401
+    .line 393
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->getImportantForAccessibility()I
 
     move-result v4
 
     if-nez v4, :cond_15
 
-    .line 402
+    .line 394
     invoke-virtual {p0, v5}, Landroid/widget/ProgressBar;->setImportantForAccessibility(I)V
 
-    .line 404
+    .line 396
     :cond_15
     return-void
 .end method
@@ -752,7 +737,7 @@
     .param p0, "x0"    # Landroid/widget/ProgressBar;
 
     .prologue
-    .line 200
+    .line 198
     iget-object v0, p0, Landroid/widget/ProgressBar;->mRefreshData:Ljava/util/ArrayList;
 
     return-object v0
@@ -767,7 +752,7 @@
     .param p4, "x4"    # Z
 
     .prologue
-    .line 200
+    .line 198
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/widget/ProgressBar;->doRefreshProgress(IIZZ)V
 
     return-void
@@ -779,7 +764,7 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 200
+    .line 198
     iput-boolean p1, p0, Landroid/widget/ProgressBar;->mRefreshIsPosted:Z
 
     return p1
@@ -789,7 +774,7 @@
     .locals 3
 
     .prologue
-    .line 671
+    .line 676
     iget-object v1, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v1, :cond_3
@@ -798,10 +783,10 @@
 
     if-eqz v1, :cond_3
 
-    .line 672
+    .line 677
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
-    .line 673
+    .line 678
     .local v0, "tintInfo":Landroid/widget/ProgressBar$ProgressTintInfo;
     iget-boolean v1, v0, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasIndeterminateTint:Z
 
@@ -811,7 +796,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 674
+    .line 679
     :cond_0
     iget-object v1, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -821,32 +806,32 @@
 
     iput-object v1, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 676
+    .line 681
     iget-boolean v1, v0, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasIndeterminateTint:Z
 
     if-eqz v1, :cond_1
 
-    .line 677
+    .line 682
     iget-object v1, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
     iget-object v2, v0, Landroid/widget/ProgressBar$ProgressTintInfo;->mIndeterminateTintList:Landroid/content/res/ColorStateList;
 
     invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setTintList(Landroid/content/res/ColorStateList;)V
 
-    .line 680
+    .line 685
     :cond_1
     iget-boolean v1, v0, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasIndeterminateTintMode:Z
 
     if-eqz v1, :cond_2
 
-    .line 681
+    .line 686
     iget-object v1, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
     iget-object v2, v0, Landroid/widget/ProgressBar$ProgressTintInfo;->mIndeterminateTintMode:Landroid/graphics/PorterDuff$Mode;
 
     invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setTintMode(Landroid/graphics/PorterDuff$Mode;)V
 
-    .line 686
+    .line 691
     :cond_2
     iget-object v1, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -856,7 +841,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 687
+    .line 692
     iget-object v1, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->getDrawableState()[I
@@ -865,7 +850,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 691
+    .line 696
     .end local v0    # "tintInfo":Landroid/widget/ProgressBar$ProgressTintInfo;
     :cond_3
     return-void
@@ -875,7 +860,7 @@
     .locals 3
 
     .prologue
-    .line 787
+    .line 792
     iget-object v1, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iget-boolean v1, v1, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasProgressTint:Z
@@ -888,7 +873,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 789
+    .line 794
     :cond_0
     const v1, 0x102000d
 
@@ -898,25 +883,25 @@
 
     move-result-object v0
 
-    .line 790
+    .line 795
     .local v0, "target":Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_3
 
-    .line 791
+    .line 796
     iget-object v1, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iget-boolean v1, v1, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasProgressTint:Z
 
     if-eqz v1, :cond_1
 
-    .line 792
+    .line 797
     iget-object v1, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iget-object v1, v1, Landroid/widget/ProgressBar$ProgressTintInfo;->mProgressTintList:Landroid/content/res/ColorStateList;
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setTintList(Landroid/content/res/ColorStateList;)V
 
-    .line 794
+    .line 799
     :cond_1
     iget-object v1, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
@@ -924,14 +909,14 @@
 
     if-eqz v1, :cond_2
 
-    .line 795
+    .line 800
     iget-object v1, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iget-object v1, v1, Landroid/widget/ProgressBar$ProgressTintInfo;->mProgressTintMode:Landroid/graphics/PorterDuff$Mode;
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setTintMode(Landroid/graphics/PorterDuff$Mode;)V
 
-    .line 800
+    .line 805
     :cond_2
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->isStateful()Z
 
@@ -939,14 +924,14 @@
 
     if-eqz v1, :cond_3
 
-    .line 801
+    .line 806
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->getDrawableState()[I
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 805
+    .line 810
     .end local v0    # "target":Landroid/graphics/drawable/Drawable;
     :cond_3
     return-void
@@ -956,7 +941,7 @@
     .locals 3
 
     .prologue
-    .line 812
+    .line 817
     iget-object v1, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iget-boolean v1, v1, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasProgressBackgroundTint:Z
@@ -969,7 +954,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 814
+    .line 819
     :cond_0
     const/high16 v1, 0x1020000
 
@@ -979,25 +964,25 @@
 
     move-result-object v0
 
-    .line 815
+    .line 820
     .local v0, "target":Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_3
 
-    .line 816
+    .line 821
     iget-object v1, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iget-boolean v1, v1, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasProgressBackgroundTint:Z
 
     if-eqz v1, :cond_1
 
-    .line 817
+    .line 822
     iget-object v1, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iget-object v1, v1, Landroid/widget/ProgressBar$ProgressTintInfo;->mProgressBackgroundTintList:Landroid/content/res/ColorStateList;
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setTintList(Landroid/content/res/ColorStateList;)V
 
-    .line 819
+    .line 824
     :cond_1
     iget-object v1, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
@@ -1005,14 +990,14 @@
 
     if-eqz v1, :cond_2
 
-    .line 820
+    .line 825
     iget-object v1, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iget-object v1, v1, Landroid/widget/ProgressBar$ProgressTintInfo;->mProgressBackgroundTintMode:Landroid/graphics/PorterDuff$Mode;
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setTintMode(Landroid/graphics/PorterDuff$Mode;)V
 
-    .line 825
+    .line 830
     :cond_2
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->isStateful()Z
 
@@ -1020,14 +1005,14 @@
 
     if-eqz v1, :cond_3
 
-    .line 826
+    .line 831
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->getDrawableState()[I
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 830
+    .line 835
     .end local v0    # "target":Landroid/graphics/drawable/Drawable;
     :cond_3
     return-void
@@ -1037,7 +1022,7 @@
     .locals 1
 
     .prologue
-    .line 775
+    .line 780
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
@@ -1046,16 +1031,16 @@
 
     if-eqz v0, :cond_0
 
-    .line 776
+    .line 781
     invoke-direct {p0}, Landroid/widget/ProgressBar;->applyPrimaryProgressTint()V
 
-    .line 777
+    .line 782
     invoke-direct {p0}, Landroid/widget/ProgressBar;->applyProgressBackgroundTint()V
 
-    .line 778
+    .line 783
     invoke-direct {p0}, Landroid/widget/ProgressBar;->applySecondaryProgressTint()V
 
-    .line 780
+    .line 785
     :cond_0
     return-void
 .end method
@@ -1064,7 +1049,7 @@
     .locals 3
 
     .prologue
-    .line 837
+    .line 842
     iget-object v1, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iget-boolean v1, v1, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasSecondaryProgressTint:Z
@@ -1077,7 +1062,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 839
+    .line 844
     :cond_0
     const v1, 0x102000f
 
@@ -1087,25 +1072,25 @@
 
     move-result-object v0
 
-    .line 840
+    .line 845
     .local v0, "target":Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_3
 
-    .line 841
+    .line 846
     iget-object v1, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iget-boolean v1, v1, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasSecondaryProgressTint:Z
 
     if-eqz v1, :cond_1
 
-    .line 842
+    .line 847
     iget-object v1, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iget-object v1, v1, Landroid/widget/ProgressBar$ProgressTintInfo;->mSecondaryProgressTintList:Landroid/content/res/ColorStateList;
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setTintList(Landroid/content/res/ColorStateList;)V
 
-    .line 844
+    .line 849
     :cond_1
     iget-object v1, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
@@ -1113,14 +1098,14 @@
 
     if-eqz v1, :cond_2
 
-    .line 845
+    .line 850
     iget-object v1, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iget-object v1, v1, Landroid/widget/ProgressBar$ProgressTintInfo;->mSecondaryProgressTintMode:Landroid/graphics/PorterDuff$Mode;
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setTintMode(Landroid/graphics/PorterDuff$Mode;)V
 
-    .line 850
+    .line 855
     :cond_2
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->isStateful()Z
 
@@ -1128,14 +1113,14 @@
 
     if-eqz v1, :cond_3
 
-    .line 851
+    .line 856
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->getDrawableState()[I
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 855
+    .line 860
     .end local v0    # "target":Landroid/graphics/drawable/Drawable;
     :cond_3
     return-void
@@ -1149,7 +1134,7 @@
     .param p4, "callBackToApp"    # Z
 
     .prologue
-    .line 1252
+    .line 1239
     monitor-enter p0
 
     :try_start_0
@@ -1165,25 +1150,25 @@
 
     div-float v4, v5, v6
 
-    .line 1253
+    .line 1240
     .local v4, "scale":F
     :goto_0
     iget-object v1, p0, Landroid/widget/ProgressBar;->mCurrentDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 1254
+    .line 1241
     .local v1, "d":Landroid/graphics/drawable/Drawable;
     if-eqz v1, :cond_4
 
-    .line 1255
+    .line 1242
     const/4 v3, 0x0
 
-    .line 1257
+    .line 1244
     .local v3, "progressDrawable":Landroid/graphics/drawable/Drawable;
     instance-of v5, v1, Landroid/graphics/drawable/LayerDrawable;
 
     if-eqz v5, :cond_0
 
-    .line 1258
+    .line 1245
     move-object v0, v1
 
     check-cast v0, Landroid/graphics/drawable/LayerDrawable;
@@ -1194,7 +1179,7 @@
 
     move-result-object v3
 
-    .line 1259
+    .line 1246
     if-eqz v3, :cond_0
 
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->canResolveLayoutDirection()Z
@@ -1203,14 +1188,14 @@
 
     if-eqz v5, :cond_0
 
-    .line 1260
+    .line 1247
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->getLayoutDirection()I
 
     move-result v5
 
     invoke-virtual {v3, v5}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
 
-    .line 1264
+    .line 1251
     :cond_0
     const v5, 0x461c4000    # 10000.0f
 
@@ -1218,7 +1203,7 @@
 
     float-to-int v2, v5
 
-    .line 1265
+    .line 1252
     .local v2, "level":I
     if-eqz v3, :cond_3
 
@@ -1226,7 +1211,7 @@
     :goto_1
     invoke-virtual {v3, v2}, Landroid/graphics/drawable/Drawable;->setLevel(I)Z
 
-    .line 1270
+    .line 1257
     .end local v2    # "level":I
     :goto_2
     if-eqz p4, :cond_1
@@ -1235,18 +1220,18 @@
 
     if-ne p1, v5, :cond_1
 
-    .line 1271
+    .line 1258
     invoke-virtual {p0, v4, p3, p2}, Landroid/widget/ProgressBar;->onProgressRefresh(FZI)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1273
+    .line 1260
     :cond_1
     monitor-exit p0
 
     return-void
 
-    .line 1252
+    .line 1239
     .end local v1    # "d":Landroid/graphics/drawable/Drawable;
     .end local v4    # "scale":F
     :cond_2
@@ -1261,10 +1246,10 @@
     :cond_3
     move-object v3, v1
 
-    .line 1265
+    .line 1252
     goto :goto_1
 
-    .line 1267
+    .line 1254
     .end local v2    # "level":I
     .end local v3    # "progressDrawable":Landroid/graphics/drawable/Drawable;
     :cond_4
@@ -1275,7 +1260,7 @@
 
     goto :goto_2
 
-    .line 1252
+    .line 1239
     .end local v1    # "d":Landroid/graphics/drawable/Drawable;
     .end local v4    # "scale":F
     :catchall_0
@@ -1292,48 +1277,48 @@
     .param p2, "shouldFallback"    # Z
 
     .prologue
-    .line 1111
+    .line 1116
     const/4 v1, 0x0
 
-    .line 1113
+    .line 1118
     .local v1, "layer":Landroid/graphics/drawable/Drawable;
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 1114
+    .line 1119
     .local v0, "d":Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_1
 
-    .line 1115
+    .line 1120
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
     iput-object v2, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 1117
+    .line 1122
     instance-of v2, v0, Landroid/graphics/drawable/LayerDrawable;
 
     if-eqz v2, :cond_0
 
     move-object v2, v0
 
-    .line 1118
+    .line 1123
     check-cast v2, Landroid/graphics/drawable/LayerDrawable;
 
     invoke-virtual {v2, p1}, Landroid/graphics/drawable/LayerDrawable;->findDrawableByLayerId(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    .line 1121
+    .line 1126
     :cond_0
     if-eqz p2, :cond_1
 
     if-nez v1, :cond_1
 
-    .line 1122
+    .line 1127
     move-object v1, v0
 
-    .line 1126
+    .line 1131
     :cond_1
     return-object v1
 .end method
@@ -1348,46 +1333,46 @@
 
     const/4 v1, 0x0
 
-    .line 505
+    .line 510
     const/16 v0, 0x64
 
     iput v0, p0, Landroid/widget/ProgressBar;->mMax:I
 
-    .line 506
+    .line 511
     iput v1, p0, Landroid/widget/ProgressBar;->mProgress:I
 
-    .line 507
+    .line 512
     iput v1, p0, Landroid/widget/ProgressBar;->mSecondaryProgress:I
 
-    .line 508
+    .line 513
     iput-boolean v1, p0, Landroid/widget/ProgressBar;->mIndeterminate:Z
 
-    .line 509
+    .line 514
     iput-boolean v1, p0, Landroid/widget/ProgressBar;->mOnlyIndeterminate:Z
 
-    .line 510
+    .line 515
     const/16 v0, 0xfa0
 
     iput v0, p0, Landroid/widget/ProgressBar;->mDuration:I
 
-    .line 511
+    .line 516
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/widget/ProgressBar;->mBehavior:I
 
-    .line 512
+    .line 517
     iput v2, p0, Landroid/widget/ProgressBar;->mMinWidth:I
 
-    .line 513
+    .line 518
     iput v3, p0, Landroid/widget/ProgressBar;->mMaxWidth:I
 
-    .line 514
+    .line 519
     iput v2, p0, Landroid/widget/ProgressBar;->mMinHeight:I
 
-    .line 515
+    .line 520
     iput v3, p0, Landroid/widget/ProgressBar;->mMaxHeight:I
 
-    .line 516
+    .line 521
     return-void
 .end method
 
@@ -1398,7 +1383,7 @@
     .param p3, "fromUser"    # Z
 
     .prologue
-    .line 1282
+    .line 1269
     monitor-enter p0
 
     :try_start_0
@@ -1416,28 +1401,28 @@
 
     if-nez v1, :cond_1
 
-    .line 1283
+    .line 1270
     const/4 v1, 0x1
 
     invoke-direct {p0, p1, p2, p3, v1}, Landroid/widget/ProgressBar;->doRefreshProgress(IIZZ)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1296
+    .line 1283
     :cond_0
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 1285
+    .line 1272
     :cond_1
     :try_start_1
     iget-object v1, p0, Landroid/widget/ProgressBar;->mRefreshProgressRunnable:Landroid/widget/ProgressBar$RefreshProgressRunnable;
 
     if-nez v1, :cond_2
 
-    .line 1286
+    .line 1273
     new-instance v1, Landroid/widget/ProgressBar$RefreshProgressRunnable;
 
     const/4 v2, 0x0
@@ -1446,19 +1431,19 @@
 
     iput-object v1, p0, Landroid/widget/ProgressBar;->mRefreshProgressRunnable:Landroid/widget/ProgressBar$RefreshProgressRunnable;
 
-    .line 1289
+    .line 1276
     :cond_2
     invoke-static {p1, p2, p3}, Landroid/widget/ProgressBar$RefreshData;->obtain(IIZ)Landroid/widget/ProgressBar$RefreshData;
 
     move-result-object v0
 
-    .line 1290
+    .line 1277
     .local v0, "rd":Landroid/widget/ProgressBar$RefreshData;
     iget-object v1, p0, Landroid/widget/ProgressBar;->mRefreshData:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1291
+    .line 1278
     iget-boolean v1, p0, Landroid/widget/ProgressBar;->mAttached:Z
 
     if-eqz v1, :cond_0
@@ -1467,12 +1452,12 @@
 
     if-nez v1, :cond_0
 
-    .line 1292
+    .line 1279
     iget-object v1, p0, Landroid/widget/ProgressBar;->mRefreshProgressRunnable:Landroid/widget/ProgressBar$RefreshProgressRunnable;
 
     invoke-virtual {p0, v1}, Landroid/widget/ProgressBar;->post(Ljava/lang/Runnable;)Z
 
-    .line 1293
+    .line 1280
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Landroid/widget/ProgressBar;->mRefreshIsPosted:Z
@@ -1481,7 +1466,7 @@
 
     goto :goto_0
 
-    .line 1282
+    .line 1269
     .end local v0    # "rd":Landroid/widget/ProgressBar$RefreshData;
     :catchall_0
     move-exception v1
@@ -1495,12 +1480,12 @@
     .locals 4
 
     .prologue
-    .line 1871
+    .line 1849
     iget-object v0, p0, Landroid/widget/ProgressBar;->mAccessibilityEventSender:Landroid/widget/ProgressBar$AccessibilityEventSender;
 
     if-nez v0, :cond_0
 
-    .line 1872
+    .line 1850
     new-instance v0, Landroid/widget/ProgressBar$AccessibilityEventSender;
 
     const/4 v1, 0x0
@@ -1509,7 +1494,7 @@
 
     iput-object v0, p0, Landroid/widget/ProgressBar;->mAccessibilityEventSender:Landroid/widget/ProgressBar$AccessibilityEventSender;
 
-    .line 1876
+    .line 1854
     :goto_0
     iget-object v0, p0, Landroid/widget/ProgressBar;->mAccessibilityEventSender:Landroid/widget/ProgressBar$AccessibilityEventSender;
 
@@ -1517,10 +1502,10 @@
 
     invoke-virtual {p0, v0, v2, v3}, Landroid/widget/ProgressBar;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 1877
+    .line 1855
     return-void
 
-    .line 1874
+    .line 1852
     :cond_0
     iget-object v0, p0, Landroid/widget/ProgressBar;->mAccessibilityEventSender:Landroid/widget/ProgressBar$AccessibilityEventSender;
 
@@ -1529,119 +1514,13 @@
     goto :goto_0
 .end method
 
-.method private setCurrentScreenStateForAnimationDrawables(I)V
-    .locals 1
-    .param p1, "screenState"    # I
-
-    .prologue
-    .line 1912
-    iget-object v0, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
-
-    instance-of v0, v0, Landroid/graphics/drawable/AnimationDrawable;
-
-    if-eqz v0, :cond_0
-
-    .line 1913
-    iget-object v0, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
-
-    check-cast v0, Landroid/graphics/drawable/AnimationDrawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/AnimationDrawable;->setCurrentScreenState(I)V
-
-    .line 1914
-    :cond_0
-    iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
-
-    instance-of v0, v0, Landroid/graphics/drawable/AnimationDrawable;
-
-    if-eqz v0, :cond_1
-
-    .line 1915
-    iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
-
-    check-cast v0, Landroid/graphics/drawable/AnimationDrawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/AnimationDrawable;->setCurrentScreenState(I)V
-
-    .line 1916
-    :cond_1
-    iget-object v0, p0, Landroid/widget/ProgressBar;->mCurrentDrawable:Landroid/graphics/drawable/Drawable;
-
-    instance-of v0, v0, Landroid/graphics/drawable/AnimationDrawable;
-
-    if-eqz v0, :cond_2
-
-    .line 1917
-    iget-object v0, p0, Landroid/widget/ProgressBar;->mCurrentDrawable:Landroid/graphics/drawable/Drawable;
-
-    check-cast v0, Landroid/graphics/drawable/AnimationDrawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/AnimationDrawable;->setCurrentScreenState(I)V
-
-    .line 1918
-    :cond_2
-    return-void
-.end method
-
-.method private setDrawableTint(ILandroid/content/res/ColorStateList;Landroid/graphics/PorterDuff$Mode;Z)V
-    .locals 3
-    .param p1, "id"    # I
-    .param p2, "tint"    # Landroid/content/res/ColorStateList;
-    .param p3, "tintMode"    # Landroid/graphics/PorterDuff$Mode;
-    .param p4, "fallback"    # Z
-
-    .prologue
-    .line 1233
-    const/4 v1, 0x0
-
-    .line 1236
-    .local v1, "layer":Landroid/graphics/drawable/Drawable;
-    iget-object v0, p0, Landroid/widget/ProgressBar;->mCurrentDrawable:Landroid/graphics/drawable/Drawable;
-
-    .line 1237
-    .local v0, "d":Landroid/graphics/drawable/Drawable;
-    instance-of v2, v0, Landroid/graphics/drawable/LayerDrawable;
-
-    if-eqz v2, :cond_0
-
-    move-object v2, v0
-
-    .line 1238
-    check-cast v2, Landroid/graphics/drawable/LayerDrawable;
-
-    invoke-virtual {v2, p1}, Landroid/graphics/drawable/LayerDrawable;->findDrawableByLayerId(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v1
-
-    .line 1241
-    :cond_0
-    if-eqz p4, :cond_1
-
-    if-nez v1, :cond_1
-
-    .line 1242
-    move-object v1, v0
-
-    .line 1245
-    :cond_1
-    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
-
-    .line 1246
-    invoke-virtual {v1, p2}, Landroid/graphics/drawable/Drawable;->setTintList(Landroid/content/res/ColorStateList;)V
-
-    .line 1247
-    invoke-virtual {v1, p3}, Landroid/graphics/drawable/Drawable;->setTintMode(Landroid/graphics/PorterDuff$Mode;)V
-
-    .line 1248
-    return-void
-.end method
-
 .method private tileify(Landroid/graphics/drawable/Drawable;Z)Landroid/graphics/drawable/Drawable;
     .locals 17
     .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
     .param p2, "clip"    # Z
 
     .prologue
+    .line 406
     move-object/from16 v0, p1
 
     instance-of v14, v0, Landroid/graphics/drawable/LayerDrawable;
@@ -1650,16 +1529,20 @@
 
     move-object/from16 v9, p1
 
+    .line 407
     check-cast v9, Landroid/graphics/drawable/LayerDrawable;
 
+    .line 408
     .local v9, "orig":Landroid/graphics/drawable/LayerDrawable;
     invoke-virtual {v9}, Landroid/graphics/drawable/LayerDrawable;->getNumberOfLayers()I
 
     move-result v2
 
+    .line 409
     .local v2, "N":I
     new-array v11, v2, [Landroid/graphics/drawable/Drawable;
 
+    .line 411
     .local v11, "outDrawables":[Landroid/graphics/drawable/Drawable;
     const/4 v6, 0x0
 
@@ -1667,10 +1550,12 @@
     :goto_0
     if-ge v6, v2, :cond_2
 
+    .line 412
     invoke-virtual {v9, v6}, Landroid/graphics/drawable/LayerDrawable;->getId(I)I
 
     move-result v7
 
+    .line 413
     .local v7, "id":I
     invoke-virtual {v9, v6}, Landroid/graphics/drawable/LayerDrawable;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1696,91 +1581,107 @@
 
     aput-object v14, v11, v6
 
+    .line 411
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
+    .line 413
     :cond_1
     const/4 v14, 0x0
 
     goto :goto_1
 
+    .line 417
     .end local v7    # "id":I
     :cond_2
     new-instance v5, Landroid/graphics/drawable/LayerDrawable;
 
     invoke-direct {v5, v11}, Landroid/graphics/drawable/LayerDrawable;-><init>([Landroid/graphics/drawable/Drawable;)V
 
+    .line 418
     .local v5, "clone":Landroid/graphics/drawable/LayerDrawable;
     const/4 v6, 0x0
 
     :goto_2
     if-ge v6, v2, :cond_5
 
+    .line 419
     invoke-virtual {v9, v6}, Landroid/graphics/drawable/LayerDrawable;->getId(I)I
 
     move-result v14
 
     invoke-virtual {v5, v6, v14}, Landroid/graphics/drawable/LayerDrawable;->setId(II)V
 
+    .line 420
     invoke-virtual {v9, v6}, Landroid/graphics/drawable/LayerDrawable;->getLayerGravity(I)I
 
     move-result v14
 
     invoke-virtual {v5, v6, v14}, Landroid/graphics/drawable/LayerDrawable;->setLayerGravity(II)V
 
+    .line 421
     invoke-virtual {v9, v6}, Landroid/graphics/drawable/LayerDrawable;->getLayerWidth(I)I
 
     move-result v14
 
     invoke-virtual {v5, v6, v14}, Landroid/graphics/drawable/LayerDrawable;->setLayerWidth(II)V
 
+    .line 422
     invoke-virtual {v9, v6}, Landroid/graphics/drawable/LayerDrawable;->getLayerHeight(I)I
 
     move-result v14
 
     invoke-virtual {v5, v6, v14}, Landroid/graphics/drawable/LayerDrawable;->setLayerHeight(II)V
 
+    .line 423
     invoke-virtual {v9, v6}, Landroid/graphics/drawable/LayerDrawable;->getLayerInsetLeft(I)I
 
     move-result v14
 
     invoke-virtual {v5, v6, v14}, Landroid/graphics/drawable/LayerDrawable;->setLayerInsetLeft(II)V
 
+    .line 424
     invoke-virtual {v9, v6}, Landroid/graphics/drawable/LayerDrawable;->getLayerInsetRight(I)I
 
     move-result v14
 
     invoke-virtual {v5, v6, v14}, Landroid/graphics/drawable/LayerDrawable;->setLayerInsetRight(II)V
 
+    .line 425
     invoke-virtual {v9, v6}, Landroid/graphics/drawable/LayerDrawable;->getLayerInsetTop(I)I
 
     move-result v14
 
     invoke-virtual {v5, v6, v14}, Landroid/graphics/drawable/LayerDrawable;->setLayerInsetTop(II)V
 
+    .line 426
     invoke-virtual {v9, v6}, Landroid/graphics/drawable/LayerDrawable;->getLayerInsetBottom(I)I
 
     move-result v14
 
     invoke-virtual {v5, v6, v14}, Landroid/graphics/drawable/LayerDrawable;->setLayerInsetBottom(II)V
 
+    .line 427
     invoke-virtual {v9, v6}, Landroid/graphics/drawable/LayerDrawable;->getLayerInsetStart(I)I
 
     move-result v14
 
     invoke-virtual {v5, v6, v14}, Landroid/graphics/drawable/LayerDrawable;->setLayerInsetStart(II)V
 
+    .line 428
     invoke-virtual {v9, v6}, Landroid/graphics/drawable/LayerDrawable;->getLayerInsetEnd(I)I
 
     move-result v14
 
     invoke-virtual {v5, v6, v14}, Landroid/graphics/drawable/LayerDrawable;->setLayerInsetEnd(II)V
 
+    .line 418
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_2
 
+    .line 434
     .end local v2    # "N":I
     .end local v5    # "clone":Landroid/graphics/drawable/LayerDrawable;
     .end local v6    # "i":I
@@ -1795,18 +1696,22 @@
 
     move-object/from16 v8, p1
 
+    .line 435
     check-cast v8, Landroid/graphics/drawable/StateListDrawable;
 
+    .line 436
     .local v8, "in":Landroid/graphics/drawable/StateListDrawable;
     new-instance v10, Landroid/graphics/drawable/StateListDrawable;
 
     invoke-direct {v10}, Landroid/graphics/drawable/StateListDrawable;-><init>()V
 
+    .line 437
     .local v10, "out":Landroid/graphics/drawable/StateListDrawable;
     invoke-virtual {v8}, Landroid/graphics/drawable/StateListDrawable;->getStateCount()I
 
     move-result v2
 
+    .line 438
     .restart local v2    # "N":I
     const/4 v6, 0x0
 
@@ -1814,6 +1719,7 @@
     :goto_3
     if-ge v6, v2, :cond_4
 
+    .line 439
     invoke-virtual {v8, v6}, Landroid/graphics/drawable/StateListDrawable;->getStateSet(I)[I
 
     move-result-object v14
@@ -1832,6 +1738,7 @@
 
     invoke-virtual {v10, v14, v15}, Landroid/graphics/drawable/StateListDrawable;->addState([ILandroid/graphics/drawable/Drawable;)V
 
+    .line 438
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_3
@@ -1839,6 +1746,7 @@
     :cond_4
     move-object v5, v10
 
+    .line 466
     .end local v2    # "N":I
     .end local v6    # "i":I
     .end local v8    # "in":Landroid/graphics/drawable/StateListDrawable;
@@ -1847,6 +1755,7 @@
     :goto_4
     return-object v5
 
+    .line 445
     :cond_6
     move-object/from16 v0, p1
 
@@ -1856,13 +1765,16 @@
 
     move-object/from16 v3, p1
 
+    .line 446
     check-cast v3, Landroid/graphics/drawable/BitmapDrawable;
 
+    .line 447
     .local v3, "bitmap":Landroid/graphics/drawable/BitmapDrawable;
     invoke-virtual {v3}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v13
 
+    .line 448
     .local v13, "tileBitmap":Landroid/graphics/Bitmap;
     move-object/from16 v0, p0
 
@@ -1870,10 +1782,12 @@
 
     if-nez v14, :cond_7
 
+    .line 449
     move-object/from16 v0, p0
 
     iput-object v13, v0, Landroid/widget/ProgressBar;->mSampleTile:Landroid/graphics/Bitmap;
 
+    .line 452
     :cond_7
     new-instance v12, Landroid/graphics/drawable/ShapeDrawable;
 
@@ -1883,6 +1797,7 @@
 
     invoke-direct {v12, v14}, Landroid/graphics/drawable/ShapeDrawable;-><init>(Landroid/graphics/drawable/shapes/Shape;)V
 
+    .line 453
     .local v12, "shapeDrawable":Landroid/graphics/drawable/ShapeDrawable;
     new-instance v4, Landroid/graphics/BitmapShader;
 
@@ -1892,6 +1807,7 @@
 
     invoke-direct {v4, v13, v14, v15}, Landroid/graphics/BitmapShader;-><init>(Landroid/graphics/Bitmap;Landroid/graphics/Shader$TileMode;Landroid/graphics/Shader$TileMode;)V
 
+    .line 455
     .local v4, "bitmapShader":Landroid/graphics/BitmapShader;
     invoke-virtual {v12}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
 
@@ -1899,24 +1815,28 @@
 
     invoke-virtual {v14, v4}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
+    .line 458
     invoke-virtual {v3}, Landroid/graphics/drawable/BitmapDrawable;->getTint()Landroid/content/res/ColorStateList;
 
     move-result-object v14
 
     invoke-virtual {v12, v14}, Landroid/graphics/drawable/ShapeDrawable;->setTintList(Landroid/content/res/ColorStateList;)V
 
+    .line 459
     invoke-virtual {v3}, Landroid/graphics/drawable/BitmapDrawable;->getTintMode()Landroid/graphics/PorterDuff$Mode;
 
     move-result-object v14
 
     invoke-virtual {v12, v14}, Landroid/graphics/drawable/ShapeDrawable;->setTintMode(Landroid/graphics/PorterDuff$Mode;)V
 
+    .line 460
     invoke-virtual {v3}, Landroid/graphics/drawable/BitmapDrawable;->getColorFilter()Landroid/graphics/ColorFilter;
 
     move-result-object v14
 
     invoke-virtual {v12, v14}, Landroid/graphics/drawable/ShapeDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
+    .line 462
     if-eqz p2, :cond_8
 
     new-instance v14, Landroid/graphics/drawable/ClipDrawable;
@@ -1943,6 +1863,7 @@
     :cond_9
     move-object/from16 v5, p1
 
+    .line 466
     goto :goto_4
 .end method
 
@@ -1953,29 +1874,29 @@
     .prologue
     const/16 v7, 0x2710
 
-    .line 475
+    .line 480
     instance-of v5, p1, Landroid/graphics/drawable/AnimationDrawable;
 
     if-eqz v5, :cond_1
 
     move-object v1, p1
 
-    .line 476
+    .line 481
     check-cast v1, Landroid/graphics/drawable/AnimationDrawable;
 
-    .line 477
+    .line 482
     .local v1, "background":Landroid/graphics/drawable/AnimationDrawable;
     invoke-virtual {v1}, Landroid/graphics/drawable/AnimationDrawable;->getNumberOfFrames()I
 
     move-result v0
 
-    .line 478
+    .line 483
     .local v0, "N":I
     new-instance v4, Landroid/graphics/drawable/AnimationDrawable;
 
     invoke-direct {v4}, Landroid/graphics/drawable/AnimationDrawable;-><init>()V
 
-    .line 479
+    .line 484
     .local v4, "newBg":Landroid/graphics/drawable/AnimationDrawable;
     invoke-virtual {v1}, Landroid/graphics/drawable/AnimationDrawable;->isOneShot()Z
 
@@ -1983,14 +1904,14 @@
 
     invoke-virtual {v4, v5}, Landroid/graphics/drawable/AnimationDrawable;->setOneShot(Z)V
 
-    .line 481
+    .line 486
     const/4 v3, 0x0
 
     .local v3, "i":I
     :goto_0
     if-ge v3, v0, :cond_0
 
-    .line 482
+    .line 487
     invoke-virtual {v1, v3}, Landroid/graphics/drawable/AnimationDrawable;->getFrame(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v5
@@ -2001,31 +1922,31 @@
 
     move-result-object v2
 
-    .line 483
+    .line 488
     .local v2, "frame":Landroid/graphics/drawable/Drawable;
     invoke-virtual {v2, v7}, Landroid/graphics/drawable/Drawable;->setLevel(I)Z
 
-    .line 484
+    .line 489
     invoke-virtual {v1, v3}, Landroid/graphics/drawable/AnimationDrawable;->getDuration(I)I
 
     move-result v5
 
     invoke-virtual {v4, v2, v5}, Landroid/graphics/drawable/AnimationDrawable;->addFrame(Landroid/graphics/drawable/Drawable;I)V
 
-    .line 481
+    .line 486
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 486
+    .line 491
     .end local v2    # "frame":Landroid/graphics/drawable/Drawable;
     :cond_0
     invoke-virtual {v4, v7}, Landroid/graphics/drawable/AnimationDrawable;->setLevel(I)Z
 
-    .line 487
+    .line 492
     move-object p1, v4
 
-    .line 489
+    .line 494
     .end local v0    # "N":I
     .end local v1    # "background":Landroid/graphics/drawable/AnimationDrawable;
     .end local v3    # "i":I
@@ -2040,7 +1961,7 @@
     .param p2, "h"    # I
 
     .prologue
-    .line 1597
+    .line 1584
     iget v12, p0, Landroid/widget/ProgressBar;->mPaddingRight:I
 
     iget v13, p0, Landroid/widget/ProgressBar;->mPaddingLeft:I
@@ -2049,7 +1970,7 @@
 
     sub-int p1, p1, v12
 
-    .line 1598
+    .line 1585
     iget v12, p0, Landroid/widget/ProgressBar;->mPaddingTop:I
 
     iget v13, p0, Landroid/widget/ProgressBar;->mPaddingBottom:I
@@ -2058,28 +1979,28 @@
 
     sub-int p2, p2, v12
 
-    .line 1600
+    .line 1587
     move/from16 v8, p1
 
-    .line 1601
+    .line 1588
     .local v8, "right":I
     move/from16 v1, p2
 
-    .line 1602
+    .line 1589
     .local v1, "bottom":I
     const/4 v10, 0x0
 
-    .line 1603
+    .line 1590
     .local v10, "top":I
     const/4 v7, 0x0
 
-    .line 1605
+    .line 1592
     .local v7, "left":I
     iget-object v12, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v12, :cond_2
 
-    .line 1607
+    .line 1594
     iget-boolean v12, p0, Landroid/widget/ProgressBar;->mOnlyIndeterminate:Z
 
     if-eqz v12, :cond_0
@@ -2090,14 +2011,14 @@
 
     if-nez v12, :cond_0
 
-    .line 1610
+    .line 1597
     iget-object v12, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v12}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v6
 
-    .line 1611
+    .line 1598
     .local v6, "intrinsicWidth":I
     iget-object v12, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -2105,7 +2026,7 @@
 
     move-result v5
 
-    .line 1612
+    .line 1599
     .local v5, "intrinsicHeight":I
     int-to-float v12, v6
 
@@ -2113,7 +2034,7 @@
 
     div-float v4, v12, v13
 
-    .line 1613
+    .line 1600
     .local v4, "intrinsicAspect":F
     move/from16 v0, p1
 
@@ -2125,18 +2046,18 @@
 
     div-float v2, v12, v13
 
-    .line 1614
+    .line 1601
     .local v2, "boundAspect":F
     cmpl-float v12, v4, v2
 
     if-eqz v12, :cond_0
 
-    .line 1615
+    .line 1602
     cmpl-float v12, v2, v4
 
     if-lez v12, :cond_4
 
-    .line 1617
+    .line 1604
     move/from16 v0, p2
 
     int-to-float v12, v0
@@ -2145,16 +2066,16 @@
 
     float-to-int v11, v12
 
-    .line 1618
+    .line 1605
     .local v11, "width":I
     sub-int v12, p1, v11
 
     div-int/lit8 v7, v12, 0x2
 
-    .line 1619
+    .line 1606
     add-int v8, v7, v11
 
-    .line 1628
+    .line 1615
     .end local v2    # "boundAspect":F
     .end local v4    # "intrinsicAspect":F
     .end local v5    # "intrinsicHeight":I
@@ -2172,30 +2093,30 @@
 
     if-eqz v12, :cond_1
 
-    .line 1629
+    .line 1616
     move v9, v7
 
-    .line 1630
+    .line 1617
     .local v9, "tempLeft":I
     sub-int v7, p1, v8
 
-    .line 1631
+    .line 1618
     sub-int v8, p1, v9
 
-    .line 1633
+    .line 1620
     .end local v9    # "tempLeft":I
     :cond_1
     iget-object v12, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v12, v7, v10, v8, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 1636
+    .line 1623
     :cond_2
     iget-object v12, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v12, :cond_3
 
-    .line 1637
+    .line 1624
     iget-object v12, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     const/4 v13, 0x0
@@ -2204,11 +2125,11 @@
 
     invoke-virtual {v12, v13, v14, v8, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 1639
+    .line 1626
     :cond_3
     return-void
 
-    .line 1622
+    .line 1609
     .restart local v2    # "boundAspect":F
     .restart local v4    # "intrinsicAspect":F
     .restart local v5    # "intrinsicHeight":I
@@ -2226,13 +2147,13 @@
 
     float-to-int v3, v12
 
-    .line 1623
+    .line 1610
     .local v3, "height":I
     sub-int v12, p2, v3
 
     div-int/lit8 v10, v12, 0x2
 
-    .line 1624
+    .line 1611
     add-int v1, v10, v3
 
     goto :goto_0
@@ -2242,12 +2163,12 @@
     .locals 2
 
     .prologue
-    .line 1713
+    .line 1703
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->getDrawableState()[I
 
     move-result-object v0
 
-    .line 1715
+    .line 1705
     .local v0, "state":[I
     iget-object v1, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -2261,12 +2182,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 1716
+    .line 1706
     iget-object v1, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 1719
+    .line 1709
     :cond_0
     iget-object v1, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -2280,12 +2201,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 1720
+    .line 1710
     iget-object v1, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 1722
+    .line 1712
     :cond_1
     return-void
 .end method
@@ -2299,19 +2220,19 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 1652
+    .line 1639
     iget-object v0, p0, Landroid/widget/ProgressBar;->mCurrentDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 1653
+    .line 1640
     .local v0, "d":Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_1
 
-    .line 1656
+    .line 1643
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v1
 
-    .line 1658
+    .line 1645
     .local v1, "saveCount":I
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->isLayoutRtl()Z
 
@@ -2323,7 +2244,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 1659
+    .line 1646
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->getWidth()I
 
     move-result v3
@@ -2340,47 +2261,47 @@
 
     invoke-virtual {p1, v3, v6}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1660
+    .line 1647
     const/high16 v3, -0x40800000    # -1.0f
 
     const/high16 v6, 0x3f800000    # 1.0f
 
     invoke-virtual {p1, v3, v6}, Landroid/graphics/Canvas;->scale(FF)V
 
-    .line 1665
+    .line 1652
     :goto_0
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->getDrawingTime()J
 
     move-result-wide v4
 
-    .line 1666
+    .line 1653
     .local v4, "time":J
     iget-boolean v3, p0, Landroid/widget/ProgressBar;->mHasAnimation:Z
 
     if-eqz v3, :cond_0
 
-    .line 1667
+    .line 1654
     iget-object v3, p0, Landroid/widget/ProgressBar;->mAnimation:Landroid/view/animation/AlphaAnimation;
 
     iget-object v6, p0, Landroid/widget/ProgressBar;->mTransformation:Landroid/view/animation/Transformation;
 
     invoke-virtual {v3, v4, v5, v6}, Landroid/view/animation/AlphaAnimation;->getTransformation(JLandroid/view/animation/Transformation;)Z
 
-    .line 1668
+    .line 1655
     iget-object v3, p0, Landroid/widget/ProgressBar;->mTransformation:Landroid/view/animation/Transformation;
 
     invoke-virtual {v3}, Landroid/view/animation/Transformation;->getAlpha()F
 
     move-result v2
 
-    .line 1670
+    .line 1657
     .local v2, "scale":F
     const/4 v3, 0x1
 
     :try_start_0
     iput-boolean v3, p0, Landroid/widget/ProgressBar;->mInDrawing:Z
 
-    .line 1671
+    .line 1658
     const v3, 0x461c4000    # 10000.0f
 
     mul-float/2addr v3, v2
@@ -2391,21 +2312,21 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1673
+    .line 1660
     iput-boolean v7, p0, Landroid/widget/ProgressBar;->mInDrawing:Z
 
-    .line 1675
+    .line 1662
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->postInvalidateOnAnimation()V
 
-    .line 1678
+    .line 1665
     .end local v2    # "scale":F
     :cond_0
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1679
+    .line 1666
     invoke-virtual {p1, v1}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
-    .line 1681
+    .line 1668
     iget-boolean v3, p0, Landroid/widget/ProgressBar;->mShouldStartAnimationDrawable:Z
 
     if-eqz v3, :cond_1
@@ -2414,22 +2335,22 @@
 
     if-eqz v3, :cond_1
 
-    .line 1682
+    .line 1669
     check-cast v0, Landroid/graphics/drawable/Animatable;
 
     .end local v0    # "d":Landroid/graphics/drawable/Drawable;
     invoke-interface {v0}, Landroid/graphics/drawable/Animatable;->start()V
 
-    .line 1683
+    .line 1670
     iput-boolean v7, p0, Landroid/widget/ProgressBar;->mShouldStartAnimationDrawable:Z
 
-    .line 1686
+    .line 1673
     .end local v1    # "saveCount":I
     .end local v4    # "time":J
     :cond_1
     return-void
 
-    .line 1662
+    .line 1649
     .restart local v0    # "d":Landroid/graphics/drawable/Drawable;
     .restart local v1    # "saveCount":I
     :cond_2
@@ -2445,7 +2366,7 @@
 
     goto :goto_0
 
-    .line 1673
+    .line 1660
     .restart local v2    # "scale":F
     .restart local v4    # "time":J
     :catchall_0
@@ -2462,31 +2383,31 @@
     .param p2, "y"    # F
 
     .prologue
-    .line 1726
+    .line 1716
     invoke-super {p0, p1, p2}, Landroid/view/View;->drawableHotspotChanged(FF)V
 
-    .line 1728
+    .line 1718
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
-    .line 1729
+    .line 1719
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1, p2}, Landroid/graphics/drawable/Drawable;->setHotspot(FF)V
 
-    .line 1732
+    .line 1722
     :cond_0
     iget-object v0, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_1
 
-    .line 1733
+    .line 1723
     iget-object v0, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1, p2}, Landroid/graphics/drawable/Drawable;->setHotspot(FF)V
 
-    .line 1735
+    .line 1725
     :cond_1
     return-void
 .end method
@@ -2495,13 +2416,13 @@
     .locals 0
 
     .prologue
-    .line 1708
+    .line 1698
     invoke-super {p0}, Landroid/view/View;->drawableStateChanged()V
 
-    .line 1709
+    .line 1699
     invoke-direct {p0}, Landroid/widget/ProgressBar;->updateDrawableState()V
 
-    .line 1710
+    .line 1700
     return-void
 .end method
 
@@ -2509,7 +2430,7 @@
     .locals 1
 
     .prologue
-    .line 1152
+    .line 1157
     iget-object v0, p0, Landroid/widget/ProgressBar;->mCurrentDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -2521,14 +2442,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 465
+    .line 470
     const/16 v1, 0x8
 
     new-array v0, v1, [F
 
     fill-array-data v0, :array_0
 
-    .line 466
+    .line 471
     .local v0, "roundedCorners":[F
     new-instance v1, Landroid/graphics/drawable/shapes/RoundRectShape;
 
@@ -2536,7 +2457,7 @@
 
     return-object v1
 
-    .line 465
+    .line 470
     :array_0
     .array-data 4
         0x40a00000    # 5.0f
@@ -2554,7 +2475,7 @@
     .locals 1
 
     .prologue
-    .line 564
+    .line 569
     iget-object v0, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -2564,7 +2485,7 @@
     .locals 1
 
     .prologue
-    .line 632
+    .line 637
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     if-eqz v0, :cond_0
@@ -2586,7 +2507,7 @@
     .locals 1
 
     .prologue
-    .line 667
+    .line 672
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     if-eqz v0, :cond_0
@@ -2608,7 +2529,7 @@
     .locals 1
 
     .prologue
-    .line 1539
+    .line 1526
     iget-object v0, p0, Landroid/widget/ProgressBar;->mInterpolator:Landroid/view/animation/Interpolator;
 
     return-object v0
@@ -2621,7 +2542,7 @@
     .end annotation
 
     .prologue
-    .line 1411
+    .line 1398
     monitor-enter p0
 
     :try_start_0
@@ -2648,7 +2569,7 @@
     .end annotation
 
     .prologue
-    .line 1380
+    .line 1367
     monitor-enter p0
 
     :try_start_0
@@ -2685,7 +2606,7 @@
     .locals 1
 
     .prologue
-    .line 981
+    .line 986
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     if-eqz v0, :cond_0
@@ -2707,7 +2628,7 @@
     .locals 1
 
     .prologue
-    .line 1015
+    .line 1020
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     if-eqz v0, :cond_0
@@ -2729,7 +2650,7 @@
     .locals 1
 
     .prologue
-    .line 722
+    .line 727
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -2739,7 +2660,7 @@
     .locals 1
 
     .prologue
-    .line 899
+    .line 904
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     if-eqz v0, :cond_0
@@ -2761,7 +2682,7 @@
     .locals 1
 
     .prologue
-    .line 936
+    .line 941
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     if-eqz v0, :cond_0
@@ -2786,7 +2707,7 @@
     .end annotation
 
     .prologue
-    .line 1397
+    .line 1384
     monitor-enter p0
 
     :try_start_0
@@ -2823,7 +2744,7 @@
     .locals 1
 
     .prologue
-    .line 1060
+    .line 1065
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     if-eqz v0, :cond_0
@@ -2845,7 +2766,7 @@
     .locals 1
 
     .prologue
-    .line 1098
+    .line 1103
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     if-eqz v0, :cond_0
@@ -2868,7 +2789,7 @@
     .param p1, "diff"    # I
 
     .prologue
-    .line 1447
+    .line 1434
     monitor-enter p0
 
     :try_start_0
@@ -2880,12 +2801,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1448
+    .line 1435
     monitor-exit p0
 
     return-void
 
-    .line 1447
+    .line 1434
     :catchall_0
     move-exception v0
 
@@ -2899,7 +2820,7 @@
     .param p1, "diff"    # I
 
     .prologue
-    .line 1458
+    .line 1445
     monitor-enter p0
 
     :try_start_0
@@ -2911,12 +2832,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1459
+    .line 1446
     monitor-exit p0
 
     return-void
 
-    .line 1458
+    .line 1445
     :catchall_0
     move-exception v0
 
@@ -2930,24 +2851,24 @@
     .param p1, "dr"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 1575
+    .line 1562
     iget-boolean v3, p0, Landroid/widget/ProgressBar;->mInDrawing:Z
 
     if-nez v3, :cond_0
 
-    .line 1576
+    .line 1563
     invoke-virtual {p0, p1}, Landroid/widget/ProgressBar;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 1577
+    .line 1564
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 1578
+    .line 1565
     .local v0, "dirty":Landroid/graphics/Rect;
     iget v3, p0, Landroid/widget/ProgressBar;->mScrollX:I
 
@@ -2955,7 +2876,7 @@
 
     add-int v1, v3, v4
 
-    .line 1579
+    .line 1566
     .local v1, "scrollX":I
     iget v3, p0, Landroid/widget/ProgressBar;->mScrollY:I
 
@@ -2963,7 +2884,7 @@
 
     add-int v2, v3, v4
 
-    .line 1581
+    .line 1568
     .local v2, "scrollY":I
     iget v3, v0, Landroid/graphics/Rect;->left:I
 
@@ -2983,7 +2904,7 @@
 
     invoke-virtual {p0, v3, v4, v5, v6}, Landroid/widget/ProgressBar;->invalidate(IIII)V
 
-    .line 1587
+    .line 1574
     .end local v0    # "dirty":Landroid/graphics/Rect;
     .end local v1    # "scrollX":I
     .end local v2    # "scrollY":I
@@ -2991,7 +2912,7 @@
     :goto_0
     return-void
 
-    .line 1584
+    .line 1571
     :cond_1
     invoke-super {p0, p1}, Landroid/view/View;->invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
 
@@ -3005,7 +2926,7 @@
     .end annotation
 
     .prologue
-    .line 525
+    .line 530
     monitor-enter p0
 
     :try_start_0
@@ -3029,10 +2950,10 @@
     .locals 1
 
     .prologue
-    .line 1163
+    .line 1168
     invoke-super {p0}, Landroid/view/View;->jumpDrawablesToCurrentState()V
 
-    .line 1164
+    .line 1169
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
@@ -3041,7 +2962,7 @@
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->jumpToCurrentState()V
 
-    .line 1165
+    .line 1170
     :cond_0
     iget-object v0, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -3051,40 +2972,38 @@
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->jumpToCurrentState()V
 
-    .line 1166
+    .line 1171
     :cond_1
     return-void
 .end method
 
 .method protected onAttachedToWindow()V
-    .locals 9
+    .locals 8
 
     .prologue
-    const/4 v8, 0x0
-
     const/4 v7, 0x1
 
-    .line 1799
+    .line 1789
     invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
 
-    .line 1800
+    .line 1790
     iget-boolean v3, p0, Landroid/widget/ProgressBar;->mIndeterminate:Z
 
     if-eqz v3, :cond_0
 
-    .line 1801
+    .line 1791
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->startAnimation()V
 
-    .line 1803
+    .line 1793
     :cond_0
     iget-object v3, p0, Landroid/widget/ProgressBar;->mRefreshData:Ljava/util/ArrayList;
 
     if-eqz v3, :cond_2
 
-    .line 1804
+    .line 1794
     monitor-enter p0
 
-    .line 1805
+    .line 1795
     :try_start_0
     iget-object v3, p0, Landroid/widget/ProgressBar;->mRefreshData:Ljava/util/ArrayList;
 
@@ -3092,7 +3011,7 @@
 
     move-result v0
 
-    .line 1806
+    .line 1796
     .local v0, "count":I
     const/4 v1, 0x0
 
@@ -3100,7 +3019,7 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 1807
+    .line 1797
     iget-object v3, p0, Landroid/widget/ProgressBar;->mRefreshData:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3109,7 +3028,7 @@
 
     check-cast v2, Landroid/widget/ProgressBar$RefreshData;
 
-    .line 1808
+    .line 1798
     .local v2, "rd":Landroid/widget/ProgressBar$RefreshData;
     iget v3, v2, Landroid/widget/ProgressBar$RefreshData;->id:I
 
@@ -3121,54 +3040,36 @@
 
     invoke-direct {p0, v3, v4, v5, v6}, Landroid/widget/ProgressBar;->doRefreshProgress(IIZZ)V
 
-    .line 1809
+    .line 1799
     invoke-virtual {v2}, Landroid/widget/ProgressBar$RefreshData;->recycle()V
 
-    .line 1806
+    .line 1796
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1811
+    .line 1801
     .end local v2    # "rd":Landroid/widget/ProgressBar$RefreshData;
     :cond_1
     iget-object v3, p0, Landroid/widget/ProgressBar;->mRefreshData:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
-    .line 1812
-    const/4 v3, 0x0
-
-    iput-boolean v3, p0, Landroid/widget/ProgressBar;->mRefreshIsPosted:Z
-
-    .line 1813
+    .line 1802
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1815
+    .line 1804
     .end local v0    # "count":I
     .end local v1    # "i":I
     :cond_2
     iput-boolean v7, p0, Landroid/widget/ProgressBar;->mAttached:Z
 
-    .line 1817
-    iget-object v3, p0, Landroid/widget/ProgressBar;->mPM:Landroid/os/PowerManager;
-
-    invoke-virtual {v3}, Landroid/os/PowerManager;->isScreenOn()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3
-
-    .line 1818
-    invoke-direct {p0, v7}, Landroid/widget/ProgressBar;->setCurrentScreenStateForAnimationDrawables(I)V
-
-    .line 1822
-    :goto_1
+    .line 1805
     return-void
 
-    .line 1813
+    .line 1802
     :catchall_0
     move-exception v3
 
@@ -3178,67 +3079,67 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v3
-
-    .line 1820
-    :cond_3
-    invoke-direct {p0, v8}, Landroid/widget/ProgressBar;->setCurrentScreenStateForAnimationDrawables(I)V
-
-    goto :goto_1
 .end method
 
 .method protected onDetachedFromWindow()V
     .locals 1
 
     .prologue
-    .line 1826
+    .line 1809
     iget-boolean v0, p0, Landroid/widget/ProgressBar;->mIndeterminate:Z
 
     if-eqz v0, :cond_0
 
-    .line 1827
+    .line 1810
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->stopAnimation()V
 
-    .line 1834
+    .line 1812
     :cond_0
     iget-object v0, p0, Landroid/widget/ProgressBar;->mRefreshProgressRunnable:Landroid/widget/ProgressBar$RefreshProgressRunnable;
 
     if-eqz v0, :cond_1
 
-    iget-boolean v0, p0, Landroid/widget/ProgressBar;->mRefreshIsPosted:Z
-
-    if-eqz v0, :cond_1
-
-    .line 1835
+    .line 1813
     iget-object v0, p0, Landroid/widget/ProgressBar;->mRefreshProgressRunnable:Landroid/widget/ProgressBar$RefreshProgressRunnable;
 
     invoke-virtual {p0, v0}, Landroid/widget/ProgressBar;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 1837
+    .line 1815
     :cond_1
-    iget-object v0, p0, Landroid/widget/ProgressBar;->mAccessibilityEventSender:Landroid/widget/ProgressBar$AccessibilityEventSender;
+    iget-object v0, p0, Landroid/widget/ProgressBar;->mRefreshProgressRunnable:Landroid/widget/ProgressBar$RefreshProgressRunnable;
 
     if-eqz v0, :cond_2
 
-    .line 1838
+    iget-boolean v0, p0, Landroid/widget/ProgressBar;->mRefreshIsPosted:Z
+
+    if-eqz v0, :cond_2
+
+    .line 1816
+    iget-object v0, p0, Landroid/widget/ProgressBar;->mRefreshProgressRunnable:Landroid/widget/ProgressBar$RefreshProgressRunnable;
+
+    invoke-virtual {p0, v0}, Landroid/widget/ProgressBar;->removeCallbacks(Ljava/lang/Runnable;)Z
+
+    .line 1818
+    :cond_2
+    iget-object v0, p0, Landroid/widget/ProgressBar;->mAccessibilityEventSender:Landroid/widget/ProgressBar$AccessibilityEventSender;
+
+    if-eqz v0, :cond_3
+
+    .line 1819
     iget-object v0, p0, Landroid/widget/ProgressBar;->mAccessibilityEventSender:Landroid/widget/ProgressBar$AccessibilityEventSender;
 
     invoke-virtual {p0, v0}, Landroid/widget/ProgressBar;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 1842
-    :cond_2
+    .line 1823
+    :cond_3
     invoke-super {p0}, Landroid/view/View;->onDetachedFromWindow()V
 
-    .line 1843
+    .line 1824
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/widget/ProgressBar;->mAttached:Z
 
-    .line 1845
-    const/4 v0, 0x1
-
-    invoke-direct {p0, v0}, Landroid/widget/ProgressBar;->setCurrentScreenStateForAnimationDrawables(I)V
-
-    .line 1847
+    .line 1825
     return-void
 .end method
 
@@ -3247,23 +3148,23 @@
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 1643
+    .line 1630
     monitor-enter p0
 
     :try_start_0
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 1645
+    .line 1632
     invoke-virtual {p0, p1}, Landroid/widget/ProgressBar;->drawTrack(Landroid/graphics/Canvas;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1646
+    .line 1633
     monitor-exit p0
 
     return-void
 
-    .line 1643
+    .line 1630
     :catchall_0
     move-exception v0
 
@@ -3277,10 +3178,10 @@
     .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
     .prologue
-    .line 1851
+    .line 1829
     invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 1852
+    .line 1830
     const-class v0, Landroid/widget/ProgressBar;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -3289,17 +3190,17 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 1853
+    .line 1831
     iget v0, p0, Landroid/widget/ProgressBar;->mMax:I
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setItemCount(I)V
 
-    .line 1854
+    .line 1832
     iget v0, p0, Landroid/widget/ProgressBar;->mProgress:I
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setCurrentItemIndex(I)V
 
-    .line 1855
+    .line 1833
     return-void
 .end method
 
@@ -3308,10 +3209,10 @@
     .param p1, "info"    # Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .prologue
-    .line 1859
+    .line 1837
     invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 1860
+    .line 1838
     const-class v0, Landroid/widget/ProgressBar;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -3320,7 +3221,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 1861
+    .line 1839
     return-void
 .end method
 
@@ -3330,20 +3231,25 @@
     .param p2, "heightMeasureSpec"    # I
 
     .prologue
+    .line 1677
     monitor-enter p0
 
     const/4 v2, 0x0
 
+    .line 1678
     .local v2, "dw":I
     const/4 v1, 0x0
 
+    .line 1680
     .local v1, "dh":I
     :try_start_0
     iget-object v0, p0, Landroid/widget/ProgressBar;->mCurrentDrawable:Landroid/graphics/drawable/Drawable;
 
+    .line 1681
     .local v0, "d":Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_0
 
+    .line 1682
     iget v5, p0, Landroid/widget/ProgressBar;->mMinWidth:I
 
     iget v6, p0, Landroid/widget/ProgressBar;->mMaxWidth:I
@@ -3360,6 +3266,7 @@
 
     move-result v2
 
+    .line 1683
     iget v5, p0, Landroid/widget/ProgressBar;->mMinHeight:I
 
     iget v6, p0, Landroid/widget/ProgressBar;->mMaxHeight:I
@@ -3376,9 +3283,11 @@
 
     move-result v1
 
+    .line 1686
     :cond_0
     invoke-direct {p0}, Landroid/widget/ProgressBar;->updateDrawableState()V
 
+    .line 1688
     iget v5, p0, Landroid/widget/ProgressBar;->mPaddingLeft:I
 
     iget v6, p0, Landroid/widget/ProgressBar;->mPaddingRight:I
@@ -3387,6 +3296,7 @@
 
     add-int/2addr v2, v5
 
+    .line 1689
     iget v5, p0, Landroid/widget/ProgressBar;->mPaddingTop:I
 
     iget v6, p0, Landroid/widget/ProgressBar;->mPaddingBottom:I
@@ -3395,12 +3305,14 @@
 
     add-int/2addr v1, v5
 
+    .line 1691
     const/4 v5, 0x0
 
     invoke-static {v2, p1, v5}, Landroid/widget/ProgressBar;->resolveSizeAndState(III)I
 
     move-result v4
 
+    .line 1692
     .local v4, "measuredWidth":I
     const/4 v5, 0x0
 
@@ -3408,15 +3320,18 @@
 
     move-result v3
 
+    .line 1693
     .local v3, "measuredHeight":I
     invoke-virtual {p0, v4, v3}, Landroid/widget/ProgressBar;->setMeasuredDimension(II)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 1694
     monitor-exit p0
 
     return-void
 
+    .line 1677
     .end local v0    # "d":Landroid/graphics/drawable/Drawable;
     .end local v3    # "measuredHeight":I
     .end local v4    # "measuredWidth":I
@@ -3435,7 +3350,7 @@
     .param p3, "progress"    # I
 
     .prologue
-    .line 1276
+    .line 1263
     iget-object v0, p0, Landroid/widget/ProgressBar;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
@@ -3448,10 +3363,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 1277
+    .line 1264
     invoke-direct {p0}, Landroid/widget/ProgressBar;->scheduleAccessibilityEventSender()V
 
-    .line 1279
+    .line 1266
     :cond_0
     return-void
 .end method
@@ -3461,39 +3376,39 @@
     .param p1, "layoutDirection"    # I
 
     .prologue
-    .line 1173
+    .line 1178
     iget-object v0, p0, Landroid/widget/ProgressBar;->mCurrentDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 1174
+    .line 1179
     .local v0, "d":Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_0
 
-    .line 1175
+    .line 1180
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
 
-    .line 1177
+    .line 1182
     :cond_0
     iget-object v1, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v1, :cond_1
 
-    .line 1178
+    .line 1183
     iget-object v1, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
 
-    .line 1180
+    .line 1185
     :cond_1
     iget-object v1, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v1, :cond_2
 
-    .line 1181
+    .line 1186
     iget-object v1, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
 
-    .line 1183
+    .line 1188
     :cond_2
     return-void
 .end method
@@ -3503,12 +3418,12 @@
     .param p1, "state"    # Landroid/os/Parcelable;
 
     .prologue
-    .line 1790
+    .line 1780
     move-object v0, p1
 
     check-cast v0, Landroid/widget/ProgressBar$SavedState;
 
-    .line 1791
+    .line 1781
     .local v0, "ss":Landroid/widget/ProgressBar$SavedState;
     invoke-virtual {v0}, Landroid/widget/ProgressBar$SavedState;->getSuperState()Landroid/os/Parcelable;
 
@@ -3516,17 +3431,17 @@
 
     invoke-super {p0, v1}, Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
-    .line 1793
+    .line 1783
     iget v1, v0, Landroid/widget/ProgressBar$SavedState;->progress:I
 
     invoke-virtual {p0, v1}, Landroid/widget/ProgressBar;->setProgress(I)V
 
-    .line 1794
+    .line 1784
     iget v1, v0, Landroid/widget/ProgressBar$SavedState;->secondaryProgress:I
 
     invoke-virtual {p0, v1}, Landroid/widget/ProgressBar;->setSecondaryProgress(I)V
 
-    .line 1795
+    .line 1785
     return-void
 .end method
 
@@ -3534,45 +3449,30 @@
     .locals 3
 
     .prologue
-    .line 1779
+    .line 1769
     invoke-super {p0}, Landroid/view/View;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v1
 
-    .line 1780
+    .line 1770
     .local v1, "superState":Landroid/os/Parcelable;
     new-instance v0, Landroid/widget/ProgressBar$SavedState;
 
     invoke-direct {v0, v1}, Landroid/widget/ProgressBar$SavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 1782
+    .line 1772
     .local v0, "ss":Landroid/widget/ProgressBar$SavedState;
     iget v2, p0, Landroid/widget/ProgressBar;->mProgress:I
 
     iput v2, v0, Landroid/widget/ProgressBar$SavedState;->progress:I
 
-    .line 1783
+    .line 1773
     iget v2, p0, Landroid/widget/ProgressBar;->mSecondaryProgress:I
 
     iput v2, v0, Landroid/widget/ProgressBar$SavedState;->secondaryProgress:I
 
-    .line 1785
+    .line 1775
     return-object v0
-.end method
-
-.method public onScreenStateChanged(I)V
-    .locals 0
-    .param p1, "screenState"    # I
-
-    .prologue
-    .line 1922
-    invoke-super {p0, p1}, Landroid/view/View;->onScreenStateChanged(I)V
-
-    .line 1923
-    invoke-direct {p0, p1}, Landroid/widget/ProgressBar;->setCurrentScreenStateForAnimationDrawables(I)V
-
-    .line 1924
-    return-void
 .end method
 
 .method protected onSizeChanged(IIII)V
@@ -3583,10 +3483,10 @@
     .param p4, "oldh"    # I
 
     .prologue
-    .line 1591
+    .line 1578
     invoke-direct {p0, p1, p2}, Landroid/widget/ProgressBar;->updateDrawableBounds(II)V
 
-    .line 1592
+    .line 1579
     return-void
 .end method
 
@@ -3596,15 +3496,15 @@
     .param p2, "visibility"    # I
 
     .prologue
-    .line 1561
+    .line 1548
     invoke-super {p0, p1, p2}, Landroid/view/View;->onVisibilityChanged(Landroid/view/View;I)V
 
-    .line 1563
+    .line 1550
     iget-boolean v0, p0, Landroid/widget/ProgressBar;->mIndeterminate:Z
 
     if-eqz v0, :cond_1
 
-    .line 1565
+    .line 1552
     const/16 v0, 0x8
 
     if-eq p2, v0, :cond_0
@@ -3613,16 +3513,16 @@
 
     if-ne p2, v0, :cond_2
 
-    .line 1566
+    .line 1553
     :cond_0
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->stopAnimation()V
 
-    .line 1571
+    .line 1558
     :cond_1
     :goto_0
     return-void
 
-    .line 1568
+    .line 1555
     :cond_2
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->startAnimation()V
 
@@ -3633,15 +3533,15 @@
     .locals 1
 
     .prologue
-    .line 1187
+    .line 1192
     iget-boolean v0, p0, Landroid/widget/ProgressBar;->mNoInvalidate:Z
 
     if-nez v0, :cond_0
 
-    .line 1188
+    .line 1193
     invoke-super {p0}, Landroid/view/View;->postInvalidate()V
 
-    .line 1190
+    .line 1195
     :cond_0
     return-void
 .end method
@@ -3653,7 +3553,7 @@
     .end annotation
 
     .prologue
-    .line 540
+    .line 545
     monitor-enter p0
 
     :try_start_0
@@ -3670,44 +3570,44 @@
 
     if-eq p1, v0, :cond_1
 
-    .line 541
+    .line 546
     iput-boolean p1, p0, Landroid/widget/ProgressBar;->mIndeterminate:Z
 
-    .line 543
+    .line 548
     if-eqz p1, :cond_2
 
-    .line 545
+    .line 550
     iget-object v0, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
     iput-object v0, p0, Landroid/widget/ProgressBar;->mCurrentDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 546
+    .line 551
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->startAnimation()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 552
+    .line 557
     :cond_1
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 548
+    .line 553
     :cond_2
     :try_start_1
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     iput-object v0, p0, Landroid/widget/ProgressBar;->mCurrentDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 549
+    .line 554
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->stopAnimation()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
 
-    .line 540
+    .line 545
     :catchall_0
     move-exception v0
 
@@ -3721,76 +3621,76 @@
     .param p1, "d"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 575
+    .line 580
     iget-object v0, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eq v0, p1, :cond_3
 
-    .line 576
+    .line 581
     iget-object v0, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
-    .line 577
+    .line 582
     iget-object v0, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 578
+    .line 583
     iget-object v0, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0, v0}, Landroid/widget/ProgressBar;->unscheduleDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 581
+    .line 586
     :cond_0
     iput-object p1, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 583
+    .line 588
     if-eqz p1, :cond_2
 
-    .line 584
+    .line 589
     invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 585
+    .line 590
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->getLayoutDirection()I
 
     move-result v0
 
     invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
 
-    .line 586
+    .line 591
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->isStateful()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 587
+    .line 592
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->getDrawableState()[I
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 589
+    .line 594
     :cond_1
     invoke-direct {p0}, Landroid/widget/ProgressBar;->applyIndeterminateTint()V
 
-    .line 592
+    .line 597
     :cond_2
     iget-boolean v0, p0, Landroid/widget/ProgressBar;->mIndeterminate:Z
 
     if-eqz v0, :cond_3
 
-    .line 593
+    .line 598
     iput-object p1, p0, Landroid/widget/ProgressBar;->mCurrentDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 594
+    .line 599
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->postInvalidate()V
 
-    .line 597
+    .line 602
     :cond_3
     return-void
 .end method
@@ -3800,19 +3700,19 @@
     .param p1, "d"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 705
+    .line 710
     if-eqz p1, :cond_0
 
-    .line 706
+    .line 711
     invoke-direct {p0, p1}, Landroid/widget/ProgressBar;->tileifyIndeterminate(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
-    .line 709
+    .line 714
     :cond_0
     invoke-virtual {p0, p1}, Landroid/widget/ProgressBar;->setIndeterminateDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 710
+    .line 715
     return-void
 .end method
 
@@ -3823,12 +3723,12 @@
     .end annotation
 
     .prologue
-    .line 616
+    .line 621
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     if-nez v0, :cond_0
 
-    .line 617
+    .line 622
     new-instance v0, Landroid/widget/ProgressBar$ProgressTintInfo;
 
     const/4 v1, 0x0
@@ -3837,23 +3737,23 @@
 
     iput-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
-    .line 619
+    .line 624
     :cond_0
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iput-object p1, v0, Landroid/widget/ProgressBar$ProgressTintInfo;->mIndeterminateTintList:Landroid/content/res/ColorStateList;
 
-    .line 620
+    .line 625
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasIndeterminateTint:Z
 
-    .line 622
+    .line 627
     invoke-direct {p0}, Landroid/widget/ProgressBar;->applyIndeterminateTint()V
 
-    .line 623
+    .line 628
     return-void
 .end method
 
@@ -3862,12 +3762,12 @@
     .param p1, "tintMode"    # Landroid/graphics/PorterDuff$Mode;
 
     .prologue
-    .line 647
+    .line 652
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     if-nez v0, :cond_0
 
-    .line 648
+    .line 653
     new-instance v0, Landroid/widget/ProgressBar$ProgressTintInfo;
 
     const/4 v1, 0x0
@@ -3876,23 +3776,23 @@
 
     iput-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
-    .line 650
+    .line 655
     :cond_0
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iput-object p1, v0, Landroid/widget/ProgressBar$ProgressTintInfo;->mIndeterminateTintMode:Landroid/graphics/PorterDuff$Mode;
 
-    .line 651
+    .line 656
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasIndeterminateTintMode:Z
 
-    .line 653
+    .line 658
     invoke-direct {p0}, Landroid/widget/ProgressBar;->applyIndeterminateTint()V
 
-    .line 654
+    .line 659
     return-void
 .end method
 
@@ -3902,14 +3802,14 @@
     .param p2, "resID"    # I
 
     .prologue
-    .line 1520
+    .line 1507
     invoke-static {p1, p2}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Landroid/widget/ProgressBar;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 1521
+    .line 1508
     return-void
 .end method
 
@@ -3918,10 +3818,10 @@
     .param p1, "interpolator"    # Landroid/view/animation/Interpolator;
 
     .prologue
-    .line 1530
+    .line 1517
     iput-object p1, p0, Landroid/widget/ProgressBar;->mInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 1531
+    .line 1518
     return-void
 .end method
 
@@ -3932,36 +3832,36 @@
     .end annotation
 
     .prologue
-    .line 1425
+    .line 1412
     monitor-enter p0
 
     if-gez p1, :cond_0
 
-    .line 1426
+    .line 1413
     const/4 p1, 0x0
 
-    .line 1428
+    .line 1415
     :cond_0
     :try_start_0
     iget v0, p0, Landroid/widget/ProgressBar;->mMax:I
 
     if-eq p1, v0, :cond_2
 
-    .line 1429
+    .line 1416
     iput p1, p0, Landroid/widget/ProgressBar;->mMax:I
 
-    .line 1430
+    .line 1417
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->postInvalidate()V
 
-    .line 1432
+    .line 1419
     iget v0, p0, Landroid/widget/ProgressBar;->mProgress:I
 
     if-le v0, p1, :cond_1
 
-    .line 1433
+    .line 1420
     iput p1, p0, Landroid/widget/ProgressBar;->mProgress:I
 
-    .line 1435
+    .line 1422
     :cond_1
     const v0, 0x102000d
 
@@ -3973,13 +3873,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1437
+    .line 1424
     :cond_2
     monitor-exit p0
 
     return-void
 
-    .line 1425
+    .line 1412
     :catchall_0
     move-exception v0
 
@@ -3995,7 +3895,7 @@
     .end annotation
 
     .prologue
-    .line 1311
+    .line 1298
     monitor-enter p0
 
     const/4 v0, 0x0
@@ -4005,12 +3905,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1312
+    .line 1299
     monitor-exit p0
 
     return-void
 
-    .line 1311
+    .line 1298
     :catchall_0
     move-exception v0
 
@@ -4027,7 +3927,7 @@
     .end annotation
 
     .prologue
-    .line 1316
+    .line 1303
     monitor-enter p0
 
     :try_start_0
@@ -4037,40 +3937,40 @@
 
     if-eqz v0, :cond_1
 
-    .line 1332
+    .line 1319
     :cond_0
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 1320
+    .line 1307
     :cond_1
     if-gez p1, :cond_2
 
-    .line 1321
+    .line 1308
     const/4 p1, 0x0
 
-    .line 1324
+    .line 1311
     :cond_2
     :try_start_1
     iget v0, p0, Landroid/widget/ProgressBar;->mMax:I
 
     if-le p1, v0, :cond_3
 
-    .line 1325
+    .line 1312
     iget p1, p0, Landroid/widget/ProgressBar;->mMax:I
 
-    .line 1328
+    .line 1315
     :cond_3
     iget v0, p0, Landroid/widget/ProgressBar;->mProgress:I
 
     if-eq p1, v0, :cond_0
 
-    .line 1329
+    .line 1316
     iput p1, p0, Landroid/widget/ProgressBar;->mProgress:I
 
-    .line 1330
+    .line 1317
     const v0, 0x102000d
 
     iget v1, p0, Landroid/widget/ProgressBar;->mProgress:I
@@ -4081,7 +3981,7 @@
 
     goto :goto_0
 
-    .line 1316
+    .line 1303
     :catchall_0
     move-exception v0
 
@@ -4097,12 +3997,12 @@
     .end annotation
 
     .prologue
-    .line 961
+    .line 966
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     if-nez v0, :cond_0
 
-    .line 962
+    .line 967
     new-instance v0, Landroid/widget/ProgressBar$ProgressTintInfo;
 
     const/4 v1, 0x0
@@ -4111,28 +4011,28 @@
 
     iput-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
-    .line 964
+    .line 969
     :cond_0
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iput-object p1, v0, Landroid/widget/ProgressBar$ProgressTintInfo;->mProgressBackgroundTintList:Landroid/content/res/ColorStateList;
 
-    .line 965
+    .line 970
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasProgressBackgroundTint:Z
 
-    .line 967
+    .line 972
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_1
 
-    .line 968
+    .line 973
     invoke-direct {p0}, Landroid/widget/ProgressBar;->applyProgressBackgroundTint()V
 
-    .line 970
+    .line 975
     :cond_1
     return-void
 .end method
@@ -4142,12 +4042,12 @@
     .param p1, "tintMode"    # Landroid/graphics/PorterDuff$Mode;
 
     .prologue
-    .line 996
+    .line 1001
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     if-nez v0, :cond_0
 
-    .line 997
+    .line 1002
     new-instance v0, Landroid/widget/ProgressBar$ProgressTintInfo;
 
     const/4 v1, 0x0
@@ -4156,28 +4056,28 @@
 
     iput-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
-    .line 999
+    .line 1004
     :cond_0
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iput-object p1, v0, Landroid/widget/ProgressBar$ProgressTintInfo;->mProgressBackgroundTintMode:Landroid/graphics/PorterDuff$Mode;
 
-    .line 1000
+    .line 1005
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasProgressBackgroundTintMode:Z
 
-    .line 1002
+    .line 1007
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_1
 
-    .line 1003
+    .line 1008
     invoke-direct {p0}, Landroid/widget/ProgressBar;->applyProgressBackgroundTint()V
 
-    .line 1005
+    .line 1010
     :cond_1
     return-void
 .end method
@@ -4189,95 +4089,95 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 733
+    .line 738
     iget-object v1, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eq v1, p1, :cond_5
 
-    .line 734
+    .line 739
     iget-object v1, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v1, :cond_0
 
-    .line 735
+    .line 740
     iget-object v1, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 736
+    .line 741
     iget-object v1, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0, v1}, Landroid/widget/ProgressBar;->unscheduleDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 739
+    .line 744
     :cond_0
     iput-object p1, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 741
+    .line 746
     if-eqz p1, :cond_3
 
-    .line 742
+    .line 747
     invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 743
+    .line 748
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->getLayoutDirection()I
 
     move-result v1
 
     invoke-virtual {p1, v1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
 
-    .line 744
+    .line 749
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->isStateful()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 745
+    .line 750
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->getDrawableState()[I
 
     move-result-object v1
 
     invoke-virtual {p1, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 749
+    .line 754
     :cond_1
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getMinimumHeight()I
 
     move-result v0
 
-    .line 750
+    .line 755
     .local v0, "drawableHeight":I
     iget v1, p0, Landroid/widget/ProgressBar;->mMaxHeight:I
 
     if-ge v1, v0, :cond_2
 
-    .line 751
+    .line 756
     iput v0, p0, Landroid/widget/ProgressBar;->mMaxHeight:I
 
-    .line 752
+    .line 757
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->requestLayout()V
 
-    .line 755
+    .line 760
     :cond_2
     invoke-direct {p0}, Landroid/widget/ProgressBar;->applyProgressTints()V
 
-    .line 758
+    .line 763
     .end local v0    # "drawableHeight":I
     :cond_3
     iget-boolean v1, p0, Landroid/widget/ProgressBar;->mIndeterminate:Z
 
     if-nez v1, :cond_4
 
-    .line 759
+    .line 764
     iput-object p1, p0, Landroid/widget/ProgressBar;->mCurrentDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 760
+    .line 765
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->postInvalidate()V
 
-    .line 763
+    .line 768
     :cond_4
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->getWidth()I
 
@@ -4289,24 +4189,24 @@
 
     invoke-direct {p0, v1, v2}, Landroid/widget/ProgressBar;->updateDrawableBounds(II)V
 
-    .line 764
+    .line 769
     invoke-direct {p0}, Landroid/widget/ProgressBar;->updateDrawableState()V
 
-    .line 766
+    .line 771
     const v1, 0x102000d
 
     iget v2, p0, Landroid/widget/ProgressBar;->mProgress:I
 
     invoke-direct {p0, v1, v2, v3, v3}, Landroid/widget/ProgressBar;->doRefreshProgress(IIZZ)V
 
-    .line 767
+    .line 772
     const v1, 0x102000f
 
     iget v2, p0, Landroid/widget/ProgressBar;->mSecondaryProgress:I
 
     invoke-direct {p0, v1, v2, v3, v3}, Landroid/widget/ProgressBar;->doRefreshProgress(IIZZ)V
 
-    .line 769
+    .line 774
     :cond_5
     return-void
 .end method
@@ -4316,21 +4216,21 @@
     .param p1, "d"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 1141
+    .line 1146
     if-eqz p1, :cond_0
 
-    .line 1142
+    .line 1147
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Landroid/widget/ProgressBar;->tileify(Landroid/graphics/drawable/Drawable;Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
-    .line 1145
+    .line 1150
     :cond_0
     invoke-virtual {p0, p1}, Landroid/widget/ProgressBar;->setProgressDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1146
+    .line 1151
     return-void
 .end method
 
@@ -4341,12 +4241,12 @@
     .end annotation
 
     .prologue
-    .line 879
+    .line 884
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     if-nez v0, :cond_0
 
-    .line 880
+    .line 885
     new-instance v0, Landroid/widget/ProgressBar$ProgressTintInfo;
 
     const/4 v1, 0x0
@@ -4355,28 +4255,28 @@
 
     iput-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
-    .line 882
+    .line 887
     :cond_0
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iput-object p1, v0, Landroid/widget/ProgressBar$ProgressTintInfo;->mProgressTintList:Landroid/content/res/ColorStateList;
 
-    .line 883
+    .line 888
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasProgressTint:Z
 
-    .line 885
+    .line 890
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_1
 
-    .line 886
+    .line 891
     invoke-direct {p0}, Landroid/widget/ProgressBar;->applyPrimaryProgressTint()V
 
-    .line 888
+    .line 893
     :cond_1
     return-void
 .end method
@@ -4386,12 +4286,12 @@
     .param p1, "tintMode"    # Landroid/graphics/PorterDuff$Mode;
 
     .prologue
-    .line 914
+    .line 919
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     if-nez v0, :cond_0
 
-    .line 915
+    .line 920
     new-instance v0, Landroid/widget/ProgressBar$ProgressTintInfo;
 
     const/4 v1, 0x0
@@ -4400,28 +4300,28 @@
 
     iput-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
-    .line 917
+    .line 922
     :cond_0
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iput-object p1, v0, Landroid/widget/ProgressBar$ProgressTintInfo;->mProgressTintMode:Landroid/graphics/PorterDuff$Mode;
 
-    .line 918
+    .line 923
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasProgressTintMode:Z
 
-    .line 920
+    .line 925
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_1
 
-    .line 921
+    .line 926
     invoke-direct {p0}, Landroid/widget/ProgressBar;->applyPrimaryProgressTint()V
 
-    .line 923
+    .line 928
     :cond_1
     return-void
 .end method
@@ -4433,7 +4333,7 @@
     .end annotation
 
     .prologue
-    .line 1348
+    .line 1335
     monitor-enter p0
 
     :try_start_0
@@ -4443,40 +4343,40 @@
 
     if-eqz v0, :cond_1
 
-    .line 1364
+    .line 1351
     :cond_0
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 1352
+    .line 1339
     :cond_1
     if-gez p1, :cond_2
 
-    .line 1353
+    .line 1340
     const/4 p1, 0x0
 
-    .line 1356
+    .line 1343
     :cond_2
     :try_start_1
     iget v0, p0, Landroid/widget/ProgressBar;->mMax:I
 
     if-le p1, v0, :cond_3
 
-    .line 1357
+    .line 1344
     iget p1, p0, Landroid/widget/ProgressBar;->mMax:I
 
-    .line 1360
+    .line 1347
     :cond_3
     iget v0, p0, Landroid/widget/ProgressBar;->mSecondaryProgress:I
 
     if-eq p1, v0, :cond_0
 
-    .line 1361
+    .line 1348
     iput p1, p0, Landroid/widget/ProgressBar;->mSecondaryProgress:I
 
-    .line 1362
+    .line 1349
     const v0, 0x102000f
 
     iget v1, p0, Landroid/widget/ProgressBar;->mSecondaryProgress:I
@@ -4489,7 +4389,7 @@
 
     goto :goto_0
 
-    .line 1348
+    .line 1335
     :catchall_0
     move-exception v0
 
@@ -4503,12 +4403,12 @@
     .param p1, "tint"    # Landroid/content/res/ColorStateList;
 
     .prologue
-    .line 1039
+    .line 1044
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     if-nez v0, :cond_0
 
-    .line 1040
+    .line 1045
     new-instance v0, Landroid/widget/ProgressBar$ProgressTintInfo;
 
     const/4 v1, 0x0
@@ -4517,28 +4417,28 @@
 
     iput-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
-    .line 1042
+    .line 1047
     :cond_0
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iput-object p1, v0, Landroid/widget/ProgressBar$ProgressTintInfo;->mSecondaryProgressTintList:Landroid/content/res/ColorStateList;
 
-    .line 1043
+    .line 1048
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasSecondaryProgressTint:Z
 
-    .line 1045
+    .line 1050
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_1
 
-    .line 1046
+    .line 1051
     invoke-direct {p0}, Landroid/widget/ProgressBar;->applySecondaryProgressTint()V
 
-    .line 1048
+    .line 1053
     :cond_1
     return-void
 .end method
@@ -4548,12 +4448,12 @@
     .param p1, "tintMode"    # Landroid/graphics/PorterDuff$Mode;
 
     .prologue
-    .line 1076
+    .line 1081
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     if-nez v0, :cond_0
 
-    .line 1077
+    .line 1082
     new-instance v0, Landroid/widget/ProgressBar$ProgressTintInfo;
 
     const/4 v1, 0x0
@@ -4562,28 +4462,28 @@
 
     iput-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
-    .line 1079
+    .line 1084
     :cond_0
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     iput-object p1, v0, Landroid/widget/ProgressBar$ProgressTintInfo;->mSecondaryProgressTintMode:Landroid/graphics/PorterDuff$Mode;
 
-    .line 1080
+    .line 1085
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasSecondaryProgressTintMode:Z
 
-    .line 1082
+    .line 1087
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_1
 
-    .line 1083
+    .line 1088
     invoke-direct {p0}, Landroid/widget/ProgressBar;->applySecondaryProgressTint()V
 
-    .line 1085
+    .line 1090
     :cond_1
     return-void
 .end method
@@ -4595,22 +4495,22 @@
     .end annotation
 
     .prologue
-    .line 1545
+    .line 1532
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->getVisibility()I
 
     move-result v0
 
     if-eq v0, p1, :cond_1
 
-    .line 1546
+    .line 1533
     invoke-super {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1548
+    .line 1535
     iget-boolean v0, p0, Landroid/widget/ProgressBar;->mIndeterminate:Z
 
     if-eqz v0, :cond_1
 
-    .line 1550
+    .line 1537
     const/16 v0, 0x8
 
     if-eq p1, v0, :cond_0
@@ -4619,16 +4519,16 @@
 
     if-ne p1, v0, :cond_2
 
-    .line 1551
+    .line 1538
     :cond_0
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->stopAnimation()V
 
-    .line 1557
+    .line 1544
     :cond_1
     :goto_0
     return-void
 
-    .line 1553
+    .line 1540
     :cond_2
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->startAnimation()V
 
@@ -4641,18 +4541,18 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1465
+    .line 1452
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->getVisibility()I
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1498
+    .line 1485
     :goto_0
     return-void
 
-    .line 1469
+    .line 1456
     :cond_0
     iget-object v0, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -4660,56 +4560,56 @@
 
     if-eqz v0, :cond_1
 
-    .line 1470
+    .line 1457
     iput-boolean v1, p0, Landroid/widget/ProgressBar;->mShouldStartAnimationDrawable:Z
 
-    .line 1471
+    .line 1458
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/widget/ProgressBar;->mHasAnimation:Z
 
-    .line 1497
+    .line 1484
     :goto_1
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->postInvalidate()V
 
     goto :goto_0
 
-    .line 1473
+    .line 1460
     :cond_1
     iput-boolean v1, p0, Landroid/widget/ProgressBar;->mHasAnimation:Z
 
-    .line 1475
+    .line 1462
     iget-object v0, p0, Landroid/widget/ProgressBar;->mInterpolator:Landroid/view/animation/Interpolator;
 
     if-nez v0, :cond_2
 
-    .line 1476
+    .line 1463
     new-instance v0, Landroid/view/animation/LinearInterpolator;
 
     invoke-direct {v0}, Landroid/view/animation/LinearInterpolator;-><init>()V
 
     iput-object v0, p0, Landroid/widget/ProgressBar;->mInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 1479
+    .line 1466
     :cond_2
     iget-object v0, p0, Landroid/widget/ProgressBar;->mTransformation:Landroid/view/animation/Transformation;
 
     if-nez v0, :cond_3
 
-    .line 1480
+    .line 1467
     new-instance v0, Landroid/view/animation/Transformation;
 
     invoke-direct {v0}, Landroid/view/animation/Transformation;-><init>()V
 
     iput-object v0, p0, Landroid/widget/ProgressBar;->mTransformation:Landroid/view/animation/Transformation;
 
-    .line 1485
+    .line 1472
     :goto_2
     iget-object v0, p0, Landroid/widget/ProgressBar;->mAnimation:Landroid/view/animation/AlphaAnimation;
 
     if-nez v0, :cond_4
 
-    .line 1486
+    .line 1473
     new-instance v0, Landroid/view/animation/AlphaAnimation;
 
     const/4 v1, 0x0
@@ -4720,7 +4620,7 @@
 
     iput-object v0, p0, Landroid/widget/ProgressBar;->mAnimation:Landroid/view/animation/AlphaAnimation;
 
-    .line 1491
+    .line 1478
     :goto_3
     iget-object v0, p0, Landroid/widget/ProgressBar;->mAnimation:Landroid/view/animation/AlphaAnimation;
 
@@ -4728,14 +4628,14 @@
 
     invoke-virtual {v0, v1}, Landroid/view/animation/AlphaAnimation;->setRepeatMode(I)V
 
-    .line 1492
+    .line 1479
     iget-object v0, p0, Landroid/widget/ProgressBar;->mAnimation:Landroid/view/animation/AlphaAnimation;
 
     const/4 v1, -0x1
 
     invoke-virtual {v0, v1}, Landroid/view/animation/AlphaAnimation;->setRepeatCount(I)V
 
-    .line 1493
+    .line 1480
     iget-object v0, p0, Landroid/widget/ProgressBar;->mAnimation:Landroid/view/animation/AlphaAnimation;
 
     iget v1, p0, Landroid/widget/ProgressBar;->mDuration:I
@@ -4744,14 +4644,14 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
 
-    .line 1494
+    .line 1481
     iget-object v0, p0, Landroid/widget/ProgressBar;->mAnimation:Landroid/view/animation/AlphaAnimation;
 
     iget-object v1, p0, Landroid/widget/ProgressBar;->mInterpolator:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v0, v1}, Landroid/view/animation/AlphaAnimation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 1495
+    .line 1482
     iget-object v0, p0, Landroid/widget/ProgressBar;->mAnimation:Landroid/view/animation/AlphaAnimation;
 
     const-wide/16 v2, -0x1
@@ -4760,7 +4660,7 @@
 
     goto :goto_1
 
-    .line 1482
+    .line 1469
     :cond_3
     iget-object v0, p0, Landroid/widget/ProgressBar;->mTransformation:Landroid/view/animation/Transformation;
 
@@ -4768,7 +4668,7 @@
 
     goto :goto_2
 
-    .line 1488
+    .line 1475
     :cond_4
     iget-object v0, p0, Landroid/widget/ProgressBar;->mAnimation:Landroid/view/animation/AlphaAnimation;
 
@@ -4783,31 +4683,31 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1504
+    .line 1491
     iput-boolean v1, p0, Landroid/widget/ProgressBar;->mHasAnimation:Z
 
-    .line 1505
+    .line 1492
     iget-object v0, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
     instance-of v0, v0, Landroid/graphics/drawable/Animatable;
 
     if-eqz v0, :cond_0
 
-    .line 1506
+    .line 1493
     iget-object v0, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
     check-cast v0, Landroid/graphics/drawable/Animatable;
 
     invoke-interface {v0}, Landroid/graphics/drawable/Animatable;->stop()V
 
-    .line 1507
+    .line 1494
     iput-boolean v1, p0, Landroid/widget/ProgressBar;->mShouldStartAnimationDrawable:Z
 
-    .line 1509
+    .line 1496
     :cond_0
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->postInvalidate()V
 
-    .line 1510
+    .line 1497
     return-void
 .end method
 
@@ -4816,7 +4716,7 @@
     .param p1, "who"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 1157
+    .line 1162
     iget-object v0, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eq p1, v0, :cond_0
