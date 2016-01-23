@@ -4161,9 +4161,11 @@
 
 .field public static final ViewStub:[I
 
-.field public static final ViewStub_inflatedId:I = 0x1
+.field public static final ViewStub_id:I = 0x0
 
-.field public static final ViewStub_layout:I = 0x0
+.field public static final ViewStub_inflatedId:I = 0x2
+
+.field public static final ViewStub_layout:I = 0x1
 
 .field public static final ViewSwitcher:[I
 
@@ -6782,7 +6784,7 @@
     sput-object v0, Lcom/android/internal/R$styleable;->ViewGroup_MarginLayout:[I
 
     .line 63104
-    new-array v0, v4, [I
+    new-array v0, v5, [I
 
     fill-array-data v0, :array_c8
 
@@ -9712,6 +9714,7 @@
     .line 63104
     :array_c8
     .array-data 4
+    	0x10100d0
         0x10100f2
         0x10100f3
     .end array-data

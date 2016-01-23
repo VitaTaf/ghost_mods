@@ -41,16 +41,10 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 80
-    invoke-direct {p0}, Landroid/view/View;-><init>()V
-
-    .line 72
+    .line 81
     const/4 v0, 0x0
 
-    iput v0, p0, Landroid/view/ViewStub;->mLayoutResource:I
-
-    .line 81
-    invoke-direct {p0, p1}, Landroid/view/ViewStub;->initialize(Landroid/content/Context;)V
+    invoke-direct {p0, p1, v0}, Landroid/view/ViewStub;-><init>(Landroid/content/Context;I)V
 
     .line 82
     return-void
@@ -62,21 +56,15 @@
     .param p2, "layoutResource"    # I
 
     .prologue
-    .line 90
-    invoke-direct {p0}, Landroid/view/View;-><init>()V
-
-    .line 72
+    .line 91
     const/4 v0, 0x0
 
-    iput v0, p0, Landroid/view/ViewStub;->mLayoutResource:I
-
-    .line 91
-    iput p2, p0, Landroid/view/ViewStub;->mLayoutResource:I
-
-    .line 92
-    invoke-direct {p0, p1}, Landroid/view/ViewStub;->initialize(Landroid/content/Context;)V
+    invoke-direct {p0, p1, v0}, Landroid/view/ViewStub;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 93
+    iput p2, p0, Landroid/view/ViewStub;->mLayoutResource:I
+
+    .line 94
     return-void
 .end method
 
@@ -86,12 +74,12 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 96
+    .line 97
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Landroid/view/ViewStub;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 97
+    .line 98
     return-void
 .end method
 
@@ -112,95 +100,65 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
-    .locals 4
+    .locals 5
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "attrs"    # Landroid/util/AttributeSet;
     .param p3, "defStyleAttr"    # I
     .param p4, "defStyleRes"    # I
 
     .prologue
-    const/4 v3, -0x1
+    const/4 v4, 0x1
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    .line 104
-    invoke-direct {p0}, Landroid/view/View;-><init>()V
-
-    .line 72
-    iput v2, p0, Landroid/view/ViewStub;->mLayoutResource:I
+    const/4 v2, -0x1
 
     .line 105
+    invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
+
+    .line 107
     sget-object v1, Lcom/android/internal/R$styleable;->ViewStub:[I
 
     invoke-virtual {p1, p2, v1, p3, p4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 108
+    .line 109
     .local v0, "a":Landroid/content/res/TypedArray;
-    const/4 v1, 0x1
+    const/4 v1, 0x2
 
-    invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v1
 
     iput v1, p0, Landroid/view/ViewStub;->mInflatedId:I
 
-    .line 109
-    invoke-virtual {v0, v2, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    .line 110
+    invoke-virtual {v0, v4, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v1
 
     iput v1, p0, Landroid/view/ViewStub;->mLayoutResource:I
 
     .line 111
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
-
-    .line 113
-    sget-object v1, Lcom/android/internal/R$styleable;->View:[I
-
-    invoke-virtual {p1, p2, v1, p3, p4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
-
-    move-result-object v0
-
-    .line 115
-    const/16 v1, 0x9
-
-    invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {v0, v3, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v1
 
     iput v1, p0, Landroid/view/ViewStub;->mID:I
 
-    .line 116
+    .line 112
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 118
-    invoke-direct {p0, p1}, Landroid/view/ViewStub;->initialize(Landroid/content/Context;)V
+    .line 114
+    const/16 v1, 0x8
 
-    .line 119
-    return-void
-.end method
+    invoke-virtual {p0, v1}, Landroid/view/ViewStub;->setVisibility(I)V
 
-.method private initialize(Landroid/content/Context;)V
-    .locals 1
-    .param p1, "context"    # Landroid/content/Context;
+    .line 115
+    invoke-virtual {p0, v4}, Landroid/view/ViewStub;->setWillNotDraw(Z)V
 
-    .prologue
-    .line 122
-    iput-object p1, p0, Landroid/view/ViewStub;->mContext:Landroid/content/Context;
-
-    .line 123
-    const/16 v0, 0x8
-
-    invoke-virtual {p0, v0}, Landroid/view/ViewStub;->setVisibility(I)V
-
-    .line 124
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Landroid/view/ViewStub;->setWillNotDraw(Z)V
-
-    .line 125
+    .line 116
     return-void
 .end method
 
@@ -211,7 +169,7 @@
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 215
+    .line 206
     return-void
 .end method
 
@@ -220,7 +178,7 @@
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 211
+    .line 202
     return-void
 .end method
 
@@ -228,7 +186,7 @@
     .locals 1
 
     .prologue
-    .line 138
+    .line 129
     iget v0, p0, Landroid/view/ViewStub;->mInflatedId:I
 
     return v0
@@ -238,7 +196,7 @@
     .locals 1
 
     .prologue
-    .line 201
+    .line 192
     iget-object v0, p0, Landroid/view/ViewStub;->mInflater:Landroid/view/LayoutInflater;
 
     return-object v0
@@ -248,7 +206,7 @@
     .locals 1
 
     .prologue
-    .line 169
+    .line 160
     iget v0, p0, Landroid/view/ViewStub;->mLayoutResource:I
 
     return v0
@@ -258,12 +216,12 @@
     .locals 8
 
     .prologue
-    .line 253
+    .line 244
     invoke-virtual {p0}, Landroid/view/ViewStub;->getParent()Landroid/view/ViewParent;
 
     move-result-object v5
 
-    .line 255
+    .line 246
     .local v5, "viewParent":Landroid/view/ViewParent;
     if-eqz v5, :cond_5
 
@@ -271,26 +229,26 @@
 
     if-eqz v6, :cond_5
 
-    .line 256
+    .line 247
     iget v6, p0, Landroid/view/ViewStub;->mLayoutResource:I
 
     if-eqz v6, :cond_4
 
     move-object v3, v5
 
-    .line 257
+    .line 248
     check-cast v3, Landroid/view/ViewGroup;
 
-    .line 259
+    .line 250
     .local v3, "parent":Landroid/view/ViewGroup;
     iget-object v6, p0, Landroid/view/ViewStub;->mInflater:Landroid/view/LayoutInflater;
 
     if-eqz v6, :cond_2
 
-    .line 260
+    .line 251
     iget-object v0, p0, Landroid/view/ViewStub;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 264
+    .line 255
     .local v0, "factory":Landroid/view/LayoutInflater;
     :goto_0
     iget v6, p0, Landroid/view/ViewStub;->mLayoutResource:I
@@ -301,7 +259,7 @@
 
     move-result-object v4
 
-    .line 267
+    .line 258
     .local v4, "view":Landroid/view/View;
     iget v6, p0, Landroid/view/ViewStub;->mInflatedId:I
 
@@ -309,34 +267,34 @@
 
     if-eq v6, v7, :cond_0
 
-    .line 268
+    .line 259
     iget v6, p0, Landroid/view/ViewStub;->mInflatedId:I
 
     invoke-virtual {v4, v6}, Landroid/view/View;->setId(I)V
 
-    .line 271
+    .line 262
     :cond_0
     invoke-virtual {v3, p0}, Landroid/view/ViewGroup;->indexOfChild(Landroid/view/View;)I
 
     move-result v1
 
-    .line 272
+    .line 263
     .local v1, "index":I
     invoke-virtual {v3, p0}, Landroid/view/ViewGroup;->removeViewInLayout(Landroid/view/View;)V
 
-    .line 274
+    .line 265
     invoke-virtual {p0}, Landroid/view/ViewStub;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v2
 
-    .line 275
+    .line 266
     .local v2, "layoutParams":Landroid/view/ViewGroup$LayoutParams;
     if-eqz v2, :cond_3
 
-    .line 276
+    .line 267
     invoke-virtual {v3, v4, v1, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
-    .line 281
+    .line 272
     :goto_1
     new-instance v6, Ljava/lang/ref/WeakReference;
 
@@ -344,21 +302,21 @@
 
     iput-object v6, p0, Landroid/view/ViewStub;->mInflatedViewRef:Ljava/lang/ref/WeakReference;
 
-    .line 283
+    .line 274
     iget-object v6, p0, Landroid/view/ViewStub;->mInflateListener:Landroid/view/ViewStub$OnInflateListener;
 
     if-eqz v6, :cond_1
 
-    .line 284
+    .line 275
     iget-object v6, p0, Landroid/view/ViewStub;->mInflateListener:Landroid/view/ViewStub$OnInflateListener;
 
     invoke-interface {v6, p0, v4}, Landroid/view/ViewStub$OnInflateListener;->onInflate(Landroid/view/ViewStub;Landroid/view/View;)V
 
-    .line 287
+    .line 278
     :cond_1
     return-object v4
 
-    .line 262
+    .line 253
     .end local v0    # "factory":Landroid/view/LayoutInflater;
     .end local v1    # "index":I
     .end local v2    # "layoutParams":Landroid/view/ViewGroup$LayoutParams;
@@ -373,7 +331,7 @@
     .restart local v0    # "factory":Landroid/view/LayoutInflater;
     goto :goto_0
 
-    .line 278
+    .line 269
     .restart local v1    # "index":I
     .restart local v2    # "layoutParams":Landroid/view/ViewGroup$LayoutParams;
     .restart local v4    # "view":Landroid/view/View;
@@ -382,7 +340,7 @@
 
     goto :goto_1
 
-    .line 289
+    .line 280
     .end local v0    # "factory":Landroid/view/LayoutInflater;
     .end local v1    # "index":I
     .end local v2    # "layoutParams":Landroid/view/ViewGroup$LayoutParams;
@@ -397,7 +355,7 @@
 
     throw v6
 
-    .line 292
+    .line 283
     :cond_5
     new-instance v6, Ljava/lang/IllegalStateException;
 
@@ -416,10 +374,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 206
+    .line 197
     invoke-virtual {p0, v0, v0}, Landroid/view/ViewStub;->setMeasuredDimension(II)V
 
-    .line 207
+    .line 198
     return-void
 .end method
 
@@ -430,10 +388,10 @@
     .end annotation
 
     .prologue
-    .line 153
+    .line 144
     iput p1, p0, Landroid/view/ViewStub;->mInflatedId:I
 
-    .line 154
+    .line 145
     return-void
 .end method
 
@@ -442,10 +400,10 @@
     .param p1, "inflater"    # Landroid/view/LayoutInflater;
 
     .prologue
-    .line 194
+    .line 185
     iput-object p1, p0, Landroid/view/ViewStub;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 195
+    .line 186
     return-void
 .end method
 
@@ -456,10 +414,10 @@
     .end annotation
 
     .prologue
-    .line 186
+    .line 177
     iput p1, p0, Landroid/view/ViewStub;->mLayoutResource:I
 
-    .line 187
+    .line 178
     return-void
 .end method
 
@@ -468,10 +426,10 @@
     .param p1, "inflateListener"    # Landroid/view/ViewStub$OnInflateListener;
 
     .prologue
-    .line 305
+    .line 296
     iput-object p1, p0, Landroid/view/ViewStub;->mInflateListener:Landroid/view/ViewStub$OnInflateListener;
 
-    .line 306
+    .line 297
     return-void
 .end method
 
@@ -482,12 +440,12 @@
     .end annotation
 
     .prologue
-    .line 230
+    .line 221
     iget-object v1, p0, Landroid/view/ViewStub;->mInflatedViewRef:Ljava/lang/ref/WeakReference;
 
     if-eqz v1, :cond_2
 
-    .line 231
+    .line 222
     iget-object v1, p0, Landroid/view/ViewStub;->mInflatedViewRef:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -496,20 +454,20 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 232
+    .line 223
     .local v0, "view":Landroid/view/View;
     if-eqz v0, :cond_1
 
-    .line 233
+    .line 224
     invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 243
+    .line 234
     .end local v0    # "view":Landroid/view/View;
     :cond_0
     :goto_0
     return-void
 
-    .line 235
+    .line 226
     .restart local v0    # "view":Landroid/view/View;
     :cond_1
     new-instance v1, Ljava/lang/IllegalStateException;
@@ -520,19 +478,19 @@
 
     throw v1
 
-    .line 238
+    .line 229
     .end local v0    # "view":Landroid/view/View;
     :cond_2
     invoke-super {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 239
+    .line 230
     if-eqz p1, :cond_3
 
     const/4 v1, 0x4
 
     if-ne p1, v1, :cond_0
 
-    .line 240
+    .line 231
     :cond_3
     invoke-virtual {p0}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
