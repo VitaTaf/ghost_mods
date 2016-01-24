@@ -857,7 +857,7 @@
     iput p2, p0, Landroid/media/AudioTrack;->mChannels:I
 
     .line 515
-    invoke-static {p2}, Ljava/lang/Integer;->bitCount(I)I
+    invoke-static {p2}, Landroid/media/AudioFormat;->channelCountFromOutChannelMask(I)I
 
     move-result v0
 
@@ -1031,7 +1031,7 @@
 
     .line 828
     :cond_1
-    invoke-static {p1}, Ljava/lang/Integer;->bitCount(I)I
+    invoke-static {p1}, Landroid/media/AudioFormat;->channelCountFromOutChannelMask(I)I
 
     move-result v0
 
@@ -1155,7 +1155,7 @@
 
     .line 549
     :cond_0
-    invoke-static {p0}, Ljava/lang/Integer;->bitCount(I)I
+    invoke-static {p0}, Landroid/media/AudioFormat;->channelCountFromOutChannelMask(I)I
 
     move-result v1
 
