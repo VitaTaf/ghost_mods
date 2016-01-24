@@ -1335,15 +1335,7 @@
 
 .field public static final FrameLayout_Layout_layout_gravity:I = 0x0
 
-.field public static final FrameLayout_foreground:I = 0x0
-
-.field public static final FrameLayout_foregroundGravity:I = 0x2
-
-.field public static final FrameLayout_foregroundTint:I = 0x3
-
-.field public static final FrameLayout_foregroundTintMode:I = 0x4
-
-.field public static final FrameLayout_measureAllChildren:I = 0x1
+.field public static final FrameLayout_measureAllChildren:I = 0x0
 
 .field public static final Gallery:[I
 
@@ -3803,37 +3795,37 @@
 
 .field public static final ViewTag_value:I = 0x0
 
-.field public static final View_accessibilityLiveRegion:I = 0x45
+.field public static final View_accessibilityLiveRegion:I = 0x47
 
-.field public static final View_accessibilityTraversalAfter:I = 0x4f
+.field public static final View_accessibilityTraversalAfter:I = 0x53
 
-.field public static final View_accessibilityTraversalBefore:I = 0x4e
+.field public static final View_accessibilityTraversalBefore:I = 0x52
 
-.field public static final View_alpha:I = 0x30
+.field public static final View_alpha:I = 0x32
 
 .field public static final View_background:I = 0xd
 
-.field public static final View_backgroundTint:I = 0x4b
+.field public static final View_backgroundTint:I = 0x4d
 
-.field public static final View_backgroundTintMode:I = 0x4c
+.field public static final View_backgroundTintMode:I = 0x4e
 
 .field public static final View_clickable:I = 0x1e
 
-.field public static final View_contentDescription:I = 0x2a
+.field public static final View_contentDescription:I = 0x2c
 
 .field public static final View_drawingCacheQuality:I = 0x21
 
 .field public static final View_duplicateParentState:I = 0x22
 
-.field public static final View_elevation:I = 0x49
+.field public static final View_elevation:I = 0x4b
 
-.field public static final View_fadeScrollbars:I = 0x2d
+.field public static final View_fadeScrollbars:I = 0x2f
 
 .field public static final View_fadingEdge:I = 0x18
 
 .field public static final View_fadingEdgeLength:I = 0x19
 
-.field public static final View_filterTouchesWhenObscured:I = 0x2f
+.field public static final View_filterTouchesWhenObscured:I = 0x31
 
 .field public static final View_fitsSystemWindows:I = 0x16
 
@@ -3841,33 +3833,41 @@
 
 .field public static final View_focusableInTouchMode:I = 0x14
 
-.field public static final View_hapticFeedbackEnabled:I = 0x28
+.field public static final View_foreground:I = 0x23
+
+.field public static final View_foregroundGravity:I = 0x26
+
+.field public static final View_foregroundTint:I = 0x4f
+
+.field public static final View_foregroundTintMode:I = 0x50
+
+.field public static final View_hapticFeedbackEnabled:I = 0x2a
 
 .field public static final View_id:I = 0x9
 
-.field public static final View_importantForAccessibility:I = 0x3e
+.field public static final View_importantForAccessibility:I = 0x40
 
-.field public static final View_isScrollContainer:I = 0x27
+.field public static final View_isScrollContainer:I = 0x29
 
-.field public static final View_keepScreenOn:I = 0x26
+.field public static final View_keepScreenOn:I = 0x28
 
-.field public static final View_labelFor:I = 0x44
+.field public static final View_labelFor:I = 0x46
 
-.field public static final View_layerType:I = 0x3c
+.field public static final View_layerType:I = 0x3e
 
-.field public static final View_layoutDirection:I = 0x41
+.field public static final View_layoutDirection:I = 0x43
 
 .field public static final View_longClickable:I = 0x1f
 
-.field public static final View_minHeight:I = 0x24
+.field public static final View_minHeight:I = 0x25
 
-.field public static final View_minWidth:I = 0x23
+.field public static final View_minWidth:I = 0x24
 
-.field public static final View_nestedScrollingEnabled:I = 0x48
+.field public static final View_nestedScrollingEnabled:I = 0x4a
 
 .field public static final View_nextFocusDown:I = 0x1d
 
-.field public static final View_nextFocusForward:I = 0x3b
+.field public static final View_nextFocusForward:I = 0x3d
 
 .field public static final View_nextFocusLeft:I = 0x1a
 
@@ -3875,39 +3875,39 @@
 
 .field public static final View_nextFocusUp:I = 0x1c
 
-.field public static final View_onClick:I = 0x29
+.field public static final View_onClick:I = 0x2b
 
-.field public static final View_outlineProvider:I = 0x4d
+.field public static final View_outlineProvider:I = 0x51
 
-.field public static final View_overScrollMode:I = 0x2e
+.field public static final View_overScrollMode:I = 0x30
 
 .field public static final View_padding:I = 0xe
 
 .field public static final View_paddingBottom:I = 0x12
 
-.field public static final View_paddingEnd:I = 0x43
+.field public static final View_paddingEnd:I = 0x45
 
 .field public static final View_paddingLeft:I = 0xf
 
 .field public static final View_paddingRight:I = 0x11
 
-.field public static final View_paddingStart:I = 0x42
+.field public static final View_paddingStart:I = 0x44
 
 .field public static final View_paddingTop:I = 0x10
 
-.field public static final View_requiresFadingEdge:I = 0x3d
+.field public static final View_requiresFadingEdge:I = 0x3f
 
-.field public static final View_rotation:I = 0x37
+.field public static final View_rotation:I = 0x39
 
-.field public static final View_rotationX:I = 0x38
+.field public static final View_rotationX:I = 0x3a
 
-.field public static final View_rotationY:I = 0x39
+.field public static final View_rotationY:I = 0x3b
 
 .field public static final View_saveEnabled:I = 0x20
 
-.field public static final View_scaleX:I = 0x35
+.field public static final View_scaleX:I = 0x37
 
-.field public static final View_scaleY:I = 0x36
+.field public static final View_scaleY:I = 0x38
 
 .field public static final View_scrollX:I = 0xb
 
@@ -3917,9 +3917,9 @@
 
 .field public static final View_scrollbarAlwaysDrawVerticalTrack:I = 0x7
 
-.field public static final View_scrollbarDefaultDelayBeforeFade:I = 0x2c
+.field public static final View_scrollbarDefaultDelayBeforeFade:I = 0x2e
 
-.field public static final View_scrollbarFadeDuration:I = 0x2b
+.field public static final View_scrollbarFadeDuration:I = 0x2d
 
 .field public static final View_scrollbarSize:I = 0x1
 
@@ -3935,31 +3935,31 @@
 
 .field public static final View_scrollbars:I = 0x17
 
-.field public static final View_soundEffectsEnabled:I = 0x25
+.field public static final View_soundEffectsEnabled:I = 0x27
 
-.field public static final View_stateListAnimator:I = 0x4a
+.field public static final View_stateListAnimator:I = 0x4c
 
 .field public static final View_tag:I = 0xa
 
-.field public static final View_textAlignment:I = 0x40
+.field public static final View_textAlignment:I = 0x42
 
-.field public static final View_textDirection:I = 0x3f
+.field public static final View_textDirection:I = 0x41
 
 .field public static final View_theme:I = 0x0
 
-.field public static final View_transformPivotX:I = 0x31
+.field public static final View_transformPivotX:I = 0x33
 
-.field public static final View_transformPivotY:I = 0x32
+.field public static final View_transformPivotY:I = 0x34
 
-.field public static final View_transitionName:I = 0x47
+.field public static final View_transitionName:I = 0x49
 
-.field public static final View_translationX:I = 0x33
+.field public static final View_translationX:I = 0x35
 
-.field public static final View_translationY:I = 0x34
+.field public static final View_translationY:I = 0x36
 
-.field public static final View_translationZ:I = 0x46
+.field public static final View_translationZ:I = 0x48
 
-.field public static final View_verticalScrollbarPosition:I = 0x3a
+.field public static final View_verticalScrollbarPosition:I = 0x3c
 
 .field public static final View_visibility:I = 0x15
 
@@ -5041,11 +5041,11 @@
     sput-object v0, Landroid/R$styleable;->FragmentBreadCrumbs:[I
 
     .line 28860
-    const/4 v0, 0x6
+    new-array v0, v3, [I
 
-    new-array v0, v0, [I
+    const v1, 0x101010a
 
-    fill-array-data v0, :array_49
+    aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->FrameLayout:[I
 
@@ -6331,7 +6331,7 @@
     sput-object v0, Landroid/R$styleable;->VerticalSlider_Layout:[I
 
     .line 51308
-    const/16 v0, 0x50
+    const/16 v0, 0x55
 
     new-array v0, v0, [I
 
@@ -7414,17 +7414,6 @@
         0x10100af
         0x116009c
         0x116009d
-    .end array-data
-
-    .line 28860
-    :array_49
-    .array-data 4
-        0x1010109
-        0x101010a
-        0x1010200
-        0x101046d
-        0x101046e
-        0x1160045
     .end array-data
 
     .line 29053
@@ -9198,8 +9187,10 @@
         0x10100e7
         0x10100e8
         0x10100e9
+        0x1010109
         0x101013f
         0x1010140
+        0x1010200
         0x1010215
         0x1010216
         0x101024e
@@ -9240,9 +9231,12 @@
         0x1010448
         0x101046b
         0x101046c
+        0x101046d
+        0x101046e
         0x10104b8
         0x10104d1
         0x10104d2
+        0x1160045
     .end array-data
 
     .line 52946

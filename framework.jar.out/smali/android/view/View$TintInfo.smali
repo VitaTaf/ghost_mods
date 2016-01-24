@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
+    accessFlags = 0x8
     name = "TintInfo"
 .end annotation
 
@@ -25,23 +25,12 @@
 
 
 # direct methods
-.method private constructor <init>()V
+.method constructor <init>()V
     .locals 0
 
     .prologue
-    .line 3222
+    .line 3223
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(Landroid/view/View$1;)V
-    .locals 0
-    .param p1, "x0"    # Landroid/view/View$1;
-
-    .prologue
-    .line 3222
-    invoke-direct {p0}, Landroid/view/View$TintInfo;-><init>()V
 
     return-void
 .end method

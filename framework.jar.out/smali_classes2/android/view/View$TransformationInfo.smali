@@ -34,54 +34,54 @@
     .prologue
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 2972
+    .line 2970
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2980
+    .line 2978
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v0, p0, Landroid/view/View$TransformationInfo;->mMatrix:Landroid/graphics/Matrix;
 
-    .line 2995
+    .line 2993
     iput v1, p0, Landroid/view/View$TransformationInfo;->mAlpha:F
 
-    .line 3003
+    .line 3001
     iput v1, p0, Landroid/view/View$TransformationInfo;->mTransitionAlpha:F
 
     return-void
 .end method
 
-.method static synthetic access$1600(Landroid/view/View$TransformationInfo;)Landroid/graphics/Matrix;
+.method static synthetic access$1900(Landroid/view/View$TransformationInfo;)Landroid/graphics/Matrix;
     .locals 1
     .param p0, "x0"    # Landroid/view/View$TransformationInfo;
 
     .prologue
-    .line 2972
+    .line 2970
     iget-object v0, p0, Landroid/view/View$TransformationInfo;->mMatrix:Landroid/graphics/Matrix;
 
     return-object v0
 .end method
 
-.method static synthetic access$1700(Landroid/view/View$TransformationInfo;)Landroid/graphics/Matrix;
+.method static synthetic access$2000(Landroid/view/View$TransformationInfo;)Landroid/graphics/Matrix;
     .locals 1
     .param p0, "x0"    # Landroid/view/View$TransformationInfo;
 
     .prologue
-    .line 2972
+    .line 2970
     iget-object v0, p0, Landroid/view/View$TransformationInfo;->mInverseMatrix:Landroid/graphics/Matrix;
 
     return-object v0
 .end method
 
-.method static synthetic access$1702(Landroid/view/View$TransformationInfo;Landroid/graphics/Matrix;)Landroid/graphics/Matrix;
+.method static synthetic access$2002(Landroid/view/View$TransformationInfo;Landroid/graphics/Matrix;)Landroid/graphics/Matrix;
     .locals 0
     .param p0, "x0"    # Landroid/view/View$TransformationInfo;
     .param p1, "x1"    # Landroid/graphics/Matrix;
 
     .prologue
-    .line 2972
+    .line 2970
     iput-object p1, p0, Landroid/view/View$TransformationInfo;->mInverseMatrix:Landroid/graphics/Matrix;
 
     return-object p1
