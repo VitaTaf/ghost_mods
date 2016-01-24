@@ -74,5 +74,5 @@
     <color name="kg_widget_pager_gradient">#ffffffff</color>
     <color name="facelock_spotlight_mask">#cc000000</color>
     <color name="clock_white">#ffffffff</color>
-    <color name="clock_gray">#99ffffff</color>
+    <color name="clock_gray">@android:color/secondary_text_default_material_dark</color>
 </resources>

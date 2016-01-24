@@ -29,7 +29,7 @@
     <dimen name="keyguard_avatar_frame_stroke_width">3.0dip</dimen>
     <dimen name="keyguard_avatar_size">88.0dip</dimen>
     <dimen name="keyguard_avatar_name_size">12.0sp</dimen>
-    <dimen name="widget_big_font_size">150.0dip</dimen>
+    <dimen name="widget_big_font_size">138.0dip</dimen>
     <dimen name="notification_panel_min_height">770.0dip</dimen>
     <dimen name="panel_float">56.0dip</dimen>
     <dimen name="status_bar_recents_width">600.0dip</dimen>

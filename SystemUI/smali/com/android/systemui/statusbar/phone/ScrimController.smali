@@ -695,7 +695,7 @@
     invoke-direct {p0, v2}, Lcom/android/systemui/statusbar/phone/ScrimController;->setScrimInFrontColor(F)V
 
     .line 179
-    const v2, 0x3f0ccccd    # 0.55f
+    const v2, 0x3ee66666    # 0.45f
 
     mul-float/2addr v2, v0
 
@@ -738,7 +738,7 @@
     invoke-direct {p0, v3}, Lcom/android/systemui/statusbar/phone/ScrimController;->setScrimInFrontColor(F)V
 
     .line 186
-    const v2, 0x3eb33334    # 0.35000002f
+    const v2, 0x3e7fffff    # 0.24999999f
 
     mul-float/2addr v2, v1
 

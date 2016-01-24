@@ -42,7 +42,7 @@
     <dimen name="eca_overlap">0.0dip</dimen>
     <dimen name="bottom_text_spacing_digital">-16.0dip</dimen>
     <dimen name="widget_label_font_size">16.0sp</dimen>
-    <dimen name="widget_big_font_size">140.0dip</dimen>
+    <dimen name="widget_big_font_size">125.0dip</dimen>
     <item type="dimen" name="peek_height">@dimen/close_handle_height</item>
     <dimen name="keyguard_pattern_unlock_status_line_font_size">14.0sp</dimen>
 </resources>
