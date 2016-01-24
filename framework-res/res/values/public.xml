@@ -5896,13 +5896,14 @@
     <public type="color" name="tab_indicator_text_v4" id="0x01060139" />
     <public type="color" name="tertiary_text_holo_dark" id="0x0106013a" />
     <public type="color" name="tertiary_text_holo_light" id="0x0106013b" />
-    <public type="color" name="btn_material_accent" id="0x0106013c" />
+    <public type="color" name="btn_colored_material" id="0x0106013c" />
     <public type="color" name="control_highlight_material" id="0x0106013d" />
     <public type="color" name="control_checkable_material" id="0x0106013e" />
     <public type="color" name="control_default_material" id="0x0106013f" />
     <public type="color" name="switch_track_material" id="0x01060140" />
     <public type="color" name="tab_indicator_material" id="0x01060141" />
     <public type="color" name="white_disabled_material" id="0x01060142" />
+    <public type="color" name="btn_colored_text_material" id="0x01060143" />
     <public type="array" name="emailAddressTypes" id="0x01070000" />
     <public type="array" name="imProtocols" id="0x01070001" />
     <public type="array" name="organizationTypes" id="0x01070002" />
@@ -8137,7 +8138,6 @@
     <public type="anim" name="button_state_list_anim_material" id="0x010a0012" />
     <public type="anim" name="dialog_enter" id="0x010a0013" />
     <public type="anim" name="dialog_exit" id="0x010a0014" />
-    <public type="anim" name="disabled_anim_material" id="0x010a0015" />
     <public type="anim" name="dock_bottom_enter" id="0x010a0016" />
     <public type="anim" name="dock_bottom_exit" id="0x010a0017" />
     <public type="anim" name="dock_left_enter" id="0x010a0018" />

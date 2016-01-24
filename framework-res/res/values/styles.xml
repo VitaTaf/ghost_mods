@@ -3783,8 +3783,7 @@
         <item name="stateListAnimator">@null</item>
     </style>
     <style name="Widget.Material.Button.Borderless.Colored" parent="@style/Widget.Material.Button.Borderless">
-        <item name="textColor">?colorAccent</item>
-        <item name="stateListAnimator">@anim/disabled_anim_material</item>
+        <item name="textColor">@color/btn_colored_text_material</item>
     </style>
     <style name="Widget.Material.Button.Borderless.Small" parent="@style/Widget.Material.Button.Borderless">
         <item name="minWidth">48.0dip</item>
@@ -4144,7 +4143,7 @@
         <item name="windowTitleStyle">@style/DialogWindowTitle.DeviceDefault.Light</item>
     </style>
     <style name="Widget.Material.Button.Colored" parent="@style/Widget.Material.Button">
-        <item name="backgroundTint">@color/btn_material_accent</item>
+        <item name="backgroundTint">@color/btn_colored_material</item>
     </style>
     <style name="WindowTitleBackground">
         <item name="background">@drawable/title_bar</item>
