@@ -3361,8 +3361,6 @@
 
 .field public static final Theme_colorSwitchThumbNormal:I = 0x133
 
-.field public static final Theme_controlBackground:I = 0x134
-
 .field public static final Theme_datePickerDialogTheme:I = 0xfc
 
 .field public static final Theme_datePickerStyle:I = 0xb7
@@ -3459,11 +3457,11 @@
 
 .field public static final Theme_imageWellStyle:I = 0x3c
 
-.field public static final Theme_lightRadius:I = 0x137
+.field public static final Theme_lightRadius:I = 0x136
 
-.field public static final Theme_lightY:I = 0x135
+.field public static final Theme_lightY:I = 0x134
 
-.field public static final Theme_lightZ:I = 0x136
+.field public static final Theme_lightZ:I = 0x135
 
 .field public static final Theme_listChoiceBackgroundIndicator:I = 0x8c
 
@@ -9386,7 +9384,6 @@
         0x116002a
         0x116002b
         0x116002c
-        0x11600b2
         0x116002d
         0x116002e
         0x116002f

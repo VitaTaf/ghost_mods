@@ -6183,7 +6183,7 @@
     sput-object v0, Landroid/R$styleable;->TextViewMultiLineBackgroundState:[I
 
     .line 45205
-    const/16 v0, 0x138
+    const/16 v0, 0x137
 
     new-array v0, v0, [I
 
@@ -8986,7 +8986,6 @@
         0x116002a
         0x116002b
         0x116002c
-        0x11600b2
         0x116002d
         0x116002e
         0x116002f
