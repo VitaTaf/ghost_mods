@@ -1887,7 +1887,6 @@
     <public type="style" name="Widget.TransportControl.SeekBar" id="0x7f0b003b" />
     <public type="style" name="BouncerSecurityContainer" id="0x7f0b003c" />
     <public type="style" name="PasswordTheme" id="0x7f0b003d" />
-    <public type="style" name="VolumeDialogAnimations" id="0x7f0b003e" />
     <public type="style" name="VolumeButtons" id="0x7f0b003f" />
     <public type="style" name="TextAppearance.Volume" id="0x7f0b0040" />
     <public type="style" name="TextAppearance.Volume.ZenDetail" id="0x7f0b0041" />

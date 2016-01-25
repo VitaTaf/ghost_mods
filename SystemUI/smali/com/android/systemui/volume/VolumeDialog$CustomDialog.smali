@@ -24,13 +24,13 @@
     .param p2, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 878
+    .line 952
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$CustomDialog;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
-    .line 879
+    .line 953
     invoke-direct {p0, p2}, Landroid/app/Dialog;-><init>(Landroid/content/Context;)V
 
-    .line 880
+    .line 954
     return-void
 .end method
 
@@ -41,12 +41,12 @@
     .param p1, "ev"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 884
+    .line 958
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$CustomDialog;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     invoke-virtual {v0}, Lcom/android/systemui/volume/VolumeDialog;->rescheduleTimeoutH()V
 
-    .line 885
+    .line 959
     invoke-super {p0, p1}, Landroid/app/Dialog;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
@@ -55,26 +55,85 @@
 .end method
 
 .method protected onStop()V
-    .locals 2
+    .locals 4
 
     .prologue
-    .line 890
+    .line 964
     invoke-super {p0}, Landroid/app/Dialog;->onStop()V
 
-    .line 891
-    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$CustomDialog;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+    .line 965
+    iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialog$CustomDialog;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+
+    # getter for: Lcom/android/systemui/volume/VolumeDialog;->mMotion:Lcom/android/systemui/volume/VolumeDialogMotion;
+    invoke-static {v1}, Lcom/android/systemui/volume/VolumeDialog;->access$5400(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogMotion;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/android/systemui/volume/VolumeDialogMotion;->isAnimating()Z
+
+    move-result v0
+
+    .line 966
+    .local v0, "animating":Z
+    sget-boolean v1, Lcom/android/systemui/volume/D;->BUG:Z
+
+    if-eqz v1, :cond_0
+
+    # getter for: Lcom/android/systemui/volume/VolumeDialog;->TAG:Ljava/lang/String;
+    invoke-static {}, Lcom/android/systemui/volume/VolumeDialog;->access$700()Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "onStop animating="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 967
+    :cond_0
+    if-eqz v0, :cond_1
+
+    .line 968
+    iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialog$CustomDialog;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+
+    const/4 v2, 0x1
+
+    # setter for: Lcom/android/systemui/volume/VolumeDialog;->mPendingRecheckAll:Z
+    invoke-static {v1, v2}, Lcom/android/systemui/volume/VolumeDialog;->access$302(Lcom/android/systemui/volume/VolumeDialog;Z)Z
+
+    .line 972
+    :goto_0
+    return-void
+
+    .line 971
+    :cond_1
+    iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialog$CustomDialog;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mHandler:Lcom/android/systemui/volume/VolumeDialog$H;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$4800(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialog$H;
+    invoke-static {v1}, Lcom/android/systemui/volume/VolumeDialog;->access$200(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialog$H;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x4
+    const/4 v2, 0x4
 
-    invoke-virtual {v0, v1}, Lcom/android/systemui/volume/VolumeDialog$H;->sendEmptyMessage(I)Z
+    invoke-virtual {v1, v2}, Lcom/android/systemui/volume/VolumeDialog$H;->sendEmptyMessage(I)Z
 
-    .line 892
-    return-void
+    goto :goto_0
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
@@ -84,14 +143,14 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 896
+    .line 976
     invoke-virtual {p0}, Lcom/android/systemui/volume/VolumeDialog$CustomDialog;->isShowing()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 897
+    .line 977
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v1
@@ -100,12 +159,12 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 898
+    .line 978
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialog$CustomDialog;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/volume/VolumeDialog;->dismissH(I)V
 
-    .line 902
+    .line 982
     :goto_0
     return v0
 

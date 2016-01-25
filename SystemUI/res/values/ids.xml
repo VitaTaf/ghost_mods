@@ -293,6 +293,7 @@
     <item type="id" name="volume_dialog">false</item>
     <item type="id" name="volume_expand_button">false</item>
     <item type="id" name="volume_dialog_content">false</item>
+    <item type="id" name="volume_dialog_row">false</item>
     <item type="id" name="volume_row_header">false</item>
     <item type="id" name="volume_row_icon">false</item>
     <item type="id" name="volume_row_slider">false</item>

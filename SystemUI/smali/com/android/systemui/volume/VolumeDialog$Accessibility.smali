@@ -1,5 +1,5 @@
 .class final Lcom/android/systemui/volume/VolumeDialog$Accessibility;
-.super Ljava/lang/Object;
+.super Landroid/view/View$AccessibilityDelegate;
 .source "VolumeDialog.java"
 
 
@@ -27,10 +27,10 @@
     .locals 0
 
     .prologue
-    .line 966
+    .line 1036
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/view/View$AccessibilityDelegate;-><init>()V
 
     return-void
 .end method
@@ -41,39 +41,39 @@
     .param p2, "x1"    # Lcom/android/systemui/volume/VolumeDialog$1;
 
     .prologue
-    .line 966
+    .line 1036
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialog$Accessibility;-><init>(Lcom/android/systemui/volume/VolumeDialog;)V
 
     return-void
 .end method
 
-.method static synthetic access$5200(Lcom/android/systemui/volume/VolumeDialog$Accessibility;)V
-    .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$Accessibility;
-
-    .prologue
-    .line 966
-    invoke-direct {p0}, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->updateFeedbackEnabled()V
-
-    return-void
-.end method
-
-.method static synthetic access$800(Lcom/android/systemui/volume/VolumeDialog$Accessibility;)Z
+.method static synthetic access$1300(Lcom/android/systemui/volume/VolumeDialog$Accessibility;)Z
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$Accessibility;
 
     .prologue
-    .line 966
+    .line 1036
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->mFeedbackEnabled:Z
 
     return v0
+.end method
+
+.method static synthetic access$5700(Lcom/android/systemui/volume/VolumeDialog$Accessibility;)V
+    .locals 0
+    .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$Accessibility;
+
+    .prologue
+    .line 1036
+    invoke-direct {p0}, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->updateFeedbackEnabled()V
+
+    return-void
 .end method
 
 .method private computeFeedbackEnabled()Z
     .locals 5
 
     .prologue
-    .line 1005
+    .line 1078
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->mMgr:Landroid/view/accessibility/AccessibilityManager;
 
     const/4 v4, -0x1
@@ -82,7 +82,7 @@
 
     move-result-object v2
 
-    .line 1007
+    .line 1080
     .local v2, "services":Ljava/util/List;, "Ljava/util/List<Landroid/accessibilityservice/AccessibilityServiceInfo;>;"
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -102,18 +102,22 @@
 
     check-cast v0, Landroid/accessibilityservice/AccessibilityServiceInfo;
 
-    .line 1008
+    .line 1081
     .local v0, "asi":Landroid/accessibilityservice/AccessibilityServiceInfo;
     iget v3, v0, Landroid/accessibilityservice/AccessibilityServiceInfo;->feedbackType:I
 
-    and-int/lit8 v3, v3, -0x1
-
     if-eqz v3, :cond_0
 
-    .line 1009
+    iget v3, v0, Landroid/accessibilityservice/AccessibilityServiceInfo;->feedbackType:I
+
+    const/16 v4, 0x10
+
+    if-eq v3, v4, :cond_0
+
+    .line 1082
     const/4 v3, 0x1
 
-    .line 1012
+    .line 1085
     .end local v0    # "asi":Landroid/accessibilityservice/AccessibilityServiceInfo;
     :goto_0
     return v3
@@ -128,14 +132,14 @@
     .locals 1
 
     .prologue
-    .line 1001
+    .line 1073
     invoke-direct {p0}, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->computeFeedbackEnabled()Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->mFeedbackEnabled:Z
 
-    .line 1002
+    .line 1074
     return-void
 .end method
 
@@ -145,11 +149,11 @@
     .locals 2
 
     .prologue
-    .line 971
+    .line 1041
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mContext:Landroid/content/Context;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$5100(Lcom/android/systemui/volume/VolumeDialog;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$5600(Lcom/android/systemui/volume/VolumeDialog;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -163,11 +167,11 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->mMgr:Landroid/view/accessibility/AccessibilityManager;
 
-    .line 972
+    .line 1042
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mDialogView:Landroid/view/ViewGroup;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$3700(Lcom/android/systemui/volume/VolumeDialog;)Landroid/view/ViewGroup;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$4300(Lcom/android/systemui/volume/VolumeDialog;)Landroid/view/ViewGroup;
 
     move-result-object v0
 
@@ -177,32 +181,48 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
-    .line 983
+    .line 1055
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mDialogView:Landroid/view/ViewGroup;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$3700(Lcom/android/systemui/volume/VolumeDialog;)Landroid/view/ViewGroup;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$4300(Lcom/android/systemui/volume/VolumeDialog;)Landroid/view/ViewGroup;
 
     move-result-object v0
+
+    invoke-virtual {v0, p0}, Landroid/view/ViewGroup;->setAccessibilityDelegate(Landroid/view/View$AccessibilityDelegate;)V
+
+    .line 1056
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->mMgr:Landroid/view/accessibility/AccessibilityManager;
 
     new-instance v1, Lcom/android/systemui/volume/VolumeDialog$Accessibility$2;
 
     invoke-direct {v1, p0}, Lcom/android/systemui/volume/VolumeDialog$Accessibility$2;-><init>(Lcom/android/systemui/volume/VolumeDialog$Accessibility;)V
 
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setAccessibilityDelegate(Landroid/view/View$AccessibilityDelegate;)V
-
-    .line 991
-    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->mMgr:Landroid/view/accessibility/AccessibilityManager;
-
-    new-instance v1, Lcom/android/systemui/volume/VolumeDialog$Accessibility$3;
-
-    invoke-direct {v1, p0}, Lcom/android/systemui/volume/VolumeDialog$Accessibility$3;-><init>(Lcom/android/systemui/volume/VolumeDialog$Accessibility;)V
-
     invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityManager;->addAccessibilityStateChangeListener(Landroid/view/accessibility/AccessibilityManager$AccessibilityStateChangeListener;)Z
 
-    .line 997
+    .line 1062
     invoke-direct {p0}, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->updateFeedbackEnabled()V
 
-    .line 998
+    .line 1063
     return-void
+.end method
+
+.method public onRequestSendAccessibilityEvent(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
+    .locals 1
+    .param p1, "host"    # Landroid/view/ViewGroup;
+    .param p2, "child"    # Landroid/view/View;
+    .param p3, "event"    # Landroid/view/accessibility/AccessibilityEvent;
+
+    .prologue
+    .line 1068
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+
+    invoke-virtual {v0}, Lcom/android/systemui/volume/VolumeDialog;->rescheduleTimeoutH()V
+
+    .line 1069
+    invoke-super {p0, p1, p2, p3}, Landroid/view/View$AccessibilityDelegate;->onRequestSendAccessibilityEvent(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
+
+    move-result v0
+
+    return v0
 .end method

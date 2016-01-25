@@ -203,6 +203,7 @@
     <dimen name="volume_slider_interspacing">8.0dip</dimen>
     <dimen name="volume_offset_top">0.0dip</dimen>
     <dimen name="volume_button_size">48.0dip</dimen>
+    <dimen name="volume_dialog_margin_bottom">4.0dip</dimen>
     <dimen name="zz_moto_carrier_label_bottom_margin">48.0dip</dimen>
     <item type="dimen" name="status_bar_height">@android:dimen/status_bar_height</item>
     <item type="dimen" name="navigation_bar_height">@android:dimen/navigation_bar_height</item>

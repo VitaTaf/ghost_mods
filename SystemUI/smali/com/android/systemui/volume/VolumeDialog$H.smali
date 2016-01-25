@@ -23,17 +23,17 @@
     .locals 1
 
     .prologue
-    .line 860
+    .line 932
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$H;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
-    .line 861
+    .line 933
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 862
+    .line 934
     return-void
 .end method
 
@@ -44,27 +44,27 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 866
+    .line 938
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 874
+    .line 948
     :goto_0
     return-void
 
-    .line 867
+    .line 939
     :pswitch_0
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$H;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     iget v1, p1, Landroid/os/Message;->arg1:I
 
     # invokes: Lcom/android/systemui/volume/VolumeDialog;->showH(I)V
-    invoke-static {v0, v1}, Lcom/android/systemui/volume/VolumeDialog;->access$3500(Lcom/android/systemui/volume/VolumeDialog;I)V
+    invoke-static {v0, v1}, Lcom/android/systemui/volume/VolumeDialog;->access$4100(Lcom/android/systemui/volume/VolumeDialog;I)V
 
     goto :goto_0
 
-    .line 868
+    .line 940
     :pswitch_1
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$H;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
@@ -74,7 +74,7 @@
 
     goto :goto_0
 
-    .line 869
+    .line 941
     :pswitch_2
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialog$H;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
@@ -83,22 +83,22 @@
     check-cast v0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     # invokes: Lcom/android/systemui/volume/VolumeDialog;->recheckH(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)V
-    invoke-static {v1, v0}, Lcom/android/systemui/volume/VolumeDialog;->access$3400(Lcom/android/systemui/volume/VolumeDialog;Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)V
+    invoke-static {v1, v0}, Lcom/android/systemui/volume/VolumeDialog;->access$4000(Lcom/android/systemui/volume/VolumeDialog;Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)V
 
     goto :goto_0
 
-    .line 870
+    .line 942
     :pswitch_3
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$H;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     const/4 v1, 0x0
 
     # invokes: Lcom/android/systemui/volume/VolumeDialog;->recheckH(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)V
-    invoke-static {v0, v1}, Lcom/android/systemui/volume/VolumeDialog;->access$3400(Lcom/android/systemui/volume/VolumeDialog;Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)V
+    invoke-static {v0, v1}, Lcom/android/systemui/volume/VolumeDialog;->access$4000(Lcom/android/systemui/volume/VolumeDialog;Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)V
 
     goto :goto_0
 
-    .line 871
+    .line 943
     :pswitch_4
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialog$H;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
@@ -112,7 +112,7 @@
 
     :goto_1
     # invokes: Lcom/android/systemui/volume/VolumeDialog;->setStreamImportantH(IZ)V
-    invoke-static {v1, v2, v0}, Lcom/android/systemui/volume/VolumeDialog;->access$4700(Lcom/android/systemui/volume/VolumeDialog;IZ)V
+    invoke-static {v1, v2, v0}, Lcom/android/systemui/volume/VolumeDialog;->access$5200(Lcom/android/systemui/volume/VolumeDialog;IZ)V
 
     goto :goto_0
 
@@ -121,7 +121,7 @@
 
     goto :goto_1
 
-    .line 872
+    .line 944
     :pswitch_5
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$H;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
@@ -129,7 +129,32 @@
 
     goto :goto_0
 
-    .line 866
+    .line 945
+    :pswitch_6
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$H;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+
+    iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialog$H;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+
+    # getter for: Lcom/android/systemui/volume/VolumeDialog;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
+    invoke-static {v1}, Lcom/android/systemui/volume/VolumeDialog;->access$2400(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogController$State;
+
+    move-result-object v1
+
+    # invokes: Lcom/android/systemui/volume/VolumeDialog;->onStateChangedH(Lcom/android/systemui/volume/VolumeDialogController$State;)V
+    invoke-static {v0, v1}, Lcom/android/systemui/volume/VolumeDialog;->access$4200(Lcom/android/systemui/volume/VolumeDialog;Lcom/android/systemui/volume/VolumeDialogController$State;)V
+
+    goto :goto_0
+
+    .line 946
+    :pswitch_7
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$H;->this$0:Lcom/android/systemui/volume/VolumeDialog;
+
+    # invokes: Lcom/android/systemui/volume/VolumeDialog;->updateDialogBottomMarginH()V
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$5300(Lcom/android/systemui/volume/VolumeDialog;)V
+
+    goto :goto_0
+
+    .line 938
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -138,5 +163,7 @@
         :pswitch_3
         :pswitch_4
         :pswitch_5
+        :pswitch_6
+        :pswitch_7
     .end packed-switch
 .end method

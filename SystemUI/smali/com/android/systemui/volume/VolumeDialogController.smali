@@ -2571,46 +2571,6 @@
     goto :goto_1
 .end method
 
-.method public setStreamMute(IZ)V
-    .locals 3
-    .param p1, "stream"    # I
-    .param p2, "mute"    # Z
-
-    .prologue
-    .line 232
-    iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mDestroyed:Z
-
-    if-eqz v0, :cond_0
-
-    .line 234
-    :goto_0
-    return-void
-
-    .line 233
-    :cond_0
-    iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogController;->mWorker:Lcom/android/systemui/volume/VolumeDialogController$W;
-
-    const/4 v2, 0x7
-
-    if-eqz p2, :cond_1
-
-    const/4 v0, 0x1
-
-    :goto_1
-    invoke-virtual {v1, v2, p1, v0}, Lcom/android/systemui/volume/VolumeDialogController$W;->obtainMessage(III)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_1
-.end method
-
 .method public setStreamVolume(II)V
     .locals 2
     .param p1, "stream"    # I
