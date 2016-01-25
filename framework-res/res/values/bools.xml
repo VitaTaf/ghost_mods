@@ -48,7 +48,7 @@
     <bool name="config_allowTheaterModeWakeFromWindowLayout">false</bool>
     <bool name="config_goToSleepOnButtonPressTheaterMode">true</bool>
     <bool name="config_supportAutoRotation">true</bool>
-    <bool name="config_allowAllRotations">false</bool>
+    <bool name="config_allowAllRotations">true</bool>
     <bool name="config_reverseDefaultRotation">false</bool>
     <bool name="config_lidControlsSleep">false</bool>
     <bool name="config_deskDockEnablesAccelerometer">true</bool>
