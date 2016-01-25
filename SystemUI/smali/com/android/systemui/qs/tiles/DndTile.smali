@@ -454,9 +454,9 @@
     .param p2, "arg"    # Ljava/lang/Object;
 
     .prologue
-    const/4 v2, 0x0
-
     const v3, 0x7f02051b
+
+    const/4 v2, 0x0
 
     .line 103
     instance-of v1, p2, Ljava/lang/Integer;
@@ -594,7 +594,9 @@
 
     .line 114
     :pswitch_1
-    invoke-static {v3}, Lcom/android/systemui/qs/QSTile$ResourceIcon;->get(I)Lcom/android/systemui/qs/QSTile$Icon;
+    const v1, 0x7f020022
+
+    invoke-static {v1}, Lcom/android/systemui/qs/QSTile$ResourceIcon;->get(I)Lcom/android/systemui/qs/QSTile$Icon;
 
     move-result-object v1
 
@@ -657,8 +659,6 @@
     goto :goto_2
 
     .line 106
-    nop
-
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
