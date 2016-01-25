@@ -25,6 +25,8 @@
 
 .field private cachedShowHeaders:Z
 
+.field private cachedSliderTint:Landroid/content/res/ColorStateList;
+
 .field private header:Landroid/widget/TextView;
 
 .field private icon:Landroid/widget/ImageButton;
@@ -65,18 +67,18 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1089
+    .line 1098
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1100
+    .line 1109
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->requestedLevel:I
 
-    .line 1106
+    .line 1116
     iput-boolean v1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->cachedShowHeaders:Z
 
-    .line 1110
+    .line 1120
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->lastAudibleLevel:I
 
     return-void
@@ -87,7 +89,7 @@
     .param p1, "x0"    # Lcom/android/systemui/volume/VolumeDialog$1;
 
     .prologue
-    .line 1089
+    .line 1098
     invoke-direct {p0}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;-><init>()V
 
     return-void
@@ -98,7 +100,7 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     .prologue
-    .line 1089
+    .line 1098
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->settingsButton:Landroid/widget/ImageButton;
 
     return-object v0
@@ -110,7 +112,7 @@
     .param p1, "x1"    # Landroid/widget/ImageButton;
 
     .prologue
-    .line 1089
+    .line 1098
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->settingsButton:Landroid/widget/ImageButton;
 
     return-object p1
@@ -121,7 +123,7 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     .prologue
-    .line 1089
+    .line 1098
     iget v0, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->stream:I
 
     return v0
@@ -133,7 +135,7 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 1089
+    .line 1098
     iput p1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->stream:I
 
     return p1
@@ -144,7 +146,7 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     .prologue
-    .line 1089
+    .line 1098
     iget v0, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->iconRes:I
 
     return v0
@@ -156,7 +158,7 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 1089
+    .line 1098
     iput p1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->iconRes:I
 
     return p1
@@ -167,7 +169,7 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     .prologue
-    .line 1089
+    .line 1098
     iget v0, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->iconMuteRes:I
 
     return v0
@@ -179,7 +181,7 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 1089
+    .line 1098
     iput p1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->iconMuteRes:I
 
     return p1
@@ -190,7 +192,7 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     .prologue
-    .line 1089
+    .line 1098
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->important:Z
 
     return v0
@@ -202,7 +204,7 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 1089
+    .line 1098
     iput-boolean p1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->important:Z
 
     return p1
@@ -213,7 +215,7 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     .prologue
-    .line 1089
+    .line 1098
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->header:Landroid/widget/TextView;
 
     return-object v0
@@ -225,7 +227,7 @@
     .param p1, "x1"    # Landroid/widget/TextView;
 
     .prologue
-    .line 1089
+    .line 1098
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->header:Landroid/widget/TextView;
 
     return-object p1
@@ -236,7 +238,7 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     .prologue
-    .line 1089
+    .line 1098
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->slider:Landroid/widget/SeekBar;
 
     return-object v0
@@ -248,7 +250,7 @@
     .param p1, "x1"    # Landroid/widget/SeekBar;
 
     .prologue
-    .line 1089
+    .line 1098
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->slider:Landroid/widget/SeekBar;
 
     return-object p1
@@ -259,7 +261,7 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     .prologue
-    .line 1089
+    .line 1098
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->icon:Landroid/widget/ImageButton;
 
     return-object v0
@@ -271,7 +273,7 @@
     .param p1, "x1"    # Landroid/widget/ImageButton;
 
     .prologue
-    .line 1089
+    .line 1098
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->icon:Landroid/widget/ImageButton;
 
     return-object p1
@@ -282,7 +284,7 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     .prologue
-    .line 1089
+    .line 1098
     iget v0, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->iconState:I
 
     return v0
@@ -294,7 +296,7 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 1089
+    .line 1098
     iput p1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->iconState:I
 
     return p1
@@ -305,7 +307,7 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     .prologue
-    .line 1089
+    .line 1098
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->ss:Lcom/android/systemui/volume/VolumeDialogController$StreamState;
 
     return-object v0
@@ -317,7 +319,7 @@
     .param p1, "x1"    # Lcom/android/systemui/volume/VolumeDialogController$StreamState;
 
     .prologue
-    .line 1089
+    .line 1098
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->ss:Lcom/android/systemui/volume/VolumeDialogController$StreamState;
 
     return-object p1
@@ -328,7 +330,7 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     .prologue
-    .line 1089
+    .line 1098
     iget v0, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->lastAudibleLevel:I
 
     return v0
@@ -340,7 +342,7 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 1089
+    .line 1098
     iput p1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->lastAudibleLevel:I
 
     return p1
@@ -351,7 +353,7 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     .prologue
-    .line 1089
+    .line 1098
     iget-wide v0, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->userAttempt:J
 
     return-wide v0
@@ -363,7 +365,7 @@
     .param p1, "x1"    # J
 
     .prologue
-    .line 1089
+    .line 1098
     iput-wide p1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->userAttempt:J
 
     return-wide p1
@@ -374,7 +376,7 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     .prologue
-    .line 1089
+    .line 1098
     iget v0, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->cachedExpandButtonRes:I
 
     return v0
@@ -386,7 +388,7 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 1089
+    .line 1098
     iput p1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->cachedExpandButtonRes:I
 
     return p1
@@ -397,7 +399,7 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     .prologue
-    .line 1089
+    .line 1098
     iget v0, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->requestedLevel:I
 
     return v0
@@ -409,7 +411,7 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 1089
+    .line 1098
     iput p1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->requestedLevel:I
 
     return p1
@@ -420,7 +422,7 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     .prologue
-    .line 1089
+    .line 1098
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->cachedShowHeaders:Z
 
     return v0
@@ -432,7 +434,7 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 1089
+    .line 1098
     iput-boolean p1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->cachedShowHeaders:Z
 
     return p1
@@ -443,7 +445,7 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     .prologue
-    .line 1089
+    .line 1098
     iget v0, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->cachedIconRes:I
 
     return v0
@@ -455,76 +457,99 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 1089
+    .line 1098
     iput p1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->cachedIconRes:I
 
     return p1
 .end method
 
-.method static synthetic access$3500(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Z
+.method static synthetic access$3500(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/content/res/ColorStateList;
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     .prologue
-    .line 1089
+    .line 1098
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->cachedSliderTint:Landroid/content/res/ColorStateList;
+
+    return-object v0
+.end method
+
+.method static synthetic access$3502(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;Landroid/content/res/ColorStateList;)Landroid/content/res/ColorStateList;
+    .locals 0
+    .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
+    .param p1, "x1"    # Landroid/content/res/ColorStateList;
+
+    .prologue
+    .line 1098
+    iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->cachedSliderTint:Landroid/content/res/ColorStateList;
+
+    return-object p1
+.end method
+
+.method static synthetic access$3600(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Z
+    .locals 1
+    .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
+
+    .prologue
+    .line 1098
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->tracking:Z
 
     return v0
 .end method
 
-.method static synthetic access$3502(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;Z)Z
+.method static synthetic access$3602(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;Z)Z
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
     .param p1, "x1"    # Z
 
     .prologue
-    .line 1089
+    .line 1098
     iput-boolean p1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->tracking:Z
 
     return p1
 .end method
 
-.method static synthetic access$3600(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/animation/ObjectAnimator;
+.method static synthetic access$3700(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/animation/ObjectAnimator;
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     .prologue
-    .line 1089
+    .line 1098
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->anim:Landroid/animation/ObjectAnimator;
 
     return-object v0
 .end method
 
-.method static synthetic access$3602(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;Landroid/animation/ObjectAnimator;)Landroid/animation/ObjectAnimator;
+.method static synthetic access$3702(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;Landroid/animation/ObjectAnimator;)Landroid/animation/ObjectAnimator;
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
     .param p1, "x1"    # Landroid/animation/ObjectAnimator;
 
     .prologue
-    .line 1089
+    .line 1098
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->anim:Landroid/animation/ObjectAnimator;
 
     return-object p1
 .end method
 
-.method static synthetic access$3700(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)I
+.method static synthetic access$3800(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)I
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     .prologue
-    .line 1089
+    .line 1098
     iget v0, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->animTargetProgress:I
 
     return v0
 .end method
 
-.method static synthetic access$3702(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;I)I
+.method static synthetic access$3802(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;I)I
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
     .param p1, "x1"    # I
 
     .prologue
-    .line 1089
+    .line 1098
     iput p1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->animTargetProgress:I
 
     return p1
@@ -535,7 +560,7 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     .prologue
-    .line 1089
+    .line 1098
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->space:Landroid/view/View;
 
     return-object v0
@@ -547,7 +572,7 @@
     .param p1, "x1"    # Landroid/view/View;
 
     .prologue
-    .line 1089
+    .line 1098
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->space:Landroid/view/View;
 
     return-object p1
@@ -558,7 +583,7 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     .prologue
-    .line 1089
+    .line 1098
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->view:Landroid/view/View;
 
     return-object v0
@@ -570,7 +595,7 @@
     .param p1, "x1"    # Landroid/view/View;
 
     .prologue
-    .line 1089
+    .line 1098
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->view:Landroid/view/View;
 
     return-object p1

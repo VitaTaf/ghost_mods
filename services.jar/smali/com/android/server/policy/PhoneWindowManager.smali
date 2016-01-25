@@ -21716,6 +21716,12 @@
 
     const/16 v3, 0x7e1
 
+    if-eq v2, v3, :cond_24
+
+    iget v2, v15, Landroid/view/WindowManager$LayoutParams;->type:I
+
+    const/16 v3, 0x7e4
+
     if-ne v2, v3, :cond_29
 
     .line 4393
@@ -22580,9 +22586,16 @@
 
     const/16 v3, 0x7de
 
+    if-eq v2, v3, :cond_53
+
+    iget v2, v15, Landroid/view/WindowManager$LayoutParams;->type:I
+
+    const/16 v3, 0x7e4
+
     if-ne v2, v3, :cond_37
 
     .line 4524
+    :cond_53
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedScreenLeft:I
@@ -22653,12 +22666,6 @@
     iget v2, v15, Landroid/view/WindowManager$LayoutParams;->type:I
 
     const/16 v3, 0x7d5
-
-    if-eq v2, v3, :cond_38
-
-    iget v2, v15, Landroid/view/WindowManager$LayoutParams;->type:I
-
-    const/16 v3, 0x7d3
 
     if-eq v2, v3, :cond_38
 

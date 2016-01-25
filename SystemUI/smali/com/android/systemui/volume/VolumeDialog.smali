@@ -358,6 +358,11 @@
     invoke-virtual {v8, v6}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
     .line 166
+    const/16 v0, 0x30
+
+    invoke-virtual {v8, v0}, Landroid/view/Window;->setSoftInputMode(I)V
+
+    .line 167
     const v0, 0x7f08000c
 
     invoke-direct {p0, v0}, Lcom/android/systemui/volume/VolumeDialog;->loadColorStateList(I)Landroid/content/res/ColorStateList;
@@ -751,7 +756,7 @@
     return p1
 .end method
 
-.method static synthetic access$3800(Lcom/android/systemui/volume/VolumeDialog;)Ljava/lang/Object;
+.method static synthetic access$3900(Lcom/android/systemui/volume/VolumeDialog;)Ljava/lang/Object;
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog;
 
@@ -762,7 +767,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$3902(Lcom/android/systemui/volume/VolumeDialog;Lcom/android/systemui/volume/SafetyWarningDialog;)Lcom/android/systemui/volume/SafetyWarningDialog;
+.method static synthetic access$4002(Lcom/android/systemui/volume/VolumeDialog;Lcom/android/systemui/volume/SafetyWarningDialog;)Lcom/android/systemui/volume/SafetyWarningDialog;
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog;
     .param p1, "x1"    # Lcom/android/systemui/volume/SafetyWarningDialog;
@@ -774,7 +779,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$4000(Lcom/android/systemui/volume/VolumeDialog;Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)V
+.method static synthetic access$4100(Lcom/android/systemui/volume/VolumeDialog;Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)V
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog;
     .param p1, "x1"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
@@ -786,7 +791,7 @@
     return-void
 .end method
 
-.method static synthetic access$4100(Lcom/android/systemui/volume/VolumeDialog;I)V
+.method static synthetic access$4200(Lcom/android/systemui/volume/VolumeDialog;I)V
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog;
     .param p1, "x1"    # I
@@ -798,7 +803,7 @@
     return-void
 .end method
 
-.method static synthetic access$4200(Lcom/android/systemui/volume/VolumeDialog;Lcom/android/systemui/volume/VolumeDialogController$State;)V
+.method static synthetic access$4300(Lcom/android/systemui/volume/VolumeDialog;Lcom/android/systemui/volume/VolumeDialogController$State;)V
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog;
     .param p1, "x1"    # Lcom/android/systemui/volume/VolumeDialogController$State;
@@ -810,7 +815,7 @@
     return-void
 .end method
 
-.method static synthetic access$4300(Lcom/android/systemui/volume/VolumeDialog;)Landroid/view/ViewGroup;
+.method static synthetic access$4400(Lcom/android/systemui/volume/VolumeDialog;)Landroid/view/ViewGroup;
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog;
 
@@ -821,7 +826,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$4400(Lcom/android/systemui/volume/VolumeDialog;)V
+.method static synthetic access$4500(Lcom/android/systemui/volume/VolumeDialog;)V
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog;
 
@@ -832,7 +837,7 @@
     return-void
 .end method
 
-.method static synthetic access$4500(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/SpTexts;
+.method static synthetic access$4600(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/SpTexts;
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog;
 
@@ -843,7 +848,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$4600(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/ZenFooter;
+.method static synthetic access$4700(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/ZenFooter;
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog;
 
@@ -854,7 +859,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$4700(Lcom/android/systemui/volume/VolumeDialog;)Z
+.method static synthetic access$4800(Lcom/android/systemui/volume/VolumeDialog;)Z
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog;
 
@@ -865,7 +870,7 @@
     return v0
 .end method
 
-.method static synthetic access$4800(Lcom/android/systemui/volume/VolumeDialog;I)V
+.method static synthetic access$4900(Lcom/android/systemui/volume/VolumeDialog;I)V
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog;
     .param p1, "x1"    # I
@@ -875,17 +880,6 @@
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialog;->showSafetyWarningH(I)V
 
     return-void
-.end method
-
-.method static synthetic access$4900(Lcom/android/systemui/volume/VolumeDialog;)Z
-    .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog;
-
-    .prologue
-    .line 87
-    iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialog;->mExpanded:Z
-
-    return v0
 .end method
 
 .method static synthetic access$500(Lcom/android/systemui/volume/VolumeDialog;)I
@@ -899,15 +893,15 @@
     return v0
 .end method
 
-.method static synthetic access$5000(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialog$Callback;
+.method static synthetic access$5000(Lcom/android/systemui/volume/VolumeDialog;)Z
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog;
 
     .prologue
     .line 87
-    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog;->mCallback:Lcom/android/systemui/volume/VolumeDialog$Callback;
+    iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialog;->mExpanded:Z
 
-    return-object v0
+    return v0
 .end method
 
 .method static synthetic access$502(Lcom/android/systemui/volume/VolumeDialog;I)I
@@ -922,7 +916,18 @@
     return p1
 .end method
 
-.method static synthetic access$5100(Lcom/android/systemui/volume/VolumeDialog;)Landroid/view/View;
+.method static synthetic access$5100(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialog$Callback;
+    .locals 1
+    .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog;
+
+    .prologue
+    .line 87
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog;->mCallback:Lcom/android/systemui/volume/VolumeDialog$Callback;
+
+    return-object v0
+.end method
+
+.method static synthetic access$5200(Lcom/android/systemui/volume/VolumeDialog;)Landroid/view/View;
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog;
 
@@ -933,7 +938,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$5200(Lcom/android/systemui/volume/VolumeDialog;IZ)V
+.method static synthetic access$5300(Lcom/android/systemui/volume/VolumeDialog;IZ)V
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog;
     .param p1, "x1"    # I
@@ -946,7 +951,7 @@
     return-void
 .end method
 
-.method static synthetic access$5300(Lcom/android/systemui/volume/VolumeDialog;)V
+.method static synthetic access$5400(Lcom/android/systemui/volume/VolumeDialog;)V
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog;
 
@@ -957,7 +962,7 @@
     return-void
 .end method
 
-.method static synthetic access$5400(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogMotion;
+.method static synthetic access$5500(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogMotion;
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog;
 
@@ -968,7 +973,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$5500(Landroid/widget/SeekBar;I)I
+.method static synthetic access$5600(Landroid/widget/SeekBar;I)I
     .locals 1
     .param p0, "x0"    # Landroid/widget/SeekBar;
     .param p1, "x1"    # I
@@ -982,7 +987,7 @@
     return v0
 .end method
 
-.method static synthetic access$5600(Lcom/android/systemui/volume/VolumeDialog;)Landroid/content/Context;
+.method static synthetic access$5700(Lcom/android/systemui/volume/VolumeDialog;)Landroid/content/Context;
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog;
 
@@ -2964,7 +2969,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_a
+    if-eqz v8, :cond_8
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3073,30 +3078,7 @@
     invoke-virtual {v9, v8}, Landroid/widget/TextView;->setAlpha(F)V
 
     .line 593
-    # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->slider:Landroid/widget/SeekBar;
-    invoke-static {v4}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1900(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/widget/SeekBar;
-
-    move-result-object v9
-
-    if-eqz v3, :cond_8
-
-    iget-object v8, p0, Lcom/android/systemui/volume/VolumeDialog;->mActiveSliderTint:Landroid/content/res/ColorStateList;
-
-    :goto_6
-    invoke-virtual {v9, v8}, Landroid/widget/SeekBar;->setProgressTintList(Landroid/content/res/ColorStateList;)V
-
-    .line 594
-    # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->slider:Landroid/widget/SeekBar;
-    invoke-static {v4}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1900(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/widget/SeekBar;
-
-    move-result-object v9
-
-    if-eqz v3, :cond_9
-
-    iget-object v8, p0, Lcom/android/systemui/volume/VolumeDialog;->mActiveSliderTint:Landroid/content/res/ColorStateList;
-
-    :goto_7
-    invoke-virtual {v9, v8}, Landroid/widget/SeekBar;->setThumbTintList(Landroid/content/res/ColorStateList;)V
+    invoke-direct {p0, v4, v3}, Lcom/android/systemui/volume/VolumeDialog;->updateVolumeRowSliderTintH(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;Z)V
 
     goto :goto_0
 
@@ -3141,24 +3123,12 @@
 
     goto :goto_5
 
-    .line 593
-    :cond_8
-    iget-object v8, p0, Lcom/android/systemui/volume/VolumeDialog;->mInactiveSliderTint:Landroid/content/res/ColorStateList;
-
-    goto :goto_6
-
-    .line 594
-    :cond_9
-    iget-object v8, p0, Lcom/android/systemui/volume/VolumeDialog;->mInactiveSliderTint:Landroid/content/res/ColorStateList;
-
-    goto :goto_7
-
     .line 596
     .end local v1    # "expandButtonRes":I
     .end local v3    # "isActive":Z
     .end local v4    # "row":Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
     .end local v5    # "visible":Z
-    :cond_a
+    :cond_8
     return-void
 .end method
 
@@ -4355,20 +4325,41 @@
     invoke-virtual {v5, p2}, Landroid/widget/SeekBar;->setEnabled(Z)V
 
     .line 749
-    # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->tracking:Z
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3500(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Z
+    # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->stream:I
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1200(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)I
 
     move-result v5
 
-    if-eqz v5, :cond_1
+    iget v6, p0, Lcom/android/systemui/volume/VolumeDialog;->mActiveStream:I
+
+    if-ne v5, v6, :cond_1
+
+    const/4 v5, 0x1
+
+    :goto_0
+    invoke-direct {p0, p1, v5}, Lcom/android/systemui/volume/VolumeDialog;->updateVolumeRowSliderTintH(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;Z)V
+
+    .line 758
+    # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->tracking:Z
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3600(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_2
 
     .line 796
     :cond_0
-    :goto_0
+    :goto_1
     return-void
 
     .line 752
     :cond_1
+    const/4 v5, 0x0
+
+    goto :goto_0
+
+    .line 761
+    :cond_2
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->slider:Landroid/widget/SeekBar;
     invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1900(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/widget/SeekBar;
 
@@ -4400,13 +4391,13 @@
 
     move-result v5
 
-    if-nez v5, :cond_3
+    if-nez v5, :cond_4
 
     const/4 v4, 0x1
 
     .line 755
     .local v4, "rowVisible":Z
-    :goto_1
+    :goto_2
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v6
@@ -4422,13 +4413,13 @@
 
     cmp-long v5, v6, v8
 
-    if-gez v5, :cond_4
+    if-gez v5, :cond_5
 
     const/4 v0, 0x1
 
     .line 757
     .local v0, "inGracePeriod":Z
-    :goto_2
+    :goto_3
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog;->mHandler:Lcom/android/systemui/volume/VolumeDialog$H;
 
     const/4 v6, 0x3
@@ -4438,16 +4429,16 @@
     .line 758
     iget-boolean v5, p0, Lcom/android/systemui/volume/VolumeDialog;->mShowing:Z
 
-    if-eqz v5, :cond_5
+    if-eqz v5, :cond_6
 
-    if-eqz v4, :cond_5
+    if-eqz v4, :cond_6
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     .line 759
     sget-boolean v5, Lcom/android/systemui/volume/D;->BUG:Z
 
-    if-eqz v5, :cond_2
+    if-eqz v5, :cond_3
 
     sget-object v5, Lcom/android/systemui/volume/VolumeDialog;->TAG:Ljava/lang/String;
 
@@ -4455,8 +4446,8 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 760
-    :cond_2
+    .line 769
+    :cond_3
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog;->mHandler:Lcom/android/systemui/volume/VolumeDialog$H;
 
     iget-object v6, p0, Lcom/android/systemui/volume/VolumeDialog;->mHandler:Lcom/android/systemui/volume/VolumeDialog$H;
@@ -4478,60 +4469,60 @@
 
     invoke-virtual {v5, v6, v8, v9}, Lcom/android/systemui/volume/VolumeDialog$H;->sendMessageAtTime(Landroid/os/Message;J)Z
 
-    goto :goto_0
+    goto :goto_1
 
     .line 754
     .end local v0    # "inGracePeriod":Z
     .end local v4    # "rowVisible":Z
-    :cond_3
-    const/4 v4, 0x0
-
-    goto :goto_1
-
-    .line 755
-    .restart local v4    # "rowVisible":Z
     :cond_4
-    const/4 v0, 0x0
+    const/4 v4, 0x0
 
     goto :goto_2
 
-    .line 764
-    .restart local v0    # "inGracePeriod":Z
+    .line 755
+    .restart local v4    # "rowVisible":Z
     :cond_5
-    if-ne p3, v1, :cond_6
+    const/4 v0, 0x0
 
-    .line 765
+    goto :goto_3
+
+    .line 773
+    .restart local v0    # "inGracePeriod":Z
+    :cond_6
+    if-ne p3, v1, :cond_7
+
+    .line 774
     iget-boolean v5, p0, Lcom/android/systemui/volume/VolumeDialog;->mShowing:Z
 
-    if-eqz v5, :cond_6
+    if-eqz v5, :cond_7
 
     if-nez v4, :cond_0
 
-    .line 769
-    :cond_6
+    .line 778
+    :cond_7
     mul-int/lit8 v2, p3, 0x64
 
     .line 770
     .local v2, "newProgress":I
     if-eq v3, v2, :cond_0
 
-    .line 771
+    .line 780
     iget-boolean v5, p0, Lcom/android/systemui/volume/VolumeDialog;->mShowing:Z
 
-    if-eqz v5, :cond_9
+    if-eqz v5, :cond_a
 
-    if-eqz v4, :cond_9
+    if-eqz v4, :cond_a
 
-    .line 773
+    .line 782
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->anim:Landroid/animation/ObjectAnimator;
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3600(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/animation/ObjectAnimator;
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3700(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
 
-    if-eqz v5, :cond_7
+    if-eqz v5, :cond_8
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->anim:Landroid/animation/ObjectAnimator;
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3600(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/animation/ObjectAnimator;
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3700(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
 
@@ -4539,23 +4530,23 @@
 
     move-result v5
 
-    if-eqz v5, :cond_7
+    if-eqz v5, :cond_8
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->animTargetProgress:I
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3700(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)I
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3800(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)I
 
     move-result v5
 
     if-eq v5, v2, :cond_0
 
-    .line 778
-    :cond_7
+    .line 787
+    :cond_8
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->anim:Landroid/animation/ObjectAnimator;
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3600(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/animation/ObjectAnimator;
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3700(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
 
-    if-nez v5, :cond_8
+    if-nez v5, :cond_9
 
     .line 779
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->slider:Landroid/widget/SeekBar;
@@ -4582,11 +4573,11 @@
     move-result-object v5
 
     # setter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->anim:Landroid/animation/ObjectAnimator;
-    invoke-static {p1, v5}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3602(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;Landroid/animation/ObjectAnimator;)Landroid/animation/ObjectAnimator;
+    invoke-static {p1, v5}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3702(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;Landroid/animation/ObjectAnimator;)Landroid/animation/ObjectAnimator;
 
     .line 780
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->anim:Landroid/animation/ObjectAnimator;
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3600(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/animation/ObjectAnimator;
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3700(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
 
@@ -4596,14 +4587,14 @@
 
     invoke-virtual {v5, v6}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 785
-    :goto_3
+    .line 794
+    :goto_4
     # setter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->animTargetProgress:I
-    invoke-static {p1, v2}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3702(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;I)I
+    invoke-static {p1, v2}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3802(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;I)I
 
     .line 786
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->anim:Landroid/animation/ObjectAnimator;
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3600(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/animation/ObjectAnimator;
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3700(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
 
@@ -4613,18 +4604,18 @@
 
     .line 787
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->anim:Landroid/animation/ObjectAnimator;
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3600(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/animation/ObjectAnimator;
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3700(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
 
     invoke-virtual {v5}, Landroid/animation/ObjectAnimator;->start()V
 
-    goto/16 :goto_0
+    goto/16 :goto_1
 
-    .line 782
-    :cond_8
+    .line 791
+    :cond_9
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->anim:Landroid/animation/ObjectAnimator;
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3600(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/animation/ObjectAnimator;
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3700(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
 
@@ -4632,7 +4623,7 @@
 
     .line 783
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->anim:Landroid/animation/ObjectAnimator;
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3600(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/animation/ObjectAnimator;
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3700(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
 
@@ -4650,27 +4641,27 @@
 
     invoke-virtual {v5, v6}, Landroid/animation/ObjectAnimator;->setIntValues([I)V
 
-    goto :goto_3
+    goto :goto_4
 
-    .line 790
-    :cond_9
+    .line 799
+    :cond_a
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->anim:Landroid/animation/ObjectAnimator;
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3600(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/animation/ObjectAnimator;
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3700(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
 
-    if-eqz v5, :cond_a
+    if-eqz v5, :cond_b
 
     .line 791
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->anim:Landroid/animation/ObjectAnimator;
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3600(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/animation/ObjectAnimator;
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3700(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
 
     invoke-virtual {v5}, Landroid/animation/ObjectAnimator;->cancel()V
 
-    .line 793
-    :cond_a
+    .line 802
+    :cond_b
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->slider:Landroid/widget/SeekBar;
     invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1900(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/widget/SeekBar;
 
@@ -4678,7 +4669,130 @@
 
     invoke-virtual {v5, v2}, Landroid/widget/SeekBar;->setProgress(I)V
 
-    goto/16 :goto_0
+    goto/16 :goto_1
+.end method
+
+.method private updateVolumeRowSliderTintH(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;Z)V
+    .locals 4
+    .param p1, "row"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
+    .param p2, "isActive"    # Z
+
+    .prologue
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
+
+    .line 747
+    if-eqz p2, :cond_0
+
+    iget-boolean v1, p0, Lcom/android/systemui/volume/VolumeDialog;->mExpanded:Z
+
+    if-eqz v1, :cond_0
+
+    .line 749
+    # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->slider:Landroid/widget/SeekBar;
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1900(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/widget/SeekBar;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v3}, Landroid/widget/SeekBar;->setFocusable(Z)V
+
+    .line 750
+    # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->slider:Landroid/widget/SeekBar;
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1900(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/widget/SeekBar;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v3}, Landroid/widget/SeekBar;->setFocusableInTouchMode(Z)V
+
+    .line 751
+    # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->slider:Landroid/widget/SeekBar;
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1900(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/widget/SeekBar;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/widget/SeekBar;->requestFocus()Z
+
+    .line 756
+    :goto_0
+    if-eqz p2, :cond_1
+
+    # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->slider:Landroid/widget/SeekBar;
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1900(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/widget/SeekBar;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/widget/SeekBar;->isEnabled()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog;->mActiveSliderTint:Landroid/content/res/ColorStateList;
+
+    .line 749
+    .local v0, "tint":Landroid/content/res/ColorStateList;
+    :goto_1
+    # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->cachedSliderTint:Landroid/content/res/ColorStateList;
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3500(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/content/res/ColorStateList;
+
+    move-result-object v1
+
+    if-ne v0, v1, :cond_2
+
+    .line 762
+    :goto_2
+    return-void
+
+    .line 747
+    .end local v0    # "tint":Landroid/content/res/ColorStateList;
+    :cond_0
+    # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->slider:Landroid/widget/SeekBar;
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1900(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/widget/SeekBar;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v2}, Landroid/widget/SeekBar;->setFocusableInTouchMode(Z)V
+
+    .line 754
+    # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->slider:Landroid/widget/SeekBar;
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1900(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/widget/SeekBar;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v2}, Landroid/widget/SeekBar;->setFocusable(Z)V
+
+    goto :goto_0
+
+    .line 756
+    :cond_1
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog;->mInactiveSliderTint:Landroid/content/res/ColorStateList;
+
+    goto :goto_1
+
+    .line 759
+    .restart local v0    # "tint":Landroid/content/res/ColorStateList;
+    :cond_2
+    # setter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->cachedSliderTint:Landroid/content/res/ColorStateList;
+    invoke-static {p1, v0}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3502(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;Landroid/content/res/ColorStateList;)Landroid/content/res/ColorStateList;
+
+    .line 751
+    # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->slider:Landroid/widget/SeekBar;
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1900(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/widget/SeekBar;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Landroid/widget/SeekBar;->setProgressTintList(Landroid/content/res/ColorStateList;)V
+
+    .line 752
+    # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->slider:Landroid/widget/SeekBar;
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1900(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/widget/SeekBar;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Landroid/widget/SeekBar;->setThumbTintList(Landroid/content/res/ColorStateList;)V
+
+    goto :goto_2
 .end method
 
 .method private updateWindowWidthH()V

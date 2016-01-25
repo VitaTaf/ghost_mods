@@ -27,7 +27,7 @@
     .locals 0
 
     .prologue
-    .line 1036
+    .line 1045
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     invoke-direct {p0}, Landroid/view/View$AccessibilityDelegate;-><init>()V
@@ -41,7 +41,7 @@
     .param p2, "x1"    # Lcom/android/systemui/volume/VolumeDialog$1;
 
     .prologue
-    .line 1036
+    .line 1045
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialog$Accessibility;-><init>(Lcom/android/systemui/volume/VolumeDialog;)V
 
     return-void
@@ -52,18 +52,18 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$Accessibility;
 
     .prologue
-    .line 1036
+    .line 1045
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->mFeedbackEnabled:Z
 
     return v0
 .end method
 
-.method static synthetic access$5700(Lcom/android/systemui/volume/VolumeDialog$Accessibility;)V
+.method static synthetic access$5800(Lcom/android/systemui/volume/VolumeDialog$Accessibility;)V
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialog$Accessibility;
 
     .prologue
-    .line 1036
+    .line 1045
     invoke-direct {p0}, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->updateFeedbackEnabled()V
 
     return-void
@@ -73,7 +73,7 @@
     .locals 5
 
     .prologue
-    .line 1078
+    .line 1087
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->mMgr:Landroid/view/accessibility/AccessibilityManager;
 
     const/4 v4, -0x1
@@ -82,7 +82,7 @@
 
     move-result-object v2
 
-    .line 1080
+    .line 1089
     .local v2, "services":Ljava/util/List;, "Ljava/util/List<Landroid/accessibilityservice/AccessibilityServiceInfo;>;"
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -102,7 +102,7 @@
 
     check-cast v0, Landroid/accessibilityservice/AccessibilityServiceInfo;
 
-    .line 1081
+    .line 1090
     .local v0, "asi":Landroid/accessibilityservice/AccessibilityServiceInfo;
     iget v3, v0, Landroid/accessibilityservice/AccessibilityServiceInfo;->feedbackType:I
 
@@ -114,10 +114,10 @@
 
     if-eq v3, v4, :cond_0
 
-    .line 1082
+    .line 1091
     const/4 v3, 0x1
 
-    .line 1085
+    .line 1094
     .end local v0    # "asi":Landroid/accessibilityservice/AccessibilityServiceInfo;
     :goto_0
     return v3
@@ -132,14 +132,14 @@
     .locals 1
 
     .prologue
-    .line 1073
+    .line 1082
     invoke-direct {p0}, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->computeFeedbackEnabled()Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->mFeedbackEnabled:Z
 
-    .line 1074
+    .line 1083
     return-void
 .end method
 
@@ -149,11 +149,11 @@
     .locals 2
 
     .prologue
-    .line 1041
+    .line 1050
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mContext:Landroid/content/Context;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$5600(Lcom/android/systemui/volume/VolumeDialog;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$5700(Lcom/android/systemui/volume/VolumeDialog;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -167,11 +167,11 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->mMgr:Landroid/view/accessibility/AccessibilityManager;
 
-    .line 1042
+    .line 1051
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mDialogView:Landroid/view/ViewGroup;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$4300(Lcom/android/systemui/volume/VolumeDialog;)Landroid/view/ViewGroup;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$4400(Lcom/android/systemui/volume/VolumeDialog;)Landroid/view/ViewGroup;
 
     move-result-object v0
 
@@ -181,17 +181,17 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
-    .line 1055
+    .line 1064
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mDialogView:Landroid/view/ViewGroup;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$4300(Lcom/android/systemui/volume/VolumeDialog;)Landroid/view/ViewGroup;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog;->access$4400(Lcom/android/systemui/volume/VolumeDialog;)Landroid/view/ViewGroup;
 
     move-result-object v0
 
     invoke-virtual {v0, p0}, Landroid/view/ViewGroup;->setAccessibilityDelegate(Landroid/view/View$AccessibilityDelegate;)V
 
-    .line 1056
+    .line 1065
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->mMgr:Landroid/view/accessibility/AccessibilityManager;
 
     new-instance v1, Lcom/android/systemui/volume/VolumeDialog$Accessibility$2;
@@ -200,10 +200,10 @@
 
     invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityManager;->addAccessibilityStateChangeListener(Landroid/view/accessibility/AccessibilityManager$AccessibilityStateChangeListener;)Z
 
-    .line 1062
+    .line 1071
     invoke-direct {p0}, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->updateFeedbackEnabled()V
 
-    .line 1063
+    .line 1072
     return-void
 .end method
 
@@ -214,12 +214,12 @@
     .param p3, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
     .prologue
-    .line 1068
+    .line 1077
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     invoke-virtual {v0}, Lcom/android/systemui/volume/VolumeDialog;->rescheduleTimeoutH()V
 
-    .line 1069
+    .line 1078
     invoke-super {p0, p1, p2, p3}, Landroid/view/View$AccessibilityDelegate;->onRequestSendAccessibilityEvent(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
 
     move-result v0
