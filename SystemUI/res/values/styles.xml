@@ -96,6 +96,10 @@
     <style name="TextAppearance.QS.Introduction" parent="@style/TextAppearance.QS">
         <item name="android:textSize">14.0sp</item>
     </style>
+    <style name="TextAppearance.QS.Warning" parent="@style/TextAppearance.QS">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/system_warning_color</item>
+    </style>
     <style name="TextAppearance.QS.DetailButton" parent="@style/TextAppearance.QS">
         <item name="android:textSize">@dimen/qs_detail_button_text_size</item>
         <item name="android:gravity">center</item>

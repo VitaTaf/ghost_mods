@@ -423,6 +423,8 @@ Also, you're connected to a VPN (\"%3$s\"). Your VPN service provider can monito
     <string name="hidden_notifications_setup">Set up</string>
     <string name="zen_mode_and_condition">%1$s. %2$s</string>
     <string name="volume_zen_end_now">End now</string>
+    <string name="accessibility_volume_expand">Expand</string>
+    <string name="accessibility_volume_collapse">Collapse</string>
     <string name="screen_pinning_title">Screen is pinned</string>
     <string name="screen_pinning_description">This keeps it in view until you unpin. Touch and hold Back and Overview at the same time to unpin.</string>
     <string name="screen_pinning_description_accessible">This keeps it in view until you unpin. Touch and hold Overview to unpin.</string>
@@ -442,6 +444,10 @@ Also, you're connected to a VPN (\"%3$s\"). Your VPN service provider can monito
     <string name="volume_stream_muted_dnd">%s silent — Total silence</string>
     <string name="volume_stream_limited_dnd">%s — Priority only</string>
     <string name="volume_stream_vibrate_dnd">%s vibrate — Priority only</string>
+    <string name="zen_alarm_warning_indef">"You won't hear your next alarm %1$s unless you turn this off before then"</string>
+    <string name="zen_alarm_warning">"You won't hear your next alarm %1$s"</string>
+    <string name="alarm_template">at %1$s</string>
+    <string name="alarm_template_far">on %1$s</string>
     <string name="accessibility_ime_switch_button">Switch input method button.</string>
     <string name="quick_settings_tiles_default_2">wifi,bt,inversion,cell1,cell2,airplane,rotation,flashlight,location,cast,hotspot</string>
     <string name="quick_settings_tiles_default_3">wifi,bt,inversion,cell1,cell2,cell3,airplane,rotation,flashlight,location,cast,hotspot</string>
