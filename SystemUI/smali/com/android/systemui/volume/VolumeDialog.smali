@@ -4673,15 +4673,11 @@
 .end method
 
 .method private updateVolumeRowSliderTintH(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;Z)V
-    .locals 4
+    .locals 2
     .param p1, "row"    # Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
     .param p2, "isActive"    # Z
 
     .prologue
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
     .line 747
     if-eqz p2, :cond_0
 
@@ -4695,26 +4691,10 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v3}, Landroid/widget/SeekBar;->setFocusable(Z)V
-
-    .line 750
-    # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->slider:Landroid/widget/SeekBar;
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1900(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/widget/SeekBar;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v3}, Landroid/widget/SeekBar;->setFocusableInTouchMode(Z)V
-
-    .line 751
-    # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->slider:Landroid/widget/SeekBar;
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1900(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/widget/SeekBar;
-
-    move-result-object v1
-
     invoke-virtual {v1}, Landroid/widget/SeekBar;->requestFocus()Z
 
-    .line 756
-    :goto_0
+    .line 751
+    :cond_0
     if-eqz p2, :cond_1
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->slider:Landroid/widget/SeekBar;
@@ -4732,7 +4712,7 @@
 
     .line 749
     .local v0, "tint":Landroid/content/res/ColorStateList;
-    :goto_1
+    :goto_0
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->cachedSliderTint:Landroid/content/res/ColorStateList;
     invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$3500(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/content/res/ColorStateList;
 
@@ -4740,35 +4720,16 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 762
-    :goto_2
+    .line 757
+    :goto_1
     return-void
 
     .line 747
     .end local v0    # "tint":Landroid/content/res/ColorStateList;
-    :cond_0
-    # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->slider:Landroid/widget/SeekBar;
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1900(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/widget/SeekBar;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v2}, Landroid/widget/SeekBar;->setFocusableInTouchMode(Z)V
-
-    .line 754
-    # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->slider:Landroid/widget/SeekBar;
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1900(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Landroid/widget/SeekBar;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v2}, Landroid/widget/SeekBar;->setFocusable(Z)V
-
-    goto :goto_0
-
-    .line 756
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog;->mInactiveSliderTint:Landroid/content/res/ColorStateList;
 
-    goto :goto_1
+    goto :goto_0
 
     .line 759
     .restart local v0    # "tint":Landroid/content/res/ColorStateList;
@@ -4792,7 +4753,7 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/SeekBar;->setThumbTintList(Landroid/content/res/ColorStateList;)V
 
-    goto :goto_2
+    goto :goto_1
 .end method
 
 .method private updateWindowWidthH()V
