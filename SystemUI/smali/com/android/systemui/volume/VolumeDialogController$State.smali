@@ -80,6 +80,49 @@
     return-void
 .end method
 
+.method private static sep(Ljava/lang/StringBuilder;I)V
+    .locals 2
+    .param p0, "sb"    # Ljava/lang/StringBuilder;
+    .param p1, "indent"    # I
+
+    .prologue
+    .line 992
+    if-lez p1, :cond_0
+
+    .line 993
+    const/16 v1, 0xa
+
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 994
+    const/4 v0, 0x0
+
+    .local v0, "i":I
+    :goto_0
+    if-ge v0, p1, :cond_1
+
+    .line 995
+    const/16 v1, 0x20
+
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 994
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 998
+    .end local v0    # "i":I
+    :cond_0
+    const/16 v1, 0x2c
+
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 1000
+    :cond_1
+    return-void
+.end method
+
 
 # virtual methods
 .method public copy()Lcom/android/systemui/volume/VolumeDialogController$State;
@@ -192,18 +235,39 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 6
+    .locals 1
 
     .prologue
     .line 963
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/android/systemui/volume/VolumeDialogController$State;->toString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public toString(I)Ljava/lang/String;
+    .locals 6
+    .param p1, "indent"    # I
+
+    .prologue
+    .line 967
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v4, "{"
 
     invoke-direct {v1, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 964
+    .line 968
     .local v1, "sb":Ljava/lang/StringBuilder;
+    if-lez p1, :cond_0
+
+    invoke-static {v1, p1}, Lcom/android/systemui/volume/VolumeDialogController$State;->sep(Ljava/lang/StringBuilder;I)V
+
+    .line 969
+    :cond_0
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -214,24 +278,23 @@
 
     move-result v4
 
-    if-ge v0, v4, :cond_2
+    if-ge v0, v4, :cond_3
 
-    .line 965
-    if-lez v0, :cond_0
+    .line 970
+    if-lez v0, :cond_1
 
-    const/16 v4, 0x2c
+    .line 971
+    invoke-static {v1, p1}, Lcom/android/systemui/volume/VolumeDialogController$State;->sep(Ljava/lang/StringBuilder;I)V
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 966
-    :cond_0
+    .line 973
+    :cond_1
     iget-object v4, p0, Lcom/android/systemui/volume/VolumeDialogController$State;->states:Landroid/util/SparseArray;
 
     invoke-virtual {v4, v0}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v3
 
-    .line 967
+    .line 974
     .local v3, "stream":I
     iget-object v4, p0, Lcom/android/systemui/volume/VolumeDialogController$State;->states:Landroid/util/SparseArray;
 
@@ -241,7 +304,7 @@
 
     check-cast v2, Lcom/android/systemui/volume/VolumeDialogController$StreamState;
 
-    .line 968
+    .line 975
     .local v2, "ss":Lcom/android/systemui/volume/VolumeDialogController$StreamState;
     invoke-static {v3}, Landroid/media/AudioSystem;->streamToString(I)Ljava/lang/String;
 
@@ -263,9 +326,9 @@
 
     move-result-object v4
 
-    const-string v5, "["
+    const/16 v5, 0x5b
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -285,26 +348,34 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 970
+    move-result-object v4
+
+    const/16 v5, 0x5d
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 978
     iget-boolean v4, v2, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->muted:Z
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_2
 
     const-string v4, " [MUTED]"
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 964
-    :cond_1
+    .line 969
+    :cond_2
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 972
+    .line 980
     .end local v2    # "ss":Lcom/android/systemui/volume/VolumeDialogController$StreamState;
     .end local v3    # "stream":I
-    :cond_2
-    const-string v4, ",ringerModeExternal:"
+    :cond_3
+    invoke-static {v1, p1}, Lcom/android/systemui/volume/VolumeDialogController$State;->sep(Ljava/lang/StringBuilder;I)V
+
+    const-string v4, "ringerModeExternal:"
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -314,8 +385,10 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 973
-    const-string v4, ",ringerModeInternal:"
+    .line 981
+    invoke-static {v1, p1}, Lcom/android/systemui/volume/VolumeDialogController$State;->sep(Ljava/lang/StringBuilder;I)V
+
+    const-string v4, "ringerModeInternal:"
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -325,8 +398,10 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 974
-    const-string v4, ",zenMode:"
+    .line 982
+    invoke-static {v1, p1}, Lcom/android/systemui/volume/VolumeDialogController$State;->sep(Ljava/lang/StringBuilder;I)V
+
+    const-string v4, "zenMode:"
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -336,8 +411,10 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 975
-    const-string v4, ",effectsSuppressor:"
+    .line 983
+    invoke-static {v1, p1}, Lcom/android/systemui/volume/VolumeDialogController$State;->sep(Ljava/lang/StringBuilder;I)V
+
+    const-string v4, "effectsSuppressor:"
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -347,8 +424,10 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 976
-    const-string v4, ",effectsSuppressorName:"
+    .line 984
+    invoke-static {v1, p1}, Lcom/android/systemui/volume/VolumeDialogController$State;->sep(Ljava/lang/StringBuilder;I)V
+
+    const-string v4, "effectsSuppressorName:"
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -358,8 +437,10 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 977
-    const-string v4, ",zenModeConfig:"
+    .line 985
+    invoke-static {v1, p1}, Lcom/android/systemui/volume/VolumeDialogController$State;->sep(Ljava/lang/StringBuilder;I)V
+
+    const-string v4, "zenModeConfig:"
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -369,8 +450,10 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 978
-    const-string v4, ",activeStream:"
+    .line 986
+    invoke-static {v1, p1}, Lcom/android/systemui/volume/VolumeDialogController$State;->sep(Ljava/lang/StringBuilder;I)V
+
+    const-string v4, "activeStream:"
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -380,7 +463,13 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 979
+    .line 987
+    if-lez p1, :cond_4
+
+    invoke-static {v1, p1}, Lcom/android/systemui/volume/VolumeDialogController$State;->sep(Ljava/lang/StringBuilder;I)V
+
+    .line 988
+    :cond_4
     const/16 v4, 0x7d
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;

@@ -24,6 +24,9 @@
 .method public abstract getManualRule()Landroid/service/notification/ZenModeConfig$ZenRule;
 .end method
 
+.method public abstract getNextAlarm()J
+.end method
+
 .method public abstract getZen()I
 .end method
 

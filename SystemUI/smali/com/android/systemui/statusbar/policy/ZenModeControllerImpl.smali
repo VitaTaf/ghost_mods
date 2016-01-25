@@ -813,6 +813,36 @@
     goto :goto_0
 .end method
 
+.method public getNextAlarm()J
+    .locals 4
+
+    .prologue
+    .line 135
+    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->mAlarmManager:Landroid/app/AlarmManager;
+
+    iget v2, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->mUserId:I
+
+    invoke-virtual {v1, v2}, Landroid/app/AlarmManager;->getNextAlarmClock(I)Landroid/app/AlarmManager$AlarmClockInfo;
+
+    move-result-object v0
+
+    .line 136
+    .local v0, "info":Landroid/app/AlarmManager$AlarmClockInfo;
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Landroid/app/AlarmManager$AlarmClockInfo;->getTriggerTime()J
+
+    move-result-wide v2
+
+    :goto_0
+    return-wide v2
+
+    :cond_0
+    const-wide/16 v2, 0x0
+
+    goto :goto_0
+.end method
+
 .method public getZen()I
     .locals 1
 
