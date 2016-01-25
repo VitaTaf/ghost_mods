@@ -62,6 +62,8 @@
 
 .field private mPreviewInflater:Lcom/android/systemui/statusbar/policy/PreviewInflater;
 
+.field private mPrewarmSent:Z
+
 .field private final mTrustDrawable:Lcom/android/systemui/statusbar/phone/TrustDrawable;
 
 .field private mUnlockMethodCache:Lcom/android/systemui/statusbar/phone/UnlockMethodCache;
@@ -178,17 +180,17 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mAccessibilityDelegate:Landroid/view/View$AccessibilityDelegate;
 
-    .line 498
-    new-instance v0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$3;
-
-    invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$3;-><init>(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
-
-    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mDevicePolicyReceiver:Landroid/content/BroadcastReceiver;
-
-    .line 509
+    .line 547
     new-instance v0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$4;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$4;-><init>(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
+
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mDevicePolicyReceiver:Landroid/content/BroadcastReceiver;
+
+    .line 558
+    new-instance v0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;-><init>(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mUpdateMonitorCallback:Lcom/android/keyguard/KeyguardUpdateMonitorCallback;
 
@@ -258,7 +260,18 @@
     return-object v0
 .end method
 
-.method static synthetic access$400(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
+.method static synthetic access$400(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Landroid/content/Context;
+    .locals 1
+    .param p0, "x0"    # Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
+
+    .prologue
+    .line 68
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$500(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
@@ -269,7 +282,7 @@
     return-void
 .end method
 
-.method static synthetic access$500(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
+.method static synthetic access$600(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
@@ -1198,13 +1211,13 @@
 .end method
 
 .method public launchCamera()V
-    .locals 4
+    .locals 5
 
     .prologue
-    .line 339
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mFlashlightController:Lcom/android/systemui/statusbar/policy/FlashlightController;
+    const/4 v4, 0x0
 
-    invoke-virtual {v2}, Lcom/android/systemui/statusbar/policy/FlashlightController;->killFlashlight()V
+    .line 376
+    iput-boolean v4, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPrewarmSent:Z
 
     .line 340
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->getCameraIntent()Landroid/content/Intent;
@@ -1233,12 +1246,12 @@
 
     if-nez v1, :cond_0
 
-    .line 344
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mContext:Landroid/content/Context;
+    .line 381
+    new-instance v2, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$2;
 
-    sget-object v3, Landroid/os/UserHandle;->CURRENT:Landroid/os/UserHandle;
+    invoke-direct {v2, p0, v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$2;-><init>(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;Landroid/content/Intent;)V
 
-    invoke-virtual {v2, v0, v3}, Landroid/content/Context;->startActivityAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
+    invoke-static {v2}, Landroid/os/AsyncTask;->execute(Ljava/lang/Runnable;)V
 
     .line 351
     :goto_0
@@ -1248,9 +1261,7 @@
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mActivityStarter:Lcom/android/systemui/statusbar/phone/ActivityStarter;
 
-    const/4 v3, 0x0
-
-    invoke-interface {v2, v0, v3}, Lcom/android/systemui/statusbar/phone/ActivityStarter;->startActivity(Landroid/content/Intent;Z)V
+    invoke-interface {v2, v0, v4}, Lcom/android/systemui/statusbar/phone/ActivityStarter;->startActivity(Landroid/content/Intent;Z)V
 
     goto :goto_0
 .end method
@@ -1274,10 +1285,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 356
-    new-instance v1, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$2;
+    .line 398
+    new-instance v1, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$3;
 
-    invoke-direct {v1, p0, v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$2;-><init>(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;Landroid/telecom/TelecomManager;)V
+    invoke-direct {v1, p0, v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$3;-><init>(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;Landroid/telecom/TelecomManager;)V
 
     invoke-static {v1}, Landroid/os/AsyncTask;->execute(Ljava/lang/Runnable;)V
 
@@ -1294,6 +1305,68 @@
     const/4 v3, 0x0
 
     invoke-interface {v1, v2, v3}, Lcom/android/systemui/statusbar/phone/ActivityStarter;->startActivity(Landroid/content/Intent;Z)V
+
+    goto :goto_0
+.end method
+
+.method public maybeCooldownCamera()V
+    .locals 5
+
+    .prologue
+    .line 359
+    iget-boolean v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPrewarmSent:Z
+
+    if-nez v3, :cond_1
+
+    .line 371
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 362
+    :cond_1
+    const/4 v3, 0x0
+
+    iput-boolean v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPrewarmSent:Z
+
+    .line 363
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->getCameraIntent()Landroid/content/Intent;
+
+    move-result-object v0
+
+    .line 364
+    .local v0, "intent":Landroid/content/Intent;
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mContext:Landroid/content/Context;
+
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+
+    invoke-virtual {v4}, Lcom/android/internal/widget/LockPatternUtils;->getCurrentUser()I
+
+    move-result v4
+
+    invoke-static {v3, v0, v4}, Lcom/android/systemui/statusbar/policy/PreviewInflater;->getTargetPackage(Landroid/content/Context;Landroid/content/Intent;I)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 366
+    .local v2, "targetPackage":Ljava/lang/String;
+    if-eqz v2, :cond_0
+
+    .line 367
+    new-instance v1, Landroid/content/Intent;
+
+    const-string v3, "android.media.action.STILL_IMAGE_CAMERA_COOLDOWN"
+
+    invoke-direct {v1, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    .line 368
+    .local v1, "prewarm":Landroid/content/Intent;
+    invoke-virtual {v1, v2}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 369
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v3, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
     goto :goto_0
 .end method
@@ -1706,6 +1779,65 @@
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/TrustDrawable;->stop()V
 
     goto :goto_0
+.end method
+
+.method public prewarmCamera()V
+    .locals 5
+
+    .prologue
+    .line 346
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mFlashlightController:Lcom/android/systemui/statusbar/policy/FlashlightController;
+
+    invoke-virtual {v3}, Lcom/android/systemui/statusbar/policy/FlashlightController;->killFlashlight()V
+
+    .line 347
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->getCameraIntent()Landroid/content/Intent;
+
+    move-result-object v0
+
+    .line 348
+    .local v0, "intent":Landroid/content/Intent;
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mContext:Landroid/content/Context;
+
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+
+    invoke-virtual {v4}, Lcom/android/internal/widget/LockPatternUtils;->getCurrentUser()I
+
+    move-result v4
+
+    invoke-static {v3, v0, v4}, Lcom/android/systemui/statusbar/policy/PreviewInflater;->getTargetPackage(Landroid/content/Context;Landroid/content/Intent;I)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 350
+    .local v2, "targetPackage":Ljava/lang/String;
+    if-eqz v2, :cond_0
+
+    .line 351
+    new-instance v1, Landroid/content/Intent;
+
+    const-string v3, "android.media.action.STILL_IMAGE_CAMERA_PREWARM"
+
+    invoke-direct {v1, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    .line 352
+    .local v1, "prewarm":Landroid/content/Intent;
+    invoke-virtual {v1, v2}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 353
+    const/4 v3, 0x1
+
+    iput-boolean v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPrewarmSent:Z
+
+    .line 354
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v3, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
+
+    .line 356
+    .end local v1    # "prewarm":Landroid/content/Intent;
+    :cond_0
+    return-void
 .end method
 
 .method public setAccessibilityController(Lcom/android/systemui/statusbar/policy/AccessibilityController;)V

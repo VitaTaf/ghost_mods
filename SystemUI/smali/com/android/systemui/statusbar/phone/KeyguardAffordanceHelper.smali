@@ -146,16 +146,16 @@
     return-object p1
 .end method
 
-.method static synthetic access$100(Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;Z)V
+.method static synthetic access$102(Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;Z)Z
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;
     .param p1, "x1"    # Z
 
     .prologue
     .line 37
-    invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->setSwipingInProgress(Z)V
+    iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mSwipingInProgress:Z
 
-    return-void
+    return p1
 .end method
 
 .method static synthetic access$200(Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;)Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$Callback;
@@ -225,17 +225,17 @@
     .locals 1
 
     .prologue
-    .line 278
+    .line 275
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mSwipeAnimator:Landroid/animation/Animator;
 
     if-eqz v0, :cond_0
 
-    .line 279
+    .line 276
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mSwipeAnimator:Landroid/animation/Animator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
-    .line 281
+    .line 278
     :cond_0
     return-void
 .end method
@@ -246,31 +246,31 @@
     .param p2, "forceSnapBack"    # Z
 
     .prologue
-    .line 173
+    .line 177
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mSwipingInProgress:Z
 
     if-eqz v0, :cond_0
 
-    .line 174
+    .line 178
     invoke-direct {p0, p2}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->flingWithCurrentVelocity(Z)V
 
-    .line 176
+    .line 180
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-eqz v0, :cond_1
 
-    .line 177
+    .line 181
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0}, Landroid/view/VelocityTracker;->recycle()V
 
-    .line 178
+    .line 182
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 180
+    .line 184
     :cond_1
     return-void
 .end method
@@ -287,12 +287,12 @@
 
     const/4 v2, 0x0
 
-    .line 306
+    .line 303
     iget v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mTranslation:F
 
     cmpg-float v5, v5, v2
 
-    if-gez v5, :cond_1
+    if-gez v5, :cond_2
 
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mCallback:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$Callback;
 
@@ -302,14 +302,14 @@
 
     neg-float v1, v5
 
-    .line 307
+    .line 304
     .local v1, "target":F
     :goto_0
     if-eqz p2, :cond_0
 
     move v1, v2
 
-    .line 309
+    .line 306
     :cond_0
     const/4 v5, 0x2
 
@@ -325,7 +325,7 @@
 
     move-result-object v0
 
-    .line 310
+    .line 307
     .local v0, "animator":Landroid/animation/ValueAnimator;
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mFlingAnimationUtils:Lcom/android/systemui/statusbar/FlingAnimationUtils;
 
@@ -333,22 +333,22 @@
 
     invoke-virtual {v5, v0, v6, v1, p1}, Lcom/android/systemui/statusbar/FlingAnimationUtils;->apply(Landroid/animation/Animator;FFF)V
 
-    .line 311
+    .line 308
     new-instance v5, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$6;
 
     invoke-direct {v5, p0}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$6;-><init>(Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;)V
 
     invoke-virtual {v0, v5}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 317
+    .line 314
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mFlingEndListener:Landroid/animation/AnimatorListenerAdapter;
 
     invoke-virtual {v0, v5}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 318
-    if-nez p2, :cond_3
+    .line 315
+    if-nez p2, :cond_4
 
-    .line 319
+    .line 316
     const/high16 v5, 0x3ec00000    # 0.375f
 
     mul-float/2addr v5, p1
@@ -357,14 +357,14 @@
 
     invoke-direct {p0, v5, v6}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->startFinishingCircleAnimation(FLjava/lang/Runnable;)V
 
-    .line 320
+    .line 317
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mCallback:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$Callback;
 
     iget v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mTranslation:F
 
     cmpg-float v2, v6, v2
 
-    if-gez v2, :cond_2
+    if-gez v2, :cond_3
 
     move v2, v3
 
@@ -373,20 +373,29 @@
 
     invoke-interface {v5, v2, v3, p1}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$Callback;->onAnimationToSideStarted(ZFF)V
 
-    .line 324
+    .line 321
     :goto_2
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 325
+    .line 322
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mSwipeAnimator:Landroid/animation/Animator;
 
+    .line 323
+    if-eqz p2, :cond_1
+
+    .line 324
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mCallback:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$Callback;
+
+    invoke-interface {v2}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$Callback;->onSwipingAborted()V
+
     .line 326
+    :cond_1
     return-void
 
-    .line 306
+    .line 303
     .end local v0    # "animator":Landroid/animation/ValueAnimator;
     .end local v1    # "target":F
-    :cond_1
+    :cond_2
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mCallback:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$Callback;
 
     invoke-interface {v5}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$Callback;->getPageWidth()F
@@ -397,14 +406,14 @@
 
     .restart local v0    # "animator":Landroid/animation/ValueAnimator;
     .restart local v1    # "target":F
-    :cond_2
+    :cond_3
     move v2, v4
 
-    .line 320
+    .line 317
     goto :goto_1
 
-    .line 322
-    :cond_3
+    .line 319
+    :cond_4
     invoke-virtual {p0, v3}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->reset(Z)V
 
     goto :goto_2
@@ -421,18 +430,18 @@
 
     const/4 v4, 0x0
 
-    .line 284
+    .line 281
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->getCurrentVelocity()F
 
     move-result v1
 
-    .line 287
+    .line 284
     .local v1, "vel":F
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->isBelowFalsingThreshold()Z
 
     move-result v0
 
-    .line 290
+    .line 287
     .local v0, "snapBack":Z
     iget v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mTranslation:F
 
@@ -444,7 +453,7 @@
 
     move v2, v3
 
-    .line 291
+    .line 288
     .local v2, "velIsInWrongDirection":Z
     :goto_0
     invoke-static {v1}, Ljava/lang/Math;->abs(F)F
@@ -466,14 +475,14 @@
     :goto_1
     or-int/2addr v0, v6
 
-    .line 292
+    .line 289
     xor-int v6, v0, v2
 
     if-eqz v6, :cond_0
 
     move v1, v5
 
-    .line 293
+    .line 290
     :cond_0
     if-nez v0, :cond_1
 
@@ -485,21 +494,21 @@
     :cond_2
     invoke-direct {p0, v1, v4}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->fling(FZ)V
 
-    .line 294
+    .line 291
     return-void
 
     .end local v2    # "velIsInWrongDirection":Z
     :cond_3
     move v2, v4
 
-    .line 290
+    .line 287
     goto :goto_0
 
     .restart local v2    # "velIsInWrongDirection":Z
     :cond_4
     move v6, v4
 
-    .line 291
+    .line 288
     goto :goto_1
 .end method
 
@@ -509,12 +518,12 @@
     .param p2, "radius"    # I
 
     .prologue
-    .line 262
+    .line 259
     if-eqz p1, :cond_0
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mRightIcon:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-    .line 263
+    .line 260
     .local v1, "targetView":Lcom/android/systemui/statusbar/KeyguardAffordanceView;
     :goto_0
     const/4 v2, 0x2
@@ -539,7 +548,7 @@
 
     move-result-object v0
 
-    .line 264
+    .line 261
     .local v0, "animator":Landroid/animation/ValueAnimator;
     new-instance v2, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$5;
 
@@ -547,10 +556,10 @@
 
     invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 274
+    .line 271
     return-object v0
 
-    .line 262
+    .line 259
     .end local v0    # "animator":Landroid/animation/ValueAnimator;
     .end local v1    # "targetView":Lcom/android/systemui/statusbar/KeyguardAffordanceView;
     :cond_0
@@ -597,14 +606,14 @@
     .locals 2
 
     .prologue
-    .line 301
+    .line 298
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mCallback:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$Callback;
 
     invoke-interface {v1}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$Callback;->getAffordanceFalsingFactor()F
 
     move-result v0
 
-    .line 302
+    .line 299
     .local v0, "factor":F
     iget v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mMinTranslationAmount:I
 
@@ -901,7 +910,7 @@
     .locals 3
 
     .prologue
-    .line 297
+    .line 294
     iget v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mTranslation:F
 
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
@@ -941,7 +950,7 @@
     .locals 1
 
     .prologue
-    .line 194
+    .line 191
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mLeftIcon:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->getVisibility()I
@@ -965,7 +974,7 @@
     .locals 1
 
     .prologue
-    .line 190
+    .line 187
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mRightIcon:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->getVisibility()I
@@ -983,27 +992,6 @@
     const/4 v0, 0x0
 
     goto :goto_0
-.end method
-
-.method private setSwipingInProgress(Z)V
-    .locals 1
-    .param p1, "inProgress"    # Z
-
-    .prologue
-    .line 183
-    iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mSwipingInProgress:Z
-
-    .line 184
-    if-eqz p1, :cond_0
-
-    .line 185
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mCallback:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$Callback;
-
-    invoke-interface {v0}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$Callback;->onSwipingStarted()V
-
-    .line 187
-    :cond_0
-    return-void
 .end method
 
 .method private setTranslation(FZZ)V
@@ -1305,26 +1293,26 @@
     .param p2, "onFinishedListener"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 207
+    .line 204
     if-eqz p1, :cond_0
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mRightIcon:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-    .line 208
+    .line 205
     .local v1, "targetView":Lcom/android/systemui/statusbar/KeyguardAffordanceView;
     :goto_0
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->showArrow(Z)V
 
-    .line 209
+    .line 206
     iget v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mHintGrowAmount:I
 
     invoke-direct {p0, p1, v2}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->getAnimatorToRadius(ZI)Landroid/animation/ValueAnimator;
 
     move-result-object v0
 
-    .line 210
+    .line 207
     .local v0, "animator":Landroid/animation/ValueAnimator;
     new-instance v2, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$3;
 
@@ -1332,26 +1320,26 @@
 
     invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 229
+    .line 226
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mAppearInterpolator:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 230
+    .line 227
     const-wide/16 v2, 0xc8
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 231
+    .line 228
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 232
+    .line 229
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mSwipeAnimator:Landroid/animation/Animator;
 
-    .line 233
+    .line 230
     return-void
 
-    .line 207
+    .line 204
     .end local v0    # "animator":Landroid/animation/ValueAnimator;
     .end local v1    # "targetView":Lcom/android/systemui/statusbar/KeyguardAffordanceView;
     :cond_0
@@ -1366,12 +1354,12 @@
     .param p2, "onFinishedListener"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 239
+    .line 236
     if-eqz p1, :cond_0
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mRightIcon:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-    .line 240
+    .line 237
     .local v1, "targetView":Lcom/android/systemui/statusbar/KeyguardAffordanceView;
     :goto_0
     const/4 v2, 0x0
@@ -1380,7 +1368,7 @@
 
     move-result-object v0
 
-    .line 241
+    .line 238
     .local v0, "animator":Landroid/animation/ValueAnimator;
     new-instance v2, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$4;
 
@@ -1388,31 +1376,31 @@
 
     invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 254
+    .line 251
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mDisappearInterpolator:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 255
+    .line 252
     const-wide/16 v2, 0x15e
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 256
+    .line 253
     const-wide/16 v2, 0x1f4
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
 
-    .line 257
+    .line 254
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 258
+    .line 255
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mSwipeAnimator:Landroid/animation/Animator;
 
-    .line 259
+    .line 256
     return-void
 
-    .line 239
+    .line 236
     .end local v0    # "animator":Landroid/animation/ValueAnimator;
     .end local v1    # "targetView":Lcom/android/systemui/statusbar/KeyguardAffordanceView;
     :cond_0
@@ -1628,224 +1616,254 @@
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 8
+    .locals 9
     .param p1, "event"    # Landroid/view/MotionEvent;
 
     .prologue
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
-    const/4 v4, 0x0
+    const/4 v7, 0x0
 
     .line 120
-    iget-boolean v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mMotionCancelled:Z
-
-    if-eqz v6, :cond_0
-
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_0
+    .line 121
+    .local v0, "action":I
+    iget-boolean v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mMotionCancelled:Z
 
-    .line 169
+    if-eqz v5, :cond_0
+
+    if-eqz v0, :cond_0
+
+    if-eq v0, v6, :cond_0
+
+    const/4 v5, 0x3
+
+    if-eq v0, v5, :cond_0
+
+    .line 173
     :goto_0
-    return v4
+    return v7
 
-    .line 123
+    .line 126
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
-    move-result v3
-
-    .line 124
-    .local v3, "y":F
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v2
-
-    .line 126
-    .local v2, "x":F
-    const/4 v0, 0x0
+    move-result v4
 
     .line 127
-    .local v0, "isUp":Z
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
+    .local v4, "y":F
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
-    move-result v6
+    move-result v3
 
-    packed-switch v6, :pswitch_data_0
+    .line 129
+    .local v3, "x":F
+    const/4 v1, 0x0
+
+    .line 130
+    .local v1, "isUp":Z
+    packed-switch v0, :pswitch_data_0
 
     :cond_1
     :goto_1
     :pswitch_0
-    move v4, v5
+    move v7, v6
 
-    .line 169
+    .line 173
     goto :goto_0
 
-    .line 129
-    :pswitch_1
-    iget-boolean v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mSwipingInProgress:Z
-
-    if-eqz v6, :cond_2
-
-    .line 130
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->cancelAnimation()V
-
     .line 132
-    :cond_2
-    iput v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mInitialTouchY:F
+    :pswitch_1
+    iget-boolean v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mSwipingInProgress:Z
+
+    if-eqz v5, :cond_2
 
     .line 133
-    iput v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mInitialTouchX:F
-
-    .line 134
-    iget v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mTranslation:F
-
-    iput v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mTranslationOnDown:F
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->cancelAnimation()V
 
     .line 135
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->initVelocityTracker()V
+    :cond_2
+    iput v4, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mInitialTouchY:F
 
     .line 136
-    invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->trackMovement(Landroid/view/MotionEvent;)V
+    iput v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mInitialTouchX:F
 
     .line 137
-    iput-boolean v4, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mMotionPerformedByUser:Z
+    iget v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mTranslation:F
+
+    iput v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mTranslationOnDown:F
 
     .line 138
-    iput-boolean v4, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mMotionCancelled:Z
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->initVelocityTracker()V
 
-    goto :goto_1
-
-    .line 141
-    :pswitch_2
-    iput-boolean v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mMotionCancelled:Z
-
-    .line 142
-    invoke-direct {p0, p1, v5}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->endMotion(Landroid/view/MotionEvent;Z)V
-
-    goto :goto_1
-
-    .line 145
-    :pswitch_3
-    iget v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mInitialTouchX:F
-
-    sub-float v1, v2, v6
-
-    .line 146
-    .local v1, "w":F
+    .line 139
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->trackMovement(Landroid/view/MotionEvent;)V
 
-    .line 147
+    .line 140
+    iput-boolean v7, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mMotionPerformedByUser:Z
+
+    .line 141
+    iput-boolean v7, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mMotionCancelled:Z
+
+    goto :goto_1
+
+    .line 144
+    :pswitch_2
+    iput-boolean v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mMotionCancelled:Z
+
+    .line 145
+    invoke-direct {p0, p1, v6}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->endMotion(Landroid/view/MotionEvent;Z)V
+
+    goto :goto_1
+
+    .line 148
+    :pswitch_3
+    iget v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mInitialTouchX:F
+
+    sub-float v2, v3, v5
+
+    .line 149
+    .local v2, "w":F
+    invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->trackMovement(Landroid/view/MotionEvent;)V
+
+    .line 150
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->leftSwipePossible()Z
 
-    move-result v6
+    move-result v5
 
-    if-eqz v6, :cond_3
+    if-eqz v5, :cond_3
 
-    iget v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mTouchSlop:I
+    iget v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mTouchSlop:I
 
-    int-to-float v6, v6
+    int-to-float v5, v5
 
-    cmpl-float v6, v1, v6
+    cmpl-float v5, v2, v5
 
-    if-gtz v6, :cond_4
+    if-gtz v5, :cond_4
 
     :cond_3
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->rightSwipePossible()Z
 
-    move-result v6
+    move-result v5
 
-    if-eqz v6, :cond_5
+    if-eqz v5, :cond_5
 
-    iget v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mTouchSlop:I
+    iget v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mTouchSlop:I
 
-    neg-int v6, v6
+    neg-int v5, v5
 
-    int-to-float v6, v6
+    int-to-float v5, v5
 
-    cmpg-float v6, v1, v6
+    cmpg-float v5, v2, v5
 
-    if-gez v6, :cond_5
+    if-gez v5, :cond_5
 
     :cond_4
-    invoke-static {v1}, Ljava/lang/Math;->abs(F)F
+    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
 
-    move-result v6
+    move-result v5
 
-    iget v7, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mInitialTouchY:F
+    iget v8, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mInitialTouchY:F
 
-    sub-float v7, v3, v7
+    sub-float v8, v4, v8
 
-    invoke-static {v7}, Ljava/lang/Math;->abs(F)F
+    invoke-static {v8}, Ljava/lang/Math;->abs(F)F
 
-    move-result v7
+    move-result v8
 
-    cmpl-float v6, v6, v7
+    cmpl-float v5, v5, v8
 
-    if-lez v6, :cond_5
+    if-lez v5, :cond_5
 
-    iget-boolean v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mSwipingInProgress:Z
+    iget-boolean v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mSwipingInProgress:Z
 
-    if-nez v6, :cond_5
-
-    .line 151
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->cancelAnimation()V
-
-    .line 152
-    iput v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mInitialTouchY:F
-
-    .line 153
-    iput v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mInitialTouchX:F
+    if-nez v5, :cond_5
 
     .line 154
-    iget v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mTranslation:F
-
-    iput v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mTranslationOnDown:F
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->cancelAnimation()V
 
     .line 155
-    invoke-direct {p0, v5}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->setSwipingInProgress(Z)V
+    iput v4, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mInitialTouchY:F
+
+    .line 156
+    iput v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mInitialTouchX:F
 
     .line 157
-    :cond_5
-    iget-boolean v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mSwipingInProgress:Z
+    iget v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mTranslation:F
 
-    if-eqz v6, :cond_1
+    iput v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mTranslationOnDown:F
 
     .line 158
-    iget v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mTranslationOnDown:F
+    iput-boolean v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mSwipingInProgress:Z
 
-    add-float/2addr v6, v2
+    .line 159
+    iget-object v8, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mCallback:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$Callback;
 
-    iget v7, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mInitialTouchX:F
+    iget v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mTouchSlop:I
 
-    sub-float/2addr v6, v7
+    neg-int v5, v5
 
-    invoke-direct {p0, v6, v4, v4}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->setTranslation(FZZ)V
+    int-to-float v5, v5
+
+    cmpg-float v5, v2, v5
+
+    if-gez v5, :cond_6
+
+    move v5, v6
+
+    :goto_2
+    invoke-interface {v8, v5}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$Callback;->onSwipingStarted(Z)V
+
+    .line 161
+    :cond_5
+    iget-boolean v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mSwipingInProgress:Z
+
+    if-eqz v5, :cond_1
+
+    .line 162
+    iget v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mTranslationOnDown:F
+
+    add-float/2addr v5, v3
+
+    iget v8, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mInitialTouchX:F
+
+    sub-float/2addr v5, v8
+
+    invoke-direct {p0, v5, v7, v7}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->setTranslation(FZZ)V
 
     goto :goto_1
 
-    .line 163
-    .end local v1    # "w":F
-    :pswitch_4
-    const/4 v0, 0x1
+    :cond_6
+    move v5, v7
 
-    .line 165
+    .line 159
+    goto :goto_2
+
+    .line 167
+    .end local v2    # "w":F
+    :pswitch_4
+    const/4 v1, 0x1
+
+    .line 169
     :pswitch_5
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->trackMovement(Landroid/view/MotionEvent;)V
 
-    .line 166
-    if-nez v0, :cond_6
+    .line 170
+    if-nez v1, :cond_7
 
-    move v4, v5
+    move v7, v6
 
-    :cond_6
-    invoke-direct {p0, p1, v4}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->endMotion(Landroid/view/MotionEvent;Z)V
+    :cond_7
+    invoke-direct {p0, p1, v7}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->endMotion(Landroid/view/MotionEvent;Z)V
 
-    goto :goto_1
+    goto/16 :goto_1
 
-    .line 127
+    .line 130
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -1862,6 +1880,8 @@
     .param p1, "animate"    # Z
 
     .prologue
+    const/4 v1, 0x1
+
     .line 450
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mSwipeAnimator:Landroid/animation/Animator;
 
@@ -1876,16 +1896,28 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v1, 0x1
-
     invoke-direct {p0, v0, v1, p1}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->setTranslation(FZZ)V
 
     .line 454
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->setSwipingInProgress(Z)V
+    iput-boolean v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mMotionCancelled:Z
 
     .line 455
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mSwipingInProgress:Z
+
+    if-eqz v0, :cond_1
+
+    .line 456
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mCallback:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$Callback;
+
+    invoke-interface {v0}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$Callback;->onSwipingAborted()V
+
+    .line 458
+    :cond_1
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mSwipingInProgress:Z
+
+    .line 459
     return-void
 .end method
 
@@ -1895,9 +1927,9 @@
     .param p2, "onFinishedListener"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 203
+    .line 200
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->startHintAnimationPhase1(ZLjava/lang/Runnable;)V
 
-    .line 204
+    .line 201
     return-void
 .end method

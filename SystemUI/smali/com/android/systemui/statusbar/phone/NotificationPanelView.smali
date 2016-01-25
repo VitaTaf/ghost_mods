@@ -7185,25 +7185,73 @@
     return-void
 .end method
 
-.method public onSwipingStarted()V
-    .locals 2
+.method public onSwipingAborted()V
+    .locals 1
+
+    .prologue
+    .line 1776
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardBottomArea:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->maybeCooldownCamera()V
+
+    .line 1777
+    return-void
+.end method
+
+.method public onSwipingStarted(Z)V
+    .locals 3
+    .param p1, "isRightwardMotion"    # Z
 
     .prologue
     const/4 v1, 0x1
 
     .line 1764
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mSecureCameraLaunchManager:Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager;
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->getLayoutDirection()I
 
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager;->onSwipingStarted()V
+    move-result v2
 
-    .line 1765
-    invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->requestDisallowInterceptTouchEvent(Z)V
+    if-ne v2, v1, :cond_1
+
+    move v0, p1
 
     .line 1766
-    iput-boolean v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mOnlyAffordanceInThisMotion:Z
+    .local v0, "start":Z
+    :goto_0
+    if-nez v0, :cond_0
 
     .line 1767
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mSecureCameraLaunchManager:Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager;
+
+    invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager;->onSwipingStarted()V
+
+    .line 1768
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardBottomArea:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
+
+    invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->prewarmCamera()V
+
+    .line 1770
+    :cond_0
+    invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->requestDisallowInterceptTouchEvent(Z)V
+
+    .line 1771
+    iput-boolean v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mOnlyAffordanceInThisMotion:Z
+
+    .line 1772
     return-void
+
+    .line 1764
+    .end local v0    # "start":Z
+    :cond_1
+    if-nez p1, :cond_2
+
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z

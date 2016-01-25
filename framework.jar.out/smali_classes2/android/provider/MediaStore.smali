@@ -23,6 +23,10 @@
 
 .field public static final ACTION_MTP_SESSION_END:Ljava/lang/String; = "android.provider.action.MTP_SESSION_END"
 
+.field public static final ACTION_STILL_IMAGE_CAMERA_COOLDOWN:Ljava/lang/String; = "android.media.action.STILL_IMAGE_CAMERA_COOLDOWN"
+
+.field public static final ACTION_STILL_IMAGE_CAMERA_PREWARM:Ljava/lang/String; = "android.media.action.STILL_IMAGE_CAMERA_PREWARM"
+
 .field public static final ACTION_VIDEO_CAPTURE:Ljava/lang/String; = "android.media.action.VIDEO_CAPTURE"
 
 .field public static final AUTHORITY:Ljava/lang/String; = "media"

@@ -51,8 +51,8 @@
 
     const/4 v1, 0x0
 
-    # invokes: Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->setSwipingInProgress(Z)V
-    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->access$100(Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;Z)V
+    # setter for: Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mSwipingInProgress:Z
+    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->access$102(Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;Z)Z
 
     .line 73
     return-void

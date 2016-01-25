@@ -1,11 +1,14 @@
 .class Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$3;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "KeyguardBottomAreaView.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->launchPhone()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,37 +20,37 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
+.field final synthetic val$tm:Landroid/telecom/TelecomManager;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
+.method constructor <init>(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;Landroid/telecom/TelecomManager;)V
     .locals 0
 
     .prologue
-    .line 498
+    .line 398
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$3;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    iput-object p2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$3;->val$tm:Landroid/telecom/TelecomManager;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+.method public run()V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 500
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$3;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
+    .line 401
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$3;->val$tm:Landroid/telecom/TelecomManager;
 
-    new-instance v1, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$3$1;
+    const/4 v1, 0x0
 
-    invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$3$1;-><init>(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$3;)V
+    invoke-virtual {v0, v1}, Landroid/telecom/TelecomManager;->showInCallScreen(Z)V
 
-    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->post(Ljava/lang/Runnable;)Z
-
-    .line 506
+    .line 402
     return-void
 .end method

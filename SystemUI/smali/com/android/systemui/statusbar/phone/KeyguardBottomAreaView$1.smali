@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 124
+    .line 127
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$1;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-direct {p0}, Landroid/view/View$AccessibilityDelegate;-><init>()V
@@ -39,13 +39,13 @@
     .param p2, "info"    # Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .prologue
-    .line 127
+    .line 130
     invoke-super {p0, p1, p2}, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 128
+    .line 131
     const/4 v0, 0x0
 
-    .line 129
+    .line 132
     .local v0, "label":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$1;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
@@ -56,7 +56,7 @@
 
     if-ne p1, v1, :cond_1
 
-    .line 130
+    .line 133
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$1;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->getResources()Landroid/content/res/Resources;
@@ -69,7 +69,7 @@
 
     move-result-object v0
 
-    .line 136
+    .line 139
     :cond_0
     :goto_0
     new-instance v1, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
@@ -80,10 +80,10 @@
 
     invoke-virtual {p2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
 
-    .line 137
+    .line 140
     return-void
 
-    .line 131
+    .line 134
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$1;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
@@ -94,7 +94,7 @@
 
     if-ne p1, v1, :cond_2
 
-    .line 132
+    .line 135
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$1;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->getResources()Landroid/content/res/Resources;
@@ -109,7 +109,7 @@
 
     goto :goto_0
 
-    .line 133
+    .line 136
     :cond_2
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$1;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
@@ -120,7 +120,7 @@
 
     if-ne p1, v1, :cond_0
 
-    .line 134
+    .line 137
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$1;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->getResources()Landroid/content/res/Resources;
@@ -145,12 +145,12 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 141
+    .line 144
     const/16 v1, 0x10
 
     if-ne p2, v1, :cond_2
 
-    .line 142
+    .line 145
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$1;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mLockIcon:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
@@ -160,7 +160,7 @@
 
     if-ne p1, v1, :cond_0
 
-    .line 143
+    .line 146
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$1;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPhoneStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -172,11 +172,11 @@
 
     invoke-virtual {v1, v2, v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->animateCollapsePanels(IZ)V
 
-    .line 154
+    .line 157
     :goto_0
     return v0
 
-    .line 146
+    .line 149
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$1;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
@@ -187,14 +187,14 @@
 
     if-ne p1, v1, :cond_1
 
-    .line 147
+    .line 150
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$1;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->launchCamera()V
 
     goto :goto_0
 
-    .line 149
+    .line 152
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$1;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
@@ -205,14 +205,14 @@
 
     if-ne p1, v1, :cond_2
 
-    .line 150
+    .line 153
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$1;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->launchPhone()V
 
     goto :goto_0
 
-    .line 154
+    .line 157
     :cond_2
     invoke-super {p0, p1, p2, p3}, Landroid/view/View$AccessibilityDelegate;->performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
 

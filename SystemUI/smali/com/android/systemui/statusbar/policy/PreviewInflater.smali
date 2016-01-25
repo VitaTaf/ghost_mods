@@ -38,6 +38,67 @@
     return-void
 .end method
 
+.method public static getTargetPackage(Landroid/content/Context;Landroid/content/Intent;I)Ljava/lang/String;
+    .locals 5
+    .param p0, "ctx"    # Landroid/content/Context;
+    .param p1, "intent"    # Landroid/content/Intent;
+    .param p2, "currentUserId"    # I
+
+    .prologue
+    const/4 v3, 0x0
+
+    .line 120
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v1
+
+    .line 121
+    .local v1, "packageManager":Landroid/content/pm/PackageManager;
+    const/high16 v4, 0x10000
+
+    invoke-virtual {v1, p1, v4, p2}, Landroid/content/pm/PackageManager;->queryIntentActivitiesAsUser(Landroid/content/Intent;II)Ljava/util/List;
+
+    move-result-object v0
+
+    .line 123
+    .local v0, "appList":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    if-nez v4, :cond_1
+
+    .line 131
+    :cond_0
+    :goto_0
+    return-object v3
+
+    .line 126
+    :cond_1
+    const v4, 0x10080
+
+    invoke-virtual {v1, p1, v4, p2}, Landroid/content/pm/PackageManager;->resolveActivityAsUser(Landroid/content/Intent;II)Landroid/content/pm/ResolveInfo;
+
+    move-result-object v2
+
+    .line 128
+    .local v2, "resolved":Landroid/content/pm/ResolveInfo;
+    if-eqz v2, :cond_0
+
+    invoke-static {v2, v0}, Lcom/android/systemui/statusbar/policy/PreviewInflater;->wouldLaunchResolverActivity(Landroid/content/pm/ResolveInfo;Ljava/util/List;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_0
+
+    .line 131
+    iget-object v3, v2, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+
+    iget-object v3, v3, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+
+    goto :goto_0
+.end method
+
 .method private getWidgetInfo(Landroid/content/Intent;)Lcom/android/systemui/statusbar/policy/PreviewInflater$WidgetInfo;
     .locals 8
     .param p1, "intent"    # Landroid/content/Intent;
@@ -297,53 +358,26 @@
 .end method
 
 .method public static wouldLaunchResolverActivity(Landroid/content/Context;Landroid/content/Intent;I)Z
-    .locals 4
+    .locals 1
     .param p0, "ctx"    # Landroid/content/Context;
     .param p1, "intent"    # Landroid/content/Intent;
     .param p2, "currentUserId"    # I
 
     .prologue
-    .line 118
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v1
-
-    .line 119
-    .local v1, "packageManager":Landroid/content/pm/PackageManager;
-    const/high16 v3, 0x10000
-
-    invoke-virtual {v1, p1, v3, p2}, Landroid/content/pm/PackageManager;->queryIntentActivitiesAsUser(Landroid/content/Intent;II)Ljava/util/List;
+    .line 111
+    invoke-static {p0, p1, p2}, Lcom/android/systemui/statusbar/policy/PreviewInflater;->getTargetPackage(Landroid/content/Context;Landroid/content/Intent;I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 121
-    .local v0, "appList":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    if-nez v0, :cond_0
 
-    move-result v3
+    const/4 v0, 0x1
 
-    if-nez v3, :cond_0
-
-    .line 122
-    const/4 v3, 0x0
-
-    .line 126
     :goto_0
-    return v3
+    return v0
 
-    .line 124
     :cond_0
-    const v3, 0x10080
-
-    invoke-virtual {v1, p1, v3, p2}, Landroid/content/pm/PackageManager;->resolveActivityAsUser(Landroid/content/Intent;II)Landroid/content/pm/ResolveInfo;
-
-    move-result-object v2
-
-    .line 126
-    .local v2, "resolved":Landroid/content/pm/ResolveInfo;
-    invoke-static {v2, v0}, Lcom/android/systemui/statusbar/policy/PreviewInflater;->wouldLaunchResolverActivity(Landroid/content/pm/ResolveInfo;Ljava/util/List;)Z
-
-    move-result v3
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method
