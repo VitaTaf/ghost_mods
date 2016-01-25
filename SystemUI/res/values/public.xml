@@ -2652,7 +2652,6 @@
     <public type="dimen" name="keyguard_min_swipe_amount" id="0x7f0d007e" />
     <public type="dimen" name="keyguard_affordance_min_background_radius" id="0x7f0d007f" />
     <public type="dimen" name="hint_grow_amount_sideways" id="0x7f0d0080" />
-    <public type="dimen" name="hint_chevron_circle_padding" id="0x7f0d0081" />
     <public type="dimen" name="keyguard_affordance_touch_target_size" id="0x7f0d0082" />
     <public type="dimen" name="header_notifications_collide_distance" id="0x7f0d0085" />
     <public type="dimen" name="unlock_move_distance" id="0x7f0d0086" />

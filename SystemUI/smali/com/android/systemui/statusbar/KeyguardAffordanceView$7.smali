@@ -1,11 +1,14 @@
 .class Lcom/android/systemui/statusbar/KeyguardAffordanceView$7;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 .source "KeyguardAffordanceView.java"
+
+# interfaces
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setCircleRadius(FZZ)V
+    value = Lcom/android/systemui/statusbar/KeyguardAffordanceView;->getAnimatorToRadius(F)Landroid/animation/ValueAnimator;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -23,33 +26,48 @@
     .locals 0
 
     .prologue
-    .line 316
+    .line 300
     iput-object p1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$7;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
+.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
+    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 319
-    iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$7;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
+    .line 303
+    iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$7;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-    # getter for: Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewView:Landroid/view/View;
-    invoke-static {v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->access$500(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)Landroid/view/View;
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    const/4 v1, 0x4
+    check-cast v0, Ljava/lang/Float;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
 
-    .line 320
+    move-result v0
+
+    # setter for: Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleRadius:F
+    invoke-static {v1, v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->access$502(Lcom/android/systemui/statusbar/KeyguardAffordanceView;F)F
+
+    .line 304
+    iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$7;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
+
+    # invokes: Lcom/android/systemui/statusbar/KeyguardAffordanceView;->updateIconColor()V
+    invoke-static {v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->access$600(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
+
+    .line 305
+    iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$7;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->invalidate()V
+
+    .line 306
     return-void
 .end method

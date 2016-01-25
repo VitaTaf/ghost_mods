@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/KeyguardAffordanceView;->getAnimatorToRadius(F)Landroid/animation/ValueAnimator;
+    value = Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setImageScale(FZJLandroid/view/animation/Interpolator;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 332
+    .line 340
     iput-object p1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$8;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 335
+    .line 343
     iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$8;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -54,20 +54,14 @@
 
     move-result v0
 
-    # setter for: Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleRadius:F
-    invoke-static {v1, v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->access$602(Lcom/android/systemui/statusbar/KeyguardAffordanceView;F)F
+    # setter for: Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mImageScale:F
+    invoke-static {v1, v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->access$702(Lcom/android/systemui/statusbar/KeyguardAffordanceView;F)F
 
-    .line 336
-    iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$8;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
-
-    # invokes: Lcom/android/systemui/statusbar/KeyguardAffordanceView;->updateIconColor()V
-    invoke-static {v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->access$700(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
-
-    .line 337
+    .line 344
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$8;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->invalidate()V
 
-    .line 338
+    .line 345
     return-void
 .end method

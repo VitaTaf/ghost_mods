@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/KeyguardAffordanceView;->finishAnimation(FLjava/lang/Runnable;)V
+    value = Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setCircleRadius(FZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,18 +17,14 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-.field final synthetic val$mAnimationEndRunnable:Ljava/lang/Runnable;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;Ljava/lang/Runnable;)V
+.method constructor <init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
     .locals 0
 
     .prologue
-    .line 224
+    .line 284
     iput-object p1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$6;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
-
-    iput-object p2, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$6;->val$mAnimationEndRunnable:Ljava/lang/Runnable;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
@@ -38,15 +34,22 @@
 
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
+    .locals 2
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 227
-    iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$6;->val$mAnimationEndRunnable:Ljava/lang/Runnable;
+    .line 287
+    iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$6;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+    # getter for: Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewView:Landroid/view/View;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->access$400(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)Landroid/view/View;
 
-    .line 228
+    move-result-object v0
+
+    const/4 v1, 0x4
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 288
     return-void
 .end method

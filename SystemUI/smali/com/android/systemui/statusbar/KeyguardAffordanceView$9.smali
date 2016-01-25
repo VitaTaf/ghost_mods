@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setImageScale(FZJLandroid/view/animation/Interpolator;)V
+    value = Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setImageAlpha(FZJLandroid/view/animation/Interpolator;Ljava/lang/Runnable;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,14 +20,18 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
+.field final synthetic val$background:Landroid/graphics/drawable/Drawable;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
+.method constructor <init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
     .prologue
-    .line 372
+    .line 390
     iput-object p1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$9;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
+
+    iput-object p2, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$9;->val$background:Landroid/graphics/drawable/Drawable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,27 +45,37 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 375
-    iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$9;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
-
+    .line 393
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Ljava/lang/Float;
+    check-cast v1, Ljava/lang/Integer;
 
-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    # setter for: Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mImageScale:F
-    invoke-static {v1, v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->access$802(Lcom/android/systemui/statusbar/KeyguardAffordanceView;F)F
+    .line 394
+    .local v0, "alpha":I
+    iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$9;->val$background:Landroid/graphics/drawable/Drawable;
 
-    .line 376
-    iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$9;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
+    if-eqz v1, :cond_0
 
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->invalidate()V
+    iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$9;->val$background:Landroid/graphics/drawable/Drawable;
 
-    .line 377
+    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
+
+    .line 395
+    :cond_0
+    iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$9;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
+
+    invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setImageAlpha(I)V
+
+    .line 396
     return-void
 .end method

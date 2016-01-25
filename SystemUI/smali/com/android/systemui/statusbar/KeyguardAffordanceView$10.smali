@@ -1,14 +1,11 @@
 .class Lcom/android/systemui/statusbar/KeyguardAffordanceView$10;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "KeyguardAffordanceView.java"
-
-# interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setImageAlpha(FZJLandroid/view/animation/Interpolator;Ljava/lang/Runnable;)V
+    value = Lcom/android/systemui/statusbar/KeyguardAffordanceView;->getEndListener(Ljava/lang/Runnable;)Landroid/animation/Animator$AnimatorListener;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,64 +15,60 @@
 
 
 # instance fields
+.field mCancelled:Z
+
 .field final synthetic this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-.field final synthetic val$background:Landroid/graphics/drawable/Drawable;
+.field final synthetic val$runnable:Ljava/lang/Runnable;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;Landroid/graphics/drawable/Drawable;)V
+.method constructor <init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;Ljava/lang/Runnable;)V
     .locals 0
 
     .prologue
-    .line 422
+    .line 419
     iput-object p1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$10;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-    iput-object p2, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$10;->val$background:Landroid/graphics/drawable/Drawable;
+    iput-object p2, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$10;->val$runnable:Ljava/lang/Runnable;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 2
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
+.method public onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 1
+    .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 425
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+    .line 423
+    const/4 v0, 0x1
 
-    move-result-object v1
+    iput-boolean v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$10;->mCancelled:Z
 
-    check-cast v1, Ljava/lang/Integer;
+    .line 424
+    return-void
+.end method
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
+    .param p1, "animation"    # Landroid/animation/Animator;
 
-    move-result v0
-
-    .line 426
-    .local v0, "alpha":I
-    iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$10;->val$background:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$10;->val$background:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
-
-    .line 427
-    :cond_0
-    iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$10;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
-
-    invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setImageAlpha(I)V
-
+    .prologue
     .line 428
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$10;->mCancelled:Z
+
+    if-nez v0, :cond_0
+
+    .line 429
+    iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$10;->val$runnable:Ljava/lang/Runnable;
+
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+
+    .line 431
+    :cond_0
     return-void
 .end method

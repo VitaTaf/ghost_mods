@@ -10,14 +10,6 @@
 
 .field private final mAppearInterpolator:Landroid/view/animation/Interpolator;
 
-.field private mArrowAlpha:F
-
-.field private mArrowAnimator:Landroid/animation/ValueAnimator;
-
-.field private final mArrowDrawable:Landroid/graphics/drawable/Drawable;
-
-.field private mArrowEndListener:Landroid/animation/AnimatorListenerAdapter;
-
 .field private mCenterX:I
 
 .field private mCenterY:I
@@ -46,13 +38,9 @@
 
 .field private final mFlingAnimationUtils:Lcom/android/systemui/statusbar/FlingAnimationUtils;
 
-.field private final mHintChevronPadding:I
-
 .field private mImageScale:F
 
 .field private final mInverseColor:I
-
-.field private mIsLeft:Z
 
 .field private mMaxCircleSize:F
 
@@ -77,12 +65,12 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 110
+    .line 100
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 111
+    .line 101
     return-void
 .end method
 
@@ -92,12 +80,12 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 114
+    .line 104
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 115
+    .line 105
     return-void
 .end method
 
@@ -108,110 +96,96 @@
     .param p3, "defStyleAttr"    # I
 
     .prologue
-    .line 118
+    .line 108
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, p3, v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    .line 119
+    .line 109
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
-    .locals 4
+    .locals 3
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "attrs"    # Landroid/util/AttributeSet;
     .param p3, "defStyleAttr"    # I
     .param p4, "defStyleRes"    # I
 
     .prologue
-    const/4 v3, 0x0
-
     const/4 v2, -0x1
 
-    .line 123
+    .line 113
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    .line 69
+    .line 66
     const/4 v0, 0x2
 
     new-array v0, v0, [I
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mTempPoint:[I
 
-    .line 73
-    const/4 v0, 0x0
-
-    iput v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mArrowAlpha:F
-
-    .line 78
+    .line 74
     new-instance v0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView$1;-><init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mClipEndListener:Landroid/animation/AnimatorListenerAdapter;
 
-    .line 84
+    .line 80
     new-instance v0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$2;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView$2;-><init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleEndListener:Landroid/animation/AnimatorListenerAdapter;
 
-    .line 90
+    .line 86
     new-instance v0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$3;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView$3;-><init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mScaleEndListener:Landroid/animation/AnimatorListenerAdapter;
 
-    .line 96
+    .line 92
     new-instance v0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$4;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView$4;-><init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mAlphaEndListener:Landroid/animation/AnimatorListenerAdapter;
 
-    .line 102
-    new-instance v0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$5;
-
-    invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView$5;-><init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
-
-    iput-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mArrowEndListener:Landroid/animation/AnimatorListenerAdapter;
-
-    .line 124
+    .line 114
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCirclePaint:Landroid/graphics/Paint;
 
-    .line 125
+    .line 115
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCirclePaint:Landroid/graphics/Paint;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 126
+    .line 116
     iput v2, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleColor:I
 
-    .line 127
+    .line 117
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCirclePaint:Landroid/graphics/Paint;
 
     iget v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleColor:I
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 129
+    .line 119
     iput v2, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mNormalColor:I
 
-    .line 130
+    .line 120
     const/high16 v0, -0x1000000
 
     iput v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mInverseColor:I
 
-    .line 131
+    .line 121
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -226,22 +200,7 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mMinBackgroundRadius:I
 
-    .line 133
-    iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x7f0d0081
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v0
-
-    iput v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mHintChevronPadding:I
-
-    .line 135
+    .line 123
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mContext:Landroid/content/Context;
 
     const v1, 0x10c000e
@@ -252,7 +211,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mAppearInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 137
+    .line 125
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mContext:Landroid/content/Context;
 
     const v1, 0x10c000f
@@ -263,14 +222,14 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mDisappearInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 139
+    .line 127
     new-instance v0, Landroid/animation/ArgbEvaluator;
 
     invoke-direct {v0}, Landroid/animation/ArgbEvaluator;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mColorInterpolator:Landroid/animation/ArgbEvaluator;
 
-    .line 140
+    .line 128
     new-instance v0, Lcom/android/systemui/statusbar/FlingAnimationUtils;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mContext:Landroid/content/Context;
@@ -281,33 +240,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mFlingAnimationUtils:Lcom/android/systemui/statusbar/FlingAnimationUtils;
 
-    .line 141
-    const v0, 0x7f02002b
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mArrowDrawable:Landroid/graphics/drawable/Drawable;
-
-    .line 142
-    iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mArrowDrawable:Landroid/graphics/drawable/Drawable;
-
-    iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mArrowDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
-
-    move-result v1
-
-    iget-object v2, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mArrowDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
-
-    move-result v2
-
-    invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-
-    .line 144
+    .line 129
     return-void
 .end method
 
@@ -359,19 +292,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$402(Lcom/android/systemui/statusbar/KeyguardAffordanceView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
-    .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/statusbar/KeyguardAffordanceView;
-    .param p1, "x1"    # Landroid/animation/ValueAnimator;
-
-    .prologue
-    .line 42
-    iput-object p1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mArrowAnimator:Landroid/animation/ValueAnimator;
-
-    return-object p1
-.end method
-
-.method static synthetic access$500(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)Landroid/view/View;
+.method static synthetic access$400(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)Landroid/view/View;
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
@@ -382,7 +303,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$602(Lcom/android/systemui/statusbar/KeyguardAffordanceView;F)F
+.method static synthetic access$502(Lcom/android/systemui/statusbar/KeyguardAffordanceView;F)F
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/statusbar/KeyguardAffordanceView;
     .param p1, "x1"    # F
@@ -394,7 +315,7 @@
     return p1
 .end method
 
-.method static synthetic access$700(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
+.method static synthetic access$600(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
@@ -405,7 +326,7 @@
     return-void
 .end method
 
-.method static synthetic access$802(Lcom/android/systemui/statusbar/KeyguardAffordanceView;F)F
+.method static synthetic access$702(Lcom/android/systemui/statusbar/KeyguardAffordanceView;F)F
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/statusbar/KeyguardAffordanceView;
     .param p1, "x1"    # F
@@ -417,135 +338,19 @@
     return p1
 .end method
 
-.method static synthetic access$902(Lcom/android/systemui/statusbar/KeyguardAffordanceView;F)F
-    .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/statusbar/KeyguardAffordanceView;
-    .param p1, "x1"    # F
-
-    .prologue
-    .line 42
-    iput p1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mArrowAlpha:F
-
-    return p1
-.end method
-
 .method private cancelAnimator(Landroid/animation/Animator;)V
     .locals 0
     .param p1, "animator"    # Landroid/animation/Animator;
 
     .prologue
-    .line 345
+    .line 313
     if-eqz p1, :cond_0
 
-    .line 346
+    .line 314
     invoke-virtual {p1}, Landroid/animation/Animator;->cancel()V
 
-    .line 348
+    .line 316
     :cond_0
-    return-void
-.end method
-
-.method private drawArrow(Landroid/graphics/Canvas;)V
-    .locals 3
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
-
-    .prologue
-    .line 172
-    iget v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mArrowAlpha:F
-
-    const/4 v1, 0x0
-
-    cmpl-float v0, v0, v1
-
-    if-lez v0, :cond_1
-
-    .line 173
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
-
-    .line 174
-    iget v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCenterX:I
-
-    int-to-float v0, v0
-
-    iget v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCenterY:I
-
-    int-to-float v1, v1
-
-    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
-
-    .line 175
-    iget-boolean v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mIsLeft:Z
-
-    if-eqz v0, :cond_0
-
-    .line 176
-    const/high16 v0, -0x40800000    # -1.0f
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->scale(FF)V
-
-    .line 178
-    :cond_0
-    iget v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleRadius:F
-
-    neg-float v0, v0
-
-    iget v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mHintChevronPadding:I
-
-    int-to-float v1, v1
-
-    sub-float/2addr v0, v1
-
-    iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mArrowDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
-
-    move-result v1
-
-    div-int/lit8 v1, v1, 0x2
-
-    int-to-float v1, v1
-
-    sub-float/2addr v0, v1
-
-    iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mArrowDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
-
-    move-result v1
-
-    neg-int v1, v1
-
-    div-int/lit8 v1, v1, 0x2
-
-    int-to-float v1, v1
-
-    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
-
-    .line 181
-    iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mArrowDrawable:Landroid/graphics/drawable/Drawable;
-
-    iget v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mArrowAlpha:F
-
-    const/high16 v2, 0x437f0000    # 255.0f
-
-    mul-float/2addr v1, v2
-
-    float-to-int v1, v1
-
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
-
-    .line 182
-    iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mArrowDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    .line 183
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
-
-    .line 185
-    :cond_1
     return-void
 .end method
 
@@ -554,7 +359,7 @@
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 196
+    .line 164
     iget v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleRadius:F
 
     const/4 v1, 0x0
@@ -563,10 +368,10 @@
 
     if-lez v0, :cond_0
 
-    .line 197
+    .line 165
     invoke-direct {p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->updateCircleColor()V
 
-    .line 198
+    .line 166
     iget v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCenterX:I
 
     int-to-float v0, v0
@@ -581,7 +386,7 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 200
+    .line 168
     :cond_0
     return-void
 .end method
@@ -595,7 +400,7 @@
 
     const/4 v2, 0x0
 
-    .line 328
+    .line 296
     const/4 v3, 0x2
 
     new-array v3, v3, [F
@@ -610,16 +415,16 @@
 
     move-result-object v0
 
-    .line 329
+    .line 297
     .local v0, "animator":Landroid/animation/ValueAnimator;
     iput-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleAnimator:Landroid/animation/ValueAnimator;
 
-    .line 330
+    .line 298
     iget v3, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleRadius:F
 
     iput v3, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleStartValue:F
 
-    .line 331
+    .line 299
     const/4 v3, 0x0
 
     cmpl-float v3, p1, v3
@@ -629,25 +434,25 @@
     :goto_0
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleWillBeHidden:Z
 
-    .line 332
-    new-instance v1, Lcom/android/systemui/statusbar/KeyguardAffordanceView$8;
+    .line 300
+    new-instance v1, Lcom/android/systemui/statusbar/KeyguardAffordanceView$7;
 
-    invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView$8;-><init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
+    invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView$7;-><init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 340
+    .line 308
     iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleEndListener:Landroid/animation/AnimatorListenerAdapter;
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 341
+    .line 309
     return-object v0
 
     :cond_0
     move v1, v2
 
-    .line 331
+    .line 299
     goto :goto_0
 .end method
 
@@ -656,10 +461,10 @@
     .param p1, "runnable"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 451
-    new-instance v0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$11;
+    .line 419
+    new-instance v0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$10;
 
-    invoke-direct {v0, p0, p1}, Lcom/android/systemui/statusbar/KeyguardAffordanceView$11;-><init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;Ljava/lang/Runnable;)V
+    invoke-direct {v0, p0, p1}, Lcom/android/systemui/statusbar/KeyguardAffordanceView$10;-><init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;Ljava/lang/Runnable;)V
 
     return-object v0
 .end method
@@ -668,12 +473,12 @@
     .locals 8
 
     .prologue
-    .line 245
+    .line 213
     iget-object v3, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mTempPoint:[I
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->getLocationInWindow([I)V
 
-    .line 246
+    .line 214
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->getRootView()Landroid/view/View;
 
     move-result-object v3
@@ -684,7 +489,7 @@
 
     int-to-float v1, v3
 
-    .line 247
+    .line 215
     .local v1, "rootWidth":F
     iget-object v3, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mTempPoint:[I
 
@@ -698,7 +503,7 @@
 
     int-to-float v2, v3
 
-    .line 248
+    .line 216
     .local v2, "width":F
     sub-float v3, v1, v2
 
@@ -706,7 +511,7 @@
 
     move-result v2
 
-    .line 249
+    .line 217
     iget-object v3, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mTempPoint:[I
 
     const/4 v4, 0x1
@@ -719,7 +524,7 @@
 
     int-to-float v0, v3
 
-    .line 250
+    .line 218
     .local v0, "height":F
     float-to-double v4, v2
 
@@ -741,7 +546,7 @@
     .param p3, "noAnimation"    # Z
 
     .prologue
-    .line 269
+    .line 237
     iget-object v10, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v10, :cond_0
@@ -766,7 +571,7 @@
     :cond_1
     const/4 v7, 0x1
 
-    .line 271
+    .line 239
     .local v7, "radiusHidden":Z
     :goto_0
     const/4 v10, 0x0
@@ -777,7 +582,7 @@
 
     const/4 v6, 0x1
 
-    .line 272
+    .line 240
     .local v6, "nowHidden":Z
     :goto_1
     if-eq v7, v6, :cond_5
@@ -786,46 +591,46 @@
 
     const/4 v8, 0x1
 
-    .line 273
+    .line 241
     .local v8, "radiusNeedsAnimation":Z
     :goto_2
     if-nez v8, :cond_7
 
-    .line 274
+    .line 242
     iget-object v10, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleAnimator:Landroid/animation/ValueAnimator;
 
     if-nez v10, :cond_6
 
-    .line 275
+    .line 243
     iput p1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleRadius:F
 
-    .line 276
+    .line 244
     invoke-direct {p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->updateIconColor()V
 
-    .line 277
+    .line 245
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->invalidate()V
 
-    .line 278
+    .line 246
     if-eqz v6, :cond_2
 
-    .line 279
+    .line 247
     iget-object v10, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewView:Landroid/view/View;
 
     if-eqz v10, :cond_2
 
-    .line 280
+    .line 248
     iget-object v10, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewView:Landroid/view/View;
 
     const/4 v11, 0x4
 
     invoke-virtual {v10, v11}, Landroid/view/View;->setVisibility(I)V
 
-    .line 325
+    .line 293
     :cond_2
     :goto_3
     return-void
 
-    .line 269
+    .line 237
     .end local v6    # "nowHidden":Z
     .end local v7    # "radiusHidden":Z
     .end local v8    # "radiusNeedsAnimation":Z
@@ -834,35 +639,35 @@
 
     goto :goto_0
 
-    .line 271
+    .line 239
     .restart local v7    # "radiusHidden":Z
     :cond_4
     const/4 v6, 0x0
 
     goto :goto_1
 
-    .line 272
+    .line 240
     .restart local v6    # "nowHidden":Z
     :cond_5
     const/4 v8, 0x0
 
     goto :goto_2
 
-    .line 283
+    .line 251
     .restart local v8    # "radiusNeedsAnimation":Z
     :cond_6
     iget-boolean v10, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleWillBeHidden:Z
 
     if-nez v10, :cond_2
 
-    .line 286
+    .line 254
     iget v10, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mMinBackgroundRadius:I
 
     int-to-float v10, v10
 
     sub-float v1, p1, v10
 
-    .line 287
+    .line 255
     .local v1, "diff":F
     iget-object v10, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleAnimator:Landroid/animation/ValueAnimator;
 
@@ -870,7 +675,7 @@
 
     move-result-object v9
 
-    .line 288
+    .line 256
     .local v9, "values":[Landroid/animation/PropertyValuesHolder;
     const/4 v10, 0x0
 
@@ -894,7 +699,7 @@
 
     invoke-virtual {v10, v11}, Landroid/animation/PropertyValuesHolder;->setFloatValues([F)V
 
-    .line 289
+    .line 257
     iget-object v10, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleAnimator:Landroid/animation/ValueAnimator;
 
     iget-object v11, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleAnimator:Landroid/animation/ValueAnimator;
@@ -907,7 +712,7 @@
 
     goto :goto_3
 
-    .line 292
+    .line 260
     .end local v1    # "diff":F
     .end local v9    # "values":[Landroid/animation/PropertyValuesHolder;
     :cond_7
@@ -915,17 +720,17 @@
 
     invoke-direct {p0, v10}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->cancelAnimator(Landroid/animation/Animator;)V
 
-    .line 293
+    .line 261
     iget-object v10, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewClipper:Landroid/animation/Animator;
 
     invoke-direct {p0, v10}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->cancelAnimator(Landroid/animation/Animator;)V
 
-    .line 294
+    .line 262
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->getAnimatorToRadius(F)Landroid/animation/ValueAnimator;
 
     move-result-object v0
 
-    .line 295
+    .line 263
     .local v0, "animator":Landroid/animation/ValueAnimator;
     const/4 v10, 0x0
 
@@ -935,19 +740,19 @@
 
     iget-object v5, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mDisappearInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 298
+    .line 266
     .local v5, "interpolator":Landroid/view/animation/Interpolator;
     :goto_4
     invoke-virtual {v0, v5}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 299
+    .line 267
     const-wide/16 v2, 0xfa
 
-    .line 300
+    .line 268
     .local v2, "duration":J
     if-nez p2, :cond_8
 
-    .line 301
+    .line 269
     iget v10, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleRadius:F
 
     sub-float/2addr v10, p1
@@ -962,7 +767,7 @@
 
     div-float v4, v10, v11
 
-    .line 303
+    .line 271
     .local v4, "durationFactor":F
     const/high16 v10, 0x42a00000    # 80.0f
 
@@ -970,22 +775,22 @@
 
     float-to-long v2, v10
 
-    .line 304
+    .line 272
     const-wide/16 v10, 0xc8
 
     invoke-static {v2, v3, v10, v11}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v2
 
-    .line 306
+    .line 274
     .end local v4    # "durationFactor":F
     :cond_8
     invoke-virtual {v0, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 307
+    .line 275
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 308
+    .line 276
     iget-object v10, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewView:Landroid/view/View;
 
     if-eqz v10, :cond_2
@@ -998,14 +803,14 @@
 
     if-nez v10, :cond_2
 
-    .line 309
+    .line 277
     iget-object v10, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewView:Landroid/view/View;
 
     const/4 v11, 0x0
 
     invoke-virtual {v10, v11}, Landroid/view/View;->setVisibility(I)V
 
-    .line 310
+    .line 278
     iget-object v10, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewView:Landroid/view/View;
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->getLeft()I
@@ -1032,40 +837,40 @@
 
     iput-object v10, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewClipper:Landroid/animation/Animator;
 
-    .line 313
+    .line 281
     iget-object v10, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewClipper:Landroid/animation/Animator;
 
     invoke-virtual {v10, v5}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 314
+    .line 282
     iget-object v10, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewClipper:Landroid/animation/Animator;
 
     invoke-virtual {v10, v2, v3}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
-    .line 315
+    .line 283
     iget-object v10, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewClipper:Landroid/animation/Animator;
 
     iget-object v11, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mClipEndListener:Landroid/animation/AnimatorListenerAdapter;
 
     invoke-virtual {v10, v11}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 316
+    .line 284
     iget-object v10, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewClipper:Landroid/animation/Animator;
 
-    new-instance v11, Lcom/android/systemui/statusbar/KeyguardAffordanceView$7;
+    new-instance v11, Lcom/android/systemui/statusbar/KeyguardAffordanceView$6;
 
-    invoke-direct {v11, p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView$7;-><init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
+    invoke-direct {v11, p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView$6;-><init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
 
     invoke-virtual {v10, v11}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 322
+    .line 290
     iget-object v10, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewClipper:Landroid/animation/Animator;
 
     invoke-virtual {v10}, Landroid/animation/Animator;->start()V
 
     goto/16 :goto_3
 
-    .line 295
+    .line 263
     .end local v2    # "duration":J
     .end local v5    # "interpolator":Landroid/view/animation/Interpolator;
     :cond_9
@@ -1084,7 +889,7 @@
 
     const/high16 v5, 0x3f000000    # 0.5f
 
-    .line 203
+    .line 171
     iget v3, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleRadius:F
 
     iget v4, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mMinBackgroundRadius:I
@@ -1113,7 +918,7 @@
 
     add-float v2, v5, v3
 
-    .line 205
+    .line 173
     .local v2, "fraction":F
     iget-object v3, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewView:Landroid/view/View;
 
@@ -1127,7 +932,7 @@
 
     if-nez v3, :cond_0
 
-    .line 206
+    .line 174
     iget v3, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleRadius:F
 
     iget v4, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleStartRadius:F
@@ -1148,11 +953,11 @@
 
     sub-float v1, v7, v3
 
-    .line 208
+    .line 176
     .local v1, "finishingFraction":F
     mul-float/2addr v2, v1
 
-    .line 210
+    .line 178
     .end local v1    # "finishingFraction":F
     :cond_0
     iget v3, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleColor:I
@@ -1189,13 +994,13 @@
 
     move-result v0
 
-    .line 213
+    .line 181
     .local v0, "color":I
     iget-object v3, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCirclePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v3, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 214
+    .line 182
     return-void
 .end method
 
@@ -1203,7 +1008,7 @@
     .locals 6
 
     .prologue
-    .line 188
+    .line 156
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
@@ -1212,7 +1017,7 @@
 
     move-result-object v2
 
-    .line 189
+    .line 157
     .local v2, "drawable":Landroid/graphics/drawable/Drawable;
     iget v3, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleRadius:F
 
@@ -1222,7 +1027,7 @@
 
     div-float v0, v3, v4
 
-    .line 190
+    .line 158
     .local v0, "alpha":F
     const/high16 v3, 0x3f800000    # 1.0f
 
@@ -1230,7 +1035,7 @@
 
     move-result v0
 
-    .line 191
+    .line 159
     iget-object v3, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mColorInterpolator:Landroid/animation/ArgbEvaluator;
 
     iget v4, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mNormalColor:I
@@ -1255,13 +1060,13 @@
 
     move-result v1
 
-    .line 192
+    .line 160
     .local v1, "color":I
     sget-object v3, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
 
     invoke-virtual {v2, v1, v3}, Landroid/graphics/drawable/Drawable;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
 
-    .line 193
+    .line 161
     return-void
 .end method
 
@@ -1273,33 +1078,33 @@
     .param p2, "mAnimationEndRunnable"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 217
+    .line 185
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleAnimator:Landroid/animation/ValueAnimator;
 
     invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->cancelAnimator(Landroid/animation/Animator;)V
 
-    .line 218
+    .line 186
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewClipper:Landroid/animation/Animator;
 
     invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->cancelAnimator(Landroid/animation/Animator;)V
 
-    .line 219
+    .line 187
     iget v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleRadius:F
 
     iput v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleStartRadius:F
 
-    .line 220
+    .line 188
     invoke-direct {p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->getMaxCircleSize()F
 
     move-result v3
 
-    .line 221
+    .line 189
     .local v3, "maxCircleSize":F
     invoke-direct {p0, v3}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->getAnimatorToRadius(F)Landroid/animation/ValueAnimator;
 
     move-result-object v1
 
-    .line 222
+    .line 190
     .local v1, "animatorToRadius":Landroid/animation/ValueAnimator;
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mFlingAnimationUtils:Lcom/android/systemui/statusbar/FlingAnimationUtils;
 
@@ -1311,36 +1116,36 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/systemui/statusbar/FlingAnimationUtils;->applyDismissing(Landroid/animation/Animator;FFFF)V
 
-    .line 224
-    new-instance v0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$6;
+    .line 192
+    new-instance v0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$5;
 
-    invoke-direct {v0, p0, p2}, Lcom/android/systemui/statusbar/KeyguardAffordanceView$6;-><init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;Ljava/lang/Runnable;)V
+    invoke-direct {v0, p0, p2}, Lcom/android/systemui/statusbar/KeyguardAffordanceView$5;-><init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;Ljava/lang/Runnable;)V
 
     invoke-virtual {v1, v0}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 230
+    .line 198
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 231
+    .line 199
     const/4 v0, 0x0
 
     const/4 v2, 0x1
 
     invoke-virtual {p0, v0, v2}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setImageAlpha(FZ)V
 
-    .line 232
+    .line 200
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 233
+    .line 201
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewView:Landroid/view/View;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 234
+    .line 202
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewView:Landroid/view/View;
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->getLeft()I
@@ -1367,7 +1172,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewClipper:Landroid/animation/Animator;
 
-    .line 237
+    .line 205
     iget-object v4, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mFlingAnimationUtils:Lcom/android/systemui/statusbar/FlingAnimationUtils;
 
     iget-object v5, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewClipper:Landroid/animation/Animator;
@@ -1382,19 +1187,19 @@
 
     invoke-virtual/range {v4 .. v9}, Lcom/android/systemui/statusbar/FlingAnimationUtils;->applyDismissing(Landroid/animation/Animator;FFFF)V
 
-    .line 239
+    .line 207
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewClipper:Landroid/animation/Animator;
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mClipEndListener:Landroid/animation/AnimatorListenerAdapter;
 
     invoke-virtual {v0, v2}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 240
+    .line 208
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewClipper:Landroid/animation/Animator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
-    .line 242
+    .line 210
     :cond_0
     return-void
 .end method
@@ -1403,7 +1208,7 @@
     .locals 1
 
     .prologue
-    .line 468
+    .line 436
     iget v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleRadius:F
 
     return v0
@@ -1414,16 +1219,13 @@
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 156
+    .line 141
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->drawBackgroundCircle(Landroid/graphics/Canvas;)V
 
-    .line 157
-    invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->drawArrow(Landroid/graphics/Canvas;)V
-
-    .line 158
+    .line 142
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 159
+    .line 143
     iget v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mImageScale:F
 
     iget v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mImageScale:F
@@ -1446,13 +1248,13 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 160
+    .line 144
     invoke-super {p0, p1}, Landroid/widget/ImageView;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 161
+    .line 145
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 162
+    .line 146
     return-void
 .end method
 
@@ -1465,10 +1267,10 @@
     .param p5, "bottom"    # I
 
     .prologue
-    .line 148
+    .line 133
     invoke-super/range {p0 .. p5}, Landroid/widget/ImageView;->onLayout(ZIIII)V
 
-    .line 149
+    .line 134
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->getWidth()I
 
     move-result v0
@@ -1477,7 +1279,7 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCenterX:I
 
-    .line 150
+    .line 135
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->getHeight()I
 
     move-result v0
@@ -1486,14 +1288,14 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCenterY:I
 
-    .line 151
+    .line 136
     invoke-direct {p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->getMaxCircleSize()F
 
     move-result v0
 
     iput v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mMaxCircleSize:F
 
-    .line 152
+    .line 137
     return-void
 .end method
 
@@ -1501,19 +1303,19 @@
     .locals 1
 
     .prologue
-    .line 503
+    .line 441
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->isClickable()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 504
+    .line 442
     invoke-super {p0}, Landroid/widget/ImageView;->performClick()Z
 
     move-result v0
 
-    .line 506
+    .line 444
     :goto_0
     return v0
 
@@ -1529,12 +1331,12 @@
     .param p2, "slowAnimation"    # Z
 
     .prologue
-    .line 258
+    .line 226
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setCircleRadius(FZZ)V
 
-    .line 259
+    .line 227
     return-void
 .end method
 
@@ -1543,19 +1345,19 @@
     .param p1, "circleRadius"    # F
 
     .prologue
-    .line 262
+    .line 230
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleAnimator:Landroid/animation/ValueAnimator;
 
     invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->cancelAnimator(Landroid/animation/Animator;)V
 
-    .line 263
+    .line 231
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setCircleRadius(FZZ)V
 
-    .line 264
+    .line 232
     return-void
 .end method
 
@@ -1567,7 +1369,7 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 398
+    .line 366
     const-wide/16 v4, -0x1
 
     move-object v1, p0
@@ -1580,7 +1382,7 @@
 
     invoke-virtual/range {v1 .. v7}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setImageAlpha(FZJLandroid/view/animation/Interpolator;Ljava/lang/Runnable;)V
 
-    .line 399
+    .line 367
     return-void
 .end method
 
@@ -1595,27 +1397,27 @@
     .prologue
     const/high16 v8, 0x437f0000    # 255.0f
 
-    .line 412
+    .line 380
     iget-object v5, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     invoke-direct {p0, v5}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->cancelAnimator(Landroid/animation/Animator;)V
 
-    .line 413
+    .line 381
     mul-float v5, p1, v8
 
     float-to-int v4, v5
 
-    .line 414
+    .line 382
     .local v4, "endAlpha":I
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    .line 415
+    .line 383
     .local v1, "background":Landroid/graphics/drawable/Drawable;
     if-nez p2, :cond_1
 
-    .line 416
+    .line 384
     if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
@@ -1624,21 +1426,21 @@
 
     invoke-virtual {v5, v4}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 417
+    .line 385
     :cond_0
     invoke-virtual {p0, v4}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setImageAlpha(I)V
 
-    .line 448
+    .line 416
     :goto_0
     return-void
 
-    .line 419
+    .line 387
     :cond_1
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->getImageAlpha()I
 
     move-result v2
 
-    .line 420
+    .line 388
     .local v2, "currentAlpha":I
     const/4 v5, 0x2
 
@@ -1656,26 +1458,26 @@
 
     move-result-object v0
 
-    .line 421
+    .line 389
     .local v0, "animator":Landroid/animation/ValueAnimator;
     iput-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
-    .line 422
-    new-instance v5, Lcom/android/systemui/statusbar/KeyguardAffordanceView$10;
+    .line 390
+    new-instance v5, Lcom/android/systemui/statusbar/KeyguardAffordanceView$9;
 
-    invoke-direct {v5, p0, v1}, Lcom/android/systemui/statusbar/KeyguardAffordanceView$10;-><init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;Landroid/graphics/drawable/Drawable;)V
+    invoke-direct {v5, p0, v1}, Lcom/android/systemui/statusbar/KeyguardAffordanceView$9;-><init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;Landroid/graphics/drawable/Drawable;)V
 
     invoke-virtual {v0, v5}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 430
+    .line 398
     iget-object v5, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mAlphaEndListener:Landroid/animation/AnimatorListenerAdapter;
 
     invoke-virtual {v0, v5}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 431
+    .line 399
     if-nez p5, :cond_2
 
-    .line 432
+    .line 400
     const/4 v5, 0x0
 
     cmpl-float v5, p1, v5
@@ -1684,19 +1486,19 @@
 
     iget-object p5, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mDisappearInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 436
+    .line 404
     :cond_2
     :goto_1
     invoke-virtual {v0, p5}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 437
+    .line 405
     const-wide/16 v6, -0x1
 
     cmp-long v5, p3, v6
 
     if-nez v5, :cond_3
 
-    .line 438
+    .line 406
     sub-int v5, v2, v4
 
     invoke-static {v5}, Ljava/lang/Math;->abs(I)I
@@ -1707,7 +1509,7 @@
 
     div-float v3, v5, v8
 
-    .line 439
+    .line 407
     .local v3, "durationFactor":F
     const/high16 v5, 0x3f800000    # 1.0f
 
@@ -1715,35 +1517,35 @@
 
     move-result v3
 
-    .line 440
+    .line 408
     const/high16 v5, 0x43480000    # 200.0f
 
     mul-float/2addr v5, v3
 
     float-to-long p3, v5
 
-    .line 442
+    .line 410
     .end local v3    # "durationFactor":F
     :cond_3
     invoke-virtual {v0, p3, p4}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 443
+    .line 411
     if-eqz p6, :cond_4
 
-    .line 444
+    .line 412
     invoke-direct {p0, p6}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->getEndListener(Ljava/lang/Runnable;)Landroid/animation/Animator$AnimatorListener;
 
     move-result-object v5
 
     invoke-virtual {v0, v5}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 446
+    .line 414
     :cond_4
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_0
 
-    .line 432
+    .line 400
     :cond_5
     iget-object p5, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mAppearInterpolator:Landroid/view/animation/Interpolator;
 
@@ -1756,7 +1558,7 @@
     .param p2, "animate"    # Z
 
     .prologue
-    .line 351
+    .line 319
     const-wide/16 v4, -0x1
 
     const/4 v6, 0x0
@@ -1769,7 +1571,7 @@
 
     invoke-virtual/range {v1 .. v6}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setImageScale(FZJLandroid/view/animation/Interpolator;)V
 
-    .line 352
+    .line 320
     return-void
 .end method
 
@@ -1781,25 +1583,25 @@
     .param p5, "interpolator"    # Landroid/view/animation/Interpolator;
 
     .prologue
-    .line 365
+    .line 333
     iget-object v2, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mScaleAnimator:Landroid/animation/ValueAnimator;
 
     invoke-direct {p0, v2}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->cancelAnimator(Landroid/animation/Animator;)V
 
-    .line 366
+    .line 334
     if-nez p2, :cond_0
 
-    .line 367
+    .line 335
     iput p1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mImageScale:F
 
-    .line 368
+    .line 336
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->invalidate()V
 
-    .line 395
+    .line 363
     :goto_0
     return-void
 
-    .line 370
+    .line 338
     :cond_0
     const/4 v2, 0x2
 
@@ -1819,26 +1621,26 @@
 
     move-result-object v0
 
-    .line 371
+    .line 339
     .local v0, "animator":Landroid/animation/ValueAnimator;
     iput-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mScaleAnimator:Landroid/animation/ValueAnimator;
 
-    .line 372
-    new-instance v2, Lcom/android/systemui/statusbar/KeyguardAffordanceView$9;
+    .line 340
+    new-instance v2, Lcom/android/systemui/statusbar/KeyguardAffordanceView$8;
 
-    invoke-direct {v2, p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView$9;-><init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
+    invoke-direct {v2, p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView$8;-><init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
 
     invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 379
+    .line 347
     iget-object v2, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mScaleEndListener:Landroid/animation/AnimatorListenerAdapter;
 
     invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 380
+    .line 348
     if-nez p5, :cond_1
 
-    .line 381
+    .line 349
     const/4 v2, 0x0
 
     cmpl-float v2, p1, v2
@@ -1847,19 +1649,19 @@
 
     iget-object p5, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mDisappearInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 385
+    .line 353
     :cond_1
     :goto_1
     invoke-virtual {v0, p5}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 386
+    .line 354
     const-wide/16 v2, -0x1
 
     cmp-long v2, p3, v2
 
     if-nez v2, :cond_2
 
-    .line 387
+    .line 355
     iget v2, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mImageScale:F
 
     sub-float/2addr v2, p1
@@ -1872,7 +1674,7 @@
 
     div-float v1, v2, v3
 
-    .line 389
+    .line 357
     .local v1, "durationFactor":F
     const/high16 v2, 0x3f800000    # 1.0f
 
@@ -1880,40 +1682,28 @@
 
     move-result v1
 
-    .line 390
+    .line 358
     const/high16 v2, 0x43480000    # 200.0f
 
     mul-float/2addr v2, v1
 
     float-to-long p3, v2
 
-    .line 392
+    .line 360
     .end local v1    # "durationFactor":F
     :cond_2
     invoke-virtual {v0, p3, p4}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 393
+    .line 361
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_0
 
-    .line 381
+    .line 349
     :cond_3
     iget-object p5, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mAppearInterpolator:Landroid/view/animation/Interpolator;
 
     goto :goto_1
-.end method
-
-.method public setIsLeft(Z)V
-    .locals 0
-    .param p1, "left"    # Z
-
-    .prologue
-    .line 498
-    iput-boolean p1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mIsLeft:Z
-
-    .line 499
-    return-void
 .end method
 
 .method public setPreviewView(Landroid/view/View;)V
@@ -1921,140 +1711,22 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 165
+    .line 149
     iput-object p1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewView:Landroid/view/View;
 
-    .line 166
+    .line 150
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 167
+    .line 151
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewView:Landroid/view/View;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 169
+    .line 153
     :cond_0
     return-void
-.end method
-
-.method public showArrow(Z)V
-    .locals 9
-    .param p1, "show"    # Z
-
-    .prologue
-    .line 472
-    iget-object v6, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mArrowAnimator:Landroid/animation/ValueAnimator;
-
-    invoke-direct {p0, v6}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->cancelAnimator(Landroid/animation/Animator;)V
-
-    .line 473
-    if-eqz p1, :cond_0
-
-    const/high16 v5, 0x3f800000    # 1.0f
-
-    .line 474
-    .local v5, "targetAlpha":F
-    :goto_0
-    iget v6, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mArrowAlpha:F
-
-    cmpl-float v6, v6, v5
-
-    if-nez v6, :cond_1
-
-    .line 495
-    :goto_1
-    return-void
-
-    .line 473
-    .end local v5    # "targetAlpha":F
-    :cond_0
-    const/4 v5, 0x0
-
-    goto :goto_0
-
-    .line 477
-    .restart local v5    # "targetAlpha":F
-    :cond_1
-    const/4 v6, 0x2
-
-    new-array v6, v6, [F
-
-    const/4 v7, 0x0
-
-    iget v8, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mArrowAlpha:F
-
-    aput v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aput v5, v6, v7
-
-    invoke-static {v6}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
-
-    move-result-object v0
-
-    .line 478
-    .local v0, "animator":Landroid/animation/ValueAnimator;
-    iput-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mArrowAnimator:Landroid/animation/ValueAnimator;
-
-    .line 479
-    new-instance v6, Lcom/android/systemui/statusbar/KeyguardAffordanceView$12;
-
-    invoke-direct {v6, p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView$12;-><init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
-
-    invoke-virtual {v0, v6}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
-
-    .line 486
-    iget-object v6, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mArrowEndListener:Landroid/animation/AnimatorListenerAdapter;
-
-    invoke-virtual {v0, v6}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
-
-    .line 487
-    if-eqz p1, :cond_2
-
-    iget-object v4, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mAppearInterpolator:Landroid/view/animation/Interpolator;
-
-    .line 490
-    .local v4, "interpolator":Landroid/view/animation/Interpolator;
-    :goto_2
-    invoke-virtual {v0, v4}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    .line 491
-    iget v6, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mArrowAlpha:F
-
-    sub-float/2addr v6, v5
-
-    invoke-static {v6}, Ljava/lang/Math;->abs(F)F
-
-    move-result v1
-
-    .line 492
-    .local v1, "durationFactor":F
-    const/high16 v6, 0x43480000    # 200.0f
-
-    mul-float/2addr v6, v1
-
-    float-to-long v2, v6
-
-    .line 493
-    .local v2, "duration":J
-    invoke-virtual {v0, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
-
-    .line 494
-    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
-
-    goto :goto_1
-
-    .line 487
-    .end local v1    # "durationFactor":F
-    .end local v2    # "duration":J
-    .end local v4    # "interpolator":Landroid/view/animation/Interpolator;
-    :cond_2
-    iget-object v4, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mDisappearInterpolator:Landroid/view/animation/Interpolator;
-
-    goto :goto_2
 .end method
