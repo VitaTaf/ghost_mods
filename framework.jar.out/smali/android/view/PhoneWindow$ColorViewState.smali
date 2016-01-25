@@ -17,6 +17,8 @@
 # instance fields
 .field final hideWindowFlag:I
 
+.field final horizontalGravity:I
+
 .field final id:I
 
 .field final systemUiHideFlag:I
@@ -33,47 +35,51 @@
 
 
 # direct methods
-.method constructor <init>(IIILjava/lang/String;II)V
+.method constructor <init>(IIIILjava/lang/String;II)V
     .locals 1
     .param p1, "systemUiHideFlag"    # I
     .param p2, "translucentFlag"    # I
     .param p3, "verticalGravity"    # I
-    .param p4, "transitionName"    # Ljava/lang/String;
-    .param p5, "id"    # I
-    .param p6, "hideWindowFlag"    # I
+    .param p4, "horizontalGravity"    # I
+    .param p5, "transitionName"    # Ljava/lang/String;
+    .param p6, "id"    # I
+    .param p7, "hideWindowFlag"    # I
 
     .prologue
-    .line 4735
+    .line 4749
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4723
+    .line 4736
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/view/PhoneWindow$ColorViewState;->view:Landroid/view/View;
 
-    .line 4724
+    .line 4737
     const/4 v0, 0x4
 
     iput v0, p0, Landroid/view/PhoneWindow$ColorViewState;->targetVisibility:I
 
-    .line 4736
-    iput p5, p0, Landroid/view/PhoneWindow$ColorViewState;->id:I
+    .line 4750
+    iput p6, p0, Landroid/view/PhoneWindow$ColorViewState;->id:I
 
-    .line 4737
+    .line 4751
     iput p1, p0, Landroid/view/PhoneWindow$ColorViewState;->systemUiHideFlag:I
 
-    .line 4738
+    .line 4752
     iput p2, p0, Landroid/view/PhoneWindow$ColorViewState;->translucentFlag:I
 
-    .line 4739
+    .line 4753
     iput p3, p0, Landroid/view/PhoneWindow$ColorViewState;->verticalGravity:I
 
-    .line 4740
-    iput-object p4, p0, Landroid/view/PhoneWindow$ColorViewState;->transitionName:Ljava/lang/String;
+    .line 4754
+    iput p4, p0, Landroid/view/PhoneWindow$ColorViewState;->horizontalGravity:I
 
-    .line 4741
-    iput p6, p0, Landroid/view/PhoneWindow$ColorViewState;->hideWindowFlag:I
+    .line 4755
+    iput-object p5, p0, Landroid/view/PhoneWindow$ColorViewState;->transitionName:Ljava/lang/String;
 
-    .line 4742
+    .line 4756
+    iput p7, p0, Landroid/view/PhoneWindow$ColorViewState;->hideWindowFlag:I
+
+    .line 4757
     return-void
 .end method

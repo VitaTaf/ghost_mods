@@ -10,10 +10,6 @@
 
 .field private final mLightsOutListener:Landroid/view/View$OnTouchListener;
 
-.field private mRequestedMode:I
-
-.field private mVertical:Z
-
 .field private final mView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
 
@@ -533,15 +529,11 @@
     return-void
 .end method
 
-.method public init(Z)V
+.method public init()V
     .locals 3
-    .param p1, "isVertical"    # Z
 
     .prologue
     const/4 v2, 0x0
-
-    .line 50
-    invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->setVertical(Z)V
 
     .line 51
     const/4 v0, -0x1
@@ -580,72 +572,6 @@
 
     invoke-direct {p0, p2, p3, v0}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->applyMode(IZZ)V
 
-    .line 78
-    return-void
-.end method
-
-.method public setVertical(Z)V
-    .locals 2
-    .param p1, "isVertical"    # Z
-
-    .prologue
     .line 56
-    iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mVertical:Z
-
-    .line 57
-    iget v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mRequestedMode:I
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v0, v1}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->transitionTo(IZ)V
-
-    .line 58
     return-void
-.end method
-
-.method public transitionTo(IZ)V
-    .locals 1
-    .param p1, "mode"    # I
-    .param p2, "animate"    # Z
-
-    .prologue
-    .line 62
-    iput p1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mRequestedMode:I
-
-    .line 63
-    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mVertical:Z
-
-    if-eqz v0, :cond_1
-
-    .line 65
-    const/4 v0, 0x2
-
-    if-eq p1, v0, :cond_0
-
-    const/4 v0, 0x4
-
-    if-ne p1, v0, :cond_2
-
-    .line 66
-    :cond_0
-    const/4 p1, 0x0
-
-    .line 71
-    :cond_1
-    :goto_0
-    invoke-super {p0, p1, p2}, Lcom/android/systemui/statusbar/phone/BarTransitions;->transitionTo(IZ)V
-
-    .line 72
-    return-void
-
-    .line 67
-    :cond_2
-    const/4 v0, 0x6
-
-    if-ne p1, v0, :cond_1
-
-    .line 68
-    const/4 p1, 0x3
-
-    goto :goto_0
 .end method
