@@ -17,7 +17,7 @@
     <dimen name="config_minScalingTouchMajor">48.0dip</dimen>
     <dimen name="config_mediaMetadataBitmapMaxSize">320.0dip</dimen>
     <dimen name="toast_y_offset">64.0dip</dimen>
-    <dimen name="status_bar_height">25.0dip</dimen>
+    <dimen name="status_bar_height">24.0dip</dimen>
     <dimen name="navigation_bar_height">48.0dip</dimen>
     <dimen name="navigation_bar_height_landscape">48.0dip</dimen>
     <dimen name="navigation_bar_width">42.0dip</dimen>
