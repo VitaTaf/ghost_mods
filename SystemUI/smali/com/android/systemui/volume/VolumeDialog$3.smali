@@ -30,7 +30,7 @@
     .locals 0
 
     .prologue
-    .line 372
+    .line 368
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     iput-object p2, p0, Lcom/android/systemui/volume/VolumeDialog$3;->val$row:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
@@ -55,7 +55,7 @@
 
     const/4 v4, 0x0
 
-    .line 375
+    .line 371
     const/4 v5, 0x7
 
     new-array v6, v8, [Ljava/lang/Object;
@@ -63,7 +63,7 @@
     iget-object v7, p0, Lcom/android/systemui/volume/VolumeDialog$3;->val$row:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->stream:I
-    invoke-static {v7}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$600(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)I
+    invoke-static {v7}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$700(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)I
 
     move-result v7
 
@@ -76,7 +76,7 @@
     iget-object v7, p0, Lcom/android/systemui/volume/VolumeDialog$3;->val$row:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->iconState:I
-    invoke-static {v7}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1500(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)I
+    invoke-static {v7}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1700(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)I
 
     move-result v7
 
@@ -88,38 +88,38 @@
 
     invoke-static {v5, v6}, Lcom/android/systemui/volume/Events;->writeEvent(I[Ljava/lang/Object;)V
 
-    .line 376
+    .line 372
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mController:Lcom/android/systemui/volume/VolumeDialogController;
-    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog;->access$1600(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogController;
+    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog;->access$1800(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogController;
 
     move-result-object v5
 
     iget-object v6, p0, Lcom/android/systemui/volume/VolumeDialog$3;->val$row:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->stream:I
-    invoke-static {v6}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$600(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)I
+    invoke-static {v6}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$700(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)I
 
     move-result v6
 
     invoke-virtual {v5, v6}, Lcom/android/systemui/volume/VolumeDialogController;->setActiveStream(I)V
 
-    .line 377
+    .line 373
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog$3;->val$row:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->stream:I
-    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$600(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)I
+    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$700(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)I
 
     move-result v5
 
     if-ne v5, v8, :cond_5
 
-    .line 378
+    .line 374
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mController:Lcom/android/systemui/volume/VolumeDialogController;
-    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog;->access$1600(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogController;
+    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog;->access$1800(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogController;
 
     move-result-object v5
 
@@ -127,12 +127,12 @@
 
     move-result v0
 
-    .line 379
+    .line 375
     .local v0, "hasVibrator":Z
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
-    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog;->access$1700(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogController$State;
+    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog;->access$1900(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogController$State;
 
     move-result-object v5
 
@@ -140,20 +140,20 @@
 
     if-ne v5, v8, :cond_4
 
-    .line 380
+    .line 376
     if-eqz v0, :cond_1
 
-    .line 381
+    .line 377
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mController:Lcom/android/systemui/volume/VolumeDialogController;
-    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog;->access$1600(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogController;
+    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog;->access$1800(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogController;
 
     move-result-object v5
 
     invoke-virtual {v5, v3, v4}, Lcom/android/systemui/volume/VolumeDialogController;->setRingerMode(IZ)V
 
-    .line 406
+    .line 402
     .end local v0    # "hasVibrator":Z
     :cond_0
     :goto_0
@@ -162,18 +162,18 @@
     const-wide/16 v6, 0x0
 
     # setter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->userAttempt:J
-    invoke-static {v4, v6, v7}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$2102(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;J)J
+    invoke-static {v4, v6, v7}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$2302(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;J)J
 
-    .line 407
+    .line 403
     return-void
 
-    .line 383
+    .line 379
     .restart local v0    # "hasVibrator":Z
     :cond_1
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog$3;->val$row:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->ss:Lcom/android/systemui/volume/VolumeDialogController$StreamState;
-    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1800(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Lcom/android/systemui/volume/VolumeDialogController$StreamState;
+    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$2000(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Lcom/android/systemui/volume/VolumeDialogController$StreamState;
 
     move-result-object v5
 
@@ -181,13 +181,13 @@
 
     if-nez v5, :cond_3
 
-    .line 384
+    .line 380
     .local v3, "wasZero":Z
     :goto_1
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mController:Lcom/android/systemui/volume/VolumeDialogController;
-    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog;->access$1600(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogController;
+    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog;->access$1800(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogController;
 
     move-result-object v5
 
@@ -198,7 +198,7 @@
     iget-object v4, p0, Lcom/android/systemui/volume/VolumeDialog$3;->val$row:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->lastAudibleLevel:I
-    invoke-static {v4}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1900(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)I
+    invoke-static {v4}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$2100(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)I
 
     move-result v4
 
@@ -211,25 +211,25 @@
     :cond_3
     move v3, v4
 
-    .line 383
+    .line 379
     goto :goto_1
 
-    .line 387
+    .line 383
     :cond_4
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mController:Lcom/android/systemui/volume/VolumeDialogController;
-    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog;->access$1600(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogController;
+    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog;->access$1800(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogController;
 
     move-result-object v5
 
     invoke-virtual {v5, v8, v4}, Lcom/android/systemui/volume/VolumeDialogController;->setRingerMode(IZ)V
 
-    .line 388
+    .line 384
     iget-object v4, p0, Lcom/android/systemui/volume/VolumeDialog$3;->val$row:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->ss:Lcom/android/systemui/volume/VolumeDialogController$StreamState;
-    invoke-static {v4}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1800(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Lcom/android/systemui/volume/VolumeDialogController$StreamState;
+    invoke-static {v4}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$2000(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Lcom/android/systemui/volume/VolumeDialogController$StreamState;
 
     move-result-object v4
 
@@ -237,11 +237,11 @@
 
     if-nez v4, :cond_0
 
-    .line 389
+    .line 385
     iget-object v4, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mController:Lcom/android/systemui/volume/VolumeDialogController;
-    invoke-static {v4}, Lcom/android/systemui/volume/VolumeDialog;->access$1600(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogController;
+    invoke-static {v4}, Lcom/android/systemui/volume/VolumeDialog;->access$1800(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogController;
 
     move-result-object v4
 
@@ -251,13 +251,13 @@
 
     goto :goto_0
 
-    .line 393
+    .line 389
     .end local v0    # "hasVibrator":Z
     :cond_5
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mAutomute:Z
-    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog;->access$2000(Lcom/android/systemui/volume/VolumeDialog;)Z
+    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog;->access$2200(Lcom/android/systemui/volume/VolumeDialog;)Z
 
     move-result v5
 
@@ -266,7 +266,7 @@
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog$3;->val$row:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->ss:Lcom/android/systemui/volume/VolumeDialogController$StreamState;
-    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1800(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Lcom/android/systemui/volume/VolumeDialogController$StreamState;
+    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$2000(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Lcom/android/systemui/volume/VolumeDialogController$StreamState;
 
     move-result-object v5
 
@@ -274,11 +274,11 @@
 
     if-nez v5, :cond_8
 
-    .line 394
+    .line 390
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog$3;->val$row:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->ss:Lcom/android/systemui/volume/VolumeDialogController$StreamState;
-    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1800(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Lcom/android/systemui/volume/VolumeDialogController$StreamState;
+    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$2000(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Lcom/android/systemui/volume/VolumeDialogController$StreamState;
 
     move-result-object v5
 
@@ -288,13 +288,13 @@
 
     move v2, v3
 
-    .line 395
+    .line 391
     .local v2, "vmute":Z
     :goto_2
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mController:Lcom/android/systemui/volume/VolumeDialogController;
-    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog;->access$1600(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogController;
+    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog;->access$1800(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogController;
 
     move-result-object v5
 
@@ -305,7 +305,7 @@
     iget-object v4, p0, Lcom/android/systemui/volume/VolumeDialog$3;->val$row:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->lastAudibleLevel:I
-    invoke-static {v4}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1900(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)I
+    invoke-static {v4}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$2100(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)I
 
     move-result v4
 
@@ -318,15 +318,15 @@
     :cond_7
     move v2, v4
 
-    .line 394
+    .line 390
     goto :goto_2
 
-    .line 397
+    .line 393
     :cond_8
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialog$3;->val$row:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->ss:Lcom/android/systemui/volume/VolumeDialogController$StreamState;
-    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1800(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Lcom/android/systemui/volume/VolumeDialogController$StreamState;
+    invoke-static {v5}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$2000(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Lcom/android/systemui/volume/VolumeDialogController$StreamState;
 
     move-result-object v5
 
@@ -336,13 +336,13 @@
 
     move v1, v3
 
-    .line 398
+    .line 394
     .local v1, "mute":Z
     :goto_3
     iget-object v4, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mController:Lcom/android/systemui/volume/VolumeDialogController;
-    invoke-static {v4}, Lcom/android/systemui/volume/VolumeDialog;->access$1600(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogController;
+    invoke-static {v4}, Lcom/android/systemui/volume/VolumeDialog;->access$1800(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogController;
 
     move-result-object v4
 
@@ -350,23 +350,23 @@
 
     invoke-virtual {v4, v5, v1}, Lcom/android/systemui/volume/VolumeDialogController;->setStreamMute(IZ)V
 
-    .line 399
+    .line 395
     iget-object v4, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mAutomute:Z
-    invoke-static {v4}, Lcom/android/systemui/volume/VolumeDialog;->access$2000(Lcom/android/systemui/volume/VolumeDialog;)Z
+    invoke-static {v4}, Lcom/android/systemui/volume/VolumeDialog;->access$2200(Lcom/android/systemui/volume/VolumeDialog;)Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 400
+    .line 396
     if-nez v1, :cond_0
 
     iget-object v4, p0, Lcom/android/systemui/volume/VolumeDialog$3;->val$row:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->ss:Lcom/android/systemui/volume/VolumeDialogController$StreamState;
-    invoke-static {v4}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$1800(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Lcom/android/systemui/volume/VolumeDialogController$StreamState;
+    invoke-static {v4}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$2000(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Lcom/android/systemui/volume/VolumeDialogController$StreamState;
 
     move-result-object v4
 
@@ -374,11 +374,11 @@
 
     if-nez v4, :cond_0
 
-    .line 401
+    .line 397
     iget-object v4, p0, Lcom/android/systemui/volume/VolumeDialog$3;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mController:Lcom/android/systemui/volume/VolumeDialogController;
-    invoke-static {v4}, Lcom/android/systemui/volume/VolumeDialog;->access$1600(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogController;
+    invoke-static {v4}, Lcom/android/systemui/volume/VolumeDialog;->access$1800(Lcom/android/systemui/volume/VolumeDialog;)Lcom/android/systemui/volume/VolumeDialogController;
 
     move-result-object v4
 
@@ -392,6 +392,6 @@
     :cond_9
     move v1, v4
 
-    .line 397
+    .line 393
     goto :goto_3
 .end method

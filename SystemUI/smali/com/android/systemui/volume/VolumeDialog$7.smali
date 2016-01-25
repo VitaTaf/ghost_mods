@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 865
+    .line 827
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$7;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,26 +45,26 @@
 
     const/4 v2, 0x0
 
-    .line 868
+    .line 830
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialog$7;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mExpanding:Z
-    invoke-static {v3}, Lcom/android/systemui/volume/VolumeDialog;->access$2200(Lcom/android/systemui/volume/VolumeDialog;)Z
+    invoke-static {v3}, Lcom/android/systemui/volume/VolumeDialog;->access$2400(Lcom/android/systemui/volume/VolumeDialog;)Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 872
+    .line 834
     :goto_0
     return-void
 
-    .line 869
+    .line 831
     :cond_0
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialog$7;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mExpanded:Z
-    invoke-static {v3}, Lcom/android/systemui/volume/VolumeDialog;->access$4000(Lcom/android/systemui/volume/VolumeDialog;)Z
+    invoke-static {v3}, Lcom/android/systemui/volume/VolumeDialog;->access$4300(Lcom/android/systemui/volume/VolumeDialog;)Z
 
     move-result v3
 
@@ -72,7 +72,7 @@
 
     move v0, v1
 
-    .line 870
+    .line 832
     .local v0, "newExpand":Z
     :goto_1
     const/4 v3, 0x3
@@ -83,11 +83,11 @@
 
     invoke-static {v3, v1}, Lcom/android/systemui/volume/Events;->writeEvent(I[Ljava/lang/Object;)V
 
-    .line 871
+    .line 833
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialog$7;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # invokes: Lcom/android/systemui/volume/VolumeDialog;->setExpandedH(Z)V
-    invoke-static {v1, v0}, Lcom/android/systemui/volume/VolumeDialog;->access$4100(Lcom/android/systemui/volume/VolumeDialog;Z)V
+    invoke-static {v1, v0}, Lcom/android/systemui/volume/VolumeDialog;->access$4400(Lcom/android/systemui/volume/VolumeDialog;Z)V
 
     goto :goto_0
 
@@ -95,6 +95,6 @@
     :cond_1
     move v0, v2
 
-    .line 869
+    .line 831
     goto :goto_1
 .end method
