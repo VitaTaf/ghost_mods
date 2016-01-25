@@ -34,7 +34,7 @@
     <bool name="config_annoy_dianne">true</bool>
     <bool name="config_unplugTurnsOnScreen">true</bool>
     <bool name="config_useAttentionLight">false</bool>
-    <bool name="config_animateScreenLights">true</bool>
+    <bool name="config_animateScreenLights">false</bool>
     <bool name="config_enableScreenshotChord">true</bool>
     <bool name="config_allowTheaterModeWakeFromUnplug">false</bool>
     <bool name="config_allowTheaterModeWakeFromGesture">false</bool>
