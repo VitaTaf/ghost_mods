@@ -1023,7 +1023,7 @@
 
     move-result v9
 
-    if-eqz v9, :cond_8
+    if-eqz v9, :cond_9
 
     .line 286
     :cond_0
@@ -1035,9 +1035,14 @@
 
     .line 287
     :goto_0
-    const v5, 0x7f02051c
+    iget v9, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mZen:I
+
+    if-ne v9, v11, :cond_8
+
+    const v5, 0x7f020023
 
     .line 288
+    :goto_1
     iget-object v9, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mContext:Landroid/content/Context;
 
     const v10, 0x7f0c0275
@@ -1048,14 +1053,14 @@
 
     .line 299
     :cond_1
-    :goto_1
+    :goto_2
     iget-object v9, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mContext:Landroid/content/Context;
 
     invoke-static {v9}, Lcom/android/systemui/qs/tiles/DndTile;->isVisible(Landroid/content/Context;)Z
 
     move-result v9
 
-    if-eqz v9, :cond_a
+    if-eqz v9, :cond_b
 
     iget-object v9, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mContext:Landroid/content/Context;
 
@@ -1063,13 +1068,13 @@
 
     move-result v9
 
-    if-nez v9, :cond_a
+    if-nez v9, :cond_b
 
     invoke-virtual {v0}, Landroid/media/AudioManager;->getRingerModeInternal()I
 
     move-result v9
 
-    if-nez v9, :cond_a
+    if-nez v9, :cond_b
 
     .line 301
     const/4 v3, 0x1
@@ -1088,7 +1093,7 @@
 
     .line 311
     :cond_2
-    :goto_2
+    :goto_3
     if-eqz v6, :cond_3
 
     .line 312
@@ -1153,9 +1158,15 @@
 
     .line 289
     :cond_8
+    const v5, 0x7f02051c
+
+    goto :goto_1
+
+    .line 292
+    :cond_9
     iget v9, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mZen:I
 
-    if-ne v9, v11, :cond_9
+    if-ne v9, v11, :cond_a
 
     .line 290
     const/4 v6, 0x1
@@ -1172,10 +1183,10 @@
 
     move-result-object v4
 
-    goto :goto_1
+    goto :goto_2
 
-    .line 293
-    :cond_9
+    .line 296
+    :cond_a
     iget v9, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mZen:I
 
     if-ne v9, v7, :cond_1
@@ -1195,10 +1206,10 @@
 
     move-result-object v4
 
-    goto :goto_1
+    goto :goto_2
 
-    .line 304
-    :cond_a
+    .line 307
+    :cond_b
     iget v9, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mZen:I
 
     if-eq v9, v11, :cond_2
@@ -1230,7 +1241,7 @@
 
     move-result-object v1
 
-    goto :goto_2
+    goto :goto_3
 .end method
 
 

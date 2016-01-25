@@ -310,6 +310,7 @@
     <item type="id" name="zen_introduction_message">false</item>
     <item type="id" name="zen_introduction_customize">false</item>
     <item type="id" name="zen_conditions">false</item>
+    <item type="id" name="zen_alarm_warning">false</item>
     <item type="id" name="carrier_label_groups">false</item>
     <item type="id" name="carrier_label_group_row_upper">false</item>
     <item type="id" name="carrier_label_group_1">false</item>
