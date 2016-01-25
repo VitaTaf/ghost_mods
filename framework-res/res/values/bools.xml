@@ -65,7 +65,7 @@
     <bool name="config_hotswapCapable">true</bool>
     <bool name="config_enable_puk_unlock_screen">true</bool>
     <bool name="config_enable_emergency_call_while_sim_locked">true</bool>
-    <bool name="config_allowAutoBrightnessWhileDozing">false</bool>
+    <bool name="config_allowAutoBrightnessWhileDozing">true</bool>
     <bool name="config_swipeDisambiguation">true</bool>
     <bool name="config_enableWallpaperService">true</bool>
     <bool name="config_enableNetworkLocationOverlay">true</bool>
