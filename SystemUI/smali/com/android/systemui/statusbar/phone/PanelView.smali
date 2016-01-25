@@ -16,8 +16,6 @@
 
 .field private mCollapseAfterPeek:Z
 
-.field private mDozingOnDown:Z
-
 .field private mEdgeTapAreaWidth:I
 
 .field private mExpandedFraction:F
@@ -70,7 +68,7 @@
 
 .field private mPeekTouching:Z
 
-.field private final mPostCollapseRunnable:Ljava/lang/Runnable;
+.field protected final mPostCollapseRunnable:Ljava/lang/Runnable;
 
 .field protected mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -589,74 +587,6 @@
     .line 125
     :cond_0
     return-void
-.end method
-
-.method private onMiddleClicked()Z
-    .locals 3
-
-    .prologue
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    .line 952
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
-
-    invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->getBarState()I
-
-    move-result v2
-
-    packed-switch v2, :pswitch_data_0
-
-    .line 971
-    :cond_0
-    :goto_0
-    return v0
-
-    .line 954
-    :pswitch_0
-    iget-boolean v2, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mDozingOnDown:Z
-
-    if-nez v2, :cond_0
-
-    .line 955
-    const/4 v2, 0x3
-
-    invoke-static {v2, v1, v1}, Lcom/android/systemui/EventLogTags;->writeSysuiLockscreenGesture(III)V
-
-    .line 958
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PanelView;->startUnlockHintAnimation()V
-
-    goto :goto_0
-
-    .line 962
-    :pswitch_1
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
-
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->goToKeyguard()V
-
-    goto :goto_0
-
-    .line 968
-    :pswitch_2
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mPostCollapseRunnable:Ljava/lang/Runnable;
-
-    invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/PanelView;->post(Ljava/lang/Runnable;)Z
-
-    move v0, v1
-
-    .line 969
-    goto :goto_0
-
-    .line 952
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
 .end method
 
 .method private runPeekAnimation()V
@@ -1747,9 +1677,6 @@
     return v0
 .end method
 
-.method protected abstract isDozing()Z
-.end method
-
 .method public isFullyCollapsed()Z
     .locals 2
 
@@ -1962,7 +1889,7 @@
     return v0
 
     :cond_0
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/PanelView;->onMiddleClicked()Z
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PanelView;->onMiddleClicked()Z
 
     move-result v0
 
@@ -2164,13 +2091,6 @@
     .line 433
     iput-boolean v9, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mTouchAboveFalsingThreshold:Z
 
-    .line 434
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PanelView;->isDozing()Z
-
-    move-result v7
-
-    iput-boolean v7, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mDozingOnDown:Z
-
     .line 435
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/PanelView;->initVelocityTracker()V
 
@@ -2370,6 +2290,9 @@
     .line 624
     :cond_0
     return-void
+.end method
+
+.method protected abstract onMiddleClicked()Z
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
@@ -2654,17 +2577,6 @@
     iput-boolean v0, v1, Lcom/android/systemui/statusbar/phone/PanelView;->mTouchAboveFalsingThreshold:Z
 
     .line 250
-    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/statusbar/phone/PanelView;->isDozing()Z
-
-    move-result v21
-
-    move/from16 v0, v21
-
-    move-object/from16 v1, p0
-
-    iput-boolean v0, v1, Lcom/android/systemui/statusbar/phone/PanelView;->mDozingOnDown:Z
-
-    .line 251
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PanelView;->mVelocityTracker:Lcom/android/systemui/statusbar/phone/VelocityTrackerInterface;
