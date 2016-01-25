@@ -615,7 +615,6 @@
     <public type="attr" name="imeOptions" id="0x01010264" />
     <public type="attr" name="imeActionLabel" id="0x01010265" />
     <public type="attr" name="imeActionId" id="0x01010266" />
-    <public type="attr" name="APKTOOL_DUMMY_0267" id="0x01010267" />
     <public type="attr" name="imeExtractEnterAnimation" id="0x01010268" />
     <public type="attr" name="imeExtractExitAnimation" id="0x01010269" />
     <public type="attr" name="tension" id="0x0101026a" />
@@ -936,7 +935,6 @@
     <public type="attr" name="requiresFadingEdge" id="0x010103a5" />
     <public type="attr" name="publicKey" id="0x010103a6" />
     <public type="attr" name="parentActivityName" id="0x010103a7" />
-    <public type="attr" name="APKTOOL_DUMMY_03a8" id="0x010103a8" />
     <public type="attr" name="isolatedProcess" id="0x010103a9" />
     <public type="attr" name="importantForAccessibility" id="0x010103aa" />
     <public type="attr" name="keyboardLayout" id="0x010103ab" />
@@ -963,7 +961,6 @@
     <public type="attr" name="presentationTheme" id="0x010103c0" />
     <public type="attr" name="subtypeId" id="0x010103c1" />
     <public type="attr" name="initialKeyguardLayout" id="0x010103c2" />
-    <public type="attr" name="APKTOOL_DUMMY_03c3" id="0x010103c3" />
     <public type="attr" name="widgetCategory" id="0x010103c4" />
     <public type="attr" name="permissionGroupFlags" id="0x010103c5" />
     <public type="attr" name="labelFor" id="0x010103c6" />
@@ -1038,33 +1035,6 @@
     <public type="attr" name="strokeLineCap" id="0x0101040b" />
     <public type="attr" name="strokeLineJoin" id="0x0101040c" />
     <public type="attr" name="strokeMiterLimit" id="0x0101040d" />
-    <public type="attr" name="APKTOOL_DUMMY_040e" id="0x0101040e" />
-    <public type="attr" name="APKTOOL_DUMMY_040f" id="0x0101040f" />
-    <public type="attr" name="APKTOOL_DUMMY_0410" id="0x01010410" />
-    <public type="attr" name="APKTOOL_DUMMY_0411" id="0x01010411" />
-    <public type="attr" name="APKTOOL_DUMMY_0412" id="0x01010412" />
-    <public type="attr" name="APKTOOL_DUMMY_0413" id="0x01010413" />
-    <public type="attr" name="APKTOOL_DUMMY_0414" id="0x01010414" />
-    <public type="attr" name="APKTOOL_DUMMY_0415" id="0x01010415" />
-    <public type="attr" name="APKTOOL_DUMMY_0416" id="0x01010416" />
-    <public type="attr" name="APKTOOL_DUMMY_0417" id="0x01010417" />
-    <public type="attr" name="APKTOOL_DUMMY_0418" id="0x01010418" />
-    <public type="attr" name="APKTOOL_DUMMY_0419" id="0x01010419" />
-    <public type="attr" name="APKTOOL_DUMMY_041a" id="0x0101041a" />
-    <public type="attr" name="APKTOOL_DUMMY_041b" id="0x0101041b" />
-    <public type="attr" name="APKTOOL_DUMMY_041c" id="0x0101041c" />
-    <public type="attr" name="APKTOOL_DUMMY_041d" id="0x0101041d" />
-    <public type="attr" name="APKTOOL_DUMMY_041e" id="0x0101041e" />
-    <public type="attr" name="APKTOOL_DUMMY_041f" id="0x0101041f" />
-    <public type="attr" name="APKTOOL_DUMMY_0420" id="0x01010420" />
-    <public type="attr" name="APKTOOL_DUMMY_0421" id="0x01010421" />
-    <public type="attr" name="APKTOOL_DUMMY_0422" id="0x01010422" />
-    <public type="attr" name="APKTOOL_DUMMY_0423" id="0x01010423" />
-    <public type="attr" name="APKTOOL_DUMMY_0424" id="0x01010424" />
-    <public type="attr" name="APKTOOL_DUMMY_0425" id="0x01010425" />
-    <public type="attr" name="APKTOOL_DUMMY_0426" id="0x01010426" />
-    <public type="attr" name="APKTOOL_DUMMY_0427" id="0x01010427" />
-    <public type="attr" name="APKTOOL_DUMMY_0428" id="0x01010428" />
     <public type="attr" name="colorControlNormal" id="0x01010429" />
     <public type="attr" name="colorControlActivated" id="0x0101042a" />
     <public type="attr" name="colorButtonNormal" id="0x0101042b" />
@@ -5242,84 +5212,11 @@
     <public type="string" name="zen_mode_downtime_feature_name" id="0x0104073f" />
     <public type="string" name="zen_mode_default_weeknights_name" id="0x01040740" />
     <public type="string" name="zen_mode_default_weekends_name" id="0x01040741" />
+    <public type="string" name="zen_mode_forever_dnd" id="0x01040742" />
     <public type="string" name="downtime_condition_summary" id="0x01040691" />
     <public type="string" name="downtime_condition_line_one" id="0x01040692" />
     <public type="string" name="zen_mode_next_alarm_summary" id="0x01040696" />
     <public type="string" name="zen_mode_next_alarm_line_one" id="0x01040697" />
-    <public type="string" name="APKTOOL_DUMMY_06a3" id="0x010406a3" />
-    <public type="string" name="APKTOOL_DUMMY_06a4" id="0x010406a4" />
-    <public type="string" name="APKTOOL_DUMMY_06a5" id="0x010406a5" />
-    <public type="string" name="APKTOOL_DUMMY_06a6" id="0x010406a6" />
-    <public type="string" name="APKTOOL_DUMMY_06a7" id="0x010406a7" />
-    <public type="string" name="APKTOOL_DUMMY_06a8" id="0x010406a8" />
-    <public type="string" name="APKTOOL_DUMMY_06a9" id="0x010406a9" />
-    <public type="string" name="APKTOOL_DUMMY_06aa" id="0x010406aa" />
-    <public type="string" name="APKTOOL_DUMMY_06ab" id="0x010406ab" />
-    <public type="string" name="APKTOOL_DUMMY_06ac" id="0x010406ac" />
-    <public type="string" name="APKTOOL_DUMMY_06ad" id="0x010406ad" />
-    <public type="string" name="APKTOOL_DUMMY_06ae" id="0x010406ae" />
-    <public type="string" name="APKTOOL_DUMMY_06af" id="0x010406af" />
-    <public type="string" name="APKTOOL_DUMMY_06b0" id="0x010406b0" />
-    <public type="string" name="APKTOOL_DUMMY_06b1" id="0x010406b1" />
-    <public type="string" name="APKTOOL_DUMMY_06b2" id="0x010406b2" />
-    <public type="string" name="APKTOOL_DUMMY_06b3" id="0x010406b3" />
-    <public type="string" name="APKTOOL_DUMMY_06b4" id="0x010406b4" />
-    <public type="string" name="APKTOOL_DUMMY_06b5" id="0x010406b5" />
-    <public type="string" name="APKTOOL_DUMMY_06b6" id="0x010406b6" />
-    <public type="string" name="APKTOOL_DUMMY_06b7" id="0x010406b7" />
-    <public type="string" name="APKTOOL_DUMMY_06b8" id="0x010406b8" />
-    <public type="string" name="APKTOOL_DUMMY_06b9" id="0x010406b9" />
-    <public type="string" name="APKTOOL_DUMMY_06ba" id="0x010406ba" />
-    <public type="string" name="APKTOOL_DUMMY_06bb" id="0x010406bb" />
-    <public type="string" name="APKTOOL_DUMMY_06bc" id="0x010406bc" />
-    <public type="string" name="APKTOOL_DUMMY_06bd" id="0x010406bd" />
-    <public type="string" name="APKTOOL_DUMMY_06be" id="0x010406be" />
-    <public type="string" name="APKTOOL_DUMMY_06bf" id="0x010406bf" />
-    <public type="string" name="APKTOOL_DUMMY_06c0" id="0x010406c0" />
-    <public type="string" name="APKTOOL_DUMMY_06c1" id="0x010406c1" />
-    <public type="string" name="APKTOOL_DUMMY_06c2" id="0x010406c2" />
-    <public type="string" name="APKTOOL_DUMMY_06c3" id="0x010406c3" />
-    <public type="string" name="APKTOOL_DUMMY_06c4" id="0x010406c4" />
-    <public type="string" name="APKTOOL_DUMMY_06c5" id="0x010406c5" />
-    <public type="string" name="APKTOOL_DUMMY_06c6" id="0x010406c6" />
-    <public type="string" name="APKTOOL_DUMMY_06c7" id="0x010406c7" />
-    <public type="string" name="APKTOOL_DUMMY_06c8" id="0x010406c8" />
-    <public type="string" name="APKTOOL_DUMMY_06c9" id="0x010406c9" />
-    <public type="string" name="APKTOOL_DUMMY_06ca" id="0x010406ca" />
-    <public type="string" name="APKTOOL_DUMMY_06cb" id="0x010406cb" />
-    <public type="string" name="APKTOOL_DUMMY_06cc" id="0x010406cc" />
-    <public type="string" name="APKTOOL_DUMMY_06cd" id="0x010406cd" />
-    <public type="string" name="APKTOOL_DUMMY_06ce" id="0x010406ce" />
-    <public type="string" name="APKTOOL_DUMMY_06cf" id="0x010406cf" />
-    <public type="string" name="APKTOOL_DUMMY_06d0" id="0x010406d0" />
-    <public type="string" name="APKTOOL_DUMMY_06d1" id="0x010406d1" />
-    <public type="string" name="APKTOOL_DUMMY_06d2" id="0x010406d2" />
-    <public type="string" name="APKTOOL_DUMMY_06d3" id="0x010406d3" />
-    <public type="string" name="APKTOOL_DUMMY_06d4" id="0x010406d4" />
-    <public type="string" name="APKTOOL_DUMMY_06d5" id="0x010406d5" />
-    <public type="string" name="APKTOOL_DUMMY_06d6" id="0x010406d6" />
-    <public type="string" name="APKTOOL_DUMMY_06d7" id="0x010406d7" />
-    <public type="string" name="APKTOOL_DUMMY_06d8" id="0x010406d8" />
-    <public type="string" name="APKTOOL_DUMMY_06d9" id="0x010406d9" />
-    <public type="string" name="APKTOOL_DUMMY_06da" id="0x010406da" />
-    <public type="string" name="APKTOOL_DUMMY_06db" id="0x010406db" />
-    <public type="string" name="APKTOOL_DUMMY_06dc" id="0x010406dc" />
-    <public type="string" name="APKTOOL_DUMMY_06dd" id="0x010406dd" />
-    <public type="string" name="APKTOOL_DUMMY_06de" id="0x010406de" />
-    <public type="string" name="APKTOOL_DUMMY_06df" id="0x010406df" />
-    <public type="string" name="APKTOOL_DUMMY_06e0" id="0x010406e0" />
-    <public type="string" name="APKTOOL_DUMMY_06e1" id="0x010406e1" />
-    <public type="string" name="APKTOOL_DUMMY_06e2" id="0x010406e2" />
-    <public type="string" name="APKTOOL_DUMMY_06e3" id="0x010406e3" />
-    <public type="string" name="APKTOOL_DUMMY_06e4" id="0x010406e4" />
-    <public type="string" name="APKTOOL_DUMMY_06e5" id="0x010406e5" />
-    <public type="string" name="APKTOOL_DUMMY_06e6" id="0x010406e6" />
-    <public type="string" name="APKTOOL_DUMMY_06e7" id="0x010406e7" />
-    <public type="string" name="APKTOOL_DUMMY_06e8" id="0x010406e8" />
-    <public type="string" name="APKTOOL_DUMMY_06e9" id="0x010406e9" />
-    <public type="string" name="APKTOOL_DUMMY_06ea" id="0x010406ea" />
-    <public type="string" name="APKTOOL_DUMMY_06eb" id="0x010406eb" />
-    <public type="string" name="APKTOOL_DUMMY_06ec" id="0x010406ec" />
     <public type="dimen" name="app_icon_size" id="0x01050000" />
     <public type="dimen" name="thumbnail_height" id="0x01050001" />
     <public type="dimen" name="thumbnail_width" id="0x01050002" />
@@ -5579,7 +5476,6 @@
     <public type="dimen" name="navigation_bar_height_portrait" id="0x010500ae" />
     <public type="dimen" name="kg_emergency_button_shift" id="0x010500a9" />
     <public type="dimen" name="timepicker_left_side_width" id="0x010500aa" />
-    <public type="dimen" name="APKTOOL_DUMMY_00a8" id="0x010500a8" />
     <public type="color" name="darker_gray" id="0x01060000" />
     <public type="color" name="primary_text_dark" id="0x01060001" />
     <public type="color" name="primary_text_dark_nodisable" id="0x01060002" />
@@ -8820,9 +8716,13 @@
     <public type="plurals" name="matches_found" id="0x01140017" />
     <public type="plurals" name="restr_pin_countdown" id="0x01140018" />
     <public type="plurals" name="zen_mode_duration_minutes_summary" id="0x01140019" />
-    <public type="plurals" name="zen_mode_duration_hours_summary" id="0x0114001a" />
-    <public type="plurals" name="zen_mode_duration_minutes" id="0x0114001b" />
-    <public type="plurals" name="zen_mode_duration_hours" id="0x0114001c" />
+    <public type="plurals" name="zen_mode_duration_minutes_summary_short" id="0x0114001a" />
+    <public type="plurals" name="zen_mode_duration_hours_summary" id="0x0114001b" />
+    <public type="plurals" name="zen_mode_duration_hours_summary_short" id="0x0114001c" />
+    <public type="plurals" name="zen_mode_duration_minutes" id="0x0114001d" />
+    <public type="plurals" name="zen_mode_duration_minutes_short" id="0x0114001e" />
+    <public type="plurals" name="zen_mode_duration_hours" id="0x0114001f" />
+    <public type="plurals" name="zen_mode_duration_hours_short" id="0x01140020" />
     <public type="menu" name="webview_copy" id="0x01150000" />
     <public type="menu" name="webview_find" id="0x01150001" />
     <public type="^attr-private" name="textColorPrimaryActivated" id="0x01160000" />

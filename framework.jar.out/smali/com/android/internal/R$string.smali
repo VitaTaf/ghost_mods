@@ -1881,6 +1881,8 @@
 
 .field public static final zen_mode_forever:I = 0x1040694
 
+.field public static final zen_mode_forever_dnd:I = 0x1040742
+
 .field public static final zen_mode_rule_name_combination:I = 0x104073d
 
 .field public static final zen_mode_until:I = 0x1040693

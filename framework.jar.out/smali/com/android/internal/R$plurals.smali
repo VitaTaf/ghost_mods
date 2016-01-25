@@ -65,13 +65,21 @@
 
 .field public static final wifi_available_detailed:I = 0x1140016
 
-.field public static final zen_mode_duration_hours:I = 0x114001c
+.field public static final zen_mode_duration_hours:I = 0x114001f
 
-.field public static final zen_mode_duration_hours_summary:I = 0x114001a
+.field public static final zen_mode_duration_hours_short:I = 0x1140020
 
-.field public static final zen_mode_duration_minutes:I = 0x114001b
+.field public static final zen_mode_duration_hours_summary:I = 0x114001b
+
+.field public static final zen_mode_duration_hours_summary_short:I = 0x114001c
+
+.field public static final zen_mode_duration_minutes:I = 0x114001d
+
+.field public static final zen_mode_duration_minutes_short:I = 0x114001e
 
 .field public static final zen_mode_duration_minutes_summary:I = 0x1140019
+
+.field public static final zen_mode_duration_minutes_summary_short:I = 0x114001a
 
 
 # direct methods
