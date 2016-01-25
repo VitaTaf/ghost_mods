@@ -25,7 +25,7 @@
     .locals 0
 
     .prologue
-    .line 192
+    .line 218
     iput-object p1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$5;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$5;->val$mAnimationEndRunnable:Ljava/lang/Runnable;
@@ -38,15 +38,23 @@
 
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
+    .locals 2
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 195
+    .line 221
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$5;->val$mAnimationEndRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 196
+    .line 222
+    iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$5;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
+
+    const/4 v1, 0x0
+
+    # setter for: Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mFinishing:Z
+    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->access$402(Lcom/android/systemui/statusbar/KeyguardAffordanceView;Z)Z
+
+    .line 223
     return-void
 .end method

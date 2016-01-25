@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 284
+    .line 336
     iput-object p1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$6;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -38,11 +38,11 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 287
+    .line 339
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$6;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
     # getter for: Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewView:Landroid/view/View;
-    invoke-static {v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->access$400(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)Landroid/view/View;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->access$500(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)Landroid/view/View;
 
     move-result-object v0
 
@@ -50,6 +50,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 288
+    .line 340
     return-void
 .end method
