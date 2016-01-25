@@ -27,7 +27,7 @@
 .method public abstract getLeftPreview()Landroid/view/View;
 .end method
 
-.method public abstract getPageWidth()F
+.method public abstract getMaxTranslationDistance()F
 .end method
 
 .method public abstract getRightIcon()Lcom/android/systemui/statusbar/KeyguardAffordanceView;
@@ -40,6 +40,9 @@
 .end method
 
 .method public abstract onAnimationToSideStarted(ZFF)V
+.end method
+
+.method public abstract onIconClicked(Z)V
 .end method
 
 .method public abstract onSwipingAborted()V

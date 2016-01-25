@@ -1944,81 +1944,24 @@
     return-void
 .end method
 
-.method protected abstract onEdgeClicked(Z)V
-.end method
-
 .method protected onEmptySpaceClick(F)Z
-    .locals 3
+    .locals 1
     .param p1, "x"    # F
 
     .prologue
+    .line 929
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mHintAnimationRunning:Z
+
+    if-eqz v0, :cond_0
+
+    .line 930
     const/4 v0, 0x1
 
-    .line 929
-    iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mHintAnimationRunning:Z
-
-    if-eqz v1, :cond_0
-
-    .line 941
+    .line 932
     :goto_0
     return v0
 
-    .line 932
     :cond_0
-    iget v1, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mEdgeTapAreaWidth:I
-
-    int-to-float v1, v1
-
-    cmpg-float v1, p1, v1
-
-    if-gez v1, :cond_1
-
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
-
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->getBarState()I
-
-    move-result v1
-
-    if-ne v1, v0, :cond_1
-
-    .line 934
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/phone/PanelView;->onEdgeClicked(Z)V
-
-    goto :goto_0
-
-    .line 936
-    :cond_1
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PanelView;->getWidth()I
-
-    move-result v1
-
-    iget v2, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mEdgeTapAreaWidth:I
-
-    sub-int/2addr v1, v2
-
-    int-to-float v1, v1
-
-    cmpl-float v1, p1, v1
-
-    if-lez v1, :cond_2
-
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
-
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->getBarState()I
-
-    move-result v1
-
-    if-ne v1, v0, :cond_2
-
-    .line 938
-    invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/PanelView;->onEdgeClicked(Z)V
-
-    goto :goto_0
-
-    .line 941
-    :cond_2
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/PanelView;->onMiddleClicked()Z
 
     move-result v0

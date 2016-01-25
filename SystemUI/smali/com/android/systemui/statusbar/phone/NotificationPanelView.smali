@@ -3515,9 +3515,9 @@
 
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mFastOutSlowInInterpolator:Landroid/view/animation/Interpolator;
 
-    new-instance v7, Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;
+    new-instance v7, Lcom/android/systemui/statusbar/phone/NotificationPanelView$16;
 
-    invoke-direct {v7, p0, p1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
+    invoke-direct {v7, p0, p1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$16;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
 
     move-object v1, p1
 
@@ -5040,6 +5040,32 @@
     goto :goto_0
 .end method
 
+.method public getMaxTranslationDistance()F
+    .locals 4
+
+    .prologue
+    .line 1736
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->getWidth()I
+
+    move-result v0
+
+    int-to-double v0, v0
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->getHeight()I
+
+    move-result v2
+
+    int-to-double v2, v2
+
+    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->hypot(DD)D
+
+    move-result-wide v0
+
+    double-to-float v0, v0
+
+    return v0
+.end method
+
 .method protected getOverExpansionAmount()F
     .locals 2
 
@@ -5068,20 +5094,6 @@
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->getCurrentOverScrolledPixels(Z)F
 
     move-result v0
-
-    return v0
-.end method
-
-.method public getPageWidth()F
-    .locals 1
-
-    .prologue
-    .line 1759
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->getWidth()I
-
-    move-result v0
-
-    int-to-float v0, v0
 
     return v0
 .end method
@@ -5830,105 +5842,6 @@
     return-void
 .end method
 
-.method protected onEdgeClicked(Z)V
-    .locals 3
-    .param p1, "right"    # Z
-
-    .prologue
-    const/4 v0, 0x1
-
-    .line 1715
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->getRightIcon()Lcom/android/systemui/statusbar/KeyguardAffordanceView;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->getVisibility()I
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    :cond_0
-    if-nez p1, :cond_1
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->getLeftIcon()Lcom/android/systemui/statusbar/KeyguardAffordanceView;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->getVisibility()I
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    :cond_1
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->isDozing()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    .line 1734
-    :cond_2
-    :goto_0
-    return-void
-
-    .line 1720
-    :cond_3
-    iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mHintAnimationRunning:Z
-
-    .line 1721
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mAfforanceHelper:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;
-
-    new-instance v2, Lcom/android/systemui/statusbar/phone/NotificationPanelView$16;
-
-    invoke-direct {v2, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$16;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
-
-    invoke-virtual {v1, p1, v2}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->startHintAnimation(ZLjava/lang/Runnable;)V
-
-    .line 1728
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->getLayoutDirection()I
-
-    move-result v1
-
-    if-ne v1, v0, :cond_5
-
-    move v0, p1
-
-    .line 1729
-    .local v0, "start":Z
-    :cond_4
-    :goto_1
-    if-eqz v0, :cond_6
-
-    .line 1730
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
-
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->onPhoneHintStarted()V
-
-    goto :goto_0
-
-    .line 1728
-    .end local v0    # "start":Z
-    :cond_5
-    if-eqz p1, :cond_4
-
-    const/4 v0, 0x0
-
-    goto :goto_1
-
-    .line 1732
-    .restart local v0    # "start":Z
-    :cond_6
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
-
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->onCameraHintStarted()V
-
-    goto :goto_0
-.end method
-
 .method public onEmptySpaceClicked(FF)V
     .locals 0
     .param p1, "x"    # F
@@ -6441,6 +6354,73 @@
     div-float v2, v3, v4
 
     .restart local v2    # "t":F
+    goto :goto_0
+.end method
+
+.method public onIconClicked(Z)V
+    .locals 3
+    .param p1, "rightIcon"    # Z
+
+    .prologue
+    const/4 v0, 0x1
+
+    .line 1758
+    iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mHintAnimationRunning:Z
+
+    if-eqz v1, :cond_0
+
+    .line 1775
+    :goto_0
+    return-void
+
+    .line 1761
+    :cond_0
+    iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mHintAnimationRunning:Z
+
+    .line 1762
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mAfforanceHelper:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;
+
+    new-instance v2, Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;
+
+    invoke-direct {v2, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
+
+    invoke-virtual {v1, p1, v2}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->startHintAnimation(ZLjava/lang/Runnable;)V
+
+    .line 1769
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->getLayoutDirection()I
+
+    move-result v1
+
+    if-ne v1, v0, :cond_1
+
+    if-nez p1, :cond_2
+
+    move p1, v0
+
+    .line 1770
+    :cond_1
+    :goto_1
+    if-eqz p1, :cond_3
+
+    .line 1771
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->onCameraHintStarted()V
+
+    goto :goto_0
+
+    .line 1769
+    :cond_2
+    const/4 p1, 0x0
+
+    goto :goto_1
+
+    .line 1773
+    :cond_3
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->onPhoneHintStarted()V
+
     goto :goto_0
 .end method
 

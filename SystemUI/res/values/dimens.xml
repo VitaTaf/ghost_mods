@@ -128,6 +128,7 @@
     <dimen name="heads_up_window_height">250.0dip</dimen>
     <dimen name="keyguard_min_swipe_amount">110.0dip</dimen>
     <dimen name="keyguard_affordance_min_background_radius">30.0dip</dimen>
+    <dimen name="keyguard_affordance_touch_target_size">96.0dip</dimen>
     <dimen name="hint_grow_amount_sideways">60.0dip</dimen>
     <dimen name="hint_chevron_circle_padding">16.0dip</dimen>
     <dimen name="header_notifications_collide_distance">48.0dip</dimen>

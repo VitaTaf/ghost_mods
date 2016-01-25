@@ -15,6 +15,8 @@
 
 
 # instance fields
+.field public mCancelled:Z
+
 .field final synthetic this$0:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;
 
 
@@ -23,7 +25,7 @@
     .locals 0
 
     .prologue
-    .line 68
+    .line 70
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$1;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -33,20 +35,34 @@
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
+.method public onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 1
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 71
+    .line 84
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$1;->mCancelled:Z
+
+    .line 85
+    return-void
+.end method
+
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 3
+    .param p1, "animation"    # Landroid/animation/Animator;
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 75
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$1;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;
 
-    const/4 v1, 0x0
-
     # setter for: Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mSwipeAnimator:Landroid/animation/Animator;
-    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->access$002(Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;Landroid/animation/Animator;)Landroid/animation/Animator;
+    invoke-static {v0, v2}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->access$002(Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;Landroid/animation/Animator;)Landroid/animation/Animator;
 
-    .line 72
+    .line 76
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$1;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;
 
     const/4 v1, 0x0
@@ -54,6 +70,32 @@
     # setter for: Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mSwipingInProgress:Z
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->access$102(Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;Z)Z
 
-    .line 73
+    .line 77
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$1;->mCancelled:Z
+
+    if-nez v0, :cond_0
+
+    .line 78
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$1;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;
+
+    # setter for: Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mTargetedView:Landroid/view/View;
+    invoke-static {v0, v2}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->access$202(Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;Landroid/view/View;)Landroid/view/View;
+
+    .line 80
+    :cond_0
+    return-void
+.end method
+
+.method public onAnimationStart(Landroid/animation/Animator;)V
+    .locals 1
+    .param p1, "animation"    # Landroid/animation/Animator;
+
+    .prologue
+    .line 89
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$1;->mCancelled:Z
+
+    .line 90
     return-void
 .end method

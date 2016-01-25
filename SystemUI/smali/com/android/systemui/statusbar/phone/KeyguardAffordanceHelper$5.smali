@@ -30,7 +30,7 @@
     .locals 0
 
     .prologue
-    .line 261
+    .line 315
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$5;->val$targetView:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
@@ -49,7 +49,7 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 264
+    .line 318
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v2
@@ -60,21 +60,21 @@
 
     move-result v0
 
-    .line 265
+    .line 319
     .local v0, "newRadius":F
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$5;->val$targetView:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
     invoke-virtual {v2, v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setCircleRadiusWithoutAnimation(F)V
 
-    .line 266
+    .line 320
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;
 
     # invokes: Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->getTranslationFromRadius(F)F
-    invoke-static {v2, v0}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->access$400(Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;F)F
+    invoke-static {v2, v0}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->access$500(Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;F)F
 
     move-result v1
 
-    .line 267
+    .line 321
     .local v1, "translation":F
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;
 
@@ -87,16 +87,16 @@
     .end local v1    # "translation":F
     :cond_0
     # setter for: Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mTranslation:F
-    invoke-static {v2, v1}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->access$502(Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;F)F
+    invoke-static {v2, v1}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->access$602(Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;F)F
 
-    .line 268
+    .line 322
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$5;->val$targetView:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-    # invokes: Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->updateIconsFromRadius(Lcom/android/systemui/statusbar/KeyguardAffordanceView;F)V
-    invoke-static {v2, v3, v0}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->access$600(Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;Lcom/android/systemui/statusbar/KeyguardAffordanceView;F)V
+    # invokes: Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->updateIconsFromTranslation(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
+    invoke-static {v2, v3}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->access$700(Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
 
-    .line 269
+    .line 323
     return-void
 .end method

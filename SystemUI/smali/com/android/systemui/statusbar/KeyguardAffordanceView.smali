@@ -1119,6 +1119,14 @@
 
     if-eqz v3, :cond_0
 
+    iget-object v3, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewView:Landroid/view/View;
+
+    invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
     .line 206
     iget v3, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleRadius:F
 
