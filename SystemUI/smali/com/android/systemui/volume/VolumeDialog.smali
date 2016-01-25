@@ -4005,49 +4005,6 @@
 
     invoke-virtual {v6}, Landroid/animation/ObjectAnimator;->start()V
 
-    .line 720
-    :goto_6
-    iget-boolean v6, p0, Lcom/android/systemui/volume/VolumeDialog;->mAutomute:Z
-
-    if-eqz v6, :cond_0
-
-    iget-boolean v6, p0, Lcom/android/systemui/volume/VolumeDialog;->mShowing:Z
-
-    if-eqz v6, :cond_0
-
-    .line 721
-    if-nez v5, :cond_0
-
-    # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->ss:Lcom/android/systemui/volume/VolumeDialogController$StreamState;
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$2000(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)Lcom/android/systemui/volume/VolumeDialogController$StreamState;
-
-    move-result-object v6
-
-    iget-boolean v6, v6, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->muted:Z
-
-    if-nez v6, :cond_0
-
-    # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->stream:I
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$700(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)I
-
-    move-result v6
-
-    const/4 v7, 0x3
-
-    if-ne v6, v7, :cond_0
-
-    .line 722
-    iget-object v6, p0, Lcom/android/systemui/volume/VolumeDialog;->mController:Lcom/android/systemui/volume/VolumeDialogController;
-
-    # getter for: Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->stream:I
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialog$VolumeRow;->access$700(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)I
-
-    move-result v7
-
-    const/4 v8, 0x1
-
-    invoke-virtual {v6, v7, v8}, Lcom/android/systemui/volume/VolumeDialogController;->setStreamMute(IZ)V
-
     goto/16 :goto_1
 
     .line 688
@@ -4061,7 +4018,7 @@
 
     iget v5, v6, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->level:I
 
-    goto/16 :goto_4
+    goto :goto_4
 
     .line 707
     .restart local v2    # "newProgress":I
@@ -4122,7 +4079,7 @@
 
     invoke-virtual {v6, v2}, Landroid/widget/SeekBar;->setProgress(I)V
 
-    goto :goto_6
+    goto/16 :goto_1
 .end method
 
 .method private updateWindowWidthH()V

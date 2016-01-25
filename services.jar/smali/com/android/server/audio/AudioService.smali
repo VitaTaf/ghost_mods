@@ -8852,69 +8852,79 @@
 .end method
 
 .method private onSetStreamVolume(IIII)V
-    .locals 4
+    .locals 5
     .param p1, "streamType"    # I
     .param p2, "index"    # I
     .param p3, "flags"    # I
     .param p4, "device"    # I
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v2, 0x1
 
-    .line 1216
-    iget-object v2, p0, Lcom/android/server/audio/AudioService;->mStreamVolumeAlias:[I
+    const/4 v3, 0x0
 
-    aget v2, v2, p1
+    .line 1214
+    iget-object v4, p0, Lcom/android/server/audio/AudioService;->mStreamVolumeAlias:[I
 
-    invoke-direct {p0, v2, p2, p4, v1}, Lcom/android/server/audio/AudioService;->setStreamVolumeInt(IIIZ)V
+    aget v1, v4, p1
 
-    .line 1218
-    and-int/lit8 v2, p3, 0x2
+    .line 1215
+    .local v1, "stream":I
+    invoke-direct {p0, v1, p2, p4, v3}, Lcom/android/server/audio/AudioService;->setStreamVolumeInt(IIIZ)V
 
-    if-nez v2, :cond_0
+    .line 1217
+    and-int/lit8 v4, p3, 0x2
 
-    iget-object v2, p0, Lcom/android/server/audio/AudioService;->mStreamVolumeAlias:[I
-
-    aget v2, v2, p1
+    if-nez v4, :cond_0
 
     invoke-virtual {p0}, Lcom/android/server/audio/AudioService;->getUiSoundsStreamType()I
 
-    move-result v3
+    move-result v4
 
-    if-ne v2, v3, :cond_1
+    if-ne v1, v4, :cond_1
 
-    .line 1221
+    .line 1220
     :cond_0
     if-nez p2, :cond_4
 
-    .line 1222
-    iget-boolean v2, p0, Lcom/android/server/audio/AudioService;->mHasVibrator:Z
+    .line 1221
+    iget-boolean v4, p0, Lcom/android/server/audio/AudioService;->mHasVibrator:Z
 
-    if-eqz v2, :cond_2
+    if-eqz v4, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v2
 
-    .line 1228
+    .line 1227
     .local v0, "newRingerMode":I
     :goto_0
-    const-string v2, "AudioService.onSetStreamVolume"
+    const-string v4, "AudioService.onSetStreamVolume"
 
-    invoke-direct {p0, v0, v2, v1}, Lcom/android/server/audio/AudioService;->setRingerMode(ILjava/lang/String;Z)V
+    invoke-direct {p0, v0, v4, v3}, Lcom/android/server/audio/AudioService;->setRingerMode(ILjava/lang/String;Z)V
 
     .line 1230
     .end local v0    # "newRingerMode":I
     :cond_1
+    iget-object v4, p0, Lcom/android/server/audio/AudioService;->mStreamStates:[Lcom/android/server/audio/AudioService$VolumeStreamState;
+
+    aget-object v4, v4, v1
+
+    if-nez p2, :cond_5
+
+    :goto_1
+    invoke-virtual {v4, v2}, Lcom/android/server/audio/AudioService$VolumeStreamState;->mute(Z)V
+
+    .line 1231
     return-void
 
-    .line 1222
+    .line 1221
     :cond_2
-    iget-object v2, p0, Lcom/android/server/audio/AudioService;->mVolumePolicy:Landroid/media/VolumePolicy;
+    iget-object v4, p0, Lcom/android/server/audio/AudioService;->mVolumePolicy:Landroid/media/VolumePolicy;
 
-    iget-boolean v2, v2, Landroid/media/VolumePolicy;->volumeDownToEnterSilent:Z
+    iget-boolean v4, v4, Landroid/media/VolumePolicy;->volumeDownToEnterSilent:Z
 
-    if-eqz v2, :cond_3
+    if-eqz v4, :cond_3
 
-    move v0, v1
+    move v0, v3
 
     goto :goto_0
 
@@ -8923,12 +8933,19 @@
 
     goto :goto_0
 
-    .line 1226
+    .line 1225
     :cond_4
     const/4 v0, 0x2
 
     .restart local v0    # "newRingerMode":I
     goto :goto_0
+
+    .end local v0    # "newRingerMode":I
+    :cond_5
+    move v2, v3
+
+    .line 1230
+    goto :goto_1
 .end method
 
 .method private onSetWiredDeviceConnectionState(IILjava/lang/String;)V
