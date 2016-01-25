@@ -65,6 +65,7 @@
     <color name="zen_introduction_message_background">#ff009688</color>
     <color name="volume_icon_color">#ffffffff</color>
     <color name="volume_settings_icon_color">#7fffffff</color>
+    <color name="volume_slider_inactive">#ffb0bec5</color>
     <color name="screen_pinning_primary_text">@android:color/primary_text_default_material_light</color>
     <color name="transparent">@android:color/transparent</color>
     <color name="keyguard_avatar_frame_color">#ffffffff</color>
