@@ -465,12 +465,10 @@
 .end method
 
 .method private getIcons(Landroid/content/res/Resources;)V
-    .locals 2
+    .locals 1
     .param p1, "res"    # Landroid/content/res/Resources;
 
     .prologue
-    const v1, 0x7f0200be
-
     .line 284
     const v0, 0x7f0200bd
 
@@ -490,14 +488,18 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mBackLandIcon:Landroid/graphics/drawable/Drawable;
 
     .line 286
-    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    const v0, 0x7f0200be
+
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mBackAltIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 287
-    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    .line 278
+    const v0, 0x7f020020
+
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
