@@ -55,8 +55,6 @@
 
 .field private static final GROUP_TOUCH_SOUNDS:Ljava/lang/String; = "touch_sounds"
 
-.field private static final MAX_BATCH_VOLUME_ADJUST_STEPS:I = 0x4
-
 .field private static MAX_STREAM_VOLUME:[I = null
 
 .field private static MIN_STREAM_VOLUME:[I = null
@@ -3644,6 +3642,8 @@
     .line 953
     .local v1, "streamType":I
     :goto_0
+    invoke-direct {p0, v1}, Lcom/android/server/audio/AudioService;->ensureValidStreamType(I)V
+
     iget-object v0, p0, Lcom/android/server/audio/AudioService;->mStreamVolumeAlias:[I
 
     aget v7, v0, v1
@@ -5802,50 +5802,6 @@
     throw v0
 
     .line 1681
-    :cond_0
-    return-void
-.end method
-
-.method private ensureValidSteps(I)V
-    .locals 3
-    .param p1, "steps"    # I
-
-    .prologue
-    .line 3075
-    invoke-static {p1}, Ljava/lang/Math;->abs(I)I
-
-    move-result v0
-
-    const/4 v1, 0x4
-
-    if-le v0, v1, :cond_0
-
-    .line 3076
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Bad volume adjust steps "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 3078
     :cond_0
     return-void
 .end method
@@ -10526,25 +10482,25 @@
     .param p4, "flags"    # I
 
     .prologue
-    .line 1384
+    .line 1382
     invoke-direct {p0}, Lcom/android/server/audio/AudioService;->isPlatformVoice()Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     const/4 v0, 0x2
 
-    if-ne p1, v0, :cond_0
+    if-ne p1, v0, :cond_1
 
-    .line 1385
+    .line 1383
     const/4 p1, 0x5
 
     .line 1388
-    :cond_0
+    :goto_0
     const/4 v0, 0x3
 
-    if-ne p1, v0, :cond_1
+    if-ne p1, v0, :cond_0
 
     .line 1389
     invoke-direct {p0, p4}, Lcom/android/server/audio/AudioService;->updateFlagsForSystemAudio(I)I
@@ -10552,13 +10508,21 @@
     move-result p4
 
     .line 1391
-    :cond_1
+    :cond_0
     iget-object v0, p0, Lcom/android/server/audio/AudioService;->mVolumeController:Lcom/android/server/audio/AudioService$VolumeController;
 
     invoke-virtual {v0, p1, p4}, Lcom/android/server/audio/AudioService$VolumeController;->postVolumeChanged(II)V
 
     .line 1392
     return-void
+
+    .line 1385
+    :cond_1
+    iget-object v0, p0, Lcom/android/server/audio/AudioService;->mStreamVolumeAlias:[I
+
+    aget p1, v0, p1
+
+    goto :goto_0
 .end method
 
 .method private setForceUseInt_SyncDevices(II)V
