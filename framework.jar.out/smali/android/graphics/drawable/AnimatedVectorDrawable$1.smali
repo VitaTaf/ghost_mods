@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 500
+    .line 499
     iput-object p1, p0, Landroid/graphics/drawable/AnimatedVectorDrawable$1;->this$0:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +41,12 @@
     .param p1, "who"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 503
+    .line 502
     iget-object v0, p0, Landroid/graphics/drawable/AnimatedVectorDrawable$1;->this$0:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->invalidateSelf()V
 
-    .line 504
+    .line 503
     return-void
 .end method
 
@@ -57,12 +57,12 @@
     .param p3, "when"    # J
 
     .prologue
-    .line 508
+    .line 507
     iget-object v0, p0, Landroid/graphics/drawable/AnimatedVectorDrawable$1;->this$0:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
     invoke-virtual {v0, p2, p3, p4}, Landroid/graphics/drawable/AnimatedVectorDrawable;->scheduleSelf(Ljava/lang/Runnable;J)V
 
-    .line 509
+    .line 508
     return-void
 .end method
 
@@ -72,11 +72,11 @@
     .param p2, "what"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 513
+    .line 512
     iget-object v0, p0, Landroid/graphics/drawable/AnimatedVectorDrawable$1;->this$0:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
     invoke-virtual {v0, p2}, Landroid/graphics/drawable/AnimatedVectorDrawable;->unscheduleSelf(Ljava/lang/Runnable;)V
 
-    .line 514
+    .line 513
     return-void
 .end method

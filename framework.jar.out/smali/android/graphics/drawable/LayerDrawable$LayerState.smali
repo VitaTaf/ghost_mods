@@ -48,55 +48,55 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1290
+    .line 1453
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
 
-    .line 1286
+    .line 1449
     iput-boolean v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mAutoMirrored:Z
 
-    .line 1288
+    .line 1451
     iput v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingMode:I
 
-    .line 1291
+    .line 1454
     if-eqz p1, :cond_1
 
-    .line 1292
+    .line 1455
     iget-object v3, p1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 1293
+    .line 1456
     .local v3, "origChildDrawable":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget v0, p1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 1295
+    .line 1458
     .local v0, "N":I
     iput v0, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 1296
+    .line 1459
     new-array v4, v0, [Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
     iput-object v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 1298
+    .line 1461
     iget v4, p1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChangingConfigurations:I
 
     iput v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChangingConfigurations:I
 
-    .line 1299
+    .line 1462
     iget v4, p1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildrenChangingConfigurations:I
 
     iput v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildrenChangingConfigurations:I
 
-    .line 1301
+    .line 1464
     const/4 v1, 0x0
 
     .local v1, "i":I
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 1302
+    .line 1465
     aget-object v2, v3, v1
 
-    .line 1303
+    .line 1466
     .local v2, "or":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
@@ -106,60 +106,60 @@
 
     aput-object v5, v4, v1
 
-    .line 1301
+    .line 1464
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1306
+    .line 1469
     .end local v2    # "or":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     :cond_0
     iget-boolean v4, p1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mHaveOpacity:Z
 
     iput-boolean v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mHaveOpacity:Z
 
-    .line 1307
+    .line 1470
     iget v4, p1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mOpacity:I
 
     iput v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mOpacity:I
 
-    .line 1308
+    .line 1471
     iget-boolean v4, p1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mHaveIsStateful:Z
 
     iput-boolean v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mHaveIsStateful:Z
 
-    .line 1309
+    .line 1472
     iget-boolean v4, p1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mIsStateful:Z
 
     iput-boolean v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mIsStateful:Z
 
-    .line 1310
+    .line 1473
     iget-boolean v4, p1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mAutoMirrored:Z
 
     iput-boolean v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mAutoMirrored:Z
 
-    .line 1311
+    .line 1474
     iget v4, p1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingMode:I
 
     iput v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingMode:I
 
-    .line 1312
+    .line 1475
     iget-object v4, p1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mThemeAttrs:[I
 
     iput-object v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mThemeAttrs:[I
 
-    .line 1317
+    .line 1480
     .end local v0    # "N":I
     .end local v1    # "i":I
     .end local v3    # "origChildDrawable":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     :goto_1
     return-void
 
-    .line 1314
+    .line 1477
     :cond_1
     iput v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 1315
+    .line 1478
     const/4 v4, 0x0
 
     iput-object v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
@@ -172,7 +172,7 @@
     .param p0, "x0"    # Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     .prologue
-    .line 1272
+    .line 1435
     iget-boolean v0, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mAutoMirrored:Z
 
     return v0
@@ -184,7 +184,7 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 1272
+    .line 1435
     iput-boolean p1, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mAutoMirrored:Z
 
     return p1
@@ -195,7 +195,7 @@
     .param p0, "x0"    # Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     .prologue
-    .line 1272
+    .line 1435
     iget v0, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingMode:I
 
     return v0
@@ -207,7 +207,7 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 1272
+    .line 1435
     iput p1, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingMode:I
 
     return p1
@@ -228,19 +228,19 @@
     .end annotation
 
     .prologue
-    .line 1409
+    .line 1572
     .local p1, "atlasList":Ljava/util/Collection;, "Ljava/util/Collection<Landroid/graphics/Bitmap;>;"
     iget-object v1, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 1410
+    .line 1573
     .local v1, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget v0, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 1411
+    .line 1574
     .local v0, "N":I
     const/4 v3, 0x0
 
-    .line 1412
+    .line 1575
     .local v3, "pixelCount":I
     const/4 v2, 0x0
 
@@ -248,7 +248,7 @@
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 1413
+    .line 1576
     aget-object v5, v1, v2
 
     iget-object v5, v5, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -257,24 +257,24 @@
 
     move-result-object v4
 
-    .line 1414
+    .line 1577
     .local v4, "state":Landroid/graphics/drawable/Drawable$ConstantState;
     if-eqz v4, :cond_0
 
-    .line 1415
+    .line 1578
     invoke-virtual {v4, p1}, Landroid/graphics/drawable/Drawable$ConstantState;->addAtlasableBitmaps(Ljava/util/Collection;)I
 
     move-result v5
 
     add-int/2addr v3, v5
 
-    .line 1412
+    .line 1575
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1418
+    .line 1581
     .end local v4    # "state":Landroid/graphics/drawable/Drawable$ConstantState;
     :cond_1
     return v3
@@ -286,7 +286,7 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 1321
+    .line 1484
     iget-object v5, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mThemeAttrs:[I
 
     if-nez v5, :cond_0
@@ -297,20 +297,20 @@
 
     if-eqz v5, :cond_1
 
-    .line 1334
+    .line 1497
     :cond_0
     :goto_0
     return v4
 
-    .line 1325
+    .line 1488
     :cond_1
     iget-object v1, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 1326
+    .line 1489
     .local v1, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget v0, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 1327
+    .line 1490
     .local v0, "N":I
     const/4 v2, 0x0
 
@@ -318,10 +318,10 @@
     :goto_1
     if-ge v2, v0, :cond_2
 
-    .line 1328
+    .line 1491
     aget-object v3, v1, v2
 
-    .line 1329
+    .line 1492
     .local v3, "layer":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v5, v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mThemeAttrs:[I
 
@@ -335,12 +335,12 @@
 
     if-nez v5, :cond_0
 
-    .line 1327
+    .line 1490
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 1334
+    .line 1497
     .end local v3    # "layer":Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     :cond_2
     const/4 v4, 0x0
@@ -352,14 +352,14 @@
     .locals 4
 
     .prologue
-    .line 1390
+    .line 1553
     iget-object v1, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 1391
+    .line 1554
     .local v1, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget v0, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 1392
+    .line 1555
     .local v0, "N":I
     const/4 v2, 0x0
 
@@ -367,7 +367,7 @@
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 1393
+    .line 1556
     aget-object v3, v1, v2
 
     iget-object v3, v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -378,20 +378,20 @@
 
     if-nez v3, :cond_0
 
-    .line 1394
+    .line 1557
     const/4 v3, 0x0
 
-    .line 1399
+    .line 1562
     :goto_1
     return v3
 
-    .line 1392
+    .line 1555
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1399
+    .line 1562
     :cond_1
     const/4 v3, 0x1
 
@@ -402,7 +402,7 @@
     .locals 1
 
     .prologue
-    .line 1349
+    .line 1512
     iget v0, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChangingConfigurations:I
 
     return v0
@@ -412,27 +412,27 @@
     .locals 5
 
     .prologue
-    .line 1353
+    .line 1516
     iget-boolean v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mHaveOpacity:Z
 
     if-eqz v4, :cond_0
 
-    .line 1354
+    .line 1517
     iget v3, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mOpacity:I
 
-    .line 1366
+    .line 1529
     :goto_0
     return v3
 
-    .line 1357
+    .line 1520
     :cond_0
     iget-object v1, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 1358
+    .line 1521
     .local v1, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget v0, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 1359
+    .line 1522
     .local v0, "N":I
     if-lez v0, :cond_1
 
@@ -446,7 +446,7 @@
 
     move-result v3
 
-    .line 1360
+    .line 1523
     .local v3, "op":I
     :goto_1
     const/4 v2, 0x1
@@ -455,7 +455,7 @@
     :goto_2
     if-ge v2, v0, :cond_2
 
-    .line 1361
+    .line 1524
     aget-object v4, v1, v2
 
     iget-object v4, v4, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -468,12 +468,12 @@
 
     move-result v3
 
-    .line 1360
+    .line 1523
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_2
 
-    .line 1359
+    .line 1522
     .end local v2    # "i":I
     .end local v3    # "op":I
     :cond_1
@@ -481,13 +481,13 @@
 
     goto :goto_1
 
-    .line 1364
+    .line 1527
     .restart local v2    # "i":I
     .restart local v3    # "op":I
     :cond_2
     iput v3, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mOpacity:I
 
-    .line 1365
+    .line 1528
     const/4 v4, 0x1
 
     iput-boolean v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mHaveOpacity:Z
@@ -501,13 +501,13 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1403
+    .line 1566
     iput-boolean v0, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mHaveOpacity:Z
 
-    .line 1404
+    .line 1567
     iput-boolean v0, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mHaveIsStateful:Z
 
-    .line 1405
+    .line 1568
     return-void
 .end method
 
@@ -515,31 +515,31 @@
     .locals 5
 
     .prologue
-    .line 1370
+    .line 1533
     iget-boolean v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mHaveIsStateful:Z
 
     if-eqz v4, :cond_0
 
-    .line 1371
+    .line 1534
     iget-boolean v3, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mIsStateful:Z
 
-    .line 1386
+    .line 1549
     :goto_0
     return v3
 
-    .line 1374
+    .line 1537
     :cond_0
     iget-object v1, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 1375
+    .line 1538
     .local v1, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget v0, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 1376
+    .line 1539
     .local v0, "N":I
     const/4 v3, 0x0
 
-    .line 1377
+    .line 1540
     .local v3, "isStateful":Z
     const/4 v2, 0x0
 
@@ -547,7 +547,7 @@
     :goto_1
     if-ge v2, v0, :cond_1
 
-    .line 1378
+    .line 1541
     aget-object v4, v1, v2
 
     iget-object v4, v4, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -558,21 +558,21 @@
 
     if-eqz v4, :cond_2
 
-    .line 1379
+    .line 1542
     const/4 v3, 0x1
 
-    .line 1384
+    .line 1547
     :cond_1
     iput-boolean v3, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mIsStateful:Z
 
-    .line 1385
+    .line 1548
     const/4 v4, 0x1
 
     iput-boolean v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mHaveIsStateful:Z
 
     goto :goto_0
 
-    .line 1377
+    .line 1540
     :cond_2
     add-int/lit8 v2, v2, 0x1
 
@@ -583,7 +583,7 @@
     .locals 2
 
     .prologue
-    .line 1339
+    .line 1502
     new-instance v0, Landroid/graphics/drawable/LayerDrawable;
 
     const/4 v1, 0x0
@@ -598,7 +598,7 @@
     .param p1, "res"    # Landroid/content/res/Resources;
 
     .prologue
-    .line 1344
+    .line 1507
     new-instance v0, Landroid/graphics/drawable/LayerDrawable;
 
     invoke-direct {v0, p0, p1}, Landroid/graphics/drawable/LayerDrawable;-><init>(Landroid/graphics/drawable/LayerDrawable$LayerState;Landroid/content/res/Resources;)V

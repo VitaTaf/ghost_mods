@@ -1193,7 +1193,7 @@
 
     move-result v5
 
-    invoke-virtual {v3, v5}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
+    invoke-virtual {v3, v5}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)Z
 
     .line 1251
     :cond_0
@@ -3384,7 +3384,7 @@
     if-eqz v0, :cond_0
 
     .line 1180
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)Z
 
     .line 1182
     :cond_0
@@ -3395,7 +3395,7 @@
     .line 1183
     iget-object v1, p0, Landroid/widget/ProgressBar;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
+    invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)Z
 
     .line 1185
     :cond_1
@@ -3406,7 +3406,7 @@
     .line 1186
     iget-object v1, p0, Landroid/widget/ProgressBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
+    invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)Z
 
     .line 1188
     :cond_2
@@ -3658,7 +3658,7 @@
 
     move-result v0
 
-    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
+    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)Z
 
     .line 591
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->isStateful()Z
@@ -4126,7 +4126,7 @@
 
     move-result v1
 
-    invoke-virtual {p1, v1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
+    invoke-virtual {p1, v1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)Z
 
     .line 749
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->isStateful()Z

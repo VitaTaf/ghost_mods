@@ -341,8 +341,6 @@
 
 .field public static final config_useFixedVolume:I = 0x1120074
 
-.field public static final config_useMasterVolume:I = 0x112000f
-
 .field public static final config_useVolumeKeySounds:I = 0x1120010
 
 .field public static final config_use_carrier_as_spn_resource_qualifier:I = 0x11200be

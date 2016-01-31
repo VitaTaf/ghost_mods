@@ -854,7 +854,7 @@
 
     move-result v0
 
-    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
+    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)Z
 
     .line 212
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/UserAvatarView;->configureBounds()V
