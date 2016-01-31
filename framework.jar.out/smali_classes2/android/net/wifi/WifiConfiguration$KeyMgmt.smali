@@ -51,7 +51,6 @@
 
     const/4 v3, 0x0
 
-    .line 133
     const/4 v0, 0x7
 
     new-array v0, v0, [Ljava/lang/String;
@@ -90,7 +89,6 @@
 
     sput-object v0, Landroid/net/wifi/WifiConfiguration$KeyMgmt;->strings:[Ljava/lang/String;
 
-    .line 138
     const/4 v0, 0x7
 
     new-array v0, v0, [Ljava/lang/String;
@@ -136,7 +134,6 @@
     .locals 0
 
     .prologue
-    .line 106
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -35,29 +35,23 @@
     .param p3, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 1562
     iput-object p1, p0, Lcom/motorola/slpc/ModalityManager$VehicleListenerTransport;->this$0:Lcom/motorola/slpc/ModalityManager;
 
     invoke-direct {p0}, Lcom/motorola/slpc/IVehicleListener$Stub;-><init>()V
 
-    .line 1563
     iput-object p2, p0, Lcom/motorola/slpc/ModalityManager$VehicleListenerTransport;->mVehicleListener:Lcom/motorola/slpc/ModalityManager$VehicleListener;
 
-    .line 1565
     if-nez p3, :cond_0
 
-    .line 1566
     new-instance v0, Lcom/motorola/slpc/ModalityManager$VehicleListenerTransport$1;
 
     invoke-direct {v0, p0, p1}, Lcom/motorola/slpc/ModalityManager$VehicleListenerTransport$1;-><init>(Lcom/motorola/slpc/ModalityManager$VehicleListenerTransport;Lcom/motorola/slpc/ModalityManager;)V
 
     iput-object v0, p0, Lcom/motorola/slpc/ModalityManager$VehicleListenerTransport;->mVehicleListenerHandler:Landroid/os/Handler;
 
-    .line 1580
     :goto_0
     return-void
 
-    .line 1573
     :cond_0
     new-instance v0, Lcom/motorola/slpc/ModalityManager$VehicleListenerTransport$2;
 
@@ -73,16 +67,13 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 1614
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1622
     :goto_0
     return-void
 
-    .line 1616
     :pswitch_0
     iget-object v0, p0, Lcom/motorola/slpc/ModalityManager$VehicleListenerTransport;->mVehicleListener:Lcom/motorola/slpc/ModalityManager$VehicleListener;
 
@@ -90,7 +81,6 @@
 
     goto :goto_0
 
-    .line 1619
     :pswitch_1
     iget-object v0, p0, Lcom/motorola/slpc/ModalityManager$VehicleListenerTransport;->mVehicleListener:Lcom/motorola/slpc/ModalityManager$VehicleListener;
 
@@ -98,7 +88,6 @@
 
     goto :goto_0
 
-    .line 1614
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -112,7 +101,6 @@
     .param p1, "x1"    # Landroid/os/Message;
 
     .prologue
-    .line 1555
     invoke-direct {p0, p1}, Lcom/motorola/slpc/ModalityManager$VehicleListenerTransport;->_handleMessage(Landroid/os/Message;)V
 
     return-void
@@ -122,7 +110,6 @@
     .locals 2
 
     .prologue
-    .line 1603
     iget-object v0, p0, Lcom/motorola/slpc/ModalityManager$VehicleListenerTransport;->mVehicleListenerHandler:Landroid/os/Handler;
 
     invoke-virtual {v0}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
@@ -159,18 +146,15 @@
 
     if-eqz v0, :cond_0
 
-    .line 1606
     const-string v0, "ModalityManager"
 
     const-string/jumbo v1, "removeDeadListener(): handler thread is still alive"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1611
     :goto_0
     return-void
 
-    .line 1608
     :cond_0
     const-string v0, "ModalityManager"
 
@@ -178,7 +162,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1609
     iget-object v0, p0, Lcom/motorola/slpc/ModalityManager$VehicleListenerTransport;->this$0:Lcom/motorola/slpc/ModalityManager;
 
     iget-object v1, p0, Lcom/motorola/slpc/ModalityManager$VehicleListenerTransport;->mVehicleListener:Lcom/motorola/slpc/ModalityManager$VehicleListener;
@@ -194,7 +177,6 @@
     .locals 4
 
     .prologue
-    .line 1593
     const-string v1, "ModalityManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -228,18 +210,15 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1595
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 1596
     .local v0, "msg":Landroid/os/Message;
     const/4 v1, 0x2
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 1597
     iget-object v1, p0, Lcom/motorola/slpc/ModalityManager$VehicleListenerTransport;->mVehicleListenerHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
@@ -248,10 +227,8 @@
 
     if-nez v1, :cond_0
 
-    .line 1598
     invoke-direct {p0}, Lcom/motorola/slpc/ModalityManager$VehicleListenerTransport;->removeDeadListener()V
 
-    .line 1600
     :cond_0
     return-void
 .end method
@@ -260,7 +237,6 @@
     .locals 4
 
     .prologue
-    .line 1583
     const-string v1, "ModalityManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -294,18 +270,15 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1585
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 1586
     .local v0, "msg":Landroid/os/Message;
     const/4 v1, 0x1
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 1587
     iget-object v1, p0, Lcom/motorola/slpc/ModalityManager$VehicleListenerTransport;->mVehicleListenerHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
@@ -314,10 +287,8 @@
 
     if-nez v1, :cond_0
 
-    .line 1588
     invoke-direct {p0}, Lcom/motorola/slpc/ModalityManager$VehicleListenerTransport;->removeDeadListener()V
 
-    .line 1590
     :cond_0
     return-void
 .end method

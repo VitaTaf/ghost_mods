@@ -54,7 +54,6 @@
 
     const/4 v3, 0x0
 
-    .line 204
     new-instance v0, Lcom/motorola/android/provider/Checkin$Properties$Tag;
 
     const-string v1, "DESIRED_BUILD"
@@ -63,7 +62,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Properties$Tag;->DESIRED_BUILD:Lcom/motorola/android/provider/Checkin$Properties$Tag;
 
-    .line 205
     new-instance v0, Lcom/motorola/android/provider/Checkin$Properties$Tag;
 
     const-string v1, "EVENT_LIMIT"
@@ -72,7 +70,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Properties$Tag;->EVENT_LIMIT:Lcom/motorola/android/provider/Checkin$Properties$Tag;
 
-    .line 206
     new-instance v0, Lcom/motorola/android/provider/Checkin$Properties$Tag;
 
     const-string v1, "PROCESS_TAGS"
@@ -81,7 +78,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Properties$Tag;->PROCESS_TAGS:Lcom/motorola/android/provider/Checkin$Properties$Tag;
 
-    .line 207
     new-instance v0, Lcom/motorola/android/provider/Checkin$Properties$Tag;
 
     const-string v1, "EVENT_TAGS"
@@ -90,7 +86,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Properties$Tag;->EVENT_TAGS:Lcom/motorola/android/provider/Checkin$Properties$Tag;
 
-    .line 208
     new-instance v0, Lcom/motorola/android/provider/Checkin$Properties$Tag;
 
     const-string v1, "LOG_LEVEL"
@@ -99,7 +94,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Properties$Tag;->LOG_LEVEL:Lcom/motorola/android/provider/Checkin$Properties$Tag;
 
-    .line 209
     new-instance v0, Lcom/motorola/android/provider/Checkin$Properties$Tag;
 
     const-string v1, "PRIV_BITFIELD"
@@ -110,7 +104,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Properties$Tag;->PRIV_BITFIELD:Lcom/motorola/android/provider/Checkin$Properties$Tag;
 
-    .line 203
     const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/motorola/android/provider/Checkin$Properties$Tag;
@@ -155,7 +148,6 @@
     .end annotation
 
     .prologue
-    .line 203
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -166,7 +158,6 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 203
     const-class v0, Lcom/motorola/android/provider/Checkin$Properties$Tag;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -182,7 +173,6 @@
     .locals 1
 
     .prologue
-    .line 203
     sget-object v0, Lcom/motorola/android/provider/Checkin$Properties$Tag;->$VALUES:[Lcom/motorola/android/provider/Checkin$Properties$Tag;
 
     invoke-virtual {v0}, [Lcom/motorola/android/provider/Checkin$Properties$Tag;->clone()Ljava/lang/Object;

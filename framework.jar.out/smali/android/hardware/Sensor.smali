@@ -222,7 +222,6 @@
     .locals 1
 
     .prologue
-    .line 729
     const/16 v0, 0x1a
 
     new-array v0, v0, [I
@@ -268,10 +267,8 @@
     .locals 0
 
     .prologue
-    .line 811
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 812
     return-void
 .end method
 
@@ -281,7 +278,6 @@
     .param p1, "sdkLevel"    # I
 
     .prologue
-    .line 775
     iget v1, p0, Landroid/hardware/Sensor;->mType:I
 
     const/16 v2, 0xb
@@ -292,18 +288,14 @@
 
     if-gt p1, v1, :cond_0
 
-    .line 777
     const/4 v1, 0x3
 
-    .line 789
     :goto_0
     return v1
 
-    .line 779
     :cond_0
     iget v0, p0, Landroid/hardware/Sensor;->mType:I
 
-    .line 780
     .local v0, "offset":I
     sget-object v1, Landroid/hardware/Sensor;->sSensorReportingModes:[I
 
@@ -311,12 +303,10 @@
 
     if-lt v0, v1, :cond_1
 
-    .line 787
     const/16 v1, 0x10
 
     goto :goto_0
 
-    .line 789
     :cond_1
     sget-object v1, Landroid/hardware/Sensor;->sSensorReportingModes:[I
 
@@ -331,7 +321,6 @@
     .locals 1
 
     .prologue
-    .line 887
     iget v0, p0, Landroid/hardware/Sensor;->mFifoMaxEventCount:I
 
     return v0
@@ -341,7 +330,6 @@
     .locals 1
 
     .prologue
-    .line 877
     iget v0, p0, Landroid/hardware/Sensor;->mFifoReservedEventCount:I
 
     return v0
@@ -351,7 +339,6 @@
     .locals 1
 
     .prologue
-    .line 907
     iget v0, p0, Landroid/hardware/Sensor;->mHandle:I
 
     return v0
@@ -361,7 +348,6 @@
     .locals 1
 
     .prologue
-    .line 920
     iget v0, p0, Landroid/hardware/Sensor;->mMaxDelay:I
 
     return v0
@@ -371,7 +357,6 @@
     .locals 1
 
     .prologue
-    .line 846
     iget v0, p0, Landroid/hardware/Sensor;->mMaxRange:F
 
     return v0
@@ -381,7 +366,6 @@
     .locals 1
 
     .prologue
-    .line 869
     iget v0, p0, Landroid/hardware/Sensor;->mMinDelay:I
 
     return v0
@@ -391,7 +375,6 @@
     .locals 1
 
     .prologue
-    .line 818
     iget-object v0, p0, Landroid/hardware/Sensor;->mName:Ljava/lang/String;
 
     return-object v0
@@ -401,7 +384,6 @@
     .locals 1
 
     .prologue
-    .line 860
     iget v0, p0, Landroid/hardware/Sensor;->mPower:F
 
     return v0
@@ -411,7 +393,6 @@
     .locals 1
 
     .prologue
-    .line 769
     iget v0, p0, Landroid/hardware/Sensor;->mFlags:I
 
     and-int/lit8 v0, v0, 0xe
@@ -425,7 +406,6 @@
     .locals 1
 
     .prologue
-    .line 902
     iget-object v0, p0, Landroid/hardware/Sensor;->mRequiredPermission:Ljava/lang/String;
 
     return-object v0
@@ -435,7 +415,6 @@
     .locals 1
 
     .prologue
-    .line 853
     iget v0, p0, Landroid/hardware/Sensor;->mResolution:F
 
     return v0
@@ -445,7 +424,6 @@
     .locals 1
 
     .prologue
-    .line 894
     iget-object v0, p0, Landroid/hardware/Sensor;->mStringType:Ljava/lang/String;
 
     return-object v0
@@ -455,7 +433,6 @@
     .locals 1
 
     .prologue
-    .line 832
     iget v0, p0, Landroid/hardware/Sensor;->mType:I
 
     return v0
@@ -465,7 +442,6 @@
     .locals 1
 
     .prologue
-    .line 825
     iget-object v0, p0, Landroid/hardware/Sensor;->mVendor:Ljava/lang/String;
 
     return-object v0
@@ -475,7 +451,6 @@
     .locals 1
 
     .prologue
-    .line 839
     iget v0, p0, Landroid/hardware/Sensor;->mVersion:I
 
     return v0
@@ -485,7 +460,6 @@
     .locals 1
 
     .prologue
-    .line 961
     iget v0, p0, Landroid/hardware/Sensor;->mFlags:I
 
     and-int/lit8 v0, v0, 0x1
@@ -509,13 +483,10 @@
     .param p2, "res"    # F
 
     .prologue
-    .line 965
     iput p1, p0, Landroid/hardware/Sensor;->mMaxRange:F
 
-    .line 966
     iput p2, p0, Landroid/hardware/Sensor;->mResolution:F
 
-    .line 967
     return-void
 .end method
 
@@ -523,7 +494,6 @@
     .locals 2
 
     .prologue
-    .line 971
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

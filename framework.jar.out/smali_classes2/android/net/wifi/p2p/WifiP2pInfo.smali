@@ -36,7 +36,6 @@
     .locals 1
 
     .prologue
-    .line 99
     new-instance v0, Landroid/net/wifi/p2p/WifiP2pInfo$1;
 
     invoke-direct {v0}, Landroid/net/wifi/p2p/WifiP2pInfo$1;-><init>()V
@@ -50,10 +49,8 @@
     .locals 0
 
     .prologue
-    .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 55
     return-void
 .end method
 
@@ -62,38 +59,30 @@
     .param p1, "source"    # Landroid/net/wifi/p2p/WifiP2pInfo;
 
     .prologue
-    .line 73
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 74
     if-eqz p1, :cond_0
 
-    .line 75
     iget-boolean v0, p1, Landroid/net/wifi/p2p/WifiP2pInfo;->groupFormed:Z
 
     iput-boolean v0, p0, Landroid/net/wifi/p2p/WifiP2pInfo;->groupFormed:Z
 
-    .line 76
     iget-boolean v0, p1, Landroid/net/wifi/p2p/WifiP2pInfo;->isGroupOwner:Z
 
     iput-boolean v0, p0, Landroid/net/wifi/p2p/WifiP2pInfo;->isGroupOwner:Z
 
-    .line 77
     iget v0, p1, Landroid/net/wifi/p2p/WifiP2pInfo;->operatingChannel:I
 
     iput v0, p0, Landroid/net/wifi/p2p/WifiP2pInfo;->operatingChannel:I
 
-    .line 78
     iget-object v0, p1, Landroid/net/wifi/p2p/WifiP2pInfo;->groupOwnerAddress:Ljava/net/InetAddress;
 
     iput-object v0, p0, Landroid/net/wifi/p2p/WifiP2pInfo;->groupOwnerAddress:Ljava/net/InetAddress;
 
-    .line 79
     iget-boolean v0, p1, Landroid/net/wifi/p2p/WifiP2pInfo;->mccMode:Z
 
     iput-boolean v0, p0, Landroid/net/wifi/p2p/WifiP2pInfo;->mccMode:Z
 
-    .line 81
     :cond_0
     return-void
 .end method
@@ -104,7 +93,6 @@
     .locals 1
 
     .prologue
-    .line 69
     const/4 v0, 0x0
 
     return v0
@@ -114,12 +102,10 @@
     .locals 3
 
     .prologue
-    .line 58
     new-instance v0, Ljava/lang/StringBuffer;
 
     invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 59
     .local v0, "sbuf":Ljava/lang/StringBuffer;
     const-string v1, "groupFormed: "
 
@@ -179,7 +165,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Z)Ljava/lang/StringBuffer;
 
-    .line 64
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -197,7 +182,6 @@
 
     const/4 v2, 0x0
 
-    .line 85
     iget-boolean v0, p0, Landroid/net/wifi/p2p/WifiP2pInfo;->groupFormed:Z
 
     if-eqz v0, :cond_0
@@ -207,7 +191,6 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 86
     iget-boolean v0, p0, Landroid/net/wifi/p2p/WifiP2pInfo;->isGroupOwner:Z
 
     if-eqz v0, :cond_1
@@ -217,20 +200,16 @@
     :goto_1
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 87
     iget v0, p0, Landroid/net/wifi/p2p/WifiP2pInfo;->operatingChannel:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 89
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pInfo;->groupOwnerAddress:Ljava/net/InetAddress;
 
     if-eqz v0, :cond_2
 
-    .line 90
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 91
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pInfo;->groupOwnerAddress:Ljava/net/InetAddress;
 
     invoke-virtual {v0}, Ljava/net/InetAddress;->getAddress()[B
@@ -239,7 +218,6 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByteArray([B)V
 
-    .line 95
     :goto_2
     iget-boolean v0, p0, Landroid/net/wifi/p2p/WifiP2pInfo;->mccMode:Z
 
@@ -248,22 +226,18 @@
     :goto_3
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 96
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 85
     goto :goto_0
 
     :cond_1
     move v0, v2
 
-    .line 86
     goto :goto_1
 
-    .line 93
     :cond_2
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeByte(B)V
 
@@ -272,6 +246,5 @@
     :cond_3
     move v1, v2
 
-    .line 95
     goto :goto_3
 .end method

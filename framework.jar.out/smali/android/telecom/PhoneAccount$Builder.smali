@@ -57,100 +57,84 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 190
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 170
     iput v0, p0, Landroid/telecom/PhoneAccount$Builder;->mIconTint:I
 
-    .line 171
     iput v0, p0, Landroid/telecom/PhoneAccount$Builder;->mHighlightColor:I
 
-    .line 174
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/telecom/PhoneAccount$Builder;->mSupportedUriSchemes:Ljava/util/List;
 
-    .line 191
     invoke-virtual {p1}, Landroid/telecom/PhoneAccount;->getAccountHandle()Landroid/telecom/PhoneAccountHandle;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/telecom/PhoneAccount$Builder;->mAccountHandle:Landroid/telecom/PhoneAccountHandle;
 
-    .line 192
     invoke-virtual {p1}, Landroid/telecom/PhoneAccount;->getAddress()Landroid/net/Uri;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/telecom/PhoneAccount$Builder;->mAddress:Landroid/net/Uri;
 
-    .line 193
     invoke-virtual {p1}, Landroid/telecom/PhoneAccount;->getSubscriptionAddress()Landroid/net/Uri;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/telecom/PhoneAccount$Builder;->mSubscriptionAddress:Landroid/net/Uri;
 
-    .line 194
     invoke-virtual {p1}, Landroid/telecom/PhoneAccount;->getCapabilities()I
 
     move-result v0
 
     iput v0, p0, Landroid/telecom/PhoneAccount$Builder;->mCapabilities:I
 
-    .line 195
     invoke-virtual {p1}, Landroid/telecom/PhoneAccount;->getIconResId()I
 
     move-result v0
 
     iput v0, p0, Landroid/telecom/PhoneAccount$Builder;->mIconResId:I
 
-    .line 196
     invoke-virtual {p1}, Landroid/telecom/PhoneAccount;->getIconPackageName()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/telecom/PhoneAccount$Builder;->mIconPackageName:Ljava/lang/String;
 
-    .line 197
     invoke-virtual {p1}, Landroid/telecom/PhoneAccount;->getIconBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/telecom/PhoneAccount$Builder;->mIconBitmap:Landroid/graphics/Bitmap;
 
-    .line 198
     invoke-virtual {p1}, Landroid/telecom/PhoneAccount;->getIconTint()I
 
     move-result v0
 
     iput v0, p0, Landroid/telecom/PhoneAccount$Builder;->mIconTint:I
 
-    .line 199
     invoke-virtual {p1}, Landroid/telecom/PhoneAccount;->getHighlightColor()I
 
     move-result v0
 
     iput v0, p0, Landroid/telecom/PhoneAccount$Builder;->mHighlightColor:I
 
-    .line 200
     invoke-virtual {p1}, Landroid/telecom/PhoneAccount;->getLabel()Ljava/lang/CharSequence;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/telecom/PhoneAccount$Builder;->mLabel:Ljava/lang/CharSequence;
 
-    .line 201
     invoke-virtual {p1}, Landroid/telecom/PhoneAccount;->getShortDescription()Ljava/lang/CharSequence;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/telecom/PhoneAccount$Builder;->mShortDescription:Ljava/lang/CharSequence;
 
-    .line 202
     iget-object v0, p0, Landroid/telecom/PhoneAccount$Builder;->mSupportedUriSchemes:Ljava/util/List;
 
     invoke-virtual {p1}, Landroid/telecom/PhoneAccount;->getSupportedUriSchemes()Ljava/util/List;
@@ -159,7 +143,6 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 203
     return-void
 .end method
 
@@ -171,29 +154,22 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 179
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 170
     iput v0, p0, Landroid/telecom/PhoneAccount$Builder;->mIconTint:I
 
-    .line 171
     iput v0, p0, Landroid/telecom/PhoneAccount$Builder;->mHighlightColor:I
 
-    .line 174
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/telecom/PhoneAccount$Builder;->mSupportedUriSchemes:Ljava/util/List;
 
-    .line 180
     iput-object p1, p0, Landroid/telecom/PhoneAccount$Builder;->mAccountHandle:Landroid/telecom/PhoneAccountHandle;
 
-    .line 181
     iput-object p2, p0, Landroid/telecom/PhoneAccount$Builder;->mLabel:Ljava/lang/CharSequence;
 
-    .line 182
     return-void
 .end method
 
@@ -204,7 +180,6 @@
     .param p1, "uriScheme"    # Ljava/lang/String;
 
     .prologue
-    .line 337
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -219,12 +194,10 @@
 
     if-nez v0, :cond_0
 
-    .line 338
     iget-object v0, p0, Landroid/telecom/PhoneAccount$Builder;->mSupportedUriSchemes:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 340
     :cond_0
     return-object p0
 .end method
@@ -233,7 +206,6 @@
     .locals 14
 
     .prologue
-    .line 367
     iget-object v0, p0, Landroid/telecom/PhoneAccount$Builder;->mSupportedUriSchemes:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -242,12 +214,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 368
     const-string/jumbo v0, "tel"
 
     invoke-virtual {p0, v0}, Landroid/telecom/PhoneAccount$Builder;->addSupportedUriScheme(Ljava/lang/String;)Landroid/telecom/PhoneAccount$Builder;
 
-    .line 371
     :cond_0
     new-instance v0, Landroid/telecom/PhoneAccount;
 
@@ -287,10 +257,8 @@
     .param p1, "accountHandle"    # Landroid/telecom/PhoneAccountHandle;
 
     .prologue
-    .line 207
     iput-object p1, p0, Landroid/telecom/PhoneAccount$Builder;->mAccountHandle:Landroid/telecom/PhoneAccountHandle;
 
-    .line 208
     return-object p0
 .end method
 
@@ -299,10 +267,8 @@
     .param p1, "value"    # Landroid/net/Uri;
 
     .prologue
-    .line 218
     iput-object p1, p0, Landroid/telecom/PhoneAccount$Builder;->mAddress:Landroid/net/Uri;
 
-    .line 219
     return-object p0
 .end method
 
@@ -311,10 +277,8 @@
     .param p1, "value"    # I
 
     .prologue
-    .line 240
     iput p1, p0, Landroid/telecom/PhoneAccount$Builder;->mCapabilities:I
 
-    .line 241
     return-object p0
 .end method
 
@@ -323,10 +287,8 @@
     .param p1, "value"    # I
 
     .prologue
-    .line 314
     iput p1, p0, Landroid/telecom/PhoneAccount$Builder;->mHighlightColor:I
 
-    .line 315
     return-object p0
 .end method
 
@@ -336,7 +298,6 @@
     .param p2, "iconResId"    # I
 
     .prologue
-    .line 252
     invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
@@ -355,7 +316,6 @@
     .param p3, "iconTint"    # I
 
     .prologue
-    .line 275
     invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
@@ -372,25 +332,20 @@
     .param p1, "iconBitmap"    # Landroid/graphics/Bitmap;
 
     .prologue
-    .line 300
     iput-object p1, p0, Landroid/telecom/PhoneAccount$Builder;->mIconBitmap:Landroid/graphics/Bitmap;
 
-    .line 301
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/telecom/PhoneAccount$Builder;->mIconPackageName:Ljava/lang/String;
 
-    .line 302
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/telecom/PhoneAccount$Builder;->mIconResId:I
 
-    .line 303
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/telecom/PhoneAccount$Builder;->mIconTint:I
 
-    .line 304
     return-object p0
 .end method
 
@@ -400,7 +355,6 @@
     .param p2, "iconResId"    # I
 
     .prologue
-    .line 263
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, v0}, Landroid/telecom/PhoneAccount$Builder;->setIcon(Ljava/lang/String;II)Landroid/telecom/PhoneAccount$Builder;
@@ -417,16 +371,12 @@
     .param p3, "iconTint"    # I
 
     .prologue
-    .line 287
     iput-object p1, p0, Landroid/telecom/PhoneAccount$Builder;->mIconPackageName:Ljava/lang/String;
 
-    .line 288
     iput p2, p0, Landroid/telecom/PhoneAccount$Builder;->mIconResId:I
 
-    .line 289
     iput p3, p0, Landroid/telecom/PhoneAccount$Builder;->mIconTint:I
 
-    .line 290
     return-object p0
 .end method
 
@@ -435,10 +385,8 @@
     .param p1, "value"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 325
     iput-object p1, p0, Landroid/telecom/PhoneAccount$Builder;->mShortDescription:Ljava/lang/CharSequence;
 
-    .line 326
     return-object p0
 .end method
 
@@ -447,10 +395,8 @@
     .param p1, "value"    # Landroid/net/Uri;
 
     .prologue
-    .line 229
     iput-object p1, p0, Landroid/telecom/PhoneAccount$Builder;->mSubscriptionAddress:Landroid/net/Uri;
 
-    .line 230
     return-object p0
 .end method
 
@@ -468,13 +414,11 @@
     .end annotation
 
     .prologue
-    .line 350
     .local p1, "uriSchemes":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     iget-object v2, p0, Landroid/telecom/PhoneAccount$Builder;->mSupportedUriSchemes:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->clear()V
 
-    .line 352
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
@@ -483,7 +427,6 @@
 
     if-nez v2, :cond_0
 
-    .line 353
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -502,13 +445,11 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 354
     .local v1, "uriScheme":Ljava/lang/String;
     invoke-virtual {p0, v1}, Landroid/telecom/PhoneAccount$Builder;->addSupportedUriScheme(Ljava/lang/String;)Landroid/telecom/PhoneAccount$Builder;
 
     goto :goto_0
 
-    .line 357
     .end local v0    # "i$":Ljava/util/Iterator;
     .end local v1    # "uriScheme":Ljava/lang/String;
     :cond_0

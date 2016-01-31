@@ -27,16 +27,12 @@
     .param p2, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 392
     invoke-direct {p0}, Landroid/media/session/MediaSession$Callback;-><init>()V
 
-    .line 393
     iput-object p1, p0, Landroid/media/session/MediaSessionLegacyHelper$MediaButtonListener;->mPendingIntent:Landroid/app/PendingIntent;
 
-    .line 394
     iput-object p2, p0, Landroid/media/session/MediaSessionLegacyHelper$MediaButtonListener;->mContext:Landroid/content/Context;
 
-    .line 395
     return-void
 .end method
 
@@ -45,14 +41,12 @@
     .param p1, "keyCode"    # I
 
     .prologue
-    .line 439
     new-instance v1, Landroid/view/KeyEvent;
 
     const/4 v2, 0x0
 
     invoke-direct {v1, v2, p1}, Landroid/view/KeyEvent;-><init>(II)V
 
-    .line 440
     .local v1, "ke":Landroid/view/KeyEvent;
     new-instance v0, Landroid/content/Intent;
 
@@ -60,18 +54,15 @@
 
     invoke-direct {v0, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 441
     .local v0, "intent":Landroid/content/Intent;
     const/high16 v2, 0x10000000
 
     invoke-virtual {v0, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 443
     const-string v2, "android.intent.extra.KEY_EVENT"
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 444
     iget-object v2, p0, Landroid/media/session/MediaSessionLegacyHelper$MediaButtonListener;->mPendingIntent:Landroid/app/PendingIntent;
 
     iget-object v3, p0, Landroid/media/session/MediaSessionLegacyHelper$MediaButtonListener;->mContext:Landroid/content/Context;
@@ -79,7 +70,6 @@
     # invokes: Landroid/media/session/MediaSessionLegacyHelper;->sendKeyEvent(Landroid/app/PendingIntent;Landroid/content/Context;Landroid/content/Intent;)V
     invoke-static {v2, v3, v0}, Landroid/media/session/MediaSessionLegacyHelper;->access$000(Landroid/app/PendingIntent;Landroid/content/Context;Landroid/content/Intent;)V
 
-    .line 446
     new-instance v1, Landroid/view/KeyEvent;
 
     .end local v1    # "ke":Landroid/view/KeyEvent;
@@ -87,13 +77,11 @@
 
     invoke-direct {v1, v2, p1}, Landroid/view/KeyEvent;-><init>(II)V
 
-    .line 447
     .restart local v1    # "ke":Landroid/view/KeyEvent;
     const-string v2, "android.intent.extra.KEY_EVENT"
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 448
     iget-object v2, p0, Landroid/media/session/MediaSessionLegacyHelper$MediaButtonListener;->mPendingIntent:Landroid/app/PendingIntent;
 
     iget-object v3, p0, Landroid/media/session/MediaSessionLegacyHelper$MediaButtonListener;->mContext:Landroid/content/Context;
@@ -101,7 +89,6 @@
     # invokes: Landroid/media/session/MediaSessionLegacyHelper;->sendKeyEvent(Landroid/app/PendingIntent;Landroid/content/Context;Landroid/content/Intent;)V
     invoke-static {v2, v3, v0}, Landroid/media/session/MediaSessionLegacyHelper;->access$000(Landroid/app/PendingIntent;Landroid/content/Context;Landroid/content/Intent;)V
 
-    .line 450
     # getter for: Landroid/media/session/MediaSessionLegacyHelper;->DEBUG:Z
     invoke-static {}, Landroid/media/session/MediaSessionLegacyHelper;->access$100()Z
 
@@ -109,7 +96,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 451
     const-string v2, "MediaSessionHelper"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -144,7 +130,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 453
     :cond_0
     return-void
 .end method
@@ -155,12 +140,10 @@
     .locals 1
 
     .prologue
-    .line 425
     const/16 v0, 0x5a
 
     invoke-direct {p0, v0}, Landroid/media/session/MediaSessionLegacyHelper$MediaButtonListener;->sendKeyEvent(I)V
 
-    .line 426
     return-void
 .end method
 
@@ -169,7 +152,6 @@
     .param p1, "mediaButtonIntent"    # Landroid/content/Intent;
 
     .prologue
-    .line 399
     iget-object v0, p0, Landroid/media/session/MediaSessionLegacyHelper$MediaButtonListener;->mPendingIntent:Landroid/app/PendingIntent;
 
     iget-object v1, p0, Landroid/media/session/MediaSessionLegacyHelper$MediaButtonListener;->mContext:Landroid/content/Context;
@@ -177,7 +159,6 @@
     # invokes: Landroid/media/session/MediaSessionLegacyHelper;->sendKeyEvent(Landroid/app/PendingIntent;Landroid/content/Context;Landroid/content/Intent;)V
     invoke-static {v0, v1, p1}, Landroid/media/session/MediaSessionLegacyHelper;->access$000(Landroid/app/PendingIntent;Landroid/content/Context;Landroid/content/Intent;)V
 
-    .line 400
     const/4 v0, 0x1
 
     return v0
@@ -187,12 +168,10 @@
     .locals 1
 
     .prologue
-    .line 410
     const/16 v0, 0x7f
 
     invoke-direct {p0, v0}, Landroid/media/session/MediaSessionLegacyHelper$MediaButtonListener;->sendKeyEvent(I)V
 
-    .line 411
     return-void
 .end method
 
@@ -200,12 +179,10 @@
     .locals 1
 
     .prologue
-    .line 405
     const/16 v0, 0x7e
 
     invoke-direct {p0, v0}, Landroid/media/session/MediaSessionLegacyHelper$MediaButtonListener;->sendKeyEvent(I)V
 
-    .line 406
     return-void
 .end method
 
@@ -213,12 +190,10 @@
     .locals 1
 
     .prologue
-    .line 430
     const/16 v0, 0x59
 
     invoke-direct {p0, v0}, Landroid/media/session/MediaSessionLegacyHelper$MediaButtonListener;->sendKeyEvent(I)V
 
-    .line 431
     return-void
 .end method
 
@@ -226,12 +201,10 @@
     .locals 1
 
     .prologue
-    .line 415
     const/16 v0, 0x57
 
     invoke-direct {p0, v0}, Landroid/media/session/MediaSessionLegacyHelper$MediaButtonListener;->sendKeyEvent(I)V
 
-    .line 416
     return-void
 .end method
 
@@ -239,12 +212,10 @@
     .locals 1
 
     .prologue
-    .line 420
     const/16 v0, 0x58
 
     invoke-direct {p0, v0}, Landroid/media/session/MediaSessionLegacyHelper$MediaButtonListener;->sendKeyEvent(I)V
 
-    .line 421
     return-void
 .end method
 
@@ -252,11 +223,9 @@
     .locals 1
 
     .prologue
-    .line 435
     const/16 v0, 0x56
 
     invoke-direct {p0, v0}, Landroid/media/session/MediaSessionLegacyHelper$MediaButtonListener;->sendKeyEvent(I)V
 
-    .line 436
     return-void
 .end method

@@ -23,7 +23,6 @@
     .locals 1
 
     .prologue
-    .line 27
     const-class v0, Lcom/motorola/extensions/preference/DynamicCheckboxPreference;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -40,13 +39,10 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 33
     invoke-direct {p0, p1}, Landroid/preference/CheckBoxPreference;-><init>(Landroid/content/Context;)V
 
-    .line 34
     invoke-direct {p0}, Lcom/motorola/extensions/preference/DynamicCheckboxPreference;->init()V
 
-    .line 35
     return-void
 .end method
 
@@ -56,13 +52,10 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 38
     invoke-direct {p0, p1, p2}, Landroid/preference/CheckBoxPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 39
     invoke-direct {p0}, Lcom/motorola/extensions/preference/DynamicCheckboxPreference;->init()V
 
-    .line 40
     return-void
 .end method
 
@@ -73,13 +66,10 @@
     .param p3, "defStyle"    # I
 
     .prologue
-    .line 44
     invoke-direct {p0, p1, p2, p3}, Landroid/preference/CheckBoxPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 45
     invoke-direct {p0}, Lcom/motorola/extensions/preference/DynamicCheckboxPreference;->init()V
 
-    .line 46
     return-void
 .end method
 
@@ -87,13 +77,10 @@
     .locals 2
 
     .prologue
-    .line 49
     invoke-virtual {p0, p0}, Lcom/motorola/extensions/preference/DynamicCheckboxPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
-    .line 50
     invoke-virtual {p0, p0}, Lcom/motorola/extensions/preference/DynamicCheckboxPreference;->setOnPreferenceClickListener(Landroid/preference/Preference$OnPreferenceClickListener;)V
 
-    .line 51
     new-instance v0, Lcom/motorola/extensions/preference/DynamicTwoStatePreferenceDelegator;
 
     invoke-virtual {p0}, Lcom/motorola/extensions/preference/DynamicCheckboxPreference;->getContext()Landroid/content/Context;
@@ -104,7 +91,6 @@
 
     iput-object v0, p0, Lcom/motorola/extensions/preference/DynamicCheckboxPreference;->mTwoStatePrefDelegator:Lcom/motorola/extensions/preference/DynamicTwoStatePreferenceDelegator;
 
-    .line 52
     return-void
 .end method
 
@@ -114,7 +100,6 @@
     .locals 1
 
     .prologue
-    .line 99
     iget-object v0, p0, Lcom/motorola/extensions/preference/DynamicCheckboxPreference;->mTwoStatePrefDelegator:Lcom/motorola/extensions/preference/DynamicTwoStatePreferenceDelegator;
 
     return-object v0
@@ -127,7 +112,6 @@
     .param p3, "data"    # Landroid/content/Intent;
 
     .prologue
-    .line 94
     iget-object v0, p0, Lcom/motorola/extensions/preference/DynamicCheckboxPreference;->mTwoStatePrefDelegator:Lcom/motorola/extensions/preference/DynamicTwoStatePreferenceDelegator;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/motorola/extensions/preference/DynamicTwoStatePreferenceDelegator;->onActivityResult(IILandroid/content/Intent;)Z
@@ -142,15 +126,12 @@
     .param p1, "preferenceManager"    # Landroid/preference/PreferenceManager;
 
     .prologue
-    .line 67
     invoke-super {p0, p1}, Landroid/preference/CheckBoxPreference;->onAttachedToHierarchy(Landroid/preference/PreferenceManager;)V
 
-    .line 68
     iget-object v0, p0, Lcom/motorola/extensions/preference/DynamicCheckboxPreference;->mTwoStatePrefDelegator:Lcom/motorola/extensions/preference/DynamicTwoStatePreferenceDelegator;
 
     invoke-virtual {v0, p1}, Lcom/motorola/extensions/preference/DynamicTwoStatePreferenceDelegator;->onAttachedToHierarchy(Landroid/preference/PreferenceManager;)V
 
-    .line 69
     return-void
 .end method
 
@@ -159,15 +140,12 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 56
     invoke-super {p0, p1}, Landroid/preference/CheckBoxPreference;->onBindView(Landroid/view/View;)V
 
-    .line 57
     iget-object v0, p0, Lcom/motorola/extensions/preference/DynamicCheckboxPreference;->mTwoStatePrefDelegator:Lcom/motorola/extensions/preference/DynamicTwoStatePreferenceDelegator;
 
     invoke-virtual {v0, p1}, Lcom/motorola/extensions/preference/DynamicTwoStatePreferenceDelegator;->onBindView(Landroid/view/View;)V
 
-    .line 58
     return-void
 .end method
 
@@ -177,7 +155,6 @@
     .param p2, "newValue"    # Ljava/lang/Object;
 
     .prologue
-    .line 83
     iget-object v0, p0, Lcom/motorola/extensions/preference/DynamicCheckboxPreference;->mTwoStatePrefDelegator:Lcom/motorola/extensions/preference/DynamicTwoStatePreferenceDelegator;
 
     invoke-virtual {v0, p1, p2}, Lcom/motorola/extensions/preference/DynamicTwoStatePreferenceDelegator;->onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
@@ -192,7 +169,6 @@
     .param p1, "preference"    # Landroid/preference/Preference;
 
     .prologue
-    .line 89
     const/4 v0, 0x1
 
     return v0
@@ -202,12 +178,10 @@
     .locals 1
 
     .prologue
-    .line 78
     iget-object v0, p0, Lcom/motorola/extensions/preference/DynamicCheckboxPreference;->mTwoStatePrefDelegator:Lcom/motorola/extensions/preference/DynamicTwoStatePreferenceDelegator;
 
     invoke-virtual {v0}, Lcom/motorola/extensions/preference/DynamicTwoStatePreferenceDelegator;->refresh()V
 
-    .line 79
     return-void
 .end method
 
@@ -217,12 +191,10 @@
     .param p2, "autoRefresh"    # Z
 
     .prologue
-    .line 73
     iget-object v0, p0, Lcom/motorola/extensions/preference/DynamicCheckboxPreference;->mTwoStatePrefDelegator:Lcom/motorola/extensions/preference/DynamicTwoStatePreferenceDelegator;
 
     invoke-virtual {v0, p1, p2}, Lcom/motorola/extensions/preference/DynamicTwoStatePreferenceDelegator;->setAutoRefresh(Landroid/net/Uri;Z)V
 
-    .line 74
     return-void
 .end method
 
@@ -231,11 +203,9 @@
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 62
     iget-object v0, p0, Lcom/motorola/extensions/preference/DynamicCheckboxPreference;->mTwoStatePrefDelegator:Lcom/motorola/extensions/preference/DynamicTwoStatePreferenceDelegator;
 
     invoke-virtual {v0, p1}, Lcom/motorola/extensions/preference/DynamicTwoStatePreferenceDelegator;->setIntent(Landroid/content/Intent;)V
 
-    .line 63
     return-void
 .end method

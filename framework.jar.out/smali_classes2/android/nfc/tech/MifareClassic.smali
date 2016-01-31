@@ -50,21 +50,18 @@
     .prologue
     const/4 v1, 0x6
 
-    .line 97
     new-array v0, v1, [B
 
     fill-array-data v0, :array_0
 
     sput-object v0, Landroid/nfc/tech/MifareClassic;->KEY_DEFAULT:[B
 
-    .line 103
     new-array v0, v1, [B
 
     fill-array-data v0, :array_1
 
     sput-object v0, Landroid/nfc/tech/MifareClassic;->KEY_MIFARE_APPLICATION_DIRECTORY:[B
 
-    .line 109
     new-array v0, v1, [B
 
     fill-array-data v0, :array_2
@@ -73,7 +70,6 @@
 
     return-void
 
-    .line 97
     nop
 
     :array_0
@@ -86,7 +82,6 @@
         -0x1t
     .end array-data
 
-    .line 103
     nop
 
     :array_1
@@ -99,7 +94,6 @@
         -0x5bt
     .end array-data
 
-    .line 109
     nop
 
     :array_2
@@ -133,28 +127,23 @@
 
     const/4 v2, 0x0
 
-    .line 164
     const/16 v1, 0x8
 
     invoke-direct {p0, p1, v1}, Landroid/nfc/tech/BasicTagTechnology;-><init>(Landroid/nfc/Tag;I)V
 
-    .line 166
     invoke-static {p1}, Landroid/nfc/tech/NfcA;->get(Landroid/nfc/Tag;)Landroid/nfc/tech/NfcA;
 
     move-result-object v0
 
-    .line 168
     .local v0, "a":Landroid/nfc/tech/NfcA;
     iput-boolean v2, p0, Landroid/nfc/tech/MifareClassic;->mIsEmulated:Z
 
-    .line 170
     invoke-virtual {v0}, Landroid/nfc/tech/NfcA;->getSak()S
 
     move-result v1
 
     sparse-switch v1, :sswitch_data_0
 
-    .line 222
     new-instance v1, Ljava/lang/RuntimeException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -183,109 +172,85 @@
 
     throw v1
 
-    .line 173
     :sswitch_0
     iput v2, p0, Landroid/nfc/tech/MifareClassic;->mType:I
 
-    .line 174
     iput v5, p0, Landroid/nfc/tech/MifareClassic;->mSize:I
 
-    .line 225
     :goto_0
     return-void
 
-    .line 177
     :sswitch_1
     iput v2, p0, Landroid/nfc/tech/MifareClassic;->mType:I
 
-    .line 178
     const/16 v1, 0x140
 
     iput v1, p0, Landroid/nfc/tech/MifareClassic;->mSize:I
 
     goto :goto_0
 
-    .line 181
     :sswitch_2
     iput v3, p0, Landroid/nfc/tech/MifareClassic;->mType:I
 
-    .line 182
     iput v6, p0, Landroid/nfc/tech/MifareClassic;->mSize:I
 
     goto :goto_0
 
-    .line 186
     :sswitch_3
     iput v3, p0, Landroid/nfc/tech/MifareClassic;->mType:I
 
-    .line 187
     iput v4, p0, Landroid/nfc/tech/MifareClassic;->mSize:I
 
     goto :goto_0
 
-    .line 191
     :sswitch_4
     iput v2, p0, Landroid/nfc/tech/MifareClassic;->mType:I
 
-    .line 192
     iput v4, p0, Landroid/nfc/tech/MifareClassic;->mSize:I
 
     goto :goto_0
 
-    .line 195
     :sswitch_5
     iput v2, p0, Landroid/nfc/tech/MifareClassic;->mType:I
 
-    .line 196
     iput v6, p0, Landroid/nfc/tech/MifareClassic;->mSize:I
 
     goto :goto_0
 
-    .line 200
     :sswitch_6
     iput v2, p0, Landroid/nfc/tech/MifareClassic;->mType:I
 
-    .line 201
     iput v5, p0, Landroid/nfc/tech/MifareClassic;->mSize:I
 
-    .line 202
     iput-boolean v3, p0, Landroid/nfc/tech/MifareClassic;->mIsEmulated:Z
 
     goto :goto_0
 
-    .line 205
     :sswitch_7
     iput v2, p0, Landroid/nfc/tech/MifareClassic;->mType:I
 
-    .line 206
     iput v4, p0, Landroid/nfc/tech/MifareClassic;->mSize:I
 
-    .line 207
     iput-boolean v3, p0, Landroid/nfc/tech/MifareClassic;->mIsEmulated:Z
 
     goto :goto_0
 
-    .line 210
     :sswitch_8
     iput v2, p0, Landroid/nfc/tech/MifareClassic;->mType:I
 
-    .line 211
     iput v5, p0, Landroid/nfc/tech/MifareClassic;->mSize:I
 
     goto :goto_0
 
-    .line 216
     :sswitch_9
     const/4 v1, 0x2
 
     iput v1, p0, Landroid/nfc/tech/MifareClassic;->mType:I
 
-    .line 217
     iput v4, p0, Landroid/nfc/tech/MifareClassic;->mSize:I
 
     goto :goto_0
 
-    .line 170
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_0
@@ -321,27 +286,21 @@
 
     const/4 v4, 0x0
 
-    .line 393
     invoke-static {p1}, Landroid/nfc/tech/MifareClassic;->validateSector(I)V
 
-    .line 394
     invoke-virtual {p0}, Landroid/nfc/tech/MifareClassic;->checkConnected()V
 
-    .line 396
     const/16 v5, 0xc
 
     new-array v0, v5, [B
 
-    .line 399
     .local v0, "cmd":[B
     if-eqz p3, :cond_0
 
-    .line 400
     const/16 v5, 0x60
 
     aput-byte v5, v0, v4
 
-    .line 408
     :goto_0
     invoke-virtual {p0, p1}, Landroid/nfc/tech/MifareClassic;->sectorToBlock(I)I
 
@@ -351,7 +310,6 @@
 
     aput-byte v5, v0, v3
 
-    .line 411
     invoke-virtual {p0}, Landroid/nfc/tech/MifareClassic;->getTag()Landroid/nfc/Tag;
 
     move-result-object v5
@@ -360,7 +318,6 @@
 
     move-result-object v2
 
-    .line 412
     .local v2, "uid":[B
     array-length v5, v2
 
@@ -372,10 +329,8 @@
 
     invoke-static {v2, v5, v0, v6, v7}, Ljava/lang/System;->arraycopy([BI[BII)V
 
-    .line 415
     invoke-static {p2, v4, v0, v8, v8}, Ljava/lang/System;->arraycopy([BI[BII)V
 
-    .line 418
     const/4 v5, 0x0
 
     :try_start_0
@@ -388,11 +343,9 @@
 
     if-eqz v5, :cond_1
 
-    .line 426
     :goto_1
     return v3
 
-    .line 402
     .end local v2    # "uid":[B
     :cond_0
     const/16 v5, 0x61
@@ -401,16 +354,13 @@
 
     goto :goto_0
 
-    .line 421
     .restart local v2    # "uid":[B
     :catch_0
     move-exception v1
 
-    .line 422
     .local v1, "e":Landroid/nfc/TagLostException;
     throw v1
 
-    .line 423
     .end local v1    # "e":Landroid/nfc/TagLostException;
     :catch_1
     move-exception v3
@@ -418,7 +368,6 @@
     :cond_1
     move v3, v4
 
-    .line 426
     goto :goto_1
 .end method
 
@@ -429,7 +378,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 154
     const/16 v2, 0x8
 
     invoke-virtual {p0, v2}, Landroid/nfc/Tag;->hasTech(I)Z
@@ -438,11 +386,9 @@
 
     if-nez v2, :cond_0
 
-    .line 158
     :goto_0
     return-object v1
 
-    .line 156
     :cond_0
     :try_start_0
     new-instance v2, Landroid/nfc/tech/MifareClassic;
@@ -455,11 +401,9 @@
 
     goto :goto_0
 
-    .line 157
     :catch_0
     move-exception v0
 
-    .line 158
     .local v0, "e":Landroid/os/RemoteException;
     goto :goto_0
 .end method
@@ -469,14 +413,12 @@
     .param p0, "block"    # I
 
     .prologue
-    .line 667
     if-ltz p0, :cond_0
 
     const/16 v0, 0x100
 
     if-lt p0, v0, :cond_1
 
-    .line 668
     :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -502,7 +444,6 @@
 
     throw v0
 
-    .line 670
     :cond_1
     return-void
 .end method
@@ -512,14 +453,12 @@
     .param p0, "sector"    # I
 
     .prologue
-    .line 660
     if-ltz p0, :cond_0
 
     const/16 v0, 0x28
 
     if-lt p0, v0, :cond_1
 
-    .line 661
     :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -545,7 +484,6 @@
 
     throw v0
 
-    .line 663
     :cond_1
     return-void
 .end method
@@ -555,10 +493,8 @@
     .param p0, "value"    # I
 
     .prologue
-    .line 673
     if-gez p0, :cond_0
 
-    .line 674
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "value operand negative"
@@ -567,7 +503,6 @@
 
     throw v0
 
-    .line 676
     :cond_0
     return-void
 .end method
@@ -585,7 +520,6 @@
     .end annotation
 
     .prologue
-    .line 362
     const/4 v0, 0x1
 
     invoke-direct {p0, p1, p2, v0}, Landroid/nfc/tech/MifareClassic;->authenticate(I[BZ)Z
@@ -606,7 +540,6 @@
     .end annotation
 
     .prologue
-    .line 389
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Landroid/nfc/tech/MifareClassic;->authenticate(I[BZ)Z
@@ -621,18 +554,14 @@
     .param p1, "blockIndex"    # I
 
     .prologue
-    .line 314
     invoke-static {p1}, Landroid/nfc/tech/MifareClassic;->validateBlock(I)V
 
-    .line 316
     const/16 v0, 0x80
 
     if-ge p1, v0, :cond_0
 
-    .line 317
     div-int/lit8 v0, p1, 0x4
 
-    .line 319
     :goto_0
     return v0
 
@@ -655,7 +584,6 @@
     .end annotation
 
     .prologue
-    .line 91
     invoke-super {p0}, Landroid/nfc/tech/BasicTagTechnology;->close()V
 
     return-void
@@ -670,7 +598,6 @@
     .end annotation
 
     .prologue
-    .line 91
     invoke-super {p0}, Landroid/nfc/tech/BasicTagTechnology;->connect()V
 
     return-void
@@ -687,42 +614,33 @@
     .end annotation
 
     .prologue
-    .line 523
     invoke-static {p1}, Landroid/nfc/tech/MifareClassic;->validateBlock(I)V
 
-    .line 524
     invoke-static {p2}, Landroid/nfc/tech/MifareClassic;->validateValueOperand(I)V
 
-    .line 525
     invoke-virtual {p0}, Landroid/nfc/tech/MifareClassic;->checkConnected()V
 
-    .line 527
     const/4 v1, 0x6
 
     invoke-static {v1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    .line 528
     .local v0, "cmd":Ljava/nio/ByteBuffer;
     sget-object v1, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
-    .line 529
     const/16 v1, -0x40
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
-    .line 530
     int-to-byte v1, p1
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
-    .line 531
     invoke-virtual {v0, p2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    .line 533
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object v1
@@ -731,7 +649,6 @@
 
     invoke-virtual {p0, v1, v2}, Landroid/nfc/tech/MifareClassic;->transceive([BZ)[B
 
-    .line 534
     return-void
 .end method
 
@@ -739,7 +656,6 @@
     .locals 1
 
     .prologue
-    .line 286
     iget v0, p0, Landroid/nfc/tech/MifareClassic;->mSize:I
 
     div-int/lit8 v0, v0, 0x10
@@ -752,18 +668,14 @@
     .param p1, "sectorIndex"    # I
 
     .prologue
-    .line 297
     invoke-static {p1}, Landroid/nfc/tech/MifareClassic;->validateSector(I)V
 
-    .line 299
     const/16 v0, 0x20
 
     if-ge p1, v0, :cond_0
 
-    .line 300
     const/4 v0, 0x4
 
-    .line 302
     :goto_0
     return v0
 
@@ -777,7 +689,6 @@
     .locals 1
 
     .prologue
-    .line 608
     invoke-virtual {p0}, Landroid/nfc/tech/MifareClassic;->getMaxTransceiveLengthInternal()I
 
     move-result v0
@@ -789,42 +700,35 @@
     .locals 1
 
     .prologue
-    .line 266
     iget v0, p0, Landroid/nfc/tech/MifareClassic;->mSize:I
 
     sparse-switch v0, :sswitch_data_0
 
-    .line 276
     const/4 v0, 0x0
 
     :goto_0
     return v0
 
-    .line 268
     :sswitch_0
     const/16 v0, 0x10
 
     goto :goto_0
 
-    .line 270
     :sswitch_1
     const/16 v0, 0x20
 
     goto :goto_0
 
-    .line 272
     :sswitch_2
     const/16 v0, 0x28
 
     goto :goto_0
 
-    .line 274
     :sswitch_3
     const/4 v0, 0x5
 
     goto :goto_0
 
-    .line 266
     :sswitch_data_0
     .sparse-switch
         0x140 -> :sswitch_3
@@ -838,7 +742,6 @@
     .locals 1
 
     .prologue
-    .line 247
     iget v0, p0, Landroid/nfc/tech/MifareClassic;->mSize:I
 
     return v0
@@ -848,7 +751,6 @@
     .locals 1
 
     .prologue
-    .line 91
     invoke-super {p0}, Landroid/nfc/tech/BasicTagTechnology;->getTag()Landroid/nfc/Tag;
 
     move-result-object v0
@@ -860,7 +762,6 @@
     .locals 3
 
     .prologue
-    .line 645
     :try_start_0
     iget-object v1, p0, Landroid/nfc/tech/MifareClassic;->mTag:Landroid/nfc/Tag;
 
@@ -876,15 +777,12 @@
 
     move-result v1
 
-    .line 648
     :goto_0
     return v1
 
-    .line 646
     :catch_0
     move-exception v0
 
-    .line 647
     .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "NFC"
 
@@ -892,7 +790,6 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 648
     const/4 v1, 0x0
 
     goto :goto_0
@@ -902,7 +799,6 @@
     .locals 1
 
     .prologue
-    .line 236
     iget v0, p0, Landroid/nfc/tech/MifareClassic;->mType:I
 
     return v0
@@ -919,42 +815,33 @@
     .end annotation
 
     .prologue
-    .line 495
     invoke-static {p1}, Landroid/nfc/tech/MifareClassic;->validateBlock(I)V
 
-    .line 496
     invoke-static {p2}, Landroid/nfc/tech/MifareClassic;->validateValueOperand(I)V
 
-    .line 497
     invoke-virtual {p0}, Landroid/nfc/tech/MifareClassic;->checkConnected()V
 
-    .line 499
     const/4 v1, 0x6
 
     invoke-static {v1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    .line 500
     .local v0, "cmd":Ljava/nio/ByteBuffer;
     sget-object v1, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
-    .line 501
     const/16 v1, -0x3f
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
-    .line 502
     int-to-byte v1, p1
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
-    .line 503
     invoke-virtual {v0, p2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    .line 505
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object v1
@@ -963,7 +850,6 @@
 
     invoke-virtual {p0, v1, v2}, Landroid/nfc/tech/MifareClassic;->transceive([BZ)[B
 
-    .line 506
     return-void
 .end method
 
@@ -971,7 +857,6 @@
     .locals 1
 
     .prologue
-    .line 91
     invoke-super {p0}, Landroid/nfc/tech/BasicTagTechnology;->isConnected()Z
 
     move-result v0
@@ -983,7 +868,6 @@
     .locals 1
 
     .prologue
-    .line 257
     iget-boolean v0, p0, Landroid/nfc/tech/MifareClassic;->mIsEmulated:Z
 
     return v0
@@ -1001,13 +885,10 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 444
     invoke-static {p1}, Landroid/nfc/tech/MifareClassic;->validateBlock(I)V
 
-    .line 445
     invoke-virtual {p0}, Landroid/nfc/tech/MifareClassic;->checkConnected()V
 
-    .line 447
     const/4 v1, 0x2
 
     new-array v0, v1, [B
@@ -1022,7 +903,6 @@
 
     aput-byte v2, v0, v1
 
-    .line 448
     .local v0, "cmd":[B
     invoke-virtual {p0, v0, v3}, Landroid/nfc/tech/MifareClassic;->transceive([BZ)[B
 
@@ -1040,7 +920,6 @@
     .end annotation
 
     .prologue
-    .line 91
     invoke-super {p0}, Landroid/nfc/tech/BasicTagTechnology;->reconnect()V
 
     return-void
@@ -1058,13 +937,10 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 572
     invoke-static {p1}, Landroid/nfc/tech/MifareClassic;->validateBlock(I)V
 
-    .line 573
     invoke-virtual {p0}, Landroid/nfc/tech/MifareClassic;->checkConnected()V
 
-    .line 575
     const/4 v1, 0x2
 
     new-array v0, v1, [B
@@ -1079,11 +955,9 @@
 
     aput-byte v2, v0, v1
 
-    .line 577
     .local v0, "cmd":[B
     invoke-virtual {p0, v0, v3}, Landroid/nfc/tech/MifareClassic;->transceive([BZ)[B
 
-    .line 578
     return-void
 .end method
 
@@ -1092,15 +966,12 @@
     .param p1, "sectorIndex"    # I
 
     .prologue
-    .line 331
     const/16 v0, 0x20
 
     if-ge p1, v0, :cond_0
 
-    .line 332
     mul-int/lit8 v0, p1, 0x4
 
-    .line 334
     :goto_0
     return v0
 
@@ -1119,7 +990,6 @@
     .param p1, "timeout"    # I
 
     .prologue
-    .line 627
     :try_start_0
     iget-object v2, p0, Landroid/nfc/tech/MifareClassic;->mTag:Landroid/nfc/Tag;
 
@@ -1133,11 +1003,9 @@
 
     move-result v1
 
-    .line 628
     .local v1, "err":I
     if-eqz v1, :cond_0
 
-    .line 629
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string v3, "The supplied timeout is not valid"
@@ -1148,12 +1016,10 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 631
     .end local v1    # "err":I
     :catch_0
     move-exception v0
 
-    .line 632
     .local v0, "e":Landroid/os/RemoteException;
     const-string v2, "NFC"
 
@@ -1161,7 +1027,6 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 634
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     return-void
@@ -1177,7 +1042,6 @@
     .end annotation
 
     .prologue
-    .line 600
     const/4 v0, 0x1
 
     invoke-virtual {p0, p1, v0}, Landroid/nfc/tech/MifareClassic;->transceive([BZ)[B
@@ -1199,13 +1063,10 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 550
     invoke-static {p1}, Landroid/nfc/tech/MifareClassic;->validateBlock(I)V
 
-    .line 551
     invoke-virtual {p0}, Landroid/nfc/tech/MifareClassic;->checkConnected()V
 
-    .line 553
     const/4 v1, 0x2
 
     new-array v0, v1, [B
@@ -1220,11 +1081,9 @@
 
     aput-byte v2, v0, v1
 
-    .line 555
     .local v0, "cmd":[B
     invoke-virtual {p0, v0, v3}, Landroid/nfc/tech/MifareClassic;->transceive([BZ)[B
 
-    .line 556
     return-void
 .end method
 
@@ -1241,20 +1100,16 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 466
     invoke-static {p1}, Landroid/nfc/tech/MifareClassic;->validateBlock(I)V
 
-    .line 467
     invoke-virtual {p0}, Landroid/nfc/tech/MifareClassic;->checkConnected()V
 
-    .line 468
     array-length v1, p2
 
     const/16 v2, 0x10
 
     if-eq v1, v2, :cond_0
 
-    .line 469
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "must write 16-bytes"
@@ -1263,7 +1118,6 @@
 
     throw v1
 
-    .line 472
     :cond_0
     array-length v1, p2
 
@@ -1271,29 +1125,24 @@
 
     new-array v0, v1, [B
 
-    .line 473
     .local v0, "cmd":[B
     const/16 v1, -0x60
 
     aput-byte v1, v0, v3
 
-    .line 474
     const/4 v1, 0x1
 
     int-to-byte v2, p1
 
     aput-byte v2, v0, v1
 
-    .line 475
     const/4 v1, 0x2
 
     array-length v2, p2
 
     invoke-static {p2, v3, v0, v1, v2}, Ljava/lang/System;->arraycopy([BI[BII)V
 
-    .line 477
     invoke-virtual {p0, v0, v3}, Landroid/nfc/tech/MifareClassic;->transceive([BZ)[B
 
-    .line 478
     return-void
 .end method

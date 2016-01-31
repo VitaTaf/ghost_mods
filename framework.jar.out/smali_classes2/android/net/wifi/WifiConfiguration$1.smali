@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 1121
     iput-object p1, p0, Landroid/net/wifi/WifiConfiguration$1;->this$0:Landroid/net/wifi/WifiConfiguration;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .param p2, "o2"    # Ljava/lang/Object;
 
     .prologue
-    .line 1123
     move-object v0, p1
 
     check-cast v0, Landroid/net/wifi/ScanResult;
@@ -50,10 +48,8 @@
     .local v0, "a":Landroid/net/wifi/ScanResult;
     move-object v1, p2
 
-    .line 1124
     check-cast v1, Landroid/net/wifi/ScanResult;
 
-    .line 1125
     .local v1, "b":Landroid/net/wifi/ScanResult;
     iget-wide v2, v0, Landroid/net/wifi/ScanResult;->seen:J
 
@@ -63,14 +59,11 @@
 
     if-lez v2, :cond_0
 
-    .line 1126
     const/4 v2, 0x1
 
-    .line 1131
     :goto_0
     return v2
 
-    .line 1128
     :cond_0
     iget-wide v2, v0, Landroid/net/wifi/ScanResult;->seen:J
 
@@ -80,12 +73,10 @@
 
     if-gez v2, :cond_1
 
-    .line 1129
     const/4 v2, -0x1
 
     goto :goto_0
 
-    .line 1131
     :cond_1
     iget-object v2, v0, Landroid/net/wifi/ScanResult;->BSSID:Ljava/lang/String;
 

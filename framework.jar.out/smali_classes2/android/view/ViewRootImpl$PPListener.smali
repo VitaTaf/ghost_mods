@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 7103
     iput-object p1, p0, Landroid/view/ViewRootImpl$PPListener;->this$0:Landroid/view/ViewRootImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .param p2, "x1"    # Landroid/view/ViewRootImpl$1;
 
     .prologue
-    .line 7103
     invoke-direct {p0, p1}, Landroid/view/ViewRootImpl$PPListener;-><init>(Landroid/view/ViewRootImpl;)V
 
     return-void
@@ -53,7 +51,6 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 7105
     iget-object v1, p0, Landroid/view/ViewRootImpl$PPListener;->this$0:Landroid/view/ViewRootImpl;
 
     iget-object v1, v1, Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo;
@@ -62,12 +59,10 @@
 
     if-ne p1, v1, :cond_1
 
-    .line 7115
     :cond_0
     :goto_0
     return-void
 
-    .line 7106
     :cond_1
     iget-object v1, p0, Landroid/view/ViewRootImpl$PPListener;->this$0:Landroid/view/ViewRootImpl;
 
@@ -75,7 +70,6 @@
 
     iput-boolean p1, v1, Landroid/view/View$AttachInfo;->mPixelPipeEnabled:Z
 
-    .line 7107
     iget-object v1, p0, Landroid/view/ViewRootImpl$PPListener;->this$0:Landroid/view/ViewRootImpl;
 
     iget-object v1, v1, Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo;
@@ -92,7 +86,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 7108
     iget-object v1, p0, Landroid/view/ViewRootImpl$PPListener;->this$0:Landroid/view/ViewRootImpl;
 
     iget-object v1, v1, Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo;
@@ -107,7 +100,6 @@
 
     invoke-interface {v1, v2}, Lcom/motorola/pixelpipe/PixelPipeApi;->onVisibilityChanged(I)V
 
-    .line 7109
     iget-object v1, p0, Landroid/view/ViewRootImpl$PPListener;->this$0:Landroid/view/ViewRootImpl;
 
     iget-object v1, v1, Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo;
@@ -122,7 +114,6 @@
 
     invoke-interface {v1, v2}, Lcom/motorola/pixelpipe/PixelPipeApi;->onFocusChanged(Z)V
 
-    .line 7110
     new-instance v0, Landroid/graphics/Rect;
 
     iget-object v1, p0, Landroid/view/ViewRootImpl$PPListener;->this$0:Landroid/view/ViewRootImpl;
@@ -175,7 +166,6 @@
 
     invoke-direct {v0, v1, v2, v3, v4}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 7113
     .local v0, "frame":Landroid/graphics/Rect;
     iget-object v1, p0, Landroid/view/ViewRootImpl$PPListener;->this$0:Landroid/view/ViewRootImpl;
 

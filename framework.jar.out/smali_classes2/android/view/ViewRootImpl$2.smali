@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 2154
     iput-object p1, p0, Landroid/view/ViewRootImpl$2;->this$0:Landroid/view/ViewRootImpl;
 
     iput-object p2, p0, Landroid/view/ViewRootImpl$2;->val$finalRequesters:Ljava/util/ArrayList;
@@ -44,14 +43,12 @@
     .locals 6
 
     .prologue
-    .line 2157
     iget-object v3, p0, Landroid/view/ViewRootImpl$2;->val$finalRequesters:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 2158
     .local v1, "numValidRequests":I
     const/4 v0, 0x0
 
@@ -59,7 +56,6 @@
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 2159
     iget-object v3, p0, Landroid/view/ViewRootImpl$2;->val$finalRequesters:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -68,7 +64,6 @@
 
     check-cast v2, Landroid/view/View;
 
-    .line 2160
     .local v2, "view":Landroid/view/View;
     const-string v3, "View"
 
@@ -98,15 +93,12 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2162
     invoke-virtual {v2}, Landroid/view/View;->requestLayout()V
 
-    .line 2158
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 2164
     .end local v2    # "view":Landroid/view/View;
     :cond_0
     return-void

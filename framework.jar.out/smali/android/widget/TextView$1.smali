@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 3827
     iput-object p1, p0, Landroid/widget/TextView$1;->this$0:Landroid/widget/TextView;
 
     iput-object p2, p0, Landroid/widget/TextView$1;->val$error:Ljava/lang/CharSequence;
@@ -44,13 +43,11 @@
     .locals 2
 
     .prologue
-    .line 3829
     iget-object v0, p0, Landroid/widget/TextView$1;->this$0:Landroid/widget/TextView;
 
     iget-object v1, p0, Landroid/widget/TextView$1;->val$error:Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setError(Ljava/lang/CharSequence;)V
 
-    .line 3830
     return-void
 .end method

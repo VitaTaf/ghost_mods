@@ -48,15 +48,12 @@
     .locals 1
 
     .prologue
-    .line 440
     const-string/jumbo v0, "media_jni"
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
-    .line 441
     invoke-static {}, Landroid/media/MediaHTTPConnection;->native_init()V
 
-    .line 442
     return-void
 .end method
 
@@ -70,52 +67,39 @@
 
     const/4 v0, 0x0
 
-    .line 64
     invoke-direct {p0}, Landroid/media/IMediaHTTPConnection$Stub;-><init>()V
 
-    .line 50
     iput-wide v2, p0, Landroid/media/MediaHTTPConnection;->mCurrentOffset:J
 
-    .line 51
     iput-object v0, p0, Landroid/media/MediaHTTPConnection;->mURL:Ljava/net/URL;
 
-    .line 52
     iput-object v0, p0, Landroid/media/MediaHTTPConnection;->mHeaders:Ljava/util/Map;
 
-    .line 53
     iput-object v0, p0, Landroid/media/MediaHTTPConnection;->mConnection:Ljava/net/HttpURLConnection;
 
-    .line 54
     iput-wide v2, p0, Landroid/media/MediaHTTPConnection;->mTotalSize:J
 
-    .line 55
     iput-object v0, p0, Landroid/media/MediaHTTPConnection;->mInputStream:Ljava/io/InputStream;
 
-    .line 57
     iput-boolean v1, p0, Landroid/media/MediaHTTPConnection;->mAllowCrossDomainRedirect:Z
 
-    .line 58
     iput-boolean v1, p0, Landroid/media/MediaHTTPConnection;->mAllowCrossProtocolRedirect:Z
 
-    .line 65
     invoke-static {}, Ljava/net/CookieHandler;->getDefault()Ljava/net/CookieHandler;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    .line 66
     new-instance v0, Ljava/net/CookieManager;
 
     invoke-direct {v0}, Ljava/net/CookieManager;-><init>()V
 
     invoke-static {v0}, Ljava/net/CookieHandler;->setDefault(Ljava/net/CookieHandler;)V
 
-    .line 69
     :cond_0
     invoke-direct {p0}, Landroid/media/MediaHTTPConnection;->native_setup()V
 
-    .line 70
     return-void
 .end method
 
@@ -136,12 +120,10 @@
     .end annotation
 
     .prologue
-    .line 112
     new-instance v5, Ljava/util/HashMap;
 
     invoke-direct {v5}, Ljava/util/HashMap;-><init>()V
 
-    .line 114
     .local v5, "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/String;>;"
     const-string v9, "\r\n"
 
@@ -149,7 +131,6 @@
 
     move-result-object v7
 
-    .line 115
     .local v7, "pairs":[Ljava/lang/String;
     move-object v0, v7
 
@@ -165,7 +146,6 @@
 
     aget-object v6, v0, v2
 
-    .line 116
     .local v6, "pair":Ljava/lang/String;
     const-string v9, ":"
 
@@ -173,18 +153,15 @@
 
     move-result v1
 
-    .line 117
     .local v1, "colonPos":I
     if-ltz v1, :cond_0
 
-    .line 118
     const/4 v9, 0x0
 
     invoke-virtual {v6, v9, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 119
     .local v3, "key":Ljava/lang/String;
     add-int/lit8 v9, v1, 0x1
 
@@ -192,7 +169,6 @@
 
     move-result-object v8
 
-    .line 121
     .local v8, "val":Ljava/lang/String;
     invoke-direct {p0, v3, v8}, Landroid/media/MediaHTTPConnection;->filterOutInternalHeaders(Ljava/lang/String;Ljava/lang/String;)Z
 
@@ -200,10 +176,8 @@
 
     if-nez v9, :cond_0
 
-    .line 122
     invoke-virtual {v5, v3, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 115
     .end local v3    # "key":Ljava/lang/String;
     .end local v8    # "val":Ljava/lang/String;
     :cond_0
@@ -211,7 +185,6 @@
 
     goto :goto_0
 
-    .line 127
     .end local v1    # "colonPos":I
     .end local v6    # "pair":Ljava/lang/String;
     :cond_1
@@ -224,7 +197,6 @@
     .param p2, "val"    # Ljava/lang/String;
 
     .prologue
-    .line 101
     const-string v0, "android-allow-cross-domain-redirect"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
@@ -233,25 +205,21 @@
 
     if-eqz v0, :cond_0
 
-    .line 102
     invoke-direct {p0, p2}, Landroid/media/MediaHTTPConnection;->parseBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
     iput-boolean v0, p0, Landroid/media/MediaHTTPConnection;->mAllowCrossDomainRedirect:Z
 
-    .line 104
     iget-boolean v0, p0, Landroid/media/MediaHTTPConnection;->mAllowCrossDomainRedirect:Z
 
     iput-boolean v0, p0, Landroid/media/MediaHTTPConnection;->mAllowCrossProtocolRedirect:Z
 
-    .line 108
     const/4 v0, 0x1
 
     :goto_0
     return v0
 
-    .line 106
     :cond_0
     const/4 v0, 0x0
 
@@ -267,25 +235,20 @@
 
     const/4 v1, 0x0
 
-    .line 149
     if-nez p0, :cond_1
 
-    .line 168
     :cond_0
     :goto_0
     return v1
 
-    .line 153
     :cond_1
     invoke-virtual {p0}, Ljava/net/URL;->getHost()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 155
     .local v0, "host":Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 160
     :try_start_0
     const-string v3, "localhost"
 
@@ -297,10 +260,8 @@
 
     move v1, v2
 
-    .line 161
     goto :goto_0
 
-    .line 163
     :cond_2
     invoke-static {v0}, Landroid/net/NetworkUtils;->numericToInetAddress(Ljava/lang/String;)Ljava/net/InetAddress;
 
@@ -316,10 +277,8 @@
 
     move v1, v2
 
-    .line 164
     goto :goto_0
 
-    .line 166
     :catch_0
     move-exception v2
 
@@ -350,7 +309,6 @@
 
     const/4 v2, 0x0
 
-    .line 92
     :try_start_0
     invoke-static {p1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
     :try_end_0
@@ -364,21 +322,17 @@
 
     if-eqz v3, :cond_0
 
-    .line 94
     :goto_0
     return v1
 
     :cond_0
     move v1, v2
 
-    .line 92
     goto :goto_0
 
-    .line 93
     :catch_0
     move-exception v0
 
-    .line 94
     .local v0, "e":Ljava/lang/NumberFormatException;
     const-string/jumbo v3, "true"
 
@@ -416,7 +370,6 @@
 
     const/4 v4, -0x1
 
-    .line 351
     new-instance v5, Landroid/os/StrictMode$ThreadPolicy$Builder;
 
     invoke-direct {v5}, Landroid/os/StrictMode$ThreadPolicy$Builder;-><init>()V
@@ -429,11 +382,9 @@
 
     move-result-object v2
 
-    .line 354
     .local v2, "policy":Landroid/os/StrictMode$ThreadPolicy;
     invoke-static {v2}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
 
-    .line 357
     :try_start_0
     iget-wide v6, p0, Landroid/media/MediaHTTPConnection;->mCurrentOffset:J
 
@@ -441,10 +392,8 @@
 
     if-eqz v5, :cond_0
 
-    .line 358
     invoke-direct {p0, p1, p2}, Landroid/media/MediaHTTPConnection;->seekTo(J)V
 
-    .line 361
     :cond_0
     iget-object v5, p0, Landroid/media/MediaHTTPConnection;->mInputStream:Ljava/io/InputStream;
 
@@ -454,14 +403,11 @@
 
     move-result v1
 
-    .line 363
     .local v1, "n":I
     if-ne v1, v4, :cond_1
 
-    .line 366
     const/4 v1, 0x0
 
-    .line 369
     :cond_1
     iget-wide v6, p0, Landroid/media/MediaHTTPConnection;->mCurrentOffset:J
 
@@ -476,16 +422,13 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_3
 
-    .line 392
     .end local v1    # "n":I
     :goto_0
     return v1
 
-    .line 376
     :catch_0
     move-exception v0
 
-    .line 377
     .local v0, "e":Ljava/net/ProtocolException;
     const-string v4, "MediaHTTPConnection"
 
@@ -531,15 +474,12 @@
 
     move v1, v3
 
-    .line 378
     goto :goto_0
 
-    .line 379
     .end local v0    # "e":Ljava/net/ProtocolException;
     :catch_1
     move-exception v0
 
-    .line 380
     .local v0, "e":Ljava/net/NoRouteToHostException;
     const-string v4, "MediaHTTPConnection"
 
@@ -585,10 +525,8 @@
 
     move v1, v3
 
-    .line 381
     goto :goto_0
 
-    .line 382
     .end local v0    # "e":Ljava/net/NoRouteToHostException;
     :catch_2
     move-exception v0
@@ -596,10 +534,8 @@
     .local v0, "e":Ljava/io/IOException;
     move v1, v4
 
-    .line 386
     goto :goto_0
 
-    .line 387
     .end local v0    # "e":Ljava/io/IOException;
     :catch_3
     move-exception v0
@@ -607,7 +543,6 @@
     .local v0, "e":Ljava/lang/Exception;
     move v1, v4
 
-    .line 392
     goto :goto_0
 .end method
 
@@ -621,13 +556,10 @@
     .end annotation
 
     .prologue
-    .line 172
     invoke-direct/range {p0 .. p0}, Landroid/media/MediaHTTPConnection;->teardownConnection()V
 
-    .line 176
     const/16 v22, 0x0
 
-    .line 178
     .local v22, "redirectCount":I
     :try_start_0
     move-object/from16 v0, p0
@@ -636,7 +568,6 @@
 
     move-object/from16 v27, v0
 
-    .line 181
     .local v27, "url":Ljava/net/URL;
     const-string/jumbo v30, "media.proxy.enable-wifi"
 
@@ -646,7 +577,6 @@
 
     move-result-object v9
 
-    .line 182
     .local v9, "enableWifiProxy":Ljava/lang/String;
     const-string/jumbo v30, "media.proxy.network.type"
 
@@ -656,7 +586,6 @@
 
     move-result-object v4
 
-    .line 183
     .local v4, "connectionType":Ljava/lang/String;
     const-string/jumbo v30, "media.proxy.http.addr"
 
@@ -666,7 +595,6 @@
 
     move-result-object v13
 
-    .line 184
     .local v13, "hostName":Ljava/lang/String;
     const-string/jumbo v30, "media.proxy.http.port"
 
@@ -676,7 +604,6 @@
 
     move-result-object v14
 
-    .line 185
     .local v14, "hostPort":Ljava/lang/String;
     const-string/jumbo v30, "media.proxy.username"
 
@@ -686,7 +613,6 @@
 
     move-result-object v28
 
-    .line 186
     .local v28, "userName":Ljava/lang/String;
     const-string/jumbo v30, "media.proxy.password"
 
@@ -696,7 +622,6 @@
 
     move-result-object v20
 
-    .line 187
     .local v20, "password":Ljava/lang/String;
     const-string v30, "MediaHTTPConnection"
 
@@ -734,18 +659,15 @@
 
     invoke-static/range {v30 .. v31}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 191
     invoke-static/range {v27 .. v27}, Landroid/media/MediaHTTPConnection;->isLocalHost(Ljava/net/URL;)Z
 
     move-result v19
 
-    .line 194
     .local v19, "noProxy":Z
     :cond_0
     :goto_0
     if-eqz v19, :cond_1
 
-    .line 195
     sget-object v30, Ljava/net/Proxy;->NO_PROXY:Ljava/net/Proxy;
 
     move-object/from16 v0, v27
@@ -764,7 +686,6 @@
 
     iput-object v0, v1, Landroid/media/MediaHTTPConnection;->mConnection:Ljava/net/HttpURLConnection;
 
-    .line 214
     :goto_1
     move-object/from16 v0, p0
 
@@ -780,7 +701,6 @@
 
     invoke-virtual/range {v30 .. v31}, Ljava/net/HttpURLConnection;->setInstanceFollowRedirects(Z)V
 
-    .line 216
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/media/MediaHTTPConnection;->mHeaders:Ljava/util/Map;
@@ -789,7 +709,6 @@
 
     if-eqz v30, :cond_7
 
-    .line 217
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/media/MediaHTTPConnection;->mHeaders:Ljava/util/Map;
@@ -818,7 +737,6 @@
 
     check-cast v10, Ljava/util/Map$Entry;
 
-    .line 218
     .local v10, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
     move-object/from16 v0, p0
 
@@ -850,7 +768,6 @@
 
     goto :goto_2
 
-    .line 335
     .end local v4    # "connectionType":Ljava/lang/String;
     .end local v9    # "enableWifiProxy":Ljava/lang/String;
     .end local v10    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
@@ -864,7 +781,6 @@
     :catch_0
     move-exception v7
 
-    .line 336
     .local v7, "e":Ljava/io/IOException;
     const-wide/16 v30, -0x1
 
@@ -874,7 +790,6 @@
 
     iput-wide v0, v2, Landroid/media/MediaHTTPConnection;->mTotalSize:J
 
-    .line 337
     const/16 v30, 0x0
 
     move-object/from16 v0, v30
@@ -883,7 +798,6 @@
 
     iput-object v0, v1, Landroid/media/MediaHTTPConnection;->mInputStream:Ljava/io/InputStream;
 
-    .line 338
     const/16 v30, 0x0
 
     move-object/from16 v0, v30
@@ -892,7 +806,6 @@
 
     iput-object v0, v1, Landroid/media/MediaHTTPConnection;->mConnection:Ljava/net/HttpURLConnection;
 
-    .line 339
     const-wide/16 v30, -0x1
 
     move-wide/from16 v0, v30
@@ -901,10 +814,8 @@
 
     iput-wide v0, v2, Landroid/media/MediaHTTPConnection;->mCurrentOffset:J
 
-    .line 341
     throw v7
 
-    .line 199
     .end local v7    # "e":Ljava/io/IOException;
     .restart local v4    # "connectionType":Ljava/lang/String;
     .restart local v9    # "enableWifiProxy":Ljava/lang/String;
@@ -917,7 +828,6 @@
     :cond_1
     const/4 v8, 0x0
 
-    .line 200
     .local v8, "enableWiFiProxy":Z
     :try_start_1
     const-string v30, "0"
@@ -940,11 +850,9 @@
 
     if-eqz v30, :cond_3
 
-    .line 201
     :cond_2
     const/4 v8, 0x0
 
-    .line 203
     :cond_3
     if-nez v8, :cond_4
 
@@ -969,7 +877,6 @@
 
     if-eqz v30, :cond_6
 
-    .line 205
     :cond_5
     invoke-virtual/range {v27 .. v27}, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;
 
@@ -985,7 +892,6 @@
 
     goto/16 :goto_1
 
-    .line 207
     :cond_6
     new-instance v21, Ljava/net/Proxy;
 
@@ -1011,7 +917,6 @@
 
     invoke-direct {v0, v1, v2}, Ljava/net/Proxy;-><init>(Ljava/net/Proxy$Type;Ljava/net/SocketAddress;)V
 
-    .line 208
     .local v21, "proxy":Ljava/net/Proxy;
     move-object/from16 v0, v27
 
@@ -1031,7 +936,6 @@
 
     goto/16 :goto_1
 
-    .line 224
     .end local v8    # "enableWiFiProxy":Z
     .end local v21    # "proxy":Ljava/net/Proxy;
     :cond_7
@@ -1059,7 +963,6 @@
 
     if-nez v30, :cond_8
 
-    .line 226
     :try_start_2
     new-instance v30, Ljava/lang/StringBuilder;
 
@@ -1091,7 +994,6 @@
 
     move-result-object v29
 
-    .line 227
     .local v29, "userNamePassword":Ljava/lang/String;
     const-string v30, "UTF-8"
 
@@ -1099,11 +1001,9 @@
 
     move-result-object v6
 
-    .line 228
     .local v6, "data":[B
     const-string v11, "Proxy-Authorization"
 
-    .line 229
     .local v11, "headerKey":Ljava/lang/String;
     new-instance v30, Ljava/lang/StringBuilder;
 
@@ -1131,7 +1031,6 @@
 
     move-result-object v12
 
-    .line 230
     .local v12, "headerValue":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -1145,7 +1044,6 @@
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 237
     .end local v6    # "data":[B
     .end local v11    # "headerKey":Ljava/lang/String;
     .end local v12    # "headerValue":Ljava/lang/String;
@@ -1158,7 +1056,6 @@
 
     if-lez v30, :cond_9
 
-    .line 238
     :try_start_3
     move-object/from16 v0, p0
 
@@ -1198,7 +1095,6 @@
 
     invoke-virtual/range {v30 .. v32}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 242
     :cond_9
     move-object/from16 v0, p0
 
@@ -1210,7 +1106,6 @@
 
     move-result v23
 
-    .line 243
     .local v23, "response":I
     const/16 v30, 0x12c
 
@@ -1252,7 +1147,6 @@
 
     if-eq v0, v1, :cond_c
 
-    .line 288
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Landroid/media/MediaHTTPConnection;->mAllowCrossDomainRedirect:Z
@@ -1261,7 +1155,6 @@
 
     if-eqz v30, :cond_a
 
-    .line 291
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/media/MediaHTTPConnection;->mConnection:Ljava/net/HttpURLConnection;
@@ -1278,7 +1171,6 @@
 
     iput-object v0, v1, Landroid/media/MediaHTTPConnection;->mURL:Ljava/net/URL;
 
-    .line 294
     :cond_a
     const/16 v30, 0xce
 
@@ -1288,7 +1180,6 @@
 
     if-ne v0, v1, :cond_13
 
-    .line 299
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/media/MediaHTTPConnection;->mConnection:Ljava/net/HttpURLConnection;
@@ -1301,7 +1192,6 @@
 
     move-result-object v5
 
-    .line 302
     .local v5, "contentRange":Ljava/lang/String;
     const-wide/16 v30, -0x1
 
@@ -1311,10 +1201,8 @@
 
     iput-wide v0, v2, Landroid/media/MediaHTTPConnection;->mTotalSize:J
 
-    .line 303
     if-eqz v5, :cond_b
 
-    .line 308
     const/16 v30, 0x2f
 
     move/from16 v0, v30
@@ -1323,11 +1211,9 @@
 
     move-result v16
 
-    .line 309
     .local v16, "lastSlashPos":I
     if-ltz v16, :cond_b
 
-    .line 310
     add-int/lit8 v30, v16, 0x1
 
     move/from16 v0, v30
@@ -1338,7 +1224,6 @@
 
     move-result-object v26
 
-    .line 314
     .local v26, "total":Ljava/lang/String;
     :try_start_4
     invoke-static/range {v26 .. v26}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
@@ -1354,7 +1239,6 @@
     .catch Ljava/lang/NumberFormatException; {:try_start_4 .. :try_end_4} :catch_2
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
 
-    .line 325
     .end local v5    # "contentRange":Ljava/lang/String;
     .end local v16    # "lastSlashPos":I
     .end local v26    # "total":Ljava/lang/String;
@@ -1374,7 +1258,6 @@
 
     if-eq v0, v1, :cond_15
 
-    .line 328
     :try_start_5
     new-instance v30, Ljava/net/ProtocolException;
 
@@ -1382,18 +1265,15 @@
 
     throw v30
 
-    .line 231
     .end local v23    # "response":I
     :catch_1
     move-exception v7
 
-    .line 232
     .restart local v7    # "e":Ljava/io/IOException;
     invoke-virtual {v7}, Ljava/io/IOException;->printStackTrace()V
 
     goto/16 :goto_3
 
-    .line 252
     .end local v7    # "e":Ljava/io/IOException;
     .restart local v23    # "response":I
     :cond_c
@@ -1407,7 +1287,6 @@
 
     if-le v0, v1, :cond_d
 
-    .line 253
     new-instance v30, Ljava/net/NoRouteToHostException;
 
     new-instance v31, Ljava/lang/StringBuilder;
@@ -1436,7 +1315,6 @@
 
     throw v30
 
-    .line 256
     :cond_d
     move-object/from16 v0, p0
 
@@ -1448,7 +1326,6 @@
 
     move-result-object v18
 
-    .line 257
     .local v18, "method":Ljava/lang/String;
     const/16 v30, 0x133
 
@@ -1482,7 +1359,6 @@
 
     if-nez v30, :cond_e
 
-    .line 262
     new-instance v30, Ljava/net/NoRouteToHostException;
 
     const-string v31, "Invalid redirect"
@@ -1491,7 +1367,6 @@
 
     throw v30
 
-    .line 264
     :cond_e
     move-object/from16 v0, p0
 
@@ -1505,11 +1380,9 @@
 
     move-result-object v17
 
-    .line 265
     .local v17, "location":Ljava/lang/String;
     if-nez v17, :cond_f
 
-    .line 266
     new-instance v30, Ljava/net/NoRouteToHostException;
 
     const-string v31, "Invalid redirect"
@@ -1518,7 +1391,6 @@
 
     throw v30
 
-    .line 268
     :cond_f
     new-instance v27, Ljava/net/URL;
 
@@ -1537,7 +1409,6 @@
 
     invoke-direct {v0, v1, v2}, Ljava/net/URL;-><init>(Ljava/net/URL;Ljava/lang/String;)V
 
-    .line 269
     .restart local v27    # "url":Ljava/net/URL;
     invoke-virtual/range {v27 .. v27}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
 
@@ -1563,7 +1434,6 @@
 
     if-nez v30, :cond_10
 
-    .line 271
     new-instance v30, Ljava/net/NoRouteToHostException;
 
     const-string v31, "Unsupported protocol redirect"
@@ -1572,7 +1442,6 @@
 
     throw v30
 
-    .line 273
     :cond_10
     move-object/from16 v0, p0
 
@@ -1592,7 +1461,6 @@
 
     move-result v25
 
-    .line 274
     .local v25, "sameProtocol":Z
     move-object/from16 v0, p0
 
@@ -1604,7 +1472,6 @@
 
     if-nez v25, :cond_11
 
-    .line 275
     new-instance v30, Ljava/net/NoRouteToHostException;
 
     const-string v31, "Cross-protocol redirects are disallowed"
@@ -1613,7 +1480,6 @@
 
     throw v30
 
-    .line 277
     :cond_11
     move-object/from16 v0, p0
 
@@ -1633,7 +1499,6 @@
 
     move-result v24
 
-    .line 278
     .local v24, "sameHost":Z
     move-object/from16 v0, p0
 
@@ -1645,7 +1510,6 @@
 
     if-nez v24, :cond_12
 
-    .line 279
     new-instance v30, Ljava/net/NoRouteToHostException;
 
     const-string v31, "Cross-domain redirects are disallowed"
@@ -1654,7 +1518,6 @@
 
     throw v30
 
-    .line 282
     :cond_12
     const/16 v30, 0x133
 
@@ -1664,7 +1527,6 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 284
     move-object/from16 v0, v27
 
     move-object/from16 v1, p0
@@ -1673,7 +1535,6 @@
 
     goto/16 :goto_0
 
-    .line 319
     .end local v17    # "location":Ljava/lang/String;
     .end local v18    # "method":Ljava/lang/String;
     .end local v24    # "sameHost":Z
@@ -1687,14 +1548,12 @@
 
     if-eq v0, v1, :cond_14
 
-    .line 320
     new-instance v30, Ljava/io/IOException;
 
     invoke-direct/range {v30 .. v30}, Ljava/io/IOException;-><init>()V
 
     throw v30
 
-    .line 322
     :cond_14
     move-object/from16 v0, p0
 
@@ -1720,7 +1579,6 @@
 
     goto/16 :goto_4
 
-    .line 331
     :cond_15
     new-instance v30, Ljava/io/BufferedInputStream;
 
@@ -1742,7 +1600,6 @@
 
     iput-object v0, v1, Landroid/media/MediaHTTPConnection;->mInputStream:Ljava/io/InputStream;
 
-    .line 334
     move-wide/from16 v0, p1
 
     move-object/from16 v2, p0
@@ -1751,10 +1608,8 @@
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_0
 
-    .line 343
     return-void
 
-    .line 315
     .restart local v5    # "contentRange":Ljava/lang/String;
     .restart local v16    # "lastSlashPos":I
     .restart local v26    # "total":Ljava/lang/String;
@@ -1770,28 +1625,22 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 138
     iget-object v0, p0, Landroid/media/MediaHTTPConnection;->mConnection:Ljava/net/HttpURLConnection;
 
     if-eqz v0, :cond_0
 
-    .line 139
     iput-object v1, p0, Landroid/media/MediaHTTPConnection;->mInputStream:Ljava/io/InputStream;
 
-    .line 141
     iget-object v0, p0, Landroid/media/MediaHTTPConnection;->mConnection:Ljava/net/HttpURLConnection;
 
     invoke-virtual {v0}, Ljava/net/HttpURLConnection;->disconnect()V
 
-    .line 142
     iput-object v1, p0, Landroid/media/MediaHTTPConnection;->mConnection:Ljava/net/HttpURLConnection;
 
-    .line 144
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Landroid/media/MediaHTTPConnection;->mCurrentOffset:J
 
-    .line 146
     :cond_0
     return-void
 .end method
@@ -1804,23 +1653,19 @@
     .param p2, "headers"    # Ljava/lang/String;
 
     .prologue
-    .line 79
     :try_start_0
     invoke-virtual {p0}, Landroid/media/MediaHTTPConnection;->disconnect()V
 
-    .line 80
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Landroid/media/MediaHTTPConnection;->mAllowCrossDomainRedirect:Z
 
-    .line 81
     new-instance v1, Ljava/net/URL;
 
     invoke-direct {v1, p1}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
 
     iput-object v1, p0, Landroid/media/MediaHTTPConnection;->mURL:Ljava/net/URL;
 
-    .line 82
     invoke-direct {p0, p2}, Landroid/media/MediaHTTPConnection;->convertHeaderStringToMap(Ljava/lang/String;)Ljava/util/Map;
 
     move-result-object v1
@@ -1829,7 +1674,6 @@
     :try_end_0
     .catch Ljava/net/MalformedURLException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 87
     invoke-direct {p0}, Landroid/media/MediaHTTPConnection;->native_getIMemory()Landroid/os/IBinder;
 
     move-result-object v1
@@ -1837,11 +1681,9 @@
     :goto_0
     return-object v1
 
-    .line 83
     :catch_0
     move-exception v0
 
-    .line 84
     .local v0, "e":Ljava/net/MalformedURLException;
     const/4 v1, 0x0
 
@@ -1854,16 +1696,12 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 132
     invoke-direct {p0}, Landroid/media/MediaHTTPConnection;->teardownConnection()V
 
-    .line 133
     iput-object v0, p0, Landroid/media/MediaHTTPConnection;->mHeaders:Ljava/util/Map;
 
-    .line 134
     iput-object v0, p0, Landroid/media/MediaHTTPConnection;->mURL:Ljava/net/URL;
 
-    .line 135
     return-void
 .end method
 
@@ -1871,10 +1709,8 @@
     .locals 0
 
     .prologue
-    .line 429
     invoke-direct {p0}, Landroid/media/MediaHTTPConnection;->native_finalize()V
 
-    .line 430
     return-void
 .end method
 
@@ -1882,12 +1718,10 @@
     .locals 4
 
     .prologue
-    .line 411
     iget-object v1, p0, Landroid/media/MediaHTTPConnection;->mConnection:Ljava/net/HttpURLConnection;
 
     if-nez v1, :cond_0
 
-    .line 413
     const-wide/16 v2, 0x0
 
     :try_start_0
@@ -1895,7 +1729,6 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 419
     :cond_0
     iget-object v1, p0, Landroid/media/MediaHTTPConnection;->mConnection:Ljava/net/HttpURLConnection;
 
@@ -1906,11 +1739,9 @@
     :goto_0
     return-object v1
 
-    .line 414
     :catch_0
     move-exception v0
 
-    .line 415
     .local v0, "e":Ljava/io/IOException;
     const-string v1, "application/octet-stream"
 
@@ -1921,12 +1752,10 @@
     .locals 4
 
     .prologue
-    .line 398
     iget-object v1, p0, Landroid/media/MediaHTTPConnection;->mConnection:Ljava/net/HttpURLConnection;
 
     if-nez v1, :cond_0
 
-    .line 400
     const-wide/16 v2, 0x0
 
     :try_start_0
@@ -1934,18 +1763,15 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 406
     :cond_0
     iget-wide v2, p0, Landroid/media/MediaHTTPConnection;->mTotalSize:J
 
     :goto_0
     return-wide v2
 
-    .line 401
     :catch_0
     move-exception v0
 
-    .line 402
     .local v0, "e":Ljava/io/IOException;
     const-wide/16 v2, -0x1
 
@@ -1956,7 +1782,6 @@
     .locals 1
 
     .prologue
-    .line 424
     iget-object v0, p0, Landroid/media/MediaHTTPConnection;->mURL:Ljava/net/URL;
 
     invoke-virtual {v0}, Ljava/net/URL;->toString()Ljava/lang/String;
@@ -1972,7 +1797,6 @@
     .param p3, "size"    # I
 
     .prologue
-    .line 347
     invoke-direct {p0, p1, p2, p3}, Landroid/media/MediaHTTPConnection;->native_readAt(JI)I
 
     move-result v0

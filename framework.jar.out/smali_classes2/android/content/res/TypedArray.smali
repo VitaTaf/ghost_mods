@@ -34,43 +34,34 @@
     .param p4, "len"    # I
 
     .prologue
-    .line 1016
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 73
     new-instance v0, Landroid/util/TypedValue;
 
     invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
     iput-object v0, p0, Landroid/content/res/TypedArray;->mValue:Landroid/util/TypedValue;
 
-    .line 1017
     iput-object p1, p0, Landroid/content/res/TypedArray;->mResources:Landroid/content/res/Resources;
 
-    .line 1018
     iget-object v0, p0, Landroid/content/res/TypedArray;->mResources:Landroid/content/res/Resources;
 
     iget-object v0, v0, Landroid/content/res/Resources;->mMetrics:Landroid/util/DisplayMetrics;
 
     iput-object v0, p0, Landroid/content/res/TypedArray;->mMetrics:Landroid/util/DisplayMetrics;
 
-    .line 1019
     iget-object v0, p0, Landroid/content/res/TypedArray;->mResources:Landroid/content/res/Resources;
 
     iget-object v0, v0, Landroid/content/res/Resources;->mAssets:Landroid/content/res/AssetManager;
 
     iput-object v0, p0, Landroid/content/res/TypedArray;->mAssets:Landroid/content/res/AssetManager;
 
-    .line 1020
     iput-object p2, p0, Landroid/content/res/TypedArray;->mData:[I
 
-    .line 1021
     iput-object p3, p0, Landroid/content/res/TypedArray;->mIndices:[I
 
-    .line 1022
     iput p4, p0, Landroid/content/res/TypedArray;->mLength:I
 
-    .line 1023
     return-void
 .end method
 
@@ -80,66 +71,54 @@
     .param p2, "outValue"    # Landroid/util/TypedValue;
 
     .prologue
-    .line 988
     iget-object v0, p0, Landroid/content/res/TypedArray;->mData:[I
 
-    .line 989
     .local v0, "data":[I
     add-int/lit8 v2, p1, 0x0
 
     aget v1, v0, v2
 
-    .line 990
     .local v1, "type":I
     if-nez v1, :cond_0
 
-    .line 991
     const/4 v2, 0x0
 
-    .line 1000
     :goto_0
     return v2
 
-    .line 993
     :cond_0
     iput v1, p2, Landroid/util/TypedValue;->type:I
 
-    .line 994
     add-int/lit8 v2, p1, 0x1
 
     aget v2, v0, v2
 
     iput v2, p2, Landroid/util/TypedValue;->data:I
 
-    .line 995
     add-int/lit8 v2, p1, 0x2
 
     aget v2, v0, v2
 
     iput v2, p2, Landroid/util/TypedValue;->assetCookie:I
 
-    .line 996
     add-int/lit8 v2, p1, 0x3
 
     aget v2, v0, v2
 
     iput v2, p2, Landroid/util/TypedValue;->resourceId:I
 
-    .line 997
     add-int/lit8 v2, p1, 0x4
 
     aget v2, v0, v2
 
     iput v2, p2, Landroid/util/TypedValue;->changingConfigurations:I
 
-    .line 998
     add-int/lit8 v2, p1, 0x5
 
     aget v2, v0, v2
 
     iput v2, p2, Landroid/util/TypedValue;->density:I
 
-    .line 999
     const/4 v2, 0x3
 
     if-ne v1, v2, :cond_1
@@ -151,12 +130,10 @@
     :goto_1
     iput-object v2, p2, Landroid/util/TypedValue;->string:Ljava/lang/CharSequence;
 
-    .line 1000
     const/4 v2, 0x1
 
     goto :goto_0
 
-    .line 999
     :cond_1
     const/4 v2, 0x0
 
@@ -168,25 +145,20 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 1004
     iget-object v1, p0, Landroid/content/res/TypedArray;->mData:[I
 
-    .line 1005
     .local v1, "data":[I
     add-int/lit8 v2, p1, 0x2
 
     aget v0, v1, v2
 
-    .line 1006
     .local v0, "cookie":I
     if-gez v0, :cond_1
 
-    .line 1007
     iget-object v2, p0, Landroid/content/res/TypedArray;->mXml:Landroid/content/res/XmlBlock$Parser;
 
     if-eqz v2, :cond_0
 
-    .line 1008
     iget-object v2, p0, Landroid/content/res/TypedArray;->mXml:Landroid/content/res/XmlBlock$Parser;
 
     add-int/lit8 v3, p1, 0x1
@@ -197,17 +169,14 @@
 
     move-result-object v2
 
-    .line 1013
     :goto_0
     return-object v2
 
-    .line 1011
     :cond_0
     const/4 v2, 0x0
 
     goto :goto_0
 
-    .line 1013
     :cond_1
     iget-object v2, p0, Landroid/content/res/TypedArray;->mAssets:Landroid/content/res/AssetManager;
 
@@ -228,7 +197,6 @@
     .param p1, "len"    # I
 
     .prologue
-    .line 42
     iget-object v2, p0, Landroid/content/res/Resources;->mTypedArrayPool:Landroid/util/Pools$SynchronizedPool;
 
     invoke-virtual {v2}, Landroid/util/Pools$SynchronizedPool;->acquire()Ljava/lang/Object;
@@ -237,22 +205,17 @@
 
     check-cast v0, Landroid/content/res/TypedArray;
 
-    .line 43
     .local v0, "attrs":Landroid/content/res/TypedArray;
     if-eqz v0, :cond_1
 
-    .line 44
     iput p1, v0, Landroid/content/res/TypedArray;->mLength:I
 
-    .line 45
     const/4 v2, 0x0
 
     iput-boolean v2, v0, Landroid/content/res/TypedArray;->mRecycled:Z
 
-    .line 47
     mul-int/lit8 v1, p1, 0x6
 
-    .line 48
     .local v1, "fullLen":I
     iget-object v2, v0, Landroid/content/res/TypedArray;->mData:[I
 
@@ -260,13 +223,11 @@
 
     if-lt v2, v1, :cond_0
 
-    .line 57
     .end local v0    # "attrs":Landroid/content/res/TypedArray;
     .end local v1    # "fullLen":I
     :goto_0
     return-object v0
 
-    .line 52
     .restart local v0    # "attrs":Landroid/content/res/TypedArray;
     .restart local v1    # "fullLen":I
     :cond_0
@@ -274,7 +235,6 @@
 
     iput-object v2, v0, Landroid/content/res/TypedArray;->mData:[I
 
-    .line 53
     add-int/lit8 v2, p1, 0x1
 
     new-array v2, v2, [I
@@ -283,7 +243,6 @@
 
     goto :goto_0
 
-    .line 57
     .end local v1    # "fullLen":I
     :cond_1
     new-instance v0, Landroid/content/res/TypedArray;
@@ -308,7 +267,6 @@
     .locals 1
 
     .prologue
-    .line 915
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/content/res/TypedArray;->extractThemeAttrs([I)[I
@@ -325,12 +283,10 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 923
     iget-boolean v6, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v6, :cond_0
 
-    .line 924
     new-instance v6, Ljava/lang/RuntimeException;
 
     const-string v7, "Cannot make calls to a recycled instance!"
@@ -339,21 +295,17 @@
 
     throw v6
 
-    .line 927
     :cond_0
     const/4 v2, 0x0
 
-    .line 929
     .local v2, "attrs":[I
     iget-object v3, p0, Landroid/content/res/TypedArray;->mData:[I
 
-    .line 930
     .local v3, "data":[I
     invoke-virtual {p0}, Landroid/content/res/TypedArray;->length()I
 
     move-result v0
 
-    .line 931
     .local v0, "N":I
     const/4 v4, 0x0
 
@@ -361,10 +313,8 @@
     :goto_0
     if-ge v4, v0, :cond_5
 
-    .line 932
     mul-int/lit8 v5, v4, 0x6
 
-    .line 933
     .local v5, "index":I
     add-int/lit8 v6, v5, 0x0
 
@@ -374,58 +324,47 @@
 
     if-eq v6, v7, :cond_2
 
-    .line 931
     :cond_1
     :goto_1
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 939
     :cond_2
     add-int/lit8 v6, v5, 0x0
 
     aput v8, v3, v6
 
-    .line 941
     add-int/lit8 v6, v5, 0x1
 
     aget v1, v3, v6
 
-    .line 942
     .local v1, "attr":I
     if-eqz v1, :cond_1
 
-    .line 948
     if-nez v2, :cond_3
 
-    .line 949
     if-eqz p1, :cond_4
 
     array-length v6, p1
 
     if-ne v6, v0, :cond_4
 
-    .line 950
     move-object v2, p1
 
-    .line 951
     invoke-static {v2, v8}, Ljava/util/Arrays;->fill([II)V
 
-    .line 957
     :cond_3
     :goto_2
     aput v1, v2, v4
 
     goto :goto_1
 
-    .line 953
     :cond_4
     new-array v2, v0, [I
 
     goto :goto_2
 
-    .line 960
     .end local v1    # "attr":I
     .end local v5    # "index":I
     :cond_5
@@ -438,12 +377,10 @@
     .param p2, "defValue"    # Z
 
     .prologue
-    .line 271
     iget-boolean v3, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v3, :cond_0
 
-    .line 272
     new-instance v3, Ljava/lang/RuntimeException;
 
     const-string v4, "Cannot make calls to a recycled instance!"
@@ -452,29 +389,23 @@
 
     throw v3
 
-    .line 275
     :cond_0
     mul-int/lit8 p1, p1, 0x6
 
-    .line 276
     iget-object v0, p0, Landroid/content/res/TypedArray;->mData:[I
 
-    .line 277
     .local v0, "data":[I
     add-int/lit8 v3, p1, 0x0
 
     aget v1, v0, v3
 
-    .line 278
     .local v1, "type":I
     if-nez v1, :cond_1
 
-    .line 293
     .end local p2    # "defValue":Z
     :goto_0
     return p2
 
-    .line 280
     .restart local p2    # "defValue":Z
     :cond_1
     const/16 v3, 0x10
@@ -485,7 +416,6 @@
 
     if-gt v1, v3, :cond_3
 
-    .line 282
     add-int/lit8 v3, p1, 0x1
 
     aget v3, v0, v3
@@ -504,11 +434,9 @@
 
     goto :goto_1
 
-    .line 285
     :cond_3
     iget-object v2, p0, Landroid/content/res/TypedArray;->mValue:Landroid/util/TypedValue;
 
-    .line 286
     .local v2, "v":Landroid/util/TypedValue;
     invoke-direct {p0, p1, v2}, Landroid/content/res/TypedArray;->getValueAt(ILandroid/util/TypedValue;)Z
 
@@ -516,7 +444,6 @@
 
     if-eqz v3, :cond_4
 
-    .line 287
     const-string v3, "Resources"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -539,7 +466,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 288
     invoke-virtual {v2}, Landroid/util/TypedValue;->coerceToString()Ljava/lang/CharSequence;
 
     move-result-object v3
@@ -550,7 +476,6 @@
 
     goto :goto_0
 
-    .line 291
     :cond_4
     const-string v3, "Resources"
 
@@ -585,20 +510,16 @@
     .locals 7
 
     .prologue
-    .line 972
     const/4 v1, 0x0
 
-    .line 974
     .local v1, "changingConfig":I
     iget-object v2, p0, Landroid/content/res/TypedArray;->mData:[I
 
-    .line 975
     .local v2, "data":[I
     invoke-virtual {p0}, Landroid/content/res/TypedArray;->length()I
 
     move-result v0
 
-    .line 976
     .local v0, "N":I
     const/4 v3, 0x0
 
@@ -606,26 +527,21 @@
     :goto_0
     if-ge v3, v0, :cond_1
 
-    .line 977
     mul-int/lit8 v4, v3, 0x6
 
-    .line 978
     .local v4, "index":I
     add-int/lit8 v6, v4, 0x0
 
     aget v5, v2, v6
 
-    .line 979
     .local v5, "type":I
     if-nez v5, :cond_0
 
-    .line 976
     :goto_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 982
     :cond_0
     add-int/lit8 v6, v4, 0x4
 
@@ -635,7 +551,6 @@
 
     goto :goto_1
 
-    .line 984
     .end local v4    # "index":I
     .end local v5    # "type":I
     :cond_1
@@ -648,12 +563,10 @@
     .param p2, "defValue"    # I
 
     .prologue
-    .line 380
     iget-boolean v4, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v4, :cond_0
 
-    .line 381
     new-instance v4, Ljava/lang/RuntimeException;
 
     const-string v5, "Cannot make calls to a recycled instance!"
@@ -662,30 +575,24 @@
 
     throw v4
 
-    .line 384
     :cond_0
     mul-int/lit8 p1, p1, 0x6
 
-    .line 385
     iget-object v1, p0, Landroid/content/res/TypedArray;->mData:[I
 
-    .line 386
     .local v1, "data":[I
     add-int/lit8 v4, p1, 0x0
 
     aget v2, v1, v4
 
-    .line 387
     .local v2, "type":I
     if-nez v2, :cond_2
 
-    .line 399
     .end local p2    # "defValue":I
     :cond_1
     :goto_0
     return p2
 
-    .line 389
     .restart local p2    # "defValue":I
     :cond_2
     const/16 v4, 0x10
@@ -696,23 +603,19 @@
 
     if-gt v2, v4, :cond_3
 
-    .line 391
     add-int/lit8 v4, p1, 0x1
 
     aget p2, v1, v4
 
     goto :goto_0
 
-    .line 392
     :cond_3
     const/4 v4, 0x3
 
     if-ne v2, v4, :cond_4
 
-    .line 393
     iget-object v3, p0, Landroid/content/res/TypedArray;->mValue:Landroid/util/TypedValue;
 
-    .line 394
     .local v3, "value":Landroid/util/TypedValue;
     invoke-direct {p0, p1, v3}, Landroid/content/res/TypedArray;->getValueAt(ILandroid/util/TypedValue;)Z
 
@@ -720,7 +623,6 @@
 
     if-eqz v4, :cond_1
 
-    .line 395
     iget-object v4, p0, Landroid/content/res/TypedArray;->mResources:Landroid/content/res/Resources;
 
     iget v5, v3, Landroid/util/TypedValue;->resourceId:I
@@ -731,7 +633,6 @@
 
     move-result-object v0
 
-    .line 397
     .local v0, "csl":Landroid/content/res/ColorStateList;
     invoke-virtual {v0}, Landroid/content/res/ColorStateList;->getDefaultColor()I
 
@@ -739,7 +640,6 @@
 
     goto :goto_0
 
-    .line 400
     .end local v0    # "csl":Landroid/content/res/ColorStateList;
     .end local v3    # "value":Landroid/util/TypedValue;
     :cond_4
@@ -747,7 +647,6 @@
 
     if-ne v2, v4, :cond_5
 
-    .line 401
     new-instance v4, Ljava/lang/RuntimeException;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -772,7 +671,6 @@
 
     throw v4
 
-    .line 404
     :cond_5
     new-instance v4, Ljava/lang/UnsupportedOperationException;
 
@@ -808,12 +706,10 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 418
     iget-boolean v1, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v1, :cond_0
 
-    .line 419
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Cannot make calls to a recycled instance!"
@@ -822,11 +718,9 @@
 
     throw v1
 
-    .line 422
     :cond_0
     iget-object v0, p0, Landroid/content/res/TypedArray;->mValue:Landroid/util/TypedValue;
 
-    .line 423
     .local v0, "value":Landroid/util/TypedValue;
     mul-int/lit8 v1, p1, 0x6
 
@@ -836,14 +730,12 @@
 
     if-eqz v1, :cond_2
 
-    .line 424
     iget v1, v0, Landroid/util/TypedValue;->type:I
 
     const/4 v2, 0x2
 
     if-ne v1, v2, :cond_1
 
-    .line 425
     new-instance v1, Ljava/lang/RuntimeException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -868,7 +760,6 @@
 
     throw v1
 
-    .line 427
     :cond_1
     iget-object v1, p0, Landroid/content/res/TypedArray;->mResources:Landroid/content/res/Resources;
 
@@ -880,7 +771,6 @@
 
     move-result-object v1
 
-    .line 429
     :goto_0
     return-object v1
 
@@ -896,12 +786,10 @@
     .param p2, "defValue"    # F
 
     .prologue
-    .line 479
     iget-boolean v2, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v2, :cond_0
 
-    .line 480
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v3, "Cannot make calls to a recycled instance!"
@@ -910,36 +798,29 @@
 
     throw v2
 
-    .line 483
     :cond_0
     mul-int/lit8 p1, p1, 0x6
 
-    .line 484
     iget-object v0, p0, Landroid/content/res/TypedArray;->mData:[I
 
-    .line 485
     .local v0, "data":[I
     add-int/lit8 v2, p1, 0x0
 
     aget v1, v0, v2
 
-    .line 486
     .local v1, "type":I
     if-nez v1, :cond_1
 
-    .line 489
     .end local p2    # "defValue":F
     :goto_0
     return p2
 
-    .line 488
     .restart local p2    # "defValue":F
     :cond_1
     const/4 v2, 0x5
 
     if-ne v1, v2, :cond_2
 
-    .line 489
     add-int/lit8 v2, p1, 0x1
 
     aget v2, v0, v2
@@ -952,13 +833,11 @@
 
     goto :goto_0
 
-    .line 491
     :cond_2
     const/4 v2, 0x2
 
     if-ne v1, v2, :cond_3
 
-    .line 492
     new-instance v2, Ljava/lang/RuntimeException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -983,7 +862,6 @@
 
     throw v2
 
-    .line 495
     :cond_3
     new-instance v2, Ljava/lang/UnsupportedOperationException;
 
@@ -1020,12 +898,10 @@
     .param p2, "defValue"    # I
 
     .prologue
-    .line 517
     iget-boolean v2, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v2, :cond_0
 
-    .line 518
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v3, "Cannot make calls to a recycled instance!"
@@ -1034,36 +910,29 @@
 
     throw v2
 
-    .line 521
     :cond_0
     mul-int/lit8 p1, p1, 0x6
 
-    .line 522
     iget-object v0, p0, Landroid/content/res/TypedArray;->mData:[I
 
-    .line 523
     .local v0, "data":[I
     add-int/lit8 v2, p1, 0x0
 
     aget v1, v0, v2
 
-    .line 524
     .local v1, "type":I
     if-nez v1, :cond_1
 
-    .line 527
     .end local p2    # "defValue":I
     :goto_0
     return p2
 
-    .line 526
     .restart local p2    # "defValue":I
     :cond_1
     const/4 v2, 0x5
 
     if-ne v1, v2, :cond_2
 
-    .line 527
     add-int/lit8 v2, p1, 0x1
 
     aget v2, v0, v2
@@ -1076,13 +945,11 @@
 
     goto :goto_0
 
-    .line 529
     :cond_2
     const/4 v2, 0x2
 
     if-ne v1, v2, :cond_3
 
-    .line 530
     new-instance v2, Ljava/lang/RuntimeException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1107,7 +974,6 @@
 
     throw v2
 
-    .line 533
     :cond_3
     new-instance v2, Ljava/lang/UnsupportedOperationException;
 
@@ -1144,12 +1010,10 @@
     .param p2, "defValue"    # I
 
     .prologue
-    .line 556
     iget-boolean v2, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v2, :cond_0
 
-    .line 557
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v3, "Cannot make calls to a recycled instance!"
@@ -1158,36 +1022,29 @@
 
     throw v2
 
-    .line 560
     :cond_0
     mul-int/lit8 p1, p1, 0x6
 
-    .line 561
     iget-object v0, p0, Landroid/content/res/TypedArray;->mData:[I
 
-    .line 562
     .local v0, "data":[I
     add-int/lit8 v2, p1, 0x0
 
     aget v1, v0, v2
 
-    .line 563
     .local v1, "type":I
     if-nez v1, :cond_1
 
-    .line 566
     .end local p2    # "defValue":I
     :goto_0
     return p2
 
-    .line 565
     .restart local p2    # "defValue":I
     :cond_1
     const/4 v2, 0x5
 
     if-ne v1, v2, :cond_2
 
-    .line 566
     add-int/lit8 v2, p1, 0x1
 
     aget v2, v0, v2
@@ -1200,13 +1057,11 @@
 
     goto :goto_0
 
-    .line 568
     :cond_2
     const/4 v2, 0x2
 
     if-ne v1, v2, :cond_3
 
-    .line 569
     new-instance v2, Ljava/lang/RuntimeException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1231,7 +1086,6 @@
 
     throw v2
 
-    .line 572
     :cond_3
     new-instance v2, Ljava/lang/UnsupportedOperationException;
 
@@ -1267,12 +1121,10 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 740
     iget-boolean v1, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v1, :cond_0
 
-    .line 741
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Cannot make calls to a recycled instance!"
@@ -1281,11 +1133,9 @@
 
     throw v1
 
-    .line 744
     :cond_0
     iget-object v0, p0, Landroid/content/res/TypedArray;->mValue:Landroid/util/TypedValue;
 
-    .line 745
     .local v0, "value":Landroid/util/TypedValue;
     mul-int/lit8 v1, p1, 0x6
 
@@ -1295,14 +1145,12 @@
 
     if-eqz v1, :cond_2
 
-    .line 746
     iget v1, v0, Landroid/util/TypedValue;->type:I
 
     const/4 v2, 0x2
 
     if-ne v1, v2, :cond_1
 
-    .line 747
     new-instance v1, Ljava/lang/RuntimeException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1327,7 +1175,6 @@
 
     throw v1
 
-    .line 749
     :cond_1
     iget-object v1, p0, Landroid/content/res/TypedArray;->mResources:Landroid/content/res/Resources;
 
@@ -1339,7 +1186,6 @@
 
     move-result-object v1
 
-    .line 751
     :goto_0
     return-object v1
 
@@ -1355,12 +1201,10 @@
     .param p2, "defValue"    # F
 
     .prologue
-    .line 338
     iget-boolean v4, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v4, :cond_0
 
-    .line 339
     new-instance v4, Ljava/lang/RuntimeException;
 
     const-string v5, "Cannot make calls to a recycled instance!"
@@ -1369,36 +1213,29 @@
 
     throw v4
 
-    .line 342
     :cond_0
     mul-int/lit8 p1, p1, 0x6
 
-    .line 343
     iget-object v0, p0, Landroid/content/res/TypedArray;->mData:[I
 
-    .line 344
     .local v0, "data":[I
     add-int/lit8 v4, p1, 0x0
 
     aget v2, v0, v4
 
-    .line 345
     .local v2, "type":I
     if-nez v2, :cond_1
 
-    .line 364
     .end local p2    # "defValue":F
     :goto_0
     return p2
 
-    .line 347
     .restart local p2    # "defValue":F
     :cond_1
     const/4 v4, 0x4
 
     if-ne v2, v4, :cond_2
 
-    .line 348
     add-int/lit8 v4, p1, 0x1
 
     aget v4, v0, v4
@@ -1409,7 +1246,6 @@
 
     goto :goto_0
 
-    .line 349
     :cond_2
     const/16 v4, 0x10
 
@@ -1419,7 +1255,6 @@
 
     if-gt v2, v4, :cond_3
 
-    .line 351
     add-int/lit8 v4, p1, 0x1
 
     aget v4, v0, v4
@@ -1428,11 +1263,9 @@
 
     goto :goto_0
 
-    .line 354
     :cond_3
     iget-object v3, p0, Landroid/content/res/TypedArray;->mValue:Landroid/util/TypedValue;
 
-    .line 355
     .local v3, "v":Landroid/util/TypedValue;
     invoke-direct {p0, p1, v3}, Landroid/content/res/TypedArray;->getValueAt(ILandroid/util/TypedValue;)Z
 
@@ -1440,7 +1273,6 @@
 
     if-eqz v4, :cond_4
 
-    .line 356
     const-string v4, "Resources"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1463,16 +1295,13 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 357
     invoke-virtual {v3}, Landroid/util/TypedValue;->coerceToString()Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    .line 358
     .local v1, "str":Ljava/lang/CharSequence;
     if-eqz v1, :cond_4
 
-    .line 359
     invoke-interface {v1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v4
@@ -1483,7 +1312,6 @@
 
     goto :goto_0
 
-    .line 362
     .end local v1    # "str":Ljava/lang/CharSequence;
     :cond_4
     const-string v4, "Resources"
@@ -1523,12 +1351,10 @@
     .param p4, "defValue"    # F
 
     .prologue
-    .line 658
     iget-boolean v2, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v2, :cond_0
 
-    .line 659
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v3, "Cannot make calls to a recycled instance!"
@@ -1537,36 +1363,29 @@
 
     throw v2
 
-    .line 662
     :cond_0
     mul-int/lit8 p1, p1, 0x6
 
-    .line 663
     iget-object v0, p0, Landroid/content/res/TypedArray;->mData:[I
 
-    .line 664
     .local v0, "data":[I
     add-int/lit8 v2, p1, 0x0
 
     aget v1, v0, v2
 
-    .line 665
     .local v1, "type":I
     if-nez v1, :cond_1
 
-    .line 668
     .end local p4    # "defValue":F
     :goto_0
     return p4
 
-    .line 667
     .restart local p4    # "defValue":F
     :cond_1
     const/4 v2, 0x6
 
     if-ne v1, v2, :cond_2
 
-    .line 668
     add-int/lit8 v2, p1, 0x1
 
     aget v2, v0, v2
@@ -1581,13 +1400,11 @@
 
     goto :goto_0
 
-    .line 670
     :cond_2
     const/4 v2, 0x2
 
     if-ne v1, v2, :cond_3
 
-    .line 671
     new-instance v2, Ljava/lang/RuntimeException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1612,7 +1429,6 @@
 
     throw v2
 
-    .line 674
     :cond_3
     new-instance v2, Ljava/lang/UnsupportedOperationException;
 
@@ -1648,12 +1464,10 @@
     .param p1, "at"    # I
 
     .prologue
-    .line 107
     iget-boolean v0, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v0, :cond_0
 
-    .line 108
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Cannot make calls to a recycled instance!"
@@ -1662,7 +1476,6 @@
 
     throw v0
 
-    .line 111
     :cond_0
     iget-object v0, p0, Landroid/content/res/TypedArray;->mIndices:[I
 
@@ -1677,12 +1490,10 @@
     .locals 2
 
     .prologue
-    .line 90
     iget-boolean v0, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v0, :cond_0
 
-    .line 91
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Cannot make calls to a recycled instance!"
@@ -1691,7 +1502,6 @@
 
     throw v0
 
-    .line 94
     :cond_0
     iget-object v0, p0, Landroid/content/res/TypedArray;->mIndices:[I
 
@@ -1708,12 +1518,10 @@
     .param p2, "defValue"    # I
 
     .prologue
-    .line 305
     iget-boolean v3, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v3, :cond_0
 
-    .line 306
     new-instance v3, Ljava/lang/RuntimeException;
 
     const-string v4, "Cannot make calls to a recycled instance!"
@@ -1722,29 +1530,23 @@
 
     throw v3
 
-    .line 309
     :cond_0
     mul-int/lit8 p1, p1, 0x6
 
-    .line 310
     iget-object v0, p0, Landroid/content/res/TypedArray;->mData:[I
 
-    .line 311
     .local v0, "data":[I
     add-int/lit8 v3, p1, 0x0
 
     aget v1, v0, v3
 
-    .line 312
     .local v1, "type":I
     if-nez v1, :cond_1
 
-    .line 327
     .end local p2    # "defValue":I
     :goto_0
     return p2
 
-    .line 314
     .restart local p2    # "defValue":I
     :cond_1
     const/16 v3, 0x10
@@ -1755,18 +1557,15 @@
 
     if-gt v1, v3, :cond_2
 
-    .line 316
     add-int/lit8 v3, p1, 0x1
 
     aget p2, v0, v3
 
     goto :goto_0
 
-    .line 319
     :cond_2
     iget-object v2, p0, Landroid/content/res/TypedArray;->mValue:Landroid/util/TypedValue;
 
-    .line 320
     .local v2, "v":Landroid/util/TypedValue;
     invoke-direct {p0, p1, v2}, Landroid/content/res/TypedArray;->getValueAt(ILandroid/util/TypedValue;)Z
 
@@ -1774,7 +1573,6 @@
 
     if-eqz v3, :cond_3
 
-    .line 321
     const-string v3, "Resources"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1797,7 +1595,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 322
     invoke-virtual {v2}, Landroid/util/TypedValue;->coerceToString()Ljava/lang/CharSequence;
 
     move-result-object v3
@@ -1808,7 +1605,6 @@
 
     goto :goto_0
 
-    .line 325
     :cond_3
     const-string v3, "Resources"
 
@@ -1845,12 +1641,10 @@
     .param p2, "defValue"    # I
 
     .prologue
-    .line 442
     iget-boolean v2, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v2, :cond_0
 
-    .line 443
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v3, "Cannot make calls to a recycled instance!"
@@ -1859,29 +1653,23 @@
 
     throw v2
 
-    .line 446
     :cond_0
     mul-int/lit8 p1, p1, 0x6
 
-    .line 447
     iget-object v0, p0, Landroid/content/res/TypedArray;->mData:[I
 
-    .line 448
     .local v0, "data":[I
     add-int/lit8 v2, p1, 0x0
 
     aget v1, v0, v2
 
-    .line 449
     .local v1, "type":I
     if-nez v1, :cond_1
 
-    .line 453
     .end local p2    # "defValue":I
     :goto_0
     return p2
 
-    .line 451
     .restart local p2    # "defValue":I
     :cond_1
     const/16 v2, 0x10
@@ -1892,20 +1680,17 @@
 
     if-gt v1, v2, :cond_2
 
-    .line 453
     add-int/lit8 v2, p1, 0x1
 
     aget p2, v0, v2
 
     goto :goto_0
 
-    .line 454
     :cond_2
     const/4 v2, 0x2
 
     if-ne v1, v2, :cond_3
 
-    .line 455
     new-instance v2, Ljava/lang/RuntimeException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1930,7 +1715,6 @@
 
     throw v2
 
-    .line 458
     :cond_3
     new-instance v2, Ljava/lang/UnsupportedOperationException;
 
@@ -1967,12 +1751,10 @@
     .param p2, "defValue"    # I
 
     .prologue
-    .line 624
     iget-boolean v2, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v2, :cond_0
 
-    .line 625
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v3, "Cannot make calls to a recycled instance!"
@@ -1981,20 +1763,16 @@
 
     throw v2
 
-    .line 628
     :cond_0
     mul-int/lit8 p1, p1, 0x6
 
-    .line 629
     iget-object v0, p0, Landroid/content/res/TypedArray;->mData:[I
 
-    .line 630
     .local v0, "data":[I
     add-int/lit8 v2, p1, 0x0
 
     aget v1, v0, v2
 
-    .line 631
     .local v1, "type":I
     const/16 v2, 0x10
 
@@ -2004,25 +1782,21 @@
 
     if-gt v1, v2, :cond_2
 
-    .line 633
     add-int/lit8 v2, p1, 0x1
 
     aget p2, v0, v2
 
-    .line 639
     .end local p2    # "defValue":I
     :cond_1
     :goto_0
     return p2
 
-    .line 634
     .restart local p2    # "defValue":I
     :cond_2
     const/4 v2, 0x5
 
     if-ne v1, v2, :cond_1
 
-    .line 635
     add-int/lit8 v2, p1, 0x1
 
     aget v2, v0, v2
@@ -2042,12 +1816,10 @@
     .param p2, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 589
     iget-boolean v2, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v2, :cond_0
 
-    .line 590
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v3, "Cannot make calls to a recycled instance!"
@@ -2056,20 +1828,16 @@
 
     throw v2
 
-    .line 593
     :cond_0
     mul-int/lit8 p1, p1, 0x6
 
-    .line 594
     iget-object v0, p0, Landroid/content/res/TypedArray;->mData:[I
 
-    .line 595
     .local v0, "data":[I
     add-int/lit8 v2, p1, 0x0
 
     aget v1, v0, v2
 
-    .line 596
     .local v1, "type":I
     const/16 v2, 0x10
 
@@ -2079,22 +1847,18 @@
 
     if-gt v1, v2, :cond_1
 
-    .line 598
     add-int/lit8 v2, p1, 0x1
 
     aget v2, v0, v2
 
-    .line 600
     :goto_0
     return v2
 
-    .line 599
     :cond_1
     const/4 v2, 0x5
 
     if-ne v1, v2, :cond_2
 
-    .line 600
     add-int/lit8 v2, p1, 0x1
 
     aget v2, v0, v2
@@ -2107,13 +1871,11 @@
 
     goto :goto_0
 
-    .line 602
     :cond_2
     const/4 v2, 0x2
 
     if-ne v1, v2, :cond_3
 
-    .line 603
     new-instance v2, Ljava/lang/RuntimeException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -2138,7 +1900,6 @@
 
     throw v2
 
-    .line 606
     :cond_3
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -2187,12 +1948,10 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 235
     iget-boolean v5, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v5, :cond_0
 
-    .line 236
     new-instance v4, Ljava/lang/RuntimeException;
 
     const-string v5, "Cannot make calls to a recycled instance!"
@@ -2201,20 +1960,16 @@
 
     throw v4
 
-    .line 239
     :cond_0
     mul-int/lit8 p1, p1, 0x6
 
-    .line 240
     iget-object v1, p0, Landroid/content/res/TypedArray;->mData:[I
 
-    .line 241
     .local v1, "data":[I
     add-int/lit8 v5, p1, 0x0
 
     aget v2, v1, v5
 
-    .line 242
     .local v2, "type":I
     add-int/lit8 v5, p1, 0x4
 
@@ -2226,21 +1981,17 @@
 
     if-eqz v5, :cond_2
 
-    .line 259
     :cond_1
     :goto_0
     return-object v4
 
-    .line 245
     :cond_2
     if-eqz v2, :cond_1
 
-    .line 247
     const/4 v5, 0x3
 
     if-ne v2, v5, :cond_3
 
-    .line 248
     invoke-direct {p0, p1}, Landroid/content/res/TypedArray;->loadStringValueAt(I)Ljava/lang/CharSequence;
 
     move-result-object v4
@@ -2251,11 +2002,9 @@
 
     goto :goto_0
 
-    .line 251
     :cond_3
     iget-object v3, p0, Landroid/content/res/TypedArray;->mValue:Landroid/util/TypedValue;
 
-    .line 252
     .local v3, "v":Landroid/util/TypedValue;
     invoke-direct {p0, p1, v3}, Landroid/content/res/TypedArray;->getValueAt(ILandroid/util/TypedValue;)Z
 
@@ -2263,7 +2012,6 @@
 
     if-eqz v5, :cond_4
 
-    .line 253
     const-string v5, "Resources"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -2286,12 +2034,10 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 254
     invoke-virtual {v3}, Landroid/util/TypedValue;->coerceToString()Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 255
     .local v0, "cs":Ljava/lang/CharSequence;
     if-eqz v0, :cond_1
 
@@ -2301,7 +2047,6 @@
 
     goto :goto_0
 
-    .line 257
     .end local v0    # "cs":Ljava/lang/CharSequence;
     :cond_4
     const-string v5, "Resources"
@@ -2338,12 +2083,10 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 205
     iget-boolean v3, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v3, :cond_0
 
-    .line 206
     new-instance v3, Ljava/lang/RuntimeException;
 
     const-string v4, "Cannot make calls to a recycled instance!"
@@ -2352,35 +2095,28 @@
 
     throw v3
 
-    .line 209
     :cond_0
     mul-int/lit8 p1, p1, 0x6
 
-    .line 210
     iget-object v1, p0, Landroid/content/res/TypedArray;->mData:[I
 
-    .line 211
     .local v1, "data":[I
     add-int/lit8 v3, p1, 0x0
 
     aget v2, v1, v3
 
-    .line 212
     .local v2, "type":I
     const/4 v3, 0x3
 
     if-ne v2, v3, :cond_1
 
-    .line 213
     add-int/lit8 v3, p1, 0x2
 
     aget v0, v1, v3
 
-    .line 214
     .local v0, "cookie":I
     if-gez v0, :cond_1
 
-    .line 215
     iget-object v3, p0, Landroid/content/res/TypedArray;->mXml:Landroid/content/res/XmlBlock$Parser;
 
     add-int/lit8 v4, p1, 0x1
@@ -2395,7 +2131,6 @@
 
     move-result-object v3
 
-    .line 219
     .end local v0    # "cookie":I
     :goto_0
     return-object v3
@@ -2410,12 +2145,10 @@
     .locals 2
 
     .prologue
-    .line 877
     iget-boolean v0, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v0, :cond_0
 
-    .line 878
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Cannot make calls to a recycled instance!"
@@ -2424,7 +2157,6 @@
 
     throw v0
 
-    .line 881
     :cond_0
     iget-object v0, p0, Landroid/content/res/TypedArray;->mXml:Landroid/content/res/XmlBlock$Parser;
 
@@ -2451,12 +2183,10 @@
     .param p2, "defValue"    # I
 
     .prologue
-    .line 693
     iget-boolean v2, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v2, :cond_0
 
-    .line 694
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v3, "Cannot make calls to a recycled instance!"
@@ -2465,14 +2195,11 @@
 
     throw v2
 
-    .line 697
     :cond_0
     mul-int/lit8 p1, p1, 0x6
 
-    .line 698
     iget-object v0, p0, Landroid/content/res/TypedArray;->mData:[I
 
-    .line 699
     .local v0, "data":[I
     add-int/lit8 v2, p1, 0x0
 
@@ -2480,16 +2207,13 @@
 
     if-eqz v2, :cond_1
 
-    .line 700
     add-int/lit8 v2, p1, 0x3
 
     aget v1, v0, v2
 
-    .line 701
     .local v1, "resid":I
     if-eqz v1, :cond_1
 
-    .line 705
     .end local v1    # "resid":I
     :goto_0
     return v1
@@ -2504,12 +2228,10 @@
     .locals 2
 
     .prologue
-    .line 118
     iget-boolean v0, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v0, :cond_0
 
-    .line 119
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Cannot make calls to a recycled instance!"
@@ -2518,7 +2240,6 @@
 
     throw v0
 
-    .line 122
     :cond_0
     iget-object v0, p0, Landroid/content/res/TypedArray;->mResources:Landroid/content/res/Resources;
 
@@ -2532,12 +2253,10 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 166
     iget-boolean v5, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v5, :cond_0
 
-    .line 167
     new-instance v4, Ljava/lang/RuntimeException;
 
     const-string v5, "Cannot make calls to a recycled instance!"
@@ -2546,35 +2265,28 @@
 
     throw v4
 
-    .line 170
     :cond_0
     mul-int/lit8 p1, p1, 0x6
 
-    .line 171
     iget-object v1, p0, Landroid/content/res/TypedArray;->mData:[I
 
-    .line 172
     .local v1, "data":[I
     add-int/lit8 v5, p1, 0x0
 
     aget v2, v1, v5
 
-    .line 173
     .local v2, "type":I
     if-nez v2, :cond_2
 
-    .line 187
     :cond_1
     :goto_0
     return-object v4
 
-    .line 175
     :cond_2
     const/4 v5, 0x3
 
     if-ne v2, v5, :cond_3
 
-    .line 176
     invoke-direct {p0, p1}, Landroid/content/res/TypedArray;->loadStringValueAt(I)Ljava/lang/CharSequence;
 
     move-result-object v4
@@ -2585,11 +2297,9 @@
 
     goto :goto_0
 
-    .line 179
     :cond_3
     iget-object v3, p0, Landroid/content/res/TypedArray;->mValue:Landroid/util/TypedValue;
 
-    .line 180
     .local v3, "v":Landroid/util/TypedValue;
     invoke-direct {p0, p1, v3}, Landroid/content/res/TypedArray;->getValueAt(ILandroid/util/TypedValue;)Z
 
@@ -2597,7 +2307,6 @@
 
     if-eqz v5, :cond_4
 
-    .line 181
     const-string v5, "Resources"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -2620,12 +2329,10 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 182
     invoke-virtual {v3}, Landroid/util/TypedValue;->coerceToString()Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 183
     .local v0, "cs":Ljava/lang/CharSequence;
     if-eqz v0, :cond_1
 
@@ -2635,7 +2342,6 @@
 
     goto :goto_0
 
-    .line 185
     .end local v0    # "cs":Ljava/lang/CharSequence;
     :cond_4
     const-string v5, "Resources"
@@ -2674,12 +2380,10 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 134
     iget-boolean v4, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v4, :cond_0
 
-    .line 135
     new-instance v3, Ljava/lang/RuntimeException;
 
     const-string v4, "Cannot make calls to a recycled instance!"
@@ -2688,45 +2392,36 @@
 
     throw v3
 
-    .line 138
     :cond_0
     mul-int/lit8 p1, p1, 0x6
 
-    .line 139
     iget-object v0, p0, Landroid/content/res/TypedArray;->mData:[I
 
-    .line 140
     .local v0, "data":[I
     add-int/lit8 v4, p1, 0x0
 
     aget v1, v0, v4
 
-    .line 141
     .local v1, "type":I
     if-nez v1, :cond_1
 
-    .line 154
     :goto_0
     return-object v3
 
-    .line 143
     :cond_1
     const/4 v4, 0x3
 
     if-ne v1, v4, :cond_2
 
-    .line 144
     invoke-direct {p0, p1}, Landroid/content/res/TypedArray;->loadStringValueAt(I)Ljava/lang/CharSequence;
 
     move-result-object v3
 
     goto :goto_0
 
-    .line 147
     :cond_2
     iget-object v2, p0, Landroid/content/res/TypedArray;->mValue:Landroid/util/TypedValue;
 
-    .line 148
     .local v2, "v":Landroid/util/TypedValue;
     invoke-direct {p0, p1, v2}, Landroid/content/res/TypedArray;->getValueAt(ILandroid/util/TypedValue;)Z
 
@@ -2734,7 +2429,6 @@
 
     if-eqz v4, :cond_3
 
-    .line 149
     const-string v3, "Resources"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -2757,14 +2451,12 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 150
     invoke-virtual {v2}, Landroid/util/TypedValue;->coerceToString()Ljava/lang/CharSequence;
 
     move-result-object v3
 
     goto :goto_0
 
-    .line 152
     :cond_3
     const-string v4, "Resources"
 
@@ -2800,12 +2492,10 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 765
     iget-boolean v1, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v1, :cond_0
 
-    .line 766
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Cannot make calls to a recycled instance!"
@@ -2814,11 +2504,9 @@
 
     throw v1
 
-    .line 769
     :cond_0
     iget-object v0, p0, Landroid/content/res/TypedArray;->mValue:Landroid/util/TypedValue;
 
-    .line 770
     .local v0, "value":Landroid/util/TypedValue;
     mul-int/lit8 v1, p1, 0x6
 
@@ -2828,7 +2516,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 771
     iget-object v1, p0, Landroid/content/res/TypedArray;->mResources:Landroid/content/res/Resources;
 
     iget v2, v0, Landroid/util/TypedValue;->resourceId:I
@@ -2837,7 +2524,6 @@
 
     move-result-object v1
 
-    .line 773
     :goto_0
     return-object v1
 
@@ -2853,12 +2539,10 @@
     .param p2, "defValue"    # I
 
     .prologue
-    .line 719
     iget-boolean v1, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v1, :cond_0
 
-    .line 720
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Cannot make calls to a recycled instance!"
@@ -2867,14 +2551,11 @@
 
     throw v1
 
-    .line 723
     :cond_0
     mul-int/lit8 p1, p1, 0x6
 
-    .line 724
     iget-object v0, p0, Landroid/content/res/TypedArray;->mData:[I
 
-    .line 725
     .local v0, "data":[I
     add-int/lit8 v1, p1, 0x0
 
@@ -2884,12 +2565,10 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 726
     add-int/lit8 v1, p1, 0x1
 
     aget p2, v0, v1
 
-    .line 728
     .end local p2    # "defValue":I
     :cond_1
     return p2
@@ -2900,12 +2579,10 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 800
     iget-boolean v0, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v0, :cond_0
 
-    .line 801
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Cannot make calls to a recycled instance!"
@@ -2914,11 +2591,9 @@
 
     throw v0
 
-    .line 804
     :cond_0
     mul-int/lit8 p1, p1, 0x6
 
-    .line 805
     iget-object v0, p0, Landroid/content/res/TypedArray;->mData:[I
 
     add-int/lit8 v1, p1, 0x0
@@ -2934,12 +2609,10 @@
     .param p2, "outValue"    # Landroid/util/TypedValue;
 
     .prologue
-    .line 786
     iget-boolean v0, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v0, :cond_0
 
-    .line 787
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Cannot make calls to a recycled instance!"
@@ -2948,7 +2621,6 @@
 
     throw v0
 
-    .line 790
     :cond_0
     mul-int/lit8 v0, p1, 0x6
 
@@ -2964,12 +2636,10 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 819
     iget-boolean v2, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v2, :cond_0
 
-    .line 820
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v3, "Cannot make calls to a recycled instance!"
@@ -2978,20 +2648,16 @@
 
     throw v2
 
-    .line 823
     :cond_0
     mul-int/lit8 p1, p1, 0x6
 
-    .line 824
     iget-object v0, p0, Landroid/content/res/TypedArray;->mData:[I
 
-    .line 825
     .local v0, "data":[I
     add-int/lit8 v2, p1, 0x0
 
     aget v1, v0, v2
 
-    .line 826
     .local v1, "type":I
     if-eqz v1, :cond_1
 
@@ -3013,12 +2679,10 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 839
     iget-boolean v3, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v3, :cond_0
 
-    .line 840
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v3, "Cannot make calls to a recycled instance!"
@@ -3027,20 +2691,16 @@
 
     throw v2
 
-    .line 843
     :cond_0
     mul-int/lit8 p1, p1, 0x6
 
-    .line 844
     iget-object v0, p0, Landroid/content/res/TypedArray;->mData:[I
 
-    .line 845
     .local v0, "data":[I
     add-int/lit8 v3, p1, 0x0
 
     aget v1, v0, v3
 
-    .line 846
     .local v1, "type":I
     if-nez v1, :cond_1
 
@@ -3064,12 +2724,10 @@
     .locals 2
 
     .prologue
-    .line 79
     iget-boolean v0, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v0, :cond_0
 
-    .line 80
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Cannot make calls to a recycled instance!"
@@ -3078,7 +2736,6 @@
 
     throw v0
 
-    .line 83
     :cond_0
     iget v0, p0, Landroid/content/res/TypedArray;->mLength:I
 
@@ -3090,12 +2747,10 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 862
     iget-boolean v1, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v1, :cond_0
 
-    .line 863
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Cannot make calls to a recycled instance!"
@@ -3104,11 +2759,9 @@
 
     throw v1
 
-    .line 866
     :cond_0
     iget-object v0, p0, Landroid/content/res/TypedArray;->mValue:Landroid/util/TypedValue;
 
-    .line 867
     .local v0, "value":Landroid/util/TypedValue;
     mul-int/lit8 v1, p1, 0x6
 
@@ -3118,7 +2771,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 870
     .end local v0    # "value":Landroid/util/TypedValue;
     :goto_0
     return-object v0
@@ -3136,12 +2788,10 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 889
     iget-boolean v0, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
     if-eqz v0, :cond_0
 
-    .line 890
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3170,26 +2820,21 @@
 
     throw v0
 
-    .line 893
     :cond_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/content/res/TypedArray;->mRecycled:Z
 
-    .line 896
     iput-object v1, p0, Landroid/content/res/TypedArray;->mXml:Landroid/content/res/XmlBlock$Parser;
 
-    .line 897
     iput-object v1, p0, Landroid/content/res/TypedArray;->mTheme:Landroid/content/res/Resources$Theme;
 
-    .line 899
     iget-object v0, p0, Landroid/content/res/TypedArray;->mResources:Landroid/content/res/Resources;
 
     iget-object v0, v0, Landroid/content/res/Resources;->mTypedArrayPool:Landroid/util/Pools$SynchronizedPool;
 
     invoke-virtual {v0, p0}, Landroid/util/Pools$SynchronizedPool;->release(Ljava/lang/Object;)Z
 
-    .line 900
     return-void
 .end method
 
@@ -3197,7 +2842,6 @@
     .locals 1
 
     .prologue
-    .line 1027
     iget-object v0, p0, Landroid/content/res/TypedArray;->mData:[I
 
     invoke-static {v0}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;

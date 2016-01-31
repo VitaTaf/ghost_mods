@@ -29,15 +29,12 @@
     .param p2, "binder"    # Landroid/os/IBinder;
 
     .prologue
-    .line 73
     iput-object p1, p0, Lcom/motorola/datacollection/DataCollectionRegistry$DeathWatcher;->this$0:Lcom/motorola/datacollection/DataCollectionRegistry;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 74
     iput-object p2, p0, Lcom/motorola/datacollection/DataCollectionRegistry$DeathWatcher;->mBinder:Landroid/os/IBinder;
 
-    .line 75
     return-void
 .end method
 
@@ -47,7 +44,6 @@
     .locals 2
 
     .prologue
-    .line 78
     iget-object v0, p0, Lcom/motorola/datacollection/DataCollectionRegistry$DeathWatcher;->this$0:Lcom/motorola/datacollection/DataCollectionRegistry;
 
     iget-object v1, p0, Lcom/motorola/datacollection/DataCollectionRegistry$DeathWatcher;->mBinder:Landroid/os/IBinder;
@@ -55,6 +51,5 @@
     # invokes: Lcom/motorola/datacollection/DataCollectionRegistry;->remove(Landroid/os/IBinder;)V
     invoke-static {v0, v1}, Lcom/motorola/datacollection/DataCollectionRegistry;->access$100(Lcom/motorola/datacollection/DataCollectionRegistry;Landroid/os/IBinder;)V
 
-    .line 79
     return-void
 .end method

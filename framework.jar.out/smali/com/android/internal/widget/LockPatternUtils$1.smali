@@ -40,7 +40,6 @@
     .locals 0
 
     .prologue
-    .line 797
     iput-object p1, p0, Lcom/android/internal/widget/LockPatternUtils$1;->this$0:Lcom/android/internal/widget/LockPatternUtils;
 
     iput-object p2, p0, Lcom/android/internal/widget/LockPatternUtils$1;->val$service:Landroid/os/IBinder;
@@ -61,7 +60,6 @@
     .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
-    .line 797
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1    # "x0":[Ljava/lang/Object;
@@ -77,14 +75,12 @@
     .param p1, "dummy"    # [Ljava/lang/Void;
 
     .prologue
-    .line 800
     iget-object v2, p0, Lcom/android/internal/widget/LockPatternUtils$1;->val$service:Landroid/os/IBinder;
 
     invoke-static {v2}, Landroid/os/storage/IMountService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/storage/IMountService;
 
     move-result-object v1
 
-    .line 802
     .local v1, "mountService":Landroid/os/storage/IMountService;
     :try_start_0
     iget v2, p0, Lcom/android/internal/widget/LockPatternUtils$1;->val$type:I
@@ -95,17 +91,14 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 806
     :goto_0
     const/4 v2, 0x0
 
     return-object v2
 
-    .line 803
     :catch_0
     move-exception v0
 
-    .line 804
     .local v0, "e":Landroid/os/RemoteException;
     const-string v2, "LockPatternUtils"
 

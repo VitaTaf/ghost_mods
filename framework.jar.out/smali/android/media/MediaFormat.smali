@@ -156,17 +156,14 @@
     .locals 1
 
     .prologue
-    .line 509
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 510
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/media/MediaFormat;->mMap:Ljava/util/Map;
 
-    .line 511
     return-void
 .end method
 
@@ -184,14 +181,11 @@
     .end annotation
 
     .prologue
-    .line 502
     .local p1, "map":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 503
     iput-object p1, p0, Landroid/media/MediaFormat;->mMap:Ljava/util/Map;
 
-    .line 504
     return-void
 .end method
 
@@ -202,28 +196,23 @@
     .param p2, "channelCount"    # I
 
     .prologue
-    .line 667
     new-instance v0, Landroid/media/MediaFormat;
 
     invoke-direct {v0}, Landroid/media/MediaFormat;-><init>()V
 
-    .line 668
     .local v0, "format":Landroid/media/MediaFormat;
     const-string/jumbo v1, "mime"
 
     invoke-virtual {v0, v1, p0}, Landroid/media/MediaFormat;->setString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 669
     const-string/jumbo v1, "sample-rate"
 
     invoke-virtual {v0, v1, p1}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    .line 670
     const-string v1, "channel-count"
 
     invoke-virtual {v0, v1, p2}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    .line 672
     return-object v0
 .end method
 
@@ -233,23 +222,19 @@
     .param p1, "language"    # Ljava/lang/String;
 
     .prologue
-    .line 686
     new-instance v0, Landroid/media/MediaFormat;
 
     invoke-direct {v0}, Landroid/media/MediaFormat;-><init>()V
 
-    .line 687
     .local v0, "format":Landroid/media/MediaFormat;
     const-string/jumbo v1, "mime"
 
     invoke-virtual {v0, v1, p0}, Landroid/media/MediaFormat;->setString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 688
     const-string v1, "language"
 
     invoke-virtual {v0, v1, p1}, Landroid/media/MediaFormat;->setString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 690
     return-object v0
 .end method
 
@@ -260,28 +245,23 @@
     .param p2, "height"    # I
 
     .prologue
-    .line 703
     new-instance v0, Landroid/media/MediaFormat;
 
     invoke-direct {v0}, Landroid/media/MediaFormat;-><init>()V
 
-    .line 704
     .local v0, "format":Landroid/media/MediaFormat;
     const-string/jumbo v1, "mime"
 
     invoke-virtual {v0, v1, p0}, Landroid/media/MediaFormat;->setString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 705
     const-string/jumbo v1, "width"
 
     invoke-virtual {v0, v1, p1}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    .line 706
     const-string v1, "height"
 
     invoke-virtual {v0, v1, p2}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    .line 708
     return-object v0
 .end method
 
@@ -292,7 +272,6 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 521
     iget-object v0, p0, Landroid/media/MediaFormat;->mMap:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
@@ -307,7 +286,6 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 585
     iget-object v0, p0, Landroid/media/MediaFormat;->mMap:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -324,7 +302,6 @@
     .param p1, "feature"    # Ljava/lang/String;
 
     .prologue
-    .line 598
     iget-object v1, p0, Landroid/media/MediaFormat;->mMap:Ljava/util/Map;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -351,11 +328,9 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 599
     .local v0, "enabled":Ljava/lang/Integer;
     if-nez v0, :cond_0
 
-    .line 600
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "feature is not specified"
@@ -364,7 +339,6 @@
 
     throw v1
 
-    .line 602
     :cond_0
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -388,7 +362,6 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 571
     iget-object v0, p0, Landroid/media/MediaFormat;->mMap:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -409,7 +382,6 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 543
     iget-object v0, p0, Landroid/media/MediaFormat;->mMap:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -431,7 +403,6 @@
     .param p2, "defaultValue"    # I
 
     .prologue
-    .line 553
     :try_start_0
     invoke-virtual {p0, p1}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
     :try_end_0
@@ -440,19 +411,16 @@
 
     move-result p2
 
-    .line 557
     .end local p2    # "defaultValue":I
     :goto_0
     return p2
 
-    .line 555
     .restart local p2    # "defaultValue":I
     :catch_0
     move-exception v0
 
     goto :goto_0
 
-    .line 556
     :catch_1
     move-exception v0
 
@@ -464,7 +432,6 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 564
     iget-object v0, p0, Landroid/media/MediaFormat;->mMap:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -494,7 +461,6 @@
     .end annotation
 
     .prologue
-    .line 514
     iget-object v0, p0, Landroid/media/MediaFormat;->mMap:Ljava/util/Map;
 
     return-object v0
@@ -505,7 +471,6 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 578
     iget-object v0, p0, Landroid/media/MediaFormat;->mMap:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -523,12 +488,10 @@
     .param p2, "bytes"    # Ljava/nio/ByteBuffer;
 
     .prologue
-    .line 637
     iget-object v0, p0, Landroid/media/MediaFormat;->mMap:Ljava/util/Map;
 
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 638
     return-void
 .end method
 
@@ -538,7 +501,6 @@
     .param p2, "enabled"    # Z
 
     .prologue
-    .line 654
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -564,10 +526,8 @@
     :goto_0
     invoke-virtual {p0, v1, v0}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    .line 655
     return-void
 
-    .line 654
     :cond_0
     const/4 v0, 0x0
 
@@ -580,7 +540,6 @@
     .param p2, "value"    # F
 
     .prologue
-    .line 623
     iget-object v0, p0, Landroid/media/MediaFormat;->mMap:Ljava/util/Map;
 
     new-instance v1, Ljava/lang/Float;
@@ -589,7 +548,6 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 624
     return-void
 .end method
 
@@ -599,7 +557,6 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 609
     iget-object v0, p0, Landroid/media/MediaFormat;->mMap:Ljava/util/Map;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -608,7 +565,6 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 610
     return-void
 .end method
 
@@ -618,7 +574,6 @@
     .param p2, "value"    # J
 
     .prologue
-    .line 616
     iget-object v0, p0, Landroid/media/MediaFormat;->mMap:Ljava/util/Map;
 
     invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -627,7 +582,6 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 617
     return-void
 .end method
 
@@ -637,12 +591,10 @@
     .param p2, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 630
     iget-object v0, p0, Landroid/media/MediaFormat;->mMap:Ljava/util/Map;
 
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 631
     return-void
 .end method
 
@@ -650,7 +602,6 @@
     .locals 1
 
     .prologue
-    .line 713
     iget-object v0, p0, Landroid/media/MediaFormat;->mMap:Ljava/util/Map;
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;

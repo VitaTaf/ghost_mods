@@ -17,13 +17,10 @@
     .param p1, "mSecureElementService"    # Lcom/nxp/nfc/INfcSecureElement;
 
     .prologue
-    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 37
     iput-object p1, p0, Lcom/nxp/nfc/NfcSecureElement;->mService:Lcom/nxp/nfc/INfcSecureElement;
 
-    .line 38
     return-void
 .end method
 
@@ -39,7 +36,6 @@
     .end annotation
 
     .prologue
-    .line 97
     :try_start_0
     iget-object v2, p0, Lcom/nxp/nfc/NfcSecureElement;->mService:Lcom/nxp/nfc/INfcSecureElement;
 
@@ -47,7 +43,6 @@
 
     move-result v1
 
-    .line 99
     .local v1, "status":I
     invoke-static {v1}, Landroid/nfc/ErrorCodes;->isError(I)Z
 
@@ -55,7 +50,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 100
     new-instance v2, Ljava/io/IOException;
 
     const-string v3, "Error during the conection close"
@@ -66,12 +60,10 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 102
     .end local v1    # "status":I
     :catch_0
     move-exception v0
 
-    .line 103
     .local v0, "e":Landroid/os/RemoteException;
     const-string v2, "NfcSecureElement"
 
@@ -79,7 +71,6 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 104
     new-instance v2, Ljava/io/IOException;
 
     const-string v3, "RemoteException in closeSecureElement()"
@@ -88,7 +79,6 @@
 
     throw v2
 
-    .line 106
     .end local v0    # "e":Landroid/os/RemoteException;
     .restart local v1    # "status":I
     :cond_0
@@ -106,7 +96,6 @@
     .end annotation
 
     .prologue
-    .line 78
     :try_start_0
     iget-object v2, p0, Lcom/nxp/nfc/NfcSecureElement;->mService:Lcom/nxp/nfc/INfcSecureElement;
 
@@ -114,11 +103,9 @@
 
     move-result-object v1
 
-    .line 80
     .local v1, "response":[B
     if-nez v1, :cond_0
 
-    .line 81
     new-instance v2, Ljava/io/IOException;
 
     const-string v3, "Exchange APDU failed"
@@ -129,12 +116,10 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 84
     .end local v1    # "response":[B
     :catch_0
     move-exception v0
 
-    .line 85
     .local v0, "e":Landroid/os/RemoteException;
     const-string v2, "NfcSecureElement"
 
@@ -142,7 +127,6 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 86
     new-instance v2, Ljava/io/IOException;
 
     const-string v3, "RemoteException in exchangeAPDU()"
@@ -151,7 +135,6 @@
 
     throw v2
 
-    .line 83
     .end local v0    # "e":Landroid/os/RemoteException;
     .restart local v1    # "response":[B
     :cond_0
@@ -168,7 +151,6 @@
     .end annotation
 
     .prologue
-    .line 117
     :try_start_0
     iget-object v1, p0, Lcom/nxp/nfc/NfcSecureElement;->mService:Lcom/nxp/nfc/INfcSecureElement;
 
@@ -180,11 +162,9 @@
 
     return-object v1
 
-    .line 118
     :catch_0
     move-exception v0
 
-    .line 119
     .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "NfcSecureElement"
 
@@ -192,7 +172,6 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 120
     new-instance v1, Ljava/io/IOException;
 
     const-string v2, "RemoteException in getSecureElementTechList()"
@@ -212,10 +191,8 @@
     .end annotation
 
     .prologue
-    .line 130
     const/4 v1, 0x0
 
-    .line 132
     .local v1, "uid":[B
     :try_start_0
     iget-object v2, p0, Lcom/nxp/nfc/NfcSecureElement;->mService:Lcom/nxp/nfc/INfcSecureElement;
@@ -224,10 +201,8 @@
 
     move-result-object v1
 
-    .line 134
     if-nez v1, :cond_0
 
-    .line 135
     new-instance v2, Ljava/io/IOException;
 
     const-string v3, "Get Secure Element UID failed"
@@ -238,11 +213,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 138
     :catch_0
     move-exception v0
 
-    .line 139
     .local v0, "e":Landroid/os/RemoteException;
     const-string v2, "NfcSecureElement"
 
@@ -250,7 +223,6 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 140
     new-instance v2, Ljava/io/IOException;
 
     const-string v3, "RemoteException in getSecureElementUid()"
@@ -259,7 +231,6 @@
 
     throw v2
 
-    .line 137
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     return-object v1
@@ -275,7 +246,6 @@
     .end annotation
 
     .prologue
-    .line 48
     const-string v2, "com.nxp.smart_mx.ID"
 
     invoke-virtual {p1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -284,7 +254,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 50
     :try_start_0
     iget-object v2, p0, Lcom/nxp/nfc/NfcSecureElement;->mService:Lcom/nxp/nfc/INfcSecureElement;
 
@@ -292,14 +261,11 @@
 
     move-result v1
 
-    .line 52
     .local v1, "handle":I
     if-eqz v1, :cond_0
 
-    .line 53
     return v1
 
-    .line 55
     :cond_0
     new-instance v2, Ljava/io/IOException;
 
@@ -311,12 +277,10 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 57
     .end local v1    # "handle":I
     :catch_0
     move-exception v0
 
-    .line 58
     .local v0, "e":Landroid/os/RemoteException;
     const-string v2, "NfcSecureElement"
 
@@ -324,7 +288,6 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 59
     new-instance v2, Ljava/io/IOException;
 
     const-string v3, "RemoteException in openSecureElementConnection()"
@@ -333,7 +296,6 @@
 
     throw v2
 
-    .line 61
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_1
     const-string v2, "com.nxp.uicc.ID"
@@ -344,7 +306,6 @@
 
     if-eqz v2, :cond_2
 
-    .line 62
     new-instance v2, Ljava/io/IOException;
 
     const-string v3, "UICC connection not supported"
@@ -353,7 +314,6 @@
 
     throw v2
 
-    .line 64
     :cond_2
     new-instance v2, Ljava/io/IOException;
 

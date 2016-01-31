@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 77
     iput-object p1, p0, Landroid/service/fingerprint/FingerprintManager$1;->this$0:Landroid/service/fingerprint/FingerprintManager;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -38,7 +37,6 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 79
     iget-object v0, p0, Landroid/service/fingerprint/FingerprintManager$1;->this$0:Landroid/service/fingerprint/FingerprintManager;
 
     # getter for: Landroid/service/fingerprint/FingerprintManager;->mClientReceiver:Landroid/service/fingerprint/FingerprintManagerReceiver;
@@ -48,17 +46,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 80
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 97
     :cond_0
     :goto_0
     return-void
 
-    .line 82
     :pswitch_0
     iget-object v0, p0, Landroid/service/fingerprint/FingerprintManager$1;->this$0:Landroid/service/fingerprint/FingerprintManager;
 
@@ -75,7 +70,6 @@
 
     goto :goto_0
 
-    .line 85
     :pswitch_1
     iget-object v0, p0, Landroid/service/fingerprint/FingerprintManager$1;->this$0:Landroid/service/fingerprint/FingerprintManager;
 
@@ -90,7 +84,6 @@
 
     goto :goto_0
 
-    .line 88
     :pswitch_2
     iget-object v0, p0, Landroid/service/fingerprint/FingerprintManager$1;->this$0:Landroid/service/fingerprint/FingerprintManager;
 
@@ -105,7 +98,6 @@
 
     goto :goto_0
 
-    .line 91
     :pswitch_3
     iget-object v0, p0, Landroid/service/fingerprint/FingerprintManager$1;->this$0:Landroid/service/fingerprint/FingerprintManager;
 
@@ -120,7 +112,6 @@
 
     goto :goto_0
 
-    .line 94
     :pswitch_4
     iget-object v0, p0, Landroid/service/fingerprint/FingerprintManager$1;->this$0:Landroid/service/fingerprint/FingerprintManager;
 
@@ -135,7 +126,6 @@
 
     goto :goto_0
 
-    .line 80
     :pswitch_data_0
     .packed-switch 0x64
         :pswitch_0

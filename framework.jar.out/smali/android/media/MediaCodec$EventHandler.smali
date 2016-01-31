@@ -27,16 +27,12 @@
     .param p3, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 348
     iput-object p1, p0, Landroid/media/MediaCodec$EventHandler;->this$0:Landroid/media/MediaCodec;
 
-    .line 349
     invoke-direct {p0, p3}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 350
     iput-object p2, p0, Landroid/media/MediaCodec$EventHandler;->mCodec:Landroid/media/MediaCodec;
 
-    .line 351
     return-void
 .end method
 
@@ -45,7 +41,6 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 374
     iget-object v2, p0, Landroid/media/MediaCodec$EventHandler;->this$0:Landroid/media/MediaCodec;
 
     # getter for: Landroid/media/MediaCodec;->mCallback:Landroid/media/MediaCodec$Callback;
@@ -55,11 +50,9 @@
 
     if-nez v2, :cond_0
 
-    .line 419
     :goto_0
     return-void
 
-    .line 378
     :cond_0
     iget v2, p1, Landroid/os/Message;->arg1:I
 
@@ -67,11 +60,9 @@
 
     goto :goto_0
 
-    .line 381
     :pswitch_0
     iget v0, p1, Landroid/os/Message;->arg2:I
 
-    .line 382
     .local v0, "index":I
     iget-object v2, p0, Landroid/media/MediaCodec$EventHandler;->this$0:Landroid/media/MediaCodec;
 
@@ -82,7 +73,6 @@
 
     monitor-enter v3
 
-    .line 383
     :try_start_0
     iget-object v2, p0, Landroid/media/MediaCodec$EventHandler;->this$0:Landroid/media/MediaCodec;
 
@@ -96,12 +86,10 @@
     # invokes: Landroid/media/MediaCodec;->validateInputByteBuffer([Ljava/nio/ByteBuffer;I)V
     invoke-static {v2, v4, v0}, Landroid/media/MediaCodec;->access$300(Landroid/media/MediaCodec;[Ljava/nio/ByteBuffer;I)V
 
-    .line 384
     monitor-exit v3
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 385
     iget-object v2, p0, Landroid/media/MediaCodec$EventHandler;->this$0:Landroid/media/MediaCodec;
 
     # getter for: Landroid/media/MediaCodec;->mCallback:Landroid/media/MediaCodec$Callback;
@@ -115,7 +103,6 @@
 
     goto :goto_0
 
-    .line 384
     :catchall_0
     move-exception v2
 
@@ -126,18 +113,15 @@
 
     throw v2
 
-    .line 391
     .end local v0    # "index":I
     :pswitch_1
     iget v0, p1, Landroid/os/Message;->arg2:I
 
-    .line 392
     .restart local v0    # "index":I
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Landroid/media/MediaCodec$BufferInfo;
 
-    .line 393
     .local v1, "info":Landroid/media/MediaCodec$BufferInfo;
     iget-object v2, p0, Landroid/media/MediaCodec$EventHandler;->this$0:Landroid/media/MediaCodec;
 
@@ -148,7 +132,6 @@
 
     monitor-enter v3
 
-    .line 394
     :try_start_2
     iget-object v2, p0, Landroid/media/MediaCodec$EventHandler;->this$0:Landroid/media/MediaCodec;
 
@@ -162,12 +145,10 @@
     # invokes: Landroid/media/MediaCodec;->validateOutputByteBuffer([Ljava/nio/ByteBuffer;ILandroid/media/MediaCodec$BufferInfo;)V
     invoke-static {v2, v4, v0, v1}, Landroid/media/MediaCodec;->access$500(Landroid/media/MediaCodec;[Ljava/nio/ByteBuffer;ILandroid/media/MediaCodec$BufferInfo;)V
 
-    .line 395
     monitor-exit v3
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 396
     iget-object v2, p0, Landroid/media/MediaCodec$EventHandler;->this$0:Landroid/media/MediaCodec;
 
     # getter for: Landroid/media/MediaCodec;->mCallback:Landroid/media/MediaCodec$Callback;
@@ -181,7 +162,6 @@
 
     goto :goto_0
 
-    .line 395
     :catchall_1
     move-exception v2
 
@@ -192,7 +172,6 @@
 
     throw v2
 
-    .line 403
     .end local v0    # "index":I
     .end local v1    # "info":Landroid/media/MediaCodec$BufferInfo;
     :pswitch_2
@@ -213,7 +192,6 @@
 
     goto :goto_0
 
-    .line 409
     :pswitch_3
     iget-object v2, p0, Landroid/media/MediaCodec$EventHandler;->this$0:Landroid/media/MediaCodec;
 
@@ -236,7 +214,6 @@
 
     goto :goto_0
 
-    .line 378
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -253,22 +230,18 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 355
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 371
     :goto_0
     return-void
 
-    .line 358
     :pswitch_0
     invoke-direct {p0, p1}, Landroid/media/MediaCodec$EventHandler;->handleCallback(Landroid/os/Message;)V
 
     goto :goto_0
 
-    .line 363
     :pswitch_1
     iget-object v1, p0, Landroid/media/MediaCodec$EventHandler;->this$0:Landroid/media/MediaCodec;
 
@@ -281,7 +254,6 @@
 
     goto :goto_0
 
-    .line 355
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

@@ -45,7 +45,6 @@
 
     const/4 v3, 0x0
 
-    .line 15
     new-instance v0, Landroid/mtp/MtpDSUCusOpcode;
 
     const-string v1, "CHECK_STATUS"
@@ -54,7 +53,6 @@
 
     sput-object v0, Landroid/mtp/MtpDSUCusOpcode;->CHECK_STATUS:Landroid/mtp/MtpDSUCusOpcode;
 
-    .line 16
     new-instance v0, Landroid/mtp/MtpDSUCusOpcode;
 
     const-string v1, "APPLY_UPLOAD"
@@ -63,7 +61,6 @@
 
     sput-object v0, Landroid/mtp/MtpDSUCusOpcode;->APPLY_UPLOAD:Landroid/mtp/MtpDSUCusOpcode;
 
-    .line 17
     new-instance v0, Landroid/mtp/MtpDSUCusOpcode;
 
     const-string v1, "COPYPACKAGE_FAIL"
@@ -72,7 +69,6 @@
 
     sput-object v0, Landroid/mtp/MtpDSUCusOpcode;->COPYPACKAGE_FAIL:Landroid/mtp/MtpDSUCusOpcode;
 
-    .line 18
     new-instance v0, Landroid/mtp/MtpDSUCusOpcode;
 
     const-string v1, "TRIGGER_UPGRADE"
@@ -81,7 +77,6 @@
 
     sput-object v0, Landroid/mtp/MtpDSUCusOpcode;->TRIGGER_UPGRADE:Landroid/mtp/MtpDSUCusOpcode;
 
-    .line 19
     new-instance v0, Landroid/mtp/MtpDSUCusOpcode;
 
     const-string v1, "IN_CALL_CANCEL"
@@ -90,7 +85,6 @@
 
     sput-object v0, Landroid/mtp/MtpDSUCusOpcode;->IN_CALL_CANCEL:Landroid/mtp/MtpDSUCusOpcode;
 
-    .line 20
     new-instance v0, Landroid/mtp/MtpDSUCusOpcode;
 
     const-string v1, "GET_RESULT"
@@ -101,7 +95,6 @@
 
     sput-object v0, Landroid/mtp/MtpDSUCusOpcode;->GET_RESULT:Landroid/mtp/MtpDSUCusOpcode;
 
-    .line 14
     const/4 v0, 0x6
 
     new-array v0, v0, [Landroid/mtp/MtpDSUCusOpcode;
@@ -146,7 +139,6 @@
     .end annotation
 
     .prologue
-    .line 14
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -157,7 +149,6 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 14
     const-class v0, Landroid/mtp/MtpDSUCusOpcode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -173,7 +164,6 @@
     .locals 1
 
     .prologue
-    .line 14
     sget-object v0, Landroid/mtp/MtpDSUCusOpcode;->$VALUES:[Landroid/mtp/MtpDSUCusOpcode;
 
     invoke-virtual {v0}, [Landroid/mtp/MtpDSUCusOpcode;->clone()Ljava/lang/Object;

@@ -27,7 +27,6 @@
     .locals 5
 
     .prologue
-    .line 650
     const-string v0, "content://com.motorola.android.providers.settings/system"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -36,7 +35,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/MotorolaSettings$System;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 653
     new-instance v0, Lcom/motorola/android/provider/MotorolaSettings$NameValueCache;
 
     const-string/jumbo v1, "sys.mot_settings_system_version"
@@ -58,7 +56,6 @@
     .locals 0
 
     .prologue
-    .line 645
     invoke-direct {p0}, Lcom/motorola/android/provider/MotorolaSettings$NameValueTable;-><init>()V
 
     return-void
@@ -75,7 +72,6 @@
     .end annotation
 
     .prologue
-    .line 928
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -94,7 +90,6 @@
     .param p2, "def"    # F
 
     .prologue
-    .line 894
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -114,12 +109,10 @@
     .param p3, "userHandle"    # I
 
     .prologue
-    .line 900
     invoke-static {p0, p1, p3}, Lcom/motorola/android/provider/MotorolaSettings$System;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 902
     .local v1, "v":Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -130,18 +123,15 @@
 
     move-result p2
 
-    .line 904
     .end local p2    # "def":F
     :cond_0
     :goto_0
     return p2
 
-    .line 903
     .restart local p2    # "def":F
     :catch_0
     move-exception v0
 
-    .line 904
     .local v0, "e":Ljava/lang/NumberFormatException;
     goto :goto_0
 .end method
@@ -158,23 +148,19 @@
     .end annotation
 
     .prologue
-    .line 934
     invoke-static {p0, p1, p2}, Lcom/motorola/android/provider/MotorolaSettings$System;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 935
     .local v1, "v":Ljava/lang/String;
     if-nez v1, :cond_0
 
-    .line 936
     new-instance v2, Lcom/motorola/android/provider/MotorolaSettings$SettingNotFoundException;
 
     invoke-direct {v2, p1}, Lcom/motorola/android/provider/MotorolaSettings$SettingNotFoundException;-><init>(Ljava/lang/String;)V
 
     throw v2
 
-    .line 939
     :cond_0
     :try_start_0
     invoke-static {v1}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
@@ -185,11 +171,9 @@
 
     return v2
 
-    .line 940
     :catch_0
     move-exception v0
 
-    .line 941
     .local v0, "e":Ljava/lang/NumberFormatException;
     new-instance v2, Lcom/motorola/android/provider/MotorolaSettings$SettingNotFoundException;
 
@@ -209,7 +193,6 @@
     .end annotation
 
     .prologue
-    .line 755
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -228,7 +211,6 @@
     .param p2, "def"    # I
 
     .prologue
-    .line 722
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -252,12 +234,10 @@
     .end annotation
 
     .prologue
-    .line 761
     invoke-static {p0, p1, p2}, Lcom/motorola/android/provider/MotorolaSettings$System;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 763
     .local v1, "v":Ljava/lang/String;
     :try_start_0
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -268,11 +248,9 @@
 
     return v2
 
-    .line 764
     :catch_0
     move-exception v0
 
-    .line 765
     .local v0, "e":Ljava/lang/NumberFormatException;
     new-instance v2, Lcom/motorola/android/provider/MotorolaSettings$SettingNotFoundException;
 
@@ -289,12 +267,10 @@
     .param p3, "userHandle"    # I
 
     .prologue
-    .line 727
     invoke-static {p0, p1, p3}, Lcom/motorola/android/provider/MotorolaSettings$System;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 729
     .local v1, "v":Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -305,18 +281,15 @@
 
     move-result p2
 
-    .line 731
     .end local p2    # "def":I
     :cond_0
     :goto_0
     return p2
 
-    .line 730
     .restart local p2    # "def":I
     :catch_0
     move-exception v0
 
-    .line 731
     .local v0, "e":Ljava/lang/NumberFormatException;
     goto :goto_0
 .end method
@@ -332,7 +305,6 @@
     .end annotation
 
     .prologue
-    .line 842
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -351,7 +323,6 @@
     .param p2, "def"    # J
 
     .prologue
-    .line 807
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -375,12 +346,10 @@
     .end annotation
 
     .prologue
-    .line 848
     invoke-static {p0, p1, p2}, Lcom/motorola/android/provider/MotorolaSettings$System;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 850
     .local v1, "valString":Ljava/lang/String;
     :try_start_0
     invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
@@ -391,11 +360,9 @@
 
     return-wide v2
 
-    .line 851
     :catch_0
     move-exception v0
 
-    .line 852
     .local v0, "e":Ljava/lang/NumberFormatException;
     new-instance v2, Lcom/motorola/android/provider/MotorolaSettings$SettingNotFoundException;
 
@@ -412,12 +379,10 @@
     .param p4, "userHandle"    # I
 
     .prologue
-    .line 813
     invoke-static {p0, p1, p4}, Lcom/motorola/android/provider/MotorolaSettings$System;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 816
     .local v1, "valString":Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -428,7 +393,6 @@
 
     move-result-wide v2
 
-    .line 820
     .local v2, "value":J
     :goto_0
     return-wide v2
@@ -437,14 +401,11 @@
     :cond_0
     move-wide v2, p2
 
-    .line 816
     goto :goto_0
 
-    .line 817
     :catch_0
     move-exception v0
 
-    .line 818
     .local v0, "e":Ljava/lang/NumberFormatException;
     move-wide v2, p2
 
@@ -458,7 +419,6 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 665
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -477,7 +437,6 @@
     .param p2, "userHandle"    # I
 
     .prologue
-    .line 671
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings$System;->sNameValueCache:Lcom/motorola/android/provider/MotorolaSettings$NameValueCache;
 
     invoke-virtual {v0, p0, p1, p2}, Lcom/motorola/android/provider/MotorolaSettings$NameValueCache;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
@@ -492,7 +451,6 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 703
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings$System;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {v0, p0}, Lcom/motorola/android/provider/MotorolaSettings$System;->getUriFor(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
@@ -509,7 +467,6 @@
     .param p2, "value"    # F
 
     .prologue
-    .line 959
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -529,7 +486,6 @@
     .param p3, "userHandle"    # I
 
     .prologue
-    .line 965
     invoke-static {p2}, Ljava/lang/Float;->toString(F)Ljava/lang/String;
 
     move-result-object v0
@@ -548,7 +504,6 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 783
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -568,7 +523,6 @@
     .param p3, "userHandle"    # I
 
     .prologue
-    .line 789
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -587,7 +541,6 @@
     .param p2, "value"    # J
 
     .prologue
-    .line 870
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -607,7 +560,6 @@
     .param p4, "userHandle"    # I
 
     .prologue
-    .line 876
     invoke-static {p2, p3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
     move-result-object v0
@@ -626,7 +578,6 @@
     .param p2, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 683
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -646,7 +597,6 @@
     .param p3, "userHandle"    # I
 
     .prologue
-    .line 693
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings$System;->sNameValueCache:Lcom/motorola/android/provider/MotorolaSettings$NameValueCache;
 
     invoke-virtual {v0, p0, p1, p2, p3}, Lcom/motorola/android/provider/MotorolaSettings$NameValueCache;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z

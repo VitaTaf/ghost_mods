@@ -23,7 +23,6 @@
     .locals 3
 
     .prologue
-    .line 216
     invoke-static {}, Landroid/mtp/MtpDSUCusOpcode;->values()[Landroid/mtp/MtpDSUCusOpcode;
 
     move-result-object v0

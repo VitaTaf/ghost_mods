@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 132
     iput-object p1, p0, Landroid/app/trust/TrustManager$1;->this$0:Landroid/app/trust/TrustManager;
 
     iput-object p2, p0, Landroid/app/trust/TrustManager$1;->val$trustListener:Landroid/app/trust/TrustManager$TrustListener;
@@ -46,7 +45,6 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 135
     iget-object v1, p0, Landroid/app/trust/TrustManager$1;->this$0:Landroid/app/trust/TrustManager;
 
     # getter for: Landroid/app/trust/TrustManager;->mHandler:Landroid/os/Handler;
@@ -65,11 +63,9 @@
 
     move-result-object v0
 
-    .line 137
     .local v0, "m":Landroid/os/Message;
     if-eqz p3, :cond_0
 
-    .line 138
     invoke-virtual {v0}, Landroid/os/Message;->getData()Landroid/os/Bundle;
 
     move-result-object v1
@@ -78,14 +74,11 @@
 
     invoke-virtual {v1, v2, p3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 140
     :cond_0
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 141
     return-void
 
-    .line 135
     .end local v0    # "m":Landroid/os/Message;
     :cond_1
     const/4 v1, 0x0
@@ -99,7 +92,6 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 145
     iget-object v0, p0, Landroid/app/trust/TrustManager$1;->this$0:Landroid/app/trust/TrustManager;
 
     # getter for: Landroid/app/trust/TrustManager;->mHandler:Landroid/os/Handler;
@@ -122,10 +114,8 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 147
     return-void
 
-    .line 145
     :cond_0
     const/4 v0, 0x0
 

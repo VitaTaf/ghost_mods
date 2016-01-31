@@ -18,7 +18,6 @@
     .locals 1
 
     .prologue
-    .line 34
     sget-boolean v0, Landroid/os/Build;->IS_DEBUGGABLE:Z
 
     sput-boolean v0, Lcom/motorola/android/internal/util/ApplicationInfoUtils;->DBG:Z
@@ -31,13 +30,10 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 44
     iput-object p1, p0, Lcom/motorola/android/internal/util/ApplicationInfoUtils;->mContext:Landroid/content/Context;
 
-    .line 45
     return-void
 .end method
 
@@ -51,10 +47,8 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 80
     const/4 v7, 0x0
 
-    .line 84
     .local v7, "signatureMatch":Z
     :try_start_0
     iget-object v9, p0, Lcom/motorola/android/internal/util/ApplicationInfoUtils;->mContext:Landroid/content/Context;
@@ -71,7 +65,6 @@
 
     move-result-object v1
 
-    .line 92
     .local v1, "callingApplicationPkgInfo":Landroid/content/pm/PackageInfo;
     :try_start_1
     iget-object v9, p0, Lcom/motorola/android/internal/util/ApplicationInfoUtils;->mContext:Landroid/content/Context;
@@ -88,13 +81,11 @@
 
     move-result-object v6
 
-    .line 99
     .local v6, "permissionPackagePkgInfo":Landroid/content/pm/PackageInfo;
     if-eqz v1, :cond_0
 
     if-nez v6, :cond_2
 
-    .line 101
     :cond_0
     sget-boolean v9, Lcom/motorola/android/internal/util/ApplicationInfoUtils;->DBG:Z
 
@@ -106,18 +97,15 @@
 
     invoke-static {v9, v10}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 127
     .end local v1    # "callingApplicationPkgInfo":Landroid/content/pm/PackageInfo;
     .end local v6    # "permissionPackagePkgInfo":Landroid/content/pm/PackageInfo;
     :cond_1
     :goto_0
     return v8
 
-    .line 87
     :catch_0
     move-exception v2
 
-    .line 88
     .local v2, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     sget-boolean v9, Lcom/motorola/android/internal/util/ApplicationInfoUtils;->DBG:Z
 
@@ -147,13 +135,11 @@
 
     goto :goto_0
 
-    .line 95
     .end local v2    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     .restart local v1    # "callingApplicationPkgInfo":Landroid/content/pm/PackageInfo;
     :catch_1
     move-exception v2
 
-    .line 96
     .restart local v2    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     sget-boolean v9, Lcom/motorola/android/internal/util/ApplicationInfoUtils;->DBG:Z
 
@@ -183,18 +169,15 @@
 
     goto :goto_0
 
-    .line 105
     .end local v2    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     .restart local v6    # "permissionPackagePkgInfo":Landroid/content/pm/PackageInfo;
     :cond_2
     :try_start_2
     iget-object v0, v1, Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;
 
-    .line 106
     .local v0, "callingAppSignatures":[Landroid/content/pm/Signature;
     iget-object v5, v6, Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;
 
-    .line 108
     .local v5, "permissionAppSignatures":[Landroid/content/pm/Signature;
     const/4 v3, 0x0
 
@@ -206,7 +189,6 @@
 
     if-nez v7, :cond_5
 
-    .line 109
     const/4 v4, 0x0
 
     .local v4, "j":I
@@ -215,7 +197,6 @@
 
     if-ge v4, v9, :cond_3
 
-    .line 110
     aget-object v9, v0, v3
 
     aget-object v10, v5, v4
@@ -226,27 +207,22 @@
 
     if-eqz v9, :cond_4
 
-    .line 111
     const/4 v7, 0x1
 
-    .line 108
     :cond_3
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 109
     :cond_4
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_2
 
-    .line 116
     .end local v4    # "j":I
     :cond_5
     if-eqz v7, :cond_7
 
-    .line 117
     sget-boolean v9, Lcom/motorola/android/internal/util/ApplicationInfoUtils;->DBG:Z
 
     if-eqz v9, :cond_6
@@ -257,13 +233,11 @@
 
     invoke-static {v9, v10}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 118
     :cond_6
     const/4 v8, 0x1
 
     goto :goto_0
 
-    .line 120
     :cond_7
     new-instance v9, Ljava/lang/SecurityException;
 
@@ -275,14 +249,12 @@
     :try_end_2
     .catch Ljava/lang/SecurityException; {:try_start_2 .. :try_end_2} :catch_2
 
-    .line 123
     .end local v0    # "callingAppSignatures":[Landroid/content/pm/Signature;
     .end local v3    # "i":I
     .end local v5    # "permissionAppSignatures":[Landroid/content/pm/Signature;
     :catch_2
     move-exception v2
 
-    .line 125
     .local v2, "e":Ljava/lang/SecurityException;
     const-string v9, "ApplicationInfoUtils"
 
@@ -298,10 +270,8 @@
     .param p1, "pid"    # I
 
     .prologue
-    .line 53
     const-string v1, ""
 
-    .line 55
     .local v1, "callingPackageName":Ljava/lang/String;
     :try_start_0
     iget-object v6, p0, Lcom/motorola/android/internal/util/ApplicationInfoUtils;->mContext:Landroid/content/Context;
@@ -314,17 +284,14 @@
 
     check-cast v0, Landroid/app/ActivityManager;
 
-    .line 57
     .local v0, "actvityManager":Landroid/app/ActivityManager;
     invoke-virtual {v0}, Landroid/app/ActivityManager;->getRunningAppProcesses()Ljava/util/List;
 
     move-result-object v5
 
-    .line 58
     .local v5, "processInfo":Ljava/util/List;, "Ljava/util/List<Landroid/app/ActivityManager$RunningAppProcessInfo;>;"
     const/4 v4, 0x0
 
-    .line 59
     .local v4, "pidFound":Z
     const/4 v3, 0x0
 
@@ -336,7 +303,6 @@
 
     if-ge v3, v6, :cond_0
 
-    .line 61
     invoke-interface {v5, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -347,7 +313,6 @@
 
     if-ne v6, p1, :cond_2
 
-    .line 62
     invoke-interface {v5, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -358,7 +323,6 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 69
     .end local v0    # "actvityManager":Landroid/app/ActivityManager;
     .end local v3    # "i":I
     .end local v4    # "pidFound":Z
@@ -391,11 +355,9 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 70
     :cond_1
     return-object v1
 
-    .line 59
     .restart local v0    # "actvityManager":Landroid/app/ActivityManager;
     .restart local v3    # "i":I
     .restart local v4    # "pidFound":Z
@@ -405,7 +367,6 @@
 
     goto :goto_0
 
-    .line 66
     .end local v0    # "actvityManager":Landroid/app/ActivityManager;
     .end local v3    # "i":I
     .end local v4    # "pidFound":Z
@@ -413,7 +374,6 @@
     :catch_0
     move-exception v2
 
-    .line 67
     .local v2, "e":Ljava/lang/Exception;
     invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
 
@@ -425,7 +385,6 @@
     .param p1, "uid"    # I
 
     .prologue
-    .line 166
     :try_start_0
     iget-object v2, p0, Lcom/motorola/android/internal/util/ApplicationInfoUtils;->mContext:Landroid/content/Context;
 
@@ -439,15 +398,12 @@
 
     move-result-object v1
 
-    .line 172
     :goto_0
     return-object v1
 
-    .line 169
     :catch_0
     move-exception v0
 
-    .line 170
     .local v0, "e":Ljava/lang/Exception;
     sget-boolean v2, Lcom/motorola/android/internal/util/ApplicationInfoUtils;->DBG:Z
 
@@ -481,11 +437,9 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 171
     :cond_0
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 172
     const/4 v1, 0x0
 
     goto :goto_0
@@ -498,16 +452,13 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 136
     const/4 v3, 0x0
 
-    .line 137
     .local v3, "preLoadedSystemApp":Z
     invoke-virtual {p0, p1}, Lcom/motorola/android/internal/util/ApplicationInfoUtils;->getPackagesforUid(I)[Ljava/lang/String;
 
     move-result-object v1
 
-    .line 142
     .local v1, "callingPackageNames":[Ljava/lang/String;
     :try_start_0
     iget-object v5, p0, Lcom/motorola/android/internal/util/ApplicationInfoUtils;->mContext:Landroid/content/Context;
@@ -526,7 +477,6 @@
 
     move-result-object v0
 
-    .line 145
     .local v0, "callingApplicationPkgInfo":Landroid/content/pm/PackageInfo;
     iget-object v5, v0, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
@@ -538,10 +488,8 @@
 
     if-eqz v4, :cond_0
 
-    .line 147
     const/4 v3, 0x1
 
-    .line 155
     :cond_0
     sget-boolean v4, Lcom/motorola/android/internal/util/ApplicationInfoUtils;->DBG:Z
 
@@ -572,16 +520,13 @@
     :cond_1
     move v4, v3
 
-    .line 156
     .end local v0    # "callingApplicationPkgInfo":Landroid/content/pm/PackageInfo;
     :goto_0
     return v4
 
-    .line 150
     :catch_0
     move-exception v2
 
-    .line 151
     .local v2, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     sget-boolean v5, Lcom/motorola/android/internal/util/ApplicationInfoUtils;->DBG:Z
 
@@ -593,7 +538,6 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 152
     :cond_2
     invoke-virtual {v2}, Landroid/content/pm/PackageManager$NameNotFoundException;->printStackTrace()V
 

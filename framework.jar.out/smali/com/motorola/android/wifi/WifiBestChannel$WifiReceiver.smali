@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 124
     iput-object p1, p0, Lcom/motorola/android/wifi/WifiBestChannel$WifiReceiver;->this$0:Lcom/motorola/android/wifi/WifiBestChannel;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -37,7 +36,6 @@
     .param p2, "x1"    # Lcom/motorola/android/wifi/WifiBestChannel$1;
 
     .prologue
-    .line 124
     invoke-direct {p0, p1}, Lcom/motorola/android/wifi/WifiBestChannel$WifiReceiver;-><init>(Lcom/motorola/android/wifi/WifiBestChannel;)V
 
     return-void
@@ -53,12 +51,10 @@
     .prologue
     const/4 v9, -0x1
 
-    .line 128
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 129
     .local v0, "action":Ljava/lang/String;
     const-string v4, "android.net.wifi.SCAN_RESULTS"
 
@@ -68,7 +64,6 @@
 
     if-eqz v4, :cond_5
 
-    .line 130
     # getter for: Lcom/motorola/android/wifi/WifiBestChannel;->numOfAPonChannel:Ljava/util/ArrayList;
     invoke-static {}, Lcom/motorola/android/wifi/WifiBestChannel;->access$100()Ljava/util/ArrayList;
 
@@ -76,7 +71,6 @@
 
     monitor-enter v5
 
-    .line 133
     :try_start_0
     # getter for: Lcom/motorola/android/wifi/WifiBestChannel;->numOfAPonChannel:Ljava/util/ArrayList;
     invoke-static {}, Lcom/motorola/android/wifi/WifiBestChannel;->access$100()Ljava/util/ArrayList;
@@ -92,7 +86,6 @@
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
-    .line 134
     :cond_0
     # getter for: Lcom/motorola/android/wifi/WifiBestChannel;->rssiLoadOfAP:Ljava/util/ArrayList;
     invoke-static {}, Lcom/motorola/android/wifi/WifiBestChannel;->access$200()Ljava/util/ArrayList;
@@ -108,20 +101,17 @@
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
-    .line 136
     :cond_1
     const/4 v4, -0x1
 
     # setter for: Lcom/motorola/android/wifi/WifiBestChannel;->fiveGhzLevelUpperBand:I
     invoke-static {v4}, Lcom/motorola/android/wifi/WifiBestChannel;->access$302(I)I
 
-    .line 137
     const/4 v4, -0x1
 
     # setter for: Lcom/motorola/android/wifi/WifiBestChannel;->fiveGhzLevelLowerBand:I
     invoke-static {v4}, Lcom/motorola/android/wifi/WifiBestChannel;->access$402(I)I
 
-    .line 140
     new-instance v4, Ljava/util/ArrayList;
 
     const/16 v6, 0x18
@@ -377,7 +367,6 @@
     # setter for: Lcom/motorola/android/wifi/WifiBestChannel;->numOfAPonChannel:Ljava/util/ArrayList;
     invoke-static {v4}, Lcom/motorola/android/wifi/WifiBestChannel;->access$102(Ljava/util/ArrayList;)Ljava/util/ArrayList;
 
-    .line 143
     new-instance v4, Ljava/util/ArrayList;
 
     const/16 v6, 0x18
@@ -633,7 +622,6 @@
     # setter for: Lcom/motorola/android/wifi/WifiBestChannel;->rssiLoadOfAP:Ljava/util/ArrayList;
     invoke-static {v4}, Lcom/motorola/android/wifi/WifiBestChannel;->access$202(Ljava/util/ArrayList;)Ljava/util/ArrayList;
 
-    .line 147
     iget-object v4, p0, Lcom/motorola/android/wifi/WifiBestChannel$WifiReceiver;->this$0:Lcom/motorola/android/wifi/WifiBestChannel;
 
     # getter for: Lcom/motorola/android/wifi/WifiBestChannel;->mWifiManager:Landroid/net/wifi/WifiManager;
@@ -645,11 +633,9 @@
 
     move-result-object v1
 
-    .line 149
     .local v1, "results":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
     if-eqz v1, :cond_4
 
-    .line 151
     const/4 v2, 0x0
 
     .local v2, "s":I
@@ -660,14 +646,12 @@
 
     if-ge v2, v4, :cond_3
 
-    .line 152
     invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Landroid/net/wifi/ScanResult;
 
-    .line 155
     .local v3, "scanResult":Landroid/net/wifi/ScanResult;
     iget v4, v3, Landroid/net/wifi/ScanResult;->frequency:I
 
@@ -678,7 +662,6 @@
 
     if-eq v4, v9, :cond_2
 
-    .line 157
     iget v4, v3, Landroid/net/wifi/ScanResult;->level:I
 
     const/16 v6, -0xa
@@ -691,7 +674,6 @@
 
     if-le v4, v6, :cond_2
 
-    .line 158
     # getter for: Lcom/motorola/android/wifi/WifiBestChannel;->numOfAPonChannel:Ljava/util/ArrayList;
     invoke-static {}, Lcom/motorola/android/wifi/WifiBestChannel;->access$100()Ljava/util/ArrayList;
 
@@ -714,50 +696,41 @@
     # invokes: Lcom/motorola/android/wifi/WifiBestChannel;->fillNumberOfApOnSpecificChannel(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V
     invoke-static {v4, v6, v7, v8}, Lcom/motorola/android/wifi/WifiBestChannel;->access$700(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V
 
-    .line 151
     :cond_2
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 165
     .end local v3    # "scanResult":Landroid/net/wifi/ScanResult;
     :cond_3
     const/4 v4, 0x0
 
     sput v4, Lcom/motorola/android/wifi/WifiBestChannel;->fiveBestChannel:I
 
-    .line 166
     const/4 v4, 0x0
 
     sput v4, Lcom/motorola/android/wifi/WifiBestChannel;->fiveBestUpperChannel:I
 
-    .line 167
     const/4 v4, 0x0
 
     sput v4, Lcom/motorola/android/wifi/WifiBestChannel;->fiveBestLowerChannel:I
 
-    .line 183
     invoke-static {}, Lcom/motorola/android/wifi/WifiBestChannel;->getBestChannelofFiveGhz()I
 
     move-result v4
 
     sput v4, Lcom/motorola/android/wifi/WifiBestChannel;->fiveBestChannel:I
 
-    .line 185
     invoke-static {}, Lcom/motorola/android/wifi/WifiBestChannel;->computeBestChannelFor24Band()I
 
-    .line 195
     .end local v2    # "s":I
     :cond_4
     monitor-exit v5
 
-    .line 199
     .end local v1    # "results":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
     :cond_5
     return-void
 
-    .line 195
     :catchall_0
     move-exception v4
 

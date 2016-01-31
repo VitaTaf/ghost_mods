@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 39
     iput-object p1, p0, Lcom/motorola/datacollection/DataCollectionListener$1;->this$0:Lcom/motorola/datacollection/DataCollectionListener;
 
     invoke-direct {p0}, Lcom/motorola/datacollection/IDataCollectionListener$Stub;-><init>()V
@@ -40,7 +39,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 41
     iget-object v0, p0, Lcom/motorola/datacollection/DataCollectionListener$1;->this$0:Lcom/motorola/datacollection/DataCollectionListener;
 
     iget-object v0, v0, Lcom/motorola/datacollection/DataCollectionListener;->mHandler:Landroid/os/Handler;
@@ -53,7 +51,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 42
     return-void
 .end method
 
@@ -64,7 +61,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 45
     iget-object v0, p0, Lcom/motorola/datacollection/DataCollectionListener$1;->this$0:Lcom/motorola/datacollection/DataCollectionListener;
 
     iget-object v0, v0, Lcom/motorola/datacollection/DataCollectionListener;->mHandler:Landroid/os/Handler;
@@ -77,6 +73,5 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 46
     return-void
 .end method

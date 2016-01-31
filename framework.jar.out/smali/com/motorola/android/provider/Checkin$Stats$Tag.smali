@@ -108,7 +108,6 @@
 
     const/4 v3, 0x0
 
-    .line 153
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "BROWSER_SNAP_CENTER"
@@ -117,7 +116,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->BROWSER_SNAP_CENTER:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 154
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "BROWSER_TEXT_SIZE_CHANGE"
@@ -126,7 +124,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->BROWSER_TEXT_SIZE_CHANGE:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 155
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "BROWSER_ZOOM_OVERVIEW"
@@ -135,7 +132,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->BROWSER_ZOOM_OVERVIEW:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 156
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "BROWSER_TIME_PORTRAIT"
@@ -144,7 +140,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->BROWSER_TIME_PORTRAIT:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 157
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "BROWSER_TIME_LANDSCAPE"
@@ -153,7 +148,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->BROWSER_TIME_LANDSCAPE:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 159
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "CRASHES_REPORTED"
@@ -164,7 +158,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->CRASHES_REPORTED:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 160
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "CRASHES_TRUNCATED"
@@ -175,7 +168,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->CRASHES_TRUNCATED:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 161
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "ELAPSED_REALTIME_SEC"
@@ -186,7 +178,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->ELAPSED_REALTIME_SEC:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 162
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "ELAPSED_UPTIME_SEC"
@@ -197,7 +188,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->ELAPSED_UPTIME_SEC:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 163
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "HTTP_REQUEST"
@@ -208,7 +198,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->HTTP_REQUEST:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 164
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "HTTP_REUSED"
@@ -219,7 +208,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->HTTP_REUSED:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 165
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "HTTP_STATUS"
@@ -230,7 +218,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->HTTP_STATUS:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 166
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "PHONE_GSM_REGISTERED"
@@ -241,7 +228,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->PHONE_GSM_REGISTERED:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 167
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "PHONE_GPRS_ATTEMPTED"
@@ -252,7 +238,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->PHONE_GPRS_ATTEMPTED:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 168
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "PHONE_GPRS_CONNECTED"
@@ -263,7 +248,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->PHONE_GPRS_CONNECTED:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 169
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "PHONE_RADIO_RESETS"
@@ -274,7 +258,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->PHONE_RADIO_RESETS:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 170
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "TEST"
@@ -285,7 +268,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->TEST:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 171
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "NETWORK_RX_MOBILE"
@@ -296,7 +278,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->NETWORK_RX_MOBILE:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 172
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "NETWORK_TX_MOBILE"
@@ -307,7 +288,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->NETWORK_TX_MOBILE:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 173
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "PHONE_CDMA_REGISTERED"
@@ -318,7 +298,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->PHONE_CDMA_REGISTERED:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 174
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "PHONE_CDMA_DATA_ATTEMPTED"
@@ -329,7 +308,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->PHONE_CDMA_DATA_ATTEMPTED:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 175
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "PHONE_CDMA_DATA_CONNECTED"
@@ -340,7 +318,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->PHONE_CDMA_DATA_CONNECTED:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 176
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "EVENTS_DROPPED"
@@ -351,7 +328,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->EVENTS_DROPPED:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 177
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "CG_WID2DASH"
@@ -362,7 +338,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->CG_WID2DASH:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 178
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "CG_COMMENT_NOTF_RECV"
@@ -373,7 +348,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->CG_COMMENT_NOTF_RECV:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 179
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "CG_RAT_NOTF_RECV"
@@ -384,7 +358,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->CG_RAT_NOTF_RECV:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 180
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "CG_TAG_NOTF_RECV"
@@ -395,7 +368,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->CG_TAG_NOTF_RECV:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 181
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "CG_ADD_COMMENT"
@@ -406,7 +378,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->CG_ADD_COMMENT:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 182
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "CG_ADD_TAG"
@@ -417,7 +388,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->CG_ADD_TAG:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 183
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "CG_ADD_RATING"
@@ -428,7 +398,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->CG_ADD_RATING:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 184
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "CG_VIEW_MY_WEB_ALBUM"
@@ -439,7 +408,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->CG_VIEW_MY_WEB_ALBUM:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 185
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "CG_VIEW_MY_FRIEND_MEDIA"
@@ -450,7 +418,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->CG_VIEW_MY_FRIEND_MEDIA:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 186
     new-instance v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     const-string v1, "CG_VIEW_MEDIA_ID"
@@ -461,7 +428,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->CG_VIEW_MEDIA_ID:Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
-    .line 152
     const/16 v0, 0x21
 
     new-array v0, v0, [Lcom/motorola/android/provider/Checkin$Stats$Tag;
@@ -668,7 +634,6 @@
     .end annotation
 
     .prologue
-    .line 152
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -679,7 +644,6 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 152
     const-class v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -695,7 +659,6 @@
     .locals 1
 
     .prologue
-    .line 152
     sget-object v0, Lcom/motorola/android/provider/Checkin$Stats$Tag;->$VALUES:[Lcom/motorola/android/provider/Checkin$Stats$Tag;
 
     invoke-virtual {v0}, [Lcom/motorola/android/provider/Checkin$Stats$Tag;->clone()Ljava/lang/Object;

@@ -23,7 +23,6 @@
     .locals 3
 
     .prologue
-    .line 177
     invoke-static {}, Landroid/telephony/TelephonyManager$MultiSimVariants;->values()[Landroid/telephony/TelephonyManager$MultiSimVariants;
 
     move-result-object v0

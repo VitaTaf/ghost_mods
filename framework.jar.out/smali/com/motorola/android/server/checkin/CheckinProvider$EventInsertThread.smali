@@ -48,40 +48,32 @@
     .param p3, "maxWait"    # J
 
     .prologue
-    .line 850
     iput-object p1, p0, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->this$0:Lcom/motorola/android/server/checkin/CheckinProvider;
 
-    .line 851
     const-string v0, "EventInsertThread"
 
     invoke-direct {p0, v0}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
 
-    .line 852
     new-instance v0, Ljava/util/concurrent/ArrayBlockingQueue;
 
     invoke-direct {v0, p2}, Ljava/util/concurrent/ArrayBlockingQueue;-><init>(I)V
 
     iput-object v0, p0, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->mTransfer:Ljava/util/concurrent/ArrayBlockingQueue;
 
-    .line 853
     new-array v0, p2, [Landroid/content/ContentValues;
 
     iput-object v0, p0, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->mInsertValues:[Landroid/content/ContentValues;
 
-    .line 854
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->mNumInsertValues:I
 
-    .line 855
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->mWaitThreshold:J
 
-    .line 856
     iput-wide p3, p0, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->mMaxWaitDuration:J
 
-    .line 857
     return-void
 .end method
 
@@ -90,13 +82,10 @@
     .param p1, "values"    # Landroid/content/ContentValues;
 
     .prologue
-    .line 981
     if-nez p1, :cond_0
 
-    .line 982
     const/4 v0, 0x0
 
-    .line 983
     :goto_0
     return v0
 
@@ -117,7 +106,6 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 963
     iget v1, p0, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->mNumInsertValues:I
 
     iget-object v2, p0, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->mInsertValues:[Landroid/content/ContentValues;
@@ -126,12 +114,10 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 973
     :cond_0
     :goto_0
     return v0
 
-    .line 968
     :cond_1
     iget v1, p0, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->mNumInsertValues:I
 
@@ -153,7 +139,6 @@
 
     if-gez v1, :cond_0
 
-    .line 973
     :cond_2
     const/4 v0, 0x0
 
@@ -164,22 +149,18 @@
     .locals 10
 
     .prologue
-    .line 934
     const/4 v4, 0x0
 
-    .line 937
     .local v4, "values":Landroid/content/ContentValues;
     :try_start_0
     iget v5, p0, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->mNumInsertValues:I
 
     if-lez v5, :cond_1
 
-    .line 940
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
-    .line 941
     .local v2, "now":J
     iget-wide v6, p0, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->mWaitThreshold:J
 
@@ -187,7 +168,6 @@
 
     if-lez v5, :cond_0
 
-    .line 942
     iget-object v5, p0, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->mTransfer:Ljava/util/concurrent/ArrayBlockingQueue;
 
     iget-wide v6, p0, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->mWaitThreshold:J
@@ -206,13 +186,11 @@
 
     move-object v4, v0
 
-    .line 954
     .end local v2    # "now":J
     :cond_0
     :goto_0
     return-object v4
 
-    .line 946
     :cond_1
     iget-object v5, p0, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->mTransfer:Ljava/util/concurrent/ArrayBlockingQueue;
 
@@ -226,7 +204,6 @@
 
     move-object v4, v0
 
-    .line 948
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
@@ -241,7 +218,6 @@
 
     goto :goto_0
 
-    .line 950
     :catch_0
     move-exception v5
 
@@ -254,12 +230,10 @@
     .locals 3
 
     .prologue
-    .line 879
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 880
     .local v0, "values":Landroid/content/ContentValues;
     const-string v1, "QUEUE_FLUSH"
 
@@ -271,13 +245,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    .line 881
     invoke-virtual {p0, v0}, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->queueInsert(Landroid/content/ContentValues;)V
 
-    .line 882
     monitor-enter v0
 
-    .line 885
     :goto_0
     :try_start_0
     const-string v1, "QUEUE_FLUSH"
@@ -294,7 +265,6 @@
 
     if-nez v1, :cond_0
 
-    .line 887
     :try_start_1
     invoke-virtual {v0}, Ljava/lang/Object;->wait()V
     :try_end_1
@@ -303,21 +273,17 @@
 
     goto :goto_0
 
-    .line 888
     :catch_0
     move-exception v1
 
     goto :goto_0
 
-    .line 892
     :cond_0
     :try_start_2
     monitor-exit v0
 
-    .line 893
     return-void
 
-    .line 892
     :catchall_0
     move-exception v1
 
@@ -333,7 +299,6 @@
     .param p1, "values"    # Landroid/content/ContentValues;
 
     .prologue
-    .line 867
     :try_start_0
     iget-object v1, p0, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->mTransfer:Ljava/util/concurrent/ArrayBlockingQueue;
 
@@ -341,15 +306,12 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 871
     :goto_0
     return-void
 
-    .line 868
     :catch_0
     move-exception v0
 
-    .line 869
     .local v0, "e":Ljava/lang/InterruptedException;
     const-string v1, "CheckinProvider"
 
@@ -364,21 +326,18 @@
     .locals 4
 
     .prologue
-    .line 899
     const-string v1, "CheckinProvider"
 
     const-string v2, "EventInsertThread started"
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 902
     :cond_0
     :goto_0
     invoke-direct {p0}, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->waitForValues()Landroid/content/ContentValues;
 
     move-result-object v0
 
-    .line 905
     .local v0, "values":Landroid/content/ContentValues;
     if-eqz v0, :cond_1
 
@@ -388,7 +347,6 @@
 
     if-nez v1, :cond_1
 
-    .line 906
     iget-object v1, p0, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->mInsertValues:[Landroid/content/ContentValues;
 
     iget v2, p0, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->mNumInsertValues:I
@@ -399,7 +357,6 @@
 
     aput-object v0, v1, v2
 
-    .line 909
     :cond_1
     invoke-direct {p0, v0}, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->isReadyToInsert(Landroid/content/ContentValues;)Z
 
@@ -407,7 +364,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 910
     iget-object v1, p0, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->this$0:Lcom/motorola/android/server/checkin/CheckinProvider;
 
     iget-object v2, p0, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->mInsertValues:[Landroid/content/ContentValues;
@@ -417,13 +373,11 @@
     # invokes: Lcom/motorola/android/server/checkin/CheckinProvider;->insertEvents([Landroid/content/ContentValues;I)V
     invoke-static {v1, v2, v3}, Lcom/motorola/android/server/checkin/CheckinProvider;->access$000(Lcom/motorola/android/server/checkin/CheckinProvider;[Landroid/content/ContentValues;I)V
 
-    .line 913
     :goto_1
     iget v1, p0, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->mNumInsertValues:I
 
     if-lez v1, :cond_2
 
-    .line 914
     iget-object v1, p0, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->mInsertValues:[Landroid/content/ContentValues;
 
     iget v2, p0, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->mNumInsertValues:I
@@ -438,7 +392,6 @@
 
     goto :goto_1
 
-    .line 918
     :cond_2
     invoke-direct {p0, v0}, Lcom/motorola/android/server/checkin/CheckinProvider$EventInsertThread;->isFlushRequest(Landroid/content/ContentValues;)Z
 
@@ -446,10 +399,8 @@
 
     if-eqz v1, :cond_0
 
-    .line 920
     monitor-enter v0
 
-    .line 921
     :try_start_0
     const-string v1, "QUEUE_FLUSH"
 
@@ -461,10 +412,8 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    .line 922
     invoke-virtual {v0}, Ljava/lang/Object;->notify()V
 
-    .line 923
     monitor-exit v0
 
     goto :goto_0

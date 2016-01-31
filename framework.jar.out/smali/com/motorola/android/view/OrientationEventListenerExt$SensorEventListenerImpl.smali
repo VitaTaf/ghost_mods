@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 126
     iput-object p1, p0, Lcom/motorola/android/view/OrientationEventListenerExt$SensorEventListenerImpl;->this$0:Lcom/motorola/android/view/OrientationEventListenerExt;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +45,6 @@
     .param p2, "accuracy"    # I
 
     .prologue
-    .line 139
     return-void
 .end method
 
@@ -55,10 +53,8 @@
     .param p1, "event"    # Landroid/hardware/SensorEvent;
 
     .prologue
-    .line 130
     iget-object v1, p1, Landroid/hardware/SensorEvent;->values:[F
 
-    .line 131
     .local v1, "values":[F
     const/4 v2, 0x0
 
@@ -66,7 +62,6 @@
 
     float-to-int v0, v2
 
-    .line 132
     .local v0, "rotation":I
     if-ltz v0, :cond_0
 
@@ -74,14 +69,12 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 133
     iget-object v2, p0, Lcom/motorola/android/view/OrientationEventListenerExt$SensorEventListenerImpl;->this$0:Lcom/motorola/android/view/OrientationEventListenerExt;
 
     mul-int/lit8 v3, v0, 0x5a
 
     invoke-virtual {v2, v3}, Lcom/motorola/android/view/OrientationEventListenerExt;->onOrientationChanged(I)V
 
-    .line 135
     :cond_0
     return-void
 .end method

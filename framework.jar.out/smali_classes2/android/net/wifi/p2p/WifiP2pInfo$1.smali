@@ -32,7 +32,6 @@
     .locals 0
 
     .prologue
-    .line 100
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,12 +48,10 @@
 
     const/4 v2, 0x1
 
-    .line 102
     new-instance v0, Landroid/net/wifi/p2p/WifiP2pInfo;
 
     invoke-direct {v0}, Landroid/net/wifi/p2p/WifiP2pInfo;-><init>()V
 
-    .line 103
     .local v0, "info":Landroid/net/wifi/p2p/WifiP2pInfo;
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
@@ -67,7 +64,6 @@
     :goto_0
     iput-boolean v1, v0, Landroid/net/wifi/p2p/WifiP2pInfo;->groupFormed:Z
 
-    .line 104
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v1
@@ -79,21 +75,18 @@
     :goto_1
     iput-boolean v1, v0, Landroid/net/wifi/p2p/WifiP2pInfo;->isGroupOwner:Z
 
-    .line 105
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Landroid/net/wifi/p2p/WifiP2pInfo;->operatingChannel:I
 
-    .line 106
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v1
 
     if-ne v1, v2, :cond_0
 
-    .line 108
     :try_start_0
     invoke-virtual {p1}, Landroid/os/Parcel;->createByteArray()[B
 
@@ -107,7 +100,6 @@
     :try_end_0
     .catch Ljava/net/UnknownHostException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 111
     :cond_0
     :goto_2
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
@@ -119,28 +111,23 @@
     :goto_3
     iput-boolean v2, v0, Landroid/net/wifi/p2p/WifiP2pInfo;->mccMode:Z
 
-    .line 112
     return-object v0
 
     :cond_1
     move v1, v3
 
-    .line 103
     goto :goto_0
 
     :cond_2
     move v1, v3
 
-    .line 104
     goto :goto_1
 
     :cond_3
     move v2, v3
 
-    .line 111
     goto :goto_3
 
-    .line 109
     :catch_0
     move-exception v1
 
@@ -152,7 +139,6 @@
     .param p1, "x0"    # Landroid/os/Parcel;
 
     .prologue
-    .line 100
     invoke-virtual {p0, p1}, Landroid/net/wifi/p2p/WifiP2pInfo$1;->createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/p2p/WifiP2pInfo;
 
     move-result-object v0
@@ -165,7 +151,6 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 116
     new-array v0, p1, [Landroid/net/wifi/p2p/WifiP2pInfo;
 
     return-object v0
@@ -176,7 +161,6 @@
     .param p1, "x0"    # I
 
     .prologue
-    .line 100
     invoke-virtual {p0, p1}, Landroid/net/wifi/p2p/WifiP2pInfo$1;->newArray(I)[Landroid/net/wifi/p2p/WifiP2pInfo;
 
     move-result-object v0

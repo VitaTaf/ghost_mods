@@ -32,7 +32,6 @@
     .locals 0
 
     .prologue
-    .line 193
     invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
 
     return-void
@@ -44,7 +43,6 @@
     .locals 1
 
     .prologue
-    .line 195
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/util/Log$2;->_value:I
@@ -62,7 +60,6 @@
     .locals 1
 
     .prologue
-    .line 193
     invoke-virtual {p0}, Landroid/util/Log$2;->initialValue()Ljava/lang/Integer;
 
     move-result-object v0

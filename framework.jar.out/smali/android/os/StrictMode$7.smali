@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 1883
     invoke-direct {p0}, Landroid/os/StrictMode$Span;-><init>()V
 
     return-void
@@ -31,6 +30,5 @@
     .locals 0
 
     .prologue
-    .line 1886
     return-void
 .end method

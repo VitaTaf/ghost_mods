@@ -32,17 +32,14 @@
     .param p3, "icon"    # I
 
     .prologue
-    .line 710
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 711
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 712
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "You must specify an action to build a CustomAction."
@@ -51,7 +48,6 @@
 
     throw v0
 
-    .line 715
     :cond_0
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -59,7 +55,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 716
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "You must specify a name to build a CustomAction."
@@ -68,11 +63,9 @@
 
     throw v0
 
-    .line 719
     :cond_1
     if-nez p3, :cond_2
 
-    .line 720
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "You must specify an icon resource id to build a CustomAction."
@@ -81,17 +74,13 @@
 
     throw v0
 
-    .line 723
     :cond_2
     iput-object p1, p0, Landroid/media/session/PlaybackState$CustomAction$Builder;->mAction:Ljava/lang/String;
 
-    .line 724
     iput-object p2, p0, Landroid/media/session/PlaybackState$CustomAction$Builder;->mName:Ljava/lang/CharSequence;
 
-    .line 725
     iput p3, p0, Landroid/media/session/PlaybackState$CustomAction$Builder;->mIcon:I
 
-    .line 726
     return-void
 .end method
 
@@ -101,7 +90,6 @@
     .locals 6
 
     .prologue
-    .line 747
     new-instance v0, Landroid/media/session/PlaybackState$CustomAction;
 
     iget-object v1, p0, Landroid/media/session/PlaybackState$CustomAction$Builder;->mAction:Ljava/lang/String;
@@ -124,9 +112,7 @@
     .param p1, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 737
     iput-object p1, p0, Landroid/media/session/PlaybackState$CustomAction$Builder;->mExtras:Landroid/os/Bundle;
 
-    .line 738
     return-object p0
 .end method

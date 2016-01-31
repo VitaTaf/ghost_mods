@@ -27,7 +27,6 @@
     .locals 0
 
     .prologue
-    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,14 +38,12 @@
     .param p1, "category"    # I
 
     .prologue
-    .line 46
     sget-boolean v0, Landroid/os/Build;->IS_DEBUGGABLE:Z
 
     if-eqz v0, :cond_0
 
     if-nez p1, :cond_0
 
-    .line 47
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Must define metric category"
@@ -55,13 +52,11 @@
 
     throw v0
 
-    .line 49
     :cond_0
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lcom/android/internal/logging/EventLogTags;->writeSysuiViewVisibility(II)V
 
-    .line 50
     return-void
 .end method
 
@@ -76,14 +71,12 @@
     .end annotation
 
     .prologue
-    .line 39
     sget-boolean v0, Landroid/os/Build;->IS_DEBUGGABLE:Z
 
     if-eqz v0, :cond_0
 
     if-nez p1, :cond_0
 
-    .line 40
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Must define metric category"
@@ -92,12 +85,10 @@
 
     throw v0
 
-    .line 42
     :cond_0
     const/16 v0, 0x64
 
     invoke-static {p1, v0}, Lcom/android/internal/logging/EventLogTags;->writeSysuiViewVisibility(II)V
 
-    .line 43
     return-void
 .end method

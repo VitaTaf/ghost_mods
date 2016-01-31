@@ -67,7 +67,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 74
     const/4 v0, 0x1
 
     new-array v0, v0, [[I
@@ -78,14 +77,12 @@
 
     sput-object v0, Landroid/content/res/ColorStateList;->EMPTY:[[I
 
-    .line 75
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     sput-object v0, Landroid/content/res/ColorStateList;->sCache:Landroid/util/SparseArray;
 
-    .line 601
     new-instance v0, Landroid/content/res/ColorStateList$1;
 
     invoke-direct {v0}, Landroid/content/res/ColorStateList$1;-><init>()V
@@ -99,10 +96,8 @@
     .locals 0
 
     .prologue
-    .line 86
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 88
     return-void
 .end method
 
@@ -111,28 +106,22 @@
     .param p1, "orig"    # Landroid/content/res/ColorStateList;
 
     .prologue
-    .line 141
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 142
     if-eqz p1, :cond_0
 
-    .line 143
     iget-object v0, p1, Landroid/content/res/ColorStateList;->mStateSpecs:[[I
 
     iput-object v0, p0, Landroid/content/res/ColorStateList;->mStateSpecs:[[I
 
-    .line 144
     iget v0, p1, Landroid/content/res/ColorStateList;->mDefaultColor:I
 
     iput v0, p0, Landroid/content/res/ColorStateList;->mDefaultColor:I
 
-    .line 145
     iget-boolean v0, p1, Landroid/content/res/ColorStateList;->mIsOpaque:Z
 
     iput-boolean v0, p0, Landroid/content/res/ColorStateList;->mIsOpaque:Z
 
-    .line 148
     iget-object v0, p1, Landroid/content/res/ColorStateList;->mColors:[I
 
     invoke-virtual {v0}, [I->clone()Ljava/lang/Object;
@@ -143,7 +132,6 @@
 
     iput-object v0, p0, Landroid/content/res/ColorStateList;->mColors:[I
 
-    .line 150
     :cond_0
     return-void
 .end method
@@ -154,7 +142,6 @@
     .param p2, "x1"    # Landroid/content/res/ColorStateList$1;
 
     .prologue
-    .line 71
     invoke-direct {p0, p1}, Landroid/content/res/ColorStateList;-><init>(Landroid/content/res/ColorStateList;)V
 
     return-void
@@ -166,19 +153,14 @@
     .param p2, "colors"    # [I
 
     .prologue
-    .line 94
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 95
     iput-object p1, p0, Landroid/content/res/ColorStateList;->mStateSpecs:[[I
 
-    .line 96
     iput-object p2, p0, Landroid/content/res/ColorStateList;->mColors:[I
 
-    .line 98
     invoke-direct {p0}, Landroid/content/res/ColorStateList;->onColorsChanged()V
 
-    .line 99
     return-void
 .end method
 
@@ -187,7 +169,6 @@
     .param p0, "x0"    # Landroid/content/res/ColorStateList;
 
     .prologue
-    .line 71
     iget v0, p0, Landroid/content/res/ColorStateList;->mChangingConfigurations:I
 
     return v0
@@ -204,12 +185,10 @@
 
     const/4 v8, 0x0
 
-    .line 483
     invoke-virtual {p0}, Landroid/content/res/ColorStateList;->getStates()[[I
 
     move-result-object v3
 
-    .line 484
     .local v3, "inputStates":[[I
     const/4 v0, 0x0
 
@@ -219,10 +198,8 @@
 
     if-ge v0, v7, :cond_2
 
-    .line 485
     aget-object v2, v3, v0
 
-    .line 486
     .local v2, "inputState":[I
     const/4 v4, 0x0
 
@@ -232,19 +209,16 @@
 
     if-ge v4, v7, :cond_1
 
-    .line 487
     aget v7, v2, v4
 
     if-ne v7, p1, :cond_0
 
-    .line 502
     .end local v2    # "inputState":[I
     .end local v4    # "j":I
     .end local p0    # "colorStateList":Landroid/content/res/ColorStateList;
     :goto_2
     return-object p0
 
-    .line 486
     .restart local v2    # "inputState":[I
     .restart local v4    # "j":I
     .restart local p0    # "colorStateList":Landroid/content/res/ColorStateList;
@@ -253,13 +227,11 @@
 
     goto :goto_1
 
-    .line 484
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 493
     .end local v2    # "inputState":[I
     .end local v4    # "j":I
     :cond_2
@@ -269,25 +241,21 @@
 
     new-array v6, v7, [[I
 
-    .line 494
     .local v6, "outputStates":[[I
     array-length v7, v3
 
     invoke-static {v3, v8, v6, v9, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 495
     new-array v7, v9, [I
 
     aput p1, v7, v8
 
     aput-object v7, v6, v8
 
-    .line 497
     invoke-virtual {p0}, Landroid/content/res/ColorStateList;->getColors()[I
 
     move-result-object v1
 
-    .line 498
     .local v1, "inputColors":[I
     array-length v7, v1
 
@@ -295,16 +263,13 @@
 
     new-array v5, v7, [I
 
-    .line 499
     .local v5, "outputColors":[I
     array-length v7, v1
 
     invoke-static {v1, v8, v5, v9, v7}, Ljava/lang/System;->arraycopy([II[III)V
 
-    .line 500
     aput p2, v5, v8
 
-    .line 502
     new-instance p0, Landroid/content/res/ColorStateList;
 
     .end local p0    # "colorStateList":Landroid/content/res/ColorStateList;
@@ -328,7 +293,6 @@
     .end annotation
 
     .prologue
-    .line 165
     const/4 v0, 0x0
 
     invoke-static {p0, p1, v0}, Landroid/content/res/ColorStateList;->createFromXml(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
@@ -353,12 +317,10 @@
     .prologue
     const/4 v3, 0x2
 
-    .line 181
     invoke-static {p1}, Landroid/util/Xml;->asAttributeSet(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;
 
     move-result-object v0
 
-    .line 185
     .local v0, "attrs":Landroid/util/AttributeSet;
     :cond_0
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->next()I
@@ -372,11 +334,9 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 189
     :cond_1
     if-eq v1, v3, :cond_2
 
-    .line 190
     new-instance v2, Lorg/xmlpull/v1/XmlPullParserException;
 
     const-string v3, "No start tag found"
@@ -385,7 +345,6 @@
 
     throw v2
 
-    .line 193
     :cond_2
     invoke-static {p0, p1, v0, p2}, Landroid/content/res/ColorStateList;->createFromXmlInner(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
 
@@ -408,12 +367,10 @@
     .end annotation
 
     .prologue
-    .line 207
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 208
     .local v1, "name":Ljava/lang/String;
     const-string/jumbo v2, "selector"
 
@@ -423,7 +380,6 @@
 
     if-nez v2, :cond_0
 
-    .line 209
     new-instance v2, Lorg/xmlpull/v1/XmlPullParserException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -456,17 +412,14 @@
 
     throw v2
 
-    .line 213
     :cond_0
     new-instance v0, Landroid/content/res/ColorStateList;
 
     invoke-direct {v0}, Landroid/content/res/ColorStateList;-><init>()V
 
-    .line 214
     .local v0, "colorStateList":Landroid/content/res/ColorStateList;
     invoke-direct {v0, p0, p1, p2, p3}, Landroid/content/res/ColorStateList;->inflate(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V
 
-    .line 215
     return-object v0
 .end method
 
@@ -484,26 +437,21 @@
     .end annotation
 
     .prologue
-    .line 242
     invoke-interface/range {p2 .. p2}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
 
     move-result v26
 
     add-int/lit8 v15, v26, 0x1
 
-    .line 246
     .local v15, "innerDepth":I
     const/4 v8, 0x0
 
-    .line 247
     .local v8, "changingConfigurations":I
     const/high16 v11, -0x10000
 
-    .line 249
     .local v11, "defaultColor":I
     const/4 v13, 0x0
 
-    .line 251
     .local v13, "hasUnresolvedAttrs":Z
     const-class v26, [I
 
@@ -515,7 +463,6 @@
 
     check-cast v22, [[I
 
-    .line 252
     .local v22, "stateSpecList":[[I
     move-object/from16 v0, v22
 
@@ -529,7 +476,6 @@
 
     move-object/from16 v24, v0
 
-    .line 253
     .local v24, "themeAttrsList":[[I
     move-object/from16 v0, v22
 
@@ -541,11 +487,9 @@
 
     new-array v10, v0, [I
 
-    .line 254
     .local v10, "colorList":[I
     const/16 v18, 0x0
 
-    .line 257
     .local v18, "listSize":I
     :cond_0
     :goto_0
@@ -577,7 +521,6 @@
 
     if-eq v0, v1, :cond_7
 
-    .line 258
     :cond_1
     const/16 v26, 0x2
 
@@ -601,7 +544,6 @@
 
     if-eqz v26, :cond_0
 
-    .line 263
     sget-object v26, Lcom/android/internal/R$styleable;->ColorStateListItem:[I
 
     move-object/from16 v0, p1
@@ -616,13 +558,11 @@
 
     move-result-object v5
 
-    .line 265
     .local v5, "a":Landroid/content/res/TypedArray;
     invoke-virtual {v5}, Landroid/content/res/TypedArray;->extractThemeAttrs()[I
 
     move-result-object v23
 
-    .line 266
     .local v23, "themeAttrs":[I
     const/16 v26, 0x0
 
@@ -636,7 +576,6 @@
 
     move-result v7
 
-    .line 267
     .local v7, "baseColor":I
     const/16 v26, 0x1
 
@@ -650,7 +589,6 @@
 
     move-result v6
 
-    .line 269
     .local v6, "alphaMod":F
     invoke-virtual {v5}, Landroid/content/res/TypedArray;->getChangingConfigurations()I
 
@@ -658,19 +596,15 @@
 
     or-int v8, v8, v26
 
-    .line 271
     invoke-virtual {v5}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 274
     const/16 v16, 0x0
 
-    .line 275
     .local v16, "j":I
     invoke-interface/range {p3 .. p3}, Landroid/util/AttributeSet;->getAttributeCount()I
 
     move-result v19
 
-    .line 276
     .local v19, "numAttrs":I
     move/from16 v0, v19
 
@@ -678,7 +612,6 @@
 
     move-object/from16 v21, v0
 
-    .line 277
     .local v21, "stateSpec":[I
     const/4 v14, 0x0
 
@@ -692,18 +625,15 @@
 
     if-ge v14, v0, :cond_3
 
-    .line 278
     move-object/from16 v0, p3
 
     invoke-interface {v0, v14}, Landroid/util/AttributeSet;->getAttributeNameResource(I)I
 
     move-result v20
 
-    .line 279
     .local v20, "stateResId":I
     sparse-switch v20, :sswitch_data_0
 
-    .line 285
     add-int/lit8 v16, v17, 0x1
 
     .end local v17    # "j":I
@@ -724,7 +654,6 @@
     :goto_2
     aput v20, v21, v17
 
-    .line 277
     :goto_3
     add-int/lit8 v14, v14, 0x1
 
@@ -738,12 +667,10 @@
     :sswitch_0
     move/from16 v16, v17
 
-    .line 283
     .end local v17    # "j":I
     .restart local v16    # "j":I
     goto :goto_3
 
-    .line 285
     :cond_2
     move/from16 v0, v20
 
@@ -753,7 +680,6 @@
 
     goto :goto_2
 
-    .line 289
     .end local v16    # "j":I
     .end local v20    # "stateResId":I
     .restart local v17    # "j":I
@@ -766,14 +692,12 @@
 
     move-result-object v21
 
-    .line 292
     move-object/from16 v0, p0
 
     invoke-direct {v0, v7, v6}, Landroid/content/res/ColorStateList;->modulateColorAlpha(IF)I
 
     move-result v9
 
-    .line 293
     .local v9, "color":I
     if-eqz v18, :cond_4
 
@@ -785,18 +709,14 @@
 
     if-nez v26, :cond_5
 
-    .line 294
     :cond_4
     move v11, v9
 
-    .line 297
     :cond_5
     if-eqz v23, :cond_6
 
-    .line 298
     const/4 v13, 0x1
 
-    .line 301
     :cond_6
     move/from16 v0, v18
 
@@ -804,7 +724,6 @@
 
     move-result-object v10
 
-    .line 302
     move-object/from16 v0, v24
 
     move/from16 v1, v18
@@ -818,7 +737,6 @@
     .end local v24    # "themeAttrsList":[[I
     check-cast v24, [[I
 
-    .line 303
     .restart local v24    # "themeAttrsList":[[I
     move-object/from16 v0, v22
 
@@ -833,14 +751,11 @@
     .end local v22    # "stateSpecList":[[I
     check-cast v22, [[I
 
-    .line 304
     .restart local v22    # "stateSpecList":[[I
     add-int/lit8 v18, v18, 0x1
 
-    .line 305
     goto/16 :goto_0
 
-    .line 307
     .end local v5    # "a":Landroid/content/res/TypedArray;
     .end local v6    # "alphaMod":F
     .end local v7    # "baseColor":I
@@ -856,15 +771,12 @@
 
     iput v8, v0, Landroid/content/res/ColorStateList;->mChangingConfigurations:I
 
-    .line 308
     move-object/from16 v0, p0
 
     iput v11, v0, Landroid/content/res/ColorStateList;->mDefaultColor:I
 
-    .line 310
     if-eqz v13, :cond_8
 
-    .line 311
     move/from16 v0, v18
 
     new-array v0, v0, [[I
@@ -877,7 +789,6 @@
 
     iput-object v0, v1, Landroid/content/res/ColorStateList;->mThemeAttrs:[[I
 
-    .line 312
     const/16 v26, 0x0
 
     move-object/from16 v0, p0
@@ -900,7 +811,6 @@
 
     invoke-static {v0, v1, v2, v3, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 317
     :goto_4
     move/from16 v0, v18
 
@@ -914,7 +824,6 @@
 
     iput-object v0, v1, Landroid/content/res/ColorStateList;->mColors:[I
 
-    .line 318
     move/from16 v0, v18
 
     new-array v0, v0, [[I
@@ -927,7 +836,6 @@
 
     iput-object v0, v1, Landroid/content/res/ColorStateList;->mStateSpecs:[[I
 
-    .line 319
     const/16 v26, 0x0
 
     move-object/from16 v0, p0
@@ -948,7 +856,6 @@
 
     invoke-static {v10, v0, v1, v2, v3}, Ljava/lang/System;->arraycopy([II[III)V
 
-    .line 320
     const/16 v26, 0x0
 
     move-object/from16 v0, p0
@@ -971,13 +878,10 @@
 
     invoke-static {v0, v1, v2, v3, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 322
     invoke-direct/range {p0 .. p0}, Landroid/content/res/ColorStateList;->onColorsChanged()V
 
-    .line 323
     return-void
 
-    .line 314
     :cond_8
     const/16 v26, 0x0
 
@@ -991,7 +895,6 @@
 
     goto :goto_4
 
-    .line 279
     :sswitch_data_0
     .sparse-switch
         0x10101a5 -> :sswitch_0
@@ -1005,26 +908,22 @@
     .param p2, "alphaMod"    # F
 
     .prologue
-    .line 379
     const/high16 v3, 0x3f800000    # 1.0f
 
     cmpl-float v3, p2, v3
 
     if-nez v3, :cond_0
 
-    .line 386
     .end local p1    # "baseColor":I
     :goto_0
     return p1
 
-    .line 383
     .restart local p1    # "baseColor":I
     :cond_0
     invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v1
 
-    .line 384
     .local v1, "baseAlpha":I
     int-to-float v3, v1
 
@@ -1044,7 +943,6 @@
 
     move-result v0
 
-    .line 385
     .local v0, "alpha":I
     const v3, 0xffffff
 
@@ -1057,7 +955,6 @@
     .local v2, "color":I
     move p1, v2
 
-    .line 386
     goto :goto_0
 .end method
 
@@ -1065,59 +962,47 @@
     .locals 8
 
     .prologue
-    .line 519
     const/high16 v2, -0x10000
 
-    .line 520
     .local v2, "defaultColor":I
     const/4 v4, 0x1
 
-    .line 522
     .local v4, "isOpaque":Z
     iget-object v5, p0, Landroid/content/res/ColorStateList;->mStateSpecs:[[I
 
-    .line 523
     .local v5, "states":[[I
     iget-object v1, p0, Landroid/content/res/ColorStateList;->mColors:[I
 
-    .line 524
     .local v1, "colors":[I
     array-length v0, v5
 
-    .line 525
     .local v0, "N":I
     if-lez v0, :cond_1
 
-    .line 526
     const/4 v6, 0x0
 
     aget v2, v1, v6
 
-    .line 528
     add-int/lit8 v3, v0, -0x1
 
     .local v3, "i":I
     :goto_0
     if-lez v3, :cond_0
 
-    .line 529
     aget-object v6, v5, v3
 
     array-length v6, v6
 
     if-nez v6, :cond_2
 
-    .line 530
     aget v2, v1, v3
 
-    .line 535
     :cond_0
     const/4 v3, 0x0
 
     :goto_1
     if-ge v3, v0, :cond_1
 
-    .line 536
     aget v6, v1, v3
 
     invoke-static {v6}, Landroid/graphics/Color;->alpha(I)I
@@ -1128,28 +1013,22 @@
 
     if-eq v6, v7, :cond_3
 
-    .line 537
     const/4 v4, 0x0
 
-    .line 543
     .end local v3    # "i":I
     :cond_1
     iput v2, p0, Landroid/content/res/ColorStateList;->mDefaultColor:I
 
-    .line 544
     iput-boolean v4, p0, Landroid/content/res/ColorStateList;->mIsOpaque:Z
 
-    .line 545
     return-void
 
-    .line 528
     .restart local v3    # "i":I
     :cond_2
     add-int/lit8 v3, v3, -0x1
 
     goto :goto_0
 
-    .line 535
     :cond_3
     add-int/lit8 v3, v3, 0x1
 
@@ -1161,12 +1040,10 @@
     .param p0, "color"    # I
 
     .prologue
-    .line 106
     sget-object v6, Landroid/content/res/ColorStateList;->sCache:Landroid/util/SparseArray;
 
     monitor-enter v6
 
-    .line 107
     :try_start_0
     sget-object v5, Landroid/content/res/ColorStateList;->sCache:Landroid/util/SparseArray;
 
@@ -1174,11 +1051,9 @@
 
     move-result v4
 
-    .line 108
     .local v4, "index":I
     if-ltz v4, :cond_1
 
-    .line 109
     sget-object v5, Landroid/content/res/ColorStateList;->sCache:Landroid/util/SparseArray;
 
     invoke-virtual {v5, v4}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -1193,26 +1068,21 @@
 
     check-cast v1, Landroid/content/res/ColorStateList;
 
-    .line 110
     .local v1, "cached":Landroid/content/res/ColorStateList;
     if-eqz v1, :cond_0
 
-    .line 111
     monitor-exit v6
 
-    .line 128
     .end local v1    # "cached":Landroid/content/res/ColorStateList;
     :goto_0
     return-object v1
 
-    .line 115
     .restart local v1    # "cached":Landroid/content/res/ColorStateList;
     :cond_0
     sget-object v5, Landroid/content/res/ColorStateList;->sCache:Landroid/util/SparseArray;
 
     invoke-virtual {v5, v4}, Landroid/util/SparseArray;->removeAt(I)V
 
-    .line 119
     .end local v1    # "cached":Landroid/content/res/ColorStateList;
     :cond_1
     sget-object v5, Landroid/content/res/ColorStateList;->sCache:Landroid/util/SparseArray;
@@ -1221,7 +1091,6 @@
 
     move-result v0
 
-    .line 120
     .local v0, "N":I
     add-int/lit8 v3, v0, -0x1
 
@@ -1229,7 +1098,6 @@
     :goto_1
     if-ltz v3, :cond_3
 
-    .line 121
     sget-object v5, Landroid/content/res/ColorStateList;->sCache:Landroid/util/SparseArray;
 
     invoke-virtual {v5, v3}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -1244,18 +1112,15 @@
 
     if-nez v5, :cond_2
 
-    .line 122
     sget-object v5, Landroid/content/res/ColorStateList;->sCache:Landroid/util/SparseArray;
 
     invoke-virtual {v5, v3}, Landroid/util/SparseArray;->removeAt(I)V
 
-    .line 120
     :cond_2
     add-int/lit8 v3, v3, -0x1
 
     goto :goto_1
 
-    .line 126
     :cond_3
     new-instance v2, Landroid/content/res/ColorStateList;
 
@@ -1271,7 +1136,6 @@
 
     invoke-direct {v2, v5, v7}, Landroid/content/res/ColorStateList;-><init>([[I[I)V
 
-    .line 127
     .local v2, "csl":Landroid/content/res/ColorStateList;
     sget-object v5, Landroid/content/res/ColorStateList;->sCache:Landroid/util/SparseArray;
 
@@ -1281,14 +1145,12 @@
 
     invoke-virtual {v5, p0, v7}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 128
     monitor-exit v6
 
     move-object v1, v2
 
     goto :goto_0
 
-    .line 129
     .end local v0    # "N":I
     .end local v2    # "csl":Landroid/content/res/ColorStateList;
     .end local v3    # "i":I
@@ -1310,28 +1172,22 @@
     .param p1, "t"    # Landroid/content/res/Resources$Theme;
 
     .prologue
-    .line 342
     iget-object v7, p0, Landroid/content/res/ColorStateList;->mThemeAttrs:[[I
 
     if-nez v7, :cond_0
 
-    .line 376
     :goto_0
     return-void
 
-    .line 346
     :cond_0
     const/4 v4, 0x0
 
-    .line 348
     .local v4, "hasUnresolvedAttrs":Z
     iget-object v6, p0, Landroid/content/res/ColorStateList;->mThemeAttrs:[[I
 
-    .line 349
     .local v6, "themeAttrsList":[[I
     array-length v0, v6
 
-    .line 350
     .local v0, "N":I
     const/4 v5, 0x0
 
@@ -1339,12 +1195,10 @@
     :goto_1
     if-ge v5, v0, :cond_3
 
-    .line 351
     aget-object v7, v6, v5
 
     if-eqz v7, :cond_2
 
-    .line 352
     aget-object v7, v6, v5
 
     sget-object v8, Lcom/android/internal/R$styleable;->ColorStateListItem:[I
@@ -1353,7 +1207,6 @@
 
     move-result-object v1
 
-    .line 354
     .local v1, "a":Landroid/content/res/TypedArray;
     const/4 v7, 0x0
 
@@ -1365,7 +1218,6 @@
 
     move-result v3
 
-    .line 356
     .local v3, "baseColor":I
     const/4 v7, 0x1
 
@@ -1375,7 +1227,6 @@
 
     move-result v2
 
-    .line 359
     .local v2, "alphaMod":F
     iget-object v7, p0, Landroid/content/res/ColorStateList;->mColors:[I
 
@@ -1385,7 +1236,6 @@
 
     aput v8, v7, v5
 
-    .line 360
     iget v7, p0, Landroid/content/res/ColorStateList;->mChangingConfigurations:I
 
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->getChangingConfigurations()I
@@ -1396,7 +1246,6 @@
 
     iput v7, p0, Landroid/content/res/ColorStateList;->mChangingConfigurations:I
 
-    .line 362
     aget-object v7, v6, v5
 
     invoke-virtual {v1, v7}, Landroid/content/res/TypedArray;->extractThemeAttrs([I)[I
@@ -1405,19 +1254,15 @@
 
     aput-object v7, v6, v5
 
-    .line 363
     aget-object v7, v6, v5
 
     if-eqz v7, :cond_1
 
-    .line 364
     const/4 v4, 0x1
 
-    .line 367
     :cond_1
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 350
     .end local v1    # "a":Landroid/content/res/TypedArray;
     .end local v2    # "alphaMod":F
     .end local v3    # "baseColor":I
@@ -1426,18 +1271,15 @@
 
     goto :goto_1
 
-    .line 371
     :cond_3
     if-nez v4, :cond_4
 
-    .line 372
     const/4 v7, 0x0
 
     check-cast v7, [[I
 
     iput-object v7, p0, Landroid/content/res/ColorStateList;->mThemeAttrs:[[I
 
-    .line 375
     :cond_4
     invoke-direct {p0}, Landroid/content/res/ColorStateList;->onColorsChanged()V
 
@@ -1448,7 +1290,6 @@
     .locals 1
 
     .prologue
-    .line 333
     iget-object v0, p0, Landroid/content/res/ColorStateList;->mThemeAttrs:[[I
 
     if-eqz v0, :cond_0
@@ -1468,7 +1309,6 @@
     .locals 1
 
     .prologue
-    .line 585
     const/4 v0, 0x0
 
     return v0
@@ -1480,12 +1320,10 @@
     .param p2, "defaultColor"    # I
 
     .prologue
-    .line 424
     iget-object v3, p0, Landroid/content/res/ColorStateList;->mStateSpecs:[[I
 
     array-length v1, v3
 
-    .line 425
     .local v1, "setLength":I
     const/4 v0, 0x0
 
@@ -1493,12 +1331,10 @@
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 426
     iget-object v3, p0, Landroid/content/res/ColorStateList;->mStateSpecs:[[I
 
     aget-object v2, v3, v0
 
-    .line 427
     .local v2, "stateSpec":[I
     invoke-static {v2, p1}, Landroid/util/StateSet;->stateSetMatches([I[I)Z
 
@@ -1506,18 +1342,15 @@
 
     if-eqz v3, :cond_1
 
-    .line 428
     iget-object v3, p0, Landroid/content/res/ColorStateList;->mColors:[I
 
     aget p2, v3, v0
 
-    .line 431
     .end local v2    # "stateSpec":[I
     .end local p2    # "defaultColor":I
     :cond_0
     return p2
 
-    .line 425
     .restart local v2    # "stateSpec":[I
     .restart local p2    # "defaultColor":I
     :cond_1
@@ -1530,7 +1363,6 @@
     .locals 1
 
     .prologue
-    .line 462
     iget-object v0, p0, Landroid/content/res/ColorStateList;->mColors:[I
 
     return-object v0
@@ -1540,7 +1372,6 @@
     .locals 1
 
     .prologue
-    .line 440
     iget v0, p0, Landroid/content/res/ColorStateList;->mDefaultColor:I
 
     return v0
@@ -1550,7 +1381,6 @@
     .locals 1
 
     .prologue
-    .line 551
     new-instance v0, Landroid/content/res/ColorStateList$ColorStateListFactory;
 
     invoke-direct {v0, p0}, Landroid/content/res/ColorStateList$ColorStateListFactory;-><init>(Landroid/content/res/ColorStateList;)V
@@ -1562,7 +1392,6 @@
     .locals 1
 
     .prologue
-    .line 451
     iget-object v0, p0, Landroid/content/res/ColorStateList;->mStateSpecs:[[I
 
     return-object v0
@@ -1572,7 +1401,6 @@
     .locals 1
 
     .prologue
-    .line 409
     iget-boolean v0, p0, Landroid/content/res/ColorStateList;->mIsOpaque:Z
 
     return v0
@@ -1584,7 +1412,6 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 398
     iget-object v1, p0, Landroid/content/res/ColorStateList;->mStateSpecs:[[I
 
     array-length v1, v1
@@ -1604,7 +1431,6 @@
     .locals 2
 
     .prologue
-    .line 507
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1699,18 +1525,15 @@
     .param p1, "alpha"    # I
 
     .prologue
-    .line 227
     iget-object v3, p0, Landroid/content/res/ColorStateList;->mColors:[I
 
     array-length v3, v3
 
     new-array v0, v3, [I
 
-    .line 228
     .local v0, "colors":[I
     array-length v2, v0
 
-    .line 229
     .local v2, "len":I
     const/4 v1, 0x0
 
@@ -1718,7 +1541,6 @@
     :goto_0
     if-ge v1, v2, :cond_0
 
-    .line 230
     iget-object v3, p0, Landroid/content/res/ColorStateList;->mColors:[I
 
     aget v3, v3, v1
@@ -1733,12 +1555,10 @@
 
     aput v3, v0, v1
 
-    .line 229
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 233
     :cond_0
     new-instance v3, Landroid/content/res/ColorStateList;
 
@@ -1755,55 +1575,46 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 590
     invoke-virtual {p0}, Landroid/content/res/ColorStateList;->canApplyTheme()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 591
     const-string v2, "ColorStateList"
 
     const-string v3, "Wrote partially-resolved ColorStateList to parcel!"
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 593
     :cond_0
     iget-object v2, p0, Landroid/content/res/ColorStateList;->mStateSpecs:[[I
 
     array-length v0, v2
 
-    .line 594
     .local v0, "N":I
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 595
     const/4 v1, 0x0
 
     .local v1, "i":I
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 596
     iget-object v2, p0, Landroid/content/res/ColorStateList;->mStateSpecs:[[I
 
     aget-object v2, v2, v1
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeIntArray([I)V
 
-    .line 595
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 598
     :cond_1
     iget-object v2, p0, Landroid/content/res/ColorStateList;->mColors:[I
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeIntArray([I)V
 
-    .line 599
     return-void
 .end method

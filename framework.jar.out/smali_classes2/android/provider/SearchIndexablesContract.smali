@@ -98,7 +98,6 @@
 
     const/4 v3, 0x0
 
-    .line 70
     const/4 v0, 0x7
 
     new-array v0, v0, [Ljava/lang/String;
@@ -137,7 +136,6 @@
 
     sput-object v0, Landroid/provider/SearchIndexablesContract;->INDEXABLES_XML_RES_COLUMNS:[Ljava/lang/String;
 
-    .line 94
     const/16 v0, 0xe
 
     new-array v0, v0, [Ljava/lang/String;
@@ -218,7 +216,6 @@
 
     sput-object v0, Landroid/provider/SearchIndexablesContract;->INDEXABLES_RAW_COLUMNS:[Ljava/lang/String;
 
-    .line 132
     new-array v0, v4, [Ljava/lang/String;
 
     const-string v1, "key"
@@ -234,9 +231,7 @@
     .locals 0
 
     .prologue
-    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 237
     return-void
 .end method

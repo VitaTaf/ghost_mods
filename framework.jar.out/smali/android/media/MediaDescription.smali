@@ -50,7 +50,6 @@
     .locals 1
 
     .prologue
-    .line 176
     new-instance v0, Landroid/media/MediaDescription$1;
 
     invoke-direct {v0}, Landroid/media/MediaDescription$1;-><init>()V
@@ -67,38 +66,32 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 72
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 73
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/media/MediaDescription;->mMediaId:Ljava/lang/String;
 
-    .line 74
     invoke-virtual {p1}, Landroid/os/Parcel;->readCharSequence()Ljava/lang/CharSequence;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/media/MediaDescription;->mTitle:Ljava/lang/CharSequence;
 
-    .line 75
     invoke-virtual {p1}, Landroid/os/Parcel;->readCharSequence()Ljava/lang/CharSequence;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/media/MediaDescription;->mSubtitle:Ljava/lang/CharSequence;
 
-    .line 76
     invoke-virtual {p1}, Landroid/os/Parcel;->readCharSequence()Ljava/lang/CharSequence;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/media/MediaDescription;->mDescription:Ljava/lang/CharSequence;
 
-    .line 77
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
 
     move-result-object v0
@@ -107,7 +100,6 @@
 
     iput-object v0, p0, Landroid/media/MediaDescription;->mIcon:Landroid/graphics/Bitmap;
 
-    .line 78
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
 
     move-result-object v0
@@ -116,14 +108,12 @@
 
     iput-object v0, p0, Landroid/media/MediaDescription;->mIconUri:Landroid/net/Uri;
 
-    .line 79
     invoke-virtual {p1}, Landroid/os/Parcel;->readBundle()Landroid/os/Bundle;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/media/MediaDescription;->mExtras:Landroid/os/Bundle;
 
-    .line 80
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
 
     move-result-object v0
@@ -132,7 +122,6 @@
 
     iput-object v0, p0, Landroid/media/MediaDescription;->mMediaUri:Landroid/net/Uri;
 
-    .line 81
     return-void
 .end method
 
@@ -142,7 +131,6 @@
     .param p2, "x1"    # Landroid/media/MediaDescription$1;
 
     .prologue
-    .line 26
     invoke-direct {p0, p1}, Landroid/media/MediaDescription;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -160,34 +148,24 @@
     .param p8, "mediaUri"    # Landroid/net/Uri;
 
     .prologue
-    .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 62
     iput-object p1, p0, Landroid/media/MediaDescription;->mMediaId:Ljava/lang/String;
 
-    .line 63
     iput-object p2, p0, Landroid/media/MediaDescription;->mTitle:Ljava/lang/CharSequence;
 
-    .line 64
     iput-object p3, p0, Landroid/media/MediaDescription;->mSubtitle:Ljava/lang/CharSequence;
 
-    .line 65
     iput-object p4, p0, Landroid/media/MediaDescription;->mDescription:Ljava/lang/CharSequence;
 
-    .line 66
     iput-object p5, p0, Landroid/media/MediaDescription;->mIcon:Landroid/graphics/Bitmap;
 
-    .line 67
     iput-object p6, p0, Landroid/media/MediaDescription;->mIconUri:Landroid/net/Uri;
 
-    .line 68
     iput-object p7, p0, Landroid/media/MediaDescription;->mExtras:Landroid/os/Bundle;
 
-    .line 69
     iput-object p8, p0, Landroid/media/MediaDescription;->mMediaUri:Landroid/net/Uri;
 
-    .line 70
     return-void
 .end method
 
@@ -204,7 +182,6 @@
     .param p9, "x8"    # Landroid/media/MediaDescription$1;
 
     .prologue
-    .line 26
     invoke-direct/range {p0 .. p8}, Landroid/media/MediaDescription;-><init>(Ljava/lang/String;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/graphics/Bitmap;Landroid/net/Uri;Landroid/os/Bundle;Landroid/net/Uri;)V
 
     return-void
@@ -216,7 +193,6 @@
     .locals 1
 
     .prologue
-    .line 156
     const/4 v0, 0x0
 
     return v0
@@ -226,7 +202,6 @@
     .locals 1
 
     .prologue
-    .line 115
     iget-object v0, p0, Landroid/media/MediaDescription;->mDescription:Ljava/lang/CharSequence;
 
     return-object v0
@@ -236,7 +211,6 @@
     .locals 1
 
     .prologue
-    .line 142
     iget-object v0, p0, Landroid/media/MediaDescription;->mExtras:Landroid/os/Bundle;
 
     return-object v0
@@ -246,7 +220,6 @@
     .locals 1
 
     .prologue
-    .line 124
     iget-object v0, p0, Landroid/media/MediaDescription;->mIcon:Landroid/graphics/Bitmap;
 
     return-object v0
@@ -256,7 +229,6 @@
     .locals 1
 
     .prologue
-    .line 133
     iget-object v0, p0, Landroid/media/MediaDescription;->mIconUri:Landroid/net/Uri;
 
     return-object v0
@@ -266,7 +238,6 @@
     .locals 1
 
     .prologue
-    .line 88
     iget-object v0, p0, Landroid/media/MediaDescription;->mMediaId:Ljava/lang/String;
 
     return-object v0
@@ -276,7 +247,6 @@
     .locals 1
 
     .prologue
-    .line 151
     iget-object v0, p0, Landroid/media/MediaDescription;->mMediaUri:Landroid/net/Uri;
 
     return-object v0
@@ -286,7 +256,6 @@
     .locals 1
 
     .prologue
-    .line 106
     iget-object v0, p0, Landroid/media/MediaDescription;->mSubtitle:Ljava/lang/CharSequence;
 
     return-object v0
@@ -296,7 +265,6 @@
     .locals 1
 
     .prologue
-    .line 97
     iget-object v0, p0, Landroid/media/MediaDescription;->mTitle:Ljava/lang/CharSequence;
 
     return-object v0
@@ -306,7 +274,6 @@
     .locals 2
 
     .prologue
-    .line 173
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -354,46 +321,37 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 161
     iget-object v0, p0, Landroid/media/MediaDescription;->mMediaId:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 162
     iget-object v0, p0, Landroid/media/MediaDescription;->mTitle:Ljava/lang/CharSequence;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeCharSequence(Ljava/lang/CharSequence;)V
 
-    .line 163
     iget-object v0, p0, Landroid/media/MediaDescription;->mSubtitle:Ljava/lang/CharSequence;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeCharSequence(Ljava/lang/CharSequence;)V
 
-    .line 164
     iget-object v0, p0, Landroid/media/MediaDescription;->mDescription:Ljava/lang/CharSequence;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeCharSequence(Ljava/lang/CharSequence;)V
 
-    .line 165
     iget-object v0, p0, Landroid/media/MediaDescription;->mIcon:Landroid/graphics/Bitmap;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 166
     iget-object v0, p0, Landroid/media/MediaDescription;->mIconUri:Landroid/net/Uri;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 167
     iget-object v0, p0, Landroid/media/MediaDescription;->mExtras:Landroid/os/Bundle;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
 
-    .line 168
     iget-object v0, p0, Landroid/media/MediaDescription;->mMediaUri:Landroid/net/Uri;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 169
     return-void
 .end method

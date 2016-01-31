@@ -40,7 +40,6 @@
     .locals 1
 
     .prologue
-    .line 71
     new-instance v0, Landroid/net/wifi/WifiChannel$1;
 
     invoke-direct {v0}, Landroid/net/wifi/WifiChannel$1;-><init>()V
@@ -54,7 +53,6 @@
     .locals 0
 
     .prologue
-    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -66,7 +64,6 @@
     .locals 1
 
     .prologue
-    .line 59
     const/4 v0, 0x0
 
     return v0
@@ -80,7 +77,6 @@
 
     const/4 v1, 0x0
 
-    .line 51
     iget v2, p0, Landroid/net/wifi/WifiChannel;->freqMHz:I
 
     const/16 v3, 0x96c
@@ -96,12 +92,10 @@
     :cond_0
     move v0, v1
 
-    .line 53
     :cond_1
     :goto_0
     return v0
 
-    .line 52
     :cond_2
     iget v2, p0, Landroid/net/wifi/WifiChannel;->channelNum:I
 
@@ -125,17 +119,14 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 65
     iget v0, p0, Landroid/net/wifi/WifiChannel;->freqMHz:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 66
     iget v0, p0, Landroid/net/wifi/WifiChannel;->channelNum:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 67
     iget-boolean v0, p0, Landroid/net/wifi/WifiChannel;->isDFS:Z
 
     if-eqz v0, :cond_0
@@ -145,10 +136,8 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 68
     return-void
 
-    .line 67
     :cond_0
     const/4 v0, 0x0
 

@@ -19,10 +19,8 @@
     .locals 0
 
     .prologue
-    .line 213
     invoke-direct {p0}, Ljava/lang/RuntimeException;-><init>()V
 
-    .line 214
     return-void
 .end method
 
@@ -31,9 +29,7 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 217
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 218
     return-void
 .end method

@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 744
     invoke-direct {p0}, Landroid/app/ContextImpl$StaticServiceFetcher;-><init>()V
 
     return-void
@@ -31,21 +30,17 @@
     .locals 3
 
     .prologue
-    .line 746
     const-string/jumbo v1, "vzwconnectivity"
 
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 747
     .local v0, "b":Landroid/os/IBinder;
     if-nez v0, :cond_0
 
-    .line 748
     const/4 v1, 0x0
 
-    .line 750
     :goto_0
     return-object v1
 

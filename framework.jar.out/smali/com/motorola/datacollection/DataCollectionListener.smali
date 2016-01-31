@@ -22,17 +22,14 @@
     .locals 1
 
     .prologue
-    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 39
     new-instance v0, Lcom/motorola/datacollection/DataCollectionListener$1;
 
     invoke-direct {v0, p0}, Lcom/motorola/datacollection/DataCollectionListener$1;-><init>(Lcom/motorola/datacollection/DataCollectionListener;)V
 
     iput-object v0, p0, Lcom/motorola/datacollection/DataCollectionListener;->callback:Lcom/motorola/datacollection/IDataCollectionListener;
 
-    .line 49
     new-instance v0, Lcom/motorola/datacollection/DataCollectionListener$2;
 
     invoke-direct {v0, p0}, Lcom/motorola/datacollection/DataCollectionListener$2;-><init>(Lcom/motorola/datacollection/DataCollectionListener;)V

@@ -32,7 +32,6 @@
     .locals 0
 
     .prologue
-    .line 912
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -47,14 +46,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 915
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
 
     move-result-object v0
 
     check-cast v0, Landroid/service/notification/NotificationRankingUpdate;
 
-    .line 916
     .local v0, "rankingUpdate":Landroid/service/notification/NotificationRankingUpdate;
     new-instance v1, Landroid/service/notification/NotificationListenerService$RankingMap;
 
@@ -68,7 +65,6 @@
     .param p1, "x0"    # Landroid/os/Parcel;
 
     .prologue
-    .line 912
     invoke-virtual {p0, p1}, Landroid/service/notification/NotificationListenerService$RankingMap$1;->createFromParcel(Landroid/os/Parcel;)Landroid/service/notification/NotificationListenerService$RankingMap;
 
     move-result-object v0
@@ -81,7 +77,6 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 921
     new-array v0, p1, [Landroid/service/notification/NotificationListenerService$RankingMap;
 
     return-object v0
@@ -92,7 +87,6 @@
     .param p1, "x0"    # I
 
     .prologue
-    .line 912
     invoke-virtual {p0, p1}, Landroid/service/notification/NotificationListenerService$RankingMap$1;->newArray(I)[Landroid/service/notification/NotificationListenerService$RankingMap;
 
     move-result-object v0

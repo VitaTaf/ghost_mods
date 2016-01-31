@@ -25,13 +25,10 @@
     .param p3, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 1009
     iput-object p1, p0, Landroid/media/RemoteControlClient$EventHandler;->this$0:Landroid/media/RemoteControlClient;
 
-    .line 1010
     invoke-direct {p0, p3}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 1011
     return-void
 .end method
 
@@ -42,12 +39,10 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 1015
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1020
     const-string v0, "RemoteControlClient"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -78,11 +73,9 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1022
     :goto_0
     return-void
 
-    .line 1017
     :pswitch_0
     iget-object v0, p0, Landroid/media/RemoteControlClient$EventHandler;->this$0:Landroid/media/RemoteControlClient;
 
@@ -91,7 +84,6 @@
 
     goto :goto_0
 
-    .line 1015
     :pswitch_data_0
     .packed-switch 0xb
         :pswitch_0

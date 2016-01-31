@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 582
     iput-object p1, p0, Landroid/accounts/ChooseTypeAndAccountActivity$1;->this$0:Landroid/accounts/ChooseTypeAndAccountActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,14 +51,12 @@
     .end annotation
 
     .prologue
-    .line 585
     .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Landroid/accounts/ChooseTypeAndAccountActivity$1;->this$0:Landroid/accounts/ChooseTypeAndAccountActivity;
 
     # setter for: Landroid/accounts/ChooseTypeAndAccountActivity;->mSelectedItemIndex:I
     invoke-static {v0, p3}, Landroid/accounts/ChooseTypeAndAccountActivity;->access$002(Landroid/accounts/ChooseTypeAndAccountActivity;I)I
 
-    .line 587
     iget-object v0, p0, Landroid/accounts/ChooseTypeAndAccountActivity$1;->this$0:Landroid/accounts/ChooseTypeAndAccountActivity;
 
     # getter for: Landroid/accounts/ChooseTypeAndAccountActivity;->mSelectedItemIndex:I
@@ -80,7 +77,6 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 588
     iget-object v1, p0, Landroid/accounts/ChooseTypeAndAccountActivity$1;->this$0:Landroid/accounts/ChooseTypeAndAccountActivity;
 
     iget-object v0, p0, Landroid/accounts/ChooseTypeAndAccountActivity$1;->this$0:Landroid/accounts/ChooseTypeAndAccountActivity;
@@ -108,7 +104,6 @@
     # setter for: Landroid/accounts/ChooseTypeAndAccountActivity;->mSelectedAccountName:Ljava/lang/String;
     invoke-static {v1, v0}, Landroid/accounts/ChooseTypeAndAccountActivity;->access$202(Landroid/accounts/ChooseTypeAndAccountActivity;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 590
     :cond_0
     iget-object v0, p0, Landroid/accounts/ChooseTypeAndAccountActivity$1;->this$0:Landroid/accounts/ChooseTypeAndAccountActivity;
 
@@ -121,6 +116,5 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 591
     return-void
 .end method

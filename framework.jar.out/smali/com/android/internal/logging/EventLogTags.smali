@@ -14,7 +14,6 @@
     .locals 0
 
     .prologue
-    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -26,7 +25,6 @@
     .param p1, "type"    # I
 
     .prologue
-    .line 24
     const/high16 v0, 0x80000
 
     const/4 v1, 0x2
@@ -51,7 +49,6 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 25
     return-void
 .end method
 
@@ -61,7 +58,6 @@
     .param p1, "visible"    # I
 
     .prologue
-    .line 20
     const v0, 0x7ffff
 
     const/4 v1, 0x2
@@ -86,6 +82,5 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 21
     return-void
 .end method

@@ -45,7 +45,6 @@
     .locals 1
 
     .prologue
-    .line 95
     new-instance v0, Landroid/telecom/ParcelableConference$1;
 
     invoke-direct {v0}, Landroid/telecom/ParcelableConference$1;-><init>()V
@@ -73,28 +72,21 @@
     .end annotation
 
     .prologue
-    .line 41
     .local p4, "connectionIds":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 42
     iput-object p1, p0, Landroid/telecom/ParcelableConference;->mPhoneAccount:Landroid/telecom/PhoneAccountHandle;
 
-    .line 43
     iput p2, p0, Landroid/telecom/ParcelableConference;->mState:I
 
-    .line 44
     iput p3, p0, Landroid/telecom/ParcelableConference;->mConnectionCapabilities:I
 
-    .line 45
     iput-object p4, p0, Landroid/telecom/ParcelableConference;->mConnectionIds:Ljava/util/List;
 
-    .line 46
     sget-wide v0, Landroid/telecom/Conference;->CONNECT_TIME_NOT_SPECIFIED:J
 
     iput-wide v0, p0, Landroid/telecom/ParcelableConference;->mConnectTimeMillis:J
 
-    .line 47
     return-void
 .end method
 
@@ -117,14 +109,11 @@
     .end annotation
 
     .prologue
-    .line 55
     .local p4, "connectionIds":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/telecom/ParcelableConference;-><init>(Landroid/telecom/PhoneAccountHandle;IILjava/util/List;)V
 
-    .line 56
     iput-wide p5, p0, Landroid/telecom/ParcelableConference;->mConnectTimeMillis:J
 
-    .line 57
     return-void
 .end method
 
@@ -134,7 +123,6 @@
     .locals 1
 
     .prologue
-    .line 120
     const/4 v0, 0x0
 
     return v0
@@ -144,7 +132,6 @@
     .locals 2
 
     .prologue
-    .line 92
     iget-wide v0, p0, Landroid/telecom/ParcelableConference;->mConnectTimeMillis:J
 
     return-wide v0
@@ -154,7 +141,6 @@
     .locals 1
 
     .prologue
-    .line 84
     iget v0, p0, Landroid/telecom/ParcelableConference;->mConnectionCapabilities:I
 
     return v0
@@ -173,7 +159,6 @@
     .end annotation
 
     .prologue
-    .line 88
     iget-object v0, p0, Landroid/telecom/ParcelableConference;->mConnectionIds:Ljava/util/List;
 
     return-object v0
@@ -183,7 +168,6 @@
     .locals 1
 
     .prologue
-    .line 76
     iget-object v0, p0, Landroid/telecom/ParcelableConference;->mPhoneAccount:Landroid/telecom/PhoneAccountHandle;
 
     return-object v0
@@ -193,7 +177,6 @@
     .locals 1
 
     .prologue
-    .line 80
     iget v0, p0, Landroid/telecom/ParcelableConference;->mState:I
 
     return v0
@@ -203,7 +186,6 @@
     .locals 4
 
     .prologue
-    .line 61
     new-instance v0, Ljava/lang/StringBuffer;
 
     invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
@@ -289,33 +271,27 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 126
     iget-object v0, p0, Landroid/telecom/ParcelableConference;->mPhoneAccount:Landroid/telecom/PhoneAccountHandle;
 
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 127
     iget v0, p0, Landroid/telecom/ParcelableConference;->mState:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 128
     iget v0, p0, Landroid/telecom/ParcelableConference;->mConnectionCapabilities:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 129
     iget-object v0, p0, Landroid/telecom/ParcelableConference;->mConnectionIds:Ljava/util/List;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeList(Ljava/util/List;)V
 
-    .line 130
     iget-wide v0, p0, Landroid/telecom/ParcelableConference;->mConnectTimeMillis:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 131
     return-void
 .end method

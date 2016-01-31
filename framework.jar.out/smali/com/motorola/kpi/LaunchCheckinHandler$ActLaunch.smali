@@ -32,18 +32,13 @@
     .param p3, "ms"    # J
 
     .prologue
-    .line 226
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 227
     iput-object p1, p0, Lcom/motorola/kpi/LaunchCheckinHandler$ActLaunch;->name:Ljava/lang/String;
 
-    .line 228
     iput-object p2, p0, Lcom/motorola/kpi/LaunchCheckinHandler$ActLaunch;->proc:Lcom/motorola/kpi/LaunchCheckinHandler$ProcLaunch;
 
-    .line 229
     iput-wide p3, p0, Lcom/motorola/kpi/LaunchCheckinHandler$ActLaunch;->warmTime:J
 
-    .line 230
     return-void
 .end method

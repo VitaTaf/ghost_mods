@@ -46,15 +46,12 @@
     .locals 1
 
     .prologue
-    .line 42
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
-    .line 43
     const-string v0, "com.android.ims.internal.IImsConfig"
 
     invoke-virtual {p0, p0, v0}, Lcom/android/ims/internal/IImsConfig$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
-    .line 44
     return-void
 .end method
 
@@ -63,17 +60,13 @@
     .param p0, "obj"    # Landroid/os/IBinder;
 
     .prologue
-    .line 51
     if-nez p0, :cond_0
 
-    .line 52
     const/4 v0, 0x0
 
-    .line 58
     :goto_0
     return-object v0
 
-    .line 54
     :cond_0
     const-string v1, "com.android.ims.internal.IImsConfig"
 
@@ -81,7 +74,6 @@
 
     move-result-object v0
 
-    .line 55
     .local v0, "iin":Landroid/os/IInterface;
     if-eqz v0, :cond_1
 
@@ -89,12 +81,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 56
     check-cast v0, Lcom/android/ims/internal/IImsConfig;
 
     goto :goto_0
 
-    .line 58
     :cond_1
     new-instance v0, Lcom/android/ims/internal/IImsConfig$Stub$Proxy;
 
@@ -110,7 +100,6 @@
     .locals 0
 
     .prologue
-    .line 62
     return-object p0
 .end method
 
@@ -129,10 +118,8 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 66
     sparse-switch p1, :sswitch_data_0
 
-    .line 152
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v6
@@ -140,7 +127,6 @@
     :goto_0
     return v6
 
-    .line 70
     :sswitch_0
     const-string v5, "com.android.ims.internal.IImsConfig"
 
@@ -148,33 +134,27 @@
 
     goto :goto_0
 
-    .line 75
     :sswitch_1
     const-string v5, "com.android.ims.internal.IImsConfig"
 
     invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 77
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 78
     .local v0, "_arg0":I
     invoke-virtual {p0, v0}, Lcom/android/ims/internal/IImsConfig$Stub;->getProvisionedValue(I)I
 
     move-result v4
 
-    .line 79
     .local v4, "_result":I
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 80
     invoke-virtual {p3, v4}, Landroid/os/Parcel;->writeInt(I)V
 
     goto :goto_0
 
-    .line 85
     .end local v0    # "_arg0":I
     .end local v4    # "_result":I
     :sswitch_2
@@ -182,27 +162,22 @@
 
     invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 87
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 88
     .restart local v0    # "_arg0":I
     invoke-virtual {p0, v0}, Lcom/android/ims/internal/IImsConfig$Stub;->getProvisionedStringValue(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 89
     .local v4, "_result":Ljava/lang/String;
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 90
     invoke-virtual {p3, v4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 95
     .end local v0    # "_arg0":I
     .end local v4    # "_result":Ljava/lang/String;
     :sswitch_3
@@ -210,33 +185,27 @@
 
     invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 97
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 99
     .restart local v0    # "_arg0":I
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 100
     .local v1, "_arg1":I
     invoke-virtual {p0, v0, v1}, Lcom/android/ims/internal/IImsConfig$Stub;->setProvisionedValue(II)I
 
     move-result v4
 
-    .line 101
     .local v4, "_result":I
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 102
     invoke-virtual {p3, v4}, Landroid/os/Parcel;->writeInt(I)V
 
     goto :goto_0
 
-    .line 107
     .end local v0    # "_arg0":I
     .end local v1    # "_arg1":I
     .end local v4    # "_result":I
@@ -245,33 +214,27 @@
 
     invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 109
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 111
     .restart local v0    # "_arg0":I
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 112
     .local v1, "_arg1":Ljava/lang/String;
     invoke-virtual {p0, v0, v1}, Lcom/android/ims/internal/IImsConfig$Stub;->setProvisionedStringValue(ILjava/lang/String;)I
 
     move-result v4
 
-    .line 113
     .restart local v4    # "_result":I
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 114
     invoke-virtual {p3, v4}, Landroid/os/Parcel;->writeInt(I)V
 
     goto :goto_0
 
-    .line 119
     .end local v0    # "_arg0":I
     .end local v1    # "_arg1":Ljava/lang/String;
     .end local v4    # "_result":I
@@ -280,18 +243,15 @@
 
     invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 121
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 123
     .restart local v0    # "_arg0":I
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 125
     .local v1, "_arg1":I
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
@@ -301,13 +261,11 @@
 
     move-result-object v2
 
-    .line 126
     .local v2, "_arg2":Lcom/android/ims/ImsConfigListener;
     invoke-virtual {p0, v0, v1, v2}, Lcom/android/ims/internal/IImsConfig$Stub;->getFeatureValue(IILcom/android/ims/ImsConfigListener;)V
 
     goto :goto_0
 
-    .line 131
     .end local v0    # "_arg0":I
     .end local v1    # "_arg1":I
     .end local v2    # "_arg2":Lcom/android/ims/ImsConfigListener;
@@ -316,24 +274,20 @@
 
     invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 133
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 135
     .restart local v0    # "_arg0":I
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 137
     .restart local v1    # "_arg1":I
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 139
     .local v2, "_arg2":I
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
@@ -343,13 +297,11 @@
 
     move-result-object v3
 
-    .line 140
     .local v3, "_arg3":Lcom/android/ims/ImsConfigListener;
     invoke-virtual {p0, v0, v1, v2, v3}, Lcom/android/ims/internal/IImsConfig$Stub;->setFeatureValue(IIILcom/android/ims/ImsConfigListener;)V
 
     goto/16 :goto_0
 
-    .line 145
     .end local v0    # "_arg0":I
     .end local v1    # "_arg1":I
     .end local v2    # "_arg2":I
@@ -359,16 +311,13 @@
 
     invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 146
     invoke-virtual {p0}, Lcom/android/ims/internal/IImsConfig$Stub;->getVolteProvisioned()Z
 
     move-result v4
 
-    .line 147
     .local v4, "_result":Z
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 148
     if-eqz v4, :cond_0
 
     move v5, v6
@@ -383,7 +332,6 @@
 
     goto :goto_1
 
-    .line 66
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1

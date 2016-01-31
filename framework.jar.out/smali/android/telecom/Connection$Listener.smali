@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 242
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,7 +33,6 @@
     .param p3, "presentation"    # I
 
     .prologue
-    .line 244
     return-void
 .end method
 
@@ -44,7 +42,6 @@
     .param p2, "isVoip"    # Z
 
     .prologue
-    .line 256
     return-void
 .end method
 
@@ -55,7 +52,6 @@
     .param p3, "presentation"    # I
 
     .prologue
-    .line 246
     return-void
 .end method
 
@@ -65,7 +61,6 @@
     .param p2, "conference"    # Landroid/telecom/Conference;
 
     .prologue
-    .line 260
     return-void
 .end method
 
@@ -84,7 +79,6 @@
     .end annotation
 
     .prologue
-    .line 263
     .local p2, "participants":Ljava/util/List;, "Ljava/util/List<Landroid/telecom/ConferenceParticipant;>;"
     return-void
 .end method
@@ -93,7 +87,6 @@
     .locals 0
 
     .prologue
-    .line 264
     return-void
 .end method
 
@@ -112,7 +105,6 @@
     .end annotation
 
     .prologue
-    .line 259
     .local p2, "conferenceables":Ljava/util/List;, "Ljava/util/List<Landroid/telecom/IConferenceable;>;"
     return-void
 .end method
@@ -123,7 +115,6 @@
     .param p2, "capabilities"    # I
 
     .prologue
-    .line 253
     return-void
 .end method
 
@@ -132,7 +123,6 @@
     .param p1, "c"    # Landroid/telecom/Connection;
 
     .prologue
-    .line 252
     return-void
 .end method
 
@@ -142,7 +132,6 @@
     .param p2, "disconnectCause"    # Landroid/telecom/DisconnectCause;
 
     .prologue
-    .line 248
     return-void
 .end method
 
@@ -152,7 +141,6 @@
     .param p2, "nextChar"    # C
 
     .prologue
-    .line 250
     return-void
 .end method
 
@@ -162,7 +150,6 @@
     .param p2, "remaining"    # Ljava/lang/String;
 
     .prologue
-    .line 249
     return-void
 .end method
 
@@ -172,7 +159,6 @@
     .param p2, "ringback"    # Z
 
     .prologue
-    .line 251
     return-void
 .end method
 
@@ -182,7 +168,6 @@
     .param p2, "state"    # I
 
     .prologue
-    .line 243
     return-void
 .end method
 
@@ -192,7 +177,6 @@
     .param p2, "statusHints"    # Landroid/telecom/StatusHints;
 
     .prologue
-    .line 257
     return-void
 .end method
 
@@ -202,7 +186,6 @@
     .param p2, "videoProvider"    # Landroid/telecom/Connection$VideoProvider;
 
     .prologue
-    .line 255
     return-void
 .end method
 
@@ -212,6 +195,5 @@
     .param p2, "videoState"    # I
 
     .prologue
-    .line 247
     return-void
 .end method

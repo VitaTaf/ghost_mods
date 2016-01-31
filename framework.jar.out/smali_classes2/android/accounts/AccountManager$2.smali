@@ -37,7 +37,6 @@
     .param p2, "x0"    # Landroid/os/Handler;
 
     .prologue
-    .line 577
     .local p3, "x1":Landroid/accounts/AccountManagerCallback;, "Landroid/accounts/AccountManagerCallback<Ljava/lang/Boolean;>;"
     iput-object p1, p0, Landroid/accounts/AccountManager$2;->this$0:Landroid/accounts/AccountManager;
 
@@ -62,7 +61,6 @@
     .end annotation
 
     .prologue
-    .line 582
     const-string v0, "booleanResult"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
@@ -71,7 +69,6 @@
 
     if-nez v0, :cond_0
 
-    .line 583
     new-instance v0, Landroid/accounts/AuthenticatorException;
 
     const-string v1, "no result in response"
@@ -80,7 +77,6 @@
 
     throw v0
 
-    .line 585
     :cond_0
     const-string v0, "booleanResult"
 
@@ -105,7 +101,6 @@
     .end annotation
 
     .prologue
-    .line 577
     invoke-virtual {p0, p1}, Landroid/accounts/AccountManager$2;->bundleToResult(Landroid/os/Bundle;)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -122,7 +117,6 @@
     .end annotation
 
     .prologue
-    .line 579
     iget-object v0, p0, Landroid/accounts/AccountManager$2;->this$0:Landroid/accounts/AccountManager;
 
     # getter for: Landroid/accounts/AccountManager;->mService:Landroid/accounts/IAccountManager;
@@ -138,6 +132,5 @@
 
     invoke-interface {v0, v1, v2, v3}, Landroid/accounts/IAccountManager;->hasFeatures(Landroid/accounts/IAccountManagerResponse;Landroid/accounts/Account;[Ljava/lang/String;)V
 
-    .line 580
     return-void
 .end method

@@ -33,7 +33,6 @@
     .locals 0
 
     .prologue
-    .line 541
     iput-object p1, p0, Lcom/motorola/android/wifi/WifiMetrics$1;->this$0:Lcom/motorola/android/wifi/WifiMetrics;
 
     iput-object p2, p0, Lcom/motorola/android/wifi/WifiMetrics$1;->val$id:Ljava/lang/String;
@@ -57,18 +56,15 @@
     .locals 22
 
     .prologue
-    .line 544
     :try_start_0
     # invokes: Lcom/motorola/android/wifi/WifiMetrics;->now()J
     invoke-static {}, Lcom/motorola/android/wifi/WifiMetrics;->access$100()J
 
     move-result-wide v18
 
-    .line 548
     .local v18, "timestamp":J
     const-string v5, "1.0.0"
 
-    .line 549
     .local v5, "version":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -82,10 +78,8 @@
 
     if-eqz v3, :cond_0
 
-    .line 550
     const-string v5, "1.1"
 
-    .line 553
     :cond_0
     new-instance v2, Lcom/motorola/android/provider/CheckinEvent;
 
@@ -103,7 +97,6 @@
 
     invoke-direct/range {v2 .. v7}, Lcom/motorola/android/provider/CheckinEvent;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
 
-    .line 555
     .local v2, "event":Lcom/motorola/android/provider/CheckinEvent;
     move-object/from16 v0, p0
 
@@ -113,7 +106,6 @@
 
     move-result-object v15
 
-    .line 556
     .local v15, "ssid":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -123,7 +115,6 @@
 
     move-result-object v8
 
-    .line 557
     .local v8, "bssid":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -133,7 +124,6 @@
 
     move-result-object v16
 
-    .line 558
     .local v16, "supplicant_state":Landroid/net/wifi/SupplicantState;
     move-object/from16 v0, p0
 
@@ -143,7 +133,6 @@
 
     move-result v13
 
-    .line 559
     .local v13, "rssi":I
     move-object/from16 v0, p0
 
@@ -153,37 +142,29 @@
 
     move-result v12
 
-    .line 563
     .local v12, "link_speed":I
     if-nez v15, :cond_3
 
-    .line 564
     const-string/jumbo v15, "none"
 
-    .line 569
     :goto_0
     const-string/jumbo v3, "ssid"
 
     invoke-virtual {v2, v3, v15}, Lcom/motorola/android/provider/CheckinEvent;->setValue(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 573
     if-nez v8, :cond_6
 
-    .line 574
     const-string/jumbo v8, "none"
 
-    .line 577
     :goto_1
     const-string v3, "bssid_prefix"
 
     invoke-virtual {v2, v3, v8}, Lcom/motorola/android/provider/CheckinEvent;->setValue(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 581
     new-instance v14, Ljava/lang/StringBuffer;
 
     invoke-direct {v14}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 582
     .local v14, "sb":Ljava/lang/StringBuffer;
     if-nez v16, :cond_1
 
@@ -195,7 +176,6 @@
 
     invoke-virtual {v14, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/Object;)Ljava/lang/StringBuffer;
 
-    .line 583
     const-string/jumbo v3, "supplicant"
 
     invoke-virtual {v14}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
@@ -204,17 +184,14 @@
 
     invoke-virtual {v2, v3, v4}, Lcom/motorola/android/provider/CheckinEvent;->setValue(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 588
     const-string/jumbo v3, "rssi"
 
     invoke-virtual {v2, v3, v13}, Lcom/motorola/android/provider/CheckinEvent;->setValue(Ljava/lang/String;I)V
 
-    .line 592
     const-string v3, "link_speed"
 
     invoke-virtual {v2, v3, v12}, Lcom/motorola/android/provider/CheckinEvent;->setValue(Ljava/lang/String;I)V
 
-    .line 597
     const-string v3, "bluetooth"
 
     move-object/from16 v0, p0
@@ -223,7 +200,6 @@
 
     invoke-virtual {v2, v3, v4}, Lcom/motorola/android/provider/CheckinEvent;->setValue(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 601
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/motorola/android/wifi/WifiMetrics$1;->val$id:Ljava/lang/String;
@@ -236,7 +212,6 @@
 
     if-eqz v3, :cond_2
 
-    .line 602
     const-string/jumbo v3, "reason_code"
 
     # getter for: Lcom/motorola/android/wifi/WifiMetrics;->mWifiStats:Lcom/motorola/android/wifi/WifiMetrics$WifiStats;
@@ -248,7 +223,6 @@
 
     invoke-virtual {v2, v3, v4}, Lcom/motorola/android/provider/CheckinEvent;->setValue(Ljava/lang/String;I)V
 
-    .line 603
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/motorola/android/wifi/WifiMetrics$1;->this$0:Lcom/motorola/android/wifi/WifiMetrics;
@@ -273,7 +247,6 @@
 
     if-eqz v3, :cond_7
 
-    .line 604
     # invokes: Lcom/motorola/android/wifi/WifiMetrics;->now()J
     invoke-static {}, Lcom/motorola/android/wifi/WifiMetrics;->access$100()J
 
@@ -290,7 +263,6 @@
 
     sub-long v10, v6, v20
 
-    .line 605
     .local v10, "duration":J
     const-string/jumbo v3, "totalduration"
 
@@ -300,7 +272,6 @@
 
     invoke-virtual {v2, v3, v6, v7}, Lcom/motorola/android/provider/CheckinEvent;->setValue(Ljava/lang/String;J)V
 
-    .line 606
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/motorola/android/wifi/WifiMetrics$1;->this$0:Lcom/motorola/android/wifi/WifiMetrics;
@@ -310,7 +281,6 @@
     # setter for: Lcom/motorola/android/wifi/WifiMetrics;->isConnectLogged:Z
     invoke-static {v3, v4}, Lcom/motorola/android/wifi/WifiMetrics;->access$302(Lcom/motorola/android/wifi/WifiMetrics;Z)Z
 
-    .line 607
     # getter for: Lcom/motorola/android/wifi/WifiMetrics;->mWifiStats:Lcom/motorola/android/wifi/WifiMetrics$WifiStats;
     invoke-static {}, Lcom/motorola/android/wifi/WifiMetrics;->access$200()Lcom/motorola/android/wifi/WifiMetrics$WifiStats;
 
@@ -320,7 +290,6 @@
 
     iput-wide v6, v3, Lcom/motorola/android/wifi/WifiMetrics$WifiStats;->connectedTime:J
 
-    .line 618
     .end local v10    # "duration":J
     :cond_2
     :goto_2
@@ -330,7 +299,6 @@
 
     invoke-virtual {v2, v3}, Lcom/motorola/android/provider/CheckinEvent;->publish(Ljava/lang/Object;)V
 
-    .line 619
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/motorola/android/wifi/WifiMetrics$1;->this$0:Lcom/motorola/android/wifi/WifiMetrics;
@@ -348,7 +316,6 @@
     # setter for: Lcom/motorola/android/wifi/WifiMetrics;->isConnectLogged:Z
     invoke-static {v3, v4}, Lcom/motorola/android/wifi/WifiMetrics;->access$302(Lcom/motorola/android/wifi/WifiMetrics;Z)Z
 
-    .line 623
     .end local v2    # "event":Lcom/motorola/android/provider/CheckinEvent;
     .end local v5    # "version":Ljava/lang/String;
     .end local v8    # "bssid":Ljava/lang/String;
@@ -360,7 +327,6 @@
     :goto_3
     return-void
 
-    .line 565
     .restart local v2    # "event":Lcom/motorola/android/provider/CheckinEvent;
     .restart local v5    # "version":Ljava/lang/String;
     .restart local v8    # "bssid":Ljava/lang/String;
@@ -386,19 +352,16 @@
 
     if-eqz v3, :cond_5
 
-    .line 566
     :cond_4
     const-string v15, "carrier_ssid"
 
     goto/16 :goto_0
 
-    .line 568
     :cond_5
     const-string/jumbo v15, "private_ssid"
 
     goto/16 :goto_0
 
-    .line 576
     :cond_6
     const/4 v3, 0x0
 
@@ -410,7 +373,6 @@
 
     goto/16 :goto_1
 
-    .line 609
     .end local v16    # "supplicant_state":Landroid/net/wifi/SupplicantState;
     .restart local v14    # "sb":Ljava/lang/StringBuffer;
     :cond_7
@@ -424,7 +386,6 @@
 
     goto :goto_2
 
-    .line 620
     .end local v2    # "event":Lcom/motorola/android/provider/CheckinEvent;
     .end local v5    # "version":Ljava/lang/String;
     .end local v8    # "bssid":Ljava/lang/String;
@@ -436,7 +397,6 @@
     :catch_0
     move-exception v9
 
-    .line 621
     .local v9, "e":Ljava/lang/Exception;
     const-string v3, "WifiMetrics"
 

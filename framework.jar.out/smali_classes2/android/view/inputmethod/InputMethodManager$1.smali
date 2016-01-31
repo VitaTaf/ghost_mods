@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 564
     iput-object p1, p0, Landroid/view/inputmethod/InputMethodManager$1;->this$0:Landroid/view/inputmethod/InputMethodManager;
 
     invoke-direct {p0}, Lcom/android/internal/view/IInputMethodClient$Stub;-><init>()V
@@ -42,31 +41,24 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 569
     new-instance v1, Ljava/util/concurrent/CountDownLatch;
 
     invoke-direct {v1, v5}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
 
-    .line 570
     .local v1, "latch":Ljava/util/concurrent/CountDownLatch;
     invoke-static {}, Lcom/android/internal/os/SomeArgs;->obtain()Lcom/android/internal/os/SomeArgs;
 
     move-result-object v2
 
-    .line 571
     .local v2, "sargs":Lcom/android/internal/os/SomeArgs;
     iput-object p1, v2, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
-    .line 572
     iput-object p2, v2, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
-    .line 573
     iput-object p3, v2, Lcom/android/internal/os/SomeArgs;->arg3:Ljava/lang/Object;
 
-    .line 574
     iput-object v1, v2, Lcom/android/internal/os/SomeArgs;->arg4:Ljava/lang/Object;
 
-    .line 575
     iget-object v3, p0, Landroid/view/inputmethod/InputMethodManager$1;->this$0:Landroid/view/inputmethod/InputMethodManager;
 
     iget-object v3, v3, Landroid/view/inputmethod/InputMethodManager;->mH:Landroid/view/inputmethod/InputMethodManager$H;
@@ -81,7 +73,6 @@
 
     invoke-virtual {v3, v4}, Landroid/view/inputmethod/InputMethodManager$H;->sendMessage(Landroid/os/Message;)Z
 
-    .line 577
     const-wide/16 v4, 0x5
 
     :try_start_0
@@ -93,23 +84,19 @@
 
     if-nez v3, :cond_0
 
-    .line 578
     const-string v3, "Timeout waiting for dump"
 
     invoke-virtual {p2, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 583
     :cond_0
     :goto_0
     return-void
 
-    .line 580
     :catch_0
     move-exception v0
 
-    .line 581
     .local v0, "e":Ljava/lang/InterruptedException;
     const-string v3, "Interrupted waiting for dump"
 
@@ -123,7 +110,6 @@
     .param p1, "res"    # Lcom/android/internal/view/InputBindResult;
 
     .prologue
-    .line 591
     iget-object v0, p0, Landroid/view/inputmethod/InputMethodManager$1;->this$0:Landroid/view/inputmethod/InputMethodManager;
 
     iget-object v0, v0, Landroid/view/inputmethod/InputMethodManager;->mH:Landroid/view/inputmethod/InputMethodManager$H;
@@ -140,7 +126,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/inputmethod/InputMethodManager$H;->sendMessage(Landroid/os/Message;)Z
 
-    .line 592
     return-void
 .end method
 
@@ -149,7 +134,6 @@
     .param p1, "sequence"    # I
 
     .prologue
-    .line 596
     iget-object v0, p0, Landroid/view/inputmethod/InputMethodManager$1;->this$0:Landroid/view/inputmethod/InputMethodManager;
 
     iget-object v0, v0, Landroid/view/inputmethod/InputMethodManager;->mH:Landroid/view/inputmethod/InputMethodManager$H;
@@ -168,7 +152,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/inputmethod/InputMethodManager$H;->sendMessage(Landroid/os/Message;)Z
 
-    .line 597
     return-void
 .end method
 
@@ -179,7 +162,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 601
     iget-object v0, p0, Landroid/view/inputmethod/InputMethodManager$1;->this$0:Landroid/view/inputmethod/InputMethodManager;
 
     iget-object v2, v0, Landroid/view/inputmethod/InputMethodManager;->mH:Landroid/view/inputmethod/InputMethodManager$H;
@@ -201,13 +183,11 @@
 
     invoke-virtual {v2, v0}, Landroid/view/inputmethod/InputMethodManager$H;->sendMessage(Landroid/os/Message;)Z
 
-    .line 602
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 601
     goto :goto_0
 .end method
 
@@ -216,7 +196,6 @@
     .param p1, "sequenceNumber"    # I
 
     .prologue
-    .line 606
     iget-object v0, p0, Landroid/view/inputmethod/InputMethodManager$1;->this$0:Landroid/view/inputmethod/InputMethodManager;
 
     iget-object v0, v0, Landroid/view/inputmethod/InputMethodManager;->mH:Landroid/view/inputmethod/InputMethodManager$H;
@@ -235,7 +214,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/inputmethod/InputMethodManager$H;->sendMessage(Landroid/os/Message;)Z
 
-    .line 608
     return-void
 .end method
 
@@ -244,6 +222,5 @@
     .param p1, "state"    # Z
 
     .prologue
-    .line 587
     return-void
 .end method

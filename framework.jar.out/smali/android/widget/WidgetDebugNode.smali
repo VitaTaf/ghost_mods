@@ -64,22 +64,18 @@
     .locals 1
 
     .prologue
-    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 48
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/widget/WidgetDebugNode;->attributes:Ljava/util/HashMap;
 
-    .line 49
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/widget/WidgetDebugNode;->nodeLevel:I
 
-    .line 50
     return-void
 .end method
 
@@ -93,7 +89,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 233
     iget-object v1, p0, Landroid/widget/WidgetDebugNode;->attributes:Ljava/util/HashMap;
 
     if-eqz v1, :cond_0
@@ -102,12 +97,10 @@
 
     if-nez p2, :cond_1
 
-    .line 240
     :cond_0
     :goto_0
     return v0
 
-    .line 237
     :cond_1
     iget-object v1, p0, Landroid/widget/WidgetDebugNode;->attributes:Ljava/util/HashMap;
 
@@ -117,7 +110,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 240
     const/4 v0, 0x1
 
     goto :goto_0
@@ -127,7 +119,6 @@
     .locals 1
 
     .prologue
-    .line 205
     const-string v0, "CLASS_NAME"
 
     invoke-virtual {p0, v0}, Landroid/widget/WidgetDebugNode;->getProperty(Ljava/lang/String;)Ljava/lang/String;
@@ -141,7 +132,6 @@
     .locals 1
 
     .prologue
-    .line 170
     const-string v0, "HAS_FOCUS"
 
     invoke-virtual {p0, v0}, Landroid/widget/WidgetDebugNode;->getProperty(Ljava/lang/String;)Ljava/lang/String;
@@ -155,7 +145,6 @@
     .locals 1
 
     .prologue
-    .line 71
     const-string v0, "HASH_CODE"
 
     invoke-virtual {p0, v0}, Landroid/widget/WidgetDebugNode;->getProperty(Ljava/lang/String;)Ljava/lang/String;
@@ -169,7 +158,6 @@
     .locals 1
 
     .prologue
-    .line 93
     const-string v0, "IMAGE_DATA"
 
     invoke-virtual {p0, v0}, Landroid/widget/WidgetDebugNode;->getProperty(Ljava/lang/String;)Ljava/lang/String;
@@ -183,7 +171,6 @@
     .locals 1
 
     .prologue
-    .line 137
     const-string v0, "IS_CLICKABLE"
 
     invoke-virtual {p0, v0}, Landroid/widget/WidgetDebugNode;->getProperty(Ljava/lang/String;)Ljava/lang/String;
@@ -197,7 +184,6 @@
     .locals 1
 
     .prologue
-    .line 104
     const-string v0, "IS_ENABLED"
 
     invoke-virtual {p0, v0}, Landroid/widget/WidgetDebugNode;->getProperty(Ljava/lang/String;)Ljava/lang/String;
@@ -211,7 +197,6 @@
     .locals 1
 
     .prologue
-    .line 115
     const-string v0, "IS_FOCUSED"
 
     invoke-virtual {p0, v0}, Landroid/widget/WidgetDebugNode;->getProperty(Ljava/lang/String;)Ljava/lang/String;
@@ -225,7 +210,6 @@
     .locals 1
 
     .prologue
-    .line 126
     const-string v0, "IS_SELECTED"
 
     invoke-virtual {p0, v0}, Landroid/widget/WidgetDebugNode;->getProperty(Ljava/lang/String;)Ljava/lang/String;
@@ -239,7 +223,6 @@
     .locals 1
 
     .prologue
-    .line 61
     iget v0, p0, Landroid/widget/WidgetDebugNode;->nodeLevel:I
 
     return v0
@@ -252,15 +235,12 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 251
     if-nez p1, :cond_1
 
-    .line 257
     :cond_0
     :goto_0
     return-object v0
 
-    .line 254
     :cond_1
     iget-object v1, p0, Landroid/widget/WidgetDebugNode;->attributes:Ljava/util/HashMap;
 
@@ -270,7 +250,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 255
     iget-object v0, p0, Landroid/widget/WidgetDebugNode;->attributes:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -286,7 +265,6 @@
     .locals 1
 
     .prologue
-    .line 82
     const-string v0, "TEXT_DATA"
 
     invoke-virtual {p0, v0}, Landroid/widget/WidgetDebugNode;->getProperty(Ljava/lang/String;)Ljava/lang/String;
@@ -300,7 +278,6 @@
     .locals 1
 
     .prologue
-    .line 216
     const-string v0, "UNIQUE_IDENTIFIER"
 
     invoke-virtual {p0, v0}, Landroid/widget/WidgetDebugNode;->getProperty(Ljava/lang/String;)Ljava/lang/String;
@@ -314,7 +291,6 @@
     .locals 1
 
     .prologue
-    .line 159
     const-string v0, "VIEW_HEIGHT"
 
     invoke-virtual {p0, v0}, Landroid/widget/WidgetDebugNode;->getProperty(Ljava/lang/String;)Ljava/lang/String;
@@ -328,7 +304,6 @@
     .locals 1
 
     .prologue
-    .line 148
     const-string v0, "VIEW_WIDTH"
 
     invoke-virtual {p0, v0}, Landroid/widget/WidgetDebugNode;->getProperty(Ljava/lang/String;)Ljava/lang/String;
@@ -342,7 +317,6 @@
     .locals 1
 
     .prologue
-    .line 181
     const-string v0, "POSITION_ON_X_AXIS"
 
     invoke-virtual {p0, v0}, Landroid/widget/WidgetDebugNode;->getProperty(Ljava/lang/String;)Ljava/lang/String;
@@ -356,7 +330,6 @@
     .locals 1
 
     .prologue
-    .line 193
     const-string v0, "POSITION_ON_Y_AXIS"
 
     invoke-virtual {p0, v0}, Landroid/widget/WidgetDebugNode;->getProperty(Ljava/lang/String;)Ljava/lang/String;
@@ -371,13 +344,10 @@
     .param p1, "className"    # Ljava/lang/String;
 
     .prologue
-    .line 198
     if-nez p1, :cond_0
 
-    .line 199
     const/4 v0, 0x0
 
-    .line 201
     :goto_0
     return v0
 
@@ -396,13 +366,10 @@
     .param p1, "hasFocus"    # Ljava/lang/String;
 
     .prologue
-    .line 163
     if-nez p1, :cond_0
 
-    .line 164
     const/4 v0, 0x0
 
-    .line 166
     :goto_0
     return v0
 
@@ -421,13 +388,10 @@
     .param p1, "hashCode"    # Ljava/lang/String;
 
     .prologue
-    .line 65
     if-nez p1, :cond_0
 
-    .line 66
     const/4 v0, 0x0
 
-    .line 67
     :goto_0
     return v0
 
@@ -446,13 +410,10 @@
     .param p1, "image"    # Ljava/lang/String;
 
     .prologue
-    .line 86
     if-nez p1, :cond_0
 
-    .line 87
     const/4 v0, 0x0
 
-    .line 89
     :goto_0
     return v0
 
@@ -471,13 +432,10 @@
     .param p1, "isClickable"    # Ljava/lang/String;
 
     .prologue
-    .line 130
     if-nez p1, :cond_0
 
-    .line 131
     const/4 v0, 0x0
 
-    .line 133
     :goto_0
     return v0
 
@@ -496,13 +454,10 @@
     .param p1, "isEnabled"    # Ljava/lang/String;
 
     .prologue
-    .line 97
     if-nez p1, :cond_0
 
-    .line 98
     const/4 v0, 0x0
 
-    .line 100
     :goto_0
     return v0
 
@@ -521,13 +476,10 @@
     .param p1, "isFocused"    # Ljava/lang/String;
 
     .prologue
-    .line 108
     if-nez p1, :cond_0
 
-    .line 109
     const/4 v0, 0x0
 
-    .line 111
     :goto_0
     return v0
 
@@ -546,13 +498,10 @@
     .param p1, "isSelected"    # Ljava/lang/String;
 
     .prologue
-    .line 119
     if-nez p1, :cond_0
 
-    .line 120
     const/4 v0, 0x0
 
-    .line 122
     :goto_0
     return v0
 
@@ -571,21 +520,16 @@
     .param p1, "level"    # I
 
     .prologue
-    .line 53
     if-gez p1, :cond_0
 
-    .line 54
     const/4 v0, 0x0
 
-    .line 57
     :goto_0
     return v0
 
-    .line 56
     :cond_0
     iput p1, p0, Landroid/widget/WidgetDebugNode;->nodeLevel:I
 
-    .line 57
     const/4 v0, 0x1
 
     goto :goto_0
@@ -596,13 +540,10 @@
     .param p1, "text"    # Ljava/lang/String;
 
     .prologue
-    .line 75
     if-nez p1, :cond_0
 
-    .line 76
     const/4 v0, 0x0
 
-    .line 78
     :goto_0
     return v0
 
@@ -621,13 +562,10 @@
     .param p1, "uniqueID"    # Ljava/lang/String;
 
     .prologue
-    .line 209
     if-nez p1, :cond_0
 
-    .line 210
     const/4 v0, 0x0
 
-    .line 212
     :goto_0
     return v0
 
@@ -646,13 +584,10 @@
     .param p1, "viewHeight"    # Ljava/lang/String;
 
     .prologue
-    .line 152
     if-nez p1, :cond_0
 
-    .line 153
     const/4 v0, 0x0
 
-    .line 155
     :goto_0
     return v0
 
@@ -671,13 +606,10 @@
     .param p1, "viewWidth"    # Ljava/lang/String;
 
     .prologue
-    .line 141
     if-nez p1, :cond_0
 
-    .line 142
     const/4 v0, 0x0
 
-    .line 144
     :goto_0
     return v0
 
@@ -696,13 +628,10 @@
     .param p1, "xPosition"    # Ljava/lang/String;
 
     .prologue
-    .line 174
     if-nez p1, :cond_0
 
-    .line 175
     const/4 v0, 0x0
 
-    .line 177
     :goto_0
     return v0
 
@@ -721,13 +650,10 @@
     .param p1, "yPosition"    # Ljava/lang/String;
 
     .prologue
-    .line 186
     if-nez p1, :cond_0
 
-    .line 187
     const/4 v0, 0x0
 
-    .line 189
     :goto_0
     return v0
 

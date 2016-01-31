@@ -77,38 +77,28 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 2951
     iget-object v0, p1, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
 
     invoke-direct {p0, v0, p5}, Lcom/android/internal/app/ProcessStats$DurationsTable;-><init>(Lcom/android/internal/app/ProcessStats;Ljava/lang/String;)V
 
-    .line 2905
     iput v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCurState:I
 
-    .line 2908
     iput v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mLastPssState:I
 
-    .line 2952
     iput-object p1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCommonProcess:Lcom/android/internal/app/ProcessStats$ProcessState;
 
-    .line 2953
     iput-object p2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPackage:Ljava/lang/String;
 
-    .line 2954
     iput p3, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mUid:I
 
-    .line 2955
     iput p4, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mVersion:I
 
-    .line 2956
     iget v0, p1, Lcom/android/internal/app/ProcessStats$ProcessState;->mCurState:I
 
     iput v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCurState:I
 
-    .line 2957
     iput-wide p6, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStartTime:J
 
-    .line 2958
     return-void
 .end method
 
@@ -123,28 +113,20 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 2937
     invoke-direct {p0, p1, p5}, Lcom/android/internal/app/ProcessStats$DurationsTable;-><init>(Lcom/android/internal/app/ProcessStats;Ljava/lang/String;)V
 
-    .line 2905
     iput v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCurState:I
 
-    .line 2908
     iput v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mLastPssState:I
 
-    .line 2938
     iput-object p0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCommonProcess:Lcom/android/internal/app/ProcessStats$ProcessState;
 
-    .line 2939
     iput-object p2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPackage:Ljava/lang/String;
 
-    .line 2940
     iput p3, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mUid:I
 
-    .line 2941
     iput p4, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mVersion:I
 
-    .line 2942
     return-void
 .end method
 
@@ -156,28 +138,21 @@
     .param p6, "maxPss"    # J
 
     .prologue
-    .line 3321
     iget v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumCachedKill:I
 
     if-gtz v0, :cond_0
 
-    .line 3322
     iput p1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumCachedKill:I
 
-    .line 3323
     iput-wide p2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mMinCachedKillPss:J
 
-    .line 3324
     iput-wide p4, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mAvgCachedKillPss:J
 
-    .line 3325
     iput-wide p6, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mMaxCachedKillPss:J
 
-    .line 3337
     :goto_0
     return-void
 
-    .line 3327
     :cond_0
     iget-wide v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mMinCachedKillPss:J
 
@@ -185,10 +160,8 @@
 
     if-gez v0, :cond_1
 
-    .line 3328
     iput-wide p2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mMinCachedKillPss:J
 
-    .line 3330
     :cond_1
     iget-wide v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mMaxCachedKillPss:J
 
@@ -196,10 +169,8 @@
 
     if-lez v0, :cond_2
 
-    .line 3331
     iput-wide p6, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mMaxCachedKillPss:J
 
-    .line 3333
     :cond_2
     iget-wide v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mAvgCachedKillPss:J
 
@@ -227,7 +198,6 @@
 
     iput-wide v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mAvgCachedKillPss:J
 
-    .line 3335
     iget v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumCachedKill:I
 
     add-int/2addr v0, p1
@@ -241,16 +211,13 @@
     .locals 3
 
     .prologue
-    .line 3029
     iget-boolean v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mDead:Z
 
     if-nez v0, :cond_0
 
-    .line 3034
     :goto_0
     return-void
 
-    .line 3032
     :cond_0
     const-string v0, "ProcessStats"
 
@@ -333,7 +300,6 @@
     .end annotation
 
     .prologue
-    .line 3378
     .local p1, "pkgList":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/internal/app/ProcessStats$ProcessStateHolder;>;"
     invoke-virtual {p1, p2}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
@@ -341,11 +307,9 @@
 
     check-cast v0, Lcom/android/internal/app/ProcessStats$ProcessStateHolder;
 
-    .line 3379
     .local v0, "holder":Lcom/android/internal/app/ProcessStats$ProcessStateHolder;
     iget-object v2, v0, Lcom/android/internal/app/ProcessStats$ProcessStateHolder;->state:Lcom/android/internal/app/ProcessStats$ProcessState;
 
-    .line 3380
     .local v2, "proc":Lcom/android/internal/app/ProcessStats$ProcessState;
     iget-boolean v4, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mDead:Z
 
@@ -355,7 +319,6 @@
 
     if-eq v4, v2, :cond_0
 
-    .line 3385
     const-string v4, "ProcessStats"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -418,7 +381,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3387
     iget-object v4, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget-object v5, v2, Lcom/android/internal/app/ProcessStats$ProcessState;->mPackage:Ljava/lang/String;
@@ -433,13 +395,11 @@
 
     move-result-object v2
 
-    .line 3390
     :cond_0
     iget-boolean v4, v2, Lcom/android/internal/app/ProcessStats$ProcessState;->mMultiPackage:Z
 
     if-eqz v4, :cond_4
 
-    .line 3394
     iget-object v4, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget-object v5, v4, Lcom/android/internal/app/ProcessStats;->mPackages:Lcom/android/internal/app/ProcessMap;
@@ -458,11 +418,9 @@
 
     check-cast v3, Landroid/util/SparseArray;
 
-    .line 3396
     .local v3, "vpkg":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/app/ProcessStats$PackageState;>;"
     if-nez v3, :cond_1
 
-    .line 3397
     new-instance v5, Ljava/lang/IllegalStateException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -517,7 +475,6 @@
 
     throw v5
 
-    .line 3401
     :cond_1
     iget v4, v2, Lcom/android/internal/app/ProcessStats$ProcessState;->mVersion:I
 
@@ -527,11 +484,9 @@
 
     check-cast v1, Lcom/android/internal/app/ProcessStats$PackageState;
 
-    .line 3402
     .local v1, "pkg":Lcom/android/internal/app/ProcessStats$PackageState;
     if-nez v1, :cond_2
 
-    .line 3403
     new-instance v5, Ljava/lang/IllegalStateException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -598,7 +553,6 @@
 
     throw v5
 
-    .line 3407
     :cond_2
     iget-object v4, v1, Lcom/android/internal/app/ProcessStats$PackageState;->mProcesses:Landroid/util/ArrayMap;
 
@@ -611,11 +565,9 @@
     .end local v2    # "proc":Lcom/android/internal/app/ProcessStats$ProcessState;
     check-cast v2, Lcom/android/internal/app/ProcessStats$ProcessState;
 
-    .line 3408
     .restart local v2    # "proc":Lcom/android/internal/app/ProcessStats$ProcessState;
     if-nez v2, :cond_3
 
-    .line 3409
     new-instance v4, Ljava/lang/IllegalStateException;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -666,11 +618,9 @@
 
     throw v4
 
-    .line 3412
     :cond_3
     iput-object v2, v0, Lcom/android/internal/app/ProcessStats$ProcessStateHolder;->state:Lcom/android/internal/app/ProcessStats$ProcessState;
 
-    .line 3414
     .end local v1    # "pkg":Lcom/android/internal/app/ProcessStats$PackageState;
     .end local v3    # "vpkg":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/app/ProcessStats$PackageState;>;"
     :cond_4
@@ -684,10 +634,8 @@
     .param p1, "other"    # Lcom/android/internal/app/ProcessStats$ProcessState;
 
     .prologue
-    .line 2991
     invoke-virtual/range {p0 .. p1}, Lcom/android/internal/app/ProcessStats$ProcessState;->addDurations(Lcom/android/internal/app/ProcessStats$DurationsTable;)V
 
-    .line 2992
     const/16 v18, 0x0
 
     .local v18, "i":I
@@ -700,14 +648,12 @@
 
     if-ge v0, v3, :cond_0
 
-    .line 2993
     move-object/from16 v0, p1
 
     iget-object v3, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
     aget v2, v3, v18
 
-    .line 2994
     .local v2, "ent":I
     sget v3, Lcom/android/internal/app/ProcessStats;->OFFSET_TYPE_SHIFT:I
 
@@ -717,7 +663,6 @@
 
     and-int v4, v3, v5
 
-    .line 2995
     .local v4, "state":I
     move-object/from16 v0, p1
 
@@ -797,12 +742,10 @@
 
     invoke-virtual/range {v3 .. v17}, Lcom/android/internal/app/ProcessStats$ProcessState;->addPss(IIJJJJJJ)V
 
-    .line 2992
     add-int/lit8 v18, v18, 0x1
 
     goto :goto_0
 
-    .line 3003
     .end local v2    # "ent":I
     .end local v4    # "state":I
     :cond_0
@@ -820,7 +763,6 @@
 
     iput v3, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumExcessiveWake:I
 
-    .line 3004
     move-object/from16 v0, p0
 
     iget v3, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumExcessiveCpu:I
@@ -835,14 +777,12 @@
 
     iput v3, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumExcessiveCpu:I
 
-    .line 3005
     move-object/from16 v0, p1
 
     iget v3, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumCachedKill:I
 
     if-lez v3, :cond_1
 
-    .line 3006
     move-object/from16 v0, p1
 
     iget v7, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumCachedKill:I
@@ -863,7 +803,6 @@
 
     invoke-direct/range {v6 .. v13}, Lcom/android/internal/app/ProcessStats$ProcessState;->addCachedKill(IJJJ)V
 
-    .line 3009
     :cond_1
     return-void
 .end method
@@ -880,7 +819,6 @@
     .param p13, "maxUss"    # J
 
     .prologue
-    .line 3251
     iget-object v7, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
     iget v8, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTableSize:I
@@ -891,16 +829,13 @@
 
     move-result v4
 
-    .line 3253
     .local v4, "idx":I
     if-ltz v4, :cond_1
 
-    .line 3254
     iget-object v7, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
     aget v6, v7, v4
 
-    .line 3262
     .local v6, "off":I
     :goto_0
     iget-object v7, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
@@ -921,7 +856,6 @@
 
     check-cast v5, [J
 
-    .line 3263
     .local v5, "longs":[J
     sget v7, Lcom/android/internal/app/ProcessStats;->OFFSET_INDEX_SHIFT:I
 
@@ -931,12 +865,10 @@
 
     and-int v4, v7, v8
 
-    .line 3264
     add-int/lit8 v7, v4, 0x0
 
     aget-wide v2, v5, v7
 
-    .line 3265
     .local v2, "count":J
     const-wide/16 v8, 0x0
 
@@ -944,7 +876,6 @@
 
     if-nez v7, :cond_2
 
-    .line 3266
     add-int/lit8 v7, v4, 0x0
 
     move/from16 v0, p2
@@ -953,42 +884,34 @@
 
     aput-wide v8, v5, v7
 
-    .line 3267
     add-int/lit8 v7, v4, 0x1
 
     aput-wide p3, v5, v7
 
-    .line 3268
     add-int/lit8 v7, v4, 0x2
 
     aput-wide p5, v5, v7
 
-    .line 3269
     add-int/lit8 v7, v4, 0x3
 
     aput-wide p7, v5, v7
 
-    .line 3270
     add-int/lit8 v7, v4, 0x4
 
     aput-wide p9, v5, v7
 
-    .line 3271
     add-int/lit8 v7, v4, 0x5
 
     aput-wide p11, v5, v7
 
-    .line 3272
     add-int/lit8 v7, v4, 0x6
 
     aput-wide p13, v5, v7
 
-    .line 3294
     :cond_0
     :goto_1
     return-void
 
-    .line 3256
     .end local v2    # "count":J
     .end local v5    # "longs":[J
     .end local v6    # "off":I
@@ -999,14 +922,12 @@
 
     iput-object v8, v7, Lcom/android/internal/app/ProcessStats;->mAddLongTable:[I
 
-    .line 3257
     iget-object v7, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget v8, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTableSize:I
 
     iput v8, v7, Lcom/android/internal/app/ProcessStats;->mAddLongTableSize:I
 
-    .line 3258
     iget-object v7, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
 
     xor-int/lit8 v8, v4, -0x1
@@ -1019,7 +940,6 @@
 
     move-result v6
 
-    .line 3259
     .restart local v6    # "off":I
     iget-object v7, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
 
@@ -1027,7 +947,6 @@
 
     iput-object v7, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
-    .line 3260
     iget-object v7, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget v7, v7, Lcom/android/internal/app/ProcessStats;->mAddLongTableSize:I
@@ -1036,7 +955,6 @@
 
     goto :goto_0
 
-    .line 3274
     .restart local v2    # "count":J
     .restart local v5    # "longs":[J
     :cond_2
@@ -1050,7 +968,6 @@
 
     aput-wide v8, v5, v7
 
-    .line 3275
     add-int/lit8 v7, v4, 0x1
 
     aget-wide v8, v5, v7
@@ -1059,12 +976,10 @@
 
     if-lez v7, :cond_3
 
-    .line 3276
     add-int/lit8 v7, v4, 0x1
 
     aput-wide p3, v5, v7
 
-    .line 3278
     :cond_3
     add-int/lit8 v7, v4, 0x2
 
@@ -1104,7 +1019,6 @@
 
     aput-wide v8, v5, v7
 
-    .line 3281
     add-int/lit8 v7, v4, 0x3
 
     aget-wide v8, v5, v7
@@ -1113,12 +1027,10 @@
 
     if-gez v7, :cond_4
 
-    .line 3282
     add-int/lit8 v7, v4, 0x3
 
     aput-wide p7, v5, v7
 
-    .line 3284
     :cond_4
     add-int/lit8 v7, v4, 0x4
 
@@ -1128,12 +1040,10 @@
 
     if-lez v7, :cond_5
 
-    .line 3285
     add-int/lit8 v7, v4, 0x4
 
     aput-wide p9, v5, v7
 
-    .line 3287
     :cond_5
     add-int/lit8 v7, v4, 0x5
 
@@ -1173,7 +1083,6 @@
 
     aput-wide v8, v5, v7
 
-    .line 3290
     add-int/lit8 v7, v4, 0x6
 
     aget-wide v8, v5, v7
@@ -1182,7 +1091,6 @@
 
     if-gez v7, :cond_0
 
-    .line 3291
     add-int/lit8 v7, v4, 0x6
 
     aput-wide p13, v5, v7
@@ -1207,14 +1115,11 @@
     .end annotation
 
     .prologue
-    .line 3222
     .local p6, "pkgList":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/internal/app/ProcessStats$ProcessStateHolder;>;"
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/app/ProcessStats$ProcessState;->ensureNotDead()V
 
-    .line 3223
     if-nez p5, :cond_1
 
-    .line 3224
     move-object/from16 v0, p0
 
     iget v3, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mLastPssState:I
@@ -1241,11 +1146,9 @@
 
     if-gez v3, :cond_1
 
-    .line 3247
     :cond_0
     return-void
 
-    .line 3229
     :cond_1
     move-object/from16 v0, p0
 
@@ -1255,7 +1158,6 @@
 
     iput v3, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mLastPssState:I
 
-    .line 3230
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v4
@@ -1264,7 +1166,6 @@
 
     iput-wide v4, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mLastPssTime:J
 
-    .line 3231
     move-object/from16 v0, p0
 
     iget v3, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCurState:I
@@ -1273,7 +1174,6 @@
 
     if-eq v3, v4, :cond_0
 
-    .line 3233
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCommonProcess:Lcom/android/internal/app/ProcessStats$ProcessState;
@@ -1298,7 +1198,6 @@
 
     invoke-virtual/range {v3 .. v17}, Lcom/android/internal/app/ProcessStats$ProcessState;->addPss(IIJJJJJJ)V
 
-    .line 3236
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCommonProcess:Lcom/android/internal/app/ProcessStats$ProcessState;
@@ -1307,10 +1206,8 @@
 
     if-eqz v3, :cond_0
 
-    .line 3240
     if-eqz p6, :cond_0
 
-    .line 3241
     invoke-virtual/range {p6 .. p6}, Landroid/util/ArrayMap;->size()I
 
     move-result v3
@@ -1321,7 +1218,6 @@
     :goto_0
     if-ltz v2, :cond_0
 
-    .line 3242
     move-object/from16 v0, p0
 
     move-object/from16 v1, p6
@@ -1350,7 +1246,6 @@
 
     invoke-virtual/range {v3 .. v17}, Lcom/android/internal/app/ProcessStats$ProcessState;->addPss(IIJJJJJJ)V
 
-    .line 3241
     add-int/lit8 v2, v2, -0x1
 
     goto :goto_0
@@ -1362,7 +1257,6 @@
     .param p2, "now"    # J
 
     .prologue
-    .line 2961
     new-instance v0, Lcom/android/internal/app/ProcessStats$ProcessState;
 
     iget v3, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mUid:I
@@ -1379,16 +1273,13 @@
 
     invoke-direct/range {v0 .. v7}, Lcom/android/internal/app/ProcessStats$ProcessState;-><init>(Lcom/android/internal/app/ProcessStats$ProcessState;Ljava/lang/String;IILjava/lang/String;J)V
 
-    .line 2962
     .local v0, "pnew":Lcom/android/internal/app/ProcessStats$ProcessState;
     invoke-virtual {p0, v0}, Lcom/android/internal/app/ProcessStats$ProcessState;->copyDurationsTo(Lcom/android/internal/app/ProcessStats$DurationsTable;)V
 
-    .line 2963
     iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
     if-eqz v1, :cond_2
 
-    .line 2964
     iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget-object v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
@@ -1399,14 +1290,12 @@
 
     iput-object v2, v1, Lcom/android/internal/app/ProcessStats;->mAddLongTable:[I
 
-    .line 2965
     iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
 
     const/4 v2, 0x0
 
     iput v2, v1, Lcom/android/internal/app/ProcessStats;->mAddLongTableSize:I
 
-    .line 2966
     const/4 v8, 0x0
 
     .local v8, "i":I
@@ -1415,12 +1304,10 @@
 
     if-ge v8, v1, :cond_1
 
-    .line 2967
     iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
     aget v11, v1, v8
 
-    .line 2968
     .local v11, "origEnt":I
     sget v1, Lcom/android/internal/app/ProcessStats;->OFFSET_TYPE_SHIFT:I
 
@@ -1430,7 +1317,6 @@
 
     and-int v12, v1, v2
 
-    .line 2969
     .local v12, "type":I
     iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
 
@@ -1440,7 +1326,6 @@
 
     move-result v10
 
-    .line 2970
     .local v10, "newOff":I
     iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
 
@@ -1450,7 +1335,6 @@
 
     aput v2, v1, v8
 
-    .line 2971
     const/4 v9, 0x0
 
     .local v9, "j":I
@@ -1459,7 +1343,6 @@
 
     if-ge v9, v1, :cond_0
 
-    .line 2972
     iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget-object v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
@@ -1470,18 +1353,15 @@
 
     invoke-virtual {v1, v10, v9, v2, v3}, Lcom/android/internal/app/ProcessStats;->setLong(IIJ)V
 
-    .line 2971
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_1
 
-    .line 2966
     :cond_0
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_0
 
-    .line 2975
     .end local v9    # "j":I
     .end local v10    # "newOff":I
     .end local v11    # "origEnt":I
@@ -1493,61 +1373,50 @@
 
     iput-object v1, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
-    .line 2976
     iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget v1, v1, Lcom/android/internal/app/ProcessStats;->mAddLongTableSize:I
 
     iput v1, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTableSize:I
 
-    .line 2978
     .end local v8    # "i":I
     :cond_2
     iget v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumExcessiveWake:I
 
     iput v1, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumExcessiveWake:I
 
-    .line 2979
     iget v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumExcessiveCpu:I
 
     iput v1, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumExcessiveCpu:I
 
-    .line 2980
     iget v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumCachedKill:I
 
     iput v1, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumCachedKill:I
 
-    .line 2981
     iget-wide v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mMinCachedKillPss:J
 
     iput-wide v2, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mMinCachedKillPss:J
 
-    .line 2982
     iget-wide v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mAvgCachedKillPss:J
 
     iput-wide v2, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mAvgCachedKillPss:J
 
-    .line 2983
     iget-wide v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mMaxCachedKillPss:J
 
     iput-wide v2, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mMaxCachedKillPss:J
 
-    .line 2984
     iget-boolean v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mActive:Z
 
     iput-boolean v1, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mActive:Z
 
-    .line 2985
     iget v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumActiveServices:I
 
     iput v1, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumActiveServices:I
 
-    .line 2986
     iget v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumStartedServices:I
 
     iput v1, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumStartedServices:I
 
-    .line 2987
     return-object v0
 .end method
 
@@ -1556,19 +1425,16 @@
     .param p1, "now"    # J
 
     .prologue
-    .line 3144
     iget v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCurState:I
 
     const/4 v3, -0x1
 
     if-eq v2, v3, :cond_0
 
-    .line 3145
     iget-wide v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStartTime:J
 
     sub-long v0, p1, v2
 
-    .line 3146
     .local v0, "dur":J
     const-wide/16 v2, 0x0
 
@@ -1576,17 +1442,14 @@
 
     if-lez v2, :cond_0
 
-    .line 3147
     iget v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCurState:I
 
     invoke-virtual {p0, v2, v0, v1}, Lcom/android/internal/app/ProcessStats$ProcessState;->addDuration(IJ)V
 
-    .line 3150
     .end local v0    # "dur":J
     :cond_0
     iput-wide p1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStartTime:J
 
-    .line 3151
     return-void
 .end method
 
@@ -1595,17 +1458,14 @@
     .param p1, "serviceName"    # Ljava/lang/String;
 
     .prologue
-    .line 3173
     iget-object v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCommonProcess:Lcom/android/internal/app/ProcessStats$ProcessState;
 
     if-eq v0, p0, :cond_0
 
-    .line 3174
     iget-object v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCommonProcess:Lcom/android/internal/app/ProcessStats$ProcessState;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/app/ProcessStats$ProcessState;->decActiveServices(Ljava/lang/String;)V
 
-    .line 3176
     :cond_0
     iget v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumActiveServices:I
 
@@ -1613,12 +1473,10 @@
 
     iput v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumActiveServices:I
 
-    .line 3177
     iget v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumActiveServices:I
 
     if-gez v0, :cond_1
 
-    .line 3178
     const-string v0, "ProcessStats"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1677,12 +1535,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->wtfStack(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3180
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumActiveServices:I
 
-    .line 3182
     :cond_1
     return-void
 .end method
@@ -1694,17 +1550,14 @@
     .param p4, "serviceName"    # Ljava/lang/String;
 
     .prologue
-    .line 3207
     iget-object v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCommonProcess:Lcom/android/internal/app/ProcessStats$ProcessState;
 
     if-eq v0, p0, :cond_0
 
-    .line 3208
     iget-object v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCommonProcess:Lcom/android/internal/app/ProcessStats$ProcessState;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Lcom/android/internal/app/ProcessStats$ProcessState;->decStartedServices(IJLjava/lang/String;)V
 
-    .line 3210
     :cond_0
     iget v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumStartedServices:I
 
@@ -1712,7 +1565,6 @@
 
     iput v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumStartedServices:I
 
-    .line 3211
     iget v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumStartedServices:I
 
     if-nez v0, :cond_2
@@ -1725,23 +1577,19 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 3212
     const/4 v0, -0x1
 
     invoke-virtual {p0, v0, p2, p3}, Lcom/android/internal/app/ProcessStats$ProcessState;->setState(IJ)V
 
-    .line 3218
     :cond_1
     :goto_0
     return-void
 
-    .line 3213
     :cond_2
     iget v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumStartedServices:I
 
     if-gez v0, :cond_1
 
-    .line 3214
     const-string v0, "ProcessStats"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1790,7 +1638,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->wtfStack(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3216
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumStartedServices:I
@@ -1804,25 +1651,21 @@
     .param p2, "now"    # J
 
     .prologue
-    .line 3418
     invoke-super {p0, p1, p2, p3}, Lcom/android/internal/app/ProcessStats$DurationsTable;->getDuration(IJ)J
 
     move-result-wide v0
 
-    .line 3419
     .local v0, "time":J
     iget v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCurState:I
 
     if-ne v2, p1, :cond_0
 
-    .line 3420
     iget-wide v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStartTime:J
 
     sub-long v2, p2, v2
 
     add-long/2addr v0, v2
 
-    .line 3422
     :cond_0
     return-wide v0
 .end method
@@ -1832,7 +1675,6 @@
     .param p1, "state"    # I
 
     .prologue
-    .line 3436
     iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
     iget v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTableSize:I
@@ -1841,7 +1683,6 @@
 
     move-result v0
 
-    .line 3437
     .local v0, "idx":I
     if-ltz v0, :cond_0
 
@@ -1871,7 +1712,6 @@
     .param p1, "state"    # I
 
     .prologue
-    .line 3441
     iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
     iget v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTableSize:I
@@ -1880,7 +1720,6 @@
 
     move-result v0
 
-    .line 3442
     .local v0, "idx":I
     if-ltz v0, :cond_0
 
@@ -1910,7 +1749,6 @@
     .param p1, "state"    # I
 
     .prologue
-    .line 3431
     iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
     iget v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTableSize:I
@@ -1919,7 +1757,6 @@
 
     move-result v0
 
-    .line 3432
     .local v0, "idx":I
     if-ltz v0, :cond_0
 
@@ -1949,7 +1786,6 @@
     .param p1, "state"    # I
 
     .prologue
-    .line 3426
     iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
     iget v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTableSize:I
@@ -1958,7 +1794,6 @@
 
     move-result v0
 
-    .line 3427
     .local v0, "idx":I
     if-ltz v0, :cond_0
 
@@ -1988,7 +1823,6 @@
     .param p1, "state"    # I
 
     .prologue
-    .line 3451
     iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
     iget v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTableSize:I
@@ -1997,7 +1831,6 @@
 
     move-result v0
 
-    .line 3452
     .local v0, "idx":I
     if-ltz v0, :cond_0
 
@@ -2027,7 +1860,6 @@
     .param p1, "state"    # I
 
     .prologue
-    .line 3456
     iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
     iget v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTableSize:I
@@ -2036,7 +1868,6 @@
 
     move-result v0
 
-    .line 3457
     .local v0, "idx":I
     if-ltz v0, :cond_0
 
@@ -2066,7 +1897,6 @@
     .param p1, "state"    # I
 
     .prologue
-    .line 3446
     iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
     iget v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTableSize:I
@@ -2075,7 +1905,6 @@
 
     move-result v0
 
-    .line 3447
     .local v0, "idx":I
     if-ltz v0, :cond_0
 
@@ -2105,17 +1934,14 @@
     .param p1, "serviceName"    # Ljava/lang/String;
 
     .prologue
-    .line 3160
     iget-object v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCommonProcess:Lcom/android/internal/app/ProcessStats$ProcessState;
 
     if-eq v0, p0, :cond_0
 
-    .line 3161
     iget-object v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCommonProcess:Lcom/android/internal/app/ProcessStats$ProcessState;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/app/ProcessStats$ProcessState;->incActiveServices(Ljava/lang/String;)V
 
-    .line 3163
     :cond_0
     iget v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumActiveServices:I
 
@@ -2123,7 +1949,6 @@
 
     iput v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumActiveServices:I
 
-    .line 3164
     return-void
 .end method
 
@@ -2134,17 +1959,14 @@
     .param p4, "serviceName"    # Ljava/lang/String;
 
     .prologue
-    .line 3191
     iget-object v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCommonProcess:Lcom/android/internal/app/ProcessStats$ProcessState;
 
     if-eq v0, p0, :cond_0
 
-    .line 3192
     iget-object v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCommonProcess:Lcom/android/internal/app/ProcessStats$ProcessState;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Lcom/android/internal/app/ProcessStats$ProcessState;->incStartedServices(IJLjava/lang/String;)V
 
-    .line 3194
     :cond_0
     iget v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumStartedServices:I
 
@@ -2152,7 +1974,6 @@
 
     iput v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumStartedServices:I
 
-    .line 3195
     iget v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumStartedServices:I
 
     const/4 v1, 0x1
@@ -2165,14 +1986,12 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 3196
     mul-int/lit8 v0, p1, 0xe
 
     add-int/lit8 v0, v0, 0x7
 
     invoke-virtual {p0, v0, p2, p3}, Lcom/android/internal/app/ProcessStats$ProcessState;->setState(IJ)V
 
-    .line 3198
     :cond_1
     return-void
 .end method
@@ -2181,7 +2000,6 @@
     .locals 2
 
     .prologue
-    .line 3098
     iget-boolean v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mActive:Z
 
     if-nez v0, :cond_0
@@ -2216,25 +2034,20 @@
     .locals 1
 
     .prologue
-    .line 3084
     invoke-direct {p0}, Lcom/android/internal/app/ProcessStats$ProcessState;->ensureNotDead()V
 
-    .line 3085
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mActive:Z
 
-    .line 3087
     iget-object v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCommonProcess:Lcom/android/internal/app/ProcessStats$ProcessState;
 
     if-eq v0, p0, :cond_0
 
-    .line 3088
     iget-object v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCommonProcess:Lcom/android/internal/app/ProcessStats$ProcessState;
 
     invoke-virtual {v0}, Lcom/android/internal/app/ProcessStats$ProcessState;->makeActive()V
 
-    .line 3091
     :cond_0
     return-void
 .end method
@@ -2243,12 +2056,10 @@
     .locals 1
 
     .prologue
-    .line 3025
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mDead:Z
 
-    .line 3026
     return-void
 .end method
 
@@ -2256,12 +2067,10 @@
     .locals 1
 
     .prologue
-    .line 3094
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mActive:Z
 
-    .line 3095
     return-void
 .end method
 
@@ -2270,12 +2079,10 @@
     .param p1, "pkgName"    # Ljava/lang/String;
 
     .prologue
-    .line 3352
     iget-boolean v3, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mMultiPackage:Z
 
     if-eqz v3, :cond_2
 
-    .line 3356
     iget-object v3, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
 
     iget-object v3, v3, Lcom/android/internal/app/ProcessStats;->mPackages:Lcom/android/internal/app/ProcessMap;
@@ -2288,11 +2095,9 @@
 
     check-cast v2, Landroid/util/SparseArray;
 
-    .line 3357
     .local v2, "vpkg":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/app/ProcessStats$PackageState;>;"
     if-nez v2, :cond_0
 
-    .line 3358
     new-instance v3, Ljava/lang/IllegalStateException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -2329,7 +2134,6 @@
 
     throw v3
 
-    .line 3361
     :cond_0
     iget v3, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mVersion:I
 
@@ -2339,11 +2143,9 @@
 
     check-cast v0, Lcom/android/internal/app/ProcessStats$PackageState;
 
-    .line 3362
     .local v0, "pkg":Lcom/android/internal/app/ProcessStats$PackageState;
     if-nez v0, :cond_1
 
-    .line 3363
     new-instance v3, Ljava/lang/IllegalStateException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -2392,7 +2194,6 @@
 
     throw v3
 
-    .line 3366
     :cond_1
     iget-object v3, v0, Lcom/android/internal/app/ProcessStats$PackageState;->mProcesses:Landroid/util/ArrayMap;
 
@@ -2404,11 +2205,9 @@
 
     check-cast v1, Lcom/android/internal/app/ProcessStats$ProcessState;
 
-    .line 3367
     .local v1, "proc":Lcom/android/internal/app/ProcessStats$ProcessState;
     if-nez v1, :cond_3
 
-    .line 3368
     new-instance v3, Ljava/lang/IllegalStateException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -2475,7 +2274,6 @@
     :cond_2
     move-object v1, p0
 
-    .line 3373
     :cond_3
     return-object v1
 .end method
@@ -2490,7 +2288,6 @@
 
     const/4 v1, 0x0
 
-    .line 3056
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
@@ -2499,15 +2296,12 @@
 
     move v0, v2
 
-    .line 3057
     .local v0, "multiPackage":Z
     :goto_0
     if-eqz p2, :cond_0
 
-    .line 3058
     iput-boolean v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mMultiPackage:Z
 
-    .line 3061
     :cond_0
     invoke-virtual {p0, p1}, Lcom/android/internal/app/ProcessStats$ProcessState;->readDurationsFromParcel(Landroid/os/Parcel;)Z
 
@@ -2515,7 +2309,6 @@
 
     if-nez v3, :cond_3
 
-    .line 3080
     :cond_1
     :goto_1
     return v1
@@ -2524,10 +2317,8 @@
     :cond_2
     move v0, v1
 
-    .line 3056
     goto :goto_0
 
-    .line 3065
     .restart local v0    # "multiPackage":Z
     :cond_3
     iget-object v3, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStats:Lcom/android/internal/app/ProcessStats;
@@ -2543,14 +2334,12 @@
 
     iput-object v3, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
-    .line 3066
     iget-object v3, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
     sget-object v4, Lcom/android/internal/app/ProcessStats;->BAD_TABLE:[I
 
     if-eq v3, v4, :cond_1
 
-    .line 3069
     iget-object v3, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
     if-eqz v3, :cond_4
@@ -2562,47 +2351,40 @@
     :cond_4
     iput v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTableSize:I
 
-    .line 3070
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumExcessiveWake:I
 
-    .line 3071
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumExcessiveCpu:I
 
-    .line 3072
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumCachedKill:I
 
-    .line 3073
     iget v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumCachedKill:I
 
     if-lez v1, :cond_5
 
-    .line 3074
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v4
 
     iput-wide v4, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mMinCachedKillPss:J
 
-    .line 3075
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v4
 
     iput-wide v4, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mAvgCachedKillPss:J
 
-    .line 3076
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v4
@@ -2612,10 +2394,8 @@
     :goto_2
     move v1, v2
 
-    .line 3080
     goto :goto_1
 
-    .line 3078
     :cond_5
     const-wide/16 v4, 0x0
 
@@ -2646,10 +2426,8 @@
     .local p1, "pkgList":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/internal/app/ProcessStats$ProcessStateHolder;>;"
     const/4 v1, 0x1
 
-    .line 3340
     invoke-direct {p0}, Lcom/android/internal/app/ProcessStats$ProcessState;->ensureNotDead()V
 
-    .line 3341
     iget-object v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCommonProcess:Lcom/android/internal/app/ProcessStats$ProcessState;
 
     move-wide v2, p2
@@ -2660,18 +2438,15 @@
 
     invoke-direct/range {v0 .. v7}, Lcom/android/internal/app/ProcessStats$ProcessState;->addCachedKill(IJJJ)V
 
-    .line 3342
     iget-object v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCommonProcess:Lcom/android/internal/app/ProcessStats$ProcessState;
 
     iget-boolean v0, v0, Lcom/android/internal/app/ProcessStats$ProcessState;->mMultiPackage:Z
 
     if-nez v0, :cond_1
 
-    .line 3349
     :cond_0
     return-void
 
-    .line 3346
     :cond_1
     invoke-virtual {p1}, Landroid/util/ArrayMap;->size()I
 
@@ -2683,7 +2458,6 @@
     :goto_0
     if-ltz v8, :cond_0
 
-    .line 3347
     invoke-direct {p0, p1, v8}, Lcom/android/internal/app/ProcessStats$ProcessState;->pullFixedProc(Landroid/util/ArrayMap;I)Lcom/android/internal/app/ProcessStats$ProcessState;
 
     move-result-object v0
@@ -2696,7 +2470,6 @@
 
     invoke-direct/range {v0 .. v7}, Lcom/android/internal/app/ProcessStats$ProcessState;->addCachedKill(IJJJ)V
 
-    .line 3346
     add-int/lit8 v8, v8, -0x1
 
     goto :goto_0
@@ -2716,11 +2489,9 @@
     .end annotation
 
     .prologue
-    .line 3309
     .local p1, "pkgList":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/internal/app/ProcessStats$ProcessStateHolder;>;"
     invoke-direct {p0}, Lcom/android/internal/app/ProcessStats$ProcessState;->ensureNotDead()V
 
-    .line 3310
     iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCommonProcess:Lcom/android/internal/app/ProcessStats$ProcessState;
 
     iget v2, v1, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumExcessiveCpu:I
@@ -2729,18 +2500,15 @@
 
     iput v2, v1, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumExcessiveCpu:I
 
-    .line 3311
     iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCommonProcess:Lcom/android/internal/app/ProcessStats$ProcessState;
 
     iget-boolean v1, v1, Lcom/android/internal/app/ProcessStats$ProcessState;->mMultiPackage:Z
 
     if-nez v1, :cond_1
 
-    .line 3318
     :cond_0
     return-void
 
-    .line 3315
     :cond_1
     invoke-virtual {p1}, Landroid/util/ArrayMap;->size()I
 
@@ -2752,7 +2520,6 @@
     :goto_0
     if-ltz v0, :cond_0
 
-    .line 3316
     invoke-direct {p0, p1, v0}, Lcom/android/internal/app/ProcessStats$ProcessState;->pullFixedProc(Landroid/util/ArrayMap;I)Lcom/android/internal/app/ProcessStats$ProcessState;
 
     move-result-object v1
@@ -2763,7 +2530,6 @@
 
     iput v2, v1, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumExcessiveCpu:I
 
-    .line 3315
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
@@ -2783,11 +2549,9 @@
     .end annotation
 
     .prologue
-    .line 3297
     .local p1, "pkgList":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/internal/app/ProcessStats$ProcessStateHolder;>;"
     invoke-direct {p0}, Lcom/android/internal/app/ProcessStats$ProcessState;->ensureNotDead()V
 
-    .line 3298
     iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCommonProcess:Lcom/android/internal/app/ProcessStats$ProcessState;
 
     iget v2, v1, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumExcessiveWake:I
@@ -2796,18 +2560,15 @@
 
     iput v2, v1, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumExcessiveWake:I
 
-    .line 3299
     iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCommonProcess:Lcom/android/internal/app/ProcessStats$ProcessState;
 
     iget-boolean v1, v1, Lcom/android/internal/app/ProcessStats$ProcessState;->mMultiPackage:Z
 
     if-nez v1, :cond_1
 
-    .line 3306
     :cond_0
     return-void
 
-    .line 3303
     :cond_1
     invoke-virtual {p1}, Landroid/util/ArrayMap;->size()I
 
@@ -2819,7 +2580,6 @@
     :goto_0
     if-ltz v0, :cond_0
 
-    .line 3304
     invoke-direct {p0, p1, v0}, Lcom/android/internal/app/ProcessStats$ProcessState;->pullFixedProc(Landroid/util/ArrayMap;I)Lcom/android/internal/app/ProcessStats$ProcessState;
 
     move-result-object v1
@@ -2830,7 +2590,6 @@
 
     iput v2, v1, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumExcessiveWake:I
 
-    .line 3303
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
@@ -2845,45 +2604,34 @@
 
     const/4 v1, 0x0
 
-    .line 3012
     invoke-virtual {p0}, Lcom/android/internal/app/ProcessStats$ProcessState;->resetDurationsSafely()V
 
-    .line 3013
     iput-wide p1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mStartTime:J
 
-    .line 3014
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mLastPssState:I
 
-    .line 3015
     iput-wide v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mLastPssTime:J
 
-    .line 3016
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
-    .line 3017
     iput v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTableSize:I
 
-    .line 3018
     iput v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumExcessiveWake:I
 
-    .line 3019
     iput v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumExcessiveCpu:I
 
-    .line 3020
     iput v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumCachedKill:I
 
-    .line 3021
     iput-wide v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mMaxCachedKillPss:J
 
     iput-wide v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mAvgCachedKillPss:J
 
     iput-wide v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mMinCachedKillPss:J
 
-    .line 3022
     return-void
 .end method
 
@@ -2904,11 +2652,9 @@
     .end annotation
 
     .prologue
-    .line 3112
     .local p5, "pkgList":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/internal/app/ProcessStats$ProcessStateHolder;>;"
     if-gez p1, :cond_2
 
-    .line 3113
     iget v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumStartedServices:I
 
     if-lez v1, :cond_1
@@ -2917,30 +2663,25 @@
 
     add-int/lit8 p1, v1, 0x7
 
-    .line 3120
     :goto_0
     iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCommonProcess:Lcom/android/internal/app/ProcessStats$ProcessState;
 
     invoke-virtual {v1, p1, p3, p4}, Lcom/android/internal/app/ProcessStats$ProcessState;->setState(IJ)V
 
-    .line 3123
     iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCommonProcess:Lcom/android/internal/app/ProcessStats$ProcessState;
 
     iget-boolean v1, v1, Lcom/android/internal/app/ProcessStats$ProcessState;->mMultiPackage:Z
 
     if-nez v1, :cond_3
 
-    .line 3132
     :cond_0
     return-void
 
-    .line 3113
     :cond_1
     const/4 p1, -0x1
 
     goto :goto_0
 
-    .line 3116
     :cond_2
     sget-object v1, Lcom/android/internal/app/ProcessStats;->PROCESS_STATE_TO_STATE:[I
 
@@ -2952,11 +2693,9 @@
 
     goto :goto_0
 
-    .line 3127
     :cond_3
     if-eqz p5, :cond_0
 
-    .line 3128
     invoke-virtual {p5}, Landroid/util/ArrayMap;->size()I
 
     move-result v1
@@ -2967,14 +2706,12 @@
     :goto_1
     if-ltz v0, :cond_0
 
-    .line 3129
     invoke-direct {p0, p5, v0}, Lcom/android/internal/app/ProcessStats$ProcessState;->pullFixedProc(Landroid/util/ArrayMap;I)Lcom/android/internal/app/ProcessStats$ProcessState;
 
     move-result-object v1
 
     invoke-virtual {v1, p1, p3, p4}, Lcom/android/internal/app/ProcessStats$ProcessState;->setState(IJ)V
 
-    .line 3128
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_1
@@ -2986,21 +2723,16 @@
     .param p2, "now"    # J
 
     .prologue
-    .line 3135
     invoke-direct {p0}, Lcom/android/internal/app/ProcessStats$ProcessState;->ensureNotDead()V
 
-    .line 3136
     iget v0, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCurState:I
 
     if-eq v0, p1, :cond_0
 
-    .line 3138
     invoke-virtual {p0, p2, p3}, Lcom/android/internal/app/ProcessStats$ProcessState;->commitStateTime(J)V
 
-    .line 3139
     iput p1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCurState:I
 
-    .line 3141
     :cond_0
     return-void
 .end method
@@ -3009,14 +2741,12 @@
     .locals 3
 
     .prologue
-    .line 3461
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x80
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 3462
     .local v0, "sb":Ljava/lang/StringBuilder;
     const-string v1, "ProcessState{"
 
@@ -3070,7 +2800,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3465
     iget-boolean v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mMultiPackage:Z
 
     if-eqz v1, :cond_0
@@ -3079,7 +2808,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3466
     :cond_0
     iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mCommonProcess:Lcom/android/internal/app/ProcessStats$ProcessState;
 
@@ -3089,13 +2817,11 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3467
     :cond_1
     const-string/jumbo v1, "}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3468
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -3109,7 +2835,6 @@
     .param p2, "now"    # J
 
     .prologue
-    .line 3037
     iget-boolean v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mMultiPackage:Z
 
     if-eqz v1, :cond_0
@@ -3119,15 +2844,12 @@
     :goto_0
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 3038
     invoke-virtual {p0, p1}, Lcom/android/internal/app/ProcessStats$ProcessState;->writeDurationsToParcel(Landroid/os/Parcel;)V
 
-    .line 3039
     iget v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTableSize:I
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 3040
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -3136,63 +2858,52 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 3043
     iget-object v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mPssTable:[I
 
     aget v1, v1, v0
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 3040
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 3037
     .end local v0    # "i":I
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 3045
     .restart local v0    # "i":I
     :cond_1
     iget v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumExcessiveWake:I
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 3046
     iget v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumExcessiveCpu:I
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 3047
     iget v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumCachedKill:I
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 3048
     iget v1, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mNumCachedKill:I
 
     if-lez v1, :cond_2
 
-    .line 3049
     iget-wide v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mMinCachedKillPss:J
 
     invoke-virtual {p1, v2, v3}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 3050
     iget-wide v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mAvgCachedKillPss:J
 
     invoke-virtual {p1, v2, v3}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 3051
     iget-wide v2, p0, Lcom/android/internal/app/ProcessStats$ProcessState;->mMaxCachedKillPss:J
 
     invoke-virtual {p1, v2, v3}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 3053
     :cond_2
     return-void
 .end method

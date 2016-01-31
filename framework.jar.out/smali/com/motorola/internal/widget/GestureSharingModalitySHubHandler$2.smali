@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 53
     iput-object p1, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler$2;->this$0:Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "transition"    # Lcom/motorola/slpc/Transition;
 
     .prologue
-    .line 57
     const-string v0, "GSModalitySHubHandler"
 
     const/4 v1, 0x3
@@ -52,20 +50,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 58
     const-string v0, "GSModalitySHubHandler"
 
     const-string v1, "Modality Running Listener - State change"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 60
     :cond_0
     iget-object v0, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler$2;->this$0:Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;
 
     # invokes: Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->handleModalityChange(Lcom/motorola/slpc/Transition;)V
     invoke-static {v0, p1}, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->access$000(Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;Lcom/motorola/slpc/Transition;)V
 
-    .line 61
     return-void
 .end method

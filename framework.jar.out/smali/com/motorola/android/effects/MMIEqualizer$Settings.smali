@@ -27,20 +27,16 @@
     .locals 1
 
     .prologue
-    .line 461
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 458
     const/4 v0, 0x0
 
     iput-short v0, p0, Lcom/motorola/android/effects/MMIEqualizer$Settings;->numBands:S
 
-    .line 459
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/motorola/android/effects/MMIEqualizer$Settings;->bandLevels:[S
 
-    .line 462
     return-void
 .end method
 
@@ -49,33 +45,27 @@
     .param p1, "settings"    # Ljava/lang/String;
 
     .prologue
-    .line 469
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 458
     const/4 v5, 0x0
 
     iput-short v5, p0, Lcom/motorola/android/effects/MMIEqualizer$Settings;->numBands:S
 
-    .line 459
     const/4 v5, 0x0
 
     iput-object v5, p0, Lcom/motorola/android/effects/MMIEqualizer$Settings;->bandLevels:[S
 
-    .line 470
     new-instance v3, Ljava/util/StringTokenizer;
 
     const-string v5, "=;"
 
     invoke-direct {v3, p1, v5}, Ljava/util/StringTokenizer;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 471
     .local v3, "st":Ljava/util/StringTokenizer;
     invoke-virtual {v3}, Ljava/util/StringTokenizer;->countTokens()I
 
     move-result v4
 
-    .line 472
     .local v4, "tokens":I
     invoke-virtual {v3}, Ljava/util/StringTokenizer;->countTokens()I
 
@@ -85,7 +75,6 @@
 
     if-ge v5, v6, :cond_0
 
-    .line 473
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -110,13 +99,11 @@
 
     throw v5
 
-    .line 475
     :cond_0
     invoke-virtual {v3}, Ljava/util/StringTokenizer;->nextToken()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 476
     .local v1, "key":Ljava/lang/String;
     const-string v5, "Equalizer"
 
@@ -126,7 +113,6 @@
 
     if-nez v5, :cond_1
 
-    .line 477
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -151,14 +137,12 @@
 
     throw v5
 
-    .line 481
     :cond_1
     :try_start_0
     invoke-virtual {v3}, Ljava/util/StringTokenizer;->nextToken()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 482
     const-string v5, "curPreset"
 
     invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -167,7 +151,6 @@
 
     if-nez v5, :cond_2
 
-    .line 483
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -194,11 +177,9 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 502
     :catch_0
     move-exception v2
 
-    .line 503
     .local v2, "nfe":Ljava/lang/NumberFormatException;
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
@@ -224,7 +205,6 @@
 
     throw v5
 
-    .line 485
     .end local v2    # "nfe":Ljava/lang/NumberFormatException;
     :cond_2
     :try_start_1
@@ -238,12 +218,10 @@
 
     iput-short v5, p0, Lcom/motorola/android/effects/MMIEqualizer$Settings;->curPreset:S
 
-    .line 486
     invoke-virtual {v3}, Ljava/util/StringTokenizer;->nextToken()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 487
     const-string/jumbo v5, "numBands"
 
     invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -252,7 +230,6 @@
 
     if-nez v5, :cond_3
 
-    .line 488
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -277,7 +254,6 @@
 
     throw v5
 
-    .line 490
     :cond_3
     invoke-virtual {v3}, Ljava/util/StringTokenizer;->nextToken()Ljava/lang/String;
 
@@ -289,7 +265,6 @@
 
     iput-short v5, p0, Lcom/motorola/android/effects/MMIEqualizer$Settings;->numBands:S
 
-    .line 491
     invoke-virtual {v3}, Ljava/util/StringTokenizer;->countTokens()I
 
     move-result v5
@@ -300,7 +275,6 @@
 
     if-eq v5, v6, :cond_4
 
-    .line 492
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -325,7 +299,6 @@
 
     throw v5
 
-    .line 494
     :cond_4
     iget-short v5, p0, Lcom/motorola/android/effects/MMIEqualizer$Settings;->numBands:S
 
@@ -333,7 +306,6 @@
 
     iput-object v5, p0, Lcom/motorola/android/effects/MMIEqualizer$Settings;->bandLevels:[S
 
-    .line 495
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -342,12 +314,10 @@
 
     if-ge v0, v5, :cond_6
 
-    .line 496
     invoke-virtual {v3}, Ljava/util/StringTokenizer;->nextToken()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 497
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -380,7 +350,6 @@
 
     if-nez v5, :cond_5
 
-    .line 498
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -405,7 +374,6 @@
 
     throw v5
 
-    .line 500
     :cond_5
     iget-object v5, p0, Lcom/motorola/android/effects/MMIEqualizer$Settings;->bandLevels:[S
 
@@ -421,12 +389,10 @@
     :try_end_1
     .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 495
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 505
     :cond_6
     return-void
 .end method

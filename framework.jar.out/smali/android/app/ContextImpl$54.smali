@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 719
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -34,7 +33,6 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 721
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
@@ -45,35 +43,29 @@
 
     move-result v1
 
-    .line 723
     .local v1, "sensorHubExists":Z
     if-eqz v1, :cond_0
 
-    .line 724
     const-string/jumbo v4, "modality"
 
     invoke-static {v4}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 725
     .local v0, "b":Landroid/os/IBinder;
     if-nez v0, :cond_1
 
-    .line 732
     .end local v0    # "b":Landroid/os/IBinder;
     :cond_0
     :goto_0
     return-object v3
 
-    .line 728
     .restart local v0    # "b":Landroid/os/IBinder;
     :cond_1
     invoke-static {v0}, Lcom/motorola/slpc/IModalityService$Stub;->asInterface(Landroid/os/IBinder;)Lcom/motorola/slpc/IModalityService;
 
     move-result-object v2
 
-    .line 729
     .local v2, "service":Lcom/motorola/slpc/IModalityService;
     new-instance v3, Lcom/motorola/slpc/ModalityManager;
 

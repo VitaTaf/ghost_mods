@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 230
     iput-object p1, p0, Lcom/motorola/slpc/ModalityManager$StatusListenerTransport$1;->this$1:Lcom/motorola/slpc/ModalityManager$StatusListenerTransport;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -38,14 +37,12 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 233
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 234
     iget-object v0, p0, Lcom/motorola/slpc/ModalityManager$StatusListenerTransport$1;->this$1:Lcom/motorola/slpc/ModalityManager$StatusListenerTransport;
 
     # getter for: Lcom/motorola/slpc/ModalityManager$StatusListenerTransport;->mStatusListener:Lcom/motorola/slpc/ModalityManager$StatusListener;
@@ -63,7 +60,6 @@
 
     invoke-interface {v1, v0}, Lcom/motorola/slpc/ModalityManager$StatusListener;->onStatusChange(I)V
 
-    .line 236
     :cond_0
     return-void
 .end method

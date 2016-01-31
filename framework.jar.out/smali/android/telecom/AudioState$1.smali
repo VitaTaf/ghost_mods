@@ -32,7 +32,6 @@
     .locals 0
 
     .prologue
-    .line 134
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +44,6 @@
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 138
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v3
@@ -54,20 +52,17 @@
 
     const/4 v0, 0x0
 
-    .line 139
     .local v0, "isMuted":Z
     :goto_0
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 140
     .local v1, "route":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 141
     .local v2, "supportedRouteMask":I
     new-instance v3, Landroid/telecom/AudioState;
 
@@ -75,7 +70,6 @@
 
     return-object v3
 
-    .line 138
     .end local v0    # "isMuted":Z
     .end local v1    # "route":I
     .end local v2    # "supportedRouteMask":I
@@ -90,7 +84,6 @@
     .param p1, "x0"    # Landroid/os/Parcel;
 
     .prologue
-    .line 134
     invoke-virtual {p0, p1}, Landroid/telecom/AudioState$1;->createFromParcel(Landroid/os/Parcel;)Landroid/telecom/AudioState;
 
     move-result-object v0
@@ -103,7 +96,6 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 146
     new-array v0, p1, [Landroid/telecom/AudioState;
 
     return-object v0
@@ -114,7 +106,6 @@
     .param p1, "x0"    # I
 
     .prologue
-    .line 134
     invoke-virtual {p0, p1}, Landroid/telecom/AudioState$1;->newArray(I)[Landroid/telecom/AudioState;
 
     move-result-object v0

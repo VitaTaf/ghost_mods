@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 161
     iput-object p1, p0, Lcom/motorola/android/util/SystemUpdatesXMLParser$1;->this$0:Lcom/motorola/android/util/SystemUpdatesXMLParser;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "file"    # Ljava/io/File;
 
     .prologue
-    .line 164
     invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v0

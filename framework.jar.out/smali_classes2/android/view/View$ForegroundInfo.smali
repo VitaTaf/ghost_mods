@@ -35,27 +35,22 @@
     .locals 1
 
     .prologue
-    .line 3230
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3233
     const v0, 0x800033
 
     iput v0, p0, Landroid/view/View$ForegroundInfo;->mGravity:I
 
-    .line 3234
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/view/View$ForegroundInfo;->mInsidePadding:Z
 
-    .line 3236
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/view/View$ForegroundInfo;->mSelfBounds:Landroid/graphics/Rect;
 
-    .line 3237
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
@@ -70,7 +65,6 @@
     .param p1, "x0"    # Landroid/view/View$1;
 
     .prologue
-    .line 3230
     invoke-direct {p0}, Landroid/view/View$ForegroundInfo;-><init>()V
 
     return-void
@@ -81,7 +75,6 @@
     .param p0, "x0"    # Landroid/view/View$ForegroundInfo;
 
     .prologue
-    .line 3230
     iget-boolean v0, p0, Landroid/view/View$ForegroundInfo;->mInsidePadding:Z
 
     return v0
@@ -93,7 +86,6 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 3230
     iput-boolean p1, p0, Landroid/view/View$ForegroundInfo;->mInsidePadding:Z
 
     return p1
@@ -104,7 +96,6 @@
     .param p0, "x0"    # Landroid/view/View$ForegroundInfo;
 
     .prologue
-    .line 3230
     iget-object v0, p0, Landroid/view/View$ForegroundInfo;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -116,7 +107,6 @@
     .param p1, "x1"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 3230
     iput-object p1, p0, Landroid/view/View$ForegroundInfo;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object p1
@@ -127,7 +117,6 @@
     .param p0, "x0"    # Landroid/view/View$ForegroundInfo;
 
     .prologue
-    .line 3230
     iget-boolean v0, p0, Landroid/view/View$ForegroundInfo;->mBoundsChanged:Z
 
     return v0
@@ -139,7 +128,6 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 3230
     iput-boolean p1, p0, Landroid/view/View$ForegroundInfo;->mBoundsChanged:Z
 
     return p1
@@ -150,7 +138,6 @@
     .param p0, "x0"    # Landroid/view/View$ForegroundInfo;
 
     .prologue
-    .line 3230
     iget v0, p0, Landroid/view/View$ForegroundInfo;->mGravity:I
 
     return v0
@@ -162,7 +149,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 3230
     iput p1, p0, Landroid/view/View$ForegroundInfo;->mGravity:I
 
     return p1
@@ -173,7 +159,6 @@
     .param p0, "x0"    # Landroid/view/View$ForegroundInfo;
 
     .prologue
-    .line 3230
     iget-object v0, p0, Landroid/view/View$ForegroundInfo;->mTintInfo:Landroid/view/View$TintInfo;
 
     return-object v0
@@ -185,7 +170,6 @@
     .param p1, "x1"    # Landroid/view/View$TintInfo;
 
     .prologue
-    .line 3230
     iput-object p1, p0, Landroid/view/View$ForegroundInfo;->mTintInfo:Landroid/view/View$TintInfo;
 
     return-object p1
@@ -196,7 +180,6 @@
     .param p0, "x0"    # Landroid/view/View$ForegroundInfo;
 
     .prologue
-    .line 3230
     iget-object v0, p0, Landroid/view/View$ForegroundInfo;->mSelfBounds:Landroid/graphics/Rect;
 
     return-object v0
@@ -207,7 +190,6 @@
     .param p0, "x0"    # Landroid/view/View$ForegroundInfo;
 
     .prologue
-    .line 3230
     iget-object v0, p0, Landroid/view/View$ForegroundInfo;->mOverlayBounds:Landroid/graphics/Rect;
 
     return-object v0

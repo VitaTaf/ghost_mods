@@ -24,23 +24,18 @@
     .param p1, "disconnectCause"    # Landroid/telecom/DisconnectCause;
 
     .prologue
-    .line 1362
     invoke-direct {p0}, Landroid/telecom/Connection;-><init>()V
 
-    .line 1361
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/telecom/Connection$FailureSignalingConnection;->mImmutable:Z
 
-    .line 1363
     invoke-virtual {p0, p1}, Landroid/telecom/Connection$FailureSignalingConnection;->setDisconnected(Landroid/telecom/DisconnectCause;)V
 
-    .line 1364
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/telecom/Connection$FailureSignalingConnection;->mImmutable:Z
 
-    .line 1365
     return-void
 .end method
 
@@ -50,12 +45,10 @@
     .locals 2
 
     .prologue
-    .line 1368
     iget-boolean v0, p0, Landroid/telecom/Connection$FailureSignalingConnection;->mImmutable:Z
 
     if-eqz v0, :cond_0
 
-    .line 1369
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Connection is immutable"
@@ -64,7 +57,6 @@
 
     throw v0
 
-    .line 1371
     :cond_0
     return-void
 .end method

@@ -13,13 +13,10 @@
     .param p1, "adapter"    # Lcom/android/internal/telecom/IInCallAdapter;
 
     .prologue
-    .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 43
     iput-object p1, p0, Landroid/telecom/InCallAdapter;->mAdapter:Lcom/android/internal/telecom/IInCallAdapter;
 
-    .line 44
     return-void
 .end method
 
@@ -31,7 +28,6 @@
     .param p2, "videoState"    # I
 
     .prologue
-    .line 54
     :try_start_0
     iget-object v0, p0, Landroid/telecom/InCallAdapter;->mAdapter:Lcom/android/internal/telecom/IInCallAdapter;
 
@@ -39,11 +35,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 57
     :goto_0
     return-void
 
-    .line 55
     :catch_0
     move-exception v0
 
@@ -56,7 +50,6 @@
     .param p2, "otherCallId"    # Ljava/lang/String;
 
     .prologue
-    .line 214
     :try_start_0
     iget-object v0, p0, Landroid/telecom/InCallAdapter;->mAdapter:Lcom/android/internal/telecom/IInCallAdapter;
 
@@ -64,11 +57,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 217
     :goto_0
     return-void
 
-    .line 215
     :catch_0
     move-exception v0
 
@@ -80,7 +71,6 @@
     .param p1, "callId"    # Ljava/lang/String;
 
     .prologue
-    .line 80
     :try_start_0
     iget-object v0, p0, Landroid/telecom/InCallAdapter;->mAdapter:Lcom/android/internal/telecom/IInCallAdapter;
 
@@ -88,11 +78,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 83
     :goto_0
     return-void
 
-    .line 81
     :catch_0
     move-exception v0
 
@@ -104,7 +92,6 @@
     .param p1, "callId"    # Ljava/lang/String;
 
     .prologue
-    .line 92
     :try_start_0
     iget-object v0, p0, Landroid/telecom/InCallAdapter;->mAdapter:Lcom/android/internal/telecom/IInCallAdapter;
 
@@ -112,11 +99,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 95
     :goto_0
     return-void
 
-    .line 93
     :catch_0
     move-exception v0
 
@@ -128,7 +113,6 @@
     .param p1, "callId"    # Ljava/lang/String;
 
     .prologue
-    .line 238
     :try_start_0
     iget-object v0, p0, Landroid/telecom/InCallAdapter;->mAdapter:Lcom/android/internal/telecom/IInCallAdapter;
 
@@ -136,11 +120,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 241
     :goto_0
     return-void
 
-    .line 239
     :catch_0
     move-exception v0
 
@@ -152,7 +134,6 @@
     .param p1, "shouldMute"    # Z
 
     .prologue
-    .line 116
     :try_start_0
     iget-object v0, p0, Landroid/telecom/InCallAdapter;->mAdapter:Lcom/android/internal/telecom/IInCallAdapter;
 
@@ -160,11 +141,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 119
     :goto_0
     return-void
 
-    .line 117
     :catch_0
     move-exception v0
 
@@ -178,7 +157,6 @@
     .param p3, "setDefault"    # Z
 
     .prologue
-    .line 201
     :try_start_0
     iget-object v0, p0, Landroid/telecom/InCallAdapter;->mAdapter:Lcom/android/internal/telecom/IInCallAdapter;
 
@@ -186,11 +164,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 204
     :goto_0
     return-void
 
-    .line 202
     :catch_0
     move-exception v0
 
@@ -203,7 +179,6 @@
     .param p2, "digit"    # C
 
     .prologue
-    .line 144
     :try_start_0
     iget-object v0, p0, Landroid/telecom/InCallAdapter;->mAdapter:Lcom/android/internal/telecom/IInCallAdapter;
 
@@ -211,11 +186,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 147
     :goto_0
     return-void
 
-    .line 145
     :catch_0
     move-exception v0
 
@@ -228,7 +201,6 @@
     .param p2, "proceed"    # Z
 
     .prologue
-    .line 186
     :try_start_0
     iget-object v0, p0, Landroid/telecom/InCallAdapter;->mAdapter:Lcom/android/internal/telecom/IInCallAdapter;
 
@@ -236,11 +208,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 189
     :goto_0
     return-void
 
-    .line 187
     :catch_0
     move-exception v0
 
@@ -254,7 +224,6 @@
     .param p3, "textMessage"    # Ljava/lang/String;
 
     .prologue
-    .line 68
     :try_start_0
     iget-object v0, p0, Landroid/telecom/InCallAdapter;->mAdapter:Lcom/android/internal/telecom/IInCallAdapter;
 
@@ -262,11 +231,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 71
     :goto_0
     return-void
 
-    .line 69
     :catch_0
     move-exception v0
 
@@ -278,7 +245,6 @@
     .param p1, "route"    # I
 
     .prologue
-    .line 128
     :try_start_0
     iget-object v0, p0, Landroid/telecom/InCallAdapter;->mAdapter:Lcom/android/internal/telecom/IInCallAdapter;
 
@@ -286,11 +252,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 131
     :goto_0
     return-void
 
-    .line 129
     :catch_0
     move-exception v0
 
@@ -302,7 +266,6 @@
     .param p1, "callId"    # Ljava/lang/String;
 
     .prologue
-    .line 228
     :try_start_0
     iget-object v0, p0, Landroid/telecom/InCallAdapter;->mAdapter:Lcom/android/internal/telecom/IInCallAdapter;
 
@@ -310,11 +273,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 231
     :goto_0
     return-void
 
-    .line 229
     :catch_0
     move-exception v0
 
@@ -326,7 +287,6 @@
     .param p1, "callId"    # Ljava/lang/String;
 
     .prologue
-    .line 160
     :try_start_0
     iget-object v0, p0, Landroid/telecom/InCallAdapter;->mAdapter:Lcom/android/internal/telecom/IInCallAdapter;
 
@@ -334,11 +294,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 163
     :goto_0
     return-void
 
-    .line 161
     :catch_0
     move-exception v0
 
@@ -350,7 +308,6 @@
     .param p1, "callId"    # Ljava/lang/String;
 
     .prologue
-    .line 248
     :try_start_0
     iget-object v0, p0, Landroid/telecom/InCallAdapter;->mAdapter:Lcom/android/internal/telecom/IInCallAdapter;
 
@@ -358,11 +315,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 251
     :goto_0
     return-void
 
-    .line 249
     :catch_0
     move-exception v0
 
@@ -374,7 +329,6 @@
     .param p1, "screenOnImmediately"    # Z
 
     .prologue
-    .line 272
     :try_start_0
     iget-object v0, p0, Landroid/telecom/InCallAdapter;->mAdapter:Lcom/android/internal/telecom/IInCallAdapter;
 
@@ -382,11 +336,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 275
     :goto_0
     return-void
 
-    .line 273
     :catch_0
     move-exception v0
 
@@ -397,7 +349,6 @@
     .locals 1
 
     .prologue
-    .line 258
     :try_start_0
     iget-object v0, p0, Landroid/telecom/InCallAdapter;->mAdapter:Lcom/android/internal/telecom/IInCallAdapter;
 
@@ -405,11 +356,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 261
     :goto_0
     return-void
 
-    .line 259
     :catch_0
     move-exception v0
 
@@ -421,7 +370,6 @@
     .param p1, "callId"    # Ljava/lang/String;
 
     .prologue
-    .line 104
     :try_start_0
     iget-object v0, p0, Landroid/telecom/InCallAdapter;->mAdapter:Lcom/android/internal/telecom/IInCallAdapter;
 
@@ -429,11 +377,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 107
     :goto_0
     return-void
 
-    .line 105
     :catch_0
     move-exception v0
 

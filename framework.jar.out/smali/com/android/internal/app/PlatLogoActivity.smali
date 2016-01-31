@@ -22,7 +22,6 @@
     .locals 1
 
     .prologue
-    .line 48
     const/16 v0, 0xc
 
     new-array v0, v0, [I
@@ -56,10 +55,8 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 47
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
-    .line 59
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
     const/high16 v1, 0x3f000000    # 0.5f
@@ -77,7 +74,6 @@
     .locals 4
 
     .prologue
-    .line 62
     invoke-static {}, Ljava/lang/Math;->random()D
 
     move-result-wide v0
@@ -107,12 +103,10 @@
     .locals 5
 
     .prologue
-    .line 66
     invoke-static {}, Lcom/android/internal/app/PlatLogoActivity;->newColorIndex()I
 
     move-result v0
 
-    .line 67
     .local v0, "idx":I
     new-instance v1, Landroid/graphics/drawable/ShapeDrawable;
 
@@ -122,7 +116,6 @@
 
     invoke-direct {v1, v3}, Landroid/graphics/drawable/ShapeDrawable;-><init>(Landroid/graphics/drawable/shapes/Shape;)V
 
-    .line 68
     .local v1, "popbg":Landroid/graphics/drawable/ShapeDrawable;
     invoke-virtual {v1}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
 
@@ -134,7 +127,6 @@
 
     invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 69
     new-instance v2, Landroid/graphics/drawable/RippleDrawable;
 
     sget-object v3, Lcom/android/internal/app/PlatLogoActivity;->FLAVORS:[I
@@ -151,7 +143,6 @@
 
     invoke-direct {v2, v3, v1, v4}, Landroid/graphics/drawable/RippleDrawable;-><init>(Landroid/content/res/ColorStateList;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 72
     .local v2, "ripple":Landroid/graphics/drawable/RippleDrawable;
     return-object v2
 .end method
@@ -160,7 +151,6 @@
     .locals 12
 
     .prologue
-    .line 85
     invoke-virtual {p0}, Lcom/android/internal/app/PlatLogoActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v7
@@ -169,11 +159,9 @@
 
     move-result-object v0
 
-    .line 86
     .local v0, "dm":Landroid/util/DisplayMetrics;
     iget v1, v0, Landroid/util/DisplayMetrics;->density:F
 
-    .line 87
     .local v1, "dp":F
     iget v7, v0, Landroid/util/DisplayMetrics;->widthPixels:I
 
@@ -201,13 +189,11 @@
 
     float-to-int v5, v7
 
-    .line 90
     .local v5, "size":I
     new-instance v6, Lcom/android/internal/app/PlatLogoActivity$1;
 
     invoke-direct {v6, p0, p0, v5}, Lcom/android/internal/app/PlatLogoActivity$1;-><init>(Lcom/android/internal/app/PlatLogoActivity;Landroid/content/Context;I)V
 
-    .line 126
     .local v6, "stick":Landroid/view/View;
     iget-object v7, p0, Lcom/android/internal/app/PlatLogoActivity;->mLayout:Landroid/widget/FrameLayout;
 
@@ -227,61 +213,50 @@
 
     invoke-virtual {v7, v6, v8}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 128
     const/4 v7, 0x0
 
     invoke-virtual {v6, v7}, Landroid/view/View;->setAlpha(F)V
 
-    .line 130
     new-instance v3, Landroid/widget/ImageView;
 
     invoke-direct {v3, p0}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 131
     .local v3, "im":Landroid/widget/ImageView;
     const/high16 v7, 0x41a00000    # 20.0f
 
     invoke-virtual {v3, v7}, Landroid/widget/ImageView;->setTranslationZ(F)V
 
-    .line 132
     const/4 v7, 0x0
 
     invoke-virtual {v3, v7}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 133
     const/4 v7, 0x0
 
     invoke-virtual {v3, v7}, Landroid/widget/ImageView;->setScaleY(F)V
 
-    .line 134
     const v7, 0x1080540
 
     invoke-virtual {p0, v7}, Lcom/android/internal/app/PlatLogoActivity;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v4
 
-    .line 135
     .local v4, "platlogo":Landroid/graphics/drawable/Drawable;
     const/4 v7, 0x0
 
     invoke-virtual {v4, v7}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 136
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 137
     invoke-virtual {p0}, Lcom/android/internal/app/PlatLogoActivity;->makeRipple()Landroid/graphics/drawable/Drawable;
 
     move-result-object v7
 
     invoke-virtual {v3, v7}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 138
     const/4 v7, 0x1
 
     invoke-virtual {v3, v7}, Landroid/widget/ImageView;->setClickable(Z)V
 
-    .line 139
     new-instance v2, Landroid/graphics/drawable/ShapeDrawable;
 
     new-instance v7, Landroid/graphics/drawable/shapes/OvalShape;
@@ -290,7 +265,6 @@
 
     invoke-direct {v2, v7}, Landroid/graphics/drawable/ShapeDrawable;-><init>(Landroid/graphics/drawable/shapes/Shape;)V
 
-    .line 140
     .local v2, "highlight":Landroid/graphics/drawable/ShapeDrawable;
     invoke-virtual {v2}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
 
@@ -300,7 +274,6 @@
 
     invoke-virtual {v7, v8}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 141
     int-to-float v7, v5
 
     const v8, 0x3e19999a    # 0.15f
@@ -335,36 +308,30 @@
 
     invoke-virtual {v2, v7, v8, v9, v10}, Landroid/graphics/drawable/ShapeDrawable;->setBounds(IIII)V
 
-    .line 143
     invoke-virtual {v3}, Landroid/widget/ImageView;->getOverlay()Landroid/view/ViewOverlay;
 
     move-result-object v7
 
     invoke-virtual {v7, v2}, Landroid/view/ViewOverlay;->add(Landroid/graphics/drawable/Drawable;)V
 
-    .line 144
     new-instance v7, Lcom/android/internal/app/PlatLogoActivity$2;
 
     invoke-direct {v7, p0, v3, v4, v6}, Lcom/android/internal/app/PlatLogoActivity$2;-><init>(Lcom/android/internal/app/PlatLogoActivity;Landroid/widget/ImageView;Landroid/graphics/drawable/Drawable;Landroid/view/View;)V
 
     invoke-virtual {v3, v7}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 209
     const/4 v7, 0x1
 
     invoke-virtual {v3, v7}, Landroid/widget/ImageView;->setFocusable(Z)V
 
-    .line 210
     invoke-virtual {v3}, Landroid/widget/ImageView;->requestFocus()Z
 
-    .line 211
     new-instance v7, Lcom/android/internal/app/PlatLogoActivity$3;
 
     invoke-direct {v7, p0, v3}, Lcom/android/internal/app/PlatLogoActivity$3;-><init>(Lcom/android/internal/app/PlatLogoActivity;Landroid/widget/ImageView;)V
 
     invoke-virtual {v3, v7}, Landroid/widget/ImageView;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
 
-    .line 230
     iget-object v7, p0, Lcom/android/internal/app/PlatLogoActivity;->mLayout:Landroid/widget/FrameLayout;
 
     new-instance v8, Landroid/widget/FrameLayout$LayoutParams;
@@ -375,7 +342,6 @@
 
     invoke-virtual {v7, v3, v8}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 232
     invoke-virtual {v3}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v7
@@ -412,7 +378,6 @@
 
     invoke-virtual {v7}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 237
     return-void
 .end method
 
@@ -421,21 +386,17 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 77
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 79
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-direct {v0, p0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/android/internal/app/PlatLogoActivity;->mLayout:Landroid/widget/FrameLayout;
 
-    .line 80
     iget-object v0, p0, Lcom/android/internal/app/PlatLogoActivity;->mLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {p0, v0}, Lcom/android/internal/app/PlatLogoActivity;->setContentView(Landroid/view/View;)V
 
-    .line 81
     return-void
 .end method

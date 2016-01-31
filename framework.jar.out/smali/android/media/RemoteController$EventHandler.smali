@@ -25,13 +25,10 @@
     .param p3, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 748
     iput-object p1, p0, Landroid/media/RemoteController$EventHandler;->this$0:Landroid/media/RemoteController;
 
-    .line 749
     invoke-direct {p0, p3}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 750
     return-void
 .end method
 
@@ -46,12 +43,10 @@
 
     const/4 v0, 0x1
 
-    .line 754
     iget v2, p1, Landroid/os/Message;->what:I
 
     packed-switch v2, :pswitch_data_0
 
-    .line 781
     const-string v0, "RemoteController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -76,11 +71,9 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 783
     :goto_0
     return-void
 
-    .line 756
     :pswitch_0
     iget-object v1, p0, Landroid/media/RemoteController$EventHandler;->this$0:Landroid/media/RemoteController;
 
@@ -95,7 +88,6 @@
 
     goto :goto_0
 
-    .line 759
     :pswitch_1
     iget-object v1, p0, Landroid/media/RemoteController$EventHandler;->this$0:Landroid/media/RemoteController;
 
@@ -110,7 +102,6 @@
 
     goto :goto_0
 
-    .line 762
     :pswitch_2
     iget-object v0, p0, Landroid/media/RemoteController$EventHandler;->this$0:Landroid/media/RemoteController;
 
@@ -123,7 +114,6 @@
 
     goto :goto_0
 
-    .line 765
     :pswitch_3
     iget-object v1, p0, Landroid/media/RemoteController$EventHandler;->this$0:Landroid/media/RemoteController;
 
@@ -138,7 +128,6 @@
 
     goto :goto_0
 
-    .line 768
     :pswitch_4
     iget-object v2, p0, Landroid/media/RemoteController$EventHandler;->this$0:Landroid/media/RemoteController;
 
@@ -159,7 +148,6 @@
 
     goto :goto_1
 
-    .line 771
     :pswitch_5
     iget-object v2, p0, Landroid/media/RemoteController$EventHandler;->this$0:Landroid/media/RemoteController;
 
@@ -178,7 +166,6 @@
 
     goto :goto_2
 
-    .line 775
     :pswitch_6
     iget-object v1, p0, Landroid/media/RemoteController$EventHandler;->this$0:Landroid/media/RemoteController;
 
@@ -191,7 +178,6 @@
 
     goto :goto_0
 
-    .line 778
     :pswitch_7
     iget-object v1, p0, Landroid/media/RemoteController$EventHandler;->this$0:Landroid/media/RemoteController;
 
@@ -204,7 +190,6 @@
 
     goto :goto_0
 
-    .line 754
     nop
 
     :pswitch_data_0

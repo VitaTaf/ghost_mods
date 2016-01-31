@@ -48,7 +48,6 @@
     .locals 1
 
     .prologue
-    .line 52
     const/4 v0, 0x0
 
     sput-boolean v0, Landroid/mtp/MtpDSUCusErrcode;->checkForCall:Z
@@ -60,7 +59,6 @@
     .locals 0
 
     .prologue
-    .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 327
     iput-object p1, p0, Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener$2;->this$0:Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;
 
     invoke-direct {p0}, Lcom/android/internal/telephony/IOnSubscriptionsChangedListener$Stub;-><init>()V
@@ -37,7 +36,6 @@
     .locals 2
 
     .prologue
-    .line 331
     iget-object v0, p0, Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener$2;->this$0:Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;
 
     # getter for: Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;->mHandler:Landroid/os/Handler;
@@ -49,6 +47,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 332
     return-void
 .end method

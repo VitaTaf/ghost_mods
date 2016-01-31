@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 624
     iput-object p1, p0, Lcom/motorola/kpi/LaunchCheckinHandler$1;->this$0:Lcom/motorola/kpi/LaunchCheckinHandler;
 
     iput-wide p2, p0, Lcom/motorola/kpi/LaunchCheckinHandler$1;->val$now:J
@@ -41,7 +40,6 @@
     .locals 4
 
     .prologue
-    .line 626
     iget-object v0, p0, Lcom/motorola/kpi/LaunchCheckinHandler$1;->this$0:Lcom/motorola/kpi/LaunchCheckinHandler;
 
     # getter for: Lcom/motorola/kpi/LaunchCheckinHandler;->launchStats:Ljava/util/Map;
@@ -51,7 +49,6 @@
 
     monitor-enter v1
 
-    .line 627
     :try_start_0
     iget-object v0, p0, Lcom/motorola/kpi/LaunchCheckinHandler$1;->this$0:Lcom/motorola/kpi/LaunchCheckinHandler;
 
@@ -60,13 +57,10 @@
     # invokes: Lcom/motorola/kpi/LaunchCheckinHandler;->saveStatsLocked(J)V
     invoke-static {v0, v2, v3}, Lcom/motorola/kpi/LaunchCheckinHandler;->access$100(Lcom/motorola/kpi/LaunchCheckinHandler;J)V
 
-    .line 628
     monitor-exit v1
 
-    .line 629
     return-void
 
-    .line 628
     :catchall_0
     move-exception v0
 

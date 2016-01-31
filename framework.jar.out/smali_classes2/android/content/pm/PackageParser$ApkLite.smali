@@ -65,29 +65,21 @@
     .end annotation
 
     .prologue
-    .line 315
     .local p7, "verifiers":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/VerifierInfo;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 316
     iput-object p1, p0, Landroid/content/pm/PackageParser$ApkLite;->codePath:Ljava/lang/String;
 
-    .line 317
     iput-object p2, p0, Landroid/content/pm/PackageParser$ApkLite;->packageName:Ljava/lang/String;
 
-    .line 318
     iput-object p3, p0, Landroid/content/pm/PackageParser$ApkLite;->splitName:Ljava/lang/String;
 
-    .line 319
     iput p4, p0, Landroid/content/pm/PackageParser$ApkLite;->versionCode:I
 
-    .line 320
     iput p5, p0, Landroid/content/pm/PackageParser$ApkLite;->revisionCode:I
 
-    .line 321
     iput p6, p0, Landroid/content/pm/PackageParser$ApkLite;->installLocation:I
 
-    .line 322
     invoke-interface {p7}, Ljava/util/List;->size()I
 
     move-result v0
@@ -102,15 +94,11 @@
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$ApkLite;->verifiers:[Landroid/content/pm/VerifierInfo;
 
-    .line 323
     iput-object p8, p0, Landroid/content/pm/PackageParser$ApkLite;->signatures:[Landroid/content/pm/Signature;
 
-    .line 324
     iput-boolean p9, p0, Landroid/content/pm/PackageParser$ApkLite;->coreApp:Z
 
-    .line 325
     iput-boolean p10, p0, Landroid/content/pm/PackageParser$ApkLite;->multiArch:Z
 
-    .line 326
     return-void
 .end method

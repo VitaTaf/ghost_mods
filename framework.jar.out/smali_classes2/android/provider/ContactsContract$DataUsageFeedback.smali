@@ -33,7 +33,6 @@
     .locals 2
 
     .prologue
-    .line 7987
     sget-object v0, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "usagefeedback"
@@ -44,7 +43,6 @@
 
     sput-object v0, Landroid/provider/ContactsContract$DataUsageFeedback;->FEEDBACK_URI:Landroid/net/Uri;
 
-    .line 7995
     sget-object v0, Landroid/provider/ContactsContract$Contacts;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "delete_usage"
@@ -62,7 +60,6 @@
     .locals 0
 
     .prologue
-    .line 7981
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

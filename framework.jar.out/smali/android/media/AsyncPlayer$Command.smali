@@ -33,7 +33,6 @@
     .locals 0
 
     .prologue
-    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -44,7 +43,6 @@
     .param p1, "x0"    # Landroid/media/AsyncPlayer$1;
 
     .prologue
-    .line 36
     invoke-direct {p0}, Landroid/media/AsyncPlayer$Command;-><init>()V
 
     return-void
@@ -56,7 +54,6 @@
     .locals 2
 
     .prologue
-    .line 45
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

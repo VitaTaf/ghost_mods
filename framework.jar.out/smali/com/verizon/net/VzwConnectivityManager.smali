@@ -13,13 +13,10 @@
     .param p1, "service"    # Lcom/verizon/net/IVzwConnectivityManager;
 
     .prologue
-    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 38
     iput-object p1, p0, Lcom/verizon/net/VzwConnectivityManager;->mService:Lcom/verizon/net/IVzwConnectivityManager;
 
-    .line 39
     return-void
 .end method
 
@@ -31,7 +28,6 @@
     .param p2, "networkType"    # I
 
     .prologue
-    .line 55
     :try_start_0
     iget-object v1, p0, Lcom/verizon/net/VzwConnectivityManager;->mService:Lcom/verizon/net/IVzwConnectivityManager;
 
@@ -41,15 +37,12 @@
 
     move-result-wide v2
 
-    .line 57
     :goto_0
     return-wide v2
 
-    .line 56
     :catch_0
     move-exception v0
 
-    .line 57
     .local v0, "e":Landroid/os/RemoteException;
     const-wide/16 v2, 0x0
 
@@ -62,7 +55,6 @@
     .param p2, "networkType"    # I
 
     .prologue
-    .line 63
     :try_start_0
     iget-object v1, p0, Lcom/verizon/net/VzwConnectivityManager;->mService:Lcom/verizon/net/IVzwConnectivityManager;
 
@@ -72,15 +64,12 @@
 
     move-result-wide v2
 
-    .line 65
     :goto_0
     return-wide v2
 
-    .line 64
     :catch_0
     move-exception v0
 
-    .line 65
     .local v0, "e":Landroid/os/RemoteException;
     const-wide/16 v2, 0x0
 
@@ -92,7 +81,6 @@
     .param p1, "networkType"    # I
 
     .prologue
-    .line 47
     :try_start_0
     iget-object v1, p0, Lcom/verizon/net/VzwConnectivityManager;->mService:Lcom/verizon/net/IVzwConnectivityManager;
 
@@ -102,15 +90,12 @@
 
     move-result-object v1
 
-    .line 49
     :goto_0
     return-object v1
 
-    .line 48
     :catch_0
     move-exception v0
 
-    .line 49
     .local v0, "e":Landroid/os/RemoteException;
     const/4 v1, 0x0
 

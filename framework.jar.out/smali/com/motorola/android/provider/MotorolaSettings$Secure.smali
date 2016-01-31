@@ -180,7 +180,6 @@
     .locals 5
 
     .prologue
-    .line 1028
     const-string v0, "content://com.motorola.android.providers.settings/secure"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -189,7 +188,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/MotorolaSettings$Secure;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 1032
     new-instance v0, Lcom/motorola/android/provider/MotorolaSettings$NameValueCache;
 
     const-string/jumbo v1, "sys.mot_settings_secure_version"
@@ -204,42 +202,36 @@
 
     sput-object v0, Lcom/motorola/android/provider/MotorolaSettings$Secure;->sNameValueCache:Lcom/motorola/android/provider/MotorolaSettings$NameValueCache;
 
-    .line 1042
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     sput-object v0, Lcom/motorola/android/provider/MotorolaSettings$Secure;->MOVED_TO_GLOBAL:Ljava/util/HashSet;
 
-    .line 1043
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings$Secure;->MOVED_TO_GLOBAL:Ljava/util/HashSet;
 
     const-string/jumbo v1, "multi_sim_sim1_name"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1044
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings$Secure;->MOVED_TO_GLOBAL:Ljava/util/HashSet;
 
     const-string/jumbo v1, "multi_sim_sim2_name"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1045
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings$Secure;->MOVED_TO_GLOBAL:Ljava/util/HashSet;
 
     const-string/jumbo v1, "multi_sim_sim1_color"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1046
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings$Secure;->MOVED_TO_GLOBAL:Ljava/util/HashSet;
 
     const-string/jumbo v1, "multi_sim_sim2_color"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1498
     const/4 v0, 0x0
 
     new-array v0, v0, [Ljava/lang/String;
@@ -253,7 +245,6 @@
     .locals 0
 
     .prologue
-    .line 976
     invoke-direct {p0}, Lcom/motorola/android/provider/MotorolaSettings$NameValueTable;-><init>()V
 
     return-void
@@ -270,7 +261,6 @@
     .end annotation
 
     .prologue
-    .line 1800
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -289,7 +279,6 @@
     .param p2, "def"    # F
 
     .prologue
-    .line 1766
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -309,12 +298,10 @@
     .param p3, "userHandle"    # I
 
     .prologue
-    .line 1772
     invoke-static {p0, p1, p3}, Lcom/motorola/android/provider/MotorolaSettings$Secure;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1774
     .local v1, "v":Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -325,18 +312,15 @@
 
     move-result p2
 
-    .line 1776
     .end local p2    # "def":F
     :cond_0
     :goto_0
     return p2
 
-    .line 1775
     .restart local p2    # "def":F
     :catch_0
     move-exception v0
 
-    .line 1776
     .local v0, "e":Ljava/lang/NumberFormatException;
     goto :goto_0
 .end method
@@ -353,23 +337,19 @@
     .end annotation
 
     .prologue
-    .line 1806
     invoke-static {p0, p1, p2}, Lcom/motorola/android/provider/MotorolaSettings$Secure;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1807
     .local v1, "v":Ljava/lang/String;
     if-nez v1, :cond_0
 
-    .line 1808
     new-instance v2, Lcom/motorola/android/provider/MotorolaSettings$SettingNotFoundException;
 
     invoke-direct {v2, p1}, Lcom/motorola/android/provider/MotorolaSettings$SettingNotFoundException;-><init>(Ljava/lang/String;)V
 
     throw v2
 
-    .line 1811
     :cond_0
     :try_start_0
     invoke-static {v1}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
@@ -380,11 +360,9 @@
 
     return v2
 
-    .line 1812
     :catch_0
     move-exception v0
 
-    .line 1813
     .local v0, "e":Ljava/lang/NumberFormatException;
     new-instance v2, Lcom/motorola/android/provider/MotorolaSettings$SettingNotFoundException;
 
@@ -404,7 +382,6 @@
     .end annotation
 
     .prologue
-    .line 1627
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -423,7 +400,6 @@
     .param p2, "def"    # I
 
     .prologue
-    .line 1594
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -447,12 +423,10 @@
     .end annotation
 
     .prologue
-    .line 1633
     invoke-static {p0, p1, p2}, Lcom/motorola/android/provider/MotorolaSettings$Secure;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1635
     .local v1, "v":Ljava/lang/String;
     :try_start_0
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -463,11 +437,9 @@
 
     return v2
 
-    .line 1636
     :catch_0
     move-exception v0
 
-    .line 1637
     .local v0, "e":Ljava/lang/NumberFormatException;
     new-instance v2, Lcom/motorola/android/provider/MotorolaSettings$SettingNotFoundException;
 
@@ -484,12 +456,10 @@
     .param p3, "userHandle"    # I
 
     .prologue
-    .line 1599
     invoke-static {p0, p1, p3}, Lcom/motorola/android/provider/MotorolaSettings$Secure;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1601
     .local v1, "v":Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -500,18 +470,15 @@
 
     move-result p2
 
-    .line 1603
     .end local p2    # "def":I
     :cond_0
     :goto_0
     return p2
 
-    .line 1602
     .restart local p2    # "def":I
     :catch_0
     move-exception v0
 
-    .line 1603
     .local v0, "e":Ljava/lang/NumberFormatException;
     goto :goto_0
 .end method
@@ -527,7 +494,6 @@
     .end annotation
 
     .prologue
-    .line 1714
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -546,7 +512,6 @@
     .param p2, "def"    # J
 
     .prologue
-    .line 1679
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -570,12 +535,10 @@
     .end annotation
 
     .prologue
-    .line 1720
     invoke-static {p0, p1, p2}, Lcom/motorola/android/provider/MotorolaSettings$Secure;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1722
     .local v1, "valString":Ljava/lang/String;
     :try_start_0
     invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
@@ -586,11 +549,9 @@
 
     return-wide v2
 
-    .line 1723
     :catch_0
     move-exception v0
 
-    .line 1724
     .local v0, "e":Ljava/lang/NumberFormatException;
     new-instance v2, Lcom/motorola/android/provider/MotorolaSettings$SettingNotFoundException;
 
@@ -607,12 +568,10 @@
     .param p4, "userHandle"    # I
 
     .prologue
-    .line 1685
     invoke-static {p0, p1, p4}, Lcom/motorola/android/provider/MotorolaSettings$Secure;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1688
     .local v1, "valString":Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -623,7 +582,6 @@
 
     move-result-wide v2
 
-    .line 1692
     .local v2, "value":J
     :goto_0
     return-wide v2
@@ -632,14 +590,11 @@
     :cond_0
     move-wide v2, p2
 
-    .line 1688
     goto :goto_0
 
-    .line 1689
     :catch_0
     move-exception v0
 
-    .line 1690
     .local v0, "e":Ljava/lang/NumberFormatException;
     move-wide v2, p2
 
@@ -660,13 +615,11 @@
     .end annotation
 
     .prologue
-    .line 1051
     .local p0, "outKeySet":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/String;>;"
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings$Secure;->MOVED_TO_GLOBAL:Ljava/util/HashSet;
 
     invoke-virtual {p0, v0}, Ljava/util/HashSet;->addAll(Ljava/util/Collection;)Z
 
-    .line 1052
     return-void
 .end method
 
@@ -676,7 +629,6 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 1521
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -695,7 +647,6 @@
     .param p2, "userHandle"    # I
 
     .prologue
-    .line 1527
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings$Secure;->MOVED_TO_GLOBAL:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
@@ -704,7 +655,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1528
     const-string v0, "MotorolaSettings"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -739,12 +689,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1530
     invoke-static {p0, p1, p2}, Lcom/motorola/android/provider/MotorolaSettings$Global;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1533
     :goto_0
     return-object v0
 
@@ -763,7 +711,6 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 1571
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings$Secure;->MOVED_TO_GLOBAL:Ljava/util/HashSet;
 
     invoke-virtual {v0, p0}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
@@ -772,7 +719,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1572
     const-string v0, "MotorolaSettings"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -807,14 +753,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1574
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings$Global;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {v0, p0}, Lcom/motorola/android/provider/MotorolaSettings$Global;->getUriFor(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 1576
     :goto_0
     return-object v0
 
@@ -835,7 +779,6 @@
     .param p2, "value"    # F
 
     .prologue
-    .line 1831
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -855,7 +798,6 @@
     .param p3, "userHandle"    # I
 
     .prologue
-    .line 1837
     invoke-static {p2}, Ljava/lang/Float;->toString(F)Ljava/lang/String;
 
     move-result-object v0
@@ -874,7 +816,6 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 1655
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -894,7 +835,6 @@
     .param p3, "userHandle"    # I
 
     .prologue
-    .line 1661
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -913,7 +853,6 @@
     .param p2, "value"    # J
 
     .prologue
-    .line 1742
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -933,7 +872,6 @@
     .param p4, "userHandle"    # I
 
     .prologue
-    .line 1748
     invoke-static {p2, p3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
     move-result-object v0
@@ -952,7 +890,6 @@
     .param p2, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 1544
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -972,7 +909,6 @@
     .param p3, "userHandle"    # I
 
     .prologue
-    .line 1555
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings$Secure;->MOVED_TO_GLOBAL:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
@@ -981,7 +917,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1556
     const-string v0, "MotorolaSettings"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1016,12 +951,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1558
     invoke-static {p0, p1, p2, p3}, Lcom/motorola/android/provider/MotorolaSettings$Global;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
 
     move-result v0
 
-    .line 1561
     :goto_0
     return v0
 

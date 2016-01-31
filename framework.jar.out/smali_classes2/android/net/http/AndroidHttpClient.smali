@@ -43,12 +43,10 @@
     .locals 3
 
     .prologue
-    .line 89
     const-wide/16 v0, 0x100
 
     sput-wide v0, Landroid/net/http/AndroidHttpClient;->DEFAULT_SYNC_MIN_GZIP_BYTES:J
 
-    .line 96
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/String;
@@ -73,7 +71,6 @@
 
     sput-object v0, Landroid/net/http/AndroidHttpClient;->textContentTypes:[Ljava/lang/String;
 
-    .line 103
     new-instance v0, Landroid/net/http/AndroidHttpClient$1;
 
     invoke-direct {v0}, Landroid/net/http/AndroidHttpClient$1;-><init>()V
@@ -89,10 +86,8 @@
     .param p2, "params"    # Lorg/apache/http/params/HttpParams;
 
     .prologue
-    .line 181
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 178
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "AndroidHttpClient created and never closed"
@@ -101,14 +96,12 @@
 
     iput-object v0, p0, Landroid/net/http/AndroidHttpClient;->mLeakedException:Ljava/lang/RuntimeException;
 
-    .line 182
     new-instance v0, Landroid/net/http/AndroidHttpClient$2;
 
     invoke-direct {v0, p0, p1, p2}, Landroid/net/http/AndroidHttpClient$2;-><init>(Landroid/net/http/AndroidHttpClient;Lorg/apache/http/conn/ClientConnectionManager;Lorg/apache/http/params/HttpParams;)V
 
     iput-object v0, p0, Landroid/net/http/AndroidHttpClient;->delegate:Lorg/apache/http/client/HttpClient;
 
-    .line 210
     return-void
 .end method
 
@@ -116,7 +109,6 @@
     .locals 1
 
     .prologue
-    .line 86
     sget-object v0, Landroid/net/http/AndroidHttpClient;->sThreadCheckInterceptor:Lorg/apache/http/HttpRequestInterceptor;
 
     return-object v0
@@ -127,7 +119,6 @@
     .param p0, "x0"    # Landroid/net/http/AndroidHttpClient;
 
     .prologue
-    .line 86
     iget-object v0, p0, Landroid/net/http/AndroidHttpClient;->curlConfiguration:Landroid/net/http/AndroidHttpClient$LoggingConfiguration;
 
     return-object v0
@@ -144,7 +135,6 @@
     .end annotation
 
     .prologue
-    .line 86
     invoke-static {p0, p1}, Landroid/net/http/AndroidHttpClient;->toCurl(Lorg/apache/http/client/methods/HttpUriRequest;Z)Ljava/lang/String;
 
     move-result-object v0
@@ -163,7 +153,6 @@
     .end annotation
 
     .prologue
-    .line 339
     array-length v3, p0
 
     int-to-long v4, v3
@@ -176,37 +165,30 @@
 
     if-gez v3, :cond_0
 
-    .line 340
     new-instance v1, Lorg/apache/http/entity/ByteArrayEntity;
 
     invoke-direct {v1, p0}, Lorg/apache/http/entity/ByteArrayEntity;-><init>([B)V
 
-    .line 349
     .local v1, "entity":Lorg/apache/http/entity/AbstractHttpEntity;
     :goto_0
     return-object v1
 
-    .line 342
     .end local v1    # "entity":Lorg/apache/http/entity/AbstractHttpEntity;
     :cond_0
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 343
     .local v0, "arr":Ljava/io/ByteArrayOutputStream;
     new-instance v2, Ljava/util/zip/GZIPOutputStream;
 
     invoke-direct {v2, v0}, Ljava/util/zip/GZIPOutputStream;-><init>(Ljava/io/OutputStream;)V
 
-    .line 344
     .local v2, "zipper":Ljava/io/OutputStream;
     invoke-virtual {v2, p0}, Ljava/io/OutputStream;->write([B)V
 
-    .line 345
     invoke-virtual {v2}, Ljava/io/OutputStream;->close()V
 
-    .line 346
     new-instance v1, Lorg/apache/http/entity/ByteArrayEntity;
 
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
@@ -215,7 +197,6 @@
 
     invoke-direct {v1, v3}, Lorg/apache/http/entity/ByteArrayEntity;-><init>([B)V
 
-    .line 347
     .restart local v1    # "entity":Lorg/apache/http/entity/AbstractHttpEntity;
     const-string v3, "gzip"
 
@@ -229,7 +210,6 @@
     .param p0, "resolver"    # Landroid/content/ContentResolver;
 
     .prologue
-    .line 357
     sget-wide v0, Landroid/net/http/AndroidHttpClient;->DEFAULT_SYNC_MIN_GZIP_BYTES:J
 
     return-wide v0
@@ -245,24 +225,20 @@
     .end annotation
 
     .prologue
-    .line 241
     invoke-interface {p0}, Lorg/apache/http/HttpEntity;->getContent()Ljava/io/InputStream;
 
     move-result-object v2
 
-    .line 242
     .local v2, "responseStream":Ljava/io/InputStream;
     if-nez v2, :cond_0
 
     move-object v3, v2
 
-    .line 249
     .end local v2    # "responseStream":Ljava/io/InputStream;
     .local v3, "responseStream":Ljava/io/InputStream;
     :goto_0
     return-object v3
 
-    .line 243
     .end local v3    # "responseStream":Ljava/io/InputStream;
     .restart local v2    # "responseStream":Ljava/io/InputStream;
     :cond_0
@@ -270,7 +246,6 @@
 
     move-result-object v1
 
-    .line 244
     .local v1, "header":Lorg/apache/http/Header;
     if-nez v1, :cond_1
 
@@ -280,7 +255,6 @@
     .restart local v3    # "responseStream":Ljava/io/InputStream;
     goto :goto_0
 
-    .line 245
     .end local v3    # "responseStream":Ljava/io/InputStream;
     .restart local v2    # "responseStream":Ljava/io/InputStream;
     :cond_1
@@ -288,7 +262,6 @@
 
     move-result-object v0
 
-    .line 246
     .local v0, "contentEncoding":Ljava/lang/String;
     if-nez v0, :cond_2
 
@@ -298,7 +271,6 @@
     .restart local v3    # "responseStream":Ljava/io/InputStream;
     goto :goto_0
 
-    .line 247
     .end local v3    # "responseStream":Ljava/io/InputStream;
     .restart local v2    # "responseStream":Ljava/io/InputStream;
     :cond_2
@@ -323,7 +295,6 @@
     :cond_3
     move-object v3, v2
 
-    .line 249
     .end local v2    # "responseStream":Ljava/io/InputStream;
     .restart local v3    # "responseStream":Ljava/io/InputStream;
     goto :goto_0
@@ -336,18 +307,15 @@
     .prologue
     const/4 v9, 0x1
 
-    .line 505
     const-string v10, "content-encoding"
 
     invoke-interface {p0, v10}, Lorg/apache/http/client/methods/HttpUriRequest;->getHeaders(Ljava/lang/String;)[Lorg/apache/http/Header;
 
     move-result-object v4
 
-    .line 506
     .local v4, "headers":[Lorg/apache/http/Header;
     if-eqz v4, :cond_2
 
-    .line 507
     move-object v0, v4
 
     .local v0, "arr$":[Lorg/apache/http/Header;
@@ -362,7 +330,6 @@
 
     aget-object v3, v0, v5
 
-    .line 508
     .local v3, "header":Lorg/apache/http/Header;
     const-string v10, "gzip"
 
@@ -376,7 +343,6 @@
 
     if-eqz v10, :cond_1
 
-    .line 524
     .end local v0    # "arr$":[Lorg/apache/http/Header;
     .end local v3    # "header":Lorg/apache/http/Header;
     .end local v5    # "i$":I
@@ -385,7 +351,6 @@
     :goto_1
     return v9
 
-    .line 507
     .restart local v0    # "arr$":[Lorg/apache/http/Header;
     .restart local v3    # "header":Lorg/apache/http/Header;
     .restart local v5    # "i$":I
@@ -395,7 +360,6 @@
 
     goto :goto_0
 
-    .line 514
     .end local v0    # "arr$":[Lorg/apache/http/Header;
     .end local v3    # "header":Lorg/apache/http/Header;
     .end local v5    # "i$":I
@@ -407,10 +371,8 @@
 
     move-result-object v4
 
-    .line 515
     if-eqz v4, :cond_0
 
-    .line 516
     move-object v0, v4
 
     .restart local v0    # "arr$":[Lorg/apache/http/Header;
@@ -431,7 +393,6 @@
 
     aget-object v3, v0, v6
 
-    .line 517
     .restart local v3    # "header":Lorg/apache/http/Header;
     sget-object v1, Landroid/net/http/AndroidHttpClient;->textContentTypes:[Ljava/lang/String;
 
@@ -448,7 +409,6 @@
 
     aget-object v2, v1, v5
 
-    .line 518
     .local v2, "contentType":Ljava/lang/String;
     invoke-interface {v3}, Lorg/apache/http/Header;->getValue()Ljava/lang/String;
 
@@ -460,18 +420,15 @@
 
     if-eqz v10, :cond_3
 
-    .line 519
     const/4 v9, 0x0
 
     goto :goto_1
 
-    .line 517
     :cond_3
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_3
 
-    .line 516
     .end local v2    # "contentType":Ljava/lang/String;
     :cond_4
     add-int/lit8 v5, v6, 0x1
@@ -488,14 +445,12 @@
     .param p0, "request"    # Lorg/apache/http/HttpRequest;
 
     .prologue
-    .line 228
     const-string v0, "Accept-Encoding"
 
     const-string v1, "gzip"
 
     invoke-interface {p0, v0, v1}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 229
     return-void
 .end method
 
@@ -506,7 +461,6 @@
     .end annotation
 
     .prologue
-    .line 173
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Landroid/net/http/AndroidHttpClient;->newInstance(Ljava/lang/String;Landroid/content/Context;)Landroid/net/http/AndroidHttpClient;
@@ -528,45 +482,35 @@
 
     const v8, 0xea60
 
-    .line 127
     new-instance v1, Lorg/apache/http/params/BasicHttpParams;
 
     invoke-direct {v1}, Lorg/apache/http/params/BasicHttpParams;-><init>()V
 
-    .line 131
     .local v1, "params":Lorg/apache/http/params/HttpParams;
     invoke-static {v1, v5}, Lorg/apache/http/params/HttpConnectionParams;->setStaleCheckingEnabled(Lorg/apache/http/params/HttpParams;Z)V
 
-    .line 133
     invoke-static {v1, v8}, Lorg/apache/http/params/HttpConnectionParams;->setConnectionTimeout(Lorg/apache/http/params/HttpParams;I)V
 
-    .line 134
     invoke-static {v1, v8}, Lorg/apache/http/params/HttpConnectionParams;->setSoTimeout(Lorg/apache/http/params/HttpParams;I)V
 
-    .line 135
     const/16 v4, 0x2000
 
     invoke-static {v1, v4}, Lorg/apache/http/params/HttpConnectionParams;->setSocketBufferSize(Lorg/apache/http/params/HttpParams;I)V
 
-    .line 139
     invoke-static {v1, v5}, Lorg/apache/http/client/params/HttpClientParams;->setRedirecting(Lorg/apache/http/params/HttpParams;Z)V
 
-    .line 142
     if-nez p1, :cond_0
 
     const/4 v3, 0x0
 
-    .line 145
     .local v3, "sessionCache":Landroid/net/SSLSessionCache;
     :goto_0
     invoke-static {v1, p0}, Lorg/apache/http/params/HttpProtocolParams;->setUserAgent(Lorg/apache/http/params/HttpParams;Ljava/lang/String;)V
 
-    .line 146
     new-instance v2, Lorg/apache/http/conn/scheme/SchemeRegistry;
 
     invoke-direct {v2}, Lorg/apache/http/conn/scheme/SchemeRegistry;-><init>()V
 
-    .line 147
     .local v2, "schemeRegistry":Lorg/apache/http/conn/scheme/SchemeRegistry;
     new-instance v4, Lorg/apache/http/conn/scheme/Scheme;
 
@@ -582,7 +526,6 @@
 
     invoke-virtual {v2, v4}, Lorg/apache/http/conn/scheme/SchemeRegistry;->register(Lorg/apache/http/conn/scheme/Scheme;)Lorg/apache/http/conn/scheme/Scheme;
 
-    .line 149
     new-instance v4, Lorg/apache/http/conn/scheme/Scheme;
 
     const-string v5, "https"
@@ -597,12 +540,10 @@
 
     invoke-virtual {v2, v4}, Lorg/apache/http/conn/scheme/SchemeRegistry;->register(Lorg/apache/http/conn/scheme/Scheme;)Lorg/apache/http/conn/scheme/Scheme;
 
-    .line 153
     new-instance v0, Lorg/apache/http/impl/conn/tsccm/ThreadSafeClientConnManager;
 
     invoke-direct {v0, v1, v2}, Lorg/apache/http/impl/conn/tsccm/ThreadSafeClientConnManager;-><init>(Lorg/apache/http/params/HttpParams;Lorg/apache/http/conn/scheme/SchemeRegistry;)V
 
-    .line 158
     .local v0, "manager":Lorg/apache/http/conn/ClientConnectionManager;
     new-instance v4, Landroid/net/http/AndroidHttpClient;
 
@@ -610,7 +551,6 @@
 
     return-object v4
 
-    .line 142
     .end local v0    # "manager":Lorg/apache/http/conn/ClientConnectionManager;
     .end local v2    # "schemeRegistry":Lorg/apache/http/conn/scheme/SchemeRegistry;
     .end local v3    # "sessionCache":Landroid/net/SSLSessionCache;
@@ -627,7 +567,6 @@
     .param p0, "dateString"    # Ljava/lang/String;
 
     .prologue
-    .line 542
     invoke-static {p0}, Lcom/android/internal/http/HttpDateTime;->parse(Ljava/lang/String;)J
 
     move-result-wide v0
@@ -646,35 +585,29 @@
     .end annotation
 
     .prologue
-    .line 439
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 441
     .local v4, "builder":Ljava/lang/StringBuilder;
     const-string v14, "curl "
 
     invoke-virtual {v4, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 444
     const-string v14, "-X "
 
     invoke-virtual {v4, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 445
     invoke-interface/range {p0 .. p0}, Lorg/apache/http/client/methods/HttpUriRequest;->getMethod()Ljava/lang/String;
 
     move-result-object v14
 
     invoke-virtual {v4, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 446
     const-string v14, " "
 
     invoke-virtual {v4, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 448
     invoke-interface/range {p0 .. p0}, Lorg/apache/http/client/methods/HttpUriRequest;->getAllHeaders()[Lorg/apache/http/Header;
 
     move-result-object v2
@@ -691,7 +624,6 @@
 
     aget-object v8, v2, v9
 
-    .line 449
     .local v8, "header":Lorg/apache/http/Header;
     if-nez p1, :cond_1
 
@@ -719,20 +651,17 @@
 
     if-eqz v14, :cond_1
 
-    .line 448
     :cond_0
     :goto_1
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_0
 
-    .line 454
     :cond_1
     const-string v14, "--header \""
 
     invoke-virtual {v4, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 455
     invoke-virtual {v8}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v14
@@ -743,21 +672,18 @@
 
     invoke-virtual {v4, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 456
     const-string v14, "\" "
 
     invoke-virtual {v4, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_1
 
-    .line 459
     .end local v8    # "header":Lorg/apache/http/Header;
     :cond_2
     invoke-interface/range {p0 .. p0}, Lorg/apache/http/client/methods/HttpUriRequest;->getURI()Ljava/net/URI;
 
     move-result-object v13
 
-    .line 464
     .local v13, "uri":Ljava/net/URI;
     move-object/from16 v0, p0
 
@@ -767,20 +693,17 @@
 
     move-object/from16 v14, p0
 
-    .line 465
     check-cast v14, Lorg/apache/http/impl/client/RequestWrapper;
 
     invoke-virtual {v14}, Lorg/apache/http/impl/client/RequestWrapper;->getOriginal()Lorg/apache/http/HttpRequest;
 
     move-result-object v11
 
-    .line 466
     .local v11, "original":Lorg/apache/http/HttpRequest;
     instance-of v14, v11, Lorg/apache/http/client/methods/HttpUriRequest;
 
     if-eqz v14, :cond_3
 
-    .line 467
     check-cast v11, Lorg/apache/http/client/methods/HttpUriRequest;
 
     .end local v11    # "original":Lorg/apache/http/HttpRequest;
@@ -788,21 +711,17 @@
 
     move-result-object v13
 
-    .line 471
     :cond_3
     const-string v14, "\""
 
     invoke-virtual {v4, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 472
     invoke-virtual {v4, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 473
     const-string v14, "\""
 
     invoke-virtual {v4, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 475
     move-object/from16 v0, p0
 
     instance-of v14, v0, Lorg/apache/http/HttpEntityEnclosingRequest;
@@ -811,16 +730,13 @@
 
     move-object/from16 v6, p0
 
-    .line 476
     check-cast v6, Lorg/apache/http/HttpEntityEnclosingRequest;
 
-    .line 478
     .local v6, "entityRequest":Lorg/apache/http/HttpEntityEnclosingRequest;
     invoke-interface {v6}, Lorg/apache/http/HttpEntityEnclosingRequest;->getEntity()Lorg/apache/http/HttpEntity;
 
     move-result-object v5
 
-    .line 479
     .local v5, "entity":Lorg/apache/http/HttpEntity;
     if-eqz v5, :cond_4
 
@@ -830,7 +746,6 @@
 
     if-eqz v14, :cond_4
 
-    .line 480
     invoke-interface {v5}, Lorg/apache/http/HttpEntity;->getContentLength()J
 
     move-result-wide v14
@@ -841,23 +756,19 @@
 
     if-gez v14, :cond_6
 
-    .line 481
     new-instance v12, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v12}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 482
     .local v12, "stream":Ljava/io/ByteArrayOutputStream;
     invoke-interface {v5, v12}, Lorg/apache/http/HttpEntity;->writeTo(Ljava/io/OutputStream;)V
 
-    .line 484
     invoke-static/range {p0 .. p0}, Landroid/net/http/AndroidHttpClient;->isBinaryContent(Lorg/apache/http/client/methods/HttpUriRequest;)Z
 
     move-result v14
 
     if-eqz v14, :cond_5
 
-    .line 485
     invoke-virtual {v12}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v14
@@ -868,7 +779,6 @@
 
     move-result-object v3
 
-    .line 486
     .local v3, "base64":Ljava/lang/String;
     const/4 v14, 0x0
 
@@ -898,12 +808,10 @@
 
     invoke-virtual {v4, v14, v15}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 487
     const-string v14, " --data-binary @/tmp/$$.bin"
 
     invoke-virtual {v4, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 500
     .end local v3    # "base64":Ljava/lang/String;
     .end local v5    # "entity":Lorg/apache/http/HttpEntity;
     .end local v6    # "entityRequest":Lorg/apache/http/HttpEntityEnclosingRequest;
@@ -916,7 +824,6 @@
 
     return-object v14
 
-    .line 489
     .restart local v5    # "entity":Lorg/apache/http/HttpEntity;
     .restart local v6    # "entityRequest":Lorg/apache/http/HttpEntityEnclosingRequest;
     .restart local v12    # "stream":Ljava/io/ByteArrayOutputStream;
@@ -925,7 +832,6 @@
 
     move-result-object v7
 
-    .line 490
     .local v7, "entityString":Ljava/lang/String;
     const-string v14, " --data-ascii \""
 
@@ -943,7 +849,6 @@
 
     goto :goto_2
 
-    .line 495
     .end local v7    # "entityString":Ljava/lang/String;
     .end local v12    # "stream":Ljava/io/ByteArrayOutputStream;
     :cond_6
@@ -960,24 +865,20 @@
     .locals 1
 
     .prologue
-    .line 257
     iget-object v0, p0, Landroid/net/http/AndroidHttpClient;->mLeakedException:Ljava/lang/RuntimeException;
 
     if-eqz v0, :cond_0
 
-    .line 258
     invoke-virtual {p0}, Landroid/net/http/AndroidHttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
 
     move-result-object v0
 
     invoke-interface {v0}, Lorg/apache/http/conn/ClientConnectionManager;->shutdown()V
 
-    .line 259
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/net/http/AndroidHttpClient;->mLeakedException:Ljava/lang/RuntimeException;
 
-    .line 261
     :cond_0
     return-void
 .end method
@@ -986,12 +887,10 @@
     .locals 1
 
     .prologue
-    .line 415
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/net/http/AndroidHttpClient;->curlConfiguration:Landroid/net/http/AndroidHttpClient$LoggingConfiguration;
 
-    .line 416
     return-void
 .end method
 
@@ -1001,10 +900,8 @@
     .param p2, "level"    # I
 
     .prologue
-    .line 400
     if-nez p1, :cond_0
 
-    .line 401
     new-instance v0, Ljava/lang/NullPointerException;
 
     const-string v1, "name"
@@ -1013,7 +910,6 @@
 
     throw v0
 
-    .line 403
     :cond_0
     const/4 v0, 0x2
 
@@ -1023,7 +919,6 @@
 
     if-le p2, v0, :cond_2
 
-    .line 404
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1033,7 +928,6 @@
 
     throw v0
 
-    .line 408
     :cond_2
     new-instance v0, Landroid/net/http/AndroidHttpClient$LoggingConfiguration;
 
@@ -1043,7 +937,6 @@
 
     iput-object v0, p0, Landroid/net/http/AndroidHttpClient;->curlConfiguration:Landroid/net/http/AndroidHttpClient$LoggingConfiguration;
 
-    .line 409
     return-void
 .end method
 
@@ -1071,7 +964,6 @@
     .end annotation
 
     .prologue
-    .line 320
     .local p3, "responseHandler":Lorg/apache/http/client/ResponseHandler;, "Lorg/apache/http/client/ResponseHandler<+TT;>;"
     iget-object v0, p0, Landroid/net/http/AndroidHttpClient;->delegate:Lorg/apache/http/client/HttpClient;
 
@@ -1109,7 +1001,6 @@
     .end annotation
 
     .prologue
-    .line 326
     .local p3, "responseHandler":Lorg/apache/http/client/ResponseHandler;, "Lorg/apache/http/client/ResponseHandler<+TT;>;"
     iget-object v0, p0, Landroid/net/http/AndroidHttpClient;->delegate:Lorg/apache/http/client/HttpClient;
 
@@ -1142,7 +1033,6 @@
     .end annotation
 
     .prologue
-    .line 308
     .local p2, "responseHandler":Lorg/apache/http/client/ResponseHandler;, "Lorg/apache/http/client/ResponseHandler<+TT;>;"
     iget-object v0, p0, Landroid/net/http/AndroidHttpClient;->delegate:Lorg/apache/http/client/HttpClient;
 
@@ -1178,7 +1068,6 @@
     .end annotation
 
     .prologue
-    .line 314
     .local p2, "responseHandler":Lorg/apache/http/client/ResponseHandler;, "Lorg/apache/http/client/ResponseHandler<+TT;>;"
     iget-object v0, p0, Landroid/net/http/AndroidHttpClient;->delegate:Lorg/apache/http/client/HttpClient;
 
@@ -1200,7 +1089,6 @@
     .end annotation
 
     .prologue
-    .line 297
     iget-object v0, p0, Landroid/net/http/AndroidHttpClient;->delegate:Lorg/apache/http/client/HttpClient;
 
     invoke-interface {v0, p1, p2}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;)Lorg/apache/http/HttpResponse;
@@ -1222,7 +1110,6 @@
     .end annotation
 
     .prologue
-    .line 302
     iget-object v0, p0, Landroid/net/http/AndroidHttpClient;->delegate:Lorg/apache/http/client/HttpClient;
 
     invoke-interface {v0, p1, p2, p3}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;
@@ -1242,7 +1129,6 @@
     .end annotation
 
     .prologue
-    .line 287
     iget-object v0, p0, Landroid/net/http/AndroidHttpClient;->delegate:Lorg/apache/http/client/HttpClient;
 
     invoke-interface {v0, p1}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;
@@ -1263,7 +1149,6 @@
     .end annotation
 
     .prologue
-    .line 292
     iget-object v0, p0, Landroid/net/http/AndroidHttpClient;->delegate:Lorg/apache/http/client/HttpClient;
 
     invoke-interface {v0, p1, p2}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;
@@ -1282,15 +1167,12 @@
     .end annotation
 
     .prologue
-    .line 214
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 215
     iget-object v0, p0, Landroid/net/http/AndroidHttpClient;->mLeakedException:Ljava/lang/RuntimeException;
 
     if-eqz v0, :cond_0
 
-    .line 216
     const-string v0, "AndroidHttpClient"
 
     const-string v1, "Leak found"
@@ -1299,12 +1181,10 @@
 
     invoke-static {v0, v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 217
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/net/http/AndroidHttpClient;->mLeakedException:Ljava/lang/RuntimeException;
 
-    .line 219
     :cond_0
     return-void
 .end method
@@ -1313,7 +1193,6 @@
     .locals 1
 
     .prologue
-    .line 283
     iget-object v0, p0, Landroid/net/http/AndroidHttpClient;->delegate:Lorg/apache/http/client/HttpClient;
 
     invoke-interface {v0}, Lorg/apache/http/client/HttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
@@ -1327,7 +1206,6 @@
     .locals 1
 
     .prologue
-    .line 264
     iget-object v0, p0, Landroid/net/http/AndroidHttpClient;->delegate:Lorg/apache/http/client/HttpClient;
 
     invoke-interface {v0}, Lorg/apache/http/client/HttpClient;->getParams()Lorg/apache/http/params/HttpParams;
@@ -1342,14 +1220,12 @@
     .param p1, "count"    # I
 
     .prologue
-    .line 273
     iget-object v0, p0, Landroid/net/http/AndroidHttpClient;->delegate:Lorg/apache/http/client/HttpClient;
 
     instance-of v0, v0, Lorg/apache/http/impl/client/AbstractHttpClient;
 
     if-eqz v0, :cond_0
 
-    .line 274
     const-string v0, "AndroidHttpClient"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1372,18 +1248,15 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 275
     iget-object v0, p0, Landroid/net/http/AndroidHttpClient;->delegate:Lorg/apache/http/client/HttpClient;
 
     check-cast v0, Lorg/apache/http/impl/client/AbstractHttpClient;
 
     invoke-virtual {v0, p1}, Lorg/apache/http/impl/client/AbstractHttpClient;->setRetryCountFor1Hop(I)V
 
-    .line 279
     :goto_0
     return-void
 
-    .line 277
     :cond_0
     const-string v0, "AndroidHttpClient"
 

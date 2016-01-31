@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 759
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -34,30 +33,23 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 761
     const/4 v7, 0x0
 
-    .line 762
     .local v7, "result":Ljava/lang/Object;
     const/4 v3, 0x0
 
-    .line 763
     .local v3, "mContext":Landroid/content/Context;
     const/4 v0, 0x0
 
-    .line 764
     .local v0, "cl":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const-string v6, "com.motorola.android.cbs.sprint.dynamic"
 
-    .line 765
     .local v6, "pkgName":Ljava/lang/String;
     const-string v1, "SprintExService"
 
-    .line 766
     .local v1, "className":Ljava/lang/String;
     const-string v5, "createConnectionManager"
 
-    .line 769
     .local v5, "methodName":Ljava/lang/String;
     :try_start_0
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
@@ -72,7 +64,6 @@
 
     move-result-object v3
 
-    .line 776
     :try_start_1
     invoke-virtual {v3}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
 
@@ -106,11 +97,9 @@
 
     move-result-object v0
 
-    .line 780
     :goto_0
     if-eqz v0, :cond_0
 
-    .line 782
     const/4 v8, 0x1
 
     :try_start_2
@@ -126,7 +115,6 @@
 
     move-result-object v4
 
-    .line 783
     .local v4, "method":Ljava/lang/reflect/Method;
     const/4 v8, 0x0
 
@@ -148,14 +136,12 @@
 
     move-result-object v7
 
-    .line 787
     .end local v4    # "method":Ljava/lang/reflect/Method;
     .end local v7    # "result":Ljava/lang/Object;
     :cond_0
     :goto_1
     return-object v7
 
-    .line 771
     .restart local v7    # "result":Ljava/lang/Object;
     :catch_0
     move-exception v2
@@ -163,17 +149,14 @@
     .local v2, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     move-object v7, v8
 
-    .line 772
     goto :goto_1
 
-    .line 784
     .end local v2    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :catch_1
     move-exception v8
 
     goto :goto_1
 
-    .line 777
     :catch_2
     move-exception v8
 

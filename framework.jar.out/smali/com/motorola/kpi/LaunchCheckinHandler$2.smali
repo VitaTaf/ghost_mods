@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 760
     iput-object p1, p0, Lcom/motorola/kpi/LaunchCheckinHandler$2;->this$0:Lcom/motorola/kpi/LaunchCheckinHandler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 4
 
     .prologue
-    .line 761
     iget-object v0, p0, Lcom/motorola/kpi/LaunchCheckinHandler$2;->this$0:Lcom/motorola/kpi/LaunchCheckinHandler;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J

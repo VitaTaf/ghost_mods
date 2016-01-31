@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 714
     iput-object p1, p0, Landroid/widget/NumberPicker$3;->this$0:Landroid/widget/NumberPicker;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,10 +43,8 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 716
     if-eqz p2, :cond_1
 
-    .line 717
     iget-object v1, p0, Landroid/widget/NumberPicker$3;->this$0:Landroid/widget/NumberPicker;
 
     # getter for: Landroid/widget/NumberPicker;->mInputText:Landroid/widget/EditText;
@@ -57,12 +54,10 @@
 
     invoke-virtual {v1}, Landroid/widget/EditText;->selectAll()V
 
-    .line 727
     :cond_0
     :goto_0
     return-void
 
-    .line 719
     :cond_1
     iget-object v1, p0, Landroid/widget/NumberPicker$3;->this$0:Landroid/widget/NumberPicker;
 
@@ -73,18 +68,15 @@
 
     invoke-virtual {v1, v2, v2}, Landroid/widget/EditText;->setSelection(II)V
 
-    .line 720
     iget-object v1, p0, Landroid/widget/NumberPicker$3;->this$0:Landroid/widget/NumberPicker;
 
     # invokes: Landroid/widget/NumberPicker;->validateInputTextView(Landroid/view/View;)V
     invoke-static {v1, p1}, Landroid/widget/NumberPicker;->access$400(Landroid/widget/NumberPicker;Landroid/view/View;)V
 
-    .line 722
     invoke-static {}, Landroid/view/inputmethod/InputMethodManager;->peekInstance()Landroid/view/inputmethod/InputMethodManager;
 
     move-result-object v0
 
-    .line 723
     .local v0, "inputMethodManager":Landroid/view/inputmethod/InputMethodManager;
     if-eqz v0, :cond_0
 
@@ -101,7 +93,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 724
     iget-object v1, p0, Landroid/widget/NumberPicker$3;->this$0:Landroid/widget/NumberPicker;
 
     invoke-virtual {v1}, Landroid/widget/NumberPicker;->getWindowToken()Landroid/os/IBinder;

@@ -148,7 +148,6 @@
 
     const/4 v3, 0x0
 
-    .line 80
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "APANIC_CONSOLE"
@@ -157,7 +156,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->APANIC_CONSOLE:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 81
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "APANIC_THREADS"
@@ -166,7 +164,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->APANIC_THREADS:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 82
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "AUTOTEST_FAILURE"
@@ -175,7 +172,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->AUTOTEST_FAILURE:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 83
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "AUTOTEST_SEQUENCE_BEGIN"
@@ -184,7 +180,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->AUTOTEST_SEQUENCE_BEGIN:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 84
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "AUTOTEST_SUITE_BEGIN"
@@ -193,7 +188,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->AUTOTEST_SUITE_BEGIN:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 85
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "AUTOTEST_TCPDUMP_BEGIN"
@@ -204,7 +198,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->AUTOTEST_TCPDUMP_BEGIN:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 86
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "AUTOTEST_TCPDUMP_DATA"
@@ -215,7 +208,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->AUTOTEST_TCPDUMP_DATA:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 87
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "AUTOTEST_TCPDUMP_END"
@@ -226,7 +218,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->AUTOTEST_TCPDUMP_END:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 88
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "AUTOTEST_TEST_BEGIN"
@@ -237,7 +228,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->AUTOTEST_TEST_BEGIN:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 89
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "AUTOTEST_TEST_FAILURE"
@@ -248,7 +238,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->AUTOTEST_TEST_FAILURE:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 90
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "AUTOTEST_TEST_SUCCESS"
@@ -259,7 +248,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->AUTOTEST_TEST_SUCCESS:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 91
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "BROWSER_BUG_REPORT"
@@ -270,7 +258,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->BROWSER_BUG_REPORT:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 92
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "CARRIER_BUG_REPORT"
@@ -281,7 +268,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->CARRIER_BUG_REPORT:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 93
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "CHECKIN_FAILURE"
@@ -292,7 +278,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->CHECKIN_FAILURE:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 94
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "CHECKIN_SUCCESS"
@@ -303,7 +288,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->CHECKIN_SUCCESS:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 95
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "FOTA_BEGIN"
@@ -314,7 +298,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->FOTA_BEGIN:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 96
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "FOTA_FAILURE"
@@ -325,7 +308,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->FOTA_FAILURE:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 97
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "FOTA_INSTALL"
@@ -336,7 +318,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->FOTA_INSTALL:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 98
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "FOTA_PROMPT"
@@ -347,7 +328,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->FOTA_PROMPT:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 99
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "FOTA_PROMPT_ACCEPT"
@@ -358,7 +338,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->FOTA_PROMPT_ACCEPT:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 100
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "FOTA_PROMPT_REJECT"
@@ -369,7 +348,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->FOTA_PROMPT_REJECT:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 101
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "FOTA_PROMPT_SKIPPED"
@@ -380,7 +358,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->FOTA_PROMPT_SKIPPED:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 102
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "GSERVICES_ERROR"
@@ -391,7 +368,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->GSERVICES_ERROR:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 103
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "GSERVICES_UPDATE"
@@ -402,7 +378,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->GSERVICES_UPDATE:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 104
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "LOGIN_SERVICE_ACCOUNT_TRIED"
@@ -413,7 +388,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->LOGIN_SERVICE_ACCOUNT_TRIED:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 105
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "LOGIN_SERVICE_ACCOUNT_SAVED"
@@ -424,7 +398,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->LOGIN_SERVICE_ACCOUNT_SAVED:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 106
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "LOGIN_SERVICE_AUTHENTICATE"
@@ -435,7 +408,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->LOGIN_SERVICE_AUTHENTICATE:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 107
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "LOGIN_SERVICE_CAPTCHA_ANSWERED"
@@ -446,7 +418,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->LOGIN_SERVICE_CAPTCHA_ANSWERED:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 108
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "LOGIN_SERVICE_CAPTCHA_SHOWN"
@@ -457,7 +428,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->LOGIN_SERVICE_CAPTCHA_SHOWN:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 109
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "LOGIN_SERVICE_PASSWORD_ENTERED"
@@ -468,7 +438,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->LOGIN_SERVICE_PASSWORD_ENTERED:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 110
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "LOGIN_SERVICE_SWITCH_GOOGLE_MAIL"
@@ -479,7 +448,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->LOGIN_SERVICE_SWITCH_GOOGLE_MAIL:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 111
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "NETWORK_DOWN"
@@ -490,7 +458,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->NETWORK_DOWN:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 112
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "NETWORK_UP"
@@ -501,7 +468,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->NETWORK_UP:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 113
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "PHONE_UI"
@@ -512,7 +478,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->PHONE_UI:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 114
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "RADIO_BUG_REPORT"
@@ -523,7 +488,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->RADIO_BUG_REPORT:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 115
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "SETUP_COMPLETED"
@@ -534,7 +498,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->SETUP_COMPLETED:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 116
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "SETUP_INITIATED"
@@ -545,7 +508,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->SETUP_INITIATED:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 117
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "SETUP_IO_ERROR"
@@ -556,7 +518,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->SETUP_IO_ERROR:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 118
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "SETUP_NETWORK_ERROR"
@@ -567,7 +528,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->SETUP_NETWORK_ERROR:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 119
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "SETUP_REQUIRED_CAPTCHA"
@@ -578,7 +538,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->SETUP_REQUIRED_CAPTCHA:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 120
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "SETUP_RETRIES_EXHAUSTED"
@@ -589,7 +548,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->SETUP_RETRIES_EXHAUSTED:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 121
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "SETUP_SERVER_ERROR"
@@ -600,7 +558,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->SETUP_SERVER_ERROR:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 122
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "SETUP_SERVER_TIMEOUT"
@@ -611,7 +568,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->SETUP_SERVER_TIMEOUT:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 123
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "SETUP_NO_DATA_NETWORK"
@@ -622,7 +578,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->SETUP_NO_DATA_NETWORK:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 124
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "SYSTEM_BOOT"
@@ -633,7 +588,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->SYSTEM_BOOT:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 125
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "SYSTEM_LAST_KMSG"
@@ -644,7 +598,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->SYSTEM_LAST_KMSG:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 126
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "SYSTEM_RECOVERY_LOG"
@@ -655,7 +608,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->SYSTEM_RECOVERY_LOG:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 127
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "SYSTEM_RESTART"
@@ -666,7 +618,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->SYSTEM_RESTART:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 128
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "SYSTEM_SERVICE_LOOPING"
@@ -677,7 +628,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->SYSTEM_SERVICE_LOOPING:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 129
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "SYSTEM_TOMBSTONE"
@@ -688,7 +638,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->SYSTEM_TOMBSTONE:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 130
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "SYSTEM_PANIC"
@@ -699,7 +648,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->SYSTEM_PANIC:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 131
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "TEST"
@@ -710,7 +658,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->TEST:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 132
     new-instance v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     const-string v1, "BATTERY_DISCHARGE_INFO"
@@ -721,7 +668,6 @@
 
     sput-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->BATTERY_DISCHARGE_INFO:Lcom/motorola/android/provider/Checkin$Events$Tag;
 
-    .line 79
     const/16 v0, 0x35
 
     new-array v0, v0, [Lcom/motorola/android/provider/Checkin$Events$Tag;
@@ -1048,7 +994,6 @@
     .end annotation
 
     .prologue
-    .line 79
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -1059,7 +1004,6 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 79
     const-class v0, Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -1075,7 +1019,6 @@
     .locals 1
 
     .prologue
-    .line 79
     sget-object v0, Lcom/motorola/android/provider/Checkin$Events$Tag;->$VALUES:[Lcom/motorola/android/provider/Checkin$Events$Tag;
 
     invoke-virtual {v0}, [Lcom/motorola/android/provider/Checkin$Events$Tag;->clone()Ljava/lang/Object;

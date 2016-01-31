@@ -44,7 +44,6 @@
 
     const/4 v2, 0x0
 
-    .line 29
     new-instance v0, Lcom/motorola/data/event/api/IEvent$Serialization;
 
     const-string v1, "NOT_INTIALIZED"
@@ -69,7 +68,6 @@
 
     sput-object v0, Lcom/motorola/data/event/api/IEvent$Serialization;->NAME_VALUE_BASED:Lcom/motorola/data/event/api/IEvent$Serialization;
 
-    .line 28
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/motorola/data/event/api/IEvent$Serialization;
@@ -100,7 +98,6 @@
     .end annotation
 
     .prologue
-    .line 28
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -111,7 +108,6 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 28
     const-class v0, Lcom/motorola/data/event/api/IEvent$Serialization;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -127,7 +123,6 @@
     .locals 1
 
     .prologue
-    .line 28
     sget-object v0, Lcom/motorola/data/event/api/IEvent$Serialization;->$VALUES:[Lcom/motorola/data/event/api/IEvent$Serialization;
 
     invoke-virtual {v0}, [Lcom/motorola/data/event/api/IEvent$Serialization;->clone()Ljava/lang/Object;

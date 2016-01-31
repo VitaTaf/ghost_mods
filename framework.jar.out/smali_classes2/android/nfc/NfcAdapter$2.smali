@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 1550
     iput-object p1, p0, Landroid/nfc/NfcAdapter$2;->this$0:Landroid/nfc/NfcAdapter;
 
     iput-object p2, p0, Landroid/nfc/NfcAdapter$2;->val$unlockHandler:Landroid/nfc/NfcAdapter$NfcUnlockHandler;
@@ -47,7 +46,6 @@
     .end annotation
 
     .prologue
-    .line 1553
     iget-object v0, p0, Landroid/nfc/NfcAdapter$2;->val$unlockHandler:Landroid/nfc/NfcAdapter$NfcUnlockHandler;
 
     invoke-interface {v0, p1}, Landroid/nfc/NfcAdapter$NfcUnlockHandler;->onUnlockAttempted(Landroid/nfc/Tag;)Z

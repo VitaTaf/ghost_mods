@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 56
     iput-object p1, p0, Lcom/motorola/internal/widget/GestureSharingTouchManager$2;->this$0:Lcom/motorola/internal/widget/GestureSharingTouchManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -41,7 +40,6 @@
     .prologue
     const/4 v2, 0x3
 
-    .line 59
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
@@ -54,7 +52,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 60
     const-string v0, "GSTouchManager"
 
     invoke-static {v0, v2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -63,26 +60,22 @@
 
     if-eqz v0, :cond_0
 
-    .line 61
     const-string v0, "GSTouchManager"
 
     const-string v1, "ACTION_SCREEN_ON"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 63
     :cond_0
     iget-object v0, p0, Lcom/motorola/internal/widget/GestureSharingTouchManager$2;->this$0:Lcom/motorola/internal/widget/GestureSharingTouchManager;
 
     # invokes: Lcom/motorola/internal/widget/GestureSharingTouchManager;->handleScreenOn()V
     invoke-static {v0}, Lcom/motorola/internal/widget/GestureSharingTouchManager;->access$000(Lcom/motorola/internal/widget/GestureSharingTouchManager;)V
 
-    .line 70
     :cond_1
     :goto_0
     return-void
 
-    .line 64
     :cond_2
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -96,7 +89,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 65
     const-string v0, "GSTouchManager"
 
     invoke-static {v0, v2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -105,14 +97,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 66
     const-string v0, "GSTouchManager"
 
     const-string v1, "ACTION_SCREEN_OFF"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 68
     :cond_3
     iget-object v0, p0, Lcom/motorola/internal/widget/GestureSharingTouchManager$2;->this$0:Lcom/motorola/internal/widget/GestureSharingTouchManager;
 

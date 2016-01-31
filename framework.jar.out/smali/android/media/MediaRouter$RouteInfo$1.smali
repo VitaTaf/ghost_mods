@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 1948
     iput-object p1, p0, Landroid/media/MediaRouter$RouteInfo$1;->this$0:Landroid/media/MediaRouter$RouteInfo;
 
     invoke-direct {p0}, Landroid/media/IRemoteVolumeObserver$Stub;-><init>()V
@@ -39,7 +38,6 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 1951
     sget-object v0, Landroid/media/MediaRouter;->sStatic:Landroid/media/MediaRouter$Static;
 
     iget-object v0, v0, Landroid/media/MediaRouter$Static;->mHandler:Landroid/os/Handler;
@@ -50,6 +48,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1963
     return-void
 .end method

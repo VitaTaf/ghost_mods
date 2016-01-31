@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 27
     iput-object p1, p0, Lcom/motorola/internal/widget/GestureSharingModalityLocHandler$1;->this$0:Lcom/motorola/internal/widget/GestureSharingModalityLocHandler;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -41,7 +40,6 @@
     .prologue
     const/4 v6, 0x3
 
-    .line 30
     const-string v2, "-GSModalityLocHandler"
 
     invoke-static {v2, v6}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -50,14 +48,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 31
     const-string v2, "-GSModalityLocHandler"
 
     const-string v3, "Gesture Sharing Receiver"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 33
     :cond_0
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -71,7 +67,6 @@
 
     if-eqz v2, :cond_4
 
-    .line 34
     const-string v2, "-GSModalityLocHandler"
 
     invoke-static {v2, v6}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -80,14 +75,12 @@
 
     if-eqz v2, :cond_1
 
-    .line 35
     const-string v2, "-GSModalityLocHandler"
 
     const-string v3, "ACTION_GS_REGISTER_LOC_MODALITY"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 38
     :cond_1
     iget-object v2, p0, Lcom/motorola/internal/widget/GestureSharingModalityLocHandler$1;->this$0:Lcom/motorola/internal/widget/GestureSharingModalityLocHandler;
 
@@ -102,7 +95,6 @@
     # setter for: Lcom/motorola/internal/widget/GestureSharingModalityLocHandler;->mLocationUpdatesInterval:J
     invoke-static {v2, v4, v5}, Lcom/motorola/internal/widget/GestureSharingModalityLocHandler;->access$002(Lcom/motorola/internal/widget/GestureSharingModalityLocHandler;J)J
 
-    .line 40
     iget-object v2, p0, Lcom/motorola/internal/widget/GestureSharingModalityLocHandler$1;->this$0:Lcom/motorola/internal/widget/GestureSharingModalityLocHandler;
 
     const-string v3, "com.motorola.internal.intent.extra.GS_MODALITY_LOC_MIN_VEHICLE_SPEED"
@@ -116,7 +108,6 @@
     # setter for: Lcom/motorola/internal/widget/GestureSharingModalityLocHandler;->mMinSpeedVehicle:F
     invoke-static {v2, v3}, Lcom/motorola/internal/widget/GestureSharingModalityLocHandler;->access$102(Lcom/motorola/internal/widget/GestureSharingModalityLocHandler;F)F
 
-    .line 42
     iget-object v2, p0, Lcom/motorola/internal/widget/GestureSharingModalityLocHandler$1;->this$0:Lcom/motorola/internal/widget/GestureSharingModalityLocHandler;
 
     const-string v3, "com.motorola.internal.intent.extra.GS_LOC_MODALITY_LOC_MIN_MOVING_SPEED"
@@ -130,7 +121,6 @@
     # setter for: Lcom/motorola/internal/widget/GestureSharingModalityLocHandler;->mMinSpeedMoving:F
     invoke-static {v2, v3}, Lcom/motorola/internal/widget/GestureSharingModalityLocHandler;->access$202(Lcom/motorola/internal/widget/GestureSharingModalityLocHandler;F)F
 
-    .line 45
     const-string v2, "com.motorola.internal.intent.extra.GS_MODALITY_LOC_REG_EXPIRE"
 
     const-wide/32 v4, 0xa4cb80
@@ -139,7 +129,6 @@
 
     move-result-wide v0
 
-    .line 48
     .local v0, "registerExpire":J
     const-string v2, "-GSModalityLocHandler"
 
@@ -149,7 +138,6 @@
 
     if-eqz v2, :cond_2
 
-    .line 49
     const-string v2, "-GSModalityLocHandler"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -223,20 +211,17 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 53
     :cond_2
     iget-object v2, p0, Lcom/motorola/internal/widget/GestureSharingModalityLocHandler$1;->this$0:Lcom/motorola/internal/widget/GestureSharingModalityLocHandler;
 
     # invokes: Lcom/motorola/internal/widget/GestureSharingModalityLocHandler;->register(J)V
     invoke-static {v2, v0, v1}, Lcom/motorola/internal/widget/GestureSharingModalityLocHandler;->access$300(Lcom/motorola/internal/widget/GestureSharingModalityLocHandler;J)V
 
-    .line 61
     .end local v0    # "registerExpire":J
     :cond_3
     :goto_0
     return-void
 
-    .line 55
     :cond_4
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -250,7 +235,6 @@
 
     if-eqz v2, :cond_3
 
-    .line 56
     const-string v2, "-GSModalityLocHandler"
 
     invoke-static {v2, v6}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -259,14 +243,12 @@
 
     if-eqz v2, :cond_5
 
-    .line 57
     const-string v2, "-GSModalityLocHandler"
 
     const-string v3, "ACTION_GS_UNREGISTER_LOC_MODALITY"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 59
     :cond_5
     iget-object v2, p0, Lcom/motorola/internal/widget/GestureSharingModalityLocHandler$1;->this$0:Lcom/motorola/internal/widget/GestureSharingModalityLocHandler;
 

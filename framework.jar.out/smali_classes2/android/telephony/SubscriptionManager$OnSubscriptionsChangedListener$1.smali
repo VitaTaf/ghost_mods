@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 305
     iput-object p1, p0, Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener$1;->this$0:Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -38,11 +37,9 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 311
     iget-object v0, p0, Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener$1;->this$0:Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;
 
     invoke-virtual {v0}, Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;->onSubscriptionsChanged()V
 
-    .line 312
     return-void
 .end method

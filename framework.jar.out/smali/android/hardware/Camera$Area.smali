@@ -30,16 +30,12 @@
     .param p2, "weight"    # I
 
     .prologue
-    .line 2149
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2150
     iput-object p1, p0, Landroid/hardware/Camera$Area;->rect:Landroid/graphics/Rect;
 
-    .line 2151
     iput p2, p0, Landroid/hardware/Camera$Area;->weight:I
 
-    .line 2152
     return-void
 .end method
 
@@ -52,12 +48,10 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2162
     instance-of v2, p1, Landroid/hardware/Camera$Area;
 
     if-nez v2, :cond_1
 
-    .line 2171
     :cond_0
     :goto_0
     return v1
@@ -65,21 +59,17 @@
     :cond_1
     move-object v0, p1
 
-    .line 2165
     check-cast v0, Landroid/hardware/Camera$Area;
 
-    .line 2166
     .local v0, "a":Landroid/hardware/Camera$Area;
     iget-object v2, p0, Landroid/hardware/Camera$Area;->rect:Landroid/graphics/Rect;
 
     if-nez v2, :cond_3
 
-    .line 2167
     iget-object v2, v0, Landroid/hardware/Camera$Area;->rect:Landroid/graphics/Rect;
 
     if-nez v2, :cond_0
 
-    .line 2171
     :cond_2
     iget v2, p0, Landroid/hardware/Camera$Area;->weight:I
 
@@ -91,7 +81,6 @@
 
     goto :goto_0
 
-    .line 2169
     :cond_3
     iget-object v2, p0, Landroid/hardware/Camera$Area;->rect:Landroid/graphics/Rect;
 

@@ -26,12 +26,10 @@
     .locals 0
 
     .prologue
-    .line 402
     iput-object p1, p0, Lcom/motorola/android/effects/MMIEqualizer$BaseParameterListener;->this$0:Lcom/motorola/android/effects/MMIEqualizer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 404
     return-void
 .end method
 
@@ -41,7 +39,6 @@
     .param p2, "x1"    # Lcom/motorola/android/effects/MMIEqualizer$1;
 
     .prologue
-    .line 401
     invoke-direct {p0, p1}, Lcom/motorola/android/effects/MMIEqualizer$BaseParameterListener;-><init>(Lcom/motorola/android/effects/MMIEqualizer;)V
 
     return-void
@@ -63,10 +60,8 @@
 
     const/4 v6, 0x0
 
-    .line 406
     const/4 v0, 0x0
 
-    .line 408
     .local v0, "l":Lcom/motorola/android/effects/MMIEqualizer$OnParameterChangeListener;
     iget-object v1, p0, Lcom/motorola/android/effects/MMIEqualizer$BaseParameterListener;->this$0:Lcom/motorola/android/effects/MMIEqualizer;
 
@@ -77,7 +72,6 @@
 
     monitor-enter v2
 
-    .line 409
     :try_start_0
     iget-object v1, p0, Lcom/motorola/android/effects/MMIEqualizer$BaseParameterListener;->this$0:Lcom/motorola/android/effects/MMIEqualizer;
 
@@ -88,7 +82,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 410
     iget-object v1, p0, Lcom/motorola/android/effects/MMIEqualizer$BaseParameterListener;->this$0:Lcom/motorola/android/effects/MMIEqualizer;
 
     # getter for: Lcom/motorola/android/effects/MMIEqualizer;->mParamListener:Lcom/motorola/android/effects/MMIEqualizer$OnParameterChangeListener;
@@ -96,50 +89,40 @@
 
     move-result-object v0
 
-    .line 412
     :cond_0
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 413
     if-eqz v0, :cond_3
 
-    .line 414
     const/4 v3, -0x1
 
-    .line 415
     .local v3, "p1":I
     const/4 v4, -0x1
 
-    .line 416
     .local v4, "p2":I
     const/4 v5, -0x1
 
-    .line 418
     .local v5, "v":I
     array-length v1, p3
 
     if-lt v1, v7, :cond_1
 
-    .line 419
     invoke-static {p3, v6}, Landroid/media/audiofx/AudioEffect;->byteArrayToInt([BI)I
 
     move-result v3
 
-    .line 420
     array-length v1, p3
 
     const/16 v2, 0x8
 
     if-lt v1, v2, :cond_1
 
-    .line 421
     invoke-static {p3, v7}, Landroid/media/audiofx/AudioEffect;->byteArrayToInt([BI)I
 
     move-result v4
 
-    .line 424
     :cond_1
     array-length v1, p4
 
@@ -147,33 +130,28 @@
 
     if-ne v1, v2, :cond_4
 
-    .line 425
     invoke-static {p4, v6}, Landroid/media/audiofx/AudioEffect;->byteArrayToShort([BI)S
 
     move-result v5
 
-    .line 430
     :cond_2
     :goto_0
     if-eq v3, v8, :cond_3
 
     if-eq v5, v8, :cond_3
 
-    .line 431
     iget-object v1, p0, Lcom/motorola/android/effects/MMIEqualizer$BaseParameterListener;->this$0:Lcom/motorola/android/effects/MMIEqualizer;
 
     move v2, p2
 
     invoke-interface/range {v0 .. v5}, Lcom/motorola/android/effects/MMIEqualizer$OnParameterChangeListener;->onParameterChange(Lcom/motorola/android/effects/MMIEqualizer;IIII)V
 
-    .line 434
     .end local v3    # "p1":I
     .end local v4    # "p2":I
     .end local v5    # "v":I
     :cond_3
     return-void
 
-    .line 412
     :catchall_0
     move-exception v1
 
@@ -184,7 +162,6 @@
 
     throw v1
 
-    .line 426
     .restart local v3    # "p1":I
     .restart local v4    # "p2":I
     .restart local v5    # "v":I
@@ -193,7 +170,6 @@
 
     if-ne v1, v7, :cond_2
 
-    .line 427
     invoke-static {p4, v6}, Landroid/media/audiofx/AudioEffect;->byteArrayToInt([BI)I
 
     move-result v5

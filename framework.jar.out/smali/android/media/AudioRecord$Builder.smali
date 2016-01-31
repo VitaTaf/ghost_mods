@@ -29,15 +29,12 @@
     .locals 1
 
     .prologue
-    .line 388
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 383
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/media/AudioRecord$Builder;->mSessionId:I
 
-    .line 389
     return-void
 .end method
 
@@ -52,12 +49,10 @@
     .end annotation
 
     .prologue
-    .line 489
     iget-object v1, p0, Landroid/media/AudioRecord$Builder;->mFormat:Landroid/media/AudioFormat;
 
     if-nez v1, :cond_0
 
-    .line 490
     new-instance v1, Landroid/media/AudioFormat$Builder;
 
     invoke-direct {v1}, Landroid/media/AudioFormat$Builder;-><init>()V
@@ -68,13 +63,11 @@
 
     iput-object v1, p0, Landroid/media/AudioRecord$Builder;->mFormat:Landroid/media/AudioFormat;
 
-    .line 492
     :cond_0
     iget-object v1, p0, Landroid/media/AudioRecord$Builder;->mAttributes:Landroid/media/AudioAttributes;
 
     if-nez v1, :cond_1
 
-    .line 493
     new-instance v1, Landroid/media/AudioAttributes$Builder;
 
     invoke-direct {v1}, Landroid/media/AudioAttributes$Builder;-><init>()V
@@ -91,7 +84,6 @@
 
     iput-object v1, p0, Landroid/media/AudioRecord$Builder;->mAttributes:Landroid/media/AudioAttributes;
 
-    .line 498
     :cond_1
     :try_start_0
     new-instance v1, Landroid/media/AudioRecord;
@@ -110,11 +102,9 @@
 
     return-object v1
 
-    .line 499
     :catch_0
     move-exception v0
 
-    .line 500
     .local v0, "e":Ljava/lang/IllegalArgumentException;
     new-instance v1, Ljava/lang/UnsupportedOperationException;
 
@@ -137,10 +127,8 @@
     .end annotation
 
     .prologue
-    .line 419
     if-nez p1, :cond_0
 
-    .line 420
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Illegal null AudioAttributes argument"
@@ -149,7 +137,6 @@
 
     throw v0
 
-    .line 422
     :cond_0
     invoke-virtual {p1}, Landroid/media/AudioAttributes;->getCapturePreset()I
 
@@ -159,7 +146,6 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 423
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "No valid capture preset in AudioAttributes argument"
@@ -168,11 +154,9 @@
 
     throw v0
 
-    .line 427
     :cond_1
     iput-object p1, p0, Landroid/media/AudioRecord$Builder;->mAttributes:Landroid/media/AudioAttributes;
 
-    .line 428
     return-object p0
 .end method
 
@@ -186,10 +170,8 @@
     .end annotation
 
     .prologue
-    .line 438
     if-nez p1, :cond_0
 
-    .line 439
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Illegal null AudioFormat argument"
@@ -198,11 +180,9 @@
 
     throw v0
 
-    .line 442
     :cond_0
     iput-object p1, p0, Landroid/media/AudioRecord$Builder;->mFormat:Landroid/media/AudioFormat;
 
-    .line 443
     return-object p0
 .end method
 
@@ -216,10 +196,8 @@
     .end annotation
 
     .prologue
-    .line 457
     if-gtz p1, :cond_0
 
-    .line 458
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -244,11 +222,9 @@
 
     throw v0
 
-    .line 460
     :cond_0
     iput p1, p0, Landroid/media/AudioRecord$Builder;->mBufferSizeInBytes:I
 
-    .line 461
     return-object p0
 .end method
 
@@ -262,7 +238,6 @@
     .end annotation
 
     .prologue
-    .line 398
     if-ltz p1, :cond_0
 
     invoke-static {}, Landroid/media/MediaRecorder;->getAudioSourceMax()I
@@ -271,7 +246,6 @@
 
     if-le p1, v0, :cond_1
 
-    .line 400
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -297,7 +271,6 @@
 
     throw v0
 
-    .line 402
     :cond_1
     new-instance v0, Landroid/media/AudioAttributes$Builder;
 
@@ -313,7 +286,6 @@
 
     iput-object v0, p0, Landroid/media/AudioRecord$Builder;->mAttributes:Landroid/media/AudioAttributes;
 
-    .line 405
     return-object p0
 .end method
 
@@ -327,10 +299,8 @@
     .end annotation
 
     .prologue
-    .line 475
     if-gez p1, :cond_0
 
-    .line 476
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -355,10 +325,8 @@
 
     throw v0
 
-    .line 478
     :cond_0
     iput p1, p0, Landroid/media/AudioRecord$Builder;->mSessionId:I
 
-    .line 479
     return-object p0
 .end method

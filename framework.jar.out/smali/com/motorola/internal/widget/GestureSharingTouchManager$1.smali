@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 37
     iput-object p1, p0, Lcom/motorola/internal/widget/GestureSharingTouchManager$1;->this$0:Lcom/motorola/internal/widget/GestureSharingTouchManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,25 +38,20 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 40
     invoke-virtual {p2}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 41
     .local v0, "data":Landroid/net/Uri;
     const/4 v1, 0x0
 
-    .line 43
     .local v1, "packageName":Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 44
     invoke-virtual {v0}, Landroid/net/Uri;->getSchemeSpecificPart()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 46
     :cond_0
     if-eqz v1, :cond_2
 
@@ -69,7 +63,6 @@
 
     if-eqz v2, :cond_2
 
-    .line 48
     const-string v2, "GSTouchManager"
 
     const/4 v3, 0x3
@@ -80,14 +73,12 @@
 
     if-eqz v2, :cond_1
 
-    .line 49
     const-string v2, "GSTouchManager"
 
     const-string v3, "Sending ACTION_GS_PACKAGE_REMOVED"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 51
     :cond_1
     new-instance v2, Landroid/content/Intent;
 
@@ -97,7 +88,6 @@
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 53
     :cond_2
     return-void
 .end method

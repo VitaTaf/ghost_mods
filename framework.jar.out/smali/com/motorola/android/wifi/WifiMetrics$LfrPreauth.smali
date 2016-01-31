@@ -60,7 +60,6 @@
 
     const/4 v3, 0x0
 
-    .line 136
     new-instance v0, Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;
 
     const-string v1, "Default"
@@ -69,7 +68,6 @@
 
     sput-object v0, Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;->Default:Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;
 
-    .line 137
     new-instance v0, Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;
 
     const-string v1, "Preauth_Init"
@@ -78,7 +76,6 @@
 
     sput-object v0, Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;->Preauth_Init:Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;
 
-    .line 138
     new-instance v0, Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;
 
     const-string v1, "Preauth_Started"
@@ -87,7 +84,6 @@
 
     sput-object v0, Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;->Preauth_Started:Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;
 
-    .line 139
     new-instance v0, Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;
 
     const-string v1, "Preauth_Success"
@@ -96,7 +92,6 @@
 
     sput-object v0, Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;->Preauth_Success:Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;
 
-    .line 140
     new-instance v0, Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;
 
     const-string v1, "Preauth_Failed"
@@ -105,7 +100,6 @@
 
     sput-object v0, Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;->Preauth_Failed:Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;
 
-    .line 141
     new-instance v0, Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;
 
     const-string v1, "Handover_Started"
@@ -116,7 +110,6 @@
 
     sput-object v0, Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;->Handover_Started:Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;
 
-    .line 142
     new-instance v0, Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;
 
     const-string v1, "Handover_Success"
@@ -127,7 +120,6 @@
 
     sput-object v0, Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;->Handover_Success:Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;
 
-    .line 143
     new-instance v0, Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;
 
     const-string v1, "Handover_Failed_Bssid_Mismatch"
@@ -138,7 +130,6 @@
 
     sput-object v0, Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;->Handover_Failed_Bssid_Mismatch:Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;
 
-    .line 144
     new-instance v0, Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;
 
     const-string v1, "Handover_Failed_Disconnected"
@@ -149,7 +140,6 @@
 
     sput-object v0, Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;->Handover_Failed_Disconnected:Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;
 
-    .line 135
     const/16 v0, 0x9
 
     new-array v0, v0, [Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;
@@ -212,7 +202,6 @@
     .end annotation
 
     .prologue
-    .line 135
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -223,7 +212,6 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 135
     const-class v0, Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -239,7 +227,6 @@
     .locals 1
 
     .prologue
-    .line 135
     sget-object v0, Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;->$VALUES:[Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;
 
     invoke-virtual {v0}, [Lcom/motorola/android/wifi/WifiMetrics$LfrPreauth;->clone()Ljava/lang/Object;

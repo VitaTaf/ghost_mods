@@ -38,7 +38,6 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 24
     new-instance v0, Landroid/media/VolumePolicy;
 
     const/4 v1, 0x1
@@ -49,7 +48,6 @@
 
     sput-object v0, Landroid/media/VolumePolicy;->DEFAULT:Landroid/media/VolumePolicy;
 
-    .line 68
     new-instance v0, Landroid/media/VolumePolicy$1;
 
     invoke-direct {v0}, Landroid/media/VolumePolicy$1;-><init>()V
@@ -67,22 +65,16 @@
     .param p4, "vibrateToSilentDebounce"    # I
 
     .prologue
-    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 41
     iput-boolean p1, p0, Landroid/media/VolumePolicy;->volumeDownToEnterSilent:Z
 
-    .line 42
     iput-boolean p2, p0, Landroid/media/VolumePolicy;->volumeUpToExitSilent:Z
 
-    .line 43
     iput-boolean p3, p0, Landroid/media/VolumePolicy;->doNotDisturbWhenSilent:Z
 
-    .line 44
     iput p4, p0, Landroid/media/VolumePolicy;->vibrateToSilentDebounce:I
 
-    .line 45
     return-void
 .end method
 
@@ -92,7 +84,6 @@
     .locals 1
 
     .prologue
-    .line 57
     const/4 v0, 0x0
 
     return v0
@@ -107,28 +98,23 @@
 
     const/4 v2, 0x0
 
-    .line 65
     instance-of v3, p1, Landroid/media/VolumePolicy;
 
     if-nez v3, :cond_1
 
     move v1, v2
 
-    .line 68
     :cond_0
     :goto_0
     return v1
 
-    .line 66
     :cond_1
     if-eq p1, p0, :cond_0
 
     move-object v0, p1
 
-    .line 67
     check-cast v0, Landroid/media/VolumePolicy;
 
-    .line 68
     .local v0, "other":Landroid/media/VolumePolicy;
     iget-boolean v3, v0, Landroid/media/VolumePolicy;->volumeDownToEnterSilent:Z
 
@@ -164,7 +150,6 @@
     .locals 3
 
     .prologue
-    .line 59
     const/4 v0, 0x4
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -220,7 +205,6 @@
     .locals 2
 
     .prologue
-    .line 49
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -296,7 +280,6 @@
 
     const/4 v2, 0x0
 
-    .line 62
     iget-boolean v0, p0, Landroid/media/VolumePolicy;->volumeDownToEnterSilent:Z
 
     if-eqz v0, :cond_0
@@ -306,7 +289,6 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 63
     iget-boolean v0, p0, Landroid/media/VolumePolicy;->volumeUpToExitSilent:Z
 
     if-eqz v0, :cond_1
@@ -316,7 +298,6 @@
     :goto_1
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 64
     iget-boolean v0, p0, Landroid/media/VolumePolicy;->doNotDisturbWhenSilent:Z
 
     if-eqz v0, :cond_2
@@ -324,29 +305,24 @@
     :goto_2
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 65
     iget v0, p0, Landroid/media/VolumePolicy;->vibrateToSilentDebounce:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 66
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 62
     goto :goto_0
 
     :cond_1
     move v0, v2
 
-    .line 63
     goto :goto_1
 
     :cond_2
     move v1, v2
 
-    .line 64
     goto :goto_2
 .end method

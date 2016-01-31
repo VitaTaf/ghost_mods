@@ -20,7 +20,6 @@
     .end annotation
 
     .prologue
-    .line 94
     sget-object v0, Landroid/media/audiofx/AcousticEchoCanceler;->EFFECT_TYPE_AEC:Ljava/util/UUID;
 
     sget-object v1, Landroid/media/audiofx/AcousticEchoCanceler;->EFFECT_TYPE_NULL:Ljava/util/UUID;
@@ -29,7 +28,6 @@
 
     invoke-direct {p0, v0, v1, v2, p1}, Landroid/media/audiofx/AudioEffect;-><init>(Ljava/util/UUID;Ljava/util/UUID;II)V
 
-    .line 95
     return-void
 .end method
 
@@ -38,10 +36,8 @@
     .param p0, "audioSession"    # I
 
     .prologue
-    .line 62
     const/4 v0, 0x0
 
-    .line 64
     .local v0, "aec":Landroid/media/audiofx/AcousticEchoCanceler;
     :try_start_0
     new-instance v1, Landroid/media/audiofx/AcousticEchoCanceler;
@@ -56,17 +52,14 @@
     .local v1, "aec":Landroid/media/audiofx/AcousticEchoCanceler;
     move-object v0, v1
 
-    .line 72
     .end local v1    # "aec":Landroid/media/audiofx/AcousticEchoCanceler;
     .restart local v0    # "aec":Landroid/media/audiofx/AcousticEchoCanceler;
     :goto_0
     return-object v0
 
-    .line 65
     :catch_0
     move-exception v2
 
-    .line 66
     .local v2, "e":Ljava/lang/IllegalArgumentException;
     const-string v3, "AcousticEchoCanceler"
 
@@ -92,12 +85,10 @@
 
     goto :goto_0
 
-    .line 67
     .end local v2    # "e":Ljava/lang/IllegalArgumentException;
     :catch_1
     move-exception v2
 
-    .line 68
     .local v2, "e":Ljava/lang/UnsupportedOperationException;
     const-string v3, "AcousticEchoCanceler"
 
@@ -107,12 +98,10 @@
 
     goto :goto_0
 
-    .line 69
     .end local v2    # "e":Ljava/lang/UnsupportedOperationException;
     :catch_2
     move-exception v2
 
-    .line 70
     .local v2, "e":Ljava/lang/RuntimeException;
     const-string v3, "AcousticEchoCanceler"
 
@@ -127,7 +116,6 @@
     .locals 1
 
     .prologue
-    .line 51
     sget-object v0, Landroid/media/audiofx/AudioEffect;->EFFECT_TYPE_AEC:Ljava/util/UUID;
 
     invoke-static {v0}, Landroid/media/audiofx/AudioEffect;->isEffectTypeAvailable(Ljava/util/UUID;)Z

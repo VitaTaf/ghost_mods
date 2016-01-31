@@ -41,7 +41,6 @@
     .locals 1
 
     .prologue
-    .line 779
     new-instance v0, Landroid/content/Intent$ShortcutIconResource$1;
 
     invoke-direct {v0}, Landroid/content/Intent$ShortcutIconResource$1;-><init>()V
@@ -55,7 +54,6 @@
     .locals 0
 
     .prologue
-    .line 749
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -67,12 +65,10 @@
     .param p1, "resourceId"    # I
 
     .prologue
-    .line 770
     new-instance v0, Landroid/content/Intent$ShortcutIconResource;
 
     invoke-direct {v0}, Landroid/content/Intent$ShortcutIconResource;-><init>()V
 
-    .line 771
     .local v0, "icon":Landroid/content/Intent$ShortcutIconResource;
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
@@ -80,7 +76,6 @@
 
     iput-object v1, v0, Landroid/content/Intent$ShortcutIconResource;->packageName:Ljava/lang/String;
 
-    .line 772
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -91,7 +86,6 @@
 
     iput-object v1, v0, Landroid/content/Intent$ShortcutIconResource;->resourceName:Ljava/lang/String;
 
-    .line 773
     return-object v0
 .end method
 
@@ -101,7 +95,6 @@
     .locals 1
 
     .prologue
-    .line 798
     const/4 v0, 0x0
 
     return v0
@@ -111,7 +104,6 @@
     .locals 1
 
     .prologue
-    .line 808
     iget-object v0, p0, Landroid/content/Intent$ShortcutIconResource;->resourceName:Ljava/lang/String;
 
     return-object v0
@@ -123,16 +115,13 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 802
     iget-object v0, p0, Landroid/content/Intent$ShortcutIconResource;->packageName:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 803
     iget-object v0, p0, Landroid/content/Intent$ShortcutIconResource;->resourceName:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 804
     return-void
 .end method

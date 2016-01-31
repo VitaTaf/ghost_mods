@@ -25,7 +25,6 @@
     .param p3, "x1"    # I
 
     .prologue
-    .line 70
     iput-object p1, p0, Lcom/motorola/android/view/OrientationEventListenerExt$1;->this$0:Lcom/motorola/android/view/OrientationEventListenerExt;
 
     invoke-direct {p0, p2, p3}, Landroid/view/OrientationEventListener;-><init>(Landroid/content/Context;I)V
@@ -40,11 +39,9 @@
     .param p1, "orientation"    # I
 
     .prologue
-    .line 73
     iget-object v0, p0, Lcom/motorola/android/view/OrientationEventListenerExt$1;->this$0:Lcom/motorola/android/view/OrientationEventListenerExt;
 
     invoke-virtual {v0, p1}, Lcom/motorola/android/view/OrientationEventListenerExt;->onOrientationChanged(I)V
 
-    .line 74
     return-void
 .end method

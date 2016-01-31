@@ -23,7 +23,6 @@
     .locals 3
 
     .prologue
-    .line 740
     invoke-static {}, Lcom/motorola/data/event/api/IEvent$Serialization;->values()[Lcom/motorola/data/event/api/IEvent$Serialization;
 
     move-result-object v0

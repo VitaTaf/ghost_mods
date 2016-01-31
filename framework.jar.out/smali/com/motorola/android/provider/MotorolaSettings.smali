@@ -164,238 +164,204 @@
     .locals 2
 
     .prologue
-    .line 251
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     sput-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    .line 252
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string/jumbo v1, "sn_white_list"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 253
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string/jumbo v1, "sn_privacy"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 254
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string/jumbo v1, "sn_night_off"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 255
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string/jumbo v1, "sn_night_begin"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 256
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string/jumbo v1, "sn_night_end"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 257
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string/jumbo v1, "sn_aon"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 258
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string/jumbo v1, "sn_auto_select_installed"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 261
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string/jumbo v1, "privacy_support_device"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 262
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string/jumbo v1, "privacy_help_improve_products"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 263
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string/jumbo v1, "privacy_ota_update"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 264
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string/jumbo v1, "privacy_moto_marketing"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 265
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string/jumbo v1, "privacy_smart_actions"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 266
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string/jumbo v1, "privacy_smart_notifications_chrome"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 267
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string/jumbo v1, "privacy_always_on_voice"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 271
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string v1, "lock_type"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 272
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string v1, "double_tap"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 273
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string v1, "is_talkback_on"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 274
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string/jumbo v1, "tts_caller_id_readout"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 275
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string/jumbo v1, "wifi_offload_flag"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 276
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string/jumbo v1, "power_saver_enabled"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 277
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string v1, "flag_allow_access_only_for_this_trip"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 281
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string v1, "ccc.did"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 282
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string v1, "ccc.sst"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 283
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string v1, "ccc.dsec"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 286
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string v1, "auth_devices_enabled"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 287
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string v1, "auth_device_list"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 290
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string/jumbo v1, "nfc_auth_failed_attempts"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 291
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string/jumbo v1, "nfc_auth_enabled"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 293
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string/jumbo v1, "tsb_disable_flags"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 294
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string/jumbo v1, "task_button_press_behavior"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 296
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string/jumbo v1, "restrict_bg_data_on_low_coverage"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 298
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string/jumbo v1, "mobile_data_coverage_conditioner"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 299
     return-void
 .end method
 
@@ -403,10 +369,8 @@
     .locals 0
 
     .prologue
-    .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1847
     return-void
 .end method
 
@@ -421,12 +385,10 @@
     .end annotation
 
     .prologue
-    .line 409
     invoke-static {p0, p1}, Lcom/motorola/android/provider/MotorolaSettings;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 411
     .local v1, "v":Ljava/lang/String;
     :try_start_0
     invoke-static {v1}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
@@ -438,11 +400,9 @@
 
     return v2
 
-    .line 412
     :catch_0
     move-exception v0
 
-    .line 413
     .local v0, "e":Ljava/lang/NullPointerException;
     new-instance v2, Lcom/motorola/android/provider/MotorolaSettings$SettingNotFoundException;
 
@@ -450,12 +410,10 @@
 
     throw v2
 
-    .line 414
     .end local v0    # "e":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 415
     .local v0, "e":Ljava/lang/NumberFormatException;
     new-instance v2, Lcom/motorola/android/provider/MotorolaSettings$SettingNotFoundException;
 
@@ -471,12 +429,10 @@
     .param p2, "def"    # F
 
     .prologue
-    .line 399
     invoke-static {p0, p1}, Lcom/motorola/android/provider/MotorolaSettings;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 401
     .local v1, "v":Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -487,18 +443,15 @@
 
     move-result p2
 
-    .line 403
     .end local p2    # "def":F
     :cond_0
     :goto_0
     return p2
 
-    .line 402
     .restart local p2    # "def":F
     :catch_0
     move-exception v0
 
-    .line 403
     .local v0, "e":Ljava/lang/NumberFormatException;
     goto :goto_0
 .end method
@@ -514,12 +467,10 @@
     .end annotation
 
     .prologue
-    .line 361
     invoke-static {p0, p1}, Lcom/motorola/android/provider/MotorolaSettings;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 363
     .local v1, "v":Ljava/lang/String;
     :try_start_0
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -530,11 +481,9 @@
 
     return v2
 
-    .line 364
     :catch_0
     move-exception v0
 
-    .line 365
     .local v0, "e":Ljava/lang/NumberFormatException;
     new-instance v2, Lcom/motorola/android/provider/MotorolaSettings$SettingNotFoundException;
 
@@ -550,12 +499,10 @@
     .param p2, "def"    # I
 
     .prologue
-    .line 350
     invoke-static {p0, p1}, Lcom/motorola/android/provider/MotorolaSettings;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 352
     .local v1, "v":Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -566,18 +513,15 @@
 
     move-result p2
 
-    .line 354
     .end local p2    # "def":I
     :cond_0
     :goto_0
     return p2
 
-    .line 353
     .restart local p2    # "def":I
     :catch_0
     move-exception v0
 
-    .line 354
     .local v0, "e":Ljava/lang/NumberFormatException;
     goto :goto_0
 .end method
@@ -593,12 +537,10 @@
     .end annotation
 
     .prologue
-    .line 386
     invoke-static {p0, p1}, Lcom/motorola/android/provider/MotorolaSettings;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 388
     .local v1, "valString":Ljava/lang/String;
     :try_start_0
     invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
@@ -609,11 +551,9 @@
 
     return-wide v2
 
-    .line 389
     :catch_0
     move-exception v0
 
-    .line 390
     .local v0, "e":Ljava/lang/NumberFormatException;
     new-instance v2, Lcom/motorola/android/provider/MotorolaSettings$SettingNotFoundException;
 
@@ -629,12 +569,10 @@
     .param p2, "def"    # J
 
     .prologue
-    .line 374
     invoke-static {p0, p1}, Lcom/motorola/android/provider/MotorolaSettings;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 377
     .local v1, "valString":Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -645,7 +583,6 @@
 
     move-result-wide v2
 
-    .line 381
     .local v2, "value":J
     :goto_0
     return-wide v2
@@ -654,14 +591,11 @@
     :cond_0
     move-wide v2, p2
 
-    .line 377
     goto :goto_0
 
-    .line 378
     :catch_0
     move-exception v0
 
-    .line 379
     .local v0, "e":Ljava/lang/NumberFormatException;
     move-wide v2, p2
 
@@ -675,7 +609,6 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 308
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
@@ -684,16 +617,13 @@
 
     if-eqz v0, :cond_0
 
-    .line 309
     invoke-static {p0, p1}, Lcom/motorola/android/provider/MotorolaSettings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 313
     :goto_0
     return-object v0
 
-    .line 311
     :cond_0
     const-string v0, "MotorolaSettings"
 
@@ -717,14 +647,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 312
     new-instance v0, Ljava/lang/Exception;
 
     invoke-direct {v0}, Ljava/lang/Exception;-><init>()V
 
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 313
     const/4 v0, 0x0
 
     goto :goto_0
@@ -736,19 +664,15 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 434
     invoke-static {p0, p1}, Lcom/motorola/android/provider/MotorolaSettings;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 435
     .local v0, "concatValue":Ljava/lang/String;
     if-nez v0, :cond_0
 
-    .line 436
     const/4 v1, 0x0
 
-    .line 438
     :goto_0
     return-object v1
 
@@ -767,7 +691,6 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 340
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     invoke-virtual {v0, p0}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
@@ -776,16 +699,13 @@
 
     if-eqz v0, :cond_0
 
-    .line 341
     invoke-static {p0}, Lcom/motorola/android/provider/MotorolaSettings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 345
     :goto_0
     return-object v0
 
-    .line 343
     :cond_0
     const-string v0, "MotorolaSettings"
 
@@ -809,14 +729,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 344
     new-instance v0, Ljava/lang/Exception;
 
     invoke-direct {v0}, Ljava/lang/Exception;-><init>()V
 
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 345
     const/4 v0, 0x0
 
     goto :goto_0
@@ -829,7 +747,6 @@
     .param p2, "value"    # F
 
     .prologue
-    .line 420
     invoke-static {p2}, Ljava/lang/Float;->toString(F)Ljava/lang/String;
 
     move-result-object v0
@@ -848,7 +765,6 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 370
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -867,7 +783,6 @@
     .param p2, "value"    # J
 
     .prologue
-    .line 395
     invoke-static {p2, p3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
     move-result-object v0
@@ -886,7 +801,6 @@
     .param p2, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 325
     sget-object v0, Lcom/motorola/android/provider/MotorolaSettings;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
@@ -895,16 +809,13 @@
 
     if-eqz v0, :cond_0
 
-    .line 326
     invoke-static {p0, p1, p2}, Lcom/motorola/android/provider/MotorolaSettings$Secure;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
-    .line 330
     :goto_0
     return v0
 
-    .line 328
     :cond_0
     const-string v0, "MotorolaSettings"
 
@@ -938,14 +849,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 329
     new-instance v0, Ljava/lang/Exception;
 
     invoke-direct {v0}, Ljava/lang/Exception;-><init>()V
 
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 330
     const/4 v0, 0x0
 
     goto :goto_0
@@ -958,21 +867,16 @@
     .param p2, "values"    # [Ljava/lang/String;
 
     .prologue
-    .line 450
     if-nez p1, :cond_0
 
-    .line 451
     const/4 v5, 0x0
 
-    .line 467
     :goto_0
     return v5
 
-    .line 453
     :cond_0
     if-nez p2, :cond_1
 
-    .line 454
     const/4 v5, 0x0
 
     invoke-static {p0, p1, v5}, Lcom/motorola/android/provider/MotorolaSettings;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
@@ -981,13 +885,11 @@
 
     goto :goto_0
 
-    .line 457
     :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 458
     .local v1, "builder":Ljava/lang/StringBuilder;
     move-object v0, p2
 
@@ -1003,33 +905,27 @@
 
     aget-object v3, v0, v2
 
-    .line 459
     .local v3, "item":Ljava/lang/String;
     if-eqz v3, :cond_3
 
-    .line 460
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v5
 
     if-eqz v5, :cond_2
 
-    .line 461
     const-string v5, ";"
 
     invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 463
     :cond_2
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 458
     :cond_3
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 467
     .end local v3    # "item":Ljava/lang/String;
     :cond_4
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;

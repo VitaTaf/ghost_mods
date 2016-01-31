@@ -23,7 +23,6 @@
     .locals 3
 
     .prologue
-    .line 453
     invoke-static {}, Lcom/motorola/kpi/Kpi6paTop$Tag;->values()[Lcom/motorola/kpi/Kpi6paTop$Tag;
 
     move-result-object v0

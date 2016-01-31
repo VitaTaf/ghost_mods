@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 420
     iput-object p1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-direct {p0}, Landroid/telecom/Connection$Listener;-><init>()V
@@ -40,7 +39,6 @@
     .param p3, "presentation"    # I
 
     .prologue
-    .line 463
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
     # getter for: Landroid/telecom/ConnectionService;->mIdByConnection:Ljava/util/Map;
@@ -54,7 +52,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 464
     .local v0, "id":Ljava/lang/String;
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
@@ -65,7 +62,6 @@
 
     invoke-virtual {v1, v0, p2, p3}, Landroid/telecom/ConnectionServiceAdapter;->setAddress(Ljava/lang/String;Landroid/net/Uri;I)V
 
-    .line 465
     return-void
 .end method
 
@@ -75,7 +71,6 @@
     .param p2, "isVoip"    # Z
 
     .prologue
-    .line 516
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
     # getter for: Landroid/telecom/ConnectionService;->mIdByConnection:Ljava/util/Map;
@@ -89,7 +84,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 517
     .local v0, "id":Ljava/lang/String;
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
@@ -100,7 +94,6 @@
 
     invoke-virtual {v1, v0, p2}, Landroid/telecom/ConnectionServiceAdapter;->setIsVoipAudioMode(Ljava/lang/String;Z)V
 
-    .line 518
     return-void
 .end method
 
@@ -111,7 +104,6 @@
     .param p3, "presentation"    # I
 
     .prologue
-    .line 470
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
     # getter for: Landroid/telecom/ConnectionService;->mIdByConnection:Ljava/util/Map;
@@ -125,7 +117,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 471
     .local v0, "id":Ljava/lang/String;
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
@@ -136,7 +127,6 @@
 
     invoke-virtual {v1, v0, p2, p3}, Landroid/telecom/ConnectionServiceAdapter;->setCallerDisplayName(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 472
     return-void
 .end method
 
@@ -146,7 +136,6 @@
     .param p2, "conference"    # Landroid/telecom/Conference;
 
     .prologue
-    .line 536
     iget-object v2, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
     # getter for: Landroid/telecom/ConnectionService;->mIdByConnection:Ljava/util/Map;
@@ -160,18 +149,14 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 537
     .local v1, "id":Ljava/lang/String;
     if-eqz v1, :cond_1
 
-    .line 538
     const/4 v0, 0x0
 
-    .line 539
     .local v0, "conferenceId":Ljava/lang/String;
     if-eqz p2, :cond_0
 
-    .line 540
     iget-object v2, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
     # getter for: Landroid/telecom/ConnectionService;->mIdByConference:Ljava/util/Map;
@@ -186,7 +171,6 @@
     .end local v0    # "conferenceId":Ljava/lang/String;
     check-cast v0, Ljava/lang/String;
 
-    .line 542
     .restart local v0    # "conferenceId":Ljava/lang/String;
     :cond_0
     iget-object v2, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
@@ -198,7 +182,6 @@
 
     invoke-virtual {v2, v1, v0}, Landroid/telecom/ConnectionServiceAdapter;->setIsConferenced(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 544
     .end local v0    # "conferenceId":Ljava/lang/String;
     :cond_1
     return-void
@@ -219,7 +202,6 @@
     .end annotation
 
     .prologue
-    .line 529
     .local p2, "conferenceables":Ljava/util/List;, "Ljava/util/List<Landroid/telecom/IConferenceable;>;"
     iget-object v0, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
@@ -250,7 +232,6 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/telecom/ConnectionServiceAdapter;->setConferenceableConnections(Ljava/lang/String;Ljava/util/List;)V
 
-    .line 532
     return-void
 .end method
 
@@ -260,7 +241,6 @@
     .param p2, "capabilities"    # I
 
     .prologue
-    .line 502
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
     # getter for: Landroid/telecom/ConnectionService;->mIdByConnection:Ljava/util/Map;
@@ -274,7 +254,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 503
     .local v0, "id":Ljava/lang/String;
     const-string v1, "capabilities: parcelableconnection: %s"
 
@@ -292,7 +271,6 @@
 
     invoke-static {p0, v1, v2}, Landroid/telecom/Log;->d(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 505
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
     # getter for: Landroid/telecom/ConnectionService;->mAdapter:Landroid/telecom/ConnectionServiceAdapter;
@@ -302,7 +280,6 @@
 
     invoke-virtual {v1, v0, p2}, Landroid/telecom/ConnectionServiceAdapter;->setConnectionCapabilities(Ljava/lang/String;I)V
 
-    .line 506
     return-void
 .end method
 
@@ -311,12 +288,10 @@
     .param p1, "c"    # Landroid/telecom/Connection;
 
     .prologue
-    .line 476
     iget-object v0, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-virtual {v0, p1}, Landroid/telecom/ConnectionService;->removeConnection(Landroid/telecom/Connection;)V
 
-    .line 477
     return-void
 .end method
 
@@ -326,7 +301,6 @@
     .param p2, "disconnectCause"    # Landroid/telecom/DisconnectCause;
 
     .prologue
-    .line 449
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
     # getter for: Landroid/telecom/ConnectionService;->mIdByConnection:Ljava/util/Map;
@@ -340,7 +314,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 450
     .local v0, "id":Ljava/lang/String;
     const-string v1, "Adapter set disconnected %s"
 
@@ -354,7 +327,6 @@
 
     invoke-static {p0, v1, v2}, Landroid/telecom/Log;->d(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 451
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
     # getter for: Landroid/telecom/ConnectionService;->mAdapter:Landroid/telecom/ConnectionServiceAdapter;
@@ -364,7 +336,6 @@
 
     invoke-virtual {v1, v0, p2}, Landroid/telecom/ConnectionServiceAdapter;->setDisconnected(Ljava/lang/String;Landroid/telecom/DisconnectCause;)V
 
-    .line 452
     return-void
 .end method
 
@@ -374,7 +345,6 @@
     .param p2, "nextChar"    # C
 
     .prologue
-    .line 488
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
     # getter for: Landroid/telecom/ConnectionService;->mIdByConnection:Ljava/util/Map;
@@ -388,7 +358,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 489
     .local v0, "id":Ljava/lang/String;
     const-string v1, "Adapter onPostDialChar %s, %s"
 
@@ -410,7 +379,6 @@
 
     invoke-static {p0, v1, v2}, Landroid/telecom/Log;->d(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 490
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
     # getter for: Landroid/telecom/ConnectionService;->mAdapter:Landroid/telecom/ConnectionServiceAdapter;
@@ -420,7 +388,6 @@
 
     invoke-virtual {v1, v0, p2}, Landroid/telecom/ConnectionServiceAdapter;->onPostDialChar(Ljava/lang/String;C)V
 
-    .line 491
     return-void
 .end method
 
@@ -430,7 +397,6 @@
     .param p2, "remaining"    # Ljava/lang/String;
 
     .prologue
-    .line 481
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
     # getter for: Landroid/telecom/ConnectionService;->mIdByConnection:Ljava/util/Map;
@@ -444,7 +410,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 482
     .local v0, "id":Ljava/lang/String;
     const-string v1, "Adapter onPostDialWait %s, %s"
 
@@ -462,7 +427,6 @@
 
     invoke-static {p0, v1, v2}, Landroid/telecom/Log;->d(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 483
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
     # getter for: Landroid/telecom/ConnectionService;->mAdapter:Landroid/telecom/ConnectionServiceAdapter;
@@ -472,7 +436,6 @@
 
     invoke-virtual {v1, v0, p2}, Landroid/telecom/ConnectionServiceAdapter;->onPostDialWait(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 484
     return-void
 .end method
 
@@ -482,7 +445,6 @@
     .param p2, "ringback"    # Z
 
     .prologue
-    .line 495
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
     # getter for: Landroid/telecom/ConnectionService;->mIdByConnection:Ljava/util/Map;
@@ -496,7 +458,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 496
     .local v0, "id":Ljava/lang/String;
     const-string v1, "Adapter onRingback %b"
 
@@ -514,7 +475,6 @@
 
     invoke-static {p0, v1, v2}, Landroid/telecom/Log;->d(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 497
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
     # getter for: Landroid/telecom/ConnectionService;->mAdapter:Landroid/telecom/ConnectionServiceAdapter;
@@ -524,7 +484,6 @@
 
     invoke-virtual {v1, v0, p2}, Landroid/telecom/ConnectionServiceAdapter;->setRingbackRequested(Ljava/lang/String;Z)V
 
-    .line 498
     return-void
 .end method
 
@@ -534,7 +493,6 @@
     .param p2, "state"    # I
 
     .prologue
-    .line 423
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
     # getter for: Landroid/telecom/ConnectionService;->mIdByConnection:Ljava/util/Map;
@@ -548,7 +506,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 424
     .local v0, "id":Ljava/lang/String;
     const-string v1, "Adapter set state %s %s"
 
@@ -570,15 +527,12 @@
 
     invoke-static {p0, v1, v2}, Landroid/telecom/Log;->d(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 425
     packed-switch p2, :pswitch_data_0
 
-    .line 445
     :goto_0
     :pswitch_0
     return-void
 
-    .line 427
     :pswitch_1
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
@@ -591,7 +545,6 @@
 
     goto :goto_0
 
-    .line 430
     :pswitch_2
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
@@ -604,7 +557,6 @@
 
     goto :goto_0
 
-    .line 436
     :pswitch_3
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
@@ -617,7 +569,6 @@
 
     goto :goto_0
 
-    .line 442
     :pswitch_4
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
@@ -630,7 +581,6 @@
 
     goto :goto_0
 
-    .line 425
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -648,7 +598,6 @@
     .param p2, "statusHints"    # Landroid/telecom/StatusHints;
 
     .prologue
-    .line 522
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
     # getter for: Landroid/telecom/ConnectionService;->mIdByConnection:Ljava/util/Map;
@@ -662,7 +611,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 523
     .local v0, "id":Ljava/lang/String;
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
@@ -673,7 +621,6 @@
 
     invoke-virtual {v1, v0, p2}, Landroid/telecom/ConnectionServiceAdapter;->setStatusHints(Ljava/lang/String;Landroid/telecom/StatusHints;)V
 
-    .line 524
     return-void
 .end method
 
@@ -683,7 +630,6 @@
     .param p2, "videoProvider"    # Landroid/telecom/Connection$VideoProvider;
 
     .prologue
-    .line 510
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
     # getter for: Landroid/telecom/ConnectionService;->mIdByConnection:Ljava/util/Map;
@@ -697,7 +643,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 511
     .local v0, "id":Ljava/lang/String;
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
@@ -708,7 +653,6 @@
 
     invoke-virtual {v1, v0, p2}, Landroid/telecom/ConnectionServiceAdapter;->setVideoProvider(Ljava/lang/String;Landroid/telecom/Connection$VideoProvider;)V
 
-    .line 512
     return-void
 .end method
 
@@ -718,7 +662,6 @@
     .param p2, "videoState"    # I
 
     .prologue
-    .line 456
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
     # getter for: Landroid/telecom/ConnectionService;->mIdByConnection:Ljava/util/Map;
@@ -732,7 +675,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 457
     .local v0, "id":Ljava/lang/String;
     const-string v1, "Adapter set video state %d"
 
@@ -750,7 +692,6 @@
 
     invoke-static {p0, v1, v2}, Landroid/telecom/Log;->d(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 458
     iget-object v1, p0, Landroid/telecom/ConnectionService$4;->this$0:Landroid/telecom/ConnectionService;
 
     # getter for: Landroid/telecom/ConnectionService;->mAdapter:Landroid/telecom/ConnectionServiceAdapter;
@@ -760,6 +701,5 @@
 
     invoke-virtual {v1, v0, p2}, Landroid/telecom/ConnectionServiceAdapter;->setVideoState(Ljava/lang/String;I)V
 
-    .line 459
     return-void
 .end method

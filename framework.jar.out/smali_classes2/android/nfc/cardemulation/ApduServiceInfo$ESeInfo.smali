@@ -41,7 +41,6 @@
     .locals 1
 
     .prologue
-    .line 640
     new-instance v0, Landroid/nfc/cardemulation/ApduServiceInfo$ESeInfo$1;
 
     invoke-direct {v0}, Landroid/nfc/cardemulation/ApduServiceInfo$ESeInfo$1;-><init>()V
@@ -57,16 +56,12 @@
     .param p2, "powerState"    # I
 
     .prologue
-    .line 606
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 607
     iput p1, p0, Landroid/nfc/cardemulation/ApduServiceInfo$ESeInfo;->seId:I
 
-    .line 608
     iput p2, p0, Landroid/nfc/cardemulation/ApduServiceInfo$ESeInfo;->powerState:I
 
-    .line 609
     return-void
 .end method
 
@@ -76,7 +71,6 @@
     .locals 1
 
     .prologue
-    .line 631
     const/4 v0, 0x0
 
     return v0
@@ -86,7 +80,6 @@
     .locals 1
 
     .prologue
-    .line 616
     iget v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo$ESeInfo;->powerState:I
 
     return v0
@@ -96,7 +89,6 @@
     .locals 1
 
     .prologue
-    .line 612
     iget v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo$ESeInfo;->seId:I
 
     return v0
@@ -110,7 +102,6 @@
 
     const/4 v3, 0x0
 
-    .line 621
     new-instance v0, Ljava/lang/StringBuilder;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -196,7 +187,6 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 626
     .local v0, "out":Ljava/lang/StringBuilder;
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -208,7 +198,6 @@
     :cond_0
     move v1, v3
 
-    .line 621
     goto :goto_0
 
     :cond_1
@@ -228,16 +217,13 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 636
     iget v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo$ESeInfo;->seId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 637
     iget v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo$ESeInfo;->powerState:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 638
     return-void
 .end method

@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 849
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -32,7 +31,6 @@
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 851
     new-instance v0, Landroid/media/projection/MediaProjectionManager;
 
     invoke-direct {v0, p1}, Landroid/media/projection/MediaProjectionManager;-><init>(Landroid/content/Context;)V

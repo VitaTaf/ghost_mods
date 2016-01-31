@@ -24,7 +24,6 @@
     .locals 0
 
     .prologue
-    .line 64
     invoke-direct {p0}, Landroid/content/ContentProvider;-><init>()V
 
     return-void
@@ -38,12 +37,10 @@
     .param p2, "info"    # Landroid/content/pm/ProviderInfo;
 
     .prologue
-    .line 79
     iget-object v0, p2, Landroid/content/pm/ProviderInfo;->authority:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/provider/SearchIndexablesProvider;->mAuthority:Ljava/lang/String;
 
-    .line 81
     new-instance v0, Landroid/content/UriMatcher;
 
     const/4 v1, -0x1
@@ -52,7 +49,6 @@
 
     iput-object v0, p0, Landroid/provider/SearchIndexablesProvider;->mMatcher:Landroid/content/UriMatcher;
 
-    .line 82
     iget-object v0, p0, Landroid/provider/SearchIndexablesProvider;->mMatcher:Landroid/content/UriMatcher;
 
     iget-object v1, p0, Landroid/provider/SearchIndexablesProvider;->mAuthority:Ljava/lang/String;
@@ -63,7 +59,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 84
     iget-object v0, p0, Landroid/provider/SearchIndexablesProvider;->mMatcher:Landroid/content/UriMatcher;
 
     iget-object v1, p0, Landroid/provider/SearchIndexablesProvider;->mAuthority:Ljava/lang/String;
@@ -74,7 +69,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 86
     iget-object v0, p0, Landroid/provider/SearchIndexablesProvider;->mMatcher:Landroid/content/UriMatcher;
 
     iget-object v1, p0, Landroid/provider/SearchIndexablesProvider;->mAuthority:Ljava/lang/String;
@@ -85,12 +79,10 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 90
     iget-boolean v0, p2, Landroid/content/pm/ProviderInfo;->exported:Z
 
     if-nez v0, :cond_0
 
-    .line 91
     new-instance v0, Ljava/lang/SecurityException;
 
     const-string v1, "Provider must be exported"
@@ -99,13 +91,11 @@
 
     throw v0
 
-    .line 93
     :cond_0
     iget-boolean v0, p2, Landroid/content/pm/ProviderInfo;->grantUriPermissions:Z
 
     if-nez v0, :cond_1
 
-    .line 94
     new-instance v0, Ljava/lang/SecurityException;
 
     const-string v1, "Provider must grantUriPermissions"
@@ -114,7 +104,6 @@
 
     throw v0
 
-    .line 96
     :cond_1
     const-string v0, "android.permission.READ_SEARCH_INDEXABLES"
 
@@ -126,7 +115,6 @@
 
     if-nez v0, :cond_2
 
-    .line 97
     new-instance v0, Ljava/lang/SecurityException;
 
     const-string v1, "Provider must be protected by READ_SEARCH_INDEXABLES"
@@ -135,11 +123,9 @@
 
     throw v0
 
-    .line 100
     :cond_2
     invoke-super {p0, p1, p2}, Landroid/content/ContentProvider;->attachInfo(Landroid/content/Context;Landroid/content/pm/ProviderInfo;)V
 
-    .line 101
     return-void
 .end method
 
@@ -150,7 +136,6 @@
     .param p3, "selectionArgs"    # [Ljava/lang/String;
 
     .prologue
-    .line 178
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Delete not supported"
@@ -165,7 +150,6 @@
     .param p1, "uri"    # Landroid/net/Uri;
 
     .prologue
-    .line 153
     iget-object v0, p0, Landroid/provider/SearchIndexablesProvider;->mMatcher:Landroid/content/UriMatcher;
 
     invoke-virtual {v0, p1}, Landroid/content/UriMatcher;->match(Landroid/net/Uri;)I
@@ -174,7 +158,6 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 161
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -199,27 +182,22 @@
 
     throw v0
 
-    .line 155
     :pswitch_0
     const-string v0, "vnd.android.cursor.dir/indexables_xml_res"
 
-    .line 159
     :goto_0
     return-object v0
 
-    .line 157
     :pswitch_1
     const-string v0, "vnd.android.cursor.dir/indexables_raw"
 
     goto :goto_0
 
-    .line 159
     :pswitch_2
     const-string v0, "vnd.android.cursor.dir/non_indexables_key"
 
     goto :goto_0
 
-    .line 153
     nop
 
     :pswitch_data_0
@@ -236,7 +214,6 @@
     .param p2, "values"    # Landroid/content/ContentValues;
 
     .prologue
-    .line 170
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Insert not supported"
@@ -257,7 +234,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 106
     iget-object v0, p0, Landroid/provider/SearchIndexablesProvider;->mMatcher:Landroid/content/UriMatcher;
 
     invoke-virtual {v0, p1}, Landroid/content/UriMatcher;->match(Landroid/net/Uri;)I
@@ -266,7 +242,6 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 114
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -291,17 +266,14 @@
 
     throw v0
 
-    .line 108
     :pswitch_0
     invoke-virtual {p0, v1}, Landroid/provider/SearchIndexablesProvider;->queryXmlResources([Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v0
 
-    .line 112
     :goto_0
     return-object v0
 
-    .line 110
     :pswitch_1
     invoke-virtual {p0, v1}, Landroid/provider/SearchIndexablesProvider;->queryRawData([Ljava/lang/String;)Landroid/database/Cursor;
 
@@ -309,7 +281,6 @@
 
     goto :goto_0
 
-    .line 112
     :pswitch_2
     invoke-virtual {p0, v1}, Landroid/provider/SearchIndexablesProvider;->queryNonIndexableKeys([Ljava/lang/String;)Landroid/database/Cursor;
 
@@ -317,7 +288,6 @@
 
     goto :goto_0
 
-    .line 106
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -343,7 +313,6 @@
     .param p4, "selectionArgs"    # [Ljava/lang/String;
 
     .prologue
-    .line 187
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Update not supported"

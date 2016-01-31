@@ -220,13 +220,10 @@
     .param p2, "volume"    # I
 
     .prologue
-    .line 745
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 746
     invoke-direct {p0, p1, p2}, Landroid/media/ToneGenerator;->native_setup(II)V
 
-    .line 747
     return-void
 .end method
 
@@ -242,7 +239,6 @@
     .locals 0
 
     .prologue
-    .line 893
     invoke-direct {p0}, Landroid/media/ToneGenerator;->native_finalize()V
 
     return-void
@@ -259,7 +255,6 @@
     .param p1, "toneType"    # I
 
     .prologue
-    .line 856
     const/4 v0, -0x1
 
     invoke-virtual {p0, p1, v0}, Landroid/media/ToneGenerator;->startTone(II)Z

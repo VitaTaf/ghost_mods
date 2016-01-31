@@ -24,13 +24,10 @@
     .param p2, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 1842
     iput-object p1, p0, Landroid/widget/PopupWindow$PopupBackgroundView;->this$0:Landroid/widget/PopupWindow;
 
-    .line 1843
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1844
     return-void
 .end method
 
@@ -41,7 +38,6 @@
     .param p1, "extraSpace"    # I
 
     .prologue
-    .line 1847
     iget-object v1, p0, Landroid/widget/PopupWindow$PopupBackgroundView;->this$0:Landroid/widget/PopupWindow;
 
     # getter for: Landroid/widget/PopupWindow;->mAboveAnchor:Z
@@ -51,14 +47,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 1848
     add-int/lit8 v1, p1, 0x1
 
     invoke-super {p0, v1}, Landroid/widget/FrameLayout;->onCreateDrawableState(I)[I
 
     move-result-object v0
 
-    .line 1849
     .local v0, "drawableState":[I
     # getter for: Landroid/widget/PopupWindow;->ABOVE_ANCHOR_STATE_SET:[I
     invoke-static {}, Landroid/widget/PopupWindow;->access$1300()[I
@@ -67,7 +61,6 @@
 
     invoke-static {v0, v1}, Landroid/view/View;->mergeDrawableStates([I[I)[I
 
-    .line 1852
     .end local v0    # "drawableState":[I
     :goto_0
     return-object v0

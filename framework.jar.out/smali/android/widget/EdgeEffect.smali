@@ -88,7 +88,6 @@
     .prologue
     const-wide v2, 0x3fe0c152382d7365L    # 0.5235987755982988
 
-    .line 76
     invoke-static {v2, v3}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v0
@@ -97,7 +96,6 @@
 
     sput v0, Landroid/widget/EdgeEffect;->SIN:F
 
-    .line 77
     invoke-static {v2, v3}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v0
@@ -118,47 +116,38 @@
 
     const/high16 v3, 0x3f000000    # 0.5f
 
-    .line 117
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 102
     iput v4, p0, Landroid/widget/EdgeEffect;->mState:I
 
-    .line 106
     new-instance v2, Landroid/graphics/Rect;
 
     invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v2, p0, Landroid/widget/EdgeEffect;->mBounds:Landroid/graphics/Rect;
 
-    .line 107
     new-instance v2, Landroid/graphics/Paint;
 
     invoke-direct {v2}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v2, p0, Landroid/widget/EdgeEffect;->mPaint:Landroid/graphics/Paint;
 
-    .line 110
     iput v3, p0, Landroid/widget/EdgeEffect;->mDisplacement:F
 
-    .line 111
     iput v3, p0, Landroid/widget/EdgeEffect;->mTargetDisplacement:F
 
-    .line 118
     iget-object v2, p0, Landroid/widget/EdgeEffect;->mPaint:Landroid/graphics/Paint;
 
     const/4 v3, 0x1
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 119
     sget-object v2, Lcom/android/internal/R$styleable;->EdgeEffect:[I
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->obtainStyledAttributes([I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 121
     .local v0, "a":Landroid/content/res/TypedArray;
     const v2, -0x99999a
 
@@ -166,11 +155,9 @@
 
     move-result v1
 
-    .line 123
     .local v1, "themeColor":I
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 124
     iget-object v2, p0, Landroid/widget/EdgeEffect;->mPaint:Landroid/graphics/Paint;
 
     const v3, 0xffffff
@@ -183,14 +170,12 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 125
     iget-object v2, p0, Landroid/widget/EdgeEffect;->mPaint:Landroid/graphics/Paint;
 
     sget-object v3, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 126
     iget-object v2, p0, Landroid/widget/EdgeEffect;->mPaint:Landroid/graphics/Paint;
 
     new-instance v3, Landroid/graphics/PorterDuffXfermode;
@@ -201,14 +186,12 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 127
     new-instance v2, Landroid/view/animation/DecelerateInterpolator;
 
     invoke-direct {v2}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
 
     iput-object v2, p0, Landroid/widget/EdgeEffect;->mInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 128
     return-void
 .end method
 
@@ -220,12 +203,10 @@
 
     const/4 v7, 0x0
 
-    .line 355
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
 
     move-result-wide v2
 
-    .line 356
     .local v2, "time":J
     iget-wide v4, p0, Landroid/widget/EdgeEffect;->mStartTime:J
 
@@ -243,7 +224,6 @@
 
     move-result v1
 
-    .line 358
     .local v1, "t":F
     iget-object v4, p0, Landroid/widget/EdgeEffect;->mInterpolator:Landroid/view/animation/Interpolator;
 
@@ -251,7 +231,6 @@
 
     move-result v0
 
-    .line 360
     .local v0, "interp":F
     iget v4, p0, Landroid/widget/EdgeEffect;->mGlowAlphaStart:F
 
@@ -267,7 +246,6 @@
 
     iput v4, p0, Landroid/widget/EdgeEffect;->mGlowAlpha:F
 
-    .line 361
     iget v4, p0, Landroid/widget/EdgeEffect;->mGlowScaleYStart:F
 
     iget v5, p0, Landroid/widget/EdgeEffect;->mGlowScaleYFinish:F
@@ -282,7 +260,6 @@
 
     iput v4, p0, Landroid/widget/EdgeEffect;->mGlowScaleY:F
 
-    .line 362
     iget v4, p0, Landroid/widget/EdgeEffect;->mDisplacement:F
 
     iget v5, p0, Landroid/widget/EdgeEffect;->mTargetDisplacement:F
@@ -295,100 +272,81 @@
 
     iput v4, p0, Landroid/widget/EdgeEffect;->mDisplacement:F
 
-    .line 364
     const v4, 0x3f7fbe77    # 0.999f
 
     cmpl-float v4, v1, v4
 
     if-ltz v4, :cond_0
 
-    .line 365
     iget v4, p0, Landroid/widget/EdgeEffect;->mState:I
 
     packed-switch v4, :pswitch_data_0
 
-    .line 398
     :cond_0
     :goto_0
     return-void
 
-    .line 367
     :pswitch_0
     iput v8, p0, Landroid/widget/EdgeEffect;->mState:I
 
-    .line 368
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
 
     move-result-wide v4
 
     iput-wide v4, p0, Landroid/widget/EdgeEffect;->mStartTime:J
 
-    .line 369
     const/high16 v4, 0x44160000    # 600.0f
 
     iput v4, p0, Landroid/widget/EdgeEffect;->mDuration:F
 
-    .line 371
     iget v4, p0, Landroid/widget/EdgeEffect;->mGlowAlpha:F
 
     iput v4, p0, Landroid/widget/EdgeEffect;->mGlowAlphaStart:F
 
-    .line 372
     iget v4, p0, Landroid/widget/EdgeEffect;->mGlowScaleY:F
 
     iput v4, p0, Landroid/widget/EdgeEffect;->mGlowScaleYStart:F
 
-    .line 375
     iput v7, p0, Landroid/widget/EdgeEffect;->mGlowAlphaFinish:F
 
-    .line 376
     iput v7, p0, Landroid/widget/EdgeEffect;->mGlowScaleYFinish:F
 
     goto :goto_0
 
-    .line 379
     :pswitch_1
     const/4 v4, 0x4
 
     iput v4, p0, Landroid/widget/EdgeEffect;->mState:I
 
-    .line 380
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
 
     move-result-wide v4
 
     iput-wide v4, p0, Landroid/widget/EdgeEffect;->mStartTime:J
 
-    .line 381
     const/high16 v4, 0x44fa0000    # 2000.0f
 
     iput v4, p0, Landroid/widget/EdgeEffect;->mDuration:F
 
-    .line 383
     iget v4, p0, Landroid/widget/EdgeEffect;->mGlowAlpha:F
 
     iput v4, p0, Landroid/widget/EdgeEffect;->mGlowAlphaStart:F
 
-    .line 384
     iget v4, p0, Landroid/widget/EdgeEffect;->mGlowScaleY:F
 
     iput v4, p0, Landroid/widget/EdgeEffect;->mGlowScaleYStart:F
 
-    .line 387
     iput v7, p0, Landroid/widget/EdgeEffect;->mGlowAlphaFinish:F
 
-    .line 388
     iput v7, p0, Landroid/widget/EdgeEffect;->mGlowScaleYFinish:F
 
     goto :goto_0
 
-    .line 391
     :pswitch_2
     iput v8, p0, Landroid/widget/EdgeEffect;->mState:I
 
     goto :goto_0
 
-    .line 394
     :pswitch_3
     const/4 v4, 0x0
 
@@ -396,7 +354,6 @@
 
     goto :goto_0
 
-    .line 365
     nop
 
     :pswitch_data_0
@@ -421,15 +378,12 @@
 
     const/4 v10, 0x0
 
-    .line 318
     invoke-direct {p0}, Landroid/widget/EdgeEffect;->update()V
 
-    .line 320
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v2
 
-    .line 322
     .local v2, "count":I
     iget-object v7, p0, Landroid/widget/EdgeEffect;->mBounds:Landroid/graphics/Rect;
 
@@ -439,7 +393,6 @@
 
     int-to-float v0, v7
 
-    .line 323
     .local v0, "centerX":F
     iget-object v7, p0, Landroid/widget/EdgeEffect;->mBounds:Landroid/graphics/Rect;
 
@@ -453,7 +406,6 @@
 
     sub-float v1, v7, v8
 
-    .line 325
     .local v1, "centerY":F
     iget v7, p0, Landroid/widget/EdgeEffect;->mGlowScaleY:F
 
@@ -467,7 +419,6 @@
 
     invoke-virtual {p1, v9, v7, v0, v10}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 327
     iget v7, p0, Landroid/widget/EdgeEffect;->mDisplacement:F
 
     invoke-static {v7, v9}, Ljava/lang/Math;->min(FF)F
@@ -482,7 +433,6 @@
 
     sub-float v3, v7, v8
 
-    .line 328
     .local v3, "displacement":F
     iget-object v7, p0, Landroid/widget/EdgeEffect;->mBounds:Landroid/graphics/Rect;
 
@@ -498,16 +448,13 @@
 
     div-float v5, v7, v8
 
-    .line 330
     .local v5, "translateX":F
     iget-object v7, p0, Landroid/widget/EdgeEffect;->mBounds:Landroid/graphics/Rect;
 
     invoke-virtual {p1, v7}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/Rect;)Z
 
-    .line 331
     invoke-virtual {p1, v5, v10}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 332
     iget-object v7, p0, Landroid/widget/EdgeEffect;->mPaint:Landroid/graphics/Paint;
 
     const/high16 v8, 0x437f0000    # 255.0f
@@ -520,20 +467,16 @@
 
     invoke-virtual {v7, v8}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 333
     iget v7, p0, Landroid/widget/EdgeEffect;->mRadius:F
 
     iget-object v8, p0, Landroid/widget/EdgeEffect;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0, v1, v7, v8}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 334
     invoke-virtual {p1, v2}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
-    .line 336
     const/4 v4, 0x0
 
-    .line 337
     .local v4, "oneLastFrame":Z
     iget v7, p0, Landroid/widget/EdgeEffect;->mState:I
 
@@ -547,13 +490,10 @@
 
     if-nez v7, :cond_0
 
-    .line 338
     iput v6, p0, Landroid/widget/EdgeEffect;->mState:I
 
-    .line 339
     const/4 v4, 0x1
 
-    .line 342
     :cond_0
     iget v7, p0, Landroid/widget/EdgeEffect;->mState:I
 
@@ -572,12 +512,10 @@
     .locals 1
 
     .prologue
-    .line 166
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/widget/EdgeEffect;->mState:I
 
-    .line 167
     return-void
 .end method
 
@@ -585,7 +523,6 @@
     .locals 1
 
     .prologue
-    .line 304
     iget-object v0, p0, Landroid/widget/EdgeEffect;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0}, Landroid/graphics/Paint;->getColor()I
@@ -599,7 +536,6 @@
     .locals 2
 
     .prologue
-    .line 351
     iget-object v0, p0, Landroid/widget/EdgeEffect;->mBounds:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
@@ -625,7 +561,6 @@
     .locals 1
 
     .prologue
-    .line 158
     iget v0, p0, Landroid/widget/EdgeEffect;->mState:I
 
     if-nez v0, :cond_0
@@ -648,12 +583,10 @@
     .prologue
     const/high16 v3, 0x3f000000    # 0.5f
 
-    .line 267
     const/4 v0, 0x2
 
     iput v0, p0, Landroid/widget/EdgeEffect;->mState:I
 
-    .line 268
     const/16 v0, 0x64
 
     invoke-static {p1}, Ljava/lang/Math;->abs(I)I
@@ -670,14 +603,12 @@
 
     move-result p1
 
-    .line 270
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/widget/EdgeEffect;->mStartTime:J
 
-    .line 271
     const v0, 0x3e19999a    # 0.15f
 
     int-to-float v1, p1
@@ -690,12 +621,10 @@
 
     iput v0, p0, Landroid/widget/EdgeEffect;->mDuration:F
 
-    .line 275
     const v0, 0x3e99999a    # 0.3f
 
     iput v0, p0, Landroid/widget/EdgeEffect;->mGlowAlphaStart:F
 
-    .line 276
     iget v0, p0, Landroid/widget/EdgeEffect;->mGlowScaleY:F
 
     const/4 v1, 0x0
@@ -706,7 +635,6 @@
 
     iput v0, p0, Landroid/widget/EdgeEffect;->mGlowScaleYStart:F
 
-    .line 283
     const v0, 0x3ccccccd    # 0.025f
 
     div-int/lit8 v1, p1, 0x64
@@ -733,7 +661,6 @@
 
     iput v0, p0, Landroid/widget/EdgeEffect;->mGlowScaleYFinish:F
 
-    .line 285
     iget v0, p0, Landroid/widget/EdgeEffect;->mGlowAlphaStart:F
 
     mul-int/lit8 v1, p1, 0x6
@@ -754,10 +681,8 @@
 
     iput v0, p0, Landroid/widget/EdgeEffect;->mGlowAlphaFinish:F
 
-    .line 287
     iput v3, p0, Landroid/widget/EdgeEffect;->mTargetDisplacement:F
 
-    .line 288
     return-void
 .end method
 
@@ -766,12 +691,10 @@
     .param p1, "deltaDistance"    # F
 
     .prologue
-    .line 183
     const/high16 v0, 0x3f000000    # 0.5f
 
     invoke-virtual {p0, p1, v0}, Landroid/widget/EdgeEffect;->onPull(FF)V
 
-    .line 184
     return-void
 .end method
 
@@ -787,16 +710,13 @@
 
     const/4 v7, 0x0
 
-    .line 200
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
 
     move-result-wide v2
 
-    .line 201
     .local v2, "now":J
     iput p2, p0, Landroid/widget/EdgeEffect;->mTargetDisplacement:F
 
-    .line 202
     iget v4, p0, Landroid/widget/EdgeEffect;->mState:I
 
     const/4 v5, 0x4
@@ -815,17 +735,14 @@
 
     if-gez v4, :cond_0
 
-    .line 230
     :goto_0
     return-void
 
-    .line 205
     :cond_0
     iget v4, p0, Landroid/widget/EdgeEffect;->mState:I
 
     if-eq v4, v6, :cond_1
 
-    .line 206
     iget v4, p0, Landroid/widget/EdgeEffect;->mGlowScaleY:F
 
     invoke-static {v7, v4}, Ljava/lang/Math;->max(FF)F
@@ -834,31 +751,25 @@
 
     iput v4, p0, Landroid/widget/EdgeEffect;->mGlowScaleY:F
 
-    .line 208
     :cond_1
     iput v6, p0, Landroid/widget/EdgeEffect;->mState:I
 
-    .line 210
     iput-wide v2, p0, Landroid/widget/EdgeEffect;->mStartTime:J
 
-    .line 211
     const/high16 v4, 0x43270000    # 167.0f
 
     iput v4, p0, Landroid/widget/EdgeEffect;->mDuration:F
 
-    .line 213
     iget v4, p0, Landroid/widget/EdgeEffect;->mPullDistance:F
 
     add-float/2addr v4, p1
 
     iput v4, p0, Landroid/widget/EdgeEffect;->mPullDistance:F
 
-    .line 215
     invoke-static {p1}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
 
-    .line 216
     .local v0, "absdd":F
     const/high16 v4, 0x3f000000    # 0.5f
 
@@ -878,32 +789,27 @@
 
     iput v4, p0, Landroid/widget/EdgeEffect;->mGlowAlpha:F
 
-    .line 219
     iget v4, p0, Landroid/widget/EdgeEffect;->mPullDistance:F
 
     cmpl-float v4, v4, v7
 
     if-nez v4, :cond_2
 
-    .line 220
     iput v7, p0, Landroid/widget/EdgeEffect;->mGlowScaleYStart:F
 
     iput v7, p0, Landroid/widget/EdgeEffect;->mGlowScaleY:F
 
-    .line 228
     :goto_1
     iget v4, p0, Landroid/widget/EdgeEffect;->mGlowAlpha:F
 
     iput v4, p0, Landroid/widget/EdgeEffect;->mGlowAlphaFinish:F
 
-    .line 229
     iget v4, p0, Landroid/widget/EdgeEffect;->mGlowScaleY:F
 
     iput v4, p0, Landroid/widget/EdgeEffect;->mGlowScaleYFinish:F
 
     goto :goto_0
 
-    .line 222
     :cond_2
     const-wide/16 v4, 0x0
 
@@ -947,7 +853,6 @@
 
     double-to-float v1, v4
 
-    .line 225
     .local v1, "scale":F
     iput v1, p0, Landroid/widget/EdgeEffect;->mGlowScaleYStart:F
 
@@ -962,10 +867,8 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 239
     iput v2, p0, Landroid/widget/EdgeEffect;->mPullDistance:F
 
-    .line 241
     iget v0, p0, Landroid/widget/EdgeEffect;->mState:I
 
     const/4 v1, 0x1
@@ -978,40 +881,32 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 254
     :goto_0
     return-void
 
-    .line 245
     :cond_0
     const/4 v0, 0x3
 
     iput v0, p0, Landroid/widget/EdgeEffect;->mState:I
 
-    .line 246
     iget v0, p0, Landroid/widget/EdgeEffect;->mGlowAlpha:F
 
     iput v0, p0, Landroid/widget/EdgeEffect;->mGlowAlphaStart:F
 
-    .line 247
     iget v0, p0, Landroid/widget/EdgeEffect;->mGlowScaleY:F
 
     iput v0, p0, Landroid/widget/EdgeEffect;->mGlowScaleYStart:F
 
-    .line 249
     iput v2, p0, Landroid/widget/EdgeEffect;->mGlowAlphaFinish:F
 
-    .line 250
     iput v2, p0, Landroid/widget/EdgeEffect;->mGlowScaleYFinish:F
 
-    .line 252
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/widget/EdgeEffect;->mStartTime:J
 
-    .line 253
     const/high16 v0, 0x44160000    # 600.0f
 
     iput v0, p0, Landroid/widget/EdgeEffect;->mDuration:F
@@ -1024,12 +919,10 @@
     .param p1, "color"    # I
 
     .prologue
-    .line 296
     iget-object v0, p0, Landroid/widget/EdgeEffect;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 297
     return-void
 .end method
 
@@ -1043,7 +936,6 @@
 
     const/high16 v9, 0x3f400000    # 0.75f
 
-    .line 137
     int-to-float v7, p1
 
     mul-float/2addr v7, v9
@@ -1052,17 +944,14 @@
 
     div-float v4, v7, v8
 
-    .line 138
     .local v4, "r":F
     sget v7, Landroid/widget/EdgeEffect;->COS:F
 
     mul-float v5, v7, v4
 
-    .line 139
     .local v5, "y":F
     sub-float v0, v4, v5
 
-    .line 140
     .local v0, "h":F
     int-to-float v7, p2
 
@@ -1072,21 +961,17 @@
 
     div-float v2, v7, v8
 
-    .line 141
     .local v2, "or":F
     sget v7, Landroid/widget/EdgeEffect;->COS:F
 
     mul-float v3, v7, v2
 
-    .line 142
     .local v3, "oy":F
     sub-float v1, v2, v3
 
-    .line 144
     .local v1, "oh":F
     iput v4, p0, Landroid/widget/EdgeEffect;->mRadius:F
 
-    .line 145
     const/4 v7, 0x0
 
     cmpl-float v7, v0, v7
@@ -1102,7 +987,6 @@
     :cond_0
     iput v6, p0, Landroid/widget/EdgeEffect;->mBaseGlowScale:F
 
-    .line 147
     iget-object v6, p0, Landroid/widget/EdgeEffect;->mBounds:Landroid/graphics/Rect;
 
     iget-object v7, p0, Landroid/widget/EdgeEffect;->mBounds:Landroid/graphics/Rect;
@@ -1123,6 +1007,5 @@
 
     invoke-virtual {v6, v7, v8, p1, v9}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 148
     return-void
 .end method

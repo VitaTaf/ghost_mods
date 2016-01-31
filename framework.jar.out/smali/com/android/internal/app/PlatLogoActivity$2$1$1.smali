@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 183
     iput-object p1, p0, Lcom/android/internal/app/PlatLogoActivity$2$1$1;->this$2:Lcom/android/internal/app/PlatLogoActivity$2$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 4
 
     .prologue
-    .line 187
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/app/PlatLogoActivity$2$1$1;->this$2:Lcom/android/internal/app/PlatLogoActivity$2$1;
 
@@ -70,7 +68,6 @@
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 195
     :goto_0
     iget-object v1, p0, Lcom/android/internal/app/PlatLogoActivity$2$1$1;->this$2:Lcom/android/internal/app/PlatLogoActivity$2$1;
 
@@ -80,14 +77,11 @@
 
     invoke-virtual {v1}, Lcom/android/internal/app/PlatLogoActivity;->finish()V
 
-    .line 196
     return-void
 
-    .line 192
     :catch_0
     move-exception v0
 
-    .line 193
     .local v0, "ex":Landroid/content/ActivityNotFoundException;
     const-string v1, "PlatLogoActivity"
 

@@ -48,17 +48,14 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 66
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/hardware/camera2/CameraManager;->mLock:Ljava/lang/Object;
 
-    .line 72
     const-string v0, "CameraManager"
 
     const/4 v1, 0x3
@@ -69,22 +66,17 @@
 
     iput-boolean v0, p0, Landroid/hardware/camera2/CameraManager;->DEBUG:Z
 
-    .line 73
     iget-object v1, p0, Landroid/hardware/camera2/CameraManager;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 74
     :try_start_0
     iput-object p1, p0, Landroid/hardware/camera2/CameraManager;->mContext:Landroid/content/Context;
 
-    .line 75
     monitor-exit v1
 
-    .line 76
     return-void
 
-    .line 75
     :catchall_0
     move-exception v0
 
@@ -114,15 +106,12 @@
     .end annotation
 
     .prologue
-    .line 578
     iget-object v7, p0, Landroid/hardware/camera2/CameraManager;->mDeviceIdList:Ljava/util/ArrayList;
 
     if-nez v7, :cond_5
 
-    .line 579
     const/4 v6, 0x0
 
-    .line 580
     .local v6, "numCameras":I
     invoke-static {}, Landroid/hardware/camera2/CameraManager$CameraManagerGlobal;->get()Landroid/hardware/camera2/CameraManager$CameraManagerGlobal;
 
@@ -132,24 +121,20 @@
 
     move-result-object v0
 
-    .line 581
     .local v0, "cameraService":Landroid/hardware/ICameraService;
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 584
     .local v1, "deviceIdList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     if-nez v0, :cond_0
 
-    .line 634
     .end local v0    # "cameraService":Landroid/hardware/ICameraService;
     .end local v1    # "deviceIdList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     .end local v6    # "numCameras":I
     :goto_0
     return-object v1
 
-    .line 589
     .restart local v0    # "cameraService":Landroid/hardware/ICameraService;
     .restart local v1    # "deviceIdList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     .restart local v6    # "numCameras":I
@@ -162,12 +147,10 @@
 
     move-result v6
 
-    .line 597
     new-instance v4, Landroid/hardware/camera2/impl/CameraMetadataNative;
 
     invoke-direct {v4}, Landroid/hardware/camera2/impl/CameraMetadataNative;-><init>()V
 
-    .line 598
     .local v4, "info":Landroid/hardware/camera2/impl/CameraMetadataNative;
     const/4 v3, 0x0
 
@@ -175,15 +158,12 @@
     :goto_1
     if-ge v3, v6, :cond_4
 
-    .line 601
     const/4 v5, 0x0
 
-    .line 603
     .local v5, "isDeviceSupported":Z
     :try_start_1
     invoke-interface {v0, v3, v4}, Landroid/hardware/ICameraService;->getCameraCharacteristics(ILandroid/hardware/camera2/impl/CameraMetadataNative;)I
 
-    .line 604
     invoke-virtual {v4}, Landroid/hardware/camera2/impl/CameraMetadataNative;->isEmpty()Z
     :try_end_1
     .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_2
@@ -194,35 +174,29 @@
 
     if-nez v7, :cond_2
 
-    .line 605
     const/4 v5, 0x1
 
-    .line 625
     :cond_1
     :goto_2
     if-eqz v5, :cond_3
 
-    .line 626
     invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v7
 
     invoke-virtual {v1, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 598
     :goto_3
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 590
     .end local v3    # "i":I
     .end local v4    # "info":Landroid/hardware/camera2/impl/CameraMetadataNative;
     .end local v5    # "isDeviceSupported":Z
     :catch_0
     move-exception v2
 
-    .line 591
     .local v2, "e":Landroid/hardware/camera2/utils/CameraRuntimeException;
     invoke-virtual {v2}, Landroid/hardware/camera2/utils/CameraRuntimeException;->asChecked()Landroid/hardware/camera2/CameraAccessException;
 
@@ -230,16 +204,13 @@
 
     throw v7
 
-    .line 592
     .end local v2    # "e":Landroid/hardware/camera2/utils/CameraRuntimeException;
     :catch_1
     move-exception v2
 
-    .line 594
     .local v2, "e":Landroid/os/RemoteException;
     goto :goto_0
 
-    .line 607
     .end local v2    # "e":Landroid/os/RemoteException;
     .restart local v3    # "i":I
     .restart local v4    # "info":Landroid/hardware/camera2/impl/CameraMetadataNative;
@@ -258,17 +229,14 @@
     .catch Landroid/hardware/camera2/utils/CameraRuntimeException; {:try_start_2 .. :try_end_2} :catch_3
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_4
 
-    .line 609
     :catch_2
     move-exception v7
 
     goto :goto_2
 
-    .line 612
     :catch_3
     move-exception v2
 
-    .line 616
     .local v2, "e":Landroid/hardware/camera2/utils/CameraRuntimeException;
     invoke-virtual {v2}, Landroid/hardware/camera2/utils/CameraRuntimeException;->getReason()I
 
@@ -278,25 +246,21 @@
 
     if-eq v7, v8, :cond_1
 
-    .line 617
     invoke-virtual {v2}, Landroid/hardware/camera2/utils/CameraRuntimeException;->asChecked()Landroid/hardware/camera2/CameraAccessException;
 
     move-result-object v7
 
     throw v7
 
-    .line 619
     .end local v2    # "e":Landroid/hardware/camera2/utils/CameraRuntimeException;
     :catch_4
     move-exception v2
 
-    .line 621
     .local v2, "e":Landroid/os/RemoteException;
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
     goto :goto_0
 
-    .line 628
     .end local v2    # "e":Landroid/os/RemoteException;
     :cond_3
     const-string v7, "CameraManager"
@@ -329,12 +293,10 @@
 
     goto :goto_3
 
-    .line 632
     .end local v5    # "isDeviceSupported":Z
     :cond_4
     iput-object v1, p0, Landroid/hardware/camera2/CameraManager;->mDeviceIdList:Ljava/util/ArrayList;
 
-    .line 634
     .end local v0    # "cameraService":Landroid/hardware/ICameraService;
     .end local v1    # "deviceIdList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     .end local v3    # "i":I
@@ -358,16 +320,13 @@
     .end annotation
 
     .prologue
-    .line 272
     invoke-virtual/range {p0 .. p1}, Landroid/hardware/camera2/CameraManager;->getCameraCharacteristics(Ljava/lang/String;)Landroid/hardware/camera2/CameraCharacteristics;
 
     move-result-object v11
 
-    .line 273
     .local v11, "characteristics":Landroid/hardware/camera2/CameraCharacteristics;
     const/4 v12, 0x0
 
-    .line 276
     .local v12, "device":Landroid/hardware/camera2/CameraDevice;
     :try_start_0
     move-object/from16 v0, p0
@@ -379,10 +338,8 @@
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Landroid/hardware/camera2/utils/CameraRuntimeException; {:try_start_0 .. :try_end_0} :catch_3
 
-    .line 278
     const/4 v9, 0x0
 
-    .line 280
     .local v9, "cameraUser":Landroid/hardware/camera2/ICameraDeviceUser;
     :try_start_1
     new-instance v13, Landroid/hardware/camera2/impl/CameraDeviceImpl;
@@ -395,19 +352,16 @@
 
     invoke-direct {v13, v0, v1, v2, v11}, Landroid/hardware/camera2/impl/CameraDeviceImpl;-><init>(Ljava/lang/String;Landroid/hardware/camera2/CameraDevice$StateCallback;Landroid/os/Handler;Landroid/hardware/camera2/CameraCharacteristics;)V
 
-    .line 287
     .local v13, "deviceImpl":Landroid/hardware/camera2/impl/CameraDeviceImpl;
     new-instance v8, Landroid/hardware/camera2/utils/BinderHolder;
 
     invoke-direct {v8}, Landroid/hardware/camera2/utils/BinderHolder;-><init>()V
 
-    .line 289
     .local v8, "holder":Landroid/hardware/camera2/utils/BinderHolder;
     invoke-virtual {v13}, Landroid/hardware/camera2/impl/CameraDeviceImpl;->getCallbacks()Landroid/hardware/camera2/impl/CameraDeviceImpl$CameraDeviceCallbacks;
 
     move-result-object v4
 
-    .line 290
     .local v4, "callbacks":Landroid/hardware/camera2/ICameraDeviceCallbacks;
     invoke-static/range {p1 .. p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
     :try_end_1
@@ -415,7 +369,6 @@
 
     move-result v5
 
-    .line 292
     .local v5, "id":I
     :try_start_2
     invoke-direct/range {p0 .. p1}, Landroid/hardware/camera2/CameraManager;->supportsCamera2ApiLocked(Ljava/lang/String;)Z
@@ -424,7 +377,6 @@
 
     if-eqz v6, :cond_2
 
-    .line 294
     invoke-static {}, Landroid/hardware/camera2/CameraManager$CameraManagerGlobal;->get()Landroid/hardware/camera2/CameraManager$CameraManagerGlobal;
 
     move-result-object v6
@@ -433,11 +385,9 @@
 
     move-result-object v3
 
-    .line 295
     .local v3, "cameraService":Landroid/hardware/ICameraService;
     if-nez v3, :cond_0
 
-    .line 296
     new-instance v6, Landroid/hardware/camera2/utils/CameraRuntimeException;
 
     const/4 v7, 0x2
@@ -454,12 +404,10 @@
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 308
     .end local v3    # "cameraService":Landroid/hardware/ICameraService;
     :catch_0
     move-exception v14
 
-    .line 309
     .local v14, "e":Landroid/hardware/camera2/utils/CameraRuntimeException;
     :try_start_3
     invoke-virtual {v14}, Landroid/hardware/camera2/utils/CameraRuntimeException;->getReason()I
@@ -470,7 +418,6 @@
 
     if-ne v6, v7, :cond_3
 
-    .line 310
     new-instance v6, Ljava/lang/AssertionError;
 
     const-string v7, "Should\'ve gone down the shim path"
@@ -479,7 +426,6 @@
 
     throw v6
 
-    .line 344
     .end local v4    # "callbacks":Landroid/hardware/camera2/ICameraDeviceCallbacks;
     .end local v5    # "id":I
     .end local v8    # "holder":Landroid/hardware/camera2/utils/BinderHolder;
@@ -498,12 +444,10 @@
     .catch Ljava/lang/NumberFormatException; {:try_start_4 .. :try_end_4} :catch_1
     .catch Landroid/hardware/camera2/utils/CameraRuntimeException; {:try_start_4 .. :try_end_4} :catch_3
 
-    .line 346
     .end local v9    # "cameraUser":Landroid/hardware/camera2/ICameraDeviceUser;
     :catch_1
     move-exception v14
 
-    .line 347
     .local v14, "e":Ljava/lang/NumberFormatException;
     new-instance v6, Ljava/lang/IllegalArgumentException;
 
@@ -531,7 +475,6 @@
 
     throw v6
 
-    .line 300
     .end local v14    # "e":Ljava/lang/NumberFormatException;
     .restart local v3    # "cameraService":Landroid/hardware/ICameraService;
     .restart local v4    # "callbacks":Landroid/hardware/camera2/ICameraDeviceCallbacks;
@@ -553,7 +496,6 @@
 
     invoke-interface/range {v3 .. v8}, Landroid/hardware/ICameraService;->connectDevice(Landroid/hardware/camera2/ICameraDeviceCallbacks;ILjava/lang/String;ILandroid/hardware/camera2/utils/BinderHolder;)I
 
-    .line 302
     invoke-virtual {v8}, Landroid/hardware/camera2/utils/BinderHolder;->getBinder()Landroid/os/IBinder;
 
     move-result-object v6
@@ -566,25 +508,20 @@
 
     move-result-object v9
 
-    .line 342
     .end local v3    # "cameraService":Landroid/hardware/ICameraService;
     :cond_1
     :goto_0
     :try_start_6
     invoke-virtual {v13, v9}, Landroid/hardware/camera2/impl/CameraDeviceImpl;->setRemoteDevice(Landroid/hardware/camera2/ICameraDeviceUser;)V
 
-    .line 343
     move-object v12, v13
 
-    .line 344
     monitor-exit v15
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
-    .line 352
     return-object v12
 
-    .line 305
     :cond_2
     :try_start_7
     const-string v6, "CameraManager"
@@ -593,7 +530,6 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 306
     invoke-static {v4, v5}, Landroid/hardware/camera2/legacy/CameraDeviceUserShim;->connectBinderShim(Landroid/hardware/camera2/ICameraDeviceCallbacks;I)Landroid/hardware/camera2/legacy/CameraDeviceUserShim;
     :try_end_7
     .catch Landroid/hardware/camera2/utils/CameraRuntimeException; {:try_start_7 .. :try_end_7} :catch_0
@@ -604,7 +540,6 @@
 
     goto :goto_0
 
-    .line 311
     .local v14, "e":Landroid/hardware/camera2/utils/CameraRuntimeException;
     :cond_3
     :try_start_8
@@ -648,11 +583,9 @@
 
     if-ne v6, v7, :cond_6
 
-    .line 319
     :cond_4
     invoke-virtual {v13, v14}, Landroid/hardware/camera2/impl/CameraDeviceImpl;->setRemoteFailure(Landroid/hardware/camera2/utils/CameraRuntimeException;)V
 
-    .line 321
     invoke-virtual {v14}, Landroid/hardware/camera2/utils/CameraRuntimeException;->getReason()I
 
     move-result v6
@@ -669,7 +602,6 @@
 
     if-ne v6, v7, :cond_1
 
-    .line 324
     :cond_5
     invoke-virtual {v14}, Landroid/hardware/camera2/utils/CameraRuntimeException;->asChecked()Landroid/hardware/camera2/CameraAccessException;
 
@@ -677,16 +609,13 @@
 
     throw v6
 
-    .line 328
     :cond_6
     throw v14
 
-    .line 330
     .end local v14    # "e":Landroid/hardware/camera2/utils/CameraRuntimeException;
     :catch_2
     move-exception v14
 
-    .line 332
     .local v14, "e":Landroid/os/RemoteException;
     new-instance v10, Landroid/hardware/camera2/utils/CameraRuntimeException;
 
@@ -696,11 +625,9 @@
 
     invoke-direct {v10, v6, v7, v14}, Landroid/hardware/camera2/utils/CameraRuntimeException;-><init>(ILjava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 335
     .local v10, "ce":Landroid/hardware/camera2/utils/CameraRuntimeException;
     invoke-virtual {v13, v10}, Landroid/hardware/camera2/impl/CameraDeviceImpl;->setRemoteFailure(Landroid/hardware/camera2/utils/CameraRuntimeException;)V
 
-    .line 336
     invoke-virtual {v10}, Landroid/hardware/camera2/utils/CameraRuntimeException;->asChecked()Landroid/hardware/camera2/CameraAccessException;
 
     move-result-object v6
@@ -709,7 +636,6 @@
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
-    .line 349
     .end local v4    # "callbacks":Landroid/hardware/camera2/ICameraDeviceCallbacks;
     .end local v5    # "id":I
     .end local v8    # "holder":Landroid/hardware/camera2/utils/BinderHolder;
@@ -720,7 +646,6 @@
     :catch_3
     move-exception v14
 
-    .line 350
     .local v14, "e":Landroid/hardware/camera2/utils/CameraRuntimeException;
     invoke-virtual {v14}, Landroid/hardware/camera2/utils/CameraRuntimeException;->asChecked()Landroid/hardware/camera2/CameraAccessException;
 
@@ -734,7 +659,6 @@
     .param p1, "cameraId"    # Ljava/lang/String;
 
     .prologue
-    .line 644
     const/4 v0, 0x2
 
     invoke-direct {p0, p1, v0}, Landroid/hardware/camera2/CameraManager;->supportsCameraApiLocked(Ljava/lang/String;I)Z
@@ -752,12 +676,10 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 655
     invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v2
 
-    .line 666
     .local v2, "id":I
     :try_start_0
     invoke-static {}, Landroid/hardware/camera2/CameraManager$CameraManagerGlobal;->get()Landroid/hardware/camera2/CameraManager$CameraManagerGlobal;
@@ -768,28 +690,23 @@
 
     move-result-object v0
 
-    .line 668
     .local v0, "cameraService":Landroid/hardware/ICameraService;
     if-nez v0, :cond_1
 
-    .line 684
     .end local v0    # "cameraService":Landroid/hardware/ICameraService;
     :cond_0
     :goto_0
     return v4
 
-    .line 670
     .restart local v0    # "cameraService":Landroid/hardware/ICameraService;
     :cond_1
     invoke-interface {v0, v2, p2}, Landroid/hardware/ICameraService;->supportsCameraApi(II)I
 
     move-result v3
 
-    .line 672
     .local v3, "res":I
     if-eqz v3, :cond_2
 
-    .line 673
     new-instance v5, Ljava/lang/AssertionError;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -817,13 +734,11 @@
     .catch Landroid/hardware/camera2/utils/CameraRuntimeException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 676
     .end local v0    # "cameraService":Landroid/hardware/ICameraService;
     .end local v3    # "res":I
     :catch_0
     move-exception v1
 
-    .line 677
     .local v1, "e":Landroid/hardware/camera2/utils/CameraRuntimeException;
     invoke-virtual {v1}, Landroid/hardware/camera2/utils/CameraRuntimeException;->getReason()I
 
@@ -833,10 +748,8 @@
 
     if-eq v5, v6, :cond_0
 
-    .line 678
     throw v1
 
-    .line 675
     .end local v1    # "e":Landroid/hardware/camera2/utils/CameraRuntimeException;
     .restart local v0    # "cameraService":Landroid/hardware/ICameraService;
     .restart local v3    # "res":I
@@ -845,7 +758,6 @@
 
     goto :goto_0
 
-    .line 681
     .end local v0    # "cameraService":Landroid/hardware/ICameraService;
     .end local v3    # "res":I
     :catch_1
@@ -866,16 +778,13 @@
     .end annotation
 
     .prologue
-    .line 198
     const/4 v1, 0x0
 
-    .line 200
     .local v1, "characteristics":Landroid/hardware/camera2/CameraCharacteristics;
     iget-object v9, p0, Landroid/hardware/camera2/CameraManager;->mLock:Ljava/lang/Object;
 
     monitor-enter v9
 
-    .line 201
     :try_start_0
     invoke-direct {p0}, Landroid/hardware/camera2/CameraManager;->getOrCreateDeviceIdListLocked()Ljava/util/ArrayList;
 
@@ -887,7 +796,6 @@
 
     if-nez v8, :cond_0
 
-    .line 202
     new-instance v8, Ljava/lang/IllegalArgumentException;
 
     const-string v10, "Camera id %s does not match any currently connected camera device"
@@ -908,7 +816,6 @@
 
     throw v8
 
-    .line 246
     :catchall_0
     move-exception v8
 
@@ -918,7 +825,6 @@
 
     throw v8
 
-    .line 206
     :cond_0
     :try_start_1
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
@@ -929,7 +835,6 @@
 
     move-result v4
 
-    .line 213
     .local v4, "id":I
     invoke-static {}, Landroid/hardware/camera2/CameraManager$CameraManagerGlobal;->get()Landroid/hardware/camera2/CameraManager$CameraManagerGlobal;
 
@@ -939,11 +844,9 @@
 
     move-result-object v0
 
-    .line 214
     .local v0, "cameraService":Landroid/hardware/ICameraService;
     if-nez v0, :cond_1
 
-    .line 215
     new-instance v8, Landroid/hardware/camera2/CameraAccessException;
 
     const/4 v10, 0x2
@@ -956,7 +859,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 219
     :cond_1
     :try_start_2
     invoke-direct {p0, p1}, Landroid/hardware/camera2/CameraManager;->supportsCamera2ApiLocked(Ljava/lang/String;)Z
@@ -965,31 +867,25 @@
 
     if-nez v8, :cond_2
 
-    .line 222
     const/4 v8, 0x1
 
     new-array v6, v8, [Ljava/lang/String;
 
-    .line 224
     .local v6, "outParameters":[Ljava/lang/String;
     invoke-interface {v0, v4, v6}, Landroid/hardware/ICameraService;->getLegacyParameters(I[Ljava/lang/String;)I
 
-    .line 225
     const/4 v8, 0x0
 
     aget-object v7, v6, v8
 
-    .line 227
     .local v7, "parameters":Ljava/lang/String;
     new-instance v5, Landroid/hardware/CameraInfo;
 
     invoke-direct {v5}, Landroid/hardware/CameraInfo;-><init>()V
 
-    .line 228
     .local v5, "info":Landroid/hardware/CameraInfo;
     invoke-interface {v0, v4, v5}, Landroid/hardware/ICameraService;->getCameraInfo(ILandroid/hardware/CameraInfo;)I
 
-    .line 230
     invoke-static {v7, v5}, Landroid/hardware/camera2/legacy/LegacyMetadataMapper;->createCharacteristics(Ljava/lang/String;Landroid/hardware/CameraInfo;)Landroid/hardware/camera2/CameraCharacteristics;
     :try_end_2
     .catch Landroid/hardware/camera2/utils/CameraRuntimeException; {:try_start_2 .. :try_end_2} :catch_0
@@ -998,7 +894,6 @@
 
     move-result-object v1
 
-    .line 246
     .end local v5    # "info":Landroid/hardware/CameraInfo;
     .end local v6    # "outParameters":[Ljava/lang/String;
     .end local v7    # "parameters":Ljava/lang/String;
@@ -1008,21 +903,17 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 247
     return-object v1
 
-    .line 233
     :cond_2
     :try_start_4
     new-instance v5, Landroid/hardware/camera2/impl/CameraMetadataNative;
 
     invoke-direct {v5}, Landroid/hardware/camera2/impl/CameraMetadataNative;-><init>()V
 
-    .line 235
     .local v5, "info":Landroid/hardware/camera2/impl/CameraMetadataNative;
     invoke-interface {v0, v4, v5}, Landroid/hardware/ICameraService;->getCameraCharacteristics(ILandroid/hardware/camera2/impl/CameraMetadataNative;)I
 
-    .line 237
     new-instance v2, Landroid/hardware/camera2/CameraCharacteristics;
 
     invoke-direct {v2, v5}, Landroid/hardware/camera2/CameraCharacteristics;-><init>(Landroid/hardware/camera2/impl/CameraMetadataNative;)V
@@ -1039,12 +930,10 @@
     .restart local v1    # "characteristics":Landroid/hardware/camera2/CameraCharacteristics;
     goto :goto_0
 
-    .line 239
     .end local v5    # "info":Landroid/hardware/camera2/impl/CameraMetadataNative;
     :catch_0
     move-exception v3
 
-    .line 240
     .local v3, "e":Landroid/hardware/camera2/utils/CameraRuntimeException;
     :try_start_5
     invoke-virtual {v3}, Landroid/hardware/camera2/utils/CameraRuntimeException;->asChecked()Landroid/hardware/camera2/CameraAccessException;
@@ -1053,12 +942,10 @@
 
     throw v8
 
-    .line 241
     .end local v3    # "e":Landroid/hardware/camera2/utils/CameraRuntimeException;
     :catch_1
     move-exception v3
 
-    .line 243
     .local v3, "e":Landroid/os/RemoteException;
     new-instance v8, Landroid/hardware/camera2/CameraAccessException;
 
@@ -1082,12 +969,10 @@
     .end annotation
 
     .prologue
-    .line 89
     iget-object v1, p0, Landroid/hardware/camera2/CameraManager;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 92
     :try_start_0
     invoke-direct {p0}, Landroid/hardware/camera2/CameraManager;->getOrCreateDeviceIdListLocked()Ljava/util/ArrayList;
 
@@ -1107,7 +992,6 @@
 
     return-object v0
 
-    .line 93
     :catchall_0
     move-exception v0
 
@@ -1130,10 +1014,8 @@
     .end annotation
 
     .prologue
-    .line 409
     if-nez p1, :cond_0
 
-    .line 410
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "cameraId was null"
@@ -1142,11 +1024,9 @@
 
     throw v0
 
-    .line 411
     :cond_0
     if-nez p2, :cond_1
 
-    .line 412
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "callback was null"
@@ -1155,32 +1035,26 @@
 
     throw v0
 
-    .line 413
     :cond_1
     if-nez p3, :cond_2
 
-    .line 414
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
 
     if-eqz v0, :cond_3
 
-    .line 415
     new-instance p3, Landroid/os/Handler;
 
     .end local p3    # "handler":Landroid/os/Handler;
     invoke-direct {p3}, Landroid/os/Handler;-><init>()V
 
-    .line 422
     .restart local p3    # "handler":Landroid/os/Handler;
     :cond_2
     invoke-direct {p0, p1, p2, p3}, Landroid/hardware/camera2/CameraManager;->openCameraDeviceUserAsync(Ljava/lang/String;Landroid/hardware/camera2/CameraDevice$StateCallback;Landroid/os/Handler;)Landroid/hardware/camera2/CameraDevice;
 
-    .line 423
     return-void
 
-    .line 417
     :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1197,19 +1071,15 @@
     .param p2, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 119
     if-nez p2, :cond_1
 
-    .line 120
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
 
-    .line 121
     .local v0, "looper":Landroid/os/Looper;
     if-nez v0, :cond_0
 
-    .line 122
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "No handler given, and current thread has no looper!"
@@ -1218,14 +1088,12 @@
 
     throw v1
 
-    .line 125
     :cond_0
     new-instance p2, Landroid/os/Handler;
 
     .end local p2    # "handler":Landroid/os/Handler;
     invoke-direct {p2, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 128
     .end local v0    # "looper":Landroid/os/Looper;
     .restart local p2    # "handler":Landroid/os/Handler;
     :cond_1
@@ -1235,7 +1103,6 @@
 
     invoke-virtual {v1, p1, p2}, Landroid/hardware/camera2/CameraManager$CameraManagerGlobal;->registerAvailabilityCallback(Landroid/hardware/camera2/CameraManager$AvailabilityCallback;Landroid/os/Handler;)V
 
-    .line 129
     return-void
 .end method
 
@@ -1245,7 +1112,6 @@
     .param p2, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 166
     return-void
 .end method
 
@@ -1260,7 +1126,6 @@
     .end annotation
 
     .prologue
-    .line 464
     return-void
 .end method
 
@@ -1269,14 +1134,12 @@
     .param p1, "callback"    # Landroid/hardware/camera2/CameraManager$AvailabilityCallback;
 
     .prologue
-    .line 140
     invoke-static {}, Landroid/hardware/camera2/CameraManager$CameraManagerGlobal;->get()Landroid/hardware/camera2/CameraManager$CameraManagerGlobal;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/hardware/camera2/CameraManager$CameraManagerGlobal;->unregisterAvailabilityCallback(Landroid/hardware/camera2/CameraManager$AvailabilityCallback;)V
 
-    .line 141
     return-void
 .end method
 
@@ -1285,6 +1148,5 @@
     .param p1, "callback"    # Landroid/hardware/camera2/CameraManager$TorchCallback;
 
     .prologue
-    .line 177
     return-void
 .end method

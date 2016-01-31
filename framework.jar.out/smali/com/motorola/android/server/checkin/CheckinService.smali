@@ -37,7 +37,6 @@
     .locals 1
 
     .prologue
-    .line 159
     new-instance v0, Lcom/motorola/android/server/checkin/CheckinService$1;
 
     invoke-direct {v0}, Lcom/motorola/android/server/checkin/CheckinService$1;-><init>()V
@@ -52,44 +51,36 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 81
     invoke-direct {p0}, Landroid/os/ICheckinService$Stub;-><init>()V
 
-    .line 70
     const/4 v0, 0x4
 
     iput v0, p0, Lcom/motorola/android/server/checkin/CheckinService;->_logLevel:I
 
-    .line 71
     const-string v0, "."
 
     iput-object v0, p0, Lcom/motorola/android/server/checkin/CheckinService;->_processTags:Ljava/lang/String;
 
-    .line 82
     iput-object p1, p0, Lcom/motorola/android/server/checkin/CheckinService;->mContext:Landroid/content/Context;
 
-    .line 83
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/motorola/android/server/checkin/CheckinService;->mHandler:Landroid/os/Handler;
 
-    .line 84
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/motorola/android/server/checkin/CheckinService;->mContentResolver:Landroid/content/ContentResolver;
 
-    .line 86
     invoke-virtual {p0}, Lcom/motorola/android/server/checkin/CheckinService;->getLogLevel()I
 
     move-result v0
 
     iput v0, p0, Lcom/motorola/android/server/checkin/CheckinService;->_logLevel:I
 
-    .line 87
     return-void
 .end method
 
@@ -104,7 +95,6 @@
 
     const/4 v4, 0x0
 
-    .line 98
     :try_start_0
     const-string v6, "CheckinService"
 
@@ -116,7 +106,6 @@
 
     if-eqz v6, :cond_0
 
-    .line 99
     const-string v6, "CheckinService"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -139,7 +128,6 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 102
     :cond_0
     iget-object v6, p0, Lcom/motorola/android/server/checkin/CheckinService;->mContentResolver:Landroid/content/ContentResolver;
 
@@ -149,11 +137,9 @@
 
     move-result-object v0
 
-    .line 104
     .local v0, "allowedProcessTags":Ljava/lang/String;
     if-nez v0, :cond_2
 
-    .line 106
     const-string v5, "CheckinService"
 
     const/4 v6, 0x3
@@ -164,20 +150,17 @@
 
     if-eqz v5, :cond_1
 
-    .line 107
     const-string v5, "CheckinService"
 
     const-string v6, "CheckinService:canLog No tags configured"
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 140
     .end local v0    # "allowedProcessTags":Ljava/lang/String;
     :cond_1
     :goto_0
     return v4
 
-    .line 111
     .restart local v0    # "allowedProcessTags":Ljava/lang/String;
     :cond_2
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -194,7 +177,6 @@
 
     if-eqz v6, :cond_4
 
-    .line 113
     const-string v6, "CheckinService"
 
     const/4 v7, 0x3
@@ -205,7 +187,6 @@
 
     if-eqz v6, :cond_3
 
-    .line 114
     const-string v6, "CheckinService"
 
     const-string v7, "CheckinService:canLog All Tags Allowed."
@@ -215,10 +196,8 @@
     :cond_3
     move v4, v5
 
-    .line 117
     goto :goto_0
 
-    .line 120
     :cond_4
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -240,7 +219,6 @@
 
     move-result-object v1
 
-    .line 122
     .local v1, "csAllowedProcessTags":Ljava/lang/String;
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -262,7 +240,6 @@
 
     move-result-object v3
 
-    .line 124
     .local v3, "modifiedProcessTag":Ljava/lang/String;
     invoke-virtual {v1, v3}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
@@ -272,7 +249,6 @@
 
     if-eq v6, v7, :cond_6
 
-    .line 126
     const-string v6, "CheckinService"
 
     const/4 v7, 0x3
@@ -283,7 +259,6 @@
 
     if-eqz v6, :cond_5
 
-    .line 127
     const-string v6, "CheckinService"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -309,10 +284,8 @@
     :cond_5
     move v4, v5
 
-    .line 129
     goto :goto_0
 
-    .line 131
     :cond_6
     const-string v5, "CheckinService"
 
@@ -324,7 +297,6 @@
 
     if-eqz v5, :cond_1
 
-    .line 132
     const-string v5, "CheckinService"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -351,14 +323,12 @@
 
     goto/16 :goto_0
 
-    .line 137
     .end local v0    # "allowedProcessTags":Ljava/lang/String;
     .end local v1    # "csAllowedProcessTags":Ljava/lang/String;
     .end local v3    # "modifiedProcessTag":Ljava/lang/String;
     :catch_0
     move-exception v2
 
-    .line 139
     .local v2, "e":Ljava/lang/Exception;
     const-string v5, "CheckinService"
 
@@ -373,7 +343,6 @@
     .locals 1
 
     .prologue
-    .line 93
     const/4 v0, 0x1
 
     return v0
@@ -383,7 +352,6 @@
     .locals 3
 
     .prologue
-    .line 146
     :try_start_0
     iget-object v1, p0, Lcom/motorola/android/server/checkin/CheckinService;->mContentResolver:Landroid/content/ContentResolver;
 
@@ -393,7 +361,6 @@
 
     move-result-object v0
 
-    .line 147
     .local v0, "level":Ljava/lang/String;
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -403,14 +370,12 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 151
     .end local v0    # "level":Ljava/lang/String;
     :goto_0
     iget v1, p0, Lcom/motorola/android/server/checkin/CheckinService;->_logLevel:I
 
     return v1
 
-    .line 148
     :catch_0
     move-exception v1
 
@@ -426,7 +391,6 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 170
     iget v1, p0, Lcom/motorola/android/server/checkin/CheckinService;->_logLevel:I
 
     if-lt p1, v1, :cond_0
@@ -438,11 +402,9 @@
     :cond_0
     iget v1, p0, Lcom/motorola/android/server/checkin/CheckinService;->_logLevel:I
 
-    .line 183
     :goto_0
     return v1
 
-    .line 171
     :cond_1
     sget-object v1, Lcom/motorola/android/server/checkin/CheckinService;->_inLog:Ljava/lang/ThreadLocal;
 
@@ -456,7 +418,6 @@
 
     move-result v0
 
-    .line 172
     .local v0, "reenter":I
     if-eqz v0, :cond_2
 
@@ -464,7 +425,6 @@
 
     goto :goto_0
 
-    .line 174
     :cond_2
     sget-object v1, Lcom/motorola/android/server/checkin/CheckinService;->_inLog:Ljava/lang/ThreadLocal;
 
@@ -476,7 +436,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
 
-    .line 178
     :try_start_0
     iget-object v1, p0, Lcom/motorola/android/server/checkin/CheckinService;->mContentResolver:Landroid/content/ContentResolver;
 
@@ -486,7 +445,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 180
     sget-object v1, Lcom/motorola/android/server/checkin/CheckinService;->_inLog:Ljava/lang/ThreadLocal;
 
     new-instance v2, Ljava/lang/Integer;
@@ -495,12 +453,10 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
 
-    .line 183
     iget v1, p0, Lcom/motorola/android/server/checkin/CheckinService;->_logLevel:I
 
     goto :goto_0
 
-    .line 180
     :catchall_0
     move-exception v1
 
@@ -520,7 +476,6 @@
     .param p1, "level"    # I
 
     .prologue
-    .line 155
     const/4 v0, 0x2
 
     if-lt p1, v0, :cond_0
@@ -529,12 +484,10 @@
 
     if-le p1, v0, :cond_1
 
-    .line 157
     :cond_0
     :goto_0
     return-void
 
-    .line 156
     :cond_1
     iget-object v0, p0, Lcom/motorola/android/server/checkin/CheckinService;->mContentResolver:Landroid/content/ContentResolver;
 

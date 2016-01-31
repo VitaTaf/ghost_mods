@@ -32,7 +32,6 @@
     .locals 0
 
     .prologue
-    .line 72
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,12 +44,10 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 75
     new-instance v0, Landroid/net/wifi/WifiChannel;
 
     invoke-direct {v0}, Landroid/net/wifi/WifiChannel;-><init>()V
 
-    .line 76
     .local v0, "channel":Landroid/net/wifi/WifiChannel;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -58,14 +55,12 @@
 
     iput v1, v0, Landroid/net/wifi/WifiChannel;->freqMHz:I
 
-    .line 77
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Landroid/net/wifi/WifiChannel;->channelNum:I
 
-    .line 78
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -77,10 +72,8 @@
     :goto_0
     iput-boolean v1, v0, Landroid/net/wifi/WifiChannel;->isDFS:Z
 
-    .line 79
     return-object v0
 
-    .line 78
     :cond_0
     const/4 v1, 0x0
 
@@ -92,7 +85,6 @@
     .param p1, "x0"    # Landroid/os/Parcel;
 
     .prologue
-    .line 72
     invoke-virtual {p0, p1}, Landroid/net/wifi/WifiChannel$1;->createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/WifiChannel;
 
     move-result-object v0
@@ -105,7 +97,6 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 84
     new-array v0, p1, [Landroid/net/wifi/WifiChannel;
 
     return-object v0
@@ -116,7 +107,6 @@
     .param p1, "x0"    # I
 
     .prologue
-    .line 72
     invoke-virtual {p0, p1}, Landroid/net/wifi/WifiChannel$1;->newArray(I)[Landroid/net/wifi/WifiChannel;
 
     move-result-object v0

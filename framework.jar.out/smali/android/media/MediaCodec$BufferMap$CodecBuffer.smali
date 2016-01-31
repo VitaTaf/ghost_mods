@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 1199
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,7 +35,6 @@
     .param p1, "x0"    # Landroid/media/MediaCodec$1;
 
     .prologue
-    .line 1199
     invoke-direct {p0}, Landroid/media/MediaCodec$BufferMap$CodecBuffer;-><init>()V
 
     return-void
@@ -50,34 +48,27 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1204
     iget-object v0, p0, Landroid/media/MediaCodec$BufferMap$CodecBuffer;->mByteBuffer:Ljava/nio/ByteBuffer;
 
     if-eqz v0, :cond_0
 
-    .line 1206
     iget-object v0, p0, Landroid/media/MediaCodec$BufferMap$CodecBuffer;->mByteBuffer:Ljava/nio/ByteBuffer;
 
     invoke-static {v0}, Ljava/nio/NioUtils;->freeDirectBuffer(Ljava/nio/ByteBuffer;)V
 
-    .line 1207
     iput-object v1, p0, Landroid/media/MediaCodec$BufferMap$CodecBuffer;->mByteBuffer:Ljava/nio/ByteBuffer;
 
-    .line 1209
     :cond_0
     iget-object v0, p0, Landroid/media/MediaCodec$BufferMap$CodecBuffer;->mImage:Landroid/media/Image;
 
     if-eqz v0, :cond_1
 
-    .line 1210
     iget-object v0, p0, Landroid/media/MediaCodec$BufferMap$CodecBuffer;->mImage:Landroid/media/Image;
 
     invoke-virtual {v0}, Landroid/media/Image;->close()V
 
-    .line 1211
     iput-object v1, p0, Landroid/media/MediaCodec$BufferMap$CodecBuffer;->mImage:Landroid/media/Image;
 
-    .line 1213
     :cond_1
     return-void
 .end method
@@ -87,13 +78,10 @@
     .param p1, "buffer"    # Ljava/nio/ByteBuffer;
 
     .prologue
-    .line 1221
     invoke-virtual {p0}, Landroid/media/MediaCodec$BufferMap$CodecBuffer;->free()V
 
-    .line 1222
     iput-object p1, p0, Landroid/media/MediaCodec$BufferMap$CodecBuffer;->mByteBuffer:Ljava/nio/ByteBuffer;
 
-    .line 1223
     return-void
 .end method
 
@@ -102,12 +90,9 @@
     .param p1, "image"    # Landroid/media/Image;
 
     .prologue
-    .line 1216
     invoke-virtual {p0}, Landroid/media/MediaCodec$BufferMap$CodecBuffer;->free()V
 
-    .line 1217
     iput-object p1, p0, Landroid/media/MediaCodec$BufferMap$CodecBuffer;->mImage:Landroid/media/Image;
 
-    .line 1218
     return-void
 .end method

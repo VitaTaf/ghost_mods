@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 9358
     iput-object p1, p0, Landroid/widget/TextView$Marquee$3;->this$0:Landroid/widget/TextView$Marquee;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "frameTimeNanos"    # J
 
     .prologue
-    .line 9361
     iget-object v0, p0, Landroid/widget/TextView$Marquee$3;->this$0:Landroid/widget/TextView$Marquee;
 
     # getter for: Landroid/widget/TextView$Marquee;->mStatus:B
@@ -53,7 +51,6 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 9362
     iget-object v0, p0, Landroid/widget/TextView$Marquee$3;->this$0:Landroid/widget/TextView$Marquee;
 
     # getter for: Landroid/widget/TextView$Marquee;->mRepeatLimit:I
@@ -63,13 +60,11 @@
 
     if-ltz v0, :cond_0
 
-    .line 9363
     iget-object v0, p0, Landroid/widget/TextView$Marquee$3;->this$0:Landroid/widget/TextView$Marquee;
 
     # operator-- for: Landroid/widget/TextView$Marquee;->mRepeatLimit:I
     invoke-static {v0}, Landroid/widget/TextView$Marquee;->access$710(Landroid/widget/TextView$Marquee;)I
 
-    .line 9365
     :cond_0
     iget-object v0, p0, Landroid/widget/TextView$Marquee$3;->this$0:Landroid/widget/TextView$Marquee;
 
@@ -82,7 +77,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView$Marquee;->start(I)V
 
-    .line 9367
     :cond_1
     return-void
 .end method

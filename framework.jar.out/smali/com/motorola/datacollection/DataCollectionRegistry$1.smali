@@ -24,7 +24,6 @@
     .param p2, "x0"    # Landroid/os/Looper;
 
     .prologue
-    .line 58
     iput-object p1, p0, Lcom/motorola/datacollection/DataCollectionRegistry$1;->this$0:Lcom/motorola/datacollection/DataCollectionRegistry;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -39,16 +38,13 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 60
     iget v0, p1, Landroid/os/Message;->arg1:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 66
     :goto_0
     return-void
 
-    .line 62
     :pswitch_0
     iget-object v1, p0, Lcom/motorola/datacollection/DataCollectionRegistry$1;->this$0:Lcom/motorola/datacollection/DataCollectionRegistry;
 
@@ -61,7 +57,6 @@
 
     goto :goto_0
 
-    .line 60
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

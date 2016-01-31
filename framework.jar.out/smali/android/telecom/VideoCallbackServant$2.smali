@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 107
     iput-object p1, p0, Landroid/telecom/VideoCallbackServant$2;->this$0:Landroid/telecom/VideoCallbackServant;
 
     invoke-direct {p0}, Lcom/android/internal/telecom/IVideoCallback$Stub;-><init>()V
@@ -43,16 +42,13 @@
     .end annotation
 
     .prologue
-    .line 140
     invoke-static {}, Lcom/android/internal/os/SomeArgs;->obtain()Lcom/android/internal/os/SomeArgs;
 
     move-result-object v0
 
-    .line 141
     .local v0, "args":Lcom/android/internal/os/SomeArgs;
     iput p1, v0, Lcom/android/internal/os/SomeArgs;->argi1:I
 
-    .line 142
     iget-object v1, p0, Landroid/telecom/VideoCallbackServant$2;->this$0:Landroid/telecom/VideoCallbackServant;
 
     # getter for: Landroid/telecom/VideoCallbackServant;->mHandler:Landroid/os/Handler;
@@ -68,7 +64,6 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 143
     return-void
 .end method
 
@@ -82,7 +77,6 @@
     .end annotation
 
     .prologue
-    .line 148
     iget-object v0, p0, Landroid/telecom/VideoCallbackServant$2;->this$0:Landroid/telecom/VideoCallbackServant;
 
     # getter for: Landroid/telecom/VideoCallbackServant;->mHandler:Landroid/os/Handler;
@@ -98,7 +92,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 150
     return-void
 .end method
 
@@ -113,19 +106,15 @@
     .end annotation
 
     .prologue
-    .line 132
     invoke-static {}, Lcom/android/internal/os/SomeArgs;->obtain()Lcom/android/internal/os/SomeArgs;
 
     move-result-object v0
 
-    .line 133
     .local v0, "args":Lcom/android/internal/os/SomeArgs;
     iput p1, v0, Lcom/android/internal/os/SomeArgs;->argi1:I
 
-    .line 134
     iput p2, v0, Lcom/android/internal/os/SomeArgs;->argi2:I
 
-    .line 135
     iget-object v1, p0, Landroid/telecom/VideoCallbackServant$2;->this$0:Landroid/telecom/VideoCallbackServant;
 
     # getter for: Landroid/telecom/VideoCallbackServant;->mHandler:Landroid/os/Handler;
@@ -141,7 +130,6 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 136
     return-void
 .end method
 
@@ -155,16 +143,13 @@
     .end annotation
 
     .prologue
-    .line 125
     invoke-static {}, Lcom/android/internal/os/SomeArgs;->obtain()Lcom/android/internal/os/SomeArgs;
 
     move-result-object v0
 
-    .line 126
     .local v0, "args":Lcom/android/internal/os/SomeArgs;
     iput p1, v0, Lcom/android/internal/os/SomeArgs;->argi1:I
 
-    .line 127
     iget-object v1, p0, Landroid/telecom/VideoCallbackServant$2;->this$0:Landroid/telecom/VideoCallbackServant;
 
     # getter for: Landroid/telecom/VideoCallbackServant;->mHandler:Landroid/os/Handler;
@@ -180,7 +165,6 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 128
     return-void
 .end method
 
@@ -194,7 +178,6 @@
     .end annotation
 
     .prologue
-    .line 110
     iget-object v0, p0, Landroid/telecom/VideoCallbackServant$2;->this$0:Landroid/telecom/VideoCallbackServant;
 
     # getter for: Landroid/telecom/VideoCallbackServant;->mHandler:Landroid/os/Handler;
@@ -210,7 +193,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 111
     return-void
 .end method
 
@@ -226,22 +208,17 @@
     .end annotation
 
     .prologue
-    .line 116
     invoke-static {}, Lcom/android/internal/os/SomeArgs;->obtain()Lcom/android/internal/os/SomeArgs;
 
     move-result-object v0
 
-    .line 117
     .local v0, "args":Lcom/android/internal/os/SomeArgs;
     iput p1, v0, Lcom/android/internal/os/SomeArgs;->argi1:I
 
-    .line 118
     iput-object p2, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
-    .line 119
     iput-object p3, v0, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
-    .line 120
     iget-object v1, p0, Landroid/telecom/VideoCallbackServant$2;->this$0:Landroid/telecom/VideoCallbackServant;
 
     # getter for: Landroid/telecom/VideoCallbackServant;->mHandler:Landroid/os/Handler;
@@ -257,6 +234,5 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 121
     return-void
 .end method

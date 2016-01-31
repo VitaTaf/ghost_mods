@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 1107
     iput-object p1, p0, Lcom/motorola/slpc/ModalityManager$MovementListenerTransport$1;->this$1:Lcom/motorola/slpc/ModalityManager$MovementListenerTransport;
 
     iput-object p2, p0, Lcom/motorola/slpc/ModalityManager$MovementListenerTransport$1;->val$this$0:Lcom/motorola/slpc/ModalityManager;
@@ -42,12 +41,10 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 1110
     iget-object v0, p0, Lcom/motorola/slpc/ModalityManager$MovementListenerTransport$1;->this$1:Lcom/motorola/slpc/ModalityManager$MovementListenerTransport;
 
     # invokes: Lcom/motorola/slpc/ModalityManager$MovementListenerTransport;->_handleMessage(Landroid/os/Message;)V
     invoke-static {v0, p1}, Lcom/motorola/slpc/ModalityManager$MovementListenerTransport;->access$500(Lcom/motorola/slpc/ModalityManager$MovementListenerTransport;Landroid/os/Message;)V
 
-    .line 1111
     return-void
 .end method

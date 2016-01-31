@@ -37,22 +37,16 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 461
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
 
-    .line 456
     iput v0, p0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetLeft:I
 
-    .line 457
     iput v0, p0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetTop:I
 
-    .line 458
     iput v0, p0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetRight:I
 
-    .line 459
     iput v0, p0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetBottom:I
 
-    .line 463
     return-void
 .end method
 
@@ -63,60 +57,46 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 465
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
 
-    .line 456
     iput v0, p0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetLeft:I
 
-    .line 457
     iput v0, p0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetTop:I
 
-    .line 458
     iput v0, p0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetRight:I
 
-    .line 459
     iput v0, p0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetBottom:I
 
-    .line 466
     if-eqz p1, :cond_0
 
-    .line 467
     iget-object v0, p1, Landroid/graphics/drawable/InsetDrawable$InsetState;->mThemeAttrs:[I
 
     iput-object v0, p0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mThemeAttrs:[I
 
-    .line 468
     iget v0, p1, Landroid/graphics/drawable/InsetDrawable$InsetState;->mChangingConfigurations:I
 
     iput v0, p0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mChangingConfigurations:I
 
-    .line 469
     iget-object v0, p1, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawableState:Landroid/graphics/drawable/Drawable$ConstantState;
 
     iput-object v0, p0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawableState:Landroid/graphics/drawable/Drawable$ConstantState;
 
-    .line 470
     iget v0, p1, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetLeft:I
 
     iput v0, p0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetLeft:I
 
-    .line 471
     iget v0, p1, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetTop:I
 
     iput v0, p0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetTop:I
 
-    .line 472
     iget v0, p1, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetRight:I
 
     iput v0, p0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetRight:I
 
-    .line 473
     iget v0, p1, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetBottom:I
 
     iput v0, p0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mInsetBottom:I
 
-    .line 475
     :cond_0
     return-void
 .end method
@@ -136,20 +116,16 @@
     .end annotation
 
     .prologue
-    .line 486
     .local p1, "atlasList":Ljava/util/Collection;, "Ljava/util/Collection<Landroid/graphics/Bitmap;>;"
     iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawableState:Landroid/graphics/drawable/Drawable$ConstantState;
 
-    .line 487
     .local v0, "state":Landroid/graphics/drawable/Drawable$ConstantState;
     if-eqz v0, :cond_0
 
-    .line 488
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable$ConstantState;->addAtlasableBitmaps(Ljava/util/Collection;)I
 
     move-result v1
 
-    .line 490
     :goto_0
     return v1
 
@@ -163,7 +139,6 @@
     .locals 1
 
     .prologue
-    .line 479
     iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mThemeAttrs:[I
 
     if-nez v0, :cond_1
@@ -203,7 +178,6 @@
     .locals 1
 
     .prologue
-    .line 509
     iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mDrawableState:Landroid/graphics/drawable/Drawable$ConstantState;
 
     if-eqz v0, :cond_0
@@ -223,7 +197,6 @@
     .locals 1
 
     .prologue
-    .line 505
     iget v0, p0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mChangingConfigurations:I
 
     return v0
@@ -235,7 +208,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 495
     new-instance v0, Landroid/graphics/drawable/InsetDrawable;
 
     invoke-direct {v0, p0, v1, v1}, Landroid/graphics/drawable/InsetDrawable;-><init>(Landroid/graphics/drawable/InsetDrawable$InsetState;Landroid/content/res/Resources;Landroid/graphics/drawable/InsetDrawable$1;)V
@@ -248,7 +220,6 @@
     .param p1, "res"    # Landroid/content/res/Resources;
 
     .prologue
-    .line 500
     new-instance v0, Landroid/graphics/drawable/InsetDrawable;
 
     const/4 v1, 0x0

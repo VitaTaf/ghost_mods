@@ -48,7 +48,6 @@
     .locals 1
 
     .prologue
-    .line 132
     const/4 v0, 0x0
 
     sput-object v0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->sInstance:Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;
@@ -67,73 +66,56 @@
 
     const/4 v1, 0x0
 
-    .line 141
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 30
     iput-object v0, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mContext:Landroid/content/Context;
 
-    .line 31
     iput-object v0, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mModalityMgr:Lcom/motorola/slpc/ModalityManager;
 
-    .line 32
     const-string v0, ""
 
     iput-object v0, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mLastNotified:Ljava/lang/String;
 
-    .line 33
     iput-wide v2, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mWalkingExpire:J
 
-    .line 34
     iput-wide v2, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mRunningExpire:J
 
-    .line 35
     iput-wide v2, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mVehicleExpire:J
 
-    .line 36
     iput-boolean v1, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mRegisterAll:Z
 
-    .line 38
     iput-boolean v1, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mWalkingRegistered:Z
 
-    .line 39
     iput-boolean v1, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mRunningRegistered:Z
 
-    .line 40
     iput-boolean v1, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mVehicleRegistered:Z
 
-    .line 42
     new-instance v0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler$1;
 
     invoke-direct {v0, p0}, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler$1;-><init>(Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;)V
 
     iput-object v0, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mModalityWalkingListener:Lcom/motorola/slpc/ModalityManager$ModalityListener;
 
-    .line 53
     new-instance v0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler$2;
 
     invoke-direct {v0, p0}, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler$2;-><init>(Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;)V
 
     iput-object v0, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mModalityRunningListener:Lcom/motorola/slpc/ModalityManager$ModalityListener;
 
-    .line 64
     new-instance v0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler$3;
 
     invoke-direct {v0, p0}, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler$3;-><init>(Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;)V
 
     iput-object v0, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mModalityVehicleListener:Lcom/motorola/slpc/ModalityManager$ModalityListener;
 
-    .line 75
     new-instance v0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler$4;
 
     invoke-direct {v0, p0}, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler$4;-><init>(Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;)V
 
     iput-object v0, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mGestureSharingReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 142
     iput-object p1, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mContext:Landroid/content/Context;
 
-    .line 143
     return-void
 .end method
 
@@ -143,7 +125,6 @@
     .param p1, "x1"    # Lcom/motorola/slpc/Transition;
 
     .prologue
-    .line 23
     invoke-direct {p0, p1}, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->handleModalityChange(Lcom/motorola/slpc/Transition;)V
 
     return-void
@@ -157,7 +138,6 @@
     .param p5, "x3"    # J
 
     .prologue
-    .line 23
     invoke-direct/range {p0 .. p6}, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->registerWalking(JJJ)V
 
     return-void
@@ -171,7 +151,6 @@
     .param p5, "x3"    # J
 
     .prologue
-    .line 23
     invoke-direct/range {p0 .. p6}, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->registerRunning(JJJ)V
 
     return-void
@@ -185,7 +164,6 @@
     .param p5, "x3"    # J
 
     .prologue
-    .line 23
     invoke-direct/range {p0 .. p6}, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->registerVehicle(JJJ)V
 
     return-void
@@ -196,7 +174,6 @@
     .param p0, "x0"    # Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;
 
     .prologue
-    .line 23
     invoke-direct {p0}, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->unregisterWalking()V
 
     return-void
@@ -207,7 +184,6 @@
     .param p0, "x0"    # Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;
 
     .prologue
-    .line 23
     invoke-direct {p0}, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->unregisterRunning()V
 
     return-void
@@ -218,7 +194,6 @@
     .param p0, "x0"    # Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;
 
     .prologue
-    .line 23
     invoke-direct {p0}, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->unregisterVehicle()V
 
     return-void
@@ -229,7 +204,6 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 135
     const-class v1, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;
 
     monitor-enter v1
@@ -239,14 +213,12 @@
 
     if-nez v0, :cond_0
 
-    .line 136
     new-instance v0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;
 
     invoke-direct {v0, p0}, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;-><init>(Landroid/content/Context;)V
 
     sput-object v0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->sInstance:Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;
 
-    .line 138
     :cond_0
     sget-object v0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->sInstance:Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;
     :try_end_0
@@ -256,7 +228,6 @@
 
     return-object v0
 
-    .line 135
     :catchall_0
     move-exception v0
 
@@ -270,29 +241,24 @@
     .param p1, "transition"    # Lcom/motorola/slpc/Transition;
 
     .prologue
-    .line 269
     monitor-enter p0
 
     if-nez p1, :cond_0
 
-    .line 297
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 270
     :cond_0
     :try_start_0
     invoke-virtual {p1}, Lcom/motorola/slpc/Transition;->getNewState()I
 
     move-result v0
 
-    .line 271
     .local v0, "newState":I
     sparse-switch v0, :sswitch_data_0
 
-    .line 291
     const-string v1, "GSModalitySHubHandler"
 
     const/4 v2, 0x3
@@ -303,27 +269,23 @@
 
     if-eqz v1, :cond_1
 
-    .line 292
     const-string v1, "GSModalitySHubHandler"
 
     const-string v2, "Modality Change -> NONE"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 294
     :cond_1
     const-string v1, "MODALITY_NONE"
 
     invoke-direct {p0, v1}, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->notifyGestureSharing(Ljava/lang/String;)V
 
-    .line 295
     invoke-direct {p0}, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->unregisterExpired()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
-    .line 269
     .end local v0    # "newState":I
     :catchall_0
     move-exception v1
@@ -332,7 +294,6 @@
 
     throw v1
 
-    .line 273
     .restart local v0    # "newState":I
     :sswitch_0
     :try_start_1
@@ -346,14 +307,12 @@
 
     if-eqz v1, :cond_2
 
-    .line 274
     const-string v1, "GSModalitySHubHandler"
 
     const-string v2, "Modality Change -> WALKING"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 276
     :cond_2
     const-string v1, "MODALITY_WALKING"
 
@@ -361,7 +320,6 @@
 
     goto :goto_0
 
-    .line 279
     :sswitch_1
     const-string v1, "GSModalitySHubHandler"
 
@@ -373,14 +331,12 @@
 
     if-eqz v1, :cond_3
 
-    .line 280
     const-string v1, "GSModalitySHubHandler"
 
     const-string v2, "Modality Change -> RUNNING"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 282
     :cond_3
     const-string v1, "MODALITY_RUNNING"
 
@@ -388,7 +344,6 @@
 
     goto :goto_0
 
-    .line 285
     :sswitch_2
     const-string v1, "GSModalitySHubHandler"
 
@@ -400,14 +355,12 @@
 
     if-eqz v1, :cond_4
 
-    .line 286
     const-string v1, "GSModalitySHubHandler"
 
     const-string v2, "Modality Change -> VEHICLE"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 288
     :cond_4
     const-string v1, "MODALITY_VEHICLE"
 
@@ -417,7 +370,6 @@
 
     goto :goto_0
 
-    .line 271
     :sswitch_data_0
     .sparse-switch
         0x8 -> :sswitch_0
@@ -431,19 +383,16 @@
     .param p1, "modality"    # Ljava/lang/String;
 
     .prologue
-    .line 300
     monitor-enter p0
 
     if-nez p1, :cond_1
 
-    .line 306
     :cond_0
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 301
     :cond_1
     :try_start_0
     iget-object v1, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mLastNotified:Ljava/lang/String;
@@ -454,23 +403,19 @@
 
     if-nez v1, :cond_0
 
-    .line 302
     iput-object p1, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mLastNotified:Ljava/lang/String;
 
-    .line 303
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.motorola.internal.intent.action.GS_MODALITY_CHANGE"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 304
     .local v0, "intent":Landroid/content/Intent;
     const-string v1, "com.motorola.internal.intent.action.GS_NEW_MODALITY"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 305
     iget-object v1, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
@@ -479,7 +424,6 @@
 
     goto :goto_0
 
-    .line 300
     .end local v0    # "intent":Landroid/content/Intent;
     :catchall_0
     move-exception v1
@@ -493,7 +437,6 @@
     .locals 2
 
     .prologue
-    .line 337
     monitor-enter p0
 
     :try_start_0
@@ -509,7 +452,6 @@
 
     if-nez v0, :cond_1
 
-    .line 338
     const-string v0, "GSModalitySHubHandler"
 
     const/4 v1, 0x3
@@ -520,14 +462,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 339
     const-string v0, "GSModalitySHubHandler"
 
     const-string v1, "All Modalities Un-Registered"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 341
     :cond_0
     const-string v0, "MODALITY_UNREGISTERED"
 
@@ -535,13 +475,11 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 343
     :cond_1
     monitor-exit p0
 
     return-void
 
-    .line 337
     :catchall_0
     move-exception v0
 
@@ -558,7 +496,6 @@
     .param p5, "endDuration"    # J
 
     .prologue
-    .line 235
     const-string v1, "GSModalitySHubHandler"
 
     const/4 v2, 0x3
@@ -569,20 +506,17 @@
 
     if-eqz v1, :cond_0
 
-    .line 236
     const-string v1, "GSModalitySHubHandler"
 
     const-string v2, "Registering for Modality"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 239
     :cond_0
     iget-object v1, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mModalityMgr:Lcom/motorola/slpc/ModalityManager;
 
     if-nez v1, :cond_1
 
-    .line 240
     iget-object v1, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mContext:Landroid/content/Context;
 
     const-string/jumbo v2, "modality"
@@ -595,24 +529,20 @@
 
     iput-object v1, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mModalityMgr:Lcom/motorola/slpc/ModalityManager;
 
-    .line 243
     :cond_1
     const/4 v8, 0x0
 
-    .line 245
     .local v8, "status":Z
     iget-object v1, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mModalityMgr:Lcom/motorola/slpc/ModalityManager;
 
     if-eqz v1, :cond_3
 
-    .line 246
     iget-boolean v1, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mRegisterAll:Z
 
     if-eqz v1, :cond_2
 
     const p1, 0xffff
 
-    .line 247
     :cond_2
     iget-object v1, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mModalityMgr:Lcom/motorola/slpc/ModalityManager;
 
@@ -628,11 +558,9 @@
 
     move-result v8
 
-    .line 253
     :cond_3
     if-eqz v8, :cond_5
 
-    .line 254
     const-string v1, "GSModalitySHubHandler"
 
     const/4 v2, 0x3
@@ -643,14 +571,12 @@
 
     if-eqz v1, :cond_4
 
-    .line 255
     const-string v1, "GSModalitySHubHandler"
 
     const-string v2, "Modality registration SUCCESS"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 257
     :cond_4
     iget-object v1, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mModalityMgr:Lcom/motorola/slpc/ModalityManager;
 
@@ -658,19 +584,15 @@
 
     move-result-object v0
 
-    .line 258
     .local v0, "lastTransition":Lcom/motorola/slpc/Transition;
     invoke-direct {p0, v0}, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->handleModalityChange(Lcom/motorola/slpc/Transition;)V
 
-    .line 259
     const/4 v1, 0x1
 
-    .line 264
     .end local v0    # "lastTransition":Lcom/motorola/slpc/Transition;
     :goto_0
     return v1
 
-    .line 261
     :cond_5
     const-string v1, "GSModalitySHubHandler"
 
@@ -682,14 +604,12 @@
 
     if-eqz v1, :cond_6
 
-    .line 262
     const-string v1, "GSModalitySHubHandler"
 
     const-string v2, "ERROR - Could not register for Modality"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 264
     :cond_6
     const/4 v1, 0x0
 
@@ -705,7 +625,6 @@
     .prologue
     const/4 v8, 0x3
 
-    .line 169
     const-string v0, "GSModalitySHubHandler"
 
     invoke-static {v0, v8}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -714,21 +633,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 170
     const-string v0, "GSModalitySHubHandler"
 
     const-string v1, "Register Running"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 172
     :cond_0
     invoke-direct {p0}, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->unregisterRunning()V
 
-    .line 173
     iput-wide p1, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mRunningExpire:J
 
-    .line 174
     const/16 v2, 0x10
 
     iget-object v3, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mModalityRunningListener:Lcom/motorola/slpc/ModalityManager$ModalityListener;
@@ -745,7 +660,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 176
     const-string v0, "GSModalitySHubHandler"
 
     invoke-static {v0, v8}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -754,20 +668,17 @@
 
     if-eqz v0, :cond_1
 
-    .line 177
     const-string v0, "GSModalitySHubHandler"
 
     const-string v1, "Running successfully registered"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 179
     :cond_1
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mRunningRegistered:Z
 
-    .line 181
     :cond_2
     return-void
 .end method
@@ -781,7 +692,6 @@
     .prologue
     const/4 v8, 0x3
 
-    .line 184
     const-string v0, "GSModalitySHubHandler"
 
     invoke-static {v0, v8}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -790,21 +700,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 185
     const-string v0, "GSModalitySHubHandler"
 
     const-string v1, "Register Vehicle"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 187
     :cond_0
     invoke-direct {p0}, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->unregisterVehicle()V
 
-    .line 188
     iput-wide p1, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mVehicleExpire:J
 
-    .line 189
     const/16 v2, 0x20
 
     iget-object v3, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mModalityVehicleListener:Lcom/motorola/slpc/ModalityManager$ModalityListener;
@@ -821,7 +727,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 191
     const-string v0, "GSModalitySHubHandler"
 
     invoke-static {v0, v8}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -830,20 +735,17 @@
 
     if-eqz v0, :cond_1
 
-    .line 192
     const-string v0, "GSModalitySHubHandler"
 
     const-string v1, "Vehicle successfully registered"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 194
     :cond_1
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mVehicleRegistered:Z
 
-    .line 196
     :cond_2
     return-void
 .end method
@@ -857,7 +759,6 @@
     .prologue
     const/4 v8, 0x3
 
-    .line 154
     const-string v0, "GSModalitySHubHandler"
 
     invoke-static {v0, v8}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -866,21 +767,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 155
     const-string v0, "GSModalitySHubHandler"
 
     const-string v1, "Register Walking"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 157
     :cond_0
     invoke-direct {p0}, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->unregisterWalking()V
 
-    .line 158
     iput-wide p1, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mWalkingExpire:J
 
-    .line 159
     const/16 v2, 0x8
 
     iget-object v3, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mModalityWalkingListener:Lcom/motorola/slpc/ModalityManager$ModalityListener;
@@ -897,7 +794,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 161
     const-string v0, "GSModalitySHubHandler"
 
     invoke-static {v0, v8}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -906,20 +802,17 @@
 
     if-eqz v0, :cond_1
 
-    .line 162
     const-string v0, "GSModalitySHubHandler"
 
     const-string v1, "Walking successfully registered"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 164
     :cond_1
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mWalkingRegistered:Z
 
-    .line 166
     :cond_2
     return-void
 .end method
@@ -930,7 +823,6 @@
     .prologue
     const-wide/16 v6, 0x0
 
-    .line 309
     monitor-enter p0
 
     :try_start_0
@@ -944,20 +836,17 @@
 
     if-eqz v2, :cond_0
 
-    .line 310
     const-string v2, "GSModalitySHubHandler"
 
     const-string v3, "Checking expires"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 312
     :cond_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 314
     .local v0, "now":J
     const-string v2, "GSModalitySHubHandler"
 
@@ -969,7 +858,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 315
     const-string v2, "GSModalitySHubHandler"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -994,7 +882,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 317
     :cond_1
     iget-wide v2, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mWalkingExpire:J
 
@@ -1008,10 +895,8 @@
 
     if-lez v2, :cond_2
 
-    .line 318
     invoke-direct {p0}, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->unregisterWalking()V
 
-    .line 321
     :cond_2
     const-string v2, "GSModalitySHubHandler"
 
@@ -1023,7 +908,6 @@
 
     if-eqz v2, :cond_3
 
-    .line 322
     const-string v2, "GSModalitySHubHandler"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1048,7 +932,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 324
     :cond_3
     iget-wide v2, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mRunningExpire:J
 
@@ -1062,10 +945,8 @@
 
     if-lez v2, :cond_4
 
-    .line 325
     invoke-direct {p0}, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->unregisterRunning()V
 
-    .line 328
     :cond_4
     const-string v2, "GSModalitySHubHandler"
 
@@ -1077,7 +958,6 @@
 
     if-eqz v2, :cond_5
 
-    .line 329
     const-string v2, "GSModalitySHubHandler"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1102,7 +982,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 331
     :cond_5
     iget-wide v2, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mVehicleExpire:J
 
@@ -1116,18 +995,15 @@
 
     if-lez v2, :cond_6
 
-    .line 332
     invoke-direct {p0}, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->unregisterVehicle()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 334
     :cond_6
     monitor-exit p0
 
     return-void
 
-    .line 309
     .end local v0    # "now":J
     :catchall_0
     move-exception v2
@@ -1141,7 +1017,6 @@
     .locals 2
 
     .prologue
-    .line 211
     const-string v0, "GSModalitySHubHandler"
 
     const/4 v1, 0x3
@@ -1152,41 +1027,34 @@
 
     if-eqz v0, :cond_0
 
-    .line 212
     const-string v0, "GSModalitySHubHandler"
 
     const-string v1, "Unregister Running"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 214
     :cond_0
     iget-object v0, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mModalityMgr:Lcom/motorola/slpc/ModalityManager;
 
     if-eqz v0, :cond_1
 
-    .line 215
     iget-object v0, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mModalityMgr:Lcom/motorola/slpc/ModalityManager;
 
     iget-object v1, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mModalityRunningListener:Lcom/motorola/slpc/ModalityManager$ModalityListener;
 
     invoke-virtual {v0, v1}, Lcom/motorola/slpc/ModalityManager;->removeModalityListener(Lcom/motorola/slpc/ModalityManager$ModalityListener;)V
 
-    .line 217
     :cond_1
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mRunningExpire:J
 
-    .line 218
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mRunningRegistered:Z
 
-    .line 219
     invoke-direct {p0}, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->notifyIfAllUnregistered()V
 
-    .line 220
     return-void
 .end method
 
@@ -1194,7 +1062,6 @@
     .locals 2
 
     .prologue
-    .line 223
     const-string v0, "GSModalitySHubHandler"
 
     const/4 v1, 0x3
@@ -1205,41 +1072,34 @@
 
     if-eqz v0, :cond_0
 
-    .line 224
     const-string v0, "GSModalitySHubHandler"
 
     const-string v1, "Unregister Vehicle"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 226
     :cond_0
     iget-object v0, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mModalityMgr:Lcom/motorola/slpc/ModalityManager;
 
     if-eqz v0, :cond_1
 
-    .line 227
     iget-object v0, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mModalityMgr:Lcom/motorola/slpc/ModalityManager;
 
     iget-object v1, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mModalityVehicleListener:Lcom/motorola/slpc/ModalityManager$ModalityListener;
 
     invoke-virtual {v0, v1}, Lcom/motorola/slpc/ModalityManager;->removeModalityListener(Lcom/motorola/slpc/ModalityManager$ModalityListener;)V
 
-    .line 229
     :cond_1
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mVehicleExpire:J
 
-    .line 230
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mVehicleRegistered:Z
 
-    .line 231
     invoke-direct {p0}, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->notifyIfAllUnregistered()V
 
-    .line 232
     return-void
 .end method
 
@@ -1247,7 +1107,6 @@
     .locals 2
 
     .prologue
-    .line 199
     const-string v0, "GSModalitySHubHandler"
 
     const/4 v1, 0x3
@@ -1258,41 +1117,34 @@
 
     if-eqz v0, :cond_0
 
-    .line 200
     const-string v0, "GSModalitySHubHandler"
 
     const-string v1, "Unregister Walking"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 202
     :cond_0
     iget-object v0, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mModalityMgr:Lcom/motorola/slpc/ModalityManager;
 
     if-eqz v0, :cond_1
 
-    .line 203
     iget-object v0, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mModalityMgr:Lcom/motorola/slpc/ModalityManager;
 
     iget-object v1, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mModalityWalkingListener:Lcom/motorola/slpc/ModalityManager$ModalityListener;
 
     invoke-virtual {v0, v1}, Lcom/motorola/slpc/ModalityManager;->removeModalityListener(Lcom/motorola/slpc/ModalityManager$ModalityListener;)V
 
-    .line 205
     :cond_1
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mWalkingExpire:J
 
-    .line 206
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mWalkingRegistered:Z
 
-    .line 207
     invoke-direct {p0}, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->notifyIfAllUnregistered()V
 
-    .line 208
     return-void
 .end method
 
@@ -1302,23 +1154,19 @@
     .locals 5
 
     .prologue
-    .line 146
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 147
     .local v0, "filter":Landroid/content/IntentFilter;
     const-string v1, "com.motorola.internal.intent.action.GS_REGISTER_SH_MODALITY"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 148
     const-string v1, "com.motorola.internal.intent.action.GS_UNREGISTER_SH_MODALITY"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 149
     iget-object v1, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/motorola/internal/widget/GestureSharingModalitySHubHandler;->mGestureSharingReceiver:Landroid/content/BroadcastReceiver;
@@ -1329,6 +1177,5 @@
 
     invoke-virtual {v1, v2, v0, v3, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    .line 151
     return-void
 .end method

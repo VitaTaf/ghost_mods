@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 990
     iput-object p1, p0, Landroid/media/RemoteControlClient$1;->this$0:Landroid/media/RemoteControlClient;
 
     invoke-direct {p0}, Landroid/media/session/MediaSession$Callback;-><init>()V
@@ -38,7 +37,6 @@
     .param p1, "pos"    # J
 
     .prologue
-    .line 994
     iget-object v0, p0, Landroid/media/RemoteControlClient$1;->this$0:Landroid/media/RemoteControlClient;
 
     iget-object v1, p0, Landroid/media/RemoteControlClient$1;->this$0:Landroid/media/RemoteControlClient;
@@ -51,7 +49,6 @@
     # invokes: Landroid/media/RemoteControlClient;->onSeekTo(IJ)V
     invoke-static {v0, v1, p1, p2}, Landroid/media/RemoteControlClient;->access$700(Landroid/media/RemoteControlClient;IJ)V
 
-    .line 995
     return-void
 .end method
 
@@ -60,7 +57,6 @@
     .param p1, "rating"    # Landroid/media/Rating;
 
     .prologue
-    .line 999
     iget-object v0, p0, Landroid/media/RemoteControlClient$1;->this$0:Landroid/media/RemoteControlClient;
 
     # getter for: Landroid/media/RemoteControlClient;->mTransportControlFlags:I
@@ -72,7 +68,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1000
     iget-object v0, p0, Landroid/media/RemoteControlClient$1;->this$0:Landroid/media/RemoteControlClient;
 
     iget-object v1, p0, Landroid/media/RemoteControlClient$1;->this$0:Landroid/media/RemoteControlClient;
@@ -87,7 +82,6 @@
     # invokes: Landroid/media/RemoteControlClient;->onUpdateMetadata(IILjava/lang/Object;)V
     invoke-static {v0, v1, v2, p1}, Landroid/media/RemoteControlClient;->access$900(Landroid/media/RemoteControlClient;IILjava/lang/Object;)V
 
-    .line 1002
     :cond_0
     return-void
 .end method

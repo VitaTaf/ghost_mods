@@ -568,7 +568,6 @@
     .locals 2
 
     .prologue
-    .line 105
     const-string/jumbo v0, "ro.telephony.default_network"
 
     const/4 v1, 0x0

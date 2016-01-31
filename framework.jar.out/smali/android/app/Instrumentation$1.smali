@@ -40,7 +40,6 @@
     .locals 0
 
     .prologue
-    .line 1515
     iput-object p1, p0, Landroid/app/Instrumentation$1;->this$0:Landroid/app/Instrumentation;
 
     iput-object p2, p0, Landroid/app/Instrumentation$1;->val$who:Landroid/content/Context;
@@ -68,7 +67,6 @@
     .locals 8
 
     .prologue
-    .line 1518
     iget-object v0, p0, Landroid/app/Instrumentation$1;->this$0:Landroid/app/Instrumentation;
 
     iget-object v1, p0, Landroid/app/Instrumentation$1;->val$who:Landroid/content/Context;
@@ -87,6 +85,5 @@
 
     invoke-virtual/range {v0 .. v7}, Landroid/app/Instrumentation;->execStartActivity(Landroid/content/Context;Landroid/os/IBinder;Landroid/os/IBinder;Landroid/app/Activity;Landroid/content/Intent;ILandroid/os/Bundle;)Landroid/app/Instrumentation$ActivityResult;
 
-    .line 1521
     return-void
 .end method

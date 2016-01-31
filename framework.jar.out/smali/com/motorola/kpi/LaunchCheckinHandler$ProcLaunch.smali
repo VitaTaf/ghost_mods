@@ -53,29 +53,23 @@
     .param p2, "ms"    # J
 
     .prologue
-    .line 240
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 241
     iput-object p1, p0, Lcom/motorola/kpi/LaunchCheckinHandler$ProcLaunch;->name:Ljava/lang/String;
 
-    .line 242
     iput-wide p2, p0, Lcom/motorola/kpi/LaunchCheckinHandler$ProcLaunch;->warmTime:J
 
-    .line 243
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/motorola/kpi/LaunchCheckinHandler$ProcLaunch;->started:Ljava/util/Map;
 
-    .line 244
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/motorola/kpi/LaunchCheckinHandler$ProcLaunch;->suspended:Ljava/util/Map;
 
-    .line 245
     return-void
 .end method

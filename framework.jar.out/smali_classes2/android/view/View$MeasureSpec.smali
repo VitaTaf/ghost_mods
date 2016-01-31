@@ -31,7 +31,6 @@
     .locals 0
 
     .prologue
-    .line 20102
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,25 +44,20 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 20177
     invoke-static {p0}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v0
 
-    .line 20178
     .local v0, "mode":I
     if-nez v0, :cond_0
 
-    .line 20180
     invoke-static {v2, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v2
 
-    .line 20188
     :goto_0
     return v2
 
-    .line 20182
     :cond_0
     invoke-static {p0}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
@@ -71,11 +65,9 @@
 
     add-int v1, v2, p1
 
-    .line 20183
     .local v1, "size":I
     if-gez v1, :cond_1
 
-    .line 20184
     const-string v2, "View"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -122,10 +114,8 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 20186
     const/4 v1, 0x0
 
-    .line 20188
     :cond_1
     invoke-static {v1, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -139,7 +129,6 @@
     .param p0, "measureSpec"    # I
 
     .prologue
-    .line 20163
     const/high16 v0, -0x40000000    # -2.0f
 
     and-int/2addr v0, p0
@@ -152,7 +141,6 @@
     .param p0, "measureSpec"    # I
 
     .prologue
-    .line 20173
     const v0, 0x3fffffff    # 1.9999999f
 
     and-int/2addr v0, p0
@@ -166,17 +154,14 @@
     .param p1, "mode"    # I
 
     .prologue
-    .line 20147
     invoke-static {}, Landroid/view/View;->access$2700()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 20148
     add-int v0, p0, p1
 
-    .line 20150
     :goto_0
     return v0
 
@@ -199,18 +184,15 @@
     .param p0, "measureSpec"    # I
 
     .prologue
-    .line 20199
     invoke-static {p0}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v0
 
-    .line 20200
     .local v0, "mode":I
     invoke-static {p0}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v2
 
-    .line 20202
     .local v2, "size":I
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -218,53 +200,44 @@
 
     invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 20204
     .local v1, "sb":Ljava/lang/StringBuilder;
     if-nez v0, :cond_0
 
-    .line 20205
     const-string v3, "UNSPECIFIED "
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 20213
     :goto_0
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 20214
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
     return-object v3
 
-    .line 20206
     :cond_0
     const/high16 v3, 0x40000000    # 2.0f
 
     if-ne v0, v3, :cond_1
 
-    .line 20207
     const-string v3, "EXACTLY "
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
-    .line 20208
     :cond_1
     const/high16 v3, -0x80000000
 
     if-ne v0, v3, :cond_2
 
-    .line 20209
     const-string v3, "AT_MOST "
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
-    .line 20211
     :cond_2
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 

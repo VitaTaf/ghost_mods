@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 713
     iput-object p1, p0, Landroid/media/RemoteController$TopTransportSessionListener;->this$0:Landroid/media/RemoteController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .param p2, "x1"    # Landroid/media/RemoteController$1;
 
     .prologue
-    .line 713
     invoke-direct {p0, p1}, Landroid/media/RemoteController$TopTransportSessionListener;-><init>(Landroid/media/RemoteController;)V
 
     return-void
@@ -61,13 +59,11 @@
     .end annotation
 
     .prologue
-    .line 718
     .local p1, "controllers":Ljava/util/List;, "Ljava/util/List<Landroid/media/session/MediaController;>;"
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v4
 
-    .line 719
     .local v4, "size":I
     const/4 v1, 0x0
 
@@ -75,20 +71,17 @@
     :goto_0
     if-ge v1, v4, :cond_1
 
-    .line 720
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/media/session/MediaController;
 
-    .line 721
     .local v0, "controller":Landroid/media/session/MediaController;
     invoke-virtual {v0}, Landroid/media/session/MediaController;->getFlags()J
 
     move-result-wide v2
 
-    .line 724
     .local v2, "flags":J
     const-wide/16 v6, 0x2
 
@@ -100,19 +93,16 @@
 
     if-eqz v5, :cond_0
 
-    .line 725
     iget-object v5, p0, Landroid/media/RemoteController$TopTransportSessionListener;->this$0:Landroid/media/RemoteController;
 
     # invokes: Landroid/media/RemoteController;->updateController(Landroid/media/session/MediaController;)V
     invoke-static {v5, v0}, Landroid/media/RemoteController;->access$1000(Landroid/media/RemoteController;Landroid/media/session/MediaController;)V
 
-    .line 730
     .end local v0    # "controller":Landroid/media/session/MediaController;
     .end local v2    # "flags":J
     :goto_1
     return-void
 
-    .line 719
     .restart local v0    # "controller":Landroid/media/session/MediaController;
     .restart local v2    # "flags":J
     :cond_0
@@ -120,7 +110,6 @@
 
     goto :goto_0
 
-    .line 729
     .end local v0    # "controller":Landroid/media/session/MediaController;
     .end local v2    # "flags":J
     :cond_1

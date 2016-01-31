@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 2192
     iput-object p1, p0, Landroid/widget/NumberPicker$SetSelectionCommand;->this$0:Landroid/widget/NumberPicker;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +43,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 2192
     iput p1, p0, Landroid/widget/NumberPicker$SetSelectionCommand;->mSelectionStart:I
 
     return p1
@@ -56,7 +54,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 2192
     iput p1, p0, Landroid/widget/NumberPicker$SetSelectionCommand;->mSelectionEnd:I
 
     return p1
@@ -68,7 +65,6 @@
     .locals 3
 
     .prologue
-    .line 2201
     :try_start_0
     iget-object v0, p0, Landroid/widget/NumberPicker$SetSelectionCommand;->this$0:Landroid/widget/NumberPicker;
 
@@ -85,11 +81,9 @@
     :try_end_0
     .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2206
     :goto_0
     return-void
 
-    .line 2202
     :catch_0
     move-exception v0
 

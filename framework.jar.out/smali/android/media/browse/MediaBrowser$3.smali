@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 428
     iput-object p1, p0, Landroid/media/browse/MediaBrowser$3;->this$0:Landroid/media/browse/MediaBrowser;
 
     iput-object p2, p0, Landroid/media/browse/MediaBrowser$3;->val$callback:Landroid/service/media/IMediaBrowserServiceCallbacks;
@@ -44,7 +43,6 @@
     .locals 3
 
     .prologue
-    .line 431
     const-string v0, "MediaBrowser"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -74,7 +72,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 435
     iget-object v0, p0, Landroid/media/browse/MediaBrowser$3;->this$0:Landroid/media/browse/MediaBrowser;
 
     iget-object v1, p0, Landroid/media/browse/MediaBrowser$3;->val$callback:Landroid/service/media/IMediaBrowserServiceCallbacks;
@@ -88,11 +85,9 @@
 
     if-nez v0, :cond_0
 
-    .line 450
     :goto_0
     return-void
 
-    .line 439
     :cond_0
     iget-object v0, p0, Landroid/media/browse/MediaBrowser$3;->this$0:Landroid/media/browse/MediaBrowser;
 
@@ -105,7 +100,6 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 440
     const-string v0, "MediaBrowser"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -148,14 +142,12 @@
 
     goto :goto_0
 
-    .line 446
     :cond_1
     iget-object v0, p0, Landroid/media/browse/MediaBrowser$3;->this$0:Landroid/media/browse/MediaBrowser;
 
     # invokes: Landroid/media/browse/MediaBrowser;->forceCloseConnection()V
     invoke-static {v0}, Landroid/media/browse/MediaBrowser;->access$200(Landroid/media/browse/MediaBrowser;)V
 
-    .line 449
     iget-object v0, p0, Landroid/media/browse/MediaBrowser$3;->this$0:Landroid/media/browse/MediaBrowser;
 
     # getter for: Landroid/media/browse/MediaBrowser;->mCallback:Landroid/media/browse/MediaBrowser$ConnectionCallback;

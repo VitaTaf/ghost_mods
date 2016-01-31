@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 517
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -32,12 +31,10 @@
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 519
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
 
     move-result-object v6
 
-    .line 520
     .local v6, "outerContext":Landroid/content/Context;
     new-instance v7, Landroid/app/NotificationManager;
 

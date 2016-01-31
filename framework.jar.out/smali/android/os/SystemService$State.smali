@@ -48,7 +48,6 @@
 
     const/4 v3, 0x0
 
-    .line 37
     new-instance v0, Landroid/os/SystemService$State;
 
     const-string v1, "RUNNING"
@@ -59,7 +58,6 @@
 
     sput-object v0, Landroid/os/SystemService$State;->RUNNING:Landroid/os/SystemService$State;
 
-    .line 38
     new-instance v0, Landroid/os/SystemService$State;
 
     const-string v1, "STOPPING"
@@ -70,7 +68,6 @@
 
     sput-object v0, Landroid/os/SystemService$State;->STOPPING:Landroid/os/SystemService$State;
 
-    .line 39
     new-instance v0, Landroid/os/SystemService$State;
 
     const-string v1, "STOPPED"
@@ -81,7 +78,6 @@
 
     sput-object v0, Landroid/os/SystemService$State;->STOPPED:Landroid/os/SystemService$State;
 
-    .line 40
     new-instance v0, Landroid/os/SystemService$State;
 
     const-string v1, "RESTARTING"
@@ -92,7 +88,6 @@
 
     sput-object v0, Landroid/os/SystemService$State;->RESTARTING:Landroid/os/SystemService$State;
 
-    .line 36
     const/4 v0, 0x4
 
     new-array v0, v0, [Landroid/os/SystemService$State;
@@ -130,10 +125,8 @@
     .end annotation
 
     .prologue
-    .line 42
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 43
     # getter for: Landroid/os/SystemService;->sStates:Ljava/util/HashMap;
     invoke-static {}, Landroid/os/SystemService;->access$000()Ljava/util/HashMap;
 
@@ -141,7 +134,6 @@
 
     invoke-virtual {v0, p3, p0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 44
     return-void
 .end method
 
@@ -150,7 +142,6 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 36
     const-class v0, Landroid/os/SystemService$State;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -166,7 +157,6 @@
     .locals 1
 
     .prologue
-    .line 36
     sget-object v0, Landroid/os/SystemService$State;->$VALUES:[Landroid/os/SystemService$State;
 
     invoke-virtual {v0}, [Landroid/os/SystemService$State;->clone()Ljava/lang/Object;
