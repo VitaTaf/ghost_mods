@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 179
     iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothEnabler$4;->this$0:Lcom/android/settings/bluetooth/BluetoothEnabler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,13 +43,11 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 182
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEnabler$4;->this$0:Lcom/android/settings/bluetooth/BluetoothEnabler;
 
     # setter for: Lcom/android/settings/bluetooth/BluetoothEnabler;->mDlgBtnClicked:Z
     invoke-static {v0, v1}, Lcom/android/settings/bluetooth/BluetoothEnabler;->access$102(Lcom/android/settings/bluetooth/BluetoothEnabler;Z)Z
 
-    .line 183
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEnabler$4;->this$0:Lcom/android/settings/bluetooth/BluetoothEnabler;
 
     # getter for: Lcom/android/settings/bluetooth/BluetoothEnabler;->mLocalAdapter:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
@@ -60,7 +57,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 184
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEnabler$4;->this$0:Lcom/android/settings/bluetooth/BluetoothEnabler;
 
     # getter for: Lcom/android/settings/bluetooth/BluetoothEnabler;->mLocalAdapter:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
@@ -70,7 +66,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->setBluetoothEnabled(Z)V
 
-    .line 186
     :cond_0
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEnabler$4;->this$0:Lcom/android/settings/bluetooth/BluetoothEnabler;
 
@@ -83,6 +78,5 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Switch;->setEnabled(Z)V
 
-    .line 187
     return-void
 .end method

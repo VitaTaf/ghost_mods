@@ -33,10 +33,8 @@
     .param p6, "settingsActivity"    # Ljava/lang/String;
 
     .prologue
-    .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 69
     const-string v0, "packageName"
 
     invoke-static {p1, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -47,7 +45,6 @@
 
     iput-object v0, p0, Lcom/android/settings/location/InjectedSetting;->packageName:Ljava/lang/String;
 
-    .line 70
     const-string v0, "className"
 
     invoke-static {p2, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -58,7 +55,6 @@
 
     iput-object v0, p0, Lcom/android/settings/location/InjectedSetting;->className:Ljava/lang/String;
 
-    .line 71
     const-string v0, "title"
 
     invoke-static {p3, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -69,13 +65,10 @@
 
     iput-object v0, p0, Lcom/android/settings/location/InjectedSetting;->title:Ljava/lang/String;
 
-    .line 72
     iput p4, p0, Lcom/android/settings/location/InjectedSetting;->iconId:I
 
-    .line 73
     iput-object p5, p0, Lcom/android/settings/location/InjectedSetting;->mUserHandle:Landroid/os/UserHandle;
 
-    .line 74
     invoke-static {p6}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -84,7 +77,6 @@
 
     iput-object v0, p0, Lcom/android/settings/location/InjectedSetting;->settingsActivity:Ljava/lang/String;
 
-    .line 75
     return-void
 .end method
 
@@ -98,7 +90,6 @@
     .param p5, "settingsActivity"    # Ljava/lang/String;
 
     .prologue
-    .line 82
     if-eqz p0, :cond_0
 
     if-eqz p1, :cond_0
@@ -115,7 +106,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 84
     :cond_0
     const-string v0, "SettingsInjector"
 
@@ -127,7 +117,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 85
     const-string v0, "SettingsInjector"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -180,11 +169,9 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 89
     :cond_1
     const/4 v0, 0x0
 
-    .line 91
     :goto_0
     return-object v0
 
@@ -219,15 +206,12 @@
 
     const/4 v2, 0x0
 
-    .line 118
     if-ne p0, p1, :cond_1
 
-    .line 123
     :cond_0
     :goto_0
     return v1
 
-    .line 119
     :cond_1
     instance-of v3, p1, Lcom/android/settings/location/InjectedSetting;
 
@@ -240,10 +224,8 @@
     :cond_2
     move-object v0, p1
 
-    .line 121
     check-cast v0, Lcom/android/settings/location/InjectedSetting;
 
-    .line 123
     .local v0, "that":Lcom/android/settings/location/InjectedSetting;
     iget-object v3, p0, Lcom/android/settings/location/InjectedSetting;->packageName:Ljava/lang/String;
 
@@ -311,12 +293,10 @@
     .locals 3
 
     .prologue
-    .line 111
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 112
     .local v0, "intent":Landroid/content/Intent;
     iget-object v1, p0, Lcom/android/settings/location/InjectedSetting;->packageName:Ljava/lang/String;
 
@@ -324,7 +304,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 113
     return-object v0
 .end method
 
@@ -332,14 +311,12 @@
     .locals 3
 
     .prologue
-    .line 131
     iget-object v1, p0, Lcom/android/settings/location/InjectedSetting;->packageName:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    .line 132
     .local v0, "result":I
     mul-int/lit8 v1, v0, 0x1f
 
@@ -351,7 +328,6 @@
 
     add-int v0, v1, v2
 
-    .line 133
     mul-int/lit8 v1, v0, 0x1f
 
     iget-object v2, p0, Lcom/android/settings/location/InjectedSetting;->title:Ljava/lang/String;
@@ -362,14 +338,12 @@
 
     add-int v0, v1, v2
 
-    .line 134
     mul-int/lit8 v1, v0, 0x1f
 
     iget v2, p0, Lcom/android/settings/location/InjectedSetting;->iconId:I
 
     add-int v0, v1, v2
 
-    .line 135
     mul-int/lit8 v1, v0, 0x1f
 
     iget-object v2, p0, Lcom/android/settings/location/InjectedSetting;->mUserHandle:Landroid/os/UserHandle;
@@ -380,7 +354,6 @@
 
     add-int v0, v1, v2
 
-    .line 136
     mul-int/lit8 v1, v0, 0x1f
 
     iget-object v2, p0, Lcom/android/settings/location/InjectedSetting;->settingsActivity:Ljava/lang/String;
@@ -391,7 +364,6 @@
 
     add-int v0, v1, v2
 
-    .line 137
     return v0
 .end method
 
@@ -401,7 +373,6 @@
     .prologue
     const/16 v2, 0x27
 
-    .line 97
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

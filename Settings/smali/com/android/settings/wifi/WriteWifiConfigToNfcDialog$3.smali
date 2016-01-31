@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 216
     iput-object p1, p0, Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog$3;->this$0:Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,12 +39,10 @@
     .locals 1
 
     .prologue
-    .line 219
     iget-object v0, p0, Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog$3;->this$0:Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;
 
     # invokes: Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;->enableSubmitIfAppropriate()V
     invoke-static {v0}, Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;->access$200(Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;)V
 
-    .line 220
     return-void
 .end method

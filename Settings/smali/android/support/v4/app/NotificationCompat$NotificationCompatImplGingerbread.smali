@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 539
     invoke-direct {p0}, Landroid/support/v4/app/NotificationCompat$NotificationCompatImplBase;-><init>()V
 
     return-void
@@ -32,10 +31,8 @@
     .param p1, "b"    # Landroid/support/v4/app/NotificationCompat$Builder;
 
     .prologue
-    .line 542
     iget-object v0, p1, Landroid/support/v4/app/NotificationCompat$Builder;->mNotification:Landroid/app/Notification;
 
-    .line 543
     .local v0, "result":Landroid/app/Notification;
     iget-object v1, p1, Landroid/support/v4/app/NotificationCompat$Builder;->mContext:Landroid/content/Context;
 
@@ -47,7 +44,6 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/app/Notification;->setLatestEventInfo(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
-    .line 545
     iget-object v1, p1, Landroid/support/v4/app/NotificationCompat$Builder;->mContext:Landroid/content/Context;
 
     iget-object v2, p1, Landroid/support/v4/app/NotificationCompat$Builder;->mContentTitle:Ljava/lang/CharSequence;
@@ -62,19 +58,16 @@
 
     move-result-object v0
 
-    .line 548
     iget v1, p1, Landroid/support/v4/app/NotificationCompat$Builder;->mPriority:I
 
     if-lez v1, :cond_0
 
-    .line 549
     iget v1, v0, Landroid/app/Notification;->flags:I
 
     or-int/lit16 v1, v1, 0x80
 
     iput v1, v0, Landroid/app/Notification;->flags:I
 
-    .line 551
     :cond_0
     return-object v0
 .end method

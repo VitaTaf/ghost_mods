@@ -37,13 +37,10 @@
     .param p1, "defaultDream"    # Landroid/content/ComponentName;
 
     .prologue
-    .line 294
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 295
     iput-object p1, p0, Lcom/android/settings/DreamBackend$DreamInfoComparator;->mDefaultDream:Landroid/content/ComponentName;
 
-    .line 296
     return-void
 .end method
 
@@ -52,12 +49,10 @@
     .param p1, "di"    # Lcom/android/settings/DreamBackend$DreamInfo;
 
     .prologue
-    .line 304
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 305
     .local v0, "sb":Ljava/lang/StringBuilder;
     iget-object v1, p1, Lcom/android/settings/DreamBackend$DreamInfo;->componentName:Landroid/content/ComponentName;
 
@@ -74,19 +69,16 @@
     :goto_0
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 306
     iget-object v1, p1, Lcom/android/settings/DreamBackend$DreamInfo;->caption:Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 307
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     return-object v1
 
-    .line 305
     :cond_0
     const/16 v1, 0x31
 
@@ -101,7 +93,6 @@
     .param p2, "rhs"    # Lcom/android/settings/DreamBackend$DreamInfo;
 
     .prologue
-    .line 300
     invoke-direct {p0, p1}, Lcom/android/settings/DreamBackend$DreamInfoComparator;->sortKey(Lcom/android/settings/DreamBackend$DreamInfo;)Ljava/lang/String;
 
     move-result-object v0
@@ -123,7 +114,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 291
     check-cast p1, Lcom/android/settings/DreamBackend$DreamInfo;
 
     .end local p1    # "x0":Ljava/lang/Object;

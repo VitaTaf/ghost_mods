@@ -34,7 +34,6 @@
     .locals 0
 
     .prologue
-    .line 1283
     iput-object p1, p0, Lcom/android/settings/search/Index$SaveSearchQueryTask;->this$0:Lcom/android/settings/search/Index;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -48,7 +47,6 @@
     .param p2, "x1"    # Lcom/android/settings/search/Index$1;
 
     .prologue
-    .line 1283
     invoke-direct {p0, p1}, Lcom/android/settings/search/Index$SaveSearchQueryTask;-><init>(Lcom/android/settings/search/Index;)V
 
     return-void
@@ -61,7 +59,6 @@
     .param p1, "params"    # [Ljava/lang/String;
 
     .prologue
-    .line 1287
     new-instance v10, Ljava/util/Date;
 
     invoke-direct {v10}, Ljava/util/Date;-><init>()V
@@ -70,13 +67,11 @@
 
     move-result-wide v8
 
-    .line 1289
     .local v8, "now":J
     new-instance v5, Landroid/content/ContentValues;
 
     invoke-direct {v5}, Landroid/content/ContentValues;-><init>()V
 
-    .line 1290
     .local v5, "values":Landroid/content/ContentValues;
     const-string v10, "query"
 
@@ -86,7 +81,6 @@
 
     invoke-virtual {v5, v10, v11}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1291
     const-string v10, "timestamp"
 
     invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -95,7 +89,6 @@
 
     invoke-virtual {v5, v10, v11}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1293
     iget-object v10, p0, Lcom/android/settings/search/Index$SaveSearchQueryTask;->this$0:Lcom/android/settings/search/Index;
 
     # invokes: Lcom/android/settings/search/Index;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
@@ -103,11 +96,9 @@
 
     move-result-object v1
 
-    .line 1295
     .local v1, "database":Landroid/database/sqlite/SQLiteDatabase;
     const-wide/16 v6, -0x1
 
-    .line 1298
     .local v6, "lastInsertedRowId":J
     :try_start_0
     const-string v10, "saved_queries"
@@ -128,7 +119,6 @@
 
     invoke-virtual {v1, v10, v11, v12}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 1303
     const-string v10, "saved_queries"
 
     const/4 v11, 0x0
@@ -137,7 +127,6 @@
 
     move-result-wide v6
 
-    .line 1307
     # getter for: Lcom/android/settings/search/Index;->MAX_SAVED_SEARCH_QUERY:J
     invoke-static {}, Lcom/android/settings/search/Index;->access$500()J
 
@@ -145,7 +134,6 @@
 
     sub-long v2, v6, v10
 
-    .line 1308
     .local v2, "delta":J
     const-wide/16 v10, 0x0
 
@@ -153,7 +141,6 @@
 
     if-lez v10, :cond_0
 
-    .line 1309
     const-string v10, "saved_queries"
 
     const-string v11, "rowId <= ?"
@@ -174,7 +161,6 @@
 
     move-result v0
 
-    .line 1311
     .local v0, "count":I
     const-string v10, "Index"
 
@@ -206,7 +192,6 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1317
     .end local v0    # "count":I
     .end local v2    # "delta":J
     :cond_0
@@ -217,11 +202,9 @@
 
     return-object v10
 
-    .line 1313
     :catch_0
     move-exception v4
 
-    .line 1314
     .local v4, "e":Ljava/lang/Exception;
     const-string v10, "Index"
 
@@ -237,7 +220,6 @@
     .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
-    .line 1283
     check-cast p1, [Ljava/lang/String;
 
     .end local p1    # "x0":[Ljava/lang/Object;

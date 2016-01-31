@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 72
     invoke-direct {p0}, Lcom/android/settings/ChooseLockGeneric;-><init>()V
 
     return-void

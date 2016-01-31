@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 1286
     iput-object p1, p0, Lcom/android/settings/DataUsageSummary$7;->this$0:Lcom/android/settings/DataUsageSummary;
 
     iput-object p2, p0, Lcom/android/settings/DataUsageSummary$7;->val$context:Landroid/content/Context;
@@ -50,7 +49,6 @@
     .param p2, "id"    # I
 
     .prologue
-    .line 1297
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$7;->this$0:Lcom/android/settings/DataUsageSummary;
 
     iget-object v1, p0, Lcom/android/settings/DataUsageSummary$7;->val$context:Landroid/content/Context;
@@ -64,6 +62,5 @@
     # invokes: Lcom/android/settings/DataUsageSummary;->setDefaultDataSubId(Landroid/content/Context;I)V
     invoke-static {v0, v1, v2}, Lcom/android/settings/DataUsageSummary;->access$1200(Lcom/android/settings/DataUsageSummary;Landroid/content/Context;I)V
 
-    .line 1298
     return-void
 .end method

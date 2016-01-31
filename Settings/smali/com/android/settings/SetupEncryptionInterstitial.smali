@@ -19,10 +19,8 @@
     .locals 0
 
     .prologue
-    .line 37
     invoke-direct {p0}, Lcom/android/settings/EncryptionInterstitial;-><init>()V
 
-    .line 85
     return-void
 .end method
 
@@ -33,18 +31,15 @@
     .param p2, "requirePasswordDefault"    # Z
 
     .prologue
-    .line 42
     invoke-static {p0, p1, p2}, Lcom/android/settings/EncryptionInterstitial;->createStartIntent(Landroid/content/Context;IZ)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 44
     .local v0, "startIntent":Landroid/content/Intent;
     const-class v1, Lcom/android/settings/SetupEncryptionInterstitial;
 
     invoke-virtual {v0, p0, v1}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
 
-    .line 45
     const-string v1, "extra_prefs_show_button_bar"
 
     const/4 v2, 0x0
@@ -59,7 +54,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 47
     return-object v0
 .end method
 
@@ -69,7 +63,6 @@
     .locals 3
 
     .prologue
-    .line 52
     new-instance v0, Landroid/content/Intent;
 
     invoke-super {p0}, Lcom/android/settings/EncryptionInterstitial;->getIntent()Landroid/content/Intent;
@@ -78,7 +71,6 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
-    .line 53
     .local v0, "modIntent":Landroid/content/Intent;
     const-string v1, ":settings:show_fragment"
 
@@ -90,7 +82,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 55
     return-object v0
 .end method
 
@@ -99,7 +90,6 @@
     .param p1, "fragmentName"    # Ljava/lang/String;
 
     .prologue
-    .line 60
     const-class v0, Lcom/android/settings/SetupEncryptionInterstitial$SetupEncryptionInterstitialFragment;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -120,7 +110,6 @@
     .param p3, "first"    # Z
 
     .prologue
-    .line 65
     invoke-virtual {p0}, Lcom/android/settings/SetupEncryptionInterstitial;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
@@ -129,10 +118,8 @@
 
     move-result p2
 
-    .line 66
     invoke-super {p0, p1, p2, p3}, Lcom/android/settings/EncryptionInterstitial;->onApplyThemeResource(Landroid/content/res/Resources$Theme;IZ)V
 
-    .line 67
     return-void
 .end method
 
@@ -140,10 +127,8 @@
     .locals 0
 
     .prologue
-    .line 76
     invoke-virtual {p0}, Lcom/android/settings/SetupEncryptionInterstitial;->onBackPressed()V
 
-    .line 77
     return-void
 .end method
 
@@ -151,7 +136,6 @@
     .locals 2
 
     .prologue
-    .line 81
     const/4 v0, -0x1
 
     invoke-virtual {p0}, Lcom/android/settings/SetupEncryptionInterstitial;->getResultIntentData()Landroid/content/Intent;
@@ -160,10 +144,8 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/settings/SetupEncryptionInterstitial;->setResult(ILandroid/content/Intent;)V
 
-    .line 82
     invoke-virtual {p0}, Lcom/android/settings/SetupEncryptionInterstitial;->finish()V
 
-    .line 83
     return-void
 .end method
 
@@ -172,9 +154,7 @@
     .param p1, "bar"    # Lcom/android/setupwizard/navigationbar/SetupWizardNavBar;
 
     .prologue
-    .line 71
     invoke-static {p0, p1}, Lcom/android/settings/SetupWizardUtils;->setImmersiveMode(Landroid/app/Activity;Lcom/android/setupwizard/navigationbar/SetupWizardNavBar;)V
 
-    .line 72
     return-void
 .end method

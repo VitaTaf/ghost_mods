@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 133
     iput-object p1, p0, Lcom/android/settings/accessibility/AccessibilitySettings$1;->this$0:Lcom/android/settings/accessibility/AccessibilitySettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,18 +39,15 @@
     .locals 1
 
     .prologue
-    .line 136
     iget-object v0, p0, Lcom/android/settings/accessibility/AccessibilitySettings$1;->this$0:Lcom/android/settings/accessibility/AccessibilitySettings;
 
     # invokes: Lcom/android/settings/accessibility/AccessibilitySettings;->loadInstalledServices()V
     invoke-static {v0}, Lcom/android/settings/accessibility/AccessibilitySettings;->access$000(Lcom/android/settings/accessibility/AccessibilitySettings;)V
 
-    .line 137
     iget-object v0, p0, Lcom/android/settings/accessibility/AccessibilitySettings$1;->this$0:Lcom/android/settings/accessibility/AccessibilitySettings;
 
     # invokes: Lcom/android/settings/accessibility/AccessibilitySettings;->updateServicesPreferences()V
     invoke-static {v0}, Lcom/android/settings/accessibility/AccessibilitySettings;->access$100(Lcom/android/settings/accessibility/AccessibilitySettings;)V
 
-    .line 138
     return-void
 .end method

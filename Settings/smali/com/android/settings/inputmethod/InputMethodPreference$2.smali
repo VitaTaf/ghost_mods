@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 232
     iput-object p1, p0, Lcom/android/settings/inputmethod/InputMethodPreference$2;->this$0:Lcom/android/settings/inputmethod/InputMethodPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,14 +41,12 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 236
     iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference$2;->this$0:Lcom/android/settings/inputmethod/InputMethodPreference;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/settings/inputmethod/InputMethodPreference;->setChecked(Z)V
 
-    .line 237
     iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference$2;->this$0:Lcom/android/settings/inputmethod/InputMethodPreference;
 
     # getter for: Lcom/android/settings/inputmethod/InputMethodPreference;->mOnSaveListener:Lcom/android/settings/inputmethod/InputMethodPreference$OnSavePreferenceListener;
@@ -61,12 +58,10 @@
 
     invoke-interface {v0, v1}, Lcom/android/settings/inputmethod/InputMethodPreference$OnSavePreferenceListener;->onSaveInputMethodPreference(Lcom/android/settings/inputmethod/InputMethodPreference;)V
 
-    .line 238
     iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference$2;->this$0:Lcom/android/settings/inputmethod/InputMethodPreference;
 
     # invokes: Lcom/android/settings/inputmethod/InputMethodPreference;->notifyChanged()V
     invoke-static {v0}, Lcom/android/settings/inputmethod/InputMethodPreference;->access$200(Lcom/android/settings/inputmethod/InputMethodPreference;)V
 
-    .line 239
     return-void
 .end method

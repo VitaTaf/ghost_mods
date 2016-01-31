@@ -16,10 +16,8 @@
     .locals 0
 
     .prologue
-    .line 25
     invoke-direct {p0}, Lcom/android/settings/SettingsActivity;-><init>()V
 
-    .line 39
     return-void
 .end method
 
@@ -30,7 +28,6 @@
     .param p1, "fragmentName"    # Ljava/lang/String;
 
     .prologue
-    .line 35
     const-string v0, "SubSettings"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -53,7 +50,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 36
     const/4 v0, 0x1
 
     return v0
@@ -63,10 +59,8 @@
     .locals 1
 
     .prologue
-    .line 29
     invoke-virtual {p0}, Lcom/android/settings/SubSettings;->finish()V
 
-    .line 30
     const/4 v0, 0x1
 
     return v0

@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 265
     iput-object p1, p0, Lcom/android/settings/deviceinfo/Memory$2;->this$0:Lcom/android/settings/deviceinfo/Memory;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 268
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 269
     .local v0, "action":Ljava/lang/String;
     const-string v5, "android.hardware.usb.action.USB_STATE"
 
@@ -54,7 +51,6 @@
 
     if-eqz v5, :cond_0
 
-    .line 270
     const-string v5, "connected"
 
     const/4 v6, 0x0
@@ -63,7 +59,6 @@
 
     move-result v3
 
-    .line 271
     .local v3, "isUsbConnected":Z
     iget-object v5, p0, Lcom/android/settings/deviceinfo/Memory$2;->this$0:Lcom/android/settings/deviceinfo/Memory;
 
@@ -76,7 +71,6 @@
 
     move-result-object v4
 
-    .line 272
     .local v4, "usbFunction":Ljava/lang/String;
     iget-object v5, p0, Lcom/android/settings/deviceinfo/Memory$2;->this$0:Lcom/android/settings/deviceinfo/Memory;
 
@@ -103,13 +97,11 @@
 
     check-cast v1, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;
 
-    .line 273
     .local v1, "category":Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;
     invoke-virtual {v1, v3, v4}, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;->onUsbStateChanged(ZLjava/lang/String;)V
 
     goto :goto_0
 
-    .line 275
     .end local v1    # "category":Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;
     .end local v2    # "i$":Ljava/util/Iterator;
     .end local v3    # "isUsbConnected":Z
@@ -123,7 +115,6 @@
 
     if-eqz v5, :cond_1
 
-    .line 276
     iget-object v5, p0, Lcom/android/settings/deviceinfo/Memory$2;->this$0:Lcom/android/settings/deviceinfo/Memory;
 
     # getter for: Lcom/android/settings/deviceinfo/Memory;->mCategories:Ljava/util/ArrayList;
@@ -149,13 +140,11 @@
 
     check-cast v1, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;
 
-    .line 277
     .restart local v1    # "category":Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;
     invoke-virtual {v1}, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;->onMediaScannerFinished()V
 
     goto :goto_1
 
-    .line 280
     .end local v1    # "category":Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;
     .end local v2    # "i$":Ljava/util/Iterator;
     :cond_1

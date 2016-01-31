@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 97
     iput-object p1, p0, Lcom/android/settings/HomeSettings$1;->this$0:Lcom/android/settings/HomeSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 100
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v2
@@ -52,7 +50,6 @@
 
     move-result v0
 
-    .line 101
     .local v0, "index":I
     iget-object v2, p0, Lcom/android/settings/HomeSettings$1;->this$0:Lcom/android/settings/HomeSettings;
 
@@ -67,18 +64,15 @@
 
     check-cast v1, Lcom/android/settings/HomeSettings$HomeAppPreference;
 
-    .line 102
     .local v1, "pref":Lcom/android/settings/HomeSettings$HomeAppPreference;
     iget-boolean v2, v1, Lcom/android/settings/HomeSettings$HomeAppPreference;->isChecked:Z
 
     if-nez v2, :cond_0
 
-    .line 103
     iget-object v2, p0, Lcom/android/settings/HomeSettings$1;->this$0:Lcom/android/settings/HomeSettings;
 
     invoke-virtual {v2, v1}, Lcom/android/settings/HomeSettings;->makeCurrentHome(Lcom/android/settings/HomeSettings$HomeAppPreference;)V
 
-    .line 105
     :cond_0
     return-void
 .end method

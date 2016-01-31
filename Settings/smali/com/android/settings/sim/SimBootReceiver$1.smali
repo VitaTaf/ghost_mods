@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 144
     iput-object p1, p0, Lcom/android/settings/sim/SimBootReceiver$1;->this$0:Lcom/android/settings/sim/SimBootReceiver;
 
     invoke-direct {p0}, Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;-><init>()V
@@ -37,12 +36,10 @@
     .locals 1
 
     .prologue
-    .line 147
     iget-object v0, p0, Lcom/android/settings/sim/SimBootReceiver$1;->this$0:Lcom/android/settings/sim/SimBootReceiver;
 
     # invokes: Lcom/android/settings/sim/SimBootReceiver;->detectChangeAndNotify()V
     invoke-static {v0}, Lcom/android/settings/sim/SimBootReceiver;->access$000(Lcom/android/settings/sim/SimBootReceiver;)V
 
-    .line 148
     return-void
 .end method

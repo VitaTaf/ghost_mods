@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 582
     iput-object p1, p0, Lcom/android/settings/IccLockSettings$3;->this$0:Lcom/android/settings/IccLockSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +40,10 @@
     .param p1, "tabId"    # Ljava/lang/String;
 
     .prologue
-    .line 585
     invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v1
 
-    .line 586
     .local v1, "slotId":I
     iget-object v2, p0, Lcom/android/settings/IccLockSettings$3;->this$0:Lcom/android/settings/IccLockSettings;
 
@@ -58,7 +55,6 @@
 
     move-result-object v0
 
-    .line 589
     .local v0, "sir":Landroid/telephony/SubscriptionInfo;
     iget-object v3, p0, Lcom/android/settings/IccLockSettings$3;->this$0:Lcom/android/settings/IccLockSettings;
 
@@ -79,16 +75,13 @@
     # setter for: Lcom/android/settings/IccLockSettings;->mPhone:Lcom/android/internal/telephony/Phone;
     invoke-static {v3, v2}, Lcom/android/settings/IccLockSettings;->access$502(Lcom/android/settings/IccLockSettings;Lcom/android/internal/telephony/Phone;)Lcom/android/internal/telephony/Phone;
 
-    .line 593
     iget-object v2, p0, Lcom/android/settings/IccLockSettings$3;->this$0:Lcom/android/settings/IccLockSettings;
 
     # invokes: Lcom/android/settings/IccLockSettings;->updatePreferences()V
     invoke-static {v2}, Lcom/android/settings/IccLockSettings;->access$300(Lcom/android/settings/IccLockSettings;)V
 
-    .line 594
     return-void
 
-    .line 589
     :cond_1
     invoke-virtual {v0}, Landroid/telephony/SubscriptionInfo;->getSubscriptionId()I
 

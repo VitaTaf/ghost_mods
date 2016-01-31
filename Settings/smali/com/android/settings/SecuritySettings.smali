@@ -75,7 +75,6 @@
     .locals 3
 
     .prologue
-    .line 77
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.service.trust.TrustAgentService"
@@ -84,7 +83,6 @@
 
     sput-object v0, Lcom/android/settings/SecuritySettings;->TRUST_AGENT_INTENT:Landroid/content/Intent;
 
-    .line 113
     const/4 v0, 0x7
 
     new-array v0, v0, [Ljava/lang/String;
@@ -133,7 +131,6 @@
 
     sput-object v0, Lcom/android/settings/SecuritySettings;->SWITCH_PREFERENCE_KEYS:[Ljava/lang/String;
 
-    .line 926
     new-instance v0, Lcom/android/settings/SecuritySettings$SecuritySearchIndexProvider;
 
     invoke-direct {v0}, Lcom/android/settings/SecuritySettings$SecuritySearchIndexProvider;-><init>()V
@@ -147,15 +144,12 @@
     .locals 1
 
     .prologue
-    .line 73
     invoke-direct {p0}, Lcom/android/settings/SettingsPreferenceFragment;-><init>()V
 
-    .line 121
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/settings/SecuritySettings;->mDevicePolicyEnforced:Z
 
-    .line 929
     return-void
 .end method
 
@@ -164,7 +158,6 @@
     .param p0, "x0"    # Lcom/android/settings/SecuritySettings;
 
     .prologue
-    .line 73
     iget-object v0, p0, Lcom/android/settings/SecuritySettings;->mCryptoMode:Landroid/preference/ListPreference;
 
     return-object v0
@@ -175,7 +168,6 @@
     .param p0, "x0"    # Lcom/android/settings/SecuritySettings;
 
     .prologue
-    .line 73
     invoke-direct {p0}, Lcom/android/settings/SecuritySettings;->reboot()V
 
     return-void
@@ -187,7 +179,6 @@
     .param p1, "x1"    # Lcom/android/internal/widget/LockPatternUtils;
 
     .prologue
-    .line 73
     invoke-static {p0, p1}, Lcom/android/settings/SecuritySettings;->getResIdForLockUnlockScreen(Landroid/content/Context;Lcom/android/internal/widget/LockPatternUtils;)I
 
     move-result v0
@@ -201,7 +192,6 @@
     .param p1, "x1"    # Lcom/android/internal/widget/LockPatternUtils;
 
     .prologue
-    .line 73
     invoke-static {p0, p1}, Lcom/android/settings/SecuritySettings;->getActiveTrustAgents(Landroid/content/pm/PackageManager;Lcom/android/internal/widget/LockPatternUtils;)Ljava/util/ArrayList;
 
     move-result-object v0
@@ -214,7 +204,6 @@
     .param p1, "value"    # Ljava/lang/Object;
 
     .prologue
-    .line 886
     new-instance v1, Landroid/app/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lcom/android/settings/SecuritySettings;->getActivity()Landroid/app/Activity;
@@ -279,7 +268,6 @@
 
     iput-object v0, p0, Lcom/android/settings/SecuritySettings;->mRebootCryptoMode:Landroid/content/DialogInterface;
 
-    .line 905
     return-void
 .end method
 
@@ -287,19 +275,15 @@
     .locals 28
 
     .prologue
-    .line 239
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SecuritySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v17
 
-    .line 240
     .local v17, "root":Landroid/preference/PreferenceScreen;
     if-eqz v17, :cond_0
 
-    .line 241
     invoke-virtual/range {v17 .. v17}, Landroid/preference/PreferenceScreen;->removeAll()V
 
-    .line 243
     :cond_0
     const v23, 0x7f06002f
 
@@ -309,12 +293,10 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/SecuritySettings;->addPreferencesFromResource(I)V
 
-    .line 244
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SecuritySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v17
 
-    .line 247
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SecuritySettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v23
@@ -329,7 +311,6 @@
 
     move-result v16
 
-    .line 248
     .local v16, "resid":I
     move-object/from16 v0, p0
 
@@ -337,7 +318,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/SecuritySettings;->addPreferencesFromResource(I)V
 
-    .line 251
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v23
@@ -353,7 +333,6 @@
 
     iput-boolean v0, v1, Lcom/android/settings/SecuritySettings;->mIsPrimary:Z
 
-    .line 253
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/android/settings/SecuritySettings;->mIsPrimary:Z
@@ -362,7 +341,6 @@
 
     if-nez v23, :cond_1
 
-    .line 255
     const-string v23, "owner_info_settings"
 
     move-object/from16 v0, p0
@@ -373,11 +351,9 @@
 
     move-result-object v13
 
-    .line 256
     .local v13, "ownerInfoPref":Landroid/preference/Preference;
     if-eqz v13, :cond_1
 
-    .line 257
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SecuritySettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v23
@@ -392,14 +368,12 @@
 
     if-eqz v23, :cond_5
 
-    .line 258
     const v23, 0x7f0901ba
 
     move/from16 v0, v23
 
     invoke-virtual {v13, v0}, Landroid/preference/Preference;->setTitle(I)V
 
-    .line 265
     .end local v13    # "ownerInfoPref":Landroid/preference/Preference;
     :cond_1
     :goto_1
@@ -411,14 +385,12 @@
 
     if-eqz v23, :cond_2
 
-    .line 266
     invoke-static {}, Lcom/android/internal/widget/LockPatternUtils;->isDeviceEncryptionEnabled()Z
 
     move-result v23
 
     if-eqz v23, :cond_6
 
-    .line 268
     const v23, 0x7f060032
 
     move-object/from16 v0, p0
@@ -427,7 +399,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/SecuritySettings;->addPreferencesFromResource(I)V
 
-    .line 276
     :cond_2
     :goto_2
     const-string v23, "security_category"
@@ -442,11 +413,9 @@
 
     check-cast v18, Landroid/preference/PreferenceGroup;
 
-    .line 278
     .local v18, "securityCategory":Landroid/preference/PreferenceGroup;
     if-eqz v18, :cond_7
 
-    .line 279
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/SecuritySettings;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
@@ -457,7 +426,6 @@
 
     move-result v9
 
-    .line 280
     .local v9, "hasSecurity":Z
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SecuritySettings;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -473,7 +441,6 @@
 
     move-result-object v5
 
-    .line 282
     .local v5, "agents":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/settings/TrustAgentUtils$TrustAgentComponentInfo;>;"
     const/4 v10, 0x0
 
@@ -487,14 +454,12 @@
 
     if-ge v10, v0, :cond_7
 
-    .line 283
     invoke-virtual {v5, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lcom/android/settings/TrustAgentUtils$TrustAgentComponentInfo;
 
-    .line 284
     .local v4, "agent":Lcom/android/settings/TrustAgentUtils$TrustAgentComponentInfo;
     new-instance v21, Landroid/preference/Preference;
 
@@ -508,7 +473,6 @@
 
     invoke-direct {v0, v1}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
 
-    .line 286
     .local v21, "trustAgentPreference":Landroid/preference/Preference;
     const-string v23, "trust_agent"
 
@@ -518,7 +482,6 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/Preference;->setKey(Ljava/lang/String;)V
 
-    .line 287
     iget-object v0, v4, Lcom/android/settings/TrustAgentUtils$TrustAgentComponentInfo;->title:Ljava/lang/String;
 
     move-object/from16 v23, v0
@@ -529,7 +492,6 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/Preference;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 288
     iget-object v0, v4, Lcom/android/settings/TrustAgentUtils$TrustAgentComponentInfo;->summary:Ljava/lang/String;
 
     move-object/from16 v23, v0
@@ -540,12 +502,10 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 290
     new-instance v11, Landroid/content/Intent;
 
     invoke-direct {v11}, Landroid/content/Intent;-><init>()V
 
-    .line 291
     .local v11, "intent":Landroid/content/Intent;
     iget-object v0, v4, Lcom/android/settings/TrustAgentUtils$TrustAgentComponentInfo;->componentName:Landroid/content/ComponentName;
 
@@ -555,29 +515,24 @@
 
     invoke-virtual {v11, v0}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 292
     const-string v23, "android.intent.action.MAIN"
 
     move-object/from16 v0, v23
 
     invoke-virtual {v11, v0}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 293
     move-object/from16 v0, v21
 
     invoke-virtual {v0, v11}, Landroid/preference/Preference;->setIntent(Landroid/content/Intent;)V
 
-    .line 295
     move-object/from16 v0, v18
 
     move-object/from16 v1, v21
 
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceGroup;->addPreference(Landroid/preference/Preference;)Z
 
-    .line 296
     if-nez v9, :cond_3
 
-    .line 297
     const/16 v23, 0x0
 
     move-object/from16 v0, v21
@@ -586,7 +541,6 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/Preference;->setEnabled(Z)V
 
-    .line 298
     const v23, 0x7f090213
 
     move-object/from16 v0, v21
@@ -595,13 +549,11 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/Preference;->setSummary(I)V
 
-    .line 282
     :cond_3
     add-int/lit8 v10, v10, 0x1
 
     goto :goto_3
 
-    .line 251
     .end local v4    # "agent":Lcom/android/settings/TrustAgentUtils$TrustAgentComponentInfo;
     .end local v5    # "agents":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/settings/TrustAgentUtils$TrustAgentComponentInfo;>;"
     .end local v9    # "hasSecurity":Z
@@ -614,7 +566,6 @@
 
     goto/16 :goto_0
 
-    .line 260
     .restart local v13    # "ownerInfoPref":Landroid/preference/Preference;
     :cond_5
     const v23, 0x7f0901b8
@@ -625,7 +576,6 @@
 
     goto/16 :goto_1
 
-    .line 271
     .end local v13    # "ownerInfoPref":Landroid/preference/Preference;
     :cond_6
     const v23, 0x7f06003a
@@ -638,7 +588,6 @@
 
     goto/16 :goto_2
 
-    .line 304
     .restart local v18    # "securityCategory":Landroid/preference/PreferenceGroup;
     :cond_7
     const-string v23, "lock_after_timeout"
@@ -659,7 +608,6 @@
 
     iput-object v0, v1, Lcom/android/settings/SecuritySettings;->mLockAfter:Landroid/preference/ListPreference;
 
-    .line 305
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/SecuritySettings;->mLockAfter:Landroid/preference/ListPreference;
@@ -668,13 +616,10 @@
 
     if-eqz v23, :cond_8
 
-    .line 306
     invoke-direct/range {p0 .. p0}, Lcom/android/settings/SecuritySettings;->setupLockAfterPreference()V
 
-    .line 307
     invoke-direct/range {p0 .. p0}, Lcom/android/settings/SecuritySettings;->updateLockAfterPreferenceSummary()V
 
-    .line 311
     :cond_8
     const-string v23, "biometric_weak_liveliness"
 
@@ -694,7 +639,6 @@
 
     iput-object v0, v1, Lcom/android/settings/SecuritySettings;->mBiometricWeakLiveliness:Landroid/preference/SwitchPreference;
 
-    .line 315
     const-string v23, "visiblepattern"
 
     move-object/from16 v0, v17
@@ -713,7 +657,6 @@
 
     iput-object v0, v1, Lcom/android/settings/SecuritySettings;->mVisiblePattern:Landroid/preference/SwitchPreference;
 
-    .line 318
     const-string v23, "power_button_instantly_locks"
 
     move-object/from16 v0, v17
@@ -732,7 +675,6 @@
 
     iput-object v0, v1, Lcom/android/settings/SecuritySettings;->mPowerButtonInstantlyLocks:Landroid/preference/SwitchPreference;
 
-    .line 320
     const-string v23, "trust_agent"
 
     move-object/from16 v0, v17
@@ -743,7 +685,6 @@
 
     move-result-object v21
 
-    .line 321
     .restart local v21    # "trustAgentPreference":Landroid/preference/Preference;
     move-object/from16 v0, p0
 
@@ -765,7 +706,6 @@
 
     if-lez v23, :cond_9
 
-    .line 324
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/SecuritySettings;->mPowerButtonInstantlyLocks:Landroid/preference/SwitchPreference;
@@ -802,7 +742,6 @@
 
     invoke-virtual/range {v23 .. v24}, Landroid/preference/SwitchPreference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 330
     :cond_9
     const v23, 0x7f060030
 
@@ -830,7 +769,6 @@
 
     if-eq v0, v1, :cond_a
 
-    .line 333
     if-eqz v18, :cond_a
 
     move-object/from16 v0, p0
@@ -841,7 +779,6 @@
 
     if-eqz v23, :cond_a
 
-    .line 334
     const-string v23, "visiblepattern"
 
     move-object/from16 v0, v17
@@ -858,7 +795,6 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceGroup;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 339
     :cond_a
     const v23, 0x7f060035
 
@@ -868,12 +804,10 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/SecuritySettings;->addPreferencesFromResource(I)V
 
-    .line 342
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v20
 
-    .line 343
     .local v20, "tm":Landroid/telephony/TelephonyManager;
     move-object/from16 v0, p0
 
@@ -889,7 +823,6 @@
 
     if-nez v23, :cond_11
 
-    .line 344
     :cond_b
     const-string v23, "sim_lock"
 
@@ -907,7 +840,6 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 349
     :goto_4
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SecuritySettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -923,7 +855,6 @@
 
     if-eqz v23, :cond_c
 
-    .line 351
     const-string v23, "screen_pinning_settings"
 
     move-object/from16 v0, v17
@@ -946,7 +877,6 @@
 
     invoke-virtual/range {v23 .. v24}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 356
     :cond_c
     const-string v23, "show_password"
 
@@ -966,7 +896,6 @@
 
     iput-object v0, v1, Lcom/android/settings/SecuritySettings;->mShowPassword:Landroid/preference/SwitchPreference;
 
-    .line 357
     const-string v23, "credentials_reset"
 
     move-object/from16 v0, v17
@@ -983,7 +912,6 @@
 
     iput-object v0, v1, Lcom/android/settings/SecuritySettings;->mResetCredentials:Landroid/preference/Preference;
 
-    .line 360
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SecuritySettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v23
@@ -996,7 +924,6 @@
 
     check-cast v22, Landroid/os/UserManager;
 
-    .line 361
     .local v22, "um":Landroid/os/UserManager;
     invoke-static {}, Landroid/security/KeyStore;->getInstance()Landroid/security/KeyStore;
 
@@ -1008,7 +935,6 @@
 
     iput-object v0, v1, Lcom/android/settings/SecuritySettings;->mKeyStore:Landroid/security/KeyStore;
 
-    .line 362
     const-string v23, "no_config_credentials"
 
     invoke-virtual/range {v22 .. v23}, Landroid/os/UserManager;->hasUserRestriction(Ljava/lang/String;)Z
@@ -1017,7 +943,6 @@
 
     if-nez v23, :cond_13
 
-    .line 363
     const-string v23, "credential_storage_type"
 
     move-object/from16 v0, v17
@@ -1028,7 +953,6 @@
 
     move-result-object v6
 
-    .line 365
     .local v6, "credentialStorageType":Landroid/preference/Preference;
     move-object/from16 v0, p0
 
@@ -1044,14 +968,12 @@
 
     const v19, 0x7f090789
 
-    .line 368
     .local v19, "storageSummaryRes":I
     :goto_5
     move/from16 v0, v19
 
     invoke-virtual {v6, v0}, Landroid/preference/Preference;->setSummary(I)V
 
-    .line 378
     .end local v6    # "credentialStorageType":Landroid/preference/Preference;
     .end local v19    # "storageSummaryRes":I
     :goto_6
@@ -1067,7 +989,6 @@
 
     check-cast v8, Landroid/preference/PreferenceGroup;
 
-    .line 380
     .local v8, "deviceAdminCategory":Landroid/preference/PreferenceGroup;
     const-string v23, "toggle_install_applications"
 
@@ -1087,7 +1008,6 @@
 
     iput-object v0, v1, Lcom/android/settings/SecuritySettings;->mToggleAppInstallation:Landroid/preference/SwitchPreference;
 
-    .line 382
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/SecuritySettings;->mToggleAppInstallation:Landroid/preference/SwitchPreference;
@@ -1100,7 +1020,6 @@
 
     invoke-virtual/range {v23 .. v24}, Landroid/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 385
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/SecuritySettings;->mToggleAppInstallation:Landroid/preference/SwitchPreference;
@@ -1130,7 +1049,6 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/SwitchPreference;->setEnabled(Z)V
 
-    .line 386
     const-string v23, "no_install_unknown_sources"
 
     invoke-virtual/range {v22 .. v23}, Landroid/os/UserManager;->hasUserRestriction(Ljava/lang/String;)Z
@@ -1147,7 +1065,6 @@
 
     if-eqz v23, :cond_e
 
-    .line 388
     :cond_d
     move-object/from16 v0, p0
 
@@ -1159,7 +1076,6 @@
 
     invoke-virtual/range {v23 .. v24}, Landroid/preference/SwitchPreference;->setEnabled(Z)V
 
-    .line 392
     :cond_e
     const-string v23, "advanced_security"
 
@@ -1173,11 +1089,9 @@
 
     check-cast v3, Landroid/preference/PreferenceGroup;
 
-    .line 394
     .local v3, "advancedCategory":Landroid/preference/PreferenceGroup;
     if-eqz v3, :cond_f
 
-    .line 395
     const-string v23, "manage_trust_agents"
 
     move-object/from16 v0, v23
@@ -1186,7 +1100,6 @@
 
     move-result-object v12
 
-    .line 396
     .local v12, "manageAgents":Landroid/preference/Preference;
     if-eqz v12, :cond_f
 
@@ -1202,21 +1115,18 @@
 
     if-nez v23, :cond_f
 
-    .line 397
     const/16 v23, 0x0
 
     move/from16 v0, v23
 
     invoke-virtual {v12, v0}, Landroid/preference/Preference;->setEnabled(Z)V
 
-    .line 398
     const v23, 0x7f090213
 
     move/from16 v0, v23
 
     invoke-virtual {v12, v0}, Landroid/preference/Preference;->setSummary(I)V
 
-    .line 405
     .end local v12    # "manageAgents":Landroid/preference/Preference;
     :cond_f
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SecuritySettings;->getActivity()Landroid/app/Activity;
@@ -1239,7 +1149,6 @@
 
     invoke-virtual/range {v23 .. v26}, Lcom/android/settings/search/Index;->updateFromClassNameResource(Ljava/lang/String;ZZ)V
 
-    .line 408
     const/4 v10, 0x0
 
     .restart local v10    # "i":I
@@ -1256,7 +1165,6 @@
 
     if-ge v10, v0, :cond_15
 
-    .line 409
     sget-object v23, Lcom/android/settings/SecuritySettings;->SWITCH_PREFERENCE_KEYS:[Ljava/lang/String;
 
     aget-object v23, v23, v10
@@ -1269,7 +1177,6 @@
 
     move-result-object v15
 
-    .line 410
     .local v15, "pref":Landroid/preference/Preference;
     if-eqz v15, :cond_10
 
@@ -1277,13 +1184,11 @@
 
     invoke-virtual {v15, v0}, Landroid/preference/Preference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
-    .line 408
     :cond_10
     add-int/lit8 v10, v10, 0x1
 
     goto :goto_8
 
-    .line 347
     .end local v3    # "advancedCategory":Landroid/preference/PreferenceGroup;
     .end local v8    # "deviceAdminCategory":Landroid/preference/PreferenceGroup;
     .end local v10    # "i":I
@@ -1308,7 +1213,6 @@
 
     goto/16 :goto_4
 
-    .line 365
     .restart local v6    # "credentialStorageType":Landroid/preference/Preference;
     .restart local v22    # "um":Landroid/os/UserManager;
     :cond_12
@@ -1316,7 +1220,6 @@
 
     goto/16 :goto_5
 
-    .line 370
     .end local v6    # "credentialStorageType":Landroid/preference/Preference;
     :cond_13
     const-string v23, "credentials_management"
@@ -1331,7 +1234,6 @@
 
     check-cast v7, Landroid/preference/PreferenceGroup;
 
-    .line 372
     .local v7, "credentialsManager":Landroid/preference/PreferenceGroup;
     const-string v23, "credentials_reset"
 
@@ -1347,7 +1249,6 @@
 
     invoke-virtual {v7, v0}, Landroid/preference/PreferenceGroup;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 373
     const-string v23, "credentials_install"
 
     move-object/from16 v0, v17
@@ -1362,7 +1263,6 @@
 
     invoke-virtual {v7, v0}, Landroid/preference/PreferenceGroup;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 374
     const-string v23, "credential_storage_type"
 
     move-object/from16 v0, v17
@@ -1379,7 +1279,6 @@
 
     goto/16 :goto_6
 
-    .line 385
     .end local v7    # "credentialsManager":Landroid/preference/PreferenceGroup;
     .restart local v8    # "deviceAdminCategory":Landroid/preference/PreferenceGroup;
     :cond_14
@@ -1387,7 +1286,6 @@
 
     goto/16 :goto_7
 
-    .line 413
     .restart local v3    # "advancedCategory":Landroid/preference/PreferenceGroup;
     .restart local v10    # "i":I
     :cond_15
@@ -1403,7 +1301,6 @@
 
     invoke-static/range {v23 .. v24}, Lcom/motorola/extensions/DynamicPreferences;->addOrOverridePreferences(Landroid/preference/PreferenceScreen;Landroid/content/Intent;)V
 
-    .line 418
     const-string v23, "crypto_select"
 
     move-object/from16 v0, p0
@@ -1422,7 +1319,6 @@
 
     iput-object v0, v1, Lcom/android/settings/SecuritySettings;->mCryptoMode:Landroid/preference/ListPreference;
 
-    .line 419
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/SecuritySettings;->mCryptoMode:Landroid/preference/ListPreference;
@@ -1431,7 +1327,6 @@
 
     if-eqz v23, :cond_16
 
-    .line 420
     invoke-static {}, Lcom/motorola/crypto/CryptographicModesHelper;->isCryptographicModesSupported()Z
 
     move-result v23
@@ -1444,7 +1339,6 @@
 
     if-eqz v23, :cond_19
 
-    .line 422
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/SecuritySettings;->mCryptoMode:Landroid/preference/ListPreference;
@@ -1457,14 +1351,12 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
-    .line 423
     invoke-static {}, Lcom/motorola/crypto/CryptographicModesHelper;->isCryptographyEnforced()Z
 
     move-result v23
 
     if-eqz v23, :cond_18
 
-    .line 424
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/SecuritySettings;->mCryptoMode:Landroid/preference/ListPreference;
@@ -1475,7 +1367,6 @@
 
     invoke-virtual/range {v23 .. v24}, Landroid/preference/ListPreference;->setEnabled(Z)V
 
-    .line 430
     :goto_9
     move-object/from16 v0, p0
 
@@ -1501,7 +1392,6 @@
 
     invoke-virtual/range {v23 .. v24}, Landroid/preference/ListPreference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 446
     :cond_16
     :goto_a
     move-object/from16 v0, p0
@@ -1524,7 +1414,6 @@
 
     if-eqz v23, :cond_17
 
-    .line 447
     const v23, 0x7f060033
 
     move-object/from16 v0, p0
@@ -1533,7 +1422,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/SecuritySettings;->addPreferencesFromResource(I)V
 
-    .line 448
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/SecuritySettings;->mFipsVersion:Ljava/lang/String;
@@ -1542,7 +1430,6 @@
 
     if-eqz v23, :cond_17
 
-    .line 449
     const-string v23, "fips_kernel_version"
 
     move-object/from16 v0, p0
@@ -1553,11 +1440,9 @@
 
     move-result-object v15
 
-    .line 450
     .restart local v15    # "pref":Landroid/preference/Preference;
     if-eqz v15, :cond_17
 
-    .line 451
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/SecuritySettings;->mFipsVersion:Ljava/lang/String;
@@ -1568,12 +1453,10 @@
 
     invoke-virtual {v15, v0}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 457
     .end local v15    # "pref":Landroid/preference/Preference;
     :cond_17
     return-object v17
 
-    .line 427
     :cond_18
     move-object/from16 v0, p0
 
@@ -1589,7 +1472,6 @@
 
     goto :goto_9
 
-    .line 435
     :cond_19
     const-string v23, "cryptographic_mode_administration"
 
@@ -1603,11 +1485,9 @@
 
     check-cast v14, Landroid/preference/PreferenceCategory;
 
-    .line 437
     .local v14, "pc":Landroid/preference/PreferenceCategory;
     if-eqz v14, :cond_16
 
-    .line 438
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SecuritySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v23
@@ -1624,14 +1504,12 @@
     .param p1, "maxTimeout"    # J
 
     .prologue
-    .line 682
     iget-object v9, p0, Lcom/android/settings/SecuritySettings;->mLockAfter:Landroid/preference/ListPreference;
 
     invoke-virtual {v9}, Landroid/preference/ListPreference;->getEntries()[Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 683
     .local v0, "entries":[Ljava/lang/CharSequence;
     iget-object v9, p0, Lcom/android/settings/SecuritySettings;->mLockAfter:Landroid/preference/ListPreference;
 
@@ -1639,19 +1517,16 @@
 
     move-result-object v8
 
-    .line 684
     .local v8, "values":[Ljava/lang/CharSequence;
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 685
     .local v3, "revisedEntries":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/CharSequence;>;"
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 686
     .local v4, "revisedValues":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/CharSequence;>;"
     const/4 v1, 0x0
 
@@ -1661,7 +1536,6 @@
 
     if-ge v1, v9, :cond_1
 
-    .line 687
     aget-object v9, v8, v1
 
     invoke-interface {v9}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
@@ -1676,29 +1550,24 @@
 
     move-result-wide v6
 
-    .line 688
     .local v6, "timeout":J
     cmp-long v9, v6, p1
 
     if-gtz v9, :cond_0
 
-    .line 689
     aget-object v9, v0, v1
 
     invoke-virtual {v3, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 690
     aget-object v9, v8, v1
 
     invoke-virtual {v4, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 686
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 693
     .end local v6    # "timeout":J
     :cond_1
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
@@ -1717,7 +1586,6 @@
 
     if-eq v9, v10, :cond_3
 
-    .line 694
     :cond_2
     iget-object v10, p0, Lcom/android/settings/SecuritySettings;->mLockAfter:Landroid/preference/ListPreference;
 
@@ -1735,7 +1603,6 @@
 
     invoke-virtual {v10, v9}, Landroid/preference/ListPreference;->setEntries([Ljava/lang/CharSequence;)V
 
-    .line 696
     iget-object v10, p0, Lcom/android/settings/SecuritySettings;->mLockAfter:Landroid/preference/ListPreference;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
@@ -1752,7 +1619,6 @@
 
     invoke-virtual {v10, v9}, Landroid/preference/ListPreference;->setEntryValues([Ljava/lang/CharSequence;)V
 
-    .line 698
     iget-object v9, p0, Lcom/android/settings/SecuritySettings;->mLockAfter:Landroid/preference/ListPreference;
 
     invoke-virtual {v9}, Landroid/preference/ListPreference;->getValue()Ljava/lang/String;
@@ -1767,7 +1633,6 @@
 
     move-result v5
 
-    .line 699
     .local v5, "userPreference":I
     int-to-long v10, v5
 
@@ -1775,7 +1640,6 @@
 
     if-gtz v9, :cond_4
 
-    .line 700
     iget-object v9, p0, Lcom/android/settings/SecuritySettings;->mLockAfter:Landroid/preference/ListPreference;
 
     invoke-static {v5}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
@@ -1784,7 +1648,6 @@
 
     invoke-virtual {v9, v10}, Landroid/preference/ListPreference;->setValue(Ljava/lang/String;)V
 
-    .line 718
     .end local v5    # "userPreference":I
     :cond_3
     :goto_1
@@ -1801,10 +1664,8 @@
     :goto_2
     invoke-virtual {v10, v9}, Landroid/preference/ListPreference;->setEnabled(Z)V
 
-    .line 719
     return-void
 
-    .line 706
     .restart local v5    # "userPreference":I
     :cond_4
     iget-object v9, p0, Lcom/android/settings/SecuritySettings;->mLockAfter:Landroid/preference/ListPreference;
@@ -1813,7 +1674,6 @@
 
     move-result-object v2
 
-    .line 707
     .local v2, "newValues":[Ljava/lang/CharSequence;
     const/4 v1, 0x0
 
@@ -1822,7 +1682,6 @@
 
     if-ge v1, v9, :cond_3
 
-    .line 708
     aget-object v9, v2, v1
 
     invoke-interface {v9}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
@@ -1837,13 +1696,11 @@
 
     move-result-wide v6
 
-    .line 709
     .restart local v6    # "timeout":J
     cmp-long v9, p1, v6
 
     if-nez v9, :cond_5
 
-    .line 711
     iget-object v9, p0, Lcom/android/settings/SecuritySettings;->mLockAfter:Landroid/preference/ListPreference;
 
     aget-object v10, v2, v1
@@ -1856,13 +1713,11 @@
 
     goto :goto_1
 
-    .line 707
     :cond_5
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_3
 
-    .line 718
     .end local v2    # "newValues":[Ljava/lang/CharSequence;
     .end local v5    # "userPreference":I
     .end local v6    # "timeout":J
@@ -1890,12 +1745,10 @@
     .end annotation
 
     .prologue
-    .line 499
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 500
     .local v4, "result":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/settings/TrustAgentUtils$TrustAgentComponentInfo;>;"
     sget-object v6, Lcom/android/settings/SecuritySettings;->TRUST_AGENT_INTENT:Landroid/content/Intent;
 
@@ -1905,13 +1758,11 @@
 
     move-result-object v3
 
-    .line 502
     .local v3, "resolveInfos":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     invoke-virtual {p1}, Lcom/android/internal/widget/LockPatternUtils;->getEnabledTrustAgents()Ljava/util/List;
 
     move-result-object v0
 
-    .line 503
     .local v0, "enabledTrustAgents":Ljava/util/List;, "Ljava/util/List<Landroid/content/ComponentName;>;"
     if-eqz v0, :cond_2
 
@@ -1921,7 +1772,6 @@
 
     if-nez v6, :cond_2
 
-    .line 504
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -1932,26 +1782,22 @@
 
     if-ge v1, v6, :cond_2
 
-    .line 505
     invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/content/pm/ResolveInfo;
 
-    .line 506
     .local v2, "resolveInfo":Landroid/content/pm/ResolveInfo;
     iget-object v6, v2, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
     if-nez v6, :cond_1
 
-    .line 504
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 507
     :cond_1
     invoke-static {v2, p0}, Lcom/android/settings/TrustAgentUtils;->checkProvidePermission(Landroid/content/pm/ResolveInfo;Landroid/content/pm/PackageManager;)Z
 
@@ -1959,12 +1805,10 @@
 
     if-eqz v6, :cond_0
 
-    .line 508
     invoke-static {p0, v2}, Lcom/android/settings/TrustAgentUtils;->getSettingsComponent(Landroid/content/pm/PackageManager;Landroid/content/pm/ResolveInfo;)Lcom/android/settings/TrustAgentUtils$TrustAgentComponentInfo;
 
     move-result-object v5
 
-    .line 510
     .local v5, "trustAgentComponentInfo":Lcom/android/settings/TrustAgentUtils$TrustAgentComponentInfo;
     iget-object v6, v5, Lcom/android/settings/TrustAgentUtils$TrustAgentComponentInfo;->componentName:Landroid/content/ComponentName;
 
@@ -1988,10 +1832,8 @@
 
     if-nez v6, :cond_0
 
-    .line 514
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 518
     .end local v1    # "i":I
     .end local v2    # "resolveInfo":Landroid/content/pm/ResolveInfo;
     .end local v5    # "trustAgentComponentInfo":Lcom/android/settings/TrustAgentUtils$TrustAgentComponentInfo;
@@ -2007,10 +1849,8 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 198
     const/4 v1, 0x0
 
-    .line 199
     .local v1, "resid":I
     invoke-virtual {p1}, Lcom/android/internal/widget/LockPatternUtils;->isSecure()Z
 
@@ -2018,7 +1858,6 @@
 
     if-nez v4, :cond_2
 
-    .line 201
     const-string v4, "user"
 
     invoke-virtual {p0, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -2027,13 +1866,11 @@
 
     check-cast v0, Landroid/os/UserManager;
 
-    .line 202
     .local v0, "mUm":Landroid/os/UserManager;
     invoke-virtual {v0, v2}, Landroid/os/UserManager;->getUsers(Z)Ljava/util/List;
 
     move-result-object v3
 
-    .line 203
     .local v3, "users":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/UserInfo;>;"
     invoke-interface {v3}, Ljava/util/List;->size()I
 
@@ -2041,7 +1878,6 @@
 
     if-ne v4, v2, :cond_0
 
-    .line 205
     .local v2, "singleUser":Z
     :goto_0
     if-eqz v2, :cond_1
@@ -2052,17 +1888,14 @@
 
     if-eqz v4, :cond_1
 
-    .line 206
     const v1, 0x7f060034
 
-    .line 229
     .end local v0    # "mUm":Landroid/os/UserManager;
     .end local v2    # "singleUser":Z
     .end local v3    # "users":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/UserInfo;>;"
     :goto_1
     return v1
 
-    .line 203
     .restart local v0    # "mUm":Landroid/os/UserManager;
     .restart local v3    # "users":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/UserInfo;>;"
     :cond_0
@@ -2070,14 +1903,12 @@
 
     goto :goto_0
 
-    .line 208
     .restart local v2    # "singleUser":Z
     :cond_1
     const v1, 0x7f060031
 
     goto :goto_1
 
-    .line 210
     .end local v0    # "mUm":Landroid/os/UserManager;
     .end local v2    # "singleUser":Z
     .end local v3    # "users":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/UserInfo;>;"
@@ -2094,12 +1925,10 @@
 
     if-eqz v4, :cond_3
 
-    .line 212
     const v1, 0x7f060030
 
     goto :goto_1
 
-    .line 214
     :cond_3
     invoke-virtual {p1}, Lcom/android/internal/widget/LockPatternUtils;->getKeyguardStoredPasswordQuality()I
 
@@ -2109,27 +1938,21 @@
 
     goto :goto_1
 
-    .line 216
     :sswitch_0
     const v1, 0x7f060037
 
-    .line 217
     goto :goto_1
 
-    .line 220
     :sswitch_1
     const v1, 0x7f060039
 
-    .line 221
     goto :goto_1
 
-    .line 225
     :sswitch_2
     const v1, 0x7f060036
 
     goto :goto_1
 
-    .line 214
     :sswitch_data_0
     .sparse-switch
         0x10000 -> :sswitch_0
@@ -2146,7 +1969,6 @@
     .param p1, "maxTimeout"    # J
 
     .prologue
-    .line 604
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v7, p0, Lcom/android/settings/SecuritySettings;->mLockAfter:Landroid/preference/ListPreference;
@@ -2161,7 +1983,6 @@
 
     invoke-direct {v0, v7}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 606
     .local v0, "entries":Ljava/util/List;, "Ljava/util/List<Ljava/lang/CharSequence;>;"
     new-instance v6, Ljava/util/ArrayList;
 
@@ -2177,7 +1998,6 @@
 
     invoke-direct {v6, v7}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 609
     .local v6, "values":Ljava/util/List;, "Ljava/util/List<Ljava/lang/CharSequence;>;"
     invoke-static {p1, p2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
@@ -2189,7 +2009,6 @@
 
     if-nez v7, :cond_0
 
-    .line 612
     const-wide/16 v8, 0x3e8
 
     div-long v8, p1, v8
@@ -2198,7 +2017,6 @@
 
     rem-int/lit8 v3, v7, 0x3c
 
-    .line 613
     .local v3, "seconds":I
     const-wide/32 v8, 0xea60
 
@@ -2210,7 +2028,6 @@
 
     long-to-int v1, v8
 
-    .line 615
     .local v1, "minutes":I
     invoke-virtual {p0}, Lcom/android/settings/SecuritySettings;->getResources()Landroid/content/res/Resources;
 
@@ -2234,7 +2051,6 @@
 
     move-result-object v4
 
-    .line 617
     .local v4, "secondsString":Ljava/lang/String;
     invoke-virtual {p0}, Lcom/android/settings/SecuritySettings;->getResources()Landroid/content/res/Resources;
 
@@ -2258,13 +2074,11 @@
 
     move-result-object v2
 
-    .line 619
     .local v2, "minutesString":Ljava/lang/String;
     if-lez v3, :cond_1
 
     if-lez v1, :cond_1
 
-    .line 620
     const v7, 0x7f090a6c
 
     invoke-virtual {p0, v7}, Lcom/android/settings/SecuritySettings;->getString(I)Ljava/lang/String;
@@ -2287,7 +2101,6 @@
 
     move-result-object v5
 
-    .line 631
     .local v5, "timeString":Ljava/lang/String;
     :goto_0
     const v7, 0x7f090a6b
@@ -2310,14 +2123,12 @@
 
     invoke-interface {v0, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 634
     invoke-static {p1, p2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v7
 
     invoke-interface {v6, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 635
     iget-object v8, p0, Lcom/android/settings/SecuritySettings;->mLockAfter:Landroid/preference/ListPreference;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -2334,7 +2145,6 @@
 
     invoke-virtual {v8, v7}, Landroid/preference/ListPreference;->setEntries([Ljava/lang/CharSequence;)V
 
-    .line 636
     iget-object v8, p0, Lcom/android/settings/SecuritySettings;->mLockAfter:Landroid/preference/ListPreference;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -2351,7 +2161,6 @@
 
     invoke-virtual {v8, v7}, Landroid/preference/ListPreference;->setEntryValues([Ljava/lang/CharSequence;)V
 
-    .line 638
     .end local v1    # "minutes":I
     .end local v2    # "minutesString":Ljava/lang/String;
     .end local v3    # "seconds":I
@@ -2360,7 +2169,6 @@
     :cond_0
     return-void
 
-    .line 624
     .restart local v1    # "minutes":I
     .restart local v2    # "minutesString":Ljava/lang/String;
     .restart local v3    # "seconds":I
@@ -2368,13 +2176,11 @@
     :cond_1
     if-lez v3, :cond_2
 
-    .line 625
     move-object v5, v4
 
     .restart local v5    # "timeString":Ljava/lang/String;
     goto :goto_0
 
-    .line 628
     .end local v5    # "timeString":Ljava/lang/String;
     :cond_2
     move-object v5, v2
@@ -2389,7 +2195,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 522
     invoke-virtual {p0}, Lcom/android/settings/SecuritySettings;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -2412,12 +2217,10 @@
     .locals 5
 
     .prologue
-    .line 463
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v3
 
-    .line 464
     .local v3, "tm":Landroid/telephony/TelephonyManager;
     iget-object v4, p0, Lcom/android/settings/SecuritySettings;->mSubscriptionManager:Landroid/telephony/SubscriptionManager;
 
@@ -2425,11 +2228,9 @@
 
     move-result-object v2
 
-    .line 467
     .local v2, "subInfoList":Ljava/util/List;, "Ljava/util/List<Landroid/telephony/SubscriptionInfo;>;"
     if-eqz v2, :cond_1
 
-    .line 468
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -2448,7 +2249,6 @@
 
     check-cast v1, Landroid/telephony/SubscriptionInfo;
 
-    .line 469
     .local v1, "subInfo":Landroid/telephony/SubscriptionInfo;
     invoke-virtual {v1}, Landroid/telephony/SubscriptionInfo;->getSimSlotIndex()I
 
@@ -2460,10 +2260,8 @@
 
     if-eqz v4, :cond_0
 
-    .line 470
     const/4 v4, 0x1
 
-    .line 475
     .end local v0    # "i$":Ljava/util/Iterator;
     .end local v1    # "subInfo":Landroid/telephony/SubscriptionInfo;
     :goto_0
@@ -2481,10 +2279,8 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 482
     const/4 v1, 0x0
 
-    .line 483
     .local v1, "simState":I
     iget-object v5, p0, Lcom/android/settings/SecuritySettings;->mSubscriptionManager:Landroid/telephony/SubscriptionManager;
 
@@ -2492,11 +2288,9 @@
 
     move-result-object v3
 
-    .line 485
     .local v3, "subInfoList":Ljava/util/List;, "Ljava/util/List<Landroid/telephony/SubscriptionInfo;>;"
     if-eqz v3, :cond_1
 
-    .line 486
     invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -2515,7 +2309,6 @@
 
     check-cast v2, Landroid/telephony/SubscriptionInfo;
 
-    .line 487
     .local v2, "subInfo":Landroid/telephony/SubscriptionInfo;
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
@@ -2529,12 +2322,10 @@
 
     move-result v1
 
-    .line 488
     if-eq v1, v4, :cond_0
 
     if-eqz v1, :cond_0
 
-    .line 494
     .end local v0    # "i$":Ljava/util/Iterator;
     .end local v2    # "subInfo":Landroid/telephony/SubscriptionInfo;
     :goto_0
@@ -2550,7 +2341,6 @@
     .locals 4
 
     .prologue
-    .line 909
     :try_start_0
     const-string v2, "power"
 
@@ -2560,7 +2350,6 @@
 
     check-cast v1, Landroid/os/PowerManager;
 
-    .line 910
     .local v1, "pm":Landroid/os/PowerManager;
     const-string v2, "now"
 
@@ -2568,16 +2357,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 914
     .end local v1    # "pm":Landroid/os/PowerManager;
     :goto_0
     return-void
 
-    .line 911
     :catch_0
     move-exception v0
 
-    .line 912
     .local v0, "e":Ljava/lang/Exception;
     const-string v2, "SecuritySettings"
 
@@ -2593,7 +2379,6 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 527
     invoke-virtual {p0}, Lcom/android/settings/SecuritySettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -2606,7 +2391,6 @@
 
     check-cast v0, Landroid/os/UserManager;
 
-    .line 528
     .local v0, "um":Landroid/os/UserManager;
     const-string v1, "no_install_unknown_sources"
 
@@ -2616,11 +2400,9 @@
 
     if-eqz v1, :cond_0
 
-    .line 534
     :goto_0
     return-void
 
-    .line 532
     :cond_0
     invoke-virtual {p0}, Lcom/android/settings/SecuritySettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -2651,7 +2433,6 @@
 
     const-wide/16 v6, 0x0
 
-    .line 573
     invoke-virtual {p0}, Lcom/android/settings/SecuritySettings;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v8
@@ -2664,7 +2445,6 @@
 
     move-result-wide v2
 
-    .line 575
     .local v2, "currentTimeout":J
     iget-object v8, p0, Lcom/android/settings/SecuritySettings;->mLockAfter:Landroid/preference/ListPreference;
 
@@ -2674,12 +2454,10 @@
 
     invoke-virtual {v8, v9}, Landroid/preference/ListPreference;->setValue(Ljava/lang/String;)V
 
-    .line 576
     iget-object v8, p0, Lcom/android/settings/SecuritySettings;->mLockAfter:Landroid/preference/ListPreference;
 
     invoke-virtual {v8, p0}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
-    .line 577
     iget-object v8, p0, Lcom/android/settings/SecuritySettings;->mDPM:Landroid/app/admin/DevicePolicyManager;
 
     if-eqz v8, :cond_2
@@ -2692,7 +2470,6 @@
 
     move-result-wide v0
 
-    .line 578
     .local v0, "adminTimeout":J
     :goto_0
     invoke-virtual {p0}, Lcom/android/settings/SecuritySettings;->getContentResolver()Landroid/content/ContentResolver;
@@ -2711,24 +2488,19 @@
 
     int-to-long v4, v8
 
-    .line 581
     .local v4, "displayTimeout":J
     iput-boolean v12, p0, Lcom/android/settings/SecuritySettings;->mDevicePolicyEnforced:Z
 
-    .line 582
     iput-wide v2, p0, Lcom/android/settings/SecuritySettings;->mMaxTimeout:J
 
-    .line 584
     cmp-long v8, v0, v6
 
     if-lez v8, :cond_1
 
-    .line 589
     const/4 v8, 0x1
 
     iput-boolean v8, p0, Lcom/android/settings/SecuritySettings;->mDevicePolicyEnforced:Z
 
-    .line 590
     sub-long v8, v0, v4
 
     invoke-static {v6, v7, v8, v9}, Ljava/lang/Math;->max(JJ)J
@@ -2737,25 +2509,21 @@
 
     iput-wide v8, p0, Lcom/android/settings/SecuritySettings;->mMaxTimeout:J
 
-    .line 592
     iget-wide v8, p0, Lcom/android/settings/SecuritySettings;->mMaxTimeout:J
 
     cmp-long v6, v8, v6
 
     if-lez v6, :cond_0
 
-    .line 594
     iget-wide v6, p0, Lcom/android/settings/SecuritySettings;->mMaxTimeout:J
 
     invoke-direct {p0, v6, v7}, Lcom/android/settings/SecuritySettings;->includeMaxTimeoutEntry(J)V
 
-    .line 597
     :cond_0
     iget-wide v6, p0, Lcom/android/settings/SecuritySettings;->mMaxTimeout:J
 
     invoke-direct {p0, v6, v7}, Lcom/android/settings/SecuritySettings;->disableUnusableTimeouts(J)V
 
-    .line 600
     :cond_1
     return-void
 
@@ -2764,7 +2532,6 @@
     :cond_2
     move-wide v0, v6
 
-    .line 577
     goto :goto_0
 .end method
 
@@ -2772,7 +2539,6 @@
     .locals 18
 
     .prologue
-    .line 643
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SecuritySettings;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v12
@@ -2787,7 +2553,6 @@
 
     move-result-wide v4
 
-    .line 645
     .local v4, "currentTimeout":J
     move-object/from16 v0, p0
 
@@ -2797,7 +2562,6 @@
 
     move-result-object v3
 
-    .line 646
     .local v3, "entries":[Ljava/lang/CharSequence;
     move-object/from16 v0, p0
 
@@ -2807,15 +2571,12 @@
 
     move-result-object v9
 
-    .line 647
     .local v9, "values":[Ljava/lang/CharSequence;
     const/4 v2, 0x0
 
-    .line 649
     .local v2, "best":I
     const/4 v8, 0x0
 
-    .line 650
     .local v8, "summary":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -2831,7 +2592,6 @@
 
     if-gez v12, :cond_4
 
-    .line 653
     move-object/from16 v0, p0
 
     iget-wide v12, v0, Lcom/android/settings/SecuritySettings;->mMaxTimeout:J
@@ -2842,10 +2602,8 @@
 
     if-gtz v12, :cond_1
 
-    .line 654
     const-string v8, "Immediately"
 
-    .line 671
     :cond_0
     :goto_0
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SecuritySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
@@ -2858,7 +2616,6 @@
 
     move-result-object v7
 
-    .line 672
     .local v7, "preference":Landroid/preference/Preference;
     if-eqz v7, :cond_7
 
@@ -2872,7 +2629,6 @@
 
     if-lez v12, :cond_7
 
-    .line 673
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/settings/SecuritySettings;->mLockAfter:Landroid/preference/ListPreference;
@@ -2907,11 +2663,9 @@
 
     invoke-virtual {v12, v13}, Landroid/preference/ListPreference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 679
     :goto_2
     return-void
 
-    .line 655
     .end local v7    # "preference":Landroid/preference/Preference;
     .restart local v8    # "summary":Ljava/lang/String;
     :cond_1
@@ -2939,7 +2693,6 @@
 
     if-nez v12, :cond_2
 
-    .line 656
     new-instance v12, Ljava/lang/StringBuilder;
 
     invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
@@ -2968,7 +2721,6 @@
 
     goto :goto_0
 
-    .line 657
     :cond_2
     move-object/from16 v0, p0
 
@@ -2994,7 +2746,6 @@
 
     if-nez v12, :cond_3
 
-    .line 658
     new-instance v12, Ljava/lang/StringBuilder;
 
     invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
@@ -3023,7 +2774,6 @@
 
     goto/16 :goto_0
 
-    .line 660
     :cond_3
     new-instance v12, Ljava/lang/StringBuilder;
 
@@ -3049,7 +2799,6 @@
 
     goto/16 :goto_0
 
-    .line 664
     :cond_4
     const/4 v6, 0x0
 
@@ -3059,7 +2808,6 @@
 
     if-ge v6, v12, :cond_0
 
-    .line 665
     aget-object v12, v9, v6
 
     invoke-interface {v12}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
@@ -3074,22 +2822,18 @@
 
     move-result-wide v10
 
-    .line 666
     .local v10, "timeout":J
     cmp-long v12, v4, v10
 
     if-ltz v12, :cond_5
 
-    .line 667
     move v2, v6
 
-    .line 664
     :cond_5
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_3
 
-    .line 673
     .end local v6    # "i":I
     .end local v10    # "timeout":J
     .restart local v7    # "preference":Landroid/preference/Preference;
@@ -3098,7 +2842,6 @@
 
     goto/16 :goto_1
 
-    .line 676
     :cond_7
     move-object/from16 v0, p0
 
@@ -3139,7 +2882,6 @@
     .locals 3
 
     .prologue
-    .line 538
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lcom/android/settings/SecuritySettings;->getActivity()Landroid/app/Activity;
@@ -3200,7 +2942,6 @@
 
     iput-object v0, p0, Lcom/android/settings/SecuritySettings;->mWarnInstallApps:Landroid/content/DialogInterface;
 
-    .line 545
     return-void
 .end method
 
@@ -3210,7 +2951,6 @@
     .locals 1
 
     .prologue
-    .line 881
     const v0, 0x7f090944
 
     return v0
@@ -3225,25 +2965,20 @@
     .prologue
     const/4 v2, -0x1
 
-    .line 798
     invoke-super {p0, p1, p2, p3}, Lcom/android/settings/SettingsPreferenceFragment;->onActivityResult(IILandroid/content/Intent;)V
 
-    .line 799
     const/16 v1, 0x7c
 
     if-ne p1, v1, :cond_1
 
     if-ne p2, v2, :cond_1
 
-    .line 801
     invoke-virtual {p0}, Lcom/android/settings/SecuritySettings;->startBiometricWeakImprove()V
 
-    .line 819
     :cond_0
     :goto_0
     return-void
 
-    .line 803
     :cond_1
     const/16 v1, 0x7d
 
@@ -3251,14 +2986,12 @@
 
     if-ne p2, v2, :cond_2
 
-    .line 805
     iget-object v1, p0, Lcom/android/settings/SecuritySettings;->mChooseLockSettingsHelper:Lcom/android/settings/ChooseLockSettingsHelper;
 
     invoke-virtual {v1}, Lcom/android/settings/ChooseLockSettingsHelper;->utils()Lcom/android/internal/widget/LockPatternUtils;
 
     move-result-object v0
 
-    .line 806
     .local v0, "lockPatternUtils":Lcom/android/internal/widget/LockPatternUtils;
     const/4 v1, 0x0
 
@@ -3266,7 +2999,6 @@
 
     goto :goto_0
 
-    .line 811
     .end local v0    # "lockPatternUtils":Lcom/android/internal/widget/LockPatternUtils;
     :cond_2
     const/16 v1, 0x7e
@@ -3275,24 +3007,20 @@
 
     if-ne p2, v2, :cond_3
 
-    .line 812
     iget-object v1, p0, Lcom/android/settings/SecuritySettings;->mTrustAgentClickIntent:Landroid/content/Intent;
 
     if-eqz v1, :cond_0
 
-    .line 813
     iget-object v1, p0, Lcom/android/settings/SecuritySettings;->mTrustAgentClickIntent:Landroid/content/Intent;
 
     invoke-virtual {p0, v1}, Lcom/android/settings/SecuritySettings;->startActivity(Landroid/content/Intent;)V
 
-    .line 814
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/settings/SecuritySettings;->mTrustAgentClickIntent:Landroid/content/Intent;
 
     goto :goto_0
 
-    .line 818
     :cond_3
     invoke-direct {p0}, Lcom/android/settings/SecuritySettings;->createPreferenceHierarchy()Landroid/preference/PreferenceScreen;
 
@@ -3305,39 +3033,32 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 549
     iget-object v1, p0, Lcom/android/settings/SecuritySettings;->mWarnInstallApps:Landroid/content/DialogInterface;
 
     if-ne p1, v1, :cond_0
 
-    .line 550
     const/4 v1, -0x1
 
     if-ne p2, v1, :cond_1
 
     const/4 v0, 0x1
 
-    .line 551
     .local v0, "turnOn":Z
     :goto_0
     invoke-direct {p0, v0}, Lcom/android/settings/SecuritySettings;->setNonMarketAppsAllowed(Z)V
 
-    .line 552
     iget-object v1, p0, Lcom/android/settings/SecuritySettings;->mToggleAppInstallation:Landroid/preference/SwitchPreference;
 
     if-eqz v1, :cond_0
 
-    .line 553
     iget-object v1, p0, Lcom/android/settings/SecuritySettings;->mToggleAppInstallation:Landroid/preference/SwitchPreference;
 
     invoke-virtual {v1, v0}, Landroid/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 556
     .end local v0    # "turnOn":Z
     :cond_0
     return-void
 
-    .line 550
     :cond_1
     const/4 v0, 0x0
 
@@ -3349,10 +3070,8 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 162
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 164
     invoke-virtual {p0}, Lcom/android/settings/SecuritySettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -3363,7 +3082,6 @@
 
     iput-object v1, p0, Lcom/android/settings/SecuritySettings;->mSubscriptionManager:Landroid/telephony/SubscriptionManager;
 
-    .line 166
     new-instance v1, Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {p0}, Lcom/android/settings/SecuritySettings;->getActivity()Landroid/app/Activity;
@@ -3374,7 +3092,6 @@
 
     iput-object v1, p0, Lcom/android/settings/SecuritySettings;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    .line 168
     const-string v1, "device_policy"
 
     invoke-virtual {p0, v1}, Lcom/android/settings/SecuritySettings;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -3385,7 +3102,6 @@
 
     iput-object v1, p0, Lcom/android/settings/SecuritySettings;->mDPM:Landroid/app/admin/DevicePolicyManager;
 
-    .line 170
     new-instance v1, Lcom/android/settings/ChooseLockSettingsHelper;
 
     invoke-virtual {p0}, Lcom/android/settings/SecuritySettings;->getActivity()Landroid/app/Activity;
@@ -3396,7 +3112,6 @@
 
     iput-object v1, p0, Lcom/android/settings/SecuritySettings;->mChooseLockSettingsHelper:Lcom/android/settings/ChooseLockSettingsHelper;
 
-    .line 172
     if-eqz p1, :cond_0
 
     const-string v1, "trust_agent_click_intent"
@@ -3407,7 +3122,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 174
     const-string v1, "trust_agent_click_intent"
 
     invoke-virtual {p1, v1}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -3418,7 +3132,6 @@
 
     iput-object v1, p0, Lcom/android/settings/SecuritySettings;->mTrustAgentClickIntent:Landroid/content/Intent;
 
-    .line 178
     :cond_0
     :try_start_0
     invoke-virtual {p0}, Lcom/android/settings/SecuritySettings;->getResources()Landroid/content/res/Resources;
@@ -3437,7 +3150,6 @@
     :try_end_0
     .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 189
     :goto_0
     invoke-static {}, Lcom/motorola/crypto/CryptoFips;->isEnabled()Ljava/lang/Boolean;
 
@@ -3445,7 +3157,6 @@
 
     iput-object v1, p0, Lcom/android/settings/SecuritySettings;->mFipsEnabled:Ljava/lang/Boolean;
 
-    .line 190
     iget-object v1, p0, Lcom/android/settings/SecuritySettings;->mFipsEnabled:Ljava/lang/Boolean;
 
     if-eqz v1, :cond_1
@@ -3458,28 +3169,23 @@
 
     if-eqz v1, :cond_1
 
-    .line 191
     invoke-static {}, Lcom/motorola/crypto/CryptoFips;->getVersion()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/settings/SecuritySettings;->mFipsVersion:Ljava/lang/String;
 
-    .line 194
     :cond_1
     return-void
 
-    .line 181
     :catch_0
     move-exception v0
 
-    .line 182
     .local v0, "e":Landroid/content/res/Resources$NotFoundException;
     const-wide/16 v2, 0x1388
 
     iput-wide v2, p0, Lcom/android/settings/SecuritySettings;->mLockAfterTimeOut:J
 
-    .line 183
     const-string v1, "SecuritySettings"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3509,31 +3215,25 @@
     .locals 1
 
     .prologue
-    .line 560
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onDestroy()V
 
-    .line 561
     iget-object v0, p0, Lcom/android/settings/SecuritySettings;->mWarnInstallApps:Landroid/content/DialogInterface;
 
     if-eqz v0, :cond_0
 
-    .line 562
     iget-object v0, p0, Lcom/android/settings/SecuritySettings;->mWarnInstallApps:Landroid/content/DialogInterface;
 
     invoke-interface {v0}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 565
     :cond_0
     iget-object v0, p0, Lcom/android/settings/SecuritySettings;->mRebootCryptoMode:Landroid/content/DialogInterface;
 
     if-eqz v0, :cond_1
 
-    .line 566
     iget-object v0, p0, Lcom/android/settings/SecuritySettings;->mRebootCryptoMode:Landroid/content/DialogInterface;
 
     invoke-interface {v0}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 569
     :cond_1
     return-void
 .end method
@@ -3550,16 +3250,13 @@
 
     const/4 v7, 0x0
 
-    .line 823
     const/4 v4, 0x1
 
-    .line 824
     .local v4, "result":Z
     invoke-virtual {p1}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 825
     .local v2, "key":Ljava/lang/String;
     iget-object v8, p0, Lcom/android/settings/SecuritySettings;->mChooseLockSettingsHelper:Lcom/android/settings/ChooseLockSettingsHelper;
 
@@ -3567,7 +3264,6 @@
 
     move-result-object v3
 
-    .line 826
     .local v3, "lockPatternUtils":Lcom/android/internal/widget/LockPatternUtils;
     const-string v8, "lock_after_timeout"
 
@@ -3577,7 +3273,6 @@
 
     if-eqz v8, :cond_1
 
-    .line 827
     check-cast p2, Ljava/lang/String;
 
     .end local p2    # "value":Ljava/lang/Object;
@@ -3585,7 +3280,6 @@
 
     move-result v5
 
-    .line 829
     .local v5, "timeout":I
     :try_start_0
     invoke-virtual {p0}, Lcom/android/settings/SecuritySettings;->getContentResolver()Landroid/content/ContentResolver;
@@ -3598,22 +3292,18 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 834
     :goto_0
     invoke-direct {p0}, Lcom/android/settings/SecuritySettings;->updateLockAfterPreferenceSummary()V
 
-    .line 876
     .end local v5    # "timeout":I
     :cond_0
     :goto_1
     return v4
 
-    .line 831
     .restart local v5    # "timeout":I
     :catch_0
     move-exception v0
 
-    .line 832
     .local v0, "e":Ljava/lang/NumberFormatException;
     const-string v6, "SecuritySettings"
 
@@ -3623,7 +3313,6 @@
 
     goto :goto_0
 
-    .line 835
     .end local v0    # "e":Ljava/lang/NumberFormatException;
     .end local v5    # "timeout":I
     .restart local p2    # "value":Ljava/lang/Object;
@@ -3636,7 +3325,6 @@
 
     if-eqz v8, :cond_2
 
-    .line 836
     check-cast p2, Ljava/lang/Boolean;
 
     .end local p2    # "value":Ljava/lang/Object;
@@ -3648,7 +3336,6 @@
 
     goto :goto_1
 
-    .line 837
     .restart local p2    # "value":Ljava/lang/Object;
     :cond_2
     const-string v8, "visiblepattern"
@@ -3659,7 +3346,6 @@
 
     if-eqz v8, :cond_3
 
-    .line 838
     check-cast p2, Ljava/lang/Boolean;
 
     .end local p2    # "value":Ljava/lang/Object;
@@ -3671,7 +3357,6 @@
 
     goto :goto_1
 
-    .line 839
     .restart local p2    # "value":Ljava/lang/Object;
     :cond_3
     const-string v8, "biometric_weak_liveliness"
@@ -3682,7 +3367,6 @@
 
     if-eqz v8, :cond_5
 
-    .line 840
     check-cast p2, Ljava/lang/Boolean;
 
     .end local p2    # "value":Ljava/lang/Object;
@@ -3692,18 +3376,15 @@
 
     if-eqz v8, :cond_4
 
-    .line 841
     invoke-virtual {v3, v6}, Lcom/android/internal/widget/LockPatternUtils;->setBiometricWeakLivelinessEnabled(Z)V
 
     goto :goto_1
 
-    .line 846
     :cond_4
     iget-object v8, p0, Lcom/android/settings/SecuritySettings;->mBiometricWeakLiveliness:Landroid/preference/SwitchPreference;
 
     invoke-virtual {v8, v6}, Landroid/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 847
     new-instance v1, Lcom/android/settings/ChooseLockSettingsHelper;
 
     invoke-virtual {p0}, Lcom/android/settings/SecuritySettings;->getActivity()Landroid/app/Activity;
@@ -3712,7 +3393,6 @@
 
     invoke-direct {v1, v6, p0}, Lcom/android/settings/ChooseLockSettingsHelper;-><init>(Landroid/app/Activity;Landroid/app/Fragment;)V
 
-    .line 849
     .local v1, "helper":Lcom/android/settings/ChooseLockSettingsHelper;
     const/16 v6, 0x7d
 
@@ -3722,17 +3402,14 @@
 
     if-nez v6, :cond_0
 
-    .line 855
     invoke-virtual {v3, v7}, Lcom/android/internal/widget/LockPatternUtils;->setBiometricWeakLivelinessEnabled(Z)V
 
-    .line 856
     iget-object v6, p0, Lcom/android/settings/SecuritySettings;->mBiometricWeakLiveliness:Landroid/preference/SwitchPreference;
 
     invoke-virtual {v6, v7}, Landroid/preference/SwitchPreference;->setChecked(Z)V
 
     goto :goto_1
 
-    .line 859
     .end local v1    # "helper":Lcom/android/settings/ChooseLockSettingsHelper;
     .restart local p2    # "value":Ljava/lang/Object;
     :cond_5
@@ -3744,7 +3421,6 @@
 
     if-eqz v8, :cond_6
 
-    .line 860
     iget-object v6, p0, Lcom/android/settings/SecuritySettings;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     check-cast p2, Ljava/lang/Boolean;
@@ -3758,7 +3434,6 @@
 
     goto :goto_1
 
-    .line 861
     .restart local p2    # "value":Ljava/lang/Object;
     :cond_6
     const-string v8, "show_password"
@@ -3769,7 +3444,6 @@
 
     if-eqz v8, :cond_8
 
-    .line 862
     invoke-virtual {p0}, Lcom/android/settings/SecuritySettings;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v8
@@ -3795,7 +3469,6 @@
 
     goto :goto_2
 
-    .line 864
     .restart local p2    # "value":Ljava/lang/Object;
     :cond_8
     const-string v6, "toggle_install_applications"
@@ -3806,7 +3479,6 @@
 
     if-eqz v6, :cond_a
 
-    .line 865
     check-cast p2, Ljava/lang/Boolean;
 
     .end local p2    # "value":Ljava/lang/Object;
@@ -3816,26 +3488,21 @@
 
     if-eqz v6, :cond_9
 
-    .line 866
     iget-object v6, p0, Lcom/android/settings/SecuritySettings;->mToggleAppInstallation:Landroid/preference/SwitchPreference;
 
     invoke-virtual {v6, v7}, Landroid/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 867
     invoke-direct {p0}, Lcom/android/settings/SecuritySettings;->warnAppInstallation()V
 
-    .line 869
     const/4 v4, 0x0
 
     goto/16 :goto_1
 
-    .line 871
     :cond_9
     invoke-direct {p0, v7}, Lcom/android/settings/SecuritySettings;->setNonMarketAppsAllowed(Z)V
 
     goto/16 :goto_1
 
-    .line 873
     .restart local p2    # "value":Ljava/lang/Object;
     :cond_a
     const-string v6, "crypto_select"
@@ -3846,7 +3513,6 @@
 
     if-eqz v6, :cond_0
 
-    .line 874
     invoke-direct {p0, p2}, Lcom/android/settings/SecuritySettings;->askForReboot(Ljava/lang/Object;)V
 
     goto/16 :goto_1
@@ -3860,12 +3526,10 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 761
     invoke-virtual {p2}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 762
     .local v7, "key":Ljava/lang/String;
     const-string v0, "unlock_set_or_change"
 
@@ -3875,7 +3539,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 763
     const-string v2, "com.android.settings.ChooseLockGeneric$ChooseLockGenericFragment"
 
     const v3, 0x7f0901d9
@@ -3888,7 +3551,6 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/settings/SecuritySettings;->startFragment(Landroid/app/Fragment;Ljava/lang/String;IILandroid/os/Bundle;)Z
 
-    .line 790
     :cond_0
     :goto_0
     const/4 v0, 0x1
@@ -3896,7 +3558,6 @@
     :goto_1
     return v0
 
-    .line 765
     :cond_1
     const-string v0, "biometric_weak_improve_matching"
 
@@ -3906,7 +3567,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 766
     new-instance v6, Lcom/android/settings/ChooseLockSettingsHelper;
 
     invoke-virtual {p0}, Lcom/android/settings/SecuritySettings;->getActivity()Landroid/app/Activity;
@@ -3915,7 +3575,6 @@
 
     invoke-direct {v6, v0, p0}, Lcom/android/settings/ChooseLockSettingsHelper;-><init>(Landroid/app/Activity;Landroid/app/Fragment;)V
 
-    .line 768
     .local v6, "helper":Lcom/android/settings/ChooseLockSettingsHelper;
     const/16 v0, 0x7c
 
@@ -3925,12 +3584,10 @@
 
     if-nez v0, :cond_0
 
-    .line 774
     invoke-virtual {p0}, Lcom/android/settings/SecuritySettings;->startBiometricWeakImprove()V
 
     goto :goto_0
 
-    .line 776
     .end local v6    # "helper":Lcom/android/settings/ChooseLockSettingsHelper;
     :cond_2
     const-string v0, "trust_agent"
@@ -3941,7 +3598,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 777
     new-instance v6, Lcom/android/settings/ChooseLockSettingsHelper;
 
     invoke-virtual {p0}, Lcom/android/settings/SecuritySettings;->getActivity()Landroid/app/Activity;
@@ -3950,7 +3606,6 @@
 
     invoke-direct {v6, v0, p0}, Lcom/android/settings/ChooseLockSettingsHelper;-><init>(Landroid/app/Activity;Landroid/app/Fragment;)V
 
-    .line 779
     .restart local v6    # "helper":Lcom/android/settings/ChooseLockSettingsHelper;
     invoke-virtual {p2}, Landroid/preference/Preference;->getIntent()Landroid/content/Intent;
 
@@ -3958,7 +3613,6 @@
 
     iput-object v0, p0, Lcom/android/settings/SecuritySettings;->mTrustAgentClickIntent:Landroid/content/Intent;
 
-    .line 780
     const/16 v0, 0x7e
 
     invoke-virtual {v6, v0, v5, v5}, Lcom/android/settings/ChooseLockSettingsHelper;->launchConfirmationActivity(ILjava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -3971,17 +3625,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 783
     iget-object v0, p0, Lcom/android/settings/SecuritySettings;->mTrustAgentClickIntent:Landroid/content/Intent;
 
     invoke-virtual {p0, v0}, Lcom/android/settings/SecuritySettings;->startActivity(Landroid/content/Intent;)V
 
-    .line 784
     iput-object v5, p0, Lcom/android/settings/SecuritySettings;->mTrustAgentClickIntent:Landroid/content/Intent;
 
     goto :goto_0
 
-    .line 788
     .end local v6    # "helper":Lcom/android/settings/ChooseLockSettingsHelper;
     :cond_3
     invoke-super {p0, p1, p2}, Lcom/android/settings/SettingsPreferenceFragment;->onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
@@ -3999,26 +3650,21 @@
 
     const/4 v2, 0x1
 
-    .line 731
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onResume()V
 
-    .line 735
     invoke-direct {p0}, Lcom/android/settings/SecuritySettings;->createPreferenceHierarchy()Landroid/preference/PreferenceScreen;
 
-    .line 737
     iget-object v1, p0, Lcom/android/settings/SecuritySettings;->mChooseLockSettingsHelper:Lcom/android/settings/ChooseLockSettingsHelper;
 
     invoke-virtual {v1}, Lcom/android/settings/ChooseLockSettingsHelper;->utils()Lcom/android/internal/widget/LockPatternUtils;
 
     move-result-object v0
 
-    .line 738
     .local v0, "lockPatternUtils":Lcom/android/internal/widget/LockPatternUtils;
     iget-object v1, p0, Lcom/android/settings/SecuritySettings;->mBiometricWeakLiveliness:Landroid/preference/SwitchPreference;
 
     if-eqz v1, :cond_0
 
-    .line 739
     iget-object v1, p0, Lcom/android/settings/SecuritySettings;->mBiometricWeakLiveliness:Landroid/preference/SwitchPreference;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternUtils;->isBiometricWeakLivelinessEnabled()Z
@@ -4027,13 +3673,11 @@
 
     invoke-virtual {v1, v4}, Landroid/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 742
     :cond_0
     iget-object v1, p0, Lcom/android/settings/SecuritySettings;->mVisiblePattern:Landroid/preference/SwitchPreference;
 
     if-eqz v1, :cond_1
 
-    .line 743
     iget-object v1, p0, Lcom/android/settings/SecuritySettings;->mVisiblePattern:Landroid/preference/SwitchPreference;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternUtils;->isVisiblePatternEnabled()Z
@@ -4042,13 +3686,11 @@
 
     invoke-virtual {v1, v4}, Landroid/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 745
     :cond_1
     iget-object v1, p0, Lcom/android/settings/SecuritySettings;->mPowerButtonInstantlyLocks:Landroid/preference/SwitchPreference;
 
     if-eqz v1, :cond_2
 
-    .line 746
     iget-object v1, p0, Lcom/android/settings/SecuritySettings;->mPowerButtonInstantlyLocks:Landroid/preference/SwitchPreference;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternUtils;->getPowerButtonInstantlyLocks()Z
@@ -4057,13 +3699,11 @@
 
     invoke-virtual {v1, v4}, Landroid/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 749
     :cond_2
     iget-object v1, p0, Lcom/android/settings/SecuritySettings;->mShowPassword:Landroid/preference/SwitchPreference;
 
     if-eqz v1, :cond_3
 
-    .line 750
     iget-object v4, p0, Lcom/android/settings/SecuritySettings;->mShowPassword:Landroid/preference/SwitchPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/SecuritySettings;->getContentResolver()Landroid/content/ContentResolver;
@@ -4083,13 +3723,11 @@
     :goto_0
     invoke-virtual {v4, v1}, Landroid/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 754
     :cond_3
     iget-object v1, p0, Lcom/android/settings/SecuritySettings;->mResetCredentials:Landroid/preference/Preference;
 
     if-eqz v1, :cond_4
 
-    .line 755
     iget-object v1, p0, Lcom/android/settings/SecuritySettings;->mResetCredentials:Landroid/preference/Preference;
 
     iget-object v4, p0, Lcom/android/settings/SecuritySettings;->mKeyStore:Landroid/security/KeyStore;
@@ -4103,20 +3741,17 @@
     :goto_1
     invoke-virtual {v1, v2}, Landroid/preference/Preference;->setEnabled(Z)V
 
-    .line 757
     :cond_4
     return-void
 
     :cond_5
     move v1, v3
 
-    .line 750
     goto :goto_0
 
     :cond_6
     move v2, v3
 
-    .line 755
     goto :goto_1
 .end method
 
@@ -4125,22 +3760,18 @@
     .param p1, "outState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 723
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    .line 724
     iget-object v0, p0, Lcom/android/settings/SecuritySettings;->mTrustAgentClickIntent:Landroid/content/Intent;
 
     if-eqz v0, :cond_0
 
-    .line 725
     const-string v0, "trust_agent_click_intent"
 
     iget-object v1, p0, Lcom/android/settings/SecuritySettings;->mTrustAgentClickIntent:Landroid/content/Intent;
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 727
     :cond_0
     return-void
 .end method
@@ -4149,12 +3780,10 @@
     .locals 3
 
     .prologue
-    .line 918
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 919
     .local v0, "intent":Landroid/content/Intent;
     const-string v1, "com.android.facelock"
 
@@ -4162,9 +3791,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 920
     invoke-virtual {p0, v0}, Lcom/android/settings/SecuritySettings;->startActivity(Landroid/content/Intent;)V
 
-    .line 921
     return-void
 .end method

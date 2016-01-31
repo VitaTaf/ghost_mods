@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 335
     iput-object p1, p0, Lcom/android/settings/DreamSettings$DreamInfoAdapter$3;->this$1:Lcom/android/settings/DreamSettings$DreamInfoAdapter;
 
     iput-object p2, p0, Lcom/android/settings/DreamSettings$DreamInfoAdapter$3;->val$row:Landroid/view/View;
@@ -45,12 +44,10 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 338
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setPressed(Z)V
 
-    .line 339
     iget-object v1, p0, Lcom/android/settings/DreamSettings$DreamInfoAdapter$3;->this$1:Lcom/android/settings/DreamSettings$DreamInfoAdapter;
 
     iget-object v0, p0, Lcom/android/settings/DreamSettings$DreamInfoAdapter$3;->val$row:Landroid/view/View;
@@ -64,6 +61,5 @@
     # invokes: Lcom/android/settings/DreamSettings$DreamInfoAdapter;->activate(Lcom/android/settings/DreamBackend$DreamInfo;)V
     invoke-static {v1, v0}, Lcom/android/settings/DreamSettings$DreamInfoAdapter;->access$300(Lcom/android/settings/DreamSettings$DreamInfoAdapter;Lcom/android/settings/DreamBackend$DreamInfo;)V
 
-    .line 340
     return-void
 .end method

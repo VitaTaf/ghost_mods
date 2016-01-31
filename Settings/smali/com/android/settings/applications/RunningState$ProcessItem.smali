@@ -73,28 +73,24 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 374
     invoke-static {p2}, Landroid/os/UserHandle;->getUserId(I)I
 
     move-result v0
 
     invoke-direct {p0, v2, v0}, Lcom/android/settings/applications/RunningState$BaseItem;-><init>(ZI)V
 
-    .line 349
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mServices:Ljava/util/HashMap;
 
-    .line 351
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mDependentProcesses:Landroid/util/SparseArray;
 
-    .line 375
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -113,13 +109,10 @@
 
     iput-object v0, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mDescription:Ljava/lang/String;
 
-    .line 377
     iput p2, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mUid:I
 
-    .line 378
     iput-object p3, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mProcessName:Ljava/lang/String;
 
-    .line 379
     return-void
 .end method
 
@@ -142,7 +135,6 @@
     .end annotation
 
     .prologue
-    .line 556
     .local p1, "dest":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/settings/applications/RunningState$BaseItem;>;"
     .local p2, "destProc":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/settings/applications/RunningState$ProcessItem;>;"
     iget-object v3, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mDependentProcesses:Landroid/util/SparseArray;
@@ -151,7 +143,6 @@
 
     move-result v0
 
-    .line 557
     .local v0, "NP":I
     const/4 v1, 0x0
 
@@ -159,7 +150,6 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 558
     iget-object v3, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mDependentProcesses:Landroid/util/SparseArray;
 
     invoke-virtual {v3, v1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -168,28 +158,22 @@
 
     check-cast v2, Lcom/android/settings/applications/RunningState$ProcessItem;
 
-    .line 559
     .local v2, "proc":Lcom/android/settings/applications/RunningState$ProcessItem;
     invoke-virtual {v2, p1, p2}, Lcom/android/settings/applications/RunningState$ProcessItem;->addDependentProcesses(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
-    .line 560
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 561
     iget v3, v2, Lcom/android/settings/applications/RunningState$ProcessItem;->mPid:I
 
     if-lez v3, :cond_0
 
-    .line 562
     invoke-virtual {p2, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 557
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 565
     .end local v2    # "proc":Lcom/android/settings/applications/RunningState$ProcessItem;
     :cond_1
     return-void
@@ -202,18 +186,15 @@
     .param p3, "curSeq"    # I
 
     .prologue
-    .line 533
     iget-object v4, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mDependentProcesses:Landroid/util/SparseArray;
 
     invoke-virtual {v4}, Landroid/util/SparseArray;->size()I
 
     move-result v0
 
-    .line 534
     .local v0, "NP":I
     const/4 v1, 0x0
 
-    .line 535
     .local v1, "changed":Z
     const/4 v2, 0x0
 
@@ -221,7 +202,6 @@
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 536
     iget-object v4, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mDependentProcesses:Landroid/util/SparseArray;
 
     invoke-virtual {v4, v2}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -230,38 +210,30 @@
 
     check-cast v3, Lcom/android/settings/applications/RunningState$ProcessItem;
 
-    .line 537
     .local v3, "proc":Lcom/android/settings/applications/RunningState$ProcessItem;
     iget-object v4, v3, Lcom/android/settings/applications/RunningState$ProcessItem;->mClient:Lcom/android/settings/applications/RunningState$ProcessItem;
 
     if-eq v4, p0, :cond_0
 
-    .line 538
     const/4 v1, 0x1
 
-    .line 539
     iput-object p0, v3, Lcom/android/settings/applications/RunningState$ProcessItem;->mClient:Lcom/android/settings/applications/RunningState$ProcessItem;
 
-    .line 541
     :cond_0
     iput p3, v3, Lcom/android/settings/applications/RunningState$ProcessItem;->mCurSeq:I
 
-    .line 542
     invoke-virtual {v3, p2}, Lcom/android/settings/applications/RunningState$ProcessItem;->ensureLabel(Landroid/content/pm/PackageManager;)V
 
-    .line 543
     invoke-virtual {v3, p1, p2, p3}, Lcom/android/settings/applications/RunningState$ProcessItem;->buildDependencyChain(Landroid/content/Context;Landroid/content/pm/PackageManager;I)Z
 
     move-result v4
 
     or-int/2addr v1, v4
 
-    .line 535
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 546
     .end local v3    # "proc":Lcom/android/settings/applications/RunningState$ProcessItem;
     :cond_1
     iget v4, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mLastNumDependentProcesses:I
@@ -274,10 +246,8 @@
 
     if-eq v4, v5, :cond_2
 
-    .line 547
     const/4 v1, 0x1
 
-    .line 548
     iget-object v4, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mDependentProcesses:Landroid/util/SparseArray;
 
     invoke-virtual {v4}, Landroid/util/SparseArray;->size()I
@@ -286,7 +256,6 @@
 
     iput v4, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mLastNumDependentProcesses:I
 
-    .line 551
     :cond_2
     return v1
 .end method
@@ -296,16 +265,13 @@
     .param p1, "pm"    # Landroid/content/pm/PackageManager;
 
     .prologue
-    .line 382
     iget-object v8, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mLabel:Ljava/lang/String;
 
     if-eqz v8, :cond_0
 
-    .line 455
     :goto_0
     return-void
 
-    .line 387
     :cond_0
     :try_start_0
     iget-object v8, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mProcessName:Ljava/lang/String;
@@ -316,7 +282,6 @@
 
     move-result-object v0
 
-    .line 389
     .local v0, "ai":Landroid/content/pm/ApplicationInfo;
     iget v8, v0, Landroid/content/pm/ApplicationInfo;->uid:I
 
@@ -324,14 +289,12 @@
 
     if-ne v8, v9, :cond_1
 
-    .line 390
     invoke-virtual {v0, p1}, Landroid/content/pm/ApplicationInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
     move-result-object v8
 
     iput-object v8, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mDisplayLabel:Ljava/lang/CharSequence;
 
-    .line 391
     iget-object v8, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mDisplayLabel:Ljava/lang/CharSequence;
 
     invoke-interface {v8}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
@@ -340,19 +303,16 @@
 
     iput-object v8, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mLabel:Ljava/lang/String;
 
-    .line 392
     iput-object v0, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mPackageInfo:Landroid/content/pm/PackageItemInfo;
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 395
     .end local v0    # "ai":Landroid/content/pm/ApplicationInfo;
     :catch_0
     move-exception v8
 
-    .line 400
     :cond_1
     iget v8, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mUid:I
 
@@ -360,7 +320,6 @@
 
     move-result-object v7
 
-    .line 403
     .local v7, "pkgs":[Ljava/lang/String;
     array-length v8, v7
 
@@ -368,7 +327,6 @@
 
     if-ne v8, v9, :cond_2
 
-    .line 405
     const/4 v8, 0x0
 
     :try_start_1
@@ -380,7 +338,6 @@
 
     move-result-object v0
 
-    .line 407
     .restart local v0    # "ai":Landroid/content/pm/ApplicationInfo;
     invoke-virtual {v0, p1}, Landroid/content/pm/ApplicationInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
@@ -388,7 +345,6 @@
 
     iput-object v8, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mDisplayLabel:Ljava/lang/CharSequence;
 
-    .line 408
     iget-object v8, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mDisplayLabel:Ljava/lang/CharSequence;
 
     invoke-interface {v8}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
@@ -397,19 +353,16 @@
 
     iput-object v8, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mLabel:Ljava/lang/String;
 
-    .line 409
     iput-object v0, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mPackageInfo:Landroid/content/pm/PackageItemInfo;
     :try_end_1
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
 
     goto :goto_0
 
-    .line 411
     .end local v0    # "ai":Landroid/content/pm/ApplicationInfo;
     :catch_1
     move-exception v8
 
-    .line 417
     :cond_2
     move-object v1, v7
 
@@ -425,7 +378,6 @@
 
     aget-object v4, v1, v2
 
-    .line 419
     .local v4, "name":Ljava/lang/String;
     const/4 v8, 0x0
 
@@ -434,13 +386,11 @@
 
     move-result-object v6
 
-    .line 420
     .local v6, "pi":Landroid/content/pm/PackageInfo;
     iget v8, v6, Landroid/content/pm/PackageInfo;->sharedUserLabel:I
 
     if-eqz v8, :cond_3
 
-    .line 421
     iget v8, v6, Landroid/content/pm/PackageInfo;->sharedUserLabel:I
 
     iget-object v9, v6, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
@@ -449,21 +399,17 @@
 
     move-result-object v5
 
-    .line 423
     .local v5, "nm":Ljava/lang/CharSequence;
     if-eqz v5, :cond_3
 
-    .line 424
     iput-object v5, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mDisplayLabel:Ljava/lang/CharSequence;
 
-    .line 425
     invoke-interface {v5}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v8
 
     iput-object v8, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mLabel:Ljava/lang/String;
 
-    .line 426
     iget-object v8, v6, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iput-object v8, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mPackageInfo:Landroid/content/pm/PackageItemInfo;
@@ -472,19 +418,16 @@
 
     goto :goto_0
 
-    .line 430
     .end local v5    # "nm":Ljava/lang/CharSequence;
     .end local v6    # "pi":Landroid/content/pm/PackageInfo;
     :catch_2
     move-exception v8
 
-    .line 417
     :cond_3
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 436
     .end local v4    # "name":Ljava/lang/String;
     :cond_4
     iget-object v8, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mServices:Ljava/util/HashMap;
@@ -495,7 +438,6 @@
 
     if-lez v8, :cond_5
 
-    .line 437
     iget-object v8, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mServices:Ljava/util/HashMap;
 
     invoke-virtual {v8}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -516,11 +458,9 @@
 
     iget-object v0, v8, Landroid/content/pm/ServiceInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    .line 439
     .restart local v0    # "ai":Landroid/content/pm/ApplicationInfo;
     iput-object v0, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mPackageInfo:Landroid/content/pm/PackageItemInfo;
 
-    .line 440
     iget-object v8, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mPackageInfo:Landroid/content/pm/PackageItemInfo;
 
     invoke-virtual {v8, p1}, Landroid/content/pm/PackageItemInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
@@ -529,7 +469,6 @@
 
     iput-object v8, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mDisplayLabel:Ljava/lang/CharSequence;
 
-    .line 441
     iget-object v8, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mDisplayLabel:Ljava/lang/CharSequence;
 
     invoke-interface {v8}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
@@ -540,7 +479,6 @@
 
     goto/16 :goto_0
 
-    .line 447
     .end local v0    # "ai":Landroid/content/pm/ApplicationInfo;
     :cond_5
     const/4 v8, 0x0
@@ -554,7 +492,6 @@
 
     move-result-object v0
 
-    .line 449
     .restart local v0    # "ai":Landroid/content/pm/ApplicationInfo;
     invoke-virtual {v0, p1}, Landroid/content/pm/ApplicationInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
@@ -562,7 +499,6 @@
 
     iput-object v8, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mDisplayLabel:Ljava/lang/CharSequence;
 
-    .line 450
     iget-object v8, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mDisplayLabel:Ljava/lang/CharSequence;
 
     invoke-interface {v8}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
@@ -571,14 +507,12 @@
 
     iput-object v8, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mLabel:Ljava/lang/String;
 
-    .line 451
     iput-object v0, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mPackageInfo:Landroid/content/pm/PackageItemInfo;
     :try_end_3
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_3 .. :try_end_3} :catch_3
 
     goto/16 :goto_0
 
-    .line 453
     .end local v0    # "ai":Landroid/content/pm/ApplicationInfo;
     :catch_3
     move-exception v8
@@ -592,16 +526,13 @@
     .param p2, "service"    # Landroid/app/ActivityManager$RunningServiceInfo;
 
     .prologue
-    .line 458
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v6
 
-    .line 460
     .local v6, "pm":Landroid/content/pm/PackageManager;
     const/4 v2, 0x0
 
-    .line 461
     .local v2, "changed":Z
     iget-object v8, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mServices:Ljava/util/HashMap;
 
@@ -613,14 +544,11 @@
 
     check-cast v7, Lcom/android/settings/applications/RunningState$ServiceItem;
 
-    .line 462
     .local v7, "si":Lcom/android/settings/applications/RunningState$ServiceItem;
     if-nez v7, :cond_1
 
-    .line 463
     const/4 v2, 0x1
 
-    .line 464
     new-instance v7, Lcom/android/settings/applications/RunningState$ServiceItem;
 
     .end local v7    # "si":Lcom/android/settings/applications/RunningState$ServiceItem;
@@ -628,11 +556,9 @@
 
     invoke-direct {v7, v8}, Lcom/android/settings/applications/RunningState$ServiceItem;-><init>(I)V
 
-    .line 465
     .restart local v7    # "si":Lcom/android/settings/applications/RunningState$ServiceItem;
     iput-object p2, v7, Lcom/android/settings/applications/RunningState$ServiceItem;->mRunningService:Landroid/app/ActivityManager$RunningServiceInfo;
 
-    .line 467
     :try_start_0
     invoke-static {}, Landroid/app/ActivityThread;->getPackageManager()Landroid/content/pm/IPackageManager;
 
@@ -654,12 +580,10 @@
 
     iput-object v8, v7, Lcom/android/settings/applications/RunningState$ServiceItem;->mServiceInfo:Landroid/content/pm/ServiceInfo;
 
-    .line 471
     iget-object v8, v7, Lcom/android/settings/applications/RunningState$ServiceItem;->mServiceInfo:Landroid/content/pm/ServiceInfo;
 
     if-nez v8, :cond_0
 
-    .line 472
     const-string v8, "RunningService"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -686,18 +610,14 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 474
     const/4 v8, 0x0
 
-    .line 513
     :goto_0
     return v8
 
-    .line 476
     :catch_0
     move-exception v8
 
-    .line 478
     :cond_0
     iget-object v8, v7, Lcom/android/settings/applications/RunningState$ServiceItem;->mRunningService:Landroid/app/ActivityManager$RunningServiceInfo;
 
@@ -715,7 +635,6 @@
 
     iput-object v8, v7, Lcom/android/settings/applications/RunningState$ServiceItem;->mDisplayLabel:Ljava/lang/CharSequence;
 
-    .line 480
     iget-object v8, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mDisplayLabel:Ljava/lang/CharSequence;
 
     if-eqz v8, :cond_4
@@ -729,30 +648,25 @@
     :goto_1
     iput-object v8, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mLabel:Ljava/lang/String;
 
-    .line 481
     iget-object v8, v7, Lcom/android/settings/applications/RunningState$ServiceItem;->mServiceInfo:Landroid/content/pm/ServiceInfo;
 
     iget-object v8, v8, Landroid/content/pm/ServiceInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iput-object v8, v7, Lcom/android/settings/applications/RunningState$ServiceItem;->mPackageInfo:Landroid/content/pm/PackageItemInfo;
 
-    .line 482
     iget-object v8, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mServices:Ljava/util/HashMap;
 
     iget-object v9, p2, Landroid/app/ActivityManager$RunningServiceInfo;->service:Landroid/content/ComponentName;
 
     invoke-virtual {v8, v9, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 484
     :cond_1
     iget v8, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mCurSeq:I
 
     iput v8, v7, Lcom/android/settings/applications/RunningState$ServiceItem;->mCurSeq:I
 
-    .line 485
     iput-object p2, v7, Lcom/android/settings/applications/RunningState$ServiceItem;->mRunningService:Landroid/app/ActivityManager$RunningServiceInfo;
 
-    .line 486
     iget-wide v8, p2, Landroid/app/ActivityManager$RunningServiceInfo;->restarting:J
 
     const-wide/16 v10, 0x0
@@ -763,7 +677,6 @@
 
     iget-wide v0, p2, Landroid/app/ActivityManager$RunningServiceInfo;->activeSince:J
 
-    .line 487
     .local v0, "activeSince":J
     :goto_2
     iget-wide v8, v7, Lcom/android/settings/applications/RunningState$ServiceItem;->mActiveSince:J
@@ -772,13 +685,10 @@
 
     if-eqz v8, :cond_2
 
-    .line 488
     iput-wide v0, v7, Lcom/android/settings/applications/RunningState$ServiceItem;->mActiveSince:J
 
-    .line 489
     const/4 v2, 0x1
 
-    .line 491
     :cond_2
     iget-object v8, p2, Landroid/app/ActivityManager$RunningServiceInfo;->clientPackage:Ljava/lang/String;
 
@@ -788,20 +698,16 @@
 
     if-eqz v8, :cond_6
 
-    .line 492
     iget-boolean v8, v7, Lcom/android/settings/applications/RunningState$ServiceItem;->mShownAsStarted:Z
 
     if-eqz v8, :cond_3
 
-    .line 493
     const/4 v8, 0x0
 
     iput-boolean v8, v7, Lcom/android/settings/applications/RunningState$ServiceItem;->mShownAsStarted:Z
 
-    .line 494
     const/4 v2, 0x1
 
-    .line 497
     :cond_3
     :try_start_1
     iget-object v8, p2, Landroid/app/ActivityManager$RunningServiceInfo;->clientPackage:Ljava/lang/String;
@@ -810,7 +716,6 @@
 
     move-result-object v3
 
-    .line 498
     .local v3, "clientr":Landroid/content/res/Resources;
     iget v8, p2, Landroid/app/ActivityManager$RunningServiceInfo;->clientLabel:I
 
@@ -818,7 +723,6 @@
 
     move-result-object v5
 
-    .line 499
     .local v5, "label":Ljava/lang/String;
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -847,28 +751,23 @@
     :goto_3
     move v8, v2
 
-    .line 513
     goto :goto_0
 
-    .line 480
     .end local v0    # "activeSince":J
     :cond_4
     const/4 v8, 0x0
 
     goto :goto_1
 
-    .line 486
     :cond_5
     const-wide/16 v0, -0x1
 
     goto :goto_2
 
-    .line 501
     .restart local v0    # "activeSince":J
     :catch_1
     move-exception v4
 
-    .line 502
     .local v4, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     const/4 v8, 0x0
 
@@ -876,22 +775,18 @@
 
     goto :goto_3
 
-    .line 505
     .end local v4    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :cond_6
     iget-boolean v8, v7, Lcom/android/settings/applications/RunningState$ServiceItem;->mShownAsStarted:Z
 
     if-nez v8, :cond_7
 
-    .line 506
     const/4 v8, 0x1
 
     iput-boolean v8, v7, Lcom/android/settings/applications/RunningState$ServiceItem;->mShownAsStarted:Z
 
-    .line 507
     const/4 v2, 0x1
 
-    .line 509
     :cond_7
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -917,26 +812,22 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 517
     const-wide/16 v2, 0x400
 
     mul-long/2addr v2, p2
 
     iput-wide v2, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mSize:J
 
-    .line 518
     iget v1, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mCurSeq:I
 
     if-ne v1, p4, :cond_0
 
-    .line 519
     iget-wide v2, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mSize:J
 
     invoke-static {p1, v2, v3}, Landroid/text/format/Formatter;->formatShortFileSize(Landroid/content/Context;J)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 521
     .local v0, "sizeStr":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mSizeStr:Ljava/lang/String;
 
@@ -946,10 +837,8 @@
 
     if-nez v1, :cond_0
 
-    .line 522
     iput-object v0, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mSizeStr:Ljava/lang/String;
 
-    .line 529
     .end local v0    # "sizeStr":Ljava/lang/String;
     :cond_0
     return v4

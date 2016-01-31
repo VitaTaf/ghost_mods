@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 149
     iput-object p1, p0, Lcom/android/settings/accessibility/ListDialogPreference$1;->this$0:Lcom/android/settings/accessibility/ListDialogPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +51,6 @@
     .end annotation
 
     .prologue
-    .line 152
     .local p1, "adapter":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     iget-object v1, p0, Lcom/android/settings/accessibility/ListDialogPreference$1;->this$0:Lcom/android/settings/accessibility/ListDialogPreference;
 
@@ -69,14 +67,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 153
     iget-object v1, p0, Lcom/android/settings/accessibility/ListDialogPreference$1;->this$0:Lcom/android/settings/accessibility/ListDialogPreference;
 
     long-to-int v2, p4
 
     invoke-virtual {v1, v2}, Lcom/android/settings/accessibility/ListDialogPreference;->setValue(I)V
 
-    .line 156
     :cond_0
     iget-object v1, p0, Lcom/android/settings/accessibility/ListDialogPreference$1;->this$0:Lcom/android/settings/accessibility/ListDialogPreference;
 
@@ -84,14 +80,11 @@
 
     move-result-object v0
 
-    .line 157
     .local v0, "dialog":Landroid/app/Dialog;
     if-eqz v0, :cond_1
 
-    .line 158
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 160
     :cond_1
     return-void
 .end method

@@ -46,24 +46,20 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 32
     sput-object v1, Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache;->instance:Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache;
 
-    .line 34
     new-instance v0, Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache$MySerializer;
 
     invoke-direct {v0, v1}, Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache$MySerializer;-><init>(Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache$1;)V
 
     sput-object v0, Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache;->sSerializer:Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache$MySerializer;
 
-    .line 50
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache;->sAttributeMap:Ljava/util/HashMap;
 
-    .line 52
     sget-object v0, Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache;->sAttributeMap:Ljava/util/HashMap;
 
     const-string v1, "accountType"
@@ -76,7 +72,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 53
     sget-object v0, Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache;->sAttributeMap:Ljava/util/HashMap;
 
     const-string v1, "hideAccount"
@@ -89,7 +84,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 54
     sget-object v0, Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache;->sAttributeMap:Ljava/util/HashMap;
 
     const-string v1, "hideAuthenticator"
@@ -102,7 +96,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 55
     sget-object v0, Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache;->sAttributeMap:Ljava/util/HashMap;
 
     const-string v1, "showSyncOption"
@@ -115,7 +108,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 56
     sget-object v0, Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache;->sAttributeMap:Ljava/util/HashMap;
 
     const-string v1, "removeAllowed"
@@ -128,7 +120,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 57
     sget-object v0, Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache;->sAttributeMap:Ljava/util/HashMap;
 
     const-string v1, "editSettingActivity"
@@ -141,7 +132,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 58
     sget-object v0, Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache;->sAttributeMap:Ljava/util/HashMap;
 
     const-string v1, "accountDisplayName"
@@ -154,7 +144,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 59
     return-void
 .end method
 
@@ -163,7 +152,6 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 68
     const-string v2, "com.motorola.accounts.AccountHelper"
 
     const-string v3, "com.motorola.accounts.AccountHelper"
@@ -178,7 +166,6 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/content/pm/RegisteredServicesCache;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/content/pm/XmlSerializerAndParser;)V
 
-    .line 70
     return-void
 .end method
 
@@ -187,26 +174,22 @@
     .param p0, "ctx"    # Landroid/content/Context;
 
     .prologue
-    .line 73
     sget-object v0, Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache;->instance:Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache;
 
     if-nez v0, :cond_0
 
-    .line 74
     new-instance v0, Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache;
 
     invoke-direct {v0, p0}, Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache;-><init>(Landroid/content/Context;)V
 
     sput-object v0, Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache;->instance:Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache;
 
-    .line 75
     const-string v0, "AuthenticatorDescriptionExtCache"
 
     const-string v1, "New instance of AuthenticatorDescriptionExtCache created"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 77
     :cond_0
     sget-object v0, Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache;->instance:Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache;
 
@@ -223,7 +206,6 @@
 
     const/4 v2, 0x0
 
-    .line 86
     const/4 v3, 0x0
 
     :try_start_0
@@ -231,7 +213,6 @@
 
     move-result-object v0
 
-    .line 88
     .local v0, "appInfo":Landroid/content/pm/ApplicationInfo;
     iget v3, v0, Landroid/content/pm/ApplicationInfo;->flags:I
 
@@ -239,13 +220,11 @@
 
     if-lez v3, :cond_1
 
-    .line 98
     .end local v0    # "appInfo":Landroid/content/pm/ApplicationInfo;
     :cond_0
     :goto_0
     return v1
 
-    .line 91
     .restart local v0    # "appInfo":Landroid/content/pm/ApplicationInfo;
     :cond_1
     const-string v3, "com.motorola.motosignature.app"
@@ -262,10 +241,8 @@
     :goto_1
     move v1, v2
 
-    .line 98
     goto :goto_0
 
-    .line 95
     :catch_0
     move-exception v1
 
@@ -281,34 +258,26 @@
     .param p3, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 104
     const/4 v3, 0x0
 
-    .line 105
     .local v3, "accType":Ljava/lang/String;
     const/4 v15, 0x0
 
-    .line 106
     .local v15, "isHidden":Z
     const/4 v14, 0x0
 
-    .line 107
     .local v14, "isAuthHidden":Z
     const/16 v18, 0x1
 
-    .line 108
     .local v18, "syncAvailable":Z
     const/4 v7, 0x1
 
-    .line 109
     .local v7, "removeAllowed":Z
     const/4 v8, 0x0
 
-    .line 110
     .local v8, "accDisplayName":Ljava/lang/String;
     const/4 v9, 0x0
 
-    .line 111
     .local v9, "settingActivity":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -318,7 +287,6 @@
 
     move-result-object v17
 
-    .line 113
     .local v17, "pm":Landroid/content/pm/PackageManager;
     move-object/from16 v0, v17
 
@@ -330,7 +298,6 @@
 
     if-nez v2, :cond_4
 
-    .line 115
     invoke-static {}, Landroid/os/UserHandle;->getCallingUserHandle()Landroid/os/UserHandle;
 
     move-result-object v2
@@ -341,7 +308,6 @@
 
     if-nez v2, :cond_3
 
-    .line 117
     const/4 v2, 0x0
 
     :try_start_0
@@ -355,7 +321,6 @@
 
     move-result-object v10
 
-    .line 118
     .local v10, "appInfo":Landroid/content/pm/ApplicationInfo;
     const/4 v2, 0x0
 
@@ -369,14 +334,12 @@
     .local v5, "isAuthHidden":Z
     move v4, v15
 
-    .line 184
     .end local v10    # "appInfo":Landroid/content/pm/ApplicationInfo;
     .end local v15    # "isHidden":Z
     .local v4, "isHidden":Z
     :goto_0
     return-object v2
 
-    .line 119
     .end local v4    # "isHidden":Z
     .end local v5    # "isAuthHidden":Z
     .end local v6    # "syncAvailable":Z
@@ -386,7 +349,6 @@
     :catch_0
     move-exception v11
 
-    .line 120
     .local v11, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     const/4 v12, 0x0
 
@@ -398,14 +360,12 @@
 
     if-ge v12, v2, :cond_1
 
-    .line 121
     move-object/from16 v0, p3
 
     invoke-interface {v0, v12}, Landroid/util/AttributeSet;->getAttributeName(I)Ljava/lang/String;
 
     move-result-object v16
 
-    .line 122
     .local v16, "name":Ljava/lang/String;
     sget-object v2, Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache;->sAttributeMap:Ljava/util/HashMap;
 
@@ -427,20 +387,17 @@
 
     if-ne v2, v0, :cond_0
 
-    .line 123
     move-object/from16 v0, p3
 
     invoke-interface {v0, v12}, Landroid/util/AttributeSet;->getAttributeValue(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 120
     :cond_0
     add-int/lit8 v12, v12, 0x1
 
     goto :goto_1
 
-    .line 126
     .end local v16    # "name":Ljava/lang/String;
     :cond_1
     if-nez v3, :cond_2
@@ -481,7 +438,6 @@
 
     goto :goto_2
 
-    .line 130
     .end local v11    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     .end local v12    # "i":I
     :cond_3
@@ -501,7 +457,6 @@
     .restart local v4    # "isHidden":Z
     goto :goto_0
 
-    .line 134
     .end local v4    # "isHidden":Z
     .end local v5    # "isAuthHidden":Z
     .end local v6    # "syncAvailable":Z
@@ -531,14 +486,12 @@
 
     if-ge v12, v2, :cond_6
 
-    .line 135
     move-object/from16 v0, p3
 
     invoke-interface {v0, v12}, Landroid/util/AttributeSet;->getAttributeName(I)Ljava/lang/String;
 
     move-result-object v16
 
-    .line 137
     .restart local v16    # "name":Ljava/lang/String;
     :try_start_1
     sget-object v2, Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache;->sAttributeMap:Ljava/util/HashMap;
@@ -557,14 +510,12 @@
 
     packed-switch v2, :pswitch_data_0
 
-    .line 134
     :cond_5
     :goto_4
     add-int/lit8 v12, v12, 0x1
 
     goto :goto_3
 
-    .line 139
     :pswitch_0
     move-object/from16 v0, p3
 
@@ -572,10 +523,8 @@
 
     move-result-object v3
 
-    .line 140
     goto :goto_4
 
-    .line 142
     :pswitch_1
     move-object/from16 v0, p3
 
@@ -583,10 +532,8 @@
 
     move-result v4
 
-    .line 143
     goto :goto_4
 
-    .line 145
     :pswitch_2
     move-object/from16 v0, p3
 
@@ -594,10 +541,8 @@
 
     move-result v5
 
-    .line 146
     goto :goto_4
 
-    .line 148
     :pswitch_3
     move-object/from16 v0, p3
 
@@ -605,10 +550,8 @@
 
     move-result v6
 
-    .line 149
     goto :goto_4
 
-    .line 151
     :pswitch_4
     move-object/from16 v0, p3
 
@@ -616,10 +559,8 @@
 
     move-result v7
 
-    .line 152
     goto :goto_4
 
-    .line 154
     :pswitch_5
     move-object/from16 v0, p3
 
@@ -627,14 +568,12 @@
 
     move-result-object v8
 
-    .line 155
     invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-nez v2, :cond_5
 
-    .line 156
     const/4 v2, 0x0
 
     move-object/from16 v0, p1
@@ -645,11 +584,9 @@
 
     move-result v13
 
-    .line 157
     .local v13, "id":I
     if-eqz v13, :cond_5
 
-    .line 158
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v13}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -658,7 +595,6 @@
 
     goto :goto_4
 
-    .line 163
     .end local v13    # "id":I
     :pswitch_6
     move-object/from16 v0, p3
@@ -671,11 +607,9 @@
 
     goto :goto_4
 
-    .line 168
     :catch_1
     move-exception v11
 
-    .line 169
     .local v11, "e":Ljava/lang/Exception;
     const-string v2, "AuthenticatorDescriptionExtCache"
 
@@ -723,7 +657,6 @@
 
     goto :goto_4
 
-    .line 174
     .end local v11    # "e":Ljava/lang/Exception;
     .end local v16    # "name":Ljava/lang/String;
     :cond_6
@@ -739,10 +672,8 @@
 
     if-gtz v2, :cond_7
 
-    .line 175
     const/4 v9, 0x0
 
-    .line 177
     :cond_7
     if-eqz v8, :cond_8
 
@@ -756,10 +687,8 @@
 
     if-gtz v2, :cond_8
 
-    .line 178
     const/4 v8, 0x0
 
-    .line 180
     :cond_8
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -767,12 +696,10 @@
 
     if-eqz v2, :cond_9
 
-    .line 181
     const/4 v2, 0x0
 
     goto/16 :goto_0
 
-    .line 184
     :cond_9
     new-instance v2, Lcom/motorola/settings/accounts/AuthenticatorDescriptionExt;
 
@@ -780,7 +707,6 @@
 
     goto/16 :goto_0
 
-    .line 137
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -800,7 +726,6 @@
     .param p3, "x2"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 28
     invoke-virtual {p0, p1, p2, p3}, Lcom/motorola/settings/accounts/AuthenticatorDescriptionExtCache;->parseServiceAttributes(Landroid/content/res/Resources;Ljava/lang/String;Landroid/util/AttributeSet;)Lcom/motorola/settings/accounts/AuthenticatorDescriptionExt;
 
     move-result-object v0

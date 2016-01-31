@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 704
     iput-object p1, p0, Lcom/android/settings/TrustedCredentialsSettings$5$2;->this$1:Lcom/android/settings/TrustedCredentialsSettings$5;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,9 +41,7 @@
     .param p2, "id"    # I
 
     .prologue
-    .line 706
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 707
     return-void
 .end method

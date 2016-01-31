@@ -34,7 +34,6 @@
     .locals 0
 
     .prologue
-    .line 76
     iput-object p1, p0, Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSearchResultsTask;->this$0:Lcom/android/settings/dashboard/SearchResultsSummary;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -48,7 +47,6 @@
     .param p2, "x1"    # Lcom/android/settings/dashboard/SearchResultsSummary$1;
 
     .prologue
-    .line 76
     invoke-direct {p0, p1}, Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSearchResultsTask;-><init>(Lcom/android/settings/dashboard/SearchResultsSummary;)V
 
     return-void
@@ -61,7 +59,6 @@
     .param p1, "params"    # [Ljava/lang/String;
 
     .prologue
-    .line 79
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSearchResultsTask;->this$0:Lcom/android/settings/dashboard/SearchResultsSummary;
 
     invoke-virtual {v0}, Lcom/android/settings/dashboard/SearchResultsSummary;->getActivity()Landroid/app/Activity;
@@ -88,7 +85,6 @@
     .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
-    .line 76
     check-cast p1, [Ljava/lang/String;
 
     .end local p1    # "x0":[Ljava/lang/Object;
@@ -104,20 +100,17 @@
     .param p1, "cursor"    # Landroid/database/Cursor;
 
     .prologue
-    .line 84
     invoke-virtual {p0}, Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSearchResultsTask;->isCancelled()Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 85
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSearchResultsTask;->this$0:Lcom/android/settings/dashboard/SearchResultsSummary;
 
     # invokes: Lcom/android/settings/dashboard/SearchResultsSummary;->setResultsCursor(Landroid/database/Cursor;)V
     invoke-static {v0, p1}, Lcom/android/settings/dashboard/SearchResultsSummary;->access$000(Lcom/android/settings/dashboard/SearchResultsSummary;Landroid/database/Cursor;)V
 
-    .line 86
     iget-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSearchResultsTask;->this$0:Lcom/android/settings/dashboard/SearchResultsSummary;
 
     invoke-interface {p1}, Landroid/database/Cursor;->getCount()I
@@ -132,22 +125,18 @@
     # invokes: Lcom/android/settings/dashboard/SearchResultsSummary;->setResultsVisibility(Z)V
     invoke-static {v1, v0}, Lcom/android/settings/dashboard/SearchResultsSummary;->access$100(Lcom/android/settings/dashboard/SearchResultsSummary;Z)V
 
-    .line 90
     :cond_0
     :goto_1
     return-void
 
-    .line 86
     :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 87
     :cond_2
     if-eqz p1, :cond_0
 
-    .line 88
     invoke-interface {p1}, Landroid/database/Cursor;->close()V
 
     goto :goto_1
@@ -158,7 +147,6 @@
     .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
-    .line 76
     check-cast p1, Landroid/database/Cursor;
 
     .end local p1    # "x0":Ljava/lang/Object;

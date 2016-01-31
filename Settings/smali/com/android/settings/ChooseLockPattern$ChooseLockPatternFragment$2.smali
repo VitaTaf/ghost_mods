@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 319
     iput-object p1, p0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$2;->this$0:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,13 +39,11 @@
     .locals 1
 
     .prologue
-    .line 321
     iget-object v0, p0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$2;->this$0:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;
 
     iget-object v0, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mLockPatternView:Lcom/android/internal/widget/LockPatternView;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternView;->clearPattern()V
 
-    .line 322
     return-void
 .end method

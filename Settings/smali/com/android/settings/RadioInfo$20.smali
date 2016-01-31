@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 1168
     iput-object p1, p0, Lcom/android/settings/RadioInfo$20;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +40,10 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 1170
     iget-object v0, p0, Lcom/android/settings/RadioInfo$20;->this$0:Lcom/android/settings/RadioInfo;
 
     # invokes: Lcom/android/settings/RadioInfo;->updatePingState()V
     invoke-static {v0}, Lcom/android/settings/RadioInfo;->access$4500(Lcom/android/settings/RadioInfo;)V
 
-    .line 1171
     return-void
 .end method

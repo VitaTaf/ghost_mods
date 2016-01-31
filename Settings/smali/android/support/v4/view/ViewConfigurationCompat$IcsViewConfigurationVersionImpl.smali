@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 74
     invoke-direct {p0}, Landroid/support/v4/view/ViewConfigurationCompat$HoneycombViewConfigurationVersionImpl;-><init>()V
 
     return-void

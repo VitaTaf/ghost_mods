@@ -24,7 +24,6 @@
     .param p5, "x4"    # [I
 
     .prologue
-    .line 88
     invoke-direct/range {p0 .. p5}, Lcom/android/settings/notification/SettingPref;-><init>(ILjava/lang/String;Ljava/lang/String;I[I)V
 
     return-void
@@ -38,7 +37,6 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 91
     const-string v1, "audio"
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -47,14 +45,11 @@
 
     check-cast v0, Landroid/media/AudioManager;
 
-    .line 92
     .local v0, "am":Landroid/media/AudioManager;
     if-eqz p2, :cond_0
 
-    .line 93
     invoke-virtual {v0}, Landroid/media/AudioManager;->loadSoundEffects()V
 
-    .line 97
     :goto_0
     invoke-super {p0, p1, p2}, Lcom/android/settings/notification/SettingPref;->setSetting(Landroid/content/Context;I)Z
 
@@ -62,7 +57,6 @@
 
     return v1
 
-    .line 95
     :cond_0
     invoke-virtual {v0}, Landroid/media/AudioManager;->unloadSoundEffects()V
 

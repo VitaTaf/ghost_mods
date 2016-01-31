@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 551
     iput-object p1, p0, Lcom/android/settings/sim/SimSettings$SimPreference$1;->this$1:Lcom/android/settings/sim/SimSettings$SimPreference;
 
     iput-object p2, p0, Lcom/android/settings/sim/SimSettings$SimPreference$1;->val$tintSpinner:Landroid/widget/Spinner;
@@ -56,19 +55,16 @@
     .end annotation
 
     .prologue
-    .line 555
     .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Lcom/android/settings/sim/SimSettings$SimPreference$1;->val$tintSpinner:Landroid/widget/Spinner;
 
     invoke-virtual {v0, p3}, Landroid/widget/Spinner;->setSelection(I)V
 
-    .line 556
     iget-object v0, p0, Lcom/android/settings/sim/SimSettings$SimPreference$1;->this$1:Lcom/android/settings/sim/SimSettings$SimPreference;
 
     # setter for: Lcom/android/settings/sim/SimSettings$SimPreference;->mTintSelectorPos:I
     invoke-static {v0, p3}, Lcom/android/settings/sim/SimSettings$SimPreference;->access$202(Lcom/android/settings/sim/SimSettings$SimPreference;I)I
 
-    .line 557
     return-void
 .end method
 
@@ -83,7 +79,6 @@
     .end annotation
 
     .prologue
-    .line 561
     .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     return-void
 .end method

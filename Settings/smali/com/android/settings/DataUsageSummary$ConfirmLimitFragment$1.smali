@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 2073
     iput-object p1, p0, Lcom/android/settings/DataUsageSummary$ConfirmLimitFragment$1;->this$0:Lcom/android/settings/DataUsageSummary$ConfirmLimitFragment;
 
     iput-wide p2, p0, Lcom/android/settings/DataUsageSummary$ConfirmLimitFragment$1;->val$limitBytes:J
@@ -46,7 +45,6 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 2076
     iget-object v1, p0, Lcom/android/settings/DataUsageSummary$ConfirmLimitFragment$1;->this$0:Lcom/android/settings/DataUsageSummary$ConfirmLimitFragment;
 
     invoke-virtual {v1}, Lcom/android/settings/DataUsageSummary$ConfirmLimitFragment;->getTargetFragment()Landroid/app/Fragment;
@@ -55,17 +53,14 @@
 
     check-cast v0, Lcom/android/settings/DataUsageSummary;
 
-    .line 2077
     .local v0, "target":Lcom/android/settings/DataUsageSummary;
     if-eqz v0, :cond_0
 
-    .line 2078
     iget-wide v2, p0, Lcom/android/settings/DataUsageSummary$ConfirmLimitFragment$1;->val$limitBytes:J
 
     # invokes: Lcom/android/settings/DataUsageSummary;->setPolicyLimitBytes(J)V
     invoke-static {v0, v2, v3}, Lcom/android/settings/DataUsageSummary;->access$1400(Lcom/android/settings/DataUsageSummary;J)V
 
-    .line 2080
     :cond_0
     return-void
 .end method

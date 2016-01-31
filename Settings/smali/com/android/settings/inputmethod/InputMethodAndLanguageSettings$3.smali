@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 543
     iput-object p1, p0, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings$3;->this$0:Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;
 
     iput-object p2, p0, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings$3;->val$identifier:Landroid/hardware/input/InputDeviceIdentifier;
@@ -45,7 +44,6 @@
     .param p1, "preference"    # Landroid/preference/Preference;
 
     .prologue
-    .line 546
     iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings$3;->this$0:Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;
 
     iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings$3;->val$identifier:Landroid/hardware/input/InputDeviceIdentifier;
@@ -53,7 +51,6 @@
     # invokes: Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;->showKeyboardLayoutDialog(Landroid/hardware/input/InputDeviceIdentifier;)V
     invoke-static {v0, v1}, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;->access$000(Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;Landroid/hardware/input/InputDeviceIdentifier;)V
 
-    .line 547
     const/4 v0, 0x1
 
     return v0

@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 336
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeSettings$11$1;->this$1:Lcom/android/settings/notification/ZenModeSettings$11;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "dialog"    # Landroid/content/DialogInterface;
 
     .prologue
-    .line 339
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeSettings$11$1;->this$1:Lcom/android/settings/notification/ZenModeSettings$11;
 
     iget-object v0, v0, Lcom/android/settings/notification/ZenModeSettings$11;->this$0:Lcom/android/settings/notification/ZenModeSettings;
@@ -49,6 +47,5 @@
     # invokes: Lcom/android/settings/notification/ZenModeSettings;->refreshAutomationSection()V
     invoke-static {v0}, Lcom/android/settings/notification/ZenModeSettings;->access$600(Lcom/android/settings/notification/ZenModeSettings;)V
 
-    .line 340
     return-void
 .end method

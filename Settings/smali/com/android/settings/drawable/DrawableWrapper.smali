@@ -16,10 +16,8 @@
     .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 37
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 38
     invoke-static {p1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -28,12 +26,10 @@
 
     iput-object v0, p0, Lcom/android/settings/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 39
     iget-object v0, p0, Lcom/android/settings/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 40
     return-void
 .end method
 
@@ -44,12 +40,10 @@
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 44
     iget-object v0, p0, Lcom/android/settings/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 45
     return-void
 .end method
 
@@ -57,7 +51,6 @@
     .locals 1
 
     .prologue
-    .line 60
     iget-object v0, p0, Lcom/android/settings/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getChangingConfigurations()I
@@ -71,7 +64,6 @@
     .locals 1
 
     .prologue
-    .line 105
     iget-object v0, p0, Lcom/android/settings/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getCurrent()Landroid/graphics/drawable/Drawable;
@@ -85,7 +77,6 @@
     .locals 1
 
     .prologue
-    .line 130
     iget-object v0, p0, Lcom/android/settings/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
@@ -99,7 +90,6 @@
     .locals 1
 
     .prologue
-    .line 125
     iget-object v0, p0, Lcom/android/settings/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -113,7 +103,6 @@
     .locals 1
 
     .prologue
-    .line 140
     iget-object v0, p0, Lcom/android/settings/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getMinimumHeight()I
@@ -127,7 +116,6 @@
     .locals 1
 
     .prologue
-    .line 135
     iget-object v0, p0, Lcom/android/settings/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getMinimumWidth()I
@@ -141,7 +129,6 @@
     .locals 1
 
     .prologue
-    .line 115
     iget-object v0, p0, Lcom/android/settings/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getOpacity()I
@@ -156,7 +143,6 @@
     .param p1, "padding"    # Landroid/graphics/Rect;
 
     .prologue
-    .line 145
     iget-object v0, p0, Lcom/android/settings/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
@@ -170,7 +156,6 @@
     .locals 1
 
     .prologue
-    .line 95
     iget-object v0, p0, Lcom/android/settings/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getState()[I
@@ -184,7 +169,6 @@
     .locals 1
 
     .prologue
-    .line 120
     iget-object v0, p0, Lcom/android/settings/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getTransparentRegion()Landroid/graphics/Region;
@@ -199,10 +183,8 @@
     .param p1, "who"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 150
     invoke-virtual {p0}, Lcom/android/settings/drawable/DrawableWrapper;->invalidateSelf()V
 
-    .line 151
     return-void
 .end method
 
@@ -210,7 +192,6 @@
     .locals 1
 
     .prologue
-    .line 85
     iget-object v0, p0, Lcom/android/settings/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->isStateful()Z
@@ -224,12 +205,10 @@
     .locals 1
 
     .prologue
-    .line 100
     iget-object v0, p0, Lcom/android/settings/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->jumpToCurrentState()V
 
-    .line 101
     return-void
 .end method
 
@@ -240,10 +219,8 @@
     .param p3, "when"    # J
 
     .prologue
-    .line 155
     invoke-virtual {p0, p2, p3, p4}, Lcom/android/settings/drawable/DrawableWrapper;->scheduleSelf(Ljava/lang/Runnable;J)V
 
-    .line 156
     return-void
 .end method
 
@@ -252,12 +229,10 @@
     .param p1, "alpha"    # I
 
     .prologue
-    .line 75
     iget-object v0, p0, Lcom/android/settings/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 76
     return-void
 .end method
 
@@ -269,15 +244,12 @@
     .param p4, "bottom"    # I
 
     .prologue
-    .line 49
     invoke-super {p0, p1, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 50
     iget-object v0, p0, Lcom/android/settings/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 51
     return-void
 .end method
 
@@ -286,12 +258,10 @@
     .param p1, "configs"    # I
 
     .prologue
-    .line 55
     iget-object v0, p0, Lcom/android/settings/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setChangingConfigurations(I)V
 
-    .line 56
     return-void
 .end method
 
@@ -300,12 +270,10 @@
     .param p1, "cf"    # Landroid/graphics/ColorFilter;
 
     .prologue
-    .line 80
     iget-object v0, p0, Lcom/android/settings/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 81
     return-void
 .end method
 
@@ -314,12 +282,10 @@
     .param p1, "dither"    # Z
 
     .prologue
-    .line 65
     iget-object v0, p0, Lcom/android/settings/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setDither(Z)V
 
-    .line 66
     return-void
 .end method
 
@@ -328,12 +294,10 @@
     .param p1, "filter"    # Z
 
     .prologue
-    .line 70
     iget-object v0, p0, Lcom/android/settings/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setFilterBitmap(Z)V
 
-    .line 71
     return-void
 .end method
 
@@ -342,7 +306,6 @@
     .param p1, "stateSet"    # [I
 
     .prologue
-    .line 90
     iget-object v0, p0, Lcom/android/settings/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
@@ -358,7 +321,6 @@
     .param p2, "restart"    # Z
 
     .prologue
-    .line 110
     invoke-super {p0, p1, p2}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
 
     move-result v0
@@ -391,9 +353,7 @@
     .param p2, "what"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 160
     invoke-virtual {p0, p2}, Lcom/android/settings/drawable/DrawableWrapper;->unscheduleSelf(Ljava/lang/Runnable;)V
 
-    .line 161
     return-void
 .end method

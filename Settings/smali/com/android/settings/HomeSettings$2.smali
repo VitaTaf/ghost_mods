@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 108
     iput-object p1, p0, Lcom/android/settings/HomeSettings$2;->this$0:Lcom/android/settings/HomeSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 111
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v1
@@ -52,7 +50,6 @@
 
     move-result v0
 
-    .line 112
     .local v0, "index":I
     iget-object v2, p0, Lcom/android/settings/HomeSettings$2;->this$0:Lcom/android/settings/HomeSettings;
 
@@ -71,6 +68,5 @@
 
     invoke-virtual {v2, v1}, Lcom/android/settings/HomeSettings;->uninstallApp(Lcom/android/settings/HomeSettings$HomeAppPreference;)V
 
-    .line 113
     return-void
 .end method

@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 434
     iput-object p1, p0, Lcom/android/settings/deviceinfo/Memory$ConfirmClearCacheFragment$1;->this$0:Lcom/android/settings/deviceinfo/Memory$ConfirmClearCacheFragment;
 
     iput-object p2, p0, Lcom/android/settings/deviceinfo/Memory$ConfirmClearCacheFragment$1;->val$context:Landroid/content/Context;
@@ -46,7 +45,6 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 437
     iget-object v6, p0, Lcom/android/settings/deviceinfo/Memory$ConfirmClearCacheFragment$1;->this$0:Lcom/android/settings/deviceinfo/Memory$ConfirmClearCacheFragment;
 
     invoke-virtual {v6}, Lcom/android/settings/deviceinfo/Memory$ConfirmClearCacheFragment;->getTargetFragment()Landroid/app/Fragment;
@@ -55,7 +53,6 @@
 
     check-cast v5, Lcom/android/settings/deviceinfo/Memory;
 
-    .line 438
     .local v5, "target":Lcom/android/settings/deviceinfo/Memory;
     iget-object v6, p0, Lcom/android/settings/deviceinfo/Memory$ConfirmClearCacheFragment$1;->val$context:Landroid/content/Context;
 
@@ -63,7 +60,6 @@
 
     move-result-object v4
 
-    .line 439
     .local v4, "pm":Landroid/content/pm/PackageManager;
     const/4 v6, 0x0
 
@@ -71,7 +67,6 @@
 
     move-result-object v2
 
-    .line 440
     .local v2, "infos":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/PackageInfo;>;"
     new-instance v3, Lcom/android/settings/deviceinfo/Memory$ClearCacheObserver;
 
@@ -81,7 +76,6 @@
 
     invoke-direct {v3, v5, v6}, Lcom/android/settings/deviceinfo/Memory$ClearCacheObserver;-><init>(Lcom/android/settings/deviceinfo/Memory;I)V
 
-    .line 442
     .local v3, "observer":Lcom/android/settings/deviceinfo/Memory$ClearCacheObserver;
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -101,7 +95,6 @@
 
     check-cast v1, Landroid/content/pm/PackageInfo;
 
-    .line 443
     .local v1, "info":Landroid/content/pm/PackageInfo;
     iget-object v6, v1, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
 
@@ -109,7 +102,6 @@
 
     goto :goto_0
 
-    .line 445
     .end local v1    # "info":Landroid/content/pm/PackageInfo;
     :cond_0
     return-void

@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 63
     iput-object p1, p0, Lcom/android/settings/DemoModeSettings$1;->val$context:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/android/settings/DemoModeSettings$1;->val$passwordEditor:Landroid/widget/EditText;
@@ -46,7 +45,6 @@
     .param p2, "whichButton"    # I
 
     .prologue
-    .line 66
     iget-object v0, p0, Lcom/android/settings/DemoModeSettings$1;->val$context:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/settings/DemoModeSettings$1;->val$passwordEditor:Landroid/widget/EditText;
@@ -85,17 +83,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 69
     :cond_0
     iget-object v0, p0, Lcom/android/settings/DemoModeSettings$1;->val$context:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/settings/DemoModeSettings;->launchMasterClear(Landroid/content/Context;)V
 
-    .line 74
     :goto_0
     return-void
 
-    .line 71
     :cond_1
     iget-object v0, p0, Lcom/android/settings/DemoModeSettings$1;->val$context:Landroid/content/Context;
 

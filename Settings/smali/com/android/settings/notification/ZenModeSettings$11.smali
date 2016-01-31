@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 330
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeSettings$11;->this$0:Lcom/android/settings/notification/ZenModeSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "preference"    # Landroid/preference/Preference;
 
     .prologue
-    .line 333
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeSettings$11;->this$0:Lcom/android/settings/notification/ZenModeSettings;
@@ -92,7 +90,6 @@
 
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
-    .line 344
     const/4 v0, 0x1
 
     return v0

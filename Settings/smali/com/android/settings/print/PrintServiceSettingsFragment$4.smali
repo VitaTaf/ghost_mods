@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 417
     iput-object p1, p0, Lcom/android/settings/print/PrintServiceSettingsFragment$4;->this$0:Lcom/android/settings/print/PrintServiceSettingsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "searchString"    # Ljava/lang/String;
 
     .prologue
-    .line 425
     iget-object v0, p0, Lcom/android/settings/print/PrintServiceSettingsFragment$4;->this$0:Lcom/android/settings/print/PrintServiceSettingsFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/print/PrintServiceSettingsFragment;->getListView()Landroid/widget/ListView;
@@ -60,7 +58,6 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/Filter;->filter(Ljava/lang/CharSequence;)V
 
-    .line 426
     const/4 v0, 0x1
 
     return v0
@@ -71,7 +68,6 @@
     .param p1, "query"    # Ljava/lang/String;
 
     .prologue
-    .line 420
     const/4 v0, 0x1
 
     return v0

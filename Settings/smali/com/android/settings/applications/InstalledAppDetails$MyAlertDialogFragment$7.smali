@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 1432
     iput-object p1, p0, Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment$7;->this$0:Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 1435
     iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment$7;->this$0:Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment;->getOwner()Lcom/android/settings/applications/InstalledAppDetails;
@@ -58,6 +56,5 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/CompoundButton;->setChecked(Z)V
 
-    .line 1436
     return-void
 .end method

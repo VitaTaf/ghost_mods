@@ -24,12 +24,9 @@
     .param p1, "query"    # Ljava/lang/String;
 
     .prologue
-    .line 396
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 397
     iput-object p1, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SuggestionItem;->query:Ljava/lang/String;
 
-    .line 398
     return-void
 .end method

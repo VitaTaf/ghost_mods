@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 760
     iput-object p1, p0, Lcom/android/settings/DataUsageSummary$3;->this$0:Lcom/android/settings/DataUsageSummary;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "tag"    # Ljava/lang/String;
 
     .prologue
-    .line 763
     new-instance v0, Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/settings/DataUsageSummary$3;->this$0:Lcom/android/settings/DataUsageSummary;

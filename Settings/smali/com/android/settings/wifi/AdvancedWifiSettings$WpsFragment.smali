@@ -23,10 +23,8 @@
     .locals 0
 
     .prologue
-    .line 381
     invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
 
-    .line 382
     return-void
 .end method
 
@@ -35,13 +33,10 @@
     .param p1, "wpsSetup"    # I
 
     .prologue
-    .line 385
     invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
 
-    .line 386
     sput p1, Lcom/android/settings/wifi/AdvancedWifiSettings$WpsFragment;->mWpsSetup:I
 
-    .line 387
     return-void
 .end method
 
@@ -52,7 +47,6 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 391
     new-instance v0, Lcom/android/settings/wifi/WpsDialog;
 
     invoke-virtual {p0}, Lcom/android/settings/wifi/AdvancedWifiSettings$WpsFragment;->getActivity()Landroid/app/Activity;

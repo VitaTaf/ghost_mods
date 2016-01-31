@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 624
     iput-object p1, p0, Lcom/android/settings/CryptKeeper$5;->this$0:Lcom/android/settings/CryptKeeper;
 
     iput-boolean p2, p0, Lcom/android/settings/CryptKeeper$5;->val$corrupt:Z
@@ -45,20 +44,17 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 628
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.MASTER_CLEAR"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 629
     .local v0, "intent":Landroid/content/Intent;
     const/high16 v1, 0x10000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 630
     const-string v1, "android.intent.extra.REASON"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -83,11 +79,9 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 632
     iget-object v1, p0, Lcom/android/settings/CryptKeeper$5;->this$0:Lcom/android/settings/CryptKeeper;
 
     invoke-virtual {v1, v0}, Lcom/android/settings/CryptKeeper;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 633
     return-void
 .end method

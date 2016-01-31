@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 604
     iput-object p1, p0, Lcom/android/settings/users/UserSettings$9;->this$0:Lcom/android/settings/users/UserSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,12 +41,10 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 607
     iget-object v0, p0, Lcom/android/settings/users/UserSettings$9;->this$0:Lcom/android/settings/users/UserSettings;
 
     # invokes: Lcom/android/settings/users/UserSettings;->launchChooseLockscreen()V
     invoke-static {v0}, Lcom/android/settings/users/UserSettings;->access$1400(Lcom/android/settings/users/UserSettings;)V
 
-    .line 608
     return-void
 .end method

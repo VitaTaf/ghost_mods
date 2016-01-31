@@ -32,7 +32,6 @@
     .locals 0
 
     .prologue
-    .line 444
     iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothSettings$2$2;->this$1:Lcom/android/settings/bluetooth/BluetoothSettings$2;
 
     iput-object p2, p0, Lcom/android/settings/bluetooth/BluetoothSettings$2$2;->val$device:Lcom/android/settings/bluetooth/CachedBluetoothDevice;
@@ -54,12 +53,10 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 447
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothSettings$2$2;->val$device:Lcom/android/settings/bluetooth/CachedBluetoothDevice;
 
     invoke-virtual {v0}, Lcom/android/settings/bluetooth/CachedBluetoothDevice;->unpair()V
 
-    .line 448
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothSettings$2$2;->val$activity:Landroid/app/Activity;
 
     const-class v1, Lcom/android/settings/bluetooth/BluetoothSettings;
@@ -92,6 +89,5 @@
 
     invoke-static/range {v0 .. v5}, Lcom/android/settings/bluetooth/Utils;->updateSearchIndex(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IZ)V
 
-    .line 452
     return-void
 .end method

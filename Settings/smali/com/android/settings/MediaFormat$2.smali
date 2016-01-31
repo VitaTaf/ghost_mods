@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 104
     iput-object p1, p0, Lcom/android/settings/MediaFormat$2;->this$0:Lcom/android/settings/MediaFormat;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 106
     iget-object v0, p0, Lcom/android/settings/MediaFormat$2;->this$0:Lcom/android/settings/MediaFormat;
 
     const/16 v1, 0x37
@@ -53,13 +51,11 @@
 
     if-nez v0, :cond_0
 
-    .line 107
     iget-object v0, p0, Lcom/android/settings/MediaFormat$2;->this$0:Lcom/android/settings/MediaFormat;
 
     # invokes: Lcom/android/settings/MediaFormat;->establishFinalConfirmationState()V
     invoke-static {v0}, Lcom/android/settings/MediaFormat;->access$100(Lcom/android/settings/MediaFormat;)V
 
-    .line 109
     :cond_0
     return-void
 .end method

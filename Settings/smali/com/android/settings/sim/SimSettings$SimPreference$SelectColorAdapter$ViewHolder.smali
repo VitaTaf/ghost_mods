@@ -29,7 +29,6 @@
     .locals 0
 
     .prologue
-    .line 696
     iput-object p1, p0, Lcom/android/settings/sim/SimSettings$SimPreference$SelectColorAdapter$ViewHolder;->this$2:Lcom/android/settings/sim/SimSettings$SimPreference$SelectColorAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +42,6 @@
     .param p2, "x1"    # Lcom/android/settings/sim/SimSettings$1;
 
     .prologue
-    .line 696
     invoke-direct {p0, p1}, Lcom/android/settings/sim/SimSettings$SimPreference$SelectColorAdapter$ViewHolder;-><init>(Lcom/android/settings/sim/SimSettings$SimPreference$SelectColorAdapter;)V
 
     return-void

@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 77
     iput-object p1, p0, Lcom/android/settings/notification/NotificationStation$1;->this$0:Lcom/android/settings/notification/NotificationStation;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,12 +39,10 @@
     .locals 1
 
     .prologue
-    .line 80
     iget-object v0, p0, Lcom/android/settings/notification/NotificationStation$1;->this$0:Lcom/android/settings/notification/NotificationStation;
 
     # invokes: Lcom/android/settings/notification/NotificationStation;->refreshList()V
     invoke-static {v0}, Lcom/android/settings/notification/NotificationStation;->access$000(Lcom/android/settings/notification/NotificationStation;)V
 
-    .line 81
     return-void
 .end method

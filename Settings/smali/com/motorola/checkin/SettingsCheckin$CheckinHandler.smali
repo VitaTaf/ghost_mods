@@ -24,13 +24,10 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 396
     iput-object p1, p0, Lcom/motorola/checkin/SettingsCheckin$CheckinHandler;->this$0:Lcom/motorola/checkin/SettingsCheckin;
 
-    .line 397
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 398
     return-void
 .end method
 
@@ -41,7 +38,6 @@
     .param p3, "x2"    # Lcom/motorola/checkin/SettingsCheckin$1;
 
     .prologue
-    .line 391
     invoke-direct {p0, p1, p2}, Lcom/motorola/checkin/SettingsCheckin$CheckinHandler;-><init>(Lcom/motorola/checkin/SettingsCheckin;Landroid/os/Looper;)V
 
     return-void
@@ -54,7 +50,6 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 402
     :try_start_0
     iget-object v1, p0, Lcom/motorola/checkin/SettingsCheckin$CheckinHandler;->this$0:Lcom/motorola/checkin/SettingsCheckin;
 
@@ -67,15 +62,12 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 409
     :goto_0
     return-void
 
-    .line 403
     :catch_0
     move-exception v0
 
-    .line 406
     .local v0, "t":Ljava/lang/Throwable;
     const-string v1, "SettingsCheckin"
 
@@ -99,7 +91,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 407
     invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0

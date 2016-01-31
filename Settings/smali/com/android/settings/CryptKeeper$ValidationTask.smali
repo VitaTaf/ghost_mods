@@ -36,7 +36,6 @@
     .locals 0
 
     .prologue
-    .line 294
     iput-object p1, p0, Lcom/android/settings/CryptKeeper$ValidationTask;->this$0:Lcom/android/settings/CryptKeeper;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -50,7 +49,6 @@
     .param p2, "x1"    # Lcom/android/settings/CryptKeeper$1;
 
     .prologue
-    .line 294
     invoke-direct {p0, p1}, Lcom/android/settings/CryptKeeper$ValidationTask;-><init>(Lcom/android/settings/CryptKeeper;)V
 
     return-void
@@ -65,7 +63,6 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 299
     iget-object v2, p0, Lcom/android/settings/CryptKeeper$ValidationTask;->this$0:Lcom/android/settings/CryptKeeper;
 
     # invokes: Lcom/android/settings/CryptKeeper;->getMountService()Landroid/os/storage/IMountService;
@@ -73,7 +70,6 @@
 
     move-result-object v1
 
-    .line 301
     .local v1, "service":Landroid/os/storage/IMountService;
     :try_start_0
     const-string v2, "CryptKeeper"
@@ -82,37 +78,31 @@
 
     invoke-static {v2, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 302
     invoke-interface {v1}, Landroid/os/storage/IMountService;->getEncryptionState()I
 
     move-result v2
 
     iput v2, p0, Lcom/android/settings/CryptKeeper$ValidationTask;->state:I
 
-    .line 303
     iget v2, p0, Lcom/android/settings/CryptKeeper$ValidationTask;->state:I
 
     if-ne v2, v3, :cond_0
 
-    .line 304
     const-string v2, "CryptKeeper"
 
     const-string v4, "Unexpectedly in CryptKeeper even though there is no encryption."
 
     invoke-static {v2, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 305
     const/4 v2, 0x1
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v2
 
-    .line 310
     :goto_0
     return-object v2
 
-    .line 307
     :cond_0
     iget v2, p0, Lcom/android/settings/CryptKeeper$ValidationTask;->state:I
 
@@ -134,11 +124,9 @@
 
     goto :goto_1
 
-    .line 308
     :catch_0
     move-exception v0
 
-    .line 309
     .local v0, "e":Landroid/os/RemoteException;
     const-string v2, "CryptKeeper"
 
@@ -146,7 +134,6 @@
 
     invoke-static {v2, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 310
     invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v2
@@ -159,7 +146,6 @@
     .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
-    .line 294
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1    # "x0":[Ljava/lang/Object;
@@ -177,13 +163,11 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 316
     iget-object v1, p0, Lcom/android/settings/CryptKeeper$ValidationTask;->this$0:Lcom/android/settings/CryptKeeper;
 
     # setter for: Lcom/android/settings/CryptKeeper;->mValidationComplete:Z
     invoke-static {v1, v0}, Lcom/android/settings/CryptKeeper;->access$602(Lcom/android/settings/CryptKeeper;Z)Z
 
-    .line 317
     sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     invoke-virtual {v1, p1}, Ljava/lang/Boolean;->equals(Ljava/lang/Object;)Z
@@ -192,20 +176,17 @@
 
     if-eqz v1, :cond_1
 
-    .line 318
     const-string v1, "CryptKeeper"
 
     const-string v2, "Incomplete, or corrupted encryption detected. Prompting user to wipe."
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 319
     iget-object v1, p0, Lcom/android/settings/CryptKeeper$ValidationTask;->this$0:Lcom/android/settings/CryptKeeper;
 
     # setter for: Lcom/android/settings/CryptKeeper;->mEncryptionGoneBad:Z
     invoke-static {v1, v0}, Lcom/android/settings/CryptKeeper;->access$702(Lcom/android/settings/CryptKeeper;Z)Z
 
-    .line 320
     iget-object v1, p0, Lcom/android/settings/CryptKeeper$ValidationTask;->this$0:Lcom/android/settings/CryptKeeper;
 
     iget v2, p0, Lcom/android/settings/CryptKeeper$ValidationTask;->state:I
@@ -218,23 +199,19 @@
     # setter for: Lcom/android/settings/CryptKeeper;->mCorrupt:Z
     invoke-static {v1, v0}, Lcom/android/settings/CryptKeeper;->access$802(Lcom/android/settings/CryptKeeper;Z)Z
 
-    .line 324
     :goto_1
     iget-object v0, p0, Lcom/android/settings/CryptKeeper$ValidationTask;->this$0:Lcom/android/settings/CryptKeeper;
 
     # invokes: Lcom/android/settings/CryptKeeper;->setupUi()V
     invoke-static {v0}, Lcom/android/settings/CryptKeeper;->access$900(Lcom/android/settings/CryptKeeper;)V
 
-    .line 325
     return-void
 
-    .line 320
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 322
     :cond_1
     const-string v0, "CryptKeeper"
 
@@ -250,7 +227,6 @@
     .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
-    .line 294
     check-cast p1, Ljava/lang/Boolean;
 
     .end local p1    # "x0":Ljava/lang/Object;

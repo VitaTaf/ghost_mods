@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 433
     iput-object p1, p0, Lcom/android/settings/notification/NotificationAppList$2;->this$0:Lcom/android/settings/notification/NotificationAppList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 22
 
     .prologue
-    .line 436
     move-object/from16 v0, p0
 
     iget-object v15, v0, Lcom/android/settings/notification/NotificationAppList$2;->this$0:Lcom/android/settings/notification/NotificationAppList;
@@ -52,13 +50,11 @@
 
     monitor-enter v18
 
-    .line 437
     :try_start_0
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v16
 
-    .line 438
     .local v16, "start":J
     # getter for: Lcom/android/settings/notification/NotificationAppList;->DEBUG:Z
     invoke-static {}, Lcom/android/settings/notification/NotificationAppList;->access$600()Z
@@ -75,7 +71,6 @@
 
     invoke-static {v15, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 439
     :cond_0
     move-object/from16 v0, p0
 
@@ -88,7 +83,6 @@
 
     invoke-virtual {v15}, Landroid/util/ArrayMap;->clear()V
 
-    .line 440
     move-object/from16 v0, p0
 
     iget-object v15, v0, Lcom/android/settings/notification/NotificationAppList$2;->this$0:Lcom/android/settings/notification/NotificationAppList;
@@ -100,12 +94,10 @@
 
     invoke-virtual {v15}, Ljava/util/ArrayList;->clear()V
 
-    .line 443
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 445
     .local v2, "appInfos":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ApplicationInfo;>;"
     move-object/from16 v0, p0
 
@@ -130,7 +122,6 @@
 
     move-result-object v9
 
-    .line 448
     .local v9, "lais":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/LauncherActivityInfo;>;"
     # getter for: Lcom/android/settings/notification/NotificationAppList;->DEBUG:Z
     invoke-static {}, Lcom/android/settings/notification/NotificationAppList;->access$600()Z
@@ -147,7 +138,6 @@
 
     invoke-static {v15, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 449
     :cond_1
     invoke-interface {v9}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -167,7 +157,6 @@
 
     check-cast v8, Landroid/content/pm/LauncherActivityInfo;
 
-    .line 450
     .local v8, "lai":Landroid/content/pm/LauncherActivityInfo;
     # getter for: Lcom/android/settings/notification/NotificationAppList;->DEBUG:Z
     invoke-static {}, Lcom/android/settings/notification/NotificationAppList;->access$600()Z
@@ -208,7 +197,6 @@
 
     invoke-static {v15, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 451
     :cond_2
     invoke-virtual {v8}, Landroid/content/pm/LauncherActivityInfo;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
@@ -218,7 +206,6 @@
 
     goto :goto_0
 
-    .line 493
     .end local v2    # "appInfos":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ApplicationInfo;>;"
     .end local v3    # "i$":Ljava/util/Iterator;
     .end local v8    # "lai":Landroid/content/pm/LauncherActivityInfo;
@@ -233,7 +220,6 @@
 
     throw v15
 
-    .line 454
     .restart local v2    # "appInfos":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ApplicationInfo;>;"
     .restart local v3    # "i$":Ljava/util/Iterator;
     .restart local v9    # "lais":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/LauncherActivityInfo;>;"
@@ -253,7 +239,6 @@
 
     move-result-object v11
 
-    .line 456
     .local v11, "resolvedConfigActivities":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     # getter for: Lcom/android/settings/notification/NotificationAppList;->DEBUG:Z
     invoke-static {}, Lcom/android/settings/notification/NotificationAppList;->access$600()Z
@@ -270,7 +255,6 @@
 
     invoke-static {v15, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 457
     :cond_4
     invoke-interface {v11}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -289,7 +273,6 @@
 
     check-cast v12, Landroid/content/pm/ResolveInfo;
 
-    .line 458
     .local v12, "ri":Landroid/content/pm/ResolveInfo;
     # getter for: Lcom/android/settings/notification/NotificationAppList;->DEBUG:Z
     invoke-static {}, Lcom/android/settings/notification/NotificationAppList;->access$600()Z
@@ -352,7 +335,6 @@
 
     invoke-static {v15, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 460
     :cond_5
     iget-object v15, v12, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
@@ -362,7 +344,6 @@
 
     goto :goto_1
 
-    .line 463
     .end local v12    # "ri":Landroid/content/pm/ResolveInfo;
     :cond_6
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -383,11 +364,9 @@
 
     check-cast v6, Landroid/content/pm/ApplicationInfo;
 
-    .line 464
     .local v6, "info":Landroid/content/pm/ApplicationInfo;
     iget-object v7, v6, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
-    .line 465
     .local v7, "key":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -404,7 +383,6 @@
 
     if-nez v15, :cond_7
 
-    .line 470
     move-object/from16 v0, p0
 
     iget-object v15, v0, Lcom/android/settings/notification/NotificationAppList$2;->this$0:Lcom/android/settings/notification/NotificationAppList;
@@ -431,7 +409,6 @@
 
     move-result-object v13
 
-    .line 471
     .local v13, "row":Lcom/android/settings/notification/NotificationAppList$AppRow;
     move-object/from16 v0, p0
 
@@ -446,7 +423,6 @@
 
     goto :goto_2
 
-    .line 475
     .end local v6    # "info":Landroid/content/pm/ApplicationInfo;
     .end local v7    # "key":Ljava/lang/String;
     .end local v13    # "row":Lcom/android/settings/notification/NotificationAppList$AppRow;
@@ -475,7 +451,6 @@
 
     invoke-static {v15, v0, v11}, Lcom/android/settings/notification/NotificationAppList;->applyConfigActivities(Landroid/content/pm/PackageManager;Landroid/util/ArrayMap;Ljava/util/List;)V
 
-    .line 478
     move-object/from16 v0, p0
 
     iget-object v15, v0, Lcom/android/settings/notification/NotificationAppList$2;->this$0:Lcom/android/settings/notification/NotificationAppList;
@@ -504,7 +479,6 @@
 
     invoke-virtual {v15, v0}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 479
     move-object/from16 v0, p0
 
     iget-object v15, v0, Lcom/android/settings/notification/NotificationAppList$2;->this$0:Lcom/android/settings/notification/NotificationAppList;
@@ -523,7 +497,6 @@
 
     invoke-static {v15, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 481
     move-object/from16 v0, p0
 
     iget-object v15, v0, Lcom/android/settings/notification/NotificationAppList$2;->this$0:Lcom/android/settings/notification/NotificationAppList;
@@ -535,10 +508,8 @@
 
     invoke-virtual {v15}, Ljava/util/ArrayList;->clear()V
 
-    .line 482
     const/4 v14, 0x0
 
-    .line 483
     .local v14, "section":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -567,7 +538,6 @@
 
     check-cast v10, Lcom/android/settings/notification/NotificationAppList$AppRow;
 
-    .line 484
     .local v10, "r":Lcom/android/settings/notification/NotificationAppList$AppRow;
     move-object/from16 v0, p0
 
@@ -586,7 +556,6 @@
 
     iput-object v15, v10, Lcom/android/settings/notification/NotificationAppList$AppRow;->section:Ljava/lang/String;
 
-    .line 485
     iget-object v15, v10, Lcom/android/settings/notification/NotificationAppList$AppRow;->section:Ljava/lang/String;
 
     invoke-virtual {v15, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -595,10 +564,8 @@
 
     if-nez v15, :cond_9
 
-    .line 486
     iget-object v14, v10, Lcom/android/settings/notification/NotificationAppList$AppRow;->section:Ljava/lang/String;
 
-    .line 487
     move-object/from16 v0, p0
 
     iget-object v15, v0, Lcom/android/settings/notification/NotificationAppList$2;->this$0:Lcom/android/settings/notification/NotificationAppList;
@@ -612,7 +579,6 @@
 
     goto :goto_3
 
-    .line 490
     .end local v10    # "r":Lcom/android/settings/notification/NotificationAppList$AppRow;
     :cond_a
     move-object/from16 v0, p0
@@ -639,14 +605,12 @@
 
     invoke-virtual {v15, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 491
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v20
 
     sub-long v4, v20, v16
 
-    .line 492
     .local v4, "elapsed":J
     # getter for: Lcom/android/settings/notification/NotificationAppList;->DEBUG:Z
     invoke-static {}, Lcom/android/settings/notification/NotificationAppList;->access$600()Z
@@ -712,12 +676,10 @@
 
     invoke-static {v15, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 493
     :cond_b
     monitor-exit v18
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 494
     return-void
 .end method

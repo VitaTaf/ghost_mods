@@ -32,7 +32,6 @@
     .locals 0
 
     .prologue
-    .line 196
     iput-object p1, p0, Lcom/android/settings/sim/SimDialogActivity$4;->this$0:Lcom/android/settings/sim/SimDialogActivity;
 
     iput p2, p0, Lcom/android/settings/sim/SimDialogActivity$4;->val$id:I
@@ -56,12 +55,10 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 202
     iget v3, p0, Lcom/android/settings/sim/SimDialogActivity$4;->val$id:I
 
     packed-switch v3, :pswitch_data_0
 
-    .line 227
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -94,7 +91,6 @@
 
     throw v3
 
-    .line 204
     :pswitch_0
     iget-object v3, p0, Lcom/android/settings/sim/SimDialogActivity$4;->val$subInfoList:Ljava/util/List;
 
@@ -104,7 +100,6 @@
 
     check-cast v1, Landroid/telephony/SubscriptionInfo;
 
-    .line 205
     .local v1, "sir":Landroid/telephony/SubscriptionInfo;
     iget-object v3, p0, Lcom/android/settings/sim/SimDialogActivity$4;->val$context:Landroid/content/Context;
 
@@ -115,17 +110,14 @@
     # invokes: Lcom/android/settings/sim/SimDialogActivity;->setDefaultDataSubId(Landroid/content/Context;I)V
     invoke-static {v3, v4}, Lcom/android/settings/sim/SimDialogActivity;->access$100(Landroid/content/Context;I)V
 
-    .line 231
     .end local v1    # "sir":Landroid/telephony/SubscriptionInfo;
     :goto_0
     iget-object v3, p0, Lcom/android/settings/sim/SimDialogActivity$4;->this$0:Lcom/android/settings/sim/SimDialogActivity;
 
     invoke-virtual {v3}, Lcom/android/settings/sim/SimDialogActivity;->finish()V
 
-    .line 232
     return-void
 
-    .line 208
     :pswitch_1
     iget-object v3, p0, Lcom/android/settings/sim/SimDialogActivity$4;->val$context:Landroid/content/Context;
 
@@ -133,13 +125,11 @@
 
     move-result-object v2
 
-    .line 210
     .local v2, "telecomManager":Landroid/telecom/TelecomManager;
     invoke-virtual {v2}, Landroid/telecom/TelecomManager;->getCallCapablePhoneAccounts()Ljava/util/List;
 
     move-result-object v0
 
-    .line 212
     .local v0, "phoneAccountsList":Ljava/util/List;, "Ljava/util/List<Landroid/telecom/PhoneAccountHandle;>;"
     iget-object v4, p0, Lcom/android/settings/sim/SimDialogActivity$4;->this$0:Lcom/android/settings/sim/SimDialogActivity;
 
@@ -164,7 +154,6 @@
 
     goto :goto_1
 
-    .line 216
     .end local v0    # "phoneAccountsList":Ljava/util/List;, "Ljava/util/List<Landroid/telecom/PhoneAccountHandle;>;"
     .end local v2    # "telecomManager":Landroid/telecom/TelecomManager;
     :pswitch_2
@@ -176,16 +165,13 @@
 
     check-cast v1, Landroid/telephony/SubscriptionInfo;
 
-    .line 218
     .restart local v1    # "sir":Landroid/telephony/SubscriptionInfo;
     if-eqz v1, :cond_1
 
-    .line 219
     const/4 v3, 0x0
 
     invoke-static {v3}, Landroid/telephony/SubscriptionManager;->setSMSPromptEnabled(Z)V
 
-    .line 220
     iget-object v3, p0, Lcom/android/settings/sim/SimDialogActivity$4;->val$context:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/telephony/SubscriptionInfo;->getSubscriptionId()I
@@ -197,13 +183,11 @@
 
     goto :goto_0
 
-    .line 222
     :cond_1
     invoke-static {v5}, Landroid/telephony/SubscriptionManager;->setSMSPromptEnabled(Z)V
 
     goto :goto_0
 
-    .line 202
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

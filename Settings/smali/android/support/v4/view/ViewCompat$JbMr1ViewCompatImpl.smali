@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 1082
     invoke-direct {p0}, Landroid/support/v4/view/ViewCompat$JBViewCompatImpl;-><init>()V
 
     return-void
@@ -32,7 +31,6 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 1101
     invoke-static {p1}, Landroid/support/v4/view/ViewCompatJellybeanMr1;->getLayoutDirection(Landroid/view/View;)I
 
     move-result v0
@@ -46,9 +44,7 @@
     .param p2, "paint"    # Landroid/graphics/Paint;
 
     .prologue
-    .line 1096
     invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompatJellybeanMr1;->setLayerPaint(Landroid/view/View;Landroid/graphics/Paint;)V
 
-    .line 1097
     return-void
 .end method

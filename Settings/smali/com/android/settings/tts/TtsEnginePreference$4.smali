@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 223
     iput-object p1, p0, Lcom/android/settings/tts/TtsEnginePreference$4;->this$0:Lcom/android/settings/tts/TtsEnginePreference;
 
     iput-object p2, p0, Lcom/android/settings/tts/TtsEnginePreference$4;->val$buttonView:Landroid/widget/CompoundButton;
@@ -46,7 +45,6 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 226
     iget-object v0, p0, Lcom/android/settings/tts/TtsEnginePreference$4;->this$0:Lcom/android/settings/tts/TtsEnginePreference;
 
     iget-object v1, p0, Lcom/android/settings/tts/TtsEnginePreference$4;->val$buttonView:Landroid/widget/CompoundButton;
@@ -54,6 +52,5 @@
     # invokes: Lcom/android/settings/tts/TtsEnginePreference;->makeCurrentEngine(Landroid/widget/Checkable;)V
     invoke-static {v0, v1}, Lcom/android/settings/tts/TtsEnginePreference;->access$400(Lcom/android/settings/tts/TtsEnginePreference;Landroid/widget/Checkable;)V
 
-    .line 227
     return-void
 .end method

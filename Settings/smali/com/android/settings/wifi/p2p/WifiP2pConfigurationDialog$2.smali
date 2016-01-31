@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 136
     iput-object p1, p0, Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog$2;->this$0:Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,12 +43,10 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 139
     const/4 v2, -0x1
 
     if-ne p2, v2, :cond_2
 
-    .line 140
     iget-object v2, p0, Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog$2;->this$0:Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog;
 
     # getter for: Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog;->mWifiP2pManager:Landroid/net/wifi/p2p/WifiP2pManager;
@@ -59,7 +56,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 141
     iget-object v2, p0, Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog$2;->this$0:Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog;
 
     # getter for: Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog;->mDeviceConfig:Landroid/net/wifi/p2p/WifiP2pDeviceConfig;
@@ -83,7 +79,6 @@
     :goto_0
     iput v1, v2, Landroid/net/wifi/p2p/WifiP2pDeviceConfig;->p2pAutoConnect:I
 
-    .line 143
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog$2;->this$0:Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog;
 
     # getter for: Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog;->mDeviceConfig:Landroid/net/wifi/p2p/WifiP2pDeviceConfig;
@@ -125,7 +120,6 @@
 
     iput v2, v1, Landroid/net/wifi/p2p/WifiP2pDeviceConfig;->deviceBand:I
 
-    .line 146
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -204,7 +198,6 @@
 
     move-result-object v0
 
-    .line 150
     .local v0, "deviceConfig":Ljava/lang/String;
     # getter for: Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog;->mContext:Landroid/content/Context;
     invoke-static {}, Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog;->access$300()Landroid/content/Context;
@@ -219,7 +212,6 @@
 
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$Secure;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 153
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog$2;->this$0:Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog;
 
     # getter for: Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog;->mDeviceConfig:Landroid/net/wifi/p2p/WifiP2pDeviceConfig;
@@ -244,7 +236,6 @@
 
     iput-object v2, v1, Landroid/net/wifi/p2p/WifiP2pDeviceConfig;->deviceName:Ljava/lang/String;
 
-    .line 154
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog$2;->this$0:Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog;
 
     # getter for: Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog;->mWifiP2pManager:Landroid/net/wifi/p2p/WifiP2pManager;
@@ -274,7 +265,6 @@
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/net/wifi/p2p/WifiP2pManager;->setDeviceName(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Ljava/lang/String;Landroid/net/wifi/p2p/WifiP2pManager$ActionListener;)V
 
-    .line 163
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog$2;->this$0:Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog;
 
     # getter for: Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog;->mWifiP2pManager:Landroid/net/wifi/p2p/WifiP2pManager;
@@ -293,19 +283,16 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/net/wifi/p2p/WifiP2pManager;->setP2pConfigureDevice(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$ActionListener;)V
 
-    .line 169
     .end local v0    # "deviceConfig":Ljava/lang/String;
     :cond_0
     :goto_1
     return-void
 
-    .line 141
     :cond_1
     const/4 v1, 0x0
 
     goto/16 :goto_0
 
-    .line 166
     :cond_2
     # getter for: Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog;->mContext:Landroid/content/Context;
     invoke-static {}, Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog;->access$300()Landroid/content/Context;

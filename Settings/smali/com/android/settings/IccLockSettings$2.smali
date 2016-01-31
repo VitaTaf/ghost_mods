@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 170
     iput-object p1, p0, Lcom/android/settings/IccLockSettings$2;->this$0:Lcom/android/settings/IccLockSettings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 172
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 173
     .local v0, "action":Ljava/lang/String;
     const-string v1, "android.intent.action.SIM_STATE_CHANGED"
 
@@ -54,7 +51,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 174
     iget-object v1, p0, Lcom/android/settings/IccLockSettings$2;->this$0:Lcom/android/settings/IccLockSettings;
 
     # getter for: Lcom/android/settings/IccLockSettings;->mHandler:Landroid/os/Handler;
@@ -77,7 +73,6 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 176
     :cond_0
     return-void
 .end method

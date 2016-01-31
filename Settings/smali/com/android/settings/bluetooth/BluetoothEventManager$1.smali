@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 141
     iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$1;->this$0:Lcom/android/settings/bluetooth/BluetoothEventManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 144
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 145
     .local v0, "action":Ljava/lang/String;
     const-string v3, "android.bluetooth.device.extra.DEVICE"
 
@@ -54,7 +51,6 @@
 
     check-cast v1, Landroid/bluetooth/BluetoothDevice;
 
-    .line 148
     .local v1, "device":Landroid/bluetooth/BluetoothDevice;
     iget-object v3, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$1;->this$0:Lcom/android/settings/bluetooth/BluetoothEventManager;
 
@@ -69,14 +65,11 @@
 
     check-cast v2, Lcom/android/settings/bluetooth/BluetoothEventManager$Handler;
 
-    .line 149
     .local v2, "handler":Lcom/android/settings/bluetooth/BluetoothEventManager$Handler;
     if-eqz v2, :cond_0
 
-    .line 150
     invoke-interface {v2, p1, p2, v1}, Lcom/android/settings/bluetooth/BluetoothEventManager$Handler;->onReceive(Landroid/content/Context;Landroid/content/Intent;Landroid/bluetooth/BluetoothDevice;)V
 
-    .line 152
     :cond_0
     return-void
 .end method

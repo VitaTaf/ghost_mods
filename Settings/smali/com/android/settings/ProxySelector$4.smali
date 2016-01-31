@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 269
     iput-object p1, p0, Lcom/android/settings/ProxySelector$4;->this$0:Lcom/android/settings/ProxySelector;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,15 +41,12 @@
     .param p2, "hasFocus"    # Z
 
     .prologue
-    .line 271
     if-eqz p2, :cond_0
 
     move-object v0, p1
 
-    .line 272
     check-cast v0, Landroid/widget/TextView;
 
-    .line 273
     .local v0, "textView":Landroid/widget/TextView;
     invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -60,7 +56,6 @@
 
     invoke-static {v1}, Landroid/text/Selection;->selectAll(Landroid/text/Spannable;)V
 
-    .line 275
     .end local v0    # "textView":Landroid/widget/TextView;
     :cond_0
     return-void

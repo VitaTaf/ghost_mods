@@ -34,7 +34,6 @@
     .locals 0
 
     .prologue
-    .line 176
     iput-object p1, p0, Lcom/android/settings/CryptKeeper$DecryptTask;->this$0:Lcom/android/settings/CryptKeeper;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -48,7 +47,6 @@
     .param p2, "x1"    # Lcom/android/settings/CryptKeeper$1;
 
     .prologue
-    .line 176
     invoke-direct {p0, p1}, Lcom/android/settings/CryptKeeper$DecryptTask;-><init>(Lcom/android/settings/CryptKeeper;)V
 
     return-void
@@ -59,23 +57,19 @@
     .param p1, "id"    # I
 
     .prologue
-    .line 178
     iget-object v1, p0, Lcom/android/settings/CryptKeeper$DecryptTask;->this$0:Lcom/android/settings/CryptKeeper;
 
     invoke-virtual {v1, p1}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 179
     .local v0, "view":Landroid/view/View;
     if-eqz v0, :cond_0
 
-    .line 180
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 182
     :cond_0
     return-void
 .end method
@@ -87,7 +81,6 @@
     .param p1, "params"    # [Ljava/lang/String;
 
     .prologue
-    .line 192
     iget-object v2, p0, Lcom/android/settings/CryptKeeper$DecryptTask;->this$0:Lcom/android/settings/CryptKeeper;
 
     # invokes: Lcom/android/settings/CryptKeeper;->getMountService()Landroid/os/storage/IMountService;
@@ -95,7 +88,6 @@
 
     move-result-object v1
 
-    .line 194
     .local v1, "service":Landroid/os/storage/IMountService;
     const/4 v2, 0x0
 
@@ -112,15 +104,12 @@
 
     move-result-object v2
 
-    .line 197
     :goto_0
     return-object v2
 
-    .line 195
     :catch_0
     move-exception v0
 
-    .line 196
     .local v0, "e":Ljava/lang/Exception;
     const-string v2, "CryptKeeper"
 
@@ -128,7 +117,6 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 197
     const/4 v2, -0x1
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -143,7 +131,6 @@
     .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
-    .line 176
     check-cast p1, [Ljava/lang/String;
 
     .end local p1    # "x0":[Ljava/lang/Object;
@@ -159,14 +146,12 @@
     .param p1, "failedAttempts"    # Ljava/lang/Integer;
 
     .prologue
-    .line 203
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
 
     if-nez v2, :cond_1
 
-    .line 206
     iget-object v2, p0, Lcom/android/settings/CryptKeeper$DecryptTask;->this$0:Lcom/android/settings/CryptKeeper;
 
     # getter for: Lcom/android/settings/CryptKeeper;->mLockPatternView:Lcom/android/internal/widget/LockPatternView;
@@ -176,7 +161,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 207
     iget-object v2, p0, Lcom/android/settings/CryptKeeper$DecryptTask;->this$0:Lcom/android/settings/CryptKeeper;
 
     # getter for: Lcom/android/settings/CryptKeeper;->mLockPatternView:Lcom/android/internal/widget/LockPatternView;
@@ -193,7 +177,6 @@
 
     invoke-virtual {v2, v3}, Lcom/android/internal/widget/LockPatternView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 208
     iget-object v2, p0, Lcom/android/settings/CryptKeeper$DecryptTask;->this$0:Lcom/android/settings/CryptKeeper;
 
     # getter for: Lcom/android/settings/CryptKeeper;->mLockPatternView:Lcom/android/internal/widget/LockPatternView;
@@ -212,7 +195,6 @@
 
     invoke-virtual {v2, v3, v4, v5}, Lcom/android/internal/widget/LockPatternView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 210
     :cond_0
     iget-object v2, p0, Lcom/android/settings/CryptKeeper$DecryptTask;->this$0:Lcom/android/settings/CryptKeeper;
 
@@ -224,43 +206,35 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 211
     .local v1, "status":Landroid/widget/TextView;
     const v2, 0x7f09081a
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
-    .line 212
     const v2, 0x7f0f0053
 
     invoke-direct {p0, v2}, Lcom/android/settings/CryptKeeper$DecryptTask;->hide(I)V
 
-    .line 213
     const v2, 0x7f0f0054
 
     invoke-direct {p0, v2}, Lcom/android/settings/CryptKeeper$DecryptTask;->hide(I)V
 
-    .line 214
     const v2, 0x7f0f0040
 
     invoke-direct {p0, v2}, Lcom/android/settings/CryptKeeper$DecryptTask;->hide(I)V
 
-    .line 215
     const v2, 0x7f0f005d
 
     invoke-direct {p0, v2}, Lcom/android/settings/CryptKeeper$DecryptTask;->hide(I)V
 
-    .line 216
     const v2, 0x7f0f0052
 
     invoke-direct {p0, v2}, Lcom/android/settings/CryptKeeper$DecryptTask;->hide(I)V
 
-    .line 231
     .end local v1    # "status":Landroid/widget/TextView;
     :goto_0
     return-void
 
-    .line 217
     :cond_1
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
@@ -270,34 +244,29 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 219
     new-instance v0, Landroid/content/Intent;
 
     const-string v2, "android.intent.action.MASTER_CLEAR"
 
     invoke-direct {v0, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 220
     .local v0, "intent":Landroid/content/Intent;
     const/high16 v2, 0x10000000
 
     invoke-virtual {v0, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 221
     const-string v2, "android.intent.extra.REASON"
 
     const-string v3, "CryptKeeper.MAX_FAILED_ATTEMPTS"
 
     invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 222
     iget-object v2, p0, Lcom/android/settings/CryptKeeper$DecryptTask;->this$0:Lcom/android/settings/CryptKeeper;
 
     invoke-virtual {v2, v0}, Lcom/android/settings/CryptKeeper;->sendBroadcast(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 223
     .end local v0    # "intent":Landroid/content/Intent;
     :cond_2
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
@@ -308,14 +277,12 @@
 
     if-ne v2, v3, :cond_3
 
-    .line 225
     iget-object v2, p0, Lcom/android/settings/CryptKeeper$DecryptTask;->this$0:Lcom/android/settings/CryptKeeper;
 
     const v3, 0x7f04002d
 
     invoke-virtual {v2, v3}, Lcom/android/settings/CryptKeeper;->setContentView(I)V
 
-    .line 226
     iget-object v2, p0, Lcom/android/settings/CryptKeeper$DecryptTask;->this$0:Lcom/android/settings/CryptKeeper;
 
     const/4 v3, 0x1
@@ -325,7 +292,6 @@
 
     goto :goto_0
 
-    .line 229
     :cond_3
     iget-object v2, p0, Lcom/android/settings/CryptKeeper$DecryptTask;->this$0:Lcom/android/settings/CryptKeeper;
 
@@ -340,7 +306,6 @@
     .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
-    .line 176
     check-cast p1, Ljava/lang/Integer;
 
     .end local p1    # "x0":Ljava/lang/Object;
@@ -353,15 +318,12 @@
     .locals 1
 
     .prologue
-    .line 186
     invoke-super {p0}, Landroid/os/AsyncTask;->onPreExecute()V
 
-    .line 187
     iget-object v0, p0, Lcom/android/settings/CryptKeeper$DecryptTask;->this$0:Lcom/android/settings/CryptKeeper;
 
     # invokes: Lcom/android/settings/CryptKeeper;->beginAttempt()V
     invoke-static {v0}, Lcom/android/settings/CryptKeeper;->access$200(Lcom/android/settings/CryptKeeper;)V
 
-    .line 188
     return-void
 .end method

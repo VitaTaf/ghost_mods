@@ -36,13 +36,11 @@
     .locals 1
 
     .prologue
-    .line 160
     .local p0, "this":Lcom/android/settings/AppWidgetLoader$1;, "Lcom/android/settings/AppWidgetLoader.1;"
     iput-object p1, p0, Lcom/android/settings/AppWidgetLoader$1;->this$0:Lcom/android/settings/AppWidgetLoader;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 161
     invoke-static {}, Ljava/text/Collator;->getInstance()Ljava/text/Collator;
 
     move-result-object v0
@@ -63,7 +61,6 @@
     .end annotation
 
     .prologue
-    .line 164
     .local p0, "this":Lcom/android/settings/AppWidgetLoader$1;, "Lcom/android/settings/AppWidgetLoader.1;"
     .local p1, "lhs":Lcom/android/settings/AppWidgetLoader$LabelledItem;, "TItem;"
     .local p2, "rhs":Lcom/android/settings/AppWidgetLoader$LabelledItem;, "TItem;"
@@ -90,7 +87,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 160
     .local p0, "this":Lcom/android/settings/AppWidgetLoader$1;, "Lcom/android/settings/AppWidgetLoader.1;"
     check-cast p1, Lcom/android/settings/AppWidgetLoader$LabelledItem;
 

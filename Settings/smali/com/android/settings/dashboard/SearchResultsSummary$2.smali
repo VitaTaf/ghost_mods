@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 221
     iput-object p1, p0, Lcom/android/settings/dashboard/SearchResultsSummary$2;->this$0:Lcom/android/settings/dashboard/SearchResultsSummary;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,17 +54,13 @@
     .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     const/4 v3, 0x0
 
-    .line 225
     add-int/lit8 p3, p3, -0x1
 
-    .line 228
     if-gez p3, :cond_0
 
-    .line 237
     :goto_0
     return-void
 
-    .line 231
     :cond_0
     iget-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary$2;->this$0:Lcom/android/settings/dashboard/SearchResultsSummary;
 
@@ -79,11 +74,9 @@
 
     move-result-object v0
 
-    .line 232
     .local v0, "cursor":Landroid/database/Cursor;
     invoke-interface {v0, p3}, Landroid/database/Cursor;->moveToPosition(I)Z
 
-    .line 234
     iget-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary$2;->this$0:Lcom/android/settings/dashboard/SearchResultsSummary;
 
     const/4 v2, 0x1
@@ -91,7 +84,6 @@
     # setter for: Lcom/android/settings/dashboard/SearchResultsSummary;->mShowResults:Z
     invoke-static {v1, v2}, Lcom/android/settings/dashboard/SearchResultsSummary;->access$902(Lcom/android/settings/dashboard/SearchResultsSummary;Z)Z
 
-    .line 235
     iget-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary$2;->this$0:Lcom/android/settings/dashboard/SearchResultsSummary;
 
     invoke-interface {v0, v3}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -101,7 +93,6 @@
     # setter for: Lcom/android/settings/dashboard/SearchResultsSummary;->mQuery:Ljava/lang/String;
     invoke-static {v1, v2}, Lcom/android/settings/dashboard/SearchResultsSummary;->access$1002(Lcom/android/settings/dashboard/SearchResultsSummary;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 236
     iget-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary$2;->this$0:Lcom/android/settings/dashboard/SearchResultsSummary;
 
     # getter for: Lcom/android/settings/dashboard/SearchResultsSummary;->mSearchView:Landroid/widget/SearchView;

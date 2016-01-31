@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 84
     iput-object p1, p0, Lcom/android/settings/wifi/WpsDialog$1WpsListener;->this$0:Lcom/android/settings/wifi/WpsDialog;
 
     invoke-direct {p0}, Landroid/net/wifi/WifiManager$WpsCallback;-><init>()V
@@ -38,10 +37,8 @@
     .param p1, "reason"    # I
 
     .prologue
-    .line 103
     packed-switch p1, :pswitch_data_0
 
-    .line 117
     :pswitch_0
     iget-object v1, p0, Lcom/android/settings/wifi/WpsDialog$1WpsListener;->this$0:Lcom/android/settings/wifi/WpsDialog;
 
@@ -56,7 +53,6 @@
 
     move-result-object v0
 
-    .line 120
     .local v0, "msg":Ljava/lang/String;
     :goto_0
     iget-object v1, p0, Lcom/android/settings/wifi/WpsDialog$1WpsListener;->this$0:Lcom/android/settings/wifi/WpsDialog;
@@ -66,10 +62,8 @@
     # invokes: Lcom/android/settings/wifi/WpsDialog;->updateDialog(Lcom/android/settings/wifi/WpsDialog$DialogState;Ljava/lang/String;)V
     invoke-static {v1, v2, v0}, Lcom/android/settings/wifi/WpsDialog;->access$100(Lcom/android/settings/wifi/WpsDialog;Lcom/android/settings/wifi/WpsDialog$DialogState;Ljava/lang/String;)V
 
-    .line 121
     return-void
 
-    .line 105
     .end local v0    # "msg":Ljava/lang/String;
     :pswitch_1
     iget-object v1, p0, Lcom/android/settings/wifi/WpsDialog$1WpsListener;->this$0:Lcom/android/settings/wifi/WpsDialog;
@@ -85,11 +79,9 @@
 
     move-result-object v0
 
-    .line 106
     .restart local v0    # "msg":Ljava/lang/String;
     goto :goto_0
 
-    .line 108
     .end local v0    # "msg":Ljava/lang/String;
     :pswitch_2
     iget-object v1, p0, Lcom/android/settings/wifi/WpsDialog$1WpsListener;->this$0:Lcom/android/settings/wifi/WpsDialog;
@@ -105,11 +97,9 @@
 
     move-result-object v0
 
-    .line 109
     .restart local v0    # "msg":Ljava/lang/String;
     goto :goto_0
 
-    .line 111
     .end local v0    # "msg":Ljava/lang/String;
     :pswitch_3
     iget-object v1, p0, Lcom/android/settings/wifi/WpsDialog$1WpsListener;->this$0:Lcom/android/settings/wifi/WpsDialog;
@@ -125,11 +115,9 @@
 
     move-result-object v0
 
-    .line 112
     .restart local v0    # "msg":Ljava/lang/String;
     goto :goto_0
 
-    .line 114
     .end local v0    # "msg":Ljava/lang/String;
     :pswitch_4
     iget-object v1, p0, Lcom/android/settings/wifi/WpsDialog$1WpsListener;->this$0:Lcom/android/settings/wifi/WpsDialog;
@@ -145,11 +133,9 @@
 
     move-result-object v0
 
-    .line 115
     .restart local v0    # "msg":Ljava/lang/String;
     goto :goto_0
 
-    .line 103
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_4
@@ -165,10 +151,8 @@
     .param p1, "pin"    # Ljava/lang/String;
 
     .prologue
-    .line 87
     if-eqz p1, :cond_0
 
-    .line 88
     iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog$1WpsListener;->this$0:Lcom/android/settings/wifi/WpsDialog;
 
     sget-object v1, Lcom/android/settings/wifi/WpsDialog$DialogState;->WPS_START:Lcom/android/settings/wifi/WpsDialog$DialogState;
@@ -201,11 +185,9 @@
     # invokes: Lcom/android/settings/wifi/WpsDialog;->updateDialog(Lcom/android/settings/wifi/WpsDialog$DialogState;Ljava/lang/String;)V
     invoke-static {v0, v1, v2}, Lcom/android/settings/wifi/WpsDialog;->access$100(Lcom/android/settings/wifi/WpsDialog;Lcom/android/settings/wifi/WpsDialog$DialogState;Ljava/lang/String;)V
 
-    .line 94
     :goto_0
     return-void
 
-    .line 91
     :cond_0
     iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog$1WpsListener;->this$0:Lcom/android/settings/wifi/WpsDialog;
 
@@ -234,7 +216,6 @@
     .locals 4
 
     .prologue
-    .line 97
     iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog$1WpsListener;->this$0:Lcom/android/settings/wifi/WpsDialog;
 
     sget-object v1, Lcom/android/settings/wifi/WpsDialog$DialogState;->WPS_COMPLETE:Lcom/android/settings/wifi/WpsDialog$DialogState;
@@ -255,6 +236,5 @@
     # invokes: Lcom/android/settings/wifi/WpsDialog;->updateDialog(Lcom/android/settings/wifi/WpsDialog$DialogState;Ljava/lang/String;)V
     invoke-static {v0, v1, v2}, Lcom/android/settings/wifi/WpsDialog;->access$100(Lcom/android/settings/wifi/WpsDialog;Lcom/android/settings/wifi/WpsDialog$DialogState;Ljava/lang/String;)V
 
-    .line 99
     return-void
 .end method

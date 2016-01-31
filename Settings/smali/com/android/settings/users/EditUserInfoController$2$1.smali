@@ -34,7 +34,6 @@
     .locals 0
 
     .prologue
-    .line 168
     iput-object p1, p0, Lcom/android/settings/users/EditUserInfoController$2$1;->this$1:Lcom/android/settings/users/EditUserInfoController$2;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -49,7 +48,6 @@
     .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
-    .line 168
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1    # "x0":[Ljava/lang/Object;
@@ -65,7 +63,6 @@
     .param p1, "params"    # [Ljava/lang/Void;
 
     .prologue
-    .line 171
     iget-object v0, p0, Lcom/android/settings/users/EditUserInfoController$2$1;->this$1:Lcom/android/settings/users/EditUserInfoController$2;
 
     iget-object v0, v0, Lcom/android/settings/users/EditUserInfoController$2;->this$0:Lcom/android/settings/users/EditUserInfoController;
@@ -103,7 +100,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/UserManager;->setUserIcon(ILandroid/graphics/Bitmap;)V
 
-    .line 173
     const/4 v0, 0x0
 
     return-object v0

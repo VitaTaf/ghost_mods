@@ -11,7 +11,6 @@
     .locals 0
 
     .prologue
-    .line 28
     invoke-direct {p0}, Lcom/android/settings/SettingsActivity;-><init>()V
 
     return-void
@@ -23,7 +22,6 @@
     .locals 3
 
     .prologue
-    .line 32
     new-instance v0, Landroid/content/Intent;
 
     invoke-super {p0}, Lcom/android/settings/SettingsActivity;->getIntent()Landroid/content/Intent;
@@ -32,7 +30,6 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
-    .line 33
     .local v0, "modIntent":Landroid/content/Intent;
     const-string v1, ":settings:show_fragment"
 
@@ -42,7 +39,6 @@
 
     if-nez v1, :cond_0
 
-    .line 34
     const-string v1, ":settings:show_fragment"
 
     invoke-virtual {p0}, Lcom/android/settings/wifi/WifiPickerActivity;->getWifiSettingsClass()Ljava/lang/Class;
@@ -55,14 +51,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 35
     const-string v1, ":settings:show_fragment_title_resid"
 
     const v2, 0x7f09029a
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 37
     :cond_0
     return-object v0
 .end method
@@ -80,7 +74,6 @@
     .end annotation
 
     .prologue
-    .line 50
     const-class v0, Lcom/android/settings/wifi/WifiSettings;
 
     return-object v0
@@ -91,7 +84,6 @@
     .param p1, "fragmentName"    # Ljava/lang/String;
 
     .prologue
-    .line 42
     const-class v0, Lcom/android/settings/wifi/WifiSettings;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -140,11 +132,9 @@
 
     if-eqz v0, :cond_1
 
-    .line 45
     :cond_0
     const/4 v0, 0x1
 
-    .line 46
     :goto_0
     return v0
 

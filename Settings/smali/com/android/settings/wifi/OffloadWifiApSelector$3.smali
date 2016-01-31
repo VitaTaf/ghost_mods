@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 135
     iput-object p1, p0, Lcom/android/settings/wifi/OffloadWifiApSelector$3;->this$0:Lcom/android/settings/wifi/OffloadWifiApSelector;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 137
     iget-object v0, p0, Lcom/android/settings/wifi/OffloadWifiApSelector$3;->this$0:Lcom/android/settings/wifi/OffloadWifiApSelector;
 
     invoke-virtual {v0}, Lcom/android/settings/wifi/OffloadWifiApSelector;->getContentResolver()Landroid/content/ContentResolver;
@@ -54,11 +52,9 @@
 
     invoke-static {v0, v1, v2}, Lcom/motorola/android/provider/MotorolaSettings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 138
     iget-object v0, p0, Lcom/android/settings/wifi/OffloadWifiApSelector$3;->this$0:Lcom/android/settings/wifi/OffloadWifiApSelector;
 
     invoke-virtual {v0}, Lcom/android/settings/wifi/OffloadWifiApSelector;->finish()V
 
-    .line 139
     return-void
 .end method

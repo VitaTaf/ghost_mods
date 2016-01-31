@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 72
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeConditionSelection$1;->this$0:Lcom/android/settings/notification/ZenModeConditionSelection;
 
     iput-object p2, p0, Lcom/android/settings/notification/ZenModeConditionSelection$1;->val$button:Landroid/widget/RadioButton;
@@ -46,10 +45,8 @@
     .param p2, "isChecked"    # Z
 
     .prologue
-    .line 75
     if-eqz p2, :cond_0
 
-    .line 76
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeConditionSelection$1;->this$0:Lcom/android/settings/notification/ZenModeConditionSelection;
 
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeConditionSelection$1;->val$button:Landroid/widget/RadioButton;
@@ -62,7 +59,6 @@
 
     invoke-virtual {v1, v0}, Lcom/android/settings/notification/ZenModeConditionSelection;->setCondition(Landroid/service/notification/Condition;)V
 
-    .line 78
     :cond_0
     return-void
 .end method

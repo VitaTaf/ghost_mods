@@ -9,9 +9,7 @@
     .param p0, "event"    # Landroid/view/KeyEvent;
 
     .prologue
-    .line 34
     invoke-virtual {p0}, Landroid/view/KeyEvent;->startTracking()V
 
-    .line 35
     return-void
 .end method

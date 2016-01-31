@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 476
     invoke-direct {p0}, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordIcsImpl;-><init>()V
 
     return-void

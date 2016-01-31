@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 47
     iput-object p1, p0, Lcom/android/settings/nfc/NfcEnabler$1;->this$0:Lcom/android/settings/nfc/NfcEnabler;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 50
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 51
     .local v0, "action":Ljava/lang/String;
     const-string v1, "android.nfc.action.ADAPTER_STATE_CHANGED"
 
@@ -54,7 +51,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 52
     iget-object v1, p0, Lcom/android/settings/nfc/NfcEnabler$1;->this$0:Lcom/android/settings/nfc/NfcEnabler;
 
     const-string v2, "android.nfc.extra.ADAPTER_STATE"
@@ -68,7 +64,6 @@
     # invokes: Lcom/android/settings/nfc/NfcEnabler;->handleNfcStateChanged(I)V
     invoke-static {v1, v2}, Lcom/android/settings/nfc/NfcEnabler;->access$000(Lcom/android/settings/nfc/NfcEnabler;I)V
 
-    .line 55
     :cond_0
     return-void
 .end method

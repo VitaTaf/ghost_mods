@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 307
     iput-object p1, p0, Lcom/android/settings/wifi/p2p/WifiP2pSettings$4;->this$0:Lcom/android/settings/wifi/p2p/WifiP2pSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,12 +43,10 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 310
     const/4 v0, -0x1
 
     if-ne p2, v0, :cond_1
 
-    .line 311
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pSettings$4;->this$0:Lcom/android/settings/wifi/p2p/WifiP2pSettings;
 
     # getter for: Lcom/android/settings/wifi/p2p/WifiP2pSettings;->mWifiP2pManager:Landroid/net/wifi/p2p/WifiP2pManager;
@@ -59,7 +56,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 312
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pSettings$4;->this$0:Lcom/android/settings/wifi/p2p/WifiP2pSettings;
 
     # getter for: Lcom/android/settings/wifi/p2p/WifiP2pSettings;->mSelectedGroup:Lcom/android/settings/wifi/p2p/WifiP2pPersistentGroup;
@@ -69,7 +65,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 314
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pSettings$4;->this$0:Lcom/android/settings/wifi/p2p/WifiP2pSettings;
 
     # getter for: Lcom/android/settings/wifi/p2p/WifiP2pSettings;->mWifiP2pManager:Landroid/net/wifi/p2p/WifiP2pManager;
@@ -101,24 +96,20 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/net/wifi/p2p/WifiP2pManager;->deletePersistentGroup(Landroid/net/wifi/p2p/WifiP2pManager$Channel;ILandroid/net/wifi/p2p/WifiP2pManager$ActionListener;)V
 
-    .line 324
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pSettings$4;->this$0:Lcom/android/settings/wifi/p2p/WifiP2pSettings;
 
     # setter for: Lcom/android/settings/wifi/p2p/WifiP2pSettings;->mSelectedGroup:Lcom/android/settings/wifi/p2p/WifiP2pPersistentGroup;
     invoke-static {v0, v4}, Lcom/android/settings/wifi/p2p/WifiP2pSettings;->access$1502(Lcom/android/settings/wifi/p2p/WifiP2pSettings;Lcom/android/settings/wifi/p2p/WifiP2pPersistentGroup;)Lcom/android/settings/wifi/p2p/WifiP2pPersistentGroup;
 
-    .line 335
     :cond_0
     :goto_0
     return-void
 
-    .line 329
     :cond_1
     const/4 v0, -0x2
 
     if-ne p2, v0, :cond_0
 
-    .line 333
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pSettings$4;->this$0:Lcom/android/settings/wifi/p2p/WifiP2pSettings;
 
     # setter for: Lcom/android/settings/wifi/p2p/WifiP2pSettings;->mSelectedGroup:Lcom/android/settings/wifi/p2p/WifiP2pPersistentGroup;

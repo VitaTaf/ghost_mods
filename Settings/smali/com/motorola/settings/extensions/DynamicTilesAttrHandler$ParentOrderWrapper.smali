@@ -27,15 +27,11 @@
     .param p2, "order"    # I
 
     .prologue
-    .line 268
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 269
     iput-object p1, p0, Lcom/motorola/settings/extensions/DynamicTilesAttrHandler$ParentOrderWrapper;->parent:Lcom/android/settings/dashboard/DashboardCategory;
 
-    .line 270
     iput p2, p0, Lcom/motorola/settings/extensions/DynamicTilesAttrHandler$ParentOrderWrapper;->order:I
 
-    .line 271
     return-void
 .end method

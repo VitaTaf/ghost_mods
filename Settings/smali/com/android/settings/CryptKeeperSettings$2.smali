@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 81
     iput-object p1, p0, Lcom/android/settings/CryptKeeperSettings$2;->this$0:Lcom/android/settings/CryptKeeperSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 84
     iget-object v0, p0, Lcom/android/settings/CryptKeeperSettings$2;->this$0:Lcom/android/settings/CryptKeeperSettings;
 
     const/16 v1, 0x37
@@ -53,7 +51,6 @@
 
     if-nez v0, :cond_0
 
-    .line 86
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     iget-object v1, p0, Lcom/android/settings/CryptKeeperSettings$2;->this$0:Lcom/android/settings/CryptKeeperSettings;
@@ -90,7 +87,6 @@
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
-    .line 93
     :cond_0
     return-void
 .end method

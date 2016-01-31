@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 773
     iput-object p1, p0, Lcom/android/settings/SettingsActivity$6;->this$0:Lcom/android/settings/SettingsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .param p2, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 776
     iget-object v0, p0, Lcom/android/settings/SettingsActivity$6;->this$0:Lcom/android/settings/SettingsActivity;
 
     const/4 v1, 0x1
@@ -50,6 +48,5 @@
     # invokes: Lcom/android/settings/SettingsActivity;->invalidateCategories(Z)V
     invoke-static {v0, v1}, Lcom/android/settings/SettingsActivity;->access$100(Lcom/android/settings/SettingsActivity;Z)V
 
-    .line 777
     return-void
 .end method

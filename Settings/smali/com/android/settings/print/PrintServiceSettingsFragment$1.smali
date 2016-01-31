@@ -24,7 +24,6 @@
     .param p2, "x0"    # Landroid/os/Handler;
 
     .prologue
-    .line 85
     iput-object p1, p0, Lcom/android/settings/print/PrintServiceSettingsFragment$1;->this$0:Lcom/android/settings/print/PrintServiceSettingsFragment;
 
     invoke-direct {p0, p2}, Lcom/android/settings/print/PrintServiceSettingsFragment$SettingsContentObserver;-><init>(Landroid/os/Handler;)V
@@ -40,12 +39,10 @@
     .param p2, "uri"    # Landroid/net/Uri;
 
     .prologue
-    .line 88
     iget-object v0, p0, Lcom/android/settings/print/PrintServiceSettingsFragment$1;->this$0:Lcom/android/settings/print/PrintServiceSettingsFragment;
 
     # invokes: Lcom/android/settings/print/PrintServiceSettingsFragment;->updateUiForServiceState()V
     invoke-static {v0}, Lcom/android/settings/print/PrintServiceSettingsFragment;->access$000(Lcom/android/settings/print/PrintServiceSettingsFragment;)V
 
-    .line 89
     return-void
 .end method

@@ -56,14 +56,11 @@
     .end annotation
 
     .prologue
-    .line 63
     .local p1, "appList":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 64
     iput-object p1, p0, Lcom/android/settings/UsageStatsActivity$AppNameComparator;->mAppLabelList:Ljava/util/Map;
 
-    .line 65
     return-void
 .end method
 
@@ -75,7 +72,6 @@
     .param p2, "b"    # Landroid/app/usage/UsageStats;
 
     .prologue
-    .line 69
     iget-object v2, p0, Lcom/android/settings/UsageStatsActivity$AppNameComparator;->mAppLabelList:Ljava/util/Map;
 
     invoke-virtual {p1}, Landroid/app/usage/UsageStats;->getPackageName()Ljava/lang/String;
@@ -88,7 +84,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 70
     .local v0, "alabel":Ljava/lang/String;
     iget-object v2, p0, Lcom/android/settings/UsageStatsActivity$AppNameComparator;->mAppLabelList:Ljava/util/Map;
 
@@ -102,7 +97,6 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 71
     .local v1, "blabel":Ljava/lang/String;
     invoke-virtual {v0, v1}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
 
@@ -117,7 +111,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 60
     check-cast p1, Landroid/app/usage/UsageStats;
 
     .end local p1    # "x0":Ljava/lang/Object;

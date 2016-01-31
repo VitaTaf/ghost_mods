@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 605
     iput-object p1, p0, Lcom/android/settings/ChooseLockGeneric$ChooseLockGenericFragment$FactoryResetProtectionWarningDialog$1;->this$0:Lcom/android/settings/ChooseLockGeneric$ChooseLockGenericFragment$FactoryResetProtectionWarningDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,11 +41,9 @@
     .param p2, "whichButton"    # I
 
     .prologue
-    .line 608
     iget-object v0, p0, Lcom/android/settings/ChooseLockGeneric$ChooseLockGenericFragment$FactoryResetProtectionWarningDialog$1;->this$0:Lcom/android/settings/ChooseLockGeneric$ChooseLockGenericFragment$FactoryResetProtectionWarningDialog;
 
     invoke-virtual {v0}, Lcom/android/settings/ChooseLockGeneric$ChooseLockGenericFragment$FactoryResetProtectionWarningDialog;->dismiss()V
 
-    .line 609
     return-void
 .end method

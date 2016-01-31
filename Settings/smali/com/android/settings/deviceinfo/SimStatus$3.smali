@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 459
     iput-object p1, p0, Lcom/android/settings/deviceinfo/SimStatus$3;->this$0:Lcom/android/settings/deviceinfo/SimStatus;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +40,10 @@
     .param p1, "tabId"    # Ljava/lang/String;
 
     .prologue
-    .line 462
     invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 463
     .local v0, "slotId":I
     iget-object v2, p0, Lcom/android/settings/deviceinfo/SimStatus$3;->this$0:Lcom/android/settings/deviceinfo/SimStatus;
 
@@ -66,13 +63,11 @@
     # setter for: Lcom/android/settings/deviceinfo/SimStatus;->mSir:Landroid/telephony/SubscriptionInfo;
     invoke-static {v2, v1}, Lcom/android/settings/deviceinfo/SimStatus;->access$102(Lcom/android/settings/deviceinfo/SimStatus;Landroid/telephony/SubscriptionInfo;)Landroid/telephony/SubscriptionInfo;
 
-    .line 466
     iget-object v1, p0, Lcom/android/settings/deviceinfo/SimStatus$3;->this$0:Lcom/android/settings/deviceinfo/SimStatus;
 
     # invokes: Lcom/android/settings/deviceinfo/SimStatus;->updatePhoneInfos()V
     invoke-static {v1}, Lcom/android/settings/deviceinfo/SimStatus;->access$700(Lcom/android/settings/deviceinfo/SimStatus;)V
 
-    .line 467
     iget-object v1, p0, Lcom/android/settings/deviceinfo/SimStatus$3;->this$0:Lcom/android/settings/deviceinfo/SimStatus;
 
     # getter for: Lcom/android/settings/deviceinfo/SimStatus;->mTelephonyManager:Landroid/telephony/TelephonyManager;
@@ -91,30 +86,25 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
 
-    .line 471
     iget-object v1, p0, Lcom/android/settings/deviceinfo/SimStatus$3;->this$0:Lcom/android/settings/deviceinfo/SimStatus;
 
     # invokes: Lcom/android/settings/deviceinfo/SimStatus;->updateDataState()V
     invoke-static {v1}, Lcom/android/settings/deviceinfo/SimStatus;->access$300(Lcom/android/settings/deviceinfo/SimStatus;)V
 
-    .line 472
     iget-object v1, p0, Lcom/android/settings/deviceinfo/SimStatus$3;->this$0:Lcom/android/settings/deviceinfo/SimStatus;
 
     # invokes: Lcom/android/settings/deviceinfo/SimStatus;->updateNetworkType()V
     invoke-static {v1}, Lcom/android/settings/deviceinfo/SimStatus;->access$400(Lcom/android/settings/deviceinfo/SimStatus;)V
 
-    .line 473
     iget-object v1, p0, Lcom/android/settings/deviceinfo/SimStatus$3;->this$0:Lcom/android/settings/deviceinfo/SimStatus;
 
     # invokes: Lcom/android/settings/deviceinfo/SimStatus;->updatePreference()V
     invoke-static {v1}, Lcom/android/settings/deviceinfo/SimStatus;->access$1000(Lcom/android/settings/deviceinfo/SimStatus;)V
 
-    .line 475
     iget-object v1, p0, Lcom/android/settings/deviceinfo/SimStatus$3;->this$0:Lcom/android/settings/deviceinfo/SimStatus;
 
     # invokes: Lcom/android/settings/deviceinfo/SimStatus;->updateAreaInfo()V
     invoke-static {v1}, Lcom/android/settings/deviceinfo/SimStatus;->access$200(Lcom/android/settings/deviceinfo/SimStatus;)V
 
-    .line 476
     return-void
 .end method

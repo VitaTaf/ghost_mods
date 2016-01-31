@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 239
     iput-object p1, p0, Lcom/android/settings/location/LocationSettings$3;->this$0:Lcom/android/settings/location/LocationSettings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,7 +38,6 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 242
     const-string v0, "LocationSettings"
 
     const/4 v1, 0x3
@@ -50,7 +48,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 243
     const-string v0, "LocationSettings"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -73,7 +70,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 245
     :cond_0
     iget-object v0, p0, Lcom/android/settings/location/LocationSettings$3;->this$0:Lcom/android/settings/location/LocationSettings;
 
@@ -84,6 +80,5 @@
 
     invoke-virtual {v0}, Lcom/android/settings/location/SettingsInjector;->reloadStatusMessages()V
 
-    .line 246
     return-void
 .end method

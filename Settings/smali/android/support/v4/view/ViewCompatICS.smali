@@ -10,7 +10,6 @@
     .param p1, "direction"    # I
 
     .prologue
-    .line 31
     invoke-virtual {p0, p1}, Landroid/view/View;->canScrollHorizontally(I)Z
 
     move-result v0
@@ -24,12 +23,10 @@
     .param p1, "delegate"    # Ljava/lang/Object;
 
     .prologue
-    .line 39
     check-cast p1, Landroid/view/View$AccessibilityDelegate;
 
     .end local p1    # "delegate":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/view/View;->setAccessibilityDelegate(Landroid/view/View$AccessibilityDelegate;)V
 
-    .line 40
     return-void
 .end method

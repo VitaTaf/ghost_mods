@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 479
     iput-object p1, p0, Lcom/android/settings/deviceinfo/SimStatus$4;->this$0:Lcom/android/settings/deviceinfo/SimStatus;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "tag"    # Ljava/lang/String;
 
     .prologue
-    .line 482
     new-instance v0, Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/settings/deviceinfo/SimStatus$4;->this$0:Lcom/android/settings/deviceinfo/SimStatus;

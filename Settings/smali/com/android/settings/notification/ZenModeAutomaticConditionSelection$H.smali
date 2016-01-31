@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 149
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection$H;->this$0:Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -37,7 +36,6 @@
     .param p2, "x1"    # Lcom/android/settings/notification/ZenModeAutomaticConditionSelection$1;
 
     .prologue
-    .line 149
     invoke-direct {p0, p1}, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection$H;-><init>(Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;)V
 
     return-void
@@ -50,7 +48,6 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 154
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
@@ -67,7 +64,6 @@
 
     invoke-virtual {v1, v0}, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->handleConditions([Landroid/service/notification/Condition;)V
 
-    .line 155
     :cond_0
     return-void
 .end method

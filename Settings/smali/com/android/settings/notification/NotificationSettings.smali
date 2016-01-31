@@ -85,7 +85,6 @@
     .locals 1
 
     .prologue
-    .line 617
     new-instance v0, Lcom/android/settings/notification/NotificationSettings$5;
 
     invoke-direct {v0}, Lcom/android/settings/notification/NotificationSettings$5;-><init>()V
@@ -101,57 +100,48 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 66
     invoke-direct {p0}, Lcom/android/settings/SettingsPreferenceFragment;-><init>()V
 
-    .line 88
     new-instance v0, Lcom/android/settings/notification/NotificationSettings$VolumePreferenceCallback;
 
     invoke-direct {v0, p0, v1}, Lcom/android/settings/notification/NotificationSettings$VolumePreferenceCallback;-><init>(Lcom/android/settings/notification/NotificationSettings;Lcom/android/settings/notification/NotificationSettings$1;)V
 
     iput-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mVolumeCallback:Lcom/android/settings/notification/NotificationSettings$VolumePreferenceCallback;
 
-    .line 89
     new-instance v0, Lcom/android/settings/notification/NotificationSettings$H;
 
     invoke-direct {v0, p0, v1}, Lcom/android/settings/notification/NotificationSettings$H;-><init>(Lcom/android/settings/notification/NotificationSettings;Lcom/android/settings/notification/NotificationSettings$1;)V
 
     iput-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mHandler:Lcom/android/settings/notification/NotificationSettings$H;
 
-    .line 90
     new-instance v0, Lcom/android/settings/notification/NotificationSettings$SettingsObserver;
 
     invoke-direct {v0, p0}, Lcom/android/settings/notification/NotificationSettings$SettingsObserver;-><init>(Lcom/android/settings/notification/NotificationSettings;)V
 
     iput-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mSettingsObserver:Lcom/android/settings/notification/NotificationSettings$SettingsObserver;
 
-    .line 91
     new-instance v0, Lcom/android/settings/notification/NotificationSettings$Receiver;
 
     invoke-direct {v0, p0, v1}, Lcom/android/settings/notification/NotificationSettings$Receiver;-><init>(Lcom/android/settings/notification/NotificationSettings;Lcom/android/settings/notification/NotificationSettings$1;)V
 
     iput-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mReceiver:Lcom/android/settings/notification/NotificationSettings$Receiver;
 
-    .line 92
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mVolumePrefs:Ljava/util/ArrayList;
 
-    .line 111
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/settings/notification/NotificationSettings;->mRingerMode:I
 
-    .line 304
     new-instance v0, Lcom/android/settings/notification/NotificationSettings$1;
 
     invoke-direct {v0, p0}, Lcom/android/settings/notification/NotificationSettings$1;-><init>(Lcom/android/settings/notification/NotificationSettings;)V
 
     iput-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mLookupRingtoneNames:Ljava/lang/Runnable;
 
-    .line 588
     return-void
 .end method
 
@@ -160,7 +150,6 @@
     .param p0, "x0"    # Lcom/android/settings/notification/NotificationSettings;
 
     .prologue
-    .line 66
     iget v0, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreenSelectedValue:I
 
     return v0
@@ -172,7 +161,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 66
     iput p1, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreenSelectedValue:I
 
     return p1
@@ -183,7 +171,6 @@
     .param p0, "x0"    # Lcom/android/settings/notification/NotificationSettings;
 
     .prologue
-    .line 66
     invoke-virtual {p0}, Lcom/android/settings/notification/NotificationSettings;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -196,7 +183,6 @@
     .param p0, "x0"    # Lcom/android/settings/notification/NotificationSettings;
 
     .prologue
-    .line 66
     invoke-virtual {p0}, Lcom/android/settings/notification/NotificationSettings;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -209,7 +195,6 @@
     .param p0, "x0"    # Lcom/android/settings/notification/NotificationSettings;
 
     .prologue
-    .line 66
     invoke-virtual {p0}, Lcom/android/settings/notification/NotificationSettings;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -222,7 +207,6 @@
     .param p0, "x0"    # Lcom/android/settings/notification/NotificationSettings;
 
     .prologue
-    .line 66
     invoke-direct {p0}, Lcom/android/settings/notification/NotificationSettings;->updateVibrateWhenRinging()V
 
     return-void
@@ -233,7 +217,6 @@
     .param p0, "x0"    # Lcom/android/settings/notification/NotificationSettings;
 
     .prologue
-    .line 66
     invoke-direct {p0}, Lcom/android/settings/notification/NotificationSettings;->updatePulse()V
 
     return-void
@@ -244,7 +227,6 @@
     .param p0, "x0"    # Lcom/android/settings/notification/NotificationSettings;
 
     .prologue
-    .line 66
     invoke-direct {p0}, Lcom/android/settings/notification/NotificationSettings;->updateLockscreenNotifications()V
 
     return-void
@@ -255,7 +237,6 @@
     .param p0, "x0"    # Lcom/android/settings/notification/NotificationSettings;
 
     .prologue
-    .line 66
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mVolumeCallback:Lcom/android/settings/notification/NotificationSettings$VolumePreferenceCallback;
 
     return-object v0
@@ -266,7 +247,6 @@
     .param p0, "x0"    # Lcom/android/settings/notification/NotificationSettings;
 
     .prologue
-    .line 66
     invoke-direct {p0}, Lcom/android/settings/notification/NotificationSettings;->updateEffectsSuppressor()V
 
     return-void
@@ -277,7 +257,6 @@
     .param p0, "x0"    # Lcom/android/settings/notification/NotificationSettings;
 
     .prologue
-    .line 66
     invoke-direct {p0}, Lcom/android/settings/notification/NotificationSettings;->updateRingerMode()V
 
     return-void
@@ -288,7 +267,6 @@
     .param p0, "x0"    # Lcom/android/settings/notification/NotificationSettings;
 
     .prologue
-    .line 66
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mHandler:Lcom/android/settings/notification/NotificationSettings$H;
 
     return-object v0
@@ -299,7 +277,6 @@
     .param p0, "x0"    # Lcom/android/settings/notification/NotificationSettings;
 
     .prologue
-    .line 66
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mPhoneRingtonePreference:Landroid/preference/Preference;
 
     return-object v0
@@ -310,7 +287,6 @@
     .param p0, "x0"    # Lcom/android/settings/notification/NotificationSettings;
 
     .prologue
-    .line 66
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -322,7 +298,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 66
     invoke-static {p0, p1}, Lcom/android/settings/notification/NotificationSettings;->updateRingtoneName(Landroid/content/Context;I)Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -335,7 +310,6 @@
     .param p0, "x0"    # Lcom/android/settings/notification/NotificationSettings;
 
     .prologue
-    .line 66
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mNotificationRingtonePreference:Landroid/preference/Preference;
 
     return-object v0
@@ -346,7 +320,6 @@
     .param p0, "x0"    # Lcom/android/settings/notification/NotificationSettings;
 
     .prologue
-    .line 66
     invoke-virtual {p0}, Lcom/android/settings/notification/NotificationSettings;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -359,7 +332,6 @@
     .param p0, "x0"    # Lcom/android/settings/notification/NotificationSettings;
 
     .prologue
-    .line 66
     invoke-virtual {p0}, Lcom/android/settings/notification/NotificationSettings;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -373,7 +345,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 487
     invoke-virtual {p0}, Lcom/android/settings/notification/NotificationSettings;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -398,7 +369,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 482
     invoke-virtual {p0}, Lcom/android/settings/notification/NotificationSettings;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -422,14 +392,12 @@
     .param p1, "suppressor"    # Landroid/content/ComponentName;
 
     .prologue
-    .line 243
     iget-object v5, p0, Lcom/android/settings/notification/NotificationSettings;->mContext:Landroid/content/Context;
 
     invoke-virtual {v5}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v2
 
-    .line 245
     .local v2, "pm":Landroid/content/pm/PackageManager;
     const/4 v5, 0x0
 
@@ -438,20 +406,16 @@
 
     move-result-object v1
 
-    .line 246
     .local v1, "info":Landroid/content/pm/ServiceInfo;
     if-eqz v1, :cond_0
 
-    .line 247
     invoke-virtual {v1, v2}, Landroid/content/pm/ServiceInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
     move-result-object v3
 
-    .line 248
     .local v3, "seq":Ljava/lang/CharSequence;
     if-eqz v3, :cond_0
 
-    .line 249
     invoke-interface {v3}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v5
@@ -460,7 +424,6 @@
 
     move-result-object v4
 
-    .line 250
     .local v4, "str":Ljava/lang/String;
     invoke-virtual {v4}, Ljava/lang/String;->length()I
     :try_end_0
@@ -470,18 +433,15 @@
 
     if-lez v5, :cond_0
 
-    .line 258
     .end local v1    # "info":Landroid/content/pm/ServiceInfo;
     .end local v3    # "seq":Ljava/lang/CharSequence;
     .end local v4    # "str":Ljava/lang/String;
     :goto_0
     return-object v4
 
-    .line 255
     :catch_0
     move-exception v0
 
-    .line 256
     .local v0, "e":Ljava/lang/Throwable;
     const-string v5, "NotificationSettings"
 
@@ -489,7 +449,6 @@
 
     invoke-static {v5, v6, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 258
     .end local v0    # "e":Ljava/lang/Throwable;
     :cond_0
     invoke-virtual {p1}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
@@ -510,7 +469,6 @@
 
     const v2, 0x7f0909d1
 
-    .line 435
     const-string v0, "lock_screen_notifications"
 
     invoke-virtual {p1, v0}, Landroid/preference/PreferenceCategory;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -521,23 +479,19 @@
 
     iput-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreen:Lcom/android/settings/notification/DropDownPreference;
 
-    .line 436
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreen:Lcom/android/settings/notification/DropDownPreference;
 
     if-nez v0, :cond_0
 
-    .line 437
     const-string v0, "NotificationSettings"
 
     const-string v1, "Preference not found: lock_screen_notifications"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 467
     :goto_0
     return-void
 
-    .line 441
     :cond_0
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreen:Lcom/android/settings/notification/DropDownPreference;
 
@@ -547,12 +501,10 @@
 
     invoke-virtual {v0, v2, v1}, Lcom/android/settings/notification/DropDownPreference;->addItem(ILjava/lang/Object;)V
 
-    .line 443
     iget-boolean v0, p0, Lcom/android/settings/notification/NotificationSettings;->mSecure:Z
 
     if-eqz v0, :cond_1
 
-    .line 444
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreen:Lcom/android/settings/notification/DropDownPreference;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -561,7 +513,6 @@
 
     invoke-virtual {v0, v3, v1}, Lcom/android/settings/notification/DropDownPreference;->addItem(ILjava/lang/Object;)V
 
-    .line 447
     :cond_1
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreen:Lcom/android/settings/notification/DropDownPreference;
 
@@ -571,10 +522,8 @@
 
     invoke-virtual {v0, v4, v1}, Lcom/android/settings/notification/DropDownPreference;->addItem(ILjava/lang/Object;)V
 
-    .line 449
     invoke-direct {p0}, Lcom/android/settings/notification/NotificationSettings;->updateLockscreenNotifications()V
 
-    .line 450
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreen:Lcom/android/settings/notification/DropDownPreference;
 
     new-instance v1, Lcom/android/settings/notification/NotificationSettings$4;
@@ -591,7 +540,6 @@
     .param p1, "parent"    # Landroid/preference/PreferenceCategory;
 
     .prologue
-    .line 398
     const-string v0, "notification_pulse"
 
     invoke-virtual {p1, v0}, Landroid/preference/PreferenceCategory;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -602,23 +550,19 @@
 
     iput-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mNotificationPulse:Landroid/preference/TwoStatePreference;
 
-    .line 399
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mNotificationPulse:Landroid/preference/TwoStatePreference;
 
     if-nez v0, :cond_0
 
-    .line 400
     const-string v0, "NotificationSettings"
 
     const-string v1, "Preference not found: notification_pulse"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 418
     :goto_0
     return-void
 
-    .line 403
     :cond_0
     invoke-virtual {p0}, Lcom/android/settings/notification/NotificationSettings;->getResources()Landroid/content/res/Resources;
 
@@ -632,18 +576,15 @@
 
     if-nez v0, :cond_1
 
-    .line 405
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mNotificationPulse:Landroid/preference/TwoStatePreference;
 
     invoke-virtual {p1, v0}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
 
     goto :goto_0
 
-    .line 407
     :cond_1
     invoke-direct {p0}, Lcom/android/settings/notification/NotificationSettings;->updatePulse()V
 
-    .line 408
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mNotificationPulse:Landroid/preference/TwoStatePreference;
 
     new-instance v1, Lcom/android/settings/notification/NotificationSettings$3;
@@ -660,7 +601,6 @@
     .param p1, "root"    # Landroid/preference/PreferenceCategory;
 
     .prologue
-    .line 292
     const-string v0, "ringtone"
 
     invoke-virtual {p1, v0}, Landroid/preference/PreferenceCategory;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -669,7 +609,6 @@
 
     iput-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mPhoneRingtonePreference:Landroid/preference/Preference;
 
-    .line 293
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mPhoneRingtonePreference:Landroid/preference/Preference;
 
     if-eqz v0, :cond_0
@@ -678,17 +617,14 @@
 
     if-nez v0, :cond_0
 
-    .line 294
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mPhoneRingtonePreference:Landroid/preference/Preference;
 
     invoke-virtual {p1, v0}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 295
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mPhoneRingtonePreference:Landroid/preference/Preference;
 
-    .line 297
     :cond_0
     const-string v0, "notification_ringtone"
 
@@ -698,7 +634,6 @@
 
     iput-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mNotificationRingtonePreference:Landroid/preference/Preference;
 
-    .line 298
     return-void
 .end method
 
@@ -707,7 +642,6 @@
     .param p1, "root"    # Landroid/preference/PreferenceCategory;
 
     .prologue
-    .line 366
     const-string v0, "vibrate_when_ringing"
 
     invoke-virtual {p1, v0}, Landroid/preference/PreferenceCategory;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -718,41 +652,34 @@
 
     iput-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mVibrateWhenRinging:Landroid/preference/TwoStatePreference;
 
-    .line 367
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mVibrateWhenRinging:Landroid/preference/TwoStatePreference;
 
     if-nez v0, :cond_0
 
-    .line 368
     const-string v0, "NotificationSettings"
 
     const-string v1, "Preference not found: vibrate_when_ringing"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 387
     :goto_0
     return-void
 
-    .line 371
     :cond_0
     iget-boolean v0, p0, Lcom/android/settings/notification/NotificationSettings;->mVoiceCapable:Z
 
     if-nez v0, :cond_1
 
-    .line 372
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mVibrateWhenRinging:Landroid/preference/TwoStatePreference;
 
     invoke-virtual {p1, v0}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 373
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mVibrateWhenRinging:Landroid/preference/TwoStatePreference;
 
     goto :goto_0
 
-    .line 376
     :cond_1
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mVibrateWhenRinging:Landroid/preference/TwoStatePreference;
 
@@ -760,10 +687,8 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/TwoStatePreference;->setPersistent(Z)V
 
-    .line 377
     invoke-direct {p0}, Lcom/android/settings/notification/NotificationSettings;->updateVibrateWhenRinging()V
 
-    .line 378
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mVibrateWhenRinging:Landroid/preference/TwoStatePreference;
 
     new-instance v1, Lcom/android/settings/notification/NotificationSettings$2;
@@ -782,31 +707,25 @@
     .param p3, "muteIcon"    # I
 
     .prologue
-    .line 206
     invoke-virtual {p0, p1}, Lcom/android/settings/notification/NotificationSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/settings/notification/VolumeSeekBarPreference;
 
-    .line 207
     .local v0, "volumePref":Lcom/android/settings/notification/VolumeSeekBarPreference;
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSettings;->mVolumeCallback:Lcom/android/settings/notification/NotificationSettings$VolumePreferenceCallback;
 
     invoke-virtual {v0, v1}, Lcom/android/settings/notification/VolumeSeekBarPreference;->setCallback(Lcom/android/settings/notification/VolumeSeekBarPreference$Callback;)V
 
-    .line 208
     invoke-virtual {v0, p2}, Lcom/android/settings/notification/VolumeSeekBarPreference;->setStream(I)V
 
-    .line 209
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSettings;->mVolumePrefs:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 210
     invoke-virtual {v0, p3}, Lcom/android/settings/notification/VolumeSeekBarPreference;->setMuteIcon(I)V
 
-    .line 211
     return-object v0
 .end method
 
@@ -814,12 +733,10 @@
     .locals 1
 
     .prologue
-    .line 301
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mLookupRingtoneNames:Ljava/lang/Runnable;
 
     invoke-static {v0}, Landroid/os/AsyncTask;->execute(Ljava/lang/Runnable;)V
 
-    .line 302
     return-void
 .end method
 
@@ -829,23 +746,19 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 494
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettings;->mNotificationAccess:Landroid/preference/Preference;
 
     if-eqz v2, :cond_0
 
-    .line 495
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettings;->mPM:Landroid/content/pm/PackageManager;
 
     invoke-static {v2}, Lcom/android/settings/notification/NotificationAccessSettings;->getListenersCount(Landroid/content/pm/PackageManager;)I
 
     move-result v1
 
-    .line 496
     .local v1, "total":I
     if-nez v1, :cond_1
 
-    .line 497
     invoke-virtual {p0}, Lcom/android/settings/notification/NotificationSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v2
@@ -854,13 +767,11 @@
 
     invoke-virtual {v2, v3}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 510
     .end local v1    # "total":I
     :cond_0
     :goto_0
     return-void
 
-    .line 499
     .restart local v1    # "total":I
     :cond_1
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettings;->mContext:Landroid/content/Context;
@@ -869,11 +780,9 @@
 
     move-result v0
 
-    .line 500
     .local v0, "n":I
     if-nez v0, :cond_2
 
-    .line 501
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettings;->mNotificationAccess:Landroid/preference/Preference;
 
     invoke-virtual {p0}, Lcom/android/settings/notification/NotificationSettings;->getResources()Landroid/content/res/Resources;
@@ -890,7 +799,6 @@
 
     goto :goto_0
 
-    .line 504
     :cond_2
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettings;->mNotificationAccess:Landroid/preference/Preference;
 
@@ -929,7 +837,6 @@
     .locals 7
 
     .prologue
-    .line 230
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettings;->mContext:Landroid/content/Context;
 
     invoke-static {v2}, Landroid/app/NotificationManager;->from(Landroid/content/Context;)Landroid/app/NotificationManager;
@@ -940,7 +847,6 @@
 
     move-result-object v0
 
-    .line 231
     .local v0, "suppressor":Landroid/content/ComponentName;
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettings;->mSuppressor:Landroid/content/ComponentName;
 
@@ -950,20 +856,16 @@
 
     if-eqz v2, :cond_0
 
-    .line 240
     :goto_0
     return-void
 
-    .line 232
     :cond_0
     iput-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mSuppressor:Landroid/content/ComponentName;
 
-    .line 233
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettings;->mRingOrNotificationPreference:Lcom/android/settings/notification/VolumeSeekBarPreference;
 
     if-eqz v2, :cond_1
 
-    .line 234
     if-eqz v0, :cond_2
 
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettings;->mContext:Landroid/content/Context;
@@ -986,21 +888,18 @@
 
     move-result-object v1
 
-    .line 237
     .local v1, "text":Ljava/lang/String;
     :goto_1
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettings;->mRingOrNotificationPreference:Lcom/android/settings/notification/VolumeSeekBarPreference;
 
     invoke-virtual {v2, v1}, Lcom/android/settings/notification/VolumeSeekBarPreference;->setSuppressionText(Ljava/lang/String;)V
 
-    .line 239
     .end local v1    # "text":Ljava/lang/String;
     :cond_1
     invoke-direct {p0}, Lcom/android/settings/notification/NotificationSettings;->updateRingOrNotificationPreference()V
 
     goto :goto_0
 
-    .line 234
     :cond_2
     const/4 v1, 0x0
 
@@ -1011,22 +910,18 @@
     .locals 4
 
     .prologue
-    .line 470
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreen:Lcom/android/settings/notification/DropDownPreference;
 
     if-nez v2, :cond_0
 
-    .line 479
     :goto_0
     return-void
 
-    .line 473
     :cond_0
     invoke-direct {p0}, Lcom/android/settings/notification/NotificationSettings;->getLockscreenNotificationsEnabled()Z
 
     move-result v1
 
-    .line 474
     .local v1, "enabled":Z
     iget-boolean v2, p0, Lcom/android/settings/notification/NotificationSettings;->mSecure:Z
 
@@ -1041,7 +936,6 @@
     :cond_1
     const/4 v0, 0x1
 
-    .line 475
     .local v0, "allowPrivate":Z
     :goto_1
     if-nez v1, :cond_3
@@ -1051,7 +945,6 @@
     :goto_2
     iput v2, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreenSelectedValue:I
 
-    .line 478
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreen:Lcom/android/settings/notification/DropDownPreference;
 
     iget v3, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreenSelectedValue:I
@@ -1064,14 +957,12 @@
 
     goto :goto_0
 
-    .line 474
     .end local v0    # "allowPrivate":Z
     :cond_2
     const/4 v0, 0x0
 
     goto :goto_1
 
-    .line 475
     .restart local v0    # "allowPrivate":Z
     :cond_3
     if-eqz v0, :cond_4
@@ -1092,16 +983,13 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 421
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettings;->mNotificationPulse:Landroid/preference/TwoStatePreference;
 
     if-nez v2, :cond_0
 
-    .line 430
     :goto_0
     return-void
 
-    .line 425
     :cond_0
     :try_start_0
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettings;->mNotificationPulse:Landroid/preference/TwoStatePreference;
@@ -1125,11 +1013,9 @@
 
     goto :goto_0
 
-    .line 427
     :catch_0
     move-exception v0
 
-    .line 428
     .local v0, "snfe":Landroid/provider/Settings$SettingNotFoundException;
     const-string v1, "NotificationSettings"
 
@@ -1139,7 +1025,6 @@
 
     goto :goto_0
 
-    .line 425
     .end local v0    # "snfe":Landroid/provider/Settings$SettingNotFoundException;
     :cond_1
     const/4 v1, 0x0
@@ -1151,7 +1036,6 @@
     .locals 3
 
     .prologue
-    .line 215
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSettings;->mRingOrNotificationPreference:Lcom/android/settings/notification/VolumeSeekBarPreference;
 
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mSuppressor:Landroid/content/ComponentName;
@@ -1163,10 +1047,8 @@
     :goto_0
     invoke-virtual {v1, v0}, Lcom/android/settings/notification/VolumeSeekBarPreference;->showIcon(I)V
 
-    .line 220
     return-void
 
-    .line 215
     :cond_0
     iget v0, p0, Lcom/android/settings/notification/NotificationSettings;->mRingerMode:I
 
@@ -1188,28 +1070,23 @@
     .locals 2
 
     .prologue
-    .line 223
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSettings;->mAudioManager:Landroid/media/AudioManager;
 
     invoke-virtual {v1}, Landroid/media/AudioManager;->getRingerModeInternal()I
 
     move-result v0
 
-    .line 224
     .local v0, "ringerMode":I
     iget v1, p0, Lcom/android/settings/notification/NotificationSettings;->mRingerMode:I
 
     if-ne v1, v0, :cond_0
 
-    .line 227
     :goto_0
     return-void
 
-    .line 225
     :cond_0
     iput v0, p0, Lcom/android/settings/notification/NotificationSettings;->mRingerMode:I
 
-    .line 226
     invoke-direct {p0}, Lcom/android/settings/notification/NotificationSettings;->updateRingOrNotificationPreference()V
 
     goto :goto_0
@@ -1223,28 +1100,23 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 325
     if-nez p0, :cond_1
 
-    .line 326
     const-string v0, "NotificationSettings"
 
     const-string v2, "Unable to update ringtone name, no context provided"
 
     invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 360
     :cond_0
     :goto_0
     return-object v7
 
-    .line 329
     :cond_1
     invoke-static {p0, p1}, Landroid/media/RingtoneManager;->getActualDefaultRingtoneUri(Landroid/content/Context;I)Landroid/net/Uri;
 
     move-result-object v1
 
-    .line 330
     .local v1, "ringtoneUri":Landroid/net/Uri;
     const v0, 0x10404ba
 
@@ -1252,11 +1124,9 @@
 
     move-result-object v7
 
-    .line 332
     .local v7, "summary":Ljava/lang/CharSequence;
     if-nez v1, :cond_2
 
-    .line 333
     const v0, 0x10404b8
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -1265,11 +1135,9 @@
 
     goto :goto_0
 
-    .line 335
     :cond_2
     const/4 v6, 0x0
 
-    .line 337
     .local v6, "cursor":Landroid/database/Cursor;
     :try_start_0
     const-string v0, "media"
@@ -1284,7 +1152,6 @@
 
     if-eqz v0, :cond_5
 
-    .line 339
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -1309,19 +1176,16 @@
 
     move-result-object v6
 
-    .line 345
     :cond_3
     :goto_1
     if-eqz v6, :cond_4
 
-    .line 346
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v0
 
     if-eqz v0, :cond_4
 
-    .line 347
     const/4 v0, 0x0
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -1332,16 +1196,13 @@
 
     move-result-object v7
 
-    .line 355
     :cond_4
     if-eqz v6, :cond_0
 
-    .line 356
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
-    .line 341
     :cond_5
     :try_start_1
     const-string v0, "content"
@@ -1356,7 +1217,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 342
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -1387,37 +1247,29 @@
 
     goto :goto_1
 
-    .line 350
     :catch_0
     move-exception v0
 
-    .line 355
     if-eqz v6, :cond_0
 
-    .line 356
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
-    .line 352
     :catch_1
     move-exception v0
 
-    .line 355
     if-eqz v6, :cond_0
 
-    .line 356
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
-    .line 355
     :catchall_0
     move-exception v0
 
     if-eqz v6, :cond_6
 
-    .line 356
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_6
@@ -1430,16 +1282,13 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 390
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSettings;->mVibrateWhenRinging:Landroid/preference/TwoStatePreference;
 
     if-nez v1, :cond_0
 
-    .line 393
     :goto_0
     return-void
 
-    .line 391
     :cond_0
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSettings;->mVibrateWhenRinging:Landroid/preference/TwoStatePreference;
 
@@ -1474,17 +1323,14 @@
 
     const v8, 0x108031f
 
-    .line 117
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 118
     invoke-virtual {p0}, Lcom/android/settings/notification/NotificationSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v5
 
     iput-object v5, p0, Lcom/android/settings/notification/NotificationSettings;->mContext:Landroid/content/Context;
 
-    .line 119
     iget-object v5, p0, Lcom/android/settings/notification/NotificationSettings;->mContext:Landroid/content/Context;
 
     invoke-virtual {v5}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -1493,7 +1339,6 @@
 
     iput-object v5, p0, Lcom/android/settings/notification/NotificationSettings;->mPM:Landroid/content/pm/PackageManager;
 
-    .line 120
     iget-object v5, p0, Lcom/android/settings/notification/NotificationSettings;->mContext:Landroid/content/Context;
 
     invoke-static {v5}, Lcom/android/settings/Utils;->isVoiceCapable(Landroid/content/Context;)Z
@@ -1502,7 +1347,6 @@
 
     iput-boolean v5, p0, Lcom/android/settings/notification/NotificationSettings;->mVoiceCapable:Z
 
-    .line 121
     new-instance v5, Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {p0}, Lcom/android/settings/notification/NotificationSettings;->getActivity()Landroid/app/Activity;
@@ -1517,7 +1361,6 @@
 
     iput-boolean v5, p0, Lcom/android/settings/notification/NotificationSettings;->mSecure:Z
 
-    .line 123
     iget-object v5, p0, Lcom/android/settings/notification/NotificationSettings;->mContext:Landroid/content/Context;
 
     const-string v6, "audio"
@@ -1530,7 +1373,6 @@
 
     iput-object v5, p0, Lcom/android/settings/notification/NotificationSettings;->mAudioManager:Landroid/media/AudioManager;
 
-    .line 124
     invoke-virtual {p0}, Lcom/android/settings/notification/NotificationSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v5
@@ -1545,7 +1387,6 @@
 
     iput-object v5, p0, Lcom/android/settings/notification/NotificationSettings;->mVibrator:Landroid/os/Vibrator;
 
-    .line 125
     iget-object v5, p0, Lcom/android/settings/notification/NotificationSettings;->mVibrator:Landroid/os/Vibrator;
 
     if-eqz v5, :cond_0
@@ -1558,16 +1399,13 @@
 
     if-nez v5, :cond_0
 
-    .line 126
     iput-object v9, p0, Lcom/android/settings/notification/NotificationSettings;->mVibrator:Landroid/os/Vibrator;
 
-    .line 129
     :cond_0
     const v5, 0x7f060025
 
     invoke-virtual {p0, v5}, Lcom/android/settings/notification/NotificationSettings;->addPreferencesFromResource(I)V
 
-    .line 131
     const-string v5, "sound"
 
     invoke-virtual {p0, v5}, Lcom/android/settings/notification/NotificationSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -1576,7 +1414,6 @@
 
     check-cast v4, Landroid/preference/PreferenceCategory;
 
-    .line 132
     .local v4, "sound":Landroid/preference/PreferenceCategory;
     const-string v5, "media_volume"
 
@@ -1586,7 +1423,6 @@
 
     invoke-direct {p0, v5, v6, v7}, Lcom/android/settings/notification/NotificationSettings;->initVolumePreference(Ljava/lang/String;II)Lcom/android/settings/notification/VolumeSeekBarPreference;
 
-    .line 134
     const-string v5, "alarm_volume"
 
     const/4 v6, 0x4
@@ -1595,12 +1431,10 @@
 
     invoke-direct {p0, v5, v6, v7}, Lcom/android/settings/notification/NotificationSettings;->initVolumePreference(Ljava/lang/String;II)Lcom/android/settings/notification/VolumeSeekBarPreference;
 
-    .line 136
     iget-boolean v5, p0, Lcom/android/settings/notification/NotificationSettings;->mVoiceCapable:Z
 
     if-eqz v5, :cond_2
 
-    .line 137
     const-string v5, "ring_volume"
 
     const/4 v6, 0x2
@@ -1611,7 +1445,6 @@
 
     iput-object v5, p0, Lcom/android/settings/notification/NotificationSettings;->mRingOrNotificationPreference:Lcom/android/settings/notification/VolumeSeekBarPreference;
 
-    .line 140
     const-string v5, "notification_volume"
 
     invoke-virtual {v4, v5}, Landroid/preference/PreferenceCategory;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -1620,7 +1453,6 @@
 
     invoke-virtual {v4, v5}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 149
     :goto_0
     const-string v5, "notification_settings"
 
@@ -1632,20 +1464,17 @@
 
     iput-object v5, p0, Lcom/android/settings/notification/NotificationSettings;->mSoundSettings:Landroid/preference/PreferenceGroup;
 
-    .line 150
     new-instance v0, Landroid/content/Intent;
 
     const-string v5, "android.media.action.DISPLAY_AUDIO_EFFECT_CONTROL_PANEL"
 
     invoke-direct {v0, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 151
     .local v0, "i":Landroid/content/Intent;
     invoke-virtual {p0}, Lcom/android/settings/notification/NotificationSettings;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v3
 
-    .line 152
     .local v3, "p":Landroid/content/pm/PackageManager;
     iget-object v5, p0, Lcom/android/settings/notification/NotificationSettings;->mSoundSettings:Landroid/preference/PreferenceGroup;
 
@@ -1657,19 +1486,16 @@
 
     iput-object v5, p0, Lcom/android/settings/notification/NotificationSettings;->mAudioEffects:Landroid/preference/Preference;
 
-    .line 153
     iget-object v5, p0, Lcom/android/settings/notification/NotificationSettings;->mAudioEffects:Landroid/preference/Preference;
 
     if-eqz v5, :cond_1
 
-    .line 154
     const/high16 v5, 0x10000
 
     invoke-virtual {v3, v0, v5}, Landroid/content/pm/PackageManager;->queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
 
     move-result-object v1
 
-    .line 155
     .local v1, "list":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -1677,25 +1503,20 @@
 
     if-gtz v5, :cond_1
 
-    .line 156
     iget-object v5, p0, Lcom/android/settings/notification/NotificationSettings;->mSoundSettings:Landroid/preference/PreferenceGroup;
 
     iget-object v6, p0, Lcom/android/settings/notification/NotificationSettings;->mAudioEffects:Landroid/preference/Preference;
 
     invoke-virtual {v5, v6}, Landroid/preference/PreferenceGroup;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 157
     iput-object v9, p0, Lcom/android/settings/notification/NotificationSettings;->mAudioEffects:Landroid/preference/Preference;
 
-    .line 162
     .end local v1    # "list":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     :cond_1
     invoke-direct {p0, v4}, Lcom/android/settings/notification/NotificationSettings;->initRingtones(Landroid/preference/PreferenceCategory;)V
 
-    .line 163
     invoke-direct {p0, v4}, Lcom/android/settings/notification/NotificationSettings;->initVibrateWhenRinging(Landroid/preference/PreferenceCategory;)V
 
-    .line 165
     const-string v5, "notification"
 
     invoke-virtual {p0, v5}, Lcom/android/settings/notification/NotificationSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -1704,14 +1525,11 @@
 
     check-cast v2, Landroid/preference/PreferenceCategory;
 
-    .line 167
     .local v2, "notification":Landroid/preference/PreferenceCategory;
     invoke-direct {p0, v2}, Lcom/android/settings/notification/NotificationSettings;->initPulse(Landroid/preference/PreferenceCategory;)V
 
-    .line 168
     invoke-direct {p0, v2}, Lcom/android/settings/notification/NotificationSettings;->initLockscreenNotifications(Landroid/preference/PreferenceCategory;)V
 
-    .line 170
     const-string v5, "manage_notification_access"
 
     invoke-virtual {p0, v5}, Lcom/android/settings/notification/NotificationSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -1720,16 +1538,12 @@
 
     iput-object v5, p0, Lcom/android/settings/notification/NotificationSettings;->mNotificationAccess:Landroid/preference/Preference;
 
-    .line 171
     invoke-direct {p0}, Lcom/android/settings/notification/NotificationSettings;->refreshNotificationListeners()V
 
-    .line 172
     invoke-direct {p0}, Lcom/android/settings/notification/NotificationSettings;->updateRingerMode()V
 
-    .line 173
     invoke-direct {p0}, Lcom/android/settings/notification/NotificationSettings;->updateEffectsSuppressor()V
 
-    .line 176
     invoke-virtual {p0}, Lcom/android/settings/notification/NotificationSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v5
@@ -1742,10 +1556,8 @@
 
     invoke-static {v5, v6}, Lcom/motorola/extensions/DynamicPreferences;->addOrOverridePreferences(Landroid/preference/PreferenceScreen;Landroid/content/Intent;)V
 
-    .line 179
     return-void
 
-    .line 142
     .end local v0    # "i":Landroid/content/Intent;
     .end local v2    # "notification":Landroid/preference/PreferenceCategory;
     .end local v3    # "p":Landroid/content/pm/PackageManager;
@@ -1760,7 +1572,6 @@
 
     iput-object v5, p0, Lcom/android/settings/notification/NotificationSettings;->mRingOrNotificationPreference:Lcom/android/settings/notification/VolumeSeekBarPreference;
 
-    .line 145
     const-string v5, "ring_volume"
 
     invoke-virtual {v4, v5}, Landroid/preference/PreferenceCategory;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -1778,25 +1589,20 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 197
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onPause()V
 
-    .line 198
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mVolumeCallback:Lcom/android/settings/notification/NotificationSettings$VolumePreferenceCallback;
 
     invoke-virtual {v0}, Lcom/android/settings/notification/NotificationSettings$VolumePreferenceCallback;->stopSample()V
 
-    .line 199
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mSettingsObserver:Lcom/android/settings/notification/NotificationSettings$SettingsObserver;
 
     invoke-virtual {v0, v1}, Lcom/android/settings/notification/NotificationSettings$SettingsObserver;->register(Z)V
 
-    .line 200
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mReceiver:Lcom/android/settings/notification/NotificationSettings$Receiver;
 
     invoke-virtual {v0, v1}, Lcom/android/settings/notification/NotificationSettings$Receiver;->register(Z)V
 
-    .line 201
     return-void
 .end method
 
@@ -1806,32 +1612,24 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 183
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onResume()V
 
-    .line 184
     invoke-direct {p0}, Lcom/android/settings/notification/NotificationSettings;->refreshNotificationListeners()V
 
-    .line 185
     invoke-direct {p0}, Lcom/android/settings/notification/NotificationSettings;->lookupRingtoneNames()V
 
-    .line 186
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettings;->mSettingsObserver:Lcom/android/settings/notification/NotificationSettings$SettingsObserver;
 
     invoke-virtual {v2, v3}, Lcom/android/settings/notification/NotificationSettings$SettingsObserver;->register(Z)V
 
-    .line 187
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettings;->mReceiver:Lcom/android/settings/notification/NotificationSettings$Receiver;
 
     invoke-virtual {v2, v3}, Lcom/android/settings/notification/NotificationSettings$Receiver;->register(Z)V
 
-    .line 188
     invoke-direct {p0}, Lcom/android/settings/notification/NotificationSettings;->updateRingOrNotificationPreference()V
 
-    .line 189
     invoke-direct {p0}, Lcom/android/settings/notification/NotificationSettings;->updateEffectsSuppressor()V
 
-    .line 190
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettings;->mVolumePrefs:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -1852,13 +1650,11 @@
 
     check-cast v1, Lcom/android/settings/notification/VolumeSeekBarPreference;
 
-    .line 191
     .local v1, "volumePref":Lcom/android/settings/notification/VolumeSeekBarPreference;
     invoke-virtual {v1}, Lcom/android/settings/notification/VolumeSeekBarPreference;->onActivityResume()V
 
     goto :goto_0
 
-    .line 193
     .end local v1    # "volumePref":Lcom/android/settings/notification/VolumeSeekBarPreference;
     :cond_0
     return-void

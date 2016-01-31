@@ -27,7 +27,6 @@
     .locals 0
 
     .prologue
-    .line 346
     iput-object p1, p0, Lcom/android/settings/wifi/WifiStatusTest$7;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     iput-object p2, p0, Lcom/android/settings/wifi/WifiStatusTest$7;->val$handler:Landroid/os/Handler;
@@ -45,19 +44,16 @@
     .locals 2
 
     .prologue
-    .line 349
     iget-object v0, p0, Lcom/android/settings/wifi/WifiStatusTest$7;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     # invokes: Lcom/android/settings/wifi/WifiStatusTest;->httpClientTest()V
     invoke-static {v0}, Lcom/android/settings/wifi/WifiStatusTest;->access$2500(Lcom/android/settings/wifi/WifiStatusTest;)V
 
-    .line 350
     iget-object v0, p0, Lcom/android/settings/wifi/WifiStatusTest$7;->val$handler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/settings/wifi/WifiStatusTest$7;->val$updatePingResults:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 351
     return-void
 .end method

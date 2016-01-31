@@ -38,10 +38,8 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 47
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 42
     new-instance v1, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection$H;
 
     const/4 v2, 0x0
@@ -50,36 +48,30 @@
 
     iput-object v1, p0, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->mHandler:Lcom/android/settings/notification/ZenModeAutomaticConditionSelection$H;
 
-    .line 44
     new-instance v1, Landroid/util/ArraySet;
 
     invoke-direct {v1}, Landroid/util/ArraySet;-><init>()V
 
     iput-object v1, p0, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->mSelectedConditions:Landroid/util/ArraySet;
 
-    .line 141
     new-instance v1, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection$2;
 
     invoke-direct {v1, p0}, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection$2;-><init>(Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;)V
 
     iput-object v1, p0, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->mListener:Landroid/service/notification/IConditionListener;
 
-    .line 48
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->mContext:Landroid/content/Context;
 
-    .line 49
     const/4 v1, 0x1
 
     invoke-virtual {p0, v1}, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->setOrientation(I)V
 
-    .line 50
     new-instance v1, Landroid/animation/LayoutTransition;
 
     invoke-direct {v1}, Landroid/animation/LayoutTransition;-><init>()V
 
     invoke-virtual {p0, v1}, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->setLayoutTransition(Landroid/animation/LayoutTransition;)V
 
-    .line 51
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -92,13 +84,11 @@
 
     move-result v0
 
-    .line 52
     .local v0, "p":I
     const/4 v1, 0x0
 
     invoke-virtual {p0, v0, v0, v0, v1}, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->setPadding(IIII)V
 
-    .line 53
     const-string v1, "notification"
 
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -111,10 +101,8 @@
 
     iput-object v1, p0, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->mNoMan:Landroid/app/INotificationManager;
 
-    .line 55
     invoke-direct {p0}, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->refreshSelectedConditions()V
 
-    .line 56
     return-void
 .end method
 
@@ -125,7 +113,6 @@
     .param p2, "x2"    # Z
 
     .prologue
-    .line 37
     invoke-direct {p0, p1, p2}, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->setSelectedCondition(Landroid/net/Uri;Z)V
 
     return-void
@@ -136,7 +123,6 @@
     .param p0, "x0"    # Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;
 
     .prologue
-    .line 37
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->mHandler:Lcom/android/settings/notification/ZenModeAutomaticConditionSelection$H;
 
     return-object v0
@@ -147,28 +133,23 @@
     .param p1, "tag"    # Ljava/lang/Object;
 
     .prologue
-    .line 73
     new-instance v0, Landroid/widget/CheckBox;
 
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->mContext:Landroid/content/Context;
 
     invoke-direct {v0, v1}, Landroid/widget/CheckBox;-><init>(Landroid/content/Context;)V
 
-    .line 74
     .local v0, "button":Landroid/widget/CheckBox;
     invoke-virtual {v0, p1}, Landroid/widget/CheckBox;->setTag(Ljava/lang/Object;)V
 
-    .line 75
     new-instance v1, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection$1;
 
     invoke-direct {v1, p0, v0}, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection$1;-><init>(Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;Landroid/widget/CheckBox;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    .line 81
     invoke-virtual {p0, v0}, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->addView(Landroid/view/View;)V
 
-    .line 82
     return-object v0
 .end method
 
@@ -176,7 +157,6 @@
     .locals 8
 
     .prologue
-    .line 60
     :try_start_0
     iget-object v6, p0, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->mNoMan:Landroid/app/INotificationManager;
 
@@ -184,16 +164,13 @@
 
     move-result-object v1
 
-    .line 61
     .local v1, "automatic":[Landroid/service/notification/Condition;
     iget-object v6, p0, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->mSelectedConditions:Landroid/util/ArraySet;
 
     invoke-virtual {v6}, Landroid/util/ArraySet;->clear()V
 
-    .line 62
     if-eqz v1, :cond_0
 
-    .line 63
     move-object v0, v1
 
     .local v0, "arr$":[Landroid/service/notification/Condition;
@@ -208,7 +185,6 @@
 
     aget-object v2, v0, v4
 
-    .line 64
     .local v2, "c":Landroid/service/notification/Condition;
     iget-object v6, p0, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->mSelectedConditions:Landroid/util/ArraySet;
 
@@ -218,12 +194,10 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 63
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 67
     .end local v0    # "arr$":[Landroid/service/notification/Condition;
     .end local v1    # "automatic":[Landroid/service/notification/Condition;
     .end local v2    # "c":Landroid/service/notification/Condition;
@@ -232,7 +206,6 @@
     :catch_0
     move-exception v3
 
-    .line 68
     .local v3, "e":Landroid/os/RemoteException;
     const-string v6, "ZenModeAutomaticConditionSelection"
 
@@ -240,7 +213,6 @@
 
     invoke-static {v6, v7, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 70
     .end local v3    # "e":Landroid/os/RemoteException;
     :cond_0
     return-void
@@ -252,7 +224,6 @@
     .param p2, "selected"    # Z
 
     .prologue
-    .line 86
     const-string v3, "ZenModeAutomaticConditionSelection"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -285,15 +256,12 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 88
     if-eqz p2, :cond_0
 
-    .line 89
     iget-object v3, p0, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->mSelectedConditions:Landroid/util/ArraySet;
 
     invoke-virtual {v3, p1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 93
     :goto_0
     iget-object v3, p0, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->mSelectedConditions:Landroid/util/ArraySet;
 
@@ -303,7 +271,6 @@
 
     new-array v0, v3, [Landroid/net/Uri;
 
-    .line 94
     .local v0, "automatic":[Landroid/net/Uri;
     const/4 v2, 0x0
 
@@ -313,7 +280,6 @@
 
     if-ge v2, v3, :cond_1
 
-    .line 95
     iget-object v3, p0, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->mSelectedConditions:Landroid/util/ArraySet;
 
     invoke-virtual {v3, v2}, Landroid/util/ArraySet;->valueAt(I)Ljava/lang/Object;
@@ -324,12 +290,10 @@
 
     aput-object v3, v0, v2
 
-    .line 94
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 91
     .end local v0    # "automatic":[Landroid/net/Uri;
     .end local v2    # "i":I
     :cond_0
@@ -339,7 +303,6 @@
 
     goto :goto_0
 
-    .line 98
     .restart local v0    # "automatic":[Landroid/net/Uri;
     .restart local v2    # "i":I
     :cond_1
@@ -350,15 +313,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 102
     :goto_2
     return-void
 
-    .line 99
     :catch_0
     move-exception v1
 
-    .line 100
     .local v1, "e":Landroid/os/RemoteException;
     const-string v3, "ZenModeAutomaticConditionSelection"
 
@@ -378,7 +338,6 @@
     .prologue
     const/4 v7, 0x3
 
-    .line 126
     move-object v0, p1
 
     .local v0, "arr$":[Landroid/service/notification/Condition;
@@ -393,7 +352,6 @@
 
     aget-object v1, v0, v2
 
-    .line 127
     .local v1, "c":Landroid/service/notification/Condition;
     iget-object v5, v1, Landroid/service/notification/Condition;->id:Landroid/net/Uri;
 
@@ -403,32 +361,26 @@
 
     check-cast v4, Landroid/widget/CheckBox;
 
-    .line 128
     .local v4, "v":Landroid/widget/CheckBox;
     iget v5, v1, Landroid/service/notification/Condition;->state:I
 
     if-eq v5, v7, :cond_0
 
-    .line 129
     if-nez v4, :cond_0
 
-    .line 130
     iget-object v5, v1, Landroid/service/notification/Condition;->id:Landroid/net/Uri;
 
     invoke-direct {p0, v5}, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->newCheckBox(Ljava/lang/Object;)Landroid/widget/CheckBox;
 
     move-result-object v4
 
-    .line 133
     :cond_0
     if-eqz v4, :cond_1
 
-    .line 134
     iget-object v5, v1, Landroid/service/notification/Condition;->summary:Ljava/lang/String;
 
     invoke-virtual {v4, v5}, Landroid/widget/CheckBox;->setText(Ljava/lang/CharSequence;)V
 
-    .line 135
     iget v5, v1, Landroid/service/notification/Condition;->state:I
 
     if-eq v5, v7, :cond_2
@@ -438,7 +390,6 @@
     :goto_1
     invoke-virtual {v4, v5}, Landroid/widget/CheckBox;->setEnabled(Z)V
 
-    .line 136
     iget-object v5, p0, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->mSelectedConditions:Landroid/util/ArraySet;
 
     iget-object v6, v1, Landroid/service/notification/Condition;->id:Landroid/net/Uri;
@@ -449,19 +400,16 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 126
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 135
     :cond_2
     const/4 v5, 0x0
 
     goto :goto_1
 
-    .line 139
     .end local v1    # "c":Landroid/service/notification/Condition;
     .end local v4    # "v":Landroid/widget/CheckBox;
     :cond_3
@@ -472,15 +420,12 @@
     .locals 1
 
     .prologue
-    .line 106
     invoke-super {p0}, Landroid/widget/LinearLayout;->onAttachedToWindow()V
 
-    .line 107
     const/4 v0, 0x2
 
     invoke-virtual {p0, v0}, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->requestZenModeConditions(I)V
 
-    .line 108
     return-void
 .end method
 
@@ -488,15 +433,12 @@
     .locals 1
 
     .prologue
-    .line 112
     invoke-super {p0}, Landroid/widget/LinearLayout;->onDetachedFromWindow()V
 
-    .line 113
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->requestZenModeConditions(I)V
 
-    .line 114
     return-void
 .end method
 
@@ -505,7 +447,6 @@
     .param p1, "relevance"    # I
 
     .prologue
-    .line 117
     const-string v1, "ZenModeAutomaticConditionSelection"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -532,7 +473,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 119
     :try_start_0
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->mNoMan:Landroid/app/INotificationManager;
 
@@ -542,15 +482,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 123
     :goto_0
     return-void
 
-    .line 120
     :catch_0
     move-exception v0
 
-    .line 121
     .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "ZenModeAutomaticConditionSelection"
 

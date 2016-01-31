@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 133
     iput-object p1, p0, Lcom/android/settings/wifi/WifiAPITest$3;->this$0:Lcom/android/settings/wifi/WifiAPITest;
 
     iput-object p2, p0, Lcom/android/settings/wifi/WifiAPITest$3;->val$input:Landroid/widget/EditText;
@@ -46,7 +45,6 @@
     .param p2, "whichButton"    # I
 
     .prologue
-    .line 136
     :try_start_0
     iget-object v2, p0, Lcom/android/settings/wifi/WifiAPITest$3;->val$input:Landroid/widget/EditText;
 
@@ -54,7 +52,6 @@
 
     move-result-object v1
 
-    .line 137
     .local v1, "value":Landroid/text/Editable;
     iget-object v2, p0, Lcom/android/settings/wifi/WifiAPITest$3;->this$0:Lcom/android/settings/wifi/WifiAPITest;
 
@@ -69,7 +66,6 @@
     # setter for: Lcom/android/settings/wifi/WifiAPITest;->netid:I
     invoke-static {v2, v3}, Lcom/android/settings/wifi/WifiAPITest;->access$002(Lcom/android/settings/wifi/WifiAPITest;I)I
 
-    .line 138
     iget-object v2, p0, Lcom/android/settings/wifi/WifiAPITest$3;->this$0:Lcom/android/settings/wifi/WifiAPITest;
 
     # getter for: Lcom/android/settings/wifi/WifiAPITest;->mWifiManager:Landroid/net/wifi/WifiManager;
@@ -90,16 +86,13 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 142
     .end local v1    # "value":Landroid/text/Editable;
     :goto_0
     return-void
 
-    .line 139
     :catch_0
     move-exception v0
 
-    .line 140
     .local v0, "nfe":Ljava/lang/NumberFormatException;
     invoke-virtual {v0}, Ljava/lang/NumberFormatException;->printStackTrace()V
 

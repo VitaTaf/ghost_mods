@@ -36,7 +36,6 @@
     .locals 0
 
     .prologue
-    .line 133
     iput-object p1, p0, Lcom/android/settings/location/LocationSettings$1;->this$0:Lcom/android/settings/location/LocationSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +51,6 @@
     .param p2, "rhs"    # Landroid/preference/Preference;
 
     .prologue
-    .line 136
     invoke-virtual {p1}, Landroid/preference/Preference;->getTitle()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -82,7 +80,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 133
     check-cast p1, Landroid/preference/Preference;
 
     .end local p1    # "x0":Ljava/lang/Object;

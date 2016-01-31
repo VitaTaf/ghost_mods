@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 829
     iput-object p1, p0, Lcom/android/settings/sim/SimSettings$ConfirmDataDisableFragment$1;->this$1:Lcom/android/settings/sim/SimSettings$ConfirmDataDisableFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 832
     iget-object v3, p0, Lcom/android/settings/sim/SimSettings$ConfirmDataDisableFragment$1;->this$1:Lcom/android/settings/sim/SimSettings$ConfirmDataDisableFragment;
 
     invoke-virtual {v3}, Lcom/android/settings/sim/SimSettings$ConfirmDataDisableFragment;->getTargetFragment()Landroid/app/Fragment;
@@ -51,11 +49,9 @@
 
     check-cast v1, Lcom/android/settings/sim/SimSettings;
 
-    .line 833
     .local v1, "target":Lcom/android/settings/sim/SimSettings;
     if-eqz v1, :cond_0
 
-    .line 834
     iget-object v3, p0, Lcom/android/settings/sim/SimSettings$ConfirmDataDisableFragment$1;->this$1:Lcom/android/settings/sim/SimSettings$ConfirmDataDisableFragment;
 
     invoke-virtual {v3}, Lcom/android/settings/sim/SimSettings$ConfirmDataDisableFragment;->getActivity()Landroid/app/Activity;
@@ -70,13 +66,11 @@
 
     check-cast v2, Landroid/telephony/TelephonyManager;
 
-    .line 836
     .local v2, "tm":Landroid/telephony/TelephonyManager;
     invoke-virtual {v2}, Landroid/telephony/TelephonyManager;->disableDataConnectivity()Z
 
     move-result v0
 
-    .line 837
     .local v0, "status":Z
     iget-object v3, p0, Lcom/android/settings/sim/SimSettings$ConfirmDataDisableFragment$1;->this$1:Lcom/android/settings/sim/SimSettings$ConfirmDataDisableFragment;
 
@@ -85,7 +79,6 @@
     # invokes: Lcom/android/settings/sim/SimSettings;->updateCellularDataValues()V
     invoke-static {v3}, Lcom/android/settings/sim/SimSettings;->access$900(Lcom/android/settings/sim/SimSettings;)V
 
-    .line 839
     .end local v0    # "status":Z
     .end local v2    # "tm":Landroid/telephony/TelephonyManager;
     :cond_0

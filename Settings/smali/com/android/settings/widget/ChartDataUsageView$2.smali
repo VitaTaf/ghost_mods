@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 294
     iput-object p1, p0, Lcom/android/settings/widget/ChartDataUsageView$2;->this$0:Lcom/android/settings/widget/ChartDataUsageView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,22 +41,18 @@
     .param p2, "sweepDone"    # Z
 
     .prologue
-    .line 297
     if-eqz p2, :cond_2
 
-    .line 298
     iget-object v0, p0, Lcom/android/settings/widget/ChartDataUsageView$2;->this$0:Lcom/android/settings/widget/ChartDataUsageView;
 
     # invokes: Lcom/android/settings/widget/ChartDataUsageView;->clearUpdateAxisDelayed(Lcom/android/settings/widget/ChartSweepView;)V
     invoke-static {v0, p1}, Lcom/android/settings/widget/ChartDataUsageView;->access$300(Lcom/android/settings/widget/ChartDataUsageView;Lcom/android/settings/widget/ChartSweepView;)V
 
-    .line 299
     iget-object v0, p0, Lcom/android/settings/widget/ChartDataUsageView$2;->this$0:Lcom/android/settings/widget/ChartDataUsageView;
 
     # invokes: Lcom/android/settings/widget/ChartDataUsageView;->updateEstimateVisible()V
     invoke-static {v0}, Lcom/android/settings/widget/ChartDataUsageView;->access$100(Lcom/android/settings/widget/ChartDataUsageView;)V
 
-    .line 301
     iget-object v0, p0, Lcom/android/settings/widget/ChartDataUsageView$2;->this$0:Lcom/android/settings/widget/ChartDataUsageView;
 
     # getter for: Lcom/android/settings/widget/ChartDataUsageView;->mSweepWarning:Lcom/android/settings/widget/ChartSweepView;
@@ -76,7 +71,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 302
     iget-object v0, p0, Lcom/android/settings/widget/ChartDataUsageView$2;->this$0:Lcom/android/settings/widget/ChartDataUsageView;
 
     # getter for: Lcom/android/settings/widget/ChartDataUsageView;->mListener:Lcom/android/settings/widget/ChartDataUsageView$DataUsageChartListener;
@@ -86,12 +80,10 @@
 
     invoke-interface {v0}, Lcom/android/settings/widget/ChartDataUsageView$DataUsageChartListener;->onWarningChanged()V
 
-    .line 310
     :cond_0
     :goto_0
     return-void
 
-    .line 303
     :cond_1
     iget-object v0, p0, Lcom/android/settings/widget/ChartDataUsageView$2;->this$0:Lcom/android/settings/widget/ChartDataUsageView;
 
@@ -111,7 +103,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 304
     iget-object v0, p0, Lcom/android/settings/widget/ChartDataUsageView$2;->this$0:Lcom/android/settings/widget/ChartDataUsageView;
 
     # getter for: Lcom/android/settings/widget/ChartDataUsageView;->mListener:Lcom/android/settings/widget/ChartDataUsageView$DataUsageChartListener;
@@ -123,7 +114,6 @@
 
     goto :goto_0
 
-    .line 308
     :cond_2
     iget-object v0, p0, Lcom/android/settings/widget/ChartDataUsageView$2;->this$0:Lcom/android/settings/widget/ChartDataUsageView;
 
@@ -140,7 +130,6 @@
     .param p1, "sweep"    # Lcom/android/settings/widget/ChartSweepView;
 
     .prologue
-    .line 314
     iget-object v0, p0, Lcom/android/settings/widget/ChartDataUsageView$2;->this$0:Lcom/android/settings/widget/ChartDataUsageView;
 
     # getter for: Lcom/android/settings/widget/ChartDataUsageView;->mSweepWarning:Lcom/android/settings/widget/ChartSweepView;
@@ -159,7 +148,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 315
     iget-object v0, p0, Lcom/android/settings/widget/ChartDataUsageView$2;->this$0:Lcom/android/settings/widget/ChartDataUsageView;
 
     # getter for: Lcom/android/settings/widget/ChartDataUsageView;->mListener:Lcom/android/settings/widget/ChartDataUsageView$DataUsageChartListener;
@@ -169,12 +157,10 @@
 
     invoke-interface {v0}, Lcom/android/settings/widget/ChartDataUsageView$DataUsageChartListener;->requestWarningEdit()V
 
-    .line 319
     :cond_0
     :goto_0
     return-void
 
-    .line 316
     :cond_1
     iget-object v0, p0, Lcom/android/settings/widget/ChartDataUsageView$2;->this$0:Lcom/android/settings/widget/ChartDataUsageView;
 
@@ -194,7 +180,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 317
     iget-object v0, p0, Lcom/android/settings/widget/ChartDataUsageView$2;->this$0:Lcom/android/settings/widget/ChartDataUsageView;
 
     # getter for: Lcom/android/settings/widget/ChartDataUsageView;->mListener:Lcom/android/settings/widget/ChartDataUsageView$DataUsageChartListener;

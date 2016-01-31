@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 544
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeSettings$14;->this$0:Lcom/android/settings/notification/ZenModeSettings;
 
     iput p2, p0, Lcom/android/settings/notification/ZenModeSettings$14;->val$oldSettingsValue:I
@@ -46,13 +45,11 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 547
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeSettings$14;->this$0:Lcom/android/settings/notification/ZenModeSettings;
 
     iget v1, p0, Lcom/android/settings/notification/ZenModeSettings$14;->val$oldSettingsValue:I
 
     invoke-virtual {v0, v1}, Lcom/android/settings/notification/ZenModeSettings;->cancelDialog(I)V
 
-    .line 548
     return-void
 .end method

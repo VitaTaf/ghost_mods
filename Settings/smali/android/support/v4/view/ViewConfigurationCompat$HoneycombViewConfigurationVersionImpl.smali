@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 63
     invoke-direct {p0}, Landroid/support/v4/view/ViewConfigurationCompat$FroyoViewConfigurationVersionImpl;-><init>()V
 
     return-void

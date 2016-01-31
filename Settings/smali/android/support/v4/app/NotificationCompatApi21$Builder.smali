@@ -83,11 +83,9 @@
     .end annotation
 
     .prologue
-    .line 67
     .local p20, "people":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 68
     new-instance v6, Landroid/app/Notification$Builder;
 
     invoke-direct {v6, p1}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
@@ -330,7 +328,6 @@
 
     iput-object v6, p0, Landroid/support/v4/app/NotificationCompatApi21$Builder;->b:Landroid/app/Notification$Builder;
 
-    .line 103
     invoke-virtual/range {p20 .. p20}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
@@ -349,7 +346,6 @@
 
     check-cast v5, Ljava/lang/String;
 
-    .line 104
     .local v5, "person":Ljava/lang/String;
     iget-object v6, p0, Landroid/support/v4/app/NotificationCompatApi21$Builder;->b:Landroid/app/Notification$Builder;
 
@@ -357,7 +353,6 @@
 
     goto :goto_4
 
-    .line 68
     .end local v4    # "i$":Ljava/util/Iterator;
     .end local v5    # "person":Ljava/lang/String;
     :cond_0
@@ -380,7 +375,6 @@
 
     goto :goto_3
 
-    .line 106
     .restart local v4    # "i$":Ljava/util/Iterator;
     :cond_4
     return-void
@@ -393,12 +387,10 @@
     .param p1, "action"    # Landroid/support/v4/app/NotificationCompatBase$Action;
 
     .prologue
-    .line 110
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompatApi21$Builder;->b:Landroid/app/Notification$Builder;
 
     invoke-static {v0, p1}, Landroid/support/v4/app/NotificationCompatApi20;->addAction(Landroid/app/Notification$Builder;Landroid/support/v4/app/NotificationCompatBase$Action;)V
 
-    .line 111
     return-void
 .end method
 
@@ -406,7 +398,6 @@
     .locals 1
 
     .prologue
-    .line 119
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompatApi21$Builder;->b:Landroid/app/Notification$Builder;
 
     invoke-virtual {v0}, Landroid/app/Notification$Builder;->build()Landroid/app/Notification;
@@ -420,7 +411,6 @@
     .locals 1
 
     .prologue
-    .line 115
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompatApi21$Builder;->b:Landroid/app/Notification$Builder;
 
     return-object v0

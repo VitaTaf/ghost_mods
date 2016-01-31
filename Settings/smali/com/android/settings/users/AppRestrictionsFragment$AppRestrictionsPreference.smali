@@ -53,25 +53,20 @@
     .param p2, "listener"    # Landroid/view/View$OnClickListener;
 
     .prologue
-    .line 162
     invoke-direct {p0, p1}, Landroid/preference/SwitchPreference;-><init>(Landroid/content/Context;)V
 
-    .line 159
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;->mChildren:Ljava/util/List;
 
-    .line 163
     const v0, 0x7f040078
 
     invoke-virtual {p0, v0}, Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;->setLayoutResource(I)V
 
-    .line 164
     iput-object p2, p0, Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;->listener:Landroid/view/View$OnClickListener;
 
-    .line 165
     return-void
 .end method
 
@@ -80,7 +75,6 @@
     .param p0, "x0"    # Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;
 
     .prologue
-    .line 153
     iget-object v0, p0, Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;->restrictions:Ljava/util/ArrayList;
 
     return-object v0
@@ -91,7 +85,6 @@
     .param p0, "x0"    # Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;
 
     .prologue
-    .line 153
     iget-object v0, p0, Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;->mChildren:Ljava/util/List;
 
     return-object v0
@@ -102,7 +95,6 @@
     .param p0, "x0"    # Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;
 
     .prologue
-    .line 153
     iget-object v0, p0, Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;->listener:Landroid/view/View$OnClickListener;
 
     return-object v0
@@ -114,7 +106,6 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 153
     invoke-direct {p0, p1}, Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;->setSettingsEnabled(Z)V
 
     return-void
@@ -125,7 +116,6 @@
     .param p0, "x0"    # Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;
 
     .prologue
-    .line 153
     iget-boolean v0, p0, Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;->hasSettings:Z
 
     return v0
@@ -136,10 +126,8 @@
     .param p1, "enable"    # Z
 
     .prologue
-    .line 168
     iput-boolean p1, p0, Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;->hasSettings:Z
 
-    .line 169
     return-void
 .end method
 
@@ -158,7 +146,6 @@
     .end annotation
 
     .prologue
-    .line 194
     iget-object v0, p0, Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;->restrictions:Ljava/util/ArrayList;
 
     return-object v0
@@ -168,7 +155,6 @@
     .locals 1
 
     .prologue
-    .line 180
     iget-boolean v0, p0, Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;->immutable:Z
 
     return v0
@@ -178,7 +164,6 @@
     .locals 1
 
     .prologue
-    .line 198
     iget-boolean v0, p0, Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;->panelOpen:Z
 
     return v0
@@ -195,17 +180,14 @@
 
     const/4 v5, 0x0
 
-    .line 211
     invoke-super {p0, p1}, Landroid/preference/SwitchPreference;->onBindView(Landroid/view/View;)V
 
-    .line 213
     const v4, 0x7f0f010a
 
     invoke-virtual {p1, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 214
     .local v1, "appRestrictionsSettings":Landroid/view/View;
     iget-boolean v4, p0, Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;->hasSettings:Z
 
@@ -216,7 +198,6 @@
     :goto_0
     invoke-virtual {v1, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 215
     const v4, 0x7f0f010b
 
     invoke-virtual {p1, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -232,31 +213,25 @@
     :cond_0
     invoke-virtual {v4, v6}, Landroid/view/View;->setVisibility(I)V
 
-    .line 217
     iget-object v4, p0, Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;->listener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v1, v4}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 218
     invoke-virtual {v1, p0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 220
     const v4, 0x7f0f0109
 
     invoke-virtual {p1, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 221
     .local v0, "appRestrictionsPref":Landroid/view/View;
     iget-object v4, p0, Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;->listener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 222
     invoke-virtual {v0, p0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 224
     const v4, 0x1020018
 
     invoke-virtual {p1, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -265,7 +240,6 @@
 
     check-cast v3, Landroid/view/ViewGroup;
 
-    .line 225
     .local v3, "widget":Landroid/view/ViewGroup;
     invoke-virtual {p0}, Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;->isImmutable()Z
 
@@ -278,21 +252,18 @@
     :goto_1
     invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->setEnabled(Z)V
 
-    .line 226
     invoke-virtual {v3}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v4
 
     if-lez v4, :cond_2
 
-    .line 227
     invoke-virtual {v3, v5}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
     check-cast v2, Landroid/widget/Switch;
 
-    .line 228
     .local v2, "toggle":Landroid/widget/Switch;
     invoke-virtual {p0}, Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;->isImmutable()Z
 
@@ -305,23 +276,18 @@
     :cond_1
     invoke-virtual {v2, v5}, Landroid/widget/Switch;->setEnabled(Z)V
 
-    .line 229
     invoke-virtual {v2, p0}, Landroid/widget/Switch;->setTag(Ljava/lang/Object;)V
 
-    .line 230
     invoke-virtual {v2, v7}, Landroid/widget/Switch;->setClickable(Z)V
 
-    .line 231
     invoke-virtual {v2, v7}, Landroid/widget/Switch;->setFocusable(Z)V
 
-    .line 232
     new-instance v4, Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference$1;
 
     invoke-direct {v4, p0, v2}, Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference$1;-><init>(Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;Landroid/widget/Switch;)V
 
     invoke-virtual {v2, v4}, Landroid/widget/Switch;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    .line 239
     .end local v2    # "toggle":Landroid/widget/Switch;
     :cond_2
     return-void
@@ -331,7 +297,6 @@
     :cond_3
     move v4, v6
 
-    .line 214
     goto :goto_0
 
     .restart local v0    # "appRestrictionsPref":Landroid/view/View;
@@ -339,7 +304,6 @@
     :cond_4
     move v4, v5
 
-    .line 225
     goto :goto_1
 .end method
 
@@ -348,10 +312,8 @@
     .param p1, "immutable"    # Z
 
     .prologue
-    .line 176
     iput-boolean p1, p0, Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;->immutable:Z
 
-    .line 177
     return-void
 .end method
 
@@ -360,10 +322,8 @@
     .param p1, "open"    # Z
 
     .prologue
-    .line 202
     iput-boolean p1, p0, Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;->panelOpen:Z
 
-    .line 203
     return-void
 .end method
 
@@ -380,10 +340,8 @@
     .end annotation
 
     .prologue
-    .line 172
     .local p1, "restrictions":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/RestrictionEntry;>;"
     iput-object p1, p0, Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;->restrictions:Ljava/util/ArrayList;
 
-    .line 173
     return-void
 .end method

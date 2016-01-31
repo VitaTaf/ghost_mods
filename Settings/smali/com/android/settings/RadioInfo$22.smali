@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 1182
     iput-object p1, p0, Lcom/android/settings/RadioInfo$22;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +40,10 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 1184
     iget-object v0, p0, Lcom/android/settings/RadioInfo$22;->this$0:Lcom/android/settings/RadioInfo;
 
     # invokes: Lcom/android/settings/RadioInfo;->refreshSmsc()V
     invoke-static {v0}, Lcom/android/settings/RadioInfo;->access$4700(Lcom/android/settings/RadioInfo;)V
 
-    .line 1185
     return-void
 .end method

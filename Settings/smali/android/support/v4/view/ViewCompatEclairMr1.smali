@@ -9,7 +9,6 @@
     .param p0, "view"    # Landroid/view/View;
 
     .prologue
-    .line 33
     invoke-virtual {p0}, Landroid/view/View;->isOpaque()Z
 
     move-result v0

@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 596
     iput-object p1, p0, Lcom/android/settings/wifi/WifiSettingsForSetupWizardXL$1;->this$0:Lcom/android/settings/wifi/WifiSettingsForSetupWizardXL;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "reason"    # I
 
     .prologue
-    .line 601
     return-void
 .end method
 
@@ -49,6 +47,5 @@
     .locals 0
 
     .prologue
-    .line 598
     return-void
 .end method

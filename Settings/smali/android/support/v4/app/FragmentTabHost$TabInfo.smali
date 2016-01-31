@@ -37,7 +37,6 @@
     .param p0, "x0"    # Landroid/support/v4/app/FragmentTabHost$TabInfo;
 
     .prologue
-    .line 61
     iget-object v0, p0, Landroid/support/v4/app/FragmentTabHost$TabInfo;->fragment:Landroid/support/v4/app/Fragment;
 
     return-object v0
@@ -49,7 +48,6 @@
     .param p1, "x1"    # Landroid/support/v4/app/Fragment;
 
     .prologue
-    .line 61
     iput-object p1, p0, Landroid/support/v4/app/FragmentTabHost$TabInfo;->fragment:Landroid/support/v4/app/Fragment;
 
     return-object p1
@@ -60,7 +58,6 @@
     .param p0, "x0"    # Landroid/support/v4/app/FragmentTabHost$TabInfo;
 
     .prologue
-    .line 61
     iget-object v0, p0, Landroid/support/v4/app/FragmentTabHost$TabInfo;->tag:Ljava/lang/String;
 
     return-object v0
@@ -71,7 +68,6 @@
     .param p0, "x0"    # Landroid/support/v4/app/FragmentTabHost$TabInfo;
 
     .prologue
-    .line 61
     iget-object v0, p0, Landroid/support/v4/app/FragmentTabHost$TabInfo;->clss:Ljava/lang/Class;
 
     return-object v0
@@ -82,7 +78,6 @@
     .param p0, "x0"    # Landroid/support/v4/app/FragmentTabHost$TabInfo;
 
     .prologue
-    .line 61
     iget-object v0, p0, Landroid/support/v4/app/FragmentTabHost$TabInfo;->args:Landroid/os/Bundle;
 
     return-object v0

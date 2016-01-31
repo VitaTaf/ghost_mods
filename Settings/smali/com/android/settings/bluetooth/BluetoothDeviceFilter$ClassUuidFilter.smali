@@ -22,7 +22,6 @@
     .locals 0
 
     .prologue
-    .line 99
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,7 +32,6 @@
     .param p1, "x0"    # Lcom/android/settings/bluetooth/BluetoothDeviceFilter$1;
 
     .prologue
-    .line 99
     invoke-direct {p0}, Lcom/android/settings/bluetooth/BluetoothDeviceFilter$ClassUuidFilter;-><init>()V
 
     return-void
@@ -46,7 +44,6 @@
     .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
     .prologue
-    .line 103
     invoke-virtual {p1}, Landroid/bluetooth/BluetoothDevice;->getUuids()[Landroid/os/ParcelUuid;
 
     move-result-object v0

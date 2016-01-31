@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 764
     invoke-direct {p0}, Landroid/support/v4/view/ViewCompat$EclairMr1ViewCompatImpl;-><init>()V
 
     return-void
@@ -32,7 +31,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 767
     invoke-static {p1}, Landroid/support/v4/view/ViewCompatGingerbread;->getOverScrollMode(Landroid/view/View;)I
 
     move-result v0

@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 292
     iput-object p1, p0, Lcom/android/settings/notification/NotificationAppList$NotificationAppAdapter$1;->this$1:Lcom/android/settings/notification/NotificationAppList$NotificationAppAdapter;
 
     iput-object p2, p0, Lcom/android/settings/notification/NotificationAppList$NotificationAppAdapter$1;->val$row:Lcom/android/settings/notification/NotificationAppList$AppRow;
@@ -45,7 +44,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 295
     iget-object v0, p0, Lcom/android/settings/notification/NotificationAppList$NotificationAppAdapter$1;->this$1:Lcom/android/settings/notification/NotificationAppList$NotificationAppAdapter;
 
     iget-object v0, v0, Lcom/android/settings/notification/NotificationAppList$NotificationAppAdapter;->this$0:Lcom/android/settings/notification/NotificationAppList;
@@ -114,10 +112,8 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 301
     return-void
 
-    .line 295
     :cond_0
     const/4 v0, 0x0
 

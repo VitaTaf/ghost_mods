@@ -44,29 +44,24 @@
     .param p2, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 84
     iput-object p1, p0, Lcom/android/settings/UsageAccessSettings$AppsRequestingAccessFetcher;->this$0:Lcom/android/settings/UsageAccessSettings;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 85
     iput-object p2, p0, Lcom/android/settings/UsageAccessSettings$AppsRequestingAccessFetcher;->mContext:Landroid/content/Context;
 
-    .line 86
     invoke-virtual {p2}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/UsageAccessSettings$AppsRequestingAccessFetcher;->mPackageManager:Landroid/content/pm/PackageManager;
 
-    .line 87
     invoke-static {}, Landroid/app/ActivityThread;->getPackageManager()Landroid/content/pm/IPackageManager;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/UsageAccessSettings$AppsRequestingAccessFetcher;->mIPackageManager:Landroid/content/pm/IPackageManager;
 
-    .line 88
     return-void
 .end method
 
@@ -75,7 +70,6 @@
     .param p1, "pe"    # Lcom/android/settings/UsageAccessSettings$PackageEntry;
 
     .prologue
-    .line 223
     iget-object v1, p1, Lcom/android/settings/UsageAccessSettings$PackageEntry;->preference:Landroid/preference/SwitchPreference;
 
     iget-object v2, p1, Lcom/android/settings/UsageAccessSettings$PackageEntry;->packageInfo:Landroid/content/pm/PackageInfo;
@@ -90,7 +84,6 @@
 
     invoke-virtual {v1, v2}, Landroid/preference/SwitchPreference;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    .line 224
     iget-object v1, p1, Lcom/android/settings/UsageAccessSettings$PackageEntry;->preference:Landroid/preference/SwitchPreference;
 
     iget-object v2, p1, Lcom/android/settings/UsageAccessSettings$PackageEntry;->packageInfo:Landroid/content/pm/PackageInfo;
@@ -105,26 +98,21 @@
 
     invoke-virtual {v1, v2}, Landroid/preference/SwitchPreference;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 225
     iget-object v1, p1, Lcom/android/settings/UsageAccessSettings$PackageEntry;->preference:Landroid/preference/SwitchPreference;
 
     iget-object v2, p1, Lcom/android/settings/UsageAccessSettings$PackageEntry;->packageName:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Landroid/preference/SwitchPreference;->setKey(Ljava/lang/String;)V
 
-    .line 227
     const/4 v0, 0x0
 
-    .line 228
     .local v0, "check":Z
     iget v1, p1, Lcom/android/settings/UsageAccessSettings$PackageEntry;->appOpMode:I
 
     if-nez v1, :cond_2
 
-    .line 229
     const/4 v0, 0x1
 
-    .line 236
     :cond_0
     :goto_0
     iget-object v1, p1, Lcom/android/settings/UsageAccessSettings$PackageEntry;->preference:Landroid/preference/SwitchPreference;
@@ -135,16 +123,13 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 237
     iget-object v1, p1, Lcom/android/settings/UsageAccessSettings$PackageEntry;->preference:Landroid/preference/SwitchPreference;
 
     invoke-virtual {v1, v0}, Landroid/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 239
     :cond_1
     return-void
 
-    .line 230
     :cond_2
     iget v1, p1, Lcom/android/settings/UsageAccessSettings$PackageEntry;->appOpMode:I
 
@@ -152,7 +137,6 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 233
     iget-boolean v0, p1, Lcom/android/settings/UsageAccessSettings$PackageEntry;->permissionGranted:Z
 
     goto :goto_0
@@ -177,7 +161,6 @@
     .end annotation
 
     .prologue
-    .line 94
     :try_start_0
     move-object/from16 v0, p0
 
@@ -193,24 +176,19 @@
 
     move-result-object v16
 
-    .line 102
     .local v16, "packages":[Ljava/lang/String;
     if-nez v16, :cond_1
 
-    .line 104
     const/4 v4, 0x0
 
-    .line 172
     .end local v16    # "packages":[Ljava/lang/String;
     :cond_0
     :goto_0
     return-object v4
 
-    .line 96
     :catch_0
     move-exception v3
 
-    .line 97
     .local v3, "e":Landroid/os/RemoteException;
     const-string v18, "UsageAccessSettings"
 
@@ -218,12 +196,10 @@
 
     invoke-static/range {v18 .. v19}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 99
     const/4 v4, 0x0
 
     goto :goto_0
 
-    .line 107
     .end local v3    # "e":Landroid/os/RemoteException;
     .restart local v16    # "packages":[Ljava/lang/String;
     :cond_1
@@ -231,7 +207,6 @@
 
     invoke-direct {v4}, Landroid/util/ArrayMap;-><init>()V
 
-    .line 108
     .local v4, "entries":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/settings/UsageAccessSettings$PackageEntry;>;"
     move-object/from16 v2, v16
 
@@ -247,7 +222,6 @@
 
     aget-object v12, v2, v6
 
-    .line 109
     .local v12, "packageName":Ljava/lang/String;
     invoke-static {v12}, Lcom/android/settings/UsageAccessSettings;->shouldIgnorePackage(Ljava/lang/String;)Z
 
@@ -255,7 +229,6 @@
 
     if-nez v18, :cond_2
 
-    .line 110
     new-instance v18, Lcom/android/settings/UsageAccessSettings$PackageEntry;
 
     move-object/from16 v0, v18
@@ -266,13 +239,11 @@
 
     invoke-virtual {v4, v12, v0}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 108
     :cond_2
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_1
 
-    .line 115
     .end local v12    # "packageName":Ljava/lang/String;
     :cond_3
     move-object/from16 v0, p0
@@ -292,7 +263,6 @@
 
     move-result-object v11
 
-    .line 117
     .local v11, "packageInfos":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/PackageInfo;>;"
     if-eqz v11, :cond_5
 
@@ -300,7 +270,6 @@
 
     move-result v10
 
-    .line 118
     .local v10, "packageInfoCount":I
     :goto_2
     const/4 v5, 0x0
@@ -309,14 +278,12 @@
     :goto_3
     if-ge v5, v10, :cond_6
 
-    .line 119
     invoke-interface {v11, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v9
 
     check-cast v9, Landroid/content/pm/PackageInfo;
 
-    .line 120
     .local v9, "packageInfo":Landroid/content/pm/PackageInfo;
     iget-object v0, v9, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
 
@@ -330,16 +297,13 @@
 
     check-cast v17, Lcom/android/settings/UsageAccessSettings$PackageEntry;
 
-    .line 121
     .local v17, "pe":Lcom/android/settings/UsageAccessSettings$PackageEntry;
     if-eqz v17, :cond_4
 
-    .line 122
     move-object/from16 v0, v17
 
     iput-object v9, v0, Lcom/android/settings/UsageAccessSettings$PackageEntry;->packageInfo:Landroid/content/pm/PackageInfo;
 
-    .line 123
     const/16 v18, 0x1
 
     move/from16 v0, v18
@@ -348,13 +312,11 @@
 
     iput-boolean v0, v1, Lcom/android/settings/UsageAccessSettings$PackageEntry;->permissionGranted:Z
 
-    .line 118
     :cond_4
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_3
 
-    .line 117
     .end local v5    # "i":I
     .end local v9    # "packageInfo":Landroid/content/pm/PackageInfo;
     .end local v10    # "packageInfoCount":I
@@ -364,7 +326,6 @@
 
     goto :goto_2
 
-    .line 129
     .restart local v5    # "i":I
     .restart local v10    # "packageInfoCount":I
     :cond_6
@@ -372,21 +333,18 @@
 
     move-result v8
 
-    .line 130
     .local v8, "packageCount":I
     const/4 v5, 0x0
 
     :goto_4
     if-ge v5, v8, :cond_8
 
-    .line 131
     invoke-virtual {v4, v5}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v17
 
     check-cast v17, Lcom/android/settings/UsageAccessSettings$PackageEntry;
 
-    .line 132
     .restart local v17    # "pe":Lcom/android/settings/UsageAccessSettings$PackageEntry;
     move-object/from16 v0, v17
 
@@ -396,7 +354,6 @@
 
     if-nez v18, :cond_7
 
-    .line 134
     :try_start_1
     move-object/from16 v0, p0
 
@@ -424,30 +381,24 @@
     :try_end_1
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 130
     :cond_7
     :goto_5
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_4
 
-    .line 135
     :catch_1
     move-exception v3
 
-    .line 138
     .local v3, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     invoke-virtual {v4, v5}, Landroid/util/ArrayMap;->removeAt(I)Ljava/lang/Object;
 
-    .line 139
     add-int/lit8 v5, v5, -0x1
 
-    .line 140
     add-int/lit8 v8, v8, -0x1
 
     goto :goto_5
 
-    .line 146
     .end local v3    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     .end local v17    # "pe":Lcom/android/settings/UsageAccessSettings$PackageEntry;
     :cond_8
@@ -472,7 +423,6 @@
 
     move-result-object v14
 
-    .line 148
     .local v14, "packageOps":Ljava/util/List;, "Ljava/util/List<Landroid/app/AppOpsManager$PackageOps;>;"
     if-eqz v14, :cond_a
 
@@ -480,7 +430,6 @@
 
     move-result v15
 
-    .line 149
     .local v15, "packageOpsCount":I
     :goto_6
     const/4 v5, 0x0
@@ -488,14 +437,12 @@
     :goto_7
     if-ge v5, v15, :cond_0
 
-    .line 150
     invoke-interface {v14, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v13
 
     check-cast v13, Landroid/app/AppOpsManager$PackageOps;
 
-    .line 151
     .local v13, "packageOp":Landroid/app/AppOpsManager$PackageOps;
     invoke-virtual {v13}, Landroid/app/AppOpsManager$PackageOps;->getPackageName()Ljava/lang/String;
 
@@ -509,11 +456,9 @@
 
     check-cast v17, Lcom/android/settings/UsageAccessSettings$PackageEntry;
 
-    .line 152
     .restart local v17    # "pe":Lcom/android/settings/UsageAccessSettings$PackageEntry;
     if-nez v17, :cond_b
 
-    .line 153
     const-string v18, "UsageAccessSettings"
 
     new-instance v19, Ljava/lang/StringBuilder;
@@ -546,14 +491,12 @@
 
     invoke-static/range {v18 .. v19}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 149
     :cond_9
     :goto_8
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_7
 
-    .line 148
     .end local v13    # "packageOp":Landroid/app/AppOpsManager$PackageOps;
     .end local v15    # "packageOpsCount":I
     .end local v17    # "pe":Lcom/android/settings/UsageAccessSettings$PackageEntry;
@@ -562,7 +505,6 @@
 
     goto :goto_6
 
-    .line 158
     .restart local v13    # "packageOp":Landroid/app/AppOpsManager$PackageOps;
     .restart local v15    # "packageOpsCount":I
     .restart local v17    # "pe":Lcom/android/settings/UsageAccessSettings$PackageEntry;
@@ -595,7 +537,6 @@
 
     if-ne v0, v1, :cond_9
 
-    .line 163
     invoke-virtual {v13}, Landroid/app/AppOpsManager$PackageOps;->getOps()Ljava/util/List;
 
     move-result-object v18
@@ -612,7 +553,6 @@
 
     if-ge v0, v1, :cond_c
 
-    .line 164
     const-string v18, "UsageAccessSettings"
 
     new-instance v19, Ljava/lang/StringBuilder;
@@ -641,7 +581,6 @@
 
     goto :goto_8
 
-    .line 169
     :cond_c
     invoke-virtual {v13}, Landroid/app/AppOpsManager$PackageOps;->getOps()Ljava/util/List;
 
@@ -673,7 +612,6 @@
     .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
-    .line 77
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1    # "x0":[Ljava/lang/Object;
@@ -698,7 +636,6 @@
     .end annotation
 
     .prologue
-    .line 177
     .local p1, "newEntries":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/settings/UsageAccessSettings$PackageEntry;>;"
     iget-object v6, p0, Lcom/android/settings/UsageAccessSettings$AppsRequestingAccessFetcher;->this$0:Lcom/android/settings/UsageAccessSettings;
 
@@ -707,7 +644,6 @@
     # setter for: Lcom/android/settings/UsageAccessSettings;->mLastFetcherTask:Lcom/android/settings/UsageAccessSettings$AppsRequestingAccessFetcher;
     invoke-static {v6, v7}, Lcom/android/settings/UsageAccessSettings;->access$202(Lcom/android/settings/UsageAccessSettings;Lcom/android/settings/UsageAccessSettings$AppsRequestingAccessFetcher;)Lcom/android/settings/UsageAccessSettings$AppsRequestingAccessFetcher;
 
-    .line 179
     iget-object v6, p0, Lcom/android/settings/UsageAccessSettings$AppsRequestingAccessFetcher;->this$0:Lcom/android/settings/UsageAccessSettings;
 
     invoke-virtual {v6}, Lcom/android/settings/UsageAccessSettings;->getActivity()Landroid/app/Activity;
@@ -716,22 +652,18 @@
 
     if-nez v6, :cond_0
 
-    .line 220
     :goto_0
     return-void
 
-    .line 184
     :cond_0
     if-nez p1, :cond_1
 
-    .line 185
     iget-object v6, p0, Lcom/android/settings/UsageAccessSettings$AppsRequestingAccessFetcher;->this$0:Lcom/android/settings/UsageAccessSettings;
 
     iget-object v6, v6, Lcom/android/settings/UsageAccessSettings;->mPackageEntryMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v6}, Landroid/util/ArrayMap;->clear()V
 
-    .line 186
     iget-object v6, p0, Lcom/android/settings/UsageAccessSettings$AppsRequestingAccessFetcher;->this$0:Lcom/android/settings/UsageAccessSettings;
 
     iget-object v6, v6, Lcom/android/settings/UsageAccessSettings;->mPreferenceScreen:Landroid/preference/PreferenceScreen;
@@ -740,7 +672,6 @@
 
     goto :goto_0
 
-    .line 191
     :cond_1
     iget-object v6, p0, Lcom/android/settings/UsageAccessSettings$AppsRequestingAccessFetcher;->this$0:Lcom/android/settings/UsageAccessSettings;
 
@@ -750,7 +681,6 @@
 
     move-result v2
 
-    .line 192
     .local v2, "oldPackageCount":I
     const/4 v0, 0x0
 
@@ -758,7 +688,6 @@
     :goto_1
     if-ge v0, v2, :cond_3
 
-    .line 193
     iget-object v6, p0, Lcom/android/settings/UsageAccessSettings$AppsRequestingAccessFetcher;->this$0:Lcom/android/settings/UsageAccessSettings;
 
     iget-object v6, v6, Lcom/android/settings/UsageAccessSettings;->mPackageEntryMap:Landroid/util/ArrayMap;
@@ -769,7 +698,6 @@
 
     check-cast v3, Lcom/android/settings/UsageAccessSettings$PackageEntry;
 
-    .line 194
     .local v3, "oldPackageEntry":Lcom/android/settings/UsageAccessSettings$PackageEntry;
     iget-object v6, v3, Lcom/android/settings/UsageAccessSettings$PackageEntry;->packageName:Ljava/lang/String;
 
@@ -779,11 +707,9 @@
 
     check-cast v1, Lcom/android/settings/UsageAccessSettings$PackageEntry;
 
-    .line 195
     .local v1, "newPackageEntry":Lcom/android/settings/UsageAccessSettings$PackageEntry;
     if-nez v1, :cond_2
 
-    .line 197
     iget-object v6, p0, Lcom/android/settings/UsageAccessSettings$AppsRequestingAccessFetcher;->this$0:Lcom/android/settings/UsageAccessSettings;
 
     iget-object v6, v6, Lcom/android/settings/UsageAccessSettings;->mPreferenceScreen:Landroid/preference/PreferenceScreen;
@@ -792,13 +718,11 @@
 
     invoke-virtual {v6, v7}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 192
     :goto_2
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 201
     :cond_2
     iget-object v6, v3, Lcom/android/settings/UsageAccessSettings$PackageEntry;->preference:Landroid/preference/SwitchPreference;
 
@@ -806,7 +730,6 @@
 
     goto :goto_2
 
-    .line 206
     .end local v1    # "newPackageEntry":Lcom/android/settings/UsageAccessSettings$PackageEntry;
     .end local v3    # "oldPackageEntry":Lcom/android/settings/UsageAccessSettings$PackageEntry;
     :cond_3
@@ -814,27 +737,23 @@
 
     move-result v4
 
-    .line 207
     .local v4, "packageCount":I
     const/4 v0, 0x0
 
     :goto_3
     if-ge v0, v4, :cond_5
 
-    .line 208
     invoke-virtual {p1, v0}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Lcom/android/settings/UsageAccessSettings$PackageEntry;
 
-    .line 209
     .local v5, "packageEntry":Lcom/android/settings/UsageAccessSettings$PackageEntry;
     iget-object v6, v5, Lcom/android/settings/UsageAccessSettings$PackageEntry;->preference:Landroid/preference/SwitchPreference;
 
     if-nez v6, :cond_4
 
-    .line 210
     new-instance v6, Landroid/preference/SwitchPreference;
 
     iget-object v7, p0, Lcom/android/settings/UsageAccessSettings$AppsRequestingAccessFetcher;->mContext:Landroid/content/Context;
@@ -843,21 +762,18 @@
 
     iput-object v6, v5, Lcom/android/settings/UsageAccessSettings$PackageEntry;->preference:Landroid/preference/SwitchPreference;
 
-    .line 211
     iget-object v6, v5, Lcom/android/settings/UsageAccessSettings$PackageEntry;->preference:Landroid/preference/SwitchPreference;
 
     const/4 v7, 0x0
 
     invoke-virtual {v6, v7}, Landroid/preference/SwitchPreference;->setPersistent(Z)V
 
-    .line 212
     iget-object v6, v5, Lcom/android/settings/UsageAccessSettings$PackageEntry;->preference:Landroid/preference/SwitchPreference;
 
     iget-object v7, p0, Lcom/android/settings/UsageAccessSettings$AppsRequestingAccessFetcher;->this$0:Lcom/android/settings/UsageAccessSettings;
 
     invoke-virtual {v6, v7}, Landroid/preference/SwitchPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
-    .line 213
     iget-object v6, p0, Lcom/android/settings/UsageAccessSettings$AppsRequestingAccessFetcher;->this$0:Lcom/android/settings/UsageAccessSettings;
 
     iget-object v6, v6, Lcom/android/settings/UsageAccessSettings;->mPreferenceScreen:Landroid/preference/PreferenceScreen;
@@ -866,16 +782,13 @@
 
     invoke-virtual {v6, v7}, Landroid/preference/PreferenceScreen;->addPreference(Landroid/preference/Preference;)Z
 
-    .line 215
     :cond_4
     invoke-direct {p0, v5}, Lcom/android/settings/UsageAccessSettings$AppsRequestingAccessFetcher;->updatePreference(Lcom/android/settings/UsageAccessSettings$PackageEntry;)V
 
-    .line 207
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_3
 
-    .line 218
     .end local v5    # "packageEntry":Lcom/android/settings/UsageAccessSettings$PackageEntry;
     :cond_5
     iget-object v6, p0, Lcom/android/settings/UsageAccessSettings$AppsRequestingAccessFetcher;->this$0:Lcom/android/settings/UsageAccessSettings;
@@ -884,7 +797,6 @@
 
     invoke-virtual {v6}, Landroid/util/ArrayMap;->clear()V
 
-    .line 219
     iget-object v6, p0, Lcom/android/settings/UsageAccessSettings$AppsRequestingAccessFetcher;->this$0:Lcom/android/settings/UsageAccessSettings;
 
     iput-object p1, v6, Lcom/android/settings/UsageAccessSettings;->mPackageEntryMap:Landroid/util/ArrayMap;
@@ -897,7 +809,6 @@
     .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
-    .line 77
     check-cast p1, Landroid/util/ArrayMap;
 
     .end local p1    # "x0":Ljava/lang/Object;

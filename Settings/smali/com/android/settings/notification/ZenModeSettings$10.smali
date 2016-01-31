@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 312
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeSettings$10;->this$0:Lcom/android/settings/notification/ZenModeSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +43,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 315
     iget-object v3, p0, Lcom/android/settings/notification/ZenModeSettings$10;->this$0:Lcom/android/settings/notification/ZenModeSettings;
 
     # getter for: Lcom/android/settings/notification/ZenModeSettings;->mDisableListeners:Z
@@ -56,13 +54,11 @@
 
     const/4 v2, 0x1
 
-    .line 321
     .end local p2    # "value":Ljava/lang/Object;
     :cond_0
     :goto_0
     return v2
 
-    .line 316
     .restart local p2    # "value":Ljava/lang/Object;
     :cond_1
     instance-of v3, p2, Ljava/lang/Boolean;
@@ -76,7 +72,6 @@
 
     move-result v1
 
-    .line 317
     .local v1, "sleepNone":Z
     :goto_1
     iget-object v3, p0, Lcom/android/settings/notification/ZenModeSettings$10;->this$0:Lcom/android/settings/notification/ZenModeSettings;
@@ -99,7 +94,6 @@
 
     if-eq v3, v1, :cond_0
 
-    .line 318
     iget-object v2, p0, Lcom/android/settings/notification/ZenModeSettings$10;->this$0:Lcom/android/settings/notification/ZenModeSettings;
 
     # getter for: Lcom/android/settings/notification/ZenModeSettings;->mConfig:Landroid/service/notification/ZenModeConfig;
@@ -111,11 +105,9 @@
 
     move-result-object v0
 
-    .line 319
     .local v0, "newConfig":Landroid/service/notification/ZenModeConfig;
     iput-boolean v1, v0, Landroid/service/notification/ZenModeConfig;->sleepNone:Z
 
-    .line 320
     # getter for: Lcom/android/settings/notification/ZenModeSettings;->DEBUG:Z
     invoke-static {}, Lcom/android/settings/notification/ZenModeSettings;->access$200()Z
 
@@ -145,7 +137,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 321
     :cond_2
     iget-object v2, p0, Lcom/android/settings/notification/ZenModeSettings$10;->this$0:Lcom/android/settings/notification/ZenModeSettings;
 
@@ -162,6 +153,5 @@
     :cond_3
     move v1, v2
 
-    .line 316
     goto :goto_1
 .end method

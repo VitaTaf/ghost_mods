@@ -24,7 +24,6 @@
     .param p2, "x0"    # Landroid/content/Context;
 
     .prologue
-    .line 444
     iput-object p1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$6;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     invoke-direct {p0, p2}, Landroid/preference/ListPreference;-><init>(Landroid/content/Context;)V
@@ -39,13 +38,10 @@
     .param p1, "positiveResult"    # Z
 
     .prologue
-    .line 447
     invoke-super {p0, p1}, Landroid/preference/ListPreference;->onDialogClosed(Z)V
 
-    .line 448
     if-eqz p1, :cond_0
 
-    .line 449
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$6;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     invoke-virtual {p0}, Lcom/android/settings/wfd/WifiDisplaySettings$6;->getValue()Ljava/lang/String;
@@ -59,12 +55,10 @@
     # setter for: Lcom/android/settings/wfd/WifiDisplaySettings;->mOperatingChannel:I
     invoke-static {v0, v1}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$802(Lcom/android/settings/wfd/WifiDisplaySettings;I)I
 
-    .line 450
     const-string v0, "%1$s"
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wfd/WifiDisplaySettings$6;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 451
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$6;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     invoke-virtual {v0}, Lcom/android/settings/wfd/WifiDisplaySettings;->getActivity()Landroid/app/Activity;
@@ -73,7 +67,6 @@
 
     invoke-virtual {v0}, Landroid/app/Activity;->invalidateOptionsMenu()V
 
-    .line 452
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$6;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     iget-object v1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$6;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
@@ -93,7 +86,6 @@
     # invokes: Lcom/android/settings/wfd/WifiDisplaySettings;->setWifiP2pChannels(II)V
     invoke-static {v0, v1, v2}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$900(Lcom/android/settings/wfd/WifiDisplaySettings;II)V
 
-    .line 454
     :cond_0
     return-void
 .end method

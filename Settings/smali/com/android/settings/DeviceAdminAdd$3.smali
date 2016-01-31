@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 277
     iput-object p1, p0, Lcom/android/settings/DeviceAdminAdd$3;->this$0:Lcom/android/settings/DeviceAdminAdd;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,24 +40,20 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 279
     iget-object v0, p0, Lcom/android/settings/DeviceAdminAdd$3;->this$0:Lcom/android/settings/DeviceAdminAdd;
 
     iget-boolean v0, v0, Lcom/android/settings/DeviceAdminAdd;->mAdding:Z
 
     if-eqz v0, :cond_1
 
-    .line 280
     iget-object v0, p0, Lcom/android/settings/DeviceAdminAdd$3;->this$0:Lcom/android/settings/DeviceAdminAdd;
 
     invoke-virtual {v0}, Lcom/android/settings/DeviceAdminAdd;->addAndFinish()V
 
-    .line 307
     :cond_0
     :goto_0
     return-void
 
-    .line 281
     :cond_1
     iget-object v0, p0, Lcom/android/settings/DeviceAdminAdd$3;->this$0:Lcom/android/settings/DeviceAdminAdd;
 
@@ -66,7 +61,6 @@
 
     if-nez v0, :cond_0
 
-    .line 285
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -76,7 +70,6 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 288
     :goto_1
     iget-object v0, p0, Lcom/android/settings/DeviceAdminAdd$3;->this$0:Lcom/android/settings/DeviceAdminAdd;
 
@@ -84,7 +77,6 @@
 
     iput-boolean v1, v0, Lcom/android/settings/DeviceAdminAdd;->mWaitingForRemoveMsg:Z
 
-    .line 289
     iget-object v0, p0, Lcom/android/settings/DeviceAdminAdd$3;->this$0:Lcom/android/settings/DeviceAdminAdd;
 
     iget-object v0, v0, Lcom/android/settings/DeviceAdminAdd;->mDPM:Landroid/app/admin/DevicePolicyManager;
@@ -107,7 +99,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/app/admin/DevicePolicyManager;->getRemoveWarning(Landroid/content/ComponentName;Landroid/os/RemoteCallback;)V
 
-    .line 301
     iget-object v0, p0, Lcom/android/settings/DeviceAdminAdd$3;->this$0:Lcom/android/settings/DeviceAdminAdd;
 
     invoke-virtual {v0}, Lcom/android/settings/DeviceAdminAdd;->getWindow()Landroid/view/Window;
@@ -132,7 +123,6 @@
 
     goto :goto_0
 
-    .line 286
     :catch_0
     move-exception v0
 

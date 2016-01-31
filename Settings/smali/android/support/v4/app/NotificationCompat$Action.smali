@@ -35,7 +35,6 @@
     .locals 1
 
     .prologue
-    .line 2135
     new-instance v0, Landroid/support/v4/app/NotificationCompat$Action$1;
 
     invoke-direct {v0}, Landroid/support/v4/app/NotificationCompat$Action$1;-><init>()V
@@ -51,7 +50,6 @@
     .locals 1
 
     .prologue
-    .line 1815
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$Action;->actionIntent:Landroid/app/PendingIntent;
 
     return-object v0
@@ -61,7 +59,6 @@
     .locals 1
 
     .prologue
-    .line 1823
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$Action;->mExtras:Landroid/os/Bundle;
 
     return-object v0
@@ -71,7 +68,6 @@
     .locals 1
 
     .prologue
-    .line 1805
     iget v0, p0, Landroid/support/v4/app/NotificationCompat$Action;->icon:I
 
     return v0
@@ -81,7 +77,6 @@
     .locals 1
 
     .prologue
-    .line 1832
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$Action;->mRemoteInputs:[Landroid/support/v4/app/RemoteInput;
 
     return-object v0
@@ -91,7 +86,6 @@
     .locals 1
 
     .prologue
-    .line 1772
     invoke-virtual {p0}, Landroid/support/v4/app/NotificationCompat$Action;->getRemoteInputs()[Landroid/support/v4/app/RemoteInput;
 
     move-result-object v0
@@ -103,7 +97,6 @@
     .locals 1
 
     .prologue
-    .line 1810
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$Action;->title:Ljava/lang/CharSequence;
 
     return-object v0

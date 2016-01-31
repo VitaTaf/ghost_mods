@@ -10,7 +10,6 @@
     .param p1, "layoutDirection"    # I
 
     .prologue
-    .line 26
     invoke-static {p0, p1}, Landroid/view/Gravity;->getAbsoluteGravity(II)I
 
     move-result v0

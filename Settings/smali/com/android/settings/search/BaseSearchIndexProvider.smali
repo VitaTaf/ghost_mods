@@ -24,7 +24,6 @@
     .locals 1
 
     .prologue
-    .line 30
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
@@ -38,10 +37,8 @@
     .locals 0
 
     .prologue
-    .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 33
     return-void
 .end method
 
@@ -63,7 +60,6 @@
     .end annotation
 
     .prologue
-    .line 47
     sget-object v0, Lcom/android/settings/search/BaseSearchIndexProvider;->EMPTY_LIST:Ljava/util/List;
 
     return-object v0
@@ -86,7 +82,6 @@
     .end annotation
 
     .prologue
-    .line 42
     const/4 v0, 0x0
 
     return-object v0
@@ -109,7 +104,6 @@
     .end annotation
 
     .prologue
-    .line 37
     const/4 v0, 0x0
 
     return-object v0

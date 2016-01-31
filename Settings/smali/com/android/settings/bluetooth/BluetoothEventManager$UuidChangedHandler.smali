@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 339
     iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$UuidChangedHandler;->this$0:Lcom/android/settings/bluetooth/BluetoothEventManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .param p2, "x1"    # Lcom/android/settings/bluetooth/BluetoothEventManager$1;
 
     .prologue
-    .line 339
     invoke-direct {p0, p1}, Lcom/android/settings/bluetooth/BluetoothEventManager$UuidChangedHandler;-><init>(Lcom/android/settings/bluetooth/BluetoothEventManager;)V
 
     return-void
@@ -55,7 +53,6 @@
     .param p3, "device"    # Landroid/bluetooth/BluetoothDevice;
 
     .prologue
-    .line 342
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$UuidChangedHandler;->this$0:Lcom/android/settings/bluetooth/BluetoothEventManager;
 
     # getter for: Lcom/android/settings/bluetooth/BluetoothEventManager;->mDeviceManager:Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;
@@ -65,6 +62,5 @@
 
     invoke-virtual {v0, p3}, Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;->onUuidChanged(Landroid/bluetooth/BluetoothDevice;)V
 
-    .line 343
     return-void
 .end method

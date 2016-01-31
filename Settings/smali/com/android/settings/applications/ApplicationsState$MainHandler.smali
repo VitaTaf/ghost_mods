@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 361
     iput-object p1, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->this$0:Lcom/android/settings/applications/ApplicationsState;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -38,28 +37,23 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 371
     iget-object v2, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->this$0:Lcom/android/settings/applications/ApplicationsState;
 
     invoke-virtual {v2}, Lcom/android/settings/applications/ApplicationsState;->rebuildActiveSessions()V
 
-    .line 372
     iget v2, p1, Landroid/os/Message;->what:I
 
     packed-switch v2, :pswitch_data_0
 
-    .line 407
     :cond_0
     :goto_0
     return-void
 
-    .line 374
     :pswitch_0
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Lcom/android/settings/applications/ApplicationsState$Session;
 
-    .line 375
     .local v1, "s":Lcom/android/settings/applications/ApplicationsState$Session;
     iget-object v2, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->this$0:Lcom/android/settings/applications/ApplicationsState;
 
@@ -71,7 +65,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 376
     iget-object v2, v1, Lcom/android/settings/applications/ApplicationsState$Session;->mCallbacks:Lcom/android/settings/applications/ApplicationsState$Callbacks;
 
     iget-object v3, v1, Lcom/android/settings/applications/ApplicationsState$Session;->mLastAppList:Ljava/util/ArrayList;
@@ -80,7 +73,6 @@
 
     goto :goto_0
 
-    .line 380
     .end local v1    # "s":Lcom/android/settings/applications/ApplicationsState$Session;
     :pswitch_1
     const/4 v0, 0x0
@@ -97,7 +89,6 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 381
     iget-object v2, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->this$0:Lcom/android/settings/applications/ApplicationsState;
 
     iget-object v2, v2, Lcom/android/settings/applications/ApplicationsState;->mActiveSessions:Ljava/util/ArrayList;
@@ -112,12 +103,10 @@
 
     invoke-interface {v2}, Lcom/android/settings/applications/ApplicationsState$Callbacks;->onPackageListChanged()V
 
-    .line 380
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 385
     .end local v0    # "i":I
     :pswitch_2
     const/4 v0, 0x0
@@ -134,7 +123,6 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 386
     iget-object v2, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->this$0:Lcom/android/settings/applications/ApplicationsState;
 
     iget-object v2, v2, Lcom/android/settings/applications/ApplicationsState;->mActiveSessions:Ljava/util/ArrayList;
@@ -149,12 +137,10 @@
 
     invoke-interface {v2}, Lcom/android/settings/applications/ApplicationsState$Callbacks;->onPackageIconChanged()V
 
-    .line 385
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
-    .line 390
     .end local v0    # "i":I
     :pswitch_3
     const/4 v0, 0x0
@@ -171,7 +157,6 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 391
     iget-object v2, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->this$0:Lcom/android/settings/applications/ApplicationsState;
 
     iget-object v2, v2, Lcom/android/settings/applications/ApplicationsState;->mActiveSessions:Ljava/util/ArrayList;
@@ -190,12 +175,10 @@
 
     invoke-interface {v3, v2}, Lcom/android/settings/applications/ApplicationsState$Callbacks;->onPackageSizeChanged(Ljava/lang/String;)V
 
-    .line 390
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_3
 
-    .line 396
     .end local v0    # "i":I
     :pswitch_4
     const/4 v0, 0x0
@@ -212,7 +195,6 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 397
     iget-object v2, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->this$0:Lcom/android/settings/applications/ApplicationsState;
 
     iget-object v2, v2, Lcom/android/settings/applications/ApplicationsState;->mActiveSessions:Ljava/util/ArrayList;
@@ -227,12 +209,10 @@
 
     invoke-interface {v2}, Lcom/android/settings/applications/ApplicationsState$Callbacks;->onAllSizesComputed()V
 
-    .line 396
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_4
 
-    .line 401
     .end local v0    # "i":I
     :pswitch_5
     const/4 v0, 0x0
@@ -249,7 +229,6 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 402
     iget-object v2, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->this$0:Lcom/android/settings/applications/ApplicationsState;
 
     iget-object v2, v2, Lcom/android/settings/applications/ApplicationsState;->mActiveSessions:Ljava/util/ArrayList;
@@ -271,18 +250,15 @@
     :goto_6
     invoke-interface {v3, v2}, Lcom/android/settings/applications/ApplicationsState$Callbacks;->onRunningStateChanged(Z)V
 
-    .line 401
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_5
 
-    .line 402
     :cond_1
     const/4 v2, 0x0
 
     goto :goto_6
 
-    .line 372
     nop
 
     :pswitch_data_0

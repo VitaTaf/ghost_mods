@@ -18,7 +18,6 @@
     .param p1, "host"    # Landroid/view/View;
 
     .prologue
-    .line 99
     check-cast p0, Landroid/view/View$AccessibilityDelegate;
 
     .end local p0    # "delegate":Ljava/lang/Object;
@@ -34,7 +33,6 @@
     .param p0, "bridge"    # Landroid/support/v4/view/AccessibilityDelegateCompatJellyBean$AccessibilityDelegateBridgeJellyBean;
 
     .prologue
-    .line 47
     new-instance v0, Landroid/support/v4/view/AccessibilityDelegateCompatJellyBean$1;
 
     invoke-direct {v0, p0}, Landroid/support/v4/view/AccessibilityDelegateCompatJellyBean$1;-><init>(Landroid/support/v4/view/AccessibilityDelegateCompatJellyBean$AccessibilityDelegateBridgeJellyBean;)V
@@ -50,7 +48,6 @@
     .param p3, "args"    # Landroid/os/Bundle;
 
     .prologue
-    .line 104
     check-cast p0, Landroid/view/View$AccessibilityDelegate;
 
     .end local p0    # "delegate":Ljava/lang/Object;

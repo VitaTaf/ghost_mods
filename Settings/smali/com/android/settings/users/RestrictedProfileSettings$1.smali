@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 133
     iput-object p1, p0, Lcom/android/settings/users/RestrictedProfileSettings$1;->this$0:Lcom/android/settings/users/RestrictedProfileSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,12 +41,10 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 135
     iget-object v0, p0, Lcom/android/settings/users/RestrictedProfileSettings$1;->this$0:Lcom/android/settings/users/RestrictedProfileSettings;
 
     # invokes: Lcom/android/settings/users/RestrictedProfileSettings;->removeUser()V
     invoke-static {v0}, Lcom/android/settings/users/RestrictedProfileSettings;->access$000(Lcom/android/settings/users/RestrictedProfileSettings;)V
 
-    .line 136
     return-void
 .end method

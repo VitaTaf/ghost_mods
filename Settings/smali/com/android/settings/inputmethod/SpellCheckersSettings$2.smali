@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 214
     iput-object p1, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$2;->this$0:Lcom/android/settings/inputmethod/SpellCheckersSettings;
 
     iput-object p2, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$2;->val$sci:Landroid/view/textservice/SpellCheckerInfo;
@@ -46,7 +45,6 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 217
     iget-object v0, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$2;->this$0:Lcom/android/settings/inputmethod/SpellCheckersSettings;
 
     iget-object v1, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$2;->val$sci:Landroid/view/textservice/SpellCheckerInfo;
@@ -54,6 +52,5 @@
     # invokes: Lcom/android/settings/inputmethod/SpellCheckersSettings;->changeCurrentSpellChecker(Landroid/view/textservice/SpellCheckerInfo;)V
     invoke-static {v0, v1}, Lcom/android/settings/inputmethod/SpellCheckersSettings;->access$300(Lcom/android/settings/inputmethod/SpellCheckersSettings;Landroid/view/textservice/SpellCheckerInfo;)V
 
-    .line 218
     return-void
 .end method

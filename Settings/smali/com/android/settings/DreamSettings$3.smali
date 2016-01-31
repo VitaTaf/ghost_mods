@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 170
     iput-object p1, p0, Lcom/android/settings/DreamSettings$3;->this$0:Lcom/android/settings/DreamSettings;
 
     iput-object p2, p0, Lcom/android/settings/DreamSettings$3;->val$onClick:Ljava/lang/Runnable;
@@ -45,12 +44,10 @@
     .param p1, "item"    # Landroid/view/MenuItem;
 
     .prologue
-    .line 173
     iget-object v0, p0, Lcom/android/settings/DreamSettings$3;->val$onClick:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 174
     const/4 v0, 0x1
 
     return v0

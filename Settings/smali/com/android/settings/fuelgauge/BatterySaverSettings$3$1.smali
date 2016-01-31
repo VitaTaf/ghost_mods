@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 168
     iput-object p1, p0, Lcom/android/settings/fuelgauge/BatterySaverSettings$3$1;->this$1:Lcom/android/settings/fuelgauge/BatterySaverSettings$3;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 2
 
     .prologue
-    .line 171
     # getter for: Lcom/android/settings/fuelgauge/BatterySaverSettings;->DEBUG:Z
     invoke-static {}, Lcom/android/settings/fuelgauge/BatterySaverSettings;->access$200()Z
 
@@ -54,7 +52,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 172
     :cond_0
     iget-object v0, p0, Lcom/android/settings/fuelgauge/BatterySaverSettings$3$1;->this$1:Lcom/android/settings/fuelgauge/BatterySaverSettings$3;
 
@@ -65,6 +62,5 @@
     # invokes: Lcom/android/settings/fuelgauge/BatterySaverSettings;->trySetPowerSaveMode(Z)V
     invoke-static {v0, v1}, Lcom/android/settings/fuelgauge/BatterySaverSettings;->access$300(Lcom/android/settings/fuelgauge/BatterySaverSettings;Z)V
 
-    .line 173
     return-void
 .end method

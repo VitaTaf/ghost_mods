@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 47
     iput-object p1, p0, Lcom/android/settings/dashboard/DashboardSummary$1;->this$0:Lcom/android/settings/dashboard/DashboardSummary;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -38,16 +37,13 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 50
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 56
     :goto_0
     return-void
 
-    .line 52
     :pswitch_0
     iget-object v1, p0, Lcom/android/settings/dashboard/DashboardSummary$1;->this$0:Lcom/android/settings/dashboard/DashboardSummary;
 
@@ -55,7 +51,6 @@
 
     move-result-object v0
 
-    .line 53
     .local v0, "context":Landroid/content/Context;
     iget-object v1, p0, Lcom/android/settings/dashboard/DashboardSummary$1;->this$0:Lcom/android/settings/dashboard/DashboardSummary;
 
@@ -64,7 +59,6 @@
 
     goto :goto_0
 
-    .line 50
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

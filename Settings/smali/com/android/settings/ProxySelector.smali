@@ -37,31 +37,26 @@
     .locals 1
 
     .prologue
-    .line 49
     invoke-direct {p0}, Landroid/app/Fragment;-><init>()V
 
-    .line 246
     new-instance v0, Lcom/android/settings/ProxySelector$1;
 
     invoke-direct {v0, p0}, Lcom/android/settings/ProxySelector$1;-><init>(Lcom/android/settings/ProxySelector;)V
 
     iput-object v0, p0, Lcom/android/settings/ProxySelector;->mOKHandler:Landroid/view/View$OnClickListener;
 
-    .line 254
     new-instance v0, Lcom/android/settings/ProxySelector$2;
 
     invoke-direct {v0, p0}, Lcom/android/settings/ProxySelector$2;-><init>(Lcom/android/settings/ProxySelector;)V
 
     iput-object v0, p0, Lcom/android/settings/ProxySelector;->mClearHandler:Landroid/view/View$OnClickListener;
 
-    .line 262
     new-instance v0, Lcom/android/settings/ProxySelector$3;
 
     invoke-direct {v0, p0}, Lcom/android/settings/ProxySelector$3;-><init>(Lcom/android/settings/ProxySelector;)V
 
     iput-object v0, p0, Lcom/android/settings/ProxySelector;->mDefaultHandler:Landroid/view/View$OnClickListener;
 
-    .line 269
     new-instance v0, Lcom/android/settings/ProxySelector$4;
 
     invoke-direct {v0, p0}, Lcom/android/settings/ProxySelector$4;-><init>(Lcom/android/settings/ProxySelector;)V
@@ -76,7 +71,6 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 123
     const v0, 0x7f0f014b
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -87,14 +81,12 @@
 
     iput-object v0, p0, Lcom/android/settings/ProxySelector;->mHostnameField:Landroid/widget/EditText;
 
-    .line 124
     iget-object v0, p0, Lcom/android/settings/ProxySelector;->mHostnameField:Landroid/widget/EditText;
 
     iget-object v1, p0, Lcom/android/settings/ProxySelector;->mOnFocusChangeHandler:Landroid/view/View$OnFocusChangeListener;
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
 
-    .line 126
     const v0, 0x7f0f014c
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -105,21 +97,18 @@
 
     iput-object v0, p0, Lcom/android/settings/ProxySelector;->mPortField:Landroid/widget/EditText;
 
-    .line 127
     iget-object v0, p0, Lcom/android/settings/ProxySelector;->mPortField:Landroid/widget/EditText;
 
     iget-object v1, p0, Lcom/android/settings/ProxySelector;->mOKHandler:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 128
     iget-object v0, p0, Lcom/android/settings/ProxySelector;->mPortField:Landroid/widget/EditText;
 
     iget-object v1, p0, Lcom/android/settings/ProxySelector;->mOnFocusChangeHandler:Landroid/view/View$OnFocusChangeListener;
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
 
-    .line 130
     const v0, 0x7f0f014d
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -130,14 +119,12 @@
 
     iput-object v0, p0, Lcom/android/settings/ProxySelector;->mExclusionListField:Landroid/widget/EditText;
 
-    .line 131
     iget-object v0, p0, Lcom/android/settings/ProxySelector;->mExclusionListField:Landroid/widget/EditText;
 
     iget-object v1, p0, Lcom/android/settings/ProxySelector;->mOnFocusChangeHandler:Landroid/view/View$OnFocusChangeListener;
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
 
-    .line 133
     const v0, 0x7f0f014e
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -148,14 +135,12 @@
 
     iput-object v0, p0, Lcom/android/settings/ProxySelector;->mOKButton:Landroid/widget/Button;
 
-    .line 134
     iget-object v0, p0, Lcom/android/settings/ProxySelector;->mOKButton:Landroid/widget/Button;
 
     iget-object v1, p0, Lcom/android/settings/ProxySelector;->mOKHandler:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 136
     const v0, 0x7f0f014f
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -166,14 +151,12 @@
 
     iput-object v0, p0, Lcom/android/settings/ProxySelector;->mClearButton:Landroid/widget/Button;
 
-    .line 137
     iget-object v0, p0, Lcom/android/settings/ProxySelector;->mClearButton:Landroid/widget/Button;
 
     iget-object v1, p0, Lcom/android/settings/ProxySelector;->mClearHandler:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 139
     const v0, 0x7f0f0150
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -184,14 +167,12 @@
 
     iput-object v0, p0, Lcom/android/settings/ProxySelector;->mDefaultButton:Landroid/widget/Button;
 
-    .line 140
     iget-object v0, p0, Lcom/android/settings/ProxySelector;->mDefaultButton:Landroid/widget/Button;
 
     iget-object v1, p0, Lcom/android/settings/ProxySelector;->mDefaultHandler:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 141
     return-void
 .end method
 
@@ -200,19 +181,16 @@
     .param p1, "dialogId"    # I
 
     .prologue
-    .line 115
     iget-object v0, p0, Lcom/android/settings/ProxySelector;->mDialogFragment:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
     if-eqz v0, :cond_0
 
-    .line 116
     const-string v0, "ProxySelector"
 
     const-string v1, "Old dialog fragment not null!"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 118
     :cond_0
     new-instance v0, Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
@@ -220,7 +198,6 @@
 
     iput-object v0, p0, Lcom/android/settings/ProxySelector;->mDialogFragment:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
-    .line 119
     iget-object v0, p0, Lcom/android/settings/ProxySelector;->mDialogFragment:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
     invoke-virtual {p0}, Lcom/android/settings/ProxySelector;->getActivity()Landroid/app/Activity;
@@ -237,7 +214,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;->show(Landroid/app/FragmentManager;Ljava/lang/String;)V
 
-    .line 120
     return-void
 .end method
 
@@ -248,63 +224,53 @@
     .param p2, "exclList"    # Ljava/lang/String;
 
     .prologue
-    .line 188
     invoke-static {p0, p1, p2}, Landroid/net/Proxy;->validate(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_0
 
-    .line 203
     const-string v0, "ProxySelector"
 
     const-string v1, "Unknown proxy settings error"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 204
     const/4 v0, -0x1
 
     :goto_0
     return v0
 
-    .line 190
     :pswitch_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 192
     :pswitch_1
     const v0, 0x7f090138
 
     goto :goto_0
 
-    .line 194
     :pswitch_2
     const v0, 0x7f090135
 
     goto :goto_0
 
-    .line 196
     :pswitch_3
     const v0, 0x7f090137
 
     goto :goto_0
 
-    .line 198
     :pswitch_4
     const v0, 0x7f090139
 
     goto :goto_0
 
-    .line 200
     :pswitch_5
     const v0, 0x7f090136
 
     goto :goto_0
 
-    .line 188
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -323,10 +289,8 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 81
     invoke-super {p0, p1}, Landroid/app/Fragment;->onActivityCreated(Landroid/os/Bundle;)V
 
-    .line 82
     invoke-virtual {p0}, Lcom/android/settings/ProxySelector;->getActivity()Landroid/app/Activity;
 
     move-result-object v2
@@ -339,7 +303,6 @@
 
     check-cast v0, Landroid/app/admin/DevicePolicyManager;
 
-    .line 85
     .local v0, "dpm":Landroid/app/admin/DevicePolicyManager;
     invoke-virtual {v0}, Landroid/app/admin/DevicePolicyManager;->getGlobalProxyAdmin()Landroid/content/ComponentName;
 
@@ -349,42 +312,34 @@
 
     const/4 v1, 0x1
 
-    .line 87
     .local v1, "userSetGlobalProxy":Z
     :goto_0
     iget-object v2, p0, Lcom/android/settings/ProxySelector;->mHostnameField:Landroid/widget/EditText;
 
     invoke-virtual {v2, v1}, Landroid/widget/EditText;->setEnabled(Z)V
 
-    .line 88
     iget-object v2, p0, Lcom/android/settings/ProxySelector;->mPortField:Landroid/widget/EditText;
 
     invoke-virtual {v2, v1}, Landroid/widget/EditText;->setEnabled(Z)V
 
-    .line 89
     iget-object v2, p0, Lcom/android/settings/ProxySelector;->mExclusionListField:Landroid/widget/EditText;
 
     invoke-virtual {v2, v1}, Landroid/widget/EditText;->setEnabled(Z)V
 
-    .line 90
     iget-object v2, p0, Lcom/android/settings/ProxySelector;->mOKButton:Landroid/widget/Button;
 
     invoke-virtual {v2, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 91
     iget-object v2, p0, Lcom/android/settings/ProxySelector;->mClearButton:Landroid/widget/Button;
 
     invoke-virtual {v2, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 92
     iget-object v2, p0, Lcom/android/settings/ProxySelector;->mDefaultButton:Landroid/widget/Button;
 
     invoke-virtual {v2, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 93
     return-void
 
-    .line 85
     .end local v1    # "userSetGlobalProxy":Z
     :cond_0
     const/4 v1, 0x0
@@ -397,10 +352,8 @@
     .param p1, "icicle"    # Landroid/os/Bundle;
 
     .prologue
-    .line 66
     invoke-super {p0, p1}, Landroid/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 67
     return-void
 .end method
 
@@ -411,10 +364,8 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 99
     if-nez p1, :cond_0
 
-    .line 100
     iget-object v5, p0, Lcom/android/settings/ProxySelector;->mHostnameField:Landroid/widget/EditText;
 
     invoke-virtual {v5}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
@@ -429,7 +380,6 @@
 
     move-result-object v1
 
-    .line 101
     .local v1, "hostname":Ljava/lang/String;
     iget-object v5, p0, Lcom/android/settings/ProxySelector;->mPortField:Landroid/widget/EditText;
 
@@ -445,7 +395,6 @@
 
     move-result-object v3
 
-    .line 102
     .local v3, "portStr":Ljava/lang/String;
     iget-object v5, p0, Lcom/android/settings/ProxySelector;->mExclusionListField:Landroid/widget/EditText;
 
@@ -461,7 +410,6 @@
 
     move-result-object v0
 
-    .line 103
     .local v0, "exclList":Ljava/lang/String;
     invoke-virtual {p0}, Lcom/android/settings/ProxySelector;->getActivity()Landroid/app/Activity;
 
@@ -475,7 +423,6 @@
 
     move-result-object v2
 
-    .line 105
     .local v2, "msg":Ljava/lang/String;
     new-instance v5, Landroid/app/AlertDialog$Builder;
 
@@ -505,7 +452,6 @@
 
     move-result-object v4
 
-    .line 111
     .end local v0    # "exclList":Ljava/lang/String;
     .end local v1    # "hostname":Ljava/lang/String;
     .end local v2    # "msg":Ljava/lang/String;
@@ -521,7 +467,6 @@
     .param p3, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 72
     const v0, 0x7f04009d
 
     const/4 v1, 0x0
@@ -532,15 +477,12 @@
 
     iput-object v0, p0, Lcom/android/settings/ProxySelector;->mView:Landroid/view/View;
 
-    .line 73
     iget-object v0, p0, Lcom/android/settings/ProxySelector;->mView:Landroid/view/View;
 
     invoke-direct {p0, v0}, Lcom/android/settings/ProxySelector;->initView(Landroid/view/View;)V
 
-    .line 75
     invoke-virtual {p0}, Lcom/android/settings/ProxySelector;->populateFields()V
 
-    .line 76
     iget-object v0, p0, Lcom/android/settings/ProxySelector;->mView:Landroid/view/View;
 
     return-object v0
@@ -550,24 +492,19 @@
     .locals 12
 
     .prologue
-    .line 144
     invoke-virtual {p0}, Lcom/android/settings/ProxySelector;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    .line 145
     .local v0, "activity":Landroid/app/Activity;
     const-string v4, ""
 
-    .line 146
     .local v4, "hostname":Ljava/lang/String;
     const/4 v6, -0x1
 
-    .line 147
     .local v6, "port":I
     const-string v3, ""
 
-    .line 149
     .local v3, "exclList":Ljava/lang/String;
     invoke-virtual {p0}, Lcom/android/settings/ProxySelector;->getActivity()Landroid/app/Activity;
 
@@ -581,69 +518,56 @@
 
     check-cast v2, Landroid/net/ConnectivityManager;
 
-    .line 152
     .local v2, "cm":Landroid/net/ConnectivityManager;
     invoke-virtual {v2}, Landroid/net/ConnectivityManager;->getGlobalProxy()Landroid/net/ProxyInfo;
 
     move-result-object v8
 
-    .line 153
     .local v8, "proxy":Landroid/net/ProxyInfo;
     if-eqz v8, :cond_0
 
-    .line 154
     invoke-virtual {v8}, Landroid/net/ProxyInfo;->getHost()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 155
     invoke-virtual {v8}, Landroid/net/ProxyInfo;->getPort()I
 
     move-result v6
 
-    .line 156
     invoke-virtual {v8}, Landroid/net/ProxyInfo;->getExclusionListAsString()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 159
     :cond_0
     if-nez v4, :cond_1
 
-    .line 160
     const-string v4, ""
 
-    .line 163
     :cond_1
     iget-object v10, p0, Lcom/android/settings/ProxySelector;->mHostnameField:Landroid/widget/EditText;
 
     invoke-virtual {v10, v4}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 165
     const/4 v10, -0x1
 
     if-ne v6, v10, :cond_4
 
     const-string v7, ""
 
-    .line 166
     .local v7, "portStr":Ljava/lang/String;
     :goto_0
     iget-object v10, p0, Lcom/android/settings/ProxySelector;->mPortField:Landroid/widget/EditText;
 
     invoke-virtual {v10, v7}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 168
     iget-object v10, p0, Lcom/android/settings/ProxySelector;->mExclusionListField:Landroid/widget/EditText;
 
     invoke-virtual {v10, v3}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 170
     invoke-virtual {v0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
     move-result-object v5
 
-    .line 172
     .local v5, "intent":Landroid/content/Intent;
     const-string v10, "button-label"
 
@@ -651,7 +575,6 @@
 
     move-result-object v1
 
-    .line 173
     .local v1, "buttonLabel":Ljava/lang/String;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -659,12 +582,10 @@
 
     if-nez v10, :cond_2
 
-    .line 174
     iget-object v10, p0, Lcom/android/settings/ProxySelector;->mOKButton:Landroid/widget/Button;
 
     invoke-virtual {v10, v1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 177
     :cond_2
     const-string v10, "title"
 
@@ -672,7 +593,6 @@
 
     move-result-object v9
 
-    .line 178
     .local v9, "title":Ljava/lang/String;
     invoke-static {v9}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -680,14 +600,11 @@
 
     if-nez v10, :cond_3
 
-    .line 179
     invoke-virtual {v0, v9}, Landroid/app/Activity;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 181
     :cond_3
     return-void
 
-    .line 165
     .end local v1    # "buttonLabel":Ljava/lang/String;
     .end local v5    # "intent":Landroid/content/Intent;
     .end local v7    # "portStr":Ljava/lang/String;
@@ -706,7 +623,6 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 213
     iget-object v9, p0, Lcom/android/settings/ProxySelector;->mHostnameField:Landroid/widget/EditText;
 
     invoke-virtual {v9}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
@@ -721,7 +637,6 @@
 
     move-result-object v3
 
-    .line 214
     .local v3, "hostname":Ljava/lang/String;
     iget-object v9, p0, Lcom/android/settings/ProxySelector;->mPortField:Landroid/widget/EditText;
 
@@ -737,7 +652,6 @@
 
     move-result-object v6
 
-    .line 215
     .local v6, "portStr":Ljava/lang/String;
     iget-object v9, p0, Lcom/android/settings/ProxySelector;->mExclusionListField:Landroid/widget/EditText;
 
@@ -753,28 +667,22 @@
 
     move-result-object v2
 
-    .line 216
     .local v2, "exclList":Ljava/lang/String;
     const/4 v5, 0x0
 
-    .line 218
     .local v5, "port":I
     invoke-static {v3, v6, v2}, Lcom/android/settings/ProxySelector;->validate(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v7
 
-    .line 219
     .local v7, "result":I
     if-eqz v7, :cond_0
 
-    .line 220
     invoke-direct {p0, v8}, Lcom/android/settings/ProxySelector;->showDialog(I)V
 
-    .line 243
     :goto_0
     return v8
 
-    .line 224
     :cond_0
     invoke-virtual {v6}, Ljava/lang/String;->length()I
 
@@ -782,7 +690,6 @@
 
     if-lez v9, :cond_1
 
-    .line 226
     :try_start_0
     invoke-static {v6}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
     :try_end_0
@@ -790,13 +697,11 @@
 
     move-result v5
 
-    .line 232
     :cond_1
     new-instance v4, Landroid/net/ProxyInfo;
 
     invoke-direct {v4, v3, v5, v2}, Landroid/net/ProxyInfo;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 239
     .local v4, "p":Landroid/net/ProxyInfo;
     invoke-virtual {p0}, Lcom/android/settings/ProxySelector;->getActivity()Landroid/app/Activity;
 
@@ -810,22 +715,18 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 242
     .local v0, "cm":Landroid/net/ConnectivityManager;
     invoke-virtual {v0, v4}, Landroid/net/ConnectivityManager;->setGlobalProxy(Landroid/net/ProxyInfo;)V
 
-    .line 243
     const/4 v8, 0x1
 
     goto :goto_0
 
-    .line 227
     .end local v0    # "cm":Landroid/net/ConnectivityManager;
     .end local v4    # "p":Landroid/net/ProxyInfo;
     :catch_0
     move-exception v1
 
-    .line 229
     .local v1, "ex":Ljava/lang/NumberFormatException;
     goto :goto_0
 .end method

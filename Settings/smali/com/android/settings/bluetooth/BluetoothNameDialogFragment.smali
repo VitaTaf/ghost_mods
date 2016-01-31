@@ -27,17 +27,14 @@
     .locals 2
 
     .prologue
-    .line 82
     invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
 
-    .line 68
     new-instance v1, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment$1;
 
     invoke-direct {v1, p0}, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment$1;-><init>(Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;)V
 
     iput-object v1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 83
     invoke-virtual {p0}, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -46,7 +43,6 @@
 
     move-result-object v0
 
-    .line 84
     .local v0, "localManager":Lcom/android/settings/bluetooth/LocalBluetoothManager;
     invoke-virtual {v0}, Lcom/android/settings/bluetooth/LocalBluetoothManager;->getBluetoothAdapter()Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
@@ -54,7 +50,6 @@
 
     iput-object v1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mLocalAdapter:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
-    .line 85
     return-void
 .end method
 
@@ -64,7 +59,6 @@
     .param p1, "x1"    # Ljava/lang/String;
 
     .prologue
-    .line 47
     invoke-direct {p0, p1}, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->setDeviceName(Ljava/lang/String;)V
 
     return-void
@@ -75,7 +69,6 @@
     .param p0, "x0"    # Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
 
     .prologue
-    .line 47
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mAlertDialog:Landroid/app/AlertDialog;
 
     return-object v0
@@ -86,7 +79,6 @@
     .param p1, "deviceName"    # Ljava/lang/String;
 
     .prologue
-    .line 124
     invoke-virtual {p0}, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v2
@@ -99,7 +91,6 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
-    .line 126
     .local v0, "layoutInflater":Landroid/view/LayoutInflater;
     const v2, 0x7f040045
 
@@ -109,7 +100,6 @@
 
     move-result-object v1
 
-    .line 127
     .local v1, "view":Landroid/view/View;
     const v2, 0x7f0f009a
 
@@ -121,7 +111,6 @@
 
     iput-object v2, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mDeviceNameView:Landroid/widget/EditText;
 
-    .line 128
     iget-object v2, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mDeviceNameView:Landroid/widget/EditText;
 
     const/4 v3, 0x1
@@ -140,17 +129,14 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setFilters([Landroid/text/InputFilter;)V
 
-    .line 131
     iget-object v2, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mDeviceNameView:Landroid/widget/EditText;
 
     invoke-virtual {v2, p1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 132
     iget-object v2, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mDeviceNameView:Landroid/widget/EditText;
 
     invoke-virtual {v2, p0}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 133
     iget-object v2, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mDeviceNameView:Landroid/widget/EditText;
 
     new-instance v3, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment$3;
@@ -159,7 +145,6 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
 
-    .line 148
     return-object v1
 .end method
 
@@ -168,7 +153,6 @@
     .param p1, "deviceName"    # Ljava/lang/String;
 
     .prologue
-    .line 113
     const-string v0, "BluetoothNameDialogFragment"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -191,12 +175,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 114
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mLocalAdapter:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     invoke-virtual {v0, p1}, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->setName(Ljava/lang/String;)V
 
-    .line 115
     return-void
 .end method
 
@@ -211,34 +193,27 @@
 
     const/4 v1, 0x0
 
-    .line 187
     iget-boolean v2, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mDeviceNameUpdated:Z
 
     if-eqz v2, :cond_1
 
-    .line 189
     iput-boolean v1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mDeviceNameUpdated:Z
 
-    .line 190
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mOkButton:Landroid/widget/Button;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 197
     :cond_0
     :goto_0
     return-void
 
-    .line 192
     :cond_1
     iput-boolean v0, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mDeviceNameEdited:Z
 
-    .line 193
     iget-object v2, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mOkButton:Landroid/widget/Button;
 
     if-eqz v2, :cond_0
 
-    .line 194
     iget-object v2, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mOkButton:Landroid/widget/Button;
 
     invoke-interface {p1}, Landroid/text/Editable;->length()I
@@ -266,7 +241,6 @@
     .param p4, "after"    # I
 
     .prologue
-    .line 201
     return-void
 .end method
 
@@ -275,25 +249,21 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 89
     iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mLocalAdapter:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     invoke-virtual {v1}, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 90
     .local v0, "deviceName":Ljava/lang/String;
     if-eqz p1, :cond_0
 
-    .line 91
     const-string v1, "device_name"
 
     invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 92
     const-string v1, "device_name_edited"
 
     const/4 v2, 0x0
@@ -304,7 +274,6 @@
 
     iput-boolean v1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mDeviceNameEdited:Z
 
-    .line 94
     :cond_0
     new-instance v1, Landroid/app/AlertDialog$Builder;
 
@@ -352,7 +321,6 @@
 
     iput-object v1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mAlertDialog:Landroid/app/AlertDialog;
 
-    .line 106
     iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mAlertDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v1}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
@@ -363,7 +331,6 @@
 
     invoke-virtual {v1, v2}, Landroid/view/Window;->setSoftInputMode(I)V
 
-    .line 109
     iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mAlertDialog:Landroid/app/AlertDialog;
 
     return-object v1
@@ -375,19 +342,14 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 153
     invoke-super {p0}, Landroid/app/DialogFragment;->onDestroy()V
 
-    .line 154
     iput-object v0, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mAlertDialog:Landroid/app/AlertDialog;
 
-    .line 155
     iput-object v0, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mDeviceNameView:Landroid/widget/EditText;
 
-    .line 156
     iput-object v0, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mOkButton:Landroid/widget/Button;
 
-    .line 157
     return-void
 .end method
 
@@ -395,10 +357,8 @@
     .locals 2
 
     .prologue
-    .line 174
     invoke-super {p0}, Landroid/app/DialogFragment;->onPause()V
 
-    .line 175
     invoke-virtual {p0}, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -407,7 +367,6 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 176
     return-void
 .end method
 
@@ -415,15 +374,12 @@
     .locals 3
 
     .prologue
-    .line 161
     invoke-super {p0}, Landroid/app/DialogFragment;->onResume()V
 
-    .line 162
     iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mOkButton:Landroid/widget/Button;
 
     if-nez v1, :cond_0
 
-    .line 163
     iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mAlertDialog:Landroid/app/AlertDialog;
 
     const/4 v2, -0x1
@@ -434,31 +390,26 @@
 
     iput-object v1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mOkButton:Landroid/widget/Button;
 
-    .line 164
     iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mOkButton:Landroid/widget/Button;
 
     iget-boolean v2, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mDeviceNameEdited:Z
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 166
     :cond_0
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 167
     .local v0, "filter":Landroid/content/IntentFilter;
     const-string v1, "android.bluetooth.adapter.action.STATE_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 168
     const-string v1, "android.bluetooth.adapter.action.LOCAL_NAME_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 169
     invoke-virtual {p0}, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -467,7 +418,6 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/app/Activity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 170
     return-void
 .end method
 
@@ -476,7 +426,6 @@
     .param p1, "outState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 119
     const-string v0, "device_name"
 
     iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mDeviceNameView:Landroid/widget/EditText;
@@ -491,14 +440,12 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 120
     const-string v0, "device_name_edited"
 
     iget-boolean v1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mDeviceNameEdited:Z
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 121
     return-void
 .end method
 
@@ -510,7 +457,6 @@
     .param p4, "count"    # I
 
     .prologue
-    .line 205
     return-void
 .end method
 
@@ -518,7 +464,6 @@
     .locals 2
 
     .prologue
-    .line 179
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mLocalAdapter:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     if-eqz v0, :cond_0
@@ -531,17 +476,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 180
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mDeviceNameUpdated:Z
 
-    .line 181
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mDeviceNameEdited:Z
 
-    .line 182
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mDeviceNameView:Landroid/widget/EditText;
 
     iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mLocalAdapter:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
@@ -552,7 +494,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 184
     :cond_0
     return-void
 .end method

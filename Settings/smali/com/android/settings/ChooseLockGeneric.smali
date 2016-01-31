@@ -17,10 +17,8 @@
     .locals 0
 
     .prologue
-    .line 52
     invoke-direct {p0}, Lcom/android/settings/SettingsActivity;-><init>()V
 
-    .line 75
     return-void
 .end method
 
@@ -39,7 +37,6 @@
     .end annotation
 
     .prologue
-    .line 69
     const-class v0, Lcom/android/settings/ChooseLockGeneric$ChooseLockGenericFragment;
 
     return-object v0
@@ -49,7 +46,6 @@
     .locals 3
 
     .prologue
-    .line 57
     new-instance v0, Landroid/content/Intent;
 
     invoke-super {p0}, Lcom/android/settings/SettingsActivity;->getIntent()Landroid/content/Intent;
@@ -58,7 +54,6 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
-    .line 58
     .local v0, "modIntent":Landroid/content/Intent;
     const-string v1, ":settings:show_fragment"
 
@@ -72,7 +67,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 59
     return-object v0
 .end method
 
@@ -81,7 +75,6 @@
     .param p1, "fragmentName"    # Ljava/lang/String;
 
     .prologue
-    .line 64
     const-class v0, Lcom/android/settings/ChooseLockGeneric$ChooseLockGenericFragment;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -96,7 +89,6 @@
 
     const/4 v0, 0x1
 
-    .line 65
     :goto_0
     return v0
 

@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 615
     iput-object p1, p0, Lcom/android/settings/SettingsActivity$3;->this$0:Lcom/android/settings/SettingsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 617
     iget-object v0, p0, Lcom/android/settings/SettingsActivity$3;->this$0:Lcom/android/settings/SettingsActivity;
 
     const/4 v1, 0x0
@@ -54,11 +52,9 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/settings/SettingsActivity;->setResult(ILandroid/content/Intent;)V
 
-    .line 618
     iget-object v0, p0, Lcom/android/settings/SettingsActivity$3;->this$0:Lcom/android/settings/SettingsActivity;
 
     invoke-virtual {v0}, Lcom/android/settings/SettingsActivity;->finish()V
 
-    .line 619
     return-void
 .end method

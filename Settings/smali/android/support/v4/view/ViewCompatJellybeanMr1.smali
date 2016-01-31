@@ -9,7 +9,6 @@
     .param p0, "view"    # Landroid/view/View;
 
     .prologue
-    .line 40
     invoke-virtual {p0}, Landroid/view/View;->getLayoutDirection()I
 
     move-result v0
@@ -23,9 +22,7 @@
     .param p1, "paint"    # Landroid/graphics/Paint;
 
     .prologue
-    .line 36
     invoke-virtual {p0, p1}, Landroid/view/View;->setLayerPaint(Landroid/graphics/Paint;)V
 
-    .line 37
     return-void
 .end method

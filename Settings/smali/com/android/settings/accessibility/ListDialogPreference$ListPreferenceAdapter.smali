@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 257
     iput-object p1, p0, Lcom/android/settings/accessibility/ListDialogPreference$ListPreferenceAdapter;->this$0:Lcom/android/settings/accessibility/ListDialogPreference;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
@@ -39,7 +38,6 @@
     .param p2, "x1"    # Lcom/android/settings/accessibility/ListDialogPreference$1;
 
     .prologue
-    .line 257
     invoke-direct {p0, p1}, Lcom/android/settings/accessibility/ListDialogPreference$ListPreferenceAdapter;-><init>(Lcom/android/settings/accessibility/ListDialogPreference;)V
 
     return-void
@@ -51,7 +49,6 @@
     .locals 1
 
     .prologue
-    .line 262
     iget-object v0, p0, Lcom/android/settings/accessibility/ListDialogPreference$ListPreferenceAdapter;->this$0:Lcom/android/settings/accessibility/ListDialogPreference;
 
     # getter for: Lcom/android/settings/accessibility/ListDialogPreference;->mEntryValues:[I
@@ -69,7 +66,6 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 267
     iget-object v0, p0, Lcom/android/settings/accessibility/ListDialogPreference$ListPreferenceAdapter;->this$0:Lcom/android/settings/accessibility/ListDialogPreference;
 
     # getter for: Lcom/android/settings/accessibility/ListDialogPreference;->mEntryValues:[I
@@ -91,7 +87,6 @@
     .param p1, "x0"    # I
 
     .prologue
-    .line 257
     invoke-virtual {p0, p1}, Lcom/android/settings/accessibility/ListDialogPreference$ListPreferenceAdapter;->getItem(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -104,7 +99,6 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 272
     iget-object v0, p0, Lcom/android/settings/accessibility/ListDialogPreference$ListPreferenceAdapter;->this$0:Lcom/android/settings/accessibility/ListDialogPreference;
 
     # getter for: Lcom/android/settings/accessibility/ListDialogPreference;->mEntryValues:[I
@@ -126,15 +120,12 @@
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 282
     if-nez p2, :cond_1
 
-    .line 283
     iget-object v0, p0, Lcom/android/settings/accessibility/ListDialogPreference$ListPreferenceAdapter;->mInflater:Landroid/view/LayoutInflater;
 
     if-nez v0, :cond_0
 
-    .line 284
     invoke-virtual {p3}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -145,7 +136,6 @@
 
     iput-object v0, p0, Lcom/android/settings/accessibility/ListDialogPreference$ListPreferenceAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 286
     :cond_0
     iget-object v0, p0, Lcom/android/settings/accessibility/ListDialogPreference$ListPreferenceAdapter;->mInflater:Landroid/view/LayoutInflater;
 
@@ -162,13 +152,11 @@
 
     move-result-object p2
 
-    .line 288
     :cond_1
     iget-object v0, p0, Lcom/android/settings/accessibility/ListDialogPreference$ListPreferenceAdapter;->this$0:Lcom/android/settings/accessibility/ListDialogPreference;
 
     invoke-virtual {v0, p2, p1}, Lcom/android/settings/accessibility/ListDialogPreference;->onBindListItem(Landroid/view/View;I)V
 
-    .line 289
     return-object p2
 .end method
 
@@ -176,7 +164,6 @@
     .locals 1
 
     .prologue
-    .line 277
     const/4 v0, 0x1
 
     return v0

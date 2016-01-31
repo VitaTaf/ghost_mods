@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 203
     iput-object p1, p0, Lcom/android/settings/wifi/AdvancedWifiSettings$3;->this$0:Lcom/android/settings/wifi/AdvancedWifiSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,12 +42,10 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 205
     new-instance v0, Lcom/android/settings/wifi/AdvancedWifiSettings$WpsFragment;
 
     invoke-direct {v0, v3}, Lcom/android/settings/wifi/AdvancedWifiSettings$WpsFragment;-><init>(I)V
 
-    .line 206
     .local v0, "wpsFragment":Lcom/android/settings/wifi/AdvancedWifiSettings$WpsFragment;
     iget-object v1, p0, Lcom/android/settings/wifi/AdvancedWifiSettings$3;->this$0:Lcom/android/settings/wifi/AdvancedWifiSettings;
 
@@ -60,6 +57,5 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/settings/wifi/AdvancedWifiSettings$WpsFragment;->show(Landroid/app/FragmentManager;Ljava/lang/String;)V
 
-    .line 207
     return v3
 .end method

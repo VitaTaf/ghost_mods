@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 180
     iput-object p1, p0, Lcom/motorola/settings/TetherDisclaimer$3;->this$0:Lcom/motorola/settings/TetherDisclaimer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "dialog"    # Landroid/content/DialogInterface;
 
     .prologue
-    .line 183
     iget-object v0, p0, Lcom/motorola/settings/TetherDisclaimer$3;->this$0:Lcom/motorola/settings/TetherDisclaimer;
 
     const/4 v1, 0x0
@@ -49,7 +47,6 @@
     # setter for: Lcom/motorola/settings/TetherDisclaimer;->mDoNotShowChecked:Z
     invoke-static {v0, v1}, Lcom/motorola/settings/TetherDisclaimer;->access$002(Lcom/motorola/settings/TetherDisclaimer;Z)Z
 
-    .line 184
     iget-object v0, p0, Lcom/motorola/settings/TetherDisclaimer$3;->this$0:Lcom/motorola/settings/TetherDisclaimer;
 
     iget-object v1, p0, Lcom/motorola/settings/TetherDisclaimer$3;->this$0:Lcom/motorola/settings/TetherDisclaimer;
@@ -62,6 +59,5 @@
     # invokes: Lcom/motorola/settings/TetherDisclaimer;->setResultAndFinish(I)V
     invoke-static {v0, v1}, Lcom/motorola/settings/TetherDisclaimer;->access$200(Lcom/motorola/settings/TetherDisclaimer;I)V
 
-    .line 185
     return-void
 .end method

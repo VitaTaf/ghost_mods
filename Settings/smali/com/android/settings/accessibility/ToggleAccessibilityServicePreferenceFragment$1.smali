@@ -24,7 +24,6 @@
     .param p2, "x0"    # Landroid/os/Handler;
 
     .prologue
-    .line 63
     iput-object p1, p0, Lcom/android/settings/accessibility/ToggleAccessibilityServicePreferenceFragment$1;->this$0:Lcom/android/settings/accessibility/ToggleAccessibilityServicePreferenceFragment;
 
     invoke-direct {p0, p2}, Lcom/android/settings/accessibility/SettingsContentObserver;-><init>(Landroid/os/Handler;)V
@@ -40,12 +39,10 @@
     .param p2, "uri"    # Landroid/net/Uri;
 
     .prologue
-    .line 66
     iget-object v0, p0, Lcom/android/settings/accessibility/ToggleAccessibilityServicePreferenceFragment$1;->this$0:Lcom/android/settings/accessibility/ToggleAccessibilityServicePreferenceFragment;
 
     # invokes: Lcom/android/settings/accessibility/ToggleAccessibilityServicePreferenceFragment;->updateSwitchBarToggleSwitch()V
     invoke-static {v0}, Lcom/android/settings/accessibility/ToggleAccessibilityServicePreferenceFragment;->access$000(Lcom/android/settings/accessibility/ToggleAccessibilityServicePreferenceFragment;)V
 
-    .line 67
     return-void
 .end method

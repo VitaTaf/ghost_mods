@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 85
     iput-object p1, p0, Lcom/android/settings/HighlightingFragment$1;->this$0:Lcom/android/settings/HighlightingFragment;
 
     iput-object p2, p0, Lcom/android/settings/HighlightingFragment$1;->val$view:Landroid/view/View;
@@ -48,7 +47,6 @@
     .locals 5
 
     .prologue
-    .line 88
     iget-object v2, p0, Lcom/android/settings/HighlightingFragment$1;->val$view:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getWidth()I
@@ -57,7 +55,6 @@
 
     div-int/lit8 v0, v2, 0x2
 
-    .line 89
     .local v0, "centerX":I
     iget-object v2, p0, Lcom/android/settings/HighlightingFragment$1;->val$view:Landroid/view/View;
 
@@ -67,7 +64,6 @@
 
     div-int/lit8 v1, v2, 0x2
 
-    .line 90
     .local v1, "centerY":I
     iget-object v2, p0, Lcom/android/settings/HighlightingFragment$1;->val$highlight:Landroid/graphics/drawable/Drawable;
 
@@ -77,20 +73,17 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/graphics/drawable/Drawable;->setHotspot(FF)V
 
-    .line 91
     iget-object v2, p0, Lcom/android/settings/HighlightingFragment$1;->val$view:Landroid/view/View;
 
     const/4 v3, 0x1
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setPressed(Z)V
 
-    .line 92
     iget-object v2, p0, Lcom/android/settings/HighlightingFragment$1;->val$view:Landroid/view/View;
 
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setPressed(Z)V
 
-    .line 93
     return-void
 .end method

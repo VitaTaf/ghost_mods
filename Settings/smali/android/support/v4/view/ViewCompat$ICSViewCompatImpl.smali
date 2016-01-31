@@ -23,7 +23,6 @@
     .locals 1
 
     .prologue
-    .line 933
     const/4 v0, 0x0
 
     sput-boolean v0, Landroid/support/v4/view/ViewCompat$ICSViewCompatImpl;->accessibilityDelegateCheckFailed:Z
@@ -35,7 +34,6 @@
     .locals 0
 
     .prologue
-    .line 931
     invoke-direct {p0}, Landroid/support/v4/view/ViewCompat$HCViewCompatImpl;-><init>()V
 
     return-void
@@ -49,7 +47,6 @@
     .param p2, "direction"    # I
 
     .prologue
-    .line 936
     invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompatICS;->canScrollHorizontally(Landroid/view/View;I)Z
 
     move-result v0
@@ -63,7 +60,6 @@
     .param p2, "delegate"    # Landroid/support/v4/view/AccessibilityDelegateCompat;
 
     .prologue
-    .line 957
     if-nez p2, :cond_0
 
     const/4 v0, 0x0
@@ -71,10 +67,8 @@
     :goto_0
     invoke-static {p1, v0}, Landroid/support/v4/view/ViewCompatICS;->setAccessibilityDelegate(Landroid/view/View;Ljava/lang/Object;)V
 
-    .line 959
     return-void
 
-    .line 957
     :cond_0
     invoke-virtual {p2}, Landroid/support/v4/view/AccessibilityDelegateCompat;->getBridge()Ljava/lang/Object;
 

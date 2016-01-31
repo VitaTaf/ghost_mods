@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 98
     iput-object p1, p0, Lcom/android/settings/LocalePicker$1;->this$0:Lcom/android/settings/LocalePicker;
 
     iput p2, p0, Lcom/android/settings/LocalePicker$1;->val$dialogId:I
@@ -44,14 +43,12 @@
     .locals 2
 
     .prologue
-    .line 100
     iget-object v0, p0, Lcom/android/settings/LocalePicker$1;->this$0:Lcom/android/settings/LocalePicker;
 
     iget v1, p0, Lcom/android/settings/LocalePicker$1;->val$dialogId:I
 
     invoke-virtual {v0, v1}, Lcom/android/settings/LocalePicker;->removeDialog(I)V
 
-    .line 101
     iget-object v0, p0, Lcom/android/settings/LocalePicker$1;->this$0:Lcom/android/settings/LocalePicker;
 
     invoke-virtual {v0}, Lcom/android/settings/LocalePicker;->getActivity()Landroid/app/Activity;
@@ -60,7 +57,6 @@
 
     invoke-virtual {v0}, Landroid/app/Activity;->onBackPressed()V
 
-    .line 102
     iget-object v0, p0, Lcom/android/settings/LocalePicker$1;->this$0:Lcom/android/settings/LocalePicker;
 
     # getter for: Lcom/android/settings/LocalePicker;->mTargetLocale:Ljava/util/Locale;
@@ -70,6 +66,5 @@
 
     invoke-static {v0}, Lcom/android/settings/LocalePicker;->updateLocale(Ljava/util/Locale;)V
 
-    .line 103
     return-void
 .end method

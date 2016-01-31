@@ -39,7 +39,6 @@
     .end annotation
 
     .prologue
-    .line 495
     .local p2, "objects":Ljava/util/List;, "Ljava/util/List<Ljava/lang/CharSequence;>;"
     const v0, 0x10900c9
 
@@ -47,6 +46,5 @@
 
     invoke-direct {p0, p1, v0, v1, p2}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;IILjava/util/List;)V
 
-    .line 497
     return-void
 .end method

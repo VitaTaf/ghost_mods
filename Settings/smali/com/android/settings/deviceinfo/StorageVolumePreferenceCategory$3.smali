@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 580
     iput-object p1, p0, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory$3;->this$0:Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +44,6 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 583
     iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory$3;->this$0:Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;
 
     # getter for: Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;->mUpdateHandler:Landroid/os/Handler;
@@ -69,7 +67,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 585
     return-void
 .end method
 
@@ -79,7 +76,6 @@
     .param p2, "details"    # Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementDetails;
 
     .prologue
-    .line 589
     iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory$3;->this$0:Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;
 
     # getter for: Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;->mUpdateHandler:Landroid/os/Handler;
@@ -95,6 +91,5 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 590
     return-void
 .end method

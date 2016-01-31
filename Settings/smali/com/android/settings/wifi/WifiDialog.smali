@@ -29,24 +29,18 @@
     .param p4, "edit"    # Z
 
     .prologue
-    .line 48
     invoke-direct {p0, p1}, Landroid/app/AlertDialog;-><init>(Landroid/content/Context;)V
 
-    .line 49
     iput-boolean p4, p0, Lcom/android/settings/wifi/WifiDialog;->mEdit:Z
 
-    .line 50
     iput-object p2, p0, Lcom/android/settings/wifi/WifiDialog;->mListener:Landroid/content/DialogInterface$OnClickListener;
 
-    .line 51
     iput-object p3, p0, Lcom/android/settings/wifi/WifiDialog;->mAccessPoint:Lcom/android/settings/wifi/AccessPoint;
 
-    .line 52
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/settings/wifi/WifiDialog;->mHideSubmitButton:Z
 
-    .line 53
     return-void
 .end method
 
@@ -59,13 +53,10 @@
     .param p5, "hideSubmitButton"    # Z
 
     .prologue
-    .line 42
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/settings/wifi/WifiDialog;-><init>(Landroid/content/Context;Landroid/content/DialogInterface$OnClickListener;Lcom/android/settings/wifi/AccessPoint;Z)V
 
-    .line 43
     iput-boolean p5, p0, Lcom/android/settings/wifi/WifiDialog;->mHideSubmitButton:Z
 
-    .line 44
     return-void
 .end method
 
@@ -75,7 +66,6 @@
     .locals 1
 
     .prologue
-    .line 57
     iget-object v0, p0, Lcom/android/settings/wifi/WifiDialog;->mController:Lcom/android/settings/wifi/WifiConfigController;
 
     return-object v0
@@ -85,7 +75,6 @@
     .locals 1
 
     .prologue
-    .line 84
     const/4 v0, -0x1
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiDialog;->getButton(I)Landroid/widget/Button;
@@ -100,7 +89,6 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 62
     invoke-virtual {p0}, Lcom/android/settings/wifi/WifiDialog;->getLayoutInflater()Landroid/view/LayoutInflater;
 
     move-result-object v0
@@ -115,17 +103,14 @@
 
     iput-object v0, p0, Lcom/android/settings/wifi/WifiDialog;->mView:Landroid/view/View;
 
-    .line 63
     iget-object v0, p0, Lcom/android/settings/wifi/WifiDialog;->mView:Landroid/view/View;
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiDialog;->setView(Landroid/view/View;)V
 
-    .line 64
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiDialog;->setInverseBackgroundForced(Z)V
 
-    .line 65
     new-instance v0, Lcom/android/settings/wifi/WifiConfigController;
 
     iget-object v1, p0, Lcom/android/settings/wifi/WifiDialog;->mView:Landroid/view/View;
@@ -138,24 +123,19 @@
 
     iput-object v0, p0, Lcom/android/settings/wifi/WifiDialog;->mController:Lcom/android/settings/wifi/WifiConfigController;
 
-    .line 66
     invoke-super {p0, p1}, Landroid/app/AlertDialog;->onCreate(Landroid/os/Bundle;)V
 
-    .line 68
     iget-boolean v0, p0, Lcom/android/settings/wifi/WifiDialog;->mHideSubmitButton:Z
 
     if-eqz v0, :cond_0
 
-    .line 69
     iget-object v0, p0, Lcom/android/settings/wifi/WifiDialog;->mController:Lcom/android/settings/wifi/WifiConfigController;
 
     invoke-virtual {v0}, Lcom/android/settings/wifi/WifiConfigController;->hideSubmitButton()V
 
-    .line 75
     :goto_0
     return-void
 
-    .line 73
     :cond_0
     iget-object v0, p0, Lcom/android/settings/wifi/WifiDialog;->mController:Lcom/android/settings/wifi/WifiConfigController;
 
@@ -169,14 +149,12 @@
     .param p1, "text"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 109
     const/4 v0, -0x2
 
     iget-object v1, p0, Lcom/android/settings/wifi/WifiDialog;->mListener:Landroid/content/DialogInterface$OnClickListener;
 
     invoke-virtual {p0, v0, p1, v1}, Lcom/android/settings/wifi/WifiDialog;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
-    .line 110
     return-void
 .end method
 
@@ -185,14 +163,12 @@
     .param p1, "text"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 104
     const/4 v0, -0x3
 
     iget-object v1, p0, Lcom/android/settings/wifi/WifiDialog;->mListener:Landroid/content/DialogInterface$OnClickListener;
 
     invoke-virtual {p0, v0, p1, v1}, Lcom/android/settings/wifi/WifiDialog;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
-    .line 105
     return-void
 .end method
 
@@ -201,13 +177,11 @@
     .param p1, "text"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 99
     const/4 v0, -0x1
 
     iget-object v1, p0, Lcom/android/settings/wifi/WifiDialog;->mListener:Landroid/content/DialogInterface$OnClickListener;
 
     invoke-virtual {p0, v0, p1, v1}, Lcom/android/settings/wifi/WifiDialog;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
-    .line 100
     return-void
 .end method

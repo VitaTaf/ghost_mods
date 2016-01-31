@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 135
     iput-object p1, p0, Lcom/android/settings/IccLockSettings$1;->this$0:Lcom/android/settings/IccLockSettings;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -38,22 +37,18 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 137
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
-    .line 138
     .local v0, "ar":Landroid/os/AsyncResult;
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 166
     :goto_0
     return-void
 
-    .line 142
     :pswitch_0
     iget-object v1, p0, Lcom/android/settings/IccLockSettings$1;->this$0:Lcom/android/settings/IccLockSettings;
 
@@ -62,7 +57,6 @@
     # setter for: Lcom/android/settings/IccLockSettings;->mAttemptsRemaining:I
     invoke-static {v1, v2}, Lcom/android/settings/IccLockSettings;->access$002(Lcom/android/settings/IccLockSettings;I)I
 
-    .line 144
     const-string v1, "IccLockSettings"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -92,7 +86,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 149
     iget-object v1, p0, Lcom/android/settings/IccLockSettings$1;->this$0:Lcom/android/settings/IccLockSettings;
 
     # invokes: Lcom/android/settings/IccLockSettings;->iccLockChanged(Landroid/os/AsyncResult;)V
@@ -100,7 +93,6 @@
 
     goto :goto_0
 
-    .line 154
     :pswitch_1
     iget-object v1, p0, Lcom/android/settings/IccLockSettings$1;->this$0:Lcom/android/settings/IccLockSettings;
 
@@ -109,7 +101,6 @@
     # setter for: Lcom/android/settings/IccLockSettings;->mAttemptsRemaining:I
     invoke-static {v1, v2}, Lcom/android/settings/IccLockSettings;->access$002(Lcom/android/settings/IccLockSettings;I)I
 
-    .line 156
     const-string v1, "IccLockSettings"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -139,7 +130,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 159
     iget-object v1, p0, Lcom/android/settings/IccLockSettings$1;->this$0:Lcom/android/settings/IccLockSettings;
 
     # invokes: Lcom/android/settings/IccLockSettings;->iccPinChanged(Landroid/os/AsyncResult;)V
@@ -147,7 +137,6 @@
 
     goto :goto_0
 
-    .line 162
     :pswitch_2
     iget-object v1, p0, Lcom/android/settings/IccLockSettings$1;->this$0:Lcom/android/settings/IccLockSettings;
 
@@ -156,7 +145,6 @@
 
     goto :goto_0
 
-    .line 138
     :pswitch_data_0
     .packed-switch 0x64
         :pswitch_0

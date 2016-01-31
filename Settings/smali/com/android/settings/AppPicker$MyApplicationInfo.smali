@@ -27,7 +27,6 @@
     .locals 0
 
     .prologue
-    .line 77
     iput-object p1, p0, Lcom/android/settings/AppPicker$MyApplicationInfo;->this$0:Lcom/android/settings/AppPicker;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

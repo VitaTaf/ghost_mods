@@ -32,7 +32,6 @@
     .locals 0
 
     .prologue
-    .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,7 +45,6 @@
     .param p2, "b"    # Landroid/app/usage/UsageStats;
 
     .prologue
-    .line 79
     invoke-virtual {p2}, Landroid/app/usage/UsageStats;->getLastTimeUsed()J
 
     move-result-wide v0
@@ -68,7 +66,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 75
     check-cast p1, Landroid/app/usage/UsageStats;
 
     .end local p1    # "x0":Ljava/lang/Object;

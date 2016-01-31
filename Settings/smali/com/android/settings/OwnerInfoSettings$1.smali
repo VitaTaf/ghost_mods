@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 87
     iput-object p1, p0, Lcom/android/settings/OwnerInfoSettings$1;->this$0:Lcom/android/settings/OwnerInfoSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .param p2, "isChecked"    # Z
 
     .prologue
-    .line 89
     iget-object v0, p0, Lcom/android/settings/OwnerInfoSettings$1;->this$0:Lcom/android/settings/OwnerInfoSettings;
 
     # getter for: Lcom/android/settings/OwnerInfoSettings;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
@@ -52,7 +50,6 @@
 
     invoke-virtual {v0, p2}, Lcom/android/internal/widget/LockPatternUtils;->setOwnerInfoEnabled(Z)V
 
-    .line 90
     iget-object v0, p0, Lcom/android/settings/OwnerInfoSettings$1;->this$0:Lcom/android/settings/OwnerInfoSettings;
 
     # getter for: Lcom/android/settings/OwnerInfoSettings;->mOwnerInfo:Landroid/widget/EditText;
@@ -62,6 +59,5 @@
 
     invoke-virtual {v0, p2}, Landroid/widget/EditText;->setEnabled(Z)V
 
-    .line 91
     return-void
 .end method

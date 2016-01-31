@@ -31,7 +31,6 @@
     .locals 0
 
     .prologue
-    .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,7 +42,6 @@
     .locals 3
 
     .prologue
-    .line 64
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-class v1, Lcom/android/settings/DreamBackend$DreamInfo;
@@ -54,7 +52,6 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 65
     .local v0, "sb":Ljava/lang/StringBuilder;
     const/16 v1, 0x5b
 
@@ -66,17 +63,14 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 66
     iget-boolean v1, p0, Lcom/android/settings/DreamBackend$DreamInfo;->isActive:Z
 
     if-eqz v1, :cond_0
 
-    .line 67
     const-string v1, ",active"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 68
     :cond_0
     const/16 v1, 0x2c
 
@@ -88,12 +82,10 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 69
     iget-object v1, p0, Lcom/android/settings/DreamBackend$DreamInfo;->settingsComponentName:Landroid/content/ComponentName;
 
     if-eqz v1, :cond_1
 
-    .line 70
     const-string v1, "settings="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -104,7 +96,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 71
     :cond_1
     const/16 v1, 0x5d
 

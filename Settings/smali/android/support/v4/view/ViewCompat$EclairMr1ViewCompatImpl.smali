@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 752
     invoke-direct {p0}, Landroid/support/v4/view/ViewCompat$BaseViewCompatImpl;-><init>()V
 
     return-void
@@ -32,7 +31,6 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 755
     invoke-static {p1}, Landroid/support/v4/view/ViewCompatEclairMr1;->isOpaque(Landroid/view/View;)Z
 
     move-result v0

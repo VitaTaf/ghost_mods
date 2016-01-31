@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 619
     iput-object p1, p0, Lcom/android/settings/users/UserSettings$10;->this$0:Lcom/android/settings/users/UserSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,12 +41,10 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 622
     iget-object v0, p0, Lcom/android/settings/users/UserSettings$10;->this$0:Lcom/android/settings/users/UserSettings;
 
     # invokes: Lcom/android/settings/users/UserSettings;->exitGuest()V
     invoke-static {v0}, Lcom/android/settings/users/UserSettings;->access$1500(Lcom/android/settings/users/UserSettings;)V
 
-    .line 623
     return-void
 .end method

@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 588
     iput-object p1, p0, Lcom/android/settings/notification/NotificationSettings$Receiver;->this$0:Lcom/android/settings/notification/NotificationSettings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,7 +38,6 @@
     .param p2, "x1"    # Lcom/android/settings/notification/NotificationSettings$1;
 
     .prologue
-    .line 588
     invoke-direct {p0, p1}, Lcom/android/settings/notification/NotificationSettings$Receiver;-><init>(Lcom/android/settings/notification/NotificationSettings;)V
 
     return-void
@@ -53,12 +51,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 606
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 607
     .local v0, "action":Ljava/lang/String;
     const-string v1, "android.os.action.ACTION_EFFECTS_SUPPRESSOR_CHANGED"
 
@@ -68,7 +64,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 608
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSettings$Receiver;->this$0:Lcom/android/settings/notification/NotificationSettings;
 
     # getter for: Lcom/android/settings/notification/NotificationSettings;->mHandler:Lcom/android/settings/notification/NotificationSettings$H;
@@ -80,12 +75,10 @@
 
     invoke-virtual {v1, v2}, Lcom/android/settings/notification/NotificationSettings$H;->sendEmptyMessage(I)Z
 
-    .line 612
     :cond_0
     :goto_0
     return-void
 
-    .line 609
     :cond_1
     const-string v1, "android.media.INTERNAL_RINGER_MODE_CHANGED_ACTION"
 
@@ -95,7 +88,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 610
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSettings$Receiver;->this$0:Lcom/android/settings/notification/NotificationSettings;
 
     # getter for: Lcom/android/settings/notification/NotificationSettings;->mHandler:Lcom/android/settings/notification/NotificationSettings$H;
@@ -115,36 +107,29 @@
     .param p1, "register"    # Z
 
     .prologue
-    .line 592
     iget-boolean v1, p0, Lcom/android/settings/notification/NotificationSettings$Receiver;->mRegistered:Z
 
     if-ne v1, p1, :cond_0
 
-    .line 602
     :goto_0
     return-void
 
-    .line 593
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 594
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 595
     .local v0, "filter":Landroid/content/IntentFilter;
     const-string v1, "android.os.action.ACTION_EFFECTS_SUPPRESSOR_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 596
     const-string v1, "android.media.INTERNAL_RINGER_MODE_CHANGED_ACTION"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 597
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSettings$Receiver;->this$0:Lcom/android/settings/notification/NotificationSettings;
 
     # getter for: Lcom/android/settings/notification/NotificationSettings;->mContext:Landroid/content/Context;
@@ -154,14 +139,12 @@
 
     invoke-virtual {v1, p0, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 601
     .end local v0    # "filter":Landroid/content/IntentFilter;
     :goto_1
     iput-boolean p1, p0, Lcom/android/settings/notification/NotificationSettings$Receiver;->mRegistered:Z
 
     goto :goto_0
 
-    .line 599
     :cond_1
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSettings$Receiver;->this$0:Lcom/android/settings/notification/NotificationSettings;
 

@@ -29,15 +29,12 @@
     .param p2, "profile"    # Lcom/android/settings/bluetooth/LocalBluetoothProfile;
 
     .prologue
-    .line 222
     iput-object p1, p0, Lcom/android/settings/bluetooth/LocalBluetoothProfileManager$StateChangedHandler;->this$0:Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 223
     iput-object p2, p0, Lcom/android/settings/bluetooth/LocalBluetoothProfileManager$StateChangedHandler;->mProfile:Lcom/android/settings/bluetooth/LocalBluetoothProfile;
 
-    .line 224
     return-void
 .end method
 
@@ -52,14 +49,12 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 227
     const-string v3, "android.bluetooth.profile.extra.STATE"
 
     invoke-virtual {p2, v3, v4}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v1
 
-    .line 228
     .local v1, "newState":I
     const-string v3, "android.bluetooth.profile.extra.PREVIOUS_STATE"
 
@@ -67,7 +62,6 @@
 
     move-result v2
 
-    .line 230
     .local v2, "oldState":I
     const-string v3, "LocalBluetoothProfileManager"
 
@@ -107,7 +101,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 232
     iget-object v3, p0, Lcom/android/settings/bluetooth/LocalBluetoothProfileManager$StateChangedHandler;->this$0:Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
 
     # getter for: Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;->mDeviceManager:Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;
@@ -119,7 +112,6 @@
 
     move-result-object v0
 
-    .line 234
     .local v0, "cachedDevice":Lcom/android/settings/bluetooth/CachedBluetoothDevice;
     if-nez v0, :cond_0
 
@@ -129,7 +121,6 @@
 
     if-eq v1, v3, :cond_0
 
-    .line 236
     const-string v3, "LocalBluetoothProfileManager"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -152,7 +143,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 237
     iget-object v3, p0, Lcom/android/settings/bluetooth/LocalBluetoothProfileManager$StateChangedHandler;->this$0:Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
 
     # getter for: Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;->mDeviceManager:Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;
@@ -173,7 +163,6 @@
 
     move-result-object v0
 
-    .line 241
     :cond_0
     if-nez v1, :cond_1
 
@@ -181,7 +170,6 @@
 
     if-ne v2, v3, :cond_1
 
-    .line 243
     const-string v3, "LocalBluetoothProfileManager"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -212,19 +200,15 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 246
     :cond_1
     if-eqz v0, :cond_2
 
-    .line 247
     iget-object v3, p0, Lcom/android/settings/bluetooth/LocalBluetoothProfileManager$StateChangedHandler;->mProfile:Lcom/android/settings/bluetooth/LocalBluetoothProfile;
 
     invoke-virtual {v0, v3, v1}, Lcom/android/settings/bluetooth/CachedBluetoothDevice;->onProfileStateChanged(Lcom/android/settings/bluetooth/LocalBluetoothProfile;I)V
 
-    .line 248
     invoke-virtual {v0}, Lcom/android/settings/bluetooth/CachedBluetoothDevice;->refresh()V
 
-    .line 250
     :cond_2
     return-void
 .end method

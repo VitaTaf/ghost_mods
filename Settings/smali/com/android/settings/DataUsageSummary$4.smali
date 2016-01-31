@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 784
     iput-object p1, p0, Lcom/android/settings/DataUsageSummary$4;->this$0:Lcom/android/settings/DataUsageSummary;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +40,10 @@
     .param p1, "tabId"    # Ljava/lang/String;
 
     .prologue
-    .line 788
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$4;->this$0:Lcom/android/settings/DataUsageSummary;
 
     # invokes: Lcom/android/settings/DataUsageSummary;->updateBody()V
     invoke-static {v0}, Lcom/android/settings/DataUsageSummary;->access$100(Lcom/android/settings/DataUsageSummary;)V
 
-    .line 789
     return-void
 .end method

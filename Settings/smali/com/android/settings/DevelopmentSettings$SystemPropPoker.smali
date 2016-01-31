@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 1613
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
     return-void
@@ -43,7 +42,6 @@
     .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
-    .line 1613
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1    # "x0":[Ljava/lang/Object;
@@ -61,7 +59,6 @@
     .prologue
     const/4 v11, 0x0
 
-    .line 1618
     :try_start_0
     invoke-static {}, Landroid/os/ServiceManager;->listServices()[Ljava/lang/String;
     :try_end_0
@@ -69,7 +66,6 @@
 
     move-result-object v7
 
-    .line 1622
     .local v7, "services":[Ljava/lang/String;
     move-object v0, v7
 
@@ -85,22 +81,18 @@
 
     aget-object v6, v0, v3
 
-    .line 1623
     .local v6, "service":Ljava/lang/String;
     invoke-static {v6}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v5
 
-    .line 1624
     .local v5, "obj":Landroid/os/IBinder;
     if-eqz v5, :cond_0
 
-    .line 1625
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1627
     .local v1, "data":Landroid/os/Parcel;
     const v8, 0x5f535052
 
@@ -114,18 +106,15 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_2
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 1633
     :goto_1
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1622
     .end local v1    # "data":Landroid/os/Parcel;
     :cond_0
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 1619
     .end local v0    # "arr$":[Ljava/lang/String;
     .end local v3    # "i$":I
     .end local v4    # "len$":I
@@ -135,11 +124,9 @@
     :catch_0
     move-exception v2
 
-    .line 1636
     :cond_1
     return-object v11
 
-    .line 1629
     .restart local v0    # "arr$":[Ljava/lang/String;
     .restart local v1    # "data":Landroid/os/Parcel;
     .restart local v3    # "i$":I
@@ -150,7 +137,6 @@
     :catch_1
     move-exception v2
 
-    .line 1630
     .local v2, "e":Ljava/lang/Exception;
     const-string v8, "DevelopmentSettings"
 
@@ -186,7 +172,6 @@
 
     goto :goto_1
 
-    .line 1628
     .end local v2    # "e":Ljava/lang/Exception;
     :catch_2
     move-exception v8

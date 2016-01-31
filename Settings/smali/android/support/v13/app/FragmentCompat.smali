@@ -23,25 +23,21 @@
     .locals 2
 
     .prologue
-    .line 54
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0xf
 
     if-lt v0, v1, :cond_0
 
-    .line 55
     new-instance v0, Landroid/support/v13/app/FragmentCompat$ICSMR1FragmentCompatImpl;
 
     invoke-direct {v0}, Landroid/support/v13/app/FragmentCompat$ICSMR1FragmentCompatImpl;-><init>()V
 
     sput-object v0, Landroid/support/v13/app/FragmentCompat;->IMPL:Landroid/support/v13/app/FragmentCompat$FragmentCompatImpl;
 
-    .line 61
     :goto_0
     return-void
 
-    .line 56
     :cond_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -49,7 +45,6 @@
 
     if-lt v0, v1, :cond_1
 
-    .line 57
     new-instance v0, Landroid/support/v13/app/FragmentCompat$ICSFragmentCompatImpl;
 
     invoke-direct {v0}, Landroid/support/v13/app/FragmentCompat$ICSFragmentCompatImpl;-><init>()V
@@ -58,7 +53,6 @@
 
     goto :goto_0
 
-    .line 59
     :cond_1
     new-instance v0, Landroid/support/v13/app/FragmentCompat$BaseFragmentCompatImpl;
 
@@ -75,12 +69,10 @@
     .param p1, "visible"    # Z
 
     .prologue
-    .line 68
     sget-object v0, Landroid/support/v13/app/FragmentCompat;->IMPL:Landroid/support/v13/app/FragmentCompat$FragmentCompatImpl;
 
     invoke-interface {v0, p0, p1}, Landroid/support/v13/app/FragmentCompat$FragmentCompatImpl;->setMenuVisibility(Landroid/app/Fragment;Z)V
 
-    .line 69
     return-void
 .end method
 
@@ -90,11 +82,9 @@
     .param p1, "deferStart"    # Z
 
     .prologue
-    .line 76
     sget-object v0, Landroid/support/v13/app/FragmentCompat;->IMPL:Landroid/support/v13/app/FragmentCompat$FragmentCompatImpl;
 
     invoke-interface {v0, p0, p1}, Landroid/support/v13/app/FragmentCompat$FragmentCompatImpl;->setUserVisibleHint(Landroid/app/Fragment;Z)V
 
-    .line 77
     return-void
 .end method

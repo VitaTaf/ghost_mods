@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 151
     iput-object p1, p0, Lcom/android/settings/widget/ChartSweepView$1;->this$0:Lcom/android/settings/widget/ChartSweepView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +40,10 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 153
     iget-object v0, p0, Lcom/android/settings/widget/ChartSweepView$1;->this$0:Lcom/android/settings/widget/ChartSweepView;
 
     # invokes: Lcom/android/settings/widget/ChartSweepView;->dispatchRequestEdit()V
     invoke-static {v0}, Lcom/android/settings/widget/ChartSweepView;->access$000(Lcom/android/settings/widget/ChartSweepView;)V
 
-    .line 154
     return-void
 .end method

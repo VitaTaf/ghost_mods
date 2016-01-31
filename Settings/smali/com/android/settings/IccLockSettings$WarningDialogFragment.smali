@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 623
     invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
 
     return-void
@@ -36,10 +35,8 @@
     .param p1, "activity"    # Landroid/app/Activity;
 
     .prologue
-    .line 627
     invoke-super {p0, p1}, Landroid/app/DialogFragment;->onAttach(Landroid/app/Activity;)V
 
-    .line 629
     :try_start_0
     move-object v0, p1
 
@@ -51,14 +48,11 @@
     :try_end_0
     .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 634
     return-void
 
-    .line 630
     :catch_0
     move-exception v1
 
-    .line 631
     .local v1, "e":Ljava/lang/ClassCastException;
     new-instance v2, Ljava/lang/ClassCastException;
 
@@ -94,18 +88,15 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 652
     invoke-super {p0, p1}, Landroid/app/DialogFragment;->onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
 
     move-result-object v0
 
-    .line 653
     .local v0, "dialog":Landroid/app/Dialog;
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->requestWindowFeature(I)Z
 
-    .line 654
     return-object v0
 .end method
 
@@ -116,7 +107,6 @@
     .param p3, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 647
     const v0, 0x7f0400bf
 
     const/4 v1, 0x0
@@ -132,15 +122,12 @@
     .locals 3
 
     .prologue
-    .line 638
     invoke-super {p0}, Landroid/app/DialogFragment;->onResume()V
 
-    .line 639
     invoke-virtual {p0}, Lcom/android/settings/IccLockSettings$WarningDialogFragment;->getView()Landroid/view/View;
 
     move-result-object v1
 
-    .line 640
     .local v1, "view":Landroid/view/View;
     const v2, 0x7f0f01b0
 
@@ -148,12 +135,10 @@
 
     move-result-object v0
 
-    .line 641
     .local v0, "accept":Landroid/view/View;
     iget-object v2, p0, Lcom/android/settings/IccLockSettings$WarningDialogFragment;->mListener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 642
     return-void
 .end method

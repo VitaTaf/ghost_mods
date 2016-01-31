@@ -23,7 +23,6 @@
     .locals 3
 
     .prologue
-    .line 238
     invoke-static {}, Lcom/android/settings/wifi/WpsDialog$DialogState;->values()[Lcom/android/settings/wifi/WpsDialog$DialogState;
 
     move-result-object v0

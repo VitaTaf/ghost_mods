@@ -31,13 +31,10 @@
     .param p4, "dayFirst"    # Z
 
     .prologue
-    .line 336
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 337
     iput p2, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$DateLabel;->x:I
 
-    .line 338
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v2
@@ -51,7 +48,6 @@
 
     move-result-object v0
 
-    .line 340
     .local v0, "bestFormat":Ljava/lang/String;
     invoke-static {v0, p3}, Landroid/text/format/DateFormat;->format(Ljava/lang/CharSequence;Ljava/util/Calendar;)Ljava/lang/CharSequence;
 
@@ -63,7 +59,6 @@
 
     iput-object v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$DateLabel;->label:Ljava/lang/String;
 
-    .line 341
     iget-object v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$DateLabel;->label:Ljava/lang/String;
 
     invoke-virtual {p1, v1}, Landroid/text/TextPaint;->measureText(Ljava/lang/String;)F
@@ -74,10 +69,8 @@
 
     iput v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$DateLabel;->width:I
 
-    .line 342
     return-void
 
-    .line 338
     .end local v0    # "bestFormat":Ljava/lang/String;
     :cond_0
     const-string v1, "Md"

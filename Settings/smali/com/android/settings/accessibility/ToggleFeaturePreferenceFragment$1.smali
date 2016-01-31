@@ -24,7 +24,6 @@
     .param p2, "x0"    # Landroid/content/Context;
 
     .prologue
-    .line 57
     iput-object p1, p0, Lcom/android/settings/accessibility/ToggleFeaturePreferenceFragment$1;->this$0:Lcom/android/settings/accessibility/ToggleFeaturePreferenceFragment;
 
     invoke-direct {p0, p2}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
@@ -37,7 +36,6 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 70
     iget-object v2, p0, Lcom/android/settings/accessibility/ToggleFeaturePreferenceFragment$1;->this$0:Lcom/android/settings/accessibility/ToggleFeaturePreferenceFragment;
 
     invoke-virtual {v2}, Lcom/android/settings/accessibility/ToggleFeaturePreferenceFragment;->getActivity()Landroid/app/Activity;
@@ -48,7 +46,6 @@
 
     move-result-object v0
 
-    .line 72
     .local v0, "accessibilityManager":Landroid/view/accessibility/AccessibilityManager;
     invoke-virtual {v0}, Landroid/view/accessibility/AccessibilityManager;->isEnabled()Z
 
@@ -56,27 +53,21 @@
 
     if-eqz v2, :cond_0
 
-    .line 73
     invoke-static {}, Landroid/view/accessibility/AccessibilityEvent;->obtain()Landroid/view/accessibility/AccessibilityEvent;
 
     move-result-object v1
 
-    .line 74
     .local v1, "event":Landroid/view/accessibility/AccessibilityEvent;
     const/16 v2, 0x8
 
     invoke-virtual {v1, v2}, Landroid/view/accessibility/AccessibilityEvent;->setEventType(I)V
 
-    .line 75
     invoke-virtual {p1, v1}, Landroid/view/View;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 76
     invoke-virtual {p1, v1}, Landroid/view/View;->dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
 
-    .line 77
     invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityManager;->sendAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 79
     .end local v1    # "event":Landroid/view/accessibility/AccessibilityEvent;
     :cond_0
     return-void
@@ -89,10 +80,8 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 60
     invoke-super {p0, p1}, Landroid/preference/Preference;->onBindView(Landroid/view/View;)V
 
-    .line 61
     const v1, 0x1020010
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -101,7 +90,6 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 62
     .local v0, "summaryView":Landroid/widget/TextView;
     invoke-virtual {p0}, Lcom/android/settings/accessibility/ToggleFeaturePreferenceFragment$1;->getSummary()Ljava/lang/CharSequence;
 
@@ -109,9 +97,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 63
     invoke-direct {p0, v0}, Lcom/android/settings/accessibility/ToggleFeaturePreferenceFragment$1;->sendAccessibilityEvent(Landroid/view/View;)V
 
-    .line 64
     return-void
 .end method

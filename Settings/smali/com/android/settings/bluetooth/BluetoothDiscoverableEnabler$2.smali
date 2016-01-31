@@ -26,12 +26,10 @@
     .locals 1
 
     .prologue
-    .line 91
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler$2;->this$0:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
 
     # invokes: Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->updateCountdownSummary()V
     invoke-static {v0}, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->access$000(Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;)V
 
-    .line 92
     return-void
 .end method

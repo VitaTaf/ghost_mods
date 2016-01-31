@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 68
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeDowntimeDaysSelection$1;->this$0:Lcom/android/settings/notification/ZenModeDowntimeDaysSelection;
 
     iput p2, p0, Lcom/android/settings/notification/ZenModeDowntimeDaysSelection$1;->val$day:I
@@ -46,7 +45,6 @@
     .param p2, "isChecked"    # Z
 
     .prologue
-    .line 71
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeDowntimeDaysSelection$1;->this$0:Lcom/android/settings/notification/ZenModeDowntimeDaysSelection;
 
     # getter for: Lcom/android/settings/notification/ZenModeDowntimeDaysSelection;->mDays:Landroid/util/SparseBooleanArray;
@@ -58,7 +56,6 @@
 
     invoke-virtual {v0, v1, p2}, Landroid/util/SparseBooleanArray;->put(IZ)V
 
-    .line 72
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeDowntimeDaysSelection$1;->this$0:Lcom/android/settings/notification/ZenModeDowntimeDaysSelection;
 
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeDowntimeDaysSelection$1;->this$0:Lcom/android/settings/notification/ZenModeDowntimeDaysSelection;
@@ -70,6 +67,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/notification/ZenModeDowntimeDaysSelection;->onChanged(Ljava/lang/String;)V
 
-    .line 73
     return-void
 .end method

@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 144
     iput-object p1, p0, Lcom/android/settings/wifi/WifiAPITest$4;->this$0:Lcom/android/settings/wifi/WifiAPITest;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,6 +41,5 @@
     .param p2, "whichButton"    # I
 
     .prologue
-    .line 147
     return-void
 .end method

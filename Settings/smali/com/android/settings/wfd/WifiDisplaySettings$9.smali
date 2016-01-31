@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 508
     iput-object p1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$9;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     iput-boolean p2, p0, Lcom/android/settings/wfd/WifiDisplaySettings$9;->val$enable:Z
@@ -45,7 +44,6 @@
     .param p1, "reason"    # I
 
     .prologue
-    .line 519
     const-string v1, "WifiDisplaySettings"
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -91,10 +89,8 @@
 
     invoke-static {v1, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 521
     return-void
 
-    .line 519
     :cond_0
     const-string v0, "exited"
 
@@ -105,6 +101,5 @@
     .locals 0
 
     .prologue
-    .line 515
     return-void
 .end method

@@ -32,18 +32,14 @@
     .param p3, "title"    # I
 
     .prologue
-    .line 437
     iput-object p1, p0, Lcom/android/settings/accounts/ManageAccountsSettings$FragmentStarter;->this$0:Lcom/android/settings/accounts/ManageAccountsSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 438
     iput-object p2, p0, Lcom/android/settings/accounts/ManageAccountsSettings$FragmentStarter;->mClass:Ljava/lang/String;
 
-    .line 439
     iput p3, p0, Lcom/android/settings/accounts/ManageAccountsSettings$FragmentStarter;->mTitleRes:I
 
-    .line 440
     return-void
 .end method
 
@@ -56,7 +52,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 444
     iget-object v0, p0, Lcom/android/settings/accounts/ManageAccountsSettings$FragmentStarter;->this$0:Lcom/android/settings/accounts/ManageAccountsSettings;
 
     invoke-virtual {v0}, Lcom/android/settings/accounts/ManageAccountsSettings;->getActivity()Landroid/app/Activity;
@@ -77,7 +72,6 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/settings/SettingsActivity;->startPreferencePanel(Ljava/lang/String;Landroid/os/Bundle;ILjava/lang/CharSequence;Landroid/app/Fragment;I)V
 
-    .line 448
     iget-object v0, p0, Lcom/android/settings/accounts/ManageAccountsSettings$FragmentStarter;->mClass:Ljava/lang/String;
 
     const-class v1, Lcom/android/settings/location/LocationSettings;
@@ -92,14 +86,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 449
     new-instance v7, Landroid/content/Intent;
 
     const-string v0, "com.android.settings.accounts.LAUNCHING_LOCATION_SETTINGS"
 
     invoke-direct {v7, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 450
     .local v7, "intent":Landroid/content/Intent;
     iget-object v0, p0, Lcom/android/settings/accounts/ManageAccountsSettings$FragmentStarter;->this$0:Lcom/android/settings/accounts/ManageAccountsSettings;
 
@@ -111,7 +103,6 @@
 
     invoke-virtual {v0, v7, v1}, Landroid/app/Activity;->sendBroadcast(Landroid/content/Intent;Ljava/lang/String;)V
 
-    .line 453
     .end local v7    # "intent":Landroid/content/Intent;
     :cond_0
     const/4 v0, 0x1

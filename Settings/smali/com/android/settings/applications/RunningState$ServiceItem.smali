@@ -30,11 +30,9 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 344
     const/4 v0, 0x0
 
     invoke-direct {p0, v0, p1}, Lcom/android/settings/applications/RunningState$BaseItem;-><init>(ZI)V
 
-    .line 345
     return-void
 .end method

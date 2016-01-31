@@ -34,7 +34,6 @@
     .locals 0
 
     .prologue
-    .line 489
     iput-object p1, p0, Lcom/android/settings/DataUsageSummary$2;->this$0:Lcom/android/settings/DataUsageSummary;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -49,7 +48,6 @@
     .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
-    .line 489
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1    # "x0":[Ljava/lang/Object;
@@ -65,13 +63,11 @@
     .param p1, "params"    # [Ljava/lang/Void;
 
     .prologue
-    .line 494
     const-wide/16 v0, 0x7d0
 
     :try_start_0
     invoke-static {v0, v1}, Ljava/lang/Thread;->sleep(J)V
 
-    .line 495
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$2;->this$0:Lcom/android/settings/DataUsageSummary;
 
     # getter for: Lcom/android/settings/DataUsageSummary;->mStatsService:Landroid/net/INetworkStatsService;
@@ -84,19 +80,16 @@
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 499
     :goto_0
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 497
     :catch_0
     move-exception v0
 
     goto :goto_0
 
-    .line 496
     :catch_1
     move-exception v0
 
@@ -108,7 +101,6 @@
     .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
-    .line 489
     check-cast p1, Ljava/lang/Void;
 
     .end local p1    # "x0":Ljava/lang/Object;
@@ -122,7 +114,6 @@
     .param p1, "result"    # Ljava/lang/Void;
 
     .prologue
-    .line 504
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$2;->this$0:Lcom/android/settings/DataUsageSummary;
 
     invoke-virtual {v0}, Lcom/android/settings/DataUsageSummary;->isAdded()Z
@@ -131,13 +122,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 505
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$2;->this$0:Lcom/android/settings/DataUsageSummary;
 
     # invokes: Lcom/android/settings/DataUsageSummary;->updateBody()V
     invoke-static {v0}, Lcom/android/settings/DataUsageSummary;->access$100(Lcom/android/settings/DataUsageSummary;)V
 
-    .line 507
     :cond_0
     return-void
 .end method

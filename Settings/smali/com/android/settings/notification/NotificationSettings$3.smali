@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 408
     iput-object p1, p0, Lcom/android/settings/notification/NotificationSettings$3;->this$0:Lcom/android/settings/notification/NotificationSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .param p2, "newValue"    # Ljava/lang/Object;
 
     .prologue
-    .line 411
     check-cast p2, Ljava/lang/Boolean;
 
     .end local p2    # "newValue":Ljava/lang/Object;
@@ -50,7 +48,6 @@
 
     move-result v0
 
-    .line 412
     .local v0, "val":Z
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSettings$3;->this$0:Lcom/android/settings/notification/NotificationSettings;
 

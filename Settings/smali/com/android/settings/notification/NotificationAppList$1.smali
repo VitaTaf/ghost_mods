@@ -36,10 +36,8 @@
     .locals 1
 
     .prologue
-    .line 367
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 368
     invoke-static {}, Ljava/text/Collator;->getInstance()Ljava/text/Collator;
 
     move-result-object v0
@@ -57,7 +55,6 @@
     .param p2, "rhs"    # Lcom/android/settings/notification/NotificationAppList$AppRow;
 
     .prologue
-    .line 371
     iget-object v0, p0, Lcom/android/settings/notification/NotificationAppList$1;->sCollator:Ljava/text/Collator;
 
     iget-object v1, p1, Lcom/android/settings/notification/NotificationAppList$AppRow;->label:Ljava/lang/CharSequence;
@@ -77,7 +74,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 367
     check-cast p1, Lcom/android/settings/notification/NotificationAppList$AppRow;
 
     .end local p1    # "x0":Ljava/lang/Object;

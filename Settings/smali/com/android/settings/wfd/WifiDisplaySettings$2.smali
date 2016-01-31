@@ -24,7 +24,6 @@
     .param p2, "x0"    # Landroid/content/Context;
 
     .prologue
-    .line 363
     iput-object p1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$2;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     invoke-direct {p0, p2}, Landroid/preference/SwitchPreference;-><init>(Landroid/content/Context;)V
@@ -38,7 +37,6 @@
     .locals 2
 
     .prologue
-    .line 366
     iget-object v1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$2;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$2;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
@@ -56,7 +54,6 @@
     # setter for: Lcom/android/settings/wfd/WifiDisplaySettings;->mListen:Z
     invoke-static {v1, v0}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$102(Lcom/android/settings/wfd/WifiDisplaySettings;Z)Z
 
-    .line 367
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$2;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     iget-object v1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$2;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
@@ -69,7 +66,6 @@
     # invokes: Lcom/android/settings/wfd/WifiDisplaySettings;->setListenMode(Z)V
     invoke-static {v0, v1}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$200(Lcom/android/settings/wfd/WifiDisplaySettings;Z)V
 
-    .line 368
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$2;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     # getter for: Lcom/android/settings/wfd/WifiDisplaySettings;->mListen:Z
@@ -79,10 +75,8 @@
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wfd/WifiDisplaySettings$2;->setChecked(Z)V
 
-    .line 369
     return-void
 
-    .line 366
     :cond_0
     const/4 v0, 0x0
 

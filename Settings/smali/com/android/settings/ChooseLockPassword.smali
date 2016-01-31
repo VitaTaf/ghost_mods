@@ -16,10 +16,8 @@
     .locals 0
 
     .prologue
-    .line 49
     invoke-direct {p0}, Lcom/android/settings/SettingsActivity;-><init>()V
 
-    .line 102
     return-void
 .end method
 
@@ -34,7 +32,6 @@
     .param p6, "confirmCredentials"    # Z
 
     .prologue
-    .line 71
     new-instance v1, Landroid/content/Intent;
 
     invoke-direct {v1}, Landroid/content/Intent;-><init>()V
@@ -45,38 +42,31 @@
 
     move-result-object v0
 
-    .line 72
     .local v0, "intent":Landroid/content/Intent;
     const-string v1, "lockscreen.password_type"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 73
     const-string v1, "lockscreen.password_min"
 
     invoke-virtual {v0, v1, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 74
     const-string v1, "lockscreen.password_max"
 
     invoke-virtual {v0, v1, p4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 75
     const-string v1, "confirm_credentials"
 
     invoke-virtual {v0, v1, p6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 76
     const-string v1, "lockscreen.biometric_weak_fallback"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 77
     const-string v1, "extra_require_password"
 
     invoke-virtual {v0, v1, p5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 78
     return-object v0
 .end method
 
@@ -95,7 +85,6 @@
     .end annotation
 
     .prologue
-    .line 88
     const-class v0, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment;
 
     return-object v0
@@ -105,7 +94,6 @@
     .locals 3
 
     .prologue
-    .line 63
     new-instance v0, Landroid/content/Intent;
 
     invoke-super {p0}, Lcom/android/settings/SettingsActivity;->getIntent()Landroid/content/Intent;
@@ -114,7 +102,6 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
-    .line 64
     .local v0, "modIntent":Landroid/content/Intent;
     const-string v1, ":settings:show_fragment"
 
@@ -128,7 +115,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 65
     return-object v0
 .end method
 
@@ -137,7 +123,6 @@
     .param p1, "fragmentName"    # Ljava/lang/String;
 
     .prologue
-    .line 83
     const-class v0, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -152,7 +137,6 @@
 
     const/4 v0, 0x1
 
-    .line 84
     :goto_0
     return v0
 
@@ -167,20 +151,16 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 97
     invoke-super {p0, p1}, Lcom/android/settings/SettingsActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 98
     const v1, 0x7f0904f0
 
     invoke-virtual {p0, v1}, Lcom/android/settings/ChooseLockPassword;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 99
     .local v0, "msg":Ljava/lang/CharSequence;
     invoke-virtual {p0, v0}, Lcom/android/settings/ChooseLockPassword;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 100
     return-void
 .end method

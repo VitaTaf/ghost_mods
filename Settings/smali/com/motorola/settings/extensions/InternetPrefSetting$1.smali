@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 78
     iput-object p1, p0, Lcom/motorola/settings/extensions/InternetPrefSetting$1;->this$0:Lcom/motorola/settings/extensions/InternetPrefSetting;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,17 +42,14 @@
     .param p3, "event"    # Landroid/view/KeyEvent;
 
     .prologue
-    .line 82
     const/4 v0, 0x4
 
     if-ne p2, v0, :cond_0
 
-    .line 83
     iget-object v0, p0, Lcom/motorola/settings/extensions/InternetPrefSetting$1;->this$0:Lcom/motorola/settings/extensions/InternetPrefSetting;
 
     invoke-virtual {v0}, Lcom/motorola/settings/extensions/InternetPrefSetting;->finish()V
 
-    .line 85
     :cond_0
     const/4 v0, 0x1
 

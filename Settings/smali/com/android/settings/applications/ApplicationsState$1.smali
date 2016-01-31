@@ -36,10 +36,8 @@
     .locals 1
 
     .prologue
-    .line 163
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 164
     invoke-static {}, Ljava/text/Collator;->getInstance()Ljava/text/Collator;
 
     move-result-object v0
@@ -63,7 +61,6 @@
 
     const/4 v2, 0x1
 
-    .line 167
     iget-object v4, p1, Lcom/android/settings/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
 
     iget-boolean v4, v4, Landroid/content/pm/ApplicationInfo;->enabled:Z
@@ -80,7 +77,6 @@
 
     move v0, v2
 
-    .line 169
     .local v0, "normal1":Z
     :goto_0
     iget-object v4, p2, Lcom/android/settings/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
@@ -99,17 +95,14 @@
 
     move v1, v2
 
-    .line 171
     .local v1, "normal2":Z
     :goto_1
     if-eq v0, v1, :cond_3
 
-    .line 172
     if-eqz v0, :cond_0
 
     const/4 v2, -0x1
 
-    .line 174
     :cond_0
     :goto_2
     return v2
@@ -119,17 +112,14 @@
     :cond_1
     move v0, v3
 
-    .line 167
     goto :goto_0
 
     .restart local v0    # "normal1":Z
     :cond_2
     move v1, v3
 
-    .line 169
     goto :goto_1
 
-    .line 174
     .restart local v1    # "normal2":Z
     :cond_3
     iget-object v2, p0, Lcom/android/settings/applications/ApplicationsState$1;->sCollator:Ljava/text/Collator;
@@ -151,7 +141,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 163
     check-cast p1, Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     .end local p1    # "x0":Ljava/lang/Object;

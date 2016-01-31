@@ -29,15 +29,12 @@
     .param p2, "userHandle"    # Landroid/os/UserHandle;
 
     .prologue
-    .line 537
     iput-object p1, p0, Lcom/android/settings/accounts/AccountSettings$MasterSyncStateClickListener;->this$0:Lcom/android/settings/accounts/AccountSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 538
     iput-object p2, p0, Lcom/android/settings/accounts/AccountSettings$MasterSyncStateClickListener;->mUserHandle:Landroid/os/UserHandle;
 
-    .line 539
     return-void
 .end method
 
@@ -50,25 +47,21 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 543
     invoke-static {}, Landroid/app/ActivityManager;->isUserAMonkey()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 544
     const-string v0, "AccountSettings"
 
     const-string v2, "ignoring monkey\'s attempt to flip sync state"
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 549
     :goto_0
     return v1
 
-    .line 546
     :cond_0
     iget-object v2, p0, Lcom/android/settings/accounts/AccountSettings$MasterSyncStateClickListener;->this$0:Lcom/android/settings/accounts/AccountSettings;
 

@@ -25,13 +25,10 @@
     .param p2, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 936
     invoke-direct {p0, p1}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 937
     iput-object p2, p0, Lcom/android/settings/widget/SettingsAppWidgetProvider$SettingsObserver;->mContext:Landroid/content/Context;
 
-    .line 938
     return-void
 .end method
 
@@ -42,12 +39,10 @@
     .param p1, "selfChange"    # Z
 
     .prologue
-    .line 955
     iget-object v0, p0, Lcom/android/settings/widget/SettingsAppWidgetProvider$SettingsObserver;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/settings/widget/SettingsAppWidgetProvider;->updateWidget(Landroid/content/Context;)V
 
-    .line 956
     return-void
 .end method
 
@@ -57,14 +52,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 941
     iget-object v1, p0, Lcom/android/settings/widget/SettingsAppWidgetProvider$SettingsObserver;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 943
     .local v0, "resolver":Landroid/content/ContentResolver;
     const-string v1, "screen_brightness"
 
@@ -74,7 +67,6 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 945
     const-string v1, "screen_brightness_mode"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -83,7 +75,6 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 947
     return-void
 .end method
 
@@ -91,7 +82,6 @@
     .locals 1
 
     .prologue
-    .line 950
     iget-object v0, p0, Lcom/android/settings/widget/SettingsAppWidgetProvider$SettingsObserver;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -100,6 +90,5 @@
 
     invoke-virtual {v0, p0}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 951
     return-void
 .end method

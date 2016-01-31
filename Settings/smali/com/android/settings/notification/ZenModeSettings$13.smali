@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 550
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeSettings$13;->this$0:Lcom/android/settings/notification/ZenModeSettings;
 
     iput p2, p0, Lcom/android/settings/notification/ZenModeSettings$13;->val$oldSettingsValue:I
@@ -45,13 +44,11 @@
     .param p1, "dialog"    # Landroid/content/DialogInterface;
 
     .prologue
-    .line 553
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeSettings$13;->this$0:Lcom/android/settings/notification/ZenModeSettings;
 
     iget v1, p0, Lcom/android/settings/notification/ZenModeSettings$13;->val$oldSettingsValue:I
 
     invoke-virtual {v0, v1}, Lcom/android/settings/notification/ZenModeSettings;->cancelDialog(I)V
 
-    .line 554
     return-void
 .end method

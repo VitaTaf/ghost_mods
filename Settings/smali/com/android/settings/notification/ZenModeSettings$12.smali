@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 530
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeSettings$12;->this$0:Lcom/android/settings/notification/ZenModeSettings;
 
     iput-object p2, p0, Lcom/android/settings/notification/ZenModeSettings$12;->val$zenModeConditionSelection:Lcom/android/settings/notification/ZenModeConditionSelection;
@@ -46,12 +45,10 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 533
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeSettings$12;->val$zenModeConditionSelection:Lcom/android/settings/notification/ZenModeConditionSelection;
 
     invoke-virtual {v0}, Lcom/android/settings/notification/ZenModeConditionSelection;->confirmCondition()V
 
-    .line 534
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeSettings$12;->this$0:Lcom/android/settings/notification/ZenModeSettings;
 
     const/4 v1, 0x0
@@ -59,6 +56,5 @@
     # setter for: Lcom/android/settings/notification/ZenModeSettings;->mDialog:Landroid/app/AlertDialog;
     invoke-static {v0, v1}, Lcom/android/settings/notification/ZenModeSettings;->access$702(Lcom/android/settings/notification/ZenModeSettings;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
 
-    .line 535
     return-void
 .end method

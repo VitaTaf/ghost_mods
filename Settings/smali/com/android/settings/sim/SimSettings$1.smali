@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 722
     invoke-direct {p0}, Lcom/android/settings/search/BaseSearchIndexProvider;-><init>()V
 
     return-void
@@ -44,12 +43,10 @@
     .end annotation
 
     .prologue
-    .line 726
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 729
     .local v0, "result":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/provider/SearchIndexableResource;>;"
     invoke-static {p1}, Lcom/android/settings/Utils;->showSimCardTile(Landroid/content/Context;)Z
 
@@ -57,21 +54,17 @@
 
     if-eqz v2, :cond_0
 
-    .line 730
     new-instance v1, Landroid/provider/SearchIndexableResource;
 
     invoke-direct {v1, p1}, Landroid/provider/SearchIndexableResource;-><init>(Landroid/content/Context;)V
 
-    .line 731
     .local v1, "sir":Landroid/provider/SearchIndexableResource;
     const v2, 0x7f06003c
 
     iput v2, v1, Landroid/provider/SearchIndexableResource;->xmlResId:I
 
-    .line 732
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 735
     .end local v1    # "sir":Landroid/provider/SearchIndexableResource;
     :cond_0
     return-object v0

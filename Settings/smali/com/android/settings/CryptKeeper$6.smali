@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 731
     iput-object p1, p0, Lcom/android/settings/CryptKeeper$6;->this$0:Lcom/android/settings/CryptKeeper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +48,6 @@
     .end annotation
 
     .prologue
-    .line 755
     .local p1, "pattern":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/widget/LockPatternView$Cell;>;"
     return-void
 .end method
@@ -58,7 +56,6 @@
     .locals 0
 
     .prologue
-    .line 740
     return-void
 .end method
 
@@ -78,7 +75,6 @@
     .local p1, "pattern":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/widget/LockPatternView$Cell;>;"
     const/4 v3, 0x0
 
-    .line 744
     iget-object v0, p0, Lcom/android/settings/CryptKeeper$6;->this$0:Lcom/android/settings/CryptKeeper;
 
     # getter for: Lcom/android/settings/CryptKeeper;->mLockPatternView:Lcom/android/internal/widget/LockPatternView;
@@ -88,7 +84,6 @@
 
     invoke-virtual {v0, v3}, Lcom/android/internal/widget/LockPatternView;->setEnabled(Z)V
 
-    .line 745
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
@@ -97,7 +92,6 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 746
     new-instance v0, Lcom/android/settings/CryptKeeper$DecryptTask;
 
     iget-object v1, p0, Lcom/android/settings/CryptKeeper$6;->this$0:Lcom/android/settings/CryptKeeper;
@@ -118,11 +112,9 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/CryptKeeper$DecryptTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 751
     :goto_0
     return-void
 
-    .line 749
     :cond_0
     iget-object v0, p0, Lcom/android/settings/CryptKeeper$6;->this$0:Lcom/android/settings/CryptKeeper;
 
@@ -143,7 +135,6 @@
     .locals 2
 
     .prologue
-    .line 735
     iget-object v0, p0, Lcom/android/settings/CryptKeeper$6;->this$0:Lcom/android/settings/CryptKeeper;
 
     # getter for: Lcom/android/settings/CryptKeeper;->mLockPatternView:Lcom/android/internal/widget/LockPatternView;
@@ -160,6 +151,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/LockPatternView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 736
     return-void
 .end method

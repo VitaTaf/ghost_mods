@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 435
     iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothSettings$2$1;->this$1:Lcom/android/settings/bluetooth/BluetoothSettings$2;
 
     iput-object p2, p0, Lcom/android/settings/bluetooth/BluetoothSettings$2$1;->val$dialogLayout:Landroid/view/View;
@@ -50,7 +49,6 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 438
     iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothSettings$2$1;->val$dialogLayout:Landroid/view/View;
 
     const v2, 0x7f0f0029
@@ -61,7 +59,6 @@
 
     check-cast v0, Landroid/widget/EditText;
 
-    .line 439
     .local v0, "deviceName":Landroid/widget/EditText;
     iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothSettings$2$1;->val$device:Lcom/android/settings/bluetooth/CachedBluetoothDevice;
 
@@ -75,6 +72,5 @@
 
     invoke-virtual {v1, v2}, Lcom/android/settings/bluetooth/CachedBluetoothDevice;->setName(Ljava/lang/String;)V
 
-    .line 440
     return-void
 .end method

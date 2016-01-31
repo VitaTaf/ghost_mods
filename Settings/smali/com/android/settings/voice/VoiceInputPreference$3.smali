@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 120
     iput-object p1, p0, Lcom/android/settings/voice/VoiceInputPreference$3;->this$0:Lcom/android/settings/voice/VoiceInputPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,14 +40,12 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 123
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.MAIN"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 124
     .local v0, "intent":Landroid/content/Intent;
     iget-object v1, p0, Lcom/android/settings/voice/VoiceInputPreference$3;->this$0:Lcom/android/settings/voice/VoiceInputPreference;
 
@@ -59,7 +56,6 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 125
     iget-object v1, p0, Lcom/android/settings/voice/VoiceInputPreference$3;->this$0:Lcom/android/settings/voice/VoiceInputPreference;
 
     invoke-virtual {v1}, Lcom/android/settings/voice/VoiceInputPreference;->getContext()Landroid/content/Context;
@@ -72,6 +68,5 @@
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 126
     return-void
 .end method

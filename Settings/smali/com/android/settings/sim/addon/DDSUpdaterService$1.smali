@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 169
     iput-object p1, p0, Lcom/android/settings/sim/addon/DDSUpdaterService$1;->this$0:Lcom/android/settings/sim/addon/DDSUpdaterService;
 
     iput-object p2, p0, Lcom/android/settings/sim/addon/DDSUpdaterService$1;->val$context:Landroid/content/Context;
@@ -48,7 +47,6 @@
     .locals 3
 
     .prologue
-    .line 172
     iget-object v0, p0, Lcom/android/settings/sim/addon/DDSUpdaterService$1;->val$context:Landroid/content/Context;
 
     iget v1, p0, Lcom/android/settings/sim/addon/DDSUpdaterService$1;->val$msgId:I
@@ -61,6 +59,5 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 173
     return-void
 .end method

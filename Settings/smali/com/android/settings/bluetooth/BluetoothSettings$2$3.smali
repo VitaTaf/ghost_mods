@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 456
     iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothSettings$2$3;->this$1:Lcom/android/settings/bluetooth/BluetoothSettings$2;
 
     iput-object p2, p0, Lcom/android/settings/bluetooth/BluetoothSettings$2$3;->val$activity:Landroid/app/Activity;
@@ -49,7 +48,6 @@
     .param p1, "dialog"    # Landroid/content/DialogInterface;
 
     .prologue
-    .line 458
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothSettings$2$3;->val$activity:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->isDestroyed()Z
@@ -58,7 +56,6 @@
 
     if-nez v0, :cond_0
 
-    .line 459
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothSettings$2$3;->val$activity:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->getFragmentManager()Landroid/app/FragmentManager;
@@ -77,7 +74,6 @@
 
     invoke-virtual {v0}, Landroid/app/FragmentTransaction;->commitAllowingStateLoss()I
 
-    .line 462
     :cond_0
     return-void
 .end method

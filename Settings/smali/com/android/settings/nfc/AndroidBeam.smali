@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 34
     invoke-direct {p0}, Landroid/app/Fragment;-><init>()V
 
     return-void
@@ -40,17 +39,14 @@
 
     const/4 v3, 0x0
 
-    .line 66
     invoke-super {p0, p1}, Landroid/app/Fragment;->onActivityCreated(Landroid/os/Bundle;)V
 
-    .line 68
     invoke-virtual {p0}, Lcom/android/settings/nfc/AndroidBeam;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/settings/SettingsActivity;
 
-    .line 70
     .local v0, "activity":Lcom/android/settings/SettingsActivity;
     invoke-virtual {v0}, Lcom/android/settings/SettingsActivity;->getSwitchBar()Lcom/android/settings/widget/SwitchBar;
 
@@ -58,7 +54,6 @@
 
     iput-object v1, p0, Lcom/android/settings/nfc/AndroidBeam;->mSwitchBar:Lcom/android/settings/widget/SwitchBar;
 
-    .line 71
     iget-object v4, p0, Lcom/android/settings/nfc/AndroidBeam;->mSwitchBar:Lcom/android/settings/widget/SwitchBar;
 
     iget-boolean v1, p0, Lcom/android/settings/nfc/AndroidBeam;->mBeamDisallowed:Z
@@ -78,12 +73,10 @@
     :goto_0
     invoke-virtual {v4, v1}, Lcom/android/settings/widget/SwitchBar;->setChecked(Z)V
 
-    .line 72
     iget-object v1, p0, Lcom/android/settings/nfc/AndroidBeam;->mSwitchBar:Lcom/android/settings/widget/SwitchBar;
 
     invoke-virtual {v1, p0}, Lcom/android/settings/widget/SwitchBar;->addOnSwitchChangeListener(Lcom/android/settings/widget/SwitchBar$OnSwitchChangeListener;)V
 
-    .line 73
     iget-object v1, p0, Lcom/android/settings/nfc/AndroidBeam;->mSwitchBar:Lcom/android/settings/widget/SwitchBar;
 
     iget-boolean v4, p0, Lcom/android/settings/nfc/AndroidBeam;->mBeamDisallowed:Z
@@ -93,24 +86,20 @@
     :goto_1
     invoke-virtual {v1, v2}, Lcom/android/settings/widget/SwitchBar;->setEnabled(Z)V
 
-    .line 74
     iget-object v1, p0, Lcom/android/settings/nfc/AndroidBeam;->mSwitchBar:Lcom/android/settings/widget/SwitchBar;
 
     invoke-virtual {v1}, Lcom/android/settings/widget/SwitchBar;->show()V
 
-    .line 75
     return-void
 
     :cond_0
     move v1, v3
 
-    .line 71
     goto :goto_0
 
     :cond_1
     move v2, v3
 
-    .line 73
     goto :goto_1
 .end method
 
@@ -119,10 +108,8 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 44
     invoke-super {p0, p1}, Landroid/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 46
     invoke-virtual {p0}, Lcom/android/settings/nfc/AndroidBeam;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -131,7 +118,6 @@
 
     move-result-object v0
 
-    .line 48
     .local v0, "actionBar":Landroid/app/ActionBar;
     invoke-virtual {v0}, Landroid/app/ActionBar;->getTitle()Ljava/lang/CharSequence;
 
@@ -139,12 +125,10 @@
 
     iput-object v1, p0, Lcom/android/settings/nfc/AndroidBeam;->mOldActivityTitle:Ljava/lang/CharSequence;
 
-    .line 49
     const v1, 0x7f09028b
 
     invoke-virtual {v0, v1}, Landroid/app/ActionBar;->setTitle(I)V
 
-    .line 51
     invoke-virtual {p0}, Lcom/android/settings/nfc/AndroidBeam;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -155,7 +139,6 @@
 
     iput-object v1, p0, Lcom/android/settings/nfc/AndroidBeam;->mNfcAdapter:Landroid/nfc/NfcAdapter;
 
-    .line 52
     invoke-virtual {p0}, Lcom/android/settings/nfc/AndroidBeam;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -176,7 +159,6 @@
 
     iput-boolean v1, p0, Lcom/android/settings/nfc/AndroidBeam;->mBeamDisallowed:Z
 
-    .line 54
     return-void
 .end method
 
@@ -187,7 +169,6 @@
     .param p3, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 59
     const v0, 0x7f040004
 
     const/4 v1, 0x0
@@ -198,7 +179,6 @@
 
     iput-object v0, p0, Lcom/android/settings/nfc/AndroidBeam;->mView:Landroid/view/View;
 
-    .line 61
     iget-object v0, p0, Lcom/android/settings/nfc/AndroidBeam;->mView:Landroid/view/View;
 
     return-object v0
@@ -208,15 +188,12 @@
     .locals 2
 
     .prologue
-    .line 79
     invoke-super {p0}, Landroid/app/Fragment;->onDestroyView()V
 
-    .line 80
     iget-object v0, p0, Lcom/android/settings/nfc/AndroidBeam;->mOldActivityTitle:Ljava/lang/CharSequence;
 
     if-eqz v0, :cond_0
 
-    .line 81
     invoke-virtual {p0}, Lcom/android/settings/nfc/AndroidBeam;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -229,18 +206,15 @@
 
     invoke-virtual {v0, v1}, Landroid/app/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 83
     :cond_0
     iget-object v0, p0, Lcom/android/settings/nfc/AndroidBeam;->mSwitchBar:Lcom/android/settings/widget/SwitchBar;
 
     invoke-virtual {v0, p0}, Lcom/android/settings/widget/SwitchBar;->removeOnSwitchChangeListener(Lcom/android/settings/widget/SwitchBar$OnSwitchChangeListener;)V
 
-    .line 84
     iget-object v0, p0, Lcom/android/settings/nfc/AndroidBeam;->mSwitchBar:Lcom/android/settings/widget/SwitchBar;
 
     invoke-virtual {v0}, Lcom/android/settings/widget/SwitchBar;->hide()V
 
-    .line 85
     return-void
 .end method
 
@@ -250,10 +224,8 @@
     .param p2, "desiredState"    # Z
 
     .prologue
-    .line 89
     const/4 v0, 0x0
 
-    .line 90
     .local v0, "success":Z
     iget-object v1, p0, Lcom/android/settings/nfc/AndroidBeam;->mSwitchBar:Lcom/android/settings/widget/SwitchBar;
 
@@ -261,26 +233,21 @@
 
     invoke-virtual {v1, v2}, Lcom/android/settings/widget/SwitchBar;->setEnabled(Z)V
 
-    .line 91
     if-eqz p2, :cond_1
 
-    .line 92
     iget-object v1, p0, Lcom/android/settings/nfc/AndroidBeam;->mNfcAdapter:Landroid/nfc/NfcAdapter;
 
     invoke-virtual {v1}, Landroid/nfc/NfcAdapter;->enableNdefPush()Z
 
     move-result v0
 
-    .line 96
     :goto_0
     if-eqz v0, :cond_0
 
-    .line 97
     iget-object v1, p0, Lcom/android/settings/nfc/AndroidBeam;->mSwitchBar:Lcom/android/settings/widget/SwitchBar;
 
     invoke-virtual {v1, p2}, Lcom/android/settings/widget/SwitchBar;->setChecked(Z)V
 
-    .line 99
     :cond_0
     iget-object v1, p0, Lcom/android/settings/nfc/AndroidBeam;->mSwitchBar:Lcom/android/settings/widget/SwitchBar;
 
@@ -288,10 +255,8 @@
 
     invoke-virtual {v1, v2}, Lcom/android/settings/widget/SwitchBar;->setEnabled(Z)V
 
-    .line 100
     return-void
 
-    .line 94
     :cond_1
     iget-object v1, p0, Lcom/android/settings/nfc/AndroidBeam;->mNfcAdapter:Landroid/nfc/NfcAdapter;
 

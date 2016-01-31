@@ -37,7 +37,6 @@
     .locals 0
 
     .prologue
-    .line 831
     iput-object p1, p0, Lcom/android/settings/users/UserSettings$13;->this$0:Lcom/android/settings/users/UserSettings;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -52,7 +51,6 @@
     .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
-    .line 831
     check-cast p1, [Ljava/util/List;
 
     .end local p1    # "x0":[Ljava/lang/Object;
@@ -80,7 +78,6 @@
     .local p1, "values":[Ljava/util/List;, "[Ljava/util/List<Ljava/lang/Integer;>;"
     const/4 v4, 0x0
 
-    .line 839
     aget-object v3, p1, v4
 
     invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -105,7 +102,6 @@
 
     move-result v2
 
-    .line 840
     .local v2, "userId":I
     iget-object v3, p0, Lcom/android/settings/users/UserSettings$13;->this$0:Lcom/android/settings/users/UserSettings;
 
@@ -118,11 +114,9 @@
 
     move-result-object v0
 
-    .line 841
     .local v0, "bitmap":Landroid/graphics/Bitmap;
     if-nez v0, :cond_0
 
-    .line 842
     invoke-static {v2, v4}, Lcom/android/internal/util/UserIcons;->getDefaultUserIcon(IZ)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
@@ -131,7 +125,6 @@
 
     move-result-object v0
 
-    .line 845
     :cond_0
     iget-object v3, p0, Lcom/android/settings/users/UserSettings$13;->this$0:Lcom/android/settings/users/UserSettings;
 
@@ -144,7 +137,6 @@
 
     goto :goto_0
 
-    .line 847
     .end local v0    # "bitmap":Landroid/graphics/Bitmap;
     .end local v2    # "userId":I
     :cond_1
@@ -158,7 +150,6 @@
     .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
-    .line 831
     check-cast p1, Ljava/lang/Void;
 
     .end local p1    # "x0":Ljava/lang/Object;
@@ -172,12 +163,10 @@
     .param p1, "result"    # Ljava/lang/Void;
 
     .prologue
-    .line 834
     iget-object v0, p0, Lcom/android/settings/users/UserSettings$13;->this$0:Lcom/android/settings/users/UserSettings;
 
     # invokes: Lcom/android/settings/users/UserSettings;->updateUserList()V
     invoke-static {v0}, Lcom/android/settings/users/UserSettings;->access$000(Lcom/android/settings/users/UserSettings;)V
 
-    .line 835
     return-void
 .end method

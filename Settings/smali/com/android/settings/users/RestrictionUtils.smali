@@ -20,7 +20,6 @@
 
     const/4 v2, 0x0
 
-    .line 33
     new-array v0, v3, [Ljava/lang/String;
 
     const-string v1, "no_share_location"
@@ -29,7 +28,6 @@
 
     sput-object v0, Lcom/android/settings/users/RestrictionUtils;->sRestrictionKeys:[Ljava/lang/String;
 
-    .line 40
     new-array v0, v3, [I
 
     const v1, 0x7f090969
@@ -38,7 +36,6 @@
 
     sput-object v0, Lcom/android/settings/users/RestrictionUtils;->sRestrictionTitles:[I
 
-    .line 47
     new-array v0, v3, [I
 
     const v1, 0x7f09096a
@@ -54,7 +51,6 @@
     .locals 0
 
     .prologue
-    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -82,30 +78,25 @@
 
     const/4 v8, 0x0
 
-    .line 60
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
-    .line 61
     .local v3, "res":Landroid/content/res/Resources;
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 62
     .local v0, "entries":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/RestrictionEntry;>;"
     invoke-static {p0}, Landroid/os/UserManager;->get(Landroid/content/Context;)Landroid/os/UserManager;
 
     move-result-object v4
 
-    .line 63
     .local v4, "um":Landroid/os/UserManager;
     invoke-virtual {v4, p1}, Landroid/os/UserManager;->getUserRestrictions(Landroid/os/UserHandle;)Landroid/os/Bundle;
 
     move-result-object v5
 
-    .line 65
     .local v5, "userRestrictions":Landroid/os/Bundle;
     const/4 v2, 0x0
 
@@ -117,7 +108,6 @@
 
     if-ge v2, v6, :cond_1
 
-    .line 66
     new-instance v1, Landroid/content/RestrictionEntry;
 
     sget-object v6, Lcom/android/settings/users/RestrictionUtils;->sRestrictionKeys:[Ljava/lang/String;
@@ -139,7 +129,6 @@
     :goto_1
     invoke-direct {v1, v9, v6}, Landroid/content/RestrictionEntry;-><init>(Ljava/lang/String;Z)V
 
-    .line 69
     .local v1, "entry":Landroid/content/RestrictionEntry;
     sget-object v6, Lcom/android/settings/users/RestrictionUtils;->sRestrictionTitles:[I
 
@@ -151,7 +140,6 @@
 
     invoke-virtual {v1, v6}, Landroid/content/RestrictionEntry;->setTitle(Ljava/lang/String;)V
 
-    .line 70
     sget-object v6, Lcom/android/settings/users/RestrictionUtils;->sRestrictionDescriptions:[I
 
     aget v6, v6, v2
@@ -162,13 +150,10 @@
 
     invoke-virtual {v1, v6}, Landroid/content/RestrictionEntry;->setDescription(Ljava/lang/String;)V
 
-    .line 71
     invoke-virtual {v1, v7}, Landroid/content/RestrictionEntry;->setType(I)V
 
-    .line 72
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 65
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
@@ -177,10 +162,8 @@
     :cond_0
     move v6, v8
 
-    .line 66
     goto :goto_1
 
-    .line 75
     :cond_1
     return-object v0
 .end method
@@ -199,13 +182,11 @@
     .end annotation
 
     .prologue
-    .line 95
     .local p0, "entries":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/RestrictionEntry;>;"
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 96
     .local v0, "bundle":Landroid/os/Bundle;
     invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -225,7 +206,6 @@
 
     check-cast v1, Landroid/content/RestrictionEntry;
 
-    .line 97
     .local v1, "entry":Landroid/content/RestrictionEntry;
     invoke-virtual {v1}, Landroid/content/RestrictionEntry;->getType()I
 
@@ -235,7 +215,6 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 98
     invoke-virtual {v1}, Landroid/content/RestrictionEntry;->getKey()Ljava/lang/String;
 
     move-result-object v3
@@ -248,7 +227,6 @@
 
     goto :goto_0
 
-    .line 99
     :cond_0
     invoke-virtual {v1}, Landroid/content/RestrictionEntry;->getType()I
 
@@ -258,7 +236,6 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 100
     invoke-virtual {v1}, Landroid/content/RestrictionEntry;->getKey()Ljava/lang/String;
 
     move-result-object v3
@@ -271,7 +248,6 @@
 
     goto :goto_0
 
-    .line 102
     :cond_1
     invoke-virtual {v1}, Landroid/content/RestrictionEntry;->getKey()Ljava/lang/String;
 
@@ -285,7 +261,6 @@
 
     goto :goto_0
 
-    .line 105
     .end local v1    # "entry":Landroid/content/RestrictionEntry;
     :cond_2
     return-object v0
@@ -312,18 +287,15 @@
     .local p1, "entries":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/RestrictionEntry;>;"
     const/4 v5, 0x0
 
-    .line 80
     invoke-static {p0}, Landroid/os/UserManager;->get(Landroid/content/Context;)Landroid/os/UserManager;
 
     move-result-object v2
 
-    .line 81
     .local v2, "um":Landroid/os/UserManager;
     invoke-virtual {v2, p2}, Landroid/os/UserManager;->getUserRestrictions(Landroid/os/UserHandle;)Landroid/os/Bundle;
 
     move-result-object v3
 
-    .line 83
     .local v3, "userRestrictions":Landroid/os/Bundle;
     invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -344,7 +316,6 @@
 
     check-cast v0, Landroid/content/RestrictionEntry;
 
-    .line 84
     .local v0, "entry":Landroid/content/RestrictionEntry;
     invoke-virtual {v0}, Landroid/content/RestrictionEntry;->getKey()Ljava/lang/String;
 
@@ -361,7 +332,6 @@
     :goto_1
     invoke-virtual {v3, v6, v4}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 85
     invoke-virtual {v0}, Landroid/content/RestrictionEntry;->getKey()Ljava/lang/String;
 
     move-result-object v4
@@ -380,7 +350,6 @@
 
     if-nez v4, :cond_0
 
-    .line 87
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v4
@@ -398,14 +367,11 @@
     :cond_1
     move v4, v5
 
-    .line 84
     goto :goto_1
 
-    .line 91
     .end local v0    # "entry":Landroid/content/RestrictionEntry;
     :cond_2
     invoke-virtual {v2, v3, p2}, Landroid/os/UserManager;->setUserRestrictions(Landroid/os/Bundle;Landroid/os/UserHandle;)V
 
-    .line 92
     return-void
 .end method

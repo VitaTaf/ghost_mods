@@ -39,7 +39,6 @@
     .locals 0
 
     .prologue
-    .line 251
     iput-object p1, p0, Lcom/android/settings/tts/TtsEngineSettingsFragment$3;->this$0:Lcom/android/settings/tts/TtsEngineSettingsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -68,7 +67,6 @@
     .end annotation
 
     .prologue
-    .line 254
     .local p1, "lhs":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/String;Ljava/util/Locale;>;"
     .local p2, "rhs":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/String;Ljava/util/Locale;>;"
     iget-object v0, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
@@ -92,7 +90,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 251
     check-cast p1, Landroid/util/Pair;
 
     .end local p1    # "x0":Ljava/lang/Object;

@@ -8,10 +8,8 @@
     .locals 0
 
     .prologue
-    .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 50
     return-void
 .end method
 
@@ -20,7 +18,6 @@
     .param p0, "x0"    # Landroid/content/Context;
 
     .prologue
-    .line 29
     invoke-static {p0}, Lcom/android/settings/bluetooth/LocalBluetoothPreferences;->getSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -33,7 +30,6 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 57
     invoke-static {p0}, Lcom/android/settings/bluetooth/LocalBluetoothPreferences;->getSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -55,7 +51,6 @@
     .param p1, "addr"    # Ljava/lang/String;
 
     .prologue
-    .line 153
     invoke-static {p0}, Lcom/android/settings/bluetooth/LocalBluetoothPreferences;->getSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -92,7 +87,6 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 53
     const-string v0, "bluetooth_settings"
 
     const/4 v1, 0x0
@@ -110,7 +104,6 @@
     .param p1, "addr"    # Ljava/lang/String;
 
     .prologue
-    .line 149
     invoke-static {p0}, Lcom/android/settings/bluetooth/LocalBluetoothPreferences;->getSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -146,7 +139,6 @@
     .param p1, "endTimestamp"    # J
 
     .prologue
-    .line 129
     invoke-static {p0}, Lcom/android/settings/bluetooth/LocalBluetoothPreferences;->getSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v1
@@ -155,16 +147,13 @@
 
     move-result-object v0
 
-    .line 130
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string v1, "discoverable_end_timestamp"
 
     invoke-interface {v0, v1, p1, p2}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
-    .line 131
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 132
     return-void
 .end method
 
@@ -173,7 +162,6 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 137
     invoke-static {}, Landroid/app/QueuedWork;->singleThreadExecutor()Ljava/util/concurrent/ExecutorService;
 
     move-result-object v0
@@ -184,7 +172,6 @@
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/ExecutorService;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
 
-    .line 146
     return-void
 .end method
 
@@ -194,7 +181,6 @@
     .param p1, "deviceAddress"    # Ljava/lang/String;
 
     .prologue
-    .line 120
     invoke-static {p0}, Lcom/android/settings/bluetooth/LocalBluetoothPreferences;->getSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v1
@@ -203,13 +189,11 @@
 
     move-result-object v0
 
-    .line 121
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string v1, "last_selected_device"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 123
     const-string v1, "last_selected_device_time"
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -218,10 +202,8 @@
 
     invoke-interface {v0, v1, v2, v3}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
-    .line 125
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 126
     return-void
 .end method
 
@@ -231,7 +213,6 @@
     .param p1, "addr"    # Ljava/lang/String;
 
     .prologue
-    .line 164
     invoke-static {p0}, Lcom/android/settings/bluetooth/LocalBluetoothPreferences;->getSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v1
@@ -240,7 +221,6 @@
 
     move-result-object v0
 
-    .line 165
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -262,10 +242,8 @@
 
     invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 166
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 167
     return-void
 .end method
 
@@ -276,7 +254,6 @@
     .param p2, "autoConnect"    # Z
 
     .prologue
-    .line 158
     invoke-static {p0}, Lcom/android/settings/bluetooth/LocalBluetoothPreferences;->getSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v1
@@ -285,7 +262,6 @@
 
     move-result-object v0
 
-    .line 159
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -307,10 +283,8 @@
 
     invoke-interface {v0, v1, p2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 160
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 161
     return-void
 .end method
 
@@ -320,30 +294,24 @@
     .param p1, "deviceAddress"    # Ljava/lang/String;
 
     .prologue
-    .line 63
     invoke-static {p0}, Lcom/android/settings/bluetooth/LocalBluetoothManager;->getInstance(Landroid/content/Context;)Lcom/android/settings/bluetooth/LocalBluetoothManager;
 
     move-result-object v8
 
-    .line 64
     .local v8, "manager":Lcom/android/settings/bluetooth/LocalBluetoothManager;
     if-nez v8, :cond_0
 
-    .line 65
     const-string v10, "LocalBluetoothPreferences"
 
     const-string v11, "manager == null - do not show dialog."
 
     invoke-static {v10, v11}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 66
     const/4 v10, 0x0
 
-    .line 116
     :goto_0
     return v10
 
-    .line 70
     :cond_0
     invoke-virtual {v8}, Lcom/android/settings/bluetooth/LocalBluetoothManager;->isForegroundActivity()Z
 
@@ -351,12 +319,10 @@
 
     if-eqz v10, :cond_1
 
-    .line 71
     const/4 v10, 0x1
 
     goto :goto_0
 
-    .line 75
     :cond_1
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -374,31 +340,26 @@
 
     if-ne v10, v11, :cond_2
 
-    .line 77
     const-string v10, "LocalBluetoothPreferences"
 
     const-string v11, "in appliance mode - do not show dialog."
 
     invoke-static {v10, v11}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 78
     const/4 v10, 0x0
 
     goto :goto_0
 
-    .line 81
     :cond_2
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
-    .line 82
     .local v2, "currentTimeMillis":J
     invoke-static {p0}, Lcom/android/settings/bluetooth/LocalBluetoothPreferences;->getSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v9
 
-    .line 85
     .local v9, "sharedPreferences":Landroid/content/SharedPreferences;
     const-string v10, "discoverable_end_timestamp"
 
@@ -408,7 +369,6 @@
 
     move-result-wide v6
 
-    .line 87
     .local v6, "lastDiscoverableEndTime":J
     const-wide/32 v10, 0xea60
 
@@ -418,18 +378,15 @@
 
     if-lez v10, :cond_3
 
-    .line 89
     const/4 v10, 0x1
 
     goto :goto_0
 
-    .line 93
     :cond_3
     invoke-virtual {v8}, Lcom/android/settings/bluetooth/LocalBluetoothManager;->getBluetoothAdapter()Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     move-result-object v0
 
-    .line 94
     .local v0, "adapter":Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
     if-eqz v0, :cond_4
 
@@ -439,12 +396,10 @@
 
     if-eqz v10, :cond_4
 
-    .line 95
     const/4 v10, 0x1
 
     goto :goto_0
 
-    .line 96
     :cond_4
     const-string v10, "last_discovering_time"
 
@@ -462,16 +417,13 @@
 
     if-lez v10, :cond_5
 
-    .line 98
     const/4 v10, 0x1
 
     goto :goto_0
 
-    .line 102
     :cond_5
     if-eqz p1, :cond_6
 
-    .line 103
     const-string v10, "last_selected_device"
 
     const/4 v11, 0x0
@@ -480,7 +432,6 @@
 
     move-result-object v1
 
-    .line 106
     .local v1, "lastSelectedDevice":Ljava/lang/String;
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -488,7 +439,6 @@
 
     if-eqz v10, :cond_6
 
-    .line 107
     const-string v10, "last_selected_device_time"
 
     const-wide/16 v12, 0x0
@@ -497,7 +447,6 @@
 
     move-result-wide v4
 
-    .line 109
     .local v4, "lastDeviceSelectedTime":J
     const-wide/32 v10, 0xea60
 
@@ -507,12 +456,10 @@
 
     if-lez v10, :cond_6
 
-    .line 111
     const/4 v10, 0x1
 
     goto :goto_0
 
-    .line 115
     .end local v1    # "lastSelectedDevice":Ljava/lang/String;
     .end local v4    # "lastDeviceSelectedTime":J
     :cond_6
@@ -522,7 +469,6 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 116
     const/4 v10, 0x0
 
     goto/16 :goto_0

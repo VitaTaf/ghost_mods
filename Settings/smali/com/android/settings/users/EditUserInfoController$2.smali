@@ -36,7 +36,6 @@
     .locals 0
 
     .prologue
-    .line 144
     iput-object p1, p0, Lcom/android/settings/users/EditUserInfoController$2;->this$0:Lcom/android/settings/users/EditUserInfoController;
 
     iput-object p2, p0, Lcom/android/settings/users/EditUserInfoController$2;->val$userNameView:Landroid/widget/EditText;
@@ -62,19 +61,16 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 147
     const/4 v3, -0x1
 
     if-ne p2, v3, :cond_5
 
-    .line 149
     iget-object v3, p0, Lcom/android/settings/users/EditUserInfoController$2;->val$userNameView:Landroid/widget/EditText;
 
     invoke-virtual {v3}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v2
 
-    .line 150
     .local v2, "userName":Ljava/lang/CharSequence;
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -82,7 +78,6 @@
 
     if-nez v3, :cond_2
 
-    .line 151
     iget-object v3, p0, Lcom/android/settings/users/EditUserInfoController$2;->val$currentUserName:Ljava/lang/CharSequence;
 
     if-eqz v3, :cond_0
@@ -103,13 +98,11 @@
 
     if-nez v3, :cond_2
 
-    .line 153
     :cond_0
     iget-object v3, p0, Lcom/android/settings/users/EditUserInfoController$2;->val$callback:Lcom/android/settings/users/EditUserInfoController$OnContentChangedCallback;
 
     if-eqz v3, :cond_1
 
-    .line 154
     iget-object v3, p0, Lcom/android/settings/users/EditUserInfoController$2;->val$callback:Lcom/android/settings/users/EditUserInfoController$OnContentChangedCallback;
 
     invoke-interface {v2}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
@@ -118,7 +111,6 @@
 
     invoke-interface {v3, v4}, Lcom/android/settings/users/EditUserInfoController$OnContentChangedCallback;->onLabelChanged(Ljava/lang/CharSequence;)V
 
-    .line 156
     :cond_1
     iget-object v3, p0, Lcom/android/settings/users/EditUserInfoController$2;->this$0:Lcom/android/settings/users/EditUserInfoController;
 
@@ -144,7 +136,6 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/os/UserManager;->setUserName(ILjava/lang/String;)V
 
-    .line 161
     :cond_2
     iget-object v3, p0, Lcom/android/settings/users/EditUserInfoController$2;->this$0:Lcom/android/settings/users/EditUserInfoController;
 
@@ -157,7 +148,6 @@
 
     move-result-object v1
 
-    .line 162
     .local v1, "drawable":Landroid/graphics/drawable/Drawable;
     iget-object v3, p0, Lcom/android/settings/users/EditUserInfoController$2;->this$0:Lcom/android/settings/users/EditUserInfoController;
 
@@ -170,7 +160,6 @@
 
     move-result-object v0
 
-    .line 163
     .local v0, "bitmap":Landroid/graphics/Bitmap;
     if-eqz v1, :cond_4
 
@@ -184,17 +173,14 @@
 
     if-nez v3, :cond_4
 
-    .line 165
     iget-object v3, p0, Lcom/android/settings/users/EditUserInfoController$2;->val$callback:Lcom/android/settings/users/EditUserInfoController$OnContentChangedCallback;
 
     if-eqz v3, :cond_3
 
-    .line 166
     iget-object v3, p0, Lcom/android/settings/users/EditUserInfoController$2;->val$callback:Lcom/android/settings/users/EditUserInfoController$OnContentChangedCallback;
 
     invoke-interface {v3, v1}, Lcom/android/settings/users/EditUserInfoController$OnContentChangedCallback;->onPhotoChanged(Landroid/graphics/drawable/Drawable;)V
 
-    .line 168
     :cond_3
     new-instance v4, Lcom/android/settings/users/EditUserInfoController$2$1;
 
@@ -208,7 +194,6 @@
 
     invoke-virtual {v4, v5, v3}, Lcom/android/settings/users/EditUserInfoController$2$1;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 177
     :cond_4
     iget-object v3, p0, Lcom/android/settings/users/EditUserInfoController$2;->val$fragment:Landroid/app/Fragment;
 
@@ -220,7 +205,6 @@
 
     invoke-virtual {v3, v4}, Landroid/app/Activity;->removeDialog(I)V
 
-    .line 180
     .end local v0    # "bitmap":Landroid/graphics/Bitmap;
     .end local v1    # "drawable":Landroid/graphics/drawable/Drawable;
     .end local v2    # "userName":Ljava/lang/CharSequence;
@@ -229,6 +213,5 @@
 
     invoke-virtual {v3}, Lcom/android/settings/users/EditUserInfoController;->clear()V
 
-    .line 181
     return-void
 .end method

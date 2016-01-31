@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 65
     iput-object p1, p0, Lcom/android/settings/notification/DropDownPreference$2;->this$0:Lcom/android/settings/notification/DropDownPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "preference"    # Landroid/preference/Preference;
 
     .prologue
-    .line 68
     iget-object v0, p0, Lcom/android/settings/notification/DropDownPreference$2;->this$0:Lcom/android/settings/notification/DropDownPreference;
 
     # getter for: Lcom/android/settings/notification/DropDownPreference;->mSpinner:Landroid/widget/Spinner;
@@ -51,7 +49,6 @@
 
     invoke-virtual {v0}, Landroid/widget/Spinner;->performClick()Z
 
-    .line 69
     const/4 v0, 0x1
 
     return v0

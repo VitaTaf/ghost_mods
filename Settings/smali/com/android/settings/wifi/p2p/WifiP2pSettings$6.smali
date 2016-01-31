@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 681
     iput-object p1, p0, Lcom/android/settings/wifi/p2p/WifiP2pSettings$6;->this$0:Lcom/android/settings/wifi/p2p/WifiP2pSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "reason"    # I
 
     .prologue
-    .line 685
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pSettings$6;->this$0:Lcom/android/settings/wifi/p2p/WifiP2pSettings;
 
     const/4 v1, 0x0
@@ -49,7 +47,6 @@
     # invokes: Lcom/android/settings/wifi/p2p/WifiP2pSettings;->updateSearchMenu(Z)V
     invoke-static {v0, v1}, Lcom/android/settings/wifi/p2p/WifiP2pSettings;->access$1100(Lcom/android/settings/wifi/p2p/WifiP2pSettings;Z)V
 
-    .line 687
     return-void
 .end method
 
@@ -57,6 +54,5 @@
     .locals 0
 
     .prologue
-    .line 683
     return-void
 .end method

@@ -23,10 +23,8 @@
     .locals 1
 
     .prologue
-    .line 336
     invoke-direct {p0}, Lcom/android/settings/search/BaseSearchIndexProvider;-><init>()V
 
-    .line 338
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -38,10 +36,8 @@
     :goto_0
     iput-boolean v0, p0, Lcom/android/settings/PrivacySettings$PrivacySearchIndexProvider;->mIsPrimary:Z
 
-    .line 339
     return-void
 
-    .line 338
     :cond_0
     const/4 v0, 0x0
 
@@ -66,7 +62,6 @@
     .end annotation
 
     .prologue
-    .line 361
     # invokes: Lcom/android/settings/PrivacySettings;->getNonVisibleKeys(Landroid/content/Context;)Ljava/util/ArrayList;
     invoke-static {p1}, Lcom/android/settings/PrivacySettings;->access$600(Landroid/content/Context;)Ljava/util/ArrayList;
 
@@ -92,34 +87,28 @@
     .end annotation
 
     .prologue
-    .line 345
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 348
     .local v0, "result":Ljava/util/List;, "Ljava/util/List<Landroid/provider/SearchIndexableResource;>;"
     iget-boolean v2, p0, Lcom/android/settings/PrivacySettings$PrivacySearchIndexProvider;->mIsPrimary:Z
 
     if-nez v2, :cond_0
 
-    .line 356
     :goto_0
     return-object v0
 
-    .line 352
     :cond_0
     new-instance v1, Landroid/provider/SearchIndexableResource;
 
     invoke-direct {v1, p1}, Landroid/provider/SearchIndexableResource;-><init>(Landroid/content/Context;)V
 
-    .line 353
     .local v1, "sir":Landroid/provider/SearchIndexableResource;
     const v2, 0x7f06002b
 
     iput v2, v1, Landroid/provider/SearchIndexableResource;->xmlResId:I
 
-    .line 354
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0

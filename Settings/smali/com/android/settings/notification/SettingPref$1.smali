@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 80
     iput-object p1, p0, Lcom/android/settings/notification/SettingPref$1;->this$0:Lcom/android/settings/notification/SettingPref;
 
     iput-object p2, p0, Lcom/android/settings/notification/SettingPref$1;->val$context:Landroid/content/Context;
@@ -48,7 +47,6 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 83
     iget-object v2, p0, Lcom/android/settings/notification/SettingPref$1;->this$0:Lcom/android/settings/notification/SettingPref;
 
     iget-object v3, p0, Lcom/android/settings/notification/SettingPref$1;->val$context:Landroid/content/Context;
@@ -67,10 +65,8 @@
     :goto_0
     invoke-virtual {v2, v3, v0}, Lcom/android/settings/notification/SettingPref;->setSetting(Landroid/content/Context;I)Z
 
-    .line 84
     return v1
 
-    .line 83
     :cond_0
     const/4 v0, 0x0
 

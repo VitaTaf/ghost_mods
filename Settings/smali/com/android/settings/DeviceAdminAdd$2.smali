@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 269
     iput-object p1, p0, Lcom/android/settings/DeviceAdminAdd$2;->this$0:Lcom/android/settings/DeviceAdminAdd;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 271
     const v0, 0x1605a
 
     iget-object v1, p0, Lcom/android/settings/DeviceAdminAdd$2;->this$0:Lcom/android/settings/DeviceAdminAdd;
@@ -58,11 +56,9 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(II)I
 
-    .line 273
     iget-object v0, p0, Lcom/android/settings/DeviceAdminAdd$2;->this$0:Lcom/android/settings/DeviceAdminAdd;
 
     invoke-virtual {v0}, Lcom/android/settings/DeviceAdminAdd;->finish()V
 
-    .line 274
     return-void
 .end method

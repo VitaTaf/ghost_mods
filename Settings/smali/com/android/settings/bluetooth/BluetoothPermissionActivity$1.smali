@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 56
     iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothPermissionActivity$1;->this$0:Lcom/android/settings/bluetooth/BluetoothPermissionActivity;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 59
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 60
     .local v0, "action":Ljava/lang/String;
     const-string v3, "android.bluetooth.device.action.CONNECTION_ACCESS_CANCEL"
 
@@ -54,7 +51,6 @@
 
     if-eqz v3, :cond_0
 
-    .line 61
     const-string v3, "android.bluetooth.device.extra.ACCESS_REQUEST_TYPE"
 
     const/4 v4, 0x2
@@ -63,7 +59,6 @@
 
     move-result v2
 
-    .line 63
     .local v2, "requestType":I
     iget-object v3, p0, Lcom/android/settings/bluetooth/BluetoothPermissionActivity$1;->this$0:Lcom/android/settings/bluetooth/BluetoothPermissionActivity;
 
@@ -74,13 +69,11 @@
 
     if-eq v2, v3, :cond_1
 
-    .line 67
     .end local v2    # "requestType":I
     :cond_0
     :goto_0
     return-void
 
-    .line 64
     .restart local v2    # "requestType":I
     :cond_1
     const-string v3, "android.bluetooth.device.extra.DEVICE"
@@ -91,7 +84,6 @@
 
     check-cast v1, Landroid/bluetooth/BluetoothDevice;
 
-    .line 65
     .local v1, "device":Landroid/bluetooth/BluetoothDevice;
     iget-object v3, p0, Lcom/android/settings/bluetooth/BluetoothPermissionActivity$1;->this$0:Lcom/android/settings/bluetooth/BluetoothPermissionActivity;
 

@@ -19,10 +19,8 @@
     .locals 0
 
     .prologue
-    .line 259
     invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
 
-    .line 261
     return-void
 .end method
 
@@ -31,27 +29,22 @@
     .param p0, "messageRes"    # I
 
     .prologue
-    .line 252
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 253
     .local v0, "args":Landroid/os/Bundle;
     const-string v2, "messageRes"
 
     invoke-virtual {v0, v2, p0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 254
     new-instance v1, Lcom/android/settings/wifi/WifiSetupActivity$WifiSkipDialog;
 
     invoke-direct {v1}, Lcom/android/settings/wifi/WifiSetupActivity$WifiSkipDialog;-><init>()V
 
-    .line 255
     .local v1, "dialog":Lcom/android/settings/wifi/WifiSetupActivity$WifiSkipDialog;
     invoke-virtual {v1, v0}, Lcom/android/settings/wifi/WifiSetupActivity$WifiSkipDialog;->setArguments(Landroid/os/Bundle;)V
 
-    .line 256
     return-object v1
 .end method
 
@@ -62,7 +55,6 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 265
     invoke-virtual {p0}, Lcom/android/settings/wifi/WifiSetupActivity$WifiSkipDialog;->getArguments()Landroid/os/Bundle;
 
     move-result-object v1
@@ -73,7 +65,6 @@
 
     move-result v0
 
-    .line 266
     .local v0, "messageRes":I
     new-instance v1, Landroid/app/AlertDialog$Builder;
 

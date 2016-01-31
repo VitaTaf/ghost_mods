@@ -15,10 +15,8 @@
     .locals 1
 
     .prologue
-    .line 49
     invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
 
-    .line 50
     invoke-virtual {p0}, Lcom/android/settings/bluetooth/BluetoothVisibilityTimeoutFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -33,7 +31,6 @@
 
     iput-object v0, p0, Lcom/android/settings/bluetooth/BluetoothVisibilityTimeoutFragment;->mDiscoverableEnabler:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
 
-    .line 52
     return-void
 .end method
 
@@ -45,15 +42,12 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 65
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothVisibilityTimeoutFragment;->mDiscoverableEnabler:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
 
     invoke-virtual {v0, p2}, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->setDiscoverableTimeout(I)V
 
-    .line 66
     invoke-virtual {p0}, Lcom/android/settings/bluetooth/BluetoothVisibilityTimeoutFragment;->dismiss()V
 
-    .line 67
     return-void
 .end method
 
@@ -62,7 +56,6 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 56
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lcom/android/settings/bluetooth/BluetoothVisibilityTimeoutFragment;->getActivity()Landroid/app/Activity;

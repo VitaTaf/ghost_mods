@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 278
     iput-object p1, p0, Lcom/android/settings/applications/ProcessStatsDetail$3;->this$0:Lcom/android/settings/applications/ProcessStatsDetail;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,7 +38,6 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 281
     iget-object v0, p0, Lcom/android/settings/applications/ProcessStatsDetail$3;->this$0:Lcom/android/settings/applications/ProcessStatsDetail;
 
     # getter for: Lcom/android/settings/applications/ProcessStatsDetail;->mForceStopButton:Landroid/widget/Button;
@@ -58,10 +56,8 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 282
     return-void
 
-    .line 281
     :cond_0
     const/4 v0, 0x0
 

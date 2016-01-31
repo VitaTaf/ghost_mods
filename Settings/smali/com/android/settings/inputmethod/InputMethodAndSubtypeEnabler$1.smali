@@ -36,7 +36,6 @@
     .locals 0
 
     .prologue
-    .line 194
     iput-object p1, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$1;->this$0:Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,12 +51,10 @@
     .param p2, "rhs"    # Landroid/preference/Preference;
 
     .prologue
-    .line 197
     instance-of v0, p1, Lcom/android/settings/inputmethod/InputMethodSubtypePreference;
 
     if-eqz v0, :cond_0
 
-    .line 198
     check-cast p1, Lcom/android/settings/inputmethod/InputMethodSubtypePreference;
 
     .end local p1    # "lhs":Landroid/preference/Preference;
@@ -72,7 +69,6 @@
 
     move-result v0
 
-    .line 200
     :goto_0
     return v0
 
@@ -91,7 +87,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 194
     check-cast p1, Landroid/preference/Preference;
 
     .end local p1    # "x0":Ljava/lang/Object;

@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 589
     iput-object p1, p0, Lcom/android/settings/accounts/AccountSettings$ConfirmAutoSyncChangeFragment$1;->this$0:Lcom/android/settings/accounts/AccountSettings$ConfirmAutoSyncChangeFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 592
     iget-object v0, p0, Lcom/android/settings/accounts/AccountSettings$ConfirmAutoSyncChangeFragment$1;->this$0:Lcom/android/settings/accounts/AccountSettings$ConfirmAutoSyncChangeFragment;
 
     # getter for: Lcom/android/settings/accounts/AccountSettings$ConfirmAutoSyncChangeFragment;->mEnabling:Z
@@ -63,6 +61,5 @@
 
     invoke-static {v0, v1}, Landroid/content/ContentResolver;->setMasterSyncAutomaticallyAsUser(ZI)V
 
-    .line 594
     return-void
 .end method

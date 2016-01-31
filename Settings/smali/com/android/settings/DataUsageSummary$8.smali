@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 1305
     iput-object p1, p0, Lcom/android/settings/DataUsageSummary$8;->this$0:Lcom/android/settings/DataUsageSummary;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 1308
     iget-object v1, p0, Lcom/android/settings/DataUsageSummary$8;->this$0:Lcom/android/settings/DataUsageSummary;
 
     # getter for: Lcom/android/settings/DataUsageSummary;->mDisableAtLimit:Landroid/widget/Switch;
@@ -57,28 +55,23 @@
 
     const/4 v0, 0x1
 
-    .line 1309
     .local v0, "disableAtLimit":Z
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 1312
     iget-object v1, p0, Lcom/android/settings/DataUsageSummary$8;->this$0:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v1}, Lcom/android/settings/DataUsageSummary$ConfirmLimitFragment;->show(Lcom/android/settings/DataUsageSummary;)V
 
-    .line 1316
     :goto_1
     return-void
 
-    .line 1308
     .end local v0    # "disableAtLimit":Z
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 1314
     .restart local v0    # "disableAtLimit":Z
     :cond_1
     iget-object v1, p0, Lcom/android/settings/DataUsageSummary$8;->this$0:Lcom/android/settings/DataUsageSummary;

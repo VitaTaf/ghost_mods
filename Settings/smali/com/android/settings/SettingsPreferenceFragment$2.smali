@@ -32,7 +32,6 @@
     .locals 0
 
     .prologue
-    .line 226
     iput-object p1, p0, Lcom/android/settings/SettingsPreferenceFragment$2;->this$0:Lcom/android/settings/SettingsPreferenceFragment;
 
     iput-object p2, p0, Lcom/android/settings/SettingsPreferenceFragment$2;->val$listView:Landroid/widget/ListView;
@@ -52,14 +51,12 @@
     .locals 4
 
     .prologue
-    .line 229
     iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment$2;->val$listView:Landroid/widget/ListView;
 
     iget v1, p0, Lcom/android/settings/SettingsPreferenceFragment$2;->val$position:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setSelection(I)V
 
-    .line 230
     iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment$2;->val$listView:Landroid/widget/ListView;
 
     new-instance v1, Lcom/android/settings/SettingsPreferenceFragment$2$1;
@@ -70,6 +67,5 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/widget/ListView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 244
     return-void
 .end method

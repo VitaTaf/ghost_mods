@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 1155
     iput-object p1, p0, Lcom/android/settings/RadioInfo$19;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,14 +40,12 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 1157
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "com.android.settings.OEM_RADIO_INFO"
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1159
     .local v1, "intent":Landroid/content/Intent;
     :try_start_0
     iget-object v2, p0, Lcom/android/settings/RadioInfo$19;->this$0:Lcom/android/settings/RadioInfo;
@@ -57,15 +54,12 @@
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1165
     :goto_0
     return-void
 
-    .line 1160
     :catch_0
     move-exception v0
 
-    .line 1161
     .local v0, "ex":Landroid/content/ActivityNotFoundException;
     iget-object v2, p0, Lcom/android/settings/RadioInfo$19;->this$0:Lcom/android/settings/RadioInfo;
 

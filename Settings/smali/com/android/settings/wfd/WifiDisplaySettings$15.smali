@@ -24,7 +24,6 @@
     .param p2, "x0"    # Landroid/os/Handler;
 
     .prologue
-    .line 611
     iput-object p1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$15;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -40,7 +39,6 @@
     .param p2, "uri"    # Landroid/net/Uri;
 
     .prologue
-    .line 614
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$15;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     const/4 v1, 0x1
@@ -48,6 +46,5 @@
     # invokes: Lcom/android/settings/wfd/WifiDisplaySettings;->scheduleUpdate(I)V
     invoke-static {v0, v1}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$1200(Lcom/android/settings/wfd/WifiDisplaySettings;I)V
 
-    .line 615
     return-void
 .end method

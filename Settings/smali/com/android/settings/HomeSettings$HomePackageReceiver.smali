@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 73
     iput-object p1, p0, Lcom/android/settings/HomeSettings$HomePackageReceiver;->this$0:Lcom/android/settings/HomeSettings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -37,7 +36,6 @@
     .param p2, "x1"    # Lcom/android/settings/HomeSettings$1;
 
     .prologue
-    .line 73
     invoke-direct {p0, p1}, Lcom/android/settings/HomeSettings$HomePackageReceiver;-><init>(Lcom/android/settings/HomeSettings;)V
 
     return-void
@@ -53,13 +51,11 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 76
     iget-object v0, p0, Lcom/android/settings/HomeSettings$HomePackageReceiver;->this$0:Lcom/android/settings/HomeSettings;
 
     # invokes: Lcom/android/settings/HomeSettings;->buildHomeActivitiesList()V
     invoke-static {v0}, Lcom/android/settings/HomeSettings;->access$000(Lcom/android/settings/HomeSettings;)V
 
-    .line 77
     invoke-static {p1}, Lcom/android/settings/search/Index;->getInstance(Landroid/content/Context;)Lcom/android/settings/search/Index;
 
     move-result-object v0
@@ -72,6 +68,5 @@
 
     invoke-virtual {v0, v1, v2, v2}, Lcom/android/settings/search/Index;->updateFromClassNameResource(Ljava/lang/String;ZZ)V
 
-    .line 79
     return-void
 .end method

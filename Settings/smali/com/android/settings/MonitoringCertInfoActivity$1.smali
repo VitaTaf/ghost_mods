@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 73
     iput-object p1, p0, Lcom/android/settings/MonitoringCertInfoActivity$1;->this$0:Lcom/android/settings/MonitoringCertInfoActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +40,9 @@
     .param p1, "dialog"    # Landroid/content/DialogInterface;
 
     .prologue
-    .line 75
     iget-object v0, p0, Lcom/android/settings/MonitoringCertInfoActivity$1;->this$0:Lcom/android/settings/MonitoringCertInfoActivity;
 
     invoke-virtual {v0}, Lcom/android/settings/MonitoringCertInfoActivity;->finish()V
 
-    .line 76
     return-void
 .end method

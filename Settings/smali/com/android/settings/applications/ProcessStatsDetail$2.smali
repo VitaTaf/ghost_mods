@@ -34,7 +34,6 @@
     .locals 0
 
     .prologue
-    .line 219
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -48,7 +47,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 219
     check-cast p1, Ljava/util/ArrayList;
 
     .end local p1    # "x0":Ljava/lang/Object;
@@ -85,7 +83,6 @@
 
     const/4 v5, 0x0
 
-    .line 223
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v4
@@ -100,7 +97,6 @@
 
     iget-wide v0, v4, Lcom/android/settings/applications/ProcStatsEntry$Service;->mDuration:J
 
-    .line 224
     .local v0, "topLhs":J
     :goto_0
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
@@ -117,17 +113,14 @@
 
     iget-wide v2, v4, Lcom/android/settings/applications/ProcStatsEntry$Service;->mDuration:J
 
-    .line 225
     .local v2, "topRhs":J
     :goto_1
     cmp-long v4, v0, v2
 
     if-gez v4, :cond_2
 
-    .line 226
     const/4 v4, 0x1
 
-    .line 230
     :goto_2
     return v4
 
@@ -136,24 +129,20 @@
     :cond_0
     move-wide v0, v6
 
-    .line 223
     goto :goto_0
 
     .restart local v0    # "topLhs":J
     :cond_1
     move-wide v2, v6
 
-    .line 224
     goto :goto_1
 
-    .line 227
     .restart local v2    # "topRhs":J
     :cond_2
     cmp-long v4, v0, v2
 
     if-lez v4, :cond_3
 
-    .line 228
     const/4 v4, -0x1
 
     goto :goto_2
@@ -161,6 +150,5 @@
     :cond_3
     move v4, v5
 
-    .line 230
     goto :goto_2
 .end method

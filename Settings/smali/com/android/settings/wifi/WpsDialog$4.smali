@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 235
     iput-object p1, p0, Lcom/android/settings/wifi/WpsDialog$4;->this$0:Lcom/android/settings/wifi/WpsDialog;
 
     iput-object p2, p0, Lcom/android/settings/wifi/WpsDialog$4;->val$state:Lcom/android/settings/wifi/WpsDialog$DialogState;
@@ -50,7 +49,6 @@
     .prologue
     const/16 v3, 0x8
 
-    .line 238
     sget-object v0, Lcom/android/settings/wifi/WpsDialog$5;->$SwitchMap$com$android$settings$wifi$WpsDialog$DialogState:[I
 
     iget-object v1, p0, Lcom/android/settings/wifi/WpsDialog$4;->val$state:Lcom/android/settings/wifi/WpsDialog$DialogState;
@@ -63,7 +61,6 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 254
     :cond_0
     :goto_0
     iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog$4;->this$0:Lcom/android/settings/wifi/WpsDialog;
@@ -77,10 +74,8 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 255
     return-void
 
-    .line 240
     :pswitch_0
     iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog$4;->this$0:Lcom/android/settings/wifi/WpsDialog;
 
@@ -91,7 +86,6 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 241
     iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog$4;->this$0:Lcom/android/settings/wifi/WpsDialog;
 
     # getter for: Lcom/android/settings/wifi/WpsDialog;->mProgressBar:Landroid/widget/ProgressBar;
@@ -105,7 +99,6 @@
 
     goto :goto_0
 
-    .line 245
     :pswitch_1
     iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog$4;->this$0:Lcom/android/settings/wifi/WpsDialog;
 
@@ -129,7 +122,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 246
     iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog$4;->this$0:Lcom/android/settings/wifi/WpsDialog;
 
     # getter for: Lcom/android/settings/wifi/WpsDialog;->mTimeoutBar:Landroid/widget/ProgressBar;
@@ -139,7 +131,6 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 247
     iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog$4;->this$0:Lcom/android/settings/wifi/WpsDialog;
 
     # getter for: Lcom/android/settings/wifi/WpsDialog;->mProgressBar:Landroid/widget/ProgressBar;
@@ -149,7 +140,6 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 248
     iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog$4;->this$0:Lcom/android/settings/wifi/WpsDialog;
 
     # getter for: Lcom/android/settings/wifi/WpsDialog;->mReceiver:Landroid/content/BroadcastReceiver;
@@ -159,7 +149,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 249
     iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog$4;->this$0:Lcom/android/settings/wifi/WpsDialog;
 
     # getter for: Lcom/android/settings/wifi/WpsDialog;->mContext:Landroid/content/Context;
@@ -176,7 +165,6 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 250
     iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog$4;->this$0:Lcom/android/settings/wifi/WpsDialog;
 
     const/4 v1, 0x0
@@ -186,7 +174,6 @@
 
     goto :goto_0
 
-    .line 238
     nop
 
     :pswitch_data_0

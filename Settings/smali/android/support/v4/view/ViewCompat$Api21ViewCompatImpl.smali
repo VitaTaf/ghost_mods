@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 1147
     invoke-direct {p0}, Landroid/support/v4/view/ViewCompat$KitKatViewCompatImpl;-><init>()V
 
     return-void

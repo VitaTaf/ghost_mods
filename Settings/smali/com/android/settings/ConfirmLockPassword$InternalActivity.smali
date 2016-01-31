@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 51
     invoke-direct {p0}, Lcom/android/settings/ConfirmLockPassword;-><init>()V
 
     return-void

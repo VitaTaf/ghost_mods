@@ -29,15 +29,12 @@
     .param p2, "info"    # Lcom/android/settings/location/InjectedSetting;
 
     .prologue
-    .line 291
     iput-object p1, p0, Lcom/android/settings/location/SettingsInjector$ServiceSettingClickedListener;->this$0:Lcom/android/settings/location/SettingsInjector;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 292
     iput-object p2, p0, Lcom/android/settings/location/SettingsInjector$ServiceSettingClickedListener;->mInfo:Lcom/android/settings/location/InjectedSetting;
 
-    .line 293
     return-void
 .end method
 
@@ -48,12 +45,10 @@
     .param p1, "preference"    # Landroid/preference/Preference;
 
     .prologue
-    .line 300
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 301
     .local v0, "settingIntent":Landroid/content/Intent;
     iget-object v1, p0, Lcom/android/settings/location/SettingsInjector$ServiceSettingClickedListener;->mInfo:Lcom/android/settings/location/InjectedSetting;
 
@@ -65,12 +60,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 302
     const/high16 v1, 0x10000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 303
     iget-object v1, p0, Lcom/android/settings/location/SettingsInjector$ServiceSettingClickedListener;->this$0:Lcom/android/settings/location/SettingsInjector;
 
     # getter for: Lcom/android/settings/location/SettingsInjector;->mContext:Landroid/content/Context;
@@ -84,7 +77,6 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Context;->startActivityAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 304
     const/4 v1, 0x1
 
     return v1

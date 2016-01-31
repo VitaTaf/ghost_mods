@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 606
     iput-object p1, p0, Lcom/android/settings/bluetooth/DockService$5;->this$0:Lcom/android/settings/bluetooth/DockService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,12 +43,10 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 608
     const/4 v1, -0x1
 
     if-ne p2, v1, :cond_1
 
-    .line 609
     iget-object v1, p0, Lcom/android/settings/bluetooth/DockService$5;->this$0:Lcom/android/settings/bluetooth/DockService;
 
     # getter for: Lcom/android/settings/bluetooth/DockService;->mDevice:Landroid/bluetooth/BluetoothDevice;
@@ -59,7 +56,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 610
     iget-object v1, p0, Lcom/android/settings/bluetooth/DockService$5;->this$0:Lcom/android/settings/bluetooth/DockService;
 
     iget-object v2, p0, Lcom/android/settings/bluetooth/DockService$5;->this$0:Lcom/android/settings/bluetooth/DockService;
@@ -79,7 +75,6 @@
 
     if-nez v1, :cond_0
 
-    .line 614
     iget-object v1, p0, Lcom/android/settings/bluetooth/DockService$5;->this$0:Lcom/android/settings/bluetooth/DockService;
 
     iget-object v2, p0, Lcom/android/settings/bluetooth/DockService$5;->this$0:Lcom/android/settings/bluetooth/DockService;
@@ -95,7 +90,6 @@
 
     invoke-static {v1, v2, v0}, Lcom/android/settings/bluetooth/LocalBluetoothPreferences;->saveDockAutoConnectSetting(Landroid/content/Context;Ljava/lang/String;Z)V
 
-    .line 620
     :cond_0
     iget-object v0, p0, Lcom/android/settings/bluetooth/DockService$5;->this$0:Lcom/android/settings/bluetooth/DockService;
 
@@ -116,12 +110,10 @@
     # invokes: Lcom/android/settings/bluetooth/DockService;->applyBtSettings(Landroid/bluetooth/BluetoothDevice;I)V
     invoke-static {v0, v1, v2}, Lcom/android/settings/bluetooth/DockService;->access$700(Lcom/android/settings/bluetooth/DockService;Landroid/bluetooth/BluetoothDevice;I)V
 
-    .line 627
     :cond_1
     :goto_0
     return-void
 
-    .line 621
     :cond_2
     iget-object v1, p0, Lcom/android/settings/bluetooth/DockService$5;->this$0:Lcom/android/settings/bluetooth/DockService;
 
@@ -132,7 +124,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 622
     iget-object v1, p0, Lcom/android/settings/bluetooth/DockService$5;->this$0:Lcom/android/settings/bluetooth/DockService;
 
     invoke-virtual {v1}, Lcom/android/settings/bluetooth/DockService;->getContentResolver()Landroid/content/ContentResolver;

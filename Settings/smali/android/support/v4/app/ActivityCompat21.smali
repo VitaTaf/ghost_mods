@@ -9,9 +9,7 @@
     .param p0, "activity"    # Landroid/app/Activity;
 
     .prologue
-    .line 35
     invoke-virtual {p0}, Landroid/app/Activity;->finishAfterTransition()V
 
-    .line 36
     return-void
 .end method

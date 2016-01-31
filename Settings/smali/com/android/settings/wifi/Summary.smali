@@ -11,7 +11,6 @@
     .param p2, "isEphemeral"    # Z
 
     .prologue
-    .line 42
     const/4 v0, 0x0
 
     invoke-static {p0, v0, p1, p2}, Lcom/android/settings/wifi/Summary;->get(Landroid/content/Context;Ljava/lang/String;Landroid/net/NetworkInfo$DetailedState;Z)Ljava/lang/String;
@@ -29,7 +28,6 @@
     .param p3, "isEphemeral"    # Z
 
     .prologue
-    .line 26
     sget-object v2, Landroid/net/NetworkInfo$DetailedState;->CONNECTED:Landroid/net/NetworkInfo$DetailedState;
 
     if-ne p2, v2, :cond_0
@@ -38,18 +36,15 @@
 
     if-nez p1, :cond_0
 
-    .line 28
     const v2, 0x7f090271
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 38
     :goto_0
     return-object v2
 
-    .line 31
     :cond_0
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -64,13 +59,11 @@
 
     move-result-object v0
 
-    .line 33
     .local v0, "formats":[Ljava/lang/String;
     invoke-virtual {p2}, Landroid/net/NetworkInfo$DetailedState;->ordinal()I
 
     move-result v1
 
-    .line 35
     .local v1, "index":I
     array-length v2, v0
 
@@ -84,13 +77,11 @@
 
     if-nez v2, :cond_3
 
-    .line 36
     :cond_1
     const/4 v2, 0x0
 
     goto :goto_0
 
-    .line 31
     .end local v0    # "formats":[Ljava/lang/String;
     .end local v1    # "index":I
     :cond_2
@@ -98,7 +89,6 @@
 
     goto :goto_1
 
-    .line 38
     .restart local v0    # "formats":[Ljava/lang/String;
     .restart local v1    # "index":I
     :cond_3

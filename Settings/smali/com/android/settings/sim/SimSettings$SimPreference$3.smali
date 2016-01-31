@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 615
     iput-object p1, p0, Lcom/android/settings/sim/SimSettings$SimPreference$3;->this$1:Lcom/android/settings/sim/SimSettings$SimPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,9 +41,7 @@
     .param p2, "whichButton"    # I
 
     .prologue
-    .line 618
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 619
     return-void
 .end method

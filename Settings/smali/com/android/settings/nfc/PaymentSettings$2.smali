@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 178
     iput-object p1, p0, Lcom/android/settings/nfc/PaymentSettings$2;->this$0:Lcom/android/settings/nfc/PaymentSettings;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -38,11 +37,9 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 181
     iget-object v0, p0, Lcom/android/settings/nfc/PaymentSettings$2;->this$0:Lcom/android/settings/nfc/PaymentSettings;
 
     invoke-virtual {v0}, Lcom/android/settings/nfc/PaymentSettings;->refresh()V
 
-    .line 182
     return-void
 .end method

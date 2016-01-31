@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 93
     iput-object p1, p0, Lcom/android/settings/wifi/WifiStatusTest$1;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -41,7 +40,6 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 96
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
@@ -54,7 +52,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 97
     iget-object v0, p0, Lcom/android/settings/wifi/WifiStatusTest$1;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     const-string v1, "wifi_state"
@@ -68,12 +65,10 @@
     # invokes: Lcom/android/settings/wifi/WifiStatusTest;->handleWifiStateChanged(I)V
     invoke-static {v0, v1}, Lcom/android/settings/wifi/WifiStatusTest;->access$000(Lcom/android/settings/wifi/WifiStatusTest;I)V
 
-    .line 118
     :cond_0
     :goto_0
     return-void
 
-    .line 99
     :cond_1
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -87,7 +82,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 100
     iget-object v1, p0, Lcom/android/settings/wifi/WifiStatusTest$1;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     const-string v0, "networkInfo"
@@ -103,7 +97,6 @@
 
     goto :goto_0
 
-    .line 102
     :cond_2
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -117,7 +110,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 103
     iget-object v0, p0, Lcom/android/settings/wifi/WifiStatusTest$1;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     # invokes: Lcom/android/settings/wifi/WifiStatusTest;->handleScanResultsAvailable()V
@@ -125,7 +117,6 @@
 
     goto :goto_0
 
-    .line 104
     :cond_3
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -139,7 +130,6 @@
 
     if-nez v0, :cond_0
 
-    .line 106
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
@@ -152,7 +142,6 @@
 
     if-eqz v0, :cond_4
 
-    .line 107
     iget-object v1, p0, Lcom/android/settings/wifi/WifiStatusTest$1;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     const-string v0, "newState"
@@ -180,7 +169,6 @@
 
     goto :goto_0
 
-    .line 111
     :cond_4
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -194,7 +182,6 @@
 
     if-eqz v0, :cond_5
 
-    .line 112
     iget-object v0, p0, Lcom/android/settings/wifi/WifiStatusTest$1;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     const-string v1, "newRssi"
@@ -208,7 +195,6 @@
 
     goto :goto_0
 
-    .line 113
     :cond_5
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -222,7 +208,6 @@
 
     if-nez v0, :cond_0
 
-    .line 116
     const-string v0, "WifiStatusTest"
 
     const-string v1, "Received an unknown Wifi Intent"

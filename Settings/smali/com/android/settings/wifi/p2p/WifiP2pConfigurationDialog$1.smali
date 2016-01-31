@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 66
     iput-object p1, p0, Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog$1;->this$0:Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,14 +45,12 @@
     .param p6, "dend"    # I
 
     .prologue
-    .line 68
     move v0, p2
 
     .local v0, "i":I
     :goto_0
     if-ge v0, p3, :cond_2
 
-    .line 69
     invoke-interface {p1, v0}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v1
@@ -70,21 +67,17 @@
 
     if-le v1, v2, :cond_1
 
-    .line 70
     :cond_0
     const-string v1, ""
 
-    .line 73
     :goto_1
     return-object v1
 
-    .line 68
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 73
     :cond_2
     const/4 v1, 0x0
 

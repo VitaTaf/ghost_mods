@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 235
     iput-object p1, p0, Lcom/android/settings/sim/SimDialogActivity$5;->this$0:Lcom/android/settings/sim/SimDialogActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,24 +42,19 @@
     .param p3, "event"    # Landroid/view/KeyEvent;
 
     .prologue
-    .line 239
     const/4 v0, 0x4
 
     if-ne p2, v0, :cond_1
 
-    .line 241
     if-eqz p1, :cond_0
 
-    .line 242
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 245
     :cond_0
     iget-object v0, p0, Lcom/android/settings/sim/SimDialogActivity$5;->this$0:Lcom/android/settings/sim/SimDialogActivity;
 
     invoke-virtual {v0}, Lcom/android/settings/sim/SimDialogActivity;->finish()V
 
-    .line 247
     :cond_1
     const/4 v0, 0x1
 

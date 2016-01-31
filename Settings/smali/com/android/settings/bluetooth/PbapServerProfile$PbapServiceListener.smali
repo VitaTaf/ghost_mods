@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 57
     iput-object p1, p0, Lcom/android/settings/bluetooth/PbapServerProfile$PbapServiceListener;->this$0:Lcom/android/settings/bluetooth/PbapServerProfile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .param p2, "x1"    # Lcom/android/settings/bluetooth/PbapServerProfile$1;
 
     .prologue
-    .line 57
     invoke-direct {p0, p1}, Lcom/android/settings/bluetooth/PbapServerProfile$PbapServiceListener;-><init>(Lcom/android/settings/bluetooth/PbapServerProfile;)V
 
     return-void
@@ -53,7 +51,6 @@
     .param p1, "proxy"    # Landroid/bluetooth/BluetoothPbap;
 
     .prologue
-    .line 61
     # getter for: Lcom/android/settings/bluetooth/PbapServerProfile;->V:Z
     invoke-static {}, Lcom/android/settings/bluetooth/PbapServerProfile;->access$000()Z
 
@@ -67,14 +64,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 62
     :cond_0
     iget-object v0, p0, Lcom/android/settings/bluetooth/PbapServerProfile$PbapServiceListener;->this$0:Lcom/android/settings/bluetooth/PbapServerProfile;
 
     # setter for: Lcom/android/settings/bluetooth/PbapServerProfile;->mService:Landroid/bluetooth/BluetoothPbap;
     invoke-static {v0, p1}, Lcom/android/settings/bluetooth/PbapServerProfile;->access$102(Lcom/android/settings/bluetooth/PbapServerProfile;Landroid/bluetooth/BluetoothPbap;)Landroid/bluetooth/BluetoothPbap;
 
-    .line 63
     iget-object v0, p0, Lcom/android/settings/bluetooth/PbapServerProfile$PbapServiceListener;->this$0:Lcom/android/settings/bluetooth/PbapServerProfile;
 
     const/4 v1, 0x1
@@ -82,7 +77,6 @@
     # setter for: Lcom/android/settings/bluetooth/PbapServerProfile;->mIsProfileReady:Z
     invoke-static {v0, v1}, Lcom/android/settings/bluetooth/PbapServerProfile;->access$202(Lcom/android/settings/bluetooth/PbapServerProfile;Z)Z
 
-    .line 64
     return-void
 .end method
 
@@ -90,7 +84,6 @@
     .locals 2
 
     .prologue
-    .line 67
     # getter for: Lcom/android/settings/bluetooth/PbapServerProfile;->V:Z
     invoke-static {}, Lcom/android/settings/bluetooth/PbapServerProfile;->access$000()Z
 
@@ -104,7 +97,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 68
     :cond_0
     iget-object v0, p0, Lcom/android/settings/bluetooth/PbapServerProfile$PbapServiceListener;->this$0:Lcom/android/settings/bluetooth/PbapServerProfile;
 
@@ -113,6 +105,5 @@
     # setter for: Lcom/android/settings/bluetooth/PbapServerProfile;->mIsProfileReady:Z
     invoke-static {v0, v1}, Lcom/android/settings/bluetooth/PbapServerProfile;->access$202(Lcom/android/settings/bluetooth/PbapServerProfile;Z)Z
 
-    .line 69
     return-void
 .end method

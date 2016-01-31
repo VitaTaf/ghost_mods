@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 429
     iput-object p1, p0, Lcom/android/settings/print/PrintServiceSettingsFragment$5;->this$0:Lcom/android/settings/print/PrintServiceSettingsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 432
     iget-object v0, p0, Lcom/android/settings/print/PrintServiceSettingsFragment$5;->this$0:Lcom/android/settings/print/PrintServiceSettingsFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/print/PrintServiceSettingsFragment;->getActivity()Landroid/app/Activity;
@@ -58,7 +56,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 433
     iget-object v0, p0, Lcom/android/settings/print/PrintServiceSettingsFragment$5;->this$0:Lcom/android/settings/print/PrintServiceSettingsFragment;
 
     const v1, 0x7f0906b1
@@ -69,7 +66,6 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->announceForAccessibility(Ljava/lang/CharSequence;)V
 
-    .line 436
     :cond_0
     return-void
 .end method
@@ -79,14 +75,12 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 439
     iget-object v1, p0, Lcom/android/settings/print/PrintServiceSettingsFragment$5;->this$0:Lcom/android/settings/print/PrintServiceSettingsFragment;
 
     invoke-virtual {v1}, Lcom/android/settings/print/PrintServiceSettingsFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    .line 440
     .local v0, "activity":Landroid/app/Activity;
     if-eqz v0, :cond_0
 
@@ -106,7 +100,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 442
     iget-object v1, p0, Lcom/android/settings/print/PrintServiceSettingsFragment$5;->this$0:Lcom/android/settings/print/PrintServiceSettingsFragment;
 
     const v2, 0x7f0906b2
@@ -117,7 +110,6 @@
 
     invoke-virtual {p1, v1}, Landroid/view/View;->announceForAccessibility(Ljava/lang/CharSequence;)V
 
-    .line 445
     :cond_0
     return-void
 .end method

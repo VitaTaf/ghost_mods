@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 324
     iput-object p1, p0, Lcom/android/settings/wifi/WifiSettings$4;->this$0:Lcom/android/settings/wifi/WifiSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,18 +40,15 @@
     .param p1, "reason"    # I
 
     .prologue
-    .line 330
     iget-object v1, p0, Lcom/android/settings/wifi/WifiSettings$4;->this$0:Lcom/android/settings/wifi/WifiSettings;
 
     invoke-virtual {v1}, Lcom/android/settings/wifi/WifiSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    .line 331
     .local v0, "activity":Landroid/app/Activity;
     if-eqz v0, :cond_0
 
-    .line 332
     const v1, 0x7f090312
 
     const/4 v2, 0x0
@@ -63,7 +59,6 @@
 
     invoke-virtual {v1}, Landroid/widget/Toast;->show()V
 
-    .line 336
     :cond_0
     return-void
 .end method
@@ -72,6 +67,5 @@
     .locals 0
 
     .prologue
-    .line 327
     return-void
 .end method

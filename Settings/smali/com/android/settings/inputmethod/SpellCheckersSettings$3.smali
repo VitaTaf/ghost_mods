@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 220
     iput-object p1, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$3;->this$0:Lcom/android/settings/inputmethod/SpellCheckersSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,6 +41,5 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 223
     return-void
 .end method

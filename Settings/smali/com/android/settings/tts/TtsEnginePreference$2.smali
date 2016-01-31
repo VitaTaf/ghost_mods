@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 134
     iput-object p1, p0, Lcom/android/settings/tts/TtsEnginePreference$2;->this$0:Lcom/android/settings/tts/TtsEnginePreference;
 
     iput-object p2, p0, Lcom/android/settings/tts/TtsEnginePreference$2;->val$rb:Landroid/widget/RadioButton;
@@ -45,7 +44,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 137
     iget-object v1, p0, Lcom/android/settings/tts/TtsEnginePreference$2;->this$0:Lcom/android/settings/tts/TtsEnginePreference;
 
     iget-object v2, p0, Lcom/android/settings/tts/TtsEnginePreference$2;->val$rb:Landroid/widget/RadioButton;
@@ -64,10 +62,8 @@
     # invokes: Lcom/android/settings/tts/TtsEnginePreference;->onRadioButtonClicked(Landroid/widget/CompoundButton;Z)V
     invoke-static {v1, v2, v0}, Lcom/android/settings/tts/TtsEnginePreference;->access$000(Lcom/android/settings/tts/TtsEnginePreference;Landroid/widget/CompoundButton;Z)V
 
-    .line 138
     return-void
 
-    .line 137
     :cond_0
     const/4 v0, 0x0
 

@@ -12,7 +12,6 @@
     .locals 2
 
     .prologue
-    .line 35
     const-string v0, "CryptoFips"
 
     const/4 v1, 0x3
@@ -30,7 +29,6 @@
     .locals 2
 
     .prologue
-    .line 80
     const-string v0, "fips_enabled"
 
     const-string v1, "0"
@@ -47,7 +45,6 @@
     .param p0, "property"    # Ljava/lang/String;
 
     .prologue
-    .line 76
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Lcom/motorola/crypto/CryptoFips;->getProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -63,10 +60,8 @@
     .param p1, "defaultValue"    # Ljava/lang/String;
 
     .prologue
-    .line 46
     const/4 v4, 0x0
 
-    .line 47
     .local v4, "result":Ljava/lang/String;
     new-instance v3, Ljava/io/File;
 
@@ -74,7 +69,6 @@
 
     invoke-direct {v3, v5, p0}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 48
     .local v3, "propFile":Ljava/io/File;
     invoke-virtual {v3}, Ljava/io/File;->exists()Z
 
@@ -82,7 +76,6 @@
 
     if-nez v5, :cond_1
 
-    .line 49
     const-string v5, "CryptoFips"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -115,19 +108,15 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 50
     move-object v4, p1
 
-    .line 72
     :cond_0
     :goto_0
     return-object v4
 
-    .line 52
     :cond_1
     const/4 v1, 0x0
 
-    .line 54
     .local v1, "is":Ljava/io/DataInputStream;
     :try_start_0
     new-instance v2, Ljava/io/DataInputStream;
@@ -141,7 +130,6 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 55
     .end local v1    # "is":Ljava/io/DataInputStream;
     .local v2, "is":Ljava/io/DataInputStream;
     :try_start_1
@@ -149,12 +137,10 @@
 
     move-result-object v4
 
-    .line 56
     sget-boolean v5, Lcom/motorola/crypto/CryptoFips;->DEBUG:Z
 
     if-eqz v5, :cond_2
 
-    .line 57
     const-string v5, "CryptoFips"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -200,11 +186,9 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_4
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 62
     :cond_2
     if-eqz v2, :cond_0
 
-    .line 64
     :try_start_2
     invoke-virtual {v2}, Ljava/io/DataInputStream;->close()V
     :try_end_2
@@ -212,11 +196,9 @@
 
     goto :goto_0
 
-    .line 65
     :catch_0
     move-exception v0
 
-    .line 66
     .local v0, "e":Ljava/io/IOException;
     const-string v5, "CryptoFips"
 
@@ -256,14 +238,12 @@
 
     goto :goto_0
 
-    .line 59
     .end local v0    # "e":Ljava/io/IOException;
     .end local v2    # "is":Ljava/io/DataInputStream;
     .restart local v1    # "is":Ljava/io/DataInputStream;
     :catch_1
     move-exception v0
 
-    .line 60
     .restart local v0    # "e":Ljava/io/IOException;
     :goto_1
     :try_start_3
@@ -305,10 +285,8 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 62
     if-eqz v1, :cond_0
 
-    .line 64
     :try_start_4
     invoke-virtual {v1}, Ljava/io/DataInputStream;->close()V
     :try_end_4
@@ -316,11 +294,9 @@
 
     goto/16 :goto_0
 
-    .line 65
     :catch_2
     move-exception v0
 
-    .line 66
     const-string v5, "CryptoFips"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -359,7 +335,6 @@
 
     goto/16 :goto_0
 
-    .line 62
     .end local v0    # "e":Ljava/io/IOException;
     :catchall_0
     move-exception v5
@@ -367,22 +342,18 @@
     :goto_2
     if-eqz v1, :cond_3
 
-    .line 64
     :try_start_5
     invoke-virtual {v1}, Ljava/io/DataInputStream;->close()V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
 
-    .line 68
     :cond_3
     :goto_3
     throw v5
 
-    .line 65
     :catch_3
     move-exception v0
 
-    .line 66
     .restart local v0    # "e":Ljava/io/IOException;
     const-string v6, "CryptoFips"
 
@@ -422,7 +393,6 @@
 
     goto :goto_3
 
-    .line 62
     .end local v0    # "e":Ljava/io/IOException;
     .end local v1    # "is":Ljava/io/DataInputStream;
     .restart local v2    # "is":Ljava/io/DataInputStream;
@@ -435,7 +405,6 @@
     .restart local v1    # "is":Ljava/io/DataInputStream;
     goto :goto_2
 
-    .line 59
     .end local v1    # "is":Ljava/io/DataInputStream;
     .restart local v2    # "is":Ljava/io/DataInputStream;
     :catch_4
@@ -452,7 +421,6 @@
     .locals 1
 
     .prologue
-    .line 89
     const-string v0, "fips_version"
 
     invoke-static {v0}, Lcom/motorola/crypto/CryptoFips;->getProperty(Ljava/lang/String;)Ljava/lang/String;
@@ -466,10 +434,8 @@
     .locals 3
 
     .prologue
-    .line 112
     const/4 v1, 0x0
 
-    .line 113
     .local v1, "result":Ljava/lang/Boolean;
     const-string v2, "fips_post_result"
 
@@ -477,11 +443,9 @@
 
     move-result-object v0
 
-    .line 114
     .local v0, "postResult":Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 115
     const-string v2, "0"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -497,11 +461,9 @@
 
     move-result-object v1
 
-    .line 117
     :cond_0
     return-object v1
 
-    .line 115
     :cond_1
     const/4 v2, 0x0
 
@@ -512,20 +474,16 @@
     .locals 3
 
     .prologue
-    .line 98
     const/4 v1, 0x0
 
-    .line 99
     .local v1, "result":Ljava/lang/Boolean;
     invoke-static {}, Lcom/motorola/crypto/CryptoFips;->getEnabled()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 100
     .local v0, "enabled":Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 101
     const-string v2, "0"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -541,11 +499,9 @@
 
     move-result-object v1
 
-    .line 103
     :cond_0
     return-object v1
 
-    .line 101
     :cond_1
     const/4 v2, 0x0
 
@@ -556,16 +512,13 @@
     .locals 6
 
     .prologue
-    .line 126
     const/4 v2, 0x0
 
-    .line 127
     .local v2, "result":Z
     invoke-static {}, Lcom/motorola/crypto/CryptoFips;->isEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    .line 128
     .local v0, "fipsEnabled":Ljava/lang/Boolean;
     if-eqz v0, :cond_0
 
@@ -575,21 +528,17 @@
 
     if-eqz v3, :cond_0
 
-    .line 129
     invoke-static {}, Lcom/motorola/crypto/CryptoFips;->hasPostFailed()Ljava/lang/Boolean;
 
     move-result-object v1
 
-    .line 130
     .local v1, "postFailed":Ljava/lang/Boolean;
     if-eqz v1, :cond_0
 
-    .line 131
     invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v2
 
-    .line 134
     .end local v1    # "postFailed":Ljava/lang/Boolean;
     :cond_0
     sget-boolean v3, Lcom/motorola/crypto/CryptoFips;->DEBUG:Z
@@ -618,7 +567,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 135
     :cond_1
     return v2
 .end method

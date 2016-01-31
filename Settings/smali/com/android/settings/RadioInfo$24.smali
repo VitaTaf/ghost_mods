@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 1243
     iput-object p1, p0, Lcom/android/settings/RadioInfo$24;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 1245
     iget-object v0, p0, Lcom/android/settings/RadioInfo$24;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-virtual {v0}, Lcom/android/settings/RadioInfo;->getContentResolver()Landroid/content/ContentResolver;
@@ -64,16 +62,13 @@
     :goto_0
     invoke-static {v1, v2, v0}, Lcom/motorola/android/provider/MotorolaSettings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 1246
     iget-object v0, p0, Lcom/android/settings/RadioInfo$24;->this$0:Lcom/android/settings/RadioInfo;
 
     # invokes: Lcom/android/settings/RadioInfo;->refreshCFU()V
     invoke-static {v0}, Lcom/android/settings/RadioInfo;->access$4900(Lcom/android/settings/RadioInfo;)V
 
-    .line 1247
     return-void
 
-    .line 1245
     :cond_0
     const/4 v0, 0x1
 

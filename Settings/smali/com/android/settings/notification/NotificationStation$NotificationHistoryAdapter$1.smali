@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 320
     iput-object p1, p0, Lcom/android/settings/notification/NotificationStation$NotificationHistoryAdapter$1;->this$1:Lcom/android/settings/notification/NotificationStation$NotificationHistoryAdapter;
 
     iput-object p2, p0, Lcom/android/settings/notification/NotificationStation$NotificationHistoryAdapter$1;->val$info:Lcom/android/settings/notification/NotificationStation$HistoricalNotificationInfo;
@@ -45,12 +44,10 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 323
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setPressed(Z)V
 
-    .line 324
     iget-object v0, p0, Lcom/android/settings/notification/NotificationStation$NotificationHistoryAdapter$1;->this$1:Lcom/android/settings/notification/NotificationStation$NotificationHistoryAdapter;
 
     iget-object v0, v0, Lcom/android/settings/notification/NotificationStation$NotificationHistoryAdapter;->this$0:Lcom/android/settings/notification/NotificationStation;
@@ -62,6 +59,5 @@
     # invokes: Lcom/android/settings/notification/NotificationStation;->startApplicationDetailsActivity(Ljava/lang/String;)V
     invoke-static {v0, v1}, Lcom/android/settings/notification/NotificationStation;->access$400(Lcom/android/settings/notification/NotificationStation;Ljava/lang/String;)V
 
-    .line 325
     return-void
 .end method

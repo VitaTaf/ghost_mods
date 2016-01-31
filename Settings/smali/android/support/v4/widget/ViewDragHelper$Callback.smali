@@ -22,7 +22,6 @@
     .param p3, "dx"    # I
 
     .prologue
-    .line 304
     const/4 v0, 0x0
 
     return v0
@@ -35,7 +34,6 @@
     .param p3, "dy"    # I
 
     .prologue
-    .line 319
     const/4 v0, 0x0
 
     return v0
@@ -46,7 +44,6 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 249
     return p1
 .end method
 
@@ -55,7 +52,6 @@
     .param p1, "child"    # Landroid/view/View;
 
     .prologue
-    .line 260
     const/4 v0, 0x0
 
     return v0
@@ -66,7 +62,6 @@
     .param p1, "child"    # Landroid/view/View;
 
     .prologue
-    .line 271
     const/4 v0, 0x0
 
     return v0
@@ -78,7 +73,6 @@
     .param p2, "pointerId"    # I
 
     .prologue
-    .line 240
     return-void
 .end method
 
@@ -87,7 +81,6 @@
     .param p1, "edgeFlags"    # I
 
     .prologue
-    .line 226
     const/4 v0, 0x0
 
     return v0
@@ -99,7 +92,6 @@
     .param p2, "pointerId"    # I
 
     .prologue
-    .line 214
     return-void
 .end method
 
@@ -109,7 +101,6 @@
     .param p2, "activePointerId"    # I
 
     .prologue
-    .line 181
     return-void
 .end method
 
@@ -118,7 +109,6 @@
     .param p1, "state"    # I
 
     .prologue
-    .line 159
     return-void
 .end method
 
@@ -131,7 +121,6 @@
     .param p5, "dy"    # I
 
     .prologue
-    .line 170
     return-void
 .end method
 
@@ -142,7 +131,6 @@
     .param p3, "yvel"    # F
 
     .prologue
-    .line 201
     return-void
 .end method
 

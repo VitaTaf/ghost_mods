@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 93
     iput-object p1, p0, Lcom/android/settings/notification/AppNotificationSettings$1;->this$0:Lcom/android/settings/notification/AppNotificationSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 96
     iget-object v0, p0, Lcom/android/settings/notification/AppNotificationSettings$1;->this$0:Lcom/android/settings/notification/AppNotificationSettings;
 
     # getter for: Lcom/android/settings/notification/AppNotificationSettings;->mContext:Landroid/content/Context;
@@ -60,6 +58,5 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 97
     return-void
 .end method

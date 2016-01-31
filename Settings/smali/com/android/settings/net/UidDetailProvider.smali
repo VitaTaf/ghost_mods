@@ -24,24 +24,20 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 65
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/net/UidDetailProvider;->mContext:Landroid/content/Context;
 
-    .line 66
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/settings/net/UidDetailProvider;->mUidDetailCache:Landroid/util/SparseArray;
 
-    .line 67
     return-void
 .end method
 
@@ -50,7 +46,6 @@
     .param p0, "userHandle"    # I
 
     .prologue
-    .line 53
     rsub-int v0, p0, -0x7d0
 
     return v0
@@ -61,7 +56,6 @@
     .param p1, "uid"    # I
 
     .prologue
-    .line 105
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/net/UidDetailProvider;->mContext:Landroid/content/Context;
@@ -72,7 +66,6 @@
 
     move-result-object v15
 
-    .line 106
     .local v15, "res":Landroid/content/res/Resources;
     move-object/from16 v0, p0
 
@@ -84,13 +77,11 @@
 
     move-result-object v14
 
-    .line 108
     .local v14, "pm":Landroid/content/pm/PackageManager;
     new-instance v5, Lcom/android/settings/net/UidDetail;
 
     invoke-direct {v5}, Lcom/android/settings/net/UidDetail;-><init>()V
 
-    .line 109
     .local v5, "detail":Lcom/android/settings/net/UidDetail;
     move/from16 v0, p1
 
@@ -102,7 +93,6 @@
 
     iput-object v0, v5, Lcom/android/settings/net/UidDetail;->label:Ljava/lang/CharSequence;
 
-    .line 110
     invoke-virtual {v14}, Landroid/content/pm/PackageManager;->getDefaultActivityIcon()Landroid/graphics/drawable/Drawable;
 
     move-result-object v19
@@ -111,10 +101,8 @@
 
     iput-object v0, v5, Lcom/android/settings/net/UidDetail;->icon:Landroid/graphics/drawable/Drawable;
 
-    .line 113
     sparse-switch p1, :sswitch_data_0
 
-    .line 132
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/net/UidDetailProvider;->mContext:Landroid/content/Context;
@@ -129,7 +117,6 @@
 
     check-cast v16, Landroid/os/UserManager;
 
-    .line 135
     .local v16, "um":Landroid/os/UserManager;
     invoke-static/range {p1 .. p1}, Lcom/android/settings/net/UidDetailProvider;->isKeyForUser(I)Z
 
@@ -137,22 +124,18 @@
 
     if-eqz v19, :cond_2
 
-    .line 136
     invoke-static/range {p1 .. p1}, Lcom/android/settings/net/UidDetailProvider;->getUserIdForKey(I)I
 
     move-result v17
 
-    .line 137
     .local v17, "userHandle":I
     invoke-virtual/range {v16 .. v17}, Landroid/os/UserManager;->getUserInfo(I)Landroid/content/pm/UserInfo;
 
     move-result-object v8
 
-    .line 138
     .local v8, "info":Landroid/content/pm/UserInfo;
     if-eqz v8, :cond_2
 
-    .line 139
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/net/UidDetailProvider;->mContext:Landroid/content/Context;
@@ -169,7 +152,6 @@
 
     iput-object v0, v5, Lcom/android/settings/net/UidDetail;->label:Ljava/lang/CharSequence;
 
-    .line 140
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/net/UidDetailProvider;->mContext:Landroid/content/Context;
@@ -188,7 +170,6 @@
 
     iput-object v0, v5, Lcom/android/settings/net/UidDetail;->icon:Landroid/graphics/drawable/Drawable;
 
-    .line 192
     .end local v8    # "info":Landroid/content/pm/UserInfo;
     .end local v16    # "um":Landroid/os/UserManager;
     .end local v17    # "userHandle":I
@@ -196,7 +177,6 @@
     :goto_0
     return-object v5
 
-    .line 115
     :sswitch_0
     const v19, 0x7f09070d
 
@@ -210,7 +190,6 @@
 
     iput-object v0, v5, Lcom/android/settings/net/UidDetail;->label:Ljava/lang/CharSequence;
 
-    .line 116
     invoke-virtual {v14}, Landroid/content/pm/PackageManager;->getDefaultActivityIcon()Landroid/graphics/drawable/Drawable;
 
     move-result-object v19
@@ -221,7 +200,6 @@
 
     goto :goto_0
 
-    .line 119
     :sswitch_1
     invoke-static {}, Landroid/os/UserManager;->supportsMultipleUsers()Z
 
@@ -242,7 +220,6 @@
 
     iput-object v0, v5, Lcom/android/settings/net/UidDetail;->label:Ljava/lang/CharSequence;
 
-    .line 122
     invoke-virtual {v14}, Landroid/content/pm/PackageManager;->getDefaultActivityIcon()Landroid/graphics/drawable/Drawable;
 
     move-result-object v19
@@ -253,13 +230,11 @@
 
     goto :goto_0
 
-    .line 119
     :cond_1
     const v19, 0x7f0908a0
 
     goto :goto_1
 
-    .line 125
     :sswitch_2
     move-object/from16 v0, p0
 
@@ -275,7 +250,6 @@
 
     check-cast v4, Landroid/net/ConnectivityManager;
 
-    .line 127
     .local v4, "cm":Landroid/net/ConnectivityManager;
     invoke-static {v4}, Lcom/android/settings/Utils;->getTetheringLabel(Landroid/net/ConnectivityManager;)I
 
@@ -291,7 +265,6 @@
 
     iput-object v0, v5, Lcom/android/settings/net/UidDetail;->label:Ljava/lang/CharSequence;
 
-    .line 128
     invoke-virtual {v14}, Landroid/content/pm/PackageManager;->getDefaultActivityIcon()Landroid/graphics/drawable/Drawable;
 
     move-result-object v19
@@ -302,7 +275,6 @@
 
     goto :goto_0
 
-    .line 146
     .end local v4    # "cm":Landroid/net/ConnectivityManager;
     .restart local v16    # "um":Landroid/os/UserManager;
     :cond_2
@@ -312,13 +284,11 @@
 
     move-result-object v13
 
-    .line 147
     .local v13, "packageNames":[Ljava/lang/String;
     if-eqz v13, :cond_4
 
     array-length v10, v13
 
-    .line 149
     .local v10, "length":I
     :goto_2
     :try_start_0
@@ -326,19 +296,16 @@
 
     move-result v18
 
-    .line 150
     .local v18, "userId":I
     new-instance v17, Landroid/os/UserHandle;
 
     invoke-direct/range {v17 .. v18}, Landroid/os/UserHandle;-><init>(I)V
 
-    .line 151
     .local v17, "userHandle":Landroid/os/UserHandle;
     invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
 
     move-result-object v9
 
-    .line 152
     .local v9, "ipm":Landroid/content/pm/IPackageManager;
     const/16 v19, 0x1
 
@@ -346,7 +313,6 @@
 
     if-ne v10, v0, :cond_5
 
-    .line 153
     const/16 v19, 0x0
 
     aget-object v19, v13, v19
@@ -363,11 +329,9 @@
 
     move-result-object v8
 
-    .line 155
     .local v8, "info":Landroid/content/pm/ApplicationInfo;
     if-eqz v8, :cond_3
 
-    .line 156
     invoke-virtual {v8, v14}, Landroid/content/pm/ApplicationInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
     move-result-object v19
@@ -380,7 +344,6 @@
 
     iput-object v0, v5, Lcom/android/settings/net/UidDetail;->label:Ljava/lang/CharSequence;
 
-    .line 157
     invoke-virtual {v8, v14}, Landroid/content/pm/ApplicationInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v19
@@ -407,7 +370,6 @@
 
     iput-object v0, v5, Lcom/android/settings/net/UidDetail;->icon:Landroid/graphics/drawable/Drawable;
 
-    .line 181
     .end local v8    # "info":Landroid/content/pm/ApplicationInfo;
     :cond_3
     iget-object v0, v5, Lcom/android/settings/net/UidDetail;->label:Ljava/lang/CharSequence;
@@ -431,7 +393,6 @@
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 188
     .end local v9    # "ipm":Landroid/content/pm/IPackageManager;
     .end local v17    # "userHandle":Landroid/os/UserHandle;
     .end local v18    # "userId":I
@@ -446,7 +407,6 @@
 
     if-eqz v19, :cond_0
 
-    .line 189
     invoke-static/range {p1 .. p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v19
@@ -457,14 +417,12 @@
 
     goto/16 :goto_0
 
-    .line 147
     .end local v10    # "length":I
     :cond_4
     const/4 v10, 0x0
 
     goto :goto_2
 
-    .line 160
     .restart local v9    # "ipm":Landroid/content/pm/IPackageManager;
     .restart local v10    # "length":I
     .restart local v17    # "userHandle":Landroid/os/UserHandle;
@@ -476,7 +434,6 @@
 
     if-le v10, v0, :cond_3
 
-    .line 161
     :try_start_1
     new-array v0, v10, [Ljava/lang/CharSequence;
 
@@ -486,7 +443,6 @@
 
     iput-object v0, v5, Lcom/android/settings/net/UidDetail;->detailLabels:[Ljava/lang/CharSequence;
 
-    .line 162
     new-array v0, v10, [Ljava/lang/CharSequence;
 
     move-object/from16 v19, v0
@@ -495,17 +451,14 @@
 
     iput-object v0, v5, Lcom/android/settings/net/UidDetail;->detailContentDescriptions:[Ljava/lang/CharSequence;
 
-    .line 163
     const/4 v7, 0x0
 
     .local v7, "i":I
     :goto_4
     if-ge v7, v10, :cond_3
 
-    .line 164
     aget-object v12, v13, v7
 
-    .line 165
     .local v12, "packageName":Ljava/lang/String;
     const/16 v19, 0x0
 
@@ -515,7 +468,6 @@
 
     move-result-object v11
 
-    .line 166
     .local v11, "packageInfo":Landroid/content/pm/PackageInfo;
     const/16 v19, 0x0
 
@@ -527,11 +479,9 @@
 
     move-result-object v3
 
-    .line 169
     .local v3, "appInfo":Landroid/content/pm/ApplicationInfo;
     if-eqz v3, :cond_6
 
-    .line 170
     iget-object v0, v5, Lcom/android/settings/net/UidDetail;->detailLabels:[Ljava/lang/CharSequence;
 
     move-object/from16 v19, v0
@@ -546,7 +496,6 @@
 
     aput-object v20, v19, v7
 
-    .line 171
     iget-object v0, v5, Lcom/android/settings/net/UidDetail;->detailContentDescriptions:[Ljava/lang/CharSequence;
 
     move-object/from16 v19, v0
@@ -569,14 +518,12 @@
 
     aput-object v20, v19, v7
 
-    .line 173
     iget v0, v11, Landroid/content/pm/PackageInfo;->sharedUserLabel:I
 
     move/from16 v19, v0
 
     if-eqz v19, :cond_6
 
-    .line 174
     iget v0, v11, Landroid/content/pm/PackageInfo;->sharedUserLabel:I
 
     move/from16 v19, v0
@@ -601,7 +548,6 @@
 
     iput-object v0, v5, Lcom/android/settings/net/UidDetail;->label:Ljava/lang/CharSequence;
 
-    .line 176
     invoke-virtual {v3, v14}, Landroid/content/pm/ApplicationInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v19
@@ -623,13 +569,11 @@
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 163
     :cond_6
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_4
 
-    .line 182
     .end local v3    # "appInfo":Landroid/content/pm/ApplicationInfo;
     .end local v7    # "i":I
     .end local v9    # "ipm":Landroid/content/pm/IPackageManager;
@@ -640,7 +584,6 @@
     :catch_0
     move-exception v6
 
-    .line 183
     .local v6, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string v19, "DataUsage"
 
@@ -674,12 +617,10 @@
 
     goto/16 :goto_3
 
-    .line 184
     .end local v6    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :catch_1
     move-exception v6
 
-    .line 185
     .local v6, "e":Landroid/os/RemoteException;
     const-string v19, "DataUsage"
 
@@ -713,7 +654,6 @@
 
     goto/16 :goto_3
 
-    .line 113
     nop
 
     :sswitch_data_0
@@ -729,7 +669,6 @@
     .param p0, "key"    # I
 
     .prologue
-    .line 61
     rsub-int v0, p0, -0x7d0
 
     return v0
@@ -740,7 +679,6 @@
     .param p0, "key"    # I
 
     .prologue
-    .line 57
     const/16 v0, -0x7d0
 
     if-gt p0, v0, :cond_0
@@ -762,24 +700,19 @@
     .locals 2
 
     .prologue
-    .line 70
     iget-object v1, p0, Lcom/android/settings/net/UidDetailProvider;->mUidDetailCache:Landroid/util/SparseArray;
 
     monitor-enter v1
 
-    .line 71
     :try_start_0
     iget-object v0, p0, Lcom/android/settings/net/UidDetailProvider;->mUidDetailCache:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
-    .line 72
     monitor-exit v1
 
-    .line 73
     return-void
 
-    .line 72
     :catchall_0
     move-exception v0
 
@@ -796,12 +729,10 @@
     .param p2, "blocking"    # Z
 
     .prologue
-    .line 81
     iget-object v2, p0, Lcom/android/settings/net/UidDetailProvider;->mUidDetailCache:Landroid/util/SparseArray;
 
     monitor-enter v2
 
-    .line 82
     :try_start_0
     iget-object v1, p0, Lcom/android/settings/net/UidDetailProvider;->mUidDetailCache:Landroid/util/SparseArray;
 
@@ -811,20 +742,16 @@
 
     check-cast v0, Lcom/android/settings/net/UidDetail;
 
-    .line 83
     .local v0, "detail":Lcom/android/settings/net/UidDetail;
     monitor-exit v2
 
-    .line 85
     if-eqz v0, :cond_0
 
     move-object v1, v0
 
-    .line 97
     :goto_0
     return-object v1
 
-    .line 83
     .end local v0    # "detail":Lcom/android/settings/net/UidDetail;
     :catchall_0
     move-exception v1
@@ -835,42 +762,34 @@
 
     throw v1
 
-    .line 87
     .restart local v0    # "detail":Lcom/android/settings/net/UidDetail;
     :cond_0
     if-nez p2, :cond_1
 
-    .line 88
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 91
     :cond_1
     invoke-direct {p0, p1}, Lcom/android/settings/net/UidDetailProvider;->buildUidDetail(I)Lcom/android/settings/net/UidDetail;
 
     move-result-object v0
 
-    .line 93
     iget-object v2, p0, Lcom/android/settings/net/UidDetailProvider;->mUidDetailCache:Landroid/util/SparseArray;
 
     monitor-enter v2
 
-    .line 94
     :try_start_1
     iget-object v1, p0, Lcom/android/settings/net/UidDetailProvider;->mUidDetailCache:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 95
     monitor-exit v2
 
     move-object v1, v0
 
-    .line 97
     goto :goto_0
 
-    .line 95
     :catchall_1
     move-exception v1
 

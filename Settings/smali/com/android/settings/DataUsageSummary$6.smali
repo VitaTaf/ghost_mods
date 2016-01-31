@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 1220
     iput-object p1, p0, Lcom/android/settings/DataUsageSummary$6;->this$0:Lcom/android/settings/DataUsageSummary;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +44,6 @@
 
     const/4 v3, 0x0
 
-    .line 1223
     iget-object v4, p0, Lcom/android/settings/DataUsageSummary$6;->this$0:Lcom/android/settings/DataUsageSummary;
 
     # getter for: Lcom/android/settings/DataUsageSummary;->mBinding:Z
@@ -55,11 +53,9 @@
 
     if-eqz v4, :cond_0
 
-    .line 1243
     :goto_0
     return-void
 
-    .line 1225
     :cond_0
     iget-object v4, p0, Lcom/android/settings/DataUsageSummary$6;->this$0:Lcom/android/settings/DataUsageSummary;
 
@@ -76,7 +72,6 @@
 
     move v1, v2
 
-    .line 1226
     .local v1, "dataEnabled":Z
     :goto_1
     iget-object v4, p0, Lcom/android/settings/DataUsageSummary$6;->this$0:Lcom/android/settings/DataUsageSummary;
@@ -86,7 +81,6 @@
 
     move-result-object v0
 
-    .line 1227
     .local v0, "currentTab":Ljava/lang/String;
     # invokes: Lcom/android/settings/DataUsageSummary;->isMobileTab(Ljava/lang/String;)Z
     invoke-static {v0}, Lcom/android/settings/DataUsageSummary;->access$700(Ljava/lang/String;)Z
@@ -95,10 +89,8 @@
 
     if-eqz v4, :cond_1
 
-    .line 1228
     if-eqz v1, :cond_4
 
-    .line 1230
     iget-object v4, p0, Lcom/android/settings/DataUsageSummary$6;->this$0:Lcom/android/settings/DataUsageSummary;
 
     invoke-virtual {v4}, Lcom/android/settings/DataUsageSummary;->getActivity()Landroid/app/Activity;
@@ -111,13 +103,11 @@
 
     if-eqz v4, :cond_3
 
-    .line 1231
     iget-object v2, p0, Lcom/android/settings/DataUsageSummary$6;->this$0:Lcom/android/settings/DataUsageSummary;
 
     # invokes: Lcom/android/settings/DataUsageSummary;->handleMultiSimDataDialog()V
     invoke-static {v2}, Lcom/android/settings/DataUsageSummary;->access$800(Lcom/android/settings/DataUsageSummary;)V
 
-    .line 1242
     :cond_1
     :goto_2
     iget-object v2, p0, Lcom/android/settings/DataUsageSummary$6;->this$0:Lcom/android/settings/DataUsageSummary;
@@ -132,10 +122,8 @@
     :cond_2
     move v1, v3
 
-    .line 1225
     goto :goto_1
 
-    .line 1233
     .restart local v0    # "currentTab":Ljava/lang/String;
     .restart local v1    # "dataEnabled":Z
     :cond_3
@@ -153,7 +141,6 @@
 
     goto :goto_2
 
-    .line 1238
     :cond_4
     iget-object v2, p0, Lcom/android/settings/DataUsageSummary$6;->this$0:Lcom/android/settings/DataUsageSummary;
 

@@ -29,12 +29,10 @@
     .locals 2
 
     .prologue
-    .line 446
     iput-object p1, p0, Lcom/android/settings/CredentialStorage$ConfigureKeyGuardDialog;->this$0:Lcom/android/settings/CredentialStorage;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 448
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -70,7 +68,6 @@
     # setter for: Lcom/android/settings/CredentialStorage;->mConfigureKeyGuardDialog:Landroid/app/AlertDialog;
     invoke-static {p1, v0}, Lcom/android/settings/CredentialStorage;->access$702(Lcom/android/settings/CredentialStorage;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
 
-    .line 454
     # getter for: Lcom/android/settings/CredentialStorage;->mConfigureKeyGuardDialog:Landroid/app/AlertDialog;
     invoke-static {p1}, Lcom/android/settings/CredentialStorage;->access$700(Lcom/android/settings/CredentialStorage;)Landroid/app/AlertDialog;
 
@@ -78,7 +75,6 @@
 
     invoke-virtual {v0, p0}, Landroid/app/AlertDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 455
     # getter for: Lcom/android/settings/CredentialStorage;->mConfigureKeyGuardDialog:Landroid/app/AlertDialog;
     invoke-static {p1}, Lcom/android/settings/CredentialStorage;->access$700(Lcom/android/settings/CredentialStorage;)Landroid/app/AlertDialog;
 
@@ -86,7 +82,6 @@
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
-    .line 456
     return-void
 .end method
 
@@ -96,7 +91,6 @@
     .param p2, "x1"    # Lcom/android/settings/CredentialStorage$1;
 
     .prologue
-    .line 441
     invoke-direct {p0, p1}, Lcom/android/settings/CredentialStorage$ConfigureKeyGuardDialog;-><init>(Lcom/android/settings/CredentialStorage;)V
 
     return-void
@@ -110,7 +104,6 @@
     .param p2, "button"    # I
 
     .prologue
-    .line 459
     const/4 v0, -0x1
 
     if-ne p2, v0, :cond_0
@@ -120,10 +113,8 @@
     :goto_0
     iput-boolean v0, p0, Lcom/android/settings/CredentialStorage$ConfigureKeyGuardDialog;->mConfigureConfirmed:Z
 
-    .line 460
     return-void
 
-    .line 459
     :cond_0
     const/4 v0, 0x0
 
@@ -135,24 +126,20 @@
     .param p1, "dialog"    # Landroid/content/DialogInterface;
 
     .prologue
-    .line 463
     iget-boolean v1, p0, Lcom/android/settings/CredentialStorage$ConfigureKeyGuardDialog;->mConfigureConfirmed:Z
 
     if-eqz v1, :cond_0
 
-    .line 464
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/settings/CredentialStorage$ConfigureKeyGuardDialog;->mConfigureConfirmed:Z
 
-    .line 465
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.app.action.SET_NEW_PASSWORD"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 466
     .local v0, "intent":Landroid/content/Intent;
     const-string v1, "minimum_quality"
 
@@ -160,17 +147,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 468
     iget-object v1, p0, Lcom/android/settings/CredentialStorage$ConfigureKeyGuardDialog;->this$0:Lcom/android/settings/CredentialStorage;
 
     invoke-virtual {v1, v0}, Lcom/android/settings/CredentialStorage;->startActivity(Landroid/content/Intent;)V
 
-    .line 472
     .end local v0    # "intent":Landroid/content/Intent;
     :goto_0
     return-void
 
-    .line 471
     :cond_0
     iget-object v1, p0, Lcom/android/settings/CredentialStorage$ConfigureKeyGuardDialog;->this$0:Lcom/android/settings/CredentialStorage;
 

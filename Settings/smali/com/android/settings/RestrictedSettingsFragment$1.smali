@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 60
     iput-object p1, p0, Lcom/android/settings/RestrictedSettingsFragment$1;->this$0:Lcom/android/settings/RestrictedSettingsFragment;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -41,7 +40,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 63
     iget-object v0, p0, Lcom/android/settings/RestrictedSettingsFragment$1;->this$0:Lcom/android/settings/RestrictedSettingsFragment;
 
     # getter for: Lcom/android/settings/RestrictedSettingsFragment;->mChallengeRequested:Z
@@ -51,19 +49,16 @@
 
     if-nez v0, :cond_0
 
-    .line 64
     iget-object v0, p0, Lcom/android/settings/RestrictedSettingsFragment$1;->this$0:Lcom/android/settings/RestrictedSettingsFragment;
 
     # setter for: Lcom/android/settings/RestrictedSettingsFragment;->mChallengeSucceeded:Z
     invoke-static {v0, v1}, Lcom/android/settings/RestrictedSettingsFragment;->access$102(Lcom/android/settings/RestrictedSettingsFragment;Z)Z
 
-    .line 65
     iget-object v0, p0, Lcom/android/settings/RestrictedSettingsFragment$1;->this$0:Lcom/android/settings/RestrictedSettingsFragment;
 
     # setter for: Lcom/android/settings/RestrictedSettingsFragment;->mChallengeRequested:Z
     invoke-static {v0, v1}, Lcom/android/settings/RestrictedSettingsFragment;->access$002(Lcom/android/settings/RestrictedSettingsFragment;Z)Z
 
-    .line 67
     :cond_0
     return-void
 .end method

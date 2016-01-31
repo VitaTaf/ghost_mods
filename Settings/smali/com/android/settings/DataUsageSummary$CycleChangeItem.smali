@@ -20,7 +20,6 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 1629
     const v0, 0x7f090872
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -29,6 +28,5 @@
 
     invoke-direct {p0, v0}, Lcom/android/settings/DataUsageSummary$CycleItem;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 1630
     return-void
 .end method

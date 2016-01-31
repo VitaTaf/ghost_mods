@@ -35,10 +35,8 @@
     .locals 0
 
     .prologue
-    .line 265
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 266
     return-void
 .end method
 
@@ -48,7 +46,6 @@
     .locals 9
 
     .prologue
-    .line 355
     new-instance v0, Landroid/support/v4/media/MediaDescriptionCompat;
 
     iget-object v1, p0, Landroid/support/v4/media/MediaDescriptionCompat$Builder;->mMediaId:Ljava/lang/String;
@@ -77,10 +74,8 @@
     .param p1, "description"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 309
     iput-object p1, p0, Landroid/support/v4/media/MediaDescriptionCompat$Builder;->mDescription:Ljava/lang/CharSequence;
 
-    .line 310
     return-object p0
 .end method
 
@@ -89,10 +84,8 @@
     .param p1, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 344
     iput-object p1, p0, Landroid/support/v4/media/MediaDescriptionCompat$Builder;->mExtras:Landroid/os/Bundle;
 
-    .line 345
     return-object p0
 .end method
 
@@ -101,10 +94,8 @@
     .param p1, "icon"    # Landroid/graphics/Bitmap;
 
     .prologue
-    .line 321
     iput-object p1, p0, Landroid/support/v4/media/MediaDescriptionCompat$Builder;->mIcon:Landroid/graphics/Bitmap;
 
-    .line 322
     return-object p0
 .end method
 
@@ -113,10 +104,8 @@
     .param p1, "iconUri"    # Landroid/net/Uri;
 
     .prologue
-    .line 333
     iput-object p1, p0, Landroid/support/v4/media/MediaDescriptionCompat$Builder;->mIconUri:Landroid/net/Uri;
 
-    .line 334
     return-object p0
 .end method
 
@@ -125,10 +114,8 @@
     .param p1, "mediaId"    # Ljava/lang/String;
 
     .prologue
-    .line 275
     iput-object p1, p0, Landroid/support/v4/media/MediaDescriptionCompat$Builder;->mMediaId:Ljava/lang/String;
 
-    .line 276
     return-object p0
 .end method
 
@@ -137,10 +124,8 @@
     .param p1, "subtitle"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 297
     iput-object p1, p0, Landroid/support/v4/media/MediaDescriptionCompat$Builder;->mSubtitle:Ljava/lang/CharSequence;
 
-    .line 298
     return-object p0
 .end method
 
@@ -149,9 +134,7 @@
     .param p1, "title"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 286
     iput-object p1, p0, Landroid/support/v4/media/MediaDescriptionCompat$Builder;->mTitle:Ljava/lang/CharSequence;
 
-    .line 287
     return-object p0
 .end method

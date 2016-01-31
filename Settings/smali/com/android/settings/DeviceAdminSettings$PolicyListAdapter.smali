@@ -25,12 +25,10 @@
     .locals 2
 
     .prologue
-    .line 183
     iput-object p1, p0, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->this$0:Lcom/android/settings/DeviceAdminSettings;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    .line 184
     invoke-virtual {p1}, Lcom/android/settings/DeviceAdminSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -45,7 +43,6 @@
 
     iput-object v0, p0, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 186
     return-void
 .end method
 
@@ -55,14 +52,12 @@
     .param p2, "item"    # Landroid/app/admin/DeviceAdminInfo;
 
     .prologue
-    .line 335
     iget-object v5, p0, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->this$0:Lcom/android/settings/DeviceAdminSettings;
 
     invoke-virtual {v5}, Lcom/android/settings/DeviceAdminSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    .line 336
     .local v0, "activity":Landroid/app/Activity;
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -70,7 +65,6 @@
 
     check-cast v4, Lcom/android/settings/DeviceAdminSettings$ViewHolder;
 
-    .line 337
     .local v4, "vh":Lcom/android/settings/DeviceAdminSettings$ViewHolder;
     invoke-virtual {v0}, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -80,7 +74,6 @@
 
     move-result-object v1
 
-    .line 338
     .local v1, "activityIcon":Landroid/graphics/drawable/Drawable;
     invoke-virtual {v0}, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -101,13 +94,11 @@
 
     move-result-object v2
 
-    .line 340
     .local v2, "badgedIcon":Landroid/graphics/drawable/Drawable;
     iget-object v5, v4, Lcom/android/settings/DeviceAdminSettings$ViewHolder;->icon:Landroid/widget/ImageView;
 
     invoke-virtual {v5, v2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 341
     iget-object v5, v4, Lcom/android/settings/DeviceAdminSettings$ViewHolder;->name:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -120,7 +111,6 @@
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 342
     iget-object v5, v4, Lcom/android/settings/DeviceAdminSettings$ViewHolder;->checkbox:Landroid/widget/CheckBox;
 
     iget-object v6, p0, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->this$0:Lcom/android/settings/DeviceAdminSettings;
@@ -132,12 +122,10 @@
 
     invoke-virtual {v5, v6}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 343
     invoke-direct {p0, p2}, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->isEnabled(Ljava/lang/Object;)Z
 
     move-result v3
 
-    .line 345
     .local v3, "enabled":Z
     :try_start_0
     iget-object v5, v4, Lcom/android/settings/DeviceAdminSettings$ViewHolder;->description:Landroid/widget/TextView;
@@ -154,31 +142,25 @@
     :try_end_0
     .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 348
     :goto_0
     iget-object v5, v4, Lcom/android/settings/DeviceAdminSettings$ViewHolder;->checkbox:Landroid/widget/CheckBox;
 
     invoke-virtual {v5, v3}, Landroid/widget/CheckBox;->setEnabled(Z)V
 
-    .line 349
     iget-object v5, v4, Lcom/android/settings/DeviceAdminSettings$ViewHolder;->name:Landroid/widget/TextView;
 
     invoke-virtual {v5, v3}, Landroid/widget/TextView;->setEnabled(Z)V
 
-    .line 350
     iget-object v5, v4, Lcom/android/settings/DeviceAdminSettings$ViewHolder;->description:Landroid/widget/TextView;
 
     invoke-virtual {v5, v3}, Landroid/widget/TextView;->setEnabled(Z)V
 
-    .line 351
     iget-object v5, v4, Lcom/android/settings/DeviceAdminSettings$ViewHolder;->icon:Landroid/widget/ImageView;
 
     invoke-virtual {v5, v3}, Landroid/widget/ImageView;->setEnabled(Z)V
 
-    .line 352
     return-void
 
-    .line 346
     :catch_0
     move-exception v5
 
@@ -192,12 +174,10 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 280
     instance-of v2, p1, Landroid/app/admin/DeviceAdminInfo;
 
     if-nez v2, :cond_1
 
-    .line 293
     :cond_0
     :goto_0
     return v1
@@ -205,10 +185,8 @@
     :cond_1
     move-object v0, p1
 
-    .line 284
     check-cast v0, Landroid/app/admin/DeviceAdminInfo;
 
-    .line 285
     .local v0, "info":Landroid/app/admin/DeviceAdminInfo;
     iget-object v2, p0, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->this$0:Lcom/android/settings/DeviceAdminSettings;
 
@@ -250,7 +228,6 @@
 
     if-nez v2, :cond_0
 
-    .line 290
     :cond_2
     iget-object v2, p0, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->this$0:Lcom/android/settings/DeviceAdminSettings;
 
@@ -261,7 +238,6 @@
 
     if-nez v2, :cond_0
 
-    .line 293
     const/4 v1, 0x1
 
     goto :goto_0
@@ -272,7 +248,6 @@
     .param p1, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 315
     iget-object v2, p0, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
     const v3, 0x7f040043
@@ -283,13 +258,11 @@
 
     move-result-object v1
 
-    .line 316
     .local v1, "v":Landroid/view/View;
     new-instance v0, Lcom/android/settings/DeviceAdminSettings$ViewHolder;
 
     invoke-direct {v0}, Lcom/android/settings/DeviceAdminSettings$ViewHolder;-><init>()V
 
-    .line 317
     .local v0, "h":Lcom/android/settings/DeviceAdminSettings$ViewHolder;
     const v2, 0x7f0f0034
 
@@ -301,7 +274,6 @@
 
     iput-object v2, v0, Lcom/android/settings/DeviceAdminSettings$ViewHolder;->icon:Landroid/widget/ImageView;
 
-    .line 318
     const v2, 0x7f0f0029
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -312,7 +284,6 @@
 
     iput-object v2, v0, Lcom/android/settings/DeviceAdminSettings$ViewHolder;->name:Landroid/widget/TextView;
 
-    .line 319
     const v2, 0x7f0f0099
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -323,7 +294,6 @@
 
     iput-object v2, v0, Lcom/android/settings/DeviceAdminSettings$ViewHolder;->checkbox:Landroid/widget/CheckBox;
 
-    .line 320
     const v2, 0x7f0f0098
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -334,10 +304,8 @@
 
     iput-object v2, v0, Lcom/android/settings/DeviceAdminSettings$ViewHolder;->description:Landroid/widget/TextView;
 
-    .line 321
     invoke-virtual {v1, v0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 322
     return-object v1
 .end method
 
@@ -348,7 +316,6 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 326
     iget-object v2, p0, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
     invoke-virtual {v2}, Landroid/view/LayoutInflater;->getContext()Landroid/content/Context;
@@ -365,7 +332,6 @@
 
     move-result-object v0
 
-    .line 329
     .local v0, "a":Landroid/content/res/TypedArray;
     const/4 v2, 0x3
 
@@ -373,7 +339,6 @@
 
     move-result v1
 
-    .line 331
     .local v1, "resId":I
     iget-object v2, p0, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
@@ -390,7 +355,6 @@
     .locals 1
 
     .prologue
-    .line 253
     const/4 v0, 0x0
 
     return v0
@@ -400,10 +364,8 @@
     .locals 4
 
     .prologue
-    .line 195
     const/4 v0, 0x0
 
-    .line 196
     .local v0, "adminCount":I
     iget-object v3, p0, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->this$0:Lcom/android/settings/DeviceAdminSettings;
 
@@ -416,7 +378,6 @@
 
     move-result v2
 
-    .line 197
     .local v2, "profileCount":I
     const/4 v1, 0x0
 
@@ -424,7 +385,6 @@
     :goto_0
     if-ge v1, v2, :cond_0
 
-    .line 198
     iget-object v3, p0, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->this$0:Lcom/android/settings/DeviceAdminSettings;
 
     # getter for: Lcom/android/settings/DeviceAdminSettings;->mAdminsByProfile:Landroid/util/SparseArray;
@@ -444,12 +404,10 @@
 
     add-int/2addr v0, v3
 
-    .line 197
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 201
     :cond_0
     add-int v3, v0, v2
 
@@ -461,21 +419,17 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 212
     if-gez p1, :cond_0
 
-    .line 213
     new-instance v5, Ljava/lang/ArrayIndexOutOfBoundsException;
 
     invoke-direct {v5}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>()V
 
     throw v5
 
-    .line 218
     :cond_0
     move v0, p1
 
-    .line 219
     .local v0, "adminPosition":I
     iget-object v5, p0, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->this$0:Lcom/android/settings/DeviceAdminSettings;
 
@@ -488,16 +442,13 @@
 
     move-result v3
 
-    .line 220
     .local v3, "n":I
     const/4 v1, 0x0
 
-    .line 221
     .local v1, "i":I
     :goto_0
     if-ge v1, v3, :cond_1
 
-    .line 223
     iget-object v5, p0, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->this$0:Lcom/android/settings/DeviceAdminSettings;
 
     # getter for: Lcom/android/settings/DeviceAdminSettings;->mAdminsByProfile:Landroid/util/SparseArray;
@@ -517,38 +468,31 @@
 
     add-int/lit8 v2, v5, 0x1
 
-    .line 224
     .local v2, "listSize":I
     if-ge v0, v2, :cond_2
 
-    .line 229
     .end local v2    # "listSize":I
     :cond_1
     if-ne v1, v3, :cond_3
 
-    .line 230
     new-instance v5, Ljava/lang/ArrayIndexOutOfBoundsException;
 
     invoke-direct {v5}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>()V
 
     throw v5
 
-    .line 227
     .restart local v2    # "listSize":I
     :cond_2
     sub-int/2addr v0, v2
 
-    .line 221
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 233
     .end local v2    # "listSize":I
     :cond_3
     if-nez v0, :cond_5
 
-    .line 234
     iget-object v5, p0, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->this$0:Lcom/android/settings/DeviceAdminSettings;
 
     invoke-virtual {v5}, Lcom/android/settings/DeviceAdminSettings;->getActivity()Landroid/app/Activity;
@@ -559,7 +503,6 @@
 
     move-result-object v4
 
-    .line 235
     .local v4, "res":Landroid/content/res/Resources;
     iget-object v5, p0, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->this$0:Lcom/android/settings/DeviceAdminSettings;
 
@@ -578,19 +521,16 @@
 
     if-ne v5, v6, :cond_4
 
-    .line 236
     const v5, 0x7f0907b9
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 242
     .end local v4    # "res":Landroid/content/res/Resources;
     :goto_1
     return-object v5
 
-    .line 238
     .restart local v4    # "res":Landroid/content/res/Resources;
     :cond_4
     const v5, 0x7f0907ba
@@ -601,7 +541,6 @@
 
     goto :goto_1
 
-    .line 242
     .end local v4    # "res":Landroid/content/res/Resources;
     :cond_5
     iget-object v5, p0, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->this$0:Lcom/android/settings/DeviceAdminSettings;
@@ -631,7 +570,6 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 248
     int-to-long v0, p1
 
     return-wide v0
@@ -642,12 +580,10 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 269
     invoke-virtual {p0, p1}, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->getItem(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 270
     .local v0, "o":Ljava/lang/Object;
     instance-of v1, v0, Ljava/lang/String;
 
@@ -671,47 +607,38 @@
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 298
     invoke-virtual {p0, p1}, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->getItem(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 299
     .local v0, "o":Ljava/lang/Object;
     instance-of v2, v0, Landroid/app/admin/DeviceAdminInfo;
 
     if-eqz v2, :cond_1
 
-    .line 300
     if-nez p2, :cond_0
 
-    .line 301
     invoke-direct {p0, p3}, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->newDeviceAdminView(Landroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object p2
 
-    .line 303
     :cond_0
     check-cast v0, Landroid/app/admin/DeviceAdminInfo;
 
     .end local v0    # "o":Ljava/lang/Object;
     invoke-direct {p0, p2, v0}, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->bindView(Landroid/view/View;Landroid/app/admin/DeviceAdminInfo;)V
 
-    .line 311
     :goto_0
     return-object p2
 
-    .line 305
     .restart local v0    # "o":Ljava/lang/Object;
     :cond_1
     if-nez p2, :cond_2
 
-    .line 306
     invoke-direct {p0, p3}, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->newTitleView(Landroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object p2
 
-    .line 308
     :cond_2
     const v2, 0x1020016
 
@@ -721,7 +648,6 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 309
     .local v1, "title":Landroid/widget/TextView;
     check-cast v0, Ljava/lang/String;
 
@@ -735,7 +661,6 @@
     .locals 1
 
     .prologue
-    .line 261
     const/4 v0, 0x2
 
     return v0
@@ -745,7 +670,6 @@
     .locals 1
 
     .prologue
-    .line 190
     const/4 v0, 0x0
 
     return v0
@@ -756,12 +680,10 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 275
     invoke-virtual {p0, p1}, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->getItem(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 276
     .local v0, "o":Ljava/lang/Object;
     invoke-direct {p0, v0}, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->isEnabled(Ljava/lang/Object;)Z
 

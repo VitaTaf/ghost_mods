@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 199
     iput-object p1, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -44,17 +43,14 @@
 
     const/4 v5, 0x1
 
-    .line 202
     iget v2, p1, Landroid/os/Message;->what:I
 
     sparse-switch v2, :sswitch_data_0
 
-    .line 288
     :cond_0
     :goto_0
     return-void
 
-    .line 204
     :sswitch_0
     iget-object v2, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
 
@@ -63,7 +59,6 @@
 
     goto :goto_0
 
-    .line 208
     :sswitch_1
     iget-object v2, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
 
@@ -72,20 +67,17 @@
 
     goto :goto_0
 
-    .line 212
     :sswitch_2
     iget-object v2, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
 
     # invokes: Lcom/android/settings/RadioInfo;->updateServiceState()V
     invoke-static {v2}, Lcom/android/settings/RadioInfo;->access$1500(Lcom/android/settings/RadioInfo;)V
 
-    .line 213
     iget-object v2, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
 
     # invokes: Lcom/android/settings/RadioInfo;->updatePowerState()V
     invoke-static {v2}, Lcom/android/settings/RadioInfo;->access$1600(Lcom/android/settings/RadioInfo;)V
 
-    .line 214
     iget-object v2, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
 
     # invokes: Lcom/android/settings/RadioInfo;->updateImsVoLteProvisionedState()V
@@ -93,7 +85,6 @@
 
     goto :goto_0
 
-    .line 218
     :sswitch_3
     iget-object v2, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
 
@@ -102,18 +93,15 @@
     # invokes: Lcom/android/settings/RadioInfo;->log(Ljava/lang/String;)V
     invoke-static {v2, v3}, Lcom/android/settings/RadioInfo;->access$1000(Lcom/android/settings/RadioInfo;Ljava/lang/String;)V
 
-    .line 219
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
-    .line 220
     .local v0, "ar":Landroid/os/AsyncResult;
     iget-object v2, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-nez v2, :cond_2
 
-    .line 221
     iget-object v2, v0, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
     check-cast v2, [I
@@ -124,7 +112,6 @@
 
     aget v1, v2, v3
 
-    .line 222
     .local v1, "type":I
     iget-object v2, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
 
@@ -137,7 +124,6 @@
 
     if-lt v1, v2, :cond_1
 
-    .line 223
     iget-object v2, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -161,7 +147,6 @@
     # invokes: Lcom/android/settings/RadioInfo;->log(Ljava/lang/String;)V
     invoke-static {v2, v3}, Lcom/android/settings/RadioInfo;->access$1000(Lcom/android/settings/RadioInfo;Ljava/lang/String;)V
 
-    .line 225
     iget-object v2, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
 
     # getter for: Lcom/android/settings/RadioInfo;->mPreferredNetworkLabels:[Ljava/lang/String;
@@ -173,7 +158,6 @@
 
     add-int/lit8 v1, v2, -0x1
 
-    .line 227
     :cond_1
     iget-object v2, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
 
@@ -184,7 +168,6 @@
 
     invoke-virtual {v2, v1, v5}, Landroid/widget/Spinner;->setSelection(IZ)V
 
-    .line 229
     iget-object v2, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-virtual {v2}, Lcom/android/settings/RadioInfo;->getResources()Landroid/content/res/Resources;
@@ -197,7 +180,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 231
     iget-object v2, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -221,7 +203,6 @@
     # invokes: Lcom/android/settings/RadioInfo;->log(Ljava/lang/String;)V
     invoke-static {v2, v3}, Lcom/android/settings/RadioInfo;->access$1000(Lcom/android/settings/RadioInfo;Ljava/lang/String;)V
 
-    .line 232
     iget-object v2, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-virtual {v2}, Lcom/android/settings/RadioInfo;->getContentResolver()Landroid/content/ContentResolver;
@@ -234,7 +215,6 @@
 
     goto/16 :goto_0
 
-    .line 239
     .end local v1    # "type":I
     :cond_2
     iget-object v2, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
@@ -257,7 +237,6 @@
 
     invoke-virtual {v2, v3, v5}, Landroid/widget/Spinner;->setSelection(IZ)V
 
-    .line 240
     iget-object v2, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
 
     const-string v3, "Exception when query for network type"
@@ -267,20 +246,17 @@
 
     goto/16 :goto_0
 
-    .line 244
     .end local v0    # "ar":Landroid/os/AsyncResult;
     :sswitch_4
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
-    .line 245
     .restart local v0    # "ar":Landroid/os/AsyncResult;
     iget-object v2, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-eqz v2, :cond_3
 
-    .line 246
     iget-object v2, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -310,7 +286,6 @@
     # invokes: Lcom/android/settings/RadioInfo;->log(Ljava/lang/String;)V
     invoke-static {v2, v3}, Lcom/android/settings/RadioInfo;->access$1000(Lcom/android/settings/RadioInfo;Ljava/lang/String;)V
 
-    .line 247
     iget-object v2, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
 
     # getter for: Lcom/android/settings/RadioInfo;->phone:Lcom/android/internal/telephony/Phone;
@@ -324,7 +299,6 @@
 
     invoke-interface {v2, v3}, Lcom/android/internal/telephony/Phone;->getPreferredNetworkType(Landroid/os/Message;)V
 
-    .line 251
     :cond_3
     iget-object v2, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
 
@@ -338,12 +312,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 253
     iget-object v2, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-nez v2, :cond_0
 
-    .line 254
     iget-object v2, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
 
     const-string v3, "set network mode success, call phone.getPreferredNetworkType"
@@ -351,7 +323,6 @@
     # invokes: Lcom/android/settings/RadioInfo;->log(Ljava/lang/String;)V
     invoke-static {v2, v3}, Lcom/android/settings/RadioInfo;->access$1000(Lcom/android/settings/RadioInfo;Ljava/lang/String;)V
 
-    .line 255
     iget-object v2, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
 
     # getter for: Lcom/android/settings/RadioInfo;->phone:Lcom/android/internal/telephony/Phone;
@@ -367,20 +338,17 @@
 
     goto/16 :goto_0
 
-    .line 262
     .end local v0    # "ar":Landroid/os/AsyncResult;
     :sswitch_5
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
-    .line 263
     .restart local v0    # "ar":Landroid/os/AsyncResult;
     iget-object v2, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-nez v2, :cond_4
 
-    .line 264
     iget-object v3, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
 
     iget-object v2, v0, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
@@ -392,7 +360,6 @@
 
     goto/16 :goto_0
 
-    .line 266
     :cond_4
     iget-object v2, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
 
@@ -407,20 +374,17 @@
 
     goto/16 :goto_0
 
-    .line 270
     .end local v0    # "ar":Landroid/os/AsyncResult;
     :sswitch_6
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
-    .line 271
     .restart local v0    # "ar":Landroid/os/AsyncResult;
     iget-object v2, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-eqz v2, :cond_5
 
-    .line 272
     iget-object v2, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
 
     # getter for: Lcom/android/settings/RadioInfo;->smsc:Landroid/widget/EditText;
@@ -434,7 +398,6 @@
 
     goto/16 :goto_0
 
-    .line 274
     :cond_5
     iget-object v2, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
 
@@ -451,7 +414,6 @@
 
     goto/16 :goto_0
 
-    .line 278
     .end local v0    # "ar":Landroid/os/AsyncResult;
     :sswitch_7
     iget-object v2, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
@@ -463,18 +425,15 @@
 
     invoke-virtual {v2, v5}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 279
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
-    .line 280
     .restart local v0    # "ar":Landroid/os/AsyncResult;
     iget-object v2, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-eqz v2, :cond_0
 
-    .line 281
     iget-object v2, p0, Lcom/android/settings/RadioInfo$2;->this$0:Lcom/android/settings/RadioInfo;
 
     # getter for: Lcom/android/settings/RadioInfo;->smsc:Landroid/widget/EditText;
@@ -488,7 +447,6 @@
 
     goto/16 :goto_0
 
-    .line 202
     :sswitch_data_0
     .sparse-switch
         0x64 -> :sswitch_0

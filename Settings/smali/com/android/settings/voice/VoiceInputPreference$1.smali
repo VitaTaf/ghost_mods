@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 63
     iput-object p1, p0, Lcom/android/settings/voice/VoiceInputPreference$1;->this$0:Lcom/android/settings/voice/VoiceInputPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,11 +41,9 @@
     .param p2, "isChecked"    # Z
 
     .prologue
-    .line 66
     iget-object v0, p0, Lcom/android/settings/voice/VoiceInputPreference$1;->this$0:Lcom/android/settings/voice/VoiceInputPreference;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/settings/voice/VoiceInputPreference;->onRadioButtonClicked(Landroid/widget/CompoundButton;Z)V
 
-    .line 67
     return-void
 .end method

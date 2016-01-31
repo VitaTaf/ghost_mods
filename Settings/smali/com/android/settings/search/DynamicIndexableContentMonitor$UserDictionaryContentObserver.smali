@@ -24,13 +24,10 @@
     .param p2, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 295
     iput-object p1, p0, Lcom/android/settings/search/DynamicIndexableContentMonitor$UserDictionaryContentObserver;->this$0:Lcom/android/settings/search/DynamicIndexableContentMonitor;
 
-    .line 296
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 297
     return-void
 .end method
 
@@ -44,7 +41,6 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 301
     sget-object v0, Landroid/provider/UserDictionary$Words;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {v0, p2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
@@ -53,7 +49,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 302
     iget-object v0, p0, Lcom/android/settings/search/DynamicIndexableContentMonitor$UserDictionaryContentObserver;->this$0:Lcom/android/settings/search/DynamicIndexableContentMonitor;
 
     # getter for: Lcom/android/settings/search/DynamicIndexableContentMonitor;->mContext:Landroid/content/Context;
@@ -73,7 +68,6 @@
 
     invoke-virtual {v0, v1, v2, v2}, Lcom/android/settings/search/Index;->updateFromClassNameResource(Ljava/lang/String;ZZ)V
 
-    .line 305
     :cond_0
     return-void
 .end method

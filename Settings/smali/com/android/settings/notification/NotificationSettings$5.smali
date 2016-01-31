@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 618
     invoke-direct {p0}, Lcom/android/settings/search/BaseSearchIndexProvider;-><init>()V
 
     return-void
@@ -43,12 +42,10 @@
     .end annotation
 
     .prologue
-    .line 628
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 629
     .local v0, "rt":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-static {p1}, Lcom/android/settings/Utils;->isVoiceCapable(Landroid/content/Context;)Z
 
@@ -56,27 +53,22 @@
 
     if-eqz v1, :cond_0
 
-    .line 630
     const-string v1, "notification_volume"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 636
     :goto_0
     return-object v0
 
-    .line 632
     :cond_0
     const-string v1, "ring_volume"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 633
     const-string v1, "ringtone"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 634
     const-string v1, "vibrate_when_ringing"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -101,18 +93,15 @@
     .end annotation
 
     .prologue
-    .line 622
     new-instance v0, Landroid/provider/SearchIndexableResource;
 
     invoke-direct {v0, p1}, Landroid/provider/SearchIndexableResource;-><init>(Landroid/content/Context;)V
 
-    .line 623
     .local v0, "sir":Landroid/provider/SearchIndexableResource;
     const v1, 0x7f060025
 
     iput v1, v0, Landroid/provider/SearchIndexableResource;->xmlResId:I
 
-    .line 624
     const/4 v1, 0x1
 
     new-array v1, v1, [Landroid/provider/SearchIndexableResource;

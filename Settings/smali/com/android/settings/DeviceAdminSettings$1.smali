@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 73
     iput-object p1, p0, Lcom/android/settings/DeviceAdminSettings$1;->this$0:Lcom/android/settings/DeviceAdminSettings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,7 +38,6 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 78
     const-string v0, "android.app.action.DEVICE_POLICY_MANAGER_STATE_CHANGED"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -52,12 +50,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 80
     iget-object v0, p0, Lcom/android/settings/DeviceAdminSettings$1;->this$0:Lcom/android/settings/DeviceAdminSettings;
 
     invoke-virtual {v0}, Lcom/android/settings/DeviceAdminSettings;->updateList()V
 
-    .line 82
     :cond_0
     return-void
 .end method

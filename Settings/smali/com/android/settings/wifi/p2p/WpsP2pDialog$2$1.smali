@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 139
     iput-object p1, p0, Lcom/android/settings/wifi/p2p/WpsP2pDialog$2$1;->this$1:Lcom/android/settings/wifi/p2p/WpsP2pDialog$2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 4
 
     .prologue
-    .line 143
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WpsP2pDialog$2$1;->this$1:Lcom/android/settings/wifi/p2p/WpsP2pDialog$2;
 
     iget-object v1, v1, Lcom/android/settings/wifi/p2p/WpsP2pDialog$2;->this$0:Lcom/android/settings/wifi/p2p/WpsP2pDialog;
@@ -54,7 +52,6 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/ProgressBar;->incrementProgressBy(I)V
 
-    .line 144
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WpsP2pDialog$2$1;->this$1:Lcom/android/settings/wifi/p2p/WpsP2pDialog$2;
 
     iget-object v1, v1, Lcom/android/settings/wifi/p2p/WpsP2pDialog$2;->this$0:Lcom/android/settings/wifi/p2p/WpsP2pDialog;
@@ -82,7 +79,6 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 146
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WpsP2pDialog$2$1;->this$1:Lcom/android/settings/wifi/p2p/WpsP2pDialog$2;
 
     iget-object v1, v1, Lcom/android/settings/wifi/p2p/WpsP2pDialog$2;->this$0:Lcom/android/settings/wifi/p2p/WpsP2pDialog;
@@ -105,7 +101,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/net/wifi/p2p/WifiP2pManager;->cancelWps(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$ActionListener;)V
 
-    .line 147
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WpsP2pDialog$2$1;->this$1:Lcom/android/settings/wifi/p2p/WpsP2pDialog$2;
 
     iget-object v1, v1, Lcom/android/settings/wifi/p2p/WpsP2pDialog$2;->this$0:Lcom/android/settings/wifi/p2p/WpsP2pDialog;
@@ -121,7 +116,6 @@
 
     move-result-object v0
 
-    .line 148
     .local v0, "msg":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WpsP2pDialog$2$1;->this$1:Lcom/android/settings/wifi/p2p/WpsP2pDialog$2;
 
@@ -132,7 +126,6 @@
     # invokes: Lcom/android/settings/wifi/p2p/WpsP2pDialog;->updateDialog(Lcom/android/settings/wifi/p2p/WpsP2pDialog$DialogState;Ljava/lang/String;)V
     invoke-static {v1, v2, v0}, Lcom/android/settings/wifi/p2p/WpsP2pDialog;->access$100(Lcom/android/settings/wifi/p2p/WpsP2pDialog;Lcom/android/settings/wifi/p2p/WpsP2pDialog$DialogState;Ljava/lang/String;)V
 
-    .line 150
     .end local v0    # "msg":Ljava/lang/String;
     :cond_0
     return-void

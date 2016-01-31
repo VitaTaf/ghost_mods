@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 60
     iput-object p1, p0, Lcom/android/settings/search/DynamicIndexableContentMonitor$1;->this$0:Lcom/android/settings/search/DynamicIndexableContentMonitor;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -38,22 +37,18 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 63
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 74
     :goto_0
     return-void
 
-    .line 65
     :pswitch_0
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/String;
 
-    .line 66
     .local v0, "packageName":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/settings/search/DynamicIndexableContentMonitor$1;->this$0:Lcom/android/settings/search/DynamicIndexableContentMonitor;
 
@@ -62,14 +57,12 @@
 
     goto :goto_0
 
-    .line 70
     .end local v0    # "packageName":Ljava/lang/String;
     :pswitch_1
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/String;
 
-    .line 71
     .restart local v0    # "packageName":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/settings/search/DynamicIndexableContentMonitor$1;->this$0:Lcom/android/settings/search/DynamicIndexableContentMonitor;
 
@@ -78,7 +71,6 @@
 
     goto :goto_0
 
-    .line 63
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

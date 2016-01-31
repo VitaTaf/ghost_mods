@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 110
     iput-object p1, p0, Lcom/android/settings/voice/VoiceInputPreference$2;->this$0:Lcom/android/settings/voice/VoiceInputPreference;
 
     iput-object p2, p0, Lcom/android/settings/voice/VoiceInputPreference$2;->val$rb:Landroid/widget/RadioButton;
@@ -45,7 +44,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 113
     iget-object v0, p0, Lcom/android/settings/voice/VoiceInputPreference$2;->val$rb:Landroid/widget/RadioButton;
 
     invoke-virtual {v0}, Landroid/widget/RadioButton;->isChecked()Z
@@ -54,7 +52,6 @@
 
     if-nez v0, :cond_0
 
-    .line 114
     iget-object v0, p0, Lcom/android/settings/voice/VoiceInputPreference$2;->this$0:Lcom/android/settings/voice/VoiceInputPreference;
 
     iget-object v1, p0, Lcom/android/settings/voice/VoiceInputPreference$2;->val$rb:Landroid/widget/RadioButton;
@@ -63,7 +60,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/settings/voice/VoiceInputPreference;->onRadioButtonClicked(Landroid/widget/CompoundButton;Z)V
 
-    .line 116
     :cond_0
     return-void
 .end method

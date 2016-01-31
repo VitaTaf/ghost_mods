@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 66
     iput-object p1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog$1;->this$0:Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,7 +38,6 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 69
     const-string v0, "android.net.wifi.p2p.THIS_DEVICE_CHANGED"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -52,7 +50,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 70
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog$1;->this$0:Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;
 
     const-string v0, "wifiP2pDevice"
@@ -66,7 +63,6 @@
     # setter for: Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mP2pDevice:Landroid/net/wifi/p2p/WifiP2pDevice;
     invoke-static {v1, v0}, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->access$002(Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;Landroid/net/wifi/p2p/WifiP2pDevice;)Landroid/net/wifi/p2p/WifiP2pDevice;
 
-    .line 72
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog$1;->this$0:Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;
 
     # getter for: Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mWifiP2pManager:Landroid/net/wifi/p2p/WifiP2pManager;
@@ -76,7 +72,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 73
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog$1;->this$0:Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;
 
     # getter for: Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mWifiP2pManager:Landroid/net/wifi/p2p/WifiP2pManager;
@@ -95,7 +90,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/net/wifi/p2p/WifiP2pManager;->requestPersistentGroupInfo(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$PersistentGroupInfoListener;)V
 
-    .line 77
     :cond_0
     return-void
 .end method

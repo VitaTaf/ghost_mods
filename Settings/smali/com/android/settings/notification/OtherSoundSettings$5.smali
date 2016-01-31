@@ -24,7 +24,6 @@
     .param p5, "x4"    # [I
 
     .prologue
-    .line 111
     invoke-direct/range {p0 .. p5}, Lcom/android/settings/notification/SettingPref;-><init>(ILjava/lang/String;Ljava/lang/String;I[I)V
 
     return-void
@@ -38,17 +37,14 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 119
     packed-switch p2, :pswitch_data_0
 
-    .line 125
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw v0
 
-    .line 121
     :pswitch_0
     const v0, 0x7f0909dd
 
@@ -56,7 +52,6 @@
 
     move-result-object v0
 
-    .line 123
     :goto_0
     return-object v0
 
@@ -69,7 +64,6 @@
 
     goto :goto_0
 
-    .line 119
     nop
 
     :pswitch_data_0
@@ -84,7 +78,6 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 114
     # invokes: Lcom/android/settings/notification/OtherSoundSettings;->hasDockSettings(Landroid/content/Context;)Z
     invoke-static {p1}, Lcom/android/settings/notification/OtherSoundSettings;->access$000(Landroid/content/Context;)Z
 

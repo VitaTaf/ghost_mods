@@ -42,20 +42,16 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 513
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    .line 508
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mContextMap:Ljava/util/HashMap;
 
-    .line 514
     iput-object p1, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mContext:Landroid/content/Context;
 
-    .line 515
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mContext:Landroid/content/Context;
 
     const-string v1, "layout_inflater"
@@ -68,12 +64,10 @@
 
     iput-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 516
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mDataValid:Z
 
-    .line 517
     return-void
 .end method
 
@@ -82,7 +76,6 @@
     .param p0, "x0"    # Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;
 
     .prologue
-    .line 502
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mCursor:Landroid/database/Cursor;
 
     return-object v0
@@ -94,7 +87,6 @@
     .locals 1
 
     .prologue
-    .line 537
     iget-boolean v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mDataValid:Z
 
     if-eqz v0, :cond_0
@@ -114,7 +106,6 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 538
     :goto_0
     return v0
 
@@ -133,7 +124,6 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 543
     iget-boolean v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mDataValid:Z
 
     if-eqz v0, :cond_3
@@ -146,7 +136,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 544
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mCursor:Landroid/database/Cursor;
 
     const/4 v12, 0x1
@@ -155,7 +144,6 @@
 
     move-result-object v2
 
-    .line 545
     .local v2, "title":Ljava/lang/String;
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mCursor:Landroid/database/Cursor;
 
@@ -165,7 +153,6 @@
 
     move-result-object v3
 
-    .line 546
     .local v3, "summaryOn":Ljava/lang/String;
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mCursor:Landroid/database/Cursor;
 
@@ -175,7 +162,6 @@
 
     move-result-object v4
 
-    .line 547
     .local v4, "summaryOff":Ljava/lang/String;
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mCursor:Landroid/database/Cursor;
 
@@ -185,7 +171,6 @@
 
     move-result-object v5
 
-    .line 548
     .local v5, "entries":Ljava/lang/String;
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mCursor:Landroid/database/Cursor;
 
@@ -195,7 +180,6 @@
 
     move-result-object v10
 
-    .line 549
     .local v10, "iconResStr":Ljava/lang/String;
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mCursor:Landroid/database/Cursor;
 
@@ -205,7 +189,6 @@
 
     move-result-object v8
 
-    .line 551
     .local v8, "className":Ljava/lang/String;
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mCursor:Landroid/database/Cursor;
 
@@ -215,7 +198,6 @@
 
     move-result-object v11
 
-    .line 553
     .local v11, "packageName":Ljava/lang/String;
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mCursor:Landroid/database/Cursor;
 
@@ -225,7 +207,6 @@
 
     move-result-object v7
 
-    .line 557
     .local v7, "key":Ljava/lang/String;
     invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -239,7 +220,6 @@
 
     if-nez v0, :cond_1
 
-    .line 558
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mContextMap:Ljava/util/HashMap;
 
     invoke-virtual {v0, v11}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -248,11 +228,9 @@
 
     check-cast v1, Landroid/content/Context;
 
-    .line 559
     .local v1, "packageContext":Landroid/content/Context;
     if-nez v1, :cond_0
 
-    .line 561
     :try_start_0
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mContext:Landroid/content/Context;
 
@@ -264,12 +242,10 @@
 
     move-result-object v1
 
-    .line 566
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mContextMap:Ljava/util/HashMap;
 
     invoke-virtual {v0, v11, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 572
     :cond_0
     :goto_0
     invoke-static {v10}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -280,14 +256,12 @@
 
     const v6, 0x7f020022
 
-    .line 575
     .local v6, "iconResId":I
     :goto_1
     new-instance v0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResult;
 
     invoke-direct/range {v0 .. v7}, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResult;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 578
     .end local v1    # "packageContext":Landroid/content/Context;
     .end local v2    # "title":Ljava/lang/String;
     .end local v3    # "summaryOn":Ljava/lang/String;
@@ -301,7 +275,6 @@
     :goto_2
     return-object v0
 
-    .line 562
     .restart local v1    # "packageContext":Landroid/content/Context;
     .restart local v2    # "title":Ljava/lang/String;
     .restart local v3    # "summaryOn":Ljava/lang/String;
@@ -314,7 +287,6 @@
     :catch_0
     move-exception v9
 
-    .line 563
     .local v9, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string v0, "SearchResultsSummary"
 
@@ -338,12 +310,10 @@
 
     invoke-static {v0, v12}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 564
     const/4 v0, 0x0
 
     goto :goto_2
 
-    .line 569
     .end local v1    # "packageContext":Landroid/content/Context;
     .end local v9    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :cond_1
@@ -352,7 +322,6 @@
     .restart local v1    # "packageContext":Landroid/content/Context;
     goto :goto_0
 
-    .line 572
     :cond_2
     invoke-static {v10}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -360,7 +329,6 @@
 
     goto :goto_1
 
-    .line 578
     .end local v1    # "packageContext":Landroid/content/Context;
     .end local v2    # "title":Ljava/lang/String;
     .end local v3    # "summaryOn":Ljava/lang/String;
@@ -381,7 +349,6 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 583
     const-wide/16 v0, 0x0
 
     return-wide v0
@@ -396,14 +363,12 @@
     .prologue
     const v10, 0x7f020022
 
-    .line 588
     iget-boolean v7, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mDataValid:Z
 
     if-nez v7, :cond_0
 
     if-nez p2, :cond_0
 
-    .line 589
     new-instance v7, Ljava/lang/IllegalStateException;
 
     const-string v8, "this should only be called when the cursor is valid"
@@ -412,7 +377,6 @@
 
     throw v7
 
-    .line 592
     :cond_0
     iget-object v7, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mCursor:Landroid/database/Cursor;
 
@@ -422,7 +386,6 @@
 
     if-nez v7, :cond_1
 
-    .line 593
     new-instance v7, Ljava/lang/IllegalStateException;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -447,11 +410,9 @@
 
     throw v7
 
-    .line 600
     :cond_1
     if-nez p2, :cond_2
 
-    .line 601
     iget-object v7, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mInflater:Landroid/view/LayoutInflater;
 
     const v8, 0x7f0400ac
@@ -462,7 +423,6 @@
 
     move-result-object v6
 
-    .line 606
     .local v6, "view":Landroid/view/View;
     :goto_0
     const v7, 0x7f0f0035
@@ -473,7 +433,6 @@
 
     check-cast v5, Landroid/widget/TextView;
 
-    .line 607
     .local v5, "textTitle":Landroid/widget/TextView;
     const v7, 0x7f0f0034
 
@@ -483,7 +442,6 @@
 
     check-cast v1, Landroid/widget/ImageView;
 
-    .line 609
     .local v1, "imageView":Landroid/widget/ImageView;
     invoke-virtual {p0, p1}, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->getItem(I)Ljava/lang/Object;
 
@@ -491,21 +449,17 @@
 
     check-cast v4, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResult;
 
-    .line 610
     .local v4, "result":Lcom/android/settings/dashboard/SearchResultsSummary$SearchResult;
     iget-object v7, v4, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResult;->title:Ljava/lang/String;
 
     invoke-virtual {v5, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 612
     iget v7, v4, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResult;->iconResId:I
 
     if-eq v7, v10, :cond_3
 
-    .line 613
     iget-object v3, v4, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResult;->context:Landroid/content/Context;
 
-    .line 616
     .local v3, "packageContext":Landroid/content/Context;
     :try_start_0
     iget v7, v4, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResult;->iconResId:I
@@ -514,19 +468,16 @@
 
     move-result-object v0
 
-    .line 617
     .local v0, "drawable":Landroid/graphics/drawable/Drawable;
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
     :try_end_0
     .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 627
     .end local v0    # "drawable":Landroid/graphics/drawable/Drawable;
     .end local v3    # "packageContext":Landroid/content/Context;
     :goto_1
     return-object v6
 
-    .line 603
     .end local v1    # "imageView":Landroid/widget/ImageView;
     .end local v4    # "result":Lcom/android/settings/dashboard/SearchResultsSummary$SearchResult;
     .end local v5    # "textTitle":Landroid/widget/TextView;
@@ -537,7 +488,6 @@
     .restart local v6    # "view":Landroid/view/View;
     goto :goto_0
 
-    .line 618
     .restart local v1    # "imageView":Landroid/widget/ImageView;
     .restart local v3    # "packageContext":Landroid/content/Context;
     .restart local v4    # "result":Lcom/android/settings/dashboard/SearchResultsSummary$SearchResult;
@@ -545,7 +495,6 @@
     :catch_0
     move-exception v2
 
-    .line 620
     .local v2, "nfe":Landroid/content/res/Resources$NotFoundException;
     const-string v7, "SearchResultsSummary"
 
@@ -573,7 +522,6 @@
 
     goto :goto_1
 
-    .line 623
     .end local v2    # "nfe":Landroid/content/res/Resources$NotFoundException;
     .end local v3    # "packageContext":Landroid/content/Context;
     :cond_3
@@ -581,7 +529,6 @@
 
     invoke-virtual {v1, v7}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 624
     invoke-virtual {v1, v10}, Landroid/widget/ImageView;->setBackgroundResource(I)V
 
     goto :goto_1
@@ -592,46 +539,36 @@
     .param p1, "newCursor"    # Landroid/database/Cursor;
 
     .prologue
-    .line 520
     iget-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mCursor:Landroid/database/Cursor;
 
     if-ne p1, v1, :cond_0
 
-    .line 521
     const/4 v0, 0x0
 
-    .line 532
     :goto_0
     return-object v0
 
-    .line 523
     :cond_0
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mCursor:Landroid/database/Cursor;
 
-    .line 524
     .local v0, "oldCursor":Landroid/database/Cursor;
     iput-object p1, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mCursor:Landroid/database/Cursor;
 
-    .line 525
     if-eqz p1, :cond_1
 
-    .line 526
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mDataValid:Z
 
-    .line 527
     invoke-virtual {p0}, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->notifyDataSetChanged()V
 
     goto :goto_0
 
-    .line 529
     :cond_1
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mDataValid:Z
 
-    .line 530
     invoke-virtual {p0}, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->notifyDataSetInvalidated()V
 
     goto :goto_0

@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 224
     iput-object p1, p0, Lcom/android/settings/TrustedCredentialsSettings$1;->this$0:Lcom/android/settings/TrustedCredentialsSettings;
 
     iput-object p2, p0, Lcom/android/settings/TrustedCredentialsSettings$1;->val$adapter:Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateExpandableAdapter;
@@ -49,7 +48,6 @@
     .param p5, "id"    # J
 
     .prologue
-    .line 228
     iget-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings$1;->this$0:Lcom/android/settings/TrustedCredentialsSettings;
 
     iget-object v1, p0, Lcom/android/settings/TrustedCredentialsSettings$1;->val$adapter:Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateExpandableAdapter;
@@ -61,7 +59,6 @@
     # invokes: Lcom/android/settings/TrustedCredentialsSettings;->showCertDialog(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;)V
     invoke-static {v0, v1}, Lcom/android/settings/TrustedCredentialsSettings;->access$800(Lcom/android/settings/TrustedCredentialsSettings;Lcom/android/settings/TrustedCredentialsSettings$CertHolder;)V
 
-    .line 229
     const/4 v0, 0x1
 
     return v0

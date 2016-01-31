@@ -14,12 +14,10 @@
     .locals 1
 
     .prologue
-    .line 27
     const-string v0, "/system/app"
 
     sput-object v0, Lcom/motorola/settings/accounts/MotoAccountsHelper;->SYSTEM_APP_PATH:Ljava/lang/String;
 
-    .line 29
     const-string v0, "/vendor/app"
 
     sput-object v0, Lcom/motorola/settings/accounts/MotoAccountsHelper;->VENDOR_APP_PATH:Ljava/lang/String;
@@ -33,7 +31,6 @@
     .param p1, "account"    # Landroid/accounts/Account;
 
     .prologue
-    .line 112
     iget-object v1, p1, Landroid/accounts/Account;->type:Ljava/lang/String;
 
     invoke-static {p0, v1}, Lcom/motorola/settings/accounts/MotoAccountsHelper;->getAuthenticatorDescriptionExt(Landroid/content/Context;Ljava/lang/String;)Lcom/motorola/settings/accounts/AuthenticatorDescriptionExt;
@@ -42,14 +39,11 @@
 
     iget-object v0, v1, Lcom/motorola/settings/accounts/AuthenticatorDescriptionExt;->accountDisplayName:Ljava/lang/String;
 
-    .line 114
     .local v0, "displayName":Ljava/lang/String;
     if-nez v0, :cond_0
 
-    .line 115
     iget-object v0, p1, Landroid/accounts/Account;->name:Ljava/lang/String;
 
-    .line 117
     :cond_0
     return-object v0
 .end method
@@ -60,7 +54,6 @@
     .param p1, "type"    # Ljava/lang/String;
 
     .prologue
-    .line 34
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v2
@@ -83,21 +76,17 @@
 
     move-result-object v1
 
-    .line 38
     .local v1, "srvInfo":Landroid/content/pm/RegisteredServicesCache$ServiceInfo;, "Landroid/content/pm/RegisteredServicesCache$ServiceInfo<Lcom/motorola/settings/accounts/AuthenticatorDescriptionExt;>;"
     if-eqz v1, :cond_0
 
-    .line 39
     iget-object v0, v1, Landroid/content/pm/RegisteredServicesCache$ServiceInfo;->type:Ljava/lang/Object;
 
     check-cast v0, Lcom/motorola/settings/accounts/AuthenticatorDescriptionExt;
 
-    .line 43
     .local v0, "authFeat":Lcom/motorola/settings/accounts/AuthenticatorDescriptionExt;
     :goto_0
     return-object v0
 
-    .line 41
     .end local v0    # "authFeat":Lcom/motorola/settings/accounts/AuthenticatorDescriptionExt;
     :cond_0
     new-instance v0, Lcom/motorola/settings/accounts/AuthenticatorDescriptionExt;
@@ -114,7 +103,6 @@
     .param p1, "type"    # Ljava/lang/String;
 
     .prologue
-    .line 47
     invoke-static {p0, p1}, Lcom/motorola/settings/accounts/MotoAccountsHelper;->getAuthenticatorDescriptionExt(Landroid/content/Context;Ljava/lang/String;)Lcom/motorola/settings/accounts/AuthenticatorDescriptionExt;
 
     move-result-object v0
@@ -130,17 +118,14 @@
     .param p1, "type"    # Ljava/lang/String;
 
     .prologue
-    .line 70
     if-eqz p1, :cond_0
 
-    .line 71
     invoke-static {p0, p1}, Lcom/motorola/settings/accounts/MotoAccountsHelper;->getAuthenticatorDescriptionExt(Landroid/content/Context;Ljava/lang/String;)Lcom/motorola/settings/accounts/AuthenticatorDescriptionExt;
 
     move-result-object v0
 
     iget-boolean v0, v0, Lcom/motorola/settings/accounts/AuthenticatorDescriptionExt;->isRemoveAllowed:Z
 
-    .line 73
     :goto_0
     return v0
 
@@ -156,14 +141,12 @@
     .param p1, "authDescs"    # [Landroid/accounts/AuthenticatorDescription;
 
     .prologue
-    .line 95
     new-instance v2, Ljava/util/ArrayList;
 
     array-length v3, p1
 
     invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 97
     .local v2, "validList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/accounts/AuthenticatorDescription;>;"
     const/4 v1, 0x0
 
@@ -173,12 +156,10 @@
 
     if-ge v1, v3, :cond_2
 
-    .line 98
     aget-object v3, p1, v1
 
     iget-object v0, v3, Landroid/accounts/AuthenticatorDescription;->type:Ljava/lang/String;
 
-    .line 100
     .local v0, "accountType":Ljava/lang/String;
     invoke-static {p0, v0}, Lcom/motorola/settings/accounts/MotoAccountsHelper;->isHidden(Landroid/content/Context;Ljava/lang/String;)Z
 
@@ -194,14 +175,12 @@
 
     if-eqz v3, :cond_1
 
-    .line 97
     :cond_0
     :goto_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 104
     :cond_1
     aget-object v3, p1, v1
 
@@ -209,7 +188,6 @@
 
     goto :goto_1
 
-    .line 106
     .end local v0    # "accountType":Ljava/lang/String;
     :cond_2
     const/4 v3, 0x0
@@ -231,7 +209,6 @@
     .param p1, "type"    # Ljava/lang/String;
 
     .prologue
-    .line 66
     invoke-static {p0, p1}, Lcom/motorola/settings/accounts/MotoAccountsHelper;->getAuthenticatorDescriptionExt(Landroid/content/Context;Ljava/lang/String;)Lcom/motorola/settings/accounts/AuthenticatorDescriptionExt;
 
     move-result-object v0

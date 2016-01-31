@@ -9,7 +9,6 @@
     .param p0, "info"    # Ljava/lang/Object;
 
     .prologue
-    .line 28
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .end local p0    # "info":Ljava/lang/Object;

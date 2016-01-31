@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 564
     invoke-direct {p0}, Landroid/support/v4/app/NotificationCompat$NotificationCompatImplBase;-><init>()V
 
     return-void
@@ -32,7 +31,6 @@
     .param p1, "b"    # Landroid/support/v4/app/NotificationCompat$Builder;
 
     .prologue
-    .line 567
     iget-object v0, p1, Landroid/support/v4/app/NotificationCompat$Builder;->mContext:Landroid/content/Context;
 
     iget-object v1, p1, Landroid/support/v4/app/NotificationCompat$Builder;->mNotification:Landroid/app/Notification;

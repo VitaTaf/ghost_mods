@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 364
     iput-object p1, p0, Lcom/android/settings/DreamSettings$PackageReceiver;->this$0:Lcom/android/settings/DreamSettings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -37,7 +36,6 @@
     .param p2, "x1"    # Lcom/android/settings/DreamSettings$1;
 
     .prologue
-    .line 364
     invoke-direct {p0, p1}, Lcom/android/settings/DreamSettings$PackageReceiver;-><init>(Lcom/android/settings/DreamSettings;)V
 
     return-void
@@ -51,7 +49,6 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 367
     const-string v0, "PackageReceiver.onReceive"
 
     const/4 v1, 0x0
@@ -61,12 +58,10 @@
     # invokes: Lcom/android/settings/DreamSettings;->logd(Ljava/lang/String;[Ljava/lang/Object;)V
     invoke-static {v0, v1}, Lcom/android/settings/DreamSettings;->access$200(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 368
     iget-object v0, p0, Lcom/android/settings/DreamSettings$PackageReceiver;->this$0:Lcom/android/settings/DreamSettings;
 
     # invokes: Lcom/android/settings/DreamSettings;->refreshFromBackend()V
     invoke-static {v0}, Lcom/android/settings/DreamSettings;->access$400(Lcom/android/settings/DreamSettings;)V
 
-    .line 369
     return-void
 .end method

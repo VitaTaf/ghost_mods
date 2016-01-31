@@ -45,38 +45,30 @@
     .param p7, "highlightColor"    # I
 
     .prologue
-    .line 77
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 78
     iput p2, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mSize:I
 
-    .line 79
     move/from16 v0, p6
 
     iput v0, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mShadowRadius:F
 
-    .line 80
     move/from16 v0, p3
 
     iput v0, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mFrameColor:I
 
-    .line 81
     move/from16 v0, p5
 
     iput v0, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mFrameShadowColor:I
 
-    .line 82
     move/from16 v0, p4
 
     iput v0, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mStrokeWidth:F
 
-    .line 83
     move/from16 v0, p7
 
     iput v0, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mHighlightColor:I
 
-    .line 85
     iget v8, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mSize:I
 
     iget v9, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mSize:I
@@ -89,32 +81,27 @@
 
     iput-object v8, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mBitmap:Landroid/graphics/Bitmap;
 
-    .line 86
     new-instance v1, Landroid/graphics/Canvas;
 
     iget-object v8, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mBitmap:Landroid/graphics/Bitmap;
 
     invoke-direct {v1, v8}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 88
     .local v1, "canvas":Landroid/graphics/Canvas;
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v7
 
-    .line 89
     .local v7, "width":I
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v5
 
-    .line 90
     .local v5, "height":I
     invoke-static {v7, v5}, Ljava/lang/Math;->min(II)I
 
     move-result v6
 
-    .line 92
     .local v6, "square":I
     new-instance v3, Landroid/graphics/Rect;
 
@@ -128,7 +115,6 @@
 
     invoke-direct {v3, v8, v9, v6, v6}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 93
     .local v3, "cropRect":Landroid/graphics/Rect;
     new-instance v2, Landroid/graphics/RectF;
 
@@ -146,7 +132,6 @@
 
     invoke-direct {v2, v8, v9, v10, v11}, Landroid/graphics/RectF;-><init>(FFFF)V
 
-    .line 94
     .local v2, "circleRect":Landroid/graphics/RectF;
     iget v8, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mStrokeWidth:F
 
@@ -162,19 +147,16 @@
 
     invoke-virtual {v2, v8, v9}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 95
     iget v8, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mShadowRadius:F
 
     iget v9, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mShadowRadius:F
 
     invoke-virtual {v2, v8, v9}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 97
     new-instance v4, Landroid/graphics/Path;
 
     invoke-direct {v4}, Landroid/graphics/Path;-><init>()V
 
-    .line 98
     .local v4, "fillPath":Landroid/graphics/Path;
     const/4 v8, 0x0
 
@@ -182,47 +164,40 @@
 
     invoke-virtual {v4, v2, v8, v9}, Landroid/graphics/Path;->addArc(Landroid/graphics/RectF;FF)V
 
-    .line 100
     const/4 v8, 0x0
 
     sget-object v9, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
 
     invoke-virtual {v1, v8, v9}, Landroid/graphics/Canvas;->drawColor(ILandroid/graphics/PorterDuff$Mode;)V
 
-    .line 103
     new-instance v8, Landroid/graphics/Paint;
 
     invoke-direct {v8}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v8, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mPaint:Landroid/graphics/Paint;
 
-    .line 104
     iget-object v8, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mPaint:Landroid/graphics/Paint;
 
     const/4 v9, 0x1
 
     invoke-virtual {v8, v9}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 105
     iget-object v8, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mPaint:Landroid/graphics/Paint;
 
     const/high16 v9, -0x1000000
 
     invoke-virtual {v8, v9}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 106
     iget-object v8, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mPaint:Landroid/graphics/Paint;
 
     sget-object v9, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v8, v9}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 107
     iget-object v8, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v4, v8}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 110
     iget-object v8, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mPaint:Landroid/graphics/Paint;
 
     new-instance v9, Landroid/graphics/PorterDuffXfermode;
@@ -233,24 +208,20 @@
 
     invoke-virtual {v8, v9}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 111
     iget-object v8, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, p1, v3, v2, v8}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
-    .line 114
     iget-object v8, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mPaint:Landroid/graphics/Paint;
 
     const/4 v9, 0x0
 
     invoke-virtual {v8, v9}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 116
     const/high16 v8, 0x3f800000    # 1.0f
 
     iput v8, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mScale:F
 
-    .line 118
     new-instance v8, Landroid/graphics/Rect;
 
     const/4 v9, 0x0
@@ -265,7 +236,6 @@
 
     iput-object v8, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mSrcRect:Landroid/graphics/Rect;
 
-    .line 119
     new-instance v8, Landroid/graphics/RectF;
 
     const/4 v9, 0x0
@@ -284,7 +254,6 @@
 
     iput-object v8, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mDstRect:Landroid/graphics/RectF;
 
-    .line 120
     new-instance v8, Landroid/graphics/RectF;
 
     iget-object v9, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mDstRect:Landroid/graphics/RectF;
@@ -293,14 +262,12 @@
 
     iput-object v8, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mFrameRect:Landroid/graphics/RectF;
 
-    .line 121
     new-instance v8, Landroid/graphics/Path;
 
     invoke-direct {v8}, Landroid/graphics/Path;-><init>()V
 
     iput-object v8, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mFramePath:Landroid/graphics/Path;
 
-    .line 122
     return-void
 .end method
 
@@ -310,12 +277,10 @@
     .param p1, "icon"    # Landroid/graphics/Bitmap;
 
     .prologue
-    .line 59
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v9
 
-    .line 60
     .local v9, "res":Landroid/content/res/Resources;
     const v1, 0x7f0e002c
 
@@ -323,7 +288,6 @@
 
     move-result v8
 
-    .line 61
     .local v8, "iconSize":F
     const v1, 0x7f0e002d
 
@@ -331,7 +295,6 @@
 
     move-result v4
 
-    .line 62
     .local v4, "strokeWidth":F
     const v1, 0x7f0e002e
 
@@ -339,7 +302,6 @@
 
     move-result v6
 
-    .line 63
     .local v6, "shadowRadius":F
     const v1, 0x7f080024
 
@@ -347,7 +309,6 @@
 
     move-result v3
 
-    .line 64
     .local v3, "frameColor":I
     const v1, 0x7f080025
 
@@ -355,7 +316,6 @@
 
     move-result v5
 
-    .line 65
     .local v5, "frameShadowColor":I
     const v1, 0x7f080026
 
@@ -363,7 +323,6 @@
 
     move-result v7
 
-    .line 67
     .local v7, "highlightColor":I
     new-instance v0, Lcom/android/settings/drawable/CircleFramedDrawable;
 
@@ -373,7 +332,6 @@
 
     invoke-direct/range {v0 .. v7}, Lcom/android/settings/drawable/CircleFramedDrawable;-><init>(Landroid/graphics/Bitmap;IIFIFI)V
 
-    .line 70
     .local v0, "instance":Lcom/android/settings/drawable/CircleFramedDrawable;
     return-object v0
 .end method
@@ -389,7 +347,6 @@
 
     const/4 v7, 0x0
 
-    .line 126
     iget v2, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mScale:F
 
     iget v3, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mSize:I
@@ -398,7 +355,6 @@
 
     mul-float v0, v2, v3
 
-    .line 127
     .local v0, "inside":F
     iget v2, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mSize:I
 
@@ -408,7 +364,6 @@
 
     div-float v1, v2, v6
 
-    .line 129
     .local v1, "pad":F
     iget-object v2, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mDstRect:Landroid/graphics/RectF;
 
@@ -426,7 +381,6 @@
 
     invoke-virtual {v2, v1, v1, v3, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 130
     iget-object v2, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mBitmap:Landroid/graphics/Bitmap;
 
     iget-object v3, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mSrcRect:Landroid/graphics/Rect;
@@ -437,14 +391,12 @@
 
     invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
-    .line 132
     iget-object v2, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mFrameRect:Landroid/graphics/RectF;
 
     iget-object v3, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mDstRect:Landroid/graphics/RectF;
 
     invoke-virtual {v2, v3}, Landroid/graphics/RectF;->set(Landroid/graphics/RectF;)V
 
-    .line 133
     iget-object v2, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mFrameRect:Landroid/graphics/RectF;
 
     iget v3, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mStrokeWidth:F
@@ -457,7 +409,6 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 134
     iget-object v2, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mFrameRect:Landroid/graphics/RectF;
 
     iget v3, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mShadowRadius:F
@@ -466,12 +417,10 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 136
     iget-object v2, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mFramePath:Landroid/graphics/Path;
 
     invoke-virtual {v2}, Landroid/graphics/Path;->reset()V
 
-    .line 137
     iget-object v2, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mFramePath:Landroid/graphics/Path;
 
     iget-object v3, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mFrameRect:Landroid/graphics/RectF;
@@ -480,19 +429,16 @@
 
     invoke-virtual {v2, v3, v7, v4}, Landroid/graphics/Path;->addArc(Landroid/graphics/RectF;FF)V
 
-    .line 140
     iget-boolean v2, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mPressed:Z
 
     if-eqz v2, :cond_0
 
-    .line 141
     iget-object v2, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mPaint:Landroid/graphics/Paint;
 
     sget-object v3, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 142
     iget-object v2, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mPaint:Landroid/graphics/Paint;
 
     const/16 v3, 0x54
@@ -521,14 +467,12 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 146
     iget-object v2, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mFramePath:Landroid/graphics/Path;
 
     iget-object v3, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v2, v3}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 148
     :cond_0
     iget-object v2, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mPaint:Landroid/graphics/Paint;
 
@@ -536,14 +480,12 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 149
     iget-object v2, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mPaint:Landroid/graphics/Paint;
 
     sget-object v3, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 150
     iget-object v3, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mPaint:Landroid/graphics/Paint;
 
     iget-boolean v2, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mPressed:Z
@@ -555,7 +497,6 @@
     :goto_0
     invoke-virtual {v3, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 151
     iget-object v2, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mPaint:Landroid/graphics/Paint;
 
     iget v3, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mShadowRadius:F
@@ -564,17 +505,14 @@
 
     invoke-virtual {v2, v3, v7, v7, v4}, Landroid/graphics/Paint;->setShadowLayer(FFFI)V
 
-    .line 152
     iget-object v2, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mFramePath:Landroid/graphics/Path;
 
     iget-object v3, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v2, v3}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 153
     return-void
 
-    .line 150
     :cond_1
     iget v2, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mFrameColor:I
 
@@ -585,7 +523,6 @@
     .locals 1
 
     .prologue
-    .line 187
     iget v0, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mSize:I
 
     return v0
@@ -595,7 +532,6 @@
     .locals 1
 
     .prologue
-    .line 182
     iget v0, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mSize:I
 
     return v0
@@ -605,7 +541,6 @@
     .locals 1
 
     .prologue
-    .line 169
     const/4 v0, -0x3
 
     return v0
@@ -616,7 +551,6 @@
     .param p1, "alpha"    # I
 
     .prologue
-    .line 174
     return-void
 .end method
 
@@ -625,6 +559,5 @@
     .param p1, "cf"    # Landroid/graphics/ColorFilter;
 
     .prologue
-    .line 178
     return-void
 .end method

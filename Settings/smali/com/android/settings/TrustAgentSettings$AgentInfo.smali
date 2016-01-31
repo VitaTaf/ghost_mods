@@ -29,7 +29,6 @@
     .locals 0
 
     .prologue
-    .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,12 +41,10 @@
     .param p1, "other"    # Ljava/lang/Object;
 
     .prologue
-    .line 52
     instance-of v0, p1, Lcom/android/settings/TrustAgentSettings$AgentInfo;
 
     if-eqz v0, :cond_0
 
-    .line 53
     iget-object v0, p0, Lcom/android/settings/TrustAgentSettings$AgentInfo;->component:Landroid/content/ComponentName;
 
     check-cast p1, Lcom/android/settings/TrustAgentSettings$AgentInfo;
@@ -59,7 +56,6 @@
 
     move-result v0
 
-    .line 55
     :goto_0
     return v0
 

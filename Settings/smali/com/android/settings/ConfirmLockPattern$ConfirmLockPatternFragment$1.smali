@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 236
     iput-object p1, p0, Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment$1;->this$0:Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 1
 
     .prologue
-    .line 238
     iget-object v0, p0, Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment$1;->this$0:Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;
 
     # getter for: Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;->mLockPatternView:Lcom/android/internal/widget/LockPatternView;
@@ -50,6 +48,5 @@
 
     invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternView;->clearPattern()V
 
-    .line 239
     return-void
 .end method

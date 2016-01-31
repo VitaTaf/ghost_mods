@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 196
     iput-object p1, p0, Lcom/android/settings/TetherService$1;->this$0:Lcom/android/settings/TetherService;
 
     iput-object p2, p0, Lcom/android/settings/TetherService$1;->val$adapter:Landroid/bluetooth/BluetoothAdapter;
@@ -46,7 +45,6 @@
     .param p2, "proxy"    # Landroid/bluetooth/BluetoothProfile;
 
     .prologue
-    .line 202
     move-object v0, p2
 
     check-cast v0, Landroid/bluetooth/BluetoothPan;
@@ -55,14 +53,12 @@
 
     invoke-virtual {v0, v1}, Landroid/bluetooth/BluetoothPan;->setBluetoothTethering(Z)V
 
-    .line 203
     iget-object v0, p0, Lcom/android/settings/TetherService$1;->val$adapter:Landroid/bluetooth/BluetoothAdapter;
 
     const/4 v1, 0x5
 
     invoke-virtual {v0, v1, p2}, Landroid/bluetooth/BluetoothAdapter;->closeProfileProxy(ILandroid/bluetooth/BluetoothProfile;)V
 
-    .line 204
     return-void
 .end method
 
@@ -71,6 +67,5 @@
     .param p1, "profile"    # I
 
     .prologue
-    .line 198
     return-void
 .end method

@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 185
     iput-object p1, p0, Lcom/android/settings/nfc/PaymentSettings$SettingsPackageMonitor;->this$0:Lcom/android/settings/nfc/PaymentSettings;
 
     invoke-direct {p0}, Lcom/android/internal/content/PackageMonitor;-><init>()V
@@ -37,7 +36,6 @@
     .param p2, "x1"    # Lcom/android/settings/nfc/PaymentSettings$1;
 
     .prologue
-    .line 185
     invoke-direct {p0, p1}, Lcom/android/settings/nfc/PaymentSettings$SettingsPackageMonitor;-><init>(Lcom/android/settings/nfc/PaymentSettings;)V
 
     return-void
@@ -51,7 +49,6 @@
     .param p2, "uid"    # I
 
     .prologue
-    .line 188
     iget-object v0, p0, Lcom/android/settings/nfc/PaymentSettings$SettingsPackageMonitor;->this$0:Lcom/android/settings/nfc/PaymentSettings;
 
     # getter for: Lcom/android/settings/nfc/PaymentSettings;->mHandler:Landroid/os/Handler;
@@ -65,7 +62,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 189
     return-void
 .end method
 
@@ -75,7 +71,6 @@
     .param p2, "reason"    # I
 
     .prologue
-    .line 193
     iget-object v0, p0, Lcom/android/settings/nfc/PaymentSettings$SettingsPackageMonitor;->this$0:Lcom/android/settings/nfc/PaymentSettings;
 
     # getter for: Lcom/android/settings/nfc/PaymentSettings;->mHandler:Landroid/os/Handler;
@@ -89,7 +84,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 194
     return-void
 .end method
 
@@ -99,7 +93,6 @@
     .param p2, "reason"    # I
 
     .prologue
-    .line 198
     iget-object v0, p0, Lcom/android/settings/nfc/PaymentSettings$SettingsPackageMonitor;->this$0:Lcom/android/settings/nfc/PaymentSettings;
 
     # getter for: Lcom/android/settings/nfc/PaymentSettings;->mHandler:Landroid/os/Handler;
@@ -113,7 +106,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 199
     return-void
 .end method
 
@@ -123,7 +115,6 @@
     .param p2, "uid"    # I
 
     .prologue
-    .line 203
     iget-object v0, p0, Lcom/android/settings/nfc/PaymentSettings$SettingsPackageMonitor;->this$0:Lcom/android/settings/nfc/PaymentSettings;
 
     # getter for: Lcom/android/settings/nfc/PaymentSettings;->mHandler:Landroid/os/Handler;
@@ -137,6 +128,5 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 204
     return-void
 .end method

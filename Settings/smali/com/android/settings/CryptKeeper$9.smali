@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 960
     iput-object p1, p0, Lcom/android/settings/CryptKeeper$9;->this$0:Lcom/android/settings/CryptKeeper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +40,10 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 964
     iget-object v0, p0, Lcom/android/settings/CryptKeeper$9;->this$0:Lcom/android/settings/CryptKeeper;
 
     # invokes: Lcom/android/settings/CryptKeeper;->takeEmergencyCallAction()V
     invoke-static {v0}, Lcom/android/settings/CryptKeeper;->access$2000(Lcom/android/settings/CryptKeeper;)V
 
-    .line 965
     return-void
 .end method

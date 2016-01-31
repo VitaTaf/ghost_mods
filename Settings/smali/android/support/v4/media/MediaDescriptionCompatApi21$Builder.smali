@@ -20,7 +20,6 @@
     .param p0, "builderObj"    # Ljava/lang/Object;
 
     .prologue
-    .line 97
     check-cast p0, Landroid/media/MediaDescription$Builder;
 
     .end local p0    # "builderObj":Ljava/lang/Object;
@@ -35,7 +34,6 @@
     .locals 1
 
     .prologue
-    .line 64
     new-instance v0, Landroid/media/MediaDescription$Builder;
 
     invoke-direct {v0}, Landroid/media/MediaDescription$Builder;-><init>()V
@@ -49,13 +47,11 @@
     .param p1, "description"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 81
     check-cast p0, Landroid/media/MediaDescription$Builder;
 
     .end local p0    # "builderObj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/media/MediaDescription$Builder;->setDescription(Ljava/lang/CharSequence;)Landroid/media/MediaDescription$Builder;
 
-    .line 82
     return-void
 .end method
 
@@ -65,13 +61,11 @@
     .param p1, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 93
     check-cast p0, Landroid/media/MediaDescription$Builder;
 
     .end local p0    # "builderObj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/media/MediaDescription$Builder;->setExtras(Landroid/os/Bundle;)Landroid/media/MediaDescription$Builder;
 
-    .line 94
     return-void
 .end method
 
@@ -81,13 +75,11 @@
     .param p1, "iconBitmap"    # Landroid/graphics/Bitmap;
 
     .prologue
-    .line 85
     check-cast p0, Landroid/media/MediaDescription$Builder;
 
     .end local p0    # "builderObj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/media/MediaDescription$Builder;->setIconBitmap(Landroid/graphics/Bitmap;)Landroid/media/MediaDescription$Builder;
 
-    .line 86
     return-void
 .end method
 
@@ -97,13 +89,11 @@
     .param p1, "iconUri"    # Landroid/net/Uri;
 
     .prologue
-    .line 89
     check-cast p0, Landroid/media/MediaDescription$Builder;
 
     .end local p0    # "builderObj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/media/MediaDescription$Builder;->setIconUri(Landroid/net/Uri;)Landroid/media/MediaDescription$Builder;
 
-    .line 90
     return-void
 .end method
 
@@ -113,13 +103,11 @@
     .param p1, "mediaId"    # Ljava/lang/String;
 
     .prologue
-    .line 69
     check-cast p0, Landroid/media/MediaDescription$Builder;
 
     .end local p0    # "builderObj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/media/MediaDescription$Builder;->setMediaId(Ljava/lang/String;)Landroid/media/MediaDescription$Builder;
 
-    .line 70
     return-void
 .end method
 
@@ -129,13 +117,11 @@
     .param p1, "subtitle"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 77
     check-cast p0, Landroid/media/MediaDescription$Builder;
 
     .end local p0    # "builderObj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/media/MediaDescription$Builder;->setSubtitle(Ljava/lang/CharSequence;)Landroid/media/MediaDescription$Builder;
 
-    .line 78
     return-void
 .end method
 
@@ -145,12 +131,10 @@
     .param p1, "title"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 73
     check-cast p0, Landroid/media/MediaDescription$Builder;
 
     .end local p0    # "builderObj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/media/MediaDescription$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/media/MediaDescription$Builder;
 
-    .line 74
     return-void
 .end method

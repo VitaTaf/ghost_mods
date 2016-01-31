@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 141
     iput-object p1, p0, Lcom/android/settings/accessibility/AccessibilitySettings$2;->this$0:Lcom/android/settings/accessibility/AccessibilitySettings;
 
     invoke-direct {p0}, Lcom/android/internal/content/PackageMonitor;-><init>()V
@@ -35,7 +34,6 @@
     .locals 4
 
     .prologue
-    .line 163
     iget-object v0, p0, Lcom/android/settings/accessibility/AccessibilitySettings$2;->this$0:Lcom/android/settings/accessibility/AccessibilitySettings;
 
     # getter for: Lcom/android/settings/accessibility/AccessibilitySettings;->mHandler:Landroid/os/Handler;
@@ -54,7 +52,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 164
     return-void
 .end method
 
@@ -66,10 +63,8 @@
     .param p2, "uid"    # I
 
     .prologue
-    .line 144
     invoke-direct {p0}, Lcom/android/settings/accessibility/AccessibilitySettings$2;->sendUpdate()V
 
-    .line 145
     return-void
 .end method
 
@@ -79,10 +74,8 @@
     .param p2, "reason"    # I
 
     .prologue
-    .line 149
     invoke-direct {p0}, Lcom/android/settings/accessibility/AccessibilitySettings$2;->sendUpdate()V
 
-    .line 150
     return-void
 .end method
 
@@ -92,10 +85,8 @@
     .param p2, "reason"    # I
 
     .prologue
-    .line 154
     invoke-direct {p0}, Lcom/android/settings/accessibility/AccessibilitySettings$2;->sendUpdate()V
 
-    .line 155
     return-void
 .end method
 
@@ -105,9 +96,7 @@
     .param p2, "uid"    # I
 
     .prologue
-    .line 159
     invoke-direct {p0}, Lcom/android/settings/accessibility/AccessibilitySettings$2;->sendUpdate()V
 
-    .line 160
     return-void
 .end method

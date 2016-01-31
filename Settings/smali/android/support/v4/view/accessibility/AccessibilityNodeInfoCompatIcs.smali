@@ -10,13 +10,11 @@
     .param p1, "action"    # I
 
     .prologue
-    .line 43
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .end local p0    # "info":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
-    .line 44
     return-void
 .end method
 
@@ -25,7 +23,6 @@
     .param p0, "info"    # Ljava/lang/Object;
 
     .prologue
-    .line 57
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .end local p0    # "info":Ljava/lang/Object;
@@ -42,13 +39,11 @@
     .param p1, "outBounds"    # Landroid/graphics/Rect;
 
     .prologue
-    .line 61
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .end local p0    # "info":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->getBoundsInParent(Landroid/graphics/Rect;)V
 
-    .line 62
     return-void
 .end method
 
@@ -58,13 +53,11 @@
     .param p1, "outBounds"    # Landroid/graphics/Rect;
 
     .prologue
-    .line 65
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .end local p0    # "info":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->getBoundsInScreen(Landroid/graphics/Rect;)V
 
-    .line 66
     return-void
 .end method
 
@@ -73,7 +66,6 @@
     .param p0, "info"    # Ljava/lang/Object;
 
     .prologue
-    .line 77
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .end local p0    # "info":Ljava/lang/Object;
@@ -89,7 +81,6 @@
     .param p0, "info"    # Ljava/lang/Object;
 
     .prologue
-    .line 81
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .end local p0    # "info":Ljava/lang/Object;
@@ -105,7 +96,6 @@
     .param p0, "info"    # Ljava/lang/Object;
 
     .prologue
-    .line 85
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .end local p0    # "info":Ljava/lang/Object;
@@ -121,7 +111,6 @@
     .param p0, "info"    # Ljava/lang/Object;
 
     .prologue
-    .line 93
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .end local p0    # "info":Ljava/lang/Object;
@@ -137,7 +126,6 @@
     .param p0, "info"    # Ljava/lang/Object;
 
     .prologue
-    .line 101
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .end local p0    # "info":Ljava/lang/Object;
@@ -153,7 +141,6 @@
     .param p0, "info"    # Ljava/lang/Object;
 
     .prologue
-    .line 105
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .end local p0    # "info":Ljava/lang/Object;
@@ -169,7 +156,6 @@
     .param p0, "info"    # Ljava/lang/Object;
 
     .prologue
-    .line 109
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .end local p0    # "info":Ljava/lang/Object;
@@ -185,7 +171,6 @@
     .param p0, "info"    # Ljava/lang/Object;
 
     .prologue
-    .line 113
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .end local p0    # "info":Ljava/lang/Object;
@@ -201,7 +186,6 @@
     .param p0, "info"    # Ljava/lang/Object;
 
     .prologue
-    .line 117
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .end local p0    # "info":Ljava/lang/Object;
@@ -217,7 +201,6 @@
     .param p0, "info"    # Ljava/lang/Object;
 
     .prologue
-    .line 121
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .end local p0    # "info":Ljava/lang/Object;
@@ -233,7 +216,6 @@
     .param p0, "info"    # Ljava/lang/Object;
 
     .prologue
-    .line 125
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .end local p0    # "info":Ljava/lang/Object;
@@ -249,7 +231,6 @@
     .param p0, "info"    # Ljava/lang/Object;
 
     .prologue
-    .line 129
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .end local p0    # "info":Ljava/lang/Object;
@@ -265,7 +246,6 @@
     .param p0, "info"    # Ljava/lang/Object;
 
     .prologue
-    .line 133
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .end local p0    # "info":Ljava/lang/Object;
@@ -281,7 +261,6 @@
     .param p0, "info"    # Ljava/lang/Object;
 
     .prologue
-    .line 137
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .end local p0    # "info":Ljava/lang/Object;
@@ -298,13 +277,11 @@
     .param p1, "className"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 161
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .end local p0    # "info":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 162
     return-void
 .end method
 
@@ -314,13 +291,11 @@
     .param p1, "parent"    # Landroid/view/View;
 
     .prologue
-    .line 193
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .end local p0    # "info":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setParent(Landroid/view/View;)V
 
-    .line 194
     return-void
 .end method
 
@@ -330,12 +305,10 @@
     .param p1, "scrollable"    # Z
 
     .prologue
-    .line 201
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .end local p0    # "info":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setScrollable(Z)V
 
-    .line 202
     return-void
 .end method

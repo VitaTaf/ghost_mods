@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 156
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeSettings$2;->this$0:Lcom/android/settings/notification/ZenModeSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,15 +40,12 @@
     .param p1, "value"    # I
 
     .prologue
-    .line 159
     if-eqz p1, :cond_0
 
-    .line 160
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeSettings$2;->this$0:Lcom/android/settings/notification/ZenModeSettings;
 
     invoke-virtual {v0, p1}, Lcom/android/settings/notification/ZenModeSettings;->showConditionSelection(I)V
 
-    .line 162
     :cond_0
     return-void
 .end method

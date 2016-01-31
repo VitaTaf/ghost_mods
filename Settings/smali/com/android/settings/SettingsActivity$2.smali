@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 363
     iput-object p1, p0, Lcom/android/settings/SettingsActivity$2;->this$0:Lcom/android/settings/SettingsActivity;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -38,17 +37,14 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 366
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 374
     :cond_0
     :goto_0
     return-void
 
-    .line 368
     :pswitch_0
     invoke-virtual {p1}, Landroid/os/Message;->getData()Landroid/os/Bundle;
 
@@ -60,11 +56,9 @@
 
     move-result v0
 
-    .line 369
     .local v0, "forceRefresh":Z
     if-eqz v0, :cond_0
 
-    .line 370
     iget-object v1, p0, Lcom/android/settings/SettingsActivity$2;->this$0:Lcom/android/settings/SettingsActivity;
 
     iget-object v2, p0, Lcom/android/settings/SettingsActivity$2;->this$0:Lcom/android/settings/SettingsActivity;
@@ -79,7 +73,6 @@
 
     goto :goto_0
 
-    .line 366
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

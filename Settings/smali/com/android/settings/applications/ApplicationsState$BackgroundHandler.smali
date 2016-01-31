@@ -28,20 +28,16 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 934
     iput-object p1, p0, Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;->this$0:Lcom/android/settings/applications/ApplicationsState;
 
-    .line 935
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 878
     new-instance v0, Lcom/android/settings/applications/ApplicationsState$BackgroundHandler$1;
 
     invoke-direct {v0, p0}, Lcom/android/settings/applications/ApplicationsState$BackgroundHandler$1;-><init>(Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;)V
 
     iput-object v0, p0, Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;->mStatsObserver:Landroid/content/pm/IPackageStatsObserver$Stub;
 
-    .line 936
     return-void
 .end method
 
@@ -52,10 +48,8 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 941
     const/4 v9, 0x0
 
-    .line 942
     .local v9, "rebuildingSessions":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/settings/applications/ApplicationsState$Session;>;"
     move-object/from16 v0, p0
 
@@ -65,7 +59,6 @@
 
     monitor-enter v12
 
-    .line 943
     :try_start_0
     move-object/from16 v0, p0
 
@@ -79,7 +72,6 @@
 
     if-lez v11, :cond_0
 
-    .line 944
     new-instance v10, Ljava/util/ArrayList;
 
     move-object/from16 v0, p0
@@ -92,7 +84,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 945
     .end local v9    # "rebuildingSessions":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/settings/applications/ApplicationsState$Session;>;"
     .local v10, "rebuildingSessions":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/settings/applications/ApplicationsState$Session;>;"
     :try_start_1
@@ -108,7 +99,6 @@
 
     move-object v9, v10
 
-    .line 947
     .end local v10    # "rebuildingSessions":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/settings/applications/ApplicationsState$Session;>;"
     .restart local v9    # "rebuildingSessions":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/settings/applications/ApplicationsState$Session;>;"
     :cond_0
@@ -117,10 +107,8 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 948
     if-eqz v9, :cond_1
 
-    .line 949
     const/4 v3, 0x0
 
     .local v3, "i":I
@@ -131,7 +119,6 @@
 
     if-ge v3, v11, :cond_1
 
-    .line 950
     invoke-virtual {v9, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v11
@@ -140,12 +127,10 @@
 
     invoke-virtual {v11}, Lcom/android/settings/applications/ApplicationsState$Session;->handleRebuildList()V
 
-    .line 949
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 947
     .end local v3    # "i":I
     :catchall_0
     move-exception v11
@@ -158,7 +143,6 @@
 
     throw v11
 
-    .line 954
     :cond_1
     move-object/from16 v0, p1
 
@@ -166,16 +150,13 @@
 
     packed-switch v11, :pswitch_data_0
 
-    .line 1055
     :goto_2
     :pswitch_0
     return-void
 
-    .line 958
     :pswitch_1
     const/4 v8, 0x0
 
-    .line 959
     .local v8, "numDone":I
     move-object/from16 v0, p0
 
@@ -185,7 +166,6 @@
 
     monitor-enter v12
 
-    .line 961
     const/4 v3, 0x0
 
     .restart local v3    # "i":I
@@ -207,21 +187,18 @@
 
     if-ge v8, v11, :cond_4
 
-    .line 962
     move-object/from16 v0, p0
 
     iget-boolean v11, v0, Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;->mRunning:Z
 
     if-nez v11, :cond_2
 
-    .line 963
     const/4 v11, 0x1
 
     move-object/from16 v0, p0
 
     iput-boolean v11, v0, Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;->mRunning:Z
 
-    .line 964
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;->this$0:Lcom/android/settings/applications/ApplicationsState;
@@ -240,7 +217,6 @@
 
     move-result-object v5
 
-    .line 966
     .local v5, "m":Landroid/os/Message;
     move-object/from16 v0, p0
 
@@ -250,7 +226,6 @@
 
     invoke-virtual {v11, v5}, Lcom/android/settings/applications/ApplicationsState$MainHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 968
     .end local v5    # "m":Landroid/os/Message;
     :cond_2
     move-object/from16 v0, p0
@@ -265,7 +240,6 @@
 
     check-cast v4, Landroid/content/pm/ApplicationInfo;
 
-    .line 969
     .local v4, "info":Landroid/content/pm/ApplicationInfo;
     move-object/from16 v0, p0
 
@@ -281,35 +255,29 @@
 
     if-nez v11, :cond_3
 
-    .line 970
     add-int/lit8 v8, v8, 0x1
 
-    .line 971
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;->this$0:Lcom/android/settings/applications/ApplicationsState;
 
     invoke-virtual {v11, v4}, Lcom/android/settings/applications/ApplicationsState;->getEntryLocked(Landroid/content/pm/ApplicationInfo;)Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    .line 961
     :cond_3
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_3
 
-    .line 975
     .end local v4    # "info":Landroid/content/pm/ApplicationInfo;
     :cond_4
     monitor-exit v12
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 977
     const/4 v11, 0x6
 
     if-lt v8, v11, :cond_5
 
-    .line 978
     const/4 v11, 0x2
 
     move-object/from16 v0, p0
@@ -318,7 +286,6 @@
 
     goto :goto_2
 
-    .line 975
     :catchall_1
     move-exception v11
 
@@ -329,7 +296,6 @@
 
     throw v11
 
-    .line 980
     :cond_5
     const/4 v11, 0x3
 
@@ -339,13 +305,11 @@
 
     goto :goto_2
 
-    .line 984
     .end local v3    # "i":I
     .end local v8    # "numDone":I
     :pswitch_2
     const/4 v8, 0x0
 
-    .line 985
     .restart local v8    # "numDone":I
     move-object/from16 v0, p0
 
@@ -355,7 +319,6 @@
 
     monitor-enter v12
 
-    .line 987
     const/4 v3, 0x0
 
     .restart local v3    # "i":I
@@ -377,7 +340,6 @@
 
     if-ge v8, v11, :cond_a
 
-    .line 988
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;->this$0:Lcom/android/settings/applications/ApplicationsState;
@@ -390,7 +352,6 @@
 
     check-cast v2, Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    .line 989
     .local v2, "entry":Lcom/android/settings/applications/ApplicationsState$AppEntry;
     iget-object v11, v2, Lcom/android/settings/applications/ApplicationsState$AppEntry;->icon:Landroid/graphics/drawable/Drawable;
 
@@ -400,13 +361,11 @@
 
     if-nez v11, :cond_9
 
-    .line 990
     :cond_6
     monitor-enter v2
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_3
 
-    .line 991
     :try_start_7
     move-object/from16 v0, p0
 
@@ -426,21 +385,18 @@
 
     if-eqz v11, :cond_8
 
-    .line 992
     move-object/from16 v0, p0
 
     iget-boolean v11, v0, Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;->mRunning:Z
 
     if-nez v11, :cond_7
 
-    .line 993
     const/4 v11, 0x1
 
     move-object/from16 v0, p0
 
     iput-boolean v11, v0, Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;->mRunning:Z
 
-    .line 994
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;->this$0:Lcom/android/settings/applications/ApplicationsState;
@@ -459,7 +415,6 @@
 
     move-result-object v5
 
-    .line 996
     .restart local v5    # "m":Landroid/os/Message;
     move-object/from16 v0, p0
 
@@ -469,22 +424,18 @@
 
     invoke-virtual {v11, v5}, Lcom/android/settings/applications/ApplicationsState$MainHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 998
     .end local v5    # "m":Landroid/os/Message;
     :cond_7
     add-int/lit8 v8, v8, 0x1
 
-    .line 1000
     :cond_8
     monitor-exit v2
 
-    .line 987
     :cond_9
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_4
 
-    .line 1000
     :catchall_2
     move-exception v11
 
@@ -495,7 +446,6 @@
     :try_start_8
     throw v11
 
-    .line 1004
     .end local v2    # "entry":Lcom/android/settings/applications/ApplicationsState$AppEntry;
     :catchall_3
     move-exception v11
@@ -512,10 +462,8 @@
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_3
 
-    .line 1005
     if-lez v8, :cond_b
 
-    .line 1006
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;->this$0:Lcom/android/settings/applications/ApplicationsState;
@@ -530,7 +478,6 @@
 
     if-nez v11, :cond_b
 
-    .line 1007
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;->this$0:Lcom/android/settings/applications/ApplicationsState;
@@ -541,13 +488,11 @@
 
     invoke-virtual {v11, v12}, Lcom/android/settings/applications/ApplicationsState$MainHandler;->sendEmptyMessage(I)Z
 
-    .line 1010
     :cond_b
     const/4 v11, 0x2
 
     if-lt v8, v11, :cond_c
 
-    .line 1011
     const/4 v11, 0x3
 
     move-object/from16 v0, p0
@@ -556,7 +501,6 @@
 
     goto/16 :goto_2
 
-    .line 1013
     :cond_c
     const/4 v11, 0x4
 
@@ -566,7 +510,6 @@
 
     goto/16 :goto_2
 
-    .line 1017
     .end local v3    # "i":I
     .end local v8    # "numDone":I
     :pswitch_3
@@ -578,7 +521,6 @@
 
     monitor-enter v12
 
-    .line 1019
     :try_start_a
     move-object/from16 v0, p0
 
@@ -588,12 +530,10 @@
 
     if-eqz v11, :cond_d
 
-    .line 1021
     monitor-exit v12
 
     goto/16 :goto_2
 
-    .line 1052
     :catchall_4
     move-exception v11
 
@@ -603,14 +543,12 @@
 
     throw v11
 
-    .line 1024
     :cond_d
     :try_start_b
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v6
 
-    .line 1025
     .local v6, "now":J
     const/4 v3, 0x0
 
@@ -628,7 +566,6 @@
 
     if-ge v3, v11, :cond_13
 
-    .line 1026
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;->this$0:Lcom/android/settings/applications/ApplicationsState;
@@ -641,7 +578,6 @@
 
     check-cast v2, Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    .line 1027
     .restart local v2    # "entry":Lcom/android/settings/applications/ApplicationsState$AppEntry;
     iget-wide v14, v2, Lcom/android/settings/applications/ApplicationsState$AppEntry;->size:J
 
@@ -655,7 +591,6 @@
 
     if-eqz v11, :cond_12
 
-    .line 1028
     :cond_e
     iget-wide v14, v2, Lcom/android/settings/applications/ApplicationsState$AppEntry;->sizeLoadStart:J
 
@@ -675,7 +610,6 @@
 
     if-gez v11, :cond_11
 
-    .line 1030
     :cond_f
     move-object/from16 v0, p0
 
@@ -683,14 +617,12 @@
 
     if-nez v11, :cond_10
 
-    .line 1031
     const/4 v11, 0x1
 
     move-object/from16 v0, p0
 
     iput-boolean v11, v0, Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;->mRunning:Z
 
-    .line 1032
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;->this$0:Lcom/android/settings/applications/ApplicationsState;
@@ -709,7 +641,6 @@
 
     move-result-object v5
 
-    .line 1034
     .restart local v5    # "m":Landroid/os/Message;
     move-object/from16 v0, p0
 
@@ -719,12 +650,10 @@
 
     invoke-virtual {v11, v5}, Lcom/android/settings/applications/ApplicationsState$MainHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1036
     .end local v5    # "m":Landroid/os/Message;
     :cond_10
     iput-wide v6, v2, Lcom/android/settings/applications/ApplicationsState$AppEntry;->sizeLoadStart:J
 
-    .line 1037
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;->this$0:Lcom/android/settings/applications/ApplicationsState;
@@ -735,7 +664,6 @@
 
     iput-object v13, v11, Lcom/android/settings/applications/ApplicationsState;->mCurComputingSizePkg:Ljava/lang/String;
 
-    .line 1038
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;->this$0:Lcom/android/settings/applications/ApplicationsState;
@@ -754,19 +682,16 @@
 
     invoke-virtual {v11, v13, v14}, Landroid/content/pm/PackageManager;->getPackageSizeInfo(Ljava/lang/String;Landroid/content/pm/IPackageStatsObserver;)V
 
-    .line 1041
     :cond_11
     monitor-exit v12
 
     goto/16 :goto_2
 
-    .line 1025
     :cond_12
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_5
 
-    .line 1044
     .end local v2    # "entry":Lcom/android/settings/applications/ApplicationsState$AppEntry;
     :cond_13
     move-object/from16 v0, p0
@@ -783,7 +708,6 @@
 
     if-nez v11, :cond_14
 
-    .line 1045
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;->this$0:Lcom/android/settings/applications/ApplicationsState;
@@ -794,14 +718,12 @@
 
     invoke-virtual {v11, v13}, Lcom/android/settings/applications/ApplicationsState$MainHandler;->sendEmptyMessage(I)Z
 
-    .line 1046
     const/4 v11, 0x0
 
     move-object/from16 v0, p0
 
     iput-boolean v11, v0, Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;->mRunning:Z
 
-    .line 1047
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;->this$0:Lcom/android/settings/applications/ApplicationsState;
@@ -820,7 +742,6 @@
 
     move-result-object v5
 
-    .line 1049
     .restart local v5    # "m":Landroid/os/Message;
     move-object/from16 v0, p0
 
@@ -830,7 +751,6 @@
 
     invoke-virtual {v11, v5}, Lcom/android/settings/applications/ApplicationsState$MainHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1052
     .end local v5    # "m":Landroid/os/Message;
     :cond_14
     monitor-exit v12
@@ -839,7 +759,6 @@
 
     goto/16 :goto_2
 
-    .line 947
     .end local v3    # "i":I
     .end local v6    # "now":J
     .end local v9    # "rebuildingSessions":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/settings/applications/ApplicationsState$Session;>;"
@@ -853,7 +772,6 @@
     .restart local v9    # "rebuildingSessions":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/settings/applications/ApplicationsState$Session;>;"
     goto/16 :goto_1
 
-    .line 954
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

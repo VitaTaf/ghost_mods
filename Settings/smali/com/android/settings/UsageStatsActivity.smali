@@ -33,10 +33,8 @@
     .locals 0
 
     .prologue
-    .line 52
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
-    .line 97
     return-void
 .end method
 
@@ -45,7 +43,6 @@
     .param p0, "x0"    # Lcom/android/settings/UsageStatsActivity;
 
     .prologue
-    .line 52
     iget-object v0, p0, Lcom/android/settings/UsageStatsActivity;->mUsageStatsManager:Landroid/app/usage/UsageStatsManager;
 
     return-object v0
@@ -56,7 +53,6 @@
     .param p0, "x0"    # Lcom/android/settings/UsageStatsActivity;
 
     .prologue
-    .line 52
     iget-object v0, p0, Lcom/android/settings/UsageStatsActivity;->mPm:Landroid/content/pm/PackageManager;
 
     return-object v0
@@ -67,7 +63,6 @@
     .param p0, "x0"    # Lcom/android/settings/UsageStatsActivity;
 
     .prologue
-    .line 52
     iget-object v0, p0, Lcom/android/settings/UsageStatsActivity;->mInflater:Landroid/view/LayoutInflater;
 
     return-object v0
@@ -80,15 +75,12 @@
     .param p1, "icicle"    # Landroid/os/Bundle;
 
     .prologue
-    .line 232
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 233
     const v2, 0x7f0400ce
 
     invoke-virtual {p0, v2}, Lcom/android/settings/UsageStatsActivity;->setContentView(I)V
 
-    .line 235
     const-string v2, "usagestats"
 
     invoke-virtual {p0, v2}, Lcom/android/settings/UsageStatsActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -99,7 +91,6 @@
 
     iput-object v2, p0, Lcom/android/settings/UsageStatsActivity;->mUsageStatsManager:Landroid/app/usage/UsageStatsManager;
 
-    .line 236
     const-string v2, "layout_inflater"
 
     invoke-virtual {p0, v2}, Lcom/android/settings/UsageStatsActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -110,14 +101,12 @@
 
     iput-object v2, p0, Lcom/android/settings/UsageStatsActivity;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 237
     invoke-virtual {p0}, Lcom/android/settings/UsageStatsActivity;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v2
 
     iput-object v2, p0, Lcom/android/settings/UsageStatsActivity;->mPm:Landroid/content/pm/PackageManager;
 
-    .line 239
     const v2, 0x7f0f01d6
 
     invoke-virtual {p0, v2}, Lcom/android/settings/UsageStatsActivity;->findViewById(I)Landroid/view/View;
@@ -126,11 +115,9 @@
 
     check-cast v1, Landroid/widget/Spinner;
 
-    .line 240
     .local v1, "typeSpinner":Landroid/widget/Spinner;
     invoke-virtual {v1, p0}, Landroid/widget/Spinner;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
 
-    .line 242
     const v2, 0x7f0f01d7
 
     invoke-virtual {p0, v2}, Lcom/android/settings/UsageStatsActivity;->findViewById(I)Landroid/view/View;
@@ -139,7 +126,6 @@
 
     check-cast v0, Landroid/widget/ListView;
 
-    .line 243
     .local v0, "listView":Landroid/widget/ListView;
     new-instance v2, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;
 
@@ -147,12 +133,10 @@
 
     iput-object v2, p0, Lcom/android/settings/UsageStatsActivity;->mAdapter:Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;
 
-    .line 244
     iget-object v2, p0, Lcom/android/settings/UsageStatsActivity;->mAdapter:Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;
 
     invoke-virtual {v0, v2}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 245
     return-void
 .end method
 
@@ -172,13 +156,11 @@
     .end annotation
 
     .prologue
-    .line 249
     .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Lcom/android/settings/UsageStatsActivity;->mAdapter:Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;
 
     invoke-virtual {v0, p3}, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->sortList(I)V
 
-    .line 250
     return-void
 .end method
 
@@ -193,7 +175,6 @@
     .end annotation
 
     .prologue
-    .line 255
     .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     return-void
 .end method

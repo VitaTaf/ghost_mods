@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 171
     iput-object p1, p0, Lcom/android/settings/PrivacySettings$1;->this$0:Lcom/android/settings/PrivacySettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "preference"    # Landroid/preference/Preference;
 
     .prologue
-    .line 176
     iget-object v0, p0, Lcom/android/settings/PrivacySettings$1;->this$0:Lcom/android/settings/PrivacySettings;
 
     # getter for: Lcom/android/settings/PrivacySettings;->mClear:Landroid/preference/PreferenceScreen;
@@ -51,7 +49,6 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 177
     iget-object v0, p0, Lcom/android/settings/PrivacySettings$1;->this$0:Lcom/android/settings/PrivacySettings;
 
     invoke-virtual {v0}, Lcom/android/settings/PrivacySettings;->getActivity()Landroid/app/Activity;
@@ -60,10 +57,8 @@
 
     invoke-static {v0}, Lcom/android/settings/DemoModeSettings;->eraseAllDataOnPhone(Landroid/content/Context;)V
 
-    .line 178
     const/4 v0, 0x1
 
-    .line 181
     :goto_0
     return v0
 

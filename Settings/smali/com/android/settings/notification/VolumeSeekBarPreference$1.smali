@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 111
     iput-object p1, p0, Lcom/android/settings/notification/VolumeSeekBarPreference$1;->this$0:Lcom/android/settings/notification/VolumeSeekBarPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "muted"    # Z
 
     .prologue
-    .line 126
     iget-object v0, p0, Lcom/android/settings/notification/VolumeSeekBarPreference$1;->this$0:Lcom/android/settings/notification/VolumeSeekBarPreference;
 
     # getter for: Lcom/android/settings/notification/VolumeSeekBarPreference;->mMuted:Z
@@ -51,18 +49,15 @@
 
     if-ne v0, p1, :cond_0
 
-    .line 129
     :goto_0
     return-void
 
-    .line 127
     :cond_0
     iget-object v0, p0, Lcom/android/settings/notification/VolumeSeekBarPreference$1;->this$0:Lcom/android/settings/notification/VolumeSeekBarPreference;
 
     # setter for: Lcom/android/settings/notification/VolumeSeekBarPreference;->mMuted:Z
     invoke-static {v0, p1}, Lcom/android/settings/notification/VolumeSeekBarPreference;->access$202(Lcom/android/settings/notification/VolumeSeekBarPreference;Z)Z
 
-    .line 128
     iget-object v0, p0, Lcom/android/settings/notification/VolumeSeekBarPreference$1;->this$0:Lcom/android/settings/notification/VolumeSeekBarPreference;
 
     # invokes: Lcom/android/settings/notification/VolumeSeekBarPreference;->updateIconView()V
@@ -78,7 +73,6 @@
     .param p3, "fromTouch"    # Z
 
     .prologue
-    .line 120
     iget-object v0, p0, Lcom/android/settings/notification/VolumeSeekBarPreference$1;->this$0:Lcom/android/settings/notification/VolumeSeekBarPreference;
 
     # getter for: Lcom/android/settings/notification/VolumeSeekBarPreference;->mCallback:Lcom/android/settings/notification/VolumeSeekBarPreference$Callback;
@@ -88,7 +82,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 121
     iget-object v0, p0, Lcom/android/settings/notification/VolumeSeekBarPreference$1;->this$0:Lcom/android/settings/notification/VolumeSeekBarPreference;
 
     # getter for: Lcom/android/settings/notification/VolumeSeekBarPreference;->mCallback:Lcom/android/settings/notification/VolumeSeekBarPreference$Callback;
@@ -105,7 +98,6 @@
 
     invoke-interface {v0, v1, p2}, Lcom/android/settings/notification/VolumeSeekBarPreference$Callback;->onStreamValueChanged(II)V
 
-    .line 123
     :cond_0
     return-void
 .end method
@@ -115,7 +107,6 @@
     .param p1, "sbv"    # Landroid/preference/SeekBarVolumizer;
 
     .prologue
-    .line 114
     iget-object v0, p0, Lcom/android/settings/notification/VolumeSeekBarPreference$1;->this$0:Lcom/android/settings/notification/VolumeSeekBarPreference;
 
     # getter for: Lcom/android/settings/notification/VolumeSeekBarPreference;->mCallback:Lcom/android/settings/notification/VolumeSeekBarPreference$Callback;
@@ -125,7 +116,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 115
     iget-object v0, p0, Lcom/android/settings/notification/VolumeSeekBarPreference$1;->this$0:Lcom/android/settings/notification/VolumeSeekBarPreference;
 
     # getter for: Lcom/android/settings/notification/VolumeSeekBarPreference;->mCallback:Lcom/android/settings/notification/VolumeSeekBarPreference$Callback;
@@ -135,7 +125,6 @@
 
     invoke-interface {v0, p1}, Lcom/android/settings/notification/VolumeSeekBarPreference$Callback;->onSampleStarting(Landroid/preference/SeekBarVolumizer;)V
 
-    .line 117
     :cond_0
     return-void
 .end method

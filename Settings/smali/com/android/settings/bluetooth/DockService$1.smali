@@ -32,7 +32,6 @@
     .locals 0
 
     .prologue
-    .line 396
     iput-object p1, p0, Lcom/android/settings/bluetooth/DockService$1;->this$0:Lcom/android/settings/bluetooth/DockService;
 
     iput-object p2, p0, Lcom/android/settings/bluetooth/DockService$1;->val$d:Landroid/bluetooth/BluetoothDevice;
@@ -52,7 +51,6 @@
     .locals 4
 
     .prologue
-    .line 398
     iget-object v0, p0, Lcom/android/settings/bluetooth/DockService$1;->this$0:Lcom/android/settings/bluetooth/DockService;
 
     iget-object v1, p0, Lcom/android/settings/bluetooth/DockService$1;->val$d:Landroid/bluetooth/BluetoothDevice;
@@ -64,6 +62,5 @@
     # invokes: Lcom/android/settings/bluetooth/DockService;->handleDocked(Landroid/bluetooth/BluetoothDevice;II)V
     invoke-static {v0, v1, v2, v3}, Lcom/android/settings/bluetooth/DockService;->access$200(Lcom/android/settings/bluetooth/DockService;Landroid/bluetooth/BluetoothDevice;II)V
 
-    .line 399
     return-void
 .end method

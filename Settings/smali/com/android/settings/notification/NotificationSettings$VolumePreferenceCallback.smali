@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 261
     iput-object p1, p0, Lcom/android/settings/notification/NotificationSettings$VolumePreferenceCallback;->this$0:Lcom/android/settings/notification/NotificationSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .param p2, "x1"    # Lcom/android/settings/notification/NotificationSettings$1;
 
     .prologue
-    .line 261
     invoke-direct {p0, p1}, Lcom/android/settings/notification/NotificationSettings$VolumePreferenceCallback;-><init>(Lcom/android/settings/notification/NotificationSettings;)V
 
     return-void
@@ -57,7 +55,6 @@
     .prologue
     const/4 v1, 0x3
 
-    .line 266
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings$VolumePreferenceCallback;->mCurrent:Landroid/preference/SeekBarVolumizer;
 
     if-eqz v0, :cond_0
@@ -66,21 +63,17 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 267
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings$VolumePreferenceCallback;->mCurrent:Landroid/preference/SeekBarVolumizer;
 
     invoke-virtual {v0}, Landroid/preference/SeekBarVolumizer;->stopSample()V
 
-    .line 269
     :cond_0
     iput-object p1, p0, Lcom/android/settings/notification/NotificationSettings$VolumePreferenceCallback;->mCurrent:Landroid/preference/SeekBarVolumizer;
 
-    .line 270
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings$VolumePreferenceCallback;->mCurrent:Landroid/preference/SeekBarVolumizer;
 
     if-eqz v0, :cond_1
 
-    .line 271
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings$VolumePreferenceCallback;->this$0:Lcom/android/settings/notification/NotificationSettings;
 
     # getter for: Lcom/android/settings/notification/NotificationSettings;->mHandler:Lcom/android/settings/notification/NotificationSettings$H;
@@ -90,7 +83,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/notification/NotificationSettings$H;->removeMessages(I)V
 
-    .line 272
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings$VolumePreferenceCallback;->this$0:Lcom/android/settings/notification/NotificationSettings;
 
     # getter for: Lcom/android/settings/notification/NotificationSettings;->mHandler:Lcom/android/settings/notification/NotificationSettings$H;
@@ -102,7 +94,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/settings/notification/NotificationSettings$H;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 274
     :cond_1
     return-void
 .end method
@@ -113,7 +104,6 @@
     .param p2, "progress"    # I
 
     .prologue
-    .line 279
     return-void
 .end method
 
@@ -121,17 +111,14 @@
     .locals 1
 
     .prologue
-    .line 282
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings$VolumePreferenceCallback;->mCurrent:Landroid/preference/SeekBarVolumizer;
 
     if-eqz v0, :cond_0
 
-    .line 283
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings$VolumePreferenceCallback;->mCurrent:Landroid/preference/SeekBarVolumizer;
 
     invoke-virtual {v0}, Landroid/preference/SeekBarVolumizer;->stopSample()V
 
-    .line 285
     :cond_0
     return-void
 .end method

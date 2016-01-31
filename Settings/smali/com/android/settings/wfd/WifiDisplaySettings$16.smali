@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 618
     iput-object p1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$16;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     invoke-direct {p0}, Landroid/media/MediaRouter$SimpleCallback;-><init>()V
@@ -39,7 +38,6 @@
     .param p2, "info"    # Landroid/media/MediaRouter$RouteInfo;
 
     .prologue
-    .line 621
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$16;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     const/4 v1, 0x2
@@ -47,7 +45,6 @@
     # invokes: Lcom/android/settings/wfd/WifiDisplaySettings;->scheduleUpdate(I)V
     invoke-static {v0, v1}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$1200(Lcom/android/settings/wfd/WifiDisplaySettings;I)V
 
-    .line 622
     return-void
 .end method
 
@@ -57,7 +54,6 @@
     .param p2, "info"    # Landroid/media/MediaRouter$RouteInfo;
 
     .prologue
-    .line 626
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$16;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     const/4 v1, 0x2
@@ -65,7 +61,6 @@
     # invokes: Lcom/android/settings/wfd/WifiDisplaySettings;->scheduleUpdate(I)V
     invoke-static {v0, v1}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$1200(Lcom/android/settings/wfd/WifiDisplaySettings;I)V
 
-    .line 627
     return-void
 .end method
 
@@ -75,7 +70,6 @@
     .param p2, "info"    # Landroid/media/MediaRouter$RouteInfo;
 
     .prologue
-    .line 631
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$16;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     const/4 v1, 0x2
@@ -83,7 +77,6 @@
     # invokes: Lcom/android/settings/wfd/WifiDisplaySettings;->scheduleUpdate(I)V
     invoke-static {v0, v1}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$1200(Lcom/android/settings/wfd/WifiDisplaySettings;I)V
 
-    .line 632
     return-void
 .end method
 
@@ -94,7 +87,6 @@
     .param p3, "info"    # Landroid/media/MediaRouter$RouteInfo;
 
     .prologue
-    .line 636
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$16;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     const/4 v1, 0x2
@@ -102,7 +94,6 @@
     # invokes: Lcom/android/settings/wfd/WifiDisplaySettings;->scheduleUpdate(I)V
     invoke-static {v0, v1}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$1200(Lcom/android/settings/wfd/WifiDisplaySettings;I)V
 
-    .line 637
     return-void
 .end method
 
@@ -113,7 +104,6 @@
     .param p3, "info"    # Landroid/media/MediaRouter$RouteInfo;
 
     .prologue
-    .line 641
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$16;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     const/4 v1, 0x2
@@ -121,6 +111,5 @@
     # invokes: Lcom/android/settings/wfd/WifiDisplaySettings;->scheduleUpdate(I)V
     invoke-static {v0, v1}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$1200(Lcom/android/settings/wfd/WifiDisplaySettings;I)V
 
-    .line 642
     return-void
 .end method

@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 234
     iput-object p1, p0, Lcom/android/settings/WirelessSettings$1;->this$0:Lcom/android/settings/WirelessSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .param p2, "id"    # I
 
     .prologue
-    .line 237
     iget-object v0, p0, Lcom/android/settings/WirelessSettings$1;->this$0:Lcom/android/settings/WirelessSettings;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -66,7 +64,6 @@
     # invokes: Lcom/android/settings/WirelessSettings;->log(Ljava/lang/String;)V
     invoke-static {v0, v1}, Lcom/android/settings/WirelessSettings;->access$000(Lcom/android/settings/WirelessSettings;Ljava/lang/String;)V
 
-    .line 238
     iget-object v0, p0, Lcom/android/settings/WirelessSettings$1;->this$0:Lcom/android/settings/WirelessSettings;
 
     const/4 v1, 0x0
@@ -74,6 +71,5 @@
     # setter for: Lcom/android/settings/WirelessSettings;->mManageMobilePlanMessage:Ljava/lang/String;
     invoke-static {v0, v1}, Lcom/android/settings/WirelessSettings;->access$102(Lcom/android/settings/WirelessSettings;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 239
     return-void
 .end method

@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 87
     iput-object p1, p0, Lcom/android/settings/notification/ManagedServiceSettings$2;->this$0:Lcom/android/settings/notification/ManagedServiceSettings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 90
     iget-object v0, p0, Lcom/android/settings/notification/ManagedServiceSettings$2;->this$0:Lcom/android/settings/notification/ManagedServiceSettings;
 
     # invokes: Lcom/android/settings/notification/ManagedServiceSettings;->updateList()V
     invoke-static {v0}, Lcom/android/settings/notification/ManagedServiceSettings;->access$000(Lcom/android/settings/notification/ManagedServiceSettings;)V
 
-    .line 91
     return-void
 .end method

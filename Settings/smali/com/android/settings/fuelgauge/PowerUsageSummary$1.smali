@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 85
     iput-object p1, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$1;->this$0:Lcom/android/settings/fuelgauge/PowerUsageSummary;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -41,12 +40,10 @@
     .prologue
     const/16 v4, 0x64
 
-    .line 89
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 90
     .local v0, "action":Ljava/lang/String;
     const-string v1, "android.intent.action.BATTERY_CHANGED"
 
@@ -65,7 +62,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 92
     iget-object v1, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$1;->this$0:Lcom/android/settings/fuelgauge/PowerUsageSummary;
 
     iget-object v1, v1, Lcom/android/settings/fuelgauge/PowerUsageSummary;->mHandler:Landroid/os/Handler;
@@ -76,7 +72,6 @@
 
     if-nez v1, :cond_0
 
-    .line 93
     iget-object v1, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$1;->this$0:Lcom/android/settings/fuelgauge/PowerUsageSummary;
 
     iget-object v1, v1, Lcom/android/settings/fuelgauge/PowerUsageSummary;->mHandler:Landroid/os/Handler;
@@ -85,7 +80,6 @@
 
     invoke-virtual {v1, v4, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 96
     :cond_0
     return-void
 .end method

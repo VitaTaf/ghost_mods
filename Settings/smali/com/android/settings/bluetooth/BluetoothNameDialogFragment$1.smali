@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 68
     iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment$1;->this$0:Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 71
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 72
     .local v0, "action":Ljava/lang/String;
     const-string v1, "android.bluetooth.adapter.action.LOCAL_NAME_CHANGED"
 
@@ -54,17 +51,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 73
     iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment$1;->this$0:Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
 
     invoke-virtual {v1}, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->updateDeviceName()V
 
-    .line 79
     :cond_0
     :goto_0
     return-void
 
-    .line 74
     :cond_1
     const-string v1, "android.bluetooth.adapter.action.STATE_CHANGED"
 
@@ -86,7 +80,6 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 77
     iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment$1;->this$0:Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
 
     invoke-virtual {v1}, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->updateDeviceName()V

@@ -14,10 +14,8 @@
     .locals 1
 
     .prologue
-    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 24
     new-instance v0, Landroid/content/res/Configuration;
 
     invoke-direct {v0}, Landroid/content/res/Configuration;-><init>()V
@@ -38,7 +36,6 @@
 
     const/4 v2, 0x0
 
-    .line 28
     iget-object v4, p0, Lcom/android/settings/applications/InterestingConfigChanges;->mLastConfiguration:Landroid/content/res/Configuration;
 
     invoke-virtual {p1}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
@@ -49,7 +46,6 @@
 
     move-result v0
 
-    .line 29
     .local v0, "configChanges":I
     iget v4, p0, Lcom/android/settings/applications/InterestingConfigChanges;->mLastDensity:I
 
@@ -63,7 +59,6 @@
 
     move v1, v3
 
-    .line 30
     .local v1, "densityChanged":Z
     :goto_0
     if-nez v1, :cond_0
@@ -72,7 +67,6 @@
 
     if-eqz v4, :cond_1
 
-    .line 32
     :cond_0
     invoke-virtual {p1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
@@ -84,7 +78,6 @@
 
     move v2, v3
 
-    .line 35
     :cond_1
     return v2
 
@@ -92,6 +85,5 @@
     :cond_2
     move v1, v2
 
-    .line 29
     goto :goto_0
 .end method

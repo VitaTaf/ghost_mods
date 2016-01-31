@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 403
     iput-object p1, p0, Lcom/android/settings/DeviceAdminAdd$4;->this$0:Lcom/android/settings/DeviceAdminAdd;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -38,24 +37,20 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 407
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 408
     iget-object v0, p0, Lcom/android/settings/DeviceAdminAdd$4;->this$0:Lcom/android/settings/DeviceAdminAdd;
 
     iget-object v0, v0, Lcom/android/settings/DeviceAdminAdd;->mWaitDialog:Landroid/app/ProgressDialog;
 
     if-eqz v0, :cond_0
 
-    .line 409
     iget-object v0, p0, Lcom/android/settings/DeviceAdminAdd$4;->this$0:Lcom/android/settings/DeviceAdminAdd;
 
     iget-object v0, v0, Lcom/android/settings/DeviceAdminAdd;->mWaitDialog:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 411
     :cond_0
     const-string v0, "DeviceAdminAdd"
 
@@ -63,11 +58,9 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 412
     iget-object v0, p0, Lcom/android/settings/DeviceAdminAdd$4;->this$0:Lcom/android/settings/DeviceAdminAdd;
 
     invoke-virtual {v0}, Lcom/android/settings/DeviceAdminAdd;->finish()V
 
-    .line 413
     return-void
 .end method

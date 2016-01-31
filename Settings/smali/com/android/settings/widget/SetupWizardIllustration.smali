@@ -25,12 +25,10 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 53
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/settings/widget/SetupWizardIllustration;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 54
     return-void
 .end method
 
@@ -40,12 +38,10 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 57
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/settings/widget/SetupWizardIllustration;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 58
     return-void
 .end method
 
@@ -56,12 +52,10 @@
     .param p3, "defStyleAttr"    # I
 
     .prologue
-    .line 61
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, p3, v0}, Lcom/android/settings/widget/SetupWizardIllustration;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    .line 62
     return-void
 .end method
 
@@ -77,42 +71,34 @@
 
     const/4 v3, 0x0
 
-    .line 66
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    .line 47
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v1, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mViewBounds:Landroid/graphics/Rect;
 
-    .line 48
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v1, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mForegroundBounds:Landroid/graphics/Rect;
 
-    .line 49
     const/high16 v1, 0x3f800000    # 1.0f
 
     iput v1, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mScale:F
 
-    .line 50
     iput v2, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mAspectRatio:F
 
-    .line 67
     if-eqz p2, :cond_0
 
-    .line 68
     sget-object v1, Lcom/android/settings/R$styleable;->SetupWizardIllustration:[I
 
     invoke-virtual {p1, p2, v1, v3, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 70
     .local v0, "a":Landroid/content/res/TypedArray;
     invoke-virtual {v0, v3, v2}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
@@ -120,10 +106,8 @@
 
     iput v1, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mAspectRatio:F
 
-    .line 71
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 74
     .end local v0    # "a":Landroid/content/res/TypedArray;
     :cond_0
     invoke-virtual {p0}, Lcom/android/settings/widget/SetupWizardIllustration;->getResources()Landroid/content/res/Resources;
@@ -142,10 +126,8 @@
 
     iput v1, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mBaselineGridSize:F
 
-    .line 75
     invoke-virtual {p0, v3}, Lcom/android/settings/widget/SetupWizardIllustration;->setWillNotDraw(Z)V
 
-    .line 76
     return-void
 .end method
 
@@ -158,15 +140,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 144
     iget-object v0, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mBackground:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
-    .line 145
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 147
     iget-object v0, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mForegroundBounds:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
@@ -177,43 +156,34 @@
 
     invoke-virtual {p1, v2, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 149
     iget v0, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mScale:F
 
     iget v1, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mScale:F
 
     invoke-virtual {p1, v0, v1, v2, v2}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 150
     iget-object v0, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mBackground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 151
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 153
     :cond_0
     iget-object v0, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mForeground:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_1
 
-    .line 154
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 156
     iget-object v0, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mForeground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 157
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 159
     :cond_1
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 160
     return-void
 .end method
 
@@ -226,27 +196,22 @@
     .param p5, "bottom"    # I
 
     .prologue
-    .line 116
     sub-int v7, p4, p2
 
-    .line 117
     .local v7, "layoutWidth":I
     sub-int v6, p5, p3
 
-    .line 118
     .local v6, "layoutHeight":I
     iget-object v0, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mForeground:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_1
 
-    .line 119
     iget-object v0, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mForeground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v1
 
-    .line 120
     .local v1, "intrinsicWidth":I
     iget-object v0, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mForeground:Landroid/graphics/drawable/Drawable;
 
@@ -254,13 +219,11 @@
 
     move-result v2
 
-    .line 121
     .local v2, "intrinsicHeight":I
     invoke-virtual {p0}, Lcom/android/settings/widget/SetupWizardIllustration;->getLayoutDirection()I
 
     move-result v5
 
-    .line 123
     .local v5, "layoutDirection":I
     iget-object v0, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mViewBounds:Landroid/graphics/Rect;
 
@@ -270,7 +233,6 @@
 
     invoke-virtual {v0, v3, v4, v7, v6}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 124
     iget v0, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mAspectRatio:F
 
     const/4 v3, 0x0
@@ -279,7 +241,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 125
     int-to-float v0, v7
 
     int-to-float v3, v1
@@ -288,10 +249,8 @@
 
     iput v0, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mScale:F
 
-    .line 126
     move v1, v7
 
-    .line 127
     int-to-float v0, v2
 
     iget v3, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mScale:F
@@ -300,7 +259,6 @@
 
     float-to-int v2, v0
 
-    .line 129
     :cond_0
     const/16 v0, 0x37
 
@@ -310,14 +268,12 @@
 
     invoke-static/range {v0 .. v5}, Landroid/view/Gravity;->apply(IIILandroid/graphics/Rect;Landroid/graphics/Rect;I)V
 
-    .line 131
     iget-object v0, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mForeground:Landroid/graphics/drawable/Drawable;
 
     iget-object v3, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mForegroundBounds:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v3}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 133
     .end local v1    # "intrinsicWidth":I
     .end local v2    # "intrinsicHeight":I
     .end local v5    # "layoutDirection":I
@@ -326,7 +282,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 136
     iget-object v0, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mBackground:Landroid/graphics/drawable/Drawable;
 
     const/4 v3, 0x0
@@ -371,11 +326,9 @@
 
     invoke-virtual {v0, v3, v4, v8, v9}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 139
     :cond_2
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 140
     return-void
 .end method
 
@@ -387,7 +340,6 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 104
     iget v2, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mAspectRatio:F
 
     const/4 v3, 0x0
@@ -396,12 +348,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 105
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v1
 
-    .line 106
     .local v1, "parentWidth":I
     int-to-float v2, v1
 
@@ -411,7 +361,6 @@
 
     float-to-int v0, v2
 
-    .line 107
     .local v0, "illustrationHeight":I
     int-to-float v2, v0
 
@@ -425,10 +374,8 @@
 
     float-to-int v0, v2
 
-    .line 108
     invoke-virtual {p0, v5, v0, v5, v5}, Lcom/android/settings/widget/SetupWizardIllustration;->setPaddingRelative(IIII)V
 
-    .line 110
     .end local v0    # "illustrationHeight":I
     .end local v1    # "parentWidth":I
     :cond_0
@@ -436,10 +383,8 @@
 
     invoke-virtual {p0, v2}, Lcom/android/settings/widget/SetupWizardIllustration;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
-    .line 111
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 112
     return-void
 .end method
 
@@ -448,17 +393,14 @@
     .param p1, "layoutDirection"    # I
 
     .prologue
-    .line 98
     iget-object v0, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mBackground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
 
-    .line 99
     iget-object v0, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mForeground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
 
-    .line 100
     return-void
 .end method
 
@@ -467,10 +409,8 @@
     .param p1, "background"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 84
     iput-object p1, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mBackground:Landroid/graphics/drawable/Drawable;
 
-    .line 85
     return-void
 .end method
 
@@ -479,9 +419,7 @@
     .param p1, "foreground"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 93
     iput-object p1, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mForeground:Landroid/graphics/drawable/Drawable;
 
-    .line 94
     return-void
 .end method

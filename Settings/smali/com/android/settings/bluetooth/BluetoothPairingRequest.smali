@@ -8,7 +8,6 @@
     .locals 0
 
     .prologue
-    .line 38
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -22,12 +21,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 44
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 45
     .local v3, "action":Ljava/lang/String;
     const-string v17, "android.bluetooth.device.action.PAIRING_REQUEST"
 
@@ -39,7 +36,6 @@
 
     if-eqz v17, :cond_7
 
-    .line 47
     const-string v17, "android.bluetooth.device.extra.DEVICE"
 
     move-object/from16 v0, p2
@@ -52,7 +48,6 @@
 
     check-cast v6, Landroid/bluetooth/BluetoothDevice;
 
-    .line 49
     .local v6, "device":Landroid/bluetooth/BluetoothDevice;
     const-string v17, "android.bluetooth.device.extra.PAIRING_VARIANT"
 
@@ -68,13 +63,11 @@
 
     move-result v16
 
-    .line 51
     .local v16, "type":I
     new-instance v11, Landroid/content/Intent;
 
     invoke-direct {v11}, Landroid/content/Intent;-><init>()V
 
-    .line 52
     .local v11, "pairingIntent":Landroid/content/Intent;
     const-class v17, Lcom/android/settings/bluetooth/BluetoothPairingDialog;
 
@@ -84,14 +77,12 @@
 
     invoke-virtual {v11, v0, v1}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
 
-    .line 53
     const-string v17, "android.bluetooth.device.extra.DEVICE"
 
     move-object/from16 v0, v17
 
     invoke-virtual {v11, v0, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 54
     const-string v17, "android.bluetooth.device.extra.PAIRING_VARIANT"
 
     move-object/from16 v0, v17
@@ -100,7 +91,6 @@
 
     invoke-virtual {v11, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 55
     const/16 v17, 0x2
 
     move/from16 v0, v16
@@ -125,7 +115,6 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 58
     :cond_0
     const-string v17, "android.bluetooth.device.extra.PAIRING_KEY"
 
@@ -141,7 +130,6 @@
 
     move-result v12
 
-    .line 60
     .local v12, "pairingKey":I
     const-string v17, "android.bluetooth.device.extra.PAIRING_KEY"
 
@@ -149,7 +137,6 @@
 
     invoke-virtual {v11, v0, v12}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 62
     .end local v12    # "pairingKey":I
     :cond_1
     const-string v17, "android.bluetooth.device.action.PAIRING_REQUEST"
@@ -158,14 +145,12 @@
 
     invoke-virtual {v11, v0}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 63
     const/high16 v17, 0x10000000
 
     move/from16 v0, v17
 
     invoke-virtual {v11, v0}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 65
     const-string v17, "power"
 
     move-object/from16 v0, p1
@@ -178,7 +163,6 @@
 
     check-cast v14, Landroid/os/PowerManager;
 
-    .line 67
     .local v14, "powerManager":Landroid/os/PowerManager;
     if-eqz v6, :cond_3
 
@@ -186,7 +170,6 @@
 
     move-result-object v7
 
-    .line 68
     .local v7, "deviceAddress":Ljava/lang/String;
     :goto_0
     invoke-virtual {v14}, Landroid/os/PowerManager;->isScreenOn()Z
@@ -203,12 +186,10 @@
 
     if-eqz v17, :cond_4
 
-    .line 72
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v11}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 122
     .end local v6    # "device":Landroid/bluetooth/BluetoothDevice;
     .end local v7    # "deviceAddress":Ljava/lang/String;
     .end local v11    # "pairingIntent":Landroid/content/Intent;
@@ -218,7 +199,6 @@
     :goto_1
     return-void
 
-    .line 67
     .restart local v6    # "device":Landroid/bluetooth/BluetoothDevice;
     .restart local v11    # "pairingIntent":Landroid/content/Intent;
     .restart local v14    # "powerManager":Landroid/os/PowerManager;
@@ -228,14 +208,12 @@
 
     goto :goto_0
 
-    .line 75
     .restart local v7    # "deviceAddress":Ljava/lang/String;
     :cond_4
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v15
 
-    .line 76
     .local v15, "res":Landroid/content/res/Resources;
     new-instance v17, Landroid/app/Notification$Builder;
 
@@ -263,7 +241,6 @@
 
     move-result-object v5
 
-    .line 80
     .local v5, "builder":Landroid/app/Notification$Builder;
     const/16 v17, 0x0
 
@@ -279,7 +256,6 @@
 
     move-result-object v13
 
-    .line 83
     .local v13, "pending":Landroid/app/PendingIntent;
     const-string v17, "android.bluetooth.device.extra.NAME"
 
@@ -291,7 +267,6 @@
 
     move-result-object v9
 
-    .line 84
     .local v9, "name":Ljava/lang/String;
     invoke-static {v9}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -299,14 +274,12 @@
 
     if-eqz v17, :cond_5
 
-    .line 85
     if-eqz v6, :cond_6
 
     invoke-virtual {v6}, Landroid/bluetooth/BluetoothDevice;->getAliasName()Ljava/lang/String;
 
     move-result-object v9
 
-    .line 89
     :cond_5
     :goto_2
     const v17, 0x7f090106
@@ -377,7 +350,6 @@
 
     invoke-virtual/range {v17 .. v18}, Landroid/app/Notification$Builder;->setColor(I)Landroid/app/Notification$Builder;
 
-    .line 97
     const-string v17, "notification"
 
     move-object/from16 v0, p1
@@ -390,7 +362,6 @@
 
     check-cast v8, Landroid/app/NotificationManager;
 
-    .line 99
     .local v8, "manager":Landroid/app/NotificationManager;
     const v17, 0x1080080
 
@@ -406,7 +377,6 @@
 
     goto/16 :goto_1
 
-    .line 85
     .end local v8    # "manager":Landroid/app/NotificationManager;
     :cond_6
     const v17, 0x104000e
@@ -421,7 +391,6 @@
 
     goto :goto_2
 
-    .line 102
     .end local v5    # "builder":Landroid/app/Notification$Builder;
     .end local v6    # "device":Landroid/bluetooth/BluetoothDevice;
     .end local v7    # "deviceAddress":Ljava/lang/String;
@@ -442,7 +411,6 @@
 
     if-eqz v17, :cond_8
 
-    .line 105
     const-string v17, "notification"
 
     move-object/from16 v0, p1
@@ -455,7 +423,6 @@
 
     check-cast v8, Landroid/app/NotificationManager;
 
-    .line 107
     .restart local v8    # "manager":Landroid/app/NotificationManager;
     const v17, 0x1080080
 
@@ -465,7 +432,6 @@
 
     goto/16 :goto_1
 
-    .line 109
     .end local v8    # "manager":Landroid/app/NotificationManager;
     :cond_8
     const-string v17, "android.bluetooth.device.action.BOND_STATE_CHANGED"
@@ -478,7 +444,6 @@
 
     if-eqz v17, :cond_2
 
-    .line 110
     const-string v17, "android.bluetooth.device.extra.BOND_STATE"
 
     const/high16 v18, -0x80000000
@@ -493,7 +458,6 @@
 
     move-result v4
 
-    .line 112
     .local v4, "bondState":I
     const-string v17, "android.bluetooth.device.extra.PREVIOUS_BOND_STATE"
 
@@ -509,7 +473,6 @@
 
     move-result v10
 
-    .line 114
     .local v10, "oldState":I
     const/16 v17, 0xb
 
@@ -523,7 +486,6 @@
 
     if-ne v4, v0, :cond_2
 
-    .line 117
     const-string v17, "notification"
 
     move-object/from16 v0, p1
@@ -536,7 +498,6 @@
 
     check-cast v8, Landroid/app/NotificationManager;
 
-    .line 119
     .restart local v8    # "manager":Landroid/app/NotificationManager;
     const v17, 0x1080080
 

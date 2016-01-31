@@ -28,7 +28,6 @@
     .param p6, "x4"    # [I
 
     .prologue
-    .line 81
     iput-object p1, p0, Lcom/android/settings/fuelgauge/BatterySaverSettings$1;->this$0:Lcom/android/settings/fuelgauge/BatterySaverSettings;
 
     move-object v0, p0
@@ -56,14 +55,12 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 84
     if-lez p2, :cond_0
 
     const/16 v0, 0x64
 
     if-ge p2, v0, :cond_0
 
-    .line 85
     const v0, 0x7f090712
 
     const/4 v1, 0x1
@@ -82,7 +79,6 @@
 
     move-result-object v0
 
-    .line 88
     :goto_0
     return-object v0
 

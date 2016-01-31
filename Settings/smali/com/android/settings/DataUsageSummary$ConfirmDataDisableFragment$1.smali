@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 2355
     iput-object p1, p0, Lcom/android/settings/DataUsageSummary$ConfirmDataDisableFragment$1;->this$0:Lcom/android/settings/DataUsageSummary$ConfirmDataDisableFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 2358
     iget-object v1, p0, Lcom/android/settings/DataUsageSummary$ConfirmDataDisableFragment$1;->this$0:Lcom/android/settings/DataUsageSummary$ConfirmDataDisableFragment;
 
     invoke-virtual {v1}, Lcom/android/settings/DataUsageSummary$ConfirmDataDisableFragment;->getTargetFragment()Landroid/app/Fragment;
@@ -51,11 +49,9 @@
 
     check-cast v0, Lcom/android/settings/DataUsageSummary;
 
-    .line 2359
     .local v0, "target":Lcom/android/settings/DataUsageSummary;
     if-eqz v0, :cond_0
 
-    .line 2361
     sget v1, Lcom/android/settings/DataUsageSummary$ConfirmDataDisableFragment;->mSubId:I
 
     const/4 v2, 0x0
@@ -63,7 +59,6 @@
     # invokes: Lcom/android/settings/DataUsageSummary;->setMobileDataEnabled(IZ)V
     invoke-static {v0, v1, v2}, Lcom/android/settings/DataUsageSummary;->access$1000(Lcom/android/settings/DataUsageSummary;IZ)V
 
-    .line 2363
     :cond_0
     return-void
 .end method

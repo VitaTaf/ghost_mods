@@ -43,19 +43,14 @@
     .param p3, "paint"    # Landroid/graphics/Paint;
 
     .prologue
-    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 48
     iput p1, p0, Lcom/android/settings/deviceinfo/PercentageBarChart$Entry;->order:I
 
-    .line 49
     iput p2, p0, Lcom/android/settings/deviceinfo/PercentageBarChart$Entry;->percentage:F
 
-    .line 50
     iput-object p3, p0, Lcom/android/settings/deviceinfo/PercentageBarChart$Entry;->paint:Landroid/graphics/Paint;
 
-    .line 51
     return-void
 .end method
 
@@ -66,7 +61,6 @@
     .param p1, "another"    # Lcom/android/settings/deviceinfo/PercentageBarChart$Entry;
 
     .prologue
-    .line 55
     iget v0, p0, Lcom/android/settings/deviceinfo/PercentageBarChart$Entry;->order:I
 
     iget v1, p1, Lcom/android/settings/deviceinfo/PercentageBarChart$Entry;->order:I
@@ -81,7 +75,6 @@
     .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
-    .line 42
     check-cast p1, Lcom/android/settings/deviceinfo/PercentageBarChart$Entry;
 
     .end local p1    # "x0":Ljava/lang/Object;

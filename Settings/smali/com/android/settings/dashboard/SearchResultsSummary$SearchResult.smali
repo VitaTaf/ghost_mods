@@ -42,30 +42,21 @@
     .param p7, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 491
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 492
     iput-object p1, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResult;->context:Landroid/content/Context;
 
-    .line 493
     iput-object p2, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResult;->title:Ljava/lang/String;
 
-    .line 494
     iput-object p3, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResult;->summaryOn:Ljava/lang/String;
 
-    .line 495
     iput-object p4, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResult;->summaryOff:Ljava/lang/String;
 
-    .line 496
     iput-object p5, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResult;->entries:Ljava/lang/String;
 
-    .line 497
     iput p6, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResult;->iconResId:I
 
-    .line 498
     iput-object p7, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResult;->key:Ljava/lang/String;
 
-    .line 499
     return-void
 .end method

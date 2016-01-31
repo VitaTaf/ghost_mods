@@ -53,7 +53,6 @@
 
     const/4 v4, 0x1
 
-    .line 68
     new-instance v0, Lcom/android/settings/notification/OtherSoundSettings$1;
 
     const-string v2, "dial_pad_tones"
@@ -66,7 +65,6 @@
 
     sput-object v0, Lcom/android/settings/notification/OtherSoundSettings;->PREF_DIAL_PAD_TONES:Lcom/android/settings/notification/SettingPref;
 
-    .line 76
     new-instance v0, Lcom/android/settings/notification/SettingPref;
 
     const-string v2, "screen_locking_sounds"
@@ -79,7 +77,6 @@
 
     sput-object v0, Lcom/android/settings/notification/OtherSoundSettings;->PREF_SCREEN_LOCKING_SOUNDS:Lcom/android/settings/notification/SettingPref;
 
-    .line 79
     new-instance v3, Lcom/android/settings/notification/OtherSoundSettings$2;
 
     const-string v5, "docking_sounds"
@@ -94,7 +91,6 @@
 
     sput-object v3, Lcom/android/settings/notification/OtherSoundSettings;->PREF_DOCKING_SOUNDS:Lcom/android/settings/notification/SettingPref;
 
-    .line 87
     new-instance v0, Lcom/android/settings/notification/OtherSoundSettings$3;
 
     const-string v2, "touch_sounds"
@@ -107,7 +103,6 @@
 
     sput-object v0, Lcom/android/settings/notification/OtherSoundSettings;->PREF_TOUCH_SOUNDS:Lcom/android/settings/notification/SettingPref;
 
-    .line 101
     new-instance v0, Lcom/android/settings/notification/OtherSoundSettings$4;
 
     const-string v2, "vibrate_on_touch"
@@ -120,7 +115,6 @@
 
     sput-object v0, Lcom/android/settings/notification/OtherSoundSettings;->PREF_VIBRATE_ON_TOUCH:Lcom/android/settings/notification/SettingPref;
 
-    .line 109
     new-instance v3, Lcom/android/settings/notification/OtherSoundSettings$5;
 
     const-string v5, "dock_audio_media"
@@ -137,7 +131,6 @@
 
     sput-object v3, Lcom/android/settings/notification/OtherSoundSettings;->PREF_DOCK_AUDIO_MEDIA:Lcom/android/settings/notification/SettingPref;
 
-    .line 130
     new-instance v3, Lcom/android/settings/notification/OtherSoundSettings$6;
 
     const-string v5, "emergency_tone"
@@ -154,7 +147,6 @@
 
     sput-object v3, Lcom/android/settings/notification/OtherSoundSettings;->PREF_EMERGENCY_TONE:Lcom/android/settings/notification/SettingPref;
 
-    .line 154
     const/4 v0, 0x7
 
     new-array v0, v0, [Lcom/android/settings/notification/SettingPref;
@@ -195,7 +187,6 @@
 
     sput-object v0, Lcom/android/settings/notification/OtherSoundSettings;->PREFS:[Lcom/android/settings/notification/SettingPref;
 
-    .line 234
     new-instance v0, Lcom/android/settings/notification/OtherSoundSettings$7;
 
     invoke-direct {v0}, Lcom/android/settings/notification/OtherSoundSettings$7;-><init>()V
@@ -204,14 +195,12 @@
 
     return-void
 
-    .line 109
     :array_0
     .array-data 4
         0x0
         0x1
     .end array-data
 
-    .line 130
     :array_1
     .array-data 4
         0x1
@@ -224,17 +213,14 @@
     .locals 1
 
     .prologue
-    .line 46
     invoke-direct {p0}, Lcom/android/settings/SettingsPreferenceFragment;-><init>()V
 
-    .line 164
     new-instance v0, Lcom/android/settings/notification/OtherSoundSettings$SettingsObserver;
 
     invoke-direct {v0, p0}, Lcom/android/settings/notification/OtherSoundSettings$SettingsObserver;-><init>(Lcom/android/settings/notification/OtherSoundSettings;)V
 
     iput-object v0, p0, Lcom/android/settings/notification/OtherSoundSettings;->mSettingsObserver:Lcom/android/settings/notification/OtherSoundSettings$SettingsObserver;
 
-    .line 204
     return-void
 .end method
 
@@ -243,7 +229,6 @@
     .param p0, "x0"    # Landroid/content/Context;
 
     .prologue
-    .line 46
     invoke-static {p0}, Lcom/android/settings/notification/OtherSoundSettings;->hasDockSettings(Landroid/content/Context;)Z
 
     move-result v0
@@ -256,7 +241,6 @@
     .param p0, "x0"    # Landroid/content/Context;
 
     .prologue
-    .line 46
     invoke-static {p0}, Lcom/android/settings/notification/OtherSoundSettings;->hasHaptic(Landroid/content/Context;)Z
 
     move-result v0
@@ -269,7 +253,6 @@
     .param p0, "x0"    # Lcom/android/settings/notification/OtherSoundSettings;
 
     .prologue
-    .line 46
     invoke-virtual {p0}, Lcom/android/settings/notification/OtherSoundSettings;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -281,7 +264,6 @@
     .locals 1
 
     .prologue
-    .line 46
     sget-object v0, Lcom/android/settings/notification/OtherSoundSettings;->PREFS:[Lcom/android/settings/notification/SettingPref;
 
     return-object v0
@@ -292,7 +274,6 @@
     .param p0, "x0"    # Lcom/android/settings/notification/OtherSoundSettings;
 
     .prologue
-    .line 46
     iget-object v0, p0, Lcom/android/settings/notification/OtherSoundSettings;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -303,7 +284,6 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 194
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -322,7 +302,6 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 198
     const-string v1, "vibrator"
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -331,7 +310,6 @@
 
     check-cast v0, Landroid/os/Vibrator;
 
-    .line 199
     .local v0, "vibrator":Landroid/os/Vibrator;
     if-eqz v0, :cond_0
 
@@ -359,22 +337,18 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 170
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 172
     const v4, 0x7f060027
 
     invoke-virtual {p0, v4}, Lcom/android/settings/notification/OtherSoundSettings;->addPreferencesFromResource(I)V
 
-    .line 174
     invoke-virtual {p0}, Lcom/android/settings/notification/OtherSoundSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v4
 
     iput-object v4, p0, Lcom/android/settings/notification/OtherSoundSettings;->mContext:Landroid/content/Context;
 
-    .line 176
     sget-object v0, Lcom/android/settings/notification/OtherSoundSettings;->PREFS:[Lcom/android/settings/notification/SettingPref;
 
     .local v0, "arr$":[Lcom/android/settings/notification/SettingPref;
@@ -389,16 +363,13 @@
 
     aget-object v3, v0, v1
 
-    .line 177
     .local v3, "pref":Lcom/android/settings/notification/SettingPref;
     invoke-virtual {v3, p0}, Lcom/android/settings/notification/SettingPref;->init(Lcom/android/settings/SettingsPreferenceFragment;)Landroid/preference/Preference;
 
-    .line 176
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 179
     .end local v3    # "pref":Lcom/android/settings/notification/SettingPref;
     :cond_0
     return-void
@@ -408,17 +379,14 @@
     .locals 2
 
     .prologue
-    .line 189
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onPause()V
 
-    .line 190
     iget-object v0, p0, Lcom/android/settings/notification/OtherSoundSettings;->mSettingsObserver:Lcom/android/settings/notification/OtherSoundSettings$SettingsObserver;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/settings/notification/OtherSoundSettings$SettingsObserver;->register(Z)V
 
-    .line 191
     return-void
 .end method
 
@@ -426,16 +394,13 @@
     .locals 2
 
     .prologue
-    .line 183
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onResume()V
 
-    .line 184
     iget-object v0, p0, Lcom/android/settings/notification/OtherSoundSettings;->mSettingsObserver:Lcom/android/settings/notification/OtherSoundSettings$SettingsObserver;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/settings/notification/OtherSoundSettings$SettingsObserver;->register(Z)V
 
-    .line 185
     return-void
 .end method

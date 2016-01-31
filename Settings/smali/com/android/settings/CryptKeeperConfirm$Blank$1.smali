@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 70
     iput-object p1, p0, Lcom/android/settings/CryptKeeperConfirm$Blank$1;->this$0:Lcom/android/settings/CryptKeeperConfirm$Blank;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,40 +39,33 @@
     .locals 6
 
     .prologue
-    .line 72
     const-string v4, "mount"
 
     invoke-static {v4}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v3
 
-    .line 73
     .local v3, "service":Landroid/os/IBinder;
     if-nez v3, :cond_0
 
-    .line 74
     const-string v4, "CryptKeeper"
 
     const-string v5, "Failed to find the mount service"
 
     invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 75
     iget-object v4, p0, Lcom/android/settings/CryptKeeperConfirm$Blank$1;->this$0:Lcom/android/settings/CryptKeeperConfirm$Blank;
 
     invoke-virtual {v4}, Lcom/android/settings/CryptKeeperConfirm$Blank;->finish()V
 
-    .line 86
     :goto_0
     return-void
 
-    .line 79
     :cond_0
     invoke-static {v3}, Landroid/os/storage/IMountService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/storage/IMountService;
 
     move-result-object v2
 
-    .line 81
     .local v2, "mountService":Landroid/os/storage/IMountService;
     :try_start_0
     iget-object v4, p0, Lcom/android/settings/CryptKeeperConfirm$Blank$1;->this$0:Lcom/android/settings/CryptKeeperConfirm$Blank;
@@ -86,7 +78,6 @@
 
     move-result-object v0
 
-    .line 82
     .local v0, "args":Landroid/os/Bundle;
     const-string v4, "type"
 
@@ -108,12 +99,10 @@
 
     goto :goto_0
 
-    .line 83
     .end local v0    # "args":Landroid/os/Bundle;
     :catch_0
     move-exception v1
 
-    .line 84
     .local v1, "e":Ljava/lang/Exception;
     const-string v4, "CryptKeeper"
 

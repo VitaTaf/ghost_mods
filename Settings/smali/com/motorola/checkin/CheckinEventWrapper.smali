@@ -35,12 +35,10 @@
 
     const/4 v7, 0x0
 
-    .line 24
     const-string v3, "CheckinEventWrapper"
 
     sput-object v3, Lcom/motorola/checkin/CheckinEventWrapper;->TAG:Ljava/lang/String;
 
-    .line 48
     :try_start_0
     const-string v3, "com.motorola.android.provider.CheckinEvent"
 
@@ -48,7 +46,6 @@
 
     move-result-object v0
 
-    .line 50
     .local v0, "checkinClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const-string v3, "com.motorola.data.event.api.Event"
 
@@ -56,7 +53,6 @@
 
     move-result-object v1
 
-    .line 52
     .local v1, "eventClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const/4 v3, 0x4
 
@@ -92,7 +88,6 @@
 
     sput-object v3, Lcom/motorola/checkin/CheckinEventWrapper;->sMethodConstructor:Ljava/lang/reflect/Constructor;
 
-    .line 55
     const-string v3, "setValue"
 
     const/4 v4, 0x2
@@ -117,7 +112,6 @@
 
     sput-object v3, Lcom/motorola/checkin/CheckinEventWrapper;->sMethodSetValue:Ljava/lang/reflect/Method;
 
-    .line 58
     const-string v3, "publish"
 
     const/4 v4, 0x1
@@ -136,23 +130,19 @@
 
     sput-object v3, Lcom/motorola/checkin/CheckinEventWrapper;->sMethodPublish:Ljava/lang/reflect/Method;
 
-    .line 61
     const/4 v3, 0x1
 
     sput-boolean v3, Lcom/motorola/checkin/CheckinEventWrapper;->sSucessfullyInit:Z
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 71
     .end local v1    # "eventClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :goto_0
     return-void
 
-    .line 62
     :catch_0
     move-exception v2
 
-    .line 65
     .local v2, "t":Ljava/lang/Throwable;
     sget-object v3, Lcom/motorola/checkin/CheckinEventWrapper;->TAG:Ljava/lang/String;
 
@@ -160,16 +150,12 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 66
     sput-object v8, Lcom/motorola/checkin/CheckinEventWrapper;->sMethodSetValue:Ljava/lang/reflect/Method;
 
-    .line 67
     sput-object v8, Lcom/motorola/checkin/CheckinEventWrapper;->sMethodPublish:Ljava/lang/reflect/Method;
 
-    .line 68
     sput-object v8, Lcom/motorola/checkin/CheckinEventWrapper;->sMethodConstructor:Ljava/lang/reflect/Constructor;
 
-    .line 69
     sput-boolean v7, Lcom/motorola/checkin/CheckinEventWrapper;->sSucessfullyInit:Z
 
     goto :goto_0
@@ -179,7 +165,6 @@
     .locals 0
 
     .prologue
-    .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -189,7 +174,6 @@
     .locals 1
 
     .prologue
-    .line 79
     sget-boolean v0, Lcom/motorola/checkin/CheckinEventWrapper;->sSucessfullyInit:Z
 
     return v0
@@ -202,7 +186,6 @@
     .param p1, "cr"    # Landroid/content/ContentResolver;
 
     .prologue
-    .line 133
     sget-boolean v1, Lcom/motorola/checkin/CheckinEventWrapper;->sSucessfullyInit:Z
 
     if-eqz v1, :cond_0
@@ -211,7 +194,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 135
     :try_start_0
     sget-object v1, Lcom/motorola/checkin/CheckinEventWrapper;->sMethodPublish:Ljava/lang/reflect/Method;
 
@@ -229,16 +211,13 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 142
     :cond_0
     :goto_0
     return-void
 
-    .line 136
     :catch_0
     move-exception v0
 
-    .line 139
     .local v0, "t":Ljava/lang/Throwable;
     sget-object v1, Lcom/motorola/checkin/CheckinEventWrapper;->TAG:Ljava/lang/String;
 
@@ -261,12 +240,10 @@
 
     const/4 v2, 0x0
 
-    .line 92
     sget-boolean v3, Lcom/motorola/checkin/CheckinEventWrapper;->sSucessfullyInit:Z
 
     if-eqz v3, :cond_0
 
-    .line 94
     :try_start_0
     sget-object v3, Lcom/motorola/checkin/CheckinEventWrapper;->sMethodConstructor:Ljava/lang/reflect/Constructor;
 
@@ -302,15 +279,12 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 102
     :goto_0
     return v1
 
-    .line 96
     :catch_0
     move-exception v0
 
-    .line 99
     .local v0, "t":Ljava/lang/Throwable;
     sget-object v1, Lcom/motorola/checkin/CheckinEventWrapper;->TAG:Ljava/lang/String;
 
@@ -322,7 +296,6 @@
     :cond_0
     move v1, v2
 
-    .line 102
     goto :goto_0
 .end method
 
@@ -332,7 +305,6 @@
     .param p2, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 115
     sget-boolean v1, Lcom/motorola/checkin/CheckinEventWrapper;->sSucessfullyInit:Z
 
     if-eqz v1, :cond_0
@@ -341,7 +313,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 117
     :try_start_0
     sget-object v1, Lcom/motorola/checkin/CheckinEventWrapper;->sMethodSetValue:Ljava/lang/reflect/Method;
 
@@ -363,16 +334,13 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 124
     :cond_0
     :goto_0
     return-void
 
-    .line 118
     :catch_0
     move-exception v0
 
-    .line 121
     .local v0, "t":Ljava/lang/Throwable;
     sget-object v1, Lcom/motorola/checkin/CheckinEventWrapper;->TAG:Ljava/lang/String;
 

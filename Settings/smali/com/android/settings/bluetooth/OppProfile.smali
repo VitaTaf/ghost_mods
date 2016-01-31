@@ -11,7 +11,6 @@
     .locals 0
 
     .prologue
-    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -24,7 +23,6 @@
     .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
     .prologue
-    .line 44
     const/4 v0, 0x0
 
     return v0
@@ -35,7 +33,6 @@
     .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
     .prologue
-    .line 48
     const/4 v0, 0x0
 
     return v0
@@ -46,7 +43,6 @@
     .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
     .prologue
-    .line 52
     const/4 v0, 0x0
 
     return v0
@@ -57,7 +53,6 @@
     .param p1, "btClass"    # Landroid/bluetooth/BluetoothClass;
 
     .prologue
-    .line 87
     const/4 v0, 0x0
 
     return v0
@@ -68,7 +63,6 @@
     .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
     .prologue
-    .line 79
     const v0, 0x7f09024b
 
     return v0
@@ -78,7 +72,6 @@
     .locals 1
 
     .prologue
-    .line 75
     const/4 v0, 0x2
 
     return v0
@@ -89,7 +82,6 @@
     .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
     .prologue
-    .line 60
     const/4 v0, 0x0
 
     return v0
@@ -99,7 +91,6 @@
     .locals 1
 
     .prologue
-    .line 40
     const/4 v0, 0x0
 
     return v0
@@ -109,7 +100,6 @@
     .locals 1
 
     .prologue
-    .line 36
     const/4 v0, 0x0
 
     return v0
@@ -120,7 +110,6 @@
     .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
     .prologue
-    .line 56
     const/4 v0, 0x0
 
     return v0
@@ -130,7 +119,6 @@
     .locals 1
 
     .prologue
-    .line 67
     const/4 v0, 0x1
 
     return v0
@@ -142,7 +130,6 @@
     .param p2, "preferred"    # Z
 
     .prologue
-    .line 64
     return-void
 .end method
 
@@ -150,7 +137,6 @@
     .locals 1
 
     .prologue
-    .line 71
     const-string v0, "OPP"
 
     return-object v0

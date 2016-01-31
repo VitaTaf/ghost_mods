@@ -17,7 +17,6 @@
     .param p0, "bridge"    # Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat$AccessibilityNodeInfoBridge;
 
     .prologue
-    .line 39
     new-instance v0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat$1;
 
     invoke-direct {v0, p0}, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat$1;-><init>(Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat$AccessibilityNodeInfoBridge;)V

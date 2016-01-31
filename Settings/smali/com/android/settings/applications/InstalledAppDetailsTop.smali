@@ -8,7 +8,6 @@
     .locals 0
 
     .prologue
-    .line 22
     invoke-direct {p0}, Lcom/android/settings/SettingsActivity;-><init>()V
 
     return-void
@@ -20,7 +19,6 @@
     .locals 3
 
     .prologue
-    .line 26
     new-instance v0, Landroid/content/Intent;
 
     invoke-super {p0}, Lcom/android/settings/SettingsActivity;->getIntent()Landroid/content/Intent;
@@ -29,7 +27,6 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
-    .line 27
     .local v0, "modIntent":Landroid/content/Intent;
     const-string v1, ":settings:show_fragment"
 
@@ -41,7 +38,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 28
     return-object v0
 .end method
 
@@ -50,7 +46,6 @@
     .param p1, "fragmentName"    # Ljava/lang/String;
 
     .prologue
-    .line 33
     const-class v0, Lcom/android/settings/applications/InstalledAppDetails;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -65,7 +60,6 @@
 
     const/4 v0, 0x1
 
-    .line 34
     :goto_0
     return v0
 

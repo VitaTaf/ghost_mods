@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 349
     iput-object p1, p0, Lcom/android/settings/UsageAccessSettings$1;->this$0:Lcom/android/settings/UsageAccessSettings;
 
     invoke-direct {p0}, Lcom/android/internal/content/PackageMonitor;-><init>()V
@@ -39,13 +38,11 @@
     .param p2, "uid"    # I
 
     .prologue
-    .line 352
     iget-object v0, p0, Lcom/android/settings/UsageAccessSettings$1;->this$0:Lcom/android/settings/UsageAccessSettings;
 
     # invokes: Lcom/android/settings/UsageAccessSettings;->updateInterestedApps()V
     invoke-static {v0}, Lcom/android/settings/UsageAccessSettings;->access$300(Lcom/android/settings/UsageAccessSettings;)V
 
-    .line 353
     return-void
 .end method
 
@@ -55,12 +52,10 @@
     .param p2, "uid"    # I
 
     .prologue
-    .line 357
     iget-object v0, p0, Lcom/android/settings/UsageAccessSettings$1;->this$0:Lcom/android/settings/UsageAccessSettings;
 
     # invokes: Lcom/android/settings/UsageAccessSettings;->updateInterestedApps()V
     invoke-static {v0}, Lcom/android/settings/UsageAccessSettings;->access$300(Lcom/android/settings/UsageAccessSettings;)V
 
-    .line 358
     return-void
 .end method

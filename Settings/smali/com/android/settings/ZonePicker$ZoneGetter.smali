@@ -50,24 +50,20 @@
     .locals 2
 
     .prologue
-    .line 227
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 228
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/settings/ZonePicker$ZoneGetter;->mZones:Ljava/util/List;
 
-    .line 230
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/android/settings/ZonePicker$ZoneGetter;->mLocalZones:Ljava/util/HashSet;
 
-    .line 231
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
@@ -78,7 +74,6 @@
 
     iput-object v0, p0, Lcom/android/settings/ZonePicker$ZoneGetter;->mNow:Ljava/util/Date;
 
-    .line 232
     new-instance v0, Ljava/text/SimpleDateFormat;
 
     const-string v1, "zzzz"
@@ -96,7 +91,6 @@
     .param p1, "x1"    # Landroid/content/Context;
 
     .prologue
-    .line 227
     invoke-direct {p0, p1}, Lcom/android/settings/ZonePicker$ZoneGetter;->getZones(Landroid/content/Context;)Ljava/util/List;
 
     move-result-object v0
@@ -109,12 +103,10 @@
     .param p1, "olsonId"    # Ljava/lang/String;
 
     .prologue
-    .line 271
     invoke-static {p1}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
 
     move-result-object v3
 
-    .line 277
     .local v3, "tz":Ljava/util/TimeZone;
     iget-object v4, p0, Lcom/android/settings/ZonePicker$ZoneGetter;->mLocalZones:Ljava/util/HashSet;
 
@@ -124,12 +116,10 @@
 
     if-eqz v4, :cond_0
 
-    .line 279
     iget-object v4, p0, Lcom/android/settings/ZonePicker$ZoneGetter;->mZoneNameFormatter:Ljava/text/SimpleDateFormat;
 
     invoke-virtual {v4, v3}, Ljava/text/SimpleDateFormat;->setTimeZone(Ljava/util/TimeZone;)V
 
-    .line 280
     iget-object v4, p0, Lcom/android/settings/ZonePicker$ZoneGetter;->mZoneNameFormatter:Ljava/text/SimpleDateFormat;
 
     iget-object v5, p0, Lcom/android/settings/ZonePicker$ZoneGetter;->mNow:Ljava/util/Date;
@@ -138,25 +128,21 @@
 
     move-result-object v0
 
-    .line 287
     .local v0, "displayName":Ljava/lang/String;
     :goto_0
     new-instance v2, Ljava/util/HashMap;
 
     invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
-    .line 288
     .local v2, "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
     const-string v4, "id"
 
     invoke-virtual {v2, v4, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 289
     const-string v4, "name"
 
     invoke-virtual {v2, v4, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 290
     const-string v4, "gmt"
 
     const/4 v5, 0x0
@@ -167,7 +153,6 @@
 
     invoke-virtual {v2, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 293
     const-string v4, "offset"
 
     invoke-virtual {v3}, Ljava/util/TimeZone;->getRawOffset()I
@@ -180,15 +165,12 @@
 
     invoke-virtual {v2, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 295
     iget-object v4, p0, Lcom/android/settings/ZonePicker$ZoneGetter;->mZones:Ljava/util/List;
 
     invoke-interface {v4, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 296
     return-void
 
-    .line 283
     .end local v0    # "displayName":Ljava/lang/String;
     .end local v2    # "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
     :cond_0
@@ -200,7 +182,6 @@
 
     move-result-object v1
 
-    .line 284
     .local v1, "localeName":Ljava/lang/String;
     invoke-static {v1, p1}, Llibcore/icu/TimeZoneNames;->getExemplarLocation(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -233,7 +214,6 @@
 
     const/4 v9, 0x2
 
-    .line 235
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v7
@@ -254,18 +234,15 @@
 
     aget-object v4, v0, v1
 
-    .line 236
     .local v4, "olsonId":Ljava/lang/String;
     iget-object v7, p0, Lcom/android/settings/ZonePicker$ZoneGetter;->mLocalZones:Ljava/util/HashSet;
 
     invoke-virtual {v7, v4}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 235
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 239
     .end local v4    # "olsonId":Ljava/lang/String;
     :cond_0
     :try_start_0
@@ -279,7 +256,6 @@
 
     move-result-object v6
 
-    .line 240
     .local v6, "xrp":Landroid/content/res/XmlResourceParser;
     :cond_1
     invoke-interface {v6}, Landroid/content/res/XmlResourceParser;->next()I
@@ -288,10 +264,8 @@
 
     if-ne v7, v9, :cond_1
 
-    .line 243
     invoke-interface {v6}, Landroid/content/res/XmlResourceParser;->next()I
 
-    .line 244
     :goto_1
     invoke-interface {v6}, Landroid/content/res/XmlResourceParser;->getEventType()I
 
@@ -299,7 +273,6 @@
 
     if-eq v7, v10, :cond_6
 
-    .line 245
     :goto_2
     invoke-interface {v6}, Landroid/content/res/XmlResourceParser;->getEventType()I
 
@@ -307,7 +280,6 @@
 
     if-eq v7, v9, :cond_3
 
-    .line 246
     invoke-interface {v6}, Landroid/content/res/XmlResourceParser;->getEventType()I
 
     move-result v7
@@ -316,15 +288,12 @@
 
     if-ne v7, v8, :cond_2
 
-    .line 247
     iget-object v7, p0, Lcom/android/settings/ZonePicker$ZoneGetter;->mZones:Ljava/util/List;
 
-    .line 266
     .end local v6    # "xrp":Landroid/content/res/XmlResourceParser;
     :goto_3
     return-object v7
 
-    .line 249
     .restart local v6    # "xrp":Landroid/content/res/XmlResourceParser;
     :cond_2
     invoke-interface {v6}, Landroid/content/res/XmlResourceParser;->next()I
@@ -334,12 +303,10 @@
 
     goto :goto_2
 
-    .line 261
     .end local v6    # "xrp":Landroid/content/res/XmlResourceParser;
     :catch_0
     move-exception v5
 
-    .line 262
     .local v5, "xppe":Lorg/xmlpull/v1/XmlPullParserException;
     const-string v7, "ZonePicker"
 
@@ -347,14 +314,12 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 266
     .end local v5    # "xppe":Lorg/xmlpull/v1/XmlPullParserException;
     :goto_4
     iget-object v7, p0, Lcom/android/settings/ZonePicker$ZoneGetter;->mZones:Ljava/util/List;
 
     goto :goto_3
 
-    .line 251
     .restart local v6    # "xrp":Landroid/content/res/XmlResourceParser;
     :cond_3
     :try_start_1
@@ -370,18 +335,15 @@
 
     if-eqz v7, :cond_4
 
-    .line 252
     const/4 v7, 0x0
 
     invoke-interface {v6, v7}, Landroid/content/res/XmlResourceParser;->getAttributeValue(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 253
     .restart local v4    # "olsonId":Ljava/lang/String;
     invoke-direct {p0, v4}, Lcom/android/settings/ZonePicker$ZoneGetter;->addTimeZone(Ljava/lang/String;)V
 
-    .line 255
     .end local v4    # "olsonId":Ljava/lang/String;
     :cond_4
     :goto_5
@@ -391,7 +353,6 @@
 
     if-eq v7, v10, :cond_5
 
-    .line 256
     invoke-interface {v6}, Landroid/content/res/XmlResourceParser;->next()I
     :try_end_1
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_0
@@ -399,12 +360,10 @@
 
     goto :goto_5
 
-    .line 263
     .end local v6    # "xrp":Landroid/content/res/XmlResourceParser;
     :catch_1
     move-exception v2
 
-    .line 264
     .local v2, "ioe":Ljava/io/IOException;
     const-string v7, "ZonePicker"
 
@@ -414,7 +373,6 @@
 
     goto :goto_4
 
-    .line 258
     .end local v2    # "ioe":Ljava/io/IOException;
     .restart local v6    # "xrp":Landroid/content/res/XmlResourceParser;
     :cond_5
@@ -423,7 +381,6 @@
 
     goto :goto_1
 
-    .line 260
     :cond_6
     invoke-interface {v6}, Landroid/content/res/XmlResourceParser;->close()V
     :try_end_2

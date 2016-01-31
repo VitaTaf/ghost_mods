@@ -12,7 +12,6 @@
     .locals 1
 
     .prologue
-    .line 45
     const/high16 v0, 0x100000
 
     sput v0, Landroid/support/v4/app/SharedElementCallback;->MAX_IMAGE_SIZE:I
@@ -40,7 +39,6 @@
     .end annotation
 
     .prologue
-    .line 125
     .local p1, "names":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     .local p2, "sharedElements":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Landroid/view/View;>;"
     return-void
@@ -67,7 +65,6 @@
     .end annotation
 
     .prologue
-    .line 90
     .local p1, "sharedElementNames":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     .local p2, "sharedElements":Ljava/util/List;, "Ljava/util/List<Landroid/view/View;>;"
     .local p3, "sharedElementSnapshots":Ljava/util/List;, "Ljava/util/List<Landroid/view/View;>;"
@@ -95,7 +92,6 @@
     .end annotation
 
     .prologue
-    .line 65
     .local p1, "sharedElementNames":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     .local p2, "sharedElements":Ljava/util/List;, "Ljava/util/List<Landroid/view/View;>;"
     .local p3, "sharedElementSnapshots":Ljava/util/List;, "Ljava/util/List<Landroid/view/View;>;"

@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 1041
     invoke-direct {p0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoJellybeanImpl;-><init>()V
 
     return-void
@@ -32,7 +31,6 @@
     .param p1, "info"    # Ljava/lang/Object;
 
     .prologue
-    .line 1045
     invoke-static {p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompatJellybeanMr2;->getViewIdResourceName(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0

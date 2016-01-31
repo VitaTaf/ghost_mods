@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 191
     iput-object p1, p0, Lcom/android/settings/voice/VoiceInputPreference$5;->this$0:Lcom/android/settings/voice/VoiceInputPreference;
 
     iput-object p2, p0, Lcom/android/settings/voice/VoiceInputPreference$5;->val$buttonView:Landroid/widget/CompoundButton;
@@ -46,13 +45,11 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 194
     iget-object v0, p0, Lcom/android/settings/voice/VoiceInputPreference$5;->this$0:Lcom/android/settings/voice/VoiceInputPreference;
 
     iget-object v1, p0, Lcom/android/settings/voice/VoiceInputPreference$5;->val$buttonView:Landroid/widget/CompoundButton;
 
     invoke-virtual {v0, v1}, Lcom/android/settings/voice/VoiceInputPreference;->makeCurrentChecked(Landroid/widget/Checkable;)V
 
-    .line 195
     return-void
 .end method

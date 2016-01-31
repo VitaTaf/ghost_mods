@@ -19,7 +19,6 @@
     .locals 1
 
     .prologue
-    .line 595
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/settings/widget/SettingsAppWidgetProvider$StateTracker;-><init>(Lcom/android/settings/widget/SettingsAppWidgetProvider$1;)V
@@ -32,7 +31,6 @@
     .param p1, "x0"    # Lcom/android/settings/widget/SettingsAppWidgetProvider$1;
 
     .prologue
-    .line 595
     invoke-direct {p0}, Lcom/android/settings/widget/SettingsAppWidgetProvider$SyncStateTracker;-><init>()V
 
     return-void
@@ -45,12 +43,10 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 607
     invoke-static {}, Landroid/content/ContentResolver;->getMasterSyncAutomatically()Z
 
     move-result v0
 
-    .line 608
     .local v0, "on":Z
     if-eqz v0, :cond_0
 
@@ -69,7 +65,6 @@
     .locals 1
 
     .prologue
-    .line 599
     const v0, 0x7f090779
 
     return v0
@@ -79,7 +74,6 @@
     .locals 1
 
     .prologue
-    .line 597
     const v0, 0x7f0f0203
 
     return v0
@@ -90,7 +84,6 @@
     .param p1, "on"    # Z
 
     .prologue
-    .line 601
     if-eqz p1, :cond_0
 
     const v0, 0x7f020030
@@ -108,7 +101,6 @@
     .locals 1
 
     .prologue
-    .line 596
     const v0, 0x7f0f0202
 
     return v0
@@ -118,7 +110,6 @@
     .locals 1
 
     .prologue
-    .line 598
     const v0, 0x7f0f0204
 
     return v0
@@ -130,14 +121,12 @@
     .param p2, "unused"    # Landroid/content/Intent;
 
     .prologue
-    .line 613
     invoke-virtual {p0, p1}, Lcom/android/settings/widget/SettingsAppWidgetProvider$SyncStateTracker;->getActualState(Landroid/content/Context;)I
 
     move-result v0
 
     invoke-virtual {p0, p1, v0}, Lcom/android/settings/widget/SettingsAppWidgetProvider$SyncStateTracker;->setCurrentState(Landroid/content/Context;I)V
 
-    .line 614
     return-void
 .end method
 
@@ -147,7 +136,6 @@
     .param p2, "desiredState"    # Z
 
     .prologue
-    .line 618
     const-string v2, "connectivity"
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -156,13 +144,11 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 620
     .local v0, "connManager":Landroid/net/ConnectivityManager;
     invoke-static {}, Landroid/content/ContentResolver;->getMasterSyncAutomatically()Z
 
     move-result v1
 
-    .line 622
     .local v1, "sync":Z
     new-instance v2, Lcom/android/settings/widget/SettingsAppWidgetProvider$SyncStateTracker$1;
 
@@ -174,6 +160,5 @@
 
     invoke-virtual {v2, v3}, Lcom/android/settings/widget/SettingsAppWidgetProvider$SyncStateTracker$1;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 648
     return-void
 .end method

@@ -38,7 +38,6 @@
     .locals 0
 
     .prologue
-    .line 411
     iput-object p1, p0, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings$2;->this$0:Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;
 
     iput-object p2, p0, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings$2;->val$collator:Ljava/text/Collator;
@@ -56,7 +55,6 @@
     .param p2, "rhs"    # Lcom/android/settings/inputmethod/InputMethodPreference;
 
     .prologue
-    .line 414
     iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings$2;->val$collator:Ljava/text/Collator;
 
     invoke-virtual {p1, p2, v0}, Lcom/android/settings/inputmethod/InputMethodPreference;->compareTo(Lcom/android/settings/inputmethod/InputMethodPreference;Ljava/text/Collator;)I
@@ -72,7 +70,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 411
     check-cast p1, Lcom/android/settings/inputmethod/InputMethodPreference;
 
     .end local p1    # "x0":Ljava/lang/Object;

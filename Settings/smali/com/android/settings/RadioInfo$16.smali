@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 1073
     iput-object p1, p0, Lcom/android/settings/RadioInfo$16;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +44,6 @@
 
     const/4 v3, 0x0
 
-    .line 1076
     iget-object v4, p0, Lcom/android/settings/RadioInfo$16;->this$0:Lcom/android/settings/RadioInfo;
 
     const-string v5, "toggle VoLTE provisioned: currently %s"
@@ -73,7 +71,6 @@
     # invokes: Lcom/android/settings/RadioInfo;->log(Ljava/lang/String;)V
     invoke-static {v4, v2}, Lcom/android/settings/RadioInfo;->access$1000(Lcom/android/settings/RadioInfo;Ljava/lang/String;)V
 
-    .line 1078
     iget-object v2, p0, Lcom/android/settings/RadioInfo$16;->this$0:Lcom/android/settings/RadioInfo;
 
     # invokes: Lcom/android/settings/RadioInfo;->isImsVoLteProvisioned()Z
@@ -83,7 +80,6 @@
 
     if-nez v2, :cond_2
 
-    .line 1079
     .local v1, "newValue":Z
     :goto_1
     iget-object v2, p0, Lcom/android/settings/RadioInfo$16;->this$0:Lcom/android/settings/RadioInfo;
@@ -95,7 +91,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 1080
     iget-object v2, p0, Lcom/android/settings/RadioInfo$16;->this$0:Lcom/android/settings/RadioInfo;
 
     # getter for: Lcom/android/settings/RadioInfo;->phone:Lcom/android/internal/telephony/Phone;
@@ -122,11 +117,9 @@
 
     move-result-object v0
 
-    .line 1081
     .local v0, "imsManager":Lcom/android/ims/ImsManager;
     if-eqz v0, :cond_0
 
-    .line 1082
     invoke-static {}, Landroid/app/QueuedWork;->singleThreadExecutor()Ljava/util/concurrent/ExecutorService;
 
     move-result-object v2
@@ -137,7 +130,6 @@
 
     invoke-interface {v2, v3}, Ljava/util/concurrent/ExecutorService;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
 
-    .line 1095
     .end local v0    # "imsManager":Lcom/android/ims/ImsManager;
     :cond_0
     iget-object v2, p0, Lcom/android/settings/RadioInfo$16;->this$0:Lcom/android/settings/RadioInfo;
@@ -145,10 +137,8 @@
     # invokes: Lcom/android/settings/RadioInfo;->updateImsVoLteProvisionedState()V
     invoke-static {v2}, Lcom/android/settings/RadioInfo;->access$1700(Lcom/android/settings/RadioInfo;)V
 
-    .line 1096
     return-void
 
-    .line 1076
     .end local v1    # "newValue":Z
     :cond_1
     const-string v2, "off"
@@ -158,6 +148,5 @@
     :cond_2
     move v1, v3
 
-    .line 1078
     goto :goto_1
 .end method

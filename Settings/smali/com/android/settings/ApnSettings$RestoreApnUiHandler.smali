@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 654
     iput-object p1, p0, Lcom/android/settings/ApnSettings$RestoreApnUiHandler;->this$0:Lcom/android/settings/ApnSettings;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -37,7 +36,6 @@
     .param p2, "x1"    # Lcom/android/settings/ApnSettings$1;
 
     .prologue
-    .line 654
     invoke-direct {p0, p1}, Lcom/android/settings/ApnSettings$RestoreApnUiHandler;-><init>(Lcom/android/settings/ApnSettings;)V
 
     return-void
@@ -54,16 +52,13 @@
 
     const/4 v2, 0x0
 
-    .line 657
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 675
     :goto_0
     return-void
 
-    .line 659
     :pswitch_0
     iget-object v1, p0, Lcom/android/settings/ApnSettings$RestoreApnUiHandler;->this$0:Lcom/android/settings/ApnSettings;
 
@@ -71,24 +66,20 @@
 
     move-result-object v0
 
-    .line 660
     .local v0, "activity":Landroid/app/Activity;
     if-nez v0, :cond_0
 
-    .line 661
     # setter for: Lcom/android/settings/ApnSettings;->mRestoreDefaultApnMode:Z
     invoke-static {v2}, Lcom/android/settings/ApnSettings;->access$102(Z)Z
 
     goto :goto_0
 
-    .line 664
     :cond_0
     iget-object v1, p0, Lcom/android/settings/ApnSettings$RestoreApnUiHandler;->this$0:Lcom/android/settings/ApnSettings;
 
     # invokes: Lcom/android/settings/ApnSettings;->fillList()V
     invoke-static {v1}, Lcom/android/settings/ApnSettings;->access$200(Lcom/android/settings/ApnSettings;)V
 
-    .line 665
     iget-object v1, p0, Lcom/android/settings/ApnSettings$RestoreApnUiHandler;->this$0:Lcom/android/settings/ApnSettings;
 
     invoke-virtual {v1}, Lcom/android/settings/ApnSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
@@ -97,18 +88,15 @@
 
     invoke-virtual {v1, v3}, Landroid/preference/PreferenceScreen;->setEnabled(Z)V
 
-    .line 666
     # setter for: Lcom/android/settings/ApnSettings;->mRestoreDefaultApnMode:Z
     invoke-static {v2}, Lcom/android/settings/ApnSettings;->access$102(Z)Z
 
-    .line 667
     iget-object v1, p0, Lcom/android/settings/ApnSettings$RestoreApnUiHandler;->this$0:Lcom/android/settings/ApnSettings;
 
     const/16 v2, 0x3e9
 
     invoke-virtual {v1, v2}, Lcom/android/settings/ApnSettings;->removeDialogAllowingStateLoss(I)V
 
-    .line 668
     iget-object v1, p0, Lcom/android/settings/ApnSettings$RestoreApnUiHandler;->this$0:Lcom/android/settings/ApnSettings;
 
     invoke-virtual {v1}, Lcom/android/settings/ApnSettings;->getResources()Landroid/content/res/Resources;
@@ -129,7 +117,6 @@
 
     goto :goto_0
 
-    .line 657
     nop
 
     :pswitch_data_0

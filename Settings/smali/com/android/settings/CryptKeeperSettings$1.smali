@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 53
     iput-object p1, p0, Lcom/android/settings/CryptKeeperSettings$1;->this$0:Lcom/android/settings/CryptKeeperSettings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -45,12 +44,10 @@
 
     const/4 v7, 0x0
 
-    .line 56
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 57
     .local v0, "action":Ljava/lang/String;
     const-string v9, "android.intent.action.BATTERY_CHANGED"
 
@@ -60,14 +57,12 @@
 
     if-eqz v9, :cond_0
 
-    .line 58
     const-string v9, "level"
 
     invoke-virtual {p2, v9, v7}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v2
 
-    .line 59
     .local v2, "level":I
     const-string v9, "plugged"
 
@@ -75,7 +70,6 @@
 
     move-result v4
 
-    .line 60
     .local v4, "plugged":I
     const-string v9, "invalid_charger"
 
@@ -83,7 +77,6 @@
 
     move-result v1
 
-    .line 63
     .local v1, "invalidCharger":I
     const/16 v9, 0x50
 
@@ -91,7 +84,6 @@
 
     move v3, v6
 
-    .line 64
     .local v3, "levelOk":Z
     :goto_0
     and-int/lit8 v9, v4, 0x7
@@ -102,7 +94,6 @@
 
     move v5, v6
 
-    .line 69
     .local v5, "pluggedOk":Z
     :goto_1
     iget-object v9, p0, Lcom/android/settings/CryptKeeperSettings$1;->this$0:Lcom/android/settings/CryptKeeperSettings;
@@ -119,7 +110,6 @@
     :goto_2
     invoke-virtual {v9, v6}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 70
     iget-object v6, p0, Lcom/android/settings/CryptKeeperSettings$1;->this$0:Lcom/android/settings/CryptKeeperSettings;
 
     # getter for: Lcom/android/settings/CryptKeeperSettings;->mPowerWarning:Landroid/view/View;
@@ -134,7 +124,6 @@
     :goto_3
     invoke-virtual {v9, v6}, Landroid/view/View;->setVisibility(I)V
 
-    .line 71
     iget-object v6, p0, Lcom/android/settings/CryptKeeperSettings$1;->this$0:Lcom/android/settings/CryptKeeperSettings;
 
     # getter for: Lcom/android/settings/CryptKeeperSettings;->mBatteryWarning:Landroid/view/View;
@@ -147,7 +136,6 @@
     :goto_4
     invoke-virtual {v6, v8}, Landroid/view/View;->setVisibility(I)V
 
-    .line 73
     .end local v1    # "invalidCharger":I
     .end local v2    # "level":I
     .end local v3    # "levelOk":Z
@@ -162,32 +150,27 @@
     :cond_1
     move v3, v7
 
-    .line 63
     goto :goto_0
 
     .restart local v3    # "levelOk":Z
     :cond_2
     move v5, v7
 
-    .line 64
     goto :goto_1
 
     .restart local v5    # "pluggedOk":Z
     :cond_3
     move v6, v7
 
-    .line 69
     goto :goto_2
 
     :cond_4
     move v6, v7
 
-    .line 70
     goto :goto_3
 
     :cond_5
     move v8, v7
 
-    .line 71
     goto :goto_4
 .end method

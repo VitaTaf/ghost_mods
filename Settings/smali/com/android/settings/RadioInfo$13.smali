@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 1002
     iput-object p1, p0, Lcom/android/settings/RadioInfo$13;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 1005
     iget-object v0, p0, Lcom/android/settings/RadioInfo$13;->this$0:Lcom/android/settings/RadioInfo;
 
     # getter for: Lcom/android/settings/RadioInfo;->phone:Lcom/android/internal/telephony/Phone;
@@ -63,10 +61,8 @@
     :goto_0
     invoke-interface {v1, v0}, Lcom/android/internal/telephony/Phone;->setRadioPower(Z)V
 
-    .line 1006
     return-void
 
-    .line 1005
     :cond_0
     const/4 v0, 0x0
 

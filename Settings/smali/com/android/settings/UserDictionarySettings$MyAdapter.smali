@@ -34,27 +34,22 @@
     .param p6, "settings"    # Lcom/android/settings/UserDictionarySettings;
 
     .prologue
-    .line 260
     invoke-direct/range {p0 .. p5}, Landroid/widget/SimpleCursorAdapter;-><init>(Landroid/content/Context;ILandroid/database/Cursor;[Ljava/lang/String;[I)V
 
-    .line 238
     new-instance v2, Lcom/android/settings/UserDictionarySettings$MyAdapter$1;
 
     invoke-direct {v2, p0}, Lcom/android/settings/UserDictionarySettings$MyAdapter$1;-><init>(Lcom/android/settings/UserDictionarySettings$MyAdapter;)V
 
     iput-object v2, p0, Lcom/android/settings/UserDictionarySettings$MyAdapter;->mViewBinder:Landroid/widget/SimpleCursorAdapter$ViewBinder;
 
-    .line 262
     if-eqz p3, :cond_0
 
-    .line 263
     const v2, 0x104050d
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 265
     .local v0, "alphabet":Ljava/lang/String;
     const-string v2, "word"
 
@@ -62,7 +57,6 @@
 
     move-result v1
 
-    .line 266
     .local v1, "wordColIndex":I
     new-instance v2, Landroid/widget/AlphabetIndexer;
 
@@ -70,7 +64,6 @@
 
     iput-object v2, p0, Lcom/android/settings/UserDictionarySettings$MyAdapter;->mIndexer:Landroid/widget/AlphabetIndexer;
 
-    .line 268
     .end local v0    # "alphabet":Ljava/lang/String;
     .end local v1    # "wordColIndex":I
     :cond_0
@@ -78,7 +71,6 @@
 
     invoke-virtual {p0, v2}, Lcom/android/settings/UserDictionarySettings$MyAdapter;->setViewBinder(Landroid/widget/SimpleCursorAdapter$ViewBinder;)V
 
-    .line 269
     return-void
 .end method
 
@@ -89,7 +81,6 @@
     .param p1, "section"    # I
 
     .prologue
-    .line 273
     iget-object v0, p0, Lcom/android/settings/UserDictionarySettings$MyAdapter;->mIndexer:Landroid/widget/AlphabetIndexer;
 
     if-nez v0, :cond_0
@@ -114,7 +105,6 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 278
     iget-object v0, p0, Lcom/android/settings/UserDictionarySettings$MyAdapter;->mIndexer:Landroid/widget/AlphabetIndexer;
 
     if-nez v0, :cond_0
@@ -138,7 +128,6 @@
     .locals 1
 
     .prologue
-    .line 283
     iget-object v0, p0, Lcom/android/settings/UserDictionarySettings$MyAdapter;->mIndexer:Landroid/widget/AlphabetIndexer;
 
     if-nez v0, :cond_0

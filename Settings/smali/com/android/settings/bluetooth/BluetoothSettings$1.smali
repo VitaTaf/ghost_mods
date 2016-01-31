@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 98
     iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothSettings$1;->this$0:Lcom/android/settings/bluetooth/BluetoothSettings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -36,7 +35,6 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 115
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothSettings$1;->this$0:Lcom/android/settings/bluetooth/BluetoothSettings;
 
     iget-object v0, v0, Lcom/android/settings/bluetooth/BluetoothSettings;->mLocalAdapter:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
@@ -53,7 +51,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 116
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothSettings$1;->this$0:Lcom/android/settings/bluetooth/BluetoothSettings;
 
     iget-object v0, v0, Lcom/android/settings/bluetooth/BluetoothSettings;->mMyDevicePreference:Landroid/preference/Preference;
@@ -86,7 +83,6 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 119
     :cond_0
     return-void
 .end method
@@ -99,12 +95,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 101
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 102
     .local v0, "action":Ljava/lang/String;
     const-string v2, "android.bluetooth.adapter.extra.STATE"
 
@@ -114,7 +108,6 @@
 
     move-result v1
 
-    .line 105
     .local v1, "state":I
     const-string v2, "android.bluetooth.adapter.action.LOCAL_NAME_CHANGED"
 
@@ -124,16 +117,13 @@
 
     if-eqz v2, :cond_0
 
-    .line 106
     invoke-direct {p0, p1}, Lcom/android/settings/bluetooth/BluetoothSettings$1;->updateDeviceName(Landroid/content/Context;)V
 
-    .line 109
     :cond_0
     const/16 v2, 0xc
 
     if-ne v1, v2, :cond_1
 
-    .line 110
     iget-object v2, p0, Lcom/android/settings/bluetooth/BluetoothSettings$1;->this$0:Lcom/android/settings/bluetooth/BluetoothSettings;
 
     const/4 v3, 0x1
@@ -141,7 +131,6 @@
     # setter for: Lcom/android/settings/bluetooth/BluetoothSettings;->mInitiateDiscoverable:Z
     invoke-static {v2, v3}, Lcom/android/settings/bluetooth/BluetoothSettings;->access$002(Lcom/android/settings/bluetooth/BluetoothSettings;Z)Z
 
-    .line 112
     :cond_1
     return-void
 .end method

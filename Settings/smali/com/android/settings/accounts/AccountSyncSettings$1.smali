@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 99
     iput-object p1, p0, Lcom/android/settings/accounts/AccountSyncSettings$1;->this$0:Lcom/android/settings/accounts/AccountSyncSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,14 +41,12 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 102
     iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings$1;->this$0:Lcom/android/settings/accounts/AccountSyncSettings;
 
     invoke-virtual {v0}, Lcom/android/settings/accounts/AccountSyncSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v2
 
-    .line 103
     .local v2, "activity":Landroid/app/Activity;
     invoke-static {v2}, Landroid/accounts/AccountManager;->get(Landroid/content/Context;)Landroid/accounts/AccountManager;
 
@@ -74,6 +71,5 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/accounts/AccountManager;->removeAccountAsUser(Landroid/accounts/Account;Landroid/app/Activity;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;Landroid/os/UserHandle;)Landroid/accounts/AccountManagerFuture;
 
-    .line 133
     return-void
 .end method

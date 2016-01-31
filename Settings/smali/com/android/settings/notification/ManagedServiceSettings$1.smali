@@ -24,7 +24,6 @@
     .param p2, "x0"    # Landroid/os/Handler;
 
     .prologue
-    .line 80
     iput-object p1, p0, Lcom/android/settings/notification/ManagedServiceSettings$1;->this$0:Lcom/android/settings/notification/ManagedServiceSettings;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -40,12 +39,10 @@
     .param p2, "uri"    # Landroid/net/Uri;
 
     .prologue
-    .line 83
     iget-object v0, p0, Lcom/android/settings/notification/ManagedServiceSettings$1;->this$0:Lcom/android/settings/notification/ManagedServiceSettings;
 
     # invokes: Lcom/android/settings/notification/ManagedServiceSettings;->updateList()V
     invoke-static {v0}, Lcom/android/settings/notification/ManagedServiceSettings;->access$000(Lcom/android/settings/notification/ManagedServiceSettings;)V
 
-    .line 84
     return-void
 .end method

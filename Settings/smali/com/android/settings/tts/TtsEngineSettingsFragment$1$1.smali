@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 77
     iput-object p1, p0, Lcom/android/settings/tts/TtsEngineSettingsFragment$1$1;->this$1:Lcom/android/settings/tts/TtsEngineSettingsFragment$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 2
 
     .prologue
-    .line 80
     iget-object v0, p0, Lcom/android/settings/tts/TtsEngineSettingsFragment$1$1;->this$1:Lcom/android/settings/tts/TtsEngineSettingsFragment$1;
 
     iget-object v0, v0, Lcom/android/settings/tts/TtsEngineSettingsFragment$1;->this$0:Lcom/android/settings/tts/TtsEngineSettingsFragment;
@@ -54,6 +52,5 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setEnabled(Z)V
 
-    .line 81
     return-void
 .end method

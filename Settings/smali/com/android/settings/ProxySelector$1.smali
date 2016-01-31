@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 246
     iput-object p1, p0, Lcom/android/settings/ProxySelector$1;->this$0:Lcom/android/settings/ProxySelector;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 248
     iget-object v0, p0, Lcom/android/settings/ProxySelector$1;->this$0:Lcom/android/settings/ProxySelector;
 
     invoke-virtual {v0}, Lcom/android/settings/ProxySelector;->saveToDb()Z
@@ -50,7 +48,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 249
     iget-object v0, p0, Lcom/android/settings/ProxySelector$1;->this$0:Lcom/android/settings/ProxySelector;
 
     invoke-virtual {v0}, Lcom/android/settings/ProxySelector;->getActivity()Landroid/app/Activity;
@@ -59,7 +56,6 @@
 
     invoke-virtual {v0}, Landroid/app/Activity;->onBackPressed()V
 
-    .line 251
     :cond_0
     return-void
 .end method

@@ -29,12 +29,10 @@
     .locals 2
 
     .prologue
-    .line 359
     iput-object p1, p0, Lcom/android/settings/CredentialStorage$ResetDialog;->this$0:Lcom/android/settings/CredentialStorage;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 360
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -70,7 +68,6 @@
     # setter for: Lcom/android/settings/CredentialStorage;->mResetDialog:Landroid/app/AlertDialog;
     invoke-static {p1, v0}, Lcom/android/settings/CredentialStorage;->access$302(Lcom/android/settings/CredentialStorage;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
 
-    .line 366
     # getter for: Lcom/android/settings/CredentialStorage;->mResetDialog:Landroid/app/AlertDialog;
     invoke-static {p1}, Lcom/android/settings/CredentialStorage;->access$300(Lcom/android/settings/CredentialStorage;)Landroid/app/AlertDialog;
 
@@ -78,7 +75,6 @@
 
     invoke-virtual {v0, p0}, Landroid/app/AlertDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 367
     # getter for: Lcom/android/settings/CredentialStorage;->mResetDialog:Landroid/app/AlertDialog;
     invoke-static {p1}, Lcom/android/settings/CredentialStorage;->access$300(Lcom/android/settings/CredentialStorage;)Landroid/app/AlertDialog;
 
@@ -86,7 +82,6 @@
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
-    .line 368
     return-void
 .end method
 
@@ -96,7 +91,6 @@
     .param p2, "x1"    # Lcom/android/settings/CredentialStorage$1;
 
     .prologue
-    .line 353
     invoke-direct {p0, p1}, Lcom/android/settings/CredentialStorage$ResetDialog;-><init>(Lcom/android/settings/CredentialStorage;)V
 
     return-void
@@ -110,7 +104,6 @@
     .param p2, "button"    # I
 
     .prologue
-    .line 371
     const/4 v0, -0x1
 
     if-ne p2, v0, :cond_0
@@ -120,10 +113,8 @@
     :goto_0
     iput-boolean v0, p0, Lcom/android/settings/CredentialStorage$ResetDialog;->mResetConfirmed:Z
 
-    .line 372
     return-void
 
-    .line 371
     :cond_0
     const/4 v0, 0x0
 
@@ -137,15 +128,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 375
     iget-boolean v0, p0, Lcom/android/settings/CredentialStorage$ResetDialog;->mResetConfirmed:Z
 
     if-eqz v0, :cond_0
 
-    .line 376
     iput-boolean v3, p0, Lcom/android/settings/CredentialStorage$ResetDialog;->mResetConfirmed:Z
 
-    .line 377
     new-instance v0, Lcom/android/settings/CredentialStorage$ResetKeyStoreAndKeyChain;
 
     iget-object v1, p0, Lcom/android/settings/CredentialStorage$ResetDialog;->this$0:Lcom/android/settings/CredentialStorage;
@@ -158,11 +146,9 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/CredentialStorage$ResetKeyStoreAndKeyChain;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 381
     :goto_0
     return-void
 
-    .line 380
     :cond_0
     iget-object v0, p0, Lcom/android/settings/CredentialStorage$ResetDialog;->this$0:Lcom/android/settings/CredentialStorage;
 

@@ -10,7 +10,6 @@
     .param p1, "pointerId"    # I
 
     .prologue
-    .line 26
     invoke-virtual {p0, p1}, Landroid/view/VelocityTracker;->getXVelocity(I)F
 
     move-result v0
@@ -24,7 +23,6 @@
     .param p1, "pointerId"    # I
 
     .prologue
-    .line 29
     invoke-virtual {p0, p1}, Landroid/view/VelocityTracker;->getYVelocity(I)F
 
     move-result v0

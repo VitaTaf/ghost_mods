@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 1031
     iput-object p1, p0, Lcom/android/settings/RadioInfo$14;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +44,6 @@
 
     const/4 v2, 0x0
 
-    .line 1034
     iget-object v3, p0, Lcom/android/settings/RadioInfo$14;->this$0:Lcom/android/settings/RadioInfo;
 
     const-string v4, "toggle %s: currently %s"
@@ -79,7 +77,6 @@
     # invokes: Lcom/android/settings/RadioInfo;->log(Ljava/lang/String;)V
     invoke-static {v3, v1}, Lcom/android/settings/RadioInfo;->access$1000(Lcom/android/settings/RadioInfo;Ljava/lang/String;)V
 
-    .line 1036
     iget-object v1, p0, Lcom/android/settings/RadioInfo$14;->this$0:Lcom/android/settings/RadioInfo;
 
     # invokes: Lcom/android/settings/RadioInfo;->isImsRegRequired()Z
@@ -89,7 +86,6 @@
 
     if-nez v1, :cond_1
 
-    .line 1037
     .local v0, "newValue":Z
     :goto_1
     const-string v2, "persist.radio.imsregrequired"
@@ -101,16 +97,13 @@
     :goto_2
     invoke-static {v2, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1039
     iget-object v1, p0, Lcom/android/settings/RadioInfo$14;->this$0:Lcom/android/settings/RadioInfo;
 
     # invokes: Lcom/android/settings/RadioInfo;->updateImsRegRequiredState()V
     invoke-static {v1}, Lcom/android/settings/RadioInfo;->access$3800(Lcom/android/settings/RadioInfo;)V
 
-    .line 1040
     return-void
 
-    .line 1034
     .end local v0    # "newValue":Z
     :cond_0
     const-string v1, "off"
@@ -120,10 +113,8 @@
     :cond_1
     move v0, v2
 
-    .line 1036
     goto :goto_1
 
-    .line 1037
     .restart local v0    # "newValue":Z
     :cond_2
     const-string v1, "0"

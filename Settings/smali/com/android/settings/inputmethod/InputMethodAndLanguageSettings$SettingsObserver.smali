@@ -27,16 +27,12 @@
     .param p3, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 632
     iput-object p1, p0, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings$SettingsObserver;->this$0:Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;
 
-    .line 633
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 634
     iput-object p3, p0, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings$SettingsObserver;->mContext:Landroid/content/Context;
 
-    .line 635
     return-void
 .end method
 
@@ -47,13 +43,11 @@
     .param p1, "selfChange"    # Z
 
     .prologue
-    .line 638
     iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings$SettingsObserver;->this$0:Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;
 
     # invokes: Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;->updateCurrentImeName()V
     invoke-static {v0}, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;->access$100(Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;)V
 
-    .line 639
     return-void
 .end method
 
@@ -61,7 +55,6 @@
     .locals 1
 
     .prologue
-    .line 650
     iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings$SettingsObserver;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -70,7 +63,6 @@
 
     invoke-virtual {v0, p0}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 651
     return-void
 .end method
 
@@ -80,14 +72,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 642
     iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings$SettingsObserver;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 643
     .local v0, "cr":Landroid/content/ContentResolver;
     const-string v1, "default_input_method"
 
@@ -97,7 +87,6 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 645
     const-string v1, "selected_input_method_subtype"
 
     invoke-static {v1}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -106,6 +95,5 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 647
     return-void
 .end method

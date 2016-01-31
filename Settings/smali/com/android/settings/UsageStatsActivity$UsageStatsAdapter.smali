@@ -54,7 +54,6 @@
     .locals 17
 
     .prologue
-    .line 110
     move-object/from16 v0, p1
 
     move-object/from16 v1, p0
@@ -63,14 +62,12 @@
 
     invoke-direct/range {p0 .. p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    .line 103
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
 
     iput v2, v0, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->mDisplayOrder:I
 
-    .line 104
     new-instance v2, Lcom/android/settings/UsageStatsActivity$LastTimeUsedComparator;
 
     invoke-direct {v2}, Lcom/android/settings/UsageStatsActivity$LastTimeUsedComparator;-><init>()V
@@ -79,7 +76,6 @@
 
     iput-object v2, v0, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->mLastTimeUsedComparator:Lcom/android/settings/UsageStatsActivity$LastTimeUsedComparator;
 
-    .line 105
     new-instance v2, Lcom/android/settings/UsageStatsActivity$UsageTimeComparator;
 
     invoke-direct {v2}, Lcom/android/settings/UsageStatsActivity$UsageTimeComparator;-><init>()V
@@ -88,7 +84,6 @@
 
     iput-object v2, v0, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->mUsageTimeComparator:Lcom/android/settings/UsageStatsActivity$UsageTimeComparator;
 
-    .line 107
     new-instance v2, Landroid/util/ArrayMap;
 
     invoke-direct {v2}, Landroid/util/ArrayMap;-><init>()V
@@ -97,7 +92,6 @@
 
     iput-object v2, v0, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->mAppLabelMap:Landroid/util/ArrayMap;
 
-    .line 108
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
@@ -106,12 +100,10 @@
 
     iput-object v2, v0, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->mPackageStats:Ljava/util/ArrayList;
 
-    .line 111
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v9
 
-    .line 112
     .local v9, "cal":Ljava/util/Calendar;
     const/4 v2, 0x6
 
@@ -119,7 +111,6 @@
 
     invoke-virtual {v9, v2, v3}, Ljava/util/Calendar;->add(II)V
 
-    .line 114
     # getter for: Lcom/android/settings/UsageStatsActivity;->mUsageStatsManager:Landroid/app/usage/UsageStatsManager;
     invoke-static/range {p1 .. p1}, Lcom/android/settings/UsageStatsActivity;->access$000(Lcom/android/settings/UsageStatsActivity;)Landroid/app/usage/UsageStatsManager;
 
@@ -139,27 +130,22 @@
 
     move-result-object v16
 
-    .line 117
     .local v16, "stats":Ljava/util/List;, "Ljava/util/List<Landroid/app/usage/UsageStats;>;"
     if-nez v16, :cond_0
 
-    .line 149
     :goto_0
     return-void
 
-    .line 121
     :cond_0
     new-instance v13, Landroid/util/ArrayMap;
 
     invoke-direct {v13}, Landroid/util/ArrayMap;-><init>()V
 
-    .line 122
     .local v13, "map":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/app/usage/UsageStats;>;"
     invoke-interface/range {v16 .. v16}, Ljava/util/List;->size()I
 
     move-result v15
 
-    .line 123
     .local v15, "statCount":I
     const/4 v11, 0x0
 
@@ -167,7 +153,6 @@
     :goto_1
     if-ge v11, v15, :cond_2
 
-    .line 124
     move-object/from16 v0, v16
 
     invoke-interface {v0, v11}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -176,7 +161,6 @@
 
     check-cast v14, Landroid/app/usage/UsageStats;
 
-    .line 128
     .local v14, "pkgStats":Landroid/app/usage/UsageStats;
     :try_start_0
     # getter for: Lcom/android/settings/UsageStatsActivity;->mPm:Landroid/content/pm/PackageManager;
@@ -194,7 +178,6 @@
 
     move-result-object v8
 
-    .line 129
     .local v8, "appInfo":Landroid/content/pm/ApplicationInfo;
     # getter for: Lcom/android/settings/UsageStatsActivity;->mPm:Landroid/content/pm/PackageManager;
     invoke-static/range {p1 .. p1}, Lcom/android/settings/UsageStatsActivity;->access$100(Lcom/android/settings/UsageStatsActivity;)Landroid/content/pm/PackageManager;
@@ -209,7 +192,6 @@
 
     move-result-object v12
 
-    .line 130
     .local v12, "label":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -221,7 +203,6 @@
 
     invoke-virtual {v2, v3, v12}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 132
     invoke-virtual {v14}, Landroid/app/usage/UsageStats;->getPackageName()Ljava/lang/String;
 
     move-result-object v2
@@ -232,18 +213,15 @@
 
     check-cast v10, Landroid/app/usage/UsageStats;
 
-    .line 134
     .local v10, "existingStats":Landroid/app/usage/UsageStats;
     if-nez v10, :cond_1
 
-    .line 135
     invoke-virtual {v14}, Landroid/app/usage/UsageStats;->getPackageName()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v13, v2, v14}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 123
     .end local v8    # "appInfo":Landroid/content/pm/ApplicationInfo;
     .end local v10    # "existingStats":Landroid/app/usage/UsageStats;
     .end local v12    # "label":Ljava/lang/String;
@@ -252,7 +230,6 @@
 
     goto :goto_1
 
-    .line 137
     .restart local v8    # "appInfo":Landroid/content/pm/ApplicationInfo;
     .restart local v10    # "existingStats":Landroid/app/usage/UsageStats;
     .restart local v12    # "label":Ljava/lang/String;
@@ -263,7 +240,6 @@
 
     goto :goto_2
 
-    .line 140
     .end local v8    # "appInfo":Landroid/content/pm/ApplicationInfo;
     .end local v10    # "existingStats":Landroid/app/usage/UsageStats;
     .end local v12    # "label":Ljava/lang/String;
@@ -272,7 +248,6 @@
 
     goto :goto_2
 
-    .line 144
     .end local v14    # "pkgStats":Landroid/app/usage/UsageStats;
     :cond_2
     move-object/from16 v0, p0
@@ -285,7 +260,6 @@
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 147
     new-instance v2, Lcom/android/settings/UsageStatsActivity$AppNameComparator;
 
     move-object/from16 v0, p0
@@ -298,7 +272,6 @@
 
     iput-object v2, v0, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->mAppLabelComparator:Lcom/android/settings/UsageStatsActivity$AppNameComparator;
 
-    .line 148
     invoke-direct/range {p0 .. p0}, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->sortList()V
 
     goto :goto_0
@@ -308,27 +281,22 @@
     .locals 2
 
     .prologue
-    .line 215
     iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->mDisplayOrder:I
 
     if-nez v0, :cond_1
 
-    .line 217
     iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->mPackageStats:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->mUsageTimeComparator:Lcom/android/settings/UsageStatsActivity$UsageTimeComparator;
 
     invoke-static {v0, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 225
     :cond_0
     :goto_0
     invoke-virtual {p0}, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->notifyDataSetChanged()V
 
-    .line 226
     return-void
 
-    .line 218
     :cond_1
     iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->mDisplayOrder:I
 
@@ -336,7 +304,6 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 220
     iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->mPackageStats:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->mLastTimeUsedComparator:Lcom/android/settings/UsageStatsActivity$LastTimeUsedComparator;
@@ -345,7 +312,6 @@
 
     goto :goto_0
 
-    .line 221
     :cond_2
     iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->mDisplayOrder:I
 
@@ -353,7 +319,6 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 223
     iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->mPackageStats:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->mAppLabelComparator:Lcom/android/settings/UsageStatsActivity$AppNameComparator;
@@ -369,7 +334,6 @@
     .locals 1
 
     .prologue
-    .line 153
     iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->mPackageStats:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -384,7 +348,6 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 158
     iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->mPackageStats:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -399,7 +362,6 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 163
     int-to-long v0, p1
 
     return-wide v0
@@ -414,10 +376,8 @@
     .prologue
     const/4 v4, 0x2
 
-    .line 175
     if-nez p2, :cond_0
 
-    .line 176
     iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->this$0:Lcom/android/settings/UsageStatsActivity;
 
     # getter for: Lcom/android/settings/UsageStatsActivity;->mInflater:Landroid/view/LayoutInflater;
@@ -433,12 +393,10 @@
 
     move-result-object p2
 
-    .line 180
     new-instance v6, Lcom/android/settings/UsageStatsActivity$AppViewHolder;
 
     invoke-direct {v6}, Lcom/android/settings/UsageStatsActivity$AppViewHolder;-><init>()V
 
-    .line 181
     .local v6, "holder":Lcom/android/settings/UsageStatsActivity$AppViewHolder;
     const v0, 0x7f0f01d8
 
@@ -450,7 +408,6 @@
 
     iput-object v0, v6, Lcom/android/settings/UsageStatsActivity$AppViewHolder;->pkgName:Landroid/widget/TextView;
 
-    .line 182
     const v0, 0x7f0f01d9
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -461,7 +418,6 @@
 
     iput-object v0, v6, Lcom/android/settings/UsageStatsActivity$AppViewHolder;->lastTimeUsed:Landroid/widget/TextView;
 
-    .line 183
     const v0, 0x7f0f01da
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -472,10 +428,8 @@
 
     iput-object v0, v6, Lcom/android/settings/UsageStatsActivity$AppViewHolder;->usageTime:Landroid/widget/TextView;
 
-    .line 184
     invoke-virtual {p2, v6}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 192
     :goto_0
     iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->mPackageStats:Ljava/util/ArrayList;
 
@@ -485,11 +439,9 @@
 
     check-cast v8, Landroid/app/usage/UsageStats;
 
-    .line 193
     .local v8, "pkgStats":Landroid/app/usage/UsageStats;
     if-eqz v8, :cond_1
 
-    .line 194
     iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->mAppLabelMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v8}, Landroid/app/usage/UsageStats;->getPackageName()Ljava/lang/String;
@@ -502,13 +454,11 @@
 
     check-cast v7, Ljava/lang/String;
 
-    .line 195
     .local v7, "label":Ljava/lang/String;
     iget-object v0, v6, Lcom/android/settings/UsageStatsActivity$AppViewHolder;->pkgName:Landroid/widget/TextView;
 
     invoke-virtual {v0, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 196
     iget-object v9, v6, Lcom/android/settings/UsageStatsActivity$AppViewHolder;->lastTimeUsed:Landroid/widget/TextView;
 
     invoke-virtual {v8}, Landroid/app/usage/UsageStats;->getLastTimeUsed()J
@@ -527,7 +477,6 @@
 
     invoke-virtual {v9, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 198
     iget-object v0, v6, Lcom/android/settings/UsageStatsActivity$AppViewHolder;->usageTime:Landroid/widget/TextView;
 
     invoke-virtual {v8}, Landroid/app/usage/UsageStats;->getTotalTimeInForeground()J
@@ -544,12 +493,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 203
     .end local v7    # "label":Ljava/lang/String;
     :goto_1
     return-object p2
 
-    .line 188
     .end local v6    # "holder":Lcom/android/settings/UsageStatsActivity$AppViewHolder;
     .end local v8    # "pkgStats":Landroid/app/usage/UsageStats;
     :cond_0
@@ -562,7 +509,6 @@
     .restart local v6    # "holder":Lcom/android/settings/UsageStatsActivity$AppViewHolder;
     goto :goto_0
 
-    .line 201
     .restart local v8    # "pkgStats":Landroid/app/usage/UsageStats;
     :cond_1
     const-string v0, "UsageStatsActivity"
@@ -595,20 +541,16 @@
     .param p1, "sortOrder"    # I
 
     .prologue
-    .line 207
     iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->mDisplayOrder:I
 
     if-ne v0, p1, :cond_0
 
-    .line 213
     :goto_0
     return-void
 
-    .line 211
     :cond_0
     iput p1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->mDisplayOrder:I
 
-    .line 212
     invoke-direct {p0}, Lcom/android/settings/UsageStatsActivity$UsageStatsAdapter;->sortList()V
 
     goto :goto_0

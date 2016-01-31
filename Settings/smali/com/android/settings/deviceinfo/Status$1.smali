@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 128
     iput-object p1, p0, Lcom/android/settings/deviceinfo/Status$1;->this$0:Lcom/android/settings/deviceinfo/Status;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 132
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 133
     .local v0, "action":Ljava/lang/String;
     const-string v1, "android.intent.action.BATTERY_CHANGED"
 
@@ -54,7 +51,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 134
     iget-object v1, p0, Lcom/android/settings/deviceinfo/Status$1;->this$0:Lcom/android/settings/deviceinfo/Status;
 
     # getter for: Lcom/android/settings/deviceinfo/Status;->mBatteryLevel:Landroid/preference/Preference;
@@ -68,7 +64,6 @@
 
     invoke-virtual {v1, v2}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 135
     iget-object v1, p0, Lcom/android/settings/deviceinfo/Status$1;->this$0:Lcom/android/settings/deviceinfo/Status;
 
     # getter for: Lcom/android/settings/deviceinfo/Status;->mBatteryStatus:Landroid/preference/Preference;
@@ -88,7 +83,6 @@
 
     invoke-virtual {v1, v2}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 137
     :cond_0
     return-void
 .end method

@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 349
     iput-object p1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$1$2;->this$1:Lcom/android/settings/wfd/WifiDisplaySettings$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 352
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$1$2;->this$1:Lcom/android/settings/wfd/WifiDisplaySettings$1;
 
     iget-object v0, v0, Lcom/android/settings/wfd/WifiDisplaySettings$1;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
@@ -53,6 +51,5 @@
 
     invoke-virtual {v0}, Landroid/hardware/display/DisplayManager;->resumeWifiDisplay()V
 
-    .line 353
     return-void
 .end method

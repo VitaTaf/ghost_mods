@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 128
     iput-object p1, p0, Lcom/android/settings/notification/ManagedServiceSettings$ScaryWarningDialogFragment$1;->this$1:Lcom/android/settings/notification/ManagedServiceSettings$ScaryWarningDialogFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,6 +41,5 @@
     .param p2, "id"    # I
 
     .prologue
-    .line 131
     return-void
 .end method

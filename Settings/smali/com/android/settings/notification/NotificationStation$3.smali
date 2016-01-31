@@ -36,7 +36,6 @@
     .locals 0
 
     .prologue
-    .line 105
     iput-object p1, p0, Lcom/android/settings/notification/NotificationStation$3;->this$0:Lcom/android/settings/notification/NotificationStation;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +51,6 @@
     .param p2, "rhs"    # Lcom/android/settings/notification/NotificationStation$HistoricalNotificationInfo;
 
     .prologue
-    .line 109
     iget-wide v0, p2, Lcom/android/settings/notification/NotificationStation$HistoricalNotificationInfo;->timestamp:J
 
     iget-wide v2, p1, Lcom/android/settings/notification/NotificationStation$HistoricalNotificationInfo;->timestamp:J
@@ -70,7 +68,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 105
     check-cast p1, Lcom/android/settings/notification/NotificationStation$HistoricalNotificationInfo;
 
     .end local p1    # "x0":Ljava/lang/Object;

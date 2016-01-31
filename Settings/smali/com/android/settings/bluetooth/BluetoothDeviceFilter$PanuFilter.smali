@@ -19,7 +19,6 @@
     .locals 1
 
     .prologue
-    .line 143
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/settings/bluetooth/BluetoothDeviceFilter$ClassUuidFilter;-><init>(Lcom/android/settings/bluetooth/BluetoothDeviceFilter$1;)V
@@ -32,7 +31,6 @@
     .param p1, "x0"    # Lcom/android/settings/bluetooth/BluetoothDeviceFilter$1;
 
     .prologue
-    .line 143
     invoke-direct {p0}, Lcom/android/settings/bluetooth/BluetoothDeviceFilter$PanuFilter;-><init>()V
 
     return-void
@@ -48,10 +46,8 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 146
     if-eqz p1, :cond_1
 
-    .line 147
     sget-object v1, Landroid/bluetooth/BluetoothUuid;->PANU:Landroid/os/ParcelUuid;
 
     invoke-static {p1, v1}, Landroid/bluetooth/BluetoothUuid;->isUuidPresent([Landroid/os/ParcelUuid;Landroid/os/ParcelUuid;)Z
@@ -60,7 +56,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 151
     :cond_0
     :goto_0
     return v0

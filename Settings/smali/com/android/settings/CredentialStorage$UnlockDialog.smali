@@ -42,12 +42,10 @@
 
     const/4 v5, 0x0
 
-    .line 560
     iput-object p1, p0, Lcom/android/settings/CredentialStorage$UnlockDialog;->this$0:Lcom/android/settings/CredentialStorage;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 561
     const v2, 0x7f040021
 
     const/4 v3, 0x0
@@ -56,7 +54,6 @@
 
     move-result-object v1
 
-    .line 564
     .local v1, "view":Landroid/view/View;
     # getter for: Lcom/android/settings/CredentialStorage;->mRetriesRemaining:I
     invoke-static {p1}, Lcom/android/settings/CredentialStorage;->access$800(Lcom/android/settings/CredentialStorage;)I
@@ -65,7 +62,6 @@
 
     if-ne v2, v6, :cond_0
 
-    .line 565
     invoke-virtual {p1}, Lcom/android/settings/CredentialStorage;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -76,7 +72,6 @@
 
     move-result-object v0
 
-    .line 574
     .local v0, "text":Ljava/lang/CharSequence;
     :goto_0
     const v2, 0x7f0f004c
@@ -89,7 +84,6 @@
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 575
     const v2, 0x7f0f004f
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -100,17 +94,14 @@
 
     iput-object v2, p0, Lcom/android/settings/CredentialStorage$UnlockDialog;->mOldPassword:Landroid/widget/TextView;
 
-    .line 576
     iget-object v2, p0, Lcom/android/settings/CredentialStorage$UnlockDialog;->mOldPassword:Landroid/widget/TextView;
 
     invoke-virtual {v2, v5}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 577
     iget-object v2, p0, Lcom/android/settings/CredentialStorage$UnlockDialog;->mOldPassword:Landroid/widget/TextView;
 
     invoke-virtual {v2, p0}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 578
     const v2, 0x7f0f004d
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -121,7 +112,6 @@
 
     iput-object v2, p0, Lcom/android/settings/CredentialStorage$UnlockDialog;->mError:Landroid/widget/TextView;
 
-    .line 581
     new-instance v2, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v2, p1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -155,7 +145,6 @@
     # setter for: Lcom/android/settings/CredentialStorage;->mShowPasswordDlg:Landroid/app/AlertDialog;
     invoke-static {p1, v2}, Lcom/android/settings/CredentialStorage;->access$902(Lcom/android/settings/CredentialStorage;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
 
-    .line 587
     # getter for: Lcom/android/settings/CredentialStorage;->mShowPasswordDlg:Landroid/app/AlertDialog;
     invoke-static {p1}, Lcom/android/settings/CredentialStorage;->access$900(Lcom/android/settings/CredentialStorage;)Landroid/app/AlertDialog;
 
@@ -163,7 +152,6 @@
 
     invoke-virtual {v2, p0}, Landroid/app/AlertDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 588
     # getter for: Lcom/android/settings/CredentialStorage;->mShowPasswordDlg:Landroid/app/AlertDialog;
     invoke-static {p1}, Lcom/android/settings/CredentialStorage;->access$900(Lcom/android/settings/CredentialStorage;)Landroid/app/AlertDialog;
 
@@ -171,7 +159,6 @@
 
     invoke-virtual {v2}, Landroid/app/AlertDialog;->show()V
 
-    .line 589
     # getter for: Lcom/android/settings/CredentialStorage;->mShowPasswordDlg:Landroid/app/AlertDialog;
     invoke-static {p1}, Lcom/android/settings/CredentialStorage;->access$900(Lcom/android/settings/CredentialStorage;)Landroid/app/AlertDialog;
 
@@ -183,15 +170,12 @@
 
     iput-object v2, p0, Lcom/android/settings/CredentialStorage$UnlockDialog;->mButton:Landroid/widget/Button;
 
-    .line 590
     iget-object v2, p0, Lcom/android/settings/CredentialStorage$UnlockDialog;->mButton:Landroid/widget/Button;
 
     invoke-virtual {v2, v5}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 591
     return-void
 
-    .line 566
     .end local v0    # "text":Ljava/lang/CharSequence;
     :cond_0
     # getter for: Lcom/android/settings/CredentialStorage;->mRetriesRemaining:I
@@ -203,7 +187,6 @@
 
     if-le v2, v3, :cond_1
 
-    .line 567
     invoke-virtual {p1}, Lcom/android/settings/CredentialStorage;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -217,7 +200,6 @@
     .restart local v0    # "text":Ljava/lang/CharSequence;
     goto :goto_0
 
-    .line 568
     .end local v0    # "text":Ljava/lang/CharSequence;
     :cond_1
     # getter for: Lcom/android/settings/CredentialStorage;->mRetriesRemaining:I
@@ -227,7 +209,6 @@
 
     if-ne v2, v4, :cond_2
 
-    .line 569
     invoke-virtual {p1}, Lcom/android/settings/CredentialStorage;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -241,7 +222,6 @@
     .restart local v0    # "text":Ljava/lang/CharSequence;
     goto/16 :goto_0
 
-    .line 571
     .end local v0    # "text":Ljava/lang/CharSequence;
     :cond_2
     const v2, 0x7f090794
@@ -273,7 +253,6 @@
     .param p2, "x1"    # Lcom/android/settings/CredentialStorage$1;
 
     .prologue
-    .line 551
     invoke-direct {p0, p1}, Lcom/android/settings/CredentialStorage$UnlockDialog;-><init>(Lcom/android/settings/CredentialStorage;)V
 
     return-void
@@ -286,7 +265,6 @@
     .param p1, "editable"    # Landroid/text/Editable;
 
     .prologue
-    .line 594
     iget-object v1, p0, Lcom/android/settings/CredentialStorage$UnlockDialog;->mButton:Landroid/widget/Button;
 
     iget-object v0, p0, Lcom/android/settings/CredentialStorage$UnlockDialog;->mOldPassword:Landroid/widget/TextView;
@@ -311,10 +289,8 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 595
     return-void
 
-    .line 594
     :cond_1
     const/4 v0, 0x0
 
@@ -329,7 +305,6 @@
     .param p4, "after"    # I
 
     .prologue
-    .line 598
     return-void
 .end method
 
@@ -339,7 +314,6 @@
     .param p2, "button"    # I
 
     .prologue
-    .line 604
     const/4 v0, -0x1
 
     if-ne p2, v0, :cond_0
@@ -349,10 +323,8 @@
     :goto_0
     iput-boolean v0, p0, Lcom/android/settings/CredentialStorage$UnlockDialog;->mUnlockConfirmed:Z
 
-    .line 605
     return-void
 
-    .line 604
     :cond_0
     const/4 v0, 0x0
 
@@ -368,20 +340,16 @@
 
     const/4 v3, 0x0
 
-    .line 608
     iget-boolean v1, p0, Lcom/android/settings/CredentialStorage$UnlockDialog;->mUnlockConfirmed:Z
 
     if-eqz v1, :cond_3
 
-    .line 609
     iput-boolean v3, p0, Lcom/android/settings/CredentialStorage$UnlockDialog;->mUnlockConfirmed:Z
 
-    .line 610
     iget-object v1, p0, Lcom/android/settings/CredentialStorage$UnlockDialog;->mError:Landroid/widget/TextView;
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 611
     iget-object v1, p0, Lcom/android/settings/CredentialStorage$UnlockDialog;->this$0:Lcom/android/settings/CredentialStorage;
 
     # getter for: Lcom/android/settings/CredentialStorage;->mKeyStore:Landroid/security/KeyStore;
@@ -401,7 +369,6 @@
 
     invoke-virtual {v1, v2}, Landroid/security/KeyStore;->unlock(Ljava/lang/String;)Z
 
-    .line 612
     iget-object v1, p0, Lcom/android/settings/CredentialStorage$UnlockDialog;->this$0:Lcom/android/settings/CredentialStorage;
 
     # getter for: Lcom/android/settings/CredentialStorage;->mKeyStore:Landroid/security/KeyStore;
@@ -413,19 +380,16 @@
 
     move-result v0
 
-    .line 613
     .local v0, "error":I
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_1
 
-    .line 614
     iget-object v1, p0, Lcom/android/settings/CredentialStorage$UnlockDialog;->this$0:Lcom/android/settings/CredentialStorage;
 
     # setter for: Lcom/android/settings/CredentialStorage;->mRetriesRemaining:I
     invoke-static {v1, v4}, Lcom/android/settings/CredentialStorage;->access$802(Lcom/android/settings/CredentialStorage;I)I
 
-    .line 615
     iget-object v1, p0, Lcom/android/settings/CredentialStorage$UnlockDialog;->this$0:Lcom/android/settings/CredentialStorage;
 
     const v2, 0x7f090797
@@ -436,32 +400,27 @@
 
     invoke-virtual {v1}, Landroid/widget/Toast;->show()V
 
-    .line 620
     iget-object v1, p0, Lcom/android/settings/CredentialStorage$UnlockDialog;->this$0:Lcom/android/settings/CredentialStorage;
 
     # invokes: Lcom/android/settings/CredentialStorage;->ensureKeyGuard()V
     invoke-static {v1}, Lcom/android/settings/CredentialStorage;->access$1000(Lcom/android/settings/CredentialStorage;)V
 
-    .line 636
     .end local v0    # "error":I
     :cond_0
     :goto_0
     return-void
 
-    .line 621
     .restart local v0    # "error":I
     :cond_1
     const/4 v1, 0x3
 
     if-ne v0, v1, :cond_2
 
-    .line 622
     iget-object v1, p0, Lcom/android/settings/CredentialStorage$UnlockDialog;->this$0:Lcom/android/settings/CredentialStorage;
 
     # setter for: Lcom/android/settings/CredentialStorage;->mRetriesRemaining:I
     invoke-static {v1, v4}, Lcom/android/settings/CredentialStorage;->access$802(Lcom/android/settings/CredentialStorage;I)I
 
-    .line 623
     iget-object v1, p0, Lcom/android/settings/CredentialStorage$UnlockDialog;->this$0:Lcom/android/settings/CredentialStorage;
 
     const v2, 0x7f090795
@@ -472,7 +431,6 @@
 
     invoke-virtual {v1}, Landroid/widget/Toast;->show()V
 
-    .line 627
     iget-object v1, p0, Lcom/android/settings/CredentialStorage$UnlockDialog;->this$0:Lcom/android/settings/CredentialStorage;
 
     # invokes: Lcom/android/settings/CredentialStorage;->handleUnlockOrInstall()V
@@ -480,13 +438,11 @@
 
     goto :goto_0
 
-    .line 628
     :cond_2
     const/16 v1, 0xa
 
     if-lt v0, v1, :cond_0
 
-    .line 630
     iget-object v1, p0, Lcom/android/settings/CredentialStorage$UnlockDialog;->this$0:Lcom/android/settings/CredentialStorage;
 
     add-int/lit8 v2, v0, -0xa
@@ -496,7 +452,6 @@
     # setter for: Lcom/android/settings/CredentialStorage;->mRetriesRemaining:I
     invoke-static {v1, v2}, Lcom/android/settings/CredentialStorage;->access$802(Lcom/android/settings/CredentialStorage;I)I
 
-    .line 631
     iget-object v1, p0, Lcom/android/settings/CredentialStorage$UnlockDialog;->this$0:Lcom/android/settings/CredentialStorage;
 
     # invokes: Lcom/android/settings/CredentialStorage;->handleUnlockOrInstall()V
@@ -504,7 +459,6 @@
 
     goto :goto_0
 
-    .line 635
     .end local v0    # "error":I
     :cond_3
     iget-object v1, p0, Lcom/android/settings/CredentialStorage$UnlockDialog;->this$0:Lcom/android/settings/CredentialStorage;
@@ -522,6 +476,5 @@
     .param p4, "count"    # I
 
     .prologue
-    .line 601
     return-void
 .end method

@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 40
     iput-object p1, p0, Lcom/motorola/settings/extensions/SettingsDynamicPrefProvider$WfdStatusListener;->this$0:Lcom/motorola/settings/extensions/SettingsDynamicPrefProvider;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -37,7 +36,6 @@
     .param p2, "x1"    # Lcom/motorola/settings/extensions/SettingsDynamicPrefProvider$1;
 
     .prologue
-    .line 40
     invoke-direct {p0, p1}, Lcom/motorola/settings/extensions/SettingsDynamicPrefProvider$WfdStatusListener;-><init>(Lcom/motorola/settings/extensions/SettingsDynamicPrefProvider;)V
 
     return-void
@@ -51,19 +49,15 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 44
     const/4 v1, 0x0
 
-    .line 45
     .local v1, "wfdStatus":Ljava/lang/String;
     if-nez p2, :cond_1
 
-    .line 69
     :cond_0
     :goto_0
     return-void
 
-    .line 49
     :cond_1
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -77,7 +71,6 @@
 
     if-eqz v2, :cond_3
 
-    .line 50
     sget-object v2, Lcom/motorola/settings/extensions/WirelessDisplayHelper;->mWDMWDState:Ljava/lang/String;
 
     sget v3, Lcom/motorola/settings/extensions/WirelessDisplayHelper;->mWDMWDStateDisabled:I
@@ -88,7 +81,6 @@
 
     sput v2, Lcom/motorola/settings/extensions/WirelessDisplayHelper;->mWirelessDisplayState:I
 
-    .line 53
     iget-object v2, p0, Lcom/motorola/settings/extensions/SettingsDynamicPrefProvider$WfdStatusListener;->this$0:Lcom/motorola/settings/extensions/SettingsDynamicPrefProvider;
 
     # invokes: Lcom/motorola/settings/extensions/SettingsDynamicPrefProvider;->updateWirelessDisplaySummary()Ljava/lang/String;
@@ -96,12 +88,10 @@
 
     move-result-object v1
 
-    .line 61
     :cond_2
     :goto_1
     if-eqz v1, :cond_0
 
-    .line 62
     const-string v2, "com.motorola.settings.extensions.dynamicprefprovider"
 
     const-string v3, "preference"
@@ -112,7 +102,6 @@
 
     move-result-object v0
 
-    .line 66
     .local v0, "uri":Landroid/net/Uri;
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -124,7 +113,6 @@
 
     goto :goto_0
 
-    .line 54
     .end local v0    # "uri":Landroid/net/Uri;
     :cond_3
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -139,7 +127,6 @@
 
     if-eqz v2, :cond_2
 
-    .line 56
     sget-object v2, Lcom/motorola/settings/extensions/WirelessDisplayHelper;->mWDMWDMirroringState:Ljava/lang/String;
 
     sget v3, Lcom/motorola/settings/extensions/WirelessDisplayHelper;->mWDMWDMirroringOff:I
@@ -150,7 +137,6 @@
 
     sput v2, Lcom/motorola/settings/extensions/WirelessDisplayHelper;->mWirelessDisplayMirroringState:I
 
-    .line 59
     iget-object v2, p0, Lcom/motorola/settings/extensions/SettingsDynamicPrefProvider$WfdStatusListener;->this$0:Lcom/motorola/settings/extensions/SettingsDynamicPrefProvider;
 
     # invokes: Lcom/motorola/settings/extensions/SettingsDynamicPrefProvider;->updateWirelessDisplaySummary()Ljava/lang/String;

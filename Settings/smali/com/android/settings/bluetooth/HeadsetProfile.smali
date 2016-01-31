@@ -40,10 +40,8 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 39
     sput-boolean v3, Lcom/android/settings/bluetooth/HeadsetProfile;->V:Z
 
-    .line 48
     const/4 v0, 0x2
 
     new-array v0, v0, [Landroid/os/ParcelUuid;
@@ -71,19 +69,14 @@
     .param p4, "profileManager"    # Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
 
     .prologue
-    .line 97
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 98
     iput-object p2, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mLocalAdapter:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
-    .line 99
     iput-object p3, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mDeviceManager:Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;
 
-    .line 100
     iput-object p4, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mProfileManager:Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
 
-    .line 101
     iget-object v0, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mLocalAdapter:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     new-instance v1, Lcom/android/settings/bluetooth/HeadsetProfile$HeadsetServiceListener;
@@ -96,7 +89,6 @@
 
     invoke-virtual {v0, p1, v1, v2}, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->getProfileProxy(Landroid/content/Context;Landroid/bluetooth/BluetoothProfile$ServiceListener;I)V
 
-    .line 103
     return-void
 .end method
 
@@ -104,7 +96,6 @@
     .locals 1
 
     .prologue
-    .line 37
     sget-boolean v0, Lcom/android/settings/bluetooth/HeadsetProfile;->V:Z
 
     return v0
@@ -115,7 +106,6 @@
     .param p0, "x0"    # Lcom/android/settings/bluetooth/HeadsetProfile;
 
     .prologue
-    .line 37
     iget-object v0, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mService:Landroid/bluetooth/BluetoothHeadset;
 
     return-object v0
@@ -127,7 +117,6 @@
     .param p1, "x1"    # Landroid/bluetooth/BluetoothHeadset;
 
     .prologue
-    .line 37
     iput-object p1, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mService:Landroid/bluetooth/BluetoothHeadset;
 
     return-object p1
@@ -138,7 +127,6 @@
     .param p0, "x0"    # Lcom/android/settings/bluetooth/HeadsetProfile;
 
     .prologue
-    .line 37
     iget-object v0, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mDeviceManager:Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;
 
     return-object v0
@@ -149,7 +137,6 @@
     .param p0, "x0"    # Lcom/android/settings/bluetooth/HeadsetProfile;
 
     .prologue
-    .line 37
     iget-object v0, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mLocalAdapter:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     return-object v0
@@ -160,7 +147,6 @@
     .param p0, "x0"    # Lcom/android/settings/bluetooth/HeadsetProfile;
 
     .prologue
-    .line 37
     iget-object v0, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mProfileManager:Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
 
     return-object v0
@@ -172,7 +158,6 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 37
     iput-boolean p1, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mIsProfileReady:Z
 
     return p1
@@ -185,18 +170,15 @@
     .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
     .prologue
-    .line 114
     iget-object v3, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mService:Landroid/bluetooth/BluetoothHeadset;
 
     if-nez v3, :cond_0
 
     const/4 v3, 0x0
 
-    .line 121
     :goto_0
     return v3
 
-    .line 115
     :cond_0
     iget-object v3, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mService:Landroid/bluetooth/BluetoothHeadset;
 
@@ -204,11 +186,9 @@
 
     move-result-object v2
 
-    .line 116
     .local v2, "sinks":Ljava/util/List;, "Ljava/util/List<Landroid/bluetooth/BluetoothDevice;>;"
     if-eqz v2, :cond_1
 
-    .line 117
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -227,7 +207,6 @@
 
     check-cast v1, Landroid/bluetooth/BluetoothDevice;
 
-    .line 118
     .local v1, "sink":Landroid/bluetooth/BluetoothDevice;
     const-string v3, "HeadsetProfile"
 
@@ -253,7 +232,6 @@
 
     goto :goto_1
 
-    .line 121
     .end local v0    # "i$":Ljava/util/Iterator;
     .end local v1    # "sink":Landroid/bluetooth/BluetoothDevice;
     :cond_1
@@ -275,17 +253,14 @@
 
     const/4 v3, 0x0
 
-    .line 125
     iget-object v4, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mService:Landroid/bluetooth/BluetoothHeadset;
 
     if-nez v4, :cond_1
 
-    .line 140
     :cond_0
     :goto_0
     return v3
 
-    .line 126
     :cond_1
     iget-object v4, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mService:Landroid/bluetooth/BluetoothHeadset;
 
@@ -293,7 +268,6 @@
 
     move-result-object v1
 
-    .line 127
     .local v1, "deviceList":Ljava/util/List;, "Ljava/util/List<Landroid/bluetooth/BluetoothDevice;>;"
     invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
@@ -301,7 +275,6 @@
 
     if-nez v4, :cond_0
 
-    .line 128
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -320,7 +293,6 @@
 
     check-cast v0, Landroid/bluetooth/BluetoothDevice;
 
-    .line 129
     .local v0, "dev":Landroid/bluetooth/BluetoothDevice;
     invoke-virtual {v0, p1}, Landroid/bluetooth/BluetoothDevice;->equals(Ljava/lang/Object;)Z
 
@@ -328,7 +300,6 @@
 
     if-eqz v4, :cond_2
 
-    .line 130
     sget-boolean v3, Lcom/android/settings/bluetooth/HeadsetProfile;->V:Z
 
     if-eqz v3, :cond_3
@@ -339,7 +310,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 133
     :cond_3
     iget-object v3, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mService:Landroid/bluetooth/BluetoothHeadset;
 
@@ -349,12 +319,10 @@
 
     if-le v3, v5, :cond_4
 
-    .line 134
     iget-object v3, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mService:Landroid/bluetooth/BluetoothHeadset;
 
     invoke-virtual {v3, p1, v5}, Landroid/bluetooth/BluetoothHeadset;->setPriority(Landroid/bluetooth/BluetoothDevice;I)Z
 
-    .line 136
     :cond_4
     iget-object v3, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mService:Landroid/bluetooth/BluetoothHeadset;
 
@@ -369,7 +337,6 @@
     .locals 4
 
     .prologue
-    .line 216
     sget-boolean v1, Lcom/android/settings/bluetooth/HeadsetProfile;->V:Z
 
     if-eqz v1, :cond_0
@@ -380,13 +347,11 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 217
     :cond_0
     iget-object v1, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mService:Landroid/bluetooth/BluetoothHeadset;
 
     if-eqz v1, :cond_1
 
-    .line 219
     :try_start_0
     invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
 
@@ -398,23 +363,19 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/bluetooth/BluetoothAdapter;->closeProfileProxy(ILandroid/bluetooth/BluetoothProfile;)V
 
-    .line 221
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mService:Landroid/bluetooth/BluetoothHeadset;
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 226
     :cond_1
     :goto_0
     return-void
 
-    .line 222
     :catch_0
     move-exception v0
 
-    .line 223
     .local v0, "t":Ljava/lang/Throwable;
     const-string v1, "HeadsetProfile"
 
@@ -432,17 +393,14 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 144
     iget-object v4, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mService:Landroid/bluetooth/BluetoothHeadset;
 
     if-nez v4, :cond_1
 
-    .line 153
     :cond_0
     :goto_0
     return v3
 
-    .line 145
     :cond_1
     iget-object v4, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mService:Landroid/bluetooth/BluetoothHeadset;
 
@@ -450,7 +408,6 @@
 
     move-result-object v1
 
-    .line 146
     .local v1, "deviceList":Ljava/util/List;, "Ljava/util/List<Landroid/bluetooth/BluetoothDevice;>;"
     invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
@@ -458,7 +415,6 @@
 
     if-nez v4, :cond_0
 
-    .line 147
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -477,7 +433,6 @@
 
     check-cast v0, Landroid/bluetooth/BluetoothDevice;
 
-    .line 148
     .local v0, "dev":Landroid/bluetooth/BluetoothDevice;
     invoke-virtual {v0, p1}, Landroid/bluetooth/BluetoothDevice;->equals(Ljava/lang/Object;)Z
 
@@ -485,7 +440,6 @@
 
     if-eqz v4, :cond_2
 
-    .line 149
     iget-object v3, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mService:Landroid/bluetooth/BluetoothHeadset;
 
     invoke-virtual {v3, p1}, Landroid/bluetooth/BluetoothHeadset;->getConnectionState(Landroid/bluetooth/BluetoothDevice;)I
@@ -500,7 +454,6 @@
     .param p1, "btClass"    # Landroid/bluetooth/BluetoothClass;
 
     .prologue
-    .line 212
     const v0, 0x7f020036
 
     return v0
@@ -511,7 +464,6 @@
     .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
     .prologue
-    .line 194
     const v0, 0x7f09024a
 
     return v0
@@ -521,7 +473,6 @@
     .locals 1
 
     .prologue
-    .line 190
     const/4 v0, 0x0
 
     return v0
@@ -532,14 +483,12 @@
     .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
     .prologue
-    .line 162
     iget-object v0, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mService:Landroid/bluetooth/BluetoothHeadset;
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 163
     :goto_0
     return v0
 
@@ -557,7 +506,6 @@
     .locals 1
 
     .prologue
-    .line 110
     const/4 v0, 0x1
 
     return v0
@@ -567,7 +515,6 @@
     .locals 1
 
     .prologue
-    .line 106
     const/4 v0, 0x1
 
     return v0
@@ -580,12 +527,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 157
     iget-object v1, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mService:Landroid/bluetooth/BluetoothHeadset;
 
     if-nez v1, :cond_1
 
-    .line 158
     :cond_0
     :goto_0
     return v0
@@ -608,7 +553,6 @@
     .locals 1
 
     .prologue
-    .line 92
     iget-boolean v0, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mIsProfileReady:Z
 
     return v0
@@ -622,21 +566,17 @@
     .prologue
     const/16 v1, 0x64
 
-    .line 167
     iget-object v0, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mService:Landroid/bluetooth/BluetoothHeadset;
 
     if-nez v0, :cond_1
 
-    .line 175
     :cond_0
     :goto_0
     return-void
 
-    .line 168
     :cond_1
     if-eqz p2, :cond_2
 
-    .line 169
     iget-object v0, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mService:Landroid/bluetooth/BluetoothHeadset;
 
     invoke-virtual {v0, p1}, Landroid/bluetooth/BluetoothHeadset;->getPriority(Landroid/bluetooth/BluetoothDevice;)I
@@ -645,14 +585,12 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 170
     iget-object v0, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mService:Landroid/bluetooth/BluetoothHeadset;
 
     invoke-virtual {v0, p1, v1}, Landroid/bluetooth/BluetoothHeadset;->setPriority(Landroid/bluetooth/BluetoothDevice;I)Z
 
     goto :goto_0
 
-    .line 173
     :cond_2
     iget-object v0, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mService:Landroid/bluetooth/BluetoothHeadset;
 
@@ -667,7 +605,6 @@
     .locals 1
 
     .prologue
-    .line 186
     const-string v0, "HEADSET"
 
     return-object v0

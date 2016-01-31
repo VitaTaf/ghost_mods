@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 314
     iput-object p1, p0, Lcom/android/settings/print/PrintSettingsFragment$SettingsPackageMonitor;->this$0:Lcom/android/settings/print/PrintSettingsFragment;
 
     invoke-direct {p0}, Lcom/android/internal/content/PackageMonitor;-><init>()V
@@ -37,7 +36,6 @@
     .param p2, "x1"    # Lcom/android/settings/print/PrintSettingsFragment$1;
 
     .prologue
-    .line 314
     invoke-direct {p0, p1}, Lcom/android/settings/print/PrintSettingsFragment$SettingsPackageMonitor;-><init>(Lcom/android/settings/print/PrintSettingsFragment;)V
 
     return-void
@@ -51,7 +49,6 @@
     .param p2, "uid"    # I
 
     .prologue
-    .line 317
     iget-object v0, p0, Lcom/android/settings/print/PrintSettingsFragment$SettingsPackageMonitor;->this$0:Lcom/android/settings/print/PrintSettingsFragment;
 
     # getter for: Lcom/android/settings/print/PrintSettingsFragment;->mHandler:Landroid/os/Handler;
@@ -65,7 +62,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 318
     return-void
 .end method
 
@@ -75,7 +71,6 @@
     .param p2, "reason"    # I
 
     .prologue
-    .line 322
     iget-object v0, p0, Lcom/android/settings/print/PrintSettingsFragment$SettingsPackageMonitor;->this$0:Lcom/android/settings/print/PrintSettingsFragment;
 
     # getter for: Lcom/android/settings/print/PrintSettingsFragment;->mHandler:Landroid/os/Handler;
@@ -89,7 +84,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 323
     return-void
 .end method
 
@@ -99,7 +93,6 @@
     .param p2, "reason"    # I
 
     .prologue
-    .line 327
     iget-object v0, p0, Lcom/android/settings/print/PrintSettingsFragment$SettingsPackageMonitor;->this$0:Lcom/android/settings/print/PrintSettingsFragment;
 
     # getter for: Lcom/android/settings/print/PrintSettingsFragment;->mHandler:Landroid/os/Handler;
@@ -113,7 +106,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 328
     return-void
 .end method
 
@@ -123,7 +115,6 @@
     .param p2, "uid"    # I
 
     .prologue
-    .line 332
     iget-object v0, p0, Lcom/android/settings/print/PrintSettingsFragment$SettingsPackageMonitor;->this$0:Lcom/android/settings/print/PrintSettingsFragment;
 
     # getter for: Lcom/android/settings/print/PrintSettingsFragment;->mHandler:Landroid/os/Handler;
@@ -137,6 +128,5 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 333
     return-void
 .end method

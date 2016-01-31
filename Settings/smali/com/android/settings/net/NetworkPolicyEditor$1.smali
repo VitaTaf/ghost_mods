@@ -36,7 +36,6 @@
     .locals 0
 
     .prologue
-    .line 81
     iput-object p1, p0, Lcom/android/settings/net/NetworkPolicyEditor$1;->this$0:Lcom/android/settings/net/NetworkPolicyEditor;
 
     iput-object p2, p0, Lcom/android/settings/net/NetworkPolicyEditor$1;->val$policies:[Landroid/net/NetworkPolicy;
@@ -53,7 +52,6 @@
     .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
-    .line 81
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1    # "x0":[Ljava/lang/Object;
@@ -69,14 +67,12 @@
     .param p1, "params"    # [Ljava/lang/Void;
 
     .prologue
-    .line 84
     iget-object v0, p0, Lcom/android/settings/net/NetworkPolicyEditor$1;->this$0:Lcom/android/settings/net/NetworkPolicyEditor;
 
     iget-object v1, p0, Lcom/android/settings/net/NetworkPolicyEditor$1;->val$policies:[Landroid/net/NetworkPolicy;
 
     invoke-virtual {v0, v1}, Lcom/android/settings/net/NetworkPolicyEditor;->write([Landroid/net/NetworkPolicy;)V
 
-    .line 85
     const/4 v0, 0x0
 
     return-object v0

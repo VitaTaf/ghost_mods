@@ -29,7 +29,6 @@
     .locals 0
 
     .prologue
-    .line 336
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,7 +39,6 @@
     .param p1, "x0"    # Lcom/android/settings/notification/ManagedServiceSettings$1;
 
     .prologue
-    .line 336
     invoke-direct {p0}, Lcom/android/settings/notification/ManagedServiceSettings$ViewHolder;-><init>()V
 
     return-void

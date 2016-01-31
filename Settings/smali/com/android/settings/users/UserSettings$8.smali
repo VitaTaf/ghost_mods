@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 590
     iput-object p1, p0, Lcom/android/settings/users/UserSettings$8;->this$0:Lcom/android/settings/users/UserSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 593
     iget-object v1, p0, Lcom/android/settings/users/UserSettings$8;->this$0:Lcom/android/settings/users/UserSettings;
 
     if-nez p2, :cond_0
@@ -53,10 +51,8 @@
     # invokes: Lcom/android/settings/users/UserSettings;->onAddUserClicked(I)V
     invoke-static {v1, v0}, Lcom/android/settings/users/UserSettings;->access$1300(Lcom/android/settings/users/UserSettings;I)V
 
-    .line 596
     return-void
 
-    .line 593
     :cond_0
     const/4 v0, 0x2
 

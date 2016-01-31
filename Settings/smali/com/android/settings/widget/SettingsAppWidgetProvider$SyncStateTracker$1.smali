@@ -40,7 +40,6 @@
     .locals 0
 
     .prologue
-    .line 622
     iput-object p1, p0, Lcom/android/settings/widget/SettingsAppWidgetProvider$SyncStateTracker$1;->this$0:Lcom/android/settings/widget/SettingsAppWidgetProvider$SyncStateTracker;
 
     iput-boolean p2, p0, Lcom/android/settings/widget/SettingsAppWidgetProvider$SyncStateTracker$1;->val$desiredState:Z
@@ -65,39 +64,31 @@
 
     const/4 v1, 0x0
 
-    .line 626
     iget-boolean v0, p0, Lcom/android/settings/widget/SettingsAppWidgetProvider$SyncStateTracker$1;->val$desiredState:Z
 
     if-eqz v0, :cond_1
 
-    .line 627
     iget-boolean v0, p0, Lcom/android/settings/widget/SettingsAppWidgetProvider$SyncStateTracker$1;->val$sync:Z
 
     if-nez v0, :cond_0
 
-    .line 628
     invoke-static {v2}, Landroid/content/ContentResolver;->setMasterSyncAutomatically(Z)V
 
-    .line 630
     :cond_0
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    .line 637
     :goto_0
     return-object v0
 
-    .line 634
     :cond_1
     iget-boolean v0, p0, Lcom/android/settings/widget/SettingsAppWidgetProvider$SyncStateTracker$1;->val$sync:Z
 
     if-eqz v0, :cond_2
 
-    .line 635
     invoke-static {v1}, Landroid/content/ContentResolver;->setMasterSyncAutomatically(Z)V
 
-    .line 637
     :cond_2
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -111,7 +102,6 @@
     .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
-    .line 622
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1    # "x0":[Ljava/lang/Object;
@@ -127,7 +117,6 @@
     .param p1, "result"    # Ljava/lang/Boolean;
 
     .prologue
-    .line 642
     iget-object v1, p0, Lcom/android/settings/widget/SettingsAppWidgetProvider$SyncStateTracker$1;->this$0:Lcom/android/settings/widget/SettingsAppWidgetProvider$SyncStateTracker;
 
     iget-object v2, p0, Lcom/android/settings/widget/SettingsAppWidgetProvider$SyncStateTracker$1;->val$context:Landroid/content/Context;
@@ -143,15 +132,12 @@
     :goto_0
     invoke-virtual {v1, v2, v0}, Lcom/android/settings/widget/SettingsAppWidgetProvider$SyncStateTracker;->setCurrentState(Landroid/content/Context;I)V
 
-    .line 645
     iget-object v0, p0, Lcom/android/settings/widget/SettingsAppWidgetProvider$SyncStateTracker$1;->val$context:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/settings/widget/SettingsAppWidgetProvider;->updateWidget(Landroid/content/Context;)V
 
-    .line 646
     return-void
 
-    .line 642
     :cond_0
     const/4 v0, 0x0
 
@@ -163,7 +149,6 @@
     .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
-    .line 622
     check-cast p1, Ljava/lang/Boolean;
 
     .end local p1    # "x0":Ljava/lang/Object;

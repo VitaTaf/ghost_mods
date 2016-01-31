@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 67
     iput-object p1, p0, Lcom/android/settings/wifi/WifiApEnabler$1;->this$0:Lcom/android/settings/wifi/WifiApEnabler;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 70
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 71
     .local v0, "action":Ljava/lang/String;
     const-string v4, "android.net.wifi.WIFI_AP_STATE_CHANGED"
 
@@ -54,7 +51,6 @@
 
     if-eqz v4, :cond_1
 
-    .line 72
     iget-object v4, p0, Lcom/android/settings/wifi/WifiApEnabler$1;->this$0:Lcom/android/settings/wifi/WifiApEnabler;
 
     const-string v5, "wifi_state"
@@ -68,12 +64,10 @@
     # invokes: Lcom/android/settings/wifi/WifiApEnabler;->handleWifiApStateChanged(I)V
     invoke-static {v4, v5}, Lcom/android/settings/wifi/WifiApEnabler;->access$000(Lcom/android/settings/wifi/WifiApEnabler;I)V
 
-    .line 96
     :cond_0
     :goto_0
     return-void
 
-    .line 74
     :cond_1
     const-string v4, "android.net.wifi.WIFI_STATE_CHANGED"
 
@@ -83,7 +77,6 @@
 
     if-eqz v4, :cond_2
 
-    .line 75
     iget-object v4, p0, Lcom/android/settings/wifi/WifiApEnabler$1;->this$0:Lcom/android/settings/wifi/WifiApEnabler;
 
     # getter for: Lcom/android/settings/wifi/WifiApEnabler;->mWaitForWifiStateChange:Z
@@ -95,7 +88,6 @@
 
     if-ne v4, v5, :cond_0
 
-    .line 76
     iget-object v4, p0, Lcom/android/settings/wifi/WifiApEnabler$1;->this$0:Lcom/android/settings/wifi/WifiApEnabler;
 
     const-string v5, "wifi_state"
@@ -111,7 +103,6 @@
 
     goto :goto_0
 
-    .line 79
     :cond_2
     const-string v4, "android.net.conn.TETHER_STATE_CHANGED"
 
@@ -121,14 +112,12 @@
 
     if-eqz v4, :cond_3
 
-    .line 80
     const-string v4, "availableArray"
 
     invoke-virtual {p2, v4}, Landroid/content/Intent;->getStringArrayListExtra(Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v2
 
-    .line 82
     .local v2, "available":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     const-string v4, "activeArray"
 
@@ -136,7 +125,6 @@
 
     move-result-object v1
 
-    .line 84
     .local v1, "active":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     const-string v4, "erroredArray"
 
@@ -144,7 +132,6 @@
 
     move-result-object v3
 
-    .line 86
     .local v3, "errored":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     iget-object v4, p0, Lcom/android/settings/wifi/WifiApEnabler$1;->this$0:Lcom/android/settings/wifi/WifiApEnabler;
 
@@ -165,7 +152,6 @@
 
     goto :goto_0
 
-    .line 87
     .end local v1    # "active":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     .end local v2    # "available":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     .end local v3    # "errored":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
@@ -178,7 +164,6 @@
 
     if-eqz v4, :cond_4
 
-    .line 88
     iget-object v4, p0, Lcom/android/settings/wifi/WifiApEnabler$1;->this$0:Lcom/android/settings/wifi/WifiApEnabler;
 
     # invokes: Lcom/android/settings/wifi/WifiApEnabler;->enableWifiSwitch()V
@@ -186,7 +171,6 @@
 
     goto :goto_0
 
-    .line 90
     :cond_4
     sget-object v4, Lcom/motorola/settings/extensions/WirelessDisplayHelper;->mWDMWDStateChangedAction:Ljava/lang/String;
 
@@ -200,7 +184,6 @@
 
     if-eqz v4, :cond_0
 
-    .line 92
     sget-object v4, Lcom/motorola/settings/extensions/WirelessDisplayHelper;->mWDMWDState:Ljava/lang/String;
 
     sget v5, Lcom/motorola/settings/extensions/WirelessDisplayHelper;->mWDMWDStateDisabled:I

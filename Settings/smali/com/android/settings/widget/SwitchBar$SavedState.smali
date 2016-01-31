@@ -38,7 +38,6 @@
     .locals 1
 
     .prologue
-    .line 216
     new-instance v0, Lcom/android/settings/widget/SwitchBar$SavedState$1;
 
     invoke-direct {v0}, Lcom/android/settings/widget/SwitchBar$SavedState$1;-><init>()V
@@ -55,10 +54,8 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 196
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
-    .line 197
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->readValue(Ljava/lang/ClassLoader;)Ljava/lang/Object;
 
     move-result-object v0
@@ -71,7 +68,6 @@
 
     iput-boolean v0, p0, Lcom/android/settings/widget/SwitchBar$SavedState;->checked:Z
 
-    .line 198
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->readValue(Ljava/lang/ClassLoader;)Ljava/lang/Object;
 
     move-result-object v0
@@ -84,7 +80,6 @@
 
     iput-boolean v0, p0, Lcom/android/settings/widget/SwitchBar$SavedState;->visible:Z
 
-    .line 199
     return-void
 .end method
 
@@ -94,7 +89,6 @@
     .param p2, "x1"    # Lcom/android/settings/widget/SwitchBar$1;
 
     .prologue
-    .line 184
     invoke-direct {p0, p1}, Lcom/android/settings/widget/SwitchBar$SavedState;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -105,10 +99,8 @@
     .param p1, "superState"    # Landroid/os/Parcelable;
 
     .prologue
-    .line 189
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 190
     return-void
 .end method
 
@@ -118,7 +110,6 @@
     .locals 2
 
     .prologue
-    .line 210
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -184,10 +175,8 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 203
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 204
     iget-boolean v0, p0, Lcom/android/settings/widget/SwitchBar$SavedState;->checked:Z
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -196,7 +185,6 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeValue(Ljava/lang/Object;)V
 
-    .line 205
     iget-boolean v0, p0, Lcom/android/settings/widget/SwitchBar$SavedState;->visible:Z
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -205,6 +193,5 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeValue(Ljava/lang/Object;)V
 
-    .line 206
     return-void
 .end method

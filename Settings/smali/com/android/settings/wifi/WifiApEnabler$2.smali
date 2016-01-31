@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 298
     iput-object p1, p0, Lcom/android/settings/wifi/WifiApEnabler$2;->this$0:Lcom/android/settings/wifi/WifiApEnabler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,6 +41,5 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 301
     return-void
 .end method

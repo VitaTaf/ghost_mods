@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 93
     iput-object p1, p0, Lcom/android/settings/widget/SwitchBar$1;->this$0:Lcom/android/settings/widget/SwitchBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,11 +41,9 @@
     .param p2, "isChecked"    # Z
 
     .prologue
-    .line 96
     iget-object v0, p0, Lcom/android/settings/widget/SwitchBar$1;->this$0:Lcom/android/settings/widget/SwitchBar;
 
     invoke-virtual {v0, p2}, Lcom/android/settings/widget/SwitchBar;->setTextViewLabel(Z)V
 
-    .line 97
     return-void
 .end method

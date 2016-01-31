@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 67
     iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothEnabler$1;->this$0:Lcom/android/settings/bluetooth/BluetoothEnabler;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -38,16 +37,13 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 70
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 77
     :goto_0
     return-void
 
-    .line 72
     :pswitch_0
     invoke-virtual {p1}, Landroid/os/Message;->getData()Landroid/os/Bundle;
 
@@ -59,7 +55,6 @@
 
     move-result v0
 
-    .line 73
     .local v0, "isBluetoothOn":Z
     iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothEnabler$1;->this$0:Lcom/android/settings/bluetooth/BluetoothEnabler;
 
@@ -84,7 +79,6 @@
 
     goto :goto_0
 
-    .line 70
     nop
 
     :pswitch_data_0

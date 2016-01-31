@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 174
     iput-object p1, p0, Lcom/motorola/settings/TetherDisclaimer$2;->this$0:Lcom/motorola/settings/TetherDisclaimer;
 
     iput-object p2, p0, Lcom/motorola/settings/TetherDisclaimer$2;->val$view:Landroid/view/View;
@@ -46,19 +45,16 @@
     .param p2, "isChecked"    # Z
 
     .prologue
-    .line 176
     iget-object v0, p0, Lcom/motorola/settings/TetherDisclaimer$2;->this$0:Lcom/motorola/settings/TetherDisclaimer;
 
     # setter for: Lcom/motorola/settings/TetherDisclaimer;->mDoNotShowChecked:Z
     invoke-static {v0, p2}, Lcom/motorola/settings/TetherDisclaimer;->access$002(Lcom/motorola/settings/TetherDisclaimer;Z)Z
 
-    .line 177
     iget-object v0, p0, Lcom/motorola/settings/TetherDisclaimer$2;->val$view:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->playSoundEffect(I)V
 
-    .line 178
     return-void
 .end method

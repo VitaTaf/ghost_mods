@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 984
     iput-object p1, p0, Lcom/android/settings/RadioInfo$12;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +42,6 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 986
     iget-object v1, p0, Lcom/android/settings/RadioInfo$12;->this$0:Lcom/android/settings/RadioInfo;
 
     # getter for: Lcom/android/settings/RadioInfo;->mTelephonyManager:Landroid/telephony/TelephonyManager;
@@ -55,16 +53,13 @@
 
     move-result v0
 
-    .line 987
     .local v0, "state":I
     packed-switch v0, :pswitch_data_0
 
-    .line 998
     :goto_0
     :pswitch_0
     return v3
 
-    .line 989
     :pswitch_1
     iget-object v1, p0, Lcom/android/settings/RadioInfo$12;->this$0:Lcom/android/settings/RadioInfo;
 
@@ -79,7 +74,6 @@
 
     goto :goto_0
 
-    .line 992
     :pswitch_2
     iget-object v1, p0, Lcom/android/settings/RadioInfo$12;->this$0:Lcom/android/settings/RadioInfo;
 
@@ -92,7 +86,6 @@
 
     goto :goto_0
 
-    .line 987
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_2

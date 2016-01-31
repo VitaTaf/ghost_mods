@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 191
     iput-object p1, p0, Lcom/android/settings/MasterClearConfirm$2;->this$0:Lcom/android/settings/MasterClearConfirm;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -38,19 +37,15 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 194
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 224
     :goto_0
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 225
     return-void
 
-    .line 196
     :pswitch_0
     iget-object v1, p0, Lcom/android/settings/MasterClearConfirm$2;->this$0:Lcom/android/settings/MasterClearConfirm;
 
@@ -64,7 +59,6 @@
     # setter for: Lcom/android/settings/MasterClearConfirm;->mProgressDialog:Landroid/app/ProgressDialog;
     invoke-static {v1, v2}, Lcom/android/settings/MasterClearConfirm;->access$202(Lcom/android/settings/MasterClearConfirm;Landroid/app/ProgressDialog;)Landroid/app/ProgressDialog;
 
-    .line 197
     iget-object v1, p0, Lcom/android/settings/MasterClearConfirm$2;->this$0:Lcom/android/settings/MasterClearConfirm;
 
     # getter for: Lcom/android/settings/MasterClearConfirm;->mProgressDialog:Landroid/app/ProgressDialog;
@@ -76,7 +70,6 @@
 
     goto :goto_0
 
-    .line 203
     :pswitch_1
     iget-object v1, p0, Lcom/android/settings/MasterClearConfirm$2;->this$0:Lcom/android/settings/MasterClearConfirm;
 
@@ -88,7 +81,6 @@
 
     move-result v0
 
-    .line 204
     .local v0, "oldOrientation":I
     iget-object v1, p0, Lcom/android/settings/MasterClearConfirm$2;->this$0:Lcom/android/settings/MasterClearConfirm;
 
@@ -100,7 +92,6 @@
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->setRequestedOrientation(I)V
 
-    .line 206
     new-instance v1, Lcom/android/settings/MasterClearConfirm$2$1;
 
     invoke-direct {v1, p0, v0}, Lcom/android/settings/MasterClearConfirm$2$1;-><init>(Lcom/android/settings/MasterClearConfirm$2;I)V
@@ -113,7 +104,6 @@
 
     goto :goto_0
 
-    .line 194
     nop
 
     :pswitch_data_0

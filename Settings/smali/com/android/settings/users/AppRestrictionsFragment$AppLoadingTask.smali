@@ -34,7 +34,6 @@
     .locals 0
 
     .prologue
-    .line 508
     iput-object p1, p0, Lcom/android/settings/users/AppRestrictionsFragment$AppLoadingTask;->this$0:Lcom/android/settings/users/AppRestrictionsFragment;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -48,7 +47,6 @@
     .param p2, "x1"    # Lcom/android/settings/users/AppRestrictionsFragment$1;
 
     .prologue
-    .line 508
     invoke-direct {p0, p1}, Lcom/android/settings/users/AppRestrictionsFragment$AppLoadingTask;-><init>(Lcom/android/settings/users/AppRestrictionsFragment;)V
 
     return-void
@@ -61,7 +59,6 @@
     .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
-    .line 508
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1    # "x0":[Ljava/lang/Object;
@@ -77,13 +74,11 @@
     .param p1, "params"    # [Ljava/lang/Void;
 
     .prologue
-    .line 512
     iget-object v0, p0, Lcom/android/settings/users/AppRestrictionsFragment$AppLoadingTask;->this$0:Lcom/android/settings/users/AppRestrictionsFragment;
 
     # invokes: Lcom/android/settings/users/AppRestrictionsFragment;->fetchAndMergeApps()V
     invoke-static {v0}, Lcom/android/settings/users/AppRestrictionsFragment;->access$500(Lcom/android/settings/users/AppRestrictionsFragment;)V
 
-    .line 513
     const/4 v0, 0x0
 
     return-object v0
@@ -94,7 +89,6 @@
     .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
-    .line 508
     check-cast p1, Ljava/lang/Void;
 
     .end local p1    # "x0":Ljava/lang/Object;
@@ -108,13 +102,11 @@
     .param p1, "result"    # Ljava/lang/Void;
 
     .prologue
-    .line 518
     iget-object v0, p0, Lcom/android/settings/users/AppRestrictionsFragment$AppLoadingTask;->this$0:Lcom/android/settings/users/AppRestrictionsFragment;
 
     # invokes: Lcom/android/settings/users/AppRestrictionsFragment;->populateApps()V
     invoke-static {v0}, Lcom/android/settings/users/AppRestrictionsFragment;->access$600(Lcom/android/settings/users/AppRestrictionsFragment;)V
 
-    .line 519
     return-void
 .end method
 
@@ -122,6 +114,5 @@
     .locals 0
 
     .prologue
-    .line 523
     return-void
 .end method

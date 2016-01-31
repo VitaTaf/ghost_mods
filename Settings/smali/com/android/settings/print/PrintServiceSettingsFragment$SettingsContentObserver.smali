@@ -20,10 +20,8 @@
     .param p1, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 455
     invoke-direct {p0, p1}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 456
     return-void
 .end method
 
@@ -34,7 +32,6 @@
     .param p1, "contentResolver"    # Landroid/content/ContentResolver;
 
     .prologue
-    .line 459
     const-string v0, "enabled_print_services"
 
     invoke-static {v0}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -45,7 +42,6 @@
 
     invoke-virtual {p1, v0, v1, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 461
     return-void
 .end method
 
@@ -54,9 +50,7 @@
     .param p1, "contentResolver"    # Landroid/content/ContentResolver;
 
     .prologue
-    .line 464
     invoke-virtual {p1, p0}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 465
     return-void
 .end method

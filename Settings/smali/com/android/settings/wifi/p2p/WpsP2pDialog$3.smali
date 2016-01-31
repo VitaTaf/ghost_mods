@@ -23,7 +23,6 @@
     .locals 3
 
     .prologue
-    .line 176
     invoke-static {}, Lcom/android/settings/wifi/p2p/WpsP2pDialog$DialogState;->values()[Lcom/android/settings/wifi/p2p/WpsP2pDialog$DialogState;
 
     move-result-object v0

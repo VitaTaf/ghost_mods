@@ -12,7 +12,6 @@
     .locals 0
 
     .prologue
-    .line 23
     invoke-direct {p0}, Landroid/preference/PreferenceActivity;-><init>()V
 
     return-void
@@ -25,15 +24,12 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 32
     invoke-super {p0, p1}, Landroid/preference/PreferenceActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 34
     const v1, 0x7f06003f
 
     invoke-virtual {p0, v1}, Lcom/android/settings/TestingSettings;->addPreferencesFromResource(I)V
 
-    .line 37
     const-string v1, "cmas_test_alerts"
 
     invoke-virtual {p0, v1}, Lcom/android/settings/TestingSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -44,7 +40,6 @@
 
     iput-object v1, p0, Lcom/android/settings/TestingSettings;->mCmasTestAlerts:Landroid/preference/PreferenceScreen;
 
-    .line 38
     invoke-virtual {p0}, Lcom/android/settings/TestingSettings;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -55,7 +50,6 @@
 
     move-result v0
 
-    .line 39
     .local v0, "isCmasTestAlertsEnabled":Z
     iget-object v1, p0, Lcom/android/settings/TestingSettings;->mCmasTestAlerts:Landroid/preference/PreferenceScreen;
 
@@ -63,7 +57,6 @@
 
     if-nez v0, :cond_0
 
-    .line 40
     invoke-virtual {p0}, Lcom/android/settings/TestingSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v1
@@ -72,7 +65,6 @@
 
     invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 47
     :cond_0
     invoke-virtual {p0}, Lcom/android/settings/TestingSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
@@ -86,6 +78,5 @@
 
     invoke-static {v1, v2}, Lcom/motorola/extensions/DynamicPreferences;->addOrOverridePreferences(Landroid/preference/PreferenceScreen;Landroid/content/Intent;)V
 
-    .line 51
     return-void
 .end method

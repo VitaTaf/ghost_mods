@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 471
     iput-object p1, p0, Lcom/android/settings/DisplaySettings$4;->this$0:Lcom/android/settings/DisplaySettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 474
     iget-object v0, p0, Lcom/android/settings/DisplaySettings$4;->this$0:Lcom/android/settings/DisplaySettings;
 
     const/4 v1, 0x1
@@ -52,6 +50,5 @@
     # invokes: Lcom/android/settings/DisplaySettings;->updateDozePrefNotify(ZZ)V
     invoke-static {v0, v1, v2}, Lcom/android/settings/DisplaySettings;->access$100(Lcom/android/settings/DisplaySettings;ZZ)V
 
-    .line 475
     return-void
 .end method

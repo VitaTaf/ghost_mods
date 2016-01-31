@@ -38,7 +38,6 @@
     .locals 0
 
     .prologue
-    .line 87
     iput-object p1, p0, Lcom/android/settings/accounts/AuthenticatorHelper$1;->this$0:Lcom/android/settings/accounts/AuthenticatorHelper;
 
     iput-object p2, p0, Lcom/android/settings/accounts/AuthenticatorHelper$1;->val$context:Landroid/content/Context;
@@ -57,7 +56,6 @@
     .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
-    .line 87
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1    # "x0":[Ljava/lang/Object;
@@ -73,7 +71,6 @@
     .param p1, "params"    # [Ljava/lang/Void;
 
     .prologue
-    .line 90
     iget-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper$1;->this$0:Lcom/android/settings/accounts/AuthenticatorHelper;
 
     iget-object v1, p0, Lcom/android/settings/accounts/AuthenticatorHelper$1;->val$context:Landroid/content/Context;
@@ -82,7 +79,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/settings/accounts/AuthenticatorHelper;->getDrawableForType(Landroid/content/Context;Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
-    .line 91
     const/4 v0, 0x0
 
     return-object v0

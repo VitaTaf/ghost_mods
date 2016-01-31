@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 117
     iput-object p1, p0, Lcom/android/settings/ApnSettings$1;->this$0:Lcom/android/settings/ApnSettings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,7 +38,6 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 120
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v1
@@ -52,13 +50,11 @@
 
     if-eqz v1, :cond_0
 
-    .line 122
     # invokes: Lcom/android/settings/ApnSettings;->getMobileDataState(Landroid/content/Intent;)Lcom/android/internal/telephony/PhoneConstants$DataState;
     invoke-static {p2}, Lcom/android/settings/ApnSettings;->access$000(Landroid/content/Intent;)Lcom/android/internal/telephony/PhoneConstants$DataState;
 
     move-result-object v0
 
-    .line 123
     .local v0, "state":Lcom/android/internal/telephony/PhoneConstants$DataState;
     sget-object v1, Lcom/android/settings/ApnSettings$2;->$SwitchMap$com$android$internal$telephony$PhoneConstants$DataState:[I
 
@@ -70,13 +66,11 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 133
     .end local v0    # "state":Lcom/android/internal/telephony/PhoneConstants$DataState;
     :cond_0
     :goto_0
     return-void
 
-    .line 125
     .restart local v0    # "state":Lcom/android/internal/telephony/PhoneConstants$DataState;
     :pswitch_0
     # getter for: Lcom/android/settings/ApnSettings;->mRestoreDefaultApnMode:Z
@@ -86,7 +80,6 @@
 
     if-nez v1, :cond_1
 
-    .line 126
     iget-object v1, p0, Lcom/android/settings/ApnSettings$1;->this$0:Lcom/android/settings/ApnSettings;
 
     # invokes: Lcom/android/settings/ApnSettings;->fillList()V
@@ -94,7 +87,6 @@
 
     goto :goto_0
 
-    .line 128
     :cond_1
     iget-object v1, p0, Lcom/android/settings/ApnSettings$1;->this$0:Lcom/android/settings/ApnSettings;
 
@@ -104,7 +96,6 @@
 
     goto :goto_0
 
-    .line 123
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

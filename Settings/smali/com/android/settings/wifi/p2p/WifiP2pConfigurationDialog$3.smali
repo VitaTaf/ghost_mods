@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 172
     iput-object p1, p0, Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog$3;->this$0:Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,6 +41,5 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 175
     return-void
 .end method

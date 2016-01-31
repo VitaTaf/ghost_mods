@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 75
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection$1;->this$0:Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;
 
     iput-object p2, p0, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection$1;->val$button:Landroid/widget/CheckBox;
@@ -46,7 +45,6 @@
     .param p2, "isChecked"    # Z
 
     .prologue
-    .line 78
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection$1;->this$0:Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;
 
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection$1;->val$button:Landroid/widget/CheckBox;
@@ -60,6 +58,5 @@
     # invokes: Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->setSelectedCondition(Landroid/net/Uri;Z)V
     invoke-static {v1, v0, p2}, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->access$100(Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;Landroid/net/Uri;Z)V
 
-    .line 79
     return-void
 .end method

@@ -14,7 +14,6 @@
     .locals 0
 
     .prologue
-    .line 30
     invoke-direct {p0}, Landroid/app/Fragment;-><init>()V
 
     return-void
@@ -27,10 +26,8 @@
     .param p1, "icicle"    # Landroid/os/Bundle;
 
     .prologue
-    .line 39
     invoke-super {p0, p1}, Landroid/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 40
     invoke-virtual {p0}, Lcom/android/settings/fuelgauge/BatteryHistoryDetail;->getArguments()Landroid/os/Bundle;
 
     move-result-object v1
@@ -41,7 +38,6 @@
 
     move-result-object v0
 
-    .line 41
     .local v0, "histFile":Ljava/lang/String;
     invoke-virtual {p0}, Lcom/android/settings/fuelgauge/BatteryHistoryDetail;->getActivity()Landroid/app/Activity;
 
@@ -53,7 +49,6 @@
 
     iput-object v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryDetail;->mStats:Landroid/os/BatteryStats;
 
-    .line 42
     invoke-virtual {p0}, Lcom/android/settings/fuelgauge/BatteryHistoryDetail;->getArguments()Landroid/os/Bundle;
 
     move-result-object v1
@@ -68,7 +63,6 @@
 
     iput-object v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryDetail;->mBatteryBroadcast:Landroid/content/Intent;
 
-    .line 43
     return-void
 .end method
 
@@ -79,7 +73,6 @@
     .param p3, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 47
     const v2, 0x7f040010
 
     const/4 v3, 0x0
@@ -88,7 +81,6 @@
 
     move-result-object v1
 
-    .line 48
     .local v1, "view":Landroid/view/View;
     const v2, 0x7f0f001c
 
@@ -98,7 +90,6 @@
 
     check-cast v0, Lcom/android/settings/fuelgauge/BatteryHistoryChart;
 
-    .line 50
     .local v0, "chart":Lcom/android/settings/fuelgauge/BatteryHistoryChart;
     iget-object v2, p0, Lcom/android/settings/fuelgauge/BatteryHistoryDetail;->mStats:Landroid/os/BatteryStats;
 
@@ -106,6 +97,5 @@
 
     invoke-virtual {v0, v2, v3}, Lcom/android/settings/fuelgauge/BatteryHistoryChart;->setStats(Landroid/os/BatteryStats;Landroid/content/Intent;)V
 
-    .line 51
     return-object v1
 .end method

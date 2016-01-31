@@ -36,7 +36,6 @@
     .locals 0
 
     .prologue
-    .line 470
     iput-object p1, p0, Lcom/android/settings/widget/SettingsAppWidgetProvider$BluetoothStateTracker$1;->this$0:Lcom/android/settings/widget/SettingsAppWidgetProvider$BluetoothStateTracker;
 
     iput-boolean p2, p0, Lcom/android/settings/widget/SettingsAppWidgetProvider$BluetoothStateTracker$1;->val$desiredState:Z
@@ -53,7 +52,6 @@
     .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
-    .line 470
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1    # "x0":[Ljava/lang/Object;
@@ -69,7 +67,6 @@
     .param p1, "args"    # [Ljava/lang/Void;
 
     .prologue
-    .line 473
     # getter for: Lcom/android/settings/widget/SettingsAppWidgetProvider;->sLocalBluetoothAdapter:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
     invoke-static {}, Lcom/android/settings/widget/SettingsAppWidgetProvider;->access$800()Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
@@ -79,7 +76,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->setBluetoothEnabled(Z)V
 
-    .line 474
     const/4 v0, 0x0
 
     return-object v0

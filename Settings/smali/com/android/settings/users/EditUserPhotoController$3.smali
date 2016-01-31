@@ -38,7 +38,6 @@
     .locals 0
 
     .prologue
-    .line 242
     iput-object p1, p0, Lcom/android/settings/users/EditUserPhotoController$3;->this$0:Lcom/android/settings/users/EditUserPhotoController;
 
     iput-boolean p2, p0, Lcom/android/settings/users/EditUserPhotoController$3;->val$cropped:Z
@@ -57,17 +56,14 @@
     .param p1, "params"    # [Ljava/lang/Void;
 
     .prologue
-    .line 245
     move-object/from16 v0, p0
 
     iget-boolean v13, v0, Lcom/android/settings/users/EditUserPhotoController$3;->val$cropped:Z
 
     if-eqz v13, :cond_2
 
-    .line 246
     const/4 v5, 0x0
 
-    .line 248
     .local v5, "imageStream":Ljava/io/InputStream;
     :try_start_0
     move-object/from16 v0, p0
@@ -91,7 +87,6 @@
 
     move-result-object v5
 
-    .line 250
     invoke-static {v5}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;)Landroid/graphics/Bitmap;
     :try_end_0
     .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
@@ -99,27 +94,22 @@
 
     move-result-object v2
 
-    .line 255
     if-eqz v5, :cond_0
 
-    .line 257
     :try_start_1
     invoke-virtual {v5}, Ljava/io/InputStream;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 289
     .end local v5    # "imageStream":Ljava/io/InputStream;
     :cond_0
     :goto_0
     return-object v2
 
-    .line 258
     .restart local v5    # "imageStream":Ljava/io/InputStream;
     :catch_0
     move-exception v6
 
-    .line 259
     .local v6, "ioe":Ljava/io/IOException;
     const-string v13, "EditUserPhotoController"
 
@@ -129,12 +119,10 @@
 
     goto :goto_0
 
-    .line 251
     .end local v6    # "ioe":Ljava/io/IOException;
     :catch_1
     move-exception v3
 
-    .line 252
     .local v3, "fe":Ljava/io/FileNotFoundException;
     :try_start_2
     const-string v13, "EditUserPhotoController"
@@ -145,13 +133,10 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 253
     const/4 v2, 0x0
 
-    .line 255
     if-eqz v5, :cond_0
 
-    .line 257
     :try_start_3
     invoke-virtual {v5}, Ljava/io/InputStream;->close()V
     :try_end_3
@@ -159,11 +144,9 @@
 
     goto :goto_0
 
-    .line 258
     :catch_2
     move-exception v6
 
-    .line 259
     .restart local v6    # "ioe":Ljava/io/IOException;
     const-string v13, "EditUserPhotoController"
 
@@ -173,7 +156,6 @@
 
     goto :goto_0
 
-    .line 255
     .end local v3    # "fe":Ljava/io/FileNotFoundException;
     .end local v6    # "ioe":Ljava/io/IOException;
     :catchall_0
@@ -181,22 +163,18 @@
 
     if-eqz v5, :cond_1
 
-    .line 257
     :try_start_4
     invoke-virtual {v5}, Ljava/io/InputStream;->close()V
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_3
 
-    .line 260
     :cond_1
     :goto_1
     throw v13
 
-    .line 258
     :catch_3
     move-exception v6
 
-    .line 259
     .restart local v6    # "ioe":Ljava/io/IOException;
     const-string v14, "EditUserPhotoController"
 
@@ -206,7 +184,6 @@
 
     goto :goto_1
 
-    .line 265
     .end local v5    # "imageStream":Ljava/io/InputStream;
     .end local v6    # "ioe":Ljava/io/IOException;
     :cond_2
@@ -234,17 +211,14 @@
 
     move-result-object v2
 
-    .line 267
     .local v2, "croppedImage":Landroid/graphics/Bitmap;
     new-instance v1, Landroid/graphics/Canvas;
 
     invoke-direct {v1, v2}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 268
     .local v1, "canvas":Landroid/graphics/Canvas;
     const/4 v4, 0x0
 
-    .line 270
     .local v4, "fullImage":Landroid/graphics/Bitmap;
     :try_start_5
     move-object/from16 v0, p0
@@ -268,7 +242,6 @@
 
     move-result-object v5
 
-    .line 272
     .restart local v5    # "imageStream":Ljava/io/InputStream;
     invoke-static {v5}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;)Landroid/graphics/Bitmap;
     :try_end_5
@@ -276,10 +249,8 @@
 
     move-result-object v4
 
-    .line 276
     if-eqz v4, :cond_3
 
-    .line 277
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v13
@@ -292,7 +263,6 @@
 
     move-result v11
 
-    .line 279
     .local v11, "squareSize":I
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -302,7 +272,6 @@
 
     div-int/lit8 v7, v13, 0x2
 
-    .line 280
     .local v7, "left":I
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->getHeight()I
 
@@ -312,7 +281,6 @@
 
     div-int/lit8 v12, v13, 0x2
 
-    .line 281
     .local v12, "top":I
     new-instance v10, Landroid/graphics/Rect;
 
@@ -322,7 +290,6 @@
 
     invoke-direct {v10, v7, v12, v13, v14}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 283
     .local v10, "rectSource":Landroid/graphics/Rect;
     new-instance v9, Landroid/graphics/Rect;
 
@@ -354,19 +321,16 @@
 
     invoke-direct {v9, v13, v14, v15, v0}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 284
     .local v9, "rectDest":Landroid/graphics/Rect;
     new-instance v8, Landroid/graphics/Paint;
 
     invoke-direct {v8}, Landroid/graphics/Paint;-><init>()V
 
-    .line 285
     .local v8, "paint":Landroid/graphics/Paint;
     invoke-virtual {v1, v4, v10, v9, v8}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
     goto/16 :goto_0
 
-    .line 273
     .end local v5    # "imageStream":Ljava/io/InputStream;
     .end local v7    # "left":I
     .end local v8    # "paint":Landroid/graphics/Paint;
@@ -377,13 +341,11 @@
     :catch_4
     move-exception v3
 
-    .line 274
     .restart local v3    # "fe":Ljava/io/FileNotFoundException;
     const/4 v2, 0x0
 
     goto/16 :goto_0
 
-    .line 289
     .end local v3    # "fe":Ljava/io/FileNotFoundException;
     .restart local v5    # "imageStream":Ljava/io/InputStream;
     :cond_3
@@ -397,7 +359,6 @@
     .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
-    .line 242
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1    # "x0":[Ljava/lang/Object;
@@ -413,16 +374,13 @@
     .param p1, "bitmap"    # Landroid/graphics/Bitmap;
 
     .prologue
-    .line 296
     if-eqz p1, :cond_0
 
-    .line 297
     iget-object v0, p0, Lcom/android/settings/users/EditUserPhotoController$3;->this$0:Lcom/android/settings/users/EditUserPhotoController;
 
     # setter for: Lcom/android/settings/users/EditUserPhotoController;->mNewUserPhotoBitmap:Landroid/graphics/Bitmap;
     invoke-static {v0, p1}, Lcom/android/settings/users/EditUserPhotoController;->access$502(Lcom/android/settings/users/EditUserPhotoController;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
-    .line 298
     iget-object v0, p0, Lcom/android/settings/users/EditUserPhotoController$3;->this$0:Lcom/android/settings/users/EditUserPhotoController;
 
     iget-object v1, p0, Lcom/android/settings/users/EditUserPhotoController$3;->this$0:Lcom/android/settings/users/EditUserPhotoController;
@@ -450,7 +408,6 @@
     # setter for: Lcom/android/settings/users/EditUserPhotoController;->mNewUserPhotoDrawable:Landroid/graphics/drawable/Drawable;
     invoke-static {v0, v1}, Lcom/android/settings/users/EditUserPhotoController;->access$602(Lcom/android/settings/users/EditUserPhotoController;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
-    .line 300
     iget-object v0, p0, Lcom/android/settings/users/EditUserPhotoController$3;->this$0:Lcom/android/settings/users/EditUserPhotoController;
 
     # getter for: Lcom/android/settings/users/EditUserPhotoController;->mImageView:Landroid/widget/ImageView;
@@ -467,7 +424,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 302
     :cond_0
     new-instance v0, Ljava/io/File;
 
@@ -488,7 +444,6 @@
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    .line 303
     new-instance v0, Ljava/io/File;
 
     iget-object v1, p0, Lcom/android/settings/users/EditUserPhotoController$3;->this$0:Lcom/android/settings/users/EditUserPhotoController;
@@ -508,7 +463,6 @@
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    .line 304
     return-void
 .end method
 
@@ -517,7 +471,6 @@
     .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
-    .line 242
     check-cast p1, Landroid/graphics/Bitmap;
 
     .end local p1    # "x0":Ljava/lang/Object;

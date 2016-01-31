@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 417
     invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
 
     return-void
@@ -30,30 +29,25 @@
     .param p0, "parent"    # Lcom/android/settings/deviceinfo/Memory;
 
     .prologue
-    .line 419
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/Memory;->isAdded()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 424
     :goto_0
     return-void
 
-    .line 421
     :cond_0
     new-instance v0, Lcom/android/settings/deviceinfo/Memory$ConfirmClearCacheFragment;
 
     invoke-direct {v0}, Lcom/android/settings/deviceinfo/Memory$ConfirmClearCacheFragment;-><init>()V
 
-    .line 422
     .local v0, "dialog":Lcom/android/settings/deviceinfo/Memory$ConfirmClearCacheFragment;
     const/4 v1, 0x0
 
     invoke-virtual {v0, p0, v1}, Lcom/android/settings/deviceinfo/Memory$ConfirmClearCacheFragment;->setTargetFragment(Landroid/app/Fragment;I)V
 
-    .line 423
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/Memory;->getFragmentManager()Landroid/app/FragmentManager;
 
     move-result-object v1
@@ -72,24 +66,20 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 428
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/Memory$ConfirmClearCacheFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
 
-    .line 430
     .local v1, "context":Landroid/content/Context;
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 431
     .local v0, "builder":Landroid/app/AlertDialog$Builder;
     const v2, 0x7f09043f
 
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    .line 432
     const v2, 0x7f090440
 
     invoke-virtual {p0, v2}, Lcom/android/settings/deviceinfo/Memory$ConfirmClearCacheFragment;->getString(I)Ljava/lang/String;
@@ -98,7 +88,6 @@
 
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 434
     const v2, 0x104000a
 
     new-instance v3, Lcom/android/settings/deviceinfo/Memory$ConfirmClearCacheFragment$1;
@@ -107,14 +96,12 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 447
     const/high16 v2, 0x1040000
 
     const/4 v3, 0x0
 
     invoke-virtual {v0, v2, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 449
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v2

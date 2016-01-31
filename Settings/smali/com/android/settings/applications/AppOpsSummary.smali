@@ -34,7 +34,6 @@
     .locals 3
 
     .prologue
-    .line 41
     const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/android/settings/applications/AppOpsState$OpsTemplate;
@@ -78,10 +77,8 @@
     .locals 0
 
     .prologue
-    .line 32
     invoke-direct {p0}, Landroid/app/Fragment;-><init>()V
 
-    .line 51
     return-void
 .end method
 
@@ -94,10 +91,8 @@
     .param p3, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 92
     iput-object p1, p0, Lcom/android/settings/applications/AppOpsSummary;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 94
     iget-object v3, p0, Lcom/android/settings/applications/AppOpsSummary;->mInflater:Landroid/view/LayoutInflater;
 
     const v4, 0x7f04000a
@@ -108,14 +103,11 @@
 
     move-result-object v1
 
-    .line 96
     .local v1, "rootView":Landroid/view/View;
     iput-object p2, p0, Lcom/android/settings/applications/AppOpsSummary;->mContentContainer:Landroid/view/ViewGroup;
 
-    .line 97
     iput-object v1, p0, Lcom/android/settings/applications/AppOpsSummary;->mRootView:Landroid/view/View;
 
-    .line 99
     invoke-virtual {p0}, Lcom/android/settings/applications/AppOpsSummary;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
@@ -128,7 +120,6 @@
 
     iput-object v3, p0, Lcom/android/settings/applications/AppOpsSummary;->mPageNames:[Ljava/lang/CharSequence;
 
-    .line 101
     const v3, 0x7f0f0017
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -139,7 +130,6 @@
 
     iput-object v3, p0, Lcom/android/settings/applications/AppOpsSummary;->mViewPager:Landroid/support/v4/view/ViewPager;
 
-    .line 102
     new-instance v0, Lcom/android/settings/applications/AppOpsSummary$MyPagerAdapter;
 
     invoke-virtual {p0}, Lcom/android/settings/applications/AppOpsSummary;->getChildFragmentManager()Landroid/app/FragmentManager;
@@ -148,18 +138,15 @@
 
     invoke-direct {v0, p0, v3}, Lcom/android/settings/applications/AppOpsSummary$MyPagerAdapter;-><init>(Lcom/android/settings/applications/AppOpsSummary;Landroid/app/FragmentManager;)V
 
-    .line 103
     .local v0, "adapter":Lcom/android/settings/applications/AppOpsSummary$MyPagerAdapter;
     iget-object v3, p0, Lcom/android/settings/applications/AppOpsSummary;->mViewPager:Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {v3, v0}, Landroid/support/v4/view/ViewPager;->setAdapter(Landroid/support/v4/view/PagerAdapter;)V
 
-    .line 104
     iget-object v3, p0, Lcom/android/settings/applications/AppOpsSummary;->mViewPager:Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {v3, v0}, Landroid/support/v4/view/ViewPager;->setOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
 
-    .line 105
     const v3, 0x7f0f0018
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -168,18 +155,15 @@
 
     check-cast v2, Landroid/support/v4/view/PagerTabStrip;
 
-    .line 106
     .local v2, "tabs":Landroid/support/v4/view/PagerTabStrip;
     const v3, 0x7f080033
 
     invoke-virtual {v2, v3}, Landroid/support/v4/view/PagerTabStrip;->setTabIndicatorColorResource(I)V
 
-    .line 110
     instance-of v3, p2, Landroid/preference/PreferenceFrameLayout;
 
     if-eqz v3, :cond_0
 
-    .line 111
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v3
@@ -190,7 +174,6 @@
 
     iput-boolean v4, v3, Landroid/preference/PreferenceFrameLayout$LayoutParams;->removeBorders:Z
 
-    .line 114
     :cond_0
     return-object v1
 .end method

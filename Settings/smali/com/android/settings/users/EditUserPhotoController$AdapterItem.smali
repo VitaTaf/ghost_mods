@@ -27,16 +27,12 @@
     .param p2, "id"    # I
 
     .prologue
-    .line 336
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 337
     iput-object p1, p0, Lcom/android/settings/users/EditUserPhotoController$AdapterItem;->title:Ljava/lang/String;
 
-    .line 338
     iput p2, p0, Lcom/android/settings/users/EditUserPhotoController$AdapterItem;->id:I
 
-    .line 339
     return-void
 .end method
 
@@ -46,7 +42,6 @@
     .locals 1
 
     .prologue
-    .line 343
     iget-object v0, p0, Lcom/android/settings/users/EditUserPhotoController$AdapterItem;->title:Ljava/lang/String;
 
     return-object v0

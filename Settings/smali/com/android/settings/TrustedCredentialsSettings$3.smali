@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 651
     iput-object p1, p0, Lcom/android/settings/TrustedCredentialsSettings$3;->this$0:Lcom/android/settings/TrustedCredentialsSettings;
 
     iput-object p2, p0, Lcom/android/settings/TrustedCredentialsSettings$3;->val$views:Ljava/util/ArrayList;
@@ -56,7 +55,6 @@
     .end annotation
 
     .prologue
-    .line 655
     .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     const/4 v0, 0x0
 
@@ -70,7 +68,6 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 656
     iget-object v1, p0, Lcom/android/settings/TrustedCredentialsSettings$3;->val$views:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -86,18 +83,15 @@
     :goto_1
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 655
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 656
     :cond_0
     const/16 v2, 0x8
 
     goto :goto_1
 
-    .line 658
     :cond_1
     return-void
 .end method
@@ -113,7 +107,6 @@
     .end annotation
 
     .prologue
-    .line 660
     .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     return-void
 .end method

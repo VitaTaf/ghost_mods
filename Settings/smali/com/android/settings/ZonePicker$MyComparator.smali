@@ -37,13 +37,10 @@
     .param p1, "sortingKey"    # Ljava/lang/String;
 
     .prologue
-    .line 321
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 322
     iput-object p1, p0, Lcom/android/settings/ZonePicker$MyComparator;->mSortingKey:Ljava/lang/String;
 
-    .line 323
     return-void
 .end method
 
@@ -52,7 +49,6 @@
     .param p1, "value"    # Ljava/lang/Object;
 
     .prologue
-    .line 347
     if-eqz p1, :cond_0
 
     instance-of v0, p1, Ljava/lang/Comparable;
@@ -78,7 +74,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 318
     check-cast p1, Ljava/util/HashMap;
 
     .end local p1    # "x0":Ljava/lang/Object;
@@ -105,7 +100,6 @@
     .end annotation
 
     .prologue
-    .line 330
     .local p1, "map1":Ljava/util/HashMap;, "Ljava/util/HashMap<**>;"
     .local p2, "map2":Ljava/util/HashMap;, "Ljava/util/HashMap<**>;"
     iget-object v2, p0, Lcom/android/settings/ZonePicker$MyComparator;->mSortingKey:Ljava/lang/String;
@@ -114,7 +108,6 @@
 
     move-result-object v0
 
-    .line 331
     .local v0, "value1":Ljava/lang/Object;
     iget-object v2, p0, Lcom/android/settings/ZonePicker$MyComparator;->mSortingKey:Ljava/lang/String;
 
@@ -122,7 +115,6 @@
 
     move-result-object v1
 
-    .line 337
     .local v1, "value2":Ljava/lang/Object;
     invoke-direct {p0, v0}, Lcom/android/settings/ZonePicker$MyComparator;->isComparable(Ljava/lang/Object;)Z
 
@@ -130,7 +122,6 @@
 
     if-nez v2, :cond_1
 
-    .line 338
     invoke-direct {p0, v1}, Lcom/android/settings/ZonePicker$MyComparator;->isComparable(Ljava/lang/Object;)Z
 
     move-result v2
@@ -139,19 +130,16 @@
 
     const/4 v2, 0x1
 
-    .line 343
     .end local v0    # "value1":Ljava/lang/Object;
     :goto_0
     return v2
 
-    .line 338
     .restart local v0    # "value1":Ljava/lang/Object;
     :cond_0
     const/4 v2, 0x0
 
     goto :goto_0
 
-    .line 339
     :cond_1
     invoke-direct {p0, v1}, Lcom/android/settings/ZonePicker$MyComparator;->isComparable(Ljava/lang/Object;)Z
 
@@ -159,12 +147,10 @@
 
     if-nez v2, :cond_2
 
-    .line 340
     const/4 v2, -0x1
 
     goto :goto_0
 
-    .line 343
     :cond_2
     check-cast v0, Ljava/lang/Comparable;
 

@@ -23,7 +23,6 @@
     .locals 1
 
     .prologue
-    .line 534
     const-string v0, "notification"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -43,7 +42,6 @@
     .locals 0
 
     .prologue
-    .line 533
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -59,7 +57,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 559
     :try_start_0
     sget-object v2, Lcom/android/settings/notification/NotificationAppList$Backend;->sINM:Landroid/app/INotificationManager;
 
@@ -75,16 +72,13 @@
 
     const/4 v1, 0x1
 
-    .line 562
     :cond_0
     :goto_0
     return v1
 
-    .line 560
     :catch_0
     move-exception v0
 
-    .line 561
     .local v0, "e":Ljava/lang/Exception;
     const-string v2, "NotificationAppList"
 
@@ -103,7 +97,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 549
     :try_start_0
     sget-object v3, Lcom/android/settings/notification/NotificationAppList$Backend;->sINM:Landroid/app/INotificationManager;
 
@@ -113,23 +106,19 @@
 
     move-result v1
 
-    .line 550
     .local v1, "enabled":Z
     if-nez v1, :cond_0
 
     const/4 v2, 0x1
 
-    .line 553
     .end local v1    # "enabled":Z
     :cond_0
     :goto_0
     return v2
 
-    .line 551
     :catch_0
     move-exception v0
 
-    .line 552
     .local v0, "e":Ljava/lang/Exception;
     const-string v3, "NotificationAppList"
 
@@ -148,7 +137,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 579
     :try_start_0
     sget-object v2, Lcom/android/settings/notification/NotificationAppList$Backend;->sINM:Landroid/app/INotificationManager;
 
@@ -162,16 +150,13 @@
 
     const/4 v1, 0x1
 
-    .line 582
     :cond_0
     :goto_0
     return v1
 
-    .line 580
     :catch_0
     move-exception v0
 
-    .line 581
     .local v0, "e":Ljava/lang/Exception;
     const-string v2, "NotificationAppList"
 
@@ -191,7 +176,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 568
     :try_start_0
     sget-object v3, Lcom/android/settings/notification/NotificationAppList$Backend;->sINM:Landroid/app/INotificationManager;
 
@@ -204,24 +188,19 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 570
     const/4 v1, 0x1
 
-    .line 573
     :goto_1
     return v1
 
     :cond_0
     move v2, v1
 
-    .line 568
     goto :goto_0
 
-    .line 571
     :catch_0
     move-exception v0
 
-    .line 572
     .local v0, "e":Ljava/lang/Exception;
     const-string v2, "NotificationAppList"
 
@@ -243,7 +222,6 @@
 
     const/4 v2, 0x0
 
-    .line 539
     :try_start_0
     sget-object v4, Lcom/android/settings/notification/NotificationAppList$Backend;->sINM:Landroid/app/INotificationManager;
 
@@ -256,21 +234,17 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 543
     :goto_1
     return v1
 
     :cond_0
     move v3, v2
 
-    .line 539
     goto :goto_0
 
-    .line 541
     :catch_0
     move-exception v0
 
-    .line 542
     .local v0, "e":Ljava/lang/Exception;
     const-string v1, "NotificationAppList"
 
@@ -280,7 +254,6 @@
 
     move v1, v2
 
-    .line 543
     goto :goto_1
 .end method
 
@@ -293,7 +266,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 588
     :try_start_0
     sget-object v3, Lcom/android/settings/notification/NotificationAppList$Backend;->sINM:Landroid/app/INotificationManager;
 
@@ -306,24 +278,19 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 591
     const/4 v1, 0x1
 
-    .line 594
     :goto_1
     return v1
 
-    .line 588
     :cond_0
     const/16 v2, -0x3e8
 
     goto :goto_0
 
-    .line 592
     :catch_0
     move-exception v0
 
-    .line 593
     .local v0, "e":Ljava/lang/Exception;
     const-string v2, "NotificationAppList"
 

@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 98
     iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment$2;->this$0:Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 100
     iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment$2;->this$0:Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
 
     iget-object v1, v1, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mDeviceNameView:Landroid/widget/EditText;
@@ -59,13 +57,11 @@
 
     move-result-object v0
 
-    .line 101
     .local v0, "deviceName":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment$2;->this$0:Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
 
     # invokes: Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->setDeviceName(Ljava/lang/String;)V
     invoke-static {v1, v0}, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->access$000(Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;Ljava/lang/String;)V
 
-    .line 102
     return-void
 .end method

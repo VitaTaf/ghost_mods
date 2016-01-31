@@ -24,12 +24,9 @@
     .param p1, "_wakelock"    # Landroid/os/PowerManager$WakeLock;
 
     .prologue
-    .line 171
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 172
     iput-object p1, p0, Lcom/android/settings/CryptKeeper$NonConfigurationInstanceState;->wakelock:Landroid/os/PowerManager$WakeLock;
 
-    .line 173
     return-void
 .end method

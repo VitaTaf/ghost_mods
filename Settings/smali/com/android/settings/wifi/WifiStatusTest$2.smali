@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 175
     iput-object p1, p0, Lcom/android/settings/wifi/WifiStatusTest$2;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +40,10 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 177
     iget-object v0, p0, Lcom/android/settings/wifi/WifiStatusTest$2;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     # invokes: Lcom/android/settings/wifi/WifiStatusTest;->updatePingState()V
     invoke-static {v0}, Lcom/android/settings/wifi/WifiStatusTest;->access$500(Lcom/android/settings/wifi/WifiStatusTest;)V
 
-    .line 178
     return-void
 .end method

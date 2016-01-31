@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 563
     invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
 
     return-void
@@ -31,32 +30,26 @@
     .param p1, "unlockMethodToSet"    # Ljava/lang/String;
 
     .prologue
-    .line 570
     new-instance v1, Lcom/android/settings/ChooseLockGeneric$ChooseLockGenericFragment$FactoryResetProtectionWarningDialog;
 
     invoke-direct {v1}, Lcom/android/settings/ChooseLockGeneric$ChooseLockGenericFragment$FactoryResetProtectionWarningDialog;-><init>()V
 
-    .line 572
     .local v1, "frag":Lcom/android/settings/ChooseLockGeneric$ChooseLockGenericFragment$FactoryResetProtectionWarningDialog;
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 573
     .local v0, "args":Landroid/os/Bundle;
     const-string v2, "titleRes"
 
     invoke-virtual {v0, v2, p0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 574
     const-string v2, "unlockMethodToSet"
 
     invoke-virtual {v0, v2, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 575
     invoke-virtual {v1, v0}, Lcom/android/settings/ChooseLockGeneric$ChooseLockGenericFragment$FactoryResetProtectionWarningDialog;->setArguments(Landroid/os/Bundle;)V
 
-    .line 576
     return-object v1
 .end method
 
@@ -67,12 +60,10 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 589
     invoke-virtual {p0}, Lcom/android/settings/ChooseLockGeneric$ChooseLockGenericFragment$FactoryResetProtectionWarningDialog;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 591
     .local v0, "args":Landroid/os/Bundle;
     new-instance v1, Landroid/app/AlertDialog$Builder;
 
@@ -131,17 +122,14 @@
     .param p2, "tag"    # Ljava/lang/String;
 
     .prologue
-    .line 581
     invoke-virtual {p1, p2}, Landroid/app/FragmentManager;->findFragmentByTag(Ljava/lang/String;)Landroid/app/Fragment;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    .line 583
     invoke-super {p0, p1, p2}, Landroid/app/DialogFragment;->show(Landroid/app/FragmentManager;Ljava/lang/String;)V
 
-    .line 585
     :cond_0
     return-void
 .end method

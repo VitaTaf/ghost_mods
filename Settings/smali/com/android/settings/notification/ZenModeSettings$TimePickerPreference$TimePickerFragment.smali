@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 737
     invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
 
     return-void
@@ -39,7 +38,6 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 743
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeSettings$TimePickerPreference$TimePickerFragment;->pref:Lcom/android/settings/notification/ZenModeSettings$TimePickerPreference;
 
     if-eqz v0, :cond_0
@@ -64,14 +62,12 @@
 
     const/4 v7, 0x1
 
-    .line 744
     .local v7, "usePref":Z
     :goto_0
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v6
 
-    .line 745
     .local v6, "c":Ljava/util/Calendar;
     if-eqz v7, :cond_1
 
@@ -82,7 +78,6 @@
 
     move-result v3
 
-    .line 746
     .local v3, "hour":I
     :goto_1
     if-eqz v7, :cond_2
@@ -94,7 +89,6 @@
 
     move-result v4
 
-    .line 747
     .local v4, "minute":I
     :goto_2
     new-instance v0, Landroid/app/TimePickerDialog;
@@ -117,7 +111,6 @@
 
     return-object v0
 
-    .line 743
     .end local v3    # "hour":I
     .end local v4    # "minute":I
     .end local v6    # "c":Ljava/util/Calendar;
@@ -127,7 +120,6 @@
 
     goto :goto_0
 
-    .line 745
     .restart local v6    # "c":Ljava/util/Calendar;
     .restart local v7    # "usePref":Z
     :cond_1
@@ -139,7 +131,6 @@
 
     goto :goto_1
 
-    .line 746
     .restart local v3    # "hour":I
     :cond_2
     const/16 v0, 0xc
@@ -158,17 +149,14 @@
     .param p3, "minute"    # I
 
     .prologue
-    .line 752
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeSettings$TimePickerPreference$TimePickerFragment;->pref:Lcom/android/settings/notification/ZenModeSettings$TimePickerPreference;
 
     if-eqz v0, :cond_0
 
-    .line 753
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeSettings$TimePickerPreference$TimePickerFragment;->pref:Lcom/android/settings/notification/ZenModeSettings$TimePickerPreference;
 
     invoke-virtual {v0, p2, p3}, Lcom/android/settings/notification/ZenModeSettings$TimePickerPreference;->setTime(II)V
 
-    .line 755
     :cond_0
     return-void
 .end method

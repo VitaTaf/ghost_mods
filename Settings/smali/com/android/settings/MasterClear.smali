@@ -30,7 +30,6 @@
 
     const/4 v1, 0x0
 
-    .line 82
     const-string v2, "ro.debuggable"
 
     invoke-static {v2, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
@@ -54,15 +53,12 @@
     .locals 1
 
     .prologue
-    .line 66
     invoke-direct {p0}, Landroid/app/Fragment;-><init>()V
 
-    .line 79
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/settings/MasterClear;->mErasePersonalContent:Landroid/widget/CheckBox;
 
-    .line 132
     new-instance v0, Lcom/android/settings/MasterClear$1;
 
     invoke-direct {v0, p0}, Lcom/android/settings/MasterClear$1;-><init>(Lcom/android/settings/MasterClear;)V
@@ -78,7 +74,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 66
     invoke-direct {p0, p1}, Lcom/android/settings/MasterClear;->runKeyguardConfirmation(I)Z
 
     move-result v0
@@ -91,7 +86,6 @@
     .param p0, "x0"    # Lcom/android/settings/MasterClear;
 
     .prologue
-    .line 66
     invoke-direct {p0}, Lcom/android/settings/MasterClear;->showFinalConfirmation()V
 
     return-void
@@ -102,7 +96,6 @@
     .param p0, "x0"    # Lcom/android/settings/MasterClear;
 
     .prologue
-    .line 66
     iget-object v0, p0, Lcom/android/settings/MasterClear;->mExternalStorage:Landroid/widget/CheckBox;
 
     return-object v0
@@ -118,7 +111,6 @@
 
     const/4 v6, 0x0
 
-    .line 154
     iget-object v5, p0, Lcom/android/settings/MasterClear;->mContentView:Landroid/view/View;
 
     invoke-virtual {v5, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -129,14 +121,12 @@
 
     iput-object v5, p0, Lcom/android/settings/MasterClear;->mInitiateButton:Landroid/widget/Button;
 
-    .line 155
     iget-object v5, p0, Lcom/android/settings/MasterClear;->mInitiateButton:Landroid/widget/Button;
 
     iget-object v7, p0, Lcom/android/settings/MasterClear;->mInitiateListener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v5, v7}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 156
     iget-object v5, p0, Lcom/android/settings/MasterClear;->mContentView:Landroid/view/View;
 
     const v7, 0x7f0f00e3
@@ -147,7 +137,6 @@
 
     iput-object v5, p0, Lcom/android/settings/MasterClear;->mExternalStorageContainer:Landroid/view/View;
 
-    .line 157
     iget-object v5, p0, Lcom/android/settings/MasterClear;->mContentView:Landroid/view/View;
 
     const v7, 0x7f0f00e4
@@ -160,7 +149,6 @@
 
     iput-object v5, p0, Lcom/android/settings/MasterClear;->mExternalStorage:Landroid/widget/CheckBox;
 
-    .line 159
     invoke-virtual {p0}, Lcom/android/settings/MasterClear;->getActivity()Landroid/app/Activity;
 
     move-result-object v5
@@ -175,7 +163,6 @@
 
     if-nez v5, :cond_0
 
-    .line 160
     iget-object v5, p0, Lcom/android/settings/MasterClear;->mContentView:Landroid/view/View;
 
     invoke-virtual {v5, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -184,11 +171,9 @@
 
     check-cast v3, Landroid/widget/Button;
 
-    .line 161
     .local v3, "masterClear":Landroid/widget/Button;
     invoke-virtual {v3, v6}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 165
     .end local v3    # "masterClear":Landroid/widget/Button;
     :cond_0
     invoke-virtual {p0}, Lcom/android/settings/MasterClear;->getActivity()Landroid/app/Activity;
@@ -201,7 +186,6 @@
 
     if-eqz v5, :cond_1
 
-    .line 166
     iget-object v5, p0, Lcom/android/settings/MasterClear;->mContentView:Landroid/view/View;
 
     const v7, 0x7f0f00de
@@ -214,18 +198,15 @@
 
     iput-object v5, p0, Lcom/android/settings/MasterClear;->mErasePersonalContent:Landroid/widget/CheckBox;
 
-    .line 168
     iget-object v5, p0, Lcom/android/settings/MasterClear;->mErasePersonalContent:Landroid/widget/CheckBox;
 
     invoke-virtual {v5, v6}, Landroid/widget/CheckBox;->setVisibility(I)V
 
-    .line 179
     :cond_1
     invoke-static {}, Landroid/os/Environment;->isExternalStorageEmulated()Z
 
     move-result v2
 
-    .line 180
     .local v2, "isExtStorageEmulated":Z
     if-nez v2, :cond_2
 
@@ -241,13 +222,11 @@
 
     if-eqz v5, :cond_4
 
-    .line 182
     :cond_2
     iget-object v5, p0, Lcom/android/settings/MasterClear;->mExternalStorageContainer:Landroid/view/View;
 
     invoke-virtual {v5, v8}, Landroid/view/View;->setVisibility(I)V
 
-    .line 184
     iget-object v5, p0, Lcom/android/settings/MasterClear;->mContentView:Landroid/view/View;
 
     const v7, 0x7f0f00e2
@@ -256,11 +235,9 @@
 
     move-result-object v1
 
-    .line 185
     .local v1, "externalOption":Landroid/view/View;
     invoke-virtual {v1, v8}, Landroid/view/View;->setVisibility(I)V
 
-    .line 187
     iget-object v5, p0, Lcom/android/settings/MasterClear;->mContentView:Landroid/view/View;
 
     const v7, 0x7f0f00dd
@@ -269,11 +246,9 @@
 
     move-result-object v0
 
-    .line 188
     .local v0, "externalAlsoErased":Landroid/view/View;
     invoke-virtual {v0, v6}, Landroid/view/View;->setVisibility(I)V
 
-    .line 192
     iget-object v7, p0, Lcom/android/settings/MasterClear;->mExternalStorage:Landroid/widget/CheckBox;
 
     if-nez v2, :cond_3
@@ -283,7 +258,6 @@
     :goto_0
     invoke-virtual {v7, v5}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 203
     .end local v0    # "externalAlsoErased":Landroid/view/View;
     .end local v1    # "externalOption":Landroid/view/View;
     :goto_1
@@ -299,11 +273,9 @@
 
     check-cast v4, Landroid/os/UserManager;
 
-    .line 204
     .local v4, "um":Landroid/os/UserManager;
     invoke-direct {p0, v4}, Lcom/android/settings/MasterClear;->loadAccountList(Landroid/os/UserManager;)V
 
-    .line 205
     return-void
 
     .end local v4    # "um":Landroid/os/UserManager;
@@ -312,10 +284,8 @@
     :cond_3
     move v5, v6
 
-    .line 192
     goto :goto_0
 
-    .line 194
     .end local v0    # "externalAlsoErased":Landroid/view/View;
     .end local v1    # "externalOption":Landroid/view/View;
     :cond_4
@@ -337,18 +307,14 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 316
     const/4 v10, 0x0
 
-    .line 317
     .local v10, "isDevicePersonalized":Z
     const-string v7, "path"
 
-    .line 318
     .local v7, "COLUMN_PERSONALIZED_PATH":Ljava/lang/String;
     const-string v8, "is_personalized"
 
-    .line 319
     .local v8, "COLUMN_PERSONALIZED_STATUS":Ljava/lang/String;
     const-string v0, "content://com.motorola.digitalpersonalization.dpprovider/personalizedinfo"
 
@@ -356,7 +322,6 @@
 
     move-result-object v1
 
-    .line 323
     .local v1, "CONTENT_URI":Landroid/net/Uri;
     const/4 v0, 0x2
 
@@ -372,11 +337,9 @@
 
     aput-object v4, v2, v0
 
-    .line 326
     .local v2, "resultColumns":[Ljava/lang/String;
     const/4 v3, 0x0
 
-    .line 329
     .local v3, "whereClause":Ljava/lang/String;
     :try_start_0
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -391,14 +354,11 @@
 
     move-result-object v11
 
-    .line 332
     .local v11, "resultCursor":Landroid/database/Cursor;
     if-eqz v11, :cond_1
 
-    .line 334
     invoke-interface {v11}, Landroid/database/Cursor;->moveToFirst()Z
 
-    .line 337
     const/4 v0, 0x0
 
     aget-object v0, v2, v0
@@ -407,7 +367,6 @@
 
     move-result v6
 
-    .line 342
     .local v6, "COLUMN_PERSONALIZED_INDEX":I
     :cond_0
     invoke-interface {v11, v6}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -420,30 +379,25 @@
 
     move-result v10
 
-    .line 345
     invoke-interface {v11}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 347
     invoke-interface {v11}, Landroid/database/Cursor;->close()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 354
     .end local v6    # "COLUMN_PERSONALIZED_INDEX":I
     .end local v11    # "resultCursor":Landroid/database/Cursor;
     :cond_1
     :goto_0
     return v10
 
-    .line 350
     :catch_0
     move-exception v9
 
-    .line 351
     .local v9, "e":Ljava/lang/Exception;
     const-string v0, "MasterClear"
 
@@ -474,14 +428,12 @@
     .locals 2
 
     .prologue
-    .line 208
     const-string v1, "vold.decrypt"
 
     invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 209
     .local v0, "state":Ljava/lang/String;
     const-string v1, ""
 
@@ -511,7 +463,6 @@
 
     const/4 v1, 0x0
 
-    .line 386
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
@@ -538,7 +489,6 @@
     .param p1, "um"    # Landroid/os/UserManager;
 
     .prologue
-    .line 213
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/MasterClear;->mContentView:Landroid/view/View;
@@ -551,7 +501,6 @@
 
     move-result-object v9
 
-    .line 214
     .local v9, "accountsLabel":Landroid/view/View;
     move-object/from16 v0, p0
 
@@ -567,16 +516,13 @@
 
     check-cast v12, Landroid/widget/LinearLayout;
 
-    .line 215
     .local v12, "contents":Landroid/widget/LinearLayout;
     invoke-virtual {v12}, Landroid/widget/LinearLayout;->removeAllViews()V
 
-    .line 217
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/MasterClear;->getActivity()Landroid/app/Activity;
 
     move-result-object v13
 
-    .line 218
     .local v13, "context":Landroid/content/Context;
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
@@ -590,19 +536,16 @@
 
     move-result-object v26
 
-    .line 219
     .local v26, "profiles":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/UserInfo;>;"
     invoke-interface/range {v26 .. v26}, Ljava/util/List;->size()I
 
     move-result v27
 
-    .line 221
     .local v27, "profilesSize":I
     invoke-static {v13}, Landroid/accounts/AccountManager;->get(Landroid/content/Context;)Landroid/accounts/AccountManager;
 
     move-result-object v22
 
-    .line 223
     .local v22, "mgr":Landroid/accounts/AccountManager;
     const-string v32, "layout_inflater"
 
@@ -614,11 +557,9 @@
 
     check-cast v20, Landroid/view/LayoutInflater;
 
-    .line 226
     .local v20, "inflater":Landroid/view/LayoutInflater;
     const/4 v8, 0x0
 
-    .line 227
     .local v8, "accountsCount":I
     const/16 v25, 0x0
 
@@ -630,7 +571,6 @@
 
     if-ge v0, v1, :cond_a
 
-    .line 228
     move-object/from16 v0, v26
 
     move/from16 v1, v25
@@ -641,7 +581,6 @@
 
     check-cast v31, Landroid/content/pm/UserInfo;
 
-    .line 229
     .local v31, "userInfo":Landroid/content/pm/UserInfo;
     move-object/from16 v0, v31
 
@@ -649,7 +588,6 @@
 
     move/from16 v24, v0
 
-    .line 230
     .local v24, "profileId":I
     new-instance v30, Landroid/os/UserHandle;
 
@@ -659,7 +597,6 @@
 
     invoke-direct {v0, v1}, Landroid/os/UserHandle;-><init>(I)V
 
-    .line 231
     .local v30, "userHandle":Landroid/os/UserHandle;
     move-object/from16 v0, v22
 
@@ -669,21 +606,17 @@
 
     move-result-object v7
 
-    .line 232
     .local v7, "accounts":[Landroid/accounts/Account;
     array-length v5, v7
 
-    .line 233
     .local v5, "N":I
     if-nez v5, :cond_1
 
-    .line 227
     :cond_0
     add-int/lit8 v25, v25, 0x1
 
     goto :goto_0
 
-    .line 240
     :cond_1
     invoke-static {v13}, Landroid/accounts/AccountManager;->get(Landroid/content/Context;)Landroid/accounts/AccountManager;
 
@@ -697,11 +630,9 @@
 
     move-result-object v15
 
-    .line 242
     .local v15, "descs":[Landroid/accounts/AuthenticatorDescription;
     array-length v4, v15
 
-    .line 244
     .local v4, "M":I
     move-object/from16 v0, p0
 
@@ -711,7 +642,6 @@
 
     move-result-object v29
 
-    .line 245
     .local v29, "titleView":Landroid/view/View;
     const v32, 0x1020016
 
@@ -725,7 +655,6 @@
 
     check-cast v28, Landroid/widget/TextView;
 
-    .line 246
     .local v28, "titleText":Landroid/widget/TextView;
     invoke-virtual/range {v31 .. v31}, Landroid/content/pm/UserInfo;->isManagedProfile()Z
 
@@ -742,12 +671,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 248
     move-object/from16 v0, v29
 
     invoke-virtual {v12, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 250
     const/16 v18, 0x0
 
     .local v18, "i":I
@@ -756,14 +683,11 @@
 
     if-ge v0, v5, :cond_0
 
-    .line 251
     aget-object v6, v7, v18
 
-    .line 252
     .local v6, "account":Landroid/accounts/Account;
     const/4 v14, 0x0
 
-    .line 253
     .local v14, "desc":Landroid/accounts/AuthenticatorDescription;
     const/16 v21, 0x0
 
@@ -773,7 +697,6 @@
 
     if-ge v0, v4, :cond_2
 
-    .line 254
     iget-object v0, v6, Landroid/accounts/Account;->type:Ljava/lang/String;
 
     move-object/from16 v32, v0
@@ -792,14 +715,11 @@
 
     if-eqz v32, :cond_5
 
-    .line 255
     aget-object v14, v15, v21
 
-    .line 259
     :cond_2
     if-nez v14, :cond_6
 
-    .line 260
     const-string v32, "MasterClear"
 
     new-instance v33, Ljava/lang/StringBuilder;
@@ -840,14 +760,12 @@
 
     invoke-static/range {v32 .. v33}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 250
     :cond_3
     :goto_4
     add-int/lit8 v18, v18, 0x1
 
     goto :goto_2
 
-    .line 246
     .end local v6    # "account":Landroid/accounts/Account;
     .end local v14    # "desc":Landroid/accounts/AuthenticatorDescription;
     .end local v18    # "i":I
@@ -857,7 +775,6 @@
 
     goto :goto_1
 
-    .line 253
     .restart local v6    # "account":Landroid/accounts/Account;
     .restart local v14    # "desc":Landroid/accounts/AuthenticatorDescription;
     .restart local v18    # "i":I
@@ -867,7 +784,6 @@
 
     goto :goto_3
 
-    .line 267
     :cond_6
     iget-object v0, v6, Landroid/accounts/Account;->type:Ljava/lang/String;
 
@@ -881,7 +797,6 @@
 
     if-eqz v32, :cond_7
 
-    .line 268
     sget-boolean v32, Lcom/android/settings/MasterClear;->DEBUG:Z
 
     if-eqz v32, :cond_3
@@ -914,11 +829,9 @@
 
     goto :goto_4
 
-    .line 273
     :cond_7
     const/16 v19, 0x0
 
-    .line 275
     .local v19, "icon":Landroid/graphics/drawable/Drawable;
     :try_start_0
     iget v0, v14, Landroid/accounts/AuthenticatorDescription;->iconId:I
@@ -927,7 +840,6 @@
 
     if-eqz v32, :cond_8
 
-    .line 276
     iget-object v0, v14, Landroid/accounts/AuthenticatorDescription;->packageName:Ljava/lang/String;
 
     move-object/from16 v32, v0
@@ -944,7 +856,6 @@
 
     move-result-object v10
 
-    .line 278
     .local v10, "authContext":Landroid/content/Context;
     invoke-virtual {v13}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -972,13 +883,11 @@
 
     move-result-object v19
 
-    .line 285
     .end local v10    # "authContext":Landroid/content/Context;
     :cond_8
     :goto_5
     add-int/lit8 v8, v8, 0x1
 
-    .line 287
     const v32, 0x7f040062
 
     const/16 v33, 0x0
@@ -995,7 +904,6 @@
 
     check-cast v11, Landroid/widget/TextView;
 
-    .line 292
     .local v11, "child":Landroid/widget/TextView;
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/MasterClear;->getActivity()Landroid/app/Activity;
 
@@ -1011,10 +919,8 @@
 
     invoke-virtual {v11, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 296
     if-eqz v19, :cond_9
 
-    .line 297
     const/16 v32, 0x0
 
     const/16 v33, 0x0
@@ -1031,18 +937,15 @@
 
     invoke-virtual {v11, v0, v1, v2, v3}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 299
     :cond_9
     invoke-virtual {v12, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
     goto/16 :goto_4
 
-    .line 281
     .end local v11    # "child":Landroid/widget/TextView;
     :catch_0
     move-exception v16
 
-    .line 282
     .local v16, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string v32, "MasterClear"
 
@@ -1072,7 +975,6 @@
 
     goto :goto_5
 
-    .line 303
     .end local v4    # "M":I
     .end local v5    # "N":I
     .end local v6    # "account":Landroid/accounts/Account;
@@ -1091,21 +993,18 @@
     :cond_a
     if-lez v8, :cond_b
 
-    .line 304
     const/16 v32, 0x0
 
     move/from16 v0, v32
 
     invoke-virtual {v9, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 305
     const/16 v32, 0x0
 
     move/from16 v0, v32
 
     invoke-virtual {v12, v0}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 308
     :cond_b
     move-object/from16 v0, p0
 
@@ -1119,7 +1018,6 @@
 
     move-result-object v23
 
-    .line 309
     .local v23, "otherUsers":Landroid/view/View;
     invoke-virtual/range {p1 .. p1}, Landroid/os/UserManager;->getUserCount()I
 
@@ -1131,7 +1029,6 @@
 
     const/16 v17, 0x1
 
-    .line 310
     .local v17, "hasOtherUsers":Z
     :goto_6
     if-eqz v17, :cond_d
@@ -1145,17 +1042,14 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 311
     return-void
 
-    .line 309
     .end local v17    # "hasOtherUsers":Z
     :cond_c
     const/16 v17, 0x0
 
     goto :goto_6
 
-    .line 310
     .restart local v17    # "hasOtherUsers":Z
     :cond_d
     const/16 v32, 0x8
@@ -1171,7 +1065,6 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 373
     invoke-virtual {p2}, Landroid/view/LayoutInflater;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -1186,7 +1079,6 @@
 
     move-result-object v0
 
-    .line 376
     .local v0, "a":Landroid/content/res/TypedArray;
     const/4 v2, 0x3
 
@@ -1194,7 +1086,6 @@
 
     move-result v1
 
-    .line 378
     .local v1, "resId":I
     invoke-virtual {p2, v1, p1, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -1208,7 +1099,6 @@
     .param p1, "request"    # I
 
     .prologue
-    .line 91
     invoke-virtual {p0}, Lcom/android/settings/MasterClear;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -1217,7 +1107,6 @@
 
     move-result-object v0
 
-    .line 92
     .local v0, "res":Landroid/content/res/Resources;
     new-instance v1, Lcom/android/settings/ChooseLockSettingsHelper;
 
@@ -1246,7 +1135,6 @@
     .locals 4
 
     .prologue
-    .line 115
     new-instance v0, Landroid/preference/Preference;
 
     invoke-virtual {p0}, Lcom/android/settings/MasterClear;->getActivity()Landroid/app/Activity;
@@ -1255,7 +1143,6 @@
 
     invoke-direct {v0, v1}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
 
-    .line 116
     .local v0, "preference":Landroid/preference/Preference;
     const-class v1, Lcom/android/settings/MasterClearConfirm;
 
@@ -1265,12 +1152,10 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/Preference;->setFragment(Ljava/lang/String;)V
 
-    .line 117
     const v1, 0x7f09048e
 
     invoke-virtual {v0, v1}, Landroid/preference/Preference;->setTitle(I)V
 
-    .line 118
     invoke-virtual {v0}, Landroid/preference/Preference;->getExtras()Landroid/os/Bundle;
 
     move-result-object v1
@@ -1285,12 +1170,10 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 120
     iget-object v1, p0, Lcom/android/settings/MasterClear;->mErasePersonalContent:Landroid/widget/CheckBox;
 
     if-eqz v1, :cond_0
 
-    .line 121
     invoke-virtual {v0}, Landroid/preference/Preference;->getExtras()Landroid/os/Bundle;
 
     move-result-object v2
@@ -1310,7 +1193,6 @@
     :goto_0
     invoke-virtual {v2, v3, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 124
     :cond_0
     invoke-virtual {p0}, Lcom/android/settings/MasterClear;->getActivity()Landroid/app/Activity;
 
@@ -1322,10 +1204,8 @@
 
     invoke-virtual {v1, v2, v0}, Lcom/android/settings/SettingsActivity;->onPreferenceStartFragment(Landroid/preference/PreferenceFragment;Landroid/preference/Preference;)Z
 
-    .line 125
     return-void
 
-    .line 121
     :cond_1
     const/4 v1, 0x0
 
@@ -1341,30 +1221,24 @@
     .param p3, "data"    # Landroid/content/Intent;
 
     .prologue
-    .line 99
     invoke-super {p0, p1, p2, p3}, Landroid/app/Fragment;->onActivityResult(IILandroid/content/Intent;)V
 
-    .line 101
     const/16 v0, 0x37
 
     if-eq p1, v0, :cond_0
 
-    .line 112
     :goto_0
     return-void
 
-    .line 107
     :cond_0
     const/4 v0, -0x1
 
     if-ne p2, v0, :cond_1
 
-    .line 108
     invoke-direct {p0}, Lcom/android/settings/MasterClear;->showFinalConfirmation()V
 
     goto :goto_0
 
-    .line 110
     :cond_1
     invoke-direct {p0}, Lcom/android/settings/MasterClear;->establishInitialState()V
 
@@ -1380,7 +1254,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 360
     invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;
 
     move-result-object v0
@@ -1407,7 +1280,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 363
     :cond_0
     const v0, 0x7f040064
 
@@ -1415,11 +1287,9 @@
 
     move-result-object v0
 
-    .line 369
     :goto_0
     return-object v0
 
-    .line 366
     :cond_1
     const v0, 0x7f040061
 
@@ -1429,10 +1299,8 @@
 
     iput-object v0, p0, Lcom/android/settings/MasterClear;->mContentView:Landroid/view/View;
 
-    .line 368
     invoke-direct {p0}, Lcom/android/settings/MasterClear;->establishInitialState()V
 
-    .line 369
     iget-object v0, p0, Lcom/android/settings/MasterClear;->mContentView:Landroid/view/View;
 
     goto :goto_0

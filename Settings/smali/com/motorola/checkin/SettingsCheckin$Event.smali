@@ -28,12 +28,10 @@
     .param p2, "eventName"    # Ljava/lang/String;
 
     .prologue
-    .line 305
     iput-object p1, p0, Lcom/motorola/checkin/SettingsCheckin$Event;->this$0:Lcom/motorola/checkin/SettingsCheckin;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 280
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "["
@@ -42,12 +40,10 @@
 
     iput-object v1, p0, Lcom/motorola/checkin/SettingsCheckin$Event;->mValue:Ljava/lang/StringBuilder;
 
-    .line 281
     const-string v1, "MOT_SIM_STATS"
 
     iput-object v1, p0, Lcom/motorola/checkin/SettingsCheckin$Event;->mTag:Ljava/lang/String;
 
-    .line 308
     new-instance v0, Ljava/lang/Long;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -56,20 +52,17 @@
 
     invoke-direct {v0, v2, v3}, Ljava/lang/Long;-><init>(J)V
 
-    .line 309
     .local v0, "time":Ljava/lang/Long;
     const-string v1, "ID"
 
     invoke-virtual {p0, v1, p2}, Lcom/motorola/checkin/SettingsCheckin$Event;->add(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 310
     const-string v1, "ver"
 
     const-string v2, "1.0"
 
     invoke-virtual {p0, v1, v2}, Lcom/motorola/checkin/SettingsCheckin$Event;->add(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 311
     const-string v1, "time"
 
     invoke-virtual {v0}, Ljava/lang/Long;->toString()Ljava/lang/String;
@@ -78,7 +71,6 @@
 
     invoke-virtual {p0, v1, v2}, Lcom/motorola/checkin/SettingsCheckin$Event;->add(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 312
     return-void
 .end method
 
@@ -90,7 +82,6 @@
     .param p2, "value"    # Ljava/lang/Object;
 
     .prologue
-    .line 339
     iget-object v0, p0, Lcom/motorola/checkin/SettingsCheckin$Event;->mValue:Ljava/lang/StringBuilder;
 
     const/4 v1, 0x4
@@ -120,7 +111,6 @@
     # invokes: Lcom/motorola/checkin/SettingsCheckin;->concat(Ljava/lang/StringBuilder;[Ljava/lang/Object;)Ljava/lang/StringBuilder;
     invoke-static {v0, v1}, Lcom/motorola/checkin/SettingsCheckin;->access$400(Ljava/lang/StringBuilder;[Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 340
     return-void
 .end method
 
@@ -128,7 +118,6 @@
     .locals 1
 
     .prologue
-    .line 329
     iget-object v0, p0, Lcom/motorola/checkin/SettingsCheckin$Event;->mTag:Ljava/lang/String;
 
     return-object v0
@@ -138,7 +127,6 @@
     .locals 4
 
     .prologue
-    .line 319
     const-string v0, "]"
 
     iget-object v1, p0, Lcom/motorola/checkin/SettingsCheckin$Event;->mValue:Ljava/lang/StringBuilder;
@@ -167,14 +155,12 @@
 
     if-nez v0, :cond_0
 
-    .line 320
     iget-object v0, p0, Lcom/motorola/checkin/SettingsCheckin$Event;->mValue:Ljava/lang/StringBuilder;
 
     const-string v1, "]"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 321
     :cond_0
     iget-object v0, p0, Lcom/motorola/checkin/SettingsCheckin$Event;->mValue:Ljava/lang/StringBuilder;
 
@@ -192,12 +178,10 @@
     .prologue
     const/4 v5, 0x6
 
-    .line 356
     invoke-virtual {p0}, Lcom/motorola/checkin/SettingsCheckin$Event;->getValue()Ljava/lang/String;
 
     move-result-object v9
 
-    .line 357
     .local v9, "value":Ljava/lang/String;
     const-string v4, "[\\[\\]=;]"
 
@@ -205,30 +189,25 @@
 
     move-result-object v7
 
-    .line 363
     .local v7, "pairs":[Ljava/lang/String;
     array-length v4, v7
 
     if-le v4, v5, :cond_1
 
-    .line 364
     invoke-virtual {p0}, Lcom/motorola/checkin/SettingsCheckin$Event;->getTag()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 365
     .local v1, "tag":Ljava/lang/String;
     const/4 v4, 0x2
 
     aget-object v2, v7, v4
 
-    .line 366
     .local v2, "segmentNameValue":Ljava/lang/String;
     const/4 v4, 0x4
 
     aget-object v3, v7, v4
 
-    .line 367
     .local v3, "versionValue":Ljava/lang/String;
     aget-object v4, v7, v5
 
@@ -240,7 +219,6 @@
 
     move-result-object v8
 
-    .line 370
     .local v8, "timestampValue":Ljava/lang/Long;
     invoke-static {}, Lcom/motorola/checkin/CheckinEventWrapper;->isInitialized()Z
 
@@ -248,12 +226,10 @@
 
     if-eqz v4, :cond_1
 
-    .line 371
     new-instance v0, Lcom/motorola/checkin/CheckinEventWrapper;
 
     invoke-direct {v0}, Lcom/motorola/checkin/CheckinEventWrapper;-><init>()V
 
-    .line 374
     .local v0, "event":Lcom/motorola/checkin/CheckinEventWrapper;
     invoke-virtual {v8}, Ljava/lang/Long;->longValue()J
 
@@ -265,7 +241,6 @@
 
     if-eqz v4, :cond_1
 
-    .line 376
     const/4 v6, 0x7
 
     .local v6, "index":I
@@ -274,7 +249,6 @@
 
     if-ge v6, v4, :cond_0
 
-    .line 377
     aget-object v4, v7, v6
 
     add-int/lit8 v5, v6, 0x1
@@ -283,12 +257,10 @@
 
     invoke-virtual {v0, v4, v5}, Lcom/motorola/checkin/CheckinEventWrapper;->setValue(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 376
     add-int/lit8 v6, v6, 0x2
 
     goto :goto_0
 
-    .line 379
     :cond_0
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -296,7 +268,6 @@
 
     invoke-virtual {v0, v4}, Lcom/motorola/checkin/CheckinEventWrapper;->publish(Landroid/content/ContentResolver;)V
 
-    .line 383
     .end local v0    # "event":Lcom/motorola/checkin/CheckinEventWrapper;
     .end local v1    # "tag":Ljava/lang/String;
     .end local v2    # "segmentNameValue":Ljava/lang/String;

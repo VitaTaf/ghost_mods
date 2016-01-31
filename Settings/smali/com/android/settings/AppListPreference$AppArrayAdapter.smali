@@ -41,29 +41,22 @@
     .param p6, "selectedIndex"    # I
 
     .prologue
-    .line 49
     iput-object p1, p0, Lcom/android/settings/AppListPreference$AppArrayAdapter;->this$0:Lcom/android/settings/AppListPreference;
 
-    .line 50
     invoke-direct {p0, p2, p3, p4}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
 
-    .line 45
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/settings/AppListPreference$AppArrayAdapter;->mImageDrawables:[Landroid/graphics/drawable/Drawable;
 
-    .line 46
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/settings/AppListPreference$AppArrayAdapter;->mSelectedIndex:I
 
-    .line 51
     iput p6, p0, Lcom/android/settings/AppListPreference$AppArrayAdapter;->mSelectedIndex:I
 
-    .line 52
     iput-object p5, p0, Lcom/android/settings/AppListPreference$AppArrayAdapter;->mImageDrawables:[Landroid/graphics/drawable/Drawable;
 
-    .line 53
     return-void
 .end method
 
@@ -76,7 +69,6 @@
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 57
     invoke-virtual {p0}, Lcom/android/settings/AppListPreference$AppArrayAdapter;->getContext()Landroid/content/Context;
 
     move-result-object v4
@@ -87,7 +79,6 @@
 
     move-result-object v2
 
-    .line 58
     .local v2, "inflater":Landroid/view/LayoutInflater;
     const v4, 0x7f04000c
 
@@ -97,7 +88,6 @@
 
     move-result-object v3
 
-    .line 59
     .local v3, "view":Landroid/view/View;
     const v4, 0x7f0f001a
 
@@ -107,7 +97,6 @@
 
     check-cast v0, Landroid/widget/CheckedTextView;
 
-    .line 60
     .local v0, "checkedTextView":Landroid/widget/CheckedTextView;
     invoke-virtual {p0, p1}, Lcom/android/settings/AppListPreference$AppArrayAdapter;->getItem(I)Ljava/lang/Object;
 
@@ -117,17 +106,14 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/CheckedTextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 61
     iget v4, p0, Lcom/android/settings/AppListPreference$AppArrayAdapter;->mSelectedIndex:I
 
     if-ne p1, v4, :cond_0
 
-    .line 62
     const/4 v4, 0x1
 
     invoke-virtual {v0, v4}, Landroid/widget/CheckedTextView;->setChecked(Z)V
 
-    .line 64
     :cond_0
     const v4, 0x7f0f0019
 
@@ -137,7 +123,6 @@
 
     check-cast v1, Landroid/widget/ImageView;
 
-    .line 65
     .local v1, "imageView":Landroid/widget/ImageView;
     iget-object v4, p0, Lcom/android/settings/AppListPreference$AppArrayAdapter;->mImageDrawables:[Landroid/graphics/drawable/Drawable;
 
@@ -145,6 +130,5 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 66
     return-object v3
 .end method

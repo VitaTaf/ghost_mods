@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 1376
     iput-object p1, p0, Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment$4;->this$0:Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +43,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1378
     iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment$4;->this$0:Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment;->getOwner()Lcom/android/settings/applications/InstalledAppDetails;
@@ -58,7 +56,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 1380
     iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment$4;->this$0:Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment;->getOwner()Lcom/android/settings/applications/InstalledAppDetails;
@@ -68,6 +65,5 @@
     # invokes: Lcom/android/settings/applications/InstalledAppDetails;->setIntentAndFinish(ZZ)V
     invoke-static {v0, v1, v1}, Lcom/android/settings/applications/InstalledAppDetails;->access$800(Lcom/android/settings/applications/InstalledAppDetails;ZZ)V
 
-    .line 1381
     return-void
 .end method

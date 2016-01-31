@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 51
     iput-object p1, p0, Lcom/android/settings/MotorolaPrivacy$1;->this$0:Lcom/android/settings/MotorolaPrivacy;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 55
     iget-object v0, p0, Lcom/android/settings/MotorolaPrivacy$1;->this$0:Lcom/android/settings/MotorolaPrivacy;
 
     # getter for: Lcom/android/settings/MotorolaPrivacy;->alertDialog:Landroid/app/AlertDialog;
@@ -52,6 +50,5 @@
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
-    .line 56
     return-void
 .end method

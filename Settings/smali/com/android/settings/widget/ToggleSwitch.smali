@@ -21,10 +21,8 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 32
     invoke-direct {p0, p1}, Landroid/widget/Switch;-><init>(Landroid/content/Context;)V
 
-    .line 33
     return-void
 .end method
 
@@ -34,10 +32,8 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 36
     invoke-direct {p0, p1, p2}, Landroid/widget/Switch;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 37
     return-void
 .end method
 
@@ -48,10 +44,8 @@
     .param p3, "defStyleAttr"    # I
 
     .prologue
-    .line 40
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/Switch;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 41
     return-void
 .end method
 
@@ -63,10 +57,8 @@
     .param p4, "defStyleRes"    # I
 
     .prologue
-    .line 44
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/widget/Switch;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    .line 45
     return-void
 .end method
 
@@ -77,7 +69,6 @@
     .param p1, "checked"    # Z
 
     .prologue
-    .line 53
     iget-object v0, p0, Lcom/android/settings/widget/ToggleSwitch;->mOnBeforeListener:Lcom/android/settings/widget/ToggleSwitch$OnBeforeCheckedChangeListener;
 
     if-eqz v0, :cond_0
@@ -90,11 +81,9 @@
 
     if-eqz v0, :cond_0
 
-    .line 58
     :goto_0
     return-void
 
-    .line 57
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/Switch;->setChecked(Z)V
 
@@ -106,10 +95,8 @@
     .param p1, "checked"    # Z
 
     .prologue
-    .line 61
     invoke-super {p0, p1}, Landroid/widget/Switch;->setChecked(Z)V
 
-    .line 62
     return-void
 .end method
 
@@ -118,9 +105,7 @@
     .param p1, "listener"    # Lcom/android/settings/widget/ToggleSwitch$OnBeforeCheckedChangeListener;
 
     .prologue
-    .line 48
     iput-object p1, p0, Lcom/android/settings/widget/ToggleSwitch;->mOnBeforeListener:Lcom/android/settings/widget/ToggleSwitch$OnBeforeCheckedChangeListener;
 
-    .line 49
     return-void
 .end method

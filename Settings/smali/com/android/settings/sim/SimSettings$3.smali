@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 1020
     iput-object p1, p0, Lcom/android/settings/sim/SimSettings$3;->this$0:Lcom/android/settings/sim/SimSettings;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -38,16 +37,13 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 1022
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1036
     :goto_0
     return-void
 
-    .line 1025
     :pswitch_0
     iget-object v0, p0, Lcom/android/settings/sim/SimSettings$3;->this$0:Lcom/android/settings/sim/SimSettings;
 
@@ -61,7 +57,6 @@
 
     if-nez v0, :cond_0
 
-    .line 1026
     iget-object v0, p0, Lcom/android/settings/sim/SimSettings$3;->this$0:Lcom/android/settings/sim/SimSettings;
 
     # getter for: Lcom/android/settings/sim/SimSettings;->mSimCards:Landroid/preference/PreferenceScreen;
@@ -73,7 +68,6 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->setEnabled(Z)V
 
-    .line 1029
     :cond_0
     iget-object v0, p0, Lcom/android/settings/sim/SimSettings$3;->this$0:Lcom/android/settings/sim/SimSettings;
 
@@ -82,14 +76,12 @@
 
     goto :goto_0
 
-    .line 1032
     :pswitch_1
     iget-object v0, p0, Lcom/android/settings/sim/SimSettings$3;->this$0:Lcom/android/settings/sim/SimSettings;
 
     # invokes: Lcom/android/settings/sim/SimSettings;->updateAvailableSubInfos()V
     invoke-static {v0}, Lcom/android/settings/sim/SimSettings;->access$1400(Lcom/android/settings/sim/SimSettings;)V
 
-    .line 1033
     iget-object v0, p0, Lcom/android/settings/sim/SimSettings$3;->this$0:Lcom/android/settings/sim/SimSettings;
 
     # invokes: Lcom/android/settings/sim/SimSettings;->updateAllOptions()V
@@ -97,7 +89,6 @@
 
     goto :goto_0
 
-    .line 1022
     nop
 
     :pswitch_data_0

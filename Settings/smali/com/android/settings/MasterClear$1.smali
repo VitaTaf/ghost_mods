@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 132
     iput-object p1, p0, Lcom/android/settings/MasterClear$1;->this$0:Lcom/android/settings/MasterClear;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 135
     iget-object v0, p0, Lcom/android/settings/MasterClear$1;->this$0:Lcom/android/settings/MasterClear;
 
     const/16 v1, 0x37
@@ -53,13 +51,11 @@
 
     if-nez v0, :cond_0
 
-    .line 136
     iget-object v0, p0, Lcom/android/settings/MasterClear$1;->this$0:Lcom/android/settings/MasterClear;
 
     # invokes: Lcom/android/settings/MasterClear;->showFinalConfirmation()V
     invoke-static {v0}, Lcom/android/settings/MasterClear;->access$100(Lcom/android/settings/MasterClear;)V
 
-    .line 138
     :cond_0
     return-void
 .end method

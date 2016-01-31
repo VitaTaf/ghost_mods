@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 467
     iput-object p1, p0, Lcom/android/settings/location/SettingsInjector$Setting$1;->this$1:Lcom/android/settings/location/SettingsInjector$Setting;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -38,12 +37,10 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 470
     invoke-virtual {p1}, Landroid/os/Message;->getData()Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 471
     .local v0, "bundle":Landroid/os/Bundle;
     const-string v2, "enabled"
 
@@ -53,7 +50,6 @@
 
     move-result v1
 
-    .line 472
     .local v1, "enabled":Z
     const-string v2, "SettingsInjector"
 
@@ -65,7 +61,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 473
     const-string v2, "SettingsInjector"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -106,7 +101,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 475
     :cond_0
     iget-object v2, p0, Lcom/android/settings/location/SettingsInjector$Setting$1;->this$1:Lcom/android/settings/location/SettingsInjector$Setting;
 
@@ -116,14 +110,12 @@
 
     invoke-virtual {v2, v3}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 476
     iget-object v2, p0, Lcom/android/settings/location/SettingsInjector$Setting$1;->this$1:Lcom/android/settings/location/SettingsInjector$Setting;
 
     iget-object v2, v2, Lcom/android/settings/location/SettingsInjector$Setting;->preference:Landroid/preference/Preference;
 
     invoke-virtual {v2, v1}, Landroid/preference/Preference;->setEnabled(Z)V
 
-    .line 477
     iget-object v2, p0, Lcom/android/settings/location/SettingsInjector$Setting$1;->this$1:Lcom/android/settings/location/SettingsInjector$Setting;
 
     iget-object v2, v2, Lcom/android/settings/location/SettingsInjector$Setting;->this$0:Lcom/android/settings/location/SettingsInjector;
@@ -152,6 +144,5 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 479
     return-void
 .end method

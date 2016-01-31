@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 450
     iput-object p1, p0, Lcom/android/settings/notification/NotificationSettings$4;->this$0:Lcom/android/settings/notification/NotificationSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +45,6 @@
 
     const/4 v3, 0x1
 
-    .line 453
     check-cast p2, Ljava/lang/Integer;
 
     .end local p2    # "value":Ljava/lang/Object;
@@ -54,7 +52,6 @@
 
     move-result v2
 
-    .line 454
     .local v2, "val":I
     iget-object v5, p0, Lcom/android/settings/notification/NotificationSettings$4;->this$0:Lcom/android/settings/notification/NotificationSettings;
 
@@ -65,11 +62,9 @@
 
     if-ne v2, v5, :cond_0
 
-    .line 464
     :goto_0
     return v3
 
-    .line 457
     :cond_0
     const v5, 0x7f0909d3
 
@@ -77,7 +72,6 @@
 
     move v0, v3
 
-    .line 458
     .local v0, "enabled":Z
     :goto_1
     const v5, 0x7f0909d1
@@ -86,7 +80,6 @@
 
     move v1, v3
 
-    .line 459
     .local v1, "show":Z
     :goto_2
     iget-object v5, p0, Lcom/android/settings/notification/NotificationSettings$4;->this$0:Lcom/android/settings/notification/NotificationSettings;
@@ -105,7 +98,6 @@
     :goto_3
     invoke-static {v6, v7, v5}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 461
     iget-object v5, p0, Lcom/android/settings/notification/NotificationSettings$4;->this$0:Lcom/android/settings/notification/NotificationSettings;
 
     # invokes: Lcom/android/settings/notification/NotificationSettings;->getContentResolver()Landroid/content/ContentResolver;
@@ -122,7 +114,6 @@
     :cond_1
     invoke-static {v5, v6, v4}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 463
     iget-object v4, p0, Lcom/android/settings/notification/NotificationSettings$4;->this$0:Lcom/android/settings/notification/NotificationSettings;
 
     # setter for: Lcom/android/settings/notification/NotificationSettings;->mLockscreenSelectedValue:I
@@ -135,20 +126,17 @@
     :cond_2
     move v0, v4
 
-    .line 457
     goto :goto_1
 
     .restart local v0    # "enabled":Z
     :cond_3
     move v1, v4
 
-    .line 458
     goto :goto_2
 
     .restart local v1    # "show":Z
     :cond_4
     move v5, v4
 
-    .line 459
     goto :goto_3
 .end method

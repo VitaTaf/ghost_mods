@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 574
     iput-object p1, p0, Lcom/android/settings/Utils$1;->val$positiveAction:Ljava/lang/Runnable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,11 +41,9 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 577
     iget-object v0, p0, Lcom/android/settings/Utils$1;->val$positiveAction:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 578
     return-void
 .end method

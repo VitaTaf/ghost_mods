@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 1349
     iput-object p1, p0, Lcom/android/settings/DataUsageSummary$11;->this$0:Lcom/android/settings/DataUsageSummary;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +51,6 @@
     .end annotation
 
     .prologue
-    .line 1352
     .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     invoke-virtual {p1, p3}, Landroid/widget/AdapterView;->getItemAtPosition(I)Ljava/lang/Object;
 
@@ -60,18 +58,15 @@
 
     check-cast v0, Lcom/android/settings/DataUsageSummary$CycleItem;
 
-    .line 1353
     .local v0, "cycle":Lcom/android/settings/DataUsageSummary$CycleItem;
     instance-of v1, v0, Lcom/android/settings/DataUsageSummary$CycleChangeItem;
 
     if-eqz v1, :cond_0
 
-    .line 1356
     iget-object v1, p0, Lcom/android/settings/DataUsageSummary$11;->this$0:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v1}, Lcom/android/settings/DataUsageSummary$CycleEditorFragment;->show(Lcom/android/settings/DataUsageSummary;)V
 
-    .line 1359
     iget-object v1, p0, Lcom/android/settings/DataUsageSummary$11;->this$0:Lcom/android/settings/DataUsageSummary;
 
     # getter for: Lcom/android/settings/DataUsageSummary;->mCycleSpinner:Landroid/widget/Spinner;
@@ -83,11 +78,9 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/Spinner;->setSelection(I)V
 
-    .line 1373
     :goto_0
     return-void
 
-    .line 1369
     :cond_0
     iget-object v1, p0, Lcom/android/settings/DataUsageSummary$11;->this$0:Lcom/android/settings/DataUsageSummary;
 
@@ -102,7 +95,6 @@
 
     invoke-virtual {v1, v2, v3, v4, v5}, Lcom/android/settings/widget/ChartDataUsageView;->setVisibleRange(JJ)V
 
-    .line 1371
     iget-object v1, p0, Lcom/android/settings/DataUsageSummary$11;->this$0:Lcom/android/settings/DataUsageSummary;
 
     # invokes: Lcom/android/settings/DataUsageSummary;->updateDetailData()V
@@ -122,7 +114,6 @@
     .end annotation
 
     .prologue
-    .line 1378
     .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     return-void
 .end method

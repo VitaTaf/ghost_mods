@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 155
     iput-object p1, p0, Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog$2$1;->this$1:Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog$2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "reason"    # I
 
     .prologue
-    .line 159
     # getter for: Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog;->mContext:Landroid/content/Context;
     invoke-static {}, Lcom/android/settings/wifi/p2p/WifiP2pConfigurationDialog;->access$300()Landroid/content/Context;
 
@@ -57,7 +55,6 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 161
     return-void
 .end method
 
@@ -65,6 +62,5 @@
     .locals 0
 
     .prologue
-    .line 157
     return-void
 .end method

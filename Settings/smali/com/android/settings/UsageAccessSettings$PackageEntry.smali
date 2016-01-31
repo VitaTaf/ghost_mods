@@ -32,17 +32,13 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 61
     iput-object p1, p0, Lcom/android/settings/UsageAccessSettings$PackageEntry;->packageName:Ljava/lang/String;
 
-    .line 62
     const/4 v0, 0x3
 
     iput v0, p0, Lcom/android/settings/UsageAccessSettings$PackageEntry;->appOpMode:I
 
-    .line 63
     return-void
 .end method

@@ -18,7 +18,6 @@
     .param p9, "largeIcon"    # Landroid/graphics/Bitmap;
 
     .prologue
-    .line 30
     new-instance v1, Landroid/app/Notification$Builder;
 
     invoke-direct {v1, p0}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
@@ -161,7 +160,6 @@
 
     move-result-object v0
 
-    .line 52
     .local v0, "b":Landroid/app/Notification$Builder;
     invoke-virtual {v0}, Landroid/app/Notification$Builder;->getNotification()Landroid/app/Notification;
 
@@ -169,7 +167,6 @@
 
     return-object v1
 
-    .line 30
     .end local v0    # "b":Landroid/app/Notification$Builder;
     :cond_0
     const/4 v1, 0x0

@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 90
     iput-object p1, p0, Lcom/android/settings/notification/SettingPref$2;->this$0:Lcom/android/settings/notification/SettingPref;
 
     iput-object p2, p0, Lcom/android/settings/notification/SettingPref$2;->val$context:Landroid/content/Context;
@@ -46,7 +45,6 @@
     .param p2, "value"    # Ljava/lang/Object;
 
     .prologue
-    .line 93
     iget-object v0, p0, Lcom/android/settings/notification/SettingPref$2;->this$0:Lcom/android/settings/notification/SettingPref;
 
     iget-object v1, p0, Lcom/android/settings/notification/SettingPref$2;->val$context:Landroid/content/Context;

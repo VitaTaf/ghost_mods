@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 320
     iput-object p1, p0, Lcom/android/settings/sim/SimDialogActivity$6;->this$0:Lcom/android/settings/sim/SimDialogActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +40,9 @@
     .param p1, "dialogInterface"    # Landroid/content/DialogInterface;
 
     .prologue
-    .line 323
     iget-object v0, p0, Lcom/android/settings/sim/SimDialogActivity$6;->this$0:Lcom/android/settings/sim/SimDialogActivity;
 
     invoke-virtual {v0}, Lcom/android/settings/sim/SimDialogActivity;->finish()V
 
-    .line 324
     return-void
 .end method

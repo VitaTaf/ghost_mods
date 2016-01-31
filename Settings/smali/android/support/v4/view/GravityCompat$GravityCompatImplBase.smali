@@ -22,7 +22,6 @@
     .locals 0
 
     .prologue
-    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,7 +35,6 @@
     .param p2, "layoutDirection"    # I
 
     .prologue
-    .line 40
     const v0, -0x800001
 
     and-int/2addr v0, p1

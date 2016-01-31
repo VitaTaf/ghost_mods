@@ -16,10 +16,8 @@
     .locals 0
 
     .prologue
-    .line 32
     invoke-direct {p0}, Lcom/android/settings/SettingsActivity;-><init>()V
 
-    .line 54
     return-void
 .end method
 
@@ -28,7 +26,6 @@
     .param p0, "ctx"    # Landroid/content/Context;
 
     .prologue
-    .line 47
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/android/settings/notification/RedactionInterstitial;
@@ -74,7 +71,6 @@
     .locals 3
 
     .prologue
-    .line 36
     new-instance v0, Landroid/content/Intent;
 
     invoke-super {p0}, Lcom/android/settings/SettingsActivity;->getIntent()Landroid/content/Intent;
@@ -83,7 +79,6 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
-    .line 37
     .local v0, "modIntent":Landroid/content/Intent;
     const-string v1, ":settings:show_fragment"
 
@@ -95,7 +90,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 38
     return-object v0
 .end method
 
@@ -104,7 +98,6 @@
     .param p1, "fragmentName"    # Ljava/lang/String;
 
     .prologue
-    .line 43
     const-class v0, Lcom/android/settings/notification/RedactionInterstitial$RedactionInterstitialFragment;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;

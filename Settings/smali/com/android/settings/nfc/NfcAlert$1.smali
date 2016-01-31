@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 74
     iput-object p1, p0, Lcom/android/settings/nfc/NfcAlert$1;->this$0:Lcom/android/settings/nfc/NfcAlert;
 
     iput-object p2, p0, Lcom/android/settings/nfc/NfcAlert$1;->val$intent:Landroid/content/Intent;
@@ -42,13 +41,11 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 77
     iget-object v0, p0, Lcom/android/settings/nfc/NfcAlert$1;->this$0:Lcom/android/settings/nfc/NfcAlert;
 
     iget-object v1, p0, Lcom/android/settings/nfc/NfcAlert$1;->val$intent:Landroid/content/Intent;
 
     invoke-virtual {v0, v1}, Lcom/android/settings/nfc/NfcAlert;->startActivity(Landroid/content/Intent;)V
 
-    .line 78
     return-void
 .end method

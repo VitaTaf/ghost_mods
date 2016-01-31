@@ -24,7 +24,6 @@
     .param p2, "x0"    # Landroid/os/Handler;
 
     .prologue
-    .line 290
     iput-object p1, p0, Lcom/android/settings/DeviceAdminAdd$3$1;->this$1:Lcom/android/settings/DeviceAdminAdd$3;
 
     invoke-direct {p0, p2}, Landroid/os/RemoteCallback;-><init>(Landroid/os/Handler;)V
@@ -39,7 +38,6 @@
     .param p1, "bundle"    # Landroid/os/Bundle;
 
     .prologue
-    .line 293
     if-eqz p1, :cond_0
 
     const-string v1, "android.app.extra.DISABLE_WARNING"
@@ -48,7 +46,6 @@
 
     move-result-object v0
 
-    .line 297
     .local v0, "msg":Ljava/lang/CharSequence;
     :goto_0
     iget-object v1, p0, Lcom/android/settings/DeviceAdminAdd$3$1;->this$1:Lcom/android/settings/DeviceAdminAdd$3;
@@ -57,10 +54,8 @@
 
     invoke-virtual {v1, v0}, Lcom/android/settings/DeviceAdminAdd;->continueRemoveAction(Ljava/lang/CharSequence;)V
 
-    .line 298
     return-void
 
-    .line 293
     .end local v0    # "msg":Ljava/lang/CharSequence;
     :cond_0
     const/4 v0, 0x0

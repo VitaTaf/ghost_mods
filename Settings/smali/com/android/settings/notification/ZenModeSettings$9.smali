@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 290
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeSettings$9;->this$0:Lcom/android/settings/notification/ZenModeSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +45,6 @@
 
     const/4 v2, 0x0
 
-    .line 293
     iget-object v3, p0, Lcom/android/settings/notification/ZenModeSettings$9;->this$0:Lcom/android/settings/notification/ZenModeSettings;
 
     # getter for: Lcom/android/settings/notification/ZenModeSettings;->mDisableListeners:Z
@@ -56,12 +54,10 @@
 
     if-eqz v3, :cond_1
 
-    .line 303
     :cond_0
     :goto_0
     return v1
 
-    .line 294
     :cond_1
     invoke-static {p1}, Landroid/service/notification/ZenModeConfig;->isValidHour(I)Z
 
@@ -73,7 +69,6 @@
 
     goto :goto_0
 
-    .line 295
     :cond_2
     invoke-static {p2}, Landroid/service/notification/ZenModeConfig;->isValidMinute(I)Z
 
@@ -85,7 +80,6 @@
 
     goto :goto_0
 
-    .line 296
     :cond_3
     iget-object v2, p0, Lcom/android/settings/notification/ZenModeSettings$9;->this$0:Lcom/android/settings/notification/ZenModeSettings;
 
@@ -109,7 +103,6 @@
 
     if-eq p2, v2, :cond_0
 
-    .line 299
     :cond_4
     # getter for: Lcom/android/settings/notification/ZenModeSettings;->DEBUG:Z
     invoke-static {}, Lcom/android/settings/notification/ZenModeSettings;->access$200()Z
@@ -150,7 +143,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 300
     :cond_5
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeSettings$9;->this$0:Lcom/android/settings/notification/ZenModeSettings;
 
@@ -163,14 +155,11 @@
 
     move-result-object v0
 
-    .line 301
     .local v0, "newConfig":Landroid/service/notification/ZenModeConfig;
     iput p1, v0, Landroid/service/notification/ZenModeConfig;->sleepEndHour:I
 
-    .line 302
     iput p2, v0, Landroid/service/notification/ZenModeConfig;->sleepEndMinute:I
 
-    .line 303
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeSettings$9;->this$0:Lcom/android/settings/notification/ZenModeSettings;
 
     # invokes: Lcom/android/settings/notification/ZenModeSettings;->setZenModeConfig(Landroid/service/notification/ZenModeConfig;)Z

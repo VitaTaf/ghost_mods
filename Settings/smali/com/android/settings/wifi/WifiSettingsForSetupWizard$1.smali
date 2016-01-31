@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 71
     iput-object p1, p0, Lcom/android/settings/wifi/WifiSettingsForSetupWizard$1;->this$0:Lcom/android/settings/wifi/WifiSettingsForSetupWizard;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 74
     iget-object v0, p0, Lcom/android/settings/wifi/WifiSettingsForSetupWizard$1;->this$0:Lcom/android/settings/wifi/WifiSettingsForSetupWizard;
 
     iget-object v0, v0, Lcom/android/settings/wifi/WifiSettingsForSetupWizard;->mWifiManager:Landroid/net/wifi/WifiManager;
@@ -52,12 +50,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 75
     iget-object v0, p0, Lcom/android/settings/wifi/WifiSettingsForSetupWizard$1;->this$0:Lcom/android/settings/wifi/WifiSettingsForSetupWizard;
 
     invoke-virtual {v0}, Lcom/android/settings/wifi/WifiSettingsForSetupWizard;->onAddNetworkPressed()V
 
-    .line 77
     :cond_0
     return-void
 .end method

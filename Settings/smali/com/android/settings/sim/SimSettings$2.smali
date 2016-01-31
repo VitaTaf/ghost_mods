@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 886
     iput-object p1, p0, Lcom/android/settings/sim/SimSettings$2;->this$0:Lcom/android/settings/sim/SimSettings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -45,7 +44,6 @@
 
     const/4 v8, 0x0
 
-    .line 890
     if-eqz p2, :cond_0
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -54,18 +52,15 @@
 
     if-nez v5, :cond_1
 
-    .line 938
     :cond_0
     :goto_0
     return-void
 
-    .line 893
     :cond_1
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 895
     .local v0, "action":Ljava/lang/String;
     # getter for: Lcom/android/settings/sim/SimSettings;->DBG:Z
     invoke-static {}, Lcom/android/settings/sim/SimSettings;->access$000()Z
@@ -74,7 +69,6 @@
 
     if-eqz v5, :cond_2
 
-    .line 896
     const-string v5, "SimSettings"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -97,7 +91,6 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 898
     :cond_2
     const-string v5, "android.intent.action.ACTION_DEFAULT_DATA_SUBSCRIPTION_CHANGED"
 
@@ -107,7 +100,6 @@
 
     if-eqz v5, :cond_3
 
-    .line 899
     iget-object v5, p0, Lcom/android/settings/sim/SimSettings$2;->this$0:Lcom/android/settings/sim/SimSettings;
 
     # invokes: Lcom/android/settings/sim/SimSettings;->updateCellularDataValues()V
@@ -115,7 +107,6 @@
 
     goto :goto_0
 
-    .line 901
     :cond_3
     const-string v5, "android.intent.action.AIRPLANE_MODE"
 
@@ -125,7 +116,6 @@
 
     if-eqz v5, :cond_4
 
-    .line 902
     iget-object v5, p0, Lcom/android/settings/sim/SimSettings$2;->this$0:Lcom/android/settings/sim/SimSettings;
 
     # invokes: Lcom/android/settings/sim/SimSettings;->updateOptionsAfterAPMode()V
@@ -133,7 +123,6 @@
 
     goto :goto_0
 
-    .line 904
     :cond_4
     const-string v5, "com.motorola.intent.action.TUNEAWAY_STATE_RESPONSE"
 
@@ -143,14 +132,12 @@
 
     if-eqz v5, :cond_6
 
-    .line 905
     const-string v5, "tuneAwayChoice"
 
     invoke-virtual {p2, v5, v9}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v4
 
-    .line 907
     .local v4, "tuneAwayValue":I
     const-string v5, "tuneAwaySet"
 
@@ -158,7 +145,6 @@
 
     move-result v1
 
-    .line 910
     .local v1, "changeStatus":Z
     # getter for: Lcom/android/settings/sim/SimSettings;->DBG:Z
     invoke-static {}, Lcom/android/settings/sim/SimSettings;->access$000()Z
@@ -167,7 +153,6 @@
 
     if-eqz v5, :cond_5
 
-    .line 911
     const-string v5, "SimSettings"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -200,21 +185,17 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 913
     :cond_5
     iget-object v5, p0, Lcom/android/settings/sim/SimSettings$2;->this$0:Lcom/android/settings/sim/SimSettings;
 
     invoke-virtual {v5, v4}, Lcom/android/settings/sim/SimSettings;->updateConnectionPriorityStatus(I)V
 
-    .line 916
     if-eqz v1, :cond_0
 
-    .line 917
     invoke-static {v4}, Lcom/motorola/checkin/SettingsCheckin;->logConnectionPriorityEvents(I)V
 
     goto/16 :goto_0
 
-    .line 920
     .end local v1    # "changeStatus":Z
     .end local v4    # "tuneAwayValue":I
     :cond_6
@@ -226,14 +207,12 @@
 
     if-eqz v5, :cond_0
 
-    .line 921
     const-string v5, "dss_status"
 
     invoke-virtual {p2, v5, v8}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v2
 
-    .line 923
     .local v2, "nwSwitchState":I
     # getter for: Lcom/android/settings/sim/SimSettings;->DBG:Z
     invoke-static {}, Lcom/android/settings/sim/SimSettings;->access$000()Z
@@ -242,7 +221,6 @@
 
     if-eqz v5, :cond_7
 
-    .line 924
     const-string v5, "SimSettings"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -265,11 +243,9 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 926
     :cond_7
     if-ne v2, v10, :cond_8
 
-    .line 927
     iget-object v5, p0, Lcom/android/settings/sim/SimSettings$2;->this$0:Lcom/android/settings/sim/SimSettings;
 
     # getter for: Lcom/android/settings/sim/SimSettings;->mSimCards:Landroid/preference/PreferenceScreen;
@@ -281,13 +257,11 @@
 
     goto/16 :goto_0
 
-    .line 928
     :cond_8
     const/4 v5, 0x2
 
     if-ne v2, v5, :cond_0
 
-    .line 929
     iget-object v5, p0, Lcom/android/settings/sim/SimSettings$2;->this$0:Lcom/android/settings/sim/SimSettings;
 
     # getter for: Lcom/android/settings/sim/SimSettings;->mSimCards:Landroid/preference/PreferenceScreen;
@@ -297,14 +271,12 @@
 
     invoke-virtual {v5, v10}, Landroid/preference/PreferenceScreen;->setEnabled(Z)V
 
-    .line 931
     const-string v5, "subscription"
 
     invoke-virtual {p2, v5, v9}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v3
 
-    .line 933
     .local v3, "subId":I
     iget-object v5, p0, Lcom/android/settings/sim/SimSettings$2;->this$0:Lcom/android/settings/sim/SimSettings;
 

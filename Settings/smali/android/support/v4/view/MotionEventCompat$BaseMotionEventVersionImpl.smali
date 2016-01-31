@@ -22,7 +22,6 @@
     .locals 0
 
     .prologue
-    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,13 +35,10 @@
     .param p2, "pointerId"    # I
 
     .prologue
-    .line 43
     if-nez p2, :cond_0
 
-    .line 45
     const/4 v0, 0x0
 
-    .line 47
     :goto_0
     return v0
 
@@ -57,7 +53,6 @@
     .param p1, "event"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 73
     const/4 v0, 0x1
 
     return v0
@@ -69,15 +64,12 @@
     .param p2, "pointerIndex"    # I
 
     .prologue
-    .line 51
     if-nez p2, :cond_0
 
-    .line 53
     const/4 v0, 0x0
 
     return v0
 
-    .line 55
     :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -94,17 +86,14 @@
     .param p2, "pointerIndex"    # I
 
     .prologue
-    .line 59
     if-nez p2, :cond_0
 
-    .line 60
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
 
     return v0
 
-    .line 62
     :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -121,17 +110,14 @@
     .param p2, "pointerIndex"    # I
 
     .prologue
-    .line 66
     if-nez p2, :cond_0
 
-    .line 67
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v0
 
     return v0
 
-    .line 69
     :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 

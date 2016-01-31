@@ -54,7 +54,6 @@
 
     const/4 v2, 0x0
 
-    .line 147
     new-instance v0, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
     const-string v1, "Introduction"
@@ -67,7 +66,6 @@
 
     sput-object v0, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->Introduction:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
-    .line 151
     new-instance v6, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
     const-string v7, "NeedToConfirm"
@@ -82,7 +80,6 @@
 
     sput-object v6, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->NeedToConfirm:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
-    .line 155
     new-instance v9, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
     const-string v10, "ConfirmWrong"
@@ -99,7 +96,6 @@
 
     sput-object v9, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->ConfirmWrong:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
-    .line 145
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
@@ -133,19 +129,14 @@
     .end annotation
 
     .prologue
-    .line 159
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 160
     iput p3, p0, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->alphaHint:I
 
-    .line 161
     iput p4, p0, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->numericHint:I
 
-    .line 162
     iput p5, p0, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->buttonText:I
 
-    .line 163
     return-void
 .end method
 
@@ -154,7 +145,6 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 145
     const-class v0, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -170,7 +160,6 @@
     .locals 1
 
     .prologue
-    .line 145
     sget-object v0, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->$VALUES:[Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
     invoke-virtual {v0}, [Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->clone()Ljava/lang/Object;

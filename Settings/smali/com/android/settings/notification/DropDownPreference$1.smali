@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 53
     iput-object p1, p0, Lcom/android/settings/notification/DropDownPreference$1;->this$0:Lcom/android/settings/notification/DropDownPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,13 +51,11 @@
     .end annotation
 
     .prologue
-    .line 56
     .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Lcom/android/settings/notification/DropDownPreference$1;->this$0:Lcom/android/settings/notification/DropDownPreference;
 
     invoke-virtual {v0, p3}, Lcom/android/settings/notification/DropDownPreference;->setSelectedItem(I)V
 
-    .line 57
     return-void
 .end method
 
@@ -73,7 +70,6 @@
     .end annotation
 
     .prologue
-    .line 62
     .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     return-void
 .end method

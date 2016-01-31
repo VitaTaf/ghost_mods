@@ -23,7 +23,6 @@
     .locals 3
 
     .prologue
-    .line 181
     invoke-static {}, Landroid/security/KeyStore$State;->values()[Landroid/security/KeyStore$State;
 
     move-result-object v0

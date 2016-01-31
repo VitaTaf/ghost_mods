@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 207
     iput-object p1, p0, Lcom/android/settings/accounts/AccountSettings$1;->this$0:Lcom/android/settings/accounts/AccountSettings;
 
     iput p2, p0, Lcom/android/settings/accounts/AccountSettings$1;->val$userId:I
@@ -46,7 +45,6 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 210
     iget-object v0, p0, Lcom/android/settings/accounts/AccountSettings$1;->this$0:Lcom/android/settings/accounts/AccountSettings;
 
     # getter for: Lcom/android/settings/accounts/AccountSettings;->mUm:Landroid/os/UserManager;
@@ -58,6 +56,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/UserManager;->removeUser(I)Z
 
-    .line 211
     return-void
 .end method

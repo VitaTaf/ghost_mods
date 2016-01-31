@@ -22,7 +22,6 @@
     .locals 0
 
     .prologue
-    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,7 +35,6 @@
     .param p2, "visible"    # Z
 
     .prologue
-    .line 33
     return-void
 .end method
 
@@ -46,6 +44,5 @@
     .param p2, "deferStart"    # Z
 
     .prologue
-    .line 35
     return-void
 .end method

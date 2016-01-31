@@ -9,7 +9,6 @@
     .param p0, "config"    # Landroid/view/ViewConfiguration;
 
     .prologue
-    .line 26
     invoke-virtual {p0}, Landroid/view/ViewConfiguration;->getScaledPagingTouchSlop()I
 
     move-result v0

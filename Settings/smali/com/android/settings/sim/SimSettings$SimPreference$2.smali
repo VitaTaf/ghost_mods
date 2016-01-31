@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 590
     iput-object p1, p0, Lcom/android/settings/sim/SimSettings$SimPreference$2;->this$1:Lcom/android/settings/sim/SimSettings$SimPreference;
 
     iput-object p2, p0, Lcom/android/settings/sim/SimSettings$SimPreference$2;->val$dialogLayout:Landroid/view/View;
@@ -50,7 +49,6 @@
     .param p2, "whichButton"    # I
 
     .prologue
-    .line 593
     iget-object v6, p0, Lcom/android/settings/sim/SimSettings$SimPreference$2;->val$dialogLayout:Landroid/view/View;
 
     const v7, 0x7f0f00ef
@@ -61,7 +59,6 @@
 
     check-cast v1, Landroid/widget/EditText;
 
-    .line 595
     .local v1, "nameText":Landroid/widget/EditText;
     invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
@@ -71,7 +68,6 @@
 
     move-result-object v0
 
-    .line 596
     .local v0, "displayName":Ljava/lang/String;
     iget-object v6, p0, Lcom/android/settings/sim/SimSettings$SimPreference$2;->this$1:Lcom/android/settings/sim/SimSettings$SimPreference;
 
@@ -84,7 +80,6 @@
 
     move-result v2
 
-    .line 597
     .local v2, "subId":I
     iget-object v6, p0, Lcom/android/settings/sim/SimSettings$SimPreference$2;->this$1:Lcom/android/settings/sim/SimSettings$SimPreference;
 
@@ -95,7 +90,6 @@
 
     invoke-virtual {v6, v0}, Landroid/telephony/SubscriptionInfo;->setDisplayName(Ljava/lang/CharSequence;)V
 
-    .line 598
     iget-object v6, p0, Lcom/android/settings/sim/SimSettings$SimPreference$2;->this$1:Lcom/android/settings/sim/SimSettings$SimPreference;
 
     iget-object v6, v6, Lcom/android/settings/sim/SimSettings$SimPreference;->this$0:Lcom/android/settings/sim/SimSettings;
@@ -109,7 +103,6 @@
 
     invoke-virtual {v6, v0, v2, v8, v9}, Landroid/telephony/SubscriptionManager;->setDisplayName(Ljava/lang/String;IJ)I
 
-    .line 600
     iget-object v6, p0, Lcom/android/settings/sim/SimSettings$SimPreference$2;->this$1:Lcom/android/settings/sim/SimSettings$SimPreference;
 
     iget-object v6, v6, Lcom/android/settings/sim/SimSettings$SimPreference;->this$0:Lcom/android/settings/sim/SimSettings;
@@ -124,14 +117,12 @@
 
     invoke-virtual {v6, v0}, Landroid/telephony/SubscriptionInfo;->setDisplayName(Ljava/lang/CharSequence;)V
 
-    .line 602
     iget-object v6, p0, Lcom/android/settings/sim/SimSettings$SimPreference$2;->val$tintSpinner:Landroid/widget/Spinner;
 
     invoke-virtual {v6}, Landroid/widget/Spinner;->getSelectedItemPosition()I
 
     move-result v5
 
-    .line 603
     .local v5, "tintSelected":I
     iget-object v6, p0, Lcom/android/settings/sim/SimSettings$SimPreference$2;->this$1:Lcom/android/settings/sim/SimSettings$SimPreference;
 
@@ -144,7 +135,6 @@
 
     move-result v3
 
-    .line 604
     .local v3, "subscriptionId":I
     iget-object v6, p0, Lcom/android/settings/sim/SimSettings$SimPreference$2;->this$1:Lcom/android/settings/sim/SimSettings$SimPreference;
 
@@ -155,7 +145,6 @@
 
     aget v4, v6, v5
 
-    .line 605
     .local v4, "tint":I
     iget-object v6, p0, Lcom/android/settings/sim/SimSettings$SimPreference$2;->this$1:Lcom/android/settings/sim/SimSettings$SimPreference;
 
@@ -166,7 +155,6 @@
 
     invoke-virtual {v6, v4}, Landroid/telephony/SubscriptionInfo;->setIconTint(I)V
 
-    .line 606
     iget-object v6, p0, Lcom/android/settings/sim/SimSettings$SimPreference$2;->this$1:Lcom/android/settings/sim/SimSettings$SimPreference;
 
     iget-object v6, v6, Lcom/android/settings/sim/SimSettings$SimPreference;->this$0:Lcom/android/settings/sim/SimSettings;
@@ -178,7 +166,6 @@
 
     invoke-virtual {v6, v4, v3}, Landroid/telephony/SubscriptionManager;->setIconTint(II)I
 
-    .line 607
     iget-object v6, p0, Lcom/android/settings/sim/SimSettings$SimPreference$2;->this$1:Lcom/android/settings/sim/SimSettings$SimPreference;
 
     iget-object v6, v6, Lcom/android/settings/sim/SimSettings$SimPreference;->this$0:Lcom/android/settings/sim/SimSettings;
@@ -193,7 +180,6 @@
 
     invoke-virtual {v6, v4}, Landroid/telephony/SubscriptionInfo;->setIconTint(I)V
 
-    .line 609
     iget-object v6, p0, Lcom/android/settings/sim/SimSettings$SimPreference$2;->this$1:Lcom/android/settings/sim/SimSettings$SimPreference;
 
     iget-object v6, v6, Lcom/android/settings/sim/SimSettings$SimPreference;->this$0:Lcom/android/settings/sim/SimSettings;
@@ -201,11 +187,9 @@
     # invokes: Lcom/android/settings/sim/SimSettings;->updateAllOptions()V
     invoke-static {v6}, Lcom/android/settings/sim/SimSettings;->access$600(Lcom/android/settings/sim/SimSettings;)V
 
-    .line 610
     iget-object v6, p0, Lcom/android/settings/sim/SimSettings$SimPreference$2;->this$1:Lcom/android/settings/sim/SimSettings$SimPreference;
 
     invoke-virtual {v6}, Lcom/android/settings/sim/SimSettings$SimPreference;->update()V
 
-    .line 611
     return-void
 .end method

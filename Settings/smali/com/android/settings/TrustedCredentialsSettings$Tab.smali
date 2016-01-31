@@ -52,7 +52,6 @@
     .locals 10
 
     .prologue
-    .line 73
     new-instance v0, Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
     const-string v1, "SYSTEM"
@@ -77,7 +76,6 @@
 
     sput-object v0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->SYSTEM:Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
-    .line 80
     new-instance v0, Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
     const-string v1, "USER"
@@ -102,7 +100,6 @@
 
     sput-object v0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->USER:Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
-    .line 72
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/android/settings/TrustedCredentialsSettings$Tab;
@@ -142,31 +139,22 @@
     .end annotation
 
     .prologue
-    .line 97
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 98
     iput-object p3, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mTag:Ljava/lang/String;
 
-    .line 99
     iput p4, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mLabel:I
 
-    .line 100
     iput p5, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mView:I
 
-    .line 101
     iput p6, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mProgress:I
 
-    .line 102
     iput p7, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mList:I
 
-    .line 103
     iput p8, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mExpandableList:I
 
-    .line 104
     iput-boolean p9, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mSwitch:Z
 
-    .line 105
     return-void
 .end method
 
@@ -175,7 +163,6 @@
     .param p0, "x0"    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
     .prologue
-    .line 72
     iget v0, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mProgress:I
 
     return v0
@@ -192,7 +179,6 @@
     .end annotation
 
     .prologue
-    .line 72
     invoke-direct {p0, p1}, Lcom/android/settings/TrustedCredentialsSettings$Tab;->getAliases(Landroid/security/IKeyChainService;)Ljava/util/List;
 
     move-result-object v0
@@ -212,7 +198,6 @@
     .end annotation
 
     .prologue
-    .line 72
     invoke-direct {p0, p1, p2}, Lcom/android/settings/TrustedCredentialsSettings$Tab;->deleted(Landroid/security/IKeyChainService;Ljava/lang/String;)Z
 
     move-result v0
@@ -225,7 +210,6 @@
     .param p0, "x0"    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
     .prologue
-    .line 72
     iget-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mTag:Ljava/lang/String;
 
     return-object v0
@@ -236,7 +220,6 @@
     .param p0, "x0"    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
     .prologue
-    .line 72
     iget-boolean v0, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mSwitch:Z
 
     return v0
@@ -248,7 +231,6 @@
     .param p1, "x1"    # Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
 
     .prologue
-    .line 72
     invoke-direct {p0, p1}, Lcom/android/settings/TrustedCredentialsSettings$Tab;->getButtonLabel(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;)I
 
     move-result v0
@@ -262,7 +244,6 @@
     .param p1, "x1"    # Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
 
     .prologue
-    .line 72
     invoke-direct {p0, p1}, Lcom/android/settings/TrustedCredentialsSettings$Tab;->getButtonConfirmation(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;)I
 
     move-result v0
@@ -277,7 +258,6 @@
     .param p2, "x2"    # Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
 
     .prologue
-    .line 72
     invoke-direct {p0, p1, p2}, Lcom/android/settings/TrustedCredentialsSettings$Tab;->postOperationUpdate(ZLcom/android/settings/TrustedCredentialsSettings$CertHolder;)V
 
     return-void
@@ -288,7 +268,6 @@
     .param p0, "x0"    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
     .prologue
-    .line 72
     iget v0, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mView:I
 
     return v0
@@ -299,7 +278,6 @@
     .param p0, "x0"    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
     .prologue
-    .line 72
     iget v0, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mLabel:I
 
     return v0
@@ -310,7 +288,6 @@
     .param p0, "x0"    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
     .prologue
-    .line 72
     iget v0, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mExpandableList:I
 
     return v0
@@ -321,7 +298,6 @@
     .param p0, "x0"    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
     .prologue
-    .line 72
     iget v0, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mList:I
 
     return v0
@@ -340,7 +316,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 118
     sget-object v1, Lcom/android/settings/TrustedCredentialsSettings$6;->$SwitchMap$com$android$settings$TrustedCredentialsSettings$Tab:[I
 
     invoke-virtual {p0}, Lcom/android/settings/TrustedCredentialsSettings$Tab;->ordinal()I
@@ -351,14 +326,12 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 124
     new-instance v0, Ljava/lang/AssertionError;
 
     invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
     throw v0
 
-    .line 120
     :pswitch_0
     invoke-interface {p1, p2}, Landroid/security/IKeyChainService;->containsCaAlias(Ljava/lang/String;)Z
 
@@ -368,12 +341,10 @@
 
     const/4 v0, 0x1
 
-    .line 122
     :cond_0
     :pswitch_1
     return v0
 
-    .line 118
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -403,7 +374,6 @@
     .end annotation
 
     .prologue
-    .line 108
     sget-object v0, Lcom/android/settings/TrustedCredentialsSettings$6;->$SwitchMap$com$android$settings$TrustedCredentialsSettings$Tab:[I
 
     invoke-virtual {p0}, Lcom/android/settings/TrustedCredentialsSettings$Tab;->ordinal()I
@@ -414,14 +384,12 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 115
     new-instance v0, Ljava/lang/AssertionError;
 
     invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
     throw v0
 
-    .line 110
     :pswitch_0
     invoke-interface {p1}, Landroid/security/IKeyChainService;->getSystemCaAliases()Landroid/content/pm/ParceledListSlice;
 
@@ -431,7 +399,6 @@
 
     move-result-object v0
 
-    .line 113
     :goto_0
     return-object v0
 
@@ -446,7 +413,6 @@
 
     goto :goto_0
 
-    .line 108
     nop
 
     :pswitch_data_0
@@ -461,7 +427,6 @@
     .param p1, "certHolder"    # Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
 
     .prologue
-    .line 139
     sget-object v0, Lcom/android/settings/TrustedCredentialsSettings$6;->$SwitchMap$com$android$settings$TrustedCredentialsSettings$Tab:[I
 
     invoke-virtual {p0}, Lcom/android/settings/TrustedCredentialsSettings$Tab;->ordinal()I
@@ -472,14 +437,12 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 148
     new-instance v0, Ljava/lang/AssertionError;
 
     invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
     throw v0
 
-    .line 141
     :pswitch_0
     # getter for: Lcom/android/settings/TrustedCredentialsSettings$CertHolder;->mDeleted:Z
     invoke-static {p1}, Lcom/android/settings/TrustedCredentialsSettings$CertHolder;->access$000(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;)Z
@@ -488,26 +451,21 @@
 
     if-eqz v0, :cond_0
 
-    .line 142
     const v0, 0x7f0908d5
 
-    .line 146
     :goto_0
     return v0
 
-    .line 144
     :cond_0
     const v0, 0x7f0908d6
 
     goto :goto_0
 
-    .line 146
     :pswitch_1
     const v0, 0x7f0908d7
 
     goto :goto_0
 
-    .line 139
     nop
 
     :pswitch_data_0
@@ -522,7 +480,6 @@
     .param p1, "certHolder"    # Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
 
     .prologue
-    .line 127
     sget-object v0, Lcom/android/settings/TrustedCredentialsSettings$6;->$SwitchMap$com$android$settings$TrustedCredentialsSettings$Tab:[I
 
     invoke-virtual {p0}, Lcom/android/settings/TrustedCredentialsSettings$Tab;->ordinal()I
@@ -533,14 +490,12 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 136
     new-instance v0, Ljava/lang/AssertionError;
 
     invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
     throw v0
 
-    .line 129
     :pswitch_0
     # getter for: Lcom/android/settings/TrustedCredentialsSettings$CertHolder;->mDeleted:Z
     invoke-static {p1}, Lcom/android/settings/TrustedCredentialsSettings$CertHolder;->access$000(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;)Z
@@ -549,26 +504,21 @@
 
     if-eqz v0, :cond_0
 
-    .line 130
     const v0, 0x7f0908d3
 
-    .line 134
     :goto_0
     return v0
 
-    .line 132
     :cond_0
     const v0, 0x7f0908d2
 
     goto :goto_0
 
-    .line 134
     :pswitch_1
     const v0, 0x7f0908d4
 
     goto :goto_0
 
-    .line 127
     nop
 
     :pswitch_data_0
@@ -584,10 +534,8 @@
     .param p2, "certHolder"    # Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
 
     .prologue
-    .line 151
     if-eqz p1, :cond_2
 
-    .line 152
     # getter for: Lcom/android/settings/TrustedCredentialsSettings$CertHolder;->mTab:Lcom/android/settings/TrustedCredentialsSettings$Tab;
     invoke-static {p2}, Lcom/android/settings/TrustedCredentialsSettings$CertHolder;->access$100(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;)Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
@@ -597,7 +545,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 153
     # getter for: Lcom/android/settings/TrustedCredentialsSettings$CertHolder;->mDeleted:Z
     invoke-static {p2}, Lcom/android/settings/TrustedCredentialsSettings$CertHolder;->access$000(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;)Z
 
@@ -611,7 +558,6 @@
     # setter for: Lcom/android/settings/TrustedCredentialsSettings$CertHolder;->mDeleted:Z
     invoke-static {p2, v0}, Lcom/android/settings/TrustedCredentialsSettings$CertHolder;->access$002(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;Z)Z
 
-    .line 157
     :goto_1
     # getter for: Lcom/android/settings/TrustedCredentialsSettings$CertHolder;->mAdapter:Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapterCommons;
     invoke-static {p2}, Lcom/android/settings/TrustedCredentialsSettings$CertHolder;->access$200(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;)Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapterCommons;
@@ -620,17 +566,14 @@
 
     invoke-interface {v0}, Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapterCommons;->notifyDataSetChanged()V
 
-    .line 162
     :goto_2
     return-void
 
-    .line 153
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 155
     :cond_1
     # getter for: Lcom/android/settings/TrustedCredentialsSettings$CertHolder;->mAdapter:Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapterCommons;
     invoke-static {p2}, Lcom/android/settings/TrustedCredentialsSettings$CertHolder;->access$200(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;)Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapterCommons;
@@ -641,7 +584,6 @@
 
     goto :goto_1
 
-    .line 160
     :cond_2
     # getter for: Lcom/android/settings/TrustedCredentialsSettings$CertHolder;->mAdapter:Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapterCommons;
     invoke-static {p2}, Lcom/android/settings/TrustedCredentialsSettings$CertHolder;->access$200(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;)Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapterCommons;
@@ -658,7 +600,6 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 72
     const-class v0, Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -674,7 +615,6 @@
     .locals 1
 
     .prologue
-    .line 72
     sget-object v0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->$VALUES:[Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
     invoke-virtual {v0}, [Lcom/android/settings/TrustedCredentialsSettings$Tab;->clone()Ljava/lang/Object;

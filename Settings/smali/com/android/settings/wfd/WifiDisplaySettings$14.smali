@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 601
     iput-object p1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$14;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 604
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 605
     .local v0, "action":Ljava/lang/String;
     const-string v1, "android.hardware.display.action.WIFI_DISPLAY_STATUS_CHANGED"
 
@@ -54,7 +51,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 606
     iget-object v1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$14;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     const/4 v2, 0x4
@@ -62,7 +58,6 @@
     # invokes: Lcom/android/settings/wfd/WifiDisplaySettings;->scheduleUpdate(I)V
     invoke-static {v1, v2}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$1200(Lcom/android/settings/wfd/WifiDisplaySettings;I)V
 
-    .line 608
     :cond_0
     return-void
 .end method

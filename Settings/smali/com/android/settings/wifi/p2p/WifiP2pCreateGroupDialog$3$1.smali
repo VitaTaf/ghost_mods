@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 162
     iput-object p1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog$3$1;->this$1:Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog$3;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "reason"    # I
 
     .prologue
-    .line 167
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog$3$1;->this$1:Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog$3;
 
     iget-object v0, v0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog$3;->this$0:Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;
@@ -61,7 +59,6 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 170
     return-void
 .end method
 
@@ -69,13 +66,11 @@
     .locals 2
 
     .prologue
-    .line 164
     const-string v0, "WifiP2pGroupCreateDialog"
 
     const-string v1, " device rename success"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 165
     return-void
 .end method

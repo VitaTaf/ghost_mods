@@ -40,17 +40,14 @@
     .param p2, "state"    # Lcom/android/settings/applications/AppOpsState;
 
     .prologue
-    .line 253
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    .line 254
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/applications/AppOpsCategory$AppListAdapter;->mResources:Landroid/content/res/Resources;
 
-    .line 255
     const-string v0, "layout_inflater"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -61,10 +58,8 @@
 
     iput-object v0, p0, Lcom/android/settings/applications/AppOpsCategory$AppListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 256
     iput-object p2, p0, Lcom/android/settings/applications/AppOpsCategory$AppListAdapter;->mState:Lcom/android/settings/applications/AppOpsState;
 
-    .line 257
     return-void
 .end method
 
@@ -74,7 +69,6 @@
     .locals 1
 
     .prologue
-    .line 266
     iget-object v0, p0, Lcom/android/settings/applications/AppOpsCategory$AppListAdapter;->mList:Ljava/util/List;
 
     if-eqz v0, :cond_0
@@ -99,7 +93,6 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 271
     iget-object v0, p0, Lcom/android/settings/applications/AppOpsCategory$AppListAdapter;->mList:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -116,7 +109,6 @@
     .param p1, "x0"    # I
 
     .prologue
-    .line 246
     invoke-virtual {p0, p1}, Lcom/android/settings/applications/AppOpsCategory$AppListAdapter;->getItem(I)Lcom/android/settings/applications/AppOpsState$AppOpEntry;
 
     move-result-object v0
@@ -129,7 +121,6 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 276
     int-to-long v0, p1
 
     return-wide v0
@@ -144,10 +135,8 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 285
     if-nez p2, :cond_0
 
-    .line 286
     iget-object v2, p0, Lcom/android/settings/applications/AppOpsCategory$AppListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
     const v3, 0x7f040009
@@ -156,14 +145,12 @@
 
     move-result-object v1
 
-    .line 291
     .local v1, "view":Landroid/view/View;
     :goto_0
     invoke-virtual {p0, p1}, Lcom/android/settings/applications/AppOpsCategory$AppListAdapter;->getItem(I)Lcom/android/settings/applications/AppOpsState$AppOpEntry;
 
     move-result-object v0
 
-    .line 292
     .local v0, "item":Lcom/android/settings/applications/AppOpsState$AppOpEntry;
     const v2, 0x7f0f000c
 
@@ -183,7 +170,6 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 294
     const v2, 0x7f0f000d
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -202,7 +188,6 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 295
     const v2, 0x7f0f0014
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -219,7 +204,6 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 296
     const v2, 0x7f0f0015
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -236,10 +220,8 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 299
     return-object v1
 
-    .line 288
     .end local v0    # "item":Lcom/android/settings/applications/AppOpsState$AppOpEntry;
     .end local v1    # "view":Landroid/view/View;
     :cond_0
@@ -262,13 +244,10 @@
     .end annotation
 
     .prologue
-    .line 260
     .local p1, "data":Ljava/util/List;, "Ljava/util/List<Lcom/android/settings/applications/AppOpsState$AppOpEntry;>;"
     iput-object p1, p0, Lcom/android/settings/applications/AppOpsCategory$AppListAdapter;->mList:Ljava/util/List;
 
-    .line 261
     invoke-virtual {p0}, Lcom/android/settings/applications/AppOpsCategory$AppListAdapter;->notifyDataSetChanged()V
 
-    .line 262
     return-void
 .end method

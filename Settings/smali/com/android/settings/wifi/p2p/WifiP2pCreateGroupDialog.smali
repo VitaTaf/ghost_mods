@@ -54,7 +54,6 @@
     .locals 1
 
     .prologue
-    .line 52
     const/16 v0, 0xa
 
     sput v0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->P2P_SSID_PREFIX_SIZE:I
@@ -67,46 +66,38 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 103
     invoke-direct {p0, p1}, Landroid/app/AlertDialog;-><init>(Landroid/content/Context;)V
 
-    .line 53
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
     iput-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mFilter:Landroid/content/IntentFilter;
 
-    .line 62
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mWifiP2pGroupList:Ljava/util/ArrayList;
 
-    .line 66
     new-instance v0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog$1;
 
     invoke-direct {v0, p0}, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog$1;-><init>(Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;)V
 
     iput-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 80
     new-instance v0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog$2;
 
     invoke-direct {v0, p0}, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog$2;-><init>(Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;)V
 
     iput-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->filter:Landroid/text/InputFilter;
 
-    .line 104
     iput-object p1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mContext:Landroid/content/Context;
 
-    .line 105
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mSetCurrListPosition:I
 
-    .line 106
     return-void
 .end method
 
@@ -115,7 +106,6 @@
     .param p0, "x0"    # Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;
 
     .prologue
-    .line 48
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mP2pDevice:Landroid/net/wifi/p2p/WifiP2pDevice;
 
     return-object v0
@@ -127,7 +117,6 @@
     .param p1, "x1"    # Landroid/net/wifi/p2p/WifiP2pDevice;
 
     .prologue
-    .line 48
     iput-object p1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mP2pDevice:Landroid/net/wifi/p2p/WifiP2pDevice;
 
     return-object p1
@@ -138,7 +127,6 @@
     .param p0, "x0"    # Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;
 
     .prologue
-    .line 48
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mWifiP2pManager:Landroid/net/wifi/p2p/WifiP2pManager;
 
     return-object v0
@@ -149,7 +137,6 @@
     .param p0, "x0"    # Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;
 
     .prologue
-    .line 48
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mChannel:Landroid/net/wifi/p2p/WifiP2pManager$Channel;
 
     return-object v0
@@ -160,7 +147,6 @@
     .param p0, "x0"    # Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;
 
     .prologue
-    .line 48
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mSavedGroupList:Landroid/widget/Spinner;
 
     return-object v0
@@ -171,7 +157,6 @@
     .param p0, "x0"    # Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;
 
     .prologue
-    .line 48
     iget v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mGroupListSize:I
 
     return v0
@@ -182,7 +167,6 @@
     .param p0, "x0"    # Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;
 
     .prologue
-    .line 48
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mEditSsid:Landroid/widget/EditText;
 
     return-object v0
@@ -194,7 +178,6 @@
     .param p1, "x1"    # Ljava/lang/String;
 
     .prologue
-    .line 48
     invoke-direct {p0, p1}, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->getNetworkId(Ljava/lang/String;)I
 
     move-result v0
@@ -206,7 +189,6 @@
     .locals 1
 
     .prologue
-    .line 48
     sget v0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->P2P_SSID_PREFIX_SIZE:I
 
     return v0
@@ -217,7 +199,6 @@
     .param p0, "x0"    # Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;
 
     .prologue
-    .line 48
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -233,7 +214,6 @@
 
     const/4 v4, 0x0
 
-    .line 250
     if-eqz p1, :cond_0
 
     if-nez p2, :cond_2
@@ -241,12 +221,10 @@
     :cond_0
     move v3, v4
 
-    .line 266
     :cond_1
     :goto_0
     return v3
 
-    .line 251
     :cond_2
     sget v5, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->P2P_SSID_PREFIX_SIZE:I
 
@@ -260,18 +238,15 @@
 
     if-nez v5, :cond_1
 
-    .line 253
     const-string v5, "(DIRECT-[0-9a-zA-Z]{2}-([\\\\]x[0-9a-fA-F]{2}){1,})"
 
     invoke-static {v5, p2}, Ljava/util/regex/Pattern;->matches(Ljava/lang/String;Ljava/lang/CharSequence;)Z
 
     move-result v2
 
-    .line 254
     .local v2, "pattern_match":Z
     if-eqz v2, :cond_3
 
-    .line 255
     const-string v5, "%x"
 
     new-array v6, v3, [Ljava/lang/Object;
@@ -296,7 +271,6 @@
 
     move-result-object v0
 
-    .line 256
     .local v0, "hex1":Ljava/lang/String;
     sget v5, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->P2P_SSID_PREFIX_SIZE:I
 
@@ -312,7 +286,6 @@
 
     move-result-object v1
 
-    .line 258
     .local v1, "hex2":Ljava/lang/String;
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -322,10 +295,8 @@
 
     move v3, v4
 
-    .line 261
     goto :goto_0
 
-    .line 264
     .end local v0    # "hex1":Ljava/lang/String;
     .end local v1    # "hex2":Ljava/lang/String;
     :cond_3
@@ -337,7 +308,6 @@
 
     move v3, v4
 
-    .line 266
     goto :goto_0
 .end method
 
@@ -346,7 +316,6 @@
     .param p1, "ssid"    # Ljava/lang/String;
 
     .prologue
-    .line 270
     iget-object v2, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mWifiP2pGroupList:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -367,7 +336,6 @@
 
     check-cast v0, Landroid/net/wifi/p2p/WifiP2pGroup;
 
-    .line 271
     .local v0, "g":Landroid/net/wifi/p2p/WifiP2pGroup;
     invoke-virtual {v0}, Landroid/net/wifi/p2p/WifiP2pGroup;->getNetworkName()Ljava/lang/String;
 
@@ -379,12 +347,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 272
     invoke-virtual {v0}, Landroid/net/wifi/p2p/WifiP2pGroup;->getNetworkId()I
 
     move-result v2
 
-    .line 275
     .end local v0    # "g":Landroid/net/wifi/p2p/WifiP2pGroup;
     :goto_0
     return v2
@@ -400,10 +366,8 @@
     .param p1, "s"    # Ljava/lang/String;
 
     .prologue
-    .line 92
     const/4 v2, 0x0
 
-    .line 93
     .local v2, "ret":Z
     const-string v3, "US-ASCII"
 
@@ -415,7 +379,6 @@
 
     move-result-object v0
 
-    .line 95
     .local v0, "asciiEncoder":Ljava/nio/charset/CharsetEncoder;
     :try_start_0
     invoke-virtual {v0, p1}, Ljava/nio/charset/CharsetEncoder;->canEncode(Ljava/lang/CharSequence;)Z
@@ -424,15 +387,12 @@
 
     move-result v2
 
-    .line 99
     :goto_0
     return v2
 
-    .line 96
     :catch_0
     move-exception v1
 
-    .line 97
     .local v1, "e":Ljava/lang/IllegalStateException;
     const/4 v2, 0x0
 
@@ -450,23 +410,19 @@
 
     const/4 v3, -0x1
 
-    .line 288
     iget v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mSetCurrListPosition:I
 
     if-eqz v1, :cond_0
 
-    .line 289
     invoke-virtual {p0, v3}, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->getButton(I)Landroid/widget/Button;
 
     move-result-object v1
 
     invoke-virtual {v1, v4}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 298
     :goto_0
     return-void
 
-    .line 292
     :cond_0
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mEditSsid:Landroid/widget/EditText;
 
@@ -482,7 +438,6 @@
 
     move-result-object v0
 
-    .line 293
     .local v0, "s":Ljava/lang/String;
     if-eqz v0, :cond_2
 
@@ -500,7 +455,6 @@
 
     if-le v1, v2, :cond_2
 
-    .line 294
     :cond_1
     invoke-virtual {p0, v3}, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->getButton(I)Landroid/widget/Button;
 
@@ -512,7 +466,6 @@
 
     goto :goto_0
 
-    .line 296
     :cond_2
     invoke-virtual {p0, v3}, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->getButton(I)Landroid/widget/Button;
 
@@ -531,7 +484,6 @@
     .param p4, "after"    # I
 
     .prologue
-    .line 284
     return-void
 .end method
 
@@ -546,7 +498,6 @@
 
     const/4 v5, 0x0
 
-    .line 110
     invoke-virtual {p0}, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->getLayoutInflater()Landroid/view/LayoutInflater;
 
     move-result-object v1
@@ -559,7 +510,6 @@
 
     iput-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mGroupCreateView:Landroid/view/View;
 
-    .line 112
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mGroupCreateView:Landroid/view/View;
 
     const v2, 0x7f0f0255
@@ -572,7 +522,6 @@
 
     iput-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mSavedGroupList:Landroid/widget/Spinner;
 
-    .line 114
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mGroupCreateView:Landroid/view/View;
 
     const v2, 0x7f0f0256
@@ -585,14 +534,12 @@
 
     iput-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mEditSsid:Landroid/widget/EditText;
 
-    .line 115
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mEditSsid:Landroid/widget/EditText;
 
     const/16 v2, 0x8
 
     invoke-virtual {v1, v2}, Landroid/widget/EditText;->setVisibility(I)V
 
-    .line 116
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -609,7 +556,6 @@
 
     move-result-object v0
 
-    .line 117
     .local v0, "str":Ljava/lang/String;
     if-eqz v0, :cond_1
 
@@ -619,7 +565,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 118
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mEditSsid:Landroid/widget/EditText;
 
     new-array v2, v3, [Landroid/text/InputFilter;
@@ -630,23 +575,19 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/EditText;->setFilters([Landroid/text/InputFilter;)V
 
-    .line 122
     :goto_0
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mEditSsid:Landroid/widget/EditText;
 
     invoke-virtual {v1, p0}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 123
     const v1, 0x7f090027
 
     invoke-virtual {p0, v1}, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->setTitle(I)V
 
-    .line 124
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mGroupCreateView:Landroid/view/View;
 
     invoke-virtual {p0, v1}, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->setView(Landroid/view/View;)V
 
-    .line 126
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mContext:Landroid/content/Context;
 
     const-string v2, "wifip2p"
@@ -659,12 +600,10 @@
 
     iput-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mWifiP2pManager:Landroid/net/wifi/p2p/WifiP2pManager;
 
-    .line 127
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mWifiP2pManager:Landroid/net/wifi/p2p/WifiP2pManager;
 
     if-eqz v1, :cond_2
 
-    .line 128
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mWifiP2pManager:Landroid/net/wifi/p2p/WifiP2pManager;
 
     iget-object v2, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mContext:Landroid/content/Context;
@@ -681,22 +620,18 @@
 
     iput-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mChannel:Landroid/net/wifi/p2p/WifiP2pManager$Channel;
 
-    .line 129
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mChannel:Landroid/net/wifi/p2p/WifiP2pManager$Channel;
 
     if-nez v1, :cond_0
 
-    .line 131
     const-string v1, "WifiP2pGroupCreateDialog"
 
     const-string v2, "Failed to set up connection with wifi p2p service"
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 132
     iput-object v5, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mWifiP2pManager:Landroid/net/wifi/p2p/WifiP2pManager;
 
-    .line 137
     :cond_0
     :goto_1
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mFilter:Landroid/content/IntentFilter;
@@ -705,7 +640,6 @@
 
     invoke-virtual {v1, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 139
     const/4 v1, -0x1
 
     iget-object v2, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mContext:Landroid/content/Context;
@@ -722,7 +656,6 @@
 
     invoke-virtual {p0, v1, v2, v3}, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
-    .line 190
     const/4 v1, -0x2
 
     iget-object v2, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mContext:Landroid/content/Context;
@@ -739,13 +672,10 @@
 
     invoke-virtual {p0, v1, v2, v3}, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
-    .line 198
     invoke-super {p0, p1}, Landroid/app/AlertDialog;->onCreate(Landroid/os/Bundle;)V
 
-    .line 199
     return-void
 
-    .line 120
     :cond_1
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mEditSsid:Landroid/widget/EditText;
 
@@ -763,7 +693,6 @@
 
     goto :goto_0
 
-    .line 135
     :cond_2
     const-string v1, "WifiP2pGroupCreateDialog"
 
@@ -790,21 +719,17 @@
     .end annotation
 
     .prologue
-    .line 302
     .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     iput p3, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mSetCurrListPosition:I
 
-    .line 303
     if-nez p3, :cond_0
 
-    .line 304
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mEditSsid:Landroid/widget/EditText;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setVisibility(I)V
 
-    .line 305
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mEditSsid:Landroid/widget/EditText;
 
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mP2pDevice:Landroid/net/wifi/p2p/WifiP2pDevice;
@@ -813,11 +738,9 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 310
     :goto_0
     return-void
 
-    .line 307
     :cond_0
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mEditSsid:Landroid/widget/EditText;
 
@@ -825,7 +748,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 308
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mEditSsid:Landroid/widget/EditText;
 
     const/16 v1, 0x8
@@ -846,7 +768,6 @@
     .end annotation
 
     .prologue
-    .line 313
     .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     return-void
 .end method
@@ -856,16 +777,13 @@
     .param p1, "groups"    # Landroid/net/wifi/p2p/WifiP2pGroupList;
 
     .prologue
-    .line 216
     const/4 v1, 0x0
 
-    .line 217
     .local v1, "array_index":I
     iget-object v6, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mWifiP2pGroupList:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->clear()V
 
-    .line 218
     invoke-virtual {p1}, Landroid/net/wifi/p2p/WifiP2pGroupList;->getGroupList()Ljava/util/Collection;
 
     move-result-object v6
@@ -889,7 +807,6 @@
 
     check-cast v4, Landroid/net/wifi/p2p/WifiP2pGroup;
 
-    .line 219
     .local v4, "g":Landroid/net/wifi/p2p/WifiP2pGroup;
     iget-object v6, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mP2pDevice:Landroid/net/wifi/p2p/WifiP2pDevice;
 
@@ -907,14 +824,12 @@
 
     if-eqz v6, :cond_0
 
-    .line 220
     iget-object v6, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mWifiP2pGroupList:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 223
     .end local v4    # "g":Landroid/net/wifi/p2p/WifiP2pGroup;
     :cond_1
     iget-object v6, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mWifiP2pGroupList:Ljava/util/ArrayList;
@@ -925,14 +840,12 @@
 
     iput v6, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mGroupListSize:I
 
-    .line 225
     iget v6, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mGroupListSize:I
 
     add-int/lit8 v6, v6, 0x1
 
     new-array v3, v6, [Ljava/lang/String;
 
-    .line 226
     .local v3, "array_spinner":[Ljava/lang/String;
     add-int/lit8 v2, v1, 0x1
 
@@ -948,12 +861,10 @@
 
     aput-object v6, v3, v1
 
-    .line 227
     iget v6, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mGroupListSize:I
 
     if-lez v6, :cond_4
 
-    .line 228
     iget-object v6, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mWifiP2pGroupList:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -977,7 +888,6 @@
 
     check-cast v4, Landroid/net/wifi/p2p/WifiP2pGroup;
 
-    .line 229
     .restart local v4    # "g":Landroid/net/wifi/p2p/WifiP2pGroup;
     invoke-virtual {v4}, Landroid/net/wifi/p2p/WifiP2pGroup;->getNetworkName()Ljava/lang/String;
 
@@ -985,7 +895,6 @@
 
     aput-object v6, v3, v1
 
-    .line 231
     iget-object v6, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mP2pDevice:Landroid/net/wifi/p2p/WifiP2pDevice;
 
     iget-object v6, v6, Landroid/net/wifi/p2p/WifiP2pDevice;->deviceName:Ljava/lang/String;
@@ -1004,17 +913,13 @@
 
     if-nez v6, :cond_2
 
-    .line 233
     iput v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mSetCurrListPosition:I
 
-    .line 235
     :cond_2
     add-int/lit8 v1, v1, 0x1
 
-    .line 236
     goto :goto_1
 
-    .line 237
     .end local v4    # "g":Landroid/net/wifi/p2p/WifiP2pGroup;
     :cond_3
     new-instance v0, Landroid/widget/ArrayAdapter;
@@ -1025,30 +930,25 @@
 
     invoke-direct {v0, v6, v7, v3}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
 
-    .line 239
     .local v0, "adapter":Landroid/widget/ArrayAdapter;
     iget-object v6, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mSavedGroupList:Landroid/widget/Spinner;
 
     invoke-virtual {v6, p0}, Landroid/widget/Spinner;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
 
-    .line 240
     iget-object v6, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mSavedGroupList:Landroid/widget/Spinner;
 
     invoke-virtual {v6, v0}, Landroid/widget/Spinner;->setAdapter(Landroid/widget/SpinnerAdapter;)V
 
-    .line 241
     iget-object v6, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mSavedGroupList:Landroid/widget/Spinner;
 
     iget v7, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mSetCurrListPosition:I
 
     invoke-virtual {v6, v7}, Landroid/widget/Spinner;->setSelection(I)V
 
-    .line 247
     .end local v0    # "adapter":Landroid/widget/ArrayAdapter;
     :goto_2
     return-void
 
-    .line 243
     .end local v1    # "array_index":I
     .restart local v2    # "array_index":I
     :cond_4
@@ -1058,7 +958,6 @@
 
     invoke-virtual {v6, v7}, Landroid/widget/Spinner;->setVisibility(I)V
 
-    .line 244
     iget-object v6, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mEditSsid:Landroid/widget/EditText;
 
     iget-object v7, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mP2pDevice:Landroid/net/wifi/p2p/WifiP2pDevice;
@@ -1067,7 +966,6 @@
 
     invoke-virtual {v6, v7}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 245
     iget-object v6, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mEditSsid:Landroid/widget/EditText;
 
     const/4 v7, 0x0
@@ -1085,7 +983,6 @@
     .locals 3
 
     .prologue
-    .line 203
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mReceiver:Landroid/content/BroadcastReceiver;
@@ -1094,7 +991,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 204
     return-void
 .end method
 
@@ -1102,24 +998,20 @@
     .locals 2
 
     .prologue
-    .line 208
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mReceiver:Landroid/content/BroadcastReceiver;
 
     if-eqz v0, :cond_0
 
-    .line 209
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 210
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pCreateGroupDialog;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 212
     :cond_0
     return-void
 .end method
@@ -1132,6 +1024,5 @@
     .param p4, "count"    # I
 
     .prologue
-    .line 280
     return-void
 .end method

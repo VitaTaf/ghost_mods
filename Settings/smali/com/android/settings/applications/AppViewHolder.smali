@@ -24,7 +24,6 @@
     .locals 0
 
     .prologue
-    .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,10 +35,8 @@
     .param p1, "convertView"    # Landroid/view/View;
 
     .prologue
-    .line 24
     if-nez p1, :cond_0
 
-    .line 25
     const v1, 0x7f04005d
 
     const/4 v2, 0x0
@@ -48,16 +45,13 @@
 
     move-result-object p1
 
-    .line 29
     new-instance v0, Lcom/android/settings/applications/AppViewHolder;
 
     invoke-direct {v0}, Lcom/android/settings/applications/AppViewHolder;-><init>()V
 
-    .line 30
     .local v0, "holder":Lcom/android/settings/applications/AppViewHolder;
     iput-object p1, v0, Lcom/android/settings/applications/AppViewHolder;->rootView:Landroid/view/View;
 
-    .line 31
     const v1, 0x7f0f000d
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -68,7 +62,6 @@
 
     iput-object v1, v0, Lcom/android/settings/applications/AppViewHolder;->appName:Landroid/widget/TextView;
 
-    .line 32
     const v1, 0x7f0f000c
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -79,7 +72,6 @@
 
     iput-object v1, v0, Lcom/android/settings/applications/AppViewHolder;->appIcon:Landroid/widget/ImageView;
 
-    .line 33
     const v1, 0x7f0f00da
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -90,7 +82,6 @@
 
     iput-object v1, v0, Lcom/android/settings/applications/AppViewHolder;->appSize:Landroid/widget/TextView;
 
-    .line 34
     const v1, 0x7f0f00db
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -101,7 +92,6 @@
 
     iput-object v1, v0, Lcom/android/settings/applications/AppViewHolder;->disabled:Landroid/widget/TextView;
 
-    .line 35
     const v1, 0x7f0f00d9
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -112,10 +102,8 @@
 
     iput-object v1, v0, Lcom/android/settings/applications/AppViewHolder;->checkBox:Landroid/widget/CheckBox;
 
-    .line 36
     invoke-virtual {p1, v0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 41
     .end local v0    # "holder":Lcom/android/settings/applications/AppViewHolder;
     :goto_0
     return-object v0
@@ -140,17 +128,14 @@
     .param p2, "whichSize"    # I
 
     .prologue
-    .line 48
     iget-object v0, p0, Lcom/android/settings/applications/AppViewHolder;->entry:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->sizeStr:Ljava/lang/String;
 
     if-eqz v0, :cond_1
 
-    .line 49
     packed-switch p2, :pswitch_data_0
 
-    .line 57
     iget-object v0, p0, Lcom/android/settings/applications/AppViewHolder;->appSize:Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/android/settings/applications/AppViewHolder;->entry:Lcom/android/settings/applications/ApplicationsState$AppEntry;
@@ -159,12 +144,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 63
     :cond_0
     :goto_0
     return-void
 
-    .line 51
     :pswitch_0
     iget-object v0, p0, Lcom/android/settings/applications/AppViewHolder;->appSize:Landroid/widget/TextView;
 
@@ -176,7 +159,6 @@
 
     goto :goto_0
 
-    .line 54
     :pswitch_1
     iget-object v0, p0, Lcom/android/settings/applications/AppViewHolder;->appSize:Landroid/widget/TextView;
 
@@ -188,7 +170,6 @@
 
     goto :goto_0
 
-    .line 60
     :cond_1
     iget-object v0, p0, Lcom/android/settings/applications/AppViewHolder;->entry:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
@@ -200,14 +181,12 @@
 
     if-nez v0, :cond_0
 
-    .line 61
     iget-object v0, p0, Lcom/android/settings/applications/AppViewHolder;->appSize:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_0
 
-    .line 49
     nop
 
     :pswitch_data_0

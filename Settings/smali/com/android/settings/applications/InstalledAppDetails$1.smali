@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 234
     iput-object p1, p0, Lcom/android/settings/applications/InstalledAppDetails$1;->this$0:Lcom/android/settings/applications/InstalledAppDetails;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -38,7 +37,6 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 237
     iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$1;->this$0:Lcom/android/settings/applications/InstalledAppDetails;
 
     invoke-virtual {v0}, Lcom/android/settings/applications/InstalledAppDetails;->getView()Landroid/view/View;
@@ -47,11 +45,9 @@
 
     if-nez v0, :cond_0
 
-    .line 254
     :goto_0
     return-void
 
-    .line 240
     :cond_0
     iget v0, p1, Landroid/os/Message;->what:I
 
@@ -60,7 +56,6 @@
     :pswitch_0
     goto :goto_0
 
-    .line 242
     :pswitch_1
     iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$1;->this$0:Lcom/android/settings/applications/InstalledAppDetails;
 
@@ -69,7 +64,6 @@
 
     goto :goto_0
 
-    .line 246
     :pswitch_2
     iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$1;->this$0:Lcom/android/settings/applications/InstalledAppDetails;
 
@@ -93,7 +87,6 @@
 
     goto :goto_0
 
-    .line 249
     :pswitch_3
     iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$1;->this$0:Lcom/android/settings/applications/InstalledAppDetails;
 
@@ -102,7 +95,6 @@
 
     goto :goto_0
 
-    .line 240
     nop
 
     :pswitch_data_0

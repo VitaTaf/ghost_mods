@@ -12,7 +12,6 @@
     .locals 1
 
     .prologue
-    .line 24
     sget-boolean v0, Landroid/os/Build;->IS_DEBUGGABLE:Z
 
     sput-boolean v0, Lcom/android/settings/sim/addon/SystemUpgradeReceiver;->DBG:Z
@@ -24,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 22
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -40,7 +38,6 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 30
     if-eqz p2, :cond_0
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -49,24 +46,20 @@
 
     if-nez v4, :cond_1
 
-    .line 54
     :cond_0
     :goto_0
     return-void
 
-    .line 33
     :cond_1
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 35
     .local v0, "action":Ljava/lang/String;
     sget-boolean v4, Lcom/android/settings/sim/addon/SystemUpgradeReceiver;->DBG:Z
 
     if-eqz v4, :cond_2
 
-    .line 36
     const-string v4, "SystemUpgradeReceiver"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -89,7 +82,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 37
     :cond_2
     const-string v4, "com.motorola.blur.service.blur.Actions.UPGRADE_UPDATE_STATUS"
 
@@ -99,25 +91,21 @@
 
     if-eqz v4, :cond_0
 
-    .line 39
     invoke-static {p1}, Lcom/android/settings/Utils;->readConnectionPriority(Landroid/content/Context;)I
 
     move-result v1
 
-    .line 40
     .local v1, "savedConnectionPriority":I
     sget-boolean v4, Lcom/android/settings/sim/addon/SystemUpgradeReceiver;->DBG:Z
 
     if-eqz v4, :cond_3
 
-    .line 41
     const-string v4, "SystemUpgradeReceiver"
 
     const-string v5, "This is an upgarde. Setting connection priority value to modem"
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 42
     const-string v4, "SystemUpgradeReceiver"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -140,18 +128,15 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 49
     :cond_3
     const/4 v4, -0x1
 
     if-eq v1, v4, :cond_0
 
-    .line 50
     invoke-static {p1}, Landroid/telephony/TelephonyManager;->from(Landroid/content/Context;)Landroid/telephony/TelephonyManager;
 
     move-result-object v2
 
-    .line 51
     .local v2, "tm":Landroid/telephony/TelephonyManager;
     if-ne v1, v3, :cond_4
 

@@ -10,7 +10,6 @@
     .param p1, "toIntent"    # Landroid/content/Intent;
 
     .prologue
-    .line 113
     const-string v0, "theme"
 
     const-string v1, "theme"
@@ -21,7 +20,6 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 114
     const-string v0, "useImmersiveMode"
 
     const-string v1, "useImmersiveMode"
@@ -34,7 +32,6 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 116
     return-void
 .end method
 
@@ -43,7 +40,6 @@
     .param p0, "activity"    # Landroid/app/Activity;
 
     .prologue
-    .line 101
     const v0, 0x7f0f0035
 
     invoke-virtual {p0, v0}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
@@ -61,18 +57,15 @@
     .param p1, "defaultResId"    # I
 
     .prologue
-    .line 73
     const-string v2, "theme"
 
     invoke-virtual {p0, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 74
     .local v1, "themeName":Ljava/lang/String;
     move v0, p1
 
-    .line 75
     .local v0, "resid":I
     const-string v2, "holo_light"
 
@@ -90,16 +83,13 @@
 
     if-eqz v2, :cond_2
 
-    .line 77
     :cond_0
     const v0, 0x7f0a003d
 
-    .line 82
     :cond_1
     :goto_0
     return v0
 
-    .line 78
     :cond_2
     const-string v2, "holo"
 
@@ -117,7 +107,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 80
     :cond_3
     const v0, 0x7f0a003c
 
@@ -129,7 +118,6 @@
     .param p0, "activity"    # Landroid/app/Activity;
 
     .prologue
-    .line 53
     invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
@@ -149,12 +137,10 @@
     .param p1, "resultCode"    # I
 
     .prologue
-    .line 63
     invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 64
     .local v0, "intent":Landroid/content/Intent;
     new-instance v1, Landroid/content/Intent;
 
@@ -162,7 +148,6 @@
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 65
     .local v1, "nextIntent":Landroid/content/Intent;
     const-string v2, "scriptUri"
 
@@ -174,7 +159,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 66
     const-string v2, "actionId"
 
     const-string v3, "actionId"
@@ -185,7 +169,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 67
     const-string v2, "theme"
 
     const-string v3, "theme"
@@ -196,17 +179,14 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 68
     const-string v2, "com.android.setupwizard.ResultCode"
 
     invoke-virtual {v1, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 69
     const/16 v2, 0x2710
 
     invoke-virtual {p0, v1, v2}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 70
     return-void
 .end method
 
@@ -216,14 +196,12 @@
     .param p1, "text"    # I
 
     .prologue
-    .line 105
     invoke-static {p0}, Lcom/android/settings/SetupWizardUtils;->getHeader(Landroid/app/Activity;)Landroid/widget/TextView;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 106
     return-void
 .end method
 
@@ -233,14 +211,12 @@
     .param p1, "text"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 109
     invoke-static {p0}, Lcom/android/settings/SetupWizardUtils;->getHeader(Landroid/app/Activity;)Landroid/widget/TextView;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 110
     return-void
 .end method
 
@@ -252,7 +228,6 @@
     .prologue
     const v7, 0x7f0f02a4
 
-    .line 119
     const v6, 0x7f0f01a8
 
     invoke-virtual {p0, v6}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
@@ -261,24 +236,20 @@
 
     check-cast v2, Lcom/android/settings/widget/SetupWizardIllustration;
 
-    .line 121
     .local v2, "illustration":Lcom/android/settings/widget/SetupWizardIllustration;
     if-eqz v2, :cond_1
 
-    .line 122
     const v6, 0x7f0200cb
 
     invoke-virtual {p0, v6}, Landroid/app/Activity;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 123
     .local v0, "drawable":Landroid/graphics/drawable/Drawable;
     invoke-virtual {p0, p1}, Landroid/app/Activity;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v4
 
-    .line 124
     .local v4, "newIllustration":Landroid/graphics/drawable/Drawable;
     instance-of v6, v0, Landroid/graphics/drawable/LayerDrawable;
 
@@ -286,16 +257,13 @@
 
     move-object v3, v0
 
-    .line 125
     check-cast v3, Landroid/graphics/drawable/LayerDrawable;
 
-    .line 126
     .local v3, "layers":Landroid/graphics/drawable/LayerDrawable;
     invoke-virtual {v3, v7}, Landroid/graphics/drawable/LayerDrawable;->findDrawableByLayerId(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v5
 
-    .line 127
     .local v5, "oldIllustration":Landroid/graphics/drawable/Drawable;
     instance-of v6, v4, Landroid/graphics/drawable/BitmapDrawable;
 
@@ -305,7 +273,6 @@
 
     if-eqz v6, :cond_0
 
-    .line 129
     check-cast v5, Landroid/graphics/drawable/BitmapDrawable;
 
     .end local v5    # "oldIllustration":Landroid/graphics/drawable/Drawable;
@@ -316,20 +283,16 @@
     .local v1, "gravity":I
     move-object v6, v4
 
-    .line 130
     check-cast v6, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-virtual {v6, v1}, Landroid/graphics/drawable/BitmapDrawable;->setGravity(I)V
 
-    .line 132
     .end local v1    # "gravity":I
     :cond_0
     invoke-virtual {v3, v7, v4}, Landroid/graphics/drawable/LayerDrawable;->setDrawableByLayerId(ILandroid/graphics/drawable/Drawable;)Z
 
-    .line 133
     invoke-virtual {v2, v3}, Lcom/android/settings/widget/SetupWizardIllustration;->setForeground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 136
     .end local v0    # "drawable":Landroid/graphics/drawable/Drawable;
     .end local v3    # "layers":Landroid/graphics/drawable/LayerDrawable;
     .end local v4    # "newIllustration":Landroid/graphics/drawable/Drawable;
@@ -345,7 +308,6 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 90
     invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
     move-result-object v2
@@ -356,26 +318,20 @@
 
     move-result v0
 
-    .line 92
     .local v0, "useImmersiveMode":Z
     invoke-virtual {p1, v0}, Lcom/android/setupwizard/navigationbar/SetupWizardNavBar;->setUseImmersiveMode(Z)V
 
-    .line 93
     if-eqz v0, :cond_0
 
-    .line 94
     invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
-    .line 95
     .local v1, "window":Landroid/view/Window;
     invoke-virtual {v1, v4}, Landroid/view/Window;->setNavigationBarColor(I)V
 
-    .line 96
     invoke-virtual {v1, v4}, Landroid/view/Window;->setStatusBarColor(I)V
 
-    .line 98
     .end local v1    # "window":Landroid/view/Window;
     :cond_0
     return-void

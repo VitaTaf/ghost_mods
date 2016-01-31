@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 562
     iput-object p1, p0, Lcom/android/settings/bluetooth/DockService$2;->this$0:Lcom/android/settings/bluetooth/DockService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +42,6 @@
     .param p3, "isChecked"    # Z
 
     .prologue
-    .line 567
     iget-object v0, p0, Lcom/android/settings/bluetooth/DockService$2;->this$0:Lcom/android/settings/bluetooth/DockService;
 
     # getter for: Lcom/android/settings/bluetooth/DockService;->mCheckedItems:[Z
@@ -53,6 +51,5 @@
 
     aput-boolean p3, v0, p2
 
-    .line 568
     return-void
 .end method

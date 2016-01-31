@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 270
     iput-object p1, p0, Lcom/android/settings/wifi/WifiSetupActivity$WifiSkipDialog$2;->this$0:Lcom/android/settings/wifi/WifiSetupActivity$WifiSkipDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .param p2, "id"    # I
 
     .prologue
-    .line 273
     iget-object v1, p0, Lcom/android/settings/wifi/WifiSetupActivity$WifiSkipDialog$2;->this$0:Lcom/android/settings/wifi/WifiSetupActivity$WifiSkipDialog;
 
     invoke-virtual {v1}, Lcom/android/settings/wifi/WifiSetupActivity$WifiSkipDialog;->getActivity()Landroid/app/Activity;
@@ -51,12 +49,10 @@
 
     check-cast v0, Lcom/android/settings/wifi/WifiSetupActivity;
 
-    .line 274
     .local v0, "activity":Lcom/android/settings/wifi/WifiSetupActivity;
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/settings/wifi/WifiSetupActivity;->finishOrNext(I)V
 
-    .line 275
     return-void
 .end method

@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 216
     iput-object p1, p0, Lcom/android/settings/deviceinfo/Status$3;->this$0:Lcom/android/settings/deviceinfo/Status;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +51,6 @@
     .end annotation
 
     .prologue
-    .line 220
     .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     invoke-virtual {p1}, Landroid/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;
 
@@ -60,7 +58,6 @@
 
     check-cast v1, Landroid/widget/ListAdapter;
 
-    .line 221
     .local v1, "listAdapter":Landroid/widget/ListAdapter;
     invoke-interface {v1, p3}, Landroid/widget/ListAdapter;->getItem(I)Ljava/lang/Object;
 
@@ -68,7 +65,6 @@
 
     check-cast v2, Landroid/preference/Preference;
 
-    .line 223
     .local v2, "pref":Landroid/preference/Preference;
     iget-object v3, p0, Lcom/android/settings/deviceinfo/Status$3;->this$0:Lcom/android/settings/deviceinfo/Status;
 
@@ -80,7 +76,6 @@
 
     check-cast v0, Landroid/content/ClipboardManager;
 
-    .line 225
     .local v0, "cm":Landroid/content/ClipboardManager;
     invoke-virtual {v2}, Landroid/preference/Preference;->getSummary()Ljava/lang/CharSequence;
 
@@ -88,7 +83,6 @@
 
     invoke-virtual {v0, v3}, Landroid/content/ClipboardManager;->setText(Ljava/lang/CharSequence;)V
 
-    .line 226
     iget-object v3, p0, Lcom/android/settings/deviceinfo/Status$3;->this$0:Lcom/android/settings/deviceinfo/Status;
 
     const v4, 0x104043e
@@ -101,7 +95,6 @@
 
     invoke-virtual {v3}, Landroid/widget/Toast;->show()V
 
-    .line 230
     const/4 v3, 0x1
 
     return v3

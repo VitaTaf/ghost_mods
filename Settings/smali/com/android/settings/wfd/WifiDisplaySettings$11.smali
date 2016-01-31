@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 565
     iput-object p1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$11;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     iput-object p2, p0, Lcom/android/settings/wfd/WifiDisplaySettings$11;->val$nameEditText:Landroid/widget/EditText;
@@ -50,7 +49,6 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 568
     iget-object v1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$11;->val$nameEditText:Landroid/widget/EditText;
 
     invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
@@ -65,7 +63,6 @@
 
     move-result-object v0
 
-    .line 569
     .local v0, "name":Ljava/lang/String;
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
@@ -85,11 +82,9 @@
 
     if-eqz v1, :cond_1
 
-    .line 570
     :cond_0
     const/4 v0, 0x0
 
-    .line 572
     :cond_1
     iget-object v1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$11;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
@@ -106,6 +101,5 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/hardware/display/DisplayManager;->renameWifiDisplay(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 573
     return-void
 .end method

@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 120
     iput-object p1, p0, Lcom/android/settings/deviceinfo/SimStatus$1;->this$0:Lcom/android/settings/deviceinfo/SimStatus;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 123
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 125
     .local v0, "action":Ljava/lang/String;
     const-string v4, "android.cellbroadcastreceiver.CB_AREA_INFO_RECEIVED"
 
@@ -54,22 +51,18 @@
 
     if-eqz v4, :cond_0
 
-    .line 126
     invoke-virtual {p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v2
 
-    .line 127
     .local v2, "extras":Landroid/os/Bundle;
     if-nez v2, :cond_1
 
-    .line 147
     .end local v2    # "extras":Landroid/os/Bundle;
     :cond_0
     :goto_0
     return-void
 
-    .line 130
     .restart local v2    # "extras":Landroid/os/Bundle;
     :cond_1
     const-string v4, "message"
@@ -80,7 +73,6 @@
 
     check-cast v1, Landroid/telephony/CellBroadcastMessage;
 
-    .line 131
     .local v1, "cbMessage":Landroid/telephony/CellBroadcastMessage;
     if-eqz v1, :cond_0
 
@@ -92,7 +84,6 @@
 
     if-ne v4, v5, :cond_0
 
-    .line 134
     const-string v4, "subscription"
 
     const/4 v5, -0x1
@@ -101,7 +92,6 @@
 
     move-result v3
 
-    .line 137
     .local v3, "subId":I
     invoke-static {v3}, Landroid/telephony/SubscriptionManager;->isValidSubscriptionId(I)Z
 
@@ -109,7 +99,6 @@
 
     if-eqz v4, :cond_0
 
-    .line 138
     iget-object v4, p0, Lcom/android/settings/deviceinfo/SimStatus$1;->this$0:Lcom/android/settings/deviceinfo/SimStatus;
 
     invoke-virtual {v1}, Landroid/telephony/CellBroadcastMessage;->getMessageBody()Ljava/lang/String;
@@ -119,7 +108,6 @@
     # invokes: Lcom/android/settings/deviceinfo/SimStatus;->saveAreaInfo(ILjava/lang/String;)V
     invoke-static {v4, v3, v5}, Lcom/android/settings/deviceinfo/SimStatus;->access$000(Lcom/android/settings/deviceinfo/SimStatus;ILjava/lang/String;)V
 
-    .line 140
     iget-object v4, p0, Lcom/android/settings/deviceinfo/SimStatus$1;->this$0:Lcom/android/settings/deviceinfo/SimStatus;
 
     # getter for: Lcom/android/settings/deviceinfo/SimStatus;->mSir:Landroid/telephony/SubscriptionInfo;
@@ -133,7 +121,6 @@
 
     if-ne v4, v3, :cond_0
 
-    .line 141
     iget-object v4, p0, Lcom/android/settings/deviceinfo/SimStatus$1;->this$0:Lcom/android/settings/deviceinfo/SimStatus;
 
     # invokes: Lcom/android/settings/deviceinfo/SimStatus;->updateAreaInfo()V

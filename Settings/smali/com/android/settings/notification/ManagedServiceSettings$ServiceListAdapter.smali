@@ -37,13 +37,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 346
     iput-object p1, p0, Lcom/android/settings/notification/ManagedServiceSettings$ServiceListAdapter;->this$0:Lcom/android/settings/notification/ManagedServiceSettings;
 
-    .line 347
     invoke-direct {p0, p2, v0, v0}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;II)V
 
-    .line 348
     invoke-virtual {p1}, Lcom/android/settings/notification/ManagedServiceSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -58,7 +55,6 @@
 
     iput-object v0, p0, Lcom/android/settings/notification/ManagedServiceSettings$ServiceListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 350
     return-void
 .end method
 
@@ -70,14 +66,12 @@
     .param p2, "position"    # I
 
     .prologue
-    .line 383
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/settings/notification/ManagedServiceSettings$ViewHolder;
 
-    .line 384
     .local v1, "vh":Lcom/android/settings/notification/ManagedServiceSettings$ViewHolder;
     invoke-virtual {p0, p2}, Lcom/android/settings/notification/ManagedServiceSettings$ServiceListAdapter;->getItem(I)Ljava/lang/Object;
 
@@ -85,7 +79,6 @@
 
     check-cast v0, Landroid/content/pm/ServiceInfo;
 
-    .line 386
     .local v0, "info":Landroid/content/pm/ServiceInfo;
     iget-object v2, v1, Lcom/android/settings/notification/ManagedServiceSettings$ViewHolder;->icon:Landroid/widget/ImageView;
 
@@ -102,7 +95,6 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 387
     iget-object v2, v1, Lcom/android/settings/notification/ManagedServiceSettings$ViewHolder;->name:Landroid/widget/TextView;
 
     iget-object v3, p0, Lcom/android/settings/notification/ManagedServiceSettings$ServiceListAdapter;->this$0:Lcom/android/settings/notification/ManagedServiceSettings;
@@ -118,14 +110,12 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 392
     iget-object v2, v1, Lcom/android/settings/notification/ManagedServiceSettings$ViewHolder;->description:Landroid/widget/TextView;
 
     const/16 v3, 0x8
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 394
     iget-object v2, v1, Lcom/android/settings/notification/ManagedServiceSettings$ViewHolder;->checkbox:Landroid/widget/CheckBox;
 
     iget-object v3, p0, Lcom/android/settings/notification/ManagedServiceSettings$ServiceListAdapter;->this$0:Lcom/android/settings/notification/ManagedServiceSettings;
@@ -137,7 +127,6 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 395
     return-void
 .end method
 
@@ -146,7 +135,6 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 357
     int-to-long v0, p1
 
     return-wide v0
@@ -159,23 +147,18 @@
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 362
     if-nez p2, :cond_0
 
-    .line 363
     invoke-virtual {p0, p3}, Lcom/android/settings/notification/ManagedServiceSettings$ServiceListAdapter;->newView(Landroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v0
 
-    .line 367
     .local v0, "v":Landroid/view/View;
     :goto_0
     invoke-virtual {p0, v0, p1}, Lcom/android/settings/notification/ManagedServiceSettings$ServiceListAdapter;->bindView(Landroid/view/View;I)V
 
-    .line 368
     return-object v0
 
-    .line 365
     .end local v0    # "v":Landroid/view/View;
     :cond_0
     move-object v0, p2
@@ -188,7 +171,6 @@
     .locals 1
 
     .prologue
-    .line 353
     const/4 v0, 0x1
 
     return v0
@@ -199,7 +181,6 @@
     .param p1, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 372
     iget-object v2, p0, Lcom/android/settings/notification/ManagedServiceSettings$ServiceListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
     const v3, 0x7f04005f
@@ -210,7 +191,6 @@
 
     move-result-object v1
 
-    .line 373
     .local v1, "v":Landroid/view/View;
     new-instance v0, Lcom/android/settings/notification/ManagedServiceSettings$ViewHolder;
 
@@ -218,7 +198,6 @@
 
     invoke-direct {v0, v2}, Lcom/android/settings/notification/ManagedServiceSettings$ViewHolder;-><init>(Lcom/android/settings/notification/ManagedServiceSettings$1;)V
 
-    .line 374
     .local v0, "h":Lcom/android/settings/notification/ManagedServiceSettings$ViewHolder;
     const v2, 0x7f0f0034
 
@@ -230,7 +209,6 @@
 
     iput-object v2, v0, Lcom/android/settings/notification/ManagedServiceSettings$ViewHolder;->icon:Landroid/widget/ImageView;
 
-    .line 375
     const v2, 0x7f0f0029
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -241,7 +219,6 @@
 
     iput-object v2, v0, Lcom/android/settings/notification/ManagedServiceSettings$ViewHolder;->name:Landroid/widget/TextView;
 
-    .line 376
     const v2, 0x7f0f0099
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -252,7 +229,6 @@
 
     iput-object v2, v0, Lcom/android/settings/notification/ManagedServiceSettings$ViewHolder;->checkbox:Landroid/widget/CheckBox;
 
-    .line 377
     const v2, 0x7f0f0098
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -263,9 +239,7 @@
 
     iput-object v2, v0, Lcom/android/settings/notification/ManagedServiceSettings$ViewHolder;->description:Landroid/widget/TextView;
 
-    .line 378
     invoke-virtual {v1, v0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 379
     return-object v1
 .end method

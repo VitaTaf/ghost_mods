@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 190
     iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothEnabler$3;->this$0:Lcom/android/settings/bluetooth/BluetoothEnabler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,13 +43,11 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 193
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEnabler$3;->this$0:Lcom/android/settings/bluetooth/BluetoothEnabler;
 
     # setter for: Lcom/android/settings/bluetooth/BluetoothEnabler;->mDlgBtnClicked:Z
     invoke-static {v0, v2}, Lcom/android/settings/bluetooth/BluetoothEnabler;->access$102(Lcom/android/settings/bluetooth/BluetoothEnabler;Z)Z
 
-    .line 194
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEnabler$3;->this$0:Lcom/android/settings/bluetooth/BluetoothEnabler;
 
     # getter for: Lcom/android/settings/bluetooth/BluetoothEnabler;->mSwitch:Landroid/widget/Switch;
@@ -62,7 +59,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Switch;->setChecked(Z)V
 
-    .line 195
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEnabler$3;->this$0:Lcom/android/settings/bluetooth/BluetoothEnabler;
 
     # getter for: Lcom/android/settings/bluetooth/BluetoothEnabler;->mSwitch:Landroid/widget/Switch;
@@ -72,6 +68,5 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/Switch;->setEnabled(Z)V
 
-    .line 196
     return-void
 .end method

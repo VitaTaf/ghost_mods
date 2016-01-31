@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 257
     iput-object p1, p0, Lcom/android/settings/DeviceAdminAdd$1;->this$0:Lcom/android/settings/DeviceAdminAdd;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +40,9 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 259
     iget-object v0, p0, Lcom/android/settings/DeviceAdminAdd$1;->this$0:Lcom/android/settings/DeviceAdminAdd;
 
     invoke-virtual {v0, p1}, Lcom/android/settings/DeviceAdminAdd;->toggleMessageEllipsis(Landroid/view/View;)V
 
-    .line 260
     return-void
 .end method

@@ -44,12 +44,10 @@
     .locals 2
 
     .prologue
-    .line 421
     iput-object p1, p0, Lcom/android/settings/TrustedCredentialsSettings$AdapterData$AliasLoader;->this$1:Lcom/android/settings/TrustedCredentialsSettings$AdapterData;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 422
     iget-object v0, p1, Lcom/android/settings/TrustedCredentialsSettings$AdapterData;->this$0:Lcom/android/settings/TrustedCredentialsSettings;
 
     invoke-virtual {v0}, Lcom/android/settings/TrustedCredentialsSettings;->getActivity()Landroid/app/Activity;
@@ -58,7 +56,6 @@
 
     iput-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings$AdapterData$AliasLoader;->mContext:Landroid/content/Context;
 
-    .line 423
     iget-object v0, p1, Lcom/android/settings/TrustedCredentialsSettings$AdapterData;->this$0:Lcom/android/settings/TrustedCredentialsSettings;
 
     # getter for: Lcom/android/settings/TrustedCredentialsSettings;->mAliasLoaders:Ljava/util/HashMap;
@@ -73,7 +70,6 @@
 
     invoke-virtual {v0, v1, p0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 424
     return-void
 .end method
 
@@ -97,12 +93,10 @@
     .end annotation
 
     .prologue
-    .line 434
     new-instance v14, Landroid/util/SparseArray;
 
     invoke-direct {v14}, Landroid/util/SparseArray;-><init>()V
 
-    .line 437
     .local v14, "certHoldersByProfile":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/List<Lcom/android/settings/TrustedCredentialsSettings$CertHolder;>;>;"
     :try_start_0
     move-object/from16 v0, p0
@@ -120,13 +114,11 @@
 
     move-result-object v23
 
-    .line 438
     .local v23, "profiles":Ljava/util/List;, "Ljava/util/List<Landroid/os/UserHandle;>;"
     invoke-interface/range {v23 .. v23}, Ljava/util/List;->size()I
 
     move-result v21
 
-    .line 441
     .local v21, "n":I
     new-instance v12, Landroid/util/SparseArray;
 
@@ -134,15 +126,12 @@
 
     invoke-direct {v12, v0}, Landroid/util/SparseArray;-><init>(I)V
 
-    .line 443
     .local v12, "aliasesByProfileId":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/List<Lcom/android/internal/util/ParcelableString;>;>;"
     const/16 v20, 0x0
 
-    .line 444
     .local v20, "max":I
     const/16 v24, 0x0
 
-    .line 445
     .local v24, "progress":I
     const/16 v17, 0x0
 
@@ -154,7 +143,6 @@
 
     if-ge v0, v1, :cond_2
 
-    .line 446
     move-object/from16 v0, v23
 
     move/from16 v1, v17
@@ -165,13 +153,11 @@
 
     check-cast v22, Landroid/os/UserHandle;
 
-    .line 447
     .local v22, "profile":Landroid/os/UserHandle;
     invoke-virtual/range {v22 .. v22}, Landroid/os/UserHandle;->getIdentifier()I
 
     move-result v8
 
-    .line 448
     .local v8, "profileId":I
     move-object/from16 v0, p0
 
@@ -183,7 +169,6 @@
 
     move-result-object v19
 
-    .line 451
     .local v19, "keyChainConnection":Landroid/security/KeyChain$KeyChainConnection;
     move-object/from16 v0, p0
 
@@ -200,12 +185,10 @@
 
     invoke-virtual {v2, v8, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 452
     invoke-virtual/range {v19 .. v19}, Landroid/security/KeyChain$KeyChainConnection;->getService()Landroid/security/IKeyChainService;
 
     move-result-object v3
 
-    .line 453
     .local v3, "service":Landroid/security/IKeyChainService;
     move-object/from16 v0, p0
 
@@ -221,7 +204,6 @@
 
     move-result-object v11
 
-    .line 454
     .local v11, "aliases":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/util/ParcelableString;>;"
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/TrustedCredentialsSettings$AdapterData$AliasLoader;->isCancelled()Z
 
@@ -229,13 +211,11 @@
 
     if-eqz v2, :cond_1
 
-    .line 455
     new-instance v14, Landroid/util/SparseArray;
 
     .end local v14    # "certHoldersByProfile":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/List<Lcom/android/settings/TrustedCredentialsSettings$CertHolder;>;>;"
     invoke-direct {v14}, Landroid/util/SparseArray;-><init>()V
 
-    .line 489
     .end local v3    # "service":Landroid/security/IKeyChainService;
     .end local v8    # "profileId":I
     .end local v11    # "aliases":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/util/ParcelableString;>;"
@@ -251,7 +231,6 @@
     :goto_1
     return-object v14
 
-    .line 457
     .restart local v3    # "service":Landroid/security/IKeyChainService;
     .restart local v8    # "profileId":I
     .restart local v11    # "aliases":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/util/ParcelableString;>;"
@@ -271,15 +250,12 @@
 
     add-int v20, v20, v2
 
-    .line 458
     invoke-virtual {v12, v8, v11}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 445
     add-int/lit8 v17, v17, 0x1
 
     goto :goto_0
 
-    .line 460
     .end local v3    # "service":Landroid/security/IKeyChainService;
     .end local v8    # "profileId":I
     .end local v11    # "aliases":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/util/ParcelableString;>;"
@@ -295,7 +271,6 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 461
     move-object/from16 v0, v23
 
     move/from16 v1, v17
@@ -306,13 +281,11 @@
 
     check-cast v22, Landroid/os/UserHandle;
 
-    .line 462
     .restart local v22    # "profile":Landroid/os/UserHandle;
     invoke-virtual/range {v22 .. v22}, Landroid/os/UserHandle;->getIdentifier()I
 
     move-result v8
 
-    .line 463
     .restart local v8    # "profileId":I
     invoke-virtual {v12, v8}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
@@ -320,7 +293,6 @@
 
     check-cast v11, Ljava/util/List;
 
-    .line 464
     .restart local v11    # "aliases":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/util/ParcelableString;>;"
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/TrustedCredentialsSettings$AdapterData$AliasLoader;->isCancelled()Z
 
@@ -328,7 +300,6 @@
 
     if-eqz v2, :cond_3
 
-    .line 465
     new-instance v14, Landroid/util/SparseArray;
 
     .end local v14    # "certHoldersByProfile":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/List<Lcom/android/settings/TrustedCredentialsSettings$CertHolder;>;>;"
@@ -339,7 +310,6 @@
 
     goto :goto_1
 
-    .line 484
     .end local v8    # "profileId":I
     .end local v11    # "aliases":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/util/ParcelableString;>;"
     .end local v12    # "aliasesByProfileId":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/List<Lcom/android/internal/util/ParcelableString;>;>;"
@@ -352,7 +322,6 @@
     :catch_0
     move-exception v15
 
-    .line 485
     .local v15, "e":Landroid/os/RemoteException;
     const-string v2, "TrustedCredentialsSettings"
 
@@ -360,14 +329,12 @@
 
     invoke-static {v2, v4, v15}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 486
     new-instance v14, Landroid/util/SparseArray;
 
     invoke-direct {v14}, Landroid/util/SparseArray;-><init>()V
 
     goto :goto_1
 
-    .line 467
     .end local v15    # "e":Landroid/os/RemoteException;
     .restart local v8    # "profileId":I
     .restart local v11    # "aliases":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/util/ParcelableString;>;"
@@ -402,7 +369,6 @@
 
     move-result-object v3
 
-    .line 469
     .restart local v3    # "service":Landroid/security/IKeyChainService;
     new-instance v13, Ljava/util/ArrayList;
 
@@ -410,13 +376,11 @@
 
     invoke-direct {v13, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 470
     .local v13, "certHolders":Ljava/util/List;, "Ljava/util/List<Lcom/android/settings/TrustedCredentialsSettings$CertHolder;>;"
     invoke-interface {v11}, Ljava/util/List;->size()I
 
     move-result v10
 
-    .line 471
     .local v10, "aliasMax":I
     const/16 v18, 0x0
 
@@ -426,7 +390,6 @@
 
     if-ge v0, v10, :cond_4
 
-    .line 472
     move/from16 v0, v18
 
     invoke-interface {v11, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -437,7 +400,6 @@
 
     iget-object v6, v2, Lcom/android/internal/util/ParcelableString;->string:Ljava/lang/String;
 
-    .line 473
     .local v6, "alias":Ljava/lang/String;
     const/4 v2, 0x1
 
@@ -445,13 +407,11 @@
 
     move-result-object v16
 
-    .line 475
     .local v16, "encodedCertificate":[B
     invoke-static/range {v16 .. v16}, Landroid/security/KeyChain;->toCertificate([B)Ljava/security/cert/X509Certificate;
 
     move-result-object v7
 
-    .line 476
     .local v7, "cert":Ljava/security/cert/X509Certificate;
     new-instance v2, Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
 
@@ -479,7 +439,6 @@
 
     invoke-interface {v13, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 478
     const/4 v2, 0x2
 
     new-array v2, v2, [Ljava/lang/Integer;
@@ -506,30 +465,25 @@
 
     invoke-virtual {v0, v2}, Lcom/android/settings/TrustedCredentialsSettings$AdapterData$AliasLoader;->publishProgress([Ljava/lang/Object;)V
 
-    .line 471
     add-int/lit8 v18, v18, 0x1
 
     goto :goto_3
 
-    .line 480
     .end local v6    # "alias":Ljava/lang/String;
     .end local v7    # "cert":Ljava/security/cert/X509Certificate;
     .end local v16    # "encodedCertificate":[B
     :cond_4
     invoke-static {v13}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
-    .line 481
     invoke-virtual {v14, v8, v13}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 460
     add-int/lit8 v17, v17, 0x1
 
     goto/16 :goto_2
 
-    .line 487
     .end local v3    # "service":Landroid/security/IKeyChainService;
     .end local v8    # "profileId":I
     .end local v10    # "aliasMax":I
@@ -547,7 +501,6 @@
     :catch_1
     move-exception v15
 
-    .line 488
     .local v15, "e":Ljava/lang/InterruptedException;
     const-string v2, "TrustedCredentialsSettings"
 
@@ -555,7 +508,6 @@
 
     invoke-static {v2, v4, v15}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 489
     new-instance v14, Landroid/util/SparseArray;
 
     invoke-direct {v14}, Landroid/util/SparseArray;-><init>()V
@@ -568,7 +520,6 @@
     .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
-    .line 416
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1    # "x0":[Ljava/lang/Object;
@@ -597,7 +548,6 @@
     .local p1, "certHolders":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/List<Lcom/android/settings/TrustedCredentialsSettings$CertHolder;>;>;"
     const/4 v5, 0x0
 
-    .line 501
     iget-object v2, p0, Lcom/android/settings/TrustedCredentialsSettings$AdapterData$AliasLoader;->this$1:Lcom/android/settings/TrustedCredentialsSettings$AdapterData;
 
     # getter for: Lcom/android/settings/TrustedCredentialsSettings$AdapterData;->mCertHoldersByUserId:Landroid/util/SparseArray;
@@ -607,12 +557,10 @@
 
     invoke-virtual {v2}, Landroid/util/SparseArray;->clear()V
 
-    .line 502
     invoke-virtual {p1}, Landroid/util/SparseArray;->size()I
 
     move-result v1
 
-    .line 503
     .local v1, "n":I
     const/4 v0, 0x0
 
@@ -620,7 +568,6 @@
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 504
     iget-object v2, p0, Lcom/android/settings/TrustedCredentialsSettings$AdapterData$AliasLoader;->this$1:Lcom/android/settings/TrustedCredentialsSettings$AdapterData;
 
     # getter for: Lcom/android/settings/TrustedCredentialsSettings$AdapterData;->mCertHoldersByUserId:Landroid/util/SparseArray;
@@ -638,12 +585,10 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 503
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 506
     :cond_0
     iget-object v2, p0, Lcom/android/settings/TrustedCredentialsSettings$AdapterData$AliasLoader;->this$1:Lcom/android/settings/TrustedCredentialsSettings$AdapterData;
 
@@ -654,24 +599,20 @@
 
     invoke-interface {v2}, Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapterCommons;->notifyDataSetChanged()V
 
-    .line 507
     iget-object v2, p0, Lcom/android/settings/TrustedCredentialsSettings$AdapterData$AliasLoader;->mProgressBar:Landroid/widget/ProgressBar;
 
     const/16 v3, 0x8
 
     invoke-virtual {v2, v3}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 508
     iget-object v2, p0, Lcom/android/settings/TrustedCredentialsSettings$AdapterData$AliasLoader;->mList:Landroid/view/View;
 
     invoke-virtual {v2, v5}, Landroid/view/View;->setVisibility(I)V
 
-    .line 509
     iget-object v2, p0, Lcom/android/settings/TrustedCredentialsSettings$AdapterData$AliasLoader;->mProgressBar:Landroid/widget/ProgressBar;
 
     invoke-virtual {v2, v5}, Landroid/widget/ProgressBar;->setProgress(I)V
 
-    .line 510
     iget-object v2, p0, Lcom/android/settings/TrustedCredentialsSettings$AdapterData$AliasLoader;->this$1:Lcom/android/settings/TrustedCredentialsSettings$AdapterData;
 
     iget-object v2, v2, Lcom/android/settings/TrustedCredentialsSettings$AdapterData;->this$0:Lcom/android/settings/TrustedCredentialsSettings;
@@ -690,7 +631,6 @@
 
     invoke-virtual {v2, v3}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 511
     return-void
 .end method
 
@@ -699,7 +639,6 @@
     .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
-    .line 416
     check-cast p1, Landroid/util/SparseArray;
 
     .end local p1    # "x0":Ljava/lang/Object;
@@ -712,7 +651,6 @@
     .locals 3
 
     .prologue
-    .line 427
     iget-object v1, p0, Lcom/android/settings/TrustedCredentialsSettings$AdapterData$AliasLoader;->this$1:Lcom/android/settings/TrustedCredentialsSettings$AdapterData;
 
     iget-object v1, v1, Lcom/android/settings/TrustedCredentialsSettings$AdapterData;->this$0:Lcom/android/settings/TrustedCredentialsSettings;
@@ -726,7 +664,6 @@
 
     move-result-object v0
 
-    .line 428
     .local v0, "content":Landroid/view/View;
     iget-object v1, p0, Lcom/android/settings/TrustedCredentialsSettings$AdapterData$AliasLoader;->this$1:Lcom/android/settings/TrustedCredentialsSettings$AdapterData;
 
@@ -748,7 +685,6 @@
 
     iput-object v1, p0, Lcom/android/settings/TrustedCredentialsSettings$AdapterData$AliasLoader;->mProgressBar:Landroid/widget/ProgressBar;
 
-    .line 429
     iget-object v1, p0, Lcom/android/settings/TrustedCredentialsSettings$AdapterData$AliasLoader;->this$1:Lcom/android/settings/TrustedCredentialsSettings$AdapterData;
 
     # getter for: Lcom/android/settings/TrustedCredentialsSettings$AdapterData;->mAdapter:Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapterCommons;
@@ -773,21 +709,18 @@
 
     iput-object v1, p0, Lcom/android/settings/TrustedCredentialsSettings$AdapterData$AliasLoader;->mList:Landroid/view/View;
 
-    .line 430
     iget-object v1, p0, Lcom/android/settings/TrustedCredentialsSettings$AdapterData$AliasLoader;->mProgressBar:Landroid/widget/ProgressBar;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 431
     iget-object v1, p0, Lcom/android/settings/TrustedCredentialsSettings$AdapterData$AliasLoader;->mList:Landroid/view/View;
 
     const/16 v2, 0x8
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 432
     return-void
 .end method
 
@@ -796,7 +729,6 @@
     .param p1, "progressAndMax"    # [Ljava/lang/Integer;
 
     .prologue
-    .line 493
     const/4 v2, 0x0
 
     aget-object v2, p1, v2
@@ -805,7 +737,6 @@
 
     move-result v1
 
-    .line 494
     .local v1, "progress":I
     const/4 v2, 0x1
 
@@ -815,7 +746,6 @@
 
     move-result v0
 
-    .line 495
     .local v0, "max":I
     iget-object v2, p0, Lcom/android/settings/TrustedCredentialsSettings$AdapterData$AliasLoader;->mProgressBar:Landroid/widget/ProgressBar;
 
@@ -825,18 +755,15 @@
 
     if-eq v0, v2, :cond_0
 
-    .line 496
     iget-object v2, p0, Lcom/android/settings/TrustedCredentialsSettings$AdapterData$AliasLoader;->mProgressBar:Landroid/widget/ProgressBar;
 
     invoke-virtual {v2, v0}, Landroid/widget/ProgressBar;->setMax(I)V
 
-    .line 498
     :cond_0
     iget-object v2, p0, Lcom/android/settings/TrustedCredentialsSettings$AdapterData$AliasLoader;->mProgressBar:Landroid/widget/ProgressBar;
 
     invoke-virtual {v2, v1}, Landroid/widget/ProgressBar;->setProgress(I)V
 
-    .line 499
     return-void
 .end method
 
@@ -845,7 +772,6 @@
     .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
-    .line 416
     check-cast p1, [Ljava/lang/Integer;
 
     .end local p1    # "x0":[Ljava/lang/Object;

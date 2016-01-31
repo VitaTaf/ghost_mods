@@ -24,7 +24,6 @@
     .locals 0
 
     .prologue
-    .line 36
     invoke-direct {p0}, Landroid/app/Fragment;-><init>()V
 
     return-void
@@ -35,7 +34,6 @@
     .param p0, "x0"    # Lcom/android/settings/OwnerInfoSettings;
 
     .prologue
-    .line 36
     iget-object v0, p0, Lcom/android/settings/OwnerInfoSettings;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     return-object v0
@@ -46,7 +44,6 @@
     .param p0, "x0"    # Lcom/android/settings/OwnerInfoSettings;
 
     .prologue
-    .line 36
     iget-object v0, p0, Lcom/android/settings/OwnerInfoSettings;->mOwnerInfo:Landroid/widget/EditText;
 
     return-object v0
@@ -56,7 +53,6 @@
     .locals 4
 
     .prologue
-    .line 68
     iget-object v2, p0, Lcom/android/settings/OwnerInfoSettings;->mView:Landroid/view/View;
 
     const v3, 0x7f0f00fc
@@ -69,19 +65,16 @@
 
     iput-object v2, p0, Lcom/android/settings/OwnerInfoSettings;->mNickname:Landroid/widget/EditText;
 
-    .line 69
     iget-boolean v2, p0, Lcom/android/settings/OwnerInfoSettings;->mShowNickname:Z
 
     if-nez v2, :cond_2
 
-    .line 70
     iget-object v2, p0, Lcom/android/settings/OwnerInfoSettings;->mNickname:Landroid/widget/EditText;
 
     const/16 v3, 0x8
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setVisibility(I)V
 
-    .line 76
     :goto_0
     iget-object v2, p0, Lcom/android/settings/OwnerInfoSettings;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
@@ -89,7 +82,6 @@
 
     move-result v0
 
-    .line 78
     .local v0, "enabled":Z
     iget-object v2, p0, Lcom/android/settings/OwnerInfoSettings;->mView:Landroid/view/View;
 
@@ -103,19 +95,16 @@
 
     iput-object v2, p0, Lcom/android/settings/OwnerInfoSettings;->mCheckbox:Landroid/widget/CheckBox;
 
-    .line 79
     iget-object v2, p0, Lcom/android/settings/OwnerInfoSettings;->mCheckbox:Landroid/widget/CheckBox;
 
     invoke-virtual {v2, v0}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 80
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 81
     invoke-virtual {p0}, Lcom/android/settings/OwnerInfoSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v2
@@ -130,14 +119,12 @@
 
     if-eqz v2, :cond_3
 
-    .line 82
     iget-object v2, p0, Lcom/android/settings/OwnerInfoSettings;->mCheckbox:Landroid/widget/CheckBox;
 
     const v3, 0x7f0901b9
 
     invoke-virtual {v2, v3}, Landroid/widget/CheckBox;->setText(I)V
 
-    .line 87
     :cond_0
     :goto_1
     iget-object v2, p0, Lcom/android/settings/OwnerInfoSettings;->mCheckbox:Landroid/widget/CheckBox;
@@ -148,7 +135,6 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    .line 94
     iget-object v2, p0, Lcom/android/settings/OwnerInfoSettings;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     iget v3, p0, Lcom/android/settings/OwnerInfoSettings;->mUserId:I
@@ -157,7 +143,6 @@
 
     move-result-object v1
 
-    .line 96
     .local v1, "info":Ljava/lang/String;
     iget-object v2, p0, Lcom/android/settings/OwnerInfoSettings;->mView:Landroid/view/View;
 
@@ -171,28 +156,23 @@
 
     iput-object v2, p0, Lcom/android/settings/OwnerInfoSettings;->mOwnerInfo:Landroid/widget/EditText;
 
-    .line 97
     iget-object v2, p0, Lcom/android/settings/OwnerInfoSettings;->mOwnerInfo:Landroid/widget/EditText;
 
     invoke-virtual {v2, v0}, Landroid/widget/EditText;->setEnabled(Z)V
 
-    .line 98
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-nez v2, :cond_1
 
-    .line 99
     iget-object v2, p0, Lcom/android/settings/OwnerInfoSettings;->mOwnerInfo:Landroid/widget/EditText;
 
     invoke-virtual {v2, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 101
     :cond_1
     return-void
 
-    .line 72
     .end local v0    # "enabled":Z
     .end local v1    # "info":Ljava/lang/String;
     :cond_2
@@ -212,7 +192,6 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 73
     iget-object v2, p0, Lcom/android/settings/OwnerInfoSettings;->mNickname:Landroid/widget/EditText;
 
     const/4 v3, 0x1
@@ -221,7 +200,6 @@
 
     goto :goto_0
 
-    .line 84
     .restart local v0    # "enabled":Z
     :cond_3
     iget-object v2, p0, Lcom/android/settings/OwnerInfoSettings;->mCheckbox:Landroid/widget/CheckBox;
@@ -240,15 +218,12 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 50
     invoke-super {p0, p1}, Landroid/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 51
     invoke-virtual {p0}, Lcom/android/settings/OwnerInfoSettings;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 52
     .local v0, "args":Landroid/os/Bundle;
     if-eqz v0, :cond_0
 
@@ -260,7 +235,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 53
     const-string v1, "show_nickname"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -269,7 +243,6 @@
 
     iput-boolean v1, p0, Lcom/android/settings/OwnerInfoSettings;->mShowNickname:Z
 
-    .line 55
     :cond_0
     return-void
 .end method
@@ -281,7 +254,6 @@
     .param p3, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 60
     const v0, 0x7f04006f
 
     const/4 v1, 0x0
@@ -292,14 +264,12 @@
 
     iput-object v0, p0, Lcom/android/settings/OwnerInfoSettings;->mView:Landroid/view/View;
 
-    .line 61
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/settings/OwnerInfoSettings;->mUserId:I
 
-    .line 62
     new-instance v0, Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {p0}, Lcom/android/settings/OwnerInfoSettings;->getActivity()Landroid/app/Activity;
@@ -310,10 +280,8 @@
 
     iput-object v0, p0, Lcom/android/settings/OwnerInfoSettings;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    .line 63
     invoke-direct {p0}, Lcom/android/settings/OwnerInfoSettings;->initView()V
 
-    .line 64
     iget-object v0, p0, Lcom/android/settings/OwnerInfoSettings;->mView:Landroid/view/View;
 
     return-object v0
@@ -323,13 +291,10 @@
     .locals 0
 
     .prologue
-    .line 105
     invoke-super {p0}, Landroid/app/Fragment;->onPause()V
 
-    .line 106
     invoke-virtual {p0}, Lcom/android/settings/OwnerInfoSettings;->saveChanges()V
 
-    .line 107
     return-void
 .end method
 
@@ -337,7 +302,6 @@
     .locals 6
 
     .prologue
-    .line 110
     iget-object v3, p0, Lcom/android/settings/OwnerInfoSettings;->mOwnerInfo:Landroid/widget/EditText;
 
     invoke-virtual {v3}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
@@ -348,7 +312,6 @@
 
     move-result-object v0
 
-    .line 111
     .local v0, "info":Ljava/lang/String;
     iget-object v3, p0, Lcom/android/settings/OwnerInfoSettings;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
@@ -356,12 +319,10 @@
 
     invoke-virtual {v3, v0, v4}, Lcom/android/internal/widget/LockPatternUtils;->setOwnerInfo(Ljava/lang/String;I)V
 
-    .line 112
     iget-boolean v3, p0, Lcom/android/settings/OwnerInfoSettings;->mShowNickname:Z
 
     if-eqz v3, :cond_0
 
-    .line 113
     invoke-virtual {p0}, Lcom/android/settings/OwnerInfoSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v3
@@ -374,7 +335,6 @@
 
     move-result-object v2
 
-    .line 114
     .local v2, "oldName":Ljava/lang/String;
     iget-object v3, p0, Lcom/android/settings/OwnerInfoSettings;->mNickname:Landroid/widget/EditText;
 
@@ -382,7 +342,6 @@
 
     move-result-object v1
 
-    .line 115
     .local v1, "newName":Ljava/lang/CharSequence;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -396,7 +355,6 @@
 
     if-nez v3, :cond_0
 
-    .line 116
     invoke-virtual {p0}, Lcom/android/settings/OwnerInfoSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v3
@@ -415,7 +373,6 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/os/UserManager;->setUserName(ILjava/lang/String;)V
 
-    .line 120
     .end local v1    # "newName":Ljava/lang/CharSequence;
     .end local v2    # "oldName":Ljava/lang/String;
     :cond_0

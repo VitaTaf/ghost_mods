@@ -32,7 +32,6 @@
     .locals 0
 
     .prologue
-    .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -50,7 +49,6 @@
 
     const/4 v1, -0x1
 
-    .line 78
     iget-wide v2, p1, Lcom/android/settings/applications/ProcStatsEntry;->mWeight:J
 
     iget-wide v4, p2, Lcom/android/settings/applications/ProcStatsEntry;->mWeight:J
@@ -59,12 +57,10 @@
 
     if-gez v2, :cond_1
 
-    .line 87
     :cond_0
     :goto_0
     return v0
 
-    .line 80
     :cond_1
     iget-wide v2, p1, Lcom/android/settings/applications/ProcStatsEntry;->mWeight:J
 
@@ -76,10 +72,8 @@
 
     move v0, v1
 
-    .line 81
     goto :goto_0
 
-    .line 82
     :cond_2
     iget-wide v2, p1, Lcom/android/settings/applications/ProcStatsEntry;->mDuration:J
 
@@ -89,7 +83,6 @@
 
     if-ltz v2, :cond_0
 
-    .line 84
     iget-wide v2, p1, Lcom/android/settings/applications/ProcStatsEntry;->mDuration:J
 
     iget-wide v4, p2, Lcom/android/settings/applications/ProcStatsEntry;->mDuration:J
@@ -100,10 +93,8 @@
 
     move v0, v1
 
-    .line 85
     goto :goto_0
 
-    .line 87
     :cond_3
     const/4 v0, 0x0
 
@@ -116,7 +107,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 75
     check-cast p1, Lcom/android/settings/applications/ProcStatsEntry;
 
     .end local p1    # "x0":Ljava/lang/Object;

@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 93
     iput-object p1, p0, Lcom/android/settings/BandMode$1;->this$0:Lcom/android/settings/BandMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +43,6 @@
     .param p4, "id"    # J
 
     .prologue
-    .line 97
     iget-object v1, p0, Lcom/android/settings/BandMode$1;->this$0:Lcom/android/settings/BandMode;
 
     invoke-virtual {v1}, Lcom/android/settings/BandMode;->getWindow()Landroid/view/Window;
@@ -57,7 +55,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/view/Window;->setFeatureInt(II)V
 
-    .line 101
     iget-object v2, p0, Lcom/android/settings/BandMode$1;->this$0:Lcom/android/settings/BandMode;
 
     invoke-virtual {p1}, Landroid/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;
@@ -73,7 +70,6 @@
     # setter for: Lcom/android/settings/BandMode;->mTargetBand:Lcom/android/settings/BandMode$BandListItem;
     invoke-static {v2, v1}, Lcom/android/settings/BandMode;->access$002(Lcom/android/settings/BandMode;Lcom/android/settings/BandMode$BandListItem;)Lcom/android/settings/BandMode$BandListItem;
 
-    .line 105
     iget-object v1, p0, Lcom/android/settings/BandMode$1;->this$0:Lcom/android/settings/BandMode;
 
     # getter for: Lcom/android/settings/BandMode;->mHandler:Landroid/os/Handler;
@@ -87,7 +83,6 @@
 
     move-result-object v0
 
-    .line 107
     .local v0, "msg":Landroid/os/Message;
     iget-object v1, p0, Lcom/android/settings/BandMode$1;->this$0:Lcom/android/settings/BandMode;
 
@@ -109,6 +104,5 @@
 
     invoke-interface {v1, v2, v0}, Lcom/android/internal/telephony/Phone;->setBandMode(ILandroid/os/Message;)V
 
-    .line 108
     return-void
 .end method

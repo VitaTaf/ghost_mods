@@ -24,18 +24,14 @@
     .param p1, "bm"    # I
 
     .prologue
-    .line 114
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 112
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/settings/BandMode$BandListItem;->mBandMode:I
 
-    .line 115
     iput p1, p0, Lcom/android/settings/BandMode$BandListItem;->mBandMode:I
 
-    .line 116
     return-void
 .end method
 
@@ -45,7 +41,6 @@
     .locals 1
 
     .prologue
-    .line 119
     iget v0, p0, Lcom/android/settings/BandMode$BandListItem;->mBandMode:I
 
     return v0
@@ -55,7 +50,6 @@
     .locals 2
 
     .prologue
-    .line 123
     iget v0, p0, Lcom/android/settings/BandMode$BandListItem;->mBandMode:I
 
     # getter for: Lcom/android/settings/BandMode;->BAND_NAMES:[Ljava/lang/String;
@@ -87,7 +81,6 @@
 
     move-result-object v0
 
-    .line 124
     :goto_0
     return-object v0
 

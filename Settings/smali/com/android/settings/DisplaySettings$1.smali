@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 192
     iput-object p1, p0, Lcom/android/settings/DisplaySettings$1;->this$0:Lcom/android/settings/DisplaySettings;
 
     iput-object p2, p0, Lcom/android/settings/DisplaySettings$1;->val$activity:Landroid/app/Activity;
@@ -46,7 +45,6 @@
     .param p2, "value"    # Ljava/lang/Object;
 
     .prologue
-    .line 195
     iget-object v0, p0, Lcom/android/settings/DisplaySettings$1;->val$activity:Landroid/app/Activity;
 
     check-cast p2, Ljava/lang/Boolean;
@@ -58,7 +56,6 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/view/RotationPolicy;->setRotationLock(Landroid/content/Context;Z)V
 
-    .line 196
     const/4 v0, 0x1
 
     return v0

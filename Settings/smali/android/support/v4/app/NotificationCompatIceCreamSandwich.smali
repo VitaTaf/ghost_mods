@@ -21,7 +21,6 @@
     .param p12, "progressIndeterminate"    # Z
 
     .prologue
-    .line 31
     new-instance v5, Landroid/app/Notification$Builder;
 
     invoke-direct {v5, p0}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
@@ -180,7 +179,6 @@
 
     move-result-object v4
 
-    .line 54
     .local v4, "b":Landroid/app/Notification$Builder;
     invoke-virtual {v4}, Landroid/app/Notification$Builder;->getNotification()Landroid/app/Notification;
 
@@ -188,7 +186,6 @@
 
     return-object v5
 
-    .line 31
     .end local v4    # "b":Landroid/app/Notification$Builder;
     :cond_0
     const/4 v5, 0x0

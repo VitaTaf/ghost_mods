@@ -24,7 +24,6 @@
     .param p5, "x4"    # [I
 
     .prologue
-    .line 69
     invoke-direct/range {p0 .. p5}, Lcom/android/settings/notification/SettingPref;-><init>(ILjava/lang/String;Ljava/lang/String;I[I)V
 
     return-void
@@ -37,7 +36,6 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 72
     invoke-static {p1}, Lcom/android/settings/Utils;->isVoiceCapable(Landroid/content/Context;)Z
 
     move-result v0

@@ -27,7 +27,6 @@
     .locals 0
 
     .prologue
-    .line 861
     iput-object p1, p0, Lcom/android/settings/RadioInfo$5;->this$0:Lcom/android/settings/RadioInfo;
 
     iput-object p2, p0, Lcom/android/settings/RadioInfo$5;->val$handler:Landroid/os/Handler;
@@ -45,19 +44,16 @@
     .locals 2
 
     .prologue
-    .line 864
     iget-object v0, p0, Lcom/android/settings/RadioInfo$5;->this$0:Lcom/android/settings/RadioInfo;
 
     # invokes: Lcom/android/settings/RadioInfo;->pingHostname()V
     invoke-static {v0}, Lcom/android/settings/RadioInfo;->access$3200(Lcom/android/settings/RadioInfo;)V
 
-    .line 865
     iget-object v0, p0, Lcom/android/settings/RadioInfo$5;->val$handler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/settings/RadioInfo$5;->val$updatePingResults:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 866
     return-void
 .end method

@@ -9,7 +9,6 @@
     .param p0, "v"    # Landroid/view/View;
 
     .prologue
-    .line 23
     invoke-virtual {p0}, Landroid/view/View;->getOverScrollMode()I
 
     move-result v0

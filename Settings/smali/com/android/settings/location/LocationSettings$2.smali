@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 156
     iput-object p1, p0, Lcom/android/settings/location/LocationSettings$2;->this$0:Lcom/android/settings/location/LocationSettings;
 
     iput-object p2, p0, Lcom/android/settings/location/LocationSettings$2;->val$activity:Lcom/android/settings/SettingsActivity;
@@ -47,7 +46,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 159
     iget-object v0, p0, Lcom/android/settings/location/LocationSettings$2;->val$activity:Lcom/android/settings/SettingsActivity;
 
     const-class v1, Lcom/android/settings/location/LocationMode;
@@ -66,7 +64,6 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/settings/SettingsActivity;->startPreferencePanel(Ljava/lang/String;Landroid/os/Bundle;ILjava/lang/CharSequence;Landroid/app/Fragment;I)V
 
-    .line 163
     const/4 v0, 0x1
 
     return v0

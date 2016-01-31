@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 121
     iput-object p1, p0, Lcom/android/settings/notification/ManagedServiceSettings$ScaryWarningDialogFragment$2;->this$1:Lcom/android/settings/notification/ManagedServiceSettings$ScaryWarningDialogFragment;
 
     iput-object p2, p0, Lcom/android/settings/notification/ManagedServiceSettings$ScaryWarningDialogFragment$2;->val$cn:Landroid/content/ComponentName;
@@ -46,7 +45,6 @@
     .param p2, "id"    # I
 
     .prologue
-    .line 123
     iget-object v0, p0, Lcom/android/settings/notification/ManagedServiceSettings$ScaryWarningDialogFragment$2;->this$1:Lcom/android/settings/notification/ManagedServiceSettings$ScaryWarningDialogFragment;
 
     iget-object v0, v0, Lcom/android/settings/notification/ManagedServiceSettings$ScaryWarningDialogFragment;->this$0:Lcom/android/settings/notification/ManagedServiceSettings;
@@ -60,7 +58,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 124
     iget-object v0, p0, Lcom/android/settings/notification/ManagedServiceSettings$ScaryWarningDialogFragment$2;->this$1:Lcom/android/settings/notification/ManagedServiceSettings$ScaryWarningDialogFragment;
 
     iget-object v0, v0, Lcom/android/settings/notification/ManagedServiceSettings$ScaryWarningDialogFragment;->this$0:Lcom/android/settings/notification/ManagedServiceSettings;
@@ -68,6 +65,5 @@
     # invokes: Lcom/android/settings/notification/ManagedServiceSettings;->saveEnabledServices()V
     invoke-static {v0}, Lcom/android/settings/notification/ManagedServiceSettings;->access$300(Lcom/android/settings/notification/ManagedServiceSettings;)V
 
-    .line 125
     return-void
 .end method

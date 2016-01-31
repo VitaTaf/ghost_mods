@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 182
     iput-object p1, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$1;->this$0:Lcom/android/settings/inputmethod/SpellCheckersSettings;
 
     iput-object p2, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$1;->val$currentSci:Landroid/view/textservice/SpellCheckerInfo;
@@ -46,10 +45,8 @@
     .param p2, "item"    # I
 
     .prologue
-    .line 185
     if-nez p2, :cond_0
 
-    .line 186
     iget-object v1, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$1;->this$0:Lcom/android/settings/inputmethod/SpellCheckersSettings;
 
     # getter for: Lcom/android/settings/inputmethod/SpellCheckersSettings;->mTsm:Landroid/view/textservice/TextServicesManager;
@@ -61,27 +58,22 @@
 
     invoke-virtual {v1, v2}, Landroid/view/textservice/TextServicesManager;->setSpellCheckerSubtype(Landroid/view/textservice/SpellCheckerSubtype;)V
 
-    .line 197
     :goto_0
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 198
     iget-object v1, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$1;->this$0:Lcom/android/settings/inputmethod/SpellCheckersSettings;
 
     # invokes: Lcom/android/settings/inputmethod/SpellCheckersSettings;->updatePreferenceScreen()V
     invoke-static {v1}, Lcom/android/settings/inputmethod/SpellCheckersSettings;->access$200(Lcom/android/settings/inputmethod/SpellCheckersSettings;)V
 
-    .line 199
     return-void
 
-    .line 188
     :cond_0
     # invokes: Lcom/android/settings/inputmethod/SpellCheckersSettings;->convertDialogItemIdToSubtypeIndex(I)I
     invoke-static {p2}, Lcom/android/settings/inputmethod/SpellCheckersSettings;->access$100(I)I
 
     move-result v0
 
-    .line 189
     .local v0, "index":I
     iget-object v1, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$1;->this$0:Lcom/android/settings/inputmethod/SpellCheckersSettings;
 

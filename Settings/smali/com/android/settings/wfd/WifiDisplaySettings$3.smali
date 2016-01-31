@@ -24,7 +24,6 @@
     .param p2, "x0"    # Landroid/content/Context;
 
     .prologue
-    .line 376
     iput-object p1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$3;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     invoke-direct {p0, p2}, Landroid/preference/SwitchPreference;-><init>(Landroid/content/Context;)V
@@ -38,7 +37,6 @@
     .locals 2
 
     .prologue
-    .line 379
     iget-object v1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$3;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$3;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
@@ -56,7 +54,6 @@
     # setter for: Lcom/android/settings/wfd/WifiDisplaySettings;->mAutoGO:Z
     invoke-static {v1, v0}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$302(Lcom/android/settings/wfd/WifiDisplaySettings;Z)Z
 
-    .line 380
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$3;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     # getter for: Lcom/android/settings/wfd/WifiDisplaySettings;->mAutoGO:Z
@@ -66,13 +63,11 @@
 
     if-eqz v0, :cond_1
 
-    .line 381
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$3;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     # invokes: Lcom/android/settings/wfd/WifiDisplaySettings;->startAutoGO()V
     invoke-static {v0}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$400(Lcom/android/settings/wfd/WifiDisplaySettings;)V
 
-    .line 385
     :goto_1
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$3;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
@@ -83,16 +78,13 @@
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wfd/WifiDisplaySettings$3;->setChecked(Z)V
 
-    .line 386
     return-void
 
-    .line 379
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 383
     :cond_1
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$3;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 

@@ -29,7 +29,6 @@
     .locals 0
 
     .prologue
-    .line 382
     iput-object p1, p0, Lcom/android/settings/sim/SimDialogActivity$SelectAccountListAdapter$ViewHolder;->this$1:Lcom/android/settings/sim/SimDialogActivity$SelectAccountListAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +42,6 @@
     .param p2, "x1"    # Lcom/android/settings/sim/SimDialogActivity$1;
 
     .prologue
-    .line 382
     invoke-direct {p0, p1}, Lcom/android/settings/sim/SimDialogActivity$SelectAccountListAdapter$ViewHolder;-><init>(Lcom/android/settings/sim/SimDialogActivity$SelectAccountListAdapter;)V
 
     return-void

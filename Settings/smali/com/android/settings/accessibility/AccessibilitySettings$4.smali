@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 176
     iput-object p1, p0, Lcom/android/settings/accessibility/AccessibilitySettings$4;->this$0:Lcom/android/settings/accessibility/AccessibilitySettings;
 
     invoke-direct {p0}, Lcom/android/internal/view/RotationPolicy$RotationPolicyListener;-><init>()V
@@ -37,12 +36,10 @@
     .locals 1
 
     .prologue
-    .line 179
     iget-object v0, p0, Lcom/android/settings/accessibility/AccessibilitySettings$4;->this$0:Lcom/android/settings/accessibility/AccessibilitySettings;
 
     # invokes: Lcom/android/settings/accessibility/AccessibilitySettings;->updateLockScreenRotationCheckbox()V
     invoke-static {v0}, Lcom/android/settings/accessibility/AccessibilitySettings;->access$400(Lcom/android/settings/accessibility/AccessibilitySettings;)V
 
-    .line 180
     return-void
 .end method

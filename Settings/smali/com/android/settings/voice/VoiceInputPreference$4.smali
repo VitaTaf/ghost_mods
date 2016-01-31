@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 150
     iput-object p1, p0, Lcom/android/settings/voice/VoiceInputPreference$4;->this$0:Lcom/android/settings/voice/VoiceInputPreference;
 
     iput-object p2, p0, Lcom/android/settings/voice/VoiceInputPreference$4;->val$negativeOnClickListener:Landroid/content/DialogInterface$OnClickListener;
@@ -45,13 +44,11 @@
     .param p1, "dialog"    # Landroid/content/DialogInterface;
 
     .prologue
-    .line 152
     iget-object v0, p0, Lcom/android/settings/voice/VoiceInputPreference$4;->val$negativeOnClickListener:Landroid/content/DialogInterface$OnClickListener;
 
     const/4 v1, -0x2
 
     invoke-interface {v0, p1, v1}, Landroid/content/DialogInterface$OnClickListener;->onClick(Landroid/content/DialogInterface;I)V
 
-    .line 153
     return-void
 .end method

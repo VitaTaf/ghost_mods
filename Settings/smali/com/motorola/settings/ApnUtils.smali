@@ -12,19 +12,15 @@
     .param p3, "values"    # Landroid/content/ContentValues;
 
     .prologue
-    .line 80
     invoke-static {p0}, Lcom/motorola/android/internal/util/CBSLoader;->getInstance(Landroid/content/Context;)Lcom/motorola/android/internal/util/CBSLoader;
 
     move-result-object v0
 
-    .line 82
     .local v0, "loader":Lcom/motorola/android/internal/util/CBSLoader;
     if-eqz v0, :cond_0
 
-    .line 83
     const/4 v1, 0x0
 
-    .line 86
     .local v1, "result":Ljava/lang/Object;
     :try_start_0
     const-string v2, "ApnUtils"
@@ -83,28 +79,23 @@
 
     move-result-object v1
 
-    .line 89
     if-eqz v1, :cond_0
 
     instance-of v2, v1, Landroid/os/Bundle;
 
     if-eqz v2, :cond_0
 
-    .line 90
     check-cast v1, Landroid/os/Bundle;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 95
     .end local v1    # "result":Ljava/lang/Object;
     :goto_0
     return-object v1
 
-    .line 92
     :catch_0
     move-exception v2
 
-    .line 95
     :cond_0
     const/4 v1, 0x0
 
@@ -119,23 +110,18 @@
     .param p3, "apnCursor"    # Landroid/database/Cursor;
 
     .prologue
-    .line 28
     move-object v1, p0
 
-    .line 29
     .local v1, "context":Landroid/content/Context;
     invoke-static {v1}, Lcom/motorola/android/internal/util/CBSLoader;->getInstance(Landroid/content/Context;)Lcom/motorola/android/internal/util/CBSLoader;
 
     move-result-object v2
 
-    .line 31
     .local v2, "loader":Lcom/motorola/android/internal/util/CBSLoader;
     if-eqz v2, :cond_1
 
-    .line 32
     const/4 v4, 0x0
 
-    .line 36
     .local v4, "result":Ljava/lang/Object;
     :try_start_0
     const-string v5, "ApnUtils"
@@ -188,21 +174,18 @@
 
     move-result-object v4
 
-    .line 39
     if-eqz v4, :cond_1
 
     instance-of v5, v4, Landroid/os/Bundle;
 
     if-eqz v5, :cond_1
 
-    .line 40
     move-object v0, v4
 
     check-cast v0, Landroid/os/Bundle;
 
     move-object v3, v0
 
-    .line 41
     .local v3, "options":Landroid/os/Bundle;
     const-string v5, "editable"
 
@@ -212,7 +195,6 @@
 
     if-eqz v5, :cond_0
 
-    .line 42
     const-string v5, "editable"
 
     invoke-virtual {v3, v5}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -221,7 +203,6 @@
 
     invoke-virtual {p0, v5}, Lcom/android/settings/ApnEditor;->setEditable(Z)V
 
-    .line 44
     :cond_0
     const-string v5, "deletable"
 
@@ -231,7 +212,6 @@
 
     if-eqz v5, :cond_1
 
-    .line 45
     const-string v5, "deletable"
 
     invoke-virtual {v3, v5}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -242,14 +222,12 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 51
     .end local v3    # "options":Landroid/os/Bundle;
     .end local v4    # "result":Ljava/lang/Object;
     :cond_1
     :goto_0
     return-void
 
-    .line 48
     :catch_0
     move-exception v5
 
@@ -265,19 +243,15 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 105
     invoke-static {p0}, Lcom/motorola/android/internal/util/CBSLoader;->getInstance(Landroid/content/Context;)Lcom/motorola/android/internal/util/CBSLoader;
 
     move-result-object v0
 
-    .line 107
     .local v0, "loader":Lcom/motorola/android/internal/util/CBSLoader;
     if-eqz v0, :cond_0
 
-    .line 108
     const/4 v1, 0x0
 
-    .line 111
     .local v1, "result":Ljava/lang/Object;
     :try_start_0
     const-string v3, "ApnUtils"
@@ -326,14 +300,12 @@
 
     move-result-object v1
 
-    .line 116
     if-eqz v1, :cond_0
 
     instance-of v3, v1, Ljava/lang/Boolean;
 
     if-eqz v3, :cond_0
 
-    .line 117
     check-cast v1, Ljava/lang/Boolean;
 
     .end local v1    # "result":Ljava/lang/Object;
@@ -343,12 +315,10 @@
 
     move-result v2
 
-    .line 124
     :cond_0
     :goto_0
     return v2
 
-    .line 119
     :catch_0
     move-exception v3
 
@@ -365,19 +335,15 @@
 
     const/4 v3, 0x0
 
-    .line 54
     invoke-static {p0}, Lcom/motorola/android/internal/util/CBSLoader;->getInstance(Landroid/content/Context;)Lcom/motorola/android/internal/util/CBSLoader;
 
     move-result-object v0
 
-    .line 56
     .local v0, "loader":Lcom/motorola/android/internal/util/CBSLoader;
     if-eqz v0, :cond_0
 
-    .line 57
     const/4 v1, 0x0
 
-    .line 60
     .local v1, "result":Ljava/lang/Object;
     :try_start_0
     const-string v4, "ApnUtils"
@@ -418,7 +384,6 @@
 
     move-result-object v1
 
-    .line 66
     .end local v1    # "result":Ljava/lang/Object;
     :goto_0
     if-eqz v1, :cond_0
@@ -435,7 +400,6 @@
 
     if-eqz v4, :cond_0
 
-    .line 75
     :goto_1
     return v2
 
@@ -444,7 +408,6 @@
 
     goto :goto_1
 
-    .line 63
     .restart local v1    # "result":Ljava/lang/Object;
     :catch_0
     move-exception v4

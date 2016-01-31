@@ -23,12 +23,10 @@
     .locals 1
 
     .prologue
-    .line 511
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/settings/widget/SettingsAppWidgetProvider$StateTracker;-><init>(Lcom/android/settings/widget/SettingsAppWidgetProvider$1;)V
 
-    .line 512
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/settings/widget/SettingsAppWidgetProvider$LocationStateTracker;->mCurrentLocationMode:I
@@ -41,7 +39,6 @@
     .param p1, "x0"    # Lcom/android/settings/widget/SettingsAppWidgetProvider$1;
 
     .prologue
-    .line 511
     invoke-direct {p0}, Lcom/android/settings/widget/SettingsAppWidgetProvider$LocationStateTracker;-><init>()V
 
     return-void
@@ -56,12 +53,10 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 534
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 535
     .local v0, "resolver":Landroid/content/ContentResolver;
     const-string v2, "location_mode"
 
@@ -71,7 +66,6 @@
 
     iput v2, p0, Lcom/android/settings/widget/SettingsAppWidgetProvider$LocationStateTracker;->mCurrentLocationMode:I
 
-    .line 537
     iget v2, p0, Lcom/android/settings/widget/SettingsAppWidgetProvider$LocationStateTracker;->mCurrentLocationMode:I
 
     if-nez v2, :cond_0
@@ -89,7 +83,6 @@
     .locals 1
 
     .prologue
-    .line 517
     const v0, 0x7f090778
 
     return v0
@@ -99,7 +92,6 @@
     .locals 1
 
     .prologue
-    .line 515
     const v0, 0x7f0f0200
 
     return v0
@@ -110,35 +102,28 @@
     .param p1, "on"    # Z
 
     .prologue
-    .line 519
     if-eqz p1, :cond_0
 
-    .line 520
     iget v0, p0, Lcom/android/settings/widget/SettingsAppWidgetProvider$LocationStateTracker;->mCurrentLocationMode:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 525
     :pswitch_0
     const v0, 0x7f02002e
 
-    .line 529
     :goto_0
     return v0
 
-    .line 523
     :pswitch_1
     const v0, 0x7f02002d
 
     goto :goto_0
 
-    .line 529
     :cond_0
     const v0, 0x7f02002c
 
     goto :goto_0
 
-    .line 520
     nop
 
     :pswitch_data_0
@@ -153,7 +138,6 @@
     .locals 1
 
     .prologue
-    .line 514
     const v0, 0x7f0f01ff
 
     return v0
@@ -163,7 +147,6 @@
     .locals 1
 
     .prologue
-    .line 516
     const v0, 0x7f0f0201
 
     return v0
@@ -175,14 +158,12 @@
     .param p2, "unused"    # Landroid/content/Intent;
 
     .prologue
-    .line 545
     invoke-virtual {p0, p1}, Lcom/android/settings/widget/SettingsAppWidgetProvider$LocationStateTracker;->getActualState(Landroid/content/Context;)I
 
     move-result v0
 
     invoke-virtual {p0, p1, v0}, Lcom/android/settings/widget/SettingsAppWidgetProvider$LocationStateTracker;->setCurrentState(Landroid/content/Context;I)V
 
-    .line 546
     return-void
 .end method
 
@@ -192,12 +173,10 @@
     .param p2, "desiredState"    # Z
 
     .prologue
-    .line 550
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 551
     .local v0, "resolver":Landroid/content/ContentResolver;
     new-instance v1, Lcom/android/settings/widget/SettingsAppWidgetProvider$LocationStateTracker$1;
 
@@ -209,6 +188,5 @@
 
     invoke-virtual {v1, v2}, Lcom/android/settings/widget/SettingsAppWidgetProvider$LocationStateTracker$1;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 589
     return-void
 .end method

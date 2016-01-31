@@ -30,12 +30,10 @@
     .locals 1
 
     .prologue
-    .line 1009
     iput-object p1, p0, Lcom/android/settings/RadioInfo$CellInfoListRateHandler;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1010
     const/4 v0, 0x3
 
     new-array v0, v0, [I
@@ -44,14 +42,12 @@
 
     iput-object v0, p0, Lcom/android/settings/RadioInfo$CellInfoListRateHandler;->rates:[I
 
-    .line 1011
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/settings/RadioInfo$CellInfoListRateHandler;->index:I
 
     return-void
 
-    .line 1010
     nop
 
     :array_0
@@ -68,7 +64,6 @@
     .locals 2
 
     .prologue
-    .line 1014
     iget-object v0, p0, Lcom/android/settings/RadioInfo$CellInfoListRateHandler;->rates:[I
 
     iget v1, p0, Lcom/android/settings/RadioInfo$CellInfoListRateHandler;->index:I
@@ -83,14 +78,12 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 1019
     iget v0, p0, Lcom/android/settings/RadioInfo$CellInfoListRateHandler;->index:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/settings/RadioInfo$CellInfoListRateHandler;->index:I
 
-    .line 1020
     iget v0, p0, Lcom/android/settings/RadioInfo$CellInfoListRateHandler;->index:I
 
     iget-object v1, p0, Lcom/android/settings/RadioInfo$CellInfoListRateHandler;->rates:[I
@@ -99,12 +92,10 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 1021
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/settings/RadioInfo$CellInfoListRateHandler;->index:I
 
-    .line 1023
     :cond_0
     iget-object v0, p0, Lcom/android/settings/RadioInfo$CellInfoListRateHandler;->this$0:Lcom/android/settings/RadioInfo;
 
@@ -121,12 +112,10 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/Phone;->setCellInfoListRate(I)V
 
-    .line 1024
     iget-object v0, p0, Lcom/android/settings/RadioInfo$CellInfoListRateHandler;->this$0:Lcom/android/settings/RadioInfo;
 
     # invokes: Lcom/android/settings/RadioInfo;->updateCellInfoListRate()V
     invoke-static {v0}, Lcom/android/settings/RadioInfo;->access$3600(Lcom/android/settings/RadioInfo;)V
 
-    .line 1025
     return-void
 .end method

@@ -36,7 +36,6 @@
     .locals 0
 
     .prologue
-    .line 206
     iput-object p1, p0, Lcom/android/settings/MasterClearConfirm$2$1;->this$1:Lcom/android/settings/MasterClearConfirm$2;
 
     iput p2, p0, Lcom/android/settings/MasterClearConfirm$2$1;->val$oldOrientation:I
@@ -53,7 +52,6 @@
     .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
-    .line 206
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1    # "x0":[Ljava/lang/Object;
@@ -69,7 +67,6 @@
     .param p1, "params"    # [Ljava/lang/Void;
 
     .prologue
-    .line 210
     iget-object v0, p0, Lcom/android/settings/MasterClearConfirm$2$1;->this$1:Lcom/android/settings/MasterClearConfirm$2;
 
     iget-object v0, v0, Lcom/android/settings/MasterClearConfirm$2;->this$0:Lcom/android/settings/MasterClearConfirm;
@@ -81,7 +78,6 @@
 
     invoke-virtual {v0}, Landroid/service/persistentdata/PersistentDataBlockManager;->wipe()V
 
-    .line 211
     const/4 v0, 0x0
 
     return-object v0
@@ -92,7 +88,6 @@
     .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
-    .line 206
     check-cast p1, Ljava/lang/Void;
 
     .end local p1    # "x0":Ljava/lang/Object;
@@ -106,7 +101,6 @@
     .param p1, "aVoid"    # Ljava/lang/Void;
 
     .prologue
-    .line 216
     iget-object v0, p0, Lcom/android/settings/MasterClearConfirm$2$1;->this$1:Lcom/android/settings/MasterClearConfirm$2;
 
     iget-object v0, v0, Lcom/android/settings/MasterClearConfirm$2;->this$0:Lcom/android/settings/MasterClearConfirm;
@@ -118,7 +112,6 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->hide()V
 
-    .line 217
     iget-object v0, p0, Lcom/android/settings/MasterClearConfirm$2$1;->this$1:Lcom/android/settings/MasterClearConfirm$2;
 
     iget-object v0, v0, Lcom/android/settings/MasterClearConfirm$2;->this$0:Lcom/android/settings/MasterClearConfirm;
@@ -131,7 +124,6 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->setRequestedOrientation(I)V
 
-    .line 218
     iget-object v0, p0, Lcom/android/settings/MasterClearConfirm$2$1;->this$1:Lcom/android/settings/MasterClearConfirm$2;
 
     iget-object v0, v0, Lcom/android/settings/MasterClearConfirm$2;->this$0:Lcom/android/settings/MasterClearConfirm;
@@ -139,6 +131,5 @@
     # invokes: Lcom/android/settings/MasterClearConfirm;->doMasterClear()V
     invoke-static {v0}, Lcom/android/settings/MasterClearConfirm;->access$100(Lcom/android/settings/MasterClearConfirm;)V
 
-    .line 219
     return-void
 .end method

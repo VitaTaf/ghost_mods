@@ -36,7 +36,6 @@
     .locals 0
 
     .prologue
-    .line 405
     iput-object p1, p0, Lcom/android/settings/accounts/AccountSettings$2;->this$0:Lcom/android/settings/accounts/AccountSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +51,6 @@
     .param p2, "t2"    # Lcom/android/settings/accounts/AccountSettings$AccountPreference;
 
     .prologue
-    .line 408
     # getter for: Lcom/android/settings/accounts/AccountSettings$AccountPreference;->mTitle:Ljava/lang/CharSequence;
     invoke-static {p1}, Lcom/android/settings/accounts/AccountSettings$AccountPreference;->access$300(Lcom/android/settings/accounts/AccountSettings$AccountPreference;)Ljava/lang/CharSequence;
 
@@ -84,7 +82,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 405
     check-cast p1, Lcom/android/settings/accounts/AccountSettings$AccountPreference;
 
     .end local p1    # "x0":Ljava/lang/Object;

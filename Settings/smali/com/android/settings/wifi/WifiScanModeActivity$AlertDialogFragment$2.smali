@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 130
     iput-object p1, p0, Lcom/android/settings/wifi/WifiScanModeActivity$AlertDialogFragment$2;->this$0:Lcom/android/settings/wifi/WifiScanModeActivity$AlertDialogFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .param p2, "whichButton"    # I
 
     .prologue
-    .line 132
     iget-object v0, p0, Lcom/android/settings/wifi/WifiScanModeActivity$AlertDialogFragment$2;->this$0:Lcom/android/settings/wifi/WifiScanModeActivity$AlertDialogFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/wifi/WifiScanModeActivity$AlertDialogFragment;->getActivity()Landroid/app/Activity;
@@ -54,6 +52,5 @@
     # invokes: Lcom/android/settings/wifi/WifiScanModeActivity;->doPositiveClick()V
     invoke-static {v0}, Lcom/android/settings/wifi/WifiScanModeActivity;->access$100(Lcom/android/settings/wifi/WifiScanModeActivity;)V
 
-    .line 133
     return-void
 .end method

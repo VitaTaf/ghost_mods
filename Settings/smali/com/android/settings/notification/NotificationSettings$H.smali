@@ -23,17 +23,14 @@
     .locals 1
 
     .prologue
-    .line 562
     iput-object p1, p0, Lcom/android/settings/notification/NotificationSettings$H;->this$0:Lcom/android/settings/notification/NotificationSettings;
 
-    .line 563
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 564
     return-void
 .end method
 
@@ -43,7 +40,6 @@
     .param p2, "x1"    # Lcom/android/settings/notification/NotificationSettings$1;
 
     .prologue
-    .line 555
     invoke-direct {p0, p1}, Lcom/android/settings/notification/NotificationSettings$H;-><init>(Lcom/android/settings/notification/NotificationSettings;)V
 
     return-void
@@ -56,16 +52,13 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 568
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 585
     :goto_0
     return-void
 
-    .line 570
     :pswitch_0
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings$H;->this$0:Lcom/android/settings/notification/NotificationSettings;
 
@@ -82,7 +75,6 @@
 
     goto :goto_0
 
-    .line 573
     :pswitch_1
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings$H;->this$0:Lcom/android/settings/notification/NotificationSettings;
 
@@ -99,7 +91,6 @@
 
     goto :goto_0
 
-    .line 576
     :pswitch_2
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings$H;->this$0:Lcom/android/settings/notification/NotificationSettings;
 
@@ -112,7 +103,6 @@
 
     goto :goto_0
 
-    .line 579
     :pswitch_3
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings$H;->this$0:Lcom/android/settings/notification/NotificationSettings;
 
@@ -121,7 +111,6 @@
 
     goto :goto_0
 
-    .line 582
     :pswitch_4
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings$H;->this$0:Lcom/android/settings/notification/NotificationSettings;
 
@@ -130,7 +119,6 @@
 
     goto :goto_0
 
-    .line 568
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

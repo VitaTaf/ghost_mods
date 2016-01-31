@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 1549
     iput-object p1, p0, Lcom/android/settings/DataUsageSummary$14;->this$0:Lcom/android/settings/DataUsageSummary;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 4
 
     .prologue
-    .line 1557
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$14;->this$0:Lcom/android/settings/DataUsageSummary;
 
     iget-object v1, p0, Lcom/android/settings/DataUsageSummary$14;->this$0:Lcom/android/settings/DataUsageSummary;
@@ -57,7 +55,6 @@
     # invokes: Lcom/android/settings/DataUsageSummary;->setPolicyLimitBytes(J)V
     invoke-static {v0, v2, v3}, Lcom/android/settings/DataUsageSummary;->access$1400(Lcom/android/settings/DataUsageSummary;J)V
 
-    .line 1558
     return-void
 .end method
 
@@ -65,7 +62,6 @@
     .locals 4
 
     .prologue
-    .line 1552
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$14;->this$0:Lcom/android/settings/DataUsageSummary;
 
     iget-object v1, p0, Lcom/android/settings/DataUsageSummary$14;->this$0:Lcom/android/settings/DataUsageSummary;
@@ -82,7 +78,6 @@
     # invokes: Lcom/android/settings/DataUsageSummary;->setPolicyWarningBytes(J)V
     invoke-static {v0, v2, v3}, Lcom/android/settings/DataUsageSummary;->access$3000(Lcom/android/settings/DataUsageSummary;J)V
 
-    .line 1553
     return-void
 .end method
 
@@ -90,12 +85,10 @@
     .locals 1
 
     .prologue
-    .line 1567
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$14;->this$0:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v0}, Lcom/android/settings/DataUsageSummary$LimitEditorFragment;->show(Lcom/android/settings/DataUsageSummary;)V
 
-    .line 1568
     return-void
 .end method
 
@@ -103,11 +96,9 @@
     .locals 1
 
     .prologue
-    .line 1562
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$14;->this$0:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v0}, Lcom/android/settings/DataUsageSummary$WarningEditorFragment;->show(Lcom/android/settings/DataUsageSummary;)V
 
-    .line 1563
     return-void
 .end method

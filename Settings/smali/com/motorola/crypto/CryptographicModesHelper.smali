@@ -12,12 +12,10 @@
     .locals 3
 
     .prologue
-    .line 58
     const/4 v1, 0x0
 
     sput-object v1, Lcom/motorola/crypto/CryptographicModesHelper;->sCryptographicModesClass:Ljava/lang/Class;
 
-    .line 62
     :try_start_0
     const-string v1, "com.motorola.android.cryptography.CryptographicMode"
 
@@ -27,7 +25,6 @@
 
     sput-object v1, Lcom/motorola/crypto/CryptographicModesHelper;->sCryptographicModesClass:Ljava/lang/Class;
 
-    .line 64
     const-string v1, "com.motorola.android.cryptograpy.CryptographicModesHelper"
 
     const-string v2, "Cryptographic modes supported!"
@@ -36,17 +33,14 @@
     :try_end_0
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 68
     .local v0, "e2":Ljava/lang/ClassNotFoundException;
     :goto_0
     return-void
 
-    .line 65
     .end local v0    # "e2":Ljava/lang/ClassNotFoundException;
     :catch_0
     move-exception v0
 
-    .line 66
     .restart local v0    # "e2":Ljava/lang/ClassNotFoundException;
     const-string v1, "com.motorola.android.cryptograpy.CryptographicModesHelper"
 
@@ -61,7 +55,6 @@
     .locals 4
 
     .prologue
-    .line 125
     const-string v2, "persist.sys.openssl.ecm"
 
     const-string v3, "0"
@@ -70,11 +63,9 @@
 
     move-result-object v1
 
-    .line 127
     .local v1, "strCryptoMode":Ljava/lang/String;
     const/4 v0, 0x0
 
-    .line 129
     .local v0, "cryptographicMode":I
     const-string v2, "0"
 
@@ -84,16 +75,13 @@
 
     if-nez v2, :cond_0
 
-    .line 130
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 136
     :goto_0
     return v0
 
-    .line 132
     :cond_0
     const-string v2, "persist.sys.openssl.ucm"
 
@@ -103,7 +91,6 @@
 
     move-result-object v1
 
-    .line 133
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
@@ -115,7 +102,6 @@
     .locals 1
 
     .prologue
-    .line 81
     sget-object v0, Lcom/motorola/crypto/CryptographicModesHelper;->sCryptographicModesClass:Ljava/lang/Class;
 
     if-eqz v0, :cond_0
@@ -135,7 +121,6 @@
     .locals 3
 
     .prologue
-    .line 104
     const-string v1, "persist.sys.openssl.ecm"
 
     const-string v2, "0"
@@ -144,7 +129,6 @@
 
     move-result-object v0
 
-    .line 105
     .local v0, "enforcedCryptoPropValue":Ljava/lang/String;
     const-string v1, "0"
 
@@ -170,11 +154,9 @@
     .param p0, "val"    # Ljava/lang/String;
 
     .prologue
-    .line 114
     const-string v0, "persist.sys.openssl.ucm"
 
     invoke-static {v0, p0}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 115
     return-void
 .end method

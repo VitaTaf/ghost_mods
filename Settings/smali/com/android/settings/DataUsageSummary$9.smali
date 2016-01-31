@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 1319
     iput-object p1, p0, Lcom/android/settings/DataUsageSummary$9;->this$0:Lcom/android/settings/DataUsageSummary;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +42,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1322
     iget-object v2, p0, Lcom/android/settings/DataUsageSummary$9;->this$0:Lcom/android/settings/DataUsageSummary;
 
     # getter for: Lcom/android/settings/DataUsageSummary;->mAppRestrict:Landroid/widget/Switch;
@@ -59,17 +57,14 @@
 
     const/4 v0, 0x1
 
-    .line 1324
     .local v0, "restrictBackground":Z
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 1328
     iget-object v1, p0, Lcom/android/settings/DataUsageSummary$9;->this$0:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v1}, Lcom/android/settings/DataUsageSummary$ConfirmAppRestrictFragment;->show(Lcom/android/settings/DataUsageSummary;)V
 
-    .line 1332
     :goto_1
     return-void
 
@@ -77,10 +72,8 @@
     :cond_0
     move v0, v1
 
-    .line 1322
     goto :goto_0
 
-    .line 1330
     .restart local v0    # "restrictBackground":Z
     :cond_1
     iget-object v2, p0, Lcom/android/settings/DataUsageSummary$9;->this$0:Lcom/android/settings/DataUsageSummary;

@@ -27,13 +27,10 @@
     .param p2, "fm"    # Landroid/app/FragmentManager;
 
     .prologue
-    .line 53
     iput-object p1, p0, Lcom/android/settings/applications/AppOpsSummary$MyPagerAdapter;->this$0:Lcom/android/settings/applications/AppOpsSummary;
 
-    .line 54
     invoke-direct {p0, p2}, Landroid/support/v13/app/FragmentPagerAdapter;-><init>(Landroid/app/FragmentManager;)V
 
-    .line 55
     return-void
 .end method
 
@@ -43,7 +40,6 @@
     .locals 1
 
     .prologue
-    .line 64
     sget-object v0, Lcom/android/settings/applications/AppOpsSummary;->sPageTemplates:[Lcom/android/settings/applications/AppOpsState$OpsTemplate;
 
     array-length v0, v0
@@ -56,7 +52,6 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 59
     new-instance v0, Lcom/android/settings/applications/AppOpsCategory;
 
     sget-object v1, Lcom/android/settings/applications/AppOpsSummary;->sPageTemplates:[Lcom/android/settings/applications/AppOpsState$OpsTemplate;
@@ -73,7 +68,6 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 69
     iget-object v0, p0, Lcom/android/settings/applications/AppOpsSummary$MyPagerAdapter;->this$0:Lcom/android/settings/applications/AppOpsSummary;
 
     iget-object v0, v0, Lcom/android/settings/applications/AppOpsSummary;->mPageNames:[Ljava/lang/CharSequence;
@@ -88,10 +82,8 @@
     .param p1, "state"    # I
 
     .prologue
-    .line 83
     if-nez p1, :cond_0
 
-    .line 86
     :cond_0
     return-void
 .end method
@@ -103,7 +95,6 @@
     .param p3, "positionOffsetPixels"    # I
 
     .prologue
-    .line 74
     return-void
 .end method
 
@@ -112,11 +103,9 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 78
     iget-object v0, p0, Lcom/android/settings/applications/AppOpsSummary$MyPagerAdapter;->this$0:Lcom/android/settings/applications/AppOpsSummary;
 
     iput p1, v0, Lcom/android/settings/applications/AppOpsSummary;->mCurPos:I
 
-    .line 79
     return-void
 .end method

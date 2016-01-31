@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 526
     iput-object p1, p0, Lcom/android/settings/notification/NotificationAppList$3;->this$0:Lcom/android/settings/notification/NotificationAppList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,12 +39,10 @@
     .locals 1
 
     .prologue
-    .line 529
     iget-object v0, p0, Lcom/android/settings/notification/NotificationAppList$3;->this$0:Lcom/android/settings/notification/NotificationAppList;
 
     # invokes: Lcom/android/settings/notification/NotificationAppList;->refreshDisplayedItems()V
     invoke-static {v0}, Lcom/android/settings/notification/NotificationAppList;->access$1500(Lcom/android/settings/notification/NotificationAppList;)V
 
-    .line 530
     return-void
 .end method

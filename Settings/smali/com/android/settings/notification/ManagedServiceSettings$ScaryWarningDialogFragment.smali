@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 94
     iput-object p1, p0, Lcom/android/settings/notification/ManagedServiceSettings$ScaryWarningDialogFragment;->this$0:Lcom/android/settings/notification/ManagedServiceSettings;
 
     invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
@@ -42,15 +41,12 @@
 
     const/4 v8, 0x1
 
-    .line 108
     invoke-super {p0, p1}, Landroid/app/DialogFragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 109
     invoke-virtual {p0}, Lcom/android/settings/notification/ManagedServiceSettings$ScaryWarningDialogFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 110
     .local v0, "args":Landroid/os/Bundle;
     const-string v5, "l"
 
@@ -58,7 +54,6 @@
 
     move-result-object v2
 
-    .line 111
     .local v2, "label":Ljava/lang/String;
     const-string v5, "c"
 
@@ -70,7 +65,6 @@
 
     move-result-object v1
 
-    .line 113
     .local v1, "cn":Landroid/content/ComponentName;
     invoke-virtual {p0}, Lcom/android/settings/notification/ManagedServiceSettings$ScaryWarningDialogFragment;->getResources()Landroid/content/res/Resources;
 
@@ -93,7 +87,6 @@
 
     move-result-object v4
 
-    .line 114
     .local v4, "title":Ljava/lang/String;
     invoke-virtual {p0}, Lcom/android/settings/notification/ManagedServiceSettings$ScaryWarningDialogFragment;->getResources()Landroid/content/res/Resources;
 
@@ -116,11 +109,9 @@
 
     move-result-object v3
 
-    .line 115
     .local v3, "summary":Ljava/lang/String;
     invoke-virtual {p0, v8}, Lcom/android/settings/notification/ManagedServiceSettings$ScaryWarningDialogFragment;->setRetainInstance(Z)V
 
-    .line 116
     new-instance v5, Landroid/app/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lcom/android/settings/notification/ManagedServiceSettings$ScaryWarningDialogFragment;->getActivity()Landroid/app/Activity;
@@ -172,7 +163,6 @@
     .locals 2
 
     .prologue
-    .line 139
     invoke-virtual {p0}, Lcom/android/settings/notification/ManagedServiceSettings$ScaryWarningDialogFragment;->getDialog()Landroid/app/Dialog;
 
     move-result-object v0
@@ -185,7 +175,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 140
     invoke-virtual {p0}, Lcom/android/settings/notification/ManagedServiceSettings$ScaryWarningDialogFragment;->getDialog()Landroid/app/Dialog;
 
     move-result-object v0
@@ -194,11 +183,9 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setDismissMessage(Landroid/os/Message;)V
 
-    .line 141
     :cond_0
     invoke-super {p0}, Landroid/app/DialogFragment;->onDestroyView()V
 
-    .line 142
     return-void
 .end method
 
@@ -208,12 +195,10 @@
     .param p2, "label"    # Ljava/lang/String;
 
     .prologue
-    .line 99
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 100
     .local v0, "args":Landroid/os/Bundle;
     const-string v1, "c"
 
@@ -223,14 +208,11 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 101
     const-string v1, "l"
 
     invoke-virtual {v0, v1, p2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 102
     invoke-virtual {p0, v0}, Lcom/android/settings/notification/ManagedServiceSettings$ScaryWarningDialogFragment;->setArguments(Landroid/os/Bundle;)V
 
-    .line 103
     return-object p0
 .end method

@@ -24,7 +24,6 @@
     .param p2, "x0"    # I
 
     .prologue
-    .line 439
     iput-object p1, p0, Lcom/android/settings/deviceinfo/SimStatus$2;->this$0:Lcom/android/settings/deviceinfo/SimStatus;
 
     invoke-direct {p0, p2}, Landroid/telephony/PhoneStateListener;-><init>(I)V
@@ -39,19 +38,16 @@
     .param p1, "state"    # I
 
     .prologue
-    .line 442
     iget-object v0, p0, Lcom/android/settings/deviceinfo/SimStatus$2;->this$0:Lcom/android/settings/deviceinfo/SimStatus;
 
     # invokes: Lcom/android/settings/deviceinfo/SimStatus;->updateDataState()V
     invoke-static {v0}, Lcom/android/settings/deviceinfo/SimStatus;->access$300(Lcom/android/settings/deviceinfo/SimStatus;)V
 
-    .line 443
     iget-object v0, p0, Lcom/android/settings/deviceinfo/SimStatus$2;->this$0:Lcom/android/settings/deviceinfo/SimStatus;
 
     # invokes: Lcom/android/settings/deviceinfo/SimStatus;->updateNetworkType()V
     invoke-static {v0}, Lcom/android/settings/deviceinfo/SimStatus;->access$400(Lcom/android/settings/deviceinfo/SimStatus;)V
 
-    .line 444
     return-void
 .end method
 
@@ -60,13 +56,11 @@
     .param p1, "serviceState"    # Landroid/telephony/ServiceState;
 
     .prologue
-    .line 453
     iget-object v0, p0, Lcom/android/settings/deviceinfo/SimStatus$2;->this$0:Lcom/android/settings/deviceinfo/SimStatus;
 
     # invokes: Lcom/android/settings/deviceinfo/SimStatus;->updateServiceState(Landroid/telephony/ServiceState;)V
     invoke-static {v0, p1}, Lcom/android/settings/deviceinfo/SimStatus;->access$500(Lcom/android/settings/deviceinfo/SimStatus;Landroid/telephony/ServiceState;)V
 
-    .line 454
     return-void
 .end method
 
@@ -75,11 +69,9 @@
     .param p1, "signalStrength"    # Landroid/telephony/SignalStrength;
 
     .prologue
-    .line 448
     iget-object v0, p0, Lcom/android/settings/deviceinfo/SimStatus$2;->this$0:Lcom/android/settings/deviceinfo/SimStatus;
 
     invoke-virtual {v0, p1}, Lcom/android/settings/deviceinfo/SimStatus;->updateSignalStrength(Landroid/telephony/SignalStrength;)V
 
-    .line 449
     return-void
 .end method

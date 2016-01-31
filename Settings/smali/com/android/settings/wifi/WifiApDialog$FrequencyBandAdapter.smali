@@ -28,12 +28,10 @@
     .locals 2
 
     .prologue
-    .line 89
     iput-object p1, p0, Lcom/android/settings/wifi/WifiApDialog$FrequencyBandAdapter;->this$0:Lcom/android/settings/wifi/WifiApDialog;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    .line 90
     iget-object v0, p0, Lcom/android/settings/wifi/WifiApDialog$FrequencyBandAdapter;->this$0:Lcom/android/settings/wifi/WifiApDialog;
 
     invoke-virtual {v0}, Lcom/android/settings/wifi/WifiApDialog;->getContext()Landroid/content/Context;
@@ -61,7 +59,6 @@
     .param p2, "x1"    # Lcom/android/settings/wifi/WifiApDialog$1;
 
     .prologue
-    .line 89
     invoke-direct {p0, p1}, Lcom/android/settings/wifi/WifiApDialog$FrequencyBandAdapter;-><init>(Lcom/android/settings/wifi/WifiApDialog;)V
 
     return-void
@@ -73,7 +70,6 @@
     .locals 1
 
     .prologue
-    .line 94
     iget-object v0, p0, Lcom/android/settings/wifi/WifiApDialog$FrequencyBandAdapter;->frequencyBandTitles:[Ljava/lang/String;
 
     array-length v0, v0
@@ -86,7 +82,6 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 99
     iget-object v0, p0, Lcom/android/settings/wifi/WifiApDialog$FrequencyBandAdapter;->frequencyBandTitles:[Ljava/lang/String;
 
     aget-object v0, v0, p1
@@ -99,7 +94,6 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 104
     int-to-long v0, p1
 
     return-wide v0
@@ -112,7 +106,6 @@
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 109
     iget-object v0, p0, Lcom/android/settings/wifi/WifiApDialog$FrequencyBandAdapter;->this$0:Lcom/android/settings/wifi/WifiApDialog;
 
     invoke-virtual {v0}, Lcom/android/settings/wifi/WifiApDialog;->getLayoutInflater()Landroid/view/LayoutInflater;
@@ -127,7 +120,6 @@
 
     move-result-object p2
 
-    .line 110
     const v0, 0x7f0f0208
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -144,6 +136,5 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 111
     return-object p2
 .end method

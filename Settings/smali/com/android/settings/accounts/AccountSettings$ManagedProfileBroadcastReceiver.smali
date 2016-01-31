@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 494
     iput-object p1, p0, Lcom/android/settings/accounts/AccountSettings$ManagedProfileBroadcastReceiver;->this$0:Lcom/android/settings/accounts/AccountSettings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,7 +38,6 @@
     .param p2, "x1"    # Lcom/android/settings/accounts/AccountSettings$1;
 
     .prologue
-    .line 494
     invoke-direct {p0, p1}, Lcom/android/settings/accounts/AccountSettings$ManagedProfileBroadcastReceiver;-><init>(Lcom/android/settings/accounts/AccountSettings;)V
 
     return-void
@@ -53,7 +51,6 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 499
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
@@ -78,7 +75,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 501
     :cond_0
     const-string v0, "AccountSettings"
 
@@ -106,30 +102,25 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 503
     iget-object v0, p0, Lcom/android/settings/accounts/AccountSettings$ManagedProfileBroadcastReceiver;->this$0:Lcom/android/settings/accounts/AccountSettings;
 
     # invokes: Lcom/android/settings/accounts/AccountSettings;->stopListeningToAccountUpdates()V
     invoke-static {v0}, Lcom/android/settings/accounts/AccountSettings;->access$400(Lcom/android/settings/accounts/AccountSettings;)V
 
-    .line 504
     iget-object v0, p0, Lcom/android/settings/accounts/AccountSettings$ManagedProfileBroadcastReceiver;->this$0:Lcom/android/settings/accounts/AccountSettings;
 
     # invokes: Lcom/android/settings/accounts/AccountSettings;->cleanUpPreferences()V
     invoke-static {v0}, Lcom/android/settings/accounts/AccountSettings;->access$500(Lcom/android/settings/accounts/AccountSettings;)V
 
-    .line 506
     iget-object v0, p0, Lcom/android/settings/accounts/AccountSettings$ManagedProfileBroadcastReceiver;->this$0:Lcom/android/settings/accounts/AccountSettings;
 
     invoke-virtual {v0}, Lcom/android/settings/accounts/AccountSettings;->updateUi()V
 
-    .line 507
     iget-object v0, p0, Lcom/android/settings/accounts/AccountSettings$ManagedProfileBroadcastReceiver;->this$0:Lcom/android/settings/accounts/AccountSettings;
 
     # invokes: Lcom/android/settings/accounts/AccountSettings;->listenToAccountUpdates()V
     invoke-static {v0}, Lcom/android/settings/accounts/AccountSettings;->access$600(Lcom/android/settings/accounts/AccountSettings;)V
 
-    .line 510
     iget-object v0, p0, Lcom/android/settings/accounts/AccountSettings$ManagedProfileBroadcastReceiver;->this$0:Lcom/android/settings/accounts/AccountSettings;
 
     invoke-virtual {v0}, Lcom/android/settings/accounts/AccountSettings;->getActivity()Landroid/app/Activity;
@@ -138,11 +129,9 @@
 
     invoke-virtual {v0}, Landroid/app/Activity;->invalidateOptionsMenu()V
 
-    .line 514
     :goto_0
     return-void
 
-    .line 513
     :cond_1
     const-string v0, "AccountSettings"
 
@@ -178,36 +167,29 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 517
     iget-boolean v1, p0, Lcom/android/settings/accounts/AccountSettings$ManagedProfileBroadcastReceiver;->listeningToManagedProfileEvents:Z
 
     if-nez v1, :cond_0
 
-    .line 518
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 519
     .local v0, "intentFilter":Landroid/content/IntentFilter;
     const-string v1, "android.intent.action.MANAGED_PROFILE_REMOVED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 520
     const-string v1, "android.intent.action.MANAGED_PROFILE_ADDED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 521
     invoke-virtual {p1, p0, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 522
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/settings/accounts/AccountSettings$ManagedProfileBroadcastReceiver;->listeningToManagedProfileEvents:Z
 
-    .line 524
     .end local v0    # "intentFilter":Landroid/content/IntentFilter;
     :cond_0
     return-void
@@ -218,20 +200,16 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 527
     iget-boolean v0, p0, Lcom/android/settings/accounts/AccountSettings$ManagedProfileBroadcastReceiver;->listeningToManagedProfileEvents:Z
 
     if-eqz v0, :cond_0
 
-    .line 528
     invoke-virtual {p1, p0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 529
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/settings/accounts/AccountSettings$ManagedProfileBroadcastReceiver;->listeningToManagedProfileEvents:Z
 
-    .line 531
     :cond_0
     return-void
 .end method

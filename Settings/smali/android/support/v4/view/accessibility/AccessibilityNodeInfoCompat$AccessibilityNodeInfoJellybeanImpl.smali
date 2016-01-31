@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 974
     invoke-direct {p0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoIcsImpl;-><init>()V
 
     return-void

@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 592
     iput-object p1, p0, Lcom/android/settings/bluetooth/DockService$4;->this$0:Lcom/android/settings/bluetooth/DockService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "dialog"    # Landroid/content/DialogInterface;
 
     .prologue
-    .line 596
     iget-object v0, p0, Lcom/android/settings/bluetooth/DockService$4;->this$0:Lcom/android/settings/bluetooth/DockService;
 
     # getter for: Lcom/android/settings/bluetooth/DockService;->mPendingDevice:Landroid/bluetooth/BluetoothDevice;
@@ -51,7 +49,6 @@
 
     if-nez v0, :cond_0
 
-    .line 597
     iget-object v0, p0, Lcom/android/settings/bluetooth/DockService$4;->this$0:Lcom/android/settings/bluetooth/DockService;
 
     iget-object v1, p0, Lcom/android/settings/bluetooth/DockService$4;->this$0:Lcom/android/settings/bluetooth/DockService;
@@ -63,7 +60,6 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/bluetooth/DockEventReceiver;->finishStartingService(Landroid/app/Service;I)V
 
-    .line 600
     :cond_0
     iget-object v0, p0, Lcom/android/settings/bluetooth/DockService$4;->this$0:Lcom/android/settings/bluetooth/DockService;
 
@@ -71,6 +67,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/bluetooth/DockService;->stopForeground(Z)V
 
-    .line 601
     return-void
 .end method

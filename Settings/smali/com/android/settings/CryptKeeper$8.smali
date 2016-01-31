@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 816
     iput-object p1, p0, Lcom/android/settings/CryptKeeper$8;->this$0:Lcom/android/settings/CryptKeeper;
 
     iput-object p2, p0, Lcom/android/settings/CryptKeeper$8;->val$imm:Landroid/view/inputmethod/InputMethodManager;
@@ -44,7 +43,6 @@
     .locals 3
 
     .prologue
-    .line 818
     iget-object v0, p0, Lcom/android/settings/CryptKeeper$8;->val$imm:Landroid/view/inputmethod/InputMethodManager;
 
     const/4 v1, 0x0
@@ -53,6 +51,5 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->showSoftInputUnchecked(ILandroid/os/ResultReceiver;)V
 
-    .line 819
     return-void
 .end method

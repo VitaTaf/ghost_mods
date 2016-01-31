@@ -15,7 +15,6 @@
     .locals 0
 
     .prologue
-    .line 35
     invoke-direct {p0}, Lcom/android/internal/app/AlertActivity;-><init>()V
 
     return-void
@@ -30,7 +29,6 @@
 
     const/4 v4, 0x0
 
-    .line 66
     const-string v6, "phone"
 
     invoke-virtual {p0, v6}, Lcom/android/settings/SmsDefaultDialog;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -39,7 +37,6 @@
 
     check-cast v3, Landroid/telephony/TelephonyManager;
 
-    .line 67
     .local v3, "tm":Landroid/telephony/TelephonyManager;
     invoke-virtual {v3}, Landroid/telephony/TelephonyManager;->isSmsCapable()Z
 
@@ -47,12 +44,10 @@
 
     if-nez v6, :cond_1
 
-    .line 104
     :cond_0
     :goto_0
     return v4
 
-    .line 72
     :cond_1
     invoke-static {p1, p0}, Lcom/android/internal/telephony/SmsApplication;->getSmsApplicationData(Ljava/lang/String;Landroid/content/Context;)Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;
 
@@ -60,25 +55,20 @@
 
     iput-object v6, p0, Lcom/android/settings/SmsDefaultDialog;->mNewSmsApplicationData:Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;
 
-    .line 73
     iget-object v6, p0, Lcom/android/settings/SmsDefaultDialog;->mNewSmsApplicationData:Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;
 
     if-eqz v6, :cond_0
 
-    .line 77
     const/4 v0, 0x0
 
-    .line 78
     .local v0, "oldSmsApplicationData":Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;
     invoke-static {p0, v5}, Lcom/android/internal/telephony/SmsApplication;->getDefaultSmsApplication(Landroid/content/Context;Z)Landroid/content/ComponentName;
 
     move-result-object v1
 
-    .line 79
     .local v1, "oldSmsComponent":Landroid/content/ComponentName;
     if-eqz v1, :cond_2
 
-    .line 80
     invoke-virtual {v1}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v6
@@ -87,7 +77,6 @@
 
     move-result-object v0
 
-    .line 82
     iget-object v6, v0, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mPackageName:Ljava/lang/String;
 
     iget-object v7, p0, Lcom/android/settings/SmsDefaultDialog;->mNewSmsApplicationData:Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;
@@ -100,11 +89,9 @@
 
     if-nez v6, :cond_0
 
-    .line 88
     :cond_2
     iget-object v2, p0, Lcom/android/settings/SmsDefaultDialog;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
-    .line 89
     .local v2, "p":Lcom/android/internal/app/AlertController$AlertParams;
     const v6, 0x7f0904b5
 
@@ -114,10 +101,8 @@
 
     iput-object v6, v2, Lcom/android/internal/app/AlertController$AlertParams;->mTitle:Ljava/lang/CharSequence;
 
-    .line 90
     if-eqz v0, :cond_3
 
-    .line 91
     const v6, 0x7f0904b6
 
     const/4 v7, 0x2
@@ -140,7 +125,6 @@
 
     iput-object v4, v2, Lcom/android/internal/app/AlertController$AlertParams;->mMessage:Ljava/lang/CharSequence;
 
-    .line 98
     :goto_1
     const v4, 0x7f090081
 
@@ -150,7 +134,6 @@
 
     iput-object v4, v2, Lcom/android/internal/app/AlertController$AlertParams;->mPositiveButtonText:Ljava/lang/CharSequence;
 
-    .line 99
     const v4, 0x7f090082
 
     invoke-virtual {p0, v4}, Lcom/android/settings/SmsDefaultDialog;->getString(I)Ljava/lang/String;
@@ -159,21 +142,16 @@
 
     iput-object v4, v2, Lcom/android/internal/app/AlertController$AlertParams;->mNegativeButtonText:Ljava/lang/CharSequence;
 
-    .line 100
     iput-object p0, v2, Lcom/android/internal/app/AlertController$AlertParams;->mPositiveButtonListener:Landroid/content/DialogInterface$OnClickListener;
 
-    .line 101
     iput-object p0, v2, Lcom/android/internal/app/AlertController$AlertParams;->mNegativeButtonListener:Landroid/content/DialogInterface$OnClickListener;
 
-    .line 102
     invoke-virtual {p0}, Lcom/android/settings/SmsDefaultDialog;->setupAlert()V
 
     move v4, v5
 
-    .line 104
     goto :goto_0
 
-    .line 95
     :cond_3
     const v6, 0x7f0904b7
 
@@ -202,14 +180,11 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 55
     packed-switch p2, :pswitch_data_0
 
-    .line 63
     :goto_0
     return-void
 
-    .line 57
     :pswitch_0
     iget-object v0, p0, Lcom/android/settings/SmsDefaultDialog;->mNewSmsApplicationData:Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;
 
@@ -217,14 +192,12 @@
 
     invoke-static {v0, p0}, Lcom/android/internal/telephony/SmsApplication;->setDefaultApplication(Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 58
     const/4 v0, -0x1
 
     invoke-virtual {p0, v0}, Lcom/android/settings/SmsDefaultDialog;->setResult(I)V
 
     goto :goto_0
 
-    .line 55
     :pswitch_data_0
     .packed-switch -0x1
         :pswitch_0
@@ -236,15 +209,12 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 42
     invoke-super {p0, p1}, Lcom/android/internal/app/AlertActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 44
     invoke-virtual {p0}, Lcom/android/settings/SmsDefaultDialog;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 45
     .local v0, "intent":Landroid/content/Intent;
     const-string v2, "package"
 
@@ -252,23 +222,19 @@
 
     move-result-object v1
 
-    .line 47
     .local v1, "packageName":Ljava/lang/String;
     const/4 v2, 0x0
 
     invoke-virtual {p0, v2}, Lcom/android/settings/SmsDefaultDialog;->setResult(I)V
 
-    .line 48
     invoke-direct {p0, v1}, Lcom/android/settings/SmsDefaultDialog;->buildDialog(Ljava/lang/String;)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 49
     invoke-virtual {p0}, Lcom/android/settings/SmsDefaultDialog;->finish()V
 
-    .line 51
     :cond_0
     return-void
 .end method

@@ -36,7 +36,6 @@
     .locals 0
 
     .prologue
-    .line 456
     iput-object p1, p0, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory$2;->this$0:Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;
 
     iput-object p2, p0, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory$2;->val$details:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementDetails;
@@ -53,7 +52,6 @@
     .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
-    .line 456
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1    # "x0":[Ljava/lang/Object;
@@ -69,16 +67,13 @@
     .param p1, "params"    # [Ljava/lang/Void;
 
     .prologue
-    .line 461
     new-instance v1, Lcom/android/settings/EMMCInfoReader;
 
     invoke-direct {v1}, Lcom/android/settings/EMMCInfoReader;-><init>()V
 
-    .line 462
     .local v1, "reader":Lcom/android/settings/EMMCInfoReader;
     invoke-virtual {v1}, Lcom/android/settings/EMMCInfoReader;->readEMMCInfo()V
 
-    .line 463
     const/4 v2, 0x0
 
     invoke-virtual {v1}, Lcom/android/settings/EMMCInfoReader;->getTotalSize()J
@@ -95,7 +90,6 @@
 
     move-result-object v0
 
-    .line 465
     .local v0, "emmcInfo":Ljava/lang/String;
     return-object v0
 .end method
@@ -105,7 +99,6 @@
     .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
-    .line 456
     check-cast p1, Ljava/lang/String;
 
     .end local p1    # "x0":Ljava/lang/Object;
@@ -119,7 +112,6 @@
     .param p1, "emmcInfo"    # Ljava/lang/String;
 
     .prologue
-    .line 470
     const/4 v4, 0x0
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -136,26 +128,22 @@
 
     move-result-wide v2
 
-    .line 472
     .local v2, "emmcSize":J
     const-wide/32 v4, 0x40000000
 
     mul-long/2addr v2, v4
 
-    .line 473
     iget-object v4, p0, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory$2;->this$0:Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;
 
     # setter for: Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;->mTotalSize:J
     invoke-static {v4, v2, v3}, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;->access$002(Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;J)J
 
-    .line 475
     iget-object v4, p0, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory$2;->val$details:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementDetails;
 
     iget-wide v4, v4, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementDetails;->totalSize:J
 
     sub-long v0, v2, v4
 
-    .line 477
     .local v0, "androidSize":J
     iget-object v4, p0, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory$2;->this$0:Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;
 
@@ -166,7 +154,6 @@
 
     invoke-virtual {v4, p1}, Lcom/android/settings/deviceinfo/StorageItemPreference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 478
     iget-object v4, p0, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory$2;->this$0:Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;
 
     iget-object v5, p0, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory$2;->this$0:Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;
@@ -179,7 +166,6 @@
     # invokes: Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;->updatePreference(Lcom/android/settings/deviceinfo/StorageItemPreference;J)V
     invoke-static {v4, v5, v0, v1}, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;->access$300(Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;Lcom/android/settings/deviceinfo/StorageItemPreference;J)V
 
-    .line 479
     iget-object v4, p0, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory$2;->this$0:Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;
 
     iget-object v5, p0, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory$2;->val$details:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementDetails;
@@ -187,6 +173,5 @@
     # invokes: Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;->updatePrimaryDetails(Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementDetails;)V
     invoke-static {v4, v5}, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;->access$400(Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementDetails;)V
 
-    .line 480
     return-void
 .end method

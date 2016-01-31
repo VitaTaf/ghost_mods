@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 278
     iput-object p1, p0, Lcom/android/settings/wifi/WifiSettings$1;->this$0:Lcom/android/settings/wifi/WifiSettings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 281
     iget-object v0, p0, Lcom/android/settings/wifi/WifiSettings$1;->this$0:Lcom/android/settings/wifi/WifiSettings;
 
     # invokes: Lcom/android/settings/wifi/WifiSettings;->handleEvent(Landroid/content/Intent;)V
     invoke-static {v0, p2}, Lcom/android/settings/wifi/WifiSettings;->access$000(Lcom/android/settings/wifi/WifiSettings;Landroid/content/Intent;)V
 
-    .line 282
     return-void
 .end method

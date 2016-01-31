@@ -49,7 +49,6 @@
     .locals 1
 
     .prologue
-    .line 52
     const/16 v0, 0x2026
 
     sput-char v0, Lcom/android/settings/dashboard/SearchResultsSummary;->ELLIPSIS:C
@@ -61,10 +60,8 @@
     .locals 0
 
     .prologue
-    .line 47
     invoke-direct {p0}, Landroid/app/Fragment;-><init>()V
 
-    .line 502
     return-void
 .end method
 
@@ -74,7 +71,6 @@
     .param p1, "x1"    # Landroid/database/Cursor;
 
     .prologue
-    .line 47
     invoke-direct {p0, p1}, Lcom/android/settings/dashboard/SearchResultsSummary;->setResultsCursor(Landroid/database/Cursor;)V
 
     return-void
@@ -86,7 +82,6 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 47
     invoke-direct {p0, p1}, Lcom/android/settings/dashboard/SearchResultsSummary;->setResultsVisibility(Z)V
 
     return-void
@@ -97,7 +92,6 @@
     .param p0, "x0"    # Lcom/android/settings/dashboard/SearchResultsSummary;
 
     .prologue
-    .line 47
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mQuery:Ljava/lang/String;
 
     return-object v0
@@ -109,7 +103,6 @@
     .param p1, "x1"    # Ljava/lang/String;
 
     .prologue
-    .line 47
     iput-object p1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mQuery:Ljava/lang/String;
 
     return-object p1
@@ -120,7 +113,6 @@
     .param p0, "x0"    # Lcom/android/settings/dashboard/SearchResultsSummary;
 
     .prologue
-    .line 47
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mSearchView:Landroid/widget/SearchView;
 
     return-object v0
@@ -132,7 +124,6 @@
     .param p1, "x1"    # Landroid/database/Cursor;
 
     .prologue
-    .line 47
     invoke-direct {p0, p1}, Lcom/android/settings/dashboard/SearchResultsSummary;->setSuggestionsCursor(Landroid/database/Cursor;)V
 
     return-void
@@ -144,7 +135,6 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 47
     invoke-direct {p0, p1}, Lcom/android/settings/dashboard/SearchResultsSummary;->setSuggestionsVisibility(Z)V
 
     return-void
@@ -155,7 +145,6 @@
     .param p0, "x0"    # Lcom/android/settings/dashboard/SearchResultsSummary;
 
     .prologue
-    .line 47
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mResultsAdapter:Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;
 
     return-object v0
@@ -166,7 +155,6 @@
     .param p0, "x0"    # Lcom/android/settings/dashboard/SearchResultsSummary;
 
     .prologue
-    .line 47
     invoke-direct {p0}, Lcom/android/settings/dashboard/SearchResultsSummary;->saveQueryToDatabase()V
 
     return-void
@@ -177,7 +165,6 @@
     .param p0, "x0"    # Lcom/android/settings/dashboard/SearchResultsSummary;
 
     .prologue
-    .line 47
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mSuggestionsAdapter:Lcom/android/settings/dashboard/SearchResultsSummary$SuggestionsAdapter;
 
     return-object v0
@@ -189,7 +176,6 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 47
     iput-boolean p1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mShowResults:Z
 
     return p1
@@ -203,34 +189,27 @@
 
     const/4 v1, 0x0
 
-    .line 362
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mUpdateSearchResultsTask:Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSearchResultsTask;
 
     if-eqz v0, :cond_0
 
-    .line 363
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mUpdateSearchResultsTask:Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSearchResultsTask;
 
     invoke-virtual {v0, v1}, Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSearchResultsTask;->cancel(Z)Z
 
-    .line 364
     iput-object v2, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mUpdateSearchResultsTask:Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSearchResultsTask;
 
-    .line 366
     :cond_0
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mUpdateSuggestionsTask:Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSuggestionsTask;
 
     if-eqz v0, :cond_1
 
-    .line 367
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mUpdateSuggestionsTask:Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSuggestionsTask;
 
     invoke-virtual {v0, v1}, Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSuggestionsTask;->cancel(Z)Z
 
-    .line 368
     iput-object v2, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mUpdateSuggestionsTask:Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSuggestionsTask;
 
-    .line 370
     :cond_1
     return-void
 .end method
@@ -241,26 +220,21 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 329
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mUpdateSearchResultsTask:Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSearchResultsTask;
 
     if-eqz v0, :cond_0
 
-    .line 330
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mUpdateSearchResultsTask:Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSearchResultsTask;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSearchResultsTask;->cancel(Z)Z
 
-    .line 331
     iput-object v2, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mUpdateSearchResultsTask:Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSearchResultsTask;
 
-    .line 333
     :cond_0
     invoke-direct {p0, v2}, Lcom/android/settings/dashboard/SearchResultsSummary;->setResultsCursor(Landroid/database/Cursor;)V
 
-    .line 334
     return-void
 .end method
 
@@ -270,26 +244,21 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 311
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mUpdateSuggestionsTask:Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSuggestionsTask;
 
     if-eqz v0, :cond_0
 
-    .line 312
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mUpdateSuggestionsTask:Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSuggestionsTask;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSuggestionsTask;->cancel(Z)Z
 
-    .line 313
     iput-object v2, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mUpdateSuggestionsTask:Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSuggestionsTask;
 
-    .line 315
     :cond_0
     invoke-direct {p0, v2}, Lcom/android/settings/dashboard/SearchResultsSummary;->setSuggestionsCursor(Landroid/database/Cursor;)V
 
-    .line 316
     return-void
 .end method
 
@@ -298,23 +267,18 @@
     .param p1, "query"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 347
     if-nez p1, :cond_0
 
-    .line 348
     const/4 v3, 0x0
 
-    .line 358
     :goto_0
     return-object v3
 
-    .line 350
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 351
     .local v1, "filtered":Ljava/lang/StringBuilder;
     const/4 v2, 0x0
 
@@ -326,12 +290,10 @@
 
     if-ge v2, v3, :cond_2
 
-    .line 352
     invoke-interface {p1, v2}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v0
 
-    .line 353
     .local v0, "c":C
     invoke-static {v0}, Ljava/lang/Character;->isLetterOrDigit(C)Z
 
@@ -345,19 +307,16 @@
 
     if-nez v3, :cond_1
 
-    .line 351
     :goto_2
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 356
     :cond_1
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_2
 
-    .line 358
     .end local v0    # "c":C
     :cond_2
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -371,7 +330,6 @@
     .locals 2
 
     .prologue
-    .line 273
     invoke-virtual {p0}, Lcom/android/settings/dashboard/SearchResultsSummary;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -384,7 +342,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/search/Index;->addSavedQuery(Ljava/lang/String;)J
 
-    .line 274
     return-void
 .end method
 
@@ -393,17 +350,14 @@
     .param p1, "cursor"    # Landroid/database/Cursor;
 
     .prologue
-    .line 337
     iget-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mResultsAdapter:Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;
 
     if-nez v1, :cond_1
 
-    .line 344
     :cond_0
     :goto_0
     return-void
 
-    .line 340
     :cond_1
     iget-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mResultsAdapter:Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;
 
@@ -411,11 +365,9 @@
 
     move-result-object v0
 
-    .line 341
     .local v0, "oldCursor":Landroid/database/Cursor;
     if-eqz v0, :cond_0
 
-    .line 342
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
@@ -426,12 +378,10 @@
     .param p1, "visible"    # Z
 
     .prologue
-    .line 267
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mLayoutResults:Landroid/view/ViewGroup;
 
     if-eqz v0, :cond_0
 
-    .line 268
     iget-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mLayoutResults:Landroid/view/ViewGroup;
 
     if-eqz p1, :cond_1
@@ -441,11 +391,9 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 270
     :cond_0
     return-void
 
-    .line 268
     :cond_1
     const/16 v0, 0x8
 
@@ -457,17 +405,14 @@
     .param p1, "cursor"    # Landroid/database/Cursor;
 
     .prologue
-    .line 319
     iget-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mSuggestionsAdapter:Lcom/android/settings/dashboard/SearchResultsSummary$SuggestionsAdapter;
 
     if-nez v1, :cond_1
 
-    .line 326
     :cond_0
     :goto_0
     return-void
 
-    .line 322
     :cond_1
     iget-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mSuggestionsAdapter:Lcom/android/settings/dashboard/SearchResultsSummary$SuggestionsAdapter;
 
@@ -475,11 +420,9 @@
 
     move-result-object v0
 
-    .line 323
     .local v0, "oldCursor":Landroid/database/Cursor;
     if-eqz v0, :cond_0
 
-    .line 324
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
@@ -490,12 +433,10 @@
     .param p1, "visible"    # Z
 
     .prologue
-    .line 261
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mLayoutSuggestions:Landroid/view/ViewGroup;
 
     if-eqz v0, :cond_0
 
-    .line 262
     iget-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mLayoutSuggestions:Landroid/view/ViewGroup;
 
     if-eqz p1, :cond_1
@@ -505,11 +446,9 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 264
     :cond_0
     return-void
 
-    .line 262
     :cond_1
     const/16 v0, 0x8
 
@@ -524,10 +463,8 @@
 
     const/4 v3, 0x0
 
-    .line 383
     invoke-direct {p0}, Lcom/android/settings/dashboard/SearchResultsSummary;->clearAllTasks()V
 
-    .line 384
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mQuery:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -536,17 +473,13 @@
 
     if-eqz v0, :cond_0
 
-    .line 385
     invoke-direct {p0, v3}, Lcom/android/settings/dashboard/SearchResultsSummary;->setResultsVisibility(Z)V
 
-    .line 386
     invoke-direct {p0, v1}, Lcom/android/settings/dashboard/SearchResultsSummary;->setResultsCursor(Landroid/database/Cursor;)V
 
-    .line 391
     :goto_0
     return-void
 
-    .line 388
     :cond_0
     new-instance v0, Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSearchResultsTask;
 
@@ -554,7 +487,6 @@
 
     iput-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mUpdateSearchResultsTask:Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSearchResultsTask;
 
-    .line 389
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mUpdateSearchResultsTask:Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSearchResultsTask;
 
     const/4 v1, 0x1
@@ -576,22 +508,17 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 373
     invoke-direct {p0}, Lcom/android/settings/dashboard/SearchResultsSummary;->clearAllTasks()V
 
-    .line 374
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mQuery:Ljava/lang/String;
 
     if-nez v0, :cond_0
 
-    .line 375
     invoke-direct {p0, v1}, Lcom/android/settings/dashboard/SearchResultsSummary;->setSuggestionsCursor(Landroid/database/Cursor;)V
 
-    .line 380
     :goto_0
     return-void
 
-    .line 377
     :cond_0
     new-instance v0, Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSuggestionsTask;
 
@@ -599,7 +526,6 @@
 
     iput-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mUpdateSuggestionsTask:Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSuggestionsTask;
 
-    .line 378
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mUpdateSuggestionsTask:Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSuggestionsTask;
 
     const/4 v1, 0x1
@@ -624,10 +550,8 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 115
     invoke-super {p0, p1}, Landroid/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 117
     new-instance v0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;
 
     invoke-virtual {p0}, Lcom/android/settings/dashboard/SearchResultsSummary;->getActivity()Landroid/app/Activity;
@@ -638,7 +562,6 @@
 
     iput-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mResultsAdapter:Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;
 
-    .line 118
     new-instance v0, Lcom/android/settings/dashboard/SearchResultsSummary$SuggestionsAdapter;
 
     invoke-virtual {p0}, Lcom/android/settings/dashboard/SearchResultsSummary;->getActivity()Landroid/app/Activity;
@@ -649,10 +572,8 @@
 
     iput-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mSuggestionsAdapter:Lcom/android/settings/dashboard/SearchResultsSummary$SuggestionsAdapter;
 
-    .line 120
     if-eqz p1, :cond_0
 
-    .line 121
     const-string v0, ":settings:show_results"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -661,7 +582,6 @@
 
     iput-boolean v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mShowResults:Z
 
-    .line 123
     :cond_0
     return-void
 .end method
@@ -677,14 +597,12 @@
 
     const/4 v5, 0x0
 
-    .line 159
     const v1, 0x7f0400a9
 
     invoke-virtual {p1, v1, p2, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
-    .line 161
     .local v0, "view":Landroid/view/View;
     const v1, 0x7f0f018e
 
@@ -696,7 +614,6 @@
 
     iput-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mLayoutSuggestions:Landroid/view/ViewGroup;
 
-    .line 162
     const v1, 0x7f0f0190
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -707,7 +624,6 @@
 
     iput-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mLayoutResults:Landroid/view/ViewGroup;
 
-    .line 164
     const v1, 0x7f0f0191
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -718,14 +634,12 @@
 
     iput-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mResultsListView:Landroid/widget/ListView;
 
-    .line 165
     iget-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mResultsListView:Landroid/widget/ListView;
 
     iget-object v2, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mResultsAdapter:Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;
 
     invoke-virtual {v1, v2}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 166
     iget-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mResultsListView:Landroid/widget/ListView;
 
     new-instance v2, Lcom/android/settings/dashboard/SearchResultsSummary$1;
@@ -734,7 +648,6 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    .line 214
     iget-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mResultsListView:Landroid/widget/ListView;
 
     invoke-virtual {p0}, Lcom/android/settings/dashboard/SearchResultsSummary;->getActivity()Landroid/app/Activity;
@@ -755,7 +668,6 @@
 
     invoke-virtual {v1, v2, v6, v5}, Landroid/widget/ListView;->addHeaderView(Landroid/view/View;Ljava/lang/Object;Z)V
 
-    .line 219
     const v1, 0x7f0f018f
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -766,14 +678,12 @@
 
     iput-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mSuggestionsListView:Landroid/widget/ListView;
 
-    .line 220
     iget-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mSuggestionsListView:Landroid/widget/ListView;
 
     iget-object v2, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mSuggestionsAdapter:Lcom/android/settings/dashboard/SearchResultsSummary$SuggestionsAdapter;
 
     invoke-virtual {v1, v2}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 221
     iget-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mSuggestionsListView:Landroid/widget/ListView;
 
     new-instance v2, Lcom/android/settings/dashboard/SearchResultsSummary$2;
@@ -782,7 +692,6 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    .line 239
     iget-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mSuggestionsListView:Landroid/widget/ListView;
 
     invoke-virtual {p0}, Lcom/android/settings/dashboard/SearchResultsSummary;->getActivity()Landroid/app/Activity;
@@ -803,7 +712,6 @@
 
     invoke-virtual {v1, v2, v6, v5}, Landroid/widget/ListView;->addHeaderView(Landroid/view/View;Ljava/lang/Object;Z)V
 
-    .line 244
     return-object v0
 .end method
 
@@ -813,31 +721,22 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 142
     iput-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mResultsListView:Landroid/widget/ListView;
 
-    .line 143
     iput-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mResultsAdapter:Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;
 
-    .line 144
     iput-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mUpdateSearchResultsTask:Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSearchResultsTask;
 
-    .line 146
     iput-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mSuggestionsListView:Landroid/widget/ListView;
 
-    .line 147
     iput-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mSuggestionsAdapter:Lcom/android/settings/dashboard/SearchResultsSummary$SuggestionsAdapter;
 
-    .line 148
     iput-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mUpdateSuggestionsTask:Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSuggestionsTask;
 
-    .line 150
     iput-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mSearchView:Landroid/widget/SearchView;
 
-    .line 152
     invoke-super {p0}, Landroid/app/Fragment;->onDestroy()V
 
-    .line 153
     return-void
 .end method
 
@@ -850,16 +749,13 @@
 
     const/4 v2, 0x0
 
-    .line 287
     invoke-direct {p0, p1}, Lcom/android/settings/dashboard/SearchResultsSummary;->getFilteredQueryString(Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 289
     .local v0, "newQuery":Ljava/lang/String;
     iput-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mQuery:Ljava/lang/String;
 
-    .line 291
     iget-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mQuery:Ljava/lang/String;
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -868,27 +764,20 @@
 
     if-eqz v1, :cond_0
 
-    .line 292
     iput-boolean v2, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mShowResults:Z
 
-    .line 293
     invoke-direct {p0, v2}, Lcom/android/settings/dashboard/SearchResultsSummary;->setResultsVisibility(Z)V
 
-    .line 294
     invoke-direct {p0}, Lcom/android/settings/dashboard/SearchResultsSummary;->updateSuggestions()V
 
-    .line 301
     :goto_0
     return v3
 
-    .line 296
     :cond_0
     iput-boolean v3, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mShowResults:Z
 
-    .line 297
     invoke-direct {p0, v2}, Lcom/android/settings/dashboard/SearchResultsSummary;->setSuggestionsVisibility(Z)V
 
-    .line 298
     invoke-direct {p0}, Lcom/android/settings/dashboard/SearchResultsSummary;->updateSearchResults()V
 
     goto :goto_0
@@ -901,28 +790,22 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 277
     invoke-direct {p0, p1}, Lcom/android/settings/dashboard/SearchResultsSummary;->getFilteredQueryString(Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mQuery:Ljava/lang/String;
 
-    .line 278
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mShowResults:Z
 
-    .line 279
     invoke-direct {p0, v1}, Lcom/android/settings/dashboard/SearchResultsSummary;->setSuggestionsVisibility(Z)V
 
-    .line 280
     invoke-direct {p0}, Lcom/android/settings/dashboard/SearchResultsSummary;->updateSearchResults()V
 
-    .line 281
     invoke-direct {p0}, Lcom/android/settings/dashboard/SearchResultsSummary;->saveQueryToDatabase()V
 
-    .line 283
     return v1
 .end method
 
@@ -930,18 +813,14 @@
     .locals 1
 
     .prologue
-    .line 249
     invoke-super {p0}, Landroid/app/Fragment;->onResume()V
 
-    .line 251
     iget-boolean v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mShowResults:Z
 
     if-nez v0, :cond_0
 
-    .line 252
     invoke-virtual {p0}, Lcom/android/settings/dashboard/SearchResultsSummary;->showSomeSuggestions()V
 
-    .line 254
     :cond_0
     return-void
 .end method
@@ -951,17 +830,14 @@
     .param p1, "outState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 127
     invoke-super {p0, p1}, Landroid/app/Fragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    .line 129
     const-string v0, ":settings:show_results"
 
     iget-boolean v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mShowResults:Z
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 130
     return-void
 .end method
 
@@ -969,16 +845,12 @@
     .locals 0
 
     .prologue
-    .line 134
     invoke-super {p0}, Landroid/app/Fragment;->onStop()V
 
-    .line 136
     invoke-direct {p0}, Lcom/android/settings/dashboard/SearchResultsSummary;->clearSuggestions()V
 
-    .line 137
     invoke-direct {p0}, Lcom/android/settings/dashboard/SearchResultsSummary;->clearResults()V
 
-    .line 138
     return-void
 .end method
 
@@ -987,10 +859,8 @@
     .param p1, "searchView"    # Landroid/widget/SearchView;
 
     .prologue
-    .line 257
     iput-object p1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mSearchView:Landroid/widget/SearchView;
 
-    .line 258
     return-void
 .end method
 
@@ -998,19 +868,15 @@
     .locals 1
 
     .prologue
-    .line 305
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/settings/dashboard/SearchResultsSummary;->setResultsVisibility(Z)V
 
-    .line 306
     const-string v0, ""
 
     iput-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mQuery:Ljava/lang/String;
 
-    .line 307
     invoke-direct {p0}, Lcom/android/settings/dashboard/SearchResultsSummary;->updateSuggestions()V
 
-    .line 308
     return-void
 .end method

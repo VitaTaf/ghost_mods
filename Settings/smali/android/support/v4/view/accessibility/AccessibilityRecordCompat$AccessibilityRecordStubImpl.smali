@@ -22,7 +22,6 @@
     .locals 0
 
     .prologue
-    .line 82
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,7 +33,6 @@
     .locals 1
 
     .prologue
-    .line 84
     const/4 v0, 0x0
 
     return-object v0
@@ -46,7 +44,6 @@
     .param p2, "fromIndex"    # I
 
     .prologue
-    .line 213
     return-void
 .end method
 
@@ -56,7 +53,6 @@
     .param p2, "itemCount"    # I
 
     .prologue
-    .line 221
     return-void
 .end method
 
@@ -66,7 +62,6 @@
     .param p2, "scrollable"    # Z
 
     .prologue
-    .line 253
     return-void
 .end method
 
@@ -76,6 +71,5 @@
     .param p2, "toIndex"    # I
 
     .prologue
-    .line 265
     return-void
 .end method

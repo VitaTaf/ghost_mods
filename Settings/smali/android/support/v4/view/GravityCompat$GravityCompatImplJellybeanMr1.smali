@@ -22,7 +22,6 @@
     .locals 0
 
     .prologue
-    .line 62
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,7 +35,6 @@
     .param p2, "layoutDirection"    # I
 
     .prologue
-    .line 65
     invoke-static {p1, p2}, Landroid/support/v4/view/GravityCompatJellybeanMr1;->getAbsoluteGravity(II)I
 
     move-result v0

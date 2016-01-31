@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 56
     iput-object p1, p0, Lcom/android/settings/print/PrintJobSettingsFragment$1;->this$0:Lcom/android/settings/print/PrintJobSettingsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +40,10 @@
     .param p1, "printJobId"    # Landroid/print/PrintJobId;
 
     .prologue
-    .line 59
     iget-object v0, p0, Lcom/android/settings/print/PrintJobSettingsFragment$1;->this$0:Lcom/android/settings/print/PrintJobSettingsFragment;
 
     # invokes: Lcom/android/settings/print/PrintJobSettingsFragment;->updateUi()V
     invoke-static {v0}, Lcom/android/settings/print/PrintJobSettingsFragment;->access$000(Lcom/android/settings/print/PrintJobSettingsFragment;)V
 
-    .line 60
     return-void
 .end method

@@ -31,18 +31,14 @@
     .param p3, "preference"    # Landroid/preference/Preference;
 
     .prologue
-    .line 435
     iput-object p1, p0, Lcom/android/settings/location/SettingsInjector$Setting;->this$0:Lcom/android/settings/location/SettingsInjector;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 436
     iput-object p2, p0, Lcom/android/settings/location/SettingsInjector$Setting;->setting:Lcom/android/settings/location/InjectedSetting;
 
-    .line 437
     iput-object p3, p0, Lcom/android/settings/location/SettingsInjector$Setting;->preference:Landroid/preference/Preference;
 
-    .line 438
     return-void
 .end method
 
@@ -54,7 +50,6 @@
     .param p4, "x3"    # Lcom/android/settings/location/SettingsInjector$1;
 
     .prologue
-    .line 429
     invoke-direct {p0, p1, p2, p3}, Lcom/android/settings/location/SettingsInjector$Setting;-><init>(Lcom/android/settings/location/SettingsInjector;Lcom/android/settings/location/InjectedSetting;Landroid/preference/Preference;)V
 
     return-void
@@ -67,7 +62,6 @@
     .param p1, "o"    # Ljava/lang/Object;
 
     .prologue
-    .line 454
     if-eq p0, p1, :cond_0
 
     instance-of v0, p1, Lcom/android/settings/location/SettingsInjector$Setting;
@@ -103,12 +97,10 @@
     .locals 4
 
     .prologue
-    .line 500
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
-    .line 501
     .local v0, "end":J
     iget-wide v2, p0, Lcom/android/settings/location/SettingsInjector$Setting;->startMillis:J
 
@@ -121,7 +113,6 @@
     .locals 1
 
     .prologue
-    .line 459
     iget-object v0, p0, Lcom/android/settings/location/SettingsInjector$Setting;->setting:Lcom/android/settings/location/InjectedSetting;
 
     invoke-virtual {v0}, Lcom/android/settings/location/InjectedSetting;->hashCode()I
@@ -135,7 +126,6 @@
     .locals 6
 
     .prologue
-    .line 505
     const-string v2, "SettingsInjector"
 
     const/4 v3, 0x3
@@ -154,12 +144,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 506
     invoke-virtual {p0}, Lcom/android/settings/location/SettingsInjector$Setting;->getElapsedTime()J
 
     move-result-wide v0
 
-    .line 507
     .local v0, "elapsed":J
     const-string v2, "SettingsInjector"
 
@@ -193,7 +181,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 509
     .end local v0    # "elapsed":J
     :cond_0
     return-void
@@ -203,18 +190,15 @@
     .locals 6
 
     .prologue
-    .line 467
     new-instance v0, Lcom/android/settings/location/SettingsInjector$Setting$1;
 
     invoke-direct {v0, p0}, Lcom/android/settings/location/SettingsInjector$Setting$1;-><init>(Lcom/android/settings/location/SettingsInjector$Setting;)V
 
-    .line 481
     .local v0, "handler":Landroid/os/Handler;
     new-instance v2, Landroid/os/Messenger;
 
     invoke-direct {v2, v0}, Landroid/os/Messenger;-><init>(Landroid/os/Handler;)V
 
-    .line 483
     .local v2, "messenger":Landroid/os/Messenger;
     iget-object v3, p0, Lcom/android/settings/location/SettingsInjector$Setting;->setting:Lcom/android/settings/location/InjectedSetting;
 
@@ -222,13 +206,11 @@
 
     move-result-object v1
 
-    .line 484
     .local v1, "intent":Landroid/content/Intent;
     const-string v3, "messenger"
 
     invoke-virtual {v1, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 486
     const-string v3, "SettingsInjector"
 
     const/4 v4, 0x3
@@ -239,7 +221,6 @@
 
     if-eqz v3, :cond_0
 
-    .line 487
     const-string v3, "SettingsInjector"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -278,14 +259,12 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 489
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v4
 
     iput-wide v4, p0, Lcom/android/settings/location/SettingsInjector$Setting;->startMillis:J
 
-    .line 496
     :goto_0
     iget-object v3, p0, Lcom/android/settings/location/SettingsInjector$Setting;->this$0:Lcom/android/settings/location/SettingsInjector;
 
@@ -300,10 +279,8 @@
 
     invoke-virtual {v3, v1, v4}, Landroid/content/Context;->startServiceAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)Landroid/content/ComponentName;
 
-    .line 497
     return-void
 
-    .line 491
     :cond_0
     const-wide/16 v4, 0x0
 
@@ -316,7 +293,6 @@
     .locals 2
 
     .prologue
-    .line 442
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

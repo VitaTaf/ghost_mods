@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 104
     iput-object p1, p0, Lcom/android/settings/wifi/WifiSettingsForSetupWizard$2;->this$0:Lcom/android/settings/wifi/WifiSettingsForSetupWizard;
 
     invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
@@ -37,14 +36,11 @@
     .locals 1
 
     .prologue
-    .line 107
     invoke-super {p0}, Landroid/database/DataSetObserver;->onChanged()V
 
-    .line 108
     iget-object v0, p0, Lcom/android/settings/wifi/WifiSettingsForSetupWizard$2;->this$0:Lcom/android/settings/wifi/WifiSettingsForSetupWizard;
 
     invoke-virtual {v0}, Lcom/android/settings/wifi/WifiSettingsForSetupWizard;->updateFooter()V
 
-    .line 109
     return-void
 .end method

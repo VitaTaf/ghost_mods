@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 891
     iput-object p1, p0, Lcom/android/settings/SecuritySettings$2;->this$0:Lcom/android/settings/SecuritySettings;
 
     iput-object p2, p0, Lcom/android/settings/SecuritySettings$2;->val$value:Ljava/lang/Object;
@@ -46,19 +45,16 @@
     .param p2, "id"    # I
 
     .prologue
-    .line 893
     iget-object v0, p0, Lcom/android/settings/SecuritySettings$2;->val$value:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/String;
 
     invoke-static {v0}, Lcom/motorola/crypto/CryptographicModesHelper;->setUserMode(Ljava/lang/String;)V
 
-    .line 894
     iget-object v0, p0, Lcom/android/settings/SecuritySettings$2;->this$0:Lcom/android/settings/SecuritySettings;
 
     # invokes: Lcom/android/settings/SecuritySettings;->reboot()V
     invoke-static {v0}, Lcom/android/settings/SecuritySettings;->access$100(Lcom/android/settings/SecuritySettings;)V
 
-    .line 895
     return-void
 .end method

@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 1130
     invoke-direct {p0}, Landroid/support/v4/view/ViewCompat$JbMr1ViewCompatImpl;-><init>()V
 
     return-void
@@ -33,9 +32,7 @@
     .param p2, "mode"    # I
 
     .prologue
-    .line 1143
     invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompatJB;->setImportantForAccessibility(Landroid/view/View;I)V
 
-    .line 1144
     return-void
 .end method

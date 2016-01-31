@@ -9,10 +9,8 @@
     .param p1, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 27
     invoke-direct {p0, p1}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 28
     return-void
 .end method
 
@@ -25,7 +23,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 31
     const-string v0, "accessibility_enabled"
 
     invoke-static {v0}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -34,7 +31,6 @@
 
     invoke-virtual {p1, v0, v1, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 33
     const-string v0, "enabled_accessibility_services"
 
     invoke-static {v0}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -43,7 +39,6 @@
 
     invoke-virtual {p1, v0, v1, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 35
     return-void
 .end method
 
@@ -52,9 +47,7 @@
     .param p1, "contentResolver"    # Landroid/content/ContentResolver;
 
     .prologue
-    .line 38
     invoke-virtual {p1, p0}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 39
     return-void
 .end method

@@ -22,7 +22,6 @@
     .locals 0
 
     .prologue
-    .line 361
     invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
 
     return-void
@@ -33,27 +32,22 @@
     .param p0, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 366
     new-instance v1, Lcom/android/settings/UsageAccessSettings$WarningDialogFragment;
 
     invoke-direct {v1}, Lcom/android/settings/UsageAccessSettings$WarningDialogFragment;-><init>()V
 
-    .line 367
     .local v1, "dialog":Lcom/android/settings/UsageAccessSettings$WarningDialogFragment;
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 368
     .local v0, "args":Landroid/os/Bundle;
     const-string v2, "package"
 
     invoke-virtual {v0, v2, p0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 369
     invoke-virtual {v1, v0}, Lcom/android/settings/UsageAccessSettings$WarningDialogFragment;->setArguments(Landroid/os/Bundle;)V
 
-    .line 370
     return-object v1
 .end method
 
@@ -65,12 +59,10 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 386
     const/4 v0, -0x1
 
     if-ne p2, v0, :cond_0
 
-    .line 387
     invoke-virtual {p0}, Lcom/android/settings/UsageAccessSettings$WarningDialogFragment;->getParentFragment()Landroid/app/Fragment;
 
     move-result-object v0
@@ -89,11 +81,9 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/UsageAccessSettings;->allowAccess(Ljava/lang/String;)V
 
-    .line 392
     :goto_0
     return-void
 
-    .line 390
     :cond_0
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
@@ -105,7 +95,6 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 375
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lcom/android/settings/UsageAccessSettings$WarningDialogFragment;->getActivity()Landroid/app/Activity;

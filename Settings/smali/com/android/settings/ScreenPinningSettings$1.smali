@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 165
     iput-object p1, p0, Lcom/android/settings/ScreenPinningSettings$1;->this$0:Lcom/android/settings/ScreenPinningSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .param p2, "newValue"    # Ljava/lang/Object;
 
     .prologue
-    .line 168
     iget-object v0, p0, Lcom/android/settings/ScreenPinningSettings$1;->this$0:Lcom/android/settings/ScreenPinningSettings;
 
     check-cast p2, Ljava/lang/Boolean;

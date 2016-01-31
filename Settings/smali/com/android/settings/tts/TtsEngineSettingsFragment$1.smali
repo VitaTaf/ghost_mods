@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 71
     iput-object p1, p0, Lcom/android/settings/tts/TtsEngineSettingsFragment$1;->this$0:Lcom/android/settings/tts/TtsEngineSettingsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,19 +40,15 @@
     .param p1, "status"    # I
 
     .prologue
-    .line 74
     if-eqz p1, :cond_0
 
-    .line 75
     iget-object v0, p0, Lcom/android/settings/tts/TtsEngineSettingsFragment$1;->this$0:Lcom/android/settings/tts/TtsEngineSettingsFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/tts/TtsEngineSettingsFragment;->finishFragment()V
 
-    .line 84
     :goto_0
     return-void
 
-    .line 77
     :cond_0
     iget-object v0, p0, Lcom/android/settings/tts/TtsEngineSettingsFragment$1;->this$0:Lcom/android/settings/tts/TtsEngineSettingsFragment;
 

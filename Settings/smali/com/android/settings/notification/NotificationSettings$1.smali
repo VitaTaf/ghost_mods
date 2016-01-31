@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 304
     iput-object p1, p0, Lcom/android/settings/notification/NotificationSettings$1;->this$0:Lcom/android/settings/notification/NotificationSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +43,6 @@
 
     const/4 v2, 0x1
 
-    .line 307
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSettings$1;->this$0:Lcom/android/settings/notification/NotificationSettings;
 
     # getter for: Lcom/android/settings/notification/NotificationSettings;->mPhoneRingtonePreference:Landroid/preference/Preference;
@@ -54,7 +52,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 308
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSettings$1;->this$0:Lcom/android/settings/notification/NotificationSettings;
 
     # getter for: Lcom/android/settings/notification/NotificationSettings;->mContext:Landroid/content/Context;
@@ -67,11 +64,9 @@
 
     move-result-object v0
 
-    .line 310
     .local v0, "summary":Ljava/lang/CharSequence;
     if-eqz v0, :cond_0
 
-    .line 311
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSettings$1;->this$0:Lcom/android/settings/notification/NotificationSettings;
 
     # getter for: Lcom/android/settings/notification/NotificationSettings;->mHandler:Lcom/android/settings/notification/NotificationSettings$H;
@@ -85,7 +80,6 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 314
     .end local v0    # "summary":Ljava/lang/CharSequence;
     :cond_0
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSettings$1;->this$0:Lcom/android/settings/notification/NotificationSettings;
@@ -97,7 +91,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 315
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSettings$1;->this$0:Lcom/android/settings/notification/NotificationSettings;
 
     # getter for: Lcom/android/settings/notification/NotificationSettings;->mContext:Landroid/content/Context;
@@ -110,11 +103,9 @@
 
     move-result-object v0
 
-    .line 317
     .restart local v0    # "summary":Ljava/lang/CharSequence;
     if-eqz v0, :cond_1
 
-    .line 318
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSettings$1;->this$0:Lcom/android/settings/notification/NotificationSettings;
 
     # getter for: Lcom/android/settings/notification/NotificationSettings;->mHandler:Lcom/android/settings/notification/NotificationSettings$H;
@@ -128,7 +119,6 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 321
     .end local v0    # "summary":Ljava/lang/CharSequence;
     :cond_1
     return-void

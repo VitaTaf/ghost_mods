@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 50
     iput-object p1, p0, Lcom/android/settings/deviceinfo/UsbSettings$1;->this$0:Lcom/android/settings/deviceinfo/UsbSettings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 52
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 53
     .local v0, "action":Ljava/lang/String;
     const-string v1, "android.hardware.usb.action.USB_STATE"
 
@@ -54,7 +51,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 54
     iget-object v1, p0, Lcom/android/settings/deviceinfo/UsbSettings$1;->this$0:Lcom/android/settings/deviceinfo/UsbSettings;
 
     const-string v2, "accessory"
@@ -68,7 +64,6 @@
     # setter for: Lcom/android/settings/deviceinfo/UsbSettings;->mUsbAccessoryMode:Z
     invoke-static {v1, v2}, Lcom/android/settings/deviceinfo/UsbSettings;->access$002(Lcom/android/settings/deviceinfo/UsbSettings;Z)Z
 
-    .line 55
     const-string v1, "UsbSettings"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -98,7 +93,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 57
     :cond_0
     iget-object v1, p0, Lcom/android/settings/deviceinfo/UsbSettings$1;->this$0:Lcom/android/settings/deviceinfo/UsbSettings;
 
@@ -116,6 +110,5 @@
     # invokes: Lcom/android/settings/deviceinfo/UsbSettings;->updateToggles(Ljava/lang/String;)V
     invoke-static {v1, v2}, Lcom/android/settings/deviceinfo/UsbSettings;->access$200(Lcom/android/settings/deviceinfo/UsbSettings;Ljava/lang/String;)V
 
-    .line 58
     return-void
 .end method

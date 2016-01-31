@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 302
     iput-object p1, p0, Lcom/android/settings/print/PrintServiceSettingsFragment$3;->this$0:Lcom/android/settings/print/PrintServiceSettingsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,10 +45,8 @@
 
     const/4 v1, 0x0
 
-    .line 305
     if-eqz p2, :cond_1
 
-    .line 306
     iget-object v2, p0, Lcom/android/settings/print/PrintServiceSettingsFragment$3;->this$0:Lcom/android/settings/print/PrintServiceSettingsFragment;
 
     # getter for: Lcom/android/settings/print/PrintServiceSettingsFragment;->mEnableWarningMessage:Ljava/lang/CharSequence;
@@ -63,7 +60,6 @@
 
     if-nez v2, :cond_0
 
-    .line 307
     iget-object v2, p0, Lcom/android/settings/print/PrintServiceSettingsFragment$3;->this$0:Lcom/android/settings/print/PrintServiceSettingsFragment;
 
     # getter for: Lcom/android/settings/print/PrintServiceSettingsFragment;->mSwitchBar:Lcom/android/settings/widget/SwitchBar;
@@ -73,7 +69,6 @@
 
     invoke-virtual {v2, v1}, Lcom/android/settings/widget/SwitchBar;->setCheckedInternal(Z)V
 
-    .line 308
     iget-object v2, p0, Lcom/android/settings/print/PrintServiceSettingsFragment$3;->this$0:Lcom/android/settings/print/PrintServiceSettingsFragment;
 
     invoke-virtual {v2}, Lcom/android/settings/print/PrintServiceSettingsFragment;->getArguments()Landroid/os/Bundle;
@@ -84,17 +79,14 @@
 
     invoke-virtual {v2, v3, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 309
     iget-object v1, p0, Lcom/android/settings/print/PrintServiceSettingsFragment$3;->this$0:Lcom/android/settings/print/PrintServiceSettingsFragment;
 
     # invokes: Lcom/android/settings/print/PrintServiceSettingsFragment;->showDialog(I)V
     invoke-static {v1, v0}, Lcom/android/settings/print/PrintServiceSettingsFragment;->access$700(Lcom/android/settings/print/PrintServiceSettingsFragment;I)V
 
-    .line 316
     :goto_0
     return v0
 
-    .line 312
     :cond_0
     iget-object v2, p0, Lcom/android/settings/print/PrintServiceSettingsFragment$3;->this$0:Lcom/android/settings/print/PrintServiceSettingsFragment;
 
@@ -111,10 +103,8 @@
     :goto_1
     move v0, v1
 
-    .line 316
     goto :goto_0
 
-    .line 314
     :cond_1
     iget-object v0, p0, Lcom/android/settings/print/PrintServiceSettingsFragment$3;->this$0:Lcom/android/settings/print/PrintServiceSettingsFragment;
 

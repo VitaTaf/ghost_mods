@@ -33,17 +33,14 @@
     .param p1, "activity"    # Lcom/android/settings/deviceinfo/Status;
 
     .prologue
-    .line 104
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 105
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/android/settings/deviceinfo/Status$MyHandler;->mStatus:Ljava/lang/ref/WeakReference;
 
-    .line 106
     return-void
 .end method
 
@@ -54,7 +51,6 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 110
     iget-object v1, p0, Lcom/android/settings/deviceinfo/Status$MyHandler;->mStatus:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -63,15 +59,12 @@
 
     check-cast v0, Lcom/android/settings/deviceinfo/Status;
 
-    .line 111
     .local v0, "status":Lcom/android/settings/deviceinfo/Status;
     if-nez v0, :cond_0
 
-    .line 125
     :goto_0
     return-void
 
-    .line 115
     :cond_0
     iget v1, p1, Landroid/os/Message;->what:I
 
@@ -79,11 +72,9 @@
 
     goto :goto_0
 
-    .line 117
     :sswitch_0
     invoke-virtual {v0}, Lcom/android/settings/deviceinfo/Status;->updateTimes()V
 
-    .line 118
     const/16 v1, 0x1f4
 
     const-wide/16 v2, 0x3e8
@@ -92,13 +83,11 @@
 
     goto :goto_0
 
-    .line 122
     :sswitch_1
     invoke-virtual {v0}, Lcom/android/settings/deviceinfo/Status;->updateConnectivity()V
 
     goto :goto_0
 
-    .line 115
     :sswitch_data_0
     .sparse-switch
         0x1f4 -> :sswitch_0

@@ -47,7 +47,6 @@
 
     const/4 v2, 0x0
 
-    .line 10982
     const/16 v0, 0xd
 
     new-array v0, v0, [I
@@ -56,7 +55,6 @@
 
     sput-object v0, Lcom/android/settings/R$styleable;->BatteryHistoryChart:[I
 
-    .line 11142
     const/4 v0, 0x5
 
     new-array v0, v0, [I
@@ -65,7 +63,6 @@
 
     sput-object v0, Lcom/android/settings/R$styleable;->ChartGridView:[I
 
-    .line 11204
     const/4 v0, 0x4
 
     new-array v0, v0, [I
@@ -74,7 +71,6 @@
 
     sput-object v0, Lcom/android/settings/R$styleable;->ChartNetworkSeriesView:[I
 
-    .line 11290
     const/4 v0, 0x7
 
     new-array v0, v0, [I
@@ -83,14 +79,12 @@
 
     sput-object v0, Lcom/android/settings/R$styleable;->ChartSweepView:[I
 
-    .line 11406
     new-array v0, v4, [I
 
     fill-array-data v0, :array_4
 
     sput-object v0, Lcom/android/settings/R$styleable;->ChartView:[I
 
-    .line 11453
     new-array v0, v3, [I
 
     const v1, 0x7f010004
@@ -99,14 +93,12 @@
 
     sput-object v0, Lcom/android/settings/R$styleable;->IconPreferenceScreen:[I
 
-    .line 11478
     new-array v0, v4, [I
 
     fill-array-data v0, :array_5
 
     sput-object v0, Lcom/android/settings/R$styleable;->PercentageBarChart:[I
 
-    .line 11526
     new-array v0, v3, [I
 
     const v1, 0x7f01001c
@@ -115,7 +107,6 @@
 
     sput-object v0, Lcom/android/settings/R$styleable;->Preference:[I
 
-    .line 11553
     new-array v0, v3, [I
 
     const v1, 0x7f010005
@@ -124,7 +115,6 @@
 
     sput-object v0, Lcom/android/settings/R$styleable;->SetupWizardIllustration:[I
 
-    .line 11580
     new-array v0, v3, [I
 
     const v1, 0x7f010003
@@ -135,7 +125,6 @@
 
     return-void
 
-    .line 10982
     nop
 
     :array_0
@@ -155,7 +144,6 @@
         0x7f010009
     .end array-data
 
-    .line 11142
     :array_1
     .array-data 4
         0x1010034
@@ -165,7 +153,6 @@
         0x7f010017
     .end array-data
 
-    .line 11204
     :array_2
     .array-data 4
         0x7f010014
@@ -174,7 +161,6 @@
         0x7f01001a
     .end array-data
 
-    .line 11290
     :array_3
     .array-data 4
         0x7f01000e
@@ -186,14 +172,12 @@
         0x7f010014
     .end array-data
 
-    .line 11406
     :array_4
     .array-data 4
         0x7f01000c
         0x7f01000d
     .end array-data
 
-    .line 11478
     :array_5
     .array-data 4
         0x7f01000a

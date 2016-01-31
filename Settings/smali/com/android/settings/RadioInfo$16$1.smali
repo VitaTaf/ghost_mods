@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 1082
     iput-object p1, p0, Lcom/android/settings/RadioInfo$16$1;->this$1:Lcom/android/settings/RadioInfo$16;
 
     iput-object p2, p0, Lcom/android/settings/RadioInfo$16$1;->val$imsManager:Lcom/android/ims/ImsManager;
@@ -48,7 +47,6 @@
     .locals 4
 
     .prologue
-    .line 1085
     :try_start_0
     iget-object v1, p0, Lcom/android/settings/RadioInfo$16$1;->val$imsManager:Lcom/android/ims/ImsManager;
 
@@ -69,21 +67,17 @@
     :try_end_0
     .catch Lcom/android/ims/ImsException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1091
     :goto_1
     return-void
 
-    .line 1085
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 1088
     :catch_0
     move-exception v0
 
-    .line 1089
     .local v0, "e":Lcom/android/ims/ImsException;
     const-string v1, "phone"
 

@@ -24,7 +24,6 @@
     .param p5, "x4"    # [I
 
     .prologue
-    .line 90
     invoke-direct/range {p0 .. p5}, Lcom/android/settings/notification/ZenModeSettings$SettingPrefWithCallback;-><init>(ILjava/lang/String;Ljava/lang/String;I[I)V
 
     return-void
@@ -38,10 +37,8 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 92
     packed-switch p2, :pswitch_data_0
 
-    .line 98
     const v0, 0x7f0909c8
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -51,7 +48,6 @@
     :goto_0
     return-object v0
 
-    .line 94
     :pswitch_0
     const v0, 0x7f0909ca
 
@@ -61,7 +57,6 @@
 
     goto :goto_0
 
-    .line 96
     :pswitch_1
     const v0, 0x7f0909c9
 
@@ -71,7 +66,6 @@
 
     goto :goto_0
 
-    .line 92
     nop
 
     :pswitch_data_0

@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 181
     iput-object p1, p0, Lcom/android/settings/wifi/WifiStatusTest$3;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +42,6 @@
     .prologue
     const/16 v6, 0x2e
 
-    .line 183
     iget-object v4, p0, Lcom/android/settings/wifi/WifiStatusTest$3;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     # getter for: Lcom/android/settings/wifi/WifiStatusTest;->mWifiManager:Landroid/net/wifi/WifiManager;
@@ -55,7 +53,6 @@
 
     move-result-object v3
 
-    .line 185
     .local v3, "wifiInfo":Landroid/net/wifi/WifiInfo;
     iget-object v4, p0, Lcom/android/settings/wifi/WifiStatusTest$3;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
@@ -73,7 +70,6 @@
     # invokes: Lcom/android/settings/wifi/WifiStatusTest;->setWifiStateText(I)V
     invoke-static {v4, v5}, Lcom/android/settings/wifi/WifiStatusTest;->access$700(Lcom/android/settings/wifi/WifiStatusTest;I)V
 
-    .line 186
     iget-object v4, p0, Lcom/android/settings/wifi/WifiStatusTest$3;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     # getter for: Lcom/android/settings/wifi/WifiStatusTest;->mBSSID:Landroid/widget/TextView;
@@ -87,7 +83,6 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 187
     iget-object v4, p0, Lcom/android/settings/wifi/WifiStatusTest$3;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     # getter for: Lcom/android/settings/wifi/WifiStatusTest;->mHiddenSSID:Landroid/widget/TextView;
@@ -105,18 +100,15 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 188
     invoke-virtual {v3}, Landroid/net/wifi/WifiInfo;->getIpAddress()I
 
     move-result v0
 
-    .line 189
     .local v0, "ipAddr":I
     new-instance v1, Ljava/lang/StringBuffer;
 
     invoke-direct {v1}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 190
     .local v1, "ipBuf":Ljava/lang/StringBuffer;
     and-int/lit16 v4, v0, 0xff
 
@@ -158,7 +150,6 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuffer;->append(I)Ljava/lang/StringBuffer;
 
-    .line 195
     iget-object v4, p0, Lcom/android/settings/wifi/WifiStatusTest$3;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     # getter for: Lcom/android/settings/wifi/WifiStatusTest;->mIPAddr:Landroid/widget/TextView;
@@ -168,7 +159,6 @@
 
     invoke-virtual {v4, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 196
     iget-object v4, p0, Lcom/android/settings/wifi/WifiStatusTest$3;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     # getter for: Lcom/android/settings/wifi/WifiStatusTest;->mLinkSpeed:Landroid/widget/TextView;
@@ -204,7 +194,6 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 197
     iget-object v4, p0, Lcom/android/settings/wifi/WifiStatusTest$3;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     # getter for: Lcom/android/settings/wifi/WifiStatusTest;->mMACAddr:Landroid/widget/TextView;
@@ -218,7 +207,6 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 198
     iget-object v4, p0, Lcom/android/settings/wifi/WifiStatusTest$3;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     # getter for: Lcom/android/settings/wifi/WifiStatusTest;->mNetworkId:Landroid/widget/TextView;
@@ -236,7 +224,6 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 199
     iget-object v4, p0, Lcom/android/settings/wifi/WifiStatusTest$3;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     # getter for: Lcom/android/settings/wifi/WifiStatusTest;->mRSSI:Landroid/widget/TextView;
@@ -254,7 +241,6 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 200
     iget-object v4, p0, Lcom/android/settings/wifi/WifiStatusTest$3;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     # getter for: Lcom/android/settings/wifi/WifiStatusTest;->mSSID:Landroid/widget/TextView;
@@ -268,18 +254,15 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 202
     invoke-virtual {v3}, Landroid/net/wifi/WifiInfo;->getSupplicantState()Landroid/net/wifi/SupplicantState;
 
     move-result-object v2
 
-    .line 203
     .local v2, "supplicantState":Landroid/net/wifi/SupplicantState;
     iget-object v4, p0, Lcom/android/settings/wifi/WifiStatusTest$3;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     # invokes: Lcom/android/settings/wifi/WifiStatusTest;->setSupplicantStateText(Landroid/net/wifi/SupplicantState;)V
     invoke-static {v4, v2}, Lcom/android/settings/wifi/WifiStatusTest;->access$1600(Lcom/android/settings/wifi/WifiStatusTest;Landroid/net/wifi/SupplicantState;)V
 
-    .line 204
     return-void
 .end method

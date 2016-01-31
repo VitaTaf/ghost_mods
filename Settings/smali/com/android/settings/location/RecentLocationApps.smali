@@ -26,7 +26,6 @@
     .locals 1
 
     .prologue
-    .line 48
     const-class v0, Lcom/android/settings/location/RecentLocationApps;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -43,20 +42,16 @@
     .param p1, "activity"    # Lcom/android/settings/SettingsActivity;
 
     .prologue
-    .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 57
     iput-object p1, p0, Lcom/android/settings/location/RecentLocationApps;->mActivity:Lcom/android/settings/SettingsActivity;
 
-    .line 58
     invoke-virtual {p1}, Lcom/android/settings/SettingsActivity;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/location/RecentLocationApps;->mPackageManager:Landroid/content/pm/PackageManager;
 
-    .line 59
     return-void
 .end method
 
@@ -65,7 +60,6 @@
     .param p0, "x0"    # Lcom/android/settings/location/RecentLocationApps;
 
     .prologue
-    .line 47
     iget-object v0, p0, Lcom/android/settings/location/RecentLocationApps;->mActivity:Lcom/android/settings/SettingsActivity;
 
     return-object v0
@@ -80,36 +74,28 @@
     .param p5, "listener"    # Landroid/preference/Preference$OnPreferenceClickListener;
 
     .prologue
-    .line 88
     new-instance v0, Lcom/android/settings/location/DimmableIconPreference;
 
     iget-object v1, p0, Lcom/android/settings/location/RecentLocationApps;->mActivity:Lcom/android/settings/SettingsActivity;
 
     invoke-direct {v0, v1, p4}, Lcom/android/settings/location/DimmableIconPreference;-><init>(Landroid/content/Context;Ljava/lang/CharSequence;)V
 
-    .line 89
     .local v0, "pref":Lcom/android/settings/location/DimmableIconPreference;
     invoke-virtual {v0, p1}, Lcom/android/settings/location/DimmableIconPreference;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    .line 90
     invoke-virtual {v0, p2}, Lcom/android/settings/location/DimmableIconPreference;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 91
     if-eqz p3, :cond_0
 
-    .line 92
     const v1, 0x7f0904cb
 
     invoke-virtual {v0, v1}, Lcom/android/settings/location/DimmableIconPreference;->setSummary(I)V
 
-    .line 96
     :goto_0
     invoke-virtual {v0, p5}, Lcom/android/settings/location/DimmableIconPreference;->setOnPreferenceClickListener(Landroid/preference/Preference$OnPreferenceClickListener;)V
 
-    .line 97
     return-object v0
 
-    .line 94
     :cond_0
     const v1, 0x7f0904cc
 
@@ -125,32 +111,26 @@
     .param p4, "ops"    # Landroid/app/AppOpsManager$PackageOps;
 
     .prologue
-    .line 148
     invoke-virtual/range {p4 .. p4}, Landroid/app/AppOpsManager$PackageOps;->getPackageName()Ljava/lang/String;
 
     move-result-object v18
 
-    .line 149
     .local v18, "packageName":Ljava/lang/String;
     invoke-virtual/range {p4 .. p4}, Landroid/app/AppOpsManager$PackageOps;->getOps()Ljava/util/List;
 
     move-result-object v13
 
-    .line 150
     .local v13, "entries":Ljava/util/List;, "Ljava/util/List<Landroid/app/AppOpsManager$OpEntry;>;"
     const/4 v7, 0x0
 
-    .line 151
     .local v7, "highBattery":Z
     const/16 v17, 0x0
 
-    .line 153
     .local v17, "normalBattery":Z
     const-wide/32 v26, 0xdbba0
 
     sub-long v20, p2, v26
 
-    .line 154
     .local v20, "recentLocationCutoffTime":J
     invoke-interface {v13}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -171,7 +151,6 @@
 
     check-cast v14, Landroid/app/AppOpsManager$OpEntry;
 
-    .line 155
     .local v14, "entry":Landroid/app/AppOpsManager$OpEntry;
     invoke-virtual {v14}, Landroid/app/AppOpsManager$OpEntry;->isRunning()Z
 
@@ -187,7 +166,6 @@
 
     if-ltz v4, :cond_0
 
-    .line 156
     :cond_1
     invoke-virtual {v14}, Landroid/app/AppOpsManager$OpEntry;->getOp()I
 
@@ -197,28 +175,22 @@
 
     goto :goto_0
 
-    .line 158
     :pswitch_0
     const/16 v17, 0x1
 
-    .line 159
     goto :goto_0
 
-    .line 161
     :pswitch_1
     const/4 v7, 0x1
 
-    .line 162
     goto :goto_0
 
-    .line 169
     .end local v14    # "entry":Landroid/app/AppOpsManager$OpEntry;
     :cond_2
     if-nez v7, :cond_4
 
     if-nez v17, :cond_4
 
-    .line 170
     sget-object v4, Lcom/android/settings/location/RecentLocationApps;->TAG:Ljava/lang/String;
 
     const/4 v9, 0x2
@@ -229,7 +201,6 @@
 
     if-eqz v4, :cond_3
 
-    .line 171
     sget-object v4, Lcom/android/settings/location/RecentLocationApps;->TAG:Ljava/lang/String;
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -256,38 +227,31 @@
 
     invoke-static {v4, v9}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 173
     :cond_3
     const/16 v19, 0x0
 
-    .line 211
     :goto_1
     return-object v19
 
-    .line 178
     :cond_4
     invoke-virtual/range {p4 .. p4}, Landroid/app/AppOpsManager$PackageOps;->getUid()I
 
     move-result v23
 
-    .line 179
     .local v23, "uid":I
     invoke-static/range {v23 .. v23}, Landroid/os/UserHandle;->getUserId(I)I
 
     move-result v25
 
-    .line 181
     .local v25, "userId":I
     const/16 v19, 0x0
 
-    .line 183
     .local v19, "preference":Lcom/android/settings/location/DimmableIconPreference;
     :try_start_0
     invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
 
     move-result-object v16
 
-    .line 184
     .local v16, "ipm":Landroid/content/pm/IPackageManager;
     const/16 v4, 0x80
 
@@ -301,11 +265,9 @@
 
     move-result-object v11
 
-    .line 186
     .local v11, "appInfo":Landroid/content/pm/ApplicationInfo;
     if-nez v11, :cond_5
 
-    .line 187
     sget-object v4, Lcom/android/settings/location/RecentLocationApps;->TAG:Ljava/lang/String;
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -346,12 +308,10 @@
 
     invoke-static {v4, v9}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 189
     const/16 v19, 0x0
 
     goto :goto_1
 
-    .line 191
     :cond_5
     move-object/from16 v0, p0
 
@@ -361,13 +321,11 @@
 
     move-result-object v22
 
-    .line 193
     .local v22, "res":Landroid/content/res/Resources;
     new-instance v24, Landroid/os/UserHandle;
 
     invoke-direct/range {v24 .. v25}, Landroid/os/UserHandle;-><init>(I)V
 
-    .line 194
     .local v24, "userHandle":Landroid/os/UserHandle;
     move-object/from16 v0, p0
 
@@ -377,7 +335,6 @@
 
     move-result-object v10
 
-    .line 195
     .local v10, "appIcon":Landroid/graphics/drawable/Drawable;
     move-object/from16 v0, p0
 
@@ -389,7 +346,6 @@
 
     move-result-object v5
 
-    .line 196
     .local v5, "icon":Landroid/graphics/drawable/Drawable;
     move-object/from16 v0, p0
 
@@ -399,7 +355,6 @@
 
     move-result-object v6
 
-    .line 197
     .local v6, "appLabel":Ljava/lang/CharSequence;
     move-object/from16 v0, p0
 
@@ -411,7 +366,6 @@
 
     move-result-object v8
 
-    .line 198
     .local v8, "badgedAppLabel":Ljava/lang/CharSequence;
     invoke-interface {v6}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
@@ -423,10 +377,8 @@
 
     if-eqz v4, :cond_6
 
-    .line 201
     const/4 v8, 0x0
 
-    .line 203
     :cond_6
     new-instance v9, Lcom/android/settings/location/RecentLocationApps$PackageEntryClickedListener;
 
@@ -448,7 +400,6 @@
 
     goto/16 :goto_1
 
-    .line 206
     .end local v5    # "icon":Landroid/graphics/drawable/Drawable;
     .end local v6    # "appLabel":Ljava/lang/CharSequence;
     .end local v8    # "badgedAppLabel":Ljava/lang/CharSequence;
@@ -460,7 +411,6 @@
     :catch_0
     move-exception v12
 
-    .line 207
     .local v12, "e":Landroid/os/RemoteException;
     sget-object v4, Lcom/android/settings/location/RecentLocationApps;->TAG:Ljava/lang/String;
 
@@ -504,7 +454,6 @@
 
     goto/16 :goto_1
 
-    .line 156
     :pswitch_data_0
     .packed-switch 0x29
         :pswitch_0
@@ -527,7 +476,6 @@
     .end annotation
 
     .prologue
-    .line 105
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/location/RecentLocationApps;->mActivity:Lcom/android/settings/SettingsActivity;
@@ -542,7 +490,6 @@
 
     check-cast v2, Landroid/app/AppOpsManager;
 
-    .line 107
     .local v2, "aoManager":Landroid/app/AppOpsManager;
     const/16 v17, 0x2
 
@@ -560,19 +507,16 @@
 
     move-result-object v3
 
-    .line 111
     .local v3, "appOps":Ljava/util/List;, "Ljava/util/List<Landroid/app/AppOpsManager$PackageOps;>;"
     new-instance v12, Ljava/util/ArrayList;
 
     invoke-direct {v12}, Ljava/util/ArrayList;-><init>()V
 
-    .line 112
     .local v12, "prefs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/preference/Preference;>;"
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v8
 
-    .line 113
     .local v8, "now":J
     move-object/from16 v0, p0
 
@@ -588,19 +532,16 @@
 
     check-cast v15, Landroid/os/UserManager;
 
-    .line 114
     .local v15, "um":Landroid/os/UserManager;
     invoke-virtual {v15}, Landroid/os/UserManager;->getUserProfiles()Ljava/util/List;
 
     move-result-object v13
 
-    .line 116
     .local v13, "profiles":Ljava/util/List;, "Ljava/util/List<Landroid/os/UserHandle;>;"
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v4
 
-    .line 117
     .local v4, "appOpsN":I
     const/4 v5, 0x0
 
@@ -608,32 +549,27 @@
     :goto_0
     if-ge v5, v4, :cond_3
 
-    .line 118
     invoke-interface {v3, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
     check-cast v7, Landroid/app/AppOpsManager$PackageOps;
 
-    .line 121
     .local v7, "ops":Landroid/app/AppOpsManager$PackageOps;
     invoke-virtual {v7}, Landroid/app/AppOpsManager$PackageOps;->getPackageName()Ljava/lang/String;
 
     move-result-object v10
 
-    .line 122
     .local v10, "packageName":Ljava/lang/String;
     invoke-virtual {v7}, Landroid/app/AppOpsManager$PackageOps;->getUid()I
 
     move-result v14
 
-    .line 123
     .local v14, "uid":I
     invoke-static {v14}, Landroid/os/UserHandle;->getUserId(I)I
 
     move-result v16
 
-    .line 124
     .local v16, "userId":I
     const/16 v17, 0x3e8
 
@@ -653,7 +589,6 @@
 
     const/4 v6, 0x1
 
-    .line 126
     .local v6, "isAndroidOs":Z
     :goto_1
     if-nez v6, :cond_0
@@ -674,21 +609,18 @@
 
     if-nez v17, :cond_2
 
-    .line 117
     :cond_0
     :goto_2
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 124
     .end local v6    # "isAndroidOs":Z
     :cond_1
     const/4 v6, 0x0
 
     goto :goto_1
 
-    .line 129
     .restart local v6    # "isAndroidOs":Z
     :cond_2
     move-object/from16 v0, p0
@@ -697,16 +629,13 @@
 
     move-result-object v11
 
-    .line 130
     .local v11, "preference":Landroid/preference/Preference;
     if-eqz v11, :cond_0
 
-    .line 131
     invoke-virtual {v12, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
-    .line 135
     .end local v6    # "isAndroidOs":Z
     .end local v7    # "ops":Landroid/app/AppOpsManager$PackageOps;
     .end local v10    # "packageName":Ljava/lang/String;
@@ -716,7 +645,6 @@
     :cond_3
     return-object v12
 
-    .line 107
     nop
 
     :array_0

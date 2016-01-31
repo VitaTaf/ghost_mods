@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 696
     iput-object p1, p0, Lcom/android/settings/wifi/WifiSettings$5;->this$0:Lcom/android/settings/wifi/WifiSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 3
 
     .prologue
-    .line 699
     iget-object v0, p0, Lcom/android/settings/wifi/WifiSettings$5;->this$0:Lcom/android/settings/wifi/WifiSettings;
 
     # invokes: Lcom/android/settings/wifi/WifiSettings;->getContentResolver()Landroid/content/ContentResolver;
@@ -68,10 +66,8 @@
     :goto_0
     invoke-static {v1, v2, v0}, Lcom/motorola/android/provider/MotorolaSettings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 701
     return-void
 
-    .line 699
     :cond_0
     const/4 v0, 0x0
 

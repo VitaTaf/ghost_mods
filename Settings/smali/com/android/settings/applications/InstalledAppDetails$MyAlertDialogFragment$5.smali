@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 1389
     iput-object p1, p0, Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment$5;->this$0:Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 1392
     iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment$5;->this$0:Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment;->getOwner()Lcom/android/settings/applications/InstalledAppDetails;
@@ -67,6 +65,5 @@
     # invokes: Lcom/android/settings/applications/InstalledAppDetails;->forceStopPackage(Ljava/lang/String;)V
     invoke-static {v0, v1}, Lcom/android/settings/applications/InstalledAppDetails;->access$1000(Lcom/android/settings/applications/InstalledAppDetails;Ljava/lang/String;)V
 
-    .line 1393
     return-void
 .end method

@@ -26,12 +26,10 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 44
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/settings/dashboard/DashboardTileView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 45
     return-void
 .end method
 
@@ -43,13 +41,10 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 48
     invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 39
     iput v3, p0, Lcom/android/settings/dashboard/DashboardTileView;->mColSpan:I
 
-    .line 50
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v1
@@ -60,7 +55,6 @@
 
     move-result-object v0
 
-    .line 52
     .local v0, "view":Landroid/view/View;
     const v1, 0x7f0f0034
 
@@ -72,7 +66,6 @@
 
     iput-object v1, p0, Lcom/android/settings/dashboard/DashboardTileView;->mImageView:Landroid/widget/ImageView;
 
-    .line 53
     const v1, 0x7f0f0035
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -83,7 +76,6 @@
 
     iput-object v1, p0, Lcom/android/settings/dashboard/DashboardTileView;->mTitleTextView:Landroid/widget/TextView;
 
-    .line 54
     const v1, 0x7f0f001d
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -94,7 +86,6 @@
 
     iput-object v1, p0, Lcom/android/settings/dashboard/DashboardTileView;->mStatusTextView:Landroid/widget/TextView;
 
-    .line 55
     const v1, 0x7f0f0063
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -103,18 +94,14 @@
 
     iput-object v1, p0, Lcom/android/settings/dashboard/DashboardTileView;->mDivider:Landroid/view/View;
 
-    .line 57
     invoke-virtual {p0, p0}, Lcom/android/settings/dashboard/DashboardTileView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 58
     const v1, 0x7f020018
 
     invoke-virtual {p0, v1}, Lcom/android/settings/dashboard/DashboardTileView;->setBackgroundResource(I)V
 
-    .line 59
     invoke-virtual {p0, v3}, Lcom/android/settings/dashboard/DashboardTileView;->setFocusable(Z)V
 
-    .line 60
     return-void
 .end method
 
@@ -124,7 +111,6 @@
     .locals 1
 
     .prologue
-    .line 87
     iget v0, p0, Lcom/android/settings/dashboard/DashboardTileView;->mColSpan:I
 
     return v0
@@ -134,7 +120,6 @@
     .locals 1
 
     .prologue
-    .line 71
     iget-object v0, p0, Lcom/android/settings/dashboard/DashboardTileView;->mImageView:Landroid/widget/ImageView;
 
     return-object v0
@@ -144,7 +129,6 @@
     .locals 1
 
     .prologue
-    .line 67
     iget-object v0, p0, Lcom/android/settings/dashboard/DashboardTileView;->mStatusTextView:Landroid/widget/TextView;
 
     return-object v0
@@ -154,7 +138,6 @@
     .locals 1
 
     .prologue
-    .line 63
     iget-object v0, p0, Lcom/android/settings/dashboard/DashboardTileView;->mTitleTextView:Landroid/widget/TextView;
 
     return-object v0
@@ -165,14 +148,12 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 92
     iget-object v0, p0, Lcom/android/settings/dashboard/DashboardTileView;->mTile:Lcom/android/settings/dashboard/DashboardTile;
 
     iget-object v0, v0, Lcom/android/settings/dashboard/DashboardTile;->fragment:Ljava/lang/String;
 
     if-eqz v0, :cond_1
 
-    .line 93
     invoke-virtual {p0}, Lcom/android/settings/dashboard/DashboardTileView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -205,12 +186,10 @@
 
     invoke-static/range {v0 .. v6}, Lcom/android/settings/Utils;->startWithFragment(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;Landroid/app/Fragment;IILjava/lang/CharSequence;)V
 
-    .line 98
     :cond_0
     :goto_0
     return-void
 
-    .line 95
     :cond_1
     iget-object v0, p0, Lcom/android/settings/dashboard/DashboardTileView;->mTile:Lcom/android/settings/dashboard/DashboardTile;
 
@@ -218,7 +197,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 96
     invoke-virtual {p0}, Lcom/android/settings/dashboard/DashboardTileView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -237,7 +215,6 @@
     .param p1, "visible"    # Z
 
     .prologue
-    .line 79
     iget-object v1, p0, Lcom/android/settings/dashboard/DashboardTileView;->mDivider:Landroid/view/View;
 
     if-eqz p1, :cond_0
@@ -247,10 +224,8 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 80
     return-void
 
-    .line 79
     :cond_0
     const/16 v0, 0x8
 
@@ -262,9 +237,7 @@
     .param p1, "tile"    # Lcom/android/settings/dashboard/DashboardTile;
 
     .prologue
-    .line 75
     iput-object p1, p0, Lcom/android/settings/dashboard/DashboardTileView;->mTile:Lcom/android/settings/dashboard/DashboardTile;
 
-    .line 76
     return-void
 .end method

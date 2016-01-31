@@ -12,7 +12,6 @@
     .locals 3
 
     .prologue
-    .line 33
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -37,18 +36,15 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 59
     move-object v0, p1
 
     check-cast v0, Landroid/view/WindowInsets;
 
-    .line 60
     .local v0, "wi":Landroid/view/WindowInsets;
     const/4 v1, 0x3
 
     if-ne p2, v1, :cond_1
 
-    .line 61
     invoke-virtual {v0}, Landroid/view/WindowInsets;->getSystemWindowInsetLeft()I
 
     move-result v1
@@ -65,7 +61,6 @@
 
     move-result-object v0
 
-    .line 67
     :cond_0
     :goto_0
     invoke-virtual {v0}, Landroid/view/WindowInsets;->getSystemWindowInsetLeft()I
@@ -74,37 +69,31 @@
 
     iput v1, p0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    .line 68
     invoke-virtual {v0}, Landroid/view/WindowInsets;->getSystemWindowInsetTop()I
 
     move-result v1
 
     iput v1, p0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 69
     invoke-virtual {v0}, Landroid/view/WindowInsets;->getSystemWindowInsetRight()I
 
     move-result v1
 
     iput v1, p0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    .line 70
     invoke-virtual {v0}, Landroid/view/WindowInsets;->getSystemWindowInsetBottom()I
 
     move-result v1
 
     iput v1, p0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    .line 71
     return-void
 
-    .line 63
     :cond_1
     const/4 v1, 0x5
 
     if-ne p2, v1, :cond_0
 
-    .line 64
     invoke-virtual {v0}, Landroid/view/WindowInsets;->getSystemWindowInsetTop()I
 
     move-result v1
@@ -133,18 +122,15 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 46
     move-object v0, p1
 
     check-cast v0, Landroid/view/WindowInsets;
 
-    .line 47
     .local v0, "wi":Landroid/view/WindowInsets;
     const/4 v1, 0x3
 
     if-ne p2, v1, :cond_1
 
-    .line 48
     invoke-virtual {v0}, Landroid/view/WindowInsets;->getSystemWindowInsetLeft()I
 
     move-result v1
@@ -161,21 +147,17 @@
 
     move-result-object v0
 
-    .line 54
     :cond_0
     :goto_0
     invoke-virtual {p0, v0}, Landroid/view/View;->dispatchApplyWindowInsets(Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
 
-    .line 55
     return-void
 
-    .line 50
     :cond_1
     const/4 v1, 0x5
 
     if-ne p2, v1, :cond_0
 
-    .line 51
     invoke-virtual {v0}, Landroid/view/WindowInsets;->getSystemWindowInsetTop()I
 
     move-result v1
@@ -200,7 +182,6 @@
     .param p0, "insets"    # Ljava/lang/Object;
 
     .prologue
-    .line 74
     if-eqz p0, :cond_0
 
     check-cast p0, Landroid/view/WindowInsets;

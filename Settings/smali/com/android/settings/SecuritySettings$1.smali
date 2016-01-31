@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 897
     iput-object p1, p0, Lcom/android/settings/SecuritySettings$1;->this$0:Lcom/android/settings/SecuritySettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .param p2, "id"    # I
 
     .prologue
-    .line 899
     iget-object v0, p0, Lcom/android/settings/SecuritySettings$1;->this$0:Lcom/android/settings/SecuritySettings;
 
     # getter for: Lcom/android/settings/SecuritySettings;->mCryptoMode:Landroid/preference/ListPreference;
@@ -56,9 +54,7 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setValueIndex(I)V
 
-    .line 901
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 902
     return-void
 .end method

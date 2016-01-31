@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 115
     iput-object p1, p0, Lcom/android/settings/wifi/p2p/WpsP2pDialog$1;->this$0:Lcom/android/settings/wifi/p2p/WpsP2pDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +40,9 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 118
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WpsP2pDialog$1;->this$0:Lcom/android/settings/wifi/p2p/WpsP2pDialog;
 
     invoke-virtual {v0}, Lcom/android/settings/wifi/p2p/WpsP2pDialog;->dismiss()V
 
-    .line 119
     return-void
 .end method

@@ -8,7 +8,6 @@
     .locals 0
 
     .prologue
-    .line 26
     invoke-direct {p0}, Lcom/motorola/extensions/DynamicPreferenceDataProvider;-><init>()V
 
     return-void
@@ -20,7 +19,6 @@
     .locals 1
 
     .prologue
-    .line 35
     const-string v0, "com.motorola.settings.wifi.wifiadvancedsettingswispr"
 
     return-object v0
@@ -31,7 +29,6 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 40
     const-string v1, "WifiAdvancedSettingsWisprProvider"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -54,7 +51,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 41
     invoke-virtual {p0}, Lcom/android/settings/wifi/WifiAdvancedSettingsWisprProvider;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -67,7 +63,6 @@
 
     check-cast v0, Landroid/net/wifi/WifiManager;
 
-    .line 42
     .local v0, "wm":Landroid/net/wifi/WifiManager;
     invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->isPreloadedNetworkAutoConnectSet()Z
 
@@ -85,7 +80,6 @@
 
     const/4 v1, 0x0
 
-    .line 55
     const-string v2, "ro.mot.wifi.hotspot"
 
     invoke-static {v2, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
@@ -125,7 +119,6 @@
     .param p2, "value"    # Z
 
     .prologue
-    .line 47
     const-string v1, "WifiAdvancedSettingsWisprProvider"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -158,7 +151,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 48
     invoke-virtual {p0}, Lcom/android/settings/wifi/WifiAdvancedSettingsWisprProvider;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -171,11 +163,9 @@
 
     check-cast v0, Landroid/net/wifi/WifiManager;
 
-    .line 49
     .local v0, "wm":Landroid/net/wifi/WifiManager;
     invoke-virtual {v0, p2}, Landroid/net/wifi/WifiManager;->setPreloadedNetworkAutoConnect(Z)V
 
-    .line 50
     const/4 v1, 0x1
 
     return v1

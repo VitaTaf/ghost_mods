@@ -73,27 +73,22 @@
     .prologue
     const/16 v3, 0x80
 
-    .line 98
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 92
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/settings/voice/VoiceInputHelper;->mAvailableInteractionInfos:Ljava/util/ArrayList;
 
-    .line 93
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/settings/voice/VoiceInputHelper;->mAvailableRecognizerInfos:Ljava/util/ArrayList;
 
-    .line 99
     iput-object p1, p0, Lcom/android/settings/voice/VoiceInputHelper;->mContext:Landroid/content/Context;
 
-    .line 101
     iget-object v0, p0, Lcom/android/settings/voice/VoiceInputHelper;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -112,7 +107,6 @@
 
     iput-object v0, p0, Lcom/android/settings/voice/VoiceInputHelper;->mAvailableVoiceInteractions:Ljava/util/List;
 
-    .line 104
     iget-object v0, p0, Lcom/android/settings/voice/VoiceInputHelper;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -131,7 +125,6 @@
 
     iput-object v0, p0, Lcom/android/settings/voice/VoiceInputHelper;->mAvailableRecognition:Ljava/util/List;
 
-    .line 107
     return-void
 .end method
 
@@ -141,7 +134,6 @@
     .locals 23
 
     .prologue
-    .line 115
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/voice/VoiceInputHelper;->mContext:Landroid/content/Context;
@@ -158,7 +150,6 @@
 
     move-result-object v6
 
-    .line 117
     .local v6, "currentSetting":Ljava/lang/String;
     if-eqz v6, :cond_1
 
@@ -168,7 +159,6 @@
 
     if-nez v19, :cond_1
 
-    .line 118
     invoke-static {v6}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;
 
     move-result-object v19
@@ -179,13 +169,11 @@
 
     iput-object v0, v1, Lcom/android/settings/voice/VoiceInputHelper;->mCurrentVoiceInteraction:Landroid/content/ComponentName;
 
-    .line 123
     :goto_0
     new-instance v10, Landroid/util/ArraySet;
 
     invoke-direct {v10}, Landroid/util/ArraySet;-><init>()V
 
-    .line 127
     .local v10, "interactorRecognizers":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Landroid/content/ComponentName;>;"
     move-object/from16 v0, p0
 
@@ -197,7 +185,6 @@
 
     move-result v17
 
-    .line 128
     .local v17, "size":I
     const/4 v8, 0x0
 
@@ -207,7 +194,6 @@
 
     if-ge v8, v0, :cond_3
 
-    .line 129
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/voice/VoiceInputHelper;->mAvailableVoiceInteractions:Ljava/util/List;
@@ -222,7 +208,6 @@
 
     check-cast v14, Landroid/content/pm/ResolveInfo;
 
-    .line 130
     .local v14, "resolveInfo":Landroid/content/pm/ResolveInfo;
     new-instance v9, Landroid/service/voice/VoiceInteractionServiceInfo;
 
@@ -246,7 +231,6 @@
 
     invoke-direct {v9, v0, v1}, Landroid/service/voice/VoiceInteractionServiceInfo;-><init>(Landroid/content/pm/PackageManager;Landroid/content/pm/ServiceInfo;)V
 
-    .line 132
     .local v9, "info":Landroid/service/voice/VoiceInteractionServiceInfo;
     invoke-virtual {v9}, Landroid/service/voice/VoiceInteractionServiceInfo;->getParseError()Ljava/lang/String;
 
@@ -254,7 +238,6 @@
 
     if-eqz v19, :cond_2
 
-    .line 133
     const-string v19, "VoiceInteractionService"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -321,14 +304,12 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 128
     :cond_0
     :goto_2
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_1
 
-    .line 120
     .end local v8    # "i":I
     .end local v9    # "info":Landroid/service/voice/VoiceInteractionServiceInfo;
     .end local v10    # "interactorRecognizers":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Landroid/content/ComponentName;>;"
@@ -345,7 +326,6 @@
 
     goto/16 :goto_0
 
-    .line 138
     .restart local v8    # "i":I
     .restart local v9    # "info":Landroid/service/voice/VoiceInteractionServiceInfo;
     .restart local v10    # "interactorRecognizers":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Landroid/content/ComponentName;>;"
@@ -378,14 +358,12 @@
 
     invoke-virtual/range {v19 .. v20}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 139
     invoke-virtual {v9}, Landroid/service/voice/VoiceInteractionServiceInfo;->getRecognitionService()Ljava/lang/String;
 
     move-result-object v19
 
     if-eqz v19, :cond_0
 
-    .line 140
     new-instance v19, Landroid/content/ComponentName;
 
     iget-object v0, v14, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
@@ -410,7 +388,6 @@
 
     goto :goto_2
 
-    .line 144
     .end local v9    # "info":Landroid/service/voice/VoiceInteractionServiceInfo;
     .end local v14    # "resolveInfo":Landroid/content/pm/ResolveInfo;
     :cond_3
@@ -422,7 +399,6 @@
 
     invoke-static/range {v19 .. v19}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
-    .line 147
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/voice/VoiceInputHelper;->mContext:Landroid/content/Context;
@@ -439,7 +415,6 @@
 
     move-result-object v6
 
-    .line 149
     if-eqz v6, :cond_6
 
     invoke-virtual {v6}, Ljava/lang/String;->isEmpty()Z
@@ -448,7 +423,6 @@
 
     if-nez v19, :cond_6
 
-    .line 150
     invoke-static {v6}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;
 
     move-result-object v19
@@ -459,7 +433,6 @@
 
     iput-object v0, v1, Lcom/android/settings/voice/VoiceInputHelper;->mCurrentRecognizer:Landroid/content/ComponentName;
 
-    .line 157
     :goto_3
     move-object/from16 v0, p0
 
@@ -471,7 +444,6 @@
 
     move-result v17
 
-    .line 158
     const/4 v8, 0x0
 
     :goto_4
@@ -479,7 +451,6 @@
 
     if-ge v8, v0, :cond_c
 
-    .line 159
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/voice/VoiceInputHelper;->mAvailableRecognition:Ljava/util/List;
@@ -494,7 +465,6 @@
 
     check-cast v14, Landroid/content/pm/ResolveInfo;
 
-    .line 160
     .restart local v14    # "resolveInfo":Landroid/content/pm/ResolveInfo;
     new-instance v5, Landroid/content/ComponentName;
 
@@ -524,7 +494,6 @@
 
     invoke-direct {v5, v0, v1}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 162
     .local v5, "comp":Landroid/content/ComponentName;
     invoke-virtual {v10, v5}, Landroid/util/ArraySet;->contains(Ljava/lang/Object;)Z
 
@@ -532,21 +501,17 @@
 
     if-eqz v19, :cond_4
 
-    .line 165
     :cond_4
     iget-object v0, v14, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
     move-object/from16 v16, v0
 
-    .line 166
     .local v16, "si":Landroid/content/pm/ServiceInfo;
     const/4 v12, 0x0
 
-    .line 167
     .local v12, "parser":Landroid/content/res/XmlResourceParser;
     const/4 v15, 0x0
 
-    .line 169
     .local v15, "settingsActivity":Ljava/lang/String;
     :try_start_0
     move-object/from16 v0, p0
@@ -571,10 +536,8 @@
 
     move-result-object v12
 
-    .line 171
     if-nez v12, :cond_7
 
-    .line 172
     new-instance v19, Lorg/xmlpull/v1/XmlPullParserException;
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -610,11 +573,9 @@
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_2
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 197
     :catch_0
     move-exception v7
 
-    .line 198
     .local v7, "e":Lorg/xmlpull/v1/XmlPullParserException;
     :try_start_1
     const-string v19, "VoiceInputHelper"
@@ -629,12 +590,10 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 204
     if-eqz v12, :cond_5
 
     invoke-interface {v12}, Landroid/content/res/XmlResourceParser;->close()V
 
-    .line 206
     .end local v7    # "e":Lorg/xmlpull/v1/XmlPullParserException;
     :cond_5
     :goto_5
@@ -670,12 +629,10 @@
 
     invoke-virtual/range {v19 .. v20}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 158
     add-int/lit8 v8, v8, 0x1
 
     goto/16 :goto_4
 
-    .line 152
     .end local v5    # "comp":Landroid/content/ComponentName;
     .end local v12    # "parser":Landroid/content/res/XmlResourceParser;
     .end local v14    # "resolveInfo":Landroid/content/pm/ResolveInfo;
@@ -692,7 +649,6 @@
 
     goto/16 :goto_3
 
-    .line 176
     .restart local v5    # "comp":Landroid/content/ComponentName;
     .restart local v12    # "parser":Landroid/content/res/XmlResourceParser;
     .restart local v14    # "resolveInfo":Landroid/content/pm/ResolveInfo;
@@ -720,13 +676,11 @@
 
     move-result-object v13
 
-    .line 179
     .local v13, "res":Landroid/content/res/Resources;
     invoke-static {v12}, Landroid/util/Xml;->asAttributeSet(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;
 
     move-result-object v4
 
-    .line 183
     .local v4, "attrs":Landroid/util/AttributeSet;
     :cond_8
     invoke-interface {v12}, Landroid/content/res/XmlResourceParser;->next()I
@@ -750,13 +704,11 @@
 
     if-ne v0, v1, :cond_8
 
-    .line 186
     :cond_9
     invoke-interface {v12}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
 
     move-result-object v11
 
-    .line 187
     .local v11, "nodeName":Ljava/lang/String;
     const-string v19, "recognition-service"
 
@@ -768,7 +720,6 @@
 
     if-nez v19, :cond_a
 
-    .line 188
     new-instance v19, Lorg/xmlpull/v1/XmlPullParserException;
 
     const-string v20, "Meta-data does not start with recognition-service tag"
@@ -782,7 +733,6 @@
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_2 .. :try_end_2} :catch_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 199
     .end local v4    # "attrs":Landroid/util/AttributeSet;
     .end local v11    # "nodeName":Ljava/lang/String;
     .end local v13    # "res":Landroid/content/res/Resources;
@@ -790,7 +740,6 @@
     :catch_1
     move-exception v7
 
-    .line 200
     .local v7, "e":Ljava/io/IOException;
     :try_start_3
     const-string v19, "VoiceInputHelper"
@@ -805,14 +754,12 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 204
     if-eqz v12, :cond_5
 
     invoke-interface {v12}, Landroid/content/res/XmlResourceParser;->close()V
 
     goto/16 :goto_5
 
-    .line 192
     .end local v7    # "e":Ljava/io/IOException;
     .restart local v4    # "attrs":Landroid/util/AttributeSet;
     .restart local v11    # "nodeName":Ljava/lang/String;
@@ -828,7 +775,6 @@
 
     move-result-object v3
 
-    .line 194
     .local v3, "array":Landroid/content/res/TypedArray;
     const/16 v19, 0x0
 
@@ -838,7 +784,6 @@
 
     move-result-object v15
 
-    .line 196
     invoke-virtual {v3}, Landroid/content/res/TypedArray;->recycle()V
     :try_end_4
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_4 .. :try_end_4} :catch_0
@@ -846,14 +791,12 @@
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_4 .. :try_end_4} :catch_2
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 204
     if-eqz v12, :cond_5
 
     invoke-interface {v12}, Landroid/content/res/XmlResourceParser;->close()V
 
     goto/16 :goto_5
 
-    .line 201
     .end local v3    # "array":Landroid/content/res/TypedArray;
     .end local v4    # "attrs":Landroid/util/AttributeSet;
     .end local v11    # "nodeName":Ljava/lang/String;
@@ -862,7 +805,6 @@
     :catch_2
     move-exception v7
 
-    .line 202
     .local v7, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :try_start_5
     const-string v19, "VoiceInputHelper"
@@ -877,7 +819,6 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    .line 204
     if-eqz v12, :cond_5
 
     invoke-interface {v12}, Landroid/content/res/XmlResourceParser;->close()V
@@ -895,7 +836,6 @@
     :cond_b
     throw v19
 
-    .line 209
     .end local v5    # "comp":Landroid/content/ComponentName;
     .end local v12    # "parser":Landroid/content/res/XmlResourceParser;
     .end local v14    # "resolveInfo":Landroid/content/pm/ResolveInfo;
@@ -910,7 +850,6 @@
 
     invoke-static/range {v19 .. v19}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
-    .line 210
     return-void
 .end method
 
@@ -918,7 +857,6 @@
     .locals 1
 
     .prologue
-    .line 110
     iget-object v0, p0, Lcom/android/settings/voice/VoiceInputHelper;->mAvailableVoiceInteractions:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I

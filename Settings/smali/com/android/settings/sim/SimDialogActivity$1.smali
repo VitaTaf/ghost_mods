@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 99
     iput-object p1, p0, Lcom/android/settings/sim/SimDialogActivity$1;->this$0:Lcom/android/settings/sim/SimDialogActivity;
 
     iput-object p2, p0, Lcom/android/settings/sim/SimDialogActivity$1;->val$sir:Landroid/telephony/SubscriptionInfo;
@@ -50,14 +49,12 @@
     .param p2, "id"    # I
 
     .prologue
-    .line 102
     iget-object v2, p0, Lcom/android/settings/sim/SimDialogActivity$1;->val$sir:Landroid/telephony/SubscriptionInfo;
 
     invoke-virtual {v2}, Landroid/telephony/SubscriptionInfo;->getSubscriptionId()I
 
     move-result v1
 
-    .line 103
     .local v1, "subId":I
     iget-object v2, p0, Lcom/android/settings/sim/SimDialogActivity$1;->this$0:Lcom/android/settings/sim/SimDialogActivity;
 
@@ -66,30 +63,25 @@
 
     move-result-object v0
 
-    .line 105
     .local v0, "phoneAccountHandle":Landroid/telecom/PhoneAccountHandle;
     iget-object v2, p0, Lcom/android/settings/sim/SimDialogActivity$1;->val$context:Landroid/content/Context;
 
     # invokes: Lcom/android/settings/sim/SimDialogActivity;->setDefaultDataSubId(Landroid/content/Context;I)V
     invoke-static {v2, v1}, Lcom/android/settings/sim/SimDialogActivity;->access$100(Landroid/content/Context;I)V
 
-    .line 106
     iget-object v2, p0, Lcom/android/settings/sim/SimDialogActivity$1;->val$context:Landroid/content/Context;
 
     # invokes: Lcom/android/settings/sim/SimDialogActivity;->setDefaultSmsSubId(Landroid/content/Context;I)V
     invoke-static {v2, v1}, Lcom/android/settings/sim/SimDialogActivity;->access$200(Landroid/content/Context;I)V
 
-    .line 107
     iget-object v2, p0, Lcom/android/settings/sim/SimDialogActivity$1;->this$0:Lcom/android/settings/sim/SimDialogActivity;
 
     # invokes: Lcom/android/settings/sim/SimDialogActivity;->setUserSelectedOutgoingPhoneAccount(Landroid/telecom/PhoneAccountHandle;)V
     invoke-static {v2, v0}, Lcom/android/settings/sim/SimDialogActivity;->access$300(Lcom/android/settings/sim/SimDialogActivity;Landroid/telecom/PhoneAccountHandle;)V
 
-    .line 108
     iget-object v2, p0, Lcom/android/settings/sim/SimDialogActivity$1;->this$0:Lcom/android/settings/sim/SimDialogActivity;
 
     invoke-virtual {v2}, Lcom/android/settings/sim/SimDialogActivity;->finish()V
 
-    .line 109
     return-void
 .end method

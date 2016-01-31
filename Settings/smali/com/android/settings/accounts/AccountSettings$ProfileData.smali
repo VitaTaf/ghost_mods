@@ -31,7 +31,6 @@
     .locals 0
 
     .prologue
-    .line 93
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,7 +41,6 @@
     .param p1, "x0"    # Lcom/android/settings/accounts/AccountSettings$1;
 
     .prologue
-    .line 93
     invoke-direct {p0}, Lcom/android/settings/accounts/AccountSettings$ProfileData;-><init>()V
 
     return-void

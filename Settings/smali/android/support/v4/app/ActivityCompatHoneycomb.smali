@@ -9,9 +9,7 @@
     .param p0, "activity"    # Landroid/app/Activity;
 
     .prologue
-    .line 29
     invoke-virtual {p0}, Landroid/app/Activity;->invalidateOptionsMenu()V
 
-    .line 30
     return-void
 .end method

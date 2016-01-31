@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 52
     iput-object p1, p0, Lcom/android/settings/bluetooth/PanProfile$PanServiceListener;->this$0:Lcom/android/settings/bluetooth/PanProfile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .param p2, "x1"    # Lcom/android/settings/bluetooth/PanProfile$1;
 
     .prologue
-    .line 52
     invoke-direct {p0, p1}, Lcom/android/settings/bluetooth/PanProfile$PanServiceListener;-><init>(Lcom/android/settings/bluetooth/PanProfile;)V
 
     return-void
@@ -54,7 +52,6 @@
     .param p2, "proxy"    # Landroid/bluetooth/BluetoothProfile;
 
     .prologue
-    .line 56
     # getter for: Lcom/android/settings/bluetooth/PanProfile;->V:Z
     invoke-static {}, Lcom/android/settings/bluetooth/PanProfile;->access$000()Z
 
@@ -68,7 +65,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 57
     :cond_0
     iget-object v0, p0, Lcom/android/settings/bluetooth/PanProfile$PanServiceListener;->this$0:Lcom/android/settings/bluetooth/PanProfile;
 
@@ -78,7 +74,6 @@
     # setter for: Lcom/android/settings/bluetooth/PanProfile;->mService:Landroid/bluetooth/BluetoothPan;
     invoke-static {v0, p2}, Lcom/android/settings/bluetooth/PanProfile;->access$102(Lcom/android/settings/bluetooth/PanProfile;Landroid/bluetooth/BluetoothPan;)Landroid/bluetooth/BluetoothPan;
 
-    .line 58
     iget-object v0, p0, Lcom/android/settings/bluetooth/PanProfile$PanServiceListener;->this$0:Lcom/android/settings/bluetooth/PanProfile;
 
     const/4 v1, 0x1
@@ -86,7 +81,6 @@
     # setter for: Lcom/android/settings/bluetooth/PanProfile;->mIsProfileReady:Z
     invoke-static {v0, v1}, Lcom/android/settings/bluetooth/PanProfile;->access$202(Lcom/android/settings/bluetooth/PanProfile;Z)Z
 
-    .line 59
     return-void
 .end method
 
@@ -95,7 +89,6 @@
     .param p1, "profile"    # I
 
     .prologue
-    .line 62
     # getter for: Lcom/android/settings/bluetooth/PanProfile;->V:Z
     invoke-static {}, Lcom/android/settings/bluetooth/PanProfile;->access$000()Z
 
@@ -109,7 +102,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 63
     :cond_0
     iget-object v0, p0, Lcom/android/settings/bluetooth/PanProfile$PanServiceListener;->this$0:Lcom/android/settings/bluetooth/PanProfile;
 
@@ -118,6 +110,5 @@
     # setter for: Lcom/android/settings/bluetooth/PanProfile;->mIsProfileReady:Z
     invoke-static {v0, v1}, Lcom/android/settings/bluetooth/PanProfile;->access$202(Lcom/android/settings/bluetooth/PanProfile;Z)Z
 
-    .line 64
     return-void
 .end method

@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 87
     iput-object p1, p0, Lcom/android/settings/tts/TtsEngineSettingsFragment$2;->this$0:Lcom/android/settings/tts/TtsEngineSettingsFragment;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,7 +38,6 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 91
     const-string v0, "android.speech.tts.engine.TTS_DATA_INSTALLED"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -52,13 +50,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 92
     iget-object v0, p0, Lcom/android/settings/tts/TtsEngineSettingsFragment$2;->this$0:Lcom/android/settings/tts/TtsEngineSettingsFragment;
 
     # invokes: Lcom/android/settings/tts/TtsEngineSettingsFragment;->checkTtsData()V
     invoke-static {v0}, Lcom/android/settings/tts/TtsEngineSettingsFragment;->access$100(Lcom/android/settings/tts/TtsEngineSettingsFragment;)V
 
-    .line 94
     :cond_0
     return-void
 .end method

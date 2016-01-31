@@ -26,23 +26,18 @@
     .param p1, "wifiSettings"    # Lcom/android/settings/wifi/WifiSettings;
 
     .prologue
-    .line 227
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 224
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/settings/wifi/WifiSettings$Scanner;->mRetry:I
 
-    .line 225
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/settings/wifi/WifiSettings$Scanner;->mWifiSettings:Lcom/android/settings/wifi/WifiSettings;
 
-    .line 228
     iput-object p1, p0, Lcom/android/settings/wifi/WifiSettings$Scanner;->mWifiSettings:Lcom/android/settings/wifi/WifiSettings;
 
-    .line 229
     return-void
 .end method
 
@@ -54,13 +49,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 238
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiSettings$Scanner;->removeMessages(I)V
 
-    .line 239
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiSettings$Scanner;->sendEmptyMessage(I)Z
 
-    .line 240
     return-void
 .end method
 
@@ -71,7 +63,6 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 249
     iget-object v1, p0, Lcom/android/settings/wifi/WifiSettings$Scanner;->mWifiSettings:Lcom/android/settings/wifi/WifiSettings;
 
     iget-object v1, v1, Lcom/android/settings/wifi/WifiSettings;->mWifiManager:Landroid/net/wifi/WifiManager;
@@ -82,21 +73,17 @@
 
     if-eqz v1, :cond_2
 
-    .line 250
     iput v4, p0, Lcom/android/settings/wifi/WifiSettings$Scanner;->mRetry:I
 
-    .line 259
     :cond_0
     const-wide/16 v2, 0x2710
 
     invoke-virtual {p0, v4, v2, v3}, Lcom/android/settings/wifi/WifiSettings$Scanner;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 260
     :cond_1
     :goto_0
     return-void
 
-    .line 251
     :cond_2
     iget v1, p0, Lcom/android/settings/wifi/WifiSettings$Scanner;->mRetry:I
 
@@ -108,21 +95,17 @@
 
     if-lt v1, v2, :cond_0
 
-    .line 252
     iput v4, p0, Lcom/android/settings/wifi/WifiSettings$Scanner;->mRetry:I
 
-    .line 253
     iget-object v1, p0, Lcom/android/settings/wifi/WifiSettings$Scanner;->mWifiSettings:Lcom/android/settings/wifi/WifiSettings;
 
     invoke-virtual {v1}, Lcom/android/settings/wifi/WifiSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    .line 254
     .local v0, "activity":Landroid/app/Activity;
     if-eqz v0, :cond_1
 
-    .line 255
     const v1, 0x7f09029f
 
     const/4 v2, 0x1
@@ -142,13 +125,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 243
     iput v0, p0, Lcom/android/settings/wifi/WifiSettings$Scanner;->mRetry:I
 
-    .line 244
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiSettings$Scanner;->removeMessages(I)V
 
-    .line 245
     return-void
 .end method
 
@@ -158,17 +138,14 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 232
     invoke-virtual {p0, v1}, Lcom/android/settings/wifi/WifiSettings$Scanner;->hasMessages(I)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 233
     invoke-virtual {p0, v1}, Lcom/android/settings/wifi/WifiSettings$Scanner;->sendEmptyMessage(I)Z
 
-    .line 235
     :cond_0
     return-void
 .end method

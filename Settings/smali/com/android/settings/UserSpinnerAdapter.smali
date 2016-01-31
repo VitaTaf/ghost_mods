@@ -45,14 +45,11 @@
     .end annotation
 
     .prologue
-    .line 70
     .local p2, "users":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/settings/UserSpinnerAdapter$UserDetails;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 71
     if-nez p2, :cond_0
 
-    .line 72
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "A list of user details must be provided"
@@ -61,11 +58,9 @@
 
     throw v0
 
-    .line 74
     :cond_0
     iput-object p2, p0, Lcom/android/settings/UserSpinnerAdapter;->data:Ljava/util/ArrayList;
 
-    .line 75
     const-string v0, "layout_inflater"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -76,7 +71,6 @@
 
     iput-object v0, p0, Lcom/android/settings/UserSpinnerAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 76
     return-void
 .end method
 
@@ -85,7 +79,6 @@
     .param p1, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 96
     iget-object v0, p0, Lcom/android/settings/UserSpinnerAdapter;->mInflater:Landroid/view/LayoutInflater;
 
     const v1, 0x7f0400d5
@@ -105,7 +98,6 @@
     .locals 1
 
     .prologue
-    .line 111
     iget-object v0, p0, Lcom/android/settings/UserSpinnerAdapter;->data:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -122,12 +114,10 @@
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 87
     if-eqz p2, :cond_0
 
     move-object v0, p2
 
-    .line 89
     .local v0, "row":Landroid/view/View;
     :goto_0
     iget-object v2, p0, Lcom/android/settings/UserSpinnerAdapter;->data:Ljava/util/ArrayList;
@@ -138,7 +128,6 @@
 
     check-cast v1, Lcom/android/settings/UserSpinnerAdapter$UserDetails;
 
-    .line 90
     .local v1, "user":Lcom/android/settings/UserSpinnerAdapter$UserDetails;
     const v2, 0x1020006
 
@@ -155,7 +144,6 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 91
     const v2, 0x1020016
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -171,10 +159,8 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 92
     return-object v0
 
-    .line 87
     .end local v0    # "row":Landroid/view/View;
     .end local v1    # "user":Lcom/android/settings/UserSpinnerAdapter$UserDetails;
     :cond_0
@@ -190,7 +176,6 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 116
     iget-object v0, p0, Lcom/android/settings/UserSpinnerAdapter;->data:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -207,7 +192,6 @@
     .param p1, "x0"    # I
 
     .prologue
-    .line 41
     invoke-virtual {p0, p1}, Lcom/android/settings/UserSpinnerAdapter;->getItem(I)Lcom/android/settings/UserSpinnerAdapter$UserDetails;
 
     move-result-object v0
@@ -220,7 +204,6 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 121
     iget-object v0, p0, Lcom/android/settings/UserSpinnerAdapter;->data:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -248,7 +231,6 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 136
     const/4 v0, 0x0
 
     return v0
@@ -259,7 +241,6 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 79
     if-ltz p1, :cond_0
 
     iget-object v0, p0, Lcom/android/settings/UserSpinnerAdapter;->data:Ljava/util/ArrayList;
@@ -270,11 +251,9 @@
 
     if-lt p1, v0, :cond_1
 
-    .line 80
     :cond_0
     const/4 v0, 0x0
 
-    .line 82
     :goto_0
     return-object v0
 
@@ -302,7 +281,6 @@
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 131
     invoke-virtual {p0, p1, p2, p3}, Lcom/android/settings/UserSpinnerAdapter;->getDropDownView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v0
@@ -314,7 +292,6 @@
     .locals 1
 
     .prologue
-    .line 141
     const/4 v0, 0x1
 
     return v0
@@ -324,7 +301,6 @@
     .locals 1
 
     .prologue
-    .line 126
     const/4 v0, 0x0
 
     return v0
@@ -334,7 +310,6 @@
     .locals 1
 
     .prologue
-    .line 146
     iget-object v0, p0, Lcom/android/settings/UserSpinnerAdapter;->data:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -349,7 +324,6 @@
     .param p1, "observer"    # Landroid/database/DataSetObserver;
 
     .prologue
-    .line 102
     return-void
 .end method
 
@@ -358,6 +332,5 @@
     .param p1, "observer"    # Landroid/database/DataSetObserver;
 
     .prologue
-    .line 107
     return-void
 .end method

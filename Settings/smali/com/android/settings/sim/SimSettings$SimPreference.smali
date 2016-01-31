@@ -46,22 +46,16 @@
     .param p4, "slotId"    # I
 
     .prologue
-    .line 467
     iput-object p1, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->this$0:Lcom/android/settings/sim/SimSettings;
 
-    .line 468
     invoke-direct {p0, p2}, Lcom/android/settings/sim/addon/ClickableSwitchWidgetPreference;-><init>(Landroid/content/Context;)V
 
-    .line 470
     iput-object p2, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->mContext:Landroid/content/Context;
 
-    .line 471
     iput-object p3, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->mSubInfoRecord:Landroid/telephony/SubscriptionInfo;
 
-    .line 472
     iput p4, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->mSlotId:I
 
-    .line 473
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -84,10 +78,8 @@
 
     invoke-virtual {p0, v0}, Lcom/android/settings/sim/SimSettings$SimPreference;->setKey(Ljava/lang/String;)V
 
-    .line 474
     invoke-virtual {p0}, Lcom/android/settings/sim/SimSettings$SimPreference;->update()V
 
-    .line 475
     invoke-virtual {p2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -100,7 +92,6 @@
 
     iput-object v0, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->mTintArr:[I
 
-    .line 476
     invoke-virtual {p2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -113,12 +104,10 @@
 
     iput-object v0, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->mColorStrings:[Ljava/lang/String;
 
-    .line 477
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->mTintSelectorPos:I
 
-    .line 478
     return-void
 .end method
 
@@ -127,7 +116,6 @@
     .param p0, "x0"    # Lcom/android/settings/sim/SimSettings$SimPreference;
 
     .prologue
-    .line 458
     iget v0, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->mTintSelectorPos:I
 
     return v0
@@ -139,7 +127,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 458
     iput p1, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->mTintSelectorPos:I
 
     return p1
@@ -150,7 +137,6 @@
     .param p0, "x0"    # Lcom/android/settings/sim/SimSettings$SimPreference;
 
     .prologue
-    .line 458
     iget-object v0, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->mSubInfoRecord:Landroid/telephony/SubscriptionInfo;
 
     return-object v0
@@ -161,7 +147,6 @@
     .param p0, "x0"    # Lcom/android/settings/sim/SimSettings$SimPreference;
 
     .prologue
-    .line 458
     iget-object v0, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->mTintArr:[I
 
     return-object v0
@@ -172,7 +157,6 @@
     .param p0, "x0"    # Lcom/android/settings/sim/SimSettings$SimPreference;
 
     .prologue
-    .line 458
     iget v0, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->mSlotId:I
 
     return v0
@@ -185,7 +169,6 @@
     .param p1, "simPref"    # Lcom/android/settings/sim/SimSettings$SimPreference;
 
     .prologue
-    .line 522
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/settings/sim/SimSettings$SimPreference;->this$0:Lcom/android/settings/sim/SimSettings;
@@ -204,7 +187,6 @@
 
     if-eqz v13, :cond_0
 
-    .line 523
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/settings/sim/SimSettings$SimPreference;->this$0:Lcom/android/settings/sim/SimSettings;
@@ -215,11 +197,9 @@
 
     invoke-virtual {v13, v14}, Lcom/android/settings/sim/SimSettings;->unlockSim(Landroid/telephony/SubscriptionInfo;)V
 
-    .line 625
     :goto_0
     return-void
 
-    .line 526
     :cond_0
     move-object/from16 v0, p0
 
@@ -229,7 +209,6 @@
 
     move-result-object v9
 
-    .line 528
     .local v9, "res":Landroid/content/res/Resources;
     new-instance v2, Landroid/app/AlertDialog$Builder;
 
@@ -243,7 +222,6 @@
 
     invoke-direct {v2, v13}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 530
     .local v2, "builder":Landroid/app/AlertDialog$Builder;
     move-object/from16 v0, p0
 
@@ -265,11 +243,9 @@
 
     move-result-object v4
 
-    .line 532
     .local v4, "dialogLayout":Landroid/view/View;
     invoke-virtual {v2, v4}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
 
-    .line 534
     const v13, 0x7f0f00ef
 
     invoke-virtual {v4, v13}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -278,7 +254,6 @@
 
     check-cast v6, Landroid/widget/EditText;
 
-    .line 535
     .local v6, "nameText":Landroid/widget/EditText;
     move-object/from16 v0, p0
 
@@ -290,7 +265,6 @@
 
     invoke-virtual {v6, v13}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 537
     const v13, 0x7f0f00f0
 
     invoke-virtual {v4, v13}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -299,7 +273,6 @@
 
     check-cast v11, Landroid/widget/Spinner;
 
-    .line 538
     .local v11, "tintSpinner":Landroid/widget/Spinner;
     new-instance v1, Lcom/android/settings/sim/SimSettings$SimPreference$SelectColorAdapter;
 
@@ -317,16 +290,13 @@
 
     invoke-direct {v1, v0, v13, v14, v15}, Lcom/android/settings/sim/SimSettings$SimPreference$SelectColorAdapter;-><init>(Lcom/android/settings/sim/SimSettings$SimPreference;Landroid/content/Context;I[Ljava/lang/String;)V
 
-    .line 540
     .local v1, "adapter":Lcom/android/settings/sim/SimSettings$SimPreference$SelectColorAdapter;
     const v13, 0x1090009
 
     invoke-virtual {v1, v13}, Lcom/android/settings/sim/SimSettings$SimPreference$SelectColorAdapter;->setDropDownViewResource(I)V
 
-    .line 541
     invoke-virtual {v11, v1}, Landroid/widget/Spinner;->setAdapter(Landroid/widget/SpinnerAdapter;)V
 
-    .line 543
     const/4 v5, 0x0
 
     .local v5, "i":I
@@ -339,7 +309,6 @@
 
     if-ge v5, v13, :cond_1
 
-    .line 544
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/settings/sim/SimSettings$SimPreference;->mTintArr:[I
@@ -356,15 +325,12 @@
 
     if-ne v13, v14, :cond_3
 
-    .line 545
     invoke-virtual {v11, v5}, Landroid/widget/Spinner;->setSelection(I)V
 
-    .line 546
     move-object/from16 v0, p0
 
     iput v5, v0, Lcom/android/settings/sim/SimSettings$SimPreference;->mTintSelectorPos:I
 
-    .line 551
     :cond_1
     new-instance v13, Lcom/android/settings/sim/SimSettings$SimPreference$1;
 
@@ -374,7 +340,6 @@
 
     invoke-virtual {v11, v13}, Landroid/widget/Spinner;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
 
-    .line 564
     const v13, 0x7f0f00f2
 
     invoke-virtual {v4, v13}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -383,7 +348,6 @@
 
     check-cast v7, Landroid/widget/TextView;
 
-    .line 565
     .local v7, "numberView":Landroid/widget/TextView;
     move-object/from16 v0, p0
 
@@ -398,7 +362,6 @@
 
     move-result-object v8
 
-    .line 566
     .local v8, "rawNumber":Ljava/lang/String;
     invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -406,7 +369,6 @@
 
     if-eqz v13, :cond_4
 
-    .line 567
     const v13, 0x104000e
 
     invoke-virtual {v9, v13}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -415,7 +377,6 @@
 
     invoke-virtual {v7, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 572
     :goto_2
     move-object/from16 v0, p0
 
@@ -433,7 +394,6 @@
 
     check-cast v12, Landroid/telephony/TelephonyManager;
 
-    .line 575
     .local v12, "tm":Landroid/telephony/TelephonyManager;
     move-object/from16 v0, p0
 
@@ -447,7 +407,6 @@
 
     move-result-object v10
 
-    .line 579
     .local v10, "simCarrierName":Ljava/lang/String;
     invoke-static {v10}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -465,7 +424,6 @@
 
     if-eqz v13, :cond_2
 
-    .line 580
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/settings/sim/SimSettings$SimPreference;->mSubInfoRecord:Landroid/telephony/SubscriptionInfo;
@@ -478,7 +436,6 @@
 
     move-result-object v10
 
-    .line 583
     :cond_2
     const v13, 0x7f0f00f1
 
@@ -488,7 +445,6 @@
 
     check-cast v3, Landroid/widget/TextView;
 
-    .line 584
     .local v3, "carrierView":Landroid/widget/TextView;
     invoke-static {v10}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -500,7 +456,6 @@
     :goto_3
     invoke-virtual {v3, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 587
     const v13, 0x7f090982
 
     invoke-virtual {v9, v13}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -537,7 +492,6 @@
 
     invoke-virtual {v2, v13}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 590
     const v13, 0x7f09017c
 
     new-instance v14, Lcom/android/settings/sim/SimSettings$SimPreference$2;
@@ -548,7 +502,6 @@
 
     invoke-virtual {v2, v13, v14}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 614
     const v13, 0x7f090179
 
     new-instance v14, Lcom/android/settings/sim/SimSettings$SimPreference$3;
@@ -559,7 +512,6 @@
 
     invoke-virtual {v2, v13, v14}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 623
     invoke-virtual {v2}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v13
@@ -568,7 +520,6 @@
 
     iput-object v13, v0, Lcom/android/settings/sim/SimSettings$SimPreference;->mEditDialog:Landroid/app/Dialog;
 
-    .line 624
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/settings/sim/SimSettings$SimPreference;->mEditDialog:Landroid/app/Dialog;
@@ -577,7 +528,6 @@
 
     goto/16 :goto_0
 
-    .line 543
     .end local v3    # "carrierView":Landroid/widget/TextView;
     .end local v7    # "numberView":Landroid/widget/TextView;
     .end local v8    # "rawNumber":Ljava/lang/String;
@@ -587,7 +537,6 @@
 
     goto/16 :goto_1
 
-    .line 569
     .restart local v7    # "numberView":Landroid/widget/TextView;
     .restart local v8    # "rawNumber":Ljava/lang/String;
     :cond_4
@@ -599,7 +548,6 @@
 
     goto/16 :goto_2
 
-    .line 584
     .restart local v3    # "carrierView":Landroid/widget/TextView;
     .restart local v10    # "simCarrierName":Ljava/lang/String;
     .restart local v12    # "tm":Landroid/telephony/TelephonyManager;
@@ -621,7 +569,6 @@
     .locals 1
 
     .prologue
-    .line 518
     iget-object v0, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->mSubInfoRecord:Landroid/telephony/SubscriptionInfo;
 
     return-object v0
@@ -631,22 +578,18 @@
     .locals 1
 
     .prologue
-    .line 628
     iget-object v0, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->mEditDialog:Landroid/app/Dialog;
 
     if-eqz v0, :cond_0
 
-    .line 629
     iget-object v0, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->mEditDialog:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 630
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->mEditDialog:Landroid/app/Dialog;
 
-    .line 632
     :cond_0
     return-void
 .end method
@@ -661,14 +604,12 @@
 
     const/4 v3, 0x0
 
-    .line 481
     iget-object v4, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->this$0:Lcom/android/settings/sim/SimSettings;
 
     invoke-virtual {v4}, Lcom/android/settings/sim/SimSettings;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 483
     .local v0, "res":Landroid/content/res/Resources;
     iget-object v4, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->this$0:Lcom/android/settings/sim/SimSettings;
 
@@ -700,7 +641,6 @@
 
     invoke-virtual {p0, v4}, Lcom/android/settings/sim/SimSettings$SimPreference;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 486
     iget-object v4, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->this$0:Lcom/android/settings/sim/SimSettings;
 
     invoke-virtual {v4}, Lcom/android/settings/sim/SimSettings;->getActivity()Landroid/app/Activity;
@@ -715,12 +655,10 @@
 
     iput-object v4, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->mSubInfoRecord:Landroid/telephony/SubscriptionInfo;
 
-    .line 488
     iget-object v4, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->mSubInfoRecord:Landroid/telephony/SubscriptionInfo;
 
     if-eqz v4, :cond_6
 
-    .line 489
     iget-object v4, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->mSubInfoRecord:Landroid/telephony/SubscriptionInfo;
 
     invoke-virtual {v4}, Landroid/telephony/SubscriptionInfo;->getStatus()I
@@ -731,7 +669,6 @@
 
     move v1, v2
 
-    .line 491
     .local v1, "simStatus":Z
     :goto_0
     # getter for: Lcom/android/settings/sim/SimSettings;->DBG:Z
@@ -763,11 +700,9 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 493
     :cond_0
     if-nez v1, :cond_2
 
-    .line 494
     const v4, 0x7f090a5c
 
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -776,7 +711,6 @@
 
     invoke-virtual {p0, v4}, Lcom/android/settings/sim/SimSettings$SimPreference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 504
     :goto_1
     iget-object v4, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->this$0:Lcom/android/settings/sim/SimSettings;
 
@@ -793,7 +727,6 @@
     :goto_2
     invoke-virtual {p0, v2}, Lcom/android/settings/sim/SimSettings$SimPreference;->setEnabled(Z)V
 
-    .line 505
     new-instance v2, Landroid/graphics/drawable/BitmapDrawable;
 
     iget-object v3, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->mSubInfoRecord:Landroid/telephony/SubscriptionInfo;
@@ -808,10 +741,8 @@
 
     invoke-virtual {p0, v2}, Lcom/android/settings/sim/SimSettings$SimPreference;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    .line 506
     invoke-virtual {p0, v1}, Lcom/android/settings/sim/SimSettings$SimPreference;->setChecked(Z)V
 
-    .line 515
     .end local v1    # "simStatus":Z
     :goto_3
     return-void
@@ -819,10 +750,8 @@
     :cond_1
     move v1, v3
 
-    .line 489
     goto :goto_0
 
-    .line 495
     .restart local v1    # "simStatus":Z
     :cond_2
     iget-object v4, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->this$0:Lcom/android/settings/sim/SimSettings;
@@ -839,7 +768,6 @@
 
     if-eqz v4, :cond_3
 
-    .line 496
     const v4, 0x7f090a67
 
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -850,7 +778,6 @@
 
     goto :goto_1
 
-    .line 497
     :cond_3
     iget-object v4, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->this$0:Lcom/android/settings/sim/SimSettings;
 
@@ -867,7 +794,6 @@
 
     if-eqz v4, :cond_4
 
-    .line 498
     iget-object v4, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->mSubInfoRecord:Landroid/telephony/SubscriptionInfo;
 
     invoke-virtual {v4}, Landroid/telephony/SubscriptionInfo;->getDisplayName()Ljava/lang/CharSequence;
@@ -878,7 +804,6 @@
 
     goto :goto_1
 
-    .line 500
     :cond_4
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -924,29 +849,22 @@
     :cond_5
     move v2, v3
 
-    .line 504
     goto :goto_2
 
-    .line 508
     .end local v1    # "simStatus":Z
     :cond_6
     const v2, 0x7f09097f
 
     invoke-virtual {p0, v2}, Lcom/android/settings/sim/SimSettings$SimPreference;->setSummary(I)V
 
-    .line 509
     invoke-virtual {p0, v7}, Lcom/android/settings/sim/SimSettings$SimPreference;->setFragment(Ljava/lang/String;)V
 
-    .line 510
     invoke-virtual {p0, v3}, Lcom/android/settings/sim/SimSettings$SimPreference;->setEnabled(Z)V
 
-    .line 511
     invoke-virtual {p0, v3}, Lcom/android/settings/sim/SimSettings$SimPreference;->setChecked(Z)V
 
-    .line 512
     invoke-virtual {p0, v7}, Lcom/android/settings/sim/SimSettings$SimPreference;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    .line 513
     invoke-virtual {p0}, Lcom/android/settings/sim/SimSettings$SimPreference;->removeDialog()V
 
     goto :goto_3

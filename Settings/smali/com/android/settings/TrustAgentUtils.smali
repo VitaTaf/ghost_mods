@@ -18,12 +18,10 @@
     .param p1, "pm"    # Landroid/content/pm/PackageManager;
 
     .prologue
-    .line 46
     iget-object v1, p0, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
     iget-object v0, v1, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
 
-    .line 47
     .local v0, "packageName":Ljava/lang/String;
     const-string v1, "android.permission.PROVIDE_TRUST_AGENT"
 
@@ -33,7 +31,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 49
     const-string v1, "TrustAgentUtils"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -74,10 +71,8 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 51
     const/4 v1, 0x0
 
-    .line 53
     :goto_0
     return v1
 
@@ -92,7 +87,6 @@
     .param p0, "resolveInfo"    # Landroid/content/pm/ResolveInfo;
 
     .prologue
-    .line 63
     if-eqz p0, :cond_0
 
     iget-object v0, p0, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
@@ -102,7 +96,6 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 64
     :goto_0
     return-object v0
 
@@ -128,7 +121,6 @@
     .param p1, "resolveInfo"    # Landroid/content/pm/ResolveInfo;
 
     .prologue
-    .line 69
     if-eqz p1, :cond_0
 
     iget-object v10, p1, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
@@ -141,34 +133,27 @@
 
     if-nez v10, :cond_2
 
-    .line 70
     :cond_0
     const/4 v8, 0x0
 
-    .line 117
     :cond_1
     :goto_0
     return-object v8
 
-    .line 71
     :cond_2
     const/4 v2, 0x0
 
-    .line 72
     .local v2, "cn":Ljava/lang/String;
     new-instance v8, Lcom/android/settings/TrustAgentUtils$TrustAgentComponentInfo;
 
     invoke-direct {v8}, Lcom/android/settings/TrustAgentUtils$TrustAgentComponentInfo;-><init>()V
 
-    .line 73
     .local v8, "trustAgentComponentInfo":Lcom/android/settings/TrustAgentUtils$TrustAgentComponentInfo;
     const/4 v5, 0x0
 
-    .line 74
     .local v5, "parser":Landroid/content/res/XmlResourceParser;
     const/4 v1, 0x0
 
-    .line 76
     .local v1, "caughtException":Ljava/lang/Exception;
     :try_start_0
     iget-object v10, p1, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
@@ -179,10 +164,8 @@
 
     move-result-object v5
 
-    .line 77
     if-nez v5, :cond_3
 
-    .line 78
     const-string v10, "TrustAgentUtils"
 
     const-string v11, "Can\'t find android.service.trust.trustagent meta-data"
@@ -194,10 +177,8 @@
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_2
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 79
     const/4 v8, 0x0
 
-    .line 107
     .end local v8    # "trustAgentComponentInfo":Lcom/android/settings/TrustAgentUtils$TrustAgentComponentInfo;
     if-eqz v5, :cond_1
 
@@ -205,7 +186,6 @@
 
     goto :goto_0
 
-    .line 81
     .restart local v8    # "trustAgentComponentInfo":Lcom/android/settings/TrustAgentUtils$TrustAgentComponentInfo;
     :cond_3
     :try_start_1
@@ -217,13 +197,11 @@
 
     move-result-object v6
 
-    .line 82
     .local v6, "res":Landroid/content/res/Resources;
     invoke-static {v5}, Landroid/util/Xml;->asAttributeSet(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;
 
     move-result-object v0
 
-    .line 85
     .local v0, "attrs":Landroid/util/AttributeSet;
     :cond_4
     invoke-interface {v5}, Landroid/content/res/XmlResourceParser;->next()I
@@ -239,13 +217,11 @@
 
     if-ne v9, v10, :cond_4
 
-    .line 87
     :cond_5
     invoke-interface {v5}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 88
     .local v4, "nodeName":Ljava/lang/String;
     const-string v10, "trust-agent"
 
@@ -255,7 +231,6 @@
 
     if-nez v10, :cond_6
 
-    .line 89
     const-string v10, "TrustAgentUtils"
 
     const-string v11, "Meta-data does not start with trust-agent tag"
@@ -267,10 +242,8 @@
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_2
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 90
     const/4 v8, 0x0
 
-    .line 107
     .end local v8    # "trustAgentComponentInfo":Lcom/android/settings/TrustAgentUtils$TrustAgentComponentInfo;
     if-eqz v5, :cond_1
 
@@ -278,7 +251,6 @@
 
     goto :goto_0
 
-    .line 92
     .restart local v8    # "trustAgentComponentInfo":Lcom/android/settings/TrustAgentUtils$TrustAgentComponentInfo;
     :cond_6
     :try_start_2
@@ -288,7 +260,6 @@
 
     move-result-object v7
 
-    .line 94
     .local v7, "sa":Landroid/content/res/TypedArray;
     const/4 v10, 0x1
 
@@ -298,7 +269,6 @@
 
     iput-object v10, v8, Lcom/android/settings/TrustAgentUtils$TrustAgentComponentInfo;->summary:Ljava/lang/String;
 
-    .line 96
     const/4 v10, 0x0
 
     invoke-virtual {v7, v10}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
@@ -307,14 +277,12 @@
 
     iput-object v10, v8, Lcom/android/settings/TrustAgentUtils$TrustAgentComponentInfo;->title:Ljava/lang/String;
 
-    .line 98
     const/4 v10, 0x2
 
     invoke-virtual {v7, v10}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 99
     invoke-virtual {v7}, Landroid/content/res/TypedArray;->recycle()V
     :try_end_2
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_2 .. :try_end_2} :catch_0
@@ -322,12 +290,10 @@
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_2 .. :try_end_2} :catch_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 107
     if-eqz v5, :cond_7
 
     invoke-interface {v5}, Landroid/content/res/XmlResourceParser;->close()V
 
-    .line 109
     .end local v0    # "attrs":Landroid/util/AttributeSet;
     .end local v4    # "nodeName":Ljava/lang/String;
     .end local v6    # "res":Landroid/content/res/Resources;
@@ -337,7 +303,6 @@
     :goto_1
     if-eqz v1, :cond_9
 
-    .line 110
     const-string v10, "TrustAgentUtils"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -364,52 +329,42 @@
 
     invoke-static {v10, v11, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 111
     const/4 v8, 0x0
 
     goto/16 :goto_0
 
-    .line 100
     :catch_0
     move-exception v3
 
-    .line 101
     .local v3, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     move-object v1, v3
 
-    .line 107
     if-eqz v5, :cond_7
 
     invoke-interface {v5}, Landroid/content/res/XmlResourceParser;->close()V
 
     goto :goto_1
 
-    .line 102
     .end local v3    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :catch_1
     move-exception v3
 
-    .line 103
     .local v3, "e":Ljava/io/IOException;
     move-object v1, v3
 
-    .line 107
     if-eqz v5, :cond_7
 
     invoke-interface {v5}, Landroid/content/res/XmlResourceParser;->close()V
 
     goto :goto_1
 
-    .line 104
     .end local v3    # "e":Ljava/io/IOException;
     :catch_2
     move-exception v3
 
-    .line 105
     .local v3, "e":Lorg/xmlpull/v1/XmlPullParserException;
     move-object v1, v3
 
-    .line 107
     if-eqz v5, :cond_7
 
     invoke-interface {v5}, Landroid/content/res/XmlResourceParser;->close()V
@@ -427,7 +382,6 @@
     :cond_8
     throw v10
 
-    .line 113
     :cond_9
     if-eqz v2, :cond_a
 
@@ -439,7 +393,6 @@
 
     if-gez v10, :cond_a
 
-    .line 114
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -466,7 +419,6 @@
 
     move-result-object v2
 
-    .line 116
     :cond_a
     if-nez v2, :cond_b
 

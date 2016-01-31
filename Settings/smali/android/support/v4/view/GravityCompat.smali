@@ -22,27 +22,22 @@
     .locals 2
 
     .prologue
-    .line 89
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    .line 90
     .local v0, "version":I
     const/16 v1, 0x11
 
     if-lt v0, v1, :cond_0
 
-    .line 91
     new-instance v1, Landroid/support/v4/view/GravityCompat$GravityCompatImplJellybeanMr1;
 
     invoke-direct {v1}, Landroid/support/v4/view/GravityCompat$GravityCompatImplJellybeanMr1;-><init>()V
 
     sput-object v1, Landroid/support/v4/view/GravityCompat;->IMPL:Landroid/support/v4/view/GravityCompat$GravityCompatImpl;
 
-    .line 95
     :goto_0
     return-void
 
-    .line 93
     :cond_0
     new-instance v1, Landroid/support/v4/view/GravityCompat$GravityCompatImplBase;
 
@@ -59,7 +54,6 @@
     .param p1, "layoutDirection"    # I
 
     .prologue
-    .line 201
     sget-object v0, Landroid/support/v4/view/GravityCompat;->IMPL:Landroid/support/v4/view/GravityCompat$GravityCompatImpl;
 
     invoke-interface {v0, p0, p1}, Landroid/support/v4/view/GravityCompat$GravityCompatImpl;->getAbsoluteGravity(II)I

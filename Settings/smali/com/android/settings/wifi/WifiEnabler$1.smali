@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 51
     iput-object p1, p0, Lcom/android/settings/wifi/WifiEnabler$1;->this$0:Lcom/android/settings/wifi/WifiEnabler;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 54
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 55
     .local v0, "action":Ljava/lang/String;
     const-string v2, "android.net.wifi.WIFI_STATE_CHANGED"
 
@@ -54,7 +51,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 56
     iget-object v2, p0, Lcom/android/settings/wifi/WifiEnabler$1;->this$0:Lcom/android/settings/wifi/WifiEnabler;
 
     const-string v3, "wifi_state"
@@ -68,12 +64,10 @@
     # invokes: Lcom/android/settings/wifi/WifiEnabler;->handleWifiStateChanged(I)V
     invoke-static {v2, v3}, Lcom/android/settings/wifi/WifiEnabler;->access$000(Lcom/android/settings/wifi/WifiEnabler;I)V
 
-    .line 69
     :cond_0
     :goto_0
     return-void
 
-    .line 58
     :cond_1
     const-string v2, "android.net.wifi.supplicant.STATE_CHANGE"
 
@@ -83,7 +77,6 @@
 
     if-eqz v2, :cond_2
 
-    .line 59
     iget-object v2, p0, Lcom/android/settings/wifi/WifiEnabler$1;->this$0:Lcom/android/settings/wifi/WifiEnabler;
 
     # getter for: Lcom/android/settings/wifi/WifiEnabler;->mConnected:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -97,7 +90,6 @@
 
     if-nez v2, :cond_0
 
-    .line 60
     iget-object v3, p0, Lcom/android/settings/wifi/WifiEnabler$1;->this$0:Lcom/android/settings/wifi/WifiEnabler;
 
     const-string v2, "newState"
@@ -117,7 +109,6 @@
 
     goto :goto_0
 
-    .line 63
     :cond_2
     const-string v2, "android.net.wifi.STATE_CHANGE"
 
@@ -127,7 +118,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 64
     const-string v2, "networkInfo"
 
     invoke-virtual {p2, v2}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -136,7 +126,6 @@
 
     check-cast v1, Landroid/net/NetworkInfo;
 
-    .line 66
     .local v1, "info":Landroid/net/NetworkInfo;
     iget-object v2, p0, Lcom/android/settings/wifi/WifiEnabler$1;->this$0:Lcom/android/settings/wifi/WifiEnabler;
 
@@ -151,7 +140,6 @@
 
     invoke-virtual {v2, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 67
     iget-object v2, p0, Lcom/android/settings/wifi/WifiEnabler$1;->this$0:Lcom/android/settings/wifi/WifiEnabler;
 
     invoke-virtual {v1}, Landroid/net/NetworkInfo;->getDetailedState()Landroid/net/NetworkInfo$DetailedState;

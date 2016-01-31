@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 278
     iput-object p1, p0, Lcom/android/settings/wifi/WifiSetupActivity$WifiSkipDialog$1;->this$0:Lcom/android/settings/wifi/WifiSetupActivity$WifiSkipDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,6 +41,5 @@
     .param p2, "id"    # I
 
     .prologue
-    .line 281
     return-void
 .end method

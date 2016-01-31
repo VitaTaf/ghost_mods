@@ -59,7 +59,6 @@
     .locals 1
 
     .prologue
-    .line 1733
     new-instance v0, Lcom/android/settings/DataUsageSummary$AppItem$1;
 
     invoke-direct {v0}, Lcom/android/settings/DataUsageSummary$AppItem$1;-><init>()V
@@ -73,22 +72,18 @@
     .locals 1
 
     .prologue
-    .line 1694
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1691
     new-instance v0, Landroid/util/SparseBooleanArray;
 
     invoke-direct {v0}, Landroid/util/SparseBooleanArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/settings/DataUsageSummary$AppItem;->uids:Landroid/util/SparseBooleanArray;
 
-    .line 1695
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/settings/DataUsageSummary$AppItem;->key:I
 
-    .line 1696
     return-void
 .end method
 
@@ -97,20 +92,16 @@
     .param p1, "key"    # I
 
     .prologue
-    .line 1698
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1691
     new-instance v0, Landroid/util/SparseBooleanArray;
 
     invoke-direct {v0}, Landroid/util/SparseBooleanArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/settings/DataUsageSummary$AppItem;->uids:Landroid/util/SparseBooleanArray;
 
-    .line 1699
     iput p1, p0, Lcom/android/settings/DataUsageSummary$AppItem;->key:I
 
-    .line 1700
     return-void
 .end method
 
@@ -119,38 +110,32 @@
     .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
-    .line 1702
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1691
     new-instance v0, Landroid/util/SparseBooleanArray;
 
     invoke-direct {v0}, Landroid/util/SparseBooleanArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/settings/DataUsageSummary$AppItem;->uids:Landroid/util/SparseBooleanArray;
 
-    .line 1703
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/settings/DataUsageSummary$AppItem;->key:I
 
-    .line 1704
     invoke-virtual {p1}, Landroid/os/Parcel;->readSparseBooleanArray()Landroid/util/SparseBooleanArray;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/DataUsageSummary$AppItem;->uids:Landroid/util/SparseBooleanArray;
 
-    .line 1705
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/settings/DataUsageSummary$AppItem;->total:J
 
-    .line 1706
     return-void
 .end method
 
@@ -161,14 +146,12 @@
     .param p1, "uid"    # I
 
     .prologue
-    .line 1709
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$AppItem;->uids:Landroid/util/SparseBooleanArray;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, p1, v1}, Landroid/util/SparseBooleanArray;->put(IZ)V
 
-    .line 1710
     return-void
 .end method
 
@@ -177,7 +160,6 @@
     .param p1, "another"    # Lcom/android/settings/DataUsageSummary$AppItem;
 
     .prologue
-    .line 1726
     iget v1, p0, Lcom/android/settings/DataUsageSummary$AppItem;->category:I
 
     iget v2, p1, Lcom/android/settings/DataUsageSummary$AppItem;->category:I
@@ -186,11 +168,9 @@
 
     move-result v0
 
-    .line 1727
     .local v0, "comparison":I
     if-nez v0, :cond_0
 
-    .line 1728
     iget-wide v2, p1, Lcom/android/settings/DataUsageSummary$AppItem;->total:J
 
     iget-wide v4, p0, Lcom/android/settings/DataUsageSummary$AppItem;->total:J
@@ -199,7 +179,6 @@
 
     move-result v0
 
-    .line 1730
     :cond_0
     return v0
 .end method
@@ -209,7 +188,6 @@
     .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
-    .line 1682
     check-cast p1, Lcom/android/settings/DataUsageSummary$AppItem;
 
     .end local p1    # "x0":Ljava/lang/Object;
@@ -224,7 +202,6 @@
     .locals 1
 
     .prologue
-    .line 1721
     const/4 v0, 0x0
 
     return v0
@@ -236,21 +213,17 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 1714
     iget v0, p0, Lcom/android/settings/DataUsageSummary$AppItem;->key:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1715
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$AppItem;->uids:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeSparseBooleanArray(Landroid/util/SparseBooleanArray;)V
 
-    .line 1716
     iget-wide v0, p0, Lcom/android/settings/DataUsageSummary$AppItem;->total:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 1717
     return-void
 .end method

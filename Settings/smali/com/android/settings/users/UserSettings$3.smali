@@ -34,7 +34,6 @@
     .locals 0
 
     .prologue
-    .line 319
     iput-object p1, p0, Lcom/android/settings/users/UserSettings$3;->this$0:Lcom/android/settings/users/UserSettings;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -49,7 +48,6 @@
     .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
-    .line 319
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1    # "x0":[Ljava/lang/Object;
@@ -65,7 +63,6 @@
     .param p1, "values"    # [Ljava/lang/Void;
 
     .prologue
-    .line 327
     iget-object v1, p0, Lcom/android/settings/users/UserSettings$3;->this$0:Lcom/android/settings/users/UserSettings;
 
     # getter for: Lcom/android/settings/users/UserSettings;->mUserManager:Landroid/os/UserManager;
@@ -81,7 +78,6 @@
 
     move-result-object v0
 
-    .line 328
     .local v0, "user":Landroid/content/pm/UserInfo;
     iget-object v1, v0, Landroid/content/pm/UserInfo;->iconPath:Ljava/lang/String;
 
@@ -97,14 +93,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 329
     :cond_0
     iget-object v1, p0, Lcom/android/settings/users/UserSettings$3;->this$0:Lcom/android/settings/users/UserSettings;
 
     # invokes: Lcom/android/settings/users/UserSettings;->assignProfilePhoto(Landroid/content/pm/UserInfo;)V
     invoke-static {v1, v0}, Lcom/android/settings/users/UserSettings;->access$800(Lcom/android/settings/users/UserSettings;Landroid/content/pm/UserInfo;)V
 
-    .line 331
     :cond_1
     iget-object v1, v0, Landroid/content/pm/UserInfo;->name:Ljava/lang/String;
 
@@ -116,7 +110,6 @@
     .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
-    .line 319
     check-cast p1, Ljava/lang/String;
 
     .end local p1    # "x0":Ljava/lang/Object;
@@ -130,12 +123,10 @@
     .param p1, "result"    # Ljava/lang/String;
 
     .prologue
-    .line 322
     iget-object v0, p0, Lcom/android/settings/users/UserSettings$3;->this$0:Lcom/android/settings/users/UserSettings;
 
     # invokes: Lcom/android/settings/users/UserSettings;->finishLoadProfile(Ljava/lang/String;)V
     invoke-static {v0, p1}, Lcom/android/settings/users/UserSettings;->access$600(Lcom/android/settings/users/UserSettings;Ljava/lang/String;)V
 
-    .line 323
     return-void
 .end method

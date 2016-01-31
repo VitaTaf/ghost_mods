@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 292
     iput-object p1, p0, Lcom/android/settings/deviceinfo/Memory$3;->this$0:Lcom/android/settings/deviceinfo/Memory;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,12 +41,10 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 294
     iget-object v0, p0, Lcom/android/settings/deviceinfo/Memory$3;->this$0:Lcom/android/settings/deviceinfo/Memory;
 
     # invokes: Lcom/android/settings/deviceinfo/Memory;->doUnmount()V
     invoke-static {v0}, Lcom/android/settings/deviceinfo/Memory;->access$200(Lcom/android/settings/deviceinfo/Memory;)V
 
-    .line 295
     return-void
 .end method

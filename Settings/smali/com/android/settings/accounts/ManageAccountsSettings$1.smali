@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 499
     iput-object p1, p0, Lcom/android/settings/accounts/ManageAccountsSettings$1;->this$0:Lcom/android/settings/accounts/ManageAccountsSettings;
 
     iput-object p2, p0, Lcom/android/settings/accounts/ManageAccountsSettings$1;->val$pm:Landroid/content/pm/PackageManager;
@@ -45,12 +44,10 @@
     .param p1, "preference"    # Landroid/preference/Preference;
 
     .prologue
-    .line 502
     invoke-virtual {p1}, Landroid/preference/Preference;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 510
     .local v0, "prefIntent":Landroid/content/Intent;
     iget-object v1, p0, Lcom/android/settings/accounts/ManageAccountsSettings$1;->this$0:Lcom/android/settings/accounts/ManageAccountsSettings;
 
@@ -63,7 +60,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 511
     iget-object v1, p0, Lcom/android/settings/accounts/ManageAccountsSettings$1;->this$0:Lcom/android/settings/accounts/ManageAccountsSettings;
 
     invoke-virtual {v1}, Lcom/android/settings/accounts/ManageAccountsSettings;->getActivity()Landroid/app/Activity;
@@ -76,13 +72,11 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/app/Activity;->startActivityAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 518
     :goto_0
     const/4 v1, 0x1
 
     return v1
 
-    .line 513
     :cond_0
     const-string v1, "AccountSettings"
 

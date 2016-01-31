@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 673
     iput-object p1, p0, Lcom/android/settings/users/UserSettings$12;->this$0:Lcom/android/settings/users/UserSettings;
 
     iput p2, p0, Lcom/android/settings/users/UserSettings$12;->val$userType:I
@@ -43,16 +42,13 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 675
     const/4 v0, 0x0
 
-    .line 677
     .local v0, "user":Landroid/content/pm/UserInfo;
     iget v1, p0, Lcom/android/settings/users/UserSettings$12;->val$userType:I
 
     if-ne v1, v4, :cond_0
 
-    .line 678
     iget-object v1, p0, Lcom/android/settings/users/UserSettings$12;->this$0:Lcom/android/settings/users/UserSettings;
 
     # invokes: Lcom/android/settings/users/UserSettings;->createTrustedUser()Landroid/content/pm/UserInfo;
@@ -60,7 +56,6 @@
 
     move-result-object v0
 
-    .line 682
     :goto_0
     iget-object v1, p0, Lcom/android/settings/users/UserSettings$12;->this$0:Lcom/android/settings/users/UserSettings;
 
@@ -71,7 +66,6 @@
 
     monitor-enter v2
 
-    .line 683
     :try_start_0
     iget-object v1, p0, Lcom/android/settings/users/UserSettings$12;->this$0:Lcom/android/settings/users/UserSettings;
 
@@ -80,12 +74,10 @@
     # setter for: Lcom/android/settings/users/UserSettings;->mAddingUser:Z
     invoke-static {v1, v3}, Lcom/android/settings/users/UserSettings;->access$1902(Lcom/android/settings/users/UserSettings;Z)Z
 
-    .line 684
     iget v1, p0, Lcom/android/settings/users/UserSettings$12;->val$userType:I
 
     if-ne v1, v4, :cond_1
 
-    .line 685
     iget-object v1, p0, Lcom/android/settings/users/UserSettings$12;->this$0:Lcom/android/settings/users/UserSettings;
 
     # getter for: Lcom/android/settings/users/UserSettings;->mHandler:Landroid/os/Handler;
@@ -97,7 +89,6 @@
 
     invoke-virtual {v1, v3}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 686
     iget-object v1, p0, Lcom/android/settings/users/UserSettings$12;->this$0:Lcom/android/settings/users/UserSettings;
 
     # getter for: Lcom/android/settings/users/UserSettings;->mHandler:Landroid/os/Handler;
@@ -124,16 +115,13 @@
 
     invoke-virtual {v1, v3}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 692
     :goto_1
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 693
     return-void
 
-    .line 680
     :cond_0
     iget-object v1, p0, Lcom/android/settings/users/UserSettings$12;->this$0:Lcom/android/settings/users/UserSettings;
 
@@ -144,7 +132,6 @@
 
     goto :goto_0
 
-    .line 689
     :cond_1
     :try_start_1
     iget-object v1, p0, Lcom/android/settings/users/UserSettings$12;->this$0:Lcom/android/settings/users/UserSettings;
@@ -175,7 +162,6 @@
 
     goto :goto_1
 
-    .line 692
     :catchall_0
     move-exception v1
 

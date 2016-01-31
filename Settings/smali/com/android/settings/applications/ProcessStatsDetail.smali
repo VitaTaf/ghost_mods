@@ -67,14 +67,12 @@
     .locals 1
 
     .prologue
-    .line 205
     new-instance v0, Lcom/android/settings/applications/ProcessStatsDetail$1;
 
     invoke-direct {v0}, Lcom/android/settings/applications/ProcessStatsDetail$1;-><init>()V
 
     sput-object v0, Lcom/android/settings/applications/ProcessStatsDetail;->sServiceCompare:Ljava/util/Comparator;
 
-    .line 218
     new-instance v0, Lcom/android/settings/applications/ProcessStatsDetail$2;
 
     invoke-direct {v0}, Lcom/android/settings/applications/ProcessStatsDetail$2;-><init>()V
@@ -88,10 +86,8 @@
     .locals 1
 
     .prologue
-    .line 50
     invoke-direct {p0}, Landroid/app/Fragment;-><init>()V
 
-    .line 278
     new-instance v0, Lcom/android/settings/applications/ProcessStatsDetail$3;
 
     invoke-direct {v0, p0}, Lcom/android/settings/applications/ProcessStatsDetail$3;-><init>(Lcom/android/settings/applications/ProcessStatsDetail;)V
@@ -106,7 +102,6 @@
     .param p0, "x0"    # Lcom/android/settings/applications/ProcessStatsDetail;
 
     .prologue
-    .line 50
     iget-object v0, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mForceStopButton:Landroid/widget/Button;
 
     return-object v0
@@ -119,7 +114,6 @@
     .param p3, "value"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 184
     invoke-virtual {p0}, Lcom/android/settings/applications/ProcessStatsDetail;->getActivity()Landroid/app/Activity;
 
     move-result-object v4
@@ -128,7 +122,6 @@
 
     move-result-object v0
 
-    .line 185
     .local v0, "inflater":Landroid/view/LayoutInflater;
     const v4, 0x7f040072
 
@@ -140,11 +133,9 @@
 
     check-cast v1, Landroid/view/ViewGroup;
 
-    .line 187
     .local v1, "item":Landroid/view/ViewGroup;
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 188
     const v4, 0x7f0f00d3
 
     invoke-virtual {v1, v4}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
@@ -153,7 +144,6 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 189
     .local v2, "labelView":Landroid/widget/TextView;
     const v4, 0x7f0f0100
 
@@ -163,14 +153,11 @@
 
     check-cast v3, Landroid/widget/TextView;
 
-    .line 190
     .local v3, "valueView":Landroid/widget/TextView;
     invoke-virtual {v2, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 191
     invoke-virtual {v3, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 192
     return-void
 .end method
 
@@ -180,7 +167,6 @@
     .param p2, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 167
     invoke-virtual {p0}, Lcom/android/settings/applications/ProcessStatsDetail;->getActivity()Landroid/app/Activity;
 
     move-result-object v6
@@ -189,7 +175,6 @@
 
     move-result-object v3
 
-    .line 168
     .local v3, "inflater":Landroid/view/LayoutInflater;
     const v6, 0x7f0400a3
 
@@ -201,11 +186,9 @@
 
     check-cast v4, Landroid/view/ViewGroup;
 
-    .line 170
     .local v4, "item":Landroid/view/ViewGroup;
     invoke-virtual {p1, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 171
     const v6, 0x7f0f0034
 
     invoke-virtual {v4, v6}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
@@ -214,7 +197,6 @@
 
     check-cast v2, Landroid/widget/ImageView;
 
-    .line 172
     .local v2, "icon":Landroid/widget/ImageView;
     const v6, 0x7f0f0029
 
@@ -224,7 +206,6 @@
 
     check-cast v5, Landroid/widget/TextView;
 
-    .line 173
     .local v5, "nameView":Landroid/widget/TextView;
     const v6, 0x7f0f0098
 
@@ -234,7 +215,6 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 175
     .local v1, "descriptionView":Landroid/widget/TextView;
     :try_start_0
     iget-object v6, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mPm:Landroid/content/pm/PackageManager;
@@ -245,7 +225,6 @@
 
     move-result-object v0
 
-    .line 176
     .local v0, "ai":Landroid/content/pm/ApplicationInfo;
     iget-object v6, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mPm:Landroid/content/pm/PackageManager;
 
@@ -255,7 +234,6 @@
 
     invoke-virtual {v2, v6}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 177
     iget-object v6, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, v6}, Landroid/content/pm/ApplicationInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
@@ -266,15 +244,12 @@
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 180
     .end local v0    # "ai":Landroid/content/pm/ApplicationInfo;
     :goto_0
     invoke-virtual {v1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 181
     return-void
 
-    .line 178
     :catch_0
     move-exception v6
 
@@ -291,7 +266,6 @@
 
     const/4 v5, 0x0
 
-    .line 286
     iget-object v0, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mEntry:Lcom/android/settings/applications/ProcStatsEntry;
 
     iget-object v0, v0, Lcom/android/settings/applications/ProcStatsEntry;->mUiPackage:Ljava/lang/String;
@@ -306,17 +280,14 @@
 
     if-ge v0, v3, :cond_1
 
-    .line 287
     :cond_0
     iget-object v0, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mForceStopButton:Landroid/widget/Button;
 
     invoke-virtual {v0, v5}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 308
     :goto_0
     return-void
 
-    .line 290
     :cond_1
     iget-object v0, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mDpm:Landroid/app/admin/DevicePolicyManager;
 
@@ -330,14 +301,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 291
     iget-object v0, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mForceStopButton:Landroid/widget/Button;
 
     invoke-virtual {v0, v5}, Landroid/widget/Button;->setEnabled(Z)V
 
     goto :goto_0
 
-    .line 295
     :cond_2
     :try_start_0
     iget-object v0, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mPm:Landroid/content/pm/PackageManager;
@@ -352,7 +321,6 @@
 
     move-result-object v8
 
-    .line 296
     .local v8, "info":Landroid/content/pm/ApplicationInfo;
     iget v0, v8, Landroid/content/pm/ApplicationInfo;->flags:I
 
@@ -362,7 +330,6 @@
 
     if-nez v0, :cond_3
 
-    .line 297
     iget-object v0, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mForceStopButton:Landroid/widget/Button;
 
     const/4 v3, 0x1
@@ -371,7 +338,6 @@
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 301
     .end local v8    # "info":Landroid/content/pm/ApplicationInfo;
     :cond_3
     :goto_1
@@ -391,7 +357,6 @@
 
     invoke-direct {v1, v0, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 303
     .local v1, "intent":Landroid/content/Intent;
     const-string v0, "android.intent.extra.PACKAGES"
 
@@ -405,7 +370,6 @@
 
     invoke-virtual {v1, v0, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 304
     const-string v0, "android.intent.extra.UID"
 
     iget-object v3, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mEntry:Lcom/android/settings/applications/ProcStatsEntry;
@@ -414,7 +378,6 @@
 
     invoke-virtual {v1, v0, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 305
     const-string v0, "android.intent.extra.user_handle"
 
     iget-object v3, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mEntry:Lcom/android/settings/applications/ProcStatsEntry;
@@ -427,7 +390,6 @@
 
     invoke-virtual {v1, v0, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 306
     invoke-virtual {p0}, Lcom/android/settings/applications/ProcessStatsDetail;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -444,7 +406,6 @@
 
     goto :goto_0
 
-    .line 299
     .end local v1    # "intent":Landroid/content/Intent;
     :catch_0
     move-exception v0
@@ -458,7 +419,6 @@
     .prologue
     const/4 v12, 0x0
 
-    .line 112
     iget-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mEntry:Lcom/android/settings/applications/ProcStatsEntry;
 
     iget-wide v8, v8, Lcom/android/settings/applications/ProcStatsEntry;->mWeight:J
@@ -475,7 +435,6 @@
 
     mul-double v4, v8, v10
 
-    .line 114
     .local v4, "percentOfWeight":D
     invoke-static {v4, v5}, Ljava/lang/Math;->ceil(D)D
 
@@ -483,7 +442,6 @@
 
     double-to-int v0, v8
 
-    .line 115
     .local v0, "appLevel":I
     iget-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mEntry:Lcom/android/settings/applications/ProcStatsEntry;
 
@@ -495,7 +453,6 @@
 
     move-result-object v1
 
-    .line 118
     .local v1, "appLevelText":Ljava/lang/String;
     iget-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mRootView:Landroid/view/View;
 
@@ -507,7 +464,6 @@
 
     check-cast v6, Landroid/widget/TextView;
 
-    .line 119
     .local v6, "summary":Landroid/widget/TextView;
     iget-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mEntry:Lcom/android/settings/applications/ProcStatsEntry;
 
@@ -515,10 +471,8 @@
 
     invoke-virtual {v6, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 120
     invoke-virtual {v6, v12}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 121
     iget-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mRootView:Landroid/view/View;
 
     const v9, 0x1020016
@@ -531,7 +485,6 @@
 
     iput-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mTitleView:Landroid/widget/TextView;
 
-    .line 122
     iget-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mTitleView:Landroid/widget/TextView;
 
     iget-object v9, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mEntry:Lcom/android/settings/applications/ProcStatsEntry;
@@ -540,7 +493,6 @@
 
     invoke-virtual {v8, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 123
     iget-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mRootView:Landroid/view/View;
 
     const v9, 0x1020014
@@ -551,11 +503,9 @@
 
     check-cast v7, Landroid/widget/TextView;
 
-    .line 124
     .local v7, "text1":Landroid/widget/TextView;
     invoke-virtual {v7, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 125
     iget-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mRootView:Landroid/view/View;
 
     const v9, 0x102000d
@@ -566,11 +516,9 @@
 
     check-cast v3, Landroid/widget/ProgressBar;
 
-    .line 126
     .local v3, "progress":Landroid/widget/ProgressBar;
     invoke-virtual {v3, v0}, Landroid/widget/ProgressBar;->setProgress(I)V
 
-    .line 127
     iget-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mRootView:Landroid/view/View;
 
     const v9, 0x1020006
@@ -581,7 +529,6 @@
 
     check-cast v2, Landroid/widget/ImageView;
 
-    .line 128
     .local v2, "icon":Landroid/widget/ImageView;
     iget-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mEntry:Lcom/android/settings/applications/ProcStatsEntry;
 
@@ -589,7 +536,6 @@
 
     if-eqz v8, :cond_0
 
-    .line 129
     iget-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mEntry:Lcom/android/settings/applications/ProcStatsEntry;
 
     iget-object v8, v8, Lcom/android/settings/applications/ProcStatsEntry;->mUiTargetApp:Landroid/content/pm/ApplicationInfo;
@@ -602,7 +548,6 @@
 
     invoke-virtual {v2, v8}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 132
     :cond_0
     iget-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mRootView:Landroid/view/View;
 
@@ -616,7 +561,6 @@
 
     iput-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mTwoButtonsPanel:Landroid/view/ViewGroup;
 
-    .line 133
     iget-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mRootView:Landroid/view/View;
 
     const v9, 0x7f0f01d4
@@ -629,7 +573,6 @@
 
     iput-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mForceStopButton:Landroid/widget/Button;
 
-    .line 134
     iget-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mRootView:Landroid/view/View;
 
     const v9, 0x7f0f01d3
@@ -642,19 +585,16 @@
 
     iput-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mReportButton:Landroid/widget/Button;
 
-    .line 135
     iget-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mForceStopButton:Landroid/widget/Button;
 
     invoke-virtual {v8, v12}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 136
     iget-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mReportButton:Landroid/widget/Button;
 
     const/4 v9, 0x4
 
     invoke-virtual {v8, v9}, Landroid/widget/Button;->setVisibility(I)V
 
-    .line 138
     iget-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mRootView:Landroid/view/View;
 
     const v9, 0x7f0f0102
@@ -667,7 +607,6 @@
 
     iput-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mDetailsParent:Landroid/view/ViewGroup;
 
-    .line 139
     iget-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mRootView:Landroid/view/View;
 
     const v9, 0x7f0f0148
@@ -680,13 +619,10 @@
 
     iput-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mServicesParent:Landroid/view/ViewGroup;
 
-    .line 141
     invoke-direct {p0}, Lcom/android/settings/applications/ProcessStatsDetail;->fillDetailsSection()V
 
-    .line 142
     invoke-direct {p0}, Lcom/android/settings/applications/ProcessStatsDetail;->fillServicesSection()V
 
-    .line 144
     iget-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mEntry:Lcom/android/settings/applications/ProcStatsEntry;
 
     iget v8, v8, Lcom/android/settings/applications/ProcStatsEntry;->mUid:I
@@ -695,14 +631,12 @@
 
     if-lt v8, v9, :cond_1
 
-    .line 145
     iget-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mForceStopButton:Landroid/widget/Button;
 
     const v9, 0x7f090531
 
     invoke-virtual {v8, v9}, Landroid/widget/Button;->setText(I)V
 
-    .line 146
     iget-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mForceStopButton:Landroid/widget/Button;
 
     const/4 v9, 0x1
@@ -713,21 +647,17 @@
 
     invoke-virtual {v8, v9}, Landroid/widget/Button;->setTag(Ljava/lang/Object;)V
 
-    .line 147
     iget-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mForceStopButton:Landroid/widget/Button;
 
     invoke-virtual {v8, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 148
     iget-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mTwoButtonsPanel:Landroid/view/ViewGroup;
 
     invoke-virtual {v8, v12}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 152
     :goto_0
     return-void
 
-    .line 150
     :cond_1
     iget-object v8, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mTwoButtonsPanel:Landroid/view/ViewGroup;
 
@@ -743,20 +673,16 @@
     .param p1, "action"    # I
 
     .prologue
-    .line 159
     packed-switch p1, :pswitch_data_0
 
-    .line 164
     :goto_0
     return-void
 
-    .line 161
     :pswitch_0
     invoke-direct {p0}, Lcom/android/settings/applications/ProcessStatsDetail;->killProcesses()V
 
     goto :goto_0
 
-    .line 159
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -769,7 +695,6 @@
     .prologue
     const-wide/16 v6, 0x400
 
-    .line 195
     iget-object v2, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mDetailsParent:Landroid/view/ViewGroup;
 
     invoke-virtual {p0}, Lcom/android/settings/applications/ProcessStatsDetail;->getResources()Landroid/content/res/Resources;
@@ -803,7 +728,6 @@
 
     invoke-direct {p0, v2, v3, v0}, Lcom/android/settings/applications/ProcessStatsDetail;->addDetailsItem(Landroid/view/ViewGroup;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
 
-    .line 198
     iget-object v2, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mDetailsParent:Landroid/view/ViewGroup;
 
     invoke-virtual {p0}, Lcom/android/settings/applications/ProcessStatsDetail;->getResources()Landroid/content/res/Resources;
@@ -837,7 +761,6 @@
 
     invoke-direct {p0, v2, v3, v0}, Lcom/android/settings/applications/ProcessStatsDetail;->addDetailsItem(Landroid/view/ViewGroup;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
 
-    .line 201
     iget-object v0, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mDetailsParent:Landroid/view/ViewGroup;
 
     invoke-virtual {p0}, Lcom/android/settings/applications/ProcessStatsDetail;->getResources()Landroid/content/res/Resources;
@@ -862,10 +785,8 @@
 
     invoke-direct {p0, v0, v1, v2}, Lcom/android/settings/applications/ProcessStatsDetail;->addDetailsItem(Landroid/view/ViewGroup;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
 
-    .line 203
     return-void
 
-    .line 195
     :cond_0
     iget-object v0, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mEntry:Lcom/android/settings/applications/ProcStatsEntry;
 
@@ -873,7 +794,6 @@
 
     goto :goto_0
 
-    .line 198
     :cond_1
     iget-object v0, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mEntry:Lcom/android/settings/applications/ProcStatsEntry;
 
@@ -888,7 +808,6 @@
     .prologue
     const/4 v14, 0x0
 
-    .line 235
     iget-object v9, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mEntry:Lcom/android/settings/applications/ProcStatsEntry;
 
     iget-object v9, v9, Lcom/android/settings/applications/ProcStatsEntry;->mServices:Landroid/util/ArrayMap;
@@ -899,16 +818,13 @@
 
     if-lez v9, :cond_6
 
-    .line 236
     const/4 v0, 0x0
 
-    .line 238
     .local v0, "addPackageSections":Z
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
-    .line 240
     .local v6, "servicePkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/util/ArrayList<Lcom/android/settings/applications/ProcStatsEntry$Service;>;>;"
     const/4 v1, 0x0
 
@@ -924,7 +840,6 @@
 
     if-ge v1, v9, :cond_0
 
-    .line 241
     iget-object v9, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mEntry:Lcom/android/settings/applications/ProcStatsEntry;
 
     iget-object v9, v9, Lcom/android/settings/applications/ProcStatsEntry;->mServices:Landroid/util/ArrayMap;
@@ -941,21 +856,17 @@
 
     check-cast v7, Ljava/util/ArrayList;
 
-    .line 243
     .local v7, "services":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/settings/applications/ProcStatsEntry$Service;>;"
     sget-object v9, Lcom/android/settings/applications/ProcessStatsDetail;->sServiceCompare:Ljava/util/Comparator;
 
     invoke-static {v7, v9}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 244
     invoke-virtual {v6, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 240
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 246
     .end local v7    # "services":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/settings/applications/ProcStatsEntry$Service;>;"
     :cond_0
     iget-object v9, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mEntry:Lcom/android/settings/applications/ProcStatsEntry;
@@ -998,16 +909,13 @@
 
     if-nez v9, :cond_2
 
-    .line 248
     :cond_1
     const/4 v0, 0x1
 
-    .line 250
     sget-object v9, Lcom/android/settings/applications/ProcessStatsDetail;->sServicePkgCompare:Ljava/util/Comparator;
 
     invoke-static {v6, v9}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 252
     :cond_2
     const/4 v1, 0x0
 
@@ -1018,18 +926,15 @@
 
     if-ge v1, v9, :cond_6
 
-    .line 253
     invoke-virtual {v6, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
     check-cast v7, Ljava/util/ArrayList;
 
-    .line 254
     .restart local v7    # "services":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/settings/applications/ProcStatsEntry$Service;>;"
     if-eqz v0, :cond_3
 
-    .line 255
     iget-object v10, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mServicesParent:Landroid/view/ViewGroup;
 
     invoke-virtual {v7, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1042,7 +947,6 @@
 
     invoke-direct {p0, v10, v9}, Lcom/android/settings/applications/ProcessStatsDetail;->addPackageHeaderItem(Landroid/view/ViewGroup;Ljava/lang/String;)V
 
-    .line 257
     :cond_3
     const/4 v2, 0x0
 
@@ -1054,18 +958,15 @@
 
     if-ge v2, v9, :cond_5
 
-    .line 258
     invoke-virtual {v7, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Lcom/android/settings/applications/ProcStatsEntry$Service;
 
-    .line 259
     .local v5, "service":Lcom/android/settings/applications/ProcStatsEntry$Service;
     iget-object v3, v5, Lcom/android/settings/applications/ProcStatsEntry$Service;->mName:Ljava/lang/String;
 
-    .line 260
     .local v3, "label":Ljava/lang/String;
     const/16 v9, 0x2e
 
@@ -1073,7 +974,6 @@
 
     move-result v8
 
-    .line 261
     .local v8, "tail":I
     if-ltz v8, :cond_4
 
@@ -1085,14 +985,12 @@
 
     if-ge v8, v9, :cond_4
 
-    .line 262
     add-int/lit8 v9, v8, 0x1
 
     invoke-virtual {v3, v9}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 264
     :cond_4
     iget-wide v10, v5, Lcom/android/settings/applications/ProcStatsEntry$Service;->mDuration:J
 
@@ -1102,18 +1000,15 @@
 
     move-result-object v4
 
-    .line 265
     .local v4, "percentage":Ljava/lang/String;
     iget-object v9, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mServicesParent:Landroid/view/ViewGroup;
 
     invoke-direct {p0, v9, v3, v4}, Lcom/android/settings/applications/ProcessStatsDetail;->addDetailsItem(Landroid/view/ViewGroup;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
 
-    .line 257
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_2
 
-    .line 252
     .end local v3    # "label":Ljava/lang/String;
     .end local v4    # "percentage":Ljava/lang/String;
     .end local v5    # "service":Lcom/android/settings/applications/ProcStatsEntry$Service;
@@ -1123,7 +1018,6 @@
 
     goto :goto_1
 
-    .line 269
     .end local v0    # "addPackageSections":Z
     .end local v1    # "ip":I
     .end local v2    # "is":I
@@ -1137,7 +1031,6 @@
     .locals 3
 
     .prologue
-    .line 272
     invoke-virtual {p0}, Lcom/android/settings/applications/ProcessStatsDetail;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -1150,7 +1043,6 @@
 
     check-cast v0, Landroid/app/ActivityManager;
 
-    .line 274
     .local v0, "am":Landroid/app/ActivityManager;
     iget-object v1, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mEntry:Lcom/android/settings/applications/ProcStatsEntry;
 
@@ -1158,10 +1050,8 @@
 
     invoke-virtual {v0, v1}, Landroid/app/ActivityManager;->forceStopPackage(Ljava/lang/String;)V
 
-    .line 275
     invoke-direct {p0}, Lcom/android/settings/applications/ProcessStatsDetail;->checkForceStop()V
 
-    .line 276
     return-void
 .end method
 
@@ -1172,7 +1062,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 155
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v0
@@ -1185,7 +1074,6 @@
 
     invoke-direct {p0, v0}, Lcom/android/settings/applications/ProcessStatsDetail;->doAction(I)V
 
-    .line 156
     return-void
 .end method
 
@@ -1194,10 +1082,8 @@
     .param p1, "icicle"    # Landroid/os/Bundle;
 
     .prologue
-    .line 78
     invoke-super {p0, p1}, Landroid/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 79
     invoke-virtual {p0}, Lcom/android/settings/applications/ProcessStatsDetail;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -1208,7 +1094,6 @@
 
     iput-object v1, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mPm:Landroid/content/pm/PackageManager;
 
-    .line 80
     invoke-virtual {p0}, Lcom/android/settings/applications/ProcessStatsDetail;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -1223,12 +1108,10 @@
 
     iput-object v1, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mDpm:Landroid/app/admin/DevicePolicyManager;
 
-    .line 81
     invoke-virtual {p0}, Lcom/android/settings/applications/ProcessStatsDetail;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 82
     .local v0, "args":Landroid/os/Bundle;
     const-string v1, "entry"
 
@@ -1240,14 +1123,12 @@
 
     iput-object v1, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mEntry:Lcom/android/settings/applications/ProcStatsEntry;
 
-    .line 83
     iget-object v1, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mEntry:Lcom/android/settings/applications/ProcStatsEntry;
 
     iget-object v2, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v1, v2}, Lcom/android/settings/applications/ProcStatsEntry;->retrieveUiData(Landroid/content/pm/PackageManager;)V
 
-    .line 84
     const-string v1, "use_uss"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -1256,7 +1137,6 @@
 
     iput-boolean v1, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mUseUss:Z
 
-    .line 85
     const-string v1, "max_weight"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
@@ -1265,7 +1145,6 @@
 
     iput-wide v2, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mMaxWeight:J
 
-    .line 86
     const-string v1, "total_time"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
@@ -1274,7 +1153,6 @@
 
     iput-wide v2, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mTotalTime:J
 
-    .line 87
     return-void
 .end method
 
@@ -1287,24 +1165,19 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 92
     const v1, 0x7f04009a
 
     invoke-virtual {p1, v1, p2, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
-    .line 93
     .local v0, "view":Landroid/view/View;
     invoke-static {p2, v0, v0, v2}, Lcom/android/settings/Utils;->prepareCustomPreferencesList(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/View;Z)V
 
-    .line 95
     iput-object v0, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mRootView:Landroid/view/View;
 
-    .line 96
     invoke-direct {p0}, Lcom/android/settings/applications/ProcessStatsDetail;->createDetails()V
 
-    .line 97
     return-object v0
 .end method
 
@@ -1312,10 +1185,8 @@
     .locals 0
 
     .prologue
-    .line 108
     invoke-super {p0}, Landroid/app/Fragment;->onPause()V
 
-    .line 109
     return-void
 .end method
 
@@ -1323,12 +1194,9 @@
     .locals 0
 
     .prologue
-    .line 102
     invoke-super {p0}, Landroid/app/Fragment;->onResume()V
 
-    .line 103
     invoke-direct {p0}, Lcom/android/settings/applications/ProcessStatsDetail;->checkForceStop()V
 
-    .line 104
     return-void
 .end method

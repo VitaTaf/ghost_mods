@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 574
     iput-object p1, p0, Lcom/android/settings/bluetooth/DockService$3;->this$0:Lcom/android/settings/bluetooth/DockService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .param p2, "isChecked"    # Z
 
     .prologue
-    .line 579
     iget-object v0, p0, Lcom/android/settings/bluetooth/DockService$3;->this$0:Lcom/android/settings/bluetooth/DockService;
 
     # getter for: Lcom/android/settings/bluetooth/DockService;->mDevice:Landroid/bluetooth/BluetoothDevice;
@@ -52,7 +50,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 580
     iget-object v0, p0, Lcom/android/settings/bluetooth/DockService$3;->this$0:Lcom/android/settings/bluetooth/DockService;
 
     iget-object v1, p0, Lcom/android/settings/bluetooth/DockService$3;->this$0:Lcom/android/settings/bluetooth/DockService;
@@ -68,11 +65,9 @@
 
     invoke-static {v0, v1, p2}, Lcom/android/settings/bluetooth/LocalBluetoothPreferences;->saveDockAutoConnectSetting(Landroid/content/Context;Ljava/lang/String;Z)V
 
-    .line 586
     :goto_0
     return-void
 
-    .line 583
     :cond_0
     iget-object v0, p0, Lcom/android/settings/bluetooth/DockService$3;->this$0:Lcom/android/settings/bluetooth/DockService;
 

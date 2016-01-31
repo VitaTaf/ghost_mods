@@ -8,10 +8,8 @@
     .locals 0
 
     .prologue
-    .line 21
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
-    .line 22
     return-void
 .end method
 
@@ -19,7 +17,6 @@
     .locals 2
 
     .prologue
-    .line 46
     const-string v0, "persist.tcmd.hm.info"
 
     const/4 v1, 0x0
@@ -39,7 +36,6 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 28
     sget-boolean v1, Landroid/os/Build;->IS_DEBUGGABLE:Z
 
     if-nez v1, :cond_0
@@ -75,28 +71,23 @@
 
     if-eqz v1, :cond_1
 
-    .line 32
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.MAIN"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 33
     .local v0, "i":Landroid/content/Intent;
     const-class v1, Lcom/android/settings/TestingSettings;
 
     invoke-virtual {v0, p1, v1}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
 
-    .line 34
     const/high16 v1, 0x10000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 35
     invoke-virtual {p1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 37
     .end local v0    # "i":Landroid/content/Intent;
     :cond_1
     return-void

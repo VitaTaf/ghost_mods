@@ -36,7 +36,6 @@
     .locals 0
 
     .prologue
-    .line 1507
     iput-object p1, p0, Lcom/android/settings/DataUsageSummary$13;->this$0:Lcom/android/settings/DataUsageSummary;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +51,6 @@
 
     const/4 v1, 0x0
 
-    .line 1528
     iget-object v2, p0, Lcom/android/settings/DataUsageSummary$13;->this$0:Lcom/android/settings/DataUsageSummary;
 
     # getter for: Lcom/android/settings/DataUsageSummary;->mAdapter:Lcom/android/settings/DataUsageSummary$DataUsageAdapter;
@@ -77,7 +75,6 @@
 
     const/4 v0, 0x1
 
-    .line 1529
     .local v0, "isEmpty":Z
     :goto_0
     iget-object v2, p0, Lcom/android/settings/DataUsageSummary$13;->this$0:Lcom/android/settings/DataUsageSummary;
@@ -94,7 +91,6 @@
     :goto_1
     invoke-virtual {v4, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1530
     iget-object v2, p0, Lcom/android/settings/DataUsageSummary$13;->this$0:Lcom/android/settings/DataUsageSummary;
 
     # getter for: Lcom/android/settings/DataUsageSummary;->mStupidPadding:Landroid/view/View;
@@ -107,27 +103,23 @@
     :goto_2
     invoke-virtual {v2, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1531
     return-void
 
     .end local v0    # "isEmpty":Z
     :cond_0
     move v0, v1
 
-    .line 1528
     goto :goto_0
 
     .restart local v0    # "isEmpty":Z
     :cond_1
     move v2, v3
 
-    .line 1529
     goto :goto_1
 
     :cond_2
     move v1, v3
 
-    .line 1530
     goto :goto_2
 .end method
 
@@ -150,7 +142,6 @@
     .end annotation
 
     .prologue
-    .line 1510
     new-instance v0, Lcom/android/settings/net/SummaryForAllUidLoader;
 
     iget-object v1, p0, Lcom/android/settings/DataUsageSummary$13;->this$0:Lcom/android/settings/DataUsageSummary;
@@ -187,7 +178,6 @@
     .end annotation
 
     .prologue
-    .line 1515
     .local p1, "loader":Landroid/content/Loader;, "Landroid/content/Loader<Landroid/net/NetworkStats;>;"
     iget-object v1, p0, Lcom/android/settings/DataUsageSummary$13;->this$0:Lcom/android/settings/DataUsageSummary;
 
@@ -202,7 +192,6 @@
 
     move-result-object v0
 
-    .line 1517
     .local v0, "restrictedUids":[I
     iget-object v1, p0, Lcom/android/settings/DataUsageSummary$13;->this$0:Lcom/android/settings/DataUsageSummary;
 
@@ -213,10 +202,8 @@
 
     invoke-virtual {v1, p2, v0}, Lcom/android/settings/DataUsageSummary$DataUsageAdapter;->bindStats(Landroid/net/NetworkStats;[I)V
 
-    .line 1518
     invoke-direct {p0}, Lcom/android/settings/DataUsageSummary$13;->updateEmptyVisible()V
 
-    .line 1519
     return-void
 .end method
 
@@ -226,7 +213,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 1507
     check-cast p2, Landroid/net/NetworkStats;
 
     .end local p2    # "x1":Ljava/lang/Object;
@@ -248,7 +234,6 @@
     .end annotation
 
     .prologue
-    .line 1523
     .local p1, "loader":Landroid/content/Loader;, "Landroid/content/Loader<Landroid/net/NetworkStats;>;"
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$13;->this$0:Lcom/android/settings/DataUsageSummary;
 
@@ -265,9 +250,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/settings/DataUsageSummary$DataUsageAdapter;->bindStats(Landroid/net/NetworkStats;[I)V
 
-    .line 1524
     invoke-direct {p0}, Lcom/android/settings/DataUsageSummary$13;->updateEmptyVisible()V
 
-    .line 1525
     return-void
 .end method

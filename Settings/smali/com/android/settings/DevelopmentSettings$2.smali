@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 1658
     invoke-direct {p0}, Lcom/android/settings/search/BaseSearchIndexProvider;-><init>()V
 
     return-void
@@ -30,7 +29,6 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 1661
     const-string v0, "development"
 
     const/4 v1, 0x0
@@ -74,28 +72,23 @@
     .end annotation
 
     .prologue
-    .line 1682
     invoke-direct {p0, p1}, Lcom/android/settings/DevelopmentSettings$2;->isShowingDeveloperOptions(Landroid/content/Context;)Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 1683
     const/4 v0, 0x0
 
-    .line 1691
     :cond_0
     :goto_0
     return-object v0
 
-    .line 1686
     :cond_1
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1688
     .local v0, "keys":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     # invokes: Lcom/android/settings/DevelopmentSettings;->showEnableOemUnlockPreference(Landroid/content/Context;)Z
     invoke-static {p1}, Lcom/android/settings/DevelopmentSettings;->access$100(Landroid/content/Context;)Z
@@ -104,7 +97,6 @@
 
     if-nez v1, :cond_0
 
-    .line 1689
     const-string v1, "oem_unlock_enable"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -129,33 +121,27 @@
     .end annotation
 
     .prologue
-    .line 1671
     invoke-direct {p0, p1}, Lcom/android/settings/DevelopmentSettings$2;->isShowingDeveloperOptions(Landroid/content/Context;)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 1672
     const/4 v1, 0x0
 
-    .line 1677
     :goto_0
     return-object v1
 
-    .line 1675
     :cond_0
     new-instance v0, Landroid/provider/SearchIndexableResource;
 
     invoke-direct {v0, p1}, Landroid/provider/SearchIndexableResource;-><init>(Landroid/content/Context;)V
 
-    .line 1676
     .local v0, "sir":Landroid/provider/SearchIndexableResource;
     const v1, 0x7f060015
 
     iput v1, v0, Landroid/provider/SearchIndexableResource;->xmlResId:I
 
-    .line 1677
     const/4 v1, 0x1
 
     new-array v1, v1, [Landroid/provider/SearchIndexableResource;

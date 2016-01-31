@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 142
     iput-object p1, p0, Lcom/android/settings/DreamSettings$1;->this$0:Lcom/android/settings/DreamSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 1
 
     .prologue
-    .line 145
     iget-object v0, p0, Lcom/android/settings/DreamSettings$1;->this$0:Lcom/android/settings/DreamSettings;
 
     # getter for: Lcom/android/settings/DreamSettings;->mBackend:Lcom/android/settings/DreamBackend;
@@ -50,6 +48,5 @@
 
     invoke-virtual {v0}, Lcom/android/settings/DreamBackend;->startDreaming()V
 
-    .line 146
     return-void
 .end method

@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 1335
     iput-object p1, p0, Lcom/android/settings/DataUsageSummary$10;->this$0:Lcom/android/settings/DataUsageSummary;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,13 +51,11 @@
     .end annotation
 
     .prologue
-    .line 1338
     .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     invoke-virtual {p2}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    .line 1339
     .local v1, "context":Landroid/content/Context;
     invoke-virtual {p1, p3}, Landroid/widget/AdapterView;->getItemAtPosition(I)Ljava/lang/Object;
 
@@ -66,7 +63,6 @@
 
     check-cast v0, Lcom/android/settings/DataUsageSummary$AppItem;
 
-    .line 1342
     .local v0, "app":Lcom/android/settings/DataUsageSummary$AppItem;
     iget-object v3, p0, Lcom/android/settings/DataUsageSummary$10;->this$0:Lcom/android/settings/DataUsageSummary;
 
@@ -79,12 +75,10 @@
 
     if-nez v0, :cond_1
 
-    .line 1346
     :cond_0
     :goto_0
     return-void
 
-    .line 1344
     :cond_1
     iget-object v3, p0, Lcom/android/settings/DataUsageSummary$10;->this$0:Lcom/android/settings/DataUsageSummary;
 
@@ -101,7 +95,6 @@
 
     move-result-object v2
 
-    .line 1345
     .local v2, "detail":Lcom/android/settings/net/UidDetail;
     iget-object v3, p0, Lcom/android/settings/DataUsageSummary$10;->this$0:Lcom/android/settings/DataUsageSummary;
 

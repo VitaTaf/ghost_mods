@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 982
     iput-object p1, p0, Lcom/android/settings/DataUsageSummary$5;->this$0:Lcom/android/settings/DataUsageSummary;
 
     iput p2, p0, Lcom/android/settings/DataUsageSummary$5;->val$uid:I
@@ -45,7 +44,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 985
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$5;->this$0:Lcom/android/settings/DataUsageSummary;
 
     invoke-virtual {v0}, Lcom/android/settings/DataUsageSummary;->isAdded()Z
@@ -54,11 +52,9 @@
 
     if-nez v0, :cond_0
 
-    .line 992
     :goto_0
     return-void
 
-    .line 990
     :cond_0
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$5;->this$0:Lcom/android/settings/DataUsageSummary;
 

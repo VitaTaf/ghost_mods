@@ -30,15 +30,12 @@
     .locals 1
 
     .prologue
-    .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 55
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/settings/users/EditUserInfoController;->mWaitingForActivityResult:Z
 
-    .line 57
     return-void
 .end method
 
@@ -47,7 +44,6 @@
     .param p0, "x0"    # Lcom/android/settings/users/EditUserInfoController;
 
     .prologue
-    .line 45
     iget-object v0, p0, Lcom/android/settings/users/EditUserInfoController;->mUser:Landroid/os/UserHandle;
 
     return-object v0
@@ -58,7 +54,6 @@
     .param p0, "x0"    # Lcom/android/settings/users/EditUserInfoController;
 
     .prologue
-    .line 45
     iget-object v0, p0, Lcom/android/settings/users/EditUserInfoController;->mUserManager:Landroid/os/UserManager;
 
     return-object v0
@@ -69,7 +64,6 @@
     .param p0, "x0"    # Lcom/android/settings/users/EditUserInfoController;
 
     .prologue
-    .line 45
     iget-object v0, p0, Lcom/android/settings/users/EditUserInfoController;->mEditUserPhotoController:Lcom/android/settings/users/EditUserPhotoController;
 
     return-object v0
@@ -83,13 +77,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 63
     iput-object v0, p0, Lcom/android/settings/users/EditUserInfoController;->mEditUserInfoDialog:Landroid/app/Dialog;
 
-    .line 64
     iput-object v0, p0, Lcom/android/settings/users/EditUserInfoController;->mSavedPhoto:Landroid/graphics/Bitmap;
 
-    .line 65
     return-void
 .end method
 
@@ -103,12 +94,10 @@
     .param p6, "user"    # Landroid/os/UserHandle;
 
     .prologue
-    .line 114
     invoke-virtual/range {p1 .. p1}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v14
 
-    .line 115
     .local v14, "activity":Landroid/app/Activity;
     move-object/from16 v0, p6
 
@@ -116,14 +105,12 @@
 
     iput-object v0, v1, Lcom/android/settings/users/EditUserInfoController;->mUser:Landroid/os/UserHandle;
 
-    .line 116
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/settings/users/EditUserInfoController;->mUserManager:Landroid/os/UserManager;
 
     if-nez v2, :cond_0
 
-    .line 117
     invoke-static {v14}, Landroid/os/UserManager;->get(Landroid/content/Context;)Landroid/os/UserManager;
 
     move-result-object v2
@@ -132,13 +119,11 @@
 
     iput-object v2, v0, Lcom/android/settings/users/EditUserInfoController;->mUserManager:Landroid/os/UserManager;
 
-    .line 119
     :cond_0
     invoke-virtual {v14}, Landroid/app/Activity;->getLayoutInflater()Landroid/view/LayoutInflater;
 
     move-result-object v16
 
-    .line 120
     .local v16, "inflater":Landroid/view/LayoutInflater;
     const v2, 0x7f040049
 
@@ -150,7 +135,6 @@
 
     move-result-object v15
 
-    .line 122
     .local v15, "content":Landroid/view/View;
     move-object/from16 v0, p0
 
@@ -168,7 +152,6 @@
 
     move-result-object v17
 
-    .line 124
     .local v17, "info":Landroid/content/pm/UserInfo;
     const v2, 0x7f0f00a0
 
@@ -178,7 +161,6 @@
 
     check-cast v9, Landroid/widget/EditText;
 
-    .line 125
     .local v9, "userNameView":Landroid/widget/EditText;
     move-object/from16 v0, v17
 
@@ -186,7 +168,6 @@
 
     invoke-virtual {v9, v2}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 127
     const v2, 0x7f0f009f
 
     invoke-virtual {v15, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -195,11 +176,9 @@
 
     check-cast v4, Landroid/widget/ImageView;
 
-    .line 128
     .local v4, "userPhotoView":Landroid/widget/ImageView;
     const/4 v6, 0x0
 
-    .line 129
     .local v6, "drawable":Landroid/graphics/drawable/Drawable;
     move-object/from16 v0, p0
 
@@ -207,7 +186,6 @@
 
     if-eqz v2, :cond_2
 
-    .line 130
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/settings/users/EditUserInfoController;->mSavedPhoto:Landroid/graphics/Bitmap;
@@ -216,12 +194,10 @@
 
     move-result-object v6
 
-    .line 137
     :cond_1
     :goto_0
     invoke-virtual {v4, v6}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 138
     new-instance v2, Lcom/android/settings/users/EditUserPhotoController;
 
     move-object/from16 v0, p0
@@ -240,7 +216,6 @@
 
     iput-object v2, v0, Lcom/android/settings/users/EditUserInfoController;->mEditUserPhotoController:Lcom/android/settings/users/EditUserPhotoController;
 
-    .line 140
     new-instance v2, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v2, v14}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -301,7 +276,6 @@
 
     iput-object v2, v0, Lcom/android/settings/users/EditUserInfoController;->mEditUserInfoDialog:Landroid/app/Dialog;
 
-    .line 192
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/settings/users/EditUserInfoController;->mEditUserInfoDialog:Landroid/app/Dialog;
@@ -314,21 +288,17 @@
 
     invoke-virtual {v2, v3}, Landroid/view/Window;->setSoftInputMode(I)V
 
-    .line 195
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/settings/users/EditUserInfoController;->mEditUserInfoDialog:Landroid/app/Dialog;
 
     return-object v2
 
-    .line 132
     :cond_2
     move-object/from16 v6, p2
 
-    .line 133
     if-nez v6, :cond_1
 
-    .line 134
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v14}, Lcom/android/settings/users/EditUserInfoController;->getCircularUserIcon(Landroid/app/Activity;)Landroid/graphics/drawable/Drawable;
@@ -343,7 +313,6 @@
     .param p1, "activity"    # Landroid/app/Activity;
 
     .prologue
-    .line 102
     iget-object v2, p0, Lcom/android/settings/users/EditUserInfoController;->mUserManager:Landroid/os/UserManager;
 
     iget-object v3, p0, Lcom/android/settings/users/EditUserInfoController;->mUser:Landroid/os/UserHandle;
@@ -356,24 +325,19 @@
 
     move-result-object v1
 
-    .line 103
     .local v1, "userIcon":Landroid/graphics/Bitmap;
     if-nez v1, :cond_0
 
-    .line 104
     const/4 v0, 0x0
 
-    .line 108
     :goto_0
     return-object v0
 
-    .line 106
     :cond_0
     invoke-static {p1, v1}, Lcom/android/settings/drawable/CircleFramedDrawable;->getInstance(Landroid/content/Context;Landroid/graphics/Bitmap;)Lcom/android/settings/drawable/CircleFramedDrawable;
 
     move-result-object v0
 
-    .line 108
     .local v0, "circularIcon":Lcom/android/settings/drawable/CircleFramedDrawable;
     goto :goto_0
 .end method
@@ -385,12 +349,10 @@
     .param p3, "data"    # Landroid/content/Intent;
 
     .prologue
-    .line 93
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/settings/users/EditUserInfoController;->mWaitingForActivityResult:Z
 
-    .line 95
     iget-object v0, p0, Lcom/android/settings/users/EditUserInfoController;->mEditUserInfoDialog:Landroid/app/Dialog;
 
     if-eqz v0, :cond_0
@@ -411,7 +373,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 99
     :cond_0
     return-void
 .end method
@@ -421,7 +382,6 @@
     .param p1, "icicle"    # Landroid/os/Bundle;
 
     .prologue
-    .line 72
     const-string v0, "pending_photo"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -432,7 +392,6 @@
 
     iput-object v0, p0, Lcom/android/settings/users/EditUserInfoController;->mSavedPhoto:Landroid/graphics/Bitmap;
 
-    .line 73
     const-string v0, "awaiting_result"
 
     const/4 v1, 0x0
@@ -443,7 +402,6 @@
 
     iput-boolean v0, p0, Lcom/android/settings/users/EditUserInfoController;->mWaitingForActivityResult:Z
 
-    .line 74
     return-void
 .end method
 
@@ -452,7 +410,6 @@
     .param p1, "outState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 77
     iget-object v0, p0, Lcom/android/settings/users/EditUserInfoController;->mEditUserInfoDialog:Landroid/app/Dialog;
 
     if-eqz v0, :cond_0
@@ -469,7 +426,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 79
     const-string v0, "pending_photo"
 
     iget-object v1, p0, Lcom/android/settings/users/EditUserInfoController;->mEditUserPhotoController:Lcom/android/settings/users/EditUserPhotoController;
@@ -480,20 +436,17 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 82
     :cond_0
     iget-boolean v0, p0, Lcom/android/settings/users/EditUserInfoController;->mWaitingForActivityResult:Z
 
     if-eqz v0, :cond_1
 
-    .line 83
     const-string v0, "awaiting_result"
 
     iget-boolean v1, p0, Lcom/android/settings/users/EditUserInfoController;->mWaitingForActivityResult:Z
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 86
     :cond_1
     return-void
 .end method
@@ -502,11 +455,9 @@
     .locals 1
 
     .prologue
-    .line 89
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/settings/users/EditUserInfoController;->mWaitingForActivityResult:Z
 
-    .line 90
     return-void
 .end method

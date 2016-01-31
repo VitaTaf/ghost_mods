@@ -27,16 +27,12 @@
     .param p2, "height"    # I
 
     .prologue
-    .line 437
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 438
     iput p1, p0, Lcom/android/settings/ActivityPicker$EmptyDrawable;->mWidth:I
 
-    .line 439
     iput p2, p0, Lcom/android/settings/ActivityPicker$EmptyDrawable;->mHeight:I
 
-    .line 440
     return-void
 .end method
 
@@ -47,7 +43,6 @@
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 464
     return-void
 .end method
 
@@ -55,7 +50,6 @@
     .locals 1
 
     .prologue
-    .line 449
     iget v0, p0, Lcom/android/settings/ActivityPicker$EmptyDrawable;->mHeight:I
 
     return v0
@@ -65,7 +59,6 @@
     .locals 1
 
     .prologue
-    .line 444
     iget v0, p0, Lcom/android/settings/ActivityPicker$EmptyDrawable;->mWidth:I
 
     return v0
@@ -75,7 +68,6 @@
     .locals 1
 
     .prologue
-    .line 459
     iget v0, p0, Lcom/android/settings/ActivityPicker$EmptyDrawable;->mHeight:I
 
     return v0
@@ -85,7 +77,6 @@
     .locals 1
 
     .prologue
-    .line 454
     iget v0, p0, Lcom/android/settings/ActivityPicker$EmptyDrawable;->mWidth:I
 
     return v0
@@ -95,7 +86,6 @@
     .locals 1
 
     .prologue
-    .line 476
     const/4 v0, -0x3
 
     return v0
@@ -106,7 +96,6 @@
     .param p1, "alpha"    # I
 
     .prologue
-    .line 468
     return-void
 .end method
 
@@ -115,6 +104,5 @@
     .param p1, "cf"    # Landroid/graphics/ColorFilter;
 
     .prologue
-    .line 472
     return-void
 .end method

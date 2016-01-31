@@ -76,29 +76,24 @@
     .locals 1
 
     .prologue
-    .line 57
     invoke-direct {p0}, Landroid/preference/PreferenceActivity;-><init>()V
 
-    .line 62
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/settings/accounts/ChooseAccountActivity;->mProviderList:Ljava/util/ArrayList;
 
-    .line 65
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/settings/accounts/ChooseAccountActivity;->mAccountTypeToAuthorities:Ljava/util/HashMap;
 
-    .line 66
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/settings/accounts/ChooseAccountActivity;->mTypeToAuthDescription:Ljava/util/Map;
 
-    .line 72
     return-void
 .end method
 
@@ -107,33 +102,27 @@
     .param p1, "accountType"    # Ljava/lang/String;
 
     .prologue
-    .line 272
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 273
     .local v0, "intent":Landroid/content/Intent;
     const-string v1, "selected_account"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 274
     const-string v1, "android.intent.extra.USER"
 
     iget-object v2, p0, Lcom/android/settings/accounts/ChooseAccountActivity;->mUserHandle:Landroid/os/UserHandle;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 275
     const/4 v1, -0x1
 
     invoke-virtual {p0, v1, v0}, Lcom/android/settings/accounts/ChooseAccountActivity;->setResult(ILandroid/content/Intent;)V
 
-    .line 276
     invoke-virtual {p0}, Lcom/android/settings/accounts/ChooseAccountActivity;->finish()V
 
-    .line 277
     return-void
 .end method
 
@@ -141,7 +130,6 @@
     .locals 20
 
     .prologue
-    .line 136
     const/4 v10, 0x0
 
     .local v10, "i":I
@@ -162,7 +150,6 @@
 
     if-ge v10, v0, :cond_5
 
-    .line 137
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/accounts/ChooseAccountActivity;->mAuthDescs:[Landroid/accounts/AuthenticatorDescription;
@@ -175,7 +162,6 @@
 
     iget-object v5, v0, Landroid/accounts/AuthenticatorDescription;->type:Ljava/lang/String;
 
-    .line 138
     .local v5, "accountType":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -183,7 +169,6 @@
 
     move-result-object v16
 
-    .line 142
     .local v16, "providerName":Ljava/lang/CharSequence;
     move-object/from16 v0, p0
 
@@ -191,11 +176,9 @@
 
     move-result-object v4
 
-    .line 143
     .local v4, "accountAuths":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     const/4 v6, 0x1
 
-    .line 144
     .local v6, "addAccountPref":Z
     move-object/from16 v0, p0
 
@@ -221,10 +204,8 @@
 
     if-eqz v4, :cond_0
 
-    .line 145
     const/4 v6, 0x0
 
-    .line 146
     const/4 v12, 0x0
 
     .local v12, "k":I
@@ -245,7 +226,6 @@
 
     if-ge v12, v0, :cond_0
 
-    .line 147
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/accounts/ChooseAccountActivity;->mAuthorities:[Ljava/lang/String;
@@ -262,10 +242,8 @@
 
     if-eqz v17, :cond_3
 
-    .line 148
     const/4 v6, 0x1
 
-    .line 153
     .end local v12    # "k":I
     :cond_0
     if-eqz v6, :cond_1
@@ -292,14 +270,11 @@
 
     if-nez v17, :cond_1
 
-    .line 155
     const/4 v6, 0x0
 
-    .line 157
     :cond_1
     if-eqz v6, :cond_4
 
-    .line 158
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/accounts/ChooseAccountActivity;->mProviderList:Ljava/util/ArrayList;
@@ -316,21 +291,18 @@
 
     invoke-virtual/range {v17 .. v18}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 136
     :cond_2
     :goto_2
     add-int/lit8 v10, v10, 0x1
 
     goto/16 :goto_0
 
-    .line 146
     .restart local v12    # "k":I
     :cond_3
     add-int/lit8 v12, v12, 0x1
 
     goto :goto_1
 
-    .line 160
     .end local v12    # "k":I
     :cond_4
     const-string v17, "ChooseAccountActivity"
@@ -343,7 +315,6 @@
 
     if-eqz v17, :cond_2
 
-    .line 161
     const-string v17, "ChooseAccountActivity"
 
     new-instance v18, Ljava/lang/StringBuilder;
@@ -378,7 +349,6 @@
 
     goto :goto_2
 
-    .line 166
     .end local v4    # "accountAuths":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     .end local v5    # "accountType":Ljava/lang/String;
     .end local v6    # "addAccountPref":Z
@@ -402,7 +372,6 @@
 
     if-ne v0, v1, :cond_7
 
-    .line 168
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/accounts/ChooseAccountActivity;->mProviderList:Ljava/util/ArrayList;
@@ -428,12 +397,10 @@
 
     invoke-direct {v0, v1}, Lcom/android/settings/accounts/ChooseAccountActivity;->finishWithAccountType(Ljava/lang/String;)V
 
-    .line 190
     :cond_6
     :goto_3
     return-void
 
-    .line 169
     :cond_7
     move-object/from16 v0, p0
 
@@ -447,7 +414,6 @@
 
     if-lez v17, :cond_8
 
-    .line 170
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/accounts/ChooseAccountActivity;->mProviderList:Ljava/util/ArrayList;
@@ -456,7 +422,6 @@
 
     invoke-static/range {v17 .. v17}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
-    .line 171
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/accounts/ChooseAccountActivity;->mAddAccountGroup:Landroid/preference/PreferenceGroup;
@@ -465,7 +430,6 @@
 
     invoke-virtual/range {v17 .. v17}, Landroid/preference/PreferenceGroup;->removeAll()V
 
-    .line 172
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/accounts/ChooseAccountActivity;->mProviderList:Ljava/util/ArrayList;
@@ -490,7 +454,6 @@
 
     check-cast v15, Lcom/android/settings/accounts/ChooseAccountActivity$ProviderEntry;
 
-    .line 173
     .local v15, "pref":Lcom/android/settings/accounts/ChooseAccountActivity$ProviderEntry;
     # getter for: Lcom/android/settings/accounts/ChooseAccountActivity$ProviderEntry;->type:Ljava/lang/String;
     invoke-static {v15}, Lcom/android/settings/accounts/ChooseAccountActivity$ProviderEntry;->access$000(Lcom/android/settings/accounts/ChooseAccountActivity$ProviderEntry;)Ljava/lang/String;
@@ -505,7 +468,6 @@
 
     move-result-object v9
 
-    .line 174
     .local v9, "drawable":Landroid/graphics/drawable/Drawable;
     new-instance v14, Lcom/android/settings/accounts/ProviderPreference;
 
@@ -527,7 +489,6 @@
 
     invoke-direct {v14, v0, v1, v9, v2}, Lcom/android/settings/accounts/ProviderPreference;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;)V
 
-    .line 176
     .local v14, "p":Lcom/android/settings/accounts/ProviderPreference;
     move-object/from16 v0, p0
 
@@ -541,7 +502,6 @@
 
     goto :goto_4
 
-    .line 179
     .end local v9    # "drawable":Landroid/graphics/drawable/Drawable;
     .end local v11    # "i$":Ljava/util/Iterator;
     .end local v14    # "p":Lcom/android/settings/accounts/ProviderPreference;
@@ -557,12 +517,10 @@
 
     if-eqz v17, :cond_a
 
-    .line 180
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 181
     .local v8, "auths":Ljava/lang/StringBuilder;
     move-object/from16 v0, p0
 
@@ -580,23 +538,19 @@
 
     aget-object v3, v7, v11
 
-    .line 182
     .local v3, "a":Ljava/lang/String;
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 183
     const/16 v17, 0x20
 
     move/from16 v0, v17
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 181
     add-int/lit8 v11, v11, 0x1
 
     goto :goto_5
 
-    .line 185
     .end local v3    # "a":Ljava/lang/String;
     :cond_9
     const-string v17, "ChooseAccountActivity"
@@ -623,7 +577,6 @@
 
     invoke-static/range {v17 .. v18}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 187
     .end local v7    # "arr$":[Ljava/lang/String;
     .end local v8    # "auths":Ljava/lang/StringBuilder;
     .end local v11    # "i$":I
@@ -637,7 +590,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/accounts/ChooseAccountActivity;->setResult(I)V
 
-    .line 188
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/accounts/ChooseAccountActivity;->finish()V
 
     goto/16 :goto_3
@@ -647,7 +599,6 @@
     .locals 4
 
     .prologue
-    .line 119
     invoke-static {p0}, Landroid/accounts/AccountManager;->get(Landroid/content/Context;)Landroid/accounts/AccountManager;
 
     move-result-object v1
@@ -664,7 +615,6 @@
 
     iput-object v1, p0, Lcom/android/settings/accounts/ChooseAccountActivity;->mAuthDescs:[Landroid/accounts/AuthenticatorDescription;
 
-    .line 124
     iget-object v1, p0, Lcom/android/settings/accounts/ChooseAccountActivity;->mAuthDescs:[Landroid/accounts/AuthenticatorDescription;
 
     invoke-static {p0, v1}, Lcom/motorola/settings/accounts/MotoAccountsHelper;->removeUnneededAuthDescs(Landroid/content/Context;[Landroid/accounts/AuthenticatorDescription;)[Landroid/accounts/AuthenticatorDescription;
@@ -673,7 +623,6 @@
 
     iput-object v1, p0, Lcom/android/settings/accounts/ChooseAccountActivity;->mAuthDescs:[Landroid/accounts/AuthenticatorDescription;
 
-    .line 128
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -684,7 +633,6 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 129
     iget-object v1, p0, Lcom/android/settings/accounts/ChooseAccountActivity;->mTypeToAuthDescription:Ljava/util/Map;
 
     iget-object v2, p0, Lcom/android/settings/accounts/ChooseAccountActivity;->mAuthDescs:[Landroid/accounts/AuthenticatorDescription;
@@ -699,16 +647,13 @@
 
     invoke-interface {v1, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 128
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 131
     :cond_0
     invoke-direct {p0}, Lcom/android/settings/accounts/ChooseAccountActivity;->onAuthDescriptionsUpdated()V
 
-    .line 132
     return-void
 .end method
 
@@ -730,19 +675,16 @@
     .end annotation
 
     .prologue
-    .line 193
     iget-object v5, p0, Lcom/android/settings/accounts/ChooseAccountActivity;->mAccountTypeToAuthorities:Ljava/util/HashMap;
 
     if-nez v5, :cond_2
 
-    .line 194
     invoke-static {}, Lcom/google/android/collect/Maps;->newHashMap()Ljava/util/HashMap;
 
     move-result-object v5
 
     iput-object v5, p0, Lcom/android/settings/accounts/ChooseAccountActivity;->mAccountTypeToAuthorities:Ljava/util/HashMap;
 
-    .line 195
     iget-object v5, p0, Lcom/android/settings/accounts/ChooseAccountActivity;->mUserHandle:Landroid/os/UserHandle;
 
     invoke-virtual {v5}, Landroid/os/UserHandle;->getIdentifier()I
@@ -753,7 +695,6 @@
 
     move-result-object v4
 
-    .line 197
     .local v4, "syncAdapters":[Landroid/content/SyncAdapterType;
     const/4 v1, 0x0
 
@@ -764,10 +705,8 @@
     :goto_0
     if-ge v1, v2, :cond_2
 
-    .line 198
     aget-object v3, v4, v1
 
-    .line 199
     .local v3, "sa":Landroid/content/SyncAdapterType;
     iget-object v5, p0, Lcom/android/settings/accounts/ChooseAccountActivity;->mAccountTypeToAuthorities:Ljava/util/HashMap;
 
@@ -779,17 +718,14 @@
 
     check-cast v0, Ljava/util/ArrayList;
 
-    .line 200
     .local v0, "authorities":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     if-nez v0, :cond_0
 
-    .line 201
     new-instance v0, Ljava/util/ArrayList;
 
     .end local v0    # "authorities":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 202
     .restart local v0    # "authorities":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     iget-object v5, p0, Lcom/android/settings/accounts/ChooseAccountActivity;->mAccountTypeToAuthorities:Ljava/util/HashMap;
 
@@ -797,7 +733,6 @@
 
     invoke-virtual {v5, v6, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 204
     :cond_0
     const-string v5, "ChooseAccountActivity"
 
@@ -809,7 +744,6 @@
 
     if-eqz v5, :cond_1
 
-    .line 205
     const-string v5, "ChooseAccountActivity"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -846,18 +780,15 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 208
     :cond_1
     iget-object v5, v3, Landroid/content/SyncAdapterType;->authority:Ljava/lang/String;
 
     invoke-virtual {v0, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 197
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 211
     .end local v0    # "authorities":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     .end local v1    # "i":I
     .end local v2    # "n":I
@@ -880,10 +811,8 @@
     .param p1, "accountType"    # Ljava/lang/String;
 
     .prologue
-    .line 220
     const/4 v3, 0x0
 
-    .line 221
     .local v3, "icon":Landroid/graphics/drawable/Drawable;
     iget-object v4, p0, Lcom/android/settings/accounts/ChooseAccountActivity;->mTypeToAuthDescription:Ljava/util/Map;
 
@@ -893,7 +822,6 @@
 
     if-eqz v4, :cond_0
 
-    .line 223
     :try_start_0
     iget-object v4, p0, Lcom/android/settings/accounts/ChooseAccountActivity;->mTypeToAuthDescription:Ljava/util/Map;
 
@@ -903,7 +831,6 @@
 
     check-cast v1, Landroid/accounts/AuthenticatorDescription;
 
-    .line 224
     .local v1, "desc":Landroid/accounts/AuthenticatorDescription;
     iget-object v4, v1, Landroid/accounts/AuthenticatorDescription;->packageName:Ljava/lang/String;
 
@@ -915,7 +842,6 @@
 
     move-result-object v0
 
-    .line 225
     .local v0, "authContext":Landroid/content/Context;
     invoke-virtual {p0}, Lcom/android/settings/accounts/ChooseAccountActivity;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -936,18 +862,15 @@
 
     move-result-object v3
 
-    .line 235
     .end local v0    # "authContext":Landroid/content/Context;
     .end local v1    # "desc":Landroid/accounts/AuthenticatorDescription;
     :cond_0
     :goto_0
     return-object v3
 
-    .line 227
     :catch_0
     move-exception v2
 
-    .line 229
     .local v2, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string v4, "ChooseAccountActivity"
 
@@ -973,12 +896,10 @@
 
     goto :goto_0
 
-    .line 230
     .end local v2    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :catch_1
     move-exception v2
 
-    .line 232
     .local v2, "e":Landroid/content/res/Resources$NotFoundException;
     const-string v4, "ChooseAccountActivity"
 
@@ -1010,10 +931,8 @@
     .param p1, "accountType"    # Ljava/lang/String;
 
     .prologue
-    .line 244
     const/4 v3, 0x0
 
-    .line 245
     .local v3, "label":Ljava/lang/CharSequence;
     iget-object v4, p0, Lcom/android/settings/accounts/ChooseAccountActivity;->mTypeToAuthDescription:Ljava/util/Map;
 
@@ -1023,7 +942,6 @@
 
     if-eqz v4, :cond_0
 
-    .line 247
     :try_start_0
     iget-object v4, p0, Lcom/android/settings/accounts/ChooseAccountActivity;->mTypeToAuthDescription:Ljava/util/Map;
 
@@ -1033,7 +951,6 @@
 
     check-cast v1, Landroid/accounts/AuthenticatorDescription;
 
-    .line 248
     .local v1, "desc":Landroid/accounts/AuthenticatorDescription;
     iget-object v4, v1, Landroid/accounts/AuthenticatorDescription;->packageName:Ljava/lang/String;
 
@@ -1045,7 +962,6 @@
 
     move-result-object v0
 
-    .line 249
     .local v0, "authContext":Landroid/content/Context;
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -1060,18 +976,15 @@
 
     move-result-object v3
 
-    .line 256
     .end local v0    # "authContext":Landroid/content/Context;
     .end local v1    # "desc":Landroid/accounts/AuthenticatorDescription;
     :cond_0
     :goto_0
     return-object v3
 
-    .line 250
     :catch_0
     move-exception v2
 
-    .line 251
     .local v2, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string v4, "ChooseAccountActivity"
 
@@ -1097,12 +1010,10 @@
 
     goto :goto_0
 
-    .line 252
     .end local v2    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :catch_1
     move-exception v2
 
-    .line 253
     .local v2, "e":Landroid/content/res/Resources$NotFoundException;
     const-string v4, "ChooseAccountActivity"
 
@@ -1134,20 +1045,16 @@
     .param p1, "icicle"    # Landroid/os/Bundle;
 
     .prologue
-    .line 93
     invoke-super {p0, p1}, Landroid/preference/PreferenceActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 95
     const v5, 0x7f040003
 
     invoke-virtual {p0, v5}, Lcom/android/settings/accounts/ChooseAccountActivity;->setContentView(I)V
 
-    .line 96
     const v5, 0x7f060004
 
     invoke-virtual {p0, v5}, Lcom/android/settings/accounts/ChooseAccountActivity;->addPreferencesFromResource(I)V
 
-    .line 97
     invoke-virtual {p0}, Lcom/android/settings/accounts/ChooseAccountActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v5
@@ -1160,7 +1067,6 @@
 
     iput-object v5, p0, Lcom/android/settings/accounts/ChooseAccountActivity;->mAuthorities:[Ljava/lang/String;
 
-    .line 99
     invoke-virtual {p0}, Lcom/android/settings/accounts/ChooseAccountActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v5
@@ -1171,18 +1077,15 @@
 
     move-result-object v1
 
-    .line 101
     .local v1, "accountTypesFilter":[Ljava/lang/String;
     if-eqz v1, :cond_0
 
-    .line 102
     new-instance v5, Ljava/util/HashSet;
 
     invoke-direct {v5}, Ljava/util/HashSet;-><init>()V
 
     iput-object v5, p0, Lcom/android/settings/accounts/ChooseAccountActivity;->mAccountTypesFilter:Ljava/util/HashSet;
 
-    .line 103
     move-object v2, v1
 
     .local v2, "arr$":[Ljava/lang/String;
@@ -1197,18 +1100,15 @@
 
     aget-object v0, v2, v3
 
-    .line 104
     .local v0, "accountType":Ljava/lang/String;
     iget-object v5, p0, Lcom/android/settings/accounts/ChooseAccountActivity;->mAccountTypesFilter:Ljava/util/HashSet;
 
     invoke-virtual {v5, v0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 103
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 107
     .end local v0    # "accountType":Ljava/lang/String;
     .end local v2    # "arr$":[Ljava/lang/String;
     .end local v3    # "i$":I
@@ -1220,14 +1120,12 @@
 
     iput-object v5, p0, Lcom/android/settings/accounts/ChooseAccountActivity;->mAddAccountGroup:Landroid/preference/PreferenceGroup;
 
-    .line 108
     invoke-static {p0}, Landroid/os/UserManager;->get(Landroid/content/Context;)Landroid/os/UserManager;
 
     move-result-object v5
 
     iput-object v5, p0, Lcom/android/settings/accounts/ChooseAccountActivity;->mUm:Landroid/os/UserManager;
 
-    .line 109
     invoke-virtual {p0}, Lcom/android/settings/accounts/ChooseAccountActivity;->getActivityToken()Landroid/os/IBinder;
 
     move-result-object v5
@@ -1250,10 +1148,8 @@
 
     iput-object v5, p0, Lcom/android/settings/accounts/ChooseAccountActivity;->mUserHandle:Landroid/os/UserHandle;
 
-    .line 111
     invoke-direct {p0}, Lcom/android/settings/accounts/ChooseAccountActivity;->updateAuthDescriptions()V
 
-    .line 112
     return-void
 .end method
 
@@ -1263,17 +1159,14 @@
     .param p2, "preference"    # Landroid/preference/Preference;
 
     .prologue
-    .line 261
     instance-of v1, p2, Lcom/android/settings/accounts/ProviderPreference;
 
     if-eqz v1, :cond_1
 
     move-object v0, p2
 
-    .line 262
     check-cast v0, Lcom/android/settings/accounts/ProviderPreference;
 
-    .line 263
     .local v0, "pref":Lcom/android/settings/accounts/ProviderPreference;
     const-string v1, "ChooseAccountActivity"
 
@@ -1285,7 +1178,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 264
     const-string v1, "ChooseAccountActivity"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1312,7 +1204,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 266
     :cond_0
     invoke-virtual {v0}, Lcom/android/settings/accounts/ProviderPreference;->getAccountType()Ljava/lang/String;
 
@@ -1320,7 +1211,6 @@
 
     invoke-direct {p0, v1}, Lcom/android/settings/accounts/ChooseAccountActivity;->finishWithAccountType(Ljava/lang/String;)V
 
-    .line 268
     .end local v0    # "pref":Lcom/android/settings/accounts/ProviderPreference;
     :cond_1
     const/4 v1, 0x1

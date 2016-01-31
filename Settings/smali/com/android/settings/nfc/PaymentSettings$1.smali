@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 119
     iput-object p1, p0, Lcom/android/settings/nfc/PaymentSettings$1;->this$0:Lcom/android/settings/nfc/PaymentSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 123
     iget-object v3, p0, Lcom/android/settings/nfc/PaymentSettings$1;->this$0:Lcom/android/settings/nfc/PaymentSettings;
 
     invoke-virtual {v3}, Lcom/android/settings/nfc/PaymentSettings;->getResources()Landroid/content/res/Resources;
@@ -61,7 +59,6 @@
 
     if-nez v3, :cond_0
 
-    .line 126
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -80,7 +77,6 @@
 
     move-result-object v1
 
-    .line 128
     iget-object v3, p0, Lcom/android/settings/nfc/PaymentSettings$1;->this$0:Lcom/android/settings/nfc/PaymentSettings;
 
     invoke-virtual {v3}, Lcom/android/settings/nfc/PaymentSettings;->getActivity()Landroid/app/Activity;
@@ -95,7 +91,6 @@
 
     move-result-object v0
 
-    .line 130
     .local v0, "fullUri":Landroid/net/Uri;
     new-instance v2, Landroid/content/Intent;
 
@@ -103,24 +98,20 @@
 
     invoke-direct {v2, v3, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 131
     .local v2, "intent":Landroid/content/Intent;
     const/high16 v3, 0x10800000
 
     invoke-virtual {v2, v3}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 133
     iget-object v3, p0, Lcom/android/settings/nfc/PaymentSettings$1;->this$0:Lcom/android/settings/nfc/PaymentSettings;
 
     invoke-virtual {v3, v2}, Lcom/android/settings/nfc/PaymentSettings;->startActivity(Landroid/content/Intent;)V
 
-    .line 137
     .end local v0    # "fullUri":Landroid/net/Uri;
     .end local v2    # "intent":Landroid/content/Intent;
     :goto_0
     return-void
 
-    .line 135
     :cond_0
     const-string v3, "PaymentSettings"
 

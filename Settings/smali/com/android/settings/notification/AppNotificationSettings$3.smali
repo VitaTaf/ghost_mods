@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 173
     iput-object p1, p0, Lcom/android/settings/notification/AppNotificationSettings$3;->this$0:Lcom/android/settings/notification/AppNotificationSettings;
 
     iput-object p2, p0, Lcom/android/settings/notification/AppNotificationSettings$3;->val$pkg:Ljava/lang/String;
@@ -50,7 +49,6 @@
     .param p2, "newValue"    # Ljava/lang/Object;
 
     .prologue
-    .line 176
     check-cast p2, Ljava/lang/Boolean;
 
     .end local p2    # "newValue":Ljava/lang/Object;
@@ -58,7 +56,6 @@
 
     move-result v0
 
-    .line 177
     .local v0, "priority":Z
     iget-object v1, p0, Lcom/android/settings/notification/AppNotificationSettings$3;->this$0:Lcom/android/settings/notification/AppNotificationSettings;
 

@@ -39,7 +39,6 @@
     .locals 1
 
     .prologue
-    .line 355
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/settings/notification/NotificationAppList$Row;-><init>(Lcom/android/settings/notification/NotificationAppList$1;)V

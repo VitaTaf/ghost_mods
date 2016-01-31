@@ -22,7 +22,6 @@
     .locals 0
 
     .prologue
-    .line 78
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,7 +32,6 @@
     .param p1, "x0"    # Lcom/android/settings/bluetooth/BluetoothDeviceFilter$1;
 
     .prologue
-    .line 78
     invoke-direct {p0}, Lcom/android/settings/bluetooth/BluetoothDeviceFilter$AllFilter;-><init>()V
 
     return-void
@@ -46,7 +44,6 @@
     .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
     .prologue
-    .line 80
     const/4 v0, 0x1
 
     return v0

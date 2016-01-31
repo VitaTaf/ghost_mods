@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 92
     iput-object p1, p0, Lcom/android/settings/users/EditUserPhotoController$1;->this$0:Lcom/android/settings/users/EditUserPhotoController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +40,10 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 95
     iget-object v0, p0, Lcom/android/settings/users/EditUserPhotoController$1;->this$0:Lcom/android/settings/users/EditUserPhotoController;
 
     # invokes: Lcom/android/settings/users/EditUserPhotoController;->showUpdatePhotoPopup()V
     invoke-static {v0}, Lcom/android/settings/users/EditUserPhotoController;->access$000(Lcom/android/settings/users/EditUserPhotoController;)V
 
-    .line 96
     return-void
 .end method

@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 214
     iput-object p1, p0, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings$1;->this$0:Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;
 
     iput-object p2, p0, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings$1;->val$localeSet:Ljava/util/TreeSet;
@@ -49,12 +48,10 @@
 
     const/4 v3, -0x1
 
-    .line 219
     new-instance v5, Landroid/os/Bundle;
 
     invoke-direct {v5}, Landroid/os/Bundle;-><init>()V
 
-    .line 221
     .local v5, "extras":Landroid/os/Bundle;
     iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings$1;->val$localeSet:Ljava/util/TreeSet;
 
@@ -64,7 +61,6 @@
 
     if-gt v0, v7, :cond_1
 
-    .line 222
     iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings$1;->val$localeSet:Ljava/util/TreeSet;
 
     invoke-virtual {v0}, Ljava/util/TreeSet;->isEmpty()Z
@@ -73,7 +69,6 @@
 
     if-nez v0, :cond_0
 
-    .line 231
     const-string v1, "locale"
 
     iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings$1;->val$localeSet:Ljava/util/TreeSet;
@@ -86,11 +81,9 @@
 
     invoke-virtual {v5, v1, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 233
     :cond_0
     const-class v6, Lcom/android/settings/UserDictionarySettings;
 
-    .line 237
     .local v6, "targetFragment":Ljava/lang/Class;, "Ljava/lang/Class<+Landroid/app/Fragment;>;"
     :goto_0
     iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings$1;->this$0:Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;
@@ -105,10 +98,8 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;->startFragment(Landroid/app/Fragment;Ljava/lang/String;IILandroid/os/Bundle;)Z
 
-    .line 239
     return v7
 
-    .line 235
     .end local v6    # "targetFragment":Ljava/lang/Class;, "Ljava/lang/Class<+Landroid/app/Fragment;>;"
     :cond_1
     const-class v6, Lcom/android/settings/inputmethod/UserDictionaryList;

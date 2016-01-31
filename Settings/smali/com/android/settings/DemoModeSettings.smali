@@ -8,7 +8,6 @@
     .locals 0
 
     .prologue
-    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -20,7 +19,6 @@
     .param p1, "x1"    # Ljava/lang/String;
 
     .prologue
-    .line 24
     invoke-static {p0, p1}, Lcom/android/settings/DemoModeSettings;->isDemoPasswordCorrect(Landroid/content/Context;Ljava/lang/String;)Z
 
     move-result v0
@@ -34,7 +32,6 @@
     .param p1, "x1"    # Ljava/lang/String;
 
     .prologue
-    .line 24
     invoke-static {p0, p1}, Lcom/android/settings/DemoModeSettings;->isVzwDemoPasswordCorrect(Landroid/content/Context;Ljava/lang/String;)Z
 
     move-result v0
@@ -47,7 +44,6 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 30
     invoke-static {p0}, Lcom/android/settings/DemoModeSettings;->isDemoModeEnabled(Landroid/content/Context;)Z
 
     move-result v0
@@ -60,15 +56,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 33
     :cond_0
     invoke-static {p0}, Lcom/android/settings/DemoModeSettings;->showMasterClearPasswordDialog(Landroid/content/Context;)V
 
-    .line 37
     :goto_0
     return-void
 
-    .line 35
     :cond_1
     invoke-static {p0}, Lcom/android/settings/DemoModeSettings;->launchMasterClear(Landroid/content/Context;)V
 
@@ -80,14 +73,11 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 86
     const/4 v2, 0x0
 
-    .line 87
     .local v2, "mDemoModeContext":Landroid/content/Context;
     const/4 v0, 0x0
 
-    .line 89
     .local v0, "demoModeEnabled":Z
     :try_start_0
     const-string v4, "com.motorola.demomode"
@@ -98,10 +88,8 @@
 
     move-result-object v2
 
-    .line 90
     if-eqz v2, :cond_0
 
-    .line 91
     const-string v4, "DemoModeSharedPrefEnabled"
 
     const/4 v5, 0x4
@@ -110,7 +98,6 @@
 
     move-result-object v3
 
-    .line 92
     .local v3, "pref":Landroid/content/SharedPreferences;
     const-string v4, "DemoMode_enabled"
 
@@ -122,17 +109,14 @@
 
     move-result v0
 
-    .line 97
     .end local v3    # "pref":Landroid/content/SharedPreferences;
     :cond_0
     :goto_0
     return v0
 
-    .line 94
     :catch_0
     move-exception v1
 
-    .line 95
     .local v1, "e":Ljava/lang/Exception;
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
@@ -145,14 +129,12 @@
     .param p1, "password"    # Ljava/lang/String;
 
     .prologue
-    .line 111
     sget-object v1, Lcom/android/settings/PrivacySettings;->mMasterClearPassword:Ljava/lang/String;
 
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    .line 112
     .local v0, "isPwdCorrect":Z
     if-eqz v0, :cond_0
 
@@ -180,7 +162,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 122
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
@@ -191,7 +172,6 @@
 
     move-result v0
 
-    .line 124
     .local v0, "demo_mode":I
     if-nez v0, :cond_0
 
@@ -210,14 +190,12 @@
     .param p1, "password"    # Ljava/lang/String;
 
     .prologue
-    .line 136
     sget-object v1, Lcom/android/settings/PrivacySettings;->mVzwDemoMasterClearPassword:Ljava/lang/String;
 
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    .line 137
     .local v0, "isPwdCorrect":Z
     if-eqz v0, :cond_0
 
@@ -243,12 +221,10 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 43
     new-instance v0, Landroid/preference/Preference;
 
     invoke-direct {v0, p0}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
 
-    .line 44
     .local v0, "preference":Landroid/preference/Preference;
     const-class v1, Lcom/android/settings/MasterClear;
 
@@ -258,12 +234,10 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/Preference;->setFragment(Ljava/lang/String;)V
 
-    .line 45
     const v1, 0x7f090480
 
     invoke-virtual {v0, v1}, Landroid/preference/Preference;->setTitle(I)V
 
-    .line 46
     check-cast p0, Lcom/android/settings/SettingsActivity;
 
     .end local p0    # "context":Landroid/content/Context;
@@ -271,7 +245,6 @@
 
     invoke-virtual {p0, v1, v0}, Lcom/android/settings/SettingsActivity;->onPreferenceStartFragment(Landroid/preference/PreferenceFragment;Landroid/preference/Preference;)Z
 
-    .line 47
     return-void
 .end method
 
@@ -282,12 +255,10 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 54
     invoke-static {p0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v1
 
-    .line 55
     .local v1, "factory":Landroid/view/LayoutInflater;
     const v3, 0x7f040067
 
@@ -295,7 +266,6 @@
 
     move-result-object v0
 
-    .line 57
     .local v0, "entryView":Landroid/view/View;
     const v3, 0x7f0f00e9
 
@@ -305,7 +275,6 @@
 
     check-cast v2, Landroid/widget/EditText;
 
-    .line 58
     .local v2, "passwordEditor":Landroid/widget/EditText;
     new-instance v3, Landroid/app/AlertDialog$Builder;
 
@@ -355,6 +324,5 @@
 
     sput-object v3, Lcom/android/settings/PrivacySettings;->mPasswordDialog:Landroid/app/Dialog;
 
-    .line 78
     return-void
 .end method

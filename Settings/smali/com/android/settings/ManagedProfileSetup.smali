@@ -8,7 +8,6 @@
     .locals 0
 
     .prologue
-    .line 40
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -24,7 +23,6 @@
     .prologue
     const/4 v12, 0x2
 
-    .line 47
     const-string v9, "user"
 
     invoke-virtual {p1, v9}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -33,7 +31,6 @@
 
     check-cast v8, Landroid/os/UserManager;
 
-    .line 48
     .local v8, "um":Landroid/os/UserManager;
     invoke-static {v8}, Lcom/android/settings/Utils;->isManagedProfile(Landroid/os/UserManager;)Z
 
@@ -41,11 +38,9 @@
 
     if-nez v9, :cond_0
 
-    .line 85
     :goto_0
     return-void
 
-    .line 51
     :cond_0
     const-string v9, "Settings"
 
@@ -79,12 +74,10 @@
 
     invoke-static {v9, v10}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 53
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v4
 
-    .line 55
     .local v4, "pm":Landroid/content/pm/PackageManager;
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
@@ -92,38 +85,32 @@
 
     invoke-virtual {v4, v9}, Landroid/content/pm/PackageManager;->clearCrossProfileIntentFilters(I)V
 
-    .line 58
     new-instance v3, Landroid/content/Intent;
 
     invoke-direct {v3}, Landroid/content/Intent;-><init>()V
 
-    .line 59
     .local v3, "intent":Landroid/content/Intent;
     const-string v9, "android.intent.category.DEFAULT"
 
     invoke-virtual {v3, v9}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 60
     invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v9
 
     invoke-virtual {v3, v9}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 63
     const/16 v9, 0xc1
 
     invoke-virtual {v4, v3, v9}, Landroid/content/pm/PackageManager;->queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
 
     move-result-object v5
 
-    .line 65
     .local v5, "resolvedIntents":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     invoke-interface {v5}, Ljava/util/List;->size()I
 
     move-result v0
 
-    .line 66
     .local v0, "count":I
     const/4 v1, 0x0
 
@@ -131,14 +118,12 @@
     :goto_1
     if-ge v1, v0, :cond_2
 
-    .line 67
     invoke-interface {v5, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/content/pm/ResolveInfo;
 
-    .line 68
     .local v2, "info":Landroid/content/pm/ResolveInfo;
     iget-object v9, v2, Landroid/content/pm/ResolveInfo;->filter:Landroid/content/IntentFilter;
 
@@ -154,7 +139,6 @@
 
     if-eqz v9, :cond_1
 
-    .line 70
     iget-object v9, v2, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v9, v9, Landroid/content/pm/ActivityInfo;->metaData:Landroid/os/Bundle;
@@ -165,11 +149,9 @@
 
     move-result v7
 
-    .line 72
     .local v7, "shouldForward":Z
     if-eqz v7, :cond_1
 
-    .line 73
     iget-object v9, v2, Landroid/content/pm/ResolveInfo;->filter:Landroid/content/IntentFilter;
 
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
@@ -180,14 +162,12 @@
 
     invoke-virtual {v4, v9, v10, v11, v12}, Landroid/content/pm/PackageManager;->addCrossProfileIntentFilter(Landroid/content/IntentFilter;III)V
 
-    .line 66
     .end local v7    # "shouldForward":Z
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 82
     .end local v2    # "info":Landroid/content/pm/ResolveInfo;
     :cond_2
     new-instance v6, Landroid/content/ComponentName;
@@ -196,7 +176,6 @@
 
     invoke-direct {v6, p1, v9}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 83
     .local v6, "settingsComponentName":Landroid/content/ComponentName;
     const/4 v9, 0x1
 

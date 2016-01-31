@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 73
     iput-object p1, p0, Lcom/motorola/settings/extensions/InternetPrefSetting$2;->this$0:Lcom/motorola/settings/extensions/InternetPrefSetting;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,12 +41,10 @@
     .param p2, "id"    # I
 
     .prologue
-    .line 75
     iget-object v0, p0, Lcom/motorola/settings/extensions/InternetPrefSetting$2;->this$0:Lcom/motorola/settings/extensions/InternetPrefSetting;
 
     # invokes: Lcom/motorola/settings/extensions/InternetPrefSetting;->exit()V
     invoke-static {v0}, Lcom/motorola/settings/extensions/InternetPrefSetting;->access$000(Lcom/motorola/settings/extensions/InternetPrefSetting;)V
 
-    .line 76
     return-void
 .end method

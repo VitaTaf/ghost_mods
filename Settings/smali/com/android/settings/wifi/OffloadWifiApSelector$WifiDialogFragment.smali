@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 319
     invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
 
     return-void
@@ -37,19 +36,15 @@
     .param p1, "edit"    # Z
 
     .prologue
-    .line 326
     new-instance v0, Lcom/android/settings/wifi/OffloadWifiApSelector$WifiDialogFragment;
 
     invoke-direct {v0}, Lcom/android/settings/wifi/OffloadWifiApSelector$WifiDialogFragment;-><init>()V
 
-    .line 327
     .local v0, "frag":Lcom/android/settings/wifi/OffloadWifiApSelector$WifiDialogFragment;
     invoke-direct {v0, p0}, Lcom/android/settings/wifi/OffloadWifiApSelector$WifiDialogFragment;->setAccessPoint(Lcom/android/settings/wifi/AccessPoint;)V
 
-    .line 328
     invoke-direct {v0, p1}, Lcom/android/settings/wifi/OffloadWifiApSelector$WifiDialogFragment;->setEdit(Z)V
 
-    .line 329
     return-object v0
 .end method
 
@@ -58,10 +53,8 @@
     .param p1, "ap"    # Lcom/android/settings/wifi/AccessPoint;
 
     .prologue
-    .line 333
     sput-object p1, Lcom/android/settings/wifi/OffloadWifiApSelector$WifiDialogFragment;->accessPoint:Lcom/android/settings/wifi/AccessPoint;
 
-    .line 334
     return-void
 .end method
 
@@ -70,10 +63,8 @@
     .param p1, "edit"    # Z
 
     .prologue
-    .line 337
     sput-boolean p1, Lcom/android/settings/wifi/OffloadWifiApSelector$WifiDialogFragment;->edit:Z
 
-    .line 338
     return-void
 .end method
 
@@ -84,7 +75,6 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 342
     new-instance v1, Lcom/android/settings/wifi/WifiDialog;
 
     invoke-virtual {p0}, Lcom/android/settings/wifi/OffloadWifiApSelector$WifiDialogFragment;->getActivity()Landroid/app/Activity;

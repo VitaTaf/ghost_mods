@@ -36,7 +36,6 @@
     .locals 0
 
     .prologue
-    .line 1476
     iput-object p1, p0, Lcom/android/settings/DataUsageSummary$12;->this$0:Lcom/android/settings/DataUsageSummary;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -63,7 +62,6 @@
     .end annotation
 
     .prologue
-    .line 1479
     new-instance v0, Lcom/android/settings/net/ChartDataLoader;
 
     iget-object v1, p0, Lcom/android/settings/DataUsageSummary$12;->this$0:Lcom/android/settings/DataUsageSummary;
@@ -100,14 +98,12 @@
     .end annotation
 
     .prologue
-    .line 1484
     .local p1, "loader":Landroid/content/Loader;, "Landroid/content/Loader<Lcom/android/settings/net/ChartData;>;"
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$12;->this$0:Lcom/android/settings/DataUsageSummary;
 
     # setter for: Lcom/android/settings/DataUsageSummary;->mChartData:Lcom/android/settings/net/ChartData;
     invoke-static {v0, p2}, Lcom/android/settings/DataUsageSummary;->access$2202(Lcom/android/settings/DataUsageSummary;Lcom/android/settings/net/ChartData;)Lcom/android/settings/net/ChartData;
 
-    .line 1485
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$12;->this$0:Lcom/android/settings/DataUsageSummary;
 
     # getter for: Lcom/android/settings/DataUsageSummary;->mChart:Lcom/android/settings/widget/ChartDataUsageView;
@@ -126,7 +122,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/widget/ChartDataUsageView;->bindNetworkStats(Landroid/net/NetworkStatsHistory;)V
 
-    .line 1486
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$12;->this$0:Lcom/android/settings/DataUsageSummary;
 
     # getter for: Lcom/android/settings/DataUsageSummary;->mChart:Lcom/android/settings/widget/ChartDataUsageView;
@@ -145,7 +140,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/widget/ChartDataUsageView;->bindDetailNetworkStats(Landroid/net/NetworkStatsHistory;)V
 
-    .line 1489
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$12;->this$0:Lcom/android/settings/DataUsageSummary;
 
     const/4 v1, 0x1
@@ -153,13 +147,11 @@
     # invokes: Lcom/android/settings/DataUsageSummary;->updatePolicy(Z)V
     invoke-static {v0, v1}, Lcom/android/settings/DataUsageSummary;->access$1100(Lcom/android/settings/DataUsageSummary;Z)V
 
-    .line 1490
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$12;->this$0:Lcom/android/settings/DataUsageSummary;
 
     # invokes: Lcom/android/settings/DataUsageSummary;->updateAppDetail()V
     invoke-static {v0}, Lcom/android/settings/DataUsageSummary;->access$2300(Lcom/android/settings/DataUsageSummary;)V
 
-    .line 1493
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$12;->this$0:Lcom/android/settings/DataUsageSummary;
 
     # getter for: Lcom/android/settings/DataUsageSummary;->mChartData:Lcom/android/settings/net/ChartData;
@@ -171,7 +163,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1494
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$12;->this$0:Lcom/android/settings/DataUsageSummary;
 
     # getter for: Lcom/android/settings/DataUsageSummary;->mListView:Landroid/widget/ListView;
@@ -183,7 +174,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->smoothScrollToPosition(I)V
 
-    .line 1496
     :cond_0
     return-void
 .end method
@@ -194,7 +184,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 1476
     check-cast p2, Lcom/android/settings/net/ChartData;
 
     .end local p2    # "x1":Ljava/lang/Object;
@@ -219,13 +208,11 @@
     .local p1, "loader":Landroid/content/Loader;, "Landroid/content/Loader<Lcom/android/settings/net/ChartData;>;"
     const/4 v1, 0x0
 
-    .line 1500
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$12;->this$0:Lcom/android/settings/DataUsageSummary;
 
     # setter for: Lcom/android/settings/DataUsageSummary;->mChartData:Lcom/android/settings/net/ChartData;
     invoke-static {v0, v1}, Lcom/android/settings/DataUsageSummary;->access$2202(Lcom/android/settings/DataUsageSummary;Lcom/android/settings/net/ChartData;)Lcom/android/settings/net/ChartData;
 
-    .line 1501
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$12;->this$0:Lcom/android/settings/DataUsageSummary;
 
     # getter for: Lcom/android/settings/DataUsageSummary;->mChart:Lcom/android/settings/widget/ChartDataUsageView;
@@ -235,7 +222,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/widget/ChartDataUsageView;->bindNetworkStats(Landroid/net/NetworkStatsHistory;)V
 
-    .line 1502
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$12;->this$0:Lcom/android/settings/DataUsageSummary;
 
     # getter for: Lcom/android/settings/DataUsageSummary;->mChart:Lcom/android/settings/widget/ChartDataUsageView;
@@ -245,6 +231,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/widget/ChartDataUsageView;->bindDetailNetworkStats(Landroid/net/NetworkStatsHistory;)V
 
-    .line 1503
     return-void
 .end method

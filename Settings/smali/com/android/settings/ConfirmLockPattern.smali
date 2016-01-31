@@ -19,10 +19,8 @@
     .locals 0
 
     .prologue
-    .line 44
     invoke-direct {p0}, Lcom/android/settings/SettingsActivity;-><init>()V
 
-    .line 87
     return-void
 .end method
 
@@ -32,7 +30,6 @@
     .locals 3
 
     .prologue
-    .line 76
     new-instance v0, Landroid/content/Intent;
 
     invoke-super {p0}, Lcom/android/settings/SettingsActivity;->getIntent()Landroid/content/Intent;
@@ -41,7 +38,6 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
-    .line 77
     .local v0, "modIntent":Landroid/content/Intent;
     const-string v1, ":settings:show_fragment"
 
@@ -53,7 +49,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 78
     return-object v0
 .end method
 
@@ -62,7 +57,6 @@
     .param p1, "fragmentName"    # Ljava/lang/String;
 
     .prologue
-    .line 83
     const-class v0, Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -77,7 +71,6 @@
 
     const/4 v0, 0x1
 
-    .line 84
     :goto_0
     return v0
 
@@ -92,20 +85,16 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 69
     invoke-super {p0, p1}, Lcom/android/settings/SettingsActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 70
     const v1, 0x7f0904f4
 
     invoke-virtual {p0, v1}, Lcom/android/settings/ConfirmLockPattern;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 71
     .local v0, "msg":Ljava/lang/CharSequence;
     invoke-virtual {p0, v0}, Lcom/android/settings/ConfirmLockPattern;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 72
     return-void
 .end method

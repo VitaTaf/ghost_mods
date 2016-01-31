@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 80
     iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothEnabler$2;->this$0:Lcom/android/settings/bluetooth/BluetoothEnabler;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 84
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 85
     .local v0, "action":Ljava/lang/String;
     const-string v2, "android.bluetooth.adapter.action.STATE_CHANGED"
 
@@ -54,7 +51,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 86
     const-string v2, "android.bluetooth.adapter.extra.STATE"
 
     const/high16 v3, -0x80000000
@@ -63,19 +59,16 @@
 
     move-result v1
 
-    .line 88
     .local v1, "state":I
     iget-object v2, p0, Lcom/android/settings/bluetooth/BluetoothEnabler$2;->this$0:Lcom/android/settings/bluetooth/BluetoothEnabler;
 
     invoke-virtual {v2, v1}, Lcom/android/settings/bluetooth/BluetoothEnabler;->handleStateChanged(I)V
 
-    .line 97
     .end local v1    # "state":I
     :cond_0
     :goto_0
     return-void
 
-    .line 90
     :cond_1
     sget-object v2, Lcom/motorola/settings/extensions/WirelessDisplayHelper;->mWDMWDStateChangedAction:Ljava/lang/String;
 
@@ -89,7 +82,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 92
     sget-object v2, Lcom/motorola/settings/extensions/WirelessDisplayHelper;->mWDMWDState:Ljava/lang/String;
 
     sget v3, Lcom/motorola/settings/extensions/WirelessDisplayHelper;->mWDMWDStateDisabled:I

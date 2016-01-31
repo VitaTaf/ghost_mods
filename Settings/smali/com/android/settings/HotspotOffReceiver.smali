@@ -8,7 +8,6 @@
     .locals 0
 
     .prologue
-    .line 13
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -22,7 +21,6 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 17
     const-string v1, "android.net.wifi.WIFI_AP_STATE_CHANGED"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -35,7 +33,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 18
     const-string v1, "wifi"
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -44,7 +41,6 @@
 
     check-cast v0, Landroid/net/wifi/WifiManager;
 
-    .line 19
     .local v0, "wifiManager":Landroid/net/wifi/WifiManager;
     invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->getWifiApState()I
 
@@ -54,12 +50,10 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 21
     const/4 v1, 0x0
 
     invoke-static {p1, v1}, Lcom/android/settings/TetherService;->cancelRecheckAlarmIfNecessary(Landroid/content/Context;I)V
 
-    .line 24
     .end local v0    # "wifiManager":Landroid/net/wifi/WifiManager;
     :cond_0
     return-void

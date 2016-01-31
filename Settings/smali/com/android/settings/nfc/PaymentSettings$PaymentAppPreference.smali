@@ -28,21 +28,16 @@
     .param p3, "listener"    # Landroid/view/View$OnClickListener;
 
     .prologue
-    .line 213
     invoke-direct {p0, p1}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
 
-    .line 214
     const v0, 0x7f04006b
 
     invoke-virtual {p0, v0}, Lcom/android/settings/nfc/PaymentSettings$PaymentAppPreference;->setLayoutResource(I)V
 
-    .line 215
     iput-object p2, p0, Lcom/android/settings/nfc/PaymentSettings$PaymentAppPreference;->appInfo:Lcom/android/settings/nfc/PaymentBackend$PaymentAppInfo;
 
-    .line 216
     iput-object p3, p0, Lcom/android/settings/nfc/PaymentSettings$PaymentAppPreference;->listener:Landroid/view/View$OnClickListener;
 
-    .line 217
     return-void
 .end method
 
@@ -53,10 +48,8 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 221
     invoke-super {p0, p1}, Landroid/preference/Preference;->onBindView(Landroid/view/View;)V
 
-    .line 223
     const v2, 0x1020019
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -65,7 +58,6 @@
 
     check-cast v1, Landroid/widget/RadioButton;
 
-    .line 224
     .local v1, "radioButton":Landroid/widget/RadioButton;
     iget-object v2, p0, Lcom/android/settings/nfc/PaymentSettings$PaymentAppPreference;->appInfo:Lcom/android/settings/nfc/PaymentBackend$PaymentAppInfo;
 
@@ -73,17 +65,14 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 225
     iget-object v2, p0, Lcom/android/settings/nfc/PaymentSettings$PaymentAppPreference;->listener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v1, v2}, Landroid/widget/RadioButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 226
     iget-object v2, p0, Lcom/android/settings/nfc/PaymentSettings$PaymentAppPreference;->appInfo:Lcom/android/settings/nfc/PaymentBackend$PaymentAppInfo;
 
     invoke-virtual {v1, v2}, Landroid/widget/RadioButton;->setTag(Ljava/lang/Object;)V
 
-    .line 228
     const v2, 0x7f0f00f7
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -92,7 +81,6 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 229
     .local v0, "banner":Landroid/widget/ImageView;
     iget-object v2, p0, Lcom/android/settings/nfc/PaymentSettings$PaymentAppPreference;->appInfo:Lcom/android/settings/nfc/PaymentBackend$PaymentAppInfo;
 
@@ -100,16 +88,13 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 230
     iget-object v2, p0, Lcom/android/settings/nfc/PaymentSettings$PaymentAppPreference;->listener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 231
     iget-object v2, p0, Lcom/android/settings/nfc/PaymentSettings$PaymentAppPreference;->appInfo:Lcom/android/settings/nfc/PaymentBackend$PaymentAppInfo;
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 232
     return-void
 .end method
