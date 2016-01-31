@@ -145,13 +145,31 @@
     .param p1, "alpha"    # I
 
     .prologue
-    .line 94
+    .line 100
     return-void
 .end method
 
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
     .locals 0
     .param p1, "colorFilter"    # Landroid/graphics/ColorFilter;
+
+    .prologue
+    .line 97
+    return-void
+.end method
+
+.method public setDither(Z)V
+    .locals 0
+    .param p1, "dither"    # Z
+
+    .prologue
+    .line 94
+    return-void
+.end method
+
+.method public setFilterBitmap(Z)V
+    .locals 0
+    .param p1, "filter"    # Z
 
     .prologue
     .line 91

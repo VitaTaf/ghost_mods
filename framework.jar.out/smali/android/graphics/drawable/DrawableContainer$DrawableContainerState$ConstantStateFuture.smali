@@ -24,17 +24,17 @@
     .param p1, "source"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 1130
+    .line 1112
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1131
+    .line 1113
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState$ConstantStateFuture;->mConstantState:Landroid/graphics/drawable/Drawable$ConstantState;
 
-    .line 1132
+    .line 1114
     return-void
 .end method
 
@@ -44,7 +44,7 @@
     .param p2, "x1"    # Landroid/graphics/drawable/DrawableContainer$1;
 
     .prologue
-    .line 1127
+    .line 1109
     invoke-direct {p0, p1}, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState$ConstantStateFuture;-><init>(Landroid/graphics/drawable/Drawable;)V
 
     return-void
@@ -56,7 +56,7 @@
     .locals 1
 
     .prologue
-    .line 1162
+    .line 1144
     iget-object v0, p0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState$ConstantStateFuture;->mConstantState:Landroid/graphics/drawable/Drawable$ConstantState;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable$ConstantState;->canApplyTheme()Z
@@ -71,43 +71,43 @@
     .param p1, "state"    # Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;
 
     .prologue
-    .line 1142
+    .line 1124
     iget-object v1, p1, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mRes:Landroid/content/res/Resources;
 
     if-nez v1, :cond_1
 
-    .line 1143
+    .line 1125
     iget-object v1, p0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState$ConstantStateFuture;->mConstantState:Landroid/graphics/drawable/Drawable$ConstantState;
 
     invoke-virtual {v1}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 1147
+    .line 1129
     .local v0, "result":Landroid/graphics/drawable/Drawable;
     :goto_0
     iget v1, p1, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mLayoutDirection:I
 
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)Z
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
 
-    .line 1148
+    .line 1130
     iget-object v1, p1, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mOwner:Landroid/graphics/drawable/DrawableContainer;
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 1150
+    .line 1132
     iget-boolean v1, p1, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mMutated:Z
 
     if-eqz v1, :cond_0
 
-    .line 1151
+    .line 1133
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
-    .line 1154
+    .line 1136
     :cond_0
     return-object v0
 
-    .line 1145
+    .line 1127
     .end local v0    # "result":Landroid/graphics/drawable/Drawable;
     :cond_1
     iget-object v1, p0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState$ConstantStateFuture;->mConstantState:Landroid/graphics/drawable/Drawable$ConstantState;

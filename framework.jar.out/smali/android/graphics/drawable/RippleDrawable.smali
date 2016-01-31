@@ -189,7 +189,7 @@
     .param p2, "res"    # Landroid/content/res/Resources;
 
     .prologue
-    .line 984
+    .line 985
     invoke-direct {p0}, Landroid/graphics/drawable/LayerDrawable;-><init>()V
 
     .line 111
@@ -230,36 +230,36 @@
 
     iput v0, p0, Landroid/graphics/drawable/RippleDrawable;->mDensity:F
 
-    .line 985
+    .line 986
     new-instance v0, Landroid/graphics/drawable/RippleDrawable$RippleState;
 
     invoke-direct {v0, p1, p0, p2}, Landroid/graphics/drawable/RippleDrawable$RippleState;-><init>(Landroid/graphics/drawable/LayerDrawable$LayerState;Landroid/graphics/drawable/RippleDrawable;Landroid/content/res/Resources;)V
 
     iput-object v0, p0, Landroid/graphics/drawable/RippleDrawable;->mState:Landroid/graphics/drawable/RippleDrawable$RippleState;
 
-    .line 986
+    .line 987
     iget-object v0, p0, Landroid/graphics/drawable/RippleDrawable;->mState:Landroid/graphics/drawable/RippleDrawable$RippleState;
 
     iput-object v0, p0, Landroid/graphics/drawable/RippleDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
-    .line 988
+    .line 989
     iget-object v0, p0, Landroid/graphics/drawable/RippleDrawable;->mState:Landroid/graphics/drawable/RippleDrawable$RippleState;
 
     iget v0, v0, Landroid/graphics/drawable/RippleDrawable$RippleState;->mNum:I
 
     if-lez v0, :cond_0
 
-    .line 989
+    .line 990
     invoke-virtual {p0}, Landroid/graphics/drawable/RippleDrawable;->ensurePadding()V
 
-    .line 990
+    .line 991
     invoke-virtual {p0}, Landroid/graphics/drawable/RippleDrawable;->refreshPadding()V
 
-    .line 993
+    .line 994
     :cond_0
     if-eqz p2, :cond_1
 
-    .line 994
+    .line 995
     invoke-virtual {p2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
     move-result-object v0
@@ -268,11 +268,11 @@
 
     iput v0, p0, Landroid/graphics/drawable/RippleDrawable;->mDensity:F
 
-    .line 997
+    .line 998
     :cond_1
     invoke-direct {p0}, Landroid/graphics/drawable/RippleDrawable;->updateLocalState()V
 
-    .line 998
+    .line 999
     return-void
 .end method
 
@@ -394,24 +394,24 @@
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 816
+    .line 817
     move-object/from16 v0, p0
 
     iget-object v1, v0, Landroid/graphics/drawable/RippleDrawable;->mRipple:Landroid/graphics/drawable/RippleForeground;
 
-    .line 817
+    .line 818
     .local v1, "active":Landroid/graphics/drawable/RippleForeground;
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/graphics/drawable/RippleDrawable;->mBackground:Landroid/graphics/drawable/RippleBackground;
 
-    .line 818
+    .line 819
     .local v2, "background":Landroid/graphics/drawable/RippleBackground;
     move-object/from16 v0, p0
 
     iget v5, v0, Landroid/graphics/drawable/RippleDrawable;->mExitingRipplesCount:I
 
-    .line 819
+    .line 820
     .local v5, "count":I
     if-nez v1, :cond_1
 
@@ -425,12 +425,12 @@
 
     if-nez v14, :cond_1
 
-    .line 876
+    .line 877
     :cond_0
     :goto_0
     return-void
 
-    .line 824
+    .line 825
     :cond_1
     move-object/from16 v0, p0
 
@@ -440,7 +440,7 @@
 
     move-result v12
 
-    .line 825
+    .line 826
     .local v12, "x":F
     move-object/from16 v0, p0
 
@@ -450,28 +450,28 @@
 
     move-result v13
 
-    .line 826
+    .line 827
     .local v13, "y":F
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v12, v13}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 828
+    .line 829
     invoke-direct/range {p0 .. p0}, Landroid/graphics/drawable/RippleDrawable;->updateMaskShaderIfNeeded()V
 
-    .line 831
+    .line 832
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/graphics/drawable/RippleDrawable;->mMaskShader:Landroid/graphics/BitmapShader;
 
     if-eqz v14, :cond_2
 
-    .line 832
+    .line 833
     invoke-virtual/range {p0 .. p0}, Landroid/graphics/drawable/RippleDrawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v3
 
-    .line 833
+    .line 834
     .local v3, "bounds":Landroid/graphics/Rect;
     move-object/from16 v0, p0
 
@@ -497,7 +497,7 @@
 
     invoke-virtual/range {v14 .. v16}, Landroid/graphics/Matrix;->setTranslate(FF)V
 
-    .line 834
+    .line 835
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/graphics/drawable/RippleDrawable;->mMaskShader:Landroid/graphics/BitmapShader;
@@ -508,7 +508,7 @@
 
     invoke-virtual {v14, v15}, Landroid/graphics/BitmapShader;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 839
+    .line 840
     .end local v3    # "bounds":Landroid/graphics/Rect;
     :cond_2
     move-object/from16 v0, p0
@@ -527,7 +527,7 @@
 
     move-result v4
 
-    .line 840
+    .line 841
     .local v4, "color":I
     invoke-static {v4}, Landroid/graphics/Color;->alpha(I)I
 
@@ -537,13 +537,13 @@
 
     shl-int/lit8 v7, v14, 0x18
 
-    .line 841
+    .line 842
     .local v7, "halfAlpha":I
     invoke-direct/range {p0 .. p0}, Landroid/graphics/drawable/RippleDrawable;->getRipplePaint()Landroid/graphics/Paint;
 
     move-result-object v10
 
-    .line 843
+    .line 844
     .local v10, "p":Landroid/graphics/Paint;
     move-object/from16 v0, p0
 
@@ -551,12 +551,12 @@
 
     if-eqz v14, :cond_4
 
-    .line 847
+    .line 848
     const/high16 v14, -0x1000000
 
     or-int v6, v4, v14
 
-    .line 848
+    .line 849
     .local v6, "fullAlphaColor":I
     move-object/from16 v0, p0
 
@@ -564,24 +564,24 @@
 
     invoke-virtual {v14, v6}, Landroid/graphics/PorterDuffColorFilter;->setColor(I)V
 
-    .line 850
+    .line 851
     invoke-virtual {v10, v7}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 851
+    .line 852
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/graphics/drawable/RippleDrawable;->mMaskColorFilter:Landroid/graphics/PorterDuffColorFilter;
 
     invoke-virtual {v10, v14}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
-    .line 852
+    .line 853
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/graphics/drawable/RippleDrawable;->mMaskShader:Landroid/graphics/BitmapShader;
 
     invoke-virtual {v10, v14}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 860
+    .line 861
     .end local v6    # "fullAlphaColor":I
     :goto_1
     if-eqz v2, :cond_3
@@ -592,21 +592,21 @@
 
     if-eqz v14, :cond_3
 
-    .line 861
+    .line 862
     move-object/from16 v0, p1
 
     invoke-virtual {v2, v0, v10}, Landroid/graphics/drawable/RippleBackground;->draw(Landroid/graphics/Canvas;Landroid/graphics/Paint;)Z
 
-    .line 864
+    .line 865
     :cond_3
     if-lez v5, :cond_5
 
-    .line 865
+    .line 866
     move-object/from16 v0, p0
 
     iget-object v11, v0, Landroid/graphics/drawable/RippleDrawable;->mExitingRipples:[Landroid/graphics/drawable/RippleForeground;
 
-    .line 866
+    .line 867
     .local v11, "ripples":[Landroid/graphics/drawable/RippleForeground;
     const/4 v9, 0x0
 
@@ -614,19 +614,19 @@
     :goto_2
     if-ge v9, v5, :cond_5
 
-    .line 867
+    .line 868
     aget-object v14, v11, v9
 
     move-object/from16 v0, p1
 
     invoke-virtual {v14, v0, v10}, Landroid/graphics/drawable/RippleForeground;->draw(Landroid/graphics/Canvas;Landroid/graphics/Paint;)Z
 
-    .line 866
+    .line 867
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_2
 
-    .line 854
+    .line 855
     .end local v9    # "i":I
     .end local v11    # "ripples":[Landroid/graphics/drawable/RippleForeground;
     :cond_4
@@ -636,33 +636,33 @@
 
     or-int v8, v14, v7
 
-    .line 855
+    .line 856
     .local v8, "halfAlphaColor":I
     invoke-virtual {v10, v8}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 856
+    .line 857
     const/4 v14, 0x0
 
     invoke-virtual {v10, v14}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
-    .line 857
+    .line 858
     const/4 v14, 0x0
 
     invoke-virtual {v10, v14}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
     goto :goto_1
 
-    .line 871
+    .line 872
     .end local v8    # "halfAlphaColor":I
     :cond_5
     if-eqz v1, :cond_6
 
-    .line 872
+    .line 873
     move-object/from16 v0, p1
 
     invoke-virtual {v1, v0, v10}, Landroid/graphics/drawable/RippleForeground;->draw(Landroid/graphics/Canvas;Landroid/graphics/Paint;)Z
 
-    .line 875
+    .line 876
     :cond_6
     neg-float v14, v12
 
@@ -680,18 +680,18 @@
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 806
+    .line 807
     iget-object v3, p0, Landroid/graphics/drawable/RippleDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v0, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 807
+    .line 808
     .local v0, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v3, p0, Landroid/graphics/drawable/RippleDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v1, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 808
+    .line 809
     .local v1, "count":I
     const/4 v2, 0x0
 
@@ -699,7 +699,7 @@
     :goto_0
     if-ge v2, v1, :cond_1
 
-    .line 809
+    .line 810
     aget-object v3, v0, v2
 
     iget v3, v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mId:I
@@ -708,20 +708,20 @@
 
     if-eq v3, v4, :cond_0
 
-    .line 810
+    .line 811
     aget-object v3, v0, v2
 
     iget-object v3, v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 808
+    .line 809
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 813
+    .line 814
     :cond_1
     return-void
 .end method
@@ -731,12 +731,12 @@
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 879
+    .line 880
     iget-object v0, p0, Landroid/graphics/drawable/RippleDrawable;->mMask:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 880
+    .line 881
     return-void
 .end method
 
@@ -748,7 +748,7 @@
 
     const/4 v3, -0x1
 
-    .line 776
+    .line 777
     iget-object v5, p0, Landroid/graphics/drawable/RippleDrawable;->mRipple:Landroid/graphics/drawable/RippleForeground;
 
     if-nez v5, :cond_1
@@ -769,18 +769,18 @@
 
     if-nez v5, :cond_1
 
-    .line 801
+    .line 802
     :cond_0
     :goto_0
     return v3
 
-    .line 782
+    .line 783
     :cond_1
     iget-object v5, p0, Landroid/graphics/drawable/RippleDrawable;->mMask:Landroid/graphics/drawable/Drawable;
 
     if-eqz v5, :cond_3
 
-    .line 783
+    .line 784
     iget-object v5, p0, Landroid/graphics/drawable/RippleDrawable;->mMask:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v5}, Landroid/graphics/drawable/Drawable;->getOpacity()I
@@ -791,28 +791,28 @@
 
     move v3, v4
 
-    .line 785
+    .line 786
     goto :goto_0
 
-    .line 787
+    .line 788
     :cond_2
     const/4 v3, 0x2
 
     goto :goto_0
 
-    .line 792
+    .line 793
     :cond_3
     iget-object v5, p0, Landroid/graphics/drawable/RippleDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v0, v5, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 793
+    .line 794
     .local v0, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v5, p0, Landroid/graphics/drawable/RippleDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v1, v5, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 794
+    .line 795
     .local v1, "count":I
     const/4 v2, 0x0
 
@@ -820,7 +820,7 @@
     :goto_1
     if-ge v2, v1, :cond_5
 
-    .line 795
+    .line 796
     aget-object v5, v0, v2
 
     iget-object v5, v5, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -831,12 +831,12 @@
 
     if-eq v5, v3, :cond_4
 
-    .line 796
+    .line 797
     const/4 v3, 0x1
 
     goto :goto_0
 
-    .line 794
+    .line 795
     :cond_4
     add-int/lit8 v2, v2, 0x1
 
@@ -845,7 +845,7 @@
     :cond_5
     move v3, v4
 
-    .line 801
+    .line 802
     goto :goto_0
 .end method
 
@@ -853,33 +853,33 @@
     .locals 2
 
     .prologue
-    .line 883
+    .line 884
     iget-object v0, p0, Landroid/graphics/drawable/RippleDrawable;->mRipplePaint:Landroid/graphics/Paint;
 
     if-nez v0, :cond_0
 
-    .line 884
+    .line 885
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Landroid/graphics/drawable/RippleDrawable;->mRipplePaint:Landroid/graphics/Paint;
 
-    .line 885
+    .line 886
     iget-object v0, p0, Landroid/graphics/drawable/RippleDrawable;->mRipplePaint:Landroid/graphics/Paint;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 886
+    .line 887
     iget-object v0, p0, Landroid/graphics/drawable/RippleDrawable;->mRipplePaint:Landroid/graphics/Paint;
 
     sget-object v1, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 888
+    .line 889
     :cond_0
     iget-object v0, p0, Landroid/graphics/drawable/RippleDrawable;->mRipplePaint:Landroid/graphics/Paint;
 
@@ -890,14 +890,14 @@
     .locals 4
 
     .prologue
-    .line 620
+    .line 621
     iget v0, p0, Landroid/graphics/drawable/RippleDrawable;->mExitingRipplesCount:I
 
-    .line 621
+    .line 622
     .local v0, "count":I
     iget-object v2, p0, Landroid/graphics/drawable/RippleDrawable;->mExitingRipples:[Landroid/graphics/drawable/RippleForeground;
 
-    .line 622
+    .line 623
     .local v2, "ripples":[Landroid/graphics/drawable/RippleForeground;
     const/4 v1, 0x0
 
@@ -905,39 +905,39 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 623
+    .line 624
     aget-object v3, v2, v1
 
     invoke-virtual {v3}, Landroid/graphics/drawable/RippleForeground;->onHotspotBoundsChanged()V
 
-    .line 622
+    .line 623
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 626
+    .line 627
     :cond_0
     iget-object v3, p0, Landroid/graphics/drawable/RippleDrawable;->mRipple:Landroid/graphics/drawable/RippleForeground;
 
     if-eqz v3, :cond_1
 
-    .line 627
+    .line 628
     iget-object v3, p0, Landroid/graphics/drawable/RippleDrawable;->mRipple:Landroid/graphics/drawable/RippleForeground;
 
     invoke-virtual {v3}, Landroid/graphics/drawable/RippleForeground;->onHotspotBoundsChanged()V
 
-    .line 630
+    .line 631
     :cond_1
     iget-object v3, p0, Landroid/graphics/drawable/RippleDrawable;->mBackground:Landroid/graphics/drawable/RippleBackground;
 
     if-eqz v3, :cond_2
 
-    .line 631
+    .line 632
     iget-object v3, p0, Landroid/graphics/drawable/RippleDrawable;->mBackground:Landroid/graphics/drawable/RippleBackground;
 
     invoke-virtual {v3}, Landroid/graphics/drawable/RippleBackground;->onHotspotBoundsChanged()V
 
-    .line 633
+    .line 634
     :cond_2
     return-void
 .end method
@@ -946,18 +946,18 @@
     .locals 6
 
     .prologue
-    .line 689
+    .line 690
     const/4 v2, 0x0
 
-    .line 692
+    .line 693
     .local v2, "remaining":I
     iget-object v4, p0, Landroid/graphics/drawable/RippleDrawable;->mExitingRipples:[Landroid/graphics/drawable/RippleForeground;
 
-    .line 693
+    .line 694
     .local v4, "ripples":[Landroid/graphics/drawable/RippleForeground;
     iget v0, p0, Landroid/graphics/drawable/RippleDrawable;->mExitingRipplesCount:I
 
-    .line 694
+    .line 695
     .local v0, "count":I
     const/4 v1, 0x0
 
@@ -969,7 +969,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 695
+    .line 696
     aget-object v5, v4, v1
 
     invoke-virtual {v5}, Landroid/graphics/drawable/RippleForeground;->hasFinishedExit()Z
@@ -978,7 +978,7 @@
 
     if-nez v5, :cond_2
 
-    .line 696
+    .line 697
     add-int/lit8 v2, v3, 0x1
 
     .end local v3    # "remaining":I
@@ -987,7 +987,7 @@
 
     aput-object v5, v4, v3
 
-    .line 694
+    .line 695
     :goto_1
     add-int/lit8 v1, v1, 0x1
 
@@ -997,28 +997,28 @@
     .restart local v3    # "remaining":I
     goto :goto_0
 
-    .line 701
+    .line 702
     :cond_0
     move v1, v3
 
     :goto_2
     if-ge v1, v0, :cond_1
 
-    .line 702
+    .line 703
     const/4 v5, 0x0
 
     aput-object v5, v4, v1
 
-    .line 701
+    .line 702
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
-    .line 705
+    .line 706
     :cond_1
     iput v3, p0, Landroid/graphics/drawable/RippleDrawable;->mExitingRipplesCount:I
 
-    .line 706
+    .line 707
     return-void
 
     :cond_2
@@ -1348,7 +1348,7 @@
     .locals 1
 
     .prologue
-    .line 1002
+    .line 1003
     const v0, 0x102002e
 
     invoke-virtual {p0, v0}, Landroid/graphics/drawable/RippleDrawable;->findDrawableByLayerId(I)Landroid/graphics/drawable/Drawable;
@@ -1357,7 +1357,7 @@
 
     iput-object v0, p0, Landroid/graphics/drawable/RippleDrawable;->mMask:Landroid/graphics/drawable/Drawable;
 
-    .line 1003
+    .line 1004
     return-void
 .end method
 
@@ -1371,51 +1371,38 @@
 
     const/4 v5, 0x0
 
-    .line 712
+    .line 713
     iget-boolean v4, p0, Landroid/graphics/drawable/RippleDrawable;->mHasValidMask:Z
 
     if-eqz v4, :cond_1
 
-    .line 773
+    .line 774
     :cond_0
     :goto_0
     return-void
 
-    .line 716
+    .line 717
     :cond_1
     invoke-direct {p0}, Landroid/graphics/drawable/RippleDrawable;->getMaskType()I
 
     move-result v2
 
-    .line 717
+    .line 718
     .local v2, "maskType":I
     const/4 v4, -0x1
 
     if-eq v2, v4, :cond_0
 
-    .line 721
+    .line 722
     iput-boolean v9, p0, Landroid/graphics/drawable/RippleDrawable;->mHasValidMask:Z
 
-    .line 723
-    invoke-virtual {p0}, Landroid/graphics/drawable/RippleDrawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v0
-
     .line 724
-    .local v0, "bounds":Landroid/graphics/Rect;
-    if-eqz v2, :cond_2
-
-    invoke-virtual {v0}, Landroid/graphics/Rect;->isEmpty()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_4
+    if-nez v2, :cond_3
 
     .line 725
-    :cond_2
     iget-object v4, p0, Landroid/graphics/drawable/RippleDrawable;->mMaskBuffer:Landroid/graphics/Bitmap;
 
-    if-eqz v4, :cond_3
+    if-eqz v4, :cond_2
 
     .line 726
     iget-object v4, p0, Landroid/graphics/drawable/RippleDrawable;->mMaskBuffer:Landroid/graphics/Bitmap;
@@ -1432,7 +1419,7 @@
     iput-object v5, p0, Landroid/graphics/drawable/RippleDrawable;->mMaskCanvas:Landroid/graphics/Canvas;
 
     .line 731
-    :cond_3
+    :cond_2
     iput-object v5, p0, Landroid/graphics/drawable/RippleDrawable;->mMaskMatrix:Landroid/graphics/Matrix;
 
     .line 732
@@ -1441,10 +1428,16 @@
     goto :goto_0
 
     .line 737
-    :cond_4
+    :cond_3
+    invoke-virtual {p0}, Landroid/graphics/drawable/RippleDrawable;->getBounds()Landroid/graphics/Rect;
+
+    move-result-object v0
+
+    .line 738
+    .local v0, "bounds":Landroid/graphics/Rect;
     iget-object v4, p0, Landroid/graphics/drawable/RippleDrawable;->mMaskBuffer:Landroid/graphics/Bitmap;
 
-    if-eqz v4, :cond_5
+    if-eqz v4, :cond_4
 
     iget-object v4, p0, Landroid/graphics/drawable/RippleDrawable;->mMaskBuffer:Landroid/graphics/Bitmap;
 
@@ -1456,7 +1449,7 @@
 
     move-result v5
 
-    if-ne v4, v5, :cond_5
+    if-ne v4, v5, :cond_4
 
     iget-object v4, p0, Landroid/graphics/drawable/RippleDrawable;->mMaskBuffer:Landroid/graphics/Bitmap;
 
@@ -1468,21 +1461,21 @@
 
     move-result v5
 
-    if-eq v4, v5, :cond_9
-
-    .line 740
-    :cond_5
-    iget-object v4, p0, Landroid/graphics/drawable/RippleDrawable;->mMaskBuffer:Landroid/graphics/Bitmap;
-
-    if-eqz v4, :cond_6
+    if-eq v4, v5, :cond_8
 
     .line 741
+    :cond_4
+    iget-object v4, p0, Landroid/graphics/drawable/RippleDrawable;->mMaskBuffer:Landroid/graphics/Bitmap;
+
+    if-eqz v4, :cond_5
+
+    .line 742
     iget-object v4, p0, Landroid/graphics/drawable/RippleDrawable;->mMaskBuffer:Landroid/graphics/Bitmap;
 
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 744
-    :cond_6
+    .line 745
+    :cond_5
     invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
 
     move-result v4
@@ -1499,7 +1492,7 @@
 
     iput-object v4, p0, Landroid/graphics/drawable/RippleDrawable;->mMaskBuffer:Landroid/graphics/Bitmap;
 
-    .line 746
+    .line 747
     new-instance v4, Landroid/graphics/BitmapShader;
 
     iget-object v5, p0, Landroid/graphics/drawable/RippleDrawable;->mMaskBuffer:Landroid/graphics/Bitmap;
@@ -1512,7 +1505,7 @@
 
     iput-object v4, p0, Landroid/graphics/drawable/RippleDrawable;->mMaskShader:Landroid/graphics/BitmapShader;
 
-    .line 748
+    .line 749
     new-instance v4, Landroid/graphics/Canvas;
 
     iget-object v5, p0, Landroid/graphics/drawable/RippleDrawable;->mMaskBuffer:Landroid/graphics/Bitmap;
@@ -1521,26 +1514,26 @@
 
     iput-object v4, p0, Landroid/graphics/drawable/RippleDrawable;->mMaskCanvas:Landroid/graphics/Canvas;
 
-    .line 753
+    .line 754
     :goto_1
     iget-object v4, p0, Landroid/graphics/drawable/RippleDrawable;->mMaskMatrix:Landroid/graphics/Matrix;
 
-    if-nez v4, :cond_a
+    if-nez v4, :cond_9
 
-    .line 754
+    .line 755
     new-instance v4, Landroid/graphics/Matrix;
 
     invoke-direct {v4}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v4, p0, Landroid/graphics/drawable/RippleDrawable;->mMaskMatrix:Landroid/graphics/Matrix;
 
-    .line 759
+    .line 760
     :goto_2
     iget-object v4, p0, Landroid/graphics/drawable/RippleDrawable;->mMaskColorFilter:Landroid/graphics/PorterDuffColorFilter;
 
-    if-nez v4, :cond_7
+    if-nez v4, :cond_6
 
-    .line 760
+    .line 761
     new-instance v4, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v5, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
@@ -1549,15 +1542,15 @@
 
     iput-object v4, p0, Landroid/graphics/drawable/RippleDrawable;->mMaskColorFilter:Landroid/graphics/PorterDuffColorFilter;
 
-    .line 764
-    :cond_7
+    .line 765
+    :cond_6
     iget v1, v0, Landroid/graphics/Rect;->left:I
 
-    .line 765
+    .line 766
     .local v1, "left":I
     iget v3, v0, Landroid/graphics/Rect;->top:I
 
-    .line 766
+    .line 767
     .local v3, "top":I
     iget-object v4, p0, Landroid/graphics/drawable/RippleDrawable;->mMaskCanvas:Landroid/graphics/Canvas;
 
@@ -1571,18 +1564,18 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 767
+    .line 768
     const/4 v4, 0x2
 
-    if-ne v2, v4, :cond_b
+    if-ne v2, v4, :cond_a
 
-    .line 768
+    .line 769
     iget-object v4, p0, Landroid/graphics/drawable/RippleDrawable;->mMaskCanvas:Landroid/graphics/Canvas;
 
     invoke-direct {p0, v4}, Landroid/graphics/drawable/RippleDrawable;->drawMask(Landroid/graphics/Canvas;)V
 
-    .line 772
-    :cond_8
+    .line 773
+    :cond_7
     :goto_3
     iget-object v4, p0, Landroid/graphics/drawable/RippleDrawable;->mMaskCanvas:Landroid/graphics/Canvas;
 
@@ -1594,31 +1587,31 @@
 
     goto/16 :goto_0
 
-    .line 750
+    .line 751
     .end local v1    # "left":I
     .end local v3    # "top":I
-    :cond_9
+    :cond_8
     iget-object v4, p0, Landroid/graphics/drawable/RippleDrawable;->mMaskBuffer:Landroid/graphics/Bitmap;
 
     invoke-virtual {v4, v8}, Landroid/graphics/Bitmap;->eraseColor(I)V
 
     goto :goto_1
 
-    .line 756
-    :cond_a
+    .line 757
+    :cond_9
     iget-object v4, p0, Landroid/graphics/drawable/RippleDrawable;->mMaskMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v4}, Landroid/graphics/Matrix;->reset()V
 
     goto :goto_2
 
-    .line 769
+    .line 770
     .restart local v1    # "left":I
     .restart local v3    # "top":I
-    :cond_b
-    if-ne v2, v9, :cond_8
+    :cond_a
+    if-ne v2, v9, :cond_7
 
-    .line 770
+    .line 771
     iget-object v4, p0, Landroid/graphics/drawable/RippleDrawable;->mMaskCanvas:Landroid/graphics/Canvas;
 
     invoke-direct {p0, v4}, Landroid/graphics/drawable/RippleDrawable;->drawContent(Landroid/graphics/Canvas;)V
@@ -1920,7 +1913,7 @@
     .param p2, "res"    # Landroid/content/res/Resources;
 
     .prologue
-    .line 947
+    .line 948
     new-instance v0, Landroid/graphics/drawable/RippleDrawable$RippleState;
 
     invoke-direct {v0, p1, p0, p2}, Landroid/graphics/drawable/RippleDrawable$RippleState;-><init>(Landroid/graphics/drawable/LayerDrawable$LayerState;Landroid/graphics/drawable/RippleDrawable;Landroid/content/res/Resources;)V
@@ -1933,15 +1926,15 @@
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 659
+    .line 660
     invoke-direct {p0}, Landroid/graphics/drawable/RippleDrawable;->pruneRipples()V
 
-    .line 663
+    .line 664
     invoke-virtual {p0}, Landroid/graphics/drawable/RippleDrawable;->getDirtyBounds()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 664
+    .line 665
     .local v0, "bounds":Landroid/graphics/Rect;
     const/4 v2, 0x2
 
@@ -1949,20 +1942,20 @@
 
     move-result v1
 
-    .line 665
+    .line 666
     .local v1, "saveCount":I
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/Rect;)Z
 
-    .line 667
+    .line 668
     invoke-direct {p0, p1}, Landroid/graphics/drawable/RippleDrawable;->drawContent(Landroid/graphics/Canvas;)V
 
-    .line 668
+    .line 669
     invoke-direct {p0, p1}, Landroid/graphics/drawable/RippleDrawable;->drawBackgroundAndRipples(Landroid/graphics/Canvas;)V
 
-    .line 670
+    .line 671
     invoke-virtual {p1, v1}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
-    .line 671
+    .line 672
     return-void
 .end method
 
@@ -1970,7 +1963,7 @@
     .locals 1
 
     .prologue
-    .line 928
+    .line 929
     iget-object v0, p0, Landroid/graphics/drawable/RippleDrawable;->mState:Landroid/graphics/drawable/RippleDrawable$RippleState;
 
     return-object v0
@@ -1980,28 +1973,28 @@
     .locals 10
 
     .prologue
-    .line 893
+    .line 894
     invoke-virtual {p0}, Landroid/graphics/drawable/RippleDrawable;->isProjected()Z
 
     move-result v9
 
     if-eqz v9, :cond_2
 
-    .line 894
+    .line 895
     iget-object v6, p0, Landroid/graphics/drawable/RippleDrawable;->mDrawingBounds:Landroid/graphics/Rect;
 
-    .line 895
+    .line 896
     .local v6, "drawingBounds":Landroid/graphics/Rect;
     iget-object v5, p0, Landroid/graphics/drawable/RippleDrawable;->mDirtyBounds:Landroid/graphics/Rect;
 
-    .line 896
+    .line 897
     .local v5, "dirtyBounds":Landroid/graphics/Rect;
     invoke-virtual {v5, v6}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 897
+    .line 898
     invoke-virtual {v6}, Landroid/graphics/Rect;->setEmpty()V
 
-    .line 899
+    .line 900
     iget-object v9, p0, Landroid/graphics/drawable/RippleDrawable;->mHotspotBounds:Landroid/graphics/Rect;
 
     invoke-virtual {v9}, Landroid/graphics/Rect;->exactCenterX()F
@@ -2010,7 +2003,7 @@
 
     float-to-int v3, v9
 
-    .line 900
+    .line 901
     .local v3, "cX":I
     iget-object v9, p0, Landroid/graphics/drawable/RippleDrawable;->mHotspotBounds:Landroid/graphics/Rect;
 
@@ -2020,19 +2013,19 @@
 
     float-to-int v4, v9
 
-    .line 901
+    .line 902
     .local v4, "cY":I
     iget-object v8, p0, Landroid/graphics/drawable/RippleDrawable;->mTempRect:Landroid/graphics/Rect;
 
-    .line 903
+    .line 904
     .local v8, "rippleBounds":Landroid/graphics/Rect;
     iget-object v1, p0, Landroid/graphics/drawable/RippleDrawable;->mExitingRipples:[Landroid/graphics/drawable/RippleForeground;
 
-    .line 904
+    .line 905
     .local v1, "activeRipples":[Landroid/graphics/drawable/RippleForeground;
     iget v0, p0, Landroid/graphics/drawable/RippleDrawable;->mExitingRipplesCount:I
 
-    .line 905
+    .line 906
     .local v0, "N":I
     const/4 v7, 0x0
 
@@ -2040,51 +2033,51 @@
     :goto_0
     if-ge v7, v0, :cond_0
 
-    .line 906
+    .line 907
     aget-object v9, v1, v7
 
     invoke-virtual {v9, v8}, Landroid/graphics/drawable/RippleForeground;->getBounds(Landroid/graphics/Rect;)V
 
-    .line 907
+    .line 908
     invoke-virtual {v8, v3, v4}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 908
+    .line 909
     invoke-virtual {v6, v8}, Landroid/graphics/Rect;->union(Landroid/graphics/Rect;)V
 
-    .line 905
+    .line 906
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_0
 
-    .line 911
+    .line 912
     :cond_0
     iget-object v2, p0, Landroid/graphics/drawable/RippleDrawable;->mBackground:Landroid/graphics/drawable/RippleBackground;
 
-    .line 912
+    .line 913
     .local v2, "background":Landroid/graphics/drawable/RippleBackground;
     if-eqz v2, :cond_1
 
-    .line 913
+    .line 914
     invoke-virtual {v2, v8}, Landroid/graphics/drawable/RippleBackground;->getBounds(Landroid/graphics/Rect;)V
 
-    .line 914
+    .line 915
     invoke-virtual {v8, v3, v4}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 915
+    .line 916
     invoke-virtual {v6, v8}, Landroid/graphics/Rect;->union(Landroid/graphics/Rect;)V
 
-    .line 918
+    .line 919
     :cond_1
     invoke-virtual {v5, v6}, Landroid/graphics/Rect;->union(Landroid/graphics/Rect;)V
 
-    .line 919
+    .line 920
     invoke-super {p0}, Landroid/graphics/drawable/LayerDrawable;->getDirtyBounds()Landroid/graphics/Rect;
 
     move-result-object v9
 
     invoke-virtual {v5, v9}, Landroid/graphics/Rect;->union(Landroid/graphics/Rect;)V
 
-    .line 922
+    .line 923
     .end local v0    # "N":I
     .end local v1    # "activeRipples":[Landroid/graphics/drawable/RippleForeground;
     .end local v2    # "background":Landroid/graphics/drawable/RippleBackground;
@@ -2110,12 +2103,12 @@
     .param p1, "outRect"    # Landroid/graphics/Rect;
 
     .prologue
-    .line 613
+    .line 614
     iget-object v0, p0, Landroid/graphics/drawable/RippleDrawable;->mHotspotBounds:Landroid/graphics/Rect;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 614
+    .line 615
     return-void
 .end method
 
@@ -2134,18 +2127,18 @@
     .param p1, "outline"    # Landroid/graphics/Outline;
 
     .prologue
-    .line 643
+    .line 644
     iget-object v3, p0, Landroid/graphics/drawable/RippleDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
-    .line 644
+    .line 645
     .local v3, "state":Landroid/graphics/drawable/LayerDrawable$LayerState;
     iget-object v1, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 645
+    .line 646
     .local v1, "children":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget v0, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 646
+    .line 647
     .local v0, "N":I
     const/4 v2, 0x0
 
@@ -2153,7 +2146,7 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 647
+    .line 648
     aget-object v4, v1, v2
 
     iget v4, v4, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mId:I
@@ -2162,25 +2155,25 @@
 
     if-eq v4, v5, :cond_1
 
-    .line 648
+    .line 649
     aget-object v4, v1, v2
 
     iget-object v4, v4, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v4, p1}, Landroid/graphics/drawable/Drawable;->getOutline(Landroid/graphics/Outline;)V
 
-    .line 649
+    .line 650
     invoke-virtual {p1}, Landroid/graphics/Outline;->isEmpty()Z
 
     move-result v4
 
     if-nez v4, :cond_1
 
-    .line 652
+    .line 653
     :cond_0
     return-void
 
-    .line 646
+    .line 647
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
@@ -2253,12 +2246,12 @@
     .locals 1
 
     .prologue
-    .line 675
+    .line 676
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Landroid/graphics/drawable/RippleDrawable;->invalidateSelf(Z)V
 
-    .line 676
+    .line 677
     return-void
 .end method
 
@@ -2267,18 +2260,18 @@
     .param p1, "invalidateMask"    # Z
 
     .prologue
-    .line 679
+    .line 680
     invoke-super {p0}, Landroid/graphics/drawable/LayerDrawable;->invalidateSelf()V
 
-    .line 681
+    .line 682
     if-eqz p1, :cond_0
 
-    .line 683
+    .line 684
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/graphics/drawable/RippleDrawable;->mHasValidMask:Z
 
-    .line 686
+    .line 687
     :cond_0
     return-void
 .end method
@@ -2355,17 +2348,17 @@
     .locals 1
 
     .prologue
-    .line 933
+    .line 934
     invoke-super {p0}, Landroid/graphics/drawable/LayerDrawable;->mutate()Landroid/graphics/drawable/Drawable;
 
-    .line 937
+    .line 938
     iget-object v0, p0, Landroid/graphics/drawable/RippleDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     check-cast v0, Landroid/graphics/drawable/RippleDrawable$RippleState;
 
     iput-object v0, p0, Landroid/graphics/drawable/RippleDrawable;->mState:Landroid/graphics/drawable/RippleDrawable$RippleState;
 
-    .line 940
+    .line 941
     const v0, 0x102002e
 
     invoke-virtual {p0, v0}, Landroid/graphics/drawable/RippleDrawable;->findDrawableByLayerId(I)Landroid/graphics/drawable/Drawable;
@@ -2374,7 +2367,7 @@
 
     iput-object v0, p0, Landroid/graphics/drawable/RippleDrawable;->mMask:Landroid/graphics/drawable/Drawable;
 
-    .line 942
+    .line 943
     return-object p0
 .end method
 

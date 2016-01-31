@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 473
+    .line 462
     iput-object p1, p0, Landroid/graphics/drawable/DrawableContainer$1;->this$0:Landroid/graphics/drawable/DrawableContainer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,18 +40,18 @@
     .locals 2
 
     .prologue
-    .line 475
+    .line 464
     iget-object v0, p0, Landroid/graphics/drawable/DrawableContainer$1;->this$0:Landroid/graphics/drawable/DrawableContainer;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/DrawableContainer;->animate(Z)V
 
-    .line 476
+    .line 465
     iget-object v0, p0, Landroid/graphics/drawable/DrawableContainer$1;->this$0:Landroid/graphics/drawable/DrawableContainer;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/DrawableContainer;->invalidateSelf()V
 
-    .line 477
+    .line 466
     return-void
 .end method

@@ -1611,6 +1611,18 @@
     .line 779
     .local p13, "pendingResults":Ljava/util/List;, "Ljava/util/List<Landroid/app/ResultInfo;>;"
     .local p14, "pendingNewIntents":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/content/ReferrerIntent;>;"
+    sget-object v2, Lcom/motorola/kpi/Kpi6paTop$Tag;->AMS5:Lcom/motorola/kpi/Kpi6paTop$Tag;
+
+    const/4 v3, 0x1
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v4, 0x0
+
+    aput-object p4, v3, v4
+
+    invoke-static {v2, v3}, Lcom/motorola/kpi/Kpi6paTop;->log(Lcom/motorola/kpi/Kpi6paTop$Tag;[Ljava/lang/Object;)V
+
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
@@ -1939,7 +1951,7 @@
 .end method
 
 .method public final schedulePauseActivity(Landroid/os/IBinder;ZZIZ)V
-    .locals 4
+    .locals 5
     .param p1, "token"    # Landroid/os/IBinder;
     .param p2, "finished"    # Z
     .param p3, "userLeaving"    # Z
@@ -1955,6 +1967,14 @@
     const/4 v3, 0x0
 
     const/4 v2, 0x1
+
+    sget-object v1, Lcom/motorola/kpi/Kpi6paTop$Tag;->AMS2:Lcom/motorola/kpi/Kpi6paTop$Tag;
+
+    new-array v4, v2, [Ljava/lang/Object;
+
+    aput-object p1, v4, v3
+
+    invoke-static {v1, v4}, Lcom/motorola/kpi/Kpi6paTop;->log(Lcom/motorola/kpi/Kpi6paTop$Tag;[Ljava/lang/Object;)V
 
     .line 702
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;

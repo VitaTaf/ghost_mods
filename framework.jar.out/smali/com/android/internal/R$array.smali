@@ -73,6 +73,8 @@
 
 .field public static final config_longPressVibePattern:I = 0x107001c
 
+.field public static final config_masterVolumeRamp:I = 0x107000c
+
 .field public static final config_mobile_hotspot_provision_app:I = 0x1070016
 
 .field public static final config_mobile_tcp_buffers:I = 0x107002e

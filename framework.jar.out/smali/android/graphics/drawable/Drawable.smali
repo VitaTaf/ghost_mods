@@ -1485,26 +1485,6 @@
     return-object v0
 .end method
 
-.method public getDither()Z
-    .locals 1
-
-    .prologue
-    .line 282
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public getFilterBitmap()Z
-    .locals 1
-
-    .prologue
-    .line 298
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
 .method public getHotspotBounds(Landroid/graphics/Rect;)V
     .locals 1
     .param p1, "outRect"    # Landroid/graphics/Rect;
@@ -1862,17 +1842,6 @@
     return-void
 .end method
 
-.method public onLayoutDirectionChange(I)Z
-    .locals 1
-    .param p1, "layoutDirection"    # I
-
-    .prologue
-    .line 460
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
 .method protected onLevelChange(I)Z
     .locals 1
     .param p1, "level"    # I
@@ -2109,32 +2078,24 @@
     return-void
 .end method
 
-.method public final setLayoutDirection(I)Z
+.method public setLayoutDirection(I)V
     .locals 1
     .param p1, "layoutDirection"    # I
 
     .prologue
-    .line 444
-    iget v0, p0, Landroid/graphics/drawable/Drawable;->mLayoutDirection:I
-
-    if-eq v0, p1, :cond_0
-
-    .line 445
-    iput p1, p0, Landroid/graphics/drawable/Drawable;->mLayoutDirection:I
-
-    .line 446
-    invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->onLayoutDirectionChange(I)Z
+    .line 428
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getLayoutDirection()I
 
     move-result v0
 
-    .line 448
-    :goto_0
-    return v0
+    if-eq v0, p1, :cond_0
 
+    .line 429
+    iput p1, p0, Landroid/graphics/drawable/Drawable;->mLayoutDirection:I
+
+    .line 431
     :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return-void
 .end method
 
 .method public final setLevel(I)Z

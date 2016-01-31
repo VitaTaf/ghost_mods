@@ -155,9 +155,15 @@
 
 .field public static final ic_audio_alarm_mute:I = 0x1080313
 
+.field public static final ic_audio_bt:I = 0x1080314
+
+.field public static final ic_audio_bt_mute:I = 0x1080316
+
 .field public static final ic_audio_notification:I = 0x1080318
 
 .field public static final ic_audio_notification_mute:I = 0x108031a
+
+.field public static final ic_audio_phone:I = 0x108031c
 
 .field public static final ic_audio_ring_notif:I = 0x108031e
 
