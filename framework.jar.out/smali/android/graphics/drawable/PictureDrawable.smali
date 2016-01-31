@@ -141,22 +141,6 @@
     return-void
 .end method
 
-.method public setDither(Z)V
-    .locals 0
-    .param p1, "dither"    # Z
-
-    .prologue
-    return-void
-.end method
-
-.method public setFilterBitmap(Z)V
-    .locals 0
-    .param p1, "filter"    # Z
-
-    .prologue
-    return-void
-.end method
-
 .method public setPicture(Landroid/graphics/Picture;)V
     .locals 0
     .param p1, "picture"    # Landroid/graphics/Picture;

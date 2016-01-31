@@ -1344,6 +1344,24 @@
     return-object v0
 .end method
 
+.method public getDither()Z
+    .locals 1
+
+    .prologue
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public getFilterBitmap()Z
+    .locals 1
+
+    .prologue
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
 .method public getHotspotBounds(Landroid/graphics/Rect;)V
     .locals 1
     .param p1, "outRect"    # Landroid/graphics/Rect;

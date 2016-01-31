@@ -544,6 +544,21 @@
     return-object v0
 .end method
 
+.method public getDither()Z
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Landroid/graphics/drawable/ShapeDrawable;->mShapeState:Landroid/graphics/drawable/ShapeDrawable$ShapeState;
+
+    iget-object v0, v0, Landroid/graphics/drawable/ShapeDrawable$ShapeState;->mPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v0}, Landroid/graphics/Paint;->isDither()Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public getIntrinsicHeight()I
     .locals 1
 

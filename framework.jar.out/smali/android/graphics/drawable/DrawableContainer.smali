@@ -566,6 +566,17 @@
     return v0
 .end method
 
+.method public getDither()Z
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Landroid/graphics/drawable/DrawableContainer;->mDrawableContainerState:Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;
+
+    iget-boolean v0, v0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mDither:Z
+
+    return v0
+.end method
+
 .method public getHotspotBounds(Landroid/graphics/Rect;)V
     .locals 1
     .param p1, "outRect"    # Landroid/graphics/Rect;
@@ -1467,14 +1478,11 @@
     .param p1, "colorFilter"    # Landroid/graphics/ColorFilter;
 
     .prologue
-    iget-object v1, p0, Landroid/graphics/drawable/DrawableContainer;->mDrawableContainerState:Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;
+    iget-object v0, p0, Landroid/graphics/drawable/DrawableContainer;->mDrawableContainerState:Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;
 
-    if-eqz p1, :cond_1
+    const/4 v1, 0x1
 
-    const/4 v0, 0x1
-
-    :goto_0
-    iput-boolean v0, v1, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mHasColorFilter:Z
+    iput-boolean v1, v0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mHasColorFilter:Z
 
     iget-object v0, p0, Landroid/graphics/drawable/DrawableContainer;->mDrawableContainerState:Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;
 
@@ -1500,11 +1508,6 @@
 
     :cond_0
     return-void
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
 .method protected setConstantState(Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;)V
@@ -1647,7 +1650,7 @@
 
     new-instance v0, Landroid/graphics/Rect;
 
-    invoke-direct {v0, p1, p2, p3, p4}, Landroid/graphics/Rect;-><init>(IIII)V
+    invoke-direct {v0, p1, p2, p4, p3}, Landroid/graphics/Rect;-><init>(IIII)V
 
     iput-object v0, p0, Landroid/graphics/drawable/DrawableContainer;->mHotspotBounds:Landroid/graphics/Rect;
 
@@ -1666,7 +1669,7 @@
     :cond_1
     iget-object v0, p0, Landroid/graphics/drawable/DrawableContainer;->mHotspotBounds:Landroid/graphics/Rect;
 
-    invoke-virtual {v0, p1, p2, p3, p4}, Landroid/graphics/Rect;->set(IIII)V
+    invoke-virtual {v0, p1, p2, p4, p3}, Landroid/graphics/Rect;->set(IIII)V
 
     goto :goto_0
 .end method

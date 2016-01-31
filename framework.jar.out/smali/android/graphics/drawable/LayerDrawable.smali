@@ -1377,6 +1377,8 @@
     move-result v0
 
     .local v0, "index":I
+    invoke-virtual {p0}, Landroid/graphics/drawable/LayerDrawable;->ensurePadding()V
+
     invoke-direct {p0, v0, v1}, Landroid/graphics/drawable/LayerDrawable;->refreshChildPadding(ILandroid/graphics/drawable/LayerDrawable$ChildDrawable;)Z
 
     return v0
@@ -1941,6 +1943,42 @@
 
     :cond_0
     const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public getDither()Z
+    .locals 2
+
+    .prologue
+    iget-object v1, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
+
+    iget-object v0, v1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
+
+    .local v0, "array":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
+    iget-object v1, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
+
+    iget v1, v1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
+
+    if-lez v1, :cond_0
+
+    const/4 v1, 0x0
+
+    aget-object v1, v0, v1
+
+    iget-object v1, v1, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getDither()Z
+
+    move-result v1
+
+    :goto_0
+    return v1
+
+    :cond_0
+    invoke-super {p0}, Landroid/graphics/drawable/Drawable;->getDither()Z
+
+    move-result v1
 
     goto :goto_0
 .end method
