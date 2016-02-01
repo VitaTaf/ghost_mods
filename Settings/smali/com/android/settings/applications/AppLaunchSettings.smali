@@ -84,14 +84,14 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+    new-instance v1, Ljava/util/ArrayList;
 
-    move-result-object v1
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     .local v1, "prefActList":Ljava/util/List;, "Ljava/util/List<Landroid/content/ComponentName;>;"
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+    new-instance v0, Ljava/util/ArrayList;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     .local v0, "intentList":Ljava/util/List;, "Ljava/util/List<Landroid/content/IntentFilter;>;"
     invoke-virtual {p0, v0, v1, p1}, Landroid/content/pm/PackageManager;->getPreferredActivities(Ljava/util/List;Ljava/util/List;Ljava/lang/String;)I
