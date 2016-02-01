@@ -18,30 +18,6 @@
 .field final synthetic this$0:Lcom/android/settings/notification/ZenModeConditionSelection;
 
 
-# direct methods
-.method private constructor <init>(Lcom/android/settings/notification/ZenModeConditionSelection;)V
-    .locals 0
-
-    .prologue
-    iput-object p1, p0, Lcom/android/settings/notification/ZenModeConditionSelection$H;->this$0:Lcom/android/settings/notification/ZenModeConditionSelection;
-
-    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(Lcom/android/settings/notification/ZenModeConditionSelection;Lcom/android/settings/notification/ZenModeConditionSelection$1;)V
-    .locals 0
-    .param p1, "x0"    # Lcom/android/settings/notification/ZenModeConditionSelection;
-    .param p2, "x1"    # Lcom/android/settings/notification/ZenModeConditionSelection$1;
-
-    .prologue
-    invoke-direct {p0, p1}, Lcom/android/settings/notification/ZenModeConditionSelection$H;-><init>(Lcom/android/settings/notification/ZenModeConditionSelection;)V
-
-    return-void
-.end method
-
-
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2

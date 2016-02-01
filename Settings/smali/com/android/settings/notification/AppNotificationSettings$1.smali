@@ -3,12 +3,12 @@
 .source "AppNotificationSettings.java"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/preference/Preference$OnPreferenceChangeListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/settings/notification/AppNotificationSettings;->onActivityCreated(Landroid/os/Bundle;)V
+    value = Lcom/android/settings/notification/AppNotificationSettings;->onCreate(Landroid/os/Bundle;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,13 +20,21 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/settings/notification/AppNotificationSettings;
 
+.field final synthetic val$pkg:Ljava/lang/String;
+
+.field final synthetic val$uid:I
+
 
 # direct methods
-.method constructor <init>(Lcom/android/settings/notification/AppNotificationSettings;)V
+.method constructor <init>(Lcom/android/settings/notification/AppNotificationSettings;Ljava/lang/String;I)V
     .locals 0
 
     .prologue
     iput-object p1, p0, Lcom/android/settings/notification/AppNotificationSettings$1;->this$0:Lcom/android/settings/notification/AppNotificationSettings;
+
+    iput-object p2, p0, Lcom/android/settings/notification/AppNotificationSettings$1;->val$pkg:Ljava/lang/String;
+
+    iput p3, p0, Lcom/android/settings/notification/AppNotificationSettings$1;->val$uid:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,28 +43,34 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 2
-    .param p1, "v"    # Landroid/view/View;
+.method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
+    .locals 4
+    .param p1, "preference"    # Landroid/preference/Preference;
+    .param p2, "newValue"    # Ljava/lang/Object;
 
     .prologue
-    iget-object v0, p0, Lcom/android/settings/notification/AppNotificationSettings$1;->this$0:Lcom/android/settings/notification/AppNotificationSettings;
+    check-cast p2, Ljava/lang/Boolean;
 
-    # getter for: Lcom/android/settings/notification/AppNotificationSettings;->mContext:Landroid/content/Context;
-    invoke-static {v0}, Lcom/android/settings/notification/AppNotificationSettings;->access$100(Lcom/android/settings/notification/AppNotificationSettings;)Landroid/content/Context;
+    .end local p2    # "newValue":Ljava/lang/Object;
+    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result-object v0
+    move-result v0
 
+    .local v0, "block":Z
     iget-object v1, p0, Lcom/android/settings/notification/AppNotificationSettings$1;->this$0:Lcom/android/settings/notification/AppNotificationSettings;
 
-    # getter for: Lcom/android/settings/notification/AppNotificationSettings;->mAppRow:Lcom/android/settings/notification/NotificationAppList$AppRow;
-    invoke-static {v1}, Lcom/android/settings/notification/AppNotificationSettings;->access$000(Lcom/android/settings/notification/AppNotificationSettings;)Lcom/android/settings/notification/NotificationAppList$AppRow;
+    # getter for: Lcom/android/settings/notification/AppNotificationSettings;->mBackend:Lcom/android/settings/notification/NotificationAppList$Backend;
+    invoke-static {v1}, Lcom/android/settings/notification/AppNotificationSettings;->access$000(Lcom/android/settings/notification/AppNotificationSettings;)Lcom/android/settings/notification/NotificationAppList$Backend;
 
     move-result-object v1
 
-    iget-object v1, v1, Lcom/android/settings/notification/NotificationAppList$AppRow;->settingsIntent:Landroid/content/Intent;
+    iget-object v2, p0, Lcom/android/settings/notification/AppNotificationSettings$1;->val$pkg:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    iget v3, p0, Lcom/android/settings/notification/AppNotificationSettings$1;->val$uid:I
 
-    return-void
+    invoke-virtual {v1, v2, v3, v0}, Lcom/android/settings/notification/NotificationAppList$Backend;->setNotificationsBanned(Ljava/lang/String;IZ)Z
+
+    move-result v1
+
+    return v1
 .end method

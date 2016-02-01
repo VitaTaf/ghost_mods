@@ -1,11 +1,14 @@
 .class Lcom/android/settings/applications/InstalledAppDetails$1;
-.super Landroid/os/Handler;
+.super Ljava/lang/Object;
 .source "InstalledAppDetails.java"
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/settings/applications/InstalledAppDetails;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/settings/applications/InstalledAppDetails;->createDialog(II)Landroid/app/AlertDialog;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,83 +28,46 @@
     .prologue
     iput-object p1, p0, Lcom/android/settings/applications/InstalledAppDetails$1;->this$0:Lcom/android/settings/applications/InstalledAppDetails;
 
-    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public handleMessage(Landroid/os/Message;)V
-    .locals 2
-    .param p1, "msg"    # Landroid/os/Message;
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .locals 4
+    .param p1, "dialog"    # Landroid/content/DialogInterface;
+    .param p2, "which"    # I
 
     .prologue
+    new-instance v1, Lcom/android/settings/applications/InstalledAppDetails$DisableChanger;
+
     iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$1;->this$0:Lcom/android/settings/applications/InstalledAppDetails;
 
-    invoke-virtual {v0}, Lcom/android/settings/applications/InstalledAppDetails;->getView()Landroid/view/View;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails$1;->this$0:Lcom/android/settings/applications/InstalledAppDetails;
 
-    move-result-object v0
+    iget-object v2, v2, Lcom/android/settings/applications/InstalledAppDetails;->mAppEntry:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    if-nez v0, :cond_0
+    iget-object v2, v2, Lcom/android/settings/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
 
-    :goto_0
+    const/4 v3, 0x3
+
+    invoke-direct {v1, v0, v2, v3}, Lcom/android/settings/applications/InstalledAppDetails$DisableChanger;-><init>(Lcom/android/settings/applications/InstalledAppDetails;Landroid/content/pm/ApplicationInfo;I)V
+
+    const/4 v0, 0x1
+
+    new-array v2, v0, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    const/4 v0, 0x0
+
+    check-cast v0, Ljava/lang/Object;
+
+    aput-object v0, v2, v3
+
+    invoke-virtual {v1, v2}, Lcom/android/settings/applications/InstalledAppDetails$DisableChanger;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+
     return-void
-
-    :cond_0
-    iget v0, p1, Landroid/os/Message;->what:I
-
-    packed-switch v0, :pswitch_data_0
-
-    :pswitch_0
-    goto :goto_0
-
-    :pswitch_1
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$1;->this$0:Lcom/android/settings/applications/InstalledAppDetails;
-
-    # invokes: Lcom/android/settings/applications/InstalledAppDetails;->processClearMsg(Landroid/os/Message;)V
-    invoke-static {v0, p1}, Lcom/android/settings/applications/InstalledAppDetails;->access$000(Lcom/android/settings/applications/InstalledAppDetails;Landroid/os/Message;)V
-
-    goto :goto_0
-
-    :pswitch_2
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$1;->this$0:Lcom/android/settings/applications/InstalledAppDetails;
-
-    # getter for: Lcom/android/settings/applications/InstalledAppDetails;->mState:Lcom/android/settings/applications/ApplicationsState;
-    invoke-static {v0}, Lcom/android/settings/applications/InstalledAppDetails;->access$200(Lcom/android/settings/applications/InstalledAppDetails;)Lcom/android/settings/applications/ApplicationsState;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails$1;->this$0:Lcom/android/settings/applications/InstalledAppDetails;
-
-    # getter for: Lcom/android/settings/applications/InstalledAppDetails;->mAppEntry:Lcom/android/settings/applications/ApplicationsState$AppEntry;
-    invoke-static {v1}, Lcom/android/settings/applications/InstalledAppDetails;->access$100(Lcom/android/settings/applications/InstalledAppDetails;)Lcom/android/settings/applications/ApplicationsState$AppEntry;
-
-    move-result-object v1
-
-    iget-object v1, v1, Lcom/android/settings/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
-
-    iget-object v1, v1, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lcom/android/settings/applications/ApplicationsState;->requestSize(Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :pswitch_3
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$1;->this$0:Lcom/android/settings/applications/InstalledAppDetails;
-
-    # invokes: Lcom/android/settings/applications/InstalledAppDetails;->processMoveMsg(Landroid/os/Message;)V
-    invoke-static {v0, p1}, Lcom/android/settings/applications/InstalledAppDetails;->access$300(Lcom/android/settings/applications/InstalledAppDetails;Landroid/os/Message;)V
-
-    goto :goto_0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_1
-        :pswitch_0
-        :pswitch_2
-        :pswitch_3
-    .end packed-switch
 .end method

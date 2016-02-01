@@ -53,8 +53,8 @@
     <dimen name="notification_app_icon_size">64.0dip</dimen>
     <dimen name="notification_app_icon_badge_size">20.0dip</dimen>
     <dimen name="notification_app_icon_badge_margin">4.0dip</dimen>
-    <dimen name="zen_downtime_checkbox_padding">7.0dip</dimen>
-    <dimen name="zen_downtime_margin">17.0dip</dimen>
+    <dimen name="zen_schedule_rule_checkbox_padding">7.0dip</dimen>
+    <dimen name="zen_schedule_day_margin">17.0dip</dimen>
     <dimen name="caption_preview_text_size">48.0dip</dimen>
     <dimen name="actionbar_size">56.0dip</dimen>
     <dimen name="actionbar_contentInsetStart">16.0dip</dimen>

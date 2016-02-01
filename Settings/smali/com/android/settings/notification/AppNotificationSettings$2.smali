@@ -56,11 +56,11 @@
 
     move-result v0
 
-    .local v0, "block":Z
+    .local v0, "priority":Z
     iget-object v1, p0, Lcom/android/settings/notification/AppNotificationSettings$2;->this$0:Lcom/android/settings/notification/AppNotificationSettings;
 
     # getter for: Lcom/android/settings/notification/AppNotificationSettings;->mBackend:Lcom/android/settings/notification/NotificationAppList$Backend;
-    invoke-static {v1}, Lcom/android/settings/notification/AppNotificationSettings;->access$200(Lcom/android/settings/notification/AppNotificationSettings;)Lcom/android/settings/notification/NotificationAppList$Backend;
+    invoke-static {v1}, Lcom/android/settings/notification/AppNotificationSettings;->access$000(Lcom/android/settings/notification/AppNotificationSettings;)Lcom/android/settings/notification/NotificationAppList$Backend;
 
     move-result-object v1
 
@@ -68,7 +68,7 @@
 
     iget v3, p0, Lcom/android/settings/notification/AppNotificationSettings$2;->val$uid:I
 
-    invoke-virtual {v1, v2, v3, v0}, Lcom/android/settings/notification/NotificationAppList$Backend;->setNotificationsBanned(Ljava/lang/String;IZ)Z
+    invoke-virtual {v1, v2, v3, v0}, Lcom/android/settings/notification/NotificationAppList$Backend;->setHighPriority(Ljava/lang/String;IZ)Z
 
     move-result v1
 

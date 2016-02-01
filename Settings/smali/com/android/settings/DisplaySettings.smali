@@ -1179,9 +1179,9 @@
 
     move-result-object v5
 
-    check-cast v5, Lcom/android/settings/notification/DropDownPreference;
+    check-cast v5, Lcom/android/settings/DropDownPreference;
 
-    .local v5, "rotatePreference":Lcom/android/settings/notification/DropDownPreference;
+    .local v5, "rotatePreference":Lcom/android/settings/DropDownPreference;
     const v6, 0x7f090a24
 
     invoke-virtual {v0, v6}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
@@ -1192,7 +1192,7 @@
 
     move-result-object v9
 
-    invoke-virtual {v5, v6, v9}, Lcom/android/settings/notification/DropDownPreference;->addItem(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {v5, v6, v9}, Lcom/android/settings/DropDownPreference;->addItem(Ljava/lang/String;Ljava/lang/Object;)V
 
     invoke-static {v0}, Lcom/android/settings/DisplaySettings;->allowAllRotations(Landroid/content/Context;)Z
 
@@ -1212,7 +1212,7 @@
 
     move-result-object v9
 
-    invoke-virtual {v5, v6, v9}, Lcom/android/settings/notification/DropDownPreference;->addItem(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {v5, v6, v9}, Lcom/android/settings/DropDownPreference;->addItem(Ljava/lang/String;Ljava/lang/Object;)V
 
     invoke-static {v0}, Lcom/android/internal/view/RotationPolicy;->isRotationLocked(Landroid/content/Context;)Z
 
@@ -1223,16 +1223,16 @@
     move v6, v7
 
     :goto_4
-    invoke-virtual {v5, v6}, Lcom/android/settings/notification/DropDownPreference;->setSelectedItem(I)V
+    invoke-virtual {v5, v6}, Lcom/android/settings/DropDownPreference;->setSelectedItem(I)V
 
     new-instance v6, Lcom/android/settings/DisplaySettings$1;
 
     invoke-direct {v6, p0, v0}, Lcom/android/settings/DisplaySettings$1;-><init>(Lcom/android/settings/DisplaySettings;Landroid/app/Activity;)V
 
-    invoke-virtual {v5, v6}, Lcom/android/settings/notification/DropDownPreference;->setCallback(Lcom/android/settings/notification/DropDownPreference$Callback;)V
+    invoke-virtual {v5, v6}, Lcom/android/settings/DropDownPreference;->setCallback(Lcom/android/settings/DropDownPreference$Callback;)V
 
     .end local v4    # "rotateLockedResourceId":I
-    .end local v5    # "rotatePreference":Lcom/android/settings/notification/DropDownPreference;
+    .end local v5    # "rotatePreference":Lcom/android/settings/DropDownPreference;
     :goto_5
     invoke-virtual {p0}, Lcom/android/settings/DisplaySettings;->getActivity()Landroid/app/Activity;
 
@@ -1284,7 +1284,7 @@
 
     goto :goto_2
 
-    .restart local v5    # "rotatePreference":Lcom/android/settings/notification/DropDownPreference;
+    .restart local v5    # "rotatePreference":Lcom/android/settings/DropDownPreference;
     :cond_6
     invoke-static {v0}, Lcom/android/internal/view/RotationPolicy;->getRotationLockOrientation(Landroid/content/Context;)I
 
@@ -1310,7 +1310,7 @@
     goto :goto_4
 
     .end local v4    # "rotateLockedResourceId":I
-    .end local v5    # "rotatePreference":Lcom/android/settings/notification/DropDownPreference;
+    .end local v5    # "rotatePreference":Lcom/android/settings/DropDownPreference;
     :cond_9
     const-string v6, "auto_rotate"
 

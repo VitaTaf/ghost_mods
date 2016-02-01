@@ -3,7 +3,7 @@
 .source "NotificationSettings.java"
 
 # interfaces
-.implements Lcom/android/settings/notification/DropDownPreference$Callback;
+.implements Lcom/android/settings/DropDownPreference$Callback;
 
 
 # annotations

@@ -50,8 +50,8 @@ Warning: Your device will be locked after %d incorrect attempt."</item>
         <item quantity="other">%d seconds</item>
         <item quantity="one">1 second</item>
     </plurals>
-    <plurals name="Nminutes_description">
-        <item quantity="other">%d minutes</item>
-        <item quantity="one">1 minute</item>
+    <plurals name="permissions_summary">
+        <item quantity="other">%d permissions granted</item>
+        <item quantity="one">%d permission granted</item>
     </plurals>
 </resources>

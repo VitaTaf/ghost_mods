@@ -180,6 +180,8 @@
 
 .field private mSeries:Lcom/android/settings/widget/ChartNetworkSeriesView;
 
+.field private mShowAppImmediatePkg:Ljava/lang/String;
+
 .field private mShowEthernet:Z
 
 .field private mShowWifi:Z
@@ -995,18 +997,23 @@
     .locals 3
 
     .prologue
+    iget-object v1, p0, Lcom/android/settings/DataUsageSummary;->mShowAppImmediatePkg:Ljava/lang/String;
+
+    if-eqz v1, :cond_1
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
     iget-object v1, p0, Lcom/android/settings/DataUsageSummary;->mChart:Lcom/android/settings/widget/ChartDataUsageView;
 
     invoke-virtual {v1}, Lcom/android/settings/widget/ChartDataUsageView;->getLayoutTransition()Landroid/animation/LayoutTransition;
 
     move-result-object v1
 
-    if-eqz v1, :cond_0
+    if-nez v1, :cond_0
 
-    :goto_0
-    return-void
-
-    :cond_0
     iget-object v1, p0, Lcom/android/settings/DataUsageSummary;->mTabsContainer:Landroid/view/ViewGroup;
 
     invoke-static {}, Lcom/android/settings/DataUsageSummary;->buildLayoutTransition()Landroid/animation/LayoutTransition;
@@ -2384,6 +2391,136 @@
     const-string v2, "Receiver is not registered."
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_0
+.end method
+
+.method private showRequestedAppIfNeeded()V
+    .locals 9
+
+    .prologue
+    const/4 v8, 0x1
+
+    iget-object v4, p0, Lcom/android/settings/DataUsageSummary;->mShowAppImmediatePkg:Ljava/lang/String;
+
+    if-nez v4, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    :try_start_0
+    invoke-virtual {p0}, Lcom/android/settings/DataUsageSummary;->getActivity()Landroid/app/Activity;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v4
+
+    iget-object v5, p0, Lcom/android/settings/DataUsageSummary;->mShowAppImmediatePkg:Ljava/lang/String;
+
+    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
+
+    move-result v6
+
+    invoke-virtual {v4, v5, v6}, Landroid/content/pm/PackageManager;->getPackageUid(Ljava/lang/String;I)I
+
+    move-result v3
+
+    .local v3, "uid":I
+    new-instance v0, Lcom/android/settings/DataUsageSummary$AppItem;
+
+    invoke-direct {v0, v3}, Lcom/android/settings/DataUsageSummary$AppItem;-><init>(I)V
+
+    .local v0, "app":Lcom/android/settings/DataUsageSummary$AppItem;
+    invoke-virtual {v0, v3}, Lcom/android/settings/DataUsageSummary$AppItem;->addUid(I)V
+
+    iget-object v4, p0, Lcom/android/settings/DataUsageSummary;->mUidDetailProvider:Lcom/android/settings/net/UidDetailProvider;
+
+    iget v5, v0, Lcom/android/settings/DataUsageSummary$AppItem;->key:I
+
+    const/4 v6, 0x1
+
+    invoke-virtual {v4, v5, v6}, Lcom/android/settings/net/UidDetailProvider;->getUidDetail(IZ)Lcom/android/settings/net/UidDetail;
+
+    move-result-object v1
+
+    .local v1, "detail":Lcom/android/settings/net/UidDetail;
+    invoke-virtual {p0}, Lcom/android/settings/DataUsageSummary;->getActivity()Landroid/app/Activity;
+
+    move-result-object v4
+
+    iget-object v5, v1, Lcom/android/settings/net/UidDetail;->icon:Landroid/graphics/drawable/Drawable;
+
+    iget-object v6, v1, Lcom/android/settings/net/UidDetail;->label:Ljava/lang/CharSequence;
+
+    const/4 v7, 0x0
+
+    invoke-static {v4, v5, v6, v7}, Lcom/android/settings/AppHeader;->createAppHeader(Landroid/app/Activity;Landroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;Landroid/content/Intent;)V
+
+    iget-object v4, v1, Lcom/android/settings/net/UidDetail;->label:Ljava/lang/CharSequence;
+
+    const/4 v5, 0x0
+
+    invoke-static {p0, v0, v4, v5}, Lcom/android/settings/DataUsageSummary$AppDetailsFragment;->show(Lcom/android/settings/DataUsageSummary;Lcom/android/settings/DataUsageSummary$AppItem;Ljava/lang/CharSequence;Z)V
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    .end local v0    # "app":Lcom/android/settings/DataUsageSummary$AppItem;
+    .end local v1    # "detail":Lcom/android/settings/net/UidDetail;
+    .end local v3    # "uid":I
+    :catch_0
+    move-exception v2
+
+    .local v2, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
+    const-string v4, "DataUsage"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "Could not find "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    iget-object v6, p0, Lcom/android/settings/DataUsageSummary;->mShowAppImmediatePkg:Ljava/lang/String;
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    invoke-virtual {p0}, Lcom/android/settings/DataUsageSummary;->getActivity()Landroid/app/Activity;
+
+    move-result-object v4
+
+    const v5, 0x7f090ab0
+
+    invoke-virtual {p0, v5}, Lcom/android/settings/DataUsageSummary;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5, v8}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/widget/Toast;->show()V
+
+    invoke-virtual {p0}, Lcom/android/settings/DataUsageSummary;->getActivity()Landroid/app/Activity;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/app/Activity;->finish()V
 
     goto :goto_0
 .end method
@@ -4680,202 +4817,225 @@
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
-    .locals 6
+    .locals 7
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
     invoke-super {p0, p1}, Lcom/android/settings/HighlightingFragment;->onCreate(Landroid/os/Bundle;)V
 
     invoke-virtual {p0}, Lcom/android/settings/DataUsageSummary;->getActivity()Landroid/app/Activity;
 
-    move-result-object v0
+    move-result-object v1
 
-    .local v0, "context":Landroid/content/Context;
-    const-string v2, "network_management"
+    .local v1, "context":Landroid/content/Context;
+    const-string v3, "network_management"
 
-    invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+    invoke-static {v3}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-static {v2}, Landroid/os/INetworkManagementService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/INetworkManagementService;
+    invoke-static {v3}, Landroid/os/INetworkManagementService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/INetworkManagementService;
 
-    move-result-object v2
+    move-result-object v3
 
-    iput-object v2, p0, Lcom/android/settings/DataUsageSummary;->mNetworkService:Landroid/os/INetworkManagementService;
+    iput-object v3, p0, Lcom/android/settings/DataUsageSummary;->mNetworkService:Landroid/os/INetworkManagementService;
 
-    const-string v2, "netstats"
+    const-string v3, "netstats"
 
-    invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+    invoke-static {v3}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-static {v2}, Landroid/net/INetworkStatsService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/net/INetworkStatsService;
+    invoke-static {v3}, Landroid/net/INetworkStatsService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/net/INetworkStatsService;
 
-    move-result-object v2
+    move-result-object v3
 
-    iput-object v2, p0, Lcom/android/settings/DataUsageSummary;->mStatsService:Landroid/net/INetworkStatsService;
+    iput-object v3, p0, Lcom/android/settings/DataUsageSummary;->mStatsService:Landroid/net/INetworkStatsService;
 
-    invoke-static {v0}, Landroid/net/NetworkPolicyManager;->from(Landroid/content/Context;)Landroid/net/NetworkPolicyManager;
+    invoke-static {v1}, Landroid/net/NetworkPolicyManager;->from(Landroid/content/Context;)Landroid/net/NetworkPolicyManager;
 
-    move-result-object v2
+    move-result-object v3
 
-    iput-object v2, p0, Lcom/android/settings/DataUsageSummary;->mPolicyManager:Landroid/net/NetworkPolicyManager;
+    iput-object v3, p0, Lcom/android/settings/DataUsageSummary;->mPolicyManager:Landroid/net/NetworkPolicyManager;
 
-    invoke-static {v0}, Landroid/telephony/TelephonyManager;->from(Landroid/content/Context;)Landroid/telephony/TelephonyManager;
+    invoke-static {v1}, Landroid/telephony/TelephonyManager;->from(Landroid/content/Context;)Landroid/telephony/TelephonyManager;
 
-    move-result-object v2
+    move-result-object v3
 
-    iput-object v2, p0, Lcom/android/settings/DataUsageSummary;->mTelephonyManager:Landroid/telephony/TelephonyManager;
+    iput-object v3, p0, Lcom/android/settings/DataUsageSummary;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
-    invoke-static {v0}, Landroid/telephony/SubscriptionManager;->from(Landroid/content/Context;)Landroid/telephony/SubscriptionManager;
+    invoke-static {v1}, Landroid/telephony/SubscriptionManager;->from(Landroid/content/Context;)Landroid/telephony/SubscriptionManager;
 
-    move-result-object v2
+    move-result-object v3
 
-    iput-object v2, p0, Lcom/android/settings/DataUsageSummary;->mSubscriptionManager:Landroid/telephony/SubscriptionManager;
+    iput-object v3, p0, Lcom/android/settings/DataUsageSummary;->mSubscriptionManager:Landroid/telephony/SubscriptionManager;
 
     invoke-virtual {p0}, Lcom/android/settings/DataUsageSummary;->getActivity()Landroid/app/Activity;
 
-    move-result-object v2
+    move-result-object v3
 
-    const-string v3, "data_usage"
+    const-string v4, "data_usage"
 
-    invoke-virtual {v2, v3, v4}, Landroid/app/Activity;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    invoke-virtual {v3, v4, v5}, Landroid/app/Activity;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
-    move-result-object v2
+    move-result-object v3
 
-    iput-object v2, p0, Lcom/android/settings/DataUsageSummary;->mPrefs:Landroid/content/SharedPreferences;
+    iput-object v3, p0, Lcom/android/settings/DataUsageSummary;->mPrefs:Landroid/content/SharedPreferences;
 
-    new-instance v2, Lcom/android/settings/net/NetworkPolicyEditor;
+    new-instance v3, Lcom/android/settings/net/NetworkPolicyEditor;
 
-    iget-object v3, p0, Lcom/android/settings/DataUsageSummary;->mPolicyManager:Landroid/net/NetworkPolicyManager;
+    iget-object v4, p0, Lcom/android/settings/DataUsageSummary;->mPolicyManager:Landroid/net/NetworkPolicyManager;
 
-    invoke-direct {v2, v3}, Lcom/android/settings/net/NetworkPolicyEditor;-><init>(Landroid/net/NetworkPolicyManager;)V
+    invoke-direct {v3, v4}, Lcom/android/settings/net/NetworkPolicyEditor;-><init>(Landroid/net/NetworkPolicyManager;)V
 
-    iput-object v2, p0, Lcom/android/settings/DataUsageSummary;->mPolicyEditor:Lcom/android/settings/net/NetworkPolicyEditor;
+    iput-object v3, p0, Lcom/android/settings/DataUsageSummary;->mPolicyEditor:Lcom/android/settings/net/NetworkPolicyEditor;
 
-    iget-object v2, p0, Lcom/android/settings/DataUsageSummary;->mPolicyEditor:Lcom/android/settings/net/NetworkPolicyEditor;
+    iget-object v3, p0, Lcom/android/settings/DataUsageSummary;->mPolicyEditor:Lcom/android/settings/net/NetworkPolicyEditor;
 
-    invoke-virtual {v2}, Lcom/android/settings/net/NetworkPolicyEditor;->read()V
+    invoke-virtual {v3}, Lcom/android/settings/net/NetworkPolicyEditor;->read()V
 
-    iget-object v2, p0, Lcom/android/settings/DataUsageSummary;->mSubscriptionManager:Landroid/telephony/SubscriptionManager;
+    iget-object v3, p0, Lcom/android/settings/DataUsageSummary;->mSubscriptionManager:Landroid/telephony/SubscriptionManager;
 
-    invoke-virtual {v2}, Landroid/telephony/SubscriptionManager;->getActiveSubscriptionInfoList()Ljava/util/List;
+    invoke-virtual {v3}, Landroid/telephony/SubscriptionManager;->getActiveSubscriptionInfoList()Ljava/util/List;
 
-    move-result-object v2
+    move-result-object v3
 
-    iput-object v2, p0, Lcom/android/settings/DataUsageSummary;->mSubInfoList:Ljava/util/List;
+    iput-object v3, p0, Lcom/android/settings/DataUsageSummary;->mSubInfoList:Ljava/util/List;
 
-    iget-object v2, p0, Lcom/android/settings/DataUsageSummary;->mSubInfoList:Ljava/util/List;
+    iget-object v3, p0, Lcom/android/settings/DataUsageSummary;->mSubInfoList:Ljava/util/List;
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DataUsageSummary;->initMobileTabTag(Ljava/util/List;)Ljava/util/Map;
+    invoke-direct {p0, v3}, Lcom/android/settings/DataUsageSummary;->initMobileTabTag(Ljava/util/List;)Ljava/util/Map;
 
-    move-result-object v2
+    move-result-object v3
 
-    iput-object v2, p0, Lcom/android/settings/DataUsageSummary;->mMobileTagMap:Ljava/util/Map;
+    iput-object v3, p0, Lcom/android/settings/DataUsageSummary;->mMobileTagMap:Ljava/util/Map;
 
     :try_start_0
-    iget-object v2, p0, Lcom/android/settings/DataUsageSummary;->mNetworkService:Landroid/os/INetworkManagementService;
+    iget-object v3, p0, Lcom/android/settings/DataUsageSummary;->mNetworkService:Landroid/os/INetworkManagementService;
 
-    invoke-interface {v2}, Landroid/os/INetworkManagementService;->isBandwidthControlEnabled()Z
+    invoke-interface {v3}, Landroid/os/INetworkManagementService;->isBandwidthControlEnabled()Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_0
 
-    const-string v2, "DataUsage"
+    const-string v3, "DataUsage"
 
-    const-string v3, "No bandwidth control; leaving"
+    const-string v4, "No bandwidth control; leaving"
 
-    invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     invoke-virtual {p0}, Lcom/android/settings/DataUsageSummary;->getActivity()Landroid/app/Activity;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2}, Landroid/app/Activity;->finish()V
+    invoke-virtual {v3}, Landroid/app/Activity;->finish()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :goto_0
-    return-void
-
-    :catch_0
-    move-exception v1
-
-    .local v1, "e":Landroid/os/RemoteException;
-    const-string v2, "DataUsage"
-
-    const-string v3, "No bandwidth control; leaving"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    invoke-virtual {p0}, Lcom/android/settings/DataUsageSummary;->getActivity()Landroid/app/Activity;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/app/Activity;->finish()V
-
-    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_0
+    :goto_0
     :try_start_1
-    iget-object v2, p0, Lcom/android/settings/DataUsageSummary;->mStatsService:Landroid/net/INetworkStatsService;
+    iget-object v3, p0, Lcom/android/settings/DataUsageSummary;->mStatsService:Landroid/net/INetworkStatsService;
 
-    invoke-interface {v2}, Landroid/net/INetworkStatsService;->openSession()Landroid/net/INetworkStatsSession;
+    invoke-interface {v3}, Landroid/net/INetworkStatsService;->openSession()Landroid/net/INetworkStatsSession;
 
-    move-result-object v2
+    move-result-object v3
 
-    iput-object v2, p0, Lcom/android/settings/DataUsageSummary;->mStatsSession:Landroid/net/INetworkStatsSession;
+    iput-object v3, p0, Lcom/android/settings/DataUsageSummary;->mStatsSession:Landroid/net/INetworkStatsSession;
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
 
-    iget-object v2, p0, Lcom/android/settings/DataUsageSummary;->mPrefs:Landroid/content/SharedPreferences;
+    iget-object v3, p0, Lcom/android/settings/DataUsageSummary;->mPrefs:Landroid/content/SharedPreferences;
 
-    const-string v3, "show_wifi"
+    const-string v4, "show_wifi"
 
-    invoke-interface {v2, v3, v4}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {v3, v4, v5}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
-    move-result v2
+    move-result v3
 
-    iput-boolean v2, p0, Lcom/android/settings/DataUsageSummary;->mShowWifi:Z
+    iput-boolean v3, p0, Lcom/android/settings/DataUsageSummary;->mShowWifi:Z
 
-    iget-object v2, p0, Lcom/android/settings/DataUsageSummary;->mPrefs:Landroid/content/SharedPreferences;
+    iget-object v3, p0, Lcom/android/settings/DataUsageSummary;->mPrefs:Landroid/content/SharedPreferences;
 
-    const-string v3, "show_ethernet"
+    const-string v4, "show_ethernet"
 
-    invoke-interface {v2, v3, v4}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {v3, v4, v5}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
-    move-result v2
+    move-result v3
 
-    iput-boolean v2, p0, Lcom/android/settings/DataUsageSummary;->mShowEthernet:Z
+    iput-boolean v3, p0, Lcom/android/settings/DataUsageSummary;->mShowEthernet:Z
 
-    invoke-static {v0}, Lcom/android/settings/DataUsageSummary;->hasReadyMobileRadio(Landroid/content/Context;)Z
+    invoke-static {v1}, Lcom/android/settings/DataUsageSummary;->hasReadyMobileRadio(Landroid/content/Context;)Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_1
+    if-nez v3, :cond_1
 
-    iput-boolean v5, p0, Lcom/android/settings/DataUsageSummary;->mShowWifi:Z
+    iput-boolean v6, p0, Lcom/android/settings/DataUsageSummary;->mShowWifi:Z
 
-    iput-boolean v5, p0, Lcom/android/settings/DataUsageSummary;->mShowEthernet:Z
+    iput-boolean v6, p0, Lcom/android/settings/DataUsageSummary;->mShowEthernet:Z
 
     :cond_1
-    invoke-virtual {p0, v5}, Lcom/android/settings/DataUsageSummary;->setHasOptionsMenu(Z)V
+    new-instance v3, Lcom/android/settings/net/UidDetailProvider;
+
+    invoke-direct {v3, v1}, Lcom/android/settings/net/UidDetailProvider;-><init>(Landroid/content/Context;)V
+
+    iput-object v3, p0, Lcom/android/settings/DataUsageSummary;->mUidDetailProvider:Lcom/android/settings/net/UidDetailProvider;
+
+    invoke-virtual {p0}, Lcom/android/settings/DataUsageSummary;->getArguments()Landroid/os/Bundle;
+
+    move-result-object v0
+
+    .local v0, "arguments":Landroid/os/Bundle;
+    if-eqz v0, :cond_2
+
+    const-string v3, "showAppImmediatePkg"
+
+    invoke-virtual {v0, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/settings/DataUsageSummary;->mShowAppImmediatePkg:Ljava/lang/String;
+
+    :cond_2
+    invoke-virtual {p0, v6}, Lcom/android/settings/DataUsageSummary;->setHasOptionsMenu(Z)V
+
+    return-void
+
+    .end local v0    # "arguments":Landroid/os/Bundle;
+    :catch_0
+    move-exception v2
+
+    .local v2, "e":Landroid/os/RemoteException;
+    const-string v3, "DataUsage"
+
+    const-string v4, "No bandwidth control; leaving"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-virtual {p0}, Lcom/android/settings/DataUsageSummary;->getActivity()Landroid/app/Activity;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/app/Activity;->finish()V
 
     goto :goto_0
 
+    .end local v2    # "e":Landroid/os/RemoteException;
     :catch_1
-    move-exception v1
+    move-exception v2
 
-    .restart local v1    # "e":Landroid/os/RemoteException;
-    new-instance v2, Ljava/lang/RuntimeException;
+    .restart local v2    # "e":Landroid/os/RemoteException;
+    new-instance v3, Ljava/lang/RuntimeException;
 
-    invoke-direct {v2, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {v3, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
-    throw v2
+    throw v3
 .end method
 
 .method public onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
@@ -4918,12 +5078,6 @@
     move-result-object v3
 
     .local v3, "view":Landroid/view/View;
-    new-instance v4, Lcom/android/settings/net/UidDetailProvider;
-
-    invoke-direct {v4, v0}, Lcom/android/settings/net/UidDetailProvider;-><init>(Landroid/content/Context;)V
-
-    iput-object v4, p0, Lcom/android/settings/DataUsageSummary;->mUidDetailProvider:Lcom/android/settings/net/UidDetailProvider;
-
     const v4, 0x1020012
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -5477,6 +5631,8 @@
     iget-object v5, p0, Lcom/android/settings/DataUsageSummary;->mAdapter:Lcom/android/settings/DataUsageSummary$DataUsageAdapter;
 
     invoke-virtual {v4, v5}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
+
+    invoke-direct {p0}, Lcom/android/settings/DataUsageSummary;->showRequestedAppIfNeeded()V
 
     return-object v3
 

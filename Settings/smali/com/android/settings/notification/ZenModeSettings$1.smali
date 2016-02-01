@@ -1,5 +1,5 @@
 .class final Lcom/android/settings/notification/ZenModeSettings$1;
-.super Lcom/android/settings/notification/ZenModeSettings$SettingPrefWithCallback;
+.super Lcom/android/settings/search/BaseSearchIndexProvider;
 .source "ZenModeSettings.java"
 
 
@@ -15,62 +15,134 @@
 
 
 # direct methods
-.method varargs constructor <init>(ILjava/lang/String;Ljava/lang/String;I[I)V
+.method constructor <init>()V
     .locals 0
-    .param p1, "x0"    # I
-    .param p2, "x1"    # Ljava/lang/String;
-    .param p3, "x2"    # Ljava/lang/String;
-    .param p4, "x3"    # I
-    .param p5, "x4"    # [I
 
     .prologue
-    invoke-direct/range {p0 .. p5}, Lcom/android/settings/notification/ZenModeSettings$SettingPrefWithCallback;-><init>(ILjava/lang/String;Ljava/lang/String;I[I)V
+    invoke-direct {p0}, Lcom/android/settings/search/BaseSearchIndexProvider;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected getCaption(Landroid/content/res/Resources;I)Ljava/lang/String;
-    .locals 1
-    .param p1, "res"    # Landroid/content/res/Resources;
-    .param p2, "value"    # I
+.method public getNonIndexableKeys(Landroid/content/Context;)Ljava/util/List;
+    .locals 2
+    .param p1, "context"    # Landroid/content/Context;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Context;",
+            ")",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
 
     .prologue
-    packed-switch p2, :pswitch_data_0
+    new-instance v0, Ljava/util/ArrayList;
 
-    const v0, 0x7f0909c8
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    .local v0, "rt":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
+    invoke-static {p1}, Lcom/android/settings/notification/ZenModeSettingsBase;->isScheduleSupported(Landroid/content/Context;)Z
 
-    move-result-object v0
+    move-result v1
 
-    :goto_0
+    if-nez v1, :cond_0
+
+    const-string v1, "automation_settings"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :cond_0
     return-object v0
+.end method
 
-    :pswitch_0
-    const v0, 0x7f0909ca
+.method public getRawDataToIndex(Landroid/content/Context;Z)Ljava/util/List;
+    .locals 7
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "enabled"    # Z
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Context;",
+            "Z)",
+            "Ljava/util/List",
+            "<",
+            "Lcom/android/settings/search/SearchIndexableRaw;",
+            ">;"
+        }
+    .end annotation
 
-    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    .prologue
+    # invokes: Lcom/android/settings/notification/ZenModeSettings;->allKeyTitles(Landroid/content/Context;)Landroid/util/SparseArray;
+    invoke-static {p1}, Lcom/android/settings/notification/ZenModeSettings;->access$000(Landroid/content/Context;)Landroid/util/SparseArray;
 
-    move-result-object v0
+    move-result-object v3
+
+    .local v3, "keyTitles":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/lang/String;>;"
+    invoke-virtual {v3}, Landroid/util/SparseArray;->size()I
+
+    move-result v0
+
+    .local v0, "N":I
+    new-instance v5, Ljava/util/ArrayList;
+
+    invoke-direct {v5, v0}, Ljava/util/ArrayList;-><init>(I)V
+
+    .local v5, "result":Ljava/util/List;, "Ljava/util/List<Lcom/android/settings/search/SearchIndexableRaw;>;"
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    .local v4, "res":Landroid/content/res/Resources;
+    const/4 v2, 0x0
+
+    .local v2, "i":I
+    :goto_0
+    if-ge v2, v0, :cond_0
+
+    new-instance v1, Lcom/android/settings/search/SearchIndexableRaw;
+
+    invoke-direct {v1, p1}, Lcom/android/settings/search/SearchIndexableRaw;-><init>(Landroid/content/Context;)V
+
+    .local v1, "data":Lcom/android/settings/search/SearchIndexableRaw;
+    invoke-virtual {v3, v2}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Ljava/lang/String;
+
+    iput-object v6, v1, Lcom/android/settings/search/SearchIndexableRaw;->key:Ljava/lang/String;
+
+    invoke-virtual {v3, v2}, Landroid/util/SparseArray;->keyAt(I)I
+
+    move-result v6
+
+    invoke-virtual {v4, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    iput-object v6, v1, Lcom/android/settings/search/SearchIndexableRaw;->title:Ljava/lang/String;
+
+    const v6, 0x7f0909c6
+
+    invoke-virtual {v4, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    iput-object v6, v1, Lcom/android/settings/search/SearchIndexableRaw;->screenTitle:Ljava/lang/String;
+
+    invoke-interface {v5, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    :pswitch_1
-    const v0, 0x7f0909c9
-
-    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    .end local v1    # "data":Lcom/android/settings/search/SearchIndexableRaw;
+    :cond_0
+    return-object v5
 .end method

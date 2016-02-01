@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/application_info_label"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.android.settings.applications.LayoutPreference android:layout="@layout/installed_app_details" android:key="header_view" />
+    <Preference android:title="@string/storage_settings" android:selectable="true" android:key="storage_settings" />
+    <Preference android:title="@string/data_size_label" android:selectable="true" android:key="data_settings" />
+    <Preference android:title="@string/permissions_label" android:selectable="true" android:key="permission_settings" />
+    <Preference android:title="@string/notification_section_header" android:selectable="true" android:key="notification_settings" />
+    <Preference android:title="@string/launch_by_default" android:selectable="true" android:key="preferred_settings" />
+</PreferenceScreen>

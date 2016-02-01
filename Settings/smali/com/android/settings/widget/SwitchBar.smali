@@ -21,6 +21,12 @@
 
 
 # instance fields
+.field private mLabel:Ljava/lang/String;
+
+.field private mSummary:Ljava/lang/String;
+
+.field private final mSummarySpan:Landroid/text/style/TextAppearanceSpan;
+
 .field private mSwitch:Lcom/android/settings/widget/ToggleSwitch;
 
 .field private mSwitchChangeListeners:Ljava/util/ArrayList;
@@ -163,11 +169,29 @@
 
     iput-object v4, p0, Lcom/android/settings/widget/SwitchBar;->mTextView:Landroid/widget/TextView;
 
-    iget-object v4, p0, Lcom/android/settings/widget/SwitchBar;->mTextView:Landroid/widget/TextView;
+    invoke-virtual {p0}, Lcom/android/settings/widget/SwitchBar;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
 
     const v5, 0x7f090a1a
 
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(I)V
+    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    iput-object v4, p0, Lcom/android/settings/widget/SwitchBar;->mLabel:Ljava/lang/String;
+
+    new-instance v4, Landroid/text/style/TextAppearanceSpan;
+
+    iget-object v5, p0, Lcom/android/settings/widget/SwitchBar;->mContext:Landroid/content/Context;
+
+    const v6, 0x7f0a004f
+
+    invoke-direct {v4, v5, v6}, Landroid/text/style/TextAppearanceSpan;-><init>(Landroid/content/Context;I)V
+
+    iput-object v4, p0, Lcom/android/settings/widget/SwitchBar;->mSummarySpan:Landroid/text/style/TextAppearanceSpan;
+
+    invoke-direct {p0}, Lcom/android/settings/widget/SwitchBar;->updateText()V
 
     iget-object v4, p0, Lcom/android/settings/widget/SwitchBar;->mTextView:Landroid/widget/TextView;
 
@@ -219,6 +243,67 @@
     invoke-virtual {p0, v4}, Lcom/android/settings/widget/SwitchBar;->setVisibility(I)V
 
     return-void
+.end method
+
+.method private updateText()V
+    .locals 5
+
+    .prologue
+    iget-object v2, p0, Lcom/android/settings/widget/SwitchBar;->mSummary:Ljava/lang/String;
+
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, p0, Lcom/android/settings/widget/SwitchBar;->mTextView:Landroid/widget/TextView;
+
+    iget-object v3, p0, Lcom/android/settings/widget/SwitchBar;->mLabel:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    new-instance v2, Landroid/text/SpannableStringBuilder;
+
+    iget-object v3, p0, Lcom/android/settings/widget/SwitchBar;->mLabel:Ljava/lang/String;
+
+    invoke-direct {v2, v3}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
+
+    const/16 v3, 0xa
+
+    invoke-virtual {v2, v3}, Landroid/text/SpannableStringBuilder;->append(C)Landroid/text/SpannableStringBuilder;
+
+    move-result-object v0
+
+    .local v0, "ssb":Landroid/text/SpannableStringBuilder;
+    invoke-virtual {v0}, Landroid/text/SpannableStringBuilder;->length()I
+
+    move-result v1
+
+    .local v1, "start":I
+    iget-object v2, p0, Lcom/android/settings/widget/SwitchBar;->mSummary:Ljava/lang/String;
+
+    invoke-virtual {v0, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+
+    iget-object v2, p0, Lcom/android/settings/widget/SwitchBar;->mSummarySpan:Landroid/text/style/TextAppearanceSpan;
+
+    invoke-virtual {v0}, Landroid/text/SpannableStringBuilder;->length()I
+
+    move-result v3
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v0, v2, v1, v3, v4}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+
+    iget-object v2, p0, Lcom/android/settings/widget/SwitchBar;->mTextView:Landroid/widget/TextView;
+
+    invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    goto :goto_0
 .end method
 
 
@@ -568,14 +653,22 @@
     .param p1, "isChecked"    # Z
 
     .prologue
-    iget-object v1, p0, Lcom/android/settings/widget/SwitchBar;->mTextView:Landroid/widget/TextView;
+    invoke-virtual {p0}, Lcom/android/settings/widget/SwitchBar;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
 
     if-eqz p1, :cond_0
 
     const v0, 0x7f090a19
 
     :goto_0
-    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(I)V
+    invoke-virtual {v1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/settings/widget/SwitchBar;->mLabel:Ljava/lang/String;
+
+    invoke-direct {p0}, Lcom/android/settings/widget/SwitchBar;->updateText()V
 
     return-void
 

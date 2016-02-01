@@ -49,6 +49,7 @@
     <public type="drawable" name="dashboard_tile_background" id="0x7f020018" />
     <public type="drawable" name="data_sweep_limit" id="0x7f02001a" />
     <public type="drawable" name="data_sweep_warning" id="0x7f02001c" />
+    <public type="drawable" name="ic_delete" id="0x7f02001e" />
     <public type="drawable" name="data_usage_sweep_background" id="0x7f02001f" />
     <public type="drawable" name="default_preference_background" id="0x7f020020" />
     <public type="drawable" name="empty_icon" id="0x7f020022" />
@@ -278,7 +279,7 @@
     <public type="layout" name="add_account_screen" id="0x7f040003" />
     <public type="layout" name="android_beam" id="0x7f040004" />
     <public type="layout" name="apn_preference_layout" id="0x7f040005" />
-    <public type="layout" name="app_notification_header" id="0x7f040006" />
+    <public type="layout" name="app_cache_settings" id="0x7f040006" />
     <public type="layout" name="app_ops_details" id="0x7f040007" />
     <public type="layout" name="app_ops_details_item" id="0x7f040008" />
     <public type="layout" name="app_ops_item" id="0x7f040009" />
@@ -511,8 +512,14 @@
     <public type="layout" name="wifi_wapi_cert_uninstall" id="0x7f0400ef" />
     <public type="layout" name="wifi_wps_dialog" id="0x7f0400f0" />
     <public type="layout" name="write_wifi_config_to_nfc" id="0x7f0400f1" />
-    <public type="layout" name="zen_downtime_day" id="0x7f0400f2" />
+    <public type="layout" name="app_header" id="0x7f0400f2" />
     <public type="layout" name="notification_app_section" id="0x7f0400f3" />
+    <public type="layout" name="app_preferred_settings" id="0x7f0400f4" />
+    <public type="layout" name="app_storage_settings" id="0x7f0400f5" />
+    <public type="layout" name="permission_settings" id="0x7f0400f6" />
+    <public type="layout" name="single_button_panel" id="0x7f0400f7" />
+    <public type="layout" name="zen_rule_name" id="0x7f0400f8" />
+    <public type="layout" name="zen_schedule_rule_day" id="0x7f0400f9" />
     <public type="layout" name="preference_inputmethod" id="0x7f040086" />
     <public type="layout" name="settings_top_level" id="0x7f0400b6" />
     <public type="layout" name="wifi_settings_for_setup_wizard_xl" id="0x7f0400ea" />
@@ -610,6 +617,11 @@
     <public type="xml" name="wireless_display_dynamic_preference" id="0x7f060057" />
     <public type="xml" name="wireless_settings" id="0x7f060058" />
     <public type="xml" name="zen_mode_settings" id="0x7f060059" />
+    <public type="xml" name="app_storage_settings" id="0x7f06005a" />
+    <public type="xml" name="installed_app_details" id="0x7f06005b" />
+    <public type="xml" name="zen_mode_automation_settings" id="0x7f06005c" />
+    <public type="xml" name="zen_mode_priority_settings" id="0x7f06005d" />
+    <public type="xml" name="zen_mode_schedule_rule_settings" id="0x7f06005e" />
     <public type="raw" name="media_volume" id="0x7f070000" />
     <public type="color" name="setup_wizard_navbar_bg_dark" id="0x7f080000" />
     <public type="color" name="setup_wizard_navbar_bg_light" id="0x7f080001" />
@@ -1046,11 +1058,7 @@
     <public type="string" name="sd_card_settings_label" id="0x7f090177" />
     <public type="string" name="proxy_settings_label" id="0x7f090178" />
     <public type="string" name="cancel" id="0x7f090179" />
-    <public type="string" name="cancel_all_caps" id="0x7f09017a" />
-    <public type="string" name="continue_all_caps" id="0x7f09017b" />
     <public type="string" name="okay" id="0x7f09017c" />
-    <public type="string" name="yes_all_caps" id="0x7f09017d" />
-    <public type="string" name="no_all_caps" id="0x7f09017e" />
     <public type="string" name="forget" id="0x7f09017f" />
     <public type="string" name="settings_label" id="0x7f090180" />
     <public type="string" name="settings_label_launcher" id="0x7f090181" />
@@ -3171,8 +3179,6 @@
     <public type="string" name="ring_volume_option_title" id="0x7f0909c4" />
     <public type="string" name="notification_volume_option_title" id="0x7f0909c5" />
     <public type="string" name="zen_mode_settings_title" id="0x7f0909c6" />
-    <public type="string" name="zen_mode_option_title" id="0x7f0909c7" />
-    <public type="string" name="zen_mode_option_off" id="0x7f0909c8" />
     <public type="string" name="zen_mode_option_important_interruptions" id="0x7f0909c9" />
     <public type="string" name="zen_mode_option_no_interruptions" id="0x7f0909ca" />
     <public type="string" name="ringtone_title" id="0x7f0909cb" />
@@ -3203,11 +3209,6 @@
     <public type="string" name="no_notification_listeners" id="0x7f0909e4" />
     <public type="string" name="notification_listener_security_warning_title" id="0x7f0909e5" />
     <public type="string" name="notification_listener_security_warning_summary" id="0x7f0909e6" />
-    <public type="string" name="manage_condition_providers" id="0x7f0909e7" />
-    <public type="string" name="manage_condition_providers_summary_zero" id="0x7f0909e8" />
-    <public type="string" name="no_condition_providers" id="0x7f0909e9" />
-    <public type="string" name="condition_provider_security_warning_title" id="0x7f0909ea" />
-    <public type="string" name="condition_provider_security_warning_summary" id="0x7f0909eb" />
     <public type="string" name="loading_notification_apps" id="0x7f0909ec" />
     <public type="string" name="app_notification_block_title" id="0x7f0909ed" />
     <public type="string" name="app_notification_block_summary" id="0x7f0909ee" />
@@ -3219,18 +3220,7 @@
     <public type="string" name="app_notification_row_priority" id="0x7f0909f4" />
     <public type="string" name="app_notification_row_sensitive" id="0x7f0909f5" />
     <public type="string" name="app_notifications_dialog_done" id="0x7f0909f6" />
-    <public type="string" name="zen_mode_default_option" id="0x7f0909f7" />
-    <public type="string" name="zen_mode_important_category" id="0x7f0909f8" />
-    <public type="string" name="zen_mode_downtime_category" id="0x7f0909f9" />
-    <public type="string" name="zen_mode_downtime_days" id="0x7f0909fa" />
-    <public type="string" name="zen_mode_downtime_days_none" id="0x7f0909fb" />
-    <public type="string" name="zen_mode_downtime_mode_title" id="0x7f0909fc" />
-    <public type="string" name="zen_mode_downtime_mode_priority" id="0x7f0909fd" />
-    <public type="string" name="zen_mode_downtime_mode_none" id="0x7f0909fe" />
-    <public type="string" name="zen_mode_automation_category" id="0x7f0909ff" />
-    <public type="string" name="zen_mode_entry_conditions_title" id="0x7f090a00" />
     <public type="string" name="summary_divider_text" id="0x7f090a01" />
-    <public type="string" name="zen_mode_entry_conditions_summary_none" id="0x7f090a02" />
     <public type="string" name="zen_mode_calls" id="0x7f090a03" />
     <public type="string" name="zen_mode_messages" id="0x7f090a04" />
     <public type="string" name="zen_mode_from" id="0x7f090a05" />
@@ -3238,16 +3228,12 @@
     <public type="string" name="zen_mode_from_contacts" id="0x7f090a07" />
     <public type="string" name="zen_mode_from_starred" id="0x7f090a08" />
     <public type="string" name="zen_mode_events" id="0x7f090a09" />
-    <public type="string" name="zen_mode_alarm_info" id="0x7f090a0a" />
     <public type="string" name="zen_mode_when" id="0x7f090a0b" />
     <public type="string" name="zen_mode_when_never" id="0x7f090a0c" />
     <public type="string" name="zen_mode_when_every_night" id="0x7f090a0d" />
     <public type="string" name="zen_mode_when_weeknights" id="0x7f090a0e" />
     <public type="string" name="zen_mode_start_time" id="0x7f090a0f" />
     <public type="string" name="zen_mode_end_time" id="0x7f090a10" />
-    <public type="string" name="zen_mode_end_time_priority_next_day_summary_format" id="0x7f090a11" />
-    <public type="string" name="zen_mode_end_time_none_same_day_summary_format" id="0x7f090a12" />
-    <public type="string" name="zen_mode_end_time_none_next_day_summary_format" id="0x7f090a13" />
     <public type="string" name="notification_settings_apps_title" id="0x7f090a14" />
     <public type="string" name="notification_app_settings_button" id="0x7f090a15" />
     <public type="string" name="device_feedback" id="0x7f090a16" />
@@ -3337,40 +3323,66 @@
     <public type="string" name="service_state_info" id="0x7f090a6a" />
     <public type="string" name="security_lock_screen_max" id="0x7f090a6b" />
     <public type="string" name="minutes_and_seconds" id="0x7f090a6c" />
-    <public type="string" name="APKTOOL_DUMMY_0a6d" id="0x7f090a6d" />
-    <public type="string" name="APKTOOL_DUMMY_0a6e" id="0x7f090a6e" />
-    <public type="string" name="APKTOOL_DUMMY_0a6f" id="0x7f090a6f" />
-    <public type="string" name="APKTOOL_DUMMY_0a70" id="0x7f090a70" />
-    <public type="string" name="APKTOOL_DUMMY_0a71" id="0x7f090a71" />
-    <public type="string" name="APKTOOL_DUMMY_0a72" id="0x7f090a72" />
-    <public type="string" name="APKTOOL_DUMMY_0a73" id="0x7f090a73" />
-    <public type="string" name="APKTOOL_DUMMY_0a74" id="0x7f090a74" />
-    <public type="string" name="APKTOOL_DUMMY_0a75" id="0x7f090a75" />
-    <public type="string" name="APKTOOL_DUMMY_0a76" id="0x7f090a76" />
-    <public type="string" name="APKTOOL_DUMMY_0a77" id="0x7f090a77" />
-    <public type="string" name="APKTOOL_DUMMY_0a78" id="0x7f090a78" />
-    <public type="string" name="APKTOOL_DUMMY_0a79" id="0x7f090a79" />
-    <public type="string" name="APKTOOL_DUMMY_0a7a" id="0x7f090a7a" />
-    <public type="string" name="APKTOOL_DUMMY_0a7b" id="0x7f090a7b" />
-    <public type="string" name="APKTOOL_DUMMY_0a7c" id="0x7f090a7c" />
-    <public type="string" name="APKTOOL_DUMMY_0a7d" id="0x7f090a7d" />
-    <public type="string" name="APKTOOL_DUMMY_0a7e" id="0x7f090a7e" />
-    <public type="string" name="APKTOOL_DUMMY_0a7f" id="0x7f090a7f" />
-    <public type="string" name="APKTOOL_DUMMY_0a80" id="0x7f090a80" />
-    <public type="string" name="APKTOOL_DUMMY_0a81" id="0x7f090a81" />
-    <public type="string" name="APKTOOL_DUMMY_0a82" id="0x7f090a82" />
-    <public type="string" name="APKTOOL_DUMMY_0a83" id="0x7f090a83" />
-    <public type="string" name="APKTOOL_DUMMY_0a84" id="0x7f090a84" />
-    <public type="string" name="APKTOOL_DUMMY_0a85" id="0x7f090a85" />
-    <public type="string" name="APKTOOL_DUMMY_0a86" id="0x7f090a86" />
-    <public type="string" name="APKTOOL_DUMMY_0a87" id="0x7f090a87" />
-    <public type="string" name="APKTOOL_DUMMY_0a88" id="0x7f090a88" />
-    <public type="string" name="APKTOOL_DUMMY_0a89" id="0x7f090a89" />
-    <public type="string" name="APKTOOL_DUMMY_0a8a" id="0x7f090a8a" />
-    <public type="string" name="APKTOOL_DUMMY_0a8b" id="0x7f090a8b" />
-    <public type="string" name="APKTOOL_DUMMY_0a8c" id="0x7f090a8c" />
-    <public type="string" name="APKTOOL_DUMMY_0a8d" id="0x7f090a8d" />
-    <public type="string" name="APKTOOL_DUMMY_0a8e" id="0x7f090a8e" />
+    <public type="string" name="zen_mode_priority_settings_title" id="0x7f090a8f" />
+    <public type="string" name="zen_mode_automation_settings_title" id="0x7f090a90" />
+    <public type="string" name="zen_mode_option_alarms" id="0x7f090a91" />
+    <public type="string" name="zen_mode_summary_combination" id="0x7f090a92" />
+    <public type="string" name="zen_mode_rule_name" id="0x7f090a93" />
+    <public type="string" name="zen_mode_time_add_rule" id="0x7f090a94" />
+    <public type="string" name="zen_mode_delete_rule" id="0x7f090a95" />
+    <public type="string" name="zen_mode_delete_rule_confirmation" id="0x7f090a96" />
+    <public type="string" name="zen_mode_delete_rule_button" id="0x7f090a97" />
+    <public type="string" name="zen_mode_rule_not_found_text" id="0x7f090a98" />
+    <public type="string" name="zen_mode_rule_summary_template" id="0x7f090a99" />
+    <public type="string" name="zen_mode_schedule_rule_days" id="0x7f090a9a" />
+    <public type="string" name="zen_mode_schedule_rule_days_none" id="0x7f090a9b" />
+    <public type="string" name="zen_mode_schedule_rule_days_all" id="0x7f090a9c" />
+    <public type="string" name="summary_range_symbol_combination" id="0x7f090a9d" />
+    <public type="string" name="summary_range_verbal_combination" id="0x7f090a9e" />
+    <public type="string" name="zen_mode_alarms" id="0x7f090a9f" />
+    <public type="string" name="zen_mode_reminders" id="0x7f090aa0" />
+    <public type="string" name="zen_mode_end_time_next_day_summary_format" id="0x7f090aa1" />
+    <public type="string" name="launch_by_default" id="0x7f090aa2" />
+    <public type="string" name="storage_summary_format" id="0x7f090aa3" />
+    <public type="string" name="storage_type_internal" id="0x7f090aa4" />
+    <public type="string" name="storage_type_external" id="0x7f090aa5" />
+    <public type="string" name="app_data_usage" id="0x7f090aa6" />
+    <public type="string" name="data_summary_format" id="0x7f090aa7" />
+    <public type="string" name="storage_used" id="0x7f090aa8" />
+    <public type="string" name="notifications_enabled" id="0x7f090aa9" />
+    <public type="string" name="notifications_disabled" id="0x7f090aaa" />
+    <public type="string" name="notifications_sensitive" id="0x7f090aab" />
+    <public type="string" name="notifications_priority" id="0x7f090aac" />
+    <public type="string" name="notifications_priority_sensitive" id="0x7f090aad" />
+    <public type="string" name="launch_defaults_some" id="0x7f090aae" />
+    <public type="string" name="launch_defaults_none" id="0x7f090aaf" />
+    <public type="string" name="unknown_app" id="0x7f090ab0" />
+    <public type="string" name="cancel_all_caps" id="0x7f09017a" />
+    <public type="string" name="continue_all_caps" id="0x7f09017b" />
+    <public type="string" name="yes_all_caps" id="0x7f09017d" />
+    <public type="string" name="no_all_caps" id="0x7f09017e" />
+    <public type="string" name="zen_mode_option_title" id="0x7f0909c7" />
+    <public type="string" name="zen_mode_option_off" id="0x7f0909c8" />
+    <public type="string" name="manage_condition_providers" id="0x7f0909e7" />
+    <public type="string" name="manage_condition_providers_summary_zero" id="0x7f0909e8" />
+    <public type="string" name="no_condition_providers" id="0x7f0909e9" />
+    <public type="string" name="condition_provider_security_warning_title" id="0x7f0909ea" />
+    <public type="string" name="condition_provider_security_warning_summary" id="0x7f0909eb" />
+    <public type="string" name="zen_mode_default_option" id="0x7f0909f7" />
+    <public type="string" name="zen_mode_important_category" id="0x7f0909f8" />
+    <public type="string" name="zen_mode_downtime_category" id="0x7f0909f9" />
+    <public type="string" name="zen_mode_downtime_days" id="0x7f0909fa" />
+    <public type="string" name="zen_mode_downtime_days_none" id="0x7f0909fb" />
+    <public type="string" name="zen_mode_downtime_mode_title" id="0x7f0909fc" />
+    <public type="string" name="zen_mode_downtime_mode_priority" id="0x7f0909fd" />
+    <public type="string" name="zen_mode_downtime_mode_none" id="0x7f0909fe" />
+    <public type="string" name="zen_mode_automation_category" id="0x7f0909ff" />
+    <public type="string" name="zen_mode_entry_conditions_title" id="0x7f090a00" />
+    <public type="string" name="zen_mode_entry_conditions_summary_none" id="0x7f090a02" />
+    <public type="string" name="zen_mode_alarm_info" id="0x7f090a0a" />
+    <public type="string" name="zen_mode_end_time_priority_next_day_summary_format" id="0x7f090a11" />
+    <public type="string" name="zen_mode_end_time_none_same_day_summary_format" id="0x7f090a12" />
+    <public type="string" name="zen_mode_end_time_none_next_day_summary_format" id="0x7f090a13" />
     <public type="style" name="setup_wizard_navbar_style" id="0x7f0a0000" />
     <public type="style" name="setup_wizard_navbar_theme_dark" id="0x7f0a0001" />
     <public type="style" name="setup_wizard_navbar_theme_light" id="0x7f0a0002" />
@@ -3449,6 +3461,7 @@
     <public type="style" name="Theme.NotificationStation" id="0x7f0a004c" />
     <public type="style" name="ThemeOverlay.SwitchBar" id="0x7f0a004d" />
     <public type="style" name="Theme.WifiOffload" id="0x7f0a004e" />
+    <public type="style" name="TextAppearance.Small.SwitchBar" id="0x7f0a004f" />
     <public type="style" name="Theme.CreateShortCut" id="0x7f0a003a" />
     <public type="array" name="timezone_filters" id="0x7f0b0000" />
     <public type="array" name="screen_timeout_entries" id="0x7f0b0001" />
@@ -3554,8 +3567,6 @@
     <public type="array" name="daltonizer_type_values" id="0x7f0b0065" />
     <public type="array" name="simulate_color_space_entries" id="0x7f0b0066" />
     <public type="array" name="simulate_color_space_values" id="0x7f0b0067" />
-    <public type="array" name="entries_zen_mode" id="0x7f0b0068" />
-    <public type="array" name="entryvalues_zen_mode" id="0x7f0b0069" />
     <public type="array" name="battery_saver_trigger_values" id="0x7f0b006a" />
     <public type="array" name="proc_stats_memory_states" id="0x7f0b006b" />
     <public type="array" name="proc_stats_process_states" id="0x7f0b006c" />
@@ -3580,9 +3591,7 @@
     <public type="array" name="available_cryptographic_modes" id="0x7f0b0082" />
     <public type="array" name="cryptographic_modes_values" id="0x7f0b0083" />
     <public type="array" name="selected_crypto_warning" id="0x7f0b0084" />
-    <public type="array" name="APKTOOL_DUMMY_0071" id="0x7f0b0071" />
-    <public type="array" name="APKTOOL_DUMMY_0072" id="0x7f0b0072" />
-    <public type="array" name="APKTOOL_DUMMY_0073" id="0x7f0b0073" />
+    <public type="array" name="entries_zen_mode" id="0x7f0b0068" />
     <public type="bool" name="has_dock_settings" id="0x7f0c0000" />
     <public type="bool" name="has_silent_mode" id="0x7f0c0001" />
     <public type="bool" name="has_powercontrol_widget" id="0x7f0c0002" />
@@ -3674,8 +3683,8 @@
     <public type="dimen" name="notification_app_icon_size" id="0x7f0e0032" />
     <public type="dimen" name="notification_app_icon_badge_size" id="0x7f0e0033" />
     <public type="dimen" name="notification_app_icon_badge_margin" id="0x7f0e0034" />
-    <public type="dimen" name="zen_downtime_checkbox_padding" id="0x7f0e0035" />
-    <public type="dimen" name="zen_downtime_margin" id="0x7f0e0036" />
+    <public type="dimen" name="zen_schedule_rule_checkbox_padding" id="0x7f0e0035" />
+    <public type="dimen" name="zen_schedule_day_margin" id="0x7f0e0036" />
     <public type="dimen" name="caption_preview_text_size" id="0x7f0e0037" />
     <public type="dimen" name="actionbar_size" id="0x7f0e0038" />
     <public type="dimen" name="actionbar_contentInsetStart" id="0x7f0e0039" />
@@ -3930,31 +3939,26 @@
     <public type="id" name="encrypt_dont_require_password" id="0x7f0f00a8" />
     <public type="id" name="control_buttons_panel" id="0x7f0f00a9" />
     <public type="id" name="more_control_buttons_panel" id="0x7f0f00aa" />
-    <public type="id" name="notification_switch" id="0x7f0f00ab" />
+    <public type="id" name="clear_data_button" id="0x7f0f00ab" />
     <public type="id" name="total_size_prefix" id="0x7f0f00ac" />
-    <public type="id" name="info_size_dots" id="0x7f0f00ad" />
+    <public type="id" name="button" id="0x7f0f00ad" />
     <public type="id" name="total_size_text" id="0x7f0f00ae" />
     <public type="id" name="application_size_prefix" id="0x7f0f00af" />
     <public type="id" name="application_size_text" id="0x7f0f00b0" />
     <public type="id" name="external_code_size_prefix" id="0x7f0f00b1" />
     <public type="id" name="external_code_size_text" id="0x7f0f00b2" />
-    <public type="id" name="info_size" id="0x7f0f00b3" />
+    <public type="id" name="rule_name" id="0x7f0f00b3" />
     <public type="id" name="data_size_prefix" id="0x7f0f00b4" />
     <public type="id" name="data_size_text" id="0x7f0f00b5" />
     <public type="id" name="external_data_size_prefix" id="0x7f0f00b6" />
     <public type="id" name="external_data_size_text" id="0x7f0f00b7" />
-    <public type="id" name="data_buttons_panel" id="0x7f0f00b8" />
-    <public type="id" name="cache_panel" id="0x7f0f00b9" />
-    <public type="id" name="cache_header" id="0x7f0f00ba" />
+    <public type="id" name="add" id="0x7f0f00b8" />
     <public type="id" name="cache_size" id="0x7f0f00bb" />
     <public type="id" name="cache_size_text" id="0x7f0f00bc" />
     <public type="id" name="clear_cache_button" id="0x7f0f00bd" />
     <public type="id" name="auto_launch_title" id="0x7f0f00be" />
     <public type="id" name="auto_launch" id="0x7f0f00bf" />
     <public type="id" name="clear_activities_button" id="0x7f0f00c0" />
-    <public type="id" name="screen_compatibility_section" id="0x7f0f00c1" />
-    <public type="id" name="ask_compatibility_cb" id="0x7f0f00c2" />
-    <public type="id" name="enable_compatibility_cb" id="0x7f0f00c3" />
     <public type="id" name="permissions_section" id="0x7f0f00c4" />
     <public type="id" name="security_settings_billing_desc" id="0x7f0f00c5" />
     <public type="id" name="security_settings_billing_list" id="0x7f0f00c6" />
@@ -4469,6 +4473,7 @@
     <public type="plurals" name="manage_notification_access_summary_nonzero" id="0x7f100009" />
     <public type="plurals" name="manage_condition_providers_summary_nonzero" id="0x7f10000a" />
     <public type="plurals" name="Nseconds_description" id="0x7f10000b" />
+    <public type="plurals" name="permissions_summary" id="0x7f10000d" />
     <public type="plurals" name="Nminutes_description" id="0x7f10000c" />
     <public type="menu" name="account_settings" id="0x7f110000" />
     <public type="menu" name="data_usage" id="0x7f110001" />
@@ -4478,4 +4483,6 @@
     <public type="menu" name="storage" id="0x7f110005" />
     <public type="menu" name="vpn" id="0x7f110006" />
     <public type="menu" name="wifi_setup" id="0x7f110007" />
+    <public type="menu" name="zen_mode_automation" id="0x7f110008" />
+    <public type="menu" name="zen_mode_rule" id="0x7f110009" />
 </resources>

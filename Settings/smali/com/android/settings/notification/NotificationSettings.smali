@@ -30,7 +30,7 @@
 
 .field private final mHandler:Lcom/android/settings/notification/NotificationSettings$H;
 
-.field private mLockscreen:Lcom/android/settings/notification/DropDownPreference;
+.field private mLockscreen:Lcom/android/settings/DropDownPreference;
 
 .field private mLockscreenSelectedValue:I
 
@@ -475,11 +475,11 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/android/settings/notification/DropDownPreference;
+    check-cast v0, Lcom/android/settings/DropDownPreference;
 
-    iput-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreen:Lcom/android/settings/notification/DropDownPreference;
+    iput-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreen:Lcom/android/settings/DropDownPreference;
 
-    iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreen:Lcom/android/settings/notification/DropDownPreference;
+    iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreen:Lcom/android/settings/DropDownPreference;
 
     if-nez v0, :cond_0
 
@@ -493,44 +493,44 @@
     return-void
 
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreen:Lcom/android/settings/notification/DropDownPreference;
+    iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreen:Lcom/android/settings/DropDownPreference;
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-virtual {v0, v2, v1}, Lcom/android/settings/notification/DropDownPreference;->addItem(ILjava/lang/Object;)V
+    invoke-virtual {v0, v2, v1}, Lcom/android/settings/DropDownPreference;->addItem(ILjava/lang/Object;)V
 
     iget-boolean v0, p0, Lcom/android/settings/notification/NotificationSettings;->mSecure:Z
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreen:Lcom/android/settings/notification/DropDownPreference;
+    iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreen:Lcom/android/settings/DropDownPreference;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-virtual {v0, v3, v1}, Lcom/android/settings/notification/DropDownPreference;->addItem(ILjava/lang/Object;)V
+    invoke-virtual {v0, v3, v1}, Lcom/android/settings/DropDownPreference;->addItem(ILjava/lang/Object;)V
 
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreen:Lcom/android/settings/notification/DropDownPreference;
+    iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreen:Lcom/android/settings/DropDownPreference;
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-virtual {v0, v4, v1}, Lcom/android/settings/notification/DropDownPreference;->addItem(ILjava/lang/Object;)V
+    invoke-virtual {v0, v4, v1}, Lcom/android/settings/DropDownPreference;->addItem(ILjava/lang/Object;)V
 
     invoke-direct {p0}, Lcom/android/settings/notification/NotificationSettings;->updateLockscreenNotifications()V
 
-    iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreen:Lcom/android/settings/notification/DropDownPreference;
+    iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreen:Lcom/android/settings/DropDownPreference;
 
     new-instance v1, Lcom/android/settings/notification/NotificationSettings$4;
 
     invoke-direct {v1, p0}, Lcom/android/settings/notification/NotificationSettings$4;-><init>(Lcom/android/settings/notification/NotificationSettings;)V
 
-    invoke-virtual {v0, v1}, Lcom/android/settings/notification/DropDownPreference;->setCallback(Lcom/android/settings/notification/DropDownPreference$Callback;)V
+    invoke-virtual {v0, v1}, Lcom/android/settings/DropDownPreference;->setCallback(Lcom/android/settings/DropDownPreference$Callback;)V
 
     goto :goto_0
 .end method
@@ -910,7 +910,7 @@
     .locals 4
 
     .prologue
-    iget-object v2, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreen:Lcom/android/settings/notification/DropDownPreference;
+    iget-object v2, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreen:Lcom/android/settings/DropDownPreference;
 
     if-nez v2, :cond_0
 
@@ -945,7 +945,7 @@
     :goto_2
     iput v2, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreenSelectedValue:I
 
-    iget-object v2, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreen:Lcom/android/settings/notification/DropDownPreference;
+    iget-object v2, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreen:Lcom/android/settings/DropDownPreference;
 
     iget v3, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreenSelectedValue:I
 
@@ -953,7 +953,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Lcom/android/settings/notification/DropDownPreference;->setSelectedValue(Ljava/lang/Object;)V
+    invoke-virtual {v2, v3}, Lcom/android/settings/DropDownPreference;->setSelectedValue(Ljava/lang/Object;)V
 
     goto :goto_0
 

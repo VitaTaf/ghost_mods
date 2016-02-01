@@ -10,11 +10,14 @@
     <item type="id" name="android_beam_image">false</item>
     <item type="id" name="text_layout">false</item>
     <item type="id" name="apn_radiobutton">false</item>
+    <item type="id" name="all_details">false</item>
+    <item type="id" name="cache_size">false</item>
+    <item type="id" name="cache_size_text">false</item>
+    <item type="id" name="clear_cache_button">false</item>
     <item type="id" name="app_icon">false</item>
     <item type="id" name="app_name">false</item>
     <item type="id" name="app_settings">false</item>
     <item type="id" name="row_divider">false</item>
-    <item type="id" name="all_details">false</item>
     <item type="id" name="app_snippet">false</item>
     <item type="id" name="operations_section">false</item>
     <item type="id" name="op_icon">false</item>
@@ -25,6 +28,21 @@
     <item type="id" name="tabs">false</item>
     <item type="id" name="app_image">false</item>
     <item type="id" name="app_label">false</item>
+    <item type="id" name="auto_launch_title">false</item>
+    <item type="id" name="auto_launch">false</item>
+    <item type="id" name="clear_activities_button">false</item>
+    <item type="id" name="category_title">false</item>
+    <item type="id" name="total_size_prefix">false</item>
+    <item type="id" name="total_size_text">false</item>
+    <item type="id" name="application_size_prefix">false</item>
+    <item type="id" name="application_size_text">false</item>
+    <item type="id" name="external_code_size_prefix">false</item>
+    <item type="id" name="external_code_size_text">false</item>
+    <item type="id" name="data_size_prefix">false</item>
+    <item type="id" name="data_size_text">false</item>
+    <item type="id" name="external_data_size_prefix">false</item>
+    <item type="id" name="external_data_size_text">false</item>
+    <item type="id" name="clear_data_button">false</item>
     <item type="id" name="band">false</item>
     <item type="id" name="battery_history_chart">false</item>
     <item type="id" name="status">false</item>
@@ -95,7 +113,6 @@
     <item type="id" name="dashboard">false</item>
     <item type="id" name="dashboard_container">false</item>
     <item type="id" name="category">false</item>
-    <item type="id" name="category_title">false</item>
     <item type="id" name="category_content">false</item>
     <item type="id" name="tile_divider">false</item>
     <item type="id" name="MainLayout">false</item>
@@ -169,37 +186,6 @@
     <item type="id" name="encrypt_dont_require_password">false</item>
     <item type="id" name="control_buttons_panel">false</item>
     <item type="id" name="more_control_buttons_panel">false</item>
-    <item type="id" name="notification_switch">false</item>
-    <item type="id" name="total_size_prefix">false</item>
-    <item type="id" name="info_size_dots">false</item>
-    <item type="id" name="total_size_text">false</item>
-    <item type="id" name="application_size_prefix">false</item>
-    <item type="id" name="application_size_text">false</item>
-    <item type="id" name="external_code_size_prefix">false</item>
-    <item type="id" name="external_code_size_text">false</item>
-    <item type="id" name="info_size">false</item>
-    <item type="id" name="data_size_prefix">false</item>
-    <item type="id" name="data_size_text">false</item>
-    <item type="id" name="external_data_size_prefix">false</item>
-    <item type="id" name="external_data_size_text">false</item>
-    <item type="id" name="data_buttons_panel">false</item>
-    <item type="id" name="cache_panel">false</item>
-    <item type="id" name="cache_header">false</item>
-    <item type="id" name="cache_size">false</item>
-    <item type="id" name="cache_size_text">false</item>
-    <item type="id" name="clear_cache_button">false</item>
-    <item type="id" name="auto_launch_title">false</item>
-    <item type="id" name="auto_launch">false</item>
-    <item type="id" name="clear_activities_button">false</item>
-    <item type="id" name="screen_compatibility_section">false</item>
-    <item type="id" name="ask_compatibility_cb">false</item>
-    <item type="id" name="enable_compatibility_cb">false</item>
-    <item type="id" name="permissions_section">false</item>
-    <item type="id" name="security_settings_billing_desc">false</item>
-    <item type="id" name="security_settings_billing_list">false</item>
-    <item type="id" name="security_settings_premium_sms_list">false</item>
-    <item type="id" name="security_settings_desc">false</item>
-    <item type="id" name="security_settings_list">false</item>
     <item type="id" name="intent">false</item>
     <item type="id" name="data">false</item>
     <item type="id" name="account">false</item>
@@ -253,6 +239,12 @@
     <item type="id" name="owner_info_nickname">false</item>
     <item type="id" name="show_owner_info_on_lockscreen_checkbox">false</item>
     <item type="id" name="owner_info_edit_text">false</item>
+    <item type="id" name="permissions_section">false</item>
+    <item type="id" name="security_settings_billing_desc">false</item>
+    <item type="id" name="security_settings_billing_list">false</item>
+    <item type="id" name="security_settings_premium_sms_list">false</item>
+    <item type="id" name="security_settings_desc">false</item>
+    <item type="id" name="security_settings_list">false</item>
     <item type="id" name="buttons_spacer_left">false</item>
     <item type="id" name="value">false</item>
     <item type="id" name="two_buttons_panel">false</item>
@@ -428,6 +420,7 @@
     <item type="id" name="other_network">false</item>
     <item type="id" name="setup_wizard_navbar_back">false</item>
     <item type="id" name="setup_wizard_navbar_next">false</item>
+    <item type="id" name="button">false</item>
     <item type="id" name="frame">false</item>
     <item type="id" name="background">false</item>
     <item type="id" name="sim_lock_warning_accept">false</item>
@@ -643,6 +636,7 @@
     <item type="id" name="wifi_wapi_cert_delet_subdir_text">false</item>
     <item type="id" name="wifi_wapi_cert_delet_subdir_spinner">false</item>
     <item type="id" name="password_label">false</item>
+    <item type="id" name="rule_name">false</item>
     <item type="id" name="wireless_section">false</item>
     <item type="id" name="wifi_settings">false</item>
     <item type="id" name="bluetooth_settings">false</item>
@@ -696,4 +690,5 @@
     <item type="id" name="vpn_create">false</item>
     <item type="id" name="vpn_lockdown">false</item>
     <item type="id" name="wifi_wps">false</item>
+    <item type="id" name="add">false</item>
 </resources>

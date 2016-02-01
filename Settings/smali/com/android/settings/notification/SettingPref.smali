@@ -6,7 +6,7 @@
 # instance fields
 .field protected final mDefault:I
 
-.field protected mDropDown:Lcom/android/settings/notification/DropDownPreference;
+.field protected mDropDown:Lcom/android/settings/DropDownPreference;
 
 .field private final mKey:Ljava/lang/String;
 
@@ -274,15 +274,15 @@
     return-object v6
 
     :cond_2
-    instance-of v6, v4, Lcom/android/settings/notification/DropDownPreference;
+    instance-of v6, v4, Lcom/android/settings/DropDownPreference;
 
     if-eqz v6, :cond_1
 
     move-object v6, v4
 
-    check-cast v6, Lcom/android/settings/notification/DropDownPreference;
+    check-cast v6, Lcom/android/settings/DropDownPreference;
 
-    iput-object v6, p0, Lcom/android/settings/notification/SettingPref;->mDropDown:Lcom/android/settings/notification/DropDownPreference;
+    iput-object v6, p0, Lcom/android/settings/notification/SettingPref;->mDropDown:Lcom/android/settings/DropDownPreference;
 
     iget-object v0, p0, Lcom/android/settings/notification/SettingPref;->mValues:[I
 
@@ -299,7 +299,7 @@
     aget v5, v0, v2
 
     .local v5, "value":I
-    iget-object v6, p0, Lcom/android/settings/notification/SettingPref;->mDropDown:Lcom/android/settings/notification/DropDownPreference;
+    iget-object v6, p0, Lcom/android/settings/notification/SettingPref;->mDropDown:Lcom/android/settings/DropDownPreference;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -313,7 +313,7 @@
 
     move-result-object v8
 
-    invoke-virtual {v6, v7, v8}, Lcom/android/settings/notification/DropDownPreference;->addItem(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {v6, v7, v8}, Lcom/android/settings/DropDownPreference;->addItem(Ljava/lang/String;Ljava/lang/Object;)V
 
     add-int/lit8 v2, v2, 0x1
 
@@ -324,19 +324,19 @@
     .end local v3    # "len$":I
     .end local v5    # "value":I
     :cond_3
-    iget-object v6, p0, Lcom/android/settings/notification/SettingPref;->mDropDown:Lcom/android/settings/notification/DropDownPreference;
+    iget-object v6, p0, Lcom/android/settings/notification/SettingPref;->mDropDown:Lcom/android/settings/DropDownPreference;
 
     if-eqz v6, :cond_4
 
-    iget-object v6, p0, Lcom/android/settings/notification/SettingPref;->mDropDown:Lcom/android/settings/notification/DropDownPreference;
+    iget-object v6, p0, Lcom/android/settings/notification/SettingPref;->mDropDown:Lcom/android/settings/DropDownPreference;
 
     new-instance v7, Lcom/android/settings/notification/SettingPref$2;
 
     invoke-direct {v7, p0, v1}, Lcom/android/settings/notification/SettingPref$2;-><init>(Lcom/android/settings/notification/SettingPref;Landroid/content/Context;)V
 
-    invoke-virtual {v6, v7}, Lcom/android/settings/notification/DropDownPreference;->setCallback(Lcom/android/settings/notification/DropDownPreference$Callback;)V
+    invoke-virtual {v6, v7}, Lcom/android/settings/DropDownPreference;->setCallback(Lcom/android/settings/DropDownPreference$Callback;)V
 
-    iget-object v6, p0, Lcom/android/settings/notification/SettingPref;->mDropDown:Lcom/android/settings/notification/DropDownPreference;
+    iget-object v6, p0, Lcom/android/settings/notification/SettingPref;->mDropDown:Lcom/android/settings/DropDownPreference;
 
     goto :goto_0
 
@@ -420,17 +420,17 @@
     goto :goto_0
 
     :cond_2
-    iget-object v1, p0, Lcom/android/settings/notification/SettingPref;->mDropDown:Lcom/android/settings/notification/DropDownPreference;
+    iget-object v1, p0, Lcom/android/settings/notification/SettingPref;->mDropDown:Lcom/android/settings/DropDownPreference;
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/android/settings/notification/SettingPref;->mDropDown:Lcom/android/settings/notification/DropDownPreference;
+    iget-object v1, p0, Lcom/android/settings/notification/SettingPref;->mDropDown:Lcom/android/settings/DropDownPreference;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lcom/android/settings/notification/DropDownPreference;->setSelectedValue(Ljava/lang/Object;)V
+    invoke-virtual {v1, v2}, Lcom/android/settings/DropDownPreference;->setSelectedValue(Ljava/lang/Object;)V
 
     goto :goto_1
 .end method

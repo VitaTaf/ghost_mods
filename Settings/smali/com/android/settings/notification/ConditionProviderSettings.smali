@@ -84,34 +84,6 @@
     return-object v0
 .end method
 
-.method public static getEnabledProviderCount(Landroid/content/Context;)I
-    .locals 1
-    .param p0, "context"    # Landroid/content/Context;
-
-    .prologue
-    sget-object v0, Lcom/android/settings/notification/ConditionProviderSettings;->CONFIG:Lcom/android/settings/notification/ManagedServiceSettings$Config;
-
-    invoke-static {v0, p0}, Lcom/android/settings/notification/ConditionProviderSettings;->getEnabledServicesCount(Lcom/android/settings/notification/ManagedServiceSettings$Config;Landroid/content/Context;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static getProviderCount(Landroid/content/pm/PackageManager;)I
-    .locals 1
-    .param p0, "pm"    # Landroid/content/pm/PackageManager;
-
-    .prologue
-    sget-object v0, Lcom/android/settings/notification/ConditionProviderSettings;->CONFIG:Lcom/android/settings/notification/ManagedServiceSettings$Config;
-
-    invoke-static {v0, p0}, Lcom/android/settings/notification/ConditionProviderSettings;->getServicesCount(Lcom/android/settings/notification/ManagedServiceSettings$Config;Landroid/content/pm/PackageManager;)I
-
-    move-result v0
-
-    return v0
-.end method
-
 
 # virtual methods
 .method protected getConfig()Lcom/android/settings/notification/ManagedServiceSettings$Config;

@@ -18,19 +18,6 @@
 .field final synthetic this$0:Lcom/android/settings/notification/ZenModeConditionSelection;
 
 
-# direct methods
-.method constructor <init>(Lcom/android/settings/notification/ZenModeConditionSelection;)V
-    .locals 0
-
-    .prologue
-    iput-object p1, p0, Lcom/android/settings/notification/ZenModeConditionSelection$2;->this$0:Lcom/android/settings/notification/ZenModeConditionSelection;
-
-    invoke-direct {p0}, Landroid/service/notification/IConditionListener$Stub;-><init>()V
-
-    return-void
-.end method
-
-
 # virtual methods
 .method public onConditionsReceived([Landroid/service/notification/Condition;)V
     .locals 2

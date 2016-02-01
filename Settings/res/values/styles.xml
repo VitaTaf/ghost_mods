@@ -290,6 +290,10 @@
     <style name="Widget.TimePicker" parent="@android:style/Widget.Material.Light.TimePicker">
         <item name="android:numbersBackgroundColor">@android:color/white</item>
     </style>
+    <style name="TextAppearance.Small.SwitchBar" parent="@style/TextAppearance.Small">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
     <style name="SetupWizardDisableAppStartingTheme">
         <item name="android:windowBackground">@null</item>
     </style>

@@ -18,7 +18,7 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/notification_section_header" android:key="notification">
         <SwitchPreference android:persistent="false" android:title="@string/notification_pulse_title" android:key="notification_pulse" android:switchTextOn="" android:switchTextOff="" />
-        <com.android.settings.notification.DropDownPreference android:persistent="false" android:title="@string/lock_screen_notifications_title" android:key="lock_screen_notifications" />
+        <com.android.settings.DropDownPreference android:persistent="false" android:title="@string/lock_screen_notifications_title" android:key="lock_screen_notifications" />
         <PreferenceScreen android:title="@string/app_notifications_title" android:key="app_notifications" android:fragment="com.android.settings.notification.NotificationAppList" />
         <Preference android:persistent="false" android:title="@string/manage_notification_access_title" android:key="manage_notification_access" android:fragment="com.android.settings.notification.NotificationAccessSettings" />
     </PreferenceCategory>

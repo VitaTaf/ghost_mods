@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/application_info_label"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.android.settings.DropDownPreference android:title="@string/storage_used" android:selectable="true" android:key="app_location_setting" android:summary="@string/storage_type_internal" />
+    <com.android.settings.applications.LayoutPreference android:layout="@layout/app_storage_settings" android:key="storage_settings" />
+    <com.android.settings.applications.LayoutPreference android:layout="@layout/app_cache_settings" android:key="cache_settings" />
+</PreferenceScreen>

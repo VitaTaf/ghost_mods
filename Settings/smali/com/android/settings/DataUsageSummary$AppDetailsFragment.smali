@@ -25,10 +25,25 @@
 .end method
 
 .method public static show(Lcom/android/settings/DataUsageSummary;Lcom/android/settings/DataUsageSummary$AppItem;Ljava/lang/CharSequence;)V
+    .locals 1
+    .param p0, "parent"    # Lcom/android/settings/DataUsageSummary;
+    .param p1, "app"    # Lcom/android/settings/DataUsageSummary$AppItem;
+    .param p2, "label"    # Ljava/lang/CharSequence;
+
+    .prologue
+    const/4 v0, 0x1
+
+    invoke-static {p0, p1, p2, v0}, Lcom/android/settings/DataUsageSummary$AppDetailsFragment;->show(Lcom/android/settings/DataUsageSummary;Lcom/android/settings/DataUsageSummary$AppItem;Ljava/lang/CharSequence;Z)V
+
+    return-void
+.end method
+
+.method public static show(Lcom/android/settings/DataUsageSummary;Lcom/android/settings/DataUsageSummary$AppItem;Ljava/lang/CharSequence;Z)V
     .locals 5
     .param p0, "parent"    # Lcom/android/settings/DataUsageSummary;
     .param p1, "app"    # Lcom/android/settings/DataUsageSummary$AppItem;
     .param p2, "label"    # Ljava/lang/CharSequence;
+    .param p3, "addToBack"    # Z
 
     .prologue
     invoke-virtual {p0}, Lcom/android/settings/DataUsageSummary;->isAdded()Z
@@ -74,10 +89,13 @@
 
     invoke-virtual {v2, v1, v3}, Landroid/app/FragmentTransaction;->add(Landroid/app/Fragment;Ljava/lang/String;)Landroid/app/FragmentTransaction;
 
+    if-eqz p3, :cond_1
+
     const-string v3, "appDetails"
 
     invoke-virtual {v2, v3}, Landroid/app/FragmentTransaction;->addToBackStack(Ljava/lang/String;)Landroid/app/FragmentTransaction;
 
+    :cond_1
     invoke-virtual {p0}, Lcom/android/settings/DataUsageSummary;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3

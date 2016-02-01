@@ -35,123 +35,6 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 6
-    .param p1, "context"    # Landroid/content/Context;
-
-    .prologue
-    const/4 v5, 0x0
-
-    invoke-direct {p0, p1}, Landroid/widget/RadioGroup;-><init>(Landroid/content/Context;)V
-
-    new-instance v3, Lcom/android/settings/notification/ZenModeConditionSelection$H;
-
-    invoke-direct {v3, p0, v5}, Lcom/android/settings/notification/ZenModeConditionSelection$H;-><init>(Lcom/android/settings/notification/ZenModeConditionSelection;Lcom/android/settings/notification/ZenModeConditionSelection$1;)V
-
-    iput-object v3, p0, Lcom/android/settings/notification/ZenModeConditionSelection;->mHandler:Lcom/android/settings/notification/ZenModeConditionSelection$H;
-
-    new-instance v3, Lcom/android/settings/notification/ZenModeConditionSelection$2;
-
-    invoke-direct {v3, p0}, Lcom/android/settings/notification/ZenModeConditionSelection$2;-><init>(Lcom/android/settings/notification/ZenModeConditionSelection;)V
-
-    iput-object v3, p0, Lcom/android/settings/notification/ZenModeConditionSelection;->mListener:Landroid/service/notification/IConditionListener;
-
-    iput-object p1, p0, Lcom/android/settings/notification/ZenModeConditionSelection;->mContext:Landroid/content/Context;
-
-    new-instance v3, Ljava/util/ArrayList;
-
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v3, p0, Lcom/android/settings/notification/ZenModeConditionSelection;->mConditions:Ljava/util/List;
-
-    new-instance v3, Landroid/animation/LayoutTransition;
-
-    invoke-direct {v3}, Landroid/animation/LayoutTransition;-><init>()V
-
-    invoke-virtual {p0, v3}, Lcom/android/settings/notification/ZenModeConditionSelection;->setLayoutTransition(Landroid/animation/LayoutTransition;)V
-
-    iget-object v3, p0, Lcom/android/settings/notification/ZenModeConditionSelection;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    const v4, 0x7f0e0007
-
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v2
-
-    .local v2, "p":I
-    const/4 v3, 0x0
-
-    invoke-virtual {p0, v2, v2, v2, v3}, Lcom/android/settings/notification/ZenModeConditionSelection;->setPadding(IIII)V
-
-    const-string v3, "notification"
-
-    invoke-static {v3}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
-
-    move-result-object v3
-
-    invoke-static {v3}, Landroid/app/INotificationManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/app/INotificationManager;
-
-    move-result-object v3
-
-    iput-object v3, p0, Lcom/android/settings/notification/ZenModeConditionSelection;->mNoMan:Landroid/app/INotificationManager;
-
-    invoke-direct {p0, v5}, Lcom/android/settings/notification/ZenModeConditionSelection;->newRadioButton(Landroid/service/notification/Condition;)Landroid/widget/RadioButton;
-
-    move-result-object v0
-
-    .local v0, "b":Landroid/widget/RadioButton;
-    iget-object v3, p0, Lcom/android/settings/notification/ZenModeConditionSelection;->mContext:Landroid/content/Context;
-
-    const v4, 0x1040694
-
-    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v3}, Landroid/widget/RadioButton;->setText(Ljava/lang/CharSequence;)V
-
-    const/4 v3, 0x1
-
-    invoke-virtual {v0, v3}, Landroid/widget/RadioButton;->setChecked(Z)V
-
-    sget-object v3, Landroid/service/notification/ZenModeConfig;->MINUTE_BUCKETS:[I
-
-    array-length v3, v3
-
-    add-int/lit8 v1, v3, -0x1
-
-    .local v1, "i":I
-    :goto_0
-    if-ltz v1, :cond_0
-
-    iget-object v3, p0, Lcom/android/settings/notification/ZenModeConditionSelection;->mContext:Landroid/content/Context;
-
-    sget-object v4, Landroid/service/notification/ZenModeConfig;->MINUTE_BUCKETS:[I
-
-    aget v4, v4, v1
-
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v5
-
-    invoke-static {v3, v4, v5}, Landroid/service/notification/ZenModeConfig;->toTimeCondition(Landroid/content/Context;II)Landroid/service/notification/Condition;
-
-    move-result-object v3
-
-    invoke-virtual {p0, v3}, Lcom/android/settings/notification/ZenModeConditionSelection;->handleCondition(Landroid/service/notification/Condition;)V
-
-    add-int/lit8 v1, v1, -0x1
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
 .method static synthetic access$100(Lcom/android/settings/notification/ZenModeConditionSelection;)Lcom/android/settings/notification/ZenModeConditionSelection$H;
     .locals 1
     .param p0, "x0"    # Lcom/android/settings/notification/ZenModeConditionSelection;
@@ -160,6 +43,43 @@
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeConditionSelection;->mHandler:Lcom/android/settings/notification/ZenModeConditionSelection$H;
 
     return-object v0
+.end method
+
+.method private static computeConditionText(Landroid/service/notification/Condition;)Ljava/lang/String;
+    .locals 1
+    .param p0, "c"    # Landroid/service/notification/Condition;
+
+    .prologue
+    iget-object v0, p0, Landroid/service/notification/Condition;->line1:Ljava/lang/String;
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Landroid/service/notification/Condition;->line1:Ljava/lang/String;
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    iget-object v0, p0, Landroid/service/notification/Condition;->summary:Ljava/lang/String;
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Landroid/service/notification/Condition;->summary:Ljava/lang/String;
+
+    goto :goto_0
+
+    :cond_1
+    const-string v0, ""
+
+    goto :goto_0
 .end method
 
 .method private newRadioButton(Landroid/service/notification/Condition;)Landroid/widget/RadioButton;
@@ -189,89 +109,43 @@
 
 
 # virtual methods
-.method public confirmCondition()V
-    .locals 3
-
-    .prologue
-    const-string v0, "ZenModeConditionSelection"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "confirmCondition "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/settings/notification/ZenModeConditionSelection;->mCondition:Landroid/service/notification/Condition;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :try_start_0
-    iget-object v0, p0, Lcom/android/settings/notification/ZenModeConditionSelection;->mNoMan:Landroid/app/INotificationManager;
-
-    iget-object v1, p0, Lcom/android/settings/notification/ZenModeConditionSelection;->mCondition:Landroid/service/notification/Condition;
-
-    invoke-interface {v0, v1}, Landroid/app/INotificationManager;->setZenModeCondition(Landroid/service/notification/Condition;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    goto :goto_0
-.end method
-
 .method protected handleCondition(Landroid/service/notification/Condition;)V
     .locals 4
     .param p1, "c"    # Landroid/service/notification/Condition;
 
     .prologue
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    iget-object v1, p0, Lcom/android/settings/notification/ZenModeConditionSelection;->mConditions:Ljava/util/List;
+    iget-object v2, p0, Lcom/android/settings/notification/ZenModeConditionSelection;->mConditions:Ljava/util/List;
 
-    invoke-interface {v1, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v2, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
 
     :goto_0
     return-void
 
     :cond_0
-    iget-object v1, p1, Landroid/service/notification/Condition;->id:Landroid/net/Uri;
+    iget-object v2, p1, Landroid/service/notification/Condition;->id:Landroid/net/Uri;
 
-    invoke-virtual {p0, v1}, Lcom/android/settings/notification/ZenModeConditionSelection;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
+    invoke-virtual {p0, v2}, Lcom/android/settings/notification/ZenModeConditionSelection;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/RadioButton;
 
     .local v0, "v":Landroid/widget/RadioButton;
-    iget v1, p1, Landroid/service/notification/Condition;->state:I
+    iget v2, p1, Landroid/service/notification/Condition;->state:I
 
-    if-eq v1, v2, :cond_1
+    if-eq v2, v1, :cond_1
 
-    iget v1, p1, Landroid/service/notification/Condition;->state:I
+    iget v2, p1, Landroid/service/notification/Condition;->state:I
 
     const/4 v3, 0x2
 
-    if-ne v1, v3, :cond_2
+    if-ne v2, v3, :cond_2
 
     :cond_1
     if-nez v0, :cond_2
@@ -283,26 +157,17 @@
     :cond_2
     if-eqz v0, :cond_3
 
-    iget-object v1, p1, Landroid/service/notification/Condition;->line1:Ljava/lang/String;
+    invoke-static {p1}, Lcom/android/settings/notification/ZenModeConditionSelection;->computeConditionText(Landroid/service/notification/Condition;)Ljava/lang/String;
 
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    move-result-object v2
 
-    move-result v1
+    invoke-virtual {v0, v2}, Landroid/widget/RadioButton;->setText(Ljava/lang/CharSequence;)V
 
-    if-nez v1, :cond_4
+    iget v2, p1, Landroid/service/notification/Condition;->state:I
 
-    iget-object v1, p1, Landroid/service/notification/Condition;->line1:Ljava/lang/String;
+    if-ne v2, v1, :cond_4
 
     :goto_1
-    invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setText(Ljava/lang/CharSequence;)V
-
-    iget v1, p1, Landroid/service/notification/Condition;->state:I
-
-    if-ne v1, v2, :cond_5
-
-    move v1, v2
-
-    :goto_2
     invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setEnabled(Z)V
 
     :cond_3
@@ -313,14 +178,9 @@
     goto :goto_0
 
     :cond_4
-    iget-object v1, p1, Landroid/service/notification/Condition;->summary:Ljava/lang/String;
-
-    goto :goto_1
-
-    :cond_5
     const/4 v1, 0x0
 
-    goto :goto_2
+    goto :goto_1
 .end method
 
 .method protected handleConditions([Landroid/service/notification/Condition;)V

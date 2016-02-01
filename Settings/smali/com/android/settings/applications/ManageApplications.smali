@@ -1365,7 +1365,7 @@
 .end method
 
 .method public onItemClick(Lcom/android/settings/applications/ManageApplications$TabInfo;Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .locals 4
+    .locals 2
     .param p1, "tab"    # Lcom/android/settings/applications/ManageApplications$TabInfo;
     .param p3, "view"    # Landroid/view/View;
     .param p4, "position"    # I
@@ -1408,36 +1408,11 @@
 
     iput-object v1, p0, Lcom/android/settings/applications/ManageApplications;->mCurrentPkgName:Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications;->mCurrentPkgName:Ljava/lang/String;
-
-    invoke-static {v1}, Lcom/android/settings/applications/InstalledAppDetails;->moveInProgress(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications;->mContext:Landroid/content/Context;
-
-    const v2, 0x7f090063
-
-    const/4 v3, 0x0
-
-    invoke-static {v1, v2, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/widget/Toast;->show()V
+    invoke-direct {p0}, Lcom/android/settings/applications/ManageApplications;->startApplicationDetailsActivity()V
 
     .end local v0    # "entry":Lcom/android/settings/applications/ApplicationsState$AppEntry;
     :cond_0
-    :goto_0
     return-void
-
-    .restart local v0    # "entry":Lcom/android/settings/applications/ApplicationsState$AppEntry;
-    :cond_1
-    invoke-direct {p0}, Lcom/android/settings/applications/ManageApplications;->startApplicationDetailsActivity()V
-
-    goto :goto_0
 .end method
 
 .method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
