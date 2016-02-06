@@ -25,13 +25,10 @@
     .param p3, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 791
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$MyWakeGestureListener;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    .line 792
     invoke-direct {p0, p2, p3}, Lcom/android/server/policy/WakeGestureListener;-><init>(Landroid/content/Context;Landroid/os/Handler;)V
 
-    .line 793
     return-void
 .end method
 
@@ -41,7 +38,6 @@
     .locals 5
 
     .prologue
-    .line 797
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$MyWakeGestureListener;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     # getter for: Lcom/android/server/policy/PhoneWindowManager;->mLock:Ljava/lang/Object;
@@ -51,7 +47,6 @@
 
     monitor-enter v1
 
-    .line 798
     :try_start_0
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$MyWakeGestureListener;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -62,7 +57,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 799
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$MyWakeGestureListener;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     const/4 v2, 0x0
@@ -73,7 +67,6 @@
 
     invoke-virtual {v0, v2, v3, v4}, Lcom/android/server/policy/PhoneWindowManager;->performHapticFeedbackLw(Landroid/view/WindowManagerPolicy$WindowState;IZ)Z
 
-    .line 800
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$MyWakeGestureListener;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -90,14 +83,11 @@
     # invokes: Lcom/android/server/policy/PhoneWindowManager;->wakeUp(JZ)Z
     invoke-static {v0, v2, v3, v4}, Lcom/android/server/policy/PhoneWindowManager;->access$1200(Lcom/android/server/policy/PhoneWindowManager;JZ)Z
 
-    .line 802
     :cond_0
     monitor-exit v1
 
-    .line 803
     return-void
 
-    .line 802
     :catchall_0
     move-exception v0
 

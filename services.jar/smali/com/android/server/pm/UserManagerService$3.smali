@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 1591
     iput-object p1, p0, Lcom/android/server/pm/UserManagerService$3;->this$0:Lcom/android/server/pm/UserManagerService;
 
     iput p2, p0, Lcom/android/server/pm/UserManagerService$3;->val$userHandle:I
@@ -44,7 +43,6 @@
     .locals 9
 
     .prologue
-    .line 1594
     iget-object v3, p0, Lcom/android/server/pm/UserManagerService$3;->this$0:Lcom/android/server/pm/UserManagerService;
 
     # getter for: Lcom/android/server/pm/UserManagerService;->mPm:Lcom/android/server/pm/PackageManagerService;
@@ -64,13 +62,11 @@
 
     move-result-object v1
 
-    .line 1597
     .local v1, "apps":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ApplicationInfo;>;"
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v4
 
-    .line 1599
     .local v4, "ident":J
     :try_start_0
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -92,7 +88,6 @@
 
     check-cast v0, Landroid/content/pm/ApplicationInfo;
 
-    .line 1600
     .local v0, "appInfo":Landroid/content/pm/ApplicationInfo;
     iget v3, v0, Landroid/content/pm/ApplicationInfo;->flags:I
 
@@ -110,7 +105,6 @@
 
     if-eqz v3, :cond_0
 
-    .line 1602
     iget-object v3, p0, Lcom/android/server/pm/UserManagerService$3;->this$0:Lcom/android/server/pm/UserManagerService;
 
     # getter for: Lcom/android/server/pm/UserManagerService;->mPm:Lcom/android/server/pm/PackageManagerService;
@@ -130,7 +124,6 @@
 
     goto :goto_0
 
-    .line 1607
     .end local v0    # "appInfo":Landroid/content/pm/ApplicationInfo;
     .end local v2    # "i$":Ljava/util/Iterator;
     :catchall_0
@@ -144,6 +137,5 @@
     :cond_1
     invoke-static {v4, v5}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 1609
     return-void
 .end method

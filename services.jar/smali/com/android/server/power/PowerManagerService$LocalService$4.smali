@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 3638
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService$LocalService$4;->this$1:Lcom/android/server/power/PowerManagerService$LocalService;
 
     iput-object p2, p0, Lcom/android/server/power/PowerManagerService$LocalService$4;->val$l:Landroid/os/PowerManagerInternal$LowPowerModeListener;
@@ -44,7 +43,6 @@
     .locals 3
 
     .prologue
-    .line 3640
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$LocalService$4;->this$1:Lcom/android/server/power/PowerManagerService$LocalService;
 
     iget-object v0, v0, Lcom/android/server/power/PowerManagerService$LocalService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -56,7 +54,6 @@
 
     monitor-enter v1
 
-    .line 3641
     :try_start_0
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$LocalService$4;->this$1:Lcom/android/server/power/PowerManagerService$LocalService;
 
@@ -71,13 +68,10 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3642
     monitor-exit v1
 
-    .line 3643
     return-void
 
-    .line 3642
     :catchall_0
     move-exception v0
 

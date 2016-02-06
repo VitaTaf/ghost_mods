@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 3602
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService$LocalService$2;->this$1:Lcom/android/server/power/PowerManagerService$LocalService;
 
     iput p2, p0, Lcom/android/server/power/PowerManagerService$LocalService$2;->val$ss:I
@@ -48,7 +47,6 @@
     .locals 3
 
     .prologue
-    .line 3604
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$LocalService$2;->this$1:Lcom/android/server/power/PowerManagerService$LocalService;
 
     iget-object v0, v0, Lcom/android/server/power/PowerManagerService$LocalService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -60,6 +58,5 @@
     # invokes: Lcom/android/server/power/PowerManagerService;->setDozeOverrideFromDreamManagerInternal(II)V
     invoke-static {v0, v1, v2}, Lcom/android/server/power/PowerManagerService;->access$6100(Lcom/android/server/power/PowerManagerService;II)V
 
-    .line 3605
     return-void
 .end method

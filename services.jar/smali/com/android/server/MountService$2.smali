@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 690
     iput-object p1, p0, Lcom/android/server/MountService$2;->this$0:Lcom/android/server/MountService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -41,7 +40,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 693
     const-string v1, "connected"
 
     invoke-virtual {p2, v1, v0}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
@@ -60,7 +58,6 @@
 
     const/4 v0, 0x1
 
-    .line 695
     .local v0, "available":Z
     :cond_0
     iget-object v1, p0, Lcom/android/server/MountService$2;->this$0:Lcom/android/server/MountService;
@@ -68,6 +65,5 @@
     # invokes: Lcom/android/server/MountService;->notifyShareAvailabilityChange(Z)V
     invoke-static {v1, v0}, Lcom/android/server/MountService;->access$1400(Lcom/android/server/MountService;Z)V
 
-    .line 696
     return-void
 .end method

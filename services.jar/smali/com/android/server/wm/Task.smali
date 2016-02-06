@@ -26,34 +26,26 @@
     .param p4, "service"    # Lcom/android/server/wm/WindowManagerService;
 
     .prologue
-    .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 28
     new-instance v0, Lcom/android/server/wm/AppTokenList;
 
     invoke-direct {v0}, Lcom/android/server/wm/AppTokenList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
-    .line 31
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/wm/Task;->mDeferRemoval:Z
 
-    .line 35
     iput p1, p0, Lcom/android/server/wm/Task;->mTaskId:I
 
-    .line 36
     iput-object p2, p0, Lcom/android/server/wm/Task;->mStack:Lcom/android/server/wm/TaskStack;
 
-    .line 37
     iput p3, p0, Lcom/android/server/wm/Task;->mUserId:I
 
-    .line 38
     iput-object p4, p0, Lcom/android/server/wm/Task;->mService:Lcom/android/server/wm/WindowManagerService;
 
-    .line 39
     return-void
 .end method
 
@@ -65,38 +57,30 @@
     .param p2, "wtoken"    # Lcom/android/server/wm/AppWindowToken;
 
     .prologue
-    .line 46
     iget-object v2, p0, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
     invoke-virtual {v2}, Lcom/android/server/wm/AppTokenList;->size()I
 
     move-result v0
 
-    .line 47
     .local v0, "lastPos":I
     if-lt p1, v0, :cond_1
 
-    .line 48
     move p1, v0
 
-    .line 57
     :cond_0
     iget-object v2, p0, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
     invoke-virtual {v2, p1, p2}, Lcom/android/server/wm/AppTokenList;->add(ILjava/lang/Object;)V
 
-    .line 58
     iput-object p0, p2, Lcom/android/server/wm/AppWindowToken;->mTask:Lcom/android/server/wm/Task;
 
-    .line 59
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Lcom/android/server/wm/Task;->mDeferRemoval:Z
 
-    .line 60
     return-void
 
-    .line 50
     :cond_1
     const/4 v1, 0x0
 
@@ -106,7 +90,6 @@
 
     if-ge v1, p1, :cond_0
 
-    .line 51
     iget-object v2, p0, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
     invoke-virtual {v2, v1}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
@@ -119,10 +102,8 @@
 
     if-eqz v2, :cond_2
 
-    .line 53
     add-int/lit8 p1, p1, 0x1
 
-    .line 50
     :cond_2
     add-int/lit8 v1, v1, 0x1
 
@@ -133,7 +114,6 @@
     .locals 1
 
     .prologue
-    .line 42
     iget-object v0, p0, Lcom/android/server/wm/Task;->mStack:Lcom/android/server/wm/TaskStack;
 
     invoke-virtual {v0}, Lcom/android/server/wm/TaskStack;->getDisplayContent()Lcom/android/server/wm/DisplayContent;
@@ -149,16 +129,13 @@
     .param p2, "toTop"    # Z
 
     .prologue
-    .line 76
     iget-object v0, p0, Lcom/android/server/wm/Task;->mStack:Lcom/android/server/wm/TaskStack;
 
     if-ne p1, v0, :cond_0
 
-    .line 86
     :goto_0
     return-void
 
-    .line 81
     :cond_0
     const/16 v0, 0x791b
 
@@ -184,17 +161,14 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 82
     iget-object v0, p0, Lcom/android/server/wm/Task;->mStack:Lcom/android/server/wm/TaskStack;
 
     if-eqz v0, :cond_1
 
-    .line 83
     iget-object v0, p0, Lcom/android/server/wm/Task;->mStack:Lcom/android/server/wm/TaskStack;
 
     invoke-virtual {v0, p0}, Lcom/android/server/wm/TaskStack;->removeTask(Lcom/android/server/wm/Task;)V
 
-    .line 85
     :cond_1
     invoke-virtual {p1, p0, p2}, Lcom/android/server/wm/TaskStack;->addTask(Lcom/android/server/wm/Task;Z)V
 
@@ -206,14 +180,12 @@
     .param p1, "wtoken"    # Lcom/android/server/wm/AppWindowToken;
 
     .prologue
-    .line 89
     iget-object v1, p0, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
     invoke-virtual {v1, p1}, Lcom/android/server/wm/AppTokenList;->remove(Ljava/lang/Object;)Z
 
     move-result v0
 
-    .line 90
     .local v0, "removed":Z
     iget-object v1, p0, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
@@ -223,7 +195,6 @@
 
     if-nez v1, :cond_0
 
-    .line 91
     const/16 v1, 0x791b
 
     const/4 v2, 0x2
@@ -248,21 +219,17 @@
 
     invoke-static {v1, v2}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 93
     iget-boolean v1, p0, Lcom/android/server/wm/Task;->mDeferRemoval:Z
 
     if-eqz v1, :cond_0
 
-    .line 94
     invoke-virtual {p0}, Lcom/android/server/wm/Task;->removeLocked()V
 
-    .line 97
     :cond_0
     const/4 v1, 0x0
 
     iput-object v1, p1, Lcom/android/server/wm/AppWindowToken;->mTask:Lcom/android/server/wm/Task;
 
-    .line 101
     return v0
 .end method
 
@@ -274,7 +241,6 @@
 
     const/4 v3, 0x0
 
-    .line 63
     iget-object v0, p0, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
     invoke-virtual {v0}, Lcom/android/server/wm/AppTokenList;->isEmpty()Z
@@ -291,14 +257,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 65
     iput-boolean v4, p0, Lcom/android/server/wm/Task;->mDeferRemoval:Z
 
-    .line 73
     :goto_0
     return-void
 
-    .line 69
     :cond_0
     const/16 v0, 0x791b
 
@@ -320,15 +283,12 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 70
     iput-boolean v3, p0, Lcom/android/server/wm/Task;->mDeferRemoval:Z
 
-    .line 71
     iget-object v0, p0, Lcom/android/server/wm/Task;->mStack:Lcom/android/server/wm/TaskStack;
 
     invoke-virtual {v0, p0}, Lcom/android/server/wm/TaskStack;->removeTask(Lcom/android/server/wm/Task;)V
 
-    .line 72
     iget-object v0, p0, Lcom/android/server/wm/Task;->mService:Lcom/android/server/wm/WindowManagerService;
 
     iget-object v0, v0, Lcom/android/server/wm/WindowManagerService;->mTaskIdToTask:Landroid/util/SparseArray;
@@ -345,7 +305,6 @@
     .param p1, "toBottom"    # Z
 
     .prologue
-    .line 105
     const/4 v0, 0x0
 
     .local v0, "appTokenNdx":I
@@ -358,7 +317,6 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 106
     iget-object v1, p0, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
     invoke-virtual {v1, v0}, Lcom/android/server/wm/AppTokenList;->get(I)Ljava/lang/Object;
@@ -369,12 +327,10 @@
 
     iput-boolean p1, v1, Lcom/android/server/wm/AppWindowToken;->sendingToBottom:Z
 
-    .line 105
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 108
     :cond_0
     return-void
 .end method
@@ -383,7 +339,6 @@
     .locals 2
 
     .prologue
-    .line 112
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

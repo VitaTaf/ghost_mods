@@ -55,7 +55,6 @@
     .locals 1
 
     .prologue
-    .line 43
     const-class v0, Lcom/android/server/usb/UsbAlsaManager;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -72,24 +71,20 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 132
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 112
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/usb/UsbAlsaManager;->mAudioDevices:Ljava/util/HashMap;
 
-    .line 115
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/usb/UsbAlsaManager;->mAlsaDevices:Ljava/util/HashMap;
 
-    .line 118
     new-instance v0, Lcom/android/server/usb/UsbAlsaManager$1;
 
     const-string v1, "/dev/snd/"
@@ -100,10 +95,8 @@
 
     iput-object v0, p0, Lcom/android/server/usb/UsbAlsaManager;->mAlsaObserver:Landroid/os/FileObserver;
 
-    .line 133
     iput-object p1, p0, Lcom/android/server/usb/UsbAlsaManager;->mContext:Landroid/content/Context;
 
-    .line 134
     return-void
 .end method
 
@@ -113,7 +106,6 @@
     .param p1, "x1"    # Ljava/lang/String;
 
     .prologue
-    .line 42
     invoke-direct {p0, p1}, Lcom/android/server/usb/UsbAlsaManager;->alsaFileAdded(Ljava/lang/String;)V
 
     return-void
@@ -125,7 +117,6 @@
     .param p1, "x1"    # Ljava/lang/String;
 
     .prologue
-    .line 42
     invoke-direct {p0, p1}, Lcom/android/server/usb/UsbAlsaManager;->alsaFileRemoved(Ljava/lang/String;)V
 
     return-void
@@ -136,17 +127,14 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 191
     const/4 v7, 0x0
 
-    .line 192
     .local v7, "type":I
     const/4 v2, -0x1
 
     .local v2, "card":I
     const/4 v4, -0x1
 
-    .line 194
     .local v4, "device":I
     const-string v8, "pcmC"
 
@@ -156,7 +144,6 @@
 
     if-eqz v8, :cond_6
 
-    .line 195
     const-string v8, "p"
 
     invoke-virtual {p1, v8}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
@@ -165,15 +152,12 @@
 
     if-eqz v8, :cond_5
 
-    .line 196
     const/4 v7, 0x1
 
-    .line 204
     :cond_0
     :goto_0
     if-eqz v7, :cond_4
 
-    .line 206
     const/16 v8, 0x43
 
     :try_start_0
@@ -181,7 +165,6 @@
 
     move-result v1
 
-    .line 207
     .local v1, "c_index":I
     const/16 v8, 0x44
 
@@ -189,13 +172,11 @@
 
     move-result v3
 
-    .line 208
     .local v3, "d_index":I
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v6
 
-    .line 209
     .local v6, "end":I
     const/4 v8, 0x1
 
@@ -205,11 +186,9 @@
 
     if-ne v7, v8, :cond_2
 
-    .line 211
     :cond_1
     add-int/lit8 v6, v6, -0x1
 
-    .line 213
     :cond_2
     add-int/lit8 v8, v1, 0x1
 
@@ -221,7 +200,6 @@
 
     move-result v2
 
-    .line 214
     add-int/lit8 v8, v3, 0x1
 
     invoke-virtual {p1, v8, v6}, Ljava/lang/String;->substring(II)Ljava/lang/String;
@@ -234,12 +212,10 @@
 
     move-result v4
 
-    .line 219
     iget-object v9, p0, Lcom/android/server/usb/UsbAlsaManager;->mAlsaDevices:Ljava/util/HashMap;
 
     monitor-enter v9
 
-    .line 220
     :try_start_1
     iget-object v8, p0, Lcom/android/server/usb/UsbAlsaManager;->mAlsaDevices:Ljava/util/HashMap;
 
@@ -249,12 +225,10 @@
 
     if-nez v8, :cond_3
 
-    .line 221
     new-instance v0, Lcom/android/server/usb/UsbAlsaManager$AlsaDevice;
 
     invoke-direct {v0, p0, v7, v2, v4}, Lcom/android/server/usb/UsbAlsaManager$AlsaDevice;-><init>(Lcom/android/server/usb/UsbAlsaManager;III)V
 
-    .line 222
     .local v0, "alsaDevice":Lcom/android/server/usb/UsbAlsaManager$AlsaDevice;
     sget-object v8, Lcom/android/server/usb/UsbAlsaManager;->TAG:Ljava/lang/String;
 
@@ -278,24 +252,20 @@
 
     invoke-static {v8, v10}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 223
     iget-object v8, p0, Lcom/android/server/usb/UsbAlsaManager;->mAlsaDevices:Ljava/util/HashMap;
 
     invoke-virtual {v8, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 224
     iget-object v8, p0, Lcom/android/server/usb/UsbAlsaManager;->mAlsaDevices:Ljava/util/HashMap;
 
     invoke-virtual {v8}, Ljava/lang/Object;->notifyAll()V
 
-    .line 226
     .end local v0    # "alsaDevice":Lcom/android/server/usb/UsbAlsaManager$AlsaDevice;
     :cond_3
     monitor-exit v9
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 228
     .end local v1    # "c_index":I
     .end local v3    # "d_index":I
     .end local v6    # "end":I
@@ -303,7 +273,6 @@
     :goto_1
     return-void
 
-    .line 197
     :cond_5
     const-string v8, "c"
 
@@ -313,12 +282,10 @@
 
     if-eqz v8, :cond_0
 
-    .line 198
     const/4 v7, 0x2
 
     goto :goto_0
 
-    .line 200
     :cond_6
     const-string v8, "midiC"
 
@@ -328,16 +295,13 @@
 
     if-eqz v8, :cond_0
 
-    .line 201
     const/4 v7, 0x3
 
     goto :goto_0
 
-    .line 215
     :catch_0
     move-exception v5
 
-    .line 216
     .local v5, "e":Ljava/lang/Exception;
     sget-object v8, Lcom/android/server/usb/UsbAlsaManager;->TAG:Ljava/lang/String;
 
@@ -363,7 +327,6 @@
 
     goto :goto_1
 
-    .line 226
     .end local v5    # "e":Ljava/lang/Exception;
     .restart local v1    # "c_index":I
     .restart local v3    # "d_index":I
@@ -384,12 +347,10 @@
     .param p1, "path"    # Ljava/lang/String;
 
     .prologue
-    .line 231
     iget-object v2, p0, Lcom/android/server/usb/UsbAlsaManager;->mAlsaDevices:Ljava/util/HashMap;
 
     monitor-enter v2
 
-    .line 232
     :try_start_0
     iget-object v1, p0, Lcom/android/server/usb/UsbAlsaManager;->mAlsaDevices:Ljava/util/HashMap;
 
@@ -399,11 +360,9 @@
 
     check-cast v0, Lcom/android/server/usb/UsbAlsaManager$AlsaDevice;
 
-    .line 233
     .local v0, "device":Lcom/android/server/usb/UsbAlsaManager$AlsaDevice;
     if-eqz v0, :cond_0
 
-    .line 234
     sget-object v1, Lcom/android/server/usb/UsbAlsaManager;->TAG:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -426,14 +385,11 @@
 
     invoke-static {v1, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 236
     :cond_0
     monitor-exit v2
 
-    .line 237
     return-void
 
-    .line 236
     .end local v0    # "device":Lcom/android/server/usb/UsbAlsaManager$AlsaDevice;
     :catchall_0
     move-exception v1
@@ -451,25 +407,21 @@
     .param p2, "enabled"    # Z
 
     .prologue
-    .line 151
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.media.action.USB_AUDIO_DEVICE_PLUG"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 152
     .local v0, "intent":Landroid/content/Intent;
     const/high16 v1, 0x20000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 153
     const/high16 v1, 0x40000000    # 2.0f
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 154
     const-string v2, "state"
 
     if-eqz p2, :cond_0
@@ -479,52 +431,44 @@
     :goto_0
     invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 155
     const-string v1, "card"
 
     iget v2, p1, Lcom/android/server/usb/UsbAlsaManager$AudioDevice;->mCard:I
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 156
     const-string v1, "device"
 
     iget v2, p1, Lcom/android/server/usb/UsbAlsaManager$AudioDevice;->mDevice:I
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 157
     const-string v1, "hasPlayback"
 
     iget-boolean v2, p1, Lcom/android/server/usb/UsbAlsaManager$AudioDevice;->mHasPlayback:Z
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 158
     const-string v1, "hasCapture"
 
     iget-boolean v2, p1, Lcom/android/server/usb/UsbAlsaManager$AudioDevice;->mHasCapture:Z
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 159
     const-string v1, "hasMIDI"
 
     iget-boolean v2, p1, Lcom/android/server/usb/UsbAlsaManager$AudioDevice;->mHasMIDI:Z
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 160
     iget-object v1, p0, Lcom/android/server/usb/UsbAlsaManager;->mContext:Landroid/content/Context;
 
     sget-object v2, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Context;->sendStickyBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 161
     return-void
 
-    .line 154
     :cond_0
     const/4 v1, 0x0
 
@@ -538,7 +482,6 @@
     .param p3, "type"    # I
 
     .prologue
-    .line 164
     new-instance v6, Lcom/android/server/usb/UsbAlsaManager$AlsaDevice;
 
     move-object/from16 v0, p0
@@ -551,11 +494,9 @@
 
     invoke-direct {v6, v0, v1, v2, v3}, Lcom/android/server/usb/UsbAlsaManager$AlsaDevice;-><init>(Lcom/android/server/usb/UsbAlsaManager;III)V
 
-    .line 167
     .local v6, "testDevice":Lcom/android/server/usb/UsbAlsaManager$AlsaDevice;
     const/16 v5, 0x9c4
 
-    .line 169
     .local v5, "kWaitTime":I
     move-object/from16 v0, p0
 
@@ -563,7 +504,6 @@
 
     monitor-enter v12
 
-    .line 170
     :try_start_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -573,7 +513,6 @@
 
     add-long v8, v14, v16
 
-    .line 172
     .local v8, "timeout":J
     :cond_0
     move-object/from16 v0, p0
@@ -590,15 +529,12 @@
 
     if-eqz v7, :cond_1
 
-    .line 173
     monitor-exit v12
 
-    .line 187
     .end local v6    # "testDevice":Lcom/android/server/usb/UsbAlsaManager$AlsaDevice;
     :goto_0
     return-object v6
 
-    .line 175
     .restart local v6    # "testDevice":Lcom/android/server/usb/UsbAlsaManager$AlsaDevice;
     :cond_1
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -609,7 +545,6 @@
 
     sub-long v10, v8, v14
 
-    .line 176
     .local v10, "waitTime":J
     const-wide/16 v14, 0x0
 
@@ -617,7 +552,6 @@
 
     if-lez v7, :cond_2
 
-    .line 178
     :try_start_1
     move-object/from16 v0, p0
 
@@ -628,7 +562,6 @@
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 183
     :cond_2
     :goto_1
     :try_start_2
@@ -640,12 +573,10 @@
 
     if-gtz v7, :cond_0
 
-    .line 184
     monitor-exit v12
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 186
     sget-object v7, Lcom/android/server/usb/UsbAlsaManager;->TAG:Ljava/lang/String;
 
     new-instance v12, Ljava/lang/StringBuilder;
@@ -668,16 +599,13 @@
 
     invoke-static {v7, v12}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 187
     const/4 v6, 0x0
 
     goto :goto_0
 
-    .line 179
     :catch_0
     move-exception v4
 
-    .line 180
     .local v4, "e":Ljava/lang/InterruptedException;
     :try_start_3
     sget-object v7, Lcom/android/server/usb/UsbAlsaManager;->TAG:Ljava/lang/String;
@@ -688,7 +616,6 @@
 
     goto :goto_1
 
-    .line 184
     .end local v4    # "e":Ljava/lang/InterruptedException;
     .end local v8    # "timeout":J
     .end local v10    # "waitTime":J
@@ -709,16 +636,13 @@
     .param p1, "usbDevice"    # Landroid/hardware/usb/UsbDevice;
 
     .prologue
-    .line 245
     const/4 v13, 0x0
 
-    .line 248
     .local v13, "isAudioDevice":Z
     invoke-virtual/range {p1 .. p1}, Landroid/hardware/usb/UsbDevice;->getInterfaceCount()I
 
     move-result v12
 
-    .line 249
     .local v12, "interfaceCount":I
     const/4 v15, 0x0
 
@@ -728,14 +652,12 @@
 
     if-ge v15, v12, :cond_1
 
-    .line 251
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v15}, Landroid/hardware/usb/UsbDevice;->getInterface(I)Landroid/hardware/usb/UsbInterface;
 
     move-result-object v14
 
-    .line 252
     .local v14, "ntrface":Landroid/hardware/usb/UsbInterface;
     invoke-virtual {v14}, Landroid/hardware/usb/UsbInterface;->getInterfaceClass()I
 
@@ -747,56 +669,45 @@
 
     if-ne v2, v0, :cond_0
 
-    .line 253
     const/4 v13, 0x1
 
-    .line 250
     :cond_0
     add-int/lit8 v15, v15, 0x1
 
     goto :goto_0
 
-    .line 256
     .end local v14    # "ntrface":Landroid/hardware/usb/UsbInterface;
     :cond_1
     if-nez v13, :cond_3
 
-    .line 310
     :cond_2
     :goto_1
     return-void
 
-    .line 264
     :cond_3
     new-instance v9, Landroid/alsa/AlsaCardsParser;
 
     invoke-direct {v9}, Landroid/alsa/AlsaCardsParser;-><init>()V
 
-    .line 265
     .local v9, "cardsParser":Landroid/alsa/AlsaCardsParser;
     invoke-virtual {v9}, Landroid/alsa/AlsaCardsParser;->scan()V
 
-    .line 269
     new-instance v10, Landroid/alsa/AlsaDevicesParser;
 
     invoke-direct {v10}, Landroid/alsa/AlsaDevicesParser;-><init>()V
 
-    .line 270
     .local v10, "devicesParser":Landroid/alsa/AlsaDevicesParser;
     invoke-virtual {v10}, Landroid/alsa/AlsaDevicesParser;->scan()V
 
-    .line 275
     invoke-virtual {v9}, Landroid/alsa/AlsaCardsParser;->getNumCardRecords()I
 
     move-result v2
 
     add-int/lit8 v3, v2, -0x1
 
-    .line 276
     .local v3, "card":I
     const/4 v4, 0x0
 
-    .line 278
     .local v4, "device":I
     const/4 v11, 0x0
 
@@ -808,14 +719,12 @@
 
     if-ge v11, v2, :cond_5
 
-    .line 279
     invoke-virtual {v9, v11}, Landroid/alsa/AlsaCardsParser;->getCardRecordAt(I)Landroid/alsa/AlsaCardsParser$AlsaCardRecord;
 
     move-result-object v2
 
     iget-object v8, v2, Landroid/alsa/AlsaCardsParser$AlsaCardRecord;->mCardName:Ljava/lang/String;
 
-    .line 280
     .local v8, "cardName":Ljava/lang/String;
     const-string v2, "USB-Audio"
 
@@ -825,35 +734,29 @@
 
     if-eqz v2, :cond_4
 
-    .line 281
     move v3, v11
 
-    .line 278
     :cond_4
     add-int/lit8 v11, v11, 0x1
 
     goto :goto_2
 
-    .line 284
     .end local v8    # "cardName":Ljava/lang/String;
     :cond_5
     invoke-virtual {v10, v3}, Landroid/alsa/AlsaDevicesParser;->hasPlaybackDevices(I)Z
 
     move-result v5
 
-    .line 285
     .local v5, "hasPlayback":Z
     invoke-virtual {v10, v3}, Landroid/alsa/AlsaDevicesParser;->hasCaptureDevices(I)Z
 
     move-result v6
 
-    .line 286
     .local v6, "hasCapture":Z
     invoke-virtual {v10, v3}, Landroid/alsa/AlsaDevicesParser;->hasMIDIDevices(I)Z
 
     move-result v7
 
-    .line 289
     .local v7, "hasMidi":Z
     if-eqz v5, :cond_6
 
@@ -867,7 +770,6 @@
 
     if-eqz v2, :cond_2
 
-    .line 295
     :cond_6
     if-eqz v6, :cond_7
 
@@ -881,7 +783,6 @@
 
     if-eqz v2, :cond_2
 
-    .line 307
     :cond_7
     new-instance v1, Lcom/android/server/usb/UsbAlsaManager$AudioDevice;
 
@@ -889,7 +790,6 @@
 
     invoke-direct/range {v1 .. v7}, Lcom/android/server/usb/UsbAlsaManager$AudioDevice;-><init>(Lcom/android/server/usb/UsbAlsaManager;IIZZZ)V
 
-    .line 308
     .local v1, "audioDevice":Lcom/android/server/usb/UsbAlsaManager$AudioDevice;
     move-object/from16 v0, p0
 
@@ -899,7 +799,6 @@
 
     invoke-virtual {v2, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 309
     const/4 v2, 0x1
 
     move-object/from16 v0, p0
@@ -914,7 +813,6 @@
     .param p1, "device"    # Landroid/hardware/usb/UsbDevice;
 
     .prologue
-    .line 317
     iget-object v1, p0, Lcom/android/server/usb/UsbAlsaManager;->mAudioDevices:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -923,11 +821,9 @@
 
     check-cast v0, Lcom/android/server/usb/UsbAlsaManager$AudioDevice;
 
-    .line 318
     .local v0, "audioDevice":Lcom/android/server/usb/UsbAlsaManager$AudioDevice;
     if-eqz v0, :cond_1
 
-    .line 319
     iget-boolean v1, v0, Lcom/android/server/usb/UsbAlsaManager$AudioDevice;->mHasPlayback:Z
 
     if-nez v1, :cond_0
@@ -936,13 +832,11 @@
 
     if-eqz v1, :cond_1
 
-    .line 320
     :cond_0
     const/4 v1, 0x0
 
     invoke-direct {p0, v0, v1}, Lcom/android/server/usb/UsbAlsaManager;->sendDeviceNotification(Lcom/android/server/usb/UsbAlsaManager$AudioDevice;Z)V
 
-    .line 323
     :cond_1
     return-void
 .end method
@@ -953,12 +847,10 @@
     .param p2, "pw"    # Ljava/io/PrintWriter;
 
     .prologue
-    .line 326
     const-string v2, "  USB AudioDevices:"
 
     invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 327
     iget-object v2, p0, Lcom/android/server/usb/UsbAlsaManager;->mAudioDevices:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -983,7 +875,6 @@
 
     check-cast v0, Landroid/hardware/usb/UsbDevice;
 
-    .line 328
     .local v0, "device":Landroid/hardware/usb/UsbDevice;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -1027,7 +918,6 @@
 
     goto :goto_0
 
-    .line 330
     .end local v0    # "device":Landroid/hardware/usb/UsbDevice;
     :cond_0
     return-void
@@ -1037,12 +927,10 @@
     .locals 4
 
     .prologue
-    .line 137
     iget-object v2, p0, Lcom/android/server/usb/UsbAlsaManager;->mAlsaObserver:Landroid/os/FileObserver;
 
     invoke-virtual {v2}, Landroid/os/FileObserver;->startWatching()V
 
-    .line 140
     new-instance v2, Ljava/io/File;
 
     const-string v3, "/dev/snd/"
@@ -1053,7 +941,6 @@
 
     move-result-object v0
 
-    .line 141
     .local v0, "files":[Ljava/io/File;
     const/4 v1, 0x0
 
@@ -1063,7 +950,6 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 142
     aget-object v2, v0, v1
 
     invoke-virtual {v2}, Ljava/io/File;->getName()Ljava/lang/String;
@@ -1072,12 +958,10 @@
 
     invoke-direct {p0, v2}, Lcom/android/server/usb/UsbAlsaManager;->alsaFileAdded(Ljava/lang/String;)V
 
-    .line 141
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 144
     :cond_0
     return-void
 .end method

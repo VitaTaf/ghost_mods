@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 83
     iput-object p1, p0, Lcom/android/server/location/GeoFencerProxy$2;->this$0:Lcom/android/server/location/GeoFencerProxy;
 
     invoke-direct {p0}, Landroid/location/IGeoFenceListener$Stub;-><init>()V
@@ -43,13 +42,11 @@
     .end annotation
 
     .prologue
-    .line 89
     iget-object v0, p0, Lcom/android/server/location/GeoFencerProxy$2;->this$0:Lcom/android/server/location/GeoFencerProxy;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, p1, v1}, Lcom/android/server/location/GeoFencerProxy;->remove(Landroid/location/GeoFenceParams;Z)V
 
-    .line 90
     return-void
 .end method

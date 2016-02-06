@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 680
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$PolicyHandler;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -37,7 +36,6 @@
     .param p2, "x1"    # Lcom/android/server/policy/PhoneWindowManager$1;
 
     .prologue
-    .line 680
     invoke-direct {p0, p1}, Lcom/android/server/policy/PhoneWindowManager$PolicyHandler;-><init>(Lcom/android/server/policy/PhoneWindowManager;)V
 
     return-void
@@ -54,17 +52,14 @@
 
     const/4 v2, 0x0
 
-    .line 683
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 728
     :goto_0
     :pswitch_0
     return-void
 
-    .line 685
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$PolicyHandler;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -73,7 +68,6 @@
 
     goto :goto_0
 
-    .line 688
     :pswitch_2
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$PolicyHandler;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -82,7 +76,6 @@
 
     goto :goto_0
 
-    .line 691
     :pswitch_3
     iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$PolicyHandler;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -94,7 +87,6 @@
 
     goto :goto_0
 
-    .line 694
     :pswitch_4
     iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$PolicyHandler;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -106,7 +98,6 @@
 
     goto :goto_0
 
-    .line 697
     :pswitch_5
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$PolicyHandler;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -115,7 +106,6 @@
 
     goto :goto_0
 
-    .line 700
     :pswitch_6
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$PolicyHandler;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -123,7 +113,6 @@
 
     goto :goto_0
 
-    .line 704
     :pswitch_7
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$PolicyHandler;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -132,7 +121,6 @@
 
     goto :goto_0
 
-    .line 707
     :pswitch_8
     const-string v0, "WindowManager"
 
@@ -140,7 +128,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 708
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$PolicyHandler;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     # invokes: Lcom/android/server/policy/PhoneWindowManager;->finishKeyguardDrawn()V
@@ -148,7 +135,6 @@
 
     goto :goto_0
 
-    .line 712
     :pswitch_9
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$PolicyHandler;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -157,7 +143,6 @@
 
     goto :goto_0
 
-    .line 715
     :pswitch_a
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$PolicyHandler;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -166,7 +151,6 @@
 
     goto :goto_0
 
-    .line 718
     :pswitch_b
     iget-object v3, p0, Lcom/android/server/policy/PhoneWindowManager$PolicyHandler;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -186,7 +170,6 @@
 
     goto :goto_1
 
-    .line 721
     :pswitch_c
     iget-object v3, p0, Lcom/android/server/policy/PhoneWindowManager$PolicyHandler;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -208,7 +191,6 @@
     # invokes: Lcom/android/server/policy/PhoneWindowManager;->powerPress(JZI)V
     invoke-static {v3, v4, v5, v1, v0}, Lcom/android/server/policy/PhoneWindowManager;->access$600(Lcom/android/server/policy/PhoneWindowManager;JZI)V
 
-    .line 722
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$PolicyHandler;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     # invokes: Lcom/android/server/policy/PhoneWindowManager;->finishPowerKeyPress()V
@@ -219,10 +201,8 @@
     :cond_1
     move v1, v2
 
-    .line 721
     goto :goto_2
 
-    .line 725
     :pswitch_d
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$PolicyHandler;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -231,7 +211,6 @@
 
     goto :goto_0
 
-    .line 683
     nop
 
     :pswitch_data_0

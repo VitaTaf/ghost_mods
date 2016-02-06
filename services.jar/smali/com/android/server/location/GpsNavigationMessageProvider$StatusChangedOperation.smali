@@ -39,15 +39,12 @@
     .param p2, "status"    # I
 
     .prologue
-    .line 93
     iput-object p1, p0, Lcom/android/server/location/GpsNavigationMessageProvider$StatusChangedOperation;->this$0:Lcom/android/server/location/GpsNavigationMessageProvider;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 94
     iput p2, p0, Lcom/android/server/location/GpsNavigationMessageProvider$StatusChangedOperation;->mStatus:I
 
-    .line 95
     return-void
 .end method
 
@@ -63,12 +60,10 @@
     .end annotation
 
     .prologue
-    .line 99
     iget v0, p0, Lcom/android/server/location/GpsNavigationMessageProvider$StatusChangedOperation;->mStatus:I
 
     invoke-interface {p1, v0}, Landroid/location/IGpsNavigationMessageListener;->onStatusChanged(I)V
 
-    .line 100
     return-void
 .end method
 
@@ -82,7 +77,6 @@
     .end annotation
 
     .prologue
-    .line 89
     check-cast p1, Landroid/location/IGpsNavigationMessageListener;
 
     .end local p1    # "x0":Landroid/os/IInterface;

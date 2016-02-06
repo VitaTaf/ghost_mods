@@ -38,29 +38,22 @@
     .param p4, "targetServer"    # Ljava/lang/String;
 
     .prologue
-    .line 4733
     iput-object p1, p0, Lcom/android/server/ConnectivityService$InternetDetection$InternetDetectThread;->this$1:Lcom/android/server/ConnectivityService$InternetDetection;
 
-    .line 4734
     invoke-direct {p0, p2}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
 
-    .line 4731
     const/16 v0, 0x257
 
     iput v0, p0, Lcom/android/server/ConnectivityService$InternetDetection$InternetDetectThread;->httpResponseCode:I
 
-    .line 4732
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/ConnectivityService$InternetDetection$InternetDetectThread;->location:Ljava/lang/String;
 
-    .line 4735
     iput-object p4, p0, Lcom/android/server/ConnectivityService$InternetDetection$InternetDetectThread;->mTraget:Ljava/lang/String;
 
-    .line 4736
     iput-object p3, p0, Lcom/android/server/ConnectivityService$InternetDetection$InternetDetectThread;->mNai:Lcom/android/server/connectivity/NetworkAgentInfo;
 
-    .line 4737
     return-void
 .end method
 
@@ -68,14 +61,11 @@
     .locals 13
 
     .prologue
-    .line 4757
     const/4 v9, 0x0
 
-    .line 4758
     .local v9, "urlConnection":Ljava/net/HttpURLConnection;
     const/16 v3, 0x257
 
-    .line 4760
     .local v3, "httpResponseCode":I
     :try_start_0
     new-instance v8, Ljava/net/URL;
@@ -88,7 +78,6 @@
 
     invoke-direct {v8, v10, v11, v12}, Ljava/net/URL;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4762
     .local v8, "url":Ljava/net/URL;
     new-instance v10, Ljava/lang/StringBuilder;
 
@@ -133,7 +122,6 @@
     # invokes: Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
     invoke-static {v10}, Lcom/android/server/ConnectivityService;->access$500(Ljava/lang/String;)V
 
-    .line 4765
     iget-object v10, p0, Lcom/android/server/ConnectivityService$InternetDetection$InternetDetectThread;->mNai:Lcom/android/server/connectivity/NetworkAgentInfo;
 
     iget-object v10, v10, Lcom/android/server/connectivity/NetworkAgentInfo;->network:Landroid/net/Network;
@@ -148,47 +136,38 @@
 
     move-object v9, v0
 
-    .line 4766
     const/4 v10, 0x0
 
     invoke-virtual {v9, v10}, Ljava/net/HttpURLConnection;->setInstanceFollowRedirects(Z)V
 
-    .line 4767
     const/16 v10, 0x2710
 
     invoke-virtual {v9, v10}, Ljava/net/HttpURLConnection;->setConnectTimeout(I)V
 
-    .line 4768
     const/16 v10, 0x2710
 
     invoke-virtual {v9, v10}, Ljava/net/HttpURLConnection;->setReadTimeout(I)V
 
-    .line 4769
     const/4 v10, 0x0
 
     invoke-virtual {v9, v10}, Ljava/net/HttpURLConnection;->setUseCaches(Z)V
 
-    .line 4772
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v4
 
-    .line 4774
     .local v4, "requestTimestamp":J
     invoke-virtual {v9}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
 
-    .line 4777
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v6
 
-    .line 4779
     .local v6, "responseTimestamp":J
     invoke-virtual {v9}, Ljava/net/HttpURLConnection;->getResponseCode()I
 
     move-result v3
 
-    .line 4781
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -224,7 +203,6 @@
     # invokes: Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
     invoke-static {v10}, Lcom/android/server/ConnectivityService;->access$500(Ljava/lang/String;)V
 
-    .line 4784
     invoke-virtual {v9}, Ljava/net/HttpURLConnection;->getHeaderFields()Ljava/util/Map;
 
     move-result-object v10
@@ -235,7 +213,6 @@
 
     iput-object v10, p0, Lcom/android/server/ConnectivityService$InternetDetection$InternetDetectThread;->location:Ljava/lang/String;
 
-    .line 4797
     const/16 v10, 0xc8
 
     if-ne v3, v10, :cond_0
@@ -246,7 +223,6 @@
 
     if-nez v10, :cond_0
 
-    .line 4798
     const-string v10, "Empty 200 response interpreted as 204 response."
 
     # invokes: Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
@@ -255,17 +231,13 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 4799
     const/16 v3, 0xcc
 
-    .line 4807
     :cond_0
     if-eqz v9, :cond_1
 
-    .line 4808
     invoke-virtual {v9}, Ljava/net/HttpURLConnection;->disconnect()V
 
-    .line 4811
     .end local v4    # "requestTimestamp":J
     .end local v6    # "responseTimestamp":J
     .end local v8    # "url":Ljava/net/URL;
@@ -273,11 +245,9 @@
     :goto_0
     return v3
 
-    .line 4801
     :catch_0
     move-exception v2
 
-    .line 4802
     .local v2, "e":Ljava/io/IOException;
     :try_start_1
     new-instance v10, Ljava/lang/StringBuilder;
@@ -303,28 +273,23 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 4803
     const/16 v10, 0x257
 
     if-ne v3, v10, :cond_2
 
-    .line 4807
     :cond_2
     if-eqz v9, :cond_1
 
-    .line 4808
     invoke-virtual {v9}, Ljava/net/HttpURLConnection;->disconnect()V
 
     goto :goto_0
 
-    .line 4807
     .end local v2    # "e":Ljava/io/IOException;
     :catchall_0
     move-exception v10
 
     if-eqz v9, :cond_3
 
-    .line 4808
     invoke-virtual {v9}, Ljava/net/HttpURLConnection;->disconnect()V
 
     :cond_3
@@ -350,7 +315,6 @@
     .end annotation
 
     .prologue
-    .line 4752
     .local p1, "fields":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Ljava/lang/String;>;>;"
     const-string v1, "location"
 
@@ -360,7 +324,6 @@
 
     check-cast v0, Ljava/util/List;
 
-    .line 4753
     .local v0, "value":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     if-nez v0, :cond_0
 
@@ -385,7 +348,6 @@
     .locals 3
 
     .prologue
-    .line 4739
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -421,14 +383,12 @@
     # invokes: Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
     invoke-static {v1}, Lcom/android/server/ConnectivityService;->access$500(Ljava/lang/String;)V
 
-    .line 4741
     invoke-direct {p0}, Lcom/android/server/ConnectivityService$InternetDetection$InternetDetectThread;->isCaptivePortal()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/server/ConnectivityService$InternetDetection$InternetDetectThread;->httpResponseCode:I
 
-    .line 4742
     new-instance v0, Lcom/android/server/ConnectivityService$DetectionResult;
 
     iget-object v1, p0, Lcom/android/server/ConnectivityService$InternetDetection$InternetDetectThread;->this$1:Lcom/android/server/ConnectivityService$InternetDetection;
@@ -437,7 +397,6 @@
 
     invoke-direct {v0, v1}, Lcom/android/server/ConnectivityService$DetectionResult;-><init>(Lcom/android/server/ConnectivityService;)V
 
-    .line 4743
     .local v0, "ret":Lcom/android/server/ConnectivityService$DetectionResult;
     iget v1, p0, Lcom/android/server/ConnectivityService$InternetDetection$InternetDetectThread;->httpResponseCode:I
 
@@ -445,12 +404,10 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 4744
     const/4 v1, 0x0
 
     iput v1, v0, Lcom/android/server/ConnectivityService$DetectionResult;->result:I
 
-    .line 4749
     :cond_0
     :goto_0
     iget-object v1, p0, Lcom/android/server/ConnectivityService$InternetDetection$InternetDetectThread;->this$1:Lcom/android/server/ConnectivityService$InternetDetection;
@@ -465,10 +422,8 @@
 
     invoke-virtual {v1, v2, v0}, Lcom/android/server/ConnectivityService$InternetDetection;->sendInternetDetectRet(ILcom/android/server/ConnectivityService$DetectionResult;)V
 
-    .line 4750
     return-void
 
-    .line 4745
     :cond_1
     iget v1, p0, Lcom/android/server/ConnectivityService$InternetDetection$InternetDetectThread;->httpResponseCode:I
 
@@ -482,12 +437,10 @@
 
     if-gt v1, v2, :cond_0
 
-    .line 4746
     const/4 v1, 0x1
 
     iput v1, v0, Lcom/android/server/ConnectivityService$DetectionResult;->result:I
 
-    .line 4747
     iget-object v1, p0, Lcom/android/server/ConnectivityService$InternetDetection$InternetDetectThread;->location:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/android/server/ConnectivityService$DetectionResult;->location:Ljava/lang/String;

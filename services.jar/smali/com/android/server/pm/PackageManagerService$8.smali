@@ -34,7 +34,6 @@
     .locals 0
 
     .prologue
-    .line 11126
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$8;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$8;->val$packageName:Ljava/lang/String;
@@ -56,14 +55,12 @@
     .locals 6
 
     .prologue
-    .line 11128
     iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$8;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v2, v2, Lcom/android/server/pm/PackageManagerService;->mHandler:Lcom/android/server/pm/PackageManagerService$PackageHandler;
 
     invoke-virtual {v2, p0}, Lcom/android/server/pm/PackageManagerService$PackageHandler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 11129
     iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$8;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v3, p0, Lcom/android/server/pm/PackageManagerService$8;->val$packageName:Ljava/lang/String;
@@ -77,13 +74,11 @@
 
     move-result v1
 
-    .line 11130
     .local v1, "returnCode":I
     iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$8;->val$observer:Landroid/content/pm/IPackageDeleteObserver2;
 
     if-eqz v2, :cond_0
 
-    .line 11132
     :try_start_0
     iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$8;->val$observer:Landroid/content/pm/IPackageDeleteObserver2;
 
@@ -95,16 +90,13 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 11137
     :cond_0
     :goto_0
     return-void
 
-    .line 11133
     :catch_0
     move-exception v0
 
-    .line 11134
     .local v0, "e":Landroid/os/RemoteException;
     const-string v2, "PackageManager"
 

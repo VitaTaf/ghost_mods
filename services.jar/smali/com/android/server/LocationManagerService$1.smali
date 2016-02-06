@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 317
     iput-object p1, p0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 320
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 321
     .local v0, "action":Ljava/lang/String;
     const-string v4, "com.motorola.location.instrumentation"
 
@@ -54,14 +51,12 @@
 
     if-eqz v4, :cond_5
 
-    .line 322
     const-string v4, "com.motorola.location.insttype"
 
     invoke-virtual {p2, v4}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 323
     .local v1, "instType":Ljava/lang/String;
     const-string v4, "com.motorola.location.instincvalue"
 
@@ -71,7 +66,6 @@
 
     move-result-wide v2
 
-    .line 325
     .local v2, "instIncValue":J
     const-string v4, "gpsUptime"
 
@@ -81,7 +75,6 @@
 
     if-eqz v4, :cond_1
 
-    .line 326
     iget-object v4, p0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
 
     # getter for: Lcom/android/server/LocationManagerService;->mLocInstValues:Lcom/android/server/location/LocationMetrics$LocationStats;
@@ -95,7 +88,6 @@
 
     iput-wide v6, v4, Lcom/android/server/location/LocationMetrics$LocationStats;->gpsUptime:J
 
-    .line 327
     # getter for: Lcom/android/server/LocationManagerService;->mBuildTypeUser:Z
     invoke-static {}, Lcom/android/server/LocationManagerService;->access$100()Z
 
@@ -103,7 +95,6 @@
 
     if-nez v4, :cond_0
 
-    .line 328
     const-string v4, "LocationManagerService"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -145,14 +136,12 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 354
     .end local v1    # "instType":Ljava/lang/String;
     .end local v2    # "instIncValue":J
     :cond_0
     :goto_0
     return-void
 
-    .line 331
     .restart local v1    # "instType":Ljava/lang/String;
     .restart local v2    # "instIncValue":J
     :cond_1
@@ -164,7 +153,6 @@
 
     if-eqz v4, :cond_2
 
-    .line 332
     iget-object v4, p0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
 
     # getter for: Lcom/android/server/LocationManagerService;->mLocInstValues:Lcom/android/server/location/LocationMetrics$LocationStats;
@@ -180,7 +168,6 @@
 
     goto :goto_0
 
-    .line 333
     :cond_2
     const-string v4, "flpHwGeofenceCount"
 
@@ -190,7 +177,6 @@
 
     if-eqz v4, :cond_3
 
-    .line 334
     iget-object v4, p0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
 
     # getter for: Lcom/android/server/LocationManagerService;->mLocInstValues:Lcom/android/server/location/LocationMetrics$LocationStats;
@@ -206,7 +192,6 @@
 
     goto :goto_0
 
-    .line 335
     :cond_3
     const-string v4, "smartGpsCount"
 
@@ -216,7 +201,6 @@
 
     if-eqz v4, :cond_4
 
-    .line 336
     iget-object v4, p0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
 
     # getter for: Lcom/android/server/LocationManagerService;->mLocInstValues:Lcom/android/server/location/LocationMetrics$LocationStats;
@@ -232,7 +216,6 @@
 
     goto :goto_0
 
-    .line 337
     :cond_4
     const-string v4, "smartGpsUptime"
 
@@ -242,7 +225,6 @@
 
     if-eqz v4, :cond_0
 
-    .line 338
     iget-object v4, p0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
 
     # getter for: Lcom/android/server/LocationManagerService;->mLocInstValues:Lcom/android/server/location/LocationMetrics$LocationStats;
@@ -256,7 +238,6 @@
 
     iput-wide v6, v4, Lcom/android/server/location/LocationMetrics$LocationStats;->smartGpsUptime:J
 
-    .line 339
     # getter for: Lcom/android/server/LocationManagerService;->mBuildTypeUser:Z
     invoke-static {}, Lcom/android/server/LocationManagerService;->access$100()Z
 
@@ -264,7 +245,6 @@
 
     if-nez v4, :cond_0
 
-    .line 340
     const-string v4, "LocationManagerService"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -308,7 +288,6 @@
 
     goto :goto_0
 
-    .line 346
     .end local v1    # "instType":Ljava/lang/String;
     .end local v2    # "instIncValue":J
     :cond_5
@@ -320,7 +299,6 @@
 
     if-eqz v4, :cond_6
 
-    .line 347
     iget-object v4, p0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
 
     # getter for: Lcom/android/server/LocationManagerService;->mAlarmManager:Landroid/app/AlarmManager;
@@ -337,13 +315,11 @@
 
     invoke-virtual {v4, v5}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
 
-    .line 348
     iget-object v4, p0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
 
     # invokes: Lcom/android/server/LocationManagerService;->saveInstrumentation()V
     invoke-static {v4}, Lcom/android/server/LocationManagerService;->access$400(Lcom/android/server/LocationManagerService;)V
 
-    .line 349
     iget-object v4, p0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
 
     # getter for: Lcom/android/server/LocationManagerService;->mStatDB:Lcom/android/server/location/LocationMetrics$LocationStatsDataSource;
@@ -355,7 +331,6 @@
 
     goto/16 :goto_0
 
-    .line 350
     :cond_6
     const-string v4, "com.android.internal.location.ALARM_SETTING_CHECKIN"
 
@@ -365,7 +340,6 @@
 
     if-eqz v4, :cond_0
 
-    .line 351
     iget-object v4, p0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
 
     # getter for: Lcom/android/server/LocationManagerService;->mLocInstValues:Lcom/android/server/location/LocationMetrics$LocationStats;
@@ -381,7 +355,6 @@
 
     iput-object v5, v4, Lcom/android/server/location/LocationMetrics$LocationStats;->locationSetting:Ljava/lang/String;
 
-    .line 352
     iget-object v4, p0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
 
     # invokes: Lcom/android/server/LocationManagerService;->checkinLocationDailyDetails()V

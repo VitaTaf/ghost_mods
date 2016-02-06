@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 2678
     iput-object p1, p0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,16 +41,13 @@
     .param p2, "proxy"    # Landroid/bluetooth/BluetoothProfile;
 
     .prologue
-    .line 2682
     sparse-switch p1, :sswitch_data_0
 
-    .line 2780
     .end local p2    # "proxy":Landroid/bluetooth/BluetoothProfile;
     :cond_0
     :goto_0
     return-void
 
-    .line 2684
     .restart local p2    # "proxy":Landroid/bluetooth/BluetoothProfile;
     :sswitch_0
     move-object/from16 v0, p0
@@ -65,7 +61,6 @@
 
     monitor-enter v8
 
-    .line 2685
     :try_start_0
     move-object/from16 v0, p0
 
@@ -79,7 +74,6 @@
     # setter for: Lcom/android/server/audio/AudioService;->mA2dp:Landroid/bluetooth/BluetoothA2dp;
     invoke-static {v1, v0}, Lcom/android/server/audio/AudioService;->access$3402(Lcom/android/server/audio/AudioService;Landroid/bluetooth/BluetoothA2dp;)Landroid/bluetooth/BluetoothA2dp;
 
-    .line 2686
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
@@ -93,7 +87,6 @@
 
     move-result-object v15
 
-    .line 2687
     .local v15, "deviceList":Ljava/util/List;, "Ljava/util/List<Landroid/bluetooth/BluetoothDevice;>;"
     invoke-interface {v15}, Ljava/util/List;->size()I
 
@@ -101,7 +94,6 @@
 
     if-lez v1, :cond_1
 
-    .line 2688
     const/4 v1, 0x0
 
     invoke-interface {v15, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -110,7 +102,6 @@
 
     check-cast v6, Landroid/bluetooth/BluetoothDevice;
 
-    .line 2689
     .local v6, "btDevice":Landroid/bluetooth/BluetoothDevice;
     move-object/from16 v0, p0
 
@@ -125,7 +116,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 2690
     :try_start_1
     move-object/from16 v0, p0
 
@@ -140,7 +130,6 @@
 
     move-result v4
 
-    .line 2691
     .local v4, "state":I
     move-object/from16 v0, p0
 
@@ -160,7 +149,6 @@
 
     move-result v7
 
-    .line 2694
     .local v7, "delay":I
     move-object/from16 v0, p0
 
@@ -182,12 +170,10 @@
     # invokes: Lcom/android/server/audio/AudioService;->queueMsgUnderWakeLock(Landroid/os/Handler;IIILjava/lang/Object;I)V
     invoke-static/range {v1 .. v7}, Lcom/android/server/audio/AudioService;->access$3700(Lcom/android/server/audio/AudioService;Landroid/os/Handler;IIILjava/lang/Object;I)V
 
-    .line 2700
     monitor-exit v9
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 2702
     .end local v4    # "state":I
     .end local v6    # "btDevice":Landroid/bluetooth/BluetoothDevice;
     .end local v7    # "delay":I
@@ -207,7 +193,6 @@
 
     throw v1
 
-    .line 2691
     .restart local v4    # "state":I
     .restart local v6    # "btDevice":Landroid/bluetooth/BluetoothDevice;
     .restart local v15    # "deviceList":Ljava/util/List;, "Ljava/util/List<Landroid/bluetooth/BluetoothDevice;>;"
@@ -216,7 +201,6 @@
 
     goto :goto_1
 
-    .line 2700
     .end local v4    # "state":I
     :catchall_1
     move-exception v1
@@ -231,7 +215,6 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 2706
     .end local v6    # "btDevice":Landroid/bluetooth/BluetoothDevice;
     .end local v15    # "deviceList":Ljava/util/List;, "Ljava/util/List<Landroid/bluetooth/BluetoothDevice;>;"
     .restart local p2    # "proxy":Landroid/bluetooth/BluetoothProfile;
@@ -240,7 +223,6 @@
 
     move-result-object v15
 
-    .line 2707
     .restart local v15    # "deviceList":Ljava/util/List;, "Ljava/util/List<Landroid/bluetooth/BluetoothDevice;>;"
     invoke-interface {v15}, Ljava/util/List;->size()I
 
@@ -248,7 +230,6 @@
 
     if-lez v1, :cond_0
 
-    .line 2708
     const/4 v1, 0x0
 
     invoke-interface {v15, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -257,7 +238,6 @@
 
     check-cast v6, Landroid/bluetooth/BluetoothDevice;
 
-    .line 2709
     .restart local v6    # "btDevice":Landroid/bluetooth/BluetoothDevice;
     move-object/from16 v0, p0
 
@@ -270,7 +250,6 @@
 
     monitor-enter v2
 
-    .line 2710
     :try_start_5
     move-object/from16 v0, p2
 
@@ -278,7 +257,6 @@
 
     move-result v4
 
-    .line 2711
     .restart local v4    # "state":I
     move-object/from16 v0, p0
 
@@ -306,7 +284,6 @@
     # invokes: Lcom/android/server/audio/AudioService;->queueMsgUnderWakeLock(Landroid/os/Handler;IIILjava/lang/Object;I)V
     invoke-static/range {v8 .. v14}, Lcom/android/server/audio/AudioService;->access$3700(Lcom/android/server/audio/AudioService;Landroid/os/Handler;IIILjava/lang/Object;I)V
 
-    .line 2717
     monitor-exit v2
 
     goto/16 :goto_0
@@ -321,7 +298,6 @@
 
     throw v1
 
-    .line 2722
     .end local v6    # "btDevice":Landroid/bluetooth/BluetoothDevice;
     .end local v15    # "deviceList":Ljava/util/List;, "Ljava/util/List<Landroid/bluetooth/BluetoothDevice;>;"
     :sswitch_2
@@ -336,7 +312,6 @@
 
     monitor-enter v2
 
-    .line 2724
     :try_start_6
     move-object/from16 v0, p0
 
@@ -351,7 +326,6 @@
 
     invoke-virtual {v1, v3}, Lcom/android/server/audio/AudioService$AudioHandler;->removeMessages(I)V
 
-    .line 2725
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
@@ -364,7 +338,6 @@
     # setter for: Lcom/android/server/audio/AudioService;->mBluetoothHeadset:Landroid/bluetooth/BluetoothHeadset;
     invoke-static {v1, v0}, Lcom/android/server/audio/AudioService;->access$3102(Lcom/android/server/audio/AudioService;Landroid/bluetooth/BluetoothHeadset;)Landroid/bluetooth/BluetoothHeadset;
 
-    .line 2726
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
@@ -378,7 +351,6 @@
 
     move-result-object v15
 
-    .line 2727
     .restart local v15    # "deviceList":Ljava/util/List;, "Ljava/util/List<Landroid/bluetooth/BluetoothDevice;>;"
     invoke-interface {v15}, Ljava/util/List;->size()I
 
@@ -386,7 +358,6 @@
 
     if-lez v1, :cond_6
 
-    .line 2728
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
@@ -402,7 +373,6 @@
     # setter for: Lcom/android/server/audio/AudioService;->mBluetoothHeadsetDevice:Landroid/bluetooth/BluetoothDevice;
     invoke-static {v3, v1}, Lcom/android/server/audio/AudioService;->access$2902(Lcom/android/server/audio/AudioService;Landroid/bluetooth/BluetoothDevice;)Landroid/bluetooth/BluetoothDevice;
 
-    .line 2733
     :goto_2
     move-object/from16 v0, p0
 
@@ -411,7 +381,6 @@
     # invokes: Lcom/android/server/audio/AudioService;->checkScoAudioState()V
     invoke-static {v1}, Lcom/android/server/audio/AudioService;->access$2500(Lcom/android/server/audio/AudioService;)V
 
-    .line 2735
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
@@ -451,11 +420,9 @@
 
     if-ne v1, v3, :cond_5
 
-    .line 2738
     :cond_3
     const/16 v16, 0x0
 
-    .line 2739
     .local v16, "status":Z
     move-object/from16 v0, p0
 
@@ -468,7 +435,6 @@
 
     if-eqz v1, :cond_4
 
-    .line 2740
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
@@ -480,13 +446,11 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 2769
     :cond_4
     :goto_3
     :pswitch_0
     if-nez v16, :cond_5
 
-    .line 2770
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
@@ -511,7 +475,6 @@
     # invokes: Lcom/android/server/audio/AudioService;->sendMsg(Landroid/os/Handler;IIIILjava/lang/Object;I)V
     invoke-static/range {v8 .. v14}, Lcom/android/server/audio/AudioService;->access$100(Landroid/os/Handler;IIIILjava/lang/Object;I)V
 
-    .line 2774
     .end local v16    # "status":Z
     :cond_5
     monitor-exit v2
@@ -528,7 +491,6 @@
 
     throw v1
 
-    .line 2730
     .restart local v15    # "deviceList":Ljava/util/List;, "Ljava/util/List<Landroid/bluetooth/BluetoothDevice;>;"
     :cond_6
     :try_start_7
@@ -543,7 +505,6 @@
 
     goto :goto_2
 
-    .line 2742
     .restart local v16    # "status":Z
     :pswitch_1
     move-object/from16 v0, p0
@@ -555,7 +516,6 @@
     # setter for: Lcom/android/server/audio/AudioService;->mScoAudioState:I
     invoke-static {v1, v3}, Lcom/android/server/audio/AudioService;->access$2702(Lcom/android/server/audio/AudioService;I)I
 
-    .line 2743
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
@@ -569,7 +529,6 @@
 
     if-ne v1, v3, :cond_7
 
-    .line 2744
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
@@ -585,7 +544,6 @@
 
     goto :goto_3
 
-    .line 2745
     :cond_7
     move-object/from16 v0, p0
 
@@ -598,7 +556,6 @@
 
     if-nez v1, :cond_8
 
-    .line 2746
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
@@ -623,7 +580,6 @@
 
     goto :goto_3
 
-    .line 2748
     :cond_8
     move-object/from16 v0, p0
 
@@ -638,7 +594,6 @@
 
     if-ne v1, v3, :cond_4
 
-    .line 2749
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
@@ -663,7 +618,6 @@
 
     goto/16 :goto_3
 
-    .line 2754
     :pswitch_2
     move-object/from16 v0, p0
 
@@ -678,7 +632,6 @@
 
     if-ne v1, v3, :cond_9
 
-    .line 2755
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
@@ -694,7 +647,6 @@
 
     goto/16 :goto_3
 
-    .line 2756
     :cond_9
     move-object/from16 v0, p0
 
@@ -707,7 +659,6 @@
 
     if-nez v1, :cond_a
 
-    .line 2757
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
@@ -732,7 +683,6 @@
 
     goto/16 :goto_3
 
-    .line 2759
     :cond_a
     move-object/from16 v0, p0
 
@@ -747,7 +697,6 @@
 
     if-ne v1, v3, :cond_4
 
-    .line 2760
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
@@ -772,7 +721,6 @@
 
     goto/16 :goto_3
 
-    .line 2765
     :pswitch_3
     move-object/from16 v0, p0
 
@@ -800,7 +748,6 @@
 
     goto/16 :goto_3
 
-    .line 2682
     nop
 
     :sswitch_data_0
@@ -810,7 +757,6 @@
         0xa -> :sswitch_1
     .end sparse-switch
 
-    .line 2740
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -826,14 +772,11 @@
     .param p1, "profile"    # I
 
     .prologue
-    .line 2782
     sparse-switch p1, :sswitch_data_0
 
-    .line 2813
     :goto_0
     return-void
 
-    .line 2784
     :sswitch_0
     iget-object v0, p0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
 
@@ -844,7 +787,6 @@
 
     monitor-enter v1
 
-    .line 2785
     :try_start_0
     iget-object v0, p0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
 
@@ -853,7 +795,6 @@
     # setter for: Lcom/android/server/audio/AudioService;->mA2dp:Landroid/bluetooth/BluetoothA2dp;
     invoke-static {v0, v2}, Lcom/android/server/audio/AudioService;->access$3402(Lcom/android/server/audio/AudioService;Landroid/bluetooth/BluetoothA2dp;)Landroid/bluetooth/BluetoothA2dp;
 
-    .line 2786
     iget-object v0, p0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mConnectedDevices:Ljava/util/HashMap;
@@ -865,7 +806,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 2787
     :try_start_1
     iget-object v0, p0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
 
@@ -886,7 +826,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 2788
     iget-object v3, p0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
 
     iget-object v0, p0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
@@ -911,13 +850,11 @@
     # invokes: Lcom/android/server/audio/AudioService;->makeA2dpDeviceUnavailableNow(Ljava/lang/String;)V
     invoke-static {v3, v0}, Lcom/android/server/audio/AudioService;->access$3800(Lcom/android/server/audio/AudioService;Ljava/lang/String;)V
 
-    .line 2791
     :cond_0
     monitor-exit v2
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 2792
     :try_start_2
     monitor-exit v1
 
@@ -932,7 +869,6 @@
 
     throw v0
 
-    .line 2791
     :catchall_1
     move-exception v0
 
@@ -946,7 +882,6 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 2796
     :sswitch_1
     iget-object v0, p0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
 
@@ -957,7 +892,6 @@
 
     monitor-enter v1
 
-    .line 2797
     :try_start_5
     iget-object v0, p0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
 
@@ -978,7 +912,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 2798
     iget-object v2, p0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
 
     iget-object v0, p0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
@@ -1003,7 +936,6 @@
     # invokes: Lcom/android/server/audio/AudioService;->makeA2dpSrcUnavailable(Ljava/lang/String;)V
     invoke-static {v2, v0}, Lcom/android/server/audio/AudioService;->access$3900(Lcom/android/server/audio/AudioService;Ljava/lang/String;)V
 
-    .line 2801
     :cond_1
     monitor-exit v1
 
@@ -1018,7 +950,6 @@
 
     throw v0
 
-    .line 2805
     :sswitch_2
     iget-object v0, p0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
 
@@ -1029,7 +960,6 @@
 
     monitor-enter v1
 
-    .line 2806
     :try_start_6
     iget-object v0, p0, Lcom/android/server/audio/AudioService$2;->this$0:Lcom/android/server/audio/AudioService;
 
@@ -1038,7 +968,6 @@
     # setter for: Lcom/android/server/audio/AudioService;->mBluetoothHeadset:Landroid/bluetooth/BluetoothHeadset;
     invoke-static {v0, v2}, Lcom/android/server/audio/AudioService;->access$3102(Lcom/android/server/audio/AudioService;Landroid/bluetooth/BluetoothHeadset;)Landroid/bluetooth/BluetoothHeadset;
 
-    .line 2807
     monitor-exit v1
 
     goto/16 :goto_0
@@ -1052,7 +981,6 @@
 
     throw v0
 
-    .line 2782
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_2

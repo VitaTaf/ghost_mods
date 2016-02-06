@@ -45,13 +45,10 @@
     .param p8, "roaming"    # Z
 
     .prologue
-    .line 135
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 137
     invoke-direct/range {p0 .. p8}, Lcom/android/server/TelephonyRegistry$DataStateNotification;->setValues(IZLjava/lang/String;Ljava/lang/String;Landroid/net/LinkProperties;Landroid/net/NetworkCapabilities;IZ)V
 
-    .line 139
     return-void
 .end method
 
@@ -67,31 +64,22 @@
     .param p8, "roaming"    # Z
 
     .prologue
-    .line 160
     iput p1, p0, Lcom/android/server/TelephonyRegistry$DataStateNotification;->state:I
 
-    .line 161
     iput-boolean p2, p0, Lcom/android/server/TelephonyRegistry$DataStateNotification;->isDataConnectivityPossible:Z
 
-    .line 162
     iput-object p3, p0, Lcom/android/server/TelephonyRegistry$DataStateNotification;->reason:Ljava/lang/String;
 
-    .line 163
     iput-object p4, p0, Lcom/android/server/TelephonyRegistry$DataStateNotification;->apn:Ljava/lang/String;
 
-    .line 164
     iput-object p5, p0, Lcom/android/server/TelephonyRegistry$DataStateNotification;->linkProperties:Landroid/net/LinkProperties;
 
-    .line 165
     iput-object p6, p0, Lcom/android/server/TelephonyRegistry$DataStateNotification;->linkCapabilities:Landroid/net/NetworkCapabilities;
 
-    .line 166
     iput p7, p0, Lcom/android/server/TelephonyRegistry$DataStateNotification;->networkType:I
 
-    .line 167
     iput-boolean p8, p0, Lcom/android/server/TelephonyRegistry$DataStateNotification;->roaming:Z
 
-    .line 168
     return-void
 .end method
 
@@ -109,7 +97,6 @@
     .param p8, "roaming"    # Z
 
     .prologue
-    .line 145
     if-nez p1, :cond_0
 
     iget-boolean v0, p0, Lcom/android/server/TelephonyRegistry$DataStateNotification;->isDataConnectivityPossible:Z
@@ -120,18 +107,14 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 148
     const/4 v0, 0x0
 
-    .line 153
     :goto_0
     return v0
 
-    .line 151
     :cond_0
     invoke-direct/range {p0 .. p8}, Lcom/android/server/TelephonyRegistry$DataStateNotification;->setValues(IZLjava/lang/String;Ljava/lang/String;Landroid/net/LinkProperties;Landroid/net/NetworkCapabilities;IZ)V
 
-    .line 153
     const/4 v0, 0x1
 
     goto :goto_0

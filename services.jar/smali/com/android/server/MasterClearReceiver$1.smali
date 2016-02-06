@@ -34,7 +34,6 @@
     .param p2, "x0"    # Ljava/lang/String;
 
     .prologue
-    .line 53
     iput-object p1, p0, Lcom/android/server/MasterClearReceiver$1;->this$0:Lcom/android/server/MasterClearReceiver;
 
     iput-boolean p3, p0, Lcom/android/server/MasterClearReceiver$1;->val$wipeDataCacheOnly:Z
@@ -58,33 +57,27 @@
     .locals 5
 
     .prologue
-    .line 58
     :try_start_0
     sget v1, Landroid/os/RecoverySystem;->WIPE_FLAG_NONE:I
 
-    .line 59
     .local v1, "flag":I
     iget-boolean v2, p0, Lcom/android/server/MasterClearReceiver$1;->val$wipeDataCacheOnly:Z
 
     if-eqz v2, :cond_0
 
-    .line 60
     sget v2, Landroid/os/RecoverySystem;->WIPE_FLAG_DATA_CACHE_ONLY:I
 
     or-int/2addr v1, v2
 
-    .line 63
     :cond_0
     iget-boolean v2, p0, Lcom/android/server/MasterClearReceiver$1;->val$wipeBp:Z
 
     if-eqz v2, :cond_1
 
-    .line 64
     sget v2, Landroid/os/RecoverySystem;->WIPE_FLAG_BP:I
 
     or-int/2addr v1, v2
 
-    .line 67
     :cond_1
     iget-object v2, p0, Lcom/android/server/MasterClearReceiver$1;->val$context:Landroid/content/Context;
 
@@ -94,7 +87,6 @@
 
     invoke-static {v2, v1, v3, v4}, Landroid/os/RecoverySystem;->rebootWipeUserData(Landroid/content/Context;IZLjava/lang/String;)V
 
-    .line 69
     const-string v2, "MasterClear"
 
     const-string v3, "Still running after master clear?!"
@@ -104,16 +96,13 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 75
     .end local v1    # "flag":I
     :goto_0
     return-void
 
-    .line 70
     :catch_0
     move-exception v0
 
-    .line 71
     .local v0, "e":Ljava/io/IOException;
     const-string v2, "MasterClear"
 
@@ -123,12 +112,10 @@
 
     goto :goto_0
 
-    .line 72
     .end local v0    # "e":Ljava/io/IOException;
     :catch_1
     move-exception v0
 
-    .line 73
     .local v0, "e":Ljava/lang/SecurityException;
     const-string v2, "MasterClear"
 

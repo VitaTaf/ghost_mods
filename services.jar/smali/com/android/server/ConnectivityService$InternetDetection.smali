@@ -34,34 +34,27 @@
     .param p2, "totalNetworkNumber"    # I
 
     .prologue
-    .line 4815
     iput-object p1, p0, Lcom/android/server/ConnectivityService$InternetDetection;->this$0:Lcom/android/server/ConnectivityService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4727
     new-instance v0, Ljava/util/Random;
 
     invoke-direct {v0}, Ljava/util/Random;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/ConnectivityService$InternetDetection;->mRandom:Ljava/util/Random;
 
-    .line 4816
     monitor-enter p0
 
-    .line 4817
     :try_start_0
     new-array v0, p2, [Lcom/android/server/ConnectivityService$InternetDetection$InternetDetectThread;
 
     iput-object v0, p0, Lcom/android/server/ConnectivityService$InternetDetection;->mExternalInternetDetectThread:[Lcom/android/server/ConnectivityService$InternetDetection$InternetDetectThread;
 
-    .line 4818
     monitor-exit p0
 
-    .line 4819
     return-void
 
-    .line 4818
     :catchall_0
     move-exception v0
 
@@ -79,7 +72,6 @@
     .param p2, "x2"    # Ljava/lang/String;
 
     .prologue
-    .line 4726
     invoke-direct {p0, p1, p2}, Lcom/android/server/ConnectivityService$InternetDetection;->detect(Lcom/android/server/connectivity/NetworkAgentInfo;Ljava/lang/String;)V
 
     return-void
@@ -91,7 +83,6 @@
     .param p2, "targetServer"    # Ljava/lang/String;
 
     .prologue
-    .line 4821
     monitor-enter p0
 
     :try_start_0
@@ -126,14 +117,12 @@
     # invokes: Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
     invoke-static {v1}, Lcom/android/server/ConnectivityService;->access$500(Ljava/lang/String;)V
 
-    .line 4822
     iget-object v1, p1, Lcom/android/server/connectivity/NetworkAgentInfo;->networkInfo:Landroid/net/NetworkInfo;
 
     invoke-virtual {v1}, Landroid/net/NetworkInfo;->getType()I
 
     move-result v0
 
-    .line 4823
     .local v0, "networkType":I
     iget-object v1, p0, Lcom/android/server/ConnectivityService$InternetDetection;->mExternalInternetDetectThread:[Lcom/android/server/ConnectivityService$InternetDetection$InternetDetectThread;
 
@@ -141,7 +130,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 4824
     const-string v1, "A detecting ongoing, ignore this detect request"
 
     # invokes: Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
@@ -149,17 +137,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 4834
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 4827
     :cond_0
     if-nez p2, :cond_1
 
-    .line 4828
     :try_start_1
     iget-object v1, p1, Lcom/android/server/connectivity/NetworkAgentInfo;->networkMonitor:Lcom/android/server/connectivity/NetworkMonitor;
 
@@ -167,7 +152,6 @@
 
     move-result-object p2
 
-    .line 4830
     :cond_1
     iget-object v1, p0, Lcom/android/server/ConnectivityService$InternetDetection;->mExternalInternetDetectThread:[Lcom/android/server/ConnectivityService$InternetDetection$InternetDetectThread;
 
@@ -195,7 +179,6 @@
 
     aput-object v2, v1, v0
 
-    .line 4833
     iget-object v1, p0, Lcom/android/server/ConnectivityService$InternetDetection;->mExternalInternetDetectThread:[Lcom/android/server/ConnectivityService$InternetDetection$InternetDetectThread;
 
     aget-object v1, v1, v0
@@ -206,7 +189,6 @@
 
     goto :goto_0
 
-    .line 4821
     .end local v0    # "networkType":I
     :catchall_0
     move-exception v1
@@ -223,7 +205,6 @@
     .param p1, "networkType"    # I
 
     .prologue
-    .line 4852
     monitor-enter p0
 
     :try_start_0
@@ -235,12 +216,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 4853
     monitor-exit p0
 
     return-void
 
-    .line 4852
     :catchall_0
     move-exception v0
 
@@ -255,7 +234,6 @@
     .param p2, "result"    # Lcom/android/server/ConnectivityService$DetectionResult;
 
     .prologue
-    .line 4836
     monitor-enter p0
 
     :try_start_0
@@ -290,41 +268,35 @@
     # invokes: Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
     invoke-static {v3}, Lcom/android/server/ConnectivityService;->access$500(Ljava/lang/String;)V
 
-    .line 4837
     new-instance v2, Landroid/content/Intent;
 
     const-string v3, "android.net.conn.INTERNET_DETECTION_RESULT"
 
     invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 4839
     .local v2, "retIntent":Landroid/content/Intent;
     const-string v3, "networkType"
 
     invoke-virtual {v2, v3, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 4840
     const-string v3, "detectResult"
 
     iget v4, p2, Lcom/android/server/ConnectivityService$DetectionResult;->result:I
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 4841
     const-string v3, "redirectUrl"
 
     iget-object v4, p2, Lcom/android/server/ConnectivityService$DetectionResult;->location:Ljava/lang/String;
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 4842
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     move-result-wide v0
 
-    .line 4844
     .local v0, "ident":J
     :try_start_1
     iget-object v3, p0, Lcom/android/server/ConnectivityService$InternetDetection;->this$0:Lcom/android/server/ConnectivityService;
@@ -340,11 +312,9 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 4846
     :try_start_2
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 4848
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -366,17 +336,14 @@
     # invokes: Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
     invoke-static {v3}, Lcom/android/server/ConnectivityService;->access$500(Ljava/lang/String;)V
 
-    .line 4849
     invoke-virtual {p0, p1}, Lcom/android/server/ConnectivityService$InternetDetection;->resetInfo(I)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 4850
     monitor-exit p0
 
     return-void
 
-    .line 4846
     :catchall_0
     move-exception v3
 
@@ -387,7 +354,6 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 4836
     .end local v0    # "ident":J
     .end local v2    # "retIntent":Landroid/content/Intent;
     :catchall_1

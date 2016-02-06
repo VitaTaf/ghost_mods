@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 2971
     iput-object p1, p0, Lcom/android/server/InputMethodManagerService$9;->this$0:Lcom/android/server/InputMethodManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,9 +40,7 @@
     .param p1, "dialog"    # Landroid/content/DialogInterface;
 
     .prologue
-    .line 2974
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 2975
     return-void
 .end method

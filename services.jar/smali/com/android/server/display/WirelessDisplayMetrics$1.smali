@@ -29,7 +29,6 @@
     .locals 0
 
     .prologue
-    .line 109
     iput-object p1, p0, Lcom/android/server/display/WirelessDisplayMetrics$1;->val$tag:Ljava/lang/String;
 
     iput-object p2, p0, Lcom/android/server/display/WirelessDisplayMetrics$1;->val$id:Ljava/lang/String;
@@ -49,13 +48,11 @@
     .locals 7
 
     .prologue
-    .line 112
     :try_start_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
 
-    .line 113
     .local v4, "timestamp":J
     new-instance v0, Lcom/motorola/android/provider/CheckinEvent;
 
@@ -67,7 +64,6 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/motorola/android/provider/CheckinEvent;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
 
-    .line 114
     .local v0, "event":Lcom/motorola/android/provider/CheckinEvent;
     const-string v1, "type"
 
@@ -75,24 +71,20 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/motorola/android/provider/CheckinEvent;->setValue(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 120
     iget-object v1, p0, Lcom/android/server/display/WirelessDisplayMetrics$1;->val$cr:Landroid/content/ContentResolver;
 
     invoke-virtual {v0, v1}, Lcom/motorola/android/provider/CheckinEvent;->publish(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 124
     .end local v0    # "event":Lcom/motorola/android/provider/CheckinEvent;
     .end local v4    # "timestamp":J
     :goto_0
     return-void
 
-    .line 121
     :catch_0
     move-exception v6
 
-    .line 122
     .local v6, "e":Ljava/lang/Exception;
     const-string v1, "WirelessDisplayMetrics"
 

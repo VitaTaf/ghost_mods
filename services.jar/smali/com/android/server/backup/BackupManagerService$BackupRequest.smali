@@ -26,15 +26,12 @@
     .param p2, "pkgName"    # Ljava/lang/String;
 
     .prologue
-    .line 275
     iput-object p1, p0, Lcom/android/server/backup/BackupManagerService$BackupRequest;->this$0:Lcom/android/server/backup/BackupManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 276
     iput-object p2, p0, Lcom/android/server/backup/BackupManagerService$BackupRequest;->packageName:Ljava/lang/String;
 
-    .line 277
     return-void
 .end method
 
@@ -44,7 +41,6 @@
     .locals 2
 
     .prologue
-    .line 280
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -48,10 +48,8 @@
     .locals 0
 
     .prologue
-    .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 56
     return-void
 .end method
 
@@ -62,14 +60,12 @@
     .param p2, "parameter"    # Ljava/lang/String;
 
     .prologue
-    .line 108
     sget-object v1, Lcom/android/server/display/WirelessDisplayMetrics;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 109
     .local v0, "cr":Landroid/content/ContentResolver;
     new-instance v1, Lcom/android/server/display/WirelessDisplayMetrics$1;
 
@@ -77,7 +73,6 @@
 
     invoke-virtual {v1}, Lcom/android/server/display/WirelessDisplayMetrics$1;->start()V
 
-    .line 127
     return-void
 .end method
 
@@ -85,7 +80,6 @@
     .locals 3
 
     .prologue
-    .line 92
     const-string v0, "MOT_WIPL"
 
     const-string v1, "WIPL_EVENT"
@@ -94,7 +88,6 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/server/display/WirelessDisplayMetrics;->buildAndSendCheckinEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 93
     return-void
 .end method
 
@@ -102,7 +95,6 @@
     .locals 3
 
     .prologue
-    .line 88
     const-string v0, "MOT_WIPL"
 
     const-string v1, "WIPL_EVENT"
@@ -111,7 +103,6 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/server/display/WirelessDisplayMetrics;->buildAndSendCheckinEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 89
     return-void
 .end method
 
@@ -120,15 +111,12 @@
     .param p0, "state"    # I
 
     .prologue
-    .line 96
     packed-switch p0, :pswitch_data_0
 
-    .line 104
     :goto_0
     :pswitch_0
     return-void
 
-    .line 98
     :pswitch_1
     const-string v0, "MOT_WIPL"
 
@@ -140,7 +128,6 @@
 
     goto :goto_0
 
-    .line 101
     :pswitch_2
     const-string v0, "MOT_WIPL"
 
@@ -152,7 +139,6 @@
 
     goto :goto_0
 
-    .line 96
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -165,7 +151,6 @@
     .locals 3
 
     .prologue
-    .line 84
     const-string v0, "MOT_WIPL"
 
     const-string v1, "WIPL_EVENT"
@@ -174,7 +159,6 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/server/display/WirelessDisplayMetrics;->buildAndSendCheckinEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 85
     return-void
 .end method
 
@@ -182,7 +166,6 @@
     .locals 3
 
     .prologue
-    .line 80
     const-string v0, "MOT_WIPL"
 
     const-string v1, "WIPL_EVENT"
@@ -191,7 +174,6 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/server/display/WirelessDisplayMetrics;->buildAndSendCheckinEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 81
     return-void
 .end method
 
@@ -200,14 +182,11 @@
     .param p0, "state"    # I
 
     .prologue
-    .line 67
     packed-switch p0, :pswitch_data_0
 
-    .line 77
     :goto_0
     return-void
 
-    .line 71
     :pswitch_0
     const-string v0, "MOT_WIPL"
 
@@ -219,7 +198,6 @@
 
     goto :goto_0
 
-    .line 74
     :pswitch_1
     const-string v0, "MOT_WIPL"
 
@@ -231,7 +209,6 @@
 
     goto :goto_0
 
-    .line 67
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -246,14 +223,11 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 59
     if-nez p0, :cond_0
 
-    .line 64
     :goto_0
     return-void
 
-    .line 63
     :cond_0
     sput-object p0, Lcom/android/server/display/WirelessDisplayMetrics;->mContext:Landroid/content/Context;
 

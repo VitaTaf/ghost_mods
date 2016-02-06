@@ -29,7 +29,6 @@
     .param p1, "x0"    # Ljava/lang/String;
 
     .prologue
-    .line 153
     invoke-direct {p0, p1}, Landroid/util/IntProperty;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -42,7 +41,6 @@
     .param p1, "object"    # Lcom/android/server/display/DisplayPowerState;
 
     .prologue
-    .line 161
     invoke-virtual {p1}, Lcom/android/server/display/DisplayPowerState;->getButtonBrightness()I
 
     move-result v0
@@ -59,7 +57,6 @@
     .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
-    .line 153
     check-cast p1, Lcom/android/server/display/DisplayPowerState;
 
     .end local p1    # "x0":Ljava/lang/Object;
@@ -76,10 +73,8 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 156
     invoke-virtual {p1, p2}, Lcom/android/server/display/DisplayPowerState;->setButtonBrightness(I)V
 
-    .line 157
     return-void
 .end method
 
@@ -89,7 +84,6 @@
     .param p2, "x1"    # I
 
     .prologue
-    .line 153
     check-cast p1, Lcom/android/server/display/DisplayPowerState;
 
     .end local p1    # "x0":Ljava/lang/Object;

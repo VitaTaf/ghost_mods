@@ -81,7 +81,6 @@
     .locals 2
 
     .prologue
-    .line 29
     sget-object v0, Landroid/os/Build;->TYPE:Ljava/lang/String;
 
     const-string v1, "user"
@@ -110,7 +109,6 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 103
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     sput-object p1, Lcom/android/server/location/LocationMetrics;->mContext:Landroid/content/Context;
@@ -122,7 +120,6 @@
     .locals 1
 
     .prologue
-    .line 27
     sget-boolean v0, Lcom/android/server/location/LocationMetrics;->DBG:Z
 
     return v0
@@ -143,20 +140,17 @@
     .end annotation
 
     .prologue
-    .line 125
     .local p2, "params":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/location/LocationMetrics$EventParam;>;"
     sget-object v1, Lcom/android/server/location/LocationMetrics;->mContext:Landroid/content/Context;
 
     if-eqz v1, :cond_0
 
-    .line 126
     sget-object v1, Lcom/android/server/location/LocationMetrics;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 127
     .local v0, "cr":Landroid/content/ContentResolver;
     new-instance v1, Lcom/android/server/location/LocationMetrics$1;
 
@@ -164,12 +158,10 @@
 
     invoke-virtual {v1}, Lcom/android/server/location/LocationMetrics$1;->start()V
 
-    .line 153
     .end local v0    # "cr":Landroid/content/ContentResolver;
     :goto_0
     return-void
 
-    .line 151
     :cond_0
     const-string v1, "Location Metrics"
 
@@ -187,12 +179,10 @@
     .param p1, "locationStats"    # Lcom/android/server/location/LocationMetrics$LocationStats;
 
     .prologue
-    .line 106
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 108
     .local v0, "params":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/location/LocationMetrics$EventParam;>;"
     new-instance v1, Lcom/android/server/location/LocationMetrics$EventParam;
 
@@ -208,7 +198,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 109
     new-instance v1, Lcom/android/server/location/LocationMetrics$EventParam;
 
     const-string v2, "nlp_start_cnt"
@@ -223,7 +212,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 110
     new-instance v1, Lcom/android/server/location/LocationMetrics$EventParam;
 
     const-string v2, "pass_start_cnt"
@@ -238,7 +226,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 111
     new-instance v1, Lcom/android/server/location/LocationMetrics$EventParam;
 
     const-string v2, "gps_uptime"
@@ -253,7 +240,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 112
     new-instance v1, Lcom/android/server/location/LocationMetrics$EventParam;
 
     const-string v2, "gps_fix_cnt"
@@ -268,7 +254,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 113
     new-instance v1, Lcom/android/server/location/LocationMetrics$EventParam;
 
     const-string v2, "nlp_fix_cnt"
@@ -283,7 +268,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 114
     new-instance v1, Lcom/android/server/location/LocationMetrics$EventParam;
 
     const-string v2, "prox_alrt_cnt"
@@ -298,7 +282,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 115
     new-instance v1, Lcom/android/server/location/LocationMetrics$EventParam;
 
     const-string v2, "hw_geo_cnt"
@@ -313,7 +296,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 116
     new-instance v1, Lcom/android/server/location/LocationMetrics$EventParam;
 
     const-string v2, "flp_hw_geo_cnt"
@@ -328,7 +310,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 117
     new-instance v1, Lcom/android/server/location/LocationMetrics$EventParam;
 
     const-string v2, "smart_gps_cnt"
@@ -343,7 +324,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 118
     new-instance v1, Lcom/android/server/location/LocationMetrics$EventParam;
 
     const-string v2, "smart_gps_uptime"
@@ -358,7 +338,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 119
     new-instance v1, Lcom/android/server/location/LocationMetrics$EventParam;
 
     const-string v2, "setting"
@@ -369,11 +348,9 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 121
     const-string v1, "LOCATION_SVC_DAILY_STATS"
 
     invoke-direct {p0, v1, v0}, Lcom/android/server/location/LocationMetrics;->buildAndSendCheckinEvent(Ljava/lang/String;Ljava/util/List;)V
 
-    .line 122
     return-void
 .end method

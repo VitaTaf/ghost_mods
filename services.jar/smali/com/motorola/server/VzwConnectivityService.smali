@@ -118,53 +118,44 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 96
     invoke-direct {p0}, Lcom/verizon/net/IVzwConnectivityManager$Stub;-><init>()V
 
-    .line 71
     invoke-static {}, Lcom/google/android/collect/Maps;->newHashMap()Ljava/util/HashMap;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/motorola/server/VzwConnectivityService;->mNetworkApnStats:Ljava/util/HashMap;
 
-    .line 72
     invoke-static {}, Lcom/google/android/collect/Maps;->newHashMap()Ljava/util/HashMap;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/motorola/server/VzwConnectivityService;->mIfaceApnsList:Ljava/util/HashMap;
 
-    .line 73
     invoke-static {}, Lcom/google/android/collect/Maps;->newHashMap()Ljava/util/HashMap;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/motorola/server/VzwConnectivityService;->mApnIfacesList:Ljava/util/HashMap;
 
-    .line 74
     invoke-static {}, Lcom/google/android/collect/Maps;->newHashMap()Ljava/util/HashMap;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/motorola/server/VzwConnectivityService;->mIfaceLastDisconBase:Ljava/util/HashMap;
 
-    .line 75
     const-string v1, "_APN"
 
     iput-object v1, p0, Lcom/motorola/server/VzwConnectivityService;->mApnNameSuffix:Ljava/lang/String;
 
-    .line 314
     new-instance v1, Lcom/motorola/server/VzwConnectivityService$1;
 
     invoke-direct {v1, p0}, Lcom/motorola/server/VzwConnectivityService$1;-><init>(Lcom/motorola/server/VzwConnectivityService;)V
 
     iput-object v1, p0, Lcom/motorola/server/VzwConnectivityService;->mConnReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 97
     iput-object p1, p0, Lcom/motorola/server/VzwConnectivityService;->mContext:Landroid/content/Context;
 
-    .line 98
     iget-object v1, p0, Lcom/motorola/server/VzwConnectivityService;->mContext:Landroid/content/Context;
 
     const-string v2, "phone"
@@ -177,18 +168,15 @@
 
     iput-object v1, p0, Lcom/motorola/server/VzwConnectivityService;->mPhone:Landroid/telephony/TelephonyManager;
 
-    .line 100
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string v1, "VzwConnectivityServiceThread"
 
     invoke-direct {v0, v1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
-    .line 101
     .local v0, "handlerThread":Landroid/os/HandlerThread;
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    .line 102
     new-instance v1, Lcom/motorola/server/VzwConnectivityService$MyHandler;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
@@ -199,10 +187,8 @@
 
     iput-object v1, p0, Lcom/motorola/server/VzwConnectivityService;->mHandler:Landroid/os/Handler;
 
-    .line 104
     invoke-direct {p0}, Lcom/motorola/server/VzwConnectivityService;->registerForConnectivityIntents()V
 
-    .line 105
     new-instance v1, Ljava/io/File;
 
     const-string v2, "/proc/net/xt_qtaguid/iface_stat_all"
@@ -211,7 +197,6 @@
 
     iput-object v1, p0, Lcom/motorola/server/VzwConnectivityService;->mIfaceStats:Ljava/io/File;
 
-    .line 106
     return-void
 .end method
 
@@ -220,7 +205,6 @@
     .param p0, "x0"    # Lcom/motorola/server/VzwConnectivityService;
 
     .prologue
-    .line 59
     iget-object v0, p0, Lcom/motorola/server/VzwConnectivityService;->mIfaceLastDisconBase:Ljava/util/HashMap;
 
     return-object v0
@@ -231,7 +215,6 @@
     .param p0, "x0"    # Lcom/motorola/server/VzwConnectivityService;
 
     .prologue
-    .line 59
     iget-object v0, p0, Lcom/motorola/server/VzwConnectivityService;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -242,7 +225,6 @@
     .param p0, "x0"    # Lcom/motorola/server/VzwConnectivityService;
 
     .prologue
-    .line 59
     invoke-direct {p0}, Lcom/motorola/server/VzwConnectivityService;->updateNetworkApnStats()V
 
     return-void
@@ -266,16 +248,13 @@
     .prologue
     const/4 v11, 0x0
 
-    .line 342
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    .line 343
     .local v1, "apnIfacePair":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/util/HashSet<Ljava/lang/String;>;>;"
     const/4 v9, 0x0
 
-    .line 345
     .local v9, "nwInfoList":[Landroid/net/NetworkInfo;
     :try_start_0
     iget-object v12, p0, Lcom/motorola/server/VzwConnectivityService;->mConnManager:Landroid/net/IConnectivityManager;
@@ -286,7 +265,6 @@
 
     move-result-object v9
 
-    .line 351
     move-object v2, v9
 
     .local v2, "arr$":[Landroid/net/NetworkInfo;
@@ -301,7 +279,6 @@
 
     aget-object v8, v2, v4
 
-    .line 352
     .local v8, "nIf":Landroid/net/NetworkInfo;
     if-eqz v8, :cond_0
 
@@ -321,14 +298,12 @@
 
     if-nez v12, :cond_2
 
-    .line 351
     :cond_0
     :goto_1
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 346
     .end local v2    # "arr$":[Landroid/net/NetworkInfo;
     .end local v4    # "i$":I
     .end local v7    # "len$":I
@@ -336,20 +311,17 @@
     :catch_0
     move-exception v3
 
-    .line 347
     .local v3, "e":Landroid/os/RemoteException;
     invoke-virtual {v3}, Landroid/os/RemoteException;->printStackTrace()V
 
     move-object v1, v11
 
-    .line 399
     .end local v1    # "apnIfacePair":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/util/HashSet<Ljava/lang/String;>;>;"
     .end local v3    # "e":Landroid/os/RemoteException;
     :cond_1
     :goto_2
     return-object v1
 
-    .line 356
     .restart local v1    # "apnIfacePair":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/util/HashSet<Ljava/lang/String;>;>;"
     .restart local v2    # "arr$":[Landroid/net/NetworkInfo;
     .restart local v4    # "i$":I
@@ -360,21 +332,17 @@
 
     move-result-object v0
 
-    .line 359
     .local v0, "apn":Ljava/lang/String;
     if-nez v0, :cond_3
 
-    .line 360
     const-string v12, "VzwConnectivityService"
 
     const-string v13, "apn is null, set as empty string for later traffic counting"
 
     invoke-static {v12, v13}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 364
     const-string v0, ""
 
-    .line 367
     :cond_3
     invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -382,17 +350,14 @@
 
     check-cast v6, Ljava/util/HashSet;
 
-    .line 369
     .local v6, "ifaceSet":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/String;>;"
     invoke-virtual {v8}, Landroid/net/NetworkInfo;->getType()I
 
     move-result v10
 
-    .line 370
     .local v10, "nwType":I
     const/4 v5, 0x0
 
-    .line 373
     .local v5, "ifaceName":Ljava/lang/String;
     :try_start_1
     iget-object v12, p0, Lcom/motorola/server/VzwConnectivityService;->mConnManager:Landroid/net/IConnectivityManager;
@@ -403,7 +368,6 @@
 
     if-eqz v12, :cond_4
 
-    .line 375
     iget-object v12, p0, Lcom/motorola/server/VzwConnectivityService;->mConnManager:Landroid/net/IConnectivityManager;
 
     invoke-interface {v12, v10}, Landroid/net/IConnectivityManager;->getLinkPropertiesForType(I)Landroid/net/LinkProperties;
@@ -416,11 +380,9 @@
 
     move-result-object v5
 
-    .line 382
     :cond_4
     if-nez v5, :cond_5
 
-    .line 383
     const-string v12, "VzwConnectivityService"
 
     new-instance v13, Ljava/lang/StringBuilder;
@@ -449,38 +411,30 @@
 
     goto :goto_1
 
-    .line 377
     :catch_1
     move-exception v3
 
-    .line 378
     .restart local v3    # "e":Landroid/os/RemoteException;
     invoke-virtual {v3}, Landroid/os/RemoteException;->printStackTrace()V
 
     move-object v1, v11
 
-    .line 379
     goto :goto_2
 
-    .line 387
     .end local v3    # "e":Landroid/os/RemoteException;
     :cond_5
     if-nez v6, :cond_6
 
-    .line 388
     new-instance v6, Ljava/util/HashSet;
 
     .end local v6    # "ifaceSet":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/String;>;"
     invoke-direct {v6}, Ljava/util/HashSet;-><init>()V
 
-    .line 389
     .restart local v6    # "ifaceSet":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/String;>;"
     invoke-virtual {v6, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 390
     invoke-interface {v1, v0, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 395
     :goto_3
     const-string v12, "VzwConnectivityService"
 
@@ -522,7 +476,6 @@
 
     goto/16 :goto_1
 
-    .line 392
     :cond_6
     invoke-virtual {v6, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
@@ -543,11 +496,9 @@
     .end annotation
 
     .prologue
-    .line 467
     .local p1, "ifaceSet":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/String;>;"
     const/4 v2, 0x0
 
-    .line 469
     .local v2, "result":Ljava/lang/String;
     invoke-virtual {p1}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
@@ -566,11 +517,9 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 471
     .local v1, "iface":Ljava/lang/String;
     move-object v2, v1
 
-    .line 475
     .end local v1    # "iface":Ljava/lang/String;
     :cond_0
     return-object v2
@@ -593,7 +542,6 @@
     .end annotation
 
     .prologue
-    .line 698
     .local p0, "parsed":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-virtual {p0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -601,7 +549,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 699
     .local v0, "value":Ljava/lang/String;
     if-eqz v0, :cond_0
 
@@ -635,7 +582,6 @@
     .end annotation
 
     .prologue
-    .line 703
     .local p0, "parsed":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-virtual {p0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -643,7 +589,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 704
     .local v0, "value":Ljava/lang/String;
     if-eqz v0, :cond_0
 
@@ -682,13 +627,11 @@
     .end annotation
 
     .prologue
-    .line 689
     .local p0, "keys":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     .local p1, "values":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     .local p2, "outParsed":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-virtual {p2}, Ljava/util/HashMap;->clear()V
 
-    .line 691
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
     move-result v2
@@ -701,7 +644,6 @@
 
     move-result v1
 
-    .line 692
     .local v1, "size":I
     const/4 v0, 0x0
 
@@ -709,7 +651,6 @@
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 693
     invoke-virtual {p0, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -720,12 +661,10 @@
 
     invoke-virtual {p2, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 692
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 695
     :cond_0
     return-void
 .end method
@@ -734,25 +673,21 @@
     .locals 3
 
     .prologue
-    .line 309
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 310
     .local v0, "connFilter":Landroid/content/IntentFilter;
     const-string v1, "android.net.conn.CONNECTIVITY_CHANGE_IMMEDIATE"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 311
     iget-object v1, p0, Lcom/motorola/server/VzwConnectivityService;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/motorola/server/VzwConnectivityService;->mConnReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 312
     return-void
 .end method
 
@@ -771,18 +706,15 @@
     .end annotation
 
     .prologue
-    .line 675
     .local p1, "outSplit":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
-    .line 677
     new-instance v0, Ljava/util/StringTokenizer;
 
     const-string v1, " \t\n\r\u000c:"
 
     invoke-direct {v0, p0, v1}, Ljava/util/StringTokenizer;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 678
     .local v0, "t":Ljava/util/StringTokenizer;
     :goto_0
     invoke-virtual {v0}, Ljava/util/StringTokenizer;->hasMoreTokens()Z
@@ -791,7 +723,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 679
     invoke-virtual {v0}, Ljava/util/StringTokenizer;->nextToken()Ljava/lang/String;
 
     move-result-object v1
@@ -800,7 +731,6 @@
 
     goto :goto_0
 
-    .line 681
     :cond_0
     return-void
 .end method
@@ -809,25 +739,20 @@
     .locals 20
 
     .prologue
-    .line 403
     const/16 v18, 0x0
 
-    .line 405
     .local v18, "reusedIface":Z
     const/4 v15, 0x0
 
-    .line 407
     .local v15, "apnIfacePair":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/util/HashSet<Ljava/lang/String;>;>;"
     invoke-direct/range {p0 .. p0}, Lcom/motorola/server/VzwConnectivityService;->getAPNInterfacePairs()Ljava/util/Map;
 
     move-result-object v15
 
-    .line 409
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v15}, Lcom/motorola/server/VzwConnectivityService;->checkLegacyNetwork(Ljava/util/Map;)V
 
-    .line 411
     move-object/from16 v0, p0
 
     iget-object v8, v0, Lcom/motorola/server/VzwConnectivityService;->mNetworkApnStats:Ljava/util/HashMap;
@@ -838,7 +763,6 @@
 
     if-eqz v8, :cond_0
 
-    .line 413
     invoke-interface {v15}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v8
@@ -861,7 +785,6 @@
 
     check-cast v14, Ljava/lang/String;
 
-    .line 414
     .local v14, "apn":Ljava/lang/String;
     invoke-interface {v15, v14}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -869,7 +792,6 @@
 
     check-cast v17, Ljava/util/HashSet;
 
-    .line 415
     .local v17, "ifaceSet":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/String;>;"
     move-object/from16 v0, p0
 
@@ -879,7 +801,6 @@
 
     move-result-object v3
 
-    .line 416
     .local v3, "iface":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -887,7 +808,6 @@
 
     goto :goto_0
 
-    .line 420
     .end local v3    # "iface":Ljava/lang/String;
     .end local v14    # "apn":Ljava/lang/String;
     .end local v16    # "i$":Ljava/util/Iterator;
@@ -920,7 +840,6 @@
 
     check-cast v14, Ljava/lang/String;
 
-    .line 421
     .restart local v14    # "apn":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -932,7 +851,6 @@
 
     check-cast v2, Lcom/motorola/server/VzwConnectivityService$DataRecord;
 
-    .line 422
     .local v2, "record":Lcom/motorola/server/VzwConnectivityService$DataRecord;
     invoke-interface {v15}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
@@ -944,14 +862,12 @@
 
     if-eqz v8, :cond_3
 
-    .line 425
     invoke-virtual {v2}, Lcom/motorola/server/VzwConnectivityService$DataRecord;->isActive()Z
 
     move-result v8
 
     if-nez v8, :cond_1
 
-    .line 426
     const-string v8, "VzwConnectivityService"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -994,14 +910,12 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 427
     invoke-interface {v15, v14}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v17
 
     check-cast v17, Ljava/util/HashSet;
 
-    .line 428
     .restart local v17    # "ifaceSet":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/String;>;"
     move-object/from16 v0, p0
 
@@ -1011,7 +925,6 @@
 
     move-result-object v3
 
-    .line 429
     .restart local v3    # "iface":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -1019,7 +932,6 @@
 
     move-result v18
 
-    .line 430
     if-nez v18, :cond_2
 
     move-object/from16 v0, p0
@@ -1030,7 +942,6 @@
 
     if-eqz v8, :cond_2
 
-    .line 431
     const-string v8, "VzwConnectivityService"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -1055,10 +966,8 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 432
     invoke-virtual {v2}, Lcom/motorola/server/VzwConnectivityService$DataRecord;->resetData()V
 
-    .line 440
     :goto_2
     move-object/from16 v0, p0
 
@@ -1066,7 +975,6 @@
 
     goto/16 :goto_1
 
-    .line 434
     :cond_2
     const/4 v8, 0x0
 
@@ -1076,7 +984,6 @@
 
     move-result-wide v4
 
-    .line 435
     .local v4, "disconRxBase":J
     const/4 v8, 0x1
 
@@ -1086,7 +993,6 @@
 
     move-result-wide v6
 
-    .line 436
     .local v6, "disconTxBase":J
     const-string v8, "VzwConnectivityService"
 
@@ -1112,12 +1018,10 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 437
     invoke-virtual/range {v2 .. v7}, Lcom/motorola/server/VzwConnectivityService$DataRecord;->connectUpdate(Ljava/lang/String;JJ)V
 
     goto :goto_2
 
-    .line 445
     .end local v3    # "iface":Ljava/lang/String;
     .end local v4    # "disconRxBase":J
     .end local v6    # "disconTxBase":J
@@ -1129,7 +1033,6 @@
 
     if-eqz v8, :cond_1
 
-    .line 446
     const-string v8, "VzwConnectivityService"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -1172,12 +1075,10 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 447
     invoke-virtual {v2}, Lcom/motorola/server/VzwConnectivityService$DataRecord;->getIface()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 448
     .restart local v3    # "iface":Ljava/lang/String;
     const/4 v8, 0x0
 
@@ -1187,7 +1088,6 @@
 
     move-result-wide v10
 
-    .line 449
     .local v10, "rxBytes":J
     const/4 v8, 0x1
 
@@ -1202,12 +1102,10 @@
 
     move-object v9, v3
 
-    .line 450
     invoke-virtual/range {v8 .. v13}, Lcom/motorola/server/VzwConnectivityService$DataRecord;->disconnectUpdate(Ljava/lang/String;JJ)V
 
     goto/16 :goto_1
 
-    .line 455
     .end local v2    # "record":Lcom/motorola/server/VzwConnectivityService$DataRecord;
     .end local v3    # "iface":Ljava/lang/String;
     .end local v10    # "rxBytes":J
@@ -1236,7 +1134,6 @@
 
     check-cast v14, Ljava/lang/String;
 
-    .line 456
     .restart local v14    # "apn":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -1252,14 +1149,12 @@
 
     if-nez v8, :cond_5
 
-    .line 458
     invoke-interface {v15, v14}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v17
 
     check-cast v17, Ljava/util/HashSet;
 
-    .line 459
     .restart local v17    # "ifaceSet":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/String;>;"
     move-object/from16 v0, p0
 
@@ -1269,7 +1164,6 @@
 
     move-result-object v3
 
-    .line 460
     .restart local v3    # "iface":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -1277,7 +1171,6 @@
 
     goto :goto_3
 
-    .line 464
     .end local v3    # "iface":Ljava/lang/String;
     .end local v14    # "apn":Ljava/lang/String;
     .end local v17    # "ifaceSet":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/String;>;"
@@ -1295,23 +1188,19 @@
     .prologue
     const-wide/16 v4, 0x0
 
-    .line 590
     invoke-virtual {p0, p2, p1}, Lcom/motorola/server/VzwConnectivityService;->isIfaceUsedByOtherApn(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
-    .line 593
     .local v0, "reusedIface":Z
     if-nez v0, :cond_0
 
-    .line 594
     const-string v2, "VzwConnectivityService"
 
     const-string v3, "new interface, rxBase=txBase=0"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 595
     new-instance v1, Lcom/motorola/server/VzwConnectivityService$DataRecord;
 
     move-object v2, p0
@@ -1322,7 +1211,6 @@
 
     invoke-direct/range {v1 .. v7}, Lcom/motorola/server/VzwConnectivityService$DataRecord;-><init>(Lcom/motorola/server/VzwConnectivityService;Ljava/lang/String;JJ)V
 
-    .line 602
     .local v1, "record":Lcom/motorola/server/VzwConnectivityService$DataRecord;
     :goto_0
     const-string v2, "VzwConnectivityService"
@@ -1361,18 +1249,14 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 603
     iget-object v2, p0, Lcom/motorola/server/VzwConnectivityService;->mNetworkApnStats:Ljava/util/HashMap;
 
     invoke-virtual {v2, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 604
     invoke-virtual {p0, p2, p1}, Lcom/motorola/server/VzwConnectivityService;->updateIfaceApnList(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 605
     return-void
 
-    .line 597
     .end local v1    # "record":Lcom/motorola/server/VzwConnectivityService$DataRecord;
     :cond_0
     const/4 v2, 0x0
@@ -1381,7 +1265,6 @@
 
     move-result-wide v4
 
-    .line 598
     .local v4, "disconRxBase":J
     const/4 v2, 0x1
 
@@ -1389,7 +1272,6 @@
 
     move-result-wide v6
 
-    .line 599
     .local v6, "disconTxBase":J
     const-string v2, "VzwConnectivityService"
 
@@ -1423,7 +1305,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 600
     new-instance v1, Lcom/motorola/server/VzwConnectivityService$DataRecord;
 
     move-object v2, p0
@@ -1441,7 +1322,6 @@
     .param p1, "connManager"    # Landroid/net/IConnectivityManager;
 
     .prologue
-    .line 109
     const-string v0, "missing IConnectivityManager"
 
     invoke-static {p1, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -1452,7 +1332,6 @@
 
     iput-object v0, p0, Lcom/motorola/server/VzwConnectivityService;->mConnManager:Landroid/net/IConnectivityManager;
 
-    .line 110
     return-void
 .end method
 
@@ -1472,11 +1351,9 @@
     .end annotation
 
     .prologue
-    .line 502
     .local p1, "apnIfacePair":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/util/HashSet<Ljava/lang/String;>;>;"
     const/4 v0, 0x0
 
-    .line 504
     .local v0, "abnormalReport":Z
     invoke-interface {p1}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
@@ -1501,7 +1378,6 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 505
     .local v1, "apn":Ljava/lang/String;
     invoke-virtual {p0}, Lcom/motorola/server/VzwConnectivityService;->isLegacyNetwork()Z
 
@@ -1509,7 +1385,6 @@
 
     if-eqz v5, :cond_4
 
-    .line 506
     invoke-interface {p1}, Ljava/util/Map;->size()I
 
     move-result v5
@@ -1518,39 +1393,32 @@
 
     if-ne v5, v6, :cond_1
 
-    .line 507
     const-string v5, "VzwConnectivityService"
 
     const-string v6, "legacy network, update apn as VZWINTERNET"
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 508
     invoke-interface {p1, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Ljava/util/HashSet;
 
-    .line 509
     .local v4, "original":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/String;>;"
     new-instance v2, Ljava/util/HashSet;
 
     invoke-direct {v2, v4}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-    .line 510
     .local v2, "clone":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/String;>;"
     invoke-interface {p1, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 511
     const-string v1, "VZWINTERNET"
 
-    .line 512
     invoke-interface {p1, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 514
     .end local v2    # "clone":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/String;>;"
     .end local v4    # "original":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/String;>;"
     :cond_1
@@ -1560,29 +1428,23 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 515
     const/4 v0, 0x1
 
-    .line 525
     .end local v1    # "apn":Ljava/lang/String;
     :cond_2
     if-eqz v0, :cond_3
 
-    .line 526
     const-string v5, "VzwConnectivityService"
 
     const-string v6, "Clear apn/iface pair. Ignore CONNECTED report for legacy link. Non-legacy link is treated as DISCONNECTED in later traffic counting"
 
     invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 528
     invoke-interface {p1}, Ljava/util/Map;->clear()V
 
-    .line 530
     :cond_3
     return-void
 
-    .line 519
     .restart local v1    # "apn":Ljava/lang/String;
     :cond_4
     invoke-virtual {v1}, Ljava/lang/String;->length()I
@@ -1591,7 +1453,6 @@
 
     if-nez v5, :cond_0
 
-    .line 520
     const-string v5, "VzwConnectivityService"
 
     const-string v6, "apn is null but not legacy network."
@@ -1609,7 +1470,6 @@
     .prologue
     const-wide/16 v4, 0x0
 
-    .line 138
     const-string v6, "VzwConnectivityService"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1642,10 +1502,8 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 139
     const-wide/16 v2, 0x0
 
-    .line 141
     .local v2, "ret":J
     if-eqz p1, :cond_0
 
@@ -1655,7 +1513,6 @@
 
     if-nez v6, :cond_1
 
-    .line 142
     :cond_0
     const-string v6, "VzwConnectivityService"
 
@@ -1663,15 +1520,12 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 164
     :goto_0
     return-wide v4
 
-    .line 146
     :cond_1
     if-eqz p2, :cond_2
 
-    .line 147
     const-string v6, "VzwConnectivityService"
 
     const-string v7, "not supported network type, only support ConnectivityManager.TYPE_MOBILE(0)"
@@ -1680,11 +1534,9 @@
 
     goto :goto_0
 
-    .line 152
     :cond_2
     move-object v1, p1
 
-    .line 153
     .local v1, "savedApnName":Ljava/lang/String;
     iget-object v6, p0, Lcom/motorola/server/VzwConnectivityService;->mApnNameSuffix:Ljava/lang/String;
 
@@ -1694,7 +1546,6 @@
 
     if-eqz v6, :cond_3
 
-    .line 154
     const/4 v6, 0x0
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -1713,7 +1564,6 @@
 
     move-result-object v1
 
-    .line 157
     :cond_3
     iget-object v6, p0, Lcom/motorola/server/VzwConnectivityService;->mNetworkApnStats:Ljava/util/HashMap;
 
@@ -1723,11 +1573,9 @@
 
     check-cast v0, Lcom/motorola/server/VzwConnectivityService$DataRecord;
 
-    .line 158
     .local v0, "rec":Lcom/motorola/server/VzwConnectivityService$DataRecord;
     if-nez v0, :cond_4
 
-    .line 159
     const-string v6, "VzwConnectivityService"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1752,13 +1600,11 @@
 
     goto :goto_0
 
-    .line 162
     :cond_4
     invoke-virtual {v0}, Lcom/motorola/server/VzwConnectivityService$DataRecord;->getRxBytes()J
 
     move-result-wide v2
 
-    .line 163
     const-string v4, "VzwConnectivityService"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1783,7 +1629,6 @@
 
     move-wide v4, v2
 
-    .line 164
     goto :goto_0
 .end method
 
@@ -1795,7 +1640,6 @@
     .prologue
     const-wide/16 v4, 0x0
 
-    .line 172
     const-string v6, "VzwConnectivityService"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1828,10 +1672,8 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 173
     const-wide/16 v2, 0x0
 
-    .line 175
     .local v2, "ret":J
     if-eqz p1, :cond_0
 
@@ -1841,7 +1683,6 @@
 
     if-nez v6, :cond_1
 
-    .line 176
     :cond_0
     const-string v6, "VzwConnectivityService"
 
@@ -1849,15 +1690,12 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 198
     :goto_0
     return-wide v4
 
-    .line 180
     :cond_1
     if-eqz p2, :cond_2
 
-    .line 181
     const-string v6, "VzwConnectivityService"
 
     const-string v7, "not supported network type, only support ConnectivityManager.TYPE_MOBILE(0)"
@@ -1866,11 +1704,9 @@
 
     goto :goto_0
 
-    .line 186
     :cond_2
     move-object v1, p1
 
-    .line 187
     .local v1, "savedApnName":Ljava/lang/String;
     iget-object v6, p0, Lcom/motorola/server/VzwConnectivityService;->mApnNameSuffix:Ljava/lang/String;
 
@@ -1880,7 +1716,6 @@
 
     if-eqz v6, :cond_3
 
-    .line 188
     const/4 v6, 0x0
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -1899,7 +1734,6 @@
 
     move-result-object v1
 
-    .line 191
     :cond_3
     iget-object v6, p0, Lcom/motorola/server/VzwConnectivityService;->mNetworkApnStats:Ljava/util/HashMap;
 
@@ -1909,11 +1743,9 @@
 
     check-cast v0, Lcom/motorola/server/VzwConnectivityService$DataRecord;
 
-    .line 192
     .local v0, "rec":Lcom/motorola/server/VzwConnectivityService$DataRecord;
     if-nez v0, :cond_4
 
-    .line 193
     const-string v6, "VzwConnectivityService"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1938,13 +1770,11 @@
 
     goto :goto_0
 
-    .line 196
     :cond_4
     invoke-virtual {v0}, Lcom/motorola/server/VzwConnectivityService$DataRecord;->getTxBytes()J
 
     move-result-wide v2
 
-    .line 197
     const-string v4, "VzwConnectivityService"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1969,7 +1799,6 @@
 
     move-wide v4, v2
 
-    .line 198
     goto :goto_0
 .end method
 
@@ -1979,7 +1808,6 @@
     .param p2, "index"    # I
 
     .prologue
-    .line 581
     iget-object v1, p0, Lcom/motorola/server/VzwConnectivityService;->mIfaceLastDisconBase:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1988,14 +1816,11 @@
 
     check-cast v0, Ljava/util/ArrayList;
 
-    .line 582
     .local v0, "baseData":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Long;>;"
     if-nez v0, :cond_0
 
-    .line 583
     const-wide/16 v2, 0x0
 
-    .line 585
     :goto_0
     return-wide v2
 
@@ -2018,7 +1843,6 @@
     .param p1, "networkType"    # I
 
     .prologue
-    .line 119
     :try_start_0
     iget-object v4, p0, Lcom/motorola/server/VzwConnectivityService;->mContext:Landroid/content/Context;
 
@@ -2030,26 +1854,21 @@
 
     check-cast v2, Landroid/net/ConnectivityManager;
 
-    .line 121
     .local v2, "mConnMgr":Landroid/net/ConnectivityManager;
     invoke-virtual {v2, p1}, Landroid/net/ConnectivityManager;->getLinkProperties(I)Landroid/net/LinkProperties;
 
     move-result-object v1
 
-    .line 122
     .local v1, "lp":Landroid/net/LinkProperties;
     const/4 v3, 0x0
 
-    .line 123
     .local v3, "networkInterface":Ljava/lang/String;
     if-eqz v1, :cond_0
 
-    .line 124
     invoke-virtual {v1}, Landroid/net/LinkProperties;->getInterfaceName()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 126
     :cond_0
     const-string v4, "VzwConnectivityService"
 
@@ -2075,18 +1894,15 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 130
     .end local v1    # "lp":Landroid/net/LinkProperties;
     .end local v2    # "mConnMgr":Landroid/net/ConnectivityManager;
     .end local v3    # "networkInterface":Ljava/lang/String;
     :goto_0
     return-object v3
 
-    .line 128
     :catch_0
     move-exception v0
 
-    .line 129
     .local v0, "e":Ljava/lang/Exception;
     const-string v4, "VzwConnectivityService"
 
@@ -2094,7 +1910,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 130
     const/4 v3, 0x0
 
     goto :goto_0
@@ -2106,10 +1921,8 @@
     .param p2, "index"    # I
 
     .prologue
-    .line 609
     const-wide/16 v10, 0x0
 
-    .line 611
     .local v10, "ret":J
     move-object/from16 v0, p0
 
@@ -2127,7 +1940,6 @@
 
     if-nez v14, :cond_2
 
-    .line 612
     :cond_0
     move-object/from16 v0, p0
 
@@ -2135,7 +1947,6 @@
 
     if-nez v14, :cond_1
 
-    .line 613
     const-string v14, "VzwConnectivityService"
 
     const-string v15, "mIfaceStats = null, failed to open file"
@@ -2145,13 +1956,11 @@
     :goto_0
     move-wide v12, v10
 
-    .line 668
     .end local v10    # "ret":J
     .local v12, "ret":J
     :goto_1
     return-wide v12
 
-    .line 615
     .end local v12    # "ret":J
     .restart local v10    # "ret":J
     :cond_1
@@ -2163,7 +1972,6 @@
 
     goto :goto_0
 
-    .line 620
     :cond_2
     const/16 v14, 0xa
 
@@ -2233,23 +2041,19 @@
 
     move-result-object v4
 
-    .line 623
     .local v4, "keys":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-static {}, Lcom/google/android/collect/Lists;->newArrayList()Ljava/util/ArrayList;
 
     move-result-object v9
 
-    .line 624
     .local v9, "values":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-static {}, Lcom/google/android/collect/Maps;->newHashMap()Ljava/util/HashMap;
 
     move-result-object v6
 
-    .line 626
     .local v6, "parsed":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/String;>;"
     const/4 v7, 0x0
 
-    .line 628
     .local v7, "reader":Ljava/io/BufferedReader;
     :try_start_0
     new-instance v8, Ljava/io/BufferedReader;
@@ -2269,7 +2073,6 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 631
     .end local v7    # "reader":Ljava/io/BufferedReader;
     .local v8, "reader":Ljava/io/BufferedReader;
     :cond_3
@@ -2281,13 +2084,10 @@
     .local v5, "line":Ljava/lang/String;
     if-eqz v5, :cond_4
 
-    .line 632
     invoke-static {v5, v9}, Lcom/motorola/server/VzwConnectivityService;->splitLine(Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    .line 633
     invoke-static {v4, v9, v6}, Lcom/motorola/server/VzwConnectivityService;->parseLine(Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/HashMap;)V
 
-    .line 635
     const-string v14, "iface"
 
     invoke-virtual {v6, v14}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2302,17 +2102,14 @@
 
     if-eqz v14, :cond_3
 
-    .line 638
     if-nez p2, :cond_5
 
-    .line 639
     const-string v14, "snap_rx_bytes"
 
     invoke-static {v6, v14}, Lcom/motorola/server/VzwConnectivityService;->getParsedLong(Ljava/util/HashMap;Ljava/lang/String;)J
 
     move-result-wide v10
 
-    .line 645
     :goto_2
     const-string v14, "active"
 
@@ -2324,15 +2121,12 @@
 
     const/4 v2, 0x1
 
-    .line 646
     .local v2, "active":Z
     :goto_3
     if-eqz v2, :cond_4
 
-    .line 647
     if-nez p2, :cond_7
 
-    .line 648
     const-string v14, "rx_bytes"
 
     invoke-static {v6, v14}, Lcom/motorola/server/VzwConnectivityService;->getParsedLong(Ljava/util/HashMap;Ljava/lang/String;)J
@@ -2346,7 +2140,6 @@
 
     add-long/2addr v10, v14
 
-    .line 665
     .end local v2    # "active":Z
     :cond_4
     :goto_4
@@ -2360,12 +2153,10 @@
     :goto_5
     move-wide v12, v10
 
-    .line 668
     .end local v10    # "ret":J
     .restart local v12    # "ret":J
     goto/16 :goto_1
 
-    .line 641
     .end local v7    # "reader":Ljava/io/BufferedReader;
     .end local v12    # "ret":J
     .restart local v5    # "line":Ljava/lang/String;
@@ -2381,13 +2172,11 @@
 
     goto :goto_2
 
-    .line 645
     :cond_6
     const/4 v2, 0x0
 
     goto :goto_3
 
-    .line 650
     .restart local v2    # "active":Z
     :cond_7
     const-string v14, "tx_bytes"
@@ -2405,7 +2194,6 @@
 
     goto :goto_4
 
-    .line 655
     .end local v2    # "active":Z
     .end local v5    # "line":Ljava/lang/String;
     .end local v8    # "reader":Ljava/io/BufferedReader;
@@ -2413,7 +2201,6 @@
     :catch_0
     move-exception v3
 
-    .line 656
     .local v3, "e":Ljava/lang/NullPointerException;
     :goto_6
     :try_start_3
@@ -2439,22 +2226,18 @@
 
     invoke-static {v14, v15}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 657
     invoke-virtual {v3}, Ljava/lang/NullPointerException;->printStackTrace()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 665
     invoke-static {v7}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     goto :goto_5
 
-    .line 658
     .end local v3    # "e":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v3
 
-    .line 659
     .local v3, "e":Ljava/lang/NumberFormatException;
     :goto_7
     :try_start_4
@@ -2480,22 +2263,18 @@
 
     invoke-static {v14, v15}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 660
     invoke-virtual {v3}, Ljava/lang/NumberFormatException;->printStackTrace()V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 665
     invoke-static {v7}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     goto :goto_5
 
-    .line 661
     .end local v3    # "e":Ljava/lang/NumberFormatException;
     :catch_2
     move-exception v3
 
-    .line 662
     .local v3, "e":Ljava/io/IOException;
     :goto_8
     :try_start_5
@@ -2521,12 +2300,10 @@
 
     invoke-static {v14, v15}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 663
     invoke-virtual {v3}, Ljava/io/IOException;->printStackTrace()V
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    .line 665
     invoke-static {v7}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     goto :goto_5
@@ -2551,7 +2328,6 @@
     .restart local v7    # "reader":Ljava/io/BufferedReader;
     goto :goto_9
 
-    .line 661
     .end local v7    # "reader":Ljava/io/BufferedReader;
     .restart local v8    # "reader":Ljava/io/BufferedReader;
     :catch_3
@@ -2563,7 +2339,6 @@
     .restart local v7    # "reader":Ljava/io/BufferedReader;
     goto :goto_8
 
-    .line 658
     .end local v7    # "reader":Ljava/io/BufferedReader;
     .restart local v8    # "reader":Ljava/io/BufferedReader;
     :catch_4
@@ -2575,7 +2350,6 @@
     .restart local v7    # "reader":Ljava/io/BufferedReader;
     goto :goto_7
 
-    .line 655
     .end local v7    # "reader":Ljava/io/BufferedReader;
     .restart local v8    # "reader":Ljava/io/BufferedReader;
     :catch_5
@@ -2594,10 +2368,8 @@
     .param p2, "iface"    # Ljava/lang/String;
 
     .prologue
-    .line 568
     const/4 v1, 0x0
 
-    .line 570
     .local v1, "ret":Z
     iget-object v2, p0, Lcom/motorola/server/VzwConnectivityService;->mApnIfacesList:Ljava/util/HashMap;
 
@@ -2607,7 +2379,6 @@
 
     check-cast v0, Ljava/util/HashSet;
 
-    .line 571
     .local v0, "ifaceList":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/String;>;"
     invoke-virtual {v0}, Ljava/util/HashSet;->size()I
 
@@ -2623,14 +2394,11 @@
 
     if-eqz v2, :cond_0
 
-    .line 572
     const/4 v1, 0x1
 
-    .line 577
     :goto_0
     return v1
 
-    .line 574
     :cond_0
     const/4 v1, 0x0
 
@@ -2647,10 +2415,8 @@
 
     const/4 v3, 0x0
 
-    .line 549
     const/4 v1, 0x0
 
-    .line 551
     .local v1, "usedByOtherApn":Z
     iget-object v4, p0, Lcom/motorola/server/VzwConnectivityService;->mIfaceApnsList:Ljava/util/HashMap;
 
@@ -2660,11 +2426,9 @@
 
     if-nez v4, :cond_0
 
-    .line 564
     :goto_0
     return v3
 
-    .line 554
     :cond_0
     iget-object v4, p0, Lcom/motorola/server/VzwConnectivityService;->mIfaceApnsList:Ljava/util/HashMap;
 
@@ -2674,7 +2438,6 @@
 
     check-cast v0, Ljava/util/HashSet;
 
-    .line 555
     .local v0, "apnList":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/String;>;"
     invoke-virtual {v0}, Ljava/util/HashSet;->size()I
 
@@ -2682,7 +2445,6 @@
 
     if-ne v4, v2, :cond_2
 
-    .line 557
     invoke-virtual {v0, p2}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
     move-result v4
@@ -2694,16 +2456,13 @@
     :goto_1
     move v3, v1
 
-    .line 564
     goto :goto_0
 
     :cond_1
     move v1, v3
 
-    .line 557
     goto :goto_1
 
-    .line 560
     :cond_2
     const/4 v1, 0x1
 
@@ -2714,10 +2473,8 @@
     .locals 3
 
     .prologue
-    .line 533
     const/4 v0, 0x0
 
-    .line 535
     .local v0, "legacyNetwork":Z
     iget-object v2, p0, Lcom/motorola/server/VzwConnectivityService;->mPhone:Landroid/telephony/TelephonyManager;
 
@@ -2725,7 +2482,6 @@
 
     move-result v1
 
-    .line 537
     .local v1, "radioType":I
     const/4 v2, 0x7
 
@@ -2747,11 +2503,9 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 542
     :cond_0
     const/4 v0, 0x1
 
-    .line 545
     :cond_1
     return v0
 .end method
@@ -2762,17 +2516,14 @@
     .param p2, "apn"    # Ljava/lang/String;
 
     .prologue
-    .line 479
     iget-object v0, p0, Lcom/motorola/server/VzwConnectivityService;->mIfaceApnsList:Ljava/util/HashMap;
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/motorola/server/VzwConnectivityService;->updateKeyValuesList(Ljava/lang/String;Ljava/lang/String;Ljava/util/HashMap;)V
 
-    .line 480
     iget-object v0, p0, Lcom/motorola/server/VzwConnectivityService;->mApnIfacesList:Ljava/util/HashMap;
 
     invoke-virtual {p0, p2, p1, v0}, Lcom/motorola/server/VzwConnectivityService;->updateKeyValuesList(Ljava/lang/String;Ljava/lang/String;Ljava/util/HashMap;)V
 
-    .line 481
     return-void
 .end method
 
@@ -2796,11 +2547,9 @@
     .end annotation
 
     .prologue
-    .line 484
     .local p3, "keyValuesList":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/util/HashSet<Ljava/lang/String;>;>;"
     const/4 v0, 0x1
 
-    .line 486
     .local v0, "needNewPair":Z
     invoke-virtual {p3}, Ljava/util/HashMap;->isEmpty()Z
 
@@ -2808,45 +2557,36 @@
 
     if-nez v2, :cond_0
 
-    .line 487
     invoke-virtual {p3, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 488
     const/4 v0, 0x0
 
-    .line 489
     invoke-virtual {p3, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/util/HashSet;
 
-    .line 490
     .local v1, "valuesList":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/String;>;"
     invoke-virtual {v1, p2}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 494
     .end local v1    # "valuesList":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/String;>;"
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 495
     new-instance v1, Ljava/util/HashSet;
 
     invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
-    .line 496
     .restart local v1    # "valuesList":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/String;>;"
     invoke-virtual {v1, p2}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 497
     invoke-virtual {p3, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 499
     .end local v1    # "valuesList":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/String;>;"
     :cond_1
     return-void

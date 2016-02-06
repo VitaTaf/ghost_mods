@@ -34,17 +34,14 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 3000
     iput-object p1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$CallbackHandler;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
-    .line 3001
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
     invoke-direct {p0, p2, v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;Z)V
 
-    .line 3002
     return-void
 .end method
 
@@ -55,48 +52,39 @@
     .param p1, "message"    # Landroid/os/Message;
 
     .prologue
-    .line 3006
     iget v7, p1, Landroid/os/Message;->what:I
 
     packed-switch v7, :pswitch_data_0
 
-    .line 3049
     :goto_0
     return-void
 
-    .line 3008
     :pswitch_0
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Lcom/android/internal/os/SomeArgs;
 
-    .line 3009
     .local v1, "args":Lcom/android/internal/os/SomeArgs;
     iget-object v3, v1, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
     check-cast v3, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
 
-    .line 3010
     .local v3, "host":Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
     iget-object v2, v1, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
     check-cast v2, Lcom/android/internal/appwidget/IAppWidgetHost;
 
-    .line 3011
     .local v2, "callbacks":Lcom/android/internal/appwidget/IAppWidgetHost;
     iget-object v6, v1, Lcom/android/internal/os/SomeArgs;->arg3:Ljava/lang/Object;
 
     check-cast v6, Landroid/widget/RemoteViews;
 
-    .line 3012
     .local v6, "views":Landroid/widget/RemoteViews;
     iget v0, v1, Lcom/android/internal/os/SomeArgs;->argi1:I
 
-    .line 3013
     .local v0, "appWidgetId":I
     invoke-virtual {v1}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 3015
     iget-object v7, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$CallbackHandler;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     # invokes: Lcom/android/server/appwidget/AppWidgetServiceImpl;->handleNotifyUpdateAppWidget(Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;Lcom/android/internal/appwidget/IAppWidgetHost;ILandroid/widget/RemoteViews;)V
@@ -104,7 +92,6 @@
 
     goto :goto_0
 
-    .line 3019
     .end local v0    # "appWidgetId":I
     .end local v1    # "args":Lcom/android/internal/os/SomeArgs;
     .end local v2    # "callbacks":Lcom/android/internal/appwidget/IAppWidgetHost;
@@ -115,33 +102,27 @@
 
     check-cast v1, Lcom/android/internal/os/SomeArgs;
 
-    .line 3020
     .restart local v1    # "args":Lcom/android/internal/os/SomeArgs;
     iget-object v3, v1, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
     check-cast v3, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
 
-    .line 3021
     .restart local v3    # "host":Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
     iget-object v2, v1, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
     check-cast v2, Lcom/android/internal/appwidget/IAppWidgetHost;
 
-    .line 3022
     .restart local v2    # "callbacks":Lcom/android/internal/appwidget/IAppWidgetHost;
     iget-object v4, v1, Lcom/android/internal/os/SomeArgs;->arg3:Ljava/lang/Object;
 
     check-cast v4, Landroid/appwidget/AppWidgetProviderInfo;
 
-    .line 3023
     .local v4, "info":Landroid/appwidget/AppWidgetProviderInfo;
     iget v0, v1, Lcom/android/internal/os/SomeArgs;->argi1:I
 
-    .line 3024
     .restart local v0    # "appWidgetId":I
     invoke-virtual {v1}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 3026
     iget-object v7, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$CallbackHandler;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     # invokes: Lcom/android/server/appwidget/AppWidgetServiceImpl;->handleNotifyProviderChanged(Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;Lcom/android/internal/appwidget/IAppWidgetHost;ILandroid/appwidget/AppWidgetProviderInfo;)V
@@ -149,7 +130,6 @@
 
     goto :goto_0
 
-    .line 3030
     .end local v0    # "appWidgetId":I
     .end local v1    # "args":Lcom/android/internal/os/SomeArgs;
     .end local v2    # "callbacks":Lcom/android/internal/appwidget/IAppWidgetHost;
@@ -160,23 +140,19 @@
 
     check-cast v1, Lcom/android/internal/os/SomeArgs;
 
-    .line 3031
     .restart local v1    # "args":Lcom/android/internal/os/SomeArgs;
     iget-object v3, v1, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
     check-cast v3, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
 
-    .line 3032
     .restart local v3    # "host":Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
     iget-object v2, v1, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
     check-cast v2, Lcom/android/internal/appwidget/IAppWidgetHost;
 
-    .line 3033
     .restart local v2    # "callbacks":Lcom/android/internal/appwidget/IAppWidgetHost;
     invoke-virtual {v1}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 3035
     iget-object v7, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$CallbackHandler;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     # invokes: Lcom/android/server/appwidget/AppWidgetServiceImpl;->handleNotifyProvidersChanged(Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;Lcom/android/internal/appwidget/IAppWidgetHost;)V
@@ -184,7 +160,6 @@
 
     goto :goto_0
 
-    .line 3039
     .end local v1    # "args":Lcom/android/internal/os/SomeArgs;
     .end local v2    # "callbacks":Lcom/android/internal/appwidget/IAppWidgetHost;
     .end local v3    # "host":Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
@@ -193,31 +168,25 @@
 
     check-cast v1, Lcom/android/internal/os/SomeArgs;
 
-    .line 3040
     .restart local v1    # "args":Lcom/android/internal/os/SomeArgs;
     iget-object v3, v1, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
     check-cast v3, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
 
-    .line 3041
     .restart local v3    # "host":Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
     iget-object v2, v1, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
     check-cast v2, Lcom/android/internal/appwidget/IAppWidgetHost;
 
-    .line 3042
     .restart local v2    # "callbacks":Lcom/android/internal/appwidget/IAppWidgetHost;
     iget v0, v1, Lcom/android/internal/os/SomeArgs;->argi1:I
 
-    .line 3043
     .restart local v0    # "appWidgetId":I
     iget v5, v1, Lcom/android/internal/os/SomeArgs;->argi2:I
 
-    .line 3044
     .local v5, "viewId":I
     invoke-virtual {v1}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 3046
     iget-object v7, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$CallbackHandler;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     # invokes: Lcom/android/server/appwidget/AppWidgetServiceImpl;->handleNotifyAppWidgetViewDataChanged(Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;Lcom/android/internal/appwidget/IAppWidgetHost;II)V
@@ -225,7 +194,6 @@
 
     goto :goto_0
 
-    .line 3006
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

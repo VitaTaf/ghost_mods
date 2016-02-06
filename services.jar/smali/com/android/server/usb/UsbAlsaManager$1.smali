@@ -25,7 +25,6 @@
     .param p3, "x1"    # I
 
     .prologue
-    .line 119
     iput-object p1, p0, Lcom/android/server/usb/UsbAlsaManager$1;->this$0:Lcom/android/server/usb/UsbAlsaManager;
 
     invoke-direct {p0, p2, p3}, Landroid/os/FileObserver;-><init>(Ljava/lang/String;I)V
@@ -41,14 +40,11 @@
     .param p2, "path"    # Ljava/lang/String;
 
     .prologue
-    .line 121
     sparse-switch p1, :sswitch_data_0
 
-    .line 129
     :goto_0
     return-void
 
-    .line 123
     :sswitch_0
     iget-object v0, p0, Lcom/android/server/usb/UsbAlsaManager$1;->this$0:Lcom/android/server/usb/UsbAlsaManager;
 
@@ -57,7 +53,6 @@
 
     goto :goto_0
 
-    .line 126
     :sswitch_1
     iget-object v0, p0, Lcom/android/server/usb/UsbAlsaManager$1;->this$0:Lcom/android/server/usb/UsbAlsaManager;
 
@@ -66,7 +61,6 @@
 
     goto :goto_0
 
-    .line 121
     :sswitch_data_0
     .sparse-switch
         0x100 -> :sswitch_0

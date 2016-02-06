@@ -8,7 +8,6 @@
     .locals 0
 
     .prologue
-    .line 29
     invoke-direct {p0}, Landroid/service/notification/ConditionProviderService;-><init>()V
 
     return-void

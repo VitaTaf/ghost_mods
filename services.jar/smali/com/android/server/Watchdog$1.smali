@@ -28,7 +28,6 @@
     .param p2, "x0"    # Ljava/lang/String;
 
     .prologue
-    .line 469
     iput-object p1, p0, Lcom/android/server/Watchdog$1;->this$0:Lcom/android/server/Watchdog;
 
     iput-object p3, p0, Lcom/android/server/Watchdog$1;->val$subject:Ljava/lang/String;
@@ -48,14 +47,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 471
     const-string v0, "sys.wd.restart"
 
     const-string v1, "1"
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 472
     iget-object v0, p0, Lcom/android/server/Watchdog$1;->this$0:Lcom/android/server/Watchdog;
 
     iget-object v0, v0, Lcom/android/server/Watchdog;->mActivity:Lcom/android/server/am/ActivityManagerService;
@@ -78,6 +75,5 @@
 
     invoke-virtual/range {v0 .. v9}, Lcom/android/server/am/ActivityManagerService;->addErrorToDropBox(Ljava/lang/String;Lcom/android/server/am/ProcessRecord;Ljava/lang/String;Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ActivityRecord;Ljava/lang/String;Ljava/lang/String;Ljava/io/File;Landroid/app/ApplicationErrorReport$CrashInfo;)V
 
-    .line 475
     return-void
 .end method

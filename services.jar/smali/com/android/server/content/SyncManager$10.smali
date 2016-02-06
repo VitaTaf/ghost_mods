@@ -38,7 +38,6 @@
     .locals 0
 
     .prologue
-    .line 1401
     iput-object p1, p0, Lcom/android/server/content/SyncManager$10;->this$0:Lcom/android/server/content/SyncManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -65,7 +64,6 @@
     .end annotation
 
     .prologue
-    .line 1405
     .local p1, "lhs":Landroid/content/pm/RegisteredServicesCache$ServiceInfo;, "Landroid/content/pm/RegisteredServicesCache$ServiceInfo<Landroid/content/SyncAdapterType;>;"
     .local p2, "rhs":Landroid/content/pm/RegisteredServicesCache$ServiceInfo;, "Landroid/content/pm/RegisteredServicesCache$ServiceInfo<Landroid/content/SyncAdapterType;>;"
     iget-object v0, p1, Landroid/content/pm/RegisteredServicesCache$ServiceInfo;->type:Ljava/lang/Object;
@@ -93,7 +91,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 1401
     check-cast p1, Landroid/content/pm/RegisteredServicesCache$ServiceInfo;
 
     .end local p1    # "x0":Ljava/lang/Object;

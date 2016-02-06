@@ -33,7 +33,6 @@
     .locals 0
 
     .prologue
-    .line 193
     iput-object p1, p0, Lcom/motorola/server/MotoPersDataBlockService$DataBlockInfo;->this$0:Lcom/motorola/server/MotoPersDataBlockService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +46,6 @@
     .param p2, "x1"    # Lcom/motorola/server/MotoPersDataBlockService$1;
 
     .prologue
-    .line 193
     invoke-direct {p0, p1}, Lcom/motorola/server/MotoPersDataBlockService$DataBlockInfo;-><init>(Lcom/motorola/server/MotoPersDataBlockService;)V
 
     return-void

@@ -27,22 +27,18 @@
     .locals 1
 
     .prologue
-    .line 4714
     iput-object p1, p0, Lcom/android/server/ConnectivityService$DetectionResult;->this$0:Lcom/android/server/ConnectivityService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4712
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/android/server/ConnectivityService$DetectionResult;->result:I
 
-    .line 4713
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/ConnectivityService$DetectionResult;->location:Ljava/lang/String;
 
-    .line 4714
     return-void
 .end method
 
@@ -51,25 +47,20 @@
     .param p2, "result"    # I
 
     .prologue
-    .line 4715
     iput-object p1, p0, Lcom/android/server/ConnectivityService$DetectionResult;->this$0:Lcom/android/server/ConnectivityService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4712
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/android/server/ConnectivityService$DetectionResult;->result:I
 
-    .line 4713
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/ConnectivityService$DetectionResult;->location:Ljava/lang/String;
 
-    .line 4716
     iput p2, p0, Lcom/android/server/ConnectivityService$DetectionResult;->result:I
 
-    .line 4717
     return-void
 .end method
 
@@ -79,14 +70,12 @@
     .locals 3
 
     .prologue
-    .line 4719
     iget v1, p0, Lcom/android/server/ConnectivityService$DetectionResult;->result:I
 
     invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4720
     .local v0, "str":Ljava/lang/String;
     iget v1, p0, Lcom/android/server/ConnectivityService$DetectionResult;->result:I
 
@@ -94,7 +83,6 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 4721
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -125,7 +113,6 @@
 
     move-result-object v0
 
-    .line 4723
     :cond_0
     return-object v0
 .end method

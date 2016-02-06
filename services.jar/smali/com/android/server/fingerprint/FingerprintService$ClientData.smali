@@ -29,7 +29,6 @@
     .locals 0
 
     .prologue
-    .line 80
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,7 +39,6 @@
     .param p1, "x0"    # Lcom/android/server/fingerprint/FingerprintService$1;
 
     .prologue
-    .line 80
     invoke-direct {p0}, Lcom/android/server/fingerprint/FingerprintService$ClientData;-><init>()V
 
     return-void
@@ -52,7 +50,6 @@
     .locals 1
 
     .prologue
-    .line 85
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$ClientData;->tokenWatcher:Lcom/android/server/fingerprint/FingerprintService$TokenWatcher;
 
     invoke-virtual {v0}, Lcom/android/server/fingerprint/FingerprintService$TokenWatcher;->getToken()Landroid/os/IBinder;

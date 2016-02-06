@@ -38,7 +38,6 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 306
     const-string v0, "location_stats.db"
 
     const/4 v1, 0x0
@@ -47,7 +46,6 @@
 
     invoke-direct {p0, p1, v0, v1, v2}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
 
-    .line 307
     return-void
 .end method
 
@@ -58,12 +56,10 @@
     .param p1, "database"    # Landroid/database/sqlite/SQLiteDatabase;
 
     .prologue
-    .line 311
     const-string v0, "create table location_stats(_id integer primary key autoincrement, stat_name text not null, stat_value_int integer, stat_value_string text);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 312
     return-void
 .end method
 
@@ -74,7 +70,6 @@
     .param p3, "newVersion"    # I
 
     .prologue
-    .line 316
     # getter for: Lcom/android/server/location/LocationMetrics;->DBG:Z
     invoke-static {}, Lcom/android/server/location/LocationMetrics;->access$000()Z
 
@@ -82,7 +77,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 317
     const-class v0, Lcom/android/server/location/LocationMetrics$MySQLiteHelper;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -125,15 +119,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 321
     :cond_0
     const-string v0, "DROP TABLE IF EXISTS location_stats"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 322
     invoke-virtual {p0, p1}, Lcom/android/server/location/LocationMetrics$MySQLiteHelper;->onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 323
     return-void
 .end method

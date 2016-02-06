@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 989
     iput-object p1, p0, Lcom/android/server/location/GpsLocationProvider$8;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,19 +41,16 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 991
     iget-object v0, p0, Lcom/android/server/location/GpsLocationProvider$8;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     # setter for: Lcom/android/server/location/GpsLocationProvider;->mSetLockAllowed:Z
     invoke-static {v0, v3}, Lcom/android/server/location/GpsLocationProvider;->access$2102(Lcom/android/server/location/GpsLocationProvider;Z)Z
 
-    .line 992
     iget-object v0, p0, Lcom/android/server/location/GpsLocationProvider$8;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     # invokes: Lcom/android/server/location/GpsLocationProvider;->updateEngineLock()V
     invoke-static {v0}, Lcom/android/server/location/GpsLocationProvider;->access$2200(Lcom/android/server/location/GpsLocationProvider;)V
 
-    .line 993
     iget-object v0, p0, Lcom/android/server/location/GpsLocationProvider$8;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     # getter for: Lcom/android/server/location/GpsLocationProvider;->mInitialized:Z
@@ -64,7 +60,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 994
     iget-object v0, p0, Lcom/android/server/location/GpsLocationProvider$8;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$8;->this$0:Lcom/android/server/location/GpsLocationProvider;
@@ -77,7 +72,6 @@
     # setter for: Lcom/android/server/location/GpsLocationProvider;->mSupportsXtra:Z
     invoke-static {v0, v1}, Lcom/android/server/location/GpsLocationProvider;->access$2402(Lcom/android/server/location/GpsLocationProvider;Z)Z
 
-    .line 996
     # getter for: Lcom/android/server/location/GpsLocationProvider;->DEBUG:Z
     invoke-static {}, Lcom/android/server/location/GpsLocationProvider;->access$100()Z
 
@@ -114,7 +108,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 999
     :cond_0
     iget-object v0, p0, Lcom/android/server/location/GpsLocationProvider$8;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
@@ -125,7 +118,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 1000
     iget-object v0, p0, Lcom/android/server/location/GpsLocationProvider$8;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$8;->this$0:Lcom/android/server/location/GpsLocationProvider;
@@ -145,7 +137,6 @@
     # invokes: Lcom/android/server/location/GpsLocationProvider;->native_set_agps_server(ILjava/lang/String;I)V
     invoke-static {v0, v3, v1, v2}, Lcom/android/server/location/GpsLocationProvider;->access$2800(Lcom/android/server/location/GpsLocationProvider;ILjava/lang/String;I)V
 
-    .line 1003
     :cond_1
     iget-object v0, p0, Lcom/android/server/location/GpsLocationProvider$8;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
@@ -156,7 +147,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 1004
     iget-object v0, p0, Lcom/android/server/location/GpsLocationProvider$8;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     const/4 v1, 0x2
@@ -178,7 +168,6 @@
     # invokes: Lcom/android/server/location/GpsLocationProvider;->native_set_agps_server(ILjava/lang/String;I)V
     invoke-static {v0, v1, v2, v3}, Lcom/android/server/location/GpsLocationProvider;->access$2800(Lcom/android/server/location/GpsLocationProvider;ILjava/lang/String;I)V
 
-    .line 1008
     :cond_2
     return-void
 .end method

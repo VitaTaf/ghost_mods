@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 206
     iput-object p1, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView$1;->this$1:Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 2
 
     .prologue
-    .line 209
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView$1;->this$1:Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView;
 
     # getter for: Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView;->mClingLayout:Landroid/view/ViewGroup;
@@ -63,7 +61,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 210
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView$1;->this$1:Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView;
 
     # getter for: Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView;->mClingLayout:Landroid/view/ViewGroup;
@@ -81,7 +78,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 212
     :cond_0
     return-void
 .end method

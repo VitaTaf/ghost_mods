@@ -24,13 +24,10 @@
     .param p2, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 3564
     iput-object p1, p0, Lcom/android/server/accounts/AccountManagerService$SettingsObserver;->this$0:Lcom/android/server/accounts/AccountManagerService;
 
-    .line 3565
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 3566
     return-void
 .end method
 
@@ -43,7 +40,6 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 3570
     iget-object v0, p0, Lcom/android/server/accounts/AccountManagerService$SettingsObserver;->this$0:Lcom/android/server/accounts/AccountManagerService;
 
     # getter for: Lcom/android/server/accounts/AccountManagerService;->mContext:Landroid/content/Context;
@@ -65,7 +61,6 @@
 
     if-ne v0, v3, :cond_0
 
-    .line 3572
     iget-object v0, p0, Lcom/android/server/accounts/AccountManagerService$SettingsObserver;->this$0:Lcom/android/server/accounts/AccountManagerService;
 
     # getter for: Lcom/android/server/accounts/AccountManagerService;->mContext:Landroid/content/Context;
@@ -79,12 +74,10 @@
 
     invoke-virtual {v0, p0}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 3573
     iget-object v1, p0, Lcom/android/server/accounts/AccountManagerService$SettingsObserver;->this$0:Lcom/android/server/accounts/AccountManagerService;
 
     monitor-enter v1
 
-    .line 3574
     :try_start_0
     iget-object v0, p0, Lcom/android/server/accounts/AccountManagerService$SettingsObserver;->this$0:Lcom/android/server/accounts/AccountManagerService;
 
@@ -93,14 +86,11 @@
     # setter for: Lcom/android/server/accounts/AccountManagerService;->mSetupCompleted:Z
     invoke-static {v0, v2}, Lcom/android/server/accounts/AccountManagerService;->access$2302(Lcom/android/server/accounts/AccountManagerService;Z)Z
 
-    .line 3575
     monitor-exit v1
 
-    .line 3577
     :cond_0
     return-void
 
-    .line 3575
     :catchall_0
     move-exception v0
 

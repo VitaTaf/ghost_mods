@@ -25,7 +25,6 @@
     .param p3, "x1"    # I
 
     .prologue
-    .line 418
     iput-object p1, p0, Lcom/android/server/policy/GlobalActions$4;->this$0:Lcom/android/server/policy/GlobalActions;
 
     invoke-direct {p0, p2, p3}, Lcom/android/server/policy/GlobalActions$SinglePressAction;-><init>(II)V
@@ -39,20 +38,17 @@
     .locals 2
 
     .prologue
-    .line 422
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.settings.SETTINGS"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 423
     .local v0, "intent":Landroid/content/Intent;
     const/high16 v1, 0x14000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 424
     iget-object v1, p0, Lcom/android/server/policy/GlobalActions$4;->this$0:Lcom/android/server/policy/GlobalActions;
 
     # getter for: Lcom/android/server/policy/GlobalActions;->mContext:Landroid/content/Context;
@@ -62,7 +58,6 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 425
     return-void
 .end method
 
@@ -70,7 +65,6 @@
     .locals 1
 
     .prologue
-    .line 434
     const/4 v0, 0x1
 
     return v0
@@ -80,7 +74,6 @@
     .locals 1
 
     .prologue
-    .line 429
     const/4 v0, 0x1
 
     return v0

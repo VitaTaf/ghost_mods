@@ -24,13 +24,10 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 327
     iput-object p1, p0, Lcom/motorola/server/VzwConnectivityService$MyHandler;->this$0:Lcom/motorola/server/VzwConnectivityService;
 
-    .line 328
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 329
     return-void
 .end method
 
@@ -41,16 +38,13 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 333
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 338
     :goto_0
     return-void
 
-    .line 335
     :pswitch_0
     iget-object v0, p0, Lcom/motorola/server/VzwConnectivityService$MyHandler;->this$0:Lcom/motorola/server/VzwConnectivityService;
 
@@ -59,7 +53,6 @@
 
     goto :goto_0
 
-    .line 333
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

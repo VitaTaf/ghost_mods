@@ -31,13 +31,10 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 4882
     iput-object p1, p0, Lcom/android/server/ConnectivityService$DataObserver;->this$0:Lcom/android/server/ConnectivityService;
 
-    .line 4883
     invoke-direct {p0, p3}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 4879
     const-string v0, "wifi_avoid_bad_connection_enabled"
 
     invoke-static {v0}, Lcom/motorola/android/provider/MotorolaSettings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -46,14 +43,12 @@
 
     iput-object v0, p0, Lcom/android/server/ConnectivityService$DataObserver;->wifiSettingUri:Landroid/net/Uri;
 
-    .line 4884
     invoke-virtual {p2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/ConnectivityService$DataObserver;->mResolver:Landroid/content/ContentResolver;
 
-    .line 4885
     iget-object v0, p0, Lcom/android/server/ConnectivityService$DataObserver;->mResolver:Landroid/content/ContentResolver;
 
     const-string v2, "wifi_avoid_bad_connection_enabled"
@@ -70,14 +65,12 @@
     # setter for: Lcom/android/server/ConnectivityService;->mWifiAvoidBadConnection:Z
     invoke-static {p1, v0}, Lcom/android/server/ConnectivityService;->access$4802(Lcom/android/server/ConnectivityService;Z)Z
 
-    .line 4887
     iget-object v0, p0, Lcom/android/server/ConnectivityService$DataObserver;->mResolver:Landroid/content/ContentResolver;
 
     iget-object v2, p0, Lcom/android/server/ConnectivityService$DataObserver;->wifiSettingUri:Landroid/net/Uri;
 
     invoke-virtual {v0, v2, v1, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 4888
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -104,10 +97,8 @@
     # invokes: Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
     invoke-static {v0}, Lcom/android/server/ConnectivityService;->access$500(Ljava/lang/String;)V
 
-    .line 4889
     return-void
 
-    .line 4885
     :cond_0
     const/4 v0, 0x0
 
@@ -126,7 +117,6 @@
 
     const/4 v4, 0x1
 
-    .line 4892
     iget-object v3, p0, Lcom/android/server/ConnectivityService$DataObserver;->wifiSettingUri:Landroid/net/Uri;
 
     invoke-virtual {v3, p2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
@@ -135,7 +125,6 @@
 
     if-eqz v3, :cond_2
 
-    .line 4893
     iget-object v6, p0, Lcom/android/server/ConnectivityService$DataObserver;->this$0:Lcom/android/server/ConnectivityService;
 
     iget-object v3, p0, Lcom/android/server/ConnectivityService$DataObserver;->mResolver:Landroid/content/ContentResolver;
@@ -154,7 +143,6 @@
     # setter for: Lcom/android/server/ConnectivityService;->mWifiAvoidBadConnection:Z
     invoke-static {v6, v3}, Lcom/android/server/ConnectivityService;->access$4802(Lcom/android/server/ConnectivityService;Z)Z
 
-    .line 4895
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -183,7 +171,6 @@
     # invokes: Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
     invoke-static {v3}, Lcom/android/server/ConnectivityService;->access$500(Ljava/lang/String;)V
 
-    .line 4896
     iget-object v3, p0, Lcom/android/server/ConnectivityService$DataObserver;->this$0:Lcom/android/server/ConnectivityService;
 
     # getter for: Lcom/android/server/ConnectivityService;->mNetworkAgentInfos:Ljava/util/HashMap;
@@ -213,7 +200,6 @@
 
     check-cast v1, Lcom/android/server/connectivity/NetworkAgentInfo;
 
-    .line 4897
     .local v1, "nai":Lcom/android/server/connectivity/NetworkAgentInfo;
     iget-object v3, v1, Lcom/android/server/connectivity/NetworkAgentInfo;->networkInfo:Landroid/net/NetworkInfo;
 
@@ -236,12 +222,10 @@
 
     if-ne v3, v6, :cond_0
 
-    .line 4899
     invoke-virtual {v1}, Lcom/android/server/connectivity/NetworkAgentInfo;->getCurrentScore()I
 
     move-result v2
 
-    .line 4900
     .local v2, "oldScore":I
     iget-object v3, v1, Lcom/android/server/connectivity/NetworkAgentInfo;->networkMisc:Landroid/net/NetworkMisc;
 
@@ -257,7 +241,6 @@
     :goto_1
     iput-boolean v4, v3, Landroid/net/NetworkMisc;->allowInvalidation:Z
 
-    .line 4902
     iget-boolean v3, v1, Lcom/android/server/connectivity/NetworkAgentInfo;->created:Z
 
     if-eqz v3, :cond_1
@@ -267,14 +250,12 @@
     # invokes: Lcom/android/server/ConnectivityService;->rematchAllNetworksAndRequests(Lcom/android/server/connectivity/NetworkAgentInfo;I)V
     invoke-static {v3, v1, v2}, Lcom/android/server/ConnectivityService;->access$4900(Lcom/android/server/ConnectivityService;Lcom/android/server/connectivity/NetworkAgentInfo;I)V
 
-    .line 4903
     :cond_1
     iget-object v3, p0, Lcom/android/server/ConnectivityService$DataObserver;->this$0:Lcom/android/server/ConnectivityService;
 
     # invokes: Lcom/android/server/ConnectivityService;->sendUpdatedScoreToFactories(Lcom/android/server/connectivity/NetworkAgentInfo;)V
     invoke-static {v3, v1}, Lcom/android/server/ConnectivityService;->access$2200(Lcom/android/server/ConnectivityService;Lcom/android/server/connectivity/NetworkAgentInfo;)V
 
-    .line 4908
     .end local v0    # "i$":Ljava/util/Iterator;
     .end local v1    # "nai":Lcom/android/server/connectivity/NetworkAgentInfo;
     .end local v2    # "oldScore":I
@@ -284,7 +265,6 @@
     :cond_3
     move v3, v5
 
-    .line 4893
     goto :goto_0
 
     .restart local v0    # "i$":Ljava/util/Iterator;
@@ -293,6 +273,5 @@
     :cond_4
     move v4, v5
 
-    .line 4900
     goto :goto_1
 .end method

@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 3545
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService$LocalService$1;->this$1:Lcom/android/server/power/PowerManagerService$LocalService;
 
     iput p2, p0, Lcom/android/server/power/PowerManagerService$LocalService$1;->val$sb:I
@@ -44,7 +43,6 @@
     .locals 2
 
     .prologue
-    .line 3547
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$LocalService$1;->this$1:Lcom/android/server/power/PowerManagerService$LocalService;
 
     iget-object v0, v0, Lcom/android/server/power/PowerManagerService$LocalService;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -54,6 +52,5 @@
     # invokes: Lcom/android/server/power/PowerManagerService;->setScreenBrightnessOverrideFromWindowManagerInternal(I)V
     invoke-static {v0, v1}, Lcom/android/server/power/PowerManagerService;->access$5800(Lcom/android/server/power/PowerManagerService;I)V
 
-    .line 3548
     return-void
 .end method

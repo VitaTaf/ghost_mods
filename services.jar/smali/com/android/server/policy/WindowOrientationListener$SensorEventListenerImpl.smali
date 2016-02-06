@@ -116,12 +116,10 @@
 
     const/4 v3, 0x2
 
-    .line 248
     iput-object p1, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->this$0:Lcom/android/server/policy/WindowOrientationListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 364
     const/4 v0, 0x4
 
     new-array v0, v0, [[I
@@ -158,29 +156,24 @@
 
     iput-object v0, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->TILT_TOLERANCE:[[I
 
-    .line 373
     const/16 v0, -0x28
 
     iput v0, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->TILT_OVERHEAD_ENTER:I
 
-    .line 377
     const/16 v0, -0xf
 
     iput v0, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->TILT_OVERHEAD_EXIT:I
 
-    .line 416
     new-array v0, v4, [F
 
     iput-object v0, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mTiltHistory:[F
 
-    .line 417
     new-array v0, v4, [J
 
     iput-object v0, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mTiltHistoryTimestampNanos:[J
 
     return-void
 
-    .line 364
     nop
 
     :array_0
@@ -213,7 +206,6 @@
     .param p0, "x0"    # Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;
 
     .prologue
-    .line 248
     invoke-direct {p0}, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->resetLocked()V
 
     return-void
@@ -225,21 +217,18 @@
     .param p3, "tilt"    # F
 
     .prologue
-    .line 781
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mTiltHistory:[F
 
     iget v1, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mTiltHistoryIndex:I
 
     aput p3, v0, v1
 
-    .line 782
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mTiltHistoryTimestampNanos:[J
 
     iget v1, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mTiltHistoryIndex:I
 
     aput-wide p1, v0, v1
 
-    .line 783
     iget v0, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mTiltHistoryIndex:I
 
     add-int/lit8 v0, v0, 0x1
@@ -248,7 +237,6 @@
 
     iput v0, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mTiltHistoryIndex:I
 
-    .line 784
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mTiltHistoryTimestampNanos:[J
 
     iget v1, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mTiltHistoryIndex:I
@@ -257,7 +245,6 @@
 
     aput-wide v2, v0, v1
 
-    .line 785
     return-void
 .end method
 
@@ -265,17 +252,14 @@
     .locals 2
 
     .prologue
-    .line 759
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mPredictedRotation:I
 
-    .line 760
     const-wide/high16 v0, -0x8000000000000000L
 
     iput-wide v0, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mPredictedRotationTimestampNanos:J
 
-    .line 761
     return-void
 .end method
 
@@ -283,7 +267,6 @@
     .locals 4
 
     .prologue
-    .line 776
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mTiltHistoryTimestampNanos:[J
 
     const/4 v1, 0x0
@@ -292,12 +275,10 @@
 
     aput-wide v2, v0, v1
 
-    .line 777
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mTiltHistoryIndex:I
 
-    .line 778
     return-void
 .end method
 
@@ -305,14 +286,12 @@
     .locals 2
 
     .prologue
-    .line 819
     iget v1, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mTiltHistoryIndex:I
 
     invoke-direct {p0, v1}, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->nextTiltHistoryIndexLocked(I)I
 
     move-result v0
 
-    .line 820
     .local v0, "index":I
     if-ltz v0, :cond_0
 
@@ -334,7 +313,6 @@
     .param p1, "magnitude"    # F
 
     .prologue
-    .line 771
     const v0, 0x40b9d014
 
     cmpg-float v0, p1, v0
@@ -364,7 +342,6 @@
     .param p1, "now"    # J
 
     .prologue
-    .line 788
     iget v0, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mTiltHistoryIndex:I
 
     .local v0, "i":I
@@ -375,7 +352,6 @@
 
     if-ltz v0, :cond_1
 
-    .line 789
     iget-object v1, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mTiltHistory:[F
 
     aget v1, v1, v0
@@ -386,14 +362,12 @@
 
     if-gez v1, :cond_2
 
-    .line 797
     :cond_1
     const/4 v1, 0x0
 
     :goto_0
     return v1
 
-    .line 792
     :cond_2
     iget-object v1, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mTiltHistoryTimestampNanos:[J
 
@@ -407,7 +381,6 @@
 
     if-gtz v1, :cond_0
 
-    .line 794
     const/4 v1, 0x1
 
     goto :goto_0
@@ -421,7 +394,6 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 670
     iget-object v4, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->this$0:Lcom/android/server/policy/WindowOrientationListener;
 
     # getter for: Lcom/android/server/policy/WindowOrientationListener;->mCurrentRotation:I
@@ -429,11 +401,9 @@
 
     move-result v0
 
-    .line 671
     .local v0, "currentRotation":I
     if-ltz v0, :cond_5
 
-    .line 676
     if-eq p1, v0, :cond_0
 
     add-int/lit8 v4, v0, 0x1
@@ -442,7 +412,6 @@
 
     if-ne p1, v4, :cond_3
 
-    .line 678
     :cond_0
     mul-int/lit8 v4, p1, 0x5a
 
@@ -450,11 +419,9 @@
 
     add-int/lit8 v1, v4, 0x16
 
-    .line 680
     .local v1, "lowerBound":I
     if-nez p1, :cond_2
 
-    .line 681
     const/16 v4, 0x13b
 
     if-lt p2, v4, :cond_3
@@ -463,18 +430,15 @@
 
     if-ge p2, v4, :cond_3
 
-    .line 710
     .end local v1    # "lowerBound":I
     :cond_1
     :goto_0
     return v3
 
-    .line 685
     .restart local v1    # "lowerBound":I
     :cond_2
     if-lt p2, v1, :cond_1
 
-    .line 695
     .end local v1    # "lowerBound":I
     :cond_3
     if-eq p1, v0, :cond_4
@@ -485,7 +449,6 @@
 
     if-ne p1, v4, :cond_5
 
-    .line 697
     :cond_4
     mul-int/lit8 v4, p1, 0x5a
 
@@ -493,25 +456,21 @@
 
     add-int/lit8 v2, v4, -0x16
 
-    .line 699
     .local v2, "upperBound":I
     if-nez p1, :cond_6
 
-    .line 700
     const/16 v4, 0x2d
 
     if-gt p2, v4, :cond_5
 
     if-gt p2, v2, :cond_1
 
-    .line 710
     .end local v2    # "upperBound":I
     :cond_5
     const/4 v3, 0x1
 
     goto :goto_0
 
-    .line 704
     .restart local v2    # "upperBound":I
     :cond_6
     if-le p2, v2, :cond_5
@@ -528,7 +487,6 @@
 
     const/4 v0, 0x0
 
-    .line 719
     iget-wide v2, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mPredictedRotationTimestampNanos:J
 
     const-wide/32 v4, 0x2625a00
@@ -539,12 +497,10 @@
 
     if-gez v1, :cond_1
 
-    .line 741
     :cond_0
     :goto_0
     return v0
 
-    .line 724
     :cond_1
     iget-wide v2, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mFlatTimestampNanos:J
 
@@ -554,7 +510,6 @@
 
     if-ltz v1, :cond_0
 
-    .line 730
     iget-wide v2, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mSwingTimestampNanos:J
 
     const-wide/32 v4, 0x11e1a300
@@ -565,7 +520,6 @@
 
     if-ltz v1, :cond_0
 
-    .line 735
     iget-wide v2, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mAccelerationTimestampNanos:J
 
     add-long/2addr v2, v6
@@ -574,7 +528,6 @@
 
     if-ltz v1, :cond_0
 
-    .line 741
     const/4 v0, 0x1
 
     goto :goto_0
@@ -586,7 +539,6 @@
     .param p3, "tilt"    # F
 
     .prologue
-    .line 801
     iget v0, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mTiltHistoryIndex:I
 
     .local v0, "i":I
@@ -597,7 +549,6 @@
 
     if-ltz v0, :cond_1
 
-    .line 802
     iget-object v1, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mTiltHistoryTimestampNanos:[J
 
     aget-wide v2, v1, v0
@@ -610,14 +561,12 @@
 
     if-gez v1, :cond_2
 
-    .line 810
     :cond_1
     const/4 v1, 0x0
 
     :goto_0
     return v1
 
-    .line 805
     :cond_2
     iget-object v1, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mTiltHistory:[F
 
@@ -631,7 +580,6 @@
 
     if-gtz v1, :cond_0
 
-    .line 807
     const/4 v1, 0x1
 
     goto :goto_0
@@ -647,7 +595,6 @@
 
     const/4 v1, 0x0
 
-    .line 656
     iget-object v2, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->TILT_TOLERANCE:[[I
 
     aget-object v2, v2, p1
@@ -678,7 +625,6 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 814
     if-nez p1, :cond_0
 
     const/16 p1, 0x28
@@ -687,7 +633,6 @@
     :cond_0
     add-int/lit8 p1, p1, -0x1
 
-    .line 815
     .restart local p1    # "index":I
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mTiltHistoryTimestampNanos:[J
 
@@ -716,7 +661,6 @@
     .param p3, "until"    # J
 
     .prologue
-    .line 824
     cmp-long v0, p1, p3
 
     if-ltz v0, :cond_0
@@ -746,42 +690,30 @@
 
     const/4 v1, 0x0
 
-    .line 745
     iput-wide v2, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mLastFilteredTimestampNanos:J
 
-    .line 746
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mProposedRotation:I
 
-    .line 747
     iput-wide v2, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mFlatTimestampNanos:J
 
-    .line 748
     iput-boolean v1, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mFlat:Z
 
-    .line 749
     iput-wide v2, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mSwingTimestampNanos:J
 
-    .line 750
     iput-boolean v1, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mSwinging:Z
 
-    .line 751
     iput-wide v2, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mAccelerationTimestampNanos:J
 
-    .line 752
     iput-boolean v1, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mAccelerating:Z
 
-    .line 753
     iput-boolean v1, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mOverhead:Z
 
-    .line 754
     invoke-direct {p0}, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->clearPredictedRotationLocked()V
 
-    .line 755
     invoke-direct {p0}, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->clearTiltHistoryLocked()V
 
-    .line 756
     return-void
 .end method
 
@@ -791,18 +723,14 @@
     .param p3, "rotation"    # I
 
     .prologue
-    .line 764
     iget v0, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mPredictedRotation:I
 
     if-eq v0, p3, :cond_0
 
-    .line 765
     iput p3, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mPredictedRotation:I
 
-    .line 766
     iput-wide p1, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mPredictedRotationTimestampNanos:J
 
-    .line 768
     :cond_0
     return-void
 .end method
@@ -815,7 +743,6 @@
     .param p2, "prefix"    # Ljava/lang/String;
 
     .prologue
-    .line 425
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -842,7 +769,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 426
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -869,7 +795,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 427
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -896,7 +821,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 428
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -923,7 +847,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 429
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -950,7 +873,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 430
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -985,7 +907,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 431
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1012,7 +933,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 432
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1039,7 +959,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 433
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1066,7 +985,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 434
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1093,7 +1011,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 435
     return-void
 .end method
 
@@ -1101,7 +1018,6 @@
     .locals 1
 
     .prologue
-    .line 421
     iget v0, p0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mProposedRotation:I
 
     return v0
@@ -1113,7 +1029,6 @@
     .param p2, "accuracy"    # I
 
     .prologue
-    .line 439
     return-void
 .end method
 
@@ -1122,7 +1037,6 @@
     .param p1, "event"    # Landroid/hardware/SensorEvent;
 
     .prologue
-    .line 447
     # getter for: Lcom/android/server/policy/WindowOrientationListener;->mUseVirtualGravitySensor:Z
     invoke-static {}, Lcom/android/server/policy/WindowOrientationListener;->access$100()Z
 
@@ -1130,7 +1044,6 @@
 
     if-eqz v24, :cond_2
 
-    .line 448
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->this$0:Lcom/android/server/policy/WindowOrientationListener;
@@ -1144,7 +1057,6 @@
 
     monitor-enter v25
 
-    .line 449
     :try_start_0
     move-object/from16 v0, p1
 
@@ -1160,7 +1072,6 @@
 
     float-to-int v15, v0
 
-    .line 450
     .local v15, "rotation":I
     const/16 v24, -0x1
 
@@ -1174,18 +1085,15 @@
 
     if-ge v15, v0, :cond_0
 
-    .line 451
     move-object/from16 v0, p0
 
     iput v15, v0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mProposedRotation:I
 
-    .line 453
     :cond_0
     monitor-exit v25
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 456
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mProposedRotation:I
@@ -1194,7 +1102,6 @@
 
     if-ltz v24, :cond_1
 
-    .line 457
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->this$0:Lcom/android/server/policy/WindowOrientationListener;
@@ -1209,13 +1116,11 @@
 
     invoke-virtual/range {v24 .. v25}, Lcom/android/server/policy/WindowOrientationListener;->onProposedRotationChanged(I)V
 
-    .line 650
     .end local v15    # "rotation":I
     :cond_1
     :goto_0
     return-void
 
-    .line 453
     :catchall_0
     move-exception v24
 
@@ -1226,7 +1131,6 @@
 
     throw v24
 
-    .line 463
     :cond_2
     move-object/from16 v0, p0
 
@@ -1241,7 +1145,6 @@
 
     monitor-enter v25
 
-    .line 467
     :try_start_2
     move-object/from16 v0, p1
 
@@ -1253,7 +1156,6 @@
 
     aget v21, v24, v26
 
-    .line 468
     .local v21, "x":F
     move-object/from16 v0, p1
 
@@ -1265,7 +1167,6 @@
 
     aget v22, v24, v26
 
-    .line 469
     .local v22, "y":F
     move-object/from16 v0, p1
 
@@ -1277,7 +1178,6 @@
 
     aget v23, v24, v26
 
-    .line 471
     .local v23, "z":F
     # getter for: Lcom/android/server/policy/WindowOrientationListener;->LOG:Z
     invoke-static {}, Lcom/android/server/policy/WindowOrientationListener;->access$300()Z
@@ -1286,7 +1186,6 @@
 
     if-eqz v24, :cond_3
 
-    .line 472
     const-string v24, "WindowOrientationListener"
 
     new-instance v26, Ljava/lang/StringBuilder;
@@ -1369,13 +1268,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 481
     :cond_3
     move-object/from16 v0, p1
 
     iget-wide v10, v0, Landroid/hardware/SensorEvent;->timestamp:J
 
-    .line 482
     .local v10, "now":J
     move-object/from16 v0, p0
 
@@ -1383,7 +1280,6 @@
 
     move-wide/from16 v18, v0
 
-    .line 483
     .local v18, "then":J
     sub-long v26, v10, v18
 
@@ -1397,7 +1293,6 @@
 
     mul-float v20, v24, v26
 
-    .line 485
     .local v20, "timeDeltaMS":F
     cmp-long v24, v10, v18
 
@@ -1429,7 +1324,6 @@
 
     if-nez v24, :cond_c
 
-    .line 488
     :cond_4
     # getter for: Lcom/android/server/policy/WindowOrientationListener;->LOG:Z
     invoke-static {}, Lcom/android/server/policy/WindowOrientationListener;->access$300()Z
@@ -1438,7 +1332,6 @@
 
     if-eqz v24, :cond_5
 
-    .line 489
     const-string v24, "WindowOrientationListener"
 
     const-string v26, "Resetting orientation listener."
@@ -1449,57 +1342,46 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 491
     :cond_5
     invoke-direct/range {p0 .. p0}, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->resetLocked()V
 
-    .line 492
     const/16 v16, 0x1
 
-    .line 505
     .local v16, "skipSample":Z
     :goto_1
     move-object/from16 v0, p0
 
     iput-wide v10, v0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mLastFilteredTimestampNanos:J
 
-    .line 506
     move/from16 v0, v21
 
     move-object/from16 v1, p0
 
     iput v0, v1, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mLastFilteredX:F
 
-    .line 507
     move/from16 v0, v22
 
     move-object/from16 v1, p0
 
     iput v0, v1, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mLastFilteredY:F
 
-    .line 508
     move/from16 v0, v23
 
     move-object/from16 v1, p0
 
     iput v0, v1, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mLastFilteredZ:F
 
-    .line 510
     const/4 v5, 0x0
 
-    .line 511
     .local v5, "isAccelerating":Z
     const/4 v6, 0x0
 
-    .line 512
     .local v6, "isFlat":Z
     const/4 v7, 0x0
 
-    .line 513
     .local v7, "isSwinging":Z
     if-nez v16, :cond_7
 
-    .line 515
     mul-float v24, v21, v21
 
     mul-float v26, v22, v22
@@ -1514,7 +1396,6 @@
 
     move-result v8
 
-    .line 516
     .local v8, "magnitude":F
     const/high16 v24, 0x3f800000    # 1.0f
 
@@ -1522,7 +1403,6 @@
 
     if-gez v24, :cond_e
 
-    .line 517
     # getter for: Lcom/android/server/policy/WindowOrientationListener;->LOG:Z
     invoke-static {}, Lcom/android/server/policy/WindowOrientationListener;->access$300()Z
 
@@ -1530,7 +1410,6 @@
 
     if-eqz v24, :cond_6
 
-    .line 518
     const-string v24, "WindowOrientationListener"
 
     const-string v26, "Ignoring sensor data, magnitude too close to zero."
@@ -1541,11 +1420,9 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 520
     :cond_6
     invoke-direct/range {p0 .. p0}, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->clearPredictedRotationLocked()V
 
-    .line 610
     .end local v8    # "magnitude":F
     :cond_7
     :goto_2
@@ -1553,22 +1430,18 @@
 
     iput-boolean v6, v0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mFlat:Z
 
-    .line 611
     move-object/from16 v0, p0
 
     iput-boolean v7, v0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mSwinging:Z
 
-    .line 612
     move-object/from16 v0, p0
 
     iput-boolean v5, v0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mAccelerating:Z
 
-    .line 615
     move-object/from16 v0, p0
 
     iget v12, v0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mProposedRotation:I
 
-    .line 616
     .local v12, "oldProposedRotation":I
     move-object/from16 v0, p0
 
@@ -1586,7 +1459,6 @@
 
     if-eqz v24, :cond_9
 
-    .line 617
     :cond_8
     move-object/from16 v0, p0
 
@@ -1600,13 +1472,11 @@
 
     iput v0, v1, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mProposedRotation:I
 
-    .line 619
     :cond_9
     move-object/from16 v0, p0
 
     iget v14, v0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mProposedRotation:I
 
-    .line 622
     .local v14, "proposedRotation":I
     # getter for: Lcom/android/server/policy/WindowOrientationListener;->LOG:Z
     invoke-static {}, Lcom/android/server/policy/WindowOrientationListener;->access$300()Z
@@ -1615,7 +1485,6 @@
 
     if-eqz v24, :cond_a
 
-    .line 623
     const-string v24, "WindowOrientationListener"
 
     new-instance v26, Ljava/lang/StringBuilder;
@@ -1859,18 +1728,15 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 640
     :cond_a
     monitor-exit v25
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 643
     if-eq v14, v12, :cond_1
 
     if-ltz v14, :cond_1
 
-    .line 644
     # getter for: Lcom/android/server/policy/WindowOrientationListener;->LOG:Z
     invoke-static {}, Lcom/android/server/policy/WindowOrientationListener;->access$300()Z
 
@@ -1878,7 +1744,6 @@
 
     if-eqz v24, :cond_b
 
-    .line 645
     const-string v24, "WindowOrientationListener"
 
     new-instance v25, Ljava/lang/StringBuilder;
@@ -1915,7 +1780,6 @@
 
     invoke-static/range {v24 .. v25}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 648
     :cond_b
     move-object/from16 v0, p0
 
@@ -1929,7 +1793,6 @@
 
     goto/16 :goto_0
 
-    .line 494
     .end local v5    # "isAccelerating":Z
     .end local v6    # "isFlat":Z
     .end local v7    # "isSwinging":Z
@@ -1943,7 +1806,6 @@
 
     div-float v4, v20, v24
 
-    .line 495
     .local v4, "alpha":F
     :try_start_3
     move-object/from16 v0, p0
@@ -1964,7 +1826,6 @@
 
     add-float v21, v24, v26
 
-    .line 496
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mLastFilteredY:F
@@ -1983,7 +1844,6 @@
 
     add-float v22, v24, v26
 
-    .line 497
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mLastFilteredZ:F
@@ -2002,7 +1862,6 @@
 
     add-float v23, v24, v26
 
-    .line 498
     # getter for: Lcom/android/server/policy/WindowOrientationListener;->LOG:Z
     invoke-static {}, Lcom/android/server/policy/WindowOrientationListener;->access$300()Z
 
@@ -2010,7 +1869,6 @@
 
     if-eqz v24, :cond_d
 
-    .line 499
     const-string v24, "WindowOrientationListener"
 
     new-instance v26, Ljava/lang/StringBuilder;
@@ -2093,14 +1951,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 503
     :cond_d
     const/16 v16, 0x0
 
     .restart local v16    # "skipSample":Z
     goto/16 :goto_1
 
-    .line 524
     .end local v4    # "alpha":F
     .restart local v5    # "isAccelerating":Z
     .restart local v6    # "isFlat":Z
@@ -2115,15 +1971,12 @@
 
     if-eqz v24, :cond_f
 
-    .line 525
     const/4 v5, 0x1
 
-    .line 526
     move-object/from16 v0, p0
 
     iput-wide v10, v0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mAccelerationTimestampNanos:J
 
-    .line 535
     :cond_f
     div-float v24, v23, v8
 
@@ -2151,7 +2004,6 @@
 
     move/from16 v17, v0
 
-    .line 537
     .local v17, "tiltAngle":I
     move/from16 v0, v17
 
@@ -2165,7 +2017,6 @@
 
     invoke-direct {v0, v10, v11, v1}, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->addTiltHistoryEntryLocked(JF)V
 
-    .line 540
     move-object/from16 v0, p0
 
     invoke-direct {v0, v10, v11}, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->isFlatLocked(J)Z
@@ -2174,15 +2025,12 @@
 
     if-eqz v24, :cond_10
 
-    .line 541
     const/4 v6, 0x1
 
-    .line 542
     move-object/from16 v0, p0
 
     iput-wide v10, v0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mFlatTimestampNanos:J
 
-    .line 544
     :cond_10
     move/from16 v0, v17
 
@@ -2200,15 +2048,12 @@
 
     if-eqz v24, :cond_11
 
-    .line 545
     const/4 v7, 0x1
 
-    .line 546
     move-object/from16 v0, p0
 
     iput-wide v10, v0, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mSwingTimestampNanos:J
 
-    .line 551
     :cond_11
     const/16 v24, -0x28
 
@@ -2218,7 +2063,6 @@
 
     if-gt v0, v1, :cond_14
 
-    .line 552
     const/16 v24, 0x1
 
     move/from16 v0, v24
@@ -2227,7 +2071,6 @@
 
     iput-boolean v0, v1, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->mOverhead:Z
 
-    .line 556
     :cond_12
     :goto_3
     move-object/from16 v0, p0
@@ -2238,7 +2081,6 @@
 
     if-eqz v24, :cond_15
 
-    .line 557
     # getter for: Lcom/android/server/policy/WindowOrientationListener;->LOG:Z
     invoke-static {}, Lcom/android/server/policy/WindowOrientationListener;->access$300()Z
 
@@ -2246,7 +2088,6 @@
 
     if-eqz v24, :cond_13
 
-    .line 558
     const-string v24, "WindowOrientationListener"
 
     new-instance v26, Ljava/lang/StringBuilder;
@@ -2277,13 +2118,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 561
     :cond_13
     invoke-direct/range {p0 .. p0}, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->clearPredictedRotationLocked()V
 
     goto/16 :goto_2
 
-    .line 640
     .end local v5    # "isAccelerating":Z
     .end local v6    # "isFlat":Z
     .end local v7    # "isSwinging":Z
@@ -2305,7 +2144,6 @@
 
     throw v24
 
-    .line 553
     .restart local v5    # "isAccelerating":Z
     .restart local v6    # "isFlat":Z
     .restart local v7    # "isSwinging":Z
@@ -2327,7 +2165,6 @@
 
     if-lt v0, v1, :cond_12
 
-    .line 554
     const/16 v24, 0x0
 
     :try_start_4
@@ -2339,7 +2176,6 @@
 
     goto :goto_3
 
-    .line 562
     :cond_15
     invoke-static/range {v17 .. v17}, Ljava/lang/Math;->abs(I)I
 
@@ -2353,7 +2189,6 @@
 
     if-le v0, v1, :cond_17
 
-    .line 563
     # getter for: Lcom/android/server/policy/WindowOrientationListener;->LOG:Z
     invoke-static {}, Lcom/android/server/policy/WindowOrientationListener;->access$300()Z
 
@@ -2361,7 +2196,6 @@
 
     if-eqz v24, :cond_16
 
-    .line 564
     const-string v24, "WindowOrientationListener"
 
     new-instance v26, Ljava/lang/StringBuilder;
@@ -2392,13 +2226,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 567
     :cond_16
     invoke-direct/range {p0 .. p0}, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->clearPredictedRotationLocked()V
 
     goto/16 :goto_2
 
-    .line 572
     :cond_17
     move/from16 v0, v21
 
@@ -2440,20 +2272,16 @@
 
     long-to-int v13, v0
 
-    .line 574
     .local v13, "orientationAngle":I
     if-gez v13, :cond_18
 
-    .line 576
     add-int/lit16 v13, v13, 0x168
 
-    .line 580
     :cond_18
     add-int/lit8 v24, v13, 0x2d
 
     div-int/lit8 v9, v24, 0x5a
 
-    .line 581
     .local v9, "nearestRotation":I
     const/16 v24, 0x4
 
@@ -2461,10 +2289,8 @@
 
     if-ne v9, v0, :cond_19
 
-    .line 582
     const/4 v9, 0x0
 
-    .line 586
     :cond_19
     move-object/from16 v0, p0
 
@@ -2484,12 +2310,10 @@
 
     if-eqz v24, :cond_1a
 
-    .line 589
     move-object/from16 v0, p0
 
     invoke-direct {v0, v10, v11, v9}, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->updatePredictedRotationLocked(JI)V
 
-    .line 590
     # getter for: Lcom/android/server/policy/WindowOrientationListener;->LOG:Z
     invoke-static {}, Lcom/android/server/policy/WindowOrientationListener;->access$300()Z
 
@@ -2497,7 +2321,6 @@
 
     if-eqz v24, :cond_7
 
-    .line 591
     const-string v24, "WindowOrientationListener"
 
     new-instance v26, Ljava/lang/StringBuilder;
@@ -2586,7 +2409,6 @@
 
     goto/16 :goto_2
 
-    .line 600
     :cond_1a
     # getter for: Lcom/android/server/policy/WindowOrientationListener;->LOG:Z
     invoke-static {}, Lcom/android/server/policy/WindowOrientationListener;->access$300()Z
@@ -2595,7 +2417,6 @@
 
     if-eqz v24, :cond_1b
 
-    .line 601
     const-string v24, "WindowOrientationListener"
 
     new-instance v26, Ljava/lang/StringBuilder;
@@ -2638,7 +2459,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 605
     :cond_1b
     invoke-direct/range {p0 .. p0}, Lcom/android/server/policy/WindowOrientationListener$SensorEventListenerImpl;->clearPredictedRotationLocked()V
     :try_end_4

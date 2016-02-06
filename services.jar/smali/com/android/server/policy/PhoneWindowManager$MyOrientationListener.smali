@@ -25,13 +25,10 @@
     .param p3, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 807
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$MyOrientationListener;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    .line 808
     invoke-direct {p0, p2, p3}, Lcom/android/server/policy/WindowOrientationListener;-><init>(Landroid/content/Context;Landroid/os/Handler;)V
 
-    .line 809
     return-void
 .end method
 
@@ -42,7 +39,6 @@
     .param p1, "rotation"    # I
 
     .prologue
-    .line 815
     # getter for: Lcom/android/server/policy/PhoneWindowManager;->DEBUG_KPI:Z
     invoke-static {}, Lcom/android/server/policy/PhoneWindowManager;->access$1300()Z
 
@@ -50,14 +46,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 816
     const-string v0, "KPI-ORT-3"
 
     const-string v1, "PhoneWindowManager.onProposedRotationChanged start"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 818
     :cond_0
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$MyOrientationListener;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -65,7 +59,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/policy/PhoneWindowManager;->updateRotation(Z)V
 
-    .line 820
     # getter for: Lcom/android/server/policy/PhoneWindowManager;->DEBUG_KPI:Z
     invoke-static {}, Lcom/android/server/policy/PhoneWindowManager;->access$1300()Z
 
@@ -73,14 +66,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 821
     const-string v0, "KPI-ORT-7"
 
     const-string v1, "PhoneWindowManager.onProposedRotationChanged complete"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 823
     :cond_1
     return-void
 .end method

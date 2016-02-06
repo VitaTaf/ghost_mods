@@ -38,27 +38,20 @@
     .param p6, "hasMidi"    # Z
 
     .prologue
-    .line 58
     iput-object p1, p0, Lcom/android/server/usb/UsbAlsaManager$AudioDevice;->this$0:Lcom/android/server/usb/UsbAlsaManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 59
     iput p2, p0, Lcom/android/server/usb/UsbAlsaManager$AudioDevice;->mCard:I
 
-    .line 60
     iput p3, p0, Lcom/android/server/usb/UsbAlsaManager$AudioDevice;->mDevice:I
 
-    .line 61
     iput-boolean p4, p0, Lcom/android/server/usb/UsbAlsaManager$AudioDevice;->mHasPlayback:Z
 
-    .line 62
     iput-boolean p5, p0, Lcom/android/server/usb/UsbAlsaManager$AudioDevice;->mHasCapture:Z
 
-    .line 63
     iput-boolean p6, p0, Lcom/android/server/usb/UsbAlsaManager$AudioDevice;->mHasMIDI:Z
 
-    .line 64
     return-void
 .end method
 
@@ -68,12 +61,10 @@
     .locals 3
 
     .prologue
-    .line 67
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 68
     .local v0, "sb":Ljava/lang/StringBuilder;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -97,7 +88,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 69
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -120,7 +110,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 70
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -143,7 +132,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 71
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -166,7 +154,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 72
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -189,12 +176,10 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 73
     const-string v1, "]"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 74
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

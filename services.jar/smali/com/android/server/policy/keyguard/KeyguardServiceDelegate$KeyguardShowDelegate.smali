@@ -26,15 +26,12 @@
     .param p2, "showListener"    # Lcom/android/server/policy/keyguard/KeyguardServiceDelegate$ShowListener;
 
     .prologue
-    .line 80
     iput-object p1, p0, Lcom/android/server/policy/keyguard/KeyguardServiceDelegate$KeyguardShowDelegate;->this$0:Lcom/android/server/policy/keyguard/KeyguardServiceDelegate;
 
     invoke-direct {p0}, Lcom/android/internal/policy/IKeyguardShowCallback$Stub;-><init>()V
 
-    .line 81
     iput-object p2, p0, Lcom/android/server/policy/keyguard/KeyguardServiceDelegate$KeyguardShowDelegate;->mShowListener:Lcom/android/server/policy/keyguard/KeyguardServiceDelegate$ShowListener;
 
-    .line 82
     return-void
 .end method
 
@@ -50,29 +47,24 @@
     .end annotation
 
     .prologue
-    .line 86
     const-string v0, "KeyguardServiceDelegate"
 
     const-string v1, "**** SHOWN CALLED ****"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 87
     iget-object v0, p0, Lcom/android/server/policy/keyguard/KeyguardServiceDelegate$KeyguardShowDelegate;->mShowListener:Lcom/android/server/policy/keyguard/KeyguardServiceDelegate$ShowListener;
 
     if-eqz v0, :cond_0
 
-    .line 88
     iget-object v0, p0, Lcom/android/server/policy/keyguard/KeyguardServiceDelegate$KeyguardShowDelegate;->mShowListener:Lcom/android/server/policy/keyguard/KeyguardServiceDelegate$ShowListener;
 
     invoke-interface {v0, p1}, Lcom/android/server/policy/keyguard/KeyguardServiceDelegate$ShowListener;->onShown(Landroid/os/IBinder;)V
 
-    .line 90
     :cond_0
     iget-object v0, p0, Lcom/android/server/policy/keyguard/KeyguardServiceDelegate$KeyguardShowDelegate;->this$0:Lcom/android/server/policy/keyguard/KeyguardServiceDelegate;
 
     invoke-virtual {v0}, Lcom/android/server/policy/keyguard/KeyguardServiceDelegate;->hideScrim()V
 
-    .line 91
     return-void
 .end method

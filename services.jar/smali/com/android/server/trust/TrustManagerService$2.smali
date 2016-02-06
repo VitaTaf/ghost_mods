@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 833
     iput-object p1, p0, Lcom/android/server/trust/TrustManagerService$2;->this$0:Lcom/android/server/trust/TrustManagerService;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -40,16 +39,13 @@
     .prologue
     const/4 v2, -0x1
 
-    .line 836
     iget v0, p1, Landroid/os/Message;->what:I
 
     sparse-switch v0, :sswitch_data_0
 
-    .line 871
     :goto_0
     return-void
 
-    .line 838
     :sswitch_0
     iget-object v1, p0, Lcom/android/server/trust/TrustManagerService$2;->this$0:Lcom/android/server/trust/TrustManagerService;
 
@@ -62,7 +58,6 @@
 
     goto :goto_0
 
-    .line 841
     :sswitch_1
     iget-object v1, p0, Lcom/android/server/trust/TrustManagerService$2;->this$0:Lcom/android/server/trust/TrustManagerService;
 
@@ -75,7 +70,6 @@
 
     goto :goto_0
 
-    .line 844
     :sswitch_2
     iget-object v1, p0, Lcom/android/server/trust/TrustManagerService$2;->this$0:Lcom/android/server/trust/TrustManagerService;
 
@@ -98,13 +92,11 @@
 
     goto :goto_1
 
-    .line 847
     :sswitch_3
     iget-object v0, p0, Lcom/android/server/trust/TrustManagerService$2;->this$0:Lcom/android/server/trust/TrustManagerService;
 
     invoke-virtual {v0, v2}, Lcom/android/server/trust/TrustManagerService;->refreshAgentList(I)V
 
-    .line 849
     iget-object v0, p0, Lcom/android/server/trust/TrustManagerService$2;->this$0:Lcom/android/server/trust/TrustManagerService;
 
     # invokes: Lcom/android/server/trust/TrustManagerService;->refreshDeviceLockedForUser(I)V
@@ -112,7 +104,6 @@
 
     goto :goto_0
 
-    .line 852
     :sswitch_4
     iget-object v0, p0, Lcom/android/server/trust/TrustManagerService$2;->this$0:Lcom/android/server/trust/TrustManagerService;
 
@@ -123,7 +114,6 @@
 
     goto :goto_0
 
-    .line 855
     :sswitch_5
     iget-object v0, p0, Lcom/android/server/trust/TrustManagerService$2;->this$0:Lcom/android/server/trust/TrustManagerService;
 
@@ -139,7 +129,6 @@
 
     goto :goto_0
 
-    .line 859
     :sswitch_6
     iget-object v0, p0, Lcom/android/server/trust/TrustManagerService$2;->this$0:Lcom/android/server/trust/TrustManagerService;
 
@@ -149,7 +138,6 @@
 
     goto :goto_0
 
-    .line 862
     :sswitch_7
     iget-object v0, p0, Lcom/android/server/trust/TrustManagerService$2;->this$0:Lcom/android/server/trust/TrustManagerService;
 
@@ -158,7 +146,6 @@
     # setter for: Lcom/android/server/trust/TrustManagerService;->mCurrentUser:I
     invoke-static {v0, v1}, Lcom/android/server/trust/TrustManagerService;->access$702(Lcom/android/server/trust/TrustManagerService;I)I
 
-    .line 863
     iget-object v0, p0, Lcom/android/server/trust/TrustManagerService$2;->this$0:Lcom/android/server/trust/TrustManagerService;
 
     # invokes: Lcom/android/server/trust/TrustManagerService;->refreshDeviceLockedForUser(I)V
@@ -166,7 +153,6 @@
 
     goto :goto_0
 
-    .line 867
     :sswitch_8
     iget-object v1, p0, Lcom/android/server/trust/TrustManagerService$2;->this$0:Lcom/android/server/trust/TrustManagerService;
 
@@ -181,7 +167,6 @@
 
     goto :goto_0
 
-    .line 836
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_0

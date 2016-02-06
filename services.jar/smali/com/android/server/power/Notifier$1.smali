@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 306
     iput-object p1, p0, Lcom/android/server/power/Notifier$1;->this$0:Lcom/android/server/power/Notifier;
 
     iput p2, p0, Lcom/android/server/power/Notifier$1;->val$wakefulness:I
@@ -44,7 +43,6 @@
     .locals 2
 
     .prologue
-    .line 309
     iget-object v0, p0, Lcom/android/server/power/Notifier$1;->this$0:Lcom/android/server/power/Notifier;
 
     # getter for: Lcom/android/server/power/Notifier;->mActivityManagerInternal:Landroid/app/ActivityManagerInternal;
@@ -56,6 +54,5 @@
 
     invoke-virtual {v0, v1}, Landroid/app/ActivityManagerInternal;->onWakefulnessChanged(I)V
 
-    .line 310
     return-void
 .end method

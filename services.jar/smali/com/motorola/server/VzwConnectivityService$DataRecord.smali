@@ -40,32 +40,24 @@
     .prologue
     const-wide/16 v2, 0x0
 
-    .line 210
     iput-object p1, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->this$0:Lcom/motorola/server/VzwConnectivityService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 211
     iput-object p2, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->iface:Ljava/lang/String;
 
-    .line 212
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->active:Z
 
-    .line 213
     iput-wide p3, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->baseRxBytes:J
 
-    .line 214
     iput-wide p5, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->baseTxBytes:J
 
-    .line 215
     iput-wide v2, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->sumRxBytes:J
 
-    .line 216
     iput-wide v2, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->sumTxBytes:J
 
-    .line 217
     return-void
 .end method
 
@@ -78,21 +70,16 @@
     .param p4, "disconTxBase"    # J
 
     .prologue
-    .line 230
     iput-object p1, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->iface:Ljava/lang/String;
 
-    .line 231
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->active:Z
 
-    .line 232
     iput-wide p2, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->baseRxBytes:J
 
-    .line 233
     iput-wide p4, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->baseTxBytes:J
 
-    .line 234
     return-void
 .end method
 
@@ -103,27 +90,22 @@
     .param p4, "txBytes"    # J
 
     .prologue
-    .line 238
     iget-wide v2, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->baseRxBytes:J
 
-    .line 239
     .local v2, "newBaseRxBytes":J
     iget-wide v4, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->baseTxBytes:J
 
-    .line 241
     .local v4, "newBaseTxBytes":J
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->active:Z
 
-    .line 243
     iget-wide v6, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->baseRxBytes:J
 
     cmp-long v1, p2, v6
 
     if-ltz v1, :cond_0
 
-    .line 245
     iget-wide v6, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->sumRxBytes:J
 
     iget-wide v8, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->baseRxBytes:J
@@ -134,10 +116,8 @@
 
     iput-wide v6, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->sumRxBytes:J
 
-    .line 246
     move-wide v2, p2
 
-    .line 248
     :cond_0
     iget-wide v6, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->baseTxBytes:J
 
@@ -145,7 +125,6 @@
 
     if-ltz v1, :cond_1
 
-    .line 250
     iget-wide v6, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->sumTxBytes:J
 
     iget-wide v8, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->baseTxBytes:J
@@ -156,16 +135,13 @@
 
     iput-wide v6, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->sumTxBytes:J
 
-    .line 251
     move-wide v4, p4
 
-    .line 255
     :cond_1
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 257
     .local v0, "baseData":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Long;>;"
     const/4 v1, 0x0
 
@@ -175,7 +151,6 @@
 
     invoke-virtual {v0, v1, v6}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 258
     const/4 v1, 0x1
 
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -184,7 +159,6 @@
 
     invoke-virtual {v0, v1, v6}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 259
     const-string v1, "VzwConnectivityService"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -227,7 +201,6 @@
 
     invoke-static {v1, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 260
     iget-object v1, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->this$0:Lcom/motorola/server/VzwConnectivityService;
 
     # getter for: Lcom/motorola/server/VzwConnectivityService;->mIfaceLastDisconBase:Ljava/util/HashMap;
@@ -237,14 +210,12 @@
 
     invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 262
     const-wide/16 v6, 0x0
 
     iput-wide v6, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->baseTxBytes:J
 
     iput-wide v6, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->baseRxBytes:J
 
-    .line 264
     return-void
 .end method
 
@@ -252,7 +223,6 @@
     .locals 1
 
     .prologue
-    .line 298
     iget-object v0, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->iface:Ljava/lang/String;
 
     return-object v0
@@ -262,12 +232,10 @@
     .locals 6
 
     .prologue
-    .line 267
     iget-boolean v2, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->active:Z
 
     if-eqz v2, :cond_1
 
-    .line 268
     iget-object v2, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->this$0:Lcom/motorola/server/VzwConnectivityService;
 
     iget-object v3, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->iface:Ljava/lang/String;
@@ -278,7 +246,6 @@
 
     move-result-wide v0
 
-    .line 269
     .local v0, "curRxBytes":J
     const-string v2, "VzwConnectivityService"
 
@@ -314,14 +281,12 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 271
     iget-wide v2, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->baseRxBytes:J
 
     cmp-long v2, v0, v2
 
     if-ltz v2, :cond_0
 
-    .line 272
     iget-wide v2, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->sumRxBytes:J
 
     iget-wide v4, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->baseRxBytes:J
@@ -330,12 +295,10 @@
 
     add-long/2addr v2, v4
 
-    .line 278
     .end local v0    # "curRxBytes":J
     :goto_0
     return-wide v2
 
-    .line 274
     .restart local v0    # "curRxBytes":J
     :cond_0
     const-string v2, "VzwConnectivityService"
@@ -344,12 +307,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 275
     iget-wide v2, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->sumRxBytes:J
 
     goto :goto_0
 
-    .line 278
     .end local v0    # "curRxBytes":J
     :cond_1
     iget-wide v2, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->sumRxBytes:J
@@ -361,12 +322,10 @@
     .locals 6
 
     .prologue
-    .line 283
     iget-boolean v2, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->active:Z
 
     if-eqz v2, :cond_1
 
-    .line 284
     iget-object v2, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->this$0:Lcom/motorola/server/VzwConnectivityService;
 
     iget-object v3, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->iface:Ljava/lang/String;
@@ -377,7 +336,6 @@
 
     move-result-wide v0
 
-    .line 285
     .local v0, "curTxBytes":J
     const-string v2, "VzwConnectivityService"
 
@@ -413,14 +371,12 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 287
     iget-wide v2, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->baseTxBytes:J
 
     cmp-long v2, v0, v2
 
     if-ltz v2, :cond_0
 
-    .line 288
     iget-wide v2, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->sumTxBytes:J
 
     iget-wide v4, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->baseTxBytes:J
@@ -429,12 +385,10 @@
 
     add-long/2addr v2, v4
 
-    .line 294
     .end local v0    # "curTxBytes":J
     :goto_0
     return-wide v2
 
-    .line 290
     .restart local v0    # "curTxBytes":J
     :cond_0
     const-string v2, "VzwConnectivityService"
@@ -443,12 +397,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 291
     iget-wide v2, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->sumTxBytes:J
 
     goto :goto_0
 
-    .line 294
     .end local v0    # "curTxBytes":J
     :cond_1
     iget-wide v2, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->sumTxBytes:J
@@ -460,7 +412,6 @@
     .locals 1
 
     .prologue
-    .line 299
     iget-boolean v0, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->active:Z
 
     return v0
@@ -472,24 +423,18 @@
     .prologue
     const-wide/16 v2, 0x0
 
-    .line 221
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->active:Z
 
-    .line 222
     iput-wide v2, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->baseRxBytes:J
 
-    .line 223
     iput-wide v2, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->baseTxBytes:J
 
-    .line 224
     iput-wide v2, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->sumRxBytes:J
 
-    .line 225
     iput-wide v2, p0, Lcom/motorola/server/VzwConnectivityService$DataRecord;->sumTxBytes:J
 
-    .line 226
     return-void
 .end method
 
@@ -497,7 +442,6 @@
     .locals 4
 
     .prologue
-    .line 302
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

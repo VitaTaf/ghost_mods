@@ -16,17 +16,14 @@
     .locals 1
 
     .prologue
-    .line 20
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/motorola/server/Haptic;->sInitialized:Z
 
-    .line 24
     const-string v0, "mot_haptic"
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
-    .line 25
     return-void
 .end method
 
@@ -34,7 +31,6 @@
     .locals 0
 
     .prologue
-    .line 12
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -44,34 +40,28 @@
     .locals 3
 
     .prologue
-    .line 119
     sget-boolean v1, Lcom/motorola/server/Haptic;->sInitialized:Z
 
     if-nez v1, :cond_0
 
-    .line 121
     :try_start_0
     invoke-static {}, Lcom/motorola/server/Haptic;->initialize()V
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 125
     .local v0, "e":Ljava/lang/RuntimeException;
     :goto_0
     const/4 v1, 0x1
 
     sput-boolean v1, Lcom/motorola/server/Haptic;->sInitialized:Z
 
-    .line 127
     :cond_0
     return-void
 
-    .line 122
     .end local v0    # "e":Ljava/lang/RuntimeException;
     :catch_0
     move-exception v0
 
-    .line 123
     .restart local v0    # "e":Ljava/lang/RuntimeException;
     const-string v1, "Haptic"
 
@@ -92,48 +82,40 @@
     .param p0, "pattern"    # [J
 
     .prologue
-    .line 76
     invoke-static {p0}, Lcom/motorola/server/Haptic;->valid([J)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 77
     const/4 v2, 0x2
 
     aget-wide v2, p0, v2
 
     long-to-int v1, v2
 
-    .line 79
     .local v1, "effectId":I
     const/16 v2, 0x7b
 
     if-gt v1, v2, :cond_0
 
-    .line 81
     :try_start_0
     invoke-static {v1}, Lcom/motorola/server/Haptic;->playEffect(I)V
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 86
     :cond_0
     :goto_0
     const/4 v2, 0x1
 
-    .line 88
     .end local v1    # "effectId":I
     :goto_1
     return v2
 
-    .line 82
     .restart local v1    # "effectId":I
     :catch_0
     move-exception v0
 
-    .line 83
     .local v0, "e":Ljava/lang/RuntimeException;
     const-string v2, "Haptic"
 
@@ -145,7 +127,6 @@
 
     goto :goto_0
 
-    .line 88
     .end local v0    # "e":Ljava/lang/RuntimeException;
     .end local v1    # "effectId":I
     :cond_1
@@ -161,23 +142,19 @@
     .locals 3
 
     .prologue
-    .line 97
     :try_start_0
     invoke-static {}, Lcom/motorola/server/Haptic;->stopPlayingEffect()V
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 101
     .local v0, "e":Ljava/lang/RuntimeException;
     :goto_0
     return-void
 
-    .line 98
     .end local v0    # "e":Ljava/lang/RuntimeException;
     :catch_0
     move-exception v0
 
-    .line 99
     .restart local v0    # "e":Ljava/lang/RuntimeException;
     const-string v1, "Haptic"
 
@@ -209,7 +186,6 @@
 
     const-wide/16 v4, 0x0
 
-    .line 108
     if-eqz p0, :cond_0
 
     array-length v2, p0

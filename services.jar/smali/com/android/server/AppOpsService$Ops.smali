@@ -39,18 +39,13 @@
     .param p3, "_isPrivileged"    # Z
 
     .prologue
-    .line 108
     invoke-direct {p0}, Landroid/util/SparseArray;-><init>()V
 
-    .line 109
     iput-object p1, p0, Lcom/android/server/AppOpsService$Ops;->packageName:Ljava/lang/String;
 
-    .line 110
     iput p2, p0, Lcom/android/server/AppOpsService$Ops;->uid:I
 
-    .line 111
     iput-boolean p3, p0, Lcom/android/server/AppOpsService$Ops;->isPrivileged:Z
 
-    .line 112
     return-void
 .end method

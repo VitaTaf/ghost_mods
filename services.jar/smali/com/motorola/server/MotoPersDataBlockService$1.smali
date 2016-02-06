@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 96
     iput-object p1, p0, Lcom/motorola/server/MotoPersDataBlockService$1;->this$0:Lcom/motorola/server/MotoPersDataBlockService;
 
     invoke-direct {p0}, Lcom/motorola/persistentdata/IMotoPersDataBlockService$Stub;-><init>()V
@@ -38,7 +37,6 @@
     .param p1, "partition"    # I
 
     .prologue
-    .line 183
     iget-object v1, p0, Lcom/motorola/server/MotoPersDataBlockService$1;->this$0:Lcom/motorola/server/MotoPersDataBlockService;
 
     # getter for: Lcom/motorola/server/MotoPersDataBlockService;->mDataBlocks:Ljava/util/ArrayList;
@@ -52,11 +50,9 @@
 
     check-cast v0, Lcom/motorola/server/MotoPersDataBlockService$DataBlockInfo;
 
-    .line 184
     .local v0, "db":Lcom/motorola/server/MotoPersDataBlockService$DataBlockInfo;
     if-nez v0, :cond_0
 
-    .line 185
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -81,14 +77,12 @@
 
     throw v1
 
-    .line 187
     :cond_0
     iget-object v1, p0, Lcom/motorola/server/MotoPersDataBlockService$1;->this$0:Lcom/motorola/server/MotoPersDataBlockService;
 
     # invokes: Lcom/motorola/server/MotoPersDataBlockService;->enforcePermission(Lcom/motorola/server/MotoPersDataBlockService$DataBlockInfo;)V
     invoke-static {v1, v0}, Lcom/motorola/server/MotoPersDataBlockService;->access$200(Lcom/motorola/server/MotoPersDataBlockService;Lcom/motorola/server/MotoPersDataBlockService$DataBlockInfo;)V
 
-    .line 189
     iget-object v1, p0, Lcom/motorola/server/MotoPersDataBlockService$1;->this$0:Lcom/motorola/server/MotoPersDataBlockService;
 
     # invokes: Lcom/motorola/server/MotoPersDataBlockService;->getBlockDeviceSize(Lcom/motorola/server/MotoPersDataBlockService$DataBlockInfo;)J
@@ -106,7 +100,6 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 154
     iget-object v6, p0, Lcom/motorola/server/MotoPersDataBlockService$1;->this$0:Lcom/motorola/server/MotoPersDataBlockService;
 
     # getter for: Lcom/motorola/server/MotoPersDataBlockService;->mDataBlocks:Ljava/util/ArrayList;
@@ -120,11 +113,9 @@
 
     check-cast v2, Lcom/motorola/server/MotoPersDataBlockService$DataBlockInfo;
 
-    .line 155
     .local v2, "db":Lcom/motorola/server/MotoPersDataBlockService$DataBlockInfo;
     if-nez v2, :cond_0
 
-    .line 156
     new-instance v6, Ljava/lang/IllegalArgumentException;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -149,17 +140,14 @@
 
     throw v6
 
-    .line 158
     :cond_0
     iget-object v6, p0, Lcom/motorola/server/MotoPersDataBlockService$1;->this$0:Lcom/motorola/server/MotoPersDataBlockService;
 
     # invokes: Lcom/motorola/server/MotoPersDataBlockService;->enforcePermission(Lcom/motorola/server/MotoPersDataBlockService$DataBlockInfo;)V
     invoke-static {v6, v2}, Lcom/motorola/server/MotoPersDataBlockService;->access$200(Lcom/motorola/server/MotoPersDataBlockService;Lcom/motorola/server/MotoPersDataBlockService$DataBlockInfo;)V
 
-    .line 160
     const/4 v1, 0x0
 
-    .line 161
     .local v1, "data":[B
     :try_start_0
     new-instance v0, Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
@@ -184,10 +172,8 @@
     .local v0, "acis":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
     const/4 v8, 0x0
 
-    .line 164
     if-eqz v0, :cond_5
 
-    .line 165
     :try_start_1
     iget-object v6, p0, Lcom/motorola/server/MotoPersDataBlockService$1;->this$0:Lcom/motorola/server/MotoPersDataBlockService;
 
@@ -198,7 +184,6 @@
 
     long-to-int v4, v10
 
-    .line 166
     .local v4, "max":I
     iget-object v6, p0, Lcom/motorola/server/MotoPersDataBlockService$1;->this$0:Lcom/motorola/server/MotoPersDataBlockService;
 
@@ -212,22 +197,18 @@
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
-    .line 167
     :try_start_2
     # invokes: Lcom/motorola/server/MotoPersDataBlockService;->readFully(Ljava/io/FileInputStream;I)[B
     invoke-static {v0, v4}, Lcom/motorola/server/MotoPersDataBlockService;->access$300(Ljava/io/FileInputStream;I)[B
 
     move-result-object v1
 
-    .line 168
     monitor-exit v9
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 169
     if-eqz v1, :cond_5
 
-    .line 170
     :try_start_3
     const-string v6, "persdata"
 
@@ -238,7 +219,6 @@
 
     move-result-object v6
 
-    .line 173
     if-eqz v0, :cond_1
 
     if-eqz v7, :cond_4
@@ -250,14 +230,12 @@
     .catch Ljava/io/FileNotFoundException; {:try_start_4 .. :try_end_4} :catch_1
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_3
 
-    .line 178
     .end local v0    # "acis":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
     .end local v4    # "max":I
     :cond_1
     :goto_0
     return-object v6
 
-    .line 168
     .restart local v0    # "acis":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
     .restart local v4    # "max":I
     :catchall_0
@@ -274,7 +252,6 @@
     .catch Ljava/lang/Throwable; {:try_start_6 .. :try_end_6} :catch_0
     .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
-    .line 161
     .end local v4    # "max":I
     :catch_0
     move-exception v6
@@ -284,7 +261,6 @@
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
-    .line 173
     :catchall_1
     move-exception v8
 
@@ -318,7 +294,6 @@
     :catch_1
     move-exception v3
 
-    .line 174
     .local v3, "e":Ljava/io/FileNotFoundException;
     # getter for: Lcom/motorola/server/MotoPersDataBlockService;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/motorola/server/MotoPersDataBlockService;->access$400()Ljava/lang/String;
@@ -334,10 +309,8 @@
     :goto_3
     move-object v6, v7
 
-    .line 178
     goto :goto_0
 
-    .line 173
     .restart local v0    # "acis":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
     .restart local v4    # "max":I
     :catch_2
@@ -352,14 +325,12 @@
 
     goto :goto_0
 
-    .line 175
     .end local v0    # "acis":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
     .end local v4    # "max":I
     .end local v5    # "x2":Ljava/lang/Throwable;
     :catch_3
     move-exception v3
 
-    .line 176
     .local v3, "e":Ljava/io/IOException;
     # getter for: Lcom/motorola/server/MotoPersDataBlockService;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/motorola/server/MotoPersDataBlockService;->access$400()Ljava/lang/String;
@@ -372,7 +343,6 @@
 
     goto :goto_3
 
-    .line 173
     .end local v3    # "e":Ljava/io/IOException;
     .restart local v0    # "acis":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
     .restart local v4    # "max":I
@@ -453,7 +423,6 @@
     .prologue
     const/4 v8, -0x1
 
-    .line 99
     iget-object v9, p0, Lcom/motorola/server/MotoPersDataBlockService$1;->this$0:Lcom/motorola/server/MotoPersDataBlockService;
 
     # getter for: Lcom/motorola/server/MotoPersDataBlockService;->mDataBlocks:Ljava/util/ArrayList;
@@ -467,11 +436,9 @@
 
     check-cast v1, Lcom/motorola/server/MotoPersDataBlockService$DataBlockInfo;
 
-    .line 100
     .local v1, "db":Lcom/motorola/server/MotoPersDataBlockService$DataBlockInfo;
     if-nez v1, :cond_0
 
-    .line 101
     new-instance v8, Ljava/lang/IllegalArgumentException;
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -496,13 +463,11 @@
 
     throw v8
 
-    .line 103
     :cond_0
     iget-boolean v9, v1, Lcom/motorola/server/MotoPersDataBlockService$DataBlockInfo;->mWritable:Z
 
     if-nez v9, :cond_1
 
-    .line 104
     new-instance v8, Ljava/lang/SecurityException;
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -529,21 +494,17 @@
 
     throw v8
 
-    .line 106
     :cond_1
     iget-object v9, p0, Lcom/motorola/server/MotoPersDataBlockService$1;->this$0:Lcom/motorola/server/MotoPersDataBlockService;
 
     # invokes: Lcom/motorola/server/MotoPersDataBlockService;->enforcePermission(Lcom/motorola/server/MotoPersDataBlockService$DataBlockInfo;)V
     invoke-static {v9, v1}, Lcom/motorola/server/MotoPersDataBlockService;->access$200(Lcom/motorola/server/MotoPersDataBlockService;Lcom/motorola/server/MotoPersDataBlockService$DataBlockInfo;)V
 
-    .line 108
     const/4 v0, 0x0
 
-    .line 109
     .local v0, "data":[B
     if-eqz p2, :cond_2
 
-    .line 110
     :try_start_0
     new-instance v3, Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
 
@@ -554,7 +515,6 @@
     .local v3, "fis":Ljava/io/FileInputStream;
     const/4 v10, 0x0
 
-    .line 111
     :try_start_1
     invoke-virtual {p2}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
 
@@ -572,7 +532,6 @@
 
     move-result-object v0
 
-    .line 112
     if-eqz v3, :cond_2
 
     if-eqz v10, :cond_3
@@ -583,13 +542,11 @@
     .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_0
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 116
     .end local v3    # "fis":Ljava/io/FileInputStream;
     :cond_2
     :goto_0
     if-nez v0, :cond_6
 
-    .line 117
     # getter for: Lcom/motorola/server/MotoPersDataBlockService;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/motorola/server/MotoPersDataBlockService;->access$400()Ljava/lang/String;
 
@@ -599,11 +556,9 @@
 
     invoke-static {v9, v10}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 148
     :goto_1
     return v8
 
-    .line 112
     .restart local v3    # "fis":Ljava/io/FileInputStream;
     :catch_0
     move-exception v7
@@ -621,7 +576,6 @@
     :catch_1
     move-exception v2
 
-    .line 113
     .local v2, "e":Ljava/io/IOException;
     # getter for: Lcom/motorola/server/MotoPersDataBlockService;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/motorola/server/MotoPersDataBlockService;->access$400()Ljava/lang/String;
@@ -634,7 +588,6 @@
 
     goto :goto_0
 
-    .line 112
     .end local v2    # "e":Ljava/io/IOException;
     .restart local v3    # "fis":Ljava/io/FileInputStream;
     :cond_3
@@ -645,7 +598,6 @@
 
     goto :goto_0
 
-    .line 110
     :catch_2
     move-exception v9
 
@@ -654,7 +606,6 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    .line 112
     :catchall_0
     move-exception v10
 
@@ -696,7 +647,6 @@
 
     goto :goto_3
 
-    .line 122
     .end local v3    # "fis":Ljava/io/FileInputStream;
     :cond_6
     iget-object v9, p0, Lcom/motorola/server/MotoPersDataBlockService$1;->this$0:Lcom/motorola/server/MotoPersDataBlockService;
@@ -706,7 +656,6 @@
 
     move-result-wide v4
 
-    .line 123
     .local v4, "maxBlockSize":J
     array-length v9, v0
 
@@ -716,14 +665,12 @@
 
     if-lez v9, :cond_7
 
-    .line 124
     neg-long v8, v4
 
     long-to-int v8, v8
 
     goto :goto_1
 
-    .line 129
     :cond_7
     :try_start_8
     new-instance v6, Ljava/io/DataOutputStream;
@@ -742,7 +689,6 @@
     :try_end_8
     .catch Ljava/io/FileNotFoundException; {:try_start_8 .. :try_end_8} :catch_4
 
-    .line 136
     .local v6, "outputStream":Ljava/io/DataOutputStream;
     :try_start_9
     iget-object v9, p0, Lcom/motorola/server/MotoPersDataBlockService$1;->this$0:Lcom/motorola/server/MotoPersDataBlockService;
@@ -757,18 +703,15 @@
     .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_6
     .catchall {:try_start_9 .. :try_end_9} :catchall_2
 
-    .line 137
     :try_start_a
     invoke-virtual {v6, v0}, Ljava/io/DataOutputStream;->write([B)V
 
-    .line 138
     array-length v9, v0
 
     monitor-exit v10
     :try_end_a
     .catchall {:try_start_a .. :try_end_a} :catchall_1
 
-    .line 145
     :try_start_b
     invoke-virtual {v6}, Ljava/io/DataOutputStream;->close()V
     :try_end_b
@@ -777,15 +720,12 @@
     :goto_4
     move v8, v9
 
-    .line 148
     goto :goto_1
 
-    .line 130
     .end local v6    # "outputStream":Ljava/io/DataOutputStream;
     :catch_4
     move-exception v2
 
-    .line 131
     .local v2, "e":Ljava/io/FileNotFoundException;
     # getter for: Lcom/motorola/server/MotoPersDataBlockService;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/motorola/server/MotoPersDataBlockService;->access$400()Ljava/lang/String;
@@ -798,13 +738,11 @@
 
     goto :goto_1
 
-    .line 146
     .end local v2    # "e":Ljava/io/FileNotFoundException;
     .restart local v6    # "outputStream":Ljava/io/DataOutputStream;
     :catch_5
     move-exception v2
 
-    .line 147
     .local v2, "e":Ljava/io/IOException;
     # getter for: Lcom/motorola/server/MotoPersDataBlockService;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/motorola/server/MotoPersDataBlockService;->access$400()Ljava/lang/String;
@@ -817,7 +755,6 @@
 
     goto :goto_4
 
-    .line 139
     .end local v2    # "e":Ljava/io/IOException;
     :catchall_1
     move-exception v9
@@ -833,11 +770,9 @@
     .catch Ljava/io/IOException; {:try_start_d .. :try_end_d} :catch_6
     .catchall {:try_start_d .. :try_end_d} :catchall_2
 
-    .line 140
     :catch_6
     move-exception v2
 
-    .line 141
     .restart local v2    # "e":Ljava/io/IOException;
     :try_start_e
     # getter for: Lcom/motorola/server/MotoPersDataBlockService;->TAG:Ljava/lang/String;
@@ -869,7 +804,6 @@
     :try_end_e
     .catchall {:try_start_e .. :try_end_e} :catchall_2
 
-    .line 145
     :try_start_f
     invoke-virtual {v6}, Ljava/io/DataOutputStream;->close()V
     :try_end_f
@@ -877,11 +811,9 @@
 
     goto/16 :goto_1
 
-    .line 146
     :catch_7
     move-exception v2
 
-    .line 147
     # getter for: Lcom/motorola/server/MotoPersDataBlockService;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/motorola/server/MotoPersDataBlockService;->access$400()Ljava/lang/String;
 
@@ -893,26 +825,21 @@
 
     goto/16 :goto_1
 
-    .line 144
     .end local v2    # "e":Ljava/io/IOException;
     :catchall_2
     move-exception v8
 
-    .line 145
     :try_start_10
     invoke-virtual {v6}, Ljava/io/DataOutputStream;->close()V
     :try_end_10
     .catch Ljava/io/IOException; {:try_start_10 .. :try_end_10} :catch_8
 
-    .line 148
     :goto_5
     throw v8
 
-    .line 146
     :catch_8
     move-exception v2
 
-    .line 147
     .restart local v2    # "e":Ljava/io/IOException;
     # getter for: Lcom/motorola/server/MotoPersDataBlockService;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/motorola/server/MotoPersDataBlockService;->access$400()Ljava/lang/String;
@@ -925,7 +852,6 @@
 
     goto :goto_5
 
-    .line 112
     .end local v2    # "e":Ljava/io/IOException;
     .end local v4    # "maxBlockSize":J
     .end local v6    # "outputStream":Ljava/io/DataOutputStream;

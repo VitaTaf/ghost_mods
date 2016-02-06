@@ -30,10 +30,8 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 185
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 180
     const/4 v0, 0x4
 
     new-array v0, v0, [Ljava/lang/String;
@@ -64,14 +62,12 @@
 
     iput-object v0, p0, Lcom/android/server/location/LocationMetrics$LocationStatsDataSource;->mAllColumns:[Ljava/lang/String;
 
-    .line 186
     new-instance v0, Lcom/android/server/location/LocationMetrics$MySQLiteHelper;
 
     invoke-direct {v0, p1}, Lcom/android/server/location/LocationMetrics$MySQLiteHelper;-><init>(Landroid/content/Context;)V
 
     sput-object v0, Lcom/android/server/location/LocationMetrics$LocationStatsDataSource;->mDBHelper:Lcom/android/server/location/LocationMetrics$MySQLiteHelper;
 
-    .line 187
     return-void
 .end method
 
@@ -86,12 +82,10 @@
 
     const/4 v5, 0x0
 
-    .line 272
     new-array v4, v9, [Ljava/lang/String;
 
     aput-object p1, v4, v10
 
-    .line 273
     .local v4, "statNameArray":[Ljava/lang/String;
     sget-object v0, Lcom/android/server/location/LocationMetrics$LocationStatsDataSource;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
@@ -109,7 +103,6 @@
 
     move-result-object v8
 
-    .line 276
     .local v8, "cursor":Landroid/database/Cursor;
     invoke-interface {v8}, Landroid/database/Cursor;->getCount()I
 
@@ -117,22 +110,18 @@
 
     if-lez v0, :cond_0
 
-    .line 277
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
     move v0, v9
 
-    .line 281
     :goto_0
     return v0
 
-    .line 280
     :cond_0
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
     move v0, v10
 
-    .line 281
     goto :goto_0
 .end method
 
@@ -142,12 +131,10 @@
     .locals 1
 
     .prologue
-    .line 194
     sget-object v0, Lcom/android/server/location/LocationMetrics$LocationStatsDataSource;->mDBHelper:Lcom/android/server/location/LocationMetrics$MySQLiteHelper;
 
     invoke-virtual {v0}, Lcom/android/server/location/LocationMetrics$MySQLiteHelper;->close()V
 
-    .line 195
     return-void
 .end method
 
@@ -159,7 +146,6 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 241
     const/4 v0, 0x1
 
     new-array v4, v0, [Ljava/lang/String;
@@ -168,7 +154,6 @@
 
     aput-object p1, v4, v0
 
-    .line 243
     .local v4, "statNameArray":[Ljava/lang/String;
     sget-object v0, Lcom/android/server/location/LocationMetrics$LocationStatsDataSource;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
@@ -186,33 +171,27 @@
 
     move-result-object v8
 
-    .line 245
     .local v8, "cursor":Landroid/database/Cursor;
     invoke-interface {v8}, Landroid/database/Cursor;->moveToFirst()Z
 
-    .line 246
     invoke-interface {v8}, Landroid/database/Cursor;->getCount()I
 
     move-result v0
 
     if-lez v0, :cond_0
 
-    .line 247
     const/4 v0, 0x2
 
     invoke-interface {v8, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v10
 
-    .line 251
     .local v10, "retVal":J
     :goto_0
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    .line 252
     return-wide v10
 
-    .line 249
     .end local v10    # "retVal":J
     :cond_0
     move-wide v10, p2
@@ -229,7 +208,6 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 257
     const/4 v0, 0x1
 
     new-array v4, v0, [Ljava/lang/String;
@@ -238,7 +216,6 @@
 
     aput-object p1, v4, v0
 
-    .line 259
     .local v4, "statNameArray":[Ljava/lang/String;
     sget-object v0, Lcom/android/server/location/LocationMetrics$LocationStatsDataSource;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
@@ -256,33 +233,27 @@
 
     move-result-object v8
 
-    .line 261
     .local v8, "cursor":Landroid/database/Cursor;
     invoke-interface {v8}, Landroid/database/Cursor;->moveToFirst()Z
 
-    .line 262
     invoke-interface {v8}, Landroid/database/Cursor;->getCount()I
 
     move-result v0
 
     if-lez v0, :cond_0
 
-    .line 263
     const/4 v0, 0x3
 
     invoke-interface {v8, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v9
 
-    .line 267
     .local v9, "retVal":Ljava/lang/String;
     :goto_0
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    .line 268
     return-object v9
 
-    .line 265
     .end local v9    # "retVal":Ljava/lang/String;
     :cond_0
     move-object v9, p2
@@ -300,7 +271,6 @@
     .end annotation
 
     .prologue
-    .line 190
     sget-object v0, Lcom/android/server/location/LocationMetrics$LocationStatsDataSource;->mDBHelper:Lcom/android/server/location/LocationMetrics$MySQLiteHelper;
 
     invoke-virtual {v0}, Lcom/android/server/location/LocationMetrics$MySQLiteHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
@@ -309,7 +279,6 @@
 
     sput-object v0, Lcom/android/server/location/LocationMetrics$LocationStatsDataSource;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
-    .line 191
     return-void
 .end method
 
@@ -319,12 +288,10 @@
     .param p2, "statVal"    # J
 
     .prologue
-    .line 198
     new-instance v12, Landroid/content/ContentValues;
 
     invoke-direct {v12}, Landroid/content/ContentValues;-><init>()V
 
-    .line 199
     .local v12, "values":Landroid/content/ContentValues;
     const/4 v0, 0x1
 
@@ -334,11 +301,9 @@
 
     aput-object p1, v9, v0
 
-    .line 200
     .local v9, "names":[Ljava/lang/String;
     const-wide/16 v10, 0x0
 
-    .line 202
     .local v10, "insertId":J
     invoke-direct {p0, p1}, Lcom/android/server/location/LocationMetrics$LocationStatsDataSource;->statExists(Ljava/lang/String;)Z
 
@@ -346,7 +311,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 203
     const-string v0, "stat_value_int"
 
     invoke-static/range {p2 .. p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -355,7 +319,6 @@
 
     invoke-virtual {v12, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 204
     sget-object v0, Lcom/android/server/location/LocationMetrics$LocationStatsDataSource;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
     const-string v1, "location_stats"
@@ -368,7 +331,6 @@
 
     int-to-long v10, v0
 
-    .line 213
     :goto_0
     sget-object v0, Lcom/android/server/location/LocationMetrics$LocationStatsDataSource;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
@@ -406,21 +368,17 @@
 
     move-result-object v8
 
-    .line 216
     .local v8, "cursor":Landroid/database/Cursor;
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    .line 217
     return-void
 
-    .line 207
     .end local v8    # "cursor":Landroid/database/Cursor;
     :cond_0
     const-string v0, "stat_name"
 
     invoke-virtual {v12, v0, p1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 208
     const-string v0, "stat_value_int"
 
     invoke-static/range {p2 .. p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -429,7 +387,6 @@
 
     invoke-virtual {v12, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 209
     sget-object v0, Lcom/android/server/location/LocationMetrics$LocationStatsDataSource;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
     const-string v1, "location_stats"
@@ -451,12 +408,10 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 220
     new-instance v12, Landroid/content/ContentValues;
 
     invoke-direct {v12}, Landroid/content/ContentValues;-><init>()V
 
-    .line 221
     .local v12, "values":Landroid/content/ContentValues;
     const/4 v0, 0x1
 
@@ -466,11 +421,9 @@
 
     aput-object p1, v9, v0
 
-    .line 222
     .local v9, "names":[Ljava/lang/String;
     const-wide/16 v10, 0x0
 
-    .line 223
     .local v10, "insertId":J
     invoke-direct {p0, p1}, Lcom/android/server/location/LocationMetrics$LocationStatsDataSource;->statExists(Ljava/lang/String;)Z
 
@@ -478,12 +431,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 224
     const-string v0, "stat_value_string"
 
     invoke-virtual {v12, v0, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 225
     sget-object v0, Lcom/android/server/location/LocationMetrics$LocationStatsDataSource;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
     const-string v1, "location_stats"
@@ -496,7 +447,6 @@
 
     int-to-long v10, v0
 
-    .line 233
     :goto_0
     sget-object v0, Lcom/android/server/location/LocationMetrics$LocationStatsDataSource;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
@@ -532,26 +482,21 @@
 
     move-result-object v8
 
-    .line 236
     .local v8, "cursor":Landroid/database/Cursor;
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    .line 237
     return-void
 
-    .line 228
     .end local v8    # "cursor":Landroid/database/Cursor;
     :cond_0
     const-string v0, "stat_name"
 
     invoke-virtual {v12, v0, p1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 229
     const-string v0, "stat_value_string"
 
     invoke-virtual {v12, v0, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 230
     sget-object v0, Lcom/android/server/location/LocationMetrics$LocationStatsDataSource;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
     const-string v1, "location_stats"

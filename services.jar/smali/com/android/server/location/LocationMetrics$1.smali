@@ -29,7 +29,6 @@
     .locals 0
 
     .prologue
-    .line 127
     iput-object p1, p0, Lcom/android/server/location/LocationMetrics$1;->this$0:Lcom/android/server/location/LocationMetrics;
 
     iput-object p2, p0, Lcom/android/server/location/LocationMetrics$1;->val$eventName:Ljava/lang/String;
@@ -49,13 +48,11 @@
     .locals 10
 
     .prologue
-    .line 130
     :try_start_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
 
-    .line 131
     .local v4, "timestamp":J
     new-instance v0, Lcom/motorola/android/provider/CheckinEvent;
 
@@ -67,11 +64,9 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/motorola/android/provider/CheckinEvent;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
 
-    .line 133
     .local v0, "checkinEvent":Lcom/motorola/android/provider/CheckinEvent;
     const-string v9, ""
 
-    .line 134
     .local v9, "paramLogStr":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/server/location/LocationMetrics$1;->val$params:Ljava/util/List;
 
@@ -93,7 +88,6 @@
 
     check-cast v8, Lcom/android/server/location/LocationMetrics$EventParam;
 
-    .line 135
     .local v8, "p":Lcom/android/server/location/LocationMetrics$EventParam;
     iget-object v1, v8, Lcom/android/server/location/LocationMetrics$EventParam;->key:Ljava/lang/String;
 
@@ -101,7 +95,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/motorola/android/provider/CheckinEvent;->setValue(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 136
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -128,10 +121,8 @@
 
     move-result-object v9
 
-    .line 137
     goto :goto_0
 
-    .line 138
     .end local v8    # "p":Lcom/android/server/location/LocationMetrics$EventParam;
     :cond_0
     # getter for: Lcom/android/server/location/LocationMetrics;->DBG:Z
@@ -141,7 +132,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 139
     const-string v1, "Location Metrics"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -214,7 +204,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 143
     :cond_1
     iget-object v1, p0, Lcom/android/server/location/LocationMetrics$1;->val$cr:Landroid/content/ContentResolver;
 
@@ -222,7 +211,6 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 147
     .end local v0    # "checkinEvent":Lcom/motorola/android/provider/CheckinEvent;
     .end local v4    # "timestamp":J
     .end local v7    # "i$":Ljava/util/Iterator;
@@ -230,11 +218,9 @@
     :goto_1
     return-void
 
-    .line 144
     :catch_0
     move-exception v6
 
-    .line 145
     .local v6, "e":Ljava/lang/Exception;
     const-string v1, "Location Metrics"
 

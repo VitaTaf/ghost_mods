@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 63
     iput-object p1, p0, Lcom/android/server/location/GeoFencerProxy$1;->this$0:Lcom/android/server/location/GeoFencerProxy;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,10 +41,8 @@
     .param p2, "service"    # Landroid/os/IBinder;
 
     .prologue
-    .line 65
     monitor-enter p0
 
-    .line 66
     :try_start_0
     iget-object v0, p0, Lcom/android/server/location/GeoFencerProxy$1;->this$0:Lcom/android/server/location/GeoFencerProxy;
 
@@ -56,16 +53,12 @@
     # setter for: Lcom/android/server/location/GeoFencerProxy;->mGeoFencer:Landroid/location/IGeoFencer;
     invoke-static {v0, v1}, Lcom/android/server/location/GeoFencerProxy;->access$002(Lcom/android/server/location/GeoFencerProxy;Landroid/location/IGeoFencer;)Landroid/location/IGeoFencer;
 
-    .line 67
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 68
     monitor-exit p0
 
-    .line 72
     return-void
 
-    .line 68
     :catchall_0
     move-exception v0
 
@@ -81,10 +74,8 @@
     .param p1, "className"    # Landroid/content/ComponentName;
 
     .prologue
-    .line 74
     monitor-enter p0
 
-    .line 75
     :try_start_0
     iget-object v0, p0, Lcom/android/server/location/GeoFencerProxy$1;->this$0:Lcom/android/server/location/GeoFencerProxy;
 
@@ -93,13 +84,10 @@
     # setter for: Lcom/android/server/location/GeoFencerProxy;->mGeoFencer:Landroid/location/IGeoFencer;
     invoke-static {v0, v1}, Lcom/android/server/location/GeoFencerProxy;->access$002(Lcom/android/server/location/GeoFencerProxy;Landroid/location/IGeoFencer;)Landroid/location/IGeoFencer;
 
-    .line 76
     monitor-exit p0
 
-    .line 80
     return-void
 
-    .line 76
     :catchall_0
     move-exception v0
 

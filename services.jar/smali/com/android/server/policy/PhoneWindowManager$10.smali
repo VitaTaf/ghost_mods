@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 2683
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 4
 
     .prologue
-    .line 2685
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     # getter for: Lcom/android/server/policy/PhoneWindowManager;->mGlimpseLock:Ljava/lang/Object;
@@ -50,7 +48,6 @@
 
     monitor-enter v1
 
-    .line 2686
     :try_start_0
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -61,7 +58,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 2687
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     # getter for: Lcom/android/server/policy/PhoneWindowManager;->mGlimpseService:Landroid/os/IBinder;
@@ -80,7 +76,6 @@
 
     invoke-interface {v0, v2, v3}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
-    .line 2690
     :cond_0
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -89,13 +84,10 @@
     # setter for: Lcom/android/server/policy/PhoneWindowManager;->mGlimpseService:Landroid/os/IBinder;
     invoke-static {v0, v2}, Lcom/android/server/policy/PhoneWindowManager;->access$2102(Lcom/android/server/policy/PhoneWindowManager;Landroid/os/IBinder;)Landroid/os/IBinder;
 
-    .line 2691
     monitor-exit v1
 
-    .line 2692
     return-void
 
-    .line 2691
     :catchall_0
     move-exception v0
 

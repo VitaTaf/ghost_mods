@@ -44,10 +44,8 @@
     .locals 2
 
     .prologue
-    .line 494
     invoke-direct {p0}, Lcom/android/server/IntentResolver;-><init>()V
 
-    .line 535
     new-instance v0, Landroid/util/ArrayMap;
 
     const/4 v1, 0x0
@@ -64,7 +62,6 @@
     .param p1, "x0"    # Lcom/android/server/firewall/IntentFirewall$1;
 
     .prologue
-    .line 494
     invoke-direct {p0}, Lcom/android/server/firewall/IntentFirewall$FirewallIntentResolver;-><init>()V
 
     return-void
@@ -78,7 +75,6 @@
     .param p2, "rule"    # Lcom/android/server/firewall/IntentFirewall$Rule;
 
     .prologue
-    .line 530
     iget-object v1, p0, Lcom/android/server/firewall/IntentFirewall$FirewallIntentResolver;->mRulesByComponent:Landroid/util/ArrayMap;
 
     invoke-virtual {v1, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -87,7 +83,6 @@
 
     check-cast v0, [Lcom/android/server/firewall/IntentFirewall$Rule;
 
-    .line 531
     .local v0, "rules":[Lcom/android/server/firewall/IntentFirewall$Rule;
     const-class v1, Lcom/android/server/firewall/IntentFirewall$Rule;
 
@@ -98,13 +93,11 @@
     .end local v0    # "rules":[Lcom/android/server/firewall/IntentFirewall$Rule;
     check-cast v0, [Lcom/android/server/firewall/IntentFirewall$Rule;
 
-    .line 532
     .restart local v0    # "rules":[Lcom/android/server/firewall/IntentFirewall$Rule;
     iget-object v1, p0, Lcom/android/server/firewall/IntentFirewall$FirewallIntentResolver;->mRulesByComponent:Landroid/util/ArrayMap;
 
     invoke-virtual {v1, p1, v0}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 533
     return-void
 .end method
 
@@ -114,7 +107,6 @@
     .param p2, "x1"    # Ljava/util/List;
 
     .prologue
-    .line 494
     check-cast p1, Lcom/android/server/firewall/IntentFirewall$FirewallIntentFilter;
 
     .end local p1    # "x0":Landroid/content/IntentFilter;
@@ -140,7 +132,6 @@
     .end annotation
 
     .prologue
-    .line 498
     .local p2, "dest":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/firewall/IntentFirewall$Rule;>;"
     # getter for: Lcom/android/server/firewall/IntentFirewall$FirewallIntentFilter;->rule:Lcom/android/server/firewall/IntentFirewall$Rule;
     invoke-static {p1}, Lcom/android/server/firewall/IntentFirewall$FirewallIntentFilter;->access$200(Lcom/android/server/firewall/IntentFirewall$FirewallIntentFilter;)Lcom/android/server/firewall/IntentFirewall$Rule;
@@ -170,7 +161,6 @@
     .param p2, "x1"    # Landroid/content/IntentFilter;
 
     .prologue
-    .line 494
     check-cast p2, Lcom/android/server/firewall/IntentFirewall$FirewallIntentFilter;
 
     .end local p2    # "x1":Landroid/content/IntentFilter;
@@ -187,7 +177,6 @@
     .param p2, "filter"    # Lcom/android/server/firewall/IntentFirewall$FirewallIntentFilter;
 
     .prologue
-    .line 503
     const/4 v0, 0x1
 
     return v0
@@ -198,7 +187,6 @@
     .param p1, "x0"    # I
 
     .prologue
-    .line 494
     invoke-virtual {p0, p1}, Lcom/android/server/firewall/IntentFirewall$FirewallIntentResolver;->newArray(I)[Lcom/android/server/firewall/IntentFirewall$FirewallIntentFilter;
 
     move-result-object v0
@@ -211,7 +199,6 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 508
     new-array v0, p1, [Lcom/android/server/firewall/IntentFirewall$FirewallIntentFilter;
 
     return-object v0
@@ -224,7 +211,6 @@
     .param p3, "userId"    # I
 
     .prologue
-    .line 513
     # getter for: Lcom/android/server/firewall/IntentFirewall$FirewallIntentFilter;->rule:Lcom/android/server/firewall/IntentFirewall$Rule;
     invoke-static {p1}, Lcom/android/server/firewall/IntentFirewall$FirewallIntentFilter;->access$200(Lcom/android/server/firewall/IntentFirewall$FirewallIntentFilter;)Lcom/android/server/firewall/IntentFirewall$Rule;
 
@@ -240,7 +226,6 @@
     .param p3, "x2"    # I
 
     .prologue
-    .line 494
     check-cast p1, Lcom/android/server/firewall/IntentFirewall$FirewallIntentFilter;
 
     .end local p1    # "x0":Landroid/content/IntentFilter;
@@ -266,7 +251,6 @@
     .end annotation
 
     .prologue
-    .line 523
     .local p2, "candidateRules":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/firewall/IntentFirewall$Rule;>;"
     iget-object v1, p0, Lcom/android/server/firewall/IntentFirewall$FirewallIntentResolver;->mRulesByComponent:Landroid/util/ArrayMap;
 
@@ -276,18 +260,15 @@
 
     check-cast v0, [Lcom/android/server/firewall/IntentFirewall$Rule;
 
-    .line 524
     .local v0, "rules":[Lcom/android/server/firewall/IntentFirewall$Rule;
     if-eqz v0, :cond_0
 
-    .line 525
     invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v1
 
     invoke-interface {p2, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 527
     :cond_0
     return-void
 .end method
@@ -305,7 +286,6 @@
     .end annotation
 
     .prologue
-    .line 519
     .local p1, "results":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/firewall/IntentFirewall$Rule;>;"
     return-void
 .end method

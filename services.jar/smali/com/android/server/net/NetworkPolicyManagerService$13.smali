@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 732
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$13;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,7 +38,6 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 735
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$13;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     # getter for: Lcom/android/server/net/NetworkPolicyManagerService;->mIsTetherActive:Z
@@ -47,7 +45,6 @@
 
     move-result v1
 
-    .line 736
     .local v1, "isTetherActive":Z
     const-string v2, "activeArray"
 
@@ -55,7 +52,6 @@
 
     move-result-object v0
 
-    .line 738
     .local v0, "activeTetherList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     if-eqz v0, :cond_2
 
@@ -65,10 +61,8 @@
 
     if-nez v2, :cond_2
 
-    .line 739
     const/4 v1, 0x1
 
-    .line 743
     :goto_0
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$13;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -76,7 +70,6 @@
 
     monitor-enter v3
 
-    .line 744
     :try_start_0
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$13;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -87,7 +80,6 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 745
     # getter for: Lcom/android/server/net/NetworkPolicyManagerService;->LOGD:Z
     invoke-static {}, Lcom/android/server/net/NetworkPolicyManagerService;->access$000()Z
 
@@ -134,33 +126,27 @@
 
     invoke-static {v2, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 747
     :cond_0
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$13;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     # setter for: Lcom/android/server/net/NetworkPolicyManagerService;->mIsTetherActive:Z
     invoke-static {v2, v1}, Lcom/android/server/net/NetworkPolicyManagerService;->access$302(Lcom/android/server/net/NetworkPolicyManagerService;Z)Z
 
-    .line 748
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$13;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     # invokes: Lcom/android/server/net/NetworkPolicyManagerService;->applyVoicePriorityRule()V
     invoke-static {v2}, Lcom/android/server/net/NetworkPolicyManagerService;->access$200(Lcom/android/server/net/NetworkPolicyManagerService;)V
 
-    .line 750
     :cond_1
     monitor-exit v3
 
-    .line 751
     return-void
 
-    .line 741
     :cond_2
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 750
     :catchall_0
     move-exception v2
 

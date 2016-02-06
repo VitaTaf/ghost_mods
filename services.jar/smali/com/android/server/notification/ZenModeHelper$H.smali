@@ -28,13 +28,10 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 598
     iput-object p1, p0, Lcom/android/server/notification/ZenModeHelper$H;->this$0:Lcom/android/server/notification/ZenModeHelper;
 
-    .line 599
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 600
     return-void
 .end method
 
@@ -45,7 +42,6 @@
     .param p3, "x2"    # Lcom/android/server/notification/ZenModeHelper$1;
 
     .prologue
-    .line 595
     invoke-direct {p0, p1, p2}, Lcom/android/server/notification/ZenModeHelper$H;-><init>(Lcom/android/server/notification/ZenModeHelper;Landroid/os/Looper;)V
 
     return-void
@@ -56,7 +52,6 @@
     .param p0, "x0"    # Lcom/android/server/notification/ZenModeHelper$H;
 
     .prologue
-    .line 595
     invoke-direct {p0}, Lcom/android/server/notification/ZenModeHelper$H;->postDispatchOnZenModeChanged()V
 
     return-void
@@ -68,13 +63,10 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 603
     invoke-virtual {p0, v0}, Lcom/android/server/notification/ZenModeHelper$H;->removeMessages(I)V
 
-    .line 604
     invoke-virtual {p0, v0}, Lcom/android/server/notification/ZenModeHelper$H;->sendEmptyMessage(I)Z
 
-    .line 605
     return-void
 .end method
 
@@ -85,16 +77,13 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 609
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 614
     :goto_0
     return-void
 
-    .line 611
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/notification/ZenModeHelper$H;->this$0:Lcom/android/server/notification/ZenModeHelper;
 
@@ -103,7 +92,6 @@
 
     goto :goto_0
 
-    .line 609
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

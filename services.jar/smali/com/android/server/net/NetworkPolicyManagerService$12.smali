@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 703
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$12;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -41,7 +40,6 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 708
     const-string v2, "tag"
 
     const/4 v3, -0x1
@@ -50,7 +48,6 @@
 
     move-result v1
 
-    .line 709
     .local v1, "tag":B
     # getter for: Lcom/android/server/net/NetworkPolicyManagerService;->LOGD:Z
     invoke-static {}, Lcom/android/server/net/NetworkPolicyManagerService;->access$000()Z
@@ -111,15 +108,12 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 713
     :cond_0
     if-eqz v1, :cond_1
 
-    .line 727
     :goto_0
     return-void
 
-    .line 715
     :cond_1
     const-string v2, "bgdata_restricted"
 
@@ -127,7 +121,6 @@
 
     move-result v0
 
-    .line 717
     .local v0, "isBgDataRestrictedInVoice":Z
     # getter for: Lcom/android/server/net/NetworkPolicyManagerService;->LOGD:Z
     invoke-static {}, Lcom/android/server/net/NetworkPolicyManagerService;->access$000()Z
@@ -179,7 +172,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 719
     :cond_2
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$12;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -187,7 +179,6 @@
 
     monitor-enter v3
 
-    .line 720
     :try_start_0
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$12;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -202,7 +193,6 @@
 
     if-eq v2, v0, :cond_3
 
-    .line 721
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$12;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     # getter for: Lcom/android/server/net/NetworkPolicyManagerService;->mIsBgDataRestrictedInVoice:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -212,13 +202,11 @@
 
     invoke-virtual {v2, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 723
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$12;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     # invokes: Lcom/android/server/net/NetworkPolicyManagerService;->applyVoicePriorityRule()V
     invoke-static {v2}, Lcom/android/server/net/NetworkPolicyManagerService;->access$200(Lcom/android/server/net/NetworkPolicyManagerService;)V
 
-    .line 726
     :cond_3
     monitor-exit v3
 

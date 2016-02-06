@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 314
     iput-object p1, p0, Lcom/motorola/server/VzwConnectivityService$1;->this$0:Lcom/motorola/server/VzwConnectivityService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 317
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 318
     .local v0, "action":Ljava/lang/String;
     const-string v2, "VzwConnectivityService"
 
@@ -68,7 +65,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 319
     const-string v2, "android.net.conn.CONNECTIVITY_CHANGE_IMMEDIATE"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -77,7 +73,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 320
     iget-object v2, p0, Lcom/motorola/server/VzwConnectivityService$1;->this$0:Lcom/motorola/server/VzwConnectivityService;
 
     # getter for: Lcom/motorola/server/VzwConnectivityService;->mHandler:Landroid/os/Handler;
@@ -91,7 +86,6 @@
 
     move-result-object v1
 
-    .line 321
     .local v1, "msg":Landroid/os/Message;
     iget-object v2, p0, Lcom/motorola/server/VzwConnectivityService$1;->this$0:Lcom/motorola/server/VzwConnectivityService;
 
@@ -102,7 +96,6 @@
 
     invoke-virtual {v2, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 323
     .end local v1    # "msg":Landroid/os/Message;
     :cond_0
     return-void

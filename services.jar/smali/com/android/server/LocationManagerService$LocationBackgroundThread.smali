@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 2452
     iput-object p1, p0, Lcom/android/server/LocationManagerService$LocationBackgroundThread;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .param p2, "x1"    # Lcom/android/server/LocationManagerService$1;
 
     .prologue
-    .line 2452
     invoke-direct {p0, p1}, Lcom/android/server/LocationManagerService$LocationBackgroundThread;-><init>(Lcom/android/server/LocationManagerService;)V
 
     return-void
@@ -52,15 +50,12 @@
     .locals 4
 
     .prologue
-    .line 2454
     const/16 v0, 0xa
 
     invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
 
-    .line 2455
     invoke-static {}, Landroid/os/Looper;->prepare()V
 
-    .line 2456
     iget-object v0, p0, Lcom/android/server/LocationManagerService$LocationBackgroundThread;->this$0:Lcom/android/server/LocationManagerService;
 
     new-instance v1, Lcom/android/server/LocationManagerService$LocationBackgroundHandler;
@@ -74,9 +69,7 @@
     # setter for: Lcom/android/server/LocationManagerService;->mBackgroundHandler:Lcom/android/server/LocationManagerService$LocationBackgroundHandler;
     invoke-static {v0, v1}, Lcom/android/server/LocationManagerService;->access$2402(Lcom/android/server/LocationManagerService;Lcom/android/server/LocationManagerService$LocationBackgroundHandler;)Lcom/android/server/LocationManagerService$LocationBackgroundHandler;
 
-    .line 2457
     invoke-static {}, Landroid/os/Looper;->loop()V
 
-    .line 2458
     return-void
 .end method

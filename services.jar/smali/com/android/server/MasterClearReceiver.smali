@@ -12,7 +12,6 @@
     .locals 0
 
     .prologue
-    .line 28
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -28,7 +27,6 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 33
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v1
@@ -41,7 +39,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 34
     const-string v1, "google.com"
 
     const-string v2, "from"
@@ -56,18 +53,15 @@
 
     if-nez v1, :cond_0
 
-    .line 35
     const-string v1, "MasterClear"
 
     const-string v2, "Ignoring master clear request -- not from trusted server."
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 78
     :goto_0
     return-void
 
-    .line 40
     :cond_0
     const-string v1, "shutdown"
 
@@ -75,7 +69,6 @@
 
     move-result v6
 
-    .line 41
     .local v6, "shutdown":Z
     const-string v1, "android.intent.extra.REASON"
 
@@ -83,7 +76,6 @@
 
     move-result-object v7
 
-    .line 44
     .local v7, "reason":Ljava/lang/String;
     const-string v1, "wipeDataCacheOnly"
 
@@ -91,7 +83,6 @@
 
     move-result v3
 
-    .line 48
     .local v3, "wipeDataCacheOnly":Z
     const-string v1, "bp"
 
@@ -105,7 +96,6 @@
 
     move-result v4
 
-    .line 51
     .local v4, "wipeBp":Z
     const-string v1, "MasterClear"
 
@@ -113,7 +103,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 53
     new-instance v0, Lcom/android/server/MasterClearReceiver$1;
 
     const-string v2, "Reboot"
@@ -124,7 +113,6 @@
 
     invoke-direct/range {v0 .. v7}, Lcom/android/server/MasterClearReceiver$1;-><init>(Lcom/android/server/MasterClearReceiver;Ljava/lang/String;ZZLandroid/content/Context;ZLjava/lang/String;)V
 
-    .line 77
     .local v0, "thr":Ljava/lang/Thread;
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 

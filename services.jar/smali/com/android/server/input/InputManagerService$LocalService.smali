@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 1792
     iput-object p1, p0, Lcom/android/server/input/InputManagerService$LocalService;->this$0:Lcom/android/server/input/InputManagerService;
 
     invoke-direct {p0}, Landroid/hardware/input/InputManagerInternal;-><init>()V
@@ -37,7 +36,6 @@
     .param p2, "x1"    # Lcom/android/server/input/InputManagerService$1;
 
     .prologue
-    .line 1792
     invoke-direct {p0, p1}, Lcom/android/server/input/InputManagerService$LocalService;-><init>(Lcom/android/server/input/InputManagerService;)V
 
     return-void
@@ -52,7 +50,6 @@
     .param p3, "mode"    # I
 
     .prologue
-    .line 1801
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$LocalService;->this$0:Lcom/android/server/input/InputManagerService;
 
     # invokes: Lcom/android/server/input/InputManagerService;->injectInputEventInternal(Landroid/view/InputEvent;II)Z
@@ -69,13 +66,11 @@
     .param p2, "externalTouchViewport"    # Landroid/hardware/display/DisplayViewport;
 
     .prologue
-    .line 1796
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$LocalService;->this$0:Lcom/android/server/input/InputManagerService;
 
     # invokes: Lcom/android/server/input/InputManagerService;->setDisplayViewportsInternal(Landroid/hardware/display/DisplayViewport;Landroid/hardware/display/DisplayViewport;)V
     invoke-static {v0, p1, p2}, Lcom/android/server/input/InputManagerService;->access$1000(Lcom/android/server/input/InputManagerService;Landroid/hardware/display/DisplayViewport;Landroid/hardware/display/DisplayViewport;)V
 
-    .line 1797
     return-void
 .end method
 
@@ -84,7 +79,6 @@
     .param p1, "interactive"    # Z
 
     .prologue
-    .line 1806
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$LocalService;->this$0:Lcom/android/server/input/InputManagerService;
 
     # getter for: Lcom/android/server/input/InputManagerService;->mPtr:J
@@ -95,6 +89,5 @@
     # invokes: Lcom/android/server/input/InputManagerService;->nativeSetInteractive(JZ)V
     invoke-static {v0, v1, p1}, Lcom/android/server/input/InputManagerService;->access$1200(JZ)V
 
-    .line 1807
     return-void
 .end method

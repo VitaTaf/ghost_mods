@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 364
     iput-object p1, p0, Lcom/android/server/power/Notifier$3;->this$0:Lcom/android/server/power/Notifier;
 
     iput p2, p0, Lcom/android/server/power/Notifier$3;->val$reason:I
@@ -46,16 +45,13 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 367
     const/4 v0, 0x2
 
-    .line 368
     .local v0, "why":I
     iget v1, p0, Lcom/android/server/power/Notifier$3;->val$reason:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 376
     :goto_0
     const/16 v1, 0xaa8
 
@@ -95,7 +91,6 @@
 
     invoke-static {v1, v2}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 377
     iget-object v1, p0, Lcom/android/server/power/Notifier$3;->this$0:Lcom/android/server/power/Notifier;
 
     # getter for: Lcom/android/server/power/Notifier;->mPolicy:Landroid/view/WindowManagerPolicy;
@@ -105,23 +100,18 @@
 
     invoke-interface {v1, v0}, Landroid/view/WindowManagerPolicy;->goingToSleep(I)V
 
-    .line 378
     return-void
 
-    .line 370
     :pswitch_0
     const/4 v0, 0x1
 
-    .line 371
     goto :goto_0
 
-    .line 373
     :pswitch_1
     const/4 v0, 0x3
 
     goto :goto_0
 
-    .line 368
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

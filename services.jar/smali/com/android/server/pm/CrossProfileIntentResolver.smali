@@ -20,7 +20,6 @@
     .locals 0
 
     .prologue
-    .line 28
     invoke-direct {p0}, Lcom/android/server/IntentResolver;-><init>()V
 
     return-void
@@ -34,7 +33,6 @@
     .param p2, "x1"    # Landroid/content/IntentFilter;
 
     .prologue
-    .line 28
     check-cast p2, Lcom/android/server/pm/CrossProfileIntentFilter;
 
     .end local p2    # "x1":Landroid/content/IntentFilter;
@@ -51,7 +49,6 @@
     .param p2, "filter"    # Lcom/android/server/pm/CrossProfileIntentFilter;
 
     .prologue
-    .line 37
     const/4 v0, 0x0
 
     return v0
@@ -62,7 +59,6 @@
     .param p1, "x0"    # I
 
     .prologue
-    .line 28
     invoke-virtual {p0, p1}, Lcom/android/server/pm/CrossProfileIntentResolver;->newArray(I)[Lcom/android/server/pm/CrossProfileIntentFilter;
 
     move-result-object v0
@@ -75,7 +71,6 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 32
     new-array v0, p1, [Lcom/android/server/pm/CrossProfileIntentFilter;
 
     return-object v0
@@ -94,7 +89,6 @@
     .end annotation
 
     .prologue
-    .line 43
     .local p1, "results":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/pm/CrossProfileIntentFilter;>;"
     return-void
 .end method

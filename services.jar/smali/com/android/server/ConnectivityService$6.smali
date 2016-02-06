@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 3526
     iput-object p1, p0, Lcom/android/server/ConnectivityService$6;->this$0:Lcom/android/server/ConnectivityService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -41,12 +40,10 @@
     .prologue
     const/16 v3, -0x2710
 
-    .line 3529
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3530
     .local v0, "action":Ljava/lang/String;
     const-string v2, "android.intent.extra.user_handle"
 
@@ -54,16 +51,13 @@
 
     move-result v1
 
-    .line 3531
     .local v1, "userId":I
     if-ne v1, v3, :cond_1
 
-    .line 3538
     :cond_0
     :goto_0
     return-void
 
-    .line 3533
     :cond_1
     const-string v2, "android.intent.action.USER_STARTING"
 
@@ -73,7 +67,6 @@
 
     if-eqz v2, :cond_2
 
-    .line 3534
     iget-object v2, p0, Lcom/android/server/ConnectivityService$6;->this$0:Lcom/android/server/ConnectivityService;
 
     # invokes: Lcom/android/server/ConnectivityService;->onUserStart(I)V
@@ -81,7 +74,6 @@
 
     goto :goto_0
 
-    .line 3535
     :cond_2
     const-string v2, "android.intent.action.USER_STOPPING"
 
@@ -91,7 +83,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 3536
     iget-object v2, p0, Lcom/android/server/ConnectivityService$6;->this$0:Lcom/android/server/ConnectivityService;
 
     # invokes: Lcom/android/server/ConnectivityService;->onUserStop(I)V

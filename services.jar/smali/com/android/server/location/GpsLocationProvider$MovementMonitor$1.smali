@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 2948
     iput-object p1, p0, Lcom/android/server/location/GpsLocationProvider$MovementMonitor$1;->this$1:Lcom/android/server/location/GpsLocationProvider$MovementMonitor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +43,6 @@
 
     const/4 v3, 0x0
 
-    .line 2998
     # getter for: Lcom/android/server/location/GpsLocationProvider;->DEBUG:Z
     invoke-static {}, Lcom/android/server/location/GpsLocationProvider;->access$100()Z
 
@@ -58,7 +56,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2999
     :cond_0
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$MovementMonitor$1;->this$1:Lcom/android/server/location/GpsLocationProvider$MovementMonitor;
 
@@ -68,19 +65,16 @@
 
     if-nez v1, :cond_2
 
-    .line 3000
     const-string v1, "GpsLocationProvider"
 
     const-string v2, "MovementMonitor onEndMovement when not monitoring!"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3041
     :cond_1
     :goto_0
     return-void
 
-    .line 3005
     :cond_2
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$MovementMonitor$1;->this$1:Lcom/android/server/location/GpsLocationProvider$MovementMonitor;
 
@@ -100,7 +94,6 @@
 
     if-nez v1, :cond_3
 
-    .line 3006
     # getter for: Lcom/android/server/location/GpsLocationProvider;->DEBUG:Z
     invoke-static {}, Lcom/android/server/location/GpsLocationProvider;->access$100()Z
 
@@ -116,20 +109,17 @@
 
     goto :goto_0
 
-    .line 3010
     :cond_3
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$MovementMonitor$1;->this$1:Lcom/android/server/location/GpsLocationProvider$MovementMonitor;
 
     # setter for: Lcom/android/server/location/GpsLocationProvider$MovementMonitor;->mFirstCb:Z
     invoke-static {v1, v3}, Lcom/android/server/location/GpsLocationProvider$MovementMonitor;->access$6602(Lcom/android/server/location/GpsLocationProvider$MovementMonitor;Z)Z
 
-    .line 3011
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$MovementMonitor$1;->this$1:Lcom/android/server/location/GpsLocationProvider$MovementMonitor;
 
     # setter for: Lcom/android/server/location/GpsLocationProvider$MovementMonitor;->mExpectEnd:Z
     invoke-static {v1, v3}, Lcom/android/server/location/GpsLocationProvider$MovementMonitor;->access$6702(Lcom/android/server/location/GpsLocationProvider$MovementMonitor;Z)Z
 
-    .line 3013
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$MovementMonitor$1;->this$1:Lcom/android/server/location/GpsLocationProvider$MovementMonitor;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -139,14 +129,12 @@
     # setter for: Lcom/android/server/location/GpsLocationProvider$MovementMonitor;->mPropagateTime:J
     invoke-static {v1, v2, v3}, Lcom/android/server/location/GpsLocationProvider$MovementMonitor;->access$7002(Lcom/android/server/location/GpsLocationProvider$MovementMonitor;J)J
 
-    .line 3017
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$MovementMonitor$1;->this$1:Lcom/android/server/location/GpsLocationProvider$MovementMonitor;
 
     iget-object v2, v1, Lcom/android/server/location/GpsLocationProvider$MovementMonitor;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     monitor-enter v2
 
-    .line 3019
     :try_start_0
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$MovementMonitor$1;->this$1:Lcom/android/server/location/GpsLocationProvider$MovementMonitor;
 
@@ -158,7 +146,6 @@
 
     move-result v0
 
-    .line 3023
     .local v0, "changed":Z
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -188,7 +175,6 @@
 
     if-gtz v1, :cond_5
 
-    .line 3024
     # getter for: Lcom/android/server/location/GpsLocationProvider;->DEBUG:Z
     invoke-static {}, Lcom/android/server/location/GpsLocationProvider;->access$100()Z
 
@@ -225,7 +211,6 @@
 
     invoke-static {v1, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3026
     :cond_4
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$MovementMonitor$1;->this$1:Lcom/android/server/location/GpsLocationProvider$MovementMonitor;
 
@@ -234,7 +219,6 @@
     # setter for: Lcom/android/server/location/GpsLocationProvider$MovementMonitor;->mState:I
     invoke-static {v1, v3}, Lcom/android/server/location/GpsLocationProvider$MovementMonitor;->access$6802(Lcom/android/server/location/GpsLocationProvider$MovementMonitor;I)I
 
-    .line 3027
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$MovementMonitor$1;->this$1:Lcom/android/server/location/GpsLocationProvider$MovementMonitor;
 
     iget-object v1, v1, Lcom/android/server/location/GpsLocationProvider$MovementMonitor;->this$0:Lcom/android/server/location/GpsLocationProvider;
@@ -258,16 +242,13 @@
     # invokes: Lcom/android/server/location/GpsLocationProvider;->hibernate_Locked(ILandroid/app/PendingIntent;)V
     invoke-static {v1, v3, v4}, Lcom/android/server/location/GpsLocationProvider;->access$7300(Lcom/android/server/location/GpsLocationProvider;ILandroid/app/PendingIntent;)V
 
-    .line 3035
     :goto_1
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3038
     if-eqz v0, :cond_1
 
-    .line 3039
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$MovementMonitor$1;->this$1:Lcom/android/server/location/GpsLocationProvider$MovementMonitor;
 
     # invokes: Lcom/android/server/location/GpsLocationProvider$MovementMonitor;->broadcastSavings(Z)V
@@ -275,7 +256,6 @@
 
     goto/16 :goto_0
 
-    .line 3029
     :cond_5
     :try_start_1
     # getter for: Lcom/android/server/location/GpsLocationProvider;->DEBUG:Z
@@ -285,14 +265,12 @@
 
     if-eqz v1, :cond_6
 
-    .line 3030
     const-string v1, "GpsLocationProvider"
 
     const-string v3, "MovementMonitor hibernate until sensor hub wakes us"
 
     invoke-static {v1, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3032
     :cond_6
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$MovementMonitor$1;->this$1:Lcom/android/server/location/GpsLocationProvider$MovementMonitor;
 
@@ -301,7 +279,6 @@
     # setter for: Lcom/android/server/location/GpsLocationProvider$MovementMonitor;->mState:I
     invoke-static {v1, v3}, Lcom/android/server/location/GpsLocationProvider$MovementMonitor;->access$6802(Lcom/android/server/location/GpsLocationProvider$MovementMonitor;I)I
 
-    .line 3033
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$MovementMonitor$1;->this$1:Lcom/android/server/location/GpsLocationProvider$MovementMonitor;
 
     iget-object v1, v1, Lcom/android/server/location/GpsLocationProvider$MovementMonitor;->this$0:Lcom/android/server/location/GpsLocationProvider;
@@ -315,7 +292,6 @@
 
     goto :goto_1
 
-    .line 3035
     .end local v0    # "changed":Z
     :catchall_0
     move-exception v1
@@ -335,7 +311,6 @@
 
     const/4 v5, 0x0
 
-    .line 2951
     # getter for: Lcom/android/server/location/GpsLocationProvider;->DEBUG:Z
     invoke-static {}, Lcom/android/server/location/GpsLocationProvider;->access$100()Z
 
@@ -349,7 +324,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2952
     :cond_0
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$MovementMonitor$1;->this$1:Lcom/android/server/location/GpsLocationProvider$MovementMonitor;
 
@@ -359,19 +333,16 @@
 
     if-nez v1, :cond_2
 
-    .line 2953
     const-string v1, "GpsLocationProvider"
 
     const-string v2, "MovementMonitor onStartMovement when not monitoring!"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2995
     :cond_1
     :goto_0
     return-void
 
-    .line 2958
     :cond_2
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$MovementMonitor$1;->this$1:Lcom/android/server/location/GpsLocationProvider$MovementMonitor;
 
@@ -391,7 +362,6 @@
 
     if-eqz v1, :cond_3
 
-    .line 2959
     # getter for: Lcom/android/server/location/GpsLocationProvider;->DEBUG:Z
     invoke-static {}, Lcom/android/server/location/GpsLocationProvider;->access$100()Z
 
@@ -407,19 +377,16 @@
 
     goto :goto_0
 
-    .line 2963
     :cond_3
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$MovementMonitor$1;->this$1:Lcom/android/server/location/GpsLocationProvider$MovementMonitor;
 
     # setter for: Lcom/android/server/location/GpsLocationProvider$MovementMonitor;->mExpectEnd:Z
     invoke-static {v1, v3}, Lcom/android/server/location/GpsLocationProvider$MovementMonitor;->access$6702(Lcom/android/server/location/GpsLocationProvider$MovementMonitor;Z)Z
 
-    .line 2966
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$MovementMonitor$1;->this$1:Lcom/android/server/location/GpsLocationProvider$MovementMonitor;
 
     invoke-virtual {v1}, Lcom/android/server/location/GpsLocationProvider$MovementMonitor;->cancelAlarm()V
 
-    .line 2969
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$MovementMonitor$1;->this$1:Lcom/android/server/location/GpsLocationProvider$MovementMonitor;
 
     # getter for: Lcom/android/server/location/GpsLocationProvider$MovementMonitor;->mFirstCb:Z
@@ -438,7 +405,6 @@
 
     if-eq v1, v3, :cond_5
 
-    .line 2970
     # getter for: Lcom/android/server/location/GpsLocationProvider;->DEBUG:Z
     invoke-static {}, Lcom/android/server/location/GpsLocationProvider;->access$100()Z
 
@@ -446,34 +412,29 @@
 
     if-eqz v1, :cond_4
 
-    .line 2971
     const-string v1, "GpsLocationProvider"
 
     const-string v2, "onStartMovement(), calling updateNoFix()"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2973
     :cond_4
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$MovementMonitor$1;->this$1:Lcom/android/server/location/GpsLocationProvider$MovementMonitor;
 
     invoke-virtual {v1}, Lcom/android/server/location/GpsLocationProvider$MovementMonitor;->updateNoFix()V
 
-    .line 2976
     :cond_5
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$MovementMonitor$1;->this$1:Lcom/android/server/location/GpsLocationProvider$MovementMonitor;
 
     # setter for: Lcom/android/server/location/GpsLocationProvider$MovementMonitor;->mFirstCb:Z
     invoke-static {v1, v5}, Lcom/android/server/location/GpsLocationProvider$MovementMonitor;->access$6602(Lcom/android/server/location/GpsLocationProvider$MovementMonitor;Z)Z
 
-    .line 2979
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$MovementMonitor$1;->this$1:Lcom/android/server/location/GpsLocationProvider$MovementMonitor;
 
     iget-object v2, v1, Lcom/android/server/location/GpsLocationProvider$MovementMonitor;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     monitor-enter v2
 
-    .line 2981
     :try_start_0
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$MovementMonitor$1;->this$1:Lcom/android/server/location/GpsLocationProvider$MovementMonitor;
 
@@ -485,7 +446,6 @@
 
     move-result v0
 
-    .line 2984
     .local v0, "changed":Z
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$MovementMonitor$1;->this$1:Lcom/android/server/location/GpsLocationProvider$MovementMonitor;
 
@@ -498,7 +458,6 @@
 
     if-eqz v1, :cond_6
 
-    .line 2986
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$MovementMonitor$1;->this$1:Lcom/android/server/location/GpsLocationProvider$MovementMonitor;
 
     iget-object v1, v1, Lcom/android/server/location/GpsLocationProvider$MovementMonitor;->this$0:Lcom/android/server/location/GpsLocationProvider;
@@ -510,16 +469,13 @@
     # invokes: Lcom/android/server/location/GpsLocationProvider;->startNavigating_Locked(ZZ)V
     invoke-static {v1, v3, v4}, Lcom/android/server/location/GpsLocationProvider;->access$5800(Lcom/android/server/location/GpsLocationProvider;ZZ)V
 
-    .line 2989
     :cond_6
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 2992
     if-eqz v0, :cond_1
 
-    .line 2993
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$MovementMonitor$1;->this$1:Lcom/android/server/location/GpsLocationProvider$MovementMonitor;
 
     # invokes: Lcom/android/server/location/GpsLocationProvider$MovementMonitor;->broadcastSavings(Z)V
@@ -527,7 +483,6 @@
 
     goto :goto_0
 
-    .line 2989
     .end local v0    # "changed":Z
     :catchall_0
     move-exception v1

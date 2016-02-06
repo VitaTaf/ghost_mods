@@ -27,10 +27,8 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 1242
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1243
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -43,7 +41,6 @@
 
     iput-object v0, p0, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->mResolver:Landroid/content/ContentResolver;
 
-    .line 1245
     return-void
 .end method
 
@@ -57,12 +54,10 @@
 
     const/4 v2, 0x0
 
-    .line 1251
     if-eqz p2, :cond_0
 
     move v0, v1
 
-    .line 1252
     .local v0, "defInt":I
     :goto_0
     iget-object v3, p0, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->mResolver:Landroid/content/ContentResolver;
@@ -80,14 +75,12 @@
     :cond_0
     move v0, v2
 
-    .line 1251
     goto :goto_0
 
     .restart local v0    # "defInt":I
     :cond_1
     move v1, v2
 
-    .line 1252
     goto :goto_1
 .end method
 
@@ -97,7 +90,6 @@
     .param p2, "def"    # J
 
     .prologue
-    .line 1248
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->mResolver:Landroid/content/ContentResolver;
 
     invoke-static {v0, p1, p2, p3}, Landroid/provider/Settings$Global;->getLong(Landroid/content/ContentResolver;Ljava/lang/String;J)J
@@ -113,7 +105,6 @@
     .locals 8
 
     .prologue
-    .line 1273
     new-instance v1, Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;
 
     const-string v0, "netstats_dev_bucket_duration"
@@ -150,7 +141,6 @@
     .param p1, "def"    # J
 
     .prologue
-    .line 1295
     const-string v0, "netstats_dev_persist_bytes"
 
     invoke-direct {p0, v0, p1, p2}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getGlobalLong(Ljava/lang/String;J)J
@@ -165,7 +155,6 @@
     .param p1, "def"    # J
 
     .prologue
-    .line 1265
     const-string v0, "netstats_global_alert_bytes"
 
     invoke-direct {p0, v0, p1, p2}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getGlobalLong(Ljava/lang/String;J)J
@@ -179,7 +168,6 @@
     .locals 4
 
     .prologue
-    .line 1257
     const-string v0, "netstats_poll_interval"
 
     const-wide/32 v2, 0x1b7740
@@ -195,7 +183,6 @@
     .locals 2
 
     .prologue
-    .line 1269
     const-string v0, "netstats_sample_enabled"
 
     const/4 v1, 0x1
@@ -211,7 +198,6 @@
     .locals 4
 
     .prologue
-    .line 1261
     const-string v0, "netstats_time_cache_max_age"
 
     const-wide/32 v2, 0x5265c00
@@ -227,7 +213,6 @@
     .locals 8
 
     .prologue
-    .line 1283
     new-instance v1, Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;
 
     const-string v0, "netstats_uid_bucket_duration"
@@ -264,7 +249,6 @@
     .param p1, "def"    # J
 
     .prologue
-    .line 1303
     const-string v0, "netstats_uid_persist_bytes"
 
     invoke-direct {p0, v0, p1, p2}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getGlobalLong(Ljava/lang/String;J)J
@@ -278,7 +262,6 @@
     .locals 8
 
     .prologue
-    .line 1289
     new-instance v1, Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;
 
     const-string v0, "netstats_uid_tag_bucket_duration"
@@ -315,7 +298,6 @@
     .param p1, "def"    # J
 
     .prologue
-    .line 1307
     const-string v0, "netstats_uid_tag_persist_bytes"
 
     invoke-direct {p0, v0, p1, p2}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getGlobalLong(Ljava/lang/String;J)J
@@ -329,7 +311,6 @@
     .locals 1
 
     .prologue
-    .line 1279
     invoke-virtual {p0}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getDevConfig()Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;
 
     move-result-object v0
@@ -342,7 +323,6 @@
     .param p1, "def"    # J
 
     .prologue
-    .line 1299
     invoke-virtual {p0, p1, p2}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getDevPersistBytes(J)J
 
     move-result-wide v0

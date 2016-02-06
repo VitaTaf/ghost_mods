@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 3652
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService$5;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 20
 
     .prologue
-    .line 3654
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/power/PowerManagerService$5;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -52,18 +50,15 @@
 
     if-nez v13, :cond_4
 
-    .line 3655
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v10
 
-    .line 3657
     .local v10, "now":J
     new-instance v9, Ljava/util/ArrayList;
 
     invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
 
-    .line 3659
     .local v9, "intents":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/Intent;>;"
     move-object/from16 v0, p0
 
@@ -76,7 +71,6 @@
 
     monitor-enter v14
 
-    .line 3660
     :try_start_0
     move-object/from16 v0, p0
 
@@ -106,7 +100,6 @@
 
     check-cast v12, Lcom/android/server/power/PowerManagerService$WakeLock;
 
-    .line 3662
     .local v12, "wl":Lcom/android/server/power/PowerManagerService$WakeLock;
     iget v13, v12, Lcom/android/server/power/PowerManagerService$WakeLock;->mFlags:I
 
@@ -118,10 +111,8 @@
 
     if-ne v13, v15, :cond_0
 
-    .line 3665
     const-wide/16 v2, 0x0
 
-    .line 3666
     .local v2, "adj":J
     iget-wide v0, v12, Lcom/android/server/power/PowerManagerService$WakeLock;->mTime:J
 
@@ -140,7 +131,6 @@
 
     if-gez v13, :cond_1
 
-    .line 3667
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/power/PowerManagerService$5;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -152,7 +142,6 @@
 
     sub-long v2, v10, v16
 
-    .line 3671
     :goto_1
     iget-wide v0, v12, Lcom/android/server/power/PowerManagerService$WakeLock;->mDurationInSleep:J
 
@@ -160,7 +149,6 @@
 
     add-long v4, v16, v2
 
-    .line 3674
     .local v4, "duration":J
     const-wide/32 v16, 0x1b7740
 
@@ -168,7 +156,6 @@
 
     if-lez v13, :cond_0
 
-    .line 3675
     const-string v13, "PowerManagerService"
 
     new-instance v15, Ljava/lang/StringBuilder;
@@ -283,14 +270,12 @@
 
     invoke-static {v13, v15}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3681
     new-instance v8, Landroid/content/Intent;
 
     const-string v13, "com.motorola.intent.action.SUSPICIOUS_WAKELOCK"
 
     invoke-direct {v8, v13}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 3682
     .local v8, "intent":Landroid/content/Intent;
     const-string v13, "LOCK"
 
@@ -302,28 +287,24 @@
 
     invoke-virtual {v8, v13, v15}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 3683
     const-string v13, "PID"
 
     iget v15, v12, Lcom/android/server/power/PowerManagerService$WakeLock;->mOwnerPid:I
 
     invoke-virtual {v8, v13, v15}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 3684
     const-string v13, "UID"
 
     iget v15, v12, Lcom/android/server/power/PowerManagerService$WakeLock;->mOwnerUid:I
 
     invoke-virtual {v8, v13, v15}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 3685
     const-string v13, "TAG"
 
     iget-object v15, v12, Lcom/android/server/power/PowerManagerService$WakeLock;->mTag:Ljava/lang/String;
 
     invoke-virtual {v8, v13, v15}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 3686
     const-string v13, "TIME"
 
     iget-wide v0, v12, Lcom/android/server/power/PowerManagerService$WakeLock;->mTime:J
@@ -334,31 +315,26 @@
 
     invoke-virtual {v8, v13, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 3687
     const-string v13, "FLAGS"
 
     iget v15, v12, Lcom/android/server/power/PowerManagerService$WakeLock;->mFlags:I
 
     invoke-virtual {v8, v13, v15}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 3688
     const-string v13, "SOURCE"
 
     iget-object v15, v12, Lcom/android/server/power/PowerManagerService$WakeLock;->mWorkSource:Landroid/os/WorkSource;
 
     invoke-virtual {v8, v13, v15}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 3689
     const-string v13, "DURATION"
 
     invoke-virtual {v8, v13, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 3690
     invoke-virtual {v9, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_0
 
-    .line 3693
     .end local v2    # "adj":J
     .end local v4    # "duration":J
     .end local v7    # "i$":Ljava/util/Iterator;
@@ -373,7 +349,6 @@
 
     throw v13
 
-    .line 3669
     .restart local v2    # "adj":J
     .restart local v7    # "i$":Ljava/util/Iterator;
     .restart local v12    # "wl":Lcom/android/server/power/PowerManagerService$WakeLock;
@@ -387,7 +362,6 @@
 
     goto/16 :goto_1
 
-    .line 3693
     .end local v2    # "adj":J
     .end local v12    # "wl":Lcom/android/server/power/PowerManagerService$WakeLock;
     :cond_2
@@ -395,7 +369,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 3696
     invoke-virtual {v9}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v7
@@ -413,7 +386,6 @@
 
     check-cast v6, Landroid/content/Intent;
 
-    .line 3697
     .local v6, "i":Landroid/content/Intent;
     move-object/from16 v0, p0
 
@@ -430,7 +402,6 @@
 
     goto :goto_2
 
-    .line 3701
     .end local v6    # "i":Landroid/content/Intent;
     :cond_3
     move-object/from16 v0, p0
@@ -457,7 +428,6 @@
 
     invoke-virtual {v13, v14, v0, v1}, Lcom/android/server/power/PowerManagerService$PowerManagerHandler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 3703
     .end local v7    # "i$":Ljava/util/Iterator;
     .end local v9    # "intents":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/Intent;>;"
     .end local v10    # "now":J

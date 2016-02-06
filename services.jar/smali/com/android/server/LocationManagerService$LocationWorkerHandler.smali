@@ -24,17 +24,14 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 2733
     iput-object p1, p0, Lcom/android/server/LocationManagerService$LocationWorkerHandler;->this$0:Lcom/android/server/LocationManagerService;
 
-    .line 2734
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
     invoke-direct {p0, p2, v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;Z)V
 
-    .line 2735
     return-void
 .end method
 
@@ -47,21 +44,17 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 2740
     const-wide/16 v0, 0x0
 
-    .line 2742
     .local v0, "startTime":J
     iget v2, p1, Landroid/os/Message;->what:I
 
     packed-switch v2, :pswitch_data_0
 
-    .line 2761
     :cond_0
     :goto_0
     return-void
 
-    .line 2745
     :pswitch_0
     # getter for: Lcom/android/server/LocationManagerService;->mBuildTypeUser:Z
     invoke-static {}, Lcom/android/server/LocationManagerService;->access$100()Z
@@ -70,19 +63,16 @@
 
     if-nez v2, :cond_1
 
-    .line 2746
     const-string v2, "LocationManagerService"
 
     const-string v4, "Entering handleLocationChanged"
 
     invoke-static {v2, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2747
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
-    .line 2751
     :cond_1
     iget-object v4, p0, Lcom/android/server/LocationManagerService$LocationWorkerHandler;->this$0:Lcom/android/server/LocationManagerService;
 
@@ -98,7 +88,6 @@
     # invokes: Lcom/android/server/LocationManagerService;->handleLocationChanged(Landroid/location/Location;Z)V
     invoke-static {v4, v2, v3}, Lcom/android/server/LocationManagerService;->access$2900(Lcom/android/server/LocationManagerService;Landroid/location/Location;Z)V
 
-    .line 2754
     # getter for: Lcom/android/server/LocationManagerService;->mBuildTypeUser:Z
     invoke-static {}, Lcom/android/server/LocationManagerService;->access$100()Z
 
@@ -106,7 +95,6 @@
 
     if-nez v2, :cond_0
 
-    .line 2755
     const-string v2, "LocationManagerService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -143,13 +131,11 @@
 
     goto :goto_0
 
-    .line 2751
     :cond_2
     const/4 v3, 0x0
 
     goto :goto_1
 
-    .line 2742
     nop
 
     :pswitch_data_0
