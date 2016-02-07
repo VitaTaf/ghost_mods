@@ -4428,24 +4428,26 @@
     return-void
 .end method
 
-.method prepare()V
-    .locals 1
+.method prepare()Z
+    .locals 2
 
     .prologue
+    const/4 v0, 0x0
+
     invoke-virtual {p0}, Lcom/android/server/wm/AppTransition;->isRunning()Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
+    if-nez v1, :cond_0
 
     iput v0, p0, Lcom/android/server/wm/AppTransition;->mAppTransitionState:I
 
     invoke-direct {p0}, Lcom/android/server/wm/AppTransition;->notifyAppTransitionPendingLocked()V
 
+    const/4 v0, 0x1
+
     :cond_0
-    return-void
+    return v0
 .end method
 
 .method prepareThumbnailAnimation(Landroid/view/animation/Animation;III)Landroid/view/animation/Animation;
@@ -4594,7 +4596,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "mNextAppTransition=0x"
+    const-string v1, "mNextAppTransition="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4602,7 +4604,7 @@
 
     iget v1, p0, Lcom/android/server/wm/AppTransition;->mNextAppTransition:I
 
-    invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+    invoke-static {v1}, Lcom/android/server/wm/AppTransition;->appTransitionToString(I)Ljava/lang/String;
 
     move-result-object v1
 
