@@ -2662,7 +2662,7 @@
 
     iput v0, v1, Lcom/android/server/wm/WindowStateAnimator;->mDtDy:F
 
-    if-nez v5, :cond_12
+    if-nez v5, :cond_e
 
     const/16 v22, 0x0
 
