@@ -73,8 +73,6 @@
 
 .field final transformation:Landroid/view/animation/Transformation;
 
-.field usingTransferredAnimation:Z
-
 
 # direct methods
 .method static constructor <clinit>()V
@@ -91,12 +89,10 @@
 .end method
 
 .method public constructor <init>(Lcom/android/server/wm/AppWindowToken;)V
-    .locals 2
+    .locals 1
     .param p1, "atoken"    # Lcom/android/server/wm/AppWindowToken;
 
     .prologue
-    const/4 v1, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     new-instance v0, Landroid/view/animation/Transformation;
@@ -117,9 +113,9 @@
 
     iput-object v0, p0, Lcom/android/server/wm/AppWindowAnimator;->mAllAppWinAnimators:Ljava/util/ArrayList;
 
-    iput-boolean v1, p0, Lcom/android/server/wm/AppWindowAnimator;->usingTransferredAnimation:Z
+    const/4 v0, 0x0
 
-    iput-boolean v1, p0, Lcom/android/server/wm/AppWindowAnimator;->mSkipFirstFrame:Z
+    iput-boolean v0, p0, Lcom/android/server/wm/AppWindowAnimator;->mSkipFirstFrame:Z
 
     iput-object p1, p0, Lcom/android/server/wm/AppWindowAnimator;->mAppToken:Lcom/android/server/wm/AppWindowToken;
 
@@ -421,8 +417,6 @@
     iput-boolean v1, v0, Lcom/android/server/wm/AppWindowToken;->deferClearAllDrawn:Z
 
     :cond_1
-    iput-boolean v1, p0, Lcom/android/server/wm/AppWindowAnimator;->usingTransferredAnimation:Z
-
     return-void
 .end method
 
@@ -1114,61 +1108,6 @@
     goto/16 :goto_0
 .end method
 
-.method transferCurrentAnimation(Lcom/android/server/wm/AppWindowAnimator;Lcom/android/server/wm/WindowStateAnimator;)V
-    .locals 1
-    .param p1, "toAppAnimator"    # Lcom/android/server/wm/AppWindowAnimator;
-    .param p2, "transferWinAnimator"    # Lcom/android/server/wm/WindowStateAnimator;
-
-    .prologue
-    iget-object v0, p0, Lcom/android/server/wm/AppWindowAnimator;->animation:Landroid/view/animation/Animation;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/server/wm/AppWindowAnimator;->animation:Landroid/view/animation/Animation;
-
-    iput-object v0, p1, Lcom/android/server/wm/AppWindowAnimator;->animation:Landroid/view/animation/Animation;
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/android/server/wm/AppWindowAnimator;->animation:Landroid/view/animation/Animation;
-
-    iget-boolean v0, p0, Lcom/android/server/wm/AppWindowAnimator;->animating:Z
-
-    iput-boolean v0, p1, Lcom/android/server/wm/AppWindowAnimator;->animating:Z
-
-    iget v0, p0, Lcom/android/server/wm/AppWindowAnimator;->animLayerAdjustment:I
-
-    iput v0, p1, Lcom/android/server/wm/AppWindowAnimator;->animLayerAdjustment:I
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lcom/android/server/wm/AppWindowAnimator;->animLayerAdjustment:I
-
-    invoke-virtual {p1}, Lcom/android/server/wm/AppWindowAnimator;->updateLayers()V
-
-    invoke-virtual {p0}, Lcom/android/server/wm/AppWindowAnimator;->updateLayers()V
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p1, Lcom/android/server/wm/AppWindowAnimator;->usingTransferredAnimation:Z
-
-    :cond_0
-    if-eqz p2, :cond_1
-
-    iget-object v0, p0, Lcom/android/server/wm/AppWindowAnimator;->mAllAppWinAnimators:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
-
-    iget-object v0, p1, Lcom/android/server/wm/AppWindowAnimator;->mAllAppWinAnimators:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    iput-object p1, p2, Lcom/android/server/wm/WindowStateAnimator;->mAppAnimator:Lcom/android/server/wm/AppWindowAnimator;
-
-    :cond_1
-    return-void
-.end method
-
 .method updateLayers()V
     .locals 7
 
@@ -1179,49 +1118,49 @@
 
     invoke-virtual {v5}, Lcom/android/server/wm/WindowList;->size()I
 
-    move-result v4
+    move-result v0
 
-    .local v4, "windowCount":I
-    iget v0, p0, Lcom/android/server/wm/AppWindowAnimator;->animLayerAdjustment:I
+    .local v0, "N":I
+    iget v1, p0, Lcom/android/server/wm/AppWindowAnimator;->animLayerAdjustment:I
 
-    .local v0, "adj":I
+    .local v1, "adj":I
     const/4 v5, -0x1
 
     iput v5, p0, Lcom/android/server/wm/AppWindowAnimator;->thumbnailLayer:I
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    .local v1, "i":I
+    .local v2, "i":I
     :goto_0
-    if-ge v1, v4, :cond_3
+    if-ge v2, v0, :cond_3
 
     iget-object v5, p0, Lcom/android/server/wm/AppWindowAnimator;->mAppToken:Lcom/android/server/wm/AppWindowToken;
 
     iget-object v5, v5, Lcom/android/server/wm/AppWindowToken;->allAppWindows:Lcom/android/server/wm/WindowList;
 
-    invoke-virtual {v5, v1}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v5, v2}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v3
 
-    check-cast v2, Lcom/android/server/wm/WindowState;
+    check-cast v3, Lcom/android/server/wm/WindowState;
 
-    .local v2, "w":Lcom/android/server/wm/WindowState;
-    iget-object v3, v2, Lcom/android/server/wm/WindowState;->mWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
+    .local v3, "w":Lcom/android/server/wm/WindowState;
+    iget-object v4, v3, Lcom/android/server/wm/WindowState;->mWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
 
-    .local v3, "winAnimator":Lcom/android/server/wm/WindowStateAnimator;
-    iget v5, v2, Lcom/android/server/wm/WindowState;->mLayer:I
+    .local v4, "winAnimator":Lcom/android/server/wm/WindowStateAnimator;
+    iget v5, v3, Lcom/android/server/wm/WindowState;->mLayer:I
 
-    add-int/2addr v5, v0
+    add-int/2addr v5, v1
 
-    iput v5, v3, Lcom/android/server/wm/WindowStateAnimator;->mAnimLayer:I
+    iput v5, v4, Lcom/android/server/wm/WindowStateAnimator;->mAnimLayer:I
 
-    iget v5, v3, Lcom/android/server/wm/WindowStateAnimator;->mAnimLayer:I
+    iget v5, v4, Lcom/android/server/wm/WindowStateAnimator;->mAnimLayer:I
 
     iget v6, p0, Lcom/android/server/wm/AppWindowAnimator;->thumbnailLayer:I
 
     if-le v5, v6, :cond_0
 
-    iget v5, v3, Lcom/android/server/wm/WindowStateAnimator;->mAnimLayer:I
+    iget v5, v4, Lcom/android/server/wm/WindowStateAnimator;->mAnimLayer:I
 
     iput v5, p0, Lcom/android/server/wm/AppWindowAnimator;->thumbnailLayer:I
 
@@ -1230,7 +1169,7 @@
 
     iget-object v5, v5, Lcom/android/server/wm/WindowManagerService;->mInputMethodTarget:Lcom/android/server/wm/WindowState;
 
-    if-ne v2, v5, :cond_1
+    if-ne v3, v5, :cond_1
 
     iget-object v5, p0, Lcom/android/server/wm/AppWindowAnimator;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -1240,14 +1179,14 @@
 
     iget-object v5, p0, Lcom/android/server/wm/AppWindowAnimator;->mService:Lcom/android/server/wm/WindowManagerService;
 
-    invoke-virtual {v5, v0}, Lcom/android/server/wm/WindowManagerService;->setInputMethodAnimLayerAdjustment(I)V
+    invoke-virtual {v5, v1}, Lcom/android/server/wm/WindowManagerService;->setInputMethodAnimLayerAdjustment(I)V
 
     :cond_1
     iget-object v5, p0, Lcom/android/server/wm/AppWindowAnimator;->mService:Lcom/android/server/wm/WindowManagerService;
 
     iget-object v5, v5, Lcom/android/server/wm/WindowManagerService;->mWallpaperTarget:Lcom/android/server/wm/WindowState;
 
-    if-ne v2, v5, :cond_2
+    if-ne v3, v5, :cond_2
 
     iget-object v5, p0, Lcom/android/server/wm/AppWindowAnimator;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -1257,15 +1196,15 @@
 
     iget-object v5, p0, Lcom/android/server/wm/AppWindowAnimator;->mService:Lcom/android/server/wm/WindowManagerService;
 
-    invoke-virtual {v5, v0}, Lcom/android/server/wm/WindowManagerService;->setWallpaperAnimLayerAdjustmentLocked(I)V
+    invoke-virtual {v5, v1}, Lcom/android/server/wm/WindowManagerService;->setWallpaperAnimLayerAdjustmentLocked(I)V
 
     :cond_2
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .end local v2    # "w":Lcom/android/server/wm/WindowState;
-    .end local v3    # "winAnimator":Lcom/android/server/wm/WindowStateAnimator;
+    .end local v3    # "w":Lcom/android/server/wm/WindowState;
+    .end local v4    # "winAnimator":Lcom/android/server/wm/WindowStateAnimator;
     :cond_3
     return-void
 .end method
