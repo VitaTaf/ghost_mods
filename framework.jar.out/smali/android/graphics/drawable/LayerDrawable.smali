@@ -631,11 +631,13 @@
     goto :goto_0
 .end method
 
-.method private static resolveGravity(III)I
+.method private static resolveGravity(IIIII)I
     .locals 1
     .param p0, "gravity"    # I
     .param p1, "width"    # I
     .param p2, "height"    # I
+    .param p3, "intrinsicWidth"    # I
+    .param p4, "intrinsicHeight"    # I
 
     .prologue
     invoke-static {p0}, Landroid/view/Gravity;->isHorizontal(I)Z
@@ -644,7 +646,7 @@
 
     if-nez v0, :cond_0
 
-    if-gez p1, :cond_2
+    if-gez p1, :cond_4
 
     or-int/lit8 p0, p0, 0x7
 
@@ -656,22 +658,36 @@
 
     if-nez v0, :cond_1
 
-    if-gez p2, :cond_3
+    if-gez p2, :cond_5
 
     or-int/lit8 p0, p0, 0x70
 
     :cond_1
     :goto_1
-    return p0
+    if-gez p1, :cond_2
+
+    if-gez p3, :cond_2
+
+    or-int/lit8 p0, p0, 0x7
 
     :cond_2
+    if-gez p2, :cond_3
+
+    if-gez p4, :cond_3
+
+    or-int/lit8 p0, p0, 0x70
+
+    :cond_3
+    return p0
+
+    :cond_4
     const v0, 0x800003
 
     or-int/2addr p0, v0
 
     goto :goto_0
 
-    :cond_3
+    :cond_5
     or-int/lit8 p0, p0, 0x30
 
     goto :goto_1
@@ -929,7 +945,15 @@
 
     move/from16 v24, v0
 
-    invoke-static/range {v22 .. v24}, Landroid/graphics/drawable/LayerDrawable;->resolveGravity(III)I
+    invoke-virtual {v12}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    move-result v25
+
+    invoke-virtual {v12}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+
+    move-result v26
+
+    invoke-static/range {v22 .. v26}, Landroid/graphics/drawable/LayerDrawable;->resolveGravity(IIIII)I
 
     move-result v4
 
