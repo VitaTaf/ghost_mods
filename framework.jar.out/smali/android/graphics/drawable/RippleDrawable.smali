@@ -1990,53 +1990,69 @@
 .end method
 
 .method public isProjected()Z
-    .locals 4
+    .locals 5
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    iget-object v3, p0, Landroid/graphics/drawable/RippleDrawable;->mState:Landroid/graphics/drawable/RippleDrawable$RippleState;
+    invoke-direct {p0}, Landroid/graphics/drawable/RippleDrawable;->isBounded()Z
 
-    iget v1, v3, Landroid/graphics/drawable/RippleDrawable$RippleState;->mMaxRadius:I
+    move-result v4
 
-    .local v1, "radius":I
+    if-eqz v4, :cond_1
+
+    :cond_0
+    :goto_0
+    return v3
+
+    :cond_1
+    iget-object v4, p0, Landroid/graphics/drawable/RippleDrawable;->mState:Landroid/graphics/drawable/RippleDrawable$RippleState;
+
+    iget v2, v4, Landroid/graphics/drawable/RippleDrawable$RippleState;->mMaxRadius:I
+
+    .local v2, "radius":I
     invoke-virtual {p0}, Landroid/graphics/drawable/RippleDrawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .local v0, "bounds":Landroid/graphics/Rect;
-    const/4 v3, -0x1
+    .local v0, "drawableBounds":Landroid/graphics/Rect;
+    iget-object v1, p0, Landroid/graphics/drawable/RippleDrawable;->mHotspotBounds:Landroid/graphics/Rect;
 
-    if-eq v1, v3, :cond_1
+    .local v1, "hotspotBounds":Landroid/graphics/Rect;
+    const/4 v4, -0x1
 
-    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
+    if-eq v2, v4, :cond_2
 
-    move-result v3
+    invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
 
-    div-int/lit8 v3, v3, 0x2
+    move-result v4
 
-    if-gt v1, v3, :cond_1
+    div-int/lit8 v4, v4, 0x2
 
-    invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
+    if-gt v2, v4, :cond_2
 
-    move-result v3
+    invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
 
-    div-int/lit8 v3, v3, 0x2
+    move-result v4
 
-    if-gt v1, v3, :cond_1
+    div-int/lit8 v4, v4, 0x2
 
-    :cond_0
-    :goto_0
-    return v2
+    if-gt v2, v4, :cond_2
 
-    :cond_1
-    invoke-direct {p0}, Landroid/graphics/drawable/RippleDrawable;->isBounded()Z
+    invoke-virtual {v0, v1}, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v4
 
-    if-nez v3, :cond_0
+    if-nez v4, :cond_0
 
-    const/4 v2, 0x1
+    invoke-virtual {v0, v1}, Landroid/graphics/Rect;->contains(Landroid/graphics/Rect;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_0
+
+    :cond_2
+    const/4 v3, 0x1
 
     goto :goto_0
 .end method
