@@ -5385,6 +5385,7 @@
     <public type="dimen" name="light_radius" id="0x010500a5" />
     <public type="dimen" name="ambient_shadow_alpha" id="0x010500a6" />
     <public type="dimen" name="spot_shadow_alpha" id="0x010500a7" />
+    <public type="dimen" name="seekbar_track_background_height_material" id="0x010500a8" />
     <public type="dimen" name="disabled_alpha_leanback_formwizard" id="0x010500af" />
     <public type="dimen" name="leanback_setup_alpha_animiation_max_opacity" id="0x010500b0" />
     <public type="dimen" name="leanback_setup_alpha_animiation_min_opacity" id="0x010500b1" />
@@ -5468,6 +5469,7 @@
     <public type="dimen" name="dialog_padding_material" id="0x010500ff" />
     <public type="dimen" name="dialog_padding_top_material" id="0x01050100" />
     <public type="dimen" name="dialog_list_padding_vertical_material" id="0x01050101" />
+    <public type="dimen" name="seekbar_track_progress_height_material" id="0x01050102" />
     <public type="dimen" name="progress_bar_height_material" id="0x01050103" />
     <public type="dimen" name="keyguard_pattern_unlock_clock_font_size" id="0x010500ab" />
     <public type="dimen" name="glowpadview_target_placement_radius" id="0x010500ac" />
@@ -5799,6 +5801,7 @@
     <public type="color" name="tab_indicator_material" id="0x01060141" />
     <public type="color" name="white_disabled_material" id="0x01060142" />
     <public type="color" name="btn_colored_text_material" id="0x01060143" />
+    <public type="color" name="seekbar_track_progress_material" id="0x01060144" />
     <public type="array" name="emailAddressTypes" id="0x01070000" />
     <public type="array" name="imProtocols" id="0x01070001" />
     <public type="array" name="organizationTypes" id="0x01070002" />
@@ -5954,6 +5957,7 @@
     <public type="drawable" name="btn_browser_zoom_page_overview" id="0x010800d4" />
     <public type="drawable" name="btn_cab_done_holo_dark" id="0x010800d9" />
     <public type="drawable" name="btn_cab_done_holo_light" id="0x010800da" />
+    <public type="drawable" name="ic_spinner_caret" id="0x010800dc" />
     <public type="drawable" name="btn_check" id="0x010800df" />
     <public type="drawable" name="btn_check_holo_dark" id="0x010800e2" />
     <public type="drawable" name="btn_check_holo_light" id="0x010800e3" />
@@ -5985,6 +5989,7 @@
     <public type="drawable" name="btn_toggle_bg" id="0x01080244" />
     <public type="drawable" name="btn_toggle_holo_dark" id="0x01080245" />
     <public type="drawable" name="btn_toggle_holo_light" id="0x01080246" />
+    <public type="drawable" name="seekbar_thumb_material_anim" id="0x01080247" />
     <public type="drawable" name="btn_toggle_material" id="0x01080248" />
     <public type="drawable" name="btn_zoom_down" id="0x0108025f" />
     <public type="drawable" name="btn_zoom_page" id="0x01080265" />
@@ -6020,6 +6025,7 @@
     <public type="drawable" name="ic_account_circle" id="0x0108030f" />
     <public type="drawable" name="ic_audio_alarm" id="0x01080312" />
     <public type="drawable" name="ic_audio_alarm_mute" id="0x01080313" />
+    <public type="drawable" name="seekbar_track_material" id="0x01080314" />
     <public type="drawable" name="ic_audio_notification" id="0x01080318" />
     <public type="drawable" name="ic_audio_notification_mute" id="0x0108031a" />
     <public type="drawable" name="ic_audio_ring_notif" id="0x0108031e" />
@@ -6983,6 +6989,7 @@
     <public type="drawable" name="ic_ab_back_holo_dark_am" id="0x0108030b" />
     <public type="drawable" name="ic_ab_back_holo_light_am" id="0x0108030d" />
     <public type="drawable" name="ic_aggregated" id="0x01080311" />
+    <public type="drawable" name="switch_track_mtrl_alpha" id="0x01080315" />
     <public type="drawable" name="ic_audio_notification_am_alpha" id="0x01080319" />
     <public type="drawable" name="ic_audio_notification_mute_am_alpha" id="0x0108031b" />
     <public type="drawable" name="ic_btn_round_more_disabled" id="0x01080324" />

@@ -772,6 +772,27 @@
     return-object v0
 .end method
 
+.method private isBounded()Z
+    .locals 1
+
+    .prologue
+    invoke-virtual {p0}, Landroid/graphics/drawable/RippleDrawable;->getNumberOfLayers()I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method private onHotspotBoundsChanged()V
     .locals 4
 
@@ -1055,16 +1076,11 @@
 
     .local v4, "y":F
     :goto_1
-    invoke-virtual {p0}, Landroid/graphics/drawable/RippleDrawable;->isProjected()Z
+    invoke-direct {p0}, Landroid/graphics/drawable/RippleDrawable;->isBounded()Z
 
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    const/4 v5, 0x1
+    move-result v5
 
     .local v5, "isBounded":Z
-    :goto_2
     new-instance v0, Landroid/graphics/drawable/RippleForeground;
 
     iget-object v2, p0, Landroid/graphics/drawable/RippleDrawable;->mHotspotBounds:Landroid/graphics/Rect;
@@ -1113,11 +1129,6 @@
 
     .restart local v4    # "y":F
     goto :goto_1
-
-    :cond_3
-    move v5, v6
-
-    goto :goto_2
 .end method
 
 .method private tryRippleExit()V
@@ -1725,11 +1736,11 @@
     .locals 10
 
     .prologue
-    invoke-virtual {p0}, Landroid/graphics/drawable/RippleDrawable;->isProjected()Z
+    invoke-direct {p0}, Landroid/graphics/drawable/RippleDrawable;->isBounded()Z
 
     move-result v9
 
-    if-eqz v9, :cond_2
+    if-nez v9, :cond_2
 
     iget-object v6, p0, Landroid/graphics/drawable/RippleDrawable;->mDrawingBounds:Landroid/graphics/Rect;
 
@@ -1979,22 +1990,53 @@
 .end method
 
 .method public isProjected()Z
-    .locals 1
+    .locals 4
 
     .prologue
-    invoke-virtual {p0}, Landroid/graphics/drawable/RippleDrawable;->getNumberOfLayers()I
+    const/4 v2, 0x0
 
-    move-result v0
+    iget-object v3, p0, Landroid/graphics/drawable/RippleDrawable;->mState:Landroid/graphics/drawable/RippleDrawable$RippleState;
 
-    if-nez v0, :cond_0
+    iget v1, v3, Landroid/graphics/drawable/RippleDrawable$RippleState;->mMaxRadius:I
 
-    const/4 v0, 0x1
+    .local v1, "radius":I
+    invoke-virtual {p0}, Landroid/graphics/drawable/RippleDrawable;->getBounds()Landroid/graphics/Rect;
 
-    :goto_0
-    return v0
+    move-result-object v0
+
+    .local v0, "bounds":Landroid/graphics/Rect;
+    const/4 v3, -0x1
+
+    if-eq v1, v3, :cond_1
+
+    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
+
+    move-result v3
+
+    div-int/lit8 v3, v3, 0x2
+
+    if-gt v1, v3, :cond_1
+
+    invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
+
+    move-result v3
+
+    div-int/lit8 v3, v3, 0x2
+
+    if-gt v1, v3, :cond_1
 
     :cond_0
-    const/4 v0, 0x0
+    :goto_0
+    return v2
+
+    :cond_1
+    invoke-direct {p0}, Landroid/graphics/drawable/RippleDrawable;->isBounded()Z
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    const/4 v2, 0x1
 
     goto :goto_0
 .end method

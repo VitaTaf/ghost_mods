@@ -1765,11 +1765,23 @@
 
 .field public static final LayerDrawableItem_width:I = 0x3
 
-.field public static final LayerDrawable_autoMirrored:I = 0x1
+.field public static final LayerDrawable_autoMirrored:I = 0x7
 
-.field public static final LayerDrawable_opacity:I = 0x0
+.field public static final LayerDrawable_opacity:I = 0x4
 
-.field public static final LayerDrawable_paddingMode:I = 0x2
+.field public static final LayerDrawable_paddingBottom:I = 0x3
+
+.field public static final LayerDrawable_paddingEnd:I = 0x6
+
+.field public static final LayerDrawable_paddingLeft:I = 0x0
+
+.field public static final LayerDrawable_paddingMode:I = 0x8
+
+.field public static final LayerDrawable_paddingRight:I = 0x2
+
+.field public static final LayerDrawable_paddingStart:I = 0x5
+
+.field public static final LayerDrawable_paddingTop:I = 0x1
 
 .field public static final LayoutAnimation:[I
 
@@ -5205,7 +5217,9 @@
 
     sput-object v0, Landroid/R$styleable;->KeyguardSecurityViewFlipper_Layout:[I
 
-    new-array v0, v5, [I
+    const/16 v0, 0x9
+
+    new-array v0, v0, [I
 
     fill-array-data v0, :array_66
 
@@ -7359,7 +7373,13 @@
 
     :array_66
     .array-data 4
+        0x10100d6
+        0x10100d7
+        0x10100d8
+        0x10100d9
         0x101031e
+        0x10103b3
+        0x10103b4
         0x10103ea
         0x1010457
     .end array-data

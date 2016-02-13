@@ -33,7 +33,21 @@
 
 .field private mOpacity:I
 
+.field mOpacityOverride:I
+
+.field mPaddingBottom:I
+
+.field mPaddingEnd:I
+
+.field mPaddingLeft:I
+
 .field private mPaddingMode:I
+
+.field mPaddingRight:I
+
+.field mPaddingStart:I
+
+.field mPaddingTop:I
 
 .field mThemeAttrs:[I
 
@@ -46,13 +60,29 @@
     .param p3, "res"    # Landroid/content/res/Resources;
 
     .prologue
-    const/4 v4, 0x0
+    const/4 v5, 0x0
+
+    const/4 v4, -0x1
 
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
 
-    iput-boolean v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mAutoMirrored:Z
+    iput v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingTop:I
 
-    iput v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingMode:I
+    iput v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingBottom:I
+
+    iput v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingLeft:I
+
+    iput v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingRight:I
+
+    iput v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingStart:I
+
+    iput v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingEnd:I
+
+    iput v5, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mOpacityOverride:I
+
+    iput-boolean v5, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mAutoMirrored:Z
+
+    iput v5, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingMode:I
 
     if-eqz p1, :cond_1
 
@@ -127,6 +157,34 @@
 
     iput-object v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mThemeAttrs:[I
 
+    iget v4, p1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingTop:I
+
+    iput v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingTop:I
+
+    iget v4, p1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingBottom:I
+
+    iput v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingBottom:I
+
+    iget v4, p1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingLeft:I
+
+    iput v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingLeft:I
+
+    iget v4, p1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingRight:I
+
+    iput v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingRight:I
+
+    iget v4, p1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingStart:I
+
+    iput v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingStart:I
+
+    iget v4, p1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingEnd:I
+
+    iput v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mPaddingEnd:I
+
+    iget v4, p1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mOpacityOverride:I
+
+    iput v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mOpacityOverride:I
+
     .end local v0    # "N":I
     .end local v1    # "i":I
     .end local v3    # "origChildDrawable":[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
@@ -134,7 +192,7 @@
     return-void
 
     :cond_1
-    iput v4, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
+    iput v5, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
     const/4 v4, 0x0
 
