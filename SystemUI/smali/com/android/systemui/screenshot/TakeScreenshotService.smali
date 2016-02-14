@@ -16,10 +16,8 @@
     .locals 1
 
     .prologue
-    .line 27
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 32
     new-instance v0, Lcom/android/systemui/screenshot/TakeScreenshotService$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/screenshot/TakeScreenshotService$1;-><init>(Lcom/android/systemui/screenshot/TakeScreenshotService;)V
@@ -33,7 +31,6 @@
     .locals 1
 
     .prologue
-    .line 27
     sget-object v0, Lcom/android/systemui/screenshot/TakeScreenshotService;->mScreenshot:Lcom/android/systemui/screenshot/GlobalScreenshot;
 
     return-object v0
@@ -44,7 +41,6 @@
     .param p0, "x0"    # Lcom/android/systemui/screenshot/GlobalScreenshot;
 
     .prologue
-    .line 27
     sput-object p0, Lcom/android/systemui/screenshot/TakeScreenshotService;->mScreenshot:Lcom/android/systemui/screenshot/GlobalScreenshot;
 
     return-object p0
@@ -57,7 +53,6 @@
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 56
     new-instance v0, Landroid/os/Messenger;
 
     iget-object v1, p0, Lcom/android/systemui/screenshot/TakeScreenshotService;->mHandler:Landroid/os/Handler;

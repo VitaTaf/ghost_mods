@@ -37,13 +37,10 @@
 
     const/high16 v4, 0x3f000000    # 0.5f
 
-    .line 861
     iput-object p1, p0, Lcom/android/systemui/egg/LLand$Pop;->this$0:Lcom/android/systemui/egg/LLand;
 
-    .line 862
     invoke-direct {p0, p1, p2, p3}, Lcom/android/systemui/egg/LLand$Obstacle;-><init>(Lcom/android/systemui/egg/LLand;Landroid/content/Context;F)V
 
-    .line 863
     sget-object v1, Lcom/android/systemui/egg/LLand;->POPS:[I
 
     array-length v1, v1
@@ -56,7 +53,6 @@
 
     mul-int/lit8 v0, v1, 0x3
 
-    .line 864
     .local v0, "idx":I
     sget-object v1, Lcom/android/systemui/egg/LLand;->POPS:[I
 
@@ -64,7 +60,6 @@
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/egg/LLand$Pop;->setBackgroundResource(I)V
 
-    .line 865
     sget-object v1, Lcom/android/systemui/egg/LLand;->POPS:[I
 
     add-int/lit8 v3, v0, 0x2
@@ -79,7 +74,6 @@
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/egg/LLand$Pop;->setAlpha(F)V
 
-    .line 866
     invoke-static {}, Lcom/android/systemui/egg/LLand;->frand()F
 
     move-result v1
@@ -93,7 +87,6 @@
     :goto_0
     invoke-virtual {p0, v1}, Lcom/android/systemui/egg/LLand$Pop;->setScaleX(F)V
 
-    .line 867
     sget-object v1, Lcom/android/systemui/egg/LLand;->POPS:[I
 
     add-int/lit8 v3, v0, 0x1
@@ -107,23 +100,19 @@
     :goto_1
     iput v1, p0, Lcom/android/systemui/egg/LLand$Pop;->mRotate:I
 
-    .line 868
     new-instance v1, Lcom/android/systemui/egg/LLand$Pop$1;
 
     invoke-direct {v1, p0, p1}, Lcom/android/systemui/egg/LLand$Pop$1;-><init>(Lcom/android/systemui/egg/LLand$Pop;Lcom/android/systemui/egg/LLand;)V
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/egg/LLand$Pop;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
-    .line 875
     return-void
 
-    .line 866
     :cond_0
     const/high16 v1, 0x3f800000    # 1.0f
 
     goto :goto_0
 
-    .line 867
     :cond_1
     invoke-static {}, Lcom/android/systemui/egg/LLand;->frand()F
 
@@ -150,14 +139,12 @@
     .param p1, "p"    # Lcom/android/systemui/egg/LLand$Player;
 
     .prologue
-    .line 878
     iget-object v4, p1, Lcom/android/systemui/egg/LLand$Player;->corners:[F
 
     array-length v4, v4
 
     div-int/lit8 v0, v4, 0x2
 
-    .line 879
     .local v0, "N":I
     const/4 v1, 0x0
 
@@ -165,7 +152,6 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 880
     iget-object v4, p1, Lcom/android/systemui/egg/LLand$Player;->corners:[F
 
     mul-int/lit8 v5, v1, 0x2
@@ -174,7 +160,6 @@
 
     float-to-int v2, v4
 
-    .line 881
     .local v2, "x":I
     iget-object v4, p1, Lcom/android/systemui/egg/LLand$Player;->corners:[F
 
@@ -186,7 +171,6 @@
 
     float-to-int v3, v4
 
-    .line 882
     .local v3, "y":I
     iget v4, p0, Lcom/android/systemui/egg/LLand$Pop;->cx:I
 
@@ -214,13 +198,11 @@
 
     const/4 v4, 0x1
 
-    .line 884
     .end local v2    # "x":I
     .end local v3    # "y":I
     :goto_1
     return v4
 
-    .line 879
     .restart local v2    # "x":I
     .restart local v3    # "y":I
     :cond_0
@@ -228,7 +210,6 @@
 
     goto :goto_0
 
-    .line 884
     .end local v2    # "x":I
     .end local v3    # "y":I
     :cond_1
@@ -245,15 +226,12 @@
     .param p6, "dt"    # F
 
     .prologue
-    .line 889
     invoke-super/range {p0 .. p6}, Lcom/android/systemui/egg/LLand$Obstacle;->step(JJFF)V
 
-    .line 890
     iget v0, p0, Lcom/android/systemui/egg/LLand$Pop;->mRotate:I
 
     if-eqz v0, :cond_0
 
-    .line 891
     invoke-virtual {p0}, Lcom/android/systemui/egg/LLand$Pop;->getRotation()F
 
     move-result v0
@@ -272,7 +250,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/egg/LLand$Pop;->setRotation(F)V
 
-    .line 894
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/egg/LLand$Pop;->hitRect:Landroid/graphics/Rect;
 
@@ -288,7 +265,6 @@
 
     iput v0, p0, Lcom/android/systemui/egg/LLand$Pop;->cx:I
 
-    .line 895
     iget-object v0, p0, Lcom/android/systemui/egg/LLand$Pop;->hitRect:Landroid/graphics/Rect;
 
     iget v0, v0, Landroid/graphics/Rect;->top:I
@@ -303,7 +279,6 @@
 
     iput v0, p0, Lcom/android/systemui/egg/LLand$Pop;->cy:I
 
-    .line 896
     invoke-virtual {p0}, Lcom/android/systemui/egg/LLand$Pop;->getWidth()I
 
     move-result v0
@@ -312,6 +287,5 @@
 
     iput v0, p0, Lcom/android/systemui/egg/LLand$Pop;->r:I
 
-    .line 897
     return-void
 .end method

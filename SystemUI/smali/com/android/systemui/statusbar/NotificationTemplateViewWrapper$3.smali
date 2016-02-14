@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 189
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper$3;->this$0:Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper$3;->val$target:Landroid/widget/ImageView;
@@ -45,7 +44,6 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 192
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper$3;->this$0:Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -61,7 +59,6 @@
     # invokes: Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper;->updateGrayscaleMatrix(F)V
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper;->access$200(Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper;F)V
 
-    .line 193
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper$3;->val$target:Landroid/widget/ImageView;
 
     new-instance v1, Landroid/graphics/ColorMatrixColorFilter;
@@ -77,6 +74,5 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 194
     return-void
 .end method

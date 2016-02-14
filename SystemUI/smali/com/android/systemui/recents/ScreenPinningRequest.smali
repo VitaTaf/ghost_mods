@@ -30,13 +30,10 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 56
     iput-object p1, p0, Lcom/android/systemui/recents/ScreenPinningRequest;->mContext:Landroid/content/Context;
 
-    .line 57
     iget-object v0, p0, Lcom/android/systemui/recents/ScreenPinningRequest;->mContext:Landroid/content/Context;
 
     const-string v1, "accessibility"
@@ -49,7 +46,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/ScreenPinningRequest;->mAccessibilityService:Landroid/view/accessibility/AccessibilityManager;
 
-    .line 59
     iget-object v0, p0, Lcom/android/systemui/recents/ScreenPinningRequest;->mContext:Landroid/content/Context;
 
     const-string v1, "window"
@@ -62,7 +58,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/ScreenPinningRequest;->mWindowManager:Landroid/view/WindowManager;
 
-    .line 61
     return-void
 .end method
 
@@ -71,7 +66,6 @@
     .param p0, "x0"    # Lcom/android/systemui/recents/ScreenPinningRequest;
 
     .prologue
-    .line 47
     iget-object v0, p0, Lcom/android/systemui/recents/ScreenPinningRequest;->mWindowManager:Landroid/view/WindowManager;
 
     return-object v0
@@ -82,7 +76,6 @@
     .param p0, "x0"    # Lcom/android/systemui/recents/ScreenPinningRequest;
 
     .prologue
-    .line 47
     iget-object v0, p0, Lcom/android/systemui/recents/ScreenPinningRequest;->mAccessibilityService:Landroid/view/accessibility/AccessibilityManager;
 
     return-object v0
@@ -94,7 +87,6 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 89
     new-instance v0, Landroid/view/WindowManager$LayoutParams;
 
     const/16 v3, 0x7e8
@@ -107,7 +99,6 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/view/WindowManager$LayoutParams;-><init>(IIIII)V
 
-    .line 99
     .local v0, "lp":Landroid/view/WindowManager$LayoutParams;
     iget v1, v0, Landroid/view/WindowManager$LayoutParams;->privateFlags:I
 
@@ -115,17 +106,14 @@
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->privateFlags:I
 
-    .line 100
     const-string v1, "ScreenPinningConfirmation"
 
     invoke-virtual {v0, v1}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 101
     const/16 v1, 0x77
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 102
     return-object v0
 .end method
 
@@ -135,24 +123,20 @@
     .locals 2
 
     .prologue
-    .line 64
     iget-object v0, p0, Lcom/android/systemui/recents/ScreenPinningRequest;->mRequestWindow:Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;
 
     if-eqz v0, :cond_0
 
-    .line 65
     iget-object v0, p0, Lcom/android/systemui/recents/ScreenPinningRequest;->mWindowManager:Landroid/view/WindowManager;
 
     iget-object v1, p0, Lcom/android/systemui/recents/ScreenPinningRequest;->mRequestWindow:Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;
 
     invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
 
-    .line 66
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/systemui/recents/ScreenPinningRequest;->mRequestWindow:Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;
 
-    .line 68
     :cond_0
     return-void
 .end method
@@ -164,7 +148,6 @@
     .prologue
     const/4 v2, -0x2
 
-    .line 116
     new-instance v1, Landroid/widget/FrameLayout$LayoutParams;
 
     if-eqz p1, :cond_0
@@ -187,7 +170,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 107
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     move-result v0
@@ -200,7 +182,6 @@
 
     if-ne v0, p1, :cond_1
 
-    .line 109
     :cond_0
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
@@ -211,15 +192,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 112
     :cond_1
     :goto_0
     invoke-virtual {p0}, Lcom/android/systemui/recents/ScreenPinningRequest;->clearPrompt()V
 
-    .line 113
     return-void
 
-    .line 110
     :catch_0
     move-exception v0
 
@@ -230,17 +208,14 @@
     .locals 1
 
     .prologue
-    .line 83
     iget-object v0, p0, Lcom/android/systemui/recents/ScreenPinningRequest;->mRequestWindow:Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;
 
     if-eqz v0, :cond_0
 
-    .line 84
     iget-object v0, p0, Lcom/android/systemui/recents/ScreenPinningRequest;->mRequestWindow:Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->onConfigurationChanged()V
 
-    .line 86
     :cond_0
     return-void
 .end method
@@ -250,10 +225,8 @@
     .param p1, "allowCancel"    # Z
 
     .prologue
-    .line 71
     invoke-virtual {p0}, Lcom/android/systemui/recents/ScreenPinningRequest;->clearPrompt()V
 
-    .line 73
     new-instance v1, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;
 
     iget-object v2, p0, Lcom/android/systemui/recents/ScreenPinningRequest;->mContext:Landroid/content/Context;
@@ -262,19 +235,16 @@
 
     iput-object v1, p0, Lcom/android/systemui/recents/ScreenPinningRequest;->mRequestWindow:Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;
 
-    .line 75
     iget-object v1, p0, Lcom/android/systemui/recents/ScreenPinningRequest;->mRequestWindow:Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;
 
     const/16 v2, 0x100
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->setSystemUiVisibility(I)V
 
-    .line 78
     invoke-direct {p0}, Lcom/android/systemui/recents/ScreenPinningRequest;->getWindowLayoutParams()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v0
 
-    .line 79
     .local v0, "lp":Landroid/view/WindowManager$LayoutParams;
     iget-object v1, p0, Lcom/android/systemui/recents/ScreenPinningRequest;->mWindowManager:Landroid/view/WindowManager;
 
@@ -282,6 +252,5 @@
 
     invoke-interface {v1, v2, v0}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 80
     return-void
 .end method

@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 139
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl$Receiver;->this$0:Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,7 +38,6 @@
     .param p2, "x1"    # Lcom/android/systemui/statusbar/policy/HotspotControllerImpl$1;
 
     .prologue
-    .line 139
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl$Receiver;-><init>(Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;)V
 
     return-void
@@ -53,7 +51,6 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 158
     # getter for: Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->access$100()Z
 
@@ -87,7 +84,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 159
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl$Receiver;->this$0:Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;
 
@@ -100,7 +96,6 @@
     # invokes: Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->fireCallback(Z)V
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->access$300(Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;Z)V
 
-    .line 160
     return-void
 .end method
 
@@ -109,14 +104,12 @@
     .param p1, "listening"    # Z
 
     .prologue
-    .line 143
     if-eqz p1, :cond_2
 
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl$Receiver;->mRegistered:Z
 
     if-nez v1, :cond_2
 
-    .line 144
     # getter for: Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->access$100()Z
 
@@ -130,19 +123,16 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 145
     :cond_0
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 146
     .local v0, "filter":Landroid/content/IntentFilter;
     const-string v1, "android.net.wifi.WIFI_AP_STATE_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 147
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl$Receiver;->this$0:Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;
 
     # getter for: Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mContext:Landroid/content/Context;
@@ -152,18 +142,15 @@
 
     invoke-virtual {v1, p0, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 148
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl$Receiver;->mRegistered:Z
 
-    .line 154
     .end local v0    # "filter":Landroid/content/IntentFilter;
     :cond_1
     :goto_0
     return-void
 
-    .line 149
     :cond_2
     if-nez p1, :cond_1
 
@@ -171,7 +158,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 150
     # getter for: Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->access$100()Z
 
@@ -185,7 +171,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 151
     :cond_3
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl$Receiver;->this$0:Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;
 
@@ -196,7 +181,6 @@
 
     invoke-virtual {v1, p0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 152
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl$Receiver;->mRegistered:Z

@@ -27,7 +27,6 @@
     .locals 0
 
     .prologue
-    .line 98
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/LocationTile$Callback;->this$0:Lcom/android/systemui/qs/tiles/LocationTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p2, "x1"    # Lcom/android/systemui/qs/tiles/LocationTile$1;
 
     .prologue
-    .line 98
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tiles/LocationTile$Callback;-><init>(Lcom/android/systemui/qs/tiles/LocationTile;)V
 
     return-void
@@ -53,13 +51,11 @@
     .locals 1
 
     .prologue
-    .line 107
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile$Callback;->this$0:Lcom/android/systemui/qs/tiles/LocationTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/LocationTile;->refreshState()V
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/LocationTile;->access$200(Lcom/android/systemui/qs/tiles/LocationTile;)V
 
-    .line 108
     return-void
 .end method
 
@@ -68,12 +64,10 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 102
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile$Callback;->this$0:Lcom/android/systemui/qs/tiles/LocationTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/LocationTile;->refreshState()V
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/LocationTile;->access$100(Lcom/android/systemui/qs/tiles/LocationTile;)V
 
-    .line 103
     return-void
 .end method

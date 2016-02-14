@@ -46,7 +46,6 @@
     .locals 1
 
     .prologue
-    .line 35
     const-class v0, Lcom/android/systemui/volume/VolumeDialogMotion;
 
     invoke-static {v0}, Lcom/android/systemui/volume/Util;->logTag(Ljava/lang/Class;)Ljava/lang/String;
@@ -67,32 +66,24 @@
     .param p5, "callback"    # Lcom/android/systemui/volume/VolumeDialogMotion$Callback;
 
     .prologue
-    .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 44
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mHandler:Landroid/os/Handler;
 
-    .line 55
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mDialog:Landroid/app/Dialog;
 
-    .line 56
     iput-object p2, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mDialogView:Landroid/view/View;
 
-    .line 57
     iput-object p3, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mContents:Landroid/view/ViewGroup;
 
-    .line 58
     iput-object p4, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mChevron:Landroid/view/View;
 
-    .line 59
     iput-object p5, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mCallback:Lcom/android/systemui/volume/VolumeDialogMotion$Callback;
 
-    .line 60
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mDialog:Landroid/app/Dialog;
 
     new-instance v1, Lcom/android/systemui/volume/VolumeDialogMotion$1;
@@ -101,7 +92,6 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 66
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mDialog:Landroid/app/Dialog;
 
     new-instance v1, Lcom/android/systemui/volume/VolumeDialogMotion$2;
@@ -110,7 +100,6 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setOnShowListener(Landroid/content/DialogInterface$OnShowListener;)V
 
-    .line 75
     return-void
 .end method
 
@@ -118,7 +107,6 @@
     .locals 1
 
     .prologue
-    .line 34
     sget-object v0, Lcom/android/systemui/volume/VolumeDialogMotion;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -129,7 +117,6 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialogMotion;
 
     .prologue
-    .line 34
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mDialogView:Landroid/view/View;
 
     return-object v0
@@ -140,7 +127,6 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialogMotion;
 
     .prologue
-    .line 34
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -151,7 +137,6 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialogMotion;
 
     .prologue
-    .line 34
     invoke-direct {p0}, Lcom/android/systemui/volume/VolumeDialogMotion;->startShowAnimation()V
 
     return-void
@@ -162,7 +147,6 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialogMotion;
 
     .prologue
-    .line 34
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mChevronPositionAnimator:Landroid/animation/ValueAnimator;
 
     return-object v0
@@ -173,7 +157,6 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialogMotion;
 
     .prologue
-    .line 34
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mChevron:Landroid/view/View;
 
     return-object v0
@@ -185,7 +168,6 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 34
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialogMotion;->setShowing(Z)V
 
     return-void
@@ -196,7 +178,6 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialogMotion;
 
     .prologue
-    .line 34
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mContents:Landroid/view/ViewGroup;
 
     return-object v0
@@ -207,7 +188,6 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialogMotion;
 
     .prologue
-    .line 34
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mDialog:Landroid/app/Dialog;
 
     return-object v0
@@ -219,7 +199,6 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 34
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialogMotion;->setDismissing(Z)V
 
     return-void
@@ -229,7 +208,6 @@
     .locals 1
 
     .prologue
-    .line 120
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mChevron:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getHeight()I
@@ -246,7 +224,6 @@
     .param p0, "base"    # I
 
     .prologue
-    .line 243
     int-to-float v0, p0
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -263,20 +240,16 @@
     .param p1, "dismissing"    # Z
 
     .prologue
-    .line 89
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mDismissing:Z
 
     if-ne p1, v0, :cond_0
 
-    .line 93
     :goto_0
     return-void
 
-    .line 90
     :cond_0
     iput-boolean p1, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mDismissing:Z
 
-    .line 91
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_1
@@ -305,7 +278,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 92
     :cond_1
     invoke-direct {p0}, Lcom/android/systemui/volume/VolumeDialogMotion;->updateAnimating()V
 
@@ -317,20 +289,16 @@
     .param p1, "showing"    # Z
 
     .prologue
-    .line 82
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mShowing:Z
 
     if-ne p1, v0, :cond_0
 
-    .line 86
     :goto_0
     return-void
 
-    .line 83
     :cond_0
     iput-boolean p1, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mShowing:Z
 
-    .line 84
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_1
@@ -359,7 +327,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 85
     :cond_1
     invoke-direct {p0}, Lcom/android/systemui/volume/VolumeDialogMotion;->updateAnimating()V
 
@@ -380,7 +347,6 @@
 
     const/4 v4, 0x0
 
-    .line 124
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_0
@@ -391,7 +357,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 125
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mDialogView:Landroid/view/View;
 
@@ -437,7 +402,6 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 141
     const/4 v0, 0x2
 
     new-array v0, v0, [F
@@ -476,7 +440,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mContentsPositionAnimator:Landroid/animation/ValueAnimator;
 
-    .line 143
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mContentsPositionAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lcom/android/systemui/volume/VolumeDialogMotion$4;
@@ -485,7 +448,6 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 158
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mContentsPositionAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lcom/android/systemui/volume/VolumeDialogMotion$5;
@@ -494,7 +456,6 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 165
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mContentsPositionAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lcom/android/systemui/volume/VolumeDialogMotion$LogDecelerateInterpolator;
@@ -503,17 +464,14 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 166
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mContentsPositionAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 168
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mContents:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, v4}, Landroid/view/ViewGroup;->setAlpha(F)V
 
-    .line 169
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mContents:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->animate()Landroid/view/ViewPropertyAnimator;
@@ -546,7 +504,6 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 175
     const/4 v0, 0x2
 
     new-array v0, v0, [F
@@ -585,7 +542,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mChevronPositionAnimator:Landroid/animation/ValueAnimator;
 
-    .line 177
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mChevronPositionAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Landroid/view/animation/PathInterpolator;
@@ -594,17 +550,14 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 178
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mChevronPositionAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 180
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mChevron:Landroid/view/View;
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setAlpha(F)V
 
-    .line 181
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mChevron:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -649,7 +602,6 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 187
     return-void
 .end method
 
@@ -657,7 +609,6 @@
     .locals 4
 
     .prologue
-    .line 96
     iget-boolean v1, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mShowing:Z
 
     if-nez v1, :cond_0
@@ -669,31 +620,26 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 97
     .local v0, "animating":Z
     :goto_0
     iget-boolean v1, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mAnimating:Z
 
     if-ne v0, v1, :cond_3
 
-    .line 103
     :cond_1
     :goto_1
     return-void
 
-    .line 96
     .end local v0    # "animating":Z
     :cond_2
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 98
     .restart local v0    # "animating":Z
     :cond_3
     iput-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mAnimating:Z
 
-    .line 99
     sget-boolean v1, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v1, :cond_4
@@ -722,13 +668,11 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 100
     :cond_4
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mCallback:Lcom/android/systemui/volume/VolumeDialogMotion$Callback;
 
     if-eqz v1, :cond_1
 
-    .line 101
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mCallback:Lcom/android/systemui/volume/VolumeDialogMotion$Callback;
 
     iget-boolean v2, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mAnimating:Z
@@ -744,7 +688,6 @@
     .locals 1
 
     .prologue
-    .line 78
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mAnimating:Z
 
     return v0
@@ -755,7 +698,6 @@
     .param p1, "onComplete"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 190
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_0
@@ -766,28 +708,23 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 191
     :cond_0
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mDismissing:Z
 
     if-eqz v0, :cond_1
 
-    .line 240
     :goto_0
     return-void
 
-    .line 192
     :cond_1
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/android/systemui/volume/VolumeDialogMotion;->setDismissing(Z)V
 
-    .line 193
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mShowing:Z
 
     if-eqz v0, :cond_4
 
-    .line 194
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mDialogView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -796,17 +733,14 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 195
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mContentsPositionAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_2
 
-    .line 196
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mContentsPositionAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 198
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mContents:Landroid/view/ViewGroup;
 
@@ -816,17 +750,14 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 199
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mChevronPositionAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_3
 
-    .line 200
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mChevronPositionAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 202
     :cond_3
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mChevron:Landroid/view/View;
 
@@ -836,12 +767,10 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 203
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/systemui/volume/VolumeDialogMotion;->setShowing(Z)V
 
-    .line 205
     :cond_4
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mDialogView:Landroid/view/View;
 
@@ -910,7 +839,6 @@
     .locals 2
 
     .prologue
-    .line 106
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_0
@@ -921,28 +849,23 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 107
     :cond_0
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mShowing:Z
 
     if-eqz v0, :cond_1
 
-    .line 117
     :goto_0
     return-void
 
-    .line 108
     :cond_1
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/android/systemui/volume/VolumeDialogMotion;->setShowing(Z)V
 
-    .line 109
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mDismissing:Z
 
     if-eqz v0, :cond_2
 
-    .line 110
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mDialogView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -951,17 +874,14 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 111
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/systemui/volume/VolumeDialogMotion;->setDismissing(Z)V
 
-    .line 112
     invoke-direct {p0}, Lcom/android/systemui/volume/VolumeDialogMotion;->startShowAnimation()V
 
     goto :goto_0
 
-    .line 115
     :cond_2
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
@@ -973,7 +893,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 116
     :cond_3
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion;->mDialog:Landroid/app/Dialog;
 

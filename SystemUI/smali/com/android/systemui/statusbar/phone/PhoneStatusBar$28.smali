@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 2139
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$28;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$28;->val$nlo:Landroid/view/View;
@@ -42,13 +41,11 @@
     .param p1, "_a"    # Landroid/animation/Animator;
 
     .prologue
-    .line 2142
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$28;->val$nlo:Landroid/view/View;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2143
     return-void
 .end method

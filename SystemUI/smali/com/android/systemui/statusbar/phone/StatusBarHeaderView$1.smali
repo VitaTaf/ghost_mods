@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 160
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,14 +50,12 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 164
     sub-int v1, p4, p2
 
     sub-int v2, p8, p6
 
     if-eq v1, v2, :cond_0
 
-    .line 166
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
@@ -72,7 +69,6 @@
     # invokes: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->setClipping(F)V
     invoke-static {v1, v2}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->access$100(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;F)V
 
-    .line 168
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
@@ -82,7 +78,6 @@
 
     if-ne v1, v0, :cond_1
 
-    .line 169
     .local v0, "rtl":Z
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
@@ -110,7 +105,6 @@
     :goto_1
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setPivotX(F)V
 
-    .line 170
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mTime:Landroid/widget/TextView;
@@ -133,23 +127,19 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setPivotY(F)V
 
-    .line 171
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     # invokes: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->updateAmPmTranslation()V
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->access$300(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)V
 
-    .line 172
     return-void
 
-    .line 168
     .end local v0    # "rtl":Z
     :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 169
     .restart local v0    # "rtl":Z
     :cond_2
     const/4 v1, 0x0

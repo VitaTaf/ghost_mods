@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 54
     iput-object p1, p0, Lcom/android/keyguard/MultiPaneChallengeLayout$1;->this$0:Lcom/android/keyguard/MultiPaneChallengeLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +40,9 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 57
     iget-object v0, p0, Lcom/android/keyguard/MultiPaneChallengeLayout$1;->this$0:Lcom/android/keyguard/MultiPaneChallengeLayout;
 
     invoke-virtual {v0}, Lcom/android/keyguard/MultiPaneChallengeLayout;->hideBouncer()V
 
-    .line 58
     return-void
 .end method

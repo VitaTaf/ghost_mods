@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 645
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel$7;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     iput-object p2, p0, Lcom/android/systemui/volume/ZenModePanel$7;->val$tag:Lcom/android/systemui/volume/ZenModePanel$ConditionTag;
@@ -45,7 +44,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 648
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$7;->val$tag:Lcom/android/systemui/volume/ZenModePanel$ConditionTag;
 
     iget-object v0, v0, Lcom/android/systemui/volume/ZenModePanel$ConditionTag;->rb:Landroid/widget/RadioButton;
@@ -54,6 +52,5 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 649
     return-void
 .end method

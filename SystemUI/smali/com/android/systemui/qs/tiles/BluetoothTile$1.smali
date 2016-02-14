@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 152
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$1;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 2
 
     .prologue
-    .line 159
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$1;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/BluetoothTile;->mUiHandler:Landroid/os/Handler;
@@ -54,13 +52,11 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 165
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$1;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/BluetoothTile;->refreshState()V
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/BluetoothTile;->access$500(Lcom/android/systemui/qs/tiles/BluetoothTile;)V
 
-    .line 166
     return-void
 .end method
 
@@ -70,12 +66,10 @@
     .param p2, "connecting"    # Z
 
     .prologue
-    .line 155
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$1;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/BluetoothTile;->refreshState()V
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/BluetoothTile;->access$100(Lcom/android/systemui/qs/tiles/BluetoothTile;)V
 
-    .line 156
     return-void
 .end method

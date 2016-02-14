@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 158
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/DndTile$1;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .param p2, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 161
     const-string v0, "DndTileCombinedIcon"
 
     invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -59,14 +57,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 162
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile$1;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/DndTile;->refreshState()V
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/DndTile;->access$100(Lcom/android/systemui/qs/tiles/DndTile;)V
 
-    .line 164
     :cond_1
     return-void
 .end method

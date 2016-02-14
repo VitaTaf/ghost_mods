@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 559
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -38,13 +37,11 @@
     .param p1, "showing"    # Z
 
     .prologue
-    .line 577
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     # invokes: Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->updateLockIcon()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->access$600(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
 
-    .line 578
     return-void
 .end method
 
@@ -53,13 +50,11 @@
     .param p1, "why"    # I
 
     .prologue
-    .line 572
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     # invokes: Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->updateLockIcon()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->access$600(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
 
-    .line 573
     return-void
 .end method
 
@@ -67,13 +62,11 @@
     .locals 1
 
     .prologue
-    .line 567
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     # invokes: Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->updateLockIcon()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->access$600(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
 
-    .line 568
     return-void
 .end method
 
@@ -82,12 +75,10 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 562
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     # invokes: Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->updateCameraVisibility()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->access$500(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
 
-    .line 563
     return-void
 .end method

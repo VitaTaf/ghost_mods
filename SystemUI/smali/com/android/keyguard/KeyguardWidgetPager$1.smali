@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 286
     iput-object p1, p0, Lcom/android/keyguard/KeyguardWidgetPager$1;->this$0:Lcom/android/keyguard/KeyguardWidgetPager;
 
     iput p2, p0, Lcom/android/keyguard/KeyguardWidgetPager$1;->val$appWidgetId:I
@@ -44,7 +43,6 @@
     .locals 2
 
     .prologue
-    .line 289
     iget-object v0, p0, Lcom/android/keyguard/KeyguardWidgetPager$1;->this$0:Lcom/android/keyguard/KeyguardWidgetPager;
 
     # getter for: Lcom/android/keyguard/KeyguardWidgetPager;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
@@ -56,6 +54,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/LockPatternUtils;->removeAppWidget(I)Z
 
-    .line 290
     return-void
 .end method

@@ -43,7 +43,6 @@
     .locals 1
 
     .prologue
-    .line 43
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
@@ -58,12 +57,10 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 148
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/keyguard/KeyguardMessageArea;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 149
     return-void
 .end method
 
@@ -73,48 +70,40 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 152
     invoke-direct {p0, p1, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 57
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/keyguard/KeyguardMessageArea;->mShowingBouncer:Z
 
-    .line 62
     const-wide/16 v0, 0x1388
 
     iput-wide v0, p0, Lcom/android/keyguard/KeyguardMessageArea;->mTimeout:J
 
-    .line 71
     new-instance v0, Lcom/android/keyguard/KeyguardMessageArea$1;
 
     invoke-direct {v0, p0}, Lcom/android/keyguard/KeyguardMessageArea$1;-><init>(Lcom/android/keyguard/KeyguardMessageArea;)V
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardMessageArea;->mClearMessageRunnable:Ljava/lang/Runnable;
 
-    .line 138
     new-instance v0, Lcom/android/keyguard/KeyguardMessageArea$2;
 
     invoke-direct {v0, p0}, Lcom/android/keyguard/KeyguardMessageArea$2;-><init>(Lcom/android/keyguard/KeyguardMessageArea;)V
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardMessageArea;->mInfoCallback:Lcom/android/keyguard/KeyguardUpdateMonitorCallback;
 
-    .line 153
     const/4 v0, 0x2
 
     const/4 v1, 0x0
 
     invoke-virtual {p0, v0, v1}, Lcom/android/keyguard/KeyguardMessageArea;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 155
     new-instance v0, Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-direct {v0, p1}, Lcom/android/internal/widget/LockPatternUtils;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardMessageArea;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    .line 158
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardMessageArea;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -125,14 +114,12 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardMessageArea;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
-    .line 159
     iget-object v0, p0, Lcom/android/keyguard/KeyguardMessageArea;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardMessageArea;->mInfoCallback:Lcom/android/keyguard/KeyguardUpdateMonitorCallback;
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->registerCallback(Lcom/android/keyguard/KeyguardUpdateMonitorCallback;)V
 
-    .line 160
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
@@ -143,7 +130,6 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardMessageArea;->mHandler:Landroid/os/Handler;
 
-    .line 162
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardMessageArea;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -156,10 +142,8 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardMessageArea;->mSeparator:Ljava/lang/CharSequence;
 
-    .line 165
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardMessageArea;->update()V
 
-    .line 166
     return-void
 .end method
 
@@ -170,7 +154,6 @@
     .param p2, "x2"    # Z
 
     .prologue
-    .line 41
     invoke-direct {p0, p1, p2}, Lcom/android/keyguard/KeyguardMessageArea;->hideMessage(IZ)V
 
     return-void
@@ -182,7 +165,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 41
     invoke-direct {p0, p1}, Lcom/android/keyguard/KeyguardMessageArea;->showMessage(I)V
 
     return-void
@@ -196,10 +178,8 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 207
     if-lez p1, :cond_2
 
-    .line 208
     const-string v1, "alpha"
 
     const/4 v2, 0x1
@@ -214,40 +194,32 @@
 
     move-result-object v0
 
-    .line 209
     .local v0, "anim":Landroid/animation/Animator;
     int-to-long v2, p1
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
-    .line 210
     if-eqz p2, :cond_0
 
-    .line 211
     new-instance v1, Lcom/android/keyguard/KeyguardMessageArea$3;
 
     invoke-direct {v1, p0}, Lcom/android/keyguard/KeyguardMessageArea$3;-><init>(Lcom/android/keyguard/KeyguardMessageArea;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 218
     :cond_0
     invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
-    .line 225
     .end local v0    # "anim":Landroid/animation/Animator;
     :cond_1
     :goto_0
     return-void
 
-    .line 220
     :cond_2
     invoke-virtual {p0, v4}, Lcom/android/keyguard/KeyguardMessageArea;->setAlpha(F)V
 
-    .line 221
     if-eqz p2, :cond_1
 
-    .line 222
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardMessageArea;->update()V
 
     goto :goto_0
@@ -260,10 +232,8 @@
     .prologue
     const/high16 v4, 0x3f800000    # 1.0f
 
-    .line 228
     if-lez p1, :cond_0
 
-    .line 229
     const-string v1, "alpha"
 
     const/4 v2, 0x1
@@ -278,21 +248,17 @@
 
     move-result-object v0
 
-    .line 230
     .local v0, "anim":Landroid/animation/Animator;
     int-to-long v2, p1
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
-    .line 231
     invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
-    .line 235
     .end local v0    # "anim":Landroid/animation/Animator;
     :goto_0
     return-void
 
-    .line 233
     :cond_0
     invoke-virtual {p0, v4}, Lcom/android/keyguard/KeyguardMessageArea;->setAlpha(F)V
 
@@ -305,7 +271,6 @@
     .locals 1
 
     .prologue
-    .line 203
     iget-boolean v0, p0, Lcom/android/keyguard/KeyguardMessageArea;->mShowingMessage:Z
 
     if-eqz v0, :cond_0
@@ -325,7 +290,6 @@
     .locals 2
 
     .prologue
-    .line 170
     iget-object v1, p0, Lcom/android/keyguard/KeyguardMessageArea;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
@@ -336,11 +300,9 @@
 
     move-result v0
 
-    .line 171
     .local v0, "screenOn":Z
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardMessageArea;->setSelected(Z)V
 
-    .line 172
     return-void
 .end method
 
@@ -348,27 +310,22 @@
     .locals 8
 
     .prologue
-    .line 175
     const/high16 v0, 0x3f800000    # 1.0f
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardMessageArea;->setAlpha(F)V
 
-    .line 176
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/keyguard/KeyguardMessageArea;->mShowingMessage:Z
 
-    .line 177
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardMessageArea;->update()V
 
-    .line 178
     iget-object v0, p0, Lcom/android/keyguard/KeyguardMessageArea;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardMessageArea;->mClearMessageRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 179
     iget-wide v0, p0, Lcom/android/keyguard/KeyguardMessageArea;->mTimeout:J
 
     const-wide/16 v2, 0x0
@@ -377,7 +334,6 @@
 
     if-lez v0, :cond_0
 
-    .line 180
     iget-object v0, p0, Lcom/android/keyguard/KeyguardMessageArea;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardMessageArea;->mClearMessageRunnable:Ljava/lang/Runnable;
@@ -386,7 +342,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 182
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/KeyguardMessageArea;->mHandler:Landroid/os/Handler;
 
@@ -394,7 +349,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 183
     iget-object v0, p0, Lcom/android/keyguard/KeyguardMessageArea;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/android/keyguard/KeyguardMessageArea$AnnounceRunnable;
@@ -417,7 +371,6 @@
 
     invoke-virtual {v0, v1, v2, v4, v5}, Landroid/os/Handler;->postAtTime(Ljava/lang/Runnable;Ljava/lang/Object;J)Z
 
-    .line 185
     return-void
 .end method
 
@@ -427,26 +380,21 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 195
     new-instance v0, Landroid/util/MutableInt;
 
     invoke-direct {v0, v3}, Landroid/util/MutableInt;-><init>(I)V
 
-    .line 196
     .local v0, "icon":Landroid/util/MutableInt;
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardMessageArea;->getCurrentMessage()Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    .line 197
     .local v1, "status":Ljava/lang/CharSequence;
     iget v2, v0, Landroid/util/MutableInt;->value:I
 
     invoke-virtual {p0, v2, v3, v3, v3}, Lcom/android/keyguard/KeyguardMessageArea;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
 
-    .line 198
     invoke-virtual {p0, v1}, Lcom/android/keyguard/KeyguardMessageArea;->setText(Ljava/lang/CharSequence;)V
 
-    .line 199
     return-void
 .end method

@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 126
     iput-object p1, p0, Lcom/android/systemui/settings/ToggleSlider$1;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .param p2, "checked"    # Z
 
     .prologue
-    .line 129
     iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider$1;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # getter for: Lcom/android/systemui/settings/ToggleSlider;->mSlider:Landroid/widget/SeekBar;
@@ -57,7 +55,6 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/widget/SeekBar;->setEnabled(Z)V
 
-    .line 131
     iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider$1;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # getter for: Lcom/android/systemui/settings/ToggleSlider;->mListener:Lcom/android/systemui/settings/ToggleSlider$Listener;
@@ -67,7 +64,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 132
     iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider$1;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # getter for: Lcom/android/systemui/settings/ToggleSlider;->mListener:Lcom/android/systemui/settings/ToggleSlider$Listener;
@@ -97,7 +93,6 @@
 
     invoke-interface {v0, v1, v2, p2, v3}, Lcom/android/systemui/settings/ToggleSlider$Listener;->onChanged(Lcom/android/systemui/settings/ToggleSlider;ZZI)V
 
-    .line 136
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider$1;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
@@ -108,7 +103,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 137
     iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider$1;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # getter for: Lcom/android/systemui/settings/ToggleSlider;->mMirror:Lcom/android/systemui/settings/ToggleSlider;
@@ -123,11 +117,9 @@
 
     invoke-virtual {v0, p2}, Landroid/widget/CompoundButton;->setChecked(Z)V
 
-    .line 139
     :cond_1
     return-void
 
-    .line 129
     :cond_2
     const/4 v0, 0x0
 

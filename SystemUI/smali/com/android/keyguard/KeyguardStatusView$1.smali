@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 52
     iput-object p1, p0, Lcom/android/keyguard/KeyguardStatusView$1;->this$0:Lcom/android/keyguard/KeyguardStatusView;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -38,22 +37,18 @@
     .param p1, "showing"    # Z
 
     .prologue
-    .line 61
     if-eqz p1, :cond_0
 
-    .line 63
     iget-object v0, p0, Lcom/android/keyguard/KeyguardStatusView$1;->this$0:Lcom/android/keyguard/KeyguardStatusView;
 
     # invokes: Lcom/android/keyguard/KeyguardStatusView;->refresh()V
     invoke-static {v0}, Lcom/android/keyguard/KeyguardStatusView;->access$000(Lcom/android/keyguard/KeyguardStatusView;)V
 
-    .line 64
     iget-object v0, p0, Lcom/android/keyguard/KeyguardStatusView$1;->this$0:Lcom/android/keyguard/KeyguardStatusView;
 
     # invokes: Lcom/android/keyguard/KeyguardStatusView;->updateOwnerInfo()V
     invoke-static {v0}, Lcom/android/keyguard/KeyguardStatusView;->access$100(Lcom/android/keyguard/KeyguardStatusView;)V
 
-    .line 66
     :cond_0
     return-void
 .end method
@@ -63,7 +58,6 @@
     .param p1, "why"    # I
 
     .prologue
-    .line 75
     iget-object v0, p0, Lcom/android/keyguard/KeyguardStatusView$1;->this$0:Lcom/android/keyguard/KeyguardStatusView;
 
     const/4 v1, 0x0
@@ -71,7 +65,6 @@
     # invokes: Lcom/android/keyguard/KeyguardStatusView;->setEnableMarquee(Z)V
     invoke-static {v0, v1}, Lcom/android/keyguard/KeyguardStatusView;->access$200(Lcom/android/keyguard/KeyguardStatusView;Z)V
 
-    .line 76
     return-void
 .end method
 
@@ -79,7 +72,6 @@
     .locals 2
 
     .prologue
-    .line 70
     iget-object v0, p0, Lcom/android/keyguard/KeyguardStatusView$1;->this$0:Lcom/android/keyguard/KeyguardStatusView;
 
     const/4 v1, 0x1
@@ -87,7 +79,6 @@
     # invokes: Lcom/android/keyguard/KeyguardStatusView;->setEnableMarquee(Z)V
     invoke-static {v0, v1}, Lcom/android/keyguard/KeyguardStatusView;->access$200(Lcom/android/keyguard/KeyguardStatusView;Z)V
 
-    .line 71
     return-void
 .end method
 
@@ -95,13 +86,11 @@
     .locals 1
 
     .prologue
-    .line 56
     iget-object v0, p0, Lcom/android/keyguard/KeyguardStatusView$1;->this$0:Lcom/android/keyguard/KeyguardStatusView;
 
     # invokes: Lcom/android/keyguard/KeyguardStatusView;->refresh()V
     invoke-static {v0}, Lcom/android/keyguard/KeyguardStatusView;->access$000(Lcom/android/keyguard/KeyguardStatusView;)V
 
-    .line 57
     return-void
 .end method
 
@@ -110,18 +99,15 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 80
     iget-object v0, p0, Lcom/android/keyguard/KeyguardStatusView$1;->this$0:Lcom/android/keyguard/KeyguardStatusView;
 
     # invokes: Lcom/android/keyguard/KeyguardStatusView;->refresh()V
     invoke-static {v0}, Lcom/android/keyguard/KeyguardStatusView;->access$000(Lcom/android/keyguard/KeyguardStatusView;)V
 
-    .line 81
     iget-object v0, p0, Lcom/android/keyguard/KeyguardStatusView$1;->this$0:Lcom/android/keyguard/KeyguardStatusView;
 
     # invokes: Lcom/android/keyguard/KeyguardStatusView;->updateOwnerInfo()V
     invoke-static {v0}, Lcom/android/keyguard/KeyguardStatusView;->access$100(Lcom/android/keyguard/KeyguardStatusView;)V
 
-    .line 82
     return-void
 .end method

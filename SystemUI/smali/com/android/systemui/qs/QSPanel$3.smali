@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 283
     iput-object p1, p0, Lcom/android/systemui/qs/QSPanel$3;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     iput-object p2, p0, Lcom/android/systemui/qs/QSPanel$3;->val$r:Lcom/android/systemui/qs/QSPanel$TileRecord;
@@ -45,13 +44,11 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 286
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$3;->val$r:Lcom/android/systemui/qs/QSPanel$TileRecord;
 
     iget-object v0, v0, Lcom/android/systemui/qs/QSPanel$TileRecord;->tile:Lcom/android/systemui/qs/QSTile;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/QSTile;->click()V
 
-    .line 287
     return-void
 .end method

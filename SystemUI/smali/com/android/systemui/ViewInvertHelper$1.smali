@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 54
     iput-object p1, p0, Lcom/android/systemui/ViewInvertHelper$1;->this$0:Lcom/android/systemui/ViewInvertHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 57
     iget-object v1, p0, Lcom/android/systemui/ViewInvertHelper$1;->this$0:Lcom/android/systemui/ViewInvertHelper;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -57,7 +55,6 @@
     # invokes: Lcom/android/systemui/ViewInvertHelper;->updateInvertPaint(F)V
     invoke-static {v1, v0}, Lcom/android/systemui/ViewInvertHelper;->access$000(Lcom/android/systemui/ViewInvertHelper;F)V
 
-    .line 58
     iget-object v0, p0, Lcom/android/systemui/ViewInvertHelper$1;->this$0:Lcom/android/systemui/ViewInvertHelper;
 
     # getter for: Lcom/android/systemui/ViewInvertHelper;->mTarget:Landroid/view/View;
@@ -76,6 +73,5 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 59
     return-void
 .end method

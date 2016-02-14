@@ -23,17 +23,14 @@
     .locals 1
 
     .prologue
-    .line 223
     iput-object p1, p0, Lcom/android/systemui/qs/QSDetailItems$H;->this$0:Lcom/android/systemui/qs/QSDetailItems;
 
-    .line 224
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 225
     return-void
 .end method
 
@@ -46,12 +43,10 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 229
     iget v1, p1, Landroid/os/Message;->what:I
 
     if-ne v1, v0, :cond_1
 
-    .line 230
     iget-object v1, p0, Lcom/android/systemui/qs/QSDetailItems$H;->this$0:Lcom/android/systemui/qs/QSDetailItems;
 
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -63,12 +58,10 @@
     # invokes: Lcom/android/systemui/qs/QSDetailItems;->handleSetItems([Lcom/android/systemui/qs/QSDetailItems$Item;)V
     invoke-static {v1, v0}, Lcom/android/systemui/qs/QSDetailItems;->access$100(Lcom/android/systemui/qs/QSDetailItems;[Lcom/android/systemui/qs/QSDetailItems$Item;)V
 
-    .line 236
     :cond_0
     :goto_0
     return-void
 
-    .line 231
     :cond_1
     iget v1, p1, Landroid/os/Message;->what:I
 
@@ -76,7 +69,6 @@
 
     if-ne v1, v2, :cond_2
 
-    .line 232
     iget-object v1, p0, Lcom/android/systemui/qs/QSDetailItems$H;->this$0:Lcom/android/systemui/qs/QSDetailItems;
 
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -88,7 +80,6 @@
 
     goto :goto_0
 
-    .line 233
     :cond_2
     iget v1, p1, Landroid/os/Message;->what:I
 
@@ -96,7 +87,6 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 234
     iget-object v1, p0, Lcom/android/systemui/qs/QSDetailItems$H;->this$0:Lcom/android/systemui/qs/QSDetailItems;
 
     iget v2, p1, Landroid/os/Message;->arg1:I

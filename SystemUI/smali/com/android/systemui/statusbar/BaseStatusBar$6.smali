@@ -34,7 +34,6 @@
     .locals 0
 
     .prologue
-    .line 743
     iput-object p1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$6;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$6;->val$_pkg:Ljava/lang/String;
@@ -57,7 +56,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 746
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$6;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/BaseStatusBar;->mContext:Landroid/content/Context;
@@ -70,7 +68,6 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->announceForAccessibility(Ljava/lang/CharSequence;)V
 
-    .line 749
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$6;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
@@ -88,11 +85,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 754
     :goto_0
     return-void
 
-    .line 751
     :catch_0
     move-exception v0
 

@@ -51,34 +51,25 @@
     .param p16, "motoActivityDescriptionLookup"    # [I
 
     .prologue
-    .line 4073
     invoke-direct/range {p0 .. p9}, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaIconGroup;-><init>(Ljava/lang/String;[[I[[I[IIIIII)V
 
-    .line 4086
     iput-boolean p10, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiIconGroup;->mIsMotoUI:Z
 
-    .line 4088
     iput-object p12, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiIconGroup;->mQSSignalLookup:[I
 
-    .line 4089
     iput-object p11, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiIconGroup;->mSBSignalLookup:[I
 
-    .line 4090
     iput-object p13, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiIconGroup;->mSignalDescriptionLookup:[I
 
-    .line 4091
     move-object/from16 v0, p15
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiIconGroup;->mQSActivityLookup:[I
 
-    .line 4092
     iput-object p14, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiIconGroup;->mSBActivityLookup:[I
 
-    .line 4093
     move-object/from16 v0, p16
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiIconGroup;->mActivityDescriptionLookup:[I
 
-    .line 4094
     return-void
 .end method

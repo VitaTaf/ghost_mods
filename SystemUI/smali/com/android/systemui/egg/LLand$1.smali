@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 334
     iput-object p1, p0, Lcom/android/systemui/egg/LLand$1;->this$0:Lcom/android/systemui/egg/LLand;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,12 +42,10 @@
     .param p4, "dt"    # J
 
     .prologue
-    .line 337
     iget-object v0, p0, Lcom/android/systemui/egg/LLand$1;->this$0:Lcom/android/systemui/egg/LLand;
 
     # invokes: Lcom/android/systemui/egg/LLand;->step(JJ)V
     invoke-static {v0, p2, p3, p4, p5}, Lcom/android/systemui/egg/LLand;->access$000(Lcom/android/systemui/egg/LLand;JJ)V
 
-    .line 338
     return-void
 .end method

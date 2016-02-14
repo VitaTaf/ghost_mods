@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 352
     iput-object p1, p0, Lcom/android/keyguard/PasswordTextView$CharState$1;->this$1:Lcom/android/keyguard/PasswordTextView$CharState;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -40,12 +39,10 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 356
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/keyguard/PasswordTextView$CharState$1;->mCancelled:Z
 
-    .line 357
     return-void
 .end method
 
@@ -54,12 +51,10 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 361
     iget-boolean v0, p0, Lcom/android/keyguard/PasswordTextView$CharState$1;->mCancelled:Z
 
     if-nez v0, :cond_0
 
-    .line 362
     iget-object v0, p0, Lcom/android/keyguard/PasswordTextView$CharState$1;->this$1:Lcom/android/keyguard/PasswordTextView$CharState;
 
     iget-object v0, v0, Lcom/android/keyguard/PasswordTextView$CharState;->this$0:Lcom/android/keyguard/PasswordTextView;
@@ -73,7 +68,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 363
     iget-object v0, p0, Lcom/android/keyguard/PasswordTextView$CharState$1;->this$1:Lcom/android/keyguard/PasswordTextView$CharState;
 
     iget-object v0, v0, Lcom/android/keyguard/PasswordTextView$CharState;->this$0:Lcom/android/keyguard/PasswordTextView;
@@ -87,12 +81,10 @@
 
     invoke-virtual {v0, v1}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 364
     iget-object v0, p0, Lcom/android/keyguard/PasswordTextView$CharState$1;->this$1:Lcom/android/keyguard/PasswordTextView$CharState;
 
     invoke-virtual {v0}, Lcom/android/keyguard/PasswordTextView$CharState;->reset()V
 
-    .line 365
     iget-object v0, p0, Lcom/android/keyguard/PasswordTextView$CharState$1;->this$1:Lcom/android/keyguard/PasswordTextView$CharState;
 
     iget-object v1, p0, Lcom/android/keyguard/PasswordTextView$CharState$1;->this$1:Lcom/android/keyguard/PasswordTextView$CharState;
@@ -102,14 +94,12 @@
     # invokes: Lcom/android/keyguard/PasswordTextView$CharState;->cancelAnimator(Landroid/animation/Animator;)V
     invoke-static {v0, v1}, Lcom/android/keyguard/PasswordTextView$CharState;->access$400(Lcom/android/keyguard/PasswordTextView$CharState;Landroid/animation/Animator;)V
 
-    .line 366
     iget-object v0, p0, Lcom/android/keyguard/PasswordTextView$CharState$1;->this$1:Lcom/android/keyguard/PasswordTextView$CharState;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Lcom/android/keyguard/PasswordTextView$CharState;->textTranslateAnimator:Landroid/animation/ValueAnimator;
 
-    .line 368
     :cond_0
     return-void
 .end method
@@ -119,11 +109,9 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 372
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/keyguard/PasswordTextView$CharState$1;->mCancelled:Z
 
-    .line 373
     return-void
 .end method

@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 418
     iput-object p1, p0, Lcom/android/systemui/power/PowerNotificationWarnings$2;->this$0:Lcom/android/systemui/power/PowerNotificationWarnings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,13 +41,11 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 421
     new-instance v0, Lcom/android/systemui/power/PowerNotificationWarnings$2$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/power/PowerNotificationWarnings$2$1;-><init>(Lcom/android/systemui/power/PowerNotificationWarnings$2;)V
 
     invoke-static {v0}, Landroid/os/AsyncTask;->execute(Ljava/lang/Runnable;)V
 
-    .line 427
     return-void
 .end method

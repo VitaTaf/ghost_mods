@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 66
     iput-object p1, p0, Lcom/android/keyguard/KeyguardSimpleHostView$1;->this$0:Lcom/android/keyguard/KeyguardSimpleHostView;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -38,7 +37,6 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 74
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimpleHostView$1;->this$0:Lcom/android/keyguard/KeyguardSimpleHostView;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardSimpleHostView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
@@ -49,12 +47,10 @@
 
     if-eq p1, v0, :cond_1
 
-    .line 82
     :cond_0
     :goto_0
     return-void
 
-    .line 75
     :cond_1
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimpleHostView$1;->this$0:Lcom/android/keyguard/KeyguardSimpleHostView;
 
@@ -64,7 +60,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 77
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimpleHostView$1;->this$0:Lcom/android/keyguard/KeyguardSimpleHostView;
 
     # invokes: Lcom/android/keyguard/KeyguardSimpleHostView;->isVisibleToUser()Z
@@ -74,7 +69,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 78
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimpleHostView$1;->this$0:Lcom/android/keyguard/KeyguardSimpleHostView;
 
     const/4 v1, 0x0
@@ -83,7 +77,6 @@
 
     goto :goto_0
 
-    .line 80
     :cond_2
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimpleHostView$1;->this$0:Lcom/android/keyguard/KeyguardSimpleHostView;
 
@@ -99,7 +92,6 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 69
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimpleHostView$1;->this$0:Lcom/android/keyguard/KeyguardSimpleHostView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardSimpleHostView;->getSecurityContainer()Lcom/android/keyguard/KeyguardSecurityContainer;
@@ -110,6 +102,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardSecurityContainer;->showPrimarySecurityScreen(Z)V
 
-    .line 70
     return-void
 .end method

@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 43
     iput-object p1, p0, Lcom/android/keyguard/EmergencyButton$1;->this$0:Lcom/android/keyguard/EmergencyButton;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -38,13 +37,11 @@
     .param p1, "phoneState"    # I
 
     .prologue
-    .line 52
     iget-object v0, p0, Lcom/android/keyguard/EmergencyButton$1;->this$0:Lcom/android/keyguard/EmergencyButton;
 
     # invokes: Lcom/android/keyguard/EmergencyButton;->updateEmergencyCallButton()V
     invoke-static {v0}, Lcom/android/keyguard/EmergencyButton;->access$000(Lcom/android/keyguard/EmergencyButton;)V
 
-    .line 53
     return-void
 .end method
 
@@ -55,12 +52,10 @@
     .param p3, "simState"    # Lcom/android/internal/telephony/IccCardConstants$State;
 
     .prologue
-    .line 47
     iget-object v0, p0, Lcom/android/keyguard/EmergencyButton$1;->this$0:Lcom/android/keyguard/EmergencyButton;
 
     # invokes: Lcom/android/keyguard/EmergencyButton;->updateEmergencyCallButton()V
     invoke-static {v0}, Lcom/android/keyguard/EmergencyButton;->access$000(Lcom/android/keyguard/EmergencyButton;)V
 
-    .line 48
     return-void
 .end method

@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 776
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel$9;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;-><init>()V
@@ -38,7 +37,6 @@
     .param p1, "conditions"    # [Landroid/service/notification/Condition;
 
     .prologue
-    .line 779
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$9;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mHandler:Lcom/android/systemui/volume/ZenModePanel$H;
@@ -54,7 +52,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 780
     return-void
 .end method
 
@@ -63,7 +60,6 @@
     .param p1, "rule"    # Landroid/service/notification/ZenModeConfig$ZenRule;
 
     .prologue
-    .line 784
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$9;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mHandler:Lcom/android/systemui/volume/ZenModePanel$H;
@@ -79,6 +75,5 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 785
     return-void
 .end method

@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 3924
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$43;->val$intent:Landroid/content/Intent;
@@ -44,7 +43,6 @@
     .locals 3
 
     .prologue
-    .line 3927
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$43;->val$intent:Landroid/content/Intent;
@@ -54,6 +52,5 @@
     # invokes: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->handleStartSettingsActivity(Landroid/content/Intent;Z)V
     invoke-static {v0, v1, v2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$8100(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Landroid/content/Intent;Z)V
 
-    .line 3928
     return-void
 .end method

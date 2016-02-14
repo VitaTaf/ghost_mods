@@ -24,7 +24,6 @@
     .param p2, "x0"    # Landroid/os/Handler;
 
     .prologue
-    .line 259
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView$2;->this$0:Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -41,7 +40,6 @@
     .prologue
     const/4 v3, -0x1
 
-    .line 262
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView$2;->this$0:Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView;
 
     # getter for: Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView;->mContext:Landroid/content/Context;
@@ -59,7 +57,6 @@
 
     move-result v0
 
-    .line 264
     .local v0, "packageSnoozeLengthMs":I
     if-le v0, v3, :cond_0
 
@@ -72,13 +69,11 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 265
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView$2;->this$0:Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView;
 
     # setter for: Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView;->mSnoozeLengthMs:I
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView;->access$102(Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView;I)I
 
-    .line 268
     :cond_0
     return-void
 .end method

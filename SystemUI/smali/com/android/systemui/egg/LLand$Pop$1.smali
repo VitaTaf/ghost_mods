@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 868
     iput-object p1, p0, Lcom/android/systemui/egg/LLand$Pop$1;->this$1:Lcom/android/systemui/egg/LLand$Pop;
 
     iput-object p2, p0, Lcom/android/systemui/egg/LLand$Pop$1;->val$this$0:Lcom/android/systemui/egg/LLand;
@@ -43,7 +42,6 @@
     .param p2, "outline"    # Landroid/graphics/Outline;
 
     .prologue
-    .line 871
     iget-object v1, p0, Lcom/android/systemui/egg/LLand$Pop$1;->this$1:Lcom/android/systemui/egg/LLand$Pop;
 
     invoke-virtual {v1}, Lcom/android/systemui/egg/LLand$Pop;->getWidth()I
@@ -58,7 +56,6 @@
 
     float-to-int v0, v1
 
-    .line 872
     .local v0, "pad":I
     iget-object v1, p0, Lcom/android/systemui/egg/LLand$Pop$1;->this$1:Lcom/android/systemui/egg/LLand$Pop;
 
@@ -78,6 +75,5 @@
 
     invoke-virtual {p2, v0, v0, v1, v2}, Landroid/graphics/Outline;->setOval(IIII)V
 
-    .line 873
     return-void
 .end method

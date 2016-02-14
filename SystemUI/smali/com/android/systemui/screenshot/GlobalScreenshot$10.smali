@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 683
     iput-object p1, p0, Lcom/android/systemui/screenshot/GlobalScreenshot$10;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshot;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,12 +44,10 @@
 
     const v4, 0x3f5c4771
 
-    .line 686
     cmpg-float v1, p1, v4
 
     if-gez v1, :cond_0
 
-    .line 688
     const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
 
     div-float v1, p1, v4
@@ -69,7 +66,6 @@
 
     double-to-float v0, v0
 
-    .line 690
     :cond_0
     return v0
 .end method

@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 218
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$3;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 221
     # getter for: Lcom/android/systemui/statusbar/phone/DozeScrimController;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/phone/DozeScrimController;->access$200()Z
 
@@ -100,7 +98,6 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 223
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$3;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
@@ -111,11 +108,9 @@
 
     if-nez v0, :cond_1
 
-    .line 234
     :goto_0
     return-void
 
-    .line 224
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$3;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
@@ -126,7 +121,6 @@
 
     invoke-static {v0}, Lcom/android/systemui/doze/DozeLog;->tracePulseStart(I)V
 
-    .line 225
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$3;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
     # getter for: Lcom/android/systemui/statusbar/phone/DozeScrimController;->mPulseReason:I
@@ -140,7 +134,6 @@
 
     move v9, v1
 
-    .line 226
     .local v9, "pickup":Z
     :goto_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$3;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;
@@ -193,7 +186,6 @@
     # invokes: Lcom/android/systemui/statusbar/phone/DozeScrimController;->startScrimAnimation(ZFJLandroid/view/animation/Interpolator;JLjava/lang/Runnable;)V
     invoke-static/range {v0 .. v8}, Lcom/android/systemui/statusbar/phone/DozeScrimController;->access$900(Lcom/android/systemui/statusbar/phone/DozeScrimController;ZFJLandroid/view/animation/Interpolator;JLjava/lang/Runnable;)V
 
-    .line 233
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$3;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
     # invokes: Lcom/android/systemui/statusbar/phone/DozeScrimController;->pulseStarted()V
@@ -201,14 +193,12 @@
 
     goto :goto_0
 
-    .line 225
     .end local v9    # "pickup":Z
     :cond_2
     const/4 v9, 0x0
 
     goto :goto_1
 
-    .line 226
     .restart local v9    # "pickup":Z
     :cond_3
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$3;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;

@@ -9,7 +9,6 @@
     .param p0, "ctx"    # Landroid/content/Context;
 
     .prologue
-    .line 34
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -20,7 +19,6 @@
 
     move-result-object v0
 
-    .line 35
     .local v0, "tracker":Ljava/lang/String;
     const/4 v1, -0x1
 
@@ -34,7 +32,6 @@
     :goto_0
     packed-switch v1, :pswitch_data_0
 
-    .line 41
     new-instance v1, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -59,7 +56,6 @@
 
     throw v1
 
-    .line 35
     :sswitch_0
     const-string v2, "noisy"
 
@@ -86,13 +82,11 @@
 
     goto :goto_0
 
-    .line 37
     :pswitch_0
     invoke-static {}, Lcom/android/systemui/statusbar/phone/NoisyVelocityTracker;->obtain()Lcom/android/systemui/statusbar/phone/NoisyVelocityTracker;
 
     move-result-object v1
 
-    .line 39
     :goto_1
     return-object v1
 
@@ -103,7 +97,6 @@
 
     goto :goto_1
 
-    .line 35
     nop
 
     :sswitch_data_0

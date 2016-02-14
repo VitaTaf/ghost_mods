@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 101
     iput-object p1, p0, Lcom/android/keyguard/CameraWidgetFrame$5;->this$0:Lcom/android/keyguard/CameraWidgetFrame;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,12 +39,10 @@
     .locals 1
 
     .prologue
-    .line 104
     iget-object v0, p0, Lcom/android/keyguard/CameraWidgetFrame$5;->this$0:Lcom/android/keyguard/CameraWidgetFrame;
 
     # invokes: Lcom/android/keyguard/CameraWidgetFrame;->render()V
     invoke-static {v0}, Lcom/android/keyguard/CameraWidgetFrame;->access$800(Lcom/android/keyguard/CameraWidgetFrame;)V
 
-    .line 105
     return-void
 .end method

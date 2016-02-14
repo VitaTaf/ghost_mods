@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 142
     iput-object p1, p0, Lcom/android/systemui/settings/ToggleSlider$2;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +42,6 @@
     .param p3, "fromUser"    # Z
 
     .prologue
-    .line 145
     iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider$2;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # getter for: Lcom/android/systemui/settings/ToggleSlider;->mListener:Lcom/android/systemui/settings/ToggleSlider$Listener;
@@ -53,7 +51,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 146
     iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider$2;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # getter for: Lcom/android/systemui/settings/ToggleSlider;->mListener:Lcom/android/systemui/settings/ToggleSlider$Listener;
@@ -83,7 +80,6 @@
 
     invoke-interface {v0, v1, v2, v3, p2}, Lcom/android/systemui/settings/ToggleSlider$Listener;->onChanged(Lcom/android/systemui/settings/ToggleSlider;ZZI)V
 
-    .line 150
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider$2;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
@@ -94,7 +90,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 151
     iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider$2;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # getter for: Lcom/android/systemui/settings/ToggleSlider;->mMirror:Lcom/android/systemui/settings/ToggleSlider;
@@ -104,7 +99,6 @@
 
     invoke-virtual {v0, p2}, Lcom/android/systemui/settings/ToggleSlider;->setValue(I)V
 
-    .line 153
     :cond_1
     return-void
 .end method
@@ -116,13 +110,11 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 157
     iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider$2;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # setter for: Lcom/android/systemui/settings/ToggleSlider;->mTracking:Z
     invoke-static {v0, v5}, Lcom/android/systemui/settings/ToggleSlider;->access$202(Lcom/android/systemui/settings/ToggleSlider;Z)Z
 
-    .line 159
     iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider$2;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # getter for: Lcom/android/systemui/settings/ToggleSlider;->mListener:Lcom/android/systemui/settings/ToggleSlider$Listener;
@@ -132,7 +124,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 160
     iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider$2;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # getter for: Lcom/android/systemui/settings/ToggleSlider;->mListener:Lcom/android/systemui/settings/ToggleSlider$Listener;
@@ -173,7 +164,6 @@
 
     invoke-interface {v0, v1, v2, v3, v4}, Lcom/android/systemui/settings/ToggleSlider$Listener;->onChanged(Lcom/android/systemui/settings/ToggleSlider;ZZI)V
 
-    .line 164
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider$2;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
@@ -186,7 +176,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/CompoundButton;->setChecked(Z)V
 
-    .line 166
     iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider$2;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # getter for: Lcom/android/systemui/settings/ToggleSlider;->mMirror:Lcom/android/systemui/settings/ToggleSlider;
@@ -196,7 +185,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 167
     iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider$2;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # getter for: Lcom/android/systemui/settings/ToggleSlider;->mMirror:Lcom/android/systemui/settings/ToggleSlider;
@@ -211,7 +199,6 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/SeekBar;->setPressed(Z)V
 
-    .line 170
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider$2;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
@@ -222,7 +209,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 171
     iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider$2;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # getter for: Lcom/android/systemui/settings/ToggleSlider;->mMirrorController:Lcom/android/systemui/statusbar/policy/BrightnessMirrorController;
@@ -232,7 +218,6 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/BrightnessMirrorController;->showMirror()V
 
-    .line 172
     iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider$2;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # getter for: Lcom/android/systemui/settings/ToggleSlider;->mMirrorController:Lcom/android/systemui/statusbar/policy/BrightnessMirrorController;
@@ -250,7 +235,6 @@
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/policy/BrightnessMirrorController;->setLocation(Landroid/view/View;)V
 
-    .line 174
     :cond_2
     return-void
 .end method
@@ -262,13 +246,11 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 178
     iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider$2;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # setter for: Lcom/android/systemui/settings/ToggleSlider;->mTracking:Z
     invoke-static {v0, v5}, Lcom/android/systemui/settings/ToggleSlider;->access$202(Lcom/android/systemui/settings/ToggleSlider;Z)Z
 
-    .line 180
     iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider$2;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # getter for: Lcom/android/systemui/settings/ToggleSlider;->mListener:Lcom/android/systemui/settings/ToggleSlider$Listener;
@@ -278,7 +260,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 181
     iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider$2;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # getter for: Lcom/android/systemui/settings/ToggleSlider;->mListener:Lcom/android/systemui/settings/ToggleSlider$Listener;
@@ -319,7 +300,6 @@
 
     invoke-interface {v0, v1, v2, v3, v4}, Lcom/android/systemui/settings/ToggleSlider$Listener;->onChanged(Lcom/android/systemui/settings/ToggleSlider;ZZI)V
 
-    .line 185
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider$2;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
@@ -330,7 +310,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 186
     iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider$2;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # getter for: Lcom/android/systemui/settings/ToggleSlider;->mMirror:Lcom/android/systemui/settings/ToggleSlider;
@@ -345,7 +324,6 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/SeekBar;->setPressed(Z)V
 
-    .line 189
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider$2;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
@@ -356,7 +334,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 190
     iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider$2;->this$0:Lcom/android/systemui/settings/ToggleSlider;
 
     # getter for: Lcom/android/systemui/settings/ToggleSlider;->mMirrorController:Lcom/android/systemui/statusbar/policy/BrightnessMirrorController;
@@ -366,7 +343,6 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/BrightnessMirrorController;->hideMirror()V
 
-    .line 192
     :cond_2
     return-void
 .end method

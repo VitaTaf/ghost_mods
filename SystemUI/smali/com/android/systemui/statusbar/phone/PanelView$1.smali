@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 104
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PanelView$1;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 2
 
     .prologue
-    .line 107
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$1;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     const/4 v1, 0x0
@@ -48,12 +46,10 @@
     # setter for: Lcom/android/systemui/statusbar/phone/PanelView;->mPeekPending:Z
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/PanelView;->access$002(Lcom/android/systemui/statusbar/phone/PanelView;Z)Z
 
-    .line 108
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$1;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     # invokes: Lcom/android/systemui/statusbar/phone/PanelView;->runPeekAnimation()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/PanelView;->access$100(Lcom/android/systemui/statusbar/phone/PanelView;)V
 
-    .line 109
     return-void
 .end method

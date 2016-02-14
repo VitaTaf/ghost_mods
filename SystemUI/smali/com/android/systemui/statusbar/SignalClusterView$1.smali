@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 215
     iput-object p1, p0, Lcom/android/systemui/statusbar/SignalClusterView$1;->this$0:Lcom/android/systemui/statusbar/SignalClusterView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 2
 
     .prologue
-    .line 219
     iget-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView$1;->this$0:Lcom/android/systemui/statusbar/SignalClusterView;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/SignalClusterView$1;->this$0:Lcom/android/systemui/statusbar/SignalClusterView;
@@ -54,12 +52,10 @@
     # setter for: Lcom/android/systemui/statusbar/SignalClusterView;->mVpnVisible:Z
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/SignalClusterView;->access$102(Lcom/android/systemui/statusbar/SignalClusterView;Z)Z
 
-    .line 220
     iget-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView$1;->this$0:Lcom/android/systemui/statusbar/SignalClusterView;
 
     # invokes: Lcom/android/systemui/statusbar/SignalClusterView;->apply()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/SignalClusterView;->access$200(Lcom/android/systemui/statusbar/SignalClusterView;)V
 
-    .line 221
     return-void
 .end method

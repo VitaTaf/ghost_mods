@@ -29,7 +29,6 @@
     .locals 0
 
     .prologue
-    .line 352
     iput-object p1, p0, Lcom/android/systemui/SwipeHelper$2;->this$0:Lcom/android/systemui/SwipeHelper;
 
     iput-object p2, p0, Lcom/android/systemui/SwipeHelper$2;->val$view:Landroid/view/View;
@@ -50,7 +49,6 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 354
     iget-object v0, p0, Lcom/android/systemui/SwipeHelper$2;->this$0:Lcom/android/systemui/SwipeHelper;
 
     # getter for: Lcom/android/systemui/SwipeHelper;->mCallback:Lcom/android/systemui/SwipeHelper$Callback;
@@ -62,17 +60,14 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/SwipeHelper$Callback;->onChildDismissed(Landroid/view/View;)V
 
-    .line 355
     iget-object v0, p0, Lcom/android/systemui/SwipeHelper$2;->val$endAction:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 356
     iget-object v0, p0, Lcom/android/systemui/SwipeHelper$2;->val$endAction:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 358
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/SwipeHelper$2;->val$animView:Landroid/view/View;
 
@@ -82,6 +77,5 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 359
     return-void
 .end method

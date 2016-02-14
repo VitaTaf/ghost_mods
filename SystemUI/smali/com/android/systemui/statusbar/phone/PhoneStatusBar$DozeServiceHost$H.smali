@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 4820
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost$H;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -37,7 +36,6 @@
     .param p2, "x1"    # Lcom/android/systemui/statusbar/phone/PhoneStatusBar$1;
 
     .prologue
-    .line 4820
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost$H;-><init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;)V
 
     return-void
@@ -50,16 +48,13 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 4827
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 4838
     :goto_0
     return-void
 
-    .line 4829
     :pswitch_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost$H;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;
 
@@ -72,7 +67,6 @@
 
     goto :goto_0
 
-    .line 4832
     :pswitch_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost$H;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;
 
@@ -87,7 +81,6 @@
 
     goto :goto_0
 
-    .line 4835
     :pswitch_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost$H;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;
 
@@ -96,7 +89,6 @@
 
     goto :goto_0
 
-    .line 4827
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

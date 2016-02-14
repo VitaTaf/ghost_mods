@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 114
     iput-object p1, p0, Lcom/android/keyguard/CameraWidgetFrame$7;->this$0:Lcom/android/keyguard/CameraWidgetFrame;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -40,20 +39,16 @@
     .param p1, "showing"    # Z
 
     .prologue
-    .line 119
     iget-boolean v0, p0, Lcom/android/keyguard/CameraWidgetFrame$7;->mShowing:Z
 
     if-ne v0, p1, :cond_0
 
-    .line 123
     :goto_0
     return-void
 
-    .line 121
     :cond_0
     iput-boolean p1, p0, Lcom/android/keyguard/CameraWidgetFrame$7;->mShowing:Z
 
-    .line 122
     iget-object v0, p0, Lcom/android/keyguard/CameraWidgetFrame$7;->this$0:Lcom/android/keyguard/CameraWidgetFrame;
 
     iget-boolean v1, p0, Lcom/android/keyguard/CameraWidgetFrame$7;->mShowing:Z

@@ -24,13 +24,10 @@
     .param p1, "bytes"    # [B
 
     .prologue
-    .line 148
     invoke-direct {p0}, Lcom/android/systemui/qs/QSTile$Icon;-><init>()V
 
-    .line 149
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/IntentTile$BytesIcon;->mBytes:[B
 
-    .line 150
     return-void
 .end method
 
@@ -41,7 +38,6 @@
     .param p1, "o"    # Ljava/lang/Object;
 
     .prologue
-    .line 160
     instance-of v0, p1, Lcom/android/systemui/qs/tiles/IntentTile$BytesIcon;
 
     if-eqz v0, :cond_0
@@ -75,7 +71,6 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 154
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/IntentTile$BytesIcon;->mBytes:[B
 
     const/4 v2, 0x0
@@ -88,7 +83,6 @@
 
     move-result-object v0
 
-    .line 155
     .local v0, "b":Landroid/graphics/Bitmap;
     new-instance v1, Landroid/graphics/drawable/BitmapDrawable;
 
@@ -105,7 +99,6 @@
     .locals 4
 
     .prologue
-    .line 165
     const-string v0, "BytesIcon[len=%s]"
 
     const/4 v1, 0x1

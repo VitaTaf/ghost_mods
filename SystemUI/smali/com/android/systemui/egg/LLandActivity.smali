@@ -12,7 +12,6 @@
     .locals 0
 
     .prologue
-    .line 26
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
     return-void
@@ -25,15 +24,12 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 31
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 32
     const v0, 0x7f040022
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/egg/LLandActivity;->setContentView(I)V
 
-    .line 33
     const v0, 0x7f0f00a0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/egg/LLandActivity;->findViewById(I)Landroid/view/View;
@@ -44,7 +40,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/egg/LLandActivity;->mLand:Lcom/android/systemui/egg/LLand;
 
-    .line 34
     iget-object v1, p0, Lcom/android/systemui/egg/LLandActivity;->mLand:Lcom/android/systemui/egg/LLand;
 
     const v0, 0x7f0f00a1
@@ -57,7 +52,6 @@
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/egg/LLand;->setScoreField(Landroid/widget/TextView;)V
 
-    .line 35
     iget-object v0, p0, Lcom/android/systemui/egg/LLandActivity;->mLand:Lcom/android/systemui/egg/LLand;
 
     const v1, 0x7f0f00a2
@@ -68,7 +62,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/egg/LLand;->setSplash(Landroid/view/View;)V
 
-    .line 37
     return-void
 .end method
 
@@ -76,14 +69,11 @@
     .locals 1
 
     .prologue
-    .line 41
     iget-object v0, p0, Lcom/android/systemui/egg/LLandActivity;->mLand:Lcom/android/systemui/egg/LLand;
 
     invoke-virtual {v0}, Lcom/android/systemui/egg/LLand;->stop()V
 
-    .line 42
     invoke-super {p0}, Landroid/app/Activity;->onPause()V
 
-    .line 43
     return-void
 .end method

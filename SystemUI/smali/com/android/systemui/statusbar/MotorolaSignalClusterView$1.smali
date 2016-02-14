@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 227
     iput-object p1, p0, Lcom/android/systemui/statusbar/MotorolaSignalClusterView$1;->this$0:Lcom/android/systemui/statusbar/MotorolaSignalClusterView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 2
 
     .prologue
-    .line 231
     iget-object v0, p0, Lcom/android/systemui/statusbar/MotorolaSignalClusterView$1;->this$0:Lcom/android/systemui/statusbar/MotorolaSignalClusterView;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/MotorolaSignalClusterView$1;->this$0:Lcom/android/systemui/statusbar/MotorolaSignalClusterView;
@@ -54,12 +52,10 @@
     # setter for: Lcom/android/systemui/statusbar/MotorolaSignalClusterView;->mVpnVisible:Z
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/MotorolaSignalClusterView;->access$102(Lcom/android/systemui/statusbar/MotorolaSignalClusterView;Z)Z
 
-    .line 232
     iget-object v0, p0, Lcom/android/systemui/statusbar/MotorolaSignalClusterView$1;->this$0:Lcom/android/systemui/statusbar/MotorolaSignalClusterView;
 
     # invokes: Lcom/android/systemui/statusbar/MotorolaSignalClusterView;->apply()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/MotorolaSignalClusterView;->access$200(Lcom/android/systemui/statusbar/MotorolaSignalClusterView;)V
 
-    .line 233
     return-void
 .end method

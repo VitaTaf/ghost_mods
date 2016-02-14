@@ -24,13 +24,10 @@
     .param p1, "controller"    # Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     .prologue
-    .line 370
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    .line 371
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$BaseUserAdapter;->mController:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
-    .line 372
     # getter for: Lcom/android/systemui/statusbar/policy/UserSwitcherController;->mAdapters:Ljava/util/ArrayList;
     invoke-static {p1}, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->access$900(Lcom/android/systemui/statusbar/policy/UserSwitcherController;)Ljava/util/ArrayList;
 
@@ -42,7 +39,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 373
     return-void
 .end method
 
@@ -52,7 +48,6 @@
     .locals 5
 
     .prologue
-    .line 377
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$BaseUserAdapter;->mController:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     # getter for: Lcom/android/systemui/statusbar/policy/UserSwitcherController;->mKeyguardMonitor:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
@@ -81,12 +76,10 @@
 
     const/4 v3, 0x1
 
-    .line 379
     .local v3, "secureKeyguardShowing":Z
     :goto_0
     if-nez v3, :cond_2
 
-    .line 380
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$BaseUserAdapter;->mController:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     # getter for: Lcom/android/systemui/statusbar/policy/UserSwitcherController;->mUsers:Ljava/util/ArrayList;
@@ -98,18 +91,15 @@
 
     move-result v1
 
-    .line 392
     :cond_0
     return v1
 
-    .line 377
     .end local v3    # "secureKeyguardShowing":Z
     :cond_1
     const/4 v3, 0x0
 
     goto :goto_0
 
-    .line 383
     .restart local v3    # "secureKeyguardShowing":Z
     :cond_2
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$BaseUserAdapter;->mController:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
@@ -123,11 +113,9 @@
 
     move-result v0
 
-    .line 384
     .local v0, "N":I
     const/4 v1, 0x0
 
-    .line 385
     .local v1, "count":I
     const/4 v2, 0x0
 
@@ -135,7 +123,6 @@
     :goto_1
     if-ge v2, v0, :cond_0
 
-    .line 386
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$BaseUserAdapter;->mController:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     # getter for: Lcom/android/systemui/statusbar/policy/UserSwitcherController;->mUsers:Ljava/util/ArrayList;
@@ -153,10 +140,8 @@
 
     if-nez v4, :cond_0
 
-    .line 389
     add-int/lit8 v1, v1, 0x1
 
-    .line 385
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
@@ -168,19 +153,16 @@
     .param p2, "item"    # Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
 
     .prologue
-    .line 425
     iget-boolean v0, p2, Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;->isAddUser:Z
 
     if-eqz v0, :cond_0
 
-    .line 426
     const v0, 0x7f02001e
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 428
     :goto_0
     return-object v0
 
@@ -213,7 +195,6 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 397
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$BaseUserAdapter;->mController:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     # getter for: Lcom/android/systemui/statusbar/policy/UserSwitcherController;->mUsers:Ljava/util/ArrayList;
@@ -235,7 +216,6 @@
     .param p1, "x0"    # I
 
     .prologue
-    .line 366
     invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/policy/UserSwitcherController$BaseUserAdapter;->getItem(I)Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
 
     move-result-object v0
@@ -248,7 +228,6 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 402
     int-to-long v0, p1
 
     return-wide v0
@@ -260,28 +239,23 @@
     .param p2, "item"    # Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
 
     .prologue
-    .line 410
     iget-boolean v0, p2, Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;->isGuest:Z
 
     if-eqz v0, :cond_2
 
-    .line 411
     iget-boolean v0, p2, Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;->isCurrent:Z
 
     if-eqz v0, :cond_0
 
-    .line 412
     const v0, 0x7f0c0127
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 420
     :goto_0
     return-object v0
 
-    .line 414
     :cond_0
     iget-object v0, p2, Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;->info:Landroid/content/pm/UserInfo;
 
@@ -301,13 +275,11 @@
 
     goto :goto_1
 
-    .line 417
     :cond_2
     iget-boolean v0, p2, Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;->isAddUser:Z
 
     if-eqz v0, :cond_3
 
-    .line 418
     const v0, 0x7f0c0123
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -316,7 +288,6 @@
 
     goto :goto_0
 
-    .line 420
     :cond_3
     iget-object v0, p2, Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;->info:Landroid/content/pm/UserInfo;
 
@@ -329,7 +300,6 @@
     .locals 2
 
     .prologue
-    .line 433
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$BaseUserAdapter;->mController:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     const/16 v1, -0x2710
@@ -337,7 +307,6 @@
     # invokes: Lcom/android/systemui/statusbar/policy/UserSwitcherController;->refreshUsers(I)V
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->access$700(Lcom/android/systemui/statusbar/policy/UserSwitcherController;I)V
 
-    .line 434
     return-void
 .end method
 
@@ -346,11 +315,9 @@
     .param p1, "record"    # Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
 
     .prologue
-    .line 406
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$BaseUserAdapter;->mController:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->switchTo(Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;)V
 
-    .line 407
     return-void
 .end method

@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 162
     iput-object p1, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController$1;->this$0:Lcom/android/systemui/statusbar/KeyguardIndicationController;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -42,7 +41,6 @@
 
     const/4 v1, 0x0
 
-    .line 165
     iget v3, p1, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->status:I
 
     const/4 v4, 0x2
@@ -58,7 +56,6 @@
     :cond_0
     move v0, v2
 
-    .line 167
     .local v0, "isChargingOrFull":Z
     :goto_0
     iget-object v3, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController$1;->this$0:Lcom/android/systemui/statusbar/KeyguardIndicationController;
@@ -75,7 +72,6 @@
     # setter for: Lcom/android/systemui/statusbar/KeyguardIndicationController;->mPowerPluggedIn:Z
     invoke-static {v3, v2}, Lcom/android/systemui/statusbar/KeyguardIndicationController;->access$002(Lcom/android/systemui/statusbar/KeyguardIndicationController;Z)Z
 
-    .line 168
     iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController$1;->this$0:Lcom/android/systemui/statusbar/KeyguardIndicationController;
 
     invoke-virtual {p1}, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->isCharged()Z
@@ -85,26 +81,22 @@
     # setter for: Lcom/android/systemui/statusbar/KeyguardIndicationController;->mPowerCharged:Z
     invoke-static {v1, v2}, Lcom/android/systemui/statusbar/KeyguardIndicationController;->access$102(Lcom/android/systemui/statusbar/KeyguardIndicationController;Z)Z
 
-    .line 169
     iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController$1;->this$0:Lcom/android/systemui/statusbar/KeyguardIndicationController;
 
     # invokes: Lcom/android/systemui/statusbar/KeyguardIndicationController;->updateIndication()V
     invoke-static {v1}, Lcom/android/systemui/statusbar/KeyguardIndicationController;->access$200(Lcom/android/systemui/statusbar/KeyguardIndicationController;)V
 
-    .line 170
     return-void
 
     .end local v0    # "isChargingOrFull":Z
     :cond_1
     move v0, v1
 
-    .line 165
     goto :goto_0
 
     .restart local v0    # "isChargingOrFull":Z
     :cond_2
     move v2, v1
 
-    .line 167
     goto :goto_1
 .end method

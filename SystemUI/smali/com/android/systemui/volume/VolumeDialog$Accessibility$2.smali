@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 1065
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$Accessibility$2;->this$1:Lcom/android/systemui/volume/VolumeDialog$Accessibility;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +40,10 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 1068
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$Accessibility$2;->this$1:Lcom/android/systemui/volume/VolumeDialog$Accessibility;
 
     # invokes: Lcom/android/systemui/volume/VolumeDialog$Accessibility;->updateFeedbackEnabled()V
     invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialog$Accessibility;->access$5800(Lcom/android/systemui/volume/VolumeDialog$Accessibility;)V
 
-    .line 1069
     return-void
 .end method

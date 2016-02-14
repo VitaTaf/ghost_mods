@@ -65,7 +65,6 @@
     .locals 2
 
     .prologue
-    .line 64
     const-string v0, "AccessPointController"
 
     const/4 v1, 0x3
@@ -76,7 +75,6 @@
 
     sput-boolean v0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->DEBUG:Z
 
-    .line 70
     const/4 v0, 0x5
 
     new-array v0, v0, [I
@@ -102,17 +100,14 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 88
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 79
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mCallbacks:Ljava/util/ArrayList;
 
-    .line 82
     new-instance v0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl$Receiver;
 
     const/4 v1, 0x0
@@ -121,24 +116,20 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mReceiver:Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl$Receiver;
 
-    .line 237
     new-instance v0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl$1;-><init>(Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mConnectListener:Landroid/net/wifi/WifiManager$ActionListener;
 
-    .line 249
     new-instance v0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl$2;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl$2;-><init>(Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mByStrength:Ljava/util/Comparator;
 
-    .line 89
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mContext:Landroid/content/Context;
 
-    .line 90
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mContext:Landroid/content/Context;
 
     const-string v1, "wifi"
@@ -151,7 +142,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mWifiManager:Landroid/net/wifi/WifiManager;
 
-    .line 91
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mContext:Landroid/content/Context;
 
     const-string v1, "user"
@@ -164,14 +154,12 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mUserManager:Landroid/os/UserManager;
 
-    .line 92
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mCurrentUser:I
 
-    .line 93
     return-void
 .end method
 
@@ -179,7 +167,6 @@
     .locals 1
 
     .prologue
-    .line 62
     sget-boolean v0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->DEBUG:Z
 
     return v0
@@ -190,7 +177,6 @@
     .param p0, "x0"    # Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;
 
     .prologue
-    .line 62
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -201,7 +187,6 @@
     .param p0, "x0"    # Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;
 
     .prologue
-    .line 62
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->updateAccessPoints()V
 
     return-void
@@ -213,7 +198,6 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 62
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mScanning:Z
 
     return p1
@@ -224,7 +208,6 @@
     .param p1, "aps"    # [Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPoint;
 
     .prologue
-    .line 163
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -245,13 +228,11 @@
 
     check-cast v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPointCallback;
 
-    .line 164
     .local v0, "callback":Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPointCallback;
     invoke-interface {v0, p1}, Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPointCallback;->onAccessPointsChanged([Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPoint;)V
 
     goto :goto_0
 
-    .line 166
     .end local v0    # "callback":Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPointCallback;
     :cond_0
     return-void
@@ -262,7 +243,6 @@
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 157
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -283,13 +263,11 @@
 
     check-cast v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPointCallback;
 
-    .line 158
     .local v0, "callback":Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPointCallback;
     invoke-interface {v0, p1}, Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPointCallback;->onSettingsActivityTriggered(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 160
     .end local v0    # "callback":Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPointCallback;
     :cond_0
     return-void
@@ -309,14 +287,12 @@
     .end annotation
 
     .prologue
-    .line 178
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mWifiManager:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v4}, Landroid/net/wifi/WifiManager;->getConfiguredNetworks()Ljava/util/List;
 
     move-result-object v1
 
-    .line 179
     .local v1, "configs":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/WifiConfiguration;>;"
     if-eqz v1, :cond_0
 
@@ -329,17 +305,14 @@
     :cond_0
     sget-object v3, Landroid/util/ArrayMap;->EMPTY:Landroid/util/ArrayMap;
 
-    .line 184
     :cond_1
     return-object v3
 
-    .line 180
     :cond_2
     new-instance v3, Landroid/util/ArrayMap;
 
     invoke-direct {v3}, Landroid/util/ArrayMap;-><init>()V
 
-    .line 181
     .local v3, "rt":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/net/wifi/WifiConfiguration;>;"
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -359,7 +332,6 @@
 
     check-cast v0, Landroid/net/wifi/WifiConfiguration;
 
-    .line 182
     .local v0, "config":Landroid/net/wifi/WifiConfiguration;
     iget-object v4, v0, Landroid/net/wifi/WifiConfiguration;->SSID:Ljava/lang/String;
 
@@ -377,7 +349,6 @@
     .param p1, "wifiInfo"    # Landroid/net/wifi/WifiInfo;
 
     .prologue
-    .line 174
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Landroid/net/wifi/WifiInfo;->getNetworkId()I
@@ -400,7 +371,6 @@
     .prologue
     const/16 v2, 0x22
 
-    .line 169
     if-eqz p0, :cond_0
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -452,20 +422,17 @@
     .locals 15
 
     .prologue
-    .line 188
     iget-object v12, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mWifiManager:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v12}, Landroid/net/wifi/WifiManager;->getConnectionInfo()Landroid/net/wifi/WifiInfo;
 
     move-result-object v11
 
-    .line 189
     .local v11, "wifiInfo":Landroid/net/wifi/WifiInfo;
     invoke-direct {p0, v11}, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->getConnectedNetworkId(Landroid/net/wifi/WifiInfo;)I
 
     move-result v4
 
-    .line 190
     .local v4, "connectedNetworkId":I
     sget-boolean v12, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->DEBUG:Z
 
@@ -493,7 +460,6 @@
 
     invoke-static {v12, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 191
     :cond_0
     iget-object v12, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mWifiManager:Landroid/net/wifi/WifiManager;
 
@@ -501,21 +467,17 @@
 
     move-result-object v8
 
-    .line 193
     .local v8, "scanResults":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
     if-nez v8, :cond_1
 
-    .line 235
     :goto_0
     return-void
 
-    .line 195
     :cond_1
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->getConfiguredNetworksBySsid()Landroid/util/ArrayMap;
 
     move-result-object v3
 
-    .line 196
     .local v3, "configured":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/net/wifi/WifiConfiguration;>;"
     sget-boolean v12, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->DEBUG:Z
 
@@ -543,7 +505,6 @@
 
     invoke-static {v12, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 197
     :cond_2
     new-instance v1, Ljava/util/ArrayList;
 
@@ -553,13 +514,11 @@
 
     invoke-direct {v1, v12}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 198
     .local v1, "aps":Ljava/util/List;, "Ljava/util/List<Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPoint;>;"
     new-instance v10, Landroid/util/ArraySet;
 
     invoke-direct {v10}, Landroid/util/ArraySet;-><init>()V
 
-    .line 199
     .local v10, "ssids":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/String;>;"
     invoke-interface {v8}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -580,14 +539,11 @@
 
     check-cast v7, Landroid/net/wifi/ScanResult;
 
-    .line 200
     .local v7, "scanResult":Landroid/net/wifi/ScanResult;
     if-eqz v7, :cond_3
 
-    .line 203
     iget-object v9, v7, Landroid/net/wifi/ScanResult;->SSID:Ljava/lang/String;
 
-    .line 204
     .local v9, "ssid":Ljava/lang/String;
     invoke-static {v9}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -601,17 +557,14 @@
 
     if-nez v12, :cond_3
 
-    .line 205
     invoke-virtual {v10, v9}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 206
     invoke-virtual {v3, v9}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/net/wifi/WifiConfiguration;
 
-    .line 207
     .local v2, "config":Landroid/net/wifi/WifiConfiguration;
     iget v12, v7, Landroid/net/wifi/ScanResult;->level:I
 
@@ -623,13 +576,11 @@
 
     move-result v6
 
-    .line 208
     .local v6, "level":I
     new-instance v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPoint;
 
     invoke-direct {v0}, Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPoint;-><init>()V
 
-    .line 209
     .local v0, "ap":Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPoint;
     if-eqz v2, :cond_7
 
@@ -638,7 +589,6 @@
     :goto_2
     iput-boolean v12, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPoint;->isConfigured:Z
 
-    .line 210
     if-eqz v2, :cond_8
 
     iget v12, v2, Landroid/net/wifi/WifiConfiguration;->networkId:I
@@ -646,10 +596,8 @@
     :goto_3
     iput v12, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPoint;->networkId:I
 
-    .line 211
     iput-object v9, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPoint;->ssid:Ljava/lang/String;
 
-    .line 215
     iget v12, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPoint;->networkId:I
 
     const/4 v13, -0x1
@@ -691,7 +639,6 @@
     :goto_4
     iput-boolean v12, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPoint;->isConnected:Z
 
-    .line 219
     iget-boolean v12, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPoint;->isConnected:Z
 
     if-eqz v12, :cond_a
@@ -700,7 +647,6 @@
 
     if-eqz v12, :cond_a
 
-    .line 221
     iget-object v12, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mNetworkController:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;
 
     invoke-virtual {v12}, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->getConnectedWifiLevel()I
@@ -709,7 +655,6 @@
 
     iput v12, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPoint;->level:I
 
-    .line 225
     :goto_5
     sget-object v12, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->ICONS:[I
 
@@ -719,7 +664,6 @@
 
     iput v12, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPoint;->iconId:I
 
-    .line 228
     iget-object v12, v7, Landroid/net/wifi/ScanResult;->capabilities:Ljava/lang/String;
 
     const-string v13, "WEP"
@@ -756,42 +700,35 @@
     :goto_6
     iput-boolean v12, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPoint;->hasSecurity:Z
 
-    .line 231
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_1
 
-    .line 209
     :cond_7
     const/4 v12, 0x0
 
     goto :goto_2
 
-    .line 210
     :cond_8
     const/4 v12, -0x1
 
     goto :goto_3
 
-    .line 215
     :cond_9
     const/4 v12, 0x0
 
     goto :goto_4
 
-    .line 223
     :cond_a
     iput v6, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPoint;->level:I
 
     goto :goto_5
 
-    .line 228
     :cond_b
     const/4 v12, 0x0
 
     goto :goto_6
 
-    .line 233
     .end local v0    # "ap":Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPoint;
     .end local v2    # "config":Landroid/net/wifi/WifiConfiguration;
     .end local v6    # "level":I
@@ -802,7 +739,6 @@
 
     invoke-static {v1, v12}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 234
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v12
@@ -827,7 +763,6 @@
     .param p1, "callback"    # Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPointCallback;
 
     .prologue
-    .line 110
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mCallbacks:Ljava/util/ArrayList;
@@ -838,12 +773,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 114
     :cond_0
     :goto_0
     return-void
 
-    .line 111
     :cond_1
     sget-boolean v0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->DEBUG:Z
 
@@ -871,13 +804,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 112
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 113
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mReceiver:Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl$Receiver;
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mCallbacks:Ljava/util/ArrayList;
@@ -905,7 +836,6 @@
     .locals 4
 
     .prologue
-    .line 100
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mUserManager:Landroid/os/UserManager;
 
     const-string v1, "no_config_wifi"
@@ -940,14 +870,11 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 134
     if-nez p1, :cond_0
 
-    .line 153
     :goto_0
     return v2
 
-    .line 135
     :cond_0
     sget-boolean v3, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->DEBUG:Z
 
@@ -977,25 +904,21 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 136
     :cond_1
     iget v3, p1, Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPoint;->networkId:I
 
     if-gez v3, :cond_3
 
-    .line 138
     iget-boolean v3, p1, Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPoint;->hasSecurity:Z
 
     if-eqz v3, :cond_2
 
-    .line 139
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "android.settings.WIFI_SETTINGS"
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 140
     .local v1, "intent":Landroid/content/Intent;
     const-string v2, "wifi_start_connect_ssid"
 
@@ -1003,27 +926,22 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 141
     const/high16 v2, 0x10000000
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 142
     invoke-direct {p0, v1}, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->fireSettingsIntentCallback(Landroid/content/Intent;)V
 
-    .line 143
     const/4 v2, 0x1
 
     goto :goto_0
 
-    .line 145
     .end local v1    # "intent":Landroid/content/Intent;
     :cond_2
     new-instance v0, Landroid/net/wifi/WifiConfiguration;
 
     invoke-direct {v0}, Landroid/net/wifi/WifiConfiguration;-><init>()V
 
-    .line 146
     .local v0, "config":Landroid/net/wifi/WifiConfiguration;
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -1053,12 +971,10 @@
 
     iput-object v3, v0, Landroid/net/wifi/WifiConfiguration;->SSID:Ljava/lang/String;
 
-    .line 147
     iget-object v3, v0, Landroid/net/wifi/WifiConfiguration;->allowedKeyManagement:Ljava/util/BitSet;
 
     invoke-virtual {v3, v2}, Ljava/util/BitSet;->set(I)V
 
-    .line 148
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mWifiManager:Landroid/net/wifi/WifiManager;
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mConnectListener:Landroid/net/wifi/WifiManager$ActionListener;
@@ -1067,7 +983,6 @@
 
     goto :goto_0
 
-    .line 151
     .end local v0    # "config":Landroid/net/wifi/WifiConfiguration;
     :cond_3
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mWifiManager:Landroid/net/wifi/WifiManager;
@@ -1086,10 +1001,8 @@
     .param p1, "newUserId"    # I
 
     .prologue
-    .line 105
     iput p1, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mCurrentUser:I
 
-    .line 106
     return-void
 .end method
 
@@ -1098,14 +1011,11 @@
     .param p1, "callback"    # Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPointCallback;
 
     .prologue
-    .line 118
     if-nez p1, :cond_0
 
-    .line 122
     :goto_0
     return-void
 
-    .line 119
     :cond_0
     sget-boolean v0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->DEBUG:Z
 
@@ -1133,13 +1043,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 120
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 121
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mReceiver:Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl$Receiver;
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mCallbacks:Ljava/util/ArrayList;
@@ -1167,16 +1075,13 @@
     .locals 2
 
     .prologue
-    .line 126
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mScanning:Z
 
     if-eqz v0, :cond_0
 
-    .line 131
     :goto_0
     return-void
 
-    .line 127
     :cond_0
     sget-boolean v0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->DEBUG:Z
 
@@ -1188,7 +1093,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 128
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mWifiManager:Landroid/net/wifi/WifiManager;
 
@@ -1198,7 +1102,6 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mScanning:Z
 
-    .line 130
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->updateAccessPoints()V
 
     goto :goto_0
@@ -1209,9 +1112,7 @@
     .param p1, "networkController"    # Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;
 
     .prologue
-    .line 96
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;->mNetworkController:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;
 
-    .line 97
     return-void
 .end method

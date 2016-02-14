@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 754
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$10;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "isVertical"    # Z
 
     .prologue
-    .line 757
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$10;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mSearchPanelView:Lcom/android/systemui/SearchPanelView;
@@ -51,7 +49,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 758
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$10;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mSearchPanelView:Lcom/android/systemui/SearchPanelView;
@@ -61,7 +58,6 @@
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/SearchPanelView;->setHorizontal(Z)V
 
-    .line 760
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$10;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -74,10 +70,8 @@
     :goto_0
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->setQsScrimEnabled(Z)V
 
-    .line 761
     return-void
 
-    .line 760
     :cond_1
     const/4 v0, 0x0
 

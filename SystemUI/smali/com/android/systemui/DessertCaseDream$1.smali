@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 42
     iput-object p1, p0, Lcom/android/systemui/DessertCaseDream$1;->this$0:Lcom/android/systemui/DessertCaseDream;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 1
 
     .prologue
-    .line 44
     iget-object v0, p0, Lcom/android/systemui/DessertCaseDream$1;->this$0:Lcom/android/systemui/DessertCaseDream;
 
     # getter for: Lcom/android/systemui/DessertCaseDream;->mView:Lcom/android/systemui/DessertCaseView;
@@ -50,6 +48,5 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/DessertCaseView;->start()V
 
-    .line 45
     return-void
 .end method

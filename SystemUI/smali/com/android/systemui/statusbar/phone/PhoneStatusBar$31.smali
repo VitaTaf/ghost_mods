@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 2517
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$31;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$31;->val$v:Landroid/view/View;
@@ -44,13 +43,11 @@
     .locals 2
 
     .prologue
-    .line 2520
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$31;->val$v:Landroid/view/View;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2521
     return-void
 .end method

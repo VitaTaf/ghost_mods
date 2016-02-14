@@ -23,17 +23,14 @@
     .locals 1
 
     .prologue
-    .line 793
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel$H;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
-    .line 794
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 795
     return-void
 .end method
 
@@ -43,7 +40,6 @@
     .param p2, "x1"    # Lcom/android/systemui/volume/ZenModePanel$1;
 
     .prologue
-    .line 788
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/ZenModePanel$H;-><init>(Lcom/android/systemui/volume/ZenModePanel;)V
 
     return-void
@@ -56,16 +52,13 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 799
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 804
     :goto_0
     return-void
 
-    .line 800
     :pswitch_0
     iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel$H;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
@@ -80,7 +73,6 @@
 
     goto :goto_0
 
-    .line 801
     :pswitch_1
     iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel$H;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
@@ -93,7 +85,6 @@
 
     goto :goto_0
 
-    .line 802
     :pswitch_2
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$H;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
@@ -102,7 +93,6 @@
 
     goto :goto_0
 
-    .line 799
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

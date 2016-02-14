@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 138
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/IntentTile$1;->this$0:Lcom/android/systemui/qs/tiles/IntentTile;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 141
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/IntentTile$1;->this$0:Lcom/android/systemui/qs/tiles/IntentTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/IntentTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v0, p2}, Lcom/android/systemui/qs/tiles/IntentTile;->access$000(Lcom/android/systemui/qs/tiles/IntentTile;Ljava/lang/Object;)V
 
-    .line 142
     return-void
 .end method

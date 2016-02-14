@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 174
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$2;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
@@ -39,7 +38,6 @@
     .param p2, "outline"    # Landroid/graphics/Outline;
 
     .prologue
-    .line 177
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$2;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mClipBounds:Landroid/graphics/Rect;
@@ -49,6 +47,5 @@
 
     invoke-virtual {p2, v0}, Landroid/graphics/Outline;->setRect(Landroid/graphics/Rect;)V
 
-    .line 178
     return-void
 .end method

@@ -24,7 +24,6 @@
     .param p2, "x0"    # Landroid/os/Handler;
 
     .prologue
-    .line 73
     iput-object p1, p0, Lcom/android/systemui/power/PowerUI$1;->this$0:Lcom/android/systemui/power/PowerUI;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -39,11 +38,9 @@
     .param p1, "selfChange"    # Z
 
     .prologue
-    .line 76
     iget-object v0, p0, Lcom/android/systemui/power/PowerUI$1;->this$0:Lcom/android/systemui/power/PowerUI;
 
     invoke-virtual {v0}, Lcom/android/systemui/power/PowerUI;->updateBatteryWarningLevels()V
 
-    .line 77
     return-void
 .end method

@@ -13,10 +13,8 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 32
     const v0, 0x10c000d
 
     invoke-static {p1, v0}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
@@ -25,6 +23,5 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/IconPulser;->mFastOutSlowInInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 34
     return-void
 .end method

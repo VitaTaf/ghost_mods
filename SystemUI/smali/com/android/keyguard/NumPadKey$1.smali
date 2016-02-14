@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 48
     iput-object p1, p0, Lcom/android/keyguard/NumPadKey$1;->this$0:Lcom/android/keyguard/NumPadKey;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "thisView"    # Landroid/view/View;
 
     .prologue
-    .line 51
     iget-object v1, p0, Lcom/android/keyguard/NumPadKey$1;->this$0:Lcom/android/keyguard/NumPadKey;
 
     # getter for: Lcom/android/keyguard/NumPadKey;->mTextView:Lcom/android/keyguard/PasswordTextView;
@@ -60,7 +58,6 @@
 
     if-lez v1, :cond_0
 
-    .line 52
     iget-object v1, p0, Lcom/android/keyguard/NumPadKey$1;->this$0:Lcom/android/keyguard/NumPadKey;
 
     invoke-virtual {v1}, Lcom/android/keyguard/NumPadKey;->getRootView()Landroid/view/View;
@@ -78,7 +75,6 @@
 
     move-result-object v0
 
-    .line 53
     .local v0, "v":Landroid/view/View;
     if-eqz v0, :cond_0
 
@@ -86,7 +82,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 54
     iget-object v1, p0, Lcom/android/keyguard/NumPadKey$1;->this$0:Lcom/android/keyguard/NumPadKey;
 
     check-cast v0, Lcom/android/keyguard/PasswordTextView;
@@ -95,7 +90,6 @@
     # setter for: Lcom/android/keyguard/NumPadKey;->mTextView:Lcom/android/keyguard/PasswordTextView;
     invoke-static {v1, v0}, Lcom/android/keyguard/NumPadKey;->access$002(Lcom/android/keyguard/NumPadKey;Lcom/android/keyguard/PasswordTextView;)Lcom/android/keyguard/PasswordTextView;
 
-    .line 57
     :cond_0
     iget-object v1, p0, Lcom/android/keyguard/NumPadKey$1;->this$0:Lcom/android/keyguard/NumPadKey;
 
@@ -119,7 +113,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 58
     iget-object v1, p0, Lcom/android/keyguard/NumPadKey$1;->this$0:Lcom/android/keyguard/NumPadKey;
 
     # getter for: Lcom/android/keyguard/NumPadKey;->mTextView:Lcom/android/keyguard/PasswordTextView;
@@ -142,17 +135,14 @@
 
     invoke-virtual {v1, v2}, Lcom/android/keyguard/PasswordTextView;->append(C)V
 
-    .line 60
     :cond_1
     iget-object v1, p0, Lcom/android/keyguard/NumPadKey$1;->this$0:Lcom/android/keyguard/NumPadKey;
 
     invoke-virtual {v1}, Lcom/android/keyguard/NumPadKey;->userActivity()V
 
-    .line 61
     iget-object v1, p0, Lcom/android/keyguard/NumPadKey$1;->this$0:Lcom/android/keyguard/NumPadKey;
 
     invoke-virtual {v1}, Lcom/android/keyguard/NumPadKey;->doHapticKeyClick()V
 
-    .line 62
     return-void
 .end method

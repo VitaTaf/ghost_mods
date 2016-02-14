@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 367
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$1;->this$0:Lcom/android/systemui/statusbar/stack/StackStateAnimator;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$1;->val$child:Lcom/android/systemui/statusbar/ExpandableView;
@@ -45,7 +44,6 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 370
     iget-object v1, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$1;->val$child:Lcom/android/systemui/statusbar/ExpandableView;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -62,6 +60,5 @@
 
     invoke-virtual {v1, v0, v2}, Lcom/android/systemui/statusbar/ExpandableView;->setActualHeight(IZ)V
 
-    .line 372
     return-void
 .end method

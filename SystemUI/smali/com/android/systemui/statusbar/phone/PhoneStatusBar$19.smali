@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 1279
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$19;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 2
 
     .prologue
-    .line 1282
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$19;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStackScroller:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
@@ -54,13 +52,11 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->post(Ljava/lang/Runnable;)Z
 
-    .line 1288
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$19;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->animateCollapsePanels(I)V
 
-    .line 1289
     return-void
 .end method

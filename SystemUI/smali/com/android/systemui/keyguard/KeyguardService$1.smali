@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 66
     iput-object p1, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     invoke-direct {p0}, Lcom/android/internal/policy/IKeyguardService$Stub;-><init>()V
@@ -38,12 +37,10 @@
     .param p1, "callback"    # Lcom/android/internal/policy/IKeyguardStateCallback;
 
     .prologue
-    .line 70
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardService;->checkPermission()V
 
-    .line 71
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardService;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
@@ -53,7 +50,6 @@
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->addStateMonitorCallback(Lcom/android/internal/policy/IKeyguardStateCallback;)V
 
-    .line 72
     return-void
 .end method
 
@@ -61,12 +57,10 @@
     .locals 1
 
     .prologue
-    .line 97
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardService;->checkPermission()V
 
-    .line 98
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardService;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
@@ -76,7 +70,6 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->dismiss()V
 
-    .line 99
     return-void
 .end method
 
@@ -85,12 +78,10 @@
     .param p1, "options"    # Landroid/os/Bundle;
 
     .prologue
-    .line 139
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardService;->checkPermission()V
 
-    .line 140
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardService;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
@@ -100,7 +91,6 @@
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->doKeyguardTimeout(Landroid/os/Bundle;)V
 
-    .line 141
     return-void
 .end method
 
@@ -110,12 +100,10 @@
     .param p2, "wakeup"    # Z
 
     .prologue
-    .line 82
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardService;->checkPermission()V
 
-    .line 84
     const-string v0, "KeyguardService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -154,7 +142,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 85
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardService;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
@@ -164,7 +151,6 @@
 
     invoke-virtual {v0, p1, p2}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->keyguardDone(ZZ)V
 
-    .line 86
     return-void
 .end method
 
@@ -172,12 +158,10 @@
     .locals 1
 
     .prologue
-    .line 163
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardService;->checkPermission()V
 
-    .line 164
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardService;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
@@ -187,7 +171,6 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->onActivityDrawn()V
 
-    .line 165
     return-void
 .end method
 
@@ -195,12 +178,10 @@
     .locals 1
 
     .prologue
-    .line 151
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardService;->checkPermission()V
 
-    .line 152
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardService;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
@@ -210,7 +191,6 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->onBootCompleted()V
 
-    .line 153
     return-void
 .end method
 
@@ -218,12 +198,10 @@
     .locals 1
 
     .prologue
-    .line 103
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardService;->checkPermission()V
 
-    .line 104
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardService;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
@@ -233,7 +211,6 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->onDreamingStarted()V
 
-    .line 105
     return-void
 .end method
 
@@ -241,12 +218,10 @@
     .locals 1
 
     .prologue
-    .line 109
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardService;->checkPermission()V
 
-    .line 110
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardService;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
@@ -256,7 +231,6 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->onDreamingStopped()V
 
-    .line 111
     return-void
 .end method
 
@@ -265,12 +239,10 @@
     .param p1, "reason"    # I
 
     .prologue
-    .line 115
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardService;->checkPermission()V
 
-    .line 116
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardService;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
@@ -280,7 +252,6 @@
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->onScreenTurnedOff(I)V
 
-    .line 117
     return-void
 .end method
 
@@ -289,12 +260,10 @@
     .param p1, "callback"    # Lcom/android/internal/policy/IKeyguardShowCallback;
 
     .prologue
-    .line 121
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardService;->checkPermission()V
 
-    .line 122
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardService;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
@@ -304,7 +273,6 @@
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->onScreenTurnedOn(Lcom/android/internal/policy/IKeyguardShowCallback;)V
 
-    .line 123
     return-void
 .end method
 
@@ -312,12 +280,10 @@
     .locals 1
 
     .prologue
-    .line 133
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardService;->checkPermission()V
 
-    .line 134
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardService;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
@@ -327,7 +293,6 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->onSystemReady()V
 
-    .line 135
     return-void
 .end method
 
@@ -336,12 +301,10 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 145
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardService;->checkPermission()V
 
-    .line 146
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardService;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
@@ -351,7 +314,6 @@
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->setCurrentUser(I)V
 
-    .line 147
     return-void
 .end method
 
@@ -360,12 +322,10 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 127
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardService;->checkPermission()V
 
-    .line 128
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardService;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
@@ -375,7 +335,6 @@
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->setKeyguardEnabled(Z)V
 
-    .line 129
     return-void
 .end method
 
@@ -384,12 +343,10 @@
     .param p1, "isOccluded"    # Z
 
     .prologue
-    .line 90
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardService;->checkPermission()V
 
-    .line 91
     const-string v0, "KeyguardService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -418,7 +375,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 92
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardService;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
@@ -428,7 +384,6 @@
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->setOccluded(Z)V
 
-    .line 93
     return-void
 .end method
 
@@ -438,12 +393,10 @@
     .param p3, "fadeoutDuration"    # J
 
     .prologue
-    .line 157
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardService;->checkPermission()V
 
-    .line 158
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardService;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
@@ -453,7 +406,6 @@
 
     invoke-virtual {v0, p1, p2, p3, p4}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->startKeyguardExitAnimation(JJ)V
 
-    .line 159
     return-void
 .end method
 
@@ -462,12 +414,10 @@
     .param p1, "callback"    # Lcom/android/internal/policy/IKeyguardExitCallback;
 
     .prologue
-    .line 76
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardService;->checkPermission()V
 
-    .line 77
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService$1;->this$0:Lcom/android/systemui/keyguard/KeyguardService;
 
     # getter for: Lcom/android/systemui/keyguard/KeyguardService;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
@@ -477,6 +427,5 @@
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->verifyUnlock(Lcom/android/internal/policy/IKeyguardExitCallback;)V
 
-    .line 78
     return-void
 .end method

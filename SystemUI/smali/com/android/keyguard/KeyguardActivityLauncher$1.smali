@@ -34,7 +34,6 @@
     .locals 0
 
     .prologue
-    .line 216
     iput-object p1, p0, Lcom/android/keyguard/KeyguardActivityLauncher$1;->this$0:Lcom/android/keyguard/KeyguardActivityLauncher;
 
     iput-object p2, p0, Lcom/android/keyguard/KeyguardActivityLauncher$1;->val$intent:Landroid/content/Intent;
@@ -56,13 +55,11 @@
     .locals 5
 
     .prologue
-    .line 219
     iget-object v0, p0, Lcom/android/keyguard/KeyguardActivityLauncher$1;->this$0:Lcom/android/keyguard/KeyguardActivityLauncher;
 
     # invokes: Lcom/android/keyguard/KeyguardActivityLauncher;->dismissKeyguardOnNextActivity()V
     invoke-static {v0}, Lcom/android/keyguard/KeyguardActivityLauncher;->access$000(Lcom/android/keyguard/KeyguardActivityLauncher;)V
 
-    .line 220
     iget-object v0, p0, Lcom/android/keyguard/KeyguardActivityLauncher$1;->this$0:Lcom/android/keyguard/KeyguardActivityLauncher;
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardActivityLauncher$1;->val$intent:Landroid/content/Intent;
@@ -76,7 +73,6 @@
     # invokes: Lcom/android/keyguard/KeyguardActivityLauncher;->startActivityForCurrentUser(Landroid/content/Intent;Landroid/os/Bundle;Landroid/os/Handler;Ljava/lang/Runnable;)V
     invoke-static {v0, v1, v2, v3, v4}, Lcom/android/keyguard/KeyguardActivityLauncher;->access$100(Lcom/android/keyguard/KeyguardActivityLauncher;Landroid/content/Intent;Landroid/os/Bundle;Landroid/os/Handler;Ljava/lang/Runnable;)V
 
-    .line 221
     const/4 v0, 0x1
 
     return v0

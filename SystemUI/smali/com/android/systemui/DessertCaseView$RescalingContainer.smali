@@ -24,15 +24,12 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 506
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 508
     const/16 v0, 0x1606
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/DessertCaseView$RescalingContainer;->setSystemUiVisibility(I)V
 
-    .line 515
     return-void
 .end method
 
@@ -47,18 +44,15 @@
     .param p5, "bottom"    # I
 
     .prologue
-    .line 524
     sub-int v6, p4, p2
 
     int-to-float v4, v6
 
-    .line 525
     .local v4, "w":F
     sub-int v6, p5, p3
 
     int-to-float v2, v6
 
-    .line 526
     .local v2, "h":F
     iget-object v6, p0, Lcom/android/systemui/DessertCaseView$RescalingContainer;->mView:Lcom/android/systemui/DessertCaseView;
 
@@ -72,7 +66,6 @@
 
     float-to-int v5, v6
 
-    .line 527
     .local v5, "w2":I
     iget-object v6, p0, Lcom/android/systemui/DessertCaseView$RescalingContainer;->mView:Lcom/android/systemui/DessertCaseView;
 
@@ -86,7 +79,6 @@
 
     float-to-int v3, v6
 
-    .line 528
     .local v3, "h2":I
     int-to-float v6, p2
 
@@ -98,7 +90,6 @@
 
     float-to-int v0, v6
 
-    .line 529
     .local v0, "cx":I
     int-to-float v6, p3
 
@@ -110,7 +101,6 @@
 
     float-to-int v1, v6
 
-    .line 530
     .local v1, "cy":I
     iget-object v6, p0, Lcom/android/systemui/DessertCaseView$RescalingContainer;->mView:Lcom/android/systemui/DessertCaseView;
 
@@ -124,7 +114,6 @@
 
     invoke-virtual {v6, v7, v8, v9, v10}, Lcom/android/systemui/DessertCaseView;->layout(IIII)V
 
-    .line 531
     return-void
 .end method
 
@@ -133,12 +122,9 @@
     .param p1, "v"    # Lcom/android/systemui/DessertCaseView;
 
     .prologue
-    .line 518
     invoke-virtual {p0, p1}, Lcom/android/systemui/DessertCaseView$RescalingContainer;->addView(Landroid/view/View;)V
 
-    .line 519
     iput-object p1, p0, Lcom/android/systemui/DessertCaseView$RescalingContainer;->mView:Lcom/android/systemui/DessertCaseView;
 
-    .line 520
     return-void
 .end method

@@ -48,77 +48,66 @@
 
     const/16 v1, 0xe
 
-    .line 28
     new-array v0, v2, [I
 
     fill-array-data v0, :array_0
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaAccessibilityContentDescriptions;->PHONE_SIGNAL_STRENGTH:[I
 
-    .line 36
     new-array v0, v2, [I
 
     fill-array-data v0, :array_1
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaAccessibilityContentDescriptions;->DATA_CONNECTION_STRENGTH:[I
 
-    .line 44
     new-array v0, v2, [I
 
     fill-array-data v0, :array_2
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaAccessibilityContentDescriptions;->WIFI_CONNECTION_STRENGTH:[I
 
-    .line 71
     new-array v0, v1, [I
 
     fill-array-data v0, :array_3
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaAccessibilityContentDescriptions;->MOBILE_SIM_STATUS_DESCRIPTION_OFF:[I
 
-    .line 88
     new-array v0, v1, [I
 
     fill-array-data v0, :array_4
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaAccessibilityContentDescriptions;->MOBILE_SIM_STATUS_DESCRIPTION:[I
 
-    .line 106
     new-array v0, v3, [I
 
     fill-array-data v0, :array_5
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaAccessibilityContentDescriptions;->PHONE_SIGNAL_DESCRIPTION_OFF:[I
 
-    .line 160
     new-array v0, v3, [I
 
     fill-array-data v0, :array_6
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaAccessibilityContentDescriptions;->PHONE_SIGNAL_DESCRIPTION:[I
 
-    .line 215
     new-array v0, v3, [I
 
     fill-array-data v0, :array_7
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaAccessibilityContentDescriptions;->DATA_SIGNAL_DESCRIPTION:[I
 
-    .line 270
     new-array v0, v1, [I
 
     fill-array-data v0, :array_8
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaAccessibilityContentDescriptions;->MOBILE_ROAMING_DESCRIPTION_OFF:[I
 
-    .line 287
     new-array v0, v1, [I
 
     fill-array-data v0, :array_9
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaAccessibilityContentDescriptions;->MOBILE_ROAMING_DESCRIPTION:[I
 
-    .line 305
     const/16 v0, 0xd
 
     new-array v0, v0, [I
@@ -127,7 +116,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaAccessibilityContentDescriptions;->WIFI_SIGNAL_DESCRIPTION:[I
 
-    .line 328
     const/16 v0, 0xb
 
     new-array v0, v0, [I
@@ -136,7 +124,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaAccessibilityContentDescriptions;->WIFI_ACTIVITY_DESCRIPTION:[I
 
-    .line 383
     const/16 v0, 0x15
 
     new-array v0, v0, [I
@@ -145,14 +132,12 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaAccessibilityContentDescriptions;->MOBILE_DATA_TYPE_DESCRIPTION:[I
 
-    .line 410
     new-array v0, v4, [I
 
     fill-array-data v0, :array_d
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaAccessibilityContentDescriptions;->MOBILE_DATA_ACTIVITY_DESCRIPTION_OFF:[I
 
-    .line 451
     new-array v0, v4, [I
 
     fill-array-data v0, :array_e
@@ -161,7 +146,6 @@
 
     return-void
 
-    .line 28
     nop
 
     :array_0
@@ -173,7 +157,6 @@
         0x7f0c0057
     .end array-data
 
-    .line 36
     :array_1
     .array-data 4
         0x7f0c0058
@@ -183,7 +166,6 @@
         0x7f0c005c
     .end array-data
 
-    .line 44
     :array_2
     .array-data 4
         0x7f0c005e
@@ -193,7 +175,6 @@
         0x7f0c0062
     .end array-data
 
-    .line 71
     :array_3
     .array-data 4
         0x0
@@ -212,7 +193,6 @@
         0x0
     .end array-data
 
-    .line 88
     :array_4
     .array-data 4
         0x0
@@ -231,7 +211,6 @@
         0x0
     .end array-data
 
-    .line 106
     :array_5
     .array-data 4
         0x0
@@ -284,7 +263,6 @@
         0x0
     .end array-data
 
-    .line 160
     :array_6
     .array-data 4
         0x0
@@ -337,7 +315,6 @@
         0x7f0c0181
     .end array-data
 
-    .line 215
     :array_7
     .array-data 4
         0x0
@@ -390,7 +367,6 @@
         0x7f0c018a
     .end array-data
 
-    .line 270
     :array_8
     .array-data 4
         0x0
@@ -409,7 +385,6 @@
         0x0
     .end array-data
 
-    .line 287
     :array_9
     .array-data 4
         0x0
@@ -428,7 +403,6 @@
         0x7f0c0191
     .end array-data
 
-    .line 305
     :array_a
     .array-data 4
         0x0
@@ -446,7 +420,6 @@
         0x7f0c0198
     .end array-data
 
-    .line 328
     :array_b
     .array-data 4
         0x0
@@ -462,7 +435,6 @@
         0x7f0c019c
     .end array-data
 
-    .line 383
     :array_c
     .array-data 4
         0x0
@@ -488,7 +460,6 @@
         0x7f0c01af
     .end array-data
 
-    .line 410
     :array_d
     .array-data 4
         0x0
@@ -522,7 +493,6 @@
         0x0
     .end array-data
 
-    .line 451
     :array_e
     .array-data 4
         0x0

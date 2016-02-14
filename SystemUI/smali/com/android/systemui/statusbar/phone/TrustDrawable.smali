@@ -59,32 +59,26 @@
     .prologue
     const/4 v3, -0x1
 
-    .line 76
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 60
     iput v3, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mState:I
 
-    .line 262
     new-instance v1, Lcom/android/systemui/statusbar/phone/TrustDrawable$1;
 
     invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/TrustDrawable$1;-><init>(Lcom/android/systemui/statusbar/phone/TrustDrawable;)V
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mAlphaUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
-    .line 271
     new-instance v1, Lcom/android/systemui/statusbar/phone/TrustDrawable$2;
 
     invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/TrustDrawable$2;-><init>(Lcom/android/systemui/statusbar/phone/TrustDrawable;)V
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mRadiusUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
-    .line 77
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 78
     .local v0, "r":Landroid/content/res/Resources;
     const v1, 0x7f0d00b3
 
@@ -94,7 +88,6 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mInnerRadiusVisibleMin:F
 
-    .line 79
     const v1, 0x7f0d00b4
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
@@ -103,7 +96,6 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mInnerRadiusVisibleMax:F
 
-    .line 80
     const v1, 0x7f0d00b5
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
@@ -112,7 +104,6 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mInnerRadiusExit:F
 
-    .line 81
     const v1, 0x7f0d00b6
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
@@ -121,7 +112,6 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mInnerRadiusEnter:F
 
-    .line 82
     const v1, 0x7f0d00b7
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
@@ -130,12 +120,10 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mThickness:F
 
-    .line 84
     iget v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mInnerRadiusEnter:F
 
     iput v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurInnerRadius:F
 
-    .line 86
     const v1, 0x10c000e
 
     invoke-static {p1, v1}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
@@ -144,7 +132,6 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mLinearOutSlowInInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 88
     const v1, 0x10c000d
 
     invoke-static {p1, v1}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
@@ -153,54 +140,46 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mFastOutSlowInInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 90
     new-instance v1, Landroid/view/animation/AccelerateDecelerateInterpolator;
 
     invoke-direct {v1}, Landroid/view/animation/AccelerateDecelerateInterpolator;-><init>()V
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mAccelerateDecelerateInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 92
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/TrustDrawable;->makeVisibleAnimator()Landroid/animation/Animator;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mVisibleAnimator:Landroid/animation/Animator;
 
-    .line 94
     new-instance v1, Landroid/graphics/Paint;
 
     invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mPaint:Landroid/graphics/Paint;
 
-    .line 95
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mPaint:Landroid/graphics/Paint;
 
     sget-object v2, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 96
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 97
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mPaint:Landroid/graphics/Paint;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 98
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mPaint:Landroid/graphics/Paint;
 
     iget v2, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mThickness:F
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 99
     return-void
 .end method
 
@@ -210,7 +189,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 38
     iput p1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurAlpha:I
 
     return p1
@@ -222,7 +200,6 @@
     .param p1, "x1"    # F
 
     .prologue
-    .line 38
     iput p1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurInnerRadius:F
 
     return p1
@@ -234,7 +211,6 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 38
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/TrustDrawable;->updateState(Z)V
 
     return-void
@@ -249,29 +225,22 @@
     .param p6, "repeating"    # Z
 
     .prologue
-    .line 252
     invoke-virtual {p1, p2, p3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 253
     invoke-virtual {p1, p4}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 254
     invoke-virtual {p1, p5}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 255
     if-eqz p6, :cond_0
 
-    .line 256
     const/4 v0, -0x1
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setRepeatCount(I)V
 
-    .line 257
     const/4 v0, 0x2
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setRepeatMode(I)V
 
-    .line 259
     :cond_0
     return-object p1
 .end method
@@ -288,7 +257,6 @@
     .param p9, "stateUpdateListener"    # Z
 
     .prologue
-    .line 234
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -319,7 +287,6 @@
 
     move-result-object v7
 
-    .line 237
     .local v7, "alphaAnimator":Landroid/animation/ValueAnimator;
     const/4 v0, 0x2
 
@@ -351,13 +318,11 @@
 
     move-result-object v9
 
-    .line 241
     .local v9, "sizeAnimator":Landroid/animation/ValueAnimator;
     new-instance v8, Landroid/animation/AnimatorSet;
 
     invoke-direct {v8}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 242
     .local v8, "set":Landroid/animation/AnimatorSet;
     const/4 v0, 0x2
 
@@ -373,10 +338,8 @@
 
     invoke-virtual {v8, v0}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 243
     if-eqz p9, :cond_0
 
-    .line 244
     new-instance v0, Lcom/android/systemui/statusbar/phone/TrustDrawable$StateUpdateAnimatorListener;
 
     const/4 v1, 0x0
@@ -385,7 +348,6 @@
 
     invoke-virtual {v8, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 246
     :cond_0
     return-object v8
 .end method
@@ -396,7 +358,6 @@
     .param p2, "alpha"    # I
 
     .prologue
-    .line 220
     iget v3, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mInnerRadiusVisibleMax:F
 
     const/16 v5, 0x4c
@@ -430,7 +391,6 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 226
     iget v3, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mInnerRadiusExit:F
 
     const-wide/16 v6, 0x1f4
@@ -458,7 +418,6 @@
     .locals 11
 
     .prologue
-    .line 213
     iget v2, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mInnerRadiusVisibleMax:F
 
     iget v3, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mInnerRadiusVisibleMin:F
@@ -499,98 +458,79 @@
 
     const/4 v1, 0x1
 
-    .line 161
     iget-boolean v3, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mAnimating:Z
 
     if-nez v3, :cond_1
 
-    .line 210
     :cond_0
     :goto_0
     return-void
 
-    .line 165
     :cond_1
     iget v0, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mState:I
 
-    .line 166
     .local v0, "nextState":I
     iget v3, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mState:I
 
     if-ne v3, v5, :cond_9
 
-    .line 167
     iget-boolean v3, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mTrustManaged:Z
 
     if-eqz v3, :cond_8
 
     move v0, v1
 
-    .line 177
     :cond_2
     :goto_1
     if-nez p1, :cond_4
 
-    .line 178
     if-ne v0, v1, :cond_3
 
     const/4 v0, 0x2
 
-    .line 179
     :cond_3
     if-ne v0, v4, :cond_4
 
     const/4 v0, 0x0
 
-    .line 182
     :cond_4
     iget v3, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mState:I
 
     if-eq v0, v3, :cond_0
 
-    .line 183
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurAnimator:Landroid/animation/Animator;
 
     if-eqz v3, :cond_5
 
-    .line 184
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurAnimator:Landroid/animation/Animator;
 
     invoke-virtual {v3}, Landroid/animation/Animator;->cancel()V
 
-    .line 185
     const/4 v3, 0x0
 
     iput-object v3, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurAnimator:Landroid/animation/Animator;
 
-    .line 188
     :cond_5
     if-nez v0, :cond_d
 
-    .line 189
     iput v2, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurAlpha:I
 
-    .line 190
     iget v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mInnerRadiusEnter:F
 
     iput v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurInnerRadius:F
 
-    .line 204
     :cond_6
     :goto_2
     iput v0, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mState:I
 
-    .line 205
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurAnimator:Landroid/animation/Animator;
 
     if-eqz v1, :cond_7
 
-    .line 206
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurAnimator:Landroid/animation/Animator;
 
     invoke-virtual {v1}, Landroid/animation/Animator;->start()V
 
-    .line 208
     :cond_7
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/TrustDrawable;->invalidateSelf()V
 
@@ -599,16 +539,13 @@
     :cond_8
     move v0, v2
 
-    .line 167
     goto :goto_1
 
-    .line 168
     :cond_9
     iget v3, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mState:I
 
     if-nez v3, :cond_a
 
-    .line 169
     iget-boolean v3, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mTrustManaged:Z
 
     if-eqz v3, :cond_2
@@ -617,13 +554,11 @@
 
     goto :goto_1
 
-    .line 170
     :cond_a
     iget v3, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mState:I
 
     if-ne v3, v1, :cond_b
 
-    .line 171
     iget-boolean v3, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mTrustManaged:Z
 
     if-nez v3, :cond_2
@@ -632,13 +567,11 @@
 
     goto :goto_1
 
-    .line 172
     :cond_b
     iget v3, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mState:I
 
     if-ne v3, v6, :cond_c
 
-    .line 173
     iget-boolean v3, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mTrustManaged:Z
 
     if-nez v3, :cond_2
@@ -647,13 +580,11 @@
 
     goto :goto_1
 
-    .line 174
     :cond_c
     iget v3, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mState:I
 
     if-ne v3, v4, :cond_2
 
-    .line 175
     iget-boolean v3, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mTrustManaged:Z
 
     if-eqz v3, :cond_2
@@ -662,11 +593,9 @@
 
     goto :goto_1
 
-    .line 191
     :cond_d
     if-ne v0, v1, :cond_e
 
-    .line 192
     iget v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurInnerRadius:F
 
     iget v2, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurAlpha:I
@@ -677,12 +606,10 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurAnimator:Landroid/animation/Animator;
 
-    .line 193
     iget v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mState:I
 
     if-ne v1, v5, :cond_6
 
-    .line 194
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurAnimator:Landroid/animation/Animator;
 
     const-wide/16 v2, 0xc8
@@ -691,32 +618,26 @@
 
     goto :goto_2
 
-    .line 196
     :cond_e
     if-ne v0, v6, :cond_f
 
-    .line 197
     const/16 v1, 0x4c
 
     iput v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurAlpha:I
 
-    .line 198
     iget v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mInnerRadiusVisibleMax:F
 
     iput v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurInnerRadius:F
 
-    .line 199
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mVisibleAnimator:Landroid/animation/Animator;
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurAnimator:Landroid/animation/Animator;
 
     goto :goto_2
 
-    .line 200
     :cond_f
     if-ne v0, v4, :cond_6
 
-    .line 201
     iget v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurInnerRadius:F
 
     iget v2, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurAlpha:I
@@ -737,7 +658,6 @@
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 103
     iget v2, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurAlpha:I
 
     iget v3, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mAlpha:I
@@ -746,27 +666,22 @@
 
     div-int/lit16 v0, v2, 0x100
 
-    .line 104
     .local v0, "newAlpha":I
     if-nez v0, :cond_0
 
-    .line 110
     :goto_0
     return-void
 
-    .line 107
     :cond_0
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/TrustDrawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v1
 
-    .line 108
     .local v1, "r":Landroid/graphics/Rect;
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v2, v0}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 109
     invoke-virtual {v1}, Landroid/graphics/Rect;->exactCenterX()F
 
     move-result v2
@@ -788,7 +703,6 @@
     .locals 1
 
     .prologue
-    .line 119
     iget v0, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mAlpha:I
 
     return v0
@@ -798,7 +712,6 @@
     .locals 1
 
     .prologue
-    .line 129
     const/4 v0, -0x3
 
     return v0
@@ -809,10 +722,8 @@
     .param p1, "alpha"    # I
 
     .prologue
-    .line 114
     iput p1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mAlpha:I
 
-    .line 115
     return-void
 .end method
 
@@ -821,7 +732,6 @@
     .param p1, "colorFilter"    # Landroid/graphics/ColorFilter;
 
     .prologue
-    .line 124
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "not implemented"
@@ -836,7 +746,6 @@
     .param p1, "trustManaged"    # Z
 
     .prologue
-    .line 155
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mTrustManaged:Z
 
     if-ne p1, v0, :cond_0
@@ -847,15 +756,12 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 158
     :goto_0
     return-void
 
-    .line 156
     :cond_0
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mTrustManaged:Z
 
-    .line 157
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/phone/TrustDrawable;->updateState(Z)V
@@ -869,21 +775,16 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 133
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mAnimating:Z
 
     if-nez v0, :cond_0
 
-    .line 134
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mAnimating:Z
 
-    .line 135
     invoke-direct {p0, v1}, Lcom/android/systemui/statusbar/phone/TrustDrawable;->updateState(Z)V
 
-    .line 136
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/TrustDrawable;->invalidateSelf()V
 
-    .line 138
     :cond_0
     return-void
 .end method
@@ -894,47 +795,37 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 141
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mAnimating:Z
 
     if-eqz v0, :cond_1
 
-    .line 142
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mAnimating:Z
 
-    .line 143
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurAnimator:Landroid/animation/Animator;
 
     if-eqz v0, :cond_0
 
-    .line 144
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurAnimator:Landroid/animation/Animator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
-    .line 145
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurAnimator:Landroid/animation/Animator;
 
-    .line 147
     :cond_0
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mState:I
 
-    .line 148
     iput v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurAlpha:I
 
-    .line 149
     iget v0, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mInnerRadiusEnter:F
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurInnerRadius:F
 
-    .line 150
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/TrustDrawable;->invalidateSelf()V
 
-    .line 152
     :cond_1
     return-void
 .end method

@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 94
     iput-object p1, p0, Lcom/android/systemui/qs/UsageTracker$2;->this$0:Lcom/android/systemui/qs/UsageTracker;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,7 +38,6 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 97
     iget-object v0, p0, Lcom/android/systemui/qs/UsageTracker$2;->this$0:Lcom/android/systemui/qs/UsageTracker;
 
     # getter for: Lcom/android/systemui/qs/UsageTracker;->mResetAction:Ljava/lang/String;
@@ -57,12 +55,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 98
     iget-object v0, p0, Lcom/android/systemui/qs/UsageTracker$2;->this$0:Lcom/android/systemui/qs/UsageTracker;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/UsageTracker;->reset()V
 
-    .line 100
     :cond_0
     return-void
 .end method

@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 550
     iput-object p1, p0, Lcom/android/systemui/ExpandHelper$2;->this$0:Lcom/android/systemui/ExpandHelper;
 
     iput-object p2, p0, Lcom/android/systemui/ExpandHelper$2;->val$scaledView:Landroid/view/View;
@@ -42,7 +41,6 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 553
     iget-object v0, p0, Lcom/android/systemui/ExpandHelper$2;->this$0:Lcom/android/systemui/ExpandHelper;
 
     # getter for: Lcom/android/systemui/ExpandHelper;->mCallback:Lcom/android/systemui/ExpandHelper$Callback;
@@ -56,7 +54,6 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/systemui/ExpandHelper$Callback;->setUserLockedChild(Landroid/view/View;Z)V
 
-    .line 554
     iget-object v0, p0, Lcom/android/systemui/ExpandHelper$2;->this$0:Lcom/android/systemui/ExpandHelper;
 
     # getter for: Lcom/android/systemui/ExpandHelper;->mScaleAnimation:Landroid/animation/ObjectAnimator;
@@ -66,6 +63,5 @@
 
     invoke-virtual {v0, p0}, Landroid/animation/ObjectAnimator;->removeListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 555
     return-void
 .end method

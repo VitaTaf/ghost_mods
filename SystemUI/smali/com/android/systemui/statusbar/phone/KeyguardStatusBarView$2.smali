@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 187
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView$2;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView$2;->val$userSwitcherVisible:Z
@@ -56,7 +55,6 @@
 
     const/4 v10, 0x0
 
-    .line 190
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView$2;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -65,7 +63,6 @@
 
     invoke-virtual {v2, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 191
     iget-boolean v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView$2;->val$userSwitcherVisible:Z
 
     if-eqz v2, :cond_0
@@ -87,7 +84,6 @@
 
     move v0, v1
 
-    .line 193
     .local v0, "userSwitcherHiding":Z
     :goto_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView$2;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
@@ -103,7 +99,6 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setX(F)V
 
-    .line 194
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView$2;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mSystemIconsSuperContainer:Landroid/view/View;
@@ -147,10 +142,8 @@
 
     invoke-virtual {v2}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 200
     if-eqz v0, :cond_2
 
-    .line 201
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView$2;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->getOverlay()Landroid/view/ViewGroupOverlay;
@@ -166,7 +159,6 @@
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroupOverlay;->add(Landroid/view/View;)V
 
-    .line 202
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView$2;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mMultiUserSwitch:Lcom/android/systemui/statusbar/phone/MultiUserSwitch;
@@ -206,11 +198,9 @@
 
     invoke-virtual {v2}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 224
     :goto_2
     return v1
 
-    .line 191
     .end local v0    # "userSwitcherHiding":Z
     :cond_0
     const/4 v0, 0x0
@@ -221,10 +211,8 @@
     :cond_1
     move-wide v2, v6
 
-    .line 194
     goto :goto_1
 
-    .line 217
     :cond_2
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView$2;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
 
@@ -235,7 +223,6 @@
 
     invoke-virtual {v2, v10}, Lcom/android/systemui/statusbar/phone/MultiUserSwitch;->setAlpha(F)V
 
-    .line 218
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView$2;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mMultiUserSwitch:Lcom/android/systemui/statusbar/phone/MultiUserSwitch;

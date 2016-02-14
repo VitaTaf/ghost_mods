@@ -28,12 +28,10 @@
     .locals 2
 
     .prologue
-    .line 482
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$4;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 483
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.settings.USER_SETTINGS"
@@ -54,36 +52,30 @@
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 493
     instance-of v1, p2, Lcom/android/systemui/qs/tiles/UserDetailView;
 
     if-nez v1, :cond_0
 
-    .line 494
     const/4 v1, 0x0
 
     invoke-static {p1, p3, v1}, Lcom/android/systemui/qs/tiles/UserDetailView;->inflate(Landroid/content/Context;Landroid/view/ViewGroup;Z)Lcom/android/systemui/qs/tiles/UserDetailView;
 
     move-result-object v0
 
-    .line 495
     .local v0, "v":Lcom/android/systemui/qs/tiles/UserDetailView;
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$4;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/tiles/UserDetailView;->createAndSetAdapter(Lcom/android/systemui/statusbar/policy/UserSwitcherController;)V
 
-    .line 499
     :goto_0
     invoke-virtual {v0}, Lcom/android/systemui/qs/tiles/UserDetailView;->refreshAdapter()V
 
-    .line 500
     return-object v0
 
     .end local v0    # "v":Lcom/android/systemui/qs/tiles/UserDetailView;
     :cond_0
     move-object v0, p2
 
-    .line 497
     check-cast v0, Lcom/android/systemui/qs/tiles/UserDetailView;
 
     .restart local v0    # "v":Lcom/android/systemui/qs/tiles/UserDetailView;
@@ -94,7 +86,6 @@
     .locals 1
 
     .prologue
-    .line 505
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$4;->USER_SETTINGS_INTENT:Landroid/content/Intent;
 
     return-object v0
@@ -104,7 +95,6 @@
     .locals 1
 
     .prologue
-    .line 487
     const v0, 0x7f0c00e2
 
     return v0
@@ -114,7 +104,6 @@
     .locals 1
 
     .prologue
-    .line 510
     const/4 v0, 0x0
 
     return-object v0
@@ -125,6 +114,5 @@
     .param p1, "state"    # Z
 
     .prologue
-    .line 515
     return-void
 .end method

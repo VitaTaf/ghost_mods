@@ -25,7 +25,6 @@
     .param p4, "x1"    # J
 
     .prologue
-    .line 270
     iput-object p1, p0, Lcom/android/keyguard/KeyguardPatternView$2;->this$0:Lcom/android/keyguard/KeyguardPatternView;
 
     invoke-direct {p0, p2, p3, p4, p5}, Landroid/os/CountDownTimer;-><init>(JJ)V
@@ -41,7 +40,6 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 281
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPatternView$2;->this$0:Lcom/android/keyguard/KeyguardPatternView;
 
     # getter for: Lcom/android/keyguard/KeyguardPatternView;->mLockPatternView:Lcom/android/internal/widget/LockPatternView;
@@ -51,25 +49,21 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/LockPatternView;->setEnabled(Z)V
 
-    .line 282
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPatternView$2;->this$0:Lcom/android/keyguard/KeyguardPatternView;
 
     iput-boolean v1, v0, Lcom/android/keyguard/KeyguardPatternView;->mCountDownFinish:Z
 
-    .line 283
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPatternView$2;->this$0:Lcom/android/keyguard/KeyguardPatternView;
 
     # invokes: Lcom/android/keyguard/KeyguardPatternView;->displayDefaultSecurityMessage()V
     invoke-static {v0}, Lcom/android/keyguard/KeyguardPatternView;->access$1000(Lcom/android/keyguard/KeyguardPatternView;)V
 
-    .line 284
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPatternView$2;->this$0:Lcom/android/keyguard/KeyguardPatternView;
 
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lcom/android/keyguard/KeyguardPatternView;->mCountDownFinish:Z
 
-    .line 285
     return-void
 .end method
 
@@ -80,14 +74,12 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 274
     const-wide/16 v2, 0x3e8
 
     div-long v2, p1, v2
 
     long-to-int v0, v2
 
-    .line 275
     .local v0, "secondsRemaining":I
     iget-object v1, p0, Lcom/android/keyguard/KeyguardPatternView$2;->this$0:Lcom/android/keyguard/KeyguardPatternView;
 
@@ -110,6 +102,5 @@
 
     invoke-interface {v1, v2, v6, v3}, Lcom/android/keyguard/SecurityMessageDisplay;->setMessage(IZ[Ljava/lang/Object;)V
 
-    .line 277
     return-void
 .end method

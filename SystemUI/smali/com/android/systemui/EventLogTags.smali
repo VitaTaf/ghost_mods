@@ -11,7 +11,6 @@
     .param p2, "velocitydp"    # I
 
     .prologue
-    .line 75
     const v0, 0x8cb5
 
     const/4 v1, 0x3
@@ -44,7 +43,6 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 76
     return-void
 .end method
 
@@ -58,7 +56,6 @@
     .param p5, "currentlyinsecure"    # I
 
     .prologue
-    .line 63
     const v0, 0x8ca4
 
     const/4 v1, 0x6
@@ -115,6 +112,5 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 64
     return-void
 .end method

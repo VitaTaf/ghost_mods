@@ -32,18 +32,14 @@
     .param p3, "opts"    # Landroid/app/ActivityOptions;
 
     .prologue
-    .line 101
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 102
     iput-object p2, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->mLaunchIntent:Landroid/content/Intent;
 
-    .line 103
     iput-object p3, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->mLaunchOpts:Landroid/app/ActivityOptions;
 
-    .line 104
     return-void
 .end method
 
@@ -53,18 +49,15 @@
     .locals 7
 
     .prologue
-    .line 109
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->mLaunchIntent:Landroid/content/Intent;
 
     if-eqz v1, :cond_1
 
-    .line 111
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->mLaunchOpts:Landroid/app/ActivityOptions;
 
     if-eqz v1, :cond_0
 
-    .line 112
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     iget-object v2, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->mLaunchIntent:Landroid/content/Intent;
@@ -79,11 +72,9 @@
 
     invoke-virtual {v1, v2, v3, v4}, Lcom/android/systemui/recents/RecentsActivity;->startActivityAsUser(Landroid/content/Intent;Landroid/os/Bundle;Landroid/os/UserHandle;)V
 
-    .line 125
     :goto_0
     return-void
 
-    .line 114
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
@@ -97,11 +88,9 @@
 
     goto :goto_0
 
-    .line 116
     :catch_0
     move-exception v0
 
-    .line 117
     .local v0, "e":Ljava/lang/Exception;
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
@@ -127,14 +116,12 @@
 
     goto :goto_0
 
-    .line 121
     .end local v0    # "e":Ljava/lang/Exception;
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-virtual {v1}, Lcom/android/systemui/recents/RecentsActivity;->finish()V
 
-    .line 122
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     const v2, 0x7f050061

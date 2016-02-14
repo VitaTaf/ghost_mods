@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 168
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions$2;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,20 +43,17 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 171
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 175
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions$2;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;
 
     # invokes: Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->applyLightsOut(ZZZ)V
     invoke-static {v0, v4, v4, v4}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->access$000(Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;ZZZ)V
 
-    .line 178
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions$2;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;
 
@@ -76,12 +72,10 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 183
     :cond_0
     :goto_0
     return v4
 
-    .line 180
     :catch_0
     move-exception v0
 

@@ -18,21 +18,18 @@
     .prologue
     const/4 v1, 0x5
 
-    .line 13
     new-array v0, v1, [I
 
     fill-array-data v0, :array_0
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/AccessibilityContentDescriptions;->PHONE_SIGNAL_STRENGTH:[I
 
-    .line 21
     new-array v0, v1, [I
 
     fill-array-data v0, :array_1
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/AccessibilityContentDescriptions;->DATA_CONNECTION_STRENGTH:[I
 
-    .line 29
     new-array v0, v1, [I
 
     fill-array-data v0, :array_2
@@ -41,7 +38,6 @@
 
     return-void
 
-    .line 13
     nop
 
     :array_0
@@ -53,7 +49,6 @@
         0x7f0c0057
     .end array-data
 
-    .line 21
     :array_1
     .array-data 4
         0x7f0c0058
@@ -63,7 +58,6 @@
         0x7f0c005c
     .end array-data
 
-    .line 29
     :array_2
     .array-data 4
         0x7f0c005e

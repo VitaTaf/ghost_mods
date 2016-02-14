@@ -49,7 +49,6 @@
     .locals 2
 
     .prologue
-    .line 40
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.settings.ZEN_MODE_SETTINGS"
@@ -58,7 +57,6 @@
 
     sput-object v0, Lcom/android/systemui/qs/tiles/DndTile;->ZEN_SETTINGS:Landroid/content/Intent;
 
-    .line 43
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.settings.ZEN_MODE_PRIORITY_SETTINGS"
@@ -75,45 +73,38 @@
     .param p1, "host"    # Lcom/android/systemui/qs/QSTile$Host;
 
     .prologue
-    .line 56
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
-    .line 159
     new-instance v0, Lcom/android/systemui/qs/tiles/DndTile$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/DndTile$1;-><init>(Lcom/android/systemui/qs/tiles/DndTile;)V
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mPrefListener:Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
 
-    .line 171
     new-instance v0, Lcom/android/systemui/qs/tiles/DndTile$2;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/DndTile$2;-><init>(Lcom/android/systemui/qs/tiles/DndTile;)V
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mZenCallback:Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;
 
-    .line 177
     new-instance v0, Lcom/android/systemui/qs/tiles/DndTile$3;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/DndTile$3;-><init>(Lcom/android/systemui/qs/tiles/DndTile;)V
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 235
     new-instance v0, Lcom/android/systemui/qs/tiles/DndTile$4;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/DndTile$4;-><init>(Lcom/android/systemui/qs/tiles/DndTile;)V
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mZenModePanelCallback:Lcom/android/systemui/volume/ZenModePanel$Callback;
 
-    .line 57
     invoke-interface {p1}, Lcom/android/systemui/qs/QSTile$Host;->getZenModeController()Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
-    .line 58
     new-instance v0, Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;
 
     const/4 v1, 0x0
@@ -122,7 +113,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mDetailAdapter:Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;
 
-    .line 59
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DndTile;->mReceiver:Landroid/content/BroadcastReceiver;
@@ -135,7 +125,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 60
     return-void
 .end method
 
@@ -144,7 +133,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DndTile;
 
     .prologue
-    .line 39
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/DndTile;->refreshState()V
 
     return-void
@@ -156,7 +144,6 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 39
     iput-boolean p1, p0, Lcom/android/systemui/qs/tiles/DndTile;->mShowingDetail:Z
 
     return p1
@@ -166,7 +153,6 @@
     .locals 1
 
     .prologue
-    .line 39
     sget-object v0, Lcom/android/systemui/qs/tiles/DndTile;->ZEN_PRIORITY_SETTINGS:Landroid/content/Intent;
 
     return-object v0
@@ -177,7 +163,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DndTile;
 
     .prologue
-    .line 39
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
 
     return-object v0
@@ -189,7 +174,6 @@
     .param p1, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 39
     invoke-virtual {p0, p1}, Lcom/android/systemui/qs/tiles/DndTile;->refreshState(Ljava/lang/Object;)V
 
     return-void
@@ -200,7 +184,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DndTile;
 
     .prologue
-    .line 39
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -211,7 +194,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DndTile;
 
     .prologue
-    .line 39
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/DndTile;->refreshState()V
 
     return-void
@@ -222,7 +204,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DndTile;
 
     .prologue
-    .line 39
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
     return-object v0
@@ -232,7 +213,6 @@
     .locals 1
 
     .prologue
-    .line 39
     sget-object v0, Lcom/android/systemui/qs/tiles/DndTile;->ZEN_SETTINGS:Landroid/content/Intent;
 
     return-object v0
@@ -243,7 +223,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DndTile;
 
     .prologue
-    .line 39
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -254,7 +233,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DndTile;
 
     .prologue
-    .line 39
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     return-object v0
@@ -265,7 +243,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/DndTile;
 
     .prologue
-    .line 39
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mZenModePanelCallback:Lcom/android/systemui/volume/ZenModePanel$Callback;
 
     return-object v0
@@ -276,7 +253,6 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 75
     const-string v0, "DndTileCombinedIcon"
 
     const/4 v1, 0x0
@@ -293,7 +269,6 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 67
     const-string v0, "DndTileVisible"
 
     const/4 v1, 0x0
@@ -311,12 +286,10 @@
     .param p1, "combined"    # Z
 
     .prologue
-    .line 71
     const-string v0, "DndTileCombinedIcon"
 
     invoke-static {p0, v0, p1}, Lcom/android/systemui/Prefs;->putBoolean(Landroid/content/Context;Ljava/lang/String;Z)V
 
-    .line 72
     return-void
 .end method
 
@@ -326,12 +299,10 @@
     .param p1, "visible"    # Z
 
     .prologue
-    .line 63
     const-string v0, "DndTileVisible"
 
     invoke-static {p0, v0, p1}, Lcom/android/systemui/Prefs;->putBoolean(Landroid/content/Context;Ljava/lang/String;Z)V
 
-    .line 64
     return-void
 .end method
 
@@ -341,7 +312,6 @@
     .locals 2
 
     .prologue
-    .line 139
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
     check-cast v0, Lcom/android/systemui/qs/QSTile$BooleanState;
@@ -350,7 +320,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 140
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mContext:Landroid/content/Context;
 
     const v1, 0x7f0c0274
@@ -359,7 +328,6 @@
 
     move-result-object v0
 
-    .line 142
     :goto_0
     return-object v0
 
@@ -379,7 +347,6 @@
     .locals 1
 
     .prologue
-    .line 81
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mDetailAdapter:Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;
 
     return-object v0
@@ -391,7 +358,6 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 91
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DndTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
     check-cast v1, Lcom/android/systemui/qs/QSTile$BooleanState;
@@ -400,7 +366,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 92
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DndTile;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     const/4 v2, 0x0
@@ -409,11 +374,9 @@
 
     invoke-interface {v1, v2, v4, v3}, Lcom/android/systemui/statusbar/policy/ZenModeController;->setZen(ILandroid/net/Uri;Ljava/lang/String;)V
 
-    .line 99
     :goto_0
     return-void
 
-    .line 94
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DndTile;->mContext:Landroid/content/Context;
 
@@ -425,7 +388,6 @@
 
     move-result v0
 
-    .line 95
     .local v0, "zen":I
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DndTile;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
@@ -433,14 +395,12 @@
 
     invoke-interface {v1, v0, v4, v2}, Lcom/android/systemui/statusbar/policy/ZenModeController;->setZen(ILandroid/net/Uri;Ljava/lang/String;)V
 
-    .line 96
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/tiles/DndTile;->refreshState(Ljava/lang/Object;)V
 
-    .line 97
     const/4 v1, 0x1
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/tiles/DndTile;->showDetail(Z)V
@@ -458,7 +418,6 @@
 
     const/4 v2, 0x0
 
-    .line 103
     instance-of v1, p2, Ljava/lang/Integer;
 
     if-eqz v1, :cond_1
@@ -470,7 +429,6 @@
 
     move-result v0
 
-    .line 104
     .local v0, "zen":I
     :goto_0
     if-eqz v0, :cond_2
@@ -480,7 +438,6 @@
     :goto_1
     iput-boolean v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
 
-    .line 105
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DndTile;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Lcom/android/systemui/qs/tiles/DndTile;->isVisible(Landroid/content/Context;)Z
@@ -489,10 +446,8 @@
 
     iput-boolean v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->visible:Z
 
-    .line 106
     packed-switch v0, :pswitch_data_0
 
-    .line 126
     const v1, 0x7f02051a
 
     invoke-static {v1}, Lcom/android/systemui/qs/QSTile$ResourceIcon;->get(I)Lcom/android/systemui/qs/QSTile$Icon;
@@ -501,7 +456,6 @@
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->icon:Lcom/android/systemui/qs/QSTile$Icon;
 
-    .line 127
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DndTile;->mContext:Landroid/content/Context;
 
     const v3, 0x7f0c0275
@@ -512,7 +466,6 @@
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->label:Ljava/lang/String;
 
-    .line 128
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DndTile;->mContext:Landroid/content/Context;
 
     const v3, 0x7f0c0272
@@ -523,7 +476,6 @@
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->contentDescription:Ljava/lang/String;
 
-    .line 132
     :goto_2
     iget-boolean v1, p0, Lcom/android/systemui/qs/tiles/DndTile;->mShowingDetail:Z
 
@@ -533,14 +485,11 @@
 
     if-nez v1, :cond_0
 
-    .line 133
     invoke-virtual {p0, v2}, Lcom/android/systemui/qs/tiles/DndTile;->showDetail(Z)V
 
-    .line 135
     :cond_0
     return-void
 
-    .line 103
     .end local v0    # "zen":I
     .restart local p2    # "arg":Ljava/lang/Object;
     :cond_1
@@ -557,10 +506,8 @@
     :cond_2
     move v1, v2
 
-    .line 104
     goto :goto_1
 
-    .line 108
     :pswitch_0
     invoke-static {v3}, Lcom/android/systemui/qs/QSTile$ResourceIcon;->get(I)Lcom/android/systemui/qs/QSTile$Icon;
 
@@ -568,7 +515,6 @@
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->icon:Lcom/android/systemui/qs/QSTile$Icon;
 
-    .line 109
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DndTile;->mContext:Landroid/content/Context;
 
     const v3, 0x7f0c0276
@@ -579,7 +525,6 @@
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->label:Ljava/lang/String;
 
-    .line 110
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DndTile;->mContext:Landroid/content/Context;
 
     const v3, 0x7f0c0270
@@ -592,7 +537,6 @@
 
     goto :goto_2
 
-    .line 114
     :pswitch_1
     const v1, 0x7f020022
 
@@ -602,7 +546,6 @@
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->icon:Lcom/android/systemui/qs/QSTile$Icon;
 
-    .line 115
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DndTile;->mContext:Landroid/content/Context;
 
     const v3, 0x7f0c0277
@@ -613,7 +556,6 @@
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->label:Ljava/lang/String;
 
-    .line 116
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DndTile;->mContext:Landroid/content/Context;
 
     const v3, 0x7f0c0271
@@ -626,7 +568,6 @@
 
     goto :goto_2
 
-    .line 120
     :pswitch_2
     invoke-static {v3}, Lcom/android/systemui/qs/QSTile$ResourceIcon;->get(I)Lcom/android/systemui/qs/QSTile$Icon;
 
@@ -634,7 +575,6 @@
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->icon:Lcom/android/systemui/qs/QSTile$Icon;
 
-    .line 121
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DndTile;->mContext:Landroid/content/Context;
 
     const v3, 0x7f0c028a
@@ -645,7 +585,6 @@
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->label:Ljava/lang/String;
 
-    .line 122
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DndTile;->mContext:Landroid/content/Context;
 
     const v3, 0x7f0c0289
@@ -658,7 +597,6 @@
 
     goto :goto_2
 
-    .line 106
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -673,7 +611,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 39
     check-cast p1, Lcom/android/systemui/qs/QSTile$BooleanState;
 
     .end local p1    # "x0":Lcom/android/systemui/qs/QSTile$State;
@@ -686,7 +623,6 @@
     .locals 1
 
     .prologue
-    .line 86
     new-instance v0, Lcom/android/systemui/qs/QSTile$BooleanState;
 
     invoke-direct {v0}, Lcom/android/systemui/qs/QSTile$BooleanState;-><init>()V
@@ -698,7 +634,6 @@
     .locals 1
 
     .prologue
-    .line 39
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/DndTile;->newTileState()Lcom/android/systemui/qs/QSTile$BooleanState;
 
     move-result-object v0
@@ -711,32 +646,26 @@
     .param p1, "listening"    # Z
 
     .prologue
-    .line 148
     iget-boolean v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mListening:Z
 
     if-ne v0, p1, :cond_0
 
-    .line 157
     :goto_0
     return-void
 
-    .line 149
     :cond_0
     iput-boolean p1, p0, Lcom/android/systemui/qs/tiles/DndTile;->mListening:Z
 
-    .line 150
     iget-boolean v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mListening:Z
 
     if-eqz v0, :cond_1
 
-    .line 151
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DndTile;->mZenCallback:Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/ZenModeController;->addCallback(Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;)V
 
-    .line 152
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DndTile;->mPrefListener:Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
@@ -745,7 +674,6 @@
 
     goto :goto_0
 
-    .line 154
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
@@ -753,7 +681,6 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/ZenModeController;->removeCallback(Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;)V
 
-    .line 155
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DndTile;->mPrefListener:Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;

@@ -24,12 +24,10 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 46
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/keyguard/KeyguardSecurityViewFlipper;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 47
     return-void
 .end method
 
@@ -39,17 +37,14 @@
     .param p2, "attr"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 50
     invoke-direct {p0, p1, p2}, Landroid/widget/ViewFlipper;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 43
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->mTempRect:Landroid/graphics/Rect;
 
-    .line 51
     return-void
 .end method
 
@@ -59,19 +54,15 @@
     .param p2, "childDimen"    # I
 
     .prologue
-    .line 249
     packed-switch p2, :pswitch_data_0
 
-    .line 259
     const/high16 v0, 0x40000000    # 2.0f
 
-    .line 260
     .local v0, "mode":I
     invoke-static {p1, p2}, Ljava/lang/Math;->min(II)I
 
     move-result v1
 
-    .line 263
     .local v1, "size":I
     :goto_0
     invoke-static {v1, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
@@ -80,35 +71,28 @@
 
     return v2
 
-    .line 251
     .end local v0    # "mode":I
     .end local v1    # "size":I
     :pswitch_0
     const/high16 v0, -0x80000000
 
-    .line 252
     .restart local v0    # "mode":I
     move v1, p1
 
-    .line 253
     .restart local v1    # "size":I
     goto :goto_0
 
-    .line 255
     .end local v0    # "mode":I
     .end local v1    # "size":I
     :pswitch_1
     const/high16 v0, 0x40000000    # 2.0f
 
-    .line 256
     .restart local v0    # "mode":I
     move v1, p1
 
-    .line 257
     .restart local v1    # "size":I
     goto :goto_0
 
-    .line 249
     :pswitch_data_0
     .packed-switch -0x2
         :pswitch_0
@@ -123,7 +107,6 @@
     .param p1, "p"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
-    .line 181
     instance-of v0, p1, Lcom/android/keyguard/KeyguardSecurityViewFlipper$LayoutParams;
 
     return v0
@@ -134,7 +117,6 @@
     .param p1, "x0"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 39
     invoke-virtual {p0, p1}, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->generateLayoutParams(Landroid/util/AttributeSet;)Lcom/android/keyguard/KeyguardSecurityViewFlipper$LayoutParams;
 
     move-result-object v0
@@ -147,7 +129,6 @@
     .param p1, "p"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
-    .line 186
     instance-of v0, p1, Lcom/android/keyguard/KeyguardSecurityViewFlipper$LayoutParams;
 
     if-eqz v0, :cond_0
@@ -176,7 +157,6 @@
     .param p1, "x0"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 39
     invoke-virtual {p0, p1}, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->generateLayoutParams(Landroid/util/AttributeSet;)Lcom/android/keyguard/KeyguardSecurityViewFlipper$LayoutParams;
 
     move-result-object v0
@@ -189,7 +169,6 @@
     .param p1, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 191
     new-instance v0, Lcom/android/keyguard/KeyguardSecurityViewFlipper$LayoutParams;
 
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->getContext()Landroid/content/Context;
@@ -205,7 +184,6 @@
     .locals 2
 
     .prologue
-    .line 70
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->getDisplayedChild()I
 
     move-result v1
@@ -214,16 +192,13 @@
 
     move-result-object v0
 
-    .line 71
     .local v0, "child":Landroid/view/View;
     instance-of v1, v0, Lcom/android/keyguard/KeyguardSecurityView;
 
     if-eqz v1, :cond_0
 
-    .line 72
     check-cast v0, Lcom/android/keyguard/KeyguardSecurityView;
 
-    .line 74
     .end local v0    # "child":Landroid/view/View;
     :goto_0
     return-object v0
@@ -240,12 +215,10 @@
     .param p1, "duration"    # I
 
     .prologue
-    .line 151
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->getSecurityView()Lcom/android/keyguard/KeyguardSecurityView;
 
     move-result-object v0
 
-    .line 152
     .local v0, "active":Lcom/android/keyguard/KeyguardSecurityView;
     const/4 v2, 0x0
 
@@ -257,12 +230,10 @@
 
     if-ge v2, v4, :cond_2
 
-    .line 153
     invoke-virtual {p0, v2}, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 154
     .local v1, "child":Landroid/view/View;
     instance-of v4, v1, Lcom/android/keyguard/KeyguardSecurityView;
 
@@ -270,10 +241,8 @@
 
     move-object v3, v1
 
-    .line 155
     check-cast v3, Lcom/android/keyguard/KeyguardSecurityView;
 
-    .line 156
     .local v3, "ksv":Lcom/android/keyguard/KeyguardSecurityView;
     if-ne v3, v0, :cond_1
 
@@ -282,21 +251,18 @@
     :goto_1
     invoke-interface {v3, v4}, Lcom/android/keyguard/KeyguardSecurityView;->hideBouncer(I)V
 
-    .line 152
     .end local v3    # "ksv":Lcom/android/keyguard/KeyguardSecurityView;
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 156
     .restart local v3    # "ksv":Lcom/android/keyguard/KeyguardSecurityView;
     :cond_1
     const/4 v4, 0x0
 
     goto :goto_1
 
-    .line 159
     .end local v1    # "child":Landroid/view/View;
     .end local v3    # "ksv":Lcom/android/keyguard/KeyguardSecurityView;
     :cond_2
@@ -307,12 +273,10 @@
     .locals 2
 
     .prologue
-    .line 119
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->getSecurityView()Lcom/android/keyguard/KeyguardSecurityView;
 
     move-result-object v0
 
-    .line 120
     .local v0, "ksv":Lcom/android/keyguard/KeyguardSecurityView;
     if-eqz v0, :cond_0
 
@@ -335,44 +299,36 @@
     .param p2, "heightSpec"    # I
 
     .prologue
-    .line 196
     invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v17
 
-    .line 197
     .local v17, "widthMode":I
     invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v9
 
-    .line 207
     .local v9, "heightMode":I
     invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v18
 
-    .line 208
     .local v18, "widthSize":I
     invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v10
 
-    .line 209
     .local v10, "heightSize":I
     move/from16 v14, v18
 
-    .line 210
     .local v14, "maxWidth":I
     move v13, v10
 
-    .line 211
     .local v13, "maxHeight":I
     invoke-virtual/range {p0 .. p0}, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->getChildCount()I
 
     move-result v6
 
-    .line 212
     .local v6, "count":I
     const/4 v11, 0x0
 
@@ -380,14 +336,12 @@
     :goto_0
     if-ge v11, v6, :cond_2
 
-    .line 213
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v11}, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 214
     .local v3, "child":Landroid/view/View;
     invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -395,7 +349,6 @@
 
     check-cast v12, Lcom/android/keyguard/KeyguardSecurityViewFlipper$LayoutParams;
 
-    .line 216
     .local v12, "lp":Lcom/android/keyguard/KeyguardSecurityViewFlipper$LayoutParams;
     iget v0, v12, Lcom/android/keyguard/KeyguardSecurityViewFlipper$LayoutParams;->maxWidth:I
 
@@ -411,10 +364,8 @@
 
     if-ge v0, v14, :cond_0
 
-    .line 217
     iget v14, v12, Lcom/android/keyguard/KeyguardSecurityViewFlipper$LayoutParams;->maxWidth:I
 
-    .line 219
     :cond_0
     iget v0, v12, Lcom/android/keyguard/KeyguardSecurityViewFlipper$LayoutParams;->maxHeight:I
 
@@ -430,16 +381,13 @@
 
     if-ge v0, v13, :cond_1
 
-    .line 220
     iget v13, v12, Lcom/android/keyguard/KeyguardSecurityViewFlipper$LayoutParams;->maxHeight:I
 
-    .line 212
     :cond_1
     add-int/lit8 v11, v11, 0x1
 
     goto :goto_0
 
-    .line 224
     .end local v3    # "child":Landroid/view/View;
     .end local v12    # "lp":Lcom/android/keyguard/KeyguardSecurityViewFlipper$LayoutParams;
     :cond_2
@@ -453,7 +401,6 @@
 
     add-int v15, v19, v20
 
-    .line 225
     .local v15, "wPadding":I
     invoke-virtual/range {p0 .. p0}, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->getPaddingTop()I
 
@@ -465,14 +412,11 @@
 
     add-int v7, v19, v20
 
-    .line 226
     .local v7, "hPadding":I
     sub-int/2addr v14, v15
 
-    .line 227
     sub-int/2addr v13, v7
 
-    .line 229
     const/high16 v19, 0x40000000    # 2.0f
 
     move/from16 v0, v17
@@ -483,7 +427,6 @@
 
     move/from16 v16, v18
 
-    .line 230
     .local v16, "width":I
     :goto_1
     const/high16 v19, 0x40000000    # 2.0f
@@ -494,7 +437,6 @@
 
     move v8, v10
 
-    .line 231
     .local v8, "height":I
     :goto_2
     const/4 v11, 0x0
@@ -502,14 +444,12 @@
     :goto_3
     if-ge v11, v6, :cond_5
 
-    .line 232
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v11}, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 233
     .restart local v3    # "child":Landroid/view/View;
     invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -517,7 +457,6 @@
 
     check-cast v12, Lcom/android/keyguard/KeyguardSecurityViewFlipper$LayoutParams;
 
-    .line 235
     .restart local v12    # "lp":Lcom/android/keyguard/KeyguardSecurityViewFlipper$LayoutParams;
     iget v0, v12, Lcom/android/keyguard/KeyguardSecurityViewFlipper$LayoutParams;->width:I
 
@@ -531,7 +470,6 @@
 
     move-result v5
 
-    .line 236
     .local v5, "childWidthSpec":I
     iget v0, v12, Lcom/android/keyguard/KeyguardSecurityViewFlipper$LayoutParams;->height:I
 
@@ -545,11 +483,9 @@
 
     move-result v4
 
-    .line 238
     .local v4, "childHeightSpec":I
     invoke-virtual {v3, v5, v4}, Landroid/view/View;->measure(II)V
 
-    .line 240
     invoke-virtual {v3}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v19
@@ -568,7 +504,6 @@
 
     move-result v16
 
-    .line 241
     invoke-virtual {v3}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v19
@@ -585,12 +520,10 @@
 
     move-result v8
 
-    .line 231
     add-int/lit8 v11, v11, 0x1
 
     goto :goto_3
 
-    .line 229
     .end local v3    # "child":Landroid/view/View;
     .end local v4    # "childHeightSpec":I
     .end local v5    # "childWidthSpec":I
@@ -602,14 +535,12 @@
 
     goto :goto_1
 
-    .line 230
     .restart local v16    # "width":I
     :cond_4
     const/4 v8, 0x0
 
     goto :goto_2
 
-    .line 243
     .restart local v8    # "height":I
     :cond_5
     add-int v19, v16, v15
@@ -624,7 +555,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->setMeasuredDimension(II)V
 
-    .line 244
     return-void
 .end method
 
@@ -632,19 +562,15 @@
     .locals 1
 
     .prologue
-    .line 103
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->getSecurityView()Lcom/android/keyguard/KeyguardSecurityView;
 
     move-result-object v0
 
-    .line 104
     .local v0, "ksv":Lcom/android/keyguard/KeyguardSecurityView;
     if-eqz v0, :cond_0
 
-    .line 105
     invoke-interface {v0}, Lcom/android/keyguard/KeyguardSecurityView;->onPause()V
 
-    .line 107
     :cond_0
     return-void
 .end method
@@ -654,19 +580,15 @@
     .param p1, "reason"    # I
 
     .prologue
-    .line 111
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->getSecurityView()Lcom/android/keyguard/KeyguardSecurityView;
 
     move-result-object v0
 
-    .line 112
     .local v0, "ksv":Lcom/android/keyguard/KeyguardSecurityView;
     if-eqz v0, :cond_0
 
-    .line 113
     invoke-interface {v0, p1}, Lcom/android/keyguard/KeyguardSecurityView;->onResume(I)V
 
-    .line 115
     :cond_0
     return-void
 .end method
@@ -678,18 +600,15 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 55
     invoke-super {p0, p1}, Landroid/widget/ViewFlipper;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v2
 
-    .line 56
     .local v2, "result":Z
     iget-object v4, p0, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->mTempRect:Landroid/graphics/Rect;
 
     invoke-virtual {v4, v3, v3, v3, v3}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 57
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -700,12 +619,10 @@
 
     if-ge v1, v4, :cond_3
 
-    .line 58
     invoke-virtual {p0, v1}, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 59
     .local v0, "child":Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
@@ -713,12 +630,10 @@
 
     if-nez v4, :cond_1
 
-    .line 60
     iget-object v4, p0, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->mTempRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0, v0, v4}, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->offsetRectIntoDescendantCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 61
     iget-object v4, p0, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->mTempRect:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->left:I
@@ -733,7 +648,6 @@
 
     invoke-virtual {p1, v4, v5}, Landroid/view/MotionEvent;->offsetLocation(FF)V
 
-    .line 62
     invoke-virtual {v0, p1}, Landroid/view/View;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v4
@@ -745,7 +659,6 @@
     :cond_0
     const/4 v2, 0x1
 
-    .line 63
     :goto_1
     iget-object v4, p0, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->mTempRect:Landroid/graphics/Rect;
 
@@ -765,7 +678,6 @@
 
     invoke-virtual {p1, v4, v5}, Landroid/view/MotionEvent;->offsetLocation(FF)V
 
-    .line 57
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
@@ -774,10 +686,8 @@
     :cond_2
     move v2, v3
 
-    .line 62
     goto :goto_1
 
-    .line 66
     .end local v0    # "child":Landroid/view/View;
     :cond_3
     return v2
@@ -788,19 +698,15 @@
     .param p1, "callback"    # Lcom/android/keyguard/KeyguardSecurityCallback;
 
     .prologue
-    .line 79
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->getSecurityView()Lcom/android/keyguard/KeyguardSecurityView;
 
     move-result-object v0
 
-    .line 80
     .local v0, "ksv":Lcom/android/keyguard/KeyguardSecurityView;
     if-eqz v0, :cond_0
 
-    .line 81
     invoke-interface {v0, p1}, Lcom/android/keyguard/KeyguardSecurityView;->setKeyguardCallback(Lcom/android/keyguard/KeyguardSecurityCallback;)V
 
-    .line 83
     :cond_0
     return-void
 .end method
@@ -810,19 +716,15 @@
     .param p1, "utils"    # Lcom/android/internal/widget/LockPatternUtils;
 
     .prologue
-    .line 87
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->getSecurityView()Lcom/android/keyguard/KeyguardSecurityView;
 
     move-result-object v0
 
-    .line 88
     .local v0, "ksv":Lcom/android/keyguard/KeyguardSecurityView;
     if-eqz v0, :cond_0
 
-    .line 89
     invoke-interface {v0, p1}, Lcom/android/keyguard/KeyguardSecurityView;->setLockPatternUtils(Lcom/android/internal/widget/LockPatternUtils;)V
 
-    .line 91
     :cond_0
     return-void
 .end method
@@ -832,12 +734,10 @@
     .param p1, "duration"    # I
 
     .prologue
-    .line 139
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->getSecurityView()Lcom/android/keyguard/KeyguardSecurityView;
 
     move-result-object v0
 
-    .line 140
     .local v0, "active":Lcom/android/keyguard/KeyguardSecurityView;
     const/4 v2, 0x0
 
@@ -849,12 +749,10 @@
 
     if-ge v2, v4, :cond_2
 
-    .line 141
     invoke-virtual {p0, v2}, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 142
     .local v1, "child":Landroid/view/View;
     instance-of v4, v1, Lcom/android/keyguard/KeyguardSecurityView;
 
@@ -862,10 +760,8 @@
 
     move-object v3, v1
 
-    .line 143
     check-cast v3, Lcom/android/keyguard/KeyguardSecurityView;
 
-    .line 144
     .local v3, "ksv":Lcom/android/keyguard/KeyguardSecurityView;
     if-ne v3, v0, :cond_1
 
@@ -874,21 +770,18 @@
     :goto_1
     invoke-interface {v3, v4}, Lcom/android/keyguard/KeyguardSecurityView;->showBouncer(I)V
 
-    .line 140
     .end local v3    # "ksv":Lcom/android/keyguard/KeyguardSecurityView;
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 144
     .restart local v3    # "ksv":Lcom/android/keyguard/KeyguardSecurityView;
     :cond_1
     const/4 v4, 0x0
 
     goto :goto_1
 
-    .line 147
     .end local v1    # "child":Landroid/view/View;
     .end local v3    # "ksv":Lcom/android/keyguard/KeyguardSecurityView;
     :cond_2
@@ -899,19 +792,15 @@
     .locals 1
 
     .prologue
-    .line 131
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->getSecurityView()Lcom/android/keyguard/KeyguardSecurityView;
 
     move-result-object v0
 
-    .line 132
     .local v0, "ksv":Lcom/android/keyguard/KeyguardSecurityView;
     if-eqz v0, :cond_0
 
-    .line 133
     invoke-interface {v0}, Lcom/android/keyguard/KeyguardSecurityView;->showUsabilityHint()V
 
-    .line 135
     :cond_0
     return-void
 .end method
@@ -920,19 +809,15 @@
     .locals 1
 
     .prologue
-    .line 163
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->getSecurityView()Lcom/android/keyguard/KeyguardSecurityView;
 
     move-result-object v0
 
-    .line 164
     .local v0, "ksv":Lcom/android/keyguard/KeyguardSecurityView;
     if-eqz v0, :cond_0
 
-    .line 165
     invoke-interface {v0}, Lcom/android/keyguard/KeyguardSecurityView;->startAppearAnimation()V
 
-    .line 167
     :cond_0
     return-void
 .end method
@@ -942,21 +827,17 @@
     .param p1, "finishRunnable"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 171
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardSecurityViewFlipper;->getSecurityView()Lcom/android/keyguard/KeyguardSecurityView;
 
     move-result-object v0
 
-    .line 172
     .local v0, "ksv":Lcom/android/keyguard/KeyguardSecurityView;
     if-eqz v0, :cond_0
 
-    .line 173
     invoke-interface {v0, p1}, Lcom/android/keyguard/KeyguardSecurityView;->startDisappearAnimation(Ljava/lang/Runnable;)Z
 
     move-result v1
 
-    .line 175
     :goto_0
     return v1
 

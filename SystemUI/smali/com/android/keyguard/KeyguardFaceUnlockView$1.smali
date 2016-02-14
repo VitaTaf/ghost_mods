@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 56
     iput-object p1, p0, Lcom/android/keyguard/KeyguardFaceUnlockView$1;->this$0:Lcom/android/keyguard/KeyguardFaceUnlockView;
 
     invoke-direct {p0}, Landroid/view/IRotationWatcher$Stub;-><init>()V
@@ -38,7 +37,6 @@
     .param p1, "rotation"    # I
 
     .prologue
-    .line 65
     iget-object v0, p0, Lcom/android/keyguard/KeyguardFaceUnlockView$1;->this$0:Lcom/android/keyguard/KeyguardFaceUnlockView;
 
     # getter for: Lcom/android/keyguard/KeyguardFaceUnlockView;->mLastRotation:I
@@ -56,7 +54,6 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 66
     iget-object v0, p0, Lcom/android/keyguard/KeyguardFaceUnlockView$1;->this$0:Lcom/android/keyguard/KeyguardFaceUnlockView;
 
     # getter for: Lcom/android/keyguard/KeyguardFaceUnlockView;->mBiometricUnlock:Lcom/android/keyguard/BiometricSensorUnlock;
@@ -66,7 +63,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 67
     iget-object v0, p0, Lcom/android/keyguard/KeyguardFaceUnlockView$1;->this$0:Lcom/android/keyguard/KeyguardFaceUnlockView;
 
     # getter for: Lcom/android/keyguard/KeyguardFaceUnlockView;->mBiometricUnlock:Lcom/android/keyguard/BiometricSensorUnlock;
@@ -76,19 +72,16 @@
 
     invoke-interface {v0}, Lcom/android/keyguard/BiometricSensorUnlock;->stop()Z
 
-    .line 68
     iget-object v0, p0, Lcom/android/keyguard/KeyguardFaceUnlockView$1;->this$0:Lcom/android/keyguard/KeyguardFaceUnlockView;
 
     # invokes: Lcom/android/keyguard/KeyguardFaceUnlockView;->maybeStartBiometricUnlock()V
     invoke-static {v0}, Lcom/android/keyguard/KeyguardFaceUnlockView;->access$200(Lcom/android/keyguard/KeyguardFaceUnlockView;)V
 
-    .line 71
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/KeyguardFaceUnlockView$1;->this$0:Lcom/android/keyguard/KeyguardFaceUnlockView;
 
     # setter for: Lcom/android/keyguard/KeyguardFaceUnlockView;->mLastRotation:I
     invoke-static {v0, p1}, Lcom/android/keyguard/KeyguardFaceUnlockView;->access$002(Lcom/android/keyguard/KeyguardFaceUnlockView;I)I
 
-    .line 72
     return-void
 .end method

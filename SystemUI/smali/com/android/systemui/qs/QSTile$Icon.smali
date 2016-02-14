@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 332
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,7 +33,6 @@
     .locals 1
 
     .prologue
-    .line 337
     const-class v0, Lcom/android/systemui/qs/QSTile$Icon;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I

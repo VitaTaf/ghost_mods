@@ -13,13 +13,10 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 45
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationViewWrapper;->mView:Landroid/view/View;
 
-    .line 46
     return-void
 .end method
 
@@ -29,7 +26,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 35
     const v0, 0x102033a
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -38,16 +34,13 @@
 
     if-eqz v0, :cond_0
 
-    .line 36
     new-instance v0, Lcom/android/systemui/statusbar/NotificationMediaViewWrapper;
 
     invoke-direct {v0, p0, p1}, Lcom/android/systemui/statusbar/NotificationMediaViewWrapper;-><init>(Landroid/content/Context;Landroid/view/View;)V
 
-    .line 40
     :goto_0
     return-object v0
 
-    .line 37
     :cond_0
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
@@ -57,14 +50,12 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 38
     new-instance v0, Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper;
 
     invoke-direct {v0, p0, p1}, Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper;-><init>(Landroid/content/Context;Landroid/view/View;)V
 
     goto :goto_0
 
-    .line 40
     :cond_1
     new-instance v0, Lcom/android/systemui/statusbar/NotificationCustomViewWrapper;
 
@@ -79,7 +70,6 @@
     .locals 0
 
     .prologue
-    .line 60
     return-void
 .end method
 

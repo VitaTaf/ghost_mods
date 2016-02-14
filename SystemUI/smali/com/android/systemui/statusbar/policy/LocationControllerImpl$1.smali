@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 74
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/LocationControllerImpl;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 77
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 78
     .local v0, "action":Ljava/lang/String;
     const-string v1, "android.location.MODE_CHANGED"
 
@@ -54,13 +51,11 @@
 
     if-eqz v1, :cond_0
 
-    .line 79
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/LocationControllerImpl;
 
     # invokes: Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->locationSettingsChanged()V
     invoke-static {v1}, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->access$000(Lcom/android/systemui/statusbar/policy/LocationControllerImpl;)V
 
-    .line 81
     :cond_0
     return-void
 .end method

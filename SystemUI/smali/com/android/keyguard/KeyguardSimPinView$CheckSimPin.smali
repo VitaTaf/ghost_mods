@@ -29,18 +29,14 @@
     .param p3, "subId"    # I
 
     .prologue
-    .line 274
     iput-object p1, p0, Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
-    .line 275
     iput-object p2, p0, Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;->mPin:Ljava/lang/String;
 
-    .line 276
     iput p3, p0, Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;->mSubId:I
 
-    .line 277
     return-void
 .end method
 
@@ -53,7 +49,6 @@
     .locals 5
 
     .prologue
-    .line 285
     :try_start_0
     const-string v2, "KeyguardSimPinView"
 
@@ -85,7 +80,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 287
     const-string v2, "phone"
 
     invoke-static {v2}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -104,7 +98,6 @@
 
     move-result-object v1
 
-    .line 290
     .local v1, "result":[I
     const-string v2, "KeyguardSimPinView"
 
@@ -146,7 +139,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 292
     iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
 
     new-instance v3, Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin$1;
@@ -157,16 +149,13 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 305
     .end local v1    # "result":[I
     :goto_0
     return-void
 
-    .line 297
     :catch_0
     move-exception v0
 
-    .line 298
     .local v0, "e":Landroid/os/RemoteException;
     const-string v2, "KeyguardSimPinView"
 
@@ -174,7 +163,6 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 299
     iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
 
     new-instance v3, Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin$2;

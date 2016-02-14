@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 125
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/RotationLockTile$1;->this$0:Lcom/android/systemui/qs/tiles/RotationLockTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .param p2, "affordanceVisible"    # Z
 
     .prologue
-    .line 128
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/RotationLockTile$1;->this$0:Lcom/android/systemui/qs/tiles/RotationLockTile;
 
     if-eqz p1, :cond_0
@@ -53,10 +51,8 @@
     # invokes: Lcom/android/systemui/qs/tiles/RotationLockTile;->refreshState(Ljava/lang/Object;)V
     invoke-static {v1, v0}, Lcom/android/systemui/qs/tiles/RotationLockTile;->access$000(Lcom/android/systemui/qs/tiles/RotationLockTile;Ljava/lang/Object;)V
 
-    .line 130
     return-void
 
-    .line 128
     :cond_0
     sget-object v0, Lcom/android/systemui/qs/QSTile$UserBoolean;->BACKGROUND_FALSE:Lcom/android/systemui/qs/QSTile$UserBoolean;
 

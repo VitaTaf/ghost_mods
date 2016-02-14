@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 61
     iput-object p1, p0, Lcom/android/keyguard/KeyguardSimPinView$1;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -40,7 +39,6 @@
     .param p3, "simState"    # Lcom/android/internal/telephony/IccCardConstants$State;
 
     .prologue
-    .line 64
     const-string v1, "KeyguardSimPinView"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -79,7 +77,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 66
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPinView$1;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
 
     # getter for: Lcom/android/keyguard/KeyguardSimPinView;->mSubId:I
@@ -89,19 +86,16 @@
 
     if-ne v1, p1, :cond_2
 
-    .line 67
     sget-object v1, Lcom/android/internal/telephony/IccCardConstants$State;->PUK_REQUIRED:Lcom/android/internal/telephony/IccCardConstants$State;
 
     if-ne p3, v1, :cond_1
 
-    .line 69
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPinView$1;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
 
     iget-object v1, v1, Lcom/android/keyguard/KeyguardSimPinView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
     if-eqz v1, :cond_0
 
-    .line 70
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPinView$1;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
 
     iget-object v1, v1, Lcom/android/keyguard/KeyguardSimPinView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
@@ -110,18 +104,15 @@
 
     invoke-interface {v1, v2}, Lcom/android/keyguard/KeyguardSecurityCallback;->dismiss(Z)V
 
-    .line 85
     :cond_0
     :goto_0
     return-void
 
-    .line 73
     :cond_1
     sget-object v1, Lcom/android/internal/telephony/IccCardConstants$State;->ABSENT:Lcom/android/internal/telephony/IccCardConstants$State;
 
     if-ne p3, v1, :cond_2
 
-    .line 76
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPinView$1;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
 
     # getter for: Lcom/android/keyguard/KeyguardSimPinView;->mContext:Landroid/content/Context;
@@ -133,7 +124,6 @@
 
     move-result-object v0
 
-    .line 77
     .local v0, "monitor":Lcom/android/keyguard/KeyguardUpdateMonitor;
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getLockedSimCount()I
 
@@ -141,12 +131,10 @@
 
     if-gtz v1, :cond_2
 
-    .line 78
     invoke-virtual {v0, p1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->reportSimUnlocked(I)V
 
     goto :goto_0
 
-    .line 84
     .end local v0    # "monitor":Lcom/android/keyguard/KeyguardUpdateMonitor;
     :cond_2
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPinView$1;->this$0:Lcom/android/keyguard/KeyguardSimPinView;

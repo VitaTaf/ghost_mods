@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 33
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/RotationLockControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/RotationLockControllerImpl;
 
     invoke-direct {p0}, Lcom/android/internal/view/RotationPolicy$RotationPolicyListener;-><init>()V
@@ -37,12 +36,10 @@
     .locals 1
 
     .prologue
-    .line 36
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/RotationLockControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/RotationLockControllerImpl;
 
     # invokes: Lcom/android/systemui/statusbar/policy/RotationLockControllerImpl;->notifyChanged()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/RotationLockControllerImpl;->access$000(Lcom/android/systemui/statusbar/policy/RotationLockControllerImpl;)V
 
-    .line 37
     return-void
 .end method

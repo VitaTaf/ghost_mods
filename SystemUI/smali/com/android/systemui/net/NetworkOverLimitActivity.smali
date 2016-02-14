@@ -12,7 +12,6 @@
     .locals 0
 
     .prologue
-    .line 45
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
     return-void
@@ -24,7 +23,6 @@
     .param p1, "x1"    # Landroid/net/NetworkTemplate;
 
     .prologue
-    .line 45
     invoke-direct {p0, p1}, Lcom/android/systemui/net/NetworkOverLimitActivity;->snoozePolicy(Landroid/net/NetworkTemplate;)V
 
     return-void
@@ -35,38 +33,32 @@
     .param p0, "template"    # Landroid/net/NetworkTemplate;
 
     .prologue
-    .line 101
     invoke-virtual {p0}, Landroid/net/NetworkTemplate;->getMatchRule()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_0
 
-    .line 109
     const v0, 0x7f0c00bb
 
     :goto_0
     return v0
 
-    .line 103
     :pswitch_0
     const v0, 0x7f0c00b8
 
     goto :goto_0
 
-    .line 105
     :pswitch_1
     const v0, 0x7f0c00b9
 
     goto :goto_0
 
-    .line 107
     :pswitch_2
     const v0, 0x7f0c00ba
 
     goto :goto_0
 
-    .line 101
     nop
 
     :pswitch_data_0
@@ -82,7 +74,6 @@
     .param p1, "template"    # Landroid/net/NetworkTemplate;
 
     .prologue
-    .line 91
     const-string v2, "netpolicy"
 
     invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -93,22 +84,18 @@
 
     move-result-object v1
 
-    .line 94
     .local v1, "policyService":Landroid/net/INetworkPolicyManager;
     :try_start_0
     invoke-interface {v1, p1}, Landroid/net/INetworkPolicyManager;->snoozeLimit(Landroid/net/NetworkTemplate;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 98
     :goto_0
     return-void
 
-    .line 95
     :catch_0
     move-exception v0
 
-    .line 96
     .local v0, "e":Landroid/os/RemoteException;
     const-string v2, "NetworkOverLimitActivity"
 
@@ -126,10 +113,8 @@
     .param p1, "icicle"    # Landroid/os/Bundle;
 
     .prologue
-    .line 51
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 53
     invoke-virtual {p0}, Lcom/android/systemui/net/NetworkOverLimitActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v2
@@ -142,13 +127,11 @@
 
     check-cast v1, Landroid/net/NetworkTemplate;
 
-    .line 54
     .local v1, "template":Landroid/net/NetworkTemplate;
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 55
     .local v0, "builder":Landroid/app/AlertDialog$Builder;
     invoke-static {v1}, Lcom/android/systemui/net/NetworkOverLimitActivity;->getLimitedDialogTitleForTemplate(Landroid/net/NetworkTemplate;)I
 
@@ -156,19 +139,16 @@
 
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    .line 56
     const v2, 0x7f0c00bc
 
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
-    .line 58
     const v2, 0x104000a
 
     const/4 v3, 0x0
 
     invoke-virtual {v0, v2, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 59
     const v2, 0x7f0c00bd
 
     new-instance v3, Lcom/android/systemui/net/NetworkOverLimitActivity$1;
@@ -177,14 +157,12 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 67
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v2
 
     iput-object v2, p0, Lcom/android/systemui/net/NetworkOverLimitActivity;->mAlertDialog:Landroid/app/AlertDialog;
 
-    .line 68
     iget-object v2, p0, Lcom/android/systemui/net/NetworkOverLimitActivity;->mAlertDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v2}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
@@ -195,7 +173,6 @@
 
     invoke-virtual {v2, v3}, Landroid/view/Window;->setType(I)V
 
-    .line 69
     iget-object v2, p0, Lcom/android/systemui/net/NetworkOverLimitActivity;->mAlertDialog:Landroid/app/AlertDialog;
 
     new-instance v3, Lcom/android/systemui/net/NetworkOverLimitActivity$2;
@@ -204,12 +181,10 @@
 
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 75
     iget-object v2, p0, Lcom/android/systemui/net/NetworkOverLimitActivity;->mAlertDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v2}, Landroid/app/AlertDialog;->show()V
 
-    .line 77
     return-void
 .end method
 
@@ -217,27 +192,22 @@
     .locals 2
 
     .prologue
-    .line 82
     invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
 
-    .line 83
     iget-object v0, p0, Lcom/android/systemui/net/NetworkOverLimitActivity;->mAlertDialog:Landroid/app/AlertDialog;
 
     if-eqz v0, :cond_0
 
-    .line 84
     iget-object v0, p0, Lcom/android/systemui/net/NetworkOverLimitActivity;->mAlertDialog:Landroid/app/AlertDialog;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 85
     iget-object v0, p0, Lcom/android/systemui/net/NetworkOverLimitActivity;->mAlertDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
-    .line 87
     :cond_0
     return-void
 .end method

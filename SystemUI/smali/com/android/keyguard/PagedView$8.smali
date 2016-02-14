@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 2347
     iput-object p1, p0, Lcom/android/keyguard/PagedView$8;->this$0:Lcom/android/keyguard/PagedView;
 
     iput-object p2, p0, Lcom/android/keyguard/PagedView$8;->val$onCompleteRunnable:Ljava/lang/Runnable;
@@ -42,14 +41,12 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 2364
     iget-object v0, p0, Lcom/android/keyguard/PagedView$8;->this$0:Lcom/android/keyguard/PagedView;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Lcom/android/keyguard/PagedView;->mDragView:Landroid/view/View;
 
-    .line 2365
     return-void
 .end method
 
@@ -58,24 +55,20 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 2368
     iget-object v0, p0, Lcom/android/keyguard/PagedView$8;->this$0:Lcom/android/keyguard/PagedView;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Lcom/android/keyguard/PagedView;->mDragView:Landroid/view/View;
 
-    .line 2369
     iget-object v0, p0, Lcom/android/keyguard/PagedView$8;->val$onCompleteRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 2370
     iget-object v0, p0, Lcom/android/keyguard/PagedView$8;->val$onCompleteRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 2372
     :cond_0
     return-void
 .end method
@@ -85,7 +78,6 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 2351
     iget-object v0, p0, Lcom/android/keyguard/PagedView$8;->this$0:Lcom/android/keyguard/PagedView;
 
     # getter for: Lcom/android/keyguard/PagedView;->mDeleteDropTarget:Landroid/view/View;
@@ -95,7 +87,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 2352
     iget-object v0, p0, Lcom/android/keyguard/PagedView$8;->this$0:Lcom/android/keyguard/PagedView;
 
     # getter for: Lcom/android/keyguard/PagedView;->mDeleteDropTarget:Landroid/view/View;
@@ -130,7 +121,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
-    .line 2361
     :cond_0
     return-void
 .end method

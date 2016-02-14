@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 945
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PanelView$11;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,13 +39,11 @@
     .locals 2
 
     .prologue
-    .line 948
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$11;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/PanelView;->collapse(Z)V
 
-    .line 949
     return-void
 .end method

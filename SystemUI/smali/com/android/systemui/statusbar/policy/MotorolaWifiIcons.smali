@@ -34,7 +34,6 @@
 
     const/4 v2, 0x5
 
-    .line 37
     new-array v0, v5, [[I
 
     new-array v1, v2, [I
@@ -51,7 +50,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaWifiIcons;->WIFI_SIGNAL_STRENGTH:[[I
 
-    .line 50
     new-array v0, v5, [[I
 
     new-array v1, v2, [I
@@ -68,7 +66,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaWifiIcons;->QS_WIFI_SIGNAL_STRENGTH:[[I
 
-    .line 66
     sget-object v0, Lcom/android/systemui/statusbar/policy/MotorolaWifiIcons;->WIFI_SIGNAL_STRENGTH:[[I
 
     aget-object v0, v0, v3
@@ -77,7 +74,6 @@
 
     sput v0, Lcom/android/systemui/statusbar/policy/MotorolaWifiIcons;->WIFI_LEVEL_COUNT:I
 
-    .line 85
     const/16 v0, 0xd
 
     new-array v0, v0, [I
@@ -86,7 +82,6 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaWifiIcons;->SB_WIFI_SIGNAL_WIDE:[I
 
-    .line 107
     const/16 v0, 0xd
 
     new-array v0, v0, [I
@@ -95,14 +90,12 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaWifiIcons;->QS_WIFI_SIGNAL_WIDE:[I
 
-    .line 131
     new-array v0, v6, [I
 
     fill-array-data v0, :array_6
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaWifiIcons;->SB_WIFI_ACTIVITY_WIDE:[I
 
-    .line 150
     new-array v0, v6, [I
 
     fill-array-data v0, :array_7
@@ -111,7 +104,6 @@
 
     return-void
 
-    .line 37
     :array_0
     .array-data 4
         0x7f020143
@@ -130,7 +122,6 @@
         0x7f02014c
     .end array-data
 
-    .line 50
     :array_2
     .array-data 4
         0x7f02009f
@@ -149,7 +140,6 @@
         0x7f0200aa
     .end array-data
 
-    .line 85
     :array_4
     .array-data 4
         0x0
@@ -167,7 +157,6 @@
         0x7f020501
     .end array-data
 
-    .line 107
     :array_5
     .array-data 4
         0x0
@@ -185,7 +174,6 @@
         0x7f02031a
     .end array-data
 
-    .line 131
     :array_6
     .array-data 4
         0x0
@@ -201,7 +189,6 @@
         0x7f0204e9
     .end array-data
 
-    .line 150
     :array_7
     .array-data 4
         0x0

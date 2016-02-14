@@ -20,16 +20,12 @@
     .param p3, "settingName"    # Ljava/lang/String;
 
     .prologue
-    .line 34
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 35
     iput-object p1, p0, Lcom/android/systemui/qs/GlobalSetting;->mContext:Landroid/content/Context;
 
-    .line 36
     iput-object p3, p0, Lcom/android/systemui/qs/GlobalSetting;->mSettingName:Ljava/lang/String;
 
-    .line 37
     return-void
 .end method
 
@@ -39,7 +35,6 @@
     .locals 3
 
     .prologue
-    .line 40
     iget-object v0, p0, Lcom/android/systemui/qs/GlobalSetting;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -65,14 +60,12 @@
     .param p1, "selfChange"    # Z
 
     .prologue
-    .line 59
     invoke-virtual {p0}, Lcom/android/systemui/qs/GlobalSetting;->getValue()I
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/GlobalSetting;->handleValueChanged(I)V
 
-    .line 60
     return-void
 .end method
 
@@ -81,10 +74,8 @@
     .param p1, "listening"    # Z
 
     .prologue
-    .line 49
     if-eqz p1, :cond_0
 
-    .line 50
     iget-object v0, p0, Lcom/android/systemui/qs/GlobalSetting;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -101,11 +92,9 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 55
     :goto_0
     return-void
 
-    .line 53
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/GlobalSetting;->mContext:Landroid/content/Context;
 

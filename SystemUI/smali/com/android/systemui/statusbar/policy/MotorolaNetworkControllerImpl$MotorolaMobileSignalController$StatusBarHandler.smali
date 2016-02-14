@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 10891
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$StatusBarHandler;->this$0:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -37,7 +36,6 @@
     .param p2, "x1"    # Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$1;
 
     .prologue
-    .line 10891
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$StatusBarHandler;-><init>(Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController;)V
 
     return-void
@@ -52,18 +50,15 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 10898
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 10985
     :cond_0
     :goto_0
     :pswitch_0
     return-void
 
-    .line 10903
     :pswitch_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$StatusBarHandler;->this$0:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController;
 
@@ -81,7 +76,6 @@
 
     if-ne v1, v0, :cond_2
 
-    .line 10912
     .local v0, "shortNameAllowedByUser":Z
     :goto_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$StatusBarHandler;->this$0:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController;
@@ -92,12 +86,10 @@
 
     iput-boolean v0, v1, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$MotorolaMobileState;->mSettingShortNameAllowedByUser:Z
 
-    .line 10913
     sget-boolean v1, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->INFO:Z
 
     if-eqz v1, :cond_1
 
-    .line 10914
     const-string v2, "MotoNetwCtrlr"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -128,13 +120,11 @@
 
     invoke-static {v2, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 10921
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$StatusBarHandler;->this$0:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController;->motorolaUpdateNetworkNameShortForm()V
 
-    .line 10922
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$StatusBarHandler;->this$0:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController;->mNetworkController:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;
@@ -143,14 +133,12 @@
 
     goto :goto_0
 
-    .line 10903
     .end local v0    # "shortNameAllowedByUser":Z
     :cond_2
     const/4 v0, 0x0
 
     goto :goto_1
 
-    .line 10935
     :pswitch_2
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$StatusBarHandler;->this$0:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController;
 
@@ -170,12 +158,10 @@
 
     iput-boolean v2, v1, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$MotorolaMobileState;->mMobileDataEnabledSettingUpdate:Z
 
-    .line 10938
     sget-boolean v1, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->INFO:Z
 
     if-eqz v1, :cond_0
 
-    .line 10939
     const-string v2, "MotoNetwCtrlr"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -208,13 +194,11 @@
 
     goto/16 :goto_0
 
-    .line 10957
     :pswitch_3
     sget-boolean v1, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->CHATTY:Z
 
     if-eqz v1, :cond_0
 
-    .line 10958
     const-string v1, "MotoNetwCtrlr"
 
     const-string v2, "StatusBarHandler: Smoothing: EVENT_SIG_STRENGTH"
@@ -223,7 +207,6 @@
 
     goto/16 :goto_0
 
-    .line 10898
     nop
 
     :pswitch_data_0

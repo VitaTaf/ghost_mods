@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 743
     iput-object p1, p0, Lcom/android/systemui/egg/LLand$Player$1;->this$1:Lcom/android/systemui/egg/LLand$Player;
 
     iput-object p2, p0, Lcom/android/systemui/egg/LLand$Player$1;->val$this$0:Lcom/android/systemui/egg/LLand;
@@ -43,18 +42,15 @@
     .param p2, "outline"    # Landroid/graphics/Outline;
 
     .prologue
-    .line 746
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
     move-result v3
 
-    .line 747
     .local v3, "w":I
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I
 
     move-result v0
 
-    .line 748
     .local v0, "h":I
     int-to-float v4, v3
 
@@ -64,7 +60,6 @@
 
     float-to-int v1, v4
 
-    .line 749
     .local v1, "ix":I
     int-to-float v4, v0
 
@@ -74,7 +69,6 @@
 
     float-to-int v2, v4
 
-    .line 750
     .local v2, "iy":I
     sub-int v4, v3, v1
 
@@ -82,6 +76,5 @@
 
     invoke-virtual {p2, v1, v2, v4, v5}, Landroid/graphics/Outline;->setRect(IIII)V
 
-    .line 751
     return-void
 .end method

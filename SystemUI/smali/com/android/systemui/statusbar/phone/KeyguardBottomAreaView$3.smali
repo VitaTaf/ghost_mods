@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 398
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$3;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$3;->val$tm:Landroid/telecom/TelecomManager;
@@ -44,13 +43,11 @@
     .locals 2
 
     .prologue
-    .line 401
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$3;->val$tm:Landroid/telecom/TelecomManager;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/telecom/TelecomManager;->showInCallScreen(Z)V
 
-    .line 402
     return-void
 .end method

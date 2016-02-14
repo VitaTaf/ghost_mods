@@ -36,7 +36,6 @@
     .locals 0
 
     .prologue
-    .line 2071
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$5;->this$0:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +51,6 @@
     .param p2, "rhs"    # Landroid/telephony/SubscriptionInfo;
 
     .prologue
-    .line 2077
     invoke-virtual {p1}, Landroid/telephony/SubscriptionInfo;->getSimSlotIndex()I
 
     move-result v0
@@ -96,7 +94,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 2071
     check-cast p1, Landroid/telephony/SubscriptionInfo;
 
     .end local p1    # "x0":Ljava/lang/Object;

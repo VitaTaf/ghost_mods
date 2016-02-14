@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 143
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialogMotion$4;->this$0:Lcom/android/systemui/volume/VolumeDialogMotion;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -40,7 +39,6 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 154
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_0
@@ -54,13 +52,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 155
     :cond_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion$4;->mCancelled:Z
 
-    .line 156
     return-void
 .end method
 
@@ -69,16 +65,13 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 148
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion$4;->mCancelled:Z
 
     if-eqz v0, :cond_0
 
-    .line 151
     :goto_0
     return-void
 
-    .line 149
     :cond_0
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
@@ -93,7 +86,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 150
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion$4;->this$0:Lcom/android/systemui/volume/VolumeDialogMotion;
 

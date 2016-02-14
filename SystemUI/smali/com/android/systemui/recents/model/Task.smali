@@ -56,10 +56,8 @@
     .locals 0
 
     .prologue
-    .line 139
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 141
     return-void
 .end method
 
@@ -79,17 +77,14 @@
     .param p12, "iconFilename"    # Ljava/lang/String;
 
     .prologue
-    .line 146
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 147
     iget v3, p1, Lcom/android/systemui/recents/model/Task$TaskKey;->id:I
 
     if-eq p3, v3, :cond_0
 
     const/4 v2, 0x1
 
-    .line 148
     .local v2, "isInAffiliationGroup":Z
     :goto_0
     if-eqz v2, :cond_1
@@ -98,34 +93,26 @@
 
     const/4 v1, 0x1
 
-    .line 149
     .local v1, "hasAffiliationGroupColor":Z
     :goto_1
     iput-object p1, p0, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
 
-    .line 150
     iput p3, p0, Lcom/android/systemui/recents/model/Task;->taskAffiliation:I
 
-    .line 151
     iput p4, p0, Lcom/android/systemui/recents/model/Task;->taskAffiliationColor:I
 
-    .line 152
     iput-object p5, p0, Lcom/android/systemui/recents/model/Task;->activityLabel:Ljava/lang/String;
 
-    .line 153
     iput-object p6, p0, Lcom/android/systemui/recents/model/Task;->contentDescription:Ljava/lang/String;
 
-    .line 154
     iput-object p7, p0, Lcom/android/systemui/recents/model/Task;->activityIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 155
     if-eqz v1, :cond_2
 
     .end local p4    # "taskAffiliationColor":I
     :goto_2
     iput p4, p0, Lcom/android/systemui/recents/model/Task;->colorPrimary:I
 
-    .line 156
     iget v3, p0, Lcom/android/systemui/recents/model/Task;->colorPrimary:I
 
     const/4 v4, -0x1
@@ -145,10 +132,8 @@
     :goto_3
     iput-boolean v3, p0, Lcom/android/systemui/recents/model/Task;->useLightOnPrimaryColor:Z
 
-    .line 158
     iput-boolean p2, p0, Lcom/android/systemui/recents/model/Task;->isActive:Z
 
-    .line 159
     if-eqz p10, :cond_4
 
     if-eqz p9, :cond_4
@@ -158,23 +143,18 @@
     :goto_4
     iput-boolean v3, p0, Lcom/android/systemui/recents/model/Task;->lockToThisTask:Z
 
-    .line 160
     iput-boolean p10, p0, Lcom/android/systemui/recents/model/Task;->lockToTaskEnabled:Z
 
-    .line 161
     move-object/from16 v0, p11
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/Task;->icon:Landroid/graphics/Bitmap;
 
-    .line 162
     move-object/from16 v0, p12
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/Task;->iconFilename:Ljava/lang/String;
 
-    .line 163
     return-void
 
-    .line 147
     .end local v1    # "hasAffiliationGroupColor":Z
     .end local v2    # "isInAffiliationGroup":Z
     .restart local p4    # "taskAffiliationColor":I
@@ -183,7 +163,6 @@
 
     goto :goto_0
 
-    .line 148
     .restart local v2    # "isInAffiliationGroup":Z
     :cond_1
     const/4 v1, 0x0
@@ -194,17 +173,14 @@
     :cond_2
     move p4, p8
 
-    .line 155
     goto :goto_2
 
-    .line 156
     .end local p4    # "taskAffiliationColor":I
     :cond_3
     const/4 v3, 0x0
 
     goto :goto_3
 
-    .line 159
     :cond_4
     const/4 v3, 0x0
 
@@ -218,62 +194,50 @@
     .param p1, "o"    # Lcom/android/systemui/recents/model/Task;
 
     .prologue
-    .line 167
     iget-object v0, p1, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
 
-    .line 168
     iget v0, p1, Lcom/android/systemui/recents/model/Task;->taskAffiliation:I
 
     iput v0, p0, Lcom/android/systemui/recents/model/Task;->taskAffiliation:I
 
-    .line 169
     iget v0, p1, Lcom/android/systemui/recents/model/Task;->taskAffiliationColor:I
 
     iput v0, p0, Lcom/android/systemui/recents/model/Task;->taskAffiliationColor:I
 
-    .line 170
     iget-object v0, p1, Lcom/android/systemui/recents/model/Task;->activityLabel:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/Task;->activityLabel:Ljava/lang/String;
 
-    .line 171
     iget-object v0, p1, Lcom/android/systemui/recents/model/Task;->contentDescription:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/Task;->contentDescription:Ljava/lang/String;
 
-    .line 172
     iget-object v0, p1, Lcom/android/systemui/recents/model/Task;->activityIcon:Landroid/graphics/drawable/Drawable;
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/Task;->activityIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 173
     iget v0, p1, Lcom/android/systemui/recents/model/Task;->colorPrimary:I
 
     iput v0, p0, Lcom/android/systemui/recents/model/Task;->colorPrimary:I
 
-    .line 174
     iget-boolean v0, p1, Lcom/android/systemui/recents/model/Task;->useLightOnPrimaryColor:Z
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/model/Task;->useLightOnPrimaryColor:Z
 
-    .line 175
     iget-boolean v0, p1, Lcom/android/systemui/recents/model/Task;->isActive:Z
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/model/Task;->isActive:Z
 
-    .line 176
     iget-boolean v0, p1, Lcom/android/systemui/recents/model/Task;->lockToThisTask:Z
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/model/Task;->lockToThisTask:Z
 
-    .line 177
     iget-boolean v0, p1, Lcom/android/systemui/recents/model/Task;->lockToTaskEnabled:Z
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/model/Task;->lockToTaskEnabled:Z
 
-    .line 178
     return-void
 .end method
 
@@ -282,12 +246,10 @@
     .param p1, "o"    # Ljava/lang/Object;
 
     .prologue
-    .line 222
     move-object v0, p1
 
     check-cast v0, Lcom/android/systemui/recents/model/Task;
 
-    .line 223
     .local v0, "t":Lcom/android/systemui/recents/model/Task;
     iget-object v1, p0, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
 
@@ -306,23 +268,18 @@
     .param p2, "applicationIcon"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 203
     iput-object p2, p0, Lcom/android/systemui/recents/model/Task;->applicationIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 204
     iput-object p1, p0, Lcom/android/systemui/recents/model/Task;->thumbnail:Landroid/graphics/Bitmap;
 
-    .line 205
     iget-object v0, p0, Lcom/android/systemui/recents/model/Task;->mCb:Lcom/android/systemui/recents/model/Task$TaskCallbacks;
 
     if-eqz v0, :cond_0
 
-    .line 206
     iget-object v0, p0, Lcom/android/systemui/recents/model/Task;->mCb:Lcom/android/systemui/recents/model/Task$TaskCallbacks;
 
     invoke-interface {v0}, Lcom/android/systemui/recents/model/Task$TaskCallbacks;->onTaskDataLoaded()V
 
-    .line 208
     :cond_0
     return-void
 .end method
@@ -333,23 +290,18 @@
     .param p2, "defaultApplicationIcon"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 212
     iput-object p2, p0, Lcom/android/systemui/recents/model/Task;->applicationIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 213
     iput-object p1, p0, Lcom/android/systemui/recents/model/Task;->thumbnail:Landroid/graphics/Bitmap;
 
-    .line 214
     iget-object v0, p0, Lcom/android/systemui/recents/model/Task;->mCb:Lcom/android/systemui/recents/model/Task$TaskCallbacks;
 
     if-eqz v0, :cond_0
 
-    .line 215
     iget-object v0, p0, Lcom/android/systemui/recents/model/Task;->mCb:Lcom/android/systemui/recents/model/Task$TaskCallbacks;
 
     invoke-interface {v0}, Lcom/android/systemui/recents/model/Task$TaskCallbacks;->onTaskDataUnloaded()V
 
-    .line 217
     :cond_0
     return-void
 .end method
@@ -359,10 +311,8 @@
     .param p1, "cb"    # Lcom/android/systemui/recents/model/Task$TaskCallbacks;
 
     .prologue
-    .line 182
     iput-object p1, p0, Lcom/android/systemui/recents/model/Task;->mCb:Lcom/android/systemui/recents/model/Task$TaskCallbacks;
 
-    .line 183
     return-void
 .end method
 
@@ -371,14 +321,12 @@
     .param p1, "group"    # Lcom/android/systemui/recents/model/TaskGrouping;
 
     .prologue
-    .line 187
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/android/systemui/recents/model/Task;->group:Lcom/android/systemui/recents/model/TaskGrouping;
 
     if-eqz v0, :cond_0
 
-    .line 188
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "This task is already assigned to a group."
@@ -387,11 +335,9 @@
 
     throw v0
 
-    .line 190
     :cond_0
     iput-object p1, p0, Lcom/android/systemui/recents/model/Task;->group:Lcom/android/systemui/recents/model/TaskGrouping;
 
-    .line 191
     return-void
 .end method
 
@@ -399,16 +345,13 @@
     .locals 3
 
     .prologue
-    .line 228
     const-string v0, "no group"
 
-    .line 229
     .local v0, "groupAffiliation":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/systemui/recents/model/Task;->group:Lcom/android/systemui/recents/model/TaskGrouping;
 
     if-eqz v1, :cond_0
 
-    .line 230
     iget-object v1, p0, Lcom/android/systemui/recents/model/Task;->group:Lcom/android/systemui/recents/model/TaskGrouping;
 
     iget v1, v1, Lcom/android/systemui/recents/model/TaskGrouping;->affiliation:I
@@ -417,7 +360,6 @@
 
     move-result-object v0
 
-    .line 232
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 

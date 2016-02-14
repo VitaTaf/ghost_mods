@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 876
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PanelView$8;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 4
 
     .prologue
-    .line 879
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$8;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PanelView;->mKeyguardBottomArea:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
@@ -78,6 +76,5 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 884
     return-void
 .end method

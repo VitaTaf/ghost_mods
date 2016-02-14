@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 846
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$12;->this$0:Lcom/android/systemui/statusbar/stack/StackStateAnimator;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$12;->val$onTop:Z
@@ -44,22 +43,18 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 849
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$12;->val$onTop:Z
 
     if-eqz v0, :cond_0
 
-    .line 850
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$12;->this$0:Lcom/android/systemui/statusbar/stack/StackStateAnimator;
 
     # setter for: Lcom/android/systemui/statusbar/stack/StackStateAnimator;->mTopOverScrollAnimator:Landroid/animation/ValueAnimator;
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/stack/StackStateAnimator;->access$302(Lcom/android/systemui/statusbar/stack/StackStateAnimator;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 854
     :goto_0
     return-void
 
-    .line 852
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$12;->this$0:Lcom/android/systemui/statusbar/stack/StackStateAnimator;
 

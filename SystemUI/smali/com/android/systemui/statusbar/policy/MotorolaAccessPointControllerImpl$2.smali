@@ -36,7 +36,6 @@
     .locals 0
 
     .prologue
-    .line 249
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl$2;->this$0:Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +50,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 256
     iget v2, p1, Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPoint;->level:I
 
     iget-boolean v0, p1, Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPoint;->isConnected:Z
@@ -88,7 +86,6 @@
     .param p2, "rhs"    # Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPoint;
 
     .prologue
-    .line 252
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/policy/MotorolaAccessPointControllerImpl$2;->score(Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPoint;)I
 
     move-result v0
@@ -112,7 +109,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 249
     check-cast p1, Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$AccessPointController$AccessPoint;
 
     .end local p1    # "x0":Ljava/lang/Object;

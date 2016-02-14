@@ -44,7 +44,6 @@
     .locals 1
 
     .prologue
-    .line 257
     const/4 v0, -0x1
 
     sput v0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->INVALID_TASK_ID:I
@@ -63,10 +62,8 @@
 
     const/4 v2, 0x1
 
-    .line 278
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 279
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -79,7 +76,6 @@
 
     iput v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mMaxThumbnailCacheSize:I
 
-    .line 281
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -92,14 +88,11 @@
 
     iput v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mMaxIconCacheSize:I
 
-    .line 283
     iget v7, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mMaxIconCacheSize:I
 
-    .line 285
     .local v7, "iconCacheSize":I
     iget v8, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mMaxThumbnailCacheSize:I
 
-    .line 289
     .local v8, "thumbnailCacheSize":I
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
@@ -107,11 +100,9 @@
 
     move-result-object v6
 
-    .line 290
     .local v6, "icon":Landroid/graphics/Bitmap;
     invoke-virtual {v6, v3}, Landroid/graphics/Bitmap;->eraseColor(I)V
 
-    .line 291
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v2, v2, v0}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
@@ -120,19 +111,16 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mDefaultThumbnail:Landroid/graphics/Bitmap;
 
-    .line 292
     iget-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mDefaultThumbnail:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0, v3}, Landroid/graphics/Bitmap;->setHasAlpha(Z)V
 
-    .line 293
     iget-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mDefaultThumbnail:Landroid/graphics/Bitmap;
 
     const/4 v1, -0x1
 
     invoke-virtual {v0, v1}, Landroid/graphics/Bitmap;->eraseColor(I)V
 
-    .line 294
     new-instance v0, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -143,56 +131,48 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mDefaultApplicationIcon:Landroid/graphics/drawable/BitmapDrawable;
 
-    .line 297
     new-instance v0, Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
     invoke-direct {v0, p1}, Lcom/android/systemui/recents/misc/SystemServicesProxy;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mSystemServicesProxy:Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
-    .line 298
     new-instance v0, Lcom/android/systemui/recents/model/RecentsPackageMonitor;
 
     invoke-direct {v0}, Lcom/android/systemui/recents/model/RecentsPackageMonitor;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mPackageMonitor:Lcom/android/systemui/recents/model/RecentsPackageMonitor;
 
-    .line 299
     new-instance v0, Lcom/android/systemui/recents/model/TaskResourceLoadQueue;
 
     invoke-direct {v0}, Lcom/android/systemui/recents/model/TaskResourceLoadQueue;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mLoadQueue:Lcom/android/systemui/recents/model/TaskResourceLoadQueue;
 
-    .line 300
     new-instance v0, Lcom/android/systemui/recents/model/DrawableLruCache;
 
     invoke-direct {v0, v7}, Lcom/android/systemui/recents/model/DrawableLruCache;-><init>(I)V
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mApplicationIconCache:Lcom/android/systemui/recents/model/DrawableLruCache;
 
-    .line 301
     new-instance v0, Lcom/android/systemui/recents/model/BitmapLruCache;
 
     invoke-direct {v0, v8}, Lcom/android/systemui/recents/model/BitmapLruCache;-><init>(I)V
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mThumbnailCache:Lcom/android/systemui/recents/model/BitmapLruCache;
 
-    .line 302
     new-instance v0, Lcom/android/systemui/recents/model/StringLruCache;
 
     invoke-direct {v0, v4}, Lcom/android/systemui/recents/model/StringLruCache;-><init>(I)V
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mActivityLabelCache:Lcom/android/systemui/recents/model/StringLruCache;
 
-    .line 303
     new-instance v0, Lcom/android/systemui/recents/model/StringLruCache;
 
     invoke-direct {v0, v4}, Lcom/android/systemui/recents/model/StringLruCache;-><init>(I)V
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mContentDescriptionCache:Lcom/android/systemui/recents/model/StringLruCache;
 
-    .line 304
     new-instance v0, Lcom/android/systemui/recents/model/TaskResourceLoader;
 
     iget-object v1, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mLoadQueue:Lcom/android/systemui/recents/model/TaskResourceLoadQueue;
@@ -209,7 +189,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mLoader:Lcom/android/systemui/recents/model/TaskResourceLoader;
 
-    .line 306
     return-void
 .end method
 
@@ -217,7 +196,6 @@
     .locals 1
 
     .prologue
-    .line 318
     sget-object v0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->sInstance:Lcom/android/systemui/recents/model/RecentsTaskLoader;
 
     return-object v0
@@ -228,19 +206,16 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 310
     sget-object v0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->sInstance:Lcom/android/systemui/recents/model/RecentsTaskLoader;
 
     if-nez v0, :cond_0
 
-    .line 311
     new-instance v0, Lcom/android/systemui/recents/model/RecentsTaskLoader;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/recents/model/RecentsTaskLoader;-><init>(Landroid/content/Context;)V
 
     sput-object v0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->sInstance:Lcom/android/systemui/recents/model/RecentsTaskLoader;
 
-    .line 313
     :cond_0
     sget-object v0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->sInstance:Lcom/android/systemui/recents/model/RecentsTaskLoader;
 
@@ -254,12 +229,10 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 462
     invoke-static {}, Lcom/android/systemui/recents/RecentsConfiguration;->getInstance()Lcom/android/systemui/recents/RecentsConfiguration;
 
     move-result-object v0
 
-    .line 463
     .local v0, "config":Lcom/android/systemui/recents/RecentsConfiguration;
     new-instance v1, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;
 
@@ -267,7 +240,6 @@
 
     invoke-direct {v1, p1, v0, v2}, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;-><init>(Landroid/content/Context;Lcom/android/systemui/recents/RecentsConfiguration;Lcom/android/systemui/recents/misc/SystemServicesProxy;)V
 
-    .line 464
     .local v1, "plan":Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;
     return-object v1
 .end method
@@ -278,36 +250,30 @@
     .param p2, "notifyTaskDataUnloaded"    # Z
 
     .prologue
-    .line 511
     iget-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mLoadQueue:Lcom/android/systemui/recents/model/TaskResourceLoadQueue;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/recents/model/TaskResourceLoadQueue;->removeTask(Lcom/android/systemui/recents/model/Task;)V
 
-    .line 512
     iget-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mThumbnailCache:Lcom/android/systemui/recents/model/BitmapLruCache;
 
     iget-object v1, p1, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/model/BitmapLruCache;->remove(Lcom/android/systemui/recents/model/Task$TaskKey;)V
 
-    .line 513
     iget-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mApplicationIconCache:Lcom/android/systemui/recents/model/DrawableLruCache;
 
     iget-object v1, p1, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/model/DrawableLruCache;->remove(Lcom/android/systemui/recents/model/Task$TaskKey;)V
 
-    .line 514
     if-eqz p2, :cond_0
 
-    .line 515
     const/4 v0, 0x0
 
     iget-object v1, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mDefaultApplicationIcon:Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-virtual {p1, v0, v1}, Lcom/android/systemui/recents/model/Task;->notifyTaskDataUnloaded(Landroid/graphics/Bitmap;Landroid/graphics/drawable/Drawable;)V
 
-    .line 517
     :cond_0
     return-void
 .end method
@@ -318,7 +284,6 @@
     .param p2, "config"    # Lcom/android/systemui/recents/RecentsConfiguration;
 
     .prologue
-    .line 444
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Landroid/app/ActivityManager$TaskDescription;->getPrimaryColor()I
@@ -327,12 +292,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 445
     invoke-virtual {p1}, Landroid/app/ActivityManager$TaskDescription;->getPrimaryColor()I
 
     move-result v0
 
-    .line 447
     :goto_0
     return v0
 
@@ -352,7 +315,6 @@
     .param p6, "loadIfNotCached"    # Z
 
     .prologue
-    .line 388
     iget-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mApplicationIconCache:Lcom/android/systemui/recents/model/DrawableLruCache;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/recents/model/DrawableLruCache;->getAndInvalidateIfModified(Lcom/android/systemui/recents/model/Task$TaskKey;)Ljava/lang/Object;
@@ -361,21 +323,17 @@
 
     check-cast v6, Landroid/graphics/drawable/Drawable;
 
-    .line 389
     .local v6, "icon":Landroid/graphics/drawable/Drawable;
     if-eqz v6, :cond_0
 
     move-object v7, v6
 
-    .line 416
     :goto_0
     return-object v7
 
-    .line 393
     :cond_0
     if-eqz p6, :cond_3
 
-    .line 395
     iget-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mLoader:Lcom/android/systemui/recents/model/TaskResourceLoader;
 
     invoke-virtual {p2}, Landroid/app/ActivityManager$TaskDescription;->getInMemoryIcon()Landroid/graphics/Bitmap;
@@ -396,24 +354,20 @@
 
     move-result-object v7
 
-    .line 397
     .local v7, "tdDrawable":Landroid/graphics/drawable/Drawable;
     if-eqz v7, :cond_1
 
-    .line 398
     iget-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mApplicationIconCache:Lcom/android/systemui/recents/model/DrawableLruCache;
 
     invoke-virtual {v0, p1, v7}, Lcom/android/systemui/recents/model/DrawableLruCache;->put(Lcom/android/systemui/recents/model/Task$TaskKey;Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 403
     :cond_1
     iget-object v0, p5, Lcom/android/systemui/recents/model/ActivityInfoHandle;->info:Landroid/content/pm/ActivityInfo;
 
     if-nez v0, :cond_2
 
-    .line 404
     iget-object v0, p1, Lcom/android/systemui/recents/model/Task$TaskKey;->baseIntent:Landroid/content/Intent;
 
     invoke-virtual {v0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
@@ -428,13 +382,11 @@
 
     iput-object v0, p5, Lcom/android/systemui/recents/model/ActivityInfoHandle;->info:Landroid/content/pm/ActivityInfo;
 
-    .line 407
     :cond_2
     iget-object v0, p5, Lcom/android/systemui/recents/model/ActivityInfoHandle;->info:Landroid/content/pm/ActivityInfo;
 
     if-eqz v0, :cond_3
 
-    .line 408
     iget-object v0, p5, Lcom/android/systemui/recents/model/ActivityInfoHandle;->info:Landroid/content/pm/ActivityInfo;
 
     iget v1, p1, Lcom/android/systemui/recents/model/Task$TaskKey;->userId:I
@@ -443,20 +395,16 @@
 
     move-result-object v6
 
-    .line 409
     if-eqz v6, :cond_3
 
-    .line 410
     iget-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mApplicationIconCache:Lcom/android/systemui/recents/model/DrawableLruCache;
 
     invoke-virtual {v0, p1, v6}, Lcom/android/systemui/recents/model/DrawableLruCache;->put(Lcom/android/systemui/recents/model/Task$TaskKey;Ljava/lang/Object;)V
 
     move-object v7, v6
 
-    .line 411
     goto :goto_0
 
-    .line 416
     .end local v7    # "tdDrawable":Landroid/graphics/drawable/Drawable;
     :cond_3
     const/4 v7, 0x0
@@ -472,7 +420,6 @@
     .param p4, "infoHandle"    # Lcom/android/systemui/recents/model/ActivityInfoHandle;
 
     .prologue
-    .line 331
     if-eqz p2, :cond_1
 
     invoke-virtual {p2}, Landroid/app/ActivityManager$TaskDescription;->getLabel()Ljava/lang/String;
@@ -481,17 +428,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 332
     invoke-virtual {p2}, Landroid/app/ActivityManager$TaskDescription;->getLabel()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 354
     :cond_0
     :goto_0
     return-object v0
 
-    .line 335
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mActivityLabelCache:Lcom/android/systemui/recents/model/StringLruCache;
 
@@ -501,16 +445,13 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 336
     .local v0, "label":Ljava/lang/String;
     if-nez v0, :cond_0
 
-    .line 340
     iget-object v1, p4, Lcom/android/systemui/recents/model/ActivityInfoHandle;->info:Landroid/content/pm/ActivityInfo;
 
     if-nez v1, :cond_2
 
-    .line 341
     iget-object v1, p1, Lcom/android/systemui/recents/model/Task$TaskKey;->baseIntent:Landroid/content/Intent;
 
     invoke-virtual {v1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
@@ -525,27 +466,23 @@
 
     iput-object v1, p4, Lcom/android/systemui/recents/model/ActivityInfoHandle;->info:Landroid/content/pm/ActivityInfo;
 
-    .line 344
     :cond_2
     iget-object v1, p4, Lcom/android/systemui/recents/model/ActivityInfoHandle;->info:Landroid/content/pm/ActivityInfo;
 
     if-eqz v1, :cond_3
 
-    .line 345
     iget-object v1, p4, Lcom/android/systemui/recents/model/ActivityInfoHandle;->info:Landroid/content/pm/ActivityInfo;
 
     invoke-virtual {p3, v1}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->getActivityLabel(Landroid/content/pm/ActivityInfo;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 346
     iget-object v1, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mActivityLabelCache:Lcom/android/systemui/recents/model/StringLruCache;
 
     invoke-virtual {v1, p1, v0}, Lcom/android/systemui/recents/model/StringLruCache;->put(Lcom/android/systemui/recents/model/Task$TaskKey;Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 349
     :cond_3
     const-string v1, "RecentsTaskLoader"
 
@@ -587,7 +524,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 354
     const-string v0, ""
 
     goto :goto_0
@@ -601,7 +537,6 @@
     .param p4, "res"    # Landroid/content/res/Resources;
 
     .prologue
-    .line 361
     iget-object v1, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mContentDescriptionCache:Lcom/android/systemui/recents/model/StringLruCache;
 
     invoke-virtual {v1, p1}, Lcom/android/systemui/recents/model/StringLruCache;->getAndInvalidateIfModified(Lcom/android/systemui/recents/model/Task$TaskKey;)Ljava/lang/Object;
@@ -610,17 +545,14 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 362
     .local v0, "label":Ljava/lang/String;
     if-eqz v0, :cond_0
 
     move-object v1, v0
 
-    .line 380
     :goto_0
     return-object v1
 
-    .line 366
     :cond_0
     invoke-virtual {p2}, Ljava/lang/String;->isEmpty()Z
 
@@ -628,12 +560,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 367
     const-string v1, ""
 
     goto :goto_0
 
-    .line 370
     :cond_1
     iget-object v1, p1, Lcom/android/systemui/recents/model/Task$TaskKey;->baseIntent:Landroid/content/Intent;
 
@@ -643,20 +573,16 @@
 
     move-result-object v0
 
-    .line 371
     if-eqz v0, :cond_2
 
-    .line 372
     iget-object v1, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mContentDescriptionCache:Lcom/android/systemui/recents/model/StringLruCache;
 
     invoke-virtual {v1, p1, v0}, Lcom/android/systemui/recents/model/StringLruCache;->put(Lcom/android/systemui/recents/model/Task$TaskKey;Ljava/lang/Object;)V
 
     move-object v1, v0
 
-    .line 373
     goto :goto_0
 
-    .line 375
     :cond_2
     const-string v1, "RecentsTaskLoader"
 
@@ -698,7 +624,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 380
     const-string v1, ""
 
     goto :goto_0
@@ -711,7 +636,6 @@
     .param p3, "loadIfNotCached"    # Z
 
     .prologue
-    .line 423
     iget-object v2, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mThumbnailCache:Lcom/android/systemui/recents/model/BitmapLruCache;
 
     invoke-virtual {v2, p1}, Lcom/android/systemui/recents/model/BitmapLruCache;->getAndInvalidateIfModified(Lcom/android/systemui/recents/model/Task$TaskKey;)Ljava/lang/Object;
@@ -720,23 +644,19 @@
 
     check-cast v1, Landroid/graphics/Bitmap;
 
-    .line 424
     .local v1, "thumbnail":Landroid/graphics/Bitmap;
     if-eqz v1, :cond_0
 
     move-object v2, v1
 
-    .line 438
     :goto_0
     return-object v2
 
-    .line 428
     :cond_0
     invoke-static {}, Lcom/android/systemui/recents/RecentsConfiguration;->getInstance()Lcom/android/systemui/recents/RecentsConfiguration;
 
     move-result-object v0
 
-    .line 429
     .local v0, "config":Lcom/android/systemui/recents/RecentsConfiguration;
     iget v2, v0, Lcom/android/systemui/recents/RecentsConfiguration;->svelteLevel:I
 
@@ -746,27 +666,22 @@
 
     if-eqz p3, :cond_1
 
-    .line 431
     iget v2, p1, Lcom/android/systemui/recents/model/Task$TaskKey;->id:I
 
     invoke-virtual {p2, v2}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->getTaskThumbnail(I)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    .line 432
     if-eqz v1, :cond_1
 
-    .line 433
     iget-object v2, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mThumbnailCache:Lcom/android/systemui/recents/model/BitmapLruCache;
 
     invoke-virtual {v2, p1, v1}, Lcom/android/systemui/recents/model/BitmapLruCache;->put(Lcom/android/systemui/recents/model/Task$TaskKey;Ljava/lang/Object;)V
 
     move-object v2, v1
 
-    .line 434
     goto :goto_0
 
-    .line 438
     :cond_1
     const/4 v2, 0x0
 
@@ -777,7 +692,6 @@
     .locals 1
 
     .prologue
-    .line 452
     iget v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mMaxIconCacheSize:I
 
     return v0
@@ -787,7 +701,6 @@
     .locals 1
 
     .prologue
-    .line 323
     iget-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mSystemServicesProxy:Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
     return-object v0
@@ -797,7 +710,6 @@
     .locals 1
 
     .prologue
-    .line 457
     iget v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mMaxThumbnailCacheSize:I
 
     return v0
@@ -808,7 +720,6 @@
     .param p1, "t"    # Lcom/android/systemui/recents/model/Task;
 
     .prologue
-    .line 490
     iget-object v3, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mApplicationIconCache:Lcom/android/systemui/recents/model/DrawableLruCache;
 
     iget-object v4, p1, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
@@ -819,7 +730,6 @@
 
     check-cast v0, Landroid/graphics/drawable/Drawable;
 
-    .line 491
     .local v0, "applicationIcon":Landroid/graphics/drawable/Drawable;
     iget-object v3, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mThumbnailCache:Lcom/android/systemui/recents/model/BitmapLruCache;
 
@@ -831,7 +741,6 @@
 
     check-cast v2, Landroid/graphics/Bitmap;
 
-    .line 495
     .local v2, "thumbnail":Landroid/graphics/Bitmap;
     if-eqz v0, :cond_0
 
@@ -840,21 +749,17 @@
     :cond_0
     const/4 v1, 0x1
 
-    .line 496
     .local v1, "requiresLoad":Z
     :goto_0
     if-eqz v0, :cond_4
 
-    .line 497
     :goto_1
     if-eqz v1, :cond_1
 
-    .line 498
     iget-object v3, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mLoadQueue:Lcom/android/systemui/recents/model/TaskResourceLoadQueue;
 
     invoke-virtual {v3, p1}, Lcom/android/systemui/recents/model/TaskResourceLoadQueue;->addTask(Lcom/android/systemui/recents/model/Task;)V
 
-    .line 500
     :cond_1
     iget-object v3, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mDefaultThumbnail:Landroid/graphics/Bitmap;
 
@@ -866,10 +771,8 @@
     :cond_2
     invoke-virtual {p1, v2, v0}, Lcom/android/systemui/recents/model/Task;->notifyTaskDataLoaded(Landroid/graphics/Bitmap;Landroid/graphics/drawable/Drawable;)V
 
-    .line 501
     return-void
 
-    .line 495
     .end local v1    # "requiresLoad":Z
     .restart local v2    # "thumbnail":Landroid/graphics/Bitmap;
     :cond_3
@@ -877,7 +780,6 @@
 
     goto :goto_0
 
-    .line 496
     .restart local v1    # "requiresLoad":Z
     :cond_4
     iget-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mDefaultApplicationIcon:Landroid/graphics/drawable/BitmapDrawable;
@@ -892,10 +794,8 @@
     .param p3, "opts"    # Lcom/android/systemui/recents/model/RecentsTaskLoadPlan$Options;
 
     .prologue
-    .line 475
     if-nez p3, :cond_0
 
-    .line 476
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Requires load options"
@@ -904,33 +804,27 @@
 
     throw v0
 
-    .line 478
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mLoadQueue:Lcom/android/systemui/recents/model/TaskResourceLoadQueue;
 
     invoke-virtual {p2, p3, p0, v0}, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->executePlan(Lcom/android/systemui/recents/model/RecentsTaskLoadPlan$Options;Lcom/android/systemui/recents/model/RecentsTaskLoader;Lcom/android/systemui/recents/model/TaskResourceLoadQueue;)V
 
-    .line 479
     iget-boolean v0, p3, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan$Options;->onlyLoadForCache:Z
 
     if-nez v0, :cond_1
 
-    .line 480
     iget v0, p3, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan$Options;->numVisibleTasks:I
 
     iput v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mNumVisibleTasksLoaded:I
 
-    .line 481
     iget v0, p3, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan$Options;->numVisibleTaskThumbnails:I
 
     iput v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mNumVisibleThumbnailsLoaded:I
 
-    .line 484
     iget-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mLoader:Lcom/android/systemui/recents/model/TaskResourceLoader;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/recents/model/TaskResourceLoader;->start(Landroid/content/Context;)V
 
-    .line 486
     :cond_1
     return-void
 .end method
@@ -942,29 +836,23 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 541
     invoke-static {}, Lcom/android/systemui/recents/RecentsConfiguration;->getInstance()Lcom/android/systemui/recents/RecentsConfiguration;
 
     move-result-object v0
 
-    .line 542
     .local v0, "config":Lcom/android/systemui/recents/RecentsConfiguration;
     sparse-switch p1, :sswitch_data_0
 
-    .line 581
     :goto_0
     return-void
 
-    .line 545
     :sswitch_0
     invoke-virtual {p0}, Lcom/android/systemui/recents/model/RecentsTaskLoader;->stopLoader()V
 
-    .line 546
     iget v1, v0, Lcom/android/systemui/recents/RecentsConfiguration;->svelteLevel:I
 
     if-nez v1, :cond_1
 
-    .line 547
     iget-object v1, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mThumbnailCache:Lcom/android/systemui/recents/model/BitmapLruCache;
 
     iget v2, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mNumVisibleTasksLoaded:I
@@ -979,7 +867,6 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/recents/model/BitmapLruCache;->trimToSize(I)V
 
-    .line 554
     :cond_0
     :goto_1
     iget-object v1, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mApplicationIconCache:Lcom/android/systemui/recents/model/DrawableLruCache;
@@ -998,13 +885,11 @@
 
     goto :goto_0
 
-    .line 549
     :cond_1
     iget v1, v0, Lcom/android/systemui/recents/RecentsConfiguration;->svelteLevel:I
 
     if-ne v1, v3, :cond_2
 
-    .line 550
     iget-object v1, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mThumbnailCache:Lcom/android/systemui/recents/model/BitmapLruCache;
 
     iget v2, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mNumVisibleThumbnailsLoaded:I
@@ -1013,7 +898,6 @@
 
     goto :goto_1
 
-    .line 551
     :cond_2
     iget v1, v0, Lcom/android/systemui/recents/RecentsConfiguration;->svelteLevel:I
 
@@ -1021,14 +905,12 @@
 
     if-lt v1, v2, :cond_0
 
-    .line 552
     iget-object v1, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mThumbnailCache:Lcom/android/systemui/recents/model/BitmapLruCache;
 
     invoke-virtual {v1}, Lcom/android/systemui/recents/model/BitmapLruCache;->evictAll()V
 
     goto :goto_1
 
-    .line 560
     :sswitch_1
     iget-object v1, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mThumbnailCache:Lcom/android/systemui/recents/model/BitmapLruCache;
 
@@ -1042,7 +924,6 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/recents/model/BitmapLruCache;->trimToSize(I)V
 
-    .line 561
     iget-object v1, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mApplicationIconCache:Lcom/android/systemui/recents/model/DrawableLruCache;
 
     iget v2, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mMaxIconCacheSize:I
@@ -1057,7 +938,6 @@
 
     goto :goto_0
 
-    .line 566
     :sswitch_2
     iget-object v1, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mThumbnailCache:Lcom/android/systemui/recents/model/BitmapLruCache;
 
@@ -1071,7 +951,6 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/recents/model/BitmapLruCache;->trimToSize(I)V
 
-    .line 567
     iget-object v1, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mApplicationIconCache:Lcom/android/systemui/recents/model/DrawableLruCache;
 
     iget v2, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mMaxIconCacheSize:I
@@ -1086,30 +965,25 @@
 
     goto :goto_0
 
-    .line 572
     :sswitch_3
     iget-object v1, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mThumbnailCache:Lcom/android/systemui/recents/model/BitmapLruCache;
 
     invoke-virtual {v1}, Lcom/android/systemui/recents/model/BitmapLruCache;->evictAll()V
 
-    .line 573
     iget-object v1, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mApplicationIconCache:Lcom/android/systemui/recents/model/DrawableLruCache;
 
     invoke-virtual {v1}, Lcom/android/systemui/recents/model/DrawableLruCache;->evictAll()V
 
-    .line 575
     iget-object v1, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mActivityLabelCache:Lcom/android/systemui/recents/model/StringLruCache;
 
     invoke-virtual {v1}, Lcom/android/systemui/recents/model/StringLruCache;->evictAll()V
 
-    .line 576
     iget-object v1, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mContentDescriptionCache:Lcom/android/systemui/recents/model/StringLruCache;
 
     invoke-virtual {v1}, Lcom/android/systemui/recents/model/StringLruCache;->evictAll()V
 
     goto/16 :goto_0
 
-    .line 542
     :sswitch_data_0
     .sparse-switch
         0x5 -> :sswitch_1
@@ -1128,10 +1002,8 @@
     .param p2, "isTopTaskHome"    # Z
 
     .prologue
-    .line 469
     invoke-virtual {p1, p0, p2}, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->preloadPlan(Lcom/android/systemui/recents/model/RecentsTaskLoader;Z)V
 
-    .line 470
     return-void
 .end method
 
@@ -1141,12 +1013,10 @@
     .param p2, "cb"    # Lcom/android/systemui/recents/model/RecentsPackageMonitor$PackageCallbacks;
 
     .prologue
-    .line 528
     iget-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mPackageMonitor:Lcom/android/systemui/recents/model/RecentsPackageMonitor;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/systemui/recents/model/RecentsPackageMonitor;->register(Landroid/content/Context;Lcom/android/systemui/recents/model/RecentsPackageMonitor$PackageCallbacks;)V
 
-    .line 529
     return-void
 .end method
 
@@ -1154,17 +1024,14 @@
     .locals 1
 
     .prologue
-    .line 521
     iget-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mLoader:Lcom/android/systemui/recents/model/TaskResourceLoader;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/model/TaskResourceLoader;->stop()V
 
-    .line 522
     iget-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mLoadQueue:Lcom/android/systemui/recents/model/TaskResourceLoadQueue;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/model/TaskResourceLoadQueue;->clearTasks()V
 
-    .line 523
     return-void
 .end method
 
@@ -1173,19 +1040,16 @@
     .param p1, "t"    # Lcom/android/systemui/recents/model/Task;
 
     .prologue
-    .line 505
     iget-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mLoadQueue:Lcom/android/systemui/recents/model/TaskResourceLoadQueue;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/recents/model/TaskResourceLoadQueue;->removeTask(Lcom/android/systemui/recents/model/Task;)V
 
-    .line 506
     const/4 v0, 0x0
 
     iget-object v1, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mDefaultApplicationIcon:Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-virtual {p1, v0, v1}, Lcom/android/systemui/recents/model/Task;->notifyTaskDataUnloaded(Landroid/graphics/Bitmap;Landroid/graphics/drawable/Drawable;)V
 
-    .line 507
     return-void
 .end method
 
@@ -1193,11 +1057,9 @@
     .locals 1
 
     .prologue
-    .line 533
     iget-object v0, p0, Lcom/android/systemui/recents/model/RecentsTaskLoader;->mPackageMonitor:Lcom/android/systemui/recents/model/RecentsPackageMonitor;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/model/RecentsPackageMonitor;->unregister()V
 
-    .line 534
     return-void
 .end method

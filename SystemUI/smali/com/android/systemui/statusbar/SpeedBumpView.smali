@@ -20,15 +20,12 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 36
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/statusbar/ExpandableView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 32
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/SpeedBumpView;->mIsVisible:Z
 
-    .line 37
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/SpeedBumpView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -41,7 +38,6 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/SpeedBumpView;->mSpeedBumpHeight:I
 
-    .line 39
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/SpeedBumpView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -54,7 +50,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/SpeedBumpView;->mFastOutSlowInInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 41
     return-void
 .end method
 
@@ -67,17 +62,14 @@
     .param p4, "onFinishedRunnable"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 92
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/SpeedBumpView;->mIsVisible:Z
 
     if-eq p1, v1, :cond_2
 
-    .line 94
     if-eqz p1, :cond_1
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 95
     .local v0, "endValue":F
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/SpeedBumpView;->mLine:Lcom/android/systemui/statusbar/AlphaOptimizedView;
@@ -110,26 +102,21 @@
 
     invoke-virtual {v1, p4}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
 
-    .line 102
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/SpeedBumpView;->mIsVisible:Z
 
-    .line 108
     .end local v0    # "endValue":F
     :cond_0
     :goto_1
     return-void
 
-    .line 94
     :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 104
     :cond_2
     if-eqz p4, :cond_0
 
-    .line 105
     invoke-interface {p4}, Ljava/lang/Runnable;->run()V
 
     goto :goto_1
@@ -139,7 +126,6 @@
     .locals 1
 
     .prologue
-    .line 51
     iget v0, p0, Lcom/android/systemui/statusbar/SpeedBumpView;->mSpeedBumpHeight:I
 
     return v0
@@ -149,7 +135,6 @@
     .locals 1
 
     .prologue
-    .line 56
     iget v0, p0, Lcom/android/systemui/statusbar/SpeedBumpView;->mSpeedBumpHeight:I
 
     return v0
@@ -159,7 +144,6 @@
     .locals 1
 
     .prologue
-    .line 76
     const/4 v0, 0x1
 
     return v0
@@ -169,10 +153,8 @@
     .locals 1
 
     .prologue
-    .line 45
     invoke-super {p0}, Lcom/android/systemui/statusbar/ExpandableView;->onFinishInflate()V
 
-    .line 46
     const v0, 0x7f0f0111
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/SpeedBumpView;->findViewById(I)Landroid/view/View;
@@ -183,7 +165,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/SpeedBumpView;->mLine:Lcom/android/systemui/statusbar/AlphaOptimizedView;
 
-    .line 47
     return-void
 .end method
 
@@ -196,10 +177,8 @@
     .param p5, "bottom"    # I
 
     .prologue
-    .line 61
     invoke-super/range {p0 .. p5}, Lcom/android/systemui/statusbar/ExpandableView;->onLayout(ZIIII)V
 
-    .line 62
     iget-object v0, p0, Lcom/android/systemui/statusbar/SpeedBumpView;->mLine:Lcom/android/systemui/statusbar/AlphaOptimizedView;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/SpeedBumpView;->mLine:Lcom/android/systemui/statusbar/AlphaOptimizedView;
@@ -214,7 +193,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/AlphaOptimizedView;->setPivotX(F)V
 
-    .line 63
     iget-object v0, p0, Lcom/android/systemui/statusbar/SpeedBumpView;->mLine:Lcom/android/systemui/statusbar/AlphaOptimizedView;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/SpeedBumpView;->mLine:Lcom/android/systemui/statusbar/AlphaOptimizedView;
@@ -229,12 +207,10 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/AlphaOptimizedView;->setPivotY(F)V
 
-    .line 64
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/SpeedBumpView;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
-    .line 65
     return-void
 .end method
 
@@ -244,13 +220,10 @@
     .param p2, "heightMeasureSpec"    # I
 
     .prologue
-    .line 69
     invoke-virtual {p0, p1, p2}, Lcom/android/systemui/statusbar/SpeedBumpView;->measureChildren(II)V
 
-    .line 70
     iget v0, p0, Lcom/android/systemui/statusbar/SpeedBumpView;->mSpeedBumpHeight:I
 
-    .line 71
     .local v0, "height":I
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
@@ -258,7 +231,6 @@
 
     invoke-virtual {p0, v1, v0}, Lcom/android/systemui/statusbar/SpeedBumpView;->setMeasuredDimension(II)V
 
-    .line 72
     return-void
 .end method
 
@@ -268,12 +240,10 @@
     .param p3, "duration"    # J
 
     .prologue
-    .line 127
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0, p1, p2}, Lcom/android/systemui/statusbar/SpeedBumpView;->performVisibilityAnimation(ZJ)V
 
-    .line 128
     return-void
 .end method
 
@@ -284,14 +254,12 @@
     .param p4, "onFinishedRunnable"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 121
     const/4 v0, 0x0
 
     const-wide/16 v2, 0x0
 
     invoke-virtual {p0, v0, v2, v3}, Lcom/android/systemui/statusbar/SpeedBumpView;->performVisibilityAnimation(ZJ)V
 
-    .line 122
     return-void
 .end method
 
@@ -301,12 +269,10 @@
     .param p2, "delay"    # J
 
     .prologue
-    .line 80
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, p3, v0}, Lcom/android/systemui/statusbar/SpeedBumpView;->animateDivider(ZJLjava/lang/Runnable;)V
 
-    .line 81
     return-void
 .end method
 
@@ -316,26 +282,21 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 111
     iget-object v0, p0, Lcom/android/systemui/statusbar/SpeedBumpView;->mLine:Lcom/android/systemui/statusbar/AlphaOptimizedView;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/AlphaOptimizedView;->setAlpha(F)V
 
-    .line 112
     iget-object v0, p0, Lcom/android/systemui/statusbar/SpeedBumpView;->mLine:Lcom/android/systemui/statusbar/AlphaOptimizedView;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/AlphaOptimizedView;->setScaleX(F)V
 
-    .line 113
     iget-object v0, p0, Lcom/android/systemui/statusbar/SpeedBumpView;->mLine:Lcom/android/systemui/statusbar/AlphaOptimizedView;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/AlphaOptimizedView;->setScaleY(F)V
 
-    .line 114
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/SpeedBumpView;->mIsVisible:Z
 
-    .line 115
     return-void
 .end method

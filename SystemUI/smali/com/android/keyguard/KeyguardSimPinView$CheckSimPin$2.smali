@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 299
     iput-object p1, p0, Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin$2;->this$1:Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 3
 
     .prologue
-    .line 301
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin$2;->this$1:Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;
 
     const/4 v1, 0x2
@@ -49,6 +47,5 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;->onSimCheckResponse(II)V
 
-    .line 302
     return-void
 .end method

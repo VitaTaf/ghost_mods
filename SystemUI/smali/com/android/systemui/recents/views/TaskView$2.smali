@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 144
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskView$2;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
@@ -41,7 +40,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 148
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$2;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
@@ -60,6 +58,5 @@
 
     invoke-virtual {p2, v2, v2, v0, v1}, Landroid/graphics/Outline;->setOval(IIII)V
 
-    .line 149
     return-void
 .end method

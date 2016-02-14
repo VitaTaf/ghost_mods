@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 81
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/HotspotTile$1;->this$0:Lcom/android/systemui/qs/tiles/HotspotTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,12 +39,10 @@
     .locals 1
 
     .prologue
-    .line 84
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile$1;->this$0:Lcom/android/systemui/qs/tiles/HotspotTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/HotspotTile;->refreshState()V
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/HotspotTile;->access$100(Lcom/android/systemui/qs/tiles/HotspotTile;)V
 
-    .line 85
     return-void
 .end method

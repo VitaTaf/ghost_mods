@@ -25,7 +25,6 @@
     .locals 3
 
     .prologue
-    .line 350
     invoke-static {}, Lcom/android/internal/telephony/IccCardConstants$State;->values()[Lcom/android/internal/telephony/IccCardConstants$State;
 
     move-result-object v0
@@ -179,7 +178,6 @@
     :try_end_8
     .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_a
 
-    .line 264
     :goto_8
     invoke-static {}, Lcom/android/keyguard/CarrierText$StatusMode;->values()[Lcom/android/keyguard/CarrierText$StatusMode;
 
@@ -403,7 +401,6 @@
 
     goto :goto_9
 
-    .line 350
     :catch_a
     move-exception v0
 

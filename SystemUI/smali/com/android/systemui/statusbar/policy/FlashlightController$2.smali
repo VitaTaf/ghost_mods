@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 365
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$2;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     invoke-direct {p0}, Landroid/hardware/camera2/CameraDevice$StateListener;-><init>()V
@@ -38,7 +37,6 @@
     .param p1, "camera"    # Landroid/hardware/camera2/CameraDevice;
 
     .prologue
-    .line 374
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$2;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     # getter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
@@ -48,19 +46,16 @@
 
     if-ne v0, p1, :cond_0
 
-    .line 375
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$2;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     # invokes: Lcom/android/systemui/statusbar/policy/FlashlightController;->dispatchOff()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$500(Lcom/android/systemui/statusbar/policy/FlashlightController;)V
 
-    .line 376
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$2;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     # invokes: Lcom/android/systemui/statusbar/policy/FlashlightController;->teardown()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$600(Lcom/android/systemui/statusbar/policy/FlashlightController;)V
 
-    .line 378
     :cond_0
     return-void
 .end method
@@ -71,7 +66,6 @@
     .param p2, "error"    # I
 
     .prologue
-    .line 382
     const-string v0, "FlashlightController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -104,7 +98,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 383
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$2;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     # getter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
@@ -123,14 +116,12 @@
 
     if-nez v0, :cond_1
 
-    .line 384
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$2;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     # invokes: Lcom/android/systemui/statusbar/policy/FlashlightController;->handleError()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$700(Lcom/android/systemui/statusbar/policy/FlashlightController;)V
 
-    .line 386
     :cond_1
     return-void
 .end method
@@ -140,18 +131,15 @@
     .param p1, "camera"    # Landroid/hardware/camera2/CameraDevice;
 
     .prologue
-    .line 368
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$2;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     # setter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
     invoke-static {v0, p1}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$302(Lcom/android/systemui/statusbar/policy/FlashlightController;Landroid/hardware/camera2/CameraDevice;)Landroid/hardware/camera2/CameraDevice;
 
-    .line 369
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$2;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     # invokes: Lcom/android/systemui/statusbar/policy/FlashlightController;->postUpdateFlashlight()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$400(Lcom/android/systemui/statusbar/policy/FlashlightController;)V
 
-    .line 370
     return-void
 .end method

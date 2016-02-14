@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 896
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PanelView$9;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/PanelView$9;->val$onAnimationFinished:Ljava/lang/Runnable;
@@ -42,7 +41,6 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 899
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$9;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     const/4 v1, 0x0
@@ -50,11 +48,9 @@
     # setter for: Lcom/android/systemui/statusbar/phone/PanelView;->mHeightAnimator:Landroid/animation/ValueAnimator;
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/PanelView;->access$402(Lcom/android/systemui/statusbar/phone/PanelView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 900
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$9;->val$onAnimationFinished:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 901
     return-void
 .end method

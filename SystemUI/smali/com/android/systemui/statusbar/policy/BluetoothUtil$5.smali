@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 188
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/BluetoothUtil$5;->val$input:Landroid/bluetooth/BluetoothInputDevice;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
     .prologue
-    .line 191
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/BluetoothUtil$5;->val$input:Landroid/bluetooth/BluetoothInputDevice;
 
     invoke-virtual {v0, p1}, Landroid/bluetooth/BluetoothInputDevice;->connect(Landroid/bluetooth/BluetoothDevice;)Z
@@ -56,7 +54,6 @@
     .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
     .prologue
-    .line 196
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/BluetoothUtil$5;->val$input:Landroid/bluetooth/BluetoothInputDevice;
 
     invoke-virtual {v0, p1}, Landroid/bluetooth/BluetoothInputDevice;->disconnect(Landroid/bluetooth/BluetoothDevice;)Z

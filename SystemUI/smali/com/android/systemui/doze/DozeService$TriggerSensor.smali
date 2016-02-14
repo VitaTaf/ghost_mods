@@ -41,12 +41,10 @@
     .param p5, "pulseReason"    # I
 
     .prologue
-    .line 481
     iput-object p1, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
     invoke-direct {p0}, Landroid/hardware/TriggerEventListener;-><init>()V
 
-    .line 482
     # getter for: Lcom/android/systemui/doze/DozeService;->mSensors:Landroid/hardware/SensorManager;
     invoke-static {p1}, Lcom/android/systemui/doze/DozeService;->access$1800(Lcom/android/systemui/doze/DozeService;)Landroid/hardware/SensorManager;
 
@@ -58,16 +56,12 @@
 
     iput-object v0, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mSensor:Landroid/hardware/Sensor;
 
-    .line 483
     iput-boolean p3, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mConfigured:Z
 
-    .line 484
     iput-boolean p4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mDebugVibrate:Z
 
-    .line 485
     iput p5, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mPulseReason:I
 
-    .line 486
     return-void
 .end method
 
@@ -75,7 +69,6 @@
     .locals 4
 
     .prologue
-    .line 501
     iget-boolean v1, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mConfigured:Z
 
     if-eqz v1, :cond_0
@@ -84,12 +77,10 @@
 
     if-nez v1, :cond_1
 
-    .line 510
     :cond_0
     :goto_0
     return-void
 
-    .line 502
     :cond_1
     iget-boolean v1, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mRequested:Z
 
@@ -103,7 +94,6 @@
 
     if-nez v1, :cond_2
 
-    .line 503
     iget-object v1, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mSensors:Landroid/hardware/SensorManager;
@@ -119,7 +109,6 @@
 
     iput-boolean v1, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mRegistered:Z
 
-    .line 504
     # getter for: Lcom/android/systemui/doze/DozeService;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/doze/DozeService;->access$700()Z
 
@@ -158,13 +147,11 @@
 
     goto :goto_0
 
-    .line 505
     :cond_2
     iget-boolean v1, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mRegistered:Z
 
     if-eqz v1, :cond_0
 
-    .line 506
     iget-object v1, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mSensors:Landroid/hardware/SensorManager;
@@ -178,7 +165,6 @@
 
     move-result v0
 
-    .line 507
     .local v0, "rt":Z
     # getter for: Lcom/android/systemui/doze/DozeService;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/doze/DozeService;->access$700()Z
@@ -214,7 +200,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 508
     :cond_3
     const/4 v1, 0x0
 
@@ -232,7 +217,6 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 524
     iget-object v4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -242,7 +226,6 @@
 
     invoke-virtual {v4}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 526
     :try_start_0
     # getter for: Lcom/android/systemui/doze/DozeService;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/doze/DozeService;->access$700()Z
@@ -283,13 +266,11 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 527
     :cond_0
     iget-boolean v4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mDebugVibrate:Z
 
     if-eqz v4, :cond_1
 
-    .line 528
     iget-object v4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mContext:Landroid/content/Context;
@@ -305,11 +286,9 @@
 
     check-cast v2, Landroid/os/Vibrator;
 
-    .line 530
     .local v2, "v":Landroid/os/Vibrator;
     if-eqz v2, :cond_1
 
-    .line 531
     const-wide/16 v4, 0x3e8
 
     new-instance v6, Landroid/media/AudioAttributes$Builder;
@@ -334,7 +313,6 @@
 
     invoke-virtual {v2, v4, v5, v6}, Landroid/os/Vibrator;->vibrate(JLandroid/media/AudioAttributes;)V
 
-    .line 537
     .end local v2    # "v":Landroid/os/Vibrator;
     :cond_1
     iget-object v4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
@@ -344,15 +322,12 @@
     # invokes: Lcom/android/systemui/doze/DozeService;->requestPulse(I)V
     invoke-static {v4, v5}, Lcom/android/systemui/doze/DozeService;->access$900(Lcom/android/systemui/doze/DozeService;I)V
 
-    .line 538
     const/4 v4, 0x0
 
     iput-boolean v4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mRegistered:Z
 
-    .line 539
     invoke-direct {p0}, Lcom/android/systemui/doze/DozeService$TriggerSensor;->updateListener()V
 
-    .line 543
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
@@ -366,7 +341,6 @@
 
     sub-long v0, v4, v6
 
-    .line 545
     .local v0, "timeSinceNotification":J
     iget-object v4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
@@ -387,12 +361,10 @@
 
     const/4 v3, 0x1
 
-    .line 547
     .local v3, "withinVibrationThreshold":Z
     :cond_2
     if-eqz v3, :cond_5
 
-    .line 548
     # getter for: Lcom/android/systemui/doze/DozeService;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/doze/DozeService;->access$700()Z
 
@@ -411,7 +383,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 552
     :cond_3
     :goto_0
     iget-object v4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mSensor:Landroid/hardware/Sensor;
@@ -424,12 +395,10 @@
 
     if-ne v4, v5, :cond_4
 
-    .line 553
     invoke-static {v3}, Lcom/android/systemui/doze/DozeLog;->tracePickupPulse(Z)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 556
     :cond_4
     iget-object v4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
@@ -440,10 +409,8 @@
 
     invoke-virtual {v4}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 558
     return-void
 
-    .line 550
     :cond_5
     :try_start_1
     iget-object v4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
@@ -455,7 +422,6 @@
 
     goto :goto_0
 
-    .line 556
     .end local v0    # "timeSinceNotification":J
     .end local v3    # "withinVibrationThreshold":Z
     :catchall_0
@@ -478,20 +444,16 @@
     .param p1, "disabled"    # Z
 
     .prologue
-    .line 495
     iget-boolean v0, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mDisabled:Z
 
     if-ne v0, p1, :cond_0
 
-    .line 498
     :goto_0
     return-void
 
-    .line 496
     :cond_0
     iput-boolean p1, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mDisabled:Z
 
-    .line 497
     invoke-direct {p0}, Lcom/android/systemui/doze/DozeService$TriggerSensor;->updateListener()V
 
     goto :goto_0
@@ -502,20 +464,16 @@
     .param p1, "listen"    # Z
 
     .prologue
-    .line 489
     iget-boolean v0, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mRequested:Z
 
     if-ne v0, p1, :cond_0
 
-    .line 492
     :goto_0
     return-void
 
-    .line 490
     :cond_0
     iput-boolean p1, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mRequested:Z
 
-    .line 491
     invoke-direct {p0}, Lcom/android/systemui/doze/DozeService$TriggerSensor;->updateListener()V
 
     goto :goto_0
@@ -525,7 +483,6 @@
     .locals 2
 
     .prologue
-    .line 514
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "{mRegistered="

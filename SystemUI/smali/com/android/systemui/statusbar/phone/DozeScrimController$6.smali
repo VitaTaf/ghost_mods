@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 256
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$6;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 2
 
     .prologue
-    .line 259
     # getter for: Lcom/android/systemui/statusbar/phone/DozeScrimController;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/phone/DozeScrimController;->access$200()Z
 
@@ -54,16 +52,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 260
     :cond_0
     invoke-static {}, Lcom/android/systemui/doze/DozeLog;->tracePulseFinish()V
 
-    .line 263
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$6;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
     # invokes: Lcom/android/systemui/statusbar/phone/DozeScrimController;->pulseFinished()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/DozeScrimController;->access$1500(Lcom/android/systemui/statusbar/phone/DozeScrimController;)V
 
-    .line 264
     return-void
 .end method

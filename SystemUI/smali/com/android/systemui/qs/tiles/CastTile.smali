@@ -41,7 +41,6 @@
     .locals 2
 
     .prologue
-    .line 40
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.settings.CAST_SETTINGS"
@@ -60,38 +59,32 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 49
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
-    .line 46
     new-instance v0, Lcom/android/systemui/qs/tiles/CastTile$Callback;
 
     invoke-direct {v0, p0, v1}, Lcom/android/systemui/qs/tiles/CastTile$Callback;-><init>(Lcom/android/systemui/qs/tiles/CastTile;Lcom/android/systemui/qs/tiles/CastTile$1;)V
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mCallback:Lcom/android/systemui/qs/tiles/CastTile$Callback;
 
-    .line 50
     invoke-interface {p1}, Lcom/android/systemui/qs/QSTile$Host;->getCastController()Lcom/android/systemui/statusbar/policy/CastController;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mController:Lcom/android/systemui/statusbar/policy/CastController;
 
-    .line 51
     new-instance v0, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;
 
     invoke-direct {v0, p0, v1}, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;-><init>(Lcom/android/systemui/qs/tiles/CastTile;Lcom/android/systemui/qs/tiles/CastTile$1;)V
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mDetailAdapter:Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;
 
-    .line 52
     invoke-interface {p1}, Lcom/android/systemui/qs/QSTile$Host;->getKeyguardMonitor()Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mKeyguard:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
-    .line 53
     return-void
 .end method
 
@@ -99,7 +92,6 @@
     .locals 1
 
     .prologue
-    .line 39
     sget-boolean v0, Lcom/android/systemui/qs/tiles/CastTile;->DEBUG:Z
 
     return v0
@@ -110,7 +102,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/CastTile;
 
     .prologue
-    .line 39
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -121,7 +112,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/CastTile;
 
     .prologue
-    .line 39
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mController:Lcom/android/systemui/statusbar/policy/CastController;
 
     return-object v0
@@ -133,7 +123,6 @@
     .param p1, "x1"    # Lcom/android/systemui/statusbar/policy/CastController$CastDevice;
 
     .prologue
-    .line 39
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tiles/CastTile;->getDeviceName(Lcom/android/systemui/statusbar/policy/CastController$CastDevice;)Ljava/lang/String;
 
     move-result-object v0
@@ -146,7 +135,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/CastTile;
 
     .prologue
-    .line 39
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -157,7 +145,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/CastTile;
 
     .prologue
-    .line 39
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -168,7 +155,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/CastTile;
 
     .prologue
-    .line 39
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/CastTile;->refreshState()V
 
     return-void
@@ -179,7 +165,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/CastTile;
 
     .prologue
-    .line 39
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/CastTile;->refreshState()V
 
     return-void
@@ -189,7 +174,6 @@
     .locals 1
 
     .prologue
-    .line 39
     sget-object v0, Lcom/android/systemui/qs/tiles/CastTile;->CAST_SETTINGS:Landroid/content/Intent;
 
     return-object v0
@@ -199,7 +183,6 @@
     .locals 1
 
     .prologue
-    .line 39
     sget-boolean v0, Lcom/android/systemui/qs/tiles/CastTile;->DEBUG:Z
 
     return v0
@@ -210,7 +193,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/CastTile;
 
     .prologue
-    .line 39
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -220,7 +202,6 @@
     .locals 1
 
     .prologue
-    .line 39
     sget-boolean v0, Lcom/android/systemui/qs/tiles/CastTile;->DEBUG:Z
 
     return v0
@@ -231,7 +212,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/CastTile;
 
     .prologue
-    .line 39
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -242,7 +222,6 @@
     .param p1, "device"    # Lcom/android/systemui/statusbar/policy/CastController$CastDevice;
 
     .prologue
-    .line 133
     iget-object v0, p1, Lcom/android/systemui/statusbar/policy/CastController$CastDevice;->name:Ljava/lang/String;
 
     if-eqz v0, :cond_0
@@ -270,7 +249,6 @@
     .locals 2
 
     .prologue
-    .line 125
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
     check-cast v0, Lcom/android/systemui/qs/QSTile$BooleanState;
@@ -279,7 +257,6 @@
 
     if-nez v0, :cond_0
 
-    .line 127
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mContext:Landroid/content/Context;
 
     const v1, 0x7f0c00b6
@@ -288,7 +265,6 @@
 
     move-result-object v0
 
-    .line 129
     :goto_0
     return-object v0
 
@@ -302,7 +278,6 @@
     .locals 1
 
     .prologue
-    .line 57
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mDetailAdapter:Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;
 
     return-object v0
@@ -312,12 +287,10 @@
     .locals 1
 
     .prologue
-    .line 88
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/tiles/CastTile;->showDetail(Z)V
 
-    .line 89
     return-void
 .end method
 
@@ -331,7 +304,6 @@
 
     const/4 v5, 0x0
 
-    .line 93
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/CastTile;->mKeyguard:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
     invoke-virtual {v4}, Lcom/android/systemui/statusbar/policy/KeyguardMonitor;->isSecure()Z
@@ -354,7 +326,6 @@
     :goto_0
     iput-boolean v4, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->visible:Z
 
-    .line 94
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/CastTile;->mContext:Landroid/content/Context;
 
     const v7, 0x7f0c00e9
@@ -365,20 +336,16 @@
 
     iput-object v4, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->label:Ljava/lang/String;
 
-    .line 95
     iput-boolean v5, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
 
-    .line 96
     iput-boolean v5, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->autoMirrorDrawable:Z
 
-    .line 97
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/CastTile;->mController:Lcom/android/systemui/statusbar/policy/CastController;
 
     invoke-interface {v4}, Lcom/android/systemui/statusbar/policy/CastController;->getCastDevices()Ljava/util/Set;
 
     move-result-object v2
 
-    .line 102
     .local v2, "devices":Ljava/util/Set;, "Ljava/util/Set<Lcom/android/systemui/statusbar/policy/CastController$CastDevice;>;"
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/CastTile;->mContext:Landroid/content/Context;
 
@@ -400,14 +367,11 @@
 
     if-nez v4, :cond_1
 
-    .line 103
     iput-boolean v5, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->visible:Z
 
-    .line 106
     :cond_1
     const/4 v0, 0x0
 
-    .line 107
     .local v0, "connecting":Z
     invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
@@ -428,7 +392,6 @@
 
     check-cast v1, Lcom/android/systemui/statusbar/policy/CastController$CastDevice;
 
-    .line 108
     .local v1, "device":Lcom/android/systemui/statusbar/policy/CastController$CastDevice;
     iget v4, v1, Lcom/android/systemui/statusbar/policy/CastController$CastDevice;->state:I
 
@@ -436,10 +399,8 @@
 
     if-ne v4, v5, :cond_4
 
-    .line 109
     iput-boolean v6, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
 
-    .line 110
     invoke-direct {p0, v1}, Lcom/android/systemui/qs/tiles/CastTile;->getDeviceName(Lcom/android/systemui/statusbar/policy/CastController$CastDevice;)Ljava/lang/String;
 
     move-result-object v4
@@ -455,10 +416,8 @@
     :cond_3
     move v4, v5
 
-    .line 93
     goto :goto_0
 
-    .line 111
     .restart local v0    # "connecting":Z
     .restart local v1    # "device":Lcom/android/systemui/statusbar/policy/CastController$CastDevice;
     .restart local v2    # "devices":Ljava/util/Set;, "Ljava/util/Set<Lcom/android/systemui/statusbar/policy/CastController$CastDevice;>;"
@@ -468,12 +427,10 @@
 
     if-ne v4, v6, :cond_2
 
-    .line 112
     const/4 v0, 0x1
 
     goto :goto_1
 
-    .line 115
     .end local v1    # "device":Lcom/android/systemui/statusbar/policy/CastController$CastDevice;
     :cond_5
     iget-boolean v4, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
@@ -482,7 +439,6 @@
 
     if-eqz v0, :cond_6
 
-    .line 116
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/CastTile;->mContext:Landroid/content/Context;
 
     const v5, 0x7f0c00f6
@@ -493,7 +449,6 @@
 
     iput-object v4, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->label:Ljava/lang/String;
 
-    .line 118
     :cond_6
     iget-boolean v4, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
 
@@ -508,16 +463,13 @@
 
     iput-object v4, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->icon:Lcom/android/systemui/qs/QSTile$Icon;
 
-    .line 120
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/CastTile;->mDetailAdapter:Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;
 
     # invokes: Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;->updateItems(Ljava/util/Set;)V
     invoke-static {v4, v2}, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;->access$200(Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;Ljava/util/Set;)V
 
-    .line 121
     return-void
 
-    .line 118
     :cond_7
     const v4, 0x7f02007b
 
@@ -530,7 +482,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 39
     check-cast p1, Lcom/android/systemui/qs/QSTile$BooleanState;
 
     .end local p1    # "x0":Lcom/android/systemui/qs/QSTile$State;
@@ -544,19 +495,15 @@
     .param p1, "newUserId"    # I
 
     .prologue
-    .line 81
     invoke-super {p0, p1}, Lcom/android/systemui/qs/QSTile;->handleUserSwitch(I)V
 
-    .line 82
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mController:Lcom/android/systemui/statusbar/policy/CastController;
 
     if-nez v0, :cond_0
 
-    .line 84
     :goto_0
     return-void
 
-    .line 83
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mController:Lcom/android/systemui/statusbar/policy/CastController;
 
@@ -569,7 +516,6 @@
     .locals 1
 
     .prologue
-    .line 62
     new-instance v0, Lcom/android/systemui/qs/QSTile$BooleanState;
 
     invoke-direct {v0}, Lcom/android/systemui/qs/QSTile$BooleanState;-><init>()V
@@ -581,7 +527,6 @@
     .locals 1
 
     .prologue
-    .line 39
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/CastTile;->newTileState()Lcom/android/systemui/qs/QSTile$BooleanState;
 
     move-result-object v0
@@ -594,16 +539,13 @@
     .param p1, "listening"    # Z
 
     .prologue
-    .line 67
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mController:Lcom/android/systemui/statusbar/policy/CastController;
 
     if-nez v0, :cond_0
 
-    .line 77
     :goto_0
     return-void
 
-    .line 68
     :cond_0
     sget-boolean v0, Lcom/android/systemui/qs/tiles/CastTile;->DEBUG:Z
 
@@ -631,18 +573,15 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 69
     :cond_1
     if-eqz p1, :cond_2
 
-    .line 70
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mController:Lcom/android/systemui/statusbar/policy/CastController;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/CastTile;->mCallback:Lcom/android/systemui/qs/tiles/CastTile$Callback;
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/CastController;->addCallback(Lcom/android/systemui/statusbar/policy/CastController$Callback;)V
 
-    .line 71
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mKeyguard:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/CastTile;->mCallback:Lcom/android/systemui/qs/tiles/CastTile$Callback;
@@ -651,7 +590,6 @@
 
     goto :goto_0
 
-    .line 73
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mController:Lcom/android/systemui/statusbar/policy/CastController;
 
@@ -659,14 +597,12 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/CastController;->setDiscovering(Z)V
 
-    .line 74
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mController:Lcom/android/systemui/statusbar/policy/CastController;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/CastTile;->mCallback:Lcom/android/systemui/qs/tiles/CastTile$Callback;
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/CastController;->removeCallback(Lcom/android/systemui/statusbar/policy/CastController$Callback;)V
 
-    .line 75
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mKeyguard:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/CastTile;->mCallback:Lcom/android/systemui/qs/tiles/CastTile$Callback;

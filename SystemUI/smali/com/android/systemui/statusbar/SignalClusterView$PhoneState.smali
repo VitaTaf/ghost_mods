@@ -42,7 +42,6 @@
     .param p0, "x0"    # Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;
 
     .prologue
-    .line 633
     iget-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;->mMobileGroup:Landroid/view/ViewGroup;
 
     return-object v0
@@ -53,7 +52,6 @@
     .param p0, "x0"    # Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;
 
     .prologue
-    .line 633
     iget-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;->mMobile:Landroid/widget/ImageView;
 
     return-object v0
@@ -64,7 +62,6 @@
     .param p0, "x0"    # Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;
 
     .prologue
-    .line 633
     iget-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;->mMobileType:Landroid/widget/ImageView;
 
     return-object v0
@@ -75,7 +72,6 @@
     .param p0, "x0"    # Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;
 
     .prologue
-    .line 633
     iget v0, p0, Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;->mMobileTypeId:I
 
     return v0
@@ -92,7 +88,6 @@
 
     const/4 v1, 0x0
 
-    .line 674
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;->mMobileVisible:Z
 
     if-eqz v0, :cond_1
@@ -106,21 +101,18 @@
 
     if-nez v0, :cond_1
 
-    .line 680
     iget-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;->mMobile:Landroid/widget/ImageView;
 
     iget v3, p0, Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;->mMobileStrengthId:I
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 684
     iget-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;->mMobileType:Landroid/widget/ImageView;
 
     iget v3, p0, Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;->mMobileTypeId:I
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 688
     iget-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;->mMobileGroup:Landroid/view/ViewGroup;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -151,12 +143,10 @@
 
     invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 694
     iget-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;->mMobileGroup:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 706
     :goto_0
     iget-object v3, p0, Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;->mMobileGroup:Landroid/view/ViewGroup;
 
@@ -172,7 +162,6 @@
     :goto_1
     invoke-virtual {v3, v0, v1, v1, v1}, Landroid/view/ViewGroup;->setPaddingRelative(IIII)V
 
-    .line 717
     iget-object v3, p0, Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;->mMobile:Landroid/widget/ImageView;
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;->mIsMobileTypeIconWide:Z
@@ -189,12 +178,10 @@
     :goto_2
     invoke-virtual {v3, v0, v1, v1, v1}, Landroid/widget/ImageView;->setPaddingRelative(IIII)V
 
-    .line 728
     sget-boolean v0, Lcom/android/systemui/statusbar/SignalClusterView;->DEBUG:Z
 
     if-eqz v0, :cond_0
 
-    .line 729
     const-string v3, "SignalClusterView"
 
     const-string v4, "mobile: %s sig=%d typ=%d"
@@ -238,7 +225,6 @@
 
     invoke-static {v3, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 744
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;->mMobileType:Landroid/widget/ImageView;
 
@@ -249,12 +235,10 @@
     :goto_4
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 750
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;->mMobileVisible:Z
 
     return v0
 
-    .line 700
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;->mMobileGroup:Landroid/view/ViewGroup;
 
@@ -265,16 +249,13 @@
     :cond_2
     move v0, v1
 
-    .line 706
     goto :goto_1
 
     :cond_3
     move v0, v1
 
-    .line 717
     goto :goto_2
 
-    .line 729
     :cond_4
     const-string v0, "GONE"
 
@@ -283,7 +264,6 @@
     :cond_5
     move v1, v2
 
-    .line 744
     goto :goto_4
 .end method
 
@@ -292,7 +272,6 @@
     .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
     .prologue
-    .line 757
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;->mMobileVisible:Z
 
     if-eqz v0, :cond_0
@@ -309,7 +288,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 764
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getText()Ljava/util/List;
 
     move-result-object v0
@@ -322,7 +300,6 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 768
     :cond_0
     return-void
 .end method

@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 355
     iput-object p1, p0, Lcom/android/keyguard/KeyguardSimPinView$3$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$3;
 
     iput p2, p0, Lcom/android/keyguard/KeyguardSimPinView$3$1;->val$result:I
@@ -50,7 +49,6 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 357
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView$3$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$3;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardSimPinView$3;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
@@ -62,7 +60,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 358
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView$3$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$3;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardSimPinView$3;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
@@ -74,7 +71,6 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->hide()V
 
-    .line 360
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView$3$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$3;
 
@@ -82,12 +78,10 @@
 
     invoke-virtual {v0, v3}, Lcom/android/keyguard/KeyguardSimPinView;->resetPasswordText(Z)V
 
-    .line 361
     iget v0, p0, Lcom/android/keyguard/KeyguardSimPinView$3$1;->val$result:I
 
     if-nez v0, :cond_1
 
-    .line 362
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView$3$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$3;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardSimPinView$3;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
@@ -111,7 +105,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->reportSimUnlocked(I)V
 
-    .line 364
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView$3$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$3;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardSimPinView$3;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
@@ -120,7 +113,6 @@
 
     invoke-interface {v0, v3}, Lcom/android/keyguard/KeyguardSecurityCallback;->dismiss(Z)V
 
-    .line 385
     :goto_0
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView$3$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$3;
 
@@ -130,7 +122,6 @@
 
     invoke-interface {v0}, Lcom/android/keyguard/KeyguardSecurityCallback;->userActivity()V
 
-    .line 386
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView$3$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$3;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardSimPinView$3;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
@@ -140,23 +131,19 @@
     # setter for: Lcom/android/keyguard/KeyguardSimPinView;->mCheckSimPinThread:Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;
     invoke-static {v0, v1}, Lcom/android/keyguard/KeyguardSimPinView;->access$702(Lcom/android/keyguard/KeyguardSimPinView;Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;)Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;
 
-    .line 387
     return-void
 
-    .line 366
     :cond_1
     iget v0, p0, Lcom/android/keyguard/KeyguardSimPinView$3$1;->val$result:I
 
     if-ne v0, v3, :cond_3
 
-    .line 367
     iget v0, p0, Lcom/android/keyguard/KeyguardSimPinView$3$1;->val$attemptsRemaining:I
 
     const/4 v1, 0x2
 
     if-gt v0, v1, :cond_2
 
-    .line 369
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView$3$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$3;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardSimPinView$3;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
@@ -170,7 +157,6 @@
 
     invoke-virtual {v0}, Landroid/app/Dialog;->show()V
 
-    .line 381
     :goto_1
     const-string v0, "KeyguardSimPinView"
 
@@ -210,7 +196,6 @@
 
     goto :goto_0
 
-    .line 372
     :cond_2
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView$3$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$3;
 
@@ -233,7 +218,6 @@
 
     goto :goto_1
 
-    .line 378
     :cond_3
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView$3$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$3;
 

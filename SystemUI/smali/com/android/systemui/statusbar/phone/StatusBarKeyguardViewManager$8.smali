@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 480
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager$8;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager$8;->val$callback:Landroid/os/IRemoteCallback;
@@ -48,7 +47,6 @@
     .locals 3
 
     .prologue
-    .line 483
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager$8;->val$callback:Landroid/os/IRemoteCallback;
 
@@ -58,7 +56,6 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 488
     :goto_0
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager$8;->val$dismiss:Z
 
@@ -69,11 +66,9 @@
     :goto_1
     return v1
 
-    .line 484
     :catch_0
     move-exception v0
 
-    .line 485
     .local v0, "e":Landroid/os/RemoteException;
     # getter for: Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->access$100()Ljava/lang/String;
@@ -86,7 +81,6 @@
 
     goto :goto_0
 
-    .line 488
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const/4 v1, 0x0

@@ -13,20 +13,16 @@
     .param p6, "interpolator"    # Landroid/view/animation/Interpolator;
 
     .prologue
-    .line 37
     invoke-direct/range {p0 .. p6}, Lcom/android/keyguard/AppearAnimationUtils;-><init>(Landroid/content/Context;JFFLandroid/view/animation/Interpolator;)V
 
-    .line 38
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/keyguard/DisappearAnimationUtils;->mScaleTranslationWithRow:Z
 
-    .line 39
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/keyguard/DisappearAnimationUtils;->mAppearing:Z
 
-    .line 40
     return-void
 .end method
 
@@ -40,7 +36,6 @@
     .prologue
     const-wide v6, 0x3fd999999999999aL    # 0.4
 
-    .line 43
     mul-int/lit8 v0, p1, 0x3c
 
     int-to-double v0, v0

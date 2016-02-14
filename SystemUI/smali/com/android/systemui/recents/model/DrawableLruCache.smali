@@ -20,9 +20,7 @@
     .param p1, "cacheSize"    # I
 
     .prologue
-    .line 26
     invoke-direct {p0, p1}, Lcom/android/systemui/recents/model/KeyStoreLruCache;-><init>(I)V
 
-    .line 27
     return-void
 .end method

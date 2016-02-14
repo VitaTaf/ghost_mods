@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 1318
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$20;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 1321
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$20;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mDrawCount:I
@@ -52,7 +50,6 @@
 
     if-ne v0, v4, :cond_0
 
-    .line 1322
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$20;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
@@ -63,7 +60,6 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 1323
     const-string v0, "extraRasterBucket"
 
     const v1, 0x3f733333    # 0.95f
@@ -74,7 +70,6 @@
 
     invoke-static {v0, v1}, Landroid/view/GLES20Canvas;->setProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1325
     const-string v0, "extraRasterBucket"
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$20;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -115,13 +110,11 @@
 
     invoke-static {v0, v1}, Landroid/view/GLES20Canvas;->setProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1331
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$20;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # operator++ for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mDrawCount:I
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$4208(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)I
 
-    .line 1332
     return v4
 .end method

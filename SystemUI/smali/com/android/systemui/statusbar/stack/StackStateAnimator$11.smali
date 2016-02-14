@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 836
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$11;->this$0:Lcom/android/systemui/statusbar/stack/StackStateAnimator;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$11;->val$onTop:Z
@@ -51,7 +50,6 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 839
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -62,7 +60,6 @@
 
     move-result v1
 
-    .line 840
     .local v1, "currentOverScroll":F
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$11;->this$0:Lcom/android/systemui/statusbar/stack/StackStateAnimator;
 
@@ -76,6 +73,5 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->setOverScrollAmount(FZZZZ)V
 
-    .line 843
     return-void
 .end method

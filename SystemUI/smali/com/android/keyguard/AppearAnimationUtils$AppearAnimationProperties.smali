@@ -29,7 +29,6 @@
     .locals 0
 
     .prologue
-    .line 191
     iput-object p1, p0, Lcom/android/keyguard/AppearAnimationUtils$AppearAnimationProperties;->this$0:Lcom/android/keyguard/AppearAnimationUtils;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

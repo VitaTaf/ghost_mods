@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 70
     iput-object p1, p0, Lcom/android/systemui/volume/SpTexts$2;->this$0:Lcom/android/systemui/volume/SpTexts;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 4
 
     .prologue
-    .line 73
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -58,7 +56,6 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 74
     iget-object v3, p0, Lcom/android/systemui/volume/SpTexts$2;->this$0:Lcom/android/systemui/volume/SpTexts;
 
     iget-object v1, p0, Lcom/android/systemui/volume/SpTexts$2;->this$0:Lcom/android/systemui/volume/SpTexts;
@@ -94,12 +91,10 @@
     # invokes: Lcom/android/systemui/volume/SpTexts;->setTextSizeH(Landroid/widget/TextView;I)V
     invoke-static {v3, v1, v2}, Lcom/android/systemui/volume/SpTexts;->access$000(Lcom/android/systemui/volume/SpTexts;Landroid/widget/TextView;I)V
 
-    .line 73
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 76
     :cond_0
     return-void
 .end method

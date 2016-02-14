@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 81
     iput-object p1, p0, Lcom/android/systemui/qs/QSDualTileLabel$1;->this$0:Lcom/android/systemui/qs/QSDualTileLabel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,20 +48,17 @@
     .param p9, "oldBottom"    # I
 
     .prologue
-    .line 85
     sub-int v0, p8, p6
 
     sub-int v1, p4, p2
 
     if-eq v0, v1, :cond_0
 
-    .line 86
     iget-object v0, p0, Lcom/android/systemui/qs/QSDualTileLabel$1;->this$0:Lcom/android/systemui/qs/QSDualTileLabel;
 
     # invokes: Lcom/android/systemui/qs/QSDualTileLabel;->rescheduleUpdateText()V
     invoke-static {v0}, Lcom/android/systemui/qs/QSDualTileLabel;->access$000(Lcom/android/systemui/qs/QSDualTileLabel;)V
 
-    .line 88
     :cond_0
     return-void
 .end method

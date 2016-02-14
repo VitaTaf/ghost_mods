@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 109
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile$2;->this$0:Lcom/android/systemui/qs/tiles/AirplaneModeTile;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,7 +38,6 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 112
     const-string v0, "android.intent.action.AIRPLANE_MODE"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -52,13 +50,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 113
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile$2;->this$0:Lcom/android/systemui/qs/tiles/AirplaneModeTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/AirplaneModeTile;->refreshState()V
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->access$100(Lcom/android/systemui/qs/tiles/AirplaneModeTile;)V
 
-    .line 115
     :cond_0
     return-void
 .end method

@@ -28,18 +28,14 @@
     .param p3, "intrinsicHeight"    # I
 
     .prologue
-    .line 547
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Landroid/graphics/drawable/InsetDrawable;-><init>(Landroid/graphics/drawable/Drawable;I)V
 
-    .line 548
     iput p2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$IntrinsicSizeDrawable;->mIntrinsicWidth:I
 
-    .line 549
     iput p3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$IntrinsicSizeDrawable;->mIntrinsicHeight:I
 
-    .line 550
     return-void
 .end method
 
@@ -49,7 +45,6 @@
     .locals 1
 
     .prologue
-    .line 559
     iget v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$IntrinsicSizeDrawable;->mIntrinsicHeight:I
 
     return v0
@@ -59,7 +54,6 @@
     .locals 1
 
     .prologue
-    .line 554
     iget v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$IntrinsicSizeDrawable;->mIntrinsicWidth:I
 
     return v0

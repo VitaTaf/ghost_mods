@@ -29,15 +29,12 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 39
     const v1, 0x7f020150
 
     invoke-direct {p0, p1, v1}, Lcom/android/systemui/statusbar/phone/BarTransitions;-><init>(Landroid/view/View;I)V
 
-    .line 40
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    .line 41
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->getContext()Landroid/content/Context;
@@ -48,7 +45,6 @@
 
     move-result-object v0
 
-    .line 42
     .local v0, "res":Landroid/content/res/Resources;
     const v1, 0x7f0d001f
 
@@ -58,7 +54,6 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mIconAlphaWhenOpaque:F
 
-    .line 43
     return-void
 .end method
 
@@ -68,48 +63,39 @@
     .param p2, "animate"    # Z
 
     .prologue
-    .line 82
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mLeftSide:Landroid/view/View;
 
     if-nez v3, :cond_0
 
-    .line 109
     :goto_0
     return-void
 
-    .line 83
     :cond_0
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->getNonBatteryClockAlphaFor(I)F
 
     move-result v1
 
-    .line 84
     .local v1, "newAlpha":F
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->getBatteryClockAlpha(I)F
 
     move-result v2
 
-    .line 85
     .local v2, "newAlphaBC":F
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mCurrentAnimation:Landroid/animation/Animator;
 
     if-eqz v3, :cond_1
 
-    .line 86
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mCurrentAnimation:Landroid/animation/Animator;
 
     invoke-virtual {v3}, Landroid/animation/Animator;->cancel()V
 
-    .line 88
     :cond_1
     if-eqz p2, :cond_3
 
-    .line 89
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 90
     .local v0, "anims":Landroid/animation/AnimatorSet;
     const/4 v3, 0x5
 
@@ -167,50 +153,41 @@
 
     invoke-virtual {v0, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 97
     invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->isLightsOut(I)Z
 
     move-result v3
 
     if-eqz v3, :cond_2
 
-    .line 98
     const-wide/16 v4, 0x2ee
 
     invoke-virtual {v0, v4, v5}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 100
     :cond_2
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 101
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mCurrentAnimation:Landroid/animation/Animator;
 
     goto :goto_0
 
-    .line 103
     .end local v0    # "anims":Landroid/animation/AnimatorSet;
     :cond_3
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mLeftSide:Landroid/view/View;
 
     invoke-virtual {v3, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 104
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mStatusIcons:Landroid/view/View;
 
     invoke-virtual {v3, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 105
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mSignalCluster:Landroid/view/View;
 
     invoke-virtual {v3, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 106
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mBattery:Landroid/view/View;
 
     invoke-virtual {v3, v2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 107
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mClock:Landroid/view/View;
 
     invoke-virtual {v3, v2}, Landroid/view/View;->setAlpha(F)V
@@ -223,7 +200,6 @@
     .param p1, "mode"    # I
 
     .prologue
-    .line 66
     invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->isLightsOut(I)Z
 
     move-result v0
@@ -248,7 +224,6 @@
     .param p1, "mode"    # I
 
     .prologue
-    .line 60
     invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->isLightsOut(I)Z
 
     move-result v0
@@ -284,7 +259,6 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 71
     if-eq p1, v0, :cond_0
 
     const/4 v1, 0x2
@@ -316,7 +290,6 @@
     .param p2, "toAlpha"    # F
 
     .prologue
-    .line 56
     const-string v0, "alpha"
 
     const/4 v1, 0x2
@@ -348,7 +321,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 46
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
     const v1, 0x7f0f00ec
@@ -359,7 +331,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mLeftSide:Landroid/view/View;
 
-    .line 47
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
     const v1, 0x7f0f012f
@@ -370,7 +341,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mStatusIcons:Landroid/view/View;
 
-    .line 48
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
     const v1, 0x7f0f0130
@@ -381,7 +351,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mSignalCluster:Landroid/view/View;
 
-    .line 49
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
     const v1, 0x7f0f0131
@@ -392,7 +361,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mBattery:Landroid/view/View;
 
-    .line 50
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
     const v1, 0x7f0f007a
@@ -403,7 +371,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mClock:Landroid/view/View;
 
-    .line 51
     const/4 v0, -0x1
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->getMode()I
@@ -412,14 +379,12 @@
 
     invoke-virtual {p0, v0, v1, v2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->applyModeBackground(IIZ)V
 
-    .line 52
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->getMode()I
 
     move-result v0
 
     invoke-direct {p0, v0, v2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->applyMode(IZ)V
 
-    .line 53
     return-void
 .end method
 
@@ -430,12 +395,9 @@
     .param p3, "animate"    # Z
 
     .prologue
-    .line 77
     invoke-super {p0, p1, p2, p3}, Lcom/android/systemui/statusbar/phone/BarTransitions;->onTransition(IIZ)V
 
-    .line 78
     invoke-direct {p0, p2, p3}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->applyMode(IZ)V
 
-    .line 79
     return-void
 .end method

@@ -52,10 +52,8 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 39
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
-    .line 29
     new-instance v0, Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
     const v1, 0x7f020039
@@ -64,7 +62,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mEnable:Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
-    .line 31
     new-instance v0, Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
     const v1, 0x7f020037
@@ -73,7 +70,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mDisable:Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
-    .line 41
     new-instance v0, Lcom/android/systemui/qs/tiles/ColorInversionTile$1;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mContext:Landroid/content/Context;
@@ -86,7 +82,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mSetting:Lcom/android/systemui/qs/SecureSetting;
 
-    .line 53
     new-instance v0, Lcom/android/systemui/qs/UsageTracker;
 
     invoke-interface {p1}, Lcom/android/systemui/qs/QSTile$Host;->getContext()Landroid/content/Context;
@@ -103,7 +98,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mUsageTracker:Lcom/android/systemui/qs/UsageTracker;
 
-    .line 55
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mSetting:Lcom/android/systemui/qs/SecureSetting;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/SecureSetting;->getValue()I
@@ -120,23 +114,19 @@
 
     if-nez v0, :cond_0
 
-    .line 56
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mUsageTracker:Lcom/android/systemui/qs/UsageTracker;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/UsageTracker;->trackUsage()V
 
-    .line 58
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mUsageTracker:Lcom/android/systemui/qs/UsageTracker;
 
     invoke-virtual {v0, v5}, Lcom/android/systemui/qs/UsageTracker;->setListening(Z)V
 
-    .line 59
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mSetting:Lcom/android/systemui/qs/SecureSetting;
 
     invoke-virtual {v0, v5}, Lcom/android/systemui/qs/SecureSetting;->setListening(Z)V
 
-    .line 60
     return-void
 .end method
 
@@ -145,7 +135,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/ColorInversionTile;
 
     .prologue
-    .line 27
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mUsageTracker:Lcom/android/systemui/qs/UsageTracker;
 
     return-object v0
@@ -156,7 +145,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/ColorInversionTile;
 
     .prologue
-    .line 27
     iget-boolean v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mListening:Z
 
     return v0
@@ -168,7 +156,6 @@
     .param p1, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 27
     invoke-virtual {p0, p1}, Lcom/android/systemui/qs/tiles/ColorInversionTile;->handleRefreshState(Ljava/lang/Object;)V
 
     return-void
@@ -179,7 +166,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/ColorInversionTile;
 
     .prologue
-    .line 27
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/ColorInversionTile;->refreshState()V
 
     return-void
@@ -191,7 +177,6 @@
     .locals 2
 
     .prologue
-    .line 117
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
     check-cast v0, Lcom/android/systemui/qs/QSTile$BooleanState;
@@ -200,7 +185,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 118
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mContext:Landroid/content/Context;
 
     const v1, 0x7f0c00b3
@@ -209,7 +193,6 @@
 
     move-result-object v0
 
-    .line 121
     :goto_0
     return-object v0
 
@@ -231,7 +214,6 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 87
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mSetting:Lcom/android/systemui/qs/SecureSetting;
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mState:Lcom/android/systemui/qs/QSTile$State;
@@ -247,23 +229,19 @@
     :goto_0
     invoke-virtual {v2, v0}, Lcom/android/systemui/qs/SecureSetting;->setValue(I)V
 
-    .line 88
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mEnable:Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSTile$AnimationIcon;->setAllowAnimation(Z)V
 
-    .line 89
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mDisable:Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSTile$AnimationIcon;->setAllowAnimation(Z)V
 
-    .line 90
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 87
     goto :goto_0
 .end method
 
@@ -273,20 +251,16 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 64
     invoke-super {p0}, Lcom/android/systemui/qs/QSTile;->handleDestroy()V
 
-    .line 65
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mUsageTracker:Lcom/android/systemui/qs/UsageTracker;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/UsageTracker;->setListening(Z)V
 
-    .line 66
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mSetting:Lcom/android/systemui/qs/SecureSetting;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/SecureSetting;->setListening(Z)V
 
-    .line 67
     return-void
 .end method
 
@@ -294,7 +268,6 @@
     .locals 6
 
     .prologue
-    .line 94
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
     check-cast v1, Lcom/android/systemui/qs/QSTile$BooleanState;
@@ -303,11 +276,9 @@
 
     if-eqz v1, :cond_0
 
-    .line 103
     :goto_0
     return-void
 
-    .line 95
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mContext:Landroid/content/Context;
 
@@ -331,7 +302,6 @@
 
     move-result-object v0
 
-    .line 97
     .local v0, "title":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mUsageTracker:Lcom/android/systemui/qs/UsageTracker;
 
@@ -354,7 +324,6 @@
 
     const/4 v2, 0x0
 
-    .line 107
     instance-of v4, p2, Ljava/lang/Integer;
 
     if-eqz v4, :cond_2
@@ -366,14 +335,12 @@
 
     move-result v1
 
-    .line 108
     .local v1, "value":I
     :goto_0
     if-eqz v1, :cond_3
 
     move v0, v3
 
-    .line 109
     .local v0, "enabled":Z
     :goto_1
     if-nez v0, :cond_0
@@ -392,10 +359,8 @@
     :cond_1
     iput-boolean v2, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->visible:Z
 
-    .line 110
     iput-boolean v0, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
 
-    .line 111
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mContext:Landroid/content/Context;
 
     const v3, 0x7f0c00f0
@@ -406,7 +371,6 @@
 
     iput-object v2, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->label:Ljava/lang/String;
 
-    .line 112
     if-eqz v0, :cond_4
 
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mEnable:Lcom/android/systemui/qs/QSTile$AnimationIcon;
@@ -414,10 +378,8 @@
     :goto_2
     iput-object v2, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->icon:Lcom/android/systemui/qs/QSTile$Icon;
 
-    .line 113
     return-void
 
-    .line 107
     .end local v0    # "enabled":Z
     .end local v1    # "value":I
     .restart local p2    # "arg":Ljava/lang/Object;
@@ -435,10 +397,8 @@
     :cond_3
     move v0, v2
 
-    .line 108
     goto :goto_1
 
-    .line 112
     .restart local v0    # "enabled":Z
     :cond_4
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mDisable:Lcom/android/systemui/qs/QSTile$AnimationIcon;
@@ -452,7 +412,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 27
     check-cast p1, Lcom/android/systemui/qs/QSTile$BooleanState;
 
     .end local p1    # "x0":Lcom/android/systemui/qs/QSTile$State;
@@ -466,12 +425,10 @@
     .param p1, "newUserId"    # I
 
     .prologue
-    .line 81
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mSetting:Lcom/android/systemui/qs/SecureSetting;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/qs/SecureSetting;->setUserId(I)V
 
-    .line 82
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mSetting:Lcom/android/systemui/qs/SecureSetting;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/SecureSetting;->getValue()I
@@ -484,7 +441,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/tiles/ColorInversionTile;->handleRefreshState(Ljava/lang/Object;)V
 
-    .line 83
     return-void
 .end method
 
@@ -492,7 +448,6 @@
     .locals 1
 
     .prologue
-    .line 71
     new-instance v0, Lcom/android/systemui/qs/QSTile$BooleanState;
 
     invoke-direct {v0}, Lcom/android/systemui/qs/QSTile$BooleanState;-><init>()V
@@ -504,7 +459,6 @@
     .locals 1
 
     .prologue
-    .line 27
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/ColorInversionTile;->newTileState()Lcom/android/systemui/qs/QSTile$BooleanState;
 
     move-result-object v0
@@ -517,9 +471,7 @@
     .param p1, "listening"    # Z
 
     .prologue
-    .line 76
     iput-boolean p1, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mListening:Z
 
-    .line 77
     return-void
 .end method

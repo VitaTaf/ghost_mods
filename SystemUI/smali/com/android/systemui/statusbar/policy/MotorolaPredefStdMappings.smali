@@ -40,70 +40,60 @@
 
     const/16 v1, 0xb
 
-    .line 43
     new-array v0, v5, [I
 
     fill-array-data v0, :array_0
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaPredefStdMappings;->UI_MODE_MOBILE_SIGNAL_DISABLE_FULLY:[I
 
-    .line 98
     new-array v0, v5, [I
 
     fill-array-data v0, :array_1
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaPredefStdMappings;->UI_MODE_MOBILE_SIGNAL_FORCE_FULLY:[I
 
-    .line 153
     new-array v0, v3, [I
 
     fill-array-data v0, :array_2
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaPredefStdMappings;->UI_MODE_MOBILE_ROAMING_DISABLE_FULLY:[I
 
-    .line 170
     new-array v0, v3, [I
 
     fill-array-data v0, :array_3
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaPredefStdMappings;->UI_MODE_MOBILE_ROAMING_FORCE_FULLY:[I
 
-    .line 188
     new-array v0, v4, [I
 
     fill-array-data v0, :array_4
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaPredefStdMappings;->UI_MODE_MOBILE_TYPE_AND_ACTIVITY_DISABLE_FULLY:[I
 
-    .line 218
     new-array v0, v4, [I
 
     fill-array-data v0, :array_5
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaPredefStdMappings;->UI_MODE_MOBILE_TYPE_AND_ACTIVITY_FORCE_FULLY:[I
 
-    .line 249
     new-array v0, v2, [I
 
     fill-array-data v0, :array_6
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaPredefStdMappings;->UI_MODE_WIFI_SIGNAL_DISABLE_FULLY:[I
 
-    .line 265
     new-array v0, v2, [I
 
     fill-array-data v0, :array_7
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaPredefStdMappings;->UI_MODE_WIFI_SIGNAL_FORCE_FULLY:[I
 
-    .line 282
     new-array v0, v1, [I
 
     fill-array-data v0, :array_8
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MotorolaPredefStdMappings;->UI_MODE_WIFI_ACTIVITY_DISABLE_FULLY:[I
 
-    .line 296
     new-array v0, v1, [I
 
     fill-array-data v0, :array_9
@@ -112,7 +102,6 @@
 
     return-void
 
-    .line 43
     nop
 
     :array_0
@@ -167,7 +156,6 @@
         0x2e
     .end array-data
 
-    .line 98
     :array_1
     .array-data 4
         0x0
@@ -220,7 +208,6 @@
         0x2f
     .end array-data
 
-    .line 153
     :array_2
     .array-data 4
         0x0
@@ -239,7 +226,6 @@
         0xc
     .end array-data
 
-    .line 170
     :array_3
     .array-data 4
         0x0
@@ -258,7 +244,6 @@
         0xd
     .end array-data
 
-    .line 188
     :array_4
     .array-data 4
         0x0
@@ -290,7 +275,6 @@
         0x16
     .end array-data
 
-    .line 218
     :array_5
     .array-data 4
         0x0
@@ -322,7 +306,6 @@
         0x1c
     .end array-data
 
-    .line 249
     :array_6
     .array-data 4
         0x0
@@ -340,7 +323,6 @@
         0xb
     .end array-data
 
-    .line 265
     :array_7
     .array-data 4
         0x0
@@ -358,7 +340,6 @@
         0xc
     .end array-data
 
-    .line 282
     :array_8
     .array-data 4
         0x0
@@ -374,7 +355,6 @@
         0x9
     .end array-data
 
-    .line 296
     :array_9
     .array-data 4
         0x0

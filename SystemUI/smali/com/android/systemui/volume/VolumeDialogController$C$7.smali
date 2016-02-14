@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 674
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialogController$C$7;->this$1:Lcom/android/systemui/volume/VolumeDialogController$C;
 
     iput-object p2, p0, Lcom/android/systemui/volume/VolumeDialogController$C$7;->val$entry:Ljava/util/Map$Entry;
@@ -44,7 +43,6 @@
     .locals 1
 
     .prologue
-    .line 677
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController$C$7;->val$entry:Ljava/util/Map$Entry;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -55,6 +53,5 @@
 
     invoke-interface {v0}, Lcom/android/systemui/volume/VolumeDialogController$Callbacks;->onShowSilentHint()V
 
-    .line 678
     return-void
 .end method

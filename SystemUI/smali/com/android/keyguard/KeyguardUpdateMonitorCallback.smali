@@ -14,7 +14,6 @@
     .locals 0
 
     .prologue
-    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -26,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 141
     return-void
 .end method
 
@@ -34,7 +32,6 @@
     .locals 0
 
     .prologue
-    .line 95
     return-void
 .end method
 
@@ -42,7 +39,6 @@
     .locals 0
 
     .prologue
-    .line 106
     return-void
 .end method
 
@@ -50,7 +46,6 @@
     .locals 0
 
     .prologue
-    .line 100
     return-void
 .end method
 
@@ -58,7 +53,6 @@
     .locals 0
 
     .prologue
-    .line 146
     return-void
 .end method
 
@@ -68,7 +62,6 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 197
     return-void
 .end method
 
@@ -77,7 +70,6 @@
     .param p1, "info"    # I
 
     .prologue
-    .line 192
     return-void
 .end method
 
@@ -86,7 +78,6 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 187
     return-void
 .end method
 
@@ -95,7 +86,6 @@
     .param p1, "bouncer"    # Z
 
     .prologue
-    .line 89
     return-void
 .end method
 
@@ -104,7 +94,6 @@
     .param p1, "showing"    # Z
 
     .prologue
-    .line 74
     return-void
 .end method
 
@@ -113,12 +102,10 @@
     .param p1, "showing"    # Z
 
     .prologue
-    .line 77
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
-    .line 78
     .local v0, "now":J
     iget-boolean v2, p0, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;->mShowing:Z
 
@@ -134,18 +121,14 @@
 
     if-gez v2, :cond_0
 
-    .line 83
     :goto_0
     return-void
 
-    .line 80
     :cond_0
     invoke-virtual {p0, p1}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;->onKeyguardVisibilityChanged(Z)V
 
-    .line 81
     iput-wide v0, p0, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;->mVisibilityChangedCalled:J
 
-    .line 82
     iput-boolean p1, p0, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;->mShowing:Z
 
     goto :goto_0
@@ -156,7 +139,6 @@
     .param p1, "phoneState"    # I
 
     .prologue
-    .line 68
     return-void
 .end method
 
@@ -165,7 +147,6 @@
     .param p1, "status"    # Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;
 
     .prologue
-    .line 43
     return-void
 .end method
 
@@ -173,7 +154,6 @@
     .locals 0
 
     .prologue
-    .line 53
     return-void
 .end method
 
@@ -182,7 +162,6 @@
     .param p1, "isRemoteLocked"    # Z
 
     .prologue
-    .line 209
     return-void
 .end method
 
@@ -191,7 +170,6 @@
     .param p1, "state"    # I
 
     .prologue
-    .line 60
     return-void
 .end method
 
@@ -200,7 +178,6 @@
     .param p1, "why"    # I
 
     .prologue
-    .line 166
     return-void
 .end method
 
@@ -208,7 +185,6 @@
     .locals 0
 
     .prologue
-    .line 158
     return-void
 .end method
 
@@ -217,7 +193,6 @@
     .param p1, "inService"    # Z
 
     .prologue
-    .line 205
     return-void
 .end method
 
@@ -226,7 +201,6 @@
     .param p1, "bitmap"    # Landroid/graphics/Bitmap;
 
     .prologue
-    .line 153
     return-void
 .end method
 
@@ -237,7 +211,6 @@
     .param p3, "simState"    # Lcom/android/internal/telephony/IccCardConstants$State;
 
     .prologue
-    .line 123
     return-void
 .end method
 
@@ -245,7 +218,6 @@
     .locals 0
 
     .prologue
-    .line 48
     return-void
 .end method
 
@@ -254,7 +226,6 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 171
     return-void
 .end method
 
@@ -263,7 +234,6 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 181
     return-void
 .end method
 
@@ -272,7 +242,6 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 176
     return-void
 .end method
 
@@ -281,7 +250,6 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 133
     return-void
 .end method
 
@@ -290,7 +258,6 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 128
     return-void
 .end method
 
@@ -299,7 +266,6 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 116
     return-void
 .end method
 
@@ -308,6 +274,5 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 111
     return-void
 .end method

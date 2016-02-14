@@ -11,7 +11,6 @@
     .param p2, "dimensId"    # I
 
     .prologue
-    .line 31
     invoke-virtual {p0, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
@@ -20,7 +19,6 @@
 
     invoke-static {v0, p2}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/widget/TextView;I)V
 
-    .line 32
     return-void
 .end method
 
@@ -30,10 +28,8 @@
     .param p1, "dimensId"    # I
 
     .prologue
-    .line 35
     if-eqz p0, :cond_0
 
-    .line 36
     const/4 v0, 0x0
 
     invoke-virtual {p0}, Landroid/widget/TextView;->getResources()Landroid/content/res/Resources;
@@ -48,7 +44,6 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 39
     :cond_0
     return-void
 .end method

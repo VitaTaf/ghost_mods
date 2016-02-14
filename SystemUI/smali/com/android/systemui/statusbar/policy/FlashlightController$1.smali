@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 99
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$1;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,15 +38,12 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 102
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$1;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     monitor-enter v2
 
-    .line 103
     const/4 v0, 0x0
 
-    .line 106
     .local v0, "newState":Z
     if-eqz p2, :cond_0
 
@@ -64,7 +60,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 107
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$1;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     # getter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->mFlashlightEnabled:Z
@@ -76,7 +71,6 @@
 
     const/4 v0, 0x1
 
-    .line 119
     :cond_0
     :goto_0
     if-eqz v0, :cond_1
@@ -90,32 +84,26 @@
 
     if-eqz v1, :cond_2
 
-    .line 120
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$1;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/policy/FlashlightController;->setFlashlight(Z)V
 
-    .line 121
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$1;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     # invokes: Lcom/android/systemui/statusbar/policy/FlashlightController;->dispatchToggle(Z)V
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$200(Lcom/android/systemui/statusbar/policy/FlashlightController;Z)V
 
-    .line 123
     :cond_2
     monitor-exit v2
 
-    .line 124
     return-void
 
-    .line 107
     :cond_3
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 123
     :catchall_0
     move-exception v1
 

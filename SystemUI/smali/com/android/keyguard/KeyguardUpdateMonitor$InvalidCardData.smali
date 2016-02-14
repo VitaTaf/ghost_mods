@@ -27,15 +27,11 @@
     .param p2, "str"    # Ljava/lang/String;
 
     .prologue
-    .line 1143
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1144
     iput p1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$InvalidCardData;->slotId:I
 
-    .line 1145
     iput-object p2, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$InvalidCardData;->plmn:Ljava/lang/String;
 
-    .line 1146
     return-void
 .end method

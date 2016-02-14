@@ -13,15 +13,12 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 33
     const v1, 0x7f0b002a
 
     invoke-direct {p0, p1, v1}, Landroid/app/AlertDialog;-><init>(Landroid/content/Context;I)V
 
-    .line 34
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->mContext:Landroid/content/Context;
 
-    .line 36
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
@@ -30,7 +27,6 @@
 
     invoke-virtual {v1, v2}, Landroid/view/Window;->setType(I)V
 
-    .line 37
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
@@ -39,7 +35,6 @@
 
     invoke-virtual {v1, v2}, Landroid/view/Window;->addFlags(I)V
 
-    .line 39
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
@@ -48,7 +43,6 @@
 
     move-result-object v0
 
-    .line 40
     .local v0, "attrs":Landroid/view/WindowManager$LayoutParams;
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -60,14 +54,12 @@
 
     invoke-virtual {v0, v1}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 41
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
     invoke-virtual {v1, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
-    .line 42
     return-void
 .end method
 
@@ -78,7 +70,6 @@
     .param p1, "resId"    # I
 
     .prologue
-    .line 55
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, p1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -87,7 +78,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    .line 56
     return-void
 .end method
 
@@ -97,7 +87,6 @@
     .param p2, "onClick"    # Landroid/content/DialogInterface$OnClickListener;
 
     .prologue
-    .line 63
     const/4 v0, -0x2
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->mContext:Landroid/content/Context;
@@ -108,7 +97,6 @@
 
     invoke-virtual {p0, v0, v1, p2}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
-    .line 64
     return-void
 .end method
 
@@ -118,7 +106,6 @@
     .param p2, "onClick"    # Landroid/content/DialogInterface$OnClickListener;
 
     .prologue
-    .line 59
     const/4 v0, -0x1
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->mContext:Landroid/content/Context;
@@ -129,7 +116,6 @@
 
     invoke-virtual {p0, v0, v1, p2}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
-    .line 60
     return-void
 .end method
 
@@ -138,10 +124,8 @@
     .param p1, "show"    # Z
 
     .prologue
-    .line 45
     if-eqz p1, :cond_0
 
-    .line 46
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -156,11 +140,9 @@
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->privateFlags:I
 
-    .line 52
     :goto_0
     return-void
 
-    .line 49
     :cond_0
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->getWindow()Landroid/view/Window;
 

@@ -18,7 +18,6 @@
     .prologue
     const/16 v3, 0x9
 
-    .line 38
     new-instance v0, Ljava/text/SimpleDateFormat;
 
     const-string v1, "h:mm aa"
@@ -29,14 +28,12 @@
 
     sput-object v0, Lcom/android/systemui/volume/Util;->HMMAA:Ljava/text/SimpleDateFormat;
 
-    .line 40
     new-array v0, v3, [I
 
     fill-array-data v0, :array_0
 
     sput-object v0, Lcom/android/systemui/volume/Util;->AUDIO_MANAGER_FLAGS:[I
 
-    .line 52
     new-array v0, v3, [Ljava/lang/String;
 
     const/4 v1, 0x0
@@ -97,7 +94,6 @@
 
     return-void
 
-    .line 40
     nop
 
     :array_0
@@ -119,7 +115,6 @@
     .param p0, "value"    # I
 
     .prologue
-    .line 123
     sget-object v0, Lcom/android/systemui/volume/Util;->AUDIO_MANAGER_FLAGS:[I
 
     sget-object v1, Lcom/android/systemui/volume/Util;->AUDIO_MANAGER_FLAG_NAMES:[Ljava/lang/String;
@@ -140,22 +135,18 @@
     .prologue
     const/16 v3, 0x2c
 
-    .line 127
     if-nez p0, :cond_0
 
     const-string v2, ""
 
-    .line 140
     :goto_0
     return-object v2
 
-    .line 128
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 129
     .local v1, "sb":Ljava/lang/StringBuilder;
     const/4 v0, 0x0
 
@@ -165,14 +156,12 @@
 
     if-ge v0, v2, :cond_3
 
-    .line 130
     aget v2, p1, v0
 
     and-int/2addr v2, p0
 
     if-eqz v2, :cond_2
 
-    .line 131
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v2
@@ -181,13 +170,11 @@
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 132
     :cond_1
     aget-object v2, p2, v0
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 134
     :cond_2
     aget v2, p1, v0
 
@@ -195,16 +182,13 @@
 
     and-int/2addr p0, v2
 
-    .line 129
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 136
     :cond_3
     if-eqz p0, :cond_5
 
-    .line 137
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v2
@@ -213,7 +197,6 @@
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 138
     :cond_4
     const-string v2, "UNKNOWN_"
 
@@ -223,7 +206,6 @@
 
     invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 140
     :cond_5
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -237,7 +219,6 @@
     .param p0, "str"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 148
     if-eqz p0, :cond_0
 
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
@@ -268,7 +249,6 @@
     .local p0, "c":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const/16 v3, 0x17
 
-    .line 65
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -291,7 +271,6 @@
 
     move-result-object v0
 
-    .line 66
     .local v0, "tag":Ljava/lang/String;
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
@@ -319,7 +298,6 @@
     .param p0, "metadata"    # Landroid/media/MediaMetadata;
 
     .prologue
-    .line 79
     invoke-virtual {p0}, Landroid/media/MediaMetadata;->getDescription()Landroid/media/MediaDescription;
 
     move-result-object v0
@@ -336,16 +314,13 @@
     .param p0, "info"    # Landroid/media/session/MediaController$PlaybackInfo;
 
     .prologue
-    .line 83
     if-nez p0, :cond_0
 
     const/4 v2, 0x0
 
-    .line 86
     :goto_0
     return-object v2
 
-    .line 84
     :cond_0
     invoke-virtual {p0}, Landroid/media/session/MediaController$PlaybackInfo;->getPlaybackType()I
 
@@ -355,7 +330,6 @@
 
     move-result-object v0
 
-    .line 85
     .local v0, "type":Ljava/lang/String;
     invoke-virtual {p0}, Landroid/media/session/MediaController$PlaybackInfo;->getVolumeControl()I
 
@@ -365,7 +339,6 @@
 
     move-result-object v1
 
-    .line 86
     .local v1, "vc":Ljava/lang/String;
     const-string v2, "PlaybackInfo[vol=%s,max=%s,type=%s,vc=%s],atts=%s"
 
@@ -425,10 +398,8 @@
     .param p0, "type"    # I
 
     .prologue
-    .line 91
     packed-switch p0, :pswitch_data_0
 
-    .line 94
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -450,19 +421,16 @@
     :goto_0
     return-object v0
 
-    .line 92
     :pswitch_0
     const-string v0, "LOCAL"
 
     goto :goto_0
 
-    .line 93
     :pswitch_1
     const-string v0, "REMOTE"
 
     goto :goto_0
 
-    .line 91
     nop
 
     :pswitch_data_0
@@ -477,10 +445,8 @@
     .param p0, "state"    # I
 
     .prologue
-    .line 99
     packed-switch p0, :pswitch_data_0
 
-    .line 104
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -502,31 +468,26 @@
     :goto_0
     return-object v0
 
-    .line 100
     :pswitch_0
     const-string v0, "STATE_NONE"
 
     goto :goto_0
 
-    .line 101
     :pswitch_1
     const-string v0, "STATE_STOPPED"
 
     goto :goto_0
 
-    .line 102
     :pswitch_2
     const-string v0, "STATE_PAUSED"
 
     goto :goto_0
 
-    .line 103
     :pswitch_3
     const-string v0, "STATE_PLAYING"
 
     goto :goto_0
 
-    .line 99
     nop
 
     :pswitch_data_0
@@ -543,12 +504,10 @@
     .param p0, "playbackState"    # Landroid/media/session/PlaybackState;
 
     .prologue
-    .line 118
     if-nez p0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 119
     :goto_0
     return-object v0
 
@@ -591,10 +550,8 @@
     .param p0, "ringerMode"    # I
 
     .prologue
-    .line 70
     packed-switch p0, :pswitch_data_0
 
-    .line 74
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -616,25 +573,21 @@
     :goto_0
     return-object v0
 
-    .line 71
     :pswitch_0
     const-string v0, "RINGER_MODE_SILENT"
 
     goto :goto_0
 
-    .line 72
     :pswitch_1
     const-string v0, "RINGER_MODE_VIBRATE"
 
     goto :goto_0
 
-    .line 73
     :pswitch_2
     const-string v0, "RINGER_MODE_NORMAL"
 
     goto :goto_0
 
-    .line 70
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -649,7 +602,6 @@
     .param p1, "text"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 152
     invoke-virtual {p0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -670,15 +622,12 @@
 
     const/4 v0, 0x0
 
-    .line 154
     :goto_0
     return v0
 
-    .line 153
     :cond_0
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 154
     const/4 v0, 0x1
 
     goto :goto_0
@@ -692,7 +641,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 158
     if-eqz p0, :cond_0
 
     invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
@@ -706,7 +654,6 @@
     :goto_0
     if-ne v1, p1, :cond_2
 
-    .line 160
     :cond_0
     :goto_1
     return-void
@@ -714,10 +661,8 @@
     :cond_1
     move v1, v0
 
-    .line 158
     goto :goto_0
 
-    .line 159
     :cond_2
     if-eqz p1, :cond_3
 
@@ -740,7 +685,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 163
     if-eqz p0, :cond_0
 
     invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
@@ -754,7 +698,6 @@
     :goto_0
     if-ne v1, p1, :cond_2
 
-    .line 165
     :cond_0
     :goto_1
     return-void
@@ -762,10 +705,8 @@
     :cond_1
     move v1, v0
 
-    .line 163
     goto :goto_0
 
-    .line 164
     :cond_2
     if-eqz p1, :cond_3
 
@@ -785,10 +726,8 @@
     .param p0, "control"    # I
 
     .prologue
-    .line 109
     packed-switch p0, :pswitch_data_0
 
-    .line 113
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -810,25 +749,21 @@
     :goto_0
     return-object v0
 
-    .line 110
     :pswitch_0
     const-string v0, "VOLUME_CONTROL_ABSOLUTE"
 
     goto :goto_0
 
-    .line 111
     :pswitch_1
     const-string v0, "VOLUME_CONTROL_FIXED"
 
     goto :goto_0
 
-    .line 112
     :pswitch_2
     const-string v0, "VOLUME_CONTROL_RELATIVE"
 
     goto :goto_0
 
-    .line 109
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1

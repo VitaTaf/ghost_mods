@@ -27,7 +27,6 @@
     .locals 0
 
     .prologue
-    .line 166
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$2;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$2;->val$inFront:Z
@@ -46,7 +45,6 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 169
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$2;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$2;->val$inFront:Z
@@ -56,17 +54,14 @@
     # invokes: Lcom/android/systemui/statusbar/phone/DozeScrimController;->setCurrentAnimator(ZLandroid/animation/Animator;)V
     invoke-static {v0, v1, v2}, Lcom/android/systemui/statusbar/phone/DozeScrimController;->access$100(Lcom/android/systemui/statusbar/phone/DozeScrimController;ZLandroid/animation/Animator;)V
 
-    .line 170
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$2;->val$endRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 171
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$2;->val$endRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 173
     :cond_0
     return-void
 .end method

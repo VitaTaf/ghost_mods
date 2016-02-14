@@ -41,12 +41,10 @@
     .locals 1
 
     .prologue
-    .line 149
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/CastTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 150
     new-instance v0, Ljava/util/LinkedHashMap;
 
     invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
@@ -62,7 +60,6 @@
     .param p2, "x1"    # Lcom/android/systemui/qs/tiles/CastTile$1;
 
     .prologue
-    .line 149
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;-><init>(Lcom/android/systemui/qs/tiles/CastTile;)V
 
     return-void
@@ -73,7 +70,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;
 
     .prologue
-    .line 149
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;->mVisibleOrder:Ljava/util/LinkedHashMap;
 
     return-object v0
@@ -85,7 +81,6 @@
     .param p1, "x1"    # Ljava/util/Set;
 
     .prologue
-    .line 149
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;->updateItems(Ljava/util/Set;)V
 
     return-void
@@ -107,20 +102,16 @@
     .local p1, "devices":Ljava/util/Set;, "Ljava/util/Set<Lcom/android/systemui/statusbar/policy/CastController$CastDevice;>;"
     const/4 v9, 0x1
 
-    .line 202
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
 
     if-nez v7, :cond_0
 
-    .line 240
     :goto_0
     return-void
 
-    .line 203
     :cond_0
     const/4 v6, 0x0
 
-    .line 204
     .local v6, "items":[Lcom/android/systemui/qs/QSDetailItems$Item;
     if-eqz p1, :cond_6
 
@@ -130,7 +121,6 @@
 
     if-nez v7, :cond_6
 
-    .line 206
     invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -149,7 +139,6 @@
 
     check-cast v0, Lcom/android/systemui/statusbar/policy/CastController$CastDevice;
 
-    .line 207
     .local v0, "device":Lcom/android/systemui/statusbar/policy/CastController$CastDevice;
     iget v7, v0, Lcom/android/systemui/statusbar/policy/CastController$CastDevice;->state:I
 
@@ -157,18 +146,15 @@
 
     if-ne v7, v8, :cond_1
 
-    .line 208
     new-instance v5, Lcom/android/systemui/qs/QSDetailItems$Item;
 
     invoke-direct {v5}, Lcom/android/systemui/qs/QSDetailItems$Item;-><init>()V
 
-    .line 209
     .local v5, "item":Lcom/android/systemui/qs/QSDetailItems$Item;
     const v7, 0x7f02007c
 
     iput v7, v5, Lcom/android/systemui/qs/QSDetailItems$Item;->icon:I
 
-    .line 210
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/CastTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/CastTile;->getDeviceName(Lcom/android/systemui/statusbar/policy/CastController$CastDevice;)Ljava/lang/String;
@@ -178,7 +164,6 @@
 
     iput-object v7, v5, Lcom/android/systemui/qs/QSDetailItems$Item;->line1:Ljava/lang/String;
 
-    .line 211
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/CastTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/CastTile;->mContext:Landroid/content/Context;
@@ -194,13 +179,10 @@
 
     iput-object v7, v5, Lcom/android/systemui/qs/QSDetailItems$Item;->line2:Ljava/lang/String;
 
-    .line 212
     iput-object v0, v5, Lcom/android/systemui/qs/QSDetailItems$Item;->tag:Ljava/lang/Object;
 
-    .line 213
     iput-boolean v9, v5, Lcom/android/systemui/qs/QSDetailItems$Item;->canDisconnect:Z
 
-    .line 214
     new-array v6, v9, [Lcom/android/systemui/qs/QSDetailItems$Item;
 
     .end local v6    # "items":[Lcom/android/systemui/qs/QSDetailItems$Item;
@@ -208,14 +190,12 @@
 
     aput-object v5, v6, v7
 
-    .line 219
     .end local v0    # "device":Lcom/android/systemui/statusbar/policy/CastController$CastDevice;
     .end local v5    # "item":Lcom/android/systemui/qs/QSDetailItems$Item;
     .restart local v6    # "items":[Lcom/android/systemui/qs/QSDetailItems$Item;
     :cond_2
     if-nez v6, :cond_6
 
-    .line 220
     invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -233,7 +213,6 @@
 
     check-cast v0, Lcom/android/systemui/statusbar/policy/CastController$CastDevice;
 
-    .line 221
     .restart local v0    # "device":Lcom/android/systemui/statusbar/policy/CastController$CastDevice;
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;->mVisibleOrder:Ljava/util/LinkedHashMap;
 
@@ -243,7 +222,6 @@
 
     goto :goto_1
 
-    .line 223
     .end local v0    # "device":Lcom/android/systemui/statusbar/policy/CastController$CastDevice;
     :cond_3
     invoke-interface {p1}, Ljava/util/Set;->size()I
@@ -252,10 +230,8 @@
 
     new-array v6, v7, [Lcom/android/systemui/qs/QSDetailItems$Item;
 
-    .line 224
     const/4 v1, 0x0
 
-    .line 225
     .local v1, "i":I
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;->mVisibleOrder:Ljava/util/LinkedHashMap;
 
@@ -281,7 +257,6 @@
 
     check-cast v4, Ljava/lang/String;
 
-    .line 226
     .local v4, "id":Ljava/lang/String;
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;->mVisibleOrder:Ljava/util/LinkedHashMap;
 
@@ -291,7 +266,6 @@
 
     check-cast v0, Lcom/android/systemui/statusbar/policy/CastController$CastDevice;
 
-    .line 227
     .restart local v0    # "device":Lcom/android/systemui/statusbar/policy/CastController$CastDevice;
     invoke-interface {p1, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
@@ -299,18 +273,15 @@
 
     if-eqz v7, :cond_4
 
-    .line 228
     new-instance v5, Lcom/android/systemui/qs/QSDetailItems$Item;
 
     invoke-direct {v5}, Lcom/android/systemui/qs/QSDetailItems$Item;-><init>()V
 
-    .line 229
     .restart local v5    # "item":Lcom/android/systemui/qs/QSDetailItems$Item;
     const v7, 0x7f02007b
 
     iput v7, v5, Lcom/android/systemui/qs/QSDetailItems$Item;->icon:I
 
-    .line 230
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/CastTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/CastTile;->getDeviceName(Lcom/android/systemui/statusbar/policy/CastController$CastDevice;)Ljava/lang/String;
@@ -320,12 +291,10 @@
 
     iput-object v7, v5, Lcom/android/systemui/qs/QSDetailItems$Item;->line1:Ljava/lang/String;
 
-    .line 231
     iget v7, v0, Lcom/android/systemui/statusbar/policy/CastController$CastDevice;->state:I
 
     if-ne v7, v9, :cond_5
 
-    .line 232
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/CastTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/CastTile;->mContext:Landroid/content/Context;
@@ -341,11 +310,9 @@
 
     iput-object v7, v5, Lcom/android/systemui/qs/QSDetailItems$Item;->line2:Ljava/lang/String;
 
-    .line 234
     :cond_5
     iput-object v0, v5, Lcom/android/systemui/qs/QSDetailItems$Item;->tag:Ljava/lang/Object;
 
-    .line 235
     add-int/lit8 v2, v1, 0x1
 
     .end local v1    # "i":I
@@ -354,12 +321,10 @@
 
     move v1, v2
 
-    .line 236
     .end local v2    # "i":I
     .restart local v1    # "i":I
     goto :goto_2
 
-    .line 239
     .end local v0    # "device":Lcom/android/systemui/statusbar/policy/CastController$CastDevice;
     .end local v1    # "i":I
     .end local v3    # "i$":Ljava/util/Iterator;
@@ -382,24 +347,20 @@
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 176
     invoke-static {p1, p2, p3}, Lcom/android/systemui/qs/QSDetailItems;->convertOrInflate(Landroid/content/Context;Landroid/view/View;Landroid/view/ViewGroup;)Lcom/android/systemui/qs/QSDetailItems;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
 
-    .line 177
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
 
     const-string v1, "Cast"
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSDetailItems;->setTagSuffix(Ljava/lang/String;)V
 
-    .line 178
     if-nez p2, :cond_1
 
-    .line 179
     # getter for: Lcom/android/systemui/qs/tiles/CastTile;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/qs/tiles/CastTile;->access$600()Z
 
@@ -418,7 +379,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 180
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
 
@@ -428,7 +388,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSDetailItems;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
-    .line 193
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
 
@@ -438,12 +397,10 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/qs/QSDetailItems;->setEmptyState(II)V
 
-    .line 195
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
 
     invoke-virtual {v0, p0}, Lcom/android/systemui/qs/QSDetailItems;->setCallback(Lcom/android/systemui/qs/QSDetailItems$Callback;)V
 
-    .line 196
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/CastTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/CastTile;->mController:Lcom/android/systemui/statusbar/policy/CastController;
@@ -457,7 +414,6 @@
 
     invoke-direct {p0, v0}, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;->updateItems(Ljava/util/Set;)V
 
-    .line 197
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/CastTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/CastTile;->mController:Lcom/android/systemui/statusbar/policy/CastController;
@@ -469,7 +425,6 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/CastController;->setDiscovering(Z)V
 
-    .line 198
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
 
     return-object v0
@@ -479,7 +434,6 @@
     .locals 1
 
     .prologue
-    .line 166
     # getter for: Lcom/android/systemui/qs/tiles/CastTile;->CAST_SETTINGS:Landroid/content/Intent;
     invoke-static {}, Lcom/android/systemui/qs/tiles/CastTile;->access$500()Landroid/content/Intent;
 
@@ -492,7 +446,6 @@
     .locals 1
 
     .prologue
-    .line 156
     const v0, 0x7f0c00e9
 
     return v0
@@ -502,7 +455,6 @@
     .locals 1
 
     .prologue
-    .line 161
     const/4 v0, 0x0
 
     return-object v0
@@ -513,25 +465,21 @@
     .param p1, "item"    # Lcom/android/systemui/qs/QSDetailItems$Item;
 
     .prologue
-    .line 244
     if-eqz p1, :cond_0
 
     iget-object v1, p1, Lcom/android/systemui/qs/QSDetailItems$Item;->tag:Ljava/lang/Object;
 
     if-nez v1, :cond_1
 
-    .line 247
     :cond_0
     :goto_0
     return-void
 
-    .line 245
     :cond_1
     iget-object v0, p1, Lcom/android/systemui/qs/QSDetailItems$Item;->tag:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/systemui/statusbar/policy/CastController$CastDevice;
 
-    .line 246
     .local v0, "device":Lcom/android/systemui/statusbar/policy/CastController$CastDevice;
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/CastTile;
 
@@ -550,25 +498,21 @@
     .param p1, "item"    # Lcom/android/systemui/qs/QSDetailItems$Item;
 
     .prologue
-    .line 251
     if-eqz p1, :cond_0
 
     iget-object v1, p1, Lcom/android/systemui/qs/QSDetailItems$Item;->tag:Ljava/lang/Object;
 
     if-nez v1, :cond_1
 
-    .line 254
     :cond_0
     :goto_0
     return-void
 
-    .line 252
     :cond_1
     iget-object v0, p1, Lcom/android/systemui/qs/QSDetailItems$Item;->tag:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/systemui/statusbar/policy/CastController$CastDevice;
 
-    .line 253
     .local v0, "device":Lcom/android/systemui/statusbar/policy/CastController$CastDevice;
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/CastTile;
 
@@ -587,6 +531,5 @@
     .param p1, "state"    # Z
 
     .prologue
-    .line 172
     return-void
 .end method

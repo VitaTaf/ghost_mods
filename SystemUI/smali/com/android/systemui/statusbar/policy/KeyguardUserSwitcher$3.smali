@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 178
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher$3;->this$0:Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 2
 
     .prologue
-    .line 181
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher$3;->this$0:Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher;
 
     # getter for: Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher;->mUserSwitcherContainer:Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher$Container;
@@ -52,7 +50,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher$Container;->setVisibility(I)V
 
-    .line 182
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher$3;->this$0:Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher;
 
     # getter for: Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher;->mUserSwitcher:Landroid/view/ViewGroup;
@@ -64,7 +61,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setAlpha(F)V
 
-    .line 183
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher$3;->this$0:Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher;
 
     const/4 v1, 0x0
@@ -72,6 +68,5 @@
     # setter for: Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher;->mAnimating:Z
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher;->access$202(Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher;Z)Z
 
-    .line 184
     return-void
 .end method

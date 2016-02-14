@@ -24,18 +24,14 @@
     .param p2, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 981
     iput-object p1, p0, Lcom/android/systemui/egg/LLand$Star;->this$0:Lcom/android/systemui/egg/LLand;
 
-    .line 982
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/egg/LLand$Scenery;-><init>(Lcom/android/systemui/egg/LLand;Landroid/content/Context;)V
 
-    .line 983
     const v0, 0x7f02011f
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/egg/LLand$Star;->setBackgroundResource(I)V
 
-    .line 984
     # getter for: Lcom/android/systemui/egg/LLand;->PARAMS:Lcom/android/systemui/egg/LLand$Params;
     invoke-static {}, Lcom/android/systemui/egg/LLand;->access$200()Lcom/android/systemui/egg/LLand$Params;
 
@@ -58,13 +54,11 @@
 
     iput v0, p0, Lcom/android/systemui/egg/LLand$Star;->w:I
 
-    .line 985
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/systemui/egg/LLand$Star;->z:F
 
     iput v0, p0, Lcom/android/systemui/egg/LLand$Star;->v:F
 
-    .line 986
     return-void
 .end method

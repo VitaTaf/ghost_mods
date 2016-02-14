@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 4134
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$44$1;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$44;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 2
 
     .prologue
-    .line 4137
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$44$1;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$44;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$44;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -51,7 +49,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->setAlpha(F)V
 
-    .line 4138
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$44$1;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$44;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$44;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -59,7 +56,6 @@
     # invokes: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->runLaunchTransitionEndRunnable()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$8300(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
 
-    .line 4139
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$44$1;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$44;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$44;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -69,6 +65,5 @@
     # setter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mLaunchTransitionFadingAway:Z
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$8202(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Z)Z
 
-    .line 4140
     return-void
 .end method

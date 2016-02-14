@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 436
     iput-object p1, p0, Lcom/android/keyguard/KeyguardHostView$3;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 449
     iget-object v0, p0, Lcom/android/keyguard/KeyguardHostView$3;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     # invokes: Lcom/android/keyguard/KeyguardHostView;->shouldEnableAddWidget()Z
@@ -51,7 +49,6 @@
 
     if-nez v0, :cond_0
 
-    .line 450
     iget-object v0, p0, Lcom/android/keyguard/KeyguardHostView$3;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     # getter for: Lcom/android/keyguard/KeyguardHostView;->mAppWidgetContainer:Lcom/android/keyguard/KeyguardWidgetPager;
@@ -63,7 +60,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardWidgetPager;->setAddWidgetEnabled(Z)V
 
-    .line 452
     :cond_0
     return-void
 .end method
@@ -74,10 +70,8 @@
     .param p2, "deletePermanently"    # Z
 
     .prologue
-    .line 456
     if-eqz p2, :cond_0
 
-    .line 457
     check-cast p1, Lcom/android/keyguard/KeyguardWidgetFrame;
 
     .end local p1    # "v":Landroid/view/View;
@@ -85,7 +79,6 @@
 
     move-result v0
 
-    .line 458
     .local v0, "appWidgetId":I
     if-eqz v0, :cond_0
 
@@ -93,7 +86,6 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 460
     iget-object v1, p0, Lcom/android/keyguard/KeyguardHostView$3;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     # getter for: Lcom/android/keyguard/KeyguardHostView;->mAppWidgetHost:Landroid/appwidget/AppWidgetHost;
@@ -103,7 +95,6 @@
 
     invoke-virtual {v1, v0}, Landroid/appwidget/AppWidgetHost;->deleteAppWidgetId(I)V
 
-    .line 463
     .end local v0    # "appWidgetId":I
     :cond_0
     return-void
@@ -113,7 +104,6 @@
     .locals 2
 
     .prologue
-    .line 467
     iget-object v0, p0, Lcom/android/keyguard/KeyguardHostView$3;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     # invokes: Lcom/android/keyguard/KeyguardHostView;->shouldEnableAddWidget()Z
@@ -123,7 +113,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 468
     iget-object v0, p0, Lcom/android/keyguard/KeyguardHostView$3;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     # getter for: Lcom/android/keyguard/KeyguardHostView;->mAppWidgetContainer:Lcom/android/keyguard/KeyguardWidgetPager;
@@ -135,7 +124,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardWidgetPager;->setAddWidgetEnabled(Z)V
 
-    .line 470
     :cond_0
     return-void
 .end method
@@ -144,12 +132,10 @@
     .locals 1
 
     .prologue
-    .line 444
     iget-object v0, p0, Lcom/android/keyguard/KeyguardHostView$3;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardHostView;->onUserActivityTimeoutChanged()V
 
-    .line 445
     return-void
 .end method
 
@@ -157,11 +143,9 @@
     .locals 1
 
     .prologue
-    .line 439
     iget-object v0, p0, Lcom/android/keyguard/KeyguardHostView$3;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardHostView;->userActivity()V
 
-    .line 440
     return-void
 .end method

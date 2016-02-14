@@ -32,15 +32,12 @@
     .param p2, "touchSlop"    # F
 
     .prologue
-    .line 452
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView$EdgeSwipeHelper;->this$0:Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 453
     iput p2, p0, Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView$EdgeSwipeHelper;->mTouchSlop:F
 
-    .line 454
     return-void
 .end method
 
@@ -53,21 +50,18 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 458
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v3
 
     packed-switch v3, :pswitch_data_0
 
-    .line 487
     :cond_0
     :goto_0
     iget-boolean v3, p0, Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView$EdgeSwipeHelper;->mConsuming:Z
 
     return v3
 
-    .line 461
     :pswitch_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -75,19 +69,16 @@
 
     iput v3, p0, Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView$EdgeSwipeHelper;->mFirstX:F
 
-    .line 462
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v3
 
     iput v3, p0, Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView$EdgeSwipeHelper;->mFirstY:F
 
-    .line 463
     iput-boolean v4, p0, Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView$EdgeSwipeHelper;->mConsuming:Z
 
     goto :goto_0
 
-    .line 468
     :pswitch_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
@@ -97,7 +88,6 @@
 
     sub-float v0, v3, v4
 
-    .line 469
     .local v0, "dY":F
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -111,13 +101,11 @@
 
     move-result v1
 
-    .line 470
     .local v1, "daX":F
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v2
 
-    .line 471
     .local v2, "daY":F
     iget-boolean v3, p0, Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView$EdgeSwipeHelper;->mConsuming:Z
 
@@ -133,20 +121,17 @@
 
     if-lez v3, :cond_0
 
-    .line 472
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView$EdgeSwipeHelper;->this$0:Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView;
 
     # invokes: Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView;->snooze()V
     invoke-static {v3}, Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView;->access$200(Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView;)V
 
-    .line 473
     const/4 v3, 0x0
 
     cmpl-float v3, v0, v3
 
     if-lez v3, :cond_1
 
-    .line 475
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView$EdgeSwipeHelper;->this$0:Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView;
 
     # getter for: Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView;->mBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -156,7 +141,6 @@
 
     invoke-virtual {v3}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->animateExpandNotificationsPanel()V
 
-    .line 477
     :cond_1
     const/4 v3, 0x1
 
@@ -164,7 +148,6 @@
 
     goto :goto_0
 
-    .line 484
     .end local v0    # "dY":F
     .end local v1    # "daX":F
     .end local v2    # "daY":F
@@ -173,7 +156,6 @@
 
     goto :goto_0
 
-    .line 458
     nop
 
     :pswitch_data_0
@@ -190,7 +172,6 @@
     .param p1, "ev"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 492
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView$EdgeSwipeHelper;->mConsuming:Z
 
     return v0

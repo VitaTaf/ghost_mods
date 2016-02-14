@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 223
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$1;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,23 +48,18 @@
     .param p9, "oldBottom"    # I
 
     .prologue
-    .line 228
     sub-int v0, p5, p3
 
-    .line 229
     .local v0, "height":I
     sub-int v1, p9, p7
 
-    .line 230
     .local v1, "oldHeight":I
     if-eq v0, v1, :cond_0
 
-    .line 231
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$1;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->onScrollChanged()V
 
-    .line 233
     :cond_0
     return-void
 .end method

@@ -33,12 +33,10 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 89
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/keyguard/KeyguardSimPinView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 90
     return-void
 .end method
 
@@ -48,22 +46,18 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 93
     invoke-direct {p0, p1, p2}, Lcom/android/keyguard/KeyguardPinBasedInputView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 52
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
 
-    .line 61
     new-instance v0, Lcom/android/keyguard/KeyguardSimPinView$1;
 
     invoke-direct {v0, p0}, Lcom/android/keyguard/KeyguardSimPinView$1;-><init>(Lcom/android/keyguard/KeyguardSimPinView;)V
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mUpdateMonitorCallback:Lcom/android/keyguard/KeyguardUpdateMonitorCallback;
 
-    .line 94
     return-void
 .end method
 
@@ -72,7 +66,6 @@
     .param p0, "x0"    # Lcom/android/keyguard/KeyguardSimPinView;
 
     .prologue
-    .line 47
     iget v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mSubId:I
 
     return v0
@@ -83,7 +76,6 @@
     .param p0, "x0"    # Lcom/android/keyguard/KeyguardSimPinView;
 
     .prologue
-    .line 47
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -94,7 +86,6 @@
     .param p0, "x0"    # Lcom/android/keyguard/KeyguardSimPinView;
 
     .prologue
-    .line 47
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -105,7 +96,6 @@
     .param p0, "x0"    # Lcom/android/keyguard/KeyguardSimPinView;
 
     .prologue
-    .line 47
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mDSSkipButton:Landroid/widget/ImageButton;
 
     return-object v0
@@ -116,7 +106,6 @@
     .param p0, "x0"    # Lcom/android/keyguard/KeyguardSimPinView;
 
     .prologue
-    .line 47
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
 
     return-object v0
@@ -128,7 +117,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 47
     invoke-direct {p0, p1}, Lcom/android/keyguard/KeyguardSimPinView;->getSimRemainingAttemptsDialog(I)Landroid/app/Dialog;
 
     move-result-object v0
@@ -142,7 +130,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 47
     invoke-direct {p0, p1}, Lcom/android/keyguard/KeyguardSimPinView;->getPinPasswordErrorMessage(I)Ljava/lang/String;
 
     move-result-object v0
@@ -156,7 +143,6 @@
     .param p1, "x1"    # Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;
 
     .prologue
-    .line 47
     iput-object p1, p0, Lcom/android/keyguard/KeyguardSimPinView;->mCheckSimPinThread:Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;
 
     return-object p1
@@ -167,10 +153,8 @@
     .param p1, "attemptsRemaining"    # I
 
     .prologue
-    .line 163
     if-nez p1, :cond_0
 
-    .line 164
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardSimPinView;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -181,7 +165,6 @@
 
     move-result-object v0
 
-    .line 172
     .local v0, "displayMessage":Ljava/lang/String;
     :goto_0
     const-string v1, "KeyguardSimPinView"
@@ -216,15 +199,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 174
     return-object v0
 
-    .line 165
     .end local v0    # "displayMessage":Ljava/lang/String;
     :cond_0
     if-lez p1, :cond_1
 
-    .line 166
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardSimPinView;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -254,7 +234,6 @@
     .restart local v0    # "displayMessage":Ljava/lang/String;
     goto :goto_0
 
-    .line 170
     .end local v0    # "displayMessage":Ljava/lang/String;
     :cond_1
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardSimPinView;->getContext()Landroid/content/Context;
@@ -276,12 +255,10 @@
     .param p1, "remaining"    # I
 
     .prologue
-    .line 322
     invoke-direct {p0, p1}, Lcom/android/keyguard/KeyguardSimPinView;->getPinPasswordErrorMessage(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 323
     .local v1, "msg":Ljava/lang/String;
     iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPinView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
 
@@ -289,42 +266,35 @@
 
     invoke-interface {v2, v1, v3}, Lcom/android/keyguard/SecurityMessageDisplay;->setMessage(Ljava/lang/CharSequence;Z)V
 
-    .line 324
     iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPinView;->mRemainingAttemptsDialog:Landroid/app/AlertDialog;
 
     if-nez v2, :cond_0
 
-    .line 325
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPinView;->mContext:Landroid/content/Context;
 
     invoke-direct {v0, v2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 326
     .local v0, "builder":Landroid/app/AlertDialog$Builder;
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 327
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
 
-    .line 328
     sget v2, Lcom/android/keyguard/R$string;->ok:I
 
     const/4 v3, 0x0
 
     invoke-virtual {v0, v2, v3}, Landroid/app/AlertDialog$Builder;->setNeutralButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 329
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v2
 
     iput-object v2, p0, Lcom/android/keyguard/KeyguardSimPinView;->mRemainingAttemptsDialog:Landroid/app/AlertDialog;
 
-    .line 330
     iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPinView;->mRemainingAttemptsDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v2}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
@@ -335,14 +305,12 @@
 
     invoke-virtual {v2, v3}, Landroid/view/Window;->setType(I)V
 
-    .line 335
     .end local v0    # "builder":Landroid/app/AlertDialog$Builder;
     :goto_0
     iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPinView;->mRemainingAttemptsDialog:Landroid/app/AlertDialog;
 
     return-object v2
 
-    .line 333
     :cond_0
     iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPinView;->mRemainingAttemptsDialog:Landroid/app/AlertDialog;
 
@@ -355,12 +323,10 @@
     .locals 3
 
     .prologue
-    .line 309
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
 
     if-nez v0, :cond_0
 
-    .line 310
     new-instance v0, Landroid/app/ProgressDialog;
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPinView;->mContext:Landroid/content/Context;
@@ -369,7 +335,6 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
 
-    .line 311
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPinView;->mContext:Landroid/content/Context;
@@ -382,21 +347,18 @@
 
     invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    .line 313
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setIndeterminate(Z)V
 
-    .line 314
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setCancelable(Z)V
 
-    .line 315
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->getWindow()Landroid/view/Window;
@@ -407,7 +369,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setType(I)V
 
-    .line 318
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
 
@@ -420,7 +381,6 @@
     .locals 1
 
     .prologue
-    .line 185
     sget v0, Lcom/android/keyguard/R$id;->simPinEntry:I
 
     return v0
@@ -430,10 +390,8 @@
     .locals 2
 
     .prologue
-    .line 243
     invoke-super {p0}, Lcom/android/keyguard/KeyguardPinBasedInputView;->onAttachedToWindow()V
 
-    .line 244
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
@@ -444,7 +402,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->registerCallback(Lcom/android/keyguard/KeyguardUpdateMonitorCallback;)V
 
-    .line 245
     return-void
 .end method
 
@@ -452,10 +409,8 @@
     .locals 2
 
     .prologue
-    .line 249
     invoke-super {p0}, Lcom/android/keyguard/KeyguardPinBasedInputView;->onDetachedFromWindow()V
 
-    .line 250
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
@@ -466,7 +421,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->removeCallback(Lcom/android/keyguard/KeyguardUpdateMonitorCallback;)V
 
-    .line 251
     return-void
 .end method
 
@@ -474,10 +428,8 @@
     .locals 3
 
     .prologue
-    .line 190
     invoke-super {p0}, Lcom/android/keyguard/KeyguardPinBasedInputView;->onFinishInflate()V
 
-    .line 192
     sget v0, Lcom/android/keyguard/R$id;->key_ds_skip:I
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardSimPinView;->findViewById(I)Landroid/view/View;
@@ -488,12 +440,10 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mDSSkipButton:Landroid/widget/ImageButton;
 
-    .line 193
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mDSSkipButton:Landroid/widget/ImageButton;
 
     if-eqz v0, :cond_0
 
-    .line 194
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mDSSkipButton:Landroid/widget/ImageButton;
 
     new-instance v1, Lcom/android/keyguard/KeyguardSimPinView$2;
@@ -502,7 +452,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 231
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mDSSkipButton:Landroid/widget/ImageButton;
 
     new-instance v1, Lcom/android/keyguard/LiftToActivateListener;
@@ -515,7 +464,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setOnHoverListener(Landroid/view/View$OnHoverListener;)V
 
-    .line 234
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
 
@@ -523,14 +471,12 @@
 
     invoke-interface {v0, v1}, Lcom/android/keyguard/SecurityMessageDisplay;->setTimeout(I)V
 
-    .line 235
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mEcaView:Landroid/view/View;
 
     instance-of v0, v0, Lcom/android/keyguard/EmergencyCarrierArea;
 
     if-eqz v0, :cond_1
 
-    .line 236
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mEcaView:Landroid/view/View;
 
     check-cast v0, Lcom/android/keyguard/EmergencyCarrierArea;
@@ -539,7 +485,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/EmergencyCarrierArea;->setCarrierTextVisible(Z)V
 
-    .line 238
     :cond_1
     sget v0, Lcom/android/keyguard/R$id;->keyguard_sim:I
 
@@ -551,7 +496,6 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mSimImageView:Landroid/widget/ImageView;
 
-    .line 239
     return-void
 .end method
 
@@ -559,22 +503,18 @@
     .locals 1
 
     .prologue
-    .line 260
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
 
     if-eqz v0, :cond_0
 
-    .line 261
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 262
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
 
-    .line 264
     :cond_0
     return-void
 .end method
@@ -591,24 +531,20 @@
 
     const/4 v11, 0x1
 
-    .line 97
     invoke-super {p0}, Lcom/android/keyguard/KeyguardPinBasedInputView;->resetState()V
 
-    .line 98
     const-string v9, "KeyguardSimPinView"
 
     const-string v10, "Resetting state"
 
     invoke-static {v9, v10}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 99
     iget-object v9, p0, Lcom/android/keyguard/KeyguardSimPinView;->mContext:Landroid/content/Context;
 
     invoke-static {v9}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     move-result-object v4
 
-    .line 102
     .local v4, "monitor":Lcom/android/keyguard/KeyguardUpdateMonitor;
     sget-object v9, Lcom/android/internal/telephony/IccCardConstants$State;->PIN_REQUIRED:Lcom/android/internal/telephony/IccCardConstants$State;
 
@@ -618,12 +554,10 @@
 
     if-eq v9, v10, :cond_1
 
-    .line 158
     :cond_0
     :goto_0
     return-void
 
-    .line 106
     :cond_1
     sget-object v9, Lcom/android/internal/telephony/IccCardConstants$State;->PIN_REQUIRED:Lcom/android/internal/telephony/IccCardConstants$State;
 
@@ -633,7 +567,6 @@
 
     iput v9, p0, Lcom/android/keyguard/KeyguardSimPinView;->mSubId:I
 
-    .line 107
     iget v9, p0, Lcom/android/keyguard/KeyguardSimPinView;->mSubId:I
 
     invoke-static {v9}, Landroid/telephony/SubscriptionManager;->isValidSubscriptionId(I)Z
@@ -642,7 +575,6 @@
 
     if-eqz v9, :cond_0
 
-    .line 108
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v9
@@ -651,49 +583,40 @@
 
     move-result v1
 
-    .line 109
     .local v1, "count":I
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardSimPinView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v7
 
-    .line 111
     .local v7, "rez":Landroid/content/res/Resources;
     const/4 v0, -0x1
 
-    .line 112
     .local v0, "color":I
     if-ge v1, v12, :cond_3
 
-    .line 113
     sget v9, Lcom/android/keyguard/R$string;->kg_sim_pin_instructions:I
 
     invoke-virtual {v7, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 115
     .local v5, "msg":Ljava/lang/String;
     invoke-virtual {v4}, Lcom/android/keyguard/KeyguardUpdateMonitor;->clearSkippedSubId()V
 
-    .line 116
     iget-object v9, p0, Lcom/android/keyguard/KeyguardSimPinView;->mDSSkipButton:Landroid/widget/ImageButton;
 
     if-eqz v9, :cond_2
 
-    .line 117
     iget-object v9, p0, Lcom/android/keyguard/KeyguardSimPinView;->mDSSkipButton:Landroid/widget/ImageButton;
 
     invoke-virtual {v9, v14}, Landroid/widget/ImageButton;->setVisibility(I)V
 
-    .line 155
     :cond_2
     :goto_1
     iget-object v9, p0, Lcom/android/keyguard/KeyguardSimPinView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
 
     invoke-interface {v9, v5, v11}, Lcom/android/keyguard/SecurityMessageDisplay;->setMessage(Ljava/lang/CharSequence;Z)V
 
-    .line 156
     iget-object v9, p0, Lcom/android/keyguard/KeyguardSimPinView;->mSimImageView:Landroid/widget/ImageView;
 
     invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
@@ -704,7 +627,6 @@
 
     goto :goto_0
 
-    .line 121
     .end local v5    # "msg":Ljava/lang/String;
     :cond_3
     iget v9, p0, Lcom/android/keyguard/KeyguardSimPinView;->mSubId:I
@@ -713,7 +635,6 @@
 
     move-result-object v3
 
-    .line 122
     .local v3, "info":Landroid/telephony/SubscriptionInfo;
     if-eqz v3, :cond_6
 
@@ -721,7 +642,6 @@
 
     move-result-object v2
 
-    .line 123
     .local v2, "displayName":Ljava/lang/CharSequence;
     :goto_2
     sget v9, Lcom/android/keyguard/R$string;->kg_sim_pin_instructions_multi:I
@@ -734,16 +654,13 @@
 
     move-result-object v5
 
-    .line 124
     .restart local v5    # "msg":Ljava/lang/String;
     if-eqz v3, :cond_4
 
-    .line 125
     invoke-virtual {v3}, Landroid/telephony/SubscriptionInfo;->getIconTint()I
 
     move-result v0
 
-    .line 128
     :cond_4
     invoke-virtual {v4}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getValidSimCount()I
 
@@ -751,10 +668,8 @@
 
     if-lt v9, v12, :cond_8
 
-    .line 129
     sget v6, Lcom/android/keyguard/R$drawable;->zz_moto_ic_sim_skip:I
 
-    .line 130
     .local v6, "resId":I
     invoke-virtual {v4}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getLockedSimCount()I
 
@@ -762,12 +677,10 @@
 
     if-lt v9, v12, :cond_5
 
-    .line 131
     invoke-virtual {v4}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getSkippedSubId()I
 
     move-result v8
 
-    .line 132
     .local v8, "subId":I
     invoke-static {v8}, Landroid/telephony/SubscriptionManager;->isValidSubscriptionId(I)Z
 
@@ -775,7 +688,6 @@
 
     if-eqz v9, :cond_5
 
-    .line 133
     iget v9, p0, Lcom/android/keyguard/KeyguardSimPinView;->mSubId:I
 
     invoke-virtual {v4, v9}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isSubIdSkipped(I)Z
@@ -784,10 +696,8 @@
 
     if-eqz v9, :cond_7
 
-    .line 136
     invoke-virtual {v4}, Lcom/android/keyguard/KeyguardUpdateMonitor;->clearSkippedSubId()V
 
-    .line 143
     .end local v8    # "subId":I
     :cond_5
     :goto_3
@@ -795,7 +705,6 @@
 
     if-eqz v9, :cond_2
 
-    .line 144
     iget-object v9, p0, Lcom/android/keyguard/KeyguardSimPinView;->mDSSkipButton:Landroid/widget/ImageButton;
 
     invoke-virtual {v7, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -804,14 +713,12 @@
 
     invoke-virtual {v9, v10}, Landroid/widget/ImageButton;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 145
     iget-object v9, p0, Lcom/android/keyguard/KeyguardSimPinView;->mDSSkipButton:Landroid/widget/ImageButton;
 
     invoke-virtual {v9, v13}, Landroid/widget/ImageButton;->setVisibility(I)V
 
     goto :goto_1
 
-    .line 122
     .end local v2    # "displayName":Ljava/lang/CharSequence;
     .end local v5    # "msg":Ljava/lang/String;
     .end local v6    # "resId":I
@@ -820,7 +727,6 @@
 
     goto :goto_2
 
-    .line 139
     .restart local v2    # "displayName":Ljava/lang/CharSequence;
     .restart local v5    # "msg":Ljava/lang/String;
     .restart local v6    # "resId":I
@@ -830,18 +736,15 @@
 
     goto :goto_3
 
-    .line 148
     .end local v6    # "resId":I
     .end local v8    # "subId":I
     :cond_8
     invoke-virtual {v4}, Lcom/android/keyguard/KeyguardUpdateMonitor;->clearSkippedSubId()V
 
-    .line 149
     iget-object v9, p0, Lcom/android/keyguard/KeyguardSimPinView;->mDSSkipButton:Landroid/widget/ImageButton;
 
     if-eqz v9, :cond_2
 
-    .line 150
     iget-object v9, p0, Lcom/android/keyguard/KeyguardSimPinView;->mDSSkipButton:Landroid/widget/ImageButton;
 
     invoke-virtual {v9, v14}, Landroid/widget/ImageButton;->setVisibility(I)V
@@ -854,7 +757,6 @@
     .param p1, "deadline"    # J
 
     .prologue
-    .line 180
     const/4 v0, 0x0
 
     return v0
@@ -864,7 +766,6 @@
     .locals 0
 
     .prologue
-    .line 255
     return-void
 .end method
 
@@ -872,7 +773,6 @@
     .locals 0
 
     .prologue
-    .line 398
     return-void
 .end method
 
@@ -881,7 +781,6 @@
     .param p1, "finishRunnable"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 402
     const/4 v0, 0x0
 
     return v0
@@ -893,14 +792,12 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 340
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPinView;->mPasswordEntry:Lcom/android/keyguard/PasswordTextView;
 
     invoke-virtual {v1}, Lcom/android/keyguard/PasswordTextView;->getText()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 342
     .local v0, "entry":Ljava/lang/String;
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
@@ -918,7 +815,6 @@
 
     if-le v1, v2, :cond_2
 
-    .line 344
     :cond_0
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPinView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
 
@@ -926,20 +822,16 @@
 
     invoke-interface {v1, v2, v3}, Lcom/android/keyguard/SecurityMessageDisplay;->setMessage(IZ)V
 
-    .line 345
     invoke-virtual {p0, v3}, Lcom/android/keyguard/KeyguardSimPinView;->resetPasswordText(Z)V
 
-    .line 346
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPinView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
     invoke-interface {v1}, Lcom/android/keyguard/KeyguardSecurityCallback;->userActivity()V
 
-    .line 393
     :cond_1
     :goto_0
     return-void
 
-    .line 350
     :cond_2
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardSimPinView;->getSimUnlockProgressDialog()Landroid/app/Dialog;
 
@@ -947,12 +839,10 @@
 
     invoke-virtual {v1}, Landroid/app/Dialog;->show()V
 
-    .line 352
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPinView;->mCheckSimPinThread:Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;
 
     if-nez v1, :cond_1
 
-    .line 353
     new-instance v1, Lcom/android/keyguard/KeyguardSimPinView$3;
 
     iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPinView;->mPasswordEntry:Lcom/android/keyguard/PasswordTextView;
@@ -967,7 +857,6 @@
 
     iput-object v1, p0, Lcom/android/keyguard/KeyguardSimPinView;->mCheckSimPinThread:Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;
 
-    .line 391
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPinView;->mCheckSimPinThread:Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;
 
     invoke-virtual {v1}, Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;->start()V

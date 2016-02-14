@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 977
     iput-object p1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$11;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$11;->val$v:Lcom/android/systemui/statusbar/NotificationGuts;
@@ -42,16 +41,13 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 980
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 981
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$11;->val$v:Lcom/android/systemui/statusbar/NotificationGuts;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/NotificationGuts;->setVisibility(I)V
 
-    .line 982
     return-void
 .end method

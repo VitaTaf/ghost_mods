@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 407
     iput-object p1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$5;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     invoke-direct {p0}, Landroid/service/notification/NotificationListenerService;-><init>()V
@@ -37,7 +36,6 @@
     .locals 4
 
     .prologue
-    .line 410
     sget-boolean v2, Lcom/android/systemui/statusbar/BaseStatusBar;->DEBUG:Z
 
     if-eqz v2, :cond_0
@@ -48,34 +46,28 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 411
     :cond_0
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/BaseStatusBar$5;->getActiveNotifications()[Landroid/service/notification/StatusBarNotification;
 
     move-result-object v1
 
-    .line 414
     .local v1, "notifications":[Landroid/service/notification/StatusBarNotification;
     if-nez v1, :cond_1
 
-    .line 415
     const-string v2, "StatusBar"
 
     const-string v3, "something wrong when getting active notifications."
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 428
     :goto_0
     return-void
 
-    .line 419
     :cond_1
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/BaseStatusBar$5;->getCurrentRanking()Landroid/service/notification/NotificationListenerService$RankingMap;
 
     move-result-object v0
 
-    .line 420
     .local v0, "currentRanking":Landroid/service/notification/NotificationListenerService$RankingMap;
     iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$5;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
@@ -96,7 +88,6 @@
     .param p2, "rankingMap"    # Landroid/service/notification/NotificationListenerService$RankingMap;
 
     .prologue
-    .line 433
     sget-boolean v0, Lcom/android/systemui/statusbar/BaseStatusBar;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -123,7 +114,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 434
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$5;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
@@ -135,7 +125,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/BaseStatusBar$H;->post(Ljava/lang/Runnable;)Z
 
-    .line 465
     return-void
 .end method
 
@@ -144,7 +133,6 @@
     .param p1, "rankingMap"    # Landroid/service/notification/NotificationListenerService$RankingMap;
 
     .prologue
-    .line 481
     sget-boolean v0, Lcom/android/systemui/statusbar/BaseStatusBar;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -155,7 +143,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 482
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$5;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
@@ -167,7 +154,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/BaseStatusBar$H;->post(Ljava/lang/Runnable;)Z
 
-    .line 488
     return-void
 .end method
 
@@ -177,7 +163,6 @@
     .param p2, "rankingMap"    # Landroid/service/notification/NotificationListenerService$RankingMap;
 
     .prologue
-    .line 470
     sget-boolean v0, Lcom/android/systemui/statusbar/BaseStatusBar;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -204,7 +189,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 471
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$5;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
@@ -216,6 +200,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/BaseStatusBar$H;->post(Ljava/lang/Runnable;)Z
 
-    .line 477
     return-void
 .end method

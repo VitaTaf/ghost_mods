@@ -55,7 +55,6 @@
     .locals 2
 
     .prologue
-    .line 41
     const-string v0, "QSFooter"
 
     const/4 v1, 0x3
@@ -75,10 +74,8 @@
     .param p2, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 47
     new-instance v0, Lcom/android/systemui/qs/QSFooter$Callback;
 
     const/4 v1, 0x0
@@ -87,14 +84,12 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mCallback:Lcom/android/systemui/qs/QSFooter$Callback;
 
-    .line 240
     new-instance v0, Lcom/android/systemui/qs/QSFooter$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/qs/QSFooter$1;-><init>(Lcom/android/systemui/qs/QSFooter;)V
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mUpdateDisplayState:Ljava/lang/Runnable;
 
-    .line 60
     invoke-static {p2}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v0
@@ -109,12 +104,10 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mRootView:Landroid/view/View;
 
-    .line 62
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mRootView:Landroid/view/View;
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 63
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mRootView:Landroid/view/View;
 
     const v1, 0x7f0f00c0
@@ -127,7 +120,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mFooterText:Landroid/widget/TextView;
 
-    .line 64
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mRootView:Landroid/view/View;
 
     const v1, 0x7f0f00c1
@@ -140,17 +132,14 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mFooterIcon:Landroid/widget/ImageView;
 
-    .line 65
     iput-object p2, p0, Lcom/android/systemui/qs/QSFooter;->mContext:Landroid/content/Context;
 
-    .line 66
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mMainHandler:Landroid/os/Handler;
 
-    .line 67
     return-void
 .end method
 
@@ -159,7 +148,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/QSFooter;
 
     .prologue
-    .line 39
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mHost:Lcom/android/systemui/statusbar/phone/QSTileHost;
 
     return-object v0
@@ -170,7 +158,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/QSFooter;
 
     .prologue
-    .line 39
     iget v0, p0, Lcom/android/systemui/qs/QSFooter;->mFooterTextId:I
 
     return v0
@@ -181,7 +168,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/QSFooter;
 
     .prologue
-    .line 39
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mFooterText:Landroid/widget/TextView;
 
     return-object v0
@@ -192,7 +178,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/QSFooter;
 
     .prologue
-    .line 39
     iget-boolean v0, p0, Lcom/android/systemui/qs/QSFooter;->mIsVisible:Z
 
     return v0
@@ -203,7 +188,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/QSFooter;
 
     .prologue
-    .line 39
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mRootView:Landroid/view/View;
 
     return-object v0
@@ -214,7 +198,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/QSFooter;
 
     .prologue
-    .line 39
     iget-boolean v0, p0, Lcom/android/systemui/qs/QSFooter;->mIsIconVisible:Z
 
     return v0
@@ -225,7 +208,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/QSFooter;
 
     .prologue
-    .line 39
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mFooterIcon:Landroid/widget/ImageView;
 
     return-object v0
@@ -236,7 +218,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/QSFooter;
 
     .prologue
-    .line 39
     invoke-direct {p0}, Lcom/android/systemui/qs/QSFooter;->handleRefreshState()V
 
     return-void
@@ -247,7 +228,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/QSFooter;
 
     .prologue
-    .line 39
     invoke-direct {p0}, Lcom/android/systemui/qs/QSFooter;->handleClick()V
 
     return-void
@@ -257,7 +237,6 @@
     .locals 3
 
     .prologue
-    .line 138
     new-instance v0, Lcom/android/systemui/statusbar/phone/SystemUIDialog;
 
     iget-object v1, p0, Lcom/android/systemui/qs/QSFooter;->mContext:Landroid/content/Context;
@@ -266,7 +245,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mDialog:Landroid/app/AlertDialog;
 
-    .line 139
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mDialog:Landroid/app/AlertDialog;
 
     invoke-direct {p0}, Lcom/android/systemui/qs/QSFooter;->getTitle()I
@@ -275,7 +253,6 @@
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog;->setTitle(I)V
 
-    .line 140
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mDialog:Landroid/app/AlertDialog;
 
     invoke-direct {p0}, Lcom/android/systemui/qs/QSFooter;->getMessage()Ljava/lang/String;
@@ -284,7 +261,6 @@
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    .line 141
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mDialog:Landroid/app/AlertDialog;
 
     const/4 v1, -0x1
@@ -295,7 +271,6 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/app/AlertDialog;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
-    .line 142
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mSecurityController:Lcom/android/systemui/statusbar/policy/SecurityController;
 
     invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/SecurityController;->isVpnEnabled()Z
@@ -304,7 +279,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 143
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mDialog:Landroid/app/AlertDialog;
 
     const/4 v1, -0x2
@@ -315,13 +289,11 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/app/AlertDialog;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
-    .line 145
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
-    .line 146
     return-void
 .end method
 
@@ -337,7 +309,6 @@
 
     const/4 v4, 0x0
 
-    .line 161
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mSecurityController:Lcom/android/systemui/statusbar/policy/SecurityController;
 
     invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/SecurityController;->hasDeviceOwner()Z
@@ -346,7 +317,6 @@
 
     if-eqz v0, :cond_5
 
-    .line 162
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mSecurityController:Lcom/android/systemui/statusbar/policy/SecurityController;
 
     invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/SecurityController;->hasProfileOwner()Z
@@ -355,7 +325,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 163
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mSecurityController:Lcom/android/systemui/statusbar/policy/SecurityController;
 
     invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/SecurityController;->isVpnEnabled()Z
@@ -364,7 +333,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 164
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mSecurityController:Lcom/android/systemui/statusbar/policy/SecurityController;
 
     invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/SecurityController;->isLegacyVpn()Z
@@ -373,7 +341,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 165
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mContext:Landroid/content/Context;
 
     const v1, 0x7f0c014c
@@ -408,11 +375,9 @@
 
     move-result-object v0
 
-    .line 224
     :goto_0
     return-object v0
 
-    .line 171
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mContext:Landroid/content/Context;
 
@@ -450,7 +415,6 @@
 
     goto :goto_0
 
-    .line 178
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mContext:Landroid/content/Context;
 
@@ -480,7 +444,6 @@
 
     goto :goto_0
 
-    .line 184
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mSecurityController:Lcom/android/systemui/statusbar/policy/SecurityController;
 
@@ -490,7 +453,6 @@
 
     if-eqz v0, :cond_4
 
-    .line 185
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mSecurityController:Lcom/android/systemui/statusbar/policy/SecurityController;
 
     invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/SecurityController;->isLegacyVpn()Z
@@ -499,7 +461,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 186
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mContext:Landroid/content/Context;
 
     const v1, 0x7f0c0146
@@ -528,7 +489,6 @@
 
     goto :goto_0
 
-    .line 191
     :cond_3
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mContext:Landroid/content/Context;
 
@@ -558,7 +518,6 @@
 
     goto/16 :goto_0
 
-    .line 196
     :cond_4
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mContext:Landroid/content/Context;
 
@@ -580,7 +539,6 @@
 
     goto/16 :goto_0
 
-    .line 200
     :cond_5
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mSecurityController:Lcom/android/systemui/statusbar/policy/SecurityController;
 
@@ -590,7 +548,6 @@
 
     if-eqz v0, :cond_8
 
-    .line 201
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mSecurityController:Lcom/android/systemui/statusbar/policy/SecurityController;
 
     invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/SecurityController;->isVpnEnabled()Z
@@ -599,7 +556,6 @@
 
     if-eqz v0, :cond_7
 
-    .line 202
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mSecurityController:Lcom/android/systemui/statusbar/policy/SecurityController;
 
     invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/SecurityController;->isLegacyVpn()Z
@@ -608,7 +564,6 @@
 
     if-eqz v0, :cond_6
 
-    .line 203
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mContext:Landroid/content/Context;
 
     const v1, 0x7f0c014a
@@ -637,7 +592,6 @@
 
     goto/16 :goto_0
 
-    .line 208
     :cond_6
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mContext:Landroid/content/Context;
 
@@ -667,7 +621,6 @@
 
     goto/16 :goto_0
 
-    .line 214
     :cond_7
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mContext:Landroid/content/Context;
 
@@ -689,7 +642,6 @@
 
     goto/16 :goto_0
 
-    .line 219
     :cond_8
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mSecurityController:Lcom/android/systemui/statusbar/policy/SecurityController;
 
@@ -699,7 +651,6 @@
 
     if-eqz v0, :cond_9
 
-    .line 220
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mContext:Landroid/content/Context;
 
     const v1, 0x7f0c0144
@@ -720,7 +671,6 @@
 
     goto/16 :goto_0
 
-    .line 224
     :cond_9
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mContext:Landroid/content/Context;
 
@@ -747,7 +697,6 @@
     .locals 2
 
     .prologue
-    .line 149
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mSecurityController:Lcom/android/systemui/statusbar/policy/SecurityController;
 
     invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/SecurityController;->isLegacyVpn()Z
@@ -756,7 +705,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 150
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mContext:Landroid/content/Context;
 
     const v1, 0x7f0c0141
@@ -765,7 +713,6 @@
 
     move-result-object v0
 
-    .line 152
     :goto_0
     return-object v0
 
@@ -785,7 +732,6 @@
     .locals 2
 
     .prologue
-    .line 157
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mContext:Landroid/content/Context;
 
     const v1, 0x7f0c00f3
@@ -801,7 +747,6 @@
     .locals 1
 
     .prologue
-    .line 231
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mSecurityController:Lcom/android/systemui/statusbar/policy/SecurityController;
 
     invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/SecurityController;->hasDeviceOwner()Z
@@ -810,14 +755,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 232
     const v0, 0x7f0c013d
 
-    .line 237
     :goto_0
     return v0
 
-    .line 234
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mSecurityController:Lcom/android/systemui/statusbar/policy/SecurityController;
 
@@ -827,12 +769,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 235
     const v0, 0x7f0c013e
 
     goto :goto_0
 
-    .line 237
     :cond_1
     const v0, 0x7f0c013f
 
@@ -843,15 +783,12 @@
     .locals 1
 
     .prologue
-    .line 101
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mHost:Lcom/android/systemui/statusbar/phone/QSTileHost;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/QSTileHost;->collapsePanels()V
 
-    .line 103
     invoke-direct {p0}, Lcom/android/systemui/qs/QSFooter;->createDialog()V
 
-    .line 104
     return-void
 .end method
 
@@ -863,7 +800,6 @@
 
     const/4 v1, 0x0
 
-    .line 111
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mSecurityController:Lcom/android/systemui/statusbar/policy/SecurityController;
 
     invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/SecurityController;->hasDeviceOwner()Z
@@ -872,18 +808,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 112
     const v0, 0x7f0c013a
 
     iput v0, p0, Lcom/android/systemui/qs/QSFooter;->mFooterTextId:I
 
-    .line 113
     iput-boolean v2, p0, Lcom/android/systemui/qs/QSFooter;->mIsVisible:Z
 
-    .line 114
     iput-boolean v1, p0, Lcom/android/systemui/qs/QSFooter;->mIsIconVisible:Z
 
-    .line 127
     :goto_0
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mMainHandler:Landroid/os/Handler;
 
@@ -891,10 +823,8 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 128
     return-void
 
-    .line 115
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mSecurityController:Lcom/android/systemui/statusbar/policy/SecurityController;
 
@@ -904,20 +834,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 116
     const v0, 0x7f0c013b
 
     iput v0, p0, Lcom/android/systemui/qs/QSFooter;->mFooterTextId:I
 
-    .line 117
     iput-boolean v2, p0, Lcom/android/systemui/qs/QSFooter;->mIsVisible:Z
 
-    .line 118
     iput-boolean v1, p0, Lcom/android/systemui/qs/QSFooter;->mIsIconVisible:Z
 
     goto :goto_0
 
-    .line 119
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mSecurityController:Lcom/android/systemui/statusbar/policy/SecurityController;
 
@@ -927,24 +853,19 @@
 
     if-eqz v0, :cond_2
 
-    .line 120
     const v0, 0x7f0c013c
 
     iput v0, p0, Lcom/android/systemui/qs/QSFooter;->mFooterTextId:I
 
-    .line 121
     iput-boolean v2, p0, Lcom/android/systemui/qs/QSFooter;->mIsVisible:Z
 
-    .line 122
     iput-boolean v2, p0, Lcom/android/systemui/qs/QSFooter;->mIsIconVisible:Z
 
     goto :goto_0
 
-    .line 124
     :cond_2
     iput-boolean v1, p0, Lcom/android/systemui/qs/QSFooter;->mIsVisible:Z
 
-    .line 125
     iput-boolean v1, p0, Lcom/android/systemui/qs/QSFooter;->mIsIconVisible:Z
 
     goto :goto_0
@@ -956,7 +877,6 @@
     .locals 1
 
     .prologue
-    .line 88
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mRootView:Landroid/view/View;
 
     return-object v0
@@ -966,7 +886,6 @@
     .locals 2
 
     .prologue
-    .line 92
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mRootView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
@@ -994,17 +913,14 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 132
     const/4 v0, -0x2
 
     if-ne p2, v0, :cond_0
 
-    .line 133
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mSecurityController:Lcom/android/systemui/statusbar/policy/SecurityController;
 
     invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/SecurityController;->disconnectFromVpn()V
 
-    .line 135
     :cond_0
     return-void
 .end method
@@ -1014,14 +930,12 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 97
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 98
     return-void
 .end method
 
@@ -1029,14 +943,12 @@
     .locals 2
 
     .prologue
-    .line 84
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mFooterText:Landroid/widget/TextView;
 
     const v1, 0x7f0d0039
 
     invoke-static {v0, v1}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/widget/TextView;I)V
 
-    .line 85
     return-void
 .end method
 
@@ -1044,14 +956,12 @@
     .locals 2
 
     .prologue
-    .line 107
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 108
     return-void
 .end method
 
@@ -1060,17 +970,14 @@
     .param p1, "host"    # Lcom/android/systemui/statusbar/phone/QSTileHost;
 
     .prologue
-    .line 70
     iput-object p1, p0, Lcom/android/systemui/qs/QSFooter;->mHost:Lcom/android/systemui/statusbar/phone/QSTileHost;
 
-    .line 71
     invoke-virtual {p1}, Lcom/android/systemui/statusbar/phone/QSTileHost;->getSecurityController()Lcom/android/systemui/statusbar/policy/SecurityController;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mSecurityController:Lcom/android/systemui/statusbar/policy/SecurityController;
 
-    .line 72
     new-instance v0, Lcom/android/systemui/qs/QSFooter$H;
 
     invoke-virtual {p1}, Lcom/android/systemui/statusbar/phone/QSTileHost;->getLooper()Landroid/os/Looper;
@@ -1083,7 +990,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mHandler:Landroid/os/Handler;
 
-    .line 73
     return-void
 .end method
 
@@ -1092,21 +998,17 @@
     .param p1, "listening"    # Z
 
     .prologue
-    .line 76
     if-eqz p1, :cond_0
 
-    .line 77
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mSecurityController:Lcom/android/systemui/statusbar/policy/SecurityController;
 
     iget-object v1, p0, Lcom/android/systemui/qs/QSFooter;->mCallback:Lcom/android/systemui/qs/QSFooter$Callback;
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/SecurityController;->addCallback(Lcom/android/systemui/statusbar/policy/SecurityController$SecurityControllerCallback;)V
 
-    .line 81
     :goto_0
     return-void
 
-    .line 79
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mSecurityController:Lcom/android/systemui/statusbar/policy/SecurityController;
 

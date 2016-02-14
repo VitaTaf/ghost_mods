@@ -24,7 +24,6 @@
     .param p2, "x0"    # Landroid/os/Handler;
 
     .prologue
-    .line 949
     iput-object p1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$8;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -39,10 +38,8 @@
     .param p1, "selfChange"    # Z
 
     .prologue
-    .line 952
     invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 953
     iget-object v0, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$8;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$8;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
@@ -55,6 +52,5 @@
     # setter for: Lcom/android/keyguard/KeyguardUpdateMonitor;->mHFARunning:Z
     invoke-static {v0, v1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->access$1802(Lcom/android/keyguard/KeyguardUpdateMonitor;Z)Z
 
-    .line 955
     return-void
 .end method

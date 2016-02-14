@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 62
     iput-object p1, p0, Lcom/android/systemui/volume/ZenFooter$1;->this$0:Lcom/android/systemui/volume/ZenFooter;
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;-><init>()V
@@ -38,13 +37,11 @@
     .param p1, "config"    # Landroid/service/notification/ZenModeConfig;
 
     .prologue
-    .line 69
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter$1;->this$0:Lcom/android/systemui/volume/ZenFooter;
 
     # invokes: Lcom/android/systemui/volume/ZenFooter;->setConfig(Landroid/service/notification/ZenModeConfig;)V
     invoke-static {v0, p1}, Lcom/android/systemui/volume/ZenFooter;->access$100(Lcom/android/systemui/volume/ZenFooter;Landroid/service/notification/ZenModeConfig;)V
 
-    .line 70
     return-void
 .end method
 
@@ -53,12 +50,10 @@
     .param p1, "zen"    # I
 
     .prologue
-    .line 65
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter$1;->this$0:Lcom/android/systemui/volume/ZenFooter;
 
     # invokes: Lcom/android/systemui/volume/ZenFooter;->setZen(I)V
     invoke-static {v0, p1}, Lcom/android/systemui/volume/ZenFooter;->access$000(Lcom/android/systemui/volume/ZenFooter;I)V
 
-    .line 66
     return-void
 .end method

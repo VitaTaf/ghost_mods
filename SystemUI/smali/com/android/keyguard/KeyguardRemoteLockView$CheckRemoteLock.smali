@@ -26,15 +26,12 @@
     .param p2, "pin"    # Ljava/lang/String;
 
     .prologue
-    .line 94
     iput-object p1, p0, Lcom/android/keyguard/KeyguardRemoteLockView$CheckRemoteLock;->this$0:Lcom/android/keyguard/KeyguardRemoteLockView;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
-    .line 95
     iput-object p2, p0, Lcom/android/keyguard/KeyguardRemoteLockView$CheckRemoteLock;->mPin:Ljava/lang/String;
 
-    .line 96
     return-void
 .end method
 
@@ -47,7 +44,6 @@
     .locals 4
 
     .prologue
-    .line 103
     :try_start_0
     iget-object v2, p0, Lcom/android/keyguard/KeyguardRemoteLockView$CheckRemoteLock;->this$0:Lcom/android/keyguard/KeyguardRemoteLockView;
 
@@ -58,11 +54,9 @@
 
     move-result v1
 
-    .line 104
     .local v1, "result":Z
     if-eqz v1, :cond_0
 
-    .line 105
     iget-object v2, p0, Lcom/android/keyguard/KeyguardRemoteLockView$CheckRemoteLock;->this$0:Lcom/android/keyguard/KeyguardRemoteLockView;
 
     const/4 v3, 0x0
@@ -70,7 +64,6 @@
     # invokes: Lcom/android/keyguard/KeyguardRemoteLockView;->setRemoteLockEnabled(Z)V
     invoke-static {v2, v3}, Lcom/android/keyguard/KeyguardRemoteLockView;->access$100(Lcom/android/keyguard/KeyguardRemoteLockView;Z)V
 
-    .line 106
     iget-object v2, p0, Lcom/android/keyguard/KeyguardRemoteLockView$CheckRemoteLock;->this$0:Lcom/android/keyguard/KeyguardRemoteLockView;
 
     # getter for: Lcom/android/keyguard/KeyguardRemoteLockView;->mContext:Landroid/content/Context;
@@ -81,7 +74,6 @@
     # invokes: Lcom/android/keyguard/KeyguardRemoteLockView;->startUnblockService(Landroid/content/Context;)V
     invoke-static {v2}, Lcom/android/keyguard/KeyguardRemoteLockView;->access$300(Landroid/content/Context;)V
 
-    .line 109
     :cond_0
     iget-object v2, p0, Lcom/android/keyguard/KeyguardRemoteLockView$CheckRemoteLock;->this$0:Lcom/android/keyguard/KeyguardRemoteLockView;
 
@@ -93,16 +85,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 121
     .end local v1    # "result":Z
     :goto_0
     return-void
 
-    .line 114
     :catch_0
     move-exception v0
 
-    .line 115
     .local v0, "e":Ljava/lang/Exception;
     iget-object v2, p0, Lcom/android/keyguard/KeyguardRemoteLockView$CheckRemoteLock;->this$0:Lcom/android/keyguard/KeyguardRemoteLockView;
 

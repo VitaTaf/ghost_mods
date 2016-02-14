@@ -36,7 +36,6 @@
     .locals 1
 
     .prologue
-    .line 342
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
@@ -51,13 +50,10 @@
     .param p1, "resId"    # I
 
     .prologue
-    .line 346
     invoke-direct {p0}, Lcom/android/systemui/qs/QSTile$Icon;-><init>()V
 
-    .line 347
     iput p1, p0, Lcom/android/systemui/qs/QSTile$ResourceIcon;->mResId:I
 
-    .line 348
     return-void
 .end method
 
@@ -67,7 +63,6 @@
     .param p2, "x1"    # Lcom/android/systemui/qs/QSTile$1;
 
     .prologue
-    .line 341
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile$ResourceIcon;-><init>(I)V
 
     return-void
@@ -78,7 +73,6 @@
     .param p0, "resId"    # I
 
     .prologue
-    .line 351
     sget-object v1, Lcom/android/systemui/qs/QSTile$ResourceIcon;->ICONS:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -87,23 +81,19 @@
 
     check-cast v0, Lcom/android/systemui/qs/QSTile$Icon;
 
-    .line 352
     .local v0, "icon":Lcom/android/systemui/qs/QSTile$Icon;
     if-nez v0, :cond_0
 
-    .line 353
     new-instance v0, Lcom/android/systemui/qs/QSTile$ResourceIcon;
 
     .end local v0    # "icon":Lcom/android/systemui/qs/QSTile$Icon;
     invoke-direct {v0, p0}, Lcom/android/systemui/qs/QSTile$ResourceIcon;-><init>(I)V
 
-    .line 354
     .restart local v0    # "icon":Lcom/android/systemui/qs/QSTile$Icon;
     sget-object v1, Lcom/android/systemui/qs/QSTile$ResourceIcon;->ICONS:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p0, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 356
     :cond_0
     return-object v0
 .end method
@@ -115,7 +105,6 @@
     .param p1, "o"    # Ljava/lang/Object;
 
     .prologue
-    .line 366
     instance-of v0, p1, Lcom/android/systemui/qs/QSTile$ResourceIcon;
 
     if-eqz v0, :cond_0
@@ -145,7 +134,6 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 361
     iget v0, p0, Lcom/android/systemui/qs/QSTile$ResourceIcon;->mResId:I
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -159,7 +147,6 @@
     .locals 4
 
     .prologue
-    .line 371
     const-string v0, "ResourceIcon[resId=0x%08x]"
 
     const/4 v1, 0x1

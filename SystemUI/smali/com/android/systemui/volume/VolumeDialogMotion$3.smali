@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 130
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialogMotion$3;->this$0:Lcom/android/systemui/volume/VolumeDialogMotion;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 133
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialogMotion$3;->this$0:Lcom/android/systemui/volume/VolumeDialogMotion;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialogMotion;->mChevronPositionAnimator:Landroid/animation/ValueAnimator;
@@ -51,11 +49,9 @@
 
     if-nez v2, :cond_0
 
-    .line 138
     :goto_0
     return-void
 
-    .line 135
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialogMotion$3;->this$0:Lcom/android/systemui/volume/VolumeDialogMotion;
 
@@ -74,7 +70,6 @@
 
     move-result v1
 
-    .line 136
     .local v1, "v":F
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialogMotion$3;->this$0:Lcom/android/systemui/volume/VolumeDialogMotion;
 
@@ -93,7 +88,6 @@
 
     move-result v0
 
-    .line 137
     .local v0, "posY":I
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialogMotion$3;->this$0:Lcom/android/systemui/volume/VolumeDialogMotion;
 

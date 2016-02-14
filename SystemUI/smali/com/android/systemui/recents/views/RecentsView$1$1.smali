@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 510
     iput-object p1, p0, Lcom/android/systemui/recents/views/RecentsView$1$1;->this$1:Lcom/android/systemui/recents/views/RecentsView$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 1
 
     .prologue
-    .line 513
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$1$1;->this$1:Lcom/android/systemui/recents/views/RecentsView$1;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/RecentsView$1;->this$0:Lcom/android/systemui/recents/views/RecentsView;
@@ -49,6 +47,5 @@
 
     invoke-interface {v0}, Lcom/android/systemui/recents/views/RecentsView$RecentsViewCallbacks;->onScreenPinningRequest()V
 
-    .line 514
     return-void
 .end method

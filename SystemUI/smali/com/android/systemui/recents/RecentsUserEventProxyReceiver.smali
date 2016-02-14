@@ -8,7 +8,6 @@
     .locals 0
 
     .prologue
-    .line 26
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -24,12 +23,10 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 40
     invoke-static {p1}, Lcom/android/systemui/recents/Recents;->getInstanceAndStartIfNeeded(Landroid/content/Context;)Lcom/android/systemui/recents/Recents;
 
     move-result-object v0
 
-    .line 41
     .local v0, "recents":Lcom/android/systemui/recents/Recents;
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -47,11 +44,9 @@
     :goto_0
     packed-switch v3, :pswitch_data_0
 
-    .line 66
     :goto_1
     return-void
 
-    .line 41
     :sswitch_0
     const-string v6, "com.android.systemui.recents.action.SHOW_RECENTS_FOR_USER"
 
@@ -117,7 +112,6 @@
 
     goto :goto_0
 
-    .line 43
     :pswitch_0
     const-string v3, "triggeredFromAltTab"
 
@@ -125,13 +119,11 @@
 
     move-result v1
 
-    .line 45
     .local v1, "triggeredFromAltTab":Z
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/Recents;->showRecentsInternal(Z)V
 
     goto :goto_1
 
-    .line 49
     .end local v1    # "triggeredFromAltTab":Z
     :pswitch_1
     const-string v3, "triggeredFromAltTab"
@@ -140,7 +132,6 @@
 
     move-result v1
 
-    .line 51
     .restart local v1    # "triggeredFromAltTab":Z
     const-string v3, "triggeredFromHomeKey"
 
@@ -148,13 +139,11 @@
 
     move-result v2
 
-    .line 53
     .local v2, "triggeredFromHome":Z
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/recents/Recents;->hideRecentsInternal(ZZ)V
 
     goto :goto_1
 
-    .line 57
     .end local v1    # "triggeredFromAltTab":Z
     .end local v2    # "triggeredFromHome":Z
     :pswitch_2
@@ -162,19 +151,16 @@
 
     goto :goto_1
 
-    .line 60
     :pswitch_3
     invoke-virtual {v0}, Lcom/android/systemui/recents/Recents;->preloadRecentsInternal()V
 
     goto :goto_1
 
-    .line 63
     :pswitch_4
     invoke-virtual {v0}, Lcom/android/systemui/recents/Recents;->configurationChanged()V
 
     goto :goto_1
 
-    .line 41
     nop
 
     :sswitch_data_0

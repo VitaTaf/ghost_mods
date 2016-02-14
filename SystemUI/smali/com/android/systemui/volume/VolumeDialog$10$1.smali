@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 919
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$10$1;->this$1:Lcom/android/systemui/volume/VolumeDialog$10;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 2
 
     .prologue
-    .line 922
     const/16 v0, 0x8
 
     const/4 v1, 0x0
@@ -49,7 +47,6 @@
 
     invoke-static {v0, v1}, Lcom/android/systemui/volume/Events;->writeEvent(I[Ljava/lang/Object;)V
 
-    .line 923
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$10$1;->this$1:Lcom/android/systemui/volume/VolumeDialog$10;
 
     iget-object v0, v0, Lcom/android/systemui/volume/VolumeDialog$10;->this$0:Lcom/android/systemui/volume/VolumeDialog;
@@ -61,7 +58,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 924
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialog$10$1;->this$1:Lcom/android/systemui/volume/VolumeDialog$10;
 
     iget-object v0, v0, Lcom/android/systemui/volume/VolumeDialog$10;->this$0:Lcom/android/systemui/volume/VolumeDialog;
@@ -73,7 +69,6 @@
 
     invoke-interface {v0}, Lcom/android/systemui/volume/VolumeDialog$Callback;->onSettingsClicked()V
 
-    .line 926
     :cond_0
     return-void
 .end method

@@ -36,7 +36,6 @@
     .locals 1
 
     .prologue
-    .line 2025
     new-instance v0, Lcom/android/keyguard/PagedView$SavedState$1;
 
     invoke-direct {v0}, Lcom/android/keyguard/PagedView$SavedState$1;-><init>()V
@@ -51,22 +50,18 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 2015
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
-    .line 2008
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/keyguard/PagedView$SavedState;->currentPage:I
 
-    .line 2016
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/keyguard/PagedView$SavedState;->currentPage:I
 
-    .line 2017
     return-void
 .end method
 
@@ -76,7 +71,6 @@
     .param p2, "x1"    # Lcom/android/keyguard/PagedView$1;
 
     .prologue
-    .line 2007
     invoke-direct {p0, p1}, Lcom/android/keyguard/PagedView$SavedState;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -90,14 +84,11 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 2021
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 2022
     iget v0, p0, Lcom/android/keyguard/PagedView$SavedState;->currentPage:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2023
     return-void
 .end method

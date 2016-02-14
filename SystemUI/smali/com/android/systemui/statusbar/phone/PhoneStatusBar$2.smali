@@ -24,7 +24,6 @@
     .param p2, "x0"    # Landroid/os/Handler;
 
     .prologue
-    .line 440
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$2;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -43,7 +42,6 @@
 
     const/4 v3, 0x0
 
-    .line 443
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$2;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mUseHeadsUp:Z
@@ -51,7 +49,6 @@
 
     move-result v0
 
-    .line 444
     .local v0, "wasUsing":Z
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$2;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -86,7 +83,6 @@
     # setter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mUseHeadsUp:Z
     invoke-static {v4, v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$302(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Z)Z
 
-    .line 448
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$2;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$2;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -118,7 +114,6 @@
     # setter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mHeadsUpTicker:Z
     invoke-static {v1, v2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$502(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Z)Z
 
-    .line 450
     const-string v2, "PhoneStatusBar"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -153,7 +148,6 @@
 
     invoke-static {v2, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 451
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$2;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mUseHeadsUp:Z
@@ -163,7 +157,6 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 452
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$2;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mUseHeadsUp:Z
@@ -173,20 +166,17 @@
 
     if-nez v1, :cond_4
 
-    .line 453
     const-string v1, "PhoneStatusBar"
 
     const-string v2, "dismissing any existing heads up notification on disable event"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 454
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$2;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # invokes: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->setHeadsUpVisibility(Z)V
     invoke-static {v1, v3}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$1000(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Z)V
 
-    .line 455
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$2;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mHeadsUpNotificationView:Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView;
@@ -196,13 +186,11 @@
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView;->release()V
 
-    .line 456
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$2;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # invokes: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->removeHeadsUpView()V
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$1200(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
 
-    .line 461
     :cond_0
     :goto_3
     return-void
@@ -210,22 +198,18 @@
     :cond_1
     move v1, v3
 
-    .line 444
     goto :goto_0
 
     :cond_2
     move v2, v3
 
-    .line 448
     goto :goto_1
 
-    .line 450
     :cond_3
     const-string v1, "disabled"
 
     goto :goto_2
 
-    .line 458
     :cond_4
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$2;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 

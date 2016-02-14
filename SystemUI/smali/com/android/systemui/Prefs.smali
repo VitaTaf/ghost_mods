@@ -9,7 +9,6 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 92
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
@@ -39,7 +38,6 @@
     .end annotation
 
     .prologue
-    .line 74
     invoke-static {p0}, Lcom/android/systemui/Prefs;->get(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -58,7 +56,6 @@
     .param p2, "defaultValue"    # Z
 
     .prologue
-    .line 50
     invoke-static {p0}, Lcom/android/systemui/Prefs;->get(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -77,7 +74,6 @@
     .param p2, "defaultValue"    # I
 
     .prologue
-    .line 58
     invoke-static {p0}, Lcom/android/systemui/Prefs;->get(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -96,7 +92,6 @@
     .param p2, "defaultValue"    # J
 
     .prologue
-    .line 66
     invoke-static {p0}, Lcom/android/systemui/Prefs;->get(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -115,7 +110,6 @@
     .param p2, "value"    # Z
 
     .prologue
-    .line 54
     invoke-static {p0}, Lcom/android/systemui/Prefs;->get(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -130,7 +124,6 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 55
     return-void
 .end method
 
@@ -141,7 +134,6 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 62
     invoke-static {p0}, Lcom/android/systemui/Prefs;->get(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -156,7 +148,6 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 63
     return-void
 .end method
 
@@ -167,7 +158,6 @@
     .param p2, "value"    # J
 
     .prologue
-    .line 70
     invoke-static {p0}, Lcom/android/systemui/Prefs;->get(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -182,7 +172,6 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 71
     return-void
 .end method
 
@@ -192,14 +181,12 @@
     .param p1, "listener"    # Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
 
     .prologue
-    .line 83
     invoke-static {p0}, Lcom/android/systemui/Prefs;->get(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
     invoke-interface {v0, p1}, Landroid/content/SharedPreferences;->registerOnSharedPreferenceChangeListener(Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;)V
 
-    .line 84
     return-void
 .end method
 
@@ -209,7 +196,6 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 78
     invoke-static {p0}, Lcom/android/systemui/Prefs;->get(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -224,7 +210,6 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 79
     return-void
 .end method
 
@@ -234,13 +219,11 @@
     .param p1, "listener"    # Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
 
     .prologue
-    .line 88
     invoke-static {p0}, Lcom/android/systemui/Prefs;->get(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
     invoke-interface {v0, p1}, Landroid/content/SharedPreferences;->unregisterOnSharedPreferenceChangeListener(Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;)V
 
-    .line 89
     return-void
 .end method

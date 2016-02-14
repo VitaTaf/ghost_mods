@@ -28,12 +28,10 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 49
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/keyguard/KeyguardAbsKeyInputView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 50
     return-void
 .end method
 
@@ -43,15 +41,12 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 53
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 42
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mCountDownFinish:Z
 
-    .line 54
     return-void
 .end method
 
@@ -61,19 +56,16 @@
     .locals 2
 
     .prologue
-    .line 195
     iget-boolean v0, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mEnableHaptics:Z
 
     if-eqz v0, :cond_0
 
-    .line 196
     const/4 v0, 0x1
 
     const/4 v1, 0x3
 
     invoke-virtual {p0, v0, v1}, Lcom/android/keyguard/KeyguardAbsKeyInputView;->performHapticFeedback(II)Z
 
-    .line 200
     :cond_0
     return-void
 .end method
@@ -88,7 +80,6 @@
     .locals 1
 
     .prologue
-    .line 102
     sget v0, Lcom/android/keyguard/R$string;->kg_wrong_password:I
 
     return v0
@@ -99,17 +90,14 @@
     .param p1, "elapsedRealtimeDeadline"    # J
 
     .prologue
-    .line 145
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardAbsKeyInputView;->setPasswordEntryEnabled(Z)V
 
-    .line 146
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v6
 
-    .line 147
     .local v6, "elapsedRealtime":J
     new-instance v0, Lcom/android/keyguard/KeyguardAbsKeyInputView$1;
 
@@ -123,7 +111,6 @@
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardAbsKeyInputView$1;->start()Landroid/os/CountDownTimer;
 
-    .line 165
     return-void
 .end method
 
@@ -132,7 +119,6 @@
     .param p1, "duration"    # I
 
     .prologue
-    .line 210
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mEcaView:Landroid/view/View;
@@ -141,7 +127,6 @@
 
     invoke-static {v0, v1, v2, p1}, Lcom/android/keyguard/KeyguardSecurityViewHelper;->hideBouncer(Lcom/android/keyguard/SecurityMessageDisplay;Landroid/view/View;Landroid/graphics/drawable/Drawable;I)V
 
-    .line 212
     return-void
 .end method
 
@@ -149,7 +134,6 @@
     .locals 1
 
     .prologue
-    .line 175
     const/4 v0, 0x0
 
     return v0
@@ -159,7 +143,6 @@
     .locals 3
 
     .prologue
-    .line 87
     new-instance v1, Lcom/android/internal/widget/LockPatternUtils;
 
     iget-object v2, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mContext:Landroid/content/Context;
@@ -168,14 +151,12 @@
 
     iput-object v1, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    .line 88
     new-instance v1, Lcom/android/keyguard/KeyguardMessageArea$Helper;
 
     invoke-direct {v1, p0}, Lcom/android/keyguard/KeyguardMessageArea$Helper;-><init>(Landroid/view/View;)V
 
     iput-object v1, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
 
-    .line 89
     sget v1, Lcom/android/keyguard/R$id;->keyguard_selector_fade_container:I
 
     invoke-virtual {p0, v1}, Lcom/android/keyguard/KeyguardAbsKeyInputView;->findViewById(I)Landroid/view/View;
@@ -184,25 +165,21 @@
 
     iput-object v1, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mEcaView:Landroid/view/View;
 
-    .line 90
     sget v1, Lcom/android/keyguard/R$id;->keyguard_bouncer_frame:I
 
     invoke-virtual {p0, v1}, Lcom/android/keyguard/KeyguardAbsKeyInputView;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 91
     .local v0, "bouncerFrameView":Landroid/view/View;
     if-eqz v0, :cond_0
 
-    .line 92
     invoke-virtual {v0}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mBouncerFrame:Landroid/graphics/drawable/Drawable;
 
-    .line 94
     :cond_0
     return-void
 .end method
@@ -213,12 +190,10 @@
     .param p2, "event"    # Landroid/view/KeyEvent;
 
     .prologue
-    .line 169
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
     invoke-interface {v0}, Lcom/android/keyguard/KeyguardSecurityCallback;->userActivity()V
 
-    .line 170
     const/4 v0, 0x0
 
     return v0
@@ -228,7 +203,6 @@
     .locals 0
 
     .prologue
-    .line 181
     return-void
 .end method
 
@@ -237,10 +211,8 @@
     .param p1, "reason"    # I
 
     .prologue
-    .line 185
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardAbsKeyInputView;->reset()V
 
-    .line 186
     return-void
 .end method
 
@@ -248,19 +220,16 @@
     .locals 3
 
     .prologue
-    .line 67
     const/4 v2, 0x0
 
     invoke-virtual {p0, v2}, Lcom/android/keyguard/KeyguardAbsKeyInputView;->resetPasswordText(Z)V
 
-    .line 69
     iget-object v2, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {v2}, Lcom/android/internal/widget/LockPatternUtils;->getLockoutAttemptDeadline()J
 
     move-result-wide v0
 
-    .line 70
     .local v0, "deadline":J
     invoke-virtual {p0, v0, v1}, Lcom/android/keyguard/KeyguardAbsKeyInputView;->shouldLockout(J)Z
 
@@ -268,14 +237,11 @@
 
     if-eqz v2, :cond_0
 
-    .line 71
     invoke-virtual {p0, v0, v1}, Lcom/android/keyguard/KeyguardAbsKeyInputView;->handleAttemptLockout(J)V
 
-    .line 75
     :goto_0
     return-void
 
-    .line 73
     :cond_0
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardAbsKeyInputView;->resetState()V
 
@@ -293,10 +259,8 @@
     .param p1, "callback"    # Lcom/android/keyguard/KeyguardSecurityCallback;
 
     .prologue
-    .line 57
     iput-object p1, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
-    .line 58
     return-void
 .end method
 
@@ -305,10 +269,8 @@
     .param p1, "utils"    # Lcom/android/internal/widget/LockPatternUtils;
 
     .prologue
-    .line 61
     iput-object p1, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    .line 62
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternUtils;->isTactileFeedbackEnabled()Z
@@ -317,7 +279,6 @@
 
     iput-boolean v0, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mEnableHaptics:Z
 
-    .line 63
     return-void
 .end method
 
@@ -329,7 +290,6 @@
     .param p1, "deadline"    # J
 
     .prologue
-    .line 79
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
@@ -352,7 +312,6 @@
     .param p1, "duration"    # I
 
     .prologue
-    .line 204
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mEcaView:Landroid/view/View;
@@ -361,7 +320,6 @@
 
     invoke-static {v0, v1, v2, p1}, Lcom/android/keyguard/KeyguardSecurityViewHelper;->showBouncer(Lcom/android/keyguard/SecurityMessageDisplay;Landroid/view/View;Landroid/graphics/drawable/Drawable;I)V
 
-    .line 206
     return-void
 .end method
 
@@ -370,7 +328,6 @@
     .param p1, "finishRunnable"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 216
     const/4 v0, 0x0
 
     return v0
@@ -386,12 +343,10 @@
 
     const/4 v12, 0x1
 
-    .line 106
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardAbsKeyInputView;->getPasswordText()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 107
     .local v1, "entry":Ljava/lang/String;
     iget-object v7, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
@@ -401,24 +356,19 @@
 
     if-eqz v7, :cond_0
 
-    .line 108
     iget-object v7, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
     invoke-interface {v7, v12}, Lcom/android/keyguard/KeyguardSecurityCallback;->reportUnlockAttempt(Z)V
 
-    .line 109
     iget-object v7, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
     invoke-interface {v7, v12}, Lcom/android/keyguard/KeyguardSecurityCallback;->dismiss(Z)V
 
-    .line 136
     :goto_0
     invoke-virtual {p0, v12}, Lcom/android/keyguard/KeyguardAbsKeyInputView;->resetPasswordText(Z)V
 
-    .line 137
     return-void
 
-    .line 111
     :cond_0
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
@@ -426,12 +376,10 @@
 
     if-le v7, v10, :cond_1
 
-    .line 114
     iget-object v7, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
     invoke-interface {v7, v11}, Lcom/android/keyguard/KeyguardSecurityCallback;->reportUnlockAttempt(Z)V
 
-    .line 115
     iget-object v7, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mContext:Landroid/content/Context;
 
     invoke-static {v7}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
@@ -442,24 +390,20 @@
 
     move-result v0
 
-    .line 116
     .local v0, "attempts":I
     rem-int/lit8 v7, v0, 0x5
 
     if-nez v7, :cond_1
 
-    .line 117
     iget-object v7, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {v7}, Lcom/android/internal/widget/LockPatternUtils;->setLockoutAttemptDeadline()J
 
     move-result-wide v2
 
-    .line 118
     .local v2, "deadline":J
     invoke-virtual {p0, v2, v3}, Lcom/android/keyguard/KeyguardAbsKeyInputView;->handleAttemptLockout(J)V
 
-    .line 122
     .end local v0    # "attempts":I
     .end local v2    # "deadline":J
     :cond_1
@@ -477,7 +421,6 @@
 
     move-result-object v6
 
-    .line 123
     .local v6, "message":Ljava/lang/String;
     iget-object v7, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
@@ -497,7 +440,6 @@
 
     move-result v5
 
-    .line 126
     .local v5, "maxAttempts":I
     if-lez v5, :cond_2
 
@@ -507,7 +449,6 @@
 
     if-le v7, v10, :cond_2
 
-    .line 129
     iget-object v7, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mContext:Landroid/content/Context;
 
     invoke-static {v7}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
@@ -518,7 +459,6 @@
 
     move-result v4
 
-    .line 130
     .local v4, "failedAttempts":I
     iget-object v7, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mContext:Landroid/content/Context;
 
@@ -550,7 +490,6 @@
 
     move-result-object v6
 
-    .line 133
     .end local v4    # "failedAttempts":I
     :cond_2
     iget-object v7, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;

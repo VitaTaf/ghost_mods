@@ -27,7 +27,6 @@
     .locals 0
 
     .prologue
-    .line 195
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper$4;->this$0:Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper$4;->val$dark:Z
@@ -46,19 +45,16 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 198
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper$4;->val$dark:Z
 
     if-nez v0, :cond_0
 
-    .line 199
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper$4;->val$target:Landroid/widget/ImageView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 201
     :cond_0
     return-void
 .end method

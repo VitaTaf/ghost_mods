@@ -47,19 +47,16 @@
     .locals 2
 
     .prologue
-    .line 4721
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4728
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->mCallbacks:Ljava/util/ArrayList;
 
-    .line 4729
     new-instance v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost$H;
 
     const/4 v1, 0x0
@@ -68,7 +65,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->mHandler:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost$H;
 
-    .line 4820
     return-void
 .end method
 
@@ -78,7 +74,6 @@
     .param p2, "x1"    # Lcom/android/systemui/statusbar/phone/PhoneStatusBar$1;
 
     .prologue
-    .line 4721
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;-><init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
 
     return-void
@@ -90,7 +85,6 @@
     .param p1, "x1"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 4721
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->handleStartDozing(Ljava/lang/Runnable;)V
 
     return-void
@@ -103,7 +97,6 @@
     .param p2, "x2"    # I
 
     .prologue
-    .line 4721
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->handlePulseWhileDozing(Lcom/android/systemui/doze/DozeHost$PulseCallback;I)V
 
     return-void
@@ -114,7 +107,6 @@
     .param p0, "x0"    # Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;
 
     .prologue
-    .line 4721
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->handleStopDozing()V
 
     return-void
@@ -126,7 +118,6 @@
     .param p2, "reason"    # I
 
     .prologue
-    .line 4809
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mDozeScrimController:Lcom/android/systemui/statusbar/phone/DozeScrimController;
@@ -136,7 +127,6 @@
 
     invoke-virtual {v0, p1, p2}, Lcom/android/systemui/statusbar/phone/DozeScrimController;->pulse(Lcom/android/systemui/doze/DozeHost$PulseCallback;I)V
 
-    .line 4810
     return-void
 .end method
 
@@ -145,7 +135,6 @@
     .param p1, "ready"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 4800
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mDozing:Z
@@ -155,7 +144,6 @@
 
     if-nez v0, :cond_0
 
-    .line 4801
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     const/4 v1, 0x1
@@ -163,7 +151,6 @@
     # setter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mDozing:Z
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$8602(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Z)Z
 
-    .line 4802
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mContext:Landroid/content/Context;
@@ -177,17 +164,14 @@
 
     invoke-static {v0, v1}, Lcom/android/systemui/doze/DozeLog;->traceDozing(Landroid/content/Context;Z)V
 
-    .line 4803
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # invokes: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->updateDozingState()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$8700(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
 
-    .line 4805
     :cond_0
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 4806
     return-void
 .end method
 
@@ -195,7 +179,6 @@
     .locals 2
 
     .prologue
-    .line 4813
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mDozing:Z
@@ -205,7 +188,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 4814
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     const/4 v1, 0x0
@@ -213,7 +195,6 @@
     # setter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mDozing:Z
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$8602(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Z)Z
 
-    .line 4815
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mContext:Landroid/content/Context;
@@ -227,13 +208,11 @@
 
     invoke-static {v0, v1}, Lcom/android/systemui/doze/DozeLog;->traceDozing(Landroid/content/Context;Z)V
 
-    .line 4816
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # invokes: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->updateDozingState()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$8700(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
 
-    .line 4818
     :cond_0
     return-void
 .end method
@@ -245,12 +224,10 @@
     .param p1, "callback"    # Lcom/android/systemui/doze/DozeHost$Callback;
 
     .prologue
-    .line 4766
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4767
     return-void
 .end method
 
@@ -258,7 +235,6 @@
     .locals 3
 
     .prologue
-    .line 4746
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -279,13 +255,11 @@
 
     check-cast v0, Lcom/android/systemui/doze/DozeHost$Callback;
 
-    .line 4747
     .local v0, "callback":Lcom/android/systemui/doze/DozeHost$Callback;
     invoke-interface {v0}, Lcom/android/systemui/doze/DozeHost$Callback;->onBuzzBeepBlinked()V
 
     goto :goto_0
 
-    .line 4749
     .end local v0    # "callback":Lcom/android/systemui/doze/DozeHost$Callback;
     :cond_0
     return-void
@@ -295,7 +269,6 @@
     .locals 3
 
     .prologue
-    .line 4759
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -316,13 +289,11 @@
 
     check-cast v0, Lcom/android/systemui/doze/DozeHost$Callback;
 
-    .line 4760
     .local v0, "callback":Lcom/android/systemui/doze/DozeHost$Callback;
     invoke-interface {v0}, Lcom/android/systemui/doze/DozeHost$Callback;->onNewNotifications()V
 
     goto :goto_0
 
-    .line 4762
     .end local v0    # "callback":Lcom/android/systemui/doze/DozeHost$Callback;
     :cond_0
     return-void
@@ -333,10 +304,8 @@
     .param p1, "on"    # Z
 
     .prologue
-    .line 4752
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->mNotificationLightOn:Z
 
-    .line 4753
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -357,13 +326,11 @@
 
     check-cast v0, Lcom/android/systemui/doze/DozeHost$Callback;
 
-    .line 4754
     .local v0, "callback":Lcom/android/systemui/doze/DozeHost$Callback;
     invoke-interface {v0, p1}, Lcom/android/systemui/doze/DozeHost$Callback;->onNotificationLight(Z)V
 
     goto :goto_0
 
-    .line 4756
     .end local v0    # "callback":Lcom/android/systemui/doze/DozeHost$Callback;
     :cond_0
     return-void
@@ -374,7 +341,6 @@
     .param p1, "active"    # Z
 
     .prologue
-    .line 4740
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -395,13 +361,11 @@
 
     check-cast v0, Lcom/android/systemui/doze/DozeHost$Callback;
 
-    .line 4741
     .local v0, "callback":Lcom/android/systemui/doze/DozeHost$Callback;
     invoke-interface {v0, p1}, Lcom/android/systemui/doze/DozeHost$Callback;->onPowerSaveChanged(Z)V
 
     goto :goto_0
 
-    .line 4743
     .end local v0    # "callback":Lcom/android/systemui/doze/DozeHost$Callback;
     :cond_0
     return-void
@@ -411,7 +375,6 @@
     .locals 1
 
     .prologue
-    .line 4796
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->mNotificationLightOn:Z
 
     return v0
@@ -421,7 +384,6 @@
     .locals 1
 
     .prologue
-    .line 4791
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
@@ -455,7 +417,6 @@
     .param p2, "reason"    # I
 
     .prologue
-    .line 4781
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->mHandler:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost$H;
 
     const/4 v1, 0x2
@@ -468,7 +429,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 4782
     return-void
 .end method
 
@@ -477,12 +437,10 @@
     .param p1, "callback"    # Lcom/android/systemui/doze/DozeHost$Callback;
 
     .prologue
-    .line 4771
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 4772
     return-void
 .end method
 
@@ -491,7 +449,6 @@
     .param p1, "ready"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 4776
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->mHandler:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost$H;
 
     const/4 v1, 0x1
@@ -502,7 +459,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 4777
     return-void
 .end method
 
@@ -510,7 +466,6 @@
     .locals 2
 
     .prologue
-    .line 4786
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;->mHandler:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost$H;
 
     const/4 v1, 0x3
@@ -521,7 +476,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 4787
     return-void
 .end method
 
@@ -529,7 +483,6 @@
     .locals 2
 
     .prologue
-    .line 4736
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

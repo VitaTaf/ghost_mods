@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 144
     iput-object p1, p0, Lcom/android/systemui/ExpandHelper$ViewScaler;->this$0:Lcom/android/systemui/ExpandHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +38,6 @@
     .locals 1
 
     .prologue
-    .line 154
     iget-object v0, p0, Lcom/android/systemui/ExpandHelper$ViewScaler;->mView:Lcom/android/systemui/statusbar/ExpandableView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/ExpandableView;->getActualHeight()I
@@ -56,7 +54,6 @@
     .param p1, "maximum"    # I
 
     .prologue
-    .line 157
     iget-object v0, p0, Lcom/android/systemui/ExpandHelper$ViewScaler;->mView:Lcom/android/systemui/statusbar/ExpandableView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/ExpandableView;->getMaxHeight()I
@@ -75,20 +72,17 @@
     .param p1, "h"    # F
 
     .prologue
-    .line 150
     iget-object v0, p0, Lcom/android/systemui/ExpandHelper$ViewScaler;->mView:Lcom/android/systemui/statusbar/ExpandableView;
 
     float-to-int v1, p1
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/ExpandableView;->setActualHeight(I)V
 
-    .line 151
     iget-object v0, p0, Lcom/android/systemui/ExpandHelper$ViewScaler;->this$0:Lcom/android/systemui/ExpandHelper;
 
     # setter for: Lcom/android/systemui/ExpandHelper;->mCurrentHeight:F
     invoke-static {v0, p1}, Lcom/android/systemui/ExpandHelper;->access$302(Lcom/android/systemui/ExpandHelper;F)F
 
-    .line 152
     return-void
 .end method
 
@@ -97,9 +91,7 @@
     .param p1, "v"    # Lcom/android/systemui/statusbar/ExpandableView;
 
     .prologue
-    .line 146
     iput-object p1, p0, Lcom/android/systemui/ExpandHelper$ViewScaler;->mView:Lcom/android/systemui/statusbar/ExpandableView;
 
-    .line 147
     return-void
 .end method

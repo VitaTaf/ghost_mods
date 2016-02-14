@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 719
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4$3;->this$1:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4$3;->val$state:Z
@@ -44,7 +43,6 @@
     .locals 2
 
     .prologue
-    .line 722
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4$3;->this$1:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;
 
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4$3;->val$state:Z
@@ -52,6 +50,5 @@
     # invokes: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->handleScanStateChanged(Z)V
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->access$800(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;Z)V
 
-    .line 723
     return-void
 .end method

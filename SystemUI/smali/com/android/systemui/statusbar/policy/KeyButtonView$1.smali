@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 63
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/KeyButtonView$1;->this$0:Lcom/android/systemui/statusbar/policy/KeyButtonView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 3
 
     .prologue
-    .line 65
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyButtonView$1;->this$0:Lcom/android/systemui/statusbar/policy/KeyButtonView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/KeyButtonView;->isPressed()Z
@@ -49,7 +47,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 67
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyButtonView$1;->this$0:Lcom/android/systemui/statusbar/policy/KeyButtonView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/KeyButtonView;->isLongClickable()Z
@@ -58,17 +55,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 69
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyButtonView$1;->this$0:Lcom/android/systemui/statusbar/policy/KeyButtonView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/KeyButtonView;->performLongClick()Z
 
-    .line 75
     :cond_0
     :goto_0
     return-void
 
-    .line 71
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyButtonView$1;->this$0:Lcom/android/systemui/statusbar/policy/KeyButtonView;
 
@@ -78,7 +72,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/statusbar/policy/KeyButtonView;->sendEvent(II)V
 
-    .line 72
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyButtonView$1;->this$0:Lcom/android/systemui/statusbar/policy/KeyButtonView;
 
     const/4 v1, 0x2

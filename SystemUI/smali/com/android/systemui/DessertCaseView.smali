@@ -93,7 +93,6 @@
     .prologue
     const/16 v2, 0x14
 
-    .line 43
     const-class v0, Lcom/android/systemui/DessertCaseView;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -102,7 +101,6 @@
 
     sput-object v0, Lcom/android/systemui/DessertCaseView;->TAG:Ljava/lang/String;
 
-    .line 54
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -111,7 +109,6 @@
 
     sput-object v0, Lcom/android/systemui/DessertCaseView;->PASTRIES:[I
 
-    .line 59
     const/16 v0, 0x8
 
     new-array v0, v0, [I
@@ -120,7 +117,6 @@
 
     sput-object v0, Lcom/android/systemui/DessertCaseView;->RARE_PASTRIES:[I
 
-    .line 70
     const/4 v0, 0x4
 
     new-array v0, v0, [I
@@ -129,7 +125,6 @@
 
     sput-object v0, Lcom/android/systemui/DessertCaseView;->XRARE_PASTRIES:[I
 
-    .line 82
     const/4 v0, 0x3
 
     new-array v0, v0, [I
@@ -138,7 +133,6 @@
 
     sput-object v0, Lcom/android/systemui/DessertCaseView;->XXRARE_PASTRIES:[I
 
-    .line 88
     sget-object v0, Lcom/android/systemui/DessertCaseView;->PASTRIES:[I
 
     array-length v0, v0
@@ -163,21 +157,18 @@
 
     sput v0, Lcom/android/systemui/DessertCaseView;->NUM_PASTRIES:I
 
-    .line 93
     new-array v0, v2, [F
 
     fill-array-data v0, :array_4
 
     sput-object v0, Lcom/android/systemui/DessertCaseView;->MASK:[F
 
-    .line 100
     new-array v0, v2, [F
 
     fill-array-data v0, :array_5
 
     sput-object v0, Lcom/android/systemui/DessertCaseView;->ALPHA_MASK:[F
 
-    .line 107
     new-array v0, v2, [F
 
     fill-array-data v0, :array_6
@@ -186,14 +177,12 @@
 
     return-void
 
-    .line 54
     :array_0
     .array-data 4
         0x7f020016
         0x7f020008
     .end array-data
 
-    .line 59
     :array_1
     .array-data 4
         0x7f020009
@@ -206,7 +195,6 @@
         0x7f020014
     .end array-data
 
-    .line 70
     :array_2
     .array-data 4
         0x7f020017
@@ -215,7 +203,6 @@
         0x7f020015
     .end array-data
 
-    .line 82
     :array_3
     .array-data 4
         0x7f020018
@@ -223,7 +210,6 @@
         0x7f020013
     .end array-data
 
-    .line 93
     :array_4
     .array-data 4
         0x0
@@ -248,7 +234,6 @@
         0x0
     .end array-data
 
-    .line 100
     :array_5
     .array-data 4
         0x0
@@ -273,7 +258,6 @@
         0x0
     .end array-data
 
-    .line 107
     :array_6
     .array-data 4
         0x0
@@ -304,12 +288,10 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 154
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/systemui/DessertCaseView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 155
     return-void
 .end method
 
@@ -319,12 +301,10 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 158
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/systemui/DessertCaseView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 159
     return-void
 .end method
 
@@ -335,10 +315,8 @@
     .param p3, "defStyle"    # I
 
     .prologue
-    .line 162
     invoke-direct/range {p0 .. p3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 91
     new-instance v13, Landroid/util/SparseArray;
 
     sget v14, Lcom/android/systemui/DessertCaseView;->NUM_PASTRIES:I
@@ -349,7 +327,6 @@
 
     iput-object v13, v0, Lcom/android/systemui/DessertCaseView;->mDrawables:Landroid/util/SparseArray;
 
-    .line 127
     new-instance v13, Ljava/util/HashSet;
 
     invoke-direct {v13}, Ljava/util/HashSet;-><init>()V
@@ -358,7 +335,6 @@
 
     iput-object v13, v0, Lcom/android/systemui/DessertCaseView;->mFreeList:Ljava/util/Set;
 
-    .line 129
     new-instance v13, Landroid/os/Handler;
 
     invoke-direct {v13}, Landroid/os/Handler;-><init>()V
@@ -367,7 +343,6 @@
 
     iput-object v13, v0, Lcom/android/systemui/DessertCaseView;->mHandler:Landroid/os/Handler;
 
-    .line 131
     new-instance v13, Lcom/android/systemui/DessertCaseView$1;
 
     move-object/from16 v0, p0
@@ -378,7 +353,6 @@
 
     iput-object v13, v0, Lcom/android/systemui/DessertCaseView;->mJuggle:Ljava/lang/Runnable;
 
-    .line 223
     const/4 v13, 0x3
 
     new-array v13, v13, [F
@@ -389,7 +363,6 @@
 
     iput-object v13, v0, Lcom/android/systemui/DessertCaseView;->hsv:[F
 
-    .line 347
     new-instance v13, Ljava/util/HashSet;
 
     invoke-direct {v13}, Ljava/util/HashSet;-><init>()V
@@ -398,12 +371,10 @@
 
     iput-object v13, v0, Lcom/android/systemui/DessertCaseView;->tmpSet:Ljava/util/HashSet;
 
-    .line 164
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/DessertCaseView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v11
 
-    .line 166
     .local v11, "res":Landroid/content/res/Resources;
     const/4 v13, 0x0
 
@@ -411,7 +382,6 @@
 
     iput-boolean v13, v0, Lcom/android/systemui/DessertCaseView;->mStarted:Z
 
-    .line 168
     const v13, 0x7f0d0056
 
     invoke-virtual {v11, v13}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -422,12 +392,10 @@
 
     iput v13, v0, Lcom/android/systemui/DessertCaseView;->mCellSize:I
 
-    .line 169
     new-instance v10, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v10}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 170
     .local v10, "opts":Landroid/graphics/BitmapFactory$Options;
     move-object/from16 v0, p0
 
@@ -437,21 +405,17 @@
 
     if-ge v13, v14, :cond_0
 
-    .line 171
     const/4 v13, 0x2
 
     iput v13, v10, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    .line 173
     :cond_0
     const/4 v13, 0x1
 
     iput-boolean v13, v10, Landroid/graphics/BitmapFactory$Options;->inMutable:Z
 
-    .line 174
     const/4 v9, 0x0
 
-    .line 175
     .local v9, "loaded":Landroid/graphics/Bitmap;
     const/4 v13, 0x4
 
@@ -499,7 +463,6 @@
 
     aget-object v8, v1, v5
 
-    .line 176
     .local v8, "list":[I
     move-object v2, v8
 
@@ -516,16 +479,13 @@
 
     aget v12, v2, v4
 
-    .line 177
     .local v12, "resid":I
     iput-object v9, v10, Landroid/graphics/BitmapFactory$Options;->inBitmap:Landroid/graphics/Bitmap;
 
-    .line 178
     invoke-static {v11, v12, v10}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;ILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object v9
 
-    .line 179
     new-instance v3, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-static {v9}, Lcom/android/systemui/DessertCaseView;->convertToAlphaMask(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
@@ -534,7 +494,6 @@
 
     invoke-direct {v3, v11, v13}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
 
-    .line 180
     .local v3, "d":Landroid/graphics/drawable/BitmapDrawable;
     new-instance v13, Landroid/graphics/ColorMatrixColorFilter;
 
@@ -544,7 +503,6 @@
 
     invoke-virtual {v3, v13}, Landroid/graphics/drawable/BitmapDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 181
     const/4 v13, 0x0
 
     const/4 v14, 0x0
@@ -563,19 +521,16 @@
 
     invoke-virtual {v3, v13, v14, v15, v0}, Landroid/graphics/drawable/BitmapDrawable;->setBounds(IIII)V
 
-    .line 182
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/systemui/DessertCaseView;->mDrawables:Landroid/util/SparseArray;
 
     invoke-virtual {v13, v12, v3}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
 
-    .line 176
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_1
 
-    .line 175
     .end local v3    # "d":Landroid/graphics/drawable/BitmapDrawable;
     .end local v12    # "resid":I
     :cond_1
@@ -587,17 +542,14 @@
     .restart local v5    # "i$":I
     goto :goto_0
 
-    .line 185
     .end local v2    # "arr$":[I
     .end local v7    # "len$":I
     .end local v8    # "list":[I
     :cond_2
     const/4 v9, 0x0
 
-    .line 187
     return-void
 
-    .line 223
     nop
 
     :array_0
@@ -613,7 +565,6 @@
     .param p0, "x0"    # Lcom/android/systemui/DessertCaseView;
 
     .prologue
-    .line 42
     iget-boolean v0, p0, Lcom/android/systemui/DessertCaseView;->mStarted:Z
 
     return v0
@@ -624,7 +575,6 @@
     .param p0, "x0"    # Lcom/android/systemui/DessertCaseView;
 
     .prologue
-    .line 42
     iget-object v0, p0, Lcom/android/systemui/DessertCaseView;->mJuggle:Ljava/lang/Runnable;
 
     return-object v0
@@ -635,7 +585,6 @@
     .param p0, "x0"    # Lcom/android/systemui/DessertCaseView;
 
     .prologue
-    .line 42
     iget-object v0, p0, Lcom/android/systemui/DessertCaseView;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -648,7 +597,6 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 190
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v3
@@ -663,19 +611,16 @@
 
     move-result-object v0
 
-    .line 191
     .local v0, "a":Landroid/graphics/Bitmap;
     new-instance v1, Landroid/graphics/Canvas;
 
     invoke-direct {v1, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 192
     .local v1, "c":Landroid/graphics/Canvas;
     new-instance v2, Landroid/graphics/Paint;
 
     invoke-direct {v2}, Landroid/graphics/Paint;-><init>()V
 
-    .line 193
     .local v2, "pt":Landroid/graphics/Paint;
     new-instance v3, Landroid/graphics/ColorMatrixColorFilter;
 
@@ -685,10 +630,8 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
-    .line 194
     invoke-virtual {v1, p0, v6, v6, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 195
     return-object v0
 .end method
 
@@ -696,7 +639,6 @@
     .locals 2
 
     .prologue
-    .line 469
     invoke-static {}, Ljava/lang/Math;->random()D
 
     move-result-wide v0
@@ -712,7 +654,6 @@
     .param p1, "b"    # F
 
     .prologue
-    .line 473
     invoke-static {}, Lcom/android/systemui/DessertCaseView;->frand()F
 
     move-result v0
@@ -731,7 +672,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 454
     const v7, 0x2000002
 
     invoke-virtual {p1, v7}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
@@ -744,7 +684,6 @@
 
     move-result v6
 
-    .line 455
     .local v6, "scale":I
     const v7, 0x2000001
 
@@ -754,7 +693,6 @@
 
     check-cast v4, Landroid/graphics/Point;
 
-    .line 456
     .local v4, "pt":Landroid/graphics/Point;
     if-eqz v4, :cond_0
 
@@ -765,21 +703,17 @@
 
     new-array v5, v7, [Landroid/graphics/Point;
 
-    .line 465
     :cond_1
     return-object v5
 
-    .line 458
     :cond_2
     mul-int v7, v6, v6
 
     new-array v5, v7, [Landroid/graphics/Point;
 
-    .line 459
     .local v5, "result":[Landroid/graphics/Point;
     const/4 v2, 0x0
 
-    .line 460
     .local v2, "p":I
     const/4 v0, 0x0
 
@@ -787,7 +721,6 @@
     :goto_0
     if-ge v0, v6, :cond_1
 
-    .line 461
     const/4 v1, 0x0
 
     .local v1, "j":I
@@ -798,7 +731,6 @@
     :goto_1
     if-ge v1, v6, :cond_3
 
-    .line 462
     add-int/lit8 v2, v3, 0x1
 
     .end local v3    # "p":I
@@ -817,7 +749,6 @@
 
     aput-object v7, v5, v3
 
-    .line 461
     add-int/lit8 v1, v1, 0x1
 
     move v3, v2
@@ -826,7 +757,6 @@
     .restart local v3    # "p":I
     goto :goto_1
 
-    .line 460
     :cond_3
     add-int/lit8 v0, v0, 0x1
 
@@ -843,7 +773,6 @@
     .param p1, "b"    # I
 
     .prologue
-    .line 477
     int-to-float v0, p0
 
     int-to-float v1, p1
@@ -862,7 +791,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 334
     new-instance v0, Lcom/android/systemui/DessertCaseView$3;
 
     invoke-direct {v0, p0, p1}, Lcom/android/systemui/DessertCaseView$3;-><init>(Lcom/android/systemui/DessertCaseView;Landroid/view/View;)V
@@ -876,12 +804,10 @@
     .locals 1
 
     .prologue
-    .line 272
     const/16 v0, 0x1f4
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/DessertCaseView;->fillFreeList(I)V
 
-    .line 273
     return-void
 .end method
 
@@ -890,7 +816,6 @@
     .param p1, "animationLen"    # I
 
     .prologue
-    .line 276
     monitor-enter p0
 
     :try_start_0
@@ -898,7 +823,6 @@
 
     move-result-object v1
 
-    .line 277
     .local v1, "ctx":Landroid/content/Context;
     new-instance v5, Landroid/widget/FrameLayout$LayoutParams;
 
@@ -908,7 +832,6 @@
 
     invoke-direct {v5, v10, v11}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
-    .line 279
     .local v5, "lp":Landroid/widget/FrameLayout$LayoutParams;
     :cond_0
     :goto_0
@@ -920,7 +843,6 @@
 
     if-nez v10, :cond_6
 
-    .line 280
     iget-object v10, p0, Lcom/android/systemui/DessertCaseView;->mFreeList:Ljava/util/Set;
 
     invoke-interface {v10}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
@@ -933,20 +855,16 @@
 
     check-cast v6, Landroid/graphics/Point;
 
-    .line 281
     .local v6, "pt":Landroid/graphics/Point;
     iget-object v10, p0, Lcom/android/systemui/DessertCaseView;->mFreeList:Ljava/util/Set;
 
     invoke-interface {v10, v6}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 282
     iget v3, v6, Landroid/graphics/Point;->x:I
 
-    .line 283
     .local v3, "i":I
     iget v4, v6, Landroid/graphics/Point;->y:I
 
-    .line 285
     .local v4, "j":I
     iget-object v10, p0, Lcom/android/systemui/DessertCaseView;->mCells:[Landroid/view/View;
 
@@ -960,12 +878,10 @@
 
     if-nez v10, :cond_0
 
-    .line 286
     new-instance v8, Landroid/widget/ImageView;
 
     invoke-direct {v8, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 287
     .local v8, "v":Landroid/widget/ImageView;
     new-instance v10, Lcom/android/systemui/DessertCaseView$2;
 
@@ -973,21 +889,17 @@
 
     invoke-virtual {v8, v10}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 295
     invoke-virtual {p0}, Lcom/android/systemui/DessertCaseView;->random_color()I
 
     move-result v0
 
-    .line 296
     .local v0, "c":I
     invoke-virtual {v8, v0}, Landroid/widget/ImageView;->setBackgroundColor(I)V
 
-    .line 298
     invoke-static {}, Lcom/android/systemui/DessertCaseView;->frand()F
 
     move-result v9
 
-    .line 300
     .local v9, "which":F
     const v10, 0x3a03126f    # 5.0E-4f
 
@@ -995,7 +907,6 @@
 
     if-gez v10, :cond_2
 
-    .line 301
     iget-object v10, p0, Lcom/android/systemui/DessertCaseView;->mDrawables:Landroid/util/SparseArray;
 
     sget-object v11, Lcom/android/systemui/DessertCaseView;->XXRARE_PASTRIES:[I
@@ -1010,19 +921,16 @@
 
     check-cast v2, Landroid/graphics/drawable/Drawable;
 
-    .line 311
     .local v2, "d":Landroid/graphics/drawable/Drawable;
     :goto_1
     if-eqz v2, :cond_1
 
-    .line 312
     invoke-virtual {v8}, Landroid/widget/ImageView;->getOverlay()Landroid/view/ViewOverlay;
 
     move-result-object v10
 
     invoke-virtual {v10, v2}, Landroid/view/ViewOverlay;->add(Landroid/graphics/drawable/Drawable;)V
 
-    .line 315
     :cond_1
     iget v10, p0, Lcom/android/systemui/DessertCaseView;->mCellSize:I
 
@@ -1030,18 +938,14 @@
 
     iput v10, v5, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 316
     invoke-virtual {p0, v8, v5}, Lcom/android/systemui/DessertCaseView;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 317
     const/4 v10, 0x0
 
     invoke-virtual {p0, v8, v6, v10}, Lcom/android/systemui/DessertCaseView;->place(Landroid/view/View;Landroid/graphics/Point;Z)V
 
-    .line 318
     if-lez p1, :cond_0
 
-    .line 319
     const v10, 0x2000002
 
     invoke-virtual {v8, v10}, Landroid/widget/ImageView;->getTag(I)Ljava/lang/Object;
@@ -1056,7 +960,6 @@
 
     int-to-float v7, v10
 
-    .line 320
     .local v7, "s":F
     const/high16 v10, 0x3f000000    # 0.5f
 
@@ -1064,19 +967,16 @@
 
     invoke-virtual {v8, v10}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 321
     const/high16 v10, 0x3f000000    # 0.5f
 
     mul-float/2addr v10, v7
 
     invoke-virtual {v8, v10}, Landroid/widget/ImageView;->setScaleY(F)V
 
-    .line 322
     const/4 v10, 0x0
 
     invoke-virtual {v8, v10}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 323
     invoke-virtual {v8}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v10
@@ -1107,7 +1007,6 @@
 
     goto/16 :goto_0
 
-    .line 276
     .end local v0    # "c":I
     .end local v1    # "ctx":Landroid/content/Context;
     .end local v2    # "d":Landroid/graphics/drawable/Drawable;
@@ -1125,7 +1024,6 @@
 
     throw v10
 
-    .line 302
     .restart local v0    # "c":I
     .restart local v1    # "ctx":Landroid/content/Context;
     .restart local v3    # "i":I
@@ -1141,7 +1039,6 @@
 
     if-gez v10, :cond_3
 
-    .line 303
     :try_start_1
     iget-object v10, p0, Lcom/android/systemui/DessertCaseView;->mDrawables:Landroid/util/SparseArray;
 
@@ -1160,7 +1057,6 @@
     .restart local v2    # "d":Landroid/graphics/drawable/Drawable;
     goto :goto_1
 
-    .line 304
     .end local v2    # "d":Landroid/graphics/drawable/Drawable;
     :cond_3
     const/high16 v10, 0x3f000000    # 0.5f
@@ -1169,7 +1065,6 @@
 
     if-gez v10, :cond_4
 
-    .line 305
     iget-object v10, p0, Lcom/android/systemui/DessertCaseView;->mDrawables:Landroid/util/SparseArray;
 
     sget-object v11, Lcom/android/systemui/DessertCaseView;->RARE_PASTRIES:[I
@@ -1187,7 +1082,6 @@
     .restart local v2    # "d":Landroid/graphics/drawable/Drawable;
     goto :goto_1
 
-    .line 306
     .end local v2    # "d":Landroid/graphics/drawable/Drawable;
     :cond_4
     const v10, 0x3f333333    # 0.7f
@@ -1196,7 +1090,6 @@
 
     if-gez v10, :cond_5
 
-    .line 307
     iget-object v10, p0, Lcom/android/systemui/DessertCaseView;->mDrawables:Landroid/util/SparseArray;
 
     sget-object v11, Lcom/android/systemui/DessertCaseView;->PASTRIES:[I
@@ -1216,7 +1109,6 @@
     .restart local v2    # "d":Landroid/graphics/drawable/Drawable;
     goto/16 :goto_1
 
-    .line 309
     .end local v2    # "d":Landroid/graphics/drawable/Drawable;
     :cond_5
     const/4 v2, 0x0
@@ -1224,7 +1116,6 @@
     .restart local v2    # "d":Landroid/graphics/drawable/Drawable;
     goto/16 :goto_1
 
-    .line 326
     .end local v0    # "c":I
     .end local v2    # "d":Landroid/graphics/drawable/Drawable;
     .end local v3    # "i":I
@@ -1243,10 +1134,8 @@
     .param p1, "c"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 482
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 483
     return-void
 .end method
 
@@ -1262,13 +1151,11 @@
 
     const/high16 v6, 0x3e800000    # 0.25f
 
-    .line 233
     monitor-enter p0
 
     :try_start_0
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->onSizeChanged(IIII)V
 
-    .line 234
     iget v3, p0, Lcom/android/systemui/DessertCaseView;->mWidth:I
 
     if-ne v3, p1, :cond_1
@@ -1279,46 +1166,36 @@
 
     if-ne v3, p2, :cond_1
 
-    .line 269
     :cond_0
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 236
     :cond_1
     :try_start_1
     iget-boolean v2, p0, Lcom/android/systemui/DessertCaseView;->mStarted:Z
 
-    .line 237
     .local v2, "wasStarted":Z
     if-eqz v2, :cond_2
 
-    .line 238
     invoke-virtual {p0}, Lcom/android/systemui/DessertCaseView;->stop()V
 
-    .line 241
     :cond_2
     iput p1, p0, Lcom/android/systemui/DessertCaseView;->mWidth:I
 
-    .line 242
     iput p2, p0, Lcom/android/systemui/DessertCaseView;->mHeight:I
 
-    .line 244
     const/4 v3, 0x0
 
     iput-object v3, p0, Lcom/android/systemui/DessertCaseView;->mCells:[Landroid/view/View;
 
-    .line 245
     invoke-virtual {p0}, Lcom/android/systemui/DessertCaseView;->removeAllViewsInLayout()V
 
-    .line 246
     iget-object v3, p0, Lcom/android/systemui/DessertCaseView;->mFreeList:Ljava/util/Set;
 
     invoke-interface {v3}, Ljava/util/Set;->clear()V
 
-    .line 248
     iget v3, p0, Lcom/android/systemui/DessertCaseView;->mHeight:I
 
     iget v4, p0, Lcom/android/systemui/DessertCaseView;->mCellSize:I
@@ -1327,7 +1204,6 @@
 
     iput v3, p0, Lcom/android/systemui/DessertCaseView;->mRows:I
 
-    .line 249
     iget v3, p0, Lcom/android/systemui/DessertCaseView;->mWidth:I
 
     iget v4, p0, Lcom/android/systemui/DessertCaseView;->mCellSize:I
@@ -1336,7 +1212,6 @@
 
     iput v3, p0, Lcom/android/systemui/DessertCaseView;->mColumns:I
 
-    .line 251
     iget v3, p0, Lcom/android/systemui/DessertCaseView;->mRows:I
 
     iget v4, p0, Lcom/android/systemui/DessertCaseView;->mColumns:I
@@ -1347,17 +1222,14 @@
 
     iput-object v3, p0, Lcom/android/systemui/DessertCaseView;->mCells:[Landroid/view/View;
 
-    .line 255
     const/high16 v3, 0x3e800000    # 0.25f
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/DessertCaseView;->setScaleX(F)V
 
-    .line 256
     const/high16 v3, 0x3e800000    # 0.25f
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/DessertCaseView;->setScaleY(F)V
 
-    .line 257
     iget v3, p0, Lcom/android/systemui/DessertCaseView;->mWidth:I
 
     iget v4, p0, Lcom/android/systemui/DessertCaseView;->mCellSize:I
@@ -1376,7 +1248,6 @@
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/DessertCaseView;->setTranslationX(F)V
 
-    .line 258
     iget v3, p0, Lcom/android/systemui/DessertCaseView;->mHeight:I
 
     iget v4, p0, Lcom/android/systemui/DessertCaseView;->mCellSize:I
@@ -1395,7 +1266,6 @@
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/DessertCaseView;->setTranslationY(F)V
 
-    .line 260
     const/4 v1, 0x0
 
     .local v1, "j":I
@@ -1404,7 +1274,6 @@
 
     if-ge v1, v3, :cond_4
 
-    .line 261
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -1413,7 +1282,6 @@
 
     if-ge v0, v3, :cond_3
 
-    .line 262
     iget-object v3, p0, Lcom/android/systemui/DessertCaseView;->mFreeList:Ljava/util/Set;
 
     new-instance v4, Landroid/graphics/Point;
@@ -1422,30 +1290,25 @@
 
     invoke-interface {v3, v4}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 261
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
-    .line 260
     :cond_3
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 266
     .end local v0    # "i":I
     :cond_4
     if-eqz v2, :cond_0
 
-    .line 267
     invoke-virtual {p0}, Lcom/android/systemui/DessertCaseView;->start()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
 
-    .line 233
     .end local v1    # "j":I
     .end local v2    # "wasStarted":Z
     :catchall_0
@@ -1461,7 +1324,6 @@
     .param p1, "a"    # [I
 
     .prologue
-    .line 212
     invoke-static {}, Ljava/lang/Math;->random()D
 
     move-result-wide v0
@@ -1486,7 +1348,6 @@
     .param p3, "animate"    # Z
 
     .prologue
-    .line 349
     monitor-enter p0
 
     :try_start_0
@@ -1494,19 +1355,16 @@
 
     iget v5, v0, Landroid/graphics/Point;->x:I
 
-    .line 350
     .local v5, "i":I
     move-object/from16 v0, p2
 
     iget v8, v0, Landroid/graphics/Point;->y:I
 
-    .line 351
     .local v8, "j":I
     invoke-static {}, Lcom/android/systemui/DessertCaseView;->frand()F
 
     move-result v12
 
-    .line 352
     .local v12, "rnd":F
     const v19, 0x2000001
 
@@ -1520,7 +1378,6 @@
 
     if-eqz v19, :cond_0
 
-    .line 353
     invoke-direct/range {p0 .. p1}, Lcom/android/systemui/DessertCaseView;->getOccupied(Landroid/view/View;)[Landroid/graphics/Point;
 
     move-result-object v4
@@ -1537,7 +1394,6 @@
 
     aget-object v10, v4, v6
 
-    .line 354
     .local v10, "oc":Landroid/graphics/Point;
     move-object/from16 v0, p0
 
@@ -1549,7 +1405,6 @@
 
     invoke-interface {v0, v10}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 355
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/DessertCaseView;->mCells:[Landroid/view/View;
@@ -1578,12 +1433,10 @@
 
     aput-object v21, v19, v20
 
-    .line 353
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    .line 358
     .end local v4    # "arr$":[Landroid/graphics/Point;
     .end local v6    # "i$":I
     .end local v9    # "len$":I
@@ -1591,7 +1444,6 @@
     :cond_0
     const/4 v14, 0x1
 
-    .line 359
     .local v14, "scale":I
     const v19, 0x3c23d70a    # 0.01f
 
@@ -1599,7 +1451,6 @@
 
     if-gez v19, :cond_3
 
-    .line 360
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/systemui/DessertCaseView;->mColumns:I
@@ -1624,10 +1475,8 @@
 
     if-ge v8, v0, :cond_1
 
-    .line 361
     const/4 v14, 0x4
 
-    .line 373
     :cond_1
     :goto_1
     const v19, 0x2000001
@@ -1640,7 +1489,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
-    .line 374
     const v19, 0x2000002
 
     invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1655,7 +1503,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
-    .line 376
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/DessertCaseView;->tmpSet:Ljava/util/HashSet;
@@ -1664,12 +1511,10 @@
 
     invoke-virtual/range {v19 .. v19}, Ljava/util/HashSet;->clear()V
 
-    .line 378
     invoke-direct/range {p0 .. p1}, Lcom/android/systemui/DessertCaseView;->getOccupied(Landroid/view/View;)[Landroid/graphics/Point;
 
     move-result-object v11
 
-    .line 379
     .local v11, "occupied":[Landroid/graphics/Point;
     move-object v4, v11
 
@@ -1685,7 +1530,6 @@
 
     aget-object v10, v4, v6
 
-    .line 380
     .restart local v10    # "oc":Landroid/graphics/Point;
     move-object/from16 v0, p0
 
@@ -1713,11 +1557,9 @@
 
     aget-object v18, v19, v20
 
-    .line 381
     .local v18, "squatter":Landroid/view/View;
     if-eqz v18, :cond_2
 
-    .line 382
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/DessertCaseView;->tmpSet:Ljava/util/HashSet;
@@ -1730,13 +1572,11 @@
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 379
     :cond_2
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_2
 
-    .line 363
     .end local v4    # "arr$":[Landroid/graphics/Point;
     .end local v6    # "i$":I
     .end local v9    # "len$":I
@@ -1750,7 +1590,6 @@
 
     if-gez v19, :cond_4
 
-    .line 364
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/systemui/DessertCaseView;->mColumns:I
@@ -1775,12 +1614,10 @@
 
     if-ge v8, v0, :cond_1
 
-    .line 365
     const/4 v14, 0x3
 
     goto :goto_1
 
-    .line 367
     :cond_4
     const v19, 0x3ea8f5c3    # 0.33f
 
@@ -1788,7 +1625,6 @@
 
     if-gez v19, :cond_1
 
-    .line 368
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/systemui/DessertCaseView;->mColumns:I
@@ -1813,12 +1649,10 @@
 
     if-eq v8, v0, :cond_1
 
-    .line 369
     const/4 v14, 0x2
 
     goto/16 :goto_1
 
-    .line 386
     .restart local v4    # "arr$":[Landroid/graphics/Point;
     .restart local v6    # "i$":I
     .restart local v9    # "len$":I
@@ -1849,7 +1683,6 @@
 
     check-cast v18, Landroid/view/View;
 
-    .line 387
     .restart local v18    # "squatter":Landroid/view/View;
     move-object/from16 v0, p0
 
@@ -1869,7 +1702,6 @@
 
     aget-object v17, v4, v7
 
-    .line 388
     .local v17, "sq":Landroid/graphics/Point;
     move-object/from16 v0, p0
 
@@ -1883,7 +1715,6 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 389
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/DessertCaseView;->mCells:[Landroid/view/View;
@@ -1916,12 +1747,10 @@
 
     aput-object v21, v19, v20
 
-    .line 387
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_4
 
-    .line 391
     .end local v17    # "sq":Landroid/graphics/Point;
     :cond_7
     move-object/from16 v0, v18
@@ -1930,17 +1759,14 @@
 
     if-eq v0, v1, :cond_6
 
-    .line 392
     const v19, 0x2000001
 
     const/16 v20, 0x0
 
     invoke-virtual/range {v18 .. v20}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
-    .line 393
     if-eqz p3, :cond_8
 
-    .line 394
     invoke-virtual/range {v18 .. v18}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v19
@@ -2001,7 +1827,6 @@
 
     goto/16 :goto_3
 
-    .line 349
     .end local v4    # "arr$":[Landroid/graphics/Point;
     .end local v5    # "i":I
     .end local v7    # "i$":I
@@ -2018,7 +1843,6 @@
 
     throw v19
 
-    .line 408
     .restart local v4    # "arr$":[Landroid/graphics/Point;
     .restart local v5    # "i":I
     .restart local v7    # "i$":I
@@ -2038,7 +1862,6 @@
 
     goto/16 :goto_3
 
-    .line 413
     .end local v7    # "i$":I
     .end local v18    # "squatter":Landroid/view/View;
     :cond_9
@@ -2054,7 +1877,6 @@
 
     aget-object v10, v4, v6
 
-    .line 414
     .restart local v10    # "oc":Landroid/graphics/Point;
     move-object/from16 v0, p0
 
@@ -2082,7 +1904,6 @@
 
     aput-object p1, v19, v20
 
-    .line 415
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/DessertCaseView;->mFreeList:Ljava/util/Set;
@@ -2093,12 +1914,10 @@
 
     invoke-interface {v0, v10}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 413
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_5
 
-    .line 418
     .end local v10    # "oc":Landroid/graphics/Point;
     :cond_a
     const/16 v19, 0x0
@@ -2119,19 +1938,15 @@
 
     mul-float v13, v19, v20
 
-    .line 420
     .local v13, "rot":F
     if-eqz p3, :cond_b
 
-    .line 421
     invoke-virtual/range {p1 .. p1}, Landroid/view/View;->bringToFront()V
 
-    .line 423
     new-instance v15, Landroid/animation/AnimatorSet;
 
     invoke-direct {v15}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 424
     .local v15, "set1":Landroid/animation/AnimatorSet;
     const/16 v19, 0x2
 
@@ -2209,7 +2024,6 @@
 
     invoke-virtual {v15, v0}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 428
     new-instance v19, Landroid/view/animation/AnticipateOvershootInterpolator;
 
     invoke-direct/range {v19 .. v19}, Landroid/view/animation/AnticipateOvershootInterpolator;-><init>()V
@@ -2218,19 +2032,16 @@
 
     invoke-virtual {v15, v0}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 429
     const-wide/16 v20, 0x1f4
 
     move-wide/from16 v0, v20
 
     invoke-virtual {v15, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 431
     new-instance v16, Landroid/animation/AnimatorSet;
 
     invoke-direct/range {v16 .. v16}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 432
     .local v16, "set2":Landroid/animation/AnimatorSet;
     const/16 v19, 0x3
 
@@ -2386,7 +2197,6 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 437
     new-instance v19, Landroid/view/animation/DecelerateInterpolator;
 
     invoke-direct/range {v19 .. v19}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
@@ -2397,7 +2207,6 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 438
     const-wide/16 v20, 0x1f4
 
     move-object/from16 v0, v16
@@ -2406,7 +2215,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 440
     invoke-direct/range {p0 .. p1}, Lcom/android/systemui/DessertCaseView;->makeHardwareLayerListener(Landroid/view/View;)Landroid/animation/Animator$AnimatorListener;
 
     move-result-object v19
@@ -2415,15 +2223,12 @@
 
     invoke-virtual {v15, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 442
     invoke-virtual {v15}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 443
     invoke-virtual/range {v16 .. v16}, Landroid/animation/AnimatorSet;->start()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 451
     .end local v15    # "set1":Landroid/animation/AnimatorSet;
     .end local v16    # "set2":Landroid/animation/AnimatorSet;
     :goto_6
@@ -2431,7 +2236,6 @@
 
     return-void
 
-    .line 445
     :cond_b
     :try_start_2
     move-object/from16 v0, p0
@@ -2468,7 +2272,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setX(F)V
 
-    .line 446
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/systemui/DessertCaseView;->mCellSize:I
@@ -2503,7 +2306,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setY(F)V
 
-    .line 447
     int-to-float v0, v14
 
     move/from16 v19, v0
@@ -2514,7 +2316,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setScaleX(F)V
 
-    .line 448
     int-to-float v0, v14
 
     move/from16 v19, v0
@@ -2525,7 +2326,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setScaleY(F)V
 
-    .line 449
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v13}, Landroid/view/View;->setRotation(F)V
@@ -2543,7 +2343,6 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 329
     new-instance v0, Landroid/graphics/Point;
 
     iget v1, p0, Lcom/android/systemui/DessertCaseView;->mColumns:I
@@ -2562,7 +2361,6 @@
 
     invoke-virtual {p0, p1, v0, p2}, Lcom/android/systemui/DessertCaseView;->place(Landroid/view/View;Landroid/graphics/Point;Z)V
 
-    .line 330
     return-void
 .end method
 
@@ -2572,10 +2370,8 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 226
     const/16 v0, 0xc
 
-    .line 227
     .local v0, "COLORS":I
     iget-object v1, p0, Lcom/android/systemui/DessertCaseView;->hsv:[F
 
@@ -2593,7 +2389,6 @@
 
     aput v2, v1, v4
 
-    .line 228
     iget-object v1, p0, Lcom/android/systemui/DessertCaseView;->hsv:[F
 
     invoke-static {v1}, Landroid/graphics/Color;->HSVToColor([F)I
@@ -2607,22 +2402,18 @@
     .locals 4
 
     .prologue
-    .line 199
     iget-boolean v0, p0, Lcom/android/systemui/DessertCaseView;->mStarted:Z
 
     if-nez v0, :cond_0
 
-    .line 200
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/DessertCaseView;->mStarted:Z
 
-    .line 201
     const/16 v0, 0x7d0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/DessertCaseView;->fillFreeList(I)V
 
-    .line 203
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/DessertCaseView;->mHandler:Landroid/os/Handler;
 
@@ -2632,7 +2423,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 204
     return-void
 .end method
 
@@ -2640,18 +2430,15 @@
     .locals 2
 
     .prologue
-    .line 207
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/DessertCaseView;->mStarted:Z
 
-    .line 208
     iget-object v0, p0, Lcom/android/systemui/DessertCaseView;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/systemui/DessertCaseView;->mJuggle:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 209
     return-void
 .end method

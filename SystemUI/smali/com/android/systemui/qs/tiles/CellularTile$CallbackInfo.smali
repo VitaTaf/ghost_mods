@@ -75,7 +75,6 @@
     .locals 0
 
     .prologue
-    .line 489
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -86,7 +85,6 @@
     .param p1, "x0"    # Lcom/android/systemui/qs/tiles/CellularTile$1;
 
     .prologue
-    .line 489
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/CellularTile$CallbackInfo;-><init>()V
 
     return-void
@@ -98,7 +96,6 @@
     .locals 2
 
     .prologue
-    .line 530
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "CallbackInfo (Mobile)["

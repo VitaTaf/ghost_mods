@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 368
     iput-object p1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$4;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 371
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 372
     .local v0, "action":Ljava/lang/String;
     const-string v2, "android.intent.action.USER_SWITCHED"
 
@@ -54,7 +51,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 373
     iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$4;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     const-string v3, "android.intent.extra.user_handle"
@@ -67,13 +63,11 @@
 
     iput v3, v2, Lcom/android/systemui/statusbar/BaseStatusBar;->mCurrentUserId:I
 
-    .line 374
     iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$4;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     # invokes: Lcom/android/systemui/statusbar/BaseStatusBar;->updateCurrentProfilesCache()V
     invoke-static {v2}, Lcom/android/systemui/statusbar/BaseStatusBar;->access$400(Lcom/android/systemui/statusbar/BaseStatusBar;)V
 
-    .line 375
     const-string v2, "StatusBar"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -106,13 +100,11 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 377
     iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$4;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     # invokes: Lcom/android/systemui/statusbar/BaseStatusBar;->updateLockscreenNotificationSetting()V
     invoke-static {v2}, Lcom/android/systemui/statusbar/BaseStatusBar;->access$100(Lcom/android/systemui/statusbar/BaseStatusBar;)V
 
-    .line 379
     iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$4;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/BaseStatusBar$4;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
@@ -121,12 +113,10 @@
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/statusbar/BaseStatusBar;->userSwitched(I)V
 
-    .line 403
     :cond_0
     :goto_0
     return-void
 
-    .line 380
     :cond_1
     const-string v2, "android.intent.action.USER_ADDED"
 
@@ -136,7 +126,6 @@
 
     if-eqz v2, :cond_2
 
-    .line 381
     iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$4;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     # invokes: Lcom/android/systemui/statusbar/BaseStatusBar;->updateCurrentProfilesCache()V
@@ -144,7 +133,6 @@
 
     goto :goto_0
 
-    .line 382
     :cond_2
     const-string v2, "android.app.action.DEVICE_POLICY_MANAGER_STATE_CHANGED"
 
@@ -154,7 +142,6 @@
 
     if-eqz v2, :cond_3
 
-    .line 384
     iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$4;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/BaseStatusBar;->mUsersAllowingPrivateNotifications:Landroid/util/SparseBooleanArray;
@@ -164,20 +151,17 @@
 
     invoke-virtual {v2}, Landroid/util/SparseBooleanArray;->clear()V
 
-    .line 385
     iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$4;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     # invokes: Lcom/android/systemui/statusbar/BaseStatusBar;->updateLockscreenNotificationSetting()V
     invoke-static {v2}, Lcom/android/systemui/statusbar/BaseStatusBar;->access$100(Lcom/android/systemui/statusbar/BaseStatusBar;)V
 
-    .line 386
     iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$4;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/BaseStatusBar;->updateNotifications()V
 
     goto :goto_0
 
-    .line 387
     :cond_3
     const-string v2, "com.android.systemui.statusbar.banner_action_cancel"
 
@@ -195,7 +179,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 388
     :cond_4
     iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$4;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
@@ -209,13 +192,11 @@
 
     check-cast v1, Landroid/app/NotificationManager;
 
-    .line 390
     .local v1, "noMan":Landroid/app/NotificationManager;
     const/16 v2, 0x2710
 
     invoke-virtual {v1, v2}, Landroid/app/NotificationManager;->cancel(I)V
 
-    .line 392
     iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$4;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     iget-object v2, v2, Lcom/android/systemui/statusbar/BaseStatusBar;->mContext:Landroid/content/Context;
@@ -230,7 +211,6 @@
 
     invoke-static {v2, v3, v4}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 394
     const-string v2, "com.android.systemui.statusbar.banner_action_setup"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -239,7 +219,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 395
     iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$4;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     const/4 v3, 0x2
@@ -248,7 +227,6 @@
 
     invoke-virtual {v2, v3, v4}, Lcom/android/systemui/statusbar/BaseStatusBar;->animateCollapsePanels(IZ)V
 
-    .line 397
     iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$4;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     iget-object v2, v2, Lcom/android/systemui/statusbar/BaseStatusBar;->mContext:Landroid/content/Context;

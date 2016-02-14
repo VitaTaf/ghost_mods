@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 191
     iput-object p1, p0, Lcom/android/keyguard/KeyguardFaceUnlockView$2;->this$0:Lcom/android/keyguard/KeyguardFaceUnlockView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 194
     iget-object v0, p0, Lcom/android/keyguard/KeyguardFaceUnlockView$2;->this$0:Lcom/android/keyguard/KeyguardFaceUnlockView;
 
     # getter for: Lcom/android/keyguard/KeyguardFaceUnlockView;->mBiometricUnlock:Lcom/android/keyguard/BiometricSensorUnlock;
@@ -51,6 +49,5 @@
 
     invoke-interface {v0}, Lcom/android/keyguard/BiometricSensorUnlock;->stopAndShowBackup()V
 
-    .line 195
     return-void
 .end method

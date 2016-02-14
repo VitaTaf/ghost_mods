@@ -73,7 +73,6 @@
     .locals 1
 
     .prologue
-    .line 65
     const-class v0, Lcom/android/systemui/volume/VolumeDialogController;
 
     invoke-static {v0}, Lcom/android/systemui/volume/Util;->logTag(Ljava/lang/Class;)Ljava/lang/String;
@@ -82,7 +81,6 @@
 
     sput-object v0, Lcom/android/systemui/volume/VolumeDialogController;->TAG:Ljava/lang/String;
 
-    .line 70
     const/16 v0, 0xa
 
     new-array v0, v0, [I
@@ -120,65 +118,54 @@
 
     const/4 v3, 0x0
 
-    .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 90
     new-instance v0, Lcom/android/systemui/volume/VolumeDialogController$Receiver;
 
     invoke-direct {v0, p0, v3}, Lcom/android/systemui/volume/VolumeDialogController$Receiver;-><init>(Lcom/android/systemui/volume/VolumeDialogController;Lcom/android/systemui/volume/VolumeDialogController$1;)V
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mReceiver:Lcom/android/systemui/volume/VolumeDialogController$Receiver;
 
-    .line 92
     new-instance v0, Lcom/android/systemui/volume/VolumeDialogController$VC;
 
     invoke-direct {v0, p0, v3}, Lcom/android/systemui/volume/VolumeDialogController$VC;-><init>(Lcom/android/systemui/volume/VolumeDialogController;Lcom/android/systemui/volume/VolumeDialogController$1;)V
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mVolumeController:Lcom/android/systemui/volume/VolumeDialogController$VC;
 
-    .line 93
     new-instance v0, Lcom/android/systemui/volume/VolumeDialogController$C;
 
     invoke-direct {v0, p0, v3}, Lcom/android/systemui/volume/VolumeDialogController$C;-><init>(Lcom/android/systemui/volume/VolumeDialogController;Lcom/android/systemui/volume/VolumeDialogController$1;)V
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mCallbacks:Lcom/android/systemui/volume/VolumeDialogController$C;
 
-    .line 94
     new-instance v0, Lcom/android/systemui/volume/VolumeDialogController$State;
 
     invoke-direct {v0}, Lcom/android/systemui/volume/VolumeDialogController$State;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
 
-    .line 96
     new-instance v0, Lcom/android/systemui/volume/VolumeDialogController$MediaSessionsCallbacks;
 
     invoke-direct {v0, p0, v3}, Lcom/android/systemui/volume/VolumeDialogController$MediaSessionsCallbacks;-><init>(Lcom/android/systemui/volume/VolumeDialogController;Lcom/android/systemui/volume/VolumeDialogController$1;)V
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mMediaSessionsCallbacksW:Lcom/android/systemui/volume/VolumeDialogController$MediaSessionsCallbacks;
 
-    .line 103
     iput-boolean v1, p0, Lcom/android/systemui/volume/VolumeDialogController;->mShowDndTile:Z
 
-    .line 106
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mContext:Landroid/content/Context;
 
-    .line 107
     const/4 v0, 0x5
 
     new-array v3, v2, [Ljava/lang/Object;
 
     invoke-static {v0, v3}, Lcom/android/systemui/volume/Events;->writeEvent(I[Ljava/lang/Object;)V
 
-    .line 108
     iput-object p2, p0, Lcom/android/systemui/volume/VolumeDialogController;->mComponent:Landroid/content/ComponentName;
 
-    .line 109
     new-instance v0, Landroid/os/HandlerThread;
 
     const-class v3, Lcom/android/systemui/volume/VolumeDialogController;
@@ -191,12 +178,10 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mWorkerThread:Landroid/os/HandlerThread;
 
-    .line 110
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mWorkerThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    .line 111
     new-instance v0, Lcom/android/systemui/volume/VolumeDialogController$W;
 
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialogController;->mWorkerThread:Landroid/os/HandlerThread;
@@ -209,7 +194,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mWorker:Lcom/android/systemui/volume/VolumeDialogController$W;
 
-    .line 112
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mContext:Landroid/content/Context;
 
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialogController;->mWorkerThread:Landroid/os/HandlerThread;
@@ -226,7 +210,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mMediaSessions:Lcom/android/systemui/volume/MediaSessions;
 
-    .line 114
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mContext:Landroid/content/Context;
 
     const-string v3, "audio"
@@ -239,7 +222,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mAudio:Landroid/media/AudioManager;
 
-    .line 115
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mContext:Landroid/content/Context;
 
     const-string v3, "notification"
@@ -252,7 +234,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mNoMan:Landroid/app/NotificationManager;
 
-    .line 116
     new-instance v0, Lcom/android/systemui/volume/VolumeDialogController$SettingObserver;
 
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialogController;->mWorker:Lcom/android/systemui/volume/VolumeDialogController$W;
@@ -261,17 +242,14 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mObserver:Lcom/android/systemui/volume/VolumeDialogController$SettingObserver;
 
-    .line 117
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mObserver:Lcom/android/systemui/volume/VolumeDialogController$SettingObserver;
 
     invoke-virtual {v0}, Lcom/android/systemui/volume/VolumeDialogController$SettingObserver;->init()V
 
-    .line 118
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mReceiver:Lcom/android/systemui/volume/VolumeDialogController$Receiver;
 
     invoke-virtual {v0}, Lcom/android/systemui/volume/VolumeDialogController$Receiver;->init()V
 
-    .line 119
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -286,7 +264,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mStreamTitles:[Ljava/lang/String;
 
-    .line 120
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mContext:Landroid/content/Context;
 
     const-string v3, "vibrator"
@@ -299,7 +276,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mVibrator:Landroid/os/Vibrator;
 
-    .line 121
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mVibrator:Landroid/os/Vibrator;
 
     if-eqz v0, :cond_0
@@ -317,13 +293,11 @@
     :goto_0
     iput-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mHasVibrator:Z
 
-    .line 122
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 121
     goto :goto_0
 .end method
 
@@ -332,7 +306,6 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialogController;
 
     .prologue
-    .line 64
     invoke-direct {p0}, Lcom/android/systemui/volume/VolumeDialogController;->onGetStateW()V
 
     return-void
@@ -345,7 +318,6 @@
     .param p2, "x2"    # Z
 
     .prologue
-    .line 64
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/volume/VolumeDialogController;->onSetRingerModeW(IZ)V
 
     return-void
@@ -357,7 +329,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 64
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialogController;->onSetZenModeW(I)V
 
     return-void
@@ -369,7 +340,6 @@
     .param p1, "x1"    # Landroid/service/notification/Condition;
 
     .prologue
-    .line 64
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialogController;->onSetExitConditionW(Landroid/service/notification/Condition;)V
 
     return-void
@@ -382,7 +352,6 @@
     .param p2, "x2"    # Z
 
     .prologue
-    .line 64
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/volume/VolumeDialogController;->onSetStreamMuteW(IZ)V
 
     return-void
@@ -393,7 +362,6 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialogController;
 
     .prologue
-    .line 64
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mCallbacks:Lcom/android/systemui/volume/VolumeDialogController$C;
 
     return-object v0
@@ -406,7 +374,6 @@
     .param p2, "x2"    # I
 
     .prologue
-    .line 64
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/volume/VolumeDialogController;->onSetStreamVolumeW(II)V
 
     return-void
@@ -418,7 +385,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 64
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialogController;->onSetActiveStreamW(I)V
 
     return-void
@@ -430,7 +396,6 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 64
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialogController;->onNotifyVisibleW(Z)V
 
     return-void
@@ -442,7 +407,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 64
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialogController;->onShowSafetyWarningW(I)V
 
     return-void
@@ -453,7 +417,6 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialogController;
 
     .prologue
-    .line 64
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -464,7 +427,6 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialogController;
 
     .prologue
-    .line 64
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mComponent:Landroid/content/ComponentName;
 
     return-object v0
@@ -475,7 +437,6 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialogController;
 
     .prologue
-    .line 64
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mEnabled:Z
 
     return v0
@@ -487,7 +448,6 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 64
     iput-boolean p1, p0, Lcom/android/systemui/volume/VolumeDialogController;->mEnabled:Z
 
     return p1
@@ -498,7 +458,6 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialogController;
 
     .prologue
-    .line 64
     invoke-direct {p0}, Lcom/android/systemui/volume/VolumeDialogController;->updateZenModeW()Z
 
     move-result v0
@@ -511,7 +470,6 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialogController;
 
     .prologue
-    .line 64
     invoke-direct {p0}, Lcom/android/systemui/volume/VolumeDialogController;->updateZenModeConfigW()Z
 
     move-result v0
@@ -524,7 +482,6 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialogController;
 
     .prologue
-    .line 64
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
 
     return-object v0
@@ -537,7 +494,6 @@
     .param p2, "x2"    # I
 
     .prologue
-    .line 64
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/volume/VolumeDialogController;->updateStreamLevelW(II)Z
 
     move-result v0
@@ -551,7 +507,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 64
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialogController;->checkRoutedToBluetoothW(I)Z
 
     move-result v0
@@ -565,7 +520,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 64
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialogController;->updateRingerModeExternalW(I)Z
 
     move-result v0
@@ -579,7 +533,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 64
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialogController;->updateRingerModeInternalW(I)Z
 
     move-result v0
@@ -594,7 +547,6 @@
     .param p2, "x2"    # Z
 
     .prologue
-    .line 64
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/volume/VolumeDialogController;->updateStreamMuteW(IZ)Z
 
     move-result v0
@@ -607,7 +559,6 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialogController;
 
     .prologue
-    .line 64
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mNoMan:Landroid/app/NotificationManager;
 
     return-object v0
@@ -619,7 +570,6 @@
     .param p1, "x1"    # Landroid/content/ComponentName;
 
     .prologue
-    .line 64
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialogController;->updateEffectsSuppressorW(Landroid/content/ComponentName;)Z
 
     move-result v0
@@ -633,7 +583,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 64
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialogController;->streamStateW(I)Lcom/android/systemui/volume/VolumeDialogController$StreamState;
 
     move-result-object v0
@@ -647,7 +596,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 64
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialogController;->updateActiveStreamW(I)Z
 
     move-result v0
@@ -660,7 +608,6 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialogController;
 
     .prologue
-    .line 64
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mMediaSessions:Lcom/android/systemui/volume/MediaSessions;
 
     return-object v0
@@ -670,7 +617,6 @@
     .locals 1
 
     .prologue
-    .line 64
     sget-object v0, Lcom/android/systemui/volume/VolumeDialogController;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -681,7 +627,6 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialogController;
 
     .prologue
-    .line 64
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mDestroyed:Z
 
     return v0
@@ -692,7 +637,6 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialogController;
 
     .prologue
-    .line 64
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mWorker:Lcom/android/systemui/volume/VolumeDialogController$W;
 
     return-object v0
@@ -705,7 +649,6 @@
     .param p2, "x2"    # I
 
     .prologue
-    .line 64
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/volume/VolumeDialogController;->onVolumeChangedW(II)V
 
     return-void
@@ -717,7 +660,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 64
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialogController;->onDismissRequestedW(I)V
 
     return-void
@@ -730,14 +672,11 @@
     .prologue
     const/4 v3, 0x3
 
-    .line 275
     const/4 v0, 0x0
 
-    .line 276
     .local v0, "changed":Z
     if-ne p1, v3, :cond_0
 
-    .line 277
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialogController;->mAudio:Landroid/media/AudioManager;
 
     invoke-virtual {v2, v3}, Landroid/media/AudioManager;->getDevicesForStream(I)I
@@ -750,7 +689,6 @@
 
     const/4 v1, 0x1
 
-    .line 282
     .local v1, "routedToBluetooth":Z
     :goto_0
     invoke-direct {p0, p1, v1}, Lcom/android/systemui/volume/VolumeDialogController;->updateStreamRoutedToBluetoothW(IZ)Z
@@ -759,12 +697,10 @@
 
     or-int/2addr v0, v2
 
-    .line 284
     .end local v1    # "routedToBluetooth":Z
     :cond_0
     return v0
 
-    .line 277
     :cond_1
     const/4 v1, 0x0
 
@@ -777,29 +713,24 @@
     .param p1, "component"    # Landroid/content/ComponentName;
 
     .prologue
-    .line 419
     if-nez p1, :cond_1
 
     const/4 v3, 0x0
 
-    .line 429
     :cond_0
     :goto_0
     return-object v3
 
-    .line 420
     :cond_1
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v2
 
-    .line 421
     .local v2, "pm":Landroid/content/pm/PackageManager;
     invoke-virtual {p1}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 423
     .local v1, "pkg":Ljava/lang/String;
     const/4 v4, 0x0
 
@@ -808,7 +739,6 @@
 
     move-result-object v0
 
-    .line 424
     .local v0, "ai":Landroid/content/pm/ApplicationInfo;
     invoke-virtual {v0, v2}, Landroid/content/pm/ApplicationInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
@@ -824,7 +754,6 @@
 
     move-result-object v3
 
-    .line 425
     .local v3, "rt":Ljava/lang/String;
     invoke-virtual {v3}, Ljava/lang/String;->length()I
     :try_end_0
@@ -839,10 +768,8 @@
     :goto_1
     move-object v3, v1
 
-    .line 429
     goto :goto_0
 
-    .line 428
     :catch_0
     move-exception v4
 
@@ -854,23 +781,19 @@
     .param p0, "stream"    # I
 
     .prologue
-    .line 373
     packed-switch p0, :pswitch_data_0
 
-    .line 382
     :pswitch_0
     const/4 v0, 0x0
 
     :goto_0
     return v0
 
-    .line 380
     :pswitch_1
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 373
     nop
 
     :pswitch_data_0
@@ -890,7 +813,6 @@
     .param p0, "stream"    # I
 
     .prologue
-    .line 399
     const/4 v0, 0x2
 
     if-eq p0, v0, :cond_0
@@ -916,12 +838,10 @@
     .param p1, "reason"    # I
 
     .prologue
-    .line 494
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mCallbacks:Lcom/android/systemui/volume/VolumeDialogController$C;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/volume/VolumeDialogController$C;->onDismissRequested(I)V
 
-    .line 495
     return-void
 .end method
 
@@ -929,7 +849,6 @@
     .locals 7
 
     .prologue
-    .line 336
     sget-object v0, Lcom/android/systemui/volume/VolumeDialogController;->STREAMS:[I
 
     .local v0, "arr$":[I
@@ -944,7 +863,6 @@
 
     aget v4, v0, v1
 
-    .line 337
     .local v4, "stream":I
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialogController;->mAudio:Landroid/media/AudioManager;
 
@@ -954,7 +872,6 @@
 
     invoke-direct {p0, v4, v5}, Lcom/android/systemui/volume/VolumeDialogController;->updateStreamLevelW(II)Z
 
-    .line 338
     invoke-direct {p0, v4}, Lcom/android/systemui/volume/VolumeDialogController;->streamStateW(I)Lcom/android/systemui/volume/VolumeDialogController$StreamState;
 
     move-result-object v5
@@ -967,7 +884,6 @@
 
     iput v6, v5, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->levelMin:I
 
-    .line 339
     invoke-direct {p0, v4}, Lcom/android/systemui/volume/VolumeDialogController;->streamStateW(I)Lcom/android/systemui/volume/VolumeDialogController$StreamState;
 
     move-result-object v5
@@ -980,7 +896,6 @@
 
     iput v6, v5, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->levelMax:I
 
-    .line 340
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialogController;->mAudio:Landroid/media/AudioManager;
 
     invoke-virtual {v5, v4}, Landroid/media/AudioManager;->isStreamMute(I)Z
@@ -989,12 +904,10 @@
 
     invoke-direct {p0, v4, v5}, Lcom/android/systemui/volume/VolumeDialogController;->updateStreamMuteW(IZ)Z
 
-    .line 341
     invoke-direct {p0, v4}, Lcom/android/systemui/volume/VolumeDialogController;->streamStateW(I)Lcom/android/systemui/volume/VolumeDialogController$StreamState;
 
     move-result-object v3
 
-    .line 342
     .local v3, "ss":Lcom/android/systemui/volume/VolumeDialogController$StreamState;
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialogController;->mAudio:Landroid/media/AudioManager;
 
@@ -1004,22 +917,18 @@
 
     iput-boolean v5, v3, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->muteSupported:Z
 
-    .line 343
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialogController;->mStreamTitles:[Ljava/lang/String;
 
     aget-object v5, v5, v4
 
     iput-object v5, v3, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->name:Ljava/lang/String;
 
-    .line 344
     invoke-direct {p0, v4}, Lcom/android/systemui/volume/VolumeDialogController;->checkRoutedToBluetoothW(I)Z
 
-    .line 336
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 346
     .end local v3    # "ss":Lcom/android/systemui/volume/VolumeDialogController$StreamState;
     .end local v4    # "stream":I
     :cond_0
@@ -1031,10 +940,8 @@
 
     invoke-direct {p0, v5}, Lcom/android/systemui/volume/VolumeDialogController;->updateRingerModeExternalW(I)Z
 
-    .line 347
     invoke-direct {p0}, Lcom/android/systemui/volume/VolumeDialogController;->updateZenModeW()Z
 
-    .line 348
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialogController;->mNoMan:Landroid/app/NotificationManager;
 
     invoke-virtual {v5}, Landroid/app/NotificationManager;->getEffectsSuppressor()Landroid/content/ComponentName;
@@ -1043,17 +950,14 @@
 
     invoke-direct {p0, v5}, Lcom/android/systemui/volume/VolumeDialogController;->updateEffectsSuppressorW(Landroid/content/ComponentName;)Z
 
-    .line 349
     invoke-direct {p0}, Lcom/android/systemui/volume/VolumeDialogController;->updateZenModeConfigW()Z
 
-    .line 350
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialogController;->mCallbacks:Lcom/android/systemui/volume/VolumeDialogController$C;
 
     iget-object v6, p0, Lcom/android/systemui/volume/VolumeDialogController;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
 
     invoke-virtual {v5, v6}, Lcom/android/systemui/volume/VolumeDialogController$C;->onStateChanged(Lcom/android/systemui/volume/VolumeDialogController$State;)V
 
-    .line 351
     return-void
 .end method
 
@@ -1062,17 +966,14 @@
     .param p1, "visible"    # Z
 
     .prologue
-    .line 257
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mDestroyed:Z
 
     if-eqz v0, :cond_1
 
-    .line 264
     :cond_0
     :goto_0
     return-void
 
-    .line 258
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mAudio:Landroid/media/AudioManager;
 
@@ -1080,10 +981,8 @@
 
     invoke-virtual {v0, v1, p1}, Landroid/media/AudioManager;->notifyVolumeControllerVisible(Landroid/media/IVolumeController;Z)V
 
-    .line 259
     if-nez p1, :cond_0
 
-    .line 260
     const/4 v0, -0x1
 
     invoke-direct {p0, v0}, Lcom/android/systemui/volume/VolumeDialogController;->updateActiveStreamW(I)Z
@@ -1092,7 +991,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 261
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mCallbacks:Lcom/android/systemui/volume/VolumeDialogController$C;
 
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogController;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
@@ -1107,23 +1005,19 @@
     .param p1, "stream"    # I
 
     .prologue
-    .line 478
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialogController;->updateActiveStreamW(I)Z
 
     move-result v0
 
-    .line 479
     .local v0, "changed":Z
     if-eqz v0, :cond_0
 
-    .line 480
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogController;->mCallbacks:Lcom/android/systemui/volume/VolumeDialogController$C;
 
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialogController;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/volume/VolumeDialogController$C;->onStateChanged(Lcom/android/systemui/volume/VolumeDialogController$State;)V
 
-    .line 482
     :cond_0
     return-void
 .end method
@@ -1133,7 +1027,6 @@
     .param p1, "condition"    # Landroid/service/notification/Condition;
 
     .prologue
-    .line 485
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogController;->mNoMan:Landroid/app/NotificationManager;
 
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
@@ -1149,10 +1042,8 @@
 
     invoke-virtual {v1, v2, v0, v3}, Landroid/app/NotificationManager;->setZenMode(ILandroid/net/Uri;Ljava/lang/String;)V
 
-    .line 486
     return-void
 
-    .line 485
     :cond_0
     const/4 v0, 0x0
 
@@ -1165,19 +1056,15 @@
     .param p2, "external"    # Z
 
     .prologue
-    .line 456
     if-eqz p2, :cond_0
 
-    .line 457
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mAudio:Landroid/media/AudioManager;
 
     invoke-virtual {v0, p1}, Landroid/media/AudioManager;->setRingerMode(I)V
 
-    .line 461
     :goto_0
     return-void
 
-    .line 459
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mAudio:Landroid/media/AudioManager;
 
@@ -1192,7 +1079,6 @@
     .param p2, "mute"    # Z
 
     .prologue
-    .line 464
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogController;->mAudio:Landroid/media/AudioManager;
 
     if-eqz p2, :cond_0
@@ -1204,10 +1090,8 @@
 
     invoke-virtual {v1, p1, v0, v2}, Landroid/media/AudioManager;->adjustStreamVolume(III)V
 
-    .line 466
     return-void
 
-    .line 464
     :cond_0
     const/16 v0, 0x64
 
@@ -1220,7 +1104,6 @@
     .param p2, "level"    # I
 
     .prologue
-    .line 469
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_0
@@ -1257,22 +1140,18 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 470
     :cond_0
     const/16 v0, 0x64
 
     if-lt p1, v0, :cond_1
 
-    .line 471
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mMediaSessionsCallbacksW:Lcom/android/systemui/volume/VolumeDialogController$MediaSessionsCallbacks;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/systemui/volume/VolumeDialogController$MediaSessionsCallbacks;->setStreamVolume(II)V
 
-    .line 475
     :goto_0
     return-void
 
-    .line 474
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mAudio:Landroid/media/AudioManager;
 
@@ -1288,7 +1167,6 @@
     .param p1, "mode"    # I
 
     .prologue
-    .line 489
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_0
@@ -1315,7 +1193,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 490
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mNoMan:Landroid/app/NotificationManager;
 
@@ -1325,7 +1202,6 @@
 
     invoke-virtual {v0, p1, v1, v2}, Landroid/app/NotificationManager;->setZenMode(ILandroid/net/Uri;Ljava/lang/String;)V
 
-    .line 491
     return-void
 .end method
 
@@ -1334,12 +1210,10 @@
     .param p1, "flags"    # I
 
     .prologue
-    .line 271
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mCallbacks:Lcom/android/systemui/volume/VolumeDialogController$C;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/volume/VolumeDialogController$C;->onShowSafetyWarning(I)V
 
-    .line 272
     return-void
 .end method
 
@@ -1353,14 +1227,12 @@
 
     const/4 v6, 0x0
 
-    .line 288
     and-int/lit8 v7, p2, 0x1
 
     if-eqz v7, :cond_7
 
     move v3, v5
 
-    .line 289
     .local v3, "showUI":Z
     :goto_0
     and-int/lit16 v7, p2, 0x1000
@@ -1369,7 +1241,6 @@
 
     move v1, v5
 
-    .line 290
     .local v1, "fromKey":Z
     :goto_1
     and-int/lit16 v7, p2, 0x800
@@ -1378,7 +1249,6 @@
 
     move v4, v5
 
-    .line 291
     .local v4, "showVibrateHint":Z
     :goto_2
     and-int/lit16 v7, p2, 0x80
@@ -1387,23 +1257,19 @@
 
     move v2, v5
 
-    .line 292
     .local v2, "showSilentHint":Z
     :goto_3
     const/4 v0, 0x0
 
-    .line 293
     .local v0, "changed":Z
     if-eqz v3, :cond_0
 
-    .line 294
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialogController;->updateActiveStreamW(I)Z
 
     move-result v7
 
     or-int/2addr v0, v7
 
-    .line 296
     :cond_0
     iget-object v7, p0, Lcom/android/systemui/volume/VolumeDialogController;->mAudio:Landroid/media/AudioManager;
 
@@ -1417,7 +1283,6 @@
 
     or-int/2addr v0, v7
 
-    .line 297
     if-eqz v3, :cond_1
 
     const/4 p1, 0x3
@@ -1430,57 +1295,46 @@
 
     or-int/2addr v0, v7
 
-    .line 298
     if-eqz v0, :cond_2
 
-    .line 299
     iget-object v7, p0, Lcom/android/systemui/volume/VolumeDialogController;->mCallbacks:Lcom/android/systemui/volume/VolumeDialogController$C;
 
     iget-object v8, p0, Lcom/android/systemui/volume/VolumeDialogController;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
 
     invoke-virtual {v7, v8}, Lcom/android/systemui/volume/VolumeDialogController$C;->onStateChanged(Lcom/android/systemui/volume/VolumeDialogController$State;)V
 
-    .line 301
     :cond_2
     if-eqz v3, :cond_3
 
-    .line 302
     iget-object v7, p0, Lcom/android/systemui/volume/VolumeDialogController;->mCallbacks:Lcom/android/systemui/volume/VolumeDialogController$C;
 
     invoke-virtual {v7, v5}, Lcom/android/systemui/volume/VolumeDialogController$C;->onShowRequested(I)V
 
-    .line 304
     :cond_3
     if-eqz v4, :cond_4
 
-    .line 305
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialogController;->mCallbacks:Lcom/android/systemui/volume/VolumeDialogController$C;
 
     invoke-virtual {v5}, Lcom/android/systemui/volume/VolumeDialogController$C;->onShowVibrateHint()V
 
-    .line 307
     :cond_4
     if-eqz v2, :cond_5
 
-    .line 308
     iget-object v5, p0, Lcom/android/systemui/volume/VolumeDialogController;->mCallbacks:Lcom/android/systemui/volume/VolumeDialogController$C;
 
     invoke-virtual {v5}, Lcom/android/systemui/volume/VolumeDialogController$C;->onShowSilentHint()V
 
-    .line 310
     :cond_5
     if-eqz v0, :cond_6
 
     if-eqz v1, :cond_6
 
-    .line 311
     const/4 v5, 0x4
 
     new-array v6, v6, [Ljava/lang/Object;
 
     invoke-static {v5, v6}, Lcom/android/systemui/volume/Events;->writeEvent(I[Ljava/lang/Object;)V
 
-    .line 313
     :cond_6
     return-void
 
@@ -1493,28 +1347,24 @@
     :cond_7
     move v3, v6
 
-    .line 288
     goto :goto_0
 
     .restart local v3    # "showUI":Z
     :cond_8
     move v1, v6
 
-    .line 289
     goto :goto_1
 
     .restart local v1    # "fromKey":Z
     :cond_9
     move v4, v6
 
-    .line 290
     goto :goto_2
 
     .restart local v4    # "showVibrateHint":Z
     :cond_a
     move v2, v6
 
-    .line 291
     goto :goto_3
 .end method
 
@@ -1523,7 +1373,6 @@
     .param p1, "stream"    # I
 
     .prologue
-    .line 327
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogController;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
 
     iget-object v1, v1, Lcom/android/systemui/volume/VolumeDialogController$State;->states:Landroid/util/SparseArray;
@@ -1534,17 +1383,14 @@
 
     check-cast v0, Lcom/android/systemui/volume/VolumeDialogController$StreamState;
 
-    .line 328
     .local v0, "ss":Lcom/android/systemui/volume/VolumeDialogController$StreamState;
     if-nez v0, :cond_0
 
-    .line 329
     new-instance v0, Lcom/android/systemui/volume/VolumeDialogController$StreamState;
 
     .end local v0    # "ss":Lcom/android/systemui/volume/VolumeDialogController$StreamState;
     invoke-direct {v0}, Lcom/android/systemui/volume/VolumeDialogController$StreamState;-><init>()V
 
-    .line 330
     .restart local v0    # "ss":Lcom/android/systemui/volume/VolumeDialogController$StreamState;
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogController;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
 
@@ -1552,7 +1398,6 @@
 
     invoke-virtual {v1, p1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 332
     :cond_0
     return-object v0
 .end method
@@ -1566,24 +1411,20 @@
 
     const/4 v1, 0x0
 
-    .line 316
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialogController;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
 
     iget v3, v3, Lcom/android/systemui/volume/VolumeDialogController$State;->activeStream:I
 
     if-ne p1, v3, :cond_0
 
-    .line 323
     :goto_0
     return v1
 
-    .line 317
     :cond_0
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialogController;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
 
     iput p1, v3, Lcom/android/systemui/volume/VolumeDialogController$State;->activeStream:I
 
-    .line 318
     const/4 v3, 0x2
 
     new-array v4, v2, [Ljava/lang/Object;
@@ -1596,7 +1437,6 @@
 
     invoke-static {v3, v4}, Lcom/android/systemui/volume/Events;->writeEvent(I[Ljava/lang/Object;)V
 
-    .line 319
     sget-boolean v1, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v1, :cond_1
@@ -1623,7 +1463,6 @@
 
     invoke-static {v1, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 320
     :cond_1
     const/16 v1, 0x64
 
@@ -1631,7 +1470,6 @@
 
     move v0, p1
 
-    .line 321
     .local v0, "s":I
     :goto_1
     sget-boolean v1, Lcom/android/systemui/volume/D;->BUG:Z
@@ -1660,7 +1498,6 @@
 
     invoke-static {v1, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 322
     :cond_2
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogController;->mAudio:Landroid/media/AudioManager;
 
@@ -1668,10 +1505,8 @@
 
     move v1, v2
 
-    .line 323
     goto :goto_0
 
-    .line 320
     .end local v0    # "s":I
     :cond_3
     const/4 v0, -0x1
@@ -1688,7 +1523,6 @@
 
     const/4 v0, 0x0
 
-    .line 410
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialogController;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
 
     iget-object v2, v2, Lcom/android/systemui/volume/VolumeDialogController$State;->effectsSuppressor:Landroid/content/ComponentName;
@@ -1699,17 +1533,14 @@
 
     if-eqz v2, :cond_0
 
-    .line 415
     :goto_0
     return v0
 
-    .line 411
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialogController;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
 
     iput-object p1, v2, Lcom/android/systemui/volume/VolumeDialogController$State;->effectsSuppressor:Landroid/content/ComponentName;
 
-    .line 412
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialogController;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
 
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialogController;->mContext:Landroid/content/Context;
@@ -1724,7 +1555,6 @@
 
     iput-object v3, v2, Lcom/android/systemui/volume/VolumeDialogController$State;->effectsSuppressorName:Ljava/lang/String;
 
-    .line 413
     const/16 v2, 0xe
 
     const/4 v3, 0x2
@@ -1747,7 +1577,6 @@
 
     move v0, v1
 
-    .line 415
     goto :goto_0
 .end method
 
@@ -1760,24 +1589,20 @@
 
     const/4 v0, 0x0
 
-    .line 442
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialogController;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
 
     iget v2, v2, Lcom/android/systemui/volume/VolumeDialogController$State;->ringerModeExternal:I
 
     if-ne p1, v2, :cond_0
 
-    .line 445
     :goto_0
     return v0
 
-    .line 443
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialogController;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
 
     iput p1, v2, Lcom/android/systemui/volume/VolumeDialogController$State;->ringerModeExternal:I
 
-    .line 444
     const/16 v2, 0xc
 
     new-array v3, v1, [Ljava/lang/Object;
@@ -1792,7 +1617,6 @@
 
     move v0, v1
 
-    .line 445
     goto :goto_0
 .end method
 
@@ -1805,24 +1629,20 @@
 
     const/4 v0, 0x0
 
-    .line 449
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialogController;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
 
     iget v2, v2, Lcom/android/systemui/volume/VolumeDialogController$State;->ringerModeInternal:I
 
     if-ne p1, v2, :cond_0
 
-    .line 452
     :goto_0
     return v0
 
-    .line 450
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialogController;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
 
     iput p1, v2, Lcom/android/systemui/volume/VolumeDialogController$State;->ringerModeInternal:I
 
-    .line 451
     const/16 v2, 0xb
 
     new-array v3, v1, [Ljava/lang/Object;
@@ -1837,7 +1657,6 @@
 
     move v0, v1
 
-    .line 452
     goto :goto_0
 .end method
 
@@ -1851,33 +1670,27 @@
 
     const/4 v1, 0x0
 
-    .line 363
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialogController;->streamStateW(I)Lcom/android/systemui/volume/VolumeDialogController$StreamState;
 
     move-result-object v0
 
-    .line 364
     .local v0, "ss":Lcom/android/systemui/volume/VolumeDialogController$StreamState;
     iget v3, v0, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->level:I
 
     if-ne v3, p2, :cond_0
 
-    .line 369
     :goto_0
     return v1
 
-    .line 365
     :cond_0
     iput p2, v0, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->level:I
 
-    .line 366
     invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialogController;->isLogWorthy(I)Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 367
     const/16 v3, 0xa
 
     const/4 v4, 0x2
@@ -1901,7 +1714,6 @@
     :cond_1
     move v1, v2
 
-    .line 369
     goto :goto_0
 .end method
 
@@ -1915,33 +1727,27 @@
 
     const/4 v1, 0x0
 
-    .line 386
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialogController;->streamStateW(I)Lcom/android/systemui/volume/VolumeDialogController$StreamState;
 
     move-result-object v0
 
-    .line 387
     .local v0, "ss":Lcom/android/systemui/volume/VolumeDialogController$StreamState;
     iget-boolean v3, v0, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->muted:Z
 
     if-ne v3, p2, :cond_0
 
-    .line 395
     :goto_0
     return v1
 
-    .line 388
     :cond_0
     iput-boolean p2, v0, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->muted:Z
 
-    .line 389
     invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialogController;->isLogWorthy(I)Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 390
     const/16 v3, 0xf
 
     const/4 v4, 0x2
@@ -1962,7 +1768,6 @@
 
     invoke-static {v3, v4}, Lcom/android/systemui/volume/Events;->writeEvent(I[Ljava/lang/Object;)V
 
-    .line 392
     :cond_1
     if-eqz p2, :cond_2
 
@@ -1972,7 +1777,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 393
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogController;->mAudio:Landroid/media/AudioManager;
 
     invoke-virtual {v1}, Landroid/media/AudioManager;->getRingerModeInternal()I
@@ -1984,7 +1788,6 @@
     :cond_2
     move v1, v2
 
-    .line 395
     goto :goto_0
 .end method
 
@@ -1994,12 +1797,10 @@
     .param p2, "routedToBluetooth"    # Z
 
     .prologue
-    .line 354
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialogController;->streamStateW(I)Lcom/android/systemui/volume/VolumeDialogController$StreamState;
 
     move-result-object v0
 
-    .line 355
     .local v0, "ss":Lcom/android/systemui/volume/VolumeDialogController$StreamState;
     iget-boolean v1, v0, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->routedToBluetooth:Z
 
@@ -2007,15 +1808,12 @@
 
     const/4 v1, 0x0
 
-    .line 359
     :goto_0
     return v1
 
-    .line 356
     :cond_0
     iput-boolean p2, v0, Lcom/android/systemui/volume/VolumeDialogController$StreamState;->routedToBluetooth:Z
 
-    .line 357
     sget-boolean v1, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v1, :cond_1
@@ -2052,7 +1850,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 359
     :cond_1
     const/4 v1, 0x1
 
@@ -2063,12 +1860,10 @@
     .locals 2
 
     .prologue
-    .line 403
     invoke-virtual {p0}, Lcom/android/systemui/volume/VolumeDialogController;->getZenModeConfig()Landroid/service/notification/ZenModeConfig;
 
     move-result-object v0
 
-    .line 404
     .local v0, "zenModeConfig":Landroid/service/notification/ZenModeConfig;
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogController;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
 
@@ -2082,17 +1877,14 @@
 
     const/4 v1, 0x0
 
-    .line 406
     :goto_0
     return v1
 
-    .line 405
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogController;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
 
     iput-object v0, v1, Lcom/android/systemui/volume/VolumeDialogController$State;->zenModeConfig:Landroid/service/notification/ZenModeConfig;
 
-    .line 406
     const/4 v1, 0x1
 
     goto :goto_0
@@ -2106,7 +1898,6 @@
 
     const/4 v1, 0x0
 
-    .line 433
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialogController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -2119,7 +1910,6 @@
 
     move-result v0
 
-    .line 435
     .local v0, "zen":I
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialogController;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
 
@@ -2127,17 +1917,14 @@
 
     if-ne v3, v0, :cond_0
 
-    .line 438
     :goto_0
     return v1
 
-    .line 436
     :cond_0
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialogController;->mState:Lcom/android/systemui/volume/VolumeDialogController$State;
 
     iput v0, v3, Lcom/android/systemui/volume/VolumeDialogController$State;->zenMode:I
 
-    .line 437
     const/16 v3, 0xd
 
     new-array v4, v2, [Ljava/lang/Object;
@@ -2152,7 +1939,6 @@
 
     move v1, v2
 
-    .line 438
     goto :goto_0
 .end method
 
@@ -2164,12 +1950,10 @@
     .param p2, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 193
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mCallbacks:Lcom/android/systemui/volume/VolumeDialogController$C;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/systemui/volume/VolumeDialogController$C;->add(Lcom/android/systemui/volume/VolumeDialogController$Callbacks;Landroid/os/Handler;)V
 
-    .line 194
     return-void
 .end method
 
@@ -2180,7 +1964,6 @@
     .param p3, "callbacks"    # Lcom/android/systemui/volume/MediaSessions$Callbacks;
 
     .prologue
-    .line 164
     new-instance v0, Lcom/android/systemui/volume/MediaSessions;
 
     invoke-direct {v0, p1, p2, p3}, Lcom/android/systemui/volume/MediaSessions;-><init>(Landroid/content/Context;Landroid/os/Looper;Lcom/android/systemui/volume/MediaSessions$Callbacks;)V
@@ -2192,14 +1975,12 @@
     .locals 2
 
     .prologue
-    .line 133
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mCallbacks:Lcom/android/systemui/volume/VolumeDialogController$C;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/VolumeDialogController$C;->onDismissRequested(I)V
 
-    .line 134
     return-void
 .end method
 
@@ -2210,7 +1991,6 @@
     .param p3, "args"    # [Ljava/lang/String;
 
     .prologue
-    .line 179
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2237,7 +2017,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 180
     const-string v0, "  mEnabled: "
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -2246,7 +2025,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 181
     const-string v0, "  mDestroyed: "
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -2255,7 +2033,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 182
     const-string v0, "  mVolumePolicy: "
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -2264,7 +2041,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 183
     const-string v0, "  mState: "
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -2279,7 +2055,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 184
     const-string v0, "  mShowDndTile: "
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -2288,7 +2063,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 185
     const-string v0, "  mHasVibrator: "
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -2297,7 +2071,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 186
     const-string v0, "  mRemoteStreams: "
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -2315,15 +2088,12 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 188
     invoke-virtual {p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 189
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mMediaSessions:Lcom/android/systemui/volume/MediaSessions;
 
     invoke-virtual {v0, p2}, Lcom/android/systemui/volume/MediaSessions;->dump(Ljava/io/PrintWriter;)V
 
-    .line 190
     return-void
 .end method
 
@@ -2331,7 +2101,6 @@
     .locals 1
 
     .prologue
-    .line 125
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mAudio:Landroid/media/AudioManager;
 
     return-object v0
@@ -2341,16 +2110,13 @@
     .locals 2
 
     .prologue
-    .line 201
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mDestroyed:Z
 
     if-eqz v0, :cond_0
 
-    .line 203
     :goto_0
     return-void
 
-    .line 202
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mWorker:Lcom/android/systemui/volume/VolumeDialogController$W;
 
@@ -2365,7 +2131,6 @@
     .locals 1
 
     .prologue
-    .line 129
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mNoMan:Landroid/app/NotificationManager;
 
     invoke-virtual {v0}, Landroid/app/NotificationManager;->getZenModeConfig()Landroid/service/notification/ZenModeConfig;
@@ -2379,7 +2144,6 @@
     .locals 1
 
     .prologue
-    .line 253
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mHasVibrator:Z
 
     return v0
@@ -2392,16 +2156,13 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 206
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mDestroyed:Z
 
     if-eqz v0, :cond_0
 
-    .line 208
     :goto_0
     return-void
 
-    .line 207
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialogController;->mWorker:Lcom/android/systemui/volume/VolumeDialogController$W;
 
@@ -2430,7 +2191,6 @@
     .locals 0
 
     .prologue
-    .line 268
     return-void
 .end method
 
@@ -2438,7 +2198,6 @@
     .locals 3
 
     .prologue
-    .line 138
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogController;->mAudio:Landroid/media/AudioManager;
 
@@ -2448,17 +2207,14 @@
     :try_end_0
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 143
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogController;->mVolumePolicy:Landroid/media/VolumePolicy;
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/volume/VolumeDialogController;->setVolumePolicy(Landroid/media/VolumePolicy;)V
 
-    .line 144
     iget-boolean v1, p0, Lcom/android/systemui/volume/VolumeDialogController;->mShowDndTile:Z
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/volume/VolumeDialogController;->showDndTile(Z)V
 
-    .line 146
     :try_start_1
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogController;->mMediaSessions:Lcom/android/systemui/volume/MediaSessions;
 
@@ -2466,15 +2222,12 @@
     :try_end_1
     .catch Ljava/lang/SecurityException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 150
     :goto_0
     return-void
 
-    .line 139
     :catch_0
     move-exception v0
 
-    .line 140
     .local v0, "e":Ljava/lang/SecurityException;
     sget-object v1, Lcom/android/systemui/volume/VolumeDialogController;->TAG:Ljava/lang/String;
 
@@ -2484,12 +2237,10 @@
 
     goto :goto_0
 
-    .line 147
     .end local v0    # "e":Ljava/lang/SecurityException;
     :catch_1
     move-exception v0
 
-    .line 148
     .restart local v0    # "e":Ljava/lang/SecurityException;
     sget-object v1, Lcom/android/systemui/volume/VolumeDialogController;->TAG:Ljava/lang/String;
 
@@ -2505,16 +2256,13 @@
     .param p1, "stream"    # I
 
     .prologue
-    .line 242
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mDestroyed:Z
 
     if-eqz v0, :cond_0
 
-    .line 244
     :goto_0
     return-void
 
-    .line 243
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mWorker:Lcom/android/systemui/volume/VolumeDialogController$W;
 
@@ -2537,16 +2285,13 @@
     .param p2, "external"    # Z
 
     .prologue
-    .line 217
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mDestroyed:Z
 
     if-eqz v0, :cond_0
 
-    .line 219
     :goto_0
     return-void
 
-    .line 218
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogController;->mWorker:Lcom/android/systemui/volume/VolumeDialogController$W;
 
@@ -2577,16 +2322,13 @@
     .param p2, "level"    # I
 
     .prologue
-    .line 237
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mDestroyed:Z
 
     if-eqz v0, :cond_0
 
-    .line 239
     :goto_0
     return-void
 
-    .line 238
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mWorker:Lcom/android/systemui/volume/VolumeDialogController$W;
 
@@ -2606,19 +2348,15 @@
     .param p1, "policy"    # Landroid/media/VolumePolicy;
 
     .prologue
-    .line 153
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialogController;->mVolumePolicy:Landroid/media/VolumePolicy;
 
-    .line 154
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogController;->mVolumePolicy:Landroid/media/VolumePolicy;
 
     if-nez v1, :cond_0
 
-    .line 160
     :goto_0
     return-void
 
-    .line 156
     :cond_0
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogController;->mAudio:Landroid/media/AudioManager;
@@ -2631,11 +2369,9 @@
 
     goto :goto_0
 
-    .line 157
     :catch_0
     move-exception v0
 
-    .line 158
     .local v0, "e":Ljava/lang/NoSuchMethodError;
     sget-object v1, Lcom/android/systemui/volume/VolumeDialogController;->TAG:Ljava/lang/String;
 
@@ -2651,7 +2387,6 @@
     .param p1, "visible"    # Z
 
     .prologue
-    .line 498
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_0
@@ -2662,13 +2397,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 499
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mContext:Landroid/content/Context;
 
     invoke-static {v0, p1}, Lcom/android/systemui/qs/tiles/DndTile;->setVisible(Landroid/content/Context;Z)V
 
-    .line 500
     return-void
 .end method
 
@@ -2678,22 +2411,18 @@
     .prologue
     const/16 v1, 0xd
 
-    .line 211
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mDestroyed:Z
 
     if-eqz v0, :cond_0
 
-    .line 214
     :goto_0
     return-void
 
-    .line 212
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mWorker:Lcom/android/systemui/volume/VolumeDialogController$W;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/VolumeDialogController$W;->removeMessages(I)V
 
-    .line 213
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mWorker:Lcom/android/systemui/volume/VolumeDialogController$W;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/VolumeDialogController$W;->sendEmptyMessage(I)Z
@@ -2705,19 +2434,16 @@
     .locals 4
 
     .prologue
-    .line 247
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mHasVibrator:Z
 
     if-eqz v0, :cond_0
 
-    .line 248
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController;->mVibrator:Landroid/os/Vibrator;
 
     const-wide/16 v2, 0x32
 
     invoke-virtual {v0, v2, v3}, Landroid/os/Vibrator;->vibrate(J)V
 
-    .line 250
     :cond_0
     return-void
 .end method

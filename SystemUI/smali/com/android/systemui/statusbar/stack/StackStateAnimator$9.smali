@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 702
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$9;->this$0:Lcom/android/systemui/statusbar/stack/StackStateAnimator;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -40,12 +39,10 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 716
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$9;->mWasCancelled:Z
 
-    .line 717
     return-void
 .end method
 
@@ -54,7 +51,6 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 707
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$9;->this$0:Lcom/android/systemui/statusbar/stack/StackStateAnimator;
 
     # getter for: Lcom/android/systemui/statusbar/stack/StackStateAnimator;->mAnimatorSet:Ljava/util/Set;
@@ -64,7 +60,6 @@
 
     invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 708
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$9;->this$0:Lcom/android/systemui/statusbar/stack/StackStateAnimator;
 
     # getter for: Lcom/android/systemui/statusbar/stack/StackStateAnimator;->mAnimatorSet:Ljava/util/Set;
@@ -82,13 +77,11 @@
 
     if-nez v0, :cond_0
 
-    .line 709
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$9;->this$0:Lcom/android/systemui/statusbar/stack/StackStateAnimator;
 
     # invokes: Lcom/android/systemui/statusbar/stack/StackStateAnimator;->onAnimationFinished()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/stack/StackStateAnimator;->access$100(Lcom/android/systemui/statusbar/stack/StackStateAnimator;)V
 
-    .line 711
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$9;->this$0:Lcom/android/systemui/statusbar/stack/StackStateAnimator;
 
@@ -99,7 +92,6 @@
 
     invoke-virtual {v0, p0}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 712
     return-void
 .end method
 
@@ -108,11 +100,9 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 721
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$9;->mWasCancelled:Z
 
-    .line 722
     return-void
 .end method

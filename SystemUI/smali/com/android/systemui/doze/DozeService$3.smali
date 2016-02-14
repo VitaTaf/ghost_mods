@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 258
     iput-object p1, p0, Lcom/android/systemui/doze/DozeService$3;->this$0:Lcom/android/systemui/doze/DozeService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 2
 
     .prologue
-    .line 268
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$3;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mPulsing:Z
@@ -59,7 +57,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 269
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$3;->this$0:Lcom/android/systemui/doze/DozeService;
 
     const/4 v1, 0x0
@@ -67,13 +64,11 @@
     # setter for: Lcom/android/systemui/doze/DozeService;->mPulsing:Z
     invoke-static {v0, v1}, Lcom/android/systemui/doze/DozeService;->access$202(Lcom/android/systemui/doze/DozeService;Z)Z
 
-    .line 270
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$3;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # invokes: Lcom/android/systemui/doze/DozeService;->turnDisplayOff()V
     invoke-static {v0}, Lcom/android/systemui/doze/DozeService;->access$600(Lcom/android/systemui/doze/DozeService;)V
 
-    .line 272
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$3;->this$0:Lcom/android/systemui/doze/DozeService;
 
@@ -84,7 +79,6 @@
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 273
     return-void
 .end method
 
@@ -92,7 +86,6 @@
     .locals 1
 
     .prologue
-    .line 261
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$3;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mPulsing:Z
@@ -111,13 +104,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 262
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$3;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # invokes: Lcom/android/systemui/doze/DozeService;->turnDisplayOn()V
     invoke-static {v0}, Lcom/android/systemui/doze/DozeService;->access$500(Lcom/android/systemui/doze/DozeService;)V
 
-    .line 264
     :cond_0
     return-void
 .end method

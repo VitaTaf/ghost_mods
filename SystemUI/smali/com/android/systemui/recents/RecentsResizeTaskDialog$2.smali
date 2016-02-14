@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 113
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsResizeTaskDialog$2;->this$0:Lcom/android/systemui/recents/RecentsResizeTaskDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,11 +41,9 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 116
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsResizeTaskDialog$2;->this$0:Lcom/android/systemui/recents/RecentsResizeTaskDialog;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/RecentsResizeTaskDialog;->dismiss()V
 
-    .line 117
     return-void
 .end method

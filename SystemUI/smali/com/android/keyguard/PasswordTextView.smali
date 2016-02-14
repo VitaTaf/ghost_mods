@@ -62,12 +62,10 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 97
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/keyguard/PasswordTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 98
     return-void
 .end method
 
@@ -77,12 +75,10 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 101
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/keyguard/PasswordTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 102
     return-void
 .end method
 
@@ -93,12 +89,10 @@
     .param p3, "defStyleAttr"    # I
 
     .prologue
-    .line 105
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, p3, v0}, Lcom/android/keyguard/PasswordTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    .line 106
     return-void
 .end method
 
@@ -114,49 +108,40 @@
 
     const/4 v1, 0x1
 
-    .line 110
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    .line 84
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v3, p0, Lcom/android/keyguard/PasswordTextView;->mTextChars:Ljava/util/ArrayList;
 
-    .line 85
     const-string v3, ""
 
     iput-object v3, p0, Lcom/android/keyguard/PasswordTextView;->mText:Ljava/lang/String;
 
-    .line 86
     new-instance v3, Ljava/util/Stack;
 
     invoke-direct {v3}, Ljava/util/Stack;-><init>()V
 
     iput-object v3, p0, Lcom/android/keyguard/PasswordTextView;->mCharPool:Ljava/util/Stack;
 
-    .line 90
     new-instance v3, Landroid/graphics/Paint;
 
     invoke-direct {v3}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v3, p0, Lcom/android/keyguard/PasswordTextView;->mDrawPaint:Landroid/graphics/Paint;
 
-    .line 111
     invoke-virtual {p0, v1}, Lcom/android/keyguard/PasswordTextView;->setFocusableInTouchMode(Z)V
 
-    .line 112
     invoke-virtual {p0, v1}, Lcom/android/keyguard/PasswordTextView;->setFocusable(Z)V
 
-    .line 113
     sget-object v3, Lcom/android/keyguard/R$styleable;->PasswordTextView:[I
 
     invoke-virtual {p1, p2, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 115
     .local v0, "a":Landroid/content/res/TypedArray;
     :try_start_0
     sget v3, Lcom/android/keyguard/R$styleable;->PasswordTextView_scaledTextSize:I
@@ -171,31 +156,26 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 117
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 119
     iget-object v3, p0, Lcom/android/keyguard/PasswordTextView;->mDrawPaint:Landroid/graphics/Paint;
 
     const/16 v4, 0x81
 
     invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setFlags(I)V
 
-    .line 120
     iget-object v3, p0, Lcom/android/keyguard/PasswordTextView;->mDrawPaint:Landroid/graphics/Paint;
 
     sget-object v4, Landroid/graphics/Paint$Align;->CENTER:Landroid/graphics/Paint$Align;
 
     invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setTextAlign(Landroid/graphics/Paint$Align;)V
 
-    .line 121
     iget-object v3, p0, Lcom/android/keyguard/PasswordTextView;->mDrawPaint:Landroid/graphics/Paint;
 
     const/4 v4, -0x1
 
     invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 122
     iget-object v3, p0, Lcom/android/keyguard/PasswordTextView;->mDrawPaint:Landroid/graphics/Paint;
 
     const-string v4, "sans-serif-light"
@@ -206,7 +186,6 @@
 
     invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 123
     invoke-virtual {p0}, Lcom/android/keyguard/PasswordTextView;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -223,7 +202,6 @@
 
     iput v3, p0, Lcom/android/keyguard/PasswordTextView;->mDotSize:I
 
-    .line 124
     invoke-virtual {p0}, Lcom/android/keyguard/PasswordTextView;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -240,7 +218,6 @@
 
     iput v3, p0, Lcom/android/keyguard/PasswordTextView;->mCharPadding:I
 
-    .line 126
     iget-object v3, p0, Lcom/android/keyguard/PasswordTextView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -258,7 +235,6 @@
     :goto_0
     iput-boolean v1, p0, Lcom/android/keyguard/PasswordTextView;->mShowPassword:Z
 
-    .line 128
     iget-object v1, p0, Lcom/android/keyguard/PasswordTextView;->mContext:Landroid/content/Context;
 
     const v2, 0x10c000e
@@ -269,7 +245,6 @@
 
     iput-object v1, p0, Lcom/android/keyguard/PasswordTextView;->mAppearInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 130
     iget-object v1, p0, Lcom/android/keyguard/PasswordTextView;->mContext:Landroid/content/Context;
 
     const v2, 0x10c000f
@@ -280,7 +255,6 @@
 
     iput-object v1, p0, Lcom/android/keyguard/PasswordTextView;->mDisappearInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 132
     iget-object v1, p0, Lcom/android/keyguard/PasswordTextView;->mContext:Landroid/content/Context;
 
     const v2, 0x10c000d
@@ -291,7 +265,6 @@
 
     iput-object v1, p0, Lcom/android/keyguard/PasswordTextView;->mFastOutSlowInInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 134
     iget-object v1, p0, Lcom/android/keyguard/PasswordTextView;->mContext:Landroid/content/Context;
 
     const-string v2, "power"
@@ -304,10 +277,8 @@
 
     iput-object v1, p0, Lcom/android/keyguard/PasswordTextView;->mPM:Landroid/os/PowerManager;
 
-    .line 135
     return-void
 
-    .line 117
     :catchall_0
     move-exception v1
 
@@ -318,7 +289,6 @@
     :cond_0
     move v1, v2
 
-    .line 126
     goto :goto_0
 .end method
 
@@ -327,7 +297,6 @@
     .param p0, "x0"    # Lcom/android/keyguard/PasswordTextView;
 
     .prologue
-    .line 50
     iget v0, p0, Lcom/android/keyguard/PasswordTextView;->mDotSize:I
 
     return v0
@@ -338,7 +307,6 @@
     .param p0, "x0"    # Lcom/android/keyguard/PasswordTextView;
 
     .prologue
-    .line 50
     iget v0, p0, Lcom/android/keyguard/PasswordTextView;->mCharPadding:I
 
     return v0
@@ -349,7 +317,6 @@
     .param p0, "x0"    # Lcom/android/keyguard/PasswordTextView;
 
     .prologue
-    .line 50
     iget-object v0, p0, Lcom/android/keyguard/PasswordTextView;->mTextChars:Ljava/util/ArrayList;
 
     return-object v0
@@ -360,7 +327,6 @@
     .param p0, "x0"    # Lcom/android/keyguard/PasswordTextView;
 
     .prologue
-    .line 50
     iget-object v0, p0, Lcom/android/keyguard/PasswordTextView;->mCharPool:Ljava/util/Stack;
 
     return-object v0
@@ -371,7 +337,6 @@
     .param p0, "x0"    # Lcom/android/keyguard/PasswordTextView;
 
     .prologue
-    .line 50
     iget-boolean v0, p0, Lcom/android/keyguard/PasswordTextView;->mShowPassword:Z
 
     return v0
@@ -382,7 +347,6 @@
     .param p0, "x0"    # Lcom/android/keyguard/PasswordTextView;
 
     .prologue
-    .line 50
     iget-object v0, p0, Lcom/android/keyguard/PasswordTextView;->mDisappearInterpolator:Landroid/view/animation/Interpolator;
 
     return-object v0
@@ -393,7 +357,6 @@
     .param p0, "x0"    # Lcom/android/keyguard/PasswordTextView;
 
     .prologue
-    .line 50
     iget-object v0, p0, Lcom/android/keyguard/PasswordTextView;->mAppearInterpolator:Landroid/view/animation/Interpolator;
 
     return-object v0
@@ -404,7 +367,6 @@
     .param p0, "x0"    # Lcom/android/keyguard/PasswordTextView;
 
     .prologue
-    .line 50
     iget-object v0, p0, Lcom/android/keyguard/PasswordTextView;->mDrawPaint:Landroid/graphics/Paint;
 
     return-object v0
@@ -414,7 +376,6 @@
     .locals 6
 
     .prologue
-    .line 160
     iget v2, p0, Lcom/android/keyguard/PasswordTextView;->mTextHeightRaw:I
 
     int-to-float v2, v2
@@ -431,18 +392,15 @@
 
     mul-float v1, v2, v3
 
-    .line 161
     .local v1, "textHeight":F
     iget-object v2, p0, Lcom/android/keyguard/PasswordTextView;->mDrawPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v2, v1}, Landroid/graphics/Paint;->setTextSize(F)V
 
-    .line 162
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    .line 163
     .local v0, "bounds":Landroid/graphics/Rect;
     iget-object v2, p0, Lcom/android/keyguard/PasswordTextView;->mDrawPaint:Landroid/graphics/Paint;
 
@@ -454,7 +412,6 @@
 
     invoke-virtual {v2, v3, v4, v5, v0}, Landroid/graphics/Paint;->getTextBounds(Ljava/lang/String;IILandroid/graphics/Rect;)V
 
-    .line 164
     return-object v0
 .end method
 
@@ -462,10 +419,8 @@
     .locals 9
 
     .prologue
-    .line 168
     const/4 v5, 0x0
 
-    .line 169
     .local v5, "width":I
     iget-object v6, p0, Lcom/android/keyguard/PasswordTextView;->mTextChars:Ljava/util/ArrayList;
 
@@ -473,13 +428,11 @@
 
     move-result v4
 
-    .line 170
     .local v4, "length":I
     invoke-direct {p0}, Lcom/android/keyguard/PasswordTextView;->getCharBounds()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 171
     .local v0, "bounds":Landroid/graphics/Rect;
     iget v6, v0, Landroid/graphics/Rect;->right:I
 
@@ -487,7 +440,6 @@
 
     sub-int v1, v6, v7
 
-    .line 172
     .local v1, "charLength":I
     const/4 v3, 0x0
 
@@ -495,7 +447,6 @@
     :goto_0
     if-ge v3, v4, :cond_1
 
-    .line 173
     iget-object v6, p0, Lcom/android/keyguard/PasswordTextView;->mTextChars:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -504,11 +455,9 @@
 
     check-cast v2, Lcom/android/keyguard/PasswordTextView$CharState;
 
-    .line 174
     .local v2, "charState":Lcom/android/keyguard/PasswordTextView$CharState;
     if-eqz v3, :cond_0
 
-    .line 175
     int-to-float v6, v5
 
     iget v7, p0, Lcom/android/keyguard/PasswordTextView;->mCharPadding:I
@@ -523,7 +472,6 @@
 
     float-to-int v5, v6
 
-    .line 177
     :cond_0
     int-to-float v6, v5
 
@@ -537,12 +485,10 @@
 
     float-to-int v5, v6
 
-    .line 172
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 179
     .end local v2    # "charState":Lcom/android/keyguard/PasswordTextView$CharState;
     :cond_1
     int-to-float v6, v5
@@ -555,7 +501,6 @@
     .param p1, "c"    # C
 
     .prologue
-    .line 231
     iget-object v1, p0, Lcom/android/keyguard/PasswordTextView;->mCharPool:Ljava/util/Stack;
 
     invoke-virtual {v1}, Ljava/util/Stack;->isEmpty()Z
@@ -564,22 +509,18 @@
 
     if-eqz v1, :cond_0
 
-    .line 232
     new-instance v0, Lcom/android/keyguard/PasswordTextView$CharState;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, p0, v1}, Lcom/android/keyguard/PasswordTextView$CharState;-><init>(Lcom/android/keyguard/PasswordTextView;Lcom/android/keyguard/PasswordTextView$1;)V
 
-    .line 237
     .local v0, "charState":Lcom/android/keyguard/PasswordTextView$CharState;
     :goto_0
     iput-char p1, v0, Lcom/android/keyguard/PasswordTextView$CharState;->whichChar:C
 
-    .line 238
     return-object v0
 
-    .line 234
     .end local v0    # "charState":Lcom/android/keyguard/PasswordTextView$CharState;
     :cond_0
     iget-object v1, p0, Lcom/android/keyguard/PasswordTextView;->mCharPool:Ljava/util/Stack;
@@ -590,7 +531,6 @@
 
     check-cast v0, Lcom/android/keyguard/PasswordTextView$CharState;
 
-    .line 235
     .restart local v0    # "charState":Lcom/android/keyguard/PasswordTextView$CharState;
     invoke-virtual {v0}, Lcom/android/keyguard/PasswordTextView$CharState;->reset()V
 
@@ -605,7 +545,6 @@
 
     const/4 v1, 0x0
 
-    .line 332
     iget-object v2, p0, Lcom/android/keyguard/PasswordTextView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -635,7 +574,6 @@
     .locals 4
 
     .prologue
-    .line 210
     iget-object v0, p0, Lcom/android/keyguard/PasswordTextView;->mPM:Landroid/os/PowerManager;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -646,7 +584,6 @@
 
     invoke-virtual {v0, v2, v3, v1}, Landroid/os/PowerManager;->userActivity(JZ)V
 
-    .line 211
     return-void
 .end method
 
@@ -659,18 +596,15 @@
     .prologue
     const/4 v7, 0x1
 
-    .line 184
     iget-object v5, p0, Lcom/android/keyguard/PasswordTextView;->mTextChars:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
-    .line 185
     .local v4, "visibleChars":I
     iget-object v3, p0, Lcom/android/keyguard/PasswordTextView;->mText:Ljava/lang/String;
 
-    .line 186
     .local v3, "textbefore":Ljava/lang/String;
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -692,36 +626,29 @@
 
     iput-object v5, p0, Lcom/android/keyguard/PasswordTextView;->mText:Ljava/lang/String;
 
-    .line 187
     iget-object v5, p0, Lcom/android/keyguard/PasswordTextView;->mText:Ljava/lang/String;
 
     invoke-virtual {v5}, Ljava/lang/String;->length()I
 
     move-result v1
 
-    .line 189
     .local v1, "newLength":I
     if-le v1, v4, :cond_1
 
-    .line 190
     invoke-direct {p0, p1}, Lcom/android/keyguard/PasswordTextView;->obtainCharState(C)Lcom/android/keyguard/PasswordTextView$CharState;
 
     move-result-object v0
 
-    .line 191
     .local v0, "charState":Lcom/android/keyguard/PasswordTextView$CharState;
     iget-object v5, p0, Lcom/android/keyguard/PasswordTextView;->mTextChars:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 196
     :goto_0
     invoke-virtual {v0}, Lcom/android/keyguard/PasswordTextView$CharState;->startAppearAnimation()V
 
-    .line 199
     if-le v1, v7, :cond_0
 
-    .line 200
     iget-object v5, p0, Lcom/android/keyguard/PasswordTextView;->mTextChars:Ljava/util/ArrayList;
 
     add-int/lit8 v6, v1, -0x2
@@ -732,21 +659,17 @@
 
     check-cast v2, Lcom/android/keyguard/PasswordTextView$CharState;
 
-    .line 201
     .local v2, "previousState":Lcom/android/keyguard/PasswordTextView$CharState;
     iget-boolean v5, v2, Lcom/android/keyguard/PasswordTextView$CharState;->isDotSwapPending:Z
 
     if-eqz v5, :cond_0
 
-    .line 202
     invoke-virtual {v2}, Lcom/android/keyguard/PasswordTextView$CharState;->swapToDotWhenAppearFinished()V
 
-    .line 205
     .end local v2    # "previousState":Lcom/android/keyguard/PasswordTextView$CharState;
     :cond_0
     invoke-direct {p0}, Lcom/android/keyguard/PasswordTextView;->userActivity()V
 
-    .line 206
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     move-result v5
@@ -755,10 +678,8 @@
 
     invoke-virtual {p0, v3, v5, v6, v7}, Lcom/android/keyguard/PasswordTextView;->sendAccessibilityEventTypeViewTextChanged(Ljava/lang/String;III)V
 
-    .line 207
     return-void
 
-    .line 193
     .end local v0    # "charState":Lcom/android/keyguard/PasswordTextView$CharState;
     :cond_1
     iget-object v5, p0, Lcom/android/keyguard/PasswordTextView;->mTextChars:Ljava/util/ArrayList;
@@ -771,7 +692,6 @@
 
     check-cast v0, Lcom/android/keyguard/PasswordTextView$CharState;
 
-    .line 194
     .restart local v0    # "charState":Lcom/android/keyguard/PasswordTextView$CharState;
     iput-char p1, v0, Lcom/android/keyguard/PasswordTextView$CharState;->whichChar:C
 
@@ -786,22 +706,18 @@
 
     const/4 v5, 0x0
 
-    .line 214
     iget-object v3, p0, Lcom/android/keyguard/PasswordTextView;->mText:Ljava/lang/String;
 
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     move-result v1
 
-    .line 215
     .local v1, "length":I
     iget-object v2, p0, Lcom/android/keyguard/PasswordTextView;->mText:Ljava/lang/String;
 
-    .line 216
     .local v2, "textbefore":Ljava/lang/String;
     if-lez v1, :cond_0
 
-    .line 217
     iget-object v3, p0, Lcom/android/keyguard/PasswordTextView;->mText:Ljava/lang/String;
 
     add-int/lit8 v4, v1, -0x1
@@ -812,7 +728,6 @@
 
     iput-object v3, p0, Lcom/android/keyguard/PasswordTextView;->mText:Ljava/lang/String;
 
-    .line 218
     iget-object v3, p0, Lcom/android/keyguard/PasswordTextView;->mTextChars:Ljava/util/ArrayList;
 
     add-int/lit8 v4, v1, -0x1
@@ -823,16 +738,13 @@
 
     check-cast v0, Lcom/android/keyguard/PasswordTextView$CharState;
 
-    .line 219
     .local v0, "charState":Lcom/android/keyguard/PasswordTextView$CharState;
     invoke-virtual {v0, v6, v7, v6, v7}, Lcom/android/keyguard/PasswordTextView$CharState;->startRemoveAnimation(JJ)V
 
-    .line 221
     .end local v0    # "charState":Lcom/android/keyguard/PasswordTextView$CharState;
     :cond_0
     invoke-direct {p0}, Lcom/android/keyguard/PasswordTextView;->userActivity()V
 
-    .line 222
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
     move-result v3
@@ -843,7 +755,6 @@
 
     invoke-virtual {p0, v2, v3, v4, v5}, Lcom/android/keyguard/PasswordTextView;->sendAccessibilityEventTypeViewTextChanged(Ljava/lang/String;III)V
 
-    .line 223
     return-void
 .end method
 
@@ -851,7 +762,6 @@
     .locals 1
 
     .prologue
-    .line 226
     iget-object v0, p0, Lcom/android/keyguard/PasswordTextView;->mText:Ljava/lang/String;
 
     return-object v0
@@ -861,7 +771,6 @@
     .locals 1
 
     .prologue
-    .line 156
     const/4 v0, 0x0
 
     return v0
@@ -872,12 +781,10 @@
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 139
     invoke-direct {p0}, Lcom/android/keyguard/PasswordTextView;->getDrawingWidth()F
 
     move-result v10
 
-    .line 140
     .local v10, "totalDrawingWidth":F
     invoke-virtual {p0}, Lcom/android/keyguard/PasswordTextView;->getWidth()I
 
@@ -893,7 +800,6 @@
 
     sub-float v2, v1, v11
 
-    .line 141
     .local v2, "currentDrawPosition":F
     iget-object v1, p0, Lcom/android/keyguard/PasswordTextView;->mTextChars:Ljava/util/ArrayList;
 
@@ -901,13 +807,11 @@
 
     move-result v9
 
-    .line 142
     .local v9, "length":I
     invoke-direct {p0}, Lcom/android/keyguard/PasswordTextView;->getCharBounds()Landroid/graphics/Rect;
 
     move-result-object v6
 
-    .line 143
     .local v6, "bounds":Landroid/graphics/Rect;
     iget v1, v6, Landroid/graphics/Rect;->bottom:I
 
@@ -915,7 +819,6 @@
 
     sub-int v3, v1, v11
 
-    .line 144
     .local v3, "charHeight":I
     invoke-virtual {p0}, Lcom/android/keyguard/PasswordTextView;->getHeight()I
 
@@ -925,7 +828,6 @@
 
     int-to-float v4, v1
 
-    .line 145
     .local v4, "yPosition":F
     iget v1, v6, Landroid/graphics/Rect;->right:I
 
@@ -935,7 +837,6 @@
 
     int-to-float v5, v1
 
-    .line 146
     .local v5, "charLength":F
     const/4 v8, 0x0
 
@@ -943,7 +844,6 @@
     :goto_0
     if-ge v8, v9, :cond_0
 
-    .line 147
     iget-object v1, p0, Lcom/android/keyguard/PasswordTextView;->mTextChars:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -955,21 +855,17 @@
     .local v0, "charState":Lcom/android/keyguard/PasswordTextView$CharState;
     move-object v1, p1
 
-    .line 148
     invoke-virtual/range {v0 .. v5}, Lcom/android/keyguard/PasswordTextView$CharState;->draw(Landroid/graphics/Canvas;FIFF)F
 
     move-result v7
 
-    .line 150
     .local v7, "charWidth":F
     add-float/2addr v2, v7
 
-    .line 146
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_0
 
-    .line 152
     .end local v0    # "charState":Lcom/android/keyguard/PasswordTextView$CharState;
     .end local v7    # "charWidth":F
     :cond_0
@@ -981,10 +877,8 @@
     .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
     .prologue
-    .line 293
     invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 295
     const-class v0, Lcom/android/keyguard/PasswordTextView;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -993,12 +887,10 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 296
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setPassword(Z)V
 
-    .line 297
     return-void
 .end method
 
@@ -1009,10 +901,8 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 313
     invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 315
     const-class v0, Lcom/android/keyguard/PasswordTextView;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -1021,31 +911,25 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 316
     invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setPassword(Z)V
 
-    .line 318
     invoke-direct {p0}, Lcom/android/keyguard/PasswordTextView;->shouldSpeakPasswordsForAccessibility()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 319
     iget-object v0, p0, Lcom/android/keyguard/PasswordTextView;->mText:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
 
-    .line 322
     :cond_0
     invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEditable(Z)V
 
-    .line 324
     const/16 v0, 0x10
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setInputType(I)V
 
-    .line 325
     return-void
 .end method
 
@@ -1054,20 +938,16 @@
     .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
     .prologue
-    .line 301
     invoke-super {p0, p1}, Landroid/view/View;->onPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 303
     invoke-direct {p0}, Lcom/android/keyguard/PasswordTextView;->shouldSpeakPasswordsForAccessibility()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 304
     iget-object v0, p0, Lcom/android/keyguard/PasswordTextView;->mText:Ljava/lang/String;
 
-    .line 305
     .local v0, "text":Ljava/lang/CharSequence;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1075,14 +955,12 @@
 
     if-nez v1, :cond_0
 
-    .line 306
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getText()Ljava/util/List;
 
     move-result-object v1
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 309
     .end local v0    # "text":Ljava/lang/CharSequence;
     :cond_0
     return-void
@@ -1093,14 +971,12 @@
     .param p1, "animated"    # Z
 
     .prologue
-    .line 242
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/keyguard/PasswordTextView;->mText:Ljava/lang/String;
 
     move-object/from16 v18, v0
 
-    .line 243
     .local v18, "textbefore":Ljava/lang/String;
     const-string v19, ""
 
@@ -1110,7 +986,6 @@
 
     iput-object v0, v1, Lcom/android/keyguard/PasswordTextView;->mText:Ljava/lang/String;
 
-    .line 244
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/keyguard/PasswordTextView;->mTextChars:Ljava/util/ArrayList;
@@ -1121,17 +996,14 @@
 
     move-result v12
 
-    .line 245
     .local v12, "length":I
     add-int/lit8 v19, v12, -0x1
 
     div-int/lit8 v13, v19, 0x2
 
-    .line 246
     .local v13, "middleIndex":I
     const-wide/16 v8, 0x28
 
-    .line 247
     .local v8, "delayPerElement":J
     const/4 v11, 0x0
 
@@ -1139,7 +1011,6 @@
     :goto_0
     if-ge v11, v12, :cond_2
 
-    .line 248
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/keyguard/PasswordTextView;->mTextChars:Ljava/util/ArrayList;
@@ -1154,17 +1025,13 @@
 
     check-cast v6, Lcom/android/keyguard/PasswordTextView$CharState;
 
-    .line 249
     .local v6, "charState":Lcom/android/keyguard/PasswordTextView$CharState;
     if-eqz p1, :cond_1
 
-    .line 251
     if-gt v11, v13, :cond_0
 
-    .line 252
     mul-int/lit8 v7, v11, 0x2
 
-    .line 257
     .local v7, "delayIndex":I
     :goto_1
     int-to-long v0, v7
@@ -1173,7 +1040,6 @@
 
     mul-long v16, v20, v8
 
-    .line 258
     .local v16, "startDelay":J
     const-wide/16 v20, 0xc8
 
@@ -1185,7 +1051,6 @@
 
     move-result-wide v16
 
-    .line 259
     add-int/lit8 v19, v12, -0x1
 
     move/from16 v0, v19
@@ -1196,7 +1061,6 @@
 
     mul-long v14, v8, v20
 
-    .line 260
     .local v14, "maxDelay":J
     const-wide/16 v20, 0xc8
 
@@ -1210,16 +1074,13 @@
 
     add-long v14, v20, v22
 
-    .line 261
     move-wide/from16 v0, v16
 
     invoke-virtual {v6, v0, v1, v14, v15}, Lcom/android/keyguard/PasswordTextView$CharState;->startRemoveAnimation(JJ)V
 
-    .line 262
     # invokes: Lcom/android/keyguard/PasswordTextView$CharState;->removeDotSwapCallbacks()V
     invoke-static {v6}, Lcom/android/keyguard/PasswordTextView$CharState;->access$100(Lcom/android/keyguard/PasswordTextView$CharState;)V
 
-    .line 247
     .end local v7    # "delayIndex":I
     .end local v14    # "maxDelay":J
     .end local v16    # "startDelay":J
@@ -1228,11 +1089,9 @@
 
     goto :goto_0
 
-    .line 254
     :cond_0
     sub-int v10, v11, v13
 
-    .line 255
     .local v10, "distToMiddle":I
     add-int/lit8 v19, v12, -0x1
 
@@ -1245,7 +1104,6 @@
     .restart local v7    # "delayIndex":I
     goto :goto_1
 
-    .line 264
     .end local v7    # "delayIndex":I
     .end local v10    # "distToMiddle":I
     :cond_1
@@ -1261,12 +1119,10 @@
 
     goto :goto_2
 
-    .line 267
     .end local v6    # "charState":Lcom/android/keyguard/PasswordTextView$CharState;
     :cond_2
     if-nez p1, :cond_3
 
-    .line 268
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/keyguard/PasswordTextView;->mTextChars:Ljava/util/ArrayList;
@@ -1275,7 +1131,6 @@
 
     invoke-virtual/range {v19 .. v19}, Ljava/util/ArrayList;->clear()V
 
-    .line 270
     :cond_3
     const/16 v19, 0x0
 
@@ -1297,7 +1152,6 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/keyguard/PasswordTextView;->sendAccessibilityEventTypeViewTextChanged(Ljava/lang/String;III)V
 
-    .line 271
     return-void
 .end method
 
@@ -1309,7 +1163,6 @@
     .param p4, "addedCount"    # I
 
     .prologue
-    .line 275
     iget-object v1, p0, Lcom/android/keyguard/PasswordTextView;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
@@ -1340,7 +1193,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 277
     :cond_0
     invoke-direct {p0}, Lcom/android/keyguard/PasswordTextView;->shouldSpeakPasswordsForAccessibility()Z
 
@@ -1348,10 +1200,8 @@
 
     if-nez v1, :cond_1
 
-    .line 278
     const/4 p1, 0x0
 
-    .line 280
     :cond_1
     const/16 v1, 0x10
 
@@ -1359,28 +1209,21 @@
 
     move-result-object v0
 
-    .line 282
     .local v0, "event":Landroid/view/accessibility/AccessibilityEvent;
     invoke-virtual {v0, p2}, Landroid/view/accessibility/AccessibilityEvent;->setFromIndex(I)V
 
-    .line 283
     invoke-virtual {v0, p3}, Landroid/view/accessibility/AccessibilityEvent;->setRemovedCount(I)V
 
-    .line 284
     invoke-virtual {v0, p4}, Landroid/view/accessibility/AccessibilityEvent;->setAddedCount(I)V
 
-    .line 285
     invoke-virtual {v0, p1}, Landroid/view/accessibility/AccessibilityEvent;->setBeforeText(Ljava/lang/CharSequence;)V
 
-    .line 286
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityEvent;->setPassword(Z)V
 
-    .line 287
     invoke-virtual {p0, v0}, Lcom/android/keyguard/PasswordTextView;->sendAccessibilityEventUnchecked(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 289
     .end local v0    # "event":Landroid/view/accessibility/AccessibilityEvent;
     :cond_2
     return-void

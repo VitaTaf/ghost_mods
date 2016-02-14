@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 151
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher$1;->this$0:Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 154
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher$1;->this$0:Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher;
 
     # getter for: Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher;->mUserSwitcher:Landroid/view/ViewGroup;
@@ -52,7 +50,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setClipChildren(Z)V
 
-    .line 155
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher$1;->this$0:Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher;
 
     # getter for: Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher;->mUserSwitcher:Landroid/view/ViewGroup;
@@ -62,6 +59,5 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setClipToPadding(Z)V
 
-    .line 156
     return-void
 .end method

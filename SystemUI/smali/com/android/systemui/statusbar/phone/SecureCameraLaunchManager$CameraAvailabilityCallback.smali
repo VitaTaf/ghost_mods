@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 93
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager$CameraAvailabilityCallback;->this$0:Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager;
 
     invoke-direct {p0}, Landroid/hardware/camera2/CameraManager$AvailabilityCallback;-><init>()V
@@ -37,7 +36,6 @@
     .param p2, "x1"    # Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager$1;
 
     .prologue
-    .line 93
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager$CameraAvailabilityCallback;-><init>(Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager;)V
 
     return-void
@@ -50,7 +48,6 @@
     .param p1, "cameraId"    # Ljava/lang/String;
 
     .prologue
-    .line 103
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager$CameraAvailabilityCallback;->this$0:Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager;
 
     # getter for: Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager;->mCameraAvailabilityMap:Ljava/util/Map;
@@ -66,7 +63,6 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 109
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager$CameraAvailabilityCallback;->this$0:Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager;
 
     # getter for: Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager;->mWaitingToLaunchSecureCamera:Z
@@ -85,7 +81,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 110
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager$CameraAvailabilityCallback;->this$0:Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager;
 
     # getter for: Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager;->mKeyguardBottomArea:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
@@ -95,7 +90,6 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->launchCamera()V
 
-    .line 111
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager$CameraAvailabilityCallback;->this$0:Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager;
 
     const/4 v1, 0x0
@@ -103,7 +97,6 @@
     # setter for: Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager;->mWaitingToLaunchSecureCamera:Z
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager;->access$102(Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager;Z)Z
 
-    .line 114
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager$CameraAvailabilityCallback;->this$0:Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager;
 
     # getter for: Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager;->mHandler:Landroid/os/Handler;
@@ -120,7 +113,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 116
     :cond_0
     return-void
 .end method
@@ -130,7 +122,6 @@
     .param p1, "cameraId"    # Ljava/lang/String;
 
     .prologue
-    .line 97
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager$CameraAvailabilityCallback;->this$0:Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager;
 
     # getter for: Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager;->mCameraAvailabilityMap:Ljava/util/Map;
@@ -146,6 +137,5 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 98
     return-void
 .end method

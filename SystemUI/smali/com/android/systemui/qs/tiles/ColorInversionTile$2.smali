@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 97
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile$2;->this$0:Lcom/android/systemui/qs/tiles/ColorInversionTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,12 +39,10 @@
     .locals 1
 
     .prologue
-    .line 100
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile$2;->this$0:Lcom/android/systemui/qs/tiles/ColorInversionTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/ColorInversionTile;->refreshState()V
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/ColorInversionTile;->access$300(Lcom/android/systemui/qs/tiles/ColorInversionTile;)V
 
-    .line 101
     return-void
 .end method

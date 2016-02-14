@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 3541
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$39$1;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$39;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 4
 
     .prologue
-    .line 3544
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$39$1;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$39;
 
@@ -54,14 +52,12 @@
 
     if-nez v0, :cond_0
 
-    .line 3545
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v0
 
     invoke-interface {v0}, Landroid/app/IActivityManager;->keyguardWaitingForActivityDrawn()V
 
-    .line 3548
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$39$1;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$39;
 
@@ -71,7 +67,6 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 3550
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$39$1;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$39;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$39;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -90,7 +85,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->startActivityAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 3552
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$39$1;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$39;
 
     iget-object v1, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$39;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -114,17 +108,14 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3556
     :goto_1
     return-void
 
-    .line 3552
     :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 3554
     :catch_0
     move-exception v0
 

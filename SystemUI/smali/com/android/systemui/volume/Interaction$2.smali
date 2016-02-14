@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 34
     iput-object p1, p0, Lcom/android/systemui/volume/Interaction$2;->val$callback:Lcom/android/systemui/volume/Interaction$Callback;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,12 +41,10 @@
     .param p2, "event"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 37
     iget-object v0, p0, Lcom/android/systemui/volume/Interaction$2;->val$callback:Lcom/android/systemui/volume/Interaction$Callback;
 
     invoke-interface {v0}, Lcom/android/systemui/volume/Interaction$Callback;->onInteraction()V
 
-    .line 38
     const/4 v0, 0x0
 
     return v0

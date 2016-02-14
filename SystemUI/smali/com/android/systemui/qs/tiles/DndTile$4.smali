@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 235
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/DndTile$4;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "expanded"    # Z
 
     .prologue
-    .line 249
     return-void
 .end method
 
@@ -49,7 +47,6 @@
     .locals 0
 
     .prologue
-    .line 244
     return-void
 .end method
 
@@ -57,7 +54,6 @@
     .locals 2
 
     .prologue
-    .line 238
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile$4;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DndTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
@@ -72,6 +68,5 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/qs/QSTile$Host;->startSettingsActivity(Landroid/content/Intent;)V
 
-    .line 239
     return-void
 .end method

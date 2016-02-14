@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 43
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/DateView$1;->this$0:Lcom/android/systemui/statusbar/policy/DateView;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 46
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 47
     .local v0, "action":Ljava/lang/String;
     const-string v1, "android.intent.action.TIME_TICK"
 
@@ -78,7 +75,6 @@
 
     if-eqz v1, :cond_3
 
-    .line 51
     :cond_0
     const-string v1, "android.intent.action.LOCALE_CHANGED"
 
@@ -96,7 +92,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 54
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/DateView$1;->this$0:Lcom/android/systemui/statusbar/policy/DateView;
 
@@ -105,13 +100,11 @@
     # setter for: Lcom/android/systemui/statusbar/policy/DateView;->mDateFormat:Ljava/text/SimpleDateFormat;
     invoke-static {v1, v2}, Lcom/android/systemui/statusbar/policy/DateView;->access$002(Lcom/android/systemui/statusbar/policy/DateView;Ljava/text/SimpleDateFormat;)Ljava/text/SimpleDateFormat;
 
-    .line 56
     :cond_2
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/DateView$1;->this$0:Lcom/android/systemui/statusbar/policy/DateView;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/policy/DateView;->updateClock()V
 
-    .line 58
     :cond_3
     return-void
 .end method

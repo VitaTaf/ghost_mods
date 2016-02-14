@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 530
     iput-object p1, p0, Lcom/android/keyguard/KeyguardSecurityContainer$2;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "securityVerified"    # Z
 
     .prologue
-    .line 540
     return-void
 .end method
 
@@ -50,7 +48,6 @@
     .param p1, "success"    # Z
 
     .prologue
-    .line 536
     return-void
 .end method
 
@@ -58,7 +55,6 @@
     .locals 0
 
     .prologue
-    .line 534
     return-void
 .end method
 
@@ -66,6 +62,5 @@
     .locals 0
 
     .prologue
-    .line 532
     return-void
 .end method

@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 136
     iput-object p1, p0, Lcom/android/keyguard/KeyguardWidgetFrame$1;->this$0:Lcom/android/keyguard/KeyguardWidgetFrame;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -37,7 +36,6 @@
     .locals 2
 
     .prologue
-    .line 139
     iget-object v0, p0, Lcom/android/keyguard/KeyguardWidgetFrame$1;->this$0:Lcom/android/keyguard/KeyguardWidgetFrame;
 
     # getter for: Lcom/android/keyguard/KeyguardWidgetFrame;->mPerformAppWidgetSizeUpdateOnBootComplete:Z
@@ -47,13 +45,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 140
     iget-object v0, p0, Lcom/android/keyguard/KeyguardWidgetFrame$1;->this$0:Lcom/android/keyguard/KeyguardWidgetFrame;
 
     # invokes: Lcom/android/keyguard/KeyguardWidgetFrame;->performAppWidgetSizeCallbacksIfNecessary()V
     invoke-static {v0}, Lcom/android/keyguard/KeyguardWidgetFrame;->access$100(Lcom/android/keyguard/KeyguardWidgetFrame;)V
 
-    .line 141
     iget-object v0, p0, Lcom/android/keyguard/KeyguardWidgetFrame$1;->this$0:Lcom/android/keyguard/KeyguardWidgetFrame;
 
     const/4 v1, 0x0
@@ -61,7 +57,6 @@
     # setter for: Lcom/android/keyguard/KeyguardWidgetFrame;->mPerformAppWidgetSizeUpdateOnBootComplete:Z
     invoke-static {v0, v1}, Lcom/android/keyguard/KeyguardWidgetFrame;->access$002(Lcom/android/keyguard/KeyguardWidgetFrame;Z)Z
 
-    .line 143
     :cond_0
     return-void
 .end method

@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 268
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel$3;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     iput-boolean p2, p0, Lcom/android/systemui/volume/ZenModePanel$3;->val$requesting:Z
@@ -44,7 +43,6 @@
     .locals 2
 
     .prologue
-    .line 271
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$3;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
@@ -56,6 +54,5 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/ZenModeController;->requestConditions(Z)V
 
-    .line 272
     return-void
 .end method

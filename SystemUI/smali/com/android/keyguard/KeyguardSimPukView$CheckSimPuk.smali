@@ -32,21 +32,16 @@
     .param p4, "subId"    # I
 
     .prologue
-    .line 317
     iput-object p1, p0, Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
-    .line 318
     iput-object p2, p0, Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;->mPuk:Ljava/lang/String;
 
-    .line 319
     iput-object p3, p0, Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;->mPin:Ljava/lang/String;
 
-    .line 320
     iput p4, p0, Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;->mSubId:I
 
-    .line 321
     return-void
 .end method
 
@@ -59,7 +54,6 @@
     .locals 6
 
     .prologue
-    .line 329
     :try_start_0
     const-string v2, "phone"
 
@@ -81,7 +75,6 @@
 
     move-result-object v1
 
-    .line 334
     .local v1, "result":[I
     iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
 
@@ -93,16 +86,13 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 347
     .end local v1    # "result":[I
     :goto_0
     return-void
 
-    .line 339
     :catch_0
     move-exception v0
 
-    .line 340
     .local v0, "e":Landroid/os/RemoteException;
     const-string v2, "KeyguardSimPukView"
 
@@ -110,7 +100,6 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 341
     iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
 
     new-instance v3, Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk$2;

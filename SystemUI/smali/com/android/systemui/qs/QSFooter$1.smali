@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 240
     iput-object p1, p0, Lcom/android/systemui/qs/QSFooter$1;->this$0:Lcom/android/systemui/qs/QSFooter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 243
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter$1;->this$0:Lcom/android/systemui/qs/QSFooter;
 
     # getter for: Lcom/android/systemui/qs/QSFooter;->mFooterTextId:I
@@ -52,7 +50,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 244
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter$1;->this$0:Lcom/android/systemui/qs/QSFooter;
 
     # getter for: Lcom/android/systemui/qs/QSFooter;->mFooterText:Landroid/widget/TextView;
@@ -69,7 +66,6 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(I)V
 
-    .line 246
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter$1;->this$0:Lcom/android/systemui/qs/QSFooter;
 
@@ -92,7 +88,6 @@
     :goto_0
     invoke-virtual {v2, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 247
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter$1;->this$0:Lcom/android/systemui/qs/QSFooter;
 
     # getter for: Lcom/android/systemui/qs/QSFooter;->mFooterIcon:Landroid/widget/ImageView;
@@ -112,16 +107,13 @@
     :goto_1
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 248
     return-void
 
-    .line 246
     :cond_1
     const/16 v0, 0x8
 
     goto :goto_0
 
-    .line 247
     :cond_2
     const/4 v1, 0x4
 

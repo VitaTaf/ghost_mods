@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 211
     iput-object p1, p0, Lcom/android/keyguard/KeyguardMessageArea$3;->this$0:Lcom/android/keyguard/KeyguardMessageArea;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -38,11 +37,9 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 214
     iget-object v0, p0, Lcom/android/keyguard/KeyguardMessageArea$3;->this$0:Lcom/android/keyguard/KeyguardMessageArea;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardMessageArea;->update()V
 
-    .line 215
     return-void
 .end method

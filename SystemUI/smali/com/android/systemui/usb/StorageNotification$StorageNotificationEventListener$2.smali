@@ -32,7 +32,6 @@
     .locals 0
 
     .prologue
-    .line 80
     iput-object p1, p0, Lcom/android/systemui/usb/StorageNotification$StorageNotificationEventListener$2;->this$1:Lcom/android/systemui/usb/StorageNotification$StorageNotificationEventListener;
 
     iput-object p2, p0, Lcom/android/systemui/usb/StorageNotification$StorageNotificationEventListener$2;->val$path:Ljava/lang/String;
@@ -52,7 +51,6 @@
     .locals 4
 
     .prologue
-    .line 83
     iget-object v0, p0, Lcom/android/systemui/usb/StorageNotification$StorageNotificationEventListener$2;->val$path:Ljava/lang/String;
 
     const-string v1, "/storage/usbdisk"
@@ -63,11 +61,9 @@
 
     if-eqz v0, :cond_0
 
-    .line 85
     :goto_0
     return-void
 
-    .line 84
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/usb/StorageNotification$StorageNotificationEventListener$2;->this$1:Lcom/android/systemui/usb/StorageNotification$StorageNotificationEventListener;
 

@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 292
     iput-object p1, p0, Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;
 
     iput-object p2, p0, Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin$1;->val$result:[I
@@ -44,7 +43,6 @@
     .locals 4
 
     .prologue
-    .line 294
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin$1;->val$result:[I
@@ -61,6 +59,5 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;->onSimCheckResponse(II)V
 
-    .line 295
     return-void
 .end method

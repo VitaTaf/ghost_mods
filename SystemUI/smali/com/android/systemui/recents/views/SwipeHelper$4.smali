@@ -27,7 +27,6 @@
     .locals 0
 
     .prologue
-    .line 278
     iput-object p1, p0, Lcom/android/systemui/recents/views/SwipeHelper$4;->this$0:Lcom/android/systemui/recents/views/SwipeHelper;
 
     iput-boolean p2, p0, Lcom/android/systemui/recents/views/SwipeHelper$4;->val$canAnimViewBeDismissed:Z
@@ -46,19 +45,16 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 281
     iget-boolean v0, p0, Lcom/android/systemui/recents/views/SwipeHelper$4;->val$canAnimViewBeDismissed:Z
 
     if-eqz v0, :cond_0
 
-    .line 282
     iget-object v0, p0, Lcom/android/systemui/recents/views/SwipeHelper$4;->val$view:Landroid/view/View;
 
     const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 284
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/recents/views/SwipeHelper$4;->this$0:Lcom/android/systemui/recents/views/SwipeHelper;
 
@@ -68,6 +64,5 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/recents/views/SwipeHelper$Callback;->onSnapBackCompleted(Landroid/view/View;)V
 
-    .line 285
     return-void
 .end method

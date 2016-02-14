@@ -24,7 +24,6 @@
     .param p2, "x0"    # Landroid/content/Context;
 
     .prologue
-    .line 140
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/QSTileHost$1;->this$0:Lcom/android/systemui/statusbar/phone/QSTileHost;
 
     invoke-direct {p0, p2}, Lcom/android/systemui/settings/CurrentUserTracker;-><init>(Landroid/content/Context;)V
@@ -39,13 +38,11 @@
     .param p1, "newUserId"    # I
 
     .prologue
-    .line 143
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost$1;->this$0:Lcom/android/systemui/statusbar/phone/QSTileHost;
 
     # invokes: Lcom/android/systemui/statusbar/phone/QSTileHost;->recreateTiles()V
     invoke-static {v2}, Lcom/android/systemui/statusbar/phone/QSTileHost;->access$000(Lcom/android/systemui/statusbar/phone/QSTileHost;)V
 
-    .line 144
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost$1;->this$0:Lcom/android/systemui/statusbar/phone/QSTileHost;
 
     # getter for: Lcom/android/systemui/statusbar/phone/QSTileHost;->mTiles:Ljava/util/LinkedHashMap;
@@ -75,13 +72,11 @@
 
     check-cast v1, Lcom/android/systemui/qs/QSTile;
 
-    .line 145
     .local v1, "tile":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<*>;"
     invoke-virtual {v1, p1}, Lcom/android/systemui/qs/QSTile;->userSwitch(I)V
 
     goto :goto_0
 
-    .line 147
     .end local v1    # "tile":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<*>;"
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost$1;->this$0:Lcom/android/systemui/statusbar/phone/QSTileHost;
@@ -93,7 +88,6 @@
 
     invoke-interface {v2, p1}, Lcom/android/systemui/statusbar/policy/SecurityController;->onUserSwitched(I)V
 
-    .line 148
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost$1;->this$0:Lcom/android/systemui/statusbar/phone/QSTileHost;
 
     # getter for: Lcom/android/systemui/statusbar/phone/QSTileHost;->mNetwork:Lcom/android/systemui/statusbar/policy/MotorolaNetworkController;
@@ -103,7 +97,6 @@
 
     invoke-interface {v2, p1}, Lcom/android/systemui/statusbar/policy/MotorolaNetworkController;->onUserSwitched(I)V
 
-    .line 149
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost$1;->this$0:Lcom/android/systemui/statusbar/phone/QSTileHost;
 
     # getter for: Lcom/android/systemui/statusbar/phone/QSTileHost;->mObserver:Lcom/android/systemui/statusbar/phone/QSTileHost$Observer;
@@ -113,6 +106,5 @@
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/QSTileHost$Observer;->register()V
 
-    .line 150
     return-void
 .end method

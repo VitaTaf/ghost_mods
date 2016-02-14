@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 279
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/ScrimController$1;->this$0:Lcom/android/systemui/statusbar/phone/ScrimController;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/ScrimController$1;->val$scrim:Lcom/android/systemui/statusbar/ScrimView;
@@ -45,7 +44,6 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 282
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -56,7 +54,6 @@
 
     move-result v0
 
-    .line 283
     .local v0, "alpha":F
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/ScrimController$1;->this$0:Lcom/android/systemui/statusbar/phone/ScrimController;
 
@@ -65,7 +62,6 @@
     # invokes: Lcom/android/systemui/statusbar/phone/ScrimController;->setCurrentScrimAlpha(Landroid/view/View;F)V
     invoke-static {v1, v2, v0}, Lcom/android/systemui/statusbar/phone/ScrimController;->access$000(Lcom/android/systemui/statusbar/phone/ScrimController;Landroid/view/View;F)V
 
-    .line 284
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/ScrimController$1;->this$0:Lcom/android/systemui/statusbar/phone/ScrimController;
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/ScrimController$1;->val$scrim:Lcom/android/systemui/statusbar/ScrimView;
@@ -73,6 +69,5 @@
     # invokes: Lcom/android/systemui/statusbar/phone/ScrimController;->updateScrimColor(Lcom/android/systemui/statusbar/ScrimView;)V
     invoke-static {v1, v2}, Lcom/android/systemui/statusbar/phone/ScrimController;->access$100(Lcom/android/systemui/statusbar/phone/ScrimController;Lcom/android/systemui/statusbar/ScrimView;)V
 
-    .line 285
     return-void
 .end method

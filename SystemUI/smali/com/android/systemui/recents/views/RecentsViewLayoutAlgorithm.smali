@@ -13,13 +13,10 @@
     .param p1, "config"    # Lcom/android/systemui/recents/RecentsConfiguration;
 
     .prologue
-    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 32
     iput-object p1, p0, Lcom/android/systemui/recents/views/RecentsViewLayoutAlgorithm;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
-    .line 33
     return-void
 .end method
 
@@ -31,14 +28,12 @@
     .param p4, "otherSize"    # I
 
     .prologue
-    .line 37
     int-to-float v1, p3
 
     int-to-float v2, p4
 
     div-float v0, v1, v2
 
-    .line 38
     .local v0, "relPos":F
     int-to-float v1, p2
 
@@ -73,7 +68,6 @@
     .end annotation
 
     .prologue
-    .line 45
     .local p1, "stackViews":Ljava/util/List;, "Ljava/util/List<Lcom/android/systemui/recents/views/TaskStackView;>;"
     new-instance v2, Ljava/util/ArrayList;
 
@@ -83,13 +77,11 @@
 
     invoke-direct {v2, v8}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 46
     .local v2, "bounds":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/graphics/Rect;>;"
     invoke-interface/range {p1 .. p1}, Ljava/util/List;->size()I
 
     move-result v7
 
-    .line 47
     .local v7, "stackViewsCount":I
     const/4 v4, 0x0
 
@@ -97,7 +89,6 @@
     :goto_0
     if-ge v4, v7, :cond_0
 
-    .line 48
     move-object/from16 v0, p1
 
     invoke-interface {v0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -110,19 +101,15 @@
 
     move-result-object v6
 
-    .line 49
     .local v6, "stack":Lcom/android/systemui/recents/model/TaskStack;
     iget-object v5, v6, Lcom/android/systemui/recents/model/TaskStack;->stackBounds:Landroid/graphics/Rect;
 
-    .line 50
     .local v5, "sb":Landroid/graphics/Rect;
     iget-object v3, v6, Lcom/android/systemui/recents/model/TaskStack;->displayBounds:Landroid/graphics/Rect;
 
-    .line 51
     .local v3, "db":Landroid/graphics/Rect;
     move-object/from16 v1, p2
 
-    .line 52
     .local v1, "ab":Landroid/graphics/Rect;
     new-instance v8, Landroid/graphics/Rect;
 
@@ -202,12 +189,10 @@
 
     invoke-virtual {v2, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 47
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 57
     .end local v1    # "ab":Landroid/graphics/Rect;
     .end local v3    # "db":Landroid/graphics/Rect;
     .end local v5    # "sb":Landroid/graphics/Rect;

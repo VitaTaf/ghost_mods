@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 179
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper$2;->this$0:Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper$2;->val$target:Landroid/widget/ImageView;
@@ -45,7 +44,6 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 182
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -56,7 +54,6 @@
 
     move-result v0
 
-    .line 183
     .local v0, "t":F
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper$2;->val$target:Landroid/widget/ImageView;
 
@@ -85,6 +82,5 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageAlpha(I)V
 
-    .line 184
     return-void
 .end method

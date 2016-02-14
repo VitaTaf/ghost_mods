@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 927
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$9;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,14 +48,11 @@
     .param p9, "oldBottom"    # I
 
     .prologue
-    .line 931
     sub-int v3, p9, p7
 
-    .line 932
     .local v3, "oldHeight":I
     sub-int v0, p5, p3
 
-    .line 933
     .local v0, "height":I
     if-eq v0, v3, :cond_0
 
@@ -69,7 +65,6 @@
 
     if-eqz v5, :cond_0
 
-    .line 934
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$9;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsContainerAnimator:Landroid/animation/ObjectAnimator;
@@ -81,7 +76,6 @@
 
     move-result-object v4
 
-    .line 935
     .local v4, "values":[Landroid/animation/PropertyValuesHolder;
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$9;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
@@ -109,7 +103,6 @@
 
     int-to-float v1, v5
 
-    .line 936
     .local v1, "newEndValue":F
     neg-int v5, v0
 
@@ -117,7 +110,6 @@
 
     int-to-float v2, v5
 
-    .line 937
     .local v2, "newStartValue":F
     const/4 v5, 0x0
 
@@ -137,7 +129,6 @@
 
     invoke-virtual {v5, v6}, Landroid/animation/PropertyValuesHolder;->setFloatValues([F)V
 
-    .line 938
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$9;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsContainerAnimator:Landroid/animation/ObjectAnimator;
@@ -158,7 +149,6 @@
 
     invoke-virtual {v5, v6, v7}, Landroid/animation/ObjectAnimator;->setCurrentPlayTime(J)V
 
-    .line 940
     .end local v1    # "newEndValue":F
     .end local v2    # "newStartValue":F
     .end local v4    # "values":[Landroid/animation/PropertyValuesHolder;

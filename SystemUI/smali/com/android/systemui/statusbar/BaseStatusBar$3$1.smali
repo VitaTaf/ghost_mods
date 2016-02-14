@@ -36,7 +36,6 @@
     .locals 0
 
     .prologue
-    .line 298
     iput-object p1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$3$1;->this$1:Lcom/android/systemui/statusbar/BaseStatusBar$3;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$3$1;->val$keyguardShowing:Z
@@ -64,7 +63,6 @@
 
     const/4 v3, 0x0
 
-    .line 301
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$3$1;->val$keyguardShowing:Z
 
     if-eqz v1, :cond_0
@@ -73,7 +71,6 @@
 
     if-nez v1, :cond_0
 
-    .line 303
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -83,7 +80,6 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 309
     :cond_0
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$3$1;->this$1:Lcom/android/systemui/statusbar/BaseStatusBar$3;
@@ -99,7 +95,6 @@
 
     move-result v0
 
-    .line 310
     .local v0, "handled":Z
     iget-object v1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$3$1;->this$1:Lcom/android/systemui/statusbar/BaseStatusBar$3;
 
@@ -118,10 +113,8 @@
     :goto_1
     invoke-virtual {v4, v1}, Lcom/android/systemui/statusbar/BaseStatusBar;->overrideActivityPendingAppTransition(Z)V
 
-    .line 313
     if-eqz v0, :cond_1
 
-    .line 314
     iget-object v1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$3$1;->this$1:Lcom/android/systemui/statusbar/BaseStatusBar$3;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/BaseStatusBar$3;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
@@ -130,24 +123,20 @@
 
     invoke-virtual {v1, v4, v2}, Lcom/android/systemui/statusbar/BaseStatusBar;->animateCollapsePanels(IZ)V
 
-    .line 316
     iget-object v1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$3$1;->this$1:Lcom/android/systemui/statusbar/BaseStatusBar$3;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/BaseStatusBar$3;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/statusbar/BaseStatusBar;->visibilityChanged(Z)V
 
-    .line 319
     :cond_1
     return v0
 
     :cond_2
     move v1, v3
 
-    .line 310
     goto :goto_1
 
-    .line 305
     .end local v0    # "handled":Z
     :catch_0
     move-exception v1

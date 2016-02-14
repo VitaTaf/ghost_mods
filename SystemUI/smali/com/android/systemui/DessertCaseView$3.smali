@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 334
     iput-object p1, p0, Lcom/android/systemui/DessertCaseView$3;->this$0:Lcom/android/systemui/DessertCaseView;
 
     iput-object p2, p0, Lcom/android/systemui/DessertCaseView$3;->val$v:Landroid/view/View;
@@ -42,7 +41,6 @@
     .param p1, "animator"    # Landroid/animation/Animator;
 
     .prologue
-    .line 342
     iget-object v0, p0, Lcom/android/systemui/DessertCaseView$3;->val$v:Landroid/view/View;
 
     const/4 v1, 0x0
@@ -51,7 +49,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 343
     return-void
 .end method
 
@@ -60,7 +57,6 @@
     .param p1, "animator"    # Landroid/animation/Animator;
 
     .prologue
-    .line 337
     iget-object v0, p0, Lcom/android/systemui/DessertCaseView$3;->val$v:Landroid/view/View;
 
     const/4 v1, 0x2
@@ -69,11 +65,9 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 338
     iget-object v0, p0, Lcom/android/systemui/DessertCaseView$3;->val$v:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->buildLayer()V
 
-    .line 339
     return-void
 .end method

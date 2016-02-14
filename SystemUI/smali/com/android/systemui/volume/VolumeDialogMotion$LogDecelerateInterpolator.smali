@@ -32,7 +32,6 @@
     .locals 3
 
     .prologue
-    .line 253
     const/high16 v0, 0x43c80000    # 400.0f
 
     const v1, 0x3fb33333    # 1.4f
@@ -41,7 +40,6 @@
 
     invoke-direct {p0, v0, v1, v2}, Lcom/android/systemui/volume/VolumeDialogMotion$LogDecelerateInterpolator;-><init>(FFF)V
 
-    .line 254
     return-void
 .end method
 
@@ -54,21 +52,16 @@
     .prologue
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 256
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 257
     iput p1, p0, Lcom/android/systemui/volume/VolumeDialogMotion$LogDecelerateInterpolator;->mBase:F
 
-    .line 258
     iput p3, p0, Lcom/android/systemui/volume/VolumeDialogMotion$LogDecelerateInterpolator;->mDrift:F
 
-    .line 259
     div-float v0, v1, p2
 
     iput v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion$LogDecelerateInterpolator;->mTimeScale:F
 
-    .line 261
     invoke-direct {p0, v1}, Lcom/android/systemui/volume/VolumeDialogMotion$LogDecelerateInterpolator;->computeLog(F)F
 
     move-result v0
@@ -77,7 +70,6 @@
 
     iput v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion$LogDecelerateInterpolator;->mOutputScale:F
 
-    .line 262
     return-void
 .end method
 
@@ -86,7 +78,6 @@
     .param p1, "x0"    # Lcom/android/systemui/volume/VolumeDialogMotion$1;
 
     .prologue
-    .line 246
     invoke-direct {p0}, Lcom/android/systemui/volume/VolumeDialogMotion$LogDecelerateInterpolator;-><init>()V
 
     return-void
@@ -97,7 +88,6 @@
     .param p1, "t"    # F
 
     .prologue
-    .line 265
     const/high16 v0, 0x3f800000    # 1.0f
 
     iget v1, p0, Lcom/android/systemui/volume/VolumeDialogMotion$LogDecelerateInterpolator;->mBase:F
@@ -136,7 +126,6 @@
     .param p1, "t"    # F
 
     .prologue
-    .line 270
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialogMotion$LogDecelerateInterpolator;->computeLog(F)F
 
     move-result v0

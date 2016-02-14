@@ -32,42 +32,34 @@
     .param p4, "drawShadow"    # Z
 
     .prologue
-    .line 905
     iput-object p1, p0, Lcom/android/systemui/egg/LLand$Stem;->this$0:Lcom/android/systemui/egg/LLand;
 
-    .line 906
     invoke-direct {p0, p1, p2, p3}, Lcom/android/systemui/egg/LLand$Obstacle;-><init>(Lcom/android/systemui/egg/LLand;Landroid/content/Context;F)V
 
-    .line 901
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/egg/LLand$Stem;->mPaint:Landroid/graphics/Paint;
 
-    .line 902
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/egg/LLand$Stem;->mShadow:Landroid/graphics/Path;
 
-    .line 907
     iput-boolean p4, p0, Lcom/android/systemui/egg/LLand$Stem;->mDrawShadow:Z
 
-    .line 908
     iget-object v0, p0, Lcom/android/systemui/egg/LLand$Stem;->mPaint:Landroid/graphics/Paint;
 
     const v1, -0x555556
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 909
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/egg/LLand$Stem;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 910
     return-void
 .end method
 
@@ -77,22 +69,18 @@
     .locals 1
 
     .prologue
-    .line 914
     invoke-super {p0}, Lcom/android/systemui/egg/LLand$Obstacle;->onAttachedToWindow()V
 
-    .line 915
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/egg/LLand$Stem;->setWillNotDraw(Z)V
 
-    .line 916
     new-instance v0, Lcom/android/systemui/egg/LLand$Stem$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/egg/LLand$Stem$1;-><init>(Lcom/android/systemui/egg/LLand$Stem;)V
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/egg/LLand$Stem;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
-    .line 922
     return-void
 .end method
 
@@ -105,30 +93,25 @@
 
     const/4 v8, 0x0
 
-    .line 925
     invoke-virtual {p1}, Landroid/graphics/Canvas;->getWidth()I
 
     move-result v2
 
-    .line 926
     .local v2, "w":I
     invoke-virtual {p1}, Landroid/graphics/Canvas;->getHeight()I
 
     move-result v1
 
-    .line 927
     .local v1, "h":I
     new-instance v0, Landroid/graphics/drawable/GradientDrawable;
 
     invoke-direct {v0}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
 
-    .line 928
     .local v0, "g":Landroid/graphics/drawable/GradientDrawable;
     sget-object v3, Landroid/graphics/drawable/GradientDrawable$Orientation;->LEFT_RIGHT:Landroid/graphics/drawable/GradientDrawable$Orientation;
 
     invoke-virtual {v0, v3}, Landroid/graphics/drawable/GradientDrawable;->setOrientation(Landroid/graphics/drawable/GradientDrawable$Orientation;)V
 
-    .line 929
     int-to-float v3, v2
 
     const/high16 v4, 0x3f400000    # 0.75f
@@ -137,7 +120,6 @@
 
     invoke-virtual {v0, v3, v8}, Landroid/graphics/drawable/GradientDrawable;->setGradientCenter(FF)V
 
-    .line 930
     const/4 v3, 0x2
 
     new-array v3, v3, [I
@@ -146,40 +128,32 @@
 
     invoke-virtual {v0, v3}, Landroid/graphics/drawable/GradientDrawable;->setColors([I)V
 
-    .line 931
     invoke-virtual {v0, v5, v5, v2, v1}, Landroid/graphics/drawable/GradientDrawable;->setBounds(IIII)V
 
-    .line 932
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/GradientDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 933
     iget-boolean v3, p0, Lcom/android/systemui/egg/LLand$Stem;->mDrawShadow:Z
 
     if-nez v3, :cond_0
 
-    .line 941
     :goto_0
     return-void
 
-    .line 934
     :cond_0
     iget-object v3, p0, Lcom/android/systemui/egg/LLand$Stem;->mShadow:Landroid/graphics/Path;
 
     invoke-virtual {v3}, Landroid/graphics/Path;->reset()V
 
-    .line 935
     iget-object v3, p0, Lcom/android/systemui/egg/LLand$Stem;->mShadow:Landroid/graphics/Path;
 
     invoke-virtual {v3, v8, v8}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 936
     iget-object v3, p0, Lcom/android/systemui/egg/LLand$Stem;->mShadow:Landroid/graphics/Path;
 
     int-to-float v4, v2
 
     invoke-virtual {v3, v4, v8}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 937
     iget-object v3, p0, Lcom/android/systemui/egg/LLand$Stem;->mShadow:Landroid/graphics/Path;
 
     int-to-float v4, v2
@@ -205,7 +179,6 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 938
     iget-object v3, p0, Lcom/android/systemui/egg/LLand$Stem;->mShadow:Landroid/graphics/Path;
 
     # getter for: Lcom/android/systemui/egg/LLand;->PARAMS:Lcom/android/systemui/egg/LLand$Params;
@@ -221,12 +194,10 @@
 
     invoke-virtual {v3, v8, v4}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 939
     iget-object v3, p0, Lcom/android/systemui/egg/LLand$Stem;->mShadow:Landroid/graphics/Path;
 
     invoke-virtual {v3}, Landroid/graphics/Path;->close()V
 
-    .line 940
     iget-object v3, p0, Lcom/android/systemui/egg/LLand$Stem;->mShadow:Landroid/graphics/Path;
 
     iget-object v4, p0, Lcom/android/systemui/egg/LLand$Stem;->mPaint:Landroid/graphics/Paint;
@@ -235,7 +206,6 @@
 
     goto :goto_0
 
-    .line 930
     :array_0
     .array-data 4
         -0x1

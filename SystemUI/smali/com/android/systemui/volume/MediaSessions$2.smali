@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 333
     iput-object p1, p0, Lcom/android/systemui/volume/MediaSessions$2;->this$0:Lcom/android/systemui/volume/MediaSessions;
 
     invoke-direct {p0}, Landroid/media/IRemoteVolumeController$Stub;-><init>()V
@@ -44,7 +43,6 @@
     .end annotation
 
     .prologue
-    .line 337
     iget-object v0, p0, Lcom/android/systemui/volume/MediaSessions$2;->this$0:Lcom/android/systemui/volume/MediaSessions;
 
     # getter for: Lcom/android/systemui/volume/MediaSessions;->mHandler:Lcom/android/systemui/volume/MediaSessions$H;
@@ -62,7 +60,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 338
     return-void
 .end method
 
@@ -76,7 +73,6 @@
     .end annotation
 
     .prologue
-    .line 343
     iget-object v0, p0, Lcom/android/systemui/volume/MediaSessions$2;->this$0:Lcom/android/systemui/volume/MediaSessions;
 
     # getter for: Lcom/android/systemui/volume/MediaSessions;->mHandler:Lcom/android/systemui/volume/MediaSessions$H;
@@ -92,6 +88,5 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 344
     return-void
 .end method

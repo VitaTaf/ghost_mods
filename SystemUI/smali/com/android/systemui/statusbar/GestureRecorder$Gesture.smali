@@ -56,31 +56,26 @@
     .locals 2
 
     .prologue
-    .line 40
     iput-object p1, p0, Lcom/android/systemui/statusbar/GestureRecorder$Gesture;->this$0:Lcom/android/systemui/statusbar/GestureRecorder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 93
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/GestureRecorder$Gesture;->mRecords:Ljava/util/LinkedList;
 
-    .line 94
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/GestureRecorder$Gesture;->mTags:Ljava/util/HashSet;
 
-    .line 95
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Lcom/android/systemui/statusbar/GestureRecorder$Gesture;->mDownTime:J
 
-    .line 96
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/GestureRecorder$Gesture;->mComplete:Z
@@ -97,7 +92,6 @@
     .param p4, "info"    # Ljava/lang/String;
 
     .prologue
-    .line 115
     iget-object v6, p0, Lcom/android/systemui/statusbar/GestureRecorder$Gesture;->mRecords:Ljava/util/LinkedList;
 
     new-instance v0, Lcom/android/systemui/statusbar/GestureRecorder$Gesture$TagRecord;
@@ -114,11 +108,9 @@
 
     invoke-virtual {v6, v0}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    .line 116
     iget-object v0, p0, Lcom/android/systemui/statusbar/GestureRecorder$Gesture;->mTags:Ljava/util/HashSet;
 
     invoke-virtual {v0, p3}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 117
     return-void
 .end method

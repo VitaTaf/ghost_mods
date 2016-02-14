@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 913
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel$10$1;->this$1:Lcom/android/systemui/volume/ZenModePanel$10;
 
     iput p2, p0, Lcom/android/systemui/volume/ZenModePanel$10$1;->val$zen:I
@@ -48,7 +47,6 @@
     .locals 4
 
     .prologue
-    .line 916
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$10$1;->this$1:Lcom/android/systemui/volume/ZenModePanel$10;
 
     iget-object v0, v0, Lcom/android/systemui/volume/ZenModePanel$10;->this$0:Lcom/android/systemui/volume/ZenModePanel;
@@ -66,12 +64,10 @@
 
     invoke-interface {v0, v1, v2, v3}, Lcom/android/systemui/statusbar/policy/ZenModeController;->setZen(ILandroid/net/Uri;Ljava/lang/String;)V
 
-    .line 917
     iget v0, p0, Lcom/android/systemui/volume/ZenModePanel$10$1;->val$zen:I
 
     if-eqz v0, :cond_0
 
-    .line 918
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$10$1;->this$1:Lcom/android/systemui/volume/ZenModePanel$10;
 
     iget-object v0, v0, Lcom/android/systemui/volume/ZenModePanel$10;->this$0:Lcom/android/systemui/volume/ZenModePanel;
@@ -87,7 +83,6 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/systemui/Prefs;->putInt(Landroid/content/Context;Ljava/lang/String;I)V
 
-    .line 920
     :cond_0
     return-void
 .end method

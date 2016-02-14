@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 56
     iput-object p1, p0, Lcom/android/keyguard/CarrierText$1;->this$0:Lcom/android/keyguard/CarrierText;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -37,12 +36,10 @@
     .locals 1
 
     .prologue
-    .line 59
     iget-object v0, p0, Lcom/android/keyguard/CarrierText$1;->this$0:Lcom/android/keyguard/CarrierText;
 
     invoke-virtual {v0}, Lcom/android/keyguard/CarrierText;->updateCarrierText()V
 
-    .line 60
     return-void
 .end method
 
@@ -51,14 +48,12 @@
     .param p1, "why"    # I
 
     .prologue
-    .line 63
     iget-object v0, p0, Lcom/android/keyguard/CarrierText$1;->this$0:Lcom/android/keyguard/CarrierText;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/CarrierText;->setSelected(Z)V
 
-    .line 64
     return-void
 .end method
 
@@ -66,13 +61,11 @@
     .locals 2
 
     .prologue
-    .line 67
     iget-object v0, p0, Lcom/android/keyguard/CarrierText$1;->this$0:Lcom/android/keyguard/CarrierText;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/CarrierText;->setSelected(Z)V
 
-    .line 68
     return-void
 .end method

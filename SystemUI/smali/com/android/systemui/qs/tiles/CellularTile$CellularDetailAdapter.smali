@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 830
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/CellularTile$CellularDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/CellularTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .param p2, "x1"    # Lcom/android/systemui/qs/tiles/CellularTile$1;
 
     .prologue
-    .line 830
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tiles/CellularTile$CellularDetailAdapter;-><init>(Lcom/android/systemui/qs/tiles/CellularTile;)V
 
     return-void
@@ -55,7 +53,6 @@
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 900
     if-eqz p2, :cond_0
 
     move-object v2, p2
@@ -67,7 +64,6 @@
 
     check-cast v1, Lcom/android/systemui/qs/tiles/DataUsageDetailView;
 
-    .line 905
     .local v1, "v":Lcom/android/systemui/qs/tiles/DataUsageDetailView;
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/CellularTile$CellularDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/CellularTile;
 
@@ -87,15 +83,12 @@
 
     move-result-object v0
 
-    .line 906
     .local v0, "info":Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$MobileDataController$DataUsageInfo;
     if-nez v0, :cond_1
 
-    .line 908
     :goto_1
     return-object v1
 
-    .line 900
     .end local v0    # "info":Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$MobileDataController$DataUsageInfo;
     .end local v1    # "v":Lcom/android/systemui/qs/tiles/DataUsageDetailView;
     :cond_0
@@ -120,7 +113,6 @@
 
     goto :goto_0
 
-    .line 907
     .restart local v0    # "info":Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$MobileDataController$DataUsageInfo;
     .restart local v1    # "v":Lcom/android/systemui/qs/tiles/DataUsageDetailView;
     :cond_1
@@ -133,7 +125,6 @@
     .locals 1
 
     .prologue
-    .line 848
     # getter for: Lcom/android/systemui/qs/tiles/CellularTile;->CELLULAR_SETTINGS:Landroid/content/Intent;
     invoke-static {}, Lcom/android/systemui/qs/tiles/CellularTile;->access$1600()Landroid/content/Intent;
 
@@ -146,7 +137,6 @@
     .locals 1
 
     .prologue
-    .line 834
     const v0, 0x7f0c00fb
 
     return v0
@@ -156,7 +146,6 @@
     .locals 1
 
     .prologue
-    .line 839
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CellularTile$CellularDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/CellularTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/CellularTile;->mDataController:Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$MobileDataController;
@@ -199,12 +188,10 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 912
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CellularTile$CellularDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/CellularTile;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/qs/tiles/CellularTile;->fireToggleStateChanged(Z)V
 
-    .line 913
     return-void
 .end method
 
@@ -217,7 +204,6 @@
 
     const/4 v6, 0x1
 
-    .line 856
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/CellularTile$CellularDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/CellularTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/CellularTile;->mContext:Landroid/content/Context;
@@ -235,7 +221,6 @@
 
     move-result v1
 
-    .line 862
     .local v1, "featureFlagIndicateOn":Z
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/CellularTile$CellularDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/CellularTile;
 
@@ -254,7 +239,6 @@
 
     move-result v0
 
-    .line 866
     .local v0, "featureFlagIndicateOff":Z
     if-eqz v1, :cond_0
 
@@ -279,23 +263,19 @@
 
     if-nez v3, :cond_0
 
-    .line 877
     new-instance v2, Landroid/content/Intent;
 
     const-string v3, "android.intent.action.SHOW_CONFIRMATION_DIALOG"
 
     invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 878
     .local v2, "intent":Landroid/content/Intent;
     const-string v3, "request_connection_type"
 
     invoke-virtual {v2, v3, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 879
     invoke-virtual {v2, v7}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 880
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/CellularTile$CellularDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/CellularTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/CellularTile;->mContext:Landroid/content/Context;
@@ -305,12 +285,10 @@
 
     invoke-virtual {v3, v2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 896
     .end local v2    # "intent":Landroid/content/Intent;
     :goto_0
     return-void
 
-    .line 881
     :cond_0
     if-eqz v0, :cond_1
 
@@ -337,7 +315,6 @@
 
     if-ne v3, v6, :cond_1
 
-    .line 886
     new-instance v2, Landroid/content/Intent;
 
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/CellularTile$CellularDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/CellularTile;
@@ -351,11 +328,9 @@
 
     invoke-direct {v2, v3, v4}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 887
     .restart local v2    # "intent":Landroid/content/Intent;
     invoke-virtual {v2, v7}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 888
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/CellularTile$CellularDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/CellularTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/CellularTile;->mContext:Landroid/content/Context;
@@ -367,7 +342,6 @@
 
     goto :goto_0
 
-    .line 890
     .end local v2    # "intent":Landroid/content/Intent;
     :cond_1
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/CellularTile$CellularDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/CellularTile;

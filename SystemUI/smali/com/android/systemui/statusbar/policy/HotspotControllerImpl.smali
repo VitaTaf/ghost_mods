@@ -45,7 +45,6 @@
     .locals 2
 
     .prologue
-    .line 38
     const-string v0, "HotspotController"
 
     const/4 v1, 0x3
@@ -64,17 +63,14 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 47
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mCallbacks:Ljava/util/ArrayList;
 
-    .line 48
     new-instance v0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl$Receiver;
 
     const/4 v1, 0x0
@@ -83,10 +79,8 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mReceiver:Lcom/android/systemui/statusbar/policy/HotspotControllerImpl$Receiver;
 
-    .line 54
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mContext:Landroid/content/Context;
 
-    .line 55
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mContext:Landroid/content/Context;
 
     const-string v1, "wifi"
@@ -99,7 +93,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mWifiManager:Landroid/net/wifi/WifiManager;
 
-    .line 56
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mContext:Landroid/content/Context;
 
     const-string v1, "connectivity"
@@ -112,7 +105,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mConnectivityManager:Landroid/net/ConnectivityManager;
 
-    .line 58
     return-void
 .end method
 
@@ -120,7 +112,6 @@
     .locals 1
 
     .prologue
-    .line 35
     sget-boolean v0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->DEBUG:Z
 
     return v0
@@ -131,7 +122,6 @@
     .param p0, "x0"    # Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;
 
     .prologue
-    .line 35
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -143,7 +133,6 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 35
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->fireCallback(Z)V
 
     return-void
@@ -154,7 +143,6 @@
     .param p1, "isEnabled"    # Z
 
     .prologue
-    .line 134
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -175,13 +163,11 @@
 
     check-cast v0, Lcom/android/systemui/statusbar/policy/HotspotController$Callback;
 
-    .line 135
     .local v0, "callback":Lcom/android/systemui/statusbar/policy/HotspotController$Callback;
     invoke-interface {v0, p1}, Lcom/android/systemui/statusbar/policy/HotspotController$Callback;->onHotspotChanged(Z)V
 
     goto :goto_0
 
-    .line 137
     .end local v0    # "callback":Lcom/android/systemui/statusbar/policy/HotspotController$Callback;
     :cond_0
     return-void
@@ -194,7 +180,6 @@
     .param p1, "callback"    # Lcom/android/systemui/statusbar/policy/HotspotController$Callback;
 
     .prologue
-    .line 61
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mCallbacks:Ljava/util/ArrayList;
@@ -205,12 +190,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 65
     :cond_0
     :goto_0
     return-void
 
-    .line 62
     :cond_1
     sget-boolean v0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->DEBUG:Z
 
@@ -238,13 +221,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 63
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 64
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mReceiver:Lcom/android/systemui/statusbar/policy/HotspotControllerImpl$Receiver;
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mCallbacks:Ljava/util/ArrayList;
@@ -272,7 +253,6 @@
     .locals 2
 
     .prologue
-    .line 76
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mWifiManager:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->getWifiApState()I
@@ -302,7 +282,6 @@
 
     const/4 v2, 0x0
 
-    .line 81
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
     move-result v3
@@ -311,7 +290,6 @@
 
     move v0, v1
 
-    .line 82
     .local v0, "isSecondaryUser":Z
     :goto_0
     if-nez v0, :cond_1
@@ -331,14 +309,12 @@
     :cond_0
     move v0, v2
 
-    .line 81
     goto :goto_0
 
     .restart local v0    # "isSecondaryUser":Z
     :cond_1
     move v1, v2
 
-    .line 82
     goto :goto_1
 .end method
 
@@ -348,7 +324,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 90
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -361,7 +336,6 @@
 
     move-result-object v0
 
-    .line 92
     .local v0, "provisionApp":[Ljava/lang/String;
     const-string v2, "net.tethering.noprovisioning"
 
@@ -373,7 +347,6 @@
 
     if-nez v0, :cond_1
 
-    .line 96
     :cond_0
     :goto_0
     return v1
@@ -395,14 +368,11 @@
     .param p1, "callback"    # Lcom/android/systemui/statusbar/policy/HotspotController$Callback;
 
     .prologue
-    .line 68
     if-nez p1, :cond_0
 
-    .line 72
     :goto_0
     return-void
 
-    .line 69
     :cond_0
     sget-boolean v0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->DEBUG:Z
 
@@ -430,13 +400,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 70
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 71
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mReceiver:Lcom/android/systemui/statusbar/policy/HotspotControllerImpl$Receiver;
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mCallbacks:Ljava/util/ArrayList;
@@ -471,25 +439,21 @@
 
     const/4 v6, 0x1
 
-    .line 101
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 103
     .local v0, "cr":Landroid/content/ContentResolver;
     if-eqz p1, :cond_4
 
-    .line 104
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->isProvisioningNeeded()Z
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    .line 105
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -502,60 +466,50 @@
 
     move-result-object v2
 
-    .line 107
     .local v2, "tetherEnable":Ljava/lang/String;
     new-instance v1, Landroid/content/Intent;
 
     invoke-direct {v1}, Landroid/content/Intent;-><init>()V
 
-    .line 108
     .local v1, "intent":Landroid/content/Intent;
     const-string v4, "extraAddTetherType"
 
     invoke-virtual {v1, v4, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 109
     const-string v4, "extraSetAlarm"
 
     invoke-virtual {v1, v4, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 110
     const-string v4, "extraRunProvision"
 
     invoke-virtual {v1, v4, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 111
     const-string v4, "extraEnableWifiTether"
 
     invoke-virtual {v1, v4, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 112
     invoke-static {v2}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;
 
     move-result-object v4
 
     invoke-virtual {v1, v4}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 113
     const/high16 v4, 0x10000000
 
     invoke-virtual {v1, v4}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 114
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mContext:Landroid/content/Context;
 
     sget-object v5, Landroid/os/UserHandle;->CURRENT:Landroid/os/UserHandle;
 
     invoke-virtual {v4, v1, v5}, Landroid/content/Context;->startServiceAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)Landroid/content/ComponentName;
 
-    .line 131
     .end local v1    # "intent":Landroid/content/Intent;
     .end local v2    # "tetherEnable":Ljava/lang/String;
     :cond_0
     :goto_0
     return-void
 
-    .line 116
     :cond_1
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mWifiManager:Landroid/net/wifi/WifiManager;
 
@@ -563,7 +517,6 @@
 
     move-result v3
 
-    .line 117
     .local v3, "wifiState":I
     const/4 v4, 0x2
 
@@ -573,18 +526,15 @@
 
     if-ne v3, v4, :cond_3
 
-    .line 119
     :cond_2
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mWifiManager:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v4, v7}, Landroid/net/wifi/WifiManager;->setWifiEnabled(Z)Z
 
-    .line 120
     const-string v4, "wifi_saved_state"
 
     invoke-static {v0, v4, v6}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 122
     :cond_3
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mWifiManager:Landroid/net/wifi/WifiManager;
 
@@ -592,14 +542,12 @@
 
     goto :goto_0
 
-    .line 125
     .end local v3    # "wifiState":I
     :cond_4
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mWifiManager:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v4, v5, v7}, Landroid/net/wifi/WifiManager;->setWifiApEnabled(Landroid/net/wifi/WifiConfiguration;Z)Z
 
-    .line 126
     const-string v4, "wifi_saved_state"
 
     invoke-static {v0, v4, v7}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
@@ -608,12 +556,10 @@
 
     if-ne v4, v6, :cond_0
 
-    .line 127
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mWifiManager:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v4, v6}, Landroid/net/wifi/WifiManager;->setWifiEnabled(Z)Z
 
-    .line 128
     const-string v4, "wifi_saved_state"
 
     invoke-static {v0, v4, v7}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z

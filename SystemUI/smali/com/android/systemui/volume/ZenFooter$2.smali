@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 72
     iput-object p1, p0, Lcom/android/systemui/volume/ZenFooter$2;->this$0:Lcom/android/systemui/volume/ZenFooter;
 
     iput-object p2, p0, Lcom/android/systemui/volume/ZenFooter$2;->val$controller:Lcom/android/systemui/statusbar/policy/ZenModeController;
@@ -45,7 +44,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 75
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter$2;->val$controller:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     const/4 v1, 0x0
@@ -59,6 +57,5 @@
 
     invoke-interface {v0, v1, v2, v3}, Lcom/android/systemui/statusbar/policy/ZenModeController;->setZen(ILandroid/net/Uri;Ljava/lang/String;)V
 
-    .line 76
     return-void
 .end method

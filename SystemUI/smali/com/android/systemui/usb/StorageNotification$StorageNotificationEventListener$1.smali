@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 71
     iput-object p1, p0, Lcom/android/systemui/usb/StorageNotification$StorageNotificationEventListener$1;->this$1:Lcom/android/systemui/usb/StorageNotification$StorageNotificationEventListener;
 
     iput-boolean p2, p0, Lcom/android/systemui/usb/StorageNotification$StorageNotificationEventListener$1;->val$connected:Z
@@ -44,7 +43,6 @@
     .locals 2
 
     .prologue
-    .line 74
     iget-object v0, p0, Lcom/android/systemui/usb/StorageNotification$StorageNotificationEventListener$1;->this$1:Lcom/android/systemui/usb/StorageNotification$StorageNotificationEventListener;
 
     iget-object v0, v0, Lcom/android/systemui/usb/StorageNotification$StorageNotificationEventListener;->this$0:Lcom/android/systemui/usb/StorageNotification;
@@ -54,6 +52,5 @@
     # invokes: Lcom/android/systemui/usb/StorageNotification;->onUsbMassStorageConnectionChangedAsync(Z)V
     invoke-static {v0, v1}, Lcom/android/systemui/usb/StorageNotification;->access$000(Lcom/android/systemui/usb/StorageNotification;Z)V
 
-    .line 75
     return-void
 .end method

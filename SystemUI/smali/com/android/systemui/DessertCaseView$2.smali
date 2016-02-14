@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 287
     iput-object p1, p0, Lcom/android/systemui/DessertCaseView$2;->this$0:Lcom/android/systemui/DessertCaseView;
 
     iput-object p2, p0, Lcom/android/systemui/DessertCaseView$2;->val$v:Landroid/widget/ImageView;
@@ -45,7 +44,6 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 290
     iget-object v0, p0, Lcom/android/systemui/DessertCaseView$2;->this$0:Lcom/android/systemui/DessertCaseView;
 
     iget-object v1, p0, Lcom/android/systemui/DessertCaseView$2;->val$v:Landroid/widget/ImageView;
@@ -54,7 +52,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/DessertCaseView;->place(Landroid/view/View;Z)V
 
-    .line 291
     iget-object v0, p0, Lcom/android/systemui/DessertCaseView$2;->this$0:Lcom/android/systemui/DessertCaseView;
 
     new-instance v1, Lcom/android/systemui/DessertCaseView$2$1;
@@ -65,6 +62,5 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/systemui/DessertCaseView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 292
     return-void
 .end method

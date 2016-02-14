@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 325
     iput-object p1, p0, Lcom/android/keyguard/KeyguardViewStateManager$3;->this$0:Lcom/android/keyguard/KeyguardViewStateManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 1
 
     .prologue
-    .line 328
     iget-object v0, p0, Lcom/android/keyguard/KeyguardViewStateManager$3;->this$0:Lcom/android/keyguard/KeyguardViewStateManager;
 
     # getter for: Lcom/android/keyguard/KeyguardViewStateManager;->mKeyguardWidgetPager:Lcom/android/keyguard/KeyguardWidgetPager;
@@ -50,7 +48,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 329
     iget-object v0, p0, Lcom/android/keyguard/KeyguardViewStateManager$3;->this$0:Lcom/android/keyguard/KeyguardViewStateManager;
 
     # getter for: Lcom/android/keyguard/KeyguardViewStateManager;->mKeyguardWidgetPager:Lcom/android/keyguard/KeyguardWidgetPager;
@@ -60,7 +57,6 @@
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardWidgetPager;->hideOutlinesAndSidePages()V
 
-    .line 331
     :cond_0
     return-void
 .end method

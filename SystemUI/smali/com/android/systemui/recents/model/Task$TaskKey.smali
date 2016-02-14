@@ -41,10 +41,8 @@
     .param p7, "lastActiveTime"    # J
 
     .prologue
-    .line 81
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 82
     new-instance v0, Lcom/android/systemui/recents/model/Task$ComponentNameKey;
 
     invoke-virtual {p3}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
@@ -55,25 +53,18 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/Task$TaskKey;->mComponentNameKey:Lcom/android/systemui/recents/model/Task$ComponentNameKey;
 
-    .line 83
     iput p1, p0, Lcom/android/systemui/recents/model/Task$TaskKey;->id:I
 
-    .line 84
     iput p2, p0, Lcom/android/systemui/recents/model/Task$TaskKey;->stackId:I
 
-    .line 85
     iput-object p3, p0, Lcom/android/systemui/recents/model/Task$TaskKey;->baseIntent:Landroid/content/Intent;
 
-    .line 86
     iput p4, p0, Lcom/android/systemui/recents/model/Task$TaskKey;->userId:I
 
-    .line 87
     iput-wide p5, p0, Lcom/android/systemui/recents/model/Task$TaskKey;->firstActiveTime:J
 
-    .line 88
     iput-wide p7, p0, Lcom/android/systemui/recents/model/Task$TaskKey;->lastActiveTime:J
 
-    .line 89
     return-void
 .end method
 
@@ -86,12 +77,10 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 98
     instance-of v2, p1, Lcom/android/systemui/recents/model/Task$TaskKey;
 
     if-nez v2, :cond_1
 
-    .line 102
     :cond_0
     :goto_0
     return v1
@@ -99,10 +88,8 @@
     :cond_1
     move-object v0, p1
 
-    .line 101
     check-cast v0, Lcom/android/systemui/recents/model/Task$TaskKey;
 
-    .line 102
     .local v0, "otherKey":Lcom/android/systemui/recents/model/Task$TaskKey;
     iget v2, p0, Lcom/android/systemui/recents/model/Task$TaskKey;->id:I
 
@@ -131,7 +118,6 @@
     .locals 1
 
     .prologue
-    .line 93
     iget-object v0, p0, Lcom/android/systemui/recents/model/Task$TaskKey;->mComponentNameKey:Lcom/android/systemui/recents/model/Task$ComponentNameKey;
 
     return-object v0
@@ -141,7 +127,6 @@
     .locals 3
 
     .prologue
-    .line 107
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -187,7 +172,6 @@
     .locals 4
 
     .prologue
-    .line 112
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -33,10 +33,8 @@
     .locals 1
 
     .prologue
-    .line 414
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 420
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/qs/QSTile$State;->autoMirrorDrawable:Z
@@ -51,7 +49,6 @@
     .param p1, "other"    # Lcom/android/systemui/qs/QSTile$State;
 
     .prologue
-    .line 423
     if-nez p1, :cond_0
 
     new-instance v1, Ljava/lang/IllegalArgumentException;
@@ -60,7 +57,6 @@
 
     throw v1
 
-    .line 424
     :cond_0
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -82,7 +78,6 @@
 
     throw v1
 
-    .line 425
     :cond_1
     iget-boolean v1, p1, Lcom/android/systemui/qs/QSTile$State;->visible:Z
 
@@ -151,42 +146,34 @@
     :cond_2
     const/4 v0, 0x1
 
-    .line 432
     .local v0, "changed":Z
     :goto_0
     iget-boolean v1, p0, Lcom/android/systemui/qs/QSTile$State;->visible:Z
 
     iput-boolean v1, p1, Lcom/android/systemui/qs/QSTile$State;->visible:Z
 
-    .line 433
     iget-object v1, p0, Lcom/android/systemui/qs/QSTile$State;->icon:Lcom/android/systemui/qs/QSTile$Icon;
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$State;->icon:Lcom/android/systemui/qs/QSTile$Icon;
 
-    .line 434
     iget-object v1, p0, Lcom/android/systemui/qs/QSTile$State;->label:Ljava/lang/String;
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$State;->label:Ljava/lang/String;
 
-    .line 435
     iget-object v1, p0, Lcom/android/systemui/qs/QSTile$State;->contentDescription:Ljava/lang/String;
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$State;->contentDescription:Ljava/lang/String;
 
-    .line 436
     iget-object v1, p0, Lcom/android/systemui/qs/QSTile$State;->dualLabelContentDescription:Ljava/lang/String;
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$State;->dualLabelContentDescription:Ljava/lang/String;
 
-    .line 437
     iget-boolean v1, p0, Lcom/android/systemui/qs/QSTile$State;->autoMirrorDrawable:Z
 
     iput-boolean v1, p1, Lcom/android/systemui/qs/QSTile$State;->autoMirrorDrawable:Z
 
-    .line 438
     return v0
 
-    .line 425
     .end local v0    # "changed":Z
     :cond_3
     const/4 v0, 0x0
@@ -198,7 +185,6 @@
     .locals 1
 
     .prologue
-    .line 443
     invoke-virtual {p0}, Lcom/android/systemui/qs/QSTile$State;->toStringBuilder()Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -214,7 +200,6 @@
     .locals 3
 
     .prologue
-    .line 447
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -233,7 +218,6 @@
 
     move-result-object v0
 
-    .line 448
     .local v0, "sb":Ljava/lang/StringBuilder;
     const-string v1, "visible="
 
@@ -245,7 +229,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    .line 449
     const-string v1, ",icon="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -256,7 +239,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 450
     const-string v1, ",label="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -267,7 +249,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 451
     const-string v1, ",contentDescription="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -278,7 +259,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 452
     const-string v1, ",dualLabelContentDescription="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -289,7 +269,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 453
     const-string v1, ",autoMirrorDrawable="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -300,7 +279,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    .line 454
     const/16 v1, 0x5d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;

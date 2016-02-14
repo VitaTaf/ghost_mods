@@ -35,18 +35,15 @@
 
     const/16 v10, 0x3a
 
-    .line 224
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v4
 
-    .line 225
     .local v4, "locale":Ljava/util/Locale;
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
 
-    .line 226
     .local v5, "res":Landroid/content/res/Resources;
     if-eqz p1, :cond_0
 
@@ -57,7 +54,6 @@
 
     move-result-object v2
 
-    .line 229
     .local v2, "dateViewSkel":Ljava/lang/String;
     sget v7, Lcom/android/keyguard/R$string;->clock_12hr_format:I
 
@@ -65,7 +61,6 @@
 
     move-result-object v0
 
-    .line 230
     .local v0, "clockView12Skel":Ljava/lang/String;
     sget v7, Lcom/android/keyguard/R$string;->clock_24hr_format:I
 
@@ -73,7 +68,6 @@
 
     move-result-object v1
 
-    .line 231
     .local v1, "clockView24Skel":Ljava/lang/String;
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -103,7 +97,6 @@
 
     move-result-object v3
 
-    .line 232
     .local v3, "key":Ljava/lang/String;
     sget-object v7, Lcom/android/keyguard/KeyguardStatusView$Patterns;->cacheKey:Ljava/lang/String;
 
@@ -113,11 +106,9 @@
 
     if-eqz v7, :cond_1
 
-    .line 256
     :goto_1
     return-void
 
-    .line 226
     .end local v0    # "clockView12Skel":Ljava/lang/String;
     .end local v1    # "clockView24Skel":Ljava/lang/String;
     .end local v2    # "dateViewSkel":Ljava/lang/String;
@@ -127,7 +118,6 @@
 
     goto :goto_0
 
-    .line 234
     .restart local v0    # "clockView12Skel":Ljava/lang/String;
     .restart local v1    # "clockView24Skel":Ljava/lang/String;
     .restart local v2    # "dateViewSkel":Ljava/lang/String;
@@ -139,14 +129,12 @@
 
     sput-object v7, Lcom/android/keyguard/KeyguardStatusView$Patterns;->dateView:Ljava/lang/String;
 
-    .line 236
     invoke-static {v4, v0}, Landroid/text/format/DateFormat;->getBestDateTimePattern(Ljava/util/Locale;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v7
 
     sput-object v7, Lcom/android/keyguard/KeyguardStatusView$Patterns;->clockView12:Ljava/lang/String;
 
-    .line 237
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v7
@@ -157,11 +145,9 @@
 
     move-result v6
 
-    .line 240
     .local v6, "showAmPm":Z
     if-nez v6, :cond_2
 
-    .line 243
     const-string v7, "a"
 
     invoke-virtual {v0, v7}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
@@ -170,7 +156,6 @@
 
     if-nez v7, :cond_2
 
-    .line 244
     sget-object v7, Lcom/android/keyguard/KeyguardStatusView$Patterns;->clockView12:Ljava/lang/String;
 
     const-string v8, "a"
@@ -187,7 +172,6 @@
 
     sput-object v7, Lcom/android/keyguard/KeyguardStatusView$Patterns;->clockView12:Ljava/lang/String;
 
-    .line 249
     :cond_2
     invoke-static {v4, v1}, Landroid/text/format/DateFormat;->getBestDateTimePattern(Ljava/util/Locale;Ljava/lang/String;)Ljava/lang/String;
 
@@ -195,7 +179,6 @@
 
     sput-object v7, Lcom/android/keyguard/KeyguardStatusView$Patterns;->clockView24:Ljava/lang/String;
 
-    .line 252
     sget-object v7, Lcom/android/keyguard/KeyguardStatusView$Patterns;->clockView24:Ljava/lang/String;
 
     invoke-virtual {v7, v10, v11}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
@@ -204,7 +187,6 @@
 
     sput-object v7, Lcom/android/keyguard/KeyguardStatusView$Patterns;->clockView24:Ljava/lang/String;
 
-    .line 253
     sget-object v7, Lcom/android/keyguard/KeyguardStatusView$Patterns;->clockView12:Ljava/lang/String;
 
     invoke-virtual {v7, v10, v11}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
@@ -213,7 +195,6 @@
 
     sput-object v7, Lcom/android/keyguard/KeyguardStatusView$Patterns;->clockView12:Ljava/lang/String;
 
-    .line 255
     sput-object v3, Lcom/android/keyguard/KeyguardStatusView$Patterns;->cacheKey:Ljava/lang/String;
 
     goto :goto_1

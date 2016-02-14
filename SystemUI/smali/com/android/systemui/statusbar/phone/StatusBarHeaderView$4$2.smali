@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 709
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4$2;->this$1:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4$2;->val$detail:Lcom/android/systemui/qs/QSTile$DetailAdapter;
@@ -44,7 +43,6 @@
     .locals 2
 
     .prologue
-    .line 712
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4$2;->this$1:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4$2;->val$detail:Lcom/android/systemui/qs/QSTile$DetailAdapter;
@@ -52,6 +50,5 @@
     # invokes: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->handleShowingDetail(Lcom/android/systemui/qs/QSTile$DetailAdapter;)V
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->access$700(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;Lcom/android/systemui/qs/QSTile$DetailAdapter;)V
 
-    .line 713
     return-void
 .end method

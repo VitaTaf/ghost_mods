@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 173
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/DndTile$3;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,7 +38,6 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 176
     const-string v1, "visible"
 
     const/4 v2, 0x0
@@ -48,7 +46,6 @@
 
     move-result v0
 
-    .line 177
     .local v0, "visible":Z
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DndTile$3;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
@@ -59,12 +56,10 @@
 
     invoke-static {v1, v0}, Lcom/android/systemui/qs/tiles/DndTile;->setVisible(Landroid/content/Context;Z)V
 
-    .line 178
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DndTile$3;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/DndTile;->refreshState()V
     invoke-static {v1}, Lcom/android/systemui/qs/tiles/DndTile;->access$400(Lcom/android/systemui/qs/tiles/DndTile;)V
 
-    .line 179
     return-void
 .end method

@@ -47,22 +47,18 @@
     .locals 1
 
     .prologue
-    .line 571
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 572
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$DeviceInfo;->connectionStateIndex:I
 
-    .line 574
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$DeviceInfo;->connectedProfiles:Landroid/util/SparseArray;
 
-    .line 575
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
@@ -77,7 +73,6 @@
     .param p1, "x0"    # Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$1;
 
     .prologue
-    .line 571
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$DeviceInfo;-><init>()V
 
     return-void

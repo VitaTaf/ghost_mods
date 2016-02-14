@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 257
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskViewThumbnail$2;->this$0:Lcom/android/systemui/recents/views/TaskViewThumbnail;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/TaskViewThumbnail$2;->val$postAnimRunnable:Ljava/lang/Runnable;
@@ -42,11 +41,9 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 260
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskViewThumbnail$2;->val$postAnimRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 261
     return-void
 .end method

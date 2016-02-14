@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 65
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationContentView$1;->this$0:Lcom/android/systemui/statusbar/NotificationContentView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,13 +41,11 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 68
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationContentView$1;->this$0:Lcom/android/systemui/statusbar/NotificationContentView;
 
     # setter for: Lcom/android/systemui/statusbar/NotificationContentView;->mAnimate:Z
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/NotificationContentView;->access$002(Lcom/android/systemui/statusbar/NotificationContentView;Z)Z
 
-    .line 69
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationContentView$1;->this$0:Lcom/android/systemui/statusbar/NotificationContentView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/NotificationContentView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -57,6 +54,5 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 70
     return v1
 .end method

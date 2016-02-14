@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 99
     iput-object p1, p0, Lcom/android/systemui/volume/SafetyWarningDialog$1;->this$0:Lcom/android/systemui/volume/SafetyWarningDialog;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,7 +38,6 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 102
     const-string v0, "android.intent.action.CLOSE_SYSTEM_DIALOGS"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -52,7 +50,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 103
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_0
@@ -66,18 +63,15 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 104
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/SafetyWarningDialog$1;->this$0:Lcom/android/systemui/volume/SafetyWarningDialog;
 
     invoke-virtual {v0}, Lcom/android/systemui/volume/SafetyWarningDialog;->cancel()V
 
-    .line 105
     iget-object v0, p0, Lcom/android/systemui/volume/SafetyWarningDialog$1;->this$0:Lcom/android/systemui/volume/SafetyWarningDialog;
 
     invoke-virtual {v0}, Lcom/android/systemui/volume/SafetyWarningDialog;->cleanUp()V
 
-    .line 107
     :cond_1
     return-void
 .end method

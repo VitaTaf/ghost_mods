@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 1494
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$25;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,14 +41,12 @@
     .param p2, "event"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 1496
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1510
     :cond_0
     :goto_0
     :pswitch_0
@@ -57,7 +54,6 @@
 
     return v0
 
-    .line 1498
     :pswitch_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$25;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -67,7 +63,6 @@
 
     if-nez v0, :cond_0
 
-    .line 1499
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$25;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mHandler:Lcom/android/systemui/statusbar/BaseStatusBar$H;
@@ -84,7 +79,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/BaseStatusBar$H;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 1500
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$25;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mHandler:Lcom/android/systemui/statusbar/BaseStatusBar$H;
@@ -112,7 +106,6 @@
 
     goto :goto_0
 
-    .line 1506
     :pswitch_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$25;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -130,7 +123,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/BaseStatusBar$H;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 1507
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$25;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # invokes: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->awakenDreams()V
@@ -138,7 +130,6 @@
 
     goto :goto_0
 
-    .line 1496
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1

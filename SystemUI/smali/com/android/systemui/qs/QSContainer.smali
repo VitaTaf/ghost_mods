@@ -16,15 +16,12 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 34
     invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 30
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/systemui/qs/QSContainer;->mHeightOverride:I
 
-    .line 35
     return-void
 .end method
 
@@ -32,7 +29,6 @@
     .locals 3
 
     .prologue
-    .line 73
     iget v1, p0, Lcom/android/systemui/qs/QSContainer;->mHeightOverride:I
 
     const/4 v2, -0x1
@@ -41,7 +37,6 @@
 
     iget v0, p0, Lcom/android/systemui/qs/QSContainer;->mHeightOverride:I
 
-    .line 74
     .local v0, "height":I
     :goto_0
     invoke-virtual {p0}, Lcom/android/systemui/qs/QSContainer;->getTop()I
@@ -52,10 +47,8 @@
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/QSContainer;->setBottom(I)V
 
-    .line 75
     return-void
 
-    .line 73
     .end local v0    # "height":I
     :cond_0
     invoke-virtual {p0}, Lcom/android/systemui/qs/QSContainer;->getMeasuredHeight()I
@@ -71,7 +64,6 @@
     .locals 2
 
     .prologue
-    .line 65
     iget-object v0, p0, Lcom/android/systemui/qs/QSContainer;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/QSPanel;->isClosingDetail()Z
@@ -80,7 +72,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 66
     iget-object v0, p0, Lcom/android/systemui/qs/QSContainer;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/QSPanel;->getGridHeight()I
@@ -99,7 +90,6 @@
 
     add-int/2addr v0, v1
 
-    .line 68
     :goto_0
     return v0
 
@@ -115,10 +105,8 @@
     .locals 1
 
     .prologue
-    .line 39
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
-    .line 40
     const v0, 0x7f0f00bd
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSContainer;->findViewById(I)Landroid/view/View;
@@ -129,7 +117,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSContainer;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
 
-    .line 41
     return-void
 .end method
 
@@ -142,13 +129,10 @@
     .param p5, "bottom"    # I
 
     .prologue
-    .line 45
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 46
     invoke-direct {p0}, Lcom/android/systemui/qs/QSContainer;->updateBottom()V
 
-    .line 47
     return-void
 .end method
 
@@ -157,12 +141,9 @@
     .param p1, "heightOverride"    # I
 
     .prologue
-    .line 56
     iput p1, p0, Lcom/android/systemui/qs/QSContainer;->mHeightOverride:I
 
-    .line 57
     invoke-direct {p0}, Lcom/android/systemui/qs/QSContainer;->updateBottom()V
 
-    .line 58
     return-void
 .end method

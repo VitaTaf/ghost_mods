@@ -33,7 +33,6 @@
     .locals 0
 
     .prologue
-    .line 421
     iput-object p1, p0, Lcom/android/keyguard/KeyguardTransportControlView$Metadata;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +45,6 @@
     .param p0, "x0"    # Lcom/android/keyguard/KeyguardTransportControlView$Metadata;
 
     .prologue
-    .line 421
     iget-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$Metadata;->artist:Ljava/lang/String;
 
     return-object v0
@@ -58,7 +56,6 @@
     .param p1, "x1"    # Ljava/lang/String;
 
     .prologue
-    .line 421
     iput-object p1, p0, Lcom/android/keyguard/KeyguardTransportControlView$Metadata;->artist:Ljava/lang/String;
 
     return-object p1
@@ -69,7 +66,6 @@
     .param p0, "x0"    # Lcom/android/keyguard/KeyguardTransportControlView$Metadata;
 
     .prologue
-    .line 421
     iget-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$Metadata;->trackTitle:Ljava/lang/String;
 
     return-object v0
@@ -81,7 +77,6 @@
     .param p1, "x1"    # Ljava/lang/String;
 
     .prologue
-    .line 421
     iput-object p1, p0, Lcom/android/keyguard/KeyguardTransportControlView$Metadata;->trackTitle:Ljava/lang/String;
 
     return-object p1
@@ -92,7 +87,6 @@
     .param p0, "x0"    # Lcom/android/keyguard/KeyguardTransportControlView$Metadata;
 
     .prologue
-    .line 421
     iget-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$Metadata;->albumTitle:Ljava/lang/String;
 
     return-object v0
@@ -104,7 +98,6 @@
     .param p1, "x1"    # Ljava/lang/String;
 
     .prologue
-    .line 421
     iput-object p1, p0, Lcom/android/keyguard/KeyguardTransportControlView$Metadata;->albumTitle:Ljava/lang/String;
 
     return-object p1
@@ -115,7 +108,6 @@
     .param p0, "x0"    # Lcom/android/keyguard/KeyguardTransportControlView$Metadata;
 
     .prologue
-    .line 421
     iget-wide v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$Metadata;->duration:J
 
     return-wide v0
@@ -127,7 +119,6 @@
     .param p1, "x1"    # J
 
     .prologue
-    .line 421
     iput-wide p1, p0, Lcom/android/keyguard/KeyguardTransportControlView$Metadata;->duration:J
 
     return-wide p1
@@ -138,7 +129,6 @@
     .param p0, "x0"    # Lcom/android/keyguard/KeyguardTransportControlView$Metadata;
 
     .prologue
-    .line 421
     iget-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$Metadata;->bitmap:Landroid/graphics/Bitmap;
 
     return-object v0
@@ -150,7 +140,6 @@
     .param p1, "x1"    # Landroid/graphics/Bitmap;
 
     .prologue
-    .line 421
     iput-object p1, p0, Lcom/android/keyguard/KeyguardTransportControlView$Metadata;->bitmap:Landroid/graphics/Bitmap;
 
     return-object p1
@@ -164,24 +153,18 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 429
     iput-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$Metadata;->artist:Ljava/lang/String;
 
-    .line 430
     iput-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$Metadata;->trackTitle:Ljava/lang/String;
 
-    .line 431
     iput-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$Metadata;->albumTitle:Ljava/lang/String;
 
-    .line 432
     iput-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$Metadata;->bitmap:Landroid/graphics/Bitmap;
 
-    .line 433
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$Metadata;->duration:J
 
-    .line 434
     return-void
 .end method
 
@@ -189,7 +172,6 @@
     .locals 4
 
     .prologue
-    .line 437
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -35,21 +35,16 @@
     .param p4, "forHun"    # Z
 
     .prologue
-    .line 1554
     iput-object p1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1555
     iput-object p2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->mIntent:Landroid/app/PendingIntent;
 
-    .line 1556
     iput-object p3, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->mNotificationKey:Ljava/lang/String;
 
-    .line 1557
     iput-boolean p4, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->mIsHeadsUp:Z
 
-    .line 1558
     return-void
 .end method
 
@@ -58,7 +53,6 @@
     .param p0, "x0"    # Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;
 
     .prologue
-    .line 1549
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->mIsHeadsUp:Z
 
     return v0
@@ -69,7 +63,6 @@
     .param p0, "x0"    # Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;
 
     .prologue
-    .line 1549
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->mIntent:Landroid/app/PendingIntent;
 
     return-object v0
@@ -80,7 +73,6 @@
     .param p0, "x0"    # Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;
 
     .prologue
-    .line 1549
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->mNotificationKey:Ljava/lang/String;
 
     return-object v0
@@ -93,7 +85,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 1562
     const-string v2, "StatusBar"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -118,7 +109,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1564
     iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     iget-object v2, v2, Lcom/android/systemui/statusbar/BaseStatusBar;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
@@ -127,7 +117,6 @@
 
     move-result v1
 
-    .line 1565
     .local v1, "keyguardShowing":Z
     iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->mIntent:Landroid/app/PendingIntent;
 
@@ -159,7 +148,6 @@
 
     const/4 v0, 0x1
 
-    .line 1568
     .local v0, "afterKeyguardGone":Z
     :goto_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
@@ -170,10 +158,8 @@
 
     invoke-virtual {v2, v3, v0}, Lcom/android/systemui/statusbar/BaseStatusBar;->dismissKeyguardThenExecute(Lcom/android/keyguard/KeyguardHostView$OnDismissAction;Z)V
 
-    .line 1626
     return-void
 
-    .line 1565
     .end local v0    # "afterKeyguardGone":Z
     :cond_0
     const/4 v0, 0x0

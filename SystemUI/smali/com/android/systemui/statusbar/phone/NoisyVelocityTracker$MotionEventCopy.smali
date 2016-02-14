@@ -30,18 +30,13 @@
     .param p3, "eventTime"    # J
 
     .prologue
-    .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 43
     iput p1, p0, Lcom/android/systemui/statusbar/phone/NoisyVelocityTracker$MotionEventCopy;->x:F
 
-    .line 44
     iput p2, p0, Lcom/android/systemui/statusbar/phone/NoisyVelocityTracker$MotionEventCopy;->y:F
 
-    .line 45
     iput-wide p3, p0, Lcom/android/systemui/statusbar/phone/NoisyVelocityTracker$MotionEventCopy;->t:J
 
-    .line 46
     return-void
 .end method

@@ -71,7 +71,6 @@
     .end annotation
 
     .prologue
-    .line 3164
     .local p4, "signalCallbacks":Ljava/util/List;, "Ljava/util/List<Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$NetworkSignalChangedCallback;>;"
     .local p5, "signalClusters":Ljava/util/List;, "Ljava/util/List<Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalCluster;>;"
     const-string v3, "MotorolaWifiSignalController"
@@ -90,40 +89,34 @@
 
     invoke-direct/range {v2 .. v8}, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController;-><init>(Ljava/lang/String;Landroid/content/Context;ILjava/util/List;Ljava/util/List;Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;)V
 
-    .line 3144
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
 
     iput-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentContext:Landroid/content/Context;
 
-    .line 3145
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
 
     iput-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mNetworkController:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;
 
-    .line 3147
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
 
     iput-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mConfig:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaConfig;
 
-    .line 3172
     sget-boolean v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->INFO:Z
 
     if-eqz v2, :cond_0
 
-    .line 3173
     const-string v2, "MotoNetwCtrlr.MotoWifiSignalCtrlr"
 
     const-string v3, "MotorolaWifiSignalController (Constr): Entered"
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3179
     :cond_0
     move-object/from16 v0, p1
 
@@ -131,7 +124,6 @@
 
     iput-object v0, v1, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentContext:Landroid/content/Context;
 
-    .line 3180
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
@@ -142,21 +134,18 @@
 
     iput-object v0, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mCurrentContext:Landroid/content/Context;
 
-    .line 3181
     move-object/from16 v0, p6
 
     move-object/from16 v1, p0
 
     iput-object v0, v1, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mNetworkController:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;
 
-    .line 3182
     move-object/from16 v0, p2
 
     move-object/from16 v1, p0
 
     iput-object v0, v1, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mConfig:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaConfig;
 
-    .line 3186
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentContext:Landroid/content/Context;
@@ -173,7 +162,6 @@
 
     iput-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mWifiManager:Landroid/net/wifi/WifiManager;
 
-    .line 3190
     new-instance v19, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiHandler;
 
     move-object/from16 v0, v19
@@ -182,7 +170,6 @@
 
     invoke-direct {v0, v1}, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiHandler;-><init>(Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;)V
 
-    .line 3191
     .local v19, "handler":Landroid/os/Handler;
     new-instance v2, Lcom/android/internal/util/AsyncChannel;
 
@@ -192,7 +179,6 @@
 
     iput-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mWifiChannel:Lcom/android/internal/util/AsyncChannel;
 
-    .line 3193
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mWifiManager:Landroid/net/wifi/WifiManager;
@@ -201,11 +187,9 @@
 
     move-result-object v20
 
-    .line 3194
     .local v20, "wifiMessenger":Landroid/os/Messenger;
     if-eqz v20, :cond_1
 
-    .line 3197
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mWifiChannel:Lcom/android/internal/util/AsyncChannel;
@@ -220,7 +204,6 @@
 
     invoke-virtual {v2, v3, v0, v1}, Lcom/android/internal/util/AsyncChannel;->connect(Landroid/content/Context;Landroid/os/Handler;Landroid/os/Messenger;)V
 
-    .line 3217
     :cond_1
     move-object/from16 v0, p0
 
@@ -242,7 +225,6 @@
 
     iput-boolean v0, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mHasMobileData:Z
 
-    .line 3220
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
@@ -303,7 +285,6 @@
 
     iput-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->iconGroup:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaIconGroup;
 
-    .line 3241
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
@@ -316,17 +297,14 @@
 
     iput-wide v4, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->time:J
 
-    .line 3243
     sget-boolean v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->INFO:Z
 
     if-eqz v2, :cond_2
 
-    .line 3244
     sget-boolean v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->CHATTY:Z
 
     if-eqz v2, :cond_3
 
-    .line 3245
     const-string v2, "MotoNetwCtrlr.MotoWifiSignalCtrlr"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -353,12 +331,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3256
     :cond_2
     :goto_0
     return-void
 
-    .line 3251
     :cond_3
     const-string v2, "MotoNetwCtrlr.MotoWifiSignalCtrlr"
 
@@ -374,7 +350,6 @@
     .param p0, "x0"    # Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;
 
     .prologue
-    .line 3135
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mWifiChannel:Lcom/android/internal/util/AsyncChannel;
 
     return-object v0
@@ -385,12 +360,10 @@
     .param p1, "info"    # Landroid/net/wifi/WifiInfo;
 
     .prologue
-    .line 3665
     sget-boolean v4, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->DEBUG:Z
 
     if-eqz v4, :cond_0
 
-    .line 3666
     const-string v4, "MotoNetwCtrlr.MotoWifiSignalCtrlr"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -413,22 +386,18 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3673
     :cond_0
     invoke-virtual {p1}, Landroid/net/wifi/WifiInfo;->getSSID()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 3675
     .local v3, "ssid":Ljava/lang/String;
     if-eqz v3, :cond_2
 
-    .line 3678
     sget-boolean v4, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->DEBUG:Z
 
     if-eqz v4, :cond_1
 
-    .line 3679
     const-string v4, "MotoNetwCtrlr.MotoWifiSignalCtrlr"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -451,13 +420,11 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3712
     .end local v3    # "ssid":Ljava/lang/String;
     :cond_1
     :goto_0
     return-object v3
 
-    .line 3688
     .restart local v3    # "ssid":Ljava/lang/String;
     :cond_2
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mWifiManager:Landroid/net/wifi/WifiManager;
@@ -466,22 +433,18 @@
 
     move-result-object v2
 
-    .line 3689
     .local v2, "networks":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/WifiConfiguration;>;"
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v1
 
-    .line 3691
     .local v1, "length":I
     const/4 v0, 0x0
 
-    .line 3692
     .local v0, "i":I
     :goto_1
     if-ge v0, v1, :cond_5
 
-    .line 3695
     invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -496,12 +459,10 @@
 
     if-ne v4, v5, :cond_4
 
-    .line 3698
     sget-boolean v4, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->DEBUG:Z
 
     if-eqz v4, :cond_3
 
-    .line 3699
     const-string v5, "MotoNetwCtrlr.MotoWifiSignalCtrlr"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -532,7 +493,6 @@
 
     invoke-static {v5, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3704
     :cond_3
     invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -544,26 +504,22 @@
 
     goto :goto_0
 
-    .line 3693
     :cond_4
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 3707
     :cond_5
     sget-boolean v4, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->DEBUG:Z
 
     if-eqz v4, :cond_6
 
-    .line 3708
     const-string v4, "MotoNetwCtrlr.MotoWifiSignalCtrlr"
 
     const-string v5, "getSsid: Completed Returns: (null)"
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3712
     :cond_6
     const/4 v3, 0x0
 
@@ -584,12 +540,10 @@
 
     const/4 v5, 0x0
 
-    .line 3758
     sget-boolean v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->DEBUG:Z
 
     if-eqz v2, :cond_0
 
-    .line 3759
     const-string v3, "MotoNetwCtrlr.MotoWifiSignalCtrlr"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -682,7 +636,6 @@
 
     invoke-static {v3, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3774
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -690,28 +643,24 @@
 
     iput v7, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mWifiUIModeSignal:I
 
-    .line 3775
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
 
     iput v7, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mWifiUIModeDataActivity:I
 
-    .line 3776
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
 
     iput-boolean v5, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mQSWifiDataActivityInBool:Z
 
-    .line 3777
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
 
     iput-boolean v5, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mQSWifiDataActivityOutBool:Z
 
-    .line 3779
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -720,7 +669,6 @@
 
     if-eqz v2, :cond_6
 
-    .line 3780
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -741,7 +689,6 @@
 
     if-nez v2, :cond_5
 
-    .line 3785
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -750,7 +697,6 @@
 
     if-nez v2, :cond_4
 
-    .line 3786
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -759,14 +705,12 @@
 
     packed-switch v2, :pswitch_data_0
 
-    .line 3803
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
 
     iput v5, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mWifiUIModeSignal:I
 
-    .line 3807
     :goto_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -776,28 +720,24 @@
 
     packed-switch v2, :pswitch_data_1
 
-    .line 3829
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
 
     iput v5, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mWifiUIModeDataActivity:I
 
-    .line 3830
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
 
     iput-boolean v5, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mQSWifiDataActivityInBool:Z
 
-    .line 3831
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
 
     iput-boolean v5, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mQSWifiDataActivityOutBool:Z
 
-    .line 3897
     :goto_1
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -834,7 +774,6 @@
     :goto_2
     iput v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mSBWifiUIModeSignal:I
 
-    .line 3906
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -847,7 +786,6 @@
 
     iput v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mQSWifiUIModeSignal:I
 
-    .line 3907
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mConfig:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaConfig;
 
     # getter for: Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaConfig;->mConfigEnableWideIcons:Z
@@ -857,7 +795,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 3908
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -882,7 +819,6 @@
 
     iput v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mSBWifiSignalIconId:I
 
-    .line 3910
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -907,7 +843,6 @@
 
     iput v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mQSWifiSignalIconId:I
 
-    .line 3913
     :cond_1
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -927,11 +862,9 @@
 
     aget v1, v3, v2
 
-    .line 3915
     .local v1, "contentDescriptionWifiId":I
     if-eqz v1, :cond_9
 
-    .line 3916
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -944,7 +877,6 @@
 
     iput-object v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mWifiContentDescriptionSignal:Ljava/lang/String;
 
-    .line 3924
     :goto_3
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -981,7 +913,6 @@
     :goto_4
     iput v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mSBWifiUIModeDataActivity:I
 
-    .line 3933
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -994,7 +925,6 @@
 
     iput v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mQSWifiUIModeDataActivity:I
 
-    .line 3935
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mConfig:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaConfig;
 
     # getter for: Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaConfig;->mConfigEnableWideIcons:Z
@@ -1004,7 +934,6 @@
 
     if-eqz v2, :cond_2
 
-    .line 3936
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -1029,7 +958,6 @@
 
     iput v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mSBWifiDataActivityIconId:I
 
-    .line 3938
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -1054,7 +982,6 @@
 
     iput v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mQSWifiDataActivityIconId:I
 
-    .line 3941
     :cond_2
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -1074,11 +1001,9 @@
 
     aget v0, v3, v2
 
-    .line 3943
     .local v0, "contentDescriptionWifiActivityId":I
     if-eqz v0, :cond_c
 
-    .line 3944
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -1091,13 +1016,11 @@
 
     iput-object v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mWifiContentDescriptionDataActivity:Ljava/lang/String;
 
-    .line 3952
     :goto_5
     sget-boolean v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->DEBUG:Z
 
     if-eqz v2, :cond_3
 
-    .line 3953
     const-string v3, "MotoNetwCtrlr"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1278,11 +1201,9 @@
 
     invoke-static {v3, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3975
     :cond_3
     return-void
 
-    .line 3788
     .end local v0    # "contentDescriptionWifiActivityId":I
     .end local v1    # "contentDescriptionWifiId":I
     :pswitch_0
@@ -1294,7 +1215,6 @@
 
     goto/16 :goto_0
 
-    .line 3791
     :pswitch_1
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -1306,7 +1226,6 @@
 
     goto/16 :goto_0
 
-    .line 3794
     :pswitch_2
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -1318,7 +1237,6 @@
 
     goto/16 :goto_0
 
-    .line 3797
     :pswitch_3
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -1330,7 +1248,6 @@
 
     goto/16 :goto_0
 
-    .line 3800
     :pswitch_4
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -1342,7 +1259,6 @@
 
     goto/16 :goto_0
 
-    .line 3809
     :pswitch_5
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -1350,14 +1266,12 @@
 
     iput v9, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mWifiUIModeDataActivity:I
 
-    .line 3810
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
 
     iput-boolean v5, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mQSWifiDataActivityInBool:Z
 
-    .line 3811
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -1366,7 +1280,6 @@
 
     goto/16 :goto_1
 
-    .line 3814
     :pswitch_6
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -1376,14 +1289,12 @@
 
     iput v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mWifiUIModeDataActivity:I
 
-    .line 3815
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
 
     iput-boolean v6, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mQSWifiDataActivityInBool:Z
 
-    .line 3816
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -1392,7 +1303,6 @@
 
     goto/16 :goto_1
 
-    .line 3819
     :pswitch_7
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -1402,14 +1312,12 @@
 
     iput v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mWifiUIModeDataActivity:I
 
-    .line 3820
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
 
     iput-boolean v5, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mQSWifiDataActivityInBool:Z
 
-    .line 3821
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -1418,7 +1326,6 @@
 
     goto/16 :goto_1
 
-    .line 3824
     :pswitch_8
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -1428,14 +1335,12 @@
 
     iput v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mWifiUIModeDataActivity:I
 
-    .line 3825
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
 
     iput-boolean v6, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mQSWifiDataActivityInBool:Z
 
-    .line 3826
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -1444,7 +1349,6 @@
 
     goto/16 :goto_1
 
-    .line 3835
     :cond_4
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -1454,14 +1358,12 @@
 
     packed-switch v2, :pswitch_data_2
 
-    .line 3852
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
 
     iput v5, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mWifiUIModeSignal:I
 
-    .line 3856
     :goto_6
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -1471,21 +1373,18 @@
 
     packed-switch v2, :pswitch_data_3
 
-    .line 3878
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
 
     iput v5, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mWifiUIModeDataActivity:I
 
-    .line 3879
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
 
     iput-boolean v5, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mQSWifiDataActivityInBool:Z
 
-    .line 3880
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -1494,7 +1393,6 @@
 
     goto/16 :goto_1
 
-    .line 3837
     :pswitch_9
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -1506,7 +1404,6 @@
 
     goto :goto_6
 
-    .line 3840
     :pswitch_a
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -1518,7 +1415,6 @@
 
     goto :goto_6
 
-    .line 3843
     :pswitch_b
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -1530,7 +1426,6 @@
 
     goto :goto_6
 
-    .line 3846
     :pswitch_c
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -1542,7 +1437,6 @@
 
     goto :goto_6
 
-    .line 3849
     :pswitch_d
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -1554,7 +1448,6 @@
 
     goto :goto_6
 
-    .line 3858
     :pswitch_e
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -1564,14 +1457,12 @@
 
     iput v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mWifiUIModeDataActivity:I
 
-    .line 3859
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
 
     iput-boolean v5, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mQSWifiDataActivityInBool:Z
 
-    .line 3860
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -1580,7 +1471,6 @@
 
     goto/16 :goto_1
 
-    .line 3863
     :pswitch_f
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -1590,14 +1480,12 @@
 
     iput v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mWifiUIModeDataActivity:I
 
-    .line 3864
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
 
     iput-boolean v6, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mQSWifiDataActivityInBool:Z
 
-    .line 3865
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -1606,7 +1494,6 @@
 
     goto/16 :goto_1
 
-    .line 3868
     :pswitch_10
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -1616,14 +1503,12 @@
 
     iput v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mWifiUIModeDataActivity:I
 
-    .line 3869
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
 
     iput-boolean v5, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mQSWifiDataActivityInBool:Z
 
-    .line 3870
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -1632,7 +1517,6 @@
 
     goto/16 :goto_1
 
-    .line 3873
     :pswitch_11
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -1642,14 +1526,12 @@
 
     iput v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mWifiUIModeDataActivity:I
 
-    .line 3874
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
 
     iput-boolean v6, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mQSWifiDataActivityInBool:Z
 
-    .line 3875
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -1658,7 +1540,6 @@
 
     goto/16 :goto_1
 
-    .line 3885
     :cond_5
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -1666,21 +1547,18 @@
 
     iput v8, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mWifiUIModeSignal:I
 
-    .line 3886
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
 
     iput v8, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mWifiUIModeDataActivity:I
 
-    .line 3887
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
 
     iput-boolean v5, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mQSWifiDataActivityInBool:Z
 
-    .line 3888
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -1689,7 +1567,6 @@
 
     goto/16 :goto_1
 
-    .line 3892
     :cond_6
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -1697,21 +1574,18 @@
 
     iput v6, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mWifiUIModeSignal:I
 
-    .line 3893
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
 
     iput v6, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mWifiUIModeDataActivity:I
 
-    .line 3894
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
 
     iput-boolean v5, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mQSWifiDataActivityInBool:Z
 
-    .line 3895
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -1720,7 +1594,6 @@
 
     goto/16 :goto_1
 
-    .line 3897
     :cond_7
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -1739,7 +1612,6 @@
 
     goto/16 :goto_2
 
-    .line 3921
     .restart local v1    # "contentDescriptionWifiId":I
     :cond_9
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
@@ -1752,7 +1624,6 @@
 
     goto/16 :goto_3
 
-    .line 3924
     :cond_a
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -1771,7 +1642,6 @@
 
     goto/16 :goto_4
 
-    .line 3949
     .restart local v0    # "contentDescriptionWifiActivityId":I
     :cond_c
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
@@ -1784,7 +1654,6 @@
 
     goto/16 :goto_5
 
-    .line 3786
     nop
 
     :pswitch_data_0
@@ -1796,7 +1665,6 @@
         :pswitch_4
     .end packed-switch
 
-    .line 3807
     :pswitch_data_1
     .packed-switch 0x0
         :pswitch_5
@@ -1805,7 +1673,6 @@
         :pswitch_8
     .end packed-switch
 
-    .line 3835
     :pswitch_data_2
     .packed-switch 0x0
         :pswitch_9
@@ -1815,7 +1682,6 @@
         :pswitch_d
     .end packed-switch
 
-    .line 3856
     :pswitch_data_3
     .packed-switch 0x0
         :pswitch_e
@@ -1831,7 +1697,6 @@
     .locals 1
 
     .prologue
-    .line 3135
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->cleanState()Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
 
     move-result-object v0
@@ -1843,32 +1708,27 @@
     .locals 2
 
     .prologue
-    .line 3260
     sget-boolean v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->DEBUG:Z
 
     if-eqz v0, :cond_0
 
-    .line 3261
     const-string v0, "MotoNetwCtrlr.MotoWifiSignalCtrlr"
 
     const-string v1, "cleanState: Entered"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3265
     :cond_0
     sget-boolean v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->DEBUG:Z
 
     if-eqz v0, :cond_1
 
-    .line 3266
     const-string v0, "MotoNetwCtrlr.MotoWifiSignalCtrlr"
 
     const-string v1, "cleanState: Completed: returns: new MotorolaWifiState"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3270
     :cond_1
     new-instance v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
 
@@ -1888,18 +1748,15 @@
 
     const/4 v5, 0x0
 
-    .line 3563
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3564
     .local v0, "action":Ljava/lang/String;
     sget-boolean v3, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->INFO:Z
 
     if-eqz v3, :cond_0
 
-    .line 3565
     const-string v3, "MotoNetwCtrlr.MotoWifiSignalCtrlr"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -1932,7 +1789,6 @@
 
     invoke-static {v3, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3574
     :cond_0
     const-string v3, "android.net.wifi.WIFI_STATE_CHANGED"
 
@@ -1942,7 +1798,6 @@
 
     if-eqz v3, :cond_5
 
-    .line 3577
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v3, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -1962,7 +1817,6 @@
     :goto_0
     iput-boolean v4, v3, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->enabled:Z
 
-    .line 3580
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mNetworkController:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
@@ -1979,7 +1833,6 @@
 
     invoke-virtual {v4, v5, v3}, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->onWifiConnectionStateChanged(ZZ)V
 
-    .line 3647
     :cond_1
     :goto_1
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mConfig:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaConfig;
@@ -1991,36 +1844,29 @@
 
     if-eqz v3, :cond_2
 
-    .line 3649
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->resolveWifiUIModeAndIconIds()V
 
-    .line 3653
     :cond_2
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->notifyListenersIfNecessary()V
 
-    .line 3655
     sget-boolean v3, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->INFO:Z
 
     if-eqz v3, :cond_3
 
-    .line 3656
     const-string v3, "MotoNetwCtrlr.MotoWifiSignalCtrlr"
 
     const-string v4, "handleBroadcast: Completed"
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3660
     :cond_3
     return-void
 
     :cond_4
     move v4, v5
 
-    .line 3577
     goto :goto_0
 
-    .line 3585
     :cond_5
     const-string v3, "android.net.wifi.STATE_CHANGE"
 
@@ -2030,7 +1876,6 @@
 
     if-eqz v3, :cond_a
 
-    .line 3588
     const-string v3, "networkInfo"
 
     invoke-virtual {p1, v3}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -2039,7 +1884,6 @@
 
     check-cast v2, Landroid/net/NetworkInfo;
 
-    .line 3592
     .local v2, "networkInfo":Landroid/net/NetworkInfo;
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -2056,7 +1900,6 @@
     :goto_2
     iput-boolean v4, v3, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->connected:Z
 
-    .line 3599
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mNetworkController:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
@@ -2073,7 +1916,6 @@
 
     invoke-virtual {v4, v5, v3}, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->onWifiConnectionStateChanged(ZZ)V
 
-    .line 3606
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v3, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -2082,7 +1924,6 @@
 
     if-eqz v3, :cond_9
 
-    .line 3611
     const-string v3, "wifiInfo"
 
     invoke-virtual {p1, v3}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -2101,12 +1942,10 @@
 
     move-object v1, v3
 
-    .line 3617
     .local v1, "info":Landroid/net/wifi/WifiInfo;
     :goto_3
     if-eqz v1, :cond_8
 
-    .line 3620
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v3, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -2123,10 +1962,8 @@
     :cond_6
     move v4, v5
 
-    .line 3592
     goto :goto_2
 
-    .line 3611
     :cond_7
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mWifiManager:Landroid/net/wifi/WifiManager;
 
@@ -2136,7 +1973,6 @@
 
     goto :goto_3
 
-    .line 3622
     .restart local v1    # "info":Landroid/net/wifi/WifiInfo;
     :cond_8
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
@@ -2147,7 +1983,6 @@
 
     goto :goto_1
 
-    .line 3625
     .end local v1    # "info":Landroid/net/wifi/WifiInfo;
     :cond_9
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
@@ -2158,7 +1993,6 @@
 
     if-nez v3, :cond_1
 
-    .line 3628
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v3, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -2167,7 +2001,6 @@
 
     goto/16 :goto_1
 
-    .line 3631
     .end local v2    # "networkInfo":Landroid/net/NetworkInfo;
     :cond_a
     const-string v3, "android.net.wifi.RSSI_CHANGED"
@@ -2178,7 +2011,6 @@
 
     if-eqz v3, :cond_1
 
-    .line 3635
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v3, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -2193,7 +2025,6 @@
 
     iput v4, v3, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->rssi:I
 
-    .line 3639
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v3, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -2212,7 +2043,6 @@
 
     iput v4, v3, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->level:I
 
-    .line 3643
     sget v3, Lcom/android/systemui/statusbar/policy/MotorolaWifiIcons;->WIFI_LEVEL_COUNT:I
 
     add-int/lit8 v3, v3, -0x1
@@ -2226,17 +2056,14 @@
     .locals 26
 
     .prologue
-    .line 3275
     sget-boolean v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->DEBUG:Z
 
     if-eqz v2, :cond_0
 
-    .line 3276
     sget-boolean v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->CHATTY:Z
 
     if-eqz v2, :cond_4
 
-    .line 3277
     const-string v2, "MotoNetwCtrlr.MotoWifiSignalCtrlr"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -2263,7 +2090,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3290
     :cond_0
     :goto_0
     move-object/from16 v0, p0
@@ -2299,7 +2125,6 @@
     :cond_1
     const/16 v25, 0x1
 
-    .line 3300
     .local v25, "wifiVisible":Z
     :goto_1
     if-eqz v25, :cond_6
@@ -2312,7 +2137,6 @@
 
     iget-object v9, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->ssid:Ljava/lang/String;
 
-    .line 3306
     .local v9, "wifiDesc":Ljava/lang/String;
     :goto_2
     if-eqz v25, :cond_7
@@ -2329,7 +2153,6 @@
 
     const/16 v24, 0x1
 
-    .line 3312
     .local v24, "ssidPresent":Z
     :goto_3
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->getContentDescription()I
@@ -2342,7 +2165,6 @@
 
     move-result-object v8
 
-    .line 3314
     .local v8, "contentDescription":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -2355,7 +2177,6 @@
 
     if-eqz v2, :cond_2
 
-    .line 3316
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
@@ -2375,7 +2196,6 @@
     :goto_4
     iput-object v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mWifiContentDescriptionNetworkName:Ljava/lang/String;
 
-    .line 3322
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
@@ -2399,7 +2219,6 @@
     :goto_5
     iput-boolean v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mQSWifiDataActivityInBool:Z
 
-    .line 3327
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
@@ -2423,7 +2242,6 @@
     :goto_6
     iput-boolean v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mQSWifiDataActivityOutBool:Z
 
-    .line 3333
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
@@ -2442,7 +2260,6 @@
 
     iput-object v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mWifiContentDescriptionSignal:Ljava/lang/String;
 
-    .line 3334
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
@@ -2455,7 +2272,6 @@
 
     iput v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mSBWifiSignalIconId:I
 
-    .line 3335
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
@@ -2468,7 +2284,6 @@
 
     iput v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mQSWifiSignalIconId:I
 
-    .line 3339
     :cond_2
     move-object/from16 v0, p0
 
@@ -2481,7 +2296,6 @@
 
     if-eqz v2, :cond_d
 
-    .line 3341
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mConfig:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaConfig;
@@ -2493,7 +2307,6 @@
 
     if-eqz v2, :cond_b
 
-    .line 3347
     :goto_7
     move-object/from16 v0, p0
 
@@ -2506,7 +2319,6 @@
 
     if-eqz v2, :cond_c
 
-    .line 3348
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
@@ -2517,7 +2329,6 @@
 
     iput-boolean v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->activityIn:Z
 
-    .line 3349
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
@@ -2528,7 +2339,6 @@
 
     iput-boolean v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->activityOut:Z
 
-    .line 3350
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
@@ -2539,7 +2349,6 @@
 
     iput-boolean v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mQSWifiDataActivityInBool:Z
 
-    .line 3351
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
@@ -2550,7 +2359,6 @@
 
     iput-boolean v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mQSWifiDataActivityOutBool:Z
 
-    .line 3360
     :goto_8
     move-object/from16 v0, p0
 
@@ -2560,11 +2368,9 @@
 
     move-result v22
 
-    .line 3362
     .local v22, "length":I
     const/16 v21, 0x0
 
-    .line 3363
     .local v21, "i":I
     :goto_9
     move/from16 v0, v21
@@ -2573,7 +2379,6 @@
 
     if-ge v0, v1, :cond_14
 
-    .line 3366
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mConfig:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaConfig;
@@ -2585,12 +2390,10 @@
 
     if-nez v2, :cond_12
 
-    .line 3368
     sget-boolean v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->INFO:Z
 
     if-eqz v2, :cond_3
 
-    .line 3369
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mTag:Ljava/lang/String;
@@ -2776,7 +2579,6 @@
 
     invoke-static {v3, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3402
     :cond_3
     move-object/from16 v0, p0
 
@@ -2842,13 +2644,11 @@
     :goto_d
     invoke-interface/range {v2 .. v9}, Lcom/android/systemui/statusbar/policy/MotorolaNetworkController$NetworkSignalChangedCallback;->onWifiSignalChanged(ZZIZZLjava/lang/String;Ljava/lang/String;)V
 
-    .line 3364
     :goto_e
     add-int/lit8 v21, v21, 0x1
 
     goto/16 :goto_9
 
-    .line 3283
     .end local v8    # "contentDescription":Ljava/lang/String;
     .end local v9    # "wifiDesc":Ljava/lang/String;
     .end local v21    # "i":I
@@ -2864,27 +2664,23 @@
 
     goto/16 :goto_0
 
-    .line 3290
     :cond_5
     const/16 v25, 0x0
 
     goto/16 :goto_1
 
-    .line 3300
     .restart local v25    # "wifiVisible":Z
     :cond_6
     const/4 v9, 0x0
 
     goto/16 :goto_2
 
-    .line 3306
     .restart local v9    # "wifiDesc":Ljava/lang/String;
     :cond_7
     const/16 v24, 0x0
 
     goto/16 :goto_3
 
-    .line 3316
     .restart local v8    # "contentDescription":Ljava/lang/String;
     .restart local v24    # "ssidPresent":Z
     :cond_8
@@ -2892,19 +2688,16 @@
 
     goto/16 :goto_4
 
-    .line 3322
     :cond_9
     const/4 v3, 0x0
 
     goto/16 :goto_5
 
-    .line 3327
     :cond_a
     const/4 v3, 0x0
 
     goto/16 :goto_6
 
-    .line 3343
     :cond_b
     move-object/from16 v0, p0
 
@@ -2918,7 +2711,6 @@
 
     goto/16 :goto_7
 
-    .line 3353
     :cond_c
     move-object/from16 v0, p0
 
@@ -2932,7 +2724,6 @@
 
     goto/16 :goto_8
 
-    .line 3356
     :cond_d
     move-object/from16 v0, p0
 
@@ -2944,7 +2735,6 @@
 
     iput v3, v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mSBWifiDataActivityIconId:I
 
-    .line 3357
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
@@ -2957,7 +2747,6 @@
 
     goto/16 :goto_8
 
-    .line 3369
     .restart local v21    # "i":I
     .restart local v22    # "length":I
     :cond_e
@@ -2970,7 +2759,6 @@
 
     goto/16 :goto_b
 
-    .line 3402
     :cond_10
     const/4 v6, 0x0
 
@@ -2981,13 +2769,11 @@
 
     goto :goto_d
 
-    .line 3422
     :cond_12
     sget-boolean v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->INFO:Z
 
     if-eqz v2, :cond_13
 
-    .line 3423
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mTag:Ljava/lang/String;
@@ -3255,7 +3041,6 @@
 
     invoke-static {v3, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3456
     :cond_13
     move-object/from16 v0, p0
 
@@ -3364,7 +3149,6 @@
 
     goto/16 :goto_e
 
-    .line 3476
     :cond_14
     move-object/from16 v0, p0
 
@@ -3374,11 +3158,9 @@
 
     move-result v23
 
-    .line 3478
     .local v23, "signalClustersLength":I
     const/16 v21, 0x0
 
-    .line 3479
     :goto_f
     move/from16 v0, v21
 
@@ -3386,7 +3168,6 @@
 
     if-ge v0, v1, :cond_18
 
-    .line 3482
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mConfig:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaConfig;
@@ -3398,12 +3179,10 @@
 
     if-nez v2, :cond_16
 
-    .line 3484
     sget-boolean v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->INFO:Z
 
     if-eqz v2, :cond_15
 
-    .line 3485
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mTag:Ljava/lang/String;
@@ -3493,7 +3272,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3500
     :cond_15
     move-object/from16 v0, p0
 
@@ -3515,19 +3293,16 @@
 
     invoke-interface {v2, v0, v3, v8}, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalCluster;->setWifiIndicators(ZILjava/lang/String;)V
 
-    .line 3480
     :goto_10
     add-int/lit8 v21, v21, 0x1
 
     goto/16 :goto_f
 
-    .line 3508
     :cond_16
     sget-boolean v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->INFO:Z
 
     if-eqz v2, :cond_17
 
-    .line 3509
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mTag:Ljava/lang/String;
@@ -3735,7 +3510,6 @@
 
     invoke-static {v3, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3536
     :cond_17
     move-object/from16 v0, p0
 
@@ -3808,20 +3582,17 @@
 
     goto/16 :goto_10
 
-    .line 3549
     :cond_18
     sget-boolean v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->DEBUG:Z
 
     if-eqz v2, :cond_19
 
-    .line 3550
     const-string v2, "MotoNetwCtrlr.MotoWifiSignalCtrlr"
 
     const-string v3, "notifyListeners: Completed"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3554
     :cond_19
     return-void
 .end method
@@ -3837,12 +3608,10 @@
 
     const/4 v3, 0x1
 
-    .line 3719
     sget-boolean v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->DEBUG:Z
 
     if-eqz v0, :cond_0
 
-    .line 3720
     const-string v0, "MotoNetwCtrlr.MotoWifiSignalCtrlr"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3865,7 +3634,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3727
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
@@ -3881,7 +3649,6 @@
     :goto_0
     iput-boolean v1, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->activityIn:Z
 
-    .line 3733
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
@@ -3898,7 +3665,6 @@
     :cond_3
     iput-boolean v2, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->activityOut:Z
 
-    .line 3739
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mConfig:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaConfig;
 
     # getter for: Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaConfig;->mConfigEnableMotorolaCustomizations:Z
@@ -3908,39 +3674,32 @@
 
     if-eqz v0, :cond_4
 
-    .line 3741
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaState;
 
     check-cast v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;
 
     iput p1, v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiState;->mWifiActivityEnum:I
 
-    .line 3742
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->resolveWifiUIModeAndIconIds()V
 
-    .line 3746
     :cond_4
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->notifyListenersIfNecessary()V
 
-    .line 3748
     sget-boolean v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->DEBUG:Z
 
     if-eqz v0, :cond_5
 
-    .line 3749
     const-string v0, "MotoNetwCtrlr.MotoWifiSignalCtrlr"
 
     const-string v1, "setActivity: Completed"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3753
     :cond_5
     return-void
 
     :cond_6
     move v1, v2
 
-    .line 3727
     goto :goto_0
 .end method

@@ -36,7 +36,6 @@
     .locals 0
 
     .prologue
-    .line 1527
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$4;->this$0:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$4;->val$enabled:Z
@@ -53,7 +52,6 @@
     .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
-    .line 1527
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1    # "x0":[Ljava/lang/Object;
@@ -71,7 +69,6 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1532
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$4;->this$0:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->mWifiManager:Landroid/net/wifi/WifiManager;
@@ -80,7 +77,6 @@
 
     move-result v0
 
-    .line 1533
     .local v0, "wifiApState":I
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$4;->val$enabled:Z
 
@@ -94,7 +90,6 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1542
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$4;->this$0:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;
 
@@ -104,7 +99,6 @@
 
     invoke-virtual {v1, v3, v2}, Landroid/net/wifi/WifiManager;->setWifiApEnabled(Landroid/net/wifi/WifiConfiguration;Z)Z
 
-    .line 1548
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$4;->this$0:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;
 
@@ -114,6 +108,5 @@
 
     invoke-virtual {v1, v2}, Landroid/net/wifi/WifiManager;->setWifiEnabled(Z)Z
 
-    .line 1549
     return-object v3
 .end method

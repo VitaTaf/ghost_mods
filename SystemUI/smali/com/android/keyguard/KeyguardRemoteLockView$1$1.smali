@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 177
     iput-object p1, p0, Lcom/android/keyguard/KeyguardRemoteLockView$1$1;->this$1:Lcom/android/keyguard/KeyguardRemoteLockView$1;
 
     iput-boolean p2, p0, Lcom/android/keyguard/KeyguardRemoteLockView$1$1;->val$success:Z
@@ -46,7 +45,6 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 179
     iget-object v0, p0, Lcom/android/keyguard/KeyguardRemoteLockView$1$1;->this$1:Lcom/android/keyguard/KeyguardRemoteLockView$1;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardRemoteLockView$1;->this$0:Lcom/android/keyguard/KeyguardRemoteLockView;
@@ -58,7 +56,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 180
     iget-object v0, p0, Lcom/android/keyguard/KeyguardRemoteLockView$1$1;->this$1:Lcom/android/keyguard/KeyguardRemoteLockView$1;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardRemoteLockView$1;->this$0:Lcom/android/keyguard/KeyguardRemoteLockView;
@@ -70,13 +67,11 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->hide()V
 
-    .line 183
     :cond_0
     iget-boolean v0, p0, Lcom/android/keyguard/KeyguardRemoteLockView$1$1;->val$success:Z
 
     if-eqz v0, :cond_1
 
-    .line 187
     iget-object v0, p0, Lcom/android/keyguard/KeyguardRemoteLockView$1$1;->this$1:Lcom/android/keyguard/KeyguardRemoteLockView$1;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardRemoteLockView$1;->this$0:Lcom/android/keyguard/KeyguardRemoteLockView;
@@ -93,7 +88,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->reportRemoteLockStateChanged(Z)V
 
-    .line 189
     iget-object v0, p0, Lcom/android/keyguard/KeyguardRemoteLockView$1$1;->this$1:Lcom/android/keyguard/KeyguardRemoteLockView$1;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardRemoteLockView$1;->this$0:Lcom/android/keyguard/KeyguardRemoteLockView;
@@ -102,7 +96,6 @@
 
     invoke-interface {v0, v2}, Lcom/android/keyguard/KeyguardSecurityCallback;->dismiss(Z)V
 
-    .line 196
     :goto_0
     iget-object v0, p0, Lcom/android/keyguard/KeyguardRemoteLockView$1$1;->this$1:Lcom/android/keyguard/KeyguardRemoteLockView$1;
 
@@ -112,7 +105,6 @@
 
     invoke-interface {v0}, Lcom/android/keyguard/KeyguardSecurityCallback;->userActivity()V
 
-    .line 197
     iget-object v0, p0, Lcom/android/keyguard/KeyguardRemoteLockView$1$1;->this$1:Lcom/android/keyguard/KeyguardRemoteLockView$1;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardRemoteLockView$1;->this$0:Lcom/android/keyguard/KeyguardRemoteLockView;
@@ -122,10 +114,8 @@
     # setter for: Lcom/android/keyguard/KeyguardRemoteLockView;->mCheckRemoteLockThread:Lcom/android/keyguard/KeyguardRemoteLockView$CheckRemoteLock;
     invoke-static {v0, v1}, Lcom/android/keyguard/KeyguardRemoteLockView;->access$502(Lcom/android/keyguard/KeyguardRemoteLockView;Lcom/android/keyguard/KeyguardRemoteLockView$CheckRemoteLock;)Lcom/android/keyguard/KeyguardRemoteLockView$CheckRemoteLock;
 
-    .line 198
     return-void
 
-    .line 191
     :cond_1
     iget-object v0, p0, Lcom/android/keyguard/KeyguardRemoteLockView$1$1;->this$1:Lcom/android/keyguard/KeyguardRemoteLockView$1;
 
@@ -137,7 +127,6 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/keyguard/SecurityMessageDisplay;->setMessage(IZ)V
 
-    .line 193
     iget-object v0, p0, Lcom/android/keyguard/KeyguardRemoteLockView$1$1;->this$1:Lcom/android/keyguard/KeyguardRemoteLockView$1;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardRemoteLockView$1;->this$0:Lcom/android/keyguard/KeyguardRemoteLockView;

@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 808
     iput-object p1, p0, Lcom/android/keyguard/KeyguardHostView$7;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,12 +39,10 @@
     .locals 1
 
     .prologue
-    .line 811
     iget-object v0, p0, Lcom/android/keyguard/KeyguardHostView$7;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     # invokes: Lcom/android/keyguard/KeyguardHostView;->showAppropriateWidgetPage()V
     invoke-static {v0}, Lcom/android/keyguard/KeyguardHostView;->access$700(Lcom/android/keyguard/KeyguardHostView;)V
 
-    .line 812
     return-void
 .end method

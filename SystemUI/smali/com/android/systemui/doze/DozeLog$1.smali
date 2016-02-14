@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 229
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
 
     return-void
@@ -31,10 +30,8 @@
     .locals 0
 
     .prologue
-    .line 232
     invoke-static {}, Lcom/android/systemui/doze/DozeLog;->traceEmergencyCall()V
 
-    .line 233
     return-void
 .end method
 
@@ -43,10 +40,8 @@
     .param p1, "bouncer"    # Z
 
     .prologue
-    .line 237
     invoke-static {p1}, Lcom/android/systemui/doze/DozeLog;->traceKeyguardBouncerChanged(Z)V
 
-    .line 238
     return-void
 .end method
 
@@ -55,10 +50,8 @@
     .param p1, "showing"    # Z
 
     .prologue
-    .line 252
     invoke-static {p1}, Lcom/android/systemui/doze/DozeLog;->traceKeyguard(Z)V
 
-    .line 253
     return-void
 .end method
 
@@ -67,10 +60,8 @@
     .param p1, "why"    # I
 
     .prologue
-    .line 247
     invoke-static {p1}, Lcom/android/systemui/doze/DozeLog;->traceScreenOff(I)V
 
-    .line 248
     return-void
 .end method
 
@@ -78,9 +69,7 @@
     .locals 0
 
     .prologue
-    .line 242
     invoke-static {}, Lcom/android/systemui/doze/DozeLog;->traceScreenOn()V
 
-    .line 243
     return-void
 .end method

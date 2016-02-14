@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 411
     iput-object p1, p0, Lcom/android/keyguard/KeyguardSimPukView$3$1;->this$1:Lcom/android/keyguard/KeyguardSimPukView$3;
 
     iput p2, p0, Lcom/android/keyguard/KeyguardSimPukView$3$1;->val$result:I
@@ -50,7 +49,6 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 413
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView$3$1;->this$1:Lcom/android/keyguard/KeyguardSimPukView$3;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardSimPukView$3;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
@@ -62,7 +60,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 414
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView$3$1;->this$1:Lcom/android/keyguard/KeyguardSimPukView$3;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardSimPukView$3;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
@@ -74,7 +71,6 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->hide()V
 
-    .line 416
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView$3$1;->this$1:Lcom/android/keyguard/KeyguardSimPukView$3;
 
@@ -82,12 +78,10 @@
 
     invoke-virtual {v0, v3}, Lcom/android/keyguard/KeyguardSimPukView;->resetPasswordText(Z)V
 
-    .line 417
     iget v0, p0, Lcom/android/keyguard/KeyguardSimPukView$3$1;->val$result:I
 
     if-nez v0, :cond_1
 
-    .line 418
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView$3$1;->this$1:Lcom/android/keyguard/KeyguardSimPukView$3;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardSimPukView$3;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
@@ -111,7 +105,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->reportSimUnlocked(I)V
 
-    .line 420
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView$3$1;->this$1:Lcom/android/keyguard/KeyguardSimPukView$3;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardSimPukView$3;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
@@ -120,7 +113,6 @@
 
     invoke-interface {v0, v3}, Lcom/android/keyguard/KeyguardSecurityCallback;->dismiss(Z)V
 
-    .line 440
     :goto_0
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView$3$1;->this$1:Lcom/android/keyguard/KeyguardSimPukView$3;
 
@@ -131,23 +123,19 @@
     # setter for: Lcom/android/keyguard/KeyguardSimPukView;->mCheckSimPukThread:Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;
     invoke-static {v0, v1}, Lcom/android/keyguard/KeyguardSimPukView;->access$1602(Lcom/android/keyguard/KeyguardSimPukView;Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;)Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;
 
-    .line 441
     return-void
 
-    .line 422
     :cond_1
     iget v0, p0, Lcom/android/keyguard/KeyguardSimPukView$3$1;->val$result:I
 
     if-ne v0, v3, :cond_3
 
-    .line 423
     iget v0, p0, Lcom/android/keyguard/KeyguardSimPukView$3$1;->val$attemptsRemaining:I
 
     const/4 v1, 0x2
 
     if-gt v0, v1, :cond_2
 
-    .line 425
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView$3$1;->this$1:Lcom/android/keyguard/KeyguardSimPukView$3;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardSimPukView$3;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
@@ -161,7 +149,6 @@
 
     invoke-virtual {v0}, Landroid/app/Dialog;->show()V
 
-    .line 438
     :goto_1
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView$3$1;->this$1:Lcom/android/keyguard/KeyguardSimPukView$3;
 
@@ -176,7 +163,6 @@
 
     goto :goto_0
 
-    .line 428
     :cond_2
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView$3$1;->this$1:Lcom/android/keyguard/KeyguardSimPukView$3;
 
@@ -199,7 +185,6 @@
 
     goto :goto_1
 
-    .line 432
     :cond_3
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView$3$1;->this$1:Lcom/android/keyguard/KeyguardSimPukView$3;
 

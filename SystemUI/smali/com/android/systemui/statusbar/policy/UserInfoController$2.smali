@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 90
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/UserInfoController$2;->this$0:Lcom/android/systemui/statusbar/policy/UserInfoController;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 93
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 94
     .local v0, "action":Ljava/lang/String;
     const-string v4, "android.provider.Contacts.PROFILE_CHANGED"
 
@@ -62,7 +59,6 @@
 
     if-eqz v4, :cond_1
 
-    .line 97
     :cond_0
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
@@ -75,7 +71,6 @@
 
     iget v2, v4, Landroid/content/pm/UserInfo;->id:I
 
-    .line 98
     .local v2, "currentUser":I
     const-string v4, "android.intent.extra.user_handle"
 
@@ -87,29 +82,24 @@
 
     move-result v1
 
-    .line 100
     .local v1, "changedUser":I
     if-ne v1, v2, :cond_1
 
-    .line 101
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/UserInfoController$2;->this$0:Lcom/android/systemui/statusbar/policy/UserInfoController;
 
     invoke-virtual {v4}, Lcom/android/systemui/statusbar/policy/UserInfoController;->reloadUserInfo()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 107
     .end local v1    # "changedUser":I
     .end local v2    # "currentUser":I
     :cond_1
     :goto_0
     return-void
 
-    .line 103
     :catch_0
     move-exception v3
 
-    .line 104
     .local v3, "e":Landroid/os/RemoteException;
     const-string v4, "UserInfoController"
 

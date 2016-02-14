@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 61
     iput-object p1, p0, Lcom/android/systemui/ViewInvertHelper$2;->this$0:Lcom/android/systemui/ViewInvertHelper;
 
     iput-boolean p2, p0, Lcom/android/systemui/ViewInvertHelper$2;->val$invert:Z
@@ -42,12 +41,10 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 64
     iget-boolean v0, p0, Lcom/android/systemui/ViewInvertHelper$2;->val$invert:Z
 
     if-nez v0, :cond_0
 
-    .line 65
     iget-object v0, p0, Lcom/android/systemui/ViewInvertHelper$2;->this$0:Lcom/android/systemui/ViewInvertHelper;
 
     # getter for: Lcom/android/systemui/ViewInvertHelper;->mTarget:Landroid/view/View;
@@ -61,7 +58,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 67
     :cond_0
     return-void
 .end method

@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 263
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable$1;->this$0:Lcom/android/systemui/statusbar/phone/TrustDrawable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 266
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable$1;->this$0:Lcom/android/systemui/statusbar/phone/TrustDrawable;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -57,11 +55,9 @@
     # setter for: Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurAlpha:I
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/phone/TrustDrawable;->access$102(Lcom/android/systemui/statusbar/phone/TrustDrawable;I)I
 
-    .line 267
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable$1;->this$0:Lcom/android/systemui/statusbar/phone/TrustDrawable;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/TrustDrawable;->invalidateSelf()V
 
-    .line 268
     return-void
 .end method

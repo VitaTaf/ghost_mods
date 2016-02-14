@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 122
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -37,12 +36,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 127
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile$APChangedReceiver;->mUsageTracker:Lcom/android/systemui/qs/UsageTracker;
 
     if-nez v0, :cond_0
 
-    .line 128
     # invokes: Lcom/android/systemui/qs/tiles/HotspotTile;->newUsageTracker(Landroid/content/Context;)Lcom/android/systemui/qs/UsageTracker;
     invoke-static {p1}, Lcom/android/systemui/qs/tiles/HotspotTile;->access$300(Landroid/content/Context;)Lcom/android/systemui/qs/UsageTracker;
 
@@ -50,12 +47,10 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile$APChangedReceiver;->mUsageTracker:Lcom/android/systemui/qs/UsageTracker;
 
-    .line 130
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile$APChangedReceiver;->mUsageTracker:Lcom/android/systemui/qs/UsageTracker;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/UsageTracker;->trackUsage()V
 
-    .line 131
     return-void
 .end method

@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 81
     iput-object p1, p0, Lcom/android/systemui/usb/UsbStorageActivity$1;->this$0:Lcom/android/systemui/usb/UsbStorageActivity;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,7 +38,6 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 84
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
@@ -52,13 +50,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 85
     iget-object v0, p0, Lcom/android/systemui/usb/UsbStorageActivity$1;->this$0:Lcom/android/systemui/usb/UsbStorageActivity;
 
     # invokes: Lcom/android/systemui/usb/UsbStorageActivity;->handleUsbStateChanged(Landroid/content/Intent;)V
     invoke-static {v0, p2}, Lcom/android/systemui/usb/UsbStorageActivity;->access$000(Lcom/android/systemui/usb/UsbStorageActivity;Landroid/content/Intent;)V
 
-    .line 87
     :cond_0
     return-void
 .end method

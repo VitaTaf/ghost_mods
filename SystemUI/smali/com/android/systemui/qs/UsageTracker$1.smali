@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 77
     iput-object p1, p0, Lcom/android/systemui/qs/UsageTracker$1;->this$0:Lcom/android/systemui/qs/UsageTracker;
 
     iput-object p2, p0, Lcom/android/systemui/qs/UsageTracker$1;->val$onConfirmed:Ljava/lang/Runnable;
@@ -46,22 +45,18 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 80
     iget-object v0, p0, Lcom/android/systemui/qs/UsageTracker$1;->this$0:Lcom/android/systemui/qs/UsageTracker;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/UsageTracker;->reset()V
 
-    .line 81
     iget-object v0, p0, Lcom/android/systemui/qs/UsageTracker$1;->val$onConfirmed:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 82
     iget-object v0, p0, Lcom/android/systemui/qs/UsageTracker$1;->val$onConfirmed:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 84
     :cond_0
     return-void
 .end method

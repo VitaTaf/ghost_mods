@@ -25,7 +25,6 @@
     .param p3, "x1"    # Landroid/content/ComponentName;
 
     .prologue
-    .line 58
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialogComponent$1;->this$0:Lcom/android/systemui/volume/VolumeDialogComponent;
 
     invoke-direct {p0, p2, p3}, Lcom/android/systemui/volume/VolumeDialogController;-><init>(Landroid/content/Context;Landroid/content/ComponentName;)V
@@ -39,12 +38,10 @@
     .locals 1
 
     .prologue
-    .line 61
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogComponent$1;->this$0:Lcom/android/systemui/volume/VolumeDialogComponent;
 
     # invokes: Lcom/android/systemui/volume/VolumeDialogComponent;->sendUserActivity()V
     invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialogComponent;->access$000(Lcom/android/systemui/volume/VolumeDialogComponent;)V
 
-    .line 62
     return-void
 .end method

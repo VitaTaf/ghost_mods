@@ -83,7 +83,6 @@
     .locals 2
 
     .prologue
-    .line 59
     const-string v0, "QSTile"
 
     const/4 v1, 0x3
@@ -102,11 +101,9 @@
     .param p1, "host"    # Lcom/android/systemui/qs/QSTile$Host;
 
     .prologue
-    .line 84
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 58
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -135,7 +132,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSTile;->TAG:Ljava/lang/String;
 
-    .line 73
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -146,31 +142,26 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSTile;->mUiHandler:Landroid/os/Handler;
 
-    .line 76
     invoke-virtual {p0}, Lcom/android/systemui/qs/QSTile;->newTileState()Lcom/android/systemui/qs/QSTile$State;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
-    .line 77
     invoke-virtual {p0}, Lcom/android/systemui/qs/QSTile;->newTileState()Lcom/android/systemui/qs/QSTile$State;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSTile;->mTmpState:Lcom/android/systemui/qs/QSTile$State;
 
-    .line 85
     iput-object p1, p0, Lcom/android/systemui/qs/QSTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
 
-    .line 86
     invoke-interface {p1}, Lcom/android/systemui/qs/QSTile$Host;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSTile;->mContext:Landroid/content/Context;
 
-    .line 87
     new-instance v0, Lcom/android/systemui/qs/QSTile$H;
 
     invoke-interface {p1}, Lcom/android/systemui/qs/QSTile$Host;->getLooper()Landroid/os/Looper;
@@ -183,7 +174,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSTile;->mHandler:Lcom/android/systemui/qs/QSTile$H;
 
-    .line 88
     return-void
 .end method
 
@@ -193,7 +183,6 @@
     .param p1, "x1"    # Lcom/android/systemui/qs/QSTile$Callback;
 
     .prologue
-    .line 57
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile;->handleSetCallback(Lcom/android/systemui/qs/QSTile$Callback;)V
 
     return-void
@@ -205,7 +194,6 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 57
     iput-boolean p1, p0, Lcom/android/systemui/qs/QSTile;->mAnnounceNextStateChange:Z
 
     return p1
@@ -217,7 +205,6 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 57
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile;->handleShowDetail(Z)V
 
     return-void
@@ -229,7 +216,6 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 57
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile;->handleToggleStateChanged(Z)V
 
     return-void
@@ -241,7 +227,6 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 57
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile;->handleScanStateChanged(Z)V
 
     return-void
@@ -252,18 +237,15 @@
     .param p1, "state"    # Z
 
     .prologue
-    .line 222
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     iget-object v0, p0, Lcom/android/systemui/qs/QSTile;->mCallback:Lcom/android/systemui/qs/QSTile$Callback;
 
     if-eqz v0, :cond_0
 
-    .line 223
     iget-object v0, p0, Lcom/android/systemui/qs/QSTile;->mCallback:Lcom/android/systemui/qs/QSTile$Callback;
 
     invoke-interface {v0, p1}, Lcom/android/systemui/qs/QSTile$Callback;->onScanStateChanged(Z)V
 
-    .line 225
     :cond_0
     return-void
 .end method
@@ -273,16 +255,13 @@
     .param p1, "callback"    # Lcom/android/systemui/qs/QSTile$Callback;
 
     .prologue
-    .line 167
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     iput-object p1, p0, Lcom/android/systemui/qs/QSTile;->mCallback:Lcom/android/systemui/qs/QSTile$Callback;
 
-    .line 168
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSTile;->handleRefreshState(Ljava/lang/Object;)V
 
-    .line 169
     return-void
 .end method
 
@@ -291,18 +270,15 @@
     .param p1, "show"    # Z
 
     .prologue
-    .line 210
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     iget-object v0, p0, Lcom/android/systemui/qs/QSTile;->mCallback:Lcom/android/systemui/qs/QSTile$Callback;
 
     if-eqz v0, :cond_0
 
-    .line 211
     iget-object v0, p0, Lcom/android/systemui/qs/QSTile;->mCallback:Lcom/android/systemui/qs/QSTile$Callback;
 
     invoke-interface {v0, p1}, Lcom/android/systemui/qs/QSTile$Callback;->onShowDetail(Z)V
 
-    .line 213
     :cond_0
     return-void
 .end method
@@ -311,47 +287,39 @@
     .locals 4
 
     .prologue
-    .line 188
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     invoke-virtual {p0}, Lcom/android/systemui/qs/QSTile;->shouldAnnouncementBeDelayed()Z
 
     move-result v1
 
-    .line 189
     .local v1, "delayAnnouncement":Z
     iget-object v2, p0, Lcom/android/systemui/qs/QSTile;->mCallback:Lcom/android/systemui/qs/QSTile$Callback;
 
     if-eqz v2, :cond_0
 
-    .line 190
     iget-object v2, p0, Lcom/android/systemui/qs/QSTile;->mCallback:Lcom/android/systemui/qs/QSTile$Callback;
 
     iget-object v3, p0, Lcom/android/systemui/qs/QSTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
     invoke-interface {v2, v3}, Lcom/android/systemui/qs/QSTile$Callback;->onStateChanged(Lcom/android/systemui/qs/QSTile$State;)V
 
-    .line 191
     iget-boolean v2, p0, Lcom/android/systemui/qs/QSTile;->mAnnounceNextStateChange:Z
 
     if-eqz v2, :cond_0
 
     if-nez v1, :cond_0
 
-    .line 192
     invoke-virtual {p0}, Lcom/android/systemui/qs/QSTile;->composeChangeAnnouncement()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 193
     .local v0, "announcement":Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 194
     iget-object v2, p0, Lcom/android/systemui/qs/QSTile;->mCallback:Lcom/android/systemui/qs/QSTile$Callback;
 
     invoke-interface {v2, v0}, Lcom/android/systemui/qs/QSTile$Callback;->onAnnouncementRequested(Ljava/lang/CharSequence;)V
 
-    .line 198
     .end local v0    # "announcement":Ljava/lang/String;
     :cond_0
     iget-boolean v2, p0, Lcom/android/systemui/qs/QSTile;->mAnnounceNextStateChange:Z
@@ -365,10 +333,8 @@
     :goto_0
     iput-boolean v2, p0, Lcom/android/systemui/qs/QSTile;->mAnnounceNextStateChange:Z
 
-    .line 199
     return-void
 
-    .line 198
     :cond_1
     const/4 v2, 0x0
 
@@ -380,18 +346,15 @@
     .param p1, "state"    # Z
 
     .prologue
-    .line 216
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     iget-object v0, p0, Lcom/android/systemui/qs/QSTile;->mCallback:Lcom/android/systemui/qs/QSTile$Callback;
 
     if-eqz v0, :cond_0
 
-    .line 217
     iget-object v0, p0, Lcom/android/systemui/qs/QSTile;->mCallback:Lcom/android/systemui/qs/QSTile$Callback;
 
     invoke-interface {v0, p1}, Lcom/android/systemui/qs/QSTile$Callback;->onToggleStateChanged(Z)V
 
-    .line 219
     :cond_0
     return-void
 .end method
@@ -402,7 +365,6 @@
     .locals 2
 
     .prologue
-    .line 121
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     iget-object v0, p0, Lcom/android/systemui/qs/QSTile;->mHandler:Lcom/android/systemui/qs/QSTile$H;
 
@@ -410,7 +372,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSTile$H;->sendEmptyMessage(I)Z
 
-    .line 122
     return-void
 .end method
 
@@ -418,7 +379,6 @@
     .locals 1
 
     .prologue
-    .line 206
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     const/4 v0, 0x0
 
@@ -430,7 +390,6 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 99
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     new-instance v0, Lcom/android/systemui/qs/QSTileView;
 
@@ -443,7 +402,6 @@
     .locals 2
 
     .prologue
-    .line 157
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     iget-object v0, p0, Lcom/android/systemui/qs/QSTile;->mHandler:Lcom/android/systemui/qs/QSTile$H;
 
@@ -451,7 +409,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSTile$H;->sendEmptyMessage(I)Z
 
-    .line 158
     return-void
 .end method
 
@@ -463,7 +420,6 @@
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     const/4 v1, 0x0
 
-    .line 153
     iget-object v2, p0, Lcom/android/systemui/qs/QSTile;->mHandler:Lcom/android/systemui/qs/QSTile$H;
 
     const/16 v3, 0x9
@@ -479,13 +435,11 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 154
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 153
     goto :goto_0
 .end method
 
@@ -497,7 +451,6 @@
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     const/4 v1, 0x0
 
-    .line 149
     iget-object v2, p0, Lcom/android/systemui/qs/QSTile;->mHandler:Lcom/android/systemui/qs/QSTile$H;
 
     const/16 v3, 0x8
@@ -513,13 +466,11 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 150
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 149
     goto :goto_0
 .end method
 
@@ -527,7 +478,6 @@
     .locals 1
 
     .prologue
-    .line 103
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     const/4 v0, 0x0
 
@@ -543,7 +493,6 @@
     .end annotation
 
     .prologue
-    .line 161
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     iget-object v0, p0, Lcom/android/systemui/qs/QSTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
@@ -557,18 +506,15 @@
     .locals 1
 
     .prologue
-    .line 232
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSTile;->setListening(Z)V
 
-    .line 233
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSTile;->mCallback:Lcom/android/systemui/qs/QSTile$Callback;
 
-    .line 234
     return-void
 .end method
 
@@ -576,7 +522,6 @@
     .locals 0
 
     .prologue
-    .line 177
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     return-void
 .end method
@@ -586,13 +531,11 @@
     .param p1, "arg"    # Ljava/lang/Object;
 
     .prologue
-    .line 180
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     iget-object v1, p0, Lcom/android/systemui/qs/QSTile;->mTmpState:Lcom/android/systemui/qs/QSTile$State;
 
     invoke-virtual {p0, v1, p1}, Lcom/android/systemui/qs/QSTile;->handleUpdateState(Lcom/android/systemui/qs/QSTile$State;Ljava/lang/Object;)V
 
-    .line 181
     iget-object v1, p0, Lcom/android/systemui/qs/QSTile;->mTmpState:Lcom/android/systemui/qs/QSTile$State;
 
     iget-object v2, p0, Lcom/android/systemui/qs/QSTile;->mState:Lcom/android/systemui/qs/QSTile$State;
@@ -601,14 +544,11 @@
 
     move-result v0
 
-    .line 182
     .local v0, "changed":Z
     if-eqz v0, :cond_0
 
-    .line 183
     invoke-direct {p0}, Lcom/android/systemui/qs/QSTile;->handleStateChanged()V
 
-    .line 185
     :cond_0
     return-void
 .end method
@@ -617,7 +557,6 @@
     .locals 0
 
     .prologue
-    .line 173
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     return-void
 .end method
@@ -637,13 +576,11 @@
     .param p1, "newUserId"    # I
 
     .prologue
-    .line 228
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSTile;->handleRefreshState(Ljava/lang/Object;)V
 
-    .line 229
     return-void
 .end method
 
@@ -651,7 +588,6 @@
     .locals 2
 
     .prologue
-    .line 129
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     iget-object v0, p0, Lcom/android/systemui/qs/QSTile;->mHandler:Lcom/android/systemui/qs/QSTile$H;
 
@@ -659,7 +595,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSTile$H;->sendEmptyMessage(I)Z
 
-    .line 130
     return-void
 .end method
 
@@ -675,13 +610,11 @@
     .locals 1
 
     .prologue
-    .line 137
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSTile;->refreshState(Ljava/lang/Object;)V
 
-    .line 138
     return-void
 .end method
 
@@ -690,7 +623,6 @@
     .param p1, "arg"    # Ljava/lang/Object;
 
     .prologue
-    .line 141
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     iget-object v0, p0, Lcom/android/systemui/qs/QSTile;->mHandler:Lcom/android/systemui/qs/QSTile$H;
 
@@ -702,7 +634,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 142
     return-void
 .end method
 
@@ -710,7 +641,6 @@
     .locals 2
 
     .prologue
-    .line 125
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     iget-object v0, p0, Lcom/android/systemui/qs/QSTile;->mHandler:Lcom/android/systemui/qs/QSTile$H;
 
@@ -718,7 +648,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSTile$H;->sendEmptyMessage(I)Z
 
-    .line 126
     return-void
 .end method
 
@@ -727,7 +656,6 @@
     .param p1, "callback"    # Lcom/android/systemui/qs/QSTile$Callback;
 
     .prologue
-    .line 117
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     iget-object v0, p0, Lcom/android/systemui/qs/QSTile;->mHandler:Lcom/android/systemui/qs/QSTile$H;
 
@@ -739,7 +667,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 118
     return-void
 .end method
 
@@ -747,7 +674,6 @@
     .locals 1
 
     .prologue
-    .line 202
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     const/4 v0, 0x0
 
@@ -762,7 +688,6 @@
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     const/4 v1, 0x0
 
-    .line 133
     iget-object v2, p0, Lcom/android/systemui/qs/QSTile;->mHandler:Lcom/android/systemui/qs/QSTile$H;
 
     const/4 v3, 0x6
@@ -778,13 +703,11 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 134
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 133
     goto :goto_0
 .end method
 
@@ -792,7 +715,6 @@
     .locals 1
 
     .prologue
-    .line 91
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     const/4 v0, 0x0
 
@@ -804,7 +726,6 @@
     .param p1, "newUserId"    # I
 
     .prologue
-    .line 145
     .local p0, "this":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<TTState;>;"
     iget-object v0, p0, Lcom/android/systemui/qs/QSTile;->mHandler:Lcom/android/systemui/qs/QSTile$H;
 
@@ -818,6 +739,5 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 146
     return-void
 .end method

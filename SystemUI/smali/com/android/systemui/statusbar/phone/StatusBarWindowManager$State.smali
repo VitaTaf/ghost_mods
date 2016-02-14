@@ -41,7 +41,6 @@
     .locals 0
 
     .prologue
-    .line 238
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -52,7 +51,6 @@
     .param p1, "x0"    # Lcom/android/systemui/statusbar/phone/StatusBarWindowManager$1;
 
     .prologue
-    .line 238
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager$State;-><init>()V
 
     return-void
@@ -63,7 +61,6 @@
     .param p0, "x0"    # Lcom/android/systemui/statusbar/phone/StatusBarWindowManager$State;
 
     .prologue
-    .line 238
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager$State;->isKeyguardShowingAndNotOccluded()Z
 
     move-result v0
@@ -75,7 +72,6 @@
     .locals 1
 
     .prologue
-    .line 255
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager$State;->keyguardShowing:Z
 
     if-eqz v0, :cond_0

@@ -36,7 +36,6 @@
     .locals 0
 
     .prologue
-    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -47,7 +46,6 @@
     .param p1, "filter"    # Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
     .prologue
-    .line 113
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateAlpha:Z
 
     iget-boolean v1, p1, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateAlpha:Z
@@ -56,7 +54,6 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateAlpha:Z
 
-    .line 114
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateY:Z
 
     iget-boolean v1, p1, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateY:Z
@@ -65,7 +62,6 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateY:Z
 
-    .line 115
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateZ:Z
 
     iget-boolean v1, p1, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateZ:Z
@@ -74,7 +70,6 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateZ:Z
 
-    .line 116
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateScale:Z
 
     iget-boolean v1, p1, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateScale:Z
@@ -83,7 +78,6 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateScale:Z
 
-    .line 117
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateHeight:Z
 
     iget-boolean v1, p1, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateHeight:Z
@@ -92,7 +86,6 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateHeight:Z
 
-    .line 118
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateTopInset:Z
 
     iget-boolean v1, p1, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateTopInset:Z
@@ -101,7 +94,6 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateTopInset:Z
 
-    .line 119
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateDimmed:Z
 
     iget-boolean v1, p1, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateDimmed:Z
@@ -110,7 +102,6 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateDimmed:Z
 
-    .line 120
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateDark:Z
 
     iget-boolean v1, p1, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateDark:Z
@@ -119,7 +110,6 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateDark:Z
 
-    .line 121
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateHideSensitive:Z
 
     iget-boolean v1, p1, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateHideSensitive:Z
@@ -128,7 +118,6 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateHideSensitive:Z
 
-    .line 122
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->hasDelays:Z
 
     iget-boolean v1, p1, Lcom/android/systemui/statusbar/stack/AnimationFilter;->hasDelays:Z
@@ -137,7 +126,6 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->hasDelays:Z
 
-    .line 123
     return-void
 .end method
 
@@ -147,48 +135,34 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 126
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateAlpha:Z
 
-    .line 127
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateY:Z
 
-    .line 128
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateZ:Z
 
-    .line 129
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateScale:Z
 
-    .line 130
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateHeight:Z
 
-    .line 131
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateTopInset:Z
 
-    .line 132
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateDimmed:Z
 
-    .line 133
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateDark:Z
 
-    .line 134
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateHideSensitive:Z
 
-    .line 135
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->hasDelays:Z
 
-    .line 136
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->hasGoToFullShadeEvent:Z
 
-    .line 137
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->hasDarkEvent:Z
 
-    .line 138
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->darkAnimationOriginIndex:I
 
-    .line 140
     return-void
 .end method
 
@@ -198,12 +172,10 @@
     .locals 1
 
     .prologue
-    .line 40
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateAlpha:Z
 
-    .line 41
     return-object p0
 .end method
 
@@ -211,12 +183,10 @@
     .locals 1
 
     .prologue
-    .line 80
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateDark:Z
 
-    .line 81
     return-object p0
 .end method
 
@@ -224,12 +194,10 @@
     .locals 1
 
     .prologue
-    .line 75
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateDimmed:Z
 
-    .line 76
     return-object p0
 .end method
 
@@ -237,12 +205,10 @@
     .locals 1
 
     .prologue
-    .line 65
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateHeight:Z
 
-    .line 66
     return-object p0
 .end method
 
@@ -250,12 +216,10 @@
     .locals 1
 
     .prologue
-    .line 85
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateHideSensitive:Z
 
-    .line 86
     return-object p0
 .end method
 
@@ -263,12 +227,10 @@
     .locals 1
 
     .prologue
-    .line 60
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateScale:Z
 
-    .line 61
     return-object p0
 .end method
 
@@ -276,12 +238,10 @@
     .locals 1
 
     .prologue
-    .line 70
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateTopInset:Z
 
-    .line 71
     return-object p0
 .end method
 
@@ -289,12 +249,10 @@
     .locals 1
 
     .prologue
-    .line 45
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateY:Z
 
-    .line 46
     return-object p0
 .end method
 
@@ -302,12 +260,10 @@
     .locals 1
 
     .prologue
-    .line 55
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateZ:Z
 
-    .line 56
     return-object p0
 .end method
 
@@ -327,15 +283,12 @@
     .local p1, "events":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;>;"
     const/4 v5, 0x1
 
-    .line 95
     invoke-direct {p0}, Lcom/android/systemui/statusbar/stack/AnimationFilter;->reset()V
 
-    .line 96
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    .line 97
     .local v2, "size":I
     const/4 v1, 0x0
 
@@ -343,14 +296,12 @@
     :goto_0
     if-ge v1, v2, :cond_2
 
-    .line 98
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;
 
-    .line 99
     .local v0, "ev":Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -362,17 +313,14 @@
 
     invoke-direct {p0, v3}, Lcom/android/systemui/statusbar/stack/AnimationFilter;->combineFilter(Lcom/android/systemui/statusbar/stack/AnimationFilter;)V
 
-    .line 100
     iget v3, v0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;->animationType:I
 
     const/16 v4, 0xa
 
     if-ne v3, v4, :cond_0
 
-    .line 102
     iput-boolean v5, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->hasGoToFullShadeEvent:Z
 
-    .line 104
     :cond_0
     iget v3, v0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;->animationType:I
 
@@ -380,21 +328,17 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 106
     iput-boolean v5, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->hasDarkEvent:Z
 
-    .line 107
     iget v3, v0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;->darkAnimationOriginIndex:I
 
     iput v3, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->darkAnimationOriginIndex:I
 
-    .line 97
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 110
     .end local v0    # "ev":Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;
     :cond_2
     return-void
@@ -404,11 +348,9 @@
     .locals 1
 
     .prologue
-    .line 50
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/AnimationFilter;->hasDelays:Z
 
-    .line 51
     return-object p0
 .end method

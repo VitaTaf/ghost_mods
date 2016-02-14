@@ -33,7 +33,6 @@
     .param p2, "x0"    # I
 
     .prologue
-    .line 37
     .local p0, "this":Lcom/android/systemui/recents/model/KeyStoreLruCache$1;, "Lcom/android/systemui/recents/model/KeyStoreLruCache.1;"
     iput-object p1, p0, Lcom/android/systemui/recents/model/KeyStoreLruCache$1;->this$0:Lcom/android/systemui/recents/model/KeyStoreLruCache;
 
@@ -57,7 +56,6 @@
     .end annotation
 
     .prologue
-    .line 41
     .local p0, "this":Lcom/android/systemui/recents/model/KeyStoreLruCache$1;, "Lcom/android/systemui/recents/model/KeyStoreLruCache.1;"
     .local p3, "oldV":Ljava/lang/Object;, "TV;"
     .local p4, "newV":Ljava/lang/Object;, "TV;"
@@ -67,7 +65,6 @@
 
     invoke-virtual {v0, p2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 42
     return-void
 .end method
 
@@ -79,7 +76,6 @@
     .param p4, "x3"    # Ljava/lang/Object;
 
     .prologue
-    .line 37
     .local p0, "this":Lcom/android/systemui/recents/model/KeyStoreLruCache$1;, "Lcom/android/systemui/recents/model/KeyStoreLruCache.1;"
     check-cast p2, Ljava/lang/Integer;
 

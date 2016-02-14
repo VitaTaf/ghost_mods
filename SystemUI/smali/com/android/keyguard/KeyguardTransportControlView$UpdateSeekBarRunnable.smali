@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 143
     iput-object p1, p0, Lcom/android/keyguard/KeyguardTransportControlView$UpdateSeekBarRunnable;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .param p2, "x1"    # Lcom/android/keyguard/KeyguardTransportControlView$1;
 
     .prologue
-    .line 143
     invoke-direct {p0, p1}, Lcom/android/keyguard/KeyguardTransportControlView$UpdateSeekBarRunnable;-><init>(Lcom/android/keyguard/KeyguardTransportControlView;)V
 
     return-void
@@ -52,28 +50,23 @@
     .locals 4
 
     .prologue
-    .line 145
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardTransportControlView$UpdateSeekBarRunnable;->updateOnce()Z
 
     move-result v0
 
-    .line 146
     .local v0, "seekAble":Z
     if-eqz v0, :cond_0
 
-    .line 147
     iget-object v1, p0, Lcom/android/keyguard/KeyguardTransportControlView$UpdateSeekBarRunnable;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
 
     invoke-virtual {v1, p0}, Lcom/android/keyguard/KeyguardTransportControlView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 148
     iget-object v1, p0, Lcom/android/keyguard/KeyguardTransportControlView$UpdateSeekBarRunnable;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
 
     const-wide/16 v2, 0x3e8
 
     invoke-virtual {v1, p0, v2, v3}, Lcom/android/keyguard/KeyguardTransportControlView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 150
     :cond_0
     return-void
 .end method
@@ -82,7 +75,6 @@
     .locals 1
 
     .prologue
-    .line 152
     iget-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$UpdateSeekBarRunnable;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardTransportControlView;->updateSeekBars()Z

@@ -18,13 +18,10 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 33
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/statusbar/StackScrollerDecorView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 36
     iput-object p1, p0, Lcom/android/systemui/statusbar/DismissView;->mContext:Landroid/content/Context;
 
-    .line 38
     return-void
 .end method
 
@@ -34,7 +31,6 @@
     .locals 2
 
     .prologue
-    .line 44
     iget-object v0, p0, Lcom/android/systemui/statusbar/DismissView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -49,14 +45,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 46
     const v0, 0x7f0f0106
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/DismissView;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 49
     :goto_0
     return-object v0
 
@@ -74,7 +68,6 @@
     .locals 1
 
     .prologue
-    .line 95
     iget-object v0, p0, Lcom/android/systemui/statusbar/DismissView;->mDismissButton:Lcom/android/systemui/statusbar/DismissViewButton;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/DismissViewButton;->isButtonStatic()Z
@@ -90,7 +83,6 @@
     .param p2, "touchY"    # F
 
     .prologue
-    .line 68
     iget-object v0, p0, Lcom/android/systemui/statusbar/DismissView;->mContent:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getX()F
@@ -167,10 +159,8 @@
     .locals 1
 
     .prologue
-    .line 56
     invoke-super {p0}, Lcom/android/systemui/statusbar/StackScrollerDecorView;->onFinishInflate()V
 
-    .line 59
     const v0, 0x7f0f0105
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/DismissView;->findViewById(I)Landroid/view/View;
@@ -181,7 +171,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/DismissView;->mDismissButton:Lcom/android/systemui/statusbar/DismissViewButton;
 
-    .line 61
     return-void
 .end method
 
@@ -190,16 +179,13 @@
     .param p1, "clipBounds"    # Landroid/graphics/Rect;
 
     .prologue
-    .line 87
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/DismissView;->mDismissAllInProgress:Z
 
     if-eqz v0, :cond_0
 
-    .line 92
     :goto_0
     return-void
 
-    .line 91
     :cond_0
     invoke-super {p0, p1}, Lcom/android/systemui/statusbar/StackScrollerDecorView;->setClipBounds(Landroid/graphics/Rect;)V
 
@@ -211,19 +197,15 @@
     .param p1, "dismissAllInProgress"    # Z
 
     .prologue
-    .line 79
     if-eqz p1, :cond_0
 
-    .line 80
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/DismissView;->setClipBounds(Landroid/graphics/Rect;)V
 
-    .line 82
     :cond_0
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/DismissView;->mDismissAllInProgress:Z
 
-    .line 83
     return-void
 .end method
 
@@ -232,12 +214,10 @@
     .param p1, "listener"    # Landroid/view/View$OnClickListener;
 
     .prologue
-    .line 64
     iget-object v0, p0, Lcom/android/systemui/statusbar/DismissView;->mContent:Landroid/view/View;
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 65
     return-void
 .end method
 
@@ -245,11 +225,9 @@
     .locals 1
 
     .prologue
-    .line 75
     iget-object v0, p0, Lcom/android/systemui/statusbar/DismissView;->mDismissButton:Lcom/android/systemui/statusbar/DismissViewButton;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/DismissViewButton;->showButton()V
 
-    .line 76
     return-void
 .end method

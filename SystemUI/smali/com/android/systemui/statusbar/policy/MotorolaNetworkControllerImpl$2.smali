@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 844
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$2;->this$0:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,18 +38,15 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 848
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 850
     .local v0, "action":Ljava/lang/String;
     sget-boolean v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->INFO:Z
 
     if-nez v2, :cond_1
 
-    .line 859
     :goto_0
     const-string v2, "subscription"
 
@@ -60,13 +56,11 @@
 
     move-result v1
 
-    .line 864
     .local v1, "subId":I
     sget-boolean v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->DEBUG:Z
 
     if-nez v2, :cond_2
 
-    .line 872
     :goto_1
     invoke-static {v1}, Landroid/telephony/SubscriptionManager;->isValidSubscriptionId(I)Z
 
@@ -74,12 +68,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 875
     sget-boolean v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->DEBUG:Z
 
     if-nez v2, :cond_3
 
-    .line 882
     :goto_2
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$2;->this$0:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;
 
@@ -95,12 +87,10 @@
 
     if-eqz v2, :cond_5
 
-    .line 885
     sget-boolean v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->DEBUG:Z
 
     if-nez v2, :cond_4
 
-    .line 890
     :goto_3
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$2;->this$0:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;
 
@@ -118,17 +108,14 @@
 
     invoke-virtual {v2, p2}, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController;->handleBroadcast(Landroid/content/Intent;)V
 
-    .line 902
     :cond_0
     :goto_4
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$2;->this$0:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->refreshCarrierLabel()V
 
-    .line 903
     return-void
 
-    .line 851
     .end local v1    # "subId":I
     :cond_1
     const-string v2, "MotoNetwCtrlr"
@@ -165,7 +152,6 @@
 
     goto :goto_0
 
-    .line 865
     .restart local v1    # "subId":I
     :cond_2
     const-string v2, "MotoNetwCtrlr"
@@ -192,7 +178,6 @@
 
     goto :goto_1
 
-    .line 876
     :cond_3
     const-string v2, "MotoNetwCtrlr"
 
@@ -218,7 +203,6 @@
 
     goto :goto_2
 
-    .line 886
     :cond_4
     const-string v2, "MotoNetwCtrlr"
 
@@ -228,13 +212,11 @@
 
     goto :goto_3
 
-    .line 893
     :cond_5
     sget-boolean v2, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->DEBUG:Z
 
     if-eqz v2, :cond_0
 
-    .line 894
     const-string v2, "MotoNetwCtrlr"
 
     const-string v3, "mCBEnableReceiver.onReveive: No matching mobile controller found, CellBroadcast Enable/Disable Event ignored"

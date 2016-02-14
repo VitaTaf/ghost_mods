@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 423
     iput-object p1, p0, Lcom/android/keyguard/FaceUnlock$2;->this$0:Lcom/android/keyguard/FaceUnlock;
 
     invoke-direct {p0}, Lcom/android/internal/policy/IFaceLockCallback$Stub;-><init>()V
@@ -37,7 +36,6 @@
     .locals 2
 
     .prologue
-    .line 438
     iget-object v0, p0, Lcom/android/keyguard/FaceUnlock$2;->this$0:Lcom/android/keyguard/FaceUnlock;
 
     # getter for: Lcom/android/keyguard/FaceUnlock;->mHandler:Landroid/os/Handler;
@@ -49,7 +47,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 439
     return-void
 .end method
 
@@ -58,7 +55,6 @@
     .param p1, "millis"    # I
 
     .prologue
-    .line 455
     iget-object v1, p0, Lcom/android/keyguard/FaceUnlock$2;->this$0:Lcom/android/keyguard/FaceUnlock;
 
     # getter for: Lcom/android/keyguard/FaceUnlock;->mHandler:Landroid/os/Handler;
@@ -74,7 +70,6 @@
 
     move-result-object v0
 
-    .line 456
     .local v0, "message":Landroid/os/Message;
     iget-object v1, p0, Lcom/android/keyguard/FaceUnlock$2;->this$0:Lcom/android/keyguard/FaceUnlock;
 
@@ -85,7 +80,6 @@
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 457
     return-void
 .end method
 
@@ -93,7 +87,6 @@
     .locals 2
 
     .prologue
-    .line 446
     iget-object v0, p0, Lcom/android/keyguard/FaceUnlock$2;->this$0:Lcom/android/keyguard/FaceUnlock;
 
     # getter for: Lcom/android/keyguard/FaceUnlock;->mHandler:Landroid/os/Handler;
@@ -105,7 +98,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 447
     return-void
 .end method
 
@@ -113,7 +105,6 @@
     .locals 5
 
     .prologue
-    .line 429
     iget-object v1, p0, Lcom/android/keyguard/FaceUnlock$2;->this$0:Lcom/android/keyguard/FaceUnlock;
 
     # getter for: Lcom/android/keyguard/FaceUnlock;->mHandler:Landroid/os/Handler;
@@ -133,7 +124,6 @@
 
     move-result-object v0
 
-    .line 430
     .local v0, "message":Landroid/os/Message;
     iget-object v1, p0, Lcom/android/keyguard/FaceUnlock$2;->this$0:Lcom/android/keyguard/FaceUnlock;
 
@@ -144,6 +134,5 @@
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 431
     return-void
 .end method

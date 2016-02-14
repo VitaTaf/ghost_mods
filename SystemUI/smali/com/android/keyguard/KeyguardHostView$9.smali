@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 1037
     iput-object p1, p0, Lcom/android/keyguard/KeyguardHostView$9;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "duration"    # I
 
     .prologue
-    .line 1040
     iget-object v0, p0, Lcom/android/keyguard/KeyguardHostView$9;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardHostView;->getSecurityContainer()Lcom/android/keyguard/KeyguardSecurityContainer;
@@ -62,7 +60,6 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
-    .line 1041
     return-void
 .end method
 
@@ -70,7 +67,6 @@
     .locals 1
 
     .prologue
-    .line 1050
     iget-object v0, p0, Lcom/android/keyguard/KeyguardHostView$9;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardHostView;->getSecurityContainer()Lcom/android/keyguard/KeyguardSecurityContainer;
@@ -79,7 +75,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1051
     iget-object v0, p0, Lcom/android/keyguard/KeyguardHostView$9;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardHostView;->getSecurityContainer()Lcom/android/keyguard/KeyguardSecurityContainer;
@@ -88,7 +83,6 @@
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardSecurityContainer;->showUsabilityHint()V
 
-    .line 1053
     :cond_0
     return-void
 .end method
@@ -97,21 +91,18 @@
     .locals 1
 
     .prologue
-    .line 1057
     iget-object v0, p0, Lcom/android/keyguard/KeyguardHostView$9;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardHostView;->mViewMediatorCallback:Lcom/android/keyguard/ViewMediatorCallback;
 
     if-eqz v0, :cond_0
 
-    .line 1058
     iget-object v0, p0, Lcom/android/keyguard/KeyguardHostView$9;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardHostView;->mViewMediatorCallback:Lcom/android/keyguard/ViewMediatorCallback;
 
     invoke-interface {v0}, Lcom/android/keyguard/ViewMediatorCallback;->userActivity()V
 
-    .line 1060
     :cond_0
     return-void
 .end method

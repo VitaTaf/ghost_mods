@@ -23,13 +23,10 @@
     .param p3, "distanceToPeekStart"    # I
 
     .prologue
-    .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 54
     iput p3, p0, Lcom/android/systemui/statusbar/stack/StackIndentationFunctor;->mDistanceToPeekStart:I
 
-    .line 55
     iget v0, p0, Lcom/android/systemui/statusbar/stack/StackIndentationFunctor;->mDistanceToPeekStart:I
 
     if-nez v0, :cond_0
@@ -39,19 +36,14 @@
     :goto_0
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/StackIndentationFunctor;->mStackStartsAtPeek:Z
 
-    .line 56
     iput p1, p0, Lcom/android/systemui/statusbar/stack/StackIndentationFunctor;->mMaxItemsInStack:I
 
-    .line 57
     iput p2, p0, Lcom/android/systemui/statusbar/stack/StackIndentationFunctor;->mPeekSize:I
 
-    .line 58
     invoke-direct {p0}, Lcom/android/systemui/statusbar/stack/StackIndentationFunctor;->updateTotalTransitionDistance()V
 
-    .line 60
     return-void
 
-    .line 55
     :cond_0
     const/4 v0, 0x0
 
@@ -62,7 +54,6 @@
     .locals 2
 
     .prologue
-    .line 63
     iget v0, p0, Lcom/android/systemui/statusbar/stack/StackIndentationFunctor;->mDistanceToPeekStart:I
 
     iget v1, p0, Lcom/android/systemui/statusbar/stack/StackIndentationFunctor;->mPeekSize:I
@@ -71,7 +62,6 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/stack/StackIndentationFunctor;->mTotalTransitionDistance:I
 
-    .line 64
     return-void
 .end method
 

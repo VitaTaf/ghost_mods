@@ -36,7 +36,6 @@
     .locals 3
 
     .prologue
-    .line 47
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -59,31 +58,25 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 60
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
-    .line 57
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mSettingsChangeCallbacks:Ljava/util/ArrayList;
 
-    .line 61
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mContext:Landroid/content/Context;
 
-    .line 63
     new-instance v3, Landroid/content/IntentFilter;
 
     invoke-direct {v3}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 64
     .local v3, "filter":Landroid/content/IntentFilter;
     const-string v0, "android.location.HIGH_POWER_REQUEST_CHANGE"
 
     invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 65
     sget-object v2, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
     move-object v0, p1
@@ -94,7 +87,6 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/Context;->registerReceiverAsUser(Landroid/content/BroadcastReceiver;Landroid/os/UserHandle;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    .line 67
     const-string v0, "appops"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -105,7 +97,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mAppOpsManager:Landroid/app/AppOpsManager;
 
-    .line 68
     const-string v0, "statusbar"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -116,18 +107,15 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mStatusBarManager:Landroid/app/StatusBarManager;
 
-    .line 72
     new-instance v8, Landroid/content/IntentFilter;
 
     invoke-direct {v8}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 73
     .local v8, "intentFilter":Landroid/content/IntentFilter;
     const-string v0, "android.location.MODE_CHANGED"
 
     invoke-virtual {v8, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 74
     new-instance v6, Lcom/android/systemui/statusbar/policy/LocationControllerImpl$1;
 
     invoke-direct {v6, p0}, Lcom/android/systemui/statusbar/policy/LocationControllerImpl$1;-><init>(Lcom/android/systemui/statusbar/policy/LocationControllerImpl;)V
@@ -144,13 +132,10 @@
 
     invoke-virtual/range {v5 .. v10}, Landroid/content/Context;->registerReceiverAsUser(Landroid/content/BroadcastReceiver;Landroid/os/UserHandle;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    .line 85
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->updateActiveLocationRequests()V
 
-    .line 86
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->refreshViews()V
 
-    .line 87
     return-void
 .end method
 
@@ -159,7 +144,6 @@
     .param p0, "x0"    # Lcom/android/systemui/statusbar/policy/LocationControllerImpl;
 
     .prologue
-    .line 41
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->locationSettingsChanged()V
 
     return-void
@@ -169,7 +153,6 @@
     .locals 10
 
     .prologue
-    .line 159
     iget-object v8, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mAppOpsManager:Landroid/app/AppOpsManager;
 
     sget-object v9, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mHighPowerRequestAppOpArray:[I
@@ -178,16 +161,13 @@
 
     move-result-object v7
 
-    .line 162
     .local v7, "packages":Ljava/util/List;, "Ljava/util/List<Landroid/app/AppOpsManager$PackageOps;>;"
     if-eqz v7, :cond_2
 
-    .line 163
     invoke-interface {v7}, Ljava/util/List;->size()I
 
     move-result v1
 
-    .line 164
     .local v1, "numPackages":I
     const/4 v5, 0x0
 
@@ -195,29 +175,24 @@
     :goto_0
     if-ge v5, v1, :cond_2
 
-    .line 165
     invoke-interface {v7, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Landroid/app/AppOpsManager$PackageOps;
 
-    .line 166
     .local v6, "packageOp":Landroid/app/AppOpsManager$PackageOps;
     invoke-virtual {v6}, Landroid/app/AppOpsManager$PackageOps;->getOps()Ljava/util/List;
 
     move-result-object v2
 
-    .line 167
     .local v2, "opEntries":Ljava/util/List;, "Ljava/util/List<Landroid/app/AppOpsManager$OpEntry;>;"
     if-eqz v2, :cond_1
 
-    .line 168
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v0
 
-    .line 169
     .local v0, "numOps":I
     const/4 v4, 0x0
 
@@ -225,14 +200,12 @@
     :goto_1
     if-ge v4, v0, :cond_1
 
-    .line 170
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Landroid/app/AppOpsManager$OpEntry;
 
-    .line 173
     .local v3, "opEntry":Landroid/app/AppOpsManager$OpEntry;
     invoke-virtual {v3}, Landroid/app/AppOpsManager$OpEntry;->getOp()I
 
@@ -242,17 +215,14 @@
 
     if-ne v8, v9, :cond_0
 
-    .line 174
     invoke-virtual {v3}, Landroid/app/AppOpsManager$OpEntry;->isRunning()Z
 
     move-result v8
 
     if-eqz v8, :cond_0
 
-    .line 175
     const/4 v8, 0x1
 
-    .line 183
     .end local v0    # "numOps":I
     .end local v1    # "numPackages":I
     .end local v2    # "opEntries":Ljava/util/List;, "Ljava/util/List<Landroid/app/AppOpsManager$OpEntry;>;"
@@ -263,7 +233,6 @@
     :goto_2
     return v8
 
-    .line 169
     .restart local v0    # "numOps":I
     .restart local v1    # "numPackages":I
     .restart local v2    # "opEntries":Ljava/util/List;, "Ljava/util/List<Landroid/app/AppOpsManager$OpEntry;>;"
@@ -276,7 +245,6 @@
 
     goto :goto_1
 
-    .line 164
     .end local v0    # "numOps":I
     .end local v3    # "opEntry":Landroid/app/AppOpsManager$OpEntry;
     .end local v4    # "opInd":I
@@ -285,7 +253,6 @@
 
     goto :goto_0
 
-    .line 183
     .end local v1    # "numPackages":I
     .end local v2    # "opEntries":Ljava/util/List;, "Ljava/util/List<Landroid/app/AppOpsManager$OpEntry;>;"
     .end local v5    # "packageInd":I
@@ -304,19 +271,15 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 231
     invoke-static {p0}, Lcom/motorola/android/internal/util/CBSLoader;->getInstance(Landroid/content/Context;)Lcom/motorola/android/internal/util/CBSLoader;
 
     move-result-object v0
 
-    .line 233
     .local v0, "loader":Lcom/motorola/android/internal/util/CBSLoader;
     if-eqz v0, :cond_0
 
-    .line 234
     const/4 v1, 0x0
 
-    .line 237
     .local v1, "result":Ljava/lang/Object;
     :try_start_0
     const-string v3, "LocationUtils"
@@ -359,14 +322,12 @@
 
     move-result-object v1
 
-    .line 239
     if-eqz v1, :cond_0
 
     instance-of v3, v1, Ljava/lang/Boolean;
 
     if-eqz v3, :cond_0
 
-    .line 240
     check-cast v1, Ljava/lang/Boolean;
 
     .end local v1    # "result":Ljava/lang/Object;
@@ -376,12 +337,10 @@
 
     move-result v2
 
-    .line 245
     :cond_0
     :goto_0
     return v2
 
-    .line 242
     :catch_0
     move-exception v3
 
@@ -393,7 +352,6 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 149
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mContext:Landroid/content/Context;
 
     const-string v2, "user"
@@ -404,7 +362,6 @@
 
     check-cast v0, Landroid/os/UserManager;
 
-    .line 150
     .local v0, "um":Landroid/os/UserManager;
     const-string v1, "no_share_location"
 
@@ -423,12 +380,10 @@
     .locals 4
 
     .prologue
-    .line 206
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->isLocationEnabled()Z
 
     move-result v2
 
-    .line 207
     .local v2, "isEnabled":Z
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mSettingsChangeCallbacks:Ljava/util/ArrayList;
 
@@ -450,13 +405,11 @@
 
     check-cast v0, Lcom/android/systemui/statusbar/policy/LocationController$LocationSettingsChangeCallback;
 
-    .line 208
     .local v0, "cb":Lcom/android/systemui/statusbar/policy/LocationController$LocationSettingsChangeCallback;
     invoke-interface {v0, v2}, Lcom/android/systemui/statusbar/policy/LocationController$LocationSettingsChangeCallback;->onLocationSettingsChanged(Z)V
 
     goto :goto_0
 
-    .line 210
     .end local v0    # "cb":Lcom/android/systemui/statusbar/policy/LocationController$LocationSettingsChangeCallback;
     :cond_0
     return-void
@@ -467,14 +420,12 @@
     .param p1, "cb"    # Lcom/android/systemui/statusbar/policy/LocationController$LocationSettingsChangeCallback;
 
     .prologue
-    .line 213
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->isLocationEnabled()Z
 
     move-result v0
 
     invoke-interface {p1, v0}, Lcom/android/systemui/statusbar/policy/LocationController$LocationSettingsChangeCallback;->onLocationSettingsChanged(Z)V
 
-    .line 214
     return-void
 .end method
 
@@ -482,12 +433,10 @@
     .locals 6
 
     .prologue
-    .line 188
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mAreActiveLocationRequests:Z
 
     if-eqz v0, :cond_0
 
-    .line 189
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mStatusBarManager:Landroid/app/StatusBarManager;
 
     const-string v1, "location"
@@ -506,11 +455,9 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/app/StatusBarManager;->setIcon(Ljava/lang/String;IILjava/lang/String;)V
 
-    .line 194
     :goto_0
     return-void
 
-    .line 192
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mStatusBarManager:Landroid/app/StatusBarManager;
 
@@ -525,10 +472,8 @@
     .locals 2
 
     .prologue
-    .line 198
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mAreActiveLocationRequests:Z
 
-    .line 199
     .local v0, "hadActiveLocationRequests":Z
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->areActiveHighPowerLocationRequests()Z
 
@@ -536,15 +481,12 @@
 
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mAreActiveLocationRequests:Z
 
-    .line 200
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mAreActiveLocationRequests:Z
 
     if-eq v1, v0, :cond_0
 
-    .line 201
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->refreshViews()V
 
-    .line 203
     :cond_0
     return-void
 .end method
@@ -556,15 +498,12 @@
     .param p1, "cb"    # Lcom/android/systemui/statusbar/policy/LocationController$LocationSettingsChangeCallback;
 
     .prologue
-    .line 93
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mSettingsChangeCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 94
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->locationSettingsChanged(Lcom/android/systemui/statusbar/policy/LocationController$LocationSettingsChangeCallback;)V
 
-    .line 95
     return-void
 .end method
 
@@ -574,14 +513,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 137
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 140
     .local v1, "resolver":Landroid/content/ContentResolver;
     const-string v3, "location_mode"
 
@@ -593,7 +530,6 @@
 
     move-result v0
 
-    .line 142
     .local v0, "mode":I
     if-eqz v0, :cond_0
 
@@ -609,12 +545,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 218
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 219
     .local v0, "action":Ljava/lang/String;
     const-string v1, "android.location.HIGH_POWER_REQUEST_CHANGE"
 
@@ -624,10 +558,8 @@
 
     if-eqz v1, :cond_0
 
-    .line 220
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->updateActiveLocationRequests()V
 
-    .line 222
     :cond_0
     return-void
 .end method
@@ -637,12 +569,10 @@
     .param p1, "cb"    # Lcom/android/systemui/statusbar/policy/LocationController$LocationSettingsChangeCallback;
 
     .prologue
-    .line 98
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mSettingsChangeCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 99
     return-void
 .end method
 
@@ -653,12 +583,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 113
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
     move-result v1
 
-    .line 114
     .local v1, "currentUserId":I
     invoke-direct {p0, v1}, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->isUserLocationRestricted(I)Z
 
@@ -666,11 +594,9 @@
 
     if-eqz v3, :cond_0
 
-    .line 129
     :goto_0
     return v2
 
-    .line 118
     :cond_0
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mContext:Landroid/content/Context;
 
@@ -680,12 +606,10 @@
 
     if-eqz v3, :cond_1
 
-    .line 119
     const/4 v2, 0x1
 
     goto :goto_0
 
-    .line 122
     :cond_1
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mContext:Landroid/content/Context;
 
@@ -693,13 +617,11 @@
 
     move-result-object v0
 
-    .line 125
     .local v0, "cr":Landroid/content/ContentResolver;
     if-eqz p1, :cond_2
 
     const/4 v2, 0x3
 
-    .line 129
     .local v2, "mode":I
     :cond_2
     const-string v3, "location_mode"

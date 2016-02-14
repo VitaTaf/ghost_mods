@@ -33,19 +33,14 @@
     .param p3, "diff"    # F
 
     .prologue
-    .line 287
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 288
     iput p1, p0, Lcom/android/systemui/statusbar/FlingAnimationUtils$VelocityInterpolator;->mDurationSeconds:F
 
-    .line 289
     iput p2, p0, Lcom/android/systemui/statusbar/FlingAnimationUtils$VelocityInterpolator;->mVelocity:F
 
-    .line 290
     iput p3, p0, Lcom/android/systemui/statusbar/FlingAnimationUtils$VelocityInterpolator;->mDiff:F
 
-    .line 291
     return-void
 .end method
 
@@ -57,7 +52,6 @@
     .param p4, "x3"    # Lcom/android/systemui/statusbar/FlingAnimationUtils$1;
 
     .prologue
-    .line 281
     invoke-direct {p0, p1, p2, p3}, Lcom/android/systemui/statusbar/FlingAnimationUtils$VelocityInterpolator;-><init>(FFF)V
 
     return-void
@@ -70,12 +64,10 @@
     .param p1, "input"    # F
 
     .prologue
-    .line 295
     iget v1, p0, Lcom/android/systemui/statusbar/FlingAnimationUtils$VelocityInterpolator;->mDurationSeconds:F
 
     mul-float v0, p1, v1
 
-    .line 296
     .local v0, "time":F
     iget v1, p0, Lcom/android/systemui/statusbar/FlingAnimationUtils$VelocityInterpolator;->mVelocity:F
 

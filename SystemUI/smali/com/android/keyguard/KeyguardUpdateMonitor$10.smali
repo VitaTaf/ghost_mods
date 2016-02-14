@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 1818
     iput-object p1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$10;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 1820
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1821
     .local v0, "action":Ljava/lang/String;
     if-eqz v0, :cond_0
 
@@ -56,7 +53,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 1823
     :try_start_0
     iget-object v1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$10;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
@@ -65,12 +61,10 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1828
     :cond_0
     :goto_0
     return-void
 
-    .line 1824
     :catch_0
     move-exception v1
 

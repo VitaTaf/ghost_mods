@@ -26,28 +26,22 @@
     .param p3, "settingName"    # Ljava/lang/String;
 
     .prologue
-    .line 41
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 36
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/systemui/qs/SecureSetting;->mObservedValue:I
 
-    .line 42
     iput-object p1, p0, Lcom/android/systemui/qs/SecureSetting;->mContext:Landroid/content/Context;
 
-    .line 43
     iput-object p3, p0, Lcom/android/systemui/qs/SecureSetting;->mSettingName:Ljava/lang/String;
 
-    .line 44
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/systemui/qs/SecureSetting;->mUserId:I
 
-    .line 45
     return-void
 .end method
 
@@ -57,7 +51,6 @@
     .locals 4
 
     .prologue
-    .line 48
     iget-object v0, p0, Lcom/android/systemui/qs/SecureSetting;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -85,12 +78,10 @@
     .param p1, "selfChange"    # Z
 
     .prologue
-    .line 71
     invoke-virtual {p0}, Lcom/android/systemui/qs/SecureSetting;->getValue()I
 
     move-result v0
 
-    .line 72
     .local v0, "value":I
     iget v1, p0, Lcom/android/systemui/qs/SecureSetting;->mObservedValue:I
 
@@ -101,13 +92,10 @@
     :goto_0
     invoke-virtual {p0, v0, v1}, Lcom/android/systemui/qs/SecureSetting;->handleValueChanged(IZ)V
 
-    .line 73
     iput v0, p0, Lcom/android/systemui/qs/SecureSetting;->mObservedValue:I
 
-    .line 74
     return-void
 
-    .line 72
     :cond_0
     const/4 v1, 0x0
 
@@ -121,30 +109,24 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 57
     iget-boolean v0, p0, Lcom/android/systemui/qs/SecureSetting;->mListening:Z
 
     if-ne p1, v0, :cond_0
 
-    .line 67
     :goto_0
     return-void
 
-    .line 58
     :cond_0
     iput-boolean p1, p0, Lcom/android/systemui/qs/SecureSetting;->mListening:Z
 
-    .line 59
     if-eqz p1, :cond_1
 
-    .line 60
     invoke-virtual {p0}, Lcom/android/systemui/qs/SecureSetting;->getValue()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/systemui/qs/SecureSetting;->mObservedValue:I
 
-    .line 61
     iget-object v0, p0, Lcom/android/systemui/qs/SecureSetting;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -163,7 +145,6 @@
 
     goto :goto_0
 
-    .line 64
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/qs/SecureSetting;->mContext:Landroid/content/Context;
 
@@ -173,7 +154,6 @@
 
     invoke-virtual {v0, p0}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 65
     iput v3, p0, Lcom/android/systemui/qs/SecureSetting;->mObservedValue:I
 
     goto :goto_0
@@ -184,25 +164,20 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 77
     iput p1, p0, Lcom/android/systemui/qs/SecureSetting;->mUserId:I
 
-    .line 78
     iget-boolean v0, p0, Lcom/android/systemui/qs/SecureSetting;->mListening:Z
 
     if-eqz v0, :cond_0
 
-    .line 79
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/SecureSetting;->setListening(Z)V
 
-    .line 80
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/SecureSetting;->setListening(Z)V
 
-    .line 82
     :cond_0
     return-void
 .end method
@@ -212,7 +187,6 @@
     .param p1, "value"    # I
 
     .prologue
-    .line 52
     iget-object v0, p0, Lcom/android/systemui/qs/SecureSetting;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -225,6 +199,5 @@
 
     invoke-static {v0, v1, p1, v2}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 53
     return-void
 .end method

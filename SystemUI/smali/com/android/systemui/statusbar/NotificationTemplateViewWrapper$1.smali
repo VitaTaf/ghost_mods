@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 170
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper$1;->this$0:Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper$1;->val$target:Landroid/widget/ImageView;
@@ -45,7 +44,6 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 173
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper$1;->this$0:Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper;
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper$1;->val$target:Landroid/widget/ImageView;
@@ -63,6 +61,5 @@
     # invokes: Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper;->updateIconColorFilter(Landroid/widget/ImageView;F)V
     invoke-static {v1, v2, v0}, Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper;->access$000(Lcom/android/systemui/statusbar/NotificationTemplateViewWrapper;Landroid/widget/ImageView;F)V
 
-    .line 174
     return-void
 .end method

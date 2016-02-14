@@ -12,7 +12,6 @@
     .locals 2
 
     .prologue
-    .line 22
     const-string v0, "volume"
 
     const/4 v1, 0x3

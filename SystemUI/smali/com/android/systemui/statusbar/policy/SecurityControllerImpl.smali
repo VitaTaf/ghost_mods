@@ -48,7 +48,6 @@
     .locals 2
 
     .prologue
-    .line 42
     const-string v0, "SecurityController"
 
     const/4 v1, 0x3
@@ -59,7 +58,6 @@
 
     sput-boolean v0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->DEBUG:Z
 
-    .line 44
     new-instance v0, Landroid/net/NetworkRequest$Builder;
 
     invoke-direct {v0}, Landroid/net/NetworkRequest$Builder;-><init>()V
@@ -96,10 +94,8 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 53
     const-string v0, "connectivity"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -112,29 +108,24 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mConnectivityService:Landroid/net/IConnectivityManager;
 
-    .line 56
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mCallbacks:Ljava/util/ArrayList;
 
-    .line 61
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mCurrentVpnNetworkId:I
 
-    .line 187
     new-instance v0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl$1;-><init>(Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mNetworkCallback:Landroid/net/ConnectivityManager$NetworkCallback;
 
-    .line 65
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mContext:Landroid/content/Context;
 
-    .line 66
     const-string v0, "device_policy"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -145,7 +136,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mDevicePolicyManager:Landroid/app/admin/DevicePolicyManager;
 
-    .line 68
     const-string v0, "connectivity"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -156,7 +146,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mConnectivityManager:Landroid/net/ConnectivityManager;
 
-    .line 72
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mConnectivityManager:Landroid/net/ConnectivityManager;
 
     sget-object v1, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->REQUEST:Landroid/net/NetworkRequest;
@@ -165,14 +154,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/net/ConnectivityManager;->registerNetworkCallback(Landroid/net/NetworkRequest;Landroid/net/ConnectivityManager$NetworkCallback;)V
 
-    .line 73
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mCurrentUserId:I
 
-    .line 74
     return-void
 .end method
 
@@ -181,7 +168,6 @@
     .param p0, "x0"    # Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;
 
     .prologue
-    .line 39
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mConnectivityManager:Landroid/net/ConnectivityManager;
 
     return-object v0
@@ -191,7 +177,6 @@
     .locals 1
 
     .prologue
-    .line 39
     sget-boolean v0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->DEBUG:Z
 
     return v0
@@ -203,7 +188,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 39
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->setCurrentNetid(I)V
 
     return-void
@@ -214,7 +198,6 @@
     .param p0, "x0"    # Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;
 
     .prologue
-    .line 39
     iget v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mCurrentVpnNetworkId:I
 
     return v0
@@ -224,7 +207,6 @@
     .locals 3
 
     .prologue
-    .line 170
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -245,13 +227,11 @@
 
     check-cast v0, Lcom/android/systemui/statusbar/policy/SecurityController$SecurityControllerCallback;
 
-    .line 171
     .local v0, "callback":Lcom/android/systemui/statusbar/policy/SecurityController$SecurityControllerCallback;
     invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/SecurityController$SecurityControllerCallback;->onStateChanged()V
 
     goto :goto_0
 
-    .line 173
     .end local v0    # "callback":Lcom/android/systemui/statusbar/policy/SecurityController$SecurityControllerCallback;
     :cond_0
     return-void
@@ -262,21 +242,16 @@
     .param p1, "netId"    # I
 
     .prologue
-    .line 162
     iget v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mCurrentVpnNetworkId:I
 
     if-eq p1, v0, :cond_0
 
-    .line 163
     iput p1, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mCurrentVpnNetworkId:I
 
-    .line 164
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->updateState()V
 
-    .line 165
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->fireCallbacks()V
 
-    .line 167
     :cond_0
     return-void
 .end method
@@ -285,7 +260,6 @@
     .locals 3
 
     .prologue
-    .line 177
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mConnectivityService:Landroid/net/IConnectivityManager;
 
@@ -295,7 +269,6 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mVpnConfig:Lcom/android/internal/net/VpnConfig;
 
-    .line 179
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mVpnConfig:Lcom/android/internal/net/VpnConfig;
 
     if-eqz v1, :cond_0
@@ -306,7 +279,6 @@
 
     if-nez v1, :cond_0
 
-    .line 180
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mVpnConfig:Lcom/android/internal/net/VpnConfig;
@@ -326,16 +298,13 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 185
     :cond_0
     :goto_0
     return-void
 
-    .line 182
     :catch_0
     move-exception v0
 
-    .line 183
     .local v0, "e":Landroid/util/AndroidException;
     :goto_1
     const-string v1, "SecurityController"
@@ -346,7 +315,6 @@
 
     goto :goto_0
 
-    .line 182
     .end local v0    # "e":Landroid/util/AndroidException;
     :catch_1
     move-exception v0
@@ -361,7 +329,6 @@
     .param p1, "callback"    # Lcom/android/systemui/statusbar/policy/SecurityController$SecurityControllerCallback;
 
     .prologue
-    .line 150
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mCallbacks:Ljava/util/ArrayList;
@@ -372,12 +339,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 153
     :cond_0
     :goto_0
     return-void
 
-    .line 151
     :cond_1
     sget-boolean v0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->DEBUG:Z
 
@@ -405,7 +370,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 152
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mCallbacks:Ljava/util/ArrayList;
 
@@ -418,7 +382,6 @@
     .locals 4
 
     .prologue
-    .line 127
     :try_start_0
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->isLegacyVpn()Z
 
@@ -426,7 +389,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 128
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mConnectivityService:Landroid/net/IConnectivityManager;
 
     const-string v2, "[Legacy VPN]"
@@ -435,11 +397,9 @@
 
     invoke-interface {v1, v2, v3}, Landroid/net/IConnectivityManager;->prepareVpn(Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 139
     :goto_0
     return-void
 
-    .line 132
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mConnectivityService:Landroid/net/IConnectivityManager;
 
@@ -447,7 +407,6 @@
 
     invoke-interface {v1, v2}, Landroid/net/IConnectivityManager;->setVpnPackageAuthorization(Z)V
 
-    .line 134
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mConnectivityService:Landroid/net/IConnectivityManager;
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mVpnConfig:Lcom/android/internal/net/VpnConfig;
@@ -462,11 +421,9 @@
 
     goto :goto_0
 
-    .line 136
     :catch_0
     move-exception v0
 
-    .line 137
     .local v0, "e":Ljava/lang/Exception;
     const-string v1, "SecurityController"
 
@@ -484,12 +441,10 @@
     .param p3, "args"    # [Ljava/lang/String;
 
     .prologue
-    .line 77
     const-string v0, "SecurityController state:"
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 78
     const-string v0, "  mCurrentVpnNetworkId="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -498,7 +453,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 79
     const-string v0, "  mVpnConfig="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -507,7 +461,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 80
     const-string v0, "  mVpnName="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -516,7 +469,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 81
     return-void
 .end method
 
@@ -524,7 +476,6 @@
     .locals 1
 
     .prologue
-    .line 95
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mDevicePolicyManager:Landroid/app/admin/DevicePolicyManager;
 
     invoke-virtual {v0}, Landroid/app/admin/DevicePolicyManager;->getDeviceOwnerName()Ljava/lang/String;
@@ -538,7 +489,6 @@
     .locals 1
 
     .prologue
-    .line 121
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mVpnConfig:Lcom/android/internal/net/VpnConfig;
 
     iget-object v0, v0, Lcom/android/internal/net/VpnConfig;->session:Ljava/lang/String;
@@ -550,7 +500,6 @@
     .locals 2
 
     .prologue
-    .line 100
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mDevicePolicyManager:Landroid/app/admin/DevicePolicyManager;
 
     iget v1, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mCurrentUserId:I
@@ -566,7 +515,6 @@
     .locals 1
 
     .prologue
-    .line 116
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mVpnName:Ljava/lang/String;
 
     return-object v0
@@ -576,7 +524,6 @@
     .locals 1
 
     .prologue
-    .line 85
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mDevicePolicyManager:Landroid/app/admin/DevicePolicyManager;
 
     invoke-virtual {v0}, Landroid/app/admin/DevicePolicyManager;->getDeviceOwner()Ljava/lang/String;
@@ -604,7 +551,6 @@
     .locals 2
 
     .prologue
-    .line 90
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mDevicePolicyManager:Landroid/app/admin/DevicePolicyManager;
 
     iget v1, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mCurrentUserId:I
@@ -634,7 +580,6 @@
     .locals 1
 
     .prologue
-    .line 111
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mVpnConfig:Lcom/android/internal/net/VpnConfig;
 
     iget-boolean v0, v0, Lcom/android/internal/net/VpnConfig;->legacy:Z
@@ -646,7 +591,6 @@
     .locals 2
 
     .prologue
-    .line 106
     iget v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mCurrentVpnNetworkId:I
 
     const/4 v1, -0x1
@@ -669,13 +613,10 @@
     .param p1, "newUserId"    # I
 
     .prologue
-    .line 157
     iput p1, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mCurrentUserId:I
 
-    .line 158
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->fireCallbacks()V
 
-    .line 159
     return-void
 .end method
 
@@ -684,14 +625,11 @@
     .param p1, "callback"    # Lcom/android/systemui/statusbar/policy/SecurityController$SecurityControllerCallback;
 
     .prologue
-    .line 143
     if-nez p1, :cond_0
 
-    .line 146
     :goto_0
     return-void
 
-    .line 144
     :cond_0
     sget-boolean v0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->DEBUG:Z
 
@@ -719,7 +657,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 145
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mCallbacks:Ljava/util/ArrayList;
 

@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +31,6 @@
     .param p1, "conditions"    # [Landroid/service/notification/Condition;
 
     .prologue
-    .line 41
     return-void
 .end method
 
@@ -41,7 +39,6 @@
     .param p1, "config"    # Landroid/service/notification/ZenModeConfig;
 
     .prologue
-    .line 46
     return-void
 .end method
 
@@ -49,7 +46,6 @@
     .locals 0
 
     .prologue
-    .line 44
     return-void
 .end method
 
@@ -58,7 +54,6 @@
     .param p1, "rule"    # Landroid/service/notification/ZenModeConfig$ZenRule;
 
     .prologue
-    .line 45
     return-void
 .end method
 
@@ -66,7 +61,6 @@
     .locals 0
 
     .prologue
-    .line 42
     return-void
 .end method
 
@@ -75,7 +69,6 @@
     .param p1, "available"    # Z
 
     .prologue
-    .line 43
     return-void
 .end method
 
@@ -84,6 +77,5 @@
     .param p1, "zen"    # I
 
     .prologue
-    .line 40
     return-void
 .end method

@@ -19,22 +19,18 @@
     .param p1, "view"    # Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
     .prologue
-    .line 43
     const v0, 0x7f0200e1
 
     invoke-direct {p0, p1, v0}, Lcom/android/systemui/statusbar/phone/BarTransitions;-><init>(Landroid/view/View;I)V
 
-    .line 168
     new-instance v0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions$2;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions$2;-><init>(Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mLightsOutListener:Landroid/view/View$OnTouchListener;
 
-    .line 44
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
-    .line 45
     const-string v0, "statusbar"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -47,7 +43,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mBarService:Lcom/android/internal/statusbar/IStatusBarService;
 
-    .line 47
     return-void
 .end method
 
@@ -59,7 +54,6 @@
     .param p3, "x3"    # Z
 
     .prologue
-    .line 31
     invoke-direct {p0, p1, p2, p3}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->applyLightsOut(ZZZ)V
 
     return-void
@@ -70,7 +64,6 @@
     .param p0, "x0"    # Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;
 
     .prologue
-    .line 31
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mBarService:Lcom/android/internal/statusbar/IStatusBarService;
 
     return-object v0
@@ -83,7 +76,6 @@
     .prologue
     const/high16 v2, 0x3f800000    # 1.0f
 
-    .line 95
     if-eqz p1, :cond_0
 
     const/4 v1, 0x3
@@ -93,7 +85,6 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 96
     .local v0, "isOpaque":Z
     :goto_0
     if-eqz v0, :cond_1
@@ -101,7 +92,6 @@
     :cond_1
     return v2
 
-    .line 95
     .end local v0    # "isOpaque":Z
     :cond_2
     const/4 v0, 0x0
@@ -124,22 +114,18 @@
 
     const/4 v7, 0x0
 
-    .line 124
     if-nez p3, :cond_0
 
     iget-boolean v8, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mLightsOut:Z
 
     if-ne p1, v8, :cond_0
 
-    .line 166
     :goto_0
     return-void
 
-    .line 126
     :cond_0
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mLightsOut:Z
 
-    .line 128
     iget-object v8, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
     invoke-virtual {v8}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getCurrentView()Landroid/view/View;
@@ -152,7 +138,6 @@
 
     move-result-object v3
 
-    .line 129
     .local v3, "navButtons":Landroid/view/View;
     iget-object v8, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
@@ -166,7 +151,6 @@
 
     move-result-object v1
 
-    .line 132
     .local v1, "lowLights":Landroid/view/View;
     invoke-virtual {v3}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
@@ -174,35 +158,28 @@
 
     invoke-virtual {v8}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 133
     invoke-virtual {v1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v8
 
     invoke-virtual {v8}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 135
     if-eqz p1, :cond_1
 
     move v4, v7
 
-    .line 136
     .local v4, "navButtonsAlpha":F
     :goto_1
     if-eqz p1, :cond_2
 
-    .line 138
     .local v2, "lowLightsAlpha":F
     :goto_2
     if-nez p2, :cond_4
 
-    .line 139
     invoke-virtual {v3, v4}, Landroid/view/View;->setAlpha(F)V
 
-    .line 140
     invoke-virtual {v1, v2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 141
     if-eqz p1, :cond_3
 
     :goto_3
@@ -215,30 +192,25 @@
     :cond_1
     move v4, v2
 
-    .line 135
     goto :goto_1
 
     .restart local v4    # "navButtonsAlpha":F
     :cond_2
     move v2, v7
 
-    .line 136
     goto :goto_2
 
     .restart local v2    # "lowLightsAlpha":F
     :cond_3
     move v5, v6
 
-    .line 141
     goto :goto_3
 
-    .line 143
     :cond_4
     if-eqz p1, :cond_6
 
     const/16 v0, 0x2ee
 
-    .line 144
     .local v0, "duration":I
     :goto_4
     invoke-virtual {v3}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -257,25 +229,20 @@
 
     invoke-virtual {v8}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 149
     iget-object v8, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mLightsOutListener:Landroid/view/View$OnTouchListener;
 
     invoke-virtual {v1, v8}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 150
     invoke-virtual {v1}, Landroid/view/View;->getVisibility()I
 
     move-result v8
 
     if-ne v8, v6, :cond_5
 
-    .line 151
     invoke-virtual {v1, v7}, Landroid/view/View;->setAlpha(F)V
 
-    .line 152
     invoke-virtual {v1, v5}, Landroid/view/View;->setVisibility(I)V
 
-    .line 154
     :cond_5
     invoke-virtual {v1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
@@ -314,14 +281,12 @@
 
     goto/16 :goto_0
 
-    .line 143
     .end local v0    # "duration":I
     :cond_6
     const/16 v0, 0xfa
 
     goto :goto_4
 
-    .line 154
     .restart local v0    # "duration":I
     :cond_7
     new-instance v5, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions$1;
@@ -338,12 +303,10 @@
     .param p3, "force"    # Z
 
     .prologue
-    .line 82
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->alphaForMode(I)F
 
     move-result v0
 
-    .line 83
     .local v0, "alpha":F
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
@@ -353,7 +316,6 @@
 
     invoke-direct {p0, v1, v0, p2}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->setKeyButtonViewQuiescentAlpha(Landroid/view/View;FZ)V
 
-    .line 84
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getRecentsButton()Landroid/view/View;
@@ -362,7 +324,6 @@
 
     invoke-direct {p0, v1, v0, p2}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->setKeyButtonViewQuiescentAlpha(Landroid/view/View;FZ)V
 
-    .line 85
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getMenuButton()Landroid/view/View;
@@ -371,7 +332,6 @@
 
     invoke-direct {p0, v1, v0, p2}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->setKeyButtonViewQuiescentAlpha(Landroid/view/View;FZ)V
 
-    .line 86
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getImeSwitchButton()Landroid/view/View;
@@ -380,17 +340,14 @@
 
     invoke-direct {p0, v1, v0, p2}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->setKeyButtonViewQuiescentAlpha(Landroid/view/View;FZ)V
 
-    .line 88
     invoke-virtual {p0, p1, p2}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->applyBackButtonQuiescentAlpha(IZ)V
 
-    .line 91
     invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->isLightsOut(I)Z
 
     move-result v1
 
     invoke-direct {p0, v1, p2, p3}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->applyLightsOut(ZZZ)V
 
-    .line 92
     return-void
 .end method
 
@@ -400,7 +357,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 111
     instance-of v0, p1, Lcom/android/systemui/statusbar/policy/KeyButtonView;
 
     if-eqz v0, :cond_0
@@ -411,7 +367,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 112
     check-cast p1, Lcom/android/systemui/statusbar/policy/KeyButtonView;
 
     .end local p1    # "v":Landroid/view/View;
@@ -423,7 +378,6 @@
 
     move-result p0
 
-    .line 114
     .end local p0    # "max":F
     :cond_0
     return p0
@@ -436,18 +390,15 @@
     .param p3, "animate"    # Z
 
     .prologue
-    .line 118
     instance-of v0, p1, Lcom/android/systemui/statusbar/policy/KeyButtonView;
 
     if-eqz v0, :cond_0
 
-    .line 119
     check-cast p1, Lcom/android/systemui/statusbar/policy/KeyButtonView;
 
     .end local p1    # "button":Landroid/view/View;
     invoke-virtual {p1, p2, p3}, Lcom/android/systemui/statusbar/policy/KeyButtonView;->setQuiescentAlpha(FZ)V
 
-    .line 121
     :cond_0
     return-void
 .end method
@@ -460,10 +411,8 @@
     .param p2, "animate"    # Z
 
     .prologue
-    .line 100
     const/4 v0, 0x0
 
-    .line 101
     .local v0, "backAlpha":F
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
@@ -475,7 +424,6 @@
 
     move-result v0
 
-    .line 102
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getRecentsButton()Landroid/view/View;
@@ -486,7 +434,6 @@
 
     move-result v0
 
-    .line 103
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getMenuButton()Landroid/view/View;
@@ -497,7 +444,6 @@
 
     move-result v0
 
-    .line 104
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getImeSwitchButton()Landroid/view/View;
@@ -508,14 +454,12 @@
 
     move-result v0
 
-    .line 105
     const/4 v1, 0x0
 
     cmpl-float v1, v0, v1
 
     if-lez v1, :cond_0
 
-    .line 106
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getBackButton()Landroid/view/View;
@@ -524,7 +468,6 @@
 
     invoke-direct {p0, v1, v0, p2}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->setKeyButtonViewQuiescentAlpha(Landroid/view/View;FZ)V
 
-    .line 108
     :cond_0
     return-void
 .end method
@@ -535,7 +478,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 51
     const/4 v0, -0x1
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->getMode()I
@@ -544,7 +486,6 @@
 
     invoke-virtual {p0, v0, v1, v2}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->applyModeBackground(IIZ)V
 
-    .line 52
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->getMode()I
 
     move-result v0
@@ -553,7 +494,6 @@
 
     invoke-direct {p0, v0, v2, v1}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->applyMode(IZZ)V
 
-    .line 53
     return-void
 .end method
 
@@ -564,14 +504,11 @@
     .param p3, "animate"    # Z
 
     .prologue
-    .line 76
     invoke-super {p0, p1, p2, p3}, Lcom/android/systemui/statusbar/phone/BarTransitions;->onTransition(IIZ)V
 
-    .line 77
     const/4 v0, 0x0
 
     invoke-direct {p0, p2, p3, v0}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->applyMode(IZZ)V
 
-    .line 56
     return-void
 .end method

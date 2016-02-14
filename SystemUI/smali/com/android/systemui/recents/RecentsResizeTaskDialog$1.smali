@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 105
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsResizeTaskDialog$1;->this$0:Lcom/android/systemui/recents/RecentsResizeTaskDialog;
 
     iput p2, p0, Lcom/android/systemui/recents/RecentsResizeTaskDialog$1;->val$action:I
@@ -45,7 +44,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 107
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsResizeTaskDialog$1;->this$0:Lcom/android/systemui/recents/RecentsResizeTaskDialog;
 
     iget v1, p0, Lcom/android/systemui/recents/RecentsResizeTaskDialog$1;->val$action:I
@@ -53,6 +51,5 @@
     # invokes: Lcom/android/systemui/recents/RecentsResizeTaskDialog;->placeTasks(I)V
     invoke-static {v0, v1}, Lcom/android/systemui/recents/RecentsResizeTaskDialog;->access$000(Lcom/android/systemui/recents/RecentsResizeTaskDialog;I)V
 
-    .line 108
     return-void
 .end method

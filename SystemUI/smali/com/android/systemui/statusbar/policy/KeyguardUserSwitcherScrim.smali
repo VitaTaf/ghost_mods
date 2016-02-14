@@ -24,25 +24,20 @@
     .param p1, "host"    # Landroid/view/View;
 
     .prologue
-    .line 49
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 45
     const/16 v0, 0xff
 
     iput v0, p0, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcherScrim;->mAlpha:I
 
-    .line 46
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcherScrim;->mRadialGradientPaint:Landroid/graphics/Paint;
 
-    .line 50
     invoke-virtual {p1, p0}, Landroid/view/View;->addOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
-    .line 51
     invoke-virtual {p1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -55,7 +50,6 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcherScrim;->mDarkColor:I
 
-    .line 53
     return-void
 .end method
 
@@ -71,16 +65,13 @@
 
     const/4 v8, 0x0
 
-    .line 99
     iget v0, p0, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcherScrim;->mLayoutWidth:I
 
     if-nez v0, :cond_0
 
-    .line 111
     :goto_0
     return-void
 
-    .line 102
     :cond_0
     iget v0, p0, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcherScrim;->mLayoutWidth:I
 
@@ -90,7 +81,6 @@
 
     mul-float v3, v0, v1
 
-    .line 103
     .local v3, "radius":F
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcherScrim;->getLayoutDirection()I
 
@@ -100,7 +90,6 @@
 
     move v7, v6
 
-    .line 104
     .local v7, "isLtr":Z
     :goto_1
     iget-object v9, p0, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcherScrim;->mRadialGradientPaint:Landroid/graphics/Paint;
@@ -176,14 +165,12 @@
     :cond_1
     move v7, v8
 
-    .line 103
     goto :goto_1
 
     .restart local v7    # "isLtr":Z
     :cond_2
     move v1, v2
 
-    .line 104
     goto :goto_2
 .end method
 
@@ -198,7 +185,6 @@
 
     const/4 v2, 0x0
 
-    .line 57
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcherScrim;->getLayoutDirection()I
 
     move-result v0
@@ -207,14 +193,12 @@
 
     const/4 v8, 0x1
 
-    .line 58
     .local v8, "isLtr":Z
     :goto_0
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcherScrim;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v6
 
-    .line 59
     .local v6, "bounds":Landroid/graphics/Rect;
     invoke-virtual {v6}, Landroid/graphics/Rect;->width()I
 
@@ -224,7 +208,6 @@
 
     mul-float v4, v0, v3
 
-    .line 60
     .local v4, "width":F
     iget v0, p0, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcherScrim;->mTop:I
 
@@ -238,7 +221,6 @@
 
     mul-float v7, v0, v3
 
-    .line 61
     .local v7, "height":F
     iget v0, p0, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcherScrim;->mTop:I
 
@@ -248,14 +230,12 @@
 
     invoke-virtual {p1, v2, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 62
     const/high16 v0, 0x3f800000    # 1.0f
 
     div-float v1, v7, v4
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->scale(FF)V
 
-    .line 63
     if-eqz v8, :cond_1
 
     iget v0, v6, Landroid/graphics/Rect;->right:I
@@ -278,10 +258,8 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 65
     return-void
 
-    .line 57
     .end local v4    # "width":F
     .end local v6    # "bounds":Landroid/graphics/Rect;
     .end local v7    # "height":F
@@ -298,7 +276,6 @@
     :cond_1
     move v1, v2
 
-    .line 63
     goto :goto_1
 
     :cond_2
@@ -315,7 +292,6 @@
     .locals 1
 
     .prologue
-    .line 76
     iget v0, p0, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcherScrim;->mAlpha:I
 
     return v0
@@ -325,7 +301,6 @@
     .locals 1
 
     .prologue
-    .line 85
     const/4 v0, -0x3
 
     return v0
@@ -344,7 +319,6 @@
     .param p9, "oldBottom"    # I
 
     .prologue
-    .line 91
     if-ne p2, p6, :cond_0
 
     if-ne p3, p7, :cond_0
@@ -353,19 +327,15 @@
 
     if-eq p5, p9, :cond_1
 
-    .line 92
     :cond_0
     sub-int v0, p4, p2
 
     iput v0, p0, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcherScrim;->mLayoutWidth:I
 
-    .line 93
     iput p3, p0, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcherScrim;->mTop:I
 
-    .line 94
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcherScrim;->updatePaint()V
 
-    .line 96
     :cond_1
     return-void
 .end method
@@ -375,16 +345,12 @@
     .param p1, "alpha"    # I
 
     .prologue
-    .line 69
     iput p1, p0, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcherScrim;->mAlpha:I
 
-    .line 70
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcherScrim;->updatePaint()V
 
-    .line 71
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcherScrim;->invalidateSelf()V
 
-    .line 72
     return-void
 .end method
 
@@ -393,6 +359,5 @@
     .param p1, "colorFilter"    # Landroid/graphics/ColorFilter;
 
     .prologue
-    .line 81
     return-void
 .end method

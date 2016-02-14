@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 66
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialogMotion$2;->this$0:Lcom/android/systemui/volume/VolumeDialogMotion;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "dialog"    # Landroid/content/DialogInterface;
 
     .prologue
-    .line 69
     sget-boolean v1, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v1, :cond_0
@@ -55,7 +53,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 70
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogMotion$2;->this$0:Lcom/android/systemui/volume/VolumeDialogMotion;
 
@@ -68,7 +65,6 @@
 
     move-result v0
 
-    .line 71
     .local v0, "h":I
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogMotion$2;->this$0:Lcom/android/systemui/volume/VolumeDialogMotion;
 
@@ -83,12 +79,10 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 72
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogMotion$2;->this$0:Lcom/android/systemui/volume/VolumeDialogMotion;
 
     # invokes: Lcom/android/systemui/volume/VolumeDialogMotion;->startShowAnimation()V
     invoke-static {v1}, Lcom/android/systemui/volume/VolumeDialogMotion;->access$200(Lcom/android/systemui/volume/VolumeDialogMotion;)V
 
-    .line 73
     return-void
 .end method

@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 35
     iput-object p1, p0, Lcom/android/keyguard/EmergencyTextButton$1;->this$0:Lcom/android/keyguard/EmergencyTextButton;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -38,12 +37,10 @@
     .param p1, "inService"    # Z
 
     .prologue
-    .line 39
     iget-object v0, p0, Lcom/android/keyguard/EmergencyTextButton$1;->this$0:Lcom/android/keyguard/EmergencyTextButton;
 
     # invokes: Lcom/android/keyguard/EmergencyTextButton;->updateEmergencyTextButton(Z)V
     invoke-static {v0, p1}, Lcom/android/keyguard/EmergencyTextButton;->access$000(Lcom/android/keyguard/EmergencyTextButton;Z)V
 
-    .line 40
     return-void
 .end method

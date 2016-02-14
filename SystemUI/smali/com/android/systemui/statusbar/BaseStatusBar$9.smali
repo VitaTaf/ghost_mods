@@ -32,7 +32,6 @@
     .locals 0
 
     .prologue
-    .line 899
     iput-object p1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$9;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$9;->val$appSettingsLaunchIntent:Landroid/content/Intent;
@@ -53,7 +52,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 901
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$9;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$9;->val$appSettingsLaunchIntent:Landroid/content/Intent;
@@ -75,6 +73,5 @@
     # invokes: Lcom/android/systemui/statusbar/BaseStatusBar;->startAppOwnNotificationSettingsActivity(Landroid/content/Intent;ILjava/lang/String;I)V
     invoke-static {v0, v1, v2, v3, v4}, Lcom/android/systemui/statusbar/BaseStatusBar;->access$600(Lcom/android/systemui/statusbar/BaseStatusBar;Landroid/content/Intent;ILjava/lang/String;I)V
 
-    .line 905
     return-void
 .end method

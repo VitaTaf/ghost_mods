@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 156
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$1;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$1;->val$inFront:Z
@@ -45,7 +44,6 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 159
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -56,7 +54,6 @@
 
     move-result v0
 
-    .line 160
     .local v0, "value":F
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$1;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
@@ -65,6 +62,5 @@
     # invokes: Lcom/android/systemui/statusbar/phone/DozeScrimController;->setDozeAlpha(ZF)V
     invoke-static {v1, v2, v0}, Lcom/android/systemui/statusbar/phone/DozeScrimController;->access$000(Lcom/android/systemui/statusbar/phone/DozeScrimController;ZF)V
 
-    .line 161
     return-void
 .end method

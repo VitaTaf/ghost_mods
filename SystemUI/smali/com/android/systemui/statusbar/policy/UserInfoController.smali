@@ -60,73 +60,60 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 58
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 50
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController;->mCallbacks:Ljava/util/ArrayList;
 
-    .line 76
     new-instance v0, Lcom/android/systemui/statusbar/policy/UserInfoController$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/policy/UserInfoController$1;-><init>(Lcom/android/systemui/statusbar/policy/UserInfoController;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 90
     new-instance v0, Lcom/android/systemui/statusbar/policy/UserInfoController$2;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/policy/UserInfoController$2;-><init>(Lcom/android/systemui/statusbar/policy/UserInfoController;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController;->mProfileReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 59
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/UserInfoController;->mContext:Landroid/content/Context;
 
-    .line 60
     new-instance v6, Landroid/content/IntentFilter;
 
     invoke-direct {v6}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 61
     .local v6, "filter":Landroid/content/IntentFilter;
     const-string v0, "android.intent.action.USER_SWITCHED"
 
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 62
     const-string v0, "android.intent.action.CONFIGURATION_CHANGED"
 
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 63
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/UserInfoController;->mReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v0, v1, v6}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 65
     new-instance v3, Landroid/content/IntentFilter;
 
     invoke-direct {v3}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 66
     .local v3, "profileFilter":Landroid/content/IntentFilter;
     const-string v0, "android.provider.Contacts.PROFILE_CHANGED"
 
     invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 67
     const-string v0, "android.intent.action.USER_INFO_CHANGED"
 
     invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 68
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/UserInfoController;->mProfileReceiver:Landroid/content/BroadcastReceiver;
@@ -137,7 +124,6 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/Context;->registerReceiverAsUser(Landroid/content/BroadcastReceiver;Landroid/os/UserHandle;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    .line 70
     return-void
 .end method
 
@@ -146,7 +132,6 @@
     .param p0, "x0"    # Lcom/android/systemui/statusbar/policy/UserInfoController;
 
     .prologue
-    .line 45
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController;->mUseDefaultAvatar:Z
 
     return v0
@@ -158,7 +143,6 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 45
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/policy/UserInfoController;->mUseDefaultAvatar:Z
 
     return p1
@@ -169,7 +153,6 @@
     .param p0, "x0"    # Lcom/android/systemui/statusbar/policy/UserInfoController;
 
     .prologue
-    .line 45
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -181,7 +164,6 @@
     .param p1, "x1"    # Ljava/lang/String;
 
     .prologue
-    .line 45
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/UserInfoController;->mUserName:Ljava/lang/String;
 
     return-object p1
@@ -193,7 +175,6 @@
     .param p1, "x1"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 45
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/UserInfoController;->mUserDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object p1
@@ -205,7 +186,6 @@
     .param p1, "x1"    # Landroid/os/AsyncTask;
 
     .prologue
-    .line 45
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/UserInfoController;->mUserInfoTask:Landroid/os/AsyncTask;
 
     return-object p1
@@ -216,7 +196,6 @@
     .param p0, "x0"    # Lcom/android/systemui/statusbar/policy/UserInfoController;
 
     .prologue
-    .line 45
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/UserInfoController;->notifyChanged()V
 
     return-void
@@ -226,7 +205,6 @@
     .locals 4
 
     .prologue
-    .line 206
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/UserInfoController;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -247,7 +225,6 @@
 
     check-cast v1, Lcom/android/systemui/statusbar/policy/UserInfoController$OnUserInfoChangedListener;
 
-    .line 207
     .local v1, "listener":Lcom/android/systemui/statusbar/policy/UserInfoController$OnUserInfoChangedListener;
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/UserInfoController;->mUserName:Ljava/lang/String;
 
@@ -257,7 +234,6 @@
 
     goto :goto_0
 
-    .line 209
     .end local v1    # "listener":Lcom/android/systemui/statusbar/policy/UserInfoController$OnUserInfoChangedListener;
     :cond_0
     return-void
@@ -269,7 +245,6 @@
     .prologue
     const/4 v14, 0x0
 
-    .line 122
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -279,7 +254,6 @@
 
     move-result-object v10
 
-    .line 123
     .local v10, "userInfo":Landroid/content/pm/UserInfo;
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController;->mContext:Landroid/content/Context;
 
@@ -300,21 +274,17 @@
 
     move-result-object v7
 
-    .line 132
     .local v7, "currentUserContext":Landroid/content/Context;
     iget v3, v10, Landroid/content/pm/UserInfo;->id:I
 
-    .line 133
     .local v3, "userId":I
     invoke-virtual {v10}, Landroid/content/pm/UserInfo;->isGuest()Z
 
     move-result v5
 
-    .line 134
     .local v5, "isGuest":Z
     iget-object v2, v10, Landroid/content/pm/UserInfo;->name:Ljava/lang/String;
 
-    .line 136
     .local v2, "userName":Ljava/lang/String;
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController;->mContext:Landroid/content/Context;
 
@@ -322,7 +292,6 @@
 
     move-result-object v9
 
-    .line 137
     .local v9, "res":Landroid/content/res/Resources;
     const v0, 0x7f0d009a
 
@@ -340,11 +309,9 @@
 
     move-result v4
 
-    .line 141
     .local v4, "avatarSize":I
     move-object v6, v7
 
-    .line 142
     .local v6, "context":Landroid/content/Context;
     new-instance v0, Lcom/android/systemui/statusbar/policy/UserInfoController$3;
 
@@ -354,17 +321,14 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController;->mUserInfoTask:Landroid/os/AsyncTask;
 
-    .line 202
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController;->mUserInfoTask:Landroid/os/AsyncTask;
 
     new-array v1, v14, [Ljava/lang/Void;
 
     invoke-virtual {v0, v1}, Landroid/os/AsyncTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 203
     return-void
 
-    .line 125
     .end local v2    # "userName":Ljava/lang/String;
     .end local v3    # "userId":I
     .end local v4    # "avatarSize":I
@@ -376,7 +340,6 @@
     :catch_0
     move-exception v8
 
-    .line 126
     .local v8, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string v0, "UserInfoController"
 
@@ -384,19 +347,16 @@
 
     invoke-static {v0, v1, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 127
     new-instance v0, Ljava/lang/RuntimeException;
 
     invoke-direct {v0, v8}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
     throw v0
 
-    .line 128
     .end local v8    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :catch_1
     move-exception v8
 
-    .line 129
     .local v8, "e":Landroid/os/RemoteException;
     const-string v0, "UserInfoController"
 
@@ -404,7 +364,6 @@
 
     invoke-static {v0, v1, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 130
     new-instance v0, Ljava/lang/RuntimeException;
 
     invoke-direct {v0, v8}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -419,12 +378,10 @@
     .param p1, "callback"    # Lcom/android/systemui/statusbar/policy/UserInfoController$OnUserInfoChangedListener;
 
     .prologue
-    .line 73
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 74
     return-void
 .end method
 
@@ -432,27 +389,22 @@
     .locals 2
 
     .prologue
-    .line 111
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController;->mUserInfoTask:Landroid/os/AsyncTask;
 
     if-eqz v0, :cond_0
 
-    .line 112
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController;->mUserInfoTask:Landroid/os/AsyncTask;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/AsyncTask;->cancel(Z)Z
 
-    .line 113
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController;->mUserInfoTask:Landroid/os/AsyncTask;
 
-    .line 115
     :cond_0
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/UserInfoController;->queryForUserInformation()V
 
-    .line 116
     return-void
 .end method

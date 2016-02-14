@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 137
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeUI$1;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     iput-object p2, p0, Lcom/android/systemui/volume/VolumeUI$1;->val$component:Landroid/content/ComponentName;
@@ -46,7 +45,6 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 140
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$1;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mVolumeControllerService:Lcom/android/systemui/statusbar/ServiceMonitor;
@@ -58,6 +56,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/ServiceMonitor;->setComponent(Landroid/content/ComponentName;)V
 
-    .line 141
     return-void
 .end method

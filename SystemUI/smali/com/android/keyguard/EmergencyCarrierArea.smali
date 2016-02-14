@@ -15,10 +15,8 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 30
     invoke-direct {p0, p1}, Lcom/android/keyguard/AlphaOptimizedLinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 31
     return-void
 .end method
 
@@ -28,10 +26,8 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 34
     invoke-direct {p0, p1, p2}, Lcom/android/keyguard/AlphaOptimizedLinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 35
     return-void
 .end method
 
@@ -40,7 +36,6 @@
     .param p0, "x0"    # Lcom/android/keyguard/EmergencyCarrierArea;
 
     .prologue
-    .line 24
     iget-object v0, p0, Lcom/android/keyguard/EmergencyCarrierArea;->mCarrierText:Lcom/android/keyguard/CarrierText;
 
     return-object v0
@@ -52,10 +47,8 @@
     .locals 2
 
     .prologue
-    .line 39
     invoke-super {p0}, Lcom/android/keyguard/AlphaOptimizedLinearLayout;->onFinishInflate()V
 
-    .line 40
     sget v0, Lcom/android/keyguard/R$id;->carrier_text:I
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/EmergencyCarrierArea;->findViewById(I)Landroid/view/View;
@@ -66,7 +59,6 @@
 
     iput-object v0, p0, Lcom/android/keyguard/EmergencyCarrierArea;->mCarrierText:Lcom/android/keyguard/CarrierText;
 
-    .line 41
     sget v0, Lcom/android/keyguard/R$id;->emergency_call_button:I
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/EmergencyCarrierArea;->findViewById(I)Landroid/view/View;
@@ -77,7 +69,6 @@
 
     iput-object v0, p0, Lcom/android/keyguard/EmergencyCarrierArea;->mEmergencyButton:Lcom/android/keyguard/EmergencyButton;
 
-    .line 45
     iget-object v0, p0, Lcom/android/keyguard/EmergencyCarrierArea;->mEmergencyButton:Lcom/android/keyguard/EmergencyButton;
 
     new-instance v1, Lcom/android/keyguard/EmergencyCarrierArea$1;
@@ -86,7 +77,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/EmergencyButton;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 59
     return-void
 .end method
 
@@ -95,7 +85,6 @@
     .param p1, "visible"    # Z
 
     .prologue
-    .line 62
     iget-object v1, p0, Lcom/android/keyguard/EmergencyCarrierArea;->mCarrierText:Lcom/android/keyguard/CarrierText;
 
     if-eqz p1, :cond_0
@@ -105,10 +94,8 @@
     :goto_0
     invoke-virtual {v1, v0}, Lcom/android/keyguard/CarrierText;->setVisibility(I)V
 
-    .line 63
     return-void
 
-    .line 62
     :cond_0
     const/16 v0, 0x8
 

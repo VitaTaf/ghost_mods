@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 223
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialogMotion$6$1;->this$1:Lcom/android/systemui/volume/VolumeDialogMotion$6;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 2
 
     .prologue
-    .line 226
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_0
@@ -54,7 +52,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 227
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion$6$1;->this$1:Lcom/android/systemui/volume/VolumeDialogMotion$6;
 
@@ -67,14 +64,12 @@
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 228
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion$6$1;->this$1:Lcom/android/systemui/volume/VolumeDialogMotion$6;
 
     iget-object v0, v0, Lcom/android/systemui/volume/VolumeDialogMotion$6;->val$onComplete:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 229
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion$6$1;->this$1:Lcom/android/systemui/volume/VolumeDialogMotion$6;
 
     iget-object v0, v0, Lcom/android/systemui/volume/VolumeDialogMotion$6;->this$0:Lcom/android/systemui/volume/VolumeDialogMotion;
@@ -84,6 +79,5 @@
     # invokes: Lcom/android/systemui/volume/VolumeDialogMotion;->setDismissing(Z)V
     invoke-static {v0, v1}, Lcom/android/systemui/volume/VolumeDialogMotion;->access$900(Lcom/android/systemui/volume/VolumeDialogMotion;Z)V
 
-    .line 230
     return-void
 .end method

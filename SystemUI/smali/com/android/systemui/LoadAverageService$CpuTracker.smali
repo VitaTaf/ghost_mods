@@ -28,15 +28,12 @@
     .param p1, "paint"    # Landroid/graphics/Paint;
 
     .prologue
-    .line 44
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/internal/os/ProcessCpuTracker;-><init>(Z)V
 
-    .line 45
     iput-object p1, p0, Lcom/android/systemui/LoadAverageService$CpuTracker;->mPaint:Landroid/graphics/Paint;
 
-    .line 46
     return-void
 .end method
 
@@ -49,7 +46,6 @@
     .param p3, "load15"    # F
 
     .prologue
-    .line 50
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -84,7 +80,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/LoadAverageService$CpuTracker;->mLoadText:Ljava/lang/String;
 
-    .line 51
     iget-object v0, p0, Lcom/android/systemui/LoadAverageService$CpuTracker;->mPaint:Landroid/graphics/Paint;
 
     iget-object v1, p0, Lcom/android/systemui/LoadAverageService$CpuTracker;->mLoadText:Ljava/lang/String;
@@ -97,7 +92,6 @@
 
     iput v0, p0, Lcom/android/systemui/LoadAverageService$CpuTracker;->mLoadWidth:I
 
-    .line 52
     return-void
 .end method
 
@@ -106,7 +100,6 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 56
     iget-object v0, p0, Lcom/android/systemui/LoadAverageService$CpuTracker;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->measureText(Ljava/lang/String;)F

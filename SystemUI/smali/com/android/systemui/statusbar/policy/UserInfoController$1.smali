@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 76
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/UserInfoController$1;->this$0:Lcom/android/systemui/statusbar/policy/UserInfoController;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 79
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 80
     .local v0, "action":Ljava/lang/String;
     const-string v1, "android.intent.action.USER_SWITCHED"
 
@@ -54,17 +51,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 81
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/UserInfoController$1;->this$0:Lcom/android/systemui/statusbar/policy/UserInfoController;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/policy/UserInfoController;->reloadUserInfo()V
 
-    .line 87
     :cond_0
     :goto_0
     return-void
 
-    .line 82
     :cond_1
     const-string v1, "android.intent.action.CONFIGURATION_CHANGED"
 
@@ -74,7 +68,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 83
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/UserInfoController$1;->this$0:Lcom/android/systemui/statusbar/policy/UserInfoController;
 
     # getter for: Lcom/android/systemui/statusbar/policy/UserInfoController;->mUseDefaultAvatar:Z
@@ -84,7 +77,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 84
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/UserInfoController$1;->this$0:Lcom/android/systemui/statusbar/policy/UserInfoController;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/policy/UserInfoController;->reloadUserInfo()V

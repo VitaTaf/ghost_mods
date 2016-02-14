@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 407
     iput-object p1, p0, Lcom/android/systemui/SearchPanelCircleView$7;->this$0:Lcom/android/systemui/SearchPanelCircleView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,12 +46,10 @@
 
     const/high16 v3, 0x3f800000    # 1.0f
 
-    .line 410
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
     move-result v0
 
-    .line 411
     .local v0, "animatedFraction":F
     cmpl-float v4, v0, v5
 
@@ -60,7 +57,6 @@
 
     move v2, v3
 
-    .line 412
     .local v2, "logoValue":F
     :goto_0
     sget-object v4, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->ALPHA_OUT:Landroid/view/animation/Interpolator;
@@ -71,19 +67,16 @@
 
     move-result v2
 
-    .line 413
     cmpg-float v4, v0, v6
 
     if-gez v4, :cond_1
 
     const/4 v1, 0x0
 
-    .line 415
     .local v1, "backgroundValue":F
     :goto_1
     sub-float v1, v3, v1
 
-    .line 416
     iget-object v3, p0, Lcom/android/systemui/SearchPanelCircleView$7;->this$0:Lcom/android/systemui/SearchPanelCircleView;
 
     # getter for: Lcom/android/systemui/SearchPanelCircleView;->mBackgroundPaint:Landroid/graphics/Paint;
@@ -99,13 +92,11 @@
 
     invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 417
     iget-object v3, p0, Lcom/android/systemui/SearchPanelCircleView$7;->this$0:Lcom/android/systemui/SearchPanelCircleView;
 
     # setter for: Lcom/android/systemui/SearchPanelCircleView;->mOutlineAlpha:F
     invoke-static {v3, v1}, Lcom/android/systemui/SearchPanelCircleView;->access$502(Lcom/android/systemui/SearchPanelCircleView;F)F
 
-    .line 418
     iget-object v3, p0, Lcom/android/systemui/SearchPanelCircleView$7;->this$0:Lcom/android/systemui/SearchPanelCircleView;
 
     # getter for: Lcom/android/systemui/SearchPanelCircleView;->mLogo:Landroid/widget/ImageView;
@@ -115,20 +106,16 @@
 
     invoke-virtual {v3, v2}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 419
     iget-object v3, p0, Lcom/android/systemui/SearchPanelCircleView$7;->this$0:Lcom/android/systemui/SearchPanelCircleView;
 
     invoke-virtual {v3}, Lcom/android/systemui/SearchPanelCircleView;->invalidateOutline()V
 
-    .line 420
     iget-object v3, p0, Lcom/android/systemui/SearchPanelCircleView$7;->this$0:Lcom/android/systemui/SearchPanelCircleView;
 
     invoke-virtual {v3}, Lcom/android/systemui/SearchPanelCircleView;->invalidate()V
 
-    .line 421
     return-void
 
-    .line 411
     .end local v1    # "backgroundValue":F
     .end local v2    # "logoValue":F
     :cond_0
@@ -136,7 +123,6 @@
 
     goto :goto_0
 
-    .line 413
     .restart local v2    # "logoValue":F
     :cond_1
     sget-object v4, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->ALPHA_OUT:Landroid/view/animation/Interpolator;

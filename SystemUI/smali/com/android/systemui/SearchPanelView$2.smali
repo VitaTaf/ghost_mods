@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 211
     iput-object p1, p0, Lcom/android/systemui/SearchPanelView$2;->this$0:Lcom/android/systemui/SearchPanelView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 2
 
     .prologue
-    .line 214
     iget-object v0, p0, Lcom/android/systemui/SearchPanelView$2;->this$0:Lcom/android/systemui/SearchPanelView;
 
     # getter for: Lcom/android/systemui/SearchPanelView;->mCircle:Lcom/android/systemui/SearchPanelCircleView;
@@ -52,13 +50,11 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/SearchPanelCircleView;->setAnimatingOut(Z)V
 
-    .line 215
     iget-object v0, p0, Lcom/android/systemui/SearchPanelView$2;->this$0:Lcom/android/systemui/SearchPanelView;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/SearchPanelView;->setVisibility(I)V
 
-    .line 216
     return-void
 .end method

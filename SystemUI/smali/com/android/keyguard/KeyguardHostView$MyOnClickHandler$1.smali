@@ -32,7 +32,6 @@
     .locals 0
 
     .prologue
-    .line 523
     iput-object p1, p0, Lcom/android/keyguard/KeyguardHostView$MyOnClickHandler$1;->this$0:Lcom/android/keyguard/KeyguardHostView$MyOnClickHandler;
 
     iput-object p2, p0, Lcom/android/keyguard/KeyguardHostView$MyOnClickHandler$1;->val$view:Landroid/view/View;
@@ -54,7 +53,6 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 527
     :try_start_0
     iget-object v1, p0, Lcom/android/keyguard/KeyguardHostView$MyOnClickHandler$1;->val$view:Landroid/view/View;
 
@@ -62,7 +60,6 @@
 
     move-result-object v0
 
-    .line 528
     .local v0, "context":Landroid/content/Context;
     iget-object v1, p0, Lcom/android/keyguard/KeyguardHostView$MyOnClickHandler$1;->val$view:Landroid/view/View;
 
@@ -86,7 +83,6 @@
 
     move-result-object v8
 
-    .line 531
     .local v8, "opts":Landroid/app/ActivityOptions;
     iget-object v1, p0, Lcom/android/keyguard/KeyguardHostView$MyOnClickHandler$1;->val$pendingIntent:Landroid/app/PendingIntent;
 
@@ -111,17 +107,14 @@
     .catch Landroid/content/IntentSender$SendIntentException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 541
     .end local v0    # "context":Landroid/content/Context;
     .end local v8    # "opts":Landroid/app/ActivityOptions;
     :goto_0
     return v9
 
-    .line 535
     :catch_0
     move-exception v7
 
-    .line 536
     .local v7, "e":Landroid/content/IntentSender$SendIntentException;
     const-string v1, "KeyguardHostView"
 
@@ -131,12 +124,10 @@
 
     goto :goto_0
 
-    .line 537
     .end local v7    # "e":Landroid/content/IntentSender$SendIntentException;
     :catch_1
     move-exception v7
 
-    .line 538
     .local v7, "e":Ljava/lang/Exception;
     const-string v1, "KeyguardHostView"
 

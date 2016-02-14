@@ -25,7 +25,6 @@
     .param p4, "x1"    # J
 
     .prologue
-    .line 147
     iput-object p1, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView$1;->this$0:Lcom/android/keyguard/KeyguardAbsKeyInputView;
 
     invoke-direct {p0, p2, p3, p4, p5}, Landroid/os/CountDownTimer;-><init>(JJ)V
@@ -41,7 +40,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 158
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView$1;->this$0:Lcom/android/keyguard/KeyguardAbsKeyInputView;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
@@ -50,24 +48,20 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/keyguard/SecurityMessageDisplay;->setMessage(Ljava/lang/CharSequence;Z)V
 
-    .line 160
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView$1;->this$0:Lcom/android/keyguard/KeyguardAbsKeyInputView;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mCountDownFinish:Z
 
-    .line 161
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView$1;->this$0:Lcom/android/keyguard/KeyguardAbsKeyInputView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardAbsKeyInputView;->resetState()V
 
-    .line 162
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView$1;->this$0:Lcom/android/keyguard/KeyguardAbsKeyInputView;
 
     iput-boolean v2, v0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mCountDownFinish:Z
 
-    .line 163
     return-void
 .end method
 
@@ -78,14 +72,12 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 151
     const-wide/16 v2, 0x3e8
 
     div-long v2, p1, v2
 
     long-to-int v0, v2
 
-    .line 152
     .local v0, "secondsRemaining":I
     iget-object v1, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView$1;->this$0:Lcom/android/keyguard/KeyguardAbsKeyInputView;
 
@@ -105,6 +97,5 @@
 
     invoke-interface {v1, v2, v6, v3}, Lcom/android/keyguard/SecurityMessageDisplay;->setMessage(IZ[Ljava/lang/Object;)V
 
-    .line 154
     return-void
 .end method

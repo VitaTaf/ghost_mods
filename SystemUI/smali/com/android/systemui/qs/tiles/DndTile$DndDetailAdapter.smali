@@ -27,7 +27,6 @@
     .locals 0
 
     .prologue
-    .line 186
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p2, "x1"    # Lcom/android/systemui/qs/tiles/DndTile$1;
 
     .prologue
-    .line 186
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;-><init>(Lcom/android/systemui/qs/tiles/DndTile;)V
 
     return-void
@@ -56,7 +54,6 @@
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 213
     if-eqz p2, :cond_1
 
     move-object v1, p2
@@ -65,12 +62,10 @@
 
     move-object v0, v1
 
-    .line 216
     .local v0, "zmp":Lcom/android/systemui/volume/ZenModePanel;
     :goto_0
     if-nez p2, :cond_0
 
-    .line 217
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DndTile;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
@@ -80,10 +75,8 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/ZenModePanel;->init(Lcom/android/systemui/statusbar/policy/ZenModeController;)V
 
-    .line 218
     invoke-virtual {v0, p0}, Lcom/android/systemui/volume/ZenModePanel;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
-    .line 219
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DndTile;->mZenModePanelCallback:Lcom/android/systemui/volume/ZenModePanel$Callback;
@@ -93,11 +86,9 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/ZenModePanel;->setCallback(Lcom/android/systemui/volume/ZenModePanel$Callback;)V
 
-    .line 221
     :cond_0
     return-object v0
 
-    .line 213
     .end local v0    # "zmp":Lcom/android/systemui/volume/ZenModePanel;
     :cond_1
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
@@ -123,7 +114,6 @@
     .locals 1
 
     .prologue
-    .line 200
     # getter for: Lcom/android/systemui/qs/tiles/DndTile;->ZEN_SETTINGS:Landroid/content/Intent;
     invoke-static {}, Lcom/android/systemui/qs/tiles/DndTile;->access$600()Landroid/content/Intent;
 
@@ -136,7 +126,6 @@
     .locals 1
 
     .prologue
-    .line 190
     const v0, 0x7f0c0275
 
     return v0
@@ -146,7 +135,6 @@
     .locals 1
 
     .prologue
-    .line 195
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DndTile;->mState:Lcom/android/systemui/qs/QSTile$State;
@@ -170,7 +158,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 226
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
     const/4 v1, 0x1
@@ -178,7 +165,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/DndTile;->mShowingDetail:Z
     invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/DndTile;->access$1002(Lcom/android/systemui/qs/tiles/DndTile;Z)Z
 
-    .line 227
     return-void
 .end method
 
@@ -187,7 +173,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 231
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
     const/4 v1, 0x0
@@ -195,7 +180,6 @@
     # setter for: Lcom/android/systemui/qs/tiles/DndTile;->mShowingDetail:Z
     invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/DndTile;->access$1002(Lcom/android/systemui/qs/tiles/DndTile;Z)Z
 
-    .line 232
     return-void
 .end method
 
@@ -206,10 +190,8 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 205
     if-nez p1, :cond_0
 
-    .line 206
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/DndTile;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
@@ -228,12 +210,10 @@
 
     invoke-interface {v0, v3, v1, v2}, Lcom/android/systemui/statusbar/policy/ZenModeController;->setZen(ILandroid/net/Uri;Ljava/lang/String;)V
 
-    .line 207
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/DndTile;
 
     invoke-virtual {v0, v3}, Lcom/android/systemui/qs/tiles/DndTile;->showDetail(Z)V
 
-    .line 209
     :cond_0
     return-void
 .end method

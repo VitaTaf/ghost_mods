@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 439
     iput-object p1, p0, Lcom/android/systemui/doze/DozeService$5;->this$0:Lcom/android/systemui/doze/DozeService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 4
 
     .prologue
-    .line 448
     # getter for: Lcom/android/systemui/doze/DozeService;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/doze/DozeService;->access$700()Z
 
@@ -59,7 +57,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 449
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$5;->this$0:Lcom/android/systemui/doze/DozeService;
 
@@ -70,7 +67,6 @@
     # invokes: Lcom/android/systemui/doze/DozeService;->updateNotificationPulse(J)V
     invoke-static {v0, v2, v3}, Lcom/android/systemui/doze/DozeService;->access$1400(Lcom/android/systemui/doze/DozeService;J)V
 
-    .line 450
     return-void
 .end method
 
@@ -78,7 +74,6 @@
     .locals 2
 
     .prologue
-    .line 442
     # getter for: Lcom/android/systemui/doze/DozeService;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/doze/DozeService;->access$700()Z
 
@@ -97,7 +92,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 444
     :cond_0
     return-void
 .end method
@@ -107,7 +101,6 @@
     .param p1, "on"    # Z
 
     .prologue
-    .line 454
     # getter for: Lcom/android/systemui/doze/DozeService;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/doze/DozeService;->access$700()Z
 
@@ -142,7 +135,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 455
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$5;->this$0:Lcom/android/systemui/doze/DozeService;
 
@@ -153,19 +145,16 @@
 
     if-ne v0, p1, :cond_2
 
-    .line 460
     :cond_1
     :goto_0
     return-void
 
-    .line 456
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$5;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # setter for: Lcom/android/systemui/doze/DozeService;->mNotificationLightOn:Z
     invoke-static {v0, p1}, Lcom/android/systemui/doze/DozeService;->access$1002(Lcom/android/systemui/doze/DozeService;Z)Z
 
-    .line 457
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$5;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mNotificationLightOn:Z
@@ -175,7 +164,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 458
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$5;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # invokes: Lcom/android/systemui/doze/DozeService;->updateNotificationPulseDueToLight()V
@@ -189,13 +177,11 @@
     .param p1, "active"    # Z
 
     .prologue
-    .line 464
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$5;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # setter for: Lcom/android/systemui/doze/DozeService;->mPowerSaveActive:Z
     invoke-static {v0, p1}, Lcom/android/systemui/doze/DozeService;->access$1602(Lcom/android/systemui/doze/DozeService;Z)Z
 
-    .line 465
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$5;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mPowerSaveActive:Z
@@ -214,13 +200,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 466
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$5;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # invokes: Lcom/android/systemui/doze/DozeService;->finishToSavePower()V
     invoke-static {v0}, Lcom/android/systemui/doze/DozeService;->access$1700(Lcom/android/systemui/doze/DozeService;)V
 
-    .line 468
     :cond_0
     return-void
 .end method

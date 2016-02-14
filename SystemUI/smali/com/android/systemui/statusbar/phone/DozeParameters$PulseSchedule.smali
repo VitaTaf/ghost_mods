@@ -29,7 +29,6 @@
     .locals 2
 
     .prologue
-    .line 155
     const-string v0, "(\\d+?)s"
 
     const/4 v1, 0x0
@@ -47,7 +46,6 @@
     .locals 0
 
     .prologue
-    .line 154
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -58,7 +56,6 @@
     .param p0, "x0"    # Lcom/android/systemui/statusbar/phone/DozeParameters$PulseSchedule;
 
     .prologue
-    .line 154
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeParameters$PulseSchedule;->mSpec:Ljava/lang/String;
 
     return-object v0
@@ -71,7 +68,6 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 161
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v6
@@ -80,30 +76,25 @@
 
     move-object v3, v5
 
-    .line 176
     :cond_0
     :goto_0
     return-object v3
 
-    .line 163
     :cond_1
     :try_start_0
     new-instance v3, Lcom/android/systemui/statusbar/phone/DozeParameters$PulseSchedule;
 
     invoke-direct {v3}, Lcom/android/systemui/statusbar/phone/DozeParameters$PulseSchedule;-><init>()V
 
-    .line 164
     .local v3, "rt":Lcom/android/systemui/statusbar/phone/DozeParameters$PulseSchedule;
     iput-object p0, v3, Lcom/android/systemui/statusbar/phone/DozeParameters$PulseSchedule;->mSpec:Ljava/lang/String;
 
-    .line 165
     const-string v6, ","
 
     invoke-virtual {p0, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v4
 
-    .line 166
     .local v4, "tokens":[Ljava/lang/String;
     array-length v6, v4
 
@@ -111,7 +102,6 @@
 
     iput-object v6, v3, Lcom/android/systemui/statusbar/phone/DozeParameters$PulseSchedule;->mSchedule:[I
 
-    .line 167
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -120,7 +110,6 @@
 
     if-ge v1, v6, :cond_3
 
-    .line 168
     sget-object v6, Lcom/android/systemui/statusbar/phone/DozeParameters$PulseSchedule;->PATTERN:Ljava/util/regex/Pattern;
 
     aget-object v7, v4, v1
@@ -129,7 +118,6 @@
 
     move-result-object v2
 
-    .line 169
     .local v2, "m":Ljava/util/regex/Matcher;
     invoke-virtual {v2}, Ljava/util/regex/Matcher;->matches()Z
 
@@ -165,7 +153,6 @@
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 174
     .end local v1    # "i":I
     .end local v2    # "m":Ljava/util/regex/Matcher;
     .end local v3    # "rt":Lcom/android/systemui/statusbar/phone/DozeParameters$PulseSchedule;
@@ -173,7 +160,6 @@
     :catch_0
     move-exception v0
 
-    .line 175
     .local v0, "e":Ljava/lang/RuntimeException;
     const-string v6, "DozeParameters"
 
@@ -199,10 +185,8 @@
 
     move-object v3, v5
 
-    .line 176
     goto :goto_0
 
-    .line 170
     .end local v0    # "e":Ljava/lang/RuntimeException;
     .restart local v1    # "i":I
     .restart local v2    # "m":Ljava/util/regex/Matcher;
@@ -224,12 +208,10 @@
 
     aput v7, v6, v1
 
-    .line 167
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 172
     .end local v2    # "m":Ljava/util/regex/Matcher;
     :cond_3
     # getter for: Lcom/android/systemui/statusbar/phone/DozeParameters;->DEBUG:Z
@@ -284,7 +266,6 @@
     .param p3, "notificationTime"    # J
 
     .prologue
-    .line 186
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -295,7 +276,6 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 187
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/DozeParameters$PulseSchedule;->mSchedule:[I
 
     aget v1, v1, v0
@@ -306,25 +286,21 @@
 
     add-long v2, p3, v4
 
-    .line 188
     .local v2, "time":J
     cmp-long v1, v2, p1
 
     if-lez v1, :cond_0
 
-    .line 190
     .end local v2    # "time":J
     :goto_1
     return-wide v2
 
-    .line 186
     .restart local v2    # "time":J
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 190
     .end local v2    # "time":J
     :cond_1
     const-wide/16 v2, 0x0
@@ -336,7 +312,6 @@
     .locals 1
 
     .prologue
-    .line 182
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeParameters$PulseSchedule;->mSchedule:[I
 
     invoke-static {v0}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;

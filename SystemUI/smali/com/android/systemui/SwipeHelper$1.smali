@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 242
     iput-object p1, p0, Lcom/android/systemui/SwipeHelper$1;->this$0:Lcom/android/systemui/SwipeHelper;
 
     iput-object p2, p0, Lcom/android/systemui/SwipeHelper$1;->val$ev:Landroid/view/MotionEvent;
@@ -46,7 +45,6 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 245
     iget-object v2, p0, Lcom/android/systemui/SwipeHelper$1;->this$0:Lcom/android/systemui/SwipeHelper;
 
     # getter for: Lcom/android/systemui/SwipeHelper;->mCurrView:Landroid/view/View;
@@ -65,13 +63,11 @@
 
     if-nez v2, :cond_0
 
-    .line 246
     iget-object v2, p0, Lcom/android/systemui/SwipeHelper$1;->this$0:Lcom/android/systemui/SwipeHelper;
 
     # setter for: Lcom/android/systemui/SwipeHelper;->mLongPressSent:Z
     invoke-static {v2, v5}, Lcom/android/systemui/SwipeHelper;->access$102(Lcom/android/systemui/SwipeHelper;Z)Z
 
-    .line 247
     iget-object v2, p0, Lcom/android/systemui/SwipeHelper$1;->this$0:Lcom/android/systemui/SwipeHelper;
 
     # getter for: Lcom/android/systemui/SwipeHelper;->mCurrView:Landroid/view/View;
@@ -83,7 +79,6 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->sendAccessibilityEvent(I)V
 
-    .line 249
     iget-object v2, p0, Lcom/android/systemui/SwipeHelper$1;->this$0:Lcom/android/systemui/SwipeHelper;
 
     # getter for: Lcom/android/systemui/SwipeHelper;->mCurrView:Landroid/view/View;
@@ -100,7 +95,6 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 250
     iget-object v2, p0, Lcom/android/systemui/SwipeHelper$1;->val$ev:Landroid/view/MotionEvent;
 
     invoke-virtual {v2}, Landroid/view/MotionEvent;->getRawX()F
@@ -122,7 +116,6 @@
 
     sub-int v0, v2, v3
 
-    .line 251
     .local v0, "x":I
     iget-object v2, p0, Lcom/android/systemui/SwipeHelper$1;->val$ev:Landroid/view/MotionEvent;
 
@@ -143,7 +136,6 @@
 
     sub-int v1, v2, v3
 
-    .line 252
     .local v1, "y":I
     iget-object v2, p0, Lcom/android/systemui/SwipeHelper$1;->this$0:Lcom/android/systemui/SwipeHelper;
 
@@ -161,7 +153,6 @@
 
     invoke-interface {v2, v3, v0, v1}, Lcom/android/systemui/SwipeHelper$LongPressListener;->onLongPress(Landroid/view/View;II)Z
 
-    .line 254
     .end local v0    # "x":I
     .end local v1    # "y":I
     :cond_0

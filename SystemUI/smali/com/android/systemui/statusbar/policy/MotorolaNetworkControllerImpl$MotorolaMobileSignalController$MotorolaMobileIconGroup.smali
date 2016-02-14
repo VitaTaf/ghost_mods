@@ -99,114 +99,89 @@
     .param p32, "motoQSActivityLookup"    # [I
 
     .prologue
-    .line 10304
     invoke-direct/range {p0 .. p9}, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaSignalController$MotorolaIconGroup;-><init>(Ljava/lang/String;[[I[[I[IIIIII)V
 
-    .line 10316
     iput p10, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$MotorolaMobileIconGroup;->mDataContentDescription:I
 
-    .line 10317
     iput p11, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$MotorolaMobileIconGroup;->mDataType:I
 
-    .line 10318
     iput-boolean p12, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$MotorolaMobileIconGroup;->mIsWide:Z
 
-    .line 10319
     iput-object p13, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$MotorolaMobileIconGroup;->mQsDataTypeLookup:[I
 
-    .line 10322
     move/from16 v0, p16
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$MotorolaMobileIconGroup;->mIsMotoUI:Z
 
-    .line 10323
     move/from16 v0, p17
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$MotorolaMobileIconGroup;->mIsMotoTwoCell:Z
 
-    .line 10325
     move-object/from16 v0, p18
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$MotorolaMobileIconGroup;->mMotoSimDescriptionLookup:[I
 
-    .line 10326
     move-object/from16 v0, p19
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$MotorolaMobileIconGroup;->mMotoSBSimLookup:[I
 
-    .line 10327
     move-object/from16 v0, p20
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$MotorolaMobileIconGroup;->mMotoQSSimLookup:[I
 
-    .line 10329
     move-object/from16 v0, p21
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$MotorolaMobileIconGroup;->mMotoSignalDescriptionLookup:[I
 
-    .line 10330
     move-object/from16 v0, p22
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$MotorolaMobileIconGroup;->mMotoSBSignalLookup:[I
 
-    .line 10331
     move-object/from16 v0, p23
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$MotorolaMobileIconGroup;->mMotoQSSignalLookup:[I
 
-    .line 10333
     move-object/from16 v0, p24
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$MotorolaMobileIconGroup;->mMotoRoamingDescriptionLookup:[I
 
-    .line 10334
     move-object/from16 v0, p25
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$MotorolaMobileIconGroup;->mMotoSBRoamingLookup:[I
 
-    .line 10335
     move-object/from16 v0, p26
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$MotorolaMobileIconGroup;->mMotoQSRoamingLookup:[I
 
-    .line 10337
     move/from16 v0, p27
 
     iput v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$MotorolaMobileIconGroup;->mMotoDataTypeDescription:I
 
-    .line 10338
     move-object/from16 v0, p28
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$MotorolaMobileIconGroup;->mMotoSBDataTypeLookup:[I
 
-    .line 10339
     move-object/from16 v0, p29
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$MotorolaMobileIconGroup;->mMotoQSDataTypeLookup:[I
 
-    .line 10341
     move-object/from16 v0, p30
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$MotorolaMobileIconGroup;->mMotoActivityDescriptionLookup:[I
 
-    .line 10342
     move-object/from16 v0, p31
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$MotorolaMobileIconGroup;->mMotoSBActivityLookup:[I
 
-    .line 10343
     move-object/from16 v0, p32
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$MotorolaMobileIconGroup;->mMotoQSActivityLookup:[I
 
-    .line 10344
     iput-object p14, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$MotorolaMobileIconGroup;->mMotoSBActivityAOSPLookup:[[I
 
-    .line 10345
     move-object/from16 v0, p15
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaMobileSignalController$MotorolaMobileIconGroup;->mMotoQSActivityAOSPLookup:[[I
 
-    .line 10347
     return-void
 .end method

@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 440
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$4;->this$0:Lcom/android/systemui/statusbar/stack/StackStateAnimator;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$4;->val$child:Lcom/android/systemui/statusbar/ExpandableView;
@@ -44,27 +43,23 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 443
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$4;->val$child:Lcom/android/systemui/statusbar/ExpandableView;
 
     const v1, 0x7f0f0004
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/statusbar/ExpandableView;->setTag(ILjava/lang/Object;)V
 
-    .line 444
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$4;->val$child:Lcom/android/systemui/statusbar/ExpandableView;
 
     const v1, 0x7f0f0010
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/statusbar/ExpandableView;->setTag(ILjava/lang/Object;)V
 
-    .line 445
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$4;->val$child:Lcom/android/systemui/statusbar/ExpandableView;
 
     const v1, 0x7f0f000a
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/statusbar/ExpandableView;->setTag(ILjava/lang/Object;)V
 
-    .line 446
     return-void
 .end method

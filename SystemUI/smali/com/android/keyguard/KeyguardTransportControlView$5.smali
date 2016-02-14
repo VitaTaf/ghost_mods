@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 231
     iput-object p1, p0, Lcom/android/keyguard/KeyguardTransportControlView$5;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,10 +42,8 @@
     .param p3, "fromUser"    # Z
 
     .prologue
-    .line 234
     if-eqz p3, :cond_0
 
-    .line 235
     iget-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$5;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
 
     # getter for: Lcom/android/keyguard/KeyguardTransportControlView;->mFutureSeekRunnable:Lcom/android/keyguard/KeyguardTransportControlView$FutureSeekRunnable;
@@ -56,12 +53,10 @@
 
     invoke-virtual {v0, p2}, Lcom/android/keyguard/KeyguardTransportControlView$FutureSeekRunnable;->setProgress(I)V
 
-    .line 236
     iget-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$5;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardTransportControlView;->delayResetToMetadata()V
 
-    .line 237
     iget-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$5;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
 
     # getter for: Lcom/android/keyguard/KeyguardTransportControlView;->mTempDate:Ljava/util/Date;
@@ -73,7 +68,6 @@
 
     invoke-virtual {v0, v2, v3}, Ljava/util/Date;->setTime(J)V
 
-    .line 238
     iget-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$5;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
 
     # getter for: Lcom/android/keyguard/KeyguardTransportControlView;->mTransientSeekTimeElapsed:Landroid/widget/TextView;
@@ -101,11 +95,9 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 242
     :goto_0
     return-void
 
-    .line 240
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$5;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
 
@@ -119,12 +111,10 @@
     .param p1, "seekBar"    # Landroid/widget/SeekBar;
 
     .prologue
-    .line 246
     iget-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$5;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardTransportControlView;->delayResetToMetadata()V
 
-    .line 247
     iget-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$5;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardTransportControlView$5;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
@@ -136,7 +126,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardTransportControlView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 248
     return-void
 .end method
 
@@ -145,6 +134,5 @@
     .param p1, "seekBar"    # Landroid/widget/SeekBar;
 
     .prologue
-    .line 252
     return-void
 .end method

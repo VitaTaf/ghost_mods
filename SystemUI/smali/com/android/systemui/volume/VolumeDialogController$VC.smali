@@ -25,12 +25,10 @@
     .locals 2
 
     .prologue
-    .line 496
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialogController$VC;->this$0:Lcom/android/systemui/volume/VolumeDialogController;
 
     invoke-direct {p0}, Landroid/media/IVolumeController$Stub;-><init>()V
 
-    .line 497
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -65,7 +63,6 @@
     .param p2, "x1"    # Lcom/android/systemui/volume/VolumeDialogController$1;
 
     .prologue
-    .line 496
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialogController$VC;-><init>(Lcom/android/systemui/volume/VolumeDialogController;)V
 
     return-void
@@ -84,7 +81,6 @@
     .prologue
     const/4 v2, 0x2
 
-    .line 529
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_0
@@ -95,7 +91,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 530
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController$VC;->this$0:Lcom/android/systemui/volume/VolumeDialogController;
 
@@ -106,11 +101,9 @@
 
     if-eqz v0, :cond_1
 
-    .line 534
     :goto_0
     return-void
 
-    .line 531
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController$VC;->this$0:Lcom/android/systemui/volume/VolumeDialogController;
 
@@ -127,7 +120,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 533
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController$VC;->this$0:Lcom/android/systemui/volume/VolumeDialogController;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialogController;->mWorker:Lcom/android/systemui/volume/VolumeDialogController$W;
@@ -150,7 +142,6 @@
     .end annotation
 
     .prologue
-    .line 501
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_0
@@ -181,7 +172,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 503
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController$VC;->this$0:Lcom/android/systemui/volume/VolumeDialogController;
 
@@ -192,11 +182,9 @@
 
     if-eqz v0, :cond_1
 
-    .line 505
     :goto_0
     return-void
 
-    .line 504
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController$VC;->this$0:Lcom/android/systemui/volume/VolumeDialogController;
 
@@ -228,7 +216,6 @@
     .end annotation
 
     .prologue
-    .line 517
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_0
@@ -239,7 +226,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 518
     :cond_0
     return-void
 .end method
@@ -254,7 +240,6 @@
     .end annotation
 
     .prologue
-    .line 522
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_0
@@ -265,7 +250,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 523
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController$VC;->this$0:Lcom/android/systemui/volume/VolumeDialogController;
 
@@ -276,11 +260,9 @@
 
     if-eqz v0, :cond_1
 
-    .line 525
     :goto_0
     return-void
 
-    .line 524
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController$VC;->this$0:Lcom/android/systemui/volume/VolumeDialogController;
 
@@ -313,7 +295,6 @@
     .end annotation
 
     .prologue
-    .line 509
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_0
@@ -358,7 +339,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 511
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController$VC;->this$0:Lcom/android/systemui/volume/VolumeDialogController;
 
@@ -369,11 +349,9 @@
 
     if-eqz v0, :cond_1
 
-    .line 513
     :goto_0
     return-void
 
-    .line 512
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogController$VC;->this$0:Lcom/android/systemui/volume/VolumeDialogController;
 

@@ -66,12 +66,10 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 88
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/systemui/recents/views/TaskView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 89
     return-void
 .end method
 
@@ -81,12 +79,10 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 92
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/systemui/recents/views/TaskView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 93
     return-void
 .end method
 
@@ -97,12 +93,10 @@
     .param p3, "defStyleAttr"    # I
 
     .prologue
-    .line 96
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, p3, v0}, Lcom/android/systemui/recents/views/TaskView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    .line 97
     return-void
 .end method
 
@@ -114,10 +108,8 @@
     .param p4, "defStyleRes"    # I
 
     .prologue
-    .line 100
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    .line 59
     new-instance v0, Landroid/view/animation/AccelerateInterpolator;
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -126,7 +118,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mDimInterpolator:Landroid/view/animation/AccelerateInterpolator;
 
-    .line 60
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
     const/4 v1, 0x0
@@ -137,28 +128,24 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mDimColorFilter:Landroid/graphics/PorterDuffColorFilter;
 
-    .line 61
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mDimLayerPaint:Landroid/graphics/Paint;
 
-    .line 78
     new-instance v0, Lcom/android/systemui/recents/views/TaskView$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/recents/views/TaskView$1;-><init>(Lcom/android/systemui/recents/views/TaskView;)V
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mUpdateDimListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
-    .line 101
     invoke-static {}, Lcom/android/systemui/recents/RecentsConfiguration;->getInstance()Lcom/android/systemui/recents/RecentsConfiguration;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
-    .line 102
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget v0, v0, Lcom/android/systemui/recents/RecentsConfiguration;->taskStackMaxDim:I
@@ -171,12 +158,10 @@
 
     iput v0, p0, Lcom/android/systemui/recents/views/TaskView;->mMaxDimScale:F
 
-    .line 103
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/views/TaskView;->mClipViewInStack:Z
 
-    .line 104
     new-instance v0, Lcom/android/systemui/recents/views/AnimateableViewBounds;
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
@@ -187,28 +172,24 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mViewBounds:Lcom/android/systemui/recents/views/AnimateableViewBounds;
 
-    .line 105
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->getTaskProgress()F
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskView;->setTaskProgress(F)V
 
-    .line 106
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->getDim()I
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskView;->setDim(I)V
 
-    .line 107
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget-boolean v0, v0, Lcom/android/systemui/recents/RecentsConfiguration;->fakeShadows:Z
 
     if-eqz v0, :cond_0
 
-    .line 108
     new-instance v0, Lcom/android/systemui/recents/views/FakeShadowDrawable;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -221,13 +202,11 @@
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 110
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mViewBounds:Lcom/android/systemui/recents/views/AnimateableViewBounds;
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskView;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
-    .line 111
     return-void
 .end method
 
@@ -240,12 +219,10 @@
     .param p3, "postAnimRunnable"    # Landroid/animation/Animator$AnimatorListener;
 
     .prologue
-    .line 554
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->getDimFromTaskProgress()I
 
     move-result v1
 
-    .line 555
     .local v1, "toDim":I
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->getDim()I
 
@@ -253,7 +230,6 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 556
     const-string v2, "dim"
 
     const/4 v3, 0x1
@@ -268,28 +244,22 @@
 
     move-result-object v0
 
-    .line 557
     .local v0, "anim":Landroid/animation/ObjectAnimator;
     int-to-long v2, p1
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/ObjectAnimator;->setStartDelay(J)V
 
-    .line 558
     int-to-long v2, p2
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 559
     if-eqz p3, :cond_0
 
-    .line 560
     invoke-virtual {v0, p3}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 562
     :cond_0
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
 
-    .line 564
     .end local v0    # "anim":Landroid/animation/ObjectAnimator;
     :cond_1
     return-void
@@ -299,12 +269,10 @@
     .locals 1
 
     .prologue
-    .line 653
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskViewHeader;->disableLayersForOneFrame()V
 
-    .line 654
     return-void
 .end method
 
@@ -312,10 +280,8 @@
     .locals 3
 
     .prologue
-    .line 484
     move-object v0, p0
 
-    .line 485
     .local v0, "tv":Lcom/android/systemui/recents/views/TaskView;
     new-instance v1, Lcom/android/systemui/recents/views/TaskView$8;
 
@@ -325,7 +291,6 @@
 
     invoke-virtual {p0, v1, v2}, Lcom/android/systemui/recents/views/TaskView;->startDeleteTaskAnimation(Ljava/lang/Runnable;I)V
 
-    .line 493
     return-void
 .end method
 
@@ -335,26 +300,21 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 644
     iget-boolean v0, p0, Lcom/android/systemui/recents/views/TaskView;->mFocusAnimationsEnabled:Z
 
-    .line 645
     .local v0, "wasFocusAnimationsEnabled":Z
     iput-boolean v2, p0, Lcom/android/systemui/recents/views/TaskView;->mFocusAnimationsEnabled:Z
 
-    .line 646
     iget-boolean v1, p0, Lcom/android/systemui/recents/views/TaskView;->mIsFocused:Z
 
     if-eqz v1, :cond_0
 
     if-nez v0, :cond_0
 
-    .line 648
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     invoke-virtual {v1, v2, v2}, Lcom/android/systemui/recents/views/TaskViewHeader;->onTaskViewFocusChanged(ZZ)V
 
-    .line 650
     :cond_0
     return-void
 .end method
@@ -365,14 +325,12 @@
     .param p2, "duration"    # I
 
     .prologue
-    .line 363
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 366
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -405,7 +363,6 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 371
     return-void
 .end method
 
@@ -413,7 +370,6 @@
     .locals 1
 
     .prologue
-    .line 548
     iget v0, p0, Lcom/android/systemui/recents/views/TaskView;->mDimAlpha:I
 
     return v0
@@ -423,7 +379,6 @@
     .locals 5
 
     .prologue
-    .line 568
     iget v1, p0, Lcom/android/systemui/recents/views/TaskView;->mMaxDimScale:F
 
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskView;->mDimInterpolator:Landroid/view/animation/AccelerateInterpolator;
@@ -440,7 +395,6 @@
 
     mul-float v0, v1, v2
 
-    .line 569
     .local v0, "dim":F
     const/high16 v1, 0x437f0000    # 255.0f
 
@@ -455,7 +409,6 @@
     .locals 1
 
     .prologue
-    .line 128
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mTask:Lcom/android/systemui/recents/model/Task;
 
     return-object v0
@@ -465,7 +418,6 @@
     .locals 1
 
     .prologue
-    .line 522
     iget v0, p0, Lcom/android/systemui/recents/views/TaskView;->mTaskProgress:F
 
     return v0
@@ -475,7 +427,6 @@
     .locals 1
 
     .prologue
-    .line 133
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mViewBounds:Lcom/android/systemui/recents/views/AnimateableViewBounds;
 
     return-object v0
@@ -485,7 +436,6 @@
     .locals 1
 
     .prologue
-    .line 639
     iget-boolean v0, p0, Lcom/android/systemui/recents/views/TaskView;->mIsFocused:Z
 
     if-nez v0, :cond_0
@@ -517,10 +467,8 @@
 
     const/4 v3, 0x0
 
-    .line 721
     move-object v1, p0
 
-    .line 722
     .local v1, "tv":Lcom/android/systemui/recents/views/TaskView;
     if-eq p1, p0, :cond_1
 
@@ -530,12 +478,10 @@
 
     move v0, v2
 
-    .line 723
     .local v0, "delayViewClick":Z
     :goto_0
     if-eqz v0, :cond_2
 
-    .line 725
     new-instance v2, Lcom/android/systemui/recents/views/TaskView$9;
 
     invoke-direct {v2, p0, p1, v1}, Lcom/android/systemui/recents/views/TaskView$9;-><init>(Lcom/android/systemui/recents/views/TaskView;Landroid/view/View;Lcom/android/systemui/recents/views/TaskView;)V
@@ -544,7 +490,6 @@
 
     invoke-virtual {p0, v2, v4, v5}, Lcom/android/systemui/recents/views/TaskView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 760
     :cond_0
     :goto_1
     return-void
@@ -553,30 +498,25 @@
     :cond_1
     move v0, v3
 
-    .line 722
     goto :goto_0
 
-    .line 752
     .restart local v0    # "delayViewClick":Z
     :cond_2
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
 
     if-ne p1, v4, :cond_3
 
-    .line 754
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
 
     const/4 v5, 0x0
 
     invoke-virtual {v4, v5}, Landroid/view/View;->setTranslationZ(F)V
 
-    .line 756
     :cond_3
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
 
     if-eqz v4, :cond_0
 
-    .line 757
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
 
     invoke-virtual {v1}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
@@ -602,7 +542,6 @@
     .locals 2
 
     .prologue
-    .line 139
     const v0, 0x7f0f00c9
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskView;->findViewById(I)Landroid/view/View;
@@ -611,7 +550,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mContent:Landroid/view/View;
 
-    .line 140
     const v0, 0x7f0f00cc
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskView;->findViewById(I)Landroid/view/View;
@@ -622,7 +560,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
-    .line 141
     const v0, 0x7f0f00ca
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskView;->findViewById(I)Landroid/view/View;
@@ -633,14 +570,12 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mThumbnailView:Lcom/android/systemui/recents/views/TaskViewThumbnail;
 
-    .line 142
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mThumbnailView:Lcom/android/systemui/recents/views/TaskViewThumbnail;
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/TaskViewThumbnail;->updateClipToTaskBar(Landroid/view/View;)V
 
-    .line 143
     const v0, 0x7f0f00cb
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskView;->findViewById(I)Landroid/view/View;
@@ -649,7 +584,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
 
-    .line 144
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
 
     new-instance v1, Lcom/android/systemui/recents/views/TaskView$2;
@@ -658,7 +592,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
-    .line 151
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getTranslationZ()F
@@ -667,7 +600,6 @@
 
     iput v0, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonTranslationZ:F
 
-    .line 152
     return-void
 .end method
 
@@ -678,16 +610,12 @@
     .param p3, "previouslyFocusedRect"    # Landroid/graphics/Rect;
 
     .prologue
-    .line 629
     invoke-super {p0, p1, p2, p3}, Landroid/widget/FrameLayout;->onFocusChanged(ZILandroid/graphics/Rect;)V
 
-    .line 630
     if-nez p1, :cond_0
 
-    .line 631
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->unsetFocusedTask()V
 
-    .line 633
     :cond_0
     return-void
 .end method
@@ -697,27 +625,22 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 766
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskViewHeader;->mApplicationIcon:Landroid/widget/ImageView;
 
     if-ne p1, v0, :cond_0
 
-    .line 767
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
 
     if-eqz v0, :cond_0
 
-    .line 768
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
 
     invoke-interface {v0, p0}, Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;->onTaskViewAppInfoClicked(Lcom/android/systemui/recents/views/TaskView;)V
 
-    .line 769
     const/4 v0, 0x1
 
-    .line 772
     :goto_0
     return v0
 
@@ -737,18 +660,15 @@
 
     const/high16 v7, 0x40000000    # 2.0f
 
-    .line 156
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v2
 
-    .line 157
     .local v2, "width":I
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 159
     .local v0, "height":I
     iget v4, p0, Lcom/android/systemui/recents/views/TaskView;->mPaddingLeft:I
 
@@ -758,7 +678,6 @@
 
     sub-int v3, v4, v5
 
-    .line 160
     .local v3, "widthWithoutPadding":I
     iget v4, p0, Lcom/android/systemui/recents/views/TaskView;->mPaddingTop:I
 
@@ -768,7 +687,6 @@
 
     sub-int v1, v4, v5
 
-    .line 163
     .local v1, "heightWithoutPadding":I
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView;->mContent:Landroid/view/View;
 
@@ -782,7 +700,6 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/view/View;->measure(II)V
 
-    .line 167
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     invoke-static {v3, v7}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
@@ -799,7 +716,6 @@
 
     invoke-virtual {v4, v5, v6}, Lcom/android/systemui/recents/views/TaskViewHeader;->measure(II)V
 
-    .line 169
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
 
     invoke-static {v3, v8}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
@@ -812,7 +728,6 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/view/View;->measure(II)V
 
-    .line 173
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView;->mThumbnailView:Lcom/android/systemui/recents/views/TaskViewThumbnail;
 
     invoke-static {v3, v7}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
@@ -825,13 +740,10 @@
 
     invoke-virtual {v4, v5, v6}, Lcom/android/systemui/recents/views/TaskViewThumbnail;->measure(II)V
 
-    .line 176
     invoke-virtual {p0, v2, v0}, Lcom/android/systemui/recents/views/TaskView;->setMeasuredDimension(II)V
 
-    .line 177
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->invalidateOutline()V
 
-    .line 178
     return-void
 .end method
 
@@ -840,15 +752,12 @@
     .param p1, "t"    # Lcom/android/systemui/recents/model/Task;
 
     .prologue
-    .line 660
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskView;->mTask:Lcom/android/systemui/recents/model/Task;
 
-    .line 661
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mTask:Lcom/android/systemui/recents/model/Task;
 
     invoke-virtual {v1, p0}, Lcom/android/systemui/recents/model/Task;->setCallbacks(Lcom/android/systemui/recents/model/Task$TaskCallbacks;)V
 
-    .line 664
     iget-boolean v1, p1, Lcom/android/systemui/recents/model/Task;->lockToTaskEnabled:Z
 
     if-eqz v1, :cond_0
@@ -860,7 +769,6 @@
     :cond_0
     const/16 v0, 0x8
 
-    .line 665
     .local v0, "lockButtonVisibility":I
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
@@ -871,19 +779,15 @@
 
     if-eq v1, v0, :cond_1
 
-    .line 666
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 667
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->requestLayout()V
 
-    .line 669
     :cond_1
     return-void
 
-    .line 664
     .end local v0    # "lockButtonVisibility":I
     :cond_2
     const/4 v0, 0x0
@@ -895,7 +799,6 @@
     .locals 3
 
     .prologue
-    .line 673
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mThumbnailView:Lcom/android/systemui/recents/views/TaskViewThumbnail;
 
     if-eqz v1, :cond_2
@@ -904,21 +807,18 @@
 
     if-eqz v1, :cond_2
 
-    .line 675
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mThumbnailView:Lcom/android/systemui/recents/views/TaskViewThumbnail;
 
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskView;->mTask:Lcom/android/systemui/recents/model/Task;
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/recents/views/TaskViewThumbnail;->rebindToTask(Lcom/android/systemui/recents/model/Task;)V
 
-    .line 676
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskView;->mTask:Lcom/android/systemui/recents/model/Task;
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/recents/views/TaskViewHeader;->rebindToTask(Lcom/android/systemui/recents/model/Task;)V
 
-    .line 678
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -931,7 +831,6 @@
 
     check-cast v0, Landroid/view/accessibility/AccessibilityManager;
 
-    .line 680
     .local v0, "am":Landroid/view/accessibility/AccessibilityManager;
     if-eqz v0, :cond_0
 
@@ -941,14 +840,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 681
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     iget-object v1, v1, Lcom/android/systemui/recents/views/TaskViewHeader;->mApplicationIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v1, p0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 683
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
@@ -956,41 +853,35 @@
 
     invoke-virtual {v1, p0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 684
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget-boolean v1, v1, Lcom/android/systemui/recents/RecentsConfiguration;->multiStackEnabled:Z
 
     if-eqz v1, :cond_1
 
-    .line 685
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     iget-object v1, v1, Lcom/android/systemui/recents/views/TaskViewHeader;->mMoveTaskButton:Landroid/widget/ImageView;
 
     invoke-virtual {v1, p0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 687
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
 
     invoke-virtual {v1, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 688
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     iget-object v1, v1, Lcom/android/systemui/recents/views/TaskViewHeader;->mApplicationIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v1, p0}, Landroid/widget/ImageView;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    .line 690
     .end local v0    # "am":Landroid/view/accessibility/AccessibilityManager;
     :cond_2
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/systemui/recents/views/TaskView;->mTaskDataLoaded:Z
 
-    .line 691
     return-void
 .end method
 
@@ -1000,7 +891,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 695
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mThumbnailView:Lcom/android/systemui/recents/views/TaskViewThumbnail;
 
     if-eqz v0, :cond_1
@@ -1009,69 +899,58 @@
 
     if-eqz v0, :cond_1
 
-    .line 697
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mTask:Lcom/android/systemui/recents/model/Task;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/model/Task;->setCallbacks(Lcom/android/systemui/recents/model/Task$TaskCallbacks;)V
 
-    .line 698
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mThumbnailView:Lcom/android/systemui/recents/views/TaskViewThumbnail;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskViewThumbnail;->unbindFromTask()V
 
-    .line 699
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskViewHeader;->unbindFromTask()V
 
-    .line 701
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskViewHeader;->mApplicationIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 702
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskViewHeader;->mDismissButton:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 703
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget-boolean v0, v0, Lcom/android/systemui/recents/RecentsConfiguration;->multiStackEnabled:Z
 
     if-eqz v0, :cond_0
 
-    .line 704
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskViewHeader;->mMoveTaskButton:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 706
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 707
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskViewHeader;->mApplicationIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    .line 709
     :cond_1
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/views/TaskView;->mTaskDataLoaded:Z
 
-    .line 710
     return-void
 .end method
 
@@ -1086,12 +965,10 @@
 
     const/4 v2, 0x0
 
-    .line 240
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->getDim()I
 
     move-result v0
 
-    .line 241
     .local v0, "initialDim":I
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
@@ -1099,20 +976,16 @@
 
     if-eqz v1, :cond_1
 
-    .line 262
     :cond_0
     :goto_0
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskView;->setDim(I)V
 
-    .line 264
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mThumbnailView:Lcom/android/systemui/recents/views/TaskViewThumbnail;
 
     invoke-virtual {v1, p1}, Lcom/android/systemui/recents/views/TaskViewThumbnail;->prepareEnterRecentsAnimation(Z)V
 
-    .line 265
     return-void
 
-    .line 243
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
@@ -1120,31 +993,25 @@
 
     if-eqz v1, :cond_3
 
-    .line 244
     if-eqz p1, :cond_2
 
-    .line 246
     const/4 v0, 0x0
 
-    .line 248
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setAlpha(F)V
 
     goto :goto_0
 
-    .line 249
     :cond_2
     if-eqz p2, :cond_0
 
-    .line 251
     int-to-float v1, p3
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/recents/views/TaskView;->setTranslationY(F)V
 
     goto :goto_0
 
-    .line 254
     :cond_3
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
@@ -1152,18 +1019,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 256
     int-to-float v1, p3
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/recents/views/TaskView;->setTranslationY(F)V
 
-    .line 257
     invoke-virtual {p0, v2}, Lcom/android/systemui/recents/views/TaskView;->setTranslationZ(F)V
 
-    .line 258
     invoke-virtual {p0, v3}, Lcom/android/systemui/recents/views/TaskView;->setScaleX(F)V
 
-    .line 259
     invoke-virtual {p0, v3}, Lcom/android/systemui/recents/views/TaskView;->setScaleY(F)V
 
     goto :goto_0
@@ -1173,23 +1036,18 @@
     .locals 1
 
     .prologue
-    .line 120
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->resetViewProperties()V
 
-    .line 121
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->resetNoUserInteractionState()V
 
-    .line 122
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskView;->setClipViewInStack(Z)V
 
-    .line 123
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskView;->setCallbacks(Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;)V
 
-    .line 124
     return-void
 .end method
 
@@ -1197,12 +1055,10 @@
     .locals 1
 
     .prologue
-    .line 478
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskViewHeader;->resetNoUserInteractionState()V
 
-    .line 479
     return-void
 .end method
 
@@ -1214,45 +1070,36 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 205
     invoke-virtual {p0, v2}, Lcom/android/systemui/recents/views/TaskView;->setDim(I)V
 
-    .line 206
     const/4 v0, 0x0
 
     invoke-virtual {p0, v2, v0}, Lcom/android/systemui/recents/views/TaskView;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 207
     invoke-static {p0}, Lcom/android/systemui/recents/views/TaskViewTransform;->reset(Landroid/view/View;)V
 
-    .line 208
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 209
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setScaleX(F)V
 
-    .line 210
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setScaleY(F)V
 
-    .line 211
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 212
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
 
     iget v1, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonTranslationZ:F
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationZ(F)V
 
-    .line 214
     :cond_0
     return-void
 .end method
@@ -1262,10 +1109,8 @@
     .param p1, "cb"    # Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
 
     .prologue
-    .line 115
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
 
-    .line 116
     return-void
 .end method
 
@@ -1274,25 +1119,20 @@
     .param p1, "clip"    # Z
 
     .prologue
-    .line 505
     iget-boolean v0, p0, Lcom/android/systemui/recents/views/TaskView;->mClipViewInStack:Z
 
     if-eq p1, v0, :cond_0
 
-    .line 506
     iput-boolean p1, p0, Lcom/android/systemui/recents/views/TaskView;->mClipViewInStack:Z
 
-    .line 507
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
 
     if-eqz v0, :cond_0
 
-    .line 508
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
 
     invoke-interface {v0, p0}, Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;->onTaskViewClipStateChanged(Lcom/android/systemui/recents/views/TaskView;)V
 
-    .line 511
     :cond_0
     return-void
 .end method
@@ -1304,17 +1144,14 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 527
     iput p1, p0, Lcom/android/systemui/recents/views/TaskView;->mDimAlpha:I
 
-    .line 528
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget-boolean v1, v1, Lcom/android/systemui/recents/RecentsConfiguration;->useHardwareLayers:Z
 
     if-eqz v1, :cond_1
 
-    .line 530
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->getMeasuredWidth()I
 
     move-result v1
@@ -1327,7 +1164,6 @@
 
     if-lez v1, :cond_0
 
-    .line 531
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mDimColorFilter:Landroid/graphics/PorterDuffColorFilter;
 
     iget v2, p0, Lcom/android/systemui/recents/views/TaskView;->mDimAlpha:I
@@ -1338,14 +1174,12 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/PorterDuffColorFilter;->setColor(I)V
 
-    .line 532
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mDimLayerPaint:Landroid/graphics/Paint;
 
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskView;->mDimColorFilter:Landroid/graphics/PorterDuffColorFilter;
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
-    .line 533
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mContent:Landroid/view/View;
 
     const/4 v2, 0x2
@@ -1354,12 +1188,10 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 544
     :cond_0
     :goto_0
     return-void
 
-    .line 536
     :cond_1
     iget v1, p0, Lcom/android/systemui/recents/views/TaskView;->mDimAlpha:I
 
@@ -1369,24 +1201,20 @@
 
     div-float v0, v1, v2
 
-    .line 537
     .local v0, "dimAlpha":F
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mThumbnailView:Lcom/android/systemui/recents/views/TaskViewThumbnail;
 
     if-eqz v1, :cond_2
 
-    .line 538
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mThumbnailView:Lcom/android/systemui/recents/views/TaskViewThumbnail;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/recents/views/TaskViewThumbnail;->setDimAlpha(F)V
 
-    .line 540
     :cond_2
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     if-eqz v1, :cond_0
 
-    .line 541
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     invoke-virtual {v1, p1}, Lcom/android/systemui/recents/views/TaskViewHeader;->setDimAlpha(I)V
@@ -1401,51 +1229,40 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 585
     iput-boolean v1, p0, Lcom/android/systemui/recents/views/TaskView;->mIsFocused:Z
 
-    .line 586
     iget-boolean v0, p0, Lcom/android/systemui/recents/views/TaskView;->mFocusAnimationsEnabled:Z
 
     if-eqz v0, :cond_0
 
-    .line 588
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     invoke-virtual {v0, v1, p1}, Lcom/android/systemui/recents/views/TaskViewHeader;->onTaskViewFocusChanged(ZZ)V
 
-    .line 591
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mThumbnailView:Lcom/android/systemui/recents/views/TaskViewThumbnail;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/TaskViewThumbnail;->onFocusChanged(Z)V
 
-    .line 593
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
 
     if-eqz v0, :cond_1
 
-    .line 594
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
 
     invoke-interface {v0, p0, v1}, Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;->onTaskViewFocusChanged(Lcom/android/systemui/recents/views/TaskView;Z)V
 
-    .line 599
     :cond_1
     invoke-virtual {p0, v1}, Lcom/android/systemui/recents/views/TaskView;->setFocusableInTouchMode(Z)V
 
-    .line 600
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->requestFocus()Z
 
-    .line 601
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskView;->setFocusableInTouchMode(Z)V
 
-    .line 602
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->invalidate()V
 
-    .line 603
     return-void
 .end method
 
@@ -1453,12 +1270,10 @@
     .locals 1
 
     .prologue
-    .line 473
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskViewHeader;->setNoUserInteractionState()V
 
-    .line 474
     return-void
 .end method
 
@@ -1467,18 +1282,14 @@
     .param p1, "p"    # F
 
     .prologue
-    .line 515
     iput p1, p0, Lcom/android/systemui/recents/views/TaskView;->mTaskProgress:F
 
-    .line 516
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mViewBounds:Lcom/android/systemui/recents/views/AnimateableViewBounds;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/recents/views/AnimateableViewBounds;->setAlpha(F)V
 
-    .line 517
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->updateDimFromTaskProgress()V
 
-    .line 518
     return-void
 .end method
 
@@ -1487,7 +1298,6 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 463
     if-eqz p1, :cond_0
 
     move-object v0, p0
@@ -1495,10 +1305,8 @@
     :goto_0
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 464
     return-void
 
-    .line 463
     :cond_0
     const/4 v0, 0x0
 
@@ -1509,7 +1317,6 @@
     .locals 1
 
     .prologue
-    .line 500
     iget-boolean v0, p0, Lcom/android/systemui/recents/views/TaskView;->mClipViewInStack:Z
 
     if-eqz v0, :cond_0
@@ -1537,12 +1344,10 @@
     .param p2, "delay"    # I
 
     .prologue
-    .line 439
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskView;->setClipViewInStack(Z)V
 
-    .line 441
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -1603,7 +1408,6 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 459
     return-void
 .end method
 
@@ -1612,14 +1416,11 @@
     .param p1, "ctx"    # Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;
 
     .prologue
-    .line 269
     iget-object v3, p1, Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;->currentTaskTransform:Lcom/android/systemui/recents/views/TaskViewTransform;
 
-    .line 270
     .local v3, "transform":Lcom/android/systemui/recents/views/TaskViewTransform;
     const/4 v2, 0x0
 
-    .line 272
     .local v2, "startDelay":I
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
@@ -1627,14 +1428,12 @@
 
     if-eqz v4, :cond_3
 
-    .line 273
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView;->mTask:Lcom/android/systemui/recents/model/Task;
 
     iget-boolean v4, v4, Lcom/android/systemui/recents/model/Task;->isLaunchTarget:Z
 
     if-eqz v4, :cond_2
 
-    .line 288
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget v4, v4, Lcom/android/systemui/recents/RecentsConfiguration;->transitionEnterFromAppDelay:I
@@ -1651,12 +1450,10 @@
 
     invoke-virtual {p0, v4, v5, v6}, Lcom/android/systemui/recents/views/TaskView;->animateDimToProgress(IILandroid/animation/Animator$AnimatorListener;)V
 
-    .line 292
     iget-object v4, p1, Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;->postAnimationTrigger:Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
 
     invoke-virtual {v4}, Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;->increment()V
 
-    .line 295
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget v4, v4, Lcom/android/systemui/recents/RecentsConfiguration;->transitionEnterFromAppDelay:I
@@ -1667,14 +1464,12 @@
 
     invoke-virtual {p0, v4, v5}, Lcom/android/systemui/recents/views/TaskView;->fadeInActionButton(II)V
 
-    .line 319
     :cond_0
     :goto_0
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget v2, v4, Lcom/android/systemui/recents/RecentsConfiguration;->transitionEnterFromAppDelay:I
 
-    .line 353
     :cond_1
     :goto_1
     new-instance v4, Lcom/android/systemui/recents/views/TaskView$6;
@@ -1685,16 +1480,13 @@
 
     invoke-virtual {p0, v4, v6, v7}, Lcom/android/systemui/recents/views/TaskView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 359
     return-void
 
-    .line 299
     :cond_2
     iget-boolean v4, p1, Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;->currentTaskOccludesLaunchTarget:Z
 
     if-eqz v4, :cond_0
 
-    .line 300
     iget v4, v3, Lcom/android/systemui/recents/views/TaskViewTransform;->translationY:I
 
     iget-object v5, p0, Lcom/android/systemui/recents/views/TaskView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
@@ -1707,12 +1499,10 @@
 
     invoke-virtual {p0, v4}, Lcom/android/systemui/recents/views/TaskView;->setTranslationY(F)V
 
-    .line 301
     const/4 v4, 0x0
 
     invoke-virtual {p0, v4}, Lcom/android/systemui/recents/views/TaskView;->setAlpha(F)V
 
-    .line 302
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v4
@@ -1775,14 +1565,12 @@
 
     invoke-virtual {v4}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 316
     iget-object v4, p1, Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;->postAnimationTrigger:Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
 
     invoke-virtual {v4}, Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;->increment()V
 
     goto :goto_0
 
-    .line 321
     :cond_3
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
@@ -1790,7 +1578,6 @@
 
     if-eqz v4, :cond_1
 
-    .line 323
     iget v4, p1, Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;->currentStackViewCount:I
 
     iget v5, p1, Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;->currentStackViewIndex:I
@@ -1799,7 +1586,6 @@
 
     add-int/lit8 v1, v4, -0x1
 
-    .line 324
     .local v1, "frontIndex":I
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
@@ -1813,25 +1599,21 @@
 
     add-int v0, v4, v5
 
-    .line 327
     .local v0, "delay":I
     iget v4, v3, Lcom/android/systemui/recents/views/TaskViewTransform;->scale:F
 
     invoke-virtual {p0, v4}, Lcom/android/systemui/recents/views/TaskView;->setScaleX(F)V
 
-    .line 328
     iget v4, v3, Lcom/android/systemui/recents/views/TaskViewTransform;->scale:F
 
     invoke-virtual {p0, v4}, Lcom/android/systemui/recents/views/TaskView;->setScaleY(F)V
 
-    .line 329
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget-boolean v4, v4, Lcom/android/systemui/recents/RecentsConfiguration;->fakeShadows:Z
 
     if-nez v4, :cond_4
 
-    .line 330
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v4
@@ -1840,7 +1622,6 @@
 
     invoke-virtual {v4, v5}, Landroid/view/ViewPropertyAnimator;->translationZ(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 332
     :cond_4
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->animate()Landroid/view/ViewPropertyAnimator;
 
@@ -1902,12 +1683,10 @@
 
     invoke-virtual {v4}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 347
     iget-object v4, p1, Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;->postAnimationTrigger:Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
 
     invoke-virtual {v4}, Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;->increment()V
 
-    .line 348
     move v2, v0
 
     goto/16 :goto_1
@@ -1918,7 +1697,6 @@
     .param p1, "ctx"    # Lcom/android/systemui/recents/views/ViewAnimation$TaskViewExitContext;
 
     .prologue
-    .line 375
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -1973,12 +1751,10 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 383
     iget-object v0, p1, Lcom/android/systemui/recents/views/ViewAnimation$TaskViewExitContext;->postAnimationTrigger:Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;->increment()V
 
-    .line 384
     return-void
 .end method
 
@@ -1996,20 +1772,16 @@
 
     const/4 v4, 0x0
 
-    .line 394
     if-eqz p2, :cond_3
 
-    .line 396
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskView;->mThumbnailView:Lcom/android/systemui/recents/views/TaskViewThumbnail;
 
     invoke-virtual {v2, p1}, Lcom/android/systemui/recents/views/TaskViewThumbnail;->startLaunchTaskAnimation(Ljava/lang/Runnable;)V
 
-    .line 399
     iget v2, p0, Lcom/android/systemui/recents/views/TaskView;->mDimAlpha:I
 
     if-lez v2, :cond_0
 
-    .line 400
     const-string v2, "dim"
 
     const/4 v3, 0x1
@@ -2022,7 +1794,6 @@
 
     move-result-object v0
 
-    .line 401
     .local v0, "anim":Landroid/animation/ObjectAnimator;
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
@@ -2032,25 +1803,20 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 402
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget-object v2, v2, Lcom/android/systemui/recents/RecentsConfiguration;->fastOutLinearInInterpolator:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v0, v2}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 403
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
 
-    .line 407
     .end local v0    # "anim":Landroid/animation/ObjectAnimator;
     :cond_0
     if-nez p4, :cond_1
 
-    .line 408
     const v1, 0x3f666666    # 0.9f
 
-    .line 409
     .local v1, "toScale":F
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
 
@@ -2064,7 +1830,6 @@
 
     invoke-virtual {v2, v1}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 413
     .end local v1    # "toScale":F
     :cond_1
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
@@ -2101,21 +1866,17 @@
 
     invoke-virtual {v2}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 434
     :cond_2
     :goto_0
     return-void
 
-    .line 421
     :cond_3
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     invoke-virtual {v2}, Lcom/android/systemui/recents/views/TaskViewHeader;->startLaunchTaskDismissAnimation()V
 
-    .line 424
     if-eqz p3, :cond_2
 
-    .line 425
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v2
@@ -2177,12 +1938,10 @@
     .locals 1
 
     .prologue
-    .line 468
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskViewHeader;->startNoUserInteractionAnimation()V
 
-    .line 469
     return-void
 .end method
 
@@ -2192,42 +1951,34 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 609
     iput-boolean v2, p0, Lcom/android/systemui/recents/views/TaskView;->mIsFocused:Z
 
-    .line 610
     iget-boolean v0, p0, Lcom/android/systemui/recents/views/TaskView;->mFocusAnimationsEnabled:Z
 
     if-eqz v0, :cond_0
 
-    .line 612
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v2, v1}, Lcom/android/systemui/recents/views/TaskViewHeader;->onTaskViewFocusChanged(ZZ)V
 
-    .line 616
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mThumbnailView:Lcom/android/systemui/recents/views/TaskViewThumbnail;
 
     invoke-virtual {v0, v2}, Lcom/android/systemui/recents/views/TaskViewThumbnail;->onFocusChanged(Z)V
 
-    .line 618
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
 
     if-eqz v0, :cond_1
 
-    .line 619
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
 
     invoke-interface {v0, p0, v2}, Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;->onTaskViewFocusChanged(Lcom/android/systemui/recents/views/TaskView;Z)V
 
-    .line 621
     :cond_1
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->invalidate()V
 
-    .line 622
     return-void
 .end method
 
@@ -2235,14 +1986,12 @@
     .locals 1
 
     .prologue
-    .line 574
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->getDimFromTaskProgress()I
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskView;->setDim(I)V
 
-    .line 575
     return-void
 .end method
 
@@ -2252,12 +2001,10 @@
     .param p2, "duration"    # I
 
     .prologue
-    .line 182
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/android/systemui/recents/views/TaskView;->updateViewPropertiesToTaskTransform(Lcom/android/systemui/recents/views/TaskViewTransform;ILandroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 183
     return-void
 .end method
 
@@ -2272,7 +2019,6 @@
 
     const/4 v4, 0x0
 
-    .line 188
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget-object v3, v0, Lcom/android/systemui/recents/RecentsConfiguration;->fastOutSlowInInterpolator:Landroid/view/animation/Interpolator;
@@ -2296,30 +2042,24 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/systemui/recents/views/TaskViewTransform;->applyToTaskView(Landroid/view/View;ILandroid/view/animation/Interpolator;ZZLandroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 192
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mTaskProgressAnimator:Landroid/animation/ObjectAnimator;
 
     invoke-static {v0}, Lcom/android/systemui/recents/misc/Utilities;->cancelAnimationWithoutCallbacks(Landroid/animation/Animator;)V
 
-    .line 193
     if-gtz p2, :cond_1
 
-    .line 194
     iget v0, p1, Lcom/android/systemui/recents/views/TaskViewTransform;->p:F
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskView;->setTaskProgress(F)V
 
-    .line 201
     :goto_1
     return-void
 
     :cond_0
     move v5, v4
 
-    .line 188
     goto :goto_0
 
-    .line 196
     :cond_1
     const-string v0, "taskProgress"
 
@@ -2335,21 +2075,18 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mTaskProgressAnimator:Landroid/animation/ObjectAnimator;
 
-    .line 197
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mTaskProgressAnimator:Landroid/animation/ObjectAnimator;
 
     int-to-long v2, p2
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 198
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mTaskProgressAnimator:Landroid/animation/ObjectAnimator;
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mUpdateDimListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 199
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mTaskProgressAnimator:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V

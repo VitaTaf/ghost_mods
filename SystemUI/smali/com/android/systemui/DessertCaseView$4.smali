@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 398
     iput-object p1, p0, Lcom/android/systemui/DessertCaseView$4;->this$0:Lcom/android/systemui/DessertCaseView;
 
     iput-object p2, p0, Lcom/android/systemui/DessertCaseView$4;->val$squatter:Landroid/view/View;
@@ -45,7 +44,6 @@
     .param p1, "animator"    # Landroid/animation/Animator;
 
     .prologue
-    .line 403
     return-void
 .end method
 
@@ -54,14 +52,12 @@
     .param p1, "animator"    # Landroid/animation/Animator;
 
     .prologue
-    .line 401
     iget-object v0, p0, Lcom/android/systemui/DessertCaseView$4;->this$0:Lcom/android/systemui/DessertCaseView;
 
     iget-object v1, p0, Lcom/android/systemui/DessertCaseView$4;->val$squatter:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/DessertCaseView;->removeView(Landroid/view/View;)V
 
-    .line 402
     return-void
 .end method
 
@@ -70,7 +66,6 @@
     .param p1, "animator"    # Landroid/animation/Animator;
 
     .prologue
-    .line 404
     return-void
 .end method
 
@@ -79,6 +74,5 @@
     .param p1, "animator"    # Landroid/animation/Animator;
 
     .prologue
-    .line 399
     return-void
 .end method

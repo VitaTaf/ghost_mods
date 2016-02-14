@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 1568
     iput-object p1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker$1;->this$1:Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker$1;->val$keyguardShowing:Z
@@ -52,7 +51,6 @@
 
     const/4 v1, 0x0
 
-    .line 1570
     iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker$1;->this$1:Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;
 
     # getter for: Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->mIsHeadsUp:Z
@@ -62,7 +60,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 1575
     iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker$1;->this$1:Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;
 
     iget-object v2, v2, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
@@ -71,7 +68,6 @@
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView;->releaseAndClose()V
 
-    .line 1577
     :cond_0
     new-instance v2, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker$1$1;
 
@@ -79,7 +75,6 @@
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker$1$1;->start()V
 
-    .line 1619
     iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker$1;->this$1:Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;
 
     iget-object v2, v2, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
@@ -88,14 +83,12 @@
 
     invoke-virtual {v2, v3, v0}, Lcom/android/systemui/statusbar/BaseStatusBar;->animateCollapsePanels(IZ)V
 
-    .line 1621
     iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker$1;->this$1:Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;
 
     iget-object v2, v2, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     invoke-virtual {v2, v1}, Lcom/android/systemui/statusbar/BaseStatusBar;->visibilityChanged(Z)V
 
-    .line 1623
     iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker$1;->this$1:Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;
 
     # getter for: Lcom/android/systemui/statusbar/BaseStatusBar$NotificationClicker;->mIntent:Landroid/app/PendingIntent;

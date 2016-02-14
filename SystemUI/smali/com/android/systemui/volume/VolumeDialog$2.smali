@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 272
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialog$2;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     iput-object p2, p0, Lcom/android/systemui/volume/VolumeDialog$2;->val$row:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
@@ -53,7 +52,6 @@
     .param p9, "oldBottom"    # I
 
     .prologue
-    .line 276
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialog$2;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mLastActiveStream:I
@@ -77,7 +75,6 @@
     :cond_0
     const/4 v2, 0x1
 
-    .line 278
     .local v2, "moved":Z
     :goto_0
     sget-boolean v3, Lcom/android/systemui/volume/D;->BUG:Z
@@ -179,7 +176,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 283
     :cond_1
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialog$2;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
@@ -193,10 +189,8 @@
     # setter for: Lcom/android/systemui/volume/VolumeDialog;->mLastActiveStream:I
     invoke-static {v3, v4}, Lcom/android/systemui/volume/VolumeDialog;->access$502(Lcom/android/systemui/volume/VolumeDialog;I)I
 
-    .line 284
     if-eqz v2, :cond_4
 
-    .line 285
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -214,7 +208,6 @@
 
     if-ge v1, v3, :cond_4
 
-    .line 286
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialog$2;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialog;->mDialogContentView:Landroid/view/ViewGroup;
@@ -226,7 +219,6 @@
 
     move-result-object v0
 
-    .line 287
     .local v0, "c":Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->isShown()Z
 
@@ -234,12 +226,10 @@
 
     if-nez v3, :cond_3
 
-    .line 285
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 276
     .end local v0    # "c":Landroid/view/View;
     .end local v1    # "i":I
     .end local v2    # "moved":Z
@@ -248,7 +238,6 @@
 
     goto/16 :goto_0
 
-    .line 288
     .restart local v0    # "c":Landroid/view/View;
     .restart local v1    # "i":I
     .restart local v2    # "moved":Z
@@ -262,7 +251,6 @@
 
     if-ne v0, v3, :cond_4
 
-    .line 289
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialog$2;->this$0:Lcom/android/systemui/volume/VolumeDialog;
 
     iget-object v4, p0, Lcom/android/systemui/volume/VolumeDialog$2;->val$row:Lcom/android/systemui/volume/VolumeDialog$VolumeRow;
@@ -270,7 +258,6 @@
     # invokes: Lcom/android/systemui/volume/VolumeDialog;->repositionExpandAnim(Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)V
     invoke-static {v3, v4}, Lcom/android/systemui/volume/VolumeDialog;->access$1000(Lcom/android/systemui/volume/VolumeDialog;Lcom/android/systemui/volume/VolumeDialog$VolumeRow;)V
 
-    .line 294
     .end local v0    # "c":Landroid/view/View;
     .end local v1    # "i":I
     :cond_4

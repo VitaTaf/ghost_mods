@@ -30,12 +30,10 @@
     .locals 2
 
     .prologue
-    .line 205
     iput-object p1, p0, Lcom/android/keyguard/KeyguardWidgetCarousel$1;->this$0:Lcom/android/keyguard/KeyguardWidgetCarousel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 206
     new-instance v0, Landroid/view/animation/DecelerateInterpolator;
 
     const/high16 v1, 0x3fc00000    # 1.5f
@@ -44,7 +42,6 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardWidgetCarousel$1;->mInternal:Landroid/view/animation/Interpolator;
 
-    .line 207
     const/high16 v0, 0x40200000    # 2.5f
 
     iput v0, p0, Lcom/android/keyguard/KeyguardWidgetCarousel$1;->mFactor:F
@@ -59,7 +56,6 @@
     .param p1, "input"    # F
 
     .prologue
-    .line 210
     iget-object v0, p0, Lcom/android/keyguard/KeyguardWidgetCarousel$1;->mInternal:Landroid/view/animation/Interpolator;
 
     iget v1, p0, Lcom/android/keyguard/KeyguardWidgetCarousel$1;->mFactor:F

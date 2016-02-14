@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 931
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel$11;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,12 +39,10 @@
     .locals 1
 
     .prologue
-    .line 934
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$11;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # invokes: Lcom/android/systemui/volume/ZenModePanel;->fireInteraction()V
     invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$2800(Lcom/android/systemui/volume/ZenModePanel;)V
 
-    .line 935
     return-void
 .end method

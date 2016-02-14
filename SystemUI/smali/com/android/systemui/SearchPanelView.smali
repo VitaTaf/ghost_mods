@@ -45,7 +45,6 @@
     .locals 2
 
     .prologue
-    .line 51
     new-instance v0, Landroid/media/AudioAttributes$Builder;
 
     invoke-direct {v0}, Landroid/media/AudioAttributes$Builder;-><init>()V
@@ -77,12 +76,10 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 77
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/systemui/SearchPanelView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 78
     return-void
 .end method
 
@@ -93,18 +90,14 @@
     .param p3, "defStyle"    # I
 
     .prologue
-    .line 81
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 74
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/SearchPanelView;->mIsTouching:Z
 
-    .line 82
     iput-object p1, p0, Lcom/android/systemui/SearchPanelView;->mContext:Landroid/content/Context;
 
-    .line 83
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -117,7 +110,6 @@
 
     iput v0, p0, Lcom/android/systemui/SearchPanelView;->mThreshold:I
 
-    .line 84
     return-void
 .end method
 
@@ -126,7 +118,6 @@
     .param p0, "x0"    # Lcom/android/systemui/SearchPanelView;
 
     .prologue
-    .line 45
     iget-object v0, p0, Lcom/android/systemui/SearchPanelView;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -137,7 +128,6 @@
     .param p0, "x0"    # Lcom/android/systemui/SearchPanelView;
 
     .prologue
-    .line 45
     iget-object v0, p0, Lcom/android/systemui/SearchPanelView;->mCircle:Lcom/android/systemui/SearchPanelCircleView;
 
     return-object v0
@@ -148,7 +138,6 @@
     .param p0, "x0"    # Lcom/android/systemui/SearchPanelView;
 
     .prologue
-    .line 45
     invoke-direct {p0}, Lcom/android/systemui/SearchPanelView;->startExitAnimation()V
 
     return-void
@@ -160,7 +149,6 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 45
     iput-boolean p1, p0, Lcom/android/systemui/SearchPanelView;->mLaunching:Z
 
     return p1
@@ -170,7 +158,6 @@
     .locals 6
 
     .prologue
-    .line 122
     iget-object v2, p0, Lcom/android/systemui/SearchPanelView;->mContext:Landroid/content/Context;
 
     const-string v3, "search"
@@ -191,16 +178,13 @@
 
     move-result-object v1
 
-    .line 124
     .local v1, "intent":Landroid/content/Intent;
     if-eqz v1, :cond_0
 
-    .line 125
     invoke-virtual {v1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v0
 
-    .line 126
     .local v0, "component":Landroid/content/ComponentName;
     iget-object v2, p0, Lcom/android/systemui/SearchPanelView;->mLogo:Landroid/widget/ImageView;
 
@@ -208,12 +192,10 @@
 
     invoke-virtual {p0, v2, v0, v3}, Lcom/android/systemui/SearchPanelView;->replaceDrawable(Landroid/widget/ImageView;Landroid/content/ComponentName;Ljava/lang/String;)V
 
-    .line 130
     .end local v0    # "component":Landroid/content/ComponentName;
     :goto_0
     return-void
 
-    .line 128
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/SearchPanelView;->mLogo:Landroid/widget/ImageView;
 
@@ -228,7 +210,6 @@
     .locals 4
 
     .prologue
-    .line 211
     iget-object v0, p0, Lcom/android/systemui/SearchPanelView;->mCircle:Lcom/android/systemui/SearchPanelCircleView;
 
     new-instance v1, Lcom/android/systemui/SearchPanelView$2;
@@ -237,14 +218,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/SearchPanelCircleView;->startAbortAnimation(Ljava/lang/Runnable;)V
 
-    .line 218
     iget-object v0, p0, Lcom/android/systemui/SearchPanelView;->mCircle:Lcom/android/systemui/SearchPanelCircleView;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/SearchPanelCircleView;->setAnimatingOut(Z)V
 
-    .line 219
     iget-object v0, p0, Lcom/android/systemui/SearchPanelView;->mScrim:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -273,7 +252,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
-    .line 224
     return-void
 .end method
 
@@ -283,7 +261,6 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 87
     iget-object v3, p0, Lcom/android/systemui/SearchPanelView;->mBar:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     invoke-virtual {v3}, Lcom/android/systemui/statusbar/BaseStatusBar;->isDeviceProvisioned()Z
@@ -292,18 +269,15 @@
 
     if-nez v3, :cond_1
 
-    .line 110
     :cond_0
     :goto_0
     return-void
 
-    .line 90
     :cond_1
     iget-object v3, p0, Lcom/android/systemui/SearchPanelView;->mBar:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     invoke-virtual {v3, v6}, Lcom/android/systemui/statusbar/BaseStatusBar;->animateCollapsePanels(I)V
 
-    .line 92
     iget-object v3, p0, Lcom/android/systemui/SearchPanelView;->mContext:Landroid/content/Context;
 
     const-string v4, "search"
@@ -322,11 +296,9 @@
 
     move-result-object v1
 
-    .line 94
     .local v1, "intent":Landroid/content/Intent;
     if-eqz v1, :cond_0
 
-    .line 97
     :try_start_0
     iget-object v3, p0, Lcom/android/systemui/SearchPanelView;->mContext:Landroid/content/Context;
 
@@ -338,13 +310,11 @@
 
     move-result-object v2
 
-    .line 99
     .local v2, "opts":Landroid/app/ActivityOptions;
     const/high16 v3, 0x10000000
 
     invoke-virtual {v1, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 100
     new-instance v3, Lcom/android/systemui/SearchPanelView$1;
 
     invoke-direct {v3, p0, v1, v2}, Lcom/android/systemui/SearchPanelView$1;-><init>(Lcom/android/systemui/SearchPanelView;Landroid/content/Intent;Landroid/app/ActivityOptions;)V
@@ -355,12 +325,10 @@
 
     goto :goto_0
 
-    .line 107
     .end local v2    # "opts":Landroid/app/ActivityOptions;
     :catch_0
     move-exception v0
 
-    .line 108
     .local v0, "e":Landroid/content/ActivityNotFoundException;
     const-string v3, "SearchPanelView"
 
@@ -395,19 +363,16 @@
     .locals 4
 
     .prologue
-    .line 199
     iget-object v0, p0, Lcom/android/systemui/SearchPanelView;->mCircle:Lcom/android/systemui/SearchPanelCircleView;
 
     invoke-virtual {v0}, Lcom/android/systemui/SearchPanelCircleView;->startEnterAnimation()V
 
-    .line 200
     iget-object v0, p0, Lcom/android/systemui/SearchPanelView;->mScrim:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 201
     iget-object v0, p0, Lcom/android/systemui/SearchPanelView;->mScrim:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -440,7 +405,6 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 208
     return-void
 .end method
 
@@ -450,12 +414,10 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 323
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/SearchPanelView;->mLaunchPending:Z
 
-    .line 324
     iget-boolean v0, p0, Lcom/android/systemui/SearchPanelView;->mLaunching:Z
 
     if-nez v0, :cond_0
@@ -466,27 +428,21 @@
 
     if-eqz v0, :cond_1
 
-    .line 344
     :cond_0
     :goto_0
     return-void
 
-    .line 327
     :cond_1
     iput-boolean v1, p0, Lcom/android/systemui/SearchPanelView;->mLaunching:Z
 
-    .line 328
     invoke-direct {p0}, Lcom/android/systemui/SearchPanelView;->startAssistActivity()V
 
-    .line 329
     invoke-direct {p0}, Lcom/android/systemui/SearchPanelView;->vibrate()V
 
-    .line 330
     iget-object v0, p0, Lcom/android/systemui/SearchPanelView;->mCircle:Lcom/android/systemui/SearchPanelCircleView;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/SearchPanelCircleView;->setAnimatingOut(Z)V
 
-    .line 331
     iget-object v0, p0, Lcom/android/systemui/SearchPanelView;->mCircle:Lcom/android/systemui/SearchPanelCircleView;
 
     new-instance v1, Lcom/android/systemui/SearchPanelView$4;
@@ -495,7 +451,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/SearchPanelCircleView;->startExitAnimation(Ljava/lang/Runnable;)V
 
-    .line 339
     iget-object v0, p0, Lcom/android/systemui/SearchPanelView;->mScrim:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -531,12 +486,10 @@
     .locals 7
 
     .prologue
-    .line 164
     invoke-virtual {p0}, Lcom/android/systemui/SearchPanelView;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 165
     .local v0, "context":Landroid/content/Context;
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -554,12 +507,10 @@
 
     if-eqz v3, :cond_0
 
-    .line 167
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    .line 168
     .local v1, "res":Landroid/content/res/Resources;
     const-string v3, "vibrator"
 
@@ -569,7 +520,6 @@
 
     check-cast v2, Landroid/os/Vibrator;
 
-    .line 169
     .local v2, "vibrator":Landroid/os/Vibrator;
     const v3, 0x7f0a0005
 
@@ -583,7 +533,6 @@
 
     invoke-virtual {v2, v4, v5, v3}, Landroid/os/Vibrator;->vibrate(JLandroid/media/AudioAttributes;)V
 
-    .line 172
     .end local v1    # "res":Landroid/content/res/Resources;
     .end local v2    # "vibrator":Landroid/os/Vibrator;
     :cond_0
@@ -597,14 +546,12 @@
     .param p1, "event"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 244
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v2
 
     float-to-int v0, v2
 
-    .line 245
     .local v0, "x":I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
@@ -612,7 +559,6 @@
 
     float-to-int v1, v2
 
-    .line 246
     .local v1, "y":I
     if-ltz v0, :cond_0
 
@@ -630,12 +576,10 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 247
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchHoverEvent(Landroid/view/MotionEvent;)Z
 
     move-result v2
 
-    .line 249
     :goto_0
     return v2
 
@@ -651,7 +595,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 265
     iget-object v0, p0, Lcom/android/systemui/SearchPanelView;->mContext:Landroid/content/Context;
 
     const-string v2, "search"
@@ -689,7 +632,6 @@
     .param p2, "y"    # I
 
     .prologue
-    .line 160
     const/4 v0, 0x1
 
     return v0
@@ -699,7 +641,6 @@
     .locals 1
 
     .prologue
-    .line 257
     invoke-virtual {p0}, Lcom/android/systemui/SearchPanelView;->getVisibility()I
 
     move-result v0
@@ -729,7 +670,6 @@
     .locals 1
 
     .prologue
-    .line 353
     iget-boolean v0, p0, Lcom/android/systemui/SearchPanelView;->mIsTouching:Z
 
     return v0
@@ -739,17 +679,14 @@
     .locals 2
 
     .prologue
-    .line 114
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
-    .line 115
     iget-object v0, p0, Lcom/android/systemui/SearchPanelView;->mContext:Landroid/content/Context;
 
     const-string v1, "layout_inflater"
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    .line 116
     const v0, 0x7f0f0120
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/SearchPanelView;->findViewById(I)Landroid/view/View;
@@ -760,7 +697,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/SearchPanelView;->mCircle:Lcom/android/systemui/SearchPanelCircleView;
 
-    .line 117
     const v0, 0x7f0f0121
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/SearchPanelView;->findViewById(I)Landroid/view/View;
@@ -771,7 +707,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/SearchPanelView;->mLogo:Landroid/widget/ImageView;
 
-    .line 118
     const v0, 0x7f0f011f
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/SearchPanelView;->findViewById(I)Landroid/view/View;
@@ -780,7 +715,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/SearchPanelView;->mScrim:Landroid/view/View;
 
-    .line 119
     return-void
 .end method
 
@@ -793,7 +727,6 @@
 
     const/4 v4, 0x1
 
-    .line 271
     iget-boolean v3, p0, Lcom/android/systemui/SearchPanelView;->mLaunching:Z
 
     if-nez v3, :cond_0
@@ -805,28 +738,23 @@
     :cond_0
     move v4, v5
 
-    .line 319
     :cond_1
     :goto_0
     return v4
 
-    .line 274
     :cond_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
-    .line 275
     .local v0, "action":I
     packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
-    .line 277
     :pswitch_0
     iput-boolean v4, p0, Lcom/android/systemui/SearchPanelView;->mIsTouching:Z
 
-    .line 278
     iget-boolean v3, p0, Lcom/android/systemui/SearchPanelView;->mHorizontal:Z
 
     if-eqz v3, :cond_3
@@ -838,20 +766,16 @@
     :goto_1
     iput v3, p0, Lcom/android/systemui/SearchPanelView;->mStartTouch:F
 
-    .line 279
     iput-boolean v5, p0, Lcom/android/systemui/SearchPanelView;->mDragging:Z
 
-    .line 280
     iput-boolean v5, p0, Lcom/android/systemui/SearchPanelView;->mDraggedFarEnough:Z
 
-    .line 281
     iget-object v3, p0, Lcom/android/systemui/SearchPanelView;->mCircle:Lcom/android/systemui/SearchPanelCircleView;
 
     invoke-virtual {v3}, Lcom/android/systemui/SearchPanelCircleView;->reset()V
 
     goto :goto_0
 
-    .line 278
     :cond_3
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
@@ -859,7 +783,6 @@
 
     goto :goto_1
 
-    .line 284
     :pswitch_1
     iget-boolean v3, p0, Lcom/android/systemui/SearchPanelView;->mHorizontal:Z
 
@@ -869,7 +792,6 @@
 
     move-result v1
 
-    .line 285
     .local v1, "currentTouch":F
     :goto_2
     invoke-virtual {p0}, Lcom/android/systemui/SearchPanelView;->getVisibility()I
@@ -906,20 +828,16 @@
 
     if-lez v3, :cond_5
 
-    .line 288
     :cond_4
     iput v1, p0, Lcom/android/systemui/SearchPanelView;->mStartDrag:F
 
-    .line 289
     iput-boolean v4, p0, Lcom/android/systemui/SearchPanelView;->mDragging:Z
 
-    .line 291
     :cond_5
     iget-boolean v3, p0, Lcom/android/systemui/SearchPanelView;->mDragging:Z
 
     if-eqz v3, :cond_1
 
-    .line 292
     iget v3, p0, Lcom/android/systemui/SearchPanelView;->mStartDrag:F
 
     sub-float/2addr v3, v1
@@ -930,13 +848,11 @@
 
     move-result v2
 
-    .line 293
     .local v2, "offset":F
     iget-object v3, p0, Lcom/android/systemui/SearchPanelView;->mCircle:Lcom/android/systemui/SearchPanelCircleView;
 
     invoke-virtual {v3, v2}, Lcom/android/systemui/SearchPanelCircleView;->setDragDistance(F)V
 
-    .line 294
     iget v3, p0, Lcom/android/systemui/SearchPanelView;->mStartTouch:F
 
     sub-float/2addr v3, v1
@@ -958,7 +874,6 @@
     :goto_3
     iput-boolean v3, p0, Lcom/android/systemui/SearchPanelView;->mDraggedFarEnough:Z
 
-    .line 295
     iget-object v3, p0, Lcom/android/systemui/SearchPanelView;->mCircle:Lcom/android/systemui/SearchPanelCircleView;
 
     iget-boolean v5, p0, Lcom/android/systemui/SearchPanelView;->mDraggedFarEnough:Z
@@ -967,7 +882,6 @@
 
     goto :goto_0
 
-    .line 284
     .end local v1    # "currentTouch":F
     .end local v2    # "offset":F
     :cond_6
@@ -982,21 +896,17 @@
     :cond_7
     move v3, v5
 
-    .line 294
     goto :goto_3
 
-    .line 300
     .end local v1    # "currentTouch":F
     .end local v2    # "offset":F
     :pswitch_2
     iput-boolean v5, p0, Lcom/android/systemui/SearchPanelView;->mIsTouching:Z
 
-    .line 301
     iget-boolean v3, p0, Lcom/android/systemui/SearchPanelView;->mDraggedFarEnough:Z
 
     if-eqz v3, :cond_9
 
-    .line 302
     iget-object v3, p0, Lcom/android/systemui/SearchPanelView;->mCircle:Lcom/android/systemui/SearchPanelCircleView;
 
     invoke-virtual {v3, v4}, Lcom/android/systemui/SearchPanelCircleView;->isAnimationRunning(Z)Z
@@ -1005,15 +915,12 @@
 
     if-eqz v3, :cond_8
 
-    .line 303
     iput-boolean v4, p0, Lcom/android/systemui/SearchPanelView;->mLaunchPending:Z
 
-    .line 304
     iget-object v3, p0, Lcom/android/systemui/SearchPanelView;->mCircle:Lcom/android/systemui/SearchPanelCircleView;
 
     invoke-virtual {v3, v4}, Lcom/android/systemui/SearchPanelCircleView;->setAnimatingOut(Z)V
 
-    .line 305
     iget-object v3, p0, Lcom/android/systemui/SearchPanelView;->mCircle:Lcom/android/systemui/SearchPanelCircleView;
 
     new-instance v5, Lcom/android/systemui/SearchPanelView$3;
@@ -1024,19 +931,16 @@
 
     goto/16 :goto_0
 
-    .line 312
     :cond_8
     invoke-direct {p0}, Lcom/android/systemui/SearchPanelView;->startExitAnimation()V
 
     goto/16 :goto_0
 
-    .line 315
     :cond_9
     invoke-direct {p0}, Lcom/android/systemui/SearchPanelView;->startAbortAnimation()V
 
     goto/16 :goto_0
 
-    .line 275
     nop
 
     :pswitch_data_0
@@ -1055,10 +959,8 @@
     .param p3, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 133
     if-eqz p2, :cond_0
 
-    .line 135
     :try_start_0
     iget-object v6, p0, Lcom/android/systemui/SearchPanelView;->mContext:Landroid/content/Context;
 
@@ -1066,7 +968,6 @@
 
     move-result-object v4
 
-    .line 137
     .local v4, "packageManager":Landroid/content/pm/PackageManager;
     const/16 v6, 0x80
 
@@ -1076,25 +977,20 @@
 
     iget-object v2, v6, Landroid/content/pm/ActivityInfo;->metaData:Landroid/os/Bundle;
 
-    .line 139
     .local v2, "metaData":Landroid/os/Bundle;
     if-eqz v2, :cond_0
 
-    .line 140
     invoke-virtual {v2, p3}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
     move-result v1
 
-    .line 141
     .local v1, "iconResId":I
     if-eqz v1, :cond_0
 
-    .line 142
     invoke-virtual {v4, p2}, Landroid/content/pm/PackageManager;->getResourcesForActivity(Landroid/content/ComponentName;)Landroid/content/res/Resources;
 
     move-result-object v5
 
-    .line 143
     .local v5, "res":Landroid/content/res/Resources;
     invoke-virtual {v5, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1105,7 +1001,6 @@
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 156
     .end local v1    # "iconResId":I
     .end local v2    # "metaData":Landroid/os/Bundle;
     .end local v4    # "packageManager":Landroid/content/pm/PackageManager;
@@ -1113,11 +1008,9 @@
     :goto_0
     return-void
 
-    .line 147
     :catch_0
     move-exception v0
 
-    .line 148
     .local v0, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string v6, "SearchPanelView"
 
@@ -1151,7 +1044,6 @@
 
     invoke-static {v6, v7, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 155
     .end local v0    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :cond_0
     :goto_1
@@ -1161,11 +1053,9 @@
 
     goto :goto_0
 
-    .line 150
     :catch_1
     move-exception v3
 
-    .line 151
     .local v3, "nfe":Landroid/content/res/Resources$NotFoundException;
     const-string v6, "SearchPanelView"
 
@@ -1201,10 +1091,8 @@
     .param p1, "bar"    # Lcom/android/systemui/statusbar/BaseStatusBar;
 
     .prologue
-    .line 261
     iput-object p1, p0, Lcom/android/systemui/SearchPanelView;->mBar:Lcom/android/systemui/statusbar/BaseStatusBar;
 
-    .line 262
     return-void
 .end method
 
@@ -1213,15 +1101,12 @@
     .param p1, "horizontal"    # Z
 
     .prologue
-    .line 347
     iput-boolean p1, p0, Lcom/android/systemui/SearchPanelView;->mHorizontal:Z
 
-    .line 348
     iget-object v0, p0, Lcom/android/systemui/SearchPanelView;->mCircle:Lcom/android/systemui/SearchPanelCircleView;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/SearchPanelCircleView;->setHorizontal(Z)V
 
-    .line 349
     return-void
 .end method
 
@@ -1233,49 +1118,37 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 175
     if-eqz p1, :cond_2
 
-    .line 176
     invoke-direct {p0}, Lcom/android/systemui/SearchPanelView;->maybeSwapSearchIcon()V
 
-    .line 177
     invoke-virtual {p0}, Lcom/android/systemui/SearchPanelView;->getVisibility()I
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 178
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/SearchPanelView;->setVisibility(I)V
 
-    .line 179
     invoke-direct {p0}, Lcom/android/systemui/SearchPanelView;->vibrate()V
 
-    .line 180
     if-eqz p2, :cond_1
 
-    .line 181
     invoke-direct {p0}, Lcom/android/systemui/SearchPanelView;->startEnterAnimation()V
 
-    .line 186
     :cond_0
     :goto_0
     invoke-virtual {p0, v2}, Lcom/android/systemui/SearchPanelView;->setFocusable(Z)V
 
-    .line 187
     invoke-virtual {p0, v2}, Lcom/android/systemui/SearchPanelView;->setFocusableInTouchMode(Z)V
 
-    .line 188
     invoke-virtual {p0}, Lcom/android/systemui/SearchPanelView;->requestFocus()Z
 
-    .line 196
     :goto_1
     return-void
 
-    .line 183
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/SearchPanelView;->mScrim:Landroid/view/View;
 
@@ -1285,16 +1158,13 @@
 
     goto :goto_0
 
-    .line 190
     :cond_2
     if-eqz p2, :cond_3
 
-    .line 191
     invoke-direct {p0}, Lcom/android/systemui/SearchPanelView;->startAbortAnimation()V
 
     goto :goto_1
 
-    .line 193
     :cond_3
     const/4 v0, 0x4
 

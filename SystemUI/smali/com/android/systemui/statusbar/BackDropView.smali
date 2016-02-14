@@ -13,10 +13,8 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 32
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 33
     return-void
 .end method
 
@@ -26,10 +24,8 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 36
     invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 37
     return-void
 .end method
 
@@ -40,10 +36,8 @@
     .param p3, "defStyleAttr"    # I
 
     .prologue
-    .line 40
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 41
     return-void
 .end method
 
@@ -55,10 +49,8 @@
     .param p4, "defStyleRes"    # I
 
     .prologue
-    .line 45
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    .line 46
     return-void
 .end method
 
@@ -68,7 +60,6 @@
     .locals 1
 
     .prologue
-    .line 50
     const/4 v0, 0x0
 
     return v0
@@ -80,22 +71,18 @@
     .param p2, "visibility"    # I
 
     .prologue
-    .line 55
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onVisibilityChanged(Landroid/view/View;I)V
 
-    .line 56
     if-ne p1, p0, :cond_0
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/BackDropView;->mOnVisibilityChangedRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 57
     iget-object v0, p0, Lcom/android/systemui/statusbar/BackDropView;->mOnVisibilityChangedRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 59
     :cond_0
     return-void
 .end method
@@ -105,9 +92,7 @@
     .param p1, "runnable"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 62
     iput-object p1, p0, Lcom/android/systemui/statusbar/BackDropView;->mOnVisibilityChangedRunnable:Ljava/lang/Runnable;
 
-    .line 63
     return-void
 .end method

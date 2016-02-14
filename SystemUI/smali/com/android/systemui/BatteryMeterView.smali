@@ -89,7 +89,6 @@
     .locals 1
 
     .prologue
-    .line 40
     const-class v0, Lcom/android/systemui/BatteryMeterView;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -106,14 +105,12 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 181
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/systemui/BatteryMeterView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 182
     return-void
 .end method
 
@@ -123,12 +120,10 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 185
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/systemui/BatteryMeterView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 186
     return-void
 .end method
 
@@ -139,69 +134,58 @@
     .param p3, "defStyle"    # I
 
     .prologue
-    .line 189
     invoke-direct {p0, p1, p2, p3}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 53
     const/4 v8, 0x1
 
     iput-boolean v8, p0, Lcom/android/systemui/BatteryMeterView;->mShowPercent:Z
 
-    .line 66
     new-instance v8, Landroid/graphics/Path;
 
     invoke-direct {v8}, Landroid/graphics/Path;-><init>()V
 
     iput-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mBoltPath:Landroid/graphics/Path;
 
-    .line 68
     const/4 v8, 0x0
 
     iput-boolean v8, p0, Lcom/android/systemui/BatteryMeterView;->mUseStatusVsPlugged:Z
 
-    .line 71
     new-instance v8, Landroid/graphics/RectF;
 
     invoke-direct {v8}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mFrame:Landroid/graphics/RectF;
 
-    .line 72
     new-instance v8, Landroid/graphics/RectF;
 
     invoke-direct {v8}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mButtonFrame:Landroid/graphics/RectF;
 
-    .line 73
     new-instance v8, Landroid/graphics/RectF;
 
     invoke-direct {v8}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mBoltFrame:Landroid/graphics/RectF;
 
-    .line 75
     new-instance v8, Landroid/graphics/Path;
 
     invoke-direct {v8}, Landroid/graphics/Path;-><init>()V
 
     iput-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
 
-    .line 76
     new-instance v8, Landroid/graphics/Path;
 
     invoke-direct {v8}, Landroid/graphics/Path;-><init>()V
 
     iput-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mClipPath:Landroid/graphics/Path;
 
-    .line 77
     new-instance v8, Landroid/graphics/Path;
 
     invoke-direct {v8}, Landroid/graphics/Path;-><init>()V
 
     iput-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mTextPath:Landroid/graphics/Path;
 
-    .line 155
     new-instance v8, Lcom/android/systemui/BatteryMeterView$BatteryTracker;
 
     const/4 v9, 0x0
@@ -210,7 +194,6 @@
 
     iput-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mTracker:Lcom/android/systemui/BatteryMeterView$BatteryTracker;
 
-    .line 495
     new-instance v8, Lcom/android/systemui/BatteryMeterView$BatteryTracker;
 
     const/4 v9, 0x0
@@ -219,12 +202,10 @@
 
     iput-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mDemoTracker:Lcom/android/systemui/BatteryMeterView$BatteryTracker;
 
-    .line 191
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v7
 
-    .line 192
     .local v7, "res":Landroid/content/res/Resources;
     sget-object v8, Lcom/android/systemui/R$styleable;->BatteryMeterView:[I
 
@@ -234,7 +215,6 @@
 
     move-result-object v1
 
-    .line 194
     .local v1, "atts":Landroid/content/res/TypedArray;
     const/4 v8, 0x0
 
@@ -248,7 +228,6 @@
 
     move-result v4
 
-    .line 196
     .local v4, "frameColor":I
     const/high16 v8, 0x7f070000
 
@@ -256,7 +235,6 @@
 
     move-result-object v6
 
-    .line 197
     .local v6, "levels":Landroid/content/res/TypedArray;
     const v8, 0x7f070001
 
@@ -264,7 +242,6 @@
 
     move-result-object v2
 
-    .line 199
     .local v2, "colors":Landroid/content/res/TypedArray;
     const v8, 0x7f090029
 
@@ -274,12 +251,10 @@
 
     iput-boolean v8, p0, Lcom/android/systemui/BatteryMeterView;->mUseStatusVsPlugged:Z
 
-    .line 202
     invoke-virtual {v6}, Landroid/content/res/TypedArray;->length()I
 
     move-result v0
 
-    .line 203
     .local v0, "N":I
     mul-int/lit8 v8, v0, 0x2
 
@@ -287,14 +262,12 @@
 
     iput-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mColors:[I
 
-    .line 204
     const/4 v5, 0x0
 
     .local v5, "i":I
     :goto_0
     if-ge v5, v0, :cond_0
 
-    .line 205
     iget-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mColors:[I
 
     mul-int/lit8 v9, v5, 0x2
@@ -307,7 +280,6 @@
 
     aput v10, v8, v9
 
-    .line 206
     iget-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mColors:[I
 
     mul-int/lit8 v9, v5, 0x2
@@ -322,22 +294,17 @@
 
     aput v10, v8, v9
 
-    .line 204
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 208
     :cond_0
     invoke-virtual {v6}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 209
     invoke-virtual {v2}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 210
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 211
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v8
@@ -357,7 +324,6 @@
     :goto_1
     iput-boolean v8, p0, Lcom/android/systemui/BatteryMeterView;->mShowPercent:Z
 
-    .line 213
     const v8, 0x7f0c010b
 
     invoke-virtual {p1, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -366,7 +332,6 @@
 
     iput-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mWarningString:Ljava/lang/String;
 
-    .line 214
     iget-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v8}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -381,7 +346,6 @@
 
     iput v8, p0, Lcom/android/systemui/BatteryMeterView;->mCriticalLevel:I
 
-    .line 216
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v8
@@ -398,7 +362,6 @@
 
     iput v8, p0, Lcom/android/systemui/BatteryMeterView;->mButtonHeightFraction:F
 
-    .line 218
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v8
@@ -415,7 +378,6 @@
 
     iput v8, p0, Lcom/android/systemui/BatteryMeterView;->mSubpixelSmoothingLeft:F
 
-    .line 220
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v8
@@ -432,7 +394,6 @@
 
     iput v8, p0, Lcom/android/systemui/BatteryMeterView;->mSubpixelSmoothingRight:F
 
-    .line 223
     new-instance v8, Landroid/graphics/Paint;
 
     const/4 v9, 0x1
@@ -441,33 +402,28 @@
 
     iput-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mFramePaint:Landroid/graphics/Paint;
 
-    .line 224
     iget-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mFramePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v8, v4}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 225
     iget-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mFramePaint:Landroid/graphics/Paint;
 
     const/4 v9, 0x1
 
     invoke-virtual {v8, v9}, Landroid/graphics/Paint;->setDither(Z)V
 
-    .line 226
     iget-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mFramePaint:Landroid/graphics/Paint;
 
     const/4 v9, 0x0
 
     invoke-virtual {v8, v9}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 227
     iget-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mFramePaint:Landroid/graphics/Paint;
 
     sget-object v9, Landroid/graphics/Paint$Style;->FILL_AND_STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v8, v9}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 229
     new-instance v8, Landroid/graphics/Paint;
 
     const/4 v9, 0x1
@@ -476,28 +432,24 @@
 
     iput-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryPaint:Landroid/graphics/Paint;
 
-    .line 230
     iget-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryPaint:Landroid/graphics/Paint;
 
     const/4 v9, 0x1
 
     invoke-virtual {v8, v9}, Landroid/graphics/Paint;->setDither(Z)V
 
-    .line 231
     iget-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryPaint:Landroid/graphics/Paint;
 
     const/4 v9, 0x0
 
     invoke-virtual {v8, v9}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 232
     iget-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryPaint:Landroid/graphics/Paint;
 
     sget-object v9, Landroid/graphics/Paint$Style;->FILL_AND_STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v8, v9}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 234
     new-instance v8, Landroid/graphics/Paint;
 
     const/4 v9, 0x1
@@ -506,7 +458,6 @@
 
     iput-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mTextPaint:Landroid/graphics/Paint;
 
-    .line 235
     const-string v8, "sans-serif-condensed"
 
     const/4 v9, 0x1
@@ -515,20 +466,17 @@
 
     move-result-object v3
 
-    .line 236
     .local v3, "font":Landroid/graphics/Typeface;
     iget-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mTextPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v8, v3}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 237
     iget-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mTextPaint:Landroid/graphics/Paint;
 
     sget-object v9, Landroid/graphics/Paint$Align;->CENTER:Landroid/graphics/Paint$Align;
 
     invoke-virtual {v8, v9}, Landroid/graphics/Paint;->setTextAlign(Landroid/graphics/Paint$Align;)V
 
-    .line 239
     new-instance v8, Landroid/graphics/Paint;
 
     const/4 v9, 0x1
@@ -537,7 +485,6 @@
 
     iput-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mWarningTextPaint:Landroid/graphics/Paint;
 
-    .line 240
     iget-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mWarningTextPaint:Landroid/graphics/Paint;
 
     iget-object v9, p0, Lcom/android/systemui/BatteryMeterView;->mColors:[I
@@ -548,7 +495,6 @@
 
     invoke-virtual {v8, v9}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 241
     const-string v8, "sans-serif"
 
     const/4 v9, 0x1
@@ -557,19 +503,16 @@
 
     move-result-object v3
 
-    .line 242
     iget-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mWarningTextPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v8, v3}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 243
     iget-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mWarningTextPaint:Landroid/graphics/Paint;
 
     sget-object v9, Landroid/graphics/Paint$Align;->CENTER:Landroid/graphics/Paint$Align;
 
     invoke-virtual {v8, v9}, Landroid/graphics/Paint;->setTextAlign(Landroid/graphics/Paint$Align;)V
 
-    .line 245
     invoke-virtual {p0}, Lcom/android/systemui/BatteryMeterView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v8
@@ -582,7 +525,6 @@
 
     iput v8, p0, Lcom/android/systemui/BatteryMeterView;->mChargeColor:I
 
-    .line 247
     new-instance v8, Landroid/graphics/Paint;
 
     const/4 v9, 0x1
@@ -591,7 +533,6 @@
 
     iput-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mBoltPaint:Landroid/graphics/Paint;
 
-    .line 248
     iget-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mBoltPaint:Landroid/graphics/Paint;
 
     const v9, 0x7f080008
@@ -602,17 +543,14 @@
 
     invoke-virtual {v8, v9}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 249
     invoke-static {v7}, Lcom/android/systemui/BatteryMeterView;->loadBoltPoints(Landroid/content/res/Resources;)[F
 
     move-result-object v8
 
     iput-object v8, p0, Lcom/android/systemui/BatteryMeterView;->mBoltPoints:[F
 
-    .line 250
     return-void
 
-    .line 211
     .end local v3    # "font":Landroid/graphics/Typeface;
     :cond_1
     const/4 v8, 0x0
@@ -625,12 +563,10 @@
     .param p1, "percent"    # I
 
     .prologue
-    .line 294
     iget-boolean v3, p0, Lcom/android/systemui/BatteryMeterView;->mPowerSaveEnabled:Z
 
     if-eqz v3, :cond_1
 
-    .line 295
     iget-object v3, p0, Lcom/android/systemui/BatteryMeterView;->mColors:[I
 
     iget-object v4, p0, Lcom/android/systemui/BatteryMeterView;->mColors:[I
@@ -641,15 +577,12 @@
 
     aget v0, v3, v4
 
-    .line 303
     :cond_0
     return v0
 
-    .line 297
     :cond_1
     const/4 v0, 0x0
 
-    .line 298
     .local v0, "color":I
     const/4 v1, 0x0
 
@@ -661,12 +594,10 @@
 
     if-ge v1, v3, :cond_0
 
-    .line 299
     iget-object v3, p0, Lcom/android/systemui/BatteryMeterView;->mColors:[I
 
     aget v2, v3, v1
 
-    .line 300
     .local v2, "thresh":I
     iget-object v3, p0, Lcom/android/systemui/BatteryMeterView;->mColors:[I
 
@@ -674,10 +605,8 @@
 
     aget v0, v3, v4
 
-    .line 301
     if-le p1, v2, :cond_0
 
-    .line 298
     add-int/lit8 v1, v1, 0x2
 
     goto :goto_0
@@ -688,21 +617,18 @@
     .param p0, "res"    # Landroid/content/res/Resources;
 
     .prologue
-    .line 269
     const v5, 0x7f070002
 
     invoke-virtual {p0, v5}, Landroid/content/res/Resources;->getIntArray(I)[I
 
     move-result-object v3
 
-    .line 270
     .local v3, "pts":[I
     const/4 v1, 0x0
 
     .local v1, "maxX":I
     const/4 v2, 0x0
 
-    .line 271
     .local v2, "maxY":I
     const/4 v0, 0x0
 
@@ -712,14 +638,12 @@
 
     if-ge v0, v5, :cond_0
 
-    .line 272
     aget v5, v3, v0
 
     invoke-static {v1, v5}, Ljava/lang/Math;->max(II)I
 
     move-result v1
 
-    .line 273
     add-int/lit8 v5, v0, 0x1
 
     aget v5, v3, v5
@@ -728,18 +652,15 @@
 
     move-result v2
 
-    .line 271
     add-int/lit8 v0, v0, 0x2
 
     goto :goto_0
 
-    .line 275
     :cond_0
     array-length v5, v3
 
     new-array v4, v5, [F
 
-    .line 276
     .local v4, "ptsF":[F
     const/4 v0, 0x0
 
@@ -748,7 +669,6 @@
 
     if-ge v0, v5, :cond_1
 
-    .line 277
     aget v5, v3, v0
 
     int-to-float v5, v5
@@ -759,7 +679,6 @@
 
     aput v5, v4, v0
 
-    .line 278
     add-int/lit8 v5, v0, 0x1
 
     add-int/lit8 v6, v0, 0x1
@@ -774,12 +693,10 @@
 
     aput v6, v4, v5
 
-    .line 276
     add-int/lit8 v0, v0, 0x2
 
     goto :goto_1
 
-    .line 280
     :cond_1
     return-object v4
 .end method
@@ -794,7 +711,6 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 499
     iget-boolean v2, p0, Lcom/android/systemui/BatteryMeterView;->mDemoMode:Z
 
     if-nez v2, :cond_1
@@ -807,12 +723,10 @@
 
     if-eqz v2, :cond_1
 
-    .line 500
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Lcom/android/systemui/BatteryMeterView;->mDemoMode:Z
 
-    .line 501
     iget-object v2, p0, Lcom/android/systemui/BatteryMeterView;->mDemoTracker:Lcom/android/systemui/BatteryMeterView$BatteryTracker;
 
     iget-object v3, p0, Lcom/android/systemui/BatteryMeterView;->mTracker:Lcom/android/systemui/BatteryMeterView$BatteryTracker;
@@ -821,7 +735,6 @@
 
     iput v3, v2, Lcom/android/systemui/BatteryMeterView$BatteryTracker;->level:I
 
-    .line 502
     iget-object v2, p0, Lcom/android/systemui/BatteryMeterView;->mDemoTracker:Lcom/android/systemui/BatteryMeterView$BatteryTracker;
 
     iget-object v3, p0, Lcom/android/systemui/BatteryMeterView;->mTracker:Lcom/android/systemui/BatteryMeterView$BatteryTracker;
@@ -830,12 +743,10 @@
 
     iput-boolean v3, v2, Lcom/android/systemui/BatteryMeterView$BatteryTracker;->plugged:Z
 
-    .line 517
     :cond_0
     :goto_0
     return-void
 
-    .line 503
     :cond_1
     iget-boolean v2, p0, Lcom/android/systemui/BatteryMeterView;->mDemoMode:Z
 
@@ -849,15 +760,12 @@
 
     if-eqz v2, :cond_2
 
-    .line 504
     iput-boolean v4, p0, Lcom/android/systemui/BatteryMeterView;->mDemoMode:Z
 
-    .line 505
     invoke-virtual {p0}, Lcom/android/systemui/BatteryMeterView;->postInvalidate()V
 
     goto :goto_0
 
-    .line 506
     :cond_2
     iget-boolean v2, p0, Lcom/android/systemui/BatteryMeterView;->mDemoMode:Z
 
@@ -871,14 +779,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 507
     const-string v2, "level"
 
     invoke-virtual {p2, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 508
     .local v0, "level":Ljava/lang/String;
     const-string v2, "plugged"
 
@@ -886,11 +792,9 @@
 
     move-result-object v1
 
-    .line 509
     .local v1, "plugged":Ljava/lang/String;
     if-eqz v0, :cond_3
 
-    .line 510
     iget-object v2, p0, Lcom/android/systemui/BatteryMeterView;->mDemoTracker:Lcom/android/systemui/BatteryMeterView$BatteryTracker;
 
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -909,11 +813,9 @@
 
     iput v3, v2, Lcom/android/systemui/BatteryMeterView$BatteryTracker;->level:I
 
-    .line 512
     :cond_3
     if-eqz v1, :cond_4
 
-    .line 513
     iget-object v2, p0, Lcom/android/systemui/BatteryMeterView;->mDemoTracker:Lcom/android/systemui/BatteryMeterView$BatteryTracker;
 
     invoke-static {v1}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
@@ -922,7 +824,6 @@
 
     iput-boolean v3, v2, Lcom/android/systemui/BatteryMeterView$BatteryTracker;->plugged:Z
 
-    .line 515
     :cond_4
     invoke-virtual {p0}, Lcom/android/systemui/BatteryMeterView;->postInvalidate()V
 
@@ -934,7 +835,6 @@
     .param p1, "c"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 308
     move-object/from16 v0, p0
 
     iget-boolean v3, v0, Lcom/android/systemui/BatteryMeterView;->mDemoMode:Z
@@ -947,7 +847,6 @@
 
     move-object/from16 v28, v0
 
-    .line 309
     .local v28, "tracker":Lcom/android/systemui/BatteryMeterView$BatteryTracker;
     :goto_0
     move-object/from16 v0, v28
@@ -956,7 +855,6 @@
 
     move/from16 v20, v0
 
-    .line 311
     .local v20, "level":I
     const/4 v3, -0x1
 
@@ -964,12 +862,10 @@
 
     if-ne v0, v3, :cond_2
 
-    .line 487
     :cond_0
     :goto_1
     return-void
 
-    .line 308
     .end local v20    # "level":I
     .end local v28    # "tracker":Lcom/android/systemui/BatteryMeterView$BatteryTracker;
     :cond_1
@@ -981,7 +877,6 @@
 
     goto :goto_0
 
-    .line 313
     .restart local v20    # "level":I
     .restart local v28    # "tracker":Lcom/android/systemui/BatteryMeterView$BatteryTracker;
     :cond_2
@@ -993,31 +888,26 @@
 
     div-float v17, v3, v5
 
-    .line 314
     .local v17, "drawFrac":F
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/BatteryMeterView;->getPaddingTop()I
 
     move-result v27
 
-    .line 315
     .local v27, "pt":I
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/BatteryMeterView;->getPaddingLeft()I
 
     move-result v25
 
-    .line 316
     .local v25, "pl":I
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/BatteryMeterView;->getPaddingRight()I
 
     move-result v26
 
-    .line 317
     .local v26, "pr":I
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/BatteryMeterView;->getPaddingBottom()I
 
     move-result v23
 
-    .line 318
     .local v23, "pb":I
     move-object/from16 v0, p0
 
@@ -1027,7 +917,6 @@
 
     sub-int v18, v3, v23
 
-    .line 319
     .local v18, "height":I
     move-object/from16 v0, p0
 
@@ -1037,7 +926,6 @@
 
     sub-int v29, v3, v26
 
-    .line 321
     .local v29, "width":I
     move/from16 v0, v18
 
@@ -1051,11 +939,9 @@
 
     float-to-int v15, v3
 
-    .line 323
     .local v15, "buttonHeight":I
     const/16 v22, 0x0
 
-    .line 326
     .local v22, "moto_IndicateCharging":Z
     move-object/from16 v0, p0
 
@@ -1079,7 +965,6 @@
 
     invoke-virtual {v3, v5, v6, v9, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 327
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mFrame:Landroid/graphics/RectF;
@@ -1094,7 +979,6 @@
 
     invoke-virtual {v3, v5, v6}, Landroid/graphics/RectF;->offset(FF)V
 
-    .line 330
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mButtonFrame:Landroid/graphics/RectF;
@@ -1177,7 +1061,6 @@
 
     invoke-virtual {v3, v5, v6, v9, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 336
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mButtonFrame:Landroid/graphics/RectF;
@@ -1192,7 +1075,6 @@
 
     iput v5, v3, Landroid/graphics/RectF;->top:F
 
-    .line 337
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mButtonFrame:Landroid/graphics/RectF;
@@ -1207,7 +1089,6 @@
 
     iput v5, v3, Landroid/graphics/RectF;->left:F
 
-    .line 338
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mButtonFrame:Landroid/graphics/RectF;
@@ -1222,7 +1103,6 @@
 
     iput v5, v3, Landroid/graphics/RectF;->right:F
 
-    .line 341
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mFrame:Landroid/graphics/RectF;
@@ -1235,7 +1115,6 @@
 
     iput v5, v3, Landroid/graphics/RectF;->top:F
 
-    .line 342
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mFrame:Landroid/graphics/RectF;
@@ -1250,7 +1129,6 @@
 
     iput v5, v3, Landroid/graphics/RectF;->left:F
 
-    .line 343
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mFrame:Landroid/graphics/RectF;
@@ -1265,7 +1143,6 @@
 
     iput v5, v3, Landroid/graphics/RectF;->top:F
 
-    .line 344
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mFrame:Landroid/graphics/RectF;
@@ -1280,7 +1157,6 @@
 
     iput v5, v3, Landroid/graphics/RectF;->right:F
 
-    .line 345
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mFrame:Landroid/graphics/RectF;
@@ -1295,14 +1171,12 @@
 
     iput v5, v3, Landroid/graphics/RectF;->bottom:F
 
-    .line 350
     move-object/from16 v0, p0
 
     iget-boolean v3, v0, Lcom/android/systemui/BatteryMeterView;->mUseStatusVsPlugged:Z
 
     if-eqz v3, :cond_b
 
-    .line 352
     move-object/from16 v0, v28
 
     iget-boolean v3, v0, Lcom/android/systemui/BatteryMeterView$BatteryTracker;->plugged:Z
@@ -1339,7 +1213,6 @@
     :cond_4
     const/16 v22, 0x1
 
-    .line 370
     :goto_2
     if-eqz v22, :cond_a
 
@@ -1349,7 +1222,6 @@
 
     move/from16 v16, v0
 
-    .line 371
     .local v16, "color":I
     :goto_3
     move-object/from16 v0, p0
@@ -1360,7 +1232,6 @@
 
     invoke-virtual {v3, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 382
     .end local v16    # "color":I
     :goto_4
     const/16 v3, 0x60
@@ -1369,10 +1240,8 @@
 
     if-lt v0, v3, :cond_d
 
-    .line 383
     const/high16 v17, 0x3f800000    # 1.0f
 
-    .line 388
     :cond_5
     :goto_5
     const/high16 v3, 0x3f800000    # 1.0f
@@ -1389,7 +1258,6 @@
 
     move/from16 v21, v0
 
-    .line 392
     .local v21, "levelTop":F
     :goto_6
     move-object/from16 v0, p0
@@ -1398,7 +1266,6 @@
 
     invoke-virtual {v3}, Landroid/graphics/Path;->reset()V
 
-    .line 393
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
@@ -1417,7 +1284,6 @@
 
     invoke-virtual {v3, v5, v6}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 394
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
@@ -1436,7 +1302,6 @@
 
     invoke-virtual {v3, v5, v6}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 395
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
@@ -1455,7 +1320,6 @@
 
     invoke-virtual {v3, v5, v6}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 396
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
@@ -1474,7 +1338,6 @@
 
     invoke-virtual {v3, v5, v6}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 397
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
@@ -1493,7 +1356,6 @@
 
     invoke-virtual {v3, v5, v6}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 398
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
@@ -1512,7 +1374,6 @@
 
     invoke-virtual {v3, v5, v6}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 399
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
@@ -1531,7 +1392,6 @@
 
     invoke-virtual {v3, v5, v6}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 400
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
@@ -1550,7 +1410,6 @@
 
     invoke-virtual {v3, v5, v6}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 401
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
@@ -1569,7 +1428,6 @@
 
     invoke-virtual {v3, v5, v6}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 403
     move-object/from16 v0, p0
 
     iget-boolean v3, v0, Lcom/android/systemui/BatteryMeterView;->mUseStatusVsPlugged:Z
@@ -1591,7 +1449,6 @@
 
     if-eqz v22, :cond_11
 
-    .line 411
     :cond_7
     move-object/from16 v0, p0
 
@@ -1613,7 +1470,6 @@
 
     add-float v11, v3, v5
 
-    .line 412
     .local v11, "bl":F
     move-object/from16 v0, p0
 
@@ -1635,7 +1491,6 @@
 
     add-float v14, v3, v5
 
-    .line 413
     .local v14, "bt":F
     move-object/from16 v0, p0
 
@@ -1657,7 +1512,6 @@
 
     sub-float v13, v3, v5
 
-    .line 414
     .local v13, "br":F
     move-object/from16 v0, p0
 
@@ -1679,7 +1533,6 @@
 
     sub-float v10, v3, v5
 
-    .line 415
     .local v10, "bb":F
     move-object/from16 v0, p0
 
@@ -1721,7 +1574,6 @@
 
     if-eqz v3, :cond_10
 
-    .line 417
     :cond_8
     move-object/from16 v0, p0
 
@@ -1729,14 +1581,12 @@
 
     invoke-virtual {v3, v11, v14, v13, v10}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 418
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mBoltPath:Landroid/graphics/Path;
 
     invoke-virtual {v3}, Landroid/graphics/Path;->reset()V
 
-    .line 419
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mBoltPath:Landroid/graphics/Path;
@@ -1797,7 +1647,6 @@
 
     invoke-virtual {v3, v5, v6}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 422
     const/16 v19, 0x2
 
     .local v19, "i":I
@@ -1812,7 +1661,6 @@
 
     if-ge v0, v3, :cond_f
 
-    .line 423
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mBoltPath:Landroid/graphics/Path;
@@ -1871,12 +1719,10 @@
 
     invoke-virtual {v3, v5, v6}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 422
     add-int/lit8 v19, v19, 0x2
 
     goto :goto_7
 
-    .line 352
     .end local v10    # "bb":F
     .end local v11    # "bl":F
     .end local v13    # "br":F
@@ -1888,7 +1734,6 @@
 
     goto/16 :goto_2
 
-    .line 370
     :cond_a
     move-object/from16 v0, p0
 
@@ -1900,7 +1745,6 @@
 
     goto/16 :goto_3
 
-    .line 376
     :cond_b
     move-object/from16 v0, p0
 
@@ -1932,7 +1776,6 @@
 
     goto :goto_8
 
-    .line 384
     :cond_d
     move-object/from16 v0, p0
 
@@ -1942,12 +1785,10 @@
 
     if-gt v0, v3, :cond_5
 
-    .line 385
     const/16 v17, 0x0
 
     goto/16 :goto_5
 
-    .line 388
     :cond_e
     move-object/from16 v0, p0
 
@@ -1973,7 +1814,6 @@
 
     goto/16 :goto_6
 
-    .line 427
     .restart local v10    # "bb":F
     .restart local v11    # "bl":F
     .restart local v13    # "br":F
@@ -2041,7 +1881,6 @@
 
     invoke-virtual {v3, v5, v6}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 432
     .end local v19    # "i":I
     :cond_10
     move-object/from16 v0, p0
@@ -2068,7 +1907,6 @@
 
     div-float v12, v3, v5
 
-    .line 433
     .local v12, "boltPct":F
     const/4 v3, 0x0
 
@@ -2082,14 +1920,12 @@
 
     move-result v12
 
-    .line 434
     const v3, 0x3e99999a    # 0.3f
 
     cmpg-float v3, v12, v3
 
     if-gtz v3, :cond_13
 
-    .line 436
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mBoltPath:Landroid/graphics/Path;
@@ -2102,7 +1938,6 @@
 
     invoke-virtual {v0, v3, v5}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 444
     .end local v10    # "bb":F
     .end local v11    # "bl":F
     .end local v12    # "boltPct":F
@@ -2112,18 +1947,15 @@
     :goto_9
     const/16 v24, 0x0
 
-    .line 445
     .local v24, "pctOpaque":Z
     const/4 v7, 0x0
 
     .local v7, "pctX":F
     const/4 v8, 0x0
 
-    .line 446
     .local v8, "pctY":F
     const/4 v4, 0x0
 
-    .line 447
     .local v4, "pctText":Ljava/lang/String;
     move-object/from16 v0, v28
 
@@ -2153,7 +1985,6 @@
 
     if-ne v3, v5, :cond_14
 
-    .line 467
     :cond_12
     :goto_a
     move-object/from16 v0, p0
@@ -2168,7 +1999,6 @@
 
     invoke-virtual {v0, v3, v5}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 470
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mFrame:Landroid/graphics/RectF;
@@ -2177,14 +2007,12 @@
 
     iput v0, v3, Landroid/graphics/RectF;->top:F
 
-    .line 471
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mClipPath:Landroid/graphics/Path;
 
     invoke-virtual {v3}, Landroid/graphics/Path;->reset()V
 
-    .line 472
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mClipPath:Landroid/graphics/Path;
@@ -2197,7 +2025,6 @@
 
     invoke-virtual {v3, v5, v6}, Landroid/graphics/Path;->addRect(Landroid/graphics/RectF;Landroid/graphics/Path$Direction;)V
 
-    .line 473
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
@@ -2210,7 +2037,6 @@
 
     invoke-virtual {v3, v5, v6}, Landroid/graphics/Path;->op(Landroid/graphics/Path;Landroid/graphics/Path$Op;)Z
 
-    .line 474
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
@@ -2223,14 +2049,12 @@
 
     invoke-virtual {v0, v3, v5}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 476
     move-object/from16 v0, v28
 
     iget-boolean v3, v0, Lcom/android/systemui/BatteryMeterView$BatteryTracker;->plugged:Z
 
     if-nez v3, :cond_0
 
-    .line 477
     move-object/from16 v0, p0
 
     iget v3, v0, Lcom/android/systemui/BatteryMeterView;->mCriticalLevel:I
@@ -2239,7 +2063,6 @@
 
     if-gt v0, v3, :cond_17
 
-    .line 479
     move-object/from16 v0, p0
 
     iget v3, v0, Lcom/android/systemui/BatteryMeterView;->mWidth:I
@@ -2250,7 +2073,6 @@
 
     mul-float v30, v3, v5
 
-    .line 480
     .local v30, "x":F
     move-object/from16 v0, p0
 
@@ -2268,7 +2090,6 @@
 
     mul-float v31, v3, v5
 
-    .line 481
     .local v31, "y":F
     move-object/from16 v0, p0
 
@@ -2288,7 +2109,6 @@
 
     goto/16 :goto_1
 
-    .line 439
     .end local v4    # "pctText":Ljava/lang/String;
     .end local v7    # "pctX":F
     .end local v8    # "pctY":F
@@ -2315,7 +2135,6 @@
 
     goto/16 :goto_9
 
-    .line 449
     .end local v10    # "bb":F
     .end local v11    # "bl":F
     .end local v12    # "boltPct":F
@@ -2340,7 +2159,6 @@
 
     invoke-virtual {v3, v5}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 450
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/systemui/BatteryMeterView;->mTextPaint:Landroid/graphics/Paint;
@@ -2364,7 +2182,6 @@
 
     invoke-virtual {v5, v3}, Landroid/graphics/Paint;->setTextSize(F)V
 
-    .line 453
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mTextPaint:Landroid/graphics/Paint;
@@ -2381,12 +2198,10 @@
 
     iput v3, v0, Lcom/android/systemui/BatteryMeterView;->mTextHeight:F
 
-    .line 454
     invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 455
     move-object/from16 v0, p0
 
     iget v3, v0, Lcom/android/systemui/BatteryMeterView;->mWidth:I
@@ -2397,7 +2212,6 @@
 
     mul-float v7, v3, v5
 
-    .line 456
     move-object/from16 v0, p0
 
     iget v3, v0, Lcom/android/systemui/BatteryMeterView;->mHeight:I
@@ -2414,25 +2228,21 @@
 
     mul-float v8, v3, v5
 
-    .line 457
     cmpl-float v3, v21, v8
 
     if-lez v3, :cond_16
 
     const/16 v24, 0x1
 
-    .line 458
     :goto_c
     if-nez v24, :cond_12
 
-    .line 459
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mTextPath:Landroid/graphics/Path;
 
     invoke-virtual {v3}, Landroid/graphics/Path;->reset()V
 
-    .line 460
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mTextPaint:Landroid/graphics/Paint;
@@ -2449,7 +2259,6 @@
 
     invoke-virtual/range {v3 .. v9}, Landroid/graphics/Paint;->getTextPath(Ljava/lang/String;IIFFLandroid/graphics/Path;)V
 
-    .line 462
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
@@ -2464,23 +2273,19 @@
 
     goto/16 :goto_a
 
-    .line 450
     :cond_15
     const/high16 v3, 0x3f000000    # 0.5f
 
     goto :goto_b
 
-    .line 457
     :cond_16
     const/16 v24, 0x0
 
     goto :goto_c
 
-    .line 482
     :cond_17
     if-eqz v24, :cond_0
 
-    .line 484
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView;->mTextPaint:Landroid/graphics/Paint;
@@ -2496,7 +2301,6 @@
     .locals 1
 
     .prologue
-    .line 491
     const/4 v0, 0x0
 
     return v0
@@ -2506,26 +2310,21 @@
     .locals 4
 
     .prologue
-    .line 159
     invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
 
-    .line 161
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 162
     .local v0, "filter":Landroid/content/IntentFilter;
     const-string v2, "android.intent.action.BATTERY_CHANGED"
 
     invoke-virtual {v0, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 163
     const-string v2, "com.android.systemui.BATTERY_LEVEL_TEST"
 
     invoke-virtual {v0, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 164
     invoke-virtual {p0}, Lcom/android/systemui/BatteryMeterView;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -2536,11 +2335,9 @@
 
     move-result-object v1
 
-    .line 165
     .local v1, "sticky":Landroid/content/Intent;
     if-eqz v1, :cond_0
 
-    .line 167
     iget-object v2, p0, Lcom/android/systemui/BatteryMeterView;->mTracker:Lcom/android/systemui/BatteryMeterView$BatteryTracker;
 
     invoke-virtual {p0}, Lcom/android/systemui/BatteryMeterView;->getContext()Landroid/content/Context;
@@ -2549,13 +2346,11 @@
 
     invoke-virtual {v2, v3, v1}, Lcom/android/systemui/BatteryMeterView$BatteryTracker;->onReceive(Landroid/content/Context;Landroid/content/Intent;)V
 
-    .line 169
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
 
     invoke-virtual {v2, p0}, Lcom/android/systemui/statusbar/policy/BatteryController;->addStateChangedCallback(Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;)V
 
-    .line 170
     return-void
 .end method
 
@@ -2566,7 +2361,6 @@
     .param p3, "charging"    # Z
 
     .prologue
-    .line 260
     return-void
 .end method
 
@@ -2574,10 +2368,8 @@
     .locals 2
 
     .prologue
-    .line 174
     invoke-super {p0}, Landroid/view/View;->onDetachedFromWindow()V
 
-    .line 176
     invoke-virtual {p0}, Lcom/android/systemui/BatteryMeterView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -2586,12 +2378,10 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 177
     iget-object v0, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
 
     invoke-virtual {v0, p0}, Lcom/android/systemui/statusbar/policy/BatteryController;->removeStateChangedCallback(Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;)V
 
-    .line 178
     return-void
 .end method
 
@@ -2599,7 +2389,6 @@
     .locals 1
 
     .prologue
-    .line 264
     iget-object v0, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/BatteryController;->isPowerSave()Z
@@ -2608,10 +2397,8 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/BatteryMeterView;->mPowerSaveEnabled:Z
 
-    .line 265
     invoke-virtual {p0}, Lcom/android/systemui/BatteryMeterView;->invalidate()V
 
-    .line 266
     return-void
 .end method
 
@@ -2623,13 +2410,10 @@
     .param p4, "oldh"    # I
 
     .prologue
-    .line 285
     iput p2, p0, Lcom/android/systemui/BatteryMeterView;->mHeight:I
 
-    .line 286
     iput p1, p0, Lcom/android/systemui/BatteryMeterView;->mWidth:I
 
-    .line 287
     iget-object v0, p0, Lcom/android/systemui/BatteryMeterView;->mWarningTextPaint:Landroid/graphics/Paint;
 
     int-to-float v1, p2
@@ -2640,7 +2424,6 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setTextSize(F)V
 
-    .line 288
     iget-object v0, p0, Lcom/android/systemui/BatteryMeterView;->mWarningTextPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0}, Landroid/graphics/Paint;->getFontMetrics()Landroid/graphics/Paint$FontMetrics;
@@ -2653,7 +2436,6 @@
 
     iput v0, p0, Lcom/android/systemui/BatteryMeterView;->mWarningTextHeight:F
 
-    .line 289
     return-void
 .end method
 
@@ -2662,10 +2444,8 @@
     .param p1, "batteryController"    # Lcom/android/systemui/statusbar/policy/BatteryController;
 
     .prologue
-    .line 253
     iput-object p1, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
 
-    .line 254
     iget-object v0, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/BatteryController;->isPowerSave()Z
@@ -2674,6 +2454,5 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/BatteryMeterView;->mPowerSaveEnabled:Z
 
-    .line 255
     return-void
 .end method

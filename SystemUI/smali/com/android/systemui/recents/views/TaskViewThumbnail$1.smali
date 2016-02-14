@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 61
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskViewThumbnail$1;->this$0:Lcom/android/systemui/recents/views/TaskViewThumbnail;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 64
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskViewThumbnail$1;->this$0:Lcom/android/systemui/recents/views/TaskViewThumbnail;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -56,11 +54,9 @@
 
     iput v0, v1, Lcom/android/systemui/recents/views/TaskViewThumbnail;->mThumbnailAlpha:F
 
-    .line 65
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskViewThumbnail$1;->this$0:Lcom/android/systemui/recents/views/TaskViewThumbnail;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskViewThumbnail;->updateThumbnailPaintFilter()V
 
-    .line 66
     return-void
 .end method

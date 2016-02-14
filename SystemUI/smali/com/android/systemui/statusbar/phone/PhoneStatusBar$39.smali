@@ -34,7 +34,6 @@
     .locals 0
 
     .prologue
-    .line 3538
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$39;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$39;->val$keyguardShowing:Z
@@ -58,26 +57,22 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 3541
     new-instance v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$39$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$39$1;-><init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar$39;)V
 
     invoke-static {v0}, Landroid/os/AsyncTask;->execute(Ljava/lang/Runnable;)V
 
-    .line 3558
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$39;->val$dismissShade:Z
 
     if-eqz v0, :cond_0
 
-    .line 3559
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$39;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->animateCollapsePanels(IZ)V
 
-    .line 3562
     :cond_0
     return v2
 .end method

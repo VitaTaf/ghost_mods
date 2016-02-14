@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 100
     iput-object p1, p0, Lcom/android/systemui/SearchPanelView$1;->this$0:Lcom/android/systemui/SearchPanelView;
 
     iput-object p2, p0, Lcom/android/systemui/SearchPanelView$1;->val$intent:Landroid/content/Intent;
@@ -48,7 +47,6 @@
     .locals 5
 
     .prologue
-    .line 103
     iget-object v0, p0, Lcom/android/systemui/SearchPanelView$1;->this$0:Lcom/android/systemui/SearchPanelView;
 
     # getter for: Lcom/android/systemui/SearchPanelView;->mContext:Landroid/content/Context;
@@ -72,6 +70,5 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/Context;->startActivityAsUser(Landroid/content/Intent;Landroid/os/Bundle;Landroid/os/UserHandle;)V
 
-    .line 105
     return-void
 .end method

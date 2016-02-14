@@ -25,10 +25,8 @@
     .locals 2
 
     .prologue
-    .line 358
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/QSTileHost$Observer;->this$0:Lcom/android/systemui/statusbar/phone/QSTileHost;
 
-    .line 359
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -39,7 +37,6 @@
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 360
     return-void
 .end method
 
@@ -51,13 +48,11 @@
     .param p2, "uri"    # Landroid/net/Uri;
 
     .prologue
-    .line 373
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost$Observer;->this$0:Lcom/android/systemui/statusbar/phone/QSTileHost;
 
     # invokes: Lcom/android/systemui/statusbar/phone/QSTileHost;->recreateTiles()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/QSTileHost;->access$000(Lcom/android/systemui/statusbar/phone/QSTileHost;)V
 
-    .line 374
     return-void
 .end method
 
@@ -65,12 +60,10 @@
     .locals 4
 
     .prologue
-    .line 363
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost$Observer;->mRegistered:Z
 
     if-eqz v0, :cond_0
 
-    .line 364
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost$Observer;->this$0:Lcom/android/systemui/statusbar/phone/QSTileHost;
 
     # getter for: Lcom/android/systemui/statusbar/phone/QSTileHost;->mContext:Landroid/content/Context;
@@ -84,7 +77,6 @@
 
     invoke-virtual {v0, p0}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 366
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost$Observer;->this$0:Lcom/android/systemui/statusbar/phone/QSTileHost;
 
@@ -118,11 +110,9 @@
 
     invoke-virtual {v0, v1, v2, p0, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 368
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost$Observer;->mRegistered:Z
 
-    .line 369
     return-void
 .end method

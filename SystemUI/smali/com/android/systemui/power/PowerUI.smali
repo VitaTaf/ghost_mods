@@ -53,7 +53,6 @@
     .locals 2
 
     .prologue
-    .line 44
     const-string v0, "PowerUI"
 
     const/4 v1, 0x3
@@ -73,17 +72,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 42
     invoke-direct {p0}, Lcom/android/systemui/SystemUI;-><init>()V
 
-    .line 46
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/power/PowerUI;->mHandler:Landroid/os/Handler;
 
-    .line 47
     new-instance v0, Lcom/android/systemui/power/PowerUI$Receiver;
 
     const/4 v1, 0x0
@@ -92,38 +88,30 @@
 
     iput-object v0, p0, Lcom/android/systemui/power/PowerUI;->mReceiver:Lcom/android/systemui/power/PowerUI$Receiver;
 
-    .line 51
     const/16 v0, 0x64
 
     iput v0, p0, Lcom/android/systemui/power/PowerUI;->mBatteryLevel:I
 
-    .line 52
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/systemui/power/PowerUI;->mBatteryStatus:I
 
-    .line 53
     iput v2, p0, Lcom/android/systemui/power/PowerUI;->mPlugType:I
 
-    .line 54
     iput v2, p0, Lcom/android/systemui/power/PowerUI;->mInvalidCharger:I
 
-    .line 57
     const/4 v0, 0x2
 
     new-array v0, v0, [I
 
     iput-object v0, p0, Lcom/android/systemui/power/PowerUI;->mLowBatteryReminderLevels:[I
 
-    .line 59
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Lcom/android/systemui/power/PowerUI;->mScreenOffTime:J
 
-    .line 64
     iput v2, p0, Lcom/android/systemui/power/PowerUI;->mChargeRate:I
 
-    .line 301
     return-void
 .end method
 
@@ -132,7 +120,6 @@
     .param p0, "x0"    # Lcom/android/systemui/power/PowerUI;
 
     .prologue
-    .line 42
     iget-object v0, p0, Lcom/android/systemui/power/PowerUI;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -143,7 +130,6 @@
     .param p0, "x0"    # Lcom/android/systemui/power/PowerUI;
 
     .prologue
-    .line 42
     iget v0, p0, Lcom/android/systemui/power/PowerUI;->mChargeRate:I
 
     return v0
@@ -155,7 +141,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 42
     iput p1, p0, Lcom/android/systemui/power/PowerUI;->mChargeRate:I
 
     return p1
@@ -166,7 +151,6 @@
     .param p0, "x0"    # Lcom/android/systemui/power/PowerUI;
 
     .prologue
-    .line 42
     iget v0, p0, Lcom/android/systemui/power/PowerUI;->mLowBatteryAlertCloseLevel:I
 
     return v0
@@ -177,7 +161,6 @@
     .param p0, "x0"    # Lcom/android/systemui/power/PowerUI;
 
     .prologue
-    .line 42
     iget-object v0, p0, Lcom/android/systemui/power/PowerUI;->mLowBatteryReminderLevels:[I
 
     return-object v0
@@ -188,7 +171,6 @@
     .param p0, "x0"    # Lcom/android/systemui/power/PowerUI;
 
     .prologue
-    .line 42
     iget-wide v0, p0, Lcom/android/systemui/power/PowerUI;->mScreenOffTime:J
 
     return-wide v0
@@ -200,7 +182,6 @@
     .param p1, "x1"    # J
 
     .prologue
-    .line 42
     iput-wide p1, p0, Lcom/android/systemui/power/PowerUI;->mScreenOffTime:J
 
     return-wide p1
@@ -211,7 +192,6 @@
     .param p0, "x0"    # Lcom/android/systemui/power/PowerUI;
 
     .prologue
-    .line 42
     iget-object v0, p0, Lcom/android/systemui/power/PowerUI;->mWarnings:Lcom/android/systemui/power/PowerUI$WarningsUI;
 
     return-object v0
@@ -222,7 +202,6 @@
     .param p0, "x0"    # Lcom/android/systemui/power/PowerUI;
 
     .prologue
-    .line 42
     iget-boolean v0, p0, Lcom/android/systemui/power/PowerUI;->mShowSlowChargerUI:Z
 
     return v0
@@ -233,7 +212,6 @@
     .param p0, "x0"    # Lcom/android/systemui/power/PowerUI;
 
     .prologue
-    .line 42
     iget-boolean v0, p0, Lcom/android/systemui/power/PowerUI;->mShowTurboChargerUI:Z
 
     return v0
@@ -244,7 +222,6 @@
     .param p0, "x0"    # Lcom/android/systemui/power/PowerUI;
 
     .prologue
-    .line 42
     iget-object v0, p0, Lcom/android/systemui/power/PowerUI;->mPowerManager:Landroid/os/PowerManager;
 
     return-object v0
@@ -256,7 +233,6 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 42
     invoke-direct {p0, p1}, Lcom/android/systemui/power/PowerUI;->setSaverMode(Z)V
 
     return-void
@@ -267,7 +243,6 @@
     .param p0, "x0"    # Lcom/android/systemui/power/PowerUI;
 
     .prologue
-    .line 42
     iget v0, p0, Lcom/android/systemui/power/PowerUI;->mBatteryLevel:I
 
     return v0
@@ -279,7 +254,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 42
     iput p1, p0, Lcom/android/systemui/power/PowerUI;->mBatteryLevel:I
 
     return p1
@@ -290,7 +264,6 @@
     .param p0, "x0"    # Lcom/android/systemui/power/PowerUI;
 
     .prologue
-    .line 42
     iget v0, p0, Lcom/android/systemui/power/PowerUI;->mBatteryStatus:I
 
     return v0
@@ -302,7 +275,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 42
     iput p1, p0, Lcom/android/systemui/power/PowerUI;->mBatteryStatus:I
 
     return p1
@@ -313,7 +285,6 @@
     .param p0, "x0"    # Lcom/android/systemui/power/PowerUI;
 
     .prologue
-    .line 42
     iget v0, p0, Lcom/android/systemui/power/PowerUI;->mPlugType:I
 
     return v0
@@ -325,7 +296,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 42
     iput p1, p0, Lcom/android/systemui/power/PowerUI;->mPlugType:I
 
     return p1
@@ -336,7 +306,6 @@
     .param p0, "x0"    # Lcom/android/systemui/power/PowerUI;
 
     .prologue
-    .line 42
     iget v0, p0, Lcom/android/systemui/power/PowerUI;->mInvalidCharger:I
 
     return v0
@@ -348,7 +317,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 42
     iput p1, p0, Lcom/android/systemui/power/PowerUI;->mInvalidCharger:I
 
     return p1
@@ -360,7 +328,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 42
     invoke-direct {p0, p1}, Lcom/android/systemui/power/PowerUI;->findBatteryLevelBucket(I)I
 
     move-result v0
@@ -373,7 +340,6 @@
     .param p0, "x0"    # Lcom/android/systemui/power/PowerUI;
 
     .prologue
-    .line 42
     iget v0, p0, Lcom/android/systemui/power/PowerUI;->mBatteryLevelWhenPlugged:I
 
     return v0
@@ -385,7 +351,6 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 42
     iput p1, p0, Lcom/android/systemui/power/PowerUI;->mBatteryLevelWhenPlugged:I
 
     return p1
@@ -398,20 +363,16 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 133
     iget v3, p0, Lcom/android/systemui/power/PowerUI;->mLowBatteryAlertCloseLevel:I
 
     if-lt p1, v3, :cond_1
 
-    .line 134
     const/4 v2, 0x1
 
-    .line 142
     :cond_0
     :goto_0
     return v2
 
-    .line 136
     :cond_1
     iget-object v3, p0, Lcom/android/systemui/power/PowerUI;->mLowBatteryReminderLevels:[I
 
@@ -419,12 +380,10 @@
 
     if-gt p1, v3, :cond_0
 
-    .line 139
     iget-object v2, p0, Lcom/android/systemui/power/PowerUI;->mLowBatteryReminderLevels:[I
 
     array-length v0, v2
 
-    .line 140
     .local v0, "N":I
     add-int/lit8 v1, v0, -0x1
 
@@ -432,25 +391,21 @@
     :goto_1
     if-ltz v1, :cond_3
 
-    .line 141
     iget-object v2, p0, Lcom/android/systemui/power/PowerUI;->mLowBatteryReminderLevels:[I
 
     aget v2, v2, v1
 
     if-gt p1, v2, :cond_2
 
-    .line 142
     rsub-int/lit8 v2, v1, -0x1
 
     goto :goto_0
 
-    .line 140
     :cond_2
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_1
 
-    .line 145
     :cond_3
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -466,12 +421,10 @@
     .param p1, "mode"    # Z
 
     .prologue
-    .line 96
     iget-object v0, p0, Lcom/android/systemui/power/PowerUI;->mWarnings:Lcom/android/systemui/power/PowerUI$WarningsUI;
 
     invoke-interface {v0, p1}, Lcom/android/systemui/power/PowerUI$WarningsUI;->showSaverMode(Z)V
 
-    .line 97
     return-void
 .end method
 
@@ -484,22 +437,18 @@
     .param p3, "args"    # [Ljava/lang/String;
 
     .prologue
-    .line 273
     const-string v0, "mLowBatteryAlertCloseLevel="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 274
     iget v0, p0, Lcom/android/systemui/power/PowerUI;->mLowBatteryAlertCloseLevel:I
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 275
     const-string v0, "mLowBatteryReminderLevels="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 276
     iget-object v0, p0, Lcom/android/systemui/power/PowerUI;->mLowBatteryReminderLevels:[I
 
     invoke-static {v0}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
@@ -508,12 +457,10 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 277
     const-string v0, "mBatteryLevel="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 278
     iget v0, p0, Lcom/android/systemui/power/PowerUI;->mBatteryLevel:I
 
     invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -522,12 +469,10 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 279
     const-string v0, "mBatteryStatus="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 280
     iget v0, p0, Lcom/android/systemui/power/PowerUI;->mBatteryStatus:I
 
     invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -536,12 +481,10 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 281
     const-string v0, "mPlugType="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 282
     iget v0, p0, Lcom/android/systemui/power/PowerUI;->mPlugType:I
 
     invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -550,12 +493,10 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 283
     const-string v0, "mInvalidCharger="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 284
     iget v0, p0, Lcom/android/systemui/power/PowerUI;->mInvalidCharger:I
 
     invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -564,17 +505,14 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 285
     const-string v0, "mScreenOffTime="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 286
     iget-wide v0, p0, Lcom/android/systemui/power/PowerUI;->mScreenOffTime:J
 
     invoke-virtual {p2, v0, v1}, Ljava/io/PrintWriter;->print(J)V
 
-    .line 287
     iget-wide v0, p0, Lcom/android/systemui/power/PowerUI;->mScreenOffTime:J
 
     const-wide/16 v2, 0x0
@@ -583,12 +521,10 @@
 
     if-ltz v0, :cond_0
 
-    .line 288
     const-string v0, " ("
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 289
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
@@ -599,21 +535,17 @@
 
     invoke-virtual {p2, v0, v1}, Ljava/io/PrintWriter;->print(J)V
 
-    .line 290
     const-string v0, " ago)"
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 292
     :cond_0
     invoke-virtual {p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 293
     const-string v0, "soundTimeout="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 294
     iget-object v0, p0, Lcom/android/systemui/power/PowerUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -630,12 +562,10 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 296
     const-string v0, "bucket: "
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 297
     iget v0, p0, Lcom/android/systemui/power/PowerUI;->mBatteryLevel:I
 
     invoke-direct {p0, v0}, Lcom/android/systemui/power/PowerUI;->findBatteryLevelBucket(I)I
@@ -648,12 +578,10 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 298
     iget-object v0, p0, Lcom/android/systemui/power/PowerUI;->mWarnings:Lcom/android/systemui/power/PowerUI$WarningsUI;
 
     invoke-interface {v0, p2}, Lcom/android/systemui/power/PowerUI$WarningsUI;->dump(Ljava/io/PrintWriter;)V
 
-    .line 299
     return-void
 .end method
 
@@ -661,7 +589,6 @@
     .locals 5
 
     .prologue
-    .line 69
     iget-object v2, p0, Lcom/android/systemui/power/PowerUI;->mContext:Landroid/content/Context;
 
     const-string v3, "power"
@@ -674,7 +601,6 @@
 
     iput-object v2, p0, Lcom/android/systemui/power/PowerUI;->mPowerManager:Landroid/os/PowerManager;
 
-    .line 70
     iget-object v2, p0, Lcom/android/systemui/power/PowerUI;->mPowerManager:Landroid/os/PowerManager;
 
     invoke-virtual {v2}, Landroid/os/PowerManager;->isScreenOn()Z
@@ -688,7 +614,6 @@
     :goto_0
     iput-wide v2, p0, Lcom/android/systemui/power/PowerUI;->mScreenOffTime:J
 
-    .line 71
     new-instance v3, Lcom/android/systemui/power/PowerNotificationWarnings;
 
     iget-object v4, p0, Lcom/android/systemui/power/PowerUI;->mContext:Landroid/content/Context;
@@ -705,14 +630,12 @@
 
     iput-object v3, p0, Lcom/android/systemui/power/PowerUI;->mWarnings:Lcom/android/systemui/power/PowerUI$WarningsUI;
 
-    .line 73
     new-instance v0, Lcom/android/systemui/power/PowerUI$1;
 
     iget-object v2, p0, Lcom/android/systemui/power/PowerUI;->mHandler:Landroid/os/Handler;
 
     invoke-direct {v0, p0, v2}, Lcom/android/systemui/power/PowerUI$1;-><init>(Lcom/android/systemui/power/PowerUI;Landroid/os/Handler;)V
 
-    .line 79
     .local v0, "obs":Landroid/database/ContentObserver;
     iget-object v2, p0, Lcom/android/systemui/power/PowerUI;->mContext:Landroid/content/Context;
 
@@ -720,7 +643,6 @@
 
     move-result-object v1
 
-    .line 80
     .local v1, "resolver":Landroid/content/ContentResolver;
     const-string v2, "low_power_trigger_level"
 
@@ -734,10 +656,8 @@
 
     invoke-virtual {v1, v2, v3, v0, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 83
     invoke-virtual {p0}, Lcom/android/systemui/power/PowerUI;->updateBatteryWarningLevels()V
 
-    .line 86
     iget-object v2, p0, Lcom/android/systemui/power/PowerUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -752,7 +672,6 @@
 
     iput-boolean v2, p0, Lcom/android/systemui/power/PowerUI;->mShowSlowChargerUI:Z
 
-    .line 88
     iget-object v2, p0, Lcom/android/systemui/power/PowerUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -767,15 +686,12 @@
 
     iput-boolean v2, p0, Lcom/android/systemui/power/PowerUI;->mShowTurboChargerUI:Z
 
-    .line 92
     iget-object v2, p0, Lcom/android/systemui/power/PowerUI;->mReceiver:Lcom/android/systemui/power/PowerUI$Receiver;
 
     invoke-virtual {v2}, Lcom/android/systemui/power/PowerUI$Receiver;->init()V
 
-    .line 93
     return-void
 
-    .line 70
     .end local v0    # "obs":Landroid/database/ContentObserver;
     .end local v1    # "resolver":Landroid/content/ContentResolver;
     :cond_0
@@ -792,7 +708,6 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 100
     iget-object v4, p0, Lcom/android/systemui/power/PowerUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -805,7 +720,6 @@
 
     move-result v0
 
-    .line 103
     .local v0, "critLevel":I
     iget-object v4, p0, Lcom/android/systemui/power/PowerUI;->mContext:Landroid/content/Context;
 
@@ -813,7 +727,6 @@
 
     move-result-object v2
 
-    .line 104
     .local v2, "resolver":Landroid/content/ContentResolver;
     iget-object v4, p0, Lcom/android/systemui/power/PowerUI;->mContext:Landroid/content/Context;
 
@@ -827,7 +740,6 @@
 
     move-result v1
 
-    .line 106
     .local v1, "defWarnLevel":I
     const-string v4, "low_power_trigger_level"
 
@@ -835,34 +747,27 @@
 
     move-result v3
 
-    .line 108
     .local v3, "warnLevel":I
     if-nez v3, :cond_0
 
-    .line 109
     move v3, v1
 
-    .line 111
     :cond_0
     if-ge v3, v0, :cond_1
 
-    .line 112
     move v3, v0
 
-    .line 115
     :cond_1
     iget-object v4, p0, Lcom/android/systemui/power/PowerUI;->mLowBatteryReminderLevels:[I
 
     aput v3, v4, v6
 
-    .line 116
     iget-object v4, p0, Lcom/android/systemui/power/PowerUI;->mLowBatteryReminderLevels:[I
 
     const/4 v5, 0x1
 
     aput v0, v4, v5
 
-    .line 117
     iget-object v4, p0, Lcom/android/systemui/power/PowerUI;->mLowBatteryReminderLevels:[I
 
     aget v4, v4, v6
@@ -883,6 +788,5 @@
 
     iput v4, p0, Lcom/android/systemui/power/PowerUI;->mLowBatteryAlertCloseLevel:I
 
-    .line 120
     return-void
 .end method

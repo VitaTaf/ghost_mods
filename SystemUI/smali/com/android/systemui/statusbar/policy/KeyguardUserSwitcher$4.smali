@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 224
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher$4;->this$0:Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher;
 
     invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
@@ -37,12 +36,10 @@
     .locals 1
 
     .prologue
-    .line 227
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher$4;->this$0:Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher;
 
     # invokes: Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher;->refresh()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher;->access$400(Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher;)V
 
-    .line 228
     return-void
 .end method

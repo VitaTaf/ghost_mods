@@ -29,7 +29,6 @@
     .locals 2
 
     .prologue
-    .line 233
     iput-object p1, p0, Lcom/android/systemui/doze/DozeService$2;->this$0:Lcom/android/systemui/doze/DozeService;
 
     iput-wide p2, p0, Lcom/android/systemui/doze/DozeService$2;->val$start:J
@@ -56,17 +55,14 @@
 
     const/4 v3, 0x0
 
-    .line 236
     if-ne p1, v2, :cond_0
 
-    .line 237
     .local v2, "isNear":Z
     :goto_0
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
-    .line 238
     .local v0, "end":J
     iget-wide v4, p0, Lcom/android/systemui/doze/DozeService$2;->val$start:J
 
@@ -76,12 +72,10 @@
 
     invoke-static {v2, v4, v5, v6}, Lcom/android/systemui/doze/DozeLog;->traceProximityResult(ZJI)V
 
-    .line 239
     iget-boolean v4, p0, Lcom/android/systemui/doze/DozeService$2;->val$nonBlocking:Z
 
     if-eqz v4, :cond_1
 
-    .line 252
     :goto_1
     return-void
 
@@ -90,22 +84,18 @@
     :cond_0
     move v2, v3
 
-    .line 236
     goto :goto_0
 
-    .line 244
     .restart local v0    # "end":J
     .restart local v2    # "isNear":Z
     :cond_1
     if-eqz v2, :cond_2
 
-    .line 245
     iget-object v4, p0, Lcom/android/systemui/doze/DozeService$2;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # setter for: Lcom/android/systemui/doze/DozeService;->mPulsing:Z
     invoke-static {v4, v3}, Lcom/android/systemui/doze/DozeService;->access$202(Lcom/android/systemui/doze/DozeService;Z)Z
 
-    .line 246
     iget-object v3, p0, Lcom/android/systemui/doze/DozeService$2;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -117,7 +107,6 @@
 
     goto :goto_1
 
-    .line 251
     :cond_2
     iget-object v3, p0, Lcom/android/systemui/doze/DozeService$2;->this$0:Lcom/android/systemui/doze/DozeService;
 

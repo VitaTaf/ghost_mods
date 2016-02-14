@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 252
     iput-object p1, p0, Lcom/android/systemui/qs/QSPanel$2;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     iput-object p2, p0, Lcom/android/systemui/qs/QSPanel$2;->val$r:Lcom/android/systemui/qs/QSPanel$TileRecord;
@@ -45,12 +44,10 @@
     .param p1, "announcement"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 279
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$2;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/qs/QSPanel;->announceForAccessibility(Ljava/lang/CharSequence;)V
 
-    .line 280
     return-void
 .end method
 
@@ -59,12 +56,10 @@
     .param p1, "state"    # Z
 
     .prologue
-    .line 271
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$2;->val$r:Lcom/android/systemui/qs/QSPanel$TileRecord;
 
     iput-boolean p1, v0, Lcom/android/systemui/qs/QSPanel$TileRecord;->scanState:Z
 
-    .line 272
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$2;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     # getter for: Lcom/android/systemui/qs/QSPanel;->mDetailRecord:Lcom/android/systemui/qs/QSPanel$Record;
@@ -76,7 +71,6 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 273
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$2;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel$2;->val$r:Lcom/android/systemui/qs/QSPanel$TileRecord;
@@ -86,7 +80,6 @@
     # invokes: Lcom/android/systemui/qs/QSPanel;->fireScanStateChanged(Z)V
     invoke-static {v0, v1}, Lcom/android/systemui/qs/QSPanel;->access$700(Lcom/android/systemui/qs/QSPanel;Z)V
 
-    .line 275
     :cond_0
     return-void
 .end method
@@ -96,7 +89,6 @@
     .param p1, "show"    # Z
 
     .prologue
-    .line 261
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$2;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel$2;->val$r:Lcom/android/systemui/qs/QSPanel$TileRecord;
@@ -104,7 +96,6 @@
     # invokes: Lcom/android/systemui/qs/QSPanel;->showDetail(ZLcom/android/systemui/qs/QSPanel$Record;)V
     invoke-static {v0, p1, v1}, Lcom/android/systemui/qs/QSPanel;->access$400(Lcom/android/systemui/qs/QSPanel;ZLcom/android/systemui/qs/QSPanel$Record;)V
 
-    .line 262
     return-void
 .end method
 
@@ -113,14 +104,12 @@
     .param p1, "state"    # Lcom/android/systemui/qs/QSTile$State;
 
     .prologue
-    .line 255
     iget-boolean v1, p1, Lcom/android/systemui/qs/QSTile$State;->visible:Z
 
     if-eqz v1, :cond_0
 
     const/4 v0, 0x0
 
-    .line 256
     .local v0, "visibility":I
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel$2;->this$0:Lcom/android/systemui/qs/QSPanel;
@@ -132,17 +121,14 @@
     # invokes: Lcom/android/systemui/qs/QSPanel;->setTileVisibility(Landroid/view/View;I)V
     invoke-static {v1, v2, v0}, Lcom/android/systemui/qs/QSPanel;->access$300(Lcom/android/systemui/qs/QSPanel;Landroid/view/View;I)V
 
-    .line 257
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel$2;->val$r:Lcom/android/systemui/qs/QSPanel$TileRecord;
 
     iget-object v1, v1, Lcom/android/systemui/qs/QSPanel$TileRecord;->tileView:Lcom/android/systemui/qs/QSTileView;
 
     invoke-virtual {v1, p1}, Lcom/android/systemui/qs/QSTileView;->onStateChanged(Lcom/android/systemui/qs/QSTile$State;)V
 
-    .line 258
     return-void
 
-    .line 255
     .end local v0    # "visibility":I
     :cond_0
     const/16 v0, 0x8
@@ -155,7 +141,6 @@
     .param p1, "state"    # Z
 
     .prologue
-    .line 265
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$2;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     # getter for: Lcom/android/systemui/qs/QSPanel;->mDetailRecord:Lcom/android/systemui/qs/QSPanel$Record;
@@ -167,13 +152,11 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 266
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$2;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     # invokes: Lcom/android/systemui/qs/QSPanel;->fireToggleStateChanged(Z)V
     invoke-static {v0, p1}, Lcom/android/systemui/qs/QSPanel;->access$600(Lcom/android/systemui/qs/QSPanel;Z)V
 
-    .line 268
     :cond_0
     return-void
 .end method

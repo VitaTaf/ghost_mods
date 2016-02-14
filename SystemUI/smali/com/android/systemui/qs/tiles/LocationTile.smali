@@ -57,10 +57,8 @@
     .param p1, "host"    # Lcom/android/systemui/qs/QSTile$Host;
 
     .prologue
-    .line 38
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
-    .line 28
     new-instance v0, Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
     const v1, 0x7f0200bb
@@ -69,7 +67,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mEnable:Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
-    .line 30
     new-instance v0, Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
     const v1, 0x7f0200b9
@@ -78,7 +75,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mDisable:Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
-    .line 35
     new-instance v0, Lcom/android/systemui/qs/tiles/LocationTile$Callback;
 
     const/4 v1, 0x0
@@ -87,21 +83,18 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mCallback:Lcom/android/systemui/qs/tiles/LocationTile$Callback;
 
-    .line 39
     invoke-interface {p1}, Lcom/android/systemui/qs/QSTile$Host;->getLocationController()Lcom/android/systemui/statusbar/policy/LocationController;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mController:Lcom/android/systemui/statusbar/policy/LocationController;
 
-    .line 40
     invoke-interface {p1}, Lcom/android/systemui/qs/QSTile$Host;->getKeyguardMonitor()Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mKeyguard:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
-    .line 41
     return-void
 .end method
 
@@ -110,7 +103,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/LocationTile;
 
     .prologue
-    .line 26
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/LocationTile;->refreshState()V
 
     return-void
@@ -121,7 +113,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/LocationTile;
 
     .prologue
-    .line 26
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/LocationTile;->refreshState()V
 
     return-void
@@ -133,7 +124,6 @@
     .locals 2
 
     .prologue
-    .line 91
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
     check-cast v0, Lcom/android/systemui/qs/QSTile$BooleanState;
@@ -142,7 +132,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 92
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
     const v1, 0x7f0c00a9
@@ -151,7 +140,6 @@
 
     move-result-object v0
 
-    .line 94
     :goto_0
     return-object v0
 
@@ -173,7 +161,6 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 61
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
     check-cast v1, Lcom/android/systemui/qs/QSTile$BooleanState;
@@ -188,7 +175,6 @@
 
     move-result v0
 
-    .line 62
     .local v0, "wasEnabled":Z
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mController:Lcom/android/systemui/statusbar/policy/LocationController;
 
@@ -199,20 +185,16 @@
     :goto_0
     invoke-interface {v3, v1}, Lcom/android/systemui/statusbar/policy/LocationController;->setLocationEnabled(Z)Z
 
-    .line 63
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mEnable:Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/qs/QSTile$AnimationIcon;->setAllowAnimation(Z)V
 
-    .line 64
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mDisable:Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/qs/QSTile$AnimationIcon;->setAllowAnimation(Z)V
 
-    .line 65
     return-void
 
-    .line 62
     :cond_0
     const/4 v1, 0x0
 
@@ -227,14 +209,12 @@
     .prologue
     const v2, 0x7f0c00da
 
-    .line 69
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mController:Lcom/android/systemui/statusbar/policy/LocationController;
 
     invoke-interface {v1}, Lcom/android/systemui/statusbar/policy/LocationController;->isLocationEnabled()Z
 
     move-result v0
 
-    .line 74
     .local v0, "locationEnabled":Z
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mKeyguard:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
@@ -249,18 +229,14 @@
     :goto_0
     iput-boolean v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->visible:Z
 
-    .line 75
     iput-boolean v0, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
 
-    .line 76
     if-eqz v0, :cond_1
 
-    .line 77
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mEnable:Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->icon:Lcom/android/systemui/qs/QSTile$Icon;
 
-    .line 78
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -269,7 +245,6 @@
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->label:Ljava/lang/String;
 
-    .line 79
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
     const v2, 0x7f0c00a7
@@ -280,23 +255,19 @@
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->contentDescription:Ljava/lang/String;
 
-    .line 87
     :goto_1
     return-void
 
-    .line 74
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 82
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mDisable:Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->icon:Lcom/android/systemui/qs/QSTile$Icon;
 
-    .line 83
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -305,7 +276,6 @@
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->label:Ljava/lang/String;
 
-    .line 84
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
     const v2, 0x7f0c00a6
@@ -325,7 +295,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 26
     check-cast p1, Lcom/android/systemui/qs/QSTile$BooleanState;
 
     .end local p1    # "x0":Lcom/android/systemui/qs/QSTile$State;
@@ -338,7 +307,6 @@
     .locals 1
 
     .prologue
-    .line 45
     new-instance v0, Lcom/android/systemui/qs/QSTile$BooleanState;
 
     invoke-direct {v0}, Lcom/android/systemui/qs/QSTile$BooleanState;-><init>()V
@@ -350,7 +318,6 @@
     .locals 1
 
     .prologue
-    .line 26
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/LocationTile;->newTileState()Lcom/android/systemui/qs/QSTile$BooleanState;
 
     move-result-object v0
@@ -363,28 +330,23 @@
     .param p1, "listening"    # Z
 
     .prologue
-    .line 50
     if-eqz p1, :cond_0
 
-    .line 51
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mController:Lcom/android/systemui/statusbar/policy/LocationController;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mCallback:Lcom/android/systemui/qs/tiles/LocationTile$Callback;
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/LocationController;->addSettingsChangedCallback(Lcom/android/systemui/statusbar/policy/LocationController$LocationSettingsChangeCallback;)V
 
-    .line 52
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mKeyguard:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mCallback:Lcom/android/systemui/qs/tiles/LocationTile$Callback;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/policy/KeyguardMonitor;->addCallback(Lcom/android/systemui/statusbar/policy/KeyguardMonitor$Callback;)V
 
-    .line 57
     :goto_0
     return-void
 
-    .line 54
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mController:Lcom/android/systemui/statusbar/policy/LocationController;
 
@@ -392,7 +354,6 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/LocationController;->removeSettingsChangedCallback(Lcom/android/systemui/statusbar/policy/LocationController$LocationSettingsChangeCallback;)V
 
-    .line 55
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mKeyguard:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mCallback:Lcom/android/systemui/qs/tiles/LocationTile$Callback;

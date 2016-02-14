@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 364
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$6;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 367
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$6;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -57,6 +55,5 @@
     # setter for: Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mTranslation:F
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->access$602(Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;F)F
 
-    .line 368
     return-void
 .end method

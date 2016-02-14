@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 109
     iput-object p1, p0, Lcom/android/keyguard/KeyguardRemoteLockView$CheckRemoteLock$1;->this$1:Lcom/android/keyguard/KeyguardRemoteLockView$CheckRemoteLock;
 
     iput-boolean p2, p0, Lcom/android/keyguard/KeyguardRemoteLockView$CheckRemoteLock$1;->val$result:Z
@@ -44,13 +43,11 @@
     .locals 2
 
     .prologue
-    .line 111
     iget-object v0, p0, Lcom/android/keyguard/KeyguardRemoteLockView$CheckRemoteLock$1;->this$1:Lcom/android/keyguard/KeyguardRemoteLockView$CheckRemoteLock;
 
     iget-boolean v1, p0, Lcom/android/keyguard/KeyguardRemoteLockView$CheckRemoteLock$1;->val$result:Z
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardRemoteLockView$CheckRemoteLock;->onRemoteCheckResponse(Z)V
 
-    .line 112
     return-void
 .end method

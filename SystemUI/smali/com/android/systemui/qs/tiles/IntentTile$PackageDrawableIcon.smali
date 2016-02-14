@@ -29,18 +29,14 @@
     .param p3, "resId"    # I
 
     .prologue
-    .line 173
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/IntentTile$PackageDrawableIcon;->this$0:Lcom/android/systemui/qs/tiles/IntentTile;
 
     invoke-direct {p0}, Lcom/android/systemui/qs/QSTile$Icon;-><init>()V
 
-    .line 174
     iput-object p2, p0, Lcom/android/systemui/qs/tiles/IntentTile$PackageDrawableIcon;->mPackage:Ljava/lang/String;
 
-    .line 175
     iput p3, p0, Lcom/android/systemui/qs/tiles/IntentTile$PackageDrawableIcon;->mResId:I
 
-    .line 176
     return-void
 .end method
 
@@ -53,12 +49,10 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 180
     instance-of v2, p1, Lcom/android/systemui/qs/tiles/IntentTile$PackageDrawableIcon;
 
     if-nez v2, :cond_1
 
-    .line 182
     :cond_0
     :goto_0
     return v1
@@ -66,10 +60,8 @@
     :cond_1
     move-object v0, p1
 
-    .line 181
     check-cast v0, Lcom/android/systemui/qs/tiles/IntentTile$PackageDrawableIcon;
 
-    .line 182
     .local v0, "other":Lcom/android/systemui/qs/tiles/IntentTile$PackageDrawableIcon;
     iget-object v2, v0, Lcom/android/systemui/qs/tiles/IntentTile$PackageDrawableIcon;->mPackage:Ljava/lang/String;
 
@@ -97,7 +89,6 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 188
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/IntentTile$PackageDrawableIcon;->mPackage:Ljava/lang/String;
 
@@ -115,15 +106,12 @@
 
     move-result-object v1
 
-    .line 191
     :goto_0
     return-object v1
 
-    .line 189
     :catch_0
     move-exception v0
 
-    .line 190
     .local v0, "t":Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/IntentTile$PackageDrawableIcon;->this$0:Lcom/android/systemui/qs/tiles/IntentTile;
 
@@ -166,7 +154,6 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 191
     const/4 v1, 0x0
 
     goto :goto_0
@@ -176,7 +163,6 @@
     .locals 4
 
     .prologue
-    .line 197
     const-string v0, "PackageDrawableIcon[pkg=%s,id=0x%08x]"
 
     const/4 v1, 0x2

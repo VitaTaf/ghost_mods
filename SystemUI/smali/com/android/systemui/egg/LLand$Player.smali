@@ -39,13 +39,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 737
     iput-object p1, p0, Lcom/android/systemui/egg/LLand$Player;->this$0:Lcom/android/systemui/egg/LLand;
 
-    .line 738
     invoke-direct {p0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 721
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -56,7 +53,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/egg/LLand$Player;->sColors:[I
 
-    .line 725
     const/16 v0, 0x10
 
     new-array v0, v0, [F
@@ -65,7 +61,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/egg/LLand$Player;->sHull:[F
 
-    .line 735
     iget-object v0, p0, Lcom/android/systemui/egg/LLand$Player;->sHull:[F
 
     array-length v0, v0
@@ -74,12 +69,10 @@
 
     iput-object v0, p0, Lcom/android/systemui/egg/LLand$Player;->corners:[F
 
-    .line 740
     const/high16 v0, 0x7f020000
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/egg/LLand$Player;->setBackgroundResource(I)V
 
-    .line 741
     invoke-virtual {p0}, Lcom/android/systemui/egg/LLand$Player;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -88,7 +81,6 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setTintMode(Landroid/graphics/PorterDuff$Mode;)V
 
-    .line 742
     invoke-virtual {p0}, Lcom/android/systemui/egg/LLand$Player;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -99,17 +91,14 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setTint(I)V
 
-    .line 743
     new-instance v0, Lcom/android/systemui/egg/LLand$Player$1;
 
     invoke-direct {v0, p0, p1}, Lcom/android/systemui/egg/LLand$Player$1;-><init>(Lcom/android/systemui/egg/LLand$Player;Lcom/android/systemui/egg/LLand;)V
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/egg/LLand$Player;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
-    .line 753
     return-void
 
-    .line 725
     :array_0
     .array-data 4
         0x3e99999a    # 0.3f
@@ -138,14 +127,12 @@
     .param p1, "h"    # I
 
     .prologue
-    .line 768
     iget-object v3, p0, Lcom/android/systemui/egg/LLand$Player;->corners:[F
 
     array-length v3, v3
 
     div-int/lit8 v0, v3, 0x2
 
-    .line 769
     .local v0, "N":I
     const/4 v1, 0x0
 
@@ -153,7 +140,6 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 770
     iget-object v3, p0, Lcom/android/systemui/egg/LLand$Player;->corners:[F
 
     mul-int/lit8 v4, v1, 0x2
@@ -164,25 +150,21 @@
 
     float-to-int v2, v3
 
-    .line 771
     .local v2, "y":I
     if-lt v2, p1, :cond_0
 
     const/4 v3, 0x1
 
-    .line 773
     .end local v2    # "y":I
     :goto_1
     return v3
 
-    .line 769
     .restart local v2    # "y":I
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 773
     .end local v2    # "y":I
     :cond_1
     const/4 v3, 0x0
@@ -196,12 +178,10 @@
     .prologue
     const/high16 v4, 0x3fa00000    # 1.25f
 
-    .line 796
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/egg/LLand$Player;->mBoosting:Z
 
-    .line 797
     # getter for: Lcom/android/systemui/egg/LLand;->PARAMS:Lcom/android/systemui/egg/LLand$Params;
     invoke-static {}, Lcom/android/systemui/egg/LLand;->access$200()Lcom/android/systemui/egg/LLand$Params;
 
@@ -215,14 +195,12 @@
 
     iput v0, p0, Lcom/android/systemui/egg/LLand$Player;->dv:F
 
-    .line 799
     invoke-virtual {p0}, Lcom/android/systemui/egg/LLand$Player;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 800
     invoke-virtual {p0}, Lcom/android/systemui/egg/LLand$Player;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -250,13 +228,10 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
-    .line 805
     invoke-virtual {p0, v4}, Lcom/android/systemui/egg/LLand$Player;->setScaleX(F)V
 
-    .line 806
     invoke-virtual {p0, v4}, Lcom/android/systemui/egg/LLand$Player;->setScaleY(F)V
 
-    .line 807
     return-void
 .end method
 
@@ -264,7 +239,6 @@
     .locals 10
 
     .prologue
-    .line 756
     # getter for: Lcom/android/systemui/egg/LLand;->PARAMS:Lcom/android/systemui/egg/LLand$Params;
     invoke-static {}, Lcom/android/systemui/egg/LLand;->access$200()Lcom/android/systemui/egg/LLand$Params;
 
@@ -283,7 +257,6 @@
 
     div-int/lit8 v2, v5, 0x2
 
-    .line 757
     .local v2, "inset":I
     # getter for: Lcom/android/systemui/egg/LLand;->PARAMS:Lcom/android/systemui/egg/LLand$Params;
     invoke-static {}, Lcom/android/systemui/egg/LLand;->access$200()Lcom/android/systemui/egg/LLand$Params;
@@ -292,7 +265,6 @@
 
     iget v4, v5, Lcom/android/systemui/egg/LLand$Params;->PLAYER_HIT_SIZE:I
 
-    .line 758
     .local v4, "scale":I
     iget-object v5, p0, Lcom/android/systemui/egg/LLand$Player;->sHull:[F
 
@@ -300,7 +272,6 @@
 
     div-int/lit8 v0, v5, 0x2
 
-    .line 759
     .local v0, "N":I
     const/4 v1, 0x0
 
@@ -308,7 +279,6 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 760
     iget-object v5, p0, Lcom/android/systemui/egg/LLand$Player;->corners:[F
 
     mul-int/lit8 v6, v1, 0x2
@@ -329,7 +299,6 @@
 
     aput v7, v5, v6
 
-    .line 761
     iget-object v5, p0, Lcom/android/systemui/egg/LLand$Player;->corners:[F
 
     mul-int/lit8 v6, v1, 0x2
@@ -354,24 +323,20 @@
 
     aput v7, v5, v6
 
-    .line 759
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 763
     :cond_0
     invoke-virtual {p0}, Lcom/android/systemui/egg/LLand$Player;->getMatrix()Landroid/graphics/Matrix;
 
     move-result-object v3
 
-    .line 764
     .local v3, "m":Landroid/graphics/Matrix;
     iget-object v5, p0, Lcom/android/systemui/egg/LLand$Player;->corners:[F
 
     invoke-virtual {v3, v5}, Landroid/graphics/Matrix;->mapPoints([F)V
 
-    .line 765
     return-void
 .end method
 
@@ -387,24 +352,20 @@
 
     const/4 v1, 0x0
 
-    .line 777
     invoke-virtual {p0}, Lcom/android/systemui/egg/LLand$Player;->getVisibility()I
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 793
     :goto_0
     return-void
 
-    .line 779
     :cond_0
     iget-boolean v2, p0, Lcom/android/systemui/egg/LLand$Player;->mBoosting:Z
 
     if-eqz v2, :cond_3
 
-    .line 780
     # getter for: Lcom/android/systemui/egg/LLand;->PARAMS:Lcom/android/systemui/egg/LLand$Params;
     invoke-static {}, Lcom/android/systemui/egg/LLand;->access$200()Lcom/android/systemui/egg/LLand$Params;
 
@@ -418,7 +379,6 @@
 
     iput v2, p0, Lcom/android/systemui/egg/LLand$Player;->dv:F
 
-    .line 784
     :goto_1
     iget v2, p0, Lcom/android/systemui/egg/LLand$Player;->dv:F
 
@@ -450,7 +410,6 @@
 
     iput v2, p0, Lcom/android/systemui/egg/LLand$Player;->dv:F
 
-    .line 787
     :cond_1
     :goto_2
     invoke-virtual {p0}, Lcom/android/systemui/egg/LLand$Player;->getTranslationY()F
@@ -463,7 +422,6 @@
 
     add-float v0, v2, v3
 
-    .line 788
     .local v0, "y":F
     cmpg-float v2, v0, v1
 
@@ -475,7 +433,6 @@
     :cond_2
     invoke-virtual {p0, v0}, Lcom/android/systemui/egg/LLand$Player;->setTranslationY(F)V
 
-    .line 789
     iget v1, p0, Lcom/android/systemui/egg/LLand$Player;->dv:F
 
     # getter for: Lcom/android/systemui/egg/LLand;->PARAMS:Lcom/android/systemui/egg/LLand$Params;
@@ -516,12 +473,10 @@
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/egg/LLand$Player;->setRotation(F)V
 
-    .line 792
     invoke-virtual {p0}, Lcom/android/systemui/egg/LLand$Player;->prepareCheckIntersections()V
 
     goto :goto_0
 
-    .line 782
     :cond_3
     iget v2, p0, Lcom/android/systemui/egg/LLand$Player;->dv:F
 
@@ -540,7 +495,6 @@
 
     goto :goto_1
 
-    .line 785
     :cond_4
     iget v2, p0, Lcom/android/systemui/egg/LLand$Player;->dv:F
 
@@ -577,19 +531,16 @@
     .prologue
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 810
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/egg/LLand$Player;->mBoosting:Z
 
-    .line 812
     invoke-virtual {p0}, Lcom/android/systemui/egg/LLand$Player;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 813
     invoke-virtual {p0}, Lcom/android/systemui/egg/LLand$Player;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -617,6 +568,5 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
-    .line 818
     return-void
 .end method

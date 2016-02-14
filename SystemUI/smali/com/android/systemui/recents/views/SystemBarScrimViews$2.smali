@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 89
     iput-object p1, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews$2;->this$0:Lcom/android/systemui/recents/views/SystemBarScrimViews;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +39,6 @@
     .locals 2
 
     .prologue
-    .line 92
     iget-object v0, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews$2;->this$0:Lcom/android/systemui/recents/views/SystemBarScrimViews;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mNavBarScrimView:Landroid/view/View;
@@ -49,6 +47,5 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 93
     return-void
 .end method

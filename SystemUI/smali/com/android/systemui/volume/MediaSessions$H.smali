@@ -24,13 +24,10 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 352
     iput-object p1, p0, Lcom/android/systemui/volume/MediaSessions$H;->this$0:Lcom/android/systemui/volume/MediaSessions;
 
-    .line 353
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 354
     return-void
 .end method
 
@@ -41,7 +38,6 @@
     .param p3, "x2"    # Lcom/android/systemui/volume/MediaSessions$1;
 
     .prologue
-    .line 347
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/volume/MediaSessions$H;-><init>(Lcom/android/systemui/volume/MediaSessions;Landroid/os/Looper;)V
 
     return-void
@@ -54,16 +50,13 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 358
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 369
     :goto_0
     return-void
 
-    .line 360
     :pswitch_0
     iget-object v0, p0, Lcom/android/systemui/volume/MediaSessions$H;->this$0:Lcom/android/systemui/volume/MediaSessions;
 
@@ -84,7 +77,6 @@
 
     goto :goto_0
 
-    .line 363
     :pswitch_1
     iget-object v1, p0, Lcom/android/systemui/volume/MediaSessions$H;->this$0:Lcom/android/systemui/volume/MediaSessions;
 
@@ -99,7 +91,6 @@
 
     goto :goto_0
 
-    .line 366
     :pswitch_2
     iget-object v1, p0, Lcom/android/systemui/volume/MediaSessions$H;->this$0:Lcom/android/systemui/volume/MediaSessions;
 
@@ -112,7 +103,6 @@
 
     goto :goto_0
 
-    .line 358
     nop
 
     :pswitch_data_0

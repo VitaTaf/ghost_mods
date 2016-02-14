@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 48
     iput-object p1, p0, Lcom/android/systemui/volume/SpTexts$1;->this$0:Lcom/android/systemui/volume/SpTexts;
 
     iput-object p2, p0, Lcom/android/systemui/volume/SpTexts$1;->val$text:Landroid/widget/TextView;
@@ -49,7 +48,6 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 55
     iget-object v0, p0, Lcom/android/systemui/volume/SpTexts$1;->this$0:Lcom/android/systemui/volume/SpTexts;
 
     iget-object v1, p0, Lcom/android/systemui/volume/SpTexts$1;->val$text:Landroid/widget/TextView;
@@ -59,7 +57,6 @@
     # invokes: Lcom/android/systemui/volume/SpTexts;->setTextSizeH(Landroid/widget/TextView;I)V
     invoke-static {v0, v1, v2}, Lcom/android/systemui/volume/SpTexts;->access$000(Lcom/android/systemui/volume/SpTexts;Landroid/widget/TextView;I)V
 
-    .line 56
     return-void
 .end method
 
@@ -68,6 +65,5 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 51
     return-void
 .end method

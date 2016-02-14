@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 158
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions$1;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions$1;->val$lowLights:Landroid/view/View;
@@ -42,13 +41,11 @@
     .param p1, "_a"    # Landroid/animation/Animator;
 
     .prologue
-    .line 161
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions$1;->val$lowLights:Landroid/view/View;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 162
     return-void
 .end method

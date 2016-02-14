@@ -37,24 +37,19 @@
     .end annotation
 
     .prologue
-    .line 42
     .local p3, "tile":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 92
     new-instance v0, Lcom/android/systemui/qs/UsageTracker$2;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/qs/UsageTracker$2;-><init>(Lcom/android/systemui/qs/UsageTracker;)V
 
     iput-object v0, p0, Lcom/android/systemui/qs/UsageTracker;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 43
     iput-object p1, p0, Lcom/android/systemui/qs/UsageTracker;->mContext:Landroid/content/Context;
 
-    .line 44
     iput-object p2, p0, Lcom/android/systemui/qs/UsageTracker;->mPrefKey:Ljava/lang/String;
 
-    .line 45
     const-wide/32 v0, 0x5265c00
 
     iget-object v2, p0, Lcom/android/systemui/qs/UsageTracker;->mContext:Landroid/content/Context;
@@ -73,7 +68,6 @@
 
     iput-wide v0, p0, Lcom/android/systemui/qs/UsageTracker;->mTimeToShowTile:J
 
-    .line 46
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -104,7 +98,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/UsageTracker;->mResetAction:Ljava/lang/String;
 
-    .line 47
     return-void
 .end method
 
@@ -113,7 +106,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/UsageTracker;
 
     .prologue
-    .line 31
     iget-object v0, p0, Lcom/android/systemui/qs/UsageTracker;->mResetAction:Ljava/lang/String;
 
     return-object v0
@@ -125,7 +117,6 @@
     .locals 6
 
     .prologue
-    .line 61
     iget-object v2, p0, Lcom/android/systemui/qs/UsageTracker;->mContext:Landroid/content/Context;
 
     iget-object v3, p0, Lcom/android/systemui/qs/UsageTracker;->mPrefKey:Ljava/lang/String;
@@ -136,7 +127,6 @@
 
     move-result-wide v0
 
-    .line 62
     .local v0, "lastUsed":J
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -165,14 +155,12 @@
     .locals 2
 
     .prologue
-    .line 70
     iget-object v0, p0, Lcom/android/systemui/qs/UsageTracker;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/systemui/qs/UsageTracker;->mPrefKey:Ljava/lang/String;
 
     invoke-static {v0, v1}, Lcom/android/systemui/Prefs;->remove(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 71
     return-void
 .end method
 
@@ -181,14 +169,12 @@
     .param p1, "listen"    # Z
 
     .prologue
-    .line 51
     if-eqz p1, :cond_1
 
     iget-boolean v0, p0, Lcom/android/systemui/qs/UsageTracker;->mRegistered:Z
 
     if-nez v0, :cond_1
 
-    .line 52
     iget-object v0, p0, Lcom/android/systemui/qs/UsageTracker;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/systemui/qs/UsageTracker;->mReceiver:Landroid/content/BroadcastReceiver;
@@ -201,17 +187,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 53
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/qs/UsageTracker;->mRegistered:Z
 
-    .line 58
     :cond_0
     :goto_0
     return-void
 
-    .line 54
     :cond_1
     if-nez p1, :cond_0
 
@@ -219,14 +202,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 55
     iget-object v0, p0, Lcom/android/systemui/qs/UsageTracker;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/systemui/qs/UsageTracker;->mReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 56
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/qs/UsageTracker;->mRegistered:Z
@@ -240,18 +221,15 @@
     .param p2, "onConfirmed"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 74
     new-instance v0, Lcom/android/systemui/statusbar/phone/SystemUIDialog;
 
     iget-object v1, p0, Lcom/android/systemui/qs/UsageTracker;->mContext:Landroid/content/Context;
 
     invoke-direct {v0, v1}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;-><init>(Landroid/content/Context;)V
 
-    .line 75
     .local v0, "d":Lcom/android/systemui/statusbar/phone/SystemUIDialog;
     invoke-virtual {v0, p1}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 76
     iget-object v1, p0, Lcom/android/systemui/qs/UsageTracker;->mContext:Landroid/content/Context;
 
     const v2, 0x7f0c0159
@@ -262,14 +240,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    .line 77
     const/high16 v1, 0x1040000
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)V
 
-    .line 78
     const v1, 0x7f0c015a
 
     new-instance v2, Lcom/android/systemui/qs/UsageTracker$1;
@@ -278,15 +254,12 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)V
 
-    .line 88
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->setCanceledOnTouchOutside(Z)V
 
-    .line 89
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->show()V
 
-    .line 90
     return-void
 .end method
 
@@ -294,7 +267,6 @@
     .locals 4
 
     .prologue
-    .line 66
     iget-object v0, p0, Lcom/android/systemui/qs/UsageTracker;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/systemui/qs/UsageTracker;->mPrefKey:Ljava/lang/String;
@@ -305,6 +277,5 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/android/systemui/Prefs;->putLong(Landroid/content/Context;Ljava/lang/String;J)V
 
-    .line 67
     return-void
 .end method

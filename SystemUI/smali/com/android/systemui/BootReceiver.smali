@@ -8,7 +8,6 @@
     .locals 0
 
     .prologue
-    .line 30
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -22,13 +21,11 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 37
     :try_start_0
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
 
-    .line 38
     .local v2, "res":Landroid/content/ContentResolver;
     const-string v3, "show_processes"
 
@@ -40,31 +37,26 @@
 
     if-eqz v3, :cond_0
 
-    .line 39
     new-instance v1, Landroid/content/Intent;
 
     const-class v3, Lcom/android/systemui/LoadAverageService;
 
     invoke-direct {v1, p1, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 40
     .local v1, "loadavg":Landroid/content/Intent;
     invoke-virtual {p1, v1}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 45
     .end local v1    # "loadavg":Landroid/content/Intent;
     .end local v2    # "res":Landroid/content/ContentResolver;
     :cond_0
     :goto_0
     return-void
 
-    .line 42
     :catch_0
     move-exception v0
 
-    .line 43
     .local v0, "e":Ljava/lang/Exception;
     const-string v3, "SystemUIBootReceiver"
 

@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 148
     iput-object p1, p0, Lcom/android/systemui/recents/Recents$RecentsOwnerEventProxyReceiver;->this$0:Lcom/android/systemui/recents/Recents;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -41,7 +40,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 151
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v2
@@ -58,11 +56,9 @@
     :goto_0
     packed-switch v0, :pswitch_data_0
 
-    .line 159
     :goto_1
     return-void
 
-    .line 151
     :sswitch_0
     const-string v3, "action_notify_recents_visibility_change"
 
@@ -89,7 +85,6 @@
 
     goto :goto_0
 
-    .line 153
     :pswitch_0
     const-string v0, "recentsVisibility"
 
@@ -101,13 +96,11 @@
 
     goto :goto_1
 
-    .line 156
     :pswitch_1
     invoke-static {p1}, Lcom/android/systemui/recents/Recents;->onStartScreenPinning(Landroid/content/Context;)V
 
     goto :goto_1
 
-    .line 151
     nop
 
     :sswitch_data_0

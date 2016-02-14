@@ -8,7 +8,6 @@
     .locals 0
 
     .prologue
-    .line 34
     invoke-direct {p0}, Lcom/android/systemui/statusbar/BaseStatusBar;-><init>()V
 
     return-void
@@ -24,7 +23,6 @@
     .param p4, "icon"    # Lcom/android/internal/statusbar/StatusBarIcon;
 
     .prologue
-    .line 38
     return-void
 .end method
 
@@ -34,7 +32,6 @@
     .param p2, "ranking"    # Landroid/service/notification/NotificationListenerService$RankingMap;
 
     .prologue
-    .line 51
     return-void
 .end method
 
@@ -43,7 +40,6 @@
     .param p1, "flags"    # I
 
     .prologue
-    .line 71
     return-void
 .end method
 
@@ -51,7 +47,6 @@
     .locals 0
 
     .prologue
-    .line 67
     return-void
 .end method
 
@@ -59,7 +54,6 @@
     .locals 0
 
     .prologue
-    .line 164
     return-void
 .end method
 
@@ -67,7 +61,6 @@
     .locals 0
 
     .prologue
-    .line 96
     return-void
 .end method
 
@@ -75,7 +68,6 @@
     .locals 0
 
     .prologue
-    .line 168
     return-void
 .end method
 
@@ -85,7 +77,6 @@
     .param p2, "animate"    # Z
 
     .prologue
-    .line 63
     return-void
 .end method
 
@@ -93,7 +84,6 @@
     .locals 1
 
     .prologue
-    .line 159
     const/4 v0, 0x0
 
     return v0
@@ -104,7 +94,6 @@
     .param p1, "layoutParams"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
-    .line 109
     const/4 v0, 0x0
 
     return-object v0
@@ -114,7 +103,6 @@
     .locals 1
 
     .prologue
-    .line 138
     const/4 v0, 0x0
 
     return-object v0
@@ -124,7 +112,6 @@
     .locals 0
 
     .prologue
-    .line 114
     return-void
 .end method
 
@@ -132,7 +119,6 @@
     .locals 0
 
     .prologue
-    .line 100
     return-void
 .end method
 
@@ -143,7 +129,6 @@
     .param p3, "offMillis"    # I
 
     .prologue
-    .line 104
     return-void
 .end method
 
@@ -152,7 +137,6 @@
     .param p1, "view"    # Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
     .prologue
-    .line 176
     return-void
 .end method
 
@@ -161,7 +145,6 @@
     .param p1, "view"    # Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
     .prologue
-    .line 180
     return-void
 .end method
 
@@ -170,7 +153,6 @@
     .param p1, "layoutDirection"    # I
 
     .prologue
-    .line 172
     return-void
 .end method
 
@@ -181,7 +163,6 @@
     .param p3, "viewIndex"    # I
 
     .prologue
-    .line 47
     return-void
 .end method
 
@@ -191,7 +172,6 @@
     .param p2, "ranking"    # Landroid/service/notification/NotificationListenerService$RankingMap;
 
     .prologue
-    .line 59
     return-void
 .end method
 
@@ -199,7 +179,6 @@
     .locals 0
 
     .prologue
-    .line 143
     return-void
 .end method
 
@@ -207,7 +186,6 @@
     .locals 0
 
     .prologue
-    .line 151
     return-void
 .end method
 
@@ -215,7 +193,6 @@
     .locals 0
 
     .prologue
-    .line 118
     return-void
 .end method
 
@@ -227,7 +204,6 @@
     .param p4, "showImeSwitcher"    # Z
 
     .prologue
-    .line 84
     return-void
 .end method
 
@@ -237,7 +213,6 @@
     .param p2, "mask"    # I
 
     .prologue
-    .line 75
     return-void
 .end method
 
@@ -247,7 +222,6 @@
     .param p2, "state"    # I
 
     .prologue
-    .line 92
     return-void
 .end method
 
@@ -255,7 +229,6 @@
     .locals 1
 
     .prologue
-    .line 134
     const/4 v0, 0x1
 
     return v0
@@ -265,7 +238,6 @@
     .locals 0
 
     .prologue
-    .line 184
     return-void
 .end method
 
@@ -275,7 +247,6 @@
     .param p2, "firstTime"    # Z
 
     .prologue
-    .line 126
     return-void
 .end method
 
@@ -283,7 +254,6 @@
     .locals 0
 
     .prologue
-    .line 88
     return-void
 .end method
 
@@ -292,7 +262,6 @@
     .param p1, "visible"    # Z
 
     .prologue
-    .line 79
     return-void
 .end method
 
@@ -301,7 +270,6 @@
     .param p1, "expandedPosition"    # I
 
     .prologue
-    .line 130
     return-void
 .end method
 
@@ -314,7 +282,6 @@
     .param p5, "icon"    # Lcom/android/internal/statusbar/StatusBarIcon;
 
     .prologue
-    .line 43
     return-void
 .end method
 
@@ -323,7 +290,6 @@
     .param p1, "ranking"    # Landroid/service/notification/NotificationListenerService$RankingMap;
 
     .prologue
-    .line 55
     return-void
 .end method
 
@@ -331,6 +297,5 @@
     .locals 0
 
     .prologue
-    .line 122
     return-void
 .end method

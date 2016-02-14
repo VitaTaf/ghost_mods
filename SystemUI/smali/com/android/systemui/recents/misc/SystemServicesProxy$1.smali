@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 398
     iput-object p1, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy$1;->this$0:Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
     iput p2, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy$1;->val$taskId:I
@@ -44,7 +43,6 @@
     .locals 2
 
     .prologue
-    .line 401
     iget-object v0, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy$1;->this$0:Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
     iget-object v0, v0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mAm:Landroid/app/ActivityManager;
@@ -53,6 +51,5 @@
 
     invoke-virtual {v0, v1}, Landroid/app/ActivityManager;->removeTask(I)Z
 
-    .line 402
     return-void
 .end method

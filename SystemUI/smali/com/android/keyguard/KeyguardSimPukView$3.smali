@@ -26,7 +26,6 @@
     .param p4, "x2"    # I
 
     .prologue
-    .line 409
     iput-object p1, p0, Lcom/android/keyguard/KeyguardSimPukView$3;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
 
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;-><init>(Lcom/android/keyguard/KeyguardSimPukView;Ljava/lang/String;Ljava/lang/String;I)V
@@ -42,7 +41,6 @@
     .param p2, "attemptsRemaining"    # I
 
     .prologue
-    .line 411
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView$3;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
 
     new-instance v1, Lcom/android/keyguard/KeyguardSimPukView$3$1;
@@ -51,6 +49,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardSimPukView;->post(Ljava/lang/Runnable;)Z
 
-    .line 443
     return-void
 .end method

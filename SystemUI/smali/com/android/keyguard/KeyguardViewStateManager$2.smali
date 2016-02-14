@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 57
     iput-object p1, p0, Lcom/android/keyguard/KeyguardViewStateManager$2;->this$0:Lcom/android/keyguard/KeyguardViewStateManager;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -38,7 +37,6 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 59
     iget-object v0, p0, Lcom/android/keyguard/KeyguardViewStateManager$2;->this$0:Lcom/android/keyguard/KeyguardViewStateManager;
 
     # getter for: Lcom/android/keyguard/KeyguardViewStateManager;->mKeyguardSecurityContainer:Lcom/android/keyguard/KeyguardSecurityView;
@@ -54,7 +52,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 60
     iget-object v0, p0, Lcom/android/keyguard/KeyguardViewStateManager$2;->this$0:Lcom/android/keyguard/KeyguardViewStateManager;
 
     # getter for: Lcom/android/keyguard/KeyguardViewStateManager;->mKeyguardSecurityContainer:Lcom/android/keyguard/KeyguardSecurityView;
@@ -66,7 +63,6 @@
 
     invoke-interface {v0, v1}, Lcom/android/keyguard/KeyguardSecurityView;->onResume(I)V
 
-    .line 62
     :cond_0
     return-void
 .end method

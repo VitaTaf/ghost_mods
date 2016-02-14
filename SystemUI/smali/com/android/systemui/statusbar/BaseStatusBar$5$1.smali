@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 420
     iput-object p1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$5$1;->this$1:Lcom/android/systemui/statusbar/BaseStatusBar$5;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$5$1;->val$notifications:[Landroid/service/notification/StatusBarNotification;
@@ -48,7 +47,6 @@
     .locals 6
 
     .prologue
-    .line 423
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$5$1;->val$notifications:[Landroid/service/notification/StatusBarNotification;
 
     .local v0, "arr$":[Landroid/service/notification/StatusBarNotification;
@@ -63,7 +61,6 @@
 
     aget-object v3, v0, v1
 
-    .line 424
     .local v3, "sbn":Landroid/service/notification/StatusBarNotification;
     iget-object v4, p0, Lcom/android/systemui/statusbar/BaseStatusBar$5$1;->this$1:Lcom/android/systemui/statusbar/BaseStatusBar$5;
 
@@ -73,12 +70,10 @@
 
     invoke-virtual {v4, v3, v5}, Lcom/android/systemui/statusbar/BaseStatusBar;->addNotification(Landroid/service/notification/StatusBarNotification;Landroid/service/notification/NotificationListenerService$RankingMap;)V
 
-    .line 423
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 426
     .end local v3    # "sbn":Landroid/service/notification/StatusBarNotification;
     :cond_0
     return-void

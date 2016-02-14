@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 290
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/CastControllerImpl;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 293
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 294
     .local v0, "action":Ljava/lang/String;
     const-string v1, "android.hardware.display.action.WIFI_DISPLAY_STATUS_CHANGED"
 
@@ -54,13 +51,11 @@
 
     if-eqz v1, :cond_0
 
-    .line 295
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/CastControllerImpl;
 
     # invokes: Lcom/android/systemui/statusbar/policy/CastControllerImpl;->updateRemoteDisplays()V
     invoke-static {v1}, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->access$000(Lcom/android/systemui/statusbar/policy/CastControllerImpl;)V
 
-    .line 297
     :cond_0
     return-void
 .end method

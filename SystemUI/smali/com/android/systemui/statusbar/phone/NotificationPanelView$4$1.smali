@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 411
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$4$1;->this$1:Lcom/android/systemui/statusbar/phone/NotificationPanelView$4;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -38,7 +37,6 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 414
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$4$1;->this$1:Lcom/android/systemui/statusbar/phone/NotificationPanelView$4;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$4;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
@@ -48,7 +46,6 @@
     # setter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mClockAnimator:Landroid/animation/ObjectAnimator;
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$402(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Landroid/animation/ObjectAnimator;)Landroid/animation/ObjectAnimator;
 
-    .line 415
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$4$1;->this$1:Lcom/android/systemui/statusbar/phone/NotificationPanelView$4;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$4;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
@@ -58,6 +55,5 @@
     # setter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mClockAnimationTarget:I
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$602(Lcom/android/systemui/statusbar/phone/NotificationPanelView;I)I
 
-    .line 416
     return-void
 .end method

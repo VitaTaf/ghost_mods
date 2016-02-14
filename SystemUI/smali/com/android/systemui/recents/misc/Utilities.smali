@@ -12,7 +12,6 @@
     .locals 6
 
     .prologue
-    .line 36
     :try_start_0
     const-string v2, "android.view.GLES20Canvas"
 
@@ -20,7 +19,6 @@
 
     move-result-object v0
 
-    .line 37
     .local v0, "c":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const-string v2, "setProperty"
 
@@ -46,7 +44,6 @@
 
     sput-object v2, Lcom/android/systemui/recents/misc/Utilities;->sPropertyMethod:Ljava/lang/reflect/Method;
 
-    .line 38
     sget-object v2, Lcom/android/systemui/recents/misc/Utilities;->sPropertyMethod:Ljava/lang/reflect/Method;
 
     invoke-virtual {v2}, Ljava/lang/reflect/Method;->isAccessible()Z
@@ -64,27 +61,22 @@
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 44
     :cond_0
     :goto_0
     return-void
 
-    .line 39
     :catch_0
     move-exception v1
 
-    .line 40
     .local v1, "e":Ljava/lang/ClassNotFoundException;
     invoke-virtual {v1}, Ljava/lang/ClassNotFoundException;->printStackTrace()V
 
     goto :goto_0
 
-    .line 41
     .end local v1    # "e":Ljava/lang/ClassNotFoundException;
     :catch_1
     move-exception v1
 
-    .line 42
     .local v1, "e":Ljava/lang/NoSuchMethodException;
     invoke-virtual {v1}, Ljava/lang/NoSuchMethodException;->printStackTrace()V
 
@@ -96,16 +88,12 @@
     .param p0, "animator"    # Landroid/animation/Animator;
 
     .prologue
-    .line 177
     if-eqz p0, :cond_0
 
-    .line 178
     invoke-virtual {p0}, Landroid/animation/Animator;->removeAllListeners()V
 
-    .line 179
     invoke-virtual {p0}, Landroid/animation/Animator;->cancel()V
 
-    .line 181
     :cond_0
     return-void
 .end method
@@ -116,7 +104,6 @@
     .param p1, "fg"    # I
 
     .prologue
-    .line 136
     invoke-static {p0}, Landroid/graphics/Color;->red(I)I
 
     move-result v8
@@ -127,7 +114,6 @@
 
     div-float v3, v8, v9
 
-    .line 137
     .local v3, "bgR":F
     invoke-static {p0}, Landroid/graphics/Color;->green(I)I
 
@@ -139,7 +125,6 @@
 
     div-float v1, v8, v9
 
-    .line 138
     .local v1, "bgG":F
     invoke-static {p0}, Landroid/graphics/Color;->blue(I)I
 
@@ -151,7 +136,6 @@
 
     div-float v0, v8, v9
 
-    .line 139
     .local v0, "bgB":F
     const v8, 0x3d20e411    # 0.03928f
 
@@ -163,7 +147,6 @@
 
     div-float/2addr v3, v8
 
-    .line 140
     :goto_0
     const v8, 0x3d20e411    # 0.03928f
 
@@ -175,7 +158,6 @@
 
     div-float/2addr v1, v8
 
-    .line 141
     :goto_1
     const v8, 0x3d20e411    # 0.03928f
 
@@ -187,7 +169,6 @@
 
     div-float/2addr v0, v8
 
-    .line 142
     :goto_2
     const v8, 0x3e59b3d0    # 0.2126f
 
@@ -205,7 +186,6 @@
 
     add-float v2, v8, v9
 
-    .line 144
     .local v2, "bgL":F
     invoke-static {p1}, Landroid/graphics/Color;->red(I)I
 
@@ -217,7 +197,6 @@
 
     div-float v7, v8, v9
 
-    .line 145
     .local v7, "fgR":F
     invoke-static {p1}, Landroid/graphics/Color;->green(I)I
 
@@ -229,7 +208,6 @@
 
     div-float v5, v8, v9
 
-    .line 146
     .local v5, "fgG":F
     invoke-static {p1}, Landroid/graphics/Color;->blue(I)I
 
@@ -241,7 +219,6 @@
 
     div-float v4, v8, v9
 
-    .line 147
     .local v4, "fgB":F
     const v8, 0x3d20e411    # 0.03928f
 
@@ -253,7 +230,6 @@
 
     div-float/2addr v7, v8
 
-    .line 148
     :goto_3
     const v8, 0x3d20e411    # 0.03928f
 
@@ -265,7 +241,6 @@
 
     div-float/2addr v5, v8
 
-    .line 149
     :goto_4
     const v8, 0x3d20e411    # 0.03928f
 
@@ -277,7 +252,6 @@
 
     div-float/2addr v4, v8
 
-    .line 150
     :goto_5
     const v8, 0x3e59b3d0    # 0.2126f
 
@@ -295,7 +269,6 @@
 
     add-float v6, v8, v9
 
-    .line 152
     .local v6, "fgL":F
     const v8, 0x3d4ccccd    # 0.05f
 
@@ -313,7 +286,6 @@
 
     return v8
 
-    .line 139
     .end local v2    # "bgL":F
     .end local v4    # "fgB":F
     .end local v5    # "fgG":F
@@ -340,7 +312,6 @@
 
     goto/16 :goto_0
 
-    .line 140
     :cond_1
     const v8, 0x3d6147ae    # 0.055f
 
@@ -362,7 +333,6 @@
 
     goto/16 :goto_1
 
-    .line 141
     :cond_2
     const v8, 0x3d6147ae    # 0.055f
 
@@ -384,7 +354,6 @@
 
     goto/16 :goto_2
 
-    .line 147
     .restart local v2    # "bgL":F
     .restart local v4    # "fgB":F
     .restart local v5    # "fgG":F
@@ -410,7 +379,6 @@
 
     goto/16 :goto_3
 
-    .line 148
     :cond_4
     const v8, 0x3d6147ae    # 0.055f
 
@@ -432,7 +400,6 @@
 
     goto/16 :goto_4
 
-    .line 149
     :cond_5
     const v8, 0x3d6147ae    # 0.055f
 
@@ -464,7 +431,6 @@
     .prologue
     const/high16 v4, 0x3f800000    # 1.0f
 
-    .line 157
     invoke-static {p0}, Landroid/graphics/Color;->red(I)I
 
     move-result v0
@@ -550,12 +516,10 @@
 
     const/4 v9, 0x0
 
-    .line 63
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 65
     .local v0, "ancestorChain":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/view/View;>;"
     const/4 v7, 0x2
 
@@ -569,21 +533,17 @@
 
     aput v7, v3, v10
 
-    .line 67
     .local v3, "pt":[F
     move-object v5, p0
 
-    .line 68
     .local v5, "v":Landroid/view/View;
     :goto_0
     if-eq v5, p1, :cond_0
 
     if-eqz v5, :cond_0
 
-    .line 69
     invoke-virtual {v0, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 70
     invoke-virtual {v5}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v5
@@ -594,20 +554,16 @@
     .restart local v5    # "v":Landroid/view/View;
     goto :goto_0
 
-    .line 72
     :cond_0
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 74
     const/high16 v4, 0x3f800000    # 1.0f
 
-    .line 75
     .local v4, "scale":F
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 76
     .local v1, "count":I
     const/4 v2, 0x0
 
@@ -615,20 +571,17 @@
     :goto_1
     if-ge v2, v1, :cond_3
 
-    .line 77
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Landroid/view/View;
 
-    .line 80
     .local v6, "v0":Landroid/view/View;
     if-ne v6, p0, :cond_1
 
     if-eqz p3, :cond_2
 
-    .line 81
     :cond_1
     aget v7, v3, v9
 
@@ -642,7 +595,6 @@
 
     aput v7, v3, v9
 
-    .line 82
     aget v7, v3, v10
 
     invoke-virtual {v6}, Landroid/view/View;->getScrollY()I
@@ -655,7 +607,6 @@
 
     aput v7, v3, v10
 
-    .line 85
     :cond_2
     invoke-virtual {v6}, Landroid/view/View;->getMatrix()Landroid/graphics/Matrix;
 
@@ -663,7 +614,6 @@
 
     invoke-virtual {v7, v3}, Landroid/graphics/Matrix;->mapPoints([F)V
 
-    .line 86
     aget v7, v3, v9
 
     invoke-virtual {v6}, Landroid/view/View;->getLeft()I
@@ -676,7 +626,6 @@
 
     aput v7, v3, v9
 
-    .line 87
     aget v7, v3, v10
 
     invoke-virtual {v6}, Landroid/view/View;->getTop()I
@@ -689,31 +638,26 @@
 
     aput v7, v3, v10
 
-    .line 88
     invoke-virtual {v6}, Landroid/view/View;->getScaleX()F
 
     move-result v7
 
     mul-float/2addr v4, v7
 
-    .line 76
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 91
     .end local v6    # "v0":Landroid/view/View;
     :cond_3
     aget v7, v3, v9
 
     aput v7, p2, v9
 
-    .line 92
     aget v7, v3, v10
 
     aput v7, p2, v10
 
-    .line 93
     return v4
 .end method
 
@@ -729,12 +673,10 @@
 
     const/4 v10, 0x0
 
-    .line 99
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 101
     .local v1, "ancestorChain":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/view/View;>;"
     const/4 v8, 0x2
 
@@ -748,19 +690,15 @@
 
     aput v8, v5, v11
 
-    .line 103
     .local v5, "pt":[F
     move-object v7, p0
 
-    .line 104
     .local v7, "v":Landroid/view/View;
     :goto_0
     if-eq v7, p1, :cond_0
 
-    .line 105
     invoke-virtual {v1, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 106
     invoke-virtual {v7}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v7
@@ -771,40 +709,33 @@
     .restart local v7    # "v":Landroid/view/View;
     goto :goto_0
 
-    .line 108
     :cond_0
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 110
     const/high16 v6, 0x3f800000    # 1.0f
 
-    .line 111
     .local v6, "scale":F
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    .line 112
     .local v2, "count":I
     sget-object v8, Landroid/graphics/Matrix;->IDENTITY_MATRIX:Landroid/graphics/Matrix;
 
     invoke-virtual {p3, v8}, Landroid/graphics/Matrix;->set(Landroid/graphics/Matrix;)V
 
-    .line 113
     add-int/lit8 v3, v2, -0x1
 
     .local v3, "i":I
     :goto_1
     if-ltz v3, :cond_3
 
-    .line 114
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/View;
 
-    .line 115
     .local v0, "ancestor":Landroid/view/View;
     if-lez v3, :cond_2
 
@@ -818,7 +749,6 @@
 
     move-object v4, v8
 
-    .line 117
     .local v4, "next":Landroid/view/View;
     :goto_2
     aget v8, v5, v10
@@ -833,7 +763,6 @@
 
     aput v8, v5, v10
 
-    .line 118
     aget v8, v5, v11
 
     invoke-virtual {v0}, Landroid/view/View;->getScrollY()I
@@ -846,10 +775,8 @@
 
     aput v8, v5, v11
 
-    .line 120
     if-eqz v4, :cond_1
 
-    .line 121
     aget v8, v5, v10
 
     invoke-virtual {v4}, Landroid/view/View;->getLeft()I
@@ -862,7 +789,6 @@
 
     aput v8, v5, v10
 
-    .line 122
     aget v8, v5, v11
 
     invoke-virtual {v4}, Landroid/view/View;->getTop()I
@@ -875,49 +801,41 @@
 
     aput v8, v5, v11
 
-    .line 123
     invoke-virtual {v4}, Landroid/view/View;->getMatrix()Landroid/graphics/Matrix;
 
     move-result-object v8
 
     invoke-virtual {v8, p3}, Landroid/graphics/Matrix;->invert(Landroid/graphics/Matrix;)Z
 
-    .line 124
     invoke-virtual {p3, v5}, Landroid/graphics/Matrix;->mapPoints([F)V
 
-    .line 125
     invoke-virtual {v4}, Landroid/view/View;->getScaleX()F
 
     move-result v8
 
     mul-float/2addr v6, v8
 
-    .line 113
     :cond_1
     add-int/lit8 v3, v3, -0x1
 
     goto :goto_1
 
-    .line 115
     .end local v4    # "next":Landroid/view/View;
     :cond_2
     const/4 v4, 0x0
 
     goto :goto_2
 
-    .line 129
     .end local v0    # "ancestor":Landroid/view/View;
     :cond_3
     aget v8, v5, v10
 
     aput v8, p2, v10
 
-    .line 130
     aget v8, v5, v11
 
     aput v8, p2, v11
 
-    .line 131
     return v6
 .end method
 
@@ -929,25 +847,21 @@
     .prologue
     const/high16 v4, 0x3f000000    # 0.5f
 
-    .line 48
     const/high16 v2, 0x3f800000    # 1.0f
 
     cmpl-float v2, p1, v2
 
     if-eqz v2, :cond_0
 
-    .line 49
     invoke-virtual {p0}, Landroid/graphics/Rect;->centerX()I
 
     move-result v0
 
-    .line 50
     .local v0, "cx":I
     invoke-virtual {p0}, Landroid/graphics/Rect;->centerY()I
 
     move-result v1
 
-    .line 51
     .local v1, "cy":I
     neg-int v2, v0
 
@@ -955,7 +869,6 @@
 
     invoke-virtual {p0, v2, v3}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 52
     iget v2, p0, Landroid/graphics/Rect;->left:I
 
     int-to-float v2, v2
@@ -968,7 +881,6 @@
 
     iput v2, p0, Landroid/graphics/Rect;->left:I
 
-    .line 53
     iget v2, p0, Landroid/graphics/Rect;->top:I
 
     int-to-float v2, v2
@@ -981,7 +893,6 @@
 
     iput v2, p0, Landroid/graphics/Rect;->top:I
 
-    .line 54
     iget v2, p0, Landroid/graphics/Rect;->right:I
 
     int-to-float v2, v2
@@ -994,7 +905,6 @@
 
     iput v2, p0, Landroid/graphics/Rect;->right:I
 
-    .line 55
     iget v2, p0, Landroid/graphics/Rect;->bottom:I
 
     int-to-float v2, v2
@@ -1007,10 +917,8 @@
 
     iput v2, p0, Landroid/graphics/Rect;->bottom:I
 
-    .line 56
     invoke-virtual {p0, v0, v1}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 58
     .end local v0    # "cx":I
     .end local v1    # "cy":I
     :cond_0
@@ -1029,7 +937,6 @@
     .end annotation
 
     .prologue
-    .line 169
     sget-object v0, Lcom/android/systemui/recents/misc/Utilities;->sPropertyMethod:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x0
@@ -1048,6 +955,5 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 170
     return-void
 .end method

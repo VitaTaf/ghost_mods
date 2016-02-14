@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 1773
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;->val$icon:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
@@ -44,7 +43,6 @@
     .locals 8
 
     .prologue
-    .line 1776
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;->val$icon:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
     const/high16 v2, 0x3f000000    # 0.5f
@@ -64,6 +62,5 @@
 
     invoke-virtual/range {v1 .. v7}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setImageAlpha(FZJLandroid/view/animation/Interpolator;Ljava/lang/Runnable;)V
 
-    .line 1779
     return-void
 .end method

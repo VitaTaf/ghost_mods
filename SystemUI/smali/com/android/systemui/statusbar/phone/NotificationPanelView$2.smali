@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 340
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$2;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 343
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$2;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     const/4 v2, 0x0
@@ -49,12 +47,10 @@
     # invokes: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->requestScrollerTopPaddingUpdate(Z)V
     invoke-static {v1, v2}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$000(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Z)V
 
-    .line 344
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$2;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->requestPanelHeightUpdate()V
 
-    .line 345
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$2;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsSizeChangeAnimator:Landroid/animation/ValueAnimator;
@@ -72,7 +68,6 @@
 
     move-result v0
 
-    .line 346
     .local v0, "height":I
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$2;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
@@ -96,6 +91,5 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/qs/QSContainer;->setHeightOverride(I)V
 
-    .line 347
     return-void
 .end method

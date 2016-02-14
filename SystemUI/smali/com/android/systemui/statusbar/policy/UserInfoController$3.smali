@@ -47,7 +47,6 @@
     .locals 0
 
     .prologue
-    .line 142
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/UserInfoController$3;->this$0:Lcom/android/systemui/statusbar/policy/UserInfoController;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/policy/UserInfoController$3;->val$userName:Ljava/lang/String;
@@ -88,7 +87,6 @@
 
     const/4 v11, 0x1
 
-    .line 145
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController$3;->this$0:Lcom/android/systemui/statusbar/policy/UserInfoController;
 
     # getter for: Lcom/android/systemui/statusbar/policy/UserInfoController;->mContext:Landroid/content/Context;
@@ -100,15 +98,12 @@
 
     move-result-object v10
 
-    .line 149
     .local v10, "um":Landroid/os/UserManager;
     iget-object v8, p0, Lcom/android/systemui/statusbar/policy/UserInfoController$3;->val$userName:Ljava/lang/String;
 
-    .line 150
     .local v8, "name":Ljava/lang/String;
     const/4 v6, 0x0
 
-    .line 151
     .local v6, "avatar":Landroid/graphics/drawable/Drawable;
     iget v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController$3;->val$userId:I
 
@@ -116,11 +111,9 @@
 
     move-result-object v9
 
-    .line 152
     .local v9, "rawAvatar":Landroid/graphics/Bitmap;
     if-eqz v9, :cond_2
 
-    .line 153
     new-instance v6, Landroid/graphics/drawable/BitmapDrawable;
 
     .end local v6    # "avatar":Landroid/graphics/drawable/Drawable;
@@ -145,7 +138,6 @@
 
     invoke-direct {v6, v0, v1}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
 
-    .line 163
     .restart local v6    # "avatar":Landroid/graphics/drawable/Drawable;
     :goto_0
     invoke-virtual {v10}, Landroid/os/UserManager;->getUsers()Ljava/util/List;
@@ -158,7 +150,6 @@
 
     if-gt v0, v11, :cond_1
 
-    .line 165
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController$3;->val$context:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -189,11 +180,9 @@
 
     move-result-object v7
 
-    .line 170
     .local v7, "cursor":Landroid/database/Cursor;
     if-eqz v7, :cond_1
 
-    .line 172
     :try_start_0
     invoke-interface {v7}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -201,7 +190,6 @@
 
     if-eqz v0, :cond_4
 
-    .line 173
     const-string v0, "display_name"
 
     invoke-interface {v7, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -214,12 +202,10 @@
 
     move-result-object v8
 
-    .line 187
     :cond_0
     :goto_1
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    .line 191
     .end local v7    # "cursor":Landroid/database/Cursor;
     :cond_1
     new-instance v0, Landroid/util/Pair;
@@ -228,7 +214,6 @@
 
     return-object v0
 
-    .line 156
     :cond_2
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController$3;->val$isGuest:Z
 
@@ -241,7 +226,6 @@
 
     move-result-object v6
 
-    .line 158
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController$3;->this$0:Lcom/android/systemui/statusbar/policy/UserInfoController;
 
     # setter for: Lcom/android/systemui/statusbar/policy/UserInfoController;->mUseDefaultAvatar:Z
@@ -249,13 +233,11 @@
 
     goto :goto_0
 
-    .line 156
     :cond_3
     iget v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController$3;->val$userId:I
 
     goto :goto_2
 
-    .line 178
     .restart local v7    # "cursor":Landroid/database/Cursor;
     :cond_4
     :try_start_1
@@ -263,7 +245,6 @@
 
     if-nez v0, :cond_0
 
-    .line 179
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController$3;->this$0:Lcom/android/systemui/statusbar/policy/UserInfoController;
 
     # getter for: Lcom/android/systemui/statusbar/policy/UserInfoController;->mContext:Landroid/content/Context;
@@ -281,7 +262,6 @@
 
     move-result-object v8
 
-    .line 181
     iget v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController$3;->val$userId:I
 
     const/4 v1, 0x1
@@ -290,7 +270,6 @@
 
     move-result-object v6
 
-    .line 182
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController$3;->this$0:Lcom/android/systemui/statusbar/policy/UserInfoController;
 
     const/4 v1, 0x1
@@ -302,7 +281,6 @@
 
     goto :goto_1
 
-    .line 187
     :catchall_0
     move-exception v0
 
@@ -316,7 +294,6 @@
     .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
-    .line 142
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1    # "x0":[Ljava/lang/Object;
@@ -341,7 +318,6 @@
     .end annotation
 
     .prologue
-    .line 196
     .local p1, "result":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/String;Landroid/graphics/drawable/Drawable;>;"
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/UserInfoController$3;->this$0:Lcom/android/systemui/statusbar/policy/UserInfoController;
 
@@ -352,7 +328,6 @@
     # setter for: Lcom/android/systemui/statusbar/policy/UserInfoController;->mUserName:Ljava/lang/String;
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/policy/UserInfoController;->access$202(Lcom/android/systemui/statusbar/policy/UserInfoController;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 197
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/UserInfoController$3;->this$0:Lcom/android/systemui/statusbar/policy/UserInfoController;
 
     iget-object v0, p1, Landroid/util/Pair;->second:Ljava/lang/Object;
@@ -362,7 +337,6 @@
     # setter for: Lcom/android/systemui/statusbar/policy/UserInfoController;->mUserDrawable:Landroid/graphics/drawable/Drawable;
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/policy/UserInfoController;->access$302(Lcom/android/systemui/statusbar/policy/UserInfoController;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
-    .line 198
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController$3;->this$0:Lcom/android/systemui/statusbar/policy/UserInfoController;
 
     const/4 v1, 0x0
@@ -370,13 +344,11 @@
     # setter for: Lcom/android/systemui/statusbar/policy/UserInfoController;->mUserInfoTask:Landroid/os/AsyncTask;
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/UserInfoController;->access$402(Lcom/android/systemui/statusbar/policy/UserInfoController;Landroid/os/AsyncTask;)Landroid/os/AsyncTask;
 
-    .line 199
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoController$3;->this$0:Lcom/android/systemui/statusbar/policy/UserInfoController;
 
     # invokes: Lcom/android/systemui/statusbar/policy/UserInfoController;->notifyChanged()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/UserInfoController;->access$500(Lcom/android/systemui/statusbar/policy/UserInfoController;)V
 
-    .line 200
     return-void
 .end method
 
@@ -385,7 +357,6 @@
     .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
-    .line 142
     check-cast p1, Landroid/util/Pair;
 
     .end local p1    # "x0":Ljava/lang/Object;

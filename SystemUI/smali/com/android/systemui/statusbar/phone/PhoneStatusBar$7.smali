@@ -48,19 +48,16 @@
     .locals 1
 
     .prologue
-    .line 569
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 570
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;->mTmpNewlyVisibleNotifications:Ljava/util/ArrayList;
 
-    .line 571
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -76,7 +73,6 @@
     .locals 12
 
     .prologue
-    .line 575
     iget-object v8, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -86,7 +82,6 @@
     # setter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mLastVisibilityReportUptimeMs:J
     invoke-static {v8, v10, v11}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$1902(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;J)J
 
-    .line 585
     iget-object v8, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mNotificationData:Lcom/android/systemui/statusbar/NotificationData;
@@ -98,13 +93,11 @@
 
     move-result-object v1
 
-    .line 586
     .local v1, "activeNotifications":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/statusbar/NotificationData$Entry;>;"
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 587
     .local v0, "N":I
     const/4 v4, 0x0
 
@@ -112,14 +105,12 @@
     :goto_0
     if-ge v4, v0, :cond_3
 
-    .line 588
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/android/systemui/statusbar/NotificationData$Entry;
 
-    .line 589
     .local v3, "entry":Lcom/android/systemui/statusbar/NotificationData$Entry;
     iget-object v8, v3, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Landroid/service/notification/StatusBarNotification;
 
@@ -127,7 +118,6 @@
 
     move-result-object v5
 
-    .line 590
     .local v5, "key":Ljava/lang/String;
     iget-object v8, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -140,7 +130,6 @@
 
     move-result v7
 
-    .line 591
     .local v7, "previouslyVisible":Z
     iget-object v8, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -161,41 +150,34 @@
 
     const/4 v2, 0x1
 
-    .line 593
     .local v2, "currentlyVisible":Z
     :goto_1
     if-eqz v2, :cond_0
 
-    .line 595
     iget-object v8, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;->mTmpCurrentlyVisibleNotifications:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 597
     :cond_0
     if-nez v7, :cond_1
 
     if-eqz v2, :cond_1
 
-    .line 598
     iget-object v8, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;->mTmpNewlyVisibleNotifications:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 587
     :cond_1
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 591
     .end local v2    # "currentlyVisible":Z
     :cond_2
     const/4 v2, 0x0
 
     goto :goto_1
 
-    .line 601
     .end local v3    # "entry":Lcom/android/systemui/statusbar/NotificationData$Entry;
     .end local v5    # "key":Ljava/lang/String;
     .end local v7    # "previouslyVisible":Z
@@ -207,13 +189,11 @@
 
     move-result-object v6
 
-    .line 602
     .local v6, "noLongerVisibleNotifications":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/String;>;"
     iget-object v8, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;->mTmpCurrentlyVisibleNotifications:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v8}, Landroid/util/ArraySet;->removeAll(Ljava/util/Collection;)Z
 
-    .line 604
     iget-object v8, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iget-object v9, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;->mTmpNewlyVisibleNotifications:Ljava/util/ArrayList;
@@ -221,7 +201,6 @@
     # invokes: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->logNotificationVisibilityChanges(Ljava/util/Collection;Ljava/util/Collection;)V
     invoke-static {v8, v9, v6}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$2400(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Ljava/util/Collection;Ljava/util/Collection;)V
 
-    .line 607
     iget-object v8, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mCurrentlyVisibleNotifications:Landroid/util/ArraySet;
@@ -231,7 +210,6 @@
 
     invoke-virtual {v8}, Landroid/util/ArraySet;->clear()V
 
-    .line 608
     iget-object v8, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mCurrentlyVisibleNotifications:Landroid/util/ArraySet;
@@ -243,16 +221,13 @@
 
     invoke-virtual {v8, v9}, Landroid/util/ArraySet;->addAll(Ljava/util/Collection;)Z
 
-    .line 610
     iget-object v8, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;->mTmpNewlyVisibleNotifications:Ljava/util/ArrayList;
 
     invoke-virtual {v8}, Ljava/util/ArrayList;->clear()V
 
-    .line 611
     iget-object v8, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;->mTmpCurrentlyVisibleNotifications:Ljava/util/ArrayList;
 
     invoke-virtual {v8}, Ljava/util/ArrayList;->clear()V
 
-    .line 612
     return-void
 .end method

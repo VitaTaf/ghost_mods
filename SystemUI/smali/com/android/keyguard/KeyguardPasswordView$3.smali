@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 150
     iput-object p1, p0, Lcom/android/keyguard/KeyguardPasswordView$3;->this$0:Lcom/android/keyguard/KeyguardPasswordView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,21 +40,18 @@
     .param p1, "s"    # Landroid/text/Editable;
 
     .prologue
-    .line 158
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPasswordView$3;->this$0:Lcom/android/keyguard/KeyguardPasswordView;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardPasswordView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
     if-eqz v0, :cond_0
 
-    .line 159
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPasswordView$3;->this$0:Lcom/android/keyguard/KeyguardPasswordView;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardPasswordView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
     invoke-interface {v0}, Lcom/android/keyguard/KeyguardSecurityCallback;->userActivity()V
 
-    .line 161
     :cond_0
     return-void
 .end method
@@ -68,7 +64,6 @@
     .param p4, "after"    # I
 
     .prologue
-    .line 155
     return-void
 .end method
 
@@ -80,6 +75,5 @@
     .param p4, "count"    # I
 
     .prologue
-    .line 152
     return-void
 .end method

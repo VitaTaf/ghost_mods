@@ -42,17 +42,14 @@
     .param p2, "action"    # Ljava/lang/String;
 
     .prologue
-    .line 47
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
-    .line 138
     new-instance v0, Lcom/android/systemui/qs/tiles/IntentTile$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/IntentTile$1;-><init>(Lcom/android/systemui/qs/tiles/IntentTile;)V
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/IntentTile;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 48
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/IntentTile;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/IntentTile;->mReceiver:Landroid/content/BroadcastReceiver;
@@ -63,7 +60,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 49
     return-void
 .end method
 
@@ -73,7 +69,6 @@
     .param p1, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 37
     invoke-virtual {p0, p1}, Lcom/android/systemui/qs/tiles/IntentTile;->refreshState(Ljava/lang/Object;)V
 
     return-void
@@ -84,7 +79,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/IntentTile;
 
     .prologue
-    .line 37
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/IntentTile;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -106,7 +100,6 @@
     .end annotation
 
     .prologue
-    .line 58
     if-eqz p1, :cond_0
 
     const-string v1, "intent("
@@ -125,7 +118,6 @@
 
     if-nez v1, :cond_1
 
-    .line 59
     :cond_0
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -151,7 +143,6 @@
 
     throw v1
 
-    .line 61
     :cond_1
     const-string v1, "intent("
 
@@ -169,7 +160,6 @@
 
     move-result-object v0
 
-    .line 62
     .local v0, "action":Ljava/lang/String;
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
@@ -177,7 +167,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 63
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "Empty intent tile spec action"
@@ -186,7 +175,6 @@
 
     throw v1
 
-    .line 65
     :cond_2
     new-instance v1, Lcom/android/systemui/qs/tiles/IntentTile;
 
@@ -202,30 +190,24 @@
     .param p3, "uri"    # Ljava/lang/String;
 
     .prologue
-    .line 95
     if-eqz p2, :cond_1
 
-    .line 96
     :try_start_0
     invoke-virtual {p2}, Landroid/app/PendingIntent;->send()V
 
-    .line 104
     :cond_0
     :goto_0
     return-void
 
-    .line 97
     :cond_1
     if-eqz p3, :cond_0
 
-    .line 98
     const/4 v2, 0x1
 
     invoke-static {p3, v2}, Landroid/content/Intent;->parseUri(Ljava/lang/String;I)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 99
     .local v0, "intent":Landroid/content/Intent;
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/IntentTile;->mContext:Landroid/content/Context;
 
@@ -241,12 +223,10 @@
 
     goto :goto_0
 
-    .line 101
     .end local v0    # "intent":Landroid/content/Intent;
     :catch_0
     move-exception v1
 
-    .line 102
     .local v1, "t":Ljava/lang/Throwable;
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/IntentTile;->TAG:Ljava/lang/String;
 
@@ -285,7 +265,6 @@
     .locals 3
 
     .prologue
-    .line 85
     const-string v0, "click"
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/IntentTile;->mOnClick:Landroid/app/PendingIntent;
@@ -294,7 +273,6 @@
 
     invoke-direct {p0, v0, v1, v2}, Lcom/android/systemui/qs/tiles/IntentTile;->sendIntent(Ljava/lang/String;Landroid/app/PendingIntent;Ljava/lang/String;)V
 
-    .line 86
     return-void
 .end method
 
@@ -302,17 +280,14 @@
     .locals 2
 
     .prologue
-    .line 53
     invoke-super {p0}, Lcom/android/systemui/qs/QSTile;->handleDestroy()V
 
-    .line 54
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/IntentTile;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/IntentTile;->mReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 55
     return-void
 .end method
 
@@ -320,7 +295,6 @@
     .locals 3
 
     .prologue
-    .line 90
     const-string v0, "long-click"
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/IntentTile;->mOnLongClick:Landroid/app/PendingIntent;
@@ -329,7 +303,6 @@
 
     invoke-direct {p0, v0, v1, v2}, Lcom/android/systemui/qs/tiles/IntentTile;->sendIntent(Ljava/lang/String;Landroid/app/PendingIntent;Ljava/lang/String;)V
 
-    .line 91
     return-void
 .end method
 
@@ -339,22 +312,18 @@
     .param p2, "arg"    # Ljava/lang/Object;
 
     .prologue
-    .line 108
     instance-of v5, p2, Landroid/content/Intent;
 
     if-nez v5, :cond_0
 
-    .line 136
     :goto_0
     return-void
 
     :cond_0
     move-object v3, p2
 
-    .line 109
     check-cast v3, Landroid/content/Intent;
 
-    .line 110
     .local v3, "intent":Landroid/content/Intent;
     const-string v5, "visible"
 
@@ -366,7 +335,6 @@
 
     iput-boolean v5, p1, Lcom/android/systemui/qs/QSTile$State;->visible:Z
 
-    .line 111
     const-string v5, "contentDescription"
 
     invoke-virtual {v3, v5}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -375,7 +343,6 @@
 
     iput-object v5, p1, Lcom/android/systemui/qs/QSTile$State;->contentDescription:Ljava/lang/String;
 
-    .line 112
     const-string v5, "label"
 
     invoke-virtual {v3, v5}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -384,23 +351,19 @@
 
     iput-object v5, p1, Lcom/android/systemui/qs/QSTile$State;->label:Ljava/lang/String;
 
-    .line 113
     const/4 v5, 0x0
 
     iput-object v5, p1, Lcom/android/systemui/qs/QSTile$State;->icon:Lcom/android/systemui/qs/QSTile$Icon;
 
-    .line 114
     const-string v5, "iconBitmap"
 
     invoke-virtual {v3, v5}, Landroid/content/Intent;->getByteArrayExtra(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 115
     .local v0, "iconBitmap":[B
     if-eqz v0, :cond_2
 
-    .line 117
     :try_start_0
     new-instance v5, Lcom/android/systemui/qs/tiles/IntentTile$BytesIcon;
 
@@ -410,7 +373,6 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 132
     :cond_1
     :goto_1
     const-string v5, "onClick"
@@ -423,7 +385,6 @@
 
     iput-object v5, p0, Lcom/android/systemui/qs/tiles/IntentTile;->mOnClick:Landroid/app/PendingIntent;
 
-    .line 133
     const-string v5, "onClickUri"
 
     invoke-virtual {v3, v5}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -432,7 +393,6 @@
 
     iput-object v5, p0, Lcom/android/systemui/qs/tiles/IntentTile;->mOnClickUri:Ljava/lang/String;
 
-    .line 134
     const-string v5, "onLongClick"
 
     invoke-virtual {v3, v5}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -443,7 +403,6 @@
 
     iput-object v5, p0, Lcom/android/systemui/qs/tiles/IntentTile;->mOnLongClick:Landroid/app/PendingIntent;
 
-    .line 135
     const-string v5, "onLongClickUri"
 
     invoke-virtual {v3, v5}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -454,11 +413,9 @@
 
     goto :goto_0
 
-    .line 118
     :catch_0
     move-exception v4
 
-    .line 119
     .local v4, "t":Ljava/lang/Throwable;
     iget-object v5, p0, Lcom/android/systemui/qs/tiles/IntentTile;->TAG:Ljava/lang/String;
 
@@ -486,7 +443,6 @@
 
     goto :goto_1
 
-    .line 122
     .end local v4    # "t":Ljava/lang/Throwable;
     :cond_2
     const-string v5, "iconId"
@@ -497,18 +453,15 @@
 
     move-result v1
 
-    .line 123
     .local v1, "iconId":I
     if-eqz v1, :cond_1
 
-    .line 124
     const-string v5, "iconPackage"
 
     invoke-virtual {v3, v5}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 125
     .local v2, "iconPackage":Ljava/lang/String;
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -516,7 +469,6 @@
 
     if-nez v5, :cond_3
 
-    .line 126
     new-instance v5, Lcom/android/systemui/qs/tiles/IntentTile$PackageDrawableIcon;
 
     invoke-direct {v5, p0, v2, v1}, Lcom/android/systemui/qs/tiles/IntentTile$PackageDrawableIcon;-><init>(Lcom/android/systemui/qs/tiles/IntentTile;Ljava/lang/String;I)V
@@ -525,7 +477,6 @@
 
     goto :goto_1
 
-    .line 128
     :cond_3
     invoke-static {v1}, Lcom/android/systemui/qs/QSTile$ResourceIcon;->get(I)Lcom/android/systemui/qs/QSTile$Icon;
 
@@ -541,13 +492,10 @@
     .param p1, "newUserId"    # I
 
     .prologue
-    .line 79
     invoke-super {p0, p1}, Lcom/android/systemui/qs/QSTile;->handleUserSwitch(I)V
 
-    .line 80
     iput p1, p0, Lcom/android/systemui/qs/tiles/IntentTile;->mCurrentUserId:I
 
-    .line 81
     return-void
 .end method
 
@@ -555,7 +503,6 @@
     .locals 1
 
     .prologue
-    .line 74
     new-instance v0, Lcom/android/systemui/qs/QSTile$State;
 
     invoke-direct {v0}, Lcom/android/systemui/qs/QSTile$State;-><init>()V
@@ -568,6 +515,5 @@
     .param p1, "listening"    # Z
 
     .prologue
-    .line 70
     return-void
 .end method

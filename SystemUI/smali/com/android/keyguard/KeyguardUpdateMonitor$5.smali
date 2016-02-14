@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 630
     iput-object p1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$5;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-direct {p0}, Landroid/service/fingerprint/FingerprintManagerReceiver;-><init>()V
@@ -38,7 +37,6 @@
     .param p1, "info"    # I
 
     .prologue
-    .line 638
     iget-object v0, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$5;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     # getter for: Lcom/android/keyguard/KeyguardUpdateMonitor;->mHandler:Landroid/os/Handler;
@@ -56,7 +54,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 639
     return-void
 .end method
 
@@ -65,7 +62,6 @@
     .param p1, "error"    # I
 
     .prologue
-    .line 644
     return-void
 .end method
 
@@ -74,7 +70,6 @@
     .param p1, "fingerprintId"    # I
 
     .prologue
-    .line 633
     iget-object v0, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$5;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     # getter for: Lcom/android/keyguard/KeyguardUpdateMonitor;->mHandler:Landroid/os/Handler;
@@ -92,6 +87,5 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 634
     return-void
 .end method

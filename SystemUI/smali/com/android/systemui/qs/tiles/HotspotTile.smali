@@ -59,10 +59,8 @@
     .param p1, "host"    # Lcom/android/systemui/qs/QSTile$Host;
 
     .prologue
-    .line 41
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
-    .line 31
     new-instance v0, Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
     const v1, 0x7f020032
@@ -71,7 +69,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mEnable:Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
-    .line 33
     new-instance v0, Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
     const v1, 0x7f020030
@@ -80,7 +77,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mDisable:Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
-    .line 36
     new-instance v0, Lcom/android/systemui/qs/tiles/HotspotTile$Callback;
 
     const/4 v1, 0x0
@@ -89,14 +85,12 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mCallback:Lcom/android/systemui/qs/tiles/HotspotTile$Callback;
 
-    .line 42
     invoke-interface {p1}, Lcom/android/systemui/qs/QSTile$Host;->getHotspotController()Lcom/android/systemui/statusbar/policy/HotspotController;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mController:Lcom/android/systemui/statusbar/policy/HotspotController;
 
-    .line 43
     invoke-interface {p1}, Lcom/android/systemui/qs/QSTile$Host;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -107,21 +101,18 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mUsageTracker:Lcom/android/systemui/qs/UsageTracker;
 
-    .line 44
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mUsageTracker:Lcom/android/systemui/qs/UsageTracker;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/UsageTracker;->setListening(Z)V
 
-    .line 45
     invoke-interface {p1}, Lcom/android/systemui/qs/QSTile$Host;->getKeyguardMonitor()Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mKeyguard:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
-    .line 46
     return-void
 .end method
 
@@ -130,7 +121,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/HotspotTile;
 
     .prologue
-    .line 30
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/HotspotTile;->refreshState()V
 
     return-void
@@ -141,7 +131,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/HotspotTile;
 
     .prologue
-    .line 30
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/HotspotTile;->refreshState()V
 
     return-void
@@ -152,7 +141,6 @@
     .param p0, "x0"    # Landroid/content/Context;
 
     .prologue
-    .line 30
     invoke-static {p0}, Lcom/android/systemui/qs/tiles/HotspotTile;->newUsageTracker(Landroid/content/Context;)Lcom/android/systemui/qs/UsageTracker;
 
     move-result-object v0
@@ -165,7 +153,6 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 108
     new-instance v0, Lcom/android/systemui/qs/UsageTracker;
 
     const-string v1, "HotspotTileLastUsed"
@@ -185,7 +172,6 @@
     .locals 2
 
     .prologue
-    .line 100
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
     check-cast v0, Lcom/android/systemui/qs/QSTile$BooleanState;
@@ -194,7 +180,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 101
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mContext:Landroid/content/Context;
 
     const v1, 0x7f0c00b5
@@ -203,7 +188,6 @@
 
     move-result-object v0
 
-    .line 103
     :goto_0
     return-object v0
 
@@ -225,7 +209,6 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 70
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
     check-cast v1, Lcom/android/systemui/qs/QSTile$BooleanState;
@@ -240,7 +223,6 @@
 
     move-result v0
 
-    .line 71
     .local v0, "isEnabled":Z
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mController:Lcom/android/systemui/statusbar/policy/HotspotController;
 
@@ -251,20 +233,16 @@
     :goto_0
     invoke-interface {v3, v1}, Lcom/android/systemui/statusbar/policy/HotspotController;->setHotspotEnabled(Z)V
 
-    .line 72
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mEnable:Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/qs/QSTile$AnimationIcon;->setAllowAnimation(Z)V
 
-    .line 73
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mDisable:Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/qs/QSTile$AnimationIcon;->setAllowAnimation(Z)V
 
-    .line 74
     return-void
 
-    .line 71
     :cond_0
     const/4 v1, 0x0
 
@@ -275,17 +253,14 @@
     .locals 2
 
     .prologue
-    .line 50
     invoke-super {p0}, Lcom/android/systemui/qs/QSTile;->handleDestroy()V
 
-    .line 51
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mUsageTracker:Lcom/android/systemui/qs/UsageTracker;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/UsageTracker;->setListening(Z)V
 
-    .line 52
     return-void
 .end method
 
@@ -293,7 +268,6 @@
     .locals 6
 
     .prologue
-    .line 78
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
     check-cast v1, Lcom/android/systemui/qs/QSTile$BooleanState;
@@ -302,11 +276,9 @@
 
     if-eqz v1, :cond_0
 
-    .line 87
     :goto_0
     return-void
 
-    .line 79
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mContext:Landroid/content/Context;
 
@@ -330,7 +302,6 @@
 
     move-result-object v0
 
-    .line 81
     .local v0, "title":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mUsageTracker:Lcom/android/systemui/qs/UsageTracker;
 
@@ -349,7 +320,6 @@
     .param p2, "arg"    # Ljava/lang/Object;
 
     .prologue
-    .line 91
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mController:Lcom/android/systemui/statusbar/policy/HotspotController;
 
     invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/HotspotController;->isHotspotSupported()Z
@@ -371,7 +341,6 @@
     :goto_0
     iput-boolean v0, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->visible:Z
 
-    .line 92
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mContext:Landroid/content/Context;
 
     const v1, 0x7f0c00f8
@@ -382,7 +351,6 @@
 
     iput-object v0, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->label:Ljava/lang/String;
 
-    .line 94
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mController:Lcom/android/systemui/statusbar/policy/HotspotController;
 
     invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/HotspotController;->isHotspotEnabled()Z
@@ -391,7 +359,6 @@
 
     iput-boolean v0, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
 
-    .line 95
     iget-boolean v0, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->visible:Z
 
     if-eqz v0, :cond_1
@@ -405,16 +372,13 @@
     :goto_1
     iput-object v0, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->icon:Lcom/android/systemui/qs/QSTile$Icon;
 
-    .line 96
     return-void
 
-    .line 91
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 95
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mDisable:Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
@@ -427,7 +391,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 30
     check-cast p1, Lcom/android/systemui/qs/QSTile$BooleanState;
 
     .end local p1    # "x0":Lcom/android/systemui/qs/QSTile$State;
@@ -440,7 +403,6 @@
     .locals 1
 
     .prologue
-    .line 56
     new-instance v0, Lcom/android/systemui/qs/QSTile$BooleanState;
 
     invoke-direct {v0}, Lcom/android/systemui/qs/QSTile$BooleanState;-><init>()V
@@ -452,7 +414,6 @@
     .locals 1
 
     .prologue
-    .line 30
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/HotspotTile;->newTileState()Lcom/android/systemui/qs/QSTile$BooleanState;
 
     move-result-object v0
@@ -465,21 +426,17 @@
     .param p1, "listening"    # Z
 
     .prologue
-    .line 61
     if-eqz p1, :cond_0
 
-    .line 62
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mController:Lcom/android/systemui/statusbar/policy/HotspotController;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mCallback:Lcom/android/systemui/qs/tiles/HotspotTile$Callback;
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/HotspotController;->addCallback(Lcom/android/systemui/statusbar/policy/HotspotController$Callback;)V
 
-    .line 66
     :goto_0
     return-void
 
-    .line 64
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mController:Lcom/android/systemui/statusbar/policy/HotspotController;
 

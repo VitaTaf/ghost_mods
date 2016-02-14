@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 1120
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$16;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,28 +40,24 @@
     .param p1, "label"    # Ljava/lang/String;
 
     .prologue
-    .line 1124
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$16;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarLabelShortFormViewText:Landroid/widget/TextView;
 
     if-eqz v0, :cond_0
 
-    .line 1125
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$16;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarLabelShortFormViewText:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1126
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 1127
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$16;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarLabelShortFormViewText:Landroid/widget/TextView;
@@ -71,13 +66,11 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1131
     :goto_0
     sget-boolean v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->DEBUG:Z
 
     if-eqz v0, :cond_0
 
-    .line 1132
     const-string v0, "PhoneStatusBar"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -107,7 +100,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1136
     const-string v1, "PhoneStatusBar"
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -159,11 +151,9 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1154
     :cond_0
     return-void
 
-    .line 1129
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$16;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -175,7 +165,6 @@
 
     goto :goto_0
 
-    .line 1136
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$16;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 

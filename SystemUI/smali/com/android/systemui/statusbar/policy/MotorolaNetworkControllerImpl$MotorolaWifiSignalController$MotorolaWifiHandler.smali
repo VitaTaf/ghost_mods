@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 3983
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiHandler;->this$0:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -38,12 +37,10 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 3990
     sget-boolean v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->INFO:Z
 
     if-eqz v0, :cond_0
 
-    .line 3991
     const-string v0, "MotoNetwCtrlr.MotoWifiHndlr"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -68,36 +65,30 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3998
     :cond_0
     iget v0, p1, Landroid/os/Message;->what:I
 
     sparse-switch v0, :sswitch_data_0
 
-    .line 4027
     :goto_0
     sget-boolean v0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl;->INFO:Z
 
     if-eqz v0, :cond_1
 
-    .line 4028
     const-string v0, "MotoNetwCtrlr.MotoWifiHndlr"
 
     const-string v1, "handleMessage: Completed"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4032
     :cond_1
     return-void
 
-    .line 4002
     :sswitch_0
     iget v0, p1, Landroid/os/Message;->arg1:I
 
     if-nez v0, :cond_2
 
-    .line 4006
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiHandler;->this$0:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;
 
     # getter for: Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;->mWifiChannel:Lcom/android/internal/util/AsyncChannel;
@@ -115,7 +106,6 @@
 
     goto :goto_0
 
-    .line 4014
     :cond_2
     const-string v0, "MotoNetwCtrlr.MotoWifiHndlr"
 
@@ -125,7 +115,6 @@
 
     goto :goto_0
 
-    .line 4020
     :sswitch_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController$MotorolaWifiHandler;->this$0:Lcom/android/systemui/statusbar/policy/MotorolaNetworkControllerImpl$MotorolaWifiSignalController;
 
@@ -135,7 +124,6 @@
 
     goto :goto_0
 
-    .line 3998
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1

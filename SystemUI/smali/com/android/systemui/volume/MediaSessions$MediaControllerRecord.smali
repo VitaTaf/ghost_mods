@@ -30,15 +30,12 @@
     .param p2, "controller"    # Landroid/media/session/MediaController;
 
     .prologue
-    .line 267
     iput-object p1, p0, Lcom/android/systemui/volume/MediaSessions$MediaControllerRecord;->this$0:Lcom/android/systemui/volume/MediaSessions;
 
     invoke-direct {p0}, Landroid/media/session/MediaController$Callback;-><init>()V
 
-    .line 268
     iput-object p2, p0, Lcom/android/systemui/volume/MediaSessions$MediaControllerRecord;->controller:Landroid/media/session/MediaController;
 
-    .line 269
     return-void
 .end method
 
@@ -49,7 +46,6 @@
     .param p3, "x2"    # Lcom/android/systemui/volume/MediaSessions$1;
 
     .prologue
-    .line 261
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/volume/MediaSessions$MediaControllerRecord;-><init>(Lcom/android/systemui/volume/MediaSessions;Landroid/media/session/MediaController;)V
 
     return-void
@@ -60,7 +56,6 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/MediaSessions$MediaControllerRecord;
 
     .prologue
-    .line 261
     iget-object v0, p0, Lcom/android/systemui/volume/MediaSessions$MediaControllerRecord;->controller:Landroid/media/session/MediaController;
 
     return-object v0
@@ -71,7 +66,6 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/MediaSessions$MediaControllerRecord;
 
     .prologue
-    .line 261
     iget-object v0, p0, Lcom/android/systemui/volume/MediaSessions$MediaControllerRecord;->name:Ljava/lang/String;
 
     return-object v0
@@ -83,7 +77,6 @@
     .param p1, "x1"    # Ljava/lang/String;
 
     .prologue
-    .line 261
     iput-object p1, p0, Lcom/android/systemui/volume/MediaSessions$MediaControllerRecord;->name:Ljava/lang/String;
 
     return-object p1
@@ -94,7 +87,6 @@
     .param p0, "x0"    # Lcom/android/systemui/volume/MediaSessions$MediaControllerRecord;
 
     .prologue
-    .line 261
     iget-boolean v0, p0, Lcom/android/systemui/volume/MediaSessions$MediaControllerRecord;->sentRemote:Z
 
     return v0
@@ -106,7 +98,6 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 261
     iput-boolean p1, p0, Lcom/android/systemui/volume/MediaSessions$MediaControllerRecord;->sentRemote:Z
 
     return p1
@@ -117,7 +108,6 @@
     .param p1, "method"    # Ljava/lang/String;
 
     .prologue
-    .line 272
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -162,7 +152,6 @@
     .param p1, "info"    # Landroid/media/session/MediaController$PlaybackInfo;
 
     .prologue
-    .line 277
     sget-boolean v1, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v1, :cond_0
@@ -212,14 +201,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 279
     :cond_0
     # invokes: Lcom/android/systemui/volume/MediaSessions;->isRemote(Landroid/media/session/MediaController$PlaybackInfo;)Z
     invoke-static {p1}, Lcom/android/systemui/volume/MediaSessions;->access$600(Landroid/media/session/MediaController$PlaybackInfo;)Z
 
     move-result v0
 
-    .line 280
     .local v0, "remote":Z
     if-nez v0, :cond_2
 
@@ -227,7 +214,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 281
     iget-object v1, p0, Lcom/android/systemui/volume/MediaSessions$MediaControllerRecord;->this$0:Lcom/android/systemui/volume/MediaSessions;
 
     # getter for: Lcom/android/systemui/volume/MediaSessions;->mCallbacks:Lcom/android/systemui/volume/MediaSessions$Callbacks;
@@ -243,21 +229,17 @@
 
     invoke-interface {v1, v2}, Lcom/android/systemui/volume/MediaSessions$Callbacks;->onRemoteRemoved(Landroid/media/session/MediaSession$Token;)V
 
-    .line 282
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/systemui/volume/MediaSessions$MediaControllerRecord;->sentRemote:Z
 
-    .line 287
     :cond_1
     :goto_0
     return-void
 
-    .line 283
     :cond_2
     if-eqz v0, :cond_1
 
-    .line 284
     iget-object v1, p0, Lcom/android/systemui/volume/MediaSessions$MediaControllerRecord;->this$0:Lcom/android/systemui/volume/MediaSessions;
 
     iget-object v2, p0, Lcom/android/systemui/volume/MediaSessions$MediaControllerRecord;->controller:Landroid/media/session/MediaController;
@@ -271,7 +253,6 @@
     # invokes: Lcom/android/systemui/volume/MediaSessions;->updateRemoteH(Landroid/media/session/MediaSession$Token;Ljava/lang/String;Landroid/media/session/MediaController$PlaybackInfo;)V
     invoke-static {v1, v2, v3, p1}, Lcom/android/systemui/volume/MediaSessions;->access$800(Lcom/android/systemui/volume/MediaSessions;Landroid/media/session/MediaSession$Token;Ljava/lang/String;Landroid/media/session/MediaController$PlaybackInfo;)V
 
-    .line 285
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/systemui/volume/MediaSessions$MediaControllerRecord;->sentRemote:Z
@@ -284,7 +265,6 @@
     .param p1, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 291
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_0
@@ -318,7 +298,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 292
     :cond_0
     return-void
 .end method
@@ -328,7 +307,6 @@
     .param p1, "metadata"    # Landroid/media/MediaMetadata;
 
     .prologue
-    .line 296
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_0
@@ -366,7 +344,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 297
     :cond_0
     return-void
 .end method
@@ -376,7 +353,6 @@
     .param p1, "state"    # Landroid/media/session/PlaybackState;
 
     .prologue
-    .line 301
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_0
@@ -414,7 +390,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 302
     :cond_0
     return-void
 .end method
@@ -432,7 +407,6 @@
     .end annotation
 
     .prologue
-    .line 306
     .local p1, "queue":Ljava/util/List;, "Ljava/util/List<Landroid/media/session/MediaSession$QueueItem;>;"
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
@@ -467,7 +441,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 307
     :cond_0
     return-void
 .end method
@@ -477,7 +450,6 @@
     .param p1, "title"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 311
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_0
@@ -511,7 +483,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 312
     :cond_0
     return-void
 .end method
@@ -520,7 +491,6 @@
     .locals 2
 
     .prologue
-    .line 316
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_0
@@ -538,7 +508,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 317
     :cond_0
     return-void
 .end method
@@ -549,7 +518,6 @@
     .param p2, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 321
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_0
@@ -599,7 +567,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 322
     :cond_0
     return-void
 .end method

@@ -23,17 +23,14 @@
     .locals 1
 
     .prologue
-    .line 344
     iput-object p1, p0, Lcom/android/systemui/qs/QSTileView$H;->this$0:Lcom/android/systemui/qs/QSTileView;
 
-    .line 345
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 346
     return-void
 .end method
 
@@ -44,14 +41,12 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 349
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 350
     iget-object v1, p0, Lcom/android/systemui/qs/QSTileView$H;->this$0:Lcom/android/systemui/qs/QSTileView;
 
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -60,7 +55,6 @@
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/qs/QSTileView;->handleStateChanged(Lcom/android/systemui/qs/QSTile$State;)V
 
-    .line 352
     :cond_0
     return-void
 .end method

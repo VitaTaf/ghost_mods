@@ -24,7 +24,6 @@
     .param p2, "x0"    # Ljava/lang/String;
 
     .prologue
-    .line 175
     iput-object p1, p0, Lcom/android/keyguard/KeyguardRemoteLockView$1;->this$0:Lcom/android/keyguard/KeyguardRemoteLockView;
 
     invoke-direct {p0, p1, p2}, Lcom/android/keyguard/KeyguardRemoteLockView$CheckRemoteLock;-><init>(Lcom/android/keyguard/KeyguardRemoteLockView;Ljava/lang/String;)V
@@ -39,7 +38,6 @@
     .param p1, "success"    # Z
 
     .prologue
-    .line 177
     iget-object v0, p0, Lcom/android/keyguard/KeyguardRemoteLockView$1;->this$0:Lcom/android/keyguard/KeyguardRemoteLockView;
 
     new-instance v1, Lcom/android/keyguard/KeyguardRemoteLockView$1$1;
@@ -48,6 +46,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardRemoteLockView;->post(Ljava/lang/Runnable;)Z
 
-    .line 200
     return-void
 .end method

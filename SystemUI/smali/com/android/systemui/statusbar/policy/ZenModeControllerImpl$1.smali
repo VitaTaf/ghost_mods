@@ -26,7 +26,6 @@
     .param p4, "x2"    # Ljava/lang/String;
 
     .prologue
-    .line 67
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;
 
     invoke-direct {p0, p2, p3, p4}, Lcom/android/systemui/qs/GlobalSetting;-><init>(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
@@ -41,12 +40,10 @@
     .param p1, "value"    # I
 
     .prologue
-    .line 70
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;
 
     # invokes: Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->fireZenChanged(I)V
     invoke-static {v0, p1}, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->access$000(Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;I)V
 
-    .line 71
     return-void
 .end method

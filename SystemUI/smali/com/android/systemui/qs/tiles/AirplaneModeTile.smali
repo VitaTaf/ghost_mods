@@ -50,10 +50,8 @@
     .param p1, "host"    # Lcom/android/systemui/qs/QSTile$Host;
 
     .prologue
-    .line 41
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
-    .line 32
     new-instance v0, Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
     const v1, 0x7f0200b3
@@ -62,7 +60,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mEnable:Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
-    .line 34
     new-instance v0, Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
     const v1, 0x7f0200b1
@@ -71,14 +68,12 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mDisable:Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
-    .line 109
     new-instance v0, Lcom/android/systemui/qs/tiles/AirplaneModeTile$2;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/AirplaneModeTile$2;-><init>(Lcom/android/systemui/qs/tiles/AirplaneModeTile;)V
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 43
     new-instance v0, Lcom/android/systemui/qs/tiles/AirplaneModeTile$1;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mContext:Landroid/content/Context;
@@ -91,7 +86,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mSetting:Lcom/android/systemui/qs/GlobalSetting;
 
-    .line 49
     return-void
 .end method
 
@@ -101,7 +95,6 @@
     .param p1, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 31
     invoke-virtual {p0, p1}, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->handleRefreshState(Ljava/lang/Object;)V
 
     return-void
@@ -112,7 +105,6 @@
     .param p0, "x0"    # Lcom/android/systemui/qs/tiles/AirplaneModeTile;
 
     .prologue
-    .line 31
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->refreshState()V
 
     return-void
@@ -123,7 +115,6 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 64
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mContext:Landroid/content/Context;
 
     const-string v2, "connectivity"
@@ -134,11 +125,9 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 66
     .local v0, "mgr":Landroid/net/ConnectivityManager;
     invoke-virtual {v0, p1}, Landroid/net/ConnectivityManager;->setAirplaneMode(Z)V
 
-    .line 67
     return-void
 .end method
 
@@ -148,7 +137,6 @@
     .locals 2
 
     .prologue
-    .line 89
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
     check-cast v0, Lcom/android/systemui/qs/QSTile$BooleanState;
@@ -157,7 +145,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 90
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mContext:Landroid/content/Context;
 
     const v1, 0x7f0c009f
@@ -166,7 +153,6 @@
 
     move-result-object v0
 
-    .line 92
     :goto_0
     return-object v0
 
@@ -188,7 +174,6 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 58
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mState:Lcom/android/systemui/qs/QSTile$State;
 
     check-cast v0, Lcom/android/systemui/qs/QSTile$BooleanState;
@@ -202,20 +187,16 @@
     :goto_0
     invoke-direct {p0, v0}, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->setEnabled(Z)V
 
-    .line 59
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mEnable:Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSTile$AnimationIcon;->setAllowAnimation(Z)V
 
-    .line 60
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mDisable:Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSTile$AnimationIcon;->setAllowAnimation(Z)V
 
-    .line 61
     return-void
 
-    .line 58
     :cond_0
     const/4 v0, 0x0
 
@@ -230,7 +211,6 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 71
     instance-of v3, p2, Ljava/lang/Integer;
 
     if-eqz v3, :cond_0
@@ -242,22 +222,18 @@
 
     move-result v1
 
-    .line 72
     .local v1, "value":I
     :goto_0
     if-eqz v1, :cond_1
 
     move v0, v2
 
-    .line 73
     .local v0, "airplaneMode":Z
     :goto_1
     iput-boolean v0, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
 
-    .line 74
     iput-boolean v2, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->visible:Z
 
-    .line 75
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mContext:Landroid/content/Context;
 
     const v3, 0x7f0c00cf
@@ -268,15 +244,12 @@
 
     iput-object v2, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->label:Ljava/lang/String;
 
-    .line 76
     if-eqz v0, :cond_2
 
-    .line 77
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mEnable:Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
     iput-object v2, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->icon:Lcom/android/systemui/qs/QSTile$Icon;
 
-    .line 78
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mContext:Landroid/content/Context;
 
     const v3, 0x7f0c009d
@@ -287,11 +260,9 @@
 
     iput-object v2, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->contentDescription:Ljava/lang/String;
 
-    .line 85
     :goto_2
     return-void
 
-    .line 71
     .end local v0    # "airplaneMode":Z
     .end local v1    # "value":I
     .restart local p2    # "arg":Ljava/lang/Object;
@@ -304,7 +275,6 @@
 
     goto :goto_0
 
-    .line 72
     .end local p2    # "arg":Ljava/lang/Object;
     .restart local v1    # "value":I
     :cond_1
@@ -312,14 +282,12 @@
 
     goto :goto_1
 
-    .line 81
     .restart local v0    # "airplaneMode":Z
     :cond_2
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mDisable:Lcom/android/systemui/qs/QSTile$AnimationIcon;
 
     iput-object v2, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->icon:Lcom/android/systemui/qs/QSTile$Icon;
 
-    .line 82
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mContext:Landroid/content/Context;
 
     const v3, 0x7f0c009c
@@ -339,7 +307,6 @@
     .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 31
     check-cast p1, Lcom/android/systemui/qs/QSTile$BooleanState;
 
     .end local p1    # "x0":Lcom/android/systemui/qs/QSTile$State;
@@ -352,7 +319,6 @@
     .locals 1
 
     .prologue
-    .line 53
     new-instance v0, Lcom/android/systemui/qs/QSTile$BooleanState;
 
     invoke-direct {v0}, Lcom/android/systemui/qs/QSTile$BooleanState;-><init>()V
@@ -364,7 +330,6 @@
     .locals 1
 
     .prologue
-    .line 31
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->newTileState()Lcom/android/systemui/qs/QSTile$BooleanState;
 
     move-result-object v0
@@ -377,41 +342,33 @@
     .param p1, "listening"    # Z
 
     .prologue
-    .line 97
     iget-boolean v1, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mListening:Z
 
     if-ne v1, p1, :cond_0
 
-    .line 107
     :goto_0
     return-void
 
-    .line 98
     :cond_0
     iput-boolean p1, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mListening:Z
 
-    .line 99
     if-eqz p1, :cond_1
 
-    .line 100
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 101
     .local v0, "filter":Landroid/content/IntentFilter;
     const-string v1, "android.intent.action.AIRPLANE_MODE"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 102
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 106
     .end local v0    # "filter":Landroid/content/IntentFilter;
     :goto_1
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mSetting:Lcom/android/systemui/qs/GlobalSetting;
@@ -420,7 +377,6 @@
 
     goto :goto_0
 
-    .line 104
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mContext:Landroid/content/Context;
 

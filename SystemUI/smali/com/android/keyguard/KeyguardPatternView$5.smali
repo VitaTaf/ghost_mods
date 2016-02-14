@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 404
     iput-object p1, p0, Lcom/android/keyguard/KeyguardPatternView$5;->this$0:Lcom/android/keyguard/KeyguardPatternView;
 
     iput-boolean p2, p0, Lcom/android/keyguard/KeyguardPatternView$5;->val$appearing:Z
@@ -49,23 +48,19 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 407
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
     move-result v0
 
-    .line 408
     .local v0, "animatedFraction":F
     iget-boolean v1, p0, Lcom/android/keyguard/KeyguardPatternView$5;->val$appearing:Z
 
     if-eqz v1, :cond_0
 
-    .line 409
     iget-object v1, p0, Lcom/android/keyguard/KeyguardPatternView$5;->val$animatedCell:Lcom/android/internal/widget/LockPatternView$CellState;
 
     iput v0, v1, Lcom/android/internal/widget/LockPatternView$CellState;->scale:F
 
-    .line 413
     :goto_0
     iget-object v2, p0, Lcom/android/keyguard/KeyguardPatternView$5;->val$animatedCell:Lcom/android/internal/widget/LockPatternView$CellState;
 
@@ -81,7 +76,6 @@
 
     iput v1, v2, Lcom/android/internal/widget/LockPatternView$CellState;->translateY:F
 
-    .line 414
     iget-object v1, p0, Lcom/android/keyguard/KeyguardPatternView$5;->this$0:Lcom/android/keyguard/KeyguardPatternView;
 
     # getter for: Lcom/android/keyguard/KeyguardPatternView;->mLockPatternView:Lcom/android/internal/widget/LockPatternView;
@@ -91,10 +85,8 @@
 
     invoke-virtual {v1}, Lcom/android/internal/widget/LockPatternView;->invalidate()V
 
-    .line 415
     return-void
 
-    .line 411
     :cond_0
     iget-object v1, p0, Lcom/android/keyguard/KeyguardPatternView$5;->val$animatedCell:Lcom/android/internal/widget/LockPatternView$CellState;
 

@@ -30,7 +30,6 @@
     .locals 0
 
     .prologue
-    .line 785
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4$5;->this$1:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4$5;->val$in:Z
@@ -48,19 +47,16 @@
     .locals 2
 
     .prologue
-    .line 788
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4$5;->val$in:Z
 
     if-nez v0, :cond_0
 
-    .line 789
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4$5;->val$v:Landroid/view/View;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 791
     :cond_0
     return-void
 .end method

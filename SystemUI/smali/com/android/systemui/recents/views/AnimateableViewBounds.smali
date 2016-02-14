@@ -26,54 +26,44 @@
     .param p2, "cornerRadius"    # I
 
     .prologue
-    .line 37
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
 
-    .line 31
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mClipRect:Landroid/graphics/Rect;
 
-    .line 32
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mClipBounds:Landroid/graphics/Rect;
 
-    .line 34
     const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mAlpha:F
 
-    .line 35
     const/high16 v0, 0x3e800000    # 0.25f
 
     iput v0, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mMinAlpha:F
 
-    .line 38
     invoke-static {}, Lcom/android/systemui/recents/RecentsConfiguration;->getInstance()Lcom/android/systemui/recents/RecentsConfiguration;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
-    .line 39
     iput-object p1, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mSourceView:Lcom/android/systemui/recents/views/TaskView;
 
-    .line 40
     iput p2, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mCornerRadius:I
 
-    .line 41
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/AnimateableViewBounds;->getClipBottom()I
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/AnimateableViewBounds;->setClipBottom(I)V
 
-    .line 42
     return-void
 .end method
 
@@ -81,7 +71,6 @@
     .locals 6
 
     .prologue
-    .line 80
     iget-object v0, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mClipBounds:Landroid/graphics/Rect;
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mClipRect:Landroid/graphics/Rect;
@@ -118,14 +107,12 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 83
     iget-object v0, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mSourceView:Lcom/android/systemui/recents/views/TaskView;
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mClipBounds:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/TaskView;->setClipBounds(Landroid/graphics/Rect;)V
 
-    .line 84
     return-void
 .end method
 
@@ -135,7 +122,6 @@
     .locals 1
 
     .prologue
-    .line 76
     iget-object v0, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mClipRect:Landroid/graphics/Rect;
 
     iget v0, v0, Landroid/graphics/Rect;->bottom:I
@@ -149,7 +135,6 @@
     .param p2, "outline"    # Landroid/graphics/Outline;
 
     .prologue
-    .line 46
     const/high16 v0, 0x3e800000    # 0.25f
 
     iget v1, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mAlpha:F
@@ -162,7 +147,6 @@
 
     invoke-virtual {p2, v0}, Landroid/graphics/Outline;->setAlpha(F)V
 
-    .line 47
     iget-object v0, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mClipRect:Landroid/graphics/Rect;
 
     iget v1, v0, Landroid/graphics/Rect;->left:I
@@ -203,7 +187,6 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Outline;->setRoundRect(IIIIF)V
 
-    .line 51
     return-void
 .end method
 
@@ -212,7 +195,6 @@
     .param p1, "alpha"    # F
 
     .prologue
-    .line 55
     iget v0, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mAlpha:F
 
     invoke-static {p1, v0}, Ljava/lang/Float;->compare(FF)I
@@ -221,15 +203,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 56
     iput p1, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mAlpha:F
 
-    .line 57
     iget-object v0, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mSourceView:Lcom/android/systemui/recents/views/TaskView;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskView;->invalidateOutline()V
 
-    .line 59
     :cond_0
     return-void
 .end method
@@ -239,34 +218,28 @@
     .param p1, "bottom"    # I
 
     .prologue
-    .line 63
     iget-object v0, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mClipRect:Landroid/graphics/Rect;
 
     iget v0, v0, Landroid/graphics/Rect;->bottom:I
 
     if-eq p1, v0, :cond_0
 
-    .line 64
     iget-object v0, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mClipRect:Landroid/graphics/Rect;
 
     iput p1, v0, Landroid/graphics/Rect;->bottom:I
 
-    .line 65
     iget-object v0, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mSourceView:Lcom/android/systemui/recents/views/TaskView;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskView;->invalidateOutline()V
 
-    .line 66
     invoke-direct {p0}, Lcom/android/systemui/recents/views/AnimateableViewBounds;->updateClipBounds()V
 
-    .line 67
     iget-object v0, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     iget-boolean v0, v0, Lcom/android/systemui/recents/RecentsConfiguration;->useHardwareLayers:Z
 
     if-nez v0, :cond_0
 
-    .line 68
     iget-object v0, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mSourceView:Lcom/android/systemui/recents/views/TaskView;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskView;->mThumbnailView:Lcom/android/systemui/recents/views/TaskViewThumbnail;
@@ -281,7 +254,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/TaskViewThumbnail;->updateThumbnailVisibility(I)V
 
-    .line 72
     :cond_0
     return-void
 .end method

@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 206
     iput-object p1, p0, Lcom/android/systemui/settings/BrightnessController$2;->this$0:Lcom/android/systemui/settings/BrightnessController;
 
     iput p2, p0, Lcom/android/systemui/settings/BrightnessController$2;->val$val:I
@@ -44,7 +43,6 @@
     .locals 4
 
     .prologue
-    .line 208
     iget-object v0, p0, Lcom/android/systemui/settings/BrightnessController$2;->this$0:Lcom/android/systemui/settings/BrightnessController;
 
     # getter for: Lcom/android/systemui/settings/BrightnessController;->mContext:Landroid/content/Context;
@@ -64,6 +62,5 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 211
     return-void
 .end method

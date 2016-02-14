@@ -25,7 +25,6 @@
     .locals 0
 
     .prologue
-    .line 420
     iput-object p1, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$3;->this$0:Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$3;->val$background:Landroid/view/View;
@@ -44,21 +43,17 @@
     .prologue
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 424
     iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$3;->val$background:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setScaleX(F)V
 
-    .line 425
     iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$3;->val$background:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setScaleY(F)V
 
-    .line 426
     iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$3;->val$background:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 427
     return-void
 .end method

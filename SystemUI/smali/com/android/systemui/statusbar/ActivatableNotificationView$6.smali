@@ -27,7 +27,6 @@
     .locals 0
 
     .prologue
-    .line 588
     iput-object p1, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$6;->this$0:Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$6;->val$onFinishedRunnable:Ljava/lang/Runnable;
@@ -44,12 +43,10 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 610
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$6;->mWasCancelled:Z
 
-    .line 611
     return-void
 .end method
 
@@ -58,23 +55,19 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 593
     iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$6;->val$onFinishedRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 594
     iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$6;->val$onFinishedRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 596
     :cond_0
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$6;->mWasCancelled:Z
 
     if-nez v0, :cond_1
 
-    .line 597
     iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$6;->this$0:Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
     const/high16 v1, -0x40800000    # -1.0f
@@ -82,14 +75,12 @@
     # setter for: Lcom/android/systemui/statusbar/ActivatableNotificationView;->mAppearAnimationFraction:F
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->access$402(Lcom/android/systemui/statusbar/ActivatableNotificationView;F)F
 
-    .line 598
     iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$6;->this$0:Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->setOutlineRect(Landroid/graphics/RectF;)V
 
-    .line 599
     iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$6;->this$0:Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
     const/4 v1, 0x0
@@ -97,7 +88,6 @@
     # invokes: Lcom/android/systemui/statusbar/ActivatableNotificationView;->enableAppearDrawing(Z)V
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->access$700(Lcom/android/systemui/statusbar/ActivatableNotificationView;Z)V
 
-    .line 601
     :cond_1
     return-void
 .end method
@@ -107,11 +97,9 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 605
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$6;->mWasCancelled:Z
 
-    .line 606
     return-void
 .end method

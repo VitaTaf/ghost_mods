@@ -54,7 +54,6 @@
 
     const/4 v2, 0x0
 
-    .line 402
     new-instance v0, Lcom/android/systemui/qs/QSTile$UserBoolean;
 
     const-string v1, "USER_TRUE"
@@ -63,7 +62,6 @@
 
     sput-object v0, Lcom/android/systemui/qs/QSTile$UserBoolean;->USER_TRUE:Lcom/android/systemui/qs/QSTile$UserBoolean;
 
-    .line 403
     new-instance v0, Lcom/android/systemui/qs/QSTile$UserBoolean;
 
     const-string v1, "USER_FALSE"
@@ -72,7 +70,6 @@
 
     sput-object v0, Lcom/android/systemui/qs/QSTile$UserBoolean;->USER_FALSE:Lcom/android/systemui/qs/QSTile$UserBoolean;
 
-    .line 404
     new-instance v0, Lcom/android/systemui/qs/QSTile$UserBoolean;
 
     const-string v1, "BACKGROUND_TRUE"
@@ -81,7 +78,6 @@
 
     sput-object v0, Lcom/android/systemui/qs/QSTile$UserBoolean;->BACKGROUND_TRUE:Lcom/android/systemui/qs/QSTile$UserBoolean;
 
-    .line 405
     new-instance v0, Lcom/android/systemui/qs/QSTile$UserBoolean;
 
     const-string v1, "BACKGROUND_FALSE"
@@ -90,7 +86,6 @@
 
     sput-object v0, Lcom/android/systemui/qs/QSTile$UserBoolean;->BACKGROUND_FALSE:Lcom/android/systemui/qs/QSTile$UserBoolean;
 
-    .line 401
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/android/systemui/qs/QSTile$UserBoolean;
@@ -127,16 +122,12 @@
     .end annotation
 
     .prologue
-    .line 408
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 409
     iput-boolean p4, p0, Lcom/android/systemui/qs/QSTile$UserBoolean;->value:Z
 
-    .line 410
     iput-boolean p3, p0, Lcom/android/systemui/qs/QSTile$UserBoolean;->userInitiated:Z
 
-    .line 411
     return-void
 .end method
 
@@ -145,7 +136,6 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 401
     const-class v0, Lcom/android/systemui/qs/QSTile$UserBoolean;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -161,7 +151,6 @@
     .locals 1
 
     .prologue
-    .line 401
     sget-object v0, Lcom/android/systemui/qs/QSTile$UserBoolean;->$VALUES:[Lcom/android/systemui/qs/QSTile$UserBoolean;
 
     invoke-virtual {v0}, [Lcom/android/systemui/qs/QSTile$UserBoolean;->clone()Ljava/lang/Object;
