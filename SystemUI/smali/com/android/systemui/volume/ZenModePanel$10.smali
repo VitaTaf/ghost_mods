@@ -47,9 +47,10 @@
     return-void
 .end method
 
-.method public onSelected(Ljava/lang/Object;)V
+.method public onSelected(Ljava/lang/Object;Z)V
     .locals 5
     .param p1, "value"    # Ljava/lang/Object;
+    .param p2, "fromClick"    # Z
 
     .prologue
     if-eqz p1, :cond_1

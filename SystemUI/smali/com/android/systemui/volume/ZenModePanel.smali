@@ -2784,7 +2784,7 @@
 .end method
 
 .method private handleUpdateZen(I)V
-    .locals 3
+    .locals 4
     .param p1, "zen"    # I
 
     .prologue
@@ -2813,7 +2813,9 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lcom/android/systemui/volume/SegmentedButtons;->setSelectedValue(Ljava/lang/Object;)V
+    const/4 v3, 0x0
+
+    invoke-virtual {v1, v2, v3}, Lcom/android/systemui/volume/SegmentedButtons;->setSelectedValue(Ljava/lang/Object;Z)V
 
     invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel;->updateWidgets()V
 

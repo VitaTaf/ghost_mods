@@ -18,5 +18,5 @@
 
 
 # virtual methods
-.method public abstract onSelected(Ljava/lang/Object;)V
+.method public abstract onSelected(Ljava/lang/Object;Z)V
 .end method

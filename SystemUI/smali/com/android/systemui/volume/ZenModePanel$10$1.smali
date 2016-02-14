@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/volume/ZenModePanel$10;->onSelected(Ljava/lang/Object;)V
+    value = Lcom/android/systemui/volume/ZenModePanel$10;->onSelected(Ljava/lang/Object;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

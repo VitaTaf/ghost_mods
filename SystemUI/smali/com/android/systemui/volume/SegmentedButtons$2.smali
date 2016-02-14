@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .locals 2
+    .locals 3
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
@@ -46,7 +46,9 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/android/systemui/volume/SegmentedButtons;->setSelectedValue(Ljava/lang/Object;)V
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/systemui/volume/SegmentedButtons;->setSelectedValue(Ljava/lang/Object;Z)V
 
     return-void
 .end method
