@@ -36,7 +36,7 @@
 
 .field public static final RECENTS_PACKAGE_NAME:Ljava/lang/String; = "com.android.systemui.recents"
 
-.field static final TAG:Ljava/lang/String; = "ActivityManager"
+.field private static final TAG:Ljava/lang/String; = "ActivityManager"
 
 .field private static final TAG_INTENT:Ljava/lang/String; = "intent"
 

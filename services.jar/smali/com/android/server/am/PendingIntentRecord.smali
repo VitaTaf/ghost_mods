@@ -11,6 +11,10 @@
 .end annotation
 
 
+# static fields
+.field private static final TAG:Ljava/lang/String; = "ActivityManager"
+
+
 # instance fields
 .field canceled:Z
 

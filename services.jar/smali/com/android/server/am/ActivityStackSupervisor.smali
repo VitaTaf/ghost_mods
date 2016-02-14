@@ -80,6 +80,8 @@
 
 .field static final SLEEP_TIMEOUT_MSG:I = 0x67
 
+.field private static final TAG:Ljava/lang/String; = "ActivityManager"
+
 .field static final VALIDATE_WAKE_LOCK_CALLER:Z = false
 
 .field private static final VIRTUAL_DISPLAY_BASE_NAME:Ljava/lang/String; = "ActivityViewVirtualDisplay"

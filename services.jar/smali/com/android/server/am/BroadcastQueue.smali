@@ -17,19 +17,15 @@
 
 .field static final BROADCAST_TIMEOUT_MSG:I = 0xc9
 
-.field static final DEBUG_BROADCAST:Z = false
-
-.field static final DEBUG_BROADCAST_LIGHT:Z = false
-
-.field static final DEBUG_MU:Z = false
-
 .field static final MAX_BROADCAST_HISTORY:I
 
 .field static final MAX_BROADCAST_SUMMARY_HISTORY:I
 
-.field static final TAG:Ljava/lang/String; = "BroadcastQueue"
+.field private static final TAG:Ljava/lang/String; = "ActivityManager"
 
-.field static final TAG_MU:Ljava/lang/String; = "ActivityManagerServiceMU"
+.field private static final TAG_BROADCAST:Ljava/lang/String; = "ActivityManager"
+
+.field private static final TAG_MU:Ljava/lang/String; = "ActivityManager_MU"
 
 
 # instance fields
@@ -271,7 +267,7 @@
     .local v11, "perm":I
     if-eqz v11, :cond_0
 
-    const-string v0, "BroadcastQueue"
+    const-string v0, "ActivityManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -396,7 +392,7 @@
     .restart local v11    # "perm":I
     if-eqz v11, :cond_1
 
-    const-string v0, "BroadcastQueue"
+    const-string v0, "ActivityManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -590,7 +586,7 @@
     if-eqz v0, :cond_5
 
     :cond_4
-    const-string v0, "BroadcastQueue"
+    const-string v0, "ActivityManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -744,7 +740,7 @@
     move-exception v9
 
     .local v9, "e":Landroid/os/RemoteException;
-    const-string v0, "BroadcastQueue"
+    const-string v0, "ActivityManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1249,7 +1245,7 @@
     goto :goto_1
 
     :cond_6
-    const-string v4, "BroadcastQueue"
+    const-string v4, "ActivityManager"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -1317,7 +1313,7 @@
 
     if-gtz v4, :cond_7
 
-    const-string v4, "BroadcastQueue"
+    const-string v4, "ActivityManager"
 
     const-string v6, "Timeout on receiver with nextReceiver <= 0"
 
@@ -1343,7 +1339,7 @@
     move-result-object v15
 
     .local v15, "curReceiver":Ljava/lang/Object;
-    const-string v4, "BroadcastQueue"
+    const-string v4, "ActivityManager"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -2291,7 +2287,7 @@
 
     if-nez v3, :cond_0
 
-    const-string v4, "BroadcastQueue"
+    const-string v4, "ActivityManager"
 
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -2821,7 +2817,7 @@
     .end local v1    # "curReceiver":Ljava/lang/Object;
     .end local v2    # "ri":Landroid/content/pm/ResolveInfo;
     :cond_1
-    const-string v3, "BroadcastQueue"
+    const-string v3, "ActivityManager"
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -3117,7 +3113,7 @@
     .restart local v23    # "isDead":Z
     .restart local v32    # "proc":Lcom/android/server/am/ProcessRecord;
     :cond_5
-    const-string v4, "BroadcastQueue"
+    const-string v4, "ActivityManager"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -3307,7 +3303,7 @@
 
     if-lez v4, :cond_a
 
-    const-string v4, "BroadcastQueue"
+    const-string v4, "ActivityManager"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -3712,7 +3708,7 @@
 
     iput-object v4, v0, Lcom/android/server/am/BroadcastRecord;->resultTo:Landroid/content/IIntentReceiver;
 
-    const-string v4, "BroadcastQueue"
+    const-string v4, "ActivityManager"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -3838,7 +3834,7 @@
 
     if-nez v4, :cond_1c
 
-    const-string v4, "BroadcastQueue"
+    const-string v4, "ActivityManager"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -4000,7 +3996,7 @@
     if-eqz v31, :cond_16
 
     :try_start_9
-    const-string v4, "BroadcastQueue"
+    const-string v4, "ActivityManager"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -4247,7 +4243,7 @@
 
     if-eqz v4, :cond_19
 
-    const-string v4, "BroadcastQueue"
+    const-string v4, "ActivityManager"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -4302,7 +4298,7 @@
 
     if-eqz v4, :cond_1a
 
-    const-string v4, "BroadcastQueue"
+    const-string v4, "ActivityManager"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -4436,7 +4432,7 @@
 
     .end local v24    # "isSingleton":Z
     :cond_1c
-    const-string v4, "BroadcastQueue"
+    const-string v4, "ActivityManager"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -4565,7 +4561,7 @@
     move-exception v17
 
     .local v17, "e":Ljava/lang/SecurityException;
-    const-string v4, "BroadcastQueue"
+    const-string v4, "ActivityManager"
 
     invoke-virtual/range {v17 .. v17}, Ljava/lang/SecurityException;->getMessage()Ljava/lang/String;
 
@@ -4583,7 +4579,7 @@
     move-exception v17
 
     .local v17, "e":Ljava/lang/Exception;
-    const-string v4, "BroadcastQueue"
+    const-string v4, "ActivityManager"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -4804,7 +4800,7 @@
     move-exception v17
 
     .local v17, "e":Ljava/lang/IllegalArgumentException;
-    const-string v4, "BroadcastQueue"
+    const-string v4, "ActivityManager"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -4854,7 +4850,7 @@
     move-exception v17
 
     .local v17, "e":Landroid/os/RemoteException;
-    const-string v4, "BroadcastQueue"
+    const-string v4, "ActivityManager"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -4943,7 +4939,7 @@
 
     if-nez v4, :cond_22
 
-    const-string v4, "BroadcastQueue"
+    const-string v4, "ActivityManager"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -5057,7 +5053,7 @@
     move-exception v17
 
     .local v17, "e":Ljava/lang/RuntimeException;
-    const-string v4, "BroadcastQueue"
+    const-string v4, "ActivityManager"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -5357,7 +5353,7 @@
     move-exception v8
 
     .local v8, "e":Ljava/lang/Exception;
-    const-string v0, "BroadcastQueue"
+    const-string v0, "ActivityManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
 

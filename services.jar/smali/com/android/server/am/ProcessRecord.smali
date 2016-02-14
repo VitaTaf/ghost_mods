@@ -3,6 +3,10 @@
 .source "ProcessRecord.java"
 
 
+# static fields
+.field private static final TAG:Ljava/lang/String; = "ActivityManager"
+
+
 # instance fields
 .field final activities:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;

@@ -18,11 +18,11 @@
 
 .field private static final MSG_WRITE:I = 0x12c
 
+.field private static final TAG:Ljava/lang/String; = "ActivityManager"
+
 
 # instance fields
 .field private final DEBUG_CONFIGURATION:Z
-
-.field private final TAG:Ljava/lang/String;
 
 .field private final mFile:Landroid/util/AtomicFile;
 
@@ -52,10 +52,6 @@
 
     .prologue
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const-string v8, "ActivityManager"
-
-    iput-object v8, p0, Lcom/android/server/am/CompatModePackages;->TAG:Ljava/lang/String;
 
     const/4 v8, 0x0
 

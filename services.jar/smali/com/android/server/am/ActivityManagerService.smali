@@ -83,18 +83,6 @@
 
 .field static final CPU_MIN_CHECK_DURATION:I = 0x493e0
 
-.field static final DEBUG:Z = false
-
-.field static final DEBUG_BACKGROUND_BROADCAST:Z = false
-
-.field static final DEBUG_BACKUP:Z = false
-
-.field static final DEBUG_BROADCAST:Z = false
-
-.field static final DEBUG_BROADCAST_LIGHT:Z = false
-
-.field static final DEBUG_CLEANUP:Z = false
-
 .field static final DEBUG_CONFIGURATION:Z = false
 
 .field static final DEBUG_FOCUS:Z = false
@@ -295,9 +283,15 @@
 
 .field static final SYSTEM_USER_START_MSG:I = 0x2a
 
-.field static final TAG:Ljava/lang/String; = "ActivityManager"
+.field private static final TAG:Ljava/lang/String; = "ActivityManager"
 
-.field static final TAG_MU:Ljava/lang/String; = "ActivityManagerServiceMU"
+.field private static final TAG_BACKUP:Ljava/lang/String; = "ActivityManager"
+
+.field private static final TAG_BROADCAST:Ljava/lang/String; = "ActivityManager"
+
+.field private static final TAG_CLEANUP:Ljava/lang/String; = "ActivityManager"
+
+.field private static final TAG_MU:Ljava/lang/String; = "ActivityManager_MU"
 
 .field private static final TAG_URI_GRANT:Ljava/lang/String; = "uri-grant"
 
@@ -322,8 +316,6 @@
 .field static final WAIT_FOR_DEBUGGER_MSG:I = 0x6
 
 .field static final WAKE_LOCK_MIN_CHECK_DURATION:I = 0x493e0
-
-.field static final localLOGV:Z
 
 .field private static final sCallerIdentity:Ljava/lang/ThreadLocal;
     .annotation system Ldalvik/annotation/Signature;
@@ -20278,13 +20270,22 @@
 .method private getProfileIdsLocked(I)Ljava/util/Set;
     .locals 6
     .param p1, "userId"    # I
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I)",
+            "Ljava/util/Set",
+            "<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
 
     .prologue
     new-instance v3, Ljava/util/HashSet;
 
     invoke-direct {v3}, Ljava/util/HashSet;-><init>()V
 
-    .local v3, "userIds":Ljava/util/Set;
+    .local v3, "userIds":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Integer;>;"
     invoke-virtual {p0}, Lcom/android/server/am/ActivityManagerService;->getUserManagerLocked()Lcom/android/server/pm/UserManagerService;
 
     move-result-object v4
@@ -68094,81 +68095,81 @@
 .end method
 
 .method public revokeUriPermission(Landroid/app/IApplicationThread;Landroid/net/Uri;II)V
-    .locals 7
+    .locals 6
     .param p1, "caller"    # Landroid/app/IApplicationThread;
     .param p2, "uri"    # Landroid/net/Uri;
     .param p3, "modeFlags"    # I
     .param p4, "userId"    # I
 
     .prologue
-    const-string v4, "revokeUriPermission"
+    const-string v3, "revokeUriPermission"
 
-    invoke-virtual {p0, v4}, Lcom/android/server/am/ActivityManagerService;->enforceNotIsolatedCaller(Ljava/lang/String;)V
+    invoke-virtual {p0, v3}, Lcom/android/server/am/ActivityManagerService;->enforceNotIsolatedCaller(Ljava/lang/String;)V
 
     monitor-enter p0
 
     :try_start_0
     invoke-virtual {p0, p1}, Lcom/android/server/am/ActivityManagerService;->getRecordForAppLocked(Landroid/app/IApplicationThread;)Lcom/android/server/am/ProcessRecord;
 
-    move-result-object v3
+    move-result-object v2
 
-    .local v3, "r":Lcom/android/server/am/ProcessRecord;
-    if-nez v3, :cond_0
+    .local v2, "r":Lcom/android/server/am/ProcessRecord;
+    if-nez v2, :cond_0
 
-    new-instance v4, Ljava/lang/SecurityException;
+    new-instance v3, Ljava/lang/SecurityException;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "Unable to find app for caller "
+    const-string v5, "Unable to find app for caller "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v4
 
-    const-string v6, " when revoking permission to uri "
+    const-string v5, " when revoking permission to uri "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v5, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-direct {v4, v5}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v4}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
 
-    throw v4
+    throw v3
 
-    .end local v3    # "r":Lcom/android/server/am/ProcessRecord;
+    .end local v2    # "r":Lcom/android/server/am/ProcessRecord;
     :catchall_0
-    move-exception v4
+    move-exception v3
 
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v4
+    throw v3
 
-    .restart local v3    # "r":Lcom/android/server/am/ProcessRecord;
+    .restart local v2    # "r":Lcom/android/server/am/ProcessRecord;
     :cond_0
     if-nez p2, :cond_1
 
     :try_start_1
-    const-string v4, "ActivityManager"
+    const-string v3, "ActivityManager"
 
-    const-string v5, "revokeUriPermission: null uri"
+    const-string v4, "revokeUriPermission: null uri"
 
-    invoke-static {v4, v5}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v4}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     monitor-exit p0
 
@@ -68178,20 +68179,15 @@
     :cond_1
     invoke-static {p3}, Landroid/content/Intent;->isAccessUriMode(I)Z
 
-    move-result v4
+    move-result v3
 
-    if-nez v4, :cond_2
+    if-nez v3, :cond_2
 
     monitor-exit p0
 
     goto :goto_0
 
     :cond_2
-    invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
-
-    move-result-object v2
-
-    .local v2, "pm":Landroid/content/pm/IPackageManager;
     invoke-virtual {p2}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
 
     move-result-object v0
@@ -68204,46 +68200,46 @@
     .local v1, "pi":Landroid/content/pm/ProviderInfo;
     if-nez v1, :cond_3
 
-    const-string v4, "ActivityManager"
+    const-string v3, "ActivityManager"
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "No content provider found for permission revoke: "
+    const-string v5, "No content provider found for permission revoke: "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v4
 
     invoke-virtual {p2}, Landroid/net/Uri;->toSafeString()Ljava/lang/String;
 
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v5
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-static {v4, v5}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     monitor-exit p0
 
     goto :goto_0
 
     :cond_3
-    iget v4, v3, Lcom/android/server/am/ProcessRecord;->uid:I
+    iget v3, v2, Lcom/android/server/am/ProcessRecord;->uid:I
 
-    new-instance v5, Lcom/android/server/am/ActivityManagerService$GrantUri;
+    new-instance v4, Lcom/android/server/am/ActivityManagerService$GrantUri;
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    invoke-direct {v5, p4, p2, v6}, Lcom/android/server/am/ActivityManagerService$GrantUri;-><init>(ILandroid/net/Uri;Z)V
+    invoke-direct {v4, p4, p2, v5}, Lcom/android/server/am/ActivityManagerService$GrantUri;-><init>(ILandroid/net/Uri;Z)V
 
-    invoke-direct {p0, v4, v5, p3}, Lcom/android/server/am/ActivityManagerService;->revokeUriPermissionLocked(ILcom/android/server/am/ActivityManagerService$GrantUri;I)V
+    invoke-direct {p0, v3, v4, p3}, Lcom/android/server/am/ActivityManagerService;->revokeUriPermissionLocked(ILcom/android/server/am/ActivityManagerService$GrantUri;I)V
 
     monitor-exit p0
     :try_end_1
@@ -74681,7 +74677,7 @@
     :cond_2
     if-ge v0, v2, :cond_3
 
-    const-string v6, "ActivityManagerServiceMU"
+    const-string v6, "ActivityManager_MU"
 
     const-string v7, "More profiles than MAX_RUNNING_USERS"
 

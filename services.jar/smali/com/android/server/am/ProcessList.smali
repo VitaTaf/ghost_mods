@@ -92,6 +92,8 @@
 
 .field static final SYSTEM_ADJ:I = -0x10
 
+.field private static final TAG:Ljava/lang/String; = "ActivityManager"
+
 .field static final TRIM_CACHED_APPS:I
 
 .field static final TRIM_CRITICAL_THRESHOLD:I = 0x3

@@ -49,6 +49,10 @@
 
 .field static final STOP_TIMEOUT_MSG:I = 0x68
 
+.field private static final TAG:Ljava/lang/String; = "ActivityManager"
+
+.field private static final TAG_CLEANUP:Ljava/lang/String; = "ActivityManager"
+
 .field static final TRANSLUCENT_CONVERSION_TIMEOUT:J = 0x7d0L
 
 .field static final TRANSLUCENT_TIMEOUT_MSG:I = 0x6a

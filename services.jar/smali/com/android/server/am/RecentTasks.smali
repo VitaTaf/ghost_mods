@@ -17,6 +17,8 @@
 # static fields
 .field private static final MAX_RECENT_BITMAPS:I = 0x3
 
+.field private static final TAG:Ljava/lang/String; = "ActivityManager"
+
 .field private static sTaskRecordComparator:Ljava/util/Comparator;
     .annotation system Ldalvik/annotation/Signature;
         value = {

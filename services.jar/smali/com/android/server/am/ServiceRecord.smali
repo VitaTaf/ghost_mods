@@ -16,6 +16,8 @@
 
 .field static final MAX_DONE_EXECUTING_COUNT:I = 0x6
 
+.field private static final TAG:Ljava/lang/String; = "ActivityManager"
+
 
 # instance fields
 .field final ams:Lcom/android/server/am/ActivityManagerService;

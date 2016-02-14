@@ -54,6 +54,8 @@
 
 .field static final INVALID_TASK_ID:I = -0x1
 
+.field private static final TAG:Ljava/lang/String; = "ActivityManager"
+
 .field static final TAG_ACTIVITY:Ljava/lang/String; = "activity"
 
 .field private static final TAG_AFFINITYINTENT:Ljava/lang/String; = "affinity_intent"

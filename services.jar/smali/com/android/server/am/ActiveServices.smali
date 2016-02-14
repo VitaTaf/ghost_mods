@@ -17,19 +17,13 @@
 # static fields
 .field static final BG_START_TIMEOUT:I = 0x3a98
 
-.field static final DEBUG_DELAYED_SERVICE:Z = false
+.field private static final DEBUG_DELAYED_SERVICE:Z = false
 
-.field static final DEBUG_DELAYED_STARTS:Z = false
-
-.field static final DEBUG_MU:Z = false
-
-.field static final DEBUG_SERVICE:Z = false
-
-.field static final DEBUG_SERVICE_EXECUTING:Z = false
+.field private static final DEBUG_DELAYED_STARTS:Z = false
 
 .field static final LAST_ANR_LIFETIME_DURATION_MSECS:I = 0x6ddd00
 
-.field static final LOG_SERVICE_START_STOP:Z = false
+.field private static final LOG_SERVICE_START_STOP:Z = false
 
 .field static final MAX_SERVICE_INACTIVITY:I = 0x1b7740
 
@@ -45,9 +39,13 @@
 
 .field static final SERVICE_TIMEOUT:I = 0x4e20
 
-.field static final TAG:Ljava/lang/String; = "ActivityManager"
+.field private static final TAG:Ljava/lang/String; = "ActivityManager"
 
-.field static final TAG_MU:Ljava/lang/String; = "ActivityManagerServiceMU"
+.field private static final TAG_MU:Ljava/lang/String; = "ActivityManager_MU"
+
+.field private static final TAG_SERVICE:Ljava/lang/String; = "ActivityManager"
+
+.field private static final TAG_SERVICE_EXECUTING:Ljava/lang/String; = "ActivityManager"
 
 
 # instance fields
