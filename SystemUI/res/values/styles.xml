@@ -119,6 +119,7 @@
     </style>
     <style name="TextAppearance.QS.SegmentedButton" parent="@style/TextAppearance.QS">
         <item name="android:textSize">16.0sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
     </style>
     <style name="TextAppearance.QS.DataUsage" parent="@style/TextAppearance.QS">
         <item name="android:textSize">@dimen/qs_data_usage_text_size</item>

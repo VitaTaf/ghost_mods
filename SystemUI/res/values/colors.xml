@@ -60,6 +60,7 @@
     <color name="screen_pinning_nav_icon_highlight_outer">#4080cbc4</color>
     <color name="screen_pinning_request_bg">#ff009688</color>
     <color name="screen_pinning_request_window_bg">#80000000</color>
+    <color name="segmented_buttons_background">#14ffffff</color>
     <color name="segmented_button_selected">#ffffffff</color>
     <color name="segmented_button_unselected">#ffb0bec5</color>
     <color name="zen_introduction_message_background">#ff009688</color>
