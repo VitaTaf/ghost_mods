@@ -4307,7 +4307,7 @@
 .end method
 
 .method protected onFinishInflate()V
-    .locals 4
+    .locals 3
 
     .prologue
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
@@ -4326,43 +4326,37 @@
 
     const v1, 0x7f0c028d
 
-    const v2, 0x7f0c011c
+    const/4 v2, 0x2
 
-    const/4 v3, 0x2
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v2
 
-    move-result-object v3
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/systemui/volume/SegmentedButtons;->addButton(IILjava/lang/Object;)V
+    invoke-virtual {v0, v1, v2}, Lcom/android/systemui/volume/SegmentedButtons;->addButton(ILjava/lang/Object;)V
 
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mZenButtons:Lcom/android/systemui/volume/SegmentedButtons;
 
     const v1, 0x7f0c028f
 
-    const v2, 0x7f0c028c
+    const/4 v2, 0x3
 
-    const/4 v3, 0x3
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v2
 
-    move-result-object v3
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/systemui/volume/SegmentedButtons;->addButton(IILjava/lang/Object;)V
+    invoke-virtual {v0, v1, v2}, Lcom/android/systemui/volume/SegmentedButtons;->addButton(ILjava/lang/Object;)V
 
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mZenButtons:Lcom/android/systemui/volume/SegmentedButtons;
 
     const v1, 0x7f0c028e
 
-    const v2, 0x7f0c011d
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v2
 
-    move-result-object v3
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/systemui/volume/SegmentedButtons;->addButton(IILjava/lang/Object;)V
+    invoke-virtual {v0, v1, v2}, Lcom/android/systemui/volume/SegmentedButtons;->addButton(ILjava/lang/Object;)V
 
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mZenButtons:Lcom/android/systemui/volume/SegmentedButtons;
 
