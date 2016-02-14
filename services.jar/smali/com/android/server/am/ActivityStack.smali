@@ -1710,7 +1710,7 @@
 
     invoke-virtual {p0, p1, v1, v2}, Lcom/android/server/am/ActivityStack;->finishActivityResultsLocked(Lcom/android/server/am/ActivityRecord;ILandroid/content/Intent;)V
 
-    invoke-virtual {p1}, Lcom/android/server/am/ActivityRecord;->makeFinishing()V
+    invoke-virtual {p1}, Lcom/android/server/am/ActivityRecord;->makeFinishingLocked()V
 
     invoke-virtual {p1}, Lcom/android/server/am/ActivityRecord;->takeFromHistory()V
 
@@ -4234,7 +4234,7 @@
 
     .local v0, "origId":J
     :try_start_0
-    invoke-static {p1}, Lcom/android/server/am/ActivityRecord;->forToken(Landroid/os/IBinder;)Lcom/android/server/am/ActivityRecord;
+    invoke-static {p1}, Lcom/android/server/am/ActivityRecord;->forTokenLocked(Landroid/os/IBinder;)Lcom/android/server/am/ActivityRecord;
 
     move-result-object v2
 
@@ -7266,7 +7266,7 @@
     return v5
 
     :cond_0
-    invoke-virtual {p1}, Lcom/android/server/am/ActivityRecord;->makeFinishing()V
+    invoke-virtual {p1}, Lcom/android/server/am/ActivityRecord;->makeFinishingLocked()V
 
     iget-object v4, p1, Lcom/android/server/am/ActivityRecord;->task:Lcom/android/server/am/TaskRecord;
 
@@ -7801,7 +7801,7 @@
     if-ne v1, v3, :cond_8
 
     :cond_6
-    invoke-virtual {p1}, Lcom/android/server/am/ActivityRecord;->makeFinishing()V
+    invoke-virtual {p1}, Lcom/android/server/am/ActivityRecord;->makeFinishingLocked()V
 
     const-string v3, "finish-imm"
 
@@ -9340,7 +9340,7 @@
     .param p1, "token"    # Landroid/os/IBinder;
 
     .prologue
-    invoke-static {p1}, Lcom/android/server/am/ActivityRecord;->forToken(Landroid/os/IBinder;)Lcom/android/server/am/ActivityRecord;
+    invoke-static {p1}, Lcom/android/server/am/ActivityRecord;->forTokenLocked(Landroid/os/IBinder;)Lcom/android/server/am/ActivityRecord;
 
     move-result-object v0
 
@@ -9374,6 +9374,10 @@
 
     .local v0, "task":Lcom/android/server/am/TaskRecord;
     if-eqz v0, :cond_2
+
+    iget-object v2, v0, Lcom/android/server/am/TaskRecord;->stack:Lcom/android/server/am/ActivityStack;
+
+    if-eqz v2, :cond_2
 
     iget-object v2, v0, Lcom/android/server/am/TaskRecord;->mActivities:Ljava/util/ArrayList;
 
@@ -10043,27 +10047,22 @@
     return-void
 .end method
 
-.method final navigateUpToLocked(Landroid/os/IBinder;Landroid/content/Intent;ILandroid/content/Intent;)Z
-    .locals 42
-    .param p1, "token"    # Landroid/os/IBinder;
+.method final navigateUpToLocked(Lcom/android/server/am/ActivityRecord;Landroid/content/Intent;ILandroid/content/Intent;)Z
+    .locals 41
+    .param p1, "srec"    # Lcom/android/server/am/ActivityRecord;
     .param p2, "destIntent"    # Landroid/content/Intent;
     .param p3, "resultCode"    # I
     .param p4, "resultData"    # Landroid/content/Intent;
 
     .prologue
-    invoke-static/range {p1 .. p1}, Lcom/android/server/am/ActivityRecord;->forToken(Landroid/os/IBinder;)Lcom/android/server/am/ActivityRecord;
-
-    move-result-object v39
-
-    .local v39, "srec":Lcom/android/server/am/ActivityRecord;
-    move-object/from16 v0, v39
+    move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/android/server/am/ActivityRecord;->task:Lcom/android/server/am/TaskRecord;
 
-    move-object/from16 v41, v0
+    move-object/from16 v40, v0
 
-    .local v41, "task":Lcom/android/server/am/TaskRecord;
-    move-object/from16 v0, v41
+    .local v40, "task":Lcom/android/server/am/TaskRecord;
+    move-object/from16 v0, v40
 
     iget-object v0, v0, Lcom/android/server/am/TaskRecord;->mActivities:Ljava/util/ArrayList;
 
@@ -10072,18 +10071,18 @@
     .local v23, "activities":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/am/ActivityRecord;>;"
     move-object/from16 v0, v23
 
-    move-object/from16 v1, v39
+    move-object/from16 v1, p1
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
-    move-result v40
+    move-result v39
 
-    .local v40, "start":I
+    .local v39, "start":I
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/am/ActivityStack;->mTaskHistory:Ljava/util/ArrayList;
 
-    move-object/from16 v0, v41
+    move-object/from16 v0, v40
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
@@ -10091,7 +10090,7 @@
 
     if-eqz v2, :cond_0
 
-    if-gez v40, :cond_1
+    if-gez v39, :cond_1
 
     :cond_0
     const/16 v29, 0x0
@@ -10100,7 +10099,7 @@
     return v29
 
     :cond_1
-    add-int/lit8 v28, v40, -0x1
+    add-int/lit8 v28, v39, -0x1
 
     .local v28, "finishTo":I
     if-gez v28, :cond_3
@@ -10117,7 +10116,7 @@
     move-result-object v25
 
     .local v25, "dest":Landroid/content/ComponentName;
-    if-lez v40, :cond_2
+    if-lez v39, :cond_2
 
     if-eqz v25, :cond_2
 
@@ -10190,7 +10189,7 @@
     .local v24, "controller":Landroid/app/IActivityController;
     if-eqz v24, :cond_5
 
-    move-object/from16 v0, v39
+    move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/server/am/ActivityRecord;->appToken:Landroid/view/IApplicationToken$Stub;
 
@@ -10295,7 +10294,7 @@
     move-result-wide v32
 
     .local v32, "origId":J
-    move/from16 v30, v40
+    move/from16 v30, v39
 
     .restart local v30    # "i":I
     :goto_4
@@ -10385,7 +10384,7 @@
     if-eqz v2, :cond_9
 
     :cond_7
-    move-object/from16 v0, v39
+    move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/server/am/ActivityRecord;->info:Landroid/content/pm/ActivityInfo;
 
@@ -10393,7 +10392,7 @@
 
     iget v2, v2, Landroid/content/pm/ApplicationInfo;->uid:I
 
-    move-object/from16 v0, v39
+    move-object/from16 v0, p1
 
     iget-object v3, v0, Lcom/android/server/am/ActivityRecord;->packageName:Ljava/lang/String;
 
@@ -10425,7 +10424,7 @@
 
     const/4 v4, 0x0
 
-    move-object/from16 v0, v39
+    move-object/from16 v0, p1
 
     iget v5, v0, Lcom/android/server/am/ActivityRecord;->userId:I
 
@@ -10438,7 +10437,7 @@
 
     iget-object v2, v0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
-    move-object/from16 v0, v39
+    move-object/from16 v0, p1
 
     iget-object v3, v0, Lcom/android/server/am/ActivityRecord;->app:Lcom/android/server/am/ProcessRecord;
 
@@ -15395,7 +15394,7 @@
     .end local v0    # "activities":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/am/ActivityRecord;>;"
     .end local v1    # "activityNdx":I
     :cond_4
-    invoke-static {p1}, Lcom/android/server/am/ActivityRecord;->forToken(Landroid/os/IBinder;)Lcom/android/server/am/ActivityRecord;
+    invoke-static {p1}, Lcom/android/server/am/ActivityRecord;->forTokenLocked(Landroid/os/IBinder;)Lcom/android/server/am/ActivityRecord;
 
     move-result-object v2
 

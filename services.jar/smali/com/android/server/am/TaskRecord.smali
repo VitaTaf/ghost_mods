@@ -3259,7 +3259,7 @@
 
     .local v8, "activityNdx":I
     :goto_0
-    if-ltz v8, :cond_7
+    if-ltz v8, :cond_8
 
     iget-object v0, p0, Lcom/android/server/am/TaskRecord;->mActivities:Ljava/util/ArrayList;
 
@@ -3331,6 +3331,10 @@
     :cond_4
     iget-object v0, p0, Lcom/android/server/am/TaskRecord;->stack:Lcom/android/server/am/ActivityStack;
 
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/android/server/am/TaskRecord;->stack:Lcom/android/server/am/ActivityStack;
+
     const/4 v2, 0x0
 
     const/4 v3, 0x0
@@ -3355,17 +3359,21 @@
     :cond_5
     iget v0, v11, Lcom/android/server/am/ActivityRecord;->launchMode:I
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_7
 
     const/high16 v0, 0x20000000
 
     and-int/2addr v0, p2
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_7
 
     iget-boolean v0, v11, Lcom/android/server/am/ActivityRecord;->finishing:Z
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_7
+
+    iget-object v0, p0, Lcom/android/server/am/TaskRecord;->stack:Lcom/android/server/am/ActivityStack;
+
+    if-eqz v0, :cond_6
 
     iget-object v2, p0, Lcom/android/server/am/TaskRecord;->stack:Lcom/android/server/am/ActivityStack;
 
@@ -3381,15 +3389,16 @@
 
     invoke-virtual/range {v2 .. v7}, Lcom/android/server/am/ActivityStack;->finishActivityLocked(Lcom/android/server/am/ActivityRecord;ILandroid/content/Intent;Ljava/lang/String;Z)Z
 
+    :cond_6
     const/4 v11, 0x0
 
     .end local v1    # "r":Lcom/android/server/am/ActivityRecord;
     .end local v11    # "ret":Lcom/android/server/am/ActivityRecord;
-    :cond_6
+    :cond_7
     :goto_3
     return-object v11
 
-    :cond_7
+    :cond_8
     const/4 v11, 0x0
 
     goto :goto_3
@@ -4387,6 +4396,10 @@
     .param p1, "notTop"    # Lcom/android/server/am/ActivityRecord;
 
     .prologue
+    iget-object v2, p0, Lcom/android/server/am/TaskRecord;->stack:Lcom/android/server/am/ActivityStack;
+
+    if-eqz v2, :cond_1
+
     iget-object v2, p0, Lcom/android/server/am/TaskRecord;->mActivities:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -4422,16 +4435,19 @@
 
     if-eqz v2, :cond_0
 
+    .end local v0    # "activityNdx":I
     .end local v1    # "r":Lcom/android/server/am/ActivityRecord;
     :goto_1
     return-object v1
 
+    .restart local v0    # "activityNdx":I
     .restart local v1    # "r":Lcom/android/server/am/ActivityRecord;
     :cond_0
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
+    .end local v0    # "activityNdx":I
     .end local v1    # "r":Lcom/android/server/am/ActivityRecord;
     :cond_1
     const/4 v1, 0x0

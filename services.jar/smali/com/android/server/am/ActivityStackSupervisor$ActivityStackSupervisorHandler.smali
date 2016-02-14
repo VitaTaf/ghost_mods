@@ -856,7 +856,7 @@
 
     check-cast v7, Landroid/os/IBinder;
 
-    invoke-static {v7}, Lcom/android/server/am/ActivityRecord;->forToken(Landroid/os/IBinder;)Lcom/android/server/am/ActivityRecord;
+    invoke-static {v7}, Lcom/android/server/am/ActivityRecord;->forTokenLocked(Landroid/os/IBinder;)Lcom/android/server/am/ActivityRecord;
 
     move-result-object v5
 
