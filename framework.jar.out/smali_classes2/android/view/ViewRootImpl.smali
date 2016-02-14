@@ -12091,11 +12091,8 @@
     move-result-object v0
 
     .local v0, "renderNode":Landroid/view/RenderNode;
-    if-eqz v0, :cond_0
-
     invoke-virtual {v0}, Landroid/view/RenderNode;->output()V
 
-    :cond_0
     return-void
 .end method
 

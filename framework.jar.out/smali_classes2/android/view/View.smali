@@ -10261,6 +10261,19 @@
     return-void
 .end method
 
+.method combineVisibility(II)I
+    .locals 1
+    .param p1, "vis1"    # I
+    .param p2, "vis2"    # I
+
+    .prologue
+    invoke-static {p1, p2}, Ljava/lang/Math;->max(II)I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method protected computeFitSystemWindows(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
     .locals 4
     .param p1, "inoutInsets"    # Landroid/graphics/Rect;
@@ -11794,6 +11807,8 @@
     invoke-virtual {p0, v4}, Landroid/view/View;->onWindowVisibilityChanged(I)V
 
     :cond_5
+    invoke-virtual {p0, p0, p2}, Landroid/view/View;->onVisibilityChanged(Landroid/view/View;I)V
+
     iget v5, p0, Landroid/view/View;->mPrivateFlags:I
 
     and-int/lit16 v5, v5, 0x400
@@ -24139,7 +24154,7 @@
 .end method
 
 .method protected onAttachedToWindow()V
-    .locals 3
+    .locals 2
 
     .prologue
     iget v1, p0, Landroid/view/View;->mPrivateFlags:I
@@ -24153,25 +24168,6 @@
     invoke-interface {v1, p0}, Landroid/view/ViewParent;->requestTransparentRegion(Landroid/view/View;)V
 
     :cond_0
-    iget v1, p0, Landroid/view/View;->mPrivateFlags:I
-
-    const/high16 v2, 0x8000000
-
-    and-int/2addr v1, v2
-
-    if-eqz v1, :cond_1
-
-    invoke-direct {p0}, Landroid/view/View;->initialAwakenScrollBars()Z
-
-    iget v1, p0, Landroid/view/View;->mPrivateFlags:I
-
-    const v2, -0x8000001
-
-    and-int/2addr v1, v2
-
-    iput v1, p0, Landroid/view/View;->mPrivateFlags:I
-
-    :cond_1
     iget v1, p0, Landroid/view/View;->mPrivateFlags3:I
 
     and-int/lit8 v1, v1, -0x5
@@ -24188,7 +24184,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_1
 
     invoke-static {}, Landroid/view/inputmethod/InputMethodManager;->peekInstance()Landroid/view/inputmethod/InputMethodManager;
 
@@ -24198,7 +24194,7 @@
     invoke-virtual {v0, p0}, Landroid/view/inputmethod/InputMethodManager;->focusIn(Landroid/view/View;)V
 
     .end local v0    # "imm":Landroid/view/inputmethod/InputMethodManager;
-    :cond_2
+    :cond_1
     return-void
 .end method
 
@@ -26924,7 +26920,7 @@
 .end method
 
 .method protected onVisibilityChanged(Landroid/view/View;I)V
-    .locals 6
+    .locals 5
     .param p1, "changedView"    # Landroid/view/View;
     .param p2, "visibility"    # I
 
@@ -26947,12 +26943,11 @@
 
     iget-object v4, p0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_0
 
     invoke-direct {p0}, Landroid/view/View;->initialAwakenScrollBars()Z
 
     :cond_0
-    :goto_1
     iget-object v0, p0, Landroid/view/View;->mBackground:Landroid/graphics/drawable/Drawable;
 
     .local v0, "dr":Landroid/graphics/drawable/Drawable;
@@ -26969,7 +26964,7 @@
     :cond_1
     iget-object v4, p0, Landroid/view/View;->mForegroundInfo:Landroid/view/View$ForegroundInfo;
 
-    if-eqz v4, :cond_5
+    if-eqz v4, :cond_4
 
     iget-object v4, p0, Landroid/view/View;->mForegroundInfo:Landroid/view/View$ForegroundInfo;
 
@@ -26978,7 +26973,7 @@
     move-result-object v1
 
     .local v1, "fg":Landroid/graphics/drawable/Drawable;
-    :goto_2
+    :goto_1
     if-eqz v1, :cond_2
 
     invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->isVisible()Z
@@ -27000,23 +26995,12 @@
 
     goto :goto_0
 
+    .restart local v0    # "dr":Landroid/graphics/drawable/Drawable;
     .restart local v2    # "visible":Z
     :cond_4
-    iget v4, p0, Landroid/view/View;->mPrivateFlags:I
-
-    const/high16 v5, 0x8000000
-
-    or-int/2addr v4, v5
-
-    iput v4, p0, Landroid/view/View;->mPrivateFlags:I
-
-    goto :goto_1
-
-    .restart local v0    # "dr":Landroid/graphics/drawable/Drawable;
-    :cond_5
     const/4 v1, 0x0
 
-    goto :goto_2
+    goto :goto_1
 .end method
 
 .method public onWindowFocusChanged(Z)V
@@ -32497,6 +32481,10 @@
 
     :cond_d
     :goto_3
+    iget-object v6, p0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
+
+    if-eqz v6, :cond_e
+
     invoke-virtual {p0, p0, v2}, Landroid/view/View;->dispatchVisibilityChanged(Landroid/view/View;I)V
 
     invoke-virtual {p0}, Landroid/view/View;->notifySubtreeAccessibilityStateChangedIfNeeded()V
@@ -37422,7 +37410,7 @@
     return-void
 .end method
 
-.method updateDisplayListIfDirty()Landroid/view/RenderNode;
+.method public updateDisplayListIfDirty()Landroid/view/RenderNode;
     .locals 12
 
     .prologue
