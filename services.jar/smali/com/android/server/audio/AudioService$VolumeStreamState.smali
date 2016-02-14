@@ -908,18 +908,23 @@
 .end method
 
 .method public mute(Z)V
-    .locals 8
+    .locals 10
     .param p1, "state"    # Z
 
     .prologue
-    const-class v7, Lcom/android/server/audio/AudioService$VolumeStreamState;
+    const/4 v7, 0x0
 
-    monitor-enter v7
+    .local v7, "changed":Z
+    const-class v9, Lcom/android/server/audio/AudioService$VolumeStreamState;
+
+    monitor-enter v9
 
     :try_start_0
     iget-boolean v0, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->mIsMuted:Z
 
     if-eq p1, v0, :cond_0
+
+    const/4 v7, 0x1
 
     iput-boolean p1, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->mIsMuted:Z
 
@@ -946,16 +951,45 @@
     invoke-static/range {v0 .. v6}, Lcom/android/server/audio/AudioService;->access$100(Landroid/os/Handler;IIIILjava/lang/Object;I)V
 
     :cond_0
-    monitor-exit v7
+    monitor-exit v9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    if-eqz v7, :cond_1
+
+    new-instance v8, Landroid/content/Intent;
+
+    const-string v0, "android.media.STREAM_MUTE_CHANGED_ACTION"
+
+    invoke-direct {v8, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    .local v8, "intent":Landroid/content/Intent;
+    const-string v0, "android.media.EXTRA_VOLUME_STREAM_TYPE"
+
+    iget v1, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->mStreamType:I
+
+    invoke-virtual {v8, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    const-string v0, "android.media.EXTRA_STREAM_VOLUME_MUTED"
+
+    invoke-virtual {v8, v0, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    iget-object v0, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->this$0:Lcom/android/server/audio/AudioService;
+
+    # invokes: Lcom/android/server/audio/AudioService;->sendBroadcastToAll(Landroid/content/Intent;)V
+    invoke-static {v0, v8}, Lcom/android/server/audio/AudioService;->access$4400(Lcom/android/server/audio/AudioService;Landroid/content/Intent;)V
+
+    .end local v8    # "intent":Landroid/content/Intent;
+    :cond_1
     return-void
 
     :catchall_0
     move-exception v0
 
-    monitor-exit v7
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_start_1
+    monitor-exit v9
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 .end method
