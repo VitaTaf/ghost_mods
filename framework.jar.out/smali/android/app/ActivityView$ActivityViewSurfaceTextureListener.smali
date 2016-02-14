@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public onSurfaceTextureAvailable(Landroid/graphics/SurfaceTexture;II)V
-    .locals 1
+    .locals 2
     .param p1, "surfaceTexture"    # Landroid/graphics/SurfaceTexture;
     .param p2, "width"    # I
     .param p3, "height"    # I
@@ -60,12 +60,13 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
+    :cond_0
     :goto_0
     return-void
 
-    :cond_0
+    :cond_1
     iget-object v0, p0, Landroid/app/ActivityView$ActivityViewSurfaceTextureListener;->this$0:Landroid/app/ActivityView;
 
     # setter for: Landroid/app/ActivityView;->mWidth:I
@@ -80,6 +81,26 @@
 
     # invokes: Landroid/app/ActivityView;->attachToSurfaceWhenReady()V
     invoke-static {v0}, Landroid/app/ActivityView;->access$400(Landroid/app/ActivityView;)V
+
+    iget-object v0, p0, Landroid/app/ActivityView$ActivityViewSurfaceTextureListener;->this$0:Landroid/app/ActivityView;
+
+    # getter for: Landroid/app/ActivityView;->mActivityViewCallback:Landroid/app/ActivityView$ActivityViewCallback;
+    invoke-static {v0}, Landroid/app/ActivityView;->access$500(Landroid/app/ActivityView;)Landroid/app/ActivityView$ActivityViewCallback;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Landroid/app/ActivityView$ActivityViewSurfaceTextureListener;->this$0:Landroid/app/ActivityView;
+
+    # getter for: Landroid/app/ActivityView;->mActivityViewCallback:Landroid/app/ActivityView$ActivityViewCallback;
+    invoke-static {v0}, Landroid/app/ActivityView;->access$500(Landroid/app/ActivityView;)Landroid/app/ActivityView$ActivityViewCallback;
+
+    move-result-object v0
+
+    iget-object v1, p0, Landroid/app/ActivityView$ActivityViewSurfaceTextureListener;->this$0:Landroid/app/ActivityView;
+
+    invoke-virtual {v0, v1}, Landroid/app/ActivityView$ActivityViewCallback;->onSurfaceAvailable(Landroid/app/ActivityView;)V
 
     goto :goto_0
 .end method
@@ -100,16 +121,17 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_1
 
+    :cond_0
     :goto_0
     return v6
 
-    :cond_0
+    :cond_1
     iget-object v1, p0, Landroid/app/ActivityView$ActivityViewSurfaceTextureListener;->this$0:Landroid/app/ActivityView;
 
     # getter for: Landroid/app/ActivityView;->mSurface:Landroid/view/Surface;
-    invoke-static {v1}, Landroid/app/ActivityView;->access$500(Landroid/app/ActivityView;)Landroid/view/Surface;
+    invoke-static {v1}, Landroid/app/ActivityView;->access$600(Landroid/app/ActivityView;)Landroid/view/Surface;
 
     move-result-object v1
 
@@ -118,7 +140,7 @@
     iget-object v1, p0, Landroid/app/ActivityView$ActivityViewSurfaceTextureListener;->this$0:Landroid/app/ActivityView;
 
     # setter for: Landroid/app/ActivityView;->mSurface:Landroid/view/Surface;
-    invoke-static {v1, v2}, Landroid/app/ActivityView;->access$502(Landroid/app/ActivityView;Landroid/view/Surface;)Landroid/view/Surface;
+    invoke-static {v1, v2}, Landroid/app/ActivityView;->access$602(Landroid/app/ActivityView;Landroid/view/Surface;)Landroid/view/Surface;
 
     :try_start_0
     iget-object v1, p0, Landroid/app/ActivityView$ActivityViewSurfaceTextureListener;->this$0:Landroid/app/ActivityView;
@@ -153,6 +175,26 @@
     invoke-virtual {v1, v2, v3, v4, v5}, Landroid/app/ActivityView$ActivityContainerWrapper;->setSurface(Landroid/view/Surface;III)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    iget-object v1, p0, Landroid/app/ActivityView$ActivityViewSurfaceTextureListener;->this$0:Landroid/app/ActivityView;
+
+    # getter for: Landroid/app/ActivityView;->mActivityViewCallback:Landroid/app/ActivityView$ActivityViewCallback;
+    invoke-static {v1}, Landroid/app/ActivityView;->access$500(Landroid/app/ActivityView;)Landroid/app/ActivityView$ActivityViewCallback;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Landroid/app/ActivityView$ActivityViewSurfaceTextureListener;->this$0:Landroid/app/ActivityView;
+
+    # getter for: Landroid/app/ActivityView;->mActivityViewCallback:Landroid/app/ActivityView$ActivityViewCallback;
+    invoke-static {v1}, Landroid/app/ActivityView;->access$500(Landroid/app/ActivityView;)Landroid/app/ActivityView$ActivityViewCallback;
+
+    move-result-object v1
+
+    iget-object v2, p0, Landroid/app/ActivityView$ActivityViewSurfaceTextureListener;->this$0:Landroid/app/ActivityView;
+
+    invoke-virtual {v1, v2}, Landroid/app/ActivityView$ActivityViewCallback;->onSurfaceDestroyed(Landroid/app/ActivityView;)V
 
     goto :goto_0
 

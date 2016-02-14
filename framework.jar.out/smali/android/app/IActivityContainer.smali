@@ -23,22 +23,6 @@
     .end annotation
 .end method
 
-.method public abstract checkEmbeddedAllowed(Landroid/content/Intent;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract checkEmbeddedAllowedIntentSender(Landroid/content/IIntentSender;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getDisplayId()I
     .annotation system Ldalvik/annotation/Throws;
         value = {

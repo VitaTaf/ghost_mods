@@ -28,3 +28,9 @@
 # virtual methods
 .method public abstract onAllActivitiesComplete(Landroid/app/ActivityView;)V
 .end method
+
+.method public abstract onSurfaceAvailable(Landroid/app/ActivityView;)V
+.end method
+
+.method public abstract onSurfaceDestroyed(Landroid/app/ActivityView;)V
+.end method

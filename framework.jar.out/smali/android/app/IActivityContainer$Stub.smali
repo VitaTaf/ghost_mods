@@ -28,17 +28,13 @@
 
 .field static final TRANSACTION_attachToDisplay:I = 0x1
 
-.field static final TRANSACTION_checkEmbeddedAllowed:I = 0x5
+.field static final TRANSACTION_getDisplayId:I = 0x5
 
-.field static final TRANSACTION_checkEmbeddedAllowedIntentSender:I = 0x6
+.field static final TRANSACTION_getStackId:I = 0x6
 
-.field static final TRANSACTION_getDisplayId:I = 0x7
+.field static final TRANSACTION_injectEvent:I = 0x7
 
-.field static final TRANSACTION_getStackId:I = 0x8
-
-.field static final TRANSACTION_injectEvent:I = 0x9
-
-.field static final TRANSACTION_release:I = 0xa
+.field static final TRANSACTION_release:I = 0x8
 
 .field static final TRANSACTION_setSurface:I = 0x2
 
@@ -283,62 +279,6 @@
 
     invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v5
-
-    if-eqz v5, :cond_2
-
-    sget-object v5, Landroid/content/Intent;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-interface {v5, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/content/Intent;
-
-    .local v0, "_arg0":Landroid/content/Intent;
-    :goto_3
-    invoke-virtual {p0, v0}, Landroid/app/IActivityContainer$Stub;->checkEmbeddedAllowed(Landroid/content/Intent;)V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    goto/16 :goto_0
-
-    .end local v0    # "_arg0":Landroid/content/Intent;
-    :cond_2
-    const/4 v0, 0x0
-
-    .restart local v0    # "_arg0":Landroid/content/Intent;
-    goto :goto_3
-
-    .end local v0    # "_arg0":Landroid/content/Intent;
-    :sswitch_6
-    const-string v5, "android.app.IActivityContainer"
-
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
-
-    move-result-object v5
-
-    invoke-static {v5}, Landroid/content/IIntentSender$Stub;->asInterface(Landroid/os/IBinder;)Landroid/content/IIntentSender;
-
-    move-result-object v0
-
-    .local v0, "_arg0":Landroid/content/IIntentSender;
-    invoke-virtual {p0, v0}, Landroid/app/IActivityContainer$Stub;->checkEmbeddedAllowedIntentSender(Landroid/content/IIntentSender;)V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    goto/16 :goto_0
-
-    .end local v0    # "_arg0":Landroid/content/IIntentSender;
-    :sswitch_7
-    const-string v5, "android.app.IActivityContainer"
-
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
     invoke-virtual {p0}, Landroid/app/IActivityContainer$Stub;->getDisplayId()I
 
     move-result v4
@@ -351,7 +291,7 @@
     goto/16 :goto_0
 
     .end local v4    # "_result":I
-    :sswitch_8
+    :sswitch_6
     const-string v5, "android.app.IActivityContainer"
 
     invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
@@ -368,7 +308,7 @@
     goto/16 :goto_0
 
     .end local v4    # "_result":I
-    :sswitch_9
+    :sswitch_7
     const-string v5, "android.app.IActivityContainer"
 
     invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
@@ -377,7 +317,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_3
+    if-eqz v5, :cond_2
 
     sget-object v5, Landroid/view/InputEvent;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -388,7 +328,7 @@
     check-cast v0, Landroid/view/InputEvent;
 
     .local v0, "_arg0":Landroid/view/InputEvent;
-    :goto_4
+    :goto_3
     invoke-virtual {p0, v0}, Landroid/app/IActivityContainer$Stub;->injectEvent(Landroid/view/InputEvent;)Z
 
     move-result v4
@@ -396,32 +336,32 @@
     .local v4, "_result":Z
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_3
 
     move v5, v6
 
-    :goto_5
+    :goto_4
     invoke-virtual {p3, v5}, Landroid/os/Parcel;->writeInt(I)V
 
     goto/16 :goto_0
 
     .end local v0    # "_arg0":Landroid/view/InputEvent;
     .end local v4    # "_result":Z
-    :cond_3
+    :cond_2
     const/4 v0, 0x0
 
     .restart local v0    # "_arg0":Landroid/view/InputEvent;
-    goto :goto_4
+    goto :goto_3
 
     .restart local v4    # "_result":Z
-    :cond_4
+    :cond_3
     const/4 v5, 0x0
 
-    goto :goto_5
+    goto :goto_4
 
     .end local v0    # "_arg0":Landroid/view/InputEvent;
     .end local v4    # "_result":Z
-    :sswitch_a
+    :sswitch_8
     const-string v5, "android.app.IActivityContainer"
 
     invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
@@ -442,8 +382,6 @@
         0x6 -> :sswitch_6
         0x7 -> :sswitch_7
         0x8 -> :sswitch_8
-        0x9 -> :sswitch_9
-        0xa -> :sswitch_a
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

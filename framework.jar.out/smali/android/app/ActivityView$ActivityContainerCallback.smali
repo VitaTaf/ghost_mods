@@ -63,7 +63,7 @@
     if-eqz v0, :cond_0
 
     # getter for: Landroid/app/ActivityView;->mActivityViewCallback:Landroid/app/ActivityView$ActivityViewCallback;
-    invoke-static {v0}, Landroid/app/ActivityView;->access$600(Landroid/app/ActivityView;)Landroid/app/ActivityView$ActivityViewCallback;
+    invoke-static {v0}, Landroid/app/ActivityView;->access$500(Landroid/app/ActivityView;)Landroid/app/ActivityView$ActivityViewCallback;
 
     move-result-object v1
 

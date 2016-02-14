@@ -128,109 +128,39 @@
     throw v0
 .end method
 
-.method private checkEmbeddedAllowedInner(Landroid/content/Intent;Ljava/lang/String;)V
-    .locals 9
-    .param p1, "intent"    # Landroid/content/Intent;
-    .param p2, "resolvedType"    # Ljava/lang/String;
+.method private checkEmbeddedAllowedInner(ILandroid/content/Intent;Ljava/lang/String;)V
+    .locals 7
+    .param p1, "userId"    # I
+    .param p2, "intent"    # Landroid/content/Intent;
+    .param p3, "resolvedType"    # Ljava/lang/String;
 
     .prologue
-    const/4 v7, 0x0
+    iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
+
+    const/4 v3, 0x0
 
     const/4 v4, 0x0
 
-    iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
+    move-object v1, p2
 
-    iget-object v0, v0, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
+    move-object v2, p3
 
-    invoke-static {}, Landroid/os/Binder;->getCallingPid()I
+    move v5, p1
 
-    move-result v1
+    invoke-virtual/range {v0 .. v5}, Lcom/android/server/am/ActivityStackSupervisor;->resolveActivity(Landroid/content/Intent;Ljava/lang/String;ILandroid/app/ProfilerInfo;I)Landroid/content/pm/ActivityInfo;
 
-    invoke-static {}, Landroid/os/Binder;->getCallingUid()I
+    move-result-object v6
 
-    move-result v2
+    .local v6, "aInfo":Landroid/content/pm/ActivityInfo;
+    if-eqz v6, :cond_0
 
-    iget-object v3, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
-
-    # getter for: Lcom/android/server/am/ActivityStackSupervisor;->mCurrentUser:I
-    invoke-static {v3}, Lcom/android/server/am/ActivityStackSupervisor;->access$1000(Lcom/android/server/am/ActivityStackSupervisor;)I
-
-    move-result v3
-
-    const/4 v5, 0x2
-
-    const-string v6, "ActivityContainer"
-
-    invoke-virtual/range {v0 .. v7}, Lcom/android/server/am/ActivityManagerService;->handleIncomingUser(IIIZILjava/lang/String;Ljava/lang/String;)I
-
-    move-result v6
-
-    .local v6, "userId":I
-    if-nez p2, :cond_0
-
-    invoke-virtual {p1}, Landroid/content/Intent;->getType()Ljava/lang/String;
-
-    move-result-object p2
-
-    if-nez p2, :cond_0
-
-    invoke-virtual {p1}, Landroid/content/Intent;->getData()Landroid/net/Uri;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    const-string v0, "content"
-
-    invoke-virtual {p1}, Landroid/content/Intent;->getData()Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
-
-    iget-object v0, v0, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
-
-    invoke-virtual {p1}, Landroid/content/Intent;->getData()Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1, v6}, Lcom/android/server/am/ActivityManagerService;->getProviderMimeType(Landroid/net/Uri;I)Ljava/lang/String;
-
-    move-result-object p2
-
-    :cond_0
-    iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v5, v7
-
-    invoke-virtual/range {v1 .. v6}, Lcom/android/server/am/ActivityStackSupervisor;->resolveActivity(Landroid/content/Intent;Ljava/lang/String;ILandroid/app/ProfilerInfo;I)Landroid/content/pm/ActivityInfo;
-
-    move-result-object v8
-
-    .local v8, "aInfo":Landroid/content/pm/ActivityInfo;
-    if-eqz v8, :cond_1
-
-    iget v0, v8, Landroid/content/pm/ActivityInfo;->flags:I
+    iget v0, v6, Landroid/content/pm/ActivityInfo;->flags:I
 
     const/high16 v1, -0x80000000
 
     and-int/2addr v0, v1
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
     new-instance v0, Ljava/lang/SecurityException;
 
@@ -240,7 +170,7 @@
 
     throw v0
 
-    :cond_1
+    :cond_0
     return-void
 .end method
 
@@ -336,54 +266,6 @@
     iget v2, p1, Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;->mDisplayId:I
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/wm/WindowManagerService;->attachStack(II)V
-
-    return-void
-.end method
-
-.method public final checkEmbeddedAllowed(Landroid/content/Intent;)V
-    .locals 1
-    .param p1, "intent"    # Landroid/content/Intent;
-
-    .prologue
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->checkEmbeddedAllowedInner(Landroid/content/Intent;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final checkEmbeddedAllowedIntentSender(Landroid/content/IIntentSender;)V
-    .locals 3
-    .param p1, "intentSender"    # Landroid/content/IIntentSender;
-
-    .prologue
-    instance-of v1, p1, Lcom/android/server/am/PendingIntentRecord;
-
-    if-nez v1, :cond_0
-
-    new-instance v1, Ljava/lang/IllegalArgumentException;
-
-    const-string v2, "Bad PendingIntent object"
-
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    :cond_0
-    move-object v0, p1
-
-    check-cast v0, Lcom/android/server/am/PendingIntentRecord;
-
-    .local v0, "pendingIntent":Lcom/android/server/am/PendingIntentRecord;
-    iget-object v1, v0, Lcom/android/server/am/PendingIntentRecord;->key:Lcom/android/server/am/PendingIntentRecord$Key;
-
-    iget-object v1, v1, Lcom/android/server/am/PendingIntentRecord$Key;->requestIntent:Landroid/content/Intent;
-
-    iget-object v2, v0, Lcom/android/server/am/PendingIntentRecord;->key:Lcom/android/server/am/PendingIntentRecord$Key;
-
-    iget-object v2, v2, Lcom/android/server/am/PendingIntentRecord$Key;->requestResolvedType:Ljava/lang/String;
-
-    invoke-direct {p0, v1, v2}, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->checkEmbeddedAllowedInner(Landroid/content/Intent;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -859,121 +741,120 @@
 .end method
 
 .method public final startActivity(Landroid/content/Intent;)I
-    .locals 20
+    .locals 23
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
+    iget-object v3, v0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
-    iget-object v1, v1, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
+    iget-object v3, v3, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
 
-    const-string v2, "ActivityContainer.startActivity"
+    const-string v4, "ActivityContainer.startActivity"
 
-    invoke-virtual {v1, v2}, Lcom/android/server/am/ActivityManagerService;->enforceNotIsolatedCaller(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Lcom/android/server/am/ActivityManagerService;->enforceNotIsolatedCaller(Ljava/lang/String;)V
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
+    iget-object v3, v0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
-    iget-object v1, v1, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
+    iget-object v3, v3, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
 
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
-    move-result v2
+    move-result v4
 
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
-    move-result v3
+    move-result v5
 
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
+    iget-object v6, v0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     # getter for: Lcom/android/server/am/ActivityStackSupervisor;->mCurrentUser:I
-    invoke-static {v4}, Lcom/android/server/am/ActivityStackSupervisor;->access$1000(Lcom/android/server/am/ActivityStackSupervisor;)I
+    invoke-static {v6}, Lcom/android/server/am/ActivityStackSupervisor;->access$1000(Lcom/android/server/am/ActivityStackSupervisor;)I
 
-    move-result v4
+    move-result v6
 
-    const/4 v5, 0x0
+    const/4 v7, 0x0
 
-    const/4 v6, 0x2
+    const/4 v8, 0x2
 
-    const-string v7, "ActivityContainer"
+    const-string v9, "ActivityContainer"
 
-    const/4 v8, 0x0
+    const/4 v10, 0x0
 
-    invoke-virtual/range {v1 .. v8}, Lcom/android/server/am/ActivityManagerService;->handleIncomingUser(IIIZILjava/lang/String;Ljava/lang/String;)I
+    invoke-virtual/range {v3 .. v10}, Lcom/android/server/am/ActivityManagerService;->handleIncomingUser(IIIZILjava/lang/String;Ljava/lang/String;)I
 
-    move-result v17
+    move-result v19
 
-    .local v17, "userId":I
-    const/high16 v1, 0x18010000
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
+    .local v19, "userId":I
     invoke-virtual/range {p1 .. p1}, Landroid/content/Intent;->getType()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v8
 
-    .local v6, "mimeType":Ljava/lang/String;
-    if-nez v6, :cond_0
-
+    .local v8, "mimeType":Ljava/lang/String;
     invoke-virtual/range {p1 .. p1}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
-    move-result-object v1
+    move-result-object v22
 
-    if-eqz v1, :cond_0
+    .local v22, "data":Landroid/net/Uri;
+    if-nez v8, :cond_0
 
-    const-string v1, "content"
+    if-eqz v22, :cond_0
 
-    invoke-virtual/range {p1 .. p1}, Landroid/content/Intent;->getData()Landroid/net/Uri;
+    const-string v3, "content"
 
-    move-result-object v2
+    invoke-virtual/range {v22 .. v22}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
-    invoke-virtual {v2}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+    move-result-object v4
 
-    move-result-object v2
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v3
 
-    move-result v1
-
-    if-eqz v1, :cond_0
+    if-eqz v3, :cond_0
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
+    iget-object v3, v0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
-    iget-object v1, v1, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
+    iget-object v3, v3, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
 
-    invoke-virtual/range {p1 .. p1}, Landroid/content/Intent;->getData()Landroid/net/Uri;
+    move-object/from16 v0, v22
 
-    move-result-object v2
+    move/from16 v1, v19
 
-    move/from16 v0, v17
+    invoke-virtual {v3, v0, v1}, Lcom/android/server/am/ActivityManagerService;->getProviderMimeType(Landroid/net/Uri;I)Ljava/lang/String;
 
-    invoke-virtual {v1, v2, v0}, Lcom/android/server/am/ActivityManagerService;->getProviderMimeType(Landroid/net/Uri;I)Ljava/lang/String;
-
-    move-result-object v6
+    move-result-object v8
 
     :cond_0
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
+    move/from16 v1, v19
 
-    const/4 v2, 0x0
+    move-object/from16 v2, p1
 
-    const/4 v3, -0x1
+    invoke-direct {v0, v1, v2, v8}, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->checkEmbeddedAllowedInner(ILandroid/content/Intent;Ljava/lang/String;)V
+
+    const/high16 v3, 0x18010000
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v0, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     const/4 v4, 0x0
 
-    const/4 v7, 0x0
+    const/4 v5, -0x1
 
-    const/4 v8, 0x0
+    const/4 v6, 0x0
 
     const/4 v9, 0x0
 
@@ -991,78 +872,125 @@
 
     const/16 v16, 0x0
 
-    const/16 v19, 0x0
+    const/16 v17, 0x0
 
-    move-object/from16 v5, p1
+    const/16 v18, 0x0
 
-    move-object/from16 v18, p0
+    const/16 v21, 0x0
 
-    invoke-virtual/range {v1 .. v19}, Lcom/android/server/am/ActivityStackSupervisor;->startActivityMayWait(Landroid/app/IApplicationThread;ILjava/lang/String;Landroid/content/Intent;Ljava/lang/String;Landroid/service/voice/IVoiceInteractionSession;Lcom/android/internal/app/IVoiceInteractor;Landroid/os/IBinder;Ljava/lang/String;IILandroid/app/ProfilerInfo;Landroid/app/IActivityManager$WaitResult;Landroid/content/res/Configuration;Landroid/os/Bundle;ILandroid/app/IActivityContainer;Lcom/android/server/am/TaskRecord;)I
+    move-object/from16 v7, p1
 
-    move-result v1
+    move-object/from16 v20, p0
 
-    return v1
+    invoke-virtual/range {v3 .. v21}, Lcom/android/server/am/ActivityStackSupervisor;->startActivityMayWait(Landroid/app/IApplicationThread;ILjava/lang/String;Landroid/content/Intent;Ljava/lang/String;Landroid/service/voice/IVoiceInteractionSession;Lcom/android/internal/app/IVoiceInteractor;Landroid/os/IBinder;Ljava/lang/String;IILandroid/app/ProfilerInfo;Landroid/app/IActivityManager$WaitResult;Landroid/content/res/Configuration;Landroid/os/Bundle;ILandroid/app/IActivityContainer;Lcom/android/server/am/TaskRecord;)I
+
+    move-result v3
+
+    return v3
 .end method
 
 .method public final startActivityIntentSender(Landroid/content/IIntentSender;)I
-    .locals 13
+    .locals 14
     .param p1, "intentSender"    # Landroid/content/IIntentSender;
 
     .prologue
-    const/high16 v9, 0x18010000
+    iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
+
+    iget-object v1, v1, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
+
+    const-string v2, "ActivityContainer.startActivityIntentSender"
+
+    invoke-virtual {v1, v2}, Lcom/android/server/am/ActivityManagerService;->enforceNotIsolatedCaller(Ljava/lang/String;)V
+
+    instance-of v1, p1, Lcom/android/server/am/PendingIntentRecord;
+
+    if-nez v1, :cond_0
+
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    const-string v2, "Bad PendingIntent object"
+
+    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_0
+    iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
+
+    iget-object v0, v1, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
+
+    invoke-static {}, Landroid/os/Binder;->getCallingPid()I
+
+    move-result v1
+
+    invoke-static {}, Landroid/os/Binder;->getCallingUid()I
+
+    move-result v2
+
+    iget-object v3, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
+
+    # getter for: Lcom/android/server/am/ActivityStackSupervisor;->mCurrentUser:I
+    invoke-static {v3}, Lcom/android/server/am/ActivityStackSupervisor;->access$1000(Lcom/android/server/am/ActivityStackSupervisor;)I
+
+    move-result v3
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x2
+
+    const-string v6, "ActivityContainer"
+
+    const/4 v7, 0x0
+
+    invoke-virtual/range {v0 .. v7}, Lcom/android/server/am/ActivityManagerService;->handleIncomingUser(IIIZILjava/lang/String;Ljava/lang/String;)I
+
+    move-result v13
+
+    .local v13, "userId":I
+    move-object v0, p1
+
+    check-cast v0, Lcom/android/server/am/PendingIntentRecord;
+
+    .local v0, "pendingIntent":Lcom/android/server/am/PendingIntentRecord;
+    iget-object v1, v0, Lcom/android/server/am/PendingIntentRecord;->key:Lcom/android/server/am/PendingIntentRecord$Key;
+
+    iget-object v1, v1, Lcom/android/server/am/PendingIntentRecord$Key;->requestIntent:Landroid/content/Intent;
+
+    iget-object v2, v0, Lcom/android/server/am/PendingIntentRecord;->key:Lcom/android/server/am/PendingIntentRecord$Key;
+
+    iget-object v2, v2, Lcom/android/server/am/PendingIntentRecord$Key;->requestResolvedType:Ljava/lang/String;
+
+    invoke-direct {p0, v13, v1, v2}, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->checkEmbeddedAllowedInner(ILandroid/content/Intent;Ljava/lang/String;)V
 
     const/4 v1, 0x0
 
     const/4 v2, 0x0
 
-    iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
+    const/4 v3, 0x0
 
-    iget-object v0, v0, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
+    const/4 v4, 0x0
 
-    const-string v3, "ActivityContainer.startActivityIntentSender"
+    const/4 v5, 0x0
 
-    invoke-virtual {v0, v3}, Lcom/android/server/am/ActivityManagerService;->enforceNotIsolatedCaller(Ljava/lang/String;)V
+    const/4 v6, 0x0
 
-    instance-of v0, p1, Lcom/android/server/am/PendingIntentRecord;
+    const/4 v7, 0x0
 
-    if-nez v0, :cond_0
+    const/4 v8, 0x0
 
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    const/high16 v9, 0x18010000
 
-    const-string v1, "Bad PendingIntent object"
+    const/high16 v10, 0x18010000
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
-    move-object v0, p1
-
-    check-cast v0, Lcom/android/server/am/PendingIntentRecord;
-
-    move-object v3, v2
-
-    move-object v4, v2
-
-    move-object v5, v2
-
-    move-object v6, v2
-
-    move-object v7, v2
-
-    move v8, v1
-
-    move v10, v9
-
-    move-object v11, v2
+    const/4 v11, 0x0
 
     move-object v12, p0
 
     invoke-virtual/range {v0 .. v12}, Lcom/android/server/am/PendingIntentRecord;->sendInner(ILandroid/content/Intent;Ljava/lang/String;Landroid/content/IIntentReceiver;Ljava/lang/String;Landroid/os/IBinder;Ljava/lang/String;IIILandroid/os/Bundle;Landroid/app/IActivityContainer;)I
 
-    move-result v0
+    move-result v1
 
-    return v0
+    return v1
 .end method
 
 .method public toString()Ljava/lang/String;
