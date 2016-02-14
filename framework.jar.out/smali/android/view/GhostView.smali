@@ -48,7 +48,7 @@
 
     iput-boolean v1, v0, Landroid/view/ViewGroup;->mRecreateDisplayList:Z
 
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getDisplayList()Landroid/view/RenderNode;
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->updateDisplayListIfDirty()Landroid/view/RenderNode;
 
     return-void
 .end method
@@ -989,7 +989,7 @@
 
     iput-boolean v1, v0, Landroid/view/ViewGroup;->mRecreateDisplayList:Z
 
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getDisplayList()Landroid/view/RenderNode;
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->updateDisplayListIfDirty()Landroid/view/RenderNode;
 
     .end local v0    # "parent":Landroid/view/ViewGroup;
     :cond_0
@@ -1018,7 +1018,7 @@
 
     iget-object v2, p0, Landroid/view/GhostView;->mView:Landroid/view/View;
 
-    invoke-virtual {v2}, Landroid/view/View;->getDisplayList()Landroid/view/RenderNode;
+    invoke-virtual {v2}, Landroid/view/View;->updateDisplayListIfDirty()Landroid/view/RenderNode;
 
     move-result-object v1
 

@@ -12086,7 +12086,7 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    invoke-virtual {p1}, Landroid/view/View;->getDisplayList()Landroid/view/RenderNode;
+    invoke-virtual {p1}, Landroid/view/View;->updateDisplayListIfDirty()Landroid/view/RenderNode;
 
     move-result-object v0
 

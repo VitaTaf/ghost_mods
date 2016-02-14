@@ -1,25 +1,21 @@
-.class Landroid/view/View$2;
-.super Ljava/lang/Object;
+.class final Landroid/view/View$2;
+.super Landroid/util/FloatProperty;
 .source "View.java"
-
-# interfaces
-.implements Lcom/android/internal/util/Predicate;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/view/View;->findUserSetNextFocus(Landroid/view/View;I)Landroid/view/View;
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/view/View;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x8
     name = null
 .end annotation
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Object;",
-        "Lcom/android/internal/util/Predicate",
+        "Landroid/util/FloatProperty",
         "<",
         "Landroid/view/View;",
         ">;"
@@ -27,51 +23,36 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Landroid/view/View;
-
-.field final synthetic val$id:I
-
-
 # direct methods
-.method constructor <init>(Landroid/view/View;I)V
+.method constructor <init>(Ljava/lang/String;)V
     .locals 0
+    .param p1, "x0"    # Ljava/lang/String;
 
     .prologue
-    iput-object p1, p0, Landroid/view/View$2;->this$0:Landroid/view/View;
-
-    iput p2, p0, Landroid/view/View$2;->val$id:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Landroid/util/FloatProperty;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public apply(Landroid/view/View;)Z
-    .locals 2
-    .param p1, "t"    # Landroid/view/View;
+.method public get(Landroid/view/View;)Ljava/lang/Float;
+    .locals 1
+    .param p1, "object"    # Landroid/view/View;
 
     .prologue
-    iget v0, p1, Landroid/view/View;->mNextFocusForwardId:I
+    invoke-virtual {p1}, Landroid/view/View;->getAlpha()F
 
-    iget v1, p0, Landroid/view/View$2;->val$id:I
+    move-result v0
 
-    if-ne v0, v1, :cond_0
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    const/4 v0, 0x1
+    move-result-object v0
 
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return-object v0
 .end method
 
-.method public bridge synthetic apply(Ljava/lang/Object;)Z
+.method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
     .param p1, "x0"    # Ljava/lang/Object;
 
@@ -79,9 +60,34 @@
     check-cast p1, Landroid/view/View;
 
     .end local p1    # "x0":Ljava/lang/Object;
-    invoke-virtual {p0, p1}, Landroid/view/View$2;->apply(Landroid/view/View;)Z
+    invoke-virtual {p0, p1}, Landroid/view/View$2;->get(Landroid/view/View;)Ljava/lang/Float;
 
-    move-result v0
+    move-result-object v0
 
-    return v0
+    return-object v0
+.end method
+
+.method public setValue(Landroid/view/View;F)V
+    .locals 0
+    .param p1, "object"    # Landroid/view/View;
+    .param p2, "value"    # F
+
+    .prologue
+    invoke-virtual {p1, p2}, Landroid/view/View;->setAlpha(F)V
+
+    return-void
+.end method
+
+.method public bridge synthetic setValue(Ljava/lang/Object;F)V
+    .locals 0
+    .param p1, "x0"    # Ljava/lang/Object;
+    .param p2, "x1"    # F
+
+    .prologue
+    check-cast p1, Landroid/view/View;
+
+    .end local p1    # "x0":Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Landroid/view/View$2;->setValue(Landroid/view/View;F)V
+
+    return-void
 .end method

@@ -532,7 +532,7 @@
 
     invoke-virtual {v0}, Landroid/view/GLES20Canvas;->insertReorderBarrier()V
 
-    invoke-virtual {p1}, Landroid/view/View;->getDisplayList()Landroid/view/RenderNode;
+    invoke-virtual {p1}, Landroid/view/View;->updateDisplayListIfDirty()Landroid/view/RenderNode;
 
     move-result-object v2
 
@@ -606,7 +606,7 @@
 
     iput v0, p1, Landroid/view/View;->mPrivateFlags:I
 
-    invoke-virtual {p1}, Landroid/view/View;->getDisplayList()Landroid/view/RenderNode;
+    invoke-virtual {p1}, Landroid/view/View;->updateDisplayListIfDirty()Landroid/view/RenderNode;
 
     iput-boolean v1, p1, Landroid/view/View;->mRecreateDisplayList:Z
 

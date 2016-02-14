@@ -3,12 +3,12 @@
 .source "View.java"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lcom/android/internal/util/Predicate;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+    value = Landroid/view/View;->findUserSetNextFocus(Landroid/view/View;I)Landroid/view/View;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -16,23 +16,31 @@
     name = null
 .end annotation
 
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/android/internal/util/Predicate",
+        "<",
+        "Landroid/view/View;",
+        ">;"
+    }
+.end annotation
+
 
 # instance fields
-.field private mHandler:Ljava/lang/reflect/Method;
-
 .field final synthetic this$0:Landroid/view/View;
 
-.field final synthetic val$handlerName:Ljava/lang/String;
+.field final synthetic val$id:I
 
 
 # direct methods
-.method constructor <init>(Landroid/view/View;Ljava/lang/String;)V
+.method constructor <init>(Landroid/view/View;I)V
     .locals 0
 
     .prologue
     iput-object p1, p0, Landroid/view/View$1;->this$0:Landroid/view/View;
 
-    iput-object p2, p0, Landroid/view/View$1;->val$handlerName:Ljava/lang/String;
+    iput p2, p0, Landroid/view/View$1;->val$id:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,230 +49,39 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 8
-    .param p1, "v"    # Landroid/view/View;
+.method public apply(Landroid/view/View;)Z
+    .locals 2
+    .param p1, "t"    # Landroid/view/View;
 
     .prologue
-    iget-object v3, p0, Landroid/view/View$1;->mHandler:Ljava/lang/reflect/Method;
+    iget v0, p1, Landroid/view/View;->mNextFocusForwardId:I
 
-    if-nez v3, :cond_0
+    iget v1, p0, Landroid/view/View$1;->val$id:I
 
-    :try_start_0
-    iget-object v3, p0, Landroid/view/View$1;->this$0:Landroid/view/View;
+    if-ne v0, v1, :cond_0
 
-    invoke-virtual {v3}, Landroid/view/View;->getContext()Landroid/content/Context;
+    const/4 v0, 0x1
 
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v3
-
-    iget-object v4, p0, Landroid/view/View$1;->val$handlerName:Ljava/lang/String;
-
-    const/4 v5, 0x1
-
-    new-array v5, v5, [Ljava/lang/Class;
-
-    const/4 v6, 0x0
-
-    const-class v7, Landroid/view/View;
-
-    aput-object v7, v5, v6
-
-    invoke-virtual {v3, v4, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v3
-
-    iput-object v3, p0, Landroid/view/View$1;->mHandler:Ljava/lang/reflect/Method;
-    :try_end_0
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
+    :goto_0
+    return v0
 
     :cond_0
-    :try_start_1
-    iget-object v3, p0, Landroid/view/View$1;->mHandler:Ljava/lang/reflect/Method;
-
-    iget-object v4, p0, Landroid/view/View$1;->this$0:Landroid/view/View;
-
-    invoke-virtual {v4}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    const/4 v5, 0x1
-
-    new-array v5, v5, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    iget-object v7, p0, Landroid/view/View$1;->this$0:Landroid/view/View;
-
-    aput-object v7, v5, v6
-
-    invoke-virtual {v3, v4, v5}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_1
-    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_1
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_1} :catch_2
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    .local v0, "e":Ljava/lang/NoSuchMethodException;
-    iget-object v3, p0, Landroid/view/View$1;->this$0:Landroid/view/View;
-
-    invoke-virtual {v3}, Landroid/view/View;->getId()I
-
-    move-result v1
-
-    .local v1, "id":I
-    const/4 v3, -0x1
-
-    if-ne v1, v3, :cond_1
-
-    const-string v2, ""
-
-    .local v2, "idText":Ljava/lang/String;
-    :goto_0
-    new-instance v3, Ljava/lang/IllegalStateException;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Could not find a method "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v5, p0, Landroid/view/View$1;->val$handlerName:Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, "(View) in the activity "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v5, p0, Landroid/view/View$1;->this$0:Landroid/view/View;
-
-    invoke-virtual {v5}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, " for onClick handler"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, " on view "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v5, p0, Landroid/view/View$1;->this$0:Landroid/view/View;
-
-    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-direct {v3, v4, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v3
-
-    .end local v2    # "idText":Ljava/lang/String;
-    :cond_1
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, " with id \'"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, p0, Landroid/view/View$1;->this$0:Landroid/view/View;
-
-    invoke-virtual {v4}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v1}, Landroid/content/res/Resources;->getResourceEntryName(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, "\'"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
+    const/4 v0, 0x0
 
     goto :goto_0
+.end method
 
-    .end local v0    # "e":Ljava/lang/NoSuchMethodException;
-    .end local v1    # "id":I
-    :catch_1
-    move-exception v0
+.method public bridge synthetic apply(Ljava/lang/Object;)Z
+    .locals 1
+    .param p1, "x0"    # Ljava/lang/Object;
 
-    .local v0, "e":Ljava/lang/IllegalAccessException;
-    new-instance v3, Ljava/lang/IllegalStateException;
+    .prologue
+    check-cast p1, Landroid/view/View;
 
-    const-string v4, "Could not execute non public method of the activity"
+    .end local p1    # "x0":Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Landroid/view/View$1;->apply(Landroid/view/View;)Z
 
-    invoke-direct {v3, v4, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result v0
 
-    throw v3
-
-    .end local v0    # "e":Ljava/lang/IllegalAccessException;
-    :catch_2
-    move-exception v0
-
-    .local v0, "e":Ljava/lang/reflect/InvocationTargetException;
-    new-instance v3, Ljava/lang/IllegalStateException;
-
-    const-string v4, "Could not execute method of the activity"
-
-    invoke-direct {v3, v4, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v3
+    return v0
 .end method

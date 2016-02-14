@@ -2652,13 +2652,13 @@
     .prologue
     const/4 v1, 0x0
 
-    const/high16 v2, -0x80000000
-
     iget v0, p1, Landroid/view/View;->mPrivateFlags:I
+
+    const/high16 v2, -0x80000000
 
     and-int/2addr v0, v2
 
-    if-ne v0, v2, :cond_0
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -2673,7 +2673,7 @@
 
     iput v0, p1, Landroid/view/View;->mPrivateFlags:I
 
-    invoke-virtual {p1}, Landroid/view/View;->getDisplayList()Landroid/view/RenderNode;
+    invoke-virtual {p1}, Landroid/view/View;->updateDisplayListIfDirty()Landroid/view/RenderNode;
 
     iput-boolean v1, p1, Landroid/view/View;->mRecreateDisplayList:Z
 
@@ -6932,12 +6932,6 @@
     if-eqz v7, :cond_1
 
     :cond_0
-    invoke-virtual {v0}, Landroid/view/View;->hasStaticLayer()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_1
-
     invoke-direct {p0, v0}, Landroid/view/ViewGroup;->recreateChildDisplayList(Landroid/view/View;)V
 
     :cond_1
