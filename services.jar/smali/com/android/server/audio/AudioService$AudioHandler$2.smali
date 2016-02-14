@@ -45,7 +45,7 @@
     iget-object v0, p0, Lcom/android/server/audio/AudioService$AudioHandler$2;->this$1:Lcom/android/server/audio/AudioService$AudioHandler;
 
     # invokes: Lcom/android/server/audio/AudioService$AudioHandler;->cleanupPlayer(Landroid/media/MediaPlayer;)V
-    invoke-static {v0, p1}, Lcom/android/server/audio/AudioService$AudioHandler;->access$6000(Lcom/android/server/audio/AudioService$AudioHandler;Landroid/media/MediaPlayer;)V
+    invoke-static {v0, p1}, Lcom/android/server/audio/AudioService$AudioHandler;->access$5900(Lcom/android/server/audio/AudioService$AudioHandler;Landroid/media/MediaPlayer;)V
 
     const/4 v0, 0x1
 

@@ -36,7 +36,7 @@
     return-void
 .end method
 
-.method static synthetic access$9900(Lcom/android/server/audio/AudioService$ControllerService;)I
+.method static synthetic access$9800(Lcom/android/server/audio/AudioService$ControllerService;)I
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService$ControllerService;
 

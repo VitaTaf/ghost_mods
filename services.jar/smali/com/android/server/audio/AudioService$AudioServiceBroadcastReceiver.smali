@@ -92,7 +92,7 @@
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mDockState:I
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$8900(Lcom/android/server/audio/AudioService;)I
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$8800(Lcom/android/server/audio/AudioService;)I
 
     move-result v3
 
@@ -115,7 +115,7 @@
     move/from16 v0, v20
 
     # setter for: Lcom/android/server/audio/AudioService;->mDockState:I
-    invoke-static {v3, v0}, Lcom/android/server/audio/AudioService;->access$8902(Lcom/android/server/audio/AudioService;I)I
+    invoke-static {v3, v0}, Lcom/android/server/audio/AudioService;->access$8802(Lcom/android/server/audio/AudioService;I)I
 
     .end local v18    # "config":I
     .end local v20    # "dockState":I
@@ -242,7 +242,7 @@
     move/from16 v1, v27
 
     # invokes: Lcom/android/server/audio/AudioService;->handleDeviceConnection(ZILjava/lang/String;)Z
-    invoke-static {v3, v0, v1, v11}, Lcom/android/server/audio/AudioService;->access$9000(Lcom/android/server/audio/AudioService;ZILjava/lang/String;)Z
+    invoke-static {v3, v0, v1, v11}, Lcom/android/server/audio/AudioService;->access$8900(Lcom/android/server/audio/AudioService;ZILjava/lang/String;)Z
 
     move-result v3
 
@@ -257,7 +257,7 @@
     move/from16 v1, v24
 
     # invokes: Lcom/android/server/audio/AudioService;->handleDeviceConnection(ZILjava/lang/String;)Z
-    invoke-static {v3, v0, v1, v11}, Lcom/android/server/audio/AudioService;->access$9000(Lcom/android/server/audio/AudioService;ZILjava/lang/String;)Z
+    invoke-static {v3, v0, v1, v11}, Lcom/android/server/audio/AudioService;->access$8900(Lcom/android/server/audio/AudioService;ZILjava/lang/String;)Z
 
     move-result v3
 
@@ -346,7 +346,7 @@
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # invokes: Lcom/android/server/audio/AudioService;->resetBluetoothSco()V
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$7800(Lcom/android/server/audio/AudioService;)V
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$7700(Lcom/android/server/audio/AudioService;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -795,7 +795,7 @@
     move-object/from16 v0, v26
 
     # invokes: Lcom/android/server/audio/AudioService;->sendStickyBroadcastToAll(Landroid/content/Intent;)V
-    invoke-static {v3, v0}, Lcom/android/server/audio/AudioService;->access$9100(Lcom/android/server/audio/AudioService;Landroid/content/Intent;)V
+    invoke-static {v3, v0}, Lcom/android/server/audio/AudioService;->access$9000(Lcom/android/server/audio/AudioService;Landroid/content/Intent;)V
 
     goto/16 :goto_1
 
@@ -960,7 +960,7 @@
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mMonitorRotation:Z
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$6900(Lcom/android/server/audio/AudioService;)Z
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$6800(Lcom/android/server/audio/AudioService;)Z
 
     move-result v3
 
@@ -971,7 +971,7 @@
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mOrientationListener:Lcom/android/server/audio/AudioService$AudioOrientationEventListener;
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$9200(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$AudioOrientationEventListener;
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$9100(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$AudioOrientationEventListener;
 
     move-result-object v3
 
@@ -984,7 +984,7 @@
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mOrientationListener:Lcom/android/server/audio/AudioService$AudioOrientationEventListener;
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$9200(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$AudioOrientationEventListener;
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$9100(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$AudioOrientationEventListener;
 
     move-result-object v3
 
@@ -1011,7 +1011,7 @@
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mMonitorRotation:Z
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$6900(Lcom/android/server/audio/AudioService;)Z
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$6800(Lcom/android/server/audio/AudioService;)Z
 
     move-result v3
 
@@ -1022,7 +1022,7 @@
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mOrientationListener:Lcom/android/server/audio/AudioService$AudioOrientationEventListener;
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$9200(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$AudioOrientationEventListener;
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$9100(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$AudioOrientationEventListener;
 
     move-result-object v3
 
@@ -1051,7 +1051,7 @@
     move-object/from16 v0, p1
 
     # invokes: Lcom/android/server/audio/AudioService;->handleConfigurationChanged(Landroid/content/Context;)V
-    invoke-static {v3, v0}, Lcom/android/server/audio/AudioService;->access$9300(Lcom/android/server/audio/AudioService;Landroid/content/Context;)V
+    invoke-static {v3, v0}, Lcom/android/server/audio/AudioService;->access$9200(Lcom/android/server/audio/AudioService;Landroid/content/Context;)V
 
     goto/16 :goto_1
 
@@ -1093,7 +1093,7 @@
     iget-object v3, v0, Lcom/android/server/audio/AudioService$AudioServiceBroadcastReceiver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mMediaFocusControl:Lcom/android/server/audio/MediaFocusControl;
-    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$9400(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/MediaFocusControl;
+    invoke-static {v3}, Lcom/android/server/audio/AudioService;->access$9300(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/MediaFocusControl;
 
     move-result-object v3
 
@@ -1106,7 +1106,7 @@
     const/4 v4, 0x1
 
     # invokes: Lcom/android/server/audio/AudioService;->readAudioSettings(Z)V
-    invoke-static {v3, v4}, Lcom/android/server/audio/AudioService;->access$9500(Lcom/android/server/audio/AudioService;Z)V
+    invoke-static {v3, v4}, Lcom/android/server/audio/AudioService;->access$9400(Lcom/android/server/audio/AudioService;Z)V
 
     move-object/from16 v0, p0
 

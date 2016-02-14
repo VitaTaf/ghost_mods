@@ -1282,17 +1282,7 @@
     return-void
 .end method
 
-.method static synthetic access$10000(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$VolumeController;
-    .locals 1
-    .param p0, "x0"    # Lcom/android/server/audio/AudioService;
-
-    .prologue
-    iget-object v0, p0, Lcom/android/server/audio/AudioService;->mVolumeController:Lcom/android/server/audio/AudioService$VolumeController;
-
-    return-object v0
-.end method
-
-.method static synthetic access$10100(Lcom/android/server/audio/AudioService;)Landroid/media/AudioManagerInternal$RingerModeDelegate;
+.method static synthetic access$10000(Lcom/android/server/audio/AudioService;)Landroid/media/AudioManagerInternal$RingerModeDelegate;
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -1302,7 +1292,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$10102(Lcom/android/server/audio/AudioService;Landroid/media/AudioManagerInternal$RingerModeDelegate;)Landroid/media/AudioManagerInternal$RingerModeDelegate;
+.method static synthetic access$10002(Lcom/android/server/audio/AudioService;Landroid/media/AudioManagerInternal$RingerModeDelegate;)Landroid/media/AudioManagerInternal$RingerModeDelegate;
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
     .param p1, "x1"    # Landroid/media/AudioManagerInternal$RingerModeDelegate;
@@ -1313,7 +1303,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$10200(Lcom/android/server/audio/AudioService;IIILjava/lang/String;I)V
+.method static synthetic access$10100(Lcom/android/server/audio/AudioService;IIILjava/lang/String;I)V
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
     .param p1, "x1"    # I
@@ -1328,7 +1318,7 @@
     return-void
 .end method
 
-.method static synthetic access$10300(Lcom/android/server/audio/AudioService;IIILjava/lang/String;I)V
+.method static synthetic access$10200(Lcom/android/server/audio/AudioService;IIILjava/lang/String;I)V
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
     .param p1, "x1"    # I
@@ -1343,7 +1333,7 @@
     return-void
 .end method
 
-.method static synthetic access$10400(Lcom/android/server/audio/AudioService;IIILjava/lang/String;I)V
+.method static synthetic access$10300(Lcom/android/server/audio/AudioService;IIILjava/lang/String;I)V
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
     .param p1, "x1"    # I
@@ -1358,7 +1348,7 @@
     return-void
 .end method
 
-.method static synthetic access$10500(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$ControllerService;
+.method static synthetic access$10400(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$ControllerService;
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -1368,7 +1358,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$10608(Lcom/android/server/audio/AudioService;)I
+.method static synthetic access$10508(Lcom/android/server/audio/AudioService;)I
     .locals 2
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -1881,20 +1871,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$5100(Lcom/android/server/audio/AudioService;I)I
-    .locals 1
-    .param p0, "x0"    # Lcom/android/server/audio/AudioService;
-    .param p1, "x1"    # I
-
-    .prologue
-    invoke-direct {p0, p1}, Lcom/android/server/audio/AudioService;->getDevicesForStream(I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method static synthetic access$5300(Lcom/android/server/audio/AudioService;)Z
+.method static synthetic access$5200(Lcom/android/server/audio/AudioService;)Z
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -1906,7 +1883,7 @@
     return v0
 .end method
 
-.method static synthetic access$5400(Lcom/android/server/audio/AudioService;)Z
+.method static synthetic access$5300(Lcom/android/server/audio/AudioService;)Z
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -1916,7 +1893,7 @@
     return v0
 .end method
 
-.method static synthetic access$5500(Lcom/android/server/audio/AudioService;)V
+.method static synthetic access$5400(Lcom/android/server/audio/AudioService;)V
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -1926,7 +1903,7 @@
     return-void
 .end method
 
-.method static synthetic access$5600(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$SoundPoolListenerThread;
+.method static synthetic access$5500(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$SoundPoolListenerThread;
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -1936,7 +1913,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$5602(Lcom/android/server/audio/AudioService;Lcom/android/server/audio/AudioService$SoundPoolListenerThread;)Lcom/android/server/audio/AudioService$SoundPoolListenerThread;
+.method static synthetic access$5502(Lcom/android/server/audio/AudioService;Lcom/android/server/audio/AudioService$SoundPoolListenerThread;)Lcom/android/server/audio/AudioService$SoundPoolListenerThread;
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
     .param p1, "x1"    # Lcom/android/server/audio/AudioService$SoundPoolListenerThread;
@@ -1947,7 +1924,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$5700()Ljava/util/List;
+.method static synthetic access$5600()Ljava/util/List;
     .locals 1
 
     .prologue
@@ -1956,7 +1933,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$5800(Lcom/android/server/audio/AudioService;)[[I
+.method static synthetic access$5700(Lcom/android/server/audio/AudioService;)[[I
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -1966,7 +1943,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$5900()I
+.method static synthetic access$5800()I
     .locals 1
 
     .prologue
@@ -1975,7 +1952,7 @@
     return v0
 .end method
 
-.method static synthetic access$6100(Lcom/android/server/audio/AudioService;II)V
+.method static synthetic access$6000(Lcom/android/server/audio/AudioService;II)V
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
     .param p1, "x1"    # I
@@ -1987,7 +1964,7 @@
     return-void
 .end method
 
-.method static synthetic access$6200()V
+.method static synthetic access$6100()V
     .locals 0
 
     .prologue
@@ -1996,7 +1973,7 @@
     return-void
 .end method
 
-.method static synthetic access$6300(Lcom/android/server/audio/AudioService;)I
+.method static synthetic access$6200(Lcom/android/server/audio/AudioService;)I
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -2006,7 +1983,7 @@
     return v0
 .end method
 
-.method static synthetic access$6400(Lcom/android/server/audio/AudioService;)I
+.method static synthetic access$6300(Lcom/android/server/audio/AudioService;)I
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -2016,7 +1993,7 @@
     return v0
 .end method
 
-.method static synthetic access$6600(Lcom/android/server/audio/AudioService;IZ)V
+.method static synthetic access$6500(Lcom/android/server/audio/AudioService;IZ)V
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
     .param p1, "x1"    # I
@@ -2028,7 +2005,7 @@
     return-void
 .end method
 
-.method static synthetic access$6700(Lcom/android/server/audio/AudioService;)Z
+.method static synthetic access$6600(Lcom/android/server/audio/AudioService;)Z
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -2038,7 +2015,7 @@
     return v0
 .end method
 
-.method static synthetic access$6800(Lcom/android/server/audio/AudioService;)V
+.method static synthetic access$6700(Lcom/android/server/audio/AudioService;)V
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -2048,7 +2025,7 @@
     return-void
 .end method
 
-.method static synthetic access$6900(Lcom/android/server/audio/AudioService;)Z
+.method static synthetic access$6800(Lcom/android/server/audio/AudioService;)Z
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -2058,7 +2035,7 @@
     return v0
 .end method
 
-.method static synthetic access$7000(Lcom/android/server/audio/AudioService;)Ljava/lang/Object;
+.method static synthetic access$6900(Lcom/android/server/audio/AudioService;)Ljava/lang/Object;
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -2068,7 +2045,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$7100(Lcom/android/server/audio/AudioService;)Z
+.method static synthetic access$7000(Lcom/android/server/audio/AudioService;)Z
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -2078,7 +2055,7 @@
     return v0
 .end method
 
-.method static synthetic access$7200(Lcom/android/server/audio/AudioService;)Ljava/lang/Object;
+.method static synthetic access$7100(Lcom/android/server/audio/AudioService;)Ljava/lang/Object;
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -2088,7 +2065,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$7300(Lcom/android/server/audio/AudioService;)Z
+.method static synthetic access$7200(Lcom/android/server/audio/AudioService;)Z
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -2098,7 +2075,7 @@
     return v0
 .end method
 
-.method static synthetic access$7400(Lcom/android/server/audio/AudioService;)Landroid/hardware/hdmi/HdmiControlManager;
+.method static synthetic access$7300(Lcom/android/server/audio/AudioService;)Landroid/hardware/hdmi/HdmiControlManager;
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -2108,7 +2085,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$7500(Lcom/android/server/audio/AudioService;)Landroid/hardware/hdmi/HdmiTvClient;
+.method static synthetic access$7400(Lcom/android/server/audio/AudioService;)Landroid/hardware/hdmi/HdmiTvClient;
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -2118,7 +2095,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$7600(Lcom/android/server/audio/AudioService;)Z
+.method static synthetic access$7500(Lcom/android/server/audio/AudioService;)Z
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -2128,7 +2105,7 @@
     return v0
 .end method
 
-.method static synthetic access$7700(Lcom/android/server/audio/AudioService;)Ljava/util/HashMap;
+.method static synthetic access$7600(Lcom/android/server/audio/AudioService;)Ljava/util/HashMap;
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -2138,7 +2115,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$7800(Lcom/android/server/audio/AudioService;)V
+.method static synthetic access$7700(Lcom/android/server/audio/AudioService;)V
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -2148,7 +2125,7 @@
     return-void
 .end method
 
-.method static synthetic access$7900(Lcom/android/server/audio/AudioService;IILjava/lang/String;)V
+.method static synthetic access$7800(Lcom/android/server/audio/AudioService;IILjava/lang/String;)V
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
     .param p1, "x1"    # I
@@ -2161,6 +2138,16 @@
     return-void
 .end method
 
+.method static synthetic access$7900(Lcom/android/server/audio/AudioService;)Landroid/os/PowerManager$WakeLock;
+    .locals 1
+    .param p0, "x0"    # Lcom/android/server/audio/AudioService;
+
+    .prologue
+    iget-object v0, p0, Lcom/android/server/audio/AudioService;->mAudioEventWakeLock:Landroid/os/PowerManager$WakeLock;
+
+    return-object v0
+.end method
+
 .method static synthetic access$800(Lcom/android/server/audio/AudioService;)Landroid/content/Context;
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
@@ -2171,17 +2158,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$8000(Lcom/android/server/audio/AudioService;)Landroid/os/PowerManager$WakeLock;
-    .locals 1
-    .param p0, "x0"    # Lcom/android/server/audio/AudioService;
-
-    .prologue
-    iget-object v0, p0, Lcom/android/server/audio/AudioService;->mAudioEventWakeLock:Landroid/os/PowerManager$WakeLock;
-
-    return-object v0
-.end method
-
-.method static synthetic access$8100(Lcom/android/server/audio/AudioService;Landroid/bluetooth/BluetoothDevice;I)V
+.method static synthetic access$8000(Lcom/android/server/audio/AudioService;Landroid/bluetooth/BluetoothDevice;I)V
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
     .param p1, "x1"    # Landroid/bluetooth/BluetoothDevice;
@@ -2193,7 +2170,7 @@
     return-void
 .end method
 
-.method static synthetic access$8200(Lcom/android/server/audio/AudioService;Landroid/bluetooth/BluetoothDevice;I)V
+.method static synthetic access$8100(Lcom/android/server/audio/AudioService;Landroid/bluetooth/BluetoothDevice;I)V
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
     .param p1, "x1"    # Landroid/bluetooth/BluetoothDevice;
@@ -2205,7 +2182,7 @@
     return-void
 .end method
 
-.method static synthetic access$8300(Lcom/android/server/audio/AudioService;)V
+.method static synthetic access$8200(Lcom/android/server/audio/AudioService;)V
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -2215,7 +2192,7 @@
     return-void
 .end method
 
-.method static synthetic access$8400(Lcom/android/server/audio/AudioService;)V
+.method static synthetic access$8300(Lcom/android/server/audio/AudioService;)V
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -2225,7 +2202,7 @@
     return-void
 .end method
 
-.method static synthetic access$8500(Lcom/android/server/audio/AudioService;Z)V
+.method static synthetic access$8400(Lcom/android/server/audio/AudioService;Z)V
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
     .param p1, "x1"    # Z
@@ -2236,7 +2213,7 @@
     return-void
 .end method
 
-.method static synthetic access$8600(Lcom/android/server/audio/AudioService;I)V
+.method static synthetic access$8500(Lcom/android/server/audio/AudioService;I)V
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
     .param p1, "x1"    # I
@@ -2247,7 +2224,7 @@
     return-void
 .end method
 
-.method static synthetic access$8700(Lcom/android/server/audio/AudioService;II)V
+.method static synthetic access$8600(Lcom/android/server/audio/AudioService;II)V
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
     .param p1, "x1"    # I
@@ -2259,7 +2236,7 @@
     return-void
 .end method
 
-.method static synthetic access$8800(Lcom/android/server/audio/AudioService;Landroid/content/ContentResolver;)V
+.method static synthetic access$8700(Lcom/android/server/audio/AudioService;Landroid/content/ContentResolver;)V
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
     .param p1, "x1"    # Landroid/content/ContentResolver;
@@ -2270,7 +2247,7 @@
     return-void
 .end method
 
-.method static synthetic access$8900(Lcom/android/server/audio/AudioService;)I
+.method static synthetic access$8800(Lcom/android/server/audio/AudioService;)I
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -2280,7 +2257,7 @@
     return v0
 .end method
 
-.method static synthetic access$8902(Lcom/android/server/audio/AudioService;I)I
+.method static synthetic access$8802(Lcom/android/server/audio/AudioService;I)I
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
     .param p1, "x1"    # I
@@ -2291,17 +2268,7 @@
     return p1
 .end method
 
-.method static synthetic access$900(Lcom/android/server/audio/AudioService;)I
-    .locals 1
-    .param p0, "x0"    # Lcom/android/server/audio/AudioService;
-
-    .prologue
-    iget v0, p0, Lcom/android/server/audio/AudioService;->mDeviceRotation:I
-
-    return v0
-.end method
-
-.method static synthetic access$9000(Lcom/android/server/audio/AudioService;ZILjava/lang/String;)Z
+.method static synthetic access$8900(Lcom/android/server/audio/AudioService;ZILjava/lang/String;)Z
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
     .param p1, "x1"    # Z
@@ -2316,6 +2283,27 @@
     return v0
 .end method
 
+.method static synthetic access$900(Lcom/android/server/audio/AudioService;)I
+    .locals 1
+    .param p0, "x0"    # Lcom/android/server/audio/AudioService;
+
+    .prologue
+    iget v0, p0, Lcom/android/server/audio/AudioService;->mDeviceRotation:I
+
+    return v0
+.end method
+
+.method static synthetic access$9000(Lcom/android/server/audio/AudioService;Landroid/content/Intent;)V
+    .locals 0
+    .param p0, "x0"    # Lcom/android/server/audio/AudioService;
+    .param p1, "x1"    # Landroid/content/Intent;
+
+    .prologue
+    invoke-direct {p0, p1}, Lcom/android/server/audio/AudioService;->sendStickyBroadcastToAll(Landroid/content/Intent;)V
+
+    return-void
+.end method
+
 .method static synthetic access$902(Lcom/android/server/audio/AudioService;I)I
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
@@ -2327,18 +2315,7 @@
     return p1
 .end method
 
-.method static synthetic access$9100(Lcom/android/server/audio/AudioService;Landroid/content/Intent;)V
-    .locals 0
-    .param p0, "x0"    # Lcom/android/server/audio/AudioService;
-    .param p1, "x1"    # Landroid/content/Intent;
-
-    .prologue
-    invoke-direct {p0, p1}, Lcom/android/server/audio/AudioService;->sendStickyBroadcastToAll(Landroid/content/Intent;)V
-
-    return-void
-.end method
-
-.method static synthetic access$9200(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$AudioOrientationEventListener;
+.method static synthetic access$9100(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$AudioOrientationEventListener;
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -2348,7 +2325,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$9300(Lcom/android/server/audio/AudioService;Landroid/content/Context;)V
+.method static synthetic access$9200(Lcom/android/server/audio/AudioService;Landroid/content/Context;)V
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
     .param p1, "x1"    # Landroid/content/Context;
@@ -2359,7 +2336,7 @@
     return-void
 .end method
 
-.method static synthetic access$9400(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/MediaFocusControl;
+.method static synthetic access$9300(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/MediaFocusControl;
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -2369,7 +2346,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$9500(Lcom/android/server/audio/AudioService;Z)V
+.method static synthetic access$9400(Lcom/android/server/audio/AudioService;Z)V
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
     .param p1, "x1"    # Z
@@ -2380,7 +2357,7 @@
     return-void
 .end method
 
-.method static synthetic access$9600(Lcom/android/server/audio/AudioService;)Z
+.method static synthetic access$9500(Lcom/android/server/audio/AudioService;)Z
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -2390,7 +2367,7 @@
     return v0
 .end method
 
-.method static synthetic access$9602(Lcom/android/server/audio/AudioService;Z)Z
+.method static synthetic access$9502(Lcom/android/server/audio/AudioService;Z)Z
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
     .param p1, "x1"    # Z
@@ -2401,7 +2378,7 @@
     return p1
 .end method
 
-.method static synthetic access$9700(Lcom/android/server/audio/AudioService;)V
+.method static synthetic access$9600(Lcom/android/server/audio/AudioService;)V
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/AudioService;
 
@@ -2409,6 +2386,16 @@
     invoke-direct {p0}, Lcom/android/server/audio/AudioService;->checkAllFixedVolumeDevices()V
 
     return-void
+.end method
+
+.method static synthetic access$9900(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$VolumeController;
+    .locals 1
+    .param p0, "x0"    # Lcom/android/server/audio/AudioService;
+
+    .prologue
+    iget-object v0, p0, Lcom/android/server/audio/AudioService;->mVolumeController:Lcom/android/server/audio/AudioService$VolumeController;
+
+    return-object v0
 .end method
 
 .method private adjustStreamVolume(IIILjava/lang/String;I)V
@@ -5108,7 +5095,7 @@
     iget-object v0, p0, Lcom/android/server/audio/AudioService;->mControllerService:Lcom/android/server/audio/AudioService$ControllerService;
 
     # getter for: Lcom/android/server/audio/AudioService$ControllerService;->mUid:I
-    invoke-static {v0}, Lcom/android/server/audio/AudioService$ControllerService;->access$9900(Lcom/android/server/audio/AudioService$ControllerService;)I
+    invoke-static {v0}, Lcom/android/server/audio/AudioService$ControllerService;->access$9800(Lcom/android/server/audio/AudioService$ControllerService;)I
 
     move-result v0
 
@@ -5121,7 +5108,7 @@
     iget-object v1, p0, Lcom/android/server/audio/AudioService;->mControllerService:Lcom/android/server/audio/AudioService$ControllerService;
 
     # getter for: Lcom/android/server/audio/AudioService$ControllerService;->mUid:I
-    invoke-static {v1}, Lcom/android/server/audio/AudioService$ControllerService;->access$9900(Lcom/android/server/audio/AudioService$ControllerService;)I
+    invoke-static {v1}, Lcom/android/server/audio/AudioService$ControllerService;->access$9800(Lcom/android/server/audio/AudioService$ControllerService;)I
 
     move-result v1
 

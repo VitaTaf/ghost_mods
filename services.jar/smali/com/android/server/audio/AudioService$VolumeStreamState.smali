@@ -192,7 +192,7 @@
     return v0
 .end method
 
-.method static synthetic access$6500(Lcom/android/server/audio/AudioService$VolumeStreamState;)I
+.method static synthetic access$6400(Lcom/android/server/audio/AudioService$VolumeStreamState;)I
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/AudioService$VolumeStreamState;
 
@@ -214,11 +214,11 @@
 .end method
 
 .method private dump(Ljava/io/PrintWriter;)V
-    .locals 10
+    .locals 9
     .param p1, "pw"    # Ljava/io/PrintWriter;
 
     .prologue
-    const/high16 v9, 0x40000000    # 2.0f
+    const/high16 v8, 0x40000000    # 2.0f
 
     const-string v7, "   Muted: "
 
@@ -288,7 +288,7 @@
 
     invoke-virtual {p1, v7}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    if-ne v0, v9, :cond_2
+    if-ne v0, v8, :cond_2
 
     const-string v1, "default"
 
@@ -349,12 +349,9 @@
 
     invoke-virtual {p1, v7}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v7, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->this$0:Lcom/android/server/audio/AudioService;
+    iget v7, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->mStreamType:I
 
-    iget v8, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->mStreamType:I
-
-    # invokes: Lcom/android/server/audio/AudioService;->getDevicesForStream(I)I
-    invoke-static {v7, v8}, Lcom/android/server/audio/AudioService;->access$5100(Lcom/android/server/audio/AudioService;I)I
+    invoke-static {v7}, Landroid/media/AudioSystem;->getDevicesForStream(I)I
 
     move-result v2
 
@@ -374,7 +371,7 @@
     shl-int v0, v7, v3
 
     .restart local v0    # "device":I
-    if-gt v0, v9, :cond_5
+    if-gt v0, v8, :cond_5
 
     and-int v7, v2, v0
 
@@ -1165,7 +1162,7 @@
 
     .end local v3    # "index":I
     :cond_3
-    const v5, 0x437fffff    # 255.99998f
+    const v5, 0x407fffff    # 3.9999998f
 
     .local v5, "remainingDevices":I
     const/4 v2, 0x0

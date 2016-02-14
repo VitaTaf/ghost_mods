@@ -74,7 +74,7 @@
     iget-object v0, p0, Lcom/android/server/audio/AudioService$SettingsObserver;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mSettingsLock:Ljava/lang/Object;
-    invoke-static {v0}, Lcom/android/server/audio/AudioService;->access$7200(Lcom/android/server/audio/AudioService;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/android/server/audio/AudioService;->access$7100(Lcom/android/server/audio/AudioService;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -100,7 +100,7 @@
     const/4 v3, 0x0
 
     # invokes: Lcom/android/server/audio/AudioService;->setRingerModeInt(IZ)V
-    invoke-static {v0, v2, v3}, Lcom/android/server/audio/AudioService;->access$6600(Lcom/android/server/audio/AudioService;IZ)V
+    invoke-static {v0, v2, v3}, Lcom/android/server/audio/AudioService;->access$6500(Lcom/android/server/audio/AudioService;IZ)V
 
     :cond_0
     iget-object v0, p0, Lcom/android/server/audio/AudioService$SettingsObserver;->this$0:Lcom/android/server/audio/AudioService;
@@ -113,7 +113,7 @@
     move-result-object v2
 
     # invokes: Lcom/android/server/audio/AudioService;->readDockAudioSettings(Landroid/content/ContentResolver;)V
-    invoke-static {v0, v2}, Lcom/android/server/audio/AudioService;->access$8800(Lcom/android/server/audio/AudioService;Landroid/content/ContentResolver;)V
+    invoke-static {v0, v2}, Lcom/android/server/audio/AudioService;->access$8700(Lcom/android/server/audio/AudioService;Landroid/content/ContentResolver;)V
 
     monitor-exit v1
 
