@@ -115,22 +115,12 @@
     .param p0, "x0"    # Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;
 
     .prologue
-    iget v0, p0, Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;->mPendingKeyCode:I
-
-    return v0
-.end method
-
-.method static synthetic access$1100(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;)I
-    .locals 1
-    .param p0, "x0"    # Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;
-
-    .prologue
     iget v0, p0, Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;->mPendingKeyMetaState:I
 
     return v0
 .end method
 
-.method static synthetic access$1200(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;JII)V
+.method static synthetic access$1100(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;JII)V
     .locals 1
     .param p0, "x0"    # Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;
     .param p1, "x1"    # J
@@ -143,7 +133,7 @@
     return-void
 .end method
 
-.method static synthetic access$1332(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;F)F
+.method static synthetic access$1232(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;F)F
     .locals 1
     .param p0, "x0"    # Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;
     .param p1, "x1"    # F
@@ -158,7 +148,7 @@
     return v0
 .end method
 
-.method static synthetic access$1400(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;J)Z
+.method static synthetic access$1300(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;J)Z
     .locals 1
     .param p0, "x0"    # Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;
     .param p1, "x1"    # J
@@ -171,7 +161,7 @@
     return v0
 .end method
 
-.method static synthetic access$1502(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;Z)Z
+.method static synthetic access$1402(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;Z)Z
     .locals 0
     .param p0, "x0"    # Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;
     .param p1, "x1"    # Z
@@ -182,7 +172,7 @@
     return p1
 .end method
 
-.method static synthetic access$1600(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;J)V
+.method static synthetic access$1500(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;J)V
     .locals 1
     .param p0, "x0"    # Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;
     .param p1, "x1"    # J
@@ -191,6 +181,16 @@
     invoke-direct {p0, p1, p2}, Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;->finishKeys(J)V
 
     return-void
+.end method
+
+.method static synthetic access$900(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;)I
+    .locals 1
+    .param p0, "x0"    # Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;
+
+    .prologue
+    iget v0, p0, Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;->mPendingKeyCode:I
+
+    return v0
 .end method
 
 .method private cancelFling()V

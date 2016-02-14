@@ -44,7 +44,7 @@
     iget-object v1, p0, Landroid/view/ViewRootImpl$EarlyPostImeInputStage;->this$0:Landroid/view/ViewRootImpl;
 
     # invokes: Landroid/view/ViewRootImpl;->checkForLeavingTouchModeAndConsume(Landroid/view/KeyEvent;)Z
-    invoke-static {v1, v0}, Landroid/view/ViewRootImpl;->access$800(Landroid/view/ViewRootImpl;Landroid/view/KeyEvent;)Z
+    invoke-static {v1, v0}, Landroid/view/ViewRootImpl;->access$700(Landroid/view/ViewRootImpl;Landroid/view/KeyEvent;)Z
 
     move-result v1
 

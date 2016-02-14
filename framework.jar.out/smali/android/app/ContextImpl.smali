@@ -848,7 +848,9 @@
 
     iget-object v1, p0, Landroid/app/ContextImpl;->mDisplayAdjustments:Landroid/view/DisplayAdjustments;
 
-    invoke-virtual {v1, p4}, Landroid/view/DisplayAdjustments;->setActivityToken(Landroid/os/IBinder;)V
+    move-object/from16 v0, p8
+
+    invoke-virtual {v1, v0}, Landroid/view/DisplayAdjustments;->setConfiguration(Landroid/content/res/Configuration;)V
 
     invoke-virtual {p3, p2}, Landroid/app/LoadedApk;->getResources(Landroid/app/ActivityThread;)Landroid/content/res/Resources;
 
@@ -1161,11 +1163,12 @@
     goto :goto_0
 .end method
 
-.method static createActivityContext(Landroid/app/ActivityThread;Landroid/app/LoadedApk;Landroid/content/res/Configuration;)Landroid/app/ContextImpl;
+.method static createActivityContext(Landroid/app/ActivityThread;Landroid/app/LoadedApk;ILandroid/content/res/Configuration;)Landroid/app/ContextImpl;
     .locals 9
     .param p0, "mainThread"    # Landroid/app/ActivityThread;
     .param p1, "packageInfo"    # Landroid/app/LoadedApk;
-    .param p2, "overrideConfiguration"    # Landroid/content/res/Configuration;
+    .param p2, "displayId"    # I
+    .param p3, "overrideConfiguration"    # Landroid/content/res/Configuration;
 
     .prologue
     const/4 v1, 0x0
@@ -1181,6 +1184,15 @@
     throw v0
 
     :cond_0
+    invoke-static {}, Landroid/app/ResourcesManager;->getInstance()Landroid/app/ResourcesManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2, p3}, Landroid/app/ResourcesManager;->getAdjustedDisplay(ILandroid/content/res/Configuration;)Landroid/view/Display;
+
+    move-result-object v7
+
+    .local v7, "display":Landroid/view/Display;
     new-instance v0, Landroid/app/ContextImpl;
 
     const/4 v6, 0x0
@@ -1193,9 +1205,7 @@
 
     move-object v5, v1
 
-    move-object v7, v1
-
-    move-object v8, p2
+    move-object v8, p3
 
     invoke-direct/range {v0 .. v8}, Landroid/app/ContextImpl;-><init>(Landroid/app/ContextImpl;Landroid/app/ActivityThread;Landroid/app/LoadedApk;Landroid/os/IBinder;Landroid/os/UserHandle;ZLandroid/view/Display;Landroid/content/res/Configuration;)V
 
@@ -1350,8 +1360,6 @@
     .param p0, "mainThread"    # Landroid/app/ActivityThread;
 
     .prologue
-    const/4 v6, 0x0
-
     const/4 v1, 0x0
 
     new-instance v3, Landroid/app/LoadedApk;
@@ -1360,6 +1368,8 @@
 
     .local v3, "packageInfo":Landroid/app/LoadedApk;
     new-instance v0, Landroid/app/ContextImpl;
+
+    const/4 v6, 0x0
 
     move-object v2, p0
 
@@ -1384,7 +1394,7 @@
 
     iget-object v4, v0, Landroid/app/ContextImpl;->mResourcesManager:Landroid/app/ResourcesManager;
 
-    invoke-virtual {v4, v6}, Landroid/app/ResourcesManager;->getDisplayMetricsLocked(I)Landroid/util/DisplayMetrics;
+    invoke-virtual {v4}, Landroid/app/ResourcesManager;->getDisplayMetricsLocked()Landroid/util/DisplayMetrics;
 
     move-result-object v4
 

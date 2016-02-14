@@ -48,7 +48,7 @@
     return-void
 .end method
 
-.method static synthetic access$900(Landroid/view/ViewRootImpl$SyntheticJoystickHandler;Landroid/view/MotionEvent;)V
+.method static synthetic access$800(Landroid/view/ViewRootImpl$SyntheticJoystickHandler;Landroid/view/MotionEvent;)V
     .locals 0
     .param p0, "x0"    # Landroid/view/ViewRootImpl$SyntheticJoystickHandler;
     .param p1, "x1"    # Landroid/view/MotionEvent;

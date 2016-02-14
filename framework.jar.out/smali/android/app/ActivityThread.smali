@@ -1130,16 +1130,42 @@
 .end method
 
 .method private createBaseContextForActivity(Landroid/app/ActivityThread$ActivityClientRecord;Landroid/app/Activity;)Landroid/content/Context;
-    .locals 11
+    .locals 13
     .param p1, "r"    # Landroid/app/ActivityThread$ActivityClientRecord;
     .param p2, "activity"    # Landroid/app/Activity;
 
     .prologue
-    iget-object v9, p1, Landroid/app/ActivityThread$ActivityClientRecord;->packageInfo:Landroid/app/LoadedApk;
+    const/4 v5, 0x0
 
-    iget-object v10, p1, Landroid/app/ActivityThread$ActivityClientRecord;->overrideConfig:Landroid/content/res/Configuration;
+    .local v5, "displayId":I
+    :try_start_0
+    invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
-    invoke-static {p0, v9, v10}, Landroid/app/ContextImpl;->createActivityContext(Landroid/app/ActivityThread;Landroid/app/LoadedApk;Landroid/content/res/Configuration;)Landroid/app/ContextImpl;
+    move-result-object v11
+
+    iget-object v12, p1, Landroid/app/ActivityThread$ActivityClientRecord;->token:Landroid/os/IBinder;
+
+    invoke-interface {v11, v12}, Landroid/app/IActivityManager;->getEnclosingActivityContainer(Landroid/os/IBinder;)Landroid/app/IActivityContainer;
+
+    move-result-object v3
+
+    .local v3, "container":Landroid/app/IActivityContainer;
+    if-eqz v3, :cond_0
+
+    invoke-interface {v3}, Landroid/app/IActivityContainer;->getDisplayId()I
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v5
+
+    .end local v3    # "container":Landroid/app/IActivityContainer;
+    :cond_0
+    :goto_0
+    iget-object v11, p1, Landroid/app/ActivityThread$ActivityClientRecord;->packageInfo:Landroid/app/LoadedApk;
+
+    iget-object v12, p1, Landroid/app/ActivityThread$ActivityClientRecord;->overrideConfig:Landroid/content/res/Configuration;
+
+    invoke-static {p0, v11, v5, v12}, Landroid/app/ContextImpl;->createActivityContext(Landroid/app/ActivityThread;Landroid/app/LoadedApk;ILandroid/content/res/Configuration;)Landroid/app/ContextImpl;
 
     move-result-object v0
 
@@ -1151,119 +1177,91 @@
     .local v2, "baseContext":Landroid/content/Context;
     invoke-static {}, Landroid/hardware/display/DisplayManagerGlobal;->getInstance()Landroid/hardware/display/DisplayManagerGlobal;
 
-    move-result-object v5
+    move-result-object v6
 
-    .local v5, "dm":Landroid/hardware/display/DisplayManagerGlobal;
-    :try_start_0
-    invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
+    .local v6, "dm":Landroid/hardware/display/DisplayManagerGlobal;
+    const-string v11, "debug.second-display.pkg"
 
-    move-result-object v9
+    invoke-static {v11}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
-    iget-object v10, p1, Landroid/app/ActivityThread$ActivityClientRecord;->token:Landroid/os/IBinder;
+    move-result-object v10
 
-    invoke-interface {v9, v10}, Landroid/app/IActivityManager;->getActivityDisplayId(Landroid/os/IBinder;)I
+    .local v10, "pkgName":Ljava/lang/String;
+    if-eqz v10, :cond_1
 
-    move-result v4
+    invoke-virtual {v10}, Ljava/lang/String;->isEmpty()Z
 
-    .local v4, "displayId":I
-    if-lez v4, :cond_0
+    move-result v11
 
-    iget-object v9, p1, Landroid/app/ActivityThread$ActivityClientRecord;->token:Landroid/os/IBinder;
+    if-nez v11, :cond_1
 
-    invoke-virtual {v5, v4, v9}, Landroid/hardware/display/DisplayManagerGlobal;->getRealDisplay(ILandroid/os/IBinder;)Landroid/view/Display;
+    iget-object v11, p1, Landroid/app/ActivityThread$ActivityClientRecord;->packageInfo:Landroid/app/LoadedApk;
 
-    move-result-object v3
+    iget-object v11, v11, Landroid/app/LoadedApk;->mPackageName:Ljava/lang/String;
 
-    .local v3, "display":Landroid/view/Display;
-    invoke-virtual {v0, v3}, Landroid/app/ContextImpl;->createDisplayContext(Landroid/view/Display;)Landroid/content/Context;
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {v11, v10}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result-object v2
+    move-result v11
 
-    .end local v3    # "display":Landroid/view/Display;
-    .end local v4    # "displayId":I
-    :cond_0
-    :goto_0
-    const-string v9, "debug.second-display.pkg"
+    if-eqz v11, :cond_1
 
-    invoke-static {v9}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v8
-
-    .local v8, "pkgName":Ljava/lang/String;
-    if-eqz v8, :cond_1
-
-    invoke-virtual {v8}, Ljava/lang/String;->isEmpty()Z
-
-    move-result v9
-
-    if-nez v9, :cond_1
-
-    iget-object v9, p1, Landroid/app/ActivityThread$ActivityClientRecord;->packageInfo:Landroid/app/LoadedApk;
-
-    iget-object v9, v9, Landroid/app/LoadedApk;->mPackageName:Ljava/lang/String;
-
-    invoke-virtual {v9, v8}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_1
-
-    invoke-virtual {v5}, Landroid/hardware/display/DisplayManagerGlobal;->getDisplayIds()[I
+    invoke-virtual {v6}, Landroid/hardware/display/DisplayManagerGlobal;->getDisplayIds()[I
 
     move-result-object v1
 
     .local v1, "arr$":[I
-    array-length v7, v1
+    array-length v9, v1
 
-    .local v7, "len$":I
-    const/4 v6, 0x0
+    .local v9, "len$":I
+    const/4 v7, 0x0
 
-    .local v6, "i$":I
+    .local v7, "i$":I
     :goto_1
-    if-ge v6, v7, :cond_1
+    if-ge v7, v9, :cond_1
 
-    aget v4, v1, v6
+    aget v8, v1, v7
 
-    .restart local v4    # "displayId":I
-    if-eqz v4, :cond_2
+    .local v8, "id":I
+    if-eqz v8, :cond_2
 
-    iget-object v9, p1, Landroid/app/ActivityThread$ActivityClientRecord;->token:Landroid/os/IBinder;
+    iget-object v11, p1, Landroid/app/ActivityThread$ActivityClientRecord;->overrideConfig:Landroid/content/res/Configuration;
 
-    invoke-virtual {v5, v4, v9}, Landroid/hardware/display/DisplayManagerGlobal;->getRealDisplay(ILandroid/os/IBinder;)Landroid/view/Display;
+    invoke-virtual {v6, v8, v11}, Landroid/hardware/display/DisplayManagerGlobal;->getRealDisplay(ILandroid/content/res/Configuration;)Landroid/view/Display;
 
-    move-result-object v3
+    move-result-object v4
 
-    .restart local v3    # "display":Landroid/view/Display;
-    invoke-virtual {v0, v3}, Landroid/app/ContextImpl;->createDisplayContext(Landroid/view/Display;)Landroid/content/Context;
+    .local v4, "display":Landroid/view/Display;
+    invoke-virtual {v0, v4}, Landroid/app/ContextImpl;->createDisplayContext(Landroid/view/Display;)Landroid/content/Context;
 
     move-result-object v2
 
     .end local v1    # "arr$":[I
-    .end local v3    # "display":Landroid/view/Display;
-    .end local v4    # "displayId":I
-    .end local v6    # "i$":I
-    .end local v7    # "len$":I
+    .end local v4    # "display":Landroid/view/Display;
+    .end local v7    # "i$":I
+    .end local v8    # "id":I
+    .end local v9    # "len$":I
     :cond_1
     return-object v2
 
     .restart local v1    # "arr$":[I
-    .restart local v4    # "displayId":I
-    .restart local v6    # "i$":I
-    .restart local v7    # "len$":I
+    .restart local v7    # "i$":I
+    .restart local v8    # "id":I
+    .restart local v9    # "len$":I
     :cond_2
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v7, v7, 0x1
 
     goto :goto_1
 
+    .end local v0    # "appContext":Landroid/app/ContextImpl;
     .end local v1    # "arr$":[I
-    .end local v4    # "displayId":I
-    .end local v6    # "i$":I
-    .end local v7    # "len$":I
-    .end local v8    # "pkgName":Ljava/lang/String;
+    .end local v2    # "baseContext":Landroid/content/Context;
+    .end local v6    # "dm":Landroid/hardware/display/DisplayManagerGlobal;
+    .end local v7    # "i$":I
+    .end local v8    # "id":I
+    .end local v9    # "len$":I
+    .end local v10    # "pkgName":Ljava/lang/String;
     :catch_0
-    move-exception v9
+    move-exception v11
 
     goto :goto_0
 .end method

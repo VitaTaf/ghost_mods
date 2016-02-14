@@ -2678,13 +2678,27 @@
     :cond_13
     iget-object v1, p0, Landroid/view/WindowManager$LayoutParams;->surfaceInsets:Landroid/graphics/Rect;
 
-    sget-object v2, Landroid/graphics/Insets;->NONE:Landroid/graphics/Insets;
+    iget v1, v1, Landroid/graphics/Rect;->left:I
 
-    invoke-virtual {v1, v2}, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
+    if-nez v1, :cond_14
 
-    move-result v1
+    iget-object v1, p0, Landroid/view/WindowManager$LayoutParams;->surfaceInsets:Landroid/graphics/Rect;
 
-    if-eqz v1, :cond_14
+    iget v1, v1, Landroid/graphics/Rect;->top:I
+
+    if-nez v1, :cond_14
+
+    iget-object v1, p0, Landroid/view/WindowManager$LayoutParams;->surfaceInsets:Landroid/graphics/Rect;
+
+    iget v1, v1, Landroid/graphics/Rect;->right:I
+
+    if-nez v1, :cond_14
+
+    iget-object v1, p0, Landroid/view/WindowManager$LayoutParams;->surfaceInsets:Landroid/graphics/Rect;
+
+    iget v1, v1, Landroid/graphics/Rect;->bottom:I
+
+    if-nez v1, :cond_14
 
     iget-boolean v1, p0, Landroid/view/WindowManager$LayoutParams;->hasManualSurfaceInsets:Z
 

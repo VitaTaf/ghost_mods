@@ -129,7 +129,7 @@
     iget-object v2, p0, Landroid/view/ViewRootImpl$SyntheticInputStage;->mJoystick:Landroid/view/ViewRootImpl$SyntheticJoystickHandler;
 
     # invokes: Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->cancel(Landroid/view/MotionEvent;)V
-    invoke-static {v2, v0}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->access$900(Landroid/view/ViewRootImpl$SyntheticJoystickHandler;Landroid/view/MotionEvent;)V
+    invoke-static {v2, v0}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->access$800(Landroid/view/ViewRootImpl$SyntheticJoystickHandler;Landroid/view/MotionEvent;)V
 
     goto :goto_0
 

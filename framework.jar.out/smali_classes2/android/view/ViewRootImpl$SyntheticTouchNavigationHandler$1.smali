@@ -49,31 +49,31 @@
     iget-object v3, p0, Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler$1;->this$1:Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;
 
     # getter for: Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;->mPendingKeyCode:I
-    invoke-static {v3}, Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;->access$1000(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;)I
+    invoke-static {v3}, Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;->access$900(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;)I
 
     move-result v3
 
     iget-object v4, p0, Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler$1;->this$1:Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;
 
     # getter for: Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;->mPendingKeyMetaState:I
-    invoke-static {v4}, Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;->access$1100(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;)I
+    invoke-static {v4}, Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;->access$1000(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;)I
 
     move-result v4
 
     # invokes: Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;->sendKeyDownOrRepeat(JII)V
-    invoke-static {v2, v0, v1, v3, v4}, Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;->access$1200(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;JII)V
+    invoke-static {v2, v0, v1, v3, v4}, Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;->access$1100(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;JII)V
 
     iget-object v2, p0, Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler$1;->this$1:Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;
 
     const v3, 0x3f4ccccd    # 0.8f
 
     # *= operator for: Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;->mFlingVelocity:F
-    invoke-static {v2, v3}, Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;->access$1332(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;F)F
+    invoke-static {v2, v3}, Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;->access$1232(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;F)F
 
     iget-object v2, p0, Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler$1;->this$1:Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;
 
     # invokes: Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;->postFling(J)Z
-    invoke-static {v2, v0, v1}, Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;->access$1400(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;J)Z
+    invoke-static {v2, v0, v1}, Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;->access$1300(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;J)Z
 
     move-result v2
 
@@ -84,12 +84,12 @@
     const/4 v3, 0x0
 
     # setter for: Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;->mFlinging:Z
-    invoke-static {v2, v3}, Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;->access$1502(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;Z)Z
+    invoke-static {v2, v3}, Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;->access$1402(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;Z)Z
 
     iget-object v2, p0, Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler$1;->this$1:Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;
 
     # invokes: Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;->finishKeys(J)V
-    invoke-static {v2, v0, v1}, Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;->access$1600(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;J)V
+    invoke-static {v2, v0, v1}, Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;->access$1500(Landroid/view/ViewRootImpl$SyntheticTouchNavigationHandler;J)V
 
     :cond_0
     return-void

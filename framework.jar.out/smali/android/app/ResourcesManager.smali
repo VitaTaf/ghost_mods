@@ -12,7 +12,7 @@
 
 
 # instance fields
-.field final mActiveResources:Landroid/util/ArrayMap;
+.field private final mActiveResources:Landroid/util/ArrayMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/util/ArrayMap",
@@ -26,14 +26,20 @@
     .end annotation
 .end field
 
-.field final mDefaultDisplayMetrics:Landroid/util/ArrayMap;
+.field private final mDisplays:Landroid/util/ArrayMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/util/ArrayMap",
             "<",
-            "Landroid/view/DisplayAdjustments;",
-            "Landroid/util/DisplayMetrics;",
-            ">;"
+            "Landroid/util/Pair",
+            "<",
+            "Ljava/lang/Integer;",
+            "Landroid/content/res/Configuration;",
+            ">;",
+            "Ljava/lang/ref/WeakReference",
+            "<",
+            "Landroid/view/Display;",
+            ">;>;"
         }
     .end annotation
 .end field
@@ -60,7 +66,7 @@
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
-    iput-object v0, p0, Landroid/app/ResourcesManager;->mDefaultDisplayMetrics:Landroid/util/ArrayMap;
+    iput-object v0, p0, Landroid/app/ResourcesManager;->mDisplays:Landroid/util/ArrayMap;
 
     return-void
 .end method
@@ -136,7 +142,7 @@
     goto :goto_0
 .end method
 
-.method public final applyConfigurationToResourcesLocked(Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;)Z
+.method final applyConfigurationToResourcesLocked(Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;)Z
     .locals 13
     .param p1, "config"    # Landroid/content/res/Configuration;
     .param p2, "compat"    # Landroid/content/res/CompatibilityInfo;
@@ -178,9 +184,11 @@
     move-result v0
 
     .local v0, "changes":I
-    invoke-virtual {p0}, Landroid/app/ResourcesManager;->flushDisplayMetricsLocked()V
+    iget-object v10, p0, Landroid/app/ResourcesManager;->mDisplays:Landroid/util/ArrayMap;
 
-    invoke-virtual {p0, v12}, Landroid/app/ResourcesManager;->getDisplayMetricsLocked(I)Landroid/util/DisplayMetrics;
+    invoke-virtual {v10}, Landroid/util/ArrayMap;->clear()V
+
+    invoke-virtual {p0}, Landroid/app/ResourcesManager;->getDisplayMetricsLocked()Landroid/util/DisplayMetrics;
 
     move-result-object v1
 
@@ -460,15 +468,108 @@
     goto :goto_0
 .end method
 
-.method public flushDisplayMetricsLocked()V
-    .locals 1
+.method public getAdjustedDisplay(ILandroid/content/res/Configuration;)Landroid/view/Display;
+    .locals 6
+    .param p1, "displayId"    # I
+    .param p2, "overrideConfiguration"    # Landroid/content/res/Configuration;
 
     .prologue
-    iget-object v0, p0, Landroid/app/ResourcesManager;->mDefaultDisplayMetrics:Landroid/util/ArrayMap;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {v0}, Landroid/util/ArrayMap;->clear()V
+    move-result-object v4
 
-    return-void
+    new-instance v5, Landroid/content/res/Configuration;
+
+    invoke-direct {v5, p2}, Landroid/content/res/Configuration;-><init>(Landroid/content/res/Configuration;)V
+
+    invoke-static {v4, v5}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
+
+    move-result-object v2
+
+    .local v2, "key":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/Integer;Landroid/content/res/Configuration;>;"
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v4, p0, Landroid/app/ResourcesManager;->mDisplays:Landroid/util/ArrayMap;
+
+    invoke-virtual {v4, v2}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/ref/WeakReference;
+
+    .local v3, "wd":Ljava/lang/ref/WeakReference;, "Ljava/lang/ref/WeakReference<Landroid/view/Display;>;"
+    if-eqz v3, :cond_0
+
+    invoke-virtual {v3}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/Display;
+
+    .local v0, "display":Landroid/view/Display;
+    if-eqz v0, :cond_0
+
+    monitor-exit p0
+
+    .end local v0    # "display":Landroid/view/Display;
+    :goto_0
+    return-object v0
+
+    :cond_0
+    invoke-static {}, Landroid/hardware/display/DisplayManagerGlobal;->getInstance()Landroid/hardware/display/DisplayManagerGlobal;
+
+    move-result-object v1
+
+    .local v1, "dm":Landroid/hardware/display/DisplayManagerGlobal;
+    if-nez v1, :cond_1
+
+    const/4 v0, 0x0
+
+    monitor-exit p0
+
+    goto :goto_0
+
+    .end local v1    # "dm":Landroid/hardware/display/DisplayManagerGlobal;
+    .end local v3    # "wd":Ljava/lang/ref/WeakReference;, "Ljava/lang/ref/WeakReference<Landroid/view/Display;>;"
+    :catchall_0
+    move-exception v4
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v4
+
+    .restart local v1    # "dm":Landroid/hardware/display/DisplayManagerGlobal;
+    .restart local v3    # "wd":Ljava/lang/ref/WeakReference;, "Ljava/lang/ref/WeakReference<Landroid/view/Display;>;"
+    :cond_1
+    :try_start_1
+    iget-object v4, v2, Landroid/util/Pair;->second:Ljava/lang/Object;
+
+    check-cast v4, Landroid/content/res/Configuration;
+
+    invoke-virtual {v1, p1, v4}, Landroid/hardware/display/DisplayManagerGlobal;->getRealDisplay(ILandroid/content/res/Configuration;)Landroid/view/Display;
+
+    move-result-object v0
+
+    .restart local v0    # "display":Landroid/view/Display;
+    if-eqz v0, :cond_2
+
+    iget-object v4, p0, Landroid/app/ResourcesManager;->mDisplays:Landroid/util/ArrayMap;
+
+    new-instance v5, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {v5, v0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    invoke-virtual {v4, v2, v5}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_2
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
 .end method
 
 .method public getConfiguration()Landroid/content/res/Configuration;
@@ -480,122 +581,50 @@
     return-object v0
 .end method
 
-.method public getDisplayMetricsLocked(I)Landroid/util/DisplayMetrics;
+.method getDisplayMetricsLocked()Landroid/util/DisplayMetrics;
     .locals 1
-    .param p1, "displayId"    # I
 
     .prologue
-    sget-object v0, Landroid/view/DisplayAdjustments;->DEFAULT_DISPLAY_ADJUSTMENTS:Landroid/view/DisplayAdjustments;
+    const/4 v0, 0x0
 
-    invoke-virtual {p0, p1, v0}, Landroid/app/ResourcesManager;->getDisplayMetricsLocked(ILandroid/view/DisplayAdjustments;)Landroid/util/DisplayMetrics;
+    invoke-virtual {p0, v0}, Landroid/app/ResourcesManager;->getDisplayMetricsLocked(I)Landroid/util/DisplayMetrics;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getDisplayMetricsLocked(ILandroid/view/DisplayAdjustments;)Landroid/util/DisplayMetrics;
-    .locals 6
+.method getDisplayMetricsLocked(I)Landroid/util/DisplayMetrics;
+    .locals 3
     .param p1, "displayId"    # I
-    .param p2, "daj"    # Landroid/view/DisplayAdjustments;
 
     .prologue
-    if-nez p1, :cond_0
+    new-instance v1, Landroid/util/DisplayMetrics;
 
-    const/4 v4, 0x1
+    invoke-direct {v1}, Landroid/util/DisplayMetrics;-><init>()V
 
-    .local v4, "isDefaultDisplay":Z
-    :goto_0
-    if-eqz v4, :cond_1
+    .local v1, "dm":Landroid/util/DisplayMetrics;
+    sget-object v2, Landroid/content/res/Configuration;->EMPTY:Landroid/content/res/Configuration;
 
-    iget-object v5, p0, Landroid/app/ResourcesManager;->mDefaultDisplayMetrics:Landroid/util/ArrayMap;
-
-    invoke-virtual {v5, p2}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Landroid/util/DisplayMetrics;
-
-    move-object v2, v5
-
-    .local v2, "dm":Landroid/util/DisplayMetrics;
-    :goto_1
-    if-eqz v2, :cond_2
-
-    move-object v3, v2
-
-    .end local v2    # "dm":Landroid/util/DisplayMetrics;
-    .local v3, "dm":Ljava/lang/Object;
-    :goto_2
-    return-object v3
-
-    .end local v3    # "dm":Ljava/lang/Object;
-    .end local v4    # "isDefaultDisplay":Z
-    :cond_0
-    const/4 v4, 0x0
-
-    goto :goto_0
-
-    .restart local v4    # "isDefaultDisplay":Z
-    :cond_1
-    const/4 v2, 0x0
-
-    goto :goto_1
-
-    .restart local v2    # "dm":Landroid/util/DisplayMetrics;
-    :cond_2
-    new-instance v2, Landroid/util/DisplayMetrics;
-
-    .end local v2    # "dm":Landroid/util/DisplayMetrics;
-    invoke-direct {v2}, Landroid/util/DisplayMetrics;-><init>()V
-
-    .restart local v2    # "dm":Landroid/util/DisplayMetrics;
-    invoke-static {}, Landroid/hardware/display/DisplayManagerGlobal;->getInstance()Landroid/hardware/display/DisplayManagerGlobal;
-
-    move-result-object v1
-
-    .local v1, "displayManager":Landroid/hardware/display/DisplayManagerGlobal;
-    if-nez v1, :cond_3
-
-    invoke-virtual {v2}, Landroid/util/DisplayMetrics;->setToDefaults()V
-
-    move-object v3, v2
-
-    .restart local v3    # "dm":Ljava/lang/Object;
-    goto :goto_2
-
-    .end local v3    # "dm":Ljava/lang/Object;
-    :cond_3
-    if-eqz v4, :cond_4
-
-    iget-object v5, p0, Landroid/app/ResourcesManager;->mDefaultDisplayMetrics:Landroid/util/ArrayMap;
-
-    invoke-virtual {v5, p2, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_4
-    invoke-virtual {v1, p1, p2}, Landroid/hardware/display/DisplayManagerGlobal;->getCompatibleDisplay(ILandroid/view/DisplayAdjustments;)Landroid/view/Display;
+    invoke-virtual {p0, p1, v2}, Landroid/app/ResourcesManager;->getAdjustedDisplay(ILandroid/content/res/Configuration;)Landroid/view/Display;
 
     move-result-object v0
 
-    .local v0, "d":Landroid/view/Display;
-    if-eqz v0, :cond_5
+    .local v0, "display":Landroid/view/Display;
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v0, v2}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
+    invoke-virtual {v0, v1}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
 
-    :goto_3
-    move-object v3, v2
+    :goto_0
+    return-object v1
 
-    .restart local v3    # "dm":Ljava/lang/Object;
-    goto :goto_2
+    :cond_0
+    invoke-virtual {v1}, Landroid/util/DisplayMetrics;->setToDefaults()V
 
-    .end local v3    # "dm":Ljava/lang/Object;
-    :cond_5
-    invoke-virtual {v2}, Landroid/util/DisplayMetrics;->setToDefaults()V
-
-    goto :goto_3
+    goto :goto_0
 .end method
 
-.method public getTopLevelResources(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;ILandroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;)Landroid/content/res/Resources;
+.method getTopLevelResources(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;ILandroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;)Landroid/content/res/Resources;
     .locals 23
     .param p1, "resDir"    # Ljava/lang/String;
     .param p2, "splitResDirs"    # [Ljava/lang/String;

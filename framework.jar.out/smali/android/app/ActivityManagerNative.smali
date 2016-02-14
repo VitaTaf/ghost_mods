@@ -10028,25 +10028,45 @@
 
     move-object/from16 v1, v142
 
-    invoke-virtual {v0, v1}, Landroid/app/ActivityManagerNative;->getActivityDisplayId(Landroid/os/IBinder;)I
+    invoke-virtual {v0, v1}, Landroid/app/ActivityManagerNative;->getEnclosingActivityContainer(Landroid/os/IBinder;)Landroid/app/IActivityContainer;
 
-    move-result v163
+    move-result-object v141
 
-    .restart local v163    # "displayId":I
+    .restart local v141    # "activityContainer":Landroid/app/IActivityContainer;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    if-eqz v141, :cond_84
+
+    const/4 v6, 0x1
 
     move-object/from16 v0, p3
 
-    move/from16 v1, v163
+    invoke-virtual {v0, v6}, Landroid/os/Parcel;->writeInt(I)V
 
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-interface/range {v141 .. v141}, Landroid/app/IActivityContainer;->asBinder()Landroid/os/IBinder;
 
+    move-result-object v6
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v6}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+
+    :goto_7c
     const/4 v6, 0x1
 
     goto/16 :goto_0
 
+    :cond_84
+    const/4 v6, 0x0
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v6}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto :goto_7c
+
+    .end local v141    # "activityContainer":Landroid/app/IActivityContainer;
     .end local v142    # "activityToken":Landroid/os/IBinder;
-    .end local v163    # "displayId":I
     :pswitch_c0
     const-string v6, "android.app.IActivityManager"
 

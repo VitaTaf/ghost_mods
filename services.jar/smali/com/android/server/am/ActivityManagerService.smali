@@ -51302,63 +51302,6 @@
     throw v1
 .end method
 
-.method public getActivityDisplayId(Landroid/os/IBinder;)I
-    .locals 2
-    .param p1, "activityToken"    # Landroid/os/IBinder;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    monitor-enter p0
-
-    :try_start_0
-    invoke-static {p1}, Lcom/android/server/am/ActivityRecord;->getStackLocked(Landroid/os/IBinder;)Lcom/android/server/am/ActivityStack;
-
-    move-result-object v0
-
-    .local v0, "stack":Lcom/android/server/am/ActivityStack;
-    if-eqz v0, :cond_0
-
-    iget-object v1, v0, Lcom/android/server/am/ActivityStack;->mActivityContainer:Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;
-
-    invoke-virtual {v1}, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->isAttachedLocked()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, v0, Lcom/android/server/am/ActivityStack;->mActivityContainer:Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;
-
-    invoke-virtual {v1}, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->getDisplayId()I
-
-    move-result v1
-
-    monitor-exit p0
-
-    :goto_0
-    return v1
-
-    :cond_0
-    const/4 v1, 0x0
-
-    monitor-exit p0
-
-    goto :goto_0
-
-    .end local v0    # "stack":Lcom/android/server/am/ActivityStack;
-    :catchall_0
-    move-exception v1
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
 .method getActivityInfoForUser(Landroid/content/pm/ActivityInfo;I)Landroid/content/pm/ActivityInfo;
     .locals 3
     .param p1, "aInfo"    # Landroid/content/pm/ActivityInfo;
@@ -52341,6 +52284,51 @@
 
     return-object v0
 
+    :catchall_0
+    move-exception v1
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method public getEnclosingActivityContainer(Landroid/os/IBinder;)Landroid/app/IActivityContainer;
+    .locals 2
+    .param p1, "activityToken"    # Landroid/os/IBinder;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    monitor-enter p0
+
+    :try_start_0
+    invoke-static {p1}, Lcom/android/server/am/ActivityRecord;->getStackLocked(Landroid/os/IBinder;)Lcom/android/server/am/ActivityStack;
+
+    move-result-object v0
+
+    .local v0, "stack":Lcom/android/server/am/ActivityStack;
+    if-eqz v0, :cond_0
+
+    iget-object v1, v0, Lcom/android/server/am/ActivityStack;->mActivityContainer:Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;
+
+    monitor-exit p0
+
+    :goto_0
+    return-object v1
+
+    :cond_0
+    const/4 v1, 0x0
+
+    monitor-exit p0
+
+    goto :goto_0
+
+    .end local v0    # "stack":Lcom/android/server/am/ActivityStack;
     :catchall_0
     move-exception v1
 

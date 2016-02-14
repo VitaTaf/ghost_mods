@@ -202,28 +202,22 @@
     return-object v1
 .end method
 
-.method private getMetricsWithSize(Landroid/util/DisplayMetrics;Landroid/content/res/CompatibilityInfo;Landroid/os/IBinder;II)V
-    .locals 2
+.method private getMetricsWithSize(Landroid/util/DisplayMetrics;Landroid/content/res/CompatibilityInfo;Landroid/content/res/Configuration;II)V
+    .locals 3
     .param p1, "outMetrics"    # Landroid/util/DisplayMetrics;
     .param p2, "compatInfo"    # Landroid/content/res/CompatibilityInfo;
-    .param p3, "token"    # Landroid/os/IBinder;
+    .param p3, "configuration"    # Landroid/content/res/Configuration;
     .param p4, "width"    # I
     .param p5, "height"    # I
 
     .prologue
+    const/high16 v2, 0x3f000000    # 0.5f
+
     iget v0, p0, Landroid/view/DisplayInfo;->logicalDensityDpi:I
 
     iput v0, p1, Landroid/util/DisplayMetrics;->noncompatDensityDpi:I
 
     iput v0, p1, Landroid/util/DisplayMetrics;->densityDpi:I
-
-    iput p4, p1, Landroid/util/DisplayMetrics;->widthPixels:I
-
-    iput p4, p1, Landroid/util/DisplayMetrics;->noncompatWidthPixels:I
-
-    iput p5, p1, Landroid/util/DisplayMetrics;->heightPixels:I
-
-    iput p5, p1, Landroid/util/DisplayMetrics;->noncompatHeightPixels:I
 
     iget v0, p0, Landroid/view/DisplayInfo;->logicalDensityDpi:I
 
@@ -255,17 +249,63 @@
 
     iput v0, p1, Landroid/util/DisplayMetrics;->ydpi:F
 
+    if-eqz p3, :cond_0
+
+    iget v0, p3, Landroid/content/res/Configuration;->screenWidthDp:I
+
+    if-eqz v0, :cond_0
+
+    iget v0, p3, Landroid/content/res/Configuration;->screenWidthDp:I
+
+    int-to-float v0, v0
+
+    iget v1, p1, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v0, v1
+
+    add-float/2addr v0, v2
+
+    float-to-int p4, v0
+
+    :cond_0
+    if-eqz p3, :cond_1
+
+    iget v0, p3, Landroid/content/res/Configuration;->screenHeightDp:I
+
+    if-eqz v0, :cond_1
+
+    iget v0, p3, Landroid/content/res/Configuration;->screenHeightDp:I
+
+    int-to-float v0, v0
+
+    iget v1, p1, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v0, v1
+
+    add-float/2addr v0, v2
+
+    float-to-int p5, v0
+
+    :cond_1
+    iput p4, p1, Landroid/util/DisplayMetrics;->widthPixels:I
+
+    iput p4, p1, Landroid/util/DisplayMetrics;->noncompatWidthPixels:I
+
+    iput p5, p1, Landroid/util/DisplayMetrics;->heightPixels:I
+
+    iput p5, p1, Landroid/util/DisplayMetrics;->noncompatHeightPixels:I
+
     sget-object v0, Landroid/content/res/CompatibilityInfo;->DEFAULT_COMPATIBILITY_INFO:Landroid/content/res/CompatibilityInfo;
 
     invoke-virtual {p2, v0}, Landroid/content/res/CompatibilityInfo;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_2
 
     invoke-virtual {p2, p1}, Landroid/content/res/CompatibilityInfo;->applyToDisplayMetrics(Landroid/util/DisplayMetrics;)V
 
-    :cond_0
+    :cond_2
     return-void
 .end method
 
@@ -652,16 +692,16 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {p0, p1, v0, v1}, Landroid/view/DisplayInfo;->getAppMetrics(Landroid/util/DisplayMetrics;Landroid/content/res/CompatibilityInfo;Landroid/os/IBinder;)V
+    invoke-virtual {p0, p1, v0, v1}, Landroid/view/DisplayInfo;->getAppMetrics(Landroid/util/DisplayMetrics;Landroid/content/res/CompatibilityInfo;Landroid/content/res/Configuration;)V
 
     return-void
 .end method
 
-.method public getAppMetrics(Landroid/util/DisplayMetrics;Landroid/content/res/CompatibilityInfo;Landroid/os/IBinder;)V
+.method public getAppMetrics(Landroid/util/DisplayMetrics;Landroid/content/res/CompatibilityInfo;Landroid/content/res/Configuration;)V
     .locals 6
     .param p1, "outMetrics"    # Landroid/util/DisplayMetrics;
     .param p2, "ci"    # Landroid/content/res/CompatibilityInfo;
-    .param p3, "token"    # Landroid/os/IBinder;
+    .param p3, "configuration"    # Landroid/content/res/Configuration;
 
     .prologue
     iget v4, p0, Landroid/view/DisplayInfo;->appWidth:I
@@ -676,7 +716,7 @@
 
     move-object v3, p3
 
-    invoke-direct/range {v0 .. v5}, Landroid/view/DisplayInfo;->getMetricsWithSize(Landroid/util/DisplayMetrics;Landroid/content/res/CompatibilityInfo;Landroid/os/IBinder;II)V
+    invoke-direct/range {v0 .. v5}, Landroid/view/DisplayInfo;->getMetricsWithSize(Landroid/util/DisplayMetrics;Landroid/content/res/CompatibilityInfo;Landroid/content/res/Configuration;II)V
 
     return-void
 .end method
@@ -691,7 +731,7 @@
 
     move-result-object v2
 
-    invoke-virtual {p2}, Landroid/view/DisplayAdjustments;->getActivityToken()Landroid/os/IBinder;
+    invoke-virtual {p2}, Landroid/view/DisplayAdjustments;->getConfiguration()Landroid/content/res/Configuration;
 
     move-result-object v3
 
@@ -703,16 +743,16 @@
 
     move-object v1, p1
 
-    invoke-direct/range {v0 .. v5}, Landroid/view/DisplayInfo;->getMetricsWithSize(Landroid/util/DisplayMetrics;Landroid/content/res/CompatibilityInfo;Landroid/os/IBinder;II)V
+    invoke-direct/range {v0 .. v5}, Landroid/view/DisplayInfo;->getMetricsWithSize(Landroid/util/DisplayMetrics;Landroid/content/res/CompatibilityInfo;Landroid/content/res/Configuration;II)V
 
     return-void
 .end method
 
-.method public getLogicalMetrics(Landroid/util/DisplayMetrics;Landroid/content/res/CompatibilityInfo;Landroid/os/IBinder;)V
+.method public getLogicalMetrics(Landroid/util/DisplayMetrics;Landroid/content/res/CompatibilityInfo;Landroid/content/res/Configuration;)V
     .locals 6
     .param p1, "outMetrics"    # Landroid/util/DisplayMetrics;
     .param p2, "compatInfo"    # Landroid/content/res/CompatibilityInfo;
-    .param p3, "token"    # Landroid/os/IBinder;
+    .param p3, "configuration"    # Landroid/content/res/Configuration;
 
     .prologue
     iget v4, p0, Landroid/view/DisplayInfo;->logicalWidth:I
@@ -727,7 +767,7 @@
 
     move-object v3, p3
 
-    invoke-direct/range {v0 .. v5}, Landroid/view/DisplayInfo;->getMetricsWithSize(Landroid/util/DisplayMetrics;Landroid/content/res/CompatibilityInfo;Landroid/os/IBinder;II)V
+    invoke-direct/range {v0 .. v5}, Landroid/view/DisplayInfo;->getMetricsWithSize(Landroid/util/DisplayMetrics;Landroid/content/res/CompatibilityInfo;Landroid/content/res/Configuration;II)V
 
     return-void
 .end method
@@ -1293,7 +1333,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "}"
+    const-string/jumbo v1, "}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

@@ -14260,11 +14260,15 @@
 .end method
 
 .method public onStopNestedScroll(Landroid/view/View;)V
-    .locals 0
+    .locals 1
     .param p1, "child"    # Landroid/view/View;
 
     .prologue
     invoke-virtual {p0}, Landroid/view/ViewGroup;->stopNestedScroll()V
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Landroid/view/ViewGroup;->mNestedScrollAxes:I
 
     return-void
 .end method

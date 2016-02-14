@@ -97,7 +97,7 @@
 
 .field public static final GET_ACTIVITY_CLASS_FOR_TOKEN_TRANSACTION:I = 0x31
 
-.field public static final GET_ACTIVITY_DISPLAY_ID_TRANSACTION:I = 0xb9
+.field public static final GET_ACTIVITY_CONTAINER_TRANSACTION:I = 0xb9
 
 .field public static final GET_ACTIVITY_OPTIONS_TRANSACTION:I = 0xdc
 
@@ -785,14 +785,6 @@
     .end annotation
 .end method
 
-.method public abstract getActivityDisplayId(Landroid/os/IBinder;)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getActivityOptions(Landroid/os/IBinder;)Landroid/app/ActivityOptions;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -904,6 +896,14 @@
 .end method
 
 .method public abstract getDeviceConfigurationInfo()Landroid/content/pm/ConfigurationInfo;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getEnclosingActivityContainer(Landroid/os/IBinder;)Landroid/app/IActivityContainer;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

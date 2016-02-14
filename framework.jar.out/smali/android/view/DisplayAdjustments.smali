@@ -10,9 +10,9 @@
 
 
 # instance fields
-.field private volatile mActivityToken:Landroid/os/IBinder;
-
 .field private volatile mCompatInfo:Landroid/content/res/CompatibilityInfo;
+
+.field private mConfiguration:Landroid/content/res/Configuration;
 
 
 # direct methods
@@ -39,13 +39,16 @@
 
     iput-object v0, p0, Landroid/view/DisplayAdjustments;->mCompatInfo:Landroid/content/res/CompatibilityInfo;
 
+    sget-object v0, Landroid/content/res/Configuration;->EMPTY:Landroid/content/res/Configuration;
+
+    iput-object v0, p0, Landroid/view/DisplayAdjustments;->mConfiguration:Landroid/content/res/Configuration;
+
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/res/CompatibilityInfo;Landroid/os/IBinder;)V
+.method public constructor <init>(Landroid/content/res/Configuration;)V
     .locals 1
-    .param p1, "compatInfo"    # Landroid/content/res/CompatibilityInfo;
-    .param p2, "token"    # Landroid/os/IBinder;
+    .param p1, "configuration"    # Landroid/content/res/Configuration;
 
     .prologue
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,43 +57,37 @@
 
     iput-object v0, p0, Landroid/view/DisplayAdjustments;->mCompatInfo:Landroid/content/res/CompatibilityInfo;
 
-    invoke-virtual {p0, p1}, Landroid/view/DisplayAdjustments;->setCompatibilityInfo(Landroid/content/res/CompatibilityInfo;)V
+    sget-object v0, Landroid/content/res/Configuration;->EMPTY:Landroid/content/res/Configuration;
 
-    iput-object p2, p0, Landroid/view/DisplayAdjustments;->mActivityToken:Landroid/os/IBinder;
+    iput-object v0, p0, Landroid/view/DisplayAdjustments;->mConfiguration:Landroid/content/res/Configuration;
 
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
-    .param p1, "token"    # Landroid/os/IBinder;
-
-    .prologue
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    sget-object v0, Landroid/content/res/CompatibilityInfo;->DEFAULT_COMPATIBILITY_INFO:Landroid/content/res/CompatibilityInfo;
-
-    iput-object v0, p0, Landroid/view/DisplayAdjustments;->mCompatInfo:Landroid/content/res/CompatibilityInfo;
-
-    iput-object p1, p0, Landroid/view/DisplayAdjustments;->mActivityToken:Landroid/os/IBinder;
+    iput-object p1, p0, Landroid/view/DisplayAdjustments;->mConfiguration:Landroid/content/res/Configuration;
 
     return-void
 .end method
 
 .method public constructor <init>(Landroid/view/DisplayAdjustments;)V
-    .locals 2
+    .locals 1
     .param p1, "daj"    # Landroid/view/DisplayAdjustments;
 
     .prologue
-    invoke-virtual {p1}, Landroid/view/DisplayAdjustments;->getCompatibilityInfo()Landroid/content/res/CompatibilityInfo;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    sget-object v0, Landroid/content/res/CompatibilityInfo;->DEFAULT_COMPATIBILITY_INFO:Landroid/content/res/CompatibilityInfo;
 
-    invoke-virtual {p1}, Landroid/view/DisplayAdjustments;->getActivityToken()Landroid/os/IBinder;
+    iput-object v0, p0, Landroid/view/DisplayAdjustments;->mCompatInfo:Landroid/content/res/CompatibilityInfo;
 
-    move-result-object v1
+    sget-object v0, Landroid/content/res/Configuration;->EMPTY:Landroid/content/res/Configuration;
 
-    invoke-direct {p0, v0, v1}, Landroid/view/DisplayAdjustments;-><init>(Landroid/content/res/CompatibilityInfo;Landroid/os/IBinder;)V
+    iput-object v0, p0, Landroid/view/DisplayAdjustments;->mConfiguration:Landroid/content/res/Configuration;
+
+    iget-object v0, p1, Landroid/view/DisplayAdjustments;->mCompatInfo:Landroid/content/res/CompatibilityInfo;
+
+    invoke-virtual {p0, v0}, Landroid/view/DisplayAdjustments;->setCompatibilityInfo(Landroid/content/res/CompatibilityInfo;)V
+
+    iget-object v0, p1, Landroid/view/DisplayAdjustments;->mConfiguration:Landroid/content/res/Configuration;
+
+    iput-object v0, p0, Landroid/view/DisplayAdjustments;->mConfiguration:Landroid/content/res/Configuration;
 
     return-void
 .end method
@@ -128,9 +125,9 @@
 
     if-eqz v2, :cond_0
 
-    iget-object v2, v0, Landroid/view/DisplayAdjustments;->mActivityToken:Landroid/os/IBinder;
+    iget-object v2, v0, Landroid/view/DisplayAdjustments;->mConfiguration:Landroid/content/res/Configuration;
 
-    iget-object v3, p0, Landroid/view/DisplayAdjustments;->mActivityToken:Landroid/os/IBinder;
+    iget-object v3, p0, Landroid/view/DisplayAdjustments;->mConfiguration:Landroid/content/res/Configuration;
 
     invoke-static {v2, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -143,20 +140,20 @@
     goto :goto_0
 .end method
 
-.method public getActivityToken()Landroid/os/IBinder;
-    .locals 1
-
-    .prologue
-    iget-object v0, p0, Landroid/view/DisplayAdjustments;->mActivityToken:Landroid/os/IBinder;
-
-    return-object v0
-.end method
-
 .method public getCompatibilityInfo()Landroid/content/res/CompatibilityInfo;
     .locals 1
 
     .prologue
     iget-object v0, p0, Landroid/view/DisplayAdjustments;->mCompatInfo:Landroid/content/res/CompatibilityInfo;
+
+    return-object v0
+.end method
+
+.method public getConfiguration()Landroid/content/res/Configuration;
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Landroid/view/DisplayAdjustments;->mConfiguration:Landroid/content/res/Configuration;
 
     return-object v0
 .end method
@@ -179,29 +176,6 @@
     return v0
 .end method
 
-.method public setActivityToken(Landroid/os/IBinder;)V
-    .locals 2
-    .param p1, "token"    # Landroid/os/IBinder;
-
-    .prologue
-    sget-object v0, Landroid/view/DisplayAdjustments;->DEFAULT_DISPLAY_ADJUSTMENTS:Landroid/view/DisplayAdjustments;
-
-    if-ne p0, v0, :cond_0
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "setActivityToken: Cannot modify DEFAULT_DISPLAY_ADJUSTMENTS"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
-    iput-object p1, p0, Landroid/view/DisplayAdjustments;->mActivityToken:Landroid/os/IBinder;
-
-    return-void
-.end method
-
 .method public setCompatibilityInfo(Landroid/content/res/CompatibilityInfo;)V
     .locals 2
     .param p1, "compatInfo"    # Landroid/content/res/CompatibilityInfo;
@@ -213,7 +187,7 @@
 
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "setCompatbilityInfo: Cannot modify DEFAULT_DISPLAY_ADJUSTMENTS"
+    const-string/jumbo v1, "setCompatbilityInfo: Cannot modify DEFAULT_DISPLAY_ADJUSTMENTS"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -246,4 +220,27 @@
     iput-object v0, p0, Landroid/view/DisplayAdjustments;->mCompatInfo:Landroid/content/res/CompatibilityInfo;
 
     goto :goto_0
+.end method
+
+.method public setConfiguration(Landroid/content/res/Configuration;)V
+    .locals 2
+    .param p1, "configuration"    # Landroid/content/res/Configuration;
+
+    .prologue
+    sget-object v0, Landroid/view/DisplayAdjustments;->DEFAULT_DISPLAY_ADJUSTMENTS:Landroid/view/DisplayAdjustments;
+
+    if-ne p0, v0, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string/jumbo v1, "setConfiguration: Cannot modify DEFAULT_DISPLAY_ADJUSTMENTS"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    iput-object p1, p0, Landroid/view/DisplayAdjustments;->mConfiguration:Landroid/content/res/Configuration;
+
+    return-void
 .end method

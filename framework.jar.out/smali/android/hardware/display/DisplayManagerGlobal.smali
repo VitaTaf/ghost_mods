@@ -819,15 +819,15 @@
     return-object v0
 .end method
 
-.method public getRealDisplay(ILandroid/os/IBinder;)Landroid/view/Display;
+.method public getRealDisplay(ILandroid/content/res/Configuration;)Landroid/view/Display;
     .locals 1
     .param p1, "displayId"    # I
-    .param p2, "token"    # Landroid/os/IBinder;
+    .param p2, "configuration"    # Landroid/content/res/Configuration;
 
     .prologue
     new-instance v0, Landroid/view/DisplayAdjustments;
 
-    invoke-direct {v0, p2}, Landroid/view/DisplayAdjustments;-><init>(Landroid/os/IBinder;)V
+    invoke-direct {v0, p2}, Landroid/view/DisplayAdjustments;-><init>(Landroid/content/res/Configuration;)V
 
     invoke-virtual {p0, p1, v0}, Landroid/hardware/display/DisplayManagerGlobal;->getCompatibleDisplay(ILandroid/view/DisplayAdjustments;)Landroid/view/Display;
 

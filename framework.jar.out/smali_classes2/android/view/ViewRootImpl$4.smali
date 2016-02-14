@@ -52,7 +52,7 @@
     move-result v2
 
     # setter for: Landroid/view/ViewRootImpl;->mProfileRendering:Z
-    invoke-static {v1, v2}, Landroid/view/ViewRootImpl;->access$1702(Landroid/view/ViewRootImpl;Z)Z
+    invoke-static {v1, v2}, Landroid/view/ViewRootImpl;->access$1602(Landroid/view/ViewRootImpl;Z)Z
 
     iget-object v1, p0, Landroid/view/ViewRootImpl$4;->this$0:Landroid/view/ViewRootImpl;
 
@@ -63,7 +63,7 @@
     iget-boolean v2, v2, Landroid/view/View$AttachInfo;->mHasWindowFocus:Z
 
     # invokes: Landroid/view/ViewRootImpl;->profileRendering(Z)V
-    invoke-static {v1, v2}, Landroid/view/ViewRootImpl;->access$300(Landroid/view/ViewRootImpl;Z)V
+    invoke-static {v1, v2}, Landroid/view/ViewRootImpl;->access$200(Landroid/view/ViewRootImpl;Z)V
 
     iget-object v1, p0, Landroid/view/ViewRootImpl$4;->this$0:Landroid/view/ViewRootImpl;
 
@@ -74,7 +74,7 @@
     move-result v2
 
     # setter for: Landroid/view/ViewRootImpl;->mMediaDisabled:Z
-    invoke-static {v1, v2}, Landroid/view/ViewRootImpl;->access$1802(Landroid/view/ViewRootImpl;Z)Z
+    invoke-static {v1, v2}, Landroid/view/ViewRootImpl;->access$1702(Landroid/view/ViewRootImpl;Z)Z
 
     iget-object v1, p0, Landroid/view/ViewRootImpl$4;->this$0:Landroid/view/ViewRootImpl;
 
@@ -152,7 +152,7 @@
     move-result v2
 
     # setter for: Landroid/view/ViewRootImpl;->mIsEmulator:Z
-    invoke-static {v1, v2}, Landroid/view/ViewRootImpl;->access$1902(Landroid/view/ViewRootImpl;Z)Z
+    invoke-static {v1, v2}, Landroid/view/ViewRootImpl;->access$1802(Landroid/view/ViewRootImpl;Z)Z
 
     iget-object v1, p0, Landroid/view/ViewRootImpl$4;->this$0:Landroid/view/ViewRootImpl;
 
@@ -163,7 +163,7 @@
     move-result v2
 
     # setter for: Landroid/view/ViewRootImpl;->mIsCircularEmulator:Z
-    invoke-static {v1, v2}, Landroid/view/ViewRootImpl;->access$2002(Landroid/view/ViewRootImpl;Z)Z
+    invoke-static {v1, v2}, Landroid/view/ViewRootImpl;->access$1902(Landroid/view/ViewRootImpl;Z)Z
 
     return-void
 .end method

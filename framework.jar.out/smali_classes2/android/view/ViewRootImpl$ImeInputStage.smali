@@ -81,7 +81,7 @@
     iget-object v5, p0, Landroid/view/ViewRootImpl$ImeInputStage;->this$0:Landroid/view/ViewRootImpl;
 
     # invokes: Landroid/view/ViewRootImpl;->isInLocalFocusMode()Z
-    invoke-static {v5}, Landroid/view/ViewRootImpl;->access$500(Landroid/view/ViewRootImpl;)Z
+    invoke-static {v5}, Landroid/view/ViewRootImpl;->access$400(Landroid/view/ViewRootImpl;)Z
 
     move-result v5
 
