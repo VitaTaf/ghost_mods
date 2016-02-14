@@ -52,23 +52,15 @@
 
 .field private mExpanded:Z
 
-.field private mFirstConditionIndex:I
-
 .field private final mForeverId:Landroid/net/Uri;
 
 .field private final mHandler:Lcom/android/systemui/volume/ZenModePanel$H;
 
 .field private mHidden:Z
 
-.field private final mIconPulser:Lcom/android/systemui/volume/IconPulser;
-
 .field private final mInflater:Landroid/view/LayoutInflater;
 
 .field private final mInteractionCallback:Lcom/android/systemui/volume/Interaction$Callback;
-
-.field private mMaxConditions:I
-
-.field private mMaxOptionalConditions:I
 
 .field private final mPrefs:Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;
 
@@ -202,147 +194,137 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 3
+    .locals 4
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    new-instance v0, Lcom/android/systemui/volume/ZenModePanel$H;
+    new-instance v1, Lcom/android/systemui/volume/ZenModePanel$H;
 
-    invoke-direct {v0, p0, v2}, Lcom/android/systemui/volume/ZenModePanel$H;-><init>(Lcom/android/systemui/volume/ZenModePanel;Lcom/android/systemui/volume/ZenModePanel$1;)V
+    invoke-direct {v1, p0, v3}, Lcom/android/systemui/volume/ZenModePanel$H;-><init>(Lcom/android/systemui/volume/ZenModePanel;Lcom/android/systemui/volume/ZenModePanel$1;)V
 
-    iput-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mHandler:Lcom/android/systemui/volume/ZenModePanel$H;
+    iput-object v1, p0, Lcom/android/systemui/volume/ZenModePanel;->mHandler:Lcom/android/systemui/volume/ZenModePanel$H;
 
-    new-instance v0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;
+    new-instance v1, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;
 
-    invoke-direct {v0, p0, v2}, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;-><init>(Lcom/android/systemui/volume/ZenModePanel;Lcom/android/systemui/volume/ZenModePanel$1;)V
+    invoke-direct {v1, p0, v3}, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;-><init>(Lcom/android/systemui/volume/ZenModePanel;Lcom/android/systemui/volume/ZenModePanel$1;)V
 
-    iput-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mTransitionHelper:Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;
+    iput-object v1, p0, Lcom/android/systemui/volume/ZenModePanel;->mTransitionHelper:Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "ZenModePanel/"
+    const-string v2, "ZenModePanel/"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
-    move-result-object v0
+    move-result v2
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    iput-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mTag:Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v0, -0x1
+    move-result-object v1
 
-    iput v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mBucketIndex:I
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    new-instance v0, Lcom/android/systemui/volume/ZenModePanel$9;
+    move-result-object v1
 
-    invoke-direct {v0, p0}, Lcom/android/systemui/volume/ZenModePanel$9;-><init>(Lcom/android/systemui/volume/ZenModePanel;)V
+    iput-object v1, p0, Lcom/android/systemui/volume/ZenModePanel;->mTag:Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mZenCallback:Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;
+    const/4 v1, -0x1
 
-    new-instance v0, Lcom/android/systemui/volume/ZenModePanel$10;
+    iput v1, p0, Lcom/android/systemui/volume/ZenModePanel;->mBucketIndex:I
 
-    invoke-direct {v0, p0}, Lcom/android/systemui/volume/ZenModePanel$10;-><init>(Lcom/android/systemui/volume/ZenModePanel;)V
+    new-instance v1, Lcom/android/systemui/volume/ZenModePanel$8;
 
-    iput-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mZenButtonsCallback:Lcom/android/systemui/volume/SegmentedButtons$Callback;
+    invoke-direct {v1, p0}, Lcom/android/systemui/volume/ZenModePanel$8;-><init>(Lcom/android/systemui/volume/ZenModePanel;)V
 
-    new-instance v0, Lcom/android/systemui/volume/ZenModePanel$11;
+    iput-object v1, p0, Lcom/android/systemui/volume/ZenModePanel;->mZenCallback:Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;
 
-    invoke-direct {v0, p0}, Lcom/android/systemui/volume/ZenModePanel$11;-><init>(Lcom/android/systemui/volume/ZenModePanel;)V
+    new-instance v1, Lcom/android/systemui/volume/ZenModePanel$9;
 
-    iput-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mInteractionCallback:Lcom/android/systemui/volume/Interaction$Callback;
+    invoke-direct {v1, p0}, Lcom/android/systemui/volume/ZenModePanel$9;-><init>(Lcom/android/systemui/volume/ZenModePanel;)V
+
+    iput-object v1, p0, Lcom/android/systemui/volume/ZenModePanel;->mZenButtonsCallback:Lcom/android/systemui/volume/SegmentedButtons$Callback;
+
+    new-instance v1, Lcom/android/systemui/volume/ZenModePanel$10;
+
+    invoke-direct {v1, p0}, Lcom/android/systemui/volume/ZenModePanel$10;-><init>(Lcom/android/systemui/volume/ZenModePanel;)V
+
+    iput-object v1, p0, Lcom/android/systemui/volume/ZenModePanel;->mInteractionCallback:Lcom/android/systemui/volume/Interaction$Callback;
 
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
 
-    new-instance v0, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;
+    new-instance v1, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;
 
-    invoke-direct {v0, p0, v2}, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;-><init>(Lcom/android/systemui/volume/ZenModePanel;Lcom/android/systemui/volume/ZenModePanel$1;)V
+    invoke-direct {v1, p0, v3}, Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;-><init>(Lcom/android/systemui/volume/ZenModePanel;Lcom/android/systemui/volume/ZenModePanel$1;)V
 
-    iput-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mPrefs:Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;
-
-    iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mInflater:Landroid/view/LayoutInflater;
-
-    new-instance v0, Lcom/android/systemui/volume/IconPulser;
+    iput-object v1, p0, Lcom/android/systemui/volume/ZenModePanel;->mPrefs:Lcom/android/systemui/volume/ZenModePanel$ZenPrefs;
 
     iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
 
-    invoke-direct {v0, v1}, Lcom/android/systemui/volume/IconPulser;-><init>(Landroid/content/Context;)V
+    invoke-virtual {v1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    iput-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mIconPulser:Lcom/android/systemui/volume/IconPulser;
+    move-result-object v1
 
-    iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
+    invoke-static {v1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
-    invoke-static {v0}, Landroid/service/notification/Condition;->newId(Landroid/content/Context;)Landroid/net/Uri$Builder;
+    move-result-object v1
 
-    move-result-object v0
+    iput-object v1, p0, Lcom/android/systemui/volume/ZenModePanel;->mInflater:Landroid/view/LayoutInflater;
 
-    const-string v1, "forever"
+    iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mForeverId:Landroid/net/Uri;
+    .local v0, "res":Landroid/content/res/Resources;
+    iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
 
-    sget-boolean v0, Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
+    invoke-static {v1}, Landroid/service/notification/Condition;->newId(Landroid/content/Context;)Landroid/net/Uri$Builder;
 
-    if-eqz v0, :cond_0
+    move-result-object v1
 
-    iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mTag:Ljava/lang/String;
+    const-string v2, "forever"
 
-    const-string v1, "new ZenModePanel"
+    invoke-virtual {v1, v2}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/android/systemui/volume/ZenModePanel;->mForeverId:Landroid/net/Uri;
+
+    sget-boolean v1, Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel;->mTag:Ljava/lang/String;
+
+    const-string v2, "new ZenModePanel"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
     return-void
 .end method
 
-.method static synthetic access$1000()Z
-    .locals 1
-
-    .prologue
-    sget-boolean v0, Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
-
-    return v0
-.end method
-
-.method static synthetic access$1100(Lcom/android/systemui/volume/ZenModePanel;)Ljava/lang/String;
+.method static synthetic access$1000(Lcom/android/systemui/volume/ZenModePanel;)Ljava/lang/String;
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/ZenModePanel;
 
@@ -352,7 +334,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1200(Lcom/android/systemui/volume/ZenModePanel;)I
+.method static synthetic access$1100(Lcom/android/systemui/volume/ZenModePanel;)I
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/ZenModePanel;
 
@@ -364,7 +346,7 @@
     return v0
 .end method
 
-.method static synthetic access$1300(Lcom/android/systemui/volume/ZenModePanel;I)Lcom/android/systemui/volume/ZenModePanel$ConditionTag;
+.method static synthetic access$1200(Lcom/android/systemui/volume/ZenModePanel;I)Lcom/android/systemui/volume/ZenModePanel$ConditionTag;
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/ZenModePanel;
     .param p1, "x1"    # I
@@ -377,7 +359,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1400(Lcom/android/systemui/volume/ZenModePanel;Landroid/service/notification/Condition;)V
+.method static synthetic access$1300(Lcom/android/systemui/volume/ZenModePanel;Landroid/service/notification/Condition;)V
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/volume/ZenModePanel;
     .param p1, "x1"    # Landroid/service/notification/Condition;
@@ -388,7 +370,7 @@
     return-void
 .end method
 
-.method static synthetic access$1500(Lcom/android/systemui/volume/ZenModePanel;Lcom/android/systemui/volume/ZenModePanel$ConditionTag;)V
+.method static synthetic access$1400(Lcom/android/systemui/volume/ZenModePanel;Lcom/android/systemui/volume/ZenModePanel$ConditionTag;)V
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/volume/ZenModePanel;
     .param p1, "x1"    # Lcom/android/systemui/volume/ZenModePanel$ConditionTag;
@@ -399,20 +381,21 @@
     return-void
 .end method
 
-.method static synthetic access$1600(Lcom/android/systemui/volume/ZenModePanel;Landroid/view/View;Lcom/android/systemui/volume/ZenModePanel$ConditionTag;Z)V
+.method static synthetic access$1500(Lcom/android/systemui/volume/ZenModePanel;Landroid/view/View;Lcom/android/systemui/volume/ZenModePanel$ConditionTag;ZI)V
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/volume/ZenModePanel;
     .param p1, "x1"    # Landroid/view/View;
     .param p2, "x2"    # Lcom/android/systemui/volume/ZenModePanel$ConditionTag;
     .param p3, "x3"    # Z
+    .param p4, "x4"    # I
 
     .prologue
-    invoke-direct {p0, p1, p2, p3}, Lcom/android/systemui/volume/ZenModePanel;->onClickTimeButton(Landroid/view/View;Lcom/android/systemui/volume/ZenModePanel$ConditionTag;Z)V
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/systemui/volume/ZenModePanel;->onClickTimeButton(Landroid/view/View;Lcom/android/systemui/volume/ZenModePanel$ConditionTag;ZI)V
 
     return-void
 .end method
 
-.method static synthetic access$1700(Lcom/android/systemui/volume/ZenModePanel;)I
+.method static synthetic access$1600(Lcom/android/systemui/volume/ZenModePanel;)I
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/ZenModePanel;
 
@@ -420,6 +403,16 @@
     iget v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mSessionZen:I
 
     return v0
+.end method
+
+.method static synthetic access$1700(Lcom/android/systemui/volume/ZenModePanel;)Lcom/android/systemui/statusbar/policy/ZenModeController;
+    .locals 1
+    .param p0, "x0"    # Lcom/android/systemui/volume/ZenModePanel;
+
+    .prologue
+    iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
+
+    return-object v0
 .end method
 
 .method static synthetic access$1800(Lcom/android/systemui/volume/ZenModePanel;)Lcom/android/systemui/volume/ZenModePanel$H;
@@ -432,18 +425,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1900(Lcom/android/systemui/volume/ZenModePanel;[Landroid/service/notification/Condition;)V
-    .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/volume/ZenModePanel;
-    .param p1, "x1"    # [Landroid/service/notification/Condition;
-
-    .prologue
-    invoke-direct {p0, p1}, Lcom/android/systemui/volume/ZenModePanel;->handleUpdateConditions([Landroid/service/notification/Condition;)V
-
-    return-void
-.end method
-
-.method static synthetic access$2000(Lcom/android/systemui/volume/ZenModePanel;Landroid/service/notification/ZenModeConfig$ZenRule;)V
+.method static synthetic access$1900(Lcom/android/systemui/volume/ZenModePanel;Landroid/service/notification/ZenModeConfig$ZenRule;)V
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/volume/ZenModePanel;
     .param p1, "x1"    # Landroid/service/notification/ZenModeConfig$ZenRule;
@@ -454,7 +436,7 @@
     return-void
 .end method
 
-.method static synthetic access$2100(Lcom/android/systemui/volume/ZenModePanel;)V
+.method static synthetic access$2000(Lcom/android/systemui/volume/ZenModePanel;)V
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/volume/ZenModePanel;
 
@@ -464,7 +446,7 @@
     return-void
 .end method
 
-.method static synthetic access$2200(Lcom/android/systemui/volume/ZenModePanel;)Landroid/content/Context;
+.method static synthetic access$2100(Lcom/android/systemui/volume/ZenModePanel;)Landroid/content/Context;
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/ZenModePanel;
 
@@ -474,7 +456,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2300()I
+.method static synthetic access$2200()I
     .locals 1
 
     .prologue
@@ -483,7 +465,7 @@
     return v0
 .end method
 
-.method static synthetic access$2400()[I
+.method static synthetic access$2300()[I
     .locals 1
 
     .prologue
@@ -492,7 +474,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2500(Lcom/android/systemui/volume/ZenModePanel;)Lcom/android/systemui/volume/SegmentedButtons;
+.method static synthetic access$2400(Lcom/android/systemui/volume/ZenModePanel;)Lcom/android/systemui/volume/SegmentedButtons;
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/ZenModePanel;
 
@@ -502,7 +484,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2600(Lcom/android/systemui/volume/ZenModePanel;)Landroid/service/notification/Condition;
+.method static synthetic access$2500(Lcom/android/systemui/volume/ZenModePanel;)Landroid/service/notification/Condition;
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/ZenModePanel;
 
@@ -512,7 +494,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2700(Lcom/android/systemui/volume/ZenModePanel;Landroid/service/notification/Condition;)Landroid/net/Uri;
+.method static synthetic access$2600(Lcom/android/systemui/volume/ZenModePanel;Landroid/service/notification/Condition;)Landroid/net/Uri;
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/ZenModePanel;
     .param p1, "x1"    # Landroid/service/notification/Condition;
@@ -525,22 +507,12 @@
     return-object v0
 .end method
 
-.method static synthetic access$2800(Lcom/android/systemui/volume/ZenModePanel;)V
+.method static synthetic access$2700(Lcom/android/systemui/volume/ZenModePanel;)V
     .locals 0
     .param p0, "x0"    # Lcom/android/systemui/volume/ZenModePanel;
 
     .prologue
     invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel;->fireInteraction()V
-
-    return-void
-.end method
-
-.method static synthetic access$2900(Lcom/android/systemui/volume/ZenModePanel;)V
-    .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/volume/ZenModePanel;
-
-    .prologue
-    invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel;->handleUpdateConditions()V
 
     return-void
 .end method
@@ -565,22 +537,21 @@
     return-object v0
 .end method
 
-.method static synthetic access$700(Lcom/android/systemui/volume/ZenModePanel;)Lcom/android/systemui/statusbar/policy/ZenModeController;
-    .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/volume/ZenModePanel;
-
-    .prologue
-    iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
-
-    return-object v0
-.end method
-
-.method static synthetic access$900(Lcom/android/systemui/volume/ZenModePanel;)Z
+.method static synthetic access$800(Lcom/android/systemui/volume/ZenModePanel;)Z
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/ZenModePanel;
 
     .prologue
     iget-boolean v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mExpanded:Z
+
+    return v0
+.end method
+
+.method static synthetic access$900()Z
+    .locals 1
+
+    .prologue
+    sget-boolean v0, Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
 
     return v0
 .end method
@@ -677,10 +648,11 @@
     .end packed-switch
 .end method
 
-.method private bind(Landroid/service/notification/Condition;Landroid/view/View;)V
+.method private bind(Landroid/service/notification/Condition;Landroid/view/View;I)V
     .locals 21
     .param p1, "condition"    # Landroid/service/notification/Condition;
     .param p2, "row"    # Landroid/view/View;
+    .param p3, "rowId"    # I
 
     .prologue
     if-nez p1, :cond_0
@@ -706,7 +678,7 @@
 
     move/from16 v1, v19
 
-    if-ne v0, v1, :cond_b
+    if-ne v0, v1, :cond_a
 
     const/4 v8, 0x1
 
@@ -716,7 +688,7 @@
 
     move-result-object v18
 
-    if-eqz v18, :cond_c
+    if-eqz v18, :cond_b
 
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -736,7 +708,7 @@
 
     move-object/from16 v18, v0
 
-    if-nez v18, :cond_d
+    if-nez v18, :cond_c
 
     const/4 v9, 0x1
 
@@ -869,7 +841,7 @@
 
     move/from16 v18, v0
 
-    if-eqz v18, :cond_e
+    if-eqz v18, :cond_d
 
     :cond_3
     move-object/from16 v0, p0
@@ -886,31 +858,8 @@
 
     move-result v18
 
-    if-nez v18, :cond_4
+    if-eqz v18, :cond_d
 
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/systemui/volume/ZenModePanel;->mSessionExitCondition:Landroid/service/notification/Condition;
-
-    move-object/from16 v18, v0
-
-    invoke-static/range {v18 .. v18}, Lcom/android/systemui/volume/ZenModePanel;->isCountdown(Landroid/service/notification/Condition;)Z
-
-    move-result v18
-
-    if-eqz v18, :cond_e
-
-    iget-object v0, v13, Lcom/android/systemui/volume/ZenModePanel$ConditionTag;->condition:Landroid/service/notification/Condition;
-
-    move-object/from16 v18, v0
-
-    invoke-static/range {v18 .. v18}, Lcom/android/systemui/volume/ZenModePanel;->isCountdown(Landroid/service/notification/Condition;)Z
-
-    move-result v18
-
-    if-eqz v18, :cond_e
-
-    :cond_4
     const/4 v6, 0x1
 
     .local v6, "checked":Z
@@ -925,11 +874,11 @@
 
     move/from16 v0, v18
 
-    if-eq v6, v0, :cond_6
+    if-eq v6, v0, :cond_5
 
     sget-boolean v18, Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
 
-    if-eqz v18, :cond_5
+    if-eqz v18, :cond_4
 
     move-object/from16 v0, p0
 
@@ -971,7 +920,7 @@
 
     invoke-static/range {v18 .. v19}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_5
+    :cond_4
     iget-object v0, v13, Lcom/android/systemui/volume/ZenModePanel$ConditionTag;->rb:Landroid/widget/RadioButton;
 
     move-object/from16 v18, v0
@@ -980,18 +929,18 @@
 
     invoke-virtual {v0, v6}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    :cond_6
+    :cond_5
     iget-object v0, v13, Lcom/android/systemui/volume/ZenModePanel$ConditionTag;->rb:Landroid/widget/RadioButton;
 
     move-object/from16 v18, v0
 
-    new-instance v19, Lcom/android/systemui/volume/ZenModePanel$4;
+    new-instance v19, Lcom/android/systemui/volume/ZenModePanel$3;
 
     move-object/from16 v0, v19
 
     move-object/from16 v1, p0
 
-    invoke-direct {v0, v1, v7, v13}, Lcom/android/systemui/volume/ZenModePanel$4;-><init>(Lcom/android/systemui/volume/ZenModePanel;Landroid/net/Uri;Lcom/android/systemui/volume/ZenModePanel$ConditionTag;)V
+    invoke-direct {v0, v1, v7, v13}, Lcom/android/systemui/volume/ZenModePanel$3;-><init>(Lcom/android/systemui/volume/ZenModePanel;Landroid/net/Uri;Lcom/android/systemui/volume/ZenModePanel$ConditionTag;)V
 
     invoke-virtual/range {v18 .. v19}, Landroid/widget/RadioButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
@@ -999,7 +948,7 @@
 
     move-object/from16 v18, v0
 
-    if-nez v18, :cond_7
+    if-nez v18, :cond_6
 
     const v18, 0x1020002
 
@@ -1015,12 +964,12 @@
 
     iput-object v0, v13, Lcom/android/systemui/volume/ZenModePanel$ConditionTag;->lines:Landroid/view/View;
 
-    :cond_7
+    :cond_6
     iget-object v0, v13, Lcom/android/systemui/volume/ZenModePanel$ConditionTag;->line1:Landroid/widget/TextView;
 
     move-object/from16 v18, v0
 
-    if-nez v18, :cond_8
+    if-nez v18, :cond_7
 
     const v18, 0x1020014
 
@@ -1038,12 +987,12 @@
 
     iput-object v0, v13, Lcom/android/systemui/volume/ZenModePanel$ConditionTag;->line1:Landroid/widget/TextView;
 
-    :cond_8
+    :cond_7
     iget-object v0, v13, Lcom/android/systemui/volume/ZenModePanel$ConditionTag;->line2:Landroid/widget/TextView;
 
     move-object/from16 v18, v0
 
-    if-nez v18, :cond_9
+    if-nez v18, :cond_8
 
     const v18, 0x1020015
 
@@ -1061,7 +1010,7 @@
 
     iput-object v0, v13, Lcom/android/systemui/volume/ZenModePanel$ConditionTag;->line2:Landroid/widget/TextView;
 
-    :cond_9
+    :cond_8
     move-object/from16 v0, p1
 
     iget-object v0, v0, Landroid/service/notification/Condition;->line1:Ljava/lang/String;
@@ -1072,7 +1021,7 @@
 
     move-result v18
 
-    if-nez v18, :cond_f
+    if-nez v18, :cond_e
 
     move-object/from16 v0, p1
 
@@ -1097,7 +1046,7 @@
 
     move-result v18
 
-    if-eqz v18, :cond_10
+    if-eqz v18, :cond_f
 
     iget-object v0, v13, Lcom/android/systemui/volume/ZenModePanel$ConditionTag;->line2:Landroid/widget/TextView;
 
@@ -1120,7 +1069,7 @@
 
     move-object/from16 v19, v0
 
-    if-eqz v8, :cond_11
+    if-eqz v8, :cond_10
 
     const/high16 v18, 0x3f800000    # 1.0f
 
@@ -1144,7 +1093,7 @@
     check-cast v4, Landroid/widget/ImageView;
 
     .local v4, "button1":Landroid/widget/ImageView;
-    new-instance v18, Lcom/android/systemui/volume/ZenModePanel$5;
+    new-instance v18, Lcom/android/systemui/volume/ZenModePanel$4;
 
     move-object/from16 v0, v18
 
@@ -1152,7 +1101,9 @@
 
     move-object/from16 v2, p2
 
-    invoke-direct {v0, v1, v2, v13}, Lcom/android/systemui/volume/ZenModePanel$5;-><init>(Lcom/android/systemui/volume/ZenModePanel;Landroid/view/View;Lcom/android/systemui/volume/ZenModePanel$ConditionTag;)V
+    move/from16 v3, p3
+
+    invoke-direct {v0, v1, v2, v13, v3}, Lcom/android/systemui/volume/ZenModePanel$4;-><init>(Lcom/android/systemui/volume/ZenModePanel;Landroid/view/View;Lcom/android/systemui/volume/ZenModePanel$ConditionTag;I)V
 
     move-object/from16 v0, v18
 
@@ -1171,7 +1122,7 @@
     check-cast v5, Landroid/widget/ImageView;
 
     .local v5, "button2":Landroid/widget/ImageView;
-    new-instance v18, Lcom/android/systemui/volume/ZenModePanel$6;
+    new-instance v18, Lcom/android/systemui/volume/ZenModePanel$5;
 
     move-object/from16 v0, v18
 
@@ -1179,7 +1130,9 @@
 
     move-object/from16 v2, p2
 
-    invoke-direct {v0, v1, v2, v13}, Lcom/android/systemui/volume/ZenModePanel$6;-><init>(Lcom/android/systemui/volume/ZenModePanel;Landroid/view/View;Lcom/android/systemui/volume/ZenModePanel$ConditionTag;)V
+    move/from16 v3, p3
+
+    invoke-direct {v0, v1, v2, v13, v3}, Lcom/android/systemui/volume/ZenModePanel$5;-><init>(Lcom/android/systemui/volume/ZenModePanel;Landroid/view/View;Lcom/android/systemui/volume/ZenModePanel$ConditionTag;I)V
 
     move-object/from16 v0, v18
 
@@ -1189,13 +1142,13 @@
 
     move-object/from16 v18, v0
 
-    new-instance v19, Lcom/android/systemui/volume/ZenModePanel$7;
+    new-instance v19, Lcom/android/systemui/volume/ZenModePanel$6;
 
     move-object/from16 v0, v19
 
     move-object/from16 v1, p0
 
-    invoke-direct {v0, v1, v13}, Lcom/android/systemui/volume/ZenModePanel$7;-><init>(Lcom/android/systemui/volume/ZenModePanel;Lcom/android/systemui/volume/ZenModePanel$ConditionTag;)V
+    invoke-direct {v0, v1, v13}, Lcom/android/systemui/volume/ZenModePanel$6;-><init>(Lcom/android/systemui/volume/ZenModePanel;Lcom/android/systemui/volume/ZenModePanel$ConditionTag;)V
 
     invoke-virtual/range {v18 .. v19}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -1204,11 +1157,19 @@
     move-result-wide v16
 
     .local v16, "time":J
+    const/16 v18, 0x2
+
+    move/from16 v0, p3
+
+    move/from16 v1, v18
+
+    if-eq v0, v1, :cond_18
+
     const-wide/16 v18, 0x0
 
     cmp-long v18, v16, v18
 
-    if-lez v18, :cond_19
+    if-lez v18, :cond_18
 
     const/16 v18, 0x0
 
@@ -1234,7 +1195,7 @@
 
     move/from16 v1, v19
 
-    if-le v0, v1, :cond_14
+    if-le v0, v1, :cond_13
 
     move-object/from16 v0, p0
 
@@ -1242,7 +1203,7 @@
 
     move/from16 v18, v0
 
-    if-lez v18, :cond_12
+    if-lez v18, :cond_11
 
     const/16 v18, 0x1
 
@@ -1271,7 +1232,7 @@
 
     move/from16 v1, v19
 
-    if-ge v0, v1, :cond_13
+    if-ge v0, v1, :cond_12
 
     const/16 v18, 0x1
 
@@ -1285,7 +1246,7 @@
 
     move-result v18
 
-    if-eqz v18, :cond_17
+    if-eqz v18, :cond_16
 
     const/high16 v18, 0x3f800000    # 1.0f
 
@@ -1298,7 +1259,7 @@
 
     move-result v18
 
-    if-eqz v18, :cond_18
+    if-eqz v18, :cond_17
 
     const/high16 v18, 0x3f800000    # 1.0f
 
@@ -1308,7 +1269,7 @@
     invoke-virtual {v5, v0}, Landroid/widget/ImageView;->setAlpha(F)V
 
     :goto_c
-    if-eqz v9, :cond_a
+    if-eqz v9, :cond_9
 
     iget-object v0, v13, Lcom/android/systemui/volume/ZenModePanel$ConditionTag;->rb:Landroid/widget/RadioButton;
 
@@ -1354,7 +1315,7 @@
 
     invoke-static {v5, v0}, Lcom/android/systemui/volume/Interaction;->register(Landroid/view/View;Lcom/android/systemui/volume/Interaction$Callback;)V
 
-    :cond_a
+    :cond_9
     const/16 v18, 0x0
 
     move-object/from16 v0, p2
@@ -1375,13 +1336,13 @@
     .end local v11    # "line2":Ljava/lang/String;
     .end local v13    # "tag":Lcom/android/systemui/volume/ZenModePanel$ConditionTag;
     .end local v16    # "time":J
-    :cond_b
+    :cond_a
     const/4 v8, 0x0
 
     goto/16 :goto_0
 
     .restart local v8    # "enabled":Z
-    :cond_c
+    :cond_b
     new-instance v13, Lcom/android/systemui/volume/ZenModePanel$ConditionTag;
 
     const/16 v18, 0x0
@@ -1393,20 +1354,20 @@
     goto/16 :goto_1
 
     .restart local v13    # "tag":Lcom/android/systemui/volume/ZenModePanel$ConditionTag;
-    :cond_d
+    :cond_c
     const/4 v9, 0x0
 
     goto/16 :goto_2
 
     .restart local v7    # "conditionId":Landroid/net/Uri;
     .restart local v9    # "first":Z
-    :cond_e
+    :cond_d
     const/4 v6, 0x0
 
     goto/16 :goto_3
 
     .restart local v6    # "checked":Z
-    :cond_f
+    :cond_e
     move-object/from16 v0, p1
 
     iget-object v10, v0, Landroid/service/notification/Condition;->summary:Ljava/lang/String;
@@ -1415,7 +1376,7 @@
 
     .restart local v10    # "line1":Ljava/lang/String;
     .restart local v11    # "line2":Ljava/lang/String;
-    :cond_10
+    :cond_f
     iget-object v0, v13, Lcom/android/systemui/volume/ZenModePanel$ConditionTag;->line2:Landroid/widget/TextView;
 
     move-object/from16 v18, v0
@@ -1434,7 +1395,7 @@
 
     goto/16 :goto_5
 
-    :cond_11
+    :cond_10
     const v18, 0x3ecccccd    # 0.4f
 
     goto/16 :goto_6
@@ -1442,17 +1403,17 @@
     .restart local v4    # "button1":Landroid/widget/ImageView;
     .restart local v5    # "button2":Landroid/widget/ImageView;
     .restart local v16    # "time":J
-    :cond_12
+    :cond_11
     const/16 v18, 0x0
 
     goto/16 :goto_7
 
-    :cond_13
+    :cond_12
     const/16 v18, 0x0
 
     goto/16 :goto_8
 
-    :cond_14
+    :cond_13
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v18
@@ -1474,7 +1435,7 @@
 
     cmp-long v18, v14, v18
 
-    if-lez v18, :cond_15
+    if-lez v18, :cond_14
 
     const/16 v18, 0x1
 
@@ -1514,7 +1475,7 @@
 
     move-result v18
 
-    if-nez v18, :cond_16
+    if-nez v18, :cond_15
 
     const/16 v18, 0x1
 
@@ -1526,30 +1487,30 @@
     goto/16 :goto_9
 
     .end local v12    # "maxCondition":Landroid/service/notification/Condition;
-    :cond_15
+    :cond_14
     const/16 v18, 0x0
 
     goto :goto_d
 
     .restart local v12    # "maxCondition":Landroid/service/notification/Condition;
-    :cond_16
+    :cond_15
     const/16 v18, 0x0
 
     goto :goto_e
 
     .end local v12    # "maxCondition":Landroid/service/notification/Condition;
     .end local v14    # "span":J
-    :cond_17
+    :cond_16
     const/high16 v18, 0x3f000000    # 0.5f
 
     goto/16 :goto_a
 
-    :cond_18
+    :cond_17
     const/high16 v18, 0x3f000000    # 0.5f
 
     goto/16 :goto_b
 
-    :cond_19
+    :cond_18
     const/16 v18, 0x8
 
     move/from16 v0, v18
@@ -2142,7 +2103,7 @@
 
     move-result-object v6
 
-    invoke-direct {p0, v5, v6}, Lcom/android/systemui/volume/ZenModePanel;->bind(Landroid/service/notification/Condition;Landroid/view/View;)V
+    invoke-direct {p0, v5, v6, v8}, Lcom/android/systemui/volume/ZenModePanel;->bind(Landroid/service/notification/Condition;Landroid/view/View;I)V
 
     invoke-direct {p0, v8}, Lcom/android/systemui/volume/ZenModePanel;->getConditionTagAt(I)Lcom/android/systemui/volume/ZenModePanel$ConditionTag;
 
@@ -2369,6 +2330,76 @@
     return p1
 .end method
 
+.method private getTimeUntilNextAlarmCondition()Landroid/service/notification/Condition;
+    .locals 10
+
+    .prologue
+    new-instance v7, Ljava/util/GregorianCalendar;
+
+    invoke-direct {v7}, Ljava/util/GregorianCalendar;-><init>()V
+
+    .local v7, "weekRange":Ljava/util/GregorianCalendar;
+    invoke-virtual {v7}, Ljava/util/GregorianCalendar;->getTimeInMillis()J
+
+    move-result-wide v2
+
+    .local v2, "now":J
+    invoke-direct {p0, v7}, Lcom/android/systemui/volume/ZenModePanel;->setToMidnight(Ljava/util/Calendar;)V
+
+    const/4 v1, 0x5
+
+    const/4 v6, 0x6
+
+    invoke-virtual {v7, v1, v6}, Ljava/util/GregorianCalendar;->roll(II)V
+
+    iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
+
+    invoke-interface {v1}, Lcom/android/systemui/statusbar/policy/ZenModeController;->getNextAlarm()J
+
+    move-result-wide v4
+
+    .local v4, "nextAlarmMs":J
+    const-wide/16 v8, 0x0
+
+    cmp-long v1, v4, v8
+
+    if-lez v1, :cond_0
+
+    new-instance v0, Ljava/util/GregorianCalendar;
+
+    invoke-direct {v0}, Ljava/util/GregorianCalendar;-><init>()V
+
+    .local v0, "nextAlarm":Ljava/util/GregorianCalendar;
+    invoke-virtual {v0, v4, v5}, Ljava/util/GregorianCalendar;->setTimeInMillis(J)V
+
+    invoke-direct {p0, v0}, Lcom/android/systemui/volume/ZenModePanel;->setToMidnight(Ljava/util/Calendar;)V
+
+    invoke-virtual {v7, v0}, Ljava/util/GregorianCalendar;->compareTo(Ljava/util/Calendar;)I
+
+    move-result v1
+
+    if-ltz v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
+
+    invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
+
+    move-result v6
+
+    invoke-static/range {v1 .. v6}, Landroid/service/notification/ZenModeConfig;->toNextAlarmCondition(Landroid/content/Context;JJI)Landroid/service/notification/Condition;
+
+    move-result-object v1
+
+    .end local v0    # "nextAlarm":Ljava/util/GregorianCalendar;
+    :goto_0
+    return-object v1
+
+    :cond_0
+    const/4 v1, 0x0
+
+    goto :goto_0
+.end method
+
 .method private getVisibleConditions()I
     .locals 4
 
@@ -2489,7 +2520,7 @@
 
     move-result-object v3
 
-    invoke-direct {p0, p1, v3}, Lcom/android/systemui/volume/ZenModePanel;->bind(Landroid/service/notification/Condition;Landroid/view/View;)V
+    invoke-direct {p0, p1, v3, v1}, Lcom/android/systemui/volume/ZenModePanel;->bind(Landroid/service/notification/Condition;Landroid/view/View;I)V
 
     :cond_1
     add-int/lit8 v1, v1, 0x1
@@ -2502,9 +2533,13 @@
 .end method
 
 .method private handleUpdateConditions()V
-    .locals 6
+    .locals 8
 
     .prologue
+    const/4 v7, 0x2
+
+    const/4 v6, 0x1
+
     const/4 v2, 0x0
 
     iget-object v3, p0, Lcom/android/systemui/volume/ZenModePanel;->mTransitionHelper:Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;
@@ -2515,10 +2550,6 @@
 
     if-eqz v3, :cond_1
 
-    iget-object v2, p0, Lcom/android/systemui/volume/ZenModePanel;->mTransitionHelper:Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;
-
-    invoke-virtual {v2}, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->pendingUpdateConditions()V
-
     :cond_0
     :goto_0
     return-void
@@ -2526,7 +2557,7 @@
     :cond_1
     iget-object v3, p0, Lcom/android/systemui/volume/ZenModePanel;->mConditions:[Landroid/service/notification/Condition;
 
-    if-nez v3, :cond_4
+    if-nez v3, :cond_5
 
     move v0, v2
 
@@ -2567,9 +2598,9 @@
 
     invoke-virtual {v4, v2}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v2
+    move-result-object v4
 
-    invoke-direct {p0, v3, v2}, Lcom/android/systemui/volume/ZenModePanel;->bind(Landroid/service/notification/Condition;Landroid/view/View;)V
+    invoke-direct {p0, v3, v4, v2}, Lcom/android/systemui/volume/ZenModePanel;->bind(Landroid/service/notification/Condition;Landroid/view/View;I)V
 
     iget-boolean v2, p0, Lcom/android/systemui/volume/ZenModePanel;->mCountdownConditionSupported:Z
 
@@ -2583,83 +2614,34 @@
 
     iget-object v3, p0, Lcom/android/systemui/volume/ZenModePanel;->mZenConditions:Landroid/widget/LinearLayout;
 
-    const/4 v4, 0x1
-
-    invoke-virtual {v3, v4}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v3, v6}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    invoke-direct {p0, v2, v3}, Lcom/android/systemui/volume/ZenModePanel;->bind(Landroid/service/notification/Condition;Landroid/view/View;)V
+    invoke-direct {p0, v2, v3, v6}, Lcom/android/systemui/volume/ZenModePanel;->bind(Landroid/service/notification/Condition;Landroid/view/View;I)V
 
     :cond_3
-    const/4 v1, 0x0
+    iget-boolean v2, p0, Lcom/android/systemui/volume/ZenModePanel;->mCountdownConditionSupported:Z
 
-    .local v1, "i":I
-    :goto_2
-    if-ge v1, v0, :cond_5
+    if-eqz v2, :cond_4
 
-    iget-object v2, p0, Lcom/android/systemui/volume/ZenModePanel;->mConditions:[Landroid/service/notification/Condition;
+    invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel;->getTimeUntilNextAlarmCondition()Landroid/service/notification/Condition;
 
-    aget-object v2, v2, v1
+    move-result-object v1
 
-    iget-object v3, p0, Lcom/android/systemui/volume/ZenModePanel;->mZenConditions:Landroid/widget/LinearLayout;
-
-    iget v4, p0, Lcom/android/systemui/volume/ZenModePanel;->mFirstConditionIndex:I
-
-    add-int/2addr v4, v1
-
-    invoke-virtual {v3, v4}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v3
-
-    invoke-direct {p0, v2, v3}, Lcom/android/systemui/volume/ZenModePanel;->bind(Landroid/service/notification/Condition;Landroid/view/View;)V
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_2
-
-    .end local v0    # "conditionCount":I
-    .end local v1    # "i":I
-    :cond_4
-    iget-object v3, p0, Lcom/android/systemui/volume/ZenModePanel;->mConditions:[Landroid/service/notification/Condition;
-
-    array-length v0, v3
-
-    goto :goto_1
-
-    .restart local v0    # "conditionCount":I
-    .restart local v1    # "i":I
-    :cond_5
-    iget-object v2, p0, Lcom/android/systemui/volume/ZenModePanel;->mZenConditions:Landroid/widget/LinearLayout;
-
-    invoke-virtual {v2}, Landroid/widget/LinearLayout;->getChildCount()I
-
-    move-result v2
-
-    add-int/lit8 v1, v2, -0x1
-
-    :goto_3
-    iget v2, p0, Lcom/android/systemui/volume/ZenModePanel;->mFirstConditionIndex:I
-
-    add-int/2addr v2, v0
-
-    if-le v1, v2, :cond_6
+    .local v1, "nextAlarmCondition":Landroid/service/notification/Condition;
+    if-eqz v1, :cond_4
 
     iget-object v2, p0, Lcom/android/systemui/volume/ZenModePanel;->mZenConditions:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v2, v1}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v2, v7}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    const/16 v3, 0x8
+    invoke-direct {p0, v1, v2, v7}, Lcom/android/systemui/volume/ZenModePanel;->bind(Landroid/service/notification/Condition;Landroid/view/View;I)V
 
-    invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
-
-    add-int/lit8 v1, v1, -0x1
-
-    goto :goto_3
-
-    :cond_6
+    .end local v1    # "nextAlarmCondition":Landroid/service/notification/Condition;
+    :cond_4
     iget-boolean v2, p0, Lcom/android/systemui/volume/ZenModePanel;->mExpanded:Z
 
     if-eqz v2, :cond_0
@@ -2672,76 +2654,13 @@
 
     invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel;->ensureSelection()V
 
-    goto/16 :goto_0
-.end method
-
-.method private handleUpdateConditions([Landroid/service/notification/Condition;)V
-    .locals 4
-    .param p1, "conditions"    # [Landroid/service/notification/Condition;
-
-    .prologue
-    invoke-direct {p0, p1}, Lcom/android/systemui/volume/ZenModePanel;->trimConditions([Landroid/service/notification/Condition;)[Landroid/service/notification/Condition;
-
-    move-result-object p1
-
-    iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel;->mConditions:[Landroid/service/notification/Condition;
-
-    invoke-static {p1, v1}, Ljava/util/Arrays;->equals([Ljava/lang/Object;[Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel;->mConditions:[Landroid/service/notification/Condition;
-
-    if-nez v1, :cond_1
-
-    const/4 v0, 0x0
-
-    .local v0, "count":I
-    :goto_0
-    sget-boolean v1, Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel;->mTag:Ljava/lang/String;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "handleUpdateConditions unchanged conditionCount="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .end local v0    # "count":I
-    :cond_0
-    :goto_1
-    return-void
-
-    :cond_1
-    iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel;->mConditions:[Landroid/service/notification/Condition;
-
-    array-length v0, v1
-
     goto :goto_0
 
-    :cond_2
-    iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel;->mConditions:[Landroid/service/notification/Condition;
+    .end local v0    # "conditionCount":I
+    :cond_5
+    iget-object v3, p0, Lcom/android/systemui/volume/ZenModePanel;->mConditions:[Landroid/service/notification/Condition;
 
-    invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel;->handleUpdateConditions()V
+    array-length v0, v3
 
     goto :goto_1
 .end method
@@ -2934,53 +2853,54 @@
     goto :goto_0
 .end method
 
-.method private onClickTimeButton(Landroid/view/View;Lcom/android/systemui/volume/ZenModePanel$ConditionTag;Z)V
-    .locals 18
+.method private onClickTimeButton(Landroid/view/View;Lcom/android/systemui/volume/ZenModePanel$ConditionTag;ZI)V
+    .locals 22
     .param p1, "row"    # Landroid/view/View;
     .param p2, "tag"    # Lcom/android/systemui/volume/ZenModePanel$ConditionTag;
     .param p3, "up"    # Z
+    .param p4, "rowId"    # I
 
     .prologue
     const/4 v14, 0x0
 
     .local v14, "newCondition":Landroid/service/notification/Condition;
-    sget-object v2, Lcom/android/systemui/volume/ZenModePanel;->MINUTE_BUCKETS:[I
+    sget-object v5, Lcom/android/systemui/volume/ZenModePanel;->MINUTE_BUCKETS:[I
 
-    array-length v10, v2
+    array-length v4, v5
 
-    .local v10, "N":I
+    .local v4, "N":I
     move-object/from16 v0, p0
 
-    iget v2, v0, Lcom/android/systemui/volume/ZenModePanel;->mBucketIndex:I
+    iget v5, v0, Lcom/android/systemui/volume/ZenModePanel;->mBucketIndex:I
 
-    const/4 v8, -0x1
+    const/4 v9, -0x1
 
-    if-ne v2, v8, :cond_6
+    if-ne v5, v9, :cond_6
 
     move-object/from16 v0, p2
 
-    iget-object v2, v0, Lcom/android/systemui/volume/ZenModePanel$ConditionTag;->condition:Landroid/service/notification/Condition;
+    iget-object v5, v0, Lcom/android/systemui/volume/ZenModePanel$ConditionTag;->condition:Landroid/service/notification/Condition;
 
-    invoke-static {v2}, Lcom/android/systemui/volume/ZenModePanel;->getConditionId(Landroid/service/notification/Condition;)Landroid/net/Uri;
+    invoke-static {v5}, Lcom/android/systemui/volume/ZenModePanel;->getConditionId(Landroid/service/notification/Condition;)Landroid/net/Uri;
 
     move-result-object v11
 
     .local v11, "conditionId":Landroid/net/Uri;
     invoke-static {v11}, Landroid/service/notification/ZenModeConfig;->tryParseCountdownConditionId(Landroid/net/Uri;)J
 
-    move-result-wide v16
+    move-result-wide v18
 
-    .local v16, "time":J
+    .local v18, "time":J
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v6
+    move-result-wide v16
 
-    .local v6, "now":J
+    .local v16, "now":J
     const/4 v12, 0x0
 
     .local v12, "i":I
     :goto_0
-    if-ge v12, v10, :cond_2
+    if-ge v12, v4, :cond_2
 
     if-eqz p3, :cond_4
 
@@ -2988,32 +2908,34 @@
 
     .local v13, "j":I
     :goto_1
-    sget-object v2, Lcom/android/systemui/volume/ZenModePanel;->MINUTE_BUCKETS:[I
+    sget-object v5, Lcom/android/systemui/volume/ZenModePanel;->MINUTE_BUCKETS:[I
 
-    aget v5, v2, v13
+    aget v8, v5, v13
 
-    .local v5, "bucketMinutes":I
-    const v2, 0xea60
+    .local v8, "bucketMinutes":I
+    const v5, 0xea60
 
-    mul-int/2addr v2, v5
+    mul-int/2addr v5, v8
 
-    int-to-long v8, v2
+    int-to-long v0, v5
 
-    add-long v3, v6, v8
+    move-wide/from16 v20, v0
 
-    .local v3, "bucketTime":J
+    add-long v6, v16, v20
+
+    .local v6, "bucketTime":J
     if-eqz p3, :cond_0
 
-    cmp-long v2, v3, v16
+    cmp-long v5, v6, v18
 
-    if-gtz v2, :cond_1
+    if-gtz v5, :cond_1
 
     :cond_0
     if-nez p3, :cond_5
 
-    cmp-long v2, v3, v16
+    cmp-long v5, v6, v18
 
-    if-gez v2, :cond_5
+    if-gez v5, :cond_5
 
     :cond_1
     move-object/from16 v0, p0
@@ -3022,54 +2944,54 @@
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
-
-    invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
-
-    move-result v8
-
-    const/4 v9, 0x0
-
-    invoke-static/range {v2 .. v9}, Landroid/service/notification/ZenModeConfig;->toTimeCondition(Landroid/content/Context;JIJIZ)Landroid/service/notification/Condition;
-
-    move-result-object v14
-
-    .end local v3    # "bucketTime":J
-    .end local v5    # "bucketMinutes":I
-    .end local v13    # "j":I
-    :cond_2
-    if-nez v14, :cond_3
-
-    sget v2, Lcom/android/systemui/volume/ZenModePanel;->DEFAULT_BUCKET_INDEX:I
-
-    move-object/from16 v0, p0
-
-    iput v2, v0, Lcom/android/systemui/volume/ZenModePanel;->mBucketIndex:I
-
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
-
-    sget-object v8, Lcom/android/systemui/volume/ZenModePanel;->MINUTE_BUCKETS:[I
-
-    move-object/from16 v0, p0
-
-    iget v9, v0, Lcom/android/systemui/volume/ZenModePanel;->mBucketIndex:I
-
-    aget v8, v8, v9
+    iget-object v5, v0, Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
 
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
     move-result v9
 
-    invoke-static {v2, v8, v9}, Landroid/service/notification/ZenModeConfig;->toTimeCondition(Landroid/content/Context;II)Landroid/service/notification/Condition;
+    const/4 v10, 0x0
+
+    invoke-static/range {v5 .. v10}, Landroid/service/notification/ZenModeConfig;->toTimeCondition(Landroid/content/Context;JIIZ)Landroid/service/notification/Condition;
 
     move-result-object v14
 
-    .end local v6    # "now":J
+    .end local v6    # "bucketTime":J
+    .end local v8    # "bucketMinutes":I
+    .end local v13    # "j":I
+    :cond_2
+    if-nez v14, :cond_3
+
+    sget v5, Lcom/android/systemui/volume/ZenModePanel;->DEFAULT_BUCKET_INDEX:I
+
+    move-object/from16 v0, p0
+
+    iput v5, v0, Lcom/android/systemui/volume/ZenModePanel;->mBucketIndex:I
+
+    move-object/from16 v0, p0
+
+    iget-object v5, v0, Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
+
+    sget-object v9, Lcom/android/systemui/volume/ZenModePanel;->MINUTE_BUCKETS:[I
+
+    move-object/from16 v0, p0
+
+    iget v10, v0, Lcom/android/systemui/volume/ZenModePanel;->mBucketIndex:I
+
+    aget v9, v9, v10
+
+    invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
+
+    move-result v10
+
+    invoke-static {v5, v9, v10}, Landroid/service/notification/ZenModeConfig;->toTimeCondition(Landroid/content/Context;II)Landroid/service/notification/Condition;
+
+    move-result-object v14
+
     .end local v11    # "conditionId":Landroid/net/Uri;
     .end local v12    # "i":I
-    .end local v16    # "time":J
+    .end local v16    # "now":J
+    .end local v18    # "time":J
     :cond_3
     :goto_2
     move-object/from16 v0, p0
@@ -3078,29 +3000,31 @@
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/systemui/volume/ZenModePanel;->mTimeCondition:Landroid/service/notification/Condition;
+    iget-object v5, v0, Lcom/android/systemui/volume/ZenModePanel;->mTimeCondition:Landroid/service/notification/Condition;
 
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
 
-    invoke-direct {v0, v2, v1}, Lcom/android/systemui/volume/ZenModePanel;->bind(Landroid/service/notification/Condition;Landroid/view/View;)V
+    move/from16 v2, p4
+
+    invoke-direct {v0, v5, v1, v2}, Lcom/android/systemui/volume/ZenModePanel;->bind(Landroid/service/notification/Condition;Landroid/view/View;I)V
 
     move-object/from16 v0, p2
 
-    iget-object v2, v0, Lcom/android/systemui/volume/ZenModePanel$ConditionTag;->rb:Landroid/widget/RadioButton;
+    iget-object v5, v0, Lcom/android/systemui/volume/ZenModePanel$ConditionTag;->rb:Landroid/widget/RadioButton;
 
-    const/4 v8, 0x1
+    const/4 v9, 0x1
 
-    invoke-virtual {v2, v8}, Landroid/widget/RadioButton;->setChecked(Z)V
-
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/systemui/volume/ZenModePanel;->mTimeCondition:Landroid/service/notification/Condition;
+    invoke-virtual {v5, v9}, Landroid/widget/RadioButton;->setChecked(Z)V
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v2}, Lcom/android/systemui/volume/ZenModePanel;->select(Landroid/service/notification/Condition;)V
+    iget-object v5, v0, Lcom/android/systemui/volume/ZenModePanel;->mTimeCondition:Landroid/service/notification/Condition;
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v5}, Lcom/android/systemui/volume/ZenModePanel;->select(Landroid/service/notification/Condition;)V
 
     move-object/from16 v0, p0
 
@@ -3110,36 +3034,36 @@
 
     return-void
 
-    .restart local v6    # "now":J
     .restart local v11    # "conditionId":Landroid/net/Uri;
     .restart local v12    # "i":I
-    .restart local v16    # "time":J
+    .restart local v16    # "now":J
+    .restart local v18    # "time":J
     :cond_4
-    add-int/lit8 v2, v10, -0x1
+    add-int/lit8 v5, v4, -0x1
 
-    sub-int v13, v2, v12
+    sub-int v13, v5, v12
 
     goto :goto_1
 
-    .restart local v3    # "bucketTime":J
-    .restart local v5    # "bucketMinutes":I
+    .restart local v6    # "bucketTime":J
+    .restart local v8    # "bucketMinutes":I
     .restart local v13    # "j":I
     :cond_5
     add-int/lit8 v12, v12, 0x1
 
     goto :goto_0
 
-    .end local v3    # "bucketTime":J
-    .end local v5    # "bucketMinutes":I
-    .end local v6    # "now":J
+    .end local v6    # "bucketTime":J
+    .end local v8    # "bucketMinutes":I
     .end local v11    # "conditionId":Landroid/net/Uri;
     .end local v12    # "i":I
     .end local v13    # "j":I
-    .end local v16    # "time":J
+    .end local v16    # "now":J
+    .end local v18    # "time":J
     :cond_6
-    const/4 v8, 0x0
+    const/4 v9, 0x0
 
-    add-int/lit8 v9, v10, -0x1
+    add-int/lit8 v10, v4, -0x1
 
     move-object/from16 v0, p0
 
@@ -3147,58 +3071,58 @@
 
     if-eqz p3, :cond_7
 
-    const/4 v2, 0x1
+    const/4 v5, 0x1
 
     :goto_3
-    add-int/2addr v2, v15
+    add-int/2addr v5, v15
 
-    invoke-static {v9, v2}, Ljava/lang/Math;->min(II)I
+    invoke-static {v10, v5}, Ljava/lang/Math;->min(II)I
 
-    move-result v2
+    move-result v5
 
-    invoke-static {v8, v2}, Ljava/lang/Math;->max(II)I
+    invoke-static {v9, v5}, Ljava/lang/Math;->max(II)I
 
-    move-result v2
-
-    move-object/from16 v0, p0
-
-    iput v2, v0, Lcom/android/systemui/volume/ZenModePanel;->mBucketIndex:I
+    move-result v5
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
-
-    sget-object v8, Lcom/android/systemui/volume/ZenModePanel;->MINUTE_BUCKETS:[I
+    iput v5, v0, Lcom/android/systemui/volume/ZenModePanel;->mBucketIndex:I
 
     move-object/from16 v0, p0
 
-    iget v9, v0, Lcom/android/systemui/volume/ZenModePanel;->mBucketIndex:I
+    iget-object v5, v0, Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
 
-    aget v8, v8, v9
+    sget-object v9, Lcom/android/systemui/volume/ZenModePanel;->MINUTE_BUCKETS:[I
+
+    move-object/from16 v0, p0
+
+    iget v10, v0, Lcom/android/systemui/volume/ZenModePanel;->mBucketIndex:I
+
+    aget v9, v9, v10
 
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
-    move-result v9
+    move-result v10
 
-    invoke-static {v2, v8, v9}, Landroid/service/notification/ZenModeConfig;->toTimeCondition(Landroid/content/Context;II)Landroid/service/notification/Condition;
+    invoke-static {v5, v9, v10}, Landroid/service/notification/ZenModeConfig;->toTimeCondition(Landroid/content/Context;II)Landroid/service/notification/Condition;
 
     move-result-object v14
 
     goto :goto_2
 
     :cond_7
-    const/4 v2, -0x1
+    const/4 v5, -0x1
 
     goto :goto_3
 .end method
 
 .method private static parseExistingTimeCondition(Landroid/content/Context;Landroid/service/notification/Condition;)Landroid/service/notification/Condition;
-    .locals 10
+    .locals 12
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "condition"    # Landroid/service/notification/Condition;
 
     .prologue
-    const-wide/16 v6, 0x0
+    const-wide/16 v4, 0x0
 
     const/4 v0, 0x0
 
@@ -3209,60 +3133,60 @@
     return-object v0
 
     :cond_1
-    iget-object v3, p1, Landroid/service/notification/Condition;->id:Landroid/net/Uri;
+    iget-object v1, p1, Landroid/service/notification/Condition;->id:Landroid/net/Uri;
 
-    invoke-static {v3}, Landroid/service/notification/ZenModeConfig;->tryParseCountdownConditionId(Landroid/net/Uri;)J
+    invoke-static {v1}, Landroid/service/notification/ZenModeConfig;->tryParseCountdownConditionId(Landroid/net/Uri;)J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    .local v1, "time":J
-    cmp-long v3, v1, v6
+    .local v2, "time":J
+    cmp-long v1, v2, v4
 
-    if-eqz v3, :cond_0
+    if-eqz v1, :cond_0
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v4
+    move-result-wide v8
 
-    .local v4, "now":J
-    sub-long v8, v1, v4
+    .local v8, "now":J
+    sub-long v10, v2, v8
 
-    .local v8, "span":J
-    cmp-long v3, v8, v6
+    .local v10, "span":J
+    cmp-long v1, v10, v4
 
-    if-lez v3, :cond_0
+    if-lez v1, :cond_0
 
-    sget v3, Lcom/android/systemui/volume/ZenModePanel;->MAX_BUCKET_MINUTES:I
+    sget v1, Lcom/android/systemui/volume/ZenModePanel;->MAX_BUCKET_MINUTES:I
 
-    const v6, 0xea60
+    const v4, 0xea60
 
-    mul-int/2addr v3, v6
+    mul-int/2addr v1, v4
 
-    int-to-long v6, v3
+    int-to-long v4, v1
 
-    cmp-long v3, v8, v6
+    cmp-long v1, v10, v4
 
-    if-gtz v3, :cond_0
+    if-gtz v1, :cond_0
 
-    long-to-float v0, v8
+    long-to-float v0, v10
 
-    const v3, 0x476a6000    # 60000.0f
+    const v1, 0x476a6000    # 60000.0f
 
-    div-float/2addr v0, v3
+    div-float/2addr v0, v1
 
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
-    move-result v3
+    move-result v4
 
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
-    move-result v6
+    move-result v5
 
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
-    move-object v0, p0
+    move-object v1, p0
 
-    invoke-static/range {v0 .. v7}, Landroid/service/notification/ZenModeConfig;->toTimeCondition(Landroid/content/Context;JIJIZ)Landroid/service/notification/Condition;
+    invoke-static/range {v1 .. v6}, Landroid/service/notification/ZenModeConfig;->toTimeCondition(Landroid/content/Context;JIIZ)Landroid/service/notification/Condition;
 
     move-result-object v0
 
@@ -3409,9 +3333,9 @@
 
     if-eqz v1, :cond_4
 
-    new-instance v1, Lcom/android/systemui/volume/ZenModePanel$8;
+    new-instance v1, Lcom/android/systemui/volume/ZenModePanel$7;
 
-    invoke-direct {v1, p0, v0}, Lcom/android/systemui/volume/ZenModePanel$8;-><init>(Lcom/android/systemui/volume/ZenModePanel;Landroid/net/Uri;)V
+    invoke-direct {v1, p0, v0}, Lcom/android/systemui/volume/ZenModePanel$7;-><init>(Lcom/android/systemui/volume/ZenModePanel;Landroid/net/Uri;)V
 
     invoke-static {v1}, Landroid/os/AsyncTask;->execute(Ljava/lang/Runnable;)V
 
@@ -3615,20 +3539,9 @@
     :cond_1
     iput-boolean p1, p0, Lcom/android/systemui/volume/ZenModePanel;->mRequestingConditions:Z
 
-    iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
-
-    if-eqz v0, :cond_2
-
-    new-instance v0, Lcom/android/systemui/volume/ZenModePanel$3;
-
-    invoke-direct {v0, p0, p1}, Lcom/android/systemui/volume/ZenModePanel$3;-><init>(Lcom/android/systemui/volume/ZenModePanel;Z)V
-
-    invoke-static {v0}, Landroid/os/AsyncTask;->execute(Ljava/lang/Runnable;)V
-
-    :cond_2
     iget-boolean v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mRequestingConditions:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
 
@@ -3642,7 +3555,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mTimeCondition:Landroid/service/notification/Condition;
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     const/4 v0, -0x1
 
@@ -3651,7 +3564,7 @@
     :goto_1
     sget-boolean v0, Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mTag:Ljava/lang/String;
 
@@ -3677,7 +3590,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_3
+    :cond_2
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mConditions:[Landroid/service/notification/Condition;
@@ -3686,7 +3599,7 @@
 
     goto :goto_0
 
-    :cond_4
+    :cond_3
     sget v0, Lcom/android/systemui/volume/ZenModePanel;->DEFAULT_BUCKET_INDEX:I
 
     iput v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mBucketIndex:I
@@ -3711,7 +3624,7 @@
 
     goto :goto_1
 
-    :cond_5
+    :cond_4
     invoke-direct {p0}, Lcom/android/systemui/volume/ZenModePanel;->hideAllConditions()V
 
     goto :goto_0
@@ -3770,86 +3683,30 @@
     goto :goto_0
 .end method
 
-.method private trimConditions([Landroid/service/notification/Condition;)[Landroid/service/notification/Condition;
-    .locals 6
-    .param p1, "conditions"    # [Landroid/service/notification/Condition;
+.method private setToMidnight(Ljava/util/Calendar;)V
+    .locals 2
+    .param p1, "calendar"    # Ljava/util/Calendar;
 
     .prologue
-    if-eqz p1, :cond_0
+    const/4 v1, 0x0
 
-    array-length v4, p1
+    const/16 v0, 0xb
 
-    iget v5, p0, Lcom/android/systemui/volume/ZenModePanel;->mMaxOptionalConditions:I
+    invoke-virtual {p1, v0, v1}, Ljava/util/Calendar;->set(II)V
 
-    if-gt v4, v5, :cond_2
+    const/16 v0, 0xc
 
-    :cond_0
-    move-object v3, p1
+    invoke-virtual {p1, v0, v1}, Ljava/util/Calendar;->set(II)V
 
-    :cond_1
-    :goto_0
-    return-object v3
+    const/16 v0, 0xd
 
-    :cond_2
-    const/4 v1, -0x1
+    invoke-virtual {p1, v0, v1}, Ljava/util/Calendar;->set(II)V
 
-    .local v1, "found":I
-    const/4 v2, 0x0
+    const/16 v0, 0xe
 
-    .local v2, "i":I
-    :goto_1
-    array-length v4, p1
+    invoke-virtual {p1, v0, v1}, Ljava/util/Calendar;->set(II)V
 
-    if-ge v2, v4, :cond_3
-
-    aget-object v0, p1, v2
-
-    .local v0, "c":Landroid/service/notification/Condition;
-    iget-object v4, p0, Lcom/android/systemui/volume/ZenModePanel;->mSessionExitCondition:Landroid/service/notification/Condition;
-
-    if-eqz v4, :cond_4
-
-    iget-object v4, p0, Lcom/android/systemui/volume/ZenModePanel;->mSessionExitCondition:Landroid/service/notification/Condition;
-
-    invoke-static {v4, v0}, Lcom/android/systemui/volume/ZenModePanel;->sameConditionId(Landroid/service/notification/Condition;Landroid/service/notification/Condition;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_4
-
-    move v1, v2
-
-    .end local v0    # "c":Landroid/service/notification/Condition;
-    :cond_3
-    iget v4, p0, Lcom/android/systemui/volume/ZenModePanel;->mMaxOptionalConditions:I
-
-    invoke-static {p1, v4}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, [Landroid/service/notification/Condition;
-
-    .local v3, "rt":[Landroid/service/notification/Condition;
-    iget v4, p0, Lcom/android/systemui/volume/ZenModePanel;->mMaxOptionalConditions:I
-
-    if-lt v1, v4, :cond_1
-
-    iget v4, p0, Lcom/android/systemui/volume/ZenModePanel;->mMaxOptionalConditions:I
-
-    add-int/lit8 v4, v4, -0x1
-
-    aget-object v5, p1, v1
-
-    aput-object v5, v3, v4
-
-    goto :goto_0
-
-    .end local v3    # "rt":[Landroid/service/notification/Condition;
-    .restart local v0    # "c":Landroid/service/notification/Condition;
-    :cond_4
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_1
+    return-void
 .end method
 
 .method private updateWidgets()V
@@ -4054,50 +3911,18 @@
 
     if-eqz v4, :cond_0
 
-    const/4 v0, 0x1
+    const/4 v0, 0x2
 
     .local v0, "countdownDelta":I
     :goto_0
-    add-int/lit8 v4, v0, 0x1
-
-    iput v4, p0, Lcom/android/systemui/volume/ZenModePanel;->mFirstConditionIndex:I
-
     add-int/lit8 v2, v0, 0x1
 
     .local v2, "minConditions":I
-    iget-object v4, p0, Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v4
-
-    const v5, 0x7f0a0034
-
-    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v4
-
-    const/16 v5, 0x64
-
-    invoke-static {v4, v2, v5}, Landroid/util/MathUtils;->constrain(III)I
-
-    move-result v4
-
-    iput v4, p0, Lcom/android/systemui/volume/ZenModePanel;->mMaxConditions:I
-
-    iget v4, p0, Lcom/android/systemui/volume/ZenModePanel;->mMaxConditions:I
-
-    sub-int/2addr v4, v2
-
-    iput v4, p0, Lcom/android/systemui/volume/ZenModePanel;->mMaxOptionalConditions:I
-
     const/4 v1, 0x0
 
     .local v1, "i":I
     :goto_1
-    iget v4, p0, Lcom/android/systemui/volume/ZenModePanel;->mMaxConditions:I
-
-    if-ge v1, v4, :cond_1
+    if-ge v1, v2, :cond_1
 
     iget-object v4, p0, Lcom/android/systemui/volume/ZenModePanel;->mZenConditions:Landroid/widget/LinearLayout;
 

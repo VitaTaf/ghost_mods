@@ -64,39 +64,24 @@
 
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    check-cast v0, [Landroid/service/notification/Condition;
+    check-cast v0, Landroid/service/notification/ZenModeConfig$ZenRule;
 
-    check-cast v0, [Landroid/service/notification/Condition;
-
-    # invokes: Lcom/android/systemui/volume/ZenModePanel;->handleUpdateConditions([Landroid/service/notification/Condition;)V
-    invoke-static {v1, v0}, Lcom/android/systemui/volume/ZenModePanel;->access$1900(Lcom/android/systemui/volume/ZenModePanel;[Landroid/service/notification/Condition;)V
+    # invokes: Lcom/android/systemui/volume/ZenModePanel;->handleUpdateManualRule(Landroid/service/notification/ZenModeConfig$ZenRule;)V
+    invoke-static {v1, v0}, Lcom/android/systemui/volume/ZenModePanel;->access$1900(Lcom/android/systemui/volume/ZenModePanel;Landroid/service/notification/ZenModeConfig$ZenRule;)V
 
     goto :goto_0
 
     :pswitch_1
-    iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel$H;->this$0:Lcom/android/systemui/volume/ZenModePanel;
-
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v0, Landroid/service/notification/ZenModeConfig$ZenRule;
-
-    # invokes: Lcom/android/systemui/volume/ZenModePanel;->handleUpdateManualRule(Landroid/service/notification/ZenModeConfig$ZenRule;)V
-    invoke-static {v1, v0}, Lcom/android/systemui/volume/ZenModePanel;->access$2000(Lcom/android/systemui/volume/ZenModePanel;Landroid/service/notification/ZenModeConfig$ZenRule;)V
-
-    goto :goto_0
-
-    :pswitch_2
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$H;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # invokes: Lcom/android/systemui/volume/ZenModePanel;->updateWidgets()V
-    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$2100(Lcom/android/systemui/volume/ZenModePanel;)V
+    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$2000(Lcom/android/systemui/volume/ZenModePanel;)V
 
     goto :goto_0
 
     :pswitch_data_0
-    .packed-switch 0x1
+    .packed-switch 0x2
         :pswitch_0
         :pswitch_1
-        :pswitch_2
     .end packed-switch
 .end method

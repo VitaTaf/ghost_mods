@@ -36,9 +36,6 @@
 .method public abstract removeCallback(Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;)V
 .end method
 
-.method public abstract requestConditions(Z)V
-.end method
-
 .method public abstract setUserId(I)V
 .end method
 

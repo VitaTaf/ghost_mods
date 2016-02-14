@@ -19,8 +19,6 @@
 
 
 # instance fields
-.field private mPendingUpdateConditions:Z
-
 .field private mPendingUpdateWidgets:Z
 
 .field private mTransitioning:Z
@@ -89,7 +87,7 @@
     iput-boolean v0, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mTransitioning:Z
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
-    invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$1000()Z
+    invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$900()Z
 
     move-result v1
 
@@ -98,7 +96,7 @@
     iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mTag:Ljava/lang/String;
-    invoke-static {v1}, Lcom/android/systemui/volume/ZenModePanel;->access$1100(Lcom/android/systemui/volume/ZenModePanel;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/android/systemui/volume/ZenModePanel;->access$1000(Lcom/android/systemui/volume/ZenModePanel;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -129,15 +127,10 @@
 
     if-nez v1, :cond_0
 
-    iget-boolean v1, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mPendingUpdateConditions:Z
-
-    if-nez v1, :cond_3
-
     iget-boolean v1, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mPendingUpdateWidgets:Z
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_3
 
-    :cond_3
     iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mHandler:Lcom/android/systemui/volume/ZenModePanel$H;
@@ -149,12 +142,10 @@
 
     goto :goto_0
 
-    :cond_4
+    :cond_3
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mPendingUpdateWidgets:Z
-
-    iput-boolean v1, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mPendingUpdateConditions:Z
 
     goto :goto_0
 .end method
@@ -172,8 +163,6 @@
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mPendingUpdateWidgets:Z
-
-    iput-boolean v0, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mPendingUpdateConditions:Z
 
     return-void
 .end method
@@ -218,17 +207,6 @@
     goto :goto_0
 .end method
 
-.method public pendingUpdateConditions()V
-    .locals 1
-
-    .prologue
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mPendingUpdateConditions:Z
-
-    return-void
-.end method
-
 .method public pendingUpdateWidgets()V
     .locals 1
 
@@ -245,7 +223,7 @@
 
     .prologue
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
-    invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$1000()Z
+    invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$900()Z
 
     move-result v0
 
@@ -254,7 +232,7 @@
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mTag:Ljava/lang/String;
-    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$1100(Lcom/android/systemui/volume/ZenModePanel;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$1000(Lcom/android/systemui/volume/ZenModePanel;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -274,18 +252,6 @@
 
     move-result-object v1
 
-    const-string v2, " mPendingUpdateConditions="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-boolean v2, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mPendingUpdateConditions:Z
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -300,22 +266,10 @@
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # invokes: Lcom/android/systemui/volume/ZenModePanel;->updateWidgets()V
-    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$2100(Lcom/android/systemui/volume/ZenModePanel;)V
+    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$2000(Lcom/android/systemui/volume/ZenModePanel;)V
 
     :cond_1
-    iget-boolean v0, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mPendingUpdateConditions:Z
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->this$0:Lcom/android/systemui/volume/ZenModePanel;
-
-    # invokes: Lcom/android/systemui/volume/ZenModePanel;->handleUpdateConditions()V
-    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$2900(Lcom/android/systemui/volume/ZenModePanel;)V
-
-    :cond_2
     const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mPendingUpdateConditions:Z
 
     iput-boolean v0, p0, Lcom/android/systemui/volume/ZenModePanel$TransitionHelper;->mPendingUpdateWidgets:Z
 

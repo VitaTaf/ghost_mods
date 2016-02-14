@@ -845,41 +845,6 @@
     return-void
 .end method
 
-.method public requestConditions(Z)V
-    .locals 3
-    .param p1, "request"    # Z
-
-    .prologue
-    iput-boolean p1, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->mRequesting:Z
-
-    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->mNoMan:Landroid/app/NotificationManager;
-
-    iget-object v2, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->mListener:Landroid/service/notification/IConditionListener;
-
-    if-eqz p1, :cond_1
-
-    const/4 v0, 0x1
-
-    :goto_0
-    invoke-virtual {v1, v2, v0}, Landroid/app/NotificationManager;->requestZenModeConditions(Landroid/service/notification/IConditionListener;I)V
-
-    iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->mRequesting:Z
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->mConditions:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v0}, Ljava/util/LinkedHashMap;->clear()V
-
-    :cond_0
-    return-void
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
 .method public setUserId(I)V
     .locals 6
     .param p1, "userId"    # I

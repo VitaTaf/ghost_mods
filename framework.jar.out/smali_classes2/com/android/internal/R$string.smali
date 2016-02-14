@@ -1871,6 +1871,8 @@
 
 .field public static final yes:I = 0x1040013
 
+.field public static final zen_mode_alarm:I = 0x10406a3
+
 .field public static final zen_mode_default_weekends_name:I = 0x1040741
 
 .field public static final zen_mode_default_weeknights_name:I = 0x1040740

@@ -1,14 +1,11 @@
 .class Lcom/android/systemui/volume/ZenModePanel$8;
-.super Ljava/lang/Object;
+.super Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;
 .source "ZenModePanel.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/volume/ZenModePanel;->select(Landroid/service/notification/Condition;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/systemui/volume/ZenModePanel;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,48 +17,40 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/volume/ZenModePanel;
 
-.field final synthetic val$realConditionId:Landroid/net/Uri;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/volume/ZenModePanel;Landroid/net/Uri;)V
+.method constructor <init>(Lcom/android/systemui/volume/ZenModePanel;)V
     .locals 0
 
     .prologue
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel$8;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
-    iput-object p2, p0, Lcom/android/systemui/volume/ZenModePanel$8;->val$realConditionId:Landroid/net/Uri;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 4
+.method public onManualRuleChanged(Landroid/service/notification/ZenModeConfig$ZenRule;)V
+    .locals 2
+    .param p1, "rule"    # Landroid/service/notification/ZenModeConfig$ZenRule;
 
     .prologue
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$8;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
-    # getter for: Lcom/android/systemui/volume/ZenModePanel;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
-    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$700(Lcom/android/systemui/volume/ZenModePanel;)Lcom/android/systemui/statusbar/policy/ZenModeController;
+    # getter for: Lcom/android/systemui/volume/ZenModePanel;->mHandler:Lcom/android/systemui/volume/ZenModePanel$H;
+    invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$1800(Lcom/android/systemui/volume/ZenModePanel;)Lcom/android/systemui/volume/ZenModePanel$H;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel$8;->this$0:Lcom/android/systemui/volume/ZenModePanel;
+    const/4 v1, 0x2
 
-    # getter for: Lcom/android/systemui/volume/ZenModePanel;->mSessionZen:I
-    invoke-static {v1}, Lcom/android/systemui/volume/ZenModePanel;->access$1700(Lcom/android/systemui/volume/ZenModePanel;)I
+    invoke-virtual {v0, v1, p1}, Lcom/android/systemui/volume/ZenModePanel$H;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
-    move-result v1
+    move-result-object v0
 
-    iget-object v2, p0, Lcom/android/systemui/volume/ZenModePanel$8;->val$realConditionId:Landroid/net/Uri;
-
-    const-string v3, "ZenModePanel.selectCondition"
-
-    invoke-interface {v0, v1, v2, v3}, Lcom/android/systemui/statusbar/policy/ZenModeController;->setZen(ILandroid/net/Uri;Ljava/lang/String;)V
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
     return-void
 .end method

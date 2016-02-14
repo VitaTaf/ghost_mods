@@ -5114,6 +5114,7 @@
     <public type="string" name="lock_to_app_unlock_password" id="0x0104068f" />
     <public type="string" name="battery_saver_description" id="0x01040690" />
     <public type="string" name="zen_mode_until" id="0x01040693" />
+    <public type="string" name="zen_mode_alarm" id="0x010406a3" />
     <public type="string" name="zen_mode_forever" id="0x01040694" />
     <public type="string" name="toolbar_collapse_description" id="0x01040695" />
     <public type="string" name="permdesc_userpreferredsim" id="0x01040698" />
