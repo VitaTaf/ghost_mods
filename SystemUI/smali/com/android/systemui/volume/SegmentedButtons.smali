@@ -133,10 +133,11 @@
 
 
 # virtual methods
-.method public addButton(ILjava/lang/Object;)V
+.method public addButton(IILjava/lang/Object;)V
     .locals 5
     .param p1, "labelResId"    # I
-    .param p2, "value"    # Ljava/lang/Object;
+    .param p2, "contentDescriptionResId"    # I
+    .param p3, "value"    # Ljava/lang/Object;
 
     .prologue
     const/4 v4, 0x0
@@ -162,6 +163,16 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/Button;->setText(I)V
 
+    invoke-virtual {p0}, Lcom/android/systemui/volume/SegmentedButtons;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Landroid/widget/Button;->setContentDescription(Ljava/lang/CharSequence;)V
+
     invoke-virtual {v0}, Landroid/widget/Button;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
@@ -184,7 +195,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/SegmentedButtons;->addView(Landroid/view/View;)V
 
-    invoke-virtual {v0, p2}, Landroid/widget/Button;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v0, p3}, Landroid/widget/Button;->setTag(Ljava/lang/Object;)V
 
     iget-object v2, p0, Lcom/android/systemui/volume/SegmentedButtons;->mClick:Landroid/view/View$OnClickListener;
 
