@@ -18,7 +18,7 @@
 
 
 # static fields
-.field private static final DEFAULT_STREAM_TYPE_OVERRIDE_DELAY_MS:I = 0x1388
+.field private static final DEFAULT_STREAM_TYPE_OVERRIDE_DELAY_MS:I = 0x0
 
 .field private static final TOUCH_EXPLORE_STREAM_TYPE_OVERRIDE_DELAY_MS:I = 0x3e8
 
@@ -124,7 +124,7 @@
     return-void
 
     :cond_1
-    const/16 v0, 0x1388
+    const/4 v0, 0x0
 
     sput v0, Lcom/android/server/audio/AudioService$StreamOverride;->sDelayMs:I
 

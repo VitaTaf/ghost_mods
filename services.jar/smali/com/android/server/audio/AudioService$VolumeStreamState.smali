@@ -1679,6 +1679,23 @@
 
     invoke-virtual {v6, v7, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
+    iget-object v6, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->mVolumeChanged:Landroid/content/Intent;
+
+    const-string v7, "android.media.EXTRA_VOLUME_STREAM_TYPE_ALIAS"
+
+    iget-object v8, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->this$0:Lcom/android/server/audio/AudioService;
+
+    # getter for: Lcom/android/server/audio/AudioService;->mStreamVolumeAlias:[I
+    invoke-static {v8}, Lcom/android/server/audio/AudioService;->access$4300(Lcom/android/server/audio/AudioService;)[I
+
+    move-result-object v8
+
+    iget v9, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->mStreamType:I
+
+    aget v8, v8, v9
+
+    invoke-virtual {v6, v7, v8}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
     iget-object v6, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->this$0:Lcom/android/server/audio/AudioService;
 
     iget-object v7, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->mVolumeChanged:Landroid/content/Intent;

@@ -9735,19 +9735,10 @@
     .param p4, "flags"    # I
 
     .prologue
-    invoke-direct {p0}, Lcom/android/server/audio/AudioService;->isPlatformVoice()Z
+    iget-object v0, p0, Lcom/android/server/audio/AudioService;->mStreamVolumeAlias:[I
 
-    move-result v0
+    aget p1, v0, p1
 
-    if-nez v0, :cond_1
-
-    const/4 v0, 0x2
-
-    if-ne p1, v0, :cond_1
-
-    const/4 p1, 0x5
-
-    :goto_0
     const/4 v0, 0x3
 
     if-ne p1, v0, :cond_0
@@ -9762,13 +9753,6 @@
     invoke-virtual {v0, p1, p4}, Lcom/android/server/audio/AudioService$VolumeController;->postVolumeChanged(II)V
 
     return-void
-
-    :cond_1
-    iget-object v0, p0, Lcom/android/server/audio/AudioService;->mStreamVolumeAlias:[I
-
-    aget p1, v0, p1
-
-    goto :goto_0
 .end method
 
 .method private setForceUseInt_SyncDevices(II)V
