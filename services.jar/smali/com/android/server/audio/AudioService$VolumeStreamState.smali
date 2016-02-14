@@ -371,7 +371,7 @@
     shl-int v0, v7, v3
 
     .restart local v0    # "device":I
-    if-gt v0, v8, :cond_5
+    if-eq v0, v8, :cond_5
 
     and-int v7, v2, v0
 

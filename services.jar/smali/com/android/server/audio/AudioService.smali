@@ -174,7 +174,7 @@
     .end annotation
 .end field
 
-.field private static final STEAM_VOLUME_OPS:[I
+.field private static final STREAM_VOLUME_OPS:[I
 
 .field private static final TAG:Ljava/lang/String; = "AudioService"
 
@@ -484,7 +484,7 @@
 
     fill-array-data v0, :array_2
 
-    sput-object v0, Lcom/android/server/audio/AudioService;->STEAM_VOLUME_OPS:[I
+    sput-object v0, Lcom/android/server/audio/AudioService;->STREAM_VOLUME_OPS:[I
 
     new-instance v0, Ljava/lang/Long;
 
@@ -2539,7 +2539,7 @@
 
     iget-object v5, v0, Lcom/android/server/audio/AudioService;->mAppOps:Landroid/app/AppOpsManager;
 
-    sget-object v6, Lcom/android/server/audio/AudioService;->STEAM_VOLUME_OPS:[I
+    sget-object v6, Lcom/android/server/audio/AudioService;->STREAM_VOLUME_OPS:[I
 
     aget v6, v6, v8
 
@@ -8954,6 +8954,10 @@
 
     invoke-virtual {p1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
+    const/high16 v2, 0x10000000
+
+    invoke-virtual {p1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
@@ -9319,6 +9323,10 @@
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
+    const/high16 v2, 0x10000000
+
+    invoke-virtual {p1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
@@ -10829,7 +10837,7 @@
     :cond_2
     iget-object v0, p0, Lcom/android/server/audio/AudioService;->mAppOps:Landroid/app/AppOpsManager;
 
-    sget-object v1, Lcom/android/server/audio/AudioService;->STEAM_VOLUME_OPS:[I
+    sget-object v1, Lcom/android/server/audio/AudioService;->STREAM_VOLUME_OPS:[I
 
     aget v1, v1, v8
 
@@ -11155,7 +11163,7 @@
 .end method
 
 .method private setSystemAudioVolume(IIII)V
-    .locals 7
+    .locals 5
     .param p1, "oldVolume"    # I
     .param p2, "newVolume"    # I
     .param p3, "maxVolume"    # I
@@ -11222,15 +11230,7 @@
     :try_start_3
     iget-object v2, p0, Lcom/android/server/audio/AudioService;->mHdmiTvClient:Landroid/hardware/hdmi/HdmiTvClient;
 
-    add-int/lit8 v5, p1, 0x5
-
-    div-int/lit8 v5, v5, 0xa
-
-    add-int/lit8 v6, p2, 0x5
-
-    div-int/lit8 v6, v6, 0xa
-
-    invoke-virtual {v2, v5, v6, p3}, Landroid/hardware/hdmi/HdmiTvClient;->setSystemAudioVolume(III)V
+    invoke-virtual {v2, p1, p2, p3}, Landroid/hardware/hdmi/HdmiTvClient;->setSystemAudioVolume(III)V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
