@@ -76,7 +76,7 @@
     return-void
 .end method
 
-.method static synthetic access$2000(Lcom/android/server/audio/MediaFocusControl$DisplayInfoForServer;)Z
+.method static synthetic access$2100(Lcom/android/server/audio/MediaFocusControl$DisplayInfoForServer;)Z
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/MediaFocusControl$DisplayInfoForServer;
 
@@ -86,7 +86,7 @@
     return v0
 .end method
 
-.method static synthetic access$2002(Lcom/android/server/audio/MediaFocusControl$DisplayInfoForServer;Z)Z
+.method static synthetic access$2102(Lcom/android/server/audio/MediaFocusControl$DisplayInfoForServer;Z)Z
     .locals 0
     .param p0, "x0"    # Lcom/android/server/audio/MediaFocusControl$DisplayInfoForServer;
     .param p1, "x1"    # Z
@@ -200,7 +200,7 @@
     iget-object v2, p0, Lcom/android/server/audio/MediaFocusControl$DisplayInfoForServer;->this$0:Lcom/android/server/audio/MediaFocusControl;
 
     # getter for: Lcom/android/server/audio/MediaFocusControl;->mPRStack:Ljava/util/Stack;
-    invoke-static {v2}, Lcom/android/server/audio/MediaFocusControl;->access$2100(Lcom/android/server/audio/MediaFocusControl;)Ljava/util/Stack;
+    invoke-static {v2}, Lcom/android/server/audio/MediaFocusControl;->access$2200(Lcom/android/server/audio/MediaFocusControl;)Ljava/util/Stack;
 
     move-result-object v3
 
@@ -240,7 +240,7 @@
     iget-object v2, p0, Lcom/android/server/audio/MediaFocusControl$DisplayInfoForServer;->this$0:Lcom/android/server/audio/MediaFocusControl;
 
     # getter for: Lcom/android/server/audio/MediaFocusControl;->mRcDisplays:Ljava/util/ArrayList;
-    invoke-static {v2}, Lcom/android/server/audio/MediaFocusControl;->access$2200(Lcom/android/server/audio/MediaFocusControl;)Ljava/util/ArrayList;
+    invoke-static {v2}, Lcom/android/server/audio/MediaFocusControl;->access$2300(Lcom/android/server/audio/MediaFocusControl;)Ljava/util/ArrayList;
 
     move-result-object v2
 

@@ -245,9 +245,9 @@
 
     iput-object v3, p0, Lcom/android/server/audio/MediaFocusControl;->mVoiceEventLock:Ljava/lang/Object;
 
-    new-instance v3, Lcom/android/server/audio/MediaFocusControl$2;
+    new-instance v3, Lcom/android/server/audio/MediaFocusControl$3;
 
-    invoke-direct {v3, p0}, Lcom/android/server/audio/MediaFocusControl$2;-><init>(Lcom/android/server/audio/MediaFocusControl;)V
+    invoke-direct {v3, p0}, Lcom/android/server/audio/MediaFocusControl$3;-><init>(Lcom/android/server/audio/MediaFocusControl;)V
 
     iput-object v3, p0, Lcom/android/server/audio/MediaFocusControl;->mKeyEventDone:Landroid/content/BroadcastReceiver;
 
@@ -506,12 +506,12 @@
     return-void
 .end method
 
-.method static synthetic access$1900(Lcom/android/server/audio/MediaFocusControl;)Landroid/os/PowerManager$WakeLock;
+.method static synthetic access$1900(Lcom/android/server/audio/MediaFocusControl;)Ljava/util/Stack;
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/MediaFocusControl;
 
     .prologue
-    iget-object v0, p0, Lcom/android/server/audio/MediaFocusControl;->mMediaEventWakeLock:Landroid/os/PowerManager$WakeLock;
+    iget-object v0, p0, Lcom/android/server/audio/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
 
     return-object v0
 .end method
@@ -525,7 +525,17 @@
     return-object v0
 .end method
 
-.method static synthetic access$2100(Lcom/android/server/audio/MediaFocusControl;)Ljava/util/Stack;
+.method static synthetic access$2000(Lcom/android/server/audio/MediaFocusControl;)Landroid/os/PowerManager$WakeLock;
+    .locals 1
+    .param p0, "x0"    # Lcom/android/server/audio/MediaFocusControl;
+
+    .prologue
+    iget-object v0, p0, Lcom/android/server/audio/MediaFocusControl;->mMediaEventWakeLock:Landroid/os/PowerManager$WakeLock;
+
+    return-object v0
+.end method
+
+.method static synthetic access$2200(Lcom/android/server/audio/MediaFocusControl;)Ljava/util/Stack;
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/MediaFocusControl;
 
@@ -535,7 +545,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2200(Lcom/android/server/audio/MediaFocusControl;)Ljava/util/ArrayList;
+.method static synthetic access$2300(Lcom/android/server/audio/MediaFocusControl;)Ljava/util/ArrayList;
     .locals 1
     .param p0, "x0"    # Lcom/android/server/audio/MediaFocusControl;
 
@@ -1523,7 +1533,7 @@
     move-result-object v2
 
     # getter for: Lcom/android/server/audio/MediaFocusControl$DisplayInfoForServer;->mWantsPositionSync:Z
-    invoke-static {v0}, Lcom/android/server/audio/MediaFocusControl$DisplayInfoForServer;->access$2000(Lcom/android/server/audio/MediaFocusControl$DisplayInfoForServer;)Z
+    invoke-static {v0}, Lcom/android/server/audio/MediaFocusControl$DisplayInfoForServer;->access$2100(Lcom/android/server/audio/MediaFocusControl$DisplayInfoForServer;)Z
 
     move-result v4
 
@@ -2873,7 +2883,7 @@
     invoke-interface {p1, v3, v4, v5}, Landroid/media/IRemoteControlClient;->plugRemoteControlDisplay(Landroid/media/IRemoteControlDisplay;II)V
 
     # getter for: Lcom/android/server/audio/MediaFocusControl$DisplayInfoForServer;->mWantsPositionSync:Z
-    invoke-static {v0}, Lcom/android/server/audio/MediaFocusControl$DisplayInfoForServer;->access$2000(Lcom/android/server/audio/MediaFocusControl$DisplayInfoForServer;)Z
+    invoke-static {v0}, Lcom/android/server/audio/MediaFocusControl$DisplayInfoForServer;->access$2100(Lcom/android/server/audio/MediaFocusControl$DisplayInfoForServer;)Z
 
     move-result v3
 
@@ -4785,6 +4795,8 @@
 
     invoke-virtual {v3, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    invoke-virtual {p0, p1}, Lcom/android/server/audio/MediaFocusControl;->notifyExtPolicyCurrentFocusAsync(Landroid/media/audiopolicy/IAudioPolicyCallback;)V
+
     monitor-exit v4
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -5213,6 +5225,24 @@
     return v0
 .end method
 
+.method notifyExtPolicyCurrentFocusAsync(Landroid/media/audiopolicy/IAudioPolicyCallback;)V
+    .locals 2
+    .param p1, "pcb"    # Landroid/media/audiopolicy/IAudioPolicyCallback;
+
+    .prologue
+    move-object v0, p1
+
+    .local v0, "pcb2":Landroid/media/audiopolicy/IAudioPolicyCallback;
+    new-instance v1, Lcom/android/server/audio/MediaFocusControl$2;
+
+    invoke-direct {v1, p0, v0}, Lcom/android/server/audio/MediaFocusControl$2;-><init>(Lcom/android/server/audio/MediaFocusControl;Landroid/media/audiopolicy/IAudioPolicyCallback;)V
+
+    .local v1, "thread":Ljava/lang/Thread;
+    invoke-virtual {v1}, Ljava/lang/Thread;->start()V
+
+    return-void
+.end method
+
 .method notifyExtPolicyFocusGrant_syncAf(Landroid/media/AudioFocusInfo;I)V
     .locals 6
     .param p1, "afi"    # Landroid/media/AudioFocusInfo;
@@ -5257,7 +5287,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "Can\'t call newAudioFocusLoser() on IAudioPolicyCallback "
+    const-string v5, "Can\'t call notifyAudioFocusGrant() on IAudioPolicyCallback "
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -5329,7 +5359,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "Can\'t call newAudioFocusLoser() on IAudioPolicyCallback "
+    const-string v5, "Can\'t call notifyAudioFocusLoss() on IAudioPolicyCallback "
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6008,7 +6038,7 @@
     if-eqz v6, :cond_0
 
     # setter for: Lcom/android/server/audio/MediaFocusControl$DisplayInfoForServer;->mWantsPositionSync:Z
-    invoke-static {v0, p2}, Lcom/android/server/audio/MediaFocusControl$DisplayInfoForServer;->access$2002(Lcom/android/server/audio/MediaFocusControl$DisplayInfoForServer;Z)Z
+    invoke-static {v0, p2}, Lcom/android/server/audio/MediaFocusControl$DisplayInfoForServer;->access$2102(Lcom/android/server/audio/MediaFocusControl$DisplayInfoForServer;Z)Z
 
     const/4 v4, 0x1
 
