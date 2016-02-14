@@ -32,18 +32,20 @@
 
 # direct methods
 .method private constructor <init>()V
-    .locals 1
+    .locals 2
 
     .prologue
+    const/4 v1, 0x1
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const v0, 0x800033
+    const/16 v0, 0x77
 
     iput v0, p0, Landroid/view/View$ForegroundInfo;->mGravity:I
 
-    const/4 v0, 0x1
+    iput-boolean v1, p0, Landroid/view/View$ForegroundInfo;->mInsidePadding:Z
 
-    iput-boolean v0, p0, Landroid/view/View$ForegroundInfo;->mInsidePadding:Z
+    iput-boolean v1, p0, Landroid/view/View$ForegroundInfo;->mBoundsChanged:Z
 
     new-instance v0, Landroid/graphics/Rect;
 

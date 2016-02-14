@@ -18013,7 +18013,11 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Landroid/view/View;->mBackgroundTint:Landroid/view/View$TintInfo;
+    iget-object v0, p0, Landroid/view/View;->mForegroundInfo:Landroid/view/View$ForegroundInfo;
+
+    invoke-static {v0}, Landroid/view/View$ForegroundInfo;->access$2300(Landroid/view/View$ForegroundInfo;)Landroid/view/View$TintInfo;
+
+    move-result-object v0
 
     iget-object v0, v0, Landroid/view/View$TintInfo;->mTintList:Landroid/content/res/ColorStateList;
 
@@ -33451,6 +33455,12 @@
     iget-object v0, p0, Landroid/view/View;->mForegroundInfo:Landroid/view/View$ForegroundInfo;
 
     invoke-static {v0, p1}, Landroid/view/View$ForegroundInfo;->access$1302(Landroid/view/View$ForegroundInfo;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+
+    iget-object v0, p0, Landroid/view/View;->mForegroundInfo:Landroid/view/View$ForegroundInfo;
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Landroid/view/View$ForegroundInfo;->access$1802(Landroid/view/View$ForegroundInfo;Z)Z
 
     if-eqz p1, :cond_5
 
