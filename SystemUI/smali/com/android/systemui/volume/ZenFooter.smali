@@ -266,12 +266,24 @@
 .end method
 
 .method public onConfigurationChanged()V
-    .locals 1
+    .locals 3
 
     .prologue
     iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mSpTexts:Lcom/android/systemui/volume/SpTexts;
 
     invoke-virtual {v0}, Lcom/android/systemui/volume/SpTexts;->update()V
+
+    iget-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mEndNowButton:Landroid/widget/TextView;
+
+    iget-object v1, p0, Lcom/android/systemui/volume/ZenFooter;->mContext:Landroid/content/Context;
+
+    const v2, 0x7f0c027e
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/android/systemui/volume/Util;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)Z
 
     return-void
 .end method
