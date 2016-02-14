@@ -2350,7 +2350,7 @@
 
     const/4 v6, 0x6
 
-    invoke-virtual {v7, v1, v6}, Ljava/util/GregorianCalendar;->roll(II)V
+    invoke-virtual {v7, v1, v6}, Ljava/util/GregorianCalendar;->add(II)V
 
     iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
