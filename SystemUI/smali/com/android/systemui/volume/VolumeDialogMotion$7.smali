@@ -43,7 +43,7 @@
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogMotion$7;->this$0:Lcom/android/systemui/volume/VolumeDialogMotion;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialogMotion;->mContents:Landroid/view/ViewGroup;
-    invoke-static {v1}, Lcom/android/systemui/volume/VolumeDialogMotion;->access$700(Lcom/android/systemui/volume/VolumeDialogMotion;)Landroid/view/ViewGroup;
+    invoke-static {v1}, Lcom/android/systemui/volume/VolumeDialogMotion;->access$800(Lcom/android/systemui/volume/VolumeDialogMotion;)Landroid/view/ViewGroup;
 
     move-result-object v1
 
@@ -64,18 +64,8 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogMotion$7;->this$0:Lcom/android/systemui/volume/VolumeDialogMotion;
 
-    # getter for: Lcom/android/systemui/volume/VolumeDialogMotion;->mChevron:Landroid/view/View;
-    invoke-static {v1}, Lcom/android/systemui/volume/VolumeDialogMotion;->access$400(Lcom/android/systemui/volume/VolumeDialogMotion;)Landroid/view/View;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/view/View;->getTag()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Integer;
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    # invokes: Lcom/android/systemui/volume/VolumeDialogMotion;->chevronPosY()I
+    invoke-static {v1}, Lcom/android/systemui/volume/VolumeDialogMotion;->access$400(Lcom/android/systemui/volume/VolumeDialogMotion;)I
 
     move-result v0
 
@@ -83,7 +73,7 @@
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogMotion$7;->this$0:Lcom/android/systemui/volume/VolumeDialogMotion;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialogMotion;->mChevron:Landroid/view/View;
-    invoke-static {v1}, Lcom/android/systemui/volume/VolumeDialogMotion;->access$400(Lcom/android/systemui/volume/VolumeDialogMotion;)Landroid/view/View;
+    invoke-static {v1}, Lcom/android/systemui/volume/VolumeDialogMotion;->access$500(Lcom/android/systemui/volume/VolumeDialogMotion;)Landroid/view/View;
 
     move-result-object v1
 

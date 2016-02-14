@@ -58,7 +58,7 @@
     iget-object v0, v0, Lcom/android/systemui/volume/VolumeDialogMotion$6;->this$0:Lcom/android/systemui/volume/VolumeDialogMotion;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialogMotion;->mDialog:Landroid/app/Dialog;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialogMotion;->access$800(Lcom/android/systemui/volume/VolumeDialogMotion;)Landroid/app/Dialog;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialogMotion;->access$900(Lcom/android/systemui/volume/VolumeDialogMotion;)Landroid/app/Dialog;
 
     move-result-object v0
 
@@ -77,7 +77,7 @@
     const/4 v1, 0x0
 
     # invokes: Lcom/android/systemui/volume/VolumeDialogMotion;->setDismissing(Z)V
-    invoke-static {v0, v1}, Lcom/android/systemui/volume/VolumeDialogMotion;->access$900(Lcom/android/systemui/volume/VolumeDialogMotion;Z)V
+    invoke-static {v0, v1}, Lcom/android/systemui/volume/VolumeDialogMotion;->access$1000(Lcom/android/systemui/volume/VolumeDialogMotion;Z)V
 
     return-void
 .end method

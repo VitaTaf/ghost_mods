@@ -73,18 +73,8 @@
     .local v1, "v":F
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialogMotion$3;->this$0:Lcom/android/systemui/volume/VolumeDialogMotion;
 
-    # getter for: Lcom/android/systemui/volume/VolumeDialogMotion;->mChevron:Landroid/view/View;
-    invoke-static {v2}, Lcom/android/systemui/volume/VolumeDialogMotion;->access$400(Lcom/android/systemui/volume/VolumeDialogMotion;)Landroid/view/View;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/view/View;->getTag()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Integer;
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+    # invokes: Lcom/android/systemui/volume/VolumeDialogMotion;->chevronPosY()I
+    invoke-static {v2}, Lcom/android/systemui/volume/VolumeDialogMotion;->access$400(Lcom/android/systemui/volume/VolumeDialogMotion;)I
 
     move-result v0
 
@@ -92,7 +82,7 @@
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialogMotion$3;->this$0:Lcom/android/systemui/volume/VolumeDialogMotion;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialogMotion;->mChevron:Landroid/view/View;
-    invoke-static {v2}, Lcom/android/systemui/volume/VolumeDialogMotion;->access$400(Lcom/android/systemui/volume/VolumeDialogMotion;)Landroid/view/View;
+    invoke-static {v2}, Lcom/android/systemui/volume/VolumeDialogMotion;->access$500(Lcom/android/systemui/volume/VolumeDialogMotion;)Landroid/view/View;
 
     move-result-object v2
 

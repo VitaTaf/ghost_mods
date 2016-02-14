@@ -94,7 +94,7 @@
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogMotion$6;->this$0:Lcom/android/systemui/volume/VolumeDialogMotion;
 
     # getter for: Lcom/android/systemui/volume/VolumeDialogMotion;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialogMotion;->access$1000(Lcom/android/systemui/volume/VolumeDialogMotion;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialogMotion;->access$1100(Lcom/android/systemui/volume/VolumeDialogMotion;)Landroid/os/Handler;
 
     move-result-object v0
 
