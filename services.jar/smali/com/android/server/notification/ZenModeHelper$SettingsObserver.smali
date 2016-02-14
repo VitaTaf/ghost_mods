@@ -106,7 +106,7 @@
     iget-object v1, p0, Lcom/android/server/notification/ZenModeHelper$SettingsObserver;->this$0:Lcom/android/server/notification/ZenModeHelper;
 
     # invokes: Lcom/android/server/notification/ZenModeHelper;->getZenModeSetting()I
-    invoke-static {v1}, Lcom/android/server/notification/ZenModeHelper;->access$700(Lcom/android/server/notification/ZenModeHelper;)I
+    invoke-static {v1}, Lcom/android/server/notification/ZenModeHelper;->access$800(Lcom/android/server/notification/ZenModeHelper;)I
 
     move-result v1
 
@@ -133,7 +133,7 @@
     move-result v1
 
     # invokes: Lcom/android/server/notification/ZenModeHelper;->setZenModeSetting(I)V
-    invoke-static {v0, v1}, Lcom/android/server/notification/ZenModeHelper;->access$800(Lcom/android/server/notification/ZenModeHelper;I)V
+    invoke-static {v0, v1}, Lcom/android/server/notification/ZenModeHelper;->access$900(Lcom/android/server/notification/ZenModeHelper;I)V
 
     :cond_1
     return-void

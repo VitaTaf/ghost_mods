@@ -70,7 +70,7 @@
     move-result-object v1
 
     # operator++ for: Lcom/android/server/audio/AudioService;->mAudioPolicyCounter:I
-    invoke-static {p1}, Lcom/android/server/audio/AudioService;->access$10508(Lcom/android/server/audio/AudioService;)I
+    invoke-static {p1}, Lcom/android/server/audio/AudioService;->access$10608(Lcom/android/server/audio/AudioService;)I
 
     move-result v2
 
@@ -95,7 +95,7 @@
     if-eqz v0, :cond_0
 
     # getter for: Lcom/android/server/audio/AudioService;->mMediaFocusControl:Lcom/android/server/audio/MediaFocusControl;
-    invoke-static {p1}, Lcom/android/server/audio/AudioService;->access$9300(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/MediaFocusControl;
+    invoke-static {p1}, Lcom/android/server/audio/AudioService;->access$9400(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/MediaFocusControl;
 
     move-result-object v0
 
@@ -225,7 +225,7 @@
     iget-object v0, p0, Lcom/android/server/audio/AudioService$AudioPolicyProxy;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mMediaFocusControl:Lcom/android/server/audio/MediaFocusControl;
-    invoke-static {v0}, Lcom/android/server/audio/AudioService;->access$9300(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/MediaFocusControl;
+    invoke-static {v0}, Lcom/android/server/audio/AudioService;->access$9400(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/MediaFocusControl;
 
     move-result-object v0
 
@@ -239,7 +239,7 @@
     iget-object v0, p0, Lcom/android/server/audio/AudioService$AudioPolicyProxy;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mMediaFocusControl:Lcom/android/server/audio/MediaFocusControl;
-    invoke-static {v0}, Lcom/android/server/audio/AudioService;->access$9300(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/MediaFocusControl;
+    invoke-static {v0}, Lcom/android/server/audio/AudioService;->access$9400(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/MediaFocusControl;
 
     move-result-object v0
 

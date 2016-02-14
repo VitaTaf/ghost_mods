@@ -177,6 +177,16 @@
     return-void
 .end method
 
+.method static synthetic access$1000(Lcom/android/server/notification/ZenModeHelper;)V
+    .locals 0
+    .param p0, "x0"    # Lcom/android/server/notification/ZenModeHelper;
+
+    .prologue
+    invoke-direct {p0}, Lcom/android/server/notification/ZenModeHelper;->dispatchOnZenModeChanged()V
+
+    return-void
+.end method
+
 .method static synthetic access$300(Lcom/android/server/notification/ZenModeHelper;)Landroid/content/Context;
     .locals 1
     .param p0, "x0"    # Lcom/android/server/notification/ZenModeHelper;
@@ -208,7 +218,18 @@
     return v0
 .end method
 
-.method static synthetic access$600(Lcom/android/server/notification/ZenModeHelper;ILandroid/net/Uri;Ljava/lang/String;Z)V
+.method static synthetic access$602(Lcom/android/server/notification/ZenModeHelper;I)I
+    .locals 0
+    .param p0, "x0"    # Lcom/android/server/notification/ZenModeHelper;
+    .param p1, "x1"    # I
+
+    .prologue
+    iput p1, p0, Lcom/android/server/notification/ZenModeHelper;->mPreviousRingerMode:I
+
+    return p1
+.end method
+
+.method static synthetic access$700(Lcom/android/server/notification/ZenModeHelper;ILandroid/net/Uri;Ljava/lang/String;Z)V
     .locals 0
     .param p0, "x0"    # Lcom/android/server/notification/ZenModeHelper;
     .param p1, "x1"    # I
@@ -222,7 +243,7 @@
     return-void
 .end method
 
-.method static synthetic access$700(Lcom/android/server/notification/ZenModeHelper;)I
+.method static synthetic access$800(Lcom/android/server/notification/ZenModeHelper;)I
     .locals 1
     .param p0, "x0"    # Lcom/android/server/notification/ZenModeHelper;
 
@@ -234,23 +255,13 @@
     return v0
 .end method
 
-.method static synthetic access$800(Lcom/android/server/notification/ZenModeHelper;I)V
+.method static synthetic access$900(Lcom/android/server/notification/ZenModeHelper;I)V
     .locals 0
     .param p0, "x0"    # Lcom/android/server/notification/ZenModeHelper;
     .param p1, "x1"    # I
 
     .prologue
     invoke-direct {p0, p1}, Lcom/android/server/notification/ZenModeHelper;->setZenModeSetting(I)V
-
-    return-void
-.end method
-
-.method static synthetic access$900(Lcom/android/server/notification/ZenModeHelper;)V
-    .locals 0
-    .param p0, "x0"    # Lcom/android/server/notification/ZenModeHelper;
-
-    .prologue
-    invoke-direct {p0}, Lcom/android/server/notification/ZenModeHelper;->dispatchOnZenModeChanged()V
 
     return-void
 .end method
@@ -386,89 +397,66 @@
 .end method
 
 .method private applyRestrictions()V
-    .locals 8
+    .locals 6
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/4 v4, 0x0
 
-    iget v6, p0, Lcom/android/server/notification/ZenModeHelper;->mZenMode:I
+    iget v5, p0, Lcom/android/server/notification/ZenModeHelper;->mZenMode:I
 
-    if-eqz v6, :cond_2
+    if-eqz v5, :cond_2
 
-    move v2, v4
+    move v2, v3
 
     .local v2, "zen":Z
     :goto_0
     iget-boolean v1, p0, Lcom/android/server/notification/ZenModeHelper;->mEffectsSuppressed:Z
 
     .local v1, "muteNotifications":Z
-    const/4 v6, 0x5
+    const/4 v5, 0x5
 
-    invoke-direct {p0, v1, v6}, Lcom/android/server/notification/ZenModeHelper;->applyRestrictions(ZI)V
+    invoke-direct {p0, v1, v5}, Lcom/android/server/notification/ZenModeHelper;->applyRestrictions(ZI)V
 
     if-eqz v2, :cond_0
 
-    iget-object v6, p0, Lcom/android/server/notification/ZenModeHelper;->mConfig:Landroid/service/notification/ZenModeConfig;
+    iget-object v5, p0, Lcom/android/server/notification/ZenModeHelper;->mConfig:Landroid/service/notification/ZenModeConfig;
 
-    iget-boolean v6, v6, Landroid/service/notification/ZenModeConfig;->allowCalls:Z
+    iget-boolean v5, v5, Landroid/service/notification/ZenModeConfig;->allowCalls:Z
 
-    if-eqz v6, :cond_1
+    if-eqz v5, :cond_1
 
     :cond_0
-    iget-boolean v6, p0, Lcom/android/server/notification/ZenModeHelper;->mEffectsSuppressed:Z
+    iget-boolean v5, p0, Lcom/android/server/notification/ZenModeHelper;->mEffectsSuppressed:Z
 
-    if-eqz v6, :cond_3
+    if-eqz v5, :cond_3
 
     :cond_1
-    move v0, v4
+    move v0, v3
 
     .local v0, "muteCalls":Z
     :goto_1
-    const/4 v6, 0x6
+    const/4 v3, 0x6
 
-    invoke-direct {p0, v0, v6}, Lcom/android/server/notification/ZenModeHelper;->applyRestrictions(ZI)V
-
-    iget v6, p0, Lcom/android/server/notification/ZenModeHelper;->mZenMode:I
-
-    const/4 v7, 0x2
-
-    if-ne v6, v7, :cond_4
-
-    move v3, v4
-
-    .local v3, "zenNone":Z
-    :goto_2
-    const/4 v5, 0x4
-
-    invoke-direct {p0, v3, v5}, Lcom/android/server/notification/ZenModeHelper;->applyRestrictions(ZI)V
-
-    invoke-direct {p0, v3, v4}, Lcom/android/server/notification/ZenModeHelper;->applyRestrictions(ZI)V
+    invoke-direct {p0, v0, v3}, Lcom/android/server/notification/ZenModeHelper;->applyRestrictions(ZI)V
 
     return-void
 
     .end local v0    # "muteCalls":Z
     .end local v1    # "muteNotifications":Z
     .end local v2    # "zen":Z
-    .end local v3    # "zenNone":Z
     :cond_2
-    move v2, v5
+    move v2, v4
 
     goto :goto_0
 
     .restart local v1    # "muteNotifications":Z
     .restart local v2    # "zen":Z
     :cond_3
-    move v0, v5
+    move v0, v4
 
     goto :goto_1
-
-    .restart local v0    # "muteCalls":Z
-    :cond_4
-    move v3, v5
-
-    goto :goto_2
 .end method
 
 .method private applyRestrictions(ZI)V
@@ -948,6 +936,8 @@
 
     iput v1, p0, Lcom/android/server/notification/ZenModeHelper;->mZenMode:I
 
+    invoke-direct {p0}, Lcom/android/server/notification/ZenModeHelper;->updateRingerModeAffectedStreams()V
+
     iget v2, p0, Lcom/android/server/notification/ZenModeHelper;->mZenMode:I
 
     invoke-direct {p0, v2}, Lcom/android/server/notification/ZenModeHelper;->setZenModeSetting(I)V
@@ -1412,6 +1402,22 @@
 
     invoke-static {v0, v1, p1}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
+    return-void
+.end method
+
+.method private updateRingerModeAffectedStreams()V
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Lcom/android/server/notification/ZenModeHelper;->mAudioManager:Landroid/media/AudioManagerInternal;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/server/notification/ZenModeHelper;->mAudioManager:Landroid/media/AudioManagerInternal;
+
+    invoke-virtual {v0}, Landroid/media/AudioManagerInternal;->updateRingerModeAffectedStreamsInternal()V
+
+    :cond_0
     return-void
 .end method
 

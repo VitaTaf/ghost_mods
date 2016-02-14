@@ -83,7 +83,8 @@
     :try_start_0
     iget-object v0, p0, Lcom/android/server/audio/AudioService$SettingsObserver;->this$0:Lcom/android/server/audio/AudioService;
 
-    invoke-virtual {v0}, Lcom/android/server/audio/AudioService;->updateRingerModeAffectedStreams()Z
+    # invokes: Lcom/android/server/audio/AudioService;->updateRingerModeAffectedStreams()Z
+    invoke-static {v0}, Lcom/android/server/audio/AudioService;->access$8700(Lcom/android/server/audio/AudioService;)Z
 
     move-result v0
 
@@ -113,7 +114,7 @@
     move-result-object v2
 
     # invokes: Lcom/android/server/audio/AudioService;->readDockAudioSettings(Landroid/content/ContentResolver;)V
-    invoke-static {v0, v2}, Lcom/android/server/audio/AudioService;->access$8700(Lcom/android/server/audio/AudioService;Landroid/content/ContentResolver;)V
+    invoke-static {v0, v2}, Lcom/android/server/audio/AudioService;->access$8800(Lcom/android/server/audio/AudioService;Landroid/content/ContentResolver;)V
 
     monitor-exit v1
 

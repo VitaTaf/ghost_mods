@@ -80,7 +80,7 @@
 
     :goto_0
     # setter for: Lcom/android/server/audio/AudioService;->mHdmiCecSink:Z
-    invoke-static {v2, v0}, Lcom/android/server/audio/AudioService;->access$9502(Lcom/android/server/audio/AudioService;Z)Z
+    invoke-static {v2, v0}, Lcom/android/server/audio/AudioService;->access$9602(Lcom/android/server/audio/AudioService;Z)Z
 
     iget-object v0, p0, Lcom/android/server/audio/AudioService$MyDisplayStatusCallback;->this$0:Lcom/android/server/audio/AudioService;
 
@@ -94,7 +94,7 @@
     iget-object v0, p0, Lcom/android/server/audio/AudioService$MyDisplayStatusCallback;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mHdmiCecSink:Z
-    invoke-static {v0}, Lcom/android/server/audio/AudioService;->access$9500(Lcom/android/server/audio/AudioService;)Z
+    invoke-static {v0}, Lcom/android/server/audio/AudioService;->access$9600(Lcom/android/server/audio/AudioService;)Z
 
     move-result v0
 
@@ -112,7 +112,7 @@
     iget-object v0, p0, Lcom/android/server/audio/AudioService$MyDisplayStatusCallback;->this$0:Lcom/android/server/audio/AudioService;
 
     # invokes: Lcom/android/server/audio/AudioService;->checkAllFixedVolumeDevices()V
-    invoke-static {v0}, Lcom/android/server/audio/AudioService;->access$9600(Lcom/android/server/audio/AudioService;)V
+    invoke-static {v0}, Lcom/android/server/audio/AudioService;->access$9700(Lcom/android/server/audio/AudioService;)V
 
     monitor-exit v1
 

@@ -54,7 +54,7 @@
     move v5, p5
 
     # invokes: Lcom/android/server/audio/AudioService;->adjustStreamVolume(IIILjava/lang/String;I)V
-    invoke-static/range {v0 .. v5}, Lcom/android/server/audio/AudioService;->access$10200(Lcom/android/server/audio/AudioService;IIILjava/lang/String;I)V
+    invoke-static/range {v0 .. v5}, Lcom/android/server/audio/AudioService;->access$10300(Lcom/android/server/audio/AudioService;IIILjava/lang/String;I)V
 
     return-void
 .end method
@@ -81,7 +81,7 @@
     move v5, p5
 
     # invokes: Lcom/android/server/audio/AudioService;->adjustSuggestedStreamVolume(IIILjava/lang/String;I)V
-    invoke-static/range {v0 .. v5}, Lcom/android/server/audio/AudioService;->access$10100(Lcom/android/server/audio/AudioService;IIILjava/lang/String;I)V
+    invoke-static/range {v0 .. v5}, Lcom/android/server/audio/AudioService;->access$10200(Lcom/android/server/audio/AudioService;IIILjava/lang/String;I)V
 
     return-void
 .end method
@@ -106,12 +106,12 @@
     iget-object v0, p0, Lcom/android/server/audio/AudioService$AudioServiceInternal;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mControllerService:Lcom/android/server/audio/AudioService$ControllerService;
-    invoke-static {v0}, Lcom/android/server/audio/AudioService;->access$10400(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$ControllerService;
+    invoke-static {v0}, Lcom/android/server/audio/AudioService;->access$10500(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$ControllerService;
 
     move-result-object v0
 
     # getter for: Lcom/android/server/audio/AudioService$ControllerService;->mUid:I
-    invoke-static {v0}, Lcom/android/server/audio/AudioService$ControllerService;->access$9800(Lcom/android/server/audio/AudioService$ControllerService;)I
+    invoke-static {v0}, Lcom/android/server/audio/AudioService$ControllerService;->access$9900(Lcom/android/server/audio/AudioService$ControllerService;)I
 
     move-result v0
 
@@ -126,16 +126,21 @@
     iget-object v0, p0, Lcom/android/server/audio/AudioService$AudioServiceInternal;->this$0:Lcom/android/server/audio/AudioService;
 
     # setter for: Lcom/android/server/audio/AudioService;->mRingerModeDelegate:Landroid/media/AudioManagerInternal$RingerModeDelegate;
-    invoke-static {v0, p1}, Lcom/android/server/audio/AudioService;->access$10002(Lcom/android/server/audio/AudioService;Landroid/media/AudioManagerInternal$RingerModeDelegate;)Landroid/media/AudioManagerInternal$RingerModeDelegate;
+    invoke-static {v0, p1}, Lcom/android/server/audio/AudioService;->access$10102(Lcom/android/server/audio/AudioService;Landroid/media/AudioManagerInternal$RingerModeDelegate;)Landroid/media/AudioManagerInternal$RingerModeDelegate;
 
     iget-object v0, p0, Lcom/android/server/audio/AudioService$AudioServiceInternal;->this$0:Lcom/android/server/audio/AudioService;
 
     # getter for: Lcom/android/server/audio/AudioService;->mRingerModeDelegate:Landroid/media/AudioManagerInternal$RingerModeDelegate;
-    invoke-static {v0}, Lcom/android/server/audio/AudioService;->access$10000(Lcom/android/server/audio/AudioService;)Landroid/media/AudioManagerInternal$RingerModeDelegate;
+    invoke-static {v0}, Lcom/android/server/audio/AudioService;->access$10100(Lcom/android/server/audio/AudioService;)Landroid/media/AudioManagerInternal$RingerModeDelegate;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/server/audio/AudioService$AudioServiceInternal;->this$0:Lcom/android/server/audio/AudioService;
+
+    # invokes: Lcom/android/server/audio/AudioService;->updateRingerModeAffectedStreams()Z
+    invoke-static {v0}, Lcom/android/server/audio/AudioService;->access$8700(Lcom/android/server/audio/AudioService;)Z
 
     invoke-virtual {p0}, Lcom/android/server/audio/AudioService$AudioServiceInternal;->getRingerModeInternal()I
 
@@ -184,7 +189,56 @@
     move v5, p5
 
     # invokes: Lcom/android/server/audio/AudioService;->setStreamVolume(IIILjava/lang/String;I)V
-    invoke-static/range {v0 .. v5}, Lcom/android/server/audio/AudioService;->access$10300(Lcom/android/server/audio/AudioService;IIILjava/lang/String;I)V
+    invoke-static/range {v0 .. v5}, Lcom/android/server/audio/AudioService;->access$10400(Lcom/android/server/audio/AudioService;IIILjava/lang/String;I)V
 
     return-void
+.end method
+
+.method public updateRingerModeAffectedStreamsInternal()V
+    .locals 4
+
+    .prologue
+    iget-object v0, p0, Lcom/android/server/audio/AudioService$AudioServiceInternal;->this$0:Lcom/android/server/audio/AudioService;
+
+    # getter for: Lcom/android/server/audio/AudioService;->mSettingsLock:Ljava/lang/Object;
+    invoke-static {v0}, Lcom/android/server/audio/AudioService;->access$7100(Lcom/android/server/audio/AudioService;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Lcom/android/server/audio/AudioService$AudioServiceInternal;->this$0:Lcom/android/server/audio/AudioService;
+
+    # invokes: Lcom/android/server/audio/AudioService;->updateRingerModeAffectedStreams()Z
+    invoke-static {v0}, Lcom/android/server/audio/AudioService;->access$8700(Lcom/android/server/audio/AudioService;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/server/audio/AudioService$AudioServiceInternal;->this$0:Lcom/android/server/audio/AudioService;
+
+    invoke-virtual {p0}, Lcom/android/server/audio/AudioService$AudioServiceInternal;->getRingerModeInternal()I
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    # invokes: Lcom/android/server/audio/AudioService;->setRingerModeInt(IZ)V
+    invoke-static {v0, v2, v3}, Lcom/android/server/audio/AudioService;->access$6500(Lcom/android/server/audio/AudioService;IZ)V
+
+    :cond_0
+    monitor-exit v1
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

@@ -88,7 +88,7 @@
     iget-object v0, p0, Lcom/android/server/notification/ZenModeHelper$H;->this$0:Lcom/android/server/notification/ZenModeHelper;
 
     # invokes: Lcom/android/server/notification/ZenModeHelper;->dispatchOnZenModeChanged()V
-    invoke-static {v0}, Lcom/android/server/notification/ZenModeHelper;->access$900(Lcom/android/server/notification/ZenModeHelper;)V
+    invoke-static {v0}, Lcom/android/server/notification/ZenModeHelper;->access$1000(Lcom/android/server/notification/ZenModeHelper;)V
 
     goto :goto_0
 

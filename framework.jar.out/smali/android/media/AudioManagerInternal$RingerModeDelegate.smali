@@ -18,6 +18,9 @@
 .method public abstract canVolumeDownEnterSilent()Z
 .end method
 
+.method public abstract getRingerModeAffectedStreams(I)I
+.end method
+
 .method public abstract onSetRingerModeExternal(IILjava/lang/String;ILandroid/media/VolumePolicy;)I
 .end method
 

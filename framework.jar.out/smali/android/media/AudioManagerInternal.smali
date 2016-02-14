@@ -43,3 +43,6 @@
 
 .method public abstract setStreamVolumeForUid(IIILjava/lang/String;I)V
 .end method
+
+.method public abstract updateRingerModeAffectedStreamsInternal()V
+.end method
