@@ -20482,12 +20482,13 @@
     goto :goto_0
 .end method
 
-.method private handleAppCrashLocked(Lcom/android/server/am/ProcessRecord;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+.method private handleAppCrashLocked(Lcom/android/server/am/ProcessRecord;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
     .locals 17
     .param p1, "app"    # Lcom/android/server/am/ProcessRecord;
-    .param p2, "shortMsg"    # Ljava/lang/String;
-    .param p3, "longMsg"    # Ljava/lang/String;
-    .param p4, "stackTrace"    # Ljava/lang/String;
+    .param p2, "reason"    # Ljava/lang/String;
+    .param p3, "shortMsg"    # Ljava/lang/String;
+    .param p4, "longMsg"    # Ljava/lang/String;
+    .param p5, "stackTrace"    # Ljava/lang/String;
 
     .prologue
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -20693,11 +20694,11 @@
 
     new-instance v3, Lcom/android/server/am/ActivityManagerService$BadProcessInfo;
 
-    move-object/from16 v6, p2
+    move-object/from16 v6, p3
 
-    move-object/from16 v7, p3
+    move-object/from16 v7, p4
 
-    move-object/from16 v8, p4
+    move-object/from16 v8, p5
 
     invoke-direct/range {v3 .. v8}, Lcom/android/server/am/ActivityManagerService$BadProcessInfo;-><init>(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
@@ -20816,7 +20817,9 @@
 
     move-object/from16 v0, p1
 
-    invoke-virtual {v3, v0}, Lcom/android/server/am/ActivityStackSupervisor;->finishTopRunningActivityLocked(Lcom/android/server/am/ProcessRecord;)V
+    move-object/from16 v1, p2
+
+    invoke-virtual {v3, v0, v1}, Lcom/android/server/am/ActivityStackSupervisor;->finishTopRunningActivityLocked(Lcom/android/server/am/ProcessRecord;Ljava/lang/String;)V
 
     goto :goto_2
 
@@ -22395,7 +22398,19 @@
 
     invoke-virtual {p1}, Lcom/android/server/am/ProcessRecord;->stopFreezingAllLocked()V
 
-    invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/server/am/ActivityManagerService;->handleAppCrashLocked(Lcom/android/server/am/ProcessRecord;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+    const-string v2, "force-crash"
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    invoke-direct/range {v0 .. v5}, Lcom/android/server/am/ActivityManagerService;->handleAppCrashLocked(Lcom/android/server/am/ProcessRecord;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -59985,7 +60000,7 @@
 .end method
 
 .method killAppAtUsersRequest(Lcom/android/server/am/ProcessRecord;Landroid/app/Dialog;)V
-    .locals 3
+    .locals 6
     .param p1, "app"    # Lcom/android/server/am/ProcessRecord;
     .param p2, "fromDialog"    # Landroid/app/Dialog;
 
@@ -60037,13 +60052,19 @@
 
     if-eq v0, v1, :cond_2
 
-    const/4 v0, 0x0
+    const-string v2, "user-terminated"
 
-    const/4 v1, 0x0
+    const/4 v3, 0x0
 
-    const/4 v2, 0x0
+    const/4 v4, 0x0
 
-    invoke-direct {p0, p1, v0, v1, v2}, Lcom/android/server/am/ActivityManagerService;->handleAppCrashLocked(Lcom/android/server/am/ProcessRecord;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+    const/4 v5, 0x0
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    invoke-direct/range {v0 .. v5}, Lcom/android/server/am/ActivityManagerService;->handleAppCrashLocked(Lcom/android/server/am/ProcessRecord;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
     const-string v0, "user request after error"
 

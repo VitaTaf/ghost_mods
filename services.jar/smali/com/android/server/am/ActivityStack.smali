@@ -2049,7 +2049,7 @@
 
     const/4 v5, 0x0
 
-    const-string v6, "reset"
+    const-string v6, "move-affinity"
 
     const/4 v7, 0x0
 
@@ -2923,7 +2923,7 @@
 
     const/4 v6, 0x0
 
-    const-string v7, "no-history"
+    const-string v7, "resume-no-history"
 
     const/4 v8, 0x0
 
@@ -7948,9 +7948,10 @@
     return-void
 .end method
 
-.method final finishTopRunningActivityLocked(Lcom/android/server/am/ProcessRecord;)V
+.method final finishTopRunningActivityLocked(Lcom/android/server/am/ProcessRecord;Ljava/lang/String;)V
     .locals 8
     .param p1, "app"    # Lcom/android/server/am/ProcessRecord;
+    .param p2, "reason"    # Ljava/lang/String;
 
     .prologue
     const/4 v3, 0x0
@@ -8018,9 +8019,9 @@
     move-result v6
 
     .local v6, "activityNdx":I
-    const-string v4, "crashed"
-
     move-object v0, p0
+
+    move-object v4, p2
 
     move v5, v2
 
@@ -8123,9 +8124,9 @@
 
     invoke-static {v0, v4}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string v4, "crashed"
-
     move-object v0, p0
+
+    move-object v4, p2
 
     move v5, v2
 
@@ -10503,7 +10504,7 @@
 
     iget-object v8, v0, Lcom/android/server/am/ActivityRecord;->appToken:Landroid/view/IApplicationToken$Stub;
 
-    const-string v11, "navigate-up"
+    const-string v11, "navigate-top"
 
     const/4 v12, 0x1
 
@@ -12225,7 +12226,7 @@
 
     const/4 v5, 0x0
 
-    const-string v6, "reset"
+    const-string v6, "reset-task"
 
     const/4 v7, 0x0
 
@@ -14351,7 +14352,7 @@
 
     const/4 v3, 0x0
 
-    const-string v4, "no-history"
+    const-string v4, "stop-no-history"
 
     move-object v0, p0
 

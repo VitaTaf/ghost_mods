@@ -4478,9 +4478,10 @@
     return-void
 .end method
 
-.method finishTopRunningActivityLocked(Lcom/android/server/am/ProcessRecord;)V
+.method finishTopRunningActivityLocked(Lcom/android/server/am/ProcessRecord;Ljava/lang/String;)V
     .locals 6
     .param p1, "app"    # Lcom/android/server/am/ProcessRecord;
+    .param p2, "reason"    # Ljava/lang/String;
 
     .prologue
     iget-object v5, p0, Lcom/android/server/am/ActivityStackSupervisor;->mActivityDisplays:Landroid/util/SparseArray;
@@ -4524,7 +4525,7 @@
     check-cast v2, Lcom/android/server/am/ActivityStack;
 
     .local v2, "stack":Lcom/android/server/am/ActivityStack;
-    invoke-virtual {v2, p1}, Lcom/android/server/am/ActivityStack;->finishTopRunningActivityLocked(Lcom/android/server/am/ProcessRecord;)V
+    invoke-virtual {v2, p1, p2}, Lcom/android/server/am/ActivityStack;->finishTopRunningActivityLocked(Lcom/android/server/am/ProcessRecord;Ljava/lang/String;)V
 
     add-int/lit8 v3, v3, 0x1
 

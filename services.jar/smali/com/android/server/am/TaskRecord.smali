@@ -3219,7 +3219,7 @@
 
     const/4 v3, 0x0
 
-    const-string v4, "clear"
+    const-string v4, "clear-task-index"
 
     move v5, v2
 
@@ -3333,7 +3333,7 @@
 
     const/4 v3, 0x0
 
-    const-string v4, "clear"
+    const-string v4, "clear-task-stack"
 
     const/4 v5, 0x0
 
@@ -3371,7 +3371,7 @@
 
     const/4 v5, 0x0
 
-    const-string v6, "clear"
+    const-string v6, "clear-task-top"
 
     const/4 v7, 0x0
 
