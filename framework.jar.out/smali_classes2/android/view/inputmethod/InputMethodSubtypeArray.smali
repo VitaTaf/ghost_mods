@@ -113,639 +113,612 @@
 .end method
 
 .method private static compress([B)[B
-    .locals 8
+    .locals 9
     .param p0, "data"    # [B
 
     .prologue
     const/4 v5, 0x0
 
-    const/4 v1, 0x0
+    :try_start_0
+    new-instance v1, Ljava/io/ByteArrayOutputStream;
+
+    invoke-direct {v1}, Ljava/io/ByteArrayOutputStream;-><init>()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
 
     .local v1, "resultStream":Ljava/io/ByteArrayOutputStream;
-    const/4 v3, 0x0
+    const/4 v6, 0x0
 
-    .local v3, "zipper":Ljava/util/zip/GZIPOutputStream;
-    :try_start_0
-    new-instance v2, Ljava/io/ByteArrayOutputStream;
-
-    invoke-direct {v2}, Ljava/io/ByteArrayOutputStream;-><init>()V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .end local v1    # "resultStream":Ljava/io/ByteArrayOutputStream;
-    .local v2, "resultStream":Ljava/io/ByteArrayOutputStream;
     :try_start_1
-    new-instance v4, Ljava/util/zip/GZIPOutputStream;
+    new-instance v3, Ljava/util/zip/GZIPOutputStream;
 
-    invoke-direct {v4, v2}, Ljava/util/zip/GZIPOutputStream;-><init>(Ljava/io/OutputStream;)V
+    invoke-direct {v3, v1}, Ljava/util/zip/GZIPOutputStream;-><init>(Ljava/io/OutputStream;)V
     :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_7
+    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .end local v3    # "zipper":Ljava/util/zip/GZIPOutputStream;
-    .local v4, "zipper":Ljava/util/zip/GZIPOutputStream;
+    .local v3, "zipper":Ljava/util/zip/GZIPOutputStream;
+    const/4 v7, 0x0
+
     :try_start_2
-    invoke-virtual {v4, p0}, Ljava/util/zip/GZIPOutputStream;->write([B)V
-    :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_8
-    .catchall {:try_start_2 .. :try_end_2} :catchall_2
+    invoke-virtual {v3, p0}, Ljava/util/zip/GZIPOutputStream;->write([B)V
 
-    if-eqz v4, :cond_0
-
-    :try_start_3
-    invoke-virtual {v4}, Ljava/util/zip/GZIPOutputStream;->close()V
-    :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
-
-    :cond_0
-    move-object v3, v4
-
-    .end local v4    # "zipper":Ljava/util/zip/GZIPOutputStream;
-    .restart local v3    # "zipper":Ljava/util/zip/GZIPOutputStream;
-    :goto_0
-    if-eqz v2, :cond_1
-
-    :try_start_4
-    invoke-virtual {v2}, Ljava/io/ByteArrayOutputStream;->close()V
-    :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
-
-    :cond_1
-    move-object v1, v2
-
-    .end local v2    # "resultStream":Ljava/io/ByteArrayOutputStream;
-    .restart local v1    # "resultStream":Ljava/io/ByteArrayOutputStream;
-    :goto_1
-    if-eqz v1, :cond_2
+    invoke-virtual {v3}, Ljava/util/zip/GZIPOutputStream;->finish()V
 
     invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+    :try_end_2
+    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_4
+    .catchall {:try_start_2 .. :try_end_2} :catchall_3
 
-    move-result-object v5
+    move-result-object v4
 
-    :cond_2
-    :goto_2
-    return-object v5
+    if-eqz v3, :cond_0
+
+    if-eqz v5, :cond_3
+
+    :try_start_3
+    invoke-virtual {v3}, Ljava/util/zip/GZIPOutputStream;->close()V
+    :try_end_3
+    .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_0
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    :cond_0
+    :goto_0
+    if-eqz v1, :cond_1
+
+    if-eqz v5, :cond_4
+
+    :try_start_4
+    invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->close()V
+    :try_end_4
+    .catch Ljava/lang/Throwable; {:try_start_4 .. :try_end_4} :catch_3
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_2
 
     .end local v1    # "resultStream":Ljava/io/ByteArrayOutputStream;
     .end local v3    # "zipper":Ljava/util/zip/GZIPOutputStream;
-    .restart local v2    # "resultStream":Ljava/io/ByteArrayOutputStream;
-    .restart local v4    # "zipper":Ljava/util/zip/GZIPOutputStream;
-    :catch_0
-    move-exception v0
+    :cond_1
+    :goto_1
+    return-object v4
 
-    .local v0, "e":Ljava/io/IOException;
-    const/4 v3, 0x0
-
-    .end local v4    # "zipper":Ljava/util/zip/GZIPOutputStream;
+    .restart local v1    # "resultStream":Ljava/io/ByteArrayOutputStream;
     .restart local v3    # "zipper":Ljava/util/zip/GZIPOutputStream;
-    const-string v6, "InputMethodSubtypeArray"
+    :catch_0
+    move-exception v2
 
-    const-string v7, "Failed to close the stream."
-
-    invoke-static {v6, v7, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    .local v2, "x2":Ljava/lang/Throwable;
+    :try_start_5
+    invoke-virtual {v7, v2}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+    :try_end_5
+    .catch Ljava/lang/Throwable; {:try_start_5 .. :try_end_5} :catch_1
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     goto :goto_0
 
-    .end local v0    # "e":Ljava/io/IOException;
+    .end local v2    # "x2":Ljava/lang/Throwable;
+    .end local v3    # "zipper":Ljava/util/zip/GZIPOutputStream;
     :catch_1
-    move-exception v0
+    move-exception v4
 
-    .restart local v0    # "e":Ljava/io/IOException;
-    const/4 v1, 0x0
+    :try_start_6
+    throw v4
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
-    .end local v2    # "resultStream":Ljava/io/ByteArrayOutputStream;
-    .restart local v1    # "resultStream":Ljava/io/ByteArrayOutputStream;
-    const-string v6, "InputMethodSubtypeArray"
+    :catchall_0
+    move-exception v6
 
-    const-string v7, "Failed to close the stream."
+    move-object v8, v6
 
-    invoke-static {v6, v7, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    move-object v6, v4
 
-    goto :goto_1
+    move-object v4, v8
 
-    .end local v0    # "e":Ljava/io/IOException;
+    :goto_2
+    if-eqz v1, :cond_2
+
+    if-eqz v6, :cond_7
+
+    :try_start_7
+    invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->close()V
+    :try_end_7
+    .catch Ljava/lang/Throwable; {:try_start_7 .. :try_end_7} :catch_6
+    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_2
+
+    :cond_2
+    :goto_3
+    :try_start_8
+    throw v4
+    :try_end_8
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_2
+
+    .end local v1    # "resultStream":Ljava/io/ByteArrayOutputStream;
     :catch_2
     move-exception v0
 
-    .restart local v0    # "e":Ljava/io/IOException;
-    :goto_3
-    if-eqz v3, :cond_3
+    .local v0, "e":Ljava/lang/Exception;
+    const-string v4, "InputMethodSubtypeArray"
 
-    :try_start_5
-    invoke-virtual {v3}, Ljava/util/zip/GZIPOutputStream;->close()V
-    :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_4
+    const-string v6, "Failed to compress the data."
 
+    invoke-static {v4, v6, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    move-object v4, v5
+
+    goto :goto_1
+
+    .end local v0    # "e":Ljava/lang/Exception;
+    .restart local v1    # "resultStream":Ljava/io/ByteArrayOutputStream;
+    .restart local v3    # "zipper":Ljava/util/zip/GZIPOutputStream;
     :cond_3
-    :goto_4
-    if-eqz v1, :cond_2
+    :try_start_9
+    invoke-virtual {v3}, Ljava/util/zip/GZIPOutputStream;->close()V
+    :try_end_9
+    .catch Ljava/lang/Throwable; {:try_start_9 .. :try_end_9} :catch_1
+    .catchall {:try_start_9 .. :try_end_9} :catchall_1
 
-    :try_start_6
-    invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->close()V
-    :try_end_6
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_3
+    goto :goto_0
+
+    .end local v3    # "zipper":Ljava/util/zip/GZIPOutputStream;
+    :catchall_1
+    move-exception v4
+
+    move-object v6, v5
 
     goto :goto_2
 
+    .restart local v3    # "zipper":Ljava/util/zip/GZIPOutputStream;
     :catch_3
-    move-exception v0
+    move-exception v2
 
-    const/4 v1, 0x0
+    .restart local v2    # "x2":Ljava/lang/Throwable;
+    :try_start_a
+    invoke-virtual {v6, v2}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
-    const-string v6, "InputMethodSubtypeArray"
+    goto :goto_1
 
-    const-string v7, "Failed to close the stream."
+    .end local v2    # "x2":Ljava/lang/Throwable;
+    :cond_4
+    invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->close()V
+    :try_end_a
+    .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_2
 
-    invoke-static {v6, v7, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_2
+    goto :goto_1
 
     :catch_4
-    move-exception v0
+    move-exception v4
 
-    const/4 v3, 0x0
+    :try_start_b
+    throw v4
+    :try_end_b
+    .catchall {:try_start_b .. :try_end_b} :catchall_2
 
-    const-string v6, "InputMethodSubtypeArray"
+    :catchall_2
+    move-exception v6
 
-    const-string v7, "Failed to close the stream."
+    move-object v8, v6
 
-    invoke-static {v6, v7, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    move-object v6, v4
 
-    goto :goto_4
+    move-object v4, v8
 
-    .end local v0    # "e":Ljava/io/IOException;
-    :catchall_0
-    move-exception v5
+    :goto_4
+    if-eqz v3, :cond_5
 
-    :goto_5
-    if-eqz v3, :cond_4
+    if-eqz v6, :cond_6
 
-    :try_start_7
+    :try_start_c
     invoke-virtual {v3}, Ljava/util/zip/GZIPOutputStream;->close()V
-    :try_end_7
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_5
-
-    :cond_4
-    :goto_6
-    if-eqz v1, :cond_5
-
-    :try_start_8
-    invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->close()V
-    :try_end_8
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_6
+    :try_end_c
+    .catch Ljava/lang/Throwable; {:try_start_c .. :try_end_c} :catch_5
+    .catchall {:try_start_c .. :try_end_c} :catchall_1
 
     :cond_5
-    :goto_7
-    throw v5
+    :goto_5
+    :try_start_d
+    throw v4
 
     :catch_5
-    move-exception v0
+    move-exception v2
 
-    .restart local v0    # "e":Ljava/io/IOException;
-    const/4 v3, 0x0
+    .restart local v2    # "x2":Ljava/lang/Throwable;
+    invoke-virtual {v6, v2}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
-    const-string v6, "InputMethodSubtypeArray"
+    goto :goto_5
 
-    const-string v7, "Failed to close the stream."
+    .end local v2    # "x2":Ljava/lang/Throwable;
+    :cond_6
+    invoke-virtual {v3}, Ljava/util/zip/GZIPOutputStream;->close()V
+    :try_end_d
+    .catch Ljava/lang/Throwable; {:try_start_d .. :try_end_d} :catch_1
+    .catchall {:try_start_d .. :try_end_d} :catchall_1
 
-    invoke-static {v6, v7, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    goto :goto_5
 
-    goto :goto_6
-
-    .end local v0    # "e":Ljava/io/IOException;
+    .end local v3    # "zipper":Ljava/util/zip/GZIPOutputStream;
     :catch_6
-    move-exception v0
+    move-exception v2
 
-    .restart local v0    # "e":Ljava/io/IOException;
-    const/4 v1, 0x0
+    .restart local v2    # "x2":Ljava/lang/Throwable;
+    :try_start_e
+    invoke-virtual {v6, v2}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
-    const-string v6, "InputMethodSubtypeArray"
-
-    const-string v7, "Failed to close the stream."
-
-    invoke-static {v6, v7, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_7
-
-    .end local v0    # "e":Ljava/io/IOException;
-    .end local v1    # "resultStream":Ljava/io/ByteArrayOutputStream;
-    .restart local v2    # "resultStream":Ljava/io/ByteArrayOutputStream;
-    :catchall_1
-    move-exception v5
-
-    move-object v1, v2
-
-    .end local v2    # "resultStream":Ljava/io/ByteArrayOutputStream;
-    .restart local v1    # "resultStream":Ljava/io/ByteArrayOutputStream;
-    goto :goto_5
-
-    .end local v1    # "resultStream":Ljava/io/ByteArrayOutputStream;
-    .end local v3    # "zipper":Ljava/util/zip/GZIPOutputStream;
-    .restart local v2    # "resultStream":Ljava/io/ByteArrayOutputStream;
-    .restart local v4    # "zipper":Ljava/util/zip/GZIPOutputStream;
-    :catchall_2
-    move-exception v5
-
-    move-object v3, v4
-
-    .end local v4    # "zipper":Ljava/util/zip/GZIPOutputStream;
-    .restart local v3    # "zipper":Ljava/util/zip/GZIPOutputStream;
-    move-object v1, v2
-
-    .end local v2    # "resultStream":Ljava/io/ByteArrayOutputStream;
-    .restart local v1    # "resultStream":Ljava/io/ByteArrayOutputStream;
-    goto :goto_5
-
-    .end local v1    # "resultStream":Ljava/io/ByteArrayOutputStream;
-    .restart local v2    # "resultStream":Ljava/io/ByteArrayOutputStream;
-    :catch_7
-    move-exception v0
-
-    move-object v1, v2
-
-    .end local v2    # "resultStream":Ljava/io/ByteArrayOutputStream;
-    .restart local v1    # "resultStream":Ljava/io/ByteArrayOutputStream;
     goto :goto_3
 
-    .end local v1    # "resultStream":Ljava/io/ByteArrayOutputStream;
-    .end local v3    # "zipper":Ljava/util/zip/GZIPOutputStream;
-    .restart local v2    # "resultStream":Ljava/io/ByteArrayOutputStream;
-    .restart local v4    # "zipper":Ljava/util/zip/GZIPOutputStream;
-    :catch_8
-    move-exception v0
+    .end local v2    # "x2":Ljava/lang/Throwable;
+    :cond_7
+    invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->close()V
+    :try_end_e
+    .catch Ljava/lang/Exception; {:try_start_e .. :try_end_e} :catch_2
 
-    move-object v3, v4
-
-    .end local v4    # "zipper":Ljava/util/zip/GZIPOutputStream;
-    .restart local v3    # "zipper":Ljava/util/zip/GZIPOutputStream;
-    move-object v1, v2
-
-    .end local v2    # "resultStream":Ljava/io/ByteArrayOutputStream;
-    .restart local v1    # "resultStream":Ljava/io/ByteArrayOutputStream;
     goto :goto_3
+
+    .restart local v3    # "zipper":Ljava/util/zip/GZIPOutputStream;
+    :catchall_3
+    move-exception v4
+
+    move-object v6, v5
+
+    goto :goto_4
 .end method
 
 .method private static decompress([BI)[B
-    .locals 12
+    .locals 13
     .param p0, "data"    # [B
     .param p1, "expectedSize"    # I
 
     .prologue
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
-    const/4 v1, 0x0
+    :try_start_0
+    new-instance v1, Ljava/io/ByteArrayInputStream;
+
+    invoke-direct {v1, p0}, Ljava/io/ByteArrayInputStream;-><init>([B)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
 
     .local v1, "inputStream":Ljava/io/ByteArrayInputStream;
-    const/4 v7, 0x0
+    const/4 v9, 0x0
 
-    .local v7, "unzipper":Ljava/util/zip/GZIPInputStream;
-    :try_start_0
-    new-instance v2, Ljava/io/ByteArrayInputStream;
-
-    invoke-direct {v2, p0}, Ljava/io/ByteArrayInputStream;-><init>([B)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_4
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .end local v1    # "inputStream":Ljava/io/ByteArrayInputStream;
-    .local v2, "inputStream":Ljava/io/ByteArrayInputStream;
     :try_start_1
-    new-instance v8, Ljava/util/zip/GZIPInputStream;
+    new-instance v6, Ljava/util/zip/GZIPInputStream;
 
-    invoke-direct {v8, v2}, Ljava/util/zip/GZIPInputStream;-><init>(Ljava/io/InputStream;)V
+    invoke-direct {v6, v1}, Ljava/util/zip/GZIPInputStream;-><init>(Ljava/io/InputStream;)V
     :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_9
+    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .end local v7    # "unzipper":Ljava/util/zip/GZIPInputStream;
-    .local v8, "unzipper":Ljava/util/zip/GZIPInputStream;
+    .local v6, "unzipper":Ljava/util/zip/GZIPInputStream;
+    const/4 v10, 0x0
+
     :try_start_2
-    new-array v5, p1, [B
+    new-array v4, p1, [B
 
-    .local v5, "result":[B
-    const/4 v6, 0x0
+    .local v4, "result":[B
+    const/4 v5, 0x0
 
-    .local v6, "totalReadBytes":I
+    .local v5, "totalReadBytes":I
     :goto_0
-    array-length v10, v5
+    array-length v11, v4
 
-    if-ge v6, v10, :cond_0
+    if-ge v5, v11, :cond_0
 
-    array-length v10, v5
+    array-length v11, v4
 
-    sub-int v4, v10, v6
+    sub-int v3, v11, v5
 
-    .local v4, "restBytes":I
-    invoke-virtual {v8, v5, v6, v4}, Ljava/util/zip/GZIPInputStream;->read([BII)I
+    .local v3, "restBytes":I
+    invoke-virtual {v6, v4, v5, v3}, Ljava/util/zip/GZIPInputStream;->read([BII)I
     :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_a
-    .catchall {:try_start_2 .. :try_end_2} :catchall_2
+    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_6
+    .catchall {:try_start_2 .. :try_end_2} :catchall_3
 
-    move-result v3
+    move-result v2
 
-    .local v3, "readBytes":I
-    if-gez v3, :cond_3
+    .local v2, "readBytes":I
+    if-gez v2, :cond_4
 
-    .end local v3    # "readBytes":I
-    .end local v4    # "restBytes":I
+    .end local v2    # "readBytes":I
+    .end local v3    # "restBytes":I
     :cond_0
-    if-eq p1, v6, :cond_4
+    if-eq p1, v5, :cond_8
 
-    if-eqz v8, :cond_1
+    if-eqz v6, :cond_1
+
+    if-eqz v8, :cond_6
 
     :try_start_3
-    invoke-virtual {v8}, Ljava/util/zip/GZIPInputStream;->close()V
+    invoke-virtual {v6}, Ljava/util/zip/GZIPInputStream;->close()V
     :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
+    .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_0
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     :cond_1
     :goto_1
-    if-eqz v2, :cond_2
+    if-eqz v1, :cond_2
+
+    if-eqz v8, :cond_7
 
     :try_start_4
-    invoke-virtual {v2}, Ljava/io/ByteArrayInputStream;->close()V
+    invoke-virtual {v1}, Ljava/io/ByteArrayInputStream;->close()V
     :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
+    .catch Ljava/lang/Throwable; {:try_start_4 .. :try_end_4} :catch_3
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_2
 
     :cond_2
     :goto_2
-    move-object v7, v8
-
-    .end local v8    # "unzipper":Ljava/util/zip/GZIPInputStream;
-    .restart local v7    # "unzipper":Ljava/util/zip/GZIPInputStream;
-    move-object v1, v2
-
-    .end local v2    # "inputStream":Ljava/io/ByteArrayInputStream;
-    .restart local v1    # "inputStream":Ljava/io/ByteArrayInputStream;
-    move-object v5, v9
-
-    .end local v5    # "result":[B
-    .end local v6    # "totalReadBytes":I
-    :goto_3
-    return-object v5
+    move-object v4, v8
 
     .end local v1    # "inputStream":Ljava/io/ByteArrayInputStream;
-    .end local v7    # "unzipper":Ljava/util/zip/GZIPInputStream;
-    .restart local v2    # "inputStream":Ljava/io/ByteArrayInputStream;
-    .restart local v3    # "readBytes":I
-    .restart local v4    # "restBytes":I
-    .restart local v5    # "result":[B
-    .restart local v6    # "totalReadBytes":I
-    .restart local v8    # "unzipper":Ljava/util/zip/GZIPInputStream;
+    .end local v4    # "result":[B
+    .end local v5    # "totalReadBytes":I
+    .end local v6    # "unzipper":Ljava/util/zip/GZIPInputStream;
     :cond_3
-    add-int/2addr v6, v3
+    :goto_3
+    return-object v4
+
+    .restart local v1    # "inputStream":Ljava/io/ByteArrayInputStream;
+    .restart local v2    # "readBytes":I
+    .restart local v3    # "restBytes":I
+    .restart local v4    # "result":[B
+    .restart local v5    # "totalReadBytes":I
+    .restart local v6    # "unzipper":Ljava/util/zip/GZIPInputStream;
+    :cond_4
+    add-int/2addr v5, v2
 
     goto :goto_0
 
-    .end local v3    # "readBytes":I
-    .end local v4    # "restBytes":I
+    .end local v2    # "readBytes":I
+    .end local v3    # "restBytes":I
     :catch_0
-    move-exception v0
+    move-exception v7
 
-    .local v0, "e":Ljava/io/IOException;
-    const-string v10, "InputMethodSubtypeArray"
-
-    const-string v11, "Failed to close the stream."
-
-    invoke-static {v10, v11, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    .local v7, "x2":Ljava/lang/Throwable;
+    :try_start_5
+    invoke-virtual {v10, v7}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+    :try_end_5
+    .catch Ljava/lang/Throwable; {:try_start_5 .. :try_end_5} :catch_1
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     goto :goto_1
 
-    .end local v0    # "e":Ljava/io/IOException;
+    .end local v4    # "result":[B
+    .end local v5    # "totalReadBytes":I
+    .end local v6    # "unzipper":Ljava/util/zip/GZIPInputStream;
+    .end local v7    # "x2":Ljava/lang/Throwable;
     :catch_1
-    move-exception v0
-
-    .restart local v0    # "e":Ljava/io/IOException;
-    const-string v10, "InputMethodSubtypeArray"
-
-    const-string v11, "Failed to close the stream."
-
-    invoke-static {v10, v11, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_2
-
-    .end local v0    # "e":Ljava/io/IOException;
-    :cond_4
-    if-eqz v8, :cond_5
-
-    :try_start_5
-    invoke-virtual {v8}, Ljava/util/zip/GZIPInputStream;->close()V
-    :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_2
-
-    :cond_5
-    :goto_4
-    if-eqz v2, :cond_6
+    move-exception v9
 
     :try_start_6
-    invoke-virtual {v2}, Ljava/io/ByteArrayInputStream;->close()V
+    throw v9
     :try_end_6
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_3
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
-    :cond_6
+    :catchall_0
+    move-exception v10
+
+    move-object v12, v10
+
+    move-object v10, v9
+
+    move-object v9, v12
+
+    :goto_4
+    if-eqz v1, :cond_5
+
+    if-eqz v10, :cond_e
+
+    :try_start_7
+    invoke-virtual {v1}, Ljava/io/ByteArrayInputStream;->close()V
+    :try_end_7
+    .catch Ljava/lang/Throwable; {:try_start_7 .. :try_end_7} :catch_8
+    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_2
+
+    :cond_5
     :goto_5
-    move-object v7, v8
-
-    .end local v8    # "unzipper":Ljava/util/zip/GZIPInputStream;
-    .restart local v7    # "unzipper":Ljava/util/zip/GZIPInputStream;
-    move-object v1, v2
-
-    .end local v2    # "inputStream":Ljava/io/ByteArrayInputStream;
-    .restart local v1    # "inputStream":Ljava/io/ByteArrayInputStream;
-    goto :goto_3
+    :try_start_8
+    throw v9
+    :try_end_8
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_2
 
     .end local v1    # "inputStream":Ljava/io/ByteArrayInputStream;
-    .end local v7    # "unzipper":Ljava/util/zip/GZIPInputStream;
-    .restart local v2    # "inputStream":Ljava/io/ByteArrayInputStream;
-    .restart local v8    # "unzipper":Ljava/util/zip/GZIPInputStream;
     :catch_2
     move-exception v0
 
-    .restart local v0    # "e":Ljava/io/IOException;
+    .local v0, "e":Ljava/lang/Exception;
     const-string v9, "InputMethodSubtypeArray"
 
-    const-string v10, "Failed to close the stream."
+    const-string v10, "Failed to decompress the data."
 
     invoke-static {v9, v10, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_4
-
-    .end local v0    # "e":Ljava/io/IOException;
-    :catch_3
-    move-exception v0
-
-    .restart local v0    # "e":Ljava/io/IOException;
-    const-string v9, "InputMethodSubtypeArray"
-
-    const-string v10, "Failed to close the stream."
-
-    invoke-static {v9, v10, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_5
-
-    .end local v0    # "e":Ljava/io/IOException;
-    .end local v2    # "inputStream":Ljava/io/ByteArrayInputStream;
-    .end local v5    # "result":[B
-    .end local v6    # "totalReadBytes":I
-    .end local v8    # "unzipper":Ljava/util/zip/GZIPInputStream;
-    .restart local v1    # "inputStream":Ljava/io/ByteArrayInputStream;
-    .restart local v7    # "unzipper":Ljava/util/zip/GZIPInputStream;
-    :catch_4
-    move-exception v0
-
-    .restart local v0    # "e":Ljava/io/IOException;
-    :goto_6
-    if-eqz v7, :cond_7
-
-    :try_start_7
-    invoke-virtual {v7}, Ljava/util/zip/GZIPInputStream;->close()V
-    :try_end_7
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_5
-
-    :cond_7
-    :goto_7
-    if-eqz v1, :cond_8
-
-    :try_start_8
-    invoke-virtual {v1}, Ljava/io/ByteArrayInputStream;->close()V
-    :try_end_8
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_6
-
-    :cond_8
-    :goto_8
-    move-object v5, v9
+    move-object v4, v8
 
     goto :goto_3
 
-    :catch_5
-    move-exception v0
-
-    const-string v10, "InputMethodSubtypeArray"
-
-    const-string v11, "Failed to close the stream."
-
-    invoke-static {v10, v11, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_7
-
-    :catch_6
-    move-exception v0
-
-    const-string v10, "InputMethodSubtypeArray"
-
-    const-string v11, "Failed to close the stream."
-
-    invoke-static {v10, v11, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_8
-
-    .end local v0    # "e":Ljava/io/IOException;
-    :catchall_0
-    move-exception v9
-
-    :goto_9
-    if-eqz v7, :cond_9
-
+    .end local v0    # "e":Ljava/lang/Exception;
+    .restart local v1    # "inputStream":Ljava/io/ByteArrayInputStream;
+    .restart local v4    # "result":[B
+    .restart local v5    # "totalReadBytes":I
+    .restart local v6    # "unzipper":Ljava/util/zip/GZIPInputStream;
+    :cond_6
     :try_start_9
-    invoke-virtual {v7}, Ljava/util/zip/GZIPInputStream;->close()V
+    invoke-virtual {v6}, Ljava/util/zip/GZIPInputStream;->close()V
     :try_end_9
-    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_7
+    .catch Ljava/lang/Throwable; {:try_start_9 .. :try_end_9} :catch_1
+    .catchall {:try_start_9 .. :try_end_9} :catchall_1
 
-    :cond_9
-    :goto_a
-    if-eqz v1, :cond_a
+    goto :goto_1
 
-    :try_start_a
-    invoke-virtual {v1}, Ljava/io/ByteArrayInputStream;->close()V
-    :try_end_a
-    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_8
-
-    :cond_a
-    :goto_b
-    throw v9
-
-    :catch_7
-    move-exception v0
-
-    .restart local v0    # "e":Ljava/io/IOException;
-    const-string v10, "InputMethodSubtypeArray"
-
-    const-string v11, "Failed to close the stream."
-
-    invoke-static {v10, v11, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_a
-
-    .end local v0    # "e":Ljava/io/IOException;
-    :catch_8
-    move-exception v0
-
-    .restart local v0    # "e":Ljava/io/IOException;
-    const-string v10, "InputMethodSubtypeArray"
-
-    const-string v11, "Failed to close the stream."
-
-    invoke-static {v10, v11, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_b
-
-    .end local v0    # "e":Ljava/io/IOException;
-    .end local v1    # "inputStream":Ljava/io/ByteArrayInputStream;
-    .restart local v2    # "inputStream":Ljava/io/ByteArrayInputStream;
+    .end local v4    # "result":[B
+    .end local v5    # "totalReadBytes":I
+    .end local v6    # "unzipper":Ljava/util/zip/GZIPInputStream;
     :catchall_1
     move-exception v9
 
-    move-object v1, v2
+    move-object v10, v8
 
-    .end local v2    # "inputStream":Ljava/io/ByteArrayInputStream;
-    .restart local v1    # "inputStream":Ljava/io/ByteArrayInputStream;
-    goto :goto_9
+    goto :goto_4
 
-    .end local v1    # "inputStream":Ljava/io/ByteArrayInputStream;
-    .end local v7    # "unzipper":Ljava/util/zip/GZIPInputStream;
-    .restart local v2    # "inputStream":Ljava/io/ByteArrayInputStream;
-    .restart local v8    # "unzipper":Ljava/util/zip/GZIPInputStream;
-    :catchall_2
+    .restart local v4    # "result":[B
+    .restart local v5    # "totalReadBytes":I
+    .restart local v6    # "unzipper":Ljava/util/zip/GZIPInputStream;
+    :catch_3
+    move-exception v7
+
+    .restart local v7    # "x2":Ljava/lang/Throwable;
+    :try_start_a
+    invoke-virtual {v9, v7}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+
+    goto :goto_2
+
+    .end local v7    # "x2":Ljava/lang/Throwable;
+    :cond_7
+    invoke-virtual {v1}, Ljava/io/ByteArrayInputStream;->close()V
+    :try_end_a
+    .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_2
+
+    goto :goto_2
+
+    :cond_8
+    if-eqz v6, :cond_9
+
+    if-eqz v8, :cond_a
+
+    :try_start_b
+    invoke-virtual {v6}, Ljava/util/zip/GZIPInputStream;->close()V
+    :try_end_b
+    .catch Ljava/lang/Throwable; {:try_start_b .. :try_end_b} :catch_5
+    .catchall {:try_start_b .. :try_end_b} :catchall_1
+
+    :cond_9
+    :goto_6
+    if-eqz v1, :cond_3
+
+    if-eqz v8, :cond_b
+
+    :try_start_c
+    invoke-virtual {v1}, Ljava/io/ByteArrayInputStream;->close()V
+    :try_end_c
+    .catch Ljava/lang/Throwable; {:try_start_c .. :try_end_c} :catch_4
+    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_c} :catch_2
+
+    goto :goto_3
+
+    :catch_4
+    move-exception v7
+
+    .restart local v7    # "x2":Ljava/lang/Throwable;
+    :try_start_d
+    invoke-virtual {v9, v7}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+    :try_end_d
+    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_d} :catch_2
+
+    goto :goto_3
+
+    .end local v7    # "x2":Ljava/lang/Throwable;
+    :catch_5
+    move-exception v7
+
+    .restart local v7    # "x2":Ljava/lang/Throwable;
+    :try_start_e
+    invoke-virtual {v10, v7}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+
+    goto :goto_6
+
+    .end local v7    # "x2":Ljava/lang/Throwable;
+    :cond_a
+    invoke-virtual {v6}, Ljava/util/zip/GZIPInputStream;->close()V
+    :try_end_e
+    .catch Ljava/lang/Throwable; {:try_start_e .. :try_end_e} :catch_1
+    .catchall {:try_start_e .. :try_end_e} :catchall_1
+
+    goto :goto_6
+
+    :cond_b
+    :try_start_f
+    invoke-virtual {v1}, Ljava/io/ByteArrayInputStream;->close()V
+    :try_end_f
+    .catch Ljava/lang/Exception; {:try_start_f .. :try_end_f} :catch_2
+
+    goto :goto_3
+
+    .end local v4    # "result":[B
+    .end local v5    # "totalReadBytes":I
+    :catch_6
     move-exception v9
 
-    move-object v7, v8
+    :try_start_10
+    throw v9
+    :try_end_10
+    .catchall {:try_start_10 .. :try_end_10} :catchall_2
 
-    .end local v8    # "unzipper":Ljava/util/zip/GZIPInputStream;
-    .restart local v7    # "unzipper":Ljava/util/zip/GZIPInputStream;
-    move-object v1, v2
+    :catchall_2
+    move-exception v10
 
-    .end local v2    # "inputStream":Ljava/io/ByteArrayInputStream;
-    .restart local v1    # "inputStream":Ljava/io/ByteArrayInputStream;
-    goto :goto_9
+    move-object v12, v10
 
-    .end local v1    # "inputStream":Ljava/io/ByteArrayInputStream;
-    .restart local v2    # "inputStream":Ljava/io/ByteArrayInputStream;
-    :catch_9
-    move-exception v0
+    move-object v10, v9
 
-    move-object v1, v2
+    move-object v9, v12
 
-    .end local v2    # "inputStream":Ljava/io/ByteArrayInputStream;
-    .restart local v1    # "inputStream":Ljava/io/ByteArrayInputStream;
-    goto :goto_6
+    :goto_7
+    if-eqz v6, :cond_c
 
-    .end local v1    # "inputStream":Ljava/io/ByteArrayInputStream;
-    .end local v7    # "unzipper":Ljava/util/zip/GZIPInputStream;
-    .restart local v2    # "inputStream":Ljava/io/ByteArrayInputStream;
-    .restart local v8    # "unzipper":Ljava/util/zip/GZIPInputStream;
-    :catch_a
-    move-exception v0
+    if-eqz v10, :cond_d
 
-    move-object v7, v8
+    :try_start_11
+    invoke-virtual {v6}, Ljava/util/zip/GZIPInputStream;->close()V
+    :try_end_11
+    .catch Ljava/lang/Throwable; {:try_start_11 .. :try_end_11} :catch_7
+    .catchall {:try_start_11 .. :try_end_11} :catchall_1
 
-    .end local v8    # "unzipper":Ljava/util/zip/GZIPInputStream;
-    .restart local v7    # "unzipper":Ljava/util/zip/GZIPInputStream;
-    move-object v1, v2
+    :cond_c
+    :goto_8
+    :try_start_12
+    throw v9
 
-    .end local v2    # "inputStream":Ljava/io/ByteArrayInputStream;
-    .restart local v1    # "inputStream":Ljava/io/ByteArrayInputStream;
-    goto :goto_6
+    :catch_7
+    move-exception v7
+
+    .restart local v7    # "x2":Ljava/lang/Throwable;
+    invoke-virtual {v10, v7}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+
+    goto :goto_8
+
+    .end local v7    # "x2":Ljava/lang/Throwable;
+    :cond_d
+    invoke-virtual {v6}, Ljava/util/zip/GZIPInputStream;->close()V
+    :try_end_12
+    .catch Ljava/lang/Throwable; {:try_start_12 .. :try_end_12} :catch_1
+    .catchall {:try_start_12 .. :try_end_12} :catchall_1
+
+    goto :goto_8
+
+    .end local v6    # "unzipper":Ljava/util/zip/GZIPInputStream;
+    :catch_8
+    move-exception v7
+
+    .restart local v7    # "x2":Ljava/lang/Throwable;
+    :try_start_13
+    invoke-virtual {v10, v7}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+
+    goto :goto_5
+
+    .end local v7    # "x2":Ljava/lang/Throwable;
+    :cond_e
+    invoke-virtual {v1}, Ljava/io/ByteArrayInputStream;->close()V
+    :try_end_13
+    .catch Ljava/lang/Exception; {:try_start_13 .. :try_end_13} :catch_2
+
+    goto :goto_5
+
+    .restart local v6    # "unzipper":Ljava/util/zip/GZIPInputStream;
+    :catchall_3
+    move-exception v9
+
+    move-object v10, v8
+
+    goto :goto_7
 .end method
 
 .method private static marshall([Landroid/view/inputmethod/InputMethodSubtype;)[B
