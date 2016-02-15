@@ -691,30 +691,40 @@
 .end method
 
 .method close()V
-    .locals 1
+    .locals 2
 
     .prologue
-    iget-object v0, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
-
-    iget-object v0, v0, Lcom/android/server/wm/DimLayer;->mDimSurface:Landroid/view/SurfaceControl;
-
-    invoke-virtual {v0}, Landroid/view/SurfaceControl;->destroy()V
+    const/4 v1, 0x0
 
     iget-object v0, p0, Lcom/android/server/wm/TaskStack;->mAnimationBackgroundSurface:Lcom/android/server/wm/DimLayer;
 
-    iget-object v0, v0, Lcom/android/server/wm/DimLayer;->mDimSurface:Landroid/view/SurfaceControl;
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Landroid/view/SurfaceControl;->destroy()V
+    iget-object v0, p0, Lcom/android/server/wm/TaskStack;->mAnimationBackgroundSurface:Lcom/android/server/wm/DimLayer;
 
+    invoke-virtual {v0}, Lcom/android/server/wm/DimLayer;->destroySurface()V
+
+    iput-object v1, p0, Lcom/android/server/wm/TaskStack;->mAnimationBackgroundSurface:Lcom/android/server/wm/DimLayer;
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
+
+    invoke-virtual {v0}, Lcom/android/server/wm/DimLayer;->destroySurface()V
+
+    iput-object v1, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
+
+    :cond_1
     return-void
 .end method
 
 .method detachDisplay()V
-    .locals 10
+    .locals 9
 
     .prologue
-    const/4 v9, 0x0
-
     const/16 v6, 0x791e
 
     iget v7, p0, Lcom/android/server/wm/TaskStack;->mStackId:I
@@ -816,19 +826,11 @@
     invoke-virtual {v6}, Lcom/android/server/wm/WindowManagerService;->requestTraversalLocked()V
 
     :cond_3
-    iget-object v6, p0, Lcom/android/server/wm/TaskStack;->mAnimationBackgroundSurface:Lcom/android/server/wm/DimLayer;
+    invoke-virtual {p0}, Lcom/android/server/wm/TaskStack;->close()V
 
-    invoke-virtual {v6}, Lcom/android/server/wm/DimLayer;->destroySurface()V
+    const/4 v6, 0x0
 
-    iput-object v9, p0, Lcom/android/server/wm/TaskStack;->mAnimationBackgroundSurface:Lcom/android/server/wm/DimLayer;
-
-    iget-object v6, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
-
-    invoke-virtual {v6}, Lcom/android/server/wm/DimLayer;->destroySurface()V
-
-    iput-object v9, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
-
-    iput-object v9, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
+    iput-object v6, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
 
     return-void
 .end method

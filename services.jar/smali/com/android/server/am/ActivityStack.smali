@@ -4111,7 +4111,7 @@
     goto/16 :goto_7
 .end method
 
-.method private setVisibile(Lcom/android/server/am/ActivityRecord;Z)V
+.method private setVisible(Lcom/android/server/am/ActivityRecord;Z)V
     .locals 5
     .param p1, "r"    # Lcom/android/server/am/ActivityRecord;
     .param p2, "visible"    # Z
@@ -5927,7 +5927,7 @@
     :cond_d
     const/4 v10, 0x1
 
-    invoke-direct {p0, v6, v10}, Lcom/android/server/am/ActivityStack;->setVisibile(Lcom/android/server/am/ActivityRecord;Z)V
+    invoke-direct {p0, v6, v10}, Lcom/android/server/am/ActivityStack;->setVisible(Lcom/android/server/am/ActivityRecord;Z)V
 
     :cond_e
     if-eq v6, p1, :cond_f
@@ -6033,7 +6033,7 @@
     :cond_13
     const/4 v10, 0x1
 
-    invoke-direct {p0, v6, v10}, Lcom/android/server/am/ActivityStack;->setVisibile(Lcom/android/server/am/ActivityRecord;Z)V
+    invoke-direct {p0, v6, v10}, Lcom/android/server/am/ActivityStack;->setVisible(Lcom/android/server/am/ActivityRecord;Z)V
 
     const/4 v10, 0x0
 
@@ -6127,7 +6127,7 @@
     const/4 v10, 0x0
 
     :try_start_2
-    invoke-direct {p0, v6, v10}, Lcom/android/server/am/ActivityStack;->setVisibile(Lcom/android/server/am/ActivityRecord;Z)V
+    invoke-direct {p0, v6, v10}, Lcom/android/server/am/ActivityStack;->setVisible(Lcom/android/server/am/ActivityRecord;Z)V
 
     sget-object v10, Lcom/android/server/am/ActivityStack$1;->$SwitchMap$com$android$server$am$ActivityStack$ActivityState:[I
 
@@ -11467,7 +11467,7 @@
     .locals 12
     .param p1, "task"    # Lcom/android/server/am/TaskRecord;
     .param p2, "reason"    # Ljava/lang/String;
-    .param p3, "removeFromWindowManager"    # Z
+    .param p3, "notMoving"    # Z
 
     .prologue
     const/4 v11, 0x0
@@ -11476,11 +11476,11 @@
 
     const/4 v3, 0x1
 
+    if-eqz p3, :cond_0
+
     iget-object v8, p0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
     invoke-virtual {v8, p1}, Lcom/android/server/am/ActivityStackSupervisor;->endLockTaskModeIfTaskEnding(Lcom/android/server/am/TaskRecord;)V
-
-    if-eqz p3, :cond_0
 
     iget-object v8, p0, Lcom/android/server/am/ActivityStack;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
 
@@ -11551,6 +11551,8 @@
     invoke-virtual {v8, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     invoke-virtual {p0, p1, v3}, Lcom/android/server/am/ActivityStack;->updateTaskMovement(Lcom/android/server/am/TaskRecord;Z)V
+
+    if-eqz p3, :cond_5
 
     iget-object v8, p1, Lcom/android/server/am/TaskRecord;->mActivities:Ljava/util/ArrayList;
 

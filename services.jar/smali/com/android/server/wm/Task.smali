@@ -155,7 +155,7 @@
 
     const/4 v2, 0x1
 
-    const-string v3, "removeTask"
+    const-string v3, "moveTask"
 
     aput-object v3, v1, v2
 
