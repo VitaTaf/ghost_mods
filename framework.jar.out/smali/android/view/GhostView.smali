@@ -44,11 +44,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setTransitionVisibility(I)V
 
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Landroid/view/ViewGroup;->mRecreateDisplayList:Z
-
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->updateDisplayListIfDirty()Landroid/view/RenderNode;
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->invalidate()V
 
     return-void
 .end method
@@ -985,11 +981,7 @@
     .local v0, "parent":Landroid/view/ViewGroup;
     if-eqz v0, :cond_0
 
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Landroid/view/ViewGroup;->mRecreateDisplayList:Z
-
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->updateDisplayListIfDirty()Landroid/view/RenderNode;
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->invalidate()V
 
     .end local v0    # "parent":Landroid/view/ViewGroup;
     :cond_0

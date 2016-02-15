@@ -319,10 +319,12 @@
 .end method
 
 .method private destroySurface()V
-    .locals 4
+    .locals 5
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v4, 0x0
+
+    const/4 v3, 0x1
 
     iget-object v1, p0, Landroid/view/TextureView;->mLayer:Landroid/view/HardwareLayer;
 
@@ -370,13 +372,13 @@
     invoke-virtual {v1}, Landroid/graphics/SurfaceTexture;->release()V
 
     :cond_1
-    iput-object v3, p0, Landroid/view/TextureView;->mSurface:Landroid/graphics/SurfaceTexture;
+    iput-object v4, p0, Landroid/view/TextureView;->mSurface:Landroid/graphics/SurfaceTexture;
 
-    iput-object v3, p0, Landroid/view/TextureView;->mLayer:Landroid/view/HardwareLayer;
+    iput-object v4, p0, Landroid/view/TextureView;->mLayer:Landroid/view/HardwareLayer;
 
-    const/4 v1, 0x1
+    iput-boolean v3, p0, Landroid/view/TextureView;->mMatrixChanged:Z
 
-    iput-boolean v1, p0, Landroid/view/TextureView;->mHadSurface:Z
+    iput-boolean v3, p0, Landroid/view/TextureView;->mHadSurface:Z
 
     .end local v0    # "shouldRelease":Z
     :cond_2
@@ -1198,6 +1200,10 @@
     and-int/lit8 v0, v0, 0xc
 
     if-nez v0, :cond_2
+
+    iget-object v0, p0, Landroid/view/TextureView;->mLayer:Landroid/view/HardwareLayer;
+
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Landroid/view/TextureView;->mSurface:Landroid/graphics/SurfaceTexture;
 

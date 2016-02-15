@@ -114,8 +114,6 @@
 
 .field private mInterpolator:Landroid/animation/TimeInterpolator;
 
-.field private mInterpolatorSet:Z
-
 .field private mListener:Landroid/animation/Animator$AnimatorListener;
 
 .field mPendingAnimations:Ljava/util/ArrayList;
@@ -162,23 +160,21 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean v2, p0, Landroid/view/ViewPropertyAnimator;->mDurationSet:Z
+    iput-boolean v3, p0, Landroid/view/ViewPropertyAnimator;->mDurationSet:Z
 
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroid/view/ViewPropertyAnimator;->mStartDelay:J
 
-    iput-boolean v2, p0, Landroid/view/ViewPropertyAnimator;->mStartDelaySet:Z
+    iput-boolean v3, p0, Landroid/view/ViewPropertyAnimator;->mStartDelaySet:Z
 
-    iput-boolean v2, p0, Landroid/view/ViewPropertyAnimator;->mInterpolatorSet:Z
+    iput-object v2, p0, Landroid/view/ViewPropertyAnimator;->mListener:Landroid/animation/Animator$AnimatorListener;
 
-    iput-object v3, p0, Landroid/view/ViewPropertyAnimator;->mListener:Landroid/animation/Animator$AnimatorListener;
-
-    iput-object v3, p0, Landroid/view/ViewPropertyAnimator;->mUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+    iput-object v2, p0, Landroid/view/ViewPropertyAnimator;->mUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     new-instance v0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;
 
-    invoke-direct {v0, p0, v3}, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;-><init>(Landroid/view/ViewPropertyAnimator;Landroid/view/ViewPropertyAnimator$1;)V
+    invoke-direct {v0, p0, v2}, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;-><init>(Landroid/view/ViewPropertyAnimator;Landroid/view/ViewPropertyAnimator$1;)V
 
     iput-object v0, p0, Landroid/view/ViewPropertyAnimator;->mAnimatorEventListener:Landroid/view/ViewPropertyAnimator$AnimatorEventListener;
 
@@ -869,7 +865,7 @@
     invoke-virtual {v0, v6, v7}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
     :cond_7
-    iget-boolean v6, p0, Landroid/view/ViewPropertyAnimator;->mInterpolatorSet:Z
+    iget-object v6, p0, Landroid/view/ViewPropertyAnimator;->mInterpolator:Landroid/animation/TimeInterpolator;
 
     if-eqz v6, :cond_8
 
@@ -1033,7 +1029,7 @@
     .locals 1
 
     .prologue
-    iget-boolean v0, p0, Landroid/view/ViewPropertyAnimator;->mInterpolatorSet:Z
+    iget-object v0, p0, Landroid/view/ViewPropertyAnimator;->mInterpolator:Landroid/animation/TimeInterpolator;
 
     if-eqz v0, :cond_0
 
@@ -1298,14 +1294,10 @@
 .end method
 
 .method public setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
-    .locals 1
+    .locals 0
     .param p1, "interpolator"    # Landroid/animation/TimeInterpolator;
 
     .prologue
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Landroid/view/ViewPropertyAnimator;->mInterpolatorSet:Z
-
     iput-object p1, p0, Landroid/view/ViewPropertyAnimator;->mInterpolator:Landroid/animation/TimeInterpolator;
 
     return-object p0

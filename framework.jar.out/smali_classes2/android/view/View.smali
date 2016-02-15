@@ -25749,6 +25749,12 @@
     .local v3, "next":Landroid/view/View;
     if-eqz v3, :cond_7
 
+    invoke-virtual {v3}, Landroid/view/View;->includeForAccessibility()Z
+
+    move-result v8
+
+    if-eqz v8, :cond_7
+
     invoke-virtual {p1, v3}, Landroid/view/accessibility/AccessibilityNodeInfo;->setTraversalBefore(Landroid/view/View;)V
 
     .end local v3    # "next":Landroid/view/View;
@@ -25776,6 +25782,12 @@
 
     .restart local v3    # "next":Landroid/view/View;
     if-eqz v3, :cond_9
+
+    invoke-virtual {v3}, Landroid/view/View;->includeForAccessibility()Z
+
+    move-result v8
+
+    if-eqz v8, :cond_9
 
     invoke-virtual {p1, v3}, Landroid/view/accessibility/AccessibilityNodeInfo;->setTraversalAfter(Landroid/view/View;)V
 

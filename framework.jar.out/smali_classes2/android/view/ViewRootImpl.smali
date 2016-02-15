@@ -3484,7 +3484,7 @@
     move-result-object v3
 
     .local v3, "provider":Landroid/view/accessibility/AccessibilityNodeProvider;
-    if-nez v3, :cond_2
+    if-nez v3, :cond_3
 
     invoke-virtual {v1, p1, v4}, Landroid/view/View;->getBoundsOnScreen(Landroid/graphics/Rect;Z)V
 
@@ -3492,6 +3492,12 @@
     iget-object v0, p0, Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo;
 
     .local v0, "attachInfo":Landroid/view/View$AttachInfo;
+    iget-object v6, v0, Landroid/view/View$AttachInfo;->mViewRootImpl:Landroid/view/ViewRootImpl;
+
+    iget v6, v6, Landroid/view/ViewRootImpl;->mScrollY:I
+
+    invoke-virtual {p1, v5, v6}, Landroid/graphics/Rect;->offset(II)V
+
     iget v6, v0, Landroid/view/View$AttachInfo;->mWindowLeft:I
 
     neg-int v6, v6
@@ -3512,11 +3518,18 @@
 
     invoke-virtual {p1, v5, v5, v6, v7}, Landroid/graphics/Rect;->intersect(IIII)Z
 
+    move-result v6
+
+    if-nez v6, :cond_2
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->setEmpty()V
+
+    :cond_2
     invoke-virtual {p1}, Landroid/graphics/Rect;->isEmpty()Z
 
     move-result v6
 
-    if-nez v6, :cond_3
+    if-nez v6, :cond_4
 
     :goto_2
     move v5, v4
@@ -3524,7 +3537,7 @@
     goto :goto_0
 
     .end local v0    # "attachInfo":Landroid/view/View$AttachInfo;
-    :cond_2
+    :cond_3
     iget-object v6, p0, Landroid/view/ViewRootImpl;->mAccessibilityFocusedVirtualView:Landroid/view/accessibility/AccessibilityNodeInfo;
 
     if-eqz v6, :cond_0
@@ -3536,7 +3549,7 @@
     goto :goto_1
 
     .restart local v0    # "attachInfo":Landroid/view/View$AttachInfo;
-    :cond_3
+    :cond_4
     move v4, v5
 
     goto :goto_2

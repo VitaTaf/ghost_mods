@@ -604,6 +604,13 @@
 
     invoke-virtual {v8, v7}, Landroid/graphics/Rect;->intersect(Landroid/graphics/Rect;)Z
 
+    move-result v9
+
+    if-nez v9, :cond_4
+
+    invoke-virtual {v7}, Landroid/graphics/Rect;->setEmpty()V
+
+    :cond_4
     iget v9, v3, Landroid/graphics/Rect;->left:I
 
     iget v10, v3, Landroid/graphics/Rect;->top:I
