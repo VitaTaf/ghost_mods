@@ -71,8 +71,6 @@
 
 .field static final DEBUG_POWER:Z = false
 
-.field static final DEBUG_REORDER:Z = false
-
 .field static final DEBUG_RESIZE:Z = false
 
 .field static final DEBUG_SCREENSHOT:Z = false
@@ -32807,25 +32805,7 @@
     return-void
 
     :cond_0
-    sget-object v1, Lcom/motorola/kpi/Kpi6paTop$Tag;->WMS8:Lcom/motorola/kpi/Kpi6paTop$Tag;
-
-    const/4 v3, 0x2
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    const/4 v4, 0x0
-
-    aput-object p1, v3, v4
-
-    const/4 v4, 0x1
-
-    aput-object v0, v3, v4
-
-    invoke-static {v1, v3}, Lcom/motorola/kpi/Kpi6paTop;->log(Lcom/motorola/kpi/Kpi6paTop$Tag;[Ljava/lang/Object;)V
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v0, v1}, Lcom/android/server/wm/WindowManagerService;->removeWindowLocked(Lcom/android/server/wm/WindowState;Z)V
+    invoke-virtual {p0, v0}, Lcom/android/server/wm/WindowManagerService;->removeWindowLocked(Lcom/android/server/wm/WindowState;)V
 
     monitor-exit v2
 
@@ -33229,10 +33209,9 @@
     goto :goto_5
 .end method
 
-.method removeWindowLocked(Lcom/android/server/wm/WindowState;Z)V
+.method removeWindowLocked(Lcom/android/server/wm/WindowState;)V
     .locals 10
     .param p1, "win"    # Lcom/android/server/wm/WindowState;
-    .param p2, "winDeath"    # Z
 
     .prologue
     const/4 v7, 0x3
@@ -33313,8 +33292,6 @@
 
     .end local v4    # "transit":I
     :cond_3
-    if-nez p2, :cond_8
-
     iget-boolean v6, p1, Lcom/android/server/wm/WindowState;->mExiting:Z
 
     if-nez v6, :cond_4
@@ -37080,92 +37057,46 @@
 .end method
 
 .method setFocusedStackFrame()V
-    .locals 6
+    .locals 4
 
     .prologue
-    const/4 v1, 0x0
+    iget-object v3, p0, Lcom/android/server/wm/WindowManagerService;->mFocusedApp:Lcom/android/server/wm/AppWindowToken;
 
-    iget-object v4, p0, Lcom/android/server/wm/WindowManagerService;->mFocusedApp:Lcom/android/server/wm/AppWindowToken;
+    if-eqz v3, :cond_1
 
-    if-eqz v4, :cond_1
+    iget-object v3, p0, Lcom/android/server/wm/WindowManagerService;->mFocusedApp:Lcom/android/server/wm/AppWindowToken;
 
-    iget-object v4, p0, Lcom/android/server/wm/WindowManagerService;->mFocusedApp:Lcom/android/server/wm/AppWindowToken;
+    iget-object v2, v3, Lcom/android/server/wm/AppWindowToken;->mTask:Lcom/android/server/wm/Task;
 
-    iget-object v3, v4, Lcom/android/server/wm/AppWindowToken;->mTask:Lcom/android/server/wm/Task;
+    .local v2, "task":Lcom/android/server/wm/Task;
+    iget-object v1, v2, Lcom/android/server/wm/Task;->mStack:Lcom/android/server/wm/TaskStack;
 
-    .local v3, "task":Lcom/android/server/wm/Task;
-    iget-object v2, v3, Lcom/android/server/wm/Task;->mStack:Lcom/android/server/wm/TaskStack;
-
-    .local v2, "stack":Lcom/android/server/wm/TaskStack;
-    invoke-virtual {v3}, Lcom/android/server/wm/Task;->getDisplayContent()Lcom/android/server/wm/DisplayContent;
+    .local v1, "stack":Lcom/android/server/wm/TaskStack;
+    invoke-virtual {v2}, Lcom/android/server/wm/Task;->getDisplayContent()Lcom/android/server/wm/DisplayContent;
 
     move-result-object v0
 
     .local v0, "displayContent":Lcom/android/server/wm/DisplayContent;
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0, v2}, Lcom/android/server/wm/DisplayContent;->setTouchExcludeRegion(Lcom/android/server/wm/TaskStack;)V
+    invoke-virtual {v0, v1}, Lcom/android/server/wm/DisplayContent;->setTouchExcludeRegion(Lcom/android/server/wm/TaskStack;)V
 
     .end local v0    # "displayContent":Lcom/android/server/wm/DisplayContent;
-    .end local v3    # "task":Lcom/android/server/wm/Task;
+    .end local v2    # "task":Lcom/android/server/wm/Task;
     :cond_0
     :goto_0
-    invoke-static {}, Landroid/view/SurfaceControl;->openTransaction()V
+    iget-object v3, p0, Lcom/android/server/wm/WindowManagerService;->mFocusedStackFrame:Lcom/android/server/wm/FocusedStackFrame;
 
-    if-nez v2, :cond_2
-
-    :try_start_0
-    iget-object v4, p0, Lcom/android/server/wm/WindowManagerService;->mFocusedStackFrame:Lcom/android/server/wm/FocusedStackFrame;
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v4, v5}, Lcom/android/server/wm/FocusedStackFrame;->setVisibility(Z)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :goto_1
-    invoke-static {}, Landroid/view/SurfaceControl;->closeTransaction()V
+    invoke-virtual {v3, v1}, Lcom/android/server/wm/FocusedStackFrame;->setVisibility(Lcom/android/server/wm/TaskStack;)V
 
     return-void
 
-    .end local v2    # "stack":Lcom/android/server/wm/TaskStack;
+    .end local v1    # "stack":Lcom/android/server/wm/TaskStack;
     :cond_1
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    .restart local v2    # "stack":Lcom/android/server/wm/TaskStack;
+    .restart local v1    # "stack":Lcom/android/server/wm/TaskStack;
     goto :goto_0
-
-    :cond_2
-    :try_start_1
-    iget-object v4, p0, Lcom/android/server/wm/WindowManagerService;->mFocusedStackFrame:Lcom/android/server/wm/FocusedStackFrame;
-
-    invoke-virtual {v4, v2}, Lcom/android/server/wm/FocusedStackFrame;->setBounds(Lcom/android/server/wm/TaskStack;)V
-
-    invoke-virtual {v2}, Lcom/android/server/wm/TaskStack;->isFullscreen()Z
-
-    move-result v4
-
-    if-nez v4, :cond_3
-
-    const/4 v1, 0x1
-
-    .local v1, "multipleStacks":Z
-    :cond_3
-    iget-object v4, p0, Lcom/android/server/wm/WindowManagerService;->mFocusedStackFrame:Lcom/android/server/wm/FocusedStackFrame;
-
-    invoke-virtual {v4, v1}, Lcom/android/server/wm/FocusedStackFrame;->setVisibility(Z)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_1
-
-    .end local v1    # "multipleStacks":Z
-    :catchall_0
-    move-exception v4
-
-    invoke-static {}, Landroid/view/SurfaceControl;->closeTransaction()V
-
-    throw v4
 .end method
 
 .method setFocusedStackLayer()V

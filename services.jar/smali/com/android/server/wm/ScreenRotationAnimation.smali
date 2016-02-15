@@ -561,23 +561,6 @@
     .end packed-switch
 .end method
 
-.method static deltaRotation(II)I
-    .locals 1
-    .param p0, "oldRotation"    # I
-    .param p1, "newRotation"    # I
-
-    .prologue
-    sub-int v0, p1, p0
-
-    .local v0, "delta":I
-    if-gez v0, :cond_0
-
-    add-int/lit8 v0, v0, 0x4
-
-    :cond_0
-    return v0
-.end method
-
 .method private hasAnimations()Z
     .locals 1
 
@@ -611,7 +594,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {p1, v1}, Lcom/android/server/wm/ScreenRotationAnimation;->deltaRotation(II)I
+    invoke-static {p1, v1}, Lcom/android/server/wm/DisplayContent;->deltaRotation(II)I
 
     move-result v0
 
@@ -772,7 +755,7 @@
 
     iget v3, p0, Lcom/android/server/wm/ScreenRotationAnimation;->mOriginalRotation:I
 
-    invoke-static {v2, v3}, Lcom/android/server/wm/ScreenRotationAnimation;->deltaRotation(II)I
+    invoke-static {v2, v3}, Lcom/android/server/wm/DisplayContent;->deltaRotation(II)I
 
     move-result v10
 

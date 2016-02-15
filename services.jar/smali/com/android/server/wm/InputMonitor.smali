@@ -843,9 +843,7 @@
 
     iget-object v1, p0, Lcom/android/server/wm/InputMonitor;->mService:Lcom/android/server/wm/WindowManagerService;
 
-    const/4 v4, 0x1
-
-    invoke-virtual {v1, v0, v4}, Lcom/android/server/wm/WindowManagerService;->removeWindowLocked(Lcom/android/server/wm/WindowState;Z)V
+    invoke-virtual {v1, v0}, Lcom/android/server/wm/WindowManagerService;->removeWindowLocked(Lcom/android/server/wm/WindowState;)V
 
     :cond_1
     monitor-exit v2

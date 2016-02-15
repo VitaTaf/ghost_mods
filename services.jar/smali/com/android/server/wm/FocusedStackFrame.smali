@@ -6,30 +6,40 @@
 # static fields
 .field private static final ALPHA:F = 0.3f
 
+.field private static final DEBUG:Z = false
+
 .field private static final TAG:Ljava/lang/String; = "FocusedStackFrame"
 
-.field private static final THICKNESS:I = 0xa
+.field private static final THICKNESS:I = 0x2
 
 
 # instance fields
-.field final mBounds:Landroid/graphics/Rect;
+.field private final mBounds:Landroid/graphics/Rect;
+
+.field private final mInnerPaint:Landroid/graphics/Paint;
 
 .field private final mLastBounds:Landroid/graphics/Rect;
+
+.field private mLayer:I
+
+.field private final mOuterPaint:Landroid/graphics/Paint;
 
 .field private final mSurface:Landroid/view/Surface;
 
 .field private final mSurfaceControl:Landroid/view/SurfaceControl;
 
-.field private final mTmpDrawRect:Landroid/graphics/Rect;
-
 
 # direct methods
 .method public constructor <init>(Landroid/view/Display;Landroid/view/SurfaceSession;)V
-    .locals 8
+    .locals 10
     .param p1, "display"    # Landroid/view/Display;
     .param p2, "session"    # Landroid/view/SurfaceSession;
 
     .prologue
+    const/4 v9, -0x1
+
+    const/high16 v8, 0x40000000    # 2.0f
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     new-instance v1, Landroid/view/Surface;
@@ -38,11 +48,17 @@
 
     iput-object v1, p0, Lcom/android/server/wm/FocusedStackFrame;->mSurface:Landroid/view/Surface;
 
-    new-instance v1, Landroid/graphics/Rect;
+    new-instance v1, Landroid/graphics/Paint;
 
-    invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
 
-    iput-object v1, p0, Lcom/android/server/wm/FocusedStackFrame;->mLastBounds:Landroid/graphics/Rect;
+    iput-object v1, p0, Lcom/android/server/wm/FocusedStackFrame;->mInnerPaint:Landroid/graphics/Paint;
+
+    new-instance v1, Landroid/graphics/Paint;
+
+    invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
+
+    iput-object v1, p0, Lcom/android/server/wm/FocusedStackFrame;->mOuterPaint:Landroid/graphics/Paint;
 
     new-instance v1, Landroid/graphics/Rect;
 
@@ -54,7 +70,9 @@
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object v1, p0, Lcom/android/server/wm/FocusedStackFrame;->mTmpDrawRect:Landroid/graphics/Rect;
+    iput-object v1, p0, Lcom/android/server/wm/FocusedStackFrame;->mLastBounds:Landroid/graphics/Rect;
+
+    iput v9, p0, Lcom/android/server/wm/FocusedStackFrame;->mLayer:I
 
     const/4 v7, 0x0
 
@@ -100,6 +118,36 @@
     :goto_0
     iput-object v0, p0, Lcom/android/server/wm/FocusedStackFrame;->mSurfaceControl:Landroid/view/SurfaceControl;
 
+    iget-object v1, p0, Lcom/android/server/wm/FocusedStackFrame;->mInnerPaint:Landroid/graphics/Paint;
+
+    sget-object v2, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    iget-object v1, p0, Lcom/android/server/wm/FocusedStackFrame;->mInnerPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v1, v8}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+
+    iget-object v1, p0, Lcom/android/server/wm/FocusedStackFrame;->mInnerPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v1, v9}, Landroid/graphics/Paint;->setColor(I)V
+
+    iget-object v1, p0, Lcom/android/server/wm/FocusedStackFrame;->mOuterPaint:Landroid/graphics/Paint;
+
+    sget-object v2, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    iget-object v1, p0, Lcom/android/server/wm/FocusedStackFrame;->mOuterPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v1, v8}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+
+    iget-object v1, p0, Lcom/android/server/wm/FocusedStackFrame;->mOuterPaint:Landroid/graphics/Paint;
+
+    const/high16 v2, -0x1000000
+
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
+
     return-void
 
     .end local v0    # "ctrl":Landroid/view/SurfaceControl;
@@ -119,139 +167,185 @@
     goto :goto_0
 .end method
 
-.method private draw(Landroid/graphics/Rect;I)V
+.method private draw()V
     .locals 8
-    .param p1, "bounds"    # Landroid/graphics/Rect;
-    .param p2, "color"    # I
 
     .prologue
-    const/16 v7, 0xa
+    const/high16 v7, 0x40000000    # 2.0f
 
-    const/4 v6, 0x0
+    const/4 v1, 0x0
 
-    iget-object v3, p0, Lcom/android/server/wm/FocusedStackFrame;->mTmpDrawRect:Landroid/graphics/Rect;
+    iget-object v2, p0, Lcom/android/server/wm/FocusedStackFrame;->mLastBounds:Landroid/graphics/Rect;
 
-    invoke-virtual {v3, p1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+    invoke-virtual {v2}, Landroid/graphics/Rect;->isEmpty()Z
 
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, p0, Lcom/android/server/wm/FocusedStackFrame;->mLastBounds:Landroid/graphics/Rect;
+
+    iget-object v3, p0, Lcom/android/server/wm/FocusedStackFrame;->mBounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v2, v3}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+
+    :cond_0
     const/4 v0, 0x0
 
     .local v0, "c":Landroid/graphics/Canvas;
     :try_start_0
-    iget-object v3, p0, Lcom/android/server/wm/FocusedStackFrame;->mSurface:Landroid/view/Surface;
+    iget-object v2, p0, Lcom/android/server/wm/FocusedStackFrame;->mSurface:Landroid/view/Surface;
 
-    iget-object v4, p0, Lcom/android/server/wm/FocusedStackFrame;->mTmpDrawRect:Landroid/graphics/Rect;
+    iget-object v3, p0, Lcom/android/server/wm/FocusedStackFrame;->mLastBounds:Landroid/graphics/Rect;
 
-    invoke-virtual {v3, v4}, Landroid/view/Surface;->lockCanvas(Landroid/graphics/Rect;)Landroid/graphics/Canvas;
+    invoke-virtual {v2, v3}, Landroid/view/Surface;->lockCanvas(Landroid/graphics/Rect;)Landroid/graphics/Canvas;
     :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Landroid/view/Surface$OutOfResourcesException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Landroid/view/Surface$OutOfResourcesException; {:try_start_0 .. :try_end_0} :catch_1
 
     move-result-object v0
 
     :goto_0
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     :goto_1
     return-void
 
-    :cond_0
-    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
+    :catch_0
+    move-exception v6
+
+    .local v6, "e":Ljava/lang/IllegalArgumentException;
+    const-string v2, "FocusedStackFrame"
+
+    const-string v3, "Unable to lock canvas"
+
+    invoke-static {v2, v3, v6}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_0
+
+    .end local v6    # "e":Ljava/lang/IllegalArgumentException;
+    :catch_1
+    move-exception v6
+
+    .local v6, "e":Landroid/view/Surface$OutOfResourcesException;
+    const-string v2, "FocusedStackFrame"
+
+    const-string v3, "Unable to lock canvas"
+
+    invoke-static {v2, v3, v6}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_0
+
+    .end local v6    # "e":Landroid/view/Surface$OutOfResourcesException;
+    :cond_1
+    iget-object v2, p0, Lcom/android/server/wm/FocusedStackFrame;->mBounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v2}, Landroid/graphics/Rect;->width()I
 
     move-result v2
 
-    .local v2, "w":I
-    invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
+    int-to-float v3, v2
+
+    iget-object v2, p0, Lcom/android/server/wm/FocusedStackFrame;->mBounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v2}, Landroid/graphics/Rect;->height()I
+
+    move-result v2
+
+    int-to-float v4, v2
+
+    iget-object v5, p0, Lcom/android/server/wm/FocusedStackFrame;->mOuterPaint:Landroid/graphics/Paint;
+
+    move v2, v1
+
+    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
+
+    iget-object v1, p0, Lcom/android/server/wm/FocusedStackFrame;->mBounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
 
     move-result v1
 
-    .local v1, "h":I
-    iget-object v3, p0, Lcom/android/server/wm/FocusedStackFrame;->mTmpDrawRect:Landroid/graphics/Rect;
+    add-int/lit8 v1, v1, -0x2
 
-    invoke-virtual {v3, v6, v6, v2, v7}, Landroid/graphics/Rect;->set(IIII)V
+    int-to-float v3, v1
 
-    iget-object v3, p0, Lcom/android/server/wm/FocusedStackFrame;->mTmpDrawRect:Landroid/graphics/Rect;
+    iget-object v1, p0, Lcom/android/server/wm/FocusedStackFrame;->mBounds:Landroid/graphics/Rect;
 
-    sget-object v4, Landroid/graphics/Region$Op;->REPLACE:Landroid/graphics/Region$Op;
+    invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
 
-    invoke-virtual {v0, v3, v4}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/Rect;Landroid/graphics/Region$Op;)Z
+    move-result v1
 
-    invoke-virtual {v0, p2}, Landroid/graphics/Canvas;->drawColor(I)V
+    add-int/lit8 v1, v1, -0x2
 
-    iget-object v3, p0, Lcom/android/server/wm/FocusedStackFrame;->mTmpDrawRect:Landroid/graphics/Rect;
+    int-to-float v4, v1
 
-    add-int/lit8 v4, v1, -0xa
+    iget-object v5, p0, Lcom/android/server/wm/FocusedStackFrame;->mInnerPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v3, v6, v7, v7, v4}, Landroid/graphics/Rect;->set(IIII)V
+    move v1, v7
 
-    iget-object v3, p0, Lcom/android/server/wm/FocusedStackFrame;->mTmpDrawRect:Landroid/graphics/Rect;
+    move v2, v7
 
-    sget-object v4, Landroid/graphics/Region$Op;->REPLACE:Landroid/graphics/Region$Op;
+    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    invoke-virtual {v0, v3, v4}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/Rect;Landroid/graphics/Region$Op;)Z
+    iget-object v1, p0, Lcom/android/server/wm/FocusedStackFrame;->mSurface:Landroid/view/Surface;
 
-    invoke-virtual {v0, p2}, Landroid/graphics/Canvas;->drawColor(I)V
+    invoke-virtual {v1, v0}, Landroid/view/Surface;->unlockCanvasAndPost(Landroid/graphics/Canvas;)V
 
-    iget-object v3, p0, Lcom/android/server/wm/FocusedStackFrame;->mTmpDrawRect:Landroid/graphics/Rect;
+    iget-object v1, p0, Lcom/android/server/wm/FocusedStackFrame;->mLastBounds:Landroid/graphics/Rect;
 
-    add-int/lit8 v4, v2, -0xa
+    iget-object v2, p0, Lcom/android/server/wm/FocusedStackFrame;->mBounds:Landroid/graphics/Rect;
 
-    add-int/lit8 v5, v1, -0xa
-
-    invoke-virtual {v3, v4, v7, v2, v5}, Landroid/graphics/Rect;->set(IIII)V
-
-    iget-object v3, p0, Lcom/android/server/wm/FocusedStackFrame;->mTmpDrawRect:Landroid/graphics/Rect;
-
-    sget-object v4, Landroid/graphics/Region$Op;->REPLACE:Landroid/graphics/Region$Op;
-
-    invoke-virtual {v0, v3, v4}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/Rect;Landroid/graphics/Region$Op;)Z
-
-    invoke-virtual {v0, p2}, Landroid/graphics/Canvas;->drawColor(I)V
-
-    iget-object v3, p0, Lcom/android/server/wm/FocusedStackFrame;->mTmpDrawRect:Landroid/graphics/Rect;
-
-    add-int/lit8 v4, v1, -0xa
-
-    invoke-virtual {v3, v6, v4, v2, v1}, Landroid/graphics/Rect;->set(IIII)V
-
-    iget-object v3, p0, Lcom/android/server/wm/FocusedStackFrame;->mTmpDrawRect:Landroid/graphics/Rect;
-
-    sget-object v4, Landroid/graphics/Region$Op;->REPLACE:Landroid/graphics/Region$Op;
-
-    invoke-virtual {v0, v3, v4}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/Rect;Landroid/graphics/Region$Op;)Z
-
-    invoke-virtual {v0, p2}, Landroid/graphics/Canvas;->drawColor(I)V
-
-    iget-object v3, p0, Lcom/android/server/wm/FocusedStackFrame;->mSurface:Landroid/view/Surface;
-
-    invoke-virtual {v3, v0}, Landroid/view/Surface;->unlockCanvasAndPost(Landroid/graphics/Canvas;)V
+    invoke-virtual {v1, v2}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
     goto :goto_1
-
-    .end local v1    # "h":I
-    .end local v2    # "w":I
-    :catch_0
-    move-exception v3
-
-    goto :goto_0
-
-    :catch_1
-    move-exception v3
-
-    goto :goto_0
 .end method
 
-.method private positionSurface(Landroid/graphics/Rect;)V
+.method private setupSurface(Z)V
     .locals 3
-    .param p1, "bounds"    # Landroid/graphics/Rect;
+    .param p1, "visible"    # Z
 
     .prologue
     iget-object v0, p0, Lcom/android/server/wm/FocusedStackFrame;->mSurfaceControl:Landroid/view/SurfaceControl;
 
-    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
+    if-nez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    invoke-static {}, Landroid/view/SurfaceControl;->openTransaction()V
+
+    if-eqz p1, :cond_1
+
+    :try_start_0
+    iget-object v0, p0, Lcom/android/server/wm/FocusedStackFrame;->mSurfaceControl:Landroid/view/SurfaceControl;
+
+    iget-object v1, p0, Lcom/android/server/wm/FocusedStackFrame;->mBounds:Landroid/graphics/Rect;
+
+    iget v1, v1, Landroid/graphics/Rect;->left:I
+
+    int-to-float v1, v1
+
+    iget-object v2, p0, Lcom/android/server/wm/FocusedStackFrame;->mBounds:Landroid/graphics/Rect;
+
+    iget v2, v2, Landroid/graphics/Rect;->top:I
+
+    int-to-float v2, v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/view/SurfaceControl;->setPosition(FF)V
+
+    iget-object v0, p0, Lcom/android/server/wm/FocusedStackFrame;->mSurfaceControl:Landroid/view/SurfaceControl;
+
+    iget-object v1, p0, Lcom/android/server/wm/FocusedStackFrame;->mBounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
 
     move-result v1
 
-    invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
+    iget-object v2, p0, Lcom/android/server/wm/FocusedStackFrame;->mBounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v2}, Landroid/graphics/Rect;->height()I
 
     move-result v2
 
@@ -259,63 +353,93 @@
 
     iget-object v0, p0, Lcom/android/server/wm/FocusedStackFrame;->mSurfaceControl:Landroid/view/SurfaceControl;
 
-    iget v1, p1, Landroid/graphics/Rect;->left:I
+    invoke-virtual {v0}, Landroid/view/SurfaceControl;->show()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    int-to-float v1, v1
+    :goto_1
+    invoke-static {}, Landroid/view/SurfaceControl;->closeTransaction()V
 
-    iget v2, p1, Landroid/graphics/Rect;->top:I
+    goto :goto_0
 
-    int-to-float v2, v2
+    :cond_1
+    :try_start_1
+    iget-object v0, p0, Lcom/android/server/wm/FocusedStackFrame;->mSurfaceControl:Landroid/view/SurfaceControl;
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/SurfaceControl;->setPosition(FF)V
+    invoke-virtual {v0}, Landroid/view/SurfaceControl;->hide()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    return-void
+    goto :goto_1
+
+    :catchall_0
+    move-exception v0
+
+    invoke-static {}, Landroid/view/SurfaceControl;->closeTransaction()V
+
+    throw v0
 .end method
 
 
 # virtual methods
-.method public setBounds(Lcom/android/server/wm/TaskStack;)V
-    .locals 1
-    .param p1, "stack"    # Lcom/android/server/wm/TaskStack;
-
-    .prologue
-    iget-object v0, p0, Lcom/android/server/wm/FocusedStackFrame;->mBounds:Landroid/graphics/Rect;
-
-    invoke-virtual {p1, v0}, Lcom/android/server/wm/TaskStack;->getBounds(Landroid/graphics/Rect;)V
-
-    return-void
-.end method
-
-.method public setLayer(I)V
-    .locals 1
+.method setLayer(I)V
+    .locals 2
     .param p1, "layer"    # I
 
     .prologue
-    iget-object v0, p0, Lcom/android/server/wm/FocusedStackFrame;->mSurfaceControl:Landroid/view/SurfaceControl;
+    iget v0, p0, Lcom/android/server/wm/FocusedStackFrame;->mLayer:I
 
-    invoke-virtual {v0, p1}, Landroid/view/SurfaceControl;->setLayer(I)V
-
-    return-void
-.end method
-
-.method public setVisibility(Z)V
-    .locals 2
-    .param p1, "on"    # Z
-
-    .prologue
-    iget-object v0, p0, Lcom/android/server/wm/FocusedStackFrame;->mSurfaceControl:Landroid/view/SurfaceControl;
-
-    if-nez v0, :cond_0
+    if-ne v0, p1, :cond_0
 
     :goto_0
     return-void
 
     :cond_0
-    if-eqz p1, :cond_2
+    iput p1, p0, Lcom/android/server/wm/FocusedStackFrame;->mLayer:I
 
-    iget-object v0, p0, Lcom/android/server/wm/FocusedStackFrame;->mLastBounds:Landroid/graphics/Rect;
+    iget-object v0, p0, Lcom/android/server/wm/FocusedStackFrame;->mSurfaceControl:Landroid/view/SurfaceControl;
 
-    iget-object v1, p0, Lcom/android/server/wm/FocusedStackFrame;->mBounds:Landroid/graphics/Rect;
+    iget v1, p0, Lcom/android/server/wm/FocusedStackFrame;->mLayer:I
+
+    invoke-virtual {v0, v1}, Landroid/view/SurfaceControl;->setLayer(I)V
+
+    goto :goto_0
+.end method
+
+.method setVisibility(Lcom/android/server/wm/TaskStack;)V
+    .locals 2
+    .param p1, "stack"    # Lcom/android/server/wm/TaskStack;
+
+    .prologue
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1}, Lcom/android/server/wm/TaskStack;->isFullscreen()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    :cond_0
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lcom/android/server/wm/FocusedStackFrame;->setupSurface(Z)V
+
+    :cond_1
+    :goto_0
+    return-void
+
+    :cond_2
+    iget-object v0, p0, Lcom/android/server/wm/FocusedStackFrame;->mBounds:Landroid/graphics/Rect;
+
+    invoke-virtual {p1, v0}, Lcom/android/server/wm/TaskStack;->getBounds(Landroid/graphics/Rect;)V
+
+    const/4 v0, 0x1
+
+    invoke-direct {p0, v0}, Lcom/android/server/wm/FocusedStackFrame;->setupSurface(Z)V
+
+    iget-object v0, p0, Lcom/android/server/wm/FocusedStackFrame;->mBounds:Landroid/graphics/Rect;
+
+    iget-object v1, p0, Lcom/android/server/wm/FocusedStackFrame;->mLastBounds:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
 
@@ -323,43 +447,7 @@
 
     if-nez v0, :cond_1
 
-    iget-object v0, p0, Lcom/android/server/wm/FocusedStackFrame;->mLastBounds:Landroid/graphics/Rect;
-
-    invoke-direct {p0, v0}, Lcom/android/server/wm/FocusedStackFrame;->positionSurface(Landroid/graphics/Rect;)V
-
-    iget-object v0, p0, Lcom/android/server/wm/FocusedStackFrame;->mLastBounds:Landroid/graphics/Rect;
-
-    const/4 v1, 0x0
-
-    invoke-direct {p0, v0, v1}, Lcom/android/server/wm/FocusedStackFrame;->draw(Landroid/graphics/Rect;I)V
-
-    iget-object v0, p0, Lcom/android/server/wm/FocusedStackFrame;->mBounds:Landroid/graphics/Rect;
-
-    invoke-direct {p0, v0}, Lcom/android/server/wm/FocusedStackFrame;->positionSurface(Landroid/graphics/Rect;)V
-
-    iget-object v0, p0, Lcom/android/server/wm/FocusedStackFrame;->mBounds:Landroid/graphics/Rect;
-
-    const/4 v1, -0x1
-
-    invoke-direct {p0, v0, v1}, Lcom/android/server/wm/FocusedStackFrame;->draw(Landroid/graphics/Rect;I)V
-
-    iget-object v0, p0, Lcom/android/server/wm/FocusedStackFrame;->mLastBounds:Landroid/graphics/Rect;
-
-    iget-object v1, p0, Lcom/android/server/wm/FocusedStackFrame;->mBounds:Landroid/graphics/Rect;
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
-
-    :cond_1
-    iget-object v0, p0, Lcom/android/server/wm/FocusedStackFrame;->mSurfaceControl:Landroid/view/SurfaceControl;
-
-    invoke-virtual {v0}, Landroid/view/SurfaceControl;->show()V
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v0, p0, Lcom/android/server/wm/FocusedStackFrame;->mSurfaceControl:Landroid/view/SurfaceControl;
-
-    invoke-virtual {v0}, Landroid/view/SurfaceControl;->hide()V
+    invoke-direct {p0}, Lcom/android/server/wm/FocusedStackFrame;->draw()V
 
     goto :goto_0
 .end method

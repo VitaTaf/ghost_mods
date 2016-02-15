@@ -34,6 +34,8 @@
 
 .field private final mPreForceFullscreenBounds:Landroid/graphics/Rect;
 
+.field mRotation:I
+
 .field private final mService:Lcom/android/server/wm/WindowManagerService;
 
 .field final mStackId:I
@@ -50,6 +52,8 @@
 .end field
 
 .field private mTmpRect:Landroid/graphics/Rect;
+
+.field private mTmpRect2:Landroid/graphics/Rect;
 
 
 # direct methods
@@ -76,6 +80,12 @@
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/wm/TaskStack;->mTmpRect:Landroid/graphics/Rect;
+
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object v0, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
 
     new-instance v0, Landroid/graphics/Rect;
 
@@ -337,7 +347,29 @@
 
     iput v3, v2, Landroid/content/res/Configuration;->smallestScreenWidthDp:I
 
+    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mOverrideConfig:Landroid/content/res/Configuration;
+
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mOverrideConfig:Landroid/content/res/Configuration;
+
+    iget v2, v2, Landroid/content/res/Configuration;->screenWidthDp:I
+
+    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mOverrideConfig:Landroid/content/res/Configuration;
+
+    iget v4, v4, Landroid/content/res/Configuration;->screenHeightDp:I
+
+    if-gt v2, v4, :cond_2
+
+    const/4 v2, 0x1
+
+    :goto_1
+    iput v2, v3, Landroid/content/res/Configuration;->orientation:I
+
     goto :goto_0
+
+    :cond_2
+    const/4 v2, 0x2
+
+    goto :goto_1
 .end method
 
 
@@ -1406,133 +1438,102 @@
 .end method
 
 .method resizeWindows()V
-    .locals 9
+    .locals 8
 
     .prologue
-    iget-object v8, p0, Lcom/android/server/wm/TaskStack;->mBounds:Landroid/graphics/Rect;
+    iget-object v7, p0, Lcom/android/server/wm/TaskStack;->mService:Lcom/android/server/wm/WindowManagerService;
 
-    iget v8, v8, Landroid/graphics/Rect;->top:I
-
-    if-nez v8, :cond_1
-
-    const/4 v4, 0x1
-
-    .local v4, "underStatusBar":Z
-    :goto_0
-    iget-object v8, p0, Lcom/android/server/wm/TaskStack;->mService:Lcom/android/server/wm/WindowManagerService;
-
-    iget-object v2, v8, Lcom/android/server/wm/WindowManagerService;->mResizingWindows:Ljava/util/ArrayList;
+    iget-object v2, v7, Lcom/android/server/wm/WindowManagerService;->mResizingWindows:Ljava/util/ArrayList;
 
     .local v2, "resizingWindows":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/wm/WindowState;>;"
-    iget-object v8, p0, Lcom/android/server/wm/TaskStack;->mTasks:Ljava/util/ArrayList;
+    iget-object v7, p0, Lcom/android/server/wm/TaskStack;->mTasks:Ljava/util/ArrayList;
 
-    invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
 
-    move-result v8
+    move-result v7
 
-    add-int/lit8 v3, v8, -0x1
+    add-int/lit8 v3, v7, -0x1
 
     .local v3, "taskNdx":I
-    :goto_1
-    if-ltz v3, :cond_4
+    :goto_0
+    if-ltz v3, :cond_3
 
-    iget-object v8, p0, Lcom/android/server/wm/TaskStack;->mTasks:Ljava/util/ArrayList;
+    iget-object v7, p0, Lcom/android/server/wm/TaskStack;->mTasks:Ljava/util/ArrayList;
 
-    invoke-virtual {v8, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v7, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v7
 
-    check-cast v8, Lcom/android/server/wm/Task;
+    check-cast v7, Lcom/android/server/wm/Task;
 
-    iget-object v0, v8, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
+    iget-object v0, v7, Lcom/android/server/wm/Task;->mAppTokens:Lcom/android/server/wm/AppTokenList;
 
     .local v0, "activities":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/wm/AppWindowToken;>;"
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    move-result v8
+    move-result v7
 
-    add-int/lit8 v1, v8, -0x1
+    add-int/lit8 v1, v7, -0x1
 
     .local v1, "activityNdx":I
-    :goto_2
-    if-ltz v1, :cond_3
+    :goto_1
+    if-ltz v1, :cond_2
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v7
 
-    check-cast v8, Lcom/android/server/wm/AppWindowToken;
+    check-cast v7, Lcom/android/server/wm/AppWindowToken;
 
-    iget-object v7, v8, Lcom/android/server/wm/AppWindowToken;->allAppWindows:Lcom/android/server/wm/WindowList;
+    iget-object v6, v7, Lcom/android/server/wm/AppWindowToken;->allAppWindows:Lcom/android/server/wm/WindowList;
 
-    .local v7, "windows":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/wm/WindowState;>;"
-    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
+    .local v6, "windows":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/wm/WindowState;>;"
+    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
-    move-result v8
+    move-result v7
 
-    add-int/lit8 v6, v8, -0x1
+    add-int/lit8 v5, v7, -0x1
 
-    .local v6, "winNdx":I
-    :goto_3
-    if-ltz v6, :cond_2
+    .local v5, "winNdx":I
+    :goto_2
+    if-ltz v5, :cond_1
 
-    invoke-virtual {v7, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v4
 
-    check-cast v5, Lcom/android/server/wm/WindowState;
+    check-cast v4, Lcom/android/server/wm/WindowState;
 
-    .local v5, "win":Lcom/android/server/wm/WindowState;
-    invoke-virtual {v2, v5}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    .local v4, "win":Lcom/android/server/wm/WindowState;
+    invoke-virtual {v2, v4}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
-    move-result v8
+    move-result v7
 
-    if-nez v8, :cond_0
+    if-nez v7, :cond_0
 
-    invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_0
-    iput-boolean v4, v5, Lcom/android/server/wm/WindowState;->mUnderStatusBar:Z
-
-    add-int/lit8 v6, v6, -0x1
-
-    goto :goto_3
-
-    .end local v0    # "activities":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/wm/AppWindowToken;>;"
-    .end local v1    # "activityNdx":I
-    .end local v2    # "resizingWindows":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/wm/WindowState;>;"
-    .end local v3    # "taskNdx":I
-    .end local v4    # "underStatusBar":Z
-    .end local v5    # "win":Lcom/android/server/wm/WindowState;
-    .end local v6    # "winNdx":I
-    .end local v7    # "windows":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/wm/WindowState;>;"
-    :cond_1
-    const/4 v4, 0x0
-
-    goto :goto_0
-
-    .restart local v0    # "activities":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/wm/AppWindowToken;>;"
-    .restart local v1    # "activityNdx":I
-    .restart local v2    # "resizingWindows":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/wm/WindowState;>;"
-    .restart local v3    # "taskNdx":I
-    .restart local v4    # "underStatusBar":Z
-    .restart local v6    # "winNdx":I
-    .restart local v7    # "windows":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/wm/WindowState;>;"
-    :cond_2
-    add-int/lit8 v1, v1, -0x1
+    add-int/lit8 v5, v5, -0x1
 
     goto :goto_2
 
-    .end local v6    # "winNdx":I
-    .end local v7    # "windows":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/wm/WindowState;>;"
-    :cond_3
-    add-int/lit8 v3, v3, -0x1
+    .end local v4    # "win":Lcom/android/server/wm/WindowState;
+    :cond_1
+    add-int/lit8 v1, v1, -0x1
 
     goto :goto_1
 
+    .end local v5    # "winNdx":I
+    .end local v6    # "windows":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/wm/WindowState;>;"
+    :cond_2
+    add-int/lit8 v3, v3, -0x1
+
+    goto :goto_0
+
     .end local v0    # "activities":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/wm/AppWindowToken;>;"
     .end local v1    # "activityNdx":I
-    :cond_4
+    :cond_3
     return-void
 .end method
 
@@ -1587,32 +1588,43 @@
 .end method
 
 .method setBounds(Landroid/graphics/Rect;)Z
-    .locals 5
+    .locals 6
     .param p1, "bounds"    # Landroid/graphics/Rect;
 
     .prologue
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     iget-boolean v0, p0, Lcom/android/server/wm/TaskStack;->mFullscreen:Z
 
     .local v0, "oldFullscreen":Z
-    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
+    const/4 v1, 0x0
 
-    if-eqz v3, :cond_0
+    .local v1, "rotation":I
+    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
 
-    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
+    if-eqz v4, :cond_0
 
-    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mTmpRect:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
 
-    invoke-virtual {v3, v4}, Lcom/android/server/wm/DisplayContent;->getLogicalDisplayRect(Landroid/graphics/Rect;)V
+    iget-object v5, p0, Lcom/android/server/wm/TaskStack;->mTmpRect:Landroid/graphics/Rect;
+
+    invoke-virtual {v4, v5}, Lcom/android/server/wm/DisplayContent;->getLogicalDisplayRect(Landroid/graphics/Rect;)V
+
+    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
+
+    invoke-virtual {v4}, Lcom/android/server/wm/DisplayContent;->getDisplayInfo()Landroid/view/DisplayInfo;
+
+    move-result-object v4
+
+    iget v1, v4, Landroid/view/DisplayInfo;->rotation:I
 
     if-nez p1, :cond_2
 
     iget-object p1, p0, Lcom/android/server/wm/TaskStack;->mTmpRect:Landroid/graphics/Rect;
 
-    iput-boolean v2, p0, Lcom/android/server/wm/TaskStack;->mFullscreen:Z
+    iput-boolean v3, p0, Lcom/android/server/wm/TaskStack;->mFullscreen:Z
 
     :cond_0
     :goto_0
@@ -1620,52 +1632,58 @@
 
     :cond_1
     :goto_1
-    return v1
+    return v2
 
     :cond_2
-    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mTmpRect:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mTmpRect:Landroid/graphics/Rect;
 
-    invoke-virtual {p1, v3}, Landroid/graphics/Rect;->intersect(Landroid/graphics/Rect;)Z
+    invoke-virtual {p1, v4}, Landroid/graphics/Rect;->intersect(Landroid/graphics/Rect;)Z
 
-    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mTmpRect:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mTmpRect:Landroid/graphics/Rect;
 
-    invoke-virtual {v3, p1}, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, p1}, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v4
 
-    iput-boolean v3, p0, Lcom/android/server/wm/TaskStack;->mFullscreen:Z
+    iput-boolean v4, p0, Lcom/android/server/wm/TaskStack;->mFullscreen:Z
 
     goto :goto_0
 
     :cond_3
-    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mBounds:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mBounds:Landroid/graphics/Rect;
 
-    invoke-virtual {v3, p1}, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, p1}, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_4
+    if-eqz v4, :cond_4
 
-    iget-boolean v3, p0, Lcom/android/server/wm/TaskStack;->mFullscreen:Z
+    iget-boolean v4, p0, Lcom/android/server/wm/TaskStack;->mFullscreen:Z
 
-    if-eq v0, v3, :cond_1
+    if-ne v0, v4, :cond_4
+
+    iget v4, p0, Lcom/android/server/wm/TaskStack;->mRotation:I
+
+    if-eq v4, v1, :cond_1
 
     :cond_4
-    iget-object v1, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
 
-    invoke-virtual {v1, p1}, Lcom/android/server/wm/DimLayer;->setBounds(Landroid/graphics/Rect;)V
+    invoke-virtual {v2, p1}, Lcom/android/server/wm/DimLayer;->setBounds(Landroid/graphics/Rect;)V
 
-    iget-object v1, p0, Lcom/android/server/wm/TaskStack;->mAnimationBackgroundSurface:Lcom/android/server/wm/DimLayer;
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mAnimationBackgroundSurface:Lcom/android/server/wm/DimLayer;
 
-    invoke-virtual {v1, p1}, Lcom/android/server/wm/DimLayer;->setBounds(Landroid/graphics/Rect;)V
+    invoke-virtual {v2, p1}, Lcom/android/server/wm/DimLayer;->setBounds(Landroid/graphics/Rect;)V
 
-    iget-object v1, p0, Lcom/android/server/wm/TaskStack;->mBounds:Landroid/graphics/Rect;
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mBounds:Landroid/graphics/Rect;
 
-    invoke-virtual {v1, p1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+    invoke-virtual {v2, p1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+
+    iput v1, p0, Lcom/android/server/wm/TaskStack;->mRotation:I
 
     invoke-direct {p0}, Lcom/android/server/wm/TaskStack;->updateOverrideConfiguration()V
 
-    move v1, v2
+    move v2, v3
 
     goto :goto_1
 .end method
@@ -1882,27 +1900,254 @@
 .end method
 
 .method updateDisplayInfo()V
-    .locals 2
+    .locals 5
 
     .prologue
-    iget-boolean v0, p0, Lcom/android/server/wm/TaskStack;->mFullscreen:Z
+    iget-boolean v2, p0, Lcom/android/server/wm/TaskStack;->mFullscreen:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v2, :cond_1
 
-    iget-object v0, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
+    const/4 v2, 0x0
 
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
-
-    iget-object v1, p0, Lcom/android/server/wm/TaskStack;->mTmpRect:Landroid/graphics/Rect;
-
-    invoke-virtual {v0, v1}, Lcom/android/server/wm/DisplayContent;->getLogicalDisplayRect(Landroid/graphics/Rect;)V
-
-    iget-object v0, p0, Lcom/android/server/wm/TaskStack;->mTmpRect:Landroid/graphics/Rect;
-
-    invoke-virtual {p0, v0}, Lcom/android/server/wm/TaskStack;->setBounds(Landroid/graphics/Rect;)Z
+    invoke-virtual {p0, v2}, Lcom/android/server/wm/TaskStack;->setBounds(Landroid/graphics/Rect;)Z
 
     :cond_0
+    :goto_0
     return-void
+
+    :cond_1
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
+
+    invoke-virtual {v2}, Lcom/android/server/wm/DisplayContent;->getDisplayInfo()Landroid/view/DisplayInfo;
+
+    move-result-object v2
+
+    iget v0, v2, Landroid/view/DisplayInfo;->rotation:I
+
+    .local v0, "newRotation":I
+    iget v2, p0, Lcom/android/server/wm/TaskStack;->mRotation:I
+
+    if-eq v2, v0, :cond_0
+
+    iget v2, p0, Lcom/android/server/wm/TaskStack;->mRotation:I
+
+    invoke-static {v2, v0}, Lcom/android/server/wm/DisplayContent;->deltaRotation(II)I
+
+    move-result v1
+
+    .local v1, "rotationDelta":I
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
+
+    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mTmpRect:Landroid/graphics/Rect;
+
+    invoke-virtual {v2, v3}, Lcom/android/server/wm/DisplayContent;->getLogicalDisplayRect(Landroid/graphics/Rect;)V
+
+    packed-switch v1, :pswitch_data_0
+
+    :goto_1
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
+
+    invoke-virtual {p0, v2}, Lcom/android/server/wm/TaskStack;->setBounds(Landroid/graphics/Rect;)Z
+
+    goto :goto_0
+
+    :pswitch_0
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
+
+    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mBounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v2, v3}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+
+    goto :goto_1
+
+    :pswitch_1
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
+
+    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mTmpRect:Landroid/graphics/Rect;
+
+    iget v3, v3, Landroid/graphics/Rect;->bottom:I
+
+    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mBounds:Landroid/graphics/Rect;
+
+    iget v4, v4, Landroid/graphics/Rect;->right:I
+
+    sub-int/2addr v3, v4
+
+    iput v3, v2, Landroid/graphics/Rect;->top:I
+
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
+
+    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mBounds:Landroid/graphics/Rect;
+
+    iget v3, v3, Landroid/graphics/Rect;->top:I
+
+    iput v3, v2, Landroid/graphics/Rect;->left:I
+
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
+
+    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
+
+    iget v3, v3, Landroid/graphics/Rect;->left:I
+
+    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mBounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v4}, Landroid/graphics/Rect;->height()I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    iput v3, v2, Landroid/graphics/Rect;->right:I
+
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
+
+    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
+
+    iget v3, v3, Landroid/graphics/Rect;->top:I
+
+    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mBounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v4}, Landroid/graphics/Rect;->width()I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    iput v3, v2, Landroid/graphics/Rect;->bottom:I
+
+    goto :goto_1
+
+    :pswitch_2
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
+
+    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mTmpRect:Landroid/graphics/Rect;
+
+    iget v3, v3, Landroid/graphics/Rect;->bottom:I
+
+    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mBounds:Landroid/graphics/Rect;
+
+    iget v4, v4, Landroid/graphics/Rect;->bottom:I
+
+    sub-int/2addr v3, v4
+
+    iput v3, v2, Landroid/graphics/Rect;->top:I
+
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
+
+    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mTmpRect:Landroid/graphics/Rect;
+
+    iget v3, v3, Landroid/graphics/Rect;->right:I
+
+    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mBounds:Landroid/graphics/Rect;
+
+    iget v4, v4, Landroid/graphics/Rect;->right:I
+
+    sub-int/2addr v3, v4
+
+    iput v3, v2, Landroid/graphics/Rect;->left:I
+
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
+
+    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
+
+    iget v3, v3, Landroid/graphics/Rect;->left:I
+
+    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mBounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v4}, Landroid/graphics/Rect;->width()I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    iput v3, v2, Landroid/graphics/Rect;->right:I
+
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
+
+    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
+
+    iget v3, v3, Landroid/graphics/Rect;->top:I
+
+    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mBounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v4}, Landroid/graphics/Rect;->height()I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    iput v3, v2, Landroid/graphics/Rect;->bottom:I
+
+    goto :goto_1
+
+    :pswitch_3
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
+
+    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mBounds:Landroid/graphics/Rect;
+
+    iget v3, v3, Landroid/graphics/Rect;->left:I
+
+    iput v3, v2, Landroid/graphics/Rect;->top:I
+
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
+
+    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mTmpRect:Landroid/graphics/Rect;
+
+    iget v3, v3, Landroid/graphics/Rect;->right:I
+
+    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mBounds:Landroid/graphics/Rect;
+
+    iget v4, v4, Landroid/graphics/Rect;->bottom:I
+
+    sub-int/2addr v3, v4
+
+    iput v3, v2, Landroid/graphics/Rect;->left:I
+
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
+
+    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
+
+    iget v3, v3, Landroid/graphics/Rect;->left:I
+
+    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mBounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v4}, Landroid/graphics/Rect;->height()I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    iput v3, v2, Landroid/graphics/Rect;->right:I
+
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
+
+    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
+
+    iget v3, v3, Landroid/graphics/Rect;->top:I
+
+    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mBounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v4}, Landroid/graphics/Rect;->width()I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    iput v3, v2, Landroid/graphics/Rect;->bottom:I
+
+    goto/16 :goto_1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+    .end packed-switch
 .end method

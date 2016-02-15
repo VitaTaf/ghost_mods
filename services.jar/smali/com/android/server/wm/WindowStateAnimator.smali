@@ -863,53 +863,53 @@
 .end method
 
 .method commitFinishDrawingLocked()Z
-    .locals 4
+    .locals 5
 
     .prologue
-    const/4 v3, 0x3
-
-    iget v1, p0, Lcom/android/server/wm/WindowStateAnimator;->mDrawState:I
-
-    const/4 v2, 0x2
-
-    if-eq v1, v2, :cond_0
-
-    iget v1, p0, Lcom/android/server/wm/WindowStateAnimator;->mDrawState:I
-
-    if-eq v1, v3, :cond_0
-
     const/4 v1, 0x0
 
+    const/4 v4, 0x3
+
+    iget v2, p0, Lcom/android/server/wm/WindowStateAnimator;->mDrawState:I
+
+    const/4 v3, 0x2
+
+    if-eq v2, v3, :cond_1
+
+    iget v2, p0, Lcom/android/server/wm/WindowStateAnimator;->mDrawState:I
+
+    if-eq v2, v4, :cond_1
+
+    :cond_0
     :goto_0
     return v1
 
-    :cond_0
-    iput v3, p0, Lcom/android/server/wm/WindowStateAnimator;->mDrawState:I
+    :cond_1
+    iput v4, p0, Lcom/android/server/wm/WindowStateAnimator;->mDrawState:I
 
-    iget-object v1, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
+    iget-object v2, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
 
-    iget-object v0, v1, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
+    iget-object v0, v2, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
 
     .local v0, "atoken":Lcom/android/server/wm/AppWindowToken;
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
-    iget-boolean v1, v0, Lcom/android/server/wm/AppWindowToken;->allDrawn:Z
+    iget-boolean v2, v0, Lcom/android/server/wm/AppWindowToken;->allDrawn:Z
 
-    if-nez v1, :cond_1
+    if-nez v2, :cond_2
 
-    iget-object v1, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
+    iget-object v2, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
 
-    iget-object v1, v1, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
+    iget-object v2, v2, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
 
-    iget v1, v1, Landroid/view/WindowManager$LayoutParams;->type:I
+    iget v2, v2, Landroid/view/WindowManager$LayoutParams;->type:I
 
-    if-ne v1, v3, :cond_2
-
-    :cond_1
-    invoke-virtual {p0}, Lcom/android/server/wm/WindowStateAnimator;->performShowLocked()Z
+    if-ne v2, v4, :cond_0
 
     :cond_2
-    const/4 v1, 0x1
+    invoke-virtual {p0}, Lcom/android/server/wm/WindowStateAnimator;->performShowLocked()Z
+
+    move-result v1
 
     goto :goto_0
 .end method
@@ -4122,43 +4122,19 @@
 
     iget-boolean v2, v2, Lcom/android/server/wm/WindowState;->mExiting:Z
 
-    if-nez v2, :cond_3
+    if-nez v2, :cond_4
 
+    :cond_3
     :goto_2
     return-void
 
-    :cond_3
+    :cond_4
     invoke-virtual {p0}, Lcom/android/server/wm/WindowStateAnimator;->isWindowAnimating()Z
 
     move-result v2
 
-    if-eqz v2, :cond_4
+    if-nez v2, :cond_3
 
-    const-string v2, "WindowStateAnimator"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "windowAnimating in "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_2
-
-    :cond_4
     iget-object v2, p0, Lcom/android/server/wm/WindowStateAnimator;->mSurfaceControl:Landroid/view/SurfaceControl;
 
     if-eqz v2, :cond_5
@@ -4369,7 +4345,7 @@
 .end method
 
 .method performShowLocked()Z
-    .locals 8
+    .locals 7
 
     .prologue
     const/4 v6, 0x3
@@ -4477,59 +4453,45 @@
     .end local v0    # "c":Lcom/android/server/wm/WindowState;
     .end local v1    # "displayContent":Lcom/android/server/wm/DisplayContent;
     :cond_3
-    iget-object v5, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
+    iget-object v3, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
 
-    iget-object v5, v5, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
+    iget-object v3, v3, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
 
-    iget v5, v5, Landroid/view/WindowManager$LayoutParams;->type:I
+    iget v3, v3, Landroid/view/WindowManager$LayoutParams;->type:I
 
-    if-eq v5, v6, :cond_5
+    if-eq v3, v6, :cond_5
 
-    iget-object v5, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
+    iget-object v3, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
 
-    iget-object v5, v5, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
+    iget-object v3, v3, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
 
-    if-eqz v5, :cond_5
+    if-eqz v3, :cond_5
 
-    iget-object v5, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
+    iget-object v3, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
 
-    iget-object v5, v5, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
+    iget-object v3, v3, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
 
-    iput-boolean v4, v5, Lcom/android/server/wm/AppWindowToken;->firstWindowDrawn:Z
+    iput-boolean v4, v3, Lcom/android/server/wm/AppWindowToken;->firstWindowDrawn:Z
 
-    iget-object v5, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
+    iget-object v3, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
 
-    iget-object v5, v5, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
+    iget-object v3, v3, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
 
-    iget-object v5, v5, Lcom/android/server/wm/AppWindowToken;->startingData:Lcom/android/server/wm/StartingData;
+    iget-object v3, v3, Lcom/android/server/wm/AppWindowToken;->startingData:Lcom/android/server/wm/StartingData;
 
-    if-eqz v5, :cond_4
+    if-eqz v3, :cond_4
 
     invoke-virtual {p0}, Lcom/android/server/wm/WindowStateAnimator;->clearAnimation()V
 
-    iget-object v5, p0, Lcom/android/server/wm/WindowStateAnimator;->mService:Lcom/android/server/wm/WindowManagerService;
+    iget-object v3, p0, Lcom/android/server/wm/WindowStateAnimator;->mService:Lcom/android/server/wm/WindowManagerService;
 
-    iget-object v5, v5, Lcom/android/server/wm/WindowManagerService;->mFinishedStarting:Ljava/util/ArrayList;
+    iget-object v3, v3, Lcom/android/server/wm/WindowManagerService;->mFinishedStarting:Ljava/util/ArrayList;
 
-    iget-object v6, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
+    iget-object v5, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
 
-    iget-object v6, v6, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
+    iget-object v5, v5, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
 
-    invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    sget-object v5, Lcom/motorola/kpi/Kpi6paTop$Tag;->WMS6:Lcom/motorola/kpi/Kpi6paTop$Tag;
-
-    new-array v6, v4, [Ljava/lang/Object;
-
-    iget-object v7, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
-
-    iget-object v7, v7, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
-
-    iget-object v7, v7, Lcom/android/server/wm/AppWindowToken;->token:Landroid/os/IBinder;
-
-    aput-object v7, v6, v3
-
-    invoke-static {v5, v6}, Lcom/motorola/kpi/Kpi6paTop;->log(Lcom/motorola/kpi/Kpi6paTop$Tag;[Ljava/lang/Object;)V
+    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     iget-object v3, p0, Lcom/android/server/wm/WindowStateAnimator;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -5482,6 +5444,14 @@
     if-eqz v4, :cond_1
 
     :cond_0
+    int-to-float v4, v2
+
+    iput v4, p0, Lcom/android/server/wm/WindowStateAnimator;->mSurfaceX:F
+
+    int-to-float v4, v3
+
+    iput v4, p0, Lcom/android/server/wm/WindowStateAnimator;->mSurfaceY:F
+
     iget-boolean v4, p0, Lcom/android/server/wm/WindowStateAnimator;->mAnimating:Z
 
     if-eqz v4, :cond_2
@@ -5491,14 +5461,6 @@
     return-void
 
     :cond_2
-    int-to-float v4, v2
-
-    iput v4, p0, Lcom/android/server/wm/WindowStateAnimator;->mSurfaceX:F
-
-    int-to-float v4, v3
-
-    iput v4, p0, Lcom/android/server/wm/WindowStateAnimator;->mSurfaceY:F
-
     invoke-static {}, Landroid/view/SurfaceControl;->openTransaction()V
 
     :try_start_0

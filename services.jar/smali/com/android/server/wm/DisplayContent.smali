@@ -195,6 +195,23 @@
     return-void
 .end method
 
+.method static deltaRotation(II)I
+    .locals 1
+    .param p0, "oldRotation"    # I
+    .param p1, "newRotation"    # I
+
+    .prologue
+    sub-int v0, p1, p0
+
+    .local v0, "delta":I
+    if-gez v0, :cond_0
+
+    add-int/lit8 v0, v0, 0x4
+
+    :cond_0
+    return v0
+.end method
+
 
 # virtual methods
 .method animateDimLayers()Z

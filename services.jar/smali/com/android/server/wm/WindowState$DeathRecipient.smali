@@ -109,9 +109,7 @@
 
     iget-object v1, v1, Lcom/android/server/wm/WindowState;->mService:Lcom/android/server/wm/WindowManagerService;
 
-    const/4 v4, 0x1
-
-    invoke-virtual {v1, v0, v4}, Lcom/android/server/wm/WindowManagerService;->removeWindowLocked(Lcom/android/server/wm/WindowState;Z)V
+    invoke-virtual {v1, v0}, Lcom/android/server/wm/WindowManagerService;->removeWindowLocked(Lcom/android/server/wm/WindowState;)V
 
     :cond_0
     :goto_0
@@ -141,9 +139,7 @@
 
     iget-object v3, p0, Lcom/android/server/wm/WindowState$DeathRecipient;->this$0:Lcom/android/server/wm/WindowState;
 
-    const/4 v5, 0x1
-
-    invoke-virtual {v1, v3, v5}, Lcom/android/server/wm/WindowManagerService;->removeWindowLocked(Lcom/android/server/wm/WindowState;Z)V
+    invoke-virtual {v1, v3}, Lcom/android/server/wm/WindowManagerService;->removeWindowLocked(Lcom/android/server/wm/WindowState;)V
 
     goto :goto_0
 
