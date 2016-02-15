@@ -68,128 +68,94 @@
 .end method
 
 .method private processPointerEvent(Landroid/view/ViewRootImpl$QueuedInputEvent;)I
-    .locals 5
+    .locals 4
     .param p1, "q"    # Landroid/view/ViewRootImpl$QueuedInputEvent;
 
     .prologue
-    const/4 v3, 0x1
-
     iget-object v1, p1, Landroid/view/ViewRootImpl$QueuedInputEvent;->mEvent:Landroid/view/InputEvent;
 
     check-cast v1, Landroid/view/MotionEvent;
 
     .local v1, "event":Landroid/view/MotionEvent;
-    iget-object v4, p0, Landroid/view/ViewRootImpl$EarlyPostImeInputStage;->this$0:Landroid/view/ViewRootImpl;
+    iget-object v2, p0, Landroid/view/ViewRootImpl$EarlyPostImeInputStage;->this$0:Landroid/view/ViewRootImpl;
 
-    iget-object v4, v4, Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo;
+    iget-object v2, v2, Landroid/view/ViewRootImpl;->mTranslator:Landroid/content/res/CompatibilityInfo$Translator;
 
-    iget-boolean v4, v4, Landroid/view/View$AttachInfo;->mPixelPipeEnabled:Z
-
-    if-eqz v4, :cond_0
-
-    iget-object v4, p0, Landroid/view/ViewRootImpl$EarlyPostImeInputStage;->this$0:Landroid/view/ViewRootImpl;
-
-    iget-object v4, v4, Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo;
-
-    iget-object v4, v4, Landroid/view/View$AttachInfo;->mPixelPipeTarget:Lcom/motorola/pixelpipe/PixelPipeApi;
-
-    if-eqz v4, :cond_0
-
-    iget-object v4, p0, Landroid/view/ViewRootImpl$EarlyPostImeInputStage;->this$0:Landroid/view/ViewRootImpl;
-
-    iget-object v4, v4, Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo;
-
-    iget-object v4, v4, Landroid/view/View$AttachInfo;->mPixelPipeTarget:Lcom/motorola/pixelpipe/PixelPipeApi;
-
-    invoke-interface {v4, v1}, Lcom/motorola/pixelpipe/PixelPipeApi;->onTouchEvent(Landroid/view/MotionEvent;)Z
-
-    move-result v2
-
-    .local v2, "handled":Z
     if-eqz v2, :cond_0
 
-    .end local v2    # "handled":Z
-    :goto_0
-    return v3
+    iget-object v2, p0, Landroid/view/ViewRootImpl$EarlyPostImeInputStage;->this$0:Landroid/view/ViewRootImpl;
+
+    iget-object v2, v2, Landroid/view/ViewRootImpl;->mTranslator:Landroid/content/res/CompatibilityInfo$Translator;
+
+    invoke-virtual {v2, v1}, Landroid/content/res/CompatibilityInfo$Translator;->translateEventInScreenToAppWindow(Landroid/view/MotionEvent;)V
 
     :cond_0
-    iget-object v4, p0, Landroid/view/ViewRootImpl$EarlyPostImeInputStage;->this$0:Landroid/view/ViewRootImpl;
-
-    iget-object v4, v4, Landroid/view/ViewRootImpl;->mTranslator:Landroid/content/res/CompatibilityInfo$Translator;
-
-    if-eqz v4, :cond_1
-
-    iget-object v4, p0, Landroid/view/ViewRootImpl$EarlyPostImeInputStage;->this$0:Landroid/view/ViewRootImpl;
-
-    iget-object v4, v4, Landroid/view/ViewRootImpl;->mTranslator:Landroid/content/res/CompatibilityInfo$Translator;
-
-    invoke-virtual {v4, v1}, Landroid/content/res/CompatibilityInfo$Translator;->translateEventInScreenToAppWindow(Landroid/view/MotionEvent;)V
-
-    :cond_1
     invoke-virtual {v1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
     .local v0, "action":I
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
-    const/16 v4, 0x8
+    const/16 v2, 0x8
 
-    if-ne v0, v4, :cond_3
+    if-ne v0, v2, :cond_2
+
+    :cond_1
+    iget-object v2, p0, Landroid/view/ViewRootImpl$EarlyPostImeInputStage;->this$0:Landroid/view/ViewRootImpl;
+
+    const/4 v3, 0x1
+
+    invoke-virtual {v2, v3}, Landroid/view/ViewRootImpl;->ensureTouchMode(Z)Z
 
     :cond_2
-    iget-object v4, p0, Landroid/view/ViewRootImpl$EarlyPostImeInputStage;->this$0:Landroid/view/ViewRootImpl;
+    iget-object v2, p0, Landroid/view/ViewRootImpl$EarlyPostImeInputStage;->this$0:Landroid/view/ViewRootImpl;
 
-    invoke-virtual {v4, v3}, Landroid/view/ViewRootImpl;->ensureTouchMode(Z)Z
+    iget v2, v2, Landroid/view/ViewRootImpl;->mCurScrollY:I
 
-    :cond_3
+    if-eqz v2, :cond_3
+
+    const/4 v2, 0x0
+
     iget-object v3, p0, Landroid/view/ViewRootImpl$EarlyPostImeInputStage;->this$0:Landroid/view/ViewRootImpl;
 
     iget v3, v3, Landroid/view/ViewRootImpl;->mCurScrollY:I
 
-    if-eqz v3, :cond_4
+    int-to-float v3, v3
 
-    const/4 v3, 0x0
+    invoke-virtual {v1, v2, v3}, Landroid/view/MotionEvent;->offsetLocation(FF)V
 
-    iget-object v4, p0, Landroid/view/ViewRootImpl$EarlyPostImeInputStage;->this$0:Landroid/view/ViewRootImpl;
-
-    iget v4, v4, Landroid/view/ViewRootImpl;->mCurScrollY:I
-
-    int-to-float v4, v4
-
-    invoke-virtual {v1, v3, v4}, Landroid/view/MotionEvent;->offsetLocation(FF)V
-
-    :cond_4
+    :cond_3
     invoke-virtual {v1}, Landroid/view/MotionEvent;->isTouchEvent()Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_5
+    if-eqz v2, :cond_4
 
-    iget-object v3, p0, Landroid/view/ViewRootImpl$EarlyPostImeInputStage;->this$0:Landroid/view/ViewRootImpl;
+    iget-object v2, p0, Landroid/view/ViewRootImpl$EarlyPostImeInputStage;->this$0:Landroid/view/ViewRootImpl;
 
-    iget-object v3, v3, Landroid/view/ViewRootImpl;->mLastTouchPoint:Landroid/graphics/PointF;
+    iget-object v2, v2, Landroid/view/ViewRootImpl;->mLastTouchPoint:Landroid/graphics/PointF;
 
     invoke-virtual {v1}, Landroid/view/MotionEvent;->getRawX()F
 
-    move-result v4
+    move-result v3
 
-    iput v4, v3, Landroid/graphics/PointF;->x:F
+    iput v3, v2, Landroid/graphics/PointF;->x:F
 
-    iget-object v3, p0, Landroid/view/ViewRootImpl$EarlyPostImeInputStage;->this$0:Landroid/view/ViewRootImpl;
+    iget-object v2, p0, Landroid/view/ViewRootImpl$EarlyPostImeInputStage;->this$0:Landroid/view/ViewRootImpl;
 
-    iget-object v3, v3, Landroid/view/ViewRootImpl;->mLastTouchPoint:Landroid/graphics/PointF;
+    iget-object v2, v2, Landroid/view/ViewRootImpl;->mLastTouchPoint:Landroid/graphics/PointF;
 
     invoke-virtual {v1}, Landroid/view/MotionEvent;->getRawY()F
 
-    move-result v4
+    move-result v3
 
-    iput v4, v3, Landroid/graphics/PointF;->y:F
+    iput v3, v2, Landroid/graphics/PointF;->y:F
 
-    :cond_5
-    const/4 v3, 0x0
+    :cond_4
+    const/4 v2, 0x0
 
-    goto :goto_0
+    return v2
 .end method
 
 

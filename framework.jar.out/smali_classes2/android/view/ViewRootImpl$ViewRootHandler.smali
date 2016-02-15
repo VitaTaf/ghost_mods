@@ -499,42 +499,6 @@
 
     invoke-virtual {v3}, Landroid/view/ViewRootImpl;->requestLayout()V
 
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
-
-    iget-object v3, v3, Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo;
-
-    iget-boolean v3, v3, Landroid/view/View$AttachInfo;->mPixelPipeEnabled:Z
-
-    if-eqz v3, :cond_0
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
-
-    iget-object v3, v3, Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo;
-
-    iget-object v3, v3, Landroid/view/View$AttachInfo;->mPixelPipeTarget:Lcom/motorola/pixelpipe/PixelPipeApi;
-
-    if-eqz v3, :cond_0
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
-
-    iget-object v3, v3, Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo;
-
-    iget-object v3, v3, Landroid/view/View$AttachInfo;->mPixelPipeTarget:Lcom/motorola/pixelpipe/PixelPipeApi;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
-
-    iget-object v4, v4, Landroid/view/ViewRootImpl;->mWinFrame:Landroid/graphics/Rect;
-
-    invoke-interface {v3, v4}, Lcom/motorola/pixelpipe/PixelPipeApi;->onMovedOrResized(Landroid/graphics/Rect;)V
-
     goto/16 :goto_0
 
     .end local v8    # "args":Lcom/android/internal/os/SomeArgs;
@@ -629,42 +593,6 @@
     iget-object v3, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
 
     invoke-virtual {v3}, Landroid/view/ViewRootImpl;->requestLayout()V
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
-
-    iget-object v3, v3, Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo;
-
-    iget-boolean v3, v3, Landroid/view/View$AttachInfo;->mPixelPipeEnabled:Z
-
-    if-eqz v3, :cond_0
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
-
-    iget-object v3, v3, Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo;
-
-    iget-object v3, v3, Landroid/view/View$AttachInfo;->mPixelPipeTarget:Lcom/motorola/pixelpipe/PixelPipeApi;
-
-    if-eqz v3, :cond_0
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
-
-    iget-object v3, v3, Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo;
-
-    iget-object v3, v3, Landroid/view/View$AttachInfo;->mPixelPipeTarget:Lcom/motorola/pixelpipe/PixelPipeApi;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
-
-    iget-object v4, v4, Landroid/view/ViewRootImpl;->mWinFrame:Landroid/graphics/Rect;
-
-    invoke-interface {v3, v4}, Lcom/motorola/pixelpipe/PixelPipeApi;->onMovedOrResized(Landroid/graphics/Rect;)V
 
     goto/16 :goto_0
 
@@ -899,36 +827,6 @@
     iget-object v3, v3, Landroid/view/View$AttachInfo;->mTreeObserver:Landroid/view/ViewTreeObserver;
 
     invoke-virtual {v3, v13}, Landroid/view/ViewTreeObserver;->dispatchOnWindowFocusChange(Z)V
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
-
-    iget-object v3, v3, Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo;
-
-    iget-boolean v3, v3, Landroid/view/View$AttachInfo;->mPixelPipeEnabled:Z
-
-    if-eqz v3, :cond_9
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
-
-    iget-object v3, v3, Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo;
-
-    iget-object v3, v3, Landroid/view/View$AttachInfo;->mPixelPipeTarget:Lcom/motorola/pixelpipe/PixelPipeApi;
-
-    if-eqz v3, :cond_9
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
-
-    iget-object v3, v3, Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo;
-
-    iget-object v3, v3, Landroid/view/View$AttachInfo;->mPixelPipeTarget:Lcom/motorola/pixelpipe/PixelPipeApi;
-
-    invoke-interface {v3, v13}, Lcom/motorola/pixelpipe/PixelPipeApi;->onFocusChanged(Z)V
 
     :cond_7
     if-eqz v13, :cond_9

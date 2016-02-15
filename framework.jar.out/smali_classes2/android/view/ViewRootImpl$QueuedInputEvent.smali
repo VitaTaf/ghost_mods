@@ -74,7 +74,7 @@
 
     if-eqz p3, :cond_0
 
-    const-string/jumbo v0, "|"
+    const-string v0, "|"
 
     invoke-virtual {p4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -233,7 +233,7 @@
 
     if-eqz v2, :cond_1
 
-    const-string/jumbo v2, "true"
+    const-string v2, "true"
 
     :goto_0
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -260,7 +260,7 @@
 
     if-eqz v2, :cond_2
 
-    const-string/jumbo v2, "true"
+    const-string v2, "true"
 
     :goto_1
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -289,7 +289,7 @@
 
     move-result-object v2
 
-    const-string/jumbo v3, "}"
+    const-string v3, "}"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
