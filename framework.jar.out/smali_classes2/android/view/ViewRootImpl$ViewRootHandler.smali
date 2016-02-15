@@ -834,16 +834,6 @@
     move-result-object v2
 
     .local v2, "imm":Landroid/view/inputmethod/InputMethodManager;
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
-
-    iget-object v3, v3, Landroid/view/ViewRootImpl;->mView:Landroid/view/View;
-
-    if-eqz v3, :cond_7
-
-    if-eqz v13, :cond_6
-
     if-eqz v2, :cond_6
 
     move-object/from16 v0, p0
@@ -871,9 +861,17 @@
 
     iget-object v3, v3, Landroid/view/ViewRootImpl;->mView:Landroid/view/View;
 
-    invoke-virtual {v2, v3}, Landroid/view/inputmethod/InputMethodManager;->startGettingWindowFocus(Landroid/view/View;)V
+    invoke-virtual {v2, v3, v13}, Landroid/view/inputmethod/InputMethodManager;->onPreWindowFocus(Landroid/view/View;Z)V
 
     :cond_6
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
+
+    iget-object v3, v3, Landroid/view/ViewRootImpl;->mView:Landroid/view/View;
+
+    if-eqz v3, :cond_7
+
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/ViewRootImpl$ViewRootHandler;->this$0:Landroid/view/ViewRootImpl;
@@ -999,7 +997,7 @@
 
     iget v7, v7, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    invoke-virtual/range {v2 .. v7}, Landroid/view/inputmethod/InputMethodManager;->onWindowFocus(Landroid/view/View;Landroid/view/View;IZI)V
+    invoke-virtual/range {v2 .. v7}, Landroid/view/inputmethod/InputMethodManager;->onPostWindowFocus(Landroid/view/View;Landroid/view/View;IZI)V
 
     :cond_8
     move-object/from16 v0, p0

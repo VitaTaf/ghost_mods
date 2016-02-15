@@ -6915,11 +6915,25 @@
     iget-object v10, v0, Landroid/view/ViewRootImpl;->mSurface:Landroid/view/Surface;
 
     invoke-virtual {v4, v10}, Landroid/view/HardwareRenderer;->initialize(Landroid/view/Surface;)Z
+
+    move-result v38
+
+    if-eqz v38, :cond_39
+
+    iget v4, v5, Landroid/view/View;->mPrivateFlags:I
+
+    and-int/lit16 v4, v4, 0x200
+
+    if-nez v4, :cond_39
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Landroid/view/ViewRootImpl;->mSurface:Landroid/view/Surface;
+
+    invoke-virtual {v4}, Landroid/view/Surface;->allocateBuffers()V
     :try_end_1
     .catch Landroid/view/Surface$OutOfResourcesException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
-
-    move-result v38
 
     .end local v49    # "overscanInsetsChanged":Z
     .end local v56    # "stableInsetsChanged":Z
@@ -8232,9 +8246,11 @@
 
     iget-object v4, v0, Landroid/view/ViewRootImpl;->mView:Landroid/view/View;
 
+    const/4 v10, 0x1
+
     move-object/from16 v0, v16
 
-    invoke-virtual {v0, v4}, Landroid/view/inputmethod/InputMethodManager;->startGettingWindowFocus(Landroid/view/View;)V
+    invoke-virtual {v0, v4, v10}, Landroid/view/inputmethod/InputMethodManager;->onPreWindowFocus(Landroid/view/View;Z)V
 
     move-object/from16 v0, p0
 
@@ -8275,7 +8291,7 @@
 
     move/from16 v21, v0
 
-    invoke-virtual/range {v16 .. v21}, Landroid/view/inputmethod/InputMethodManager;->onWindowFocus(Landroid/view/View;Landroid/view/View;IZI)V
+    invoke-virtual/range {v16 .. v21}, Landroid/view/inputmethod/InputMethodManager;->onPostWindowFocus(Landroid/view/View;Landroid/view/View;IZI)V
 
     .end local v16    # "imm":Landroid/view/inputmethod/InputMethodManager;
     .end local v41    # "imTarget":Z

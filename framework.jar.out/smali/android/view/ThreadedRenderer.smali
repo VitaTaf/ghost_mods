@@ -961,8 +961,6 @@
     move-result v0
 
     .local v0, "status":Z
-    invoke-virtual {p1}, Landroid/view/Surface;->allocateBuffers()V
-
     return v0
 .end method
 

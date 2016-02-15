@@ -164,10 +164,6 @@
 
 .field mTmpCursorRect:Landroid/graphics/Rect;
 
-.field private final mViewToScreenMatrix:Landroid/graphics/Matrix;
-
-.field private final mViewTopLeft:[I
-
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/view/IInputMethodManager;Landroid/os/Looper;)V
@@ -209,18 +205,6 @@
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/view/inputmethod/InputMethodManager;->mCursorAnchorInfo:Landroid/view/inputmethod/CursorAnchorInfo;
-
-    const/4 v0, 0x2
-
-    new-array v0, v0, [I
-
-    iput-object v0, p0, Landroid/view/inputmethod/InputMethodManager;->mViewTopLeft:[I
-
-    new-instance v0, Landroid/graphics/Matrix;
-
-    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
-
-    iput-object v0, p0, Landroid/view/inputmethod/InputMethodManager;->mViewToScreenMatrix:Landroid/graphics/Matrix;
 
     iput v1, p0, Landroid/view/inputmethod/InputMethodManager;->mBindSequence:I
 
@@ -1737,8 +1721,6 @@
     .prologue
     const/4 v2, 0x0
 
-    iput-object v2, p0, Landroid/view/inputmethod/InputMethodManager;->mCurRootView:Landroid/view/View;
-
     iput-object v2, p0, Landroid/view/inputmethod/InputMethodManager;->mNextServedView:Landroid/view/View;
 
     iget-object v0, p0, Landroid/view/inputmethod/InputMethodManager;->mServedView:Landroid/view/View;
@@ -2373,15 +2355,19 @@
     const/4 v6, 0x0
 
     .local v6, "subtypes":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/view/inputmethod/InputMethodSubtype;>;"
+    if-eqz v3, :cond_0
+
+    invoke-interface {v3}, Ljava/util/List;->isEmpty()Z
+
+    move-result v7
+
+    if-nez v7, :cond_0
+
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v0
 
     .local v0, "N":I
-    if-eqz v3, :cond_0
-
-    if-lez v0, :cond_0
-
     const/4 v2, 0x0
 
     .local v2, "i":I
@@ -3021,7 +3007,7 @@
     goto :goto_1
 .end method
 
-.method public onWindowFocus(Landroid/view/View;Landroid/view/View;IZI)V
+.method public onPostWindowFocus(Landroid/view/View;Landroid/view/View;IZI)V
     .locals 10
     .param p1, "rootView"    # Landroid/view/View;
     .param p2, "focusedView"    # Landroid/view/View;
@@ -3165,6 +3151,96 @@
     move-exception v0
 
     goto :goto_2
+.end method
+
+.method public onPreWindowFocus(Landroid/view/View;Z)V
+    .locals 2
+    .param p1, "rootView"    # Landroid/view/View;
+    .param p2, "hasWindowFocus"    # Z
+
+    .prologue
+    iget-object v1, p0, Landroid/view/inputmethod/InputMethodManager;->mH:Landroid/view/inputmethod/InputMethodManager$H;
+
+    monitor-enter v1
+
+    if-nez p1, :cond_0
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    iput-object v0, p0, Landroid/view/inputmethod/InputMethodManager;->mCurRootView:Landroid/view/View;
+
+    :cond_0
+    if-eqz p2, :cond_2
+
+    iput-object p1, p0, Landroid/view/inputmethod/InputMethodManager;->mCurRootView:Landroid/view/View;
+
+    :cond_1
+    :goto_0
+    monitor-exit v1
+
+    return-void
+
+    :cond_2
+    iget-object v0, p0, Landroid/view/inputmethod/InputMethodManager;->mCurRootView:Landroid/view/View;
+
+    if-ne p1, v0, :cond_1
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Landroid/view/inputmethod/InputMethodManager;->mCurRootView:Landroid/view/View;
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public onViewDetachedFromWindow(Landroid/view/View;)V
+    .locals 2
+    .param p1, "view"    # Landroid/view/View;
+
+    .prologue
+    iget-object v1, p0, Landroid/view/inputmethod/InputMethodManager;->mH:Landroid/view/inputmethod/InputMethodManager$H;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Landroid/view/inputmethod/InputMethodManager;->mServedView:Landroid/view/View;
+
+    if-ne v0, p1, :cond_0
+
+    invoke-virtual {p1}, Landroid/view/View;->hasWindowFocus()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Landroid/view/inputmethod/InputMethodManager;->mNextServedView:Landroid/view/View;
+
+    invoke-static {p1}, Landroid/view/inputmethod/InputMethodManager;->scheduleCheckFocusLocked(Landroid/view/View;)V
+
+    :cond_0
+    monitor-exit v1
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method
 
 .method public registerSuggestionSpansForNotification([Landroid/text/style/SuggestionSpan;)V
@@ -4191,32 +4267,6 @@
     invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
     throw v1
-.end method
-
-.method public startGettingWindowFocus(Landroid/view/View;)V
-    .locals 2
-    .param p1, "rootView"    # Landroid/view/View;
-
-    .prologue
-    iget-object v1, p0, Landroid/view/inputmethod/InputMethodManager;->mH:Landroid/view/inputmethod/InputMethodManager$H;
-
-    monitor-enter v1
-
-    :try_start_0
-    iput-object p1, p0, Landroid/view/inputmethod/InputMethodManager;->mCurRootView:Landroid/view/View;
-
-    monitor-exit v1
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
 .end method
 
 .method startInputInner(Landroid/os/IBinder;III)Z

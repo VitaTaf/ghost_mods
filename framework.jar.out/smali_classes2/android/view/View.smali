@@ -11927,51 +11927,61 @@
 .end method
 
 .method dispatchDetachedFromWindow()V
-    .locals 9
+    .locals 10
 
     .prologue
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
-    const/16 v7, 0x8
+    const/16 v8, 0x8
 
-    iget-object v1, p0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
+    iget-object v2, p0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
 
-    .local v1, "info":Landroid/view/View$AttachInfo;
-    if-eqz v1, :cond_0
+    .local v2, "info":Landroid/view/View$AttachInfo;
+    if-eqz v2, :cond_0
 
-    iget v5, v1, Landroid/view/View$AttachInfo;->mWindowVisibility:I
+    iget v6, v2, Landroid/view/View$AttachInfo;->mWindowVisibility:I
 
-    .local v5, "vis":I
-    if-eq v5, v7, :cond_0
+    .local v6, "vis":I
+    if-eq v6, v8, :cond_0
 
-    invoke-virtual {p0, v7}, Landroid/view/View;->onWindowVisibilityChanged(I)V
+    invoke-virtual {p0, v8}, Landroid/view/View;->onWindowVisibilityChanged(I)V
 
-    .end local v5    # "vis":I
+    .end local v6    # "vis":I
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->onDetachedFromWindow()V
 
     invoke-virtual {p0}, Landroid/view/View;->onDetachedFromWindowInternal()V
 
-    iget-object v2, p0, Landroid/view/View;->mListenerInfo:Landroid/view/View$ListenerInfo;
+    invoke-static {}, Landroid/view/inputmethod/InputMethodManager;->peekInstance()Landroid/view/inputmethod/InputMethodManager;
 
-    .local v2, "li":Landroid/view/View$ListenerInfo;
-    if-eqz v2, :cond_1
+    move-result-object v1
 
-    invoke-static {v2}, Landroid/view/View$ListenerInfo;->access$300(Landroid/view/View$ListenerInfo;)Ljava/util/concurrent/CopyOnWriteArrayList;
+    .local v1, "imm":Landroid/view/inputmethod/InputMethodManager;
+    if-eqz v1, :cond_1
 
-    move-result-object v4
+    invoke-virtual {v1, p0}, Landroid/view/inputmethod/InputMethodManager;->onViewDetachedFromWindow(Landroid/view/View;)V
 
-    .local v4, "listeners":Ljava/util/concurrent/CopyOnWriteArrayList;, "Ljava/util/concurrent/CopyOnWriteArrayList<Landroid/view/View$OnAttachStateChangeListener;>;"
+    :cond_1
+    iget-object v3, p0, Landroid/view/View;->mListenerInfo:Landroid/view/View$ListenerInfo;
+
+    .local v3, "li":Landroid/view/View$ListenerInfo;
+    if-eqz v3, :cond_2
+
+    invoke-static {v3}, Landroid/view/View$ListenerInfo;->access$300(Landroid/view/View$ListenerInfo;)Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    move-result-object v5
+
+    .local v5, "listeners":Ljava/util/concurrent/CopyOnWriteArrayList;, "Ljava/util/concurrent/CopyOnWriteArrayList<Landroid/view/View$OnAttachStateChangeListener;>;"
     :goto_0
-    if-eqz v4, :cond_2
+    if-eqz v5, :cond_3
 
-    invoke-virtual {v4}, Ljava/util/concurrent/CopyOnWriteArrayList;->size()I
+    invoke-virtual {v5}, Ljava/util/concurrent/CopyOnWriteArrayList;->size()I
 
-    move-result v7
+    move-result v8
 
-    if-lez v7, :cond_2
+    if-lez v8, :cond_3
 
-    invoke-virtual {v4}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v5}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
@@ -11979,69 +11989,69 @@
     :goto_1
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v7
+    move-result v8
 
-    if-eqz v7, :cond_2
+    if-eqz v8, :cond_3
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v4
 
-    check-cast v3, Landroid/view/View$OnAttachStateChangeListener;
+    check-cast v4, Landroid/view/View$OnAttachStateChangeListener;
 
-    .local v3, "listener":Landroid/view/View$OnAttachStateChangeListener;
-    invoke-interface {v3, p0}, Landroid/view/View$OnAttachStateChangeListener;->onViewDetachedFromWindow(Landroid/view/View;)V
+    .local v4, "listener":Landroid/view/View$OnAttachStateChangeListener;
+    invoke-interface {v4, p0}, Landroid/view/View$OnAttachStateChangeListener;->onViewDetachedFromWindow(Landroid/view/View;)V
 
     goto :goto_1
 
     .end local v0    # "i$":Ljava/util/Iterator;
-    .end local v3    # "listener":Landroid/view/View$OnAttachStateChangeListener;
-    .end local v4    # "listeners":Ljava/util/concurrent/CopyOnWriteArrayList;, "Ljava/util/concurrent/CopyOnWriteArrayList<Landroid/view/View$OnAttachStateChangeListener;>;"
-    :cond_1
-    move-object v4, v6
+    .end local v4    # "listener":Landroid/view/View$OnAttachStateChangeListener;
+    .end local v5    # "listeners":Ljava/util/concurrent/CopyOnWriteArrayList;, "Ljava/util/concurrent/CopyOnWriteArrayList<Landroid/view/View$OnAttachStateChangeListener;>;"
+    :cond_2
+    move-object v5, v7
 
     goto :goto_0
 
-    .restart local v4    # "listeners":Ljava/util/concurrent/CopyOnWriteArrayList;, "Ljava/util/concurrent/CopyOnWriteArrayList<Landroid/view/View$OnAttachStateChangeListener;>;"
-    :cond_2
-    iget v7, p0, Landroid/view/View;->mPrivateFlags:I
-
-    const/high16 v8, 0x100000
-
-    and-int/2addr v7, v8
-
-    if-eqz v7, :cond_3
-
-    iget-object v7, p0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
-
-    iget-object v7, v7, Landroid/view/View$AttachInfo;->mScrollContainers:Ljava/util/ArrayList;
-
-    invoke-virtual {v7, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
-
-    iget v7, p0, Landroid/view/View;->mPrivateFlags:I
-
-    const v8, -0x100001
-
-    and-int/2addr v7, v8
-
-    iput v7, p0, Landroid/view/View;->mPrivateFlags:I
-
+    .restart local v5    # "listeners":Ljava/util/concurrent/CopyOnWriteArrayList;, "Ljava/util/concurrent/CopyOnWriteArrayList<Landroid/view/View$OnAttachStateChangeListener;>;"
     :cond_3
-    iput-object v6, p0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
+    iget v8, p0, Landroid/view/View;->mPrivateFlags:I
 
-    iget-object v6, p0, Landroid/view/View;->mOverlay:Landroid/view/ViewOverlay;
+    const/high16 v9, 0x100000
 
-    if-eqz v6, :cond_4
+    and-int/2addr v8, v9
 
-    iget-object v6, p0, Landroid/view/View;->mOverlay:Landroid/view/ViewOverlay;
+    if-eqz v8, :cond_4
 
-    invoke-virtual {v6}, Landroid/view/ViewOverlay;->getOverlayView()Landroid/view/ViewGroup;
+    iget-object v8, p0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
 
-    move-result-object v6
+    iget-object v8, v8, Landroid/view/View$AttachInfo;->mScrollContainers:Ljava/util/ArrayList;
 
-    invoke-virtual {v6}, Landroid/view/ViewGroup;->dispatchDetachedFromWindow()V
+    invoke-virtual {v8, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    iget v8, p0, Landroid/view/View;->mPrivateFlags:I
+
+    const v9, -0x100001
+
+    and-int/2addr v8, v9
+
+    iput v8, p0, Landroid/view/View;->mPrivateFlags:I
 
     :cond_4
+    iput-object v7, p0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
+
+    iget-object v7, p0, Landroid/view/View;->mOverlay:Landroid/view/ViewOverlay;
+
+    if-eqz v7, :cond_5
+
+    iget-object v7, p0, Landroid/view/View;->mOverlay:Landroid/view/ViewOverlay;
+
+    invoke-virtual {v7}, Landroid/view/ViewOverlay;->getOverlayView()Landroid/view/ViewGroup;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Landroid/view/ViewGroup;->dispatchDetachedFromWindow()V
+
+    :cond_5
     return-void
 .end method
 
@@ -24158,6 +24168,8 @@
     move-result-object v0
 
     .local v0, "imm":Landroid/view/inputmethod/InputMethodManager;
+    if-eqz v0, :cond_1
+
     invoke-virtual {v0, p0}, Landroid/view/inputmethod/InputMethodManager;->focusIn(Landroid/view/View;)V
 
     .end local v0    # "imm":Landroid/view/inputmethod/InputMethodManager;
