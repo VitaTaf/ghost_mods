@@ -53,6 +53,8 @@
 
 .field mThumbOffsetY:F
 
+.field private final mTmpRect:Landroid/graphics/Rect;
+
 .field private final mTmpRegion:Landroid/graphics/Region;
 
 .field mToken:Landroid/os/IBinder;
@@ -75,6 +77,12 @@
     invoke-direct {v0}, Landroid/graphics/Region;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/wm/DragState;->mTmpRegion:Landroid/graphics/Region;
+
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object v0, p0, Lcom/android/server/wm/DragState;->mTmpRect:Landroid/graphics/Rect;
 
     iput-object p1, p0, Lcom/android/server/wm/DragState;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -165,6 +173,18 @@
     and-int/lit8 v9, v2, 0x10
 
     if-nez v9, :cond_1
+
+    iget-object v9, p0, Lcom/android/server/wm/DragState;->mTmpRect:Landroid/graphics/Rect;
+
+    invoke-virtual {v1, v9}, Lcom/android/server/wm/WindowState;->getStackBounds(Landroid/graphics/Rect;)V
+
+    iget-object v9, p0, Lcom/android/server/wm/DragState;->mTmpRect:Landroid/graphics/Rect;
+
+    invoke-virtual {v9, v7, v8}, Landroid/graphics/Rect;->contains(II)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_1
 
     iget-object v9, p0, Lcom/android/server/wm/DragState;->mTmpRegion:Landroid/graphics/Region;
 

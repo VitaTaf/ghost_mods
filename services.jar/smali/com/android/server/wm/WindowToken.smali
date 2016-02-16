@@ -22,8 +22,6 @@
 
 .field final token:Landroid/os/IBinder;
 
-.field waitingToHide:Z
-
 .field waitingToShow:Z
 
 .field final windowType:I
@@ -111,10 +109,6 @@
 
     if-nez v0, :cond_0
 
-    iget-boolean v0, p0, Lcom/android/server/wm/WindowToken;->waitingToHide:Z
-
-    if-nez v0, :cond_0
-
     iget-boolean v0, p0, Lcom/android/server/wm/WindowToken;->sendingToBottom:Z
 
     if-eqz v0, :cond_1
@@ -127,14 +121,6 @@
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     iget-boolean v0, p0, Lcom/android/server/wm/WindowToken;->waitingToShow:Z
-
-    invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Z)V
-
-    const-string v0, " waitingToHide="
-
-    invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-
-    iget-boolean v0, p0, Lcom/android/server/wm/WindowToken;->waitingToHide:Z
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Z)V
 
