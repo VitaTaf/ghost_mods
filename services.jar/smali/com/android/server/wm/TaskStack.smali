@@ -718,6 +718,8 @@
     iput-object v1, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
 
     :cond_1
+    iput-object v1, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
+
     return-void
 .end method
 
@@ -827,10 +829,6 @@
 
     :cond_3
     invoke-virtual {p0}, Lcom/android/server/wm/TaskStack;->close()V
-
-    const/4 v6, 0x0
-
-    iput-object v6, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
 
     return-void
 .end method
@@ -1261,11 +1259,21 @@
     .prologue
     iget-object v0, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
 
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
+
     invoke-virtual {v0}, Lcom/android/server/wm/DimLayer;->isDimming()Z
 
     move-result v0
 
-    return v0
+    goto :goto_0
 .end method
 
 .method isDimming(Lcom/android/server/wm/WindowStateAnimator;)Z
@@ -1277,9 +1285,7 @@
 
     if-ne v0, p1, :cond_0
 
-    iget-object v0, p0, Lcom/android/server/wm/TaskStack;->mDimLayer:Lcom/android/server/wm/DimLayer;
-
-    invoke-virtual {v0}, Lcom/android/server/wm/DimLayer;->isDimming()Z
+    invoke-virtual {p0}, Lcom/android/server/wm/TaskStack;->isDimming()Z
 
     move-result v0
 
@@ -1423,8 +1429,13 @@
 
     iget-object v0, p0, Lcom/android/server/wm/TaskStack;->mAnimationBackgroundSurface:Lcom/android/server/wm/DimLayer;
 
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/server/wm/TaskStack;->mAnimationBackgroundSurface:Lcom/android/server/wm/DimLayer;
+
     invoke-virtual {v0}, Lcom/android/server/wm/DimLayer;->hide()V
 
+    :cond_0
     return-void
 .end method
 
