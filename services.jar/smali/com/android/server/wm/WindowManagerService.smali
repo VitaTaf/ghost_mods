@@ -34626,6 +34626,12 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Rect;->intersect(Landroid/graphics/Rect;)Z
 
+    move-result v5
+
+    if-nez v5, :cond_c
+
+    invoke-virtual/range {v23 .. v23}, Landroid/graphics/Rect;->setEmpty()V
+
     .end local v15    # "bottom":I
     .end local v16    # "cr":Landroid/graphics/Rect;
     .end local v25    # "left":I
@@ -34891,6 +34897,26 @@
 
     invoke-virtual {v0, v5, v6, v1, v2}, Landroid/graphics/Rect;->intersect(IIII)Z
 
+    move-result v5
+
+    if-nez v5, :cond_16
+
+    invoke-virtual/range {v23 .. v23}, Landroid/graphics/Rect;->setEmpty()V
+
+    :cond_16
+    invoke-virtual/range {v23 .. v23}, Landroid/graphics/Rect;->isEmpty()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_17
+
+    const/16 v26, 0x0
+
+    monitor-exit v39
+
+    goto/16 :goto_0
+
+    :cond_17
     new-instance v4, Landroid/graphics/Rect;
 
     move-object/from16 v0, v23
@@ -34928,7 +34954,7 @@
 
     cmpg-float v5, v5, v6
 
-    if-gez v5, :cond_18
+    if-gez v5, :cond_1a
 
     move/from16 v0, p3
 
@@ -34975,20 +35001,20 @@
 
     const/4 v5, 0x1
 
-    if-eq v10, v5, :cond_16
+    if-eq v10, v5, :cond_18
 
     const/4 v5, 0x3
 
-    if-ne v10, v5, :cond_17
+    if-ne v10, v5, :cond_19
 
-    :cond_16
+    :cond_18
     const/4 v5, 0x1
 
-    if-ne v10, v5, :cond_19
+    if-ne v10, v5, :cond_1b
 
     const/4 v10, 0x3
 
-    :cond_17
+    :cond_19
     :goto_a
     move/from16 v0, v22
 
@@ -35007,13 +35033,13 @@
     move-result-object v31
 
     .local v31, "screenRotationAnimation":Lcom/android/server/wm/ScreenRotationAnimation;
-    if-eqz v31, :cond_1a
+    if-eqz v31, :cond_1c
 
     invoke-virtual/range {v31 .. v31}, Lcom/android/server/wm/ScreenRotationAnimation;->isAnimating()Z
 
     move-result v5
 
-    if-eqz v5, :cond_1a
+    if-eqz v5, :cond_1c
 
     const/4 v9, 0x1
 
@@ -35027,7 +35053,7 @@
 
     move-result-object v14
 
-    if-nez v14, :cond_1b
+    if-nez v14, :cond_1d
 
     const-string v5, "WindowManager"
 
@@ -35089,7 +35115,7 @@
 
     .end local v9    # "inRotation":Z
     .end local v31    # "screenRotationAnimation":Lcom/android/server/wm/ScreenRotationAnimation;
-    :cond_18
+    :cond_1a
     move/from16 v0, p4
 
     int-to-float v5, v0
@@ -35122,19 +35148,19 @@
     goto/16 :goto_9
 
     .end local v17    # "cropHeight":I
-    :cond_19
+    :cond_1b
     const/4 v10, 0x1
 
     goto :goto_a
 
     .restart local v31    # "screenRotationAnimation":Lcom/android/server/wm/ScreenRotationAnimation;
-    :cond_1a
+    :cond_1c
     const/4 v9, 0x0
 
     goto :goto_b
 
     .restart local v9    # "inRotation":Z
-    :cond_1b
+    :cond_1d
     monitor-exit v39
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
