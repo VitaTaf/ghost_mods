@@ -166,11 +166,7 @@
 
     .end local v2    # "keyToFrom":J
     :cond_1
-    invoke-virtual {p0, p3}, Landroid/graphics/drawable/AnimatedStateListDrawable$AnimatedStateListState;->addChild(Landroid/graphics/drawable/Drawable;)I
-
-    move-result v5
-
-    return v5
+    return v4
 .end method
 
 .method public canApplyTheme()Z

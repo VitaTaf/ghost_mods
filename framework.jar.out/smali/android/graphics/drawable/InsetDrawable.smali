@@ -23,11 +23,11 @@
     .locals 2
 
     .prologue
+    const/4 v1, 0x0
+
     new-instance v0, Landroid/graphics/drawable/InsetDrawable$InsetState;
 
-    invoke-direct {v0}, Landroid/graphics/drawable/InsetDrawable$InsetState;-><init>()V
-
-    const/4 v1, 0x0
+    invoke-direct {v0, v1}, Landroid/graphics/drawable/InsetDrawable$InsetState;-><init>(Landroid/graphics/drawable/InsetDrawable$InsetState;)V
 
     invoke-direct {p0, v0, v1}, Landroid/graphics/drawable/InsetDrawable;-><init>(Landroid/graphics/drawable/InsetDrawable$InsetState;Landroid/content/res/Resources;)V
 
@@ -66,11 +66,11 @@
     .param p5, "insetBottom"    # I
 
     .prologue
+    const/4 v1, 0x0
+
     new-instance v0, Landroid/graphics/drawable/InsetDrawable$InsetState;
 
-    invoke-direct {v0}, Landroid/graphics/drawable/InsetDrawable$InsetState;-><init>()V
-
-    const/4 v1, 0x0
+    invoke-direct {v0, v1}, Landroid/graphics/drawable/InsetDrawable$InsetState;-><init>(Landroid/graphics/drawable/InsetDrawable$InsetState;)V
 
     invoke-direct {p0, v0, v1}, Landroid/graphics/drawable/InsetDrawable;-><init>(Landroid/graphics/drawable/InsetDrawable$InsetState;Landroid/content/res/Resources;)V
 

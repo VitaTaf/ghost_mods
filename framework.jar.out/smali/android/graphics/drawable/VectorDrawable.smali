@@ -1233,13 +1233,13 @@
 
     move-result v4
 
-    if-eqz v4, :cond_0
+    if-lez v4, :cond_0
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
 
     move-result v4
 
-    if-nez v4, :cond_1
+    if-gtz v4, :cond_1
 
     :cond_0
     :goto_0
@@ -1471,15 +1471,14 @@
 
     iget-object v6, p0, Landroid/graphics/drawable/VectorDrawable;->mVectorState:Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
 
-    if-nez v6, :cond_0
+    if-eqz v6, :cond_0
 
     iget-object v6, p0, Landroid/graphics/drawable/VectorDrawable;->mVectorState:Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
 
     iget-object v6, v6, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->mVPathRenderer:Landroid/graphics/drawable/VectorDrawable$VPathRenderer;
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_0
 
-    :cond_0
     iget-object v6, p0, Landroid/graphics/drawable/VectorDrawable;->mVectorState:Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
 
     iget-object v6, v6, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->mVPathRenderer:Landroid/graphics/drawable/VectorDrawable$VPathRenderer;
@@ -1488,7 +1487,7 @@
 
     cmpl-float v6, v6, v7
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_0
 
     iget-object v6, p0, Landroid/graphics/drawable/VectorDrawable;->mVectorState:Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
 
@@ -1498,7 +1497,7 @@
 
     cmpl-float v6, v6, v7
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_0
 
     iget-object v6, p0, Landroid/graphics/drawable/VectorDrawable;->mVectorState:Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
 
@@ -1508,7 +1507,7 @@
 
     cmpl-float v6, v6, v7
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_0
 
     iget-object v6, p0, Landroid/graphics/drawable/VectorDrawable;->mVectorState:Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
 
@@ -1518,15 +1517,15 @@
 
     cmpl-float v6, v6, v7
 
-    if-nez v6, :cond_2
+    if-nez v6, :cond_1
 
-    :cond_1
+    :cond_0
     const/high16 v6, 0x3f800000    # 1.0f
 
     :goto_0
     return v6
 
-    :cond_2
+    :cond_1
     iget-object v6, p0, Landroid/graphics/drawable/VectorDrawable;->mVectorState:Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
 
     iget-object v6, v6, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->mVPathRenderer:Landroid/graphics/drawable/VectorDrawable$VPathRenderer;

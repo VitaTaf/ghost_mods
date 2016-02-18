@@ -31,17 +31,6 @@
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 1
-
-    .prologue
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Landroid/graphics/drawable/InsetDrawable$InsetState;-><init>(Landroid/graphics/drawable/InsetDrawable$InsetState;)V
-
-    return-void
-.end method
-
 .method constructor <init>(Landroid/graphics/drawable/InsetDrawable$InsetState;)V
     .locals 1
     .param p1, "orig"    # Landroid/graphics/drawable/InsetDrawable$InsetState;

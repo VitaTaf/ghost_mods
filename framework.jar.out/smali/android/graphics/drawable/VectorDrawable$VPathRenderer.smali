@@ -14,10 +14,6 @@
 .end annotation
 
 
-# static fields
-.field private static final IDENTITY_MATRIX:Landroid/graphics/Matrix;
-
-
 # instance fields
 .field mBaseHeight:F
 
@@ -61,19 +57,6 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .prologue
-    new-instance v0, Landroid/graphics/Matrix;
-
-    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
-
-    sput-object v0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->IDENTITY_MATRIX:Landroid/graphics/Matrix;
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 2
 
@@ -944,7 +927,7 @@
     .prologue
     iget-object v1, p0, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->mRootGroup:Landroid/graphics/drawable/VectorDrawable$VGroup;
 
-    sget-object v2, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->IDENTITY_MATRIX:Landroid/graphics/Matrix;
+    sget-object v2, Landroid/graphics/Matrix;->IDENTITY_MATRIX:Landroid/graphics/Matrix;
 
     move-object v0, p0
 

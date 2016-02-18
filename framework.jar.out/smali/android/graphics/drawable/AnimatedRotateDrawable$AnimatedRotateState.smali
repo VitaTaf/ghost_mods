@@ -15,14 +15,6 @@
 
 
 # instance fields
-.field private mCanConstantState:Z
-
-.field mChangingConfigurations:I
-
-.field private mCheckedConstantState:Z
-
-.field mDrawable:Landroid/graphics/drawable/Drawable;
-
 .field mFrameDuration:I
 
 .field mFramesCount:I
@@ -34,8 +26,6 @@
 .field mPivotY:F
 
 .field mPivotYRel:Z
-
-.field mThemeAttrs:[I
 
 
 # direct methods
@@ -98,90 +88,6 @@
 
 
 # virtual methods
-.method public canApplyTheme()Z
-    .locals 1
-
-    .prologue
-    iget-object v0, p0, Landroid/graphics/drawable/AnimatedRotateDrawable$AnimatedRotateState;->mThemeAttrs:[I
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Landroid/graphics/drawable/AnimatedRotateDrawable$AnimatedRotateState;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Landroid/graphics/drawable/AnimatedRotateDrawable$AnimatedRotateState;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->canApplyTheme()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    :cond_0
-    invoke-super {p0}, Landroid/graphics/drawable/DrawableWrapper$DrawableWrapperState;->canApplyTheme()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    :cond_1
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_2
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public canConstantState()Z
-    .locals 2
-
-    .prologue
-    const/4 v1, 0x1
-
-    iget-boolean v0, p0, Landroid/graphics/drawable/AnimatedRotateDrawable$AnimatedRotateState;->mCheckedConstantState:Z
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Landroid/graphics/drawable/AnimatedRotateDrawable$AnimatedRotateState;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    move v0, v1
-
-    :goto_0
-    iput-boolean v0, p0, Landroid/graphics/drawable/AnimatedRotateDrawable$AnimatedRotateState;->mCanConstantState:Z
-
-    iput-boolean v1, p0, Landroid/graphics/drawable/AnimatedRotateDrawable$AnimatedRotateState;->mCheckedConstantState:Z
-
-    :cond_0
-    iget-boolean v0, p0, Landroid/graphics/drawable/AnimatedRotateDrawable$AnimatedRotateState;->mCanConstantState:Z
-
-    return v0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public getChangingConfigurations()I
-    .locals 1
-
-    .prologue
-    iget v0, p0, Landroid/graphics/drawable/AnimatedRotateDrawable$AnimatedRotateState;->mChangingConfigurations:I
-
-    return v0
-.end method
-
 .method public newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
     .locals 2
     .param p1, "res"    # Landroid/content/res/Resources;

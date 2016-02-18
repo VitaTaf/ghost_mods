@@ -906,7 +906,7 @@
 
     move-result-object v14
 
-    const-string v15, ": <bitmap> requires a valid src attribute"
+    const-string v15, ": <bitmap> requires a valid \'src\' attribute"
 
     invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1171,7 +1171,7 @@
     goto/16 :goto_0
 .end method
 
-.method private verifyState(Landroid/content/res/TypedArray;)V
+.method private verifyRequiredAttributes(Landroid/content/res/TypedArray;)V
     .locals 4
     .param p1, "a"    # Landroid/content/res/TypedArray;
     .annotation system Ldalvik/annotation/Throws;
@@ -1186,8 +1186,21 @@
     .local v0, "state":Landroid/graphics/drawable/BitmapDrawable$BitmapState;
     iget-object v1, v0, Landroid/graphics/drawable/BitmapDrawable$BitmapState;->mBitmap:Landroid/graphics/Bitmap;
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_1
 
+    iget-object v1, v0, Landroid/graphics/drawable/BitmapDrawable$BitmapState;->mThemeAttrs:[I
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, v0, Landroid/graphics/drawable/BitmapDrawable$BitmapState;->mThemeAttrs:[I
+
+    const/4 v2, 0x1
+
+    aget v1, v1, v2
+
+    if-nez v1, :cond_1
+
+    :cond_0
     new-instance v1, Lorg/xmlpull/v1/XmlPullParserException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1202,7 +1215,7 @@
 
     move-result-object v2
 
-    const-string v3, ": <bitmap> requires a valid src attribute"
+    const-string v3, ": <bitmap> requires a valid \'src\' attribute"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1216,7 +1229,7 @@
 
     throw v1
 
-    :cond_0
+    :cond_1
     return-void
 .end method
 
@@ -1988,7 +2001,7 @@
     .local v0, "a":Landroid/content/res/TypedArray;
     invoke-direct {p0, v0}, Landroid/graphics/drawable/BitmapDrawable;->updateStateFromTypedArray(Landroid/content/res/TypedArray;)V
 
-    invoke-direct {p0, v0}, Landroid/graphics/drawable/BitmapDrawable;->verifyState(Landroid/content/res/TypedArray;)V
+    invoke-direct {p0, v0}, Landroid/graphics/drawable/BitmapDrawable;->verifyRequiredAttributes(Landroid/content/res/TypedArray;)V
 
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
