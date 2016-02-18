@@ -469,107 +469,127 @@
 .end method
 
 .method public getAdjustedDisplay(ILandroid/content/res/Configuration;)Landroid/view/Display;
-    .locals 6
+    .locals 7
     .param p1, "displayId"    # I
     .param p2, "overrideConfiguration"    # Landroid/content/res/Configuration;
 
     .prologue
+    if-eqz p2, :cond_0
+
+    new-instance v0, Landroid/content/res/Configuration;
+
+    invoke-direct {v0, p2}, Landroid/content/res/Configuration;-><init>(Landroid/content/res/Configuration;)V
+
+    .local v0, "configCopy":Landroid/content/res/Configuration;
+    :goto_0
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v5
 
-    new-instance v5, Landroid/content/res/Configuration;
-
-    invoke-direct {v5, p2}, Landroid/content/res/Configuration;-><init>(Landroid/content/res/Configuration;)V
-
-    invoke-static {v4, v5}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
-
-    move-result-object v2
-
-    .local v2, "key":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/Integer;Landroid/content/res/Configuration;>;"
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v4, p0, Landroid/app/ResourcesManager;->mDisplays:Landroid/util/ArrayMap;
-
-    invoke-virtual {v4, v2}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v5, v0}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
 
     move-result-object v3
 
-    check-cast v3, Ljava/lang/ref/WeakReference;
+    .local v3, "key":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/Integer;Landroid/content/res/Configuration;>;"
+    monitor-enter p0
 
-    .local v3, "wd":Ljava/lang/ref/WeakReference;, "Ljava/lang/ref/WeakReference<Landroid/view/Display;>;"
-    if-eqz v3, :cond_0
+    :try_start_0
+    iget-object v5, p0, Landroid/app/ResourcesManager;->mDisplays:Landroid/util/ArrayMap;
 
-    invoke-virtual {v3}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v5, v3}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v4
 
-    check-cast v0, Landroid/view/Display;
+    check-cast v4, Ljava/lang/ref/WeakReference;
 
-    .local v0, "display":Landroid/view/Display;
-    if-eqz v0, :cond_0
+    .local v4, "wd":Ljava/lang/ref/WeakReference;, "Ljava/lang/ref/WeakReference<Landroid/view/Display;>;"
+    if-eqz v4, :cond_1
 
-    monitor-exit p0
-
-    .end local v0    # "display":Landroid/view/Display;
-    :goto_0
-    return-object v0
-
-    :cond_0
-    invoke-static {}, Landroid/hardware/display/DisplayManagerGlobal;->getInstance()Landroid/hardware/display/DisplayManagerGlobal;
+    invoke-virtual {v4}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    .local v1, "dm":Landroid/hardware/display/DisplayManagerGlobal;
-    if-nez v1, :cond_1
+    check-cast v1, Landroid/view/Display;
 
-    const/4 v0, 0x0
-
-    monitor-exit p0
-
-    goto :goto_0
-
-    .end local v1    # "dm":Landroid/hardware/display/DisplayManagerGlobal;
-    .end local v3    # "wd":Ljava/lang/ref/WeakReference;, "Ljava/lang/ref/WeakReference<Landroid/view/Display;>;"
-    :catchall_0
-    move-exception v4
+    .local v1, "display":Landroid/view/Display;
+    if-eqz v1, :cond_1
 
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v4
+    .end local v1    # "display":Landroid/view/Display;
+    :goto_1
+    return-object v1
 
-    .restart local v1    # "dm":Landroid/hardware/display/DisplayManagerGlobal;
-    .restart local v3    # "wd":Ljava/lang/ref/WeakReference;, "Ljava/lang/ref/WeakReference<Landroid/view/Display;>;"
+    .end local v0    # "configCopy":Landroid/content/res/Configuration;
+    .end local v3    # "key":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/Integer;Landroid/content/res/Configuration;>;"
+    .end local v4    # "wd":Ljava/lang/ref/WeakReference;, "Ljava/lang/ref/WeakReference<Landroid/view/Display;>;"
+    :cond_0
+    new-instance v0, Landroid/content/res/Configuration;
+
+    invoke-direct {v0}, Landroid/content/res/Configuration;-><init>()V
+
+    goto :goto_0
+
+    .restart local v0    # "configCopy":Landroid/content/res/Configuration;
+    .restart local v3    # "key":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/Integer;Landroid/content/res/Configuration;>;"
+    .restart local v4    # "wd":Ljava/lang/ref/WeakReference;, "Ljava/lang/ref/WeakReference<Landroid/view/Display;>;"
     :cond_1
     :try_start_1
-    iget-object v4, v2, Landroid/util/Pair;->second:Ljava/lang/Object;
+    invoke-static {}, Landroid/hardware/display/DisplayManagerGlobal;->getInstance()Landroid/hardware/display/DisplayManagerGlobal;
 
-    check-cast v4, Landroid/content/res/Configuration;
+    move-result-object v2
 
-    invoke-virtual {v1, p1, v4}, Landroid/hardware/display/DisplayManagerGlobal;->getRealDisplay(ILandroid/content/res/Configuration;)Landroid/view/Display;
+    .local v2, "dm":Landroid/hardware/display/DisplayManagerGlobal;
+    if-nez v2, :cond_2
 
-    move-result-object v0
+    const/4 v1, 0x0
 
-    .restart local v0    # "display":Landroid/view/Display;
-    if-eqz v0, :cond_2
+    monitor-exit p0
 
-    iget-object v4, p0, Landroid/app/ResourcesManager;->mDisplays:Landroid/util/ArrayMap;
+    goto :goto_1
 
-    new-instance v5, Ljava/lang/ref/WeakReference;
+    .end local v2    # "dm":Landroid/hardware/display/DisplayManagerGlobal;
+    .end local v4    # "wd":Ljava/lang/ref/WeakReference;, "Ljava/lang/ref/WeakReference<Landroid/view/Display;>;"
+    :catchall_0
+    move-exception v5
 
-    invoke-direct {v5, v0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    invoke-virtual {v4, v2, v5}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_2
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_0
+    throw v5
+
+    .restart local v2    # "dm":Landroid/hardware/display/DisplayManagerGlobal;
+    .restart local v4    # "wd":Ljava/lang/ref/WeakReference;, "Ljava/lang/ref/WeakReference<Landroid/view/Display;>;"
+    :cond_2
+    :try_start_2
+    iget-object v5, v3, Landroid/util/Pair;->second:Ljava/lang/Object;
+
+    check-cast v5, Landroid/content/res/Configuration;
+
+    invoke-virtual {v2, p1, v5}, Landroid/hardware/display/DisplayManagerGlobal;->getRealDisplay(ILandroid/content/res/Configuration;)Landroid/view/Display;
+
+    move-result-object v1
+
+    .restart local v1    # "display":Landroid/view/Display;
+    if-eqz v1, :cond_3
+
+    iget-object v5, p0, Landroid/app/ResourcesManager;->mDisplays:Landroid/util/ArrayMap;
+
+    new-instance v6, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {v6, v1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    invoke-virtual {v5, v3, v6}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_3
+    monitor-exit p0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    goto :goto_1
 .end method
 
 .method public getConfiguration()Landroid/content/res/Configuration;
