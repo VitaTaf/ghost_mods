@@ -1434,40 +1434,52 @@
     return-void
 .end method
 
-.method final setLayoutDirection(I)V
-    .locals 4
+.method final setLayoutDirection(II)Z
+    .locals 6
     .param p1, "layoutDirection"    # I
+    .param p2, "currentIndex"    # I
 
     .prologue
+    const/4 v1, 0x0
+
+    .local v1, "changed":Z
     iget v0, p0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mNumChildren:I
 
     .local v0, "N":I
-    iget-object v1, p0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawables:[Landroid/graphics/drawable/Drawable;
+    iget-object v3, p0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawables:[Landroid/graphics/drawable/Drawable;
 
-    .local v1, "drawables":[Landroid/graphics/drawable/Drawable;
-    const/4 v2, 0x0
+    .local v3, "drawables":[Landroid/graphics/drawable/Drawable;
+    const/4 v4, 0x0
 
-    .local v2, "i":I
+    .local v4, "i":I
     :goto_0
-    if-ge v2, v0, :cond_1
+    if-ge v4, v0, :cond_1
 
-    aget-object v3, v1, v2
+    aget-object v5, v3, v4
 
-    if-eqz v3, :cond_0
+    if-eqz v5, :cond_0
 
-    aget-object v3, v1, v2
+    aget-object v5, v3, v4
 
-    invoke-virtual {v3, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
+    invoke-virtual {v5, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)Z
 
+    move-result v2
+
+    .local v2, "childChanged":Z
+    if-ne v4, p2, :cond_0
+
+    move v1, v2
+
+    .end local v2    # "childChanged":Z
     :cond_0
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
     :cond_1
     iput p1, p0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mLayoutDirection:I
 
-    return-void
+    return v1
 .end method
 
 .method public final setVariablePadding(Z)V

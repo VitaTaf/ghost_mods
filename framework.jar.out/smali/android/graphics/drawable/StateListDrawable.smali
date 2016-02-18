@@ -708,17 +708,3 @@
     :cond_0
     return-void
 .end method
-
-.method public setLayoutDirection(I)V
-    .locals 1
-    .param p1, "layoutDirection"    # I
-
-    .prologue
-    invoke-super {p0, p1}, Landroid/graphics/drawable/DrawableContainer;->setLayoutDirection(I)V
-
-    iget-object v0, p0, Landroid/graphics/drawable/StateListDrawable;->mStateListState:Landroid/graphics/drawable/StateListDrawable$StateListState;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/StateListDrawable$StateListState;->setLayoutDirection(I)V
-
-    return-void
-.end method

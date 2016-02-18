@@ -395,11 +395,11 @@
     .prologue
     iget-object v0, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mBackground:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)Z
 
     iget-object v0, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mForeground:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)Z
 
     return-void
 .end method

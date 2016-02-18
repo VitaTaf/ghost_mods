@@ -1680,6 +1680,16 @@
     return-void
 .end method
 
+.method public onLayoutDirectionChange(I)Z
+    .locals 1
+    .param p1, "layoutDirection"    # I
+
+    .prologue
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
 .method protected onLevelChange(I)Z
     .locals 1
     .param p1, "level"    # I
@@ -1888,21 +1898,28 @@
     return-void
 .end method
 
-.method public setLayoutDirection(I)V
+.method public final setLayoutDirection(I)Z
     .locals 1
     .param p1, "layoutDirection"    # I
 
     .prologue
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getLayoutDirection()I
-
-    move-result v0
+    iget v0, p0, Landroid/graphics/drawable/Drawable;->mLayoutDirection:I
 
     if-eq v0, p1, :cond_0
 
     iput p1, p0, Landroid/graphics/drawable/Drawable;->mLayoutDirection:I
 
+    invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->onLayoutDirectionChange(I)Z
+
+    move-result v0
+
+    :goto_0
+    return v0
+
     :cond_0
-    return-void
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method public final setLevel(I)Z

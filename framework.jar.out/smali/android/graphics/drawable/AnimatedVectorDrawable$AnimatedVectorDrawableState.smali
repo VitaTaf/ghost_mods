@@ -103,7 +103,7 @@
 
     move-result v8
 
-    invoke-virtual {v7, v8}, Landroid/graphics/drawable/VectorDrawable;->setLayoutDirection(I)V
+    invoke-virtual {v7, v8}, Landroid/graphics/drawable/VectorDrawable;->setLayoutDirection(I)Z
 
     iget-object v7, p0, Landroid/graphics/drawable/AnimatedVectorDrawable$AnimatedVectorDrawableState;->mVectorDrawable:Landroid/graphics/drawable/VectorDrawable;
 

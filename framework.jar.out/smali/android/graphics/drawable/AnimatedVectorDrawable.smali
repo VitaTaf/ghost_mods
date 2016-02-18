@@ -758,6 +758,22 @@
     return-void
 .end method
 
+.method public onLayoutDirectionChange(I)Z
+    .locals 1
+    .param p1, "layoutDirection"    # I
+
+    .prologue
+    iget-object v0, p0, Landroid/graphics/drawable/AnimatedVectorDrawable;->mAnimatedVectorState:Landroid/graphics/drawable/AnimatedVectorDrawable$AnimatedVectorDrawableState;
+
+    iget-object v0, v0, Landroid/graphics/drawable/AnimatedVectorDrawable$AnimatedVectorDrawableState;->mVectorDrawable:Landroid/graphics/drawable/VectorDrawable;
+
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/VectorDrawable;->setLayoutDirection(I)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method protected onLevelChange(I)Z
     .locals 1
     .param p1, "level"    # I
@@ -896,20 +912,6 @@
     iget-object v0, v0, Landroid/graphics/drawable/AnimatedVectorDrawable$AnimatedVectorDrawableState;->mVectorDrawable:Landroid/graphics/drawable/VectorDrawable;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/graphics/drawable/VectorDrawable;->setHotspotBounds(IIII)V
-
-    return-void
-.end method
-
-.method public setLayoutDirection(I)V
-    .locals 1
-    .param p1, "layoutDirection"    # I
-
-    .prologue
-    iget-object v0, p0, Landroid/graphics/drawable/AnimatedVectorDrawable;->mAnimatedVectorState:Landroid/graphics/drawable/AnimatedVectorDrawable$AnimatedVectorDrawableState;
-
-    iget-object v0, v0, Landroid/graphics/drawable/AnimatedVectorDrawable$AnimatedVectorDrawableState;->mVectorDrawable:Landroid/graphics/drawable/VectorDrawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/VectorDrawable;->setLayoutDirection(I)V
 
     return-void
 .end method
