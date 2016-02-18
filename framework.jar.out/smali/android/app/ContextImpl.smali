@@ -835,13 +835,14 @@
     :cond_1
     if-nez v8, :cond_2
 
-    if-nez v6, :cond_2
+    if-nez v6, :cond_5
 
     invoke-virtual {p3}, Landroid/app/LoadedApk;->getCompatibilityInfo()Landroid/content/res/CompatibilityInfo;
 
     move-result-object v8
 
     :cond_2
+    :goto_0
     iget-object v1, p0, Landroid/app/ContextImpl;->mDisplayAdjustments:Landroid/view/DisplayAdjustments;
 
     invoke-virtual {v1, v8}, Landroid/view/DisplayAdjustments;->setCompatibilityInfo(Landroid/content/res/CompatibilityInfo;)V
@@ -907,7 +908,7 @@
     :cond_4
     iput-object v10, p0, Landroid/app/ContextImpl;->mResources:Landroid/content/res/Resources;
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_6
 
     iget-object v1, p1, Landroid/app/ContextImpl;->mBasePackageName:Ljava/lang/String;
 
@@ -917,7 +918,7 @@
 
     iput-object v1, p0, Landroid/app/ContextImpl;->mOpPackageName:Ljava/lang/String;
 
-    :goto_0
+    :goto_1
     new-instance v1, Landroid/app/ContextImpl$ApplicationContentResolver;
 
     move-object/from16 v0, p5
@@ -928,7 +929,14 @@
 
     return-void
 
+    .end local v10    # "resources":Landroid/content/res/Resources;
     :cond_5
+    sget-object v8, Landroid/content/res/CompatibilityInfo;->DEFAULT_COMPATIBILITY_INFO:Landroid/content/res/CompatibilityInfo;
+
+    goto :goto_0
+
+    .restart local v10    # "resources":Landroid/content/res/Resources;
+    :cond_6
     iget-object v1, p3, Landroid/app/LoadedApk;->mPackageName:Ljava/lang/String;
 
     iput-object v1, p0, Landroid/app/ContextImpl;->mBasePackageName:Ljava/lang/String;
@@ -942,7 +950,7 @@
 
     const/16 v2, 0x3e8
 
-    if-ne v1, v2, :cond_6
+    if-ne v1, v2, :cond_7
 
     iget v1, v9, Landroid/content/pm/ApplicationInfo;->uid:I
 
@@ -950,7 +958,7 @@
 
     move-result v2
 
-    if-eq v1, v2, :cond_6
+    if-eq v1, v2, :cond_7
 
     invoke-static {}, Landroid/app/ActivityThread;->currentPackageName()Ljava/lang/String;
 
@@ -958,14 +966,14 @@
 
     iput-object v1, p0, Landroid/app/ContextImpl;->mOpPackageName:Ljava/lang/String;
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_6
+    :cond_7
     iget-object v1, p0, Landroid/app/ContextImpl;->mBasePackageName:Ljava/lang/String;
 
     iput-object v1, p0, Landroid/app/ContextImpl;->mOpPackageName:Ljava/lang/String;
 
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method static synthetic access$000()I
