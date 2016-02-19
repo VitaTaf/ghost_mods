@@ -1413,6 +1413,15 @@
     return v0
 .end method
 
+.method public getColorFilter()Landroid/graphics/ColorFilter;
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Landroid/graphics/drawable/VectorDrawable;->mColorFilter:Landroid/graphics/ColorFilter;
+
+    return-object v0
+.end method
+
 .method public getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
     .locals 2
 

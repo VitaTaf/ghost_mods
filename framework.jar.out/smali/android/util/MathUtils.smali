@@ -212,6 +212,23 @@
     goto :goto_0
 .end method
 
+.method public static cross(FFFF)F
+    .locals 2
+    .param p0, "v1x"    # F
+    .param p1, "v1y"    # F
+    .param p2, "v2x"    # F
+    .param p3, "v2y"    # F
+
+    .prologue
+    mul-float v0, p0, p3
+
+    mul-float v1, p1, p2
+
+    sub-float/2addr v0, v1
+
+    return v0
+.end method
+
 .method public static degrees(F)F
     .locals 1
     .param p0, "radians"    # F
@@ -293,6 +310,23 @@
     double-to-float v3, v4
 
     return v3
+.end method
+
+.method public static dot(FFFF)F
+    .locals 2
+    .param p0, "v1x"    # F
+    .param p1, "v1y"    # F
+    .param p2, "v2x"    # F
+    .param p3, "v2y"    # F
+
+    .prologue
+    mul-float v0, p0, p2
+
+    mul-float v1, p1, p3
+
+    add-float/2addr v0, v1
+
+    return v0
 .end method
 
 .method public static exp(F)F
