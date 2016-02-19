@@ -14,6 +14,7 @@
         Landroid/os/StrictMode$LogStackTrace;,
         Landroid/os/StrictMode$AndroidCloseGuardReporter;,
         Landroid/os/StrictMode$AndroidBlockGuardPolicy;,
+        Landroid/os/StrictMode$StrictModeResourceMismatchViolation;,
         Landroid/os/StrictMode$StrictModeCustomViolation;,
         Landroid/os/StrictMode$StrictModeDiskWriteViolation;,
         Landroid/os/StrictMode$StrictModeDiskReadViolation;,
@@ -26,7 +27,7 @@
 
 
 # static fields
-.field private static final ALL_THREAD_DETECT_BITS:I = 0xf
+.field private static final ALL_THREAD_DETECT_BITS:I = 0x1f
 
 .field private static final ALL_VM_DETECT_BITS:I = 0x7e00
 
@@ -39,6 +40,8 @@
 .field public static final DETECT_DISK_WRITE:I = 0x1
 
 .field public static final DETECT_NETWORK:I = 0x4
+
+.field public static final DETECT_RESOURCE_MISMATCH:I = 0x10
 
 .field public static final DETECT_VM_ACTIVITY_LEAKS:I = 0x800
 
@@ -1599,6 +1602,34 @@
 
     .end local v0    # "policy":Ldalvik/system/BlockGuard$Policy;
     invoke-virtual {v0}, Landroid/os/StrictMode$AndroidBlockGuardPolicy;->onWriteToDisk()V
+
+    goto :goto_0
+.end method
+
+.method public static noteResourceMismatch(Ljava/lang/Object;)V
+    .locals 2
+    .param p0, "tag"    # Ljava/lang/Object;
+
+    .prologue
+    invoke-static {}, Ldalvik/system/BlockGuard;->getThreadPolicy()Ldalvik/system/BlockGuard$Policy;
+
+    move-result-object v0
+
+    .local v0, "policy":Ldalvik/system/BlockGuard$Policy;
+    instance-of v1, v0, Landroid/os/StrictMode$AndroidBlockGuardPolicy;
+
+    if-nez v1, :cond_0
+
+    .end local v0    # "policy":Ldalvik/system/BlockGuard$Policy;
+    :goto_0
+    return-void
+
+    .restart local v0    # "policy":Ldalvik/system/BlockGuard$Policy;
+    :cond_0
+    check-cast v0, Landroid/os/StrictMode$AndroidBlockGuardPolicy;
+
+    .end local v0    # "policy":Ldalvik/system/BlockGuard$Policy;
+    invoke-virtual {v0, p0}, Landroid/os/StrictMode$AndroidBlockGuardPolicy;->onResourceMismatch(Ljava/lang/Object;)V
 
     goto :goto_0
 .end method

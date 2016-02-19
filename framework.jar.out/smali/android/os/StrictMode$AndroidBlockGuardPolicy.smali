@@ -941,6 +941,43 @@
     goto :goto_0
 .end method
 
+.method onResourceMismatch(Ljava/lang/Object;)V
+    .locals 2
+    .param p1, "tag"    # Ljava/lang/Object;
+
+    .prologue
+    iget v1, p0, Landroid/os/StrictMode$AndroidBlockGuardPolicy;->mPolicyMask:I
+
+    and-int/lit8 v1, v1, 0x10
+
+    if-nez v1, :cond_1
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    # invokes: Landroid/os/StrictMode;->tooManyViolationsThisLoop()Z
+    invoke-static {}, Landroid/os/StrictMode;->access$400()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    new-instance v0, Landroid/os/StrictMode$StrictModeResourceMismatchViolation;
+
+    iget v1, p0, Landroid/os/StrictMode$AndroidBlockGuardPolicy;->mPolicyMask:I
+
+    invoke-direct {v0, v1, p1}, Landroid/os/StrictMode$StrictModeResourceMismatchViolation;-><init>(ILjava/lang/Object;)V
+
+    .local v0, "e":Ldalvik/system/BlockGuard$BlockGuardPolicyException;
+    invoke-virtual {v0}, Ldalvik/system/BlockGuard$BlockGuardPolicyException;->fillInStackTrace()Ljava/lang/Throwable;
+
+    invoke-virtual {p0, v0}, Landroid/os/StrictMode$AndroidBlockGuardPolicy;->startHandlingViolationException(Ldalvik/system/BlockGuard$BlockGuardPolicyException;)V
+
+    goto :goto_0
+.end method
+
 .method public onWriteToDisk()V
     .locals 2
 

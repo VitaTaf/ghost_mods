@@ -116,7 +116,7 @@
     .locals 1
 
     .prologue
-    const/16 v0, 0xf
+    const/16 v0, 0x1f
 
     invoke-direct {p0, v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->enable(I)Landroid/os/StrictMode$ThreadPolicy$Builder;
 
@@ -169,6 +169,19 @@
 
     .prologue
     const/4 v0, 0x4
+
+    invoke-direct {p0, v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->enable(I)Landroid/os/StrictMode$ThreadPolicy$Builder;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public detectResourceMismatches()Landroid/os/StrictMode$ThreadPolicy$Builder;
+    .locals 1
+
+    .prologue
+    const/16 v0, 0x10
 
     invoke-direct {p0, v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->enable(I)Landroid/os/StrictMode$ThreadPolicy$Builder;
 
@@ -259,7 +272,7 @@
     .locals 1
 
     .prologue
-    const/16 v0, 0xf
+    const/16 v0, 0x1f
 
     invoke-direct {p0, v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->disable(I)Landroid/os/StrictMode$ThreadPolicy$Builder;
 
@@ -312,6 +325,19 @@
 
     .prologue
     const/4 v0, 0x4
+
+    invoke-direct {p0, v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->disable(I)Landroid/os/StrictMode$ThreadPolicy$Builder;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public permitResourceMismatches()Landroid/os/StrictMode$ThreadPolicy$Builder;
+    .locals 1
+
+    .prologue
+    const/16 v0, 0x10
 
     invoke-direct {p0, v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->disable(I)Landroid/os/StrictMode$ThreadPolicy$Builder;
 
