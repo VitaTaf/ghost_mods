@@ -29,14 +29,16 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 2
 
     .prologue
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
     new-instance v0, Landroid/graphics/Paint;
 
-    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v0, p0, Landroid/graphics/drawable/ColorDrawable;->mPaint:Landroid/graphics/Paint;
 
@@ -50,7 +52,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .locals 1
+    .locals 2
     .param p1, "color"    # I
 
     .prologue
@@ -58,7 +60,9 @@
 
     new-instance v0, Landroid/graphics/Paint;
 
-    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v0, p0, Landroid/graphics/drawable/ColorDrawable;->mPaint:Landroid/graphics/Paint;
 
@@ -74,7 +78,7 @@
 .end method
 
 .method private constructor <init>(Landroid/graphics/drawable/ColorDrawable$ColorState;Landroid/content/res/Resources;)V
-    .locals 1
+    .locals 2
     .param p1, "state"    # Landroid/graphics/drawable/ColorDrawable$ColorState;
     .param p2, "res"    # Landroid/content/res/Resources;
 
@@ -83,7 +87,9 @@
 
     new-instance v0, Landroid/graphics/Paint;
 
-    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v0, p0, Landroid/graphics/drawable/ColorDrawable;->mPaint:Landroid/graphics/Paint;
 

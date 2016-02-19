@@ -354,6 +354,56 @@
     goto :goto_0
 .end method
 
+.method public getOpacity()I
+    .locals 5
+
+    .prologue
+    const/4 v3, -0x2
+
+    invoke-virtual {p0}, Landroid/graphics/drawable/ClipDrawable;->getDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    .local v0, "dr":Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getOpacity()I
+
+    move-result v2
+
+    .local v2, "opacity":I
+    if-eq v2, v3, :cond_0
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getLevel()I
+
+    move-result v4
+
+    if-nez v4, :cond_1
+
+    :cond_0
+    :goto_0
+    return v3
+
+    :cond_1
+    invoke-virtual {p0}, Landroid/graphics/drawable/ClipDrawable;->getLevel()I
+
+    move-result v1
+
+    .local v1, "level":I
+    const/16 v3, 0x2710
+
+    if-lt v1, v3, :cond_2
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getOpacity()I
+
+    move-result v3
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v3, -0x3
+
+    goto :goto_0
+.end method
+
 .method public inflate(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V
     .locals 2
     .param p1, "r"    # Landroid/content/res/Resources;

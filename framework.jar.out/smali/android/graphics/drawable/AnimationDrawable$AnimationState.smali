@@ -61,17 +61,7 @@
     goto :goto_0
 .end method
 
-.method static synthetic access$000(Landroid/graphics/drawable/AnimationDrawable$AnimationState;)[I
-    .locals 1
-    .param p0, "x0"    # Landroid/graphics/drawable/AnimationDrawable$AnimationState;
-
-    .prologue
-    iget-object v0, p0, Landroid/graphics/drawable/AnimationDrawable$AnimationState;->mDurations:[I
-
-    return-object v0
-.end method
-
-.method static synthetic access$100(Landroid/graphics/drawable/AnimationDrawable$AnimationState;)Z
+.method static synthetic access$000(Landroid/graphics/drawable/AnimationDrawable$AnimationState;)Z
     .locals 1
     .param p0, "x0"    # Landroid/graphics/drawable/AnimationDrawable$AnimationState;
 
@@ -81,7 +71,7 @@
     return v0
 .end method
 
-.method static synthetic access$102(Landroid/graphics/drawable/AnimationDrawable$AnimationState;Z)Z
+.method static synthetic access$002(Landroid/graphics/drawable/AnimationDrawable$AnimationState;Z)Z
     .locals 0
     .param p0, "x0"    # Landroid/graphics/drawable/AnimationDrawable$AnimationState;
     .param p1, "x1"    # Z
@@ -90,6 +80,16 @@
     iput-boolean p1, p0, Landroid/graphics/drawable/AnimationDrawable$AnimationState;->mOneShot:Z
 
     return p1
+.end method
+
+.method static synthetic access$100(Landroid/graphics/drawable/AnimationDrawable$AnimationState;)[I
+    .locals 1
+    .param p0, "x0"    # Landroid/graphics/drawable/AnimationDrawable$AnimationState;
+
+    .prologue
+    iget-object v0, p0, Landroid/graphics/drawable/AnimationDrawable$AnimationState;->mDurations:[I
+
+    return-object v0
 .end method
 
 .method static synthetic access$200(Landroid/graphics/drawable/AnimationDrawable$AnimationState;)V

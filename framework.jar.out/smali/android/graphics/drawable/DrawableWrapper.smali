@@ -241,6 +241,14 @@
     :goto_0
     or-int/2addr v0, v1
 
+    iget-object v1, p0, Landroid/graphics/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getChangingConfigurations()I
+
+    move-result v1
+
+    or-int/2addr v0, v1
+
     return v0
 
     :cond_0
@@ -475,17 +483,6 @@
     .end annotation
 
     .prologue
-    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableWrapper;->getDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_1
-
-    :cond_0
-    :goto_0
-    return-void
-
-    :cond_1
     const/4 v0, 0x0
 
     .local v0, "dr":Landroid/graphics/drawable/Drawable;
@@ -494,7 +491,8 @@
     move-result v1
 
     .local v1, "outerDepth":I
-    :cond_2
+    :cond_0
+    :goto_0
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     move-result v2
@@ -502,33 +500,36 @@
     .local v2, "type":I
     const/4 v3, 0x1
 
-    if-eq v2, v3, :cond_4
+    if-eq v2, v3, :cond_2
 
     const/4 v3, 0x3
 
-    if-ne v2, v3, :cond_3
+    if-ne v2, v3, :cond_1
 
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
 
     move-result v3
 
-    if-le v3, v1, :cond_4
+    if-le v3, v1, :cond_2
 
-    :cond_3
+    :cond_1
     const/4 v3, 0x2
 
-    if-ne v2, v3, :cond_2
+    if-ne v2, v3, :cond_0
 
     invoke-static {p1, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->createFromXmlInner(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    :cond_4
-    if-eqz v0, :cond_0
+    goto :goto_0
+
+    :cond_2
+    if-eqz v0, :cond_3
 
     invoke-virtual {p0, v0}, Landroid/graphics/drawable/DrawableWrapper;->setDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    goto :goto_0
+    :cond_3
+    return-void
 .end method
 
 .method public invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
@@ -664,7 +665,7 @@
     return-void
 .end method
 
-.method public onLayoutDirectionChange(I)Z
+.method public onLayoutDirectionChanged(I)Z
     .locals 1
     .param p1, "layoutDirection"    # I
 

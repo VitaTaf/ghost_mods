@@ -4256,25 +4256,51 @@
 .end method
 
 .method public final writeBlob([B)V
-    .locals 4
+    .locals 2
     .param p1, "b"    # [B
 
     .prologue
     const/4 v1, 0x0
-
-    iget-wide v2, p0, Landroid/os/Parcel;->mNativePtr:J
 
     if-eqz p1, :cond_0
 
     array-length v0, p1
 
     :goto_0
-    invoke-static {v2, v3, p1, v1, v0}, Landroid/os/Parcel;->nativeWriteBlob(J[BII)V
+    invoke-virtual {p0, p1, v1, v0}, Landroid/os/Parcel;->writeBlob([BII)V
 
     return-void
 
     :cond_0
     move v0, v1
+
+    goto :goto_0
+.end method
+
+.method public final writeBlob([BII)V
+    .locals 2
+    .param p1, "b"    # [B
+    .param p2, "offset"    # I
+    .param p3, "len"    # I
+
+    .prologue
+    if-nez p1, :cond_0
+
+    const/4 v0, -0x1
+
+    invoke-virtual {p0, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    array-length v0, p1
+
+    invoke-static {v0, p2, p3}, Ljava/util/Arrays;->checkOffsetAndCount(III)V
+
+    iget-wide v0, p0, Landroid/os/Parcel;->mNativePtr:J
+
+    invoke-static {v0, v1, p1, p2, p3}, Landroid/os/Parcel;->nativeWriteBlob(J[BII)V
 
     goto :goto_0
 .end method

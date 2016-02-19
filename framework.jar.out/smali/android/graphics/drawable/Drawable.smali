@@ -768,7 +768,6 @@
     invoke-direct {v0}, Landroid/graphics/drawable/StateListDrawable;-><init>()V
 
     .local v0, "drawable":Landroid/graphics/drawable/Drawable;
-    :cond_1
     :goto_1
     invoke-virtual {v0, p0, p1, p2, p3}, Landroid/graphics/drawable/Drawable;->inflate(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V
 
@@ -913,21 +912,9 @@
     :pswitch_10
     new-instance v0, Landroid/graphics/drawable/BitmapDrawable;
 
-    invoke-direct {v0, p0}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;)V
+    invoke-direct {v0}, Landroid/graphics/drawable/BitmapDrawable;-><init>()V
 
     .restart local v0    # "drawable":Landroid/graphics/drawable/Drawable;
-    if-eqz p0, :cond_1
-
-    move-object v2, v0
-
-    check-cast v2, Landroid/graphics/drawable/BitmapDrawable;
-
-    invoke-virtual {p0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Landroid/graphics/drawable/BitmapDrawable;->setTargetDensity(Landroid/util/DisplayMetrics;)V
-
     goto :goto_1
 
     .end local v0    # "drawable":Landroid/graphics/drawable/Drawable;
@@ -937,19 +924,9 @@
     invoke-direct {v0}, Landroid/graphics/drawable/NinePatchDrawable;-><init>()V
 
     .restart local v0    # "drawable":Landroid/graphics/drawable/Drawable;
-    if-eqz p0, :cond_1
+    goto :goto_1
 
-    move-object v2, v0
-
-    check-cast v2, Landroid/graphics/drawable/NinePatchDrawable;
-
-    invoke-virtual {p0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Landroid/graphics/drawable/NinePatchDrawable;->setTargetDensity(Landroid/util/DisplayMetrics;)V
-
-    goto/16 :goto_1
+    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -1344,24 +1321,6 @@
     return-object v0
 .end method
 
-.method public getDither()Z
-    .locals 1
-
-    .prologue
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public getFilterBitmap()Z
-    .locals 1
-
-    .prologue
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
 .method public getHotspotBounds(Landroid/graphics/Rect;)V
     .locals 1
     .param p1, "outRect"    # Landroid/graphics/Rect;
@@ -1631,6 +1590,24 @@
     return v0
 .end method
 
+.method public isDither()Z
+    .locals 1
+
+    .prologue
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public isFilterBitmap()Z
+    .locals 1
+
+    .prologue
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
 .method public isProjected()Z
     .locals 1
 
@@ -1680,7 +1657,7 @@
     return-void
 .end method
 
-.method public onLayoutDirectionChange(I)Z
+.method public onLayoutDirectionChanged(I)Z
     .locals 1
     .param p1, "layoutDirection"    # I
 
@@ -1909,7 +1886,7 @@
 
     iput p1, p0, Landroid/graphics/drawable/Drawable;->mLayoutDirection:I
 
-    invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->onLayoutDirectionChange(I)Z
+    invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->onLayoutDirectionChanged(I)Z
 
     move-result v0
 

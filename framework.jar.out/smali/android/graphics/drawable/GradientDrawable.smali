@@ -3966,17 +3966,6 @@
     return-object v0
 .end method
 
-.method public getDither()Z
-    .locals 1
-
-    .prologue
-    iget-object v0, p0, Landroid/graphics/drawable/GradientDrawable;->mGradientState:Landroid/graphics/drawable/GradientDrawable$GradientState;
-
-    iget-boolean v0, v0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mDither:Z
-
-    return v0
-.end method
-
 .method public getGradientRadius()F
     .locals 2
 
@@ -4305,6 +4294,17 @@
     invoke-direct {p0, p1}, Landroid/graphics/drawable/GradientDrawable;->updateLocalState(Landroid/content/res/Resources;)V
 
     return-void
+.end method
+
+.method public isDither()Z
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Landroid/graphics/drawable/GradientDrawable;->mGradientState:Landroid/graphics/drawable/GradientDrawable$GradientState;
+
+    iget-boolean v0, v0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mDither:Z
+
+    return v0
 .end method
 
 .method public isStateful()Z

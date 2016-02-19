@@ -562,17 +562,6 @@
     return v0
 .end method
 
-.method public getDither()Z
-    .locals 1
-
-    .prologue
-    iget-object v0, p0, Landroid/graphics/drawable/DrawableContainer;->mDrawableContainerState:Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;
-
-    iget-boolean v0, v0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mDither:Z
-
-    return v0
-.end method
-
 .method public getHotspotBounds(Landroid/graphics/Rect;)V
     .locals 1
     .param p1, "outRect"    # Landroid/graphics/Rect;
@@ -950,6 +939,17 @@
     return v0
 .end method
 
+.method public isDither()Z
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Landroid/graphics/drawable/DrawableContainer;->mDrawableContainerState:Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;
+
+    iget-boolean v0, v0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mDither:Z
+
+    return v0
+.end method
+
 .method public isStateful()Z
     .locals 1
 
@@ -1103,7 +1103,7 @@
     return-void
 .end method
 
-.method public onLayoutDirectionChange(I)Z
+.method public onLayoutDirectionChanged(I)Z
     .locals 2
     .param p1, "layoutDirection"    # I
 
@@ -1664,7 +1664,7 @@
 
     new-instance v0, Landroid/graphics/Rect;
 
-    invoke-direct {v0, p1, p2, p4, p3}, Landroid/graphics/Rect;-><init>(IIII)V
+    invoke-direct {v0, p1, p2, p3, p4}, Landroid/graphics/Rect;-><init>(IIII)V
 
     iput-object v0, p0, Landroid/graphics/drawable/DrawableContainer;->mHotspotBounds:Landroid/graphics/Rect;
 
@@ -1683,7 +1683,7 @@
     :cond_1
     iget-object v0, p0, Landroid/graphics/drawable/DrawableContainer;->mHotspotBounds:Landroid/graphics/Rect;
 
-    invoke-virtual {v0, p1, p2, p4, p3}, Landroid/graphics/Rect;->set(IIII)V
+    invoke-virtual {v0, p1, p2, p3, p4}, Landroid/graphics/Rect;->set(IIII)V
 
     goto :goto_0
 .end method
