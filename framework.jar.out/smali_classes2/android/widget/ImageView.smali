@@ -9,7 +9,8 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/widget/ImageView$ScaleType;
+        Landroid/widget/ImageView$ScaleType;,
+        Landroid/widget/ImageView$ImageViewBitmapDrawable;
     }
 .end annotation
 
@@ -3270,25 +3271,49 @@
 .end method
 
 .method public setImageBitmap(Landroid/graphics/Bitmap;)V
-    .locals 2
+    .locals 3
     .param p1, "bm"    # Landroid/graphics/Bitmap;
     .annotation runtime Landroid/view/RemotableViewMethod;
     .end annotation
 
     .prologue
-    new-instance v0, Landroid/graphics/drawable/BitmapDrawable;
+    iget-object v1, p0, Landroid/widget/ImageView;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    iget-object v1, p0, Landroid/widget/ImageView;->mContext:Landroid/content/Context;
+    instance-of v1, v1, Landroid/widget/ImageView$ImageViewBitmapDrawable;
 
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    if-eqz v1, :cond_0
 
-    move-result-object v1
+    iget-object v0, p0, Landroid/widget/ImageView;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-direct {v0, v1, p1}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
+    check-cast v0, Landroid/widget/ImageView$ImageViewBitmapDrawable;
+
+    .local v0, "recycledDrawable":Landroid/widget/ImageView$ImageViewBitmapDrawable;
+    const/4 v1, 0x0
+
+    iput-object v1, p0, Landroid/widget/ImageView;->mDrawable:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v0, p1}, Landroid/widget/ImageView$ImageViewBitmapDrawable;->setBitmap(Landroid/graphics/Bitmap;)V
 
     invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
+    .end local v0    # "recycledDrawable":Landroid/widget/ImageView$ImageViewBitmapDrawable;
+    :goto_0
     return-void
+
+    :cond_0
+    new-instance v1, Landroid/widget/ImageView$ImageViewBitmapDrawable;
+
+    iget-object v2, p0, Landroid/widget/ImageView;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2, p1}, Landroid/widget/ImageView$ImageViewBitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
+
+    invoke-virtual {p0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    goto :goto_0
 .end method
 
 .method public setImageDrawable(Landroid/graphics/drawable/Drawable;)V

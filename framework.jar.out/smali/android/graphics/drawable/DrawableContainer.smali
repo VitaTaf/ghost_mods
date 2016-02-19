@@ -939,17 +939,6 @@
     return v0
 .end method
 
-.method public isDither()Z
-    .locals 1
-
-    .prologue
-    iget-object v0, p0, Landroid/graphics/drawable/DrawableContainer;->mDrawableContainerState:Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;
-
-    iget-boolean v0, v0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mDither:Z
-
-    return v0
-.end method
-
 .method public isStateful()Z
     .locals 1
 

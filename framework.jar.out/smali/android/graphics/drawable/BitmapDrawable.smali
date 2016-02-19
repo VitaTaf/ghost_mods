@@ -624,29 +624,6 @@
     .end packed-switch
 .end method
 
-.method private setBitmap(Landroid/graphics/Bitmap;)V
-    .locals 1
-    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
-
-    .prologue
-    iget-object v0, p0, Landroid/graphics/drawable/BitmapDrawable;->mBitmapState:Landroid/graphics/drawable/BitmapDrawable$BitmapState;
-
-    iget-object v0, v0, Landroid/graphics/drawable/BitmapDrawable$BitmapState;->mBitmap:Landroid/graphics/Bitmap;
-
-    if-eq v0, p1, :cond_0
-
-    iget-object v0, p0, Landroid/graphics/drawable/BitmapDrawable;->mBitmapState:Landroid/graphics/drawable/BitmapDrawable$BitmapState;
-
-    iput-object p1, v0, Landroid/graphics/drawable/BitmapDrawable$BitmapState;->mBitmap:Landroid/graphics/Bitmap;
-
-    invoke-direct {p0}, Landroid/graphics/drawable/BitmapDrawable;->computeBitmapSize()V
-
-    invoke-virtual {p0}, Landroid/graphics/drawable/BitmapDrawable;->invalidateSelf()V
-
-    :cond_0
-    return-void
-.end method
-
 .method private updateDstRectAndInsetsIfDirty()V
     .locals 10
 
@@ -2038,21 +2015,6 @@
     return v0
 .end method
 
-.method public isDither()Z
-    .locals 1
-
-    .prologue
-    iget-object v0, p0, Landroid/graphics/drawable/BitmapDrawable;->mBitmapState:Landroid/graphics/drawable/BitmapDrawable$BitmapState;
-
-    iget-object v0, v0, Landroid/graphics/drawable/BitmapDrawable$BitmapState;->mPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {v0}, Landroid/graphics/Paint;->isDither()Z
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public isFilterBitmap()Z
     .locals 1
 
@@ -2306,6 +2268,29 @@
     iget-object v0, p0, Landroid/graphics/drawable/BitmapDrawable;->mBitmapState:Landroid/graphics/drawable/BitmapDrawable$BitmapState;
 
     iput-boolean p1, v0, Landroid/graphics/drawable/BitmapDrawable$BitmapState;->mAutoMirrored:Z
+
+    invoke-virtual {p0}, Landroid/graphics/drawable/BitmapDrawable;->invalidateSelf()V
+
+    :cond_0
+    return-void
+.end method
+
+.method protected setBitmap(Landroid/graphics/Bitmap;)V
+    .locals 1
+    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
+
+    .prologue
+    iget-object v0, p0, Landroid/graphics/drawable/BitmapDrawable;->mBitmapState:Landroid/graphics/drawable/BitmapDrawable$BitmapState;
+
+    iget-object v0, v0, Landroid/graphics/drawable/BitmapDrawable$BitmapState;->mBitmap:Landroid/graphics/Bitmap;
+
+    if-eq v0, p1, :cond_0
+
+    iget-object v0, p0, Landroid/graphics/drawable/BitmapDrawable;->mBitmapState:Landroid/graphics/drawable/BitmapDrawable$BitmapState;
+
+    iput-object p1, v0, Landroid/graphics/drawable/BitmapDrawable$BitmapState;->mBitmap:Landroid/graphics/Bitmap;
+
+    invoke-direct {p0}, Landroid/graphics/drawable/BitmapDrawable;->computeBitmapSize()V
 
     invoke-virtual {p0}, Landroid/graphics/drawable/BitmapDrawable;->invalidateSelf()V
 

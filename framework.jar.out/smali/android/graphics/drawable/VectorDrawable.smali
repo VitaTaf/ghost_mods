@@ -34,6 +34,8 @@
 
 .field private static final LOGTAG:Ljava/lang/String;
 
+.field private static final MAX_CACHED_BITMAP_SIZE:I = 0x800
+
 .field private static final SHAPE_CLIP_PATH:Ljava/lang/String; = "clip-path"
 
 .field private static final SHAPE_GROUP:Ljava/lang/String; = "group"
@@ -51,6 +53,12 @@
 .field private mMutated:Z
 
 .field private mTintFilter:Landroid/graphics/PorterDuffColorFilter;
+
+.field private final mTmpBounds:Landroid/graphics/Rect;
+
+.field private final mTmpFloats:[F
+
+.field private final mTmpMatrix:Landroid/graphics/Matrix;
 
 .field private mVectorState:Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
 
@@ -81,6 +89,24 @@
 
     iput-boolean v0, p0, Landroid/graphics/drawable/VectorDrawable;->mAllowCaching:Z
 
+    const/16 v0, 0x9
+
+    new-array v0, v0, [F
+
+    iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable;->mTmpFloats:[F
+
+    new-instance v0, Landroid/graphics/Matrix;
+
+    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
+
+    iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable;->mTmpMatrix:Landroid/graphics/Matrix;
+
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable;->mTmpBounds:Landroid/graphics/Rect;
+
     new-instance v0, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
 
     invoke-direct {v0}, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;-><init>()V
@@ -100,6 +126,24 @@
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/graphics/drawable/VectorDrawable;->mAllowCaching:Z
+
+    const/16 v0, 0x9
+
+    new-array v0, v0, [F
+
+    iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable;->mTmpFloats:[F
+
+    new-instance v0, Landroid/graphics/Matrix;
+
+    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
+
+    iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable;->mTmpMatrix:Landroid/graphics/Matrix;
+
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object v0, p0, Landroid/graphics/drawable/VectorDrawable;->mTmpBounds:Landroid/graphics/Rect;
 
     iput-object p1, p0, Landroid/graphics/drawable/VectorDrawable;->mVectorState:Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
 
@@ -1224,157 +1268,223 @@
 .end method
 
 .method public draw(Landroid/graphics/Canvas;)V
-    .locals 7
+    .locals 11
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    invoke-virtual {p0}, Landroid/graphics/drawable/VectorDrawable;->getBounds()Landroid/graphics/Rect;
+    const/16 v10, 0x800
 
-    move-result-object v0
+    const/4 v9, 0x0
 
-    .local v0, "bounds":Landroid/graphics/Rect;
-    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
+    iget-object v7, p0, Landroid/graphics/drawable/VectorDrawable;->mTmpBounds:Landroid/graphics/Rect;
 
-    move-result v4
+    invoke-virtual {p0, v7}, Landroid/graphics/drawable/VectorDrawable;->copyBounds(Landroid/graphics/Rect;)V
 
-    if-lez v4, :cond_0
+    iget-object v7, p0, Landroid/graphics/drawable/VectorDrawable;->mTmpBounds:Landroid/graphics/Rect;
 
-    invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
+    invoke-virtual {v7}, Landroid/graphics/Rect;->width()I
 
-    move-result v4
+    move-result v7
 
-    if-gtz v4, :cond_1
+    if-lez v7, :cond_0
+
+    iget-object v7, p0, Landroid/graphics/drawable/VectorDrawable;->mTmpBounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v7}, Landroid/graphics/Rect;->height()I
+
+    move-result v7
+
+    if-gtz v7, :cond_1
 
     :cond_0
     :goto_0
     return-void
 
     :cond_1
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+    iget-object v7, p0, Landroid/graphics/drawable/VectorDrawable;->mColorFilter:Landroid/graphics/ColorFilter;
 
-    move-result v3
+    if-nez v7, :cond_4
 
-    .local v3, "saveCount":I
-    invoke-direct {p0}, Landroid/graphics/drawable/VectorDrawable;->needMirroring()Z
+    iget-object v2, p0, Landroid/graphics/drawable/VectorDrawable;->mTintFilter:Landroid/graphics/PorterDuffColorFilter;
 
-    move-result v2
-
-    .local v2, "needMirroring":Z
-    iget v4, v0, Landroid/graphics/Rect;->left:I
-
-    int-to-float v4, v4
-
-    iget v5, v0, Landroid/graphics/Rect;->top:I
-
-    int-to-float v5, v5
-
-    invoke-virtual {p1, v4, v5}, Landroid/graphics/Canvas;->translate(FF)V
-
-    if-eqz v2, :cond_2
-
-    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
-
-    move-result v4
-
-    int-to-float v4, v4
-
-    const/4 v5, 0x0
-
-    invoke-virtual {p1, v4, v5}, Landroid/graphics/Canvas;->translate(FF)V
-
-    const/high16 v4, -0x40800000    # -1.0f
-
-    const/high16 v5, 0x3f800000    # 1.0f
-
-    invoke-virtual {p1, v4, v5}, Landroid/graphics/Canvas;->scale(FF)V
-
-    :cond_2
-    iget-object v4, p0, Landroid/graphics/drawable/VectorDrawable;->mColorFilter:Landroid/graphics/ColorFilter;
-
-    if-nez v4, :cond_3
-
-    iget-object v1, p0, Landroid/graphics/drawable/VectorDrawable;->mTintFilter:Landroid/graphics/PorterDuffColorFilter;
-
-    .local v1, "colorFilter":Landroid/graphics/ColorFilter;
+    .local v2, "colorFilter":Landroid/graphics/ColorFilter;
     :goto_1
-    iget-boolean v4, p0, Landroid/graphics/drawable/VectorDrawable;->mAllowCaching:Z
+    iget-object v7, p0, Landroid/graphics/drawable/VectorDrawable;->mTmpMatrix:Landroid/graphics/Matrix;
 
-    if-nez v4, :cond_5
+    invoke-virtual {p1, v7}, Landroid/graphics/Canvas;->getMatrix(Landroid/graphics/Matrix;)V
 
-    iget-object v4, p0, Landroid/graphics/drawable/VectorDrawable;->mVectorState:Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
+    iget-object v7, p0, Landroid/graphics/drawable/VectorDrawable;->mTmpMatrix:Landroid/graphics/Matrix;
 
-    invoke-virtual {v4}, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->hasTranslucentRoot()Z
+    iget-object v8, p0, Landroid/graphics/drawable/VectorDrawable;->mTmpFloats:[F
 
-    move-result v4
+    invoke-virtual {v7, v8}, Landroid/graphics/Matrix;->getValues([F)V
 
-    if-nez v4, :cond_4
+    iget-object v7, p0, Landroid/graphics/drawable/VectorDrawable;->mTmpFloats:[F
 
-    iget-object v4, p0, Landroid/graphics/drawable/VectorDrawable;->mVectorState:Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
+    aget v7, v7, v9
 
-    iget-object v4, v4, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->mVPathRenderer:Landroid/graphics/drawable/VectorDrawable$VPathRenderer;
+    invoke-static {v7}, Ljava/lang/Math;->abs(F)F
 
-    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
+    move-result v0
 
-    move-result v5
+    .local v0, "canvasScaleX":F
+    iget-object v7, p0, Landroid/graphics/drawable/VectorDrawable;->mTmpFloats:[F
 
-    invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
+    const/4 v8, 0x4
+
+    aget v7, v7, v8
+
+    invoke-static {v7}, Ljava/lang/Math;->abs(F)F
+
+    move-result v1
+
+    .local v1, "canvasScaleY":F
+    iget-object v7, p0, Landroid/graphics/drawable/VectorDrawable;->mTmpBounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v7}, Landroid/graphics/Rect;->width()I
+
+    move-result v7
+
+    int-to-float v7, v7
+
+    mul-float/2addr v7, v0
+
+    float-to-int v6, v7
+
+    .local v6, "scaledWidth":I
+    iget-object v7, p0, Landroid/graphics/drawable/VectorDrawable;->mTmpBounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v7}, Landroid/graphics/Rect;->height()I
+
+    move-result v7
+
+    int-to-float v7, v7
+
+    mul-float/2addr v7, v1
+
+    float-to-int v5, v7
+
+    .local v5, "scaledHeight":I
+    invoke-static {v10, v6}, Ljava/lang/Math;->min(II)I
 
     move-result v6
 
-    invoke-virtual {v4, p1, v5, v6, v1}, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->draw(Landroid/graphics/Canvas;IILandroid/graphics/ColorFilter;)V
+    invoke-static {v10, v5}, Ljava/lang/Math;->min(II)I
 
-    :goto_2
-    invoke-virtual {p1, v3}, Landroid/graphics/Canvas;->restoreToCount(I)V
+    move-result v5
 
-    goto :goto_0
+    if-lez v6, :cond_0
 
-    .end local v1    # "colorFilter":Landroid/graphics/ColorFilter;
-    :cond_3
-    iget-object v1, p0, Landroid/graphics/drawable/VectorDrawable;->mColorFilter:Landroid/graphics/ColorFilter;
+    if-lez v5, :cond_0
 
-    goto :goto_1
-
-    .restart local v1    # "colorFilter":Landroid/graphics/ColorFilter;
-    :cond_4
-    iget-object v4, p0, Landroid/graphics/drawable/VectorDrawable;->mVectorState:Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
-
-    invoke-virtual {v4, v0}, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->createCachedBitmapIfNeeded(Landroid/graphics/Rect;)V
-
-    iget-object v4, p0, Landroid/graphics/drawable/VectorDrawable;->mVectorState:Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
-
-    invoke-virtual {v4, v0}, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->updateCachedBitmap(Landroid/graphics/Rect;)V
-
-    iget-object v4, p0, Landroid/graphics/drawable/VectorDrawable;->mVectorState:Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
-
-    invoke-virtual {v4, p1, v1}, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->drawCachedBitmapWithRootAlpha(Landroid/graphics/Canvas;Landroid/graphics/ColorFilter;)V
-
-    goto :goto_2
-
-    :cond_5
-    iget-object v4, p0, Landroid/graphics/drawable/VectorDrawable;->mVectorState:Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
-
-    invoke-virtual {v4, v0}, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->createCachedBitmapIfNeeded(Landroid/graphics/Rect;)V
-
-    iget-object v4, p0, Landroid/graphics/drawable/VectorDrawable;->mVectorState:Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
-
-    invoke-virtual {v4}, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->canReuseCache()Z
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v4
 
-    if-nez v4, :cond_6
+    .local v4, "saveCount":I
+    iget-object v7, p0, Landroid/graphics/drawable/VectorDrawable;->mTmpBounds:Landroid/graphics/Rect;
 
-    iget-object v4, p0, Landroid/graphics/drawable/VectorDrawable;->mVectorState:Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
+    iget v7, v7, Landroid/graphics/Rect;->left:I
 
-    invoke-virtual {v4, v0}, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->updateCachedBitmap(Landroid/graphics/Rect;)V
+    int-to-float v7, v7
 
-    iget-object v4, p0, Landroid/graphics/drawable/VectorDrawable;->mVectorState:Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
+    iget-object v8, p0, Landroid/graphics/drawable/VectorDrawable;->mTmpBounds:Landroid/graphics/Rect;
 
-    invoke-virtual {v4}, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->updateCacheStates()V
+    iget v8, v8, Landroid/graphics/Rect;->top:I
 
-    :cond_6
-    iget-object v4, p0, Landroid/graphics/drawable/VectorDrawable;->mVectorState:Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
+    int-to-float v8, v8
 
-    invoke-virtual {v4, p1, v1}, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->drawCachedBitmapWithRootAlpha(Landroid/graphics/Canvas;Landroid/graphics/ColorFilter;)V
+    invoke-virtual {p1, v7, v8}, Landroid/graphics/Canvas;->translate(FF)V
+
+    invoke-direct {p0}, Landroid/graphics/drawable/VectorDrawable;->needMirroring()Z
+
+    move-result v3
+
+    .local v3, "needMirroring":Z
+    if-eqz v3, :cond_2
+
+    iget-object v7, p0, Landroid/graphics/drawable/VectorDrawable;->mTmpBounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v7}, Landroid/graphics/Rect;->width()I
+
+    move-result v7
+
+    int-to-float v7, v7
+
+    const/4 v8, 0x0
+
+    invoke-virtual {p1, v7, v8}, Landroid/graphics/Canvas;->translate(FF)V
+
+    const/high16 v7, -0x40800000    # -1.0f
+
+    const/high16 v8, 0x3f800000    # 1.0f
+
+    invoke-virtual {p1, v7, v8}, Landroid/graphics/Canvas;->scale(FF)V
+
+    :cond_2
+    iget-object v7, p0, Landroid/graphics/drawable/VectorDrawable;->mTmpBounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v7, v9, v9}, Landroid/graphics/Rect;->offsetTo(II)V
+
+    iget-object v7, p0, Landroid/graphics/drawable/VectorDrawable;->mVectorState:Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
+
+    invoke-virtual {v7, v6, v5}, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->createCachedBitmapIfNeeded(II)V
+
+    iget-boolean v7, p0, Landroid/graphics/drawable/VectorDrawable;->mAllowCaching:Z
+
+    if-nez v7, :cond_5
+
+    iget-object v7, p0, Landroid/graphics/drawable/VectorDrawable;->mVectorState:Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
+
+    invoke-virtual {v7, v6, v5}, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->updateCachedBitmap(II)V
+
+    :cond_3
+    :goto_2
+    iget-object v7, p0, Landroid/graphics/drawable/VectorDrawable;->mVectorState:Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
+
+    iget-object v8, p0, Landroid/graphics/drawable/VectorDrawable;->mTmpBounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v7, p1, v2, v8}, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->drawCachedBitmapWithRootAlpha(Landroid/graphics/Canvas;Landroid/graphics/ColorFilter;Landroid/graphics/Rect;)V
+
+    invoke-virtual {p1, v4}, Landroid/graphics/Canvas;->restoreToCount(I)V
+
+    goto/16 :goto_0
+
+    .end local v0    # "canvasScaleX":F
+    .end local v1    # "canvasScaleY":F
+    .end local v2    # "colorFilter":Landroid/graphics/ColorFilter;
+    .end local v3    # "needMirroring":Z
+    .end local v4    # "saveCount":I
+    .end local v5    # "scaledHeight":I
+    .end local v6    # "scaledWidth":I
+    :cond_4
+    iget-object v2, p0, Landroid/graphics/drawable/VectorDrawable;->mColorFilter:Landroid/graphics/ColorFilter;
+
+    goto/16 :goto_1
+
+    .restart local v0    # "canvasScaleX":F
+    .restart local v1    # "canvasScaleY":F
+    .restart local v2    # "colorFilter":Landroid/graphics/ColorFilter;
+    .restart local v3    # "needMirroring":Z
+    .restart local v4    # "saveCount":I
+    .restart local v5    # "scaledHeight":I
+    .restart local v6    # "scaledWidth":I
+    :cond_5
+    iget-object v7, p0, Landroid/graphics/drawable/VectorDrawable;->mVectorState:Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
+
+    invoke-virtual {v7}, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->canReuseCache()Z
+
+    move-result v7
+
+    if-nez v7, :cond_3
+
+    iget-object v7, p0, Landroid/graphics/drawable/VectorDrawable;->mVectorState:Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
+
+    invoke-virtual {v7, v6, v5}, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->updateCachedBitmap(II)V
+
+    iget-object v7, p0, Landroid/graphics/drawable/VectorDrawable;->mVectorState:Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
+
+    invoke-virtual {v7}, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->updateCacheStates()V
 
     goto :goto_2
 .end method

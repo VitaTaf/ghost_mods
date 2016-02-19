@@ -309,41 +309,26 @@
     goto :goto_0
 .end method
 
-.method public createCachedBitmapIfNeeded(Landroid/graphics/Rect;)V
-    .locals 3
-    .param p1, "bounds"    # Landroid/graphics/Rect;
+.method public createCachedBitmapIfNeeded(II)V
+    .locals 1
+    .param p1, "width"    # I
+    .param p2, "height"    # I
 
     .prologue
     iget-object v0, p0, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->mCachedBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
-
-    move-result v0
-
-    invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
-
-    move-result v1
-
-    invoke-virtual {p0, v0, v1}, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->canReuseBitmap(II)Z
+    invoke-virtual {p0, p1, p2}, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->canReuseBitmap(II)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
     :cond_0
-    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
+    sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    move-result v0
-
-    invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
-
-    move-result v1
-
-    sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
-
-    invoke-static {v0, v1, v2}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    invoke-static {p1, p2, v0}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
@@ -357,14 +342,13 @@
     return-void
 .end method
 
-.method public drawCachedBitmapWithRootAlpha(Landroid/graphics/Canvas;Landroid/graphics/ColorFilter;)V
+.method public drawCachedBitmapWithRootAlpha(Landroid/graphics/Canvas;Landroid/graphics/ColorFilter;Landroid/graphics/Rect;)V
     .locals 3
     .param p1, "canvas"    # Landroid/graphics/Canvas;
     .param p2, "filter"    # Landroid/graphics/ColorFilter;
+    .param p3, "originalBounds"    # Landroid/graphics/Rect;
 
     .prologue
-    const/4 v2, 0x0
-
     invoke-virtual {p0, p2}, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->getPaint(Landroid/graphics/ColorFilter;)Landroid/graphics/Paint;
 
     move-result-object v0
@@ -372,7 +356,9 @@
     .local v0, "p":Landroid/graphics/Paint;
     iget-object v1, p0, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->mCachedBitmap:Landroid/graphics/Bitmap;
 
-    invoke-virtual {p1, v1, v2, v2, v0}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
+    const/4 v2, 0x0
+
+    invoke-virtual {p1, v1, v2, p3, v0}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
     return-void
 .end method
@@ -546,9 +532,10 @@
     return-void
 .end method
 
-.method public updateCachedBitmap(Landroid/graphics/Rect;)V
-    .locals 5
-    .param p1, "bounds"    # Landroid/graphics/Rect;
+.method public updateCachedBitmap(II)V
+    .locals 3
+    .param p1, "width"    # I
+    .param p2, "height"    # I
 
     .prologue
     iget-object v1, p0, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->mCachedBitmap:Landroid/graphics/Bitmap;
@@ -566,17 +553,9 @@
     .local v0, "tmpCanvas":Landroid/graphics/Canvas;
     iget-object v1, p0, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->mVPathRenderer:Landroid/graphics/drawable/VectorDrawable$VPathRenderer;
 
-    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
+    const/4 v2, 0x0
 
-    move-result v2
-
-    invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
-
-    move-result v3
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v1, v0, v2, v3, v4}, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->draw(Landroid/graphics/Canvas;IILandroid/graphics/ColorFilter;)V
+    invoke-virtual {v1, v0, p1, p2, v2}, Landroid/graphics/drawable/VectorDrawable$VPathRenderer;->draw(Landroid/graphics/Canvas;IILandroid/graphics/ColorFilter;)V
 
     return-void
 .end method

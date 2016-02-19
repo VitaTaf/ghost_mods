@@ -1590,15 +1590,6 @@
     return v0
 .end method
 
-.method public isDither()Z
-    .locals 1
-
-    .prologue
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
 .method public isFilterBitmap()Z
     .locals 1
 
@@ -1842,6 +1833,8 @@
 .method public setDither(Z)V
     .locals 0
     .param p1, "dither"    # Z
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
     return-void

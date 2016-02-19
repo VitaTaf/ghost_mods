@@ -3064,32 +3064,6 @@
     return v0
 .end method
 
-.method public isDither()Z
-    .locals 2
-
-    .prologue
-    invoke-direct {p0}, Landroid/graphics/drawable/LayerDrawable;->getFirstNonNullDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    .local v0, "dr":Landroid/graphics/drawable/Drawable;
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->isDither()Z
-
-    move-result v1
-
-    :goto_0
-    return v1
-
-    :cond_0
-    invoke-super {p0}, Landroid/graphics/drawable/Drawable;->isDither()Z
-
-    move-result v1
-
-    goto :goto_0
-.end method
-
 .method public isProjected()Z
     .locals 5
 
