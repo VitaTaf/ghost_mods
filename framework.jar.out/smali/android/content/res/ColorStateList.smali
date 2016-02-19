@@ -1426,7 +1426,7 @@
     .prologue
     iget-object v0, p0, Landroid/content/res/ColorStateList;->mFactory:Landroid/content/res/ColorStateList$ColorStateListFactory;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
     new-instance v0, Landroid/content/res/ColorStateList$ColorStateListFactory;
 
