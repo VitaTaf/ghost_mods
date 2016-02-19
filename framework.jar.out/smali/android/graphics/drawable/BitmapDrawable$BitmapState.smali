@@ -281,12 +281,30 @@
 .end method
 
 .method public getChangingConfigurations()I
-    .locals 1
+    .locals 2
 
     .prologue
-    iget v0, p0, Landroid/graphics/drawable/BitmapDrawable$BitmapState;->mChangingConfigurations:I
+    iget v1, p0, Landroid/graphics/drawable/BitmapDrawable$BitmapState;->mChangingConfigurations:I
+
+    iget-object v0, p0, Landroid/graphics/drawable/BitmapDrawable$BitmapState;->mTint:Landroid/content/res/ColorStateList;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Landroid/graphics/drawable/BitmapDrawable$BitmapState;->mTint:Landroid/content/res/ColorStateList;
+
+    invoke-virtual {v0}, Landroid/content/res/ColorStateList;->getChangingConfigurations()I
+
+    move-result v0
+
+    :goto_0
+    or-int/2addr v0, v1
 
     return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method public newDrawable()Landroid/graphics/drawable/Drawable;

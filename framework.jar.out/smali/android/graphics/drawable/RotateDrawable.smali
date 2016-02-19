@@ -590,13 +590,13 @@
 .end method
 
 .method updateStateFromTypedArray(Landroid/content/res/TypedArray;)V
-    .locals 10
+    .locals 9
     .param p1, "a"    # Landroid/content/res/TypedArray;
 
     .prologue
-    const/4 v9, 0x5
+    const/4 v8, 0x5
 
-    const/4 v8, 0x4
+    const/4 v6, 0x4
 
     const/4 v5, 0x0
 
@@ -609,29 +609,19 @@
     iget-object v1, p0, Landroid/graphics/drawable/RotateDrawable;->mState:Landroid/graphics/drawable/RotateDrawable$RotateState;
 
     .local v1, "state":Landroid/graphics/drawable/RotateDrawable$RotateState;
-    iget v3, v1, Landroid/graphics/drawable/RotateDrawable$RotateState;->mChangingConfigurations:I
-
-    invoke-virtual {p1}, Landroid/content/res/TypedArray;->getChangingConfigurations()I
-
-    move-result v6
-
-    or-int/2addr v3, v6
-
-    iput v3, v1, Landroid/graphics/drawable/RotateDrawable$RotateState;->mChangingConfigurations:I
-
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->extractThemeAttrs()[I
 
     move-result-object v3
 
     iput-object v3, v1, Landroid/graphics/drawable/RotateDrawable$RotateState;->mThemeAttrs:[I
 
-    invoke-virtual {p1, v8}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {p1, v6}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    invoke-virtual {p1, v8}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
+    invoke-virtual {p1, v6}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
 
     move-result-object v2
 
@@ -660,13 +650,13 @@
 
     .end local v2    # "tv":Landroid/util/TypedValue;
     :cond_0
-    invoke-virtual {p1, v9}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {p1, v8}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v3
 
     if-eqz v3, :cond_2
 
-    invoke-virtual {p1, v9}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
+    invoke-virtual {p1, v8}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
 
     move-result-object v2
 

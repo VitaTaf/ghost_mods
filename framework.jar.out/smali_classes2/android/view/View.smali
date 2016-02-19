@@ -8082,170 +8082,209 @@
 .end method
 
 .method private saveAttributeData(Landroid/util/AttributeSet;Landroid/content/res/TypedArray;)V
-    .locals 9
+    .locals 15
     .param p1, "attrs"    # Landroid/util/AttributeSet;
-    .param p2, "a"    # Landroid/content/res/TypedArray;
+    .param p2, "t"    # Landroid/content/res/TypedArray;
 
     .prologue
-    const/4 v6, 0x0
-
     if-nez p1, :cond_0
 
+    const/4 v3, 0x0
+
+    .local v3, "attrsCount":I
     :goto_0
-    invoke-virtual {p2}, Landroid/content/res/TypedArray;->getIndexCount()I
+    invoke-virtual/range {p2 .. p2}, Landroid/content/res/TypedArray;->getIndexCount()I
 
     move-result v7
 
-    add-int/2addr v6, v7
+    .local v7, "indexCount":I
+    add-int v13, v3, v7
 
-    mul-int/lit8 v3, v6, 0x2
+    mul-int/lit8 v13, v13, 0x2
 
-    .local v3, "length":I
-    new-array v6, v3, [Ljava/lang/String;
+    new-array v2, v13, [Ljava/lang/String;
 
-    iput-object v6, p0, Landroid/view/View;->mAttributes:[Ljava/lang/String;
+    .local v2, "attributes":[Ljava/lang/String;
+    const/4 v5, 0x0
 
-    const/4 v1, 0x0
+    .local v5, "i":I
+    const/4 v8, 0x0
 
-    .local v1, "i":I
-    if-eqz p1, :cond_1
-
-    const/4 v1, 0x0
-
+    .local v8, "j":I
     :goto_1
-    invoke-interface {p1}, Landroid/util/AttributeSet;->getAttributeCount()I
+    if-ge v8, v3, :cond_1
 
-    move-result v6
+    move-object/from16 v0, p1
 
-    if-ge v1, v6, :cond_1
+    invoke-interface {v0, v8}, Landroid/util/AttributeSet;->getAttributeName(I)Ljava/lang/String;
 
-    iget-object v6, p0, Landroid/view/View;->mAttributes:[Ljava/lang/String;
+    move-result-object v13
 
-    invoke-interface {p1, v1}, Landroid/util/AttributeSet;->getAttributeName(I)Ljava/lang/String;
+    aput-object v13, v2, v5
 
-    move-result-object v7
+    add-int/lit8 v13, v5, 0x1
 
-    aput-object v7, v6, v1
+    move-object/from16 v0, p1
 
-    iget-object v6, p0, Landroid/view/View;->mAttributes:[Ljava/lang/String;
+    invoke-interface {v0, v8}, Landroid/util/AttributeSet;->getAttributeValue(I)Ljava/lang/String;
 
-    add-int/lit8 v7, v1, 0x1
+    move-result-object v14
 
-    invoke-interface {p1, v1}, Landroid/util/AttributeSet;->getAttributeValue(I)Ljava/lang/String;
+    aput-object v14, v2, v13
 
-    move-result-object v8
+    add-int/lit8 v5, v5, 0x2
 
-    aput-object v8, v6, v7
-
-    add-int/lit8 v1, v1, 0x2
+    add-int/lit8 v8, v8, 0x1
 
     goto :goto_1
 
-    .end local v1    # "i":I
-    .end local v3    # "length":I
+    .end local v2    # "attributes":[Ljava/lang/String;
+    .end local v3    # "attrsCount":I
+    .end local v5    # "i":I
+    .end local v7    # "indexCount":I
+    .end local v8    # "j":I
     :cond_0
-    invoke-interface {p1}, Landroid/util/AttributeSet;->getAttributeCount()I
+    invoke-interface/range {p1 .. p1}, Landroid/util/AttributeSet;->getAttributeCount()I
 
-    move-result v6
+    move-result v3
 
     goto :goto_0
 
-    .restart local v1    # "i":I
-    .restart local v3    # "length":I
+    .restart local v2    # "attributes":[Ljava/lang/String;
+    .restart local v3    # "attrsCount":I
+    .restart local v5    # "i":I
+    .restart local v7    # "indexCount":I
+    .restart local v8    # "j":I
     :cond_1
+    invoke-virtual/range {p2 .. p2}, Landroid/content/res/TypedArray;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v9
+
+    .local v9, "res":Landroid/content/res/Resources;
     invoke-static {}, Landroid/view/View;->getAttributeMap()Landroid/util/SparseArray;
 
-    move-result-object v0
+    move-result-object v1
 
-    .local v0, "attributeMap":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/lang/String;>;"
-    const/4 v2, 0x0
+    .local v1, "attributeMap":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/lang/String;>;"
+    const/4 v8, 0x0
 
-    .local v2, "j":I
     :goto_2
-    invoke-virtual {p2}, Landroid/content/res/TypedArray;->length()I
+    if-ge v8, v7, :cond_5
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v8}, Landroid/content/res/TypedArray;->getIndex(I)I
 
     move-result v6
 
-    if-ge v2, v6, :cond_5
+    .local v6, "index":I
+    move-object/from16 v0, p2
 
-    invoke-virtual {p2, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {v0, v6}, Landroid/content/res/TypedArray;->hasValueOrEmpty(I)Z
 
-    move-result v6
+    move-result v13
 
-    if-eqz v6, :cond_2
+    if-nez v13, :cond_3
 
-    const/4 v6, 0x0
-
-    :try_start_0
-    invoke-virtual {p2, v2, v6}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result v4
-
-    .local v4, "resourceId":I
-    if-nez v4, :cond_3
-
-    .end local v4    # "resourceId":I
     :cond_2
     :goto_3
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v8, v8, 0x1
 
     goto :goto_2
 
-    .restart local v4    # "resourceId":I
     :cond_3
-    invoke-virtual {v0, v4}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+    const/4 v13, 0x0
 
-    move-result-object v5
+    move-object/from16 v0, p2
 
-    check-cast v5, Ljava/lang/String;
+    invoke-virtual {v0, v6, v13}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
-    .local v5, "resourceName":Ljava/lang/String;
-    if-nez v5, :cond_4
+    move-result v10
 
-    invoke-virtual {p2}, Landroid/content/res/TypedArray;->getResources()Landroid/content/res/Resources;
+    .local v10, "resourceId":I
+    if-eqz v10, :cond_2
 
-    move-result-object v6
+    invoke-virtual {v1, v10}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {v6, v4}, Landroid/content/res/Resources;->getResourceName(I)Ljava/lang/String;
+    move-result-object v11
 
-    move-result-object v5
+    check-cast v11, Ljava/lang/String;
 
-    invoke-virtual {v0, v4, v5}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    .local v11, "resourceName":Ljava/lang/String;
+    if-nez v11, :cond_4
 
-    :cond_4
-    iget-object v6, p0, Landroid/view/View;->mAttributes:[Ljava/lang/String;
-
-    aput-object v5, v6, v1
-
-    iget-object v6, p0, Landroid/view/View;->mAttributes:[Ljava/lang/String;
-
-    add-int/lit8 v7, v1, 0x1
-
-    invoke-virtual {p2, v2}, Landroid/content/res/TypedArray;->getText(I)Ljava/lang/CharSequence;
-
-    move-result-object v8
-
-    invoke-interface {v8}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    aput-object v8, v6, v7
+    :try_start_0
+    invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getResourceName(I)Ljava/lang/String;
     :try_end_0
     .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    add-int/lit8 v1, v1, 0x2
+    move-result-object v11
+
+    :goto_4
+    invoke-virtual {v1, v10, v11}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    :cond_4
+    aput-object v11, v2, v5
+
+    add-int/lit8 v13, v5, 0x1
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v6}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+
+    move-result-object v14
+
+    aput-object v14, v2, v13
+
+    add-int/lit8 v5, v5, 0x2
 
     goto :goto_3
-
-    .end local v4    # "resourceId":I
-    .end local v5    # "resourceName":Ljava/lang/String;
-    :cond_5
-    return-void
 
     :catch_0
-    move-exception v6
+    move-exception v4
 
-    goto :goto_3
+    .local v4, "e":Landroid/content/res/Resources$NotFoundException;
+    new-instance v13, Ljava/lang/StringBuilder;
+
+    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v14, "0x"
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-static {v10}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    goto :goto_4
+
+    .end local v4    # "e":Landroid/content/res/Resources$NotFoundException;
+    .end local v6    # "index":I
+    .end local v10    # "resourceId":I
+    .end local v11    # "resourceName":Ljava/lang/String;
+    :cond_5
+    new-array v12, v5, [Ljava/lang/String;
+
+    .local v12, "trimmed":[Ljava/lang/String;
+    const/4 v13, 0x0
+
+    const/4 v14, 0x0
+
+    invoke-static {v2, v13, v12, v14, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    iput-object v12, p0, Landroid/view/View;->mAttributes:[Ljava/lang/String;
+
+    return-void
 .end method
 
 .method private sendAccessibilityHoverEvent(I)V

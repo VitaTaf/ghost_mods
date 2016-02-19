@@ -601,7 +601,7 @@
 .end method
 
 .method final applyTheme(Landroid/content/res/Resources$Theme;)V
-    .locals 4
+    .locals 5
     .param p1, "theme"    # Landroid/content/res/Resources$Theme;
 
     .prologue
@@ -636,6 +636,18 @@
     aget-object v3, v1, v2
 
     invoke-virtual {v3, p1}, Landroid/graphics/drawable/Drawable;->applyTheme(Landroid/content/res/Resources$Theme;)V
+
+    iget v3, p0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mChildrenChangingConfigurations:I
+
+    aget-object v4, v1, v2
+
+    invoke-virtual {v4}, Landroid/graphics/drawable/Drawable;->getChangingConfigurations()I
+
+    move-result v4
+
+    or-int/2addr v3, v4
+
+    iput v3, p0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mChildrenChangingConfigurations:I
 
     :cond_0
     add-int/lit8 v2, v2, 0x1

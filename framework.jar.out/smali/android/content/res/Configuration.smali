@@ -3094,10 +3094,6 @@
     .prologue
     iput-object p1, p0, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
 
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Landroid/content/res/Configuration;->userSetLocale:Z
-
     iget-object v0, p0, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
 
     invoke-virtual {p0, v0}, Landroid/content/res/Configuration;->setLayoutDirection(Ljava/util/Locale;)V

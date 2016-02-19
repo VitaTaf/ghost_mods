@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0xa
     name = "ColorStateListFactory"
 .end annotation
 
@@ -24,7 +24,7 @@
 
 
 # instance fields
-.field final mSrc:Landroid/content/res/ColorStateList;
+.field private final mSrc:Landroid/content/res/ColorStateList;
 
 
 # direct methods
@@ -66,40 +66,18 @@
 .end method
 
 .method public newInstance(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
-    .locals 3
+    .locals 1
     .param p1, "res"    # Landroid/content/res/Resources;
     .param p2, "theme"    # Landroid/content/res/Resources$Theme;
 
     .prologue
-    if-eqz p2, :cond_0
-
-    iget-object v1, p0, Landroid/content/res/ColorStateList$ColorStateListFactory;->mSrc:Landroid/content/res/ColorStateList;
-
-    invoke-virtual {v1}, Landroid/content/res/ColorStateList;->canApplyTheme()Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    :cond_0
     iget-object v0, p0, Landroid/content/res/ColorStateList$ColorStateListFactory;->mSrc:Landroid/content/res/ColorStateList;
 
-    :goto_0
+    invoke-virtual {v0, p2}, Landroid/content/res/ColorStateList;->obtainForTheme(Landroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
+
+    move-result-object v0
+
     return-object v0
-
-    :cond_1
-    new-instance v0, Landroid/content/res/ColorStateList;
-
-    iget-object v1, p0, Landroid/content/res/ColorStateList$ColorStateListFactory;->mSrc:Landroid/content/res/ColorStateList;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Landroid/content/res/ColorStateList;-><init>(Landroid/content/res/ColorStateList;Landroid/content/res/ColorStateList$1;)V
-
-    .local v0, "clone":Landroid/content/res/ColorStateList;
-    invoke-virtual {v0, p2}, Landroid/content/res/ColorStateList;->applyTheme(Landroid/content/res/Resources$Theme;)V
-
-    goto :goto_0
 .end method
 
 .method public bridge synthetic newInstance()Ljava/lang/Object;

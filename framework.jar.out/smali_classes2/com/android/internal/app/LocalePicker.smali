@@ -511,6 +511,10 @@
     .local v1, "config":Landroid/content/res/Configuration;
     invoke-virtual {v1, p0}, Landroid/content/res/Configuration;->setLocale(Ljava/util/Locale;)V
 
+    const/4 v2, 0x1
+
+    iput-boolean v2, v1, Landroid/content/res/Configuration;->userSetLocale:Z
+
     invoke-interface {v0, v1}, Landroid/app/IActivityManager;->updateConfiguration(Landroid/content/res/Configuration;)V
 
     const-string v2, "com.android.providers.settings"

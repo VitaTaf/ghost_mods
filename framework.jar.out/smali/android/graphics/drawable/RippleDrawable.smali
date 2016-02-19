@@ -1602,7 +1602,11 @@
 
     iget-object v3, v2, Landroid/graphics/drawable/RippleDrawable$RippleState;->mColor:Landroid/content/res/ColorStateList;
 
-    invoke-virtual {v3, p1}, Landroid/content/res/ColorStateList;->applyTheme(Landroid/content/res/Resources$Theme;)V
+    invoke-virtual {v3, p1}, Landroid/content/res/ColorStateList;->obtainForTheme(Landroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
+
+    move-result-object v3
+
+    iput-object v3, v2, Landroid/graphics/drawable/RippleDrawable$RippleState;->mColor:Landroid/content/res/ColorStateList;
 
     :cond_2
     invoke-direct {p0}, Landroid/graphics/drawable/RippleDrawable;->updateLocalState()V

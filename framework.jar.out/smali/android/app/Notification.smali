@@ -10,6 +10,7 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/app/Notification$BuilderRemoteViews;,
+        Landroid/app/Notification$CarExtender;,
         Landroid/app/Notification$WearableExtender;,
         Landroid/app/Notification$Extender;,
         Landroid/app/Notification$MediaStyle;,

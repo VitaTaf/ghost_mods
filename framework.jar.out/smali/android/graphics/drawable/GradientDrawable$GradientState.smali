@@ -35,13 +35,11 @@
 
 .field public mChangingConfigurations:I
 
-.field public mColorStateList:Landroid/content/res/ColorStateList;
-
-.field public mColors:[I
-
 .field public mDither:Z
 
 .field public mGradient:I
+
+.field public mGradientColors:[I
 
 .field mGradientRadius:F
 
@@ -69,7 +67,9 @@
 
 .field public mShape:I
 
-.field public mStrokeColorStateList:Landroid/content/res/ColorStateList;
+.field public mSolidColors:Landroid/content/res/ColorStateList;
+
+.field public mStrokeColors:Landroid/content/res/ColorStateList;
 
 .field public mStrokeDashGap:F
 
@@ -192,15 +192,15 @@
 
     iput-object v0, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mOrientation:Landroid/graphics/drawable/GradientDrawable$Orientation;
 
-    iget-object v0, p1, Landroid/graphics/drawable/GradientDrawable$GradientState;->mColorStateList:Landroid/content/res/ColorStateList;
+    iget-object v0, p1, Landroid/graphics/drawable/GradientDrawable$GradientState;->mSolidColors:Landroid/content/res/ColorStateList;
 
-    iput-object v0, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mColorStateList:Landroid/content/res/ColorStateList;
+    iput-object v0, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mSolidColors:Landroid/content/res/ColorStateList;
 
-    iget-object v0, p1, Landroid/graphics/drawable/GradientDrawable$GradientState;->mColors:[I
+    iget-object v0, p1, Landroid/graphics/drawable/GradientDrawable$GradientState;->mGradientColors:[I
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p1, Landroid/graphics/drawable/GradientDrawable$GradientState;->mColors:[I
+    iget-object v0, p1, Landroid/graphics/drawable/GradientDrawable$GradientState;->mGradientColors:[I
 
     invoke-virtual {v0}, [I->clone()Ljava/lang/Object;
 
@@ -208,7 +208,7 @@
 
     check-cast v0, [I
 
-    iput-object v0, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mColors:[I
+    iput-object v0, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mGradientColors:[I
 
     :cond_0
     iget-object v0, p1, Landroid/graphics/drawable/GradientDrawable$GradientState;->mPositions:[F
@@ -226,9 +226,9 @@
     iput-object v0, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mPositions:[F
 
     :cond_1
-    iget-object v0, p1, Landroid/graphics/drawable/GradientDrawable$GradientState;->mStrokeColorStateList:Landroid/content/res/ColorStateList;
+    iget-object v0, p1, Landroid/graphics/drawable/GradientDrawable$GradientState;->mStrokeColors:Landroid/content/res/ColorStateList;
 
-    iput-object v0, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mStrokeColorStateList:Landroid/content/res/ColorStateList;
+    iput-object v0, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mStrokeColors:Landroid/content/res/ColorStateList;
 
     iget v0, p1, Landroid/graphics/drawable/GradientDrawable$GradientState;->mStrokeWidth:I
 
@@ -376,7 +376,7 @@
 .method public constructor <init>(Landroid/graphics/drawable/GradientDrawable$Orientation;[I)V
     .locals 5
     .param p1, "orientation"    # Landroid/graphics/drawable/GradientDrawable$Orientation;
-    .param p2, "colors"    # [I
+    .param p2, "gradientColors"    # [I
 
     .prologue
     const/4 v4, 0x0
@@ -449,7 +449,7 @@
 
     iput-object p1, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mOrientation:Landroid/graphics/drawable/GradientDrawable$Orientation;
 
-    invoke-virtual {p0, p2}, Landroid/graphics/drawable/GradientDrawable$GradientState;->setColors([I)V
+    invoke-virtual {p0, p2}, Landroid/graphics/drawable/GradientDrawable$GradientState;->setGradientColors([I)V
 
     return-void
 .end method
@@ -476,7 +476,7 @@
 
     iput-boolean v2, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mOpaqueOverShape:Z
 
-    iget-object v3, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mColors:[I
+    iget-object v3, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mGradientColors:[I
 
     if-eqz v3, :cond_2
 
@@ -484,13 +484,13 @@
 
     .local v0, "i":I
     :goto_0
-    iget-object v3, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mColors:[I
+    iget-object v3, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mGradientColors:[I
 
     array-length v3, v3
 
     if-ge v0, v3, :cond_2
 
-    iget-object v3, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mColors:[I
+    iget-object v3, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mGradientColors:[I
 
     aget v3, v3, v0
 
@@ -513,11 +513,11 @@
 
     .end local v0    # "i":I
     :cond_2
-    iget-object v3, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mColors:[I
+    iget-object v3, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mGradientColors:[I
 
     if-nez v3, :cond_3
 
-    iget-object v3, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mColorStateList:Landroid/content/res/ColorStateList;
+    iget-object v3, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mSolidColors:Landroid/content/res/ColorStateList;
 
     if-eqz v3, :cond_0
 
@@ -598,11 +598,11 @@
     if-nez v0, :cond_3
 
     :cond_0
-    iget-object v0, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mStrokeColorStateList:Landroid/content/res/ColorStateList;
+    iget-object v0, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mStrokeColors:Landroid/content/res/ColorStateList;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mStrokeColorStateList:Landroid/content/res/ColorStateList;
+    iget-object v0, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mStrokeColors:Landroid/content/res/ColorStateList;
 
     invoke-virtual {v0}, Landroid/content/res/ColorStateList;->canApplyTheme()Z
 
@@ -611,11 +611,11 @@
     if-nez v0, :cond_3
 
     :cond_1
-    iget-object v0, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mColorStateList:Landroid/content/res/ColorStateList;
+    iget-object v0, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mSolidColors:Landroid/content/res/ColorStateList;
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mColorStateList:Landroid/content/res/ColorStateList;
+    iget-object v0, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mSolidColors:Landroid/content/res/ColorStateList;
 
     invoke-virtual {v0}, Landroid/content/res/ColorStateList;->canApplyTheme()Z
 
@@ -643,12 +643,63 @@
 .end method
 
 .method public getChangingConfigurations()I
-    .locals 1
+    .locals 3
 
     .prologue
-    iget v0, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mChangingConfigurations:I
+    const/4 v1, 0x0
+
+    iget v2, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mChangingConfigurations:I
+
+    iget-object v0, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mStrokeColors:Landroid/content/res/ColorStateList;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mStrokeColors:Landroid/content/res/ColorStateList;
+
+    invoke-virtual {v0}, Landroid/content/res/ColorStateList;->getChangingConfigurations()I
+
+    move-result v0
+
+    :goto_0
+    or-int/2addr v2, v0
+
+    iget-object v0, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mSolidColors:Landroid/content/res/ColorStateList;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mSolidColors:Landroid/content/res/ColorStateList;
+
+    invoke-virtual {v0}, Landroid/content/res/ColorStateList;->getChangingConfigurations()I
+
+    move-result v0
+
+    :goto_1
+    or-int/2addr v0, v2
+
+    iget-object v2, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mTint:Landroid/content/res/ColorStateList;
+
+    if-eqz v2, :cond_0
+
+    iget-object v1, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mTint:Landroid/content/res/ColorStateList;
+
+    invoke-virtual {v1}, Landroid/content/res/ColorStateList;->getChangingConfigurations()I
+
+    move-result v1
+
+    :cond_0
+    or-int/2addr v0, v1
 
     return v0
+
+    :cond_1
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_2
+    move v0, v1
+
+    goto :goto_1
 .end method
 
 .method public newDrawable()Landroid/graphics/drawable/Drawable;
@@ -676,38 +727,6 @@
     invoke-direct {v0, p0, p1, v1}, Landroid/graphics/drawable/GradientDrawable;-><init>(Landroid/graphics/drawable/GradientDrawable$GradientState;Landroid/content/res/Resources;Landroid/graphics/drawable/GradientDrawable$1;)V
 
     return-object v0
-.end method
-
-.method public setColorStateList(Landroid/content/res/ColorStateList;)V
-    .locals 1
-    .param p1, "colorStateList"    # Landroid/content/res/ColorStateList;
-
-    .prologue
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mColors:[I
-
-    iput-object p1, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mColorStateList:Landroid/content/res/ColorStateList;
-
-    invoke-direct {p0}, Landroid/graphics/drawable/GradientDrawable$GradientState;->computeOpacity()V
-
-    return-void
-.end method
-
-.method public setColors([I)V
-    .locals 1
-    .param p1, "colors"    # [I
-
-    .prologue
-    iput-object p1, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mColors:[I
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mColorStateList:Landroid/content/res/ColorStateList;
-
-    invoke-direct {p0}, Landroid/graphics/drawable/GradientDrawable$GradientState;->computeOpacity()V
-
-    return-void
 .end method
 
 .method public setCornerRadii([F)V
@@ -763,6 +782,22 @@
     return-void
 .end method
 
+.method public setGradientColors([I)V
+    .locals 1
+    .param p1, "colors"    # [I
+
+    .prologue
+    iput-object p1, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mGradientColors:[I
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mSolidColors:Landroid/content/res/ColorStateList;
+
+    invoke-direct {p0}, Landroid/graphics/drawable/GradientDrawable$GradientState;->computeOpacity()V
+
+    return-void
+.end method
+
 .method public setGradientRadius(FI)V
     .locals 0
     .param p1, "gradientRadius"    # F
@@ -811,17 +846,33 @@
     return-void
 .end method
 
+.method public setSolidColors(Landroid/content/res/ColorStateList;)V
+    .locals 1
+    .param p1, "colors"    # Landroid/content/res/ColorStateList;
+
+    .prologue
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mGradientColors:[I
+
+    iput-object p1, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mSolidColors:Landroid/content/res/ColorStateList;
+
+    invoke-direct {p0}, Landroid/graphics/drawable/GradientDrawable$GradientState;->computeOpacity()V
+
+    return-void
+.end method
+
 .method public setStroke(ILandroid/content/res/ColorStateList;FF)V
     .locals 0
     .param p1, "width"    # I
-    .param p2, "colorStateList"    # Landroid/content/res/ColorStateList;
+    .param p2, "colors"    # Landroid/content/res/ColorStateList;
     .param p3, "dashWidth"    # F
     .param p4, "dashGap"    # F
 
     .prologue
     iput p1, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mStrokeWidth:I
 
-    iput-object p2, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mStrokeColorStateList:Landroid/content/res/ColorStateList;
+    iput-object p2, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mStrokeColors:Landroid/content/res/ColorStateList;
 
     iput p3, p0, Landroid/graphics/drawable/GradientDrawable$GradientState;->mStrokeDashWidth:F
 

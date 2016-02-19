@@ -265,37 +265,6 @@
     throw v3
 .end method
 
-.method public getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
-    .locals 2
-
-    .prologue
-    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/InsetDrawable$InsetState;->canConstantState()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    invoke-virtual {p0}, Landroid/graphics/drawable/InsetDrawable;->getChangingConfigurations()I
-
-    move-result v1
-
-    iput v1, v0, Landroid/graphics/drawable/InsetDrawable$InsetState;->mChangingConfigurations:I
-
-    iget-object v0, p0, Landroid/graphics/drawable/InsetDrawable;->mState:Landroid/graphics/drawable/InsetDrawable$InsetState;
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
 .method public getIntrinsicHeight()I
     .locals 2
 

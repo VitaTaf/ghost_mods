@@ -113,6 +113,35 @@
     goto :goto_0
 .end method
 
+.method public getChangingConfigurations()I
+    .locals 2
+
+    .prologue
+    invoke-super {p0}, Landroid/graphics/drawable/LayerDrawable$LayerState;->getChangingConfigurations()I
+
+    move-result v1
+
+    iget-object v0, p0, Landroid/graphics/drawable/RippleDrawable$RippleState;->mColor:Landroid/content/res/ColorStateList;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Landroid/graphics/drawable/RippleDrawable$RippleState;->mColor:Landroid/content/res/ColorStateList;
+
+    invoke-virtual {v0}, Landroid/content/res/ColorStateList;->getChangingConfigurations()I
+
+    move-result v0
+
+    :goto_0
+    or-int/2addr v0, v1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method public newDrawable()Landroid/graphics/drawable/Drawable;
     .locals 2
 

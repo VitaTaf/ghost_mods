@@ -58,16 +58,6 @@
     return-void
 .end method
 
-.method static synthetic access$000(Landroid/content/res/Resources$Theme;)Ljava/lang/String;
-    .locals 1
-    .param p0, "x0"    # Landroid/content/res/Resources$Theme;
-
-    .prologue
-    iget-object v0, p0, Landroid/content/res/Resources$Theme;->mKey:Ljava/lang/String;
-
-    return-object v0
-.end method
-
 .method private getResourceNameFromHexString(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
     .param p1, "hexString"    # Ljava/lang/String;

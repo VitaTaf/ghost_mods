@@ -15,10 +15,6 @@
 
 
 # instance fields
-.field mChangingConfigurations:I
-
-.field mDrawableState:Landroid/graphics/drawable/Drawable$ConstantState;
-
 .field mInsetBottom:I
 
 .field mInsetLeft:I
@@ -26,8 +22,6 @@
 .field mInsetRight:I
 
 .field mInsetTop:I
-
-.field mThemeAttrs:[I
 
 
 # direct methods

@@ -403,10 +403,14 @@
 .end method
 
 .method public getChangingConfigurations()I
-    .locals 1
+    .locals 2
 
     .prologue
     iget v0, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChangingConfigurations:I
+
+    iget v1, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildrenChangingConfigurations:I
+
+    or-int/2addr v0, v1
 
     return v0
 .end method

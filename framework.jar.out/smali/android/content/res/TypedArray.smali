@@ -2111,8 +2111,6 @@
 
     if-eqz v5, :cond_4
 
-    invoke-static {v3}, Landroid/os/StrictMode;->noteResourceMismatch(Ljava/lang/Object;)V
-
     invoke-virtual {v3}, Landroid/util/TypedValue;->coerceToString()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -2386,8 +2384,6 @@
 
     if-eqz v5, :cond_4
 
-    invoke-static {v3}, Landroid/os/StrictMode;->noteResourceMismatch(Ljava/lang/Object;)V
-
     invoke-virtual {v3}, Landroid/util/TypedValue;->coerceToString()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -2487,8 +2483,6 @@
     move-result v3
 
     if-eqz v3, :cond_3
-
-    invoke-static {v2}, Landroid/os/StrictMode;->noteResourceMismatch(Ljava/lang/Object;)V
 
     invoke-virtual {v2}, Landroid/util/TypedValue;->coerceToString()Ljava/lang/CharSequence;
 

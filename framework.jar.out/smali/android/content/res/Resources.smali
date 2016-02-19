@@ -13,6 +13,10 @@
 
 
 # static fields
+.field private static final CACHE_NOT_THEMED:Ljava/lang/String; = ""
+
+.field private static final CACHE_NULL_THEME:Ljava/lang/String; = "null_theme"
+
 .field private static final DEBUG_CONFIG:Z = false
 
 .field private static final DEBUG_LOAD:Z = false
@@ -47,8 +51,10 @@
         value = {
             "Landroid/util/LongSparseArray",
             "<",
-            "Landroid/content/res/ColorStateList$ColorStateListFactory;",
-            ">;"
+            "Landroid/content/res/ConstantState",
+            "<",
+            "Landroid/content/res/ColorStateList;",
+            ">;>;"
         }
     .end annotation
 .end field
@@ -613,18 +619,17 @@
     .end packed-switch
 .end method
 
-.method private cacheDrawable(Landroid/util/TypedValue;Landroid/content/res/Resources$Theme;ZLandroid/util/ArrayMap;JLandroid/graphics/drawable/Drawable;)V
-    .locals 7
+.method private cacheDrawable(Landroid/util/TypedValue;ZLandroid/util/ArrayMap;Ljava/lang/String;JLandroid/graphics/drawable/Drawable;)V
+    .locals 9
     .param p1, "value"    # Landroid/util/TypedValue;
-    .param p2, "theme"    # Landroid/content/res/Resources$Theme;
-    .param p3, "isColorDrawable"    # Z
+    .param p2, "isColorDrawable"    # Z
+    .param p4, "cacheKey"    # Ljava/lang/String;
     .param p5, "key"    # J
     .param p7, "dr"    # Landroid/graphics/drawable/Drawable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroid/util/TypedValue;",
-            "Landroid/content/res/Resources$Theme;",
             "Z",
             "Landroid/util/ArrayMap",
             "<",
@@ -634,15 +639,21 @@
             "Ljava/lang/ref/WeakReference",
             "<",
             "Landroid/graphics/drawable/Drawable$ConstantState;",
-            ">;>;>;J",
+            ">;>;>;",
+            "Ljava/lang/String;",
+            "J",
             "Landroid/graphics/drawable/Drawable;",
             ")V"
         }
     .end annotation
 
     .prologue
-    .local p4, "caches":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/LongSparseArray<Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;>;>;"
-    invoke-virtual {p7}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
+    .local p3, "caches":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/LongSparseArray<Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;>;>;"
+    const/4 v7, 0x1
+
+    const/4 v6, 0x0
+
+    invoke-virtual/range {p7 .. p7}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
 
     move-result-object v1
 
@@ -654,153 +665,129 @@
     return-void
 
     :cond_1
-    iget-boolean v4, p0, Landroid/content/res/Resources;->mPreloading:Z
+    iget-boolean v3, p0, Landroid/content/res/Resources;->mPreloading:Z
 
-    if-eqz v4, :cond_4
+    if-eqz v3, :cond_4
 
     invoke-virtual {v1}, Landroid/graphics/drawable/Drawable$ConstantState;->getChangingConfigurations()I
 
     move-result v0
 
     .local v0, "changingConfigs":I
-    if-eqz p3, :cond_2
+    if-eqz p2, :cond_2
 
-    const/4 v4, 0x0
+    iget v3, p1, Landroid/util/TypedValue;->resourceId:I
 
-    iget v5, p1, Landroid/util/TypedValue;->resourceId:I
+    const-string v4, "drawable"
 
-    const-string v6, "drawable"
+    invoke-direct {p0, v0, v6, v3, v4}, Landroid/content/res/Resources;->verifyPreloadConfig(IIILjava/lang/String;)Z
 
-    invoke-direct {p0, v0, v4, v5, v6}, Landroid/content/res/Resources;->verifyPreloadConfig(IIILjava/lang/String;)Z
+    move-result v3
 
-    move-result v4
+    if-eqz v3, :cond_0
 
-    if-eqz v4, :cond_0
+    sget-object v3, Landroid/content/res/Resources;->sPreloadedColorDrawables:Landroid/util/LongSparseArray;
 
-    sget-object v4, Landroid/content/res/Resources;->sPreloadedColorDrawables:Landroid/util/LongSparseArray;
-
-    invoke-virtual {v4, p5, p6, v1}, Landroid/util/LongSparseArray;->put(JLjava/lang/Object;)V
+    invoke-virtual {v3, p5, p6, v1}, Landroid/util/LongSparseArray;->put(JLjava/lang/Object;)V
 
     goto :goto_0
 
     :cond_2
-    sget v4, Landroid/content/res/Resources;->LAYOUT_DIR_CONFIG:I
+    sget v3, Landroid/content/res/Resources;->LAYOUT_DIR_CONFIG:I
 
-    iget v5, p1, Landroid/util/TypedValue;->resourceId:I
+    iget v4, p1, Landroid/util/TypedValue;->resourceId:I
 
-    const-string v6, "drawable"
+    const-string v5, "drawable"
 
-    invoke-direct {p0, v0, v4, v5, v6}, Landroid/content/res/Resources;->verifyPreloadConfig(IIILjava/lang/String;)Z
+    invoke-direct {p0, v0, v3, v4, v5}, Landroid/content/res/Resources;->verifyPreloadConfig(IIILjava/lang/String;)Z
 
-    move-result v4
+    move-result v3
 
-    if-eqz v4, :cond_0
+    if-eqz v3, :cond_0
 
-    sget v4, Landroid/content/res/Resources;->LAYOUT_DIR_CONFIG:I
+    sget v3, Landroid/content/res/Resources;->LAYOUT_DIR_CONFIG:I
 
-    and-int/2addr v4, v0
+    and-int/2addr v3, v0
 
-    if-nez v4, :cond_3
+    if-nez v3, :cond_3
 
-    sget-object v4, Landroid/content/res/Resources;->sPreloadedDrawables:[Landroid/util/LongSparseArray;
+    sget-object v3, Landroid/content/res/Resources;->sPreloadedDrawables:[Landroid/util/LongSparseArray;
 
-    const/4 v5, 0x0
+    aget-object v3, v3, v6
 
-    aget-object v4, v4, v5
+    invoke-virtual {v3, p5, p6, v1}, Landroid/util/LongSparseArray;->put(JLjava/lang/Object;)V
 
-    invoke-virtual {v4, p5, p6, v1}, Landroid/util/LongSparseArray;->put(JLjava/lang/Object;)V
+    sget-object v3, Landroid/content/res/Resources;->sPreloadedDrawables:[Landroid/util/LongSparseArray;
 
-    sget-object v4, Landroid/content/res/Resources;->sPreloadedDrawables:[Landroid/util/LongSparseArray;
+    aget-object v3, v3, v7
 
-    const/4 v5, 0x1
-
-    aget-object v4, v4, v5
-
-    invoke-virtual {v4, p5, p6, v1}, Landroid/util/LongSparseArray;->put(JLjava/lang/Object;)V
+    invoke-virtual {v3, p5, p6, v1}, Landroid/util/LongSparseArray;->put(JLjava/lang/Object;)V
 
     goto :goto_0
 
     :cond_3
-    sget-object v4, Landroid/content/res/Resources;->sPreloadedDrawables:[Landroid/util/LongSparseArray;
+    sget-object v3, Landroid/content/res/Resources;->sPreloadedDrawables:[Landroid/util/LongSparseArray;
 
-    iget-object v5, p0, Landroid/content/res/Resources;->mConfiguration:Landroid/content/res/Configuration;
+    iget-object v4, p0, Landroid/content/res/Resources;->mConfiguration:Landroid/content/res/Configuration;
 
-    invoke-virtual {v5}, Landroid/content/res/Configuration;->getLayoutDirection()I
+    invoke-virtual {v4}, Landroid/content/res/Configuration;->getLayoutDirection()I
 
-    move-result v5
+    move-result v4
 
-    aget-object v4, v4, v5
+    aget-object v3, v3, v4
 
-    invoke-virtual {v4, p5, p6, v1}, Landroid/util/LongSparseArray;->put(JLjava/lang/Object;)V
+    invoke-virtual {v3, p5, p6, v1}, Landroid/util/LongSparseArray;->put(JLjava/lang/Object;)V
 
     goto :goto_0
 
     .end local v0    # "changingConfigs":I
     :cond_4
-    iget-object v5, p0, Landroid/content/res/Resources;->mAccessLock:Ljava/lang/Object;
+    iget-object v4, p0, Landroid/content/res/Resources;->mAccessLock:Ljava/lang/Object;
 
-    monitor-enter v5
-
-    if-nez p2, :cond_6
+    monitor-enter v4
 
     :try_start_0
-    const-string v2, ""
-
-    .local v2, "themeKey":Ljava/lang/String;
-    :goto_1
-    invoke-virtual {p4, v2}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/util/LongSparseArray;
-
-    .local v3, "themedCache":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;>;"
-    if-nez v3, :cond_5
-
-    invoke-direct {p0, p4}, Landroid/content/res/Resources;->pruneCaches(Landroid/util/ArrayMap;)V
-
-    new-instance v3, Landroid/util/LongSparseArray;
-
-    .end local v3    # "themedCache":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;>;"
-    const/4 v4, 0x1
-
-    invoke-direct {v3, v4}, Landroid/util/LongSparseArray;-><init>(I)V
-
-    .restart local v3    # "themedCache":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;>;"
-    invoke-virtual {p4, v2, v3}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_5
-    new-instance v4, Ljava/lang/ref/WeakReference;
-
-    invoke-direct {v4, v1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    invoke-virtual {v3, p5, p6, v4}, Landroid/util/LongSparseArray;->put(JLjava/lang/Object;)V
-
-    monitor-exit v5
-
-    goto :goto_0
-
-    .end local v2    # "themeKey":Ljava/lang/String;
-    .end local v3    # "themedCache":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;>;"
-    :catchall_0
-    move-exception v4
-
-    monitor-exit v5
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v4
-
-    :cond_6
-    :try_start_1
-    # getter for: Landroid/content/res/Resources$Theme;->mKey:Ljava/lang/String;
-    invoke-static {p2}, Landroid/content/res/Resources$Theme;->access$000(Landroid/content/res/Resources$Theme;)Ljava/lang/String;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-virtual {p3, p4}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
 
-    goto :goto_1
+    check-cast v2, Landroid/util/LongSparseArray;
+
+    .local v2, "themedCache":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;>;"
+    if-nez v2, :cond_5
+
+    invoke-direct {p0, p3}, Landroid/content/res/Resources;->pruneCaches(Landroid/util/ArrayMap;)V
+
+    new-instance v2, Landroid/util/LongSparseArray;
+
+    .end local v2    # "themedCache":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;>;"
+    const/4 v3, 0x1
+
+    invoke-direct {v2, v3}, Landroid/util/LongSparseArray;-><init>(I)V
+
+    .restart local v2    # "themedCache":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;>;"
+    invoke-virtual {p3, p4, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_5
+    new-instance v3, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {v3, v1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    invoke-virtual {v2, p5, p6, v3}, Landroid/util/LongSparseArray;->put(JLjava/lang/Object;)V
+
+    monitor-exit v4
+
+    goto :goto_0
+
+    .end local v2    # "themedCache":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;>;"
+    :catchall_0
+    move-exception v3
+
+    monitor-exit v4
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v3
 .end method
 
 .method private calcConfigChanges(Landroid/content/res/Configuration;)I
@@ -992,7 +979,7 @@
 .end method
 
 .method private getCachedDrawable(Landroid/util/ArrayMap;JLandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
-    .locals 6
+    .locals 4
     .param p2, "key"    # J
     .param p4, "theme"    # Landroid/content/res/Resources$Theme;
     .annotation system Ldalvik/annotation/Signature;
@@ -1015,104 +1002,115 @@
 
     .prologue
     .local p1, "caches":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/LongSparseArray<Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;>;>;"
-    iget-object v4, p0, Landroid/content/res/Resources;->mAccessLock:Ljava/lang/Object;
+    iget-object v3, p0, Landroid/content/res/Resources;->mAccessLock:Ljava/lang/Object;
 
-    monitor-enter v4
-
-    if-eqz p4, :cond_0
+    monitor-enter v3
 
     :try_start_0
-    # getter for: Landroid/content/res/Resources$Theme;->mKey:Ljava/lang/String;
-    invoke-static {p4}, Landroid/content/res/Resources$Theme;->access$000(Landroid/content/res/Resources$Theme;)Ljava/lang/String;
+    const-string v2, ""
+
+    invoke-direct {p0, p1, p2, p3, v2}, Landroid/content/res/Resources;->getCachedDrawableLocked(Landroid/util/ArrayMap;JLjava/lang/String;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    .local v1, "unthemedDrawable":Landroid/graphics/drawable/Drawable;
+    if-eqz v1, :cond_0
+
+    monitor-exit v3
+
+    .end local v1    # "unthemedDrawable":Landroid/graphics/drawable/Drawable;
+    :goto_0
+    return-object v1
+
+    .restart local v1    # "unthemedDrawable":Landroid/graphics/drawable/Drawable;
+    :cond_0
+    if-eqz p4, :cond_1
+
+    invoke-virtual {p4}, Landroid/content/res/Resources$Theme;->getKey()Ljava/lang/String;
 
     move-result-object v0
 
     .local v0, "themeKey":Ljava/lang/String;
-    :goto_0
-    invoke-virtual {p1, v0}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    :goto_1
+    invoke-direct {p0, p1, p2, p3, v0}, Landroid/content/res/Resources;->getCachedDrawableLocked(Landroid/util/ArrayMap;JLjava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    check-cast v1, Landroid/util/LongSparseArray;
-
-    .local v1, "themedCache":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;>;"
-    if-eqz v1, :cond_1
-
-    invoke-direct {p0, v1, p2, p3}, Landroid/content/res/Resources;->getCachedDrawableLocked(Landroid/util/LongSparseArray;J)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v2
-
-    .local v2, "themedDrawable":Landroid/graphics/drawable/Drawable;
-    if-eqz v2, :cond_1
-
-    monitor-exit v4
-
-    .end local v2    # "themedDrawable":Landroid/graphics/drawable/Drawable;
-    :goto_1
-    return-object v2
-
-    .end local v0    # "themeKey":Ljava/lang/String;
-    .end local v1    # "themedCache":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;>;"
-    :cond_0
-    const-string v0, ""
+    .end local v1    # "unthemedDrawable":Landroid/graphics/drawable/Drawable;
+    monitor-exit v3
 
     goto :goto_0
 
-    .restart local v0    # "themeKey":Ljava/lang/String;
-    .restart local v1    # "themedCache":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;>;"
-    :cond_1
-    const/4 v2, 0x0
-
-    monitor-exit v4
-
-    goto :goto_1
-
     .end local v0    # "themeKey":Ljava/lang/String;
-    .end local v1    # "themedCache":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;>;"
     :catchall_0
-    move-exception v3
+    move-exception v2
 
-    monitor-exit v4
+    monitor-exit v3
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v3
+    throw v2
+
+    .restart local v1    # "unthemedDrawable":Landroid/graphics/drawable/Drawable;
+    :cond_1
+    :try_start_1
+    const-string/jumbo v0, "null_theme"
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_1
 .end method
 
-.method private getCachedDrawableLocked(Landroid/util/LongSparseArray;J)Landroid/graphics/drawable/Drawable;
-    .locals 2
+.method private getCachedDrawableLocked(Landroid/util/ArrayMap;JLjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    .locals 4
     .param p2, "key"    # J
+    .param p4, "themeKey"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
+            "Landroid/util/ArrayMap",
+            "<",
+            "Ljava/lang/String;",
             "Landroid/util/LongSparseArray",
             "<",
             "Ljava/lang/ref/WeakReference",
             "<",
             "Landroid/graphics/drawable/Drawable$ConstantState;",
-            ">;>;J)",
+            ">;>;>;J",
+            "Ljava/lang/String;",
+            ")",
             "Landroid/graphics/drawable/Drawable;"
         }
     .end annotation
 
     .prologue
-    .local p1, "drawableCache":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;>;"
-    invoke-direct {p0, p1, p2, p3}, Landroid/content/res/Resources;->getConstantStateLocked(Landroid/util/LongSparseArray;J)Landroid/graphics/drawable/Drawable$ConstantState;
+    .local p1, "caches":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/LongSparseArray<Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;>;>;"
+    invoke-virtual {p1, p4}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .local v0, "entry":Landroid/graphics/drawable/Drawable$ConstantState;
+    check-cast v0, Landroid/util/LongSparseArray;
+
+    .local v0, "cache":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;>;"
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0, p0}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
+    invoke-direct {p0, v0, p2, p3}, Landroid/content/res/Resources;->getConstantStateLocked(Landroid/util/LongSparseArray;J)Landroid/graphics/drawable/Drawable$ConstantState;
 
     move-result-object v1
 
+    .local v1, "entry":Landroid/graphics/drawable/Drawable$ConstantState;
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v1, p0}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v2
+
+    .end local v1    # "entry":Landroid/graphics/drawable/Drawable$ConstantState;
     :goto_0
-    return-object v1
+    return-object v2
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     goto :goto_0
 .end method
@@ -4710,21 +4708,25 @@
 
     move-result-object v2
 
-    check-cast v2, Landroid/content/res/ColorStateList$ColorStateListFactory;
+    check-cast v2, Landroid/content/res/ConstantState;
 
-    .local v2, "factory":Landroid/content/res/ColorStateList$ColorStateListFactory;
+    .local v2, "factory":Landroid/content/res/ConstantState;, "Landroid/content/res/ConstantState<Landroid/content/res/ColorStateList;>;"
     if-eqz v2, :cond_1
 
-    invoke-virtual {v2}, Landroid/content/res/ColorStateList$ColorStateListFactory;->newInstance()Landroid/content/res/ColorStateList;
+    invoke-virtual {v2}, Landroid/content/res/ConstantState;->newInstance()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v3
 
-    .end local v2    # "factory":Landroid/content/res/ColorStateList$ColorStateListFactory;
+    check-cast v3, Landroid/content/res/ColorStateList;
+
+    move-object v1, v3
+
+    .end local v2    # "factory":Landroid/content/res/ConstantState;, "Landroid/content/res/ConstantState<Landroid/content/res/ColorStateList;>;"
     :cond_0
     :goto_0
     return-object v1
 
-    .restart local v2    # "factory":Landroid/content/res/ColorStateList$ColorStateListFactory;
+    .restart local v2    # "factory":Landroid/content/res/ConstantState;, "Landroid/content/res/ConstantState<Landroid/content/res/ColorStateList;>;"
     :cond_1
     iget v3, p1, Landroid/util/TypedValue;->data:I
 
@@ -4751,7 +4753,7 @@
 
     sget-object v3, Landroid/content/res/Resources;->sPreloadedColorStateLists:Landroid/util/LongSparseArray;
 
-    invoke-virtual {v1}, Landroid/content/res/ColorStateList;->getFactory()Landroid/content/res/ColorStateList$ColorStateListFactory;
+    invoke-virtual {v1}, Landroid/content/res/ColorStateList;->getConstantState()Landroid/content/res/ConstantState;
 
     move-result-object v6
 
@@ -4760,7 +4762,7 @@
     goto :goto_0
 
     .end local v1    # "csl":Landroid/content/res/ColorStateList;
-    .end local v2    # "factory":Landroid/content/res/ColorStateList$ColorStateListFactory;
+    .end local v2    # "factory":Landroid/content/res/ConstantState;, "Landroid/content/res/ConstantState<Landroid/content/res/ColorStateList;>;"
     :cond_2
     iget-object v0, p0, Landroid/content/res/Resources;->mColorStateListCache:Landroid/content/res/ConfigurationBoundResourceCache;
 
@@ -4780,15 +4782,19 @@
 
     move-result-object v2
 
-    check-cast v2, Landroid/content/res/ColorStateList$ColorStateListFactory;
+    check-cast v2, Landroid/content/res/ConstantState;
 
-    .restart local v2    # "factory":Landroid/content/res/ColorStateList$ColorStateListFactory;
+    .restart local v2    # "factory":Landroid/content/res/ConstantState;, "Landroid/content/res/ConstantState<Landroid/content/res/ColorStateList;>;"
     if-eqz v2, :cond_3
 
-    invoke-virtual {v2, p0, p3}, Landroid/content/res/ColorStateList$ColorStateListFactory;->newInstance(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
+    invoke-virtual {v2, p0, p3}, Landroid/content/res/ConstantState;->newInstance(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)Ljava/lang/Object;
 
     move-result-object v1
 
+    .end local v1    # "csl":Landroid/content/res/ColorStateList;
+    check-cast v1, Landroid/content/res/ColorStateList;
+
+    .restart local v1    # "csl":Landroid/content/res/ColorStateList;
     :cond_3
     if-nez v1, :cond_4
 
@@ -4817,7 +4823,7 @@
 
     sget-object v3, Landroid/content/res/Resources;->sPreloadedColorStateLists:Landroid/util/LongSparseArray;
 
-    invoke-virtual {v1}, Landroid/content/res/ColorStateList;->getFactory()Landroid/content/res/ColorStateList$ColorStateListFactory;
+    invoke-virtual {v1}, Landroid/content/res/ColorStateList;->getConstantState()Landroid/content/res/ConstantState;
 
     move-result-object v6
 
@@ -4826,7 +4832,7 @@
     goto :goto_0
 
     :cond_5
-    invoke-virtual {v1}, Landroid/content/res/ColorStateList;->getFactory()Landroid/content/res/ColorStateList$ColorStateListFactory;
+    invoke-virtual {v1}, Landroid/content/res/ColorStateList;->getConstantState()Landroid/content/res/ConstantState;
 
     move-result-object v3
 
@@ -4836,7 +4842,7 @@
 .end method
 
 .method loadDrawable(Landroid/util/TypedValue;ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
-    .locals 16
+    .locals 18
     .param p1, "value"    # Landroid/util/TypedValue;
     .param p2, "id"    # I
     .param p3, "theme"    # Landroid/content/res/Resources$Theme;
@@ -4849,203 +4855,226 @@
     .prologue
     move-object/from16 v0, p1
 
-    iget v3, v0, Landroid/util/TypedValue;->type:I
+    iget v5, v0, Landroid/util/TypedValue;->type:I
 
-    const/16 v4, 0x1c
+    const/16 v6, 0x1c
 
-    if-lt v3, v4, :cond_0
+    if-lt v5, v6, :cond_0
 
     move-object/from16 v0, p1
 
-    iget v3, v0, Landroid/util/TypedValue;->type:I
+    iget v5, v0, Landroid/util/TypedValue;->type:I
 
-    const/16 v4, 0x1f
+    const/16 v6, 0x1f
 
-    if-gt v3, v4, :cond_0
+    if-gt v5, v6, :cond_0
 
-    const/4 v6, 0x1
+    const/4 v7, 0x1
 
-    .local v6, "isColorDrawable":Z
+    .local v7, "isColorDrawable":Z
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Landroid/content/res/Resources;->mColorDrawableCache:Landroid/util/ArrayMap;
+    iget-object v8, v0, Landroid/content/res/Resources;->mColorDrawableCache:Landroid/util/ArrayMap;
 
-    .local v7, "caches":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/LongSparseArray<Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;>;>;"
+    .local v8, "caches":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/LongSparseArray<Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;>;>;"
     move-object/from16 v0, p1
 
-    iget v3, v0, Landroid/util/TypedValue;->data:I
+    iget v5, v0, Landroid/util/TypedValue;->data:I
 
-    int-to-long v8, v3
+    int-to-long v10, v5
 
-    .local v8, "key":J
+    .local v10, "key":J
     :goto_0
     move-object/from16 v0, p0
 
-    iget-boolean v3, v0, Landroid/content/res/Resources;->mPreloading:Z
+    iget-boolean v5, v0, Landroid/content/res/Resources;->mPreloading:Z
 
-    if-nez v3, :cond_1
+    if-nez v5, :cond_1
 
     move-object/from16 v0, p0
 
     move-object/from16 v1, p3
 
-    invoke-direct {v0, v7, v8, v9, v1}, Landroid/content/res/Resources;->getCachedDrawable(Landroid/util/ArrayMap;JLandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+    invoke-direct {v0, v8, v10, v11, v1}, Landroid/content/res/Resources;->getCachedDrawable(Landroid/util/ArrayMap;JLandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v2
+    move-result-object v4
 
-    .local v2, "cachedDrawable":Landroid/graphics/drawable/Drawable;
-    if-eqz v2, :cond_1
+    .local v4, "cachedDrawable":Landroid/graphics/drawable/Drawable;
+    if-eqz v4, :cond_1
 
-    .end local v2    # "cachedDrawable":Landroid/graphics/drawable/Drawable;
+    .end local v4    # "cachedDrawable":Landroid/graphics/drawable/Drawable;
     :goto_1
-    return-object v2
+    return-object v4
 
-    .end local v6    # "isColorDrawable":Z
-    .end local v7    # "caches":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/LongSparseArray<Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;>;>;"
-    .end local v8    # "key":J
+    .end local v7    # "isColorDrawable":Z
+    .end local v8    # "caches":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/LongSparseArray<Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;>;>;"
+    .end local v10    # "key":J
     :cond_0
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
-    .restart local v6    # "isColorDrawable":Z
+    .restart local v7    # "isColorDrawable":Z
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Landroid/content/res/Resources;->mDrawableCache:Landroid/util/ArrayMap;
+    iget-object v8, v0, Landroid/content/res/Resources;->mDrawableCache:Landroid/util/ArrayMap;
 
-    .restart local v7    # "caches":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/LongSparseArray<Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;>;>;"
+    .restart local v8    # "caches":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/LongSparseArray<Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;>;>;"
     move-object/from16 v0, p1
 
-    iget v3, v0, Landroid/util/TypedValue;->assetCookie:I
+    iget v5, v0, Landroid/util/TypedValue;->assetCookie:I
 
-    int-to-long v4, v3
+    int-to-long v14, v5
 
-    const/16 v3, 0x20
+    const/16 v5, 0x20
 
-    shl-long/2addr v4, v3
+    shl-long/2addr v14, v5
 
     move-object/from16 v0, p1
 
-    iget v3, v0, Landroid/util/TypedValue;->data:I
+    iget v5, v0, Landroid/util/TypedValue;->data:I
 
-    int-to-long v14, v3
+    int-to-long v0, v5
 
-    or-long v8, v4, v14
+    move-wide/from16 v16, v0
 
-    .restart local v8    # "key":J
+    or-long v10, v14, v16
+
+    .restart local v10    # "key":J
     goto :goto_0
 
     :cond_1
-    if-eqz v6, :cond_3
+    if-eqz v7, :cond_3
 
-    sget-object v3, Landroid/content/res/Resources;->sPreloadedColorDrawables:Landroid/util/LongSparseArray;
+    sget-object v5, Landroid/content/res/Resources;->sPreloadedColorDrawables:Landroid/util/LongSparseArray;
 
-    invoke-virtual {v3, v8, v9}, Landroid/util/LongSparseArray;->get(J)Ljava/lang/Object;
+    invoke-virtual {v5, v10, v11}, Landroid/util/LongSparseArray;->get(J)Ljava/lang/Object;
 
-    move-result-object v12
+    move-result-object v13
 
-    check-cast v12, Landroid/graphics/drawable/Drawable$ConstantState;
+    check-cast v13, Landroid/graphics/drawable/Drawable$ConstantState;
 
-    .local v12, "cs":Landroid/graphics/drawable/Drawable$ConstantState;
+    .local v13, "cs":Landroid/graphics/drawable/Drawable$ConstantState;
     :goto_2
-    if-eqz v12, :cond_5
+    if-eqz v13, :cond_4
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v12, v0}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v13, v0}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v11
+    move-result-object v12
 
-    .local v11, "clonedDr":Landroid/graphics/drawable/Drawable;
-    if-eqz p3, :cond_4
-
-    invoke-virtual {v11}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v10
-
-    .local v10, "dr":Landroid/graphics/drawable/Drawable;
-    move-object/from16 v0, p3
-
-    invoke-virtual {v10, v0}, Landroid/graphics/drawable/Drawable;->applyTheme(Landroid/content/res/Resources$Theme;)V
-
-    invoke-virtual {v10}, Landroid/graphics/drawable/Drawable;->clearMutated()V
-
-    .end local v11    # "clonedDr":Landroid/graphics/drawable/Drawable;
+    .local v12, "dr":Landroid/graphics/drawable/Drawable;
     :goto_3
-    if-eqz v10, :cond_2
+    invoke-virtual {v12}, Landroid/graphics/drawable/Drawable;->canApplyTheme()Z
+
+    move-result v5
+
+    if-nez v5, :cond_6
+
+    const-string v9, ""
+
+    .local v9, "cacheKey":Ljava/lang/String;
+    :goto_4
+    if-eqz v12, :cond_2
 
     move-object/from16 v0, p1
 
-    iget v3, v0, Landroid/util/TypedValue;->changingConfigurations:I
+    iget v5, v0, Landroid/util/TypedValue;->changingConfigurations:I
 
-    invoke-virtual {v10, v3}, Landroid/graphics/drawable/Drawable;->setChangingConfigurations(I)V
+    invoke-virtual {v12, v5}, Landroid/graphics/drawable/Drawable;->setChangingConfigurations(I)V
 
-    move-object/from16 v3, p0
+    move-object/from16 v5, p0
 
-    move-object/from16 v4, p1
+    move-object/from16 v6, p1
 
-    move-object/from16 v5, p3
-
-    invoke-direct/range {v3 .. v10}, Landroid/content/res/Resources;->cacheDrawable(Landroid/util/TypedValue;Landroid/content/res/Resources$Theme;ZLandroid/util/ArrayMap;JLandroid/graphics/drawable/Drawable;)V
+    invoke-direct/range {v5 .. v12}, Landroid/content/res/Resources;->cacheDrawable(Landroid/util/TypedValue;ZLandroid/util/ArrayMap;Ljava/lang/String;JLandroid/graphics/drawable/Drawable;)V
 
     :cond_2
-    move-object v2, v10
+    move-object v4, v12
 
     goto :goto_1
 
-    .end local v10    # "dr":Landroid/graphics/drawable/Drawable;
-    .end local v12    # "cs":Landroid/graphics/drawable/Drawable$ConstantState;
+    .end local v9    # "cacheKey":Ljava/lang/String;
+    .end local v12    # "dr":Landroid/graphics/drawable/Drawable;
+    .end local v13    # "cs":Landroid/graphics/drawable/Drawable$ConstantState;
     :cond_3
-    sget-object v3, Landroid/content/res/Resources;->sPreloadedDrawables:[Landroid/util/LongSparseArray;
+    sget-object v5, Landroid/content/res/Resources;->sPreloadedDrawables:[Landroid/util/LongSparseArray;
 
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Landroid/content/res/Resources;->mConfiguration:Landroid/content/res/Configuration;
+    iget-object v6, v0, Landroid/content/res/Resources;->mConfiguration:Landroid/content/res/Configuration;
 
-    invoke-virtual {v4}, Landroid/content/res/Configuration;->getLayoutDirection()I
+    invoke-virtual {v6}, Landroid/content/res/Configuration;->getLayoutDirection()I
 
-    move-result v4
+    move-result v6
 
-    aget-object v3, v3, v4
+    aget-object v5, v5, v6
 
-    invoke-virtual {v3, v8, v9}, Landroid/util/LongSparseArray;->get(J)Ljava/lang/Object;
+    invoke-virtual {v5, v10, v11}, Landroid/util/LongSparseArray;->get(J)Ljava/lang/Object;
 
-    move-result-object v12
+    move-result-object v13
 
-    check-cast v12, Landroid/graphics/drawable/Drawable$ConstantState;
+    check-cast v13, Landroid/graphics/drawable/Drawable$ConstantState;
 
-    .restart local v12    # "cs":Landroid/graphics/drawable/Drawable$ConstantState;
+    .restart local v13    # "cs":Landroid/graphics/drawable/Drawable$ConstantState;
     goto :goto_2
 
-    .restart local v11    # "clonedDr":Landroid/graphics/drawable/Drawable;
     :cond_4
-    move-object v10, v11
+    if-eqz v7, :cond_5
 
-    .restart local v10    # "dr":Landroid/graphics/drawable/Drawable;
-    goto :goto_3
-
-    .end local v10    # "dr":Landroid/graphics/drawable/Drawable;
-    .end local v11    # "clonedDr":Landroid/graphics/drawable/Drawable;
-    :cond_5
-    if-eqz v6, :cond_6
-
-    new-instance v10, Landroid/graphics/drawable/ColorDrawable;
+    new-instance v12, Landroid/graphics/drawable/ColorDrawable;
 
     move-object/from16 v0, p1
 
-    iget v3, v0, Landroid/util/TypedValue;->data:I
+    iget v5, v0, Landroid/util/TypedValue;->data:I
 
-    invoke-direct {v10, v3}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
+    invoke-direct {v12, v5}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
 
-    .restart local v10    # "dr":Landroid/graphics/drawable/Drawable;
+    .restart local v12    # "dr":Landroid/graphics/drawable/Drawable;
     goto :goto_3
 
-    .end local v10    # "dr":Landroid/graphics/drawable/Drawable;
+    .end local v12    # "dr":Landroid/graphics/drawable/Drawable;
+    :cond_5
+    const/4 v5, 0x0
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    move/from16 v2, p2
+
+    invoke-direct {v0, v1, v2, v5}, Landroid/content/res/Resources;->loadDrawableForCookie(Landroid/util/TypedValue;ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v12
+
+    .restart local v12    # "dr":Landroid/graphics/drawable/Drawable;
+    goto :goto_3
+
     :cond_6
-    invoke-direct/range {p0 .. p3}, Landroid/content/res/Resources;->loadDrawableForCookie(Landroid/util/TypedValue;ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+    if-nez p3, :cond_7
 
-    move-result-object v10
+    const-string/jumbo v9, "null_theme"
 
-    .restart local v10    # "dr":Landroid/graphics/drawable/Drawable;
-    goto :goto_3
+    .restart local v9    # "cacheKey":Ljava/lang/String;
+    goto :goto_4
+
+    .end local v9    # "cacheKey":Ljava/lang/String;
+    :cond_7
+    invoke-virtual/range {p3 .. p3}, Landroid/content/res/Resources$Theme;->getKey()Ljava/lang/String;
+
+    move-result-object v9
+
+    .restart local v9    # "cacheKey":Ljava/lang/String;
+    invoke-virtual {v12}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v12
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v12, v0}, Landroid/graphics/drawable/Drawable;->applyTheme(Landroid/content/res/Resources$Theme;)V
+
+    invoke-virtual {v12}, Landroid/graphics/drawable/Drawable;->clearMutated()V
+
+    goto :goto_4
 .end method
 
 .method loadXmlResourceParser(ILjava/lang/String;)Landroid/content/res/XmlResourceParser;

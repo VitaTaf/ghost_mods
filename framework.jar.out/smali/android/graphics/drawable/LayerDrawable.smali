@@ -1710,6 +1710,16 @@
 
     invoke-virtual {v3, p1}, Landroid/graphics/drawable/Drawable;->applyTheme(Landroid/content/res/Resources$Theme;)V
 
+    iget v7, v6, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildrenChangingConfigurations:I
+
+    invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->getChangingConfigurations()I
+
+    move-result v8
+
+    or-int/2addr v7, v8
+
+    iput v7, v6, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildrenChangingConfigurations:I
+
     :cond_3
     add-int/lit8 v4, v4, 0x1
 
@@ -2042,13 +2052,9 @@
 
     iget-object v1, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
-    iget v1, v1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChangingConfigurations:I
+    invoke-virtual {v1}, Landroid/graphics/drawable/LayerDrawable$LayerState;->getChangingConfigurations()I
 
-    or-int/2addr v0, v1
-
-    iget-object v1, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
-
-    iget v1, v1, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildrenChangingConfigurations:I
+    move-result v1
 
     or-int/2addr v0, v1
 
