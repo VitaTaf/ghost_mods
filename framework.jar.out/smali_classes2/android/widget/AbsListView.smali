@@ -306,6 +306,8 @@
 
 .field mSelectorRect:Landroid/graphics/Rect;
 
+.field private mSelectorState:[I
+
 .field private mSmoothScrollbarEnabled:Z
 
 .field mStackFromBottom:Z
@@ -1996,6 +1998,75 @@
         0x42 -> :sswitch_0
         0x82 -> :sswitch_1
     .end sparse-switch
+.end method
+
+.method private getDrawableStateForSelector()[I
+    .locals 6
+
+    .prologue
+    iget-boolean v4, p0, Landroid/widget/AbsListView;->mIsChildViewEnabled:Z
+
+    if-eqz v4, :cond_1
+
+    invoke-super {p0}, Landroid/widget/AdapterView;->getDrawableState()[I
+
+    move-result-object v3
+
+    :cond_0
+    :goto_0
+    return-object v3
+
+    :cond_1
+    sget-object v4, Landroid/widget/AbsListView;->ENABLED_STATE_SET:[I
+
+    const/4 v5, 0x0
+
+    aget v1, v4, v5
+
+    .local v1, "enabledState":I
+    const/4 v4, 0x1
+
+    invoke-virtual {p0, v4}, Landroid/widget/AbsListView;->onCreateDrawableState(I)[I
+
+    move-result-object v3
+
+    .local v3, "state":[I
+    const/4 v0, -0x1
+
+    .local v0, "enabledPos":I
+    array-length v4, v3
+
+    add-int/lit8 v2, v4, -0x1
+
+    .local v2, "i":I
+    :goto_1
+    if-ltz v2, :cond_2
+
+    aget v4, v3, v2
+
+    if-ne v4, v1, :cond_3
+
+    move v0, v2
+
+    :cond_2
+    if-ltz v0, :cond_0
+
+    add-int/lit8 v4, v0, 0x1
+
+    array-length v5, v3
+
+    sub-int/2addr v5, v0
+
+    add-int/lit8 v5, v5, -0x1
+
+    invoke-static {v3, v4, v3, v0, v5}, Ljava/lang/System;->arraycopy([II[III)V
+
+    goto :goto_0
+
+    :cond_3
+    add-int/lit8 v2, v2, -0x1
+
+    goto :goto_1
 .end method
 
 .method private getTextFilterInput()Landroid/widget/EditText;
@@ -8879,76 +8950,6 @@
     return-void
 .end method
 
-.method protected onCreateDrawableState(I)[I
-    .locals 6
-    .param p1, "extraSpace"    # I
-
-    .prologue
-    iget-boolean v4, p0, Landroid/widget/AbsListView;->mIsChildViewEnabled:Z
-
-    if-eqz v4, :cond_1
-
-    invoke-super {p0, p1}, Landroid/widget/AdapterView;->onCreateDrawableState(I)[I
-
-    move-result-object v3
-
-    :cond_0
-    :goto_0
-    return-object v3
-
-    :cond_1
-    sget-object v4, Landroid/widget/AbsListView;->ENABLED_STATE_SET:[I
-
-    const/4 v5, 0x0
-
-    aget v1, v4, v5
-
-    .local v1, "enabledState":I
-    add-int/lit8 v4, p1, 0x1
-
-    invoke-super {p0, v4}, Landroid/widget/AdapterView;->onCreateDrawableState(I)[I
-
-    move-result-object v3
-
-    .local v3, "state":[I
-    const/4 v0, -0x1
-
-    .local v0, "enabledPos":I
-    array-length v4, v3
-
-    add-int/lit8 v2, v4, -0x1
-
-    .local v2, "i":I
-    :goto_1
-    if-ltz v2, :cond_2
-
-    aget v4, v3, v2
-
-    if-ne v4, v1, :cond_3
-
-    move v0, v2
-
-    :cond_2
-    if-ltz v0, :cond_0
-
-    add-int/lit8 v4, v0, 0x1
-
-    array-length v5, v3
-
-    sub-int/2addr v5, v0
-
-    add-int/lit8 v5, v5, -0x1
-
-    invoke-static {v3, v4, v3, v0, v5}, Ljava/lang/System;->arraycopy([II[III)V
-
-    goto :goto_0
-
-    :cond_3
-    add-int/lit8 v2, v2, -0x1
-
-    goto :goto_1
-.end method
-
 .method public onCreateInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;
     .locals 2
     .param p1, "outAttrs"    # Landroid/view/inputmethod/EditorInfo;
@@ -15821,7 +15822,7 @@
 
     iget-object v0, p0, Landroid/widget/AbsListView;->mSelector:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {p0}, Landroid/widget/AbsListView;->getDrawableState()[I
+    invoke-direct {p0}, Landroid/widget/AbsListView;->getDrawableStateForSelector()[I
 
     move-result-object v1
 
