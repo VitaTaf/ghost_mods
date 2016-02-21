@@ -10669,7 +10669,7 @@
     goto :goto_0
 .end method
 
-.method createAccessibilityNodeInfoInternal()Landroid/view/accessibility/AccessibilityNodeInfo;
+.method public createAccessibilityNodeInfoInternal()Landroid/view/accessibility/AccessibilityNodeInfo;
     .locals 3
 
     .prologue
@@ -12829,7 +12829,7 @@
     goto :goto_0
 .end method
 
-.method dispatchPopulateAccessibilityEventInternal(Landroid/view/accessibility/AccessibilityEvent;)Z
+.method public dispatchPopulateAccessibilityEventInternal(Landroid/view/accessibility/AccessibilityEvent;)Z
     .locals 1
     .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
@@ -25492,7 +25492,7 @@
     goto :goto_0
 .end method
 
-.method onInitializeAccessibilityEventInternal(Landroid/view/accessibility/AccessibilityEvent;)V
+.method public onInitializeAccessibilityEventInternal(Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 5
     .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
@@ -25649,7 +25649,7 @@
     goto :goto_0
 .end method
 
-.method onInitializeAccessibilityNodeInfoInternal(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+.method public onInitializeAccessibilityNodeInfoInternal(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 12
     .param p1, "info"    # Landroid/view/accessibility/AccessibilityNodeInfo;
 
@@ -26298,7 +26298,7 @@
     goto :goto_0
 .end method
 
-.method onPopulateAccessibilityEventInternal(Landroid/view/accessibility/AccessibilityEvent;)V
+.method public onPopulateAccessibilityEventInternal(Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 0
     .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
@@ -30506,7 +30506,7 @@
     goto :goto_0
 .end method
 
-.method sendAccessibilityEventInternal(I)V
+.method public sendAccessibilityEventInternal(I)V
     .locals 1
     .param p1, "eventType"    # I
 
@@ -30555,7 +30555,7 @@
     goto :goto_0
 .end method
 
-.method sendAccessibilityEventUncheckedInternal(Landroid/view/accessibility/AccessibilityEvent;)V
+.method public sendAccessibilityEventUncheckedInternal(Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 2
     .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 

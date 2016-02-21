@@ -3,10 +3,10 @@
 .source "ActionMenuItemView.java"
 
 # interfaces
+.implements Lcom/android/internal/view/menu/MenuView$ItemView;
 .implements Landroid/view/View$OnClickListener;
 .implements Landroid/view/View$OnLongClickListener;
 .implements Landroid/widget/ActionMenuView$ActionMenuChildView;
-.implements Lcom/android/internal/view/menu/MenuView$ItemView;
 
 
 # annotations
@@ -270,7 +270,7 @@
     return v0
 .end method
 
-.method public dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
+.method public dispatchPopulateAccessibilityEventInternal(Landroid/view/accessibility/AccessibilityEvent;)Z
     .locals 1
     .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
@@ -722,12 +722,12 @@
     goto :goto_0
 .end method
 
-.method public onPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+.method public onPopulateAccessibilityEventInternal(Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 2
     .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
     .prologue
-    invoke-super {p0, p1}, Landroid/widget/TextView;->onPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+    invoke-super {p0, p1}, Landroid/widget/TextView;->onPopulateAccessibilityEventInternal(Landroid/view/accessibility/AccessibilityEvent;)V
 
     invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->getContentDescription()Ljava/lang/CharSequence;
 

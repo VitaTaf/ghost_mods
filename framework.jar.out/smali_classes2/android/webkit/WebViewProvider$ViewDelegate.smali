@@ -51,10 +51,10 @@
 .method public abstract onHoverEvent(Landroid/view/MotionEvent;)Z
 .end method
 
-.method public abstract onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+.method public abstract onInitializeAccessibilityEventInternal(Landroid/view/accessibility/AccessibilityEvent;)V
 .end method
 
-.method public abstract onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+.method public abstract onInitializeAccessibilityNodeInfoInternal(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 .end method
 
 .method public abstract onKeyDown(ILandroid/view/KeyEvent;)Z
@@ -96,7 +96,7 @@
 .method public abstract onWindowVisibilityChanged(I)V
 .end method
 
-.method public abstract performAccessibilityAction(ILandroid/os/Bundle;)Z
+.method public abstract performAccessibilityActionInternal(ILandroid/os/Bundle;)Z
 .end method
 
 .method public abstract performLongClick()Z

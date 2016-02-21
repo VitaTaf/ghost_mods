@@ -5,8 +5,8 @@
 # interfaces
 .implements Landroid/text/TextWatcher;
 .implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
-.implements Landroid/view/ViewTreeObserver$OnTouchModeChangeListener;
 .implements Landroid/widget/Filter$FilterListener;
+.implements Landroid/view/ViewTreeObserver$OnTouchModeChangeListener;
 .implements Landroid/widget/RemoteViewsAdapter$RemoteAdapterConnectionCallback;
 
 
@@ -8616,7 +8616,7 @@
 
     const/4 v7, 0x0
 
-    const-string/jumbo v5, "obtainView"
+    const-string v5, "obtainView"
 
     invoke-static {v10, v11, v5}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
 
@@ -9406,12 +9406,12 @@
     goto :goto_0
 .end method
 
-.method public onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+.method public onInitializeAccessibilityEventInternal(Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 1
     .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
     .prologue
-    invoke-super {p0, p1}, Landroid/widget/AdapterView;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+    invoke-super {p0, p1}, Landroid/widget/AdapterView;->onInitializeAccessibilityEventInternal(Landroid/view/accessibility/AccessibilityEvent;)V
 
     const-class v0, Landroid/widget/AbsListView;
 
@@ -9421,58 +9421,6 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
 
-    return-void
-.end method
-
-.method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
-    .locals 2
-    .param p1, "info"    # Landroid/view/accessibility/AccessibilityNodeInfo;
-
-    .prologue
-    const/4 v1, 0x1
-
-    invoke-super {p0, p1}, Landroid/widget/AdapterView;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
-
-    const-class v0, Landroid/widget/AbsListView;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
-
-    invoke-virtual {p0}, Landroid/widget/AbsListView;->isEnabled()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-direct {p0}, Landroid/widget/AbsListView;->canScrollUp()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/16 v0, 0x2000
-
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
-
-    invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setScrollable(Z)V
-
-    :cond_0
-    invoke-direct {p0}, Landroid/widget/AbsListView;->canScrollDown()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    const/16 v0, 0x1000
-
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
-
-    invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setScrollable(Z)V
-
-    :cond_1
     return-void
 .end method
 
@@ -9569,6 +9517,58 @@
     invoke-virtual {p3, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
     goto :goto_1
+.end method
+
+.method public onInitializeAccessibilityNodeInfoInternal(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    .locals 2
+    .param p1, "info"    # Landroid/view/accessibility/AccessibilityNodeInfo;
+
+    .prologue
+    const/4 v1, 0x1
+
+    invoke-super {p0, p1}, Landroid/widget/AdapterView;->onInitializeAccessibilityNodeInfoInternal(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+
+    const-class v0, Landroid/widget/AbsListView;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
+
+    invoke-virtual {p0}, Landroid/widget/AbsListView;->isEnabled()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-direct {p0}, Landroid/widget/AbsListView;->canScrollUp()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/16 v0, 0x2000
+
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
+
+    invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setScrollable(Z)V
+
+    :cond_0
+    invoke-direct {p0}, Landroid/widget/AbsListView;->canScrollDown()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const/16 v0, 0x1000
+
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
+
+    invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setScrollable(Z)V
+
+    :cond_1
+    return-void
 .end method
 
 .method public onInterceptHoverEvent(Landroid/view/MotionEvent;)Z
@@ -11518,7 +11518,7 @@
     goto :goto_1
 .end method
 
-.method public performAccessibilityAction(ILandroid/os/Bundle;)Z
+.method public performAccessibilityActionInternal(ILandroid/os/Bundle;)Z
     .locals 6
     .param p1, "action"    # I
     .param p2, "arguments"    # Landroid/os/Bundle;
@@ -11530,7 +11530,7 @@
 
     const/4 v2, 0x0
 
-    invoke-super {p0, p1, p2}, Landroid/widget/AdapterView;->performAccessibilityAction(ILandroid/os/Bundle;)Z
+    invoke-super {p0, p1, p2}, Landroid/widget/AdapterView;->performAccessibilityActionInternal(ILandroid/os/Bundle;)Z
 
     move-result v3
 
@@ -12849,7 +12849,7 @@
     return-void
 .end method
 
-.method public sendAccessibilityEvent(I)V
+.method public sendAccessibilityEventInternal(I)V
     .locals 3
     .param p1, "eventType"    # I
 
@@ -12891,7 +12891,7 @@
     .end local v0    # "firstVisiblePosition":I
     .end local v1    # "lastVisiblePosition":I
     :cond_1
-    invoke-super {p0, p1}, Landroid/widget/AdapterView;->sendAccessibilityEvent(I)V
+    invoke-super {p0, p1}, Landroid/widget/AdapterView;->sendAccessibilityEventInternal(I)V
 
     goto :goto_0
 .end method

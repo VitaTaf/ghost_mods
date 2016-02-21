@@ -1474,7 +1474,7 @@
     return-void
 .end method
 
-.method public dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
+.method public dispatchPopulateAccessibilityEventInternal(Landroid/view/accessibility/AccessibilityEvent;)Z
     .locals 1
     .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 

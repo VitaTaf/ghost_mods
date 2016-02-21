@@ -546,7 +546,7 @@
 
 
 # virtual methods
-.method public dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
+.method public dispatchPopulateAccessibilityEventInternal(Landroid/view/accessibility/AccessibilityEvent;)Z
     .locals 4
     .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
@@ -607,7 +607,7 @@
 
     .end local v1    # "state":Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;
     :cond_1
-    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
+    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->dispatchPopulateAccessibilityEventInternal(Landroid/view/accessibility/AccessibilityEvent;)Z
 
     move-result v2
 

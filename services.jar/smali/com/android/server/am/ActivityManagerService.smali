@@ -2071,7 +2071,7 @@
 
     move-result-object v1
 
-    iput-object v1, v0, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
+    invoke-virtual {v0, v1}, Landroid/content/res/Configuration;->setLocale(Ljava/util/Locale;)V
 
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService;->mConfiguration:Landroid/content/res/Configuration;
 

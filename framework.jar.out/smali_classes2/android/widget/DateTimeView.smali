@@ -589,7 +589,7 @@
 
     invoke-direct/range {v24 .. v24}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v25, "unknown display value: "
+    const-string v25, "unknown display value: "
 
     invoke-virtual/range {v24 .. v25}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -682,8 +682,6 @@
     move-wide/from16 v22, v10
 
     goto :goto_6
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

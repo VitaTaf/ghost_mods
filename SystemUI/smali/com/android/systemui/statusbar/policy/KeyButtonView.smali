@@ -415,7 +415,7 @@
     return-void
 .end method
 
-.method public performAccessibilityAction(ILandroid/os/Bundle;)Z
+.method public performAccessibilityActionInternal(ILandroid/os/Bundle;)Z
     .locals 5
     .param p1, "action"    # I
     .param p2, "arguments"    # Landroid/os/Bundle;
@@ -474,7 +474,7 @@
     goto :goto_0
 
     :cond_1
-    invoke-super {p0, p1, p2}, Landroid/widget/ImageView;->performAccessibilityAction(ILandroid/os/Bundle;)Z
+    invoke-super {p0, p1, p2}, Landroid/widget/ImageView;->performAccessibilityActionInternal(ILandroid/os/Bundle;)Z
 
     move-result v0
 

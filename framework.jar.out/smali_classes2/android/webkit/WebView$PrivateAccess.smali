@@ -296,7 +296,7 @@
     return v0
 .end method
 
-.method public super_performAccessibilityAction(ILandroid/os/Bundle;)Z
+.method public super_performAccessibilityActionInternal(ILandroid/os/Bundle;)Z
     .locals 1
     .param p1, "action"    # I
     .param p2, "arguments"    # Landroid/os/Bundle;
@@ -304,7 +304,7 @@
     .prologue
     iget-object v0, p0, Landroid/webkit/WebView$PrivateAccess;->this$0:Landroid/webkit/WebView;
 
-    # invokes: Landroid/view/View;->performAccessibilityAction(ILandroid/os/Bundle;)Z
+    # invokes: Landroid/view/View;->performAccessibilityActionInternal(ILandroid/os/Bundle;)Z
     invoke-static {v0, p1, p2}, Landroid/webkit/WebView;->access$501(Landroid/webkit/WebView;ILandroid/os/Bundle;)Z
 
     move-result v0
