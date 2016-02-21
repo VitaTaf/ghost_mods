@@ -407,6 +407,8 @@
 
 
 # instance fields
+.field private mApplicationContext:Landroid/content/Context;
+
 .field private final mAudioFocusDispatcher:Landroid/media/IAudioFocusDispatcher;
 
 .field private final mAudioFocusEventHandlerDelegate:Landroid/media/AudioManager$FocusEventHandlerDelegate;
@@ -423,11 +425,11 @@
     .end annotation
 .end field
 
-.field private final mContext:Landroid/content/Context;
-
 .field private final mFocusListenerLock:Ljava/lang/Object;
 
 .field private final mICallBack:Landroid/os/IBinder;
+
+.field private mOriginalContext:Landroid/content/Context;
 
 .field private final mUseFixedVolume:Z
 
@@ -593,9 +595,11 @@
 
     iput-object v0, p0, Landroid/media/AudioManager;->mICallBack:Landroid/os/IBinder;
 
-    iput-object p1, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0, p1}, Landroid/media/AudioManager;->setContext(Landroid/content/Context;)V
 
-    iget-object v0, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v0
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -609,7 +613,9 @@
 
     iput-boolean v0, p0, Landroid/media/AudioManager;->mUseVolumeKeySounds:Z
 
-    iget-object v0, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v0
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -764,6 +770,34 @@
     move-result-object v3
 
     return-object v3
+.end method
+
+.method private getContext()Landroid/content/Context;
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Landroid/media/AudioManager;->mApplicationContext:Landroid/content/Context;
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Landroid/media/AudioManager;->mOriginalContext:Landroid/content/Context;
+
+    invoke-direct {p0, v0}, Landroid/media/AudioManager;->setContext(Landroid/content/Context;)V
+
+    :cond_0
+    iget-object v0, p0, Landroid/media/AudioManager;->mApplicationContext:Landroid/content/Context;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Landroid/media/AudioManager;->mApplicationContext:Landroid/content/Context;
+
+    :goto_0
+    return-object v0
+
+    :cond_1
+    iget-object v0, p0, Landroid/media/AudioManager;->mOriginalContext:Landroid/content/Context;
+
+    goto :goto_0
 .end method
 
 .method private getIdForAudioFocusListener(Landroid/media/AudioManager$OnAudioFocusChangeListener;)Ljava/lang/String;
@@ -946,7 +980,9 @@
     .prologue
     const/4 v0, 0x0
 
-    iget-object v1, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v1
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -1002,6 +1038,34 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
+.end method
+
+.method private setContext(Landroid/content/Context;)V
+    .locals 1
+    .param p1, "context"    # Landroid/content/Context;
+
+    .prologue
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    iput-object v0, p0, Landroid/media/AudioManager;->mApplicationContext:Landroid/content/Context;
+
+    iget-object v0, p0, Landroid/media/AudioManager;->mApplicationContext:Landroid/content/Context;
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Landroid/media/AudioManager;->mOriginalContext:Landroid/content/Context;
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iput-object p1, p0, Landroid/media/AudioManager;->mOriginalContext:Landroid/content/Context;
+
+    goto :goto_0
 .end method
 
 .method static updateAudioPortCache(Ljava/util/ArrayList;Ljava/util/ArrayList;)I
@@ -1682,7 +1746,9 @@
 
     .local v1, "service":Landroid/media/IAudioService;
     :try_start_0
-    iget-object v2, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v2
 
     invoke-virtual {v2}, Landroid/content/Context;->getOpPackageName()Ljava/lang/String;
 
@@ -1715,7 +1781,9 @@
     .param p3, "flags"    # I
 
     .prologue
-    iget-object v1, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v1
 
     invoke-static {v1}, Landroid/media/session/MediaSessionLegacyHelper;->getHelper(Landroid/content/Context;)Landroid/media/session/MediaSessionLegacyHelper;
 
@@ -1733,7 +1801,9 @@
     .param p2, "flags"    # I
 
     .prologue
-    iget-object v1, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v1
 
     invoke-static {v1}, Landroid/media/session/MediaSessionLegacyHelper;->getHelper(Landroid/content/Context;)Landroid/media/session/MediaSessionLegacyHelper;
 
@@ -1827,7 +1897,9 @@
     .param p1, "keyEvent"    # Landroid/view/KeyEvent;
 
     .prologue
-    iget-object v1, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v1
 
     invoke-static {v1}, Landroid/media/session/MediaSessionLegacyHelper;->getHelper(Landroid/content/Context;)Landroid/media/session/MediaSessionLegacyHelper;
 
@@ -2406,7 +2478,9 @@
 
     if-nez v1, :cond_0
 
-    iget-object v1, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v1
 
     invoke-static {v1}, Landroid/media/session/MediaSessionLegacyHelper;->getHelper(Landroid/content/Context;)Landroid/media/session/MediaSessionLegacyHelper;
 
@@ -2463,7 +2537,9 @@
     goto :goto_0
 
     :sswitch_1
-    iget-object v1, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v1
 
     invoke-static {v1}, Landroid/media/session/MediaSessionLegacyHelper;->getHelper(Landroid/content/Context;)Landroid/media/session/MediaSessionLegacyHelper;
 
@@ -2551,7 +2627,9 @@
     .locals 2
 
     .prologue
-    iget-object v0, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v0
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -3515,7 +3593,9 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v3
 
     invoke-virtual {v3}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
@@ -3549,7 +3629,9 @@
 
     invoke-virtual {v0, p1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    iget-object v2, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v2
 
     invoke-static {v2, v4, v0, v4}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
@@ -3579,14 +3661,18 @@
     return-void
 
     :cond_0
-    iget-object v1, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v1
 
     invoke-static {v1}, Landroid/media/session/MediaSessionLegacyHelper;->getHelper(Landroid/content/Context;)Landroid/media/session/MediaSessionLegacyHelper;
 
     move-result-object v0
 
     .local v0, "helper":Landroid/media/session/MediaSessionLegacyHelper;
-    iget-object v1, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v1
 
     invoke-virtual {v0, p1, p2, v1}, Landroid/media/session/MediaSessionLegacyHelper;->addMediaButtonListener(Landroid/app/PendingIntent;Landroid/content/ComponentName;Landroid/content/Context;)V
 
@@ -3613,7 +3699,9 @@
     return-void
 
     :cond_1
-    iget-object v0, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v0
 
     invoke-static {v0}, Landroid/media/session/MediaSessionLegacyHelper;->getHelper(Landroid/content/Context;)Landroid/media/session/MediaSessionLegacyHelper;
 
@@ -4126,7 +4214,9 @@
 
     move-result-object v5
 
-    iget-object v1, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v1
 
     invoke-virtual {v1}, Landroid/content/Context;->getOpPackageName()Ljava/lang/String;
 
@@ -4202,7 +4292,9 @@
 
     const-string v5, "AudioFocus_For_Phone_Ring_And_Calls"
 
-    iget-object v2, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v2
 
     invoke-virtual {v2}, Landroid/content/Context;->getOpPackageName()Ljava/lang/String;
 
@@ -4429,7 +4521,9 @@
 
     .local v1, "service":Landroid/media/IAudioService;
     :try_start_0
-    iget-object v2, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v2
 
     invoke-virtual {v2}, Landroid/content/Context;->getOpPackageName()Ljava/lang/String;
 
@@ -4466,7 +4560,9 @@
 
     .local v1, "service":Landroid/media/IAudioService;
     :try_start_0
-    iget-object v2, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v2
 
     invoke-virtual {v2}, Landroid/content/Context;->getOpPackageName()Ljava/lang/String;
 
@@ -4648,7 +4744,9 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v2
 
     invoke-virtual {v2}, Landroid/content/Context;->getOpPackageName()Ljava/lang/String;
 
@@ -4791,7 +4889,9 @@
 
     .local v1, "service":Landroid/media/IAudioService;
     :try_start_0
-    iget-object v2, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v2
 
     invoke-virtual {v2}, Landroid/content/Context;->getOpPackageName()Ljava/lang/String;
 
@@ -5015,7 +5115,9 @@
     :try_start_0
     iget-object v2, p0, Landroid/media/AudioManager;->mICallBack:Landroid/os/IBinder;
 
-    iget-object v3, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v3
 
     invoke-virtual {v3}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
@@ -5289,7 +5391,9 @@
     .local v0, "mediaButtonIntent":Landroid/content/Intent;
     invoke-virtual {v0, p1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    iget-object v2, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v2
 
     invoke-static {v2, v3, v0, v3}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
@@ -5306,7 +5410,9 @@
     .param p1, "pi"    # Landroid/app/PendingIntent;
 
     .prologue
-    iget-object v1, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v1
 
     invoke-static {v1}, Landroid/media/session/MediaSessionLegacyHelper;->getHelper(Landroid/content/Context;)Landroid/media/session/MediaSessionLegacyHelper;
 
@@ -5338,7 +5444,9 @@
     return-void
 
     :cond_1
-    iget-object v0, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v0
 
     invoke-static {v0}, Landroid/media/session/MediaSessionLegacyHelper;->getHelper(Landroid/content/Context;)Landroid/media/session/MediaSessionLegacyHelper;
 

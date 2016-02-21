@@ -758,14 +758,14 @@
 .end method
 
 .method private openVideo()V
-    .locals 12
+    .locals 11
 
     .prologue
-    const/4 v11, 0x3
+    const/4 v10, 0x3
 
-    const/4 v10, 0x1
+    const/4 v9, 0x1
 
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
     iget-object v7, p0, Landroid/widget/VideoView;->mUri:Landroid/net/Uri;
 
@@ -780,6 +780,8 @@
     return-void
 
     :cond_1
+    invoke-direct {p0, v8}, Landroid/widget/VideoView;->release(Z)V
+
     iget-object v7, p0, Landroid/widget/VideoView;->mContext:Landroid/content/Context;
 
     const-string v8, "audio"
@@ -793,9 +795,7 @@
     .local v0, "am":Landroid/media/AudioManager;
     const/4 v7, 0x0
 
-    invoke-virtual {v0, v7, v11, v10}, Landroid/media/AudioManager;->requestAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;II)I
-
-    invoke-direct {p0, v9}, Landroid/widget/VideoView;->release(Z)V
+    invoke-virtual {v0, v7, v10, v9}, Landroid/media/AudioManager;->requestAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;II)I
 
     :try_start_0
     new-instance v7, Landroid/media/MediaPlayer;
@@ -1165,39 +1165,54 @@
 .end method
 
 .method private release(Z)V
-    .locals 2
+    .locals 4
     .param p1, "cleartargetstate"    # Z
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v3, 0x0
 
-    iget-object v0, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
+    const/4 v2, 0x0
 
-    if-eqz v0, :cond_0
+    iget-object v1, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
 
-    iget-object v0, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
+    if-eqz v1, :cond_1
 
-    invoke-virtual {v0}, Landroid/media/MediaPlayer;->reset()V
+    iget-object v1, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
 
-    iget-object v0, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
+    invoke-virtual {v1}, Landroid/media/MediaPlayer;->reset()V
 
-    invoke-virtual {v0}, Landroid/media/MediaPlayer;->release()V
+    iget-object v1, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
 
-    const/4 v0, 0x0
+    invoke-virtual {v1}, Landroid/media/MediaPlayer;->release()V
 
-    iput-object v0, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
+    iput-object v3, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
 
-    iget-object v0, p0, Landroid/widget/VideoView;->mPendingSubtitleTracks:Ljava/util/Vector;
+    iget-object v1, p0, Landroid/widget/VideoView;->mPendingSubtitleTracks:Ljava/util/Vector;
 
-    invoke-virtual {v0}, Ljava/util/Vector;->clear()V
+    invoke-virtual {v1}, Ljava/util/Vector;->clear()V
 
-    iput v1, p0, Landroid/widget/VideoView;->mCurrentState:I
+    iput v2, p0, Landroid/widget/VideoView;->mCurrentState:I
 
     if-eqz p1, :cond_0
 
-    iput v1, p0, Landroid/widget/VideoView;->mTargetState:I
+    iput v2, p0, Landroid/widget/VideoView;->mTargetState:I
 
     :cond_0
+    iget-object v1, p0, Landroid/widget/VideoView;->mContext:Landroid/content/Context;
+
+    const-string v2, "audio"
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/media/AudioManager;
+
+    .local v0, "am":Landroid/media/AudioManager;
+    invoke-virtual {v0, v3}, Landroid/media/AudioManager;->abandonAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;)I
+
+    .end local v0    # "am":Landroid/media/AudioManager;
+    :cond_1
     return-void
 .end method
 
@@ -2274,31 +2289,45 @@
 .end method
 
 .method public stopPlayback()V
-    .locals 2
+    .locals 4
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v3, 0x0
 
-    iget-object v0, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
+    const/4 v2, 0x0
 
-    if-eqz v0, :cond_0
+    iget-object v1, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
 
-    iget-object v0, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
+    if-eqz v1, :cond_0
 
-    invoke-virtual {v0}, Landroid/media/MediaPlayer;->stop()V
+    iget-object v1, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
 
-    iget-object v0, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
+    invoke-virtual {v1}, Landroid/media/MediaPlayer;->stop()V
 
-    invoke-virtual {v0}, Landroid/media/MediaPlayer;->release()V
+    iget-object v1, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
 
-    const/4 v0, 0x0
+    invoke-virtual {v1}, Landroid/media/MediaPlayer;->release()V
 
-    iput-object v0, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
+    iput-object v3, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
 
-    iput v1, p0, Landroid/widget/VideoView;->mCurrentState:I
+    iput v2, p0, Landroid/widget/VideoView;->mCurrentState:I
 
-    iput v1, p0, Landroid/widget/VideoView;->mTargetState:I
+    iput v2, p0, Landroid/widget/VideoView;->mTargetState:I
 
+    iget-object v1, p0, Landroid/widget/VideoView;->mContext:Landroid/content/Context;
+
+    const-string v2, "audio"
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/media/AudioManager;
+
+    .local v0, "am":Landroid/media/AudioManager;
+    invoke-virtual {v0, v3}, Landroid/media/AudioManager;->abandonAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;)I
+
+    .end local v0    # "am":Landroid/media/AudioManager;
     :cond_0
     return-void
 .end method
