@@ -102,6 +102,61 @@
     return-void
 .end method
 
+.method static synthetic access$100(Landroid/widget/GridLayout$Spec;Z)Landroid/widget/GridLayout$Alignment;
+    .locals 1
+    .param p0, "x0"    # Landroid/widget/GridLayout$Spec;
+    .param p1, "x1"    # Z
+
+    .prologue
+    invoke-direct {p0, p1}, Landroid/widget/GridLayout$Spec;->getAbsoluteAlignment(Z)Landroid/widget/GridLayout$Alignment;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private getAbsoluteAlignment(Z)Landroid/widget/GridLayout$Alignment;
+    .locals 2
+    .param p1, "horizontal"    # Z
+
+    .prologue
+    iget-object v0, p0, Landroid/widget/GridLayout$Spec;->alignment:Landroid/widget/GridLayout$Alignment;
+
+    sget-object v1, Landroid/widget/GridLayout;->UNDEFINED_ALIGNMENT:Landroid/widget/GridLayout$Alignment;
+
+    if-eq v0, v1, :cond_0
+
+    iget-object v0, p0, Landroid/widget/GridLayout$Spec;->alignment:Landroid/widget/GridLayout$Alignment;
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    iget v0, p0, Landroid/widget/GridLayout$Spec;->weight:F
+
+    const/4 v1, 0x0
+
+    cmpl-float v0, v0, v1
+
+    if-nez v0, :cond_2
+
+    if-eqz p1, :cond_1
+
+    sget-object v0, Landroid/widget/GridLayout;->START:Landroid/widget/GridLayout$Alignment;
+
+    goto :goto_0
+
+    :cond_1
+    sget-object v0, Landroid/widget/GridLayout;->BASELINE:Landroid/widget/GridLayout$Alignment;
+
+    goto :goto_0
+
+    :cond_2
+    sget-object v0, Landroid/widget/GridLayout;->FILL:Landroid/widget/GridLayout$Alignment;
+
+    goto :goto_0
+.end method
+
 
 # virtual methods
 .method final copyWriteAlignment(Landroid/widget/GridLayout$Alignment;)Landroid/widget/GridLayout$Spec;

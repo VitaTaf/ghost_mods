@@ -1533,24 +1533,6 @@
 
     invoke-direct/range {v2 .. v7}, Landroid/widget/GridLayout;->measureChildWithMargins2(Landroid/view/View;IIII)V
 
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Landroid/widget/GridLayout;->mHorizontalAxis:Landroid/widget/GridLayout$Axis;
-
-    move/from16 v0, v17
-
-    # invokes: Landroid/widget/GridLayout$Axis;->recordOriginalMeasurement(I)V
-    invoke-static {v2, v0}, Landroid/widget/GridLayout$Axis;->access$100(Landroid/widget/GridLayout$Axis;I)V
-
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Landroid/widget/GridLayout;->mVerticalAxis:Landroid/widget/GridLayout$Axis;
-
-    move/from16 v0, v17
-
-    # invokes: Landroid/widget/GridLayout$Axis;->recordOriginalMeasurement(I)V
-    invoke-static {v2, v0}, Landroid/widget/GridLayout$Axis;->access$100(Landroid/widget/GridLayout$Axis;I)V
-
     goto :goto_1
 
     :cond_2
@@ -1576,7 +1558,12 @@
     :goto_3
     move-object/from16 v0, v21
 
-    iget-object v2, v0, Landroid/widget/GridLayout$Spec;->alignment:Landroid/widget/GridLayout$Alignment;
+    move/from16 v1, v16
+
+    # invokes: Landroid/widget/GridLayout$Spec;->getAbsoluteAlignment(Z)Landroid/widget/GridLayout$Alignment;
+    invoke-static {v0, v1}, Landroid/widget/GridLayout$Spec;->access$100(Landroid/widget/GridLayout$Spec;Z)Landroid/widget/GridLayout$Alignment;
+
+    move-result-object v2
 
     sget-object v4, Landroid/widget/GridLayout;->FILL:Landroid/widget/GridLayout$Alignment;
 
@@ -2291,34 +2278,6 @@
     return-object v0
 .end method
 
-.method final getAlignment(Landroid/widget/GridLayout$Alignment;Z)Landroid/widget/GridLayout$Alignment;
-    .locals 1
-    .param p1, "alignment"    # Landroid/widget/GridLayout$Alignment;
-    .param p2, "horizontal"    # Z
-
-    .prologue
-    sget-object v0, Landroid/widget/GridLayout;->UNDEFINED_ALIGNMENT:Landroid/widget/GridLayout$Alignment;
-
-    if-eq p1, v0, :cond_0
-
-    .end local p1    # "alignment":Landroid/widget/GridLayout$Alignment;
-    :goto_0
-    return-object p1
-
-    .restart local p1    # "alignment":Landroid/widget/GridLayout$Alignment;
-    :cond_0
-    if-eqz p2, :cond_1
-
-    sget-object p1, Landroid/widget/GridLayout;->START:Landroid/widget/GridLayout$Alignment;
-
-    goto :goto_0
-
-    :cond_1
-    sget-object p1, Landroid/widget/GridLayout;->BASELINE:Landroid/widget/GridLayout$Alignment;
-
-    goto :goto_0
-.end method
-
 .method public getAlignmentMode()I
     .locals 1
 
@@ -3009,28 +2968,22 @@
     move-result v31
 
     .local v31, "pHeight":I
+    const/4 v3, 0x1
+
     move-object/from16 v0, v20
 
-    iget-object v3, v0, Landroid/widget/GridLayout$Spec;->alignment:Landroid/widget/GridLayout$Alignment;
-
-    const/4 v6, 0x1
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v3, v6}, Landroid/widget/GridLayout;->getAlignment(Landroid/widget/GridLayout$Alignment;Z)Landroid/widget/GridLayout$Alignment;
+    # invokes: Landroid/widget/GridLayout$Spec;->getAbsoluteAlignment(Z)Landroid/widget/GridLayout$Alignment;
+    invoke-static {v0, v3}, Landroid/widget/GridLayout$Spec;->access$100(Landroid/widget/GridLayout$Spec;Z)Landroid/widget/GridLayout$Alignment;
 
     move-result-object v5
 
     .local v5, "hAlign":Landroid/widget/GridLayout$Alignment;
+    const/4 v3, 0x0
+
     move-object/from16 v0, v39
 
-    iget-object v3, v0, Landroid/widget/GridLayout$Spec;->alignment:Landroid/widget/GridLayout$Alignment;
-
-    const/4 v6, 0x0
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v3, v6}, Landroid/widget/GridLayout;->getAlignment(Landroid/widget/GridLayout$Alignment;Z)Landroid/widget/GridLayout$Alignment;
+    # invokes: Landroid/widget/GridLayout$Spec;->getAbsoluteAlignment(Z)Landroid/widget/GridLayout$Alignment;
+    invoke-static {v0, v3}, Landroid/widget/GridLayout$Spec;->access$100(Landroid/widget/GridLayout$Spec;Z)Landroid/widget/GridLayout$Alignment;
 
     move-result-object v9
 

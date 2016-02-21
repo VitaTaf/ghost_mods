@@ -117,9 +117,10 @@
     iget-boolean v2, p4, Landroid/widget/GridLayout$Axis;->horizontal:Z
 
     .local v2, "horizontal":Z
-    iget-object v3, p3, Landroid/widget/GridLayout$Spec;->alignment:Landroid/widget/GridLayout$Alignment;
+    iget-boolean v3, p4, Landroid/widget/GridLayout$Axis;->horizontal:Z
 
-    invoke-virtual {p1, v3, v2}, Landroid/widget/GridLayout;->getAlignment(Landroid/widget/GridLayout$Alignment;Z)Landroid/widget/GridLayout$Alignment;
+    # invokes: Landroid/widget/GridLayout$Spec;->getAbsoluteAlignment(Z)Landroid/widget/GridLayout$Alignment;
+    invoke-static {p3, v3}, Landroid/widget/GridLayout$Spec;->access$100(Landroid/widget/GridLayout$Spec;Z)Landroid/widget/GridLayout$Alignment;
 
     move-result-object v0
 
