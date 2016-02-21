@@ -1708,8 +1708,6 @@
     .locals 14
 
     .prologue
-    const/4 v7, 0x0
-
     iget-object v9, p0, Landroid/widget/FastScroller;->mTrackImage:Landroid/widget/ImageView;
 
     .local v9, "track":Landroid/view/View;
@@ -1721,32 +1719,41 @@
     .local v1, "container":Landroid/graphics/Rect;
     invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
 
-    move-result v2
+    move-result v4
 
-    .local v2, "containerWidth":I
+    .local v4, "maxWidth":I
     const/high16 v12, -0x80000000
 
-    invoke-static {v2, v12}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {v4, v12}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v11
 
     .local v11, "widthMeasureSpec":I
-    invoke-static {v7, v7}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
 
-    move-result v3
+    move-result v12
 
-    .local v3, "heightMeasureSpec":I
-    invoke-virtual {v9, v11, v3}, Landroid/view/View;->measure(II)V
+    const/4 v13, 0x0
+
+    invoke-static {v12, v13}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result v2
+
+    .local v2, "heightMeasureSpec":I
+    invoke-virtual {v9, v11, v2}, Landroid/view/View;->measure(II)V
 
     invoke-virtual {v9}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v10
 
     .local v10, "trackWidth":I
-    if-nez v6, :cond_0
+    invoke-virtual {v6}, Landroid/view/View;->getHeight()I
+
+    move-result v12
+
+    div-int/lit8 v7, v12, 0x2
 
     .local v7, "thumbHalfHeight":I
-    :goto_0
     invoke-virtual {v6}, Landroid/view/View;->getLeft()I
 
     move-result v12
@@ -1759,10 +1766,10 @@
 
     div-int/lit8 v13, v13, 0x2
 
-    add-int v4, v12, v13
+    add-int v3, v12, v13
 
-    .local v4, "left":I
-    add-int v5, v4, v10
+    .local v3, "left":I
+    add-int v5, v3, v10
 
     .local v5, "right":I
     iget v12, v1, Landroid/graphics/Rect;->top:I
@@ -1775,23 +1782,9 @@
     sub-int v0, v12, v7
 
     .local v0, "bottom":I
-    invoke-virtual {v9, v4, v8, v5, v0}, Landroid/view/View;->layout(IIII)V
+    invoke-virtual {v9, v3, v8, v5, v0}, Landroid/view/View;->layout(IIII)V
 
     return-void
-
-    .end local v0    # "bottom":I
-    .end local v4    # "left":I
-    .end local v5    # "right":I
-    .end local v7    # "thumbHalfHeight":I
-    .end local v8    # "top":I
-    :cond_0
-    invoke-virtual {v6}, Landroid/view/View;->getHeight()I
-
-    move-result v12
-
-    div-int/lit8 v7, v12, 0x2
-
-    goto :goto_0
 .end method
 
 .method private measureFloating(Landroid/view/View;Landroid/graphics/Rect;Landroid/graphics/Rect;)V
@@ -1835,7 +1828,9 @@
     move-result v14
 
     .local v14, "widthMeasureSpec":I
-    const/4 v15, 0x0
+    invoke-virtual {v3}, Landroid/graphics/Rect;->height()I
+
+    move-result v15
 
     const/16 v16, 0x0
 
@@ -2035,7 +2030,9 @@
     move-result v14
 
     .local v14, "widthMeasureSpec":I
-    const/4 v15, 0x0
+    invoke-virtual {v3}, Landroid/graphics/Rect;->height()I
+
+    move-result v15
 
     const/16 v16, 0x0
 

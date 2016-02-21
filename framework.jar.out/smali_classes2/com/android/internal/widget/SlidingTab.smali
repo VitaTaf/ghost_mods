@@ -915,11 +915,11 @@
     .local v2, "heightSpecSize":I
     iget-object v10, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
-    invoke-virtual {v10}, Lcom/android/internal/widget/SlidingTab$Slider;->measure()V
+    invoke-virtual {v10, p1, p2}, Lcom/android/internal/widget/SlidingTab$Slider;->measure(II)V
 
     iget-object v10, p0, Lcom/android/internal/widget/SlidingTab;->mRightSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
-    invoke-virtual {v10}, Lcom/android/internal/widget/SlidingTab$Slider;->measure()V
+    invoke-virtual {v10, p1, p2}, Lcom/android/internal/widget/SlidingTab$Slider;->measure(II)V
 
     iget-object v10, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 

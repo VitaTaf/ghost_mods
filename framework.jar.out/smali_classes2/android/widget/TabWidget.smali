@@ -638,20 +638,16 @@
 .end method
 
 .method measureHorizontal(II)V
-    .locals 13
+    .locals 12
     .param p1, "widthMeasureSpec"    # I
     .param p2, "heightMeasureSpec"    # I
 
     .prologue
-    const/16 v12, 0x8
-
-    const/4 v11, 0x0
-
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
-    move-result v9
+    move-result v10
 
-    if-nez v9, :cond_0
+    if-nez v10, :cond_0
 
     invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->measureHorizontal(II)V
 
@@ -659,26 +655,29 @@
     return-void
 
     :cond_0
-    invoke-static {v11, v11}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
+
+    move-result v9
+
+    .local v9, "width":I
+    const/4 v10, 0x0
+
+    invoke-static {v9, v10}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v8
 
     .local v8, "unspecifiedWidth":I
-    const/4 v9, -0x1
+    const/4 v10, -0x1
 
-    iput v9, p0, Landroid/widget/TabWidget;->mImposedTabsHeight:I
+    iput v10, p0, Landroid/widget/TabWidget;->mImposedTabsHeight:I
 
     invoke-super {p0, v8, p2}, Landroid/widget/LinearLayout;->measureHorizontal(II)V
 
     invoke-virtual {p0}, Landroid/widget/TabWidget;->getMeasuredWidth()I
 
-    move-result v9
-
-    invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
-
     move-result v10
 
-    sub-int v5, v9, v10
+    sub-int v5, v10, v9
 
     .local v5, "extraWidth":I
     if-lez v5, :cond_6
@@ -704,9 +703,11 @@
     .local v0, "child":Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
-    move-result v9
+    move-result v10
 
-    if-ne v9, v12, :cond_1
+    const/16 v11, 0x8
+
+    if-ne v10, v11, :cond_1
 
     :goto_2
     add-int/lit8 v6, v6, 0x1
@@ -722,20 +723,20 @@
     :cond_2
     if-lez v1, :cond_6
 
-    iget-object v9, p0, Landroid/widget/TabWidget;->mImposedTabWidths:[I
+    iget-object v10, p0, Landroid/widget/TabWidget;->mImposedTabWidths:[I
 
-    if-eqz v9, :cond_3
+    if-eqz v10, :cond_3
 
-    iget-object v9, p0, Landroid/widget/TabWidget;->mImposedTabWidths:[I
+    iget-object v10, p0, Landroid/widget/TabWidget;->mImposedTabWidths:[I
 
-    array-length v9, v9
+    array-length v10, v10
 
-    if-eq v9, v3, :cond_4
+    if-eq v10, v3, :cond_4
 
     :cond_3
-    new-array v9, v3, [I
+    new-array v10, v3, [I
 
-    iput-object v9, p0, Landroid/widget/TabWidget;->mImposedTabWidths:[I
+    iput-object v10, p0, Landroid/widget/TabWidget;->mImposedTabWidths:[I
 
     :cond_4
     const/4 v6, 0x0
@@ -750,9 +751,11 @@
     .restart local v0    # "child":Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
-    move-result v9
+    move-result v10
 
-    if-ne v9, v12, :cond_5
+    const/16 v11, 0x8
+
+    if-ne v10, v11, :cond_5
 
     :goto_4
     add-int/lit8 v6, v6, 0x1
@@ -768,34 +771,36 @@
     div-int v4, v5, v1
 
     .local v4, "delta":I
-    sub-int v9, v2, v4
+    const/4 v10, 0x0
 
-    invoke-static {v11, v9}, Ljava/lang/Math;->max(II)I
+    sub-int v11, v2, v4
+
+    invoke-static {v10, v11}, Ljava/lang/Math;->max(II)I
 
     move-result v7
 
     .local v7, "newWidth":I
-    iget-object v9, p0, Landroid/widget/TabWidget;->mImposedTabWidths:[I
+    iget-object v10, p0, Landroid/widget/TabWidget;->mImposedTabWidths:[I
 
-    aput v7, v9, v6
+    aput v7, v10, v6
 
-    sub-int v9, v2, v7
+    sub-int v10, v2, v7
 
-    sub-int/2addr v5, v9
+    sub-int/2addr v5, v10
 
     add-int/lit8 v1, v1, -0x1
 
-    iget v9, p0, Landroid/widget/TabWidget;->mImposedTabsHeight:I
+    iget v10, p0, Landroid/widget/TabWidget;->mImposedTabsHeight:I
 
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
 
+    move-result v11
+
+    invoke-static {v10, v11}, Ljava/lang/Math;->max(II)I
+
     move-result v10
 
-    invoke-static {v9, v10}, Ljava/lang/Math;->max(II)I
-
-    move-result v9
-
-    iput v9, p0, Landroid/widget/TabWidget;->mImposedTabsHeight:I
+    iput v10, p0, Landroid/widget/TabWidget;->mImposedTabsHeight:I
 
     goto :goto_4
 

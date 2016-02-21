@@ -3837,12 +3837,10 @@
 .end method
 
 .method private measureItem(Landroid/view/View;)V
-    .locals 8
+    .locals 7
     .param p1, "child"    # Landroid/view/View;
 
     .prologue
-    const/4 v7, 0x0
-
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v3
@@ -3899,7 +3897,13 @@
 
     .end local v0    # "childHeightSpec":I
     :cond_1
-    invoke-static {v7, v7}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-virtual {p0}, Landroid/widget/ListView;->getMeasuredHeight()I
+
+    move-result v4
+
+    const/4 v5, 0x0
+
+    invoke-static {v4, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v0
 
@@ -3907,15 +3911,14 @@
     goto :goto_0
 .end method
 
-.method private measureScrapChild(Landroid/view/View;II)V
-    .locals 7
+.method private measureScrapChild(Landroid/view/View;III)V
+    .locals 6
     .param p1, "child"    # Landroid/view/View;
     .param p2, "position"    # I
     .param p3, "widthMeasureSpec"    # I
+    .param p4, "heightHint"    # I
 
     .prologue
-    const/4 v6, 0x0
-
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v3
@@ -3984,7 +3987,9 @@
 
     .end local v0    # "childHeightSpec":I
     :cond_1
-    invoke-static {v6, v6}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    const/4 v4, 0x0
+
+    invoke-static {p4, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v0
 
@@ -5416,7 +5421,9 @@
     .restart local v8    # "childWidthSpec":I
     .restart local v12    # "lpHeight":I
     :cond_13
-    const/16 v19, 0x0
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/ListView;->getMeasuredHeight()I
+
+    move-result v19
 
     const/16 v20, 0x0
 
@@ -10121,7 +10128,9 @@
     move-result-object v2
 
     .local v2, "child":Landroid/view/View;
-    invoke-direct {p0, v2, v4, p1}, Landroid/widget/ListView;->measureScrapChild(Landroid/view/View;II)V
+    move/from16 v0, p4
+
+    invoke-direct {p0, v2, v4, p1, v0}, Landroid/widget/ListView;->measureScrapChild(Landroid/view/View;III)V
 
     if-lez v4, :cond_3
 
@@ -10622,7 +10631,7 @@
     move-result-object v6
 
     .local v6, "child":Landroid/view/View;
-    invoke-direct {p0, v6, v2, p1}, Landroid/widget/ListView;->measureScrapChild(Landroid/view/View;II)V
+    invoke-direct {p0, v6, v2, p1, v4}, Landroid/widget/ListView;->measureScrapChild(Landroid/view/View;III)V
 
     invoke-virtual {v6}, Landroid/view/View;->getMeasuredWidth()I
 

@@ -154,9 +154,10 @@
     return-void
 .end method
 
-.method private findLargestCells(I)V
+.method private findLargestCells(II)V
     .locals 21
     .param p1, "widthMeasureSpec"    # I
+    .param p2, "heightMeasureSpec"    # I
 
     .prologue
     const/4 v7, 0x1
@@ -223,7 +224,9 @@
 
     move/from16 v0, p1
 
-    invoke-virtual {v15, v0}, Landroid/widget/TableRow;->getColumnsWidths(I)[I
+    move/from16 v1, p2
+
+    invoke-virtual {v15, v0, v1}, Landroid/widget/TableRow;->getColumnsWidths(II)[I
 
     move-result-object v16
 
@@ -1199,7 +1202,7 @@
     .param p2, "heightMeasureSpec"    # I
 
     .prologue
-    invoke-direct {p0, p1}, Landroid/widget/TableLayout;->findLargestCells(I)V
+    invoke-direct {p0, p1, p2}, Landroid/widget/TableLayout;->findLargestCells(II)V
 
     invoke-direct {p0, p1}, Landroid/widget/TableLayout;->shrinkAndStretchColumns(I)V
 

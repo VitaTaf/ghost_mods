@@ -2137,72 +2137,48 @@
     goto :goto_0
 .end method
 
-.method moveNext()Z
+.method moveDirection(I)Z
     .locals 2
+    .param p1, "direction"    # I
 
     .prologue
-    iget v0, p0, Landroid/widget/Gallery;->mItemCount:I
+    invoke-virtual {p0}, Landroid/widget/Gallery;->isLayoutRtl()Z
 
-    if-lez v0, :cond_0
+    move-result v1
 
-    iget v0, p0, Landroid/widget/Gallery;->mSelectedPosition:I
+    if-eqz v1, :cond_0
+
+    neg-int p1, p1
+
+    :cond_0
+    iget v1, p0, Landroid/widget/Gallery;->mSelectedPosition:I
+
+    add-int v0, v1, p1
+
+    .local v0, "targetPosition":I
+    iget v1, p0, Landroid/widget/Gallery;->mItemCount:I
+
+    if-lez v1, :cond_1
+
+    if-ltz v0, :cond_1
 
     iget v1, p0, Landroid/widget/Gallery;->mItemCount:I
 
-    add-int/lit8 v1, v1, -0x1
-
-    if-ge v0, v1, :cond_0
-
-    iget v0, p0, Landroid/widget/Gallery;->mSelectedPosition:I
+    if-ge v0, v1, :cond_1
 
     iget v1, p0, Landroid/widget/Gallery;->mFirstPosition:I
 
-    sub-int/2addr v0, v1
+    sub-int v1, v0, v1
 
-    add-int/lit8 v0, v0, 0x1
+    invoke-direct {p0, v1}, Landroid/widget/Gallery;->scrollToChild(I)Z
 
-    invoke-direct {p0, v0}, Landroid/widget/Gallery;->scrollToChild(I)Z
-
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     :goto_0
-    return v0
+    return v1
 
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method movePrevious()Z
-    .locals 2
-
-    .prologue
-    iget v0, p0, Landroid/widget/Gallery;->mItemCount:I
-
-    if-lez v0, :cond_0
-
-    iget v0, p0, Landroid/widget/Gallery;->mSelectedPosition:I
-
-    if-lez v0, :cond_0
-
-    iget v0, p0, Landroid/widget/Gallery;->mSelectedPosition:I
-
-    iget v1, p0, Landroid/widget/Gallery;->mFirstPosition:I
-
-    sub-int/2addr v0, v1
-
-    add-int/lit8 v0, v0, -0x1
-
-    invoke-direct {p0, v0}, Landroid/widget/Gallery;->scrollToChild(I)Z
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
+    :cond_1
+    const/4 v1, 0x0
 
     goto :goto_0
 .end method
@@ -2450,7 +2426,9 @@
     return v0
 
     :sswitch_0
-    invoke-virtual {p0}, Landroid/widget/Gallery;->movePrevious()Z
+    const/4 v1, -0x1
+
+    invoke-virtual {p0, v1}, Landroid/widget/Gallery;->moveDirection(I)Z
 
     move-result v1
 
@@ -2461,7 +2439,7 @@
     goto :goto_1
 
     :sswitch_1
-    invoke-virtual {p0}, Landroid/widget/Gallery;->moveNext()Z
+    invoke-virtual {p0, v0}, Landroid/widget/Gallery;->moveDirection(I)Z
 
     move-result v1
 
@@ -2477,8 +2455,6 @@
     iput-boolean v0, p0, Landroid/widget/Gallery;->mReceivedInvokeKeyDown:Z
 
     goto :goto_0
-
-    nop
 
     :sswitch_data_0
     .sparse-switch

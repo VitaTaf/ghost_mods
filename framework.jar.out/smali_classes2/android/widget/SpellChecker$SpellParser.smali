@@ -474,6 +474,13 @@
 
     if-eqz v22, :cond_11
 
+    move/from16 v0, v20
+
+    if-ge v0, v6, :cond_4
+
+    const/4 v9, 0x1
+
+    :cond_4
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/SpellChecker$SpellParser;->this$0:Landroid/widget/SpellChecker;
@@ -498,13 +505,13 @@
 
     move/from16 v0, v22
 
-    if-eq v12, v0, :cond_5
+    if-eq v12, v0, :cond_6
 
     const/4 v3, 0x1
 
     .local v3, "correct":Z
     :goto_3
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_5
 
     move-object/from16 v0, p0
 
@@ -527,13 +534,13 @@
 
     move/from16 v0, v22
 
-    if-eq v12, v0, :cond_6
+    if-eq v12, v0, :cond_7
 
     const/4 v3, 0x1
 
-    :cond_4
+    :cond_5
     :goto_4
-    if-nez v3, :cond_7
+    if-nez v3, :cond_8
 
     move-object/from16 v0, p0
 
@@ -542,25 +549,16 @@
     goto/16 :goto_2
 
     .end local v3    # "correct":Z
-    :cond_5
+    :cond_6
     const/4 v3, 0x0
 
     goto :goto_3
 
     .restart local v3    # "correct":Z
-    :cond_6
+    :cond_7
     const/4 v3, 0x0
 
     goto :goto_4
-
-    :cond_7
-    move/from16 v0, v20
-
-    if-ge v0, v6, :cond_8
-
-    if-ge v12, v6, :cond_8
-
-    const/4 v9, 0x1
 
     :cond_8
     move/from16 v15, v21
@@ -670,6 +668,14 @@
     :cond_d
     :goto_8
     if-eqz v9, :cond_1d
+
+    const/16 v22, -0x1
+
+    move/from16 v0, v21
+
+    move/from16 v1, v22
+
+    if-eq v0, v1, :cond_1d
 
     move/from16 v0, v21
 

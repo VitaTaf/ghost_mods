@@ -867,7 +867,7 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, "textservices"
+    const-string v2, "textservices"
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 

@@ -309,9 +309,10 @@
     return v1
 .end method
 
-.method getColumnsWidths(I)[I
+.method getColumnsWidths(II)[I
     .locals 10
     .param p1, "widthMeasureSpec"    # I
+    .param p2, "heightMeasureSpec"    # I
 
     .prologue
     const/4 v9, 0x0
@@ -426,7 +427,11 @@
 
     .end local v5    # "spec":I
     :pswitch_1
-    invoke-static {v9, v9}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
+
+    move-result v7
+
+    invoke-static {v7, v9}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v5
 

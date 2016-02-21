@@ -6682,7 +6682,9 @@
 
     iput-boolean v0, v1, Landroid/widget/AbsListView$LayoutParams;->forceAdd:Z
 
-    const/16 v19, 0x0
+    invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
+
+    move-result v19
 
     const/16 v20, 0x0
 

@@ -1658,9 +1658,9 @@
 
     const/16 v24, 0x0
 
-    const/16 v25, 0x0
+    move/from16 v0, v24
 
-    invoke-static/range {v24 .. v25}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {v5, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v20
 

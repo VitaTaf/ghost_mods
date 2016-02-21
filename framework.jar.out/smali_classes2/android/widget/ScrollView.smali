@@ -2461,14 +2461,12 @@
 .end method
 
 .method protected measureChild(Landroid/view/View;II)V
-    .locals 6
+    .locals 5
     .param p1, "child"    # Landroid/view/View;
     .param p2, "parentWidthMeasureSpec"    # I
     .param p3, "parentHeightMeasureSpec"    # I
 
     .prologue
-    const/4 v5, 0x0
-
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v2
@@ -2487,7 +2485,13 @@
     move-result v1
 
     .local v1, "childWidthMeasureSpec":I
-    invoke-static {v5, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {p3}, Landroid/view/View$MeasureSpec;->getSize(I)I
+
+    move-result v3
+
+    const/4 v4, 0x0
+
+    invoke-static {v3, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v0
 
@@ -2536,11 +2540,9 @@
     move-result v1
 
     .local v1, "childWidthMeasureSpec":I
-    iget v3, v2, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    invoke-static {p4}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
-    iget v4, v2, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
-
-    add-int/2addr v3, v4
+    move-result v3
 
     const/4 v4, 0x0
 

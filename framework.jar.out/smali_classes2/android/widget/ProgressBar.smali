@@ -144,7 +144,7 @@
     .param p4, "defStyleRes"    # I
 
     .prologue
-    const/16 v10, 0x16
+    const/16 v10, 0x10
 
     const/4 v4, 0x0
 
@@ -372,7 +372,7 @@
     :cond_5
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
-    const/16 v6, 0x13
+    const/16 v6, 0x11
 
     invoke-virtual {v0, v6, v9}, Landroid/content/res/TypedArray;->getInt(II)I
 
@@ -389,9 +389,7 @@
     iput-boolean v5, v4, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasProgressTintMode:Z
 
     :cond_6
-    const/16 v4, 0x10
-
-    invoke-virtual {v0, v4}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {v0, v10}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v4
 
@@ -410,9 +408,7 @@
     :cond_7
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
-    const/16 v6, 0x10
-
-    invoke-virtual {v0, v6}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+    invoke-virtual {v0, v10}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
 
     move-result-object v6
 
@@ -444,7 +440,7 @@
     :cond_9
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
-    const/16 v6, 0x11
+    const/16 v6, 0x13
 
     invoke-virtual {v0, v6, v9}, Landroid/content/res/TypedArray;->getInt(II)I
 
@@ -567,7 +563,9 @@
     iput-boolean v5, v4, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasSecondaryProgressTint:Z
 
     :cond_10
-    invoke-virtual {v0, v10}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    const/16 v4, 0x17
+
+    invoke-virtual {v0, v4}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v4
 
@@ -603,7 +601,9 @@
     iput-boolean v5, v4, Landroid/widget/ProgressBar$ProgressTintInfo;->mHasIndeterminateTintMode:Z
 
     :cond_12
-    invoke-virtual {v0, v10}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    const/16 v4, 0x16
+
+    invoke-virtual {v0, v4}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v4
 
@@ -622,7 +622,9 @@
     :cond_13
     iget-object v4, p0, Landroid/widget/ProgressBar;->mProgressTintInfo:Landroid/widget/ProgressBar$ProgressTintInfo;
 
-    invoke-virtual {v0, v10}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+    const/16 v6, 0x16
+
+    invoke-virtual {v0, v6}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
 
     move-result-object v6
 
@@ -3419,7 +3421,7 @@
     const/4 v0, 0x0
 
     :try_start_0
-    invoke-virtual {p0, p1, v0}, Landroid/widget/ProgressBar;->setProgress(IZ)V
+    invoke-virtual {p0, p1, v0}, Landroid/widget/ProgressBar;->setProgress(IZ)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -3435,46 +3437,44 @@
     throw v0
 .end method
 
-.method declared-synchronized setProgress(IZ)V
-    .locals 2
+.method declared-synchronized setProgress(IZ)Z
+    .locals 3
     .param p1, "progress"    # I
     .param p2, "fromUser"    # Z
     .annotation runtime Landroid/view/RemotableViewMethod;
     .end annotation
 
     .prologue
+    const/4 v0, 0x0
+
     monitor-enter p0
 
     :try_start_0
-    iget-boolean v0, p0, Landroid/widget/ProgressBar;->mIndeterminate:Z
+    iget-boolean v1, p0, Landroid/widget/ProgressBar;->mIndeterminate:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v0, :cond_1
+    if-eqz v1, :cond_1
 
     :cond_0
     :goto_0
     monitor-exit p0
 
-    return-void
+    return v0
 
     :cond_1
-    if-gez p1, :cond_2
+    const/4 v1, 0x0
 
-    const/4 p1, 0x0
-
-    :cond_2
     :try_start_1
-    iget v0, p0, Landroid/widget/ProgressBar;->mMax:I
+    iget v2, p0, Landroid/widget/ProgressBar;->mMax:I
 
-    if-le p1, v0, :cond_3
+    invoke-static {p1, v1, v2}, Landroid/util/MathUtils;->constrain(III)I
 
-    iget p1, p0, Landroid/widget/ProgressBar;->mMax:I
+    move-result p1
 
-    :cond_3
-    iget v0, p0, Landroid/widget/ProgressBar;->mProgress:I
+    iget v1, p0, Landroid/widget/ProgressBar;->mProgress:I
 
-    if-eq p1, v0, :cond_0
+    if-eq p1, v1, :cond_0
 
     iput p1, p0, Landroid/widget/ProgressBar;->mProgress:I
 
@@ -3485,6 +3485,8 @@
     invoke-direct {p0, v0, v1, p2}, Landroid/widget/ProgressBar;->refreshProgress(IIZ)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    const/4 v0, 0x1
 
     goto :goto_0
 

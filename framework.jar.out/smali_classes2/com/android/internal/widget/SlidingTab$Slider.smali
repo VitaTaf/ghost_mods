@@ -842,35 +842,47 @@
     goto/16 :goto_0
 .end method
 
-.method public measure()V
-    .locals 4
+.method public measure(II)V
+    .locals 6
+    .param p1, "widthMeasureSpec"    # I
+    .param p2, "heightMeasureSpec"    # I
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v5, 0x0
 
-    iget-object v0, p0, Lcom/android/internal/widget/SlidingTab$Slider;->tab:Landroid/widget/ImageView;
-
-    invoke-static {v3, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v1
 
-    invoke-static {v3, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    .local v1, "width":I
+    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
-    move-result v2
+    move-result v0
 
-    invoke-virtual {v0, v1, v2}, Landroid/widget/ImageView;->measure(II)V
+    .local v0, "height":I
+    iget-object v2, p0, Lcom/android/internal/widget/SlidingTab$Slider;->tab:Landroid/widget/ImageView;
 
-    iget-object v0, p0, Lcom/android/internal/widget/SlidingTab$Slider;->text:Landroid/widget/TextView;
+    invoke-static {v1, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
-    invoke-static {v3, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    move-result v3
 
-    move-result v1
+    invoke-static {v0, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
-    invoke-static {v3, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    move-result v4
 
-    move-result v2
+    invoke-virtual {v2, v3, v4}, Landroid/widget/ImageView;->measure(II)V
 
-    invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->measure(II)V
+    iget-object v2, p0, Lcom/android/internal/widget/SlidingTab$Slider;->text:Landroid/widget/TextView;
+
+    invoke-static {v1, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result v3
+
+    invoke-static {v0, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result v4
+
+    invoke-virtual {v2, v3, v4}, Landroid/widget/TextView;->measure(II)V
 
     return-void
 .end method

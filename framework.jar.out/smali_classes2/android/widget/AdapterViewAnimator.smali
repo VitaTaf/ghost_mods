@@ -649,30 +649,29 @@
 .end method
 
 .method createOrReuseLayoutParams(Landroid/view/View;)Landroid/view/ViewGroup$LayoutParams;
-    .locals 4
+    .locals 2
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     .local v0, "currentLp":Landroid/view/ViewGroup$LayoutParams;
-    instance-of v2, v0, Landroid/view/ViewGroup$LayoutParams;
+    if-eqz v0, :cond_0
 
-    if-eqz v2, :cond_0
-
-    move-object v1, v0
-
+    .end local v0    # "currentLp":Landroid/view/ViewGroup$LayoutParams;
     :goto_0
-    return-object v1
+    return-object v0
 
+    .restart local v0    # "currentLp":Landroid/view/ViewGroup$LayoutParams;
     :cond_0
-    new-instance v1, Landroid/view/ViewGroup$LayoutParams;
+    new-instance v0, Landroid/view/ViewGroup$LayoutParams;
 
-    invoke-direct {v1, v3, v3}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+    .end local v0    # "currentLp":Landroid/view/ViewGroup$LayoutParams;
+    invoke-direct {v0, v1, v1}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
     goto :goto_0
 .end method

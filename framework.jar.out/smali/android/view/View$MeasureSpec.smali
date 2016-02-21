@@ -42,16 +42,21 @@
     .param p1, "delta"    # I
 
     .prologue
-    const/4 v2, 0x0
-
     invoke-static {p0}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v0
 
     .local v0, "mode":I
+    invoke-static {p0}, Landroid/view/View$MeasureSpec;->getSize(I)I
+
+    move-result v1
+
+    .local v1, "size":I
     if-nez v0, :cond_0
 
-    invoke-static {v2, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    const/4 v2, 0x0
+
+    invoke-static {v1, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v2
 
@@ -59,13 +64,8 @@
     return v2
 
     :cond_0
-    invoke-static {p0}, Landroid/view/View$MeasureSpec;->getSize(I)I
+    add-int/2addr v1, p1
 
-    move-result v2
-
-    add-int v1, v2, p1
-
-    .local v1, "size":I
     if-gez v1, :cond_1
 
     const-string v2, "View"
