@@ -210,7 +210,7 @@
 
     new-instance v0, Landroid/widget/FastScroller$4;
 
-    const-string/jumbo v1, "top"
+    const-string v1, "top"
 
     invoke-direct {v0, v1}, Landroid/widget/FastScroller$4;-><init>(Ljava/lang/String;)V
 
@@ -218,7 +218,7 @@
 
     new-instance v0, Landroid/widget/FastScroller$5;
 
-    const-string/jumbo v1, "right"
+    const-string v1, "right"
 
     invoke-direct {v0, v1}, Landroid/widget/FastScroller$5;-><init>(Ljava/lang/String;)V
 
@@ -5266,11 +5266,11 @@
 
     .end local v3    # "index":I
     :cond_0
+    invoke-virtual {v4}, Landroid/content/res/TypedArray;->recycle()V
+
     invoke-direct {p0}, Landroid/widget/FastScroller;->updateAppearance()V
 
     return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0
