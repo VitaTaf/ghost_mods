@@ -246,7 +246,7 @@
 
     iget-object v2, p0, Landroid/widget/Spinner$DialogPopup;->this$0:Landroid/widget/Spinner;
 
-    invoke-virtual {v2}, Landroid/widget/Spinner;->getContext()Landroid/content/Context;
+    invoke-virtual {v2}, Landroid/widget/Spinner;->getPopupContext()Landroid/content/Context;
 
     move-result-object v2
 

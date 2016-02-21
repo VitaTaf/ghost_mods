@@ -2607,6 +2607,8 @@
 
 .field public static final Spinner_popupElevation:I = 0x6
 
+.field public static final Spinner_popupTheme:I = 0x7
+
 .field public static final Spinner_prompt:I = 0x3
 
 .field public static final Spinner_spinnerMode:I = 0x5
@@ -5795,7 +5797,7 @@
 
     sput-object v0, Landroid/R$styleable;->SpellChecker_Subtype:[I
 
-    const/16 v0, 0x9
+    const/16 v0, 0xa
 
     new-array v0, v0, [I
 
@@ -8014,6 +8016,7 @@
         0x1010262
         0x10102f1
         0x101048c
+        0x10104a9
         0x1160051
         0x1160052
     .end array-data

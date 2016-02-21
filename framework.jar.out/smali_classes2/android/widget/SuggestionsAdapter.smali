@@ -211,9 +211,10 @@
     goto :goto_0
 .end method
 
-.method private formatUrl(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+.method private formatUrl(Landroid/content/Context;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
     .locals 8
-    .param p1, "url"    # Ljava/lang/CharSequence;
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "url"    # Ljava/lang/CharSequence;
 
     .prologue
     const/4 v1, 0x0
@@ -229,9 +230,7 @@
     invoke-direct {v6}, Landroid/util/TypedValue;-><init>()V
 
     .local v6, "colorValue":Landroid/util/TypedValue;
-    iget-object v0, p0, Landroid/widget/SuggestionsAdapter;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+    invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v0
 
@@ -241,9 +240,7 @@
 
     invoke-virtual {v0, v3, v6, v4}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
-    iget-object v0, p0, Landroid/widget/SuggestionsAdapter;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -259,7 +256,7 @@
     :cond_0
     new-instance v7, Landroid/text/SpannableString;
 
-    invoke-direct {v7, p1}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
+    invoke-direct {v7, p2}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
     .local v7, "text":Landroid/text/SpannableString;
     new-instance v0, Landroid/text/style/TextAppearanceSpan;
@@ -272,7 +269,7 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/text/style/TextAppearanceSpan;-><init>(Ljava/lang/String;IILandroid/content/res/ColorStateList;Landroid/content/res/ColorStateList;)V
 
-    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+    invoke-interface {p2}, Ljava/lang/CharSequence;->length()I
 
     move-result v1
 
@@ -570,7 +567,7 @@
 
     iget v7, v2, Landroid/content/ContentResolver$OpenResourceIdResult;->id:I
 
-    iget-object v8, p0, Landroid/widget/SuggestionsAdapter;->mContext:Landroid/content/Context;
+    iget-object v8, p0, Landroid/widget/SuggestionsAdapter;->mProviderContext:Landroid/content/Context;
 
     invoke-virtual {v8}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
@@ -1248,7 +1245,7 @@
     .local v2, "text2":Ljava/lang/CharSequence;
     if-eqz v2, :cond_7
 
-    invoke-direct {p0, v2}, Landroid/widget/SuggestionsAdapter;->formatUrl(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    invoke-direct {p0, p2, v2}, Landroid/widget/SuggestionsAdapter;->formatUrl(Landroid/content/Context;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v2
 
@@ -1558,6 +1555,79 @@
     move-object v1, v3
 
     goto :goto_0
+.end method
+
+.method public getDropDownView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    .locals 7
+    .param p1, "position"    # I
+    .param p2, "convertView"    # Landroid/view/View;
+    .param p3, "parent"    # Landroid/view/ViewGroup;
+
+    .prologue
+    :try_start_0
+    invoke-super {p0, p1, p2, p3}, Landroid/widget/ResourceCursorAdapter;->getDropDownView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v3
+
+    :cond_0
+    :goto_0
+    return-object v3
+
+    :catch_0
+    move-exception v1
+
+    .local v1, "e":Ljava/lang/RuntimeException;
+    const-string v5, "SuggestionsAdapter"
+
+    const-string v6, "Search suggestions cursor threw exception."
+
+    invoke-static {v5, v6, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    iget-object v5, p0, Landroid/widget/SuggestionsAdapter;->mDropDownContext:Landroid/content/Context;
+
+    if-nez v5, :cond_1
+
+    iget-object v0, p0, Landroid/widget/SuggestionsAdapter;->mContext:Landroid/content/Context;
+
+    .local v0, "context":Landroid/content/Context;
+    :goto_1
+    iget-object v5, p0, Landroid/widget/SuggestionsAdapter;->mCursor:Landroid/database/Cursor;
+
+    invoke-virtual {p0, v0, v5, p3}, Landroid/widget/SuggestionsAdapter;->newDropDownView(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object v3
+
+    .local v3, "v":Landroid/view/View;
+    if-eqz v3, :cond_0
+
+    invoke-virtual {v3}, Landroid/view/View;->getTag()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/widget/SuggestionsAdapter$ChildViewCache;
+
+    .local v4, "views":Landroid/widget/SuggestionsAdapter$ChildViewCache;
+    iget-object v2, v4, Landroid/widget/SuggestionsAdapter$ChildViewCache;->mText1:Landroid/widget/TextView;
+
+    .local v2, "tv":Landroid/widget/TextView;
+    invoke-virtual {v1}, Ljava/lang/RuntimeException;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v2, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    goto :goto_0
+
+    .end local v0    # "context":Landroid/content/Context;
+    .end local v2    # "tv":Landroid/widget/TextView;
+    .end local v3    # "v":Landroid/view/View;
+    .end local v4    # "views":Landroid/widget/SuggestionsAdapter$ChildViewCache;
+    :cond_1
+    iget-object v0, p0, Landroid/widget/SuggestionsAdapter;->mDropDownContext:Landroid/content/Context;
+
+    goto :goto_1
 .end method
 
 .method public getQueryRefinement()I

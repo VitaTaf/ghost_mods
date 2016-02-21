@@ -9,6 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/widget/Spinner$ThemedSpinnerAdapter;,
         Landroid/widget/Spinner$DropdownPopup;,
         Landroid/widget/Spinner$DialogPopup;,
         Landroid/widget/Spinner$SpinnerPopup;,
@@ -40,6 +41,8 @@
 .field private mGravity:I
 
 .field private mPopup:Landroid/widget/Spinner$SpinnerPopup;
+
+.field private mPopupContext:Landroid/content/Context;
 
 .field private mTempAdapter:Landroid/widget/Spinner$DropDownAdapter;
 
@@ -145,10 +148,6 @@
     .param p5, "mode"    # I
 
     .prologue
-    const/4 v8, 0x0
-
-    const/4 v7, 0x0
-
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/widget/AbsSpinner;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
     new-instance v1, Landroid/graphics/Rect;
@@ -164,23 +163,45 @@
     move-result-object v6
 
     .local v6, "a":Landroid/content/res/TypedArray;
+    const/4 v1, 0x7
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v6, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result v8
+
+    .local v8, "popupThemeResId":I
+    if-eqz v8, :cond_2
+
+    new-instance v1, Landroid/view/ContextThemeWrapper;
+
+    invoke-direct {v1, p1, v8}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
+
+    iput-object v1, p0, Landroid/widget/Spinner;->mPopupContext:Landroid/content/Context;
+
+    :goto_0
     const/4 v1, -0x1
 
     if-ne p5, v1, :cond_0
 
     const/4 v1, 0x5
 
-    invoke-virtual {v6, v1, v7}, Landroid/content/res/TypedArray;->getInt(II)I
+    const/4 v2, 0x0
+
+    invoke-virtual {v6, v1, v2}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result p5
 
     :cond_0
     packed-switch p5, :pswitch_data_0
 
-    :goto_0
-    const/16 v1, 0x11
+    :goto_1
+    const/4 v1, 0x0
 
-    invoke-virtual {v6, v7, v1}, Landroid/content/res/TypedArray;->getInt(II)I
+    const/16 v2, 0x11
+
+    invoke-virtual {v6, v1, v2}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v1
 
@@ -196,9 +217,11 @@
 
     invoke-interface {v1, v2}, Landroid/widget/Spinner$SpinnerPopup;->setPromptText(Ljava/lang/CharSequence;)V
 
-    const/16 v1, 0x8
+    const/16 v1, 0x9
 
-    invoke-virtual {v6, v1, v7}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    const/4 v2, 0x0
+
+    invoke-virtual {v6, v1, v2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v1
 
@@ -216,26 +239,35 @@
 
     invoke-interface {v1, v2}, Landroid/widget/Spinner$SpinnerPopup;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    iput-object v8, p0, Landroid/widget/Spinner;->mTempAdapter:Landroid/widget/Spinner$DropDownAdapter;
+    const/4 v1, 0x0
+
+    iput-object v1, p0, Landroid/widget/Spinner;->mTempAdapter:Landroid/widget/Spinner$DropDownAdapter;
 
     :cond_1
     return-void
 
+    :cond_2
+    iput-object p1, p0, Landroid/widget/Spinner;->mPopupContext:Landroid/content/Context;
+
+    goto :goto_0
+
     :pswitch_0
     new-instance v1, Landroid/widget/Spinner$DialogPopup;
 
-    invoke-direct {v1, p0, v8}, Landroid/widget/Spinner$DialogPopup;-><init>(Landroid/widget/Spinner;Landroid/widget/Spinner$1;)V
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, v2}, Landroid/widget/Spinner$DialogPopup;-><init>(Landroid/widget/Spinner;Landroid/widget/Spinner$1;)V
 
     iput-object v1, p0, Landroid/widget/Spinner;->mPopup:Landroid/widget/Spinner$SpinnerPopup;
 
-    goto :goto_0
+    goto :goto_1
 
     :pswitch_1
     new-instance v0, Landroid/widget/Spinner$DropdownPopup;
 
-    move-object v1, p0
+    iget-object v2, p0, Landroid/widget/Spinner;->mPopupContext:Landroid/content/Context;
 
-    move-object v2, p1
+    move-object v1, p0
 
     move-object v3, p2
 
@@ -246,11 +278,20 @@
     invoke-direct/range {v0 .. v5}, Landroid/widget/Spinner$DropdownPopup;-><init>(Landroid/widget/Spinner;Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
     .local v0, "popup":Landroid/widget/Spinner$DropdownPopup;
+    iget-object v1, p0, Landroid/widget/Spinner;->mPopupContext:Landroid/content/Context;
+
+    sget-object v2, Lcom/android/internal/R$styleable;->Spinner:[I
+
+    invoke-virtual {v1, p2, v2, p3, p4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+
+    move-result-object v7
+
+    .local v7, "pa":Landroid/content/res/TypedArray;
     const/4 v1, 0x4
 
     const/4 v2, -0x2
 
-    invoke-virtual {v6, v1, v2}, Landroid/content/res/TypedArray;->getLayoutDimension(II)I
+    invoke-virtual {v7, v1, v2}, Landroid/content/res/TypedArray;->getLayoutDimension(II)I
 
     move-result v1
 
@@ -258,11 +299,13 @@
 
     const/4 v1, 0x2
 
-    invoke-virtual {v6, v1}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v7, v1}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/widget/Spinner$DropdownPopup;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    invoke-virtual {v7}, Landroid/content/res/TypedArray;->recycle()V
 
     iput-object v0, p0, Landroid/widget/Spinner;->mPopup:Landroid/widget/Spinner$SpinnerPopup;
 
@@ -272,7 +315,9 @@
 
     iput-object v1, p0, Landroid/widget/Spinner;->mForwardingListener:Landroid/widget/ListPopupWindow$ForwardingListener;
 
-    goto :goto_0
+    goto :goto_1
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -628,6 +673,15 @@
     invoke-interface {v0}, Landroid/widget/Spinner$SpinnerPopup;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getPopupContext()Landroid/content/Context;
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Landroid/widget/Spinner;->mPopupContext:Landroid/content/Context;
 
     return-object v0
 .end method
@@ -1287,7 +1341,7 @@
 .end method
 
 .method public setAdapter(Landroid/widget/SpinnerAdapter;)V
-    .locals 3
+    .locals 4
     .param p1, "adapter"    # Landroid/widget/SpinnerAdapter;
 
     .prologue
@@ -1337,7 +1391,13 @@
 
     new-instance v2, Landroid/widget/Spinner$DropDownAdapter;
 
-    invoke-direct {v2, p1}, Landroid/widget/Spinner$DropDownAdapter;-><init>(Landroid/widget/SpinnerAdapter;)V
+    iget-object v3, p0, Landroid/widget/Spinner;->mPopupContext:Landroid/content/Context;
+
+    invoke-virtual {v3}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object v3
+
+    invoke-direct {v2, p1, v3}, Landroid/widget/Spinner$DropDownAdapter;-><init>(Landroid/widget/SpinnerAdapter;Landroid/content/res/Resources$Theme;)V
 
     invoke-interface {v1, v2}, Landroid/widget/Spinner$SpinnerPopup;->setAdapter(Landroid/widget/ListAdapter;)V
 
@@ -1347,7 +1407,13 @@
     :cond_1
     new-instance v1, Landroid/widget/Spinner$DropDownAdapter;
 
-    invoke-direct {v1, p1}, Landroid/widget/Spinner$DropDownAdapter;-><init>(Landroid/widget/SpinnerAdapter;)V
+    iget-object v2, p0, Landroid/widget/Spinner;->mPopupContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object v2
+
+    invoke-direct {v1, p1, v2}, Landroid/widget/Spinner$DropDownAdapter;-><init>(Landroid/widget/SpinnerAdapter;Landroid/content/res/Resources$Theme;)V
 
     iput-object v1, p0, Landroid/widget/Spinner;->mTempAdapter:Landroid/widget/Spinner$DropDownAdapter;
 
@@ -1515,9 +1581,7 @@
     :cond_0
     iget-object v0, p0, Landroid/widget/Spinner;->mPopup:Landroid/widget/Spinner$SpinnerPopup;
 
-    check-cast v0, Landroid/widget/Spinner$DropdownPopup;
-
-    invoke-virtual {v0, p1}, Landroid/widget/Spinner$DropdownPopup;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-interface {v0, p1}, Landroid/widget/Spinner$SpinnerPopup;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_0
 .end method
@@ -1527,7 +1591,7 @@
     .param p1, "resId"    # I
 
     .prologue
-    invoke-virtual {p0}, Landroid/widget/Spinner;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/widget/Spinner;->getPopupContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -1536,6 +1600,16 @@
     move-result-object v0
 
     invoke-virtual {p0, v0}, Landroid/widget/Spinner;->setPopupBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    return-void
+.end method
+
+.method public setPopupContext(Landroid/content/Context;)V
+    .locals 0
+    .param p1, "popupContext"    # Landroid/content/Context;
+
+    .prologue
+    iput-object p1, p0, Landroid/widget/Spinner;->mPopupContext:Landroid/content/Context;
 
     return-void
 .end method

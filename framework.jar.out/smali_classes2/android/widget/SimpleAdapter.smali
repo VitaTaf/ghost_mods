@@ -4,6 +4,7 @@
 
 # interfaces
 .implements Landroid/widget/Filterable;
+.implements Landroid/widget/Spinner$ThemedSpinnerAdapter;
 
 
 # annotations
@@ -29,6 +30,8 @@
         }
     .end annotation
 .end field
+
+.field private mDropDownInflater:Landroid/view/LayoutInflater;
 
 .field private mDropDownResource:I
 
@@ -435,33 +438,32 @@
     throw v10
 .end method
 
-.method private createViewFromResource(ILandroid/view/View;Landroid/view/ViewGroup;I)Landroid/view/View;
-    .locals 3
-    .param p1, "position"    # I
-    .param p2, "convertView"    # Landroid/view/View;
-    .param p3, "parent"    # Landroid/view/ViewGroup;
-    .param p4, "resource"    # I
+.method private createViewFromResource(Landroid/view/LayoutInflater;ILandroid/view/View;Landroid/view/ViewGroup;I)Landroid/view/View;
+    .locals 2
+    .param p1, "inflater"    # Landroid/view/LayoutInflater;
+    .param p2, "position"    # I
+    .param p3, "convertView"    # Landroid/view/View;
+    .param p4, "parent"    # Landroid/view/ViewGroup;
+    .param p5, "resource"    # I
 
     .prologue
-    if-nez p2, :cond_0
+    if-nez p3, :cond_0
 
-    iget-object v1, p0, Landroid/widget/SimpleAdapter;->mInflater:Landroid/view/LayoutInflater;
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, p4, p3, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    invoke-virtual {p1, p5, p4, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
     .local v0, "v":Landroid/view/View;
     :goto_0
-    invoke-direct {p0, p1, v0}, Landroid/widget/SimpleAdapter;->bindView(ILandroid/view/View;)V
+    invoke-direct {p0, p2, v0}, Landroid/widget/SimpleAdapter;->bindView(ILandroid/view/View;)V
 
     return-object v0
 
     .end local v0    # "v":Landroid/view/View;
     :cond_0
-    move-object v0, p2
+    move-object v0, p3
 
     .restart local v0    # "v":Landroid/view/View;
     goto :goto_0
@@ -483,19 +485,56 @@
 .end method
 
 .method public getDropDownView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 1
+    .locals 6
     .param p1, "position"    # I
     .param p2, "convertView"    # Landroid/view/View;
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    iget v0, p0, Landroid/widget/SimpleAdapter;->mDropDownResource:I
+    iget-object v1, p0, Landroid/widget/SimpleAdapter;->mDropDownInflater:Landroid/view/LayoutInflater;
 
-    invoke-direct {p0, p1, p2, p3, v0}, Landroid/widget/SimpleAdapter;->createViewFromResource(ILandroid/view/View;Landroid/view/ViewGroup;I)Landroid/view/View;
+    iget v5, p0, Landroid/widget/SimpleAdapter;->mDropDownResource:I
+
+    move-object v0, p0
+
+    move v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    invoke-direct/range {v0 .. v5}, Landroid/widget/SimpleAdapter;->createViewFromResource(Landroid/view/LayoutInflater;ILandroid/view/View;Landroid/view/ViewGroup;I)Landroid/view/View;
 
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public getDropDownViewTheme()Landroid/content/res/Resources$Theme;
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Landroid/widget/SimpleAdapter;->mDropDownInflater:Landroid/view/LayoutInflater;
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    iget-object v0, p0, Landroid/widget/SimpleAdapter;->mDropDownInflater:Landroid/view/LayoutInflater;
+
+    invoke-virtual {v0}, Landroid/view/LayoutInflater;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object v0
+
+    goto :goto_0
 .end method
 
 .method public getFilter()Landroid/widget/Filter;
@@ -545,15 +584,25 @@
 .end method
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 1
+    .locals 6
     .param p1, "position"    # I
     .param p2, "convertView"    # Landroid/view/View;
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    iget v0, p0, Landroid/widget/SimpleAdapter;->mResource:I
+    iget-object v1, p0, Landroid/widget/SimpleAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    invoke-direct {p0, p1, p2, p3, v0}, Landroid/widget/SimpleAdapter;->createViewFromResource(ILandroid/view/View;Landroid/view/ViewGroup;I)Landroid/view/View;
+    iget v5, p0, Landroid/widget/SimpleAdapter;->mResource:I
+
+    move-object v0, p0
+
+    move v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    invoke-direct/range {v0 .. v5}, Landroid/widget/SimpleAdapter;->createViewFromResource(Landroid/view/LayoutInflater;ILandroid/view/View;Landroid/view/ViewGroup;I)Landroid/view/View;
 
     move-result-object v0
 
@@ -577,6 +626,60 @@
     iput p1, p0, Landroid/widget/SimpleAdapter;->mDropDownResource:I
 
     return-void
+.end method
+
+.method public setDropDownViewTheme(Landroid/content/res/Resources$Theme;)V
+    .locals 2
+    .param p1, "theme"    # Landroid/content/res/Resources$Theme;
+
+    .prologue
+    if-nez p1, :cond_0
+
+    const/4 v1, 0x0
+
+    iput-object v1, p0, Landroid/widget/SimpleAdapter;->mDropDownInflater:Landroid/view/LayoutInflater;
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v1, p0, Landroid/widget/SimpleAdapter;->mInflater:Landroid/view/LayoutInflater;
+
+    invoke-virtual {v1}, Landroid/view/LayoutInflater;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object v1
+
+    if-ne p1, v1, :cond_1
+
+    iget-object v1, p0, Landroid/widget/SimpleAdapter;->mInflater:Landroid/view/LayoutInflater;
+
+    iput-object v1, p0, Landroid/widget/SimpleAdapter;->mDropDownInflater:Landroid/view/LayoutInflater;
+
+    goto :goto_0
+
+    :cond_1
+    new-instance v0, Landroid/view/ContextThemeWrapper;
+
+    iget-object v1, p0, Landroid/widget/SimpleAdapter;->mInflater:Landroid/view/LayoutInflater;
+
+    invoke-virtual {v1}, Landroid/view/LayoutInflater;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1, p1}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;Landroid/content/res/Resources$Theme;)V
+
+    .local v0, "context":Landroid/content/Context;
+    invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+
+    move-result-object v1
+
+    iput-object v1, p0, Landroid/widget/SimpleAdapter;->mDropDownInflater:Landroid/view/LayoutInflater;
+
+    goto :goto_0
 .end method
 
 .method public setViewBinder(Landroid/widget/SimpleAdapter$ViewBinder;)V

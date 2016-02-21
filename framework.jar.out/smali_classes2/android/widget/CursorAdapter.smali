@@ -5,6 +5,7 @@
 # interfaces
 .implements Landroid/widget/Filterable;
 .implements Landroid/widget/CursorFilter$CursorFilterClient;
+.implements Landroid/widget/Spinner$ThemedSpinnerAdapter;
 
 
 # annotations
@@ -40,6 +41,8 @@
 .field protected mDataSetObserver:Landroid/database/DataSetObserver;
 
 .field protected mDataValid:Z
+
+.field protected mDropDownContext:Landroid/content/Context;
 
 .field protected mFilterQueryProvider:Landroid/widget/FilterQueryProvider;
 
@@ -188,47 +191,82 @@
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    iget-boolean v1, p0, Landroid/widget/CursorAdapter;->mDataValid:Z
+    iget-boolean v2, p0, Landroid/widget/CursorAdapter;->mDataValid:Z
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_2
 
-    iget-object v1, p0, Landroid/widget/CursorAdapter;->mCursor:Landroid/database/Cursor;
+    iget-object v2, p0, Landroid/widget/CursorAdapter;->mDropDownContext:Landroid/content/Context;
 
-    invoke-interface {v1, p1}, Landroid/database/Cursor;->moveToPosition(I)Z
+    if-nez v2, :cond_0
 
-    if-nez p2, :cond_0
+    iget-object v0, p0, Landroid/widget/CursorAdapter;->mContext:Landroid/content/Context;
 
-    iget-object v1, p0, Landroid/widget/CursorAdapter;->mContext:Landroid/content/Context;
-
-    iget-object v2, p0, Landroid/widget/CursorAdapter;->mCursor:Landroid/database/Cursor;
-
-    invoke-virtual {p0, v1, v2, p3}, Landroid/widget/CursorAdapter;->newDropDownView(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;
-
-    move-result-object v0
-
-    .local v0, "v":Landroid/view/View;
+    .local v0, "context":Landroid/content/Context;
     :goto_0
-    iget-object v1, p0, Landroid/widget/CursorAdapter;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Landroid/widget/CursorAdapter;->mCursor:Landroid/database/Cursor;
+
+    invoke-interface {v2, p1}, Landroid/database/Cursor;->moveToPosition(I)Z
+
+    if-nez p2, :cond_1
 
     iget-object v2, p0, Landroid/widget/CursorAdapter;->mCursor:Landroid/database/Cursor;
 
-    invoke-virtual {p0, v0, v1, v2}, Landroid/widget/CursorAdapter;->bindView(Landroid/view/View;Landroid/content/Context;Landroid/database/Cursor;)V
+    invoke-virtual {p0, v0, v2, p3}, Landroid/widget/CursorAdapter;->newDropDownView(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;
 
-    .end local v0    # "v":Landroid/view/View;
+    move-result-object v1
+
+    .local v1, "v":Landroid/view/View;
     :goto_1
+    iget-object v2, p0, Landroid/widget/CursorAdapter;->mCursor:Landroid/database/Cursor;
+
+    invoke-virtual {p0, v1, v0, v2}, Landroid/widget/CursorAdapter;->bindView(Landroid/view/View;Landroid/content/Context;Landroid/database/Cursor;)V
+
+    .end local v0    # "context":Landroid/content/Context;
+    .end local v1    # "v":Landroid/view/View;
+    :goto_2
+    return-object v1
+
+    :cond_0
+    iget-object v0, p0, Landroid/widget/CursorAdapter;->mDropDownContext:Landroid/content/Context;
+
+    goto :goto_0
+
+    .restart local v0    # "context":Landroid/content/Context;
+    :cond_1
+    move-object v1, p2
+
+    .restart local v1    # "v":Landroid/view/View;
+    goto :goto_1
+
+    .end local v0    # "context":Landroid/content/Context;
+    .end local v1    # "v":Landroid/view/View;
+    :cond_2
+    const/4 v1, 0x0
+
+    goto :goto_2
+.end method
+
+.method public getDropDownViewTheme()Landroid/content/res/Resources$Theme;
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Landroid/widget/CursorAdapter;->mDropDownContext:Landroid/content/Context;
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
     return-object v0
 
     :cond_0
-    move-object v0, p2
+    iget-object v0, p0, Landroid/widget/CursorAdapter;->mDropDownContext:Landroid/content/Context;
 
-    .restart local v0    # "v":Landroid/view/View;
+    invoke-virtual {v0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object v0
+
     goto :goto_0
-
-    .end local v0    # "v":Landroid/view/View;
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_1
 .end method
 
 .method public getFilter()Landroid/widget/Filter;
@@ -615,6 +653,47 @@
 
     :cond_0
     iget-object v0, p0, Landroid/widget/CursorAdapter;->mCursor:Landroid/database/Cursor;
+
+    goto :goto_0
+.end method
+
+.method public setDropDownViewTheme(Landroid/content/res/Resources$Theme;)V
+    .locals 2
+    .param p1, "theme"    # Landroid/content/res/Resources$Theme;
+
+    .prologue
+    if-nez p1, :cond_0
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Landroid/widget/CursorAdapter;->mDropDownContext:Landroid/content/Context;
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Landroid/widget/CursorAdapter;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object v0
+
+    if-ne p1, v0, :cond_1
+
+    iget-object v0, p0, Landroid/widget/CursorAdapter;->mContext:Landroid/content/Context;
+
+    iput-object v0, p0, Landroid/widget/CursorAdapter;->mDropDownContext:Landroid/content/Context;
+
+    goto :goto_0
+
+    :cond_1
+    new-instance v0, Landroid/view/ContextThemeWrapper;
+
+    iget-object v1, p0, Landroid/widget/CursorAdapter;->mContext:Landroid/content/Context;
+
+    invoke-direct {v0, v1, p1}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;Landroid/content/res/Resources$Theme;)V
+
+    iput-object v0, p0, Landroid/widget/CursorAdapter;->mDropDownContext:Landroid/content/Context;
 
     goto :goto_0
 .end method
