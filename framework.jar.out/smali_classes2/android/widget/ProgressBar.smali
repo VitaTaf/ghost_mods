@@ -1021,11 +1021,7 @@
 
     .local v4, "scale":F
     :goto_0
-    iget-object v5, p0, Landroid/widget/ProgressBar;->mCurrentDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v5}, Landroid/graphics/drawable/Drawable;->getCurrent()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v1
+    iget-object v1, p0, Landroid/widget/ProgressBar;->mCurrentDrawable:Landroid/graphics/drawable/Drawable;
 
     .local v1, "d":Landroid/graphics/drawable/Drawable;
     if-eqz v1, :cond_4
