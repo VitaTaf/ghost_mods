@@ -6990,7 +6990,6 @@
     <public type="drawable" name="ic_ab_back_holo_dark_am" id="0x0108030b" />
     <public type="drawable" name="ic_ab_back_holo_light_am" id="0x0108030d" />
     <public type="drawable" name="ic_aggregated" id="0x01080311" />
-    <public type="drawable" name="switch_track_mtrl_alpha" id="0x01080315" />
     <public type="drawable" name="ic_audio_notification_am_alpha" id="0x01080319" />
     <public type="drawable" name="ic_audio_notification_mute_am_alpha" id="0x0108031b" />
     <public type="drawable" name="ic_btn_round_more_disabled" id="0x01080324" />

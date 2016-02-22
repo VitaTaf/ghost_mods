@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector
+<layer-list
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_enabled="false">
-        <nine-patch android:src="@drawable/switch_track_mtrl_alpha" android:tint="?colorForeground" android:alpha="0.1" />
+    <item android:gravity="fill_horizontal|center" android:start="4.0dip" android:end="4.0dip">
+        <shape android:tint="@color/switch_track_material" android:shape="rectangle">
+            <corners android:radius="7.0dip" />
+            <solid android:color="@color/white_disabled_material" />
+            <size android:height="14.0dip" />
+        </shape>
     </item>
-    <item android:state_checked="true">
-        <nine-patch android:src="@drawable/switch_track_mtrl_alpha" android:tint="?colorControlActivated" android:alpha="0.3" />
-    </item>
-    <item>
-        <nine-patch android:src="@drawable/switch_track_mtrl_alpha" android:tint="?colorForeground" android:alpha="0.3" />
-    </item>
-</selector>
+</layer-list>
