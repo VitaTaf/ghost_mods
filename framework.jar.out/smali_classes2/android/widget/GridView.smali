@@ -3505,6 +3505,26 @@
 
     iput v0, v1, Landroid/widget/AbsListView$LayoutParams;->viewType:I
 
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/widget/GridView;->mAdapter:Landroid/widget/ListAdapter;
+
+    move-object/from16 v23, v0
+
+    move-object/from16 v0, v23
+
+    move/from16 v1, p2
+
+    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
+
+    move-result v23
+
+    move/from16 v0, v23
+
+    move-object/from16 v1, v19
+
+    iput-boolean v0, v1, Landroid/widget/AbsListView$LayoutParams;->isEnabled:Z
+
     if-eqz p7, :cond_c
 
     move-object/from16 v0, v19
@@ -6703,6 +6723,24 @@
     move-object/from16 v1, v16
 
     iput v0, v1, Landroid/widget/AbsListView$LayoutParams;->viewType:I
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/widget/GridView;->mAdapter:Landroid/widget/ListAdapter;
+
+    move-object/from16 v19, v0
+
+    const/16 v20, 0x0
+
+    invoke-interface/range {v19 .. v20}, Landroid/widget/ListAdapter;->isEnabled(I)Z
+
+    move-result v19
+
+    move/from16 v0, v19
+
+    move-object/from16 v1, v16
+
+    iput-boolean v0, v1, Landroid/widget/AbsListView$LayoutParams;->isEnabled:Z
 
     const/16 v19, 0x1
 

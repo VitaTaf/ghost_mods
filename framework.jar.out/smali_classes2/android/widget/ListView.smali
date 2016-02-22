@@ -3954,6 +3954,14 @@
 
     iput v4, v3, Landroid/widget/AbsListView$LayoutParams;->viewType:I
 
+    iget-object v4, p0, Landroid/widget/ListView;->mAdapter:Landroid/widget/ListAdapter;
+
+    invoke-interface {v4, p2}, Landroid/widget/ListAdapter;->isEnabled(I)Z
+
+    move-result v4
+
+    iput-boolean v4, v3, Landroid/widget/AbsListView$LayoutParams;->isEnabled:Z
+
     const/4 v4, 0x1
 
     iput-boolean v4, v3, Landroid/widget/AbsListView$LayoutParams;->forceAdd:Z
@@ -5029,6 +5037,24 @@
     move/from16 v0, v19
 
     iput v0, v15, Landroid/widget/AbsListView$LayoutParams;->viewType:I
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/widget/ListView;->mAdapter:Landroid/widget/ListAdapter;
+
+    move-object/from16 v19, v0
+
+    move-object/from16 v0, v19
+
+    move/from16 v1, p2
+
+    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
+
+    move-result v19
+
+    move/from16 v0, v19
+
+    iput-boolean v0, v15, Landroid/widget/AbsListView$LayoutParams;->isEnabled:Z
 
     if-eqz p7, :cond_2
 
@@ -9006,6 +9032,18 @@
     invoke-direct {v0, v1}, Landroid/widget/ListView;->isDirectChildHeaderOrFooter(Landroid/view/View;)Z
 
     move-result v4
+
+    if-nez v4, :cond_d
+
+    invoke-virtual/range {v24 .. v24}, Landroid/view/View;->hasTransientState()Z
+
+    move-result v4
+
+    if-nez v4, :cond_d
+
+    move-object/from16 v0, p0
+
+    iget-boolean v4, v0, Landroid/widget/ListView;->mAdapterHasStableIds:Z
 
     if-eqz v4, :cond_e
 

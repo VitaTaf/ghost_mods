@@ -480,13 +480,10 @@
     move-result-object v6
 
     :cond_0
-    if-eqz p2, :cond_1
-
     const/4 v8, 0x0
 
     invoke-virtual {p0, p1, v8, v6}, Landroid/widget/Spinner;->addViewInLayout(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)Z
 
-    :cond_1
     invoke-virtual {p0}, Landroid/widget/Spinner;->hasFocus()Z
 
     move-result v8
@@ -495,7 +492,7 @@
 
     iget-boolean v8, p0, Landroid/widget/Spinner;->mDisableChildrenWhenDisabled:Z
 
-    if-eqz v8, :cond_2
+    if-eqz v8, :cond_1
 
     invoke-virtual {p0}, Landroid/widget/Spinner;->isEnabled()Z
 
@@ -503,7 +500,7 @@
 
     invoke-virtual {p1, v8}, Landroid/view/View;->setEnabled(Z)V
 
-    :cond_2
+    :cond_1
     iget v8, p0, Landroid/widget/Spinner;->mHeightMeasureSpec:I
 
     iget-object v9, p0, Landroid/widget/Spinner;->mSpinnerPadding:Landroid/graphics/Rect;
@@ -595,6 +592,11 @@
     .local v3, "childRight":I
     invoke-virtual {p1, v2, v4, v3, v0}, Landroid/view/View;->layout(IIII)V
 
+    if-nez p2, :cond_2
+
+    invoke-virtual {p0, p1}, Landroid/widget/Spinner;->removeViewInLayout(Landroid/view/View;)V
+
+    :cond_2
     return-void
 .end method
 

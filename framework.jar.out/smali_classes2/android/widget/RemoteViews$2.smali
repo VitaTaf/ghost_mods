@@ -37,6 +37,19 @@
 
 
 # virtual methods
+.method public getPackageName()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Landroid/widget/RemoteViews$2;->val$contextForResources:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public getResources()Landroid/content/res/Resources;
     .locals 1
 

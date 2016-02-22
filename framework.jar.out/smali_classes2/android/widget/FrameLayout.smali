@@ -760,448 +760,482 @@
 .end method
 
 .method protected onMeasure(II)V
-    .locals 17
+    .locals 20
     .param p1, "widthMeasureSpec"    # I
     .param p2, "heightMeasureSpec"    # I
 
     .prologue
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getChildCount()I
 
-    move-result v10
+    move-result v11
 
-    .local v10, "count":I
+    .local v11, "count":I
     invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
-    move-result v1
+    move-result v2
 
-    const/high16 v3, 0x40000000    # 2.0f
+    const/high16 v4, 0x40000000    # 2.0f
 
-    if-ne v1, v3, :cond_0
+    if-ne v2, v4, :cond_0
 
     invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
-    move-result v1
+    move-result v2
 
-    const/high16 v3, 0x40000000    # 2.0f
+    const/high16 v4, 0x40000000    # 2.0f
 
-    if-eq v1, v3, :cond_4
+    if-eq v2, v4, :cond_4
 
     :cond_0
-    const/16 v16, 0x1
+    const/16 v18, 0x1
 
-    .local v16, "measureMatchParentChildren":Z
+    .local v18, "measureMatchParentChildren":Z
     :goto_0
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Landroid/widget/FrameLayout;->mMatchParentChildren:Ljava/util/ArrayList;
+    iget-object v2, v0, Landroid/widget/FrameLayout;->mMatchParentChildren:Ljava/util/ArrayList;
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
+    invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
+    const/16 v16, 0x0
+
+    .local v16, "maxHeight":I
+    const/16 v17, 0x0
+
+    .local v17, "maxWidth":I
+    const/4 v9, 0x0
+
+    .local v9, "childState":I
     const/4 v14, 0x0
 
-    .local v14, "maxHeight":I
-    const/4 v15, 0x0
-
-    .local v15, "maxWidth":I
-    const/4 v8, 0x0
-
-    .local v8, "childState":I
-    const/4 v12, 0x0
-
-    .local v12, "i":I
+    .local v14, "i":I
     :goto_1
-    if-ge v12, v10, :cond_5
+    if-ge v14, v11, :cond_5
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v12}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v14}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v2
+    move-result-object v3
 
-    .local v2, "child":Landroid/view/View;
+    .local v3, "child":Landroid/view/View;
     move-object/from16 v0, p0
 
-    iget-boolean v1, v0, Landroid/widget/FrameLayout;->mMeasureAllChildren:Z
+    iget-boolean v2, v0, Landroid/widget/FrameLayout;->mMeasureAllChildren:Z
 
-    if-nez v1, :cond_1
+    if-nez v2, :cond_1
 
-    invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
+    invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
 
-    move-result v1
+    move-result v2
 
-    const/16 v3, 0x8
+    const/16 v4, 0x8
 
-    if-eq v1, v3, :cond_3
+    if-eq v2, v4, :cond_3
 
     :cond_1
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
-    move-object/from16 v1, p0
+    move-object/from16 v2, p0
 
-    move/from16 v3, p1
+    move/from16 v4, p1
 
-    move/from16 v5, p2
+    move/from16 v6, p2
 
-    invoke-virtual/range {v1 .. v6}, Landroid/widget/FrameLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
+    invoke-virtual/range {v2 .. v7}, Landroid/widget/FrameLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
 
-    invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v13
+    move-result-object v15
 
-    check-cast v13, Landroid/widget/FrameLayout$LayoutParams;
+    check-cast v15, Landroid/widget/FrameLayout$LayoutParams;
 
-    .local v13, "lp":Landroid/widget/FrameLayout$LayoutParams;
-    invoke-virtual {v2}, Landroid/view/View;->getMeasuredWidth()I
+    .local v15, "lp":Landroid/widget/FrameLayout$LayoutParams;
+    invoke-virtual {v3}, Landroid/view/View;->getMeasuredWidth()I
 
-    move-result v1
+    move-result v2
 
-    iget v3, v13, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
+    iget v4, v15, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    add-int/2addr v1, v3
+    add-int/2addr v2, v4
 
-    iget v3, v13, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
+    iget v4, v15, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    add-int/2addr v1, v3
+    add-int/2addr v2, v4
 
-    invoke-static {v15, v1}, Ljava/lang/Math;->max(II)I
+    move/from16 v0, v17
 
-    move-result v15
+    invoke-static {v0, v2}, Ljava/lang/Math;->max(II)I
 
-    invoke-virtual {v2}, Landroid/view/View;->getMeasuredHeight()I
+    move-result v17
 
-    move-result v1
+    invoke-virtual {v3}, Landroid/view/View;->getMeasuredHeight()I
 
-    iget v3, v13, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
+    move-result v2
 
-    add-int/2addr v1, v3
+    iget v4, v15, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    iget v3, v13, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
+    add-int/2addr v2, v4
 
-    add-int/2addr v1, v3
+    iget v4, v15, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    invoke-static {v14, v1}, Ljava/lang/Math;->max(II)I
+    add-int/2addr v2, v4
 
-    move-result v14
+    move/from16 v0, v16
 
-    invoke-virtual {v2}, Landroid/view/View;->getMeasuredState()I
+    invoke-static {v0, v2}, Ljava/lang/Math;->max(II)I
 
-    move-result v1
+    move-result v16
 
-    invoke-static {v8, v1}, Landroid/widget/FrameLayout;->combineMeasuredStates(II)I
+    invoke-virtual {v3}, Landroid/view/View;->getMeasuredState()I
 
-    move-result v8
+    move-result v2
 
-    if-eqz v16, :cond_3
+    invoke-static {v9, v2}, Landroid/widget/FrameLayout;->combineMeasuredStates(II)I
 
-    iget v1, v13, Landroid/widget/FrameLayout$LayoutParams;->width:I
+    move-result v9
 
-    const/4 v3, -0x1
+    if-eqz v18, :cond_3
 
-    if-eq v1, v3, :cond_2
+    iget v2, v15, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    iget v1, v13, Landroid/widget/FrameLayout$LayoutParams;->height:I
+    const/4 v4, -0x1
 
-    const/4 v3, -0x1
+    if-eq v2, v4, :cond_2
 
-    if-ne v1, v3, :cond_3
+    iget v2, v15, Landroid/widget/FrameLayout$LayoutParams;->height:I
+
+    const/4 v4, -0x1
+
+    if-ne v2, v4, :cond_3
 
     :cond_2
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Landroid/widget/FrameLayout;->mMatchParentChildren:Ljava/util/ArrayList;
+    iget-object v2, v0, Landroid/widget/FrameLayout;->mMatchParentChildren:Ljava/util/ArrayList;
 
-    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .end local v13    # "lp":Landroid/widget/FrameLayout$LayoutParams;
+    .end local v15    # "lp":Landroid/widget/FrameLayout$LayoutParams;
     :cond_3
-    add-int/lit8 v12, v12, 0x1
+    add-int/lit8 v14, v14, 0x1
 
     goto :goto_1
 
-    .end local v2    # "child":Landroid/view/View;
-    .end local v8    # "childState":I
-    .end local v12    # "i":I
-    .end local v14    # "maxHeight":I
-    .end local v15    # "maxWidth":I
-    .end local v16    # "measureMatchParentChildren":Z
+    .end local v3    # "child":Landroid/view/View;
+    .end local v9    # "childState":I
+    .end local v14    # "i":I
+    .end local v16    # "maxHeight":I
+    .end local v17    # "maxWidth":I
+    .end local v18    # "measureMatchParentChildren":Z
     :cond_4
-    const/16 v16, 0x0
+    const/16 v18, 0x0
 
     goto :goto_0
 
-    .restart local v8    # "childState":I
-    .restart local v12    # "i":I
-    .restart local v14    # "maxHeight":I
-    .restart local v15    # "maxWidth":I
-    .restart local v16    # "measureMatchParentChildren":Z
+    .restart local v9    # "childState":I
+    .restart local v14    # "i":I
+    .restart local v16    # "maxHeight":I
+    .restart local v17    # "maxWidth":I
+    .restart local v18    # "measureMatchParentChildren":Z
     :cond_5
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getPaddingLeftWithForeground()I
 
-    move-result v1
+    move-result v2
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getPaddingRightWithForeground()I
 
-    move-result v3
+    move-result v4
 
-    add-int/2addr v1, v3
+    add-int/2addr v2, v4
 
-    add-int/2addr v15, v1
+    add-int v17, v17, v2
 
     invoke-direct/range {p0 .. p0}, Landroid/widget/FrameLayout;->getPaddingTopWithForeground()I
 
-    move-result v1
+    move-result v2
 
     invoke-direct/range {p0 .. p0}, Landroid/widget/FrameLayout;->getPaddingBottomWithForeground()I
 
-    move-result v3
+    move-result v4
 
-    add-int/2addr v1, v3
+    add-int/2addr v2, v4
 
-    add-int/2addr v14, v1
+    add-int v16, v16, v2
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getSuggestedMinimumHeight()I
 
-    move-result v1
+    move-result v2
 
-    invoke-static {v14, v1}, Ljava/lang/Math;->max(II)I
+    move/from16 v0, v16
 
-    move-result v14
+    invoke-static {v0, v2}, Ljava/lang/Math;->max(II)I
+
+    move-result v16
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getSuggestedMinimumWidth()I
 
-    move-result v1
+    move-result v2
 
-    invoke-static {v15, v1}, Ljava/lang/Math;->max(II)I
+    move/from16 v0, v17
 
-    move-result v15
+    invoke-static {v0, v2}, Ljava/lang/Math;->max(II)I
+
+    move-result v17
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getForeground()Landroid/graphics/drawable/Drawable;
 
-    move-result-object v11
+    move-result-object v12
 
-    .local v11, "drawable":Landroid/graphics/drawable/Drawable;
-    if-eqz v11, :cond_6
+    .local v12, "drawable":Landroid/graphics/drawable/Drawable;
+    if-eqz v12, :cond_6
 
-    invoke-virtual {v11}, Landroid/graphics/drawable/Drawable;->getMinimumHeight()I
+    invoke-virtual {v12}, Landroid/graphics/drawable/Drawable;->getMinimumHeight()I
 
-    move-result v1
+    move-result v2
 
-    invoke-static {v14, v1}, Ljava/lang/Math;->max(II)I
+    move/from16 v0, v16
 
-    move-result v14
+    invoke-static {v0, v2}, Ljava/lang/Math;->max(II)I
 
-    invoke-virtual {v11}, Landroid/graphics/drawable/Drawable;->getMinimumWidth()I
+    move-result v16
 
-    move-result v1
+    invoke-virtual {v12}, Landroid/graphics/drawable/Drawable;->getMinimumWidth()I
 
-    invoke-static {v15, v1}, Ljava/lang/Math;->max(II)I
+    move-result v2
 
-    move-result v15
+    move/from16 v0, v17
+
+    invoke-static {v0, v2}, Ljava/lang/Math;->max(II)I
+
+    move-result v17
 
     :cond_6
-    move/from16 v0, p1
+    move/from16 v0, v17
 
-    invoke-static {v15, v0, v8}, Landroid/widget/FrameLayout;->resolveSizeAndState(III)I
+    move/from16 v1, p1
 
-    move-result v1
+    invoke-static {v0, v1, v9}, Landroid/widget/FrameLayout;->resolveSizeAndState(III)I
 
-    shl-int/lit8 v3, v8, 0x10
+    move-result v2
 
-    move/from16 v0, p2
+    shl-int/lit8 v4, v9, 0x10
 
-    invoke-static {v14, v0, v3}, Landroid/widget/FrameLayout;->resolveSizeAndState(III)I
+    move/from16 v0, v16
 
-    move-result v3
+    move/from16 v1, p2
+
+    invoke-static {v0, v1, v4}, Landroid/widget/FrameLayout;->resolveSizeAndState(III)I
+
+    move-result v4
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v1, v3}, Landroid/widget/FrameLayout;->setMeasuredDimension(II)V
+    invoke-virtual {v0, v2, v4}, Landroid/widget/FrameLayout;->setMeasuredDimension(II)V
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Landroid/widget/FrameLayout;->mMatchParentChildren:Ljava/util/ArrayList;
+    iget-object v2, v0, Landroid/widget/FrameLayout;->mMatchParentChildren:Ljava/util/ArrayList;
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
-    move-result v10
+    move-result v11
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    if-le v10, v1, :cond_9
+    if-le v11, v2, :cond_9
 
-    const/4 v12, 0x0
+    const/4 v14, 0x0
 
     :goto_2
-    if-ge v12, v10, :cond_9
+    if-ge v14, v11, :cond_9
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Landroid/widget/FrameLayout;->mMatchParentChildren:Ljava/util/ArrayList;
+    iget-object v2, v0, Landroid/widget/FrameLayout;->mMatchParentChildren:Ljava/util/ArrayList;
 
-    invoke-virtual {v1, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v2, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v3
 
-    check-cast v2, Landroid/view/View;
+    check-cast v3, Landroid/view/View;
 
-    .restart local v2    # "child":Landroid/view/View;
-    invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    .restart local v3    # "child":Landroid/view/View;
+    invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v13
+    move-result-object v15
 
-    check-cast v13, Landroid/view/ViewGroup$MarginLayoutParams;
+    check-cast v15, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .local v13, "lp":Landroid/view/ViewGroup$MarginLayoutParams;
-    iget v1, v13, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
+    .local v15, "lp":Landroid/view/ViewGroup$MarginLayoutParams;
+    iget v2, v15, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
 
-    const/4 v3, -0x1
+    const/4 v4, -0x1
 
-    if-ne v1, v3, :cond_7
+    if-ne v2, v4, :cond_7
+
+    const/4 v2, 0x0
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
-    move-result v1
+    move-result v4
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getPaddingLeftWithForeground()I
 
-    move-result v3
+    move-result v5
 
-    sub-int/2addr v1, v3
+    sub-int/2addr v4, v5
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getPaddingRightWithForeground()I
 
-    move-result v3
+    move-result v5
 
-    sub-int/2addr v1, v3
+    sub-int/2addr v4, v5
 
-    iget v3, v13, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v5, v15, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    sub-int/2addr v1, v3
+    sub-int/2addr v4, v5
 
-    iget v3, v13, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v5, v15, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    sub-int/2addr v1, v3
+    sub-int/2addr v4, v5
 
-    const/high16 v3, 0x40000000    # 2.0f
+    invoke-static {v2, v4}, Ljava/lang/Math;->max(II)I
 
-    invoke-static {v1, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    move-result v19
 
-    move-result v9
+    .local v19, "width":I
+    const/high16 v2, 0x40000000    # 2.0f
 
-    .local v9, "childWidthMeasureSpec":I
+    move/from16 v0, v19
+
+    invoke-static {v0, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result v10
+
+    .end local v19    # "width":I
+    .local v10, "childWidthMeasureSpec":I
     :goto_3
-    iget v1, v13, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
+    iget v2, v15, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
 
-    const/4 v3, -0x1
+    const/4 v4, -0x1
 
-    if-ne v1, v3, :cond_8
+    if-ne v2, v4, :cond_8
+
+    const/4 v2, 0x0
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
-    move-result v1
+    move-result v4
 
     invoke-direct/range {p0 .. p0}, Landroid/widget/FrameLayout;->getPaddingTopWithForeground()I
 
-    move-result v3
+    move-result v5
 
-    sub-int/2addr v1, v3
+    sub-int/2addr v4, v5
 
     invoke-direct/range {p0 .. p0}, Landroid/widget/FrameLayout;->getPaddingBottomWithForeground()I
 
-    move-result v3
+    move-result v5
 
-    sub-int/2addr v1, v3
+    sub-int/2addr v4, v5
 
-    iget v3, v13, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v5, v15, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    sub-int/2addr v1, v3
+    sub-int/2addr v4, v5
 
-    iget v3, v13, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iget v5, v15, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    sub-int/2addr v1, v3
+    sub-int/2addr v4, v5
 
-    const/high16 v3, 0x40000000    # 2.0f
+    invoke-static {v2, v4}, Ljava/lang/Math;->max(II)I
 
-    invoke-static {v1, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    move-result v13
 
-    move-result v7
+    .local v13, "height":I
+    const/high16 v2, 0x40000000    # 2.0f
 
-    .local v7, "childHeightMeasureSpec":I
+    invoke-static {v13, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result v8
+
+    .end local v13    # "height":I
+    .local v8, "childHeightMeasureSpec":I
     :goto_4
-    invoke-virtual {v2, v9, v7}, Landroid/view/View;->measure(II)V
+    invoke-virtual {v3, v10, v8}, Landroid/view/View;->measure(II)V
 
-    add-int/lit8 v12, v12, 0x1
+    add-int/lit8 v14, v14, 0x1
 
     goto :goto_2
 
-    .end local v7    # "childHeightMeasureSpec":I
-    .end local v9    # "childWidthMeasureSpec":I
+    .end local v8    # "childHeightMeasureSpec":I
+    .end local v10    # "childWidthMeasureSpec":I
     :cond_7
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getPaddingLeftWithForeground()I
 
-    move-result v1
+    move-result v2
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getPaddingRightWithForeground()I
 
-    move-result v3
+    move-result v4
 
-    add-int/2addr v1, v3
+    add-int/2addr v2, v4
 
-    iget v3, v13, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v4, v15, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    add-int/2addr v1, v3
+    add-int/2addr v2, v4
 
-    iget v3, v13, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v4, v15, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    add-int/2addr v1, v3
+    add-int/2addr v2, v4
 
-    iget v3, v13, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
+    iget v4, v15, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
 
     move/from16 v0, p1
 
-    invoke-static {v0, v1, v3}, Landroid/widget/FrameLayout;->getChildMeasureSpec(III)I
+    invoke-static {v0, v2, v4}, Landroid/widget/FrameLayout;->getChildMeasureSpec(III)I
 
-    move-result v9
+    move-result v10
 
-    .restart local v9    # "childWidthMeasureSpec":I
+    .restart local v10    # "childWidthMeasureSpec":I
     goto :goto_3
 
     :cond_8
     invoke-direct/range {p0 .. p0}, Landroid/widget/FrameLayout;->getPaddingTopWithForeground()I
 
-    move-result v1
+    move-result v2
 
     invoke-direct/range {p0 .. p0}, Landroid/widget/FrameLayout;->getPaddingBottomWithForeground()I
 
-    move-result v3
+    move-result v4
 
-    add-int/2addr v1, v3
+    add-int/2addr v2, v4
 
-    iget v3, v13, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v4, v15, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    add-int/2addr v1, v3
+    add-int/2addr v2, v4
 
-    iget v3, v13, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iget v4, v15, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    add-int/2addr v1, v3
+    add-int/2addr v2, v4
 
-    iget v3, v13, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
+    iget v4, v15, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
 
     move/from16 v0, p2
 
-    invoke-static {v0, v1, v3}, Landroid/widget/FrameLayout;->getChildMeasureSpec(III)I
+    invoke-static {v0, v2, v4}, Landroid/widget/FrameLayout;->getChildMeasureSpec(III)I
 
-    move-result v7
+    move-result v8
 
-    .restart local v7    # "childHeightMeasureSpec":I
+    .restart local v8    # "childHeightMeasureSpec":I
     goto :goto_4
 
-    .end local v2    # "child":Landroid/view/View;
-    .end local v7    # "childHeightMeasureSpec":I
-    .end local v9    # "childWidthMeasureSpec":I
-    .end local v13    # "lp":Landroid/view/ViewGroup$MarginLayoutParams;
+    .end local v3    # "child":Landroid/view/View;
+    .end local v8    # "childHeightMeasureSpec":I
+    .end local v10    # "childWidthMeasureSpec":I
+    .end local v15    # "lp":Landroid/view/ViewGroup$MarginLayoutParams;
     :cond_9
     return-void
 .end method

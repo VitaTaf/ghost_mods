@@ -703,6 +703,25 @@
     return-void
 .end method
 
+.method public onResolveDrawables(I)V
+    .locals 1
+    .param p1, "layoutDirection"    # I
+
+    .prologue
+    invoke-super {p0, p1}, Landroid/widget/Button;->onResolveDrawables(I)V
+
+    iget-object v0, p0, Landroid/widget/CompoundButton;->mButtonDrawable:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Landroid/widget/CompoundButton;->mButtonDrawable:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)Z
+
+    :cond_0
+    return-void
+.end method
+
 .method public onRestoreInstanceState(Landroid/os/Parcelable;)V
     .locals 2
     .param p1, "state"    # Landroid/os/Parcelable;

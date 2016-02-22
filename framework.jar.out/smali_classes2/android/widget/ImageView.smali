@@ -68,6 +68,8 @@
 
 .field private mMergeState:Z
 
+.field private mRecycleableBitmapDrawable:Landroid/widget/ImageView$ImageViewBitmapDrawable;
+
 .field private mPM:Landroid/os/PowerManager;
 
 .field private mResource:I
@@ -208,6 +210,8 @@
 
     iput-object v2, p0, Landroid/widget/ImageView;->mDrawable:Landroid/graphics/drawable/Drawable;
 
+    iput-object v2, p0, Landroid/widget/ImageView;->mRecycleableBitmapDrawable:Landroid/widget/ImageView$ImageViewBitmapDrawable;
+
     iput-object v2, p0, Landroid/widget/ImageView;->mDrawableTintList:Landroid/content/res/ColorStateList;
 
     iput-object v2, p0, Landroid/widget/ImageView;->mDrawableTintMode:Landroid/graphics/PorterDuff$Mode;
@@ -333,6 +337,8 @@
     iput-boolean v6, p0, Landroid/widget/ImageView;->mColorMod:Z
 
     iput-object v5, p0, Landroid/widget/ImageView;->mDrawable:Landroid/graphics/drawable/Drawable;
+
+    iput-object v5, p0, Landroid/widget/ImageView;->mRecycleableBitmapDrawable:Landroid/widget/ImageView$ImageViewBitmapDrawable;
 
     iput-object v5, p0, Landroid/widget/ImageView;->mDrawableTintList:Landroid/content/res/ColorStateList;
 
@@ -1745,15 +1751,28 @@
     .param p1, "d"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
+    const/4 v2, 0x0
+
     const/4 v1, 0x1
 
-    iget-object v0, p0, Landroid/widget/ImageView;->mDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroid/widget/ImageView;->mRecycleableBitmapDrawable:Landroid/widget/ImageView$ImageViewBitmapDrawable;
+
+    if-eq p1, v0, :cond_0
+
+    iget-object v0, p0, Landroid/widget/ImageView;->mRecycleableBitmapDrawable:Landroid/widget/ImageView$ImageViewBitmapDrawable;
 
     if-eqz v0, :cond_0
 
+    iget-object v0, p0, Landroid/widget/ImageView;->mRecycleableBitmapDrawable:Landroid/widget/ImageView$ImageViewBitmapDrawable;
+
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView$ImageViewBitmapDrawable;->setBitmap(Landroid/graphics/Bitmap;)V
+
+    :cond_0
     iget-object v0, p0, Landroid/widget/ImageView;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    const/4 v2, 0x0
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Landroid/widget/ImageView;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, v2}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
@@ -1761,10 +1780,10 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/ImageView;->unscheduleDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    :cond_0
+    :cond_1
     iput-object p1, p0, Landroid/widget/ImageView;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_4
 
     invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
@@ -1778,7 +1797,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     invoke-virtual {p0}, Landroid/widget/ImageView;->getDrawableState()[I
 
@@ -1786,12 +1805,12 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    :cond_1
+    :cond_2
     invoke-virtual {p0}, Landroid/widget/ImageView;->getVisibility()I
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_3
 
     move v0, v1
 
@@ -1823,12 +1842,12 @@
     :goto_1
     return-void
 
-    :cond_2
+    :cond_3
     const/4 v0, 0x0
 
     goto :goto_0
 
-    :cond_3
+    :cond_4
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/widget/ImageView;->mDrawableHeight:I
@@ -2020,9 +2039,20 @@
 .end method
 
 .method public getDrawable()Landroid/graphics/drawable/Drawable;
-    .locals 1
+    .locals 2
 
     .prologue
+    iget-object v0, p0, Landroid/widget/ImageView;->mDrawable:Landroid/graphics/drawable/Drawable;
+
+    iget-object v1, p0, Landroid/widget/ImageView;->mRecycleableBitmapDrawable:Landroid/widget/ImageView$ImageViewBitmapDrawable;
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Landroid/widget/ImageView;->mRecycleableBitmapDrawable:Landroid/widget/ImageView$ImageViewBitmapDrawable;
+
+    :cond_0
     iget-object v0, p0, Landroid/widget/ImageView;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -2169,6 +2199,8 @@
     iput v1, p0, Landroid/widget/ImageView;->mDrawableWidth:I
 
     iput v0, p0, Landroid/widget/ImageView;->mDrawableHeight:I
+
+    invoke-direct {p0}, Landroid/widget/ImageView;->configureBounds()V
 
     .end local v0    # "h":I
     .end local v1    # "w":I
@@ -3299,47 +3331,43 @@
 .end method
 
 .method public setImageBitmap(Landroid/graphics/Bitmap;)V
-    .locals 3
+    .locals 2
     .param p1, "bm"    # Landroid/graphics/Bitmap;
     .annotation runtime Landroid/view/RemotableViewMethod;
     .end annotation
 
     .prologue
-    iget-object v1, p0, Landroid/widget/ImageView;->mDrawable:Landroid/graphics/drawable/Drawable;
+    const/4 v0, 0x0
 
-    instance-of v1, v1, Landroid/widget/ImageView$ImageViewBitmapDrawable;
+    iput-object v0, p0, Landroid/widget/ImageView;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    if-eqz v1, :cond_0
+    iget-object v0, p0, Landroid/widget/ImageView;->mRecycleableBitmapDrawable:Landroid/widget/ImageView$ImageViewBitmapDrawable;
 
-    iget-object v0, p0, Landroid/widget/ImageView;->mDrawable:Landroid/graphics/drawable/Drawable;
+    if-nez v0, :cond_0
 
-    check-cast v0, Landroid/widget/ImageView$ImageViewBitmapDrawable;
+    new-instance v0, Landroid/widget/ImageView$ImageViewBitmapDrawable;
 
-    .local v0, "recycledDrawable":Landroid/widget/ImageView$ImageViewBitmapDrawable;
-    const/4 v1, 0x0
+    iget-object v1, p0, Landroid/widget/ImageView;->mContext:Landroid/content/Context;
 
-    iput-object v1, p0, Landroid/widget/ImageView;->mDrawable:Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    invoke-virtual {v0, p1}, Landroid/widget/ImageView$ImageViewBitmapDrawable;->setBitmap(Landroid/graphics/Bitmap;)V
+    move-result-object v1
+
+    invoke-direct {v0, v1, p1}, Landroid/widget/ImageView$ImageViewBitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
+
+    iput-object v0, p0, Landroid/widget/ImageView;->mRecycleableBitmapDrawable:Landroid/widget/ImageView$ImageViewBitmapDrawable;
+
+    :goto_0
+    iget-object v0, p0, Landroid/widget/ImageView;->mRecycleableBitmapDrawable:Landroid/widget/ImageView$ImageViewBitmapDrawable;
 
     invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .end local v0    # "recycledDrawable":Landroid/widget/ImageView$ImageViewBitmapDrawable;
-    :goto_0
     return-void
 
     :cond_0
-    new-instance v1, Landroid/widget/ImageView$ImageViewBitmapDrawable;
+    iget-object v0, p0, Landroid/widget/ImageView;->mRecycleableBitmapDrawable:Landroid/widget/ImageView$ImageViewBitmapDrawable;
 
-    iget-object v2, p0, Landroid/widget/ImageView;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2, p1}, Landroid/widget/ImageView$ImageViewBitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
-
-    invoke-virtual {p0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, p1}, Landroid/widget/ImageView$ImageViewBitmapDrawable;->setBitmap(Landroid/graphics/Bitmap;)V
 
     goto :goto_0
 .end method
@@ -3396,15 +3424,23 @@
     .end annotation
 
     .prologue
+    if-nez p1, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    return-void
+
+    :cond_0
     iget-object v0, p0, Landroid/widget/ImageView;->mContext:Landroid/content/Context;
 
     invoke-virtual {p1, v0}, Landroid/graphics/drawable/Icon;->loadDrawable(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    return-void
+    goto :goto_0
 .end method
 
 .method public setImageLevel(I)V

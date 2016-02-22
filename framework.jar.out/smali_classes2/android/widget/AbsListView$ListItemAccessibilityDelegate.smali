@@ -32,30 +32,6 @@
 
 
 # virtual methods
-.method public createAccessibilityNodeInfo(Landroid/view/View;)Landroid/view/accessibility/AccessibilityNodeInfo;
-    .locals 1
-    .param p1, "host"    # Landroid/view/View;
-
-    .prologue
-    iget-object v0, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
-
-    iget-boolean v0, v0, Landroid/widget/AbsListView;->mDataChanged:Z
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    invoke-super {p0, p1}, Landroid/view/View$AccessibilityDelegate;->createAccessibilityNodeInfo(Landroid/view/View;)Landroid/view/accessibility/AccessibilityNodeInfo;
-
-    move-result-object v0
-
-    goto :goto_0
-.end method
-
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 2
     .param p1, "host"    # Landroid/view/View;
@@ -79,170 +55,210 @@
 .end method
 
 .method public performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
-    .locals 8
+    .locals 9
     .param p1, "host"    # Landroid/view/View;
     .param p2, "action"    # I
     .param p3, "arguments"    # Landroid/os/Bundle;
 
     .prologue
-    const/4 v7, -0x1
+    const/4 v8, -0x1
 
-    const/4 v4, 0x1
+    const/4 v5, 0x1
 
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
     invoke-super {p0, p1, p2, p3}, Landroid/view/View$AccessibilityDelegate;->performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
 
-    move-result v6
+    move-result v7
 
-    if-eqz v6, :cond_0
+    if-eqz v7, :cond_0
 
     :goto_0
-    return v4
+    return v5
 
     :cond_0
-    iget-object v6, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
+    iget-object v7, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v6, p1}, Landroid/widget/AbsListView;->getPositionForView(Landroid/view/View;)I
+    invoke-virtual {v7, p1}, Landroid/widget/AbsListView;->getPositionForView(Landroid/view/View;)I
 
-    move-result v1
+    move-result v4
 
-    .local v1, "position":I
-    iget-object v6, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
+    .local v4, "position":I
+    if-eq v4, v8, :cond_1
 
-    invoke-virtual {v6}, Landroid/widget/AbsListView;->getAdapter()Landroid/widget/Adapter;
+    iget-object v7, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
 
-    move-result-object v0
+    iget-object v7, v7, Landroid/widget/AbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
-    check-cast v0, Landroid/widget/ListAdapter;
-
-    .local v0, "adapter":Landroid/widget/ListAdapter;
-    if-eq v1, v7, :cond_1
-
-    if-nez v0, :cond_2
+    if-nez v7, :cond_2
 
     :cond_1
-    move v4, v5
+    move v5, v6
 
     goto :goto_0
 
     :cond_2
-    iget-object v6, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
+    iget-object v7, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v6}, Landroid/widget/AbsListView;->isEnabled()Z
+    iget-object v7, v7, Landroid/widget/AbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
-    move-result v6
+    invoke-interface {v7}, Landroid/widget/ListAdapter;->getCount()I
 
-    if-eqz v6, :cond_3
+    move-result v7
 
-    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
+    if-lt v4, v7, :cond_3
 
-    move-result v6
-
-    if-nez v6, :cond_4
-
-    :cond_3
-    move v4, v5
+    move v5, v6
 
     goto :goto_0
 
+    :cond_3
+    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v3
+
+    .local v3, "lp":Landroid/view/ViewGroup$LayoutParams;
+    instance-of v7, v3, Landroid/widget/AbsListView$LayoutParams;
+
+    if-eqz v7, :cond_5
+
+    check-cast v3, Landroid/widget/AbsListView$LayoutParams;
+
+    .end local v3    # "lp":Landroid/view/ViewGroup$LayoutParams;
+    iget-boolean v2, v3, Landroid/widget/AbsListView$LayoutParams;->isEnabled:Z
+
+    .local v2, "isItemEnabled":Z
+    :goto_1
+    iget-object v7, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
+
+    invoke-virtual {v7}, Landroid/widget/AbsListView;->isEnabled()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_4
+
+    if-nez v2, :cond_6
+
     :cond_4
-    iget-object v6, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
+    move v5, v6
 
-    invoke-virtual {v6, v1}, Landroid/widget/AbsListView;->getItemIdAtPosition(I)J
+    goto :goto_0
 
-    move-result-wide v2
+    .end local v2    # "isItemEnabled":Z
+    .restart local v3    # "lp":Landroid/view/ViewGroup$LayoutParams;
+    :cond_5
+    const/4 v2, 0x0
 
-    .local v2, "id":J
+    .restart local v2    # "isItemEnabled":Z
+    goto :goto_1
+
+    .end local v3    # "lp":Landroid/view/ViewGroup$LayoutParams;
+    :cond_6
     sparse-switch p2, :sswitch_data_0
 
-    move v4, v5
+    move v5, v6
 
     goto :goto_0
 
     :sswitch_0
+    iget-object v7, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
+
+    invoke-virtual {v7}, Landroid/widget/AbsListView;->getSelectedItemPosition()I
+
+    move-result v7
+
+    if-ne v7, v4, :cond_7
+
     iget-object v6, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v6}, Landroid/widget/AbsListView;->getSelectedItemPosition()I
-
-    move-result v6
-
-    if-ne v6, v1, :cond_5
-
-    iget-object v5, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
-
-    invoke-virtual {v5, v7}, Landroid/widget/AbsListView;->setSelection(I)V
-
-    goto :goto_0
-
-    :cond_5
-    move v4, v5
-
-    goto :goto_0
-
-    :sswitch_1
-    iget-object v6, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
-
-    invoke-virtual {v6}, Landroid/widget/AbsListView;->getSelectedItemPosition()I
-
-    move-result v6
-
-    if-eq v6, v1, :cond_6
-
-    iget-object v5, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
-
-    invoke-virtual {v5, v1}, Landroid/widget/AbsListView;->setSelection(I)V
-
-    goto :goto_0
-
-    :cond_6
-    move v4, v5
-
-    goto :goto_0
-
-    :sswitch_2
-    iget-object v4, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
-
-    invoke-virtual {v4}, Landroid/widget/AbsListView;->isClickable()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_7
-
-    iget-object v4, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
-
-    invoke-virtual {v4, p1, v1, v2, v3}, Landroid/widget/AbsListView;->performItemClick(Landroid/view/View;IJ)Z
-
-    move-result v4
+    invoke-virtual {v6, v8}, Landroid/widget/AbsListView;->setSelection(I)V
 
     goto :goto_0
 
     :cond_7
-    move v4, v5
+    move v5, v6
 
     goto :goto_0
 
-    :sswitch_3
-    iget-object v4, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
+    :sswitch_1
+    iget-object v7, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v4}, Landroid/widget/AbsListView;->isLongClickable()Z
+    invoke-virtual {v7}, Landroid/widget/AbsListView;->getSelectedItemPosition()I
 
-    move-result v4
+    move-result v7
 
-    if-eqz v4, :cond_8
+    if-eq v7, v4, :cond_8
 
-    iget-object v4, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
+    iget-object v6, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
 
-    invoke-virtual {v4, p1, v1, v2, v3}, Landroid/widget/AbsListView;->performLongPress(Landroid/view/View;IJ)Z
-
-    move-result v4
+    invoke-virtual {v6, v4}, Landroid/widget/AbsListView;->setSelection(I)V
 
     goto :goto_0
 
     :cond_8
-    move v4, v5
+    move v5, v6
 
     goto :goto_0
+
+    :sswitch_2
+    iget-object v5, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
+
+    invoke-virtual {v5}, Landroid/widget/AbsListView;->isClickable()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_9
+
+    iget-object v5, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
+
+    invoke-virtual {v5, v4}, Landroid/widget/AbsListView;->getItemIdAtPosition(I)J
+
+    move-result-wide v0
+
+    .local v0, "id":J
+    iget-object v5, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
+
+    invoke-virtual {v5, p1, v4, v0, v1}, Landroid/widget/AbsListView;->performItemClick(Landroid/view/View;IJ)Z
+
+    move-result v5
+
+    goto :goto_0
+
+    .end local v0    # "id":J
+    :cond_9
+    move v5, v6
+
+    goto :goto_0
+
+    :sswitch_3
+    iget-object v5, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
+
+    invoke-virtual {v5}, Landroid/widget/AbsListView;->isLongClickable()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_a
+
+    iget-object v5, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
+
+    invoke-virtual {v5, v4}, Landroid/widget/AbsListView;->getItemIdAtPosition(I)J
+
+    move-result-wide v0
+
+    .restart local v0    # "id":J
+    iget-object v5, p0, Landroid/widget/AbsListView$ListItemAccessibilityDelegate;->this$0:Landroid/widget/AbsListView;
+
+    invoke-virtual {v5, p1, v4, v0, v1}, Landroid/widget/AbsListView;->performLongPress(Landroid/view/View;IJ)Z
+
+    move-result v5
+
+    goto/16 :goto_0
+
+    .end local v0    # "id":J
+    :cond_a
+    move v5, v6
+
+    goto/16 :goto_0
 
     nop
 

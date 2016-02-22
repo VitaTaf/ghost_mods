@@ -343,6 +343,51 @@
     return-void
 .end method
 
+.method private allViewsAreGoneBefore(I)Z
+    .locals 4
+    .param p1, "childIndex"    # I
+
+    .prologue
+    add-int/lit8 v1, p1, -0x1
+
+    .local v1, "i":I
+    :goto_0
+    if-ltz v1, :cond_1
+
+    invoke-virtual {p0, v1}, Landroid/widget/LinearLayout;->getVirtualChildAt(I)Landroid/view/View;
+
+    move-result-object v0
+
+    .local v0, "child":Landroid/view/View;
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
+
+    move-result v2
+
+    const/16 v3, 0x8
+
+    if-eq v2, v3, :cond_0
+
+    const/4 v2, 0x0
+
+    .end local v0    # "child":Landroid/view/View;
+    :goto_1
+    return v2
+
+    .restart local v0    # "child":Landroid/view/View;
+    :cond_0
+    add-int/lit8 v1, v1, -0x1
+
+    goto :goto_0
+
+    .end local v0    # "child":Landroid/view/View;
+    :cond_1
+    const/4 v2, 0x1
+
+    goto :goto_1
+.end method
+
 .method private forceUniformHeight(II)V
     .locals 9
     .param p1, "count"    # I
@@ -507,6 +552,52 @@
     return-void
 .end method
 
+.method private getLastNonGoneChild()Landroid/view/View;
+    .locals 4
+
+    .prologue
+    invoke-virtual {p0}, Landroid/widget/LinearLayout;->getVirtualChildCount()I
+
+    move-result v2
+
+    add-int/lit8 v1, v2, -0x1
+
+    .local v1, "i":I
+    :goto_0
+    if-ltz v1, :cond_1
+
+    invoke-virtual {p0, v1}, Landroid/widget/LinearLayout;->getVirtualChildAt(I)Landroid/view/View;
+
+    move-result-object v0
+
+    .local v0, "child":Landroid/view/View;
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
+
+    move-result v2
+
+    const/16 v3, 0x8
+
+    if-eq v2, v3, :cond_0
+
+    .end local v0    # "child":Landroid/view/View;
+    :goto_1
+    return-object v0
+
+    .restart local v0    # "child":Landroid/view/View;
+    :cond_0
+    add-int/lit8 v1, v1, -0x1
+
+    goto :goto_0
+
+    .end local v0    # "child":Landroid/view/View;
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_1
+.end method
+
 .method private setChildFrame(Landroid/view/View;IIII)V
     .locals 2
     .param p1, "child"    # Landroid/view/View;
@@ -634,9 +725,7 @@
 
     if-eqz v6, :cond_3
 
-    add-int/lit8 v6, v1, -0x1
-
-    invoke-virtual {p0, v6}, Landroid/widget/LinearLayout;->getVirtualChildAt(I)Landroid/view/View;
+    invoke-direct {p0}, Landroid/widget/LinearLayout;->getLastNonGoneChild()Landroid/view/View;
 
     move-result-object v0
 
@@ -791,9 +880,7 @@
 
     if-eqz v6, :cond_2
 
-    add-int/lit8 v6, v2, -0x1
-
-    invoke-virtual {p0, v6}, Landroid/widget/LinearLayout;->getVirtualChildAt(I)Landroid/view/View;
+    invoke-direct {p0}, Landroid/widget/LinearLayout;->getLastNonGoneChild()Landroid/view/View;
 
     move-result-object v1
 
@@ -1303,92 +1390,61 @@
 .end method
 
 .method protected hasDividerBeforeChildAt(I)Z
-    .locals 5
+    .locals 4
     .param p1, "childIndex"    # I
 
     .prologue
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    if-nez p1, :cond_2
+    invoke-virtual {p0}, Landroid/widget/LinearLayout;->getVirtualChildCount()I
 
-    iget v4, p0, Landroid/widget/LinearLayout;->mShowDividers:I
+    move-result v3
 
-    and-int/lit8 v4, v4, 0x1
+    if-ne p1, v3, :cond_2
 
-    if-eqz v4, :cond_1
+    iget v3, p0, Landroid/widget/LinearLayout;->mShowDividers:I
+
+    and-int/lit8 v3, v3, 0x4
+
+    if-eqz v3, :cond_1
 
     :cond_0
     :goto_0
-    return v2
+    return v1
 
     :cond_1
-    move v2, v3
+    move v1, v2
 
     goto :goto_0
 
     :cond_2
-    invoke-virtual {p0}, Landroid/widget/LinearLayout;->getChildCount()I
+    invoke-direct {p0, p1}, Landroid/widget/LinearLayout;->allViewsAreGoneBefore(I)Z
 
-    move-result v4
+    move-result v0
 
-    if-ne p1, v4, :cond_3
+    .local v0, "allViewsAreGoneBefore":Z
+    if-eqz v0, :cond_3
 
-    iget v4, p0, Landroid/widget/LinearLayout;->mShowDividers:I
+    iget v3, p0, Landroid/widget/LinearLayout;->mShowDividers:I
 
-    and-int/lit8 v4, v4, 0x4
+    and-int/lit8 v3, v3, 0x1
 
-    if-nez v4, :cond_0
+    if-nez v3, :cond_0
 
-    move v2, v3
+    move v1, v2
 
     goto :goto_0
 
     :cond_3
-    iget v2, p0, Landroid/widget/LinearLayout;->mShowDividers:I
+    iget v3, p0, Landroid/widget/LinearLayout;->mShowDividers:I
 
-    and-int/lit8 v2, v2, 0x2
+    and-int/lit8 v3, v3, 0x2
 
-    if-eqz v2, :cond_6
+    if-nez v3, :cond_0
 
-    const/4 v0, 0x0
-
-    .local v0, "hasVisibleViewBefore":Z
-    add-int/lit8 v1, p1, -0x1
-
-    .local v1, "i":I
-    :goto_1
-    if-ltz v1, :cond_4
-
-    invoke-virtual {p0, v1}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
-
-    move-result v2
-
-    const/16 v3, 0x8
-
-    if-eq v2, v3, :cond_5
-
-    const/4 v0, 0x1
-
-    :cond_4
-    move v2, v0
-
-    goto :goto_0
-
-    :cond_5
-    add-int/lit8 v1, v1, -0x1
-
-    goto :goto_1
-
-    .end local v0    # "hasVisibleViewBefore":Z
-    .end local v1    # "i":I
-    :cond_6
-    move v2, v3
+    move v1, v2
 
     goto :goto_0
 .end method

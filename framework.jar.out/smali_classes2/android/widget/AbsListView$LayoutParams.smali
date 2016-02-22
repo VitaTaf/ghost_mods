@@ -21,6 +21,8 @@
     .end annotation
 .end field
 
+.field isEnabled:Z
+
 .field itemId:J
 
 .field recycledHeaderFooter:Z

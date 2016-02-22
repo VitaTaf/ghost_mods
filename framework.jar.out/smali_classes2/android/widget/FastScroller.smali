@@ -1705,90 +1705,99 @@
 .end method
 
 .method private layoutTrack()V
-    .locals 14
+    .locals 15
 
     .prologue
-    iget-object v9, p0, Landroid/widget/FastScroller;->mTrackImage:Landroid/widget/ImageView;
+    const/4 v14, 0x0
 
-    .local v9, "track":Landroid/view/View;
-    iget-object v6, p0, Landroid/widget/FastScroller;->mThumbImage:Landroid/widget/ImageView;
+    iget-object v10, p0, Landroid/widget/FastScroller;->mTrackImage:Landroid/widget/ImageView;
 
-    .local v6, "thumb":Landroid/view/View;
+    .local v10, "track":Landroid/view/View;
+    iget-object v7, p0, Landroid/widget/FastScroller;->mThumbImage:Landroid/widget/ImageView;
+
+    .local v7, "thumb":Landroid/view/View;
     iget-object v1, p0, Landroid/widget/FastScroller;->mContainerRect:Landroid/graphics/Rect;
 
     .local v1, "container":Landroid/graphics/Rect;
     invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
 
+    move-result v13
+
+    invoke-static {v14, v13}, Ljava/lang/Math;->max(II)I
+
+    move-result v5
+
+    .local v5, "maxWidth":I
+    invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
+
+    move-result v13
+
+    invoke-static {v14, v13}, Ljava/lang/Math;->max(II)I
+
     move-result v4
 
-    .local v4, "maxWidth":I
-    const/high16 v12, -0x80000000
+    .local v4, "maxHeight":I
+    const/high16 v13, -0x80000000
 
-    invoke-static {v4, v12}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
-
-    move-result v11
-
-    .local v11, "widthMeasureSpec":I
-    invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
+    invoke-static {v5, v13}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v12
 
-    const/4 v13, 0x0
-
-    invoke-static {v12, v13}, Landroid/view/View$MeasureSpec;->makeSafeMeasureSpec(II)I
+    .local v12, "widthMeasureSpec":I
+    invoke-static {v4, v14}, Landroid/view/View$MeasureSpec;->makeSafeMeasureSpec(II)I
 
     move-result v2
 
     .local v2, "heightMeasureSpec":I
-    invoke-virtual {v9, v11, v2}, Landroid/view/View;->measure(II)V
+    invoke-virtual {v10, v12, v2}, Landroid/view/View;->measure(II)V
 
-    invoke-virtual {v9}, Landroid/view/View;->getMeasuredWidth()I
+    invoke-virtual {v10}, Landroid/view/View;->getMeasuredWidth()I
 
-    move-result v10
+    move-result v11
 
-    .local v10, "trackWidth":I
-    invoke-virtual {v6}, Landroid/view/View;->getHeight()I
-
-    move-result v12
-
-    div-int/lit8 v7, v12, 0x2
-
-    .local v7, "thumbHalfHeight":I
-    invoke-virtual {v6}, Landroid/view/View;->getLeft()I
-
-    move-result v12
-
-    invoke-virtual {v6}, Landroid/view/View;->getWidth()I
+    .local v11, "trackWidth":I
+    invoke-virtual {v7}, Landroid/view/View;->getHeight()I
 
     move-result v13
 
-    sub-int/2addr v13, v10
+    div-int/lit8 v8, v13, 0x2
 
-    div-int/lit8 v13, v13, 0x2
+    .local v8, "thumbHalfHeight":I
+    invoke-virtual {v7}, Landroid/view/View;->getLeft()I
 
-    add-int v3, v12, v13
+    move-result v13
+
+    invoke-virtual {v7}, Landroid/view/View;->getWidth()I
+
+    move-result v14
+
+    sub-int/2addr v14, v11
+
+    div-int/lit8 v14, v14, 0x2
+
+    add-int v3, v13, v14
 
     .local v3, "left":I
-    add-int v5, v3, v10
+    add-int v6, v3, v11
 
-    .local v5, "right":I
-    iget v12, v1, Landroid/graphics/Rect;->top:I
+    .local v6, "right":I
+    iget v13, v1, Landroid/graphics/Rect;->top:I
 
-    add-int v8, v12, v7
+    add-int v9, v13, v8
 
-    .local v8, "top":I
-    iget v12, v1, Landroid/graphics/Rect;->bottom:I
+    .local v9, "top":I
+    iget v13, v1, Landroid/graphics/Rect;->bottom:I
 
-    sub-int v0, v12, v7
+    sub-int v0, v13, v8
 
     .local v0, "bottom":I
-    invoke-virtual {v9, v3, v8, v5, v0}, Landroid/view/View;->layout(IIII)V
+    invoke-virtual {v10, v3, v9, v6, v0}, Landroid/view/View;->layout(IIII)V
 
     return-void
 .end method
 
 .method private measureFloating(Landroid/view/View;Landroid/graphics/Rect;Landroid/graphics/Rect;)V
-    .locals 17
+    .locals 18
     .param p1, "preview"    # Landroid/view/View;
     .param p2, "margins"    # Landroid/graphics/Rect;
     .param p3, "out"    # Landroid/graphics/Rect;
@@ -1796,131 +1805,149 @@
     .prologue
     if-nez p2, :cond_0
 
-    const/4 v8, 0x0
-
-    .local v8, "marginLeft":I
-    const/4 v10, 0x0
-
-    .local v10, "marginTop":I
     const/4 v9, 0x0
 
-    .local v9, "marginRight":I
+    .local v9, "marginLeft":I
+    const/4 v11, 0x0
+
+    .local v11, "marginTop":I
+    const/4 v10, 0x0
+
+    .local v10, "marginRight":I
     :goto_0
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Landroid/widget/FastScroller;->mContainerRect:Landroid/graphics/Rect;
+    iget-object v4, v0, Landroid/widget/FastScroller;->mContainerRect:Landroid/graphics/Rect;
 
-    .local v3, "container":Landroid/graphics/Rect;
-    invoke-virtual {v3}, Landroid/graphics/Rect;->width()I
-
-    move-result v5
-
-    .local v5, "containerWidth":I
-    sub-int v15, v5, v8
-
-    sub-int v1, v15, v9
-
-    .local v1, "adjMaxWidth":I
-    const/high16 v15, -0x80000000
-
-    invoke-static {v1, v15}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
-
-    move-result v14
-
-    .local v14, "widthMeasureSpec":I
-    invoke-virtual {v3}, Landroid/graphics/Rect;->height()I
-
-    move-result v15
-
-    const/16 v16, 0x0
-
-    invoke-static/range {v15 .. v16}, Landroid/view/View$MeasureSpec;->makeSafeMeasureSpec(II)I
+    .local v4, "container":Landroid/graphics/Rect;
+    invoke-virtual {v4}, Landroid/graphics/Rect;->width()I
 
     move-result v6
 
-    .local v6, "heightMeasureSpec":I
-    move-object/from16 v0, p1
+    .local v6, "containerWidth":I
+    const/16 v16, 0x0
 
-    invoke-virtual {v0, v14, v6}, Landroid/view/View;->measure(II)V
+    invoke-virtual {v4}, Landroid/graphics/Rect;->height()I
 
-    invoke-virtual {v3}, Landroid/graphics/Rect;->height()I
+    move-result v17
 
-    move-result v4
+    invoke-static/range {v16 .. v17}, Ljava/lang/Math;->max(II)I
 
-    .local v4, "containerHeight":I
-    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getMeasuredWidth()I
+    move-result v1
 
-    move-result v13
+    .local v1, "adjMaxHeight":I
+    const/16 v16, 0x0
 
-    .local v13, "width":I
-    div-int/lit8 v15, v4, 0xa
+    sub-int v17, v6, v9
 
-    add-int/2addr v15, v10
+    sub-int v17, v17, v10
 
-    iget v0, v3, Landroid/graphics/Rect;->top:I
+    invoke-static/range {v16 .. v17}, Ljava/lang/Math;->max(II)I
 
-    move/from16 v16, v0
+    move-result v2
 
-    add-int v12, v15, v16
+    .local v2, "adjMaxWidth":I
+    const/high16 v16, -0x80000000
 
-    .local v12, "top":I
-    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getMeasuredHeight()I
+    move/from16 v0, v16
+
+    invoke-static {v2, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v15
 
-    add-int v2, v12, v15
+    .local v15, "widthMeasureSpec":I
+    const/16 v16, 0x0
 
-    .local v2, "bottom":I
-    sub-int v15, v5, v13
+    move/from16 v0, v16
 
-    div-int/lit8 v15, v15, 0x2
+    invoke-static {v1, v0}, Landroid/view/View$MeasureSpec;->makeSafeMeasureSpec(II)I
 
-    iget v0, v3, Landroid/graphics/Rect;->left:I
+    move-result v7
 
-    move/from16 v16, v0
+    .local v7, "heightMeasureSpec":I
+    move-object/from16 v0, p1
 
-    add-int v7, v15, v16
+    invoke-virtual {v0, v15, v7}, Landroid/view/View;->measure(II)V
 
-    .local v7, "left":I
-    add-int v11, v7, v13
+    invoke-virtual {v4}, Landroid/graphics/Rect;->height()I
 
-    .local v11, "right":I
+    move-result v5
+
+    .local v5, "containerHeight":I
+    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v14
+
+    .local v14, "width":I
+    div-int/lit8 v16, v5, 0xa
+
+    add-int v16, v16, v11
+
+    iget v0, v4, Landroid/graphics/Rect;->top:I
+
+    move/from16 v17, v0
+
+    add-int v13, v16, v17
+
+    .local v13, "top":I
+    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v16
+
+    add-int v3, v13, v16
+
+    .local v3, "bottom":I
+    sub-int v16, v6, v14
+
+    div-int/lit8 v16, v16, 0x2
+
+    iget v0, v4, Landroid/graphics/Rect;->left:I
+
+    move/from16 v17, v0
+
+    add-int v8, v16, v17
+
+    .local v8, "left":I
+    add-int v12, v8, v14
+
+    .local v12, "right":I
     move-object/from16 v0, p3
 
-    invoke-virtual {v0, v7, v12, v11, v2}, Landroid/graphics/Rect;->set(IIII)V
+    invoke-virtual {v0, v8, v13, v12, v3}, Landroid/graphics/Rect;->set(IIII)V
 
     return-void
 
-    .end local v1    # "adjMaxWidth":I
-    .end local v2    # "bottom":I
-    .end local v3    # "container":Landroid/graphics/Rect;
-    .end local v4    # "containerHeight":I
-    .end local v5    # "containerWidth":I
-    .end local v6    # "heightMeasureSpec":I
-    .end local v7    # "left":I
-    .end local v8    # "marginLeft":I
-    .end local v9    # "marginRight":I
-    .end local v10    # "marginTop":I
-    .end local v11    # "right":I
-    .end local v12    # "top":I
-    .end local v13    # "width":I
-    .end local v14    # "widthMeasureSpec":I
+    .end local v1    # "adjMaxHeight":I
+    .end local v2    # "adjMaxWidth":I
+    .end local v3    # "bottom":I
+    .end local v4    # "container":Landroid/graphics/Rect;
+    .end local v5    # "containerHeight":I
+    .end local v6    # "containerWidth":I
+    .end local v7    # "heightMeasureSpec":I
+    .end local v8    # "left":I
+    .end local v9    # "marginLeft":I
+    .end local v10    # "marginRight":I
+    .end local v11    # "marginTop":I
+    .end local v12    # "right":I
+    .end local v13    # "top":I
+    .end local v14    # "width":I
+    .end local v15    # "widthMeasureSpec":I
     :cond_0
     move-object/from16 v0, p2
 
-    iget v8, v0, Landroid/graphics/Rect;->left:I
+    iget v9, v0, Landroid/graphics/Rect;->left:I
 
-    .restart local v8    # "marginLeft":I
+    .restart local v9    # "marginLeft":I
     move-object/from16 v0, p2
 
-    iget v10, v0, Landroid/graphics/Rect;->top:I
+    iget v11, v0, Landroid/graphics/Rect;->top:I
 
-    .restart local v10    # "marginTop":I
+    .restart local v11    # "marginTop":I
     move-object/from16 v0, p2
 
-    iget v9, v0, Landroid/graphics/Rect;->right:I
+    iget v10, v0, Landroid/graphics/Rect;->right:I
 
-    .restart local v9    # "marginRight":I
+    .restart local v10    # "marginRight":I
     goto :goto_0
 .end method
 
@@ -1983,7 +2010,7 @@
 .end method
 
 .method private measureViewToSide(Landroid/view/View;Landroid/view/View;Landroid/graphics/Rect;Landroid/graphics/Rect;)V
-    .locals 17
+    .locals 18
     .param p1, "view"    # Landroid/view/View;
     .param p2, "adjacent"    # Landroid/view/View;
     .param p3, "margins"    # Landroid/graphics/Rect;
@@ -1992,192 +2019,221 @@
     .prologue
     if-nez p3, :cond_0
 
-    const/4 v7, 0x0
-
-    .local v7, "marginLeft":I
-    const/4 v9, 0x0
-
-    .local v9, "marginTop":I
     const/4 v8, 0x0
 
-    .local v8, "marginRight":I
+    .local v8, "marginLeft":I
+    const/4 v10, 0x0
+
+    .local v10, "marginTop":I
+    const/4 v9, 0x0
+
+    .local v9, "marginRight":I
     :goto_0
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Landroid/widget/FastScroller;->mContainerRect:Landroid/graphics/Rect;
+    iget-object v4, v0, Landroid/widget/FastScroller;->mContainerRect:Landroid/graphics/Rect;
 
-    .local v3, "container":Landroid/graphics/Rect;
-    invoke-virtual {v3}, Landroid/graphics/Rect;->width()I
-
-    move-result v4
-
-    .local v4, "containerWidth":I
-    if-nez p2, :cond_1
-
-    move v10, v4
-
-    .local v10, "maxWidth":I
-    :goto_1
-    sub-int v15, v10, v7
-
-    sub-int v1, v15, v8
-
-    .local v1, "adjMaxWidth":I
-    const/high16 v15, -0x80000000
-
-    invoke-static {v1, v15}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
-
-    move-result v14
-
-    .local v14, "widthMeasureSpec":I
-    invoke-virtual {v3}, Landroid/graphics/Rect;->height()I
-
-    move-result v15
-
-    const/16 v16, 0x0
-
-    invoke-static/range {v15 .. v16}, Landroid/view/View$MeasureSpec;->makeSafeMeasureSpec(II)I
+    .local v4, "container":Landroid/graphics/Rect;
+    invoke-virtual {v4}, Landroid/graphics/Rect;->width()I
 
     move-result v5
 
-    .local v5, "heightMeasureSpec":I
+    .local v5, "containerWidth":I
+    if-nez p2, :cond_1
+
+    move v11, v5
+
+    .local v11, "maxWidth":I
+    :goto_1
+    const/16 v16, 0x0
+
+    invoke-virtual {v4}, Landroid/graphics/Rect;->height()I
+
+    move-result v17
+
+    invoke-static/range {v16 .. v17}, Ljava/lang/Math;->max(II)I
+
+    move-result v1
+
+    .local v1, "adjMaxHeight":I
+    const/16 v16, 0x0
+
+    sub-int v17, v11, v8
+
+    sub-int v17, v17, v9
+
+    invoke-static/range {v16 .. v17}, Ljava/lang/Math;->max(II)I
+
+    move-result v2
+
+    .local v2, "adjMaxWidth":I
+    const/high16 v16, -0x80000000
+
+    move/from16 v0, v16
+
+    invoke-static {v2, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result v15
+
+    .local v15, "widthMeasureSpec":I
+    const/16 v16, 0x0
+
+    move/from16 v0, v16
+
+    invoke-static {v1, v0}, Landroid/view/View$MeasureSpec;->makeSafeMeasureSpec(II)I
+
+    move-result v6
+
+    .local v6, "heightMeasureSpec":I
     move-object/from16 v0, p1
 
-    invoke-virtual {v0, v14, v5}, Landroid/view/View;->measure(II)V
+    invoke-virtual {v0, v15, v6}, Landroid/view/View;->measure(II)V
 
     invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getMeasuredWidth()I
 
-    move-result v15
+    move-result v16
 
-    invoke-static {v1, v15}, Ljava/lang/Math;->min(II)I
+    move/from16 v0, v16
 
-    move-result v13
+    invoke-static {v2, v0}, Ljava/lang/Math;->min(II)I
 
-    .local v13, "width":I
+    move-result v14
+
+    .local v14, "width":I
     move-object/from16 v0, p0
 
-    iget-boolean v15, v0, Landroid/widget/FastScroller;->mLayoutFromRight:Z
+    iget-boolean v0, v0, Landroid/widget/FastScroller;->mLayoutFromRight:Z
 
-    if-eqz v15, :cond_4
+    move/from16 v16, v0
+
+    if-eqz v16, :cond_4
 
     if-nez p2, :cond_3
 
-    iget v15, v3, Landroid/graphics/Rect;->right:I
+    iget v0, v4, Landroid/graphics/Rect;->right:I
+
+    move/from16 v16, v0
 
     :goto_2
-    sub-int v11, v15, v8
+    sub-int v12, v16, v9
 
-    .local v11, "right":I
-    sub-int v6, v11, v13
+    .local v12, "right":I
+    sub-int v7, v12, v14
 
-    .local v6, "left":I
+    .local v7, "left":I
     :goto_3
-    move v12, v9
+    move v13, v10
 
-    .local v12, "top":I
+    .local v13, "top":I
     invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getMeasuredHeight()I
 
-    move-result v15
+    move-result v16
 
-    add-int v2, v12, v15
+    add-int v3, v13, v16
 
-    .local v2, "bottom":I
+    .local v3, "bottom":I
     move-object/from16 v0, p4
 
-    invoke-virtual {v0, v6, v12, v11, v2}, Landroid/graphics/Rect;->set(IIII)V
+    invoke-virtual {v0, v7, v13, v12, v3}, Landroid/graphics/Rect;->set(IIII)V
 
     return-void
 
-    .end local v1    # "adjMaxWidth":I
-    .end local v2    # "bottom":I
-    .end local v3    # "container":Landroid/graphics/Rect;
-    .end local v4    # "containerWidth":I
-    .end local v5    # "heightMeasureSpec":I
-    .end local v6    # "left":I
-    .end local v7    # "marginLeft":I
-    .end local v8    # "marginRight":I
-    .end local v9    # "marginTop":I
-    .end local v10    # "maxWidth":I
-    .end local v11    # "right":I
-    .end local v12    # "top":I
-    .end local v13    # "width":I
-    .end local v14    # "widthMeasureSpec":I
+    .end local v1    # "adjMaxHeight":I
+    .end local v2    # "adjMaxWidth":I
+    .end local v3    # "bottom":I
+    .end local v4    # "container":Landroid/graphics/Rect;
+    .end local v5    # "containerWidth":I
+    .end local v6    # "heightMeasureSpec":I
+    .end local v7    # "left":I
+    .end local v8    # "marginLeft":I
+    .end local v9    # "marginRight":I
+    .end local v10    # "marginTop":I
+    .end local v11    # "maxWidth":I
+    .end local v12    # "right":I
+    .end local v13    # "top":I
+    .end local v14    # "width":I
+    .end local v15    # "widthMeasureSpec":I
     :cond_0
     move-object/from16 v0, p3
 
-    iget v7, v0, Landroid/graphics/Rect;->left:I
+    iget v8, v0, Landroid/graphics/Rect;->left:I
 
-    .restart local v7    # "marginLeft":I
+    .restart local v8    # "marginLeft":I
     move-object/from16 v0, p3
 
-    iget v9, v0, Landroid/graphics/Rect;->top:I
+    iget v10, v0, Landroid/graphics/Rect;->top:I
 
-    .restart local v9    # "marginTop":I
+    .restart local v10    # "marginTop":I
     move-object/from16 v0, p3
 
-    iget v8, v0, Landroid/graphics/Rect;->right:I
+    iget v9, v0, Landroid/graphics/Rect;->right:I
 
-    .restart local v8    # "marginRight":I
+    .restart local v9    # "marginRight":I
     goto :goto_0
 
-    .restart local v3    # "container":Landroid/graphics/Rect;
-    .restart local v4    # "containerWidth":I
+    .restart local v4    # "container":Landroid/graphics/Rect;
+    .restart local v5    # "containerWidth":I
     :cond_1
     move-object/from16 v0, p0
 
-    iget-boolean v15, v0, Landroid/widget/FastScroller;->mLayoutFromRight:Z
+    iget-boolean v0, v0, Landroid/widget/FastScroller;->mLayoutFromRight:Z
 
-    if-eqz v15, :cond_2
+    move/from16 v16, v0
+
+    if-eqz v16, :cond_2
 
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getLeft()I
 
-    move-result v10
+    move-result v11
 
-    .restart local v10    # "maxWidth":I
+    .restart local v11    # "maxWidth":I
     goto :goto_1
 
-    .end local v10    # "maxWidth":I
+    .end local v11    # "maxWidth":I
     :cond_2
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getRight()I
 
-    move-result v15
+    move-result v16
 
-    sub-int v10, v4, v15
+    sub-int v11, v5, v16
 
-    .restart local v10    # "maxWidth":I
+    .restart local v11    # "maxWidth":I
     goto :goto_1
 
-    .restart local v1    # "adjMaxWidth":I
-    .restart local v5    # "heightMeasureSpec":I
-    .restart local v13    # "width":I
-    .restart local v14    # "widthMeasureSpec":I
+    .restart local v1    # "adjMaxHeight":I
+    .restart local v2    # "adjMaxWidth":I
+    .restart local v6    # "heightMeasureSpec":I
+    .restart local v14    # "width":I
+    .restart local v15    # "widthMeasureSpec":I
     :cond_3
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getLeft()I
 
-    move-result v15
+    move-result v16
 
     goto :goto_2
 
     :cond_4
     if-nez p2, :cond_5
 
-    iget v15, v3, Landroid/graphics/Rect;->left:I
+    iget v0, v4, Landroid/graphics/Rect;->left:I
+
+    move/from16 v16, v0
 
     :goto_4
-    add-int v6, v15, v7
+    add-int v7, v16, v8
 
-    .restart local v6    # "left":I
-    add-int v11, v6, v13
+    .restart local v7    # "left":I
+    add-int v12, v7, v14
 
-    .restart local v11    # "right":I
+    .restart local v12    # "right":I
     goto :goto_3
 
-    .end local v6    # "left":I
-    .end local v11    # "right":I
+    .end local v7    # "left":I
+    .end local v12    # "right":I
     :cond_5
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getRight()I
 
-    move-result v15
+    move-result v16
 
     goto :goto_4
 .end method

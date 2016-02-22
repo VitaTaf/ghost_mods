@@ -1148,6 +1148,8 @@
     check-cast v4, Landroid/view/View;
 
     .local v4, "v":Landroid/view/View;
+    if-eqz v4, :cond_1
+
     invoke-virtual {v4, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
     :try_end_0
     .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
@@ -1170,6 +1172,8 @@
 
     .restart local v4    # "v":Landroid/view/View;
     :cond_1
+    if-eqz v3, :cond_0
+
     invoke-virtual {p0}, Landroid/widget/AdapterView;->getChildCount()I
 
     move-result v0

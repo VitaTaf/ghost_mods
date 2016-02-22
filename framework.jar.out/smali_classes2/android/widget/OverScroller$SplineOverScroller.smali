@@ -678,6 +678,8 @@
 
     iput p2, p0, Landroid/widget/OverScroller$SplineOverScroller;->mStart:I
 
+    iput p2, p0, Landroid/widget/OverScroller$SplineOverScroller;->mCurrentPosition:I
+
     iget v5, p0, Landroid/widget/OverScroller$SplineOverScroller;->mDeceleration:F
 
     neg-float v5, v5
@@ -1205,6 +1207,8 @@
 
     iput v0, p0, Landroid/widget/OverScroller$SplineOverScroller;->mStart:I
 
+    iput v0, p0, Landroid/widget/OverScroller$SplineOverScroller;->mCurrentPosition:I
+
     iget v0, p0, Landroid/widget/OverScroller$SplineOverScroller;->mCurrVelocity:F
 
     float-to-int v0, v0
@@ -1488,6 +1492,8 @@
 
     iput p1, p0, Landroid/widget/OverScroller$SplineOverScroller;->mStart:I
 
+    iput p1, p0, Landroid/widget/OverScroller$SplineOverScroller;->mCurrentPosition:I
+
     iput v1, p0, Landroid/widget/OverScroller$SplineOverScroller;->mVelocity:I
 
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
@@ -1536,6 +1542,8 @@
     iput-boolean v2, p0, Landroid/widget/OverScroller$SplineOverScroller;->mFinished:Z
 
     iput p1, p0, Landroid/widget/OverScroller$SplineOverScroller;->mStart:I
+
+    iput p1, p0, Landroid/widget/OverScroller$SplineOverScroller;->mCurrentPosition:I
 
     add-int v0, p1, p2
 
