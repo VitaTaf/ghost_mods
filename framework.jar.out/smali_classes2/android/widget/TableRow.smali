@@ -431,7 +431,7 @@
 
     move-result v7
 
-    invoke-static {v7, v9}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {v7, v9}, Landroid/view/View$MeasureSpec;->makeSafeMeasureSpec(II)I
 
     move-result v5
 

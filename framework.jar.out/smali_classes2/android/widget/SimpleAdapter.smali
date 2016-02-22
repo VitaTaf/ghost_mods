@@ -4,7 +4,7 @@
 
 # interfaces
 .implements Landroid/widget/Filterable;
-.implements Landroid/widget/Spinner$ThemedSpinnerAdapter;
+.implements Landroid/widget/ThemedSpinnerAdapter;
 
 
 # annotations
@@ -39,7 +39,7 @@
 
 .field private mFrom:[Ljava/lang/String;
 
-.field private mInflater:Landroid/view/LayoutInflater;
+.field private final mInflater:Landroid/view/LayoutInflater;
 
 .field private mResource:I
 
@@ -491,8 +491,14 @@
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    iget-object v1, p0, Landroid/widget/SimpleAdapter;->mDropDownInflater:Landroid/view/LayoutInflater;
+    iget-object v0, p0, Landroid/widget/SimpleAdapter;->mDropDownInflater:Landroid/view/LayoutInflater;
 
+    if-nez v0, :cond_0
+
+    iget-object v1, p0, Landroid/widget/SimpleAdapter;->mInflater:Landroid/view/LayoutInflater;
+
+    .local v1, "inflater":Landroid/view/LayoutInflater;
+    :goto_0
     iget v5, p0, Landroid/widget/SimpleAdapter;->mDropDownResource:I
 
     move-object v0, p0
@@ -508,6 +514,12 @@
     move-result-object v0
 
     return-object v0
+
+    .end local v1    # "inflater":Landroid/view/LayoutInflater;
+    :cond_0
+    iget-object v1, p0, Landroid/widget/SimpleAdapter;->mDropDownInflater:Landroid/view/LayoutInflater;
+
+    goto :goto_0
 .end method
 
 .method public getDropDownViewTheme()Landroid/content/res/Resources$Theme;

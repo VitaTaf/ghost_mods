@@ -7060,7 +7060,7 @@
     goto :goto_1
 .end method
 
-.method protected onViewAdded(Landroid/view/View;)V
+.method public onViewAdded(Landroid/view/View;)V
     .locals 1
     .param p1, "child"    # Landroid/view/View;
 
@@ -7097,7 +7097,7 @@
     return-void
 .end method
 
-.method protected onViewRemoved(Landroid/view/View;)V
+.method public onViewRemoved(Landroid/view/View;)V
     .locals 3
     .param p1, "child"    # Landroid/view/View;
 

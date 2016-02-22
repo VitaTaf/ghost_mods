@@ -51,13 +51,11 @@
 
 # virtual methods
 .method public collapseItemActionView(Lcom/android/internal/view/menu/MenuBuilder;Lcom/android/internal/view/menu/MenuItemImpl;)Z
-    .locals 4
+    .locals 3
     .param p1, "menu"    # Lcom/android/internal/view/menu/MenuBuilder;
     .param p2, "item"    # Lcom/android/internal/view/menu/MenuItemImpl;
 
     .prologue
-    const/4 v3, 0x0
-
     const/4 v2, 0x0
 
     iget-object v0, p0, Landroid/widget/Toolbar$ExpandedActionViewMenuPresenter;->this$0:Landroid/widget/Toolbar;
@@ -98,20 +96,21 @@
 
     iget-object v0, p0, Landroid/widget/Toolbar$ExpandedActionViewMenuPresenter;->this$0:Landroid/widget/Toolbar;
 
-    iput-object v3, v0, Landroid/widget/Toolbar;->mExpandedActionView:Landroid/view/View;
+    iput-object v2, v0, Landroid/widget/Toolbar;->mExpandedActionView:Landroid/view/View;
 
     iget-object v0, p0, Landroid/widget/Toolbar$ExpandedActionViewMenuPresenter;->this$0:Landroid/widget/Toolbar;
 
-    # invokes: Landroid/widget/Toolbar;->setChildVisibilityForExpandedActionView(Z)V
-    invoke-static {v0, v2}, Landroid/widget/Toolbar;->access$500(Landroid/widget/Toolbar;Z)V
+    invoke-virtual {v0}, Landroid/widget/Toolbar;->addChildrenForExpandedActionView()V
 
-    iput-object v3, p0, Landroid/widget/Toolbar$ExpandedActionViewMenuPresenter;->mCurrentExpandedItem:Lcom/android/internal/view/menu/MenuItemImpl;
+    iput-object v2, p0, Landroid/widget/Toolbar$ExpandedActionViewMenuPresenter;->mCurrentExpandedItem:Lcom/android/internal/view/menu/MenuItemImpl;
 
     iget-object v0, p0, Landroid/widget/Toolbar$ExpandedActionViewMenuPresenter;->this$0:Landroid/widget/Toolbar;
 
     invoke-virtual {v0}, Landroid/widget/Toolbar;->requestLayout()V
 
-    invoke-virtual {p2, v2}, Lcom/android/internal/view/menu/MenuItemImpl;->setActionViewExpanded(Z)V
+    const/4 v0, 0x0
+
+    invoke-virtual {p2, v0}, Lcom/android/internal/view/menu/MenuItemImpl;->setActionViewExpanded(Z)V
 
     const/4 v0, 0x1
 
@@ -224,8 +223,7 @@
     :cond_1
     iget-object v1, p0, Landroid/widget/Toolbar$ExpandedActionViewMenuPresenter;->this$0:Landroid/widget/Toolbar;
 
-    # invokes: Landroid/widget/Toolbar;->setChildVisibilityForExpandedActionView(Z)V
-    invoke-static {v1, v3}, Landroid/widget/Toolbar;->access$500(Landroid/widget/Toolbar;Z)V
+    invoke-virtual {v1}, Landroid/widget/Toolbar;->removeChildrenForExpandedActionView()V
 
     iget-object v1, p0, Landroid/widget/Toolbar$ExpandedActionViewMenuPresenter;->this$0:Landroid/widget/Toolbar;
 

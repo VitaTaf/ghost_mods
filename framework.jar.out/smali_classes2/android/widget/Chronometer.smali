@@ -15,6 +15,10 @@
 
 
 # static fields
+.field private static final HOUR_IN_SEC:I = 0xe10
+
+.field private static final MIN_IN_SEC:I = 0x3c
+
 .field private static final TAG:Ljava/lang/String; = "Chronometer"
 
 .field private static final TICK_WHAT:I = 0x2
@@ -36,6 +40,8 @@
 .field private mHandler:Landroid/os/Handler;
 
 .field private mLogged:Z
+
+.field private mNow:J
 
 .field private mOnChronometerTickListener:Landroid/widget/Chronometer$OnChronometerTickListener;
 
@@ -163,6 +169,171 @@
     return-void
 .end method
 
+.method private static formatDuration(J)Ljava/lang/String;
+    .locals 12
+    .param p0, "ms"    # J
+
+    .prologue
+    invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    .local v4, "res":Landroid/content/res/Resources;
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    .local v6, "text":Ljava/lang/StringBuilder;
+    const-wide/16 v8, 0x3e8
+
+    div-long v8, p0, v8
+
+    long-to-int v0, v8
+
+    .local v0, "duration":I
+    if-gez v0, :cond_0
+
+    neg-int v0, v0
+
+    :cond_0
+    const/4 v2, 0x0
+
+    .local v2, "h":I
+    const/4 v3, 0x0
+
+    .local v3, "m":I
+    const/16 v7, 0xe10
+
+    if-lt v0, v7, :cond_1
+
+    div-int/lit16 v2, v0, 0xe10
+
+    mul-int/lit16 v7, v2, 0xe10
+
+    sub-int/2addr v0, v7
+
+    :cond_1
+    const/16 v7, 0x3c
+
+    if-lt v0, v7, :cond_2
+
+    div-int/lit8 v3, v0, 0x3c
+
+    mul-int/lit8 v7, v3, 0x3c
+
+    sub-int/2addr v0, v7
+
+    :cond_2
+    move v5, v0
+
+    .local v5, "s":I
+    if-lez v2, :cond_3
+
+    const v7, 0x1140014
+
+    const/4 v8, 0x1
+
+    :try_start_0
+    new-array v8, v8, [Ljava/lang/Object;
+
+    const/4 v9, 0x0
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v10
+
+    aput-object v10, v8, v9
+
+    invoke-virtual {v4, v7, v2, v8}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_3
+    if-lez v3, :cond_5
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->length()I
+
+    move-result v7
+
+    if-lez v7, :cond_4
+
+    const/16 v7, 0x20
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    :cond_4
+    const v7, 0x1140013
+
+    const/4 v8, 0x1
+
+    new-array v8, v8, [Ljava/lang/Object;
+
+    const/4 v9, 0x0
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v10
+
+    aput-object v10, v8, v9
+
+    invoke-virtual {v4, v7, v3, v8}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_5
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->length()I
+
+    move-result v7
+
+    if-lez v7, :cond_6
+
+    const/16 v7, 0x20
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    :cond_6
+    const v7, 0x1140012
+
+    const/4 v8, 0x1
+
+    new-array v8, v8, [Ljava/lang/Object;
+
+    const/4 v9, 0x0
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v10
+
+    aput-object v10, v8, v9
+
+    invoke-virtual {v4, v7, v5, v8}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :try_end_0
+    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    :goto_0
+    return-object v7
+
+    :catch_0
+    move-exception v1
+
+    .local v1, "e":Landroid/content/res/Resources$NotFoundException;
+    const/4 v7, 0x0
+
+    goto :goto_0
+.end method
+
 .method private init()V
     .locals 2
 
@@ -253,6 +424,8 @@
     monitor-enter p0
 
     :try_start_0
+    iput-wide p1, p0, Landroid/widget/Chronometer;->mNow:J
+
     iget-wide v6, p0, Landroid/widget/Chronometer;->mBase:J
 
     sub-long v2, p1, v6
@@ -425,6 +598,23 @@
     iget-wide v0, p0, Landroid/widget/Chronometer;->mBase:J
 
     return-wide v0
+.end method
+
+.method public getContentDescription()Ljava/lang/CharSequence;
+    .locals 4
+
+    .prologue
+    iget-wide v0, p0, Landroid/widget/Chronometer;->mNow:J
+
+    iget-wide v2, p0, Landroid/widget/Chronometer;->mBase:J
+
+    sub-long/2addr v0, v2
+
+    invoke-static {v0, v1}, Landroid/widget/Chronometer;->formatDuration(J)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public getFormat()Ljava/lang/String;

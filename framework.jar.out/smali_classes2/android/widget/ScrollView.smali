@@ -1818,167 +1818,264 @@
 .end method
 
 .method public draw(Landroid/graphics/Canvas;)V
-    .locals 7
+    .locals 10
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->draw(Landroid/graphics/Canvas;)V
 
-    iget-object v4, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
+    iget-object v7, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
 
-    if-eqz v4, :cond_3
+    if-eqz v7, :cond_3
 
-    iget v2, p0, Landroid/widget/ScrollView;->mScrollY:I
+    iget v3, p0, Landroid/widget/ScrollView;->mScrollY:I
 
-    .local v2, "scrollY":I
-    iget-object v4, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
+    .local v3, "scrollY":I
+    invoke-virtual {p0}, Landroid/widget/ScrollView;->getClipToPadding()Z
 
-    invoke-virtual {v4}, Landroid/widget/EdgeEffect;->isFinished()Z
+    move-result v0
 
-    move-result v4
+    .local v0, "clipToPadding":Z
+    iget-object v7, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
 
-    if-nez v4, :cond_1
+    invoke-virtual {v7}, Landroid/widget/EdgeEffect;->isFinished()Z
+
+    move-result v7
+
+    if-nez v7, :cond_1
 
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    move-result v1
+    move-result v2
 
-    .local v1, "restoreCount":I
+    .local v2, "restoreCount":I
+    if-eqz v0, :cond_4
+
     invoke-virtual {p0}, Landroid/widget/ScrollView;->getWidth()I
 
-    move-result v4
+    move-result v7
 
-    iget v5, p0, Landroid/widget/ScrollView;->mPaddingLeft:I
+    iget v8, p0, Landroid/widget/ScrollView;->mPaddingLeft:I
 
-    sub-int/2addr v4, v5
+    sub-int/2addr v7, v8
 
-    iget v5, p0, Landroid/widget/ScrollView;->mPaddingRight:I
+    iget v8, p0, Landroid/widget/ScrollView;->mPaddingRight:I
 
-    sub-int v3, v4, v5
+    sub-int v6, v7, v8
 
-    .local v3, "width":I
-    iget v4, p0, Landroid/widget/ScrollView;->mPaddingLeft:I
-
-    int-to-float v4, v4
-
-    const/4 v5, 0x0
-
-    invoke-static {v5, v2}, Ljava/lang/Math;->min(II)I
-
-    move-result v5
-
-    int-to-float v5, v5
-
-    invoke-virtual {p1, v4, v5}, Landroid/graphics/Canvas;->translate(FF)V
-
-    iget-object v4, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
-
+    .local v6, "width":I
     invoke-virtual {p0}, Landroid/widget/ScrollView;->getHeight()I
 
-    move-result v5
+    move-result v7
 
-    invoke-virtual {v4, v3, v5}, Landroid/widget/EdgeEffect;->setSize(II)V
+    iget v8, p0, Landroid/widget/ScrollView;->mPaddingTop:I
 
-    iget-object v4, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
+    sub-int/2addr v7, v8
 
-    invoke-virtual {v4, p1}, Landroid/widget/EdgeEffect;->draw(Landroid/graphics/Canvas;)Z
+    iget v8, p0, Landroid/widget/ScrollView;->mPaddingBottom:I
 
-    move-result v4
+    sub-int v1, v7, v8
 
-    if-eqz v4, :cond_0
+    .local v1, "height":I
+    iget v7, p0, Landroid/widget/ScrollView;->mPaddingLeft:I
+
+    int-to-float v4, v7
+
+    .local v4, "translateX":F
+    iget v7, p0, Landroid/widget/ScrollView;->mPaddingTop:I
+
+    int-to-float v5, v7
+
+    .local v5, "translateY":F
+    :goto_0
+    const/4 v7, 0x0
+
+    invoke-static {v7, v3}, Ljava/lang/Math;->min(II)I
+
+    move-result v7
+
+    int-to-float v7, v7
+
+    add-float/2addr v7, v5
+
+    invoke-virtual {p1, v4, v7}, Landroid/graphics/Canvas;->translate(FF)V
+
+    iget-object v7, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
+
+    invoke-virtual {v7, v6, v1}, Landroid/widget/EdgeEffect;->setSize(II)V
+
+    iget-object v7, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
+
+    invoke-virtual {v7, p1}, Landroid/widget/EdgeEffect;->draw(Landroid/graphics/Canvas;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_0
 
     invoke-virtual {p0}, Landroid/widget/ScrollView;->postInvalidateOnAnimation()V
 
     :cond_0
-    invoke-virtual {p1, v1}, Landroid/graphics/Canvas;->restoreToCount(I)V
+    invoke-virtual {p1, v2}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
-    .end local v1    # "restoreCount":I
-    .end local v3    # "width":I
+    .end local v1    # "height":I
+    .end local v2    # "restoreCount":I
+    .end local v4    # "translateX":F
+    .end local v5    # "translateY":F
+    .end local v6    # "width":I
     :cond_1
-    iget-object v4, p0, Landroid/widget/ScrollView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
+    iget-object v7, p0, Landroid/widget/ScrollView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
 
-    invoke-virtual {v4}, Landroid/widget/EdgeEffect;->isFinished()Z
+    invoke-virtual {v7}, Landroid/widget/EdgeEffect;->isFinished()Z
 
-    move-result v4
+    move-result v7
 
-    if-nez v4, :cond_3
+    if-nez v7, :cond_3
 
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    move-result v1
+    move-result v2
 
-    .restart local v1    # "restoreCount":I
+    .restart local v2    # "restoreCount":I
+    if-eqz v0, :cond_5
+
     invoke-virtual {p0}, Landroid/widget/ScrollView;->getWidth()I
 
-    move-result v4
+    move-result v7
 
-    iget v5, p0, Landroid/widget/ScrollView;->mPaddingLeft:I
+    iget v8, p0, Landroid/widget/ScrollView;->mPaddingLeft:I
 
-    sub-int/2addr v4, v5
+    sub-int/2addr v7, v8
 
-    iget v5, p0, Landroid/widget/ScrollView;->mPaddingRight:I
+    iget v8, p0, Landroid/widget/ScrollView;->mPaddingRight:I
 
-    sub-int v3, v4, v5
+    sub-int v6, v7, v8
 
-    .restart local v3    # "width":I
+    .restart local v6    # "width":I
     invoke-virtual {p0}, Landroid/widget/ScrollView;->getHeight()I
 
-    move-result v0
+    move-result v7
 
-    .local v0, "height":I
-    neg-int v4, v3
+    iget v8, p0, Landroid/widget/ScrollView;->mPaddingTop:I
 
-    iget v5, p0, Landroid/widget/ScrollView;->mPaddingLeft:I
+    sub-int/2addr v7, v8
 
-    add-int/2addr v4, v5
+    iget v8, p0, Landroid/widget/ScrollView;->mPaddingBottom:I
 
-    int-to-float v4, v4
+    sub-int v1, v7, v8
+
+    .restart local v1    # "height":I
+    iget v7, p0, Landroid/widget/ScrollView;->mPaddingLeft:I
+
+    int-to-float v4, v7
+
+    .restart local v4    # "translateX":F
+    iget v7, p0, Landroid/widget/ScrollView;->mPaddingTop:I
+
+    int-to-float v5, v7
+
+    .restart local v5    # "translateY":F
+    :goto_1
+    neg-int v7, v6
+
+    int-to-float v7, v7
+
+    add-float/2addr v7, v4
 
     invoke-direct {p0}, Landroid/widget/ScrollView;->getScrollRange()I
 
-    move-result v5
+    move-result v8
 
-    invoke-static {v5, v2}, Ljava/lang/Math;->max(II)I
+    invoke-static {v8, v3}, Ljava/lang/Math;->max(II)I
 
-    move-result v5
+    move-result v8
 
-    add-int/2addr v5, v0
+    add-int/2addr v8, v1
 
-    int-to-float v5, v5
+    int-to-float v8, v8
 
-    invoke-virtual {p1, v4, v5}, Landroid/graphics/Canvas;->translate(FF)V
+    add-float/2addr v8, v5
 
-    const/high16 v4, 0x43340000    # 180.0f
+    invoke-virtual {p1, v7, v8}, Landroid/graphics/Canvas;->translate(FF)V
 
-    int-to-float v5, v3
+    const/high16 v7, 0x43340000    # 180.0f
 
-    const/4 v6, 0x0
+    int-to-float v8, v6
 
-    invoke-virtual {p1, v4, v5, v6}, Landroid/graphics/Canvas;->rotate(FFF)V
+    const/4 v9, 0x0
 
-    iget-object v4, p0, Landroid/widget/ScrollView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
+    invoke-virtual {p1, v7, v8, v9}, Landroid/graphics/Canvas;->rotate(FFF)V
 
-    invoke-virtual {v4, v3, v0}, Landroid/widget/EdgeEffect;->setSize(II)V
+    iget-object v7, p0, Landroid/widget/ScrollView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
 
-    iget-object v4, p0, Landroid/widget/ScrollView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
+    invoke-virtual {v7, v6, v1}, Landroid/widget/EdgeEffect;->setSize(II)V
 
-    invoke-virtual {v4, p1}, Landroid/widget/EdgeEffect;->draw(Landroid/graphics/Canvas;)Z
+    iget-object v7, p0, Landroid/widget/ScrollView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
 
-    move-result v4
+    invoke-virtual {v7, p1}, Landroid/widget/EdgeEffect;->draw(Landroid/graphics/Canvas;)Z
 
-    if-eqz v4, :cond_2
+    move-result v7
+
+    if-eqz v7, :cond_2
 
     invoke-virtual {p0}, Landroid/widget/ScrollView;->postInvalidateOnAnimation()V
 
     :cond_2
-    invoke-virtual {p1, v1}, Landroid/graphics/Canvas;->restoreToCount(I)V
+    invoke-virtual {p1, v2}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
-    .end local v0    # "height":I
-    .end local v1    # "restoreCount":I
-    .end local v2    # "scrollY":I
-    .end local v3    # "width":I
+    .end local v0    # "clipToPadding":Z
+    .end local v1    # "height":I
+    .end local v2    # "restoreCount":I
+    .end local v3    # "scrollY":I
+    .end local v4    # "translateX":F
+    .end local v5    # "translateY":F
+    .end local v6    # "width":I
     :cond_3
     return-void
+
+    .restart local v0    # "clipToPadding":Z
+    .restart local v2    # "restoreCount":I
+    .restart local v3    # "scrollY":I
+    :cond_4
+    invoke-virtual {p0}, Landroid/widget/ScrollView;->getWidth()I
+
+    move-result v6
+
+    .restart local v6    # "width":I
+    invoke-virtual {p0}, Landroid/widget/ScrollView;->getHeight()I
+
+    move-result v1
+
+    .restart local v1    # "height":I
+    const/4 v4, 0x0
+
+    .restart local v4    # "translateX":F
+    const/4 v5, 0x0
+
+    .restart local v5    # "translateY":F
+    goto :goto_0
+
+    .end local v1    # "height":I
+    .end local v4    # "translateX":F
+    .end local v5    # "translateY":F
+    .end local v6    # "width":I
+    :cond_5
+    invoke-virtual {p0}, Landroid/widget/ScrollView;->getWidth()I
+
+    move-result v6
+
+    .restart local v6    # "width":I
+    invoke-virtual {p0}, Landroid/widget/ScrollView;->getHeight()I
+
+    move-result v1
+
+    .restart local v1    # "height":I
+    const/4 v4, 0x0
+
+    .restart local v4    # "translateX":F
+    const/4 v5, 0x0
+
+    .restart local v5    # "translateY":F
+    goto :goto_1
 .end method
 
 .method public executeKeyEvent(Landroid/view/KeyEvent;)Z
@@ -2491,7 +2588,7 @@
 
     const/4 v4, 0x0
 
-    invoke-static {v3, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {v3, v4}, Landroid/view/View$MeasureSpec;->makeSafeMeasureSpec(II)I
 
     move-result v0
 
@@ -2546,7 +2643,7 @@
 
     const/4 v4, 0x0
 
-    invoke-static {v3, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {v3, v4}, Landroid/view/View$MeasureSpec;->makeSafeMeasureSpec(II)I
 
     move-result v0
 
@@ -3215,16 +3312,16 @@
 .end method
 
 .method protected onMeasure(II)V
-    .locals 8
+    .locals 11
     .param p1, "widthMeasureSpec"    # I
     .param p2, "heightMeasureSpec"    # I
 
     .prologue
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    iget-boolean v6, p0, Landroid/widget/ScrollView;->mFillViewport:Z
+    iget-boolean v9, p0, Landroid/widget/ScrollView;->mFillViewport:Z
 
-    if-nez v6, :cond_1
+    if-nez v9, :cond_1
 
     :cond_0
     :goto_0
@@ -3240,13 +3337,13 @@
 
     invoke-virtual {p0}, Landroid/widget/ScrollView;->getChildCount()I
 
-    move-result v6
+    move-result v9
 
-    if-lez v6, :cond_0
+    if-lez v9, :cond_0
 
-    const/4 v6, 0x0
+    const/4 v9, 0x0
 
-    invoke-virtual {p0, v6}, Landroid/widget/ScrollView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v9}, Landroid/widget/ScrollView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -3258,41 +3355,75 @@
     .local v3, "height":I
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
 
-    move-result v6
+    move-result v9
 
-    if-ge v6, v3, :cond_0
+    if-ge v9, v3, :cond_0
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v5
+    move-result-object v6
 
-    check-cast v5, Landroid/widget/FrameLayout$LayoutParams;
+    check-cast v6, Landroid/widget/FrameLayout$LayoutParams;
 
-    .local v5, "lp":Landroid/widget/FrameLayout$LayoutParams;
-    iget v6, p0, Landroid/widget/ScrollView;->mPaddingLeft:I
+    .local v6, "lp":Landroid/widget/FrameLayout$LayoutParams;
+    invoke-virtual {p0}, Landroid/widget/ScrollView;->getContext()Landroid/content/Context;
 
-    iget v7, p0, Landroid/widget/ScrollView;->mPaddingRight:I
+    move-result-object v9
 
-    add-int/2addr v6, v7
+    invoke-virtual {v9}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
-    iget v7, v5, Landroid/widget/FrameLayout$LayoutParams;->width:I
+    move-result-object v9
 
-    invoke-static {p1, v6, v7}, Landroid/widget/ScrollView;->getChildMeasureSpec(III)I
+    iget v7, v9, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
+
+    .local v7, "targetSdkVersion":I
+    const/16 v9, 0x2710
+
+    if-lt v7, v9, :cond_2
+
+    iget v9, p0, Landroid/widget/ScrollView;->mPaddingLeft:I
+
+    iget v10, p0, Landroid/widget/ScrollView;->mPaddingRight:I
+
+    add-int/2addr v9, v10
+
+    iget v10, v6, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
+
+    add-int/2addr v9, v10
+
+    iget v10, v6, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
+
+    add-int v8, v9, v10
+
+    .local v8, "widthPadding":I
+    iget v9, p0, Landroid/widget/ScrollView;->mPaddingTop:I
+
+    iget v10, p0, Landroid/widget/ScrollView;->mPaddingBottom:I
+
+    add-int/2addr v9, v10
+
+    iget v10, v6, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
+
+    add-int/2addr v9, v10
+
+    iget v10, v6, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
+
+    add-int v5, v9, v10
+
+    .local v5, "heightPadding":I
+    :goto_1
+    iget v9, v6, Landroid/widget/FrameLayout$LayoutParams;->width:I
+
+    invoke-static {p1, v8, v9}, Landroid/widget/ScrollView;->getChildMeasureSpec(III)I
 
     move-result v2
 
     .local v2, "childWidthMeasureSpec":I
-    iget v6, p0, Landroid/widget/ScrollView;->mPaddingTop:I
+    sub-int v9, v3, v5
 
-    sub-int/2addr v3, v6
+    const/high16 v10, 0x40000000    # 2.0f
 
-    iget v6, p0, Landroid/widget/ScrollView;->mPaddingBottom:I
-
-    sub-int/2addr v3, v6
-
-    const/high16 v6, 0x40000000    # 2.0f
-
-    invoke-static {v3, v6}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {v9, v10}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v1
 
@@ -3300,6 +3431,27 @@
     invoke-virtual {v0, v2, v1}, Landroid/view/View;->measure(II)V
 
     goto :goto_0
+
+    .end local v1    # "childHeightMeasureSpec":I
+    .end local v2    # "childWidthMeasureSpec":I
+    .end local v5    # "heightPadding":I
+    .end local v8    # "widthPadding":I
+    :cond_2
+    iget v9, p0, Landroid/widget/ScrollView;->mPaddingLeft:I
+
+    iget v10, p0, Landroid/widget/ScrollView;->mPaddingRight:I
+
+    add-int v8, v9, v10
+
+    .restart local v8    # "widthPadding":I
+    iget v9, p0, Landroid/widget/ScrollView;->mPaddingTop:I
+
+    iget v10, p0, Landroid/widget/ScrollView;->mPaddingBottom:I
+
+    add-int v5, v9, v10
+
+    .restart local v5    # "heightPadding":I
+    goto :goto_1
 .end method
 
 .method public onNestedFling(Landroid/view/View;FFZ)Z

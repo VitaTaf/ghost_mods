@@ -192,10 +192,6 @@
 
 .field private mGlobalLayoutListenerAddedFilter:Z
 
-.field private mGlowPaddingLeft:I
-
-.field private mGlowPaddingRight:I
-
 .field private mIsChildViewEnabled:Z
 
 .field private mIsDetaching:Z
@@ -504,403 +500,221 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
-    .locals 16
+    .locals 8
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "attrs"    # Landroid/util/AttributeSet;
     .param p3, "defStyleAttr"    # I
     .param p4, "defStyleRes"    # I
 
     .prologue
-    invoke-direct/range {p0 .. p4}, Landroid/widget/AdapterView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+    const/4 v7, 0x0
 
-    const/4 v14, 0x0
+    const/4 v6, 0x2
 
-    move-object/from16 v0, p0
+    const/4 v5, 0x1
 
-    iput v14, v0, Landroid/widget/AbsListView;->mChoiceMode:I
+    const/4 v4, -0x1
 
-    const/4 v14, 0x0
+    const/4 v3, 0x0
 
-    move-object/from16 v0, p0
+    invoke-direct {p0, p1, p2, p3, p4}, Landroid/widget/AdapterView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    iput v14, v0, Landroid/widget/AbsListView;->mLayoutMode:I
+    iput v3, p0, Landroid/widget/AbsListView;->mChoiceMode:I
 
-    const/4 v14, 0x0
+    iput v3, p0, Landroid/widget/AbsListView;->mLayoutMode:I
 
-    move-object/from16 v0, p0
+    iput-boolean v3, p0, Landroid/widget/AbsListView;->mDeferNotifyDataSetChanged:Z
 
-    iput-boolean v14, v0, Landroid/widget/AbsListView;->mDeferNotifyDataSetChanged:Z
+    iput-boolean v3, p0, Landroid/widget/AbsListView;->mDrawSelectorOnTop:Z
 
-    const/4 v14, 0x0
+    iput v4, p0, Landroid/widget/AbsListView;->mSelectorPosition:I
 
-    move-object/from16 v0, p0
+    new-instance v2, Landroid/graphics/Rect;
 
-    iput-boolean v14, v0, Landroid/widget/AbsListView;->mDrawSelectorOnTop:Z
+    invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
-    const/4 v14, -0x1
+    iput-object v2, p0, Landroid/widget/AbsListView;->mSelectorRect:Landroid/graphics/Rect;
 
-    move-object/from16 v0, p0
+    new-instance v2, Landroid/widget/AbsListView$RecycleBin;
 
-    iput v14, v0, Landroid/widget/AbsListView;->mSelectorPosition:I
+    invoke-direct {v2, p0}, Landroid/widget/AbsListView$RecycleBin;-><init>(Landroid/widget/AbsListView;)V
 
-    new-instance v14, Landroid/graphics/Rect;
+    iput-object v2, p0, Landroid/widget/AbsListView;->mRecycler:Landroid/widget/AbsListView$RecycleBin;
 
-    invoke-direct {v14}, Landroid/graphics/Rect;-><init>()V
+    iput v3, p0, Landroid/widget/AbsListView;->mSelectionLeftPadding:I
 
-    move-object/from16 v0, p0
+    iput v3, p0, Landroid/widget/AbsListView;->mSelectionTopPadding:I
 
-    iput-object v14, v0, Landroid/widget/AbsListView;->mSelectorRect:Landroid/graphics/Rect;
+    iput v3, p0, Landroid/widget/AbsListView;->mSelectionRightPadding:I
 
-    new-instance v14, Landroid/widget/AbsListView$RecycleBin;
+    iput v3, p0, Landroid/widget/AbsListView;->mSelectionBottomPadding:I
 
-    move-object/from16 v0, p0
+    new-instance v2, Landroid/graphics/Rect;
 
-    invoke-direct {v14, v0}, Landroid/widget/AbsListView$RecycleBin;-><init>(Landroid/widget/AbsListView;)V
+    invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
-    move-object/from16 v0, p0
+    iput-object v2, p0, Landroid/widget/AbsListView;->mListPadding:Landroid/graphics/Rect;
 
-    iput-object v14, v0, Landroid/widget/AbsListView;->mRecycler:Landroid/widget/AbsListView$RecycleBin;
+    iput v3, p0, Landroid/widget/AbsListView;->mWidthMeasureSpec:I
 
-    const/4 v14, 0x0
+    iput v4, p0, Landroid/widget/AbsListView;->mTouchMode:I
 
-    move-object/from16 v0, p0
+    iput v3, p0, Landroid/widget/AbsListView;->mSelectedTop:I
 
-    iput v14, v0, Landroid/widget/AbsListView;->mSelectionLeftPadding:I
+    iput-boolean v5, p0, Landroid/widget/AbsListView;->mSmoothScrollbarEnabled:Z
 
-    const/4 v14, 0x0
+    iput v4, p0, Landroid/widget/AbsListView;->mResurrectToPosition:I
 
-    move-object/from16 v0, p0
+    iput-object v7, p0, Landroid/widget/AbsListView;->mContextMenuInfo:Landroid/view/ContextMenu$ContextMenuInfo;
 
-    iput v14, v0, Landroid/widget/AbsListView;->mSelectionTopPadding:I
+    iput v4, p0, Landroid/widget/AbsListView;->mLastTouchMode:I
 
-    const/4 v14, 0x0
+    iput-boolean v3, p0, Landroid/widget/AbsListView;->mScrollProfilingStarted:Z
 
-    move-object/from16 v0, p0
+    iput-boolean v3, p0, Landroid/widget/AbsListView;->mFlingProfilingStarted:Z
 
-    iput v14, v0, Landroid/widget/AbsListView;->mSelectionRightPadding:I
+    iput-object v7, p0, Landroid/widget/AbsListView;->mScrollStrictSpan:Landroid/os/StrictMode$Span;
 
-    const/4 v14, 0x0
+    iput-object v7, p0, Landroid/widget/AbsListView;->mFlingStrictSpan:Landroid/os/StrictMode$Span;
 
-    move-object/from16 v0, p0
+    iput v3, p0, Landroid/widget/AbsListView;->mLastScrollState:I
 
-    iput v14, v0, Landroid/widget/AbsListView;->mSelectionBottomPadding:I
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    new-instance v14, Landroid/graphics/Rect;
+    iput v2, p0, Landroid/widget/AbsListView;->mVelocityScale:F
 
-    invoke-direct {v14}, Landroid/graphics/Rect;-><init>()V
+    new-array v2, v5, [Z
 
-    move-object/from16 v0, p0
+    iput-object v2, p0, Landroid/widget/AbsListView;->mIsScrap:[Z
 
-    iput-object v14, v0, Landroid/widget/AbsListView;->mListPadding:Landroid/graphics/Rect;
+    new-array v2, v6, [I
 
-    const/4 v14, 0x0
+    iput-object v2, p0, Landroid/widget/AbsListView;->mScrollOffset:[I
 
-    move-object/from16 v0, p0
+    new-array v2, v6, [I
 
-    iput v14, v0, Landroid/widget/AbsListView;->mWidthMeasureSpec:I
+    iput-object v2, p0, Landroid/widget/AbsListView;->mScrollConsumed:[I
 
-    const/4 v14, -0x1
+    new-array v2, v6, [F
 
-    move-object/from16 v0, p0
+    iput-object v2, p0, Landroid/widget/AbsListView;->mTmpPoint:[F
 
-    iput v14, v0, Landroid/widget/AbsListView;->mTouchMode:I
+    iput v3, p0, Landroid/widget/AbsListView;->mNestedYOffset:I
 
-    const/4 v14, 0x0
+    iput v4, p0, Landroid/widget/AbsListView;->mActivePointerId:I
 
-    move-object/from16 v0, p0
+    iput v3, p0, Landroid/widget/AbsListView;->mDirection:I
 
-    iput v14, v0, Landroid/widget/AbsListView;->mSelectedTop:I
-
-    const/4 v14, 0x1
-
-    move-object/from16 v0, p0
-
-    iput-boolean v14, v0, Landroid/widget/AbsListView;->mSmoothScrollbarEnabled:Z
-
-    const/4 v14, -0x1
-
-    move-object/from16 v0, p0
-
-    iput v14, v0, Landroid/widget/AbsListView;->mResurrectToPosition:I
-
-    const/4 v14, 0x0
-
-    move-object/from16 v0, p0
-
-    iput-object v14, v0, Landroid/widget/AbsListView;->mContextMenuInfo:Landroid/view/ContextMenu$ContextMenuInfo;
-
-    const/4 v14, -0x1
-
-    move-object/from16 v0, p0
-
-    iput v14, v0, Landroid/widget/AbsListView;->mLastTouchMode:I
-
-    const/4 v14, 0x0
-
-    move-object/from16 v0, p0
-
-    iput-boolean v14, v0, Landroid/widget/AbsListView;->mScrollProfilingStarted:Z
-
-    const/4 v14, 0x0
-
-    move-object/from16 v0, p0
-
-    iput-boolean v14, v0, Landroid/widget/AbsListView;->mFlingProfilingStarted:Z
-
-    const/4 v14, 0x0
-
-    move-object/from16 v0, p0
-
-    iput-object v14, v0, Landroid/widget/AbsListView;->mScrollStrictSpan:Landroid/os/StrictMode$Span;
-
-    const/4 v14, 0x0
-
-    move-object/from16 v0, p0
-
-    iput-object v14, v0, Landroid/widget/AbsListView;->mFlingStrictSpan:Landroid/os/StrictMode$Span;
-
-    const/4 v14, 0x0
-
-    move-object/from16 v0, p0
-
-    iput v14, v0, Landroid/widget/AbsListView;->mLastScrollState:I
-
-    const/high16 v14, 0x3f800000    # 1.0f
-
-    move-object/from16 v0, p0
-
-    iput v14, v0, Landroid/widget/AbsListView;->mVelocityScale:F
-
-    const/4 v14, 0x1
-
-    new-array v14, v14, [Z
-
-    move-object/from16 v0, p0
-
-    iput-object v14, v0, Landroid/widget/AbsListView;->mIsScrap:[Z
-
-    const/4 v14, 0x2
-
-    new-array v14, v14, [I
-
-    move-object/from16 v0, p0
-
-    iput-object v14, v0, Landroid/widget/AbsListView;->mScrollOffset:[I
-
-    const/4 v14, 0x2
-
-    new-array v14, v14, [I
-
-    move-object/from16 v0, p0
-
-    iput-object v14, v0, Landroid/widget/AbsListView;->mScrollConsumed:[I
-
-    const/4 v14, 0x2
-
-    new-array v14, v14, [F
-
-    move-object/from16 v0, p0
-
-    iput-object v14, v0, Landroid/widget/AbsListView;->mTmpPoint:[F
-
-    const/4 v14, 0x0
-
-    move-object/from16 v0, p0
-
-    iput v14, v0, Landroid/widget/AbsListView;->mNestedYOffset:I
-
-    const/4 v14, -0x1
-
-    move-object/from16 v0, p0
-
-    iput v14, v0, Landroid/widget/AbsListView;->mActivePointerId:I
-
-    const/4 v14, 0x0
-
-    move-object/from16 v0, p0
-
-    iput v14, v0, Landroid/widget/AbsListView;->mDirection:I
-
-    invoke-direct/range {p0 .. p0}, Landroid/widget/AbsListView;->initAbsListView()V
+    invoke-direct {p0}, Landroid/widget/AbsListView;->initAbsListView()V
 
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
-    move-result-object v14
+    move-result-object v2
 
-    move-object/from16 v0, p0
+    iput-object v2, p0, Landroid/widget/AbsListView;->mOwnerThread:Ljava/lang/Thread;
 
-    iput-object v14, v0, Landroid/widget/AbsListView;->mOwnerThread:Ljava/lang/Thread;
+    sget-object v2, Lcom/android/internal/R$styleable;->AbsListView:[I
 
-    sget-object v14, Lcom/android/internal/R$styleable;->AbsListView:[I
+    invoke-virtual {p1, p2, v2, p3, p4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
-    move-object/from16 v0, p1
+    move-result-object v0
 
-    move-object/from16 v1, p2
+    .local v0, "a":Landroid/content/res/TypedArray;
+    invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move/from16 v2, p3
+    move-result-object v1
 
-    move/from16 v3, p4
+    .local v1, "selector":Landroid/graphics/drawable/Drawable;
+    if-eqz v1, :cond_0
 
-    invoke-virtual {v0, v1, v14, v2, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
-
-    move-result-object v4
-
-    .local v4, "a":Landroid/content/res/TypedArray;
-    const/4 v14, 0x0
-
-    invoke-virtual {v4, v14}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v6
-
-    .local v6, "d":Landroid/graphics/drawable/Drawable;
-    if-eqz v6, :cond_0
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v6}, Landroid/widget/AbsListView;->setSelector(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p0, v1}, Landroid/widget/AbsListView;->setSelector(Landroid/graphics/drawable/Drawable;)V
 
     :cond_0
-    const/4 v14, 0x1
+    invoke-virtual {v0, v5, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    const/4 v15, 0x0
+    move-result v2
 
-    invoke-virtual {v4, v14, v15}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    iput-boolean v2, p0, Landroid/widget/AbsListView;->mDrawSelectorOnTop:Z
 
-    move-result v14
+    invoke-virtual {v0, v6, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    move-object/from16 v0, p0
+    move-result v2
 
-    iput-boolean v14, v0, Landroid/widget/AbsListView;->mDrawSelectorOnTop:Z
+    invoke-virtual {p0, v2}, Landroid/widget/AbsListView;->setStackFromBottom(Z)V
 
-    const/4 v14, 0x2
+    const/4 v2, 0x3
 
-    const/4 v15, 0x0
+    invoke-virtual {v0, v2, v5}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    invoke-virtual {v4, v14, v15}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    move-result v2
 
-    move-result v11
+    invoke-virtual {p0, v2}, Landroid/widget/AbsListView;->setScrollingCacheEnabled(Z)V
 
-    .local v11, "stackFromBottom":Z
-    move-object/from16 v0, p0
+    const/4 v2, 0x4
 
-    invoke-virtual {v0, v11}, Landroid/widget/AbsListView;->setStackFromBottom(Z)V
+    invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    const/4 v14, 0x3
+    move-result v2
 
-    const/4 v15, 0x1
+    invoke-virtual {p0, v2}, Landroid/widget/AbsListView;->setTextFilterEnabled(Z)V
 
-    invoke-virtual {v4, v14, v15}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    const/4 v2, 0x5
 
-    move-result v9
+    invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    .local v9, "scrollingCacheEnabled":Z
-    move-object/from16 v0, p0
+    move-result v2
 
-    invoke-virtual {v0, v9}, Landroid/widget/AbsListView;->setScrollingCacheEnabled(Z)V
+    invoke-virtual {p0, v2}, Landroid/widget/AbsListView;->setTranscriptMode(I)V
 
-    const/4 v14, 0x4
+    const/4 v2, 0x6
 
-    const/4 v15, 0x0
+    invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getColor(II)I
 
-    invoke-virtual {v4, v14, v15}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    move-result v2
 
-    move-result v13
+    invoke-virtual {p0, v2}, Landroid/widget/AbsListView;->setCacheColorHint(I)V
 
-    .local v13, "useTextFilter":Z
-    move-object/from16 v0, p0
+    const/16 v2, 0x9
 
-    invoke-virtual {v0, v13}, Landroid/widget/AbsListView;->setTextFilterEnabled(Z)V
+    invoke-virtual {v0, v2, v5}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    const/4 v14, 0x5
+    move-result v2
 
-    const/4 v15, 0x0
+    invoke-virtual {p0, v2}, Landroid/widget/AbsListView;->setSmoothScrollbarEnabled(Z)V
 
-    invoke-virtual {v4, v14, v15}, Landroid/content/res/TypedArray;->getInt(II)I
+    const/4 v2, 0x7
 
-    move-result v12
+    invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    .local v12, "transcriptMode":I
-    move-object/from16 v0, p0
+    move-result v2
 
-    invoke-virtual {v0, v12}, Landroid/widget/AbsListView;->setTranscriptMode(I)V
+    invoke-virtual {p0, v2}, Landroid/widget/AbsListView;->setChoiceMode(I)V
 
-    const/4 v14, 0x6
+    const/16 v2, 0x8
 
-    const/4 v15, 0x0
+    invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    invoke-virtual {v4, v14, v15}, Landroid/content/res/TypedArray;->getColor(II)I
+    move-result v2
 
-    move-result v5
+    invoke-virtual {p0, v2}, Landroid/widget/AbsListView;->setFastScrollEnabled(Z)V
 
-    .local v5, "color":I
-    move-object/from16 v0, p0
+    const/16 v2, 0xb
 
-    invoke-virtual {v0, v5}, Landroid/widget/AbsListView;->setCacheColorHint(I)V
+    invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
-    const/16 v14, 0x8
+    move-result v2
 
-    const/4 v15, 0x0
+    invoke-virtual {p0, v2}, Landroid/widget/AbsListView;->setFastScrollStyle(I)V
 
-    invoke-virtual {v4, v14, v15}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    const/16 v2, 0xa
 
-    move-result v7
+    invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    .local v7, "enableFastScroll":Z
-    move-object/from16 v0, p0
+    move-result v2
 
-    invoke-virtual {v0, v7}, Landroid/widget/AbsListView;->setFastScrollEnabled(Z)V
+    invoke-virtual {p0, v2}, Landroid/widget/AbsListView;->setFastScrollAlwaysVisible(Z)V
 
-    const/16 v14, 0xb
-
-    const/4 v15, 0x0
-
-    invoke-virtual {v4, v14, v15}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result v8
-
-    .local v8, "fastScrollStyle":I
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v8}, Landroid/widget/AbsListView;->setFastScrollStyle(I)V
-
-    const/16 v14, 0x9
-
-    const/4 v15, 0x1
-
-    invoke-virtual {v4, v14, v15}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
-
-    move-result v10
-
-    .local v10, "smoothScrollbar":Z
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v10}, Landroid/widget/AbsListView;->setSmoothScrollbarEnabled(Z)V
-
-    const/4 v14, 0x7
-
-    const/4 v15, 0x0
-
-    invoke-virtual {v4, v14, v15}, Landroid/content/res/TypedArray;->getInt(II)I
-
-    move-result v14
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v14}, Landroid/widget/AbsListView;->setChoiceMode(I)V
-
-    const/16 v14, 0xa
-
-    const/4 v15, 0x0
-
-    invoke-virtual {v4, v14, v15}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
-
-    move-result v14
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v14}, Landroid/widget/AbsListView;->setFastScrollAlwaysVisible(Z)V
-
-    invoke-virtual {v4}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
     return-void
 .end method
@@ -2236,6 +2050,163 @@
 
     :cond_0
     return-void
+.end method
+
+.method private invalidateBottomGlow()V
+    .locals 6
+
+    .prologue
+    iget-object v4, p0, Landroid/widget/AbsListView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
+
+    if-nez v4, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    invoke-virtual {p0}, Landroid/widget/AbsListView;->getClipToPadding()Z
+
+    move-result v1
+
+    .local v1, "clipToPadding":Z
+    if-eqz v1, :cond_1
+
+    invoke-virtual {p0}, Landroid/widget/AbsListView;->getHeight()I
+
+    move-result v4
+
+    iget v5, p0, Landroid/widget/AbsListView;->mPaddingBottom:I
+
+    sub-int v0, v4, v5
+
+    .local v0, "bottom":I
+    :goto_1
+    if-eqz v1, :cond_2
+
+    iget v2, p0, Landroid/widget/AbsListView;->mPaddingLeft:I
+
+    .local v2, "left":I
+    :goto_2
+    if-eqz v1, :cond_3
+
+    invoke-virtual {p0}, Landroid/widget/AbsListView;->getWidth()I
+
+    move-result v4
+
+    iget v5, p0, Landroid/widget/AbsListView;->mPaddingRight:I
+
+    sub-int v3, v4, v5
+
+    .local v3, "right":I
+    :goto_3
+    iget-object v4, p0, Landroid/widget/AbsListView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
+
+    invoke-virtual {v4}, Landroid/widget/EdgeEffect;->getMaxHeight()I
+
+    move-result v4
+
+    sub-int v4, v0, v4
+
+    invoke-virtual {p0, v2, v4, v3, v0}, Landroid/widget/AbsListView;->invalidate(IIII)V
+
+    goto :goto_0
+
+    .end local v0    # "bottom":I
+    .end local v2    # "left":I
+    .end local v3    # "right":I
+    :cond_1
+    invoke-virtual {p0}, Landroid/widget/AbsListView;->getHeight()I
+
+    move-result v0
+
+    goto :goto_1
+
+    .restart local v0    # "bottom":I
+    :cond_2
+    const/4 v2, 0x0
+
+    goto :goto_2
+
+    .restart local v2    # "left":I
+    :cond_3
+    invoke-virtual {p0}, Landroid/widget/AbsListView;->getWidth()I
+
+    move-result v3
+
+    goto :goto_3
+.end method
+
+.method private invalidateTopGlow()V
+    .locals 6
+
+    .prologue
+    const/4 v1, 0x0
+
+    iget-object v4, p0, Landroid/widget/AbsListView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
+
+    if-nez v4, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    invoke-virtual {p0}, Landroid/widget/AbsListView;->getClipToPadding()Z
+
+    move-result v0
+
+    .local v0, "clipToPadding":Z
+    if-eqz v0, :cond_2
+
+    iget v3, p0, Landroid/widget/AbsListView;->mPaddingTop:I
+
+    .local v3, "top":I
+    :goto_1
+    if-eqz v0, :cond_1
+
+    iget v1, p0, Landroid/widget/AbsListView;->mPaddingLeft:I
+
+    .local v1, "left":I
+    :cond_1
+    if-eqz v0, :cond_3
+
+    invoke-virtual {p0}, Landroid/widget/AbsListView;->getWidth()I
+
+    move-result v4
+
+    iget v5, p0, Landroid/widget/AbsListView;->mPaddingRight:I
+
+    sub-int v2, v4, v5
+
+    .local v2, "right":I
+    :goto_2
+    iget-object v4, p0, Landroid/widget/AbsListView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
+
+    invoke-virtual {v4}, Landroid/widget/EdgeEffect;->getMaxHeight()I
+
+    move-result v4
+
+    add-int/2addr v4, v3
+
+    invoke-virtual {p0, v1, v3, v2, v4}, Landroid/widget/AbsListView;->invalidate(IIII)V
+
+    goto :goto_0
+
+    .end local v1    # "left":I
+    .end local v2    # "right":I
+    .end local v3    # "top":I
+    :cond_2
+    move v3, v1
+
+    goto :goto_1
+
+    .restart local v1    # "left":I
+    .restart local v3    # "top":I
+    :cond_3
+    invoke-virtual {p0}, Landroid/widget/AbsListView;->getWidth()I
+
+    move-result v2
+
+    goto :goto_2
 .end method
 
 .method private isOwnerThread()Z
@@ -4083,7 +4054,7 @@
 .end method
 
 .method private positionSelector(ILandroid/view/View;ZFF)V
-    .locals 8
+    .locals 10
     .param p1, "position"    # I
     .param p2, "sel"    # Landroid/view/View;
     .param p3, "manageHotspot"    # Z
@@ -4091,11 +4062,15 @@
     .param p5, "y"    # F
 
     .prologue
+    const/4 v5, 0x1
+
+    const/4 v6, 0x0
+
     iget v4, p0, Landroid/widget/AbsListView;->mSelectorPosition:I
 
     if-eq p1, v4, :cond_7
 
-    const/4 v1, 0x1
+    move v1, v5
 
     .local v1, "positionChanged":Z
     :goto_0
@@ -4115,17 +4090,17 @@
 
     invoke-virtual {p2}, Landroid/view/View;->getTop()I
 
-    move-result v5
+    move-result v7
 
     invoke-virtual {p2}, Landroid/view/View;->getRight()I
 
-    move-result v6
+    move-result v8
 
     invoke-virtual {p2}, Landroid/view/View;->getBottom()I
 
-    move-result v7
+    move-result v9
 
-    invoke-virtual {v3, v4, v5, v6, v7}, Landroid/graphics/Rect;->set(IIII)V
+    invoke-virtual {v3, v4, v7, v8, v9}, Landroid/graphics/Rect;->set(IIII)V
 
     instance-of v4, p2, Landroid/widget/AbsListView$SelectionBoundsAdjuster;
 
@@ -4140,104 +4115,81 @@
     :cond_1
     iget v4, v3, Landroid/graphics/Rect;->left:I
 
-    iget v5, p0, Landroid/widget/AbsListView;->mSelectionLeftPadding:I
+    iget v7, p0, Landroid/widget/AbsListView;->mSelectionLeftPadding:I
 
-    sub-int/2addr v4, v5
+    sub-int/2addr v4, v7
 
     iput v4, v3, Landroid/graphics/Rect;->left:I
 
     iget v4, v3, Landroid/graphics/Rect;->top:I
 
-    iget v5, p0, Landroid/widget/AbsListView;->mSelectionTopPadding:I
+    iget v7, p0, Landroid/widget/AbsListView;->mSelectionTopPadding:I
 
-    sub-int/2addr v4, v5
+    sub-int/2addr v4, v7
 
     iput v4, v3, Landroid/graphics/Rect;->top:I
 
     iget v4, v3, Landroid/graphics/Rect;->right:I
 
-    iget v5, p0, Landroid/widget/AbsListView;->mSelectionRightPadding:I
+    iget v7, p0, Landroid/widget/AbsListView;->mSelectionRightPadding:I
 
-    add-int/2addr v4, v5
+    add-int/2addr v4, v7
 
     iput v4, v3, Landroid/graphics/Rect;->right:I
 
     iget v4, v3, Landroid/graphics/Rect;->bottom:I
 
-    iget v5, p0, Landroid/widget/AbsListView;->mSelectionBottomPadding:I
+    iget v7, p0, Landroid/widget/AbsListView;->mSelectionBottomPadding:I
 
-    add-int/2addr v4, v5
+    add-int/2addr v4, v7
 
     iput v4, v3, Landroid/graphics/Rect;->bottom:I
 
+    invoke-virtual {p2}, Landroid/view/View;->isEnabled()Z
+
+    move-result v0
+
+    .local v0, "isChildViewEnabled":Z
+    iget-boolean v4, p0, Landroid/widget/AbsListView;->mIsChildViewEnabled:Z
+
+    if-eq v4, v0, :cond_2
+
+    iput-boolean v0, p0, Landroid/widget/AbsListView;->mIsChildViewEnabled:Z
+
+    :cond_2
     iget-object v2, p0, Landroid/widget/AbsListView;->mSelector:Landroid/graphics/drawable/Drawable;
 
     .local v2, "selector":Landroid/graphics/drawable/Drawable;
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_6
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v2, v4, v5}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
+    invoke-virtual {v2, v6, v6}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
 
     sget-object v4, Landroid/util/StateSet;->NOTHING:[I
 
     invoke-virtual {v2, v4}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    :cond_2
+    :cond_3
     invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_5
 
     invoke-virtual {p0}, Landroid/widget/AbsListView;->getVisibility()I
 
     move-result v4
 
-    if-nez v4, :cond_3
+    if-nez v4, :cond_4
 
-    const/4 v4, 0x1
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v2, v4, v5}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
-
-    :cond_3
-    invoke-virtual {p0}, Landroid/widget/AbsListView;->updateSelectorState()V
+    invoke-virtual {v2, v5, v6}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
 
     :cond_4
-    if-eqz p3, :cond_5
-
-    invoke-virtual {v2, p4, p5}, Landroid/graphics/drawable/Drawable;->setHotspot(FF)V
+    invoke-virtual {p0}, Landroid/widget/AbsListView;->updateSelectorState()V
 
     :cond_5
-    iget-boolean v0, p0, Landroid/widget/AbsListView;->mIsChildViewEnabled:Z
+    if-eqz p3, :cond_6
 
-    .local v0, "isChildViewEnabled":Z
-    invoke-virtual {p2}, Landroid/view/View;->isEnabled()Z
-
-    move-result v4
-
-    if-eq v4, v0, :cond_6
-
-    if-nez v0, :cond_8
-
-    const/4 v4, 0x1
-
-    :goto_1
-    iput-boolean v4, p0, Landroid/widget/AbsListView;->mIsChildViewEnabled:Z
-
-    invoke-virtual {p0}, Landroid/widget/AbsListView;->getSelectedItemPosition()I
-
-    move-result v4
-
-    const/4 v5, -0x1
-
-    if-eq v4, v5, :cond_6
-
-    invoke-virtual {p0}, Landroid/widget/AbsListView;->refreshDrawableState()V
+    invoke-virtual {v2, p4, p5}, Landroid/graphics/drawable/Drawable;->setHotspot(FF)V
 
     :cond_6
     return-void
@@ -4247,18 +4199,9 @@
     .end local v2    # "selector":Landroid/graphics/drawable/Drawable;
     .end local v3    # "selectorRect":Landroid/graphics/Rect;
     :cond_7
-    const/4 v1, 0x0
+    move v1, v6
 
-    goto/16 :goto_0
-
-    .restart local v0    # "isChildViewEnabled":Z
-    .restart local v1    # "positionChanged":Z
-    .restart local v2    # "selector":Landroid/graphics/drawable/Drawable;
-    .restart local v3    # "selectorRect":Landroid/graphics/Rect;
-    :cond_8
-    const/4 v4, 0x0
-
-    goto :goto_1
+    goto :goto_0
 .end method
 
 .method private recycleVelocityTracker()V
@@ -4840,31 +4783,7 @@
     invoke-virtual {v3}, Landroid/widget/EdgeEffect;->onRelease()V
 
     :cond_10
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/AbsListView;->getWidth()I
-
-    move-result v5
-
-    move-object/from16 v0, p0
-
-    iget-object v6, v0, Landroid/widget/AbsListView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
-
-    invoke-virtual {v6}, Landroid/widget/EdgeEffect;->getMaxHeight()I
-
-    move-result v6
-
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/AbsListView;->getPaddingTop()I
-
-    move-result v8
-
-    add-int/2addr v6, v8
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v3, v4, v5, v6}, Landroid/widget/AbsListView;->invalidate(IIII)V
+    invoke-direct/range {p0 .. p0}, Landroid/widget/AbsListView;->invalidateTopGlow()V
 
     goto/16 :goto_3
 
@@ -4920,39 +4839,7 @@
     invoke-virtual {v3}, Landroid/widget/EdgeEffect;->onRelease()V
 
     :cond_12
-    const/4 v3, 0x0
-
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/AbsListView;->getHeight()I
-
-    move-result v4
-
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/AbsListView;->getPaddingBottom()I
-
-    move-result v5
-
-    sub-int/2addr v4, v5
-
-    move-object/from16 v0, p0
-
-    iget-object v5, v0, Landroid/widget/AbsListView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
-
-    invoke-virtual {v5}, Landroid/widget/EdgeEffect;->getMaxHeight()I
-
-    move-result v5
-
-    sub-int/2addr v4, v5
-
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/AbsListView;->getWidth()I
-
-    move-result v5
-
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/AbsListView;->getHeight()I
-
-    move-result v6
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v3, v4, v5, v6}, Landroid/widget/AbsListView;->invalidate(IIII)V
+    invoke-direct/range {p0 .. p0}, Landroid/widget/AbsListView;->invalidateBottomGlow()V
 
     goto/16 :goto_3
 
@@ -5133,31 +5020,7 @@
     invoke-virtual {v3}, Landroid/widget/EdgeEffect;->onRelease()V
 
     :cond_18
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/AbsListView;->getWidth()I
-
-    move-result v5
-
-    move-object/from16 v0, p0
-
-    iget-object v6, v0, Landroid/widget/AbsListView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
-
-    invoke-virtual {v6}, Landroid/widget/EdgeEffect;->getMaxHeight()I
-
-    move-result v6
-
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/AbsListView;->getPaddingTop()I
-
-    move-result v8
-
-    add-int/2addr v6, v8
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v3, v4, v5, v6}, Landroid/widget/AbsListView;->invalidate(IIII)V
+    invoke-direct/range {p0 .. p0}, Landroid/widget/AbsListView;->invalidateTopGlow()V
 
     .end local v31    # "overscrollMode":I
     :cond_19
@@ -5330,39 +5193,7 @@
     invoke-virtual {v3}, Landroid/widget/EdgeEffect;->onRelease()V
 
     :cond_1f
-    const/4 v3, 0x0
-
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/AbsListView;->getHeight()I
-
-    move-result v4
-
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/AbsListView;->getPaddingBottom()I
-
-    move-result v5
-
-    sub-int/2addr v4, v5
-
-    move-object/from16 v0, p0
-
-    iget-object v5, v0, Landroid/widget/AbsListView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
-
-    invoke-virtual {v5}, Landroid/widget/EdgeEffect;->getMaxHeight()I
-
-    move-result v5
-
-    sub-int/2addr v4, v5
-
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/AbsListView;->getWidth()I
-
-    move-result v5
-
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/AbsListView;->getHeight()I
-
-    move-result v6
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v3, v4, v5, v6}, Landroid/widget/AbsListView;->invalidate(IIII)V
+    invoke-direct/range {p0 .. p0}, Landroid/widget/AbsListView;->invalidateBottomGlow()V
 
     goto/16 :goto_7
 
@@ -6740,193 +6571,240 @@
 .end method
 
 .method public draw(Landroid/graphics/Canvas;)V
-    .locals 11
+    .locals 13
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    const/4 v10, 0x0
-
     const/4 v9, 0x0
 
     invoke-super {p0, p1}, Landroid/widget/AdapterView;->draw(Landroid/graphics/Canvas;)V
 
-    iget-object v6, p0, Landroid/widget/AbsListView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
+    iget-object v10, p0, Landroid/widget/AbsListView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
 
-    if-eqz v6, :cond_3
+    if-eqz v10, :cond_4
 
-    iget v4, p0, Landroid/widget/AbsListView;->mScrollY:I
+    iget v5, p0, Landroid/widget/AbsListView;->mScrollY:I
 
-    .local v4, "scrollY":I
-    iget-object v6, p0, Landroid/widget/AbsListView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
+    .local v5, "scrollY":I
+    invoke-virtual {p0}, Landroid/widget/AbsListView;->getClipToPadding()Z
 
-    invoke-virtual {v6}, Landroid/widget/EdgeEffect;->isFinished()Z
+    move-result v0
 
-    move-result v6
+    .local v0, "clipToPadding":Z
+    if-eqz v0, :cond_5
 
-    if-nez v6, :cond_1
+    invoke-virtual {p0}, Landroid/widget/AbsListView;->getWidth()I
+
+    move-result v10
+
+    iget v11, p0, Landroid/widget/AbsListView;->mPaddingLeft:I
+
+    sub-int/2addr v10, v11
+
+    iget v11, p0, Landroid/widget/AbsListView;->mPaddingRight:I
+
+    sub-int v8, v10, v11
+
+    .local v8, "width":I
+    invoke-virtual {p0}, Landroid/widget/AbsListView;->getHeight()I
+
+    move-result v10
+
+    iget v11, p0, Landroid/widget/AbsListView;->mPaddingTop:I
+
+    sub-int/2addr v10, v11
+
+    iget v11, p0, Landroid/widget/AbsListView;->mPaddingBottom:I
+
+    sub-int v3, v10, v11
+
+    .local v3, "height":I
+    iget v6, p0, Landroid/widget/AbsListView;->mPaddingLeft:I
+
+    .local v6, "translateX":I
+    iget v7, p0, Landroid/widget/AbsListView;->mPaddingTop:I
+
+    .local v7, "translateY":I
+    :goto_0
+    iget-object v10, p0, Landroid/widget/AbsListView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
+
+    invoke-virtual {v10}, Landroid/widget/EdgeEffect;->isFinished()Z
+
+    move-result v10
+
+    if-nez v10, :cond_1
 
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    move-result v3
+    move-result v4
 
-    .local v3, "restoreCount":I
-    invoke-virtual {p0}, Landroid/widget/AbsListView;->getWidth()I
+    .local v4, "restoreCount":I
+    add-int v10, v6, v8
 
-    move-result v5
+    iget-object v11, p0, Landroid/widget/AbsListView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
 
-    .local v5, "width":I
-    iget v6, p0, Landroid/widget/AbsListView;->mFirstPositionDistanceGuess:I
+    invoke-virtual {v11}, Landroid/widget/EdgeEffect;->getMaxHeight()I
 
-    add-int/2addr v6, v4
+    move-result v11
 
-    invoke-static {v9, v6}, Ljava/lang/Math;->min(II)I
+    add-int/2addr v11, v7
 
-    move-result v1
+    invoke-virtual {p1, v6, v7, v10, v11}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .local v1, "edgeY":I
-    int-to-float v6, v1
+    iget v10, p0, Landroid/widget/AbsListView;->mFirstPositionDistanceGuess:I
 
-    invoke-virtual {p1, v10, v6}, Landroid/graphics/Canvas;->translate(FF)V
+    add-int/2addr v10, v5
 
-    iget-object v6, p0, Landroid/widget/AbsListView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
+    invoke-static {v9, v10}, Ljava/lang/Math;->min(II)I
 
-    invoke-virtual {p0}, Landroid/widget/AbsListView;->getHeight()I
+    move-result v10
 
-    move-result v7
+    add-int v2, v10, v7
 
-    invoke-virtual {v6, v5, v7}, Landroid/widget/EdgeEffect;->setSize(II)V
+    .local v2, "edgeY":I
+    int-to-float v10, v6
 
-    iget-object v6, p0, Landroid/widget/AbsListView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
+    int-to-float v11, v2
 
-    invoke-virtual {v6, p1}, Landroid/widget/EdgeEffect;->draw(Landroid/graphics/Canvas;)Z
+    invoke-virtual {p1, v10, v11}, Landroid/graphics/Canvas;->translate(FF)V
 
-    move-result v6
+    iget-object v10, p0, Landroid/widget/AbsListView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
 
-    if-eqz v6, :cond_0
+    invoke-virtual {v10, v8, v3}, Landroid/widget/EdgeEffect;->setSize(II)V
 
-    invoke-virtual {p0}, Landroid/widget/AbsListView;->getWidth()I
+    iget-object v10, p0, Landroid/widget/AbsListView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
 
-    move-result v6
+    invoke-virtual {v10, p1}, Landroid/widget/EdgeEffect;->draw(Landroid/graphics/Canvas;)Z
 
-    iget-object v7, p0, Landroid/widget/AbsListView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
+    move-result v10
 
-    invoke-virtual {v7}, Landroid/widget/EdgeEffect;->getMaxHeight()I
+    if-eqz v10, :cond_0
 
-    move-result v7
-
-    invoke-virtual {p0}, Landroid/widget/AbsListView;->getPaddingTop()I
-
-    move-result v8
-
-    add-int/2addr v7, v8
-
-    invoke-virtual {p0, v9, v9, v6, v7}, Landroid/widget/AbsListView;->invalidate(IIII)V
+    invoke-direct {p0}, Landroid/widget/AbsListView;->invalidateTopGlow()V
 
     :cond_0
-    invoke-virtual {p1, v3}, Landroid/graphics/Canvas;->restoreToCount(I)V
+    invoke-virtual {p1, v4}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
-    .end local v1    # "edgeY":I
-    .end local v3    # "restoreCount":I
-    .end local v5    # "width":I
+    .end local v2    # "edgeY":I
+    .end local v4    # "restoreCount":I
     :cond_1
-    iget-object v6, p0, Landroid/widget/AbsListView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
+    iget-object v10, p0, Landroid/widget/AbsListView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
 
-    invoke-virtual {v6}, Landroid/widget/EdgeEffect;->isFinished()Z
+    invoke-virtual {v10}, Landroid/widget/EdgeEffect;->isFinished()Z
 
-    move-result v6
+    move-result v10
 
-    if-nez v6, :cond_3
+    if-nez v10, :cond_4
 
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    move-result v3
+    move-result v4
 
-    .restart local v3    # "restoreCount":I
+    .restart local v4    # "restoreCount":I
+    add-int v10, v7, v3
+
+    iget-object v11, p0, Landroid/widget/AbsListView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
+
+    invoke-virtual {v11}, Landroid/widget/EdgeEffect;->getMaxHeight()I
+
+    move-result v11
+
+    sub-int/2addr v10, v11
+
+    add-int v11, v6, v8
+
+    add-int v12, v7, v3
+
+    invoke-virtual {p1, v6, v10, v11, v12}, Landroid/graphics/Canvas;->clipRect(IIII)Z
+
+    neg-int v10, v8
+
+    add-int v1, v10, v6
+
+    .local v1, "edgeX":I
+    invoke-virtual {p0}, Landroid/widget/AbsListView;->getHeight()I
+
+    move-result v10
+
+    iget v11, p0, Landroid/widget/AbsListView;->mLastPositionDistanceGuess:I
+
+    add-int/2addr v11, v5
+
+    invoke-static {v10, v11}, Ljava/lang/Math;->max(II)I
+
+    move-result v10
+
+    if-eqz v0, :cond_2
+
+    iget v9, p0, Landroid/widget/AbsListView;->mPaddingBottom:I
+
+    :cond_2
+    sub-int v2, v10, v9
+
+    .restart local v2    # "edgeY":I
+    int-to-float v9, v1
+
+    int-to-float v10, v2
+
+    invoke-virtual {p1, v9, v10}, Landroid/graphics/Canvas;->translate(FF)V
+
+    const/high16 v9, 0x43340000    # 180.0f
+
+    int-to-float v10, v8
+
+    const/4 v11, 0x0
+
+    invoke-virtual {p1, v9, v10, v11}, Landroid/graphics/Canvas;->rotate(FFF)V
+
+    iget-object v9, p0, Landroid/widget/AbsListView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
+
+    invoke-virtual {v9, v8, v3}, Landroid/widget/EdgeEffect;->setSize(II)V
+
+    iget-object v9, p0, Landroid/widget/AbsListView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
+
+    invoke-virtual {v9, p1}, Landroid/widget/EdgeEffect;->draw(Landroid/graphics/Canvas;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_3
+
+    invoke-direct {p0}, Landroid/widget/AbsListView;->invalidateBottomGlow()V
+
+    :cond_3
+    invoke-virtual {p1, v4}, Landroid/graphics/Canvas;->restoreToCount(I)V
+
+    .end local v0    # "clipToPadding":Z
+    .end local v1    # "edgeX":I
+    .end local v2    # "edgeY":I
+    .end local v3    # "height":I
+    .end local v4    # "restoreCount":I
+    .end local v5    # "scrollY":I
+    .end local v6    # "translateX":I
+    .end local v7    # "translateY":I
+    .end local v8    # "width":I
+    :cond_4
+    return-void
+
+    .restart local v0    # "clipToPadding":Z
+    .restart local v5    # "scrollY":I
+    :cond_5
     invoke-virtual {p0}, Landroid/widget/AbsListView;->getWidth()I
-
-    move-result v5
-
-    .restart local v5    # "width":I
-    invoke-virtual {p0}, Landroid/widget/AbsListView;->getHeight()I
-
-    move-result v2
-
-    .local v2, "height":I
-    neg-int v0, v5
-
-    .local v0, "edgeX":I
-    iget v6, p0, Landroid/widget/AbsListView;->mLastPositionDistanceGuess:I
-
-    add-int/2addr v6, v4
-
-    invoke-static {v2, v6}, Ljava/lang/Math;->max(II)I
-
-    move-result v1
-
-    .restart local v1    # "edgeY":I
-    int-to-float v6, v0
-
-    int-to-float v7, v1
-
-    invoke-virtual {p1, v6, v7}, Landroid/graphics/Canvas;->translate(FF)V
-
-    const/high16 v6, 0x43340000    # 180.0f
-
-    int-to-float v7, v5
-
-    invoke-virtual {p1, v6, v7, v10}, Landroid/graphics/Canvas;->rotate(FFF)V
-
-    iget-object v6, p0, Landroid/widget/AbsListView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
-
-    invoke-virtual {v6, v5, v2}, Landroid/widget/EdgeEffect;->setSize(II)V
-
-    iget-object v6, p0, Landroid/widget/AbsListView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
-
-    invoke-virtual {v6, p1}, Landroid/widget/EdgeEffect;->draw(Landroid/graphics/Canvas;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_2
-
-    invoke-virtual {p0}, Landroid/widget/AbsListView;->getHeight()I
-
-    move-result v6
-
-    invoke-virtual {p0}, Landroid/widget/AbsListView;->getPaddingBottom()I
-
-    move-result v7
-
-    sub-int/2addr v6, v7
-
-    iget-object v7, p0, Landroid/widget/AbsListView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
-
-    invoke-virtual {v7}, Landroid/widget/EdgeEffect;->getMaxHeight()I
-
-    move-result v7
-
-    sub-int/2addr v6, v7
-
-    invoke-virtual {p0}, Landroid/widget/AbsListView;->getWidth()I
-
-    move-result v7
-
-    invoke-virtual {p0}, Landroid/widget/AbsListView;->getHeight()I
 
     move-result v8
 
-    invoke-virtual {p0, v9, v6, v7, v8}, Landroid/widget/AbsListView;->invalidate(IIII)V
+    .restart local v8    # "width":I
+    invoke-virtual {p0}, Landroid/widget/AbsListView;->getHeight()I
 
-    :cond_2
-    invoke-virtual {p1, v3}, Landroid/graphics/Canvas;->restoreToCount(I)V
+    move-result v3
 
-    .end local v0    # "edgeX":I
-    .end local v1    # "edgeY":I
-    .end local v2    # "height":I
-    .end local v3    # "restoreCount":I
-    .end local v4    # "scrollY":I
-    .end local v5    # "width":I
-    :cond_3
-    return-void
+    .restart local v3    # "height":I
+    const/4 v6, 0x0
+
+    .restart local v6    # "translateX":I
+    const/4 v7, 0x0
+
+    .restart local v7    # "translateY":I
+    goto/16 :goto_0
 .end method
 
 .method protected drawableStateChanged()V
@@ -8737,6 +8615,8 @@
     .end local v4    # "updatedView":Landroid/view/View;
     :cond_0
     aput-boolean v8, p2, v7
+
+    invoke-virtual {v3}, Landroid/view/View;->dispatchFinishTemporaryDetach()V
 
     .end local v1    # "params":Landroid/widget/AbsListView$LayoutParams;
     .end local v3    # "transientView":Landroid/view/View;
@@ -11064,89 +10944,87 @@
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 13
+    .locals 12
     .param p1, "ev"    # Landroid/view/MotionEvent;
 
     .prologue
-    const/4 v10, 0x1
+    const/4 v9, 0x1
 
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
     invoke-virtual {p0}, Landroid/widget/AbsListView;->isEnabled()Z
 
-    move-result v11
+    move-result v10
 
-    if-nez v11, :cond_2
+    if-nez v10, :cond_2
 
     invoke-virtual {p0}, Landroid/widget/AbsListView;->isClickable()Z
 
-    move-result v11
+    move-result v10
 
-    if-nez v11, :cond_0
+    if-nez v10, :cond_0
 
     invoke-virtual {p0}, Landroid/widget/AbsListView;->isLongClickable()Z
 
-    move-result v11
+    move-result v10
 
-    if-eqz v11, :cond_1
+    if-eqz v10, :cond_1
 
     :cond_0
-    move v9, v10
+    move v8, v9
 
     :cond_1
     :goto_0
-    return v9
+    return v8
 
     :cond_2
-    iget-object v11, p0, Landroid/widget/AbsListView;->mPositionScroller:Landroid/widget/AbsListView$AbsPositionScroller;
+    iget-object v10, p0, Landroid/widget/AbsListView;->mPositionScroller:Landroid/widget/AbsListView$AbsPositionScroller;
 
-    if-eqz v11, :cond_3
+    if-eqz v10, :cond_3
 
-    iget-object v11, p0, Landroid/widget/AbsListView;->mPositionScroller:Landroid/widget/AbsListView$AbsPositionScroller;
+    iget-object v10, p0, Landroid/widget/AbsListView;->mPositionScroller:Landroid/widget/AbsListView$AbsPositionScroller;
 
-    invoke-virtual {v11}, Landroid/widget/AbsListView$AbsPositionScroller;->stop()V
+    invoke-virtual {v10}, Landroid/widget/AbsListView$AbsPositionScroller;->stop()V
 
     :cond_3
-    iget-boolean v11, p0, Landroid/widget/AbsListView;->mIsDetaching:Z
+    iget-boolean v10, p0, Landroid/widget/AbsListView;->mIsDetaching:Z
 
-    if-nez v11, :cond_1
+    if-nez v10, :cond_1
 
     invoke-virtual {p0}, Landroid/widget/AbsListView;->isAttachedToWindow()Z
 
-    move-result v11
+    move-result v10
 
-    if-eqz v11, :cond_1
+    if-eqz v10, :cond_1
 
-    const/4 v11, 0x2
+    const/4 v10, 0x2
 
-    invoke-virtual {p0, v11}, Landroid/widget/AbsListView;->startNestedScroll(I)Z
+    invoke-virtual {p0, v10}, Landroid/widget/AbsListView;->startNestedScroll(I)Z
 
-    iget-object v11, p0, Landroid/widget/AbsListView;->mFastScroll:Landroid/widget/FastScroller;
+    iget-object v10, p0, Landroid/widget/AbsListView;->mFastScroll:Landroid/widget/FastScroller;
 
-    if-eqz v11, :cond_4
+    if-eqz v10, :cond_4
 
-    iget-object v11, p0, Landroid/widget/AbsListView;->mFastScroll:Landroid/widget/FastScroller;
+    iget-object v10, p0, Landroid/widget/AbsListView;->mFastScroll:Landroid/widget/FastScroller;
 
-    invoke-virtual {v11, p1}, Landroid/widget/FastScroller;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-virtual {v10, p1}, Landroid/widget/FastScroller;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    move-result v4
+    move-result v10
 
-    .local v4, "intercepted":Z
-    if-eqz v4, :cond_4
+    if-eqz v10, :cond_4
 
-    move v9, v10
+    move v8, v9
 
     goto :goto_0
 
-    .end local v4    # "intercepted":Z
     :cond_4
     invoke-direct {p0}, Landroid/widget/AbsListView;->initVelocityTrackerIfNotExists()V
 
     invoke-static {p1}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
-    move-result-object v6
+    move-result-object v5
 
-    .local v6, "vtev":Landroid/view/MotionEvent;
+    .local v5, "vtev":Landroid/view/MotionEvent;
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
@@ -11154,33 +11032,33 @@
     .local v0, "actionMasked":I
     if-nez v0, :cond_5
 
-    iput v9, p0, Landroid/widget/AbsListView;->mNestedYOffset:I
+    iput v8, p0, Landroid/widget/AbsListView;->mNestedYOffset:I
 
     :cond_5
-    const/4 v11, 0x0
+    const/4 v10, 0x0
 
-    iget v12, p0, Landroid/widget/AbsListView;->mNestedYOffset:I
+    iget v11, p0, Landroid/widget/AbsListView;->mNestedYOffset:I
 
-    int-to-float v12, v12
+    int-to-float v11, v11
 
-    invoke-virtual {v6, v11, v12}, Landroid/view/MotionEvent;->offsetLocation(FF)V
+    invoke-virtual {v5, v10, v11}, Landroid/view/MotionEvent;->offsetLocation(FF)V
 
     packed-switch v0, :pswitch_data_0
 
     :goto_1
     :pswitch_0
-    iget-object v9, p0, Landroid/widget/AbsListView;->mVelocityTracker:Landroid/view/VelocityTracker;
+    iget-object v8, p0, Landroid/widget/AbsListView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    if-eqz v9, :cond_6
+    if-eqz v8, :cond_6
 
-    iget-object v9, p0, Landroid/widget/AbsListView;->mVelocityTracker:Landroid/view/VelocityTracker;
+    iget-object v8, p0, Landroid/widget/AbsListView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    invoke-virtual {v9, v6}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
+    invoke-virtual {v8, v5}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
     :cond_6
-    invoke-virtual {v6}, Landroid/view/MotionEvent;->recycle()V
+    invoke-virtual {v5}, Landroid/view/MotionEvent;->recycle()V
 
-    move v9, v10
+    move v8, v9
 
     goto :goto_0
 
@@ -11190,7 +11068,7 @@
     goto :goto_1
 
     :pswitch_2
-    invoke-direct {p0, p1, v6}, Landroid/widget/AbsListView;->onTouchMove(Landroid/view/MotionEvent;Landroid/view/MotionEvent;)V
+    invoke-direct {p0, p1, v5}, Landroid/widget/AbsListView;->onTouchMove(Landroid/view/MotionEvent;Landroid/view/MotionEvent;)V
 
     goto :goto_1
 
@@ -11207,45 +11085,45 @@
     :pswitch_5
     invoke-direct {p0, p1}, Landroid/widget/AbsListView;->onSecondaryPointerUp(Landroid/view/MotionEvent;)V
 
-    iget v7, p0, Landroid/widget/AbsListView;->mMotionX:I
+    iget v6, p0, Landroid/widget/AbsListView;->mMotionX:I
 
-    .local v7, "x":I
-    iget v8, p0, Landroid/widget/AbsListView;->mMotionY:I
+    .local v6, "x":I
+    iget v7, p0, Landroid/widget/AbsListView;->mMotionY:I
 
-    .local v8, "y":I
-    invoke-virtual {p0, v7, v8}, Landroid/widget/AbsListView;->pointToPosition(II)I
+    .local v7, "y":I
+    invoke-virtual {p0, v6, v7}, Landroid/widget/AbsListView;->pointToPosition(II)I
 
-    move-result v5
+    move-result v4
 
-    .local v5, "motionPosition":I
-    if-ltz v5, :cond_7
+    .local v4, "motionPosition":I
+    if-ltz v4, :cond_7
 
-    iget v9, p0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v8, p0, Landroid/widget/AbsListView;->mFirstPosition:I
 
-    sub-int v9, v5, v9
+    sub-int v8, v4, v8
 
-    invoke-virtual {p0, v9}, Landroid/widget/AbsListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v8}, Landroid/widget/AbsListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
     .local v1, "child":Landroid/view/View;
     invoke-virtual {v1}, Landroid/view/View;->getTop()I
 
-    move-result v9
+    move-result v8
 
-    iput v9, p0, Landroid/widget/AbsListView;->mMotionViewOriginalTop:I
+    iput v8, p0, Landroid/widget/AbsListView;->mMotionViewOriginalTop:I
 
-    iput v5, p0, Landroid/widget/AbsListView;->mMotionPosition:I
+    iput v4, p0, Landroid/widget/AbsListView;->mMotionPosition:I
 
     .end local v1    # "child":Landroid/view/View;
     :cond_7
-    iput v8, p0, Landroid/widget/AbsListView;->mLastY:I
+    iput v7, p0, Landroid/widget/AbsListView;->mLastY:I
 
     goto :goto_1
 
-    .end local v5    # "motionPosition":I
-    .end local v7    # "x":I
-    .end local v8    # "y":I
+    .end local v4    # "motionPosition":I
+    .end local v6    # "x":I
+    .end local v7    # "y":I
     :pswitch_6
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionIndex()I
 
@@ -11259,53 +11137,53 @@
     .local v2, "id":I
     invoke-virtual {p1, v3}, Landroid/view/MotionEvent;->getX(I)F
 
-    move-result v11
+    move-result v10
 
-    float-to-int v7, v11
+    float-to-int v6, v10
 
-    .restart local v7    # "x":I
+    .restart local v6    # "x":I
     invoke-virtual {p1, v3}, Landroid/view/MotionEvent;->getY(I)F
 
-    move-result v11
+    move-result v10
 
-    float-to-int v8, v11
+    float-to-int v7, v10
 
-    .restart local v8    # "y":I
-    iput v9, p0, Landroid/widget/AbsListView;->mMotionCorrection:I
+    .restart local v7    # "y":I
+    iput v8, p0, Landroid/widget/AbsListView;->mMotionCorrection:I
 
     iput v2, p0, Landroid/widget/AbsListView;->mActivePointerId:I
 
-    iput v7, p0, Landroid/widget/AbsListView;->mMotionX:I
+    iput v6, p0, Landroid/widget/AbsListView;->mMotionX:I
 
-    iput v8, p0, Landroid/widget/AbsListView;->mMotionY:I
+    iput v7, p0, Landroid/widget/AbsListView;->mMotionY:I
 
-    invoke-virtual {p0, v7, v8}, Landroid/widget/AbsListView;->pointToPosition(II)I
+    invoke-virtual {p0, v6, v7}, Landroid/widget/AbsListView;->pointToPosition(II)I
 
-    move-result v5
+    move-result v4
 
-    .restart local v5    # "motionPosition":I
-    if-ltz v5, :cond_8
+    .restart local v4    # "motionPosition":I
+    if-ltz v4, :cond_8
 
-    iget v9, p0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v8, p0, Landroid/widget/AbsListView;->mFirstPosition:I
 
-    sub-int v9, v5, v9
+    sub-int v8, v4, v8
 
-    invoke-virtual {p0, v9}, Landroid/widget/AbsListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v8}, Landroid/widget/AbsListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
     .restart local v1    # "child":Landroid/view/View;
     invoke-virtual {v1}, Landroid/view/View;->getTop()I
 
-    move-result v9
+    move-result v8
 
-    iput v9, p0, Landroid/widget/AbsListView;->mMotionViewOriginalTop:I
+    iput v8, p0, Landroid/widget/AbsListView;->mMotionViewOriginalTop:I
 
-    iput v5, p0, Landroid/widget/AbsListView;->mMotionPosition:I
+    iput v4, p0, Landroid/widget/AbsListView;->mMotionPosition:I
 
     .end local v1    # "child":Landroid/view/View;
     :cond_8
-    iput v8, p0, Landroid/widget/AbsListView;->mLastY:I
+    iput v7, p0, Landroid/widget/AbsListView;->mLastY:I
 
     goto :goto_1
 
@@ -13860,19 +13738,6 @@
     iput-object p1, p0, Landroid/widget/AbsListView;->mOnScrollListener:Landroid/widget/AbsListView$OnScrollListener;
 
     invoke-virtual {p0}, Landroid/widget/AbsListView;->invokeOnItemScrollListener()V
-
-    return-void
-.end method
-
-.method public setOverScrollEffectPadding(II)V
-    .locals 0
-    .param p1, "leftPadding"    # I
-    .param p2, "rightPadding"    # I
-
-    .prologue
-    iput p1, p0, Landroid/widget/AbsListView;->mGlowPaddingLeft:I
-
-    iput p2, p0, Landroid/widget/AbsListView;->mGlowPaddingRight:I
 
     return-void
 .end method

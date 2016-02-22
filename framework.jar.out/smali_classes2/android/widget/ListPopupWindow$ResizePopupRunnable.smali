@@ -66,6 +66,19 @@
 
     move-result-object v0
 
+    invoke-virtual {v0}, Landroid/widget/ListPopupWindow$DropDownListView;->isAttachedToWindow()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Landroid/widget/ListPopupWindow$ResizePopupRunnable;->this$0:Landroid/widget/ListPopupWindow;
+
+    # getter for: Landroid/widget/ListPopupWindow;->mDropDownList:Landroid/widget/ListPopupWindow$DropDownListView;
+    invoke-static {v0}, Landroid/widget/ListPopupWindow;->access$600(Landroid/widget/ListPopupWindow;)Landroid/widget/ListPopupWindow$DropDownListView;
+
+    move-result-object v0
+
     invoke-virtual {v0}, Landroid/widget/ListPopupWindow$DropDownListView;->getCount()I
 
     move-result v0

@@ -2576,6 +2576,32 @@
     return-void
 .end method
 
+.method public setIcon(ILjava/lang/String;Landroid/graphics/drawable/Icon;)V
+    .locals 6
+    .param p1, "viewId"    # I
+    .param p2, "methodName"    # Ljava/lang/String;
+    .param p3, "value"    # Landroid/graphics/drawable/Icon;
+
+    .prologue
+    new-instance v0, Landroid/widget/RemoteViews$ReflectionAction;
+
+    const/16 v4, 0x10
+
+    move-object v1, p0
+
+    move v2, p1
+
+    move-object v3, p2
+
+    move-object v5, p3
+
+    invoke-direct/range {v0 .. v5}, Landroid/widget/RemoteViews$ReflectionAction;-><init>(Landroid/widget/RemoteViews;ILjava/lang/String;ILjava/lang/Object;)V
+
+    invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
+
+    return-void
+.end method
+
 .method public setImageViewBitmap(ILandroid/graphics/Bitmap;)V
     .locals 1
     .param p1, "viewId"    # I
@@ -2585,6 +2611,19 @@
     const-string/jumbo v0, "setImageBitmap"
 
     invoke-virtual {p0, p1, v0, p2}, Landroid/widget/RemoteViews;->setBitmap(ILjava/lang/String;Landroid/graphics/Bitmap;)V
+
+    return-void
+.end method
+
+.method public setImageViewIcon(ILandroid/graphics/drawable/Icon;)V
+    .locals 1
+    .param p1, "viewId"    # I
+    .param p2, "icon"    # Landroid/graphics/drawable/Icon;
+
+    .prologue
+    const-string v0, "setImageIcon"
+
+    invoke-virtual {p0, p1, v0, p2}, Landroid/widget/RemoteViews;->setIcon(ILjava/lang/String;Landroid/graphics/drawable/Icon;)V
 
     return-void
 .end method

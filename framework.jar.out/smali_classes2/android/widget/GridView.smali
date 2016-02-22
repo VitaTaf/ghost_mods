@@ -3959,41 +3959,45 @@
 
 # virtual methods
 .method arrowScroll(I)Z
-    .locals 10
+    .locals 13
     .param p1, "direction"    # I
 
     .prologue
-    const/4 v9, 0x0
+    const/16 v12, 0x42
 
-    const/4 v8, 0x6
+    const/16 v11, 0x11
 
-    iget v4, p0, Landroid/widget/GridView;->mSelectedPosition:I
+    const/4 v10, 0x0
 
-    .local v4, "selectedPosition":I
-    iget v3, p0, Landroid/widget/GridView;->mNumColumns:I
+    const/4 v9, 0x6
 
-    .local v3, "numColumns":I
-    const/4 v2, 0x0
+    iget v5, p0, Landroid/widget/GridView;->mSelectedPosition:I
 
-    .local v2, "moved":Z
-    iget-boolean v6, p0, Landroid/widget/GridView;->mStackFromBottom:Z
+    .local v5, "selectedPosition":I
+    iget v4, p0, Landroid/widget/GridView;->mNumColumns:I
 
-    if-nez v6, :cond_3
+    .local v4, "numColumns":I
+    const/4 v3, 0x0
 
-    div-int v6, v4, v3
+    .local v3, "moved":Z
+    iget-boolean v7, p0, Landroid/widget/GridView;->mStackFromBottom:Z
 
-    mul-int v5, v6, v3
+    if-nez v7, :cond_6
 
-    .local v5, "startOfRowPos":I
-    add-int v6, v5, v3
+    div-int v7, v5, v4
 
-    add-int/lit8 v6, v6, -0x1
+    mul-int v6, v7, v4
 
-    iget v7, p0, Landroid/widget/GridView;->mItemCount:I
+    .local v6, "startOfRowPos":I
+    add-int v7, v6, v4
 
     add-int/lit8 v7, v7, -0x1
 
-    invoke-static {v6, v7}, Ljava/lang/Math;->min(II)I
+    iget v8, p0, Landroid/widget/GridView;->mItemCount:I
+
+    add-int/lit8 v8, v8, -0x1
+
+    invoke-static {v7, v8}, Ljava/lang/Math;->min(II)I
 
     move-result v0
 
@@ -4003,142 +4007,168 @@
 
     :cond_0
     :goto_1
-    if-eqz v2, :cond_1
+    invoke-virtual {p0}, Landroid/widget/GridView;->isLayoutRtl()Z
+
+    move-result v2
+
+    .local v2, "isLayoutRtl":Z
+    if-le v5, v6, :cond_7
+
+    if-ne p1, v11, :cond_1
+
+    if-eqz v2, :cond_2
+
+    :cond_1
+    if-ne p1, v12, :cond_7
+
+    if-eqz v2, :cond_7
+
+    :cond_2
+    iput v9, p0, Landroid/widget/GridView;->mLayoutMode:I
+
+    add-int/lit8 v7, v5, -0x1
+
+    invoke-static {v10, v7}, Ljava/lang/Math;->max(II)I
+
+    move-result v7
+
+    invoke-virtual {p0, v7}, Landroid/widget/GridView;->setSelectionInt(I)V
+
+    const/4 v3, 0x1
+
+    :cond_3
+    :goto_2
+    if-eqz v3, :cond_4
 
     invoke-static {p1}, Landroid/view/SoundEffectConstants;->getContantForFocusDirection(I)I
 
-    move-result v6
+    move-result v7
 
-    invoke-virtual {p0, v6}, Landroid/widget/GridView;->playSoundEffect(I)V
+    invoke-virtual {p0, v7}, Landroid/widget/GridView;->playSoundEffect(I)V
 
     invoke-virtual {p0}, Landroid/widget/GridView;->invokeOnItemScrollListener()V
 
-    :cond_1
-    if-eqz v2, :cond_2
+    :cond_4
+    if-eqz v3, :cond_5
 
     invoke-virtual {p0}, Landroid/widget/GridView;->awakenScrollBars()Z
 
-    :cond_2
-    return v2
+    :cond_5
+    return v3
 
     .end local v0    # "endOfRowPos":I
-    .end local v5    # "startOfRowPos":I
-    :cond_3
-    iget v6, p0, Landroid/widget/GridView;->mItemCount:I
+    .end local v2    # "isLayoutRtl":Z
+    .end local v6    # "startOfRowPos":I
+    :cond_6
+    iget v7, p0, Landroid/widget/GridView;->mItemCount:I
 
-    add-int/lit8 v6, v6, -0x1
+    add-int/lit8 v7, v7, -0x1
 
-    sub-int v1, v6, v4
+    sub-int v1, v7, v5
 
     .local v1, "invertedSelection":I
-    iget v6, p0, Landroid/widget/GridView;->mItemCount:I
+    iget v7, p0, Landroid/widget/GridView;->mItemCount:I
 
-    add-int/lit8 v6, v6, -0x1
+    add-int/lit8 v7, v7, -0x1
 
-    div-int v7, v1, v3
+    div-int v8, v1, v4
 
-    mul-int/2addr v7, v3
+    mul-int/2addr v8, v4
 
-    sub-int v0, v6, v7
+    sub-int v0, v7, v8
 
     .restart local v0    # "endOfRowPos":I
-    sub-int v6, v0, v3
+    sub-int v7, v0, v4
 
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v7, v7, 0x1
 
-    invoke-static {v9, v6}, Ljava/lang/Math;->max(II)I
+    invoke-static {v10, v7}, Ljava/lang/Math;->max(II)I
 
-    move-result v5
+    move-result v6
 
-    .restart local v5    # "startOfRowPos":I
+    .restart local v6    # "startOfRowPos":I
     goto :goto_0
 
     .end local v1    # "invertedSelection":I
     :sswitch_0
-    if-lez v5, :cond_0
+    if-lez v6, :cond_0
 
-    iput v8, p0, Landroid/widget/GridView;->mLayoutMode:I
+    iput v9, p0, Landroid/widget/GridView;->mLayoutMode:I
 
-    sub-int v6, v4, v3
+    sub-int v7, v5, v4
 
-    invoke-static {v9, v6}, Ljava/lang/Math;->max(II)I
+    invoke-static {v10, v7}, Ljava/lang/Math;->max(II)I
 
-    move-result v6
+    move-result v7
 
-    invoke-virtual {p0, v6}, Landroid/widget/GridView;->setSelectionInt(I)V
+    invoke-virtual {p0, v7}, Landroid/widget/GridView;->setSelectionInt(I)V
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
     goto :goto_1
 
     :sswitch_1
-    iget v6, p0, Landroid/widget/GridView;->mItemCount:I
-
-    add-int/lit8 v6, v6, -0x1
-
-    if-ge v0, v6, :cond_0
-
-    iput v8, p0, Landroid/widget/GridView;->mLayoutMode:I
-
-    add-int v6, v4, v3
-
     iget v7, p0, Landroid/widget/GridView;->mItemCount:I
 
     add-int/lit8 v7, v7, -0x1
 
-    invoke-static {v6, v7}, Ljava/lang/Math;->min(II)I
+    if-ge v0, v7, :cond_0
 
-    move-result v6
+    iput v9, p0, Landroid/widget/GridView;->mLayoutMode:I
 
-    invoke-virtual {p0, v6}, Landroid/widget/GridView;->setSelectionInt(I)V
+    add-int v7, v5, v4
 
-    const/4 v2, 0x1
+    iget v8, p0, Landroid/widget/GridView;->mItemCount:I
 
-    goto :goto_1
+    add-int/lit8 v8, v8, -0x1
 
-    :sswitch_2
-    if-le v4, v5, :cond_0
+    invoke-static {v7, v8}, Ljava/lang/Math;->min(II)I
 
-    iput v8, p0, Landroid/widget/GridView;->mLayoutMode:I
+    move-result v7
 
-    add-int/lit8 v6, v4, -0x1
+    invoke-virtual {p0, v7}, Landroid/widget/GridView;->setSelectionInt(I)V
 
-    invoke-static {v9, v6}, Ljava/lang/Math;->max(II)I
-
-    move-result v6
-
-    invoke-virtual {p0, v6}, Landroid/widget/GridView;->setSelectionInt(I)V
-
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
     goto :goto_1
 
-    :sswitch_3
-    if-ge v4, v0, :cond_0
+    .restart local v2    # "isLayoutRtl":Z
+    :cond_7
+    if-ge v5, v0, :cond_3
 
-    iput v8, p0, Landroid/widget/GridView;->mLayoutMode:I
+    if-ne p1, v11, :cond_8
 
-    add-int/lit8 v6, v4, 0x1
+    if-nez v2, :cond_9
 
-    iget v7, p0, Landroid/widget/GridView;->mItemCount:I
+    :cond_8
+    if-ne p1, v12, :cond_3
 
-    add-int/lit8 v7, v7, -0x1
+    if-nez v2, :cond_3
 
-    invoke-static {v6, v7}, Ljava/lang/Math;->min(II)I
+    :cond_9
+    iput v9, p0, Landroid/widget/GridView;->mLayoutMode:I
 
-    move-result v6
+    add-int/lit8 v7, v5, 0x1
 
-    invoke-virtual {p0, v6}, Landroid/widget/GridView;->setSelectionInt(I)V
+    iget v8, p0, Landroid/widget/GridView;->mItemCount:I
 
-    const/4 v2, 0x1
+    add-int/lit8 v8, v8, -0x1
 
-    goto :goto_1
+    invoke-static {v7, v8}, Ljava/lang/Math;->min(II)I
+
+    move-result v7
+
+    invoke-virtual {p0, v7}, Landroid/widget/GridView;->setSelectionInt(I)V
+
+    const/4 v3, 0x1
+
+    goto :goto_2
+
+    nop
 
     :sswitch_data_0
     .sparse-switch
-        0x11 -> :sswitch_2
         0x21 -> :sswitch_0
-        0x42 -> :sswitch_3
         0x82 -> :sswitch_1
     .end sparse-switch
 .end method
@@ -6688,7 +6718,7 @@
 
     const/16 v20, 0x0
 
-    invoke-static/range {v19 .. v20}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static/range {v19 .. v20}, Landroid/view/View$MeasureSpec;->makeSafeMeasureSpec(II)I
 
     move-result v19
 

@@ -866,8 +866,6 @@
 
     .end local v0    # "inflater":Landroid/view/LayoutInflater;
     :cond_3
-    invoke-static {p0}, Lcom/android/internal/transition/ActionBarTransition;->beginDelayedTransition(Landroid/view/ViewGroup;)V
-
     iget-object v1, p0, Lcom/android/internal/widget/ActionBarView;->mUpGoerFive:Landroid/view/ViewGroup;
 
     iget-object v2, p0, Lcom/android/internal/widget/ActionBarView;->mTitleLayout:Landroid/widget/LinearLayout;
@@ -950,8 +948,6 @@
 
     .prologue
     const/4 v1, 0x0
-
-    invoke-static {p0}, Lcom/android/internal/transition/ActionBarTransition;->beginDelayedTransition(Landroid/view/ViewGroup;)V
 
     iput-object p1, p0, Lcom/android/internal/widget/ActionBarView;->mTitle:Ljava/lang/CharSequence;
 
@@ -4168,17 +4164,25 @@
 
     and-int/lit8 v1, v1, 0x10
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_2
 
     const/4 v0, 0x1
 
     .local v0, "showCustom":Z
     :goto_0
+    iget-object v1, p0, Lcom/android/internal/widget/ActionBarView;->mCustomNavView:Landroid/view/View;
+
+    if-eqz v1, :cond_0
+
     if-eqz v0, :cond_0
 
-    invoke-static {p0}, Lcom/android/internal/transition/ActionBarTransition;->beginDelayedTransition(Landroid/view/ViewGroup;)V
+    iget-object v1, p0, Lcom/android/internal/widget/ActionBarView;->mCustomNavView:Landroid/view/View;
+
+    invoke-virtual {p0, v1}, Lcom/android/internal/widget/ActionBarView;->removeView(Landroid/view/View;)V
 
     :cond_0
+    iput-object p1, p0, Lcom/android/internal/widget/ActionBarView;->mCustomNavView:Landroid/view/View;
+
     iget-object v1, p0, Lcom/android/internal/widget/ActionBarView;->mCustomNavView:Landroid/view/View;
 
     if-eqz v1, :cond_1
@@ -4187,26 +4191,13 @@
 
     iget-object v1, p0, Lcom/android/internal/widget/ActionBarView;->mCustomNavView:Landroid/view/View;
 
-    invoke-virtual {p0, v1}, Lcom/android/internal/widget/ActionBarView;->removeView(Landroid/view/View;)V
-
-    :cond_1
-    iput-object p1, p0, Lcom/android/internal/widget/ActionBarView;->mCustomNavView:Landroid/view/View;
-
-    iget-object v1, p0, Lcom/android/internal/widget/ActionBarView;->mCustomNavView:Landroid/view/View;
-
-    if-eqz v1, :cond_2
-
-    if-eqz v0, :cond_2
-
-    iget-object v1, p0, Lcom/android/internal/widget/ActionBarView;->mCustomNavView:Landroid/view/View;
-
     invoke-virtual {p0, v1}, Lcom/android/internal/widget/ActionBarView;->addView(Landroid/view/View;)V
 
-    :cond_2
+    :cond_1
     return-void
 
     .end local v0    # "showCustom":Z
-    :cond_3
+    :cond_2
     const/4 v0, 0x0
 
     goto :goto_0
@@ -4272,8 +4263,6 @@
     and-int/lit8 v9, v0, 0x3f
 
     if-eqz v9, :cond_11
-
-    invoke-static {p0}, Lcom/android/internal/transition/ActionBarTransition;->beginDelayedTransition(Landroid/view/ViewGroup;)V
 
     and-int/lit8 v9, v0, 0x4
 
@@ -5133,8 +5122,6 @@
     .local v0, "oldMode":I
     if-eq p1, v0, :cond_2
 
-    invoke-static {p0}, Lcom/android/internal/transition/ActionBarTransition;->beginDelayedTransition(Landroid/view/ViewGroup;)V
-
     packed-switch v0, :pswitch_data_0
 
     :cond_0
@@ -5271,6 +5258,8 @@
     invoke-virtual {p0, v2}, Lcom/android/internal/widget/ActionBarView;->addView(Landroid/view/View;)V
 
     goto :goto_1
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x1
@@ -5453,8 +5442,6 @@
     const/16 v3, 0x8
 
     const/4 v2, 0x0
-
-    invoke-static {p0}, Lcom/android/internal/transition/ActionBarTransition;->beginDelayedTransition(Landroid/view/ViewGroup;)V
 
     iput-object p1, p0, Lcom/android/internal/widget/ActionBarView;->mSubtitle:Ljava/lang/CharSequence;
 

@@ -149,6 +149,8 @@
     .end annotation
 .end field
 
+.field private mLayoutDirection:I
+
 .field private mMaxAscent:[I
 
 .field private mMaxDescent:[I
@@ -230,21 +232,23 @@
     .prologue
     const/4 v4, 0x1
 
-    const/4 v6, -0x1
+    const/4 v6, 0x0
 
-    const/4 v5, 0x0
+    const/4 v5, -0x1
 
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
     iput-boolean v4, p0, Landroid/widget/LinearLayout;->mBaselineAligned:Z
 
-    iput v6, p0, Landroid/widget/LinearLayout;->mBaselineAlignedChildIndex:I
+    iput v5, p0, Landroid/widget/LinearLayout;->mBaselineAlignedChildIndex:I
 
-    iput v5, p0, Landroid/widget/LinearLayout;->mBaselineChildTop:I
+    iput v6, p0, Landroid/widget/LinearLayout;->mBaselineChildTop:I
 
     const v3, 0x800033
 
     iput v3, p0, Landroid/widget/LinearLayout;->mGravity:I
+
+    iput v5, p0, Landroid/widget/LinearLayout;->mLayoutDirection:I
 
     sget-object v3, Lcom/android/internal/R$styleable;->LinearLayout:[I
 
@@ -253,7 +257,7 @@
     move-result-object v0
 
     .local v0, "a":Landroid/content/res/TypedArray;
-    invoke-virtual {v0, v4, v6}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {v0, v4, v5}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v2
 
@@ -263,7 +267,7 @@
     invoke-virtual {p0, v2}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     :cond_0
-    invoke-virtual {v0, v5, v6}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {v0, v6, v5}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v2
 
@@ -296,7 +300,7 @@
 
     const/4 v3, 0x3
 
-    invoke-virtual {v0, v3, v6}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {v0, v3, v5}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v3
 
@@ -304,7 +308,7 @@
 
     const/4 v3, 0x6
 
-    invoke-virtual {v0, v3, v5}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {v0, v3, v6}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v3
 
@@ -320,7 +324,7 @@
 
     const/4 v3, 0x7
 
-    invoke-virtual {v0, v3, v5}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {v0, v3, v6}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v3
 
@@ -328,7 +332,7 @@
 
     const/16 v3, 0x8
 
-    invoke-virtual {v0, v3, v5}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v0, v3, v6}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
     move-result v3
 
@@ -2482,7 +2486,7 @@
 
     const/4 v6, 0x0
 
-    invoke-static {v3, v6}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {v3, v6}, Landroid/view/View$MeasureSpec;->makeSafeMeasureSpec(II)I
 
     move-result v24
 
@@ -2493,7 +2497,7 @@
 
     const/4 v6, 0x0
 
-    invoke-static {v3, v6}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {v3, v6}, Landroid/view/View$MeasureSpec;->makeSafeMeasureSpec(II)I
 
     move-result v23
 
@@ -5430,6 +5434,29 @@
     invoke-virtual {p0, p1, p2}, Landroid/widget/LinearLayout;->measureHorizontal(II)V
 
     goto :goto_0
+.end method
+
+.method public onRtlPropertiesChanged(I)V
+    .locals 1
+    .param p1, "layoutDirection"    # I
+
+    .prologue
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onRtlPropertiesChanged(I)V
+
+    iget v0, p0, Landroid/widget/LinearLayout;->mLayoutDirection:I
+
+    if-eq p1, v0, :cond_0
+
+    iput p1, p0, Landroid/widget/LinearLayout;->mLayoutDirection:I
+
+    iget v0, p0, Landroid/widget/LinearLayout;->mOrientation:I
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Landroid/widget/LinearLayout;->requestLayout()V
+
+    :cond_0
+    return-void
 .end method
 
 .method public setBaselineAligned(Z)V

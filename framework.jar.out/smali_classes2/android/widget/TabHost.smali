@@ -724,38 +724,6 @@
     return-object v0
 .end method
 
-.method protected onAttachedToWindow()V
-    .locals 1
-
-    .prologue
-    invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
-
-    invoke-virtual {p0}, Landroid/widget/TabHost;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
-
-    move-result-object v0
-
-    .local v0, "treeObserver":Landroid/view/ViewTreeObserver;
-    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->addOnTouchModeChangeListener(Landroid/view/ViewTreeObserver$OnTouchModeChangeListener;)V
-
-    return-void
-.end method
-
-.method protected onDetachedFromWindow()V
-    .locals 1
-
-    .prologue
-    invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
-
-    invoke-virtual {p0}, Landroid/widget/TabHost;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
-
-    move-result-object v0
-
-    .local v0, "treeObserver":Landroid/view/ViewTreeObserver;
-    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnTouchModeChangeListener(Landroid/view/ViewTreeObserver$OnTouchModeChangeListener;)V
-
-    return-void
-.end method
-
 .method public onInitializeAccessibilityEventInternal(Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 1
     .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
@@ -793,44 +761,10 @@
 .end method
 
 .method public onTouchModeChanged(Z)V
-    .locals 2
+    .locals 0
     .param p1, "isInTouchMode"    # Z
 
     .prologue
-    if-nez p1, :cond_1
-
-    iget-object v0, p0, Landroid/widget/TabHost;->mCurrentView:Landroid/view/View;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Landroid/widget/TabHost;->mCurrentView:Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->hasFocus()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Landroid/widget/TabHost;->mCurrentView:Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->isFocused()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    :cond_0
-    iget-object v0, p0, Landroid/widget/TabHost;->mTabWidget:Landroid/widget/TabWidget;
-
-    iget v1, p0, Landroid/widget/TabHost;->mCurrentTab:I
-
-    invoke-virtual {v0, v1}, Landroid/widget/TabWidget;->getChildTabViewAt(I)Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/View;->requestFocus()Z
-
-    :cond_1
     return-void
 .end method
 

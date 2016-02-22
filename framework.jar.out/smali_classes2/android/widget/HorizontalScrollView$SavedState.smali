@@ -28,9 +28,7 @@
 
 
 # instance fields
-.field public isLayoutRtl:Z
-
-.field public scrollPosition:I
+.field public scrollOffsetFromStart:I
 
 
 # direct methods
@@ -58,25 +56,9 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/widget/HorizontalScrollView$SavedState;->scrollPosition:I
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    iput-boolean v0, p0, Landroid/widget/HorizontalScrollView$SavedState;->isLayoutRtl:Z
+    iput v0, p0, Landroid/widget/HorizontalScrollView$SavedState;->scrollOffsetFromStart:I
 
     return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
 .method constructor <init>(Landroid/os/Parcelable;)V
@@ -123,21 +105,9 @@
 
     move-result-object v0
 
-    iget v1, p0, Landroid/widget/HorizontalScrollView$SavedState;->scrollPosition:I
+    iget v1, p0, Landroid/widget/HorizontalScrollView$SavedState;->scrollOffsetFromStart:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " isLayoutRtl="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-boolean v1, p0, Landroid/widget/HorizontalScrollView$SavedState;->isLayoutRtl:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -162,23 +132,9 @@
     .prologue
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    iget v0, p0, Landroid/widget/HorizontalScrollView$SavedState;->scrollPosition:I
+    iget v0, p0, Landroid/widget/HorizontalScrollView$SavedState;->scrollOffsetFromStart:I
 
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    iget-boolean v0, p0, Landroid/widget/HorizontalScrollView$SavedState;->isLayoutRtl:Z
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method

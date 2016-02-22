@@ -803,7 +803,7 @@
     invoke-virtual {p1}, Landroid/view/View;->resetRtlProperties()V
 
     :cond_8
-    invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->onViewAdded(Landroid/view/View;)V
+    invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->dispatchViewAdded(Landroid/view/View;)V
 
     iget v5, p1, Landroid/view/View;->mViewFlags:I
 
@@ -2089,6 +2089,8 @@
     .param p2, "childDimension"    # I
 
     .prologue
+    const/4 v5, 0x0
+
     const/4 v8, -0x1
 
     const/4 v7, -0x2
@@ -2103,8 +2105,6 @@
     move-result v4
 
     .local v4, "specSize":I
-    const/4 v5, 0x0
-
     sub-int v6, v4, p1
 
     invoke-static {v5, v6}, Ljava/lang/Math;->max(II)I
@@ -2192,22 +2192,42 @@
     goto :goto_0
 
     :cond_5
-    if-ne p2, v8, :cond_6
+    if-ne p2, v8, :cond_7
 
-    const/4 v1, 0x0
+    sget-boolean v6, Landroid/view/View;->sUseZeroUnspecifiedMeasureSpec:Z
 
+    if-eqz v6, :cond_6
+
+    move v1, v5
+
+    :goto_1
     const/4 v0, 0x0
 
     goto :goto_0
 
     :cond_6
+    move v1, v2
+
+    goto :goto_1
+
+    :cond_7
     if-ne p2, v7, :cond_0
 
-    const/4 v1, 0x0
+    sget-boolean v6, Landroid/view/View;->sUseZeroUnspecifiedMeasureSpec:Z
 
+    if-eqz v6, :cond_8
+
+    move v1, v5
+
+    :goto_2
     const/4 v0, 0x0
 
     goto :goto_0
+
+    :cond_8
+    move v1, v2
+
+    goto :goto_2
 
     nop
 
@@ -3129,7 +3149,7 @@
     invoke-virtual {p0, p0}, Landroid/view/ViewGroup;->notifyGlobalFocusCleared(Landroid/view/View;)V
 
     :cond_5
-    invoke-virtual {p0, p2}, Landroid/view/ViewGroup;->onViewRemoved(Landroid/view/View;)V
+    invoke-virtual {p0, p2}, Landroid/view/ViewGroup;->dispatchViewRemoved(Landroid/view/View;)V
 
     invoke-virtual {p2}, Landroid/view/View;->getVisibility()I
 
@@ -3331,7 +3351,7 @@
     :cond_4
     invoke-virtual {p0, v7}, Landroid/view/ViewGroup;->needGlobalAttributesUpdate(Z)V
 
-    invoke-virtual {p0, v6}, Landroid/view/ViewGroup;->onViewRemoved(Landroid/view/View;)V
+    invoke-virtual {p0, v6}, Landroid/view/ViewGroup;->dispatchViewRemoved(Landroid/view/View;)V
 
     add-int/lit8 v5, v5, 0x1
 
@@ -9762,6 +9782,44 @@
     goto :goto_0
 .end method
 
+.method dispatchViewAdded(Landroid/view/View;)V
+    .locals 1
+    .param p1, "child"    # Landroid/view/View;
+
+    .prologue
+    invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->onViewAdded(Landroid/view/View;)V
+
+    iget-object v0, p0, Landroid/view/ViewGroup;->mOnHierarchyChangeListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Landroid/view/ViewGroup;->mOnHierarchyChangeListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
+
+    invoke-interface {v0, p0, p1}, Landroid/view/ViewGroup$OnHierarchyChangeListener;->onChildViewAdded(Landroid/view/View;Landroid/view/View;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method dispatchViewRemoved(Landroid/view/View;)V
+    .locals 1
+    .param p1, "child"    # Landroid/view/View;
+
+    .prologue
+    invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->onViewRemoved(Landroid/view/View;)V
+
+    iget-object v0, p0, Landroid/view/ViewGroup;->mOnHierarchyChangeListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Landroid/view/ViewGroup;->mOnHierarchyChangeListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
+
+    invoke-interface {v0, p0, p1}, Landroid/view/ViewGroup$OnHierarchyChangeListener;->onChildViewRemoved(Landroid/view/View;Landroid/view/View;)V
+
+    :cond_0
+    return-void
+.end method
+
 .method protected dispatchVisibilityChanged(Landroid/view/View;I)V
     .locals 4
     .param p1, "changedView"    # Landroid/view/View;
@@ -14313,37 +14371,19 @@
     return-void
 .end method
 
-.method protected onViewAdded(Landroid/view/View;)V
-    .locals 1
+.method public onViewAdded(Landroid/view/View;)V
+    .locals 0
     .param p1, "child"    # Landroid/view/View;
 
     .prologue
-    iget-object v0, p0, Landroid/view/ViewGroup;->mOnHierarchyChangeListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Landroid/view/ViewGroup;->mOnHierarchyChangeListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
-
-    invoke-interface {v0, p0, p1}, Landroid/view/ViewGroup$OnHierarchyChangeListener;->onChildViewAdded(Landroid/view/View;Landroid/view/View;)V
-
-    :cond_0
     return-void
 .end method
 
-.method protected onViewRemoved(Landroid/view/View;)V
-    .locals 1
+.method public onViewRemoved(Landroid/view/View;)V
+    .locals 0
     .param p1, "child"    # Landroid/view/View;
 
     .prologue
-    iget-object v0, p0, Landroid/view/ViewGroup;->mOnHierarchyChangeListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Landroid/view/ViewGroup;->mOnHierarchyChangeListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
-
-    invoke-interface {v0, p0, p1}, Landroid/view/ViewGroup$OnHierarchyChangeListener;->onChildViewRemoved(Landroid/view/View;Landroid/view/View;)V
-
-    :cond_0
     return-void
 .end method
 
@@ -14491,7 +14531,7 @@
     invoke-virtual {p0, v6, v7}, Landroid/view/ViewGroup;->childHasTransientStateChanged(Landroid/view/View;Z)V
 
     :cond_6
-    invoke-virtual {p0, v6}, Landroid/view/ViewGroup;->onViewRemoved(Landroid/view/View;)V
+    invoke-virtual {p0, v6}, Landroid/view/ViewGroup;->dispatchViewRemoved(Landroid/view/View;)V
 
     iput-object v9, v6, Landroid/view/View;->mParent:Landroid/view/ViewParent;
 
@@ -14603,7 +14643,7 @@
     invoke-virtual {p0, p1, v0}, Landroid/view/ViewGroup;->childHasTransientStateChanged(Landroid/view/View;Z)V
 
     :cond_5
-    invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->onViewRemoved(Landroid/view/View;)V
+    invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->dispatchViewRemoved(Landroid/view/View;)V
 
     return-void
 

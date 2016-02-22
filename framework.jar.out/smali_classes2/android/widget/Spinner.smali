@@ -9,7 +9,6 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/widget/Spinner$ThemedSpinnerAdapter;,
         Landroid/widget/Spinner$DropdownPopup;,
         Landroid/widget/Spinner$DialogPopup;,
         Landroid/widget/Spinner$SpinnerPopup;,
@@ -162,19 +161,19 @@
 
     move v5, p5
 
-    invoke-direct/range {v0 .. v6}, Landroid/widget/Spinner;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;IIILandroid/content/Context;)V
+    invoke-direct/range {v0 .. v6}, Landroid/widget/Spinner;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;IIILandroid/content/res/Resources$Theme;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;IIILandroid/content/Context;)V
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;IIILandroid/content/res/Resources$Theme;)V
     .locals 9
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "attrs"    # Landroid/util/AttributeSet;
     .param p3, "defStyleAttr"    # I
     .param p4, "defStyleRes"    # I
     .param p5, "mode"    # I
-    .param p6, "popupContext"    # Landroid/content/Context;
+    .param p6, "popupTheme"    # Landroid/content/res/Resources$Theme;
 
     .prologue
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/widget/AbsSpinner;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
@@ -194,7 +193,11 @@
     .local v6, "a":Landroid/content/res/TypedArray;
     if-eqz p6, :cond_2
 
-    iput-object p6, p0, Landroid/widget/Spinner;->mPopupContext:Landroid/content/Context;
+    new-instance v1, Landroid/view/ContextThemeWrapper;
+
+    invoke-direct {v1, p1, p6}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;Landroid/content/res/Resources$Theme;)V
+
+    iput-object v1, p0, Landroid/widget/Spinner;->mPopupContext:Landroid/content/Context;
 
     :goto_0
     const/4 v1, -0x1
@@ -359,6 +362,8 @@
     iput-object v1, p0, Landroid/widget/Spinner;->mForwardingListener:Landroid/widget/ListPopupWindow$ForwardingListener;
 
     goto :goto_1
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -932,7 +937,7 @@
 
     const/4 v11, 0x0
 
-    invoke-static {v10, v11}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {v10, v11}, Landroid/view/View$MeasureSpec;->makeSafeMeasureSpec(II)I
 
     move-result v9
 
@@ -943,7 +948,7 @@
 
     const/4 v11, 0x0
 
-    invoke-static {v10, v11}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {v10, v11}, Landroid/view/View$MeasureSpec;->makeSafeMeasureSpec(II)I
 
     move-result v2
 

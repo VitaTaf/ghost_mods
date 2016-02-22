@@ -862,15 +862,33 @@
 .end method
 
 .method getScrapView(I)Landroid/view/View;
-    .locals 3
+    .locals 4
     .param p1, "position"    # I
 
     .prologue
-    iget v1, p0, Landroid/widget/AbsListView$RecycleBin;->mViewTypeCount:I
+    const/4 v1, 0x0
 
-    const/4 v2, 0x1
+    iget-object v2, p0, Landroid/widget/AbsListView$RecycleBin;->this$0:Landroid/widget/AbsListView;
 
-    if-ne v1, v2, :cond_0
+    iget-object v2, v2, Landroid/widget/AbsListView;->mAdapter:Landroid/widget/ListAdapter;
+
+    invoke-interface {v2, p1}, Landroid/widget/ListAdapter;->getItemViewType(I)I
+
+    move-result v0
+
+    .local v0, "whichScrap":I
+    if-gez v0, :cond_1
+
+    :cond_0
+    :goto_0
+    return-object v1
+
+    :cond_1
+    iget v2, p0, Landroid/widget/AbsListView$RecycleBin;->mViewTypeCount:I
+
+    const/4 v3, 0x1
+
+    if-ne v2, v3, :cond_2
 
     iget-object v1, p0, Landroid/widget/AbsListView$RecycleBin;->mCurrentScrap:Ljava/util/ArrayList;
 
@@ -878,26 +896,14 @@
 
     move-result-object v1
 
-    :goto_0
-    return-object v1
+    goto :goto_0
 
-    :cond_0
-    iget-object v1, p0, Landroid/widget/AbsListView$RecycleBin;->this$0:Landroid/widget/AbsListView;
+    :cond_2
+    iget-object v2, p0, Landroid/widget/AbsListView$RecycleBin;->mScrapViews:[Ljava/util/ArrayList;
 
-    iget-object v1, v1, Landroid/widget/AbsListView;->mAdapter:Landroid/widget/ListAdapter;
+    array-length v2, v2
 
-    invoke-interface {v1, p1}, Landroid/widget/ListAdapter;->getItemViewType(I)I
-
-    move-result v0
-
-    .local v0, "whichScrap":I
-    if-ltz v0, :cond_1
-
-    iget-object v1, p0, Landroid/widget/AbsListView$RecycleBin;->mScrapViews:[Ljava/util/ArrayList;
-
-    array-length v1, v1
-
-    if-ge v0, v1, :cond_1
+    if-ge v0, v2, :cond_0
 
     iget-object v1, p0, Landroid/widget/AbsListView$RecycleBin;->mScrapViews:[Ljava/util/ArrayList;
 
@@ -906,11 +912,6 @@
     invoke-direct {p0, v1, p1}, Landroid/widget/AbsListView$RecycleBin;->retrieveFromScrap(Ljava/util/ArrayList;I)Landroid/view/View;
 
     move-result-object v1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v1, 0x0
 
     goto :goto_0
 .end method

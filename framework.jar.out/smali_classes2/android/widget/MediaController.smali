@@ -20,9 +20,11 @@
 
 
 # instance fields
+.field private final mAccessibilityManager:Landroid/view/accessibility/AccessibilityManager;
+
 .field private mAnchor:Landroid/view/View;
 
-.field private mContext:Landroid/content/Context;
+.field private final mContext:Landroid/content/Context;
 
 .field private mCurrentTime:Landroid/widget/TextView;
 
@@ -36,7 +38,7 @@
 
 .field private mFfwdButton:Landroid/widget/ImageButton;
 
-.field private mFfwdListener:Landroid/view/View$OnClickListener;
+.field private final mFfwdListener:Landroid/view/View$OnClickListener;
 
 .field mFormatBuilder:Ljava/lang/StringBuilder;
 
@@ -44,9 +46,9 @@
 
 .field private mFromXml:Z
 
-.field private mHandler:Landroid/os/Handler;
+.field private final mHandler:Landroid/os/Handler;
 
-.field private mLayoutChangeListener:Landroid/view/View$OnLayoutChangeListener;
+.field private final mLayoutChangeListener:Landroid/view/View$OnLayoutChangeListener;
 
 .field private mListenersSet:Z
 
@@ -58,7 +60,7 @@
 
 .field private mPauseDescription:Ljava/lang/CharSequence;
 
-.field private mPauseListener:Landroid/view/View$OnClickListener;
+.field private final mPauseListener:Landroid/view/View$OnClickListener;
 
 .field private mPlayDescription:Ljava/lang/CharSequence;
 
@@ -72,17 +74,17 @@
 
 .field private mRewButton:Landroid/widget/ImageButton;
 
-.field private mRewListener:Landroid/view/View$OnClickListener;
+.field private final mRewListener:Landroid/view/View$OnClickListener;
 
 .field private mRoot:Landroid/view/View;
 
-.field private mSeekListener:Landroid/widget/SeekBar$OnSeekBarChangeListener;
+.field private final mSeekListener:Landroid/widget/SeekBar$OnSeekBarChangeListener;
 
 .field private mShowing:Z
 
-.field private mTouchListener:Landroid/view/View$OnTouchListener;
+.field private final mTouchListener:Landroid/view/View$OnTouchListener;
 
-.field private mUseFastForward:Z
+.field private final mUseFastForward:Z
 
 .field private mWindow:Landroid/view/Window;
 
@@ -162,6 +164,12 @@
 
     iput-boolean v1, p0, Landroid/widget/MediaController;->mFromXml:Z
 
+    invoke-static {p1}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
+
+    move-result-object v0
+
+    iput-object v0, p0, Landroid/widget/MediaController;->mAccessibilityManager:Landroid/view/accessibility/AccessibilityManager;
+
     return-void
 .end method
 
@@ -222,6 +230,12 @@
     invoke-direct {p0}, Landroid/widget/MediaController;->initFloatingWindowLayout()V
 
     invoke-direct {p0}, Landroid/widget/MediaController;->initFloatingWindow()V
+
+    invoke-static {p1}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
+
+    move-result-object v0
+
+    iput-object v0, p0, Landroid/widget/MediaController;->mAccessibilityManager:Landroid/view/accessibility/AccessibilityManager;
 
     return-void
 .end method
@@ -432,10 +446,37 @@
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setEnabled(Z)V
+
+    :cond_2
+    iget-object v0, p0, Landroid/widget/MediaController;->mProgress:Landroid/widget/ProgressBar;
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Landroid/widget/MediaController;->mPlayer:Landroid/widget/MediaController$MediaPlayerControl;
+
+    invoke-interface {v0}, Landroid/widget/MediaController$MediaPlayerControl;->canSeekBackward()Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    iget-object v0, p0, Landroid/widget/MediaController;->mPlayer:Landroid/widget/MediaController$MediaPlayerControl;
+
+    invoke-interface {v0}, Landroid/widget/MediaController$MediaPlayerControl;->canSeekForward()Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    iget-object v0, p0, Landroid/widget/MediaController;->mProgress:Landroid/widget/ProgressBar;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setEnabled(Z)V
     :try_end_0
     .catch Ljava/lang/IncompatibleClassChangeError; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_2
+    :cond_3
     :goto_0
     return-void
 
@@ -1938,14 +1979,15 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    iget-object v1, p0, Landroid/widget/MediaController;->mHandler:Landroid/os/Handler;
-
-    invoke-virtual {v1, v4}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
-
-    move-result-object v0
-
-    .local v0, "msg":Landroid/os/Message;
     if-eqz p1, :cond_2
+
+    iget-object v1, p0, Landroid/widget/MediaController;->mAccessibilityManager:Landroid/view/accessibility/AccessibilityManager;
+
+    invoke-virtual {v1}, Landroid/view/accessibility/AccessibilityManager;->isTouchExplorationEnabled()Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
 
     iget-object v1, p0, Landroid/widget/MediaController;->mHandler:Landroid/os/Handler;
 
@@ -1953,10 +1995,18 @@
 
     iget-object v1, p0, Landroid/widget/MediaController;->mHandler:Landroid/os/Handler;
 
+    invoke-virtual {v1, v4}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v0
+
+    .local v0, "msg":Landroid/os/Message;
+    iget-object v1, p0, Landroid/widget/MediaController;->mHandler:Landroid/os/Handler;
+
     int-to-long v2, p1
 
     invoke-virtual {v1, v0, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
+    .end local v0    # "msg":Landroid/os/Message;
     :cond_2
     return-void
 .end method

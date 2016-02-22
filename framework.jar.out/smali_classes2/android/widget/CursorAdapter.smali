@@ -5,7 +5,7 @@
 # interfaces
 .implements Landroid/widget/Filterable;
 .implements Landroid/widget/CursorFilter$CursorFilterClient;
-.implements Landroid/widget/Spinner$ThemedSpinnerAdapter;
+.implements Landroid/widget/ThemedSpinnerAdapter;
 
 
 # annotations

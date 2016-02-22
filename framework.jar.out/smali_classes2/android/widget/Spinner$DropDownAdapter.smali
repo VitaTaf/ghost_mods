@@ -48,24 +48,24 @@
     :cond_0
     if-eqz p2, :cond_1
 
-    instance-of v1, p1, Landroid/widget/Spinner$ThemedSpinnerAdapter;
+    instance-of v1, p1, Landroid/widget/ThemedSpinnerAdapter;
 
     if-eqz v1, :cond_1
 
     move-object v0, p1
 
-    check-cast v0, Landroid/widget/Spinner$ThemedSpinnerAdapter;
+    check-cast v0, Landroid/widget/ThemedSpinnerAdapter;
 
-    .local v0, "themedAdapter":Landroid/widget/Spinner$ThemedSpinnerAdapter;
-    invoke-interface {v0}, Landroid/widget/Spinner$ThemedSpinnerAdapter;->getDropDownViewTheme()Landroid/content/res/Resources$Theme;
+    .local v0, "themedAdapter":Landroid/widget/ThemedSpinnerAdapter;
+    invoke-interface {v0}, Landroid/widget/ThemedSpinnerAdapter;->getDropDownViewTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v1
 
     if-nez v1, :cond_1
 
-    invoke-interface {v0, p2}, Landroid/widget/Spinner$ThemedSpinnerAdapter;->setDropDownViewTheme(Landroid/content/res/Resources$Theme;)V
+    invoke-interface {v0, p2}, Landroid/widget/ThemedSpinnerAdapter;->setDropDownViewTheme(Landroid/content/res/Resources$Theme;)V
 
-    .end local v0    # "themedAdapter":Landroid/widget/Spinner$ThemedSpinnerAdapter;
+    .end local v0    # "themedAdapter":Landroid/widget/ThemedSpinnerAdapter;
     :cond_1
     return-void
 .end method

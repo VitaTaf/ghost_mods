@@ -2942,13 +2942,7 @@
 
     if-ge v0, v1, :cond_1c
 
-    move-object/from16 v0, p0
-
-    move/from16 v1, v24
-
-    invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v13
+    aget-object v13, v41, v24
 
     .restart local v13    # "child":Landroid/view/View;
     invoke-virtual {v13}, Landroid/view/View;->getVisibility()I
@@ -3059,13 +3053,7 @@
 
     if-ge v0, v1, :cond_21
 
-    move-object/from16 v0, p0
-
-    move/from16 v1, v24
-
-    invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v13
+    aget-object v13, v41, v24
 
     .restart local v13    # "child":Landroid/view/View;
     invoke-virtual {v13}, Landroid/view/View;->getVisibility()I
@@ -3227,13 +3215,7 @@
 
     if-ge v0, v1, :cond_26
 
-    move-object/from16 v0, p0
-
-    move/from16 v1, v24
-
-    invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v13
+    aget-object v13, v41, v24
 
     .restart local v13    # "child":Landroid/view/View;
     invoke-virtual {v13}, Landroid/view/View;->getVisibility()I
@@ -3406,13 +3388,7 @@
 
     if-ge v0, v1, :cond_2b
 
-    move-object/from16 v0, p0
-
-    move/from16 v1, v24
-
-    invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v13
+    aget-object v13, v41, v24
 
     .restart local v13    # "child":Landroid/view/View;
     invoke-virtual {v13}, Landroid/view/View;->getVisibility()I
@@ -3497,13 +3473,7 @@
 
     if-ge v0, v1, :cond_2d
 
-    move-object/from16 v0, p0
-
-    move/from16 v1, v24
-
-    invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v13
+    aget-object v13, v41, v24
 
     .restart local v13    # "child":Landroid/view/View;
     invoke-virtual {v13}, Landroid/view/View;->getVisibility()I

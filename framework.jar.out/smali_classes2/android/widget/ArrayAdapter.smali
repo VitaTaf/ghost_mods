@@ -4,7 +4,7 @@
 
 # interfaces
 .implements Landroid/widget/Filterable;
-.implements Landroid/widget/Spinner$ThemedSpinnerAdapter;
+.implements Landroid/widget/ThemedSpinnerAdapter;
 
 
 # annotations
@@ -22,7 +22,7 @@
         ">",
         "Landroid/widget/BaseAdapter;",
         "Landroid/widget/Filterable;",
-        "Landroid/widget/Spinner$ThemedSpinnerAdapter;"
+        "Landroid/widget/ThemedSpinnerAdapter;"
     }
 .end annotation
 
@@ -45,7 +45,7 @@
     .end annotation
 .end field
 
-.field private mInflater:Landroid/view/LayoutInflater;
+.field private final mInflater:Landroid/view/LayoutInflater;
 
 .field private final mLock:Ljava/lang/Object;
 

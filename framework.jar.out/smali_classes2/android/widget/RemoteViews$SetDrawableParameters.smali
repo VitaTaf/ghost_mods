@@ -160,13 +160,13 @@
 
 # virtual methods
 .method public apply(Landroid/view/View;Landroid/view/ViewGroup;Landroid/widget/RemoteViews$OnClickHandler;)V
-    .locals 6
+    .locals 7
     .param p1, "root"    # Landroid/view/View;
     .param p2, "rootParent"    # Landroid/view/ViewGroup;
     .param p3, "handler"    # Landroid/widget/RemoteViews$OnClickHandler;
 
     .prologue
-    const/4 v5, -0x1
+    const/4 v6, -0x1
 
     iget v3, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->viewId:I
 
@@ -199,31 +199,43 @@
 
     iget v3, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->alpha:I
 
-    if-eq v3, v5, :cond_3
+    if-eq v3, v6, :cond_3
 
-    iget v3, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->alpha:I
+    invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
+    move-result-object v3
+
+    iget v4, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->alpha:I
+
+    invoke-virtual {v3, v4}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
     :cond_3
     iget-object v3, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->filterMode:Landroid/graphics/PorterDuff$Mode;
 
     if-eqz v3, :cond_4
 
-    iget v3, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->colorFilter:I
+    invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
-    iget-object v4, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->filterMode:Landroid/graphics/PorterDuff$Mode;
+    move-result-object v3
 
-    invoke-virtual {v2, v3, v4}, Landroid/graphics/drawable/Drawable;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
+    iget v4, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->colorFilter:I
+
+    iget-object v5, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->filterMode:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-virtual {v3, v4, v5}, Landroid/graphics/drawable/Drawable;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
 
     :cond_4
     iget v3, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->level:I
 
-    if-eq v3, v5, :cond_0
+    if-eq v3, v6, :cond_0
 
-    iget v3, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->level:I
+    invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setLevel(I)Z
+    move-result-object v3
+
+    iget v4, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->level:I
+
+    invoke-virtual {v3, v4}, Landroid/graphics/drawable/Drawable;->setLevel(I)Z
 
     goto :goto_0
 

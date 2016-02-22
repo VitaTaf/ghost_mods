@@ -59,14 +59,14 @@
     if-nez v0, :cond_0
 
     # getter for: Landroid/widget/ActionMenuPresenter;->mOverflowButton:Landroid/view/View;
-    invoke-static {p1}, Landroid/widget/ActionMenuPresenter;->access$500(Landroid/widget/ActionMenuPresenter;)Landroid/view/View;
+    invoke-static {p1}, Landroid/widget/ActionMenuPresenter;->access$1400(Landroid/widget/ActionMenuPresenter;)Landroid/view/View;
 
     move-result-object v0
 
     if-nez v0, :cond_2
 
     # getter for: Landroid/widget/ActionMenuPresenter;->mMenuView:Lcom/android/internal/view/menu/MenuView;
-    invoke-static {p1}, Landroid/widget/ActionMenuPresenter;->access$600(Landroid/widget/ActionMenuPresenter;)Lcom/android/internal/view/menu/MenuView;
+    invoke-static {p1}, Landroid/widget/ActionMenuPresenter;->access$1500(Landroid/widget/ActionMenuPresenter;)Lcom/android/internal/view/menu/MenuView;
 
     move-result-object v0
 
@@ -124,7 +124,7 @@
     .end local v10    # "preserveIconSpacing":Z
     :cond_2
     # getter for: Landroid/widget/ActionMenuPresenter;->mOverflowButton:Landroid/view/View;
-    invoke-static {p1}, Landroid/widget/ActionMenuPresenter;->access$500(Landroid/widget/ActionMenuPresenter;)Landroid/view/View;
+    invoke-static {p1}, Landroid/widget/ActionMenuPresenter;->access$1400(Landroid/widget/ActionMenuPresenter;)Landroid/view/View;
 
     move-result-object v0
 
@@ -153,7 +153,7 @@
     const/4 v1, 0x0
 
     # setter for: Landroid/widget/ActionMenuPresenter;->mActionButtonPopup:Landroid/widget/ActionMenuPresenter$ActionButtonSubmenu;
-    invoke-static {v0, v1}, Landroid/widget/ActionMenuPresenter;->access$702(Landroid/widget/ActionMenuPresenter;Landroid/widget/ActionMenuPresenter$ActionButtonSubmenu;)Landroid/widget/ActionMenuPresenter$ActionButtonSubmenu;
+    invoke-static {v0, v1}, Landroid/widget/ActionMenuPresenter;->access$1602(Landroid/widget/ActionMenuPresenter;Landroid/widget/ActionMenuPresenter$ActionButtonSubmenu;)Landroid/widget/ActionMenuPresenter$ActionButtonSubmenu;
 
     iget-object v0, p0, Landroid/widget/ActionMenuPresenter$ActionButtonSubmenu;->this$0:Landroid/widget/ActionMenuPresenter;
 

@@ -209,6 +209,8 @@
 
 .field public static final LAYOUT_DIRECTION_RTL:I = 0x1
 
+.field public static final LAYOUT_DIRECTION_UNDEFINED:I = -0x1
+
 .field static final LONG_CLICKABLE:I = 0x200000
 
 .field public static final MEASURED_HEIGHT_STATE_SHIFT:I = 0x10
@@ -775,6 +777,8 @@
 
 .field private static sUseBrokenMakeMeasureSpec:Z
 
+.field static sUseZeroUnspecifiedMeasureSpec:Z
+
 
 # instance fields
 .field private mAccessibilityCursorPosition:I
@@ -1194,6 +1198,10 @@
     const/4 v9, 0x0
 
     sput-boolean v9, Landroid/view/View;->sUseBrokenMakeMeasureSpec:Z
+
+    const/4 v9, 0x0
+
+    sput-boolean v9, Landroid/view/View;->sUseZeroUnspecifiedMeasureSpec:Z
 
     const/4 v9, 0x0
 
@@ -1785,6 +1793,8 @@
 
     return-void
 
+    nop
+
     :array_0
     .array-data 4
         0x0
@@ -1969,15 +1979,15 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    const/4 v3, 0x1
-
     const/high16 v6, -0x80000000
+
+    const/4 v3, 0x1
 
     const/4 v2, 0x0
 
-    const/4 v4, 0x0
-
     const/4 v5, -0x1
+
+    const/4 v4, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -2127,12 +2137,21 @@
 
     const/16 v1, 0x13
 
+    if-ge v0, v1, :cond_5
+
+    move v1, v3
+
+    :goto_2
+    sput-boolean v1, Landroid/view/View;->sIgnoreMeasureCache:Z
+
+    const/16 v1, 0x2710
+
     if-ge v0, v1, :cond_1
 
     move v4, v3
 
     :cond_1
-    sput-boolean v4, Landroid/view/View;->sIgnoreMeasureCache:Z
+    sput-boolean v4, Landroid/view/View;->sUseZeroUnspecifiedMeasureSpec:Z
 
     sput-boolean v3, Landroid/view/View;->sCompatibilityDone:Z
 
@@ -2150,6 +2169,11 @@
     move v1, v4
 
     goto :goto_1
+
+    :cond_5
+    move v1, v4
+
+    goto :goto_2
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V

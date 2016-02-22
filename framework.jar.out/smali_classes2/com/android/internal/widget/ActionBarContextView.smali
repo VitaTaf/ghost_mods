@@ -1660,7 +1660,7 @@
 
     move/from16 v0, v24
 
-    invoke-static {v5, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {v5, v0}, Landroid/view/View$MeasureSpec;->makeSafeMeasureSpec(II)I
 
     move-result v20
 

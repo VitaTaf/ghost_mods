@@ -33,6 +33,8 @@
 
 .field static final FLOAT:I = 0x6
 
+.field static final ICON:I = 0x10
+
 .field static final INT:I = 0x4
 
 .field static final INTENT:I = 0xe
@@ -336,6 +338,23 @@
 
     goto/16 :goto_0
 
+    :pswitch_f
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Landroid/graphics/drawable/Icon;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-interface {v0, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    iput-object v0, p0, Landroid/widget/RemoteViews$ReflectionAction;->value:Ljava/lang/Object;
+
+    goto/16 :goto_0
+
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -353,6 +372,7 @@
         :pswitch_c
         :pswitch_d
         :pswitch_e
+        :pswitch_f
     .end packed-switch
 .end method
 
@@ -451,6 +471,13 @@
 
     goto :goto_0
 
+    :pswitch_f
+    const-class v0, Landroid/graphics/drawable/Icon;
+
+    goto :goto_0
+
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -468,6 +495,7 @@
         :pswitch_c
         :pswitch_d
         :pswitch_e
+        :pswitch_f
     .end packed-switch
 .end method
 
@@ -608,7 +636,7 @@
     .prologue
     iget-object v0, p0, Landroid/widget/RemoteViews$ReflectionAction;->methodName:Ljava/lang/String;
 
-    const-string/jumbo v1, "smoothScrollBy"
+    const-string v1, "smoothScrollBy"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -902,6 +930,31 @@
 
     goto :goto_5
 
+    :pswitch_f
+    iget-object v0, p0, Landroid/widget/RemoteViews$ReflectionAction;->value:Ljava/lang/Object;
+
+    if-eqz v0, :cond_6
+
+    :goto_6
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget-object v0, p0, Landroid/widget/RemoteViews$ReflectionAction;->value:Ljava/lang/Object;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Landroid/widget/RemoteViews$ReflectionAction;->value:Ljava/lang/Object;
+
+    check-cast v0, Landroid/graphics/drawable/Icon;
+
+    invoke-virtual {v0, p1, p2}, Landroid/graphics/drawable/Icon;->writeToParcel(Landroid/os/Parcel;I)V
+
+    goto/16 :goto_0
+
+    :cond_6
+    move v1, v2
+
+    goto :goto_6
+
     nop
 
     :pswitch_data_0
@@ -921,5 +974,6 @@
         :pswitch_c
         :pswitch_d
         :pswitch_e
+        :pswitch_f
     .end packed-switch
 .end method

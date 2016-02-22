@@ -41,6 +41,17 @@
 
 .field private mGravity:I
 
+.field private final mHiddenViews:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Landroid/view/View;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field private mLogoView:Landroid/widget/ImageView;
 
 .field private mMaxButtonHeight:I
@@ -182,6 +193,16 @@
     move-object/from16 v1, p0
 
     iput-object v0, v1, Landroid/widget/Toolbar;->mTempViews:Ljava/util/ArrayList;
+
+    new-instance v18, Ljava/util/ArrayList;
+
+    invoke-direct/range {v18 .. v18}, Ljava/util/ArrayList;-><init>()V
+
+    move-object/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Landroid/widget/Toolbar;->mHiddenViews:Ljava/util/ArrayList;
 
     const/16 v18, 0x2
 
@@ -739,17 +760,6 @@
     return v0
 .end method
 
-.method static synthetic access$500(Landroid/widget/Toolbar;Z)V
-    .locals 0
-    .param p0, "x0"    # Landroid/widget/Toolbar;
-    .param p1, "x1"    # Z
-
-    .prologue
-    invoke-direct {p0, p1}, Landroid/widget/Toolbar;->setChildVisibilityForExpandedActionView(Z)V
-
-    return-void
-.end method
-
 .method private addCustomViewsWithGravity(Ljava/util/List;I)V
     .locals 7
     .param p2, "gravity"    # I
@@ -900,9 +910,10 @@
     return-void
 .end method
 
-.method private addSystemView(Landroid/view/View;)V
+.method private addSystemView(Landroid/view/View;Z)V
     .locals 3
     .param p1, "v"    # Landroid/view/View;
+    .param p2, "allowHide"    # Z
 
     .prologue
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -922,8 +933,19 @@
 
     iput v2, v0, Landroid/widget/Toolbar$LayoutParams;->mViewType:I
 
-    invoke-virtual {p0, p1, v0}, Landroid/widget/Toolbar;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    if-eqz p2, :cond_2
 
+    iget-object v2, p0, Landroid/widget/Toolbar;->mExpandedActionView:Landroid/view/View;
+
+    if-eqz v2, :cond_2
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    iget-object v2, p0, Landroid/widget/Toolbar;->mHiddenViews:Ljava/util/ArrayList;
+
+    invoke-virtual {v2, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :goto_1
     return-void
 
     .end local v0    # "lp":Landroid/widget/Toolbar$LayoutParams;
@@ -949,6 +971,11 @@
 
     .restart local v0    # "lp":Landroid/widget/Toolbar$LayoutParams;
     goto :goto_0
+
+    :cond_2
+    invoke-virtual {p0, p1, v0}, Landroid/widget/Toolbar;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    goto :goto_1
 .end method
 
 .method private ensureCollapseButtonView()V
@@ -1157,7 +1184,9 @@
 
     iget-object v1, p0, Landroid/widget/Toolbar;->mMenuView:Landroid/widget/ActionMenuView;
 
-    invoke-direct {p0, v1}, Landroid/widget/Toolbar;->addSystemView(Landroid/view/View;)V
+    const/4 v2, 0x0
+
+    invoke-direct {p0, v1, v2}, Landroid/widget/Toolbar;->addSystemView(Landroid/view/View;Z)V
 
     .end local v0    # "lp":Landroid/widget/Toolbar$LayoutParams;
     :cond_0
@@ -1614,6 +1643,37 @@
     return v10
 .end method
 
+.method private isChildOrHidden(Landroid/view/View;)Z
+    .locals 1
+    .param p1, "child"    # Landroid/view/View;
+
+    .prologue
+    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v0
+
+    if-eq v0, p0, :cond_0
+
+    iget-object v0, p0, Landroid/widget/Toolbar;->mHiddenViews:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method private static isCustomView(Landroid/view/View;)Z
     .locals 1
     .param p0, "child"    # Landroid/view/View;
@@ -2020,67 +2080,6 @@
     return-void
 .end method
 
-.method private setChildVisibilityForExpandedActionView(Z)V
-    .locals 6
-    .param p1, "expand"    # Z
-
-    .prologue
-    invoke-virtual {p0}, Landroid/widget/Toolbar;->getChildCount()I
-
-    move-result v1
-
-    .local v1, "childCount":I
-    const/4 v2, 0x0
-
-    .local v2, "i":I
-    :goto_0
-    if-ge v2, v1, :cond_2
-
-    invoke-virtual {p0, v2}, Landroid/widget/Toolbar;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v0
-
-    .local v0, "child":Landroid/view/View;
-    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/widget/Toolbar$LayoutParams;
-
-    .local v3, "lp":Landroid/widget/Toolbar$LayoutParams;
-    iget v4, v3, Landroid/widget/Toolbar$LayoutParams;->mViewType:I
-
-    const/4 v5, 0x2
-
-    if-eq v4, v5, :cond_0
-
-    iget-object v4, p0, Landroid/widget/Toolbar;->mMenuView:Landroid/widget/ActionMenuView;
-
-    if-eq v0, v4, :cond_0
-
-    if-eqz p1, :cond_1
-
-    const/16 v4, 0x8
-
-    :goto_1
-    invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
-
-    :cond_0
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v4, 0x0
-
-    goto :goto_1
-
-    .end local v0    # "child":Landroid/view/View;
-    .end local v3    # "lp":Landroid/widget/Toolbar$LayoutParams;
-    :cond_2
-    return-void
-.end method
-
 .method private shouldCollapse()Z
     .locals 5
 
@@ -2174,48 +2173,47 @@
     goto :goto_0
 .end method
 
-.method private updateChildVisibilityForExpandedActionView(Landroid/view/View;)V
-    .locals 3
-    .param p1, "child"    # Landroid/view/View;
-
-    .prologue
-    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/Toolbar$LayoutParams;
-
-    .local v0, "lp":Landroid/widget/Toolbar$LayoutParams;
-    iget v1, v0, Landroid/widget/Toolbar$LayoutParams;->mViewType:I
-
-    const/4 v2, 0x2
-
-    if-eq v1, v2, :cond_0
-
-    iget-object v1, p0, Landroid/widget/Toolbar;->mMenuView:Landroid/widget/ActionMenuView;
-
-    if-eq p1, v1, :cond_0
-
-    iget-object v1, p0, Landroid/widget/Toolbar;->mExpandedActionView:Landroid/view/View;
-
-    if-eqz v1, :cond_1
-
-    const/16 v1, 0x8
-
-    :goto_0
-    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
-
-    :cond_0
-    return-void
-
-    :cond_1
-    const/4 v1, 0x0
-
-    goto :goto_0
-.end method
-
 
 # virtual methods
+.method addChildrenForExpandedActionView()V
+    .locals 3
+
+    .prologue
+    iget-object v2, p0, Landroid/widget/Toolbar;->mHiddenViews:Ljava/util/ArrayList;
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    .local v0, "count":I
+    add-int/lit8 v1, v0, -0x1
+
+    .local v1, "i":I
+    :goto_0
+    if-ltz v1, :cond_0
+
+    iget-object v2, p0, Landroid/widget/Toolbar;->mHiddenViews:Ljava/util/ArrayList;
+
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/view/View;
+
+    invoke-virtual {p0, v2}, Landroid/widget/Toolbar;->addView(Landroid/view/View;)V
+
+    add-int/lit8 v1, v1, -0x1
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v2, p0, Landroid/widget/Toolbar;->mHiddenViews:Ljava/util/ArrayList;
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
+
+    return-void
+.end method
+
 .method public canShowOverflowMenu()Z
     .locals 1
 
@@ -5566,6 +5564,60 @@
     return v3
 .end method
 
+.method removeChildrenForExpandedActionView()V
+    .locals 6
+
+    .prologue
+    invoke-virtual {p0}, Landroid/widget/Toolbar;->getChildCount()I
+
+    move-result v1
+
+    .local v1, "childCount":I
+    add-int/lit8 v2, v1, -0x1
+
+    .local v2, "i":I
+    :goto_0
+    if-ltz v2, :cond_1
+
+    invoke-virtual {p0, v2}, Landroid/widget/Toolbar;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v0
+
+    .local v0, "child":Landroid/view/View;
+    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/widget/Toolbar$LayoutParams;
+
+    .local v3, "lp":Landroid/widget/Toolbar$LayoutParams;
+    iget v4, v3, Landroid/widget/Toolbar$LayoutParams;->mViewType:I
+
+    const/4 v5, 0x2
+
+    if-eq v4, v5, :cond_0
+
+    iget-object v4, p0, Landroid/widget/Toolbar;->mMenuView:Landroid/widget/ActionMenuView;
+
+    if-eq v0, v4, :cond_0
+
+    invoke-virtual {p0, v2}, Landroid/widget/Toolbar;->removeViewAt(I)V
+
+    iget-object v4, p0, Landroid/widget/Toolbar;->mHiddenViews:Ljava/util/ArrayList;
+
+    invoke-virtual {v4, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :cond_0
+    add-int/lit8 v2, v2, -0x1
+
+    goto :goto_0
+
+    .end local v0    # "child":Landroid/view/View;
+    .end local v3    # "lp":Landroid/widget/Toolbar$LayoutParams;
+    :cond_1
+    return-void
+.end method
+
 .method public setCollapsible(Z)V
     .locals 0
     .param p1, "collapsible"    # Z
@@ -5623,7 +5675,7 @@
 .end method
 
 .method public setLogo(Landroid/graphics/drawable/Drawable;)V
-    .locals 1
+    .locals 2
     .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
@@ -5633,19 +5685,17 @@
 
     iget-object v0, p0, Landroid/widget/Toolbar;->mLogoView:Landroid/widget/ImageView;
 
-    invoke-virtual {v0}, Landroid/widget/ImageView;->getParent()Landroid/view/ViewParent;
+    invoke-direct {p0, v0}, Landroid/widget/Toolbar;->isChildOrHidden(Landroid/view/View;)Z
 
-    move-result-object v0
+    move-result v0
 
     if-nez v0, :cond_0
 
     iget-object v0, p0, Landroid/widget/Toolbar;->mLogoView:Landroid/widget/ImageView;
 
-    invoke-direct {p0, v0}, Landroid/widget/Toolbar;->addSystemView(Landroid/view/View;)V
+    const/4 v1, 0x1
 
-    iget-object v0, p0, Landroid/widget/Toolbar;->mLogoView:Landroid/widget/ImageView;
-
-    invoke-direct {p0, v0}, Landroid/widget/Toolbar;->updateChildVisibilityForExpandedActionView(Landroid/view/View;)V
+    invoke-direct {p0, v0, v1}, Landroid/widget/Toolbar;->addSystemView(Landroid/view/View;Z)V
 
     :cond_0
     :goto_0
@@ -5667,15 +5717,21 @@
 
     iget-object v0, p0, Landroid/widget/Toolbar;->mLogoView:Landroid/widget/ImageView;
 
-    invoke-virtual {v0}, Landroid/widget/ImageView;->getParent()Landroid/view/ViewParent;
+    invoke-direct {p0, v0}, Landroid/widget/Toolbar;->isChildOrHidden(Landroid/view/View;)Z
 
-    move-result-object v0
+    move-result v0
 
     if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroid/widget/Toolbar;->mLogoView:Landroid/widget/ImageView;
 
     invoke-virtual {p0, v0}, Landroid/widget/Toolbar;->removeView(Landroid/view/View;)V
+
+    iget-object v0, p0, Landroid/widget/Toolbar;->mHiddenViews:Ljava/util/ArrayList;
+
+    iget-object v1, p0, Landroid/widget/Toolbar;->mLogoView:Landroid/widget/ImageView;
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     goto :goto_0
 .end method
@@ -5911,7 +5967,7 @@
 .end method
 
 .method public setNavigationIcon(Landroid/graphics/drawable/Drawable;)V
-    .locals 1
+    .locals 2
     .param p1, "icon"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
@@ -5921,19 +5977,17 @@
 
     iget-object v0, p0, Landroid/widget/Toolbar;->mNavButtonView:Landroid/widget/ImageButton;
 
-    invoke-virtual {v0}, Landroid/widget/ImageButton;->getParent()Landroid/view/ViewParent;
+    invoke-direct {p0, v0}, Landroid/widget/Toolbar;->isChildOrHidden(Landroid/view/View;)Z
 
-    move-result-object v0
+    move-result v0
 
     if-nez v0, :cond_0
 
     iget-object v0, p0, Landroid/widget/Toolbar;->mNavButtonView:Landroid/widget/ImageButton;
 
-    invoke-direct {p0, v0}, Landroid/widget/Toolbar;->addSystemView(Landroid/view/View;)V
+    const/4 v1, 0x1
 
-    iget-object v0, p0, Landroid/widget/Toolbar;->mNavButtonView:Landroid/widget/ImageButton;
-
-    invoke-direct {p0, v0}, Landroid/widget/Toolbar;->updateChildVisibilityForExpandedActionView(Landroid/view/View;)V
+    invoke-direct {p0, v0, v1}, Landroid/widget/Toolbar;->addSystemView(Landroid/view/View;Z)V
 
     :cond_0
     :goto_0
@@ -5955,15 +6009,21 @@
 
     iget-object v0, p0, Landroid/widget/Toolbar;->mNavButtonView:Landroid/widget/ImageButton;
 
-    invoke-virtual {v0}, Landroid/widget/ImageButton;->getParent()Landroid/view/ViewParent;
+    invoke-direct {p0, v0}, Landroid/widget/Toolbar;->isChildOrHidden(Landroid/view/View;)Z
 
-    move-result-object v0
+    move-result v0
 
     if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroid/widget/Toolbar;->mNavButtonView:Landroid/widget/ImageButton;
 
     invoke-virtual {p0, v0}, Landroid/widget/Toolbar;->removeView(Landroid/view/View;)V
+
+    iget-object v0, p0, Landroid/widget/Toolbar;->mHiddenViews:Ljava/util/ArrayList;
+
+    iget-object v1, p0, Landroid/widget/Toolbar;->mNavButtonView:Landroid/widget/ImageButton;
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     goto :goto_0
 .end method
@@ -6104,19 +6164,17 @@
     :cond_1
     iget-object v1, p0, Landroid/widget/Toolbar;->mSubtitleTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v1}, Landroid/widget/TextView;->getParent()Landroid/view/ViewParent;
+    invoke-direct {p0, v1}, Landroid/widget/Toolbar;->isChildOrHidden(Landroid/view/View;)Z
 
-    move-result-object v1
+    move-result v1
 
     if-nez v1, :cond_2
 
     iget-object v1, p0, Landroid/widget/Toolbar;->mSubtitleTextView:Landroid/widget/TextView;
 
-    invoke-direct {p0, v1}, Landroid/widget/Toolbar;->addSystemView(Landroid/view/View;)V
+    const/4 v2, 0x1
 
-    iget-object v1, p0, Landroid/widget/Toolbar;->mSubtitleTextView:Landroid/widget/TextView;
-
-    invoke-direct {p0, v1}, Landroid/widget/Toolbar;->updateChildVisibilityForExpandedActionView(Landroid/view/View;)V
+    invoke-direct {p0, v1, v2}, Landroid/widget/Toolbar;->addSystemView(Landroid/view/View;Z)V
 
     :cond_2
     :goto_0
@@ -6140,15 +6198,21 @@
 
     iget-object v1, p0, Landroid/widget/Toolbar;->mSubtitleTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v1}, Landroid/widget/TextView;->getParent()Landroid/view/ViewParent;
+    invoke-direct {p0, v1}, Landroid/widget/Toolbar;->isChildOrHidden(Landroid/view/View;)Z
 
-    move-result-object v1
+    move-result v1
 
     if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroid/widget/Toolbar;->mSubtitleTextView:Landroid/widget/TextView;
 
     invoke-virtual {p0, v1}, Landroid/widget/Toolbar;->removeView(Landroid/view/View;)V
+
+    iget-object v1, p0, Landroid/widget/Toolbar;->mHiddenViews:Ljava/util/ArrayList;
+
+    iget-object v2, p0, Landroid/widget/Toolbar;->mSubtitleTextView:Landroid/widget/TextView;
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     goto :goto_0
 .end method
@@ -6271,19 +6335,17 @@
     :cond_1
     iget-object v1, p0, Landroid/widget/Toolbar;->mTitleTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v1}, Landroid/widget/TextView;->getParent()Landroid/view/ViewParent;
+    invoke-direct {p0, v1}, Landroid/widget/Toolbar;->isChildOrHidden(Landroid/view/View;)Z
 
-    move-result-object v1
+    move-result v1
 
     if-nez v1, :cond_2
 
     iget-object v1, p0, Landroid/widget/Toolbar;->mTitleTextView:Landroid/widget/TextView;
 
-    invoke-direct {p0, v1}, Landroid/widget/Toolbar;->addSystemView(Landroid/view/View;)V
+    const/4 v2, 0x1
 
-    iget-object v1, p0, Landroid/widget/Toolbar;->mTitleTextView:Landroid/widget/TextView;
-
-    invoke-direct {p0, v1}, Landroid/widget/Toolbar;->updateChildVisibilityForExpandedActionView(Landroid/view/View;)V
+    invoke-direct {p0, v1, v2}, Landroid/widget/Toolbar;->addSystemView(Landroid/view/View;Z)V
 
     :cond_2
     :goto_0
@@ -6307,15 +6369,21 @@
 
     iget-object v1, p0, Landroid/widget/Toolbar;->mTitleTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v1}, Landroid/widget/TextView;->getParent()Landroid/view/ViewParent;
+    invoke-direct {p0, v1}, Landroid/widget/Toolbar;->isChildOrHidden(Landroid/view/View;)Z
 
-    move-result-object v1
+    move-result v1
 
     if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroid/widget/Toolbar;->mTitleTextView:Landroid/widget/TextView;
 
     invoke-virtual {p0, v1}, Landroid/widget/Toolbar;->removeView(Landroid/view/View;)V
+
+    iget-object v1, p0, Landroid/widget/Toolbar;->mHiddenViews:Ljava/util/ArrayList;
+
+    iget-object v2, p0, Landroid/widget/Toolbar;->mTitleTextView:Landroid/widget/TextView;
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     goto :goto_0
 .end method

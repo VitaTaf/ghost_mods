@@ -1735,7 +1735,7 @@
 
     const/4 v13, 0x0
 
-    invoke-static {v12, v13}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {v12, v13}, Landroid/view/View$MeasureSpec;->makeSafeMeasureSpec(II)I
 
     move-result v2
 
@@ -1834,7 +1834,7 @@
 
     const/16 v16, 0x0
 
-    invoke-static/range {v15 .. v16}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static/range {v15 .. v16}, Landroid/view/View$MeasureSpec;->makeSafeMeasureSpec(II)I
 
     move-result v6
 
@@ -2036,7 +2036,7 @@
 
     const/16 v16, 0x0
 
-    invoke-static/range {v15 .. v16}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static/range {v15 .. v16}, Landroid/view/View$MeasureSpec;->makeSafeMeasureSpec(II)I
 
     move-result v5
 
@@ -4499,8 +4499,6 @@
 
     if-nez v2, :cond_2
 
-    invoke-direct {p0}, Landroid/widget/FastScroller;->beginDrag()V
-
     const/4 v1, 0x1
 
     goto :goto_0
@@ -4576,6 +4574,8 @@
     invoke-direct {p0}, Landroid/widget/FastScroller;->cancelPendingDrag()V
 
     goto :goto_0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -4771,6 +4771,35 @@
     goto :goto_0
 
     :pswitch_0
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v3
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v4
+
+    invoke-direct {p0, v3, v4}, Landroid/widget/FastScroller;->isPointInside(FF)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    iget-object v3, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
+
+    invoke-virtual {v3}, Landroid/widget/AbsListView;->isInScrollingContainer()Z
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    invoke-direct {p0}, Landroid/widget/FastScroller;->beginDrag()V
+
+    move v1, v2
+
+    goto :goto_0
+
+    :pswitch_1
     iget-wide v4, p0, Landroid/widget/FastScroller;->mPendingDrag:J
 
     cmp-long v3, v4, v8
@@ -4819,7 +4848,7 @@
 
     goto :goto_0
 
-    :pswitch_1
+    :pswitch_2
     iget-wide v4, p0, Landroid/widget/FastScroller;->mPendingDrag:J
 
     cmp-long v3, v4, v8
@@ -4873,19 +4902,22 @@
     :cond_5
     move v1, v2
 
-    goto :goto_0
+    goto/16 :goto_0
 
     .end local v0    # "pos":F
-    :pswitch_2
+    :pswitch_3
     invoke-direct {p0}, Landroid/widget/FastScroller;->cancelPendingDrag()V
 
-    goto :goto_0
+    goto/16 :goto_0
+
+    nop
 
     :pswitch_data_0
-    .packed-switch 0x1
+    .packed-switch 0x0
         :pswitch_0
         :pswitch_1
         :pswitch_2
+        :pswitch_3
     .end packed-switch
 .end method
 

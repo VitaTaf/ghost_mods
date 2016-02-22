@@ -807,9 +807,9 @@
 
     mul-float/2addr v9, v11
 
-    add-float/2addr v9, v11
+    invoke-static {v9}, Ljava/lang/Math;->round(F)I
 
-    float-to-int v9, v9
+    move-result v9
 
     int-to-float v9, v9
 
@@ -819,9 +819,9 @@
 
     mul-float/2addr v10, v11
 
-    add-float/2addr v10, v11
+    invoke-static {v10}, Ljava/lang/Math;->round(F)I
 
-    float-to-int v10, v10
+    move-result v10
 
     int-to-float v10, v10
 
@@ -876,15 +876,15 @@
 
     iget-object v8, p0, Landroid/widget/ImageView;->mDrawMatrix:Landroid/graphics/Matrix;
 
-    add-float v9, v2, v11
+    invoke-static {v2}, Ljava/lang/Math;->round(F)I
 
-    float-to-int v9, v9
+    move-result v9
 
     int-to-float v9, v9
 
-    add-float v10, v3, v11
+    invoke-static {v3}, Ljava/lang/Math;->round(F)I
 
-    float-to-int v10, v10
+    move-result v10
 
     int-to-float v10, v10
 
@@ -945,9 +945,9 @@
 
     mul-float/2addr v8, v11
 
-    add-float/2addr v8, v11
+    invoke-static {v8}, Ljava/lang/Math;->round(F)I
 
-    float-to-int v8, v8
+    move-result v8
 
     int-to-float v2, v8
 
@@ -962,9 +962,9 @@
 
     mul-float/2addr v8, v11
 
-    add-float/2addr v8, v11
+    invoke-static {v8}, Ljava/lang/Math;->round(F)I
 
-    float-to-int v8, v8
+    move-result v8
 
     int-to-float v3, v8
 
@@ -1457,7 +1457,7 @@
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v8, "resolveUri failed on bad bitmap uri: "
+    const-string v8, "resolveUri failed on bad bitmap uri: "
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2137,20 +2137,48 @@
 .end method
 
 .method public invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
-    .locals 1
+    .locals 3
     .param p1, "dr"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    iget-object v0, p0, Landroid/widget/ImageView;->mDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v2, p0, Landroid/widget/ImageView;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    if-ne p1, v0, :cond_0
+    if-ne p1, v2, :cond_2
 
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    move-result v1
+
+    .local v1, "w":I
+    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+
+    move-result v0
+
+    .local v0, "h":I
+    iget v2, p0, Landroid/widget/ImageView;->mDrawableWidth:I
+
+    if-ne v1, v2, :cond_0
+
+    iget v2, p0, Landroid/widget/ImageView;->mDrawableHeight:I
+
+    if-eq v0, v2, :cond_1
+
+    :cond_0
+    iput v1, p0, Landroid/widget/ImageView;->mDrawableWidth:I
+
+    iput v0, p0, Landroid/widget/ImageView;->mDrawableHeight:I
+
+    .end local v0    # "h":I
+    .end local v1    # "w":I
+    :cond_1
     invoke-virtual {p0}, Landroid/widget/ImageView;->invalidate()V
 
     :goto_0
     return-void
 
-    :cond_0
+    :cond_2
     invoke-super {p0, p1}, Landroid/view/View;->invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_0
@@ -3358,6 +3386,24 @@
     .end local v0    # "oldHeight":I
     .end local v1    # "oldWidth":I
     :cond_2
+    return-void
+.end method
+
+.method public setImageIcon(Landroid/graphics/drawable/Icon;)V
+    .locals 1
+    .param p1, "icon"    # Landroid/graphics/drawable/Icon;
+    .annotation runtime Landroid/view/RemotableViewMethod;
+    .end annotation
+
+    .prologue
+    iget-object v0, p0, Landroid/widget/ImageView;->mContext:Landroid/content/Context;
+
+    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Icon;->loadDrawable(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
     return-void
 .end method
 

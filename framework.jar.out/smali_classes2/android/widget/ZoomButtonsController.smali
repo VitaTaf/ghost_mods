@@ -152,7 +152,7 @@
 
     iget-object v0, p0, Landroid/widget/ZoomButtonsController;->mContext:Landroid/content/Context;
 
-    const-string/jumbo v1, "window"
+    const-string v1, "window"
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -1320,7 +1320,7 @@
 
     iget-object v1, p0, Landroid/widget/ZoomButtonsController;->mContainer:Landroid/widget/FrameLayout;
 
-    invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
+    invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeViewImmediate(Landroid/view/View;)V
 
     iget-object v0, p0, Landroid/widget/ZoomButtonsController;->mHandler:Landroid/os/Handler;
 

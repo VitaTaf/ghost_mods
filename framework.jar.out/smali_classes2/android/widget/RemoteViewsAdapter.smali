@@ -149,7 +149,7 @@
 
     iput-object p2, p0, Landroid/widget/RemoteViewsAdapter;->mIntent:Landroid/content/Intent;
 
-    const-string/jumbo v1, "remoteAdapterAppWidgetId"
+    const-string v1, "remoteAdapterAppWidgetId"
 
     const/4 v2, -0x1
 
@@ -184,7 +184,7 @@
 
     iput-object v1, p0, Landroid/widget/RemoteViewsAdapter;->mRequestedViews:Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayoutRefSet;
 
-    const-string/jumbo v1, "remoteAdapterAppWidgetId"
+    const-string v1, "remoteAdapterAppWidgetId"
 
     invoke-virtual {p2, v1}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
 
@@ -192,7 +192,7 @@
 
     if-eqz v1, :cond_1
 
-    const-string/jumbo v1, "remoteAdapterAppWidgetId"
+    const-string v1, "remoteAdapterAppWidgetId"
 
     invoke-virtual {p2, v1}, Landroid/content/Intent;->removeExtra(Ljava/lang/String;)V
 
@@ -1095,7 +1095,7 @@
 
     move-result-object v2
 
-    const-string/jumbo v13, "returned from RemoteViewsFactory."
+    const-string v13, "returned from RemoteViewsFactory."
 
     invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1419,7 +1419,7 @@
     move-exception v1
 
     .local v1, "e":Landroid/os/RemoteException;
-    const-string/jumbo v8, "updateMetaData"
+    const-string v8, "updateMetaData"
 
     invoke-direct {p0, v8, v1}, Landroid/widget/RemoteViewsAdapter;->processException(Ljava/lang/String;Ljava/lang/Exception;)V
 
@@ -1430,7 +1430,7 @@
     move-exception v1
 
     .local v1, "e":Ljava/lang/RuntimeException;
-    const-string/jumbo v8, "updateMetaData"
+    const-string v8, "updateMetaData"
 
     invoke-direct {p0, v8, v1}, Landroid/widget/RemoteViewsAdapter;->processException(Ljava/lang/String;Ljava/lang/Exception;)V
 
@@ -2382,23 +2382,16 @@
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
-    iget-boolean v0, p0, Landroid/widget/RemoteViewsAdapter;->mNotifyDataSetChangedAfterOnServiceConnected:Z
+    iput-boolean v1, p0, Landroid/widget/RemoteViewsAdapter;->mNotifyDataSetChangedAfterOnServiceConnected:Z
 
-    if-eqz v0, :cond_0
+    invoke-direct {p0}, Landroid/widget/RemoteViewsAdapter;->requestBindService()Z
 
     :goto_0
     return-void
 
     :cond_0
-    iput-boolean v1, p0, Landroid/widget/RemoteViewsAdapter;->mNotifyDataSetChangedAfterOnServiceConnected:Z
-
-    invoke-direct {p0}, Landroid/widget/RemoteViewsAdapter;->requestBindService()Z
-
-    goto :goto_0
-
-    :cond_1
     iget-object v0, p0, Landroid/widget/RemoteViewsAdapter;->mWorkerQueue:Landroid/os/Handler;
 
     new-instance v1, Landroid/widget/RemoteViewsAdapter$6;

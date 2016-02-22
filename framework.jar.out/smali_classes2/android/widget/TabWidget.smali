@@ -662,7 +662,7 @@
     .local v9, "width":I
     const/4 v10, 0x0
 
-    invoke-static {v9, v10}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {v9, v10}, Landroid/view/View$MeasureSpec;->makeSafeMeasureSpec(II)I
 
     move-result v8
 

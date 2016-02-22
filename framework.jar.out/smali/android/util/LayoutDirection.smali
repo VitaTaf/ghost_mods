@@ -12,6 +12,8 @@
 
 .field public static final RTL:I = 0x1
 
+.field public static final UNDEFINED:I = -0x1
+
 
 # direct methods
 .method private constructor <init>()V

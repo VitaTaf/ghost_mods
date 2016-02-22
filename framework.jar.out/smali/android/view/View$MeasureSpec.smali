@@ -179,6 +179,31 @@
     goto :goto_0
 .end method
 
+.method public static makeSafeMeasureSpec(II)I
+    .locals 1
+    .param p0, "size"    # I
+    .param p1, "mode"    # I
+
+    .prologue
+    sget-boolean v0, Landroid/view/View;->sUseZeroUnspecifiedMeasureSpec:Z
+
+    if-eqz v0, :cond_0
+
+    if-nez p1, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    invoke-static {p0, p1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
 .method public static toString(I)Ljava/lang/String;
     .locals 5
     .param p0, "measureSpec"    # I

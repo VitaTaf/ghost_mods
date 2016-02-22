@@ -3156,19 +3156,17 @@
 
     move-result v0
 
-    iget-object v1, p0, Landroid/widget/HorizontalScrollView;->mSavedState:Landroid/widget/HorizontalScrollView$SavedState;
-
-    iget-boolean v1, v1, Landroid/widget/HorizontalScrollView$SavedState;->isLayoutRtl:Z
-
-    if-ne v0, v1, :cond_5
+    if-eqz v0, :cond_5
 
     iget-object v0, p0, Landroid/widget/HorizontalScrollView;->mSavedState:Landroid/widget/HorizontalScrollView$SavedState;
 
-    iget v0, v0, Landroid/widget/HorizontalScrollView$SavedState;->scrollPosition:I
+    iget v0, v0, Landroid/widget/HorizontalScrollView$SavedState;->scrollOffsetFromStart:I
 
-    iput v0, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    sub-int v0, v10, v0
 
     :goto_1
+    iput v0, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/widget/HorizontalScrollView;->mSavedState:Landroid/widget/HorizontalScrollView$SavedState;
@@ -3203,11 +3201,7 @@
     :cond_5
     iget-object v0, p0, Landroid/widget/HorizontalScrollView;->mSavedState:Landroid/widget/HorizontalScrollView$SavedState;
 
-    iget v0, v0, Landroid/widget/HorizontalScrollView$SavedState;->scrollPosition:I
-
-    sub-int v0, v10, v0
-
-    iput v0, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+    iget v0, v0, Landroid/widget/HorizontalScrollView$SavedState;->scrollOffsetFromStart:I
 
     goto :goto_1
 
@@ -3541,17 +3535,25 @@
     invoke-direct {v0, v1}, Landroid/widget/HorizontalScrollView$SavedState;-><init>(Landroid/os/Parcelable;)V
 
     .local v0, "ss":Landroid/widget/HorizontalScrollView$SavedState;
-    iget v2, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
-
-    iput v2, v0, Landroid/widget/HorizontalScrollView$SavedState;->scrollPosition:I
-
     invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->isLayoutRtl()Z
 
     move-result v2
 
-    iput-boolean v2, v0, Landroid/widget/HorizontalScrollView$SavedState;->isLayoutRtl:Z
+    if-eqz v2, :cond_1
+
+    iget v2, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+
+    neg-int v2, v2
+
+    :goto_1
+    iput v2, v0, Landroid/widget/HorizontalScrollView$SavedState;->scrollOffsetFromStart:I
 
     goto :goto_0
+
+    :cond_1
+    iget v2, p0, Landroid/widget/HorizontalScrollView;->mScrollX:I
+
+    goto :goto_1
 .end method
 
 .method protected onSizeChanged(IIII)V

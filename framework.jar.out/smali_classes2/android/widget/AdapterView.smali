@@ -1575,13 +1575,11 @@
 
     .prologue
     .local p0, "this":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<TT;>;"
-    const/4 v6, 0x1
+    iget-object v0, p0, Landroid/widget/AdapterView;->mOnItemClickListener:Landroid/widget/AdapterView$OnItemClickListener;
+
+    if-eqz v0, :cond_1
 
     const/4 v0, 0x0
-
-    iget-object v1, p0, Landroid/widget/AdapterView;->mOnItemClickListener:Landroid/widget/AdapterView$OnItemClickListener;
-
-    if-eqz v1, :cond_1
 
     invoke-virtual {p0, v0}, Landroid/widget/AdapterView;->playSoundEffect(I)V
 
@@ -1597,15 +1595,25 @@
 
     invoke-interface/range {v0 .. v5}, Landroid/widget/AdapterView$OnItemClickListener;->onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
 
+    const/4 v6, 0x1
+
+    .local v6, "result":Z
+    :goto_0
     if-eqz p1, :cond_0
 
-    invoke-virtual {p1, v6}, Landroid/view/View;->sendAccessibilityEvent(I)V
+    const/4 v0, 0x1
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->sendAccessibilityEvent(I)V
 
     :cond_0
-    move v0, v6
+    return v6
 
+    .end local v6    # "result":Z
     :cond_1
-    return v0
+    const/4 v6, 0x0
+
+    .restart local v6    # "result":Z
+    goto :goto_0
 .end method
 
 .method rememberSyncState()V

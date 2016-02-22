@@ -118,13 +118,15 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
-    .locals 10
+    .locals 11
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "attrs"    # Landroid/util/AttributeSet;
     .param p3, "defStyleAttr"    # I
     .param p4, "defStyleRes"    # I
 
     .prologue
+    const/4 v10, 0x2
+
     const/4 v9, 0x0
 
     const/4 v8, 0x1
@@ -218,9 +220,13 @@
     invoke-virtual {p0, v4}, Landroid/widget/ListView;->setOverscrollFooter(Landroid/graphics/drawable/Drawable;)V
 
     :cond_3
-    const/4 v6, 0x2
+    invoke-virtual {v0, v10}, Landroid/content/res/TypedArray;->hasValueOrEmpty(I)Z
 
-    invoke-virtual {v0, v6, v9}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    move-result v6
+
+    if-eqz v6, :cond_4
+
+    invoke-virtual {v0, v10, v9}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
     move-result v2
 
@@ -229,6 +235,7 @@
 
     invoke-virtual {p0, v2}, Landroid/widget/ListView;->setDividerHeight(I)V
 
+    .end local v2    # "dividerHeight":I
     :cond_4
     const/4 v6, 0x3
 
@@ -3903,7 +3910,7 @@
 
     const/4 v5, 0x0
 
-    invoke-static {v4, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {v4, v5}, Landroid/view/View$MeasureSpec;->makeSafeMeasureSpec(II)I
 
     move-result v0
 
@@ -3989,7 +3996,7 @@
     :cond_1
     const/4 v4, 0x0
 
-    invoke-static {p4, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {p4, v4}, Landroid/view/View$MeasureSpec;->makeSafeMeasureSpec(II)I
 
     move-result v0
 
@@ -5427,7 +5434,7 @@
 
     const/16 v20, 0x0
 
-    invoke-static/range {v19 .. v20}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static/range {v19 .. v20}, Landroid/view/View$MeasureSpec;->makeSafeMeasureSpec(II)I
 
     move-result v5
 
