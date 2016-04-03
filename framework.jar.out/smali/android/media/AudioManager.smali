@@ -4709,7 +4709,9 @@
 
     .local v1, "service":Landroid/media/IAudioService;
     :try_start_0
-    iget-object v2, p0, Landroid/media/AudioManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/media/AudioManager;->getContext()Landroid/content/Context;
+
+    move-result-object v2
 
     invoke-virtual {v2}, Landroid/content/Context;->getOpPackageName()Ljava/lang/String;
 
