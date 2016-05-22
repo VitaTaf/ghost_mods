@@ -29,6 +29,10 @@
 
 .field private static final NETD_TAG:Ljava/lang/String; = "NetdConnector"
 
+.field public static final PERMISSION_NETWORK:Ljava/lang/String; = "NETWORK"
+
+.field public static final PERMISSION_SYSTEM:Ljava/lang/String; = "SYSTEM"
+
 .field private static final TAG:Ljava/lang/String; = "NetworkManagementService"
 
 .field private static mIsBcmDevice:Z
@@ -3656,9 +3660,10 @@
     goto :goto_1
 .end method
 
-.method public createPhysicalNetwork(I)V
+.method public createPhysicalNetwork(ILjava/lang/String;)V
     .locals 6
     .param p1, "netId"    # I
+    .param p2, "permission"    # Ljava/lang/String;
 
     .prologue
     iget-object v1, p0, Lcom/android/server/NetworkManagementService;->mContext:Landroid/content/Context;
@@ -3669,7 +3674,41 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
+    if-eqz p2, :cond_0
+
     :try_start_0
+    iget-object v1, p0, Lcom/android/server/NetworkManagementService;->mConnector:Lcom/android/server/NativeDaemonConnector;
+
+    const-string v2, "network"
+
+    const/4 v3, 0x3
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v4, 0x0
+
+    const-string v5, "create"
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x2
+
+    aput-object p2, v3, v4
+
+    invoke-virtual {v1, v2, v3}, Lcom/android/server/NativeDaemonConnector;->execute(Ljava/lang/String;[Ljava/lang/Object;)Lcom/android/server/NativeDaemonEvent;
+
+    :goto_0
+    return-void
+
+    :cond_0
     iget-object v1, p0, Lcom/android/server/NetworkManagementService;->mConnector:Lcom/android/server/NativeDaemonConnector;
 
     const-string v2, "network"
@@ -3696,7 +3735,7 @@
     :try_end_0
     .catch Lcom/android/server/NativeDaemonConnectorException; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-void
+    goto :goto_0
 
     :catch_0
     move-exception v0
@@ -9129,6 +9168,118 @@
     move-result-object v2
 
     throw v2
+.end method
+
+.method public setNetworkPermission(ILjava/lang/String;)V
+    .locals 6
+    .param p1, "netId"    # I
+    .param p2, "permission"    # Ljava/lang/String;
+
+    .prologue
+    iget-object v1, p0, Lcom/android/server/NetworkManagementService;->mContext:Landroid/content/Context;
+
+    const-string v2, "android.permission.CONNECTIVITY_INTERNAL"
+
+    const-string v3, "NetworkManagementService"
+
+    invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
+
+    if-eqz p2, :cond_0
+
+    :try_start_0
+    iget-object v1, p0, Lcom/android/server/NetworkManagementService;->mConnector:Lcom/android/server/NativeDaemonConnector;
+
+    const-string v2, "network"
+
+    const/4 v3, 0x5
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v4, 0x0
+
+    const-string v5, "permission"
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x1
+
+    const-string v5, "network"
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x2
+
+    const-string v5, "set"
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x3
+
+    aput-object p2, v3, v4
+
+    const/4 v4, 0x4
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
+
+    invoke-virtual {v1, v2, v3}, Lcom/android/server/NativeDaemonConnector;->execute(Ljava/lang/String;[Ljava/lang/Object;)Lcom/android/server/NativeDaemonEvent;
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v1, p0, Lcom/android/server/NetworkManagementService;->mConnector:Lcom/android/server/NativeDaemonConnector;
+
+    const-string v2, "network"
+
+    const/4 v3, 0x4
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v4, 0x0
+
+    const-string v5, "permission"
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x1
+
+    const-string v5, "network"
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x2
+
+    const-string v5, "clear"
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x3
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
+
+    invoke-virtual {v1, v2, v3}, Lcom/android/server/NativeDaemonConnector;->execute(Ljava/lang/String;[Ljava/lang/Object;)Lcom/android/server/NativeDaemonEvent;
+    :try_end_0
+    .catch Lcom/android/server/NativeDaemonConnectorException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    .local v0, "e":Lcom/android/server/NativeDaemonConnectorException;
+    invoke-virtual {v0}, Lcom/android/server/NativeDaemonConnectorException;->rethrowAsParcelableException()Ljava/lang/IllegalArgumentException;
+
+    move-result-object v1
+
+    throw v1
 .end method
 
 .method public setPermission(Ljava/lang/String;[I)V

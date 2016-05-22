@@ -290,7 +290,7 @@
 
     iput-object v0, p0, Landroid/net/ConnectivityManager;->mNetworkActivityListeners:Landroid/util/ArrayMap;
 
-    const-string v0, "missing IConnectivityManager"
+    const-string/jumbo v0, "missing IConnectivityManager"
 
     invoke-static {p1, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -615,7 +615,7 @@
     return-object v1
 
     :cond_0
-    const-string v1, "network_management"
+    const-string/jumbo v1, "network_management"
 
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
@@ -1277,71 +1277,6 @@
     goto :goto_0
 .end method
 
-.method public static maybeMarkCapabilitiesRestricted(Landroid/net/NetworkCapabilities;)V
-    .locals 5
-    .param p0, "nc"    # Landroid/net/NetworkCapabilities;
-
-    .prologue
-    invoke-virtual {p0}, Landroid/net/NetworkCapabilities;->getCapabilities()[I
-
-    move-result-object v0
-
-    .local v0, "arr$":[I
-    array-length v3, v0
-
-    .local v3, "len$":I
-    const/4 v2, 0x0
-
-    .local v2, "i$":I
-    :goto_0
-    if-ge v2, v3, :cond_0
-
-    aget v1, v0, v2
-
-    .local v1, "capability":I
-    packed-switch v1, :pswitch_data_0
-
-    .end local v1    # "capability":I
-    :goto_1
-    :pswitch_0
-    return-void
-
-    .restart local v1    # "capability":I
-    :pswitch_1
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    .end local v1    # "capability":I
-    :cond_0
-    const/16 v4, 0xd
-
-    invoke-virtual {p0, v4}, Landroid/net/NetworkCapabilities;->removeCapability(I)Landroid/net/NetworkCapabilities;
-
-    goto :goto_1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-        :pswitch_0
-        :pswitch_0
-        :pswitch_1
-        :pswitch_0
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
-.end method
-
 .method private networkCapabilitiesForFeature(ILjava/lang/String;)Landroid/net/NetworkCapabilities;
     .locals 4
     .param p1, "networkType"    # I
@@ -1381,7 +1316,7 @@
 
     invoke-virtual {v2, v0}, Landroid/net/NetworkCapabilities;->addCapability(I)Landroid/net/NetworkCapabilities;
 
-    invoke-static {v1}, Landroid/net/ConnectivityManager;->maybeMarkCapabilitiesRestricted(Landroid/net/NetworkCapabilities;)V
+    invoke-virtual {v1}, Landroid/net/NetworkCapabilities;->maybeMarkCapabilitiesRestricted()V
 
     .end local v0    # "cap":I
     .end local v1    # "netCap":Landroid/net/NetworkCapabilities;
@@ -1494,7 +1429,7 @@
     :cond_9
     if-ne p1, v3, :cond_0
 
-    const-string v2, "p2p"
+    const-string/jumbo v2, "p2p"
 
     invoke-virtual {v2, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1513,7 +1448,7 @@
 
     invoke-virtual {v1, v2}, Landroid/net/NetworkCapabilities;->addCapability(I)Landroid/net/NetworkCapabilities;
 
-    invoke-static {v1}, Landroid/net/ConnectivityManager;->maybeMarkCapabilitiesRestricted(Landroid/net/NetworkCapabilities;)V
+    invoke-virtual {v1}, Landroid/net/NetworkCapabilities;->maybeMarkCapabilitiesRestricted()V
 
     goto :goto_1
 .end method
@@ -1587,7 +1522,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "renewing request to seqNum "
+    const-string/jumbo v2, "renewing request to seqNum "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1712,7 +1647,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "sending expire msg with seqNum "
+    const-string/jumbo v3, "sending expire msg with seqNum "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1773,7 +1708,7 @@
 
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "null NetworkCallback"
+    const-string/jumbo v1, "null NetworkCallback"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -1784,7 +1719,7 @@
 
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "null NetworkCapabilities"
+    const-string/jumbo v1, "null NetworkCapabilities"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -2441,7 +2376,7 @@
     .locals 7
 
     .prologue
-    const-string v4, "phone"
+    const-string/jumbo v4, "phone"
 
     invoke-static {v4}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
@@ -3591,7 +3526,7 @@
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "renewing startUsingNetworkFeature request "
+    const-string/jumbo v7, "renewing startUsingNetworkFeature request "
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3657,7 +3592,7 @@
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "starting startUsingNetworkFeature for request "
+    const-string/jumbo v6, "starting startUsingNetworkFeature for request "
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3750,7 +3685,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "stopUsingNetworkFeature for "
+    const-string/jumbo v3, "stopUsingNetworkFeature for "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

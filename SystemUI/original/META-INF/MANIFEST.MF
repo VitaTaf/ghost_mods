@@ -1585,7 +1585,7 @@ Name: res/drawable/ic_qs_signal_4g.xml
 SHA1-Digest: MEG6FI/zb9yrWo1ujyMe9WXZbVU=
 
 Name: AndroidManifest.xml
-SHA1-Digest: 51K6kODt5mbVwhdRoH0VUHv+a3c=
+SHA1-Digest: Ra5hL7iZeRdHMmEO36R3PIFWzbk=
 
 Name: res/layout/zen_mode_panel.xml
 SHA1-Digest: IOZJ+L5iK/5niJBs9VZM6kUmQ6M=

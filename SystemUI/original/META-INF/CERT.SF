@@ -1,6 +1,6 @@
 Signature-Version: 1.0
 Created-By: HAB (Motorola Inc.)
-SHA1-Digest-Manifest: FJRie7Brm9iCPS53/4MGl1k7Pwo=
+SHA1-Digest-Manifest: klgDTOcfDxQkYvd/8k1ou8GxI9s=
 
 Name: res/drawable/zz_moto_stat_sys_signal_airplane_mode_of_4_wide.xml
 SHA1-Digest: y1CisBLeuINUQihwXk17SXkR3Lg=
@@ -3250,7 +3250,7 @@ Name: res/drawable-xhdpi-v4/zz_moto_stat_sys_data_suspended_1x_wide.pn
 SHA1-Digest: v20YNrT3HBwSoR4GqKfEVJ/idN0=
 
 Name: AndroidManifest.xml
-SHA1-Digest: ZWlvYFIeK2B0d64RIznCf6TzZOw=
+SHA1-Digest: i6760p9aqCFXe0d6QY33Q2xrFF8=
 
 Name: res/layout/zen_mode_panel.xml
 SHA1-Digest: 92mSK/N/SbvpDHMW9CRP+5ZqufE=

@@ -130,7 +130,7 @@
     .end annotation
 .end method
 
-.method public abstract createPhysicalNetwork(I)V
+.method public abstract createPhysicalNetwork(ILjava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -611,6 +611,14 @@
 .end method
 
 .method public abstract setMtu(Ljava/lang/String;I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract setNetworkPermission(ILjava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

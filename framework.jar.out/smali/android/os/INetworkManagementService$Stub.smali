@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_addIdleTimer:I = 0x33
 
-.field static final TRANSACTION_addInterfaceToLocalNetwork:I = 0x55
+.field static final TRANSACTION_addInterfaceToLocalNetwork:I = 0x56
 
 .field static final TRANSACTION_addInterfaceToNetwork:I = 0x49
 
@@ -40,23 +40,23 @@
 
 .field static final TRANSACTION_addVpnUidRanges:I = 0x3d
 
-.field static final TRANSACTION_allowProtect:I = 0x50
+.field static final TRANSACTION_allowProtect:I = 0x51
 
 .field static final TRANSACTION_attachPppd:I = 0x21
 
-.field static final TRANSACTION_blockDataTrafficInternal:I = 0x58
+.field static final TRANSACTION_blockDataTrafficInternal:I = 0x59
 
 .field static final TRANSACTION_clearDefaultNetId:I = 0x4d
 
 .field static final TRANSACTION_clearInterfaceAddresses:I = 0x6
 
-.field static final TRANSACTION_clearPermission:I = 0x4f
+.field static final TRANSACTION_clearPermission:I = 0x50
 
 .field static final TRANSACTION_createPhysicalNetwork:I = 0x46
 
 .field static final TRANSACTION_createVirtualNetwork:I = 0x47
 
-.field static final TRANSACTION_denyProtect:I = 0x51
+.field static final TRANSACTION_denyProtect:I = 0x52
 
 .field static final TRANSACTION_detachPppd:I = 0x22
 
@@ -68,7 +68,7 @@
 
 .field static final TRANSACTION_enableNat:I = 0x1c
 
-.field static final TRANSACTION_enableTrafficMonitor:I = 0x57
+.field static final TRANSACTION_enableTrafficMonitor:I = 0x58
 
 .field static final TRANSACTION_flushNetworkDnsCache:I = 0x36
 
@@ -90,9 +90,9 @@
 
 .field static final TRANSACTION_getRoutes:I = 0xd
 
-.field static final TRANSACTION_getSapAutoChannelSelection:I = 0x54
+.field static final TRANSACTION_getSapAutoChannelSelection:I = 0x55
 
-.field static final TRANSACTION_getSapOperatingChannel:I = 0x53
+.field static final TRANSACTION_getSapOperatingChannel:I = 0x54
 
 .field static final TRANSACTION_isBandwidthControlEnabled:I = 0x32
 
@@ -118,7 +118,7 @@
 
 .field static final TRANSACTION_removeInterfaceAlert:I = 0x2f
 
-.field static final TRANSACTION_removeInterfaceFromLocalNetwork:I = 0x56
+.field static final TRANSACTION_removeInterfaceFromLocalNetwork:I = 0x57
 
 .field static final TRANSACTION_removeInterfaceFromNetwork:I = 0x4a
 
@@ -136,7 +136,7 @@
 
 .field static final TRANSACTION_setAccessPoint:I = 0x26
 
-.field static final TRANSACTION_setChannelRange:I = 0x52
+.field static final TRANSACTION_setChannelRange:I = 0x53
 
 .field static final TRANSACTION_setDefaultNetId:I = 0x4c
 
@@ -174,7 +174,9 @@
 
 .field static final TRANSACTION_setMtu:I = 0x10
 
-.field static final TRANSACTION_setPermission:I = 0x4e
+.field static final TRANSACTION_setNetworkPermission:I = 0x4e
+
+.field static final TRANSACTION_setPermission:I = 0x4f
 
 .field static final TRANSACTION_setUidNetworkRules:I = 0x31
 
@@ -2197,7 +2199,12 @@
     move-result v1
 
     .local v1, "_arg0":I
-    invoke-virtual {p0, v1}, Landroid/os/INetworkManagementService$Stub;->createPhysicalNetwork(I)V
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .local v2, "_arg1":Ljava/lang/String;
+    invoke-virtual {p0, v1, v2}, Landroid/os/INetworkManagementService$Stub;->createPhysicalNetwork(ILjava/lang/String;)V
 
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
@@ -2206,6 +2213,7 @@
     goto/16 :goto_0
 
     .end local v1    # "_arg0":I
+    .end local v2    # "_arg1":Ljava/lang/String;
     :sswitch_47
     const-string v0, "android.os.INetworkManagementService"
 
@@ -2414,6 +2422,31 @@
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v1
+
+    .restart local v1    # "_arg0":I
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .local v2, "_arg1":Ljava/lang/String;
+    invoke-virtual {p0, v1, v2}, Landroid/os/INetworkManagementService$Stub;->setNetworkPermission(ILjava/lang/String;)V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    const/4 v0, 0x1
+
+    goto/16 :goto_0
+
+    .end local v1    # "_arg0":I
+    .end local v2    # "_arg1":Ljava/lang/String;
+    :sswitch_4f
+    const-string v0, "android.os.INetworkManagementService"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
@@ -2434,7 +2467,7 @@
 
     .end local v1    # "_arg0":Ljava/lang/String;
     .end local v2    # "_arg1":[I
-    :sswitch_4f
+    :sswitch_50
     const-string v0, "android.os.INetworkManagementService"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
@@ -2453,7 +2486,7 @@
     goto/16 :goto_0
 
     .end local v1    # "_arg0":[I
-    :sswitch_50
+    :sswitch_51
     const-string v0, "android.os.INetworkManagementService"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
@@ -2472,7 +2505,7 @@
     goto/16 :goto_0
 
     .end local v1    # "_arg0":I
-    :sswitch_51
+    :sswitch_52
     const-string v0, "android.os.INetworkManagementService"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
@@ -2491,7 +2524,7 @@
     goto/16 :goto_0
 
     .end local v1    # "_arg0":I
-    :sswitch_52
+    :sswitch_53
     const-string v0, "android.os.INetworkManagementService"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
@@ -2522,7 +2555,7 @@
     .end local v1    # "_arg0":I
     .end local v2    # "_arg1":I
     .end local v3    # "_arg2":I
-    :sswitch_53
+    :sswitch_54
     const-string v0, "android.os.INetworkManagementService"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
@@ -2541,7 +2574,7 @@
     goto/16 :goto_0
 
     .end local v11    # "_result":I
-    :sswitch_54
+    :sswitch_55
     const-string v0, "android.os.INetworkManagementService"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
@@ -2560,7 +2593,7 @@
     goto/16 :goto_0
 
     .end local v11    # "_result":I
-    :sswitch_55
+    :sswitch_56
     const-string v0, "android.os.INetworkManagementService"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
@@ -2587,7 +2620,7 @@
 
     .end local v1    # "_arg0":Ljava/lang/String;
     .end local v10    # "_arg1":Ljava/util/List;, "Ljava/util/List<Landroid/net/RouteInfo;>;"
-    :sswitch_56
+    :sswitch_57
     const-string v0, "android.os.INetworkManagementService"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
@@ -2606,7 +2639,7 @@
     goto/16 :goto_0
 
     .end local v1    # "_arg0":Ljava/lang/String;
-    :sswitch_57
+    :sswitch_58
     const-string v0, "android.os.INetworkManagementService"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
@@ -2625,7 +2658,7 @@
     goto/16 :goto_0
 
     .end local v1    # "_arg0":Ljava/lang/String;
-    :sswitch_58
+    :sswitch_59
     const-string v0, "android.os.INetworkManagementService"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
@@ -2746,6 +2779,7 @@
         0x56 -> :sswitch_56
         0x57 -> :sswitch_57
         0x58 -> :sswitch_58
+        0x59 -> :sswitch_59
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

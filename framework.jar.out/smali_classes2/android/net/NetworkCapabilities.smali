@@ -18,6 +18,8 @@
     .end annotation
 .end field
 
+.field private static final DEFAULT_CAPABILITIES:J = 0xe000L
+
 .field private static final MAX_NET_CAPABILITY:I = 0x11
 
 .field private static final MAX_TRANSPORT:I = 0x4
@@ -61,6 +63,8 @@
 .field public static final NET_CAPABILITY_WIFI_P2P:I = 0x6
 
 .field public static final NET_CAPABILITY_XCAP:I = 0x9
+
+.field private static final RESTRICTED_CAPABILITIES:J = 0x7bcL
 
 .field public static final TRANSPORT_BLUETOOTH:I = 0x2
 
@@ -118,10 +122,6 @@
 
     .prologue
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const-wide/32 v0, 0xe000
-
-    iput-wide v0, p0, Landroid/net/NetworkCapabilities;->mNetworkCapabilities:J
 
     if-eqz p1, :cond_0
 
@@ -985,6 +985,40 @@
     goto :goto_0
 .end method
 
+.method public maybeMarkCapabilitiesRestricted()V
+    .locals 6
+
+    .prologue
+    const-wide/16 v4, 0x0
+
+    iget-wide v0, p0, Landroid/net/NetworkCapabilities;->mNetworkCapabilities:J
+
+    const-wide/32 v2, -0xe7bd
+
+    and-long/2addr v0, v2
+
+    cmp-long v0, v0, v4
+
+    if-nez v0, :cond_0
+
+    iget-wide v0, p0, Landroid/net/NetworkCapabilities;->mNetworkCapabilities:J
+
+    const-wide/16 v2, 0x7bc
+
+    and-long/2addr v0, v2
+
+    cmp-long v0, v0, v4
+
+    if-eqz v0, :cond_0
+
+    const/16 v0, 0xd
+
+    invoke-virtual {p0, v0}, Landroid/net/NetworkCapabilities;->removeCapability(I)Landroid/net/NetworkCapabilities;
+
+    :cond_0
+    return-void
+.end method
+
 .method public removeCapability(I)Landroid/net/NetworkCapabilities;
     .locals 4
     .param p1, "capability"    # I
@@ -1207,7 +1241,7 @@
 
     move-result-object v7
 
-    const-string v8, "|"
+    const-string/jumbo v8, "|"
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1907,6 +1941,8 @@
     move-result-object v3
 
     goto :goto_8
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

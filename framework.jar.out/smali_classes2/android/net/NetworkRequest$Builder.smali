@@ -64,17 +64,24 @@
     .locals 4
 
     .prologue
-    new-instance v0, Landroid/net/NetworkRequest;
+    new-instance v0, Landroid/net/NetworkCapabilities;
 
     iget-object v1, p0, Landroid/net/NetworkRequest$Builder;->mNetworkCapabilities:Landroid/net/NetworkCapabilities;
+
+    invoke-direct {v0, v1}, Landroid/net/NetworkCapabilities;-><init>(Landroid/net/NetworkCapabilities;)V
+
+    .local v0, "nc":Landroid/net/NetworkCapabilities;
+    invoke-virtual {v0}, Landroid/net/NetworkCapabilities;->maybeMarkCapabilitiesRestricted()V
+
+    new-instance v1, Landroid/net/NetworkRequest;
 
     const/4 v2, -0x1
 
     const/4 v3, 0x0
 
-    invoke-direct {v0, v1, v2, v3}, Landroid/net/NetworkRequest;-><init>(Landroid/net/NetworkCapabilities;II)V
+    invoke-direct {v1, v0, v2, v3}, Landroid/net/NetworkRequest;-><init>(Landroid/net/NetworkCapabilities;II)V
 
-    return-object v0
+    return-object v1
 .end method
 
 .method public removeCapability(I)Landroid/net/NetworkRequest$Builder;

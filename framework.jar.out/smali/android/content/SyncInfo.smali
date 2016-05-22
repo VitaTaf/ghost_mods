@@ -18,6 +18,8 @@
     .end annotation
 .end field
 
+.field private static final REDACTED_ACCOUNT:Landroid/accounts/Account;
+
 
 # instance fields
 .field public final account:Landroid/accounts/Account;
@@ -31,9 +33,19 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 3
 
     .prologue
+    new-instance v0, Landroid/accounts/Account;
+
+    const-string v1, "*****"
+
+    const-string v2, "*****"
+
+    invoke-direct {v0, v1, v2}, Landroid/accounts/Account;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    sput-object v0, Landroid/content/SyncInfo;->REDACTED_ACCOUNT:Landroid/accounts/Account;
+
     new-instance v0, Landroid/content/SyncInfo$1;
 
     invoke-direct {v0}, Landroid/content/SyncInfo$1;-><init>()V
@@ -140,6 +152,28 @@
     iput-wide v0, p0, Landroid/content/SyncInfo;->startTime:J
 
     return-void
+.end method
+
+.method public static createAccountRedacted(ILjava/lang/String;J)Landroid/content/SyncInfo;
+    .locals 6
+    .param p0, "authorityId"    # I
+    .param p1, "authority"    # Ljava/lang/String;
+    .param p2, "startTime"    # J
+
+    .prologue
+    new-instance v0, Landroid/content/SyncInfo;
+
+    sget-object v2, Landroid/content/SyncInfo;->REDACTED_ACCOUNT:Landroid/accounts/Account;
+
+    move v1, p0
+
+    move-object v3, p1
+
+    move-wide v4, p2
+
+    invoke-direct/range {v0 .. v5}, Landroid/content/SyncInfo;-><init>(ILandroid/accounts/Account;Ljava/lang/String;J)V
+
+    return-object v0
 .end method
 
 

@@ -2927,7 +2927,7 @@
 .end method
 
 .method private readAccountInfoLocked()V
-    .locals 22
+    .locals 23
 
     .prologue
     const/4 v8, -0x1
@@ -3310,7 +3310,7 @@
 
     move/from16 v1, v20
 
-    if-ne v0, v1, :cond_f
+    if-ne v0, v1, :cond_11
 
     const-string v19, "authority"
 
@@ -3322,7 +3322,7 @@
 
     move-result v19
 
-    if-eqz v19, :cond_e
+    if-eqz v19, :cond_f
 
     move-object/from16 v0, p0
 
@@ -3333,6 +3333,8 @@
     move-result-object v4
 
     const/4 v14, 0x0
+
+    if-eqz v4, :cond_e
 
     iget v0, v4, Lcom/android/server/content/SyncStorageEngine$AuthorityInfo;->ident:I
 
@@ -3546,22 +3548,40 @@
     .restart local v4    # "authority":Lcom/android/server/content/SyncStorageEngine$AuthorityInfo;
     .restart local v14    # "periodicSync":Landroid/content/PeriodicSync;
     :cond_e
+    const v19, 0x534e4554
+
+    const/16 v20, 0x3
+
     :try_start_e
-    const-string v19, "listenForTickles"
+    move/from16 v0, v20
 
-    move-object/from16 v0, v19
+    new-array v0, v0, [Ljava/lang/Object;
 
-    move-object/from16 v1, v16
+    move-object/from16 v20, v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const/16 v21, 0x0
 
-    move-result v19
+    const-string v22, "26513719"
 
-    if-eqz v19, :cond_7
+    aput-object v22, v20, v21
 
-    move-object/from16 v0, p0
+    const/16 v21, 0x1
 
-    invoke-direct {v0, v13}, Lcom/android/server/content/SyncStorageEngine;->parseListenForTickles(Lorg/xmlpull/v1/XmlPullParser;)V
+    const/16 v22, -0x1
+
+    invoke-static/range {v22 .. v22}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v22
+
+    aput-object v22, v20, v21
+
+    const/16 v21, 0x2
+
+    const-string v22, "Malformed authority"
+
+    aput-object v22, v20, v21
+
+    invoke-static/range {v19 .. v20}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
     :try_end_e
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_e .. :try_end_e} :catch_2
     .catch Ljava/io/IOException; {:try_start_e .. :try_end_e} :catch_4
@@ -3583,7 +3603,7 @@
     move-exception v5
 
     .local v5, "e":Ljava/io/IOException;
-    if-nez v7, :cond_12
+    if-nez v7, :cond_13
 
     :try_start_f
     const-string v19, "SyncManager"
@@ -3640,19 +3660,7 @@
     .restart local v18    # "versionString":Ljava/lang/String;
     :cond_f
     :try_start_11
-    invoke-interface {v13}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
-
-    move-result v19
-
-    const/16 v20, 0x3
-
-    move/from16 v0, v19
-
-    move/from16 v1, v20
-
-    if-ne v0, v1, :cond_10
-
-    const-string v19, "periodicSync"
+    const-string v19, "listenForTickles"
 
     move-object/from16 v0, v19
 
@@ -3664,52 +3672,9 @@
 
     if-eqz v19, :cond_7
 
-    if-eqz v4, :cond_7
-
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v13, v4}, Lcom/android/server/content/SyncStorageEngine;->parsePeriodicSync(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/server/content/SyncStorageEngine$AuthorityInfo;)Landroid/content/PeriodicSync;
-
-    move-result-object v14
-
-    goto/16 :goto_8
-
-    :cond_10
-    invoke-interface {v13}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
-
-    move-result v19
-
-    const/16 v20, 0x4
-
-    move/from16 v0, v19
-
-    move/from16 v1, v20
-
-    if-ne v0, v1, :cond_7
-
-    if-eqz v14, :cond_7
-
-    const-string v19, "extra"
-
-    move-object/from16 v0, v19
-
-    move-object/from16 v1, v16
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v19
-
-    if-eqz v19, :cond_7
-
-    iget-object v0, v14, Landroid/content/PeriodicSync;->extras:Landroid/os/Bundle;
-
-    move-object/from16 v19, v0
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v19
-
-    invoke-direct {v0, v13, v1}, Lcom/android/server/content/SyncStorageEngine;->parseExtra(Lorg/xmlpull/v1/XmlPullParser;Landroid/os/Bundle;)V
+    invoke-direct {v0, v13}, Lcom/android/server/content/SyncStorageEngine;->parseListenForTickles(Lorg/xmlpull/v1/XmlPullParser;)V
     :try_end_11
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_11 .. :try_end_11} :catch_2
     .catch Ljava/io/IOException; {:try_start_11 .. :try_end_11} :catch_4
@@ -3748,20 +3713,119 @@
 
     iput v0, v1, Lcom/android/server/content/SyncStorageEngine;->mNextAuthorityId:I
 
-    if-eqz v7, :cond_11
+    if-eqz v7, :cond_10
 
     :try_start_12
     invoke-virtual {v7}, Ljava/io/FileInputStream;->close()V
     :try_end_12
     .catch Ljava/io/IOException; {:try_start_12 .. :try_end_12} :catch_8
 
-    :cond_11
+    :cond_10
     :goto_b
     throw v19
 
-    .restart local v5    # "e":Ljava/io/IOException;
-    :cond_12
+    .restart local v4    # "authority":Lcom/android/server/content/SyncStorageEngine$AuthorityInfo;
+    .restart local v6    # "eventType":I
+    .restart local v10    # "listen":Ljava/lang/String;
+    .restart local v11    # "nextIdString":Ljava/lang/String;
+    .restart local v12    # "offsetString":Ljava/lang/String;
+    .restart local v13    # "parser":Lorg/xmlpull/v1/XmlPullParser;
+    .restart local v14    # "periodicSync":Landroid/content/PeriodicSync;
+    .restart local v16    # "tagName":Ljava/lang/String;
+    .restart local v17    # "version":I
+    .restart local v18    # "versionString":Ljava/lang/String;
+    :cond_11
     :try_start_13
+    invoke-interface {v13}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
+
+    move-result v19
+
+    const/16 v20, 0x3
+
+    move/from16 v0, v19
+
+    move/from16 v1, v20
+
+    if-ne v0, v1, :cond_12
+
+    const-string v19, "periodicSync"
+
+    move-object/from16 v0, v19
+
+    move-object/from16 v1, v16
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v19
+
+    if-eqz v19, :cond_7
+
+    if-eqz v4, :cond_7
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v13, v4}, Lcom/android/server/content/SyncStorageEngine;->parsePeriodicSync(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/server/content/SyncStorageEngine$AuthorityInfo;)Landroid/content/PeriodicSync;
+
+    move-result-object v14
+
+    goto/16 :goto_8
+
+    :cond_12
+    invoke-interface {v13}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
+
+    move-result v19
+
+    const/16 v20, 0x4
+
+    move/from16 v0, v19
+
+    move/from16 v1, v20
+
+    if-ne v0, v1, :cond_7
+
+    if-eqz v14, :cond_7
+
+    const-string v19, "extra"
+
+    move-object/from16 v0, v19
+
+    move-object/from16 v1, v16
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v19
+
+    if-eqz v19, :cond_7
+
+    iget-object v0, v14, Landroid/content/PeriodicSync;->extras:Landroid/os/Bundle;
+
+    move-object/from16 v19, v0
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v19
+
+    invoke-direct {v0, v13, v1}, Lcom/android/server/content/SyncStorageEngine;->parseExtra(Lorg/xmlpull/v1/XmlPullParser;Landroid/os/Bundle;)V
+    :try_end_13
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_13 .. :try_end_13} :catch_2
+    .catch Ljava/io/IOException; {:try_start_13 .. :try_end_13} :catch_4
+    .catchall {:try_start_13 .. :try_end_13} :catchall_0
+
+    goto/16 :goto_8
+
+    .end local v4    # "authority":Lcom/android/server/content/SyncStorageEngine$AuthorityInfo;
+    .end local v6    # "eventType":I
+    .end local v10    # "listen":Ljava/lang/String;
+    .end local v11    # "nextIdString":Ljava/lang/String;
+    .end local v12    # "offsetString":Ljava/lang/String;
+    .end local v13    # "parser":Lorg/xmlpull/v1/XmlPullParser;
+    .end local v14    # "periodicSync":Landroid/content/PeriodicSync;
+    .end local v16    # "tagName":Ljava/lang/String;
+    .end local v17    # "version":I
+    .end local v18    # "versionString":Ljava/lang/String;
+    .restart local v5    # "e":Ljava/io/IOException;
+    :cond_13
+    :try_start_14
     const-string v19, "SyncManager"
 
     const-string v20, "Error reading accounts"
@@ -3771,8 +3835,8 @@
     move-object/from16 v1, v20
 
     invoke-static {v0, v1, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_13
-    .catchall {:try_start_13 .. :try_end_13} :catchall_0
+    :try_end_14
+    .catchall {:try_start_14 .. :try_end_14} :catchall_0
 
     goto/16 :goto_a
 
@@ -9088,12 +9152,13 @@
     throw v1
 .end method
 
-.method public getCurrentSyncsCopy(I)Ljava/util/List;
-    .locals 6
+.method public getCurrentSyncsCopy(IZ)Ljava/util/List;
+    .locals 10
     .param p1, "userId"    # I
+    .param p2, "canAccessAccounts"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(I)",
+            "(IZ)",
             "Ljava/util/List",
             "<",
             "Landroid/content/SyncInfo;",
@@ -9102,71 +9167,93 @@
     .end annotation
 
     .prologue
-    iget-object v5, p0, Lcom/android/server/content/SyncStorageEngine;->mAuthorities:Landroid/util/SparseArray;
+    iget-object v6, p0, Lcom/android/server/content/SyncStorageEngine;->mAuthorities:Landroid/util/SparseArray;
 
-    monitor-enter v5
+    monitor-enter v6
 
     :try_start_0
     invoke-direct {p0, p1}, Lcom/android/server/content/SyncStorageEngine;->getCurrentSyncsLocked(I)Ljava/util/List;
 
-    move-result-object v2
+    move-result-object v3
 
-    .local v2, "syncs":Ljava/util/List;, "Ljava/util/List<Landroid/content/SyncInfo;>;"
-    new-instance v3, Ljava/util/ArrayList;
+    .local v3, "syncs":Ljava/util/List;, "Ljava/util/List<Landroid/content/SyncInfo;>;"
+    new-instance v4, Ljava/util/ArrayList;
 
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .local v3, "syncsCopy":Ljava/util/List;, "Ljava/util/List<Landroid/content/SyncInfo;>;"
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, "i$":Ljava/util/Iterator;
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    .local v4, "syncsCopy":Ljava/util/List;, "Ljava/util/List<Landroid/content/SyncInfo;>;"
+    invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    check-cast v1, Landroid/content/SyncInfo;
+    .local v1, "i$":Ljava/util/Iterator;
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    .local v1, "sync":Landroid/content/SyncInfo;
-    new-instance v4, Landroid/content/SyncInfo;
+    move-result v5
 
-    invoke-direct {v4, v1}, Landroid/content/SyncInfo;-><init>(Landroid/content/SyncInfo;)V
+    if-eqz v5, :cond_1
 
-    invoke-interface {v3, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/content/SyncInfo;
+
+    .local v2, "sync":Landroid/content/SyncInfo;
+    if-nez p2, :cond_0
+
+    iget v5, v2, Landroid/content/SyncInfo;->authorityId:I
+
+    iget-object v7, v2, Landroid/content/SyncInfo;->authority:Ljava/lang/String;
+
+    iget-wide v8, v2, Landroid/content/SyncInfo;->startTime:J
+
+    invoke-static {v5, v7, v8, v9}, Landroid/content/SyncInfo;->createAccountRedacted(ILjava/lang/String;J)Landroid/content/SyncInfo;
+
+    move-result-object v0
+
+    .local v0, "copy":Landroid/content/SyncInfo;
+    :goto_1
+    invoke-interface {v4, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .end local v0    # "i$":Ljava/util/Iterator;
-    .end local v1    # "sync":Landroid/content/SyncInfo;
-    .end local v2    # "syncs":Ljava/util/List;, "Ljava/util/List<Landroid/content/SyncInfo;>;"
-    .end local v3    # "syncsCopy":Ljava/util/List;, "Ljava/util/List<Landroid/content/SyncInfo;>;"
+    .end local v0    # "copy":Landroid/content/SyncInfo;
+    .end local v1    # "i$":Ljava/util/Iterator;
+    .end local v2    # "sync":Landroid/content/SyncInfo;
+    .end local v3    # "syncs":Ljava/util/List;, "Ljava/util/List<Landroid/content/SyncInfo;>;"
+    .end local v4    # "syncsCopy":Ljava/util/List;, "Ljava/util/List<Landroid/content/SyncInfo;>;"
     :catchall_0
-    move-exception v4
+    move-exception v5
 
-    monitor-exit v5
+    monitor-exit v6
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v4
+    throw v5
 
-    .restart local v0    # "i$":Ljava/util/Iterator;
-    .restart local v2    # "syncs":Ljava/util/List;, "Ljava/util/List<Landroid/content/SyncInfo;>;"
-    .restart local v3    # "syncsCopy":Ljava/util/List;, "Ljava/util/List<Landroid/content/SyncInfo;>;"
+    .restart local v1    # "i$":Ljava/util/Iterator;
+    .restart local v2    # "sync":Landroid/content/SyncInfo;
+    .restart local v3    # "syncs":Ljava/util/List;, "Ljava/util/List<Landroid/content/SyncInfo;>;"
+    .restart local v4    # "syncsCopy":Ljava/util/List;, "Ljava/util/List<Landroid/content/SyncInfo;>;"
     :cond_0
     :try_start_1
-    monitor-exit v5
+    new-instance v0, Landroid/content/SyncInfo;
+
+    invoke-direct {v0, v2}, Landroid/content/SyncInfo;-><init>(Landroid/content/SyncInfo;)V
+
+    .restart local v0    # "copy":Landroid/content/SyncInfo;
+    goto :goto_1
+
+    .end local v0    # "copy":Landroid/content/SyncInfo;
+    .end local v2    # "sync":Landroid/content/SyncInfo;
+    :cond_1
+    monitor-exit v6
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    return-object v3
+    return-object v4
 .end method
 
 .method public getDayStatistics()[Lcom/android/server/content/SyncStorageEngine$DayStats;
