@@ -10,7 +10,7 @@
     <item type="dimen" name="disabled_alpha_material_light">0.26</item>
     <item type="dimen" name="disabled_alpha_material_dark">0.3</item>
     <dimen name="config_prefDialogWidth">320.0dip</dimen>
-    <dimen name="config_viewConfigurationTouchSlop">16.0dip</dimen>
+    <dimen name="config_viewConfigurationTouchSlop">8.0dip</dimen>
     <dimen name="config_viewMinFlingVelocity">50.0dip</dimen>
     <dimen name="config_viewMaxFlingVelocity">8000.0dip</dimen>
     <dimen name="config_minScalingSpan">27.0mm</dimen>
@@ -20,7 +20,7 @@
     <dimen name="status_bar_height">24.0dip</dimen>
     <dimen name="navigation_bar_height">48.0dip</dimen>
     <dimen name="navigation_bar_height_landscape">48.0dip</dimen>
-    <dimen name="navigation_bar_width">42.0dip</dimen>
+    <dimen name="navigation_bar_width">48.0dip</dimen>
     <dimen name="status_bar_icon_size">24.0dip</dimen>
     <dimen name="status_bar_content_number_size">48.0sp</dimen>
     <dimen name="status_bar_edge_ignore">5.0dip</dimen>
@@ -85,14 +85,14 @@
     <dimen name="action_bar_stacked_max_height">48.0dip</dimen>
     <dimen name="action_bar_stacked_tab_max_width">180.0dip</dimen>
     <dimen name="notification_text_size">14.0sp</dimen>
-    <dimen name="notification_title_text_size">16.0sp</dimen>
+    <dimen name="notification_title_text_size">14.0sp</dimen>
     <dimen name="notification_subtext_size">12.0sp</dimen>
     <dimen name="notification_top_pad">10.0dip</dimen>
     <dimen name="notification_top_pad_narrow">4.0dip</dimen>
     <dimen name="notification_top_pad_large_text">5.0dip</dimen>
     <dimen name="notification_top_pad_large_text_narrow">-4.0dip</dimen>
     <dimen name="notification_large_icon_circle_padding">11.0dip</dimen>
-    <dimen name="notification_badge_size">16.0dip</dimen>
+    <dimen name="notification_badge_size">12.0dip</dimen>
     <dimen name="kg_security_panel_height">600.0dip</dimen>
     <dimen name="kg_security_view_height">480.0dip</dimen>
     <dimen name="kg_widget_view_width">0.0dip</dimen>
@@ -163,11 +163,11 @@
     <dimen name="lock_pattern_dot_size">12.0dip</dimen>
     <dimen name="lock_pattern_dot_size_activated">28.0dip</dimen>
     <dimen name="text_handle_min_size">40.0dip</dimen>
-    <dimen name="light_y">-200.0dip</dimen>
-    <dimen name="light_z">800.0dip</dimen>
-    <dimen name="light_radius">600.0dip</dimen>
-    <item type="dimen" name="ambient_shadow_alpha">0.075</item>
-    <item type="dimen" name="spot_shadow_alpha">0.15</item>
+    <dimen name="light_y">0.0dip</dimen>
+    <dimen name="light_z">600.0dip</dimen>
+    <dimen name="light_radius">800.0dip</dimen>
+    <item type="dimen" name="ambient_shadow_alpha">0.039</item>
+    <item type="dimen" name="spot_shadow_alpha">0.19</item>
     <item type="dimen" name="disabled_alpha_leanback_formwizard">0.2</item>
     <item type="dimen" name="leanback_setup_alpha_animiation_max_opacity">1.0</item>
     <item type="dimen" name="leanback_setup_alpha_animiation_min_opacity">0.0</item>
