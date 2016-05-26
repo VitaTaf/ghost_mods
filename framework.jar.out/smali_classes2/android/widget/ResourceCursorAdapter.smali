@@ -4,8 +4,6 @@
 
 
 # instance fields
-.field private mDropDownInflater:Landroid/view/LayoutInflater;
-
 .field private mDropDownLayout:I
 
 .field private mInflater:Landroid/view/LayoutInflater;
@@ -39,10 +37,6 @@
 
     iput-object v0, p0, Landroid/widget/ResourceCursorAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    iget-object v0, p0, Landroid/widget/ResourceCursorAdapter;->mInflater:Landroid/view/LayoutInflater;
-
-    iput-object v0, p0, Landroid/widget/ResourceCursorAdapter;->mDropDownInflater:Landroid/view/LayoutInflater;
-
     return-void
 .end method
 
@@ -69,10 +63,6 @@
     check-cast v0, Landroid/view/LayoutInflater;
 
     iput-object v0, p0, Landroid/widget/ResourceCursorAdapter;->mInflater:Landroid/view/LayoutInflater;
-
-    iget-object v0, p0, Landroid/widget/ResourceCursorAdapter;->mInflater:Landroid/view/LayoutInflater;
-
-    iput-object v0, p0, Landroid/widget/ResourceCursorAdapter;->mDropDownInflater:Landroid/view/LayoutInflater;
 
     return-void
 .end method
@@ -101,10 +91,6 @@
 
     iput-object v0, p0, Landroid/widget/ResourceCursorAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    iget-object v0, p0, Landroid/widget/ResourceCursorAdapter;->mInflater:Landroid/view/LayoutInflater;
-
-    iput-object v0, p0, Landroid/widget/ResourceCursorAdapter;->mDropDownInflater:Landroid/view/LayoutInflater;
-
     return-void
 .end method
 
@@ -117,7 +103,7 @@
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    iget-object v0, p0, Landroid/widget/ResourceCursorAdapter;->mDropDownInflater:Landroid/view/LayoutInflater;
+    iget-object v0, p0, Landroid/widget/ResourceCursorAdapter;->mInflater:Landroid/view/LayoutInflater;
 
     iget v1, p0, Landroid/widget/ResourceCursorAdapter;->mDropDownLayout:I
 
@@ -158,58 +144,6 @@
     iput p1, p0, Landroid/widget/ResourceCursorAdapter;->mDropDownLayout:I
 
     return-void
-.end method
-
-.method public setDropDownViewTheme(Landroid/content/res/Resources$Theme;)V
-    .locals 2
-    .param p1, "theme"    # Landroid/content/res/Resources$Theme;
-
-    .prologue
-    invoke-super {p0, p1}, Landroid/widget/CursorAdapter;->setDropDownViewTheme(Landroid/content/res/Resources$Theme;)V
-
-    if-nez p1, :cond_0
-
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Landroid/widget/ResourceCursorAdapter;->mDropDownInflater:Landroid/view/LayoutInflater;
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v1, p0, Landroid/widget/ResourceCursorAdapter;->mInflater:Landroid/view/LayoutInflater;
-
-    invoke-virtual {v1}, Landroid/view/LayoutInflater;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
-
-    move-result-object v1
-
-    if-ne p1, v1, :cond_1
-
-    iget-object v1, p0, Landroid/widget/ResourceCursorAdapter;->mInflater:Landroid/view/LayoutInflater;
-
-    iput-object v1, p0, Landroid/widget/ResourceCursorAdapter;->mDropDownInflater:Landroid/view/LayoutInflater;
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v0, Landroid/view/ContextThemeWrapper;
-
-    iget-object v1, p0, Landroid/widget/ResourceCursorAdapter;->mContext:Landroid/content/Context;
-
-    invoke-direct {v0, v1, p1}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;Landroid/content/res/Resources$Theme;)V
-
-    .local v0, "context":Landroid/content/Context;
-    invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
-
-    move-result-object v1
-
-    iput-object v1, p0, Landroid/widget/ResourceCursorAdapter;->mDropDownInflater:Landroid/view/LayoutInflater;
-
-    goto :goto_0
 .end method
 
 .method public setViewResource(I)V

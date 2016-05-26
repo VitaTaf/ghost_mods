@@ -30,25 +30,12 @@
 .method public constructor <init>(Landroid/content/Context;I)V
     .locals 0
     .param p1, "base"    # Landroid/content/Context;
-    .param p2, "themeResId"    # I
+    .param p2, "themeres"    # I
 
     .prologue
     invoke-direct {p0, p1}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
 
     iput p2, p0, Landroid/view/ContextThemeWrapper;->mThemeResource:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Landroid/content/res/Resources$Theme;)V
-    .locals 0
-    .param p1, "base"    # Landroid/content/Context;
-    .param p2, "theme"    # Landroid/content/res/Resources$Theme;
-
-    .prologue
-    invoke-direct {p0, p1}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
-
-    iput-object p2, p0, Landroid/view/ContextThemeWrapper;->mTheme:Landroid/content/res/Resources$Theme;
 
     return-void
 .end method

@@ -25,48 +25,25 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/widget/SpinnerAdapter;Landroid/content/res/Resources$Theme;)V
-    .locals 2
+.method public constructor <init>(Landroid/widget/SpinnerAdapter;)V
+    .locals 1
     .param p1, "adapter"    # Landroid/widget/SpinnerAdapter;
-    .param p2, "dropDownTheme"    # Landroid/content/res/Resources$Theme;
 
     .prologue
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Landroid/widget/Spinner$DropDownAdapter;->mAdapter:Landroid/widget/SpinnerAdapter;
 
-    instance-of v1, p1, Landroid/widget/ListAdapter;
+    instance-of v0, p1, Landroid/widget/ListAdapter;
 
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
-    move-object v1, p1
+    check-cast p1, Landroid/widget/ListAdapter;
 
-    check-cast v1, Landroid/widget/ListAdapter;
-
-    iput-object v1, p0, Landroid/widget/Spinner$DropDownAdapter;->mListAdapter:Landroid/widget/ListAdapter;
+    .end local p1    # "adapter":Landroid/widget/SpinnerAdapter;
+    iput-object p1, p0, Landroid/widget/Spinner$DropDownAdapter;->mListAdapter:Landroid/widget/ListAdapter;
 
     :cond_0
-    if-eqz p2, :cond_1
-
-    instance-of v1, p1, Landroid/widget/ThemedSpinnerAdapter;
-
-    if-eqz v1, :cond_1
-
-    move-object v0, p1
-
-    check-cast v0, Landroid/widget/ThemedSpinnerAdapter;
-
-    .local v0, "themedAdapter":Landroid/widget/ThemedSpinnerAdapter;
-    invoke-interface {v0}, Landroid/widget/ThemedSpinnerAdapter;->getDropDownViewTheme()Landroid/content/res/Resources$Theme;
-
-    move-result-object v1
-
-    if-nez v1, :cond_1
-
-    invoke-interface {v0, p2}, Landroid/widget/ThemedSpinnerAdapter;->setDropDownViewTheme(Landroid/content/res/Resources$Theme;)V
-
-    .end local v0    # "themedAdapter":Landroid/widget/ThemedSpinnerAdapter;
-    :cond_1
     return-void
 .end method
 

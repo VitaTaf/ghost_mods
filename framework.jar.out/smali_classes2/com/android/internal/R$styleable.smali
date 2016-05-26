@@ -2815,7 +2815,7 @@
 
 .field public static final Spinner:[I
 
-.field public static final Spinner_disableChildrenWhenDisabled:I = 0x9
+.field public static final Spinner_disableChildrenWhenDisabled:I = 0x8
 
 .field public static final Spinner_dropDownSelector:I = 0x1
 
@@ -2827,9 +2827,7 @@
 
 .field public static final Spinner_popupElevation:I = 0x6
 
-.field public static final Spinner_popupPromptView:I = 0x8
-
-.field public static final Spinner_popupTheme:I = 0x7
+.field public static final Spinner_popupPromptView:I = 0x7
 
 .field public static final Spinner_prompt:I = 0x3
 
@@ -6191,7 +6189,7 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->SpellChecker_Subtype:[I
 
-    const/16 v0, 0xa
+    const/16 v0, 0x9
 
     new-array v0, v0, [I
 
@@ -8410,7 +8408,6 @@
         0x1010262
         0x10102f1
         0x101048c
-        0x10104a9
         0x1160051
         0x1160052
     .end array-data
